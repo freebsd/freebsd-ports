@@ -139,6 +139,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/solfege/winlang.pyc
 %%DATADIR%%/solfege/winreg.pyc
 %%DATADIR%%/solfege/xrandom.pyc
+%%DATADIR%%/help/C/selecting-exercises.html
 %%DATADIR%%/help/C/about-statistics.html
 %%DATADIR%%/help/C/mpd-module.html
 %%DATADIR%%/help/C/profile-manager.html
@@ -157,8 +158,75 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/C/ly/theory-intervals-1.png
 %%DATADIR%%/help/C/ly/theory-intervals-fifths-2.png
 %%DATADIR%%/help/C/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/de/solfege-exercise-helps.html
+%%DATADIR%%/help/de/music-theory.html
+%%DATADIR%%/help/de/idproperty-module.html
+%%DATADIR%%/help/de/solfege-intro.html
+%%DATADIR%%/help/de/twelvetone.html
+%%DATADIR%%/help/de/idbyname.html
+%%DATADIR%%/help/de/singanswer-module.html
+%%DATADIR%%/help/de/rhythmtapping2-module.html
+%%DATADIR%%/help/de/online-resources.html
+%%DATADIR%%/help/de/profile-manager.html
+%%DATADIR%%/help/de/preferences-window.html
+%%DATADIR%%/help/de/inverting-intervals.html
+%%DATADIR%%/help/de/rhythmtapping2.html
+%%DATADIR%%/help/de/singchord.html
+%%DATADIR%%/help/de/elembuilder-module.html
+%%DATADIR%%/help/de/selecting-exercises.html
+%%DATADIR%%/help/de/theory-intervals.html
+%%DATADIR%%/help/de/rhythmdictation-module.html
+%%DATADIR%%/help/de/compareintervals-module.html
+%%DATADIR%%/help/de/scales.html
+%%DATADIR%%/help/de/elembuilder.html
+%%DATADIR%%/help/de/index.html
+%%DATADIR%%/help/de/singinterval-module.html
+%%DATADIR%%/help/de/idbyname-chords.html
+%%DATADIR%%/help/de/idbyname-cadences.html
+%%DATADIR%%/help/de/harmonicinterval.html
+%%DATADIR%%/help/de/lesson-files.html
+%%DATADIR%%/help/de/trainingset-editor.html
+%%DATADIR%%/help/de/idtone.html
+%%DATADIR%%/help/de/melodicinterval.html
+%%DATADIR%%/help/de/mpd-module.html
+%%DATADIR%%/help/de/nameinterval.html
+%%DATADIR%%/help/de/identifybpm.html
+%%DATADIR%%/help/de/about-statistics.html
+%%DATADIR%%/help/de/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/de/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/de/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/de/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/de/ly/inverting-intervals.png
+%%DATADIR%%/help/de/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/de/ly/theory-intervals-1.png
+%%DATADIR%%/help/de/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/de/rhythm-module.html
+%%DATADIR%%/help/de/rhythm.html
+%%DATADIR%%/help/de/midi-instrument-names.html
+%%DATADIR%%/help/de/identifybpm-module.html
+%%DATADIR%%/help/de/gpl.html
+%%DATADIR%%/help/de/chordvoicing-module.html
+%%DATADIR%%/help/de/rhythmdictation2-module.html
+%%DATADIR%%/help/de/harmonicinterval-module.html
+%%DATADIR%%/help/de/nameinterval-module.html
+%%DATADIR%%/help/de/singinterval.html
+%%DATADIR%%/help/de/dictation.html
+%%DATADIR%%/help/de/bug-reporting.html
+%%DATADIR%%/help/de/twelvetone-module.html
+%%DATADIR%%/help/de/extending-solfege.html
+%%DATADIR%%/help/de/solfege-exercise-helps.html
+%%DATADIR%%/help/de/idtone-module.html
+%%DATADIR%%/help/de/ear-training-test-printout-editor.html
+%%DATADIR%%/help/de/idbyname-intonation.html
+%%DATADIR%%/help/de/singchord-module.html
+%%DATADIR%%/help/de/rhythmtapping-module.html
+%%DATADIR%%/help/de/melodicinterval-module.html
+%%DATADIR%%/help/de/dictation-module.html
+%%DATADIR%%/help/de/idbyname-module.html
+%%DATADIR%%/help/de/idproperty.html
 %%DATADIR%%/help/eo/solfege-intro.html
 %%DATADIR%%/help/eo/idbyname.html
+%%DATADIR%%/help/eo/selecting-exercises.html
 %%DATADIR%%/help/eo/rhythmdictation-module.html
 %%DATADIR%%/help/eo/rhythmdictation2-module.html
 %%DATADIR%%/help/eo/solfege-exercise-helps.html
@@ -250,6 +318,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/eo/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/eo/ly/theory-intervals-1.png
 %%DATADIR%%/help/eo/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/et/selecting-exercises.html
 %%DATADIR%%/help/et/extending-solfege.html
 %%DATADIR%%/help/et/idbyname.html
 %%DATADIR%%/help/et/solfege-intro.html
@@ -343,6 +412,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/et/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/et/ly/theory-intervals-1.png
 %%DATADIR%%/help/et/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/fr/selecting-exercises.html
 %%DATADIR%%/help/fr/idbyname.html
 %%DATADIR%%/help/fr/rhythmdictation-module.html
 %%DATADIR%%/help/fr/mpd-module.html
@@ -369,6 +439,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/fr/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/fr/ly/theory-intervals-1.png
 %%DATADIR%%/help/fr/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/gl/selecting-exercises.html
 %%DATADIR%%/help/gl/idbyname.html
 %%DATADIR%%/help/gl/rhythmdictation-module.html
 %%DATADIR%%/help/gl/rhythmdictation2-module.html
@@ -383,6 +454,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/gl/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/gl/ly/theory-intervals-1.png
 %%DATADIR%%/help/gl/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/nb/selecting-exercises.html
 %%DATADIR%%/help/nb/idbyname.html
 %%DATADIR%%/help/nb/rhythmdictation-module.html
 %%DATADIR%%/help/nb/rhythmdictation2-module.html
@@ -410,6 +482,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/nb/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/nb/ly/theory-intervals-1.png
 %%DATADIR%%/help/nb/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/nl/selecting-exercises.html
 %%DATADIR%%/help/nl/idbyname.html
 %%DATADIR%%/help/nl/rhythmdictation-module.html
 %%DATADIR%%/help/nl/rhythmdictation2-module.html
@@ -453,6 +526,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/nl/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/nl/ly/theory-intervals-1.png
 %%DATADIR%%/help/nl/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/pl/selecting-exercises.html
 %%DATADIR%%/help/pl/solfege-intro.html
 %%DATADIR%%/help/pl/idbyname.html
 %%DATADIR%%/help/pl/rhythmdictation-module.html
@@ -546,6 +620,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/pl/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/pl/ly/theory-intervals-1.png
 %%DATADIR%%/help/pl/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/pt_BR/selecting-exercises.html
 %%DATADIR%%/help/pt_BR/idbyname.html
 %%DATADIR%%/help/pt_BR/rhythmdictation-module.html
 %%DATADIR%%/help/pt_BR/rhythmdictation2-module.html
@@ -573,6 +648,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/pt_BR/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/pt_BR/ly/theory-intervals-1.png
 %%DATADIR%%/help/pt_BR/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/ru/selecting-exercises.html
 %%DATADIR%%/help/ru/idbyname.html
 %%DATADIR%%/help/ru/rhythmdictation-module.html
 %%DATADIR%%/help/ru/rhythmdictation2-module.html
@@ -587,6 +663,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/ru/ly/theory-intervals-fourths.png
 %%DATADIR%%/help/ru/ly/theory-intervals-1.png
 %%DATADIR%%/help/ru/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/tr/selecting-exercises.html
 %%DATADIR%%/help/tr/idbyname.html
 %%DATADIR%%/help/tr/rhythmdictation-module.html
 %%DATADIR%%/help/tr/rhythmdictation2-module.html
@@ -2811,6 +2888,8 @@ share/pixmaps/solfege.svg
 @dirrm %%DATADIR%%/help/eo/figures
 @dirrm %%DATADIR%%/help/eo/ly
 @dirrm %%DATADIR%%/help/eo
+@dirrm %%DATADIR%%/help/de/ly
+@dirrm %%DATADIR%%/help/de
 @dirrm %%DATADIR%%/help/et/figures
 @dirrm %%DATADIR%%/help/et/ly
 @dirrm %%DATADIR%%/help/et
