@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	5.2.5
+PORTVERSION=	5.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
 MAINTAINER=	martinp@tildeslash.com
-COMMENT=	Unix system management and monitoring
+COMMENT=	Unix system management and proactive monitoring
 
 MAN1=		monit.1
 
@@ -32,8 +32,7 @@ PLIST_FILES=	bin/monit \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-DOCS=		CHANGES.txt LICENSE README README.SSL \
-		doc/examples.html doc/monit.html
+DOCS=		CHANGES COPYING README
 PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.options.mk>
