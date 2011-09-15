@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fancytasks
-PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -15,6 +14,8 @@ DISTNAME=	99737-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Plasmoid fancy representation of your tasks and launchers
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
