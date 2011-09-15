@@ -27947,6 +27947,7 @@ zope211                         ports/www/zope211
 zope28                          ports/www/zope28
 zope29                          ports/www/zope29
 zope3                           ports/www/zope3
+zorba                           ports/textproc/zorba
 zorro                           ports/deskutils/zorro
 zphoto                          ports/graphics/zphoto
 zsh                             ports/shells/zsh
