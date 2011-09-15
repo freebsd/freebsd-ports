@@ -54,6 +54,10 @@ check: build install
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == i386
+BROKEN=	does not package
+.endif
+
 # libextractor's configure logic is: if exiv2 is present it will add support
 # for it, if not present then it will not add support for it, but it cannot
 # be disabled if present
