@@ -529,6 +529,7 @@
     SUBDIR += pecl-rrd
     SUBDIR += pecl-sqlite
     SUBDIR += pecl-tokyo_tyrant
+    SUBDIR += percona-toolkit
     SUBDIR += pg_filedump
     SUBDIR += pg_rman
     SUBDIR += pgaccess
