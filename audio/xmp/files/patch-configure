@@ -1,0 +1,17 @@
+$FreeBSD$
+
+From ports/160597, upstreamed:
+
+http://sourceforge.net/mailarchive/forum.php?thread_name=86ty8zcut0.fsf%40gmail.com&forum_name=xmp-devel
+
+--- configure~
++++ configure
+@@ -5166,7 +5166,7 @@ done
+     fi
+     ;;
+ freebsd*)
+-    for ac_header in sys/resource.h sys/rtprio.h
++    for ac_header in sys/types.h sys/resource.h sys/rtprio.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
