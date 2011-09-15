@@ -75,6 +75,7 @@ PLIST_FILES+=	cyrus/bin/compile_sieve
 .endif
 
 .if defined(WITH_AUTOSIEVE)
+BROKEN=		No patch for AUTOSIEVE is available.
 AUTOSIEVE_VERSION=	0.6.0
 PATCHFILES+=	${PORTNAME}-2.4.4-autosieve-${AUTOSIEVE_VERSION}.patch
 .endif
