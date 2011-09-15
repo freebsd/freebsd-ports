@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -33,8 +33,8 @@ PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
 MAN1=	adp::afnix.1 axc::afnix.1 axd::afnix.1 \
 	axi::afnix.1 axl::afnix.1
-MAN3=	gfx::afnix.3 mth::afnix.3 net::afnix.3 nwg::afnix.3 \
-	pim::afnix.3 sec::afnix.3 sio::afnix.3 sps::afnix.3 \
+MAN3=	csm::afnix.3 gfx::afnix.3 mth::afnix.3 net::afnix.3 \
+	nwg::afnix.3 sec::afnix.3 sio::afnix.3 sps::afnix.3 \
 	sys::afnix.3 txt::afnix.3 xml::afnix.3 itu::afnix.3
 MAN4=	wax::afnix.4 xpe::afnix.4
 MAN7=	eul::afnix.7 vol-0::afnix.7 vol-1::afnix.7 vol-2::afnix.7
