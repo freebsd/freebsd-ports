@@ -1,5 +1,5 @@
---- cpuid.c.orig	2010-09-08 12:19:56.000000000 -0700
-+++ cpuid.c	2010-10-01 21:37:48.000000000 -0700
+--- cpuid.c.orig	2011-09-15 15:43:00.000000000 -0700
++++ cpuid.c	2011-09-15 15:43:08.000000000 -0700
 @@ -23,8 +23,16 @@
  #include <sched.h>
  
@@ -70,14 +70,11 @@
  	if (ret)
  		return ret;
  	return 0;
-@@ -102,11 +129,15 @@
- 	unsigned int *ecx,
- 	unsigned int *edx)
+@@ -104,9 +131,12 @@
  {
--	static int nodriver=0;
-+	static int nodriver=1;
+ 	static int nodriver=0;
  	char cpuname[20];
- 	unsigned char buffer[16];
+-	unsigned char buffer[16];
  	int fh;
 +#if __FreeBSD_version < 701102
  	cpu_cpuid_args_t args;
@@ -87,7 +84,7 @@
  
  	if (nodriver == 1) {
  		if (native_cpuid(CPU_number, idx, eax,ebx,ecx,edx))
-@@ -116,10 +147,14 @@
+@@ -116,10 +146,14 @@
  
  	args.level = idx;
  	/* Ok, use the /dev/CPU interface in preference to the _up code. */
@@ -103,21 +100,12 @@
  			perror(cpuname);
  			exit(EXIT_FAILURE);
  		}
-@@ -134,8 +169,6 @@
+@@ -134,8 +168,6 @@
  	} else {
  		/* Something went wrong, just do UP and hope for the best. */
  		nodriver = 1;
--		if (!silent && nrCPUs != 1)
+-		if (nrCPUs != 1)
 -			perror(cpuname);
- 		if (native_cpuid(CPU_number, idx, eax,ebx,ecx,edx)) {
+ 		if (native_cpuid(CPU_number, idx, eax,ebx,ecx,edx))
  			printf("%s", NATIVE_CPUID_FAILED_MSG);
- 			used_UP = 1;
-@@ -187,7 +220,7 @@
- 	fh = open(cpuname, O_RDONLY);
- 	if (fh != -1) {
- #ifndef S_SPLINT_S
--		lseek64(fh, (off64_t)idx, SEEK_CUR);
-+		lseek(fh, (off_t)idx, SEEK_CUR);
- #endif
- 		if (read(fh, &buffer[0], CPUID_CHUNK_SIZE) == -1) {
- 			perror(cpuname);
+ 
