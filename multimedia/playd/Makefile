@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.22.1
+PORTVERSION=	1.22.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	playd.sh-${PORTVERSION}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 
 LICENSE=	BSD
@@ -22,8 +22,8 @@ PLIST_FILES=	bin/playd
 MAN1=		playd.1
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/playd-sh-${REV}
-REV=		e2fef77c9592
+WRKSRC=		${WRKDIR}/graudeejs-playd-${REV}
+REV=		52bf8eb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${PREFIX}/bin/playd
