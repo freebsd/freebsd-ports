@@ -16,6 +16,9 @@ COMMENT=	Light-weight console UI audio player application
 
 RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
 
+DEPRECATED=	Contains problem with autotools, security CVE-2005-3863. Use audio/cmus instead
+EXPIRATION_DATE=2011-10-01
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
