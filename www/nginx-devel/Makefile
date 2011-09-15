@@ -273,7 +273,7 @@ IGNORE=	http_mp4 and third-party http_mp4_h264 modules are incompatible. Please 
 .endif
 
 .if defined(WITH_HTTP_MP4_MODULE)
-CONFIUGURE_ARGS+=--with-http_mp4_module
+CONFIGURE_ARGS+=--with-http_mp4_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
