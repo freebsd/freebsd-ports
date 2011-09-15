@@ -7,6 +7,7 @@
 
 PORTNAME=	DBI
 PORTVERSION=	1.616
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+LICENSE_COMB=	dual
 
 .if defined(WITH_PROXY)
-RUN_DEPENDS+=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
+BUILD_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
+RUN_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
 .endif
 
 CONFLICTS=	p5-DBI-1.3*
+
 PERL_CONFIGURE=	yes
 
 MAN1=		dbilogstrip.1 dbiprof.1 dbiproxy.1
