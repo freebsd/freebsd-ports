@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://spiff.rit.edu/match/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A program for matching star lists
 
 LICENSE=	GPLv2

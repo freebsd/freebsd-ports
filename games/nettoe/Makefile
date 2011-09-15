@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A tic-tac-toe game playable over the network
 
 LICENSE=	GPLv2

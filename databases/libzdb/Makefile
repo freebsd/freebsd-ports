@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
 
 LICENSE=	GPLv3

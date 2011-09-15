@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/freshmeat-submit/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Submission of updates to Freshmeat via its XML-RPC
 
 LICENSE=	BSD

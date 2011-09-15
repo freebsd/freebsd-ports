@@ -12,7 +12,7 @@ CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A Scheme module for W3C Cascading Stylesheets recommendation
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile

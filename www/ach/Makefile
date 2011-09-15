@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/Burton/Analysis-of-Competing-Hypotheses/
 EXTRACT_SUFX=	-alpha.tar
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A free, open source tool for complex research problems
 
 LICENSE=	GPLv3

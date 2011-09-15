@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://afflib.org/downloads/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	The Advanced Forensics Format library and utilities
 
 LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \

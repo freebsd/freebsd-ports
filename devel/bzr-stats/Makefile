@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65203347/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Simple statistics plugin for bzr
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

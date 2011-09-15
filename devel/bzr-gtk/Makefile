@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65442805/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GTK interface to Bazaar-NG VCS
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

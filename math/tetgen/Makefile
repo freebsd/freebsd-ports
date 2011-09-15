@@ -12,7 +12,7 @@ MASTER_SITES=	http://tetgen.berlios.de/files/ \
 		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
 LICENSE_FILE=	${WRKDIR}/LICENSE

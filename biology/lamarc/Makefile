@@ -13,7 +13,7 @@ MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/ \
 		http://www.c-s.li/ports/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
 LICENSE=	ASL

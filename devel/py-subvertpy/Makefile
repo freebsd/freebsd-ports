@@ -12,7 +12,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/73700574/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Python bindings for subversion
 
 LICENSE=	GPLv2

@@ -12,7 +12,7 @@ MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/ \
 		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}24r2
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Brendan McKay's graph isomorphism tester
 
 WRKSRC=		${WRKDIR}/${PORTNAME}24r2

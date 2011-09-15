@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/44888887/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bazaar plugin to assist in developing focused patches
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

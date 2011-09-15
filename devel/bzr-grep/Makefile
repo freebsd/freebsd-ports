@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/49936719/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bazaar plugin to grep files
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
