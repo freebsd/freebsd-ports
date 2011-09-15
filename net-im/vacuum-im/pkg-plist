@@ -1304,6 +1304,7 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/uk/vcard.qm
 %%DATADIR%%/translations/uk/xmppstreams.qm
 %%DATADIR%%/translations/uk/xmppuriqueries.qm
+%%DOCSDIR%%/TRANSLATORS
 @dirrm %%DATADIR%%/translations/uk
 @dirrm %%DATADIR%%/translations/ru
 @dirrm %%DATADIR%%/translations/pl
