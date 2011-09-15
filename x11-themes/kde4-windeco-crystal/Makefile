@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	2.0.5
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
@@ -15,6 +14,8 @@ DISTNAME=	75140-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Transparent KDE window decoration
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
