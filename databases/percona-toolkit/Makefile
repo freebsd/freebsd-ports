@@ -7,13 +7,15 @@
 
 PORTNAME=	percona-toolkit
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collection of essential command-line utilities for MySQL
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
