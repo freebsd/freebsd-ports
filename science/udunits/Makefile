@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udunits
-PORTVERSION=	2.1.23
+PORTVERSION=	2.1.24
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 		LOCAL/sunpoet
