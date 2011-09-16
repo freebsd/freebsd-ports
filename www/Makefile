@@ -1944,6 +1944,7 @@
     SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-autobrowse
     SUBDIR += xpi-bookmarkdd
+    SUBDIR += xpi-clear_cache_button
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-close-all-tabs
     SUBDIR += xpi-colorfultabs
