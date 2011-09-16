@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qiviewer
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,6 +23,7 @@ QMAKEFLAGS+=	PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/qiviewer \
 		share/applications/qiviewer.desktop \
+		share/qiviewer/locale/el.qm \
 		share/qiviewer/locale/es_AR.qm \
 		share/qiviewer/locale/es_ES.qm
 PLIST_DIRS=	share/qiviewer/locale \
