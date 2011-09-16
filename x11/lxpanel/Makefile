@@ -7,6 +7,7 @@
 
 PORTNAME=	lxpanel
 PORTVERSION=	0.5.8
+PORTREVISION=	1	
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
@@ -24,7 +25,7 @@ USE_GNOME=	gnomehack gtk20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-plugins=volume,deskno,kbled,xkb\
+		--with-plugins=volume,deskno,kbled,xkb,batt\
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}
