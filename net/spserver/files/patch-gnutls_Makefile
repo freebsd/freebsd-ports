@@ -1,6 +1,6 @@
---- gnutls/Makefile.orig	2008-10-06 11:34:04.000000000 +0800
-+++ gnutls/Makefile	2008-10-06 11:34:35.000000000 +0800
-@@ -5,16 +5,16 @@
+--- gnutls/Makefile.orig	2009-12-13 10:02:39.000000000 +0800
++++ gnutls/Makefile	2011-09-05 16:11:46.000000000 +0800
+@@ -5,16 +5,16 @@ CC = gcc
  AR = ar cru
  CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
  SOFLAGS = -shared
@@ -13,11 +13,11 @@
  
 -GNUTLS_INCL = -I/usr/local/include/
 -GNUTLS_LIB  = -L/usr/local/lib -lgcrypt -lgpg-error -lgnutls -lgnutls-extra -lstdc++
-+GNUTLS_INCL = -I%PREFIX%/include/
++GNUTLS_INCL = -I%PREFIX%/include
 +GNUTLS_LIB  = -L%PREFIX%/lib -lgcrypt -lgpg-error -lgnutls -lgnutls-extra -lstdc++
  
 -LIBEVENT_LIB  = -L$(HOME)/libevent -levent
-+LIBEVENT_LIB  = -L%PREFIX%/libevent -levent
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
  
  SPSERVER_INCL = -I../spserver
  SPSERVER_LIB  = -L../spserver -lspserver

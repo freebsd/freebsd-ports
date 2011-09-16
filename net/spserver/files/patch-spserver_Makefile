@@ -1,5 +1,14 @@
 --- spserver/Makefile.orig	2009-12-13 10:02:38.000000000 +0800
-+++ spserver/Makefile	2009-12-14 14:43:58.000000000 +0800
++++ spserver/Makefile	2011-09-05 16:10:49.000000000 +0800
+@@ -1,7 +1,7 @@
+ 
+ #--------------------------------------------------------------------
+ 
+-CC = gcc
++#CC = gcc
+ AR = ar cru
+ CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
 @@ -11,8 +11,8 @@ LINKER = $(CC)
  LINT = lint -c
  RM = /bin/rm -f
