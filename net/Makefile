@@ -965,6 +965,7 @@
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-oauth
+    SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightflexiscale
