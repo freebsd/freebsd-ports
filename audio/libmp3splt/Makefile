@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.6.1a
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -72,7 +72,7 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_ogg.a \
 CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=	de_DE es fr_FR
+LANGUAGES=	de_DE cs es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt.mo
 .endfor
