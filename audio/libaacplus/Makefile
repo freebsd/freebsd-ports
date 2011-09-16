@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://tipok.org.ua/downloads/media/aac+/libaacplus/:site1\
 		http://217.20.164.161/~tipok/aacplus/:site1\
 		http://media.wnet.ua/~tipok/aacplus/:site1\
+		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
 		http://www.3gpp.org/ftp/Specs/archive/26_series/26.410/:site2
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:site1\
 		26410-800.zip:site2
@@ -25,17 +26,16 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 
 CONFLICTS=	aacplusenc-0*
 
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
+GNOME_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
 		-I ${LOCALBASE}/share/aclocal -I ${WRKSRC}/m4
 LIBTOOLIZE_ARGS=--automake
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 MAN1=		aacplusenc.1
 
@@ -54,13 +54,7 @@ CONFIGURE_ARGS+=--with-fftw3=no
 
 pre-configure:
 	@${CP} ${DISTDIR}/26410-800.zip ${WRKSRC}/src
-
-post-patch:
-.if defined(WITH_OLDLIBS)
-	@${REINPLACE_CMD} -e 's,-I${includedir},-I@includedir@\ -I${includedir},'\
-	-e 's,@includedir@\/aacplus,@includedir@\/libaacplus,' ${WRKSRC}/aacplus.pc.in
-.else
-	@${REINPLACE_CMD} -e 's,\/aacplus,,' ${WRKSRC}/aacplus.pc.in
-.endif
+	@${REINPLACE_CMD} -e 's,@includedir@\/aacplus,@prefix@\/include,' ${WRKSRC}/aacplus.pc.in
+	@${REINPLACE_CMD} -e 's,\/aacplus\.h,\/libaacplus\/aacplus\.h,' ${WRKSRC}/aacplus.spec.in
 
 .include <bsd.port.mk>
