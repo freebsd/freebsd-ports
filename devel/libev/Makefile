@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libev
-PORTVERSION=	3.9
-PORTREVISION=	1
+PORTVERSION=	4.04
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
@@ -18,13 +17,17 @@ COMMENT=	A full-featured and high-performance event loop library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
 
 MAN3=		ev.3
 
+PKGCONFIGDIR?=	${PREFIX}/libdata/pkgconfig
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/if EV_MINIMAL/if defined(EV_MINIMAL) \&\& EV_MINIMAL/g' \
-		${WRKSRC}/ev.h \
-		${WRKSRC}/ev.c \
-		${WRKSRC}/ev++.h
+	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
+		${FILESDIR}/libev.pc.in > ${WRKDIR}/libev.pc
+
+post-install:
+	@${INSTALL_DATA} ${WRKDIR}/libev.pc ${PKGCONFIGDIR}/
 
 .include <bsd.port.mk>
