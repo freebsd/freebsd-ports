@@ -1,8 +1,8 @@
---- ev.c.orig  2010-08-16 08:33:48.667681306 +0200
-+++ ev.c       2010-08-16 08:33:51.449982136 +0200
-@@ -1470,10 +1470,12 @@
+--- ./ev.c.orig	2011-02-09 00:17:37.000000000 +0100
++++ ./ev.c	2011-08-19 17:01:35.000000000 +0200
+@@ -1591,10 +1591,12 @@
    unsigned int flags = ev_supported_backends ();
-
+ 
  #ifndef __NetBSD__
 +#ifndef __FreeBSD__
    /* kqueue is borked on everything but netbsd apparently */
