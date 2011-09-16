@@ -22,6 +22,8 @@ CONFLICTS_INSTALL=	portupgrade-[0-9]*
 FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
+MANUAL_PACKAGE_BUILD=	troubles with distfile cache on pointyhat
+
 USE_RUBY=	yes
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
