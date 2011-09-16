@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		wammu
-PORTVERSION=		0.35
-PORTREVISION=		1
+PORTVERSION=		0.36
 CATEGORIES=		deskutils
 MASTER_SITES=		http://dl.cihar.com/wammu/v0/ \
 			http://dl.cihar.com.nyud.net/wammu/v0/
@@ -28,7 +27,7 @@ WX_COMPS=		python:lib
 WX_UNICODE=		yes
 USE_GNOME=		pkgconfig
 
-MANLANG=		"" cs de it nl
+MANLANG=		"" cs de it nl pt_BR
 MAN1=			wammu.1 wammu-configure.1
 
 .include <bsd.port.mk>
