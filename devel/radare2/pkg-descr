@@ -1,0 +1,13 @@
+Opensource tools to disasm, debug, analyze and manipulate binary files.
+
+ * Multi-architecture multi-platform
+ * Highly scriptable
+ * Hexadecimal editor
+ * IO is wrapped
+ * Filesystems support
+ * Debugger support
+ * Diffing between two functions or binaries
+ * Code analysis at opcode, basicblock, function levels
+ * And More...
+
+WWW: http://www.radare.org
