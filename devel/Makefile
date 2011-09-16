@@ -3208,6 +3208,7 @@
     SUBDIR += qtcreator
     SUBDIR += qtscriptgenerator
     SUBDIR += quilt
+    SUBDIR += radare2
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidsvn
