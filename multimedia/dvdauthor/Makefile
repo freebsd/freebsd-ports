@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.6.18
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -16,11 +15,13 @@ COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/dvdauthor
 MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
@@ -37,12 +38,9 @@ WITH_ICONV=		yes
 WITH_IMAGEMAGICK=	yes
 .endif
 
-.if defined(WITH_FREETYPE)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-.endif
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
-CONFIGURE_ENV+=	CFLAGS="-DICONV_CONV=yes"
+CFLAGS+=	"-DICONV_CONV=yes"
 .endif
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
@@ -51,10 +49,6 @@ LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
 
 pre-everything::
-.if !defined(WITH_FREETYPE)
-	@${ECHO_MSG} "You can enable Freetype support by defining WITH_FREETYPE."
-	@${ECHO_MSG}
-.endif
 .if !defined(WITH_ICONV)
 	@${ECHO_MSG} "You can enable Iconv support by defining WITH_ICONV."
 	@${ECHO_MSG}
