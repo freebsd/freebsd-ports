@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.gplhost.sg/pub/dtc/bsd/ \
 		ftp://972.apt-proxy.gplhost.com/pub/dtc/bsd/ \
 		http://ftp.gplhost.fr/pub/dtc/bsd/
 
-MAINTAINER=	fkiernan@id.net.ar
+MAINTAINER=	thomas@goirand.fr
 COMMENT=	A hosting web GUI for admin and accounting all hosting services
 
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2-dtc \
@@ -40,8 +40,6 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log
 		${LOCALBASE}/sbin/logrotate:${PORTSDIR}/sysutils/logrotate \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2011-10-01
 FORBIDDEN=	Many security issues, see http://bugs.freebsd.org/159736
 
 USE_GETTEXT=	yes
