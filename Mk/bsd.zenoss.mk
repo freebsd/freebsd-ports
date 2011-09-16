@@ -15,7 +15,6 @@ BUILD_DEPENDS+=	zenoss>=3.1.0:${PORTSDIR}/net-mgmt/zenoss
 RUN_DEPENDS+=	zenoss>=3.1.0:${PORTSDIR}/net-mgmt/zenoss
 
 FETCH_ARGS?=	-o - > ${DISTDIR}/${DISTFILES}
-USE_ZIP?=		yes
 
 PKGNAMEPREFIX:=	zenpack-${ZPACKGROUP}-
 
