@@ -21,9 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 MAN1=		camediaplay.1
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/camediaplay
