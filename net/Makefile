@@ -475,6 +475,7 @@
     SUBDIR += openmq
     SUBDIR += openmq-client
     SUBDIR += openntpd
+    SUBDIR += opennx
     SUBDIR += openospfd
     SUBDIR += openradius
     SUBDIR += openser
