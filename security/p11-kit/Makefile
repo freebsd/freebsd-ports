@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
-	's|exampledir = $$(p11_system_dir)|exampledir = ${EXAMPLESDIR}|' \
+	's|exampledir = $$(p11_system_config)|exampledir = ${EXAMPLESDIR}|' \
 	${WRKSRC}/${PORTNAME}/Makefile.in
 
 .include <bsd.port.mk>
