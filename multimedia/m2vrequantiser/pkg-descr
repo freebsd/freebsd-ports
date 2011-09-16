@@ -1,0 +1,8 @@
+Requantize MPEG-2 streams without recompressing. M2VRequantiser
+accepts raw MPEG2 video data (not VOB) from standard input and
+writes the recompressed frames to standard output.
+
+Usage is :
+	M2VRequantiser recompression_factor inputM2Vsize <input.m2v >output.m2v
+
+WWW: https://launchpad.net/m2vrequantiser

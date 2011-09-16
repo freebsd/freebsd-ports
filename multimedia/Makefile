@@ -184,6 +184,7 @@
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
+    SUBDIR += m2vrequantiser
     SUBDIR += mandvd
     SUBDIR += mediadownloader
     SUBDIR += mediainfo
