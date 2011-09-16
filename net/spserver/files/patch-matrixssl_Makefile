@@ -1,5 +1,5 @@
---- matrixssl/Makefile.orig	2008-06-27 23:18:00.000000000 +0800
-+++ matrixssl/Makefile	2008-10-06 11:21:47.000000000 +0800
+--- matrixssl/Makefile.orig	2009-12-13 10:02:35.000000000 +0800
++++ matrixssl/Makefile	2011-09-05 16:12:25.000000000 +0800
 @@ -3,18 +3,18 @@
  
  CC = gcc
@@ -16,15 +16,15 @@
  
 -MASSL_INCL = -I$(HOME)/matrixssl-1-8-3-open/
 -MASSL_LIB  = -L$(HOME)/matrixssl-1-8-3-open/src -lmatrixssl
-+MASSL_INCL = -I/usr/local/include
-+MASSL_LIB  = -L/usr/local/lib -lmatrixsslstatic
++MASSL_INCL = -I%PREFIX%/include
++MASSL_LIB  = -L%PREFIX%/lib -lmatrixsslstatic
  
 -LIBEVENT_LIB  = -L$(HOME)/libevent -levent
-+LIBEVENT_LIB  = -L/usr/local/lib -levent
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
  
  SPSERVER_INCL = -I../spserver
  SPSERVER_LIB  = -L../spserver -lspserver
-@@ -37,7 +37,7 @@
+@@ -37,7 +37,7 @@ libspmatrixssl.so: $(LIBOBJS)
  	$(LINKER) $(SOFLAGS) $^ -o $@
  
  testechos: testechos.o
