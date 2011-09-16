@@ -20418,6 +20418,7 @@ pentix                          ports/games/pentix
 penv                            ports/sysutils/penv
 pep8                            ports/devel/pep8
 peps                            ports/graphics/peps
+percona-toolkit                 ports/databases/percona-toolkit
 perdition                       ports/mail/perdition
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
