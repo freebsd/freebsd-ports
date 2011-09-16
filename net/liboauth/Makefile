@@ -7,6 +7,7 @@
 
 PORTNAME=	liboauth
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://liboauth.sourceforge.net/pool/
 
