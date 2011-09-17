@@ -7,6 +7,7 @@
 
 PORTNAME=	cppcheck
 PORTVERSION=	1.50
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -15,20 +16,23 @@ COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" TINYXML=-ltinyxml
 
 PLIST_FILES=	bin/cppcheck
 
 ALL_TARGET=	cppcheck
 
+.include <bsd.port.pre.mk>
+
 .if !defined(NO_INSTALL_MANPAGES)
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 MANCOMPRESSED=	no
@@ -39,10 +43,6 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/CXXFLAGS=/d ; /CXX=/d' \
-		${WRKSRC}/Makefile
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin
 
@@ -50,4 +50,4 @@ check regression-test test: build
 	@(cd ${BUILD_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
