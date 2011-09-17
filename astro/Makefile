@@ -3,6 +3,7 @@
 
     COMMENT = Astronomical ports
 
+    SUBDIR += R-cran-maptools
     SUBDIR += aa
     SUBDIR += accrete
     SUBDIR += astrometry
