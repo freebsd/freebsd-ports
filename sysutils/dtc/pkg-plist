@@ -44,7 +44,6 @@
 %%WWWDIR%%/shared/inc/sql/vps.php
 %%WWWDIR%%/shared/inc/sql/ticket.php
 %%WWWDIR%%/shared/inc/sql/subdomain.php
-%%WWWDIR%%/shared/inc/sql/ssh.php
 %%WWWDIR%%/shared/inc/sql/reseller.php
 %%WWWDIR%%/shared/inc/sql/lists.php
 %%WWWDIR%%/shared/inc/sql/email.php
@@ -61,6 +60,7 @@
 %%WWWDIR%%/shared/inc/forms/vps_installation.php
 %%WWWDIR%%/shared/inc/forms/vps_graphs.php
 %%WWWDIR%%/shared/inc/forms/vps_dom0graphs.php
+%%WWWDIR%%/shared/inc/forms/user_cronjobs.php
 %%WWWDIR%%/shared/inc/forms/tools.php
 %%WWWDIR%%/shared/inc/forms/ticket.php
 %%WWWDIR%%/shared/inc/forms/subdomain.php
@@ -69,6 +69,7 @@
 %%WWWDIR%%/shared/inc/forms/reseller.php
 %%WWWDIR%%/shared/inc/forms/packager.php
 %%WWWDIR%%/shared/inc/forms/my_account.php
+%%WWWDIR%%/shared/inc/forms/multiple_renew.php
 %%WWWDIR%%/shared/inc/forms/lists.php
 %%WWWDIR%%/shared/inc/forms/invoices.php
 %%WWWDIR%%/shared/inc/forms/ftp.php
@@ -352,104 +353,6 @@
 %%WWWDIR%%/shared/gfx/skin/paperboard/bgwin.png
 %%WWWDIR%%/shared/gfx/skin/paperboard/bgtitlewin.png
 %%WWWDIR%%/shared/gfx/skin/paperboard/bgcolor.php
-%%WWWDIR%%/shared/gfx/skin/grayboard/skin.php
-%%WWWDIR%%/shared/gfx/skin/grayboard/pagetop.html
-%%WWWDIR%%/shared/gfx/skin/grayboard/layout.php
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/slide.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix/x.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix/supersleight-min.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/mbTooltip.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.uniform.min.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.timers.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.dropshadow.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/IePower_fr.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/IePower_en.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/gradualfader.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/general.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/easing.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/DD_roundies-min.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/css_adds.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/js/css_adds_IE.js
-%%WWWDIR%%/shared/gfx/skin/grayboard/imgshort.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/imglong.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/users.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/toggle_plus.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/toggle_minus.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_r.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_m.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_l.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_b.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/system-monitor.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/sprite.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/sprite-agent.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/shade.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/renew.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/plus.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/packs.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/minus.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/g_admin.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/g_admino.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/dtc_admin.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/domain.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/domaino.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/conf_gen.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/clients.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/client.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/cliento.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_register.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_open.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/btn2.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_login.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_close.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/black_arrow.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/images/bandwidth.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/zh.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/tw.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/spacer.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/se.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/safari.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/ru.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/pt.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/pl.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/p_domainconfig.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/p_clientinterface.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/opera.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/nl.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/logo_dtc.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/it.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/hu.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/help.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/fr.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/flock.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/firefox.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/fi.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/es.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/en.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/de.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx_defaults.php
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/chrome.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_seepass.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_ok.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_delete.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_add.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_help.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_help.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_generatepass.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_seepass.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_ok.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_delete.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_add.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_help.png
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_generatepass.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree-finalbranch.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree-branch.gif
-%%WWWDIR%%/shared/gfx/skin/grayboard/css/style.css
-%%WWWDIR%%/shared/gfx/skin/grayboard/css/slide.css
-%%WWWDIR%%/shared/gfx/skin/grayboard/css/skin.css
-%%WWWDIR%%/shared/gfx/skin/grayboard/bgcolor.php
 %%WWWDIR%%/shared/gfx/skin/default_layout.php
 %%WWWDIR%%/shared/gfx/skin/bwoup/skin.php
 %%WWWDIR%%/shared/gfx/skin/bwoup/skin.css
@@ -655,6 +558,7 @@
 %%WWWDIR%%/shared/dtcrm/draw_adddomain.php
 %%WWWDIR%%/shared/dtc_lib.php
 %%WWWDIR%%/shared/drawlib/tree_menu.php
+%%WWWDIR%%/shared/drawlib/top_bad_passwords.txt
 %%WWWDIR%%/shared/drawlib/templates.php
 %%WWWDIR%%/shared/drawlib/skin.php
 %%WWWDIR%%/shared/drawlib/skinLib.php
@@ -721,13 +625,16 @@
 %%WWWDIR%%/admin/vm-cpu.php
 %%WWWDIR%%/admin/vm-cpu-all.php
 %%WWWDIR%%/admin/view_waitingusers.php
+%%WWWDIR%%/admin/update_sbox_bootstrap_copy
 %%WWWDIR%%/admin/updateChroot.sh
 %%WWWDIR%%/admin/support-receive.php
 %%WWWDIR%%/admin/stat_total_active_prods.php
 %%WWWDIR%%/admin/sa-wrapper
 %%WWWDIR%%/admin/rrdtool.sh
 %%WWWDIR%%/admin/restor_db.php
+%%WWWDIR%%/admin/remount_aufs
 %%WWWDIR%%/admin/reminders.php
+%%WWWDIR%%/admin/rbl_change.sh
 %%WWWDIR%%/admin/queuegraph/createrrd.sh
 %%WWWDIR%%/admin/queuegraph/count_qmail.sh
 %%WWWDIR%%/admin/queuegraph/count_postfix.sh
@@ -751,6 +658,7 @@
 %%WWWDIR%%/admin/mod-security/modsecurity_crs_21_protocol_anomalies.conf
 %%WWWDIR%%/admin/mod-security/modsecurity_crs_20_protocol_violations.conf
 %%WWWDIR%%/admin/mod-security/modsecurity_crs_10_config.conf
+%%WWWDIR%%/admin/migrate_to_server.php
 %%WWWDIR%%/admin/memgraph.php
 %%WWWDIR%%/admin/memgraph/get_meminfo.sh
 %%WWWDIR%%/admin/memgraph/createrrd.sh
@@ -763,6 +671,7 @@
 %%WWWDIR%%/admin/install/redhat_config
 %%WWWDIR%%/admin/install/osx_config
 %%WWWDIR%%/admin/install/mk_root_mailbox.php
+%%WWWDIR%%/admin/install/minimal_chroot
 %%WWWDIR%%/admin/install/interactive_installer
 %%WWWDIR%%/admin/install/install
 %%WWWDIR%%/admin/install/gentoo_config
@@ -772,6 +681,7 @@
 %%WWWDIR%%/admin/install/bsdphpmyadmin.conf
 %%WWWDIR%%/admin/install/bsd_config
 %%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/inc/transaction_export.php
 %%WWWDIR%%/admin/inc/submit_root_querys.php
 %%WWWDIR%%/admin/inc/renewals.php
 %%WWWDIR%%/admin/inc/nav.php
@@ -780,10 +690,13 @@
 %%WWWDIR%%/admin/inc/graphs.php
 %%WWWDIR%%/admin/inc/dtc_config.php
 %%WWWDIR%%/admin/inc/draw_user_admin.php
+%%WWWDIR%%/admin/guess_ip.sh
 %%WWWDIR%%/admin/gfx
+%%WWWDIR%%/admin/get_invoices.php
 %%WWWDIR%%/admin/genfiles/remote_mail_list.php
 %%WWWDIR%%/admin/genfiles/mailfilter_vacation_template
 %%WWWDIR%%/admin/genfiles/gen_webalizer_stat.php
+%%WWWDIR%%/admin/genfiles/gen_user_cron.php
 %%WWWDIR%%/admin/genfiles/gen_ssh_account.php
 %%WWWDIR%%/admin/genfiles/gen_qmail_email_account.php
 %%WWWDIR%%/admin/genfiles/gen_pro_vhost.php
@@ -803,12 +716,15 @@
 %%WWWDIR%%/admin/dtcrm/submit_to_sql.php
 %%WWWDIR%%/admin/dtcrm/product_manager.php
 %%WWWDIR%%/admin/dtcrm/main.php
+%%WWWDIR%%/admin/dtcpassadm
+%%WWWDIR%%/admin/dtc_migrate
+%%WWWDIR%%/admin/dtc_import_all_dbs
 %%WWWDIR%%/admin/dtc_db.php
-%%WWWDIR%%/admin/dtc-chroot-shell
 %%WWWDIR%%/admin/dkfilter.patch
 %%WWWDIR%%/admin/deamons_state.php
 %%WWWDIR%%/admin/cron.php
 %%WWWDIR%%/admin/create_stat_total_active_prods_rrd.sh
+%%WWWDIR%%/admin/create_sbox_bootstrap_copy
 %%WWWDIR%%/admin/cpugraph.php
 %%WWWDIR%%/admin/cpugraph/get_cpu_load.sh
 %%WWWDIR%%/admin/cpugraph/createrrd.sh
@@ -822,9 +738,6 @@
 %%DOCSDIR%%/todo
 %%DOCSDIR%%/README.gentoo
 %%DOCSDIR%%/more_chroot.sh
-%%DOCSDIR%%/iglobalwall/mail_header.rar
-%%DOCSDIR%%/iglobalwall/iglobalwall.tar.gz
-%%DOCSDIR%%/iglobalwall/doc.txt
 %%DOCSDIR%%/html/fr/page_top.html
 %%DOCSDIR%%/html/fr/newadmin.png
 %%DOCSDIR%%/html/fr/menudtc.png
@@ -875,6 +788,7 @@
 %%DOCSDIR%%/dtc_storefront/gplhost-testimonials-delete.php
 %%DOCSDIR%%/dtc_storefront/dtc_storefront.php
 %%DOCSDIR%%/dtc_storefront/dtc_storefront/dbconnect.php
+%%DOCSDIR%%/dtc-chroot-wrapper.8
 %%DOCSDIR%%/dtc-chroot-shell.8
 %%DOCSDIR%%/dtc_autodeploy.8
 %%DOCSDIR%%/dns_transfer.sh
@@ -886,6 +800,7 @@
 %%DOCSDIR%%/contrib/upgrade-joomla.sh
 %%DOCSDIR%%/contrib/tail_apache_logs_for_a_domain.php
 %%DOCSDIR%%/contrib/start-stop-all-daemons
+%%DOCSDIR%%/contrib/slavezone_update
 %%DOCSDIR%%/contrib/re_rsync.sh
 %%DOCSDIR%%/contrib/reassing_bandwidth_for_vps_and_dedicated.php
 %%DOCSDIR%%/contrib/get-slave-zones-from-master-dns
@@ -1100,7 +1015,10 @@ etc/logrotate.d/dtc
 %%ETCDIR%%/messages_header_es_ES.txt
 %%ETCDIR%%/messages_header_de_DE.txt
 %%ETCDIR%%/logrotate.template
+%%ETCDIR%%/chroot_allowed_path
 etc/cron.d/dtc
+bin/dtc-chroot-wrapper
+bin/dtc-chroot-shell
 sbin/dtc-install
 sbin/dtc-deinstall
 @dirrm %%WWWDIR%%/shared/visitors_template
@@ -1164,14 +1082,6 @@ sbin/dtc-deinstall
 @dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons
 @dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx
 @dirrm %%WWWDIR%%/shared/gfx/skin/paperboard
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/js
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/images
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/css
-@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard
 @dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview
 @dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs
 @dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar
@@ -1195,8 +1105,6 @@ sbin/dtc-deinstall
 @dirrm %%WWWDIR%%/shared/gfx/dtc
 @dirrm %%WWWDIR%%/shared/gfx/bar
 @dirrm %%WWWDIR%%/shared/gfx
-@dirrm %%WWWDIR%%/shared/dtcrm/webnic.cc
-@dirrm %%WWWDIR%%/shared/dtcrm/srs
 @dirrm %%WWWDIR%%/shared/dtcrm/modules/webnic
 @dirrm %%WWWDIR%%/shared/dtcrm/modules/ovh
 @dirrm %%WWWDIR%%/shared/dtcrm/modules/internetbs
@@ -1207,7 +1115,6 @@ sbin/dtc-deinstall
 @dirrm %%WWWDIR%%/shared
 @dirrm %%WWWDIR%%/email
 @dirrm %%WWWDIR%%/client
-@dirrm %%WWWDIR%%/admin/tables
 @dirrm %%WWWDIR%%/admin/queuegraph
 @dirrm %%WWWDIR%%/admin/postfix_checks
 @dirrm %%WWWDIR%%/admin/patches
@@ -1220,7 +1127,6 @@ sbin/dtc-deinstall
 @dirrm %%WWWDIR%%/admin/dtcrm
 @dirrm %%WWWDIR%%/admin/cpugraph
 @dirrm %%WWWDIR%%/admin
-@dirrm %%DOCSDIR%%/iglobalwall
 @dirrm %%DOCSDIR%%/html/fr
 @dirrm %%DOCSDIR%%/html/en
 @dirrm %%DOCSDIR%%/html
@@ -1231,11 +1137,11 @@ sbin/dtc-deinstall
 @dirrm %%DOCSDIR%%/contrib/autodeploy
 @dirrm %%DOCSDIR%%/contrib
 @dirrm %%DOCSDIR%%
-@dirrm etc/logrotate.d
 @dirrm %%ETCDIR%%/tickets
 @dirrm %%ETCDIR%%/reminders_msg
 @dirrm %%ETCDIR%%/registration_msg
 @dirrm %%ETCDIR%%
+@dirrm etc/logrotate.d
 @dirrm etc/cron.d
 @dirrmtry var/dtc/etc/slave_zones
 @dirrmtry var/dtc/etc/zones

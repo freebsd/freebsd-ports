@@ -1,6 +1,8 @@
---- Makefile.orig	2010-09-10 09:31:00.000000000 -0300
-+++ Makefile	2010-09-16 09:40:01.000000000 -0300
-@@ -51,13 +51,13 @@
+$FreeBSD$
+
+--- Makefile.orig	2011-09-16 22:20:05.000000000 +0100
++++ Makefile	2011-09-16 22:24:24.000000000 +0100
+@@ -52,13 +52,13 @@
  UNIX_TYPE?=debian
  
  # /usr/share
@@ -18,16 +20,16 @@
  # /usr/share/man
  MAN_DIR = $(DESTDIR)$(MANUAL_DIR)
  # /usr/bin
-@@ -372,7 +372,7 @@
+@@ -379,7 +379,7 @@
  	# PHP scripts files served by web server
  	@echo "-> Creating destination folders for version "${VERS}
- 	for i in $(CREATE_DIRS) ; do $(INSTALL_DIR) -m $(NORMAL_FOLDER) $(APP_INST_DIR)/$$i ; done
+ 	@for i in $(CREATE_DIRS) ; do $(INSTALL_DIR) -m $(NORMAL_FOLDER) $(APP_INST_DIR)/$$i ; done
 -	$(INSTALL_DIR) -m $(NORMAL_FOLDER) $(MAN_DIR)/man8
 +	$(INSTALL_DIR) $(MAN_DIR)/man8
  
  	@ echo "-> Installing scripts"
  	@for i in $(WEB_SCRIPT_FILES) ; do $(INSTALL) -m $(PHP_RIGHTS) $$i $(APP_INST_DIR)/$$i ; done
-@@ -395,6 +395,7 @@
+@@ -404,6 +404,7 @@
  
  	# Copy all the graphics...
  	@$(INSTALL) -m $(PHP_RIGHTS) shared/404_template/logo.png $(APP_INST_DIR)/shared/404_template/logo.png
