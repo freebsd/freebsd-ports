@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
 		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=	WebService::GData::Error.3 \
 	WebService::GData::ClientLogin.3 \

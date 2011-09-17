@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-libwww>=5.828:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.36:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Unicode::Encoding.3
 

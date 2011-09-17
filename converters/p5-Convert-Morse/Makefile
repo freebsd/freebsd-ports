@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to convert between ASCII and Morse codes
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Convert::Morse.3
 

@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PORTSCOUT=	skipv:0.100092
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::Credential::Remote.3 \

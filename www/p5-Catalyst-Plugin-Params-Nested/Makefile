@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand
 RUN_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand \
 		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Params::Nested.3 \
 	Catalyst::Plugin::Params::Nested::Expander.3

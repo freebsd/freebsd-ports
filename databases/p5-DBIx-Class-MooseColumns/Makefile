@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Moose>=1.24:${PORTSDIR}/devel/p5-Moose \
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=	\
 	DBIx::Class::MooseColumns.3 \

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7012:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/HTTP/Body.pm:${PORTSDIR}/www/p5-HTTP-Body
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Engine::HTTP::Prefork.3
 

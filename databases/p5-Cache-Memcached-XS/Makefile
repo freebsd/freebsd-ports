@@ -18,7 +18,7 @@ LIB_DEPENDS=	memcache.4:${PORTSDIR}/databases/libmemcache
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Cache::Memcached::XS.3

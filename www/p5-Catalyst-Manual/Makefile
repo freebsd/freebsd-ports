@@ -18,7 +18,7 @@ COMMENT=	The Catalyst developer\'s manual
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Manual.3 \
 		Catalyst::Manual::About.3 \

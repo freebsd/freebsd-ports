@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Cache-FastMmap>=1.29:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Session::Store::FastMmap.3
 

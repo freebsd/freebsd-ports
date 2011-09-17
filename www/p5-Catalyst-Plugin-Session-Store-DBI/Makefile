@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Se
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	5.8.2+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Session::Store::DBI.3
 

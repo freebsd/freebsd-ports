@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module implementing a portable chomp
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 MAN3=		Text::Chomp.3
 

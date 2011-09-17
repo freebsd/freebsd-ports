@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lite Pure Perl XML DOM Parser Kit
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
 
 MAN3=		XML::DOM::Lite.3 XML::DOM::Lite::Document.3 \
 		XML::DOM::Lite::NodeList.3 XML::DOM::Lite::Parser.3 \

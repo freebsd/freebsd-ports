@@ -14,6 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for STL-like object management
 
-PERL_CONFIGURE=	5.8.7+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

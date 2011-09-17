@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Groups a regular expressions collection
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		Regexp::RegGrp.3
 

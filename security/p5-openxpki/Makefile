@@ -285,7 +285,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::i18n.3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 USERS=	openxpki
 GROUPS=	openxpki

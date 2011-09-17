@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Model::LDAP::Entry.3 Catalyst::Model::LDAP::Search.3 \
 	Catalyst::Helper::Model::LDAP.3 Catalyst::Model::LDAP::Connection.3 \

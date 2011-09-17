@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-re
 		p5-Jifty>=0.60728:${PORTSDIR}/www/p5-Jifty \
 		p5-Text-Password-Pronounceable>=0:${PORTSDIR}/security/p5-Text-Password-Pronounceable
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
 
 MAN3=		CommitBit.3 \
 		CommitBit::Action::ConfirmEmail.3 \

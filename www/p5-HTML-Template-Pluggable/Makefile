@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-HTML-Template>=2.7:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template::Pluggable.3 \
 		HTML::Template::Plugin::Dot.3

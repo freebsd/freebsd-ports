@@ -23,7 +23,7 @@ USE_JAVA=       yes
 JAVA_VERSION=   1.5+
 JAVA_OS=        native
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	J2SDK=${JAVA_HOME} </dev/null
 
 MAN3=		Inline::Java.3 \

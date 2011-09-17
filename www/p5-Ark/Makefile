@@ -38,7 +38,7 @@ RUN_DEPENDS=	\
 	p5-Text-SimpleTable>=0.05:${PORTSDIR}/textproc/p5-Text-SimpleTable \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Ark::Command.3 \
 	Ark::Command::Controller.3 \

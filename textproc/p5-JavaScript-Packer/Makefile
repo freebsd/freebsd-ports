@@ -16,7 +16,7 @@ COMMENT=	Perl version of Dean Edwards' Packer.js
 
 RUN_DEPENDS=	p5-Regexp-RegGrp>=1.001.001:${PORTSDIR}/devel/p5-Regexp-RegGrp
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		JavaScript::Packer.3
 

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traces memory leaks
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::LeakTrace.3 \
 		Test::LeakTrace::JA.3 \

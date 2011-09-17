@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fast Perl client for memcached, a distributed memory cache daemon
 
-PERL_CONFIGURE=	5.8.2+
+PERL_CONFIGURE=	yes
 
 MAN3=	Cache::Memcached::Fast.3
 

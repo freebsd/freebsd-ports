@@ -40,7 +40,7 @@ BUILD_DEPENDS=	\
 	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN1=	instantcrud.pl.1
 MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \

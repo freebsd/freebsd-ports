@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		libcroco>=0.6:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 MAN3=	CSS::Croco.3\
 	CSS::Croco::Selector.3\
 	CSS::Croco::Statement.3\

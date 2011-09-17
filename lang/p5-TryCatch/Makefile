@@ -35,7 +35,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 OPTIONS=	AUTHOR "Include dependencies for AUTHORING" off
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		TryCatch.3
 

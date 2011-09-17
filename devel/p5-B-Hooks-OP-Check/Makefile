@@ -16,7 +16,7 @@ COMMENT=	Wrap OP check callbacks
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.302:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		B::Hooks::OP::Check.3
 

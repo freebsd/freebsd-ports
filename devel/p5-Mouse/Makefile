@@ -29,7 +29,7 @@ TEST_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	5.8.5+
+PERL_CONFIGURE=	yes
 
 MAN3=	Mouse.3 \
 	Mouse::Exporter.3 \

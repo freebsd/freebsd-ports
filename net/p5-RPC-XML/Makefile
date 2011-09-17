@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-XML-Parser>=2.31:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-libwww>=5.834:${PORTSDIR}/www/p5-libwww
 
 USE_GMAKE=	yes
-PERL_CONFIGURE=	5.8.9+	# Scalar::Util>=1.19
+PERL_CONFIGURE=	yes
 
 MAN1=		make_method.1
 MAN3=		Apache::RPC::Server.3 \

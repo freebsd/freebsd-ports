@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ensure that a platform has weaken support
 
-PERL_CONFIGURE=	5.8.5+
+PERL_CONFIGURE=	yes
 
 MAN3=	Task::Weaken.3
 

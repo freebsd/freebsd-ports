@@ -17,7 +17,7 @@ COMMENT=	Perl extension mainpulating XML based Visio files
 BUILD_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Visio.3 Visio::Hyperlink.3 Visio::Layout.3 Visio::Line.3 \
 		Visio::Master.3 Visio::Page.3 Visio::PageProps.3 \

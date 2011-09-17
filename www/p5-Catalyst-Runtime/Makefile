@@ -54,7 +54,7 @@ BUILD_DEPENDS+=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inh
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 MAN1=	catalyst.pl.1
 MAN3=	Catalyst.3 \

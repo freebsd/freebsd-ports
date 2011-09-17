@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheri
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.5+
+PERL_CONFIGURE=	yes
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \

@@ -17,7 +17,7 @@ COMMENT=	Simple configuration automation
 BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
 
 MAN3=	Config::YAML.3
 

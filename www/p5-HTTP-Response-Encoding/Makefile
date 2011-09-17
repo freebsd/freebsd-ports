@@ -17,7 +17,7 @@ COMMENT=	Adds encoding() to HTTP::Response
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Response::Encoding.3
 

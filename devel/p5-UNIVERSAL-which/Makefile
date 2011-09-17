@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for telling fully qualified name of the method
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 MAN3=		UNIVERSAL::which.3
 
 .include <bsd.port.mk>

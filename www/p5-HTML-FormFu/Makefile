@@ -50,7 +50,7 @@ BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPT
 		p5-libwww>=1.64:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Processor.3 \

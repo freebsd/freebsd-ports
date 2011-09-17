@@ -16,7 +16,7 @@ COMMENT=	A simple nested template engine for HTML, XML and XHTML
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
