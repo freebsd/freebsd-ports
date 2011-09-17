@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a 'smart' list of HTML links
 
-PERL_MODBUILD=	5.6.2+
+PERL_MODBUILD=	yes
 
 MAN3=	HTML::LinkList.3
 

@@ -17,7 +17,7 @@ COMMENT=	Easy external redirects in CGI::Application
 RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::Redirect.3
 

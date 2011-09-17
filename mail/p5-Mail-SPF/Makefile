@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-Mail-SPF-Query-[0-9]*
 
-PERL_MODBUILD=	5.6.0+
+PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 
 MAN1=		spfquery.1

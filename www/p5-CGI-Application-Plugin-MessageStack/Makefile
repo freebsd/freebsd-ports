@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 		${SITE_PERL}/CGI/Application/Plugin/TT.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-TT
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::MessageStack.3
 

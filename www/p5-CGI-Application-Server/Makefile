@@ -19,7 +19,7 @@ RUN_DEPENDS= p5-CGI-Application-Plugin-Redirect>=0:${PORTSDIR}/www/p5-CGI-Applic
 		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
 		p5-HTTP-Server-Simple-Static>=0.02:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Server.3
 

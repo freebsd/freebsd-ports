@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/RDF/Simple.pm:${PORTSDIR}/textproc/p5-RDF-Simple \
 		p5-Net-Flickr-API>=1.68:${PORTSDIR}/www/p5-Net-Flickr-API
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Net::Flickr::RDF.3
 

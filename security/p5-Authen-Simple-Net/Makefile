@@ -20,6 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::FTP.3 Authen::Simple::POP3.3 Authen::Simple::SMTP.3
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 .include <bsd.port.mk>

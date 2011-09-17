@@ -27,7 +27,7 @@ MAN3=	Authen::Simple.3 \
 	Authen::Simple::Log.3 \
 	Authen::Simple::Password.3
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 

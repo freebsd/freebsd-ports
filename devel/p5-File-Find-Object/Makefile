@@ -18,7 +18,7 @@ COMMENT=	An object oriented File::Find replacement
 RUN_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		File::Find::Object.3 \
 		File::Find::Object::Base.3 \

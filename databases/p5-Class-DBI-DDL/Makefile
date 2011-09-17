@@ -17,7 +17,7 @@ COMMENT=	DDL for Class-DBI
 RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Class::DBI::DDL.3 \
 		Class::DBI::DDL::Pg.3

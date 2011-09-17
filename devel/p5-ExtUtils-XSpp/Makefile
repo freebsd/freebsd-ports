@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-ExtUtils-ParseXS>=2.22.02:${PORTSDIR}/devel/p5-ExtUtils-ParseX
 		p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_MODBUILD=	5.6.1+
+PERL_MODBUILD=	yes
 
 MAN1=		xspp.1
 MAN3=		ExtUtils::XSpp.3 \

@@ -17,7 +17,7 @@ COMMENT=	Try to recover from people calling UNIVERSAL::isa as a function
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.6.2+
+PERL_MODBUILD=	yes
 
 MAN3=		UNIVERSAL::isa.3
 

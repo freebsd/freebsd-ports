@@ -22,7 +22,7 @@ MODULE_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWor
 RUN_DEPENDS+=	${MODULE_DEPENDS}
 BUILD_DEPENDS+=	${MODULE_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	KinoSearch.3 \
 	KinoSearch::Analysis::Analyzer.3 \

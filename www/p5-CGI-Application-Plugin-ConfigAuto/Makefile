@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		CGI::Application::Plugin::ConfigAuto.3
 

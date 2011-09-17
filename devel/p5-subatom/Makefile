@@ -18,7 +18,7 @@ COMMENT=	Produce an atom feed from subversion commits
 BUILD_DEPENDS=	${SITE_PERL}/XML/Atom/SimpleFeed.pm:${PORTSDIR}/textproc/p5-XML-Atom-SimpleFeed
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 PLIST_FILES=	bin/subatom
 
 MAN1=		subatom.1

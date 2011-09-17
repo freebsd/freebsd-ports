@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 		${SITE_PERL}/CGI/Application/Plugin/DevPopup.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-DevPopup
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::TT.3
 

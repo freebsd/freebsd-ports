@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Clas
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Exception::Class::DBI.3
 

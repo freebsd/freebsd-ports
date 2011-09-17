@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTTP/Server/Simple/Static.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Dispatch::Server.3
 
