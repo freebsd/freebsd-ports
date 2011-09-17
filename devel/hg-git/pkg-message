@@ -10,7 +10,7 @@ Mercurial global configuration file '~/.hgrc':
 bookmarks =
 hggit =
 
-The bookmarks section is not compulsory, but it makes some things a bit nicer.
-Bookmarks will be translated to git heads when pushing.
+The bookmarks section is only required prior to hg 1.7. Bookmarks will be
+translated to git heads when pushing.
 
 ====
