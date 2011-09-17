@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rxtx
-PORTVERSION=	2.1.7r2
-PORTREVISION=	7
+PORTVERSION=	2.2p2
 CATEGORIES=	comms java
-MASTER_SITES=	ftp://jarvi.dsl.frii.com/pub/rxtx/
+MASTER_SITES=	http://rxtx.qbang.org/pub/rxtx/ \
+		ftp://jarvi.dsl.frii.com/pub/rxtx/
 PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mirror176@cox.net
 COMMENT=	Native interface to serial ports in Java
 
 USE_ZIP=	yes

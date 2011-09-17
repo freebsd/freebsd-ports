@@ -1,4 +1,4 @@
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/comms/rxtx/files/patch-src-ParallelImp.c,v 1.1 2011-09-17 14:55:56 pawel Exp $
 
 --- src/ParallelImp.c.orig	Fri Apr  9 23:31:09 2004
 +++ src/ParallelImp.c	Fri Apr  9 23:35:01 2004
