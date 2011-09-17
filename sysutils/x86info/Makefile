@@ -24,6 +24,7 @@ LICENSE=	GPLv2
 ALL_TARGET=	x86info lsmsr
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/x86info bin/lsmsr
+MAKE_JOBS_SAFE=	yes
 MAN1=	x86info.1
 MAN8=	lsmsr.8
 
