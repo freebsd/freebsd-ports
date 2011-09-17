@@ -205,6 +205,7 @@ R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
+R-cran-RFinanceYJ               ports/finance/R-cran-RFinanceYJ
 R-cran-RJSONIO                  ports/converters/R-cran-RJSONIO
 R-cran-RMySQL                   ports/databases/R-cran-RMySQL
 R-cran-ROAuth                   ports/security/R-cran-ROAuth
@@ -8871,6 +8872,7 @@ m17n-im-config                  ports/textproc/m17n-im-config
 m17n-lib                        ports/devel/m17n-lib
 m2000                           ports/emulators/m2000
 m2tstoavi                       ports/multimedia/m2tstoavi
+m2vrequantiser                  ports/multimedia/m2vrequantiser
 m6811-binutils                  ports/devel/m6811-binutils
 m68k-rtems-binutils             ports/devel/m68k-rtems-binutils
 m68k-rtems-gcc                  ports/devel/m68k-rtems-gcc
@@ -22841,6 +22843,7 @@ r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcolorbrewer             ports/graphics/R-cran-RColorBrewer
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
+r-cran-rfinanceyj               ports/finance/R-cran-RFinanceYJ
 r-cran-rjsonio                  ports/converters/R-cran-RJSONIO
 r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-roauth                   ports/security/R-cran-ROAuth
@@ -23765,6 +23768,7 @@ rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-ogginfo                 ports/audio/rubygem-ogginfo
 rubygem-ohai                    ports/sysutils/rubygem-ohai
 rubygem-ohcount                 ports/misc/rubygem-ohcount
+rubygem-open-uri-cached         ports/net/rubygem-open-uri-cached
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-opengl                  ports/graphics/rubygem-opengl
 rubygem-openid                  ports/net/rubygem-openid
@@ -24171,6 +24175,7 @@ sdparm                          ports/sysutils/sdparm
 sdts++                          ports/devel/sdts++
 sea-defender                    ports/games/sea-defender
 seabattle                       ports/games/seabattle
+seabios-devel                   ports/emulators/seabios-devel
 seahaven                        ports/games/seahaven
 seahorse                        ports/security/seahorse
 seahorse-plugins                ports/security/seahorse-plugins
