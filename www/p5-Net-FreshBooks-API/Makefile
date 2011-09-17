@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FreshBooks-API
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,7 @@ PERL_MODBUILD=	yes
 MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Base.3 \
 		Net::FreshBooks::API::Client.3 \
+		Net::FreshBooks::API::Client::Contact.3 \
 		Net::FreshBooks::API::Estimate.3 \
 		Net::FreshBooks::API::Gateway.3 \
 		Net::FreshBooks::API::Invoice.3 \
@@ -60,6 +61,7 @@ BUILD_DEPENDS+=	p5-Module-Build>=0.3601:${PORTSDIR}/devel/p5-Module-Build
 
 .if ${PERL_LEVEL} < 501400
 RUN_DEPENDS+=	p5-parent>=0.224:${PORTSDIR}/devel/p5-parent
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
