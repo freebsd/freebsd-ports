@@ -333,33 +333,11 @@ CONFIGURE_ARGS+=	--enable-odk
 CONFIGURE_ARGS+=	--disable-odk
 .endif
 
-EMPTYDIRS=	libreoffice/share/uno_packages/cache \
-		libreoffice/share/prereg \
-		libreoffice/basis3.4/program/plugin \
-		libreoffice/basis3.4/program/addin \
-		libreoffice/basis3.4/presets/wordbook \
-		libreoffice/basis3.4/presets/uno_packages/cache \
-		libreoffice/basis3.4/presets/template \
-		libreoffice/basis3.4/presets/temp \
-		libreoffice/basis3.4/presets/store \
-		libreoffice/basis3.4/presets/psprint/fontmetric \
-		libreoffice/basis3.4/presets/psprint/driver \
-		libreoffice/basis3.4/presets/Scripts \
-		libreoffice/basis3.4/presets/autocorr \
-		libreoffice/basis3.4/presets/backup
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-dbgutil \
 			--enable-verbose \
 			--enable-crashdump
-.endif
-
-.for LANG in ${LOCALIZED_LANG}
-EMPTYDIRS+=	libreoffice/basis3.4/share/samples/${LANG}
-.endfor
-.if !defined(LOCALIZED_LANG)
-EMPTYDIRS+=	libreoffice/basis3.4/share/samples/en-US
 .endif
 
 .include <bsd.port.pre.mk>
@@ -413,17 +391,23 @@ post-configure:
 
 post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
-	@for dir in ${EMPTYDIRS}; do ${TOUCH} ${LODESTDIR}/${PREFIX}/lib/$$dir/.keep; done
+	# It seems that the empty directories are necessary for libreoffice keep them for now
+	@find ${LODESTDIR}/${PREFIX}/lib -type d -empty -exec ${TOUCH} {}/.keep \;
 
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 
-.for subdir in application-registry applications icons mime mime-info mimelnk
+.for subdir in applications icons mime mime-info mimelnk
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
 		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
 .endfor
-
+# do not add the subdir itself as dirrmtry
+.for subdir in application-registry mime-info
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir}/* -type d \
+		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
+.endfor
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
 #Fix .desktop files
