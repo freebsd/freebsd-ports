@@ -219,6 +219,7 @@
     SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += msdl
+    SUBDIR += mxflib
     SUBDIR += mythplugin-mythvideo
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
