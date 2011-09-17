@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN1=		tablify.1 tabmerge.1 tab2graph.1
 MAN3=		Text::RecordParser.3 \

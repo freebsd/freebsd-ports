@@ -20,6 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::LDAP.3 Authen::Simple::ActiveDirectory.3
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 .include <bsd.port.mk>

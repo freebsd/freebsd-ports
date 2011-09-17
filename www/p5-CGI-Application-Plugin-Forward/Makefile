@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 		${SITE_PERL}/CGI/Application/Plugin/AutoRunmode.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-AutoRunmode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::Forward.3
 

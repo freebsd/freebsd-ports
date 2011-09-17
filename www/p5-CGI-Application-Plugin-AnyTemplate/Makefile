@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application 
 		${SITE_PERL}/CGI/Application/Plugin/Forward.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Forward
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=	CGI::Application::Plugin::AnyTemplate.3 \
 	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplate.3 \

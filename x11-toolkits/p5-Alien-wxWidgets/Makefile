@@ -20,7 +20,7 @@ OPTIONS=	UNICODE "Build with Unicode support"    on
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-PERL_MODBUILD=	5.6.0+
+PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 

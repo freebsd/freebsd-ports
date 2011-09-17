@@ -22,6 +22,6 @@ MAKE_JOBS_SAFE=  yes
 
 MAN3=	Authen::Simple::HTTP.3
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 .include <bsd.port.mk>

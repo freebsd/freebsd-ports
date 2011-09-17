@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Graphics-ColorNames>=0.32:${PORTSDIR}/graphics/p5-Graphics-Color
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Graphics::ColorNames::CSS.3 \
 		Graphics::ColorNames::IE.3 \

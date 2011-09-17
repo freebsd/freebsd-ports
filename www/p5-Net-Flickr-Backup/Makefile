@@ -25,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sys/Hostname/FQDN.pm:${PORTSDIR}/sysutils
 		p5-libwww>=5.812:${PORTSDIR}/www/libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Net::Flickr::Backup.3
 
