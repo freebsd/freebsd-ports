@@ -14,7 +14,7 @@ DISTNAME=	com.horstmann.violet-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Violet is a very easy to learn and use UML editor
 
 USE_JAVA=	yes

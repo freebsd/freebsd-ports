@@ -12,7 +12,7 @@ MASTER_SITES=	https://opensource.conformal.com/snapshots/xxxterm/ \
 		SF/xxxterm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \

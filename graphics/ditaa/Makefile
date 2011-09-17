@@ -11,7 +11,7 @@ CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Convert ascii-art diagrams into proper bitmap graphics
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Simple sh script to make zfs rolling snaphosts with cron
 
 NO_BUILD=	yes

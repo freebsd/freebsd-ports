@@ -11,7 +11,7 @@ PORTVERSION=	2.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
 
 CONFLICTS=	libglut-[0-9].*

@@ -12,7 +12,7 @@ MASTER_SITES=	http://dev.lshift.net/paul/mercurial-server/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${SNAME}_${SVERSION}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Software for hosting mercurial repositories
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial

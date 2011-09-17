@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	A simple perl script to generate Diceware dictionaries for passwords
 
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell

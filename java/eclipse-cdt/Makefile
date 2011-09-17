@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=tools/${PLUGIN}/releases/${ECLIPSE_CODENAME}/dist
 DISTNAME=	${PLUGIN}-master-${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
