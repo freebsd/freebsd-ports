@@ -311,6 +311,7 @@
     SUBDIR += it-hyphen
     SUBDIR += it-ispell
     SUBDIR += it-mythes
+    SUBDIR += itstool
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
     SUBDIR += jakarta-poi

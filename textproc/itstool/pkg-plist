@@ -1,0 +1,8 @@
+bin/itstool
+%%DATADIR%%/its/docbook.its
+%%DATADIR%%/its/its.its
+%%DATADIR%%/its/mallard.its
+%%DATADIR%%/its/ttml.its
+%%DATADIR%%/its/xhtml.its
+@dirrm %%DATADIR%%/its
+@dirrm %%DATADIR%%
