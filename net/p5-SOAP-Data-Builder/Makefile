@@ -17,7 +17,7 @@ COMMENT=	A wrapper simplifying SOAP::Data and SOAP::Serialiser
 BUILD_DEPENDS=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	SOAP::Data::Builder.3 SOAP::Data::Builder::Element.3
 

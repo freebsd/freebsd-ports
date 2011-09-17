@@ -17,7 +17,7 @@ COMMENT=	Modification of UTF-7 encoding for IMAP
 BUILD_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Encode::IMAPUTF7.3
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Instal
 		p5-DBIx-Class>=0.07005:${PORTSDIR}/databases/p5-DBIx-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::Validation.3
 

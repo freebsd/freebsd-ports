@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		flv2mp3.1 flvinfo.1 swf2flv.1 flv2swf.1 flv2flv.1
 MAN3=		FLV::File.3 \

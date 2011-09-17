@@ -17,7 +17,7 @@ COMMENT=	Perl extension for sorting IPv4 addresses
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sort/Key.pm:${PORTSDIR}/devel/p5-Sort-Key
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sort/Key.pm:${PORTSDIR}/devel/p5-Sort-Key
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Sort::Key::IPv4.3
 

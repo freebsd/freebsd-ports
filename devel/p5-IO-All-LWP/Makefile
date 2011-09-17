@@ -18,7 +18,7 @@ COMMENT=	IO::All interface to LWP
 RUN_DEPENDS=	p5-IO-All>=0.30:${PORTSDIR}/devel/p5-IO-All \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		IO::All::FTP.3 \
 		IO::All::HTTP.3 \

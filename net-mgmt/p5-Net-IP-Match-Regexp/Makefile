@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Efficiently match IP addresses against IP ranges via regexp
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::IP::Match::Regexp.3
 

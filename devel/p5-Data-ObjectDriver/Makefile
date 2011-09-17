@@ -22,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Text/SimpleTable.pm:${PORTSDIR}/textproc/p5-Text-SimpleTable
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Driver::BaseCache.3 \

@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-HTML-Parser>=2:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>=3:${PORTSDIR}/www/p5-HTML-Tagset
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Truncate.3
 

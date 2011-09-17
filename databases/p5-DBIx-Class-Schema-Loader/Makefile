@@ -62,7 +62,7 @@ USE_PGSQL=	yes
 RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	dbicdump.1
 MAN3=	DBIx::Class::Schema::Loader.3 \

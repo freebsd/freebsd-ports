@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Module for reading tags of MP3 audio files
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		audio_rename.1 typeset_audio_dir.1 mp3info2.1
 MAN3=		MP3::Tag.3 MP3::Tag::ID3v1.3 MP3::Tag::File.3 \

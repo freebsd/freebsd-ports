@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A Perl5 backend for fix subtitles timing
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	subs.1
 MAN3=	Subtitles.3

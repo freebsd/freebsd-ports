@@ -17,7 +17,7 @@ COMMENT=	Associate user-defined magic to variables from Perl
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Variable::Magic.3
 

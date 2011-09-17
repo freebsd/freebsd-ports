@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Rose-DB>=0.753,1:${PORTSDIR}/databases/p5-Rose-DB \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 OPTIONS=	FAST_CLONE	"use Scalar::Util::Clone (requires perl5.8+)"	off
 

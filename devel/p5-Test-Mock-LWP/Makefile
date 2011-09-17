@@ -16,7 +16,7 @@ COMMENT=	Easy mocking of LWP packages
 
 RUN_DEPENDS=	p5-Test-MockObject>=1.08:${PORTSDIR}/devel/p5-Test-MockObject
 
-PERL_CONFIGURE=	5.6.2+
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::Mock::HTTP::Request.3 \
 		Test::Mock::HTTP::Response.3 \

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Plugin::I18N.3 \
 		Catalyst::Plugin::I18N::Manual.3

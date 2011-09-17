@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Log-Any-Adapter>=0:${PORTSDIR}/devel/p5-Log-Any-Adapter \
 		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.4.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Log::Any::Adapter::Syslog.3
 

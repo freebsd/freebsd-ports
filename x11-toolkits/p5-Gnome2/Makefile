@@ -29,7 +29,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 		${SITE_PERL}/${PERL_ARCH}/Gnome2/Canvas.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2-Canvas
 
 USE_GNOME=	libgnomeui libgnome libbonoboui
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \

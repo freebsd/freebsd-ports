@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/Jabber.pm:${PORTSDIR}/net-im/p5-Net-Jabber
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+	# Inherited from net-im/p5-Net-Jabber
+PERL_CONFIGURE=	yes
 
 MAN3=		Jabber::SimpleSend.3
 

@@ -25,7 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::Getopt.3 \
 	MooseX::Getopt::Basic.3 \

@@ -16,7 +16,7 @@ COMMENT=	Provides Moose-like method modifiers
 
 BUILD_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Class::Method::Modifiers.3
 

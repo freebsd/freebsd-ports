@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=	tidyp:${PORTSDIR}/textproc/tidyp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Tidy.3 HTML::Tidy::Message.3
 

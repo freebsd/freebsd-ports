@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server
 		${SITE_PERL}/IO/Tee.pm:${PORTSDIR}/devel/p5-IO-Tee
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	HTTP::Server::Simple::Recorder.3
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 MAN3=	Module::Install::Template.3
 
 .include <bsd.port.mk>

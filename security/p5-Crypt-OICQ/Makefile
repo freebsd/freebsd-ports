@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Cryptographic algorithm used by OICQ protocol
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OICQ.3
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Storage.3 \
 		MooseX::Storage::Base::WithChecksum.3 \

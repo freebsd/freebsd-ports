@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80008:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Static::Simple.3
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-vi
 		${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		IO::Digest.3
 

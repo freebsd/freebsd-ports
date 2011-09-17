@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch info from MPEG-4 files
 
-PERL_CONFIGURE=	5.7.3+	#inherited from p5-Encode
+PERL_CONFIGURE=	yes
 
 MAN3=	MP4::Info.3
 

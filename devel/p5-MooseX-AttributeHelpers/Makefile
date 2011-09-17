@@ -17,7 +17,7 @@ COMMENT=	Extend your attribute interfaces
 BUILD_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::AttributeHelpers.3 \
 	MooseX::AttributeHelpers::Bool.3 \

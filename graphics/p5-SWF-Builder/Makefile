@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/SWF/Element.pm:${PORTSDIR}/graphics/p5-SWF-File \
 		${SITE_PERL}/Font/TTF/Font.pm:${PORTSDIR}/x11-fonts/p5-Font-TTF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		SWF::Builder.3 SWF::Builder::ActionScript.3 \
 		SWF::Builder::Character::Bitmap.3 \

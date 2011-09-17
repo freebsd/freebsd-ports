@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+	# inherited from dependency upon utf8.pm
+PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Google::News::TW.3
 

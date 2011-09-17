@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/${PERL_ARCH}/Sort/Key.pm:${PORTSDIR}/devel/p5-Sort-Key
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Attributes.3 \

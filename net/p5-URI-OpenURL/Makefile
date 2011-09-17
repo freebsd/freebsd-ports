@@ -19,6 +19,6 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	URI::OpenURL.3
 
-PERL_CONFIGURE=	5.8.0+	# uses the utf8 pragma
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

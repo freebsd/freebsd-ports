@@ -24,7 +24,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Module/CPANTS/Analyse.pm:${PORTSDIR}/devel/p5-Module-
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature
 
-PERL_CONFIGURE=	5.6.2+
+PERL_CONFIGURE=	yes
 PERL_MODBUILD=	yes
 
 MAN3=		Test::Kwalitee.3

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 PERL_MODBUILD=yes
 
 MAN3=	Gravatar::URL.3 Unicornify::URL.3

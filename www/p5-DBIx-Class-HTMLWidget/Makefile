@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \
 		p5-DBIx-Class>=0.05:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::HTMLWidget.3
 

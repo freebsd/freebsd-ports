@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	Perl implementation of the XML::Mini XML create/parse interface
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	XML::Mini.3 XML::Mini::Document.3 XML::Mini::Element.3 \
 	XML::Mini::Element::CData.3 XML::Mini::Element::Comment.3 \

@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 		p5-Moose>=0.42:${PORTSDIR}/devel/p5-Moose \
 		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Moose::Autobox.3 \
 	Moose::Autobox::Array.3 \

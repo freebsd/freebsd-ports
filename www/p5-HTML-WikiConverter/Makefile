@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-I
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		html2wiki.1
 MAN3=		HTML::WikiConverter.3 HTML::WikiConverter::Dialects.3 \

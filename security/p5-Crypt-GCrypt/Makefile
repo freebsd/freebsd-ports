@@ -17,7 +17,7 @@ COMMENT=	Perl interface to the GNU Cryptographic library
 
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 		GCRYPTINCPATH=${LOCALBASE}/include
 

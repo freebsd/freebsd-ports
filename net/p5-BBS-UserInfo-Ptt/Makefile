@@ -17,7 +17,7 @@ COMMENT=	Get user information of PTT-style BBS
 
 RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 
-PERL_CONFIGURE=	5.8.0+	# Inherited from lang/p5-Expect
+PERL_CONFIGURE=	yes
 
 MAN3=		BBS::UserInfo::Ptt.3
 

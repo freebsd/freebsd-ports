@@ -17,7 +17,7 @@ COMMENT=	Adds syntactic sugar to skip the fancy objects
 BUILD_DEPENDS=	p5-DBIx-Class>=0.04001:${PORTSDIR}/databases/p5-DBIx-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::ResultSet::HashRef.3
 

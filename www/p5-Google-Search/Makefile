@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Try-Tiny>=0.07:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Google::Search.3 Google::Search::Result.3
 

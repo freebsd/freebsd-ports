@@ -17,7 +17,7 @@ COMMENT=	Easy creation of command line Atom processing tools
 RUN_DEPENDS=	${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	XML::Atom::Filter.3
 

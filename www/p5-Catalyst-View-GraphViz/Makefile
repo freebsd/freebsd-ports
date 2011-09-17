@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Plugin/SubRequest.pm:${PORTSDIR}/www/p5-Cat
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Helper::View::GraphView.3 \
 	Catalyst::Helper::View::GraphViz.3 \

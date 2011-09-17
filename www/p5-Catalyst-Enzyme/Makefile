@@ -36,7 +36,7 @@ BUILD_DEPENDS=	\
 	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Enzyme.3 \
 	Catalyst::Enzyme::CRUD::Controller.3 \

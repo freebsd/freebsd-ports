@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0.08:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-Throwable>=0.100090:${PORTSDIR}/devel/p5-Throwable
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Email::Sender.3 \
 	Email::Sender::Failure.3 \

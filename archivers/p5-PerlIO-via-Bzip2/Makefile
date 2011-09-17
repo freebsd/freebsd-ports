@@ -17,7 +17,7 @@ COMMENT=	Perl extension to provide a PerlIO layer to bzip2/bunzip2
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Bzip2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		PerlIO::via::Bzip2.3
 

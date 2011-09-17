@@ -17,7 +17,7 @@ COMMENT=	Perl interface to Peter Guttman cryptlib API
 
 LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		PerlCryptLib.3
 

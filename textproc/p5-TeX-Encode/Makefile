@@ -20,6 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Pa
 
 MAN3=	TeX::Encode.3
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

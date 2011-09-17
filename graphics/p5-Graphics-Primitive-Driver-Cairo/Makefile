@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Cairo>=1.061:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Text-Flow>=0.01:${PORTSDIR}/textproc/p5-Text-Flow
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE= 5.8.0+
+PERL_CONFIGURE= yes
 
 MAN3=		Graphics::Primitive::Driver::Cairo.3 \
   		Graphics::Primitive::Driver::Cairo::TextLayout.3

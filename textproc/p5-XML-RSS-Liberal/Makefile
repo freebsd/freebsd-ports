@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Liberal.pm:${PORTSDIR}/textproc/p5-XML-Liberal	\
 		${SITE_PERL}/XML/RSS/LibXML.pm:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.7.3+	# inherited from textprocs/p5-XML-RSS-LibXML
+PERL_CONFIGURE=	yes
 
 MAN3=		XML::RSS::Liberal.3
 

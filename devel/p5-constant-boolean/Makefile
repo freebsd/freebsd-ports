@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Define TRUE and FALSE constants.
 
-PERL_CONFIGURE=	5.6+
+PERL_CONFIGURE=	yes
 MAN3=	constant::boolean.3
 
 .include <bsd.port.mk>

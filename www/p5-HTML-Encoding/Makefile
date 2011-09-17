@@ -18,7 +18,7 @@ COMMENT=	Determine the encoding of HTML/XML/XHTML documents
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	HTML::Encoding.3
 

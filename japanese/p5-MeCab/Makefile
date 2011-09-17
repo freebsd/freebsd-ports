@@ -16,7 +16,7 @@ COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

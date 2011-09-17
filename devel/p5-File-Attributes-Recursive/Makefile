@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-
 		${SITE_PERL}/File/Attributes.pm:${PORTSDIR}/devel/p5-File-Attributes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	File::Attributes::Recursive.3
 

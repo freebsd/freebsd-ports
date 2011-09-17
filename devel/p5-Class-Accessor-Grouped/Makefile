@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Class-XSAccessor>=1.11:${PORTSDIR}/devel/p5-Class-XSAccessor
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Class::Accessor::Grouped.3
 

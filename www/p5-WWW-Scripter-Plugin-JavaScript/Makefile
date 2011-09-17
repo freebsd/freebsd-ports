@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-WWW-Scripter>0:${PORTSDIR}/www/p5-WWW-Scripter \
 		p5-JE>0:${PORTSDIR}/www/p5-JE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Scripter::Plugin::JavaScript.3 \
 		WWW::Scripter::Plugin::JavaScript::JE.3

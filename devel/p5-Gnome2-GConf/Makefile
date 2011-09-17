@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-De
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/CodeGen.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 USE_GNOME=	gconf2
 MAKE_JOBS_UNSAFE=	yes
 
