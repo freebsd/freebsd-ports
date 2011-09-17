@@ -11,6 +11,7 @@
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
+    SUBDIR += R-cran-deldir
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-mvtnorm
