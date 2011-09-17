@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.3-alpha
+DISTVERSION=	0.2.3.4-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -73,7 +73,7 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
-(${OSVERSION} >= 900003) ) && !defined(USE_GCC)
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
 
