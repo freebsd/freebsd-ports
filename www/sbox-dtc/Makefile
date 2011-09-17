@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 
-MAINTAINER=	aldis@BSDroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	A CGI wrapper for Web site hosting services to safely grant CGI
 
 SBOX_UIDMIN?=	1000

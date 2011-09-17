@@ -10,7 +10,7 @@ PORTVERSION=	1.69.32
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
