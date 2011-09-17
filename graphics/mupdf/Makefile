@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	0.8.165
-PORTREVISION=	3
+PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -15,6 +14,9 @@ EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -28,9 +30,6 @@ USE_GNOME=	pkgconfig
 MAN1=		mupdf.1 mu_pdfclean.1 mu_pdfdraw.1 mu_pdfshow.1
 
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	SCROLL	"Build with scroll hacks" on \
 
