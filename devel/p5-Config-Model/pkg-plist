@@ -3,7 +3,6 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Annotation.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
-%%SITE_PERL%%/Config/Model/AutoRead.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Control.pm
@@ -15,6 +14,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Backend/PlainFile.pm
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
+%%SITE_PERL%%/Config/Model/BackendMgr.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Cookbook/CreateModelFromDoc.pod
 %%SITE_PERL%%/Config/Model/Debian/Dependency.pm
