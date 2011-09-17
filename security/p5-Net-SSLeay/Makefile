@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SSLeay
-PORTVERSION=	1.36
+PORTVERSION=	1.38
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,9 @@ MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${EXAMPLESDIR}/req.conf
 .endif
