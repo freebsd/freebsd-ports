@@ -4,13 +4,13 @@ web GUI for admin and accounting all hosting services, DTC can delegate the
 task of creating subdomains, email, and FTP accounts to users for the domain
 names they own. DTC manages a MySQL database containing all the hosting
 informations. It has support for many programs (bind 8 and 9 and
-compatibles, MySQL, Apache 1.3, php4, qmail, postfix 2, courier, dovecot,
+compatibles, MySQL, Apache, php, qmail, postfix 2, courier, dovecot,
 proftpd, webalizer, mod-log-sql, etc...) thrue config files and/or MySQL
 plugin (when service is non-critical). It can also generates backup scripts,
 calculation scripts, and config files using a single system UID/GID, and
 monitor all trafic accounting per user and per service. Since version 0.12,
-DTC is fully skinable and translated in 7 language (Chinese, English,
-Spanish, French, Deuch, German and Russian).
+DTC is fully skinable and translated in many languages (including: Chinese,
+English, Spanish, French, Deuch, German and Russian, etc.).
 
 WWW: http://www.gplhost.com/software-dtc.html
 
