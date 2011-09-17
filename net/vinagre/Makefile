@@ -8,6 +8,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	2.30.3
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +19,7 @@ COMMENT=	VNC client for the GNOME Desktop
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
     		avahi-core.7:${PORTSDIR}/net/avahi-app \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
+		gdbm.4:${PORTSDIR}/databases/gdbm \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
 USE_BZIP2=	yes
@@ -29,8 +31,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-avahi --enable-applet -enable-ssh
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	vinagre.schemas
 
