@@ -20,6 +20,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
+DEPRECATED=	Upstream support dropped. Please consider using databases/percona-toolkit
+EXPIRATION_DATE=	2011-11-01
+
 PERL_CONFIGURE=	yes
 
 MAN1=	maatkit.1p \
