@@ -17,7 +17,8 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
+BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
+RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
