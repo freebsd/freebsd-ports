@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110917:
+  AFFECTS: users of misc/tvbrowser
+  AUTHOR: lme@FreeBSD.org
+
+  From version 3.0.2 on TV-Browser doesn't include any plugins any longer. You
+  are supposed to download the plugins manually, this also means that you need
+  to download the apropriate channel sources plugin for your country. After
+  installing it your prevously configured channels are visible again. To do so,
+  select "Tools -> Install / Update Plugins..." and choose the plugins you need.
+
 20110915:
   AFFECTS: users of dns/unbound
   AUTHOR: sem@FreeBSD.org

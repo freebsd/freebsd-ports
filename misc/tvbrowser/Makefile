@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tvbrowser
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}/TV-Browser%20Releases%20%28Java%206%20and%20higher%29/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_bin
@@ -25,12 +25,12 @@ DESKTOP_ENTRIES="TV-Browser" \
 		"A digital TV guide" \
 		"${DATADIR}/imgs/tvbrowser128.png" \
 		"tvbrowser" \
-		"Application;TV;" \
-		false
+		"Application;Video;AudioVideo;TV" \
+		true
 
 do-install:
-	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \;
-	cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${PREFIX}/bin
+	@cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \;
+	@cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -57,36 +57,17 @@ bin/tvbrowser
 %%DATADIR%%/imgs/tvbrowser32.png
 %%DATADIR%%/imgs/tvbrowser48.png
 %%DATADIR%%/linux.properties
-%%DATADIR%%/plugins/BlogThisPlugin.jar
-%%DATADIR%%/plugins/CalendarExportPlugin.jar
-%%DATADIR%%/plugins/CapturePlugin.jar
-%%DATADIR%%/plugins/ClipboardPlugin.jar
-%%DATADIR%%/plugins/DreamboxDataService.jar
-%%DATADIR%%/plugins/EMailPlugin.jar
-%%DATADIR%%/plugins/GenrePlugin.jar
-%%DATADIR%%/plugins/GrowlPlugin.jar
-%%DATADIR%%/plugins/I18NPlugin.jar
 %%DATADIR%%/plugins/KNotifyPlugin.jar
-%%DATADIR%%/plugins/ListViewPlugin.jar
 %%DATADIR%%/plugins/NewsPlugin.jar
-%%DATADIR%%/plugins/PrintPlugin.jar
-%%DATADIR%%/plugins/ProgramListPlugin.jar
-%%DATADIR%%/plugins/RadioTimesDataService.jar
-%%DATADIR%%/plugins/SchedulesDirectDataService.jar
-%%DATADIR%%/plugins/SimpleMarkerPlugin.jar
-%%DATADIR%%/plugins/SweDBTvDataService.jar
-%%DATADIR%%/plugins/TVRaterPlugin.jar
-%%DATADIR%%/plugins/TvBrowserDataService.jar
-%%DATADIR%%/plugins/WebPlugin.jar
 %%DATADIR%%/themepacks/themepack.zip
 %%DATADIR%%/tvbrowser.desktop
 %%DATADIR%%/tvbrowser.jar
 %%DATADIR%%/tvbrowser.sh
 %%DATADIR%%/website.url
 %%DATADIR%%/wiki.url
-@dirrm %%DATADIR%%/themepacks
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/imgs
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/hyphen
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/themepacks
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/imgs
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/hyphen
+@dirrmtry %%DATADIR%%
