@@ -65,6 +65,7 @@
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
+    SUBDIR += ckpass
     SUBDIR += cksfv
     SUBDIR += cl-md5
     SUBDIR += cl-md5-clisp
