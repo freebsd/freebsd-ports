@@ -245,6 +245,7 @@
     SUBDIR += libgpg-error
     SUBDIR += libgringotts
     SUBDIR += libident
+    SUBDIR += libkpass
     SUBDIR += libksba
     SUBDIR += libmcrypt
     SUBDIR += libntlm
