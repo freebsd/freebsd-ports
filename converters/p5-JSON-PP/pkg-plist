@@ -1,4 +1,5 @@
-bin/json_pp
+%%BIN_JSON_PP%%bin/json_pp
+bin/p5json_pp
 %%SITE_PERL%%/JSON/PP.pm
 %%SITE_PERL%%/JSON/PP/Boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/PP/.packlist
