@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	Config::Model
 # Date created:			Jan 29, 2007
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.254
+PORTVERSION=	1.256
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -46,7 +45,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::Annotation.3 \
 		Config::Model::AnyId.3 \
 		Config::Model::AnyThing.3 \
-		Config::Model::AutoRead.3 \
 		Config::Model::Backend::Any.3 \
 		Config::Model::Backend::Debian::Dpkg.3 \
 		Config::Model::Backend::Debian::Dpkg::Control.3 \
@@ -58,6 +56,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Backend::PlainFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
+		Config::Model::BackendMgr.3 \
 		Config::Model::CheckList.3 \
 		Config::Model::Cookbook::CreateModelFromDoc.3 \
 		Config::Model::Debian::Dependency.3 \
