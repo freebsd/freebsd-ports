@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/astyle/build/gcc
 
 pre-patch:
 	${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,^.../\*,/*,' ${WRKDIR}/astyle/src/ASLocalizer.cpp
 
 PLIST_FILES=	bin/astyle
 .if !defined(NOPORTDOCS)
