@@ -17,7 +17,7 @@ COMMENT=	Query the properties/capabilities of filehandle
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
-PERL_MODBUILD=	5.8.3+	# Exporter>=5.57
+PERL_MODBUILD=	yes
 
 MAN3=		PerlIO::Layers.3
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-XML>=0:${PORTSDIR}/textproc/p5-POE-Filter-XML
 
-PERL_MODBUILD=	5.8.8+	# required by vendor
+PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	</dev/null
 
 PORTEXAMPLES=	*

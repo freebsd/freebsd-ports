@@ -17,7 +17,7 @@ COMMENT=	Handle column encodings
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
 
-PERL_MODBUILD=	5.8.1+
+PERL_MODBUILD=	yes
 
 MAN3=	DBIx::Class::EncodeColumns.3
 

@@ -18,7 +18,7 @@ COMMENT=	Automatic digest columns
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.1+
+PERL_MODBUILD=	yes
 
 MAN3=	DBIx::Class::DigestColumns.3
 

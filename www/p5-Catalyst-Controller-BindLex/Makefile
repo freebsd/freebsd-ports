@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Test/use/ok.pm:${PORTSDIR}/devel/p5-Test-use-ok
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.1+
+PERL_MODBUILD=	yes
 
 MAN3=	Catalyst::Controller::BindLex.3
 

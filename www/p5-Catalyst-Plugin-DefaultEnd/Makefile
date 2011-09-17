@@ -17,7 +17,7 @@ COMMENT=	Sensible default end action
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.2000:${PORTSDIR}/www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.1+
+PERL_MODBUILD=	yes
 
 MAN3=	Catalyst::Plugin::DefaultEnd.3
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-XML-Atom>=0.37:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-Net-Google-AuthSub>=0:${PORTSDIR}/net/p5-Net-Google-AuthSub
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.5+	# inherited from textproc/p5-XML-Atom
+PERL_MODBUILD=	yes
 
 MAN3=		Net::Google::Calendar.3 Net::Google::Calendar::Base.3 \
 		Net::Google::Calendar::Calendar.3 Net::Google::Calendar::Comments.3 \
