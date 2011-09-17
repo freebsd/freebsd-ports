@@ -13,6 +13,7 @@ lib/devede/devede_loadsave.py
 lib/devede/devede_main.py
 lib/devede/devede_newfiles.py
 lib/devede/devede_other.py
+lib/devede/devede_settings.py
 lib/devede/devede_subtitles.py
 lib/devede/devede_title_properties.py
 lib/devede/devede_video_convert.py
@@ -38,6 +39,7 @@ share/applications/devede.desktop
 %%DATADIR%%/icon_svcd.png
 %%DATADIR%%/icon_vcd.png
 %%DATADIR%%/languages.lst
+%%DATADIR%%/settings.ui
 %%DATADIR%%/silence.ogg
 %%DATADIR%%/waborted_dialog.ui
 %%DATADIR%%/wcancel_dialog.ui
