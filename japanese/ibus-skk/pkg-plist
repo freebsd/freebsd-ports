@@ -14,9 +14,15 @@ share/ibus/component/skk.xml
 %%DATADIR%%/engine/main.py
 %%DATADIR%%/engine/main.pyc
 %%DATADIR%%/engine/main.pyo
+%%DATADIR%%/engine/nicola.py
+%%DATADIR%%/engine/nicola.pyc
+%%DATADIR%%/engine/nicola.pyo
 %%DATADIR%%/engine/skk.py
 %%DATADIR%%/engine/skk.pyc
 %%DATADIR%%/engine/skk.pyo
+%%DATADIR%%/engine/virtkbd.py
+%%DATADIR%%/engine/virtkbd.pyc
+%%DATADIR%%/engine/virtkbd.pyo
 %%DATADIR%%/icons/ibus-skk.svg
 %%DATADIR%%/setup/config.py
 %%DATADIR%%/setup/config.pyc
