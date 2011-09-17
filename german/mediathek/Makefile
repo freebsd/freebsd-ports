@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	Mediathek_${PORTVERSION}
