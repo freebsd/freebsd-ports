@@ -18,7 +18,7 @@ COMMENT=	Get home directory for self or other users
 RUN_DEPENDS=	p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		File::HomeDir.3 \
 		File::HomeDir::Darwin.3 \

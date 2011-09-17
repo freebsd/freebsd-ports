@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Class::C3::Adopt::NEXT.3
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-SMS-Send>=0.04:${PORTSDIR}/comms/p5-SMS-Send \
 		p5-Device-Gsm>=1.45:${PORTSDIR}/comms/p5-Device-Gsm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		SMS::Send::DeviceGsm.3
 

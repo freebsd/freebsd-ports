@@ -17,7 +17,7 @@ COMMENT=	Library for generic Version Control System access in Perl
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		diff-hist.1
 MAN3=		VCS.3 VCS::Cvs.3 VCS::Dir.3 VCS::File.3 \

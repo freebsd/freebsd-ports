@@ -21,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Petal::Mail.3
 
-PERL_CONFIGURE=	5.7.3+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

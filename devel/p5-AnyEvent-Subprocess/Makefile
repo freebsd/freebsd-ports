@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		AnyEvent::Subprocess.3 \
 		AnyEvent::Subprocess::DefaultDelegates.3 \

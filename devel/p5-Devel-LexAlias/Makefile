@@ -18,7 +18,7 @@ COMMENT=	A perl module which does alias lexical variables
 BUILD_DEPENDS=	p5-Devel-Caller>=0.03:${PORTSDIR}/devel/p5-Devel-Caller
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Devel::LexAlias.3
 

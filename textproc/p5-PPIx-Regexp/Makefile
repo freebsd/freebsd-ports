@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8+
+PERL_CONFIGURE=	yes
 
 MAN3=	PPIx::Regexp.3 \
 	PPIx::Regexp::Constant.3 \

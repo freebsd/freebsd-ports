@@ -18,7 +18,7 @@ COMMENT=	Proc::Fork - Simple, intuitive interface to the fork() system call
 BUILD_DEPENDS=	p5-Exporter-Tidy>0:${PORTSDIR}/devel/p5-Exporter-Tidy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Proc::Fork.3
 

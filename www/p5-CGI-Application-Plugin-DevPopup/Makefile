@@ -17,7 +17,7 @@ COMMENT=	Runtime cgiapp info in a popup window
 BUILD_DEPENDS=	p5-CGI-Application>=4.01:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	CGI::Application::Plugin::DevPopup.3 \
 	CGI::Application::Plugin::DevPopup::HTTPHeaders.3 \

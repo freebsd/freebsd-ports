@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Remote procedure calls from JavaScript
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	JavaScript::RPC::Server::CGI.3 JavaScript::RPC.3
 

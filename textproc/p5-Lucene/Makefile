@@ -17,7 +17,7 @@ COMMENT=	API to the C++ port of the Lucene search engine
 
 LIB_DEPENDS=	clucene:${PORTSDIR}/textproc/clucene
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 CC=		${CXX}
 CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include -I${LOCALBASE}/lib"
 

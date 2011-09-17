@@ -17,7 +17,7 @@ COMMENT=	Load class configuration data from a number of file formats
 RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Config::Any.3 \
 	Config::Any::Base.3 \

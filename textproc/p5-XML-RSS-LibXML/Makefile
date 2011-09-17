@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.7.3+	# inherited from converters/p5-Encode
+PERL_CONFIGURE=	yes
 
 MAN3=		XML::RSS::LibXML.3 XML::RSS::LibXML::ImplBase.3 \
 		XML::RSS::LibXML::MagicElement.3 \

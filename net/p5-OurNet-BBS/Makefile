@@ -44,7 +44,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.67
 
-PERL_CONFIGURE=	5.7.3+
+PERL_CONFIGURE=	yes
 
 MAN1=		bbsboard.1 bbscomd.1 bbsmail.1
 MAN3=		OurNet::BBS.3 OurNet::BBS::Roadmap.3 OurNet::BBS::Tutorial.3

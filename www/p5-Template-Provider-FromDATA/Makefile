@@ -17,7 +17,7 @@ COMMENT=	Load templates from your __DATA__ section
 BUILD_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Template::Provider::FromDATA.3
 

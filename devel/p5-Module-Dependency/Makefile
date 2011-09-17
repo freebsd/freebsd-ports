@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Collection of modules for examining dependencies
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		pmd_indexer.plx.1 pmd_grapher.plx.1 pmd_dump.pl.1
 MAN3=		Module::Dependency.3 \

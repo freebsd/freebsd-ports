@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
 		p5-HTML-Tidy>=1.08:${PORTSDIR}/textproc/p5-HTML-Tidy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	CGI::Application::Plugin::HtmlTidy.3
 

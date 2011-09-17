@@ -28,7 +28,7 @@ MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
 USE_APACHE=	20+
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 GMAKE=		yes
 
 # Using apxs in this way is problematic if apache2 is installed under a

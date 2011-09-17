@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/libFBCAccess.a:${PORTSDIR}/databases/frontbase
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		DBD::FB.3

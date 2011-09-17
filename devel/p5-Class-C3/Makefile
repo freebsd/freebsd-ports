@@ -16,7 +16,7 @@ COMMENT=	A pragma to use the C3 method resolution order algorithm
 
 OPTIONS=	XS "XS speed optimizations" off
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

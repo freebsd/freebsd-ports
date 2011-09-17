@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	parv@pair.com
 COMMENT=	XS module to swap the contents and types of referenced variables
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Data::Swap.3
 

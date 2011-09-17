@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A module to use your computer beeper in fancy ways
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Audio::Beep.3 Audio::Beep::BSD::beep.3
 

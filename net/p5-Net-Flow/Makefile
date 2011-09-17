@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Decode and encode NetFlow/IPFIX datagrams
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::Flow.3
 

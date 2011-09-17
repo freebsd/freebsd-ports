@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Dynamic PerlIO layers
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		PerlIO::via::dynamic.3
 

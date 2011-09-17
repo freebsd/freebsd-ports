@@ -17,6 +17,6 @@ COMMENT=	Round-Robin Tournament Schedule Pairings
 MAN3=	Games::Tournament::RoundRobin.3 \
 	Games::League::Member.3
 
-PERL_CONFIGURE=	5.6.2+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

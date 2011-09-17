@@ -24,7 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Pango.pm:${PORTSDIR}/x11-toolkits/p5-Pang
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	gtk20 pango
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	FORCE_GMAKE=yes
 

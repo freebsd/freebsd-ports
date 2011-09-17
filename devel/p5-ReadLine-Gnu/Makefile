@@ -16,7 +16,7 @@ DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
 MAN3=		Term::ReadLine::Gnu.3

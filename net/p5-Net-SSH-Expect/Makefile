@@ -17,7 +17,7 @@ COMMENT=	SSH wrapper to execute remote commands
 RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::SSH::Expect.3
 

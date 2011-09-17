@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	File::Attributes.3 \
 	File::Attributes::Base.3 \

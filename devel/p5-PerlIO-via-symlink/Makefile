@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Symbolic link PerlIO layers
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		PerlIO::via::symlink.3
 

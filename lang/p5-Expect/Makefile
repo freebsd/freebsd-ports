@@ -17,7 +17,7 @@ COMMENT=	Perl module inspired by the Tcl version of Expect
 BUILD_DEPENDS=	p5-IO-Tty>=1.03:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Expect.3
 

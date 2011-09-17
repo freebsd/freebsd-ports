@@ -17,7 +17,7 @@ COMMENT=	Framework SIP (Voice Over IP, RFC3261)
 RUN_DEPENDS=	p5-Net-DNS>=0.56:${PORTSDIR}/dns/p5-Net-DNS
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::SIP.3 Net::SIP::Debug.3 \
 		Net::SIP::Blocker.3 Net::SIP::Redirect.3 \

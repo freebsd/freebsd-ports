@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Variable-Magic>=0.31:${PORTSDIR}/devel/p5-Variable-Magic \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	B::Hooks::EndOfScope.3
 

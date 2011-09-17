@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	PerlIO layer for creating an MD5 digest of a file
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 USE_PERL5_REASON=	requires PerlIO, which was introduced in Perl 5.8.0. Install lang/perl5.8 and try again
 
 MAN3=	PerlIO::via::MD5.3

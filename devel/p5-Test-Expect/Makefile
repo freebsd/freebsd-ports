@@ -20,6 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Test::Expect.3
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

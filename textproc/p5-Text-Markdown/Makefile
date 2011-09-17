@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Markdown Perl5 module
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		Markdown.pl.1
 MAN3=		Text::Markdown.3

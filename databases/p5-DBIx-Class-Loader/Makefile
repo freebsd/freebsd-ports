@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-DBI>=1.3:${PORTSDIR}/databases/p5-DBI \
 		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::Loader.3 \
 	DBIx::Class::Loader::DB2.3 \

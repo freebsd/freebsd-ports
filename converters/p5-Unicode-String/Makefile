@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
-PERL_CONFIGURE=	5.7.2+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

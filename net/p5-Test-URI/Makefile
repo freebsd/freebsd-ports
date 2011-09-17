@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI	\
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI	\
 		${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::URI.3
 

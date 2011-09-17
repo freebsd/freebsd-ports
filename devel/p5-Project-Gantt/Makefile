@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/Date.pm:${PORTSDIR}/devel/p5-Clas
 		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/Gantt
 
 MAN3=		Project::Gantt.3

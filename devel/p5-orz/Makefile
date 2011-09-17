@@ -18,7 +18,7 @@ COMMENT=	A method of annotation as /* */ in perl
 BUILD_DEPENDS=	${SITE_PERL}/Module/Compile.pm:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		orz.3
 

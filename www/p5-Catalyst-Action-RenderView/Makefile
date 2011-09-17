@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.70:${PORTSDIR}/www/p5-Catalyst-Runtime \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-HTTP-Request-AsCGI>=0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Action::RenderView.3
 

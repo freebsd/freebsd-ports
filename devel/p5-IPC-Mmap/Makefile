@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Provides a minimal mmap() interface for both POSIX and Win32
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 #MAN3=		IPC::Mmap.3
 

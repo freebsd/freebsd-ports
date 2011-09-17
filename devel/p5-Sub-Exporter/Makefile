@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.6.2+
+PERL_CONFIGURE=	yes
 
 MAN3=	Sub::Exporter.3 \
 	Sub::Exporter::Cookbook.3 \

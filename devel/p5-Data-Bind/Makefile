@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Data::Bind.3
 

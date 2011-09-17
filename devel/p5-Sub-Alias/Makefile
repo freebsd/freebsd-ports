@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare \
 		p5-Devel-BeginLift>=0:${PORTSDIR}/devel/p5-Devel-BeginLift
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 LICENSE=	MIT
 

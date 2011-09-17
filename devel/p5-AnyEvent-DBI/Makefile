@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DBI>=1.0:${PORTSDIR}/databases/p5-DBI \
 		p5-common-sense>=3.3:${PORTSDIR}/devel/p5-common-sense
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		AnyEvent::DBI.3
 

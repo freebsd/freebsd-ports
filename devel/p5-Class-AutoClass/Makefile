@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/AutoClass
 
 MAN3=		Class::AutoClass::Root.3 Class::AutoClass.3 Class::AutoClass::Args.3

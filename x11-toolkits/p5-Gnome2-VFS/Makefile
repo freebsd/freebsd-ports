@@ -25,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_GNOME=	gnomevfs2
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:

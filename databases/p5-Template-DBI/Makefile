@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Template::DBI.3 \
 	Template::Plugin::DBI.3

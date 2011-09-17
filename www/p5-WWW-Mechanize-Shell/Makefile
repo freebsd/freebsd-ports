@@ -26,7 +26,7 @@ RUN_DEPENDS=	p5-HTML-Display>=0:${PORTSDIR}/www/p5-HTML-Display \
 		p5-libwww>=5.69:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	WWW::Mechanize::Shell.3
 

@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-MooseX-Types-Structured>=0.12:${PORTSDIR}/devel/p5-MooseX-Types-
 		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Types::VariantTable::Declare.3 \
 		MooseX::Types::VariantTable.3

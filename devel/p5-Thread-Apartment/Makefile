@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Thread-Queue-Duplex>=0.92:${PORTSDIR}/devel/p5-Thread-Queue-Dupl
 		p5-Class-Inspector>=1.08:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Thread::Apartment.3
 

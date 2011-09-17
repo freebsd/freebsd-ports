@@ -20,7 +20,7 @@ COMMENT=	Inheritable and overridable class and instance data accessors
 DEPRECATED=	Please consider using p5-Class-Accessor-Grouped or p5-Moose
 EXPIRATION_DATE=	2011-09-30
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Class::Data::Accessor.3
 

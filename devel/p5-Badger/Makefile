@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl Application Programming Toolkit
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Badger.3 \
 	Badger::Base.3 \

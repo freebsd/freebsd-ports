@@ -22,6 +22,6 @@ MAN3=	Math::Algebra::Symbols.3 \
 	Math::Algebra::Symbols::Symbols.3 \
 	Math::Algebra::Symbols::Term.3
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

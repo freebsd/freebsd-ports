@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible I/O Perl5 module that allows manipulation of pseudo-TTYs
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		IO::Pty.3 \
 		IO::Tty.3 \

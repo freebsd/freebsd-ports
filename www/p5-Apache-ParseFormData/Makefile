@@ -18,7 +18,7 @@ COMMENT=	Module allows you to easily decode/parse form and query data
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+	# mod_perl 2 requires it
+PERL_CONFIGURE=	yes
 
 MAN3=		Apache::ParseFormData.3
 

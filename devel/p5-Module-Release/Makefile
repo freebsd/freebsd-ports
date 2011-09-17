@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Null.pm:${PORTSDIR}/devel/p5-IO-Null \
 		${SITE_PERL}/HTTP/Message.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		release.1
 MAN3=		Module::Release.3 Module::Release::FTP.3 Module::Release::Kwalitee.3 \

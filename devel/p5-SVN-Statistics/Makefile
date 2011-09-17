@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subver
 		p5-IO-Toolkit>=0:${PORTSDIR}/devel/p5-IO-Toolkit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	SVN::Statistics.3
 

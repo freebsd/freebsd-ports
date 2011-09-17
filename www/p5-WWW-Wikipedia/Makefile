@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=		wikipedia.1
 MAN3=		WWW::Wikipedia.3 \

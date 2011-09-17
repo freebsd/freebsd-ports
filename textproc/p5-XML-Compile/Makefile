@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
 		p5-XML-Compile-Tester>=0.05:${PORTSDIR}/devel/p5-XML-Compile-Tester
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	xml2yaml.1 schema2example.1
 MAN3=	XML::Compile.3 \

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Detect encoding of the current terminal
 
-PERL_CONFIGURE=	5.7.2+
+PERL_CONFIGURE=	yes
 
 MAN3=		Term::Encoding.3
 

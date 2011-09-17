@@ -17,7 +17,7 @@ COMMENT=	IPC::DirQueue - disk-based many-to-many task queue
 BUILD_DEPENDS=	p5-POE>0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	dq-deque.1 dq-indexd.1 dq-list.1 dq-server.1 dq-submit.1
 MAN3=	IPC::DirQueue.3 IPC::DirQueue::Job.3 \

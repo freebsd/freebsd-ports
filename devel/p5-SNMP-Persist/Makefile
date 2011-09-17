@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	The module is a backend for pass_persist feature of net-snmp
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		SNMP::Persist.3
 

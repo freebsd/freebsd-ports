@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 RUN_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 
-PERL_CONFIGURE=	5.8+
+PERL_CONFIGURE=	yes
 MAN3=		Devel::Backtrace.3 \
 		Devel::Backtrace::Point.3 \
 		Devel::DollarAt.3

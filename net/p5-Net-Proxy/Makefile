@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Framework for proxying network connections in many ways
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Net::Proxy.3 \
 	Net::Proxy::Connector.3 \

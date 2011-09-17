@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Access to extended attributes of the files
 
-PERL_CONFIGURE=		5.8.0+
+PERL_CONFIGURE=		yes
 
 MAN3=			File::ExtAttr.3 File::ExtAttr::Tie.3
 

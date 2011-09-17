@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::MultiMethods.3 \
 		MooseX::MultiMethods::Meta::Method.3

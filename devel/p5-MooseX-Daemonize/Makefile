@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Moose>=0.33:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::Daemonize.3 \
 	MooseX::Daemonize::Core.3 \

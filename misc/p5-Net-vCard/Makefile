@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Read and write vCard files (RFC 2426)
 
-PERL_CONFIGURE=		5.8.0+
+PERL_CONFIGURE=		yes
 
 MAN3=			Net::vFile.3 Net::vCard.3
 

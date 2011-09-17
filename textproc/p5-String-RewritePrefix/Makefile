@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Rewrite strings based on a set of known prefixes
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	String::RewritePrefix.3
 

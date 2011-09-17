@@ -26,7 +26,7 @@ TEST_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	5.8.0+	# Inherited from devel/p5-Algorithm-C3-Componentised
+PERL_CONFIGURE=	yes
 
 MAN3=		Class::C3::Componentised.3
 

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Modules to streamline writing Nagios plugins
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 BUILD_DEPENDS+=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \

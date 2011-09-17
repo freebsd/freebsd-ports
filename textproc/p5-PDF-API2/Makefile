@@ -18,7 +18,7 @@ COMMENT=	'The Next Generation' of Text::PDF::API
 
 RUN_DEPENDS=	p5-Font-TTF>0:${PORTSDIR}/x11-fonts/p5-Font-TTF
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	PDF::API2.3 \
 	PDF::API2::Annotation.3 \

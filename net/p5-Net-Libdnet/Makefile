@@ -16,7 +16,7 @@ COMMENT=	Libdnet interface
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include'
 MAN3=	Net::Libdnet.3 Net::Libdnet::Entry::Intf.3 Net::Libdnet::Intf.3 \
 	Net::Libdnet::Ip.3 Net::Libdnet::Eth.3 Net::Libdnet::Tun.3 \

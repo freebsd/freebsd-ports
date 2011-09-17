@@ -17,7 +17,7 @@ COMMENT=	Extract data from an HTML table
 BUILD_DEPENDS=	p5-HTML-Parser>=3.34:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::TableParser.3 HTML::TableParser::Table.3
 

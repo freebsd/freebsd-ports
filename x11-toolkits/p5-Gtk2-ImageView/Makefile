@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 LIB_DEPENDS=	gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Gtk2::ImageView.3 \
   		Gtk2::Gdk::Pixbuf::Draw::Cache.3 \

@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Object::InsideOut.3 Object::InsideOut::Metadata.3 Bundle::Object::InsideOut.3
 

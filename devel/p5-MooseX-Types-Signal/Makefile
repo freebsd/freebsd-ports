@@ -17,7 +17,7 @@ COMMENT=	A type to represent valid UNIX or Perl signals
 RUN_DEPENDS=	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Types::Signal.3
 

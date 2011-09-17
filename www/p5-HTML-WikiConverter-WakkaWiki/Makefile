@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.54:${PORTSDIR}/www/p5-HTML-WikiConverter
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::WikiConverter::WakkaWiki.3
 

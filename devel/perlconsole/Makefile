@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5
 		${SITE_PERL}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords
 
 USE_PERL5=	yes
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 PORTDOCS=	README \
 		AUTHORS \

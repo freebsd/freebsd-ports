@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Tie iCal files to Perl hashes
 
-PERL_CONFIGURE=	5.7.3+
+PERL_CONFIGURE=	yes
 USE_PERL5_REASON=	requires newer version of Perl with Tie::File 0.97 or later
 
 MAN3=		Tie::iCal.3

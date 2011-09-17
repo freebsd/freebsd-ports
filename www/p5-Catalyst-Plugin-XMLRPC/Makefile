@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Plugin::XMLRPC.3 \
 		Catalyst::Plugin::XMLRPC::DispatchType::XMLRPC.3 \

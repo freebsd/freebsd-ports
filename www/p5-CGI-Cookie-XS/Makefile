@@ -18,7 +18,7 @@ COMMENT=	HTTP Cookie parser in C
 BUILD_DEPENDS=	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Cookie::XS.3
 

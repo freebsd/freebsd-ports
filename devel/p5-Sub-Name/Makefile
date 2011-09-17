@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Sub::Name - (re)name a sub
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Sub::Name.3
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
 		${SITE_PERL}/Algorithm/Accounting.pm:${PORTSDIR}/devel/p5-Algorithm-Accounting
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	svk-accounting.pl.1 svk-developer-graph.pl.1
 MAN3=	Log::Accounting::SVK.3

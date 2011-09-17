@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-AnyEvent-DBI>=0:${PORTSDIR}/devel/p5-AnyEvent-DBI \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		AnyEvent::DBI::Abstract.3
 

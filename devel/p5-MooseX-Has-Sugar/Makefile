@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 		p5-Find-Lib>=0:${PORTSDIR}/devel/p5-Find-Lib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 PERL_MODBUILD=	yes
 
 MAN3=		MooseX::Has::Sugar.3 \

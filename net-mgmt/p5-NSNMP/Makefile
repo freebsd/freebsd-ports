@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	NSNMP - fast, flexible, low-level, pure-Perl SNMP library
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	NSNMP.3 \
 	NSNMP::Simple.3
