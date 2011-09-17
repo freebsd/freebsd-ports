@@ -7,11 +7,14 @@
 
 PORTNAME=	clear_cache_button
 PORTVERSION=	0.9f
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Adds a button to the toolbar that clears the browser cache
+
+USE_XPI=	*firefox*
 
 SUB_FILES=	pkg-message
 
