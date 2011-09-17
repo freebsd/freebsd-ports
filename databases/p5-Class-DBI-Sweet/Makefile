@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.55:${PORTSDIR}/databases/p5-SQL-Abstract
 
-PERL_MODBUILD=	5.8.1+
+PERL_MODBUILD=	yes
 
 MAN3=		Class::DBI::Sweet.3 Class::DBI::Sweet::Topping.3
 

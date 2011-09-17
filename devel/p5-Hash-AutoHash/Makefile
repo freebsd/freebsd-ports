@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-Tie-ToObject>0:${PORTSDIR}/devel/p5-Tie-ToObject
 TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_MODBUILD=	5.8.3+
+PERL_MODBUILD=	yes
 
 MAN3=		Hash::AutoHash.3
 
