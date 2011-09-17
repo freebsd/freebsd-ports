@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="TV-Browser" \
 		"A digital TV guide" \
 		"${DATADIR}/imgs/tvbrowser128.png" \
 		"tvbrowser" \
-		"Application;Video;AudioVideo;TV" \
+		"Application;Video;AudioVideo;TV;" \
 		true
 
 do-install:
