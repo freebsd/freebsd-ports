@@ -76,6 +76,7 @@
     SUBDIR += freetype
     SUBDIR += freetype-tools
     SUBDIR += freetype2
+    SUBDIR += frescobaldi
     SUBDIR += ft2demos
     SUBDIR += gfontview
     SUBDIR += ggv
