@@ -17,7 +17,7 @@ COMMENT=	Fast handling of sets containing integer spans
 BUILD_DEPENDS=	${SITE_PERL}/Data/Types.pm:${PORTSDIR}/devel/p5-Data-Types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Set::IntSpan::Fast.3 Set::IntSpan::Fast::PP.3
 

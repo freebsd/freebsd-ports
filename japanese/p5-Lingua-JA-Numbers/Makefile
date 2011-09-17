@@ -16,6 +16,6 @@ COMMENT=	Converts numeric values to and from their Japanese string equivalents
 
 MAN3=	Lingua::JA::Numbers.3
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

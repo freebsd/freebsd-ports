@@ -18,7 +18,7 @@ COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		URI.3 \
 		URI::Escape.3 \

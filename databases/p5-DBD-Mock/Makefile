@@ -17,7 +17,7 @@ COMMENT=	Simple mock DBD implementation used for testing
 BUILD_DEPENDS=	p5-DBI>=1.3:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	yes
 
 MAN3=		DBD::Mock.3
 

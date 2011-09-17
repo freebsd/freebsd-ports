@@ -31,7 +31,7 @@ RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.5+
+PERL_CONFIGURE=	yes
 
 MAN3=		XML::Feed.3 \
 		XML::Feed::Content.3 \

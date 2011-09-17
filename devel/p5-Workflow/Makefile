@@ -43,7 +43,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Obser
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=	Workflow.3 \
 	Workflow::Action.3 \

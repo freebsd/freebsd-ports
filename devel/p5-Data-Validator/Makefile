@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Data::Validator.3 \
 		Data::Validator::Role::AllowExtra.3 \

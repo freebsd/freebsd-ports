@@ -27,6 +27,6 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 
 MAN3=	XML::Atom::Stream.3
 
-PERL_CONFIGURE=	5.8.5+	# inherited from textproc/p5-XML-Atom
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

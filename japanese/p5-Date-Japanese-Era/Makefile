@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/Lingua/JA/Numbers.pm:${PORTSDIR}/japanese/p5-Lingua-JA-Numbers
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+	# inherited from p5-Lingua-JA-Numbers
+PERL_CONFIGURE=	yes
 
 MAN3=		Date::Japanese::Era.3 \
 		Date::Japanese::Era::Table.3 \

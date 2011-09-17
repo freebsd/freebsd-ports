@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Template-Timer>=0:${PORTSDIR}/www/p5-Template-Timer \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Helper::View::TT.3 \
 		Catalyst::Helper::View::TTSite.3 \

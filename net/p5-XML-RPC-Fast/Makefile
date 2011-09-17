@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-XML-Hash-LX>=0.05:${PORTSDIR}/textproc/p5-XML-Hash-LX \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.3+
+PERL_CONFIGURE=	yes
 MAN3=		XML::RPC::Enc.3 \
 		XML::RPC::Enc::LibXML.3 \
 		XML::RPC::Fast.3 \

@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Algorithm-FloodControl>=1.91:${PORTSDIR}/devel/p5-Algorithm-Floo
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.7+
+PERL_CONFIGURE=	yes
 MAN3=	Catalyst::Controller::RateLimit.3
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl module for natively copying Perl data structures
 
-PERL_CONFIGURE=	5.8.5+
+PERL_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

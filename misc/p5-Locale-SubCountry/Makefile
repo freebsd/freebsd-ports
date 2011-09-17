@@ -17,7 +17,7 @@ COMMENT=	Convert state, province, county etc. names to/from code
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-PERL_CONFIGURE=	5.8.4+
+PERL_CONFIGURE=	yes
 
 MAN3=	Locale::SubCountry.3 \
 	Locale::SubCountry::Data.3

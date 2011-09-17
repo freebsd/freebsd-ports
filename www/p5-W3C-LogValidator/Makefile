@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/bin/checklink:${PORTSDIR}/www/p5-W3C-LinkChecker
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.2+	# inherited from www/p5-webservice-validator-css-w3c
+PERL_CONFIGURE=	yes
 
 MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Basic.3 \

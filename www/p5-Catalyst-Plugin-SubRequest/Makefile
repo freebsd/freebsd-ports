@@ -21,7 +21,7 @@ LICENSE=	ART20 GPLv1
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80003:${PORTSDIR}/www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::SubRequest.3
 

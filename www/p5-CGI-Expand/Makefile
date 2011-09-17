@@ -17,7 +17,7 @@ COMMENT=	Convert flat hash to nested data using TT2's dot convention
 BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.2+
+PERL_CONFIGURE=	yes
 
 MAN3=	CGI::Expand.3
 

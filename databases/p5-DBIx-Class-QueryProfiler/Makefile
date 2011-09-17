@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
 RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class
 TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/devel/p5-Test-Perl-Critic
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Class::QueryProfiler.3
 

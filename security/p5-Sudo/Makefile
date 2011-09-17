@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Term/ReadPassword.pm:${PORTSDIR}/devel/p5-Term-ReadPas
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Sudo.3
 

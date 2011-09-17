@@ -18,7 +18,7 @@ COMMENT=	Document Object Model for Cascading Style Sheets
 RUN_DEPENDS=	p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.2+
+PERL_CONFIGURE=	yes
 
 MAN3=		CSS::DOM.3 \
 		CSS::DOM::Array.3 \

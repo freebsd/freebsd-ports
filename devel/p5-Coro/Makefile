@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Event>=1.08:${PORTSDIR}/devel/p5-Event \
 		p5-IO-AIO>=3.1:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.2+
+PERL_CONFIGURE=	yes
 
 MAN3=		Coro.3 Coro::AIO.3 Coro::AnyEvent.3 Coro::Channel.3 \
 		Coro::Handle.3 Coro::BDB.3 Coro::Debug.3 \

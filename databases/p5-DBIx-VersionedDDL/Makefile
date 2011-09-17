@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Text-CSV>=1.20:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-MooseX-Attribute-ENV>=0.01:${PORTSDIR}/devel/p5-MooseX-Attribute-ENV
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN1=	migrate_schema.1
 MAN3=	DBIx::VersionedDDL.3 \

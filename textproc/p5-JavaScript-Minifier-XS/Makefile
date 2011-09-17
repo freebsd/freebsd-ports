@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS based JavaScript minifier
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=		JavaScript::Minifier::XS.3
 

@@ -17,7 +17,7 @@ COMMENT=	Another HTML code cleaner
 
 RUN_DEPENDS=	p5-Regexp-RegGrp>=1.001.001:${PORTSDIR}/devel/p5-Regexp-RegGrp
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Packer.3
 

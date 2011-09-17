@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Perl module for ptrace on FreeBSD-i386
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
 MAN3=		FreeBSD::i386::Ptrace.3

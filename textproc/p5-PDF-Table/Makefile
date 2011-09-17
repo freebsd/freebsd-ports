@@ -17,7 +17,7 @@ COMMENT=	A utility class for building table layouts in a PDF::API2 object
 BUILD_DEPENDS=	${SITE_PERL}/PDF/API2/Content/Text.pm:${PORTSDIR}/textproc/p5-PDF-API2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.7+
+PERL_CONFIGURE=	yes
 
 MAN3=		PDF::Table.3
 

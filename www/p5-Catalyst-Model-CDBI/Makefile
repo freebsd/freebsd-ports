@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Helper::Model::CDBI.3 \
 	Catalyst::Model::CDBI.3

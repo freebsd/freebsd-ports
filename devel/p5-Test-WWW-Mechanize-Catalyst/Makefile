@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-namespace-clean>=0.09:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.4+
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::WWW::Mechanize::Catalyst.3
 

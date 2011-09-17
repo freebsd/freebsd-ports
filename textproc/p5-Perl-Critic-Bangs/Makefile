@@ -16,7 +16,7 @@ COMMENT=	A collection of handy Perl::Critic policies
 BUILD_DEPENDS=	${SITE_PERL}/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Perl-Critic
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=	Perl::Critic::Bangs.3 \
 	Perl::Critic::Policy::Bangs::ProhibitUselessRegexModifiers.3 \

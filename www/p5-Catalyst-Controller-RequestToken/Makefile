@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Catalyst-Action-RenderView>=0:${PORTSDIR}/www/p5-Catalyst-Action
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Controller::RequestToken.3 \
 	Catalyst::Controller::RequestToken::Action::CreateToken.3 \

@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Email-Sender>=0.091660:${PORTSDIR}/mail/p5-Email-Sender
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=		Email::Sender::Transport::SQLite.3
 

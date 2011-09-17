@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::OpenID::JanRain::Consumer.3 \
 		Net::OpenID::JanRain::Server.3 \

@@ -16,7 +16,7 @@ COMMENT=	Set default of an attribute to a value from %ENV
 
 RUN_DEPENDS=	p5-Moose>=1.19:${PORTSDIR}/devel/p5-Moose
 
-PERL_CONFIGURE=	5.8.8+
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Attribute::ENV.3
 

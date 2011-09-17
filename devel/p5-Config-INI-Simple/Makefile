@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Simple reading and writing from an INI file
 
-PERL_CONFIGURE=	5.8.7+
+PERL_CONFIGURE=	yes
 
 MAN3=		Config::INI::Simple.3
 

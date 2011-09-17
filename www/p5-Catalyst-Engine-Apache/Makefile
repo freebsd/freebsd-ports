@@ -16,7 +16,7 @@ COMMENT=	Catalyst Apache Engines
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Engine::Apache.3 \
 		Catalyst::Engine::Apache2.3 \

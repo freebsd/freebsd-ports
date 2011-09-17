@@ -17,7 +17,7 @@ COMMENT=	Lightleight form validation library
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
 
 MAN3=		FormValidator::Lite.3 \
 	FormValidator::Lite::Constraint.3 \
