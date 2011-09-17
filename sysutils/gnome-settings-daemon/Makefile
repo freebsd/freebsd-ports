@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +18,7 @@ COMMENT=	GNOME 2 settings daemon
 
 LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		notify.4:${PORTSDIR}/devel/libnotify \
+		gdbm.4:${PORTSDIR}/databases/gdbm \
 		nss3.1:${PORTSDIR}/security/nss
 RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
@@ -32,8 +33,8 @@ USE_GSTREAMER=	good
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	PULSEAUDIO "Enable Pulseaudio support" On
 
