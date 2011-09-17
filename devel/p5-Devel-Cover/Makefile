@@ -7,6 +7,7 @@
 
 PORTNAME=	Devel-Cover
 PORTVERSION=	0.79
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +21,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Pod-Coverage>=0.06:${PORTSDIR}/devel/p5-Pod-Coverage \
 		p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML \
-		p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP \
 		p5-Parallel-Iterator>=0:${PORTSDIR}/devel/p5-Parallel-Iterator
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
@@ -76,4 +75,11 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP
+RUN_DEPENDS+=	p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP
+.endif
+
+.include <bsd.port.post.mk>
