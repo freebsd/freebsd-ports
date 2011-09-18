@@ -42,19 +42,6 @@ PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 post-patch:
 	${REINPLACE_CMD} -e '/akonadi.pc/s|pkgconfig|../libdata/pkgconfig|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	${CP} ${PATCH_WRKSRC}/server/src/storage/entities-header.xsl \
-		${PATCH_WRKSRC}/server/src/storage/entitiesKDE4.header.xsl
-	cd ${PATCH_WRKSRC}/server && \
-	${REINPLACE_CMD} -e 's|entities.h|entitiesKDE4.h|g' \
-		CMakeLists.txt \
-		src/storage/entities.xsl \
-		src/storage/doxygen-preprocess-entities.sh
-# graphics/gd installs entities.h to ${LOCALBASE}/include, rename kde's entities.h to fix build
-.for ext in *.cpp *.h
-	${FIND} ${PATCH_WRKSRC} -name ${ext} | ${XARGS} \
-		${REINPLACE_CMD} -e 's|include "entities.h"|include <entitiesKDE4.h>|g' \
-				-e 's|include <entities.h>|include <entitiesKDE4.h>|g'
-.endfor
 	${REINPLACE_CMD} -e '/find_program/s|mysqld|mysqld_safe ${LOCALBASE}/bin|g' \
 		${PATCH_WRKSRC}/server/CMakeLists.txt
 	#prevent updating mime during build
