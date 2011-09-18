@@ -49,6 +49,8 @@ EMR_FILE=	emr-3.0-0602.tgz
 DISTFILES+=	${EMR_FILE}:emr
 PLIST_SUB+=	EMR=""
 AO_PACKS+=	emr
+DESKTOP_ENTRIES+="Excalibur: Morgana's Revenge" "" "" "alephone-emr" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	EMR="@comment "
 .endif
@@ -58,6 +60,8 @@ DISTFILES+=	EternalXv103Full${EXTRACT_SUFX}:eternal
 EXTRACT_ONLY+=	EternalXv103Full${EXTRACT_SUFX}
 PLIST_SUB+=	ETERNAL=""
 AO_PACKS+=	eternal
+DESKTOP_ENTRIES+="Eternal X" "" "" "alephone-eternal" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	ETERNAL="@comment "
 .endif
@@ -67,6 +71,8 @@ DISTFILES+=	MarathonEvil${EXTRACT_SUFX}:bungie
 EXTRACT_ONLY+=	MarathonEvil${EXTRACT_SUFX}
 PLIST_SUB+=	EVIL=""
 AO_PACKS+=	evil
+DESKTOP_ENTRIES+="Evil" "" "" "alephone-evil" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	EVIL="@comment "
 .endif
@@ -76,6 +82,8 @@ DISTFILES+=	MarathonRED${EXTRACT_SUFX}:bungie
 EXTRACT_ONLY+=	MarathonRED${EXTRACT_SUFX}
 PLIST_SUB+=	RED=""
 AO_PACKS+=	red
+DESKTOP_ENTRIES+="Marathon Red" "" "" "alephone-red" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	RED="@comment "
 .endif
@@ -85,6 +93,8 @@ DISTFILES+=	marathonRubiconX${EXTRACT_SUFX}:rubicon
 EXTRACT_ONLY+=	marathonRubiconX${EXTRACT_SUFX}
 PLIST_SUB+=	RUBICON=""
 AO_PACKS+=	rubicon
+DESKTOP_ENTRIES+="Rubicon X" "" "" "alephone-rubicon" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	RUBICON="@comment "
 .endif
@@ -94,6 +104,8 @@ DISTFILES+=	Tempus_Irae${EXTRACT_SUFX}:nardofiles
 EXTRACT_ONLY+=	Tempus_Irae${EXTRACT_SUFX}
 PLIST_SUB+=	TI=""
 AO_PACKS+=	tempus_irae
+DESKTOP_ENTRIES+="Tempus Irae" "" "" "alephone-tempus_irae" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	TI="@comment "
 .endif
@@ -103,6 +115,8 @@ DISTFILES+=	tgi${EXTRACT_SUFX}:gray
 EXTRACT_ONLY+=	tgi${EXTRACT_SUFX}
 PLIST_SUB+=	GRAY=""
 AO_PACKS+=	gray
+DESKTOP_ENTRIES+="The Gray Incident" "" "" "alephone-gray" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	GRAY="@comment "
 .endif
