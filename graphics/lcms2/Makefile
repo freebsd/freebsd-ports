@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcms2
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
