@@ -42,7 +42,7 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 .endif
 
 do-install:
-	@${MKDIR} ${TARGET_DIR}
+	@${MKDIR} -m 755 ${TARGET_DIR}
 .if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/lib/libpthread.so.2
 	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
