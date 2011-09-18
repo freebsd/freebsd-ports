@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -444,7 +444,7 @@
+ 
+ 
+ # linker flags (*not* including libraries to link against) for a library
+-libkumu_la_LDFLAGS = -release @VERSION@
++libkumu_la_LDFLAGS = -version-info 0
+ 
+ # sources for a library that don't get added to a distribution
+ nodist_libasdcp_la_SOURCES = Metadata_h.tt2 Metadata_cpp.tt2 mxfgen.pl \
+@@ -460,7 +460,7 @@
+ 		JP2K.h AS_DCP.h AS_DCP_internal.h KLV.h MPEG.h MXFTypes.h MDD.h \
+ 		PCMParserList.h S12MTimecode.h MDD.cpp
+ 
+-libasdcp_la_LDFLAGS = -release @VERSION@
++libasdcp_la_LDFLAGS = -version-info 0
+ 
+ # additional libraries to link against for a library
+ libasdcp_la_LIBADD = libkumu.la
