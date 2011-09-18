@@ -171,13 +171,13 @@ diff -Naur new/lighttpd-1.4.23/src/http_auth.c old/lighttpd-1.4.23/src/http_auth
 +               } else
 +               /* plain md5 check now */
 +               {
-+                       MD5_CTX Md5Ctx;
++                       li_MD5_CTX Md5Ctx;
 +                       HASH HA1;
 +                       char a1[256];
 +
-+                       MD5_Init(&Md5Ctx);
-+                       MD5_Update(&Md5Ctx, (unsigned char *)pw, strlen(pw));
-+                       MD5_Final(HA1, &Md5Ctx);
++                       li_MD5_Init(&Md5Ctx);
++                       li_MD5_Update(&Md5Ctx, (unsigned char *)pw, strlen(pw));
++                       li_MD5_Final(HA1, &Md5Ctx);
 +
 +                       CvtHex(HA1, a1);
 +
