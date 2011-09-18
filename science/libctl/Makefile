@@ -29,10 +29,6 @@ MAN1=		gen-ctl-io.1
 BROKEN=		Does not compile on i386 or sparc64
 .endif
 
-.if ${OSVERSION} < 700000
-USE_FORTRAN=	g77
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
