@@ -1,22 +1,29 @@
---- third_party/ffmpeg/ffmpeg.gyp.orig	2011-05-06 12:05:13.000000000 +0300
-+++ third_party/ffmpeg/ffmpeg.gyp	2011-06-05 17:22:39.293163655 +0300
-@@ -50,7 +50,7 @@
-       }, {
-         'ffmpeg_config%': '<(target_arch)',
-       }],
--      ['OS=="mac" or OS=="win"', {
-+      ['OS=="mac" or OS=="win" or OS=="freebsd"', {
-         'os_config%': '<(OS)',
-       }, {  # all other Unix OS's use the linux config
-         'os_config%': 'linux',
-@@ -767,6 +767,10 @@
+--- third_party/ffmpeg/ffmpeg.gyp.orig	2011-09-14 02:43:26.000000000 +0300
++++ third_party/ffmpeg/ffmpeg.gyp	2011-09-14 03:03:08.000000000 +0300
+@@ -528,6 +528,9 @@
+                      'libraries': [
+                        '-lvpx',
+                      ],
++                     'ldflags': [
++                       '-L<(prefix_dir)/lib',
++                     ],
+                    }],
+                 ],
+               },
+@@ -642,7 +645,7 @@
+               }, {
+                 # Using libvpx provided by the system.
+                 'include_dirs': [
+-                  '/usr/include/vpx',
++                  '<(prefix_dir)/include',
+                 ],
+               }
+             ],
+@@ -941,6 +944,7 @@
                'include_dirs': [
                  'config',
-                 'patched-ffmpeg-mt',
-+                # gliaskos: The following include is needed for libvpx,
-+                # should remain _after_ patched-ffmpeg-mt or else
-+                # ffmpeg_stubs.cc picks up system headers.
-+                '/usr/local/include',
+                 'patched-ffmpeg',
++                '<(prefix_dir)/include',
                ],
                'direct_dependent_settings': {
                  'include_dirs': [

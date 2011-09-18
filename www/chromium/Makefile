@@ -7,11 +7,13 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	13.0.782.220
+DISTVERSION=	14.0.835.163
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
-		http://files.etoilebsd.net/goodking/
+		http://files.etoilebsd.net/goodking/ \
+                http://distfiles.cybertron.gr/
+
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
@@ -36,7 +38,13 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		nss3.1:${PORTSDIR}/security/nss \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		cups.2:${PORTSDIR}/print/cups-client \
-		icudata.48:${PORTSDIR}/devel/icu
+		icuuc.48:${PORTSDIR}/devel/icu \
+		icui18n.48:${PORTSDIR}/devel/icu \
+		icudata.48:${PORTSDIR}/devel/icu \
+		event-1.4:${PORTSDIR}/devel/libevent \
+		vpx:${PORTSDIR}/multimedia/libvpx \
+		tcmalloc.2:${PORTSDIR}/devel/google-perftools
+# TODO(gliaskos): We should add --enable-heap-checker on perftools to set linux_use_heapchecker.
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
@@ -57,26 +65,26 @@ DESKTOP_ENTRIES="Chromium" "${COMMENT}" "${DATADIR}/product_logo_48.png" \
 
 ALL_TARGET=	chrome
 
-#user tunables showing defaults, some won't compile if changed
-#GYP_DEFINES+=	use_system_bzip2=1
-#GYP_DEFINES+=	use_system_libevent=0
-#GYP_DEFINES+=	use_system_libjpeg=1
-#GYP_DEFINES+=	use_system_libpng=1
-GYP_DEFINES+=	use_system_libxml=1
-GYP_DEFINES+=	use_system_ffmpeg=0
-#GYP_DEFINES+=	use_system_sqlite=0
-GYP_DEFINES+=	use_system_yasm=1
-#GYP_DEFINES+=	use_system_zlib=1
-GYP_DEFINES+=	use_system_icu=1
-GYP_DEFINES+=	python_ver=${PYTHON_VER}
-GYP_DEFINES+=	disable_nacl=1
-GYP_DEFINES+=	linux_use_heapchecker=1
-GYP_DEFINES+=	linux_link_gsettings=1
-GYP_DEFINES+=	linux_link_gnome_keyring=1
+# See build/common.gypi for all the available variables.
+GYP_DEFINES+=	use_cups=1 \
+		use_system_icu=1 \
+		use_system_vpx=1 \
+		use_system_yasm=1 \
+		use_system_libxml=1 \
+		use_system_ffmpeg=0 \
+		use_system_libevent=1 \
+		use_system_tcmalloc=1 \
+		linux_use_heapchecker=0 \
+		disable_nacl=1 \
+		enable_webrtc=0 \
+		enable_openmax=1 \
+		os_ver=${OSVERSION} \
+		prefix_dir=${LOCALBASE} \
+		python_ver=${PYTHON_VER}
 
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
-		VPX	"Use system libvpx for VP8 codec"		on
+#		CLANG	"Compile Chromium with clang"			off
 
 .include <bsd.port.options.mk>
 
@@ -110,9 +118,10 @@ GYP_DEFINES+=	use_gconf=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
-.if defined(WITH_VPX)
-LIB_DEPENDS+=	vpx:${PORTSDIR}/multimedia/libvpx
-GYP_DEFINES+=	use_system_vpx=1
+.if defined(WITH_CLANG)
+CC=		/usr/bin/clang
+CXX=		/usr/bin/clang++
+GYP_DEFINES+=   clang=1
 .endif
 
 .if !defined(WITH_DEBUG)
@@ -122,6 +131,8 @@ BUILDTYPE=	Debug
 STRIP=
 .endif
 
+# Override the flock command in make.py
+MAKE_ENV+=	FLOCK=
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 
@@ -147,10 +158,7 @@ post-patch:
 		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
-		${WRKSRC}/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp
-	@${REINPLACE_CMD} -e "s|/usr/include/vpx|${LOCALBASE}/include|" \
-		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp
+		${WRKSRC}/v8/tools/gyp/v8.gyp
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
@@ -163,11 +171,6 @@ post-patch:
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
-# kludges just to make it progress for now
-	@${REINPLACE_CMD} -e "s|/usr/lib|${LOCALBASE}/lib|" \
-			-e "s|'python_ver%': '2.5'|'python_ver%': '2.6'|" \
-			-e "s|.so.1.0|.so.1|" \
-				${WRKSRC}/build/common.gypi
 
 do-configure:
 	cd ${WRKSRC} && \

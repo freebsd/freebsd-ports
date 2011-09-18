@@ -107,6 +107,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/paneGrowHandleLine.png
 %%DATADIR%%/resources/inspector/Images/paneRefreshButtons.png
 %%DATADIR%%/resources/inspector/Images/paneSettingsButtons.png
+%%DATADIR%%/resources/inspector/Images/paneElementStateButtons.png
+%%DATADIR%%/resources/inspector/Images/paneFilterButtons.png
 %%DATADIR%%/resources/inspector/Images/popoverArrows.png
 %%DATADIR%%/resources/inspector/Images/popoverBackground.png
 %%DATADIR%%/resources/inspector/Images/profileGroupIcon.png
@@ -141,6 +143,10 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/segmentSelectedEndChromium.png
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
 %%DATADIR%%/resources/inspector/Images/spinner.gif
+%%DATADIR%%/resources/inspector/Images/spinnerActive.gif
+%%DATADIR%%/resources/inspector/Images/spinnerActiveSelected.gif
+%%DATADIR%%/resources/inspector/Images/spinnerInactive.gif
+%%DATADIR%%/resources/inspector/Images/spinnerInactiveSelected.gif
 %%DATADIR%%/resources/inspector/Images/splitviewDimple.png
 %%DATADIR%%/resources/inspector/Images/splitviewDividerBackground.png
 %%DATADIR%%/resources/inspector/Images/statusbarBackground.png
