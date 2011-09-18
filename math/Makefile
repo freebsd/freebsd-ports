@@ -18,6 +18,7 @@
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
+    SUBDIR += R-cran-spdep
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += aamath
