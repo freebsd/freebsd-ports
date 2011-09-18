@@ -100,8 +100,10 @@ PYABIVER:=	m${PYABIVER}
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-.if !exists(/usr/bin/ypcat) # the world with NO_NIS
+# See http://bugs.freebsd.org/115940
+.if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS) # the world with NO_NIS
 PLIST_SUB+=	NO_NIS="@comment "
+WITHOUT_NIS?=	detected
 .else
 PLIST_SUB+=	NO_NIS=""
 .endif
@@ -145,6 +147,13 @@ pre-patch:
 .if defined(WITH_FPECTL) && ${ARCH} == i386
 	${MKDIR} ${WRKSRC}/Modules
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
+.endif
+
+post-patch:
+.if defined(WITHOUT_NIS)
+	${REINPLACE_CMD} -e \
+	    's/disabled_module_list =[^]]*/&, "nis"/' \
+		${PATCH_WRKSRC}/setup.py
 .endif
 
 post-configure:
