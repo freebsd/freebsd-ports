@@ -230,6 +230,7 @@
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
+    SUBDIR += opencinematools
     SUBDIR += openmovieeditor
     SUBDIR += openquicktime
     SUBDIR += openshot
