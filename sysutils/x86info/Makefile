@@ -20,6 +20,7 @@ LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
 
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=	yes
+USE_GNOME=	pkgconfig
 LICENSE=	GPLv2
 ALL_TARGET=	x86info lsmsr
 ONLY_FOR_ARCHS=	i386 amd64
