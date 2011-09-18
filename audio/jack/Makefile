@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.118.0
-PORTREVISION=	4
+PORTVERSION=	0.121.2
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -21,9 +20,11 @@ LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
 		celt0.2:${PORTSDIR}/audio/celt
 
 LATEST_LINK=	jack
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+LIBS+=		${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LIBS="${LIBS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--enable-portaudio \
 		--with-default-tmpdir=/tmp
 GNU_CONFIGURE=	yes
@@ -33,14 +34,17 @@ USE_GNOME=	pkgconfig gnomehack
 
 MAN1=		jackd.1 jackstart.1
 
-OPTIONS=	ALSA "Build with ALSA compatibility library" off
+OPTIONS=	ALSA "Build with ALSA compatibility library" off \
+		DOCS "Build documentation" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if defined(WITH_DOCS) && !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+PLIST_SUB+=	DOCS=""
 .else
 CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
+PLIST_SUB+=	DOCS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
