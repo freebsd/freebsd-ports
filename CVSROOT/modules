@@ -203,6 +203,7 @@ PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
+R-cran-Epi                      ports/science/R-cran-Epi
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
 R-cran-RFinanceYJ               ports/finance/R-cran-RFinanceYJ
@@ -228,6 +229,7 @@ R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
+R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
@@ -3898,6 +3900,7 @@ frei0r-plugins                  ports/graphics/frei0r-plugins
 frei0r-plugins-gavl             ports/graphics/frei0r-plugins-gavl
 frei0r-plugins-opencv           ports/graphics/frei0r-plugins-opencv
 freqsdwn                        ports/sysutils/freqsdwn
+frescobaldi                     ports/print/frescobaldi
 freshmeat-submit                ports/misc/freshmeat-submit
 fressh                          ports/security/fressh
 fretsonfire                     ports/games/fretsonfire
@@ -6127,6 +6130,7 @@ itl                             ports/math/itl
 itraxp                          ports/mail/itraxp
 its                             ports/emulators/its
 its4                            ports/security/its4
+itstool                         ports/textproc/itstool
 iulib                           ports/graphics/iulib
 ivan                            ports/games/ivan
 iverilog                        ports/cad/iverilog
@@ -9725,6 +9729,7 @@ muttprint                       ports/print/muttprint
 muttzilla                       ports/mail/muttzilla
 mvdsv                           ports/games/mvdsv
 mx4j                            ports/java/mx4j
+mxflib                          ports/multimedia/mxflib
 mxico                           ports/x11/mxico
 mxml                            ports/textproc/mxml
 mxp                             ports/graphics/mxp
@@ -10535,6 +10540,7 @@ openmq                          ports/net/openmq
 openmq-client                   ports/net/openmq-client
 opennap                         ports/net-p2p/opennap
 openntpd                        ports/net/openntpd
+opennx                          ports/net/opennx
 openobex                        ports/comms/openobex
 openocd                         ports/devel/openocd
 openoffice.org-2                ports/editors/openoffice.org-2
@@ -22830,12 +22836,14 @@ r-cran-colorspace               ports/graphics/R-cran-colorspace
 r-cran-dbi                      ports/databases/R-cran-DBI
 r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-digest                   ports/security/R-cran-digest
+r-cran-epi                      ports/science/R-cran-Epi
 r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
+r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-proto                    ports/devel/R-cran-proto
@@ -22871,6 +22879,7 @@ race                            ports/games/race
 racket                          ports/lang/racket
 rackmonkey                      ports/net-mgmt/rackmonkey
 racoon2                         ports/security/racoon2
+radare2                         ports/devel/radare2
 raddump                         ports/net/raddump
 radeontool                      ports/sysutils/radeontool
 radiator                        ports/net/radiator
@@ -27306,6 +27315,7 @@ xpi-adblock                     ports/www/xpi-adblock
 xpi-adblock_plus                ports/www/xpi-adblock_plus
 xpi-autobrowse                  ports/www/xpi-autobrowse
 xpi-bookmarkdd                  ports/www/xpi-bookmarkdd
+xpi-clear_cache_button          ports/www/xpi-clear_cache_button
 xpi-clearfields                 ports/www/xpi-clearfields
 xpi-close-all-tabs              ports/www/xpi-close-all-tabs
 xpi-colorfultabs                ports/www/xpi-colorfultabs
