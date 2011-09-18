@@ -1,3 +1,21 @@
+--- imgObj.c	Tue Jan 15 16:00:08 2002
++++ imgObj.c	Thu Jun  9 05:28:23 2005
+@@ -33,5 +33,5 @@
+     return (initialized = IMG_PERL|IMG_OBJS);
+ #else
+-    char *version;
++    const char *version;
+     initialized = IMG_TCL;
+     if (!Tcl_GetCommandInfo(interp,"image", &cmdInfo)) {
+--- imgInit.c	Tue Jan 15 15:59:58 2002
++++ imgInit.c	Thu Jun  9 05:27:40 2005
+@@ -94,5 +94,5 @@
+ {
+     Tk_PhotoImageFormat **formatPtr = Formats;
+-    char *version;
++    const char *version;
+ 
+     if ((version = Tcl_InitStubs(interp, "8.0", 0)) == NULL) {
 --- imgPmap.h	Tue Jan 15 15:59:58 2002
 +++ imgPmap.h	Thu Jun  9 05:48:57 2005
 @@ -53,5 +53,5 @@

@@ -1,4 +1,4 @@
---- imgBMP.c	Sun Aug 13 06:08:30 2000
+--- imgBMP.c.orig	Sun Aug 13 06:08:30 2000
 +++ imgBMP.c	Mon Dec  1 12:49:07 2003
 @@ -256,7 +256,7 @@
  	    for( y = height-1; y>=0; y--) {
@@ -36,7 +36,7 @@
  		expline = block.pixelPtr;
  	    }
  	    break;
---- imgGIF.c	Sun Aug 13 06:09:39 2000
+--- imgGIF.c.orig	Sun Aug 13 06:09:39 2000
 +++ imgGIF.c	Mon Dec  1 12:50:19 2003
 @@ -482,7 +482,7 @@
      }
@@ -47,7 +47,7 @@
      } else {
  	ImgPhotoPutBlock(imageHandle, &block, destX, destY, width, height);
      }
---- imgJPEG.c	Sun Aug 13 06:10:22 2000
+--- imgJPEG.c.orig	Sun Aug 13 06:10:22 2000
 +++ imgJPEG.c	Mon Dec  1 12:50:53 2003
 @@ -1030,7 +1030,7 @@
      for (curY = 0; curY < stopY; curY++) {
@@ -58,7 +58,7 @@
  	outY++;
        }
      }
---- imgPS.c	Sun Aug 13 06:06:53 2000
+--- imgPS.c.orig	Sun Aug 13 06:06:53 2000
 +++ imgPS.c	Mon Dec  1 12:51:42 2003
 @@ -395,7 +395,7 @@
  	        for (j = 0; j < width; j++) {
@@ -121,7 +121,7 @@
 \ No newline at end of file
 +}
 +#endif /* } */
---- imgWindow.c	Sat Jan 15 13:25:37 2000
+--- imgWindow.c.orig	Sat Jan 15 13:25:37 2000
 +++ imgWindow.c	Mon Dec  1 12:52:11 2003
 @@ -378,7 +378,7 @@
  	}
@@ -132,7 +132,7 @@
  
  #ifndef	__WIN32__
      XDestroyImage(ximage);
---- imgXPM.c	Sun Aug 13 06:41:31 2000
+--- imgXPM.c.orig	Sun Aug 13 06:41:31 2000
 +++ imgXPM.c	Mon Dec  1 12:52:34 2003
 @@ -504,7 +504,7 @@
  			    col = (int)0;
