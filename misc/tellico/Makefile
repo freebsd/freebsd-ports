@@ -20,6 +20,8 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		yaz.4:${PORTSDIR}/net/yaz \
 		exempi:${PORTSDIR}/textproc/exempi
 
+BROKEN=		leaves file behind on deinstall
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
