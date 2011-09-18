@@ -1,5 +1,5 @@
---- content/renderer/webplugin_delegate_proxy.h.orig	2011-03-23 00:46:31.521939657 +0200
-+++ content/renderer/webplugin_delegate_proxy.h	2011-03-23 00:47:12.163682393 +0200
+--- content/renderer/webplugin_delegate_proxy.h.orig	2011-09-11 19:07:19.000000000 +0300
++++ content/renderer/webplugin_delegate_proxy.h	2011-09-11 19:07:36.000000000 +0300
 @@ -21,7 +21,7 @@
  #include "webkit/plugins/npapi/webplugininfo.h"
  #include "webkit/plugins/npapi/webplugin_delegate.h"
@@ -7,9 +7,9 @@
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
  #include "base/hash_tables.h"
- #include "base/linked_ptr.h"
+ #include "base/memory/linked_ptr.h"
  #endif
-@@ -216,7 +216,7 @@
+@@ -243,7 +243,7 @@
    // point the window has already been destroyed).
    void WillDestroyWindow();
  

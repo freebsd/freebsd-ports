@@ -1,6 +1,6 @@
---- chrome/browser/browser_about_handler.cc.orig	2011-04-15 11:01:47.000000000 +0300
-+++ chrome/browser/browser_about_handler.cc	2011-04-15 21:51:24.189641560 +0300
-@@ -71,7 +71,7 @@
+--- chrome/browser/browser_about_handler.cc.orig	2011-07-28 11:01:59.000000000 +0300
++++ chrome/browser/browser_about_handler.cc	2011-08-28 20:55:56.000000000 +0300
+@@ -76,7 +76,7 @@
  #include "chrome/browser/chromeos/login/wizard_controller.h"
  #include "chrome/browser/chromeos/version_loader.h"
  #include "content/browser/zygote_host_linux.h"
@@ -9,25 +9,25 @@
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -126,7 +126,7 @@
- const char kPluginsPath[] = "plugins";
- const char kSyncInternalsPath[] = "sync-internals";
- 
+@@ -146,7 +146,7 @@
+ #if defined(OS_WIN)
+   chrome::kChromeUIConflictsHost,
+ #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
- const char kLinuxProxyConfigPath[] = "linux-proxy-config";
- const char kSandboxPath[] = "sandbox";
+   chrome::kChromeUILinuxProxyConfigHost,
+   chrome::kChromeUISandboxHost,
  #endif
-@@ -160,7 +160,7 @@
-   kTcmallocPath,
-   kTermsPath,
-   kVersionPath,
+@@ -194,7 +194,7 @@
+ #if defined(USE_TCMALLOC)
+   chrome::kChromeUITCMallocHost,
+ #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-   kSandboxPath,
+   chrome::kChromeUILinuxProxyConfigHost,
+   chrome::kChromeUISandboxHost,
  #endif
- #if defined(OS_CHROMEOS)
-@@ -648,7 +648,7 @@
+@@ -993,7 +993,7 @@
    return data;
  }
  
@@ -35,13 +35,13 @@
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
  std::string AboutLinuxProxyConfig() {
    std::string data;
-   data.append("<!DOCTYPE HTML>\n");
-@@ -863,7 +863,7 @@
+   AppendHeader(&data, 0,
+@@ -1409,7 +1409,7 @@
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_TERMS_HTML).as_string();
  #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-   } else if (path == kLinuxProxyConfigPath) {
+   } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
-   } else if (path == kSandboxPath) {
+   } else if (host == chrome::kChromeUISandboxHost) {

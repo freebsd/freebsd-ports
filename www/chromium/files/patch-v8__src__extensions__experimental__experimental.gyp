@@ -1,7 +1,7 @@
---- v8/src/extensions/experimental/experimental.gyp.orig	2011-09-03 12:13:16.000000000 +0300
-+++ v8/src/extensions/experimental/experimental.gyp	2011-09-11 21:16:10.407508099 +0300
-@@ -51,8 +51,14 @@
-         'language-matcher.h',
+--- v8/src/extensions/experimental/experimental.gyp.orig	2011-09-11 19:05:30.000000000 +0300
++++ v8/src/extensions/experimental/experimental.gyp	2011-09-11 19:05:46.000000000 +0300
+@@ -56,8 +56,14 @@
+         'number-format.h',
          '<(SHARED_INTERMEDIATE_DIR)/i18n-js.cc',
        ],
 +      'conditions': [
@@ -13,6 +13,6 @@
 +      ],
        'include_dirs': [
 -        '<(icu_src_dir)/public/common',
-         '../..',
+         # v8/ is root for all includes.
+         '../../..'
        ],
-       'dependencies': [
