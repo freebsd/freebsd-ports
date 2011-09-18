@@ -1,0 +1,3 @@
+Note that dvdisaster tries to read /dev/pass* to list available CD/DVD drives,
+so the program will not detect any available drives if the user running
+dvdisaster does not have permissions to read /dev/pass*
