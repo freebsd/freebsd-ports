@@ -71,10 +71,18 @@ linux_ioctl_rtc(struct proc *p, struct linux_ioctl_args *args)
 	switch (args->cmd & 0xffff) {
 	case LINUX_RTC_PIE_ON:
 		args->cmd=RTCIO_PIE_ON;
+#if __FreeBSD_version >= 900044
+		return sys_ioctl(p, (struct ioctl_args*)args);
+#else
 		return ioctl(p, (struct ioctl_args*)args);	
+#endif
 	case LINUX_RTC_IRQP_SET:
 		args->cmd=RTCIO_IRQP_SET;
+#if __FreeBSD_version >= 900044
+		return sys_ioctl(p, (struct ioctl_args*)args);
+#else
 		return ioctl(p, (struct ioctl_args*)args);	
+#endif
 	}
 	return (ENOIOCTL);
 }
