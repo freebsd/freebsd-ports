@@ -17,6 +17,8 @@ COMMENT=	PostgreSQL administration tool for KDE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
+BROKEN=		does not compile
+
 USE_KDELIBS_VER=	3
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
