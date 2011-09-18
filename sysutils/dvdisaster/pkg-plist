@@ -11,6 +11,8 @@ doc/dvdisaster-%%PORTVERSION%%/de/download.html
 doc/dvdisaster-%%PORTVERSION%%/de/download10.html
 doc/dvdisaster-%%PORTVERSION%%/de/download20.html
 doc/dvdisaster-%%PORTVERSION%%/de/download30.html
+doc/dvdisaster-%%PORTVERSION%%/de/download_showall=0.html
+doc/dvdisaster-%%PORTVERSION%%/de/download_showall=1.html
 doc/dvdisaster-%%PORTVERSION%%/de/feedback.html
 doc/dvdisaster-%%PORTVERSION%%/de/feedback_expand=1.html
 doc/dvdisaster-%%PORTVERSION%%/de/howtos.html
@@ -334,6 +336,8 @@ doc/dvdisaster-%%PORTVERSION%%/en/download.html
 doc/dvdisaster-%%PORTVERSION%%/en/download10.html
 doc/dvdisaster-%%PORTVERSION%%/en/download20.html
 doc/dvdisaster-%%PORTVERSION%%/en/download30.html
+doc/dvdisaster-%%PORTVERSION%%/en/download_showall=0.html
+doc/dvdisaster-%%PORTVERSION%%/en/download_showall=1.html
 doc/dvdisaster-%%PORTVERSION%%/en/feedback.html
 doc/dvdisaster-%%PORTVERSION%%/en/feedback_expand=1.html
 doc/dvdisaster-%%PORTVERSION%%/en/howtos.html
@@ -684,6 +688,8 @@ doc/dvdisaster-%%PORTVERSION%%/ru/download.html
 doc/dvdisaster-%%PORTVERSION%%/ru/download10.html
 doc/dvdisaster-%%PORTVERSION%%/ru/download20.html
 doc/dvdisaster-%%PORTVERSION%%/ru/download30.html
+doc/dvdisaster-%%PORTVERSION%%/ru/download_showall=0.html
+doc/dvdisaster-%%PORTVERSION%%/ru/download_showall=1.html
 doc/dvdisaster-%%PORTVERSION%%/ru/feedback.html
 doc/dvdisaster-%%PORTVERSION%%/ru/feedback_expand=1.html
 doc/dvdisaster-%%PORTVERSION%%/ru/howtos.html
@@ -1000,6 +1006,9 @@ locale/de/LC_MESSAGES/dvdisaster.mo
 locale/it/LC_MESSAGES/dvdisaster.mo
 locale/ru/LC_MESSAGES/dvdisaster.mo
 locale/sv/LC_MESSAGES/dvdisaster.mo
+locale/pt_BR/LC_MESSAGES/dvdisaster.mo
+@dirrm locale/pt_BR/LC_MESSAGES
+@dirrm locale/pt_BR
 @dirrm locale/sv/LC_MESSAGES
 @dirrm locale/sv
 @dirrm locale/ru/LC_MESSAGES

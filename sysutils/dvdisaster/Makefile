@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.72
-PORTREVISION=	3
+PORTVERSION=	0.72.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://dvdisaster.net/downloads/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A CD/DVD error recovery tool
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	GNUmakefile
 
 USE_BZIP2=	yes
@@ -26,6 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--png-includes=${LOCALBASE}/include \
 		--png-libraries=${LOCALBASE}/lib
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 PORTSCOUT=	limitw:1,even
 
@@ -38,7 +41,7 @@ do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL="${INSTALL} -c ${_BINOWNGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -47,5 +50,8 @@ do-configure:
 			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
 			 ${FALSE}; \
 		fi)
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
