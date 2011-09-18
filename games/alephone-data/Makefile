@@ -38,6 +38,8 @@ DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 DISTFILES+=	M1A1${EXTRACT_SUFX}
 PLIST_SUB+=	MARATHON=""
 AO_PACKS+=	marathon
+DESKTOP_ENTRIES+="Marathon" "" "" "alephone-marathon" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	MARATHON="@comment "
 .endif
@@ -46,6 +48,8 @@ PLIST_SUB+=	MARATHON="@comment "
 DISTFILES+=	Marathon2${EXTRACT_SUFX}
 PLIST_SUB+=	DURANDAL=""
 AO_PACKS+=	durandal
+DESKTOP_ENTRIES+="Marathon 2: Durandal" "" "" "alephone-durandal" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	DURANDAL="@comment "
 .endif
@@ -54,6 +58,8 @@ PLIST_SUB+=	DURANDAL="@comment "
 DISTFILES+=	MarathonInfinity${EXTRACT_SUFX}
 PLIST_SUB+=	INFINITY=""
 AO_PACKS+=	infinity
+DESKTOP_ENTRIES+="Marathon Infinity" "" "" "alephone-infinity" \
+		"Game;ActionGame;" false
 .else
 PLIST_SUB+=	INFINITY="@comment "
 .endif
