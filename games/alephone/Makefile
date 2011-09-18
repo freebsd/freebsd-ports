@@ -6,31 +6,71 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20100424
-PORTREVISION=	1
+PORTVERSION=	20110731
 CATEGORIES=	games
-MASTER_SITES=	SF/marathon/Aleph%20One/2010-04-24
+MASTER_SITES=	SF/marathon/Aleph%20One/2011-07-31
 DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	The open source version of Bungie's Marathon game
 
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/zzip/lib.h:${PORTSDIR}/devel/zziplib
-
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 USE_BZIP2=	yes
+USE_SDL+=	image net sdl sound
 USE_GL=		yes
 USE_LUA=	5.1
-USE_SDL=	image ttf net sdl sound
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}"
+CONFIGURE_ARGS+=--disable-alsa --disable-sndfile
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}"
 
 DATADIR=	${PREFIX}/share/AlephOne
 
 MAN6=		alephone.6
 
+OPTIONS=	MAD "use libmad for mp3 playback" on \
+		OGG "enable ogg/vorbis music playback" on \
+		SPEEX "enable speex net mic playback" on \
+		SMPEG "use SMPEG for movie playback" on \
+		TTF "enable SDL_ttf font rendering" on \
+		ZZIP "enable zziplib support" on
+
+.if !defined(WITHOUT_MAD)
+CONFIGURE_ARGS+=--disable-mad
+.else
+LIB_DEPEND+=	mad.2:${PORTSDIR}/audio/libmad
+.endif
+
+.if !defined(WITHOUT_OGG)
+CONFIGURE_ARGS+=--disable-vorbis
+.else
+LIB_DEPEND+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if !defined(WITHOUT_SPEEX)
+CONFIGURE_ARGS+=--disable-speex
+.else
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.endif
+
+.if !defined(WITHOUT_SMPEG)
+CONFIGURE_ARGS+=--disable-smpeg
+.else
+LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+.endif
+
+.if !defined(WITHOUT_TTF)
+CONFIGURE_ARGS+=--disable-ttf
+.else
+USE_SDL+=	ttf
+.endif
+
+.if !defined(WITHOUT_ZZIP)
+CONFIGURE_ARGS+=--disable-zzip
+.else
+LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib
+.endif
+	
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
