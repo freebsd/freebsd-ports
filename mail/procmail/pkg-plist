@@ -1,23 +1,22 @@
-@comment $FreeBSD$
-bin/procmail
 bin/formail
 bin/lockfile
 bin/mailstat
+bin/procmail
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/examples/procmail/1procmailrc
-share/examples/procmail/1rmail
-share/examples/procmail/2procmailrc
-share/examples/procmail/2rmail
-share/examples/procmail/3procmailrc
-share/examples/procmail/3rmail
-share/examples/procmail/advanced
-share/examples/procmail/dirname
-share/examples/procmail/forward
-share/examples/procmail/local_procmail_lmtp.m4
-share/examples/procmail/mailstat
-@dirrm share/examples/procmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1procmailrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1rmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/2procmailrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/2rmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/3procmailrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/3rmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirname
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/forward
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/local_procmail_lmtp.m4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailstat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
