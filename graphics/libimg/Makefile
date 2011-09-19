@@ -32,6 +32,7 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 USE_TK=		83+
 USE_TK_BUILD=	${USE_TK}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
+MAKE_JOBS_SAFE=	yes
 
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libz/*' \
