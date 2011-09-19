@@ -7,6 +7,7 @@
 
 PORTNAME=	s3cmd
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Unix-like tools to manipulate stored files from the command line
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5-2.7
 
 MAN1=		s3cmd.1
 
