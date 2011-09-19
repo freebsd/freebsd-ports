@@ -6,6 +6,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -43,7 +44,7 @@ BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
 .endif
 .endif
 
-LIB_DEPENDS+=	ev.3:${PORTSDIR}/devel/libev \
+LIB_DEPENDS+=	ev.4:${PORTSDIR}/devel/libev \
 		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \

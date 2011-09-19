@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.10
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		ev.3:${PORTSDIR}/devel/libev \
+		ev.4:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xdg-basedir.1:${PORTSDIR}/x11/libxdg-basedir \
