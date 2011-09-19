@@ -13,8 +13,9 @@ include/vpx/vpx_encoder.h
 include/vpx/vpx_image.h
 include/vpx/vpx_integer.h
 lib/libvpx.a
+libdata/pkgconfig/vpx.pc
 %%SHARED%%lib/libvpx.so
 %%SHARED%%lib/libvpx.so.0
 %%SHARED%%lib/libvpx.so.0.9
-%%SHARED%%lib/libvpx.so.0.9.6
+%%SHARED%%lib/libvpx.so.0.9.7
 @dirrm include/vpx

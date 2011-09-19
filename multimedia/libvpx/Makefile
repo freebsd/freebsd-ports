@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libvpx
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
+DISTNAME=	${PORTNAME}-v${PORTVERSION}-p1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	VP8 Codec SDK
@@ -35,7 +35,7 @@ OPTIONS=	DEBUG	"Enable debugging"	OFF \
 		SHARED	"Enable shared-library support"	ON
 
 ALL_TARGET=
-CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8
+CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8 --disable-install-docs
 MAKE_ARGS+=	DIST_DIR=${PREFIX} verbose=yes
 
 .include <bsd.port.options.mk>
@@ -71,11 +71,17 @@ CONFIGURE_ARGS+=	--target=x86_64-linux-gcc
 CONFIGURE_ARGS+=	--target=x86-linux-gcc
 .elif ${ARCH} == "ia64"
 CONFIGURE_ARGS+=	--target=ia64-linux-gcc
+.elif ${ARCH} == "powerpc"
+CONFIGURE_ARGS+=	--target=ppc32-linux-gcc
+.elif ${ARCH} == "powerpc64"
+CONFIGURE_ARGS+=	--target=ppc64-linux-gcc
 .else
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
+		${WRKSRC}/build/make/configure.sh
 	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
 .if ${OSVERSION} < 700000
