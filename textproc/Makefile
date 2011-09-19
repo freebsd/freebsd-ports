@@ -369,6 +369,7 @@
     SUBDIR += libtre
     SUBDIR += libuninameslist
     SUBDIR += libupskirt
+    SUBDIR += libvisio
     SUBDIR += libwpd
     SUBDIR += libwpd08
     SUBDIR += libwps
