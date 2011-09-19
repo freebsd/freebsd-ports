@@ -74,6 +74,7 @@
     SUBDIR += cadaver
     SUBDIR += cakephp11
     SUBDIR += cakephp12
+    SUBDIR += cakephp13
     SUBDIR += calamaris
     SUBDIR += castget
     SUBDIR += caudium14

@@ -1,29 +1,31 @@
-# New ports collection makefile for:	cakephp-devel
-# Date created:        20 December 2007
-# Whom:                Greg Larkin <glarkin@FreeBSD.org>
+# New ports collection makefile for:	cakephp13
+# Date created:        			19 September 2011
+# Whom:                			Christoph Theis <theis@gmx.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.10
+PORTVERSION=	1.3.11
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	theis@gmx.at
 COMMENT=	A framework for developing PHP web applications
 
-GITVERSION=	0-ge6e50e8
+GITVERSION=	4-g762fcf2
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-da67eb8
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-3b830a4
+
+LICENSE=	MIT
 
 PORTDOCS=	README
 
 SLAVE_PORT_MODULES=	rewrite
 
-CONFLICTS=	cakephp-1.[13].*
+CONFLICTS=	cakephp-1.[12].*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
