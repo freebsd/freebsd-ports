@@ -1,5 +1,4 @@
+%%CGDISK%%sbin/cgdisk
+sbin/fixparts
 sbin/gdisk
 sbin/sgdisk
-%%PORTDOCS%%%%DOCSDIR%%/gdisk.html
-%%PORTDOCS%%%%DOCSDIR%%/sgdisk.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
