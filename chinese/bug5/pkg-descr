@@ -7,6 +7,7 @@ Features that screen doesn't have:
 - ANSI-Broken Big5 (eg. Double Color) fixing
 - Optional Traditional-Simplified conversion
 - BSD License
+- Specifying size for slave terminal + auto scrolling region setting
 
 Features that both bug5 and screen has:
 - Optional ambiguous-width characters padding
