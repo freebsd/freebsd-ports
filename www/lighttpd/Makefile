@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_LIBEV)
 CONFIGURE_ARGS+=	--with-libev=${LOCALBASE}
-LIB_DEPENDS+=		ev.3:${PORTSDIR}/devel/libev
+LIB_DEPENDS+=		ev.4:${PORTSDIR}/devel/libev
 .endif
 
 .if defined(WITH_MAGNET)

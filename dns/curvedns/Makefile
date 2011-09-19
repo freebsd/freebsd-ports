@@ -7,7 +7,7 @@
 
 PORTNAME=		curvedns
 PORTVERSION=		0.88.b
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		dns
 MASTER_SITES=		http://curvedns.on2it.net/releases/
 DISTNAME=		curvedns-0.88-unstable
@@ -15,7 +15,7 @@ DISTNAME=		curvedns-0.88-unstable
 MAINTAINER=		freebsd@dns-lab.com
 COMMENT=		A forwarder adding DNSCurve to an authoritive nameserver
 
-LIB_DEPENDS=		ev.3:${PORTSDIR}/devel/libev
+LIB_DEPENDS=		ev.4:${PORTSDIR}/devel/libev
 RUN_DEPENDS=		setuidgid:${PORTSDIR}/sysutils/daemontools
 BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash
 

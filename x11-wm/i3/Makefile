@@ -7,6 +7,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	3.e-bf3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +18,7 @@ COMMENT=	An improved dynamic tiling window manager
 
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
-		ev.3:${PORTSDIR}/devel/libev \
+		ev.4:${PORTSDIR}/devel/libev \
 		yajl.1:${PORTSDIR}/devel/yajl
 
 USE_XORG=	x11
