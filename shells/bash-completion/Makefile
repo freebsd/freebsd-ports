@@ -5,25 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=		bash-completion
+PORTNAME=	bash-completion
 PORTVERSION=	1.3
-PORTREVISION=	1
-PORTEPOCH=		1
-CATEGORIES=		shells
+PORTREVISION=	2
+PORTEPOCH=	1
+CATEGORIES=	shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 
-MAINTAINER=		adamw@FreeBSD.org
-COMMENT=		Programmable completion library for Bash
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	Programmable completion library for Bash
 
-USE_BZIP2=		yes
-SUB_FILES=		pkg-message
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-CONFLICTS+=		bash-completion-classic-[0-9]*
+CONFLICTS=	bash-completion-classic-[0-9]*
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${ECHO_CMD} You can safely ignore this next error...
@@ -36,11 +35,11 @@ post-patch:
 		s|/usr/lib\(/aspell\)|${PREFIX}/share\1|g; \
 		s|/usr/share/info|&:${PREFIX}/info|g; \
 		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
-		s|\(FLAC\)|\1\|flv\|FLV|' \
+		s|FLAC|&\|flv\|FLV|' \
 		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in \
 		${WRKSRC}/completions/* ${WRKSRC}/completions/helpers/*
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
