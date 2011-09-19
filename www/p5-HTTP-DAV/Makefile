@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-DAV
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		dave.1
 MAN3=		HTTP::DAV.3 HTTP::DAV::Lock.3 HTTP::DAV::Resource.3 \
-		HTTP::DAV::Response.3
+		HTTP::DAV::Response.3 HTTP::DAV::Changes.3
 
 .include <bsd.port.mk>

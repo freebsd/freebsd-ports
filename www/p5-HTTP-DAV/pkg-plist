@@ -1,6 +1,7 @@
 bin/dave
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/DAV/.packlist
 %%SITE_PERL%%/HTTP/DAV.pm
+%%SITE_PERL%%/HTTP/DAV/Changes.pod
 %%SITE_PERL%%/HTTP/DAV/Comms.pm
 %%SITE_PERL%%/HTTP/DAV/Lock.pm
 %%SITE_PERL%%/HTTP/DAV/Resource.pm
