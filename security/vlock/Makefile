@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlock
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
