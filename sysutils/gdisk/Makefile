@@ -6,24 +6,29 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.6.14
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://sourceforge.net/projects/%SUBDIR%/
+MASTER_SITE_SUBDIR=	gptfdisk/files/gptfdisk/${PORTVERSION}
+DISTNAME=	gptfdisk-${PORTVERSION}
 
 MAINTAINER=	fdn@okbire.ru
 COMMENT=	GPT fdisk
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		popt.0:${PORTSDIR}/devel/popt
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+WRKSRC=		${WRKDIR}/gptfdisk-${PORTVERSION}
 
 FETCH_ARGS=	-Rr
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+OPTIONS=	CGDISK "A curses-based interactive program" off \
+		UTF16 "Support for Unicode partition names" off
 
 .include <bsd.port.pre.mk>
 
@@ -33,22 +38,42 @@ IGNORE=		is unsupported on FreeBSD 7.1-RELEASE or earlier
 
 MAKEFILE=	Makefile.freebsd
 
-MAN8=		gdisk.8 sgdisk.8
+PROGRAM_LIST=	fixparts gdisk sgdisk
+
+.if defined(WITH_CGDISK)
+PROGRAM_LIST+=	cgdisk
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+PLIST_SUB+=	CGDISK=""
+.else
+PLIST_SUB+=	CGDISK="@comment "
+.endif
+
+MAN8=
+.for i in ${PROGRAM_LIST}
+MAN8+=	${i}.8
+.endfor
+
+.if defined(WITH_UTF16)
+LIB_DEPENDS+=	icuuc.48:${PORTSDIR}/devel/icu
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.freebsd
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
+
+.if !defined(WITH_CGDISK)
+	${REINPLACE_CMD} -e '/^all:/s| cgdisk||' ${WRKSRC}/${MAKEFILE}
+.endif
+
+.if !defined(WITH_UTF16)
+	${REINPLACE_CMD} -e 's| -D USE_UTF16||' \
+			 -e 's| -licuio||' ${WRKSRC}/${MAKEFILE}
+.endif
 
 do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.endif
-.for i in gdisk sgdisk
+.for i in ${PROGRAM_LIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	${INSTALL_MAN} ${WRKSRC}/${i}.html ${DOCSDIR}
-.endif
 .endfor
 
 post-install:
