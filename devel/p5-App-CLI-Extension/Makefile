@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	App-CLI-Extension
-PORTVERSION=	1.30
+PORTVERSION=	1.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:HOLLY
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extension for App::CLI extension module
 
-DEPRECATED=	Depends on devel/p5-Class-Data-Accessor, which is deprecated
-EXPIRATION_DATE=	2011-09-30
-
 BUILD_DEPENDS=	p5-App-CLI>=0:${PORTSDIR}/devel/p5-App-CLI \
-		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
+		p5-Class-Accessor-Grouped>=0:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
