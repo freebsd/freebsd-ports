@@ -43,7 +43,6 @@
 %%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
-%%SITE_PERL%%/Mojo/Server/FastCGI.pm
 %%SITE_PERL%%/Mojo/Server/Hypnotoad.pm
 %%SITE_PERL%%/Mojo/Server/Morbo.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
@@ -61,7 +60,6 @@
 %%SITE_PERL%%/Mojolicious/Command/cpanify.pm
 %%SITE_PERL%%/Mojolicious/Command/daemon.pm
 %%SITE_PERL%%/Mojolicious/Command/eval.pm
-%%SITE_PERL%%/Mojolicious/Command/fastcgi.pm
 %%SITE_PERL%%/Mojolicious/Command/generate.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/app.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/gitignore.pm
