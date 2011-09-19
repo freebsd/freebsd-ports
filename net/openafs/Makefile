@@ -9,8 +9,8 @@
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
 CATEGORIES=	net kld
-MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
-		http://dl.openafs.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
+MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
+		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.central.org/dl/cellservdb/:gco \
 		http://grand.central.org/dl/cellservdb/:gco
 DISTFILES=	${PORTNAME}-${AFS_DISTVERSION}-src.tar.bz2:openafs \
@@ -27,7 +27,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=1.6.0pre7
+AFS_DISTVERSION=	1.6.0
 DBVERSION=	2011-08-14
 
 OPTIONS=	FUSE "Build afsd.fuse (enable fuse support)" off
