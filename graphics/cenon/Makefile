@@ -35,8 +35,10 @@ OPTIONS=	FULL_LIBRARY	"Install complete Cenon Library" off
 .if defined(WITH_FULL_LIBRARY) || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX}
 PLIST_SUB+=	FULL=""
+PLIST_SUB+=	LITE="@comment "
 .else
 PLIST_SUB+=	FULL="@comment "
+PLIST_SUB+=	LITE=""
 .endif
 
 post-extract:
