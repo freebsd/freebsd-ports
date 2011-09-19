@@ -1,0 +1,10 @@
+--- build/build.xml.orig	2011-09-19 13:48:53.000000000 +0200
++++ build/build.xml	2011-09-19 13:49:04.000000000 +0200
+@@ -234,6 +234,7 @@
+                 <or>
+                     <contains string="${ant.java.version}" substring="1.5"/>
+                     <contains string="${ant.java.version}" substring="1.6"/>
++                    <contains string="${ant.java.version}" substring="1.7"/>
+                 </or>
+             </not>
+         </condition>
