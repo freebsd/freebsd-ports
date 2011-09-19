@@ -7,21 +7,20 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	1.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/a2ps|}
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text file to postscript converter (with Japanese support)
 
 PLIST_FILES=	bin/a2ps-j
 EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	./a2ps-j
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	a2ps-j
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
