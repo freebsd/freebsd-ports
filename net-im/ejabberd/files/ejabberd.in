@@ -15,6 +15,7 @@
 #
 ejabberd_enable=${ejabberd_enable-"NO"}
 ejabberd_node=${ejabberd_node-"ejabberd@localhost"}
+ejabberd_epmd_address=${ejabberd_epmd_address-"127.0.0.1"}
 
 . /etc/rc.subr
 
@@ -50,7 +51,7 @@ ejabberd_checkstatus()
 ejabberd_start()
 {
     echo "Starting $name."
-    su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node start"
+    su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node start"
 }
 
 ejabberd_stop()
