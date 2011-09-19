@@ -167,8 +167,7 @@
        return TCL_ERROR;
      }
  
--    /* Now we can initialize libjpeg. */
-+    /* Now we can initialize libjpeg_ */
+     /* Now we can initialize libjpeg. */
      ((char *) cinfo)[sizeof(struct jpeg_compress_struct)] = 53;
 -    jpeg.CreateCompress(cinfo, JPEG_LIB_VERSION,
 +    jpeg_CreateCompress(cinfo, JPEG_LIB_VERSION,
@@ -383,13 +382,6 @@
 -}
  
  
-@@ -715,5 +409,5 @@
- 	}
- 	/* look for SOF0, SOF1, or SOF2, which are the only JPEG variants
--	 * currently accepted by libjpeg.
-+	 * currently accepted by libjpeg_
- 	 */
- 	if (buf[0] == (char) 0xc0 || buf[0] == (char) 0xc1
 @@ -794,5 +488,5 @@
      /* Initialize JPEG error handler */
      /* We set up the normal JPEG error routines, then override error_exit. */
@@ -405,9 +397,8 @@
        return TCL_ERROR;
      }
  
--    /* Now we can initialize libjpeg. */
+     /* Now we can initialize libjpeg. */
 -    jpeg.CreateDecompress(&cinfo, JPEG_LIB_VERSION,
-+    /* Now we can initialize libjpeg_ */
 +    jpeg_CreateDecompress(&cinfo, JPEG_LIB_VERSION,
  			(size_t) sizeof(struct jpeg_decompress_struct));
      jpeg_channel_src(&cinfo, chan);
@@ -433,9 +424,8 @@
        return TCL_ERROR;
      }
  
--    /* Now we can initialize libjpeg. */
+     /* Now we can initialize libjpeg. */
 -    jpeg.CreateDecompress(&cinfo, JPEG_LIB_VERSION,
-+    /* Now we can initialize libjpeg_ */
 +    jpeg_CreateDecompress(&cinfo, JPEG_LIB_VERSION,
  			(size_t) sizeof(struct jpeg_decompress_struct));
      jpeg_obj_src(&cinfo, data);
@@ -467,13 +457,6 @@
 +    jpeg_start_decompress(cinfo);
  
      /* Check dimensions. */
-@@ -1002,5 +696,5 @@
- 	break;
-     case JCS_RGB:
--	/* note: this pixel layout assumes default configuration of libjpeg. */
-+	/* note: this pixel layout assumes default configuration of libjpeg_ */
- 	block.pixelSize = 3;
- 	block.offset[0] = 0;
 @@ -1029,5 +723,5 @@
      outY = destY;
      for (curY = 0; curY < stopY; curY++) {
@@ -507,9 +490,8 @@
        return TCL_ERROR;
      }
  
--    /* Now we can initialize libjpeg. */
+     /* Now we can initialize libjpeg. */
 -    jpeg.CreateCompress(&cinfo, JPEG_LIB_VERSION,
-+    /* Now we can initialize libjpeg_ */
 +    jpeg_CreateCompress(&cinfo, JPEG_LIB_VERSION,
  			(size_t) sizeof(struct jpeg_compress_struct));
      jpeg_channel_dest(&cinfo, chan);
@@ -530,9 +512,8 @@
 @@ -1167,6 +861,6 @@
      }
  
--    /* Now we can initialize libjpeg. */
+     /* Now we can initialize libjpeg. */
 -    jpeg.CreateCompress(&cinfo, JPEG_LIB_VERSION,
-+    /* Now we can initialize libjpeg_ */
 +    jpeg_CreateCompress(&cinfo, JPEG_LIB_VERSION,
  	    (size_t) sizeof(struct jpeg_compress_struct));
      jpeg_string_dest(&cinfo, dataPtr);
