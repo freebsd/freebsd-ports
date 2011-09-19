@@ -48,4 +48,7 @@ post-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
 
+test: build
+	cd ${WRKSRC} && ${MAKE} check
+
 .include <bsd.port.post.mk>
