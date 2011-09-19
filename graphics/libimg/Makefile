@@ -7,12 +7,12 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES?=	graphics tk
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
 DISTNAME=	img${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
