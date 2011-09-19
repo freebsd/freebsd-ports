@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	httest
-PORTVERSION=	2.0.9
+PORTVERSION=	2.1.3
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	htt/htt/${PORTNAME}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	htt/htt2.1/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	HTTP Test Tool
@@ -22,9 +22,13 @@ LICENSE=	ASL
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
+LDFLAGS+=	-lm
+
 CONFIGURE_ARGS+=--with-apr="${LOCALBASE}/bin" \
 		--with-apr-util="${LOCALBASE}/bin" \
 		--with-pcre="${LOCALBASE}/bin"
+
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		httest.1 htproxy.1 htntlm.1 htremote.1 hturlext.1 htx2b.1
 
