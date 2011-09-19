@@ -22,14 +22,13 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/catalogs.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/codeintel.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/commandid.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/activestyle/base.css
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/activestyle/reset.css
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/api.css
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/app.css
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/aspn.css
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/screen.css
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/top.css
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/custtbi.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/db_explorer.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/debugger.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/debugjs.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/debugperl.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/debugphp.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/debugpython.html
@@ -42,7 +41,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/emacskeybind.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/favicon.ico
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/files.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/folders.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/getstarted.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/help-toc.rdf
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/help_help.xhtml
@@ -61,13 +59,10 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/app-edit.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/app-ide-edit.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/app-ide.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/app-snapdragon.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/bottom_pane.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/break_request.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/break_response.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/button.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/button_showhide_TOC.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/button_sync_TOC.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/cc_attr_noncom_sharealike.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/codeintel_code_browser_context.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/codeintel_filter.gif
@@ -75,11 +70,11 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/codeintel_sort.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/column_edit.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/column_select.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/dbx.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/editor_autocomp.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/editor_calltips.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/editor_pane.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/editor_syncol.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/greysmallbullet.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/hyperlinks_color.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/hyperlinks_definition.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/hyperlinks_url.png
@@ -87,37 +82,40 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/icon_check_ok.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/ignore_case.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/intshell_hidden_variables.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/main_menu.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/komodo.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/multi_single.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/multiple_line.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/project_new_project.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/projtb_add_butt.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_adv.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_ask1.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_ask2.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_findinfiles.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_icon.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_outputwin.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_parsedoutput.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_parsedviewbutton.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_project.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_properties.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_recent.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_shortcuts.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_simple.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_terminatebutton.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_toolbox.gif
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/places_projects.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/places_view.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/projects_pane.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/publish_sync.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/ribbons.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_adv.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_ask1.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_ask2.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_findinfiles.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_icon.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_outputwin.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_parsedoutput.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_parsedviewbutton.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_project.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_properties.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_recent.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_shortcuts.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_simple.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_terminatebutton.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/runcommand_toolbox.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/rx_button.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/rx_match.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/rx_matches.gif
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/rx_match.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/rx_matches.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/scc_commit_dialog.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sections_list.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sidebar_changelists.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sidebar_code.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sidebar_dom.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sidebar_projects.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/sidebar_toolbox.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/single_line.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/start_page.png
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/status_bar.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/status_icon_add.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/status_icon_conflict.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/status_icon_delete.png
@@ -136,12 +134,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/toolbar_std.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/toolbar_tools.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/toolbar_wkspc.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/background_1.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/forums-icon.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/komodo_icon_1.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/sample_projects.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/showcase.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top/tutorials.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_arrow.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_codecomp_addsnip.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_codecomp_inssnip.gif
@@ -159,9 +151,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_debug_xslt_htmlout.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_debug_xslt_split.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_debug_xslt_step.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_dirshortcut_add.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_dirshortcut_open.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_dirshortcut_select.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_expimppkg_exp.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_expimppkg_files.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_expimppkg_folder.gif
@@ -178,9 +167,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_faststr_findres.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_faststr_search.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_faststr_string.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_filesys_import.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_filesys_menu.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_filesys_struct.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_googrun_googres.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_googrun_runcmd.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_googrun_srchterm.gif
@@ -197,10 +183,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_keybinding_add.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_keybinding_props.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_keybinding_tab.gif
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_liveproj_browse.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_liveproj_name.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_liveproj_new.png
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_liveproj_pref.png
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_openfind_arrows.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_openfind_findfile.gif
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/tourlet_openfind_frontslash.gif
@@ -245,18 +227,22 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/luddite.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/macroapi.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/macros.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/openshort.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/osxkeybind.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/pdk.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/places.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/prefs.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/project.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/publish.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/regex-intro.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/regex.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/api-changes.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-4.2.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-4.3.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-4.4.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-5.0.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-5.1.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-5.2.html
+%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide-6.0.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/ide.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/index.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases/old.html
@@ -275,7 +261,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tortoisesvn_icon_license.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/trouble.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tut-intro.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/jstut.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/perltut.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/phptut.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/pythontut.html
@@ -286,16 +271,13 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_condbreak.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_custtoolbar.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_debug_xslt.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_dirshortcut.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_expimppkg.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_extensions.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_faststr.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_filesys.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_googrun.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_incrsrch.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_intshell.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_keybinding.html
-%%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_live_projects.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_openfind.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_over.html
 %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial/tourlet_remote_files.html
@@ -322,6 +304,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/ISciMoz.xpt
 %%DATADIR%%/lib/mozilla/components/ISciMozController.xpt
 %%DATADIR%%/lib/mozilla/components/ISciMozEvents.xpt
+%%DATADIR%%/lib/mozilla/components/NetworkGeolocationProvider.js
 %%DATADIR%%/lib/mozilla/components/accessibility.xpt
 %%DATADIR%%/lib/mozilla/components/alerts.xpt
 %%DATADIR%%/lib/mozilla/components/appshell.xpt
@@ -353,6 +336,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/dom_core.xpt
 %%DATADIR%%/lib/mozilla/components/dom_css.xpt
 %%DATADIR%%/lib/mozilla/components/dom_events.xpt
+%%DATADIR%%/lib/mozilla/components/dom_geolocation.xpt
 %%DATADIR%%/lib/mozilla/components/dom_html.xpt
 %%DATADIR%%/lib/mozilla/components/dom_json.xpt
 %%DATADIR%%/lib/mozilla/components/dom_loadsave.xpt
@@ -362,6 +346,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/dom_storage.xpt
 %%DATADIR%%/lib/mozilla/components/dom_stylesheets.xpt
 %%DATADIR%%/lib/mozilla/components/dom_svg.xpt
+%%DATADIR%%/lib/mozilla/components/dom_threads.xpt
 %%DATADIR%%/lib/mozilla/components/dom_traversal.xpt
 %%DATADIR%%/lib/mozilla/components/dom_views.xpt
 %%DATADIR%%/lib/mozilla/components/dom_xbl.xpt
@@ -378,7 +363,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/filepicker.xpt
 %%DATADIR%%/lib/mozilla/components/find.xpt
 %%DATADIR%%/lib/mozilla/components/gfx.xpt
-%%DATADIR%%/lib/mozilla/components/history.xpt
 %%DATADIR%%/lib/mozilla/components/htmlparser.xpt
 %%DATADIR%%/lib/mozilla/components/imgicon.xpt
 %%DATADIR%%/lib/mozilla/components/imglib2.xpt
@@ -406,11 +390,14 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koCSSLanguage.py
 %%DATADIR%%/lib/mozilla/components/koCSSLinter.py
 %%DATADIR%%/lib/mozilla/components/koCSharpLanguage.py
+%%DATADIR%%/lib/mozilla/components/koCamlLanguage.py
 %%DATADIR%%/lib/mozilla/components/koCatalogsTree.py
+%%DATADIR%%/lib/mozilla/components/koCobolLanguage.py
 %%DATADIR%%/lib/mozilla/components/koCodeIntel.py
 %%DATADIR%%/lib/mozilla/components/koCommandmentService.py
 %%DATADIR%%/lib/mozilla/components/koCsoundLanguage.py
 %%DATADIR%%/lib/mozilla/components/koDiffLanguage.py
+%%DATADIR%%/lib/mozilla/components/koDiffService.py
 %%DATADIR%%/lib/mozilla/components/koDirs.py
 %%DATADIR%%/lib/mozilla/components/koDocument.py
 %%DATADIR%%/lib/mozilla/components/koDocumentService.py
@@ -455,18 +442,19 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koICommandmentService.xpt
 %%DATADIR%%/lib/mozilla/components/koIContentUtils.xpt
 %%DATADIR%%/lib/mozilla/components/koIDLLanguage.py
+%%DATADIR%%/lib/mozilla/components/koIDiffService.xpt
 %%DATADIR%%/lib/mozilla/components/koIDirs.xpt
 %%DATADIR%%/lib/mozilla/components/koIDocument.xpt
 %%DATADIR%%/lib/mozilla/components/koIEncoding.xpt
 %%DATADIR%%/lib/mozilla/components/koIEncodingServices.xpt
 %%DATADIR%%/lib/mozilla/components/koIEnvView.xpt
 %%DATADIR%%/lib/mozilla/components/koIEnviron.xpt
-%%DATADIR%%/lib/mozilla/components/koIFTP.xpt
 %%DATADIR%%/lib/mozilla/components/koIFeatureStatusService.xpt
 %%DATADIR%%/lib/mozilla/components/koIFile.xpt
 %%DATADIR%%/lib/mozilla/components/koIFileEx.xpt
 %%DATADIR%%/lib/mozilla/components/koIFileLoggingService.xpt
 %%DATADIR%%/lib/mozilla/components/koIFileNotificationService.xpt
+%%DATADIR%%/lib/mozilla/components/koIFileService.xpt
 %%DATADIR%%/lib/mozilla/components/koIFileStatusService.xpt
 %%DATADIR%%/lib/mozilla/components/koIFinalizeService.xpt
 %%DATADIR%%/lib/mozilla/components/koIFindBrowseForDirs.xpt
@@ -485,6 +473,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koILinter.xpt
 %%DATADIR%%/lib/mozilla/components/koILoggingService.xpt
 %%DATADIR%%/lib/mozilla/components/koIMacroService.xpt
+%%DATADIR%%/lib/mozilla/components/koIObserverService.xpt
 %%DATADIR%%/lib/mozilla/components/koIOrderedPreference.xpt
 %%DATADIR%%/lib/mozilla/components/koIOs.xpt
 %%DATADIR%%/lib/mozilla/components/koIPrefs.xpt
@@ -492,6 +481,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koIProject.xpt
 %%DATADIR%%/lib/mozilla/components/koIPythonProfiler.xpt
 %%DATADIR%%/lib/mozilla/components/koIPythonStdLib.xpt
+%%DATADIR%%/lib/mozilla/components/koIRemoteConnection.xpt
 %%DATADIR%%/lib/mozilla/components/koIRemoteConnectionService.xpt
 %%DATADIR%%/lib/mozilla/components/koIRemoteFileInfo.xpt
 %%DATADIR%%/lib/mozilla/components/koIRunService.xpt
@@ -503,6 +493,9 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koITest.xpt
 %%DATADIR%%/lib/mozilla/components/koITextUtils.xpt
 %%DATADIR%%/lib/mozilla/components/koITextboxAutoComplete.xpt
+%%DATADIR%%/lib/mozilla/components/koIToolbox2Components.idl
+%%DATADIR%%/lib/mozilla/components/koIToolbox2Components.xpt
+%%DATADIR%%/lib/mozilla/components/koIToolbox2HTreeView.xpt
 %%DATADIR%%/lib/mozilla/components/koIUrlUtils.xpt
 %%DATADIR%%/lib/mozilla/components/koIUrllib.xpt
 %%DATADIR%%/lib/mozilla/components/koIViCommandDetail.xpt
@@ -532,8 +525,10 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koMSSQLLanguage.py
 %%DATADIR%%/lib/mozilla/components/koMacroService.py
 %%DATADIR%%/lib/mozilla/components/koMakefileLanguage.py
+%%DATADIR%%/lib/mozilla/components/koMarkdownLanguage.py
 %%DATADIR%%/lib/mozilla/components/koMatlabLanguage.py
 %%DATADIR%%/lib/mozilla/components/koMetapostLanguage.py
+%%DATADIR%%/lib/mozilla/components/koNimrodLanguage.py
 %%DATADIR%%/lib/mozilla/components/koNsisLanguage.py
 %%DATADIR%%/lib/mozilla/components/koObserverService.py
 %%DATADIR%%/lib/mozilla/components/koOs.py
@@ -548,6 +543,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koPerlLanguage.py
 %%DATADIR%%/lib/mozilla/components/koPostScriptLanguage.py
 %%DATADIR%%/lib/mozilla/components/koPowerBasicLanguage.py
+%%DATADIR%%/lib/mozilla/components/koPowerProLanguage.py
 %%DATADIR%%/lib/mozilla/components/koPowerShellLanguage.py
 %%DATADIR%%/lib/mozilla/components/koPrefs.py
 %%DATADIR%%/lib/mozilla/components/koProject.py
@@ -574,10 +570,12 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koScintillaSchemeService.py
 %%DATADIR%%/lib/mozilla/components/koScriptolLanguage.py
 %%DATADIR%%/lib/mozilla/components/koSmalltalkLanguage.py
+%%DATADIR%%/lib/mozilla/components/koSorcusLanguage.py
 %%DATADIR%%/lib/mozilla/components/koSpecmanLanguage.py
 %%DATADIR%%/lib/mozilla/components/koStatusMessage.py
 %%DATADIR%%/lib/mozilla/components/koSysUtils.py
 %%DATADIR%%/lib/mozilla/components/koTADS3Language.py
+%%DATADIR%%/lib/mozilla/components/koTandemComputerLanguage.py
 %%DATADIR%%/lib/mozilla/components/koTclCompletion.py
 %%DATADIR%%/lib/mozilla/components/koTclLanguage.py
 %%DATADIR%%/lib/mozilla/components/koTeXLanguage.py
@@ -586,6 +584,9 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/koTextLanguage.py
 %%DATADIR%%/lib/mozilla/components/koTextUtils.py
 %%DATADIR%%/lib/mozilla/components/koTextboxAutoComplete.py
+%%DATADIR%%/lib/mozilla/components/koToolbox2Components.py
+%%DATADIR%%/lib/mozilla/components/koToolbox2HTreeView.py
+%%DATADIR%%/lib/mozilla/components/koTools.py
 %%DATADIR%%/lib/mozilla/components/koUrlUtils.py
 %%DATADIR%%/lib/mozilla/components/koUrllib.py
 %%DATADIR%%/lib/mozilla/components/koVBLanguage.py
@@ -647,7 +648,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/libstoragecomps.so
 %%DATADIR%%/lib/mozilla/components/libsystem-pref.so
 %%DATADIR%%/lib/mozilla/components/libtkautocomplete.so
-%%DATADIR%%/lib/mozilla/components/libtkhstory.so
 %%DATADIR%%/lib/mozilla/components/libtoolkitcomps.so
 %%DATADIR%%/lib/mozilla/components/libtxmgr.so
 %%DATADIR%%/lib/mozilla/components/libuconv.so
@@ -657,7 +657,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/libwebbrwsr.so
 %%DATADIR%%/lib/mozilla/components/libwidget_gtk2.so
 %%DATADIR%%/lib/mozilla/components/libwindowds.so
-%%DATADIR%%/lib/mozilla/components/libxmlextras.so
 %%DATADIR%%/lib/mozilla/components/libxpcom_compat_c.so
 %%DATADIR%%/lib/mozilla/components/libxpconnect.so
 %%DATADIR%%/lib/mozilla/components/libxpinstall.so
@@ -686,7 +685,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/nsContentDispatchChooser.js
 %%DATADIR%%/lib/mozilla/components/nsContentPrefService.js
 %%DATADIR%%/lib/mozilla/components/nsDefaultCLH.js
-%%DATADIR%%/lib/mozilla/components/nsDictionary.js
 %%DATADIR%%/lib/mozilla/components/nsDownloadManagerUI.js
 %%DATADIR%%/lib/mozilla/components/nsExtensionManager.js
 %%DATADIR%%/lib/mozilla/components/nsFilePicker.js
@@ -697,12 +695,12 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/nsLoginManagerPrompter.js
 %%DATADIR%%/lib/mozilla/components/nsProgressDialog.js
 %%DATADIR%%/lib/mozilla/components/nsProxyAutoConfig.js
-%%DATADIR%%/lib/mozilla/components/nsResetPref.js
+%%DATADIR%%/lib/mozilla/components/nsSearchService.js
+%%DATADIR%%/lib/mozilla/components/nsSearchSuggestions.js
 %%DATADIR%%/lib/mozilla/components/nsTryToClose.js
 %%DATADIR%%/lib/mozilla/components/nsURLFormatter.js
 %%DATADIR%%/lib/mozilla/components/nsUpdateService.js
 %%DATADIR%%/lib/mozilla/components/nsWebHandlerApp.js
-%%DATADIR%%/lib/mozilla/components/nsXmlRpcClient.js
 %%DATADIR%%/lib/mozilla/components/parentalcontrols.xpt
 %%DATADIR%%/lib/mozilla/components/pipboot.xpt
 %%DATADIR%%/lib/mozilla/components/pipnss.xpt
@@ -714,6 +712,8 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/prefetch.xpt
 %%DATADIR%%/lib/mozilla/components/profile.xpt
 %%DATADIR%%/lib/mozilla/components/proxyObjInst.xpt
+%%DATADIR%%/lib/mozilla/components/pyIXPCOMExtensionHelper.xpt
+%%DATADIR%%/lib/mozilla/components/pyXPCOMExtensionHelper.py
 %%DATADIR%%/lib/mozilla/components/pyabout.py
 %%DATADIR%%/lib/mozilla/components/rdf.xpt
 %%DATADIR%%/lib/mozilla/components/satchel.xpt
@@ -721,9 +721,11 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/shistory.xpt
 %%DATADIR%%/lib/mozilla/components/spellchecker.xpt
 %%DATADIR%%/lib/mozilla/components/storage-Legacy.js
+%%DATADIR%%/lib/mozilla/components/storage-mozStorage.js
 %%DATADIR%%/lib/mozilla/components/storage.xpt
 %%DATADIR%%/lib/mozilla/components/toolkitprofile.xpt
 %%DATADIR%%/lib/mozilla/components/toolkitremote.xpt
+%%DATADIR%%/lib/mozilla/components/toolkitsearch.xpt
 %%DATADIR%%/lib/mozilla/components/txEXSLTRegExFunctions.js
 %%DATADIR%%/lib/mozilla/components/txmgr.xpt
 %%DATADIR%%/lib/mozilla/components/txtsvc.xpt
@@ -738,7 +740,6 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/components/widget.xpt
 %%DATADIR%%/lib/mozilla/components/windowds.xpt
 %%DATADIR%%/lib/mozilla/components/windowwatcher.xpt
-%%DATADIR%%/lib/mozilla/components/xml-rpc.xpt
 %%DATADIR%%/lib/mozilla/components/xpcom_base.xpt
 %%DATADIR%%/lib/mozilla/components/xpcom_colorpicker.js
 %%DATADIR%%/lib/mozilla/components/xpcom_components.xpt
@@ -777,10 +778,14 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/locale/en-US/pref-actionscript.dtd
 %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/locale/en-US/pref-actionscript.properties
 %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/templates/All Languages/ActionScript.as
+%%DATADIR%%/lib/mozilla/extensions/crystal@everaldo.com/chrome.manifest
+%%DATADIR%%/lib/mozilla/extensions/crystal@everaldo.com/crystal.jar
+%%DATADIR%%/lib/mozilla/extensions/crystal@everaldo.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/components/koDjango_UDL_Language.py
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/lexers/Django.lexres
+%%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/pylib/djangoLinter.py
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/All Languages/Django.django.html
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Common/Django.django.html
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Web/Django.django.html
@@ -791,17 +796,28 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/idl/koIFastOpen.idl
 %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/pylib/fastopen.py
+%%DATADIR%%/lib/mozilla/extensions/fugue@p.yusukekamiyamane.com/chrome.manifest
+%%DATADIR%%/lib/mozilla/extensions/fugue@p.yusukekamiyamane.com/fugue.jar
+%%DATADIR%%/lib/mozilla/extensions/fugue@p.yusukekamiyamane.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/components/koHTMLLanguage.py
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/lexers/HTML.lexres
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/All Languages/HTML 5.html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/All Languages/HTML.html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Common/HTML (XHTML).html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Common/HTML 5.html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Common/HTML.html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML (4.01).html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML (XHTML).html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5/Article.html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5/Audio.html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5/Canvas.html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5/Layout.html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5/Video.html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Web/HTML (4.01).html
 %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Web/HTML (XHTML).html
+%%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Web/HTML 5.html
 %%DATADIR%%/lib/mozilla/extensions/industrial@openoffice.org/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/industrial@openoffice.org/industrial.jar
 %%DATADIR%%/lib/mozilla/extensions/industrial@openoffice.org/install.rdf
@@ -839,12 +855,17 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Samples/PHP.php
 %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Web/PHP (HTML Embedded).php
 %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Web/PHP.php
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/chrome.manifest
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/components/koIPlaceTreeView.xpt
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/components/koPlaceTreeView.py
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/idl/koIPlaceTreeView.idl
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/install.rdf
+%%DATADIR%%/lib/mozilla/extensions/places@activestate.com/places.jar
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/components/koreStructuredText_UDL_Language.py
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/lexers/reStructuredText.lexres
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/All Languages/reStructuredText.rst
-%%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/Common/reStructuredText.rst
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/components/koRHTML_UDL_Language.py
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/install.rdf
@@ -913,6 +934,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/icons/mozicon128.png
 %%DATADIR%%/lib/mozilla/icons/mozicon16.xpm
 %%DATADIR%%/lib/mozilla/icons/mozicon50.xpm
+%%DATADIR%%/lib/mozilla/icons/updater.png
 %%DATADIR%%/lib/mozilla/js
 %%DATADIR%%/lib/mozilla/komodo
 %%DATADIR%%/lib/mozilla/komodo-bin
@@ -921,19 +943,18 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/libgfxpsshar.so
 %%DATADIR%%/lib/mozilla/libgkgfx.so
 %%DATADIR%%/lib/mozilla/libgtkxtbin.so
-%%DATADIR%%/lib/mozilla/libjemalloc.so
 %%DATADIR%%/lib/mozilla/libmozjs.so
-%%DATADIR%%/lib/mozilla/libmozlcms.so
 %%DATADIR%%/lib/mozilla/libmozz.so
 %%DATADIR%%/lib/mozilla/libnspr4.so
 %%DATADIR%%/lib/mozilla/libnss3.so
 %%DATADIR%%/lib/mozilla/libnssckbi.so
+%%DATADIR%%/lib/mozilla/libnssdbm3.chk
 %%DATADIR%%/lib/mozilla/libnssdbm3.so
 %%DATADIR%%/lib/mozilla/libnssutil3.so
 %%DATADIR%%/lib/mozilla/libplc4.so
 %%DATADIR%%/lib/mozilla/libplds4.so
-%%DATADIR%%/lib/mozilla/libpython2.6.so
 %%DATADIR%%/lib/mozilla/libpython2.6.so.1.0
+%%DATADIR%%/lib/mozilla/libpython2.6.so
 %%DATADIR%%/lib/mozilla/libpyxpcom.so
 %%DATADIR%%/lib/mozilla/libsmime3.so
 %%DATADIR%%/lib/mozilla/libsoftokn3.chk
@@ -946,16 +967,19 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/libxpcom_core.so
 %%DATADIR%%/lib/mozilla/libxul.so
 %%DATADIR%%/lib/mozilla/mangle
+%%DATADIR%%/lib/mozilla/modules/DownloadLastDir.jsm
 %%DATADIR%%/lib/mozilla/modules/DownloadUtils.jsm
 %%DATADIR%%/lib/mozilla/modules/ISO8601DateUtils.jsm
-%%DATADIR%%/lib/mozilla/modules/JSON.jsm
 %%DATADIR%%/lib/mozilla/modules/Microformats.js
 %%DATADIR%%/lib/mozilla/modules/PluralForm.jsm
+%%DATADIR%%/lib/mozilla/modules/SpatialNavigation.js
+%%DATADIR%%/lib/mozilla/modules/WindowDraggingUtils.jsm
 %%DATADIR%%/lib/mozilla/modules/XPCOMUtils.jsm
 %%DATADIR%%/lib/mozilla/modules/debug.js
 %%DATADIR%%/lib/mozilla/mozilla-xremote-client
 %%DATADIR%%/lib/mozilla/mozpython
 %%DATADIR%%/lib/mozilla/nsinstall
+%%DATADIR%%/lib/mozilla/nspr-config
 %%DATADIR%%/lib/mozilla/platform.ini
 %%DATADIR%%/lib/mozilla/plugins/libnpscimoz.so
 %%DATADIR%%/lib/mozilla/plugins/libnullplugin.so
@@ -968,15 +992,14 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/CAST.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/DES.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/DES3.so
-%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/IDEA.so
-%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/RC5.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/XOR.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Cipher/__init__.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/HMAC.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/MD2.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/MD4.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/MD5.py
-%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/RIPEMD.so
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/RIPEMD.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/RIPEMD160.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/SHA.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/SHA256.so
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash/__init__.py
@@ -986,17 +1009,81 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/DSA.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/ElGamal.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/RSA.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/_DSA.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/_RSA.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/__init__.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/_fastmath.so
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/_slowmath.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/pubkey.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey/qNEW.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/Fortuna/FortunaAccumulator.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/Fortuna/FortunaGenerator.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/Fortuna/SHAd256.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/Fortuna/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG/fallback.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG/nt.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG/posix.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG/rng_base.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/_UserFriendlyRNG.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/random.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/common.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_AES.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_ARC2.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_ARC4.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_Blowfish.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_CAST.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_DES.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_DES3.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher/test_XOR.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/common.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_HMAC.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_MD2.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_MD4.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_MD5.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_RIPEMD.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_SHA.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash/test_SHA256.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Protocol/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Protocol/test_chaffing.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Protocol/test_rfc1751.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/PublicKey/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/PublicKey/test_DSA.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/PublicKey/test_RSA.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/Fortuna/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/Fortuna/test_FortunaAccumulator.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/Fortuna/test_FortunaGenerator.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/Fortuna/test_SHAd256.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/test_fallback.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/test_generic.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/test_nt.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/test_posix.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG/test_winrandom.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/test_random.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/test_rpoolcompat.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Util/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Util/test_Counter.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Util/test_number.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Util/test_winrandom.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/st_common.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/Counter.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/RFC1751.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/__init__.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/_counter.so
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/_number_new.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/number.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/python_compat.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/randpool.py
-%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/test.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/strxor.so
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util/winrandom.py
 %%DATADIR%%/lib/mozilla/python/komodo/Crypto/__init__.py
-%%DATADIR%%/lib/mozilla/python/komodo/Crypto/test.py
+%%DATADIR%%/lib/mozilla/python/komodo/Crypto/pct_warnings.py
 %%DATADIR%%/lib/mozilla/python/komodo/HTMLTreeParser.py
 %%DATADIR%%/lib/mozilla/python/komodo/SilverCity-0.9.5-py2.6.egg-info
 %%DATADIR%%/lib/mozilla/python/komodo/SilverCity/CPP.py
@@ -1031,10 +1118,12 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/buffer.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/dojo.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/ext.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/html5.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/jquery.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/komodo.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/mochikit.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/prototype.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/python3-pywin32.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/pywin32.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/rails.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/catalogs/xbl.cix
@@ -1042,7 +1131,12 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/citadel.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/citadel_common.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/common.py
-%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css1.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css2.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css3.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css_microsoft_extensions.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css_moz_extensions.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/constants_css_webkit_extensions.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/database/__init__.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/database/catalog.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/database/database.py
@@ -1060,11 +1154,13 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_css.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_django.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_html.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_html5.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_javascript.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_mason.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_perl.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_php.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_python.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_python3.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_rhtml.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_ruby.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/lang_ruby_common.py
@@ -1084,13 +1180,17 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/perl_parser.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/perlcile.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/phpdoc.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/pybinary.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/pythoncile.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/pythoncile1.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/ruby_lexer.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/ruby_parser.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/rubycile.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/shared_lexer.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/shared_parser.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/javascript.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/perl-5.10.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/perl-5.12.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/perl-5.8.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/php-4.3.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/php-4.4.cix
@@ -1101,10 +1201,14 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.4.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.5.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.6.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.7.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python3-3.1.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python3-3.2.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/ruby.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tcl_lexer.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tcl_parser.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tclcile.py
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tdparser.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tree.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tree_javascript.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tree_perl.py
@@ -1131,7 +1235,10 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/eollib.py
 %%DATADIR%%/lib/mozilla/python/komodo/factoryStyleSettings.py
 %%DATADIR%%/lib/mozilla/python/komodo/fileStatusUtils.py
+%%DATADIR%%/lib/mozilla/python/komodo/fileutils.py
 %%DATADIR%%/lib/mozilla/python/komodo/findlib2.py
+%%DATADIR%%/lib/mozilla/python/komodo/gencix/python/gencixcore.py
+%%DATADIR%%/lib/mozilla/python/komodo/gencix/python/parsedocs.py
 %%DATADIR%%/lib/mozilla/python/komodo/inflector/Inflector.py
 %%DATADIR%%/lib/mozilla/python/komodo/inflector/Rules/Base.py
 %%DATADIR%%/lib/mozilla/python/komodo/inflector/Rules/English.py
@@ -1144,8 +1251,10 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/koLanguageServiceBase.py
 %%DATADIR%%/lib/mozilla/python/komodo/koLintResult.py
 %%DATADIR%%/lib/mozilla/python/komodo/koLintResults.py
+%%DATADIR%%/lib/mozilla/python/komodo/koMigrateV5Toolboxes.py
 %%DATADIR%%/lib/mozilla/python/komodo/koRNGElementTree.py
 %%DATADIR%%/lib/mozilla/python/komodo/koSimpleLexer.py
+%%DATADIR%%/lib/mozilla/python/komodo/koToolbox2.py
 %%DATADIR%%/lib/mozilla/python/komodo/koTreeView.py
 %%DATADIR%%/lib/mozilla/python/komodo/koUDLLanguageBase.py
 %%DATADIR%%/lib/mozilla/python/komodo/koUnicodeEncoding.py
@@ -1214,9 +1323,11 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/paramiko/transport.py
 %%DATADIR%%/lib/mozilla/python/komodo/paramiko/util.py
 %%DATADIR%%/lib/mozilla/python/komodo/paramiko/win_pageant.py
+%%DATADIR%%/lib/mozilla/python/komodo/pref_serialization.py
 %%DATADIR%%/lib/mozilla/python/komodo/process.py
 %%DATADIR%%/lib/mozilla/python/komodo/projectUtils.py
-%%DATADIR%%/lib/mozilla/python/komodo/pycrypto-2.0.1-py2.6.egg-info
+%%DATADIR%%/lib/mozilla/python/komodo/pycrypto-2.1.0-py2.6.egg-info
+%%DATADIR%%/lib/mozilla/python/komodo/pythonVersionUtils.py
 %%DATADIR%%/lib/mozilla/python/komodo/pyxpcomProfiler.py
 %%DATADIR%%/lib/mozilla/python/komodo/reflow.py
 %%DATADIR%%/lib/mozilla/python/komodo/remotefilelib.py
@@ -1232,6 +1343,7 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/python/komodo/textutils.py
 %%DATADIR%%/lib/mozilla/python/komodo/timeline.py
 %%DATADIR%%/lib/mozilla/python/komodo/timeline_hook.py
+%%DATADIR%%/lib/mozilla/python/komodo/toolbox/koToolbox.sql
 %%DATADIR%%/lib/mozilla/python/komodo/upgradeutils.py
 %%DATADIR%%/lib/mozilla/python/komodo/uriparse.py
 %%DATADIR%%/lib/mozilla/python/komodo/userStyleSettings.py
@@ -1313,18 +1425,15 @@ bin/komodo
 %%DATADIR%%/lib/mozilla/res/viewsource.css
 %%DATADIR%%/lib/mozilla/run-mozilla.sh
 %%DATADIR%%/lib/mozilla/shlibsign
-%%DATADIR%%/lib/mozilla/ssltunnel
+%%DATADIR%%/lib/mozilla/update.locale
 %%DATADIR%%/lib/mozilla/updater
 %%DATADIR%%/lib/mozilla/updater.ini
 %%DATADIR%%/lib/mozilla/xpcshell
 %%DATADIR%%/lib/python/bin/2to3
+%%DATADIR%%/lib/python/bin/pydoc
 %%DATADIR%%/lib/python/bin/python
 %%DATADIR%%/lib/python/bin/python-config
-%%DATADIR%%/lib/python/bin/python2.6
-%%DATADIR%%/lib/python/bin/python2.6-config
-%%DATADIR%%/lib/python/doc/python2.6/LICENSE-OpenSSL.txt
-%%DATADIR%%/lib/python/doc/python2.6/LICENSE-Python.txt
-%%DATADIR%%/lib/python/doc/python2.6/LICENSE.txt
+%%DATADIR%%/lib/python/bin/smtpd.py
 %%DATADIR%%/lib/python/include/python2.6/Python-ast.h
 %%DATADIR%%/lib/python/include/python2.6/Python.h
 %%DATADIR%%/lib/python/include/python2.6/abstract.h
@@ -1490,6 +1599,20 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/binhex.pyo
 %%DATADIR%%/lib/python/lib/python2.6/bisect.py
 %%DATADIR%%/lib/python/lib/python2.6/bisect.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/__init__.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/__init__.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/db.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/db.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbobj.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbobj.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbrecio.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbrecio.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbshelve.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbshelve.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbtables.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbtables.pyo
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbutils.py
+%%DATADIR%%/lib/python/lib/python2.6/bsddb/dbutils.pyo
 %%DATADIR%%/lib/python/lib/python2.6/cProfile.py
 %%DATADIR%%/lib/python/lib/python2.6/cProfile.pyo
 %%DATADIR%%/lib/python/lib/python2.6/calendar.py
@@ -1580,6 +1703,18 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/ctypes/util.pyo
 %%DATADIR%%/lib/python/lib/python2.6/ctypes/wintypes.py
 %%DATADIR%%/lib/python/lib/python2.6/ctypes/wintypes.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/__init__.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/__init__.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/ascii.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/ascii.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/has_key.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/has_key.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/panel.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/panel.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/textpad.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/textpad.pyo
+%%DATADIR%%/lib/python/lib/python2.6/curses/wrapper.py
+%%DATADIR%%/lib/python/lib/python2.6/curses/wrapper.pyo
 %%DATADIR%%/lib/python/lib/python2.6/dbhash.py
 %%DATADIR%%/lib/python/lib/python2.6/dbhash.pyo
 %%DATADIR%%/lib/python/lib/python2.6/decimal.py
@@ -2207,7 +2342,7 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/keyword.py
 %%DATADIR%%/lib/python/lib/python2.6/keyword.pyc
 %%DATADIR%%/lib/python/lib/python2.6/keyword.pyo
-%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/Python-2.6-py2.6.egg-info
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/Python-2.6.5-py2.6.egg-info
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_bisect.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_bytesio.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_codecs_cn.so
@@ -2219,6 +2354,8 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_collections.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_csv.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_ctypes.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_curses.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_curses_panel.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_elementtree.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_fileio.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/_functools.so
@@ -2245,9 +2382,11 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/cmath.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/crypt.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/datetime.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/dbm.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/dl.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/fcntl.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/future_builtins.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/gdbm.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/grp.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/imageop.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/itertools.so
@@ -2259,6 +2398,7 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/ossaudiodev.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/parser.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/pyexpat.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-dynload/readline.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/resource.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/select.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/spwd.so
@@ -2268,10 +2408,44 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/time.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/unicodedata.so
 %%DATADIR%%/lib/python/lib/python2.6/lib-dynload/zlib.so
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Canvas.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Canvas.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Dialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Dialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/FileDialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/FileDialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/FixTk.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/FixTk.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/ScrolledText.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/ScrolledText.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/SimpleDialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/SimpleDialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tix.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tix.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkconstants.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkconstants.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkdnd.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkdnd.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkinter.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/Tkinter.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkColorChooser.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkColorChooser.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkCommonDialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkCommonDialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkFileDialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkFileDialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkFont.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkFont.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkMessageBox.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkMessageBox.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkSimpleDialog.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/tkSimpleDialog.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/turtle.py
+%%DATADIR%%/lib/python/lib/python2.6/lib-tk/turtle.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/Grammar.txt
-%%DATADIR%%/lib/python/lib/python2.6/lib2to3/Grammar2.6.0.final.0.pickle
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/Grammar2.6.5.final.0.pickle
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/PatternGrammar.txt
-%%DATADIR%%/lib/python/lib/python2.6/lib2to3/PatternGrammar2.6.0.final.0.pickle
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/PatternGrammar2.6.5.final.0.pickle
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/__init__.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/__init__.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixer_base.py
@@ -2302,6 +2476,8 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_funcattrs.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_future.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_future.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_getcwdu.py
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_getcwdu.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_has_key.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_has_key.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_idioms.py
@@ -2316,6 +2492,8 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_input.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_intern.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_intern.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_isinstance.py
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_isinstance.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_itertools.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_itertools.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_itertools_imports.py
@@ -2336,6 +2514,8 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_nonzero.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_numliterals.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_numliterals.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_operator.py
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_operator.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_paren.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_paren.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_print.py
@@ -2344,10 +2524,14 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_raise.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_raw_input.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_raw_input.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_reduce.py
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_reduce.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_renames.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_renames.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_repr.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_repr.pyo
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_set_literal.py
+%%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_set_literal.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_standarderror.py
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_standarderror.pyo
 %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes/fix_sys_exc.py
@@ -2573,6 +2757,7 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/shutil.pyo
 %%DATADIR%%/lib/python/lib/python2.6/site-packages/README
 %%DATADIR%%/lib/python/lib/python2.6/site-packages/activestate.py
+%%DATADIR%%/lib/python/lib/python2.6/site-packages/activestate.pyc
 %%DATADIR%%/lib/python/lib/python2.6/site-packages/activestate.pyo
 %%DATADIR%%/lib/python/lib/python2.6/site.py
 %%DATADIR%%/lib/python/lib/python2.6/site.pyc
@@ -2755,6 +2940,108 @@ bin/komodo
 %%DATADIR%%/lib/python/lib/python2.6/xmlrpclib.pyo
 %%DATADIR%%/lib/python/lib/python2.6/zipfile.py
 %%DATADIR%%/lib/python/lib/python2.6/zipfile.pyo
+%%DATADIR%%/lib/python/share/python2.6/i18n/makelocalealias.py
+%%DATADIR%%/lib/python/share/python2.6/i18n/msgfmt.py
+%%DATADIR%%/lib/python/share/python2.6/i18n/pygettext.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/ChipViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/ColorDB.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/DetailsViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/ListViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/Main.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/PyncheWidget.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/README
+%%DATADIR%%/lib/python/share/python2.6/pynche/StripViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/Switchboard.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/TextViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/TypeinViewer.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/X/rgb.txt
+%%DATADIR%%/lib/python/share/python2.6/pynche/X/xlicense.txt
+%%DATADIR%%/lib/python/share/python2.6/pynche/__init__.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/html40colors.txt
+%%DATADIR%%/lib/python/share/python2.6/pynche/namedcolors.txt
+%%DATADIR%%/lib/python/share/python2.6/pynche/pyColorChooser.py
+%%DATADIR%%/lib/python/share/python2.6/pynche/pynche
+%%DATADIR%%/lib/python/share/python2.6/pynche/pynche.pyw
+%%DATADIR%%/lib/python/share/python2.6/pynche/webcolors.txt
+%%DATADIR%%/lib/python/share/python2.6/pynche/websafe.txt
+%%DATADIR%%/lib/python/share/python2.6/scripts/2to3
+%%DATADIR%%/lib/python/share/python2.6/scripts/README
+%%DATADIR%%/lib/python/share/python2.6/scripts/byext.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/byteyears.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/checkappend.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/checkpyc.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/classfix.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/cleanfuture.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/combinerefs.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/copytime.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/crlf.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/cvsfiles.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/db2pickle.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/diff.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/dutree.doc
+%%DATADIR%%/lib/python/share/python2.6/scripts/dutree.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/eptags.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/finddiv.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/findlinksto.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/findnocoding.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/fixcid.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/fixdiv.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/fixheader.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/fixnotice.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/fixps.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/ftpmirror.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/google.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/gprof2html.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/h2py.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/hotshotmain.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/idle
+%%DATADIR%%/lib/python/share/python2.6/scripts/ifdef.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/lfcr.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/linktree.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/lll.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/logmerge.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/mailerdaemon.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/md5sum.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/methfix.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/mkreal.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/ndiff.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/nm2def.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/objgraph.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/parseentities.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/patchcheck.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/pathfix.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/pdeps.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/pickle2db.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/pindent.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/ptags.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/pydoc
+%%DATADIR%%/lib/python/share/python2.6/scripts/pydocgui.pyw
+%%DATADIR%%/lib/python/share/python2.6/scripts/pysource.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/redemo.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/reindent-rst.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/reindent.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/rgrep.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/setup.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/suff.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/svneol.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/texcheck.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/texi2html.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/treesync.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/untabify.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/which.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/win_add2path.py
+%%DATADIR%%/lib/python/share/python2.6/scripts/xxci.py
+%%DATADIR%%/lib/python/share/python2.6/versioncheck/README
+%%DATADIR%%/lib/python/share/python2.6/versioncheck/_checkversion.py
+%%DATADIR%%/lib/python/share/python2.6/versioncheck/checkversions.py
+%%DATADIR%%/lib/python/share/python2.6/versioncheck/pyversioncheck.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/README
+%%DATADIR%%/lib/python/share/python2.6/webchecker/tktools.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/wcgui.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/wcmac.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/webchecker.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/websucker.py
+%%DATADIR%%/lib/python/share/python2.6/webchecker/wsgui.py
 %%DATADIR%%/lib/sdk/CHANGELOG.txt
 %%DATADIR%%/lib/sdk/README.txt
 %%DATADIR%%/lib/sdk/bin/codeintel
@@ -2779,18 +3066,19 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/koIColorPicker.idl
 %%DATADIR%%/lib/sdk/idl/koICommandmentService.idl
 %%DATADIR%%/lib/sdk/idl/koIContentUtils.idl
+%%DATADIR%%/lib/sdk/idl/koIDiffService.idl
 %%DATADIR%%/lib/sdk/idl/koIDirs.idl
 %%DATADIR%%/lib/sdk/idl/koIDocument.idl
 %%DATADIR%%/lib/sdk/idl/koIEncoding.idl
 %%DATADIR%%/lib/sdk/idl/koIEncodingServices.idl
 %%DATADIR%%/lib/sdk/idl/koIEnvView.idl
 %%DATADIR%%/lib/sdk/idl/koIEnviron.idl
-%%DATADIR%%/lib/sdk/idl/koIFTP.idl
 %%DATADIR%%/lib/sdk/idl/koIFeatureStatusService.idl
 %%DATADIR%%/lib/sdk/idl/koIFile.idl
 %%DATADIR%%/lib/sdk/idl/koIFileEx.idl
 %%DATADIR%%/lib/sdk/idl/koIFileLoggingService.idl
 %%DATADIR%%/lib/sdk/idl/koIFileNotificationService.idl
+%%DATADIR%%/lib/sdk/idl/koIFileService.idl
 %%DATADIR%%/lib/sdk/idl/koIFileStatusService.idl
 %%DATADIR%%/lib/sdk/idl/koIFinalizeService.idl
 %%DATADIR%%/lib/sdk/idl/koIFindBrowseForDirs.idl
@@ -2809,6 +3097,7 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/koILinter.idl
 %%DATADIR%%/lib/sdk/idl/koILoggingService.idl
 %%DATADIR%%/lib/sdk/idl/koIMacroService.idl
+%%DATADIR%%/lib/sdk/idl/koIObserverService.idl
 %%DATADIR%%/lib/sdk/idl/koIOrderedPreference.idl
 %%DATADIR%%/lib/sdk/idl/koIOs.idl
 %%DATADIR%%/lib/sdk/idl/koIPrefs.idl
@@ -2816,6 +3105,7 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/koIProject.idl
 %%DATADIR%%/lib/sdk/idl/koIPythonProfiler.idl
 %%DATADIR%%/lib/sdk/idl/koIPythonStdLib.idl
+%%DATADIR%%/lib/sdk/idl/koIRemoteConnection.idl
 %%DATADIR%%/lib/sdk/idl/koIRemoteConnectionService.idl
 %%DATADIR%%/lib/sdk/idl/koIRemoteFileInfo.idl
 %%DATADIR%%/lib/sdk/idl/koIRunService.idl
@@ -2827,6 +3117,8 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/koITest.idl
 %%DATADIR%%/lib/sdk/idl/koITextUtils.idl
 %%DATADIR%%/lib/sdk/idl/koITextboxAutoComplete.idl
+%%DATADIR%%/lib/sdk/idl/koIToolbox2Components.idl
+%%DATADIR%%/lib/sdk/idl/koIToolbox2HTreeView.idl
 %%DATADIR%%/lib/sdk/idl/koIUrlUtils.idl
 %%DATADIR%%/lib/sdk/idl/koIUrllib.idl
 %%DATADIR%%/lib/sdk/idl/koIViCommandDetail.idl
@@ -2873,7 +3165,6 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIDOMCSSValueList.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMCharacterData.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMComment.idl
-%%DATADIR%%/lib/sdk/idl/nsIDOMCustomEvent.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMDOMException.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMDOMImplementation.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMDocument.idl
@@ -2894,11 +3185,13 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLAnchorElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLAppletElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLAreaElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLAudioElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLBRElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLBaseElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLBaseFontElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLBodyElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLButtonElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLByteRanges.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLCollection.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLDListElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLDirectoryElement.idl
@@ -2924,6 +3217,8 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLLegendElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLLinkElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLMapElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLMediaElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLMediaError.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLMenuElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLMetaElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLModElement.idl
@@ -2938,6 +3233,7 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLQuoteElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLScriptElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLSelectElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLSourceElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLStyleElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTableCaptionElem.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTableCellElement.idl
@@ -2946,21 +3242,27 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTableRowElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTableSectionElem.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTextAreaElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTimeRanges.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLTitleElement.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMHTMLUListElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLVideoElement.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMHTMLVoidCallback.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMMediaList.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMMouseEvent.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMMouseScrollEvent.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMNamedNodeMap.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMNode.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMNodeList.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMNotation.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMProcessingInstruction.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMProgressEvent.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMRange.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStorage.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStorageEvent.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStorageItem.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStorageList.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStorageWindow.idl
+%%DATADIR%%/lib/sdk/idl/nsIDOMStorageWindow_1_9_1.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStyleSheet.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMStyleSheetList.idl
 %%DATADIR%%/lib/sdk/idl/nsIDOMText.idl
@@ -3029,6 +3331,7 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIURL.idl
 %%DATADIR%%/lib/sdk/idl/nsIUnicharStreamListener.idl
 %%DATADIR%%/lib/sdk/idl/nsIUploadChannel.idl
+%%DATADIR%%/lib/sdk/idl/nsIVariant.idl
 %%DATADIR%%/lib/sdk/idl/nsIWeakReference.idl
 %%DATADIR%%/lib/sdk/idl/nsIWebBrowser.idl
 %%DATADIR%%/lib/sdk/idl/nsIWebBrowserChrome.idl
@@ -3046,6 +3349,7 @@ bin/komodo
 %%DATADIR%%/lib/sdk/idl/nsIX509CertDB.idl
 %%DATADIR%%/lib/sdk/idl/nsIX509CertValidity.idl
 %%DATADIR%%/lib/sdk/idl/nsrootidl.idl
+%%DATADIR%%/lib/sdk/idl/pyIXPCOMExtensionHelper.idl
 %%DATADIR%%/lib/sdk/pylib/cmdln.py
 %%DATADIR%%/lib/sdk/pylib/koextlib.py
 %%DATADIR%%/lib/sdk/pylib/ludditelib/__init__.py
@@ -3165,6 +3469,11 @@ bin/komodo
 %%DATADIR%%/lib/support/catalogs/docbook44/ent/isotech.ent
 %%DATADIR%%/lib/support/catalogs/docbook44/htmltblx.mod
 %%DATADIR%%/lib/support/catalogs/docbook44/soextblx.dtd
+%%DATADIR%%/lib/support/catalogs/html5/catalog.xml
+%%DATADIR%%/lib/support/catalogs/html5/html5-lat1.ent
+%%DATADIR%%/lib/support/catalogs/html5/html5-special.ent
+%%DATADIR%%/lib/support/catalogs/html5/html5-symbol.ent
+%%DATADIR%%/lib/support/catalogs/html5/html5.dtd
 %%DATADIR%%/lib/support/catalogs/mozilla/catalog.xml
 %%DATADIR%%/lib/support/catalogs/mozilla/moz.soc
 %%DATADIR%%/lib/support/catalogs/mozilla/xbl.dtd
@@ -3380,6 +3689,8 @@ bin/komodo
 %%DATADIR%%/lib/support/default-project-templates/Mozilla/Firefox Extension.kpz
 %%DATADIR%%/lib/support/default-templates/All Languages/Ada.ada
 %%DATADIR%%/lib/support/default-templates/All Languages/Baan.bc
+%%DATADIR%%/lib/support/default-templates/All Languages/Bash (usage).sh
+%%DATADIR%%/lib/support/default-templates/All Languages/Bash.sh
 %%DATADIR%%/lib/support/default-templates/All Languages/Batch.bat
 %%DATADIR%%/lib/support/default-templates/All Languages/Bullant.ant
 %%DATADIR%%/lib/support/default-templates/All Languages/C++.cpp
@@ -3463,9 +3774,153 @@ bin/komodo
 %%DATADIR%%/lib/support/samples/php_sample.php
 %%DATADIR%%/lib/support/samples/python_sample.py
 %%DATADIR%%/lib/support/samples/ruby_sample.rb
-%%DATADIR%%/lib/support/samples/sample_project.kpf
+%%DATADIR%%/lib/support/samples/sample_project.komodoproject
 %%DATADIR%%/lib/support/samples/tcl_sample.tcl
-%%DATADIR%%/lib/support/samples/toolbox.kpf
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/General/main.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/com.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/div.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/html4.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/li.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/ol.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/p.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/script.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/scriptlink.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/style.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/tag.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/text.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/textarea.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/ul.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML/xhtml.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/com.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/div.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/li.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/ol.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/p.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/script.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/scriptlink.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/style.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/tag.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/text.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/textarea.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5/ul.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/com.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/doc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/for.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/func.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/jQuery/jqeach.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/jQuery/jqstart.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/meth.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/namespace.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/try.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/Drupal/drinfo.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/Drupal/drinstall.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/Drupal/drmenu.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/Drupal/drmodule.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/array.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/block.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/com.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/doc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/dump.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/func.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/inline.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/main.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/fore.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/hash.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/if.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/sheb.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/while.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/def.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/doc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/for.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/main.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/meth.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/opts.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/shebang.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/try.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/walk.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/def.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/doc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/for.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/main.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/meth.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/opts.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/shebang.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/try.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/walk.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/lia.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/liai.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/lic.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/lica.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/licai.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/ac.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/ai.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/bt.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/coll.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/ct.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/def.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/each.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/emf.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/habtm.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/hm.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/ho.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/mod.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/rc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/reai.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/rec.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/reca.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/rnc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby/tc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl/for.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl/fore.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl/proc.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl/switch.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl/while.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL/label.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL/main.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL/row.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL/scriptlink.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL/splitter.komodotool
+%%DATADIR%%/lib/support/samples/tools/Count_words_in_selection_using_wc_.komodotool
+%%DATADIR%%/lib/support/samples/tools/Find_in_Files.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_A_URI_Link.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_A_URI_Link_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_br_Break_Line.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_em_Emphasis.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_form_Form_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h1_Header_1.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h2_Header_2.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h3_Header_3.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h4_Header_4.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h5_Header_5.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_h6_Header_6.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_input_Form_Input_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_li_List_Item.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_ol_Ordered_List.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_option_Form_Option_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_p_Paragraph.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_p_Paragraph_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_pre_Preformated_Text.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_select_Form_Select_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_strong_Strong.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_table_Table_1_row_1_col.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_td_Table_Cell.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_textarea_Form_Text_Area_w_Dialog.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_tr_Table_Row.komodotool
+%%DATADIR%%/lib/support/samples/tools/HTML/_ul_Unordered_List.komodotool
+%%DATADIR%%/lib/support/samples/tools/Make_current_file_writeable.komodotool
+%%DATADIR%%/lib/support/samples/tools/Open_New_Window.komodotool
+%%DATADIR%%/lib/support/samples/tools/Sample_Macros/Create_Directory_Shortcut.komodotool
+%%DATADIR%%/lib/support/samples/tools/Sample_Macros/Run_the_current_Macro.komodotool
+%%DATADIR%%/lib/support/samples/tools/Sample_Macros/View_about_config.komodotool
+%%DATADIR%%/lib/support/samples/tools/Sample_Macros/Watch_Komodo_Error_Log.komodotool
+%%DATADIR%%/lib/support/samples/tools/Sample_Snippet_-_Double_Click_to_Insert.komodotool
+%%DATADIR%%/lib/support/samples/tools/http_slashdot_org_.komodotool
+%%DATADIR%%/lib/support/samples/tools/toggle-word-wrap-edit.komodotool
 %%DATADIR%%/lib/support/samples/xslt_sample.xsl
 %%DATADIR%%/lib/support/schemes/Bright.ksf
 %%DATADIR%%/lib/support/schemes/Dark.ksf
@@ -3477,8 +3932,7 @@ bin/komodo
 %%DATADIR%%/lib/support/schemes/_vi.kkf
 %%DATADIR%%/lib/support/tcl/tcl-core.tip
 %%DATADIR%%/lib/support/tcl/tk-core.tip
-%%DATADIR%%/share/desktop/komodo-edit-5.desktop
-%%DATADIR%%/share/doc/.css/aspn.css
+%%DATADIR%%/share/desktop/komodo-edit-6.desktop
 %%DATADIR%%/share/doc/.css/screen.css
 %%DATADIR%%/share/doc/install.html
 %%DATADIR%%/share/doc/license.txt
@@ -3487,11 +3941,13 @@ bin/komodo
 %%DATADIR%%/share/icons/komodo128.xpm
 %%DATADIR%%/share/icons/komodo16.png
 %%DATADIR%%/share/icons/komodo16.xpm
+%%DATADIR%%/share/icons/komodo256.png
+%%DATADIR%%/share/icons/komodo256.xpm
 %%DATADIR%%/share/icons/komodo32.png
 %%DATADIR%%/share/icons/komodo32.xpm
 %%DATADIR%%/share/icons/komodo48.png
 %%DATADIR%%/share/icons/komodo48.xpm
-share/applications/komodo-edit-5.desktop
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/share/icons
 @dirrm %%DATADIR%%/share/doc/.css
 @dirrm %%DATADIR%%/share/doc
@@ -3499,6 +3955,24 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/share
 @dirrm %%DATADIR%%/lib/support/tcl
 @dirrm %%DATADIR%%/lib/support/schemes
+@dirrm %%DATADIR%%/lib/support/samples/tools/Sample_Macros
+@dirrm %%DATADIR%%/lib/support/samples/tools/HTML
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/XUL
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/Tcl
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/Ruby
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP/Drupal
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/PHP
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript/jQuery
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/JavaScript
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML5
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/HTML
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations/General
+@dirrm %%DATADIR%%/lib/support/samples/tools/Abbreviations
+@dirrm %%DATADIR%%/lib/support/samples/tools
 @dirrm %%DATADIR%%/lib/support/samples
 @dirrm %%DATADIR%%/lib/support/python
 @dirrm %%DATADIR%%/lib/support/perl
@@ -3540,6 +4014,7 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/support/catalogs/rng
 @dirrm %%DATADIR%%/lib/support/catalogs/oasis
 @dirrm %%DATADIR%%/lib/support/catalogs/mozilla
+@dirrm %%DATADIR%%/lib/support/catalogs/html5
 @dirrm %%DATADIR%%/lib/support/catalogs/docbook44/ent
 @dirrm %%DATADIR%%/lib/support/catalogs/docbook44
 @dirrm %%DATADIR%%/lib/support/catalogs
@@ -3555,6 +4030,14 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/sdk/idl
 @dirrm %%DATADIR%%/lib/sdk/bin
 @dirrm %%DATADIR%%/lib/sdk
+@dirrm %%DATADIR%%/lib/python/share/python2.6/webchecker
+@dirrm %%DATADIR%%/lib/python/share/python2.6/versioncheck
+@dirrm %%DATADIR%%/lib/python/share/python2.6/scripts
+@dirrm %%DATADIR%%/lib/python/share/python2.6/pynche/X
+@dirrm %%DATADIR%%/lib/python/share/python2.6/pynche
+@dirrm %%DATADIR%%/lib/python/share/python2.6/i18n
+@dirrm %%DATADIR%%/lib/python/share/python2.6
+@dirrm %%DATADIR%%/lib/python/share
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/xml/sax
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/xml/parsers
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/xml/etree
@@ -3570,6 +4053,7 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/lib2to3/pgen2
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/lib2to3/fixes
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/lib2to3
+@dirrm %%DATADIR%%/lib/python/lib/python2.6/lib-tk
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/lib-dynload
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/json
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/idlelib/Icons
@@ -3580,16 +4064,16 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/email
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/distutils/command
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/distutils
+@dirrm %%DATADIR%%/lib/python/lib/python2.6/curses
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/ctypes/macholib
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/ctypes
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/config
 @dirrm %%DATADIR%%/lib/python/lib/python2.6/compiler
+@dirrm %%DATADIR%%/lib/python/lib/python2.6/bsddb
 @dirrm %%DATADIR%%/lib/python/lib/python2.6
 @dirrm %%DATADIR%%/lib/python/lib
 @dirrm %%DATADIR%%/lib/python/include/python2.6
 @dirrm %%DATADIR%%/lib/python/include
-@dirrm %%DATADIR%%/lib/python/doc/python2.6
-@dirrm %%DATADIR%%/lib/python/doc
 @dirrm %%DATADIR%%/lib/python/bin
 @dirrm %%DATADIR%%/lib/python
 @dirrm %%DATADIR%%/lib/mozilla/res/html
@@ -3602,12 +4086,15 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/python/xpcom/client
 @dirrm %%DATADIR%%/lib/mozilla/python/xpcom
 @dirrm %%DATADIR%%/lib/mozilla/python/nsdom
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/toolbox
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/paramiko
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/koWndWrapper/koCTypes
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/koWndWrapper/consts
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/koWndWrapper
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/inflector/Rules
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/inflector
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/gencix/python
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/gencix
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/elementtree
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/database
@@ -3615,6 +4102,18 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/codeintel2
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/SilverCity
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Util
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Util
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/OSRNG
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random/Fortuna
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Random
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/PublicKey
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Protocol
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Hash
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest/Cipher
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/SelfTest
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/OSRNG
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random/Fortuna
+@dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Random
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/PublicKey
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Protocol
 @dirrm %%DATADIR%%/lib/mozilla/python/komodo/Crypto/Hash
@@ -3680,12 +4179,14 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com
-@dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/Common
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/All Languages
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com
+@dirrm %%DATADIR%%/lib/mozilla/extensions/places@activestate.com/idl
+@dirrm %%DATADIR%%/lib/mozilla/extensions/places@activestate.com/components
+@dirrm %%DATADIR%%/lib/mozilla/extensions/places@activestate.com
 @dirrm %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Web
 @dirrm %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Samples
 @dirrm %%DATADIR%%/lib/mozilla/extensions/php_language@ActiveState.com/templates/Common
@@ -3716,6 +4217,7 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/komodospellchecker@ActiveState.com
 @dirrm %%DATADIR%%/lib/mozilla/extensions/industrial@openoffice.org
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Web
+@dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples/HTML5
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Samples
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/Common
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/templates/All Languages
@@ -3723,6 +4225,7 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/html_language@ActiveState.com
+@dirrm %%DATADIR%%/lib/mozilla/extensions/fugue@p.yusukekamiyamane.com
 @dirrm %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/pylib
 @dirrm %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/idl
 @dirrm %%DATADIR%%/lib/mozilla/extensions/fastopen@activestate.com/components
@@ -3731,9 +4234,11 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Common
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/All Languages
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates
+@dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/pylib
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com
+@dirrm %%DATADIR%%/lib/mozilla/extensions/crystal@everaldo.com
 @dirrm %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/templates/All Languages
 @dirrm %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/templates
 @dirrm %%DATADIR%%/lib/mozilla/extensions/actionscript_language@ActiveState.com/locale/en-US
@@ -3753,8 +4258,8 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib/mozilla/components
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/tutorial
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/releases
-@dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img/top
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/img
+@dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css/activestyle
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US/css
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale/en-US
 @dirrm %%DATADIR%%/lib/mozilla/chrome/komododoc/locale
@@ -3767,4 +4272,3 @@ share/applications/komodo-edit-5.desktop
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
