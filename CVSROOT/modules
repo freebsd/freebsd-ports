@@ -203,6 +203,7 @@ PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
+R-cran-DCluster                 ports/science/R-cran-DCluster
 R-cran-Epi                      ports/science/R-cran-Epi
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
@@ -221,6 +222,7 @@ R-cran-car                      ports/math/R-cran-car
 R-cran-caret                    ports/devel/R-cran-caret
 R-cran-coda                     ports/math/R-cran-coda
 R-cran-colorspace               ports/graphics/R-cran-colorspace
+R-cran-deldir                   ports/math/R-cran-deldir
 R-cran-diagram                  ports/graphics/R-cran-diagram
 R-cran-digest                   ports/security/R-cran-digest
 R-cran-foreach                  ports/devel/R-cran-foreach
@@ -239,6 +241,7 @@ R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
+R-cran-spdep                    ports/math/R-cran-spdep
 R-cran-twitteR                  ports/net/R-cran-twitteR
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
@@ -680,6 +683,7 @@ asclock                         ports/x11-clocks/asclock
 asclock-gtk                     ports/x11-clocks/asclock-gtk
 asclock-xlib                    ports/x11-clocks/asclock-xlib
 ascpu                           ports/sysutils/ascpu
+asdcplib                        ports/multimedia/asdcplib
 asdlgen                         ports/devel/asdlgen
 asedit                          ports/editors/asedit
 asfiles                         ports/x11-fm/asfiles
@@ -1593,6 +1597,7 @@ cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
 ckeditor                        ports/www/ckeditor
 ckl                             ports/sysutils/ckl
+ckpass                          ports/security/ckpass
 cksfv                           ports/security/cksfv
 cl-alexandria                   ports/devel/cl-alexandria
 cl-alexandria-clisp             ports/devel/cl-alexandria-clisp
@@ -3803,6 +3808,7 @@ fracplanet                      ports/graphics/fracplanet
 fractorama                      ports/graphics/fractorama
 fragroute                       ports/security/fragroute
 fragrouter                      ports/security/fragrouter
+frama-c                         ports/devel/frama-c
 fraqtive                        ports/graphics/fraqtive
 free-sa                         ports/www/free-sa
 free-sa-devel                   ports/www/free-sa-devel
@@ -7984,6 +7990,7 @@ libkexiv2                       ports/graphics/libkexiv2
 libkipi                         ports/graphics/libkipi
 libkmfl                         ports/textproc/libkmfl
 libkml                          ports/science/libkml
+libkpass                        ports/security/libkpass
 libksba                         ports/security/libksba
 libktorrent                     ports/net-p2p/libktorrent
 liblas                          ports/devel/liblas
@@ -10480,6 +10487,7 @@ opencart                        ports/www/opencart
 opencascade                     ports/cad/opencascade
 opencascade-tutorial            ports/cad/opencascade-tutorial
 opencdk                         ports/security/opencdk
+opencinematools                 ports/multimedia/opencinematools
 opencity                        ports/games/opencity
 openclipart                     ports/graphics/openclipart
 openconnect                     ports/security/openconnect
@@ -22834,6 +22842,8 @@ r-cran-caret                    ports/devel/R-cran-caret
 r-cran-coda                     ports/math/R-cran-coda
 r-cran-colorspace               ports/graphics/R-cran-colorspace
 r-cran-dbi                      ports/databases/R-cran-DBI
+r-cran-dcluster                 ports/science/R-cran-DCluster
+r-cran-deldir                   ports/math/R-cran-deldir
 r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-digest                   ports/security/R-cran-digest
 r-cran-epi                      ports/science/R-cran-Epi
@@ -22861,6 +22871,7 @@ r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-shape                    ports/graphics/R-cran-shape
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
+r-cran-spdep                    ports/math/R-cran-spdep
 r-cran-suppdists                ports/math/R-cran-SuppDists
 r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-xml                      ports/textproc/R-cran-XML
