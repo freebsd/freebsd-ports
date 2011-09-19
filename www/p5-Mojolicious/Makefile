@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.97
+PORTVERSION=	1.98
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -67,7 +67,6 @@ MAN3=		Mojo.3 \
 		Mojo::Server.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
-		Mojo::Server::FastCGI.3 \
 		Mojo::Server::Hypnotoad.3 \
 		Mojo::Server::Morbo.3 \
 		Mojo::Server::PSGI.3 \
@@ -85,7 +84,6 @@ MAN3=		Mojo.3 \
 		Mojolicious::Command::cpanify.3 \
 		Mojolicious::Command::daemon.3 \
 		Mojolicious::Command::eval.3 \
-		Mojolicious::Command::fastcgi.3 \
 		Mojolicious::Command::generate.3 \
 		Mojolicious::Command::generate::app.3 \
 		Mojolicious::Command::generate::gitignore.3 \
