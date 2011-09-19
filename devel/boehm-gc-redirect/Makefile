@@ -57,4 +57,7 @@ do-install:
 	    lib${LIB}-${GC_VARIANT}.so)
 .endfor
 
+test: build
+	cd ${WRKSRC} && ${MAKE} check
+
 .include <bsd.port.post.mk>

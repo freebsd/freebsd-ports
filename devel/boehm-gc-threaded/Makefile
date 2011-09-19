@@ -67,4 +67,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bdw-gc.pc \
 		${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
+test: build
+	cd ${WRKSRC} && ${MAKE} check
+
 .include <bsd.port.post.mk>
