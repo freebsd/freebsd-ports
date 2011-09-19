@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.3.28
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -35,7 +36,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--with-opengl --without-mpg123 --with-oss --without-sane \
 		--without-v4l --without-xcomposite --without-xinerama \
-		--with-xrandr
+		--with-xinput2 --with-xrandr
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
@@ -54,7 +55,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
-USE_XORG=	xcursor xpm xrandr xrender
+USE_XORG=	xcursor xi xpm xrandr xrender
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
