@@ -107,8 +107,8 @@ etc/bash_completion.d/ncftp
 etc/bash_completion.d/net-tools
 etc/bash_completion.d/nmap
 etc/bash_completion.d/ntpdate
-etc/bash_completion.d/openldap
 etc/bash_completion.d/open-iscsi
+etc/bash_completion.d/openldap
 etc/bash_completion.d/openssl
 etc/bash_completion.d/p4
 etc/bash_completion.d/perl
@@ -181,4 +181,4 @@ etc/bash_completion.d/xz
 etc/bash_completion.d/yp-tools
 etc/bash_completion.d/yum-arch
 @dirrm etc/bash_completion.d/helpers
-@dirrm etc/bash_completion.d
+@dirrmtry etc/bash_completion.d
