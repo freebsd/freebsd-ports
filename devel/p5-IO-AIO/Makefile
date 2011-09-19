@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	IO-AIO
-PORTVERSION=	3.65
+PORTVERSION=	3.93
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-#DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Asynchronous Input/Output
 
 BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::AIO.3
 
 post-patch:
-	${PERL} -e 's,-lpthreads?,${PTHREAD_LIBS},g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's,-lpthreads*,${PTHREAD_LIBS},g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
