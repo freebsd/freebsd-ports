@@ -16,6 +16,7 @@
     SUBDIR += afbinit
     SUBDIR += afflib
     SUBDIR += afio
+    SUBDIR += agedu
     SUBDIR += agef
     SUBDIR += ah-tty
     SUBDIR += aimage
