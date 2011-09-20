@@ -124,7 +124,7 @@ USE_OPENSSL=	yes
 WANT_GNOME=	yes
 USE_XORG=	xaw xrandr
 USE_GL=		gl glu
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf automake:env
 
 OPTIONS=	WEBDAV	"Support webdav protocol" off \
@@ -148,7 +148,6 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--with-build-version="FreeBSD ports ${PKGVERSION}" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}" \
 			--exec-prefix=${PREFIX} \
-			--with-max-jobs=${MAKE_JOBS_NUMBER} \
 			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-system-libxml \
