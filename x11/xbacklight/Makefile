@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Program to adjust backlight brightness
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	x11 xrender xrandr

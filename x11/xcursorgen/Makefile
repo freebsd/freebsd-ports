@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Create an X cursor file from a collection of PNG images
 
-LICENSE=	x11
+LICENSE=	MIT
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 

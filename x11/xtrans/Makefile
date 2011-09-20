@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Abstract network code for X
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	lib
 

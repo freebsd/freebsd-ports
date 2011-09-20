@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X graphics demo
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xt xaw
