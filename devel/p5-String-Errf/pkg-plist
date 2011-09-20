@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/Errf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Errf/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Errf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String

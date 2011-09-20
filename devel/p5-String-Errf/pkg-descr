@@ -1,0 +1,4 @@
+String::Errf provides errf, a simple string formatter that works
+something like sprintf.
+
+WWW: http://search.cpan.org/dist/String-Errf/
