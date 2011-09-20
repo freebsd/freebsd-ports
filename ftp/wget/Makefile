@@ -35,7 +35,7 @@ OPTIONS=	GNUTLS "Support for SSL via GnuTLS" Off \
 IGNORE=		GNUTLS and OPENSSL are mutually exclusive, enable at most one of them
 .endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=--with-ssl
+CONFIGURE_ARGS+=--with-ssl=openssl
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .elif !defined(WITHOUT_GNUTLS)
