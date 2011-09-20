@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org bitmaps data
 
-LICENSE=	x11
+LICENSE=	MIT
 
 CONFLICTS=	xorg-libraries-6.*
 

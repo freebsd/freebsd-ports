@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XKB event daemon
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xkbfile x11

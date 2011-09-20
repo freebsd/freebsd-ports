@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Display Manager Control Protocol library
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	xproto:both

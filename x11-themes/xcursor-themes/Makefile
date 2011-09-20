@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org cursors themes
 
-LICENSE=	x11
+LICENSE=	MIT
 
 BUILD_DEPENDS=	xcursorgen:${PORTSDIR}/x11/xcursorgen
 

@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library
 
-LICENSE=	x11
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	xrender x11 xfixes fixesproto xproto:both \
