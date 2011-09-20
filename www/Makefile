@@ -1783,6 +1783,7 @@
     SUBDIR += trac-estimator
     SUBDIR += trac-fivestarvote
     SUBDIR += trac-fullblog
+    SUBDIR += trac-fullblognotification
     SUBDIR += trac-gantt
     SUBDIR += trac-gitplugin
     SUBDIR += trac-graphviz
