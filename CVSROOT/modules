@@ -1367,6 +1367,7 @@ cairomm                         ports/graphics/cairomm
 cake                            ports/games/cake
 cakephp11                       ports/www/cakephp11
 cakephp12                       ports/www/cakephp12
+cakephp13                       ports/www/cakephp13
 cal                             ports/deskutils/cal
 cal3d                           ports/graphics/cal3d
 cal3d-devel                     ports/graphics/cal3d-devel
@@ -8304,6 +8305,7 @@ libvanessa_socket               ports/devel/libvanessa_socket
 libvc                           ports/devel/libvc
 libvdpau                        ports/multimedia/libvdpau
 libvirt                         ports/devel/libvirt
+libvisio                        ports/textproc/libvisio
 libvisual                       ports/graphics/libvisual
 libvisual04                     ports/graphics/libvisual04
 libvisual04-plugins             ports/graphics/libvisual04-plugins
