@@ -1,0 +1,8 @@
+Role::Identifiable::HasIdent is an incredibly simple role. It adds
+a required ident attribute that stores a simple string, meant to
+identify exceptions.
+Role::Identifiable::HasTags adds the ability for your class and its
+composed parts (roles, superclasses) as well as instances of it to
+contribute to a pool of tags describing each instance.
+
+WWW: http://search.cpan.org/dist/Role-Identifiable/
