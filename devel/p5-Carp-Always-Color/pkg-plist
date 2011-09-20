@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Carp/Always/Color.pm
+%%SITE_PERL%%/Carp/Always/Color/HTML.pm
+%%SITE_PERL%%/Carp/Always/Color/Term.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always/Color/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always/Color
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
+@dirrm %%SITE_PERL%%/Carp/Always/Color
+@dirrmtry %%SITE_PERL%%/Carp/Always
+@dirrmtry %%SITE_PERL%%/Carp

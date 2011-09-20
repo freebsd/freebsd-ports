@@ -1272,6 +1272,7 @@
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Capture-Tiny
     SUBDIR += p5-Carp-Always
+    SUBDIR += p5-Carp-Always-Color
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Carp-Assert-More
     SUBDIR += p5-Carp-Clan
