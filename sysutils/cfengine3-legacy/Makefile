@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cfengine.org/tarballs/
+MASTER_SITES=	http://cfengine.com/source_code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine3
+FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
