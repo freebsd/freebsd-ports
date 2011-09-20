@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xauth
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X authority file utility
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	x11 xau xext xmuu

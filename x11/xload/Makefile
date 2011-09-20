@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xload
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	System load average display for X
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	xt xaw

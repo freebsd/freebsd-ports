@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	libXcursor
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.12
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library
+
+LICENSE=	x11
 
 XORG_CAT=	lib
 USE_XORG=	xrender x11 xfixes fixesproto xproto:both \

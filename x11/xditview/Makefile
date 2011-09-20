@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xditview
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Display ditroff output
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	xt xaw

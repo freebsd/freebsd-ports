@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xcmsdb
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Device Color Characterization utility for X
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	x11

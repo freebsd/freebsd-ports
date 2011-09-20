@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	iceauth
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	ICE authority file utility for X
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	xproto ice
