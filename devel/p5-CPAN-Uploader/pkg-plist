@@ -1,0 +1,6 @@
+bin/cpan-upload
+%%SITE_PERL%%/CPAN/Uploader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Uploader/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Uploader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN
