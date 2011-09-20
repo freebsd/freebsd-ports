@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Hailo
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-MouseX-StrictConstructor>=0.02:${PORTSDIR}/devel/p5-MouseX-StrictConstructor \
 		p5-Regexp-Common>=2010010201:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Term-Sk>=0.06:${PORTSDIR}/devel/p5-Term-Sk \
-		p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie \
 		p5-namespace-clean>=0.18:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -87,6 +86,8 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
+RUN_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
 TEST_DEPENDS+=	p5-Test-More>=0.94:${PORTSDIR}/devel/p5-Test-More
 .endif
 
