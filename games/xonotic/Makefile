@@ -5,111 +5,81 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nexuiz
-PORTVERSION=	2.5.2
-PORTREVISION=	7
+PORTNAME=	xonotic
+PORTVERSION=	0.5.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
-		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://dl.xonotic.org/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-LICENSE=	GPLv2
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		png.6:${PORTSDIR}/graphics/png \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-# Package size below is for default set of OPTIONS
-NO_PACKAGE=	Package will be 942MB, set FORCE_PACKAGE if you really want it
+MANUAL_PACKAGE_BUILD=	huge
 
 USE_ZIP=	yes
-
-WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
+WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile
-MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
-		DP_PRELOAD_DEPENDENCIES=yes DP_LINK_TO_LIBJPEG=yes \
-		CFLAGS_LIBJPEG="-I${LOCALBASE}/include" \
+MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
+		DP_PRELOAD_DEPENDENCIES=yes \
+		CFLAGS_LIBJPEG="-I${LOCALBASE}/include -DLINK_TO_LIBJPEG" \
 		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
+MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
+BINARIES=	#
 
-OPTIONS=	CLIENT		"Build GLX client"		on \
-		SDL_CLIENT	"Build SDL client"		on \
-		SERVER		"Build dedicated server"	on \
-		MAPPACK		"Install community map pack"	on
+OPTIONS=	CLIENT		"Build SDL client"		on \
+		SERVER		"Build dedicated server"	on
 
 .include <bsd.port.pre.mk>
 
-.if !(defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT) || defined(WITH_SERVER))
-IGNORE=		requires at least one of [SDL_]CLIENT or SERVER options
-.endif
-
-.if !defined(WITHOUT_MAPPACK)
-DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}:mappack
-PLIST_SUB+=	MAPPACK=""
-.else
-PLIST_SUB+=	MAPPACK="@comment "
-.endif
-
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
-.if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
-		png.6:${PORTSDIR}/graphics/png \
-		theora.0:${PORTSDIR}/multimedia/libtheora
+.if !(defined(WITH_CLIENT) || defined(WITH_SERVER))
+IGNORE=		requires at least one of CLIENT or SERVER options
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-USE_GL=		glut
-USE_XORG=	x11 xpm xxf86vm xxf86dga xext
-ALL_TARGET+=	cl-release
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
-.endif
-
-.if !defined(WITHOUT_SDL_CLIENT)
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
+		theora.0:${PORTSDIR}/multimedia/libtheora \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		ogg.7:${PORTSDIR}/audio/libogg
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
-PLIST_SUB+=	SDL_CLIENT=""
-.else
-PLIST_SUB+=	SDL_CLIENT="@comment "
+BINARIES+=	xonotic-sdl
 .endif
 
 .if !defined(WITHOUT_SERVER)
 ALL_TARGET+=	sv-release
-PLIST_SUB+=	SERVER=""
-.else
-PLIST_SUB+=	SERVER="@comment "
+BINARIES+=	xonotic-dedicated
 .endif
 
-post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
-		-d ${WRKDIR}/Nexuiz/sources
+.for f in ${BINARIES}
+PLIST_FILES+=	bin/${f}
+.endfor
+
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
 		${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
 	@${REINPLACE_CMD} -e '/LDFLAGS_BSDSV/s,$$,-L${LOCALBASE}/lib,' \
 		${WRKSRC}/makefile.inc
-# Fix for libpng 1.4
-	@${REINPLACE_CMD} -e 's,gray_1_2_4_to_8,expand_&,g' \
-		${WRKSRC}/image_png.c
+	@${ECHO_CMD} >> ${WRKSRC}/prvm_offsets.h # silence 'no newline' warnings
 
 do-install:
-	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vpj]" | \
-		while read f ; do ${INSTALL_PROGRAM} $${f} \
-			${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
-	@${MKDIR} ${DATADIR}/data ${DATADIR}/havoc
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/havoc/*.pk3 ${DATADIR}/havoc
-.if !defined(WITHOUT_MAPPACK)
-	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${DATADIR}/data
-.endif
+.for f in ${BINARIES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f:C/xonotic/darkplaces/} ${PREFIX}/bin/${f}
+.endfor
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/Xonotic/data/*.pk3 ${DATADIR}/data/
 .if !defined(WITHOUT_SERVER)
-	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} server ${DATADIR}
+	cd ${WRKDIR}/Xonotic && ${COPYTREE_SHARE} server ${DATADIR}
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
+.endif
 .endif
 
 .include <bsd.port.post.mk>
