@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Role/HasMessage.pm
+%%SITE_PERL%%/Role/HasMessage/Errf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/HasMessage/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/HasMessage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
+@dirrmtry %%SITE_PERL%%/Role/HasMessage
+@dirrmtry %%SITE_PERL%%/Role
