@@ -2518,6 +2518,7 @@
     SUBDIR += p5-Tree-Node
     SUBDIR += p5-Tree-Parser
     SUBDIR += p5-Tree-R
+    SUBDIR += p5-Tree-RedBlack
     SUBDIR += p5-Tree-Simple
     SUBDIR += p5-Tree-Simple-View
     SUBDIR += p5-Tree-Simple-VisitorFactory
