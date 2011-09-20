@@ -1,21 +1,9 @@
-Nexuiz is a fast-paced, chaotic, and intense multiplayer first person
-shooter, focused on providing basic, old style deathmatch.
+Xonotic is a free (GPL), fast-paced first-person shooter that works
+on Windows, OS X and Linux. The project is geared towards providing
+addictive arena shooter gameplay which is all spawned and driven
+by the community itself. Xonotic is a direct successor of the Nexuiz
+project with years of development between them, and it aims to
+become the best possible open-source FPS (first-person-shooter) of
+its kind.
 
-Nexuiz is built on the power of the Darkplaces engine, which is a heavily
-modified version of the original Quake.  Darkplaces features realtime
-lighting and stencil shadows, bumpmapping, gloss, bloom, and totally
-rewritten network code that supports up to 64 players on a single server.
-While quality gameplay was our primary goal, its graphics technology and
-artwork allows the game to compete with the current quality of commercial
-games.
-
-Any online deathmatch fan will instantly feel at home with Nexuiz' weapons
-and movement style.  The fast server browser and quick loading time allows
-you to jump right into a game at a moments notice and play a quick game.
-
-Now it also comes with community map pack compiled by Strahlemann.  It
-includes 35 maps, and a campaign mode for the user to fight through.  The
-map pack includes Quake3 community maps, Nexuiz community maps, and some
-new maps from Nexuiz developers.
-
-WWW: http://www.nexuiz.com/classic.php
+WWW:	http://www.xonotic.org/
