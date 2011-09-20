@@ -2220,6 +2220,7 @@
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
     SUBDIR += p5-Return-Value
+    SUBDIR += p5-Role-Identifiable
     SUBDIR += p5-Rose-DateTime
     SUBDIR += p5-Rose-Object
     SUBDIR += p5-RunApp
