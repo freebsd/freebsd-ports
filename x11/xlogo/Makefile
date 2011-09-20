@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xlogo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Displays the X Window System logo.
+COMMENT=	Displays the X Window System logo
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	xrender xft xext xt xaw xp xprintutil

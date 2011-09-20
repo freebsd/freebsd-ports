@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xmodmap
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Utility for modifying keymaps and pointer button mappings in X
+
+LICENSE=	x11
 
 XORG_CAT=	app
 USE_XORG=	x11

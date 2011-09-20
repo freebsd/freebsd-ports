@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	libxkbfile
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XKB file library
+
+LICENSE=	x11
 
 XORG_CAT=	lib
 USE_XORG=	x11 kbproto:both
