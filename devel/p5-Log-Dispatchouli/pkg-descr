@@ -1,0 +1,8 @@
+Log::Dispatchouli is a thin layer above Log::Dispatch and meant to
+make it dead simple to add logging to a program without having to
+think much about categories, facilities, levels, or things like that.
+It is meant to make logging just configurable enough that you can find
+the logs you want and just easy enough that you will actually log
+things.
+
+WWW: http://search.cpan.org/dist/Log-Dispatchouli/
