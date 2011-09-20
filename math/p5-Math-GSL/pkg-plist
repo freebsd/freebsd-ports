@@ -1,6 +1,7 @@
 bin/smoke_some_mathgsl
 bin/smolder_mathgsl
 bin/smolder_smoke_signal
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/BLAS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/BSpline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/CBLAS.pm
@@ -50,11 +51,9 @@ bin/smolder_smoke_signal
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/Vector.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/VectorComplex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/Wavelet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL/Wavelet2D.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BLAS/BLAS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BSpline/BSpline.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/CBLAS/CBLAS.so
@@ -103,57 +102,61 @@ bin/smolder_smoke_signal
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sys/Sys.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Vector/Vector.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/VectorComplex/VectorComplex.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Version/Version.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet/Wavelet.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet2D/Wavelet2D.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BLAS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BSpline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/CBLAS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/CDF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Chebyshev
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Combination
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Complex
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Const
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/DHT
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Deriv
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Diff
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Eigen
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Errno
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/FFT
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Fit
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Heapsort
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Histogram
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Histogram2D
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/IEEEUtils
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Integration
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Interp
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Linalg
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Machine
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Matrix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/MatrixComplex
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Min
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Monte
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multifit
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multimin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multiroots
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/NTuple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/ODEIV
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Permutation
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Poly
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/PowInt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/QRNG
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/RNG
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Randist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Roots
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/SF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Siman
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sort
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Spline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Statistics
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sum
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sys
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Vector
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/VectorComplex
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet2D
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Wavelet
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Version
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/VectorComplex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Vector
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sys
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sum
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Statistics
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Spline
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Sort
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Siman
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/SF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Roots
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Randist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/RNG
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/QRNG
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/PowInt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Poly
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Permutation
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/ODEIV
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/NTuple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multiroots
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multimin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Multifit
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Monte
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Min
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/MatrixComplex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Matrix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Machine
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Linalg
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Interp
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Integration
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/IEEEUtils
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Histogram2D
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Histogram
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Heapsort
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Fit
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/FFT
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Errno
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Eigen
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Diff
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Deriv
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/DHT
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Const
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Complex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Combination
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/Chebyshev
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/CDF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/CBLAS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BSpline
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL/BLAS
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/GSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
