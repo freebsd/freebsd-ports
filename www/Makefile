@@ -53,6 +53,7 @@
     SUBDIR += aws
     SUBDIR += awstats
     SUBDIR += axis
+    SUBDIR += axis2
     SUBDIR += b2evolution
     SUBDIR += bacula-web
     SUBDIR += bannerfilter
