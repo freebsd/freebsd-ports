@@ -1,5 +1,5 @@
---- db_null.c.orig	Fri Feb 27 09:49:40 2004
-+++ db_null.c	Fri Feb 27 09:51:14 2004
+--- ./db_null.c.orig	2000-12-18 17:58:02.000000000 +0100
++++ ./db_null.c	2011-08-29 00:31:55.000000000 +0200
 @@ -48,9 +48,7 @@
  char *a_username;
  char *elapsed_time;char *bytes_in;char *bytes_out;
