@@ -2301,6 +2301,7 @@
     SUBDIR += p5-Sub-Delete
     SUBDIR += p5-Sub-Exporter
     SUBDIR += p5-Sub-Exporter-ForMethods
+    SUBDIR += p5-Sub-Exporter-GlobExporter
     SUBDIR += p5-Sub-Identify
     SUBDIR += p5-Sub-Install
     SUBDIR += p5-Sub-Installer

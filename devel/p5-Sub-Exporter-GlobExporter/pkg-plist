@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Sub/Exporter/GlobExporter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/GlobExporter/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/GlobExporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/Sub
