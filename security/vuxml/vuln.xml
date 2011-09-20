@@ -5342,13 +5342,85 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>13.0.782.215</lt></range>
+	<range><lt>14.0.835.163</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 14.0.835.163:<br/>
+	    [49377] High CVE-2011-2835: Race condition in the certificate cache.	      Credit to Ryan Sleevi of the Chromium development community.<br/>
+	    [51464] Low CVE-2011-2836: Infobar the Windows Media Player plug-in
+	      to avoid click-free access to the system Flash. Credit to
+	      electronixtar.<br/>
+	    [Linux only] [57908] Low CVE-2011-2837: Use PIC / pie compiler
+	      flags. Credit to wbrana.<br/>
+	    [75070] Low CVE-2011-2838: Treat MIME type more authoritatively when
+	      loading plug-ins. Credit to Michal Zalewski of the Google Security
+	      Team.<br/>
+	    [76771] High CVE-2011-2839: Crash in v8 script object wrappers.
+	      Credit to Kostya Serebryany of the Chromium development
+	      community.<br/>
+	    [78427] [83031] Low CVE-2011-2840: Possible URL bar spoofs with
+	      unusual user interaction. Credit to kuzzcc.<br/>
+	    [78639] High CVE-2011-2841: Garbage collection error in PDF. Credit
+	      to Mario Gomes.<br/>
+	    [82438] Medium CVE-2011-2843: Out-of-bounds read with media buffers.
+	      Credit to Kostya Serebryany of the Chromium development
+	      community.<br/>
+	    [85041] Medium CVE-2011-2844: Out-of-bounds read with mp3 files.
+	      Credit to Mario Gomes.<br/>
+	    [89219] High CVE-2011-2846: Use-after-free in unload event handling.
+	      Credit to Arthur Gerkis.<br/>
+	    [89330] High CVE-2011-2847: Use-after-free in document loader.
+	      Credit to miaubiz.<br/>
+	    [89564] Medium CVE-2011-2848: URL bar spoof with forward button.
+	      Credit to Jordi Chancel.<br/>
+	    [89795] Low CVE-2011-2849: Browser NULL pointer crash with
+	      WebSockets. Credit to Arthur Gerkis.<br/>
+	    [89991] Medium CVE-2011-3234: Out-of-bounds read in box handling.
+	      Credit to miaubiz.<br/>
+	    [90134] Medium CVE-2011-2850: Out-of-bounds read with Khmer
+	      characters. Credit to miaubiz.<br/>
+	    [90173] Medium CVE-2011-2851: Out-of-bounds read in video handling.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [91120] High CVE-2011-2852: Off-by-one in v8. Credit to Christian
+	      Holler.<br/>
+	    [91197] High CVE-2011-2853: Use-after-free in plug-in handling.
+	      Credit to Google Chrome Security Team (SkyLined).<br/>
+	    [92651] [94800] High CVE-2011-2854: Use-after-free in ruby / table
+	      style handing. Credit to Slawomir Blazek, and independent later
+	      discoveries by miaubiz and Google Chrome Security Team
+	      (Inferno).<br/>
+	    [92959] High CVE-2011-2855: Stale node in stylesheet handling.
+	      Credit to Arthur Gerkis.<br/>
+	    [93416] High CVE-2011-2856: Cross-origin bypass in v8. Credit to
+	      Daniel Divricean.<br/>
+	    [93420] High CVE-2011-2857: Use-after-free in focus controller.
+	      Credit to miaubiz.<br/>
+	    [93472] High CVE-2011-2834: Double free in libxml XPath handling.
+	      Credit to Yang Dingning from NCNIPC, Graduate University of
+	      Chinese Academy of Sciences.<br/>
+	    [93497] Medium CVE-2011-2859: Incorrect permissions assigned to
+	      non-gallery pages. Credit to Bernhard "Bruhns" Brehm of Recurity
+	      Labs.<br/>
+	    [93587] High CVE-2011-2860: Use-after-free in table style handling.
+	      Credit to miaubiz.<br/>
+	    [93596] Medium CVE-2011-2861: Bad string read in PDF. Credit to Aki
+	      Helin of OUSPG.<br/>
+	    [93906] High CVE-2011-2862: Unintended access to v8 built-in
+	      objects. Credit to Sergey Glazunov.<br/>
+	    [95563] Medium CVE-2011-2864: Out-of-bounds read with Tibetan
+	      characters. Credit to Google Chrome Security Team (Inferno).<br/>
+	    [95625] Medium CVE-2011-2858: Out-of-bounds read with triangle
+	      arrays. Credit to Google Chrome Security Team (Inferno).<br/>
+	    [95917] Low CVE-2011-2874: Failure to pin a self-signed cert for a
+	      session. Credit to Nishant Yadant of VMware and Craig Chamberlain
+	      (@randomuserid).<br/>
+	    High CVE-2011-2875: Type confusion in v8 object sealing. Credit to
+	      Christian Holler.</p>
+
 	  <p>Fixed in 13.0.782.215:<br/>
 	    [89402] High CVE-2011-2821: Double free in libxml XPath handling.
 	      Credit to Yang Dingning from NCNIPC, Graduate University of
@@ -5933,12 +6005,43 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2827</cvename>
       <cvename>CVE-2011-2828</cvename>
       <cvename>CVE-2011-2829</cvename>
+      <cvename>CVE-2011-2834</cvename>
+      <cvename>CVE-2011-2835</cvename>
+      <cvename>CVE-2011-2836</cvename>
+      <cvename>CVE-2011-2837</cvename>
+      <cvename>CVE-2011-2838</cvename>
       <cvename>CVE-2011-2839</cvename>
+      <cvename>CVE-2011-2840</cvename>
+      <cvename>CVE-2011-2841</cvename>
+      <cvename>CVE-2011-2842</cvename>
+      <cvename>CVE-2011-2843</cvename>
+      <cvename>CVE-2011-2844</cvename>
+      <cvename>CVE-2011-2846</cvename>
+      <cvename>CVE-2011-2847</cvename>
+      <cvename>CVE-2011-2848</cvename>
+      <cvename>CVE-2011-2849</cvename>
+      <cvename>CVE-2011-2850</cvename>
+      <cvename>CVE-2011-2851</cvename>
+      <cvename>CVE-2011-2852</cvename>
+      <cvename>CVE-2011-2853</cvename>
+      <cvename>CVE-2011-2854</cvename>
+      <cvename>CVE-2011-2855</cvename>
+      <cvename>CVE-2011-2856</cvename>
+      <cvename>CVE-2011-2857</cvename>
+      <cvename>CVE-2011-2858</cvename>
+      <cvename>CVE-2011-2859</cvename>
+      <cvename>CVE-2011-2860</cvename>
+      <cvename>CVE-2011-2861</cvename>
+      <cvename>CVE-2011-2862</cvename>
+      <cvename>CVE-2011-2864</cvename>
+      <cvename>CVE-2011-2874</cvename>
+      <cvename>CVE-2011-2875</cvename>
+      <cvename>CVE-2011-3234</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-08-23</modified>
+      <modified>2011-09-20</modified>
     </dates>
   </vuln>
 
