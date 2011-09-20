@@ -2028,6 +2028,7 @@
     SUBDIR += p5-MooseX-MultiMethods
     SUBDIR += p5-MooseX-NonMoose
     SUBDIR += p5-MooseX-Object-Pluggable
+    SUBDIR += p5-MooseX-OneArgNew
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Params-Validate
     SUBDIR += p5-MooseX-RelatedClassRoles
