@@ -12,12 +12,14 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
 		http://cyberside.net.ee/tor/ \
 		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
+		http://mirror.host4site.co.il/torproject.org/dist/ \
 		http://mirror.tor.hu/dist/ \
 		http://onion.anonymo.us.org/dist/ \
 		http://theonionrouter.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
+		http://tor.blingblingsquad.net/dist/ \
 		http://tor.ccc.de/dist/ \
 		http://tor.cyberarmy.at/dist/ \
 		http://tor.homosu.net/dist/ \
@@ -29,6 +31,7 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
 		http://torproject.nwlinux.us/dist/ \
+		http://www.torproject.org.in/dist/ \
 		http://www.oignon.net/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/ \
@@ -49,6 +52,8 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="-levent-2.0"
+
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
