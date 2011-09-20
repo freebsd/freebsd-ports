@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/KyotoCabinet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KyotoCabinet.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/KyotoCabinet.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/KyotoCabinet.so
+%%SITE_PERL%%/%%PERL_ARCH%%/kctest.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/makedoc.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet
