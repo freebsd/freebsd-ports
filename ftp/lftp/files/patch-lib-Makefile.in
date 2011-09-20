@@ -1,15 +1,15 @@
---- lib/Makefile.in.orig	2011-06-27 17:51:45.965708112 +0200
-+++ lib/Makefile.in	2011-06-27 17:54:57.569892443 +0200
-@@ -1333,8 +1333,6 @@
- ARG_NONNULL_H = arg-nonnull.h
- CXXDEFS_H = c++defs.h
+--- lib/Makefile.in.orig	2011-09-20 10:20:00.632757147 +0200
++++ lib/Makefile.in	2011-09-20 10:22:27.434783661 +0200
+@@ -1376,8 +1376,6 @@
+ libgnu_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(INET_PTON_LIB) \
+ 	$(LIBSOCKET) $(LIB_CLOCK_GETTIME) $(LTLIBICONV) $(LTLIBINTL)
  GPERF = gperf
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
 -charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
- UNUSED_PARAMETER_H = unused-parameter.h
- WARN_ON_USE_H = warn-on-use.h
- all: $(BUILT_SOURCES) config.h
-@@ -2263,31 +2261,10 @@
+ 
+ # Because this Makefile snippet defines a variable used by other
+ # gnulib Makefile snippets, it must be present in all Makefile.am that
+@@ -2303,31 +2301,10 @@
  	fi ; \
  	if $$need_charset_alias; then \
  	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
