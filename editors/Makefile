@@ -181,7 +181,6 @@
     SUBDIR += nxml
     SUBDIR += nxml-emacs21
     SUBDIR += omegaT
-    SUBDIR += openoffice.org-2
     SUBDIR += openoffice.org-3
     SUBDIR += openoffice.org-3-RC
     SUBDIR += openoffice.org-3-devel
