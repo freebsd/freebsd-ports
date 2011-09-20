@@ -2169,6 +2169,7 @@
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Perl-OSType
+    SUBDIR += p5-Perl-PrereqScanner
     SUBDIR += p5-Perl-Unsafe-Signals
     SUBDIR += p5-Perl-Version
     SUBDIR += p5-Perl6-Builtins
