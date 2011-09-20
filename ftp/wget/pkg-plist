@@ -1,5 +1,6 @@
 bin/wget
 etc/wgetrc.sample
+lib/charset.alias
 %%NLS%%share/locale/be/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wget.mo
@@ -7,10 +8,7 @@ etc/wgetrc.sample
 %%NLS%%share/locale/da/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wget.mo
-%%NLS%%share/locale/en@boldquot/LC_MESSAGES/wget.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wget.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wget.mo
@@ -42,9 +40,3 @@ etc/wgetrc.sample
 %%NLS%%share/locale/vi/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wget.mo
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
