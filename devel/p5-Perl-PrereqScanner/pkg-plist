@@ -1,0 +1,14 @@
+bin/scan_prereqs
+%%SITE_PERL%%/Perl/PrereqScanner.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/Aliased.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/Moose.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/POE.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/Perl5.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/TestMore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/PrereqScanner/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/PrereqScanner
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
+@dirrmtry %%SITE_PERL%%/Perl/PrereqScanner/Scanner
+@dirrmtry %%SITE_PERL%%/Perl/PrereqScanner
+@dirrmtry %%SITE_PERL%%/Perl
