@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	lft
-PORTVERSION=	3.1
+PORTVERSION=	3.33
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.iasi.roedu.net/mirrors/openwrt.org/sources/ \
-		http://trd.no.distfiles.macports.org/lft/ \
-		http://mirror2.openwrt.org/sources/
+MASTER_SITES=	http://pwhois.org/get/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
@@ -32,9 +30,5 @@ do-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
 
 .include <bsd.port.post.mk>
