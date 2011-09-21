@@ -26,6 +26,8 @@ USE_PYTHON=	yes
 USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
 
+BROKEN=		does not build
+
 DATADIR=	share/${PORTNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude 'data'
 SUB_FILES=	pkg-message FretsOnFire
