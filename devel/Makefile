@@ -1006,6 +1006,7 @@
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += maven-ant-tasks
+    SUBDIR += maven-wrapper
     SUBDIR += maven2
     SUBDIR += maven3
     SUBDIR += mcpp
