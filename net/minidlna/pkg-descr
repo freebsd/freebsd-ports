@@ -4,7 +4,4 @@ fully compliant with DLNA/UPnP-AV clients.
 The media files are listed in an SQLite database allowing prompt
 restarts.
 
-Only Linux BINARY releases are available from the author(s) at this
-time, so this port builds from a dated snapshot of the CVS-tree.
-
 WWW: http://minidlna.sourceforge.net/

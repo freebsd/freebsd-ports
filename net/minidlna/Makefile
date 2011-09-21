@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	minidlna
-PORTVERSION=	2010.12.12
-PORTREVISION=	2
+PORTVERSION=	1.0.22
+PORTEPOCH=	1
 CATEGORIES=	net multimedia www
-MASTER_SITES=	http://aldan.algebra.com/~mi/
+MASTER_SITES=	SF
+DISTFILES=	${PORTNAME}_${PORTVERSION}_src.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
@@ -23,10 +24,8 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
 		FLAC:${PORTSDIR}/audio/flac      	\
 		avformat:${PORTSDIR}/multimedia/ffmpeg
 
-USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
-NO_WRKSUBDIR=	yes
 MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude getifaddr.c
 
@@ -43,7 +42,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 801000
+.if ${OSVERSION} < 800500
 EXTRA_PATCHES=	${FILESDIR}/scandir-patch
 .endif
 
