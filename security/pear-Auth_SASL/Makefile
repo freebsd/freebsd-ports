@@ -9,7 +9,7 @@ PORTNAME=	Auth_SASL
 PORTVERSION=	1.0.5
 CATEGORIES=	security www pear
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR abstraction of various SASL mechanism responses
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth

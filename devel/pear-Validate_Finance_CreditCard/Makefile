@@ -9,7 +9,7 @@ PORTNAME=	Validate_Finance_CreditCard
 PORTVERSION=	0.5.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR CreditCard Validation class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

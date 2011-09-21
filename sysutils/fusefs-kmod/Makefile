@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kmod
 DISTNAME=	${HG_SHORTREV}
 DIST_SUBDIR=	fuse4bsd
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module for fuse
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs

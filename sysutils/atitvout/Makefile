@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://0pointer.de/lennart/projects/atitvout/ \
 		http://am-productions.biz/docs/
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toggle TV Out on Mach64 graphics cards
 
 LIB_DEPENDS=	lrmi:${PORTSDIR}/devel/lrmi

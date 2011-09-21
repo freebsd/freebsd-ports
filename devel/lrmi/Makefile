@@ -10,7 +10,7 @@ PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LRMI is a library for calling real mode BIOS routines
 
 ONLY_FOR_ARCHS=	i386
