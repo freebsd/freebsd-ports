@@ -17,8 +17,6 @@ COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/pari:configure
 LIB_DEPENDS=	pari:${PORTSDIR}/math/pari
 
-BROKEN=		does not compile
-
 PERL_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	parilib="-L${LOCALBASE}/lib -lpari" \
