@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1.20080208
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/
 PKGNAMESUFFIX=	-kmod
@@ -57,6 +57,10 @@ HTML_DOCS=	Faq.html \
 OPTIONS=	AUTOSETUP "Automatic global config file setup" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900040
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fuse_module__fuse_vnops.c
+.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
