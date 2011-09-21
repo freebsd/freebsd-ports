@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Styles for formatting Spreadsheet::WriteExcel
 
 PERL_MODBUILD=	YES

@@ -12,7 +12,7 @@ MASTER_SITES=		http://launchpadlibrarian.net/73619979/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		jupengfei@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Add support for i18n, documentation and icons to distutils
 
 LICENSE=		GPLv2

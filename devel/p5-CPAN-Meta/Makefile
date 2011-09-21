@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The distribution metadata for a CPAN dist
 
 BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML	\

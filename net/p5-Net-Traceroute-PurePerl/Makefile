@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute(1) functionality in perl via raw sockets
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Traceroute.pm:${PORTSDIR}/net/p5-Net-Traceroute

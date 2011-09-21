@@ -11,7 +11,7 @@ CATEGORIES=		sysutils python
 MASTER_SITES=		GOOGLE_CODE
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		jupengfei@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A process utilities module for Python
 
 USE_PYTHON=		yes

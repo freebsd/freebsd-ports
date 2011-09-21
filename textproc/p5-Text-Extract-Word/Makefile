@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple module for extracting the text from a Microsoft Word file
 
 BUILD_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent \

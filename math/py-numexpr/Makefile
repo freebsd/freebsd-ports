@@ -11,7 +11,7 @@ CATEGORIES=	math python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast numerical array expression evaluator for Python and NumPy
 
 BUILD_DEPENDS=	${PYNUMPY}

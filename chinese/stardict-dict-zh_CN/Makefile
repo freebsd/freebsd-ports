@@ -16,7 +16,7 @@ DISTFILES=	stardict-cdict-gb-${PORTVERSION}.tar.bz2 \
 		stardict-xdict-ec-gb-${PORTVERSION}.tar.bz2
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Chinese(S)/Chinese(S)-English dictionaries for StarDict
 
 NO_BUILD=	yes

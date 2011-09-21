@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A named entity list for HTML parser
 
 BUILD_DEPENDS=	p5-Error>0:${PORTSDIR}/lang/p5-Error \

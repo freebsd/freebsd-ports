@@ -12,7 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	fortune-mod-zh-${PORTVERSION}
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very classic fortune file in Chinese
 
 RUN_DEPENDS=	autob5:${PORTSDIR}/chinese/autoconvert
