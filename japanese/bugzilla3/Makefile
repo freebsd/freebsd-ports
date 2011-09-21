@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.5
+PORTVERSION=	3.6.6
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}
@@ -28,7 +28,7 @@ LANGDIR=	${WWWDIR}/template/ja
 
 do-install:
 	@-${MKDIR} ${LANGDIR}/default
-	@cd ${WRKDIR}/ja-${PORTVERSION}/default; ${COPYTREE_SHARE} . ${LANGDIR}/default
+	@cd ${WRKDIR}/default; ${COPYTREE_SHARE} . ${LANGDIR}/default
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
