@@ -3,7 +3,6 @@ bin/gp-%%GP_VERSION%%
 bin/gphelp
 bin/tex2mail
 include/pari/genpari.h
-include/pari/mpinl.h
 include/pari/pari.h
 include/pari/paricast.h
 include/pari/paricfg.h
@@ -18,8 +17,10 @@ include/pari/paripriv.h
 include/pari/paristio.h
 include/pari/parisys.h
 include/pari/paritune.h
+include/pari/pariport.h
+include/pari/paritype.h
 lib/libpari-gmp.so.%%PORTVERSION%%
-lib/libpari-gmp.so.3
+lib/libpari-gmp.so.2
 lib/libpari.so
 lib/pari/pari.cfg
 @dirrm lib/pari
