@@ -8,6 +8,24 @@
     #include <utime.h>
     #include <unistd.h>
  #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)	/* stdlib already included above */
+@@ -2580,7 +2581,7 @@
+ 
+ 
+ /*---------------------------------------------*/
+-void mySignalCatcher ( IntNative *n )
++void mySignalCatcher (int n __unused)
+ {
+    fprintf ( stderr, 
+              "\n%s: Control-C (or similar) caught, quitting.\n",
+@@ -2590,7 +2591,7 @@
+ 
+ 
+ /*---------------------------------------------*/
+-void mySIGSEGVorSIGBUScatcher ( IntNative *n )
++void mySIGSEGVorSIGBUScatcher (int n __unused)
+ {
+    if (compressing)
+       fprintf ( stderr,
 @@ -3132,11 +3133,6 @@
     signal (SIGBUS,  mySIGSEGVorSIGBUScatcher);
     #endif
