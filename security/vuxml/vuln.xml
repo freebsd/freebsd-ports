@@ -2643,7 +2643,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>krb5</name>
-	<range><ge>1.7</ge><le>1.7.2</le></range>
+	<range><ge>1.7</ge><lt>1.7.2</lt></range>
 	<range><ge>1.8</ge><le>1.8.4</le></range>
 	<range><eq>1.9</eq></range>
       </package>
