@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.168
-diff -u -r1.117 -r1.168
+retrieving revision 1.169
+diff -u -r1.117 -r1.169
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	8 Sep 2011 01:41:16 -0000	1.168
++++ webmagick.in	21 Sep 2011 05:54:43 -0000	1.169
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.168 2011/09/08 01:41:16 ache Exp $
++# $Id: webmagick.in,v 1.169 2011/09/21 05:54:43 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1688,8 +1688,8 @@ diff -u -r1.117 -r1.168
 -    s/ /%20/g;          # " "
 -    s:\\:/:g; # replace \ with / for better URLs
 +    # RFC 2396
-+    # unreserved + some reserved (no query, allow path chars): "$+,/:;=@"
-+    s/([^0-9a-zA-Z_.!~*'()\$+,\/:;=\@-])/sprintf("%%%02x", ord($1))/eg;
++    # unreserved + some reserved (no query, allow path chars): "$+,/;=@"
++    s/([^0-9a-zA-Z_.!~*'()\$+,\/;=\@-])/sprintf("%%%02x", ord($1))/eg;
      return( $_ );
  }
  
