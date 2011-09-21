@@ -1,6 +1,12 @@
---- minidlna.c	2010-12-14 00:35:56.000000000 -0500
-+++ minidlna.c	2010-12-14 00:38:02.000000000 -0500
-@@ -67,4 +67,8 @@
+--- minidlna.c	2011-07-18 18:18:11.000000000 -0400
++++ minidlna.c	2011-08-24 01:25:26.000000000 -0400
+@@ -53,4 +53,5 @@
+ #include <ctype.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+@@ -66,4 +67,8 @@
  #include <pwd.h>
  
 +#include <err.h>
@@ -9,20 +15,20 @@
 +
  #include "config.h"
  
-@@ -282,5 +286,5 @@
+@@ -345,5 +350,5 @@
  	/*const char * logfilename = 0;*/
  	const char * presurl = 0;
 -	const char * optionsfile = "/etc/minidlna.conf";
 +	const char * optionsfile = PREFIX "/etc/minidlna.conf";
  	char mac_str[13];
  	char * string, * word;
-@@ -289,4 +293,5 @@
- 	char real_path[PATH_MAX];
- 	char ext_ip_addr[INET_ADDRSTRLEN] = {'\0'};
-+	uid_t	uid = (uid_t)-1;
+@@ -353,4 +358,5 @@
+ 	char ip_addr[INET_ADDRSTRLEN + 3] = {'\0'};
  
++	uid_t	uid = (uid_t)-1;
  	/* first check if "-f" option is used */
-@@ -617,4 +622,21 @@
+ 	for(i=2; i<argc; i++)
+@@ -741,4 +747,21 @@
  			exit(0);
  			break;
 +		case 'u':
@@ -44,13 +50,25 @@
 +			break;
  		default:
  			fprintf(stderr, "Unknown option: %s\n", argv[i]);
-@@ -644,4 +666,5 @@
+@@ -768,4 +791,5 @@
  			"\t\t[-s serial] [-m model_number] \n"
  			"\t\t[-t notify_interval] [-P pid_filename]\n"
 +			"\t\t[-u uid_to_run_as]\n"
  			"\t\t[-w url] [-R] [-V] [-h]\n"
  		        "\nNotes:\n\tNotify interval is in seconds. Default is 895 seconds.\n"
-@@ -725,4 +748,7 @@
+@@ -831,5 +855,10 @@
+ 
+ 	/* set signal handler */
+-	signal(SIGCLD, SIG_IGN);
++	memset(&sa, 0, sizeof(struct sigaction));
++	sa.sa_handler = SIG_IGN;
++	sa.sa_flags = SA_NOCLDSTOP|SA_NOCLDWAIT;
++#ifndef SIGCHLD
++#	define SIGCHLD	SIGCLD
++#endif
+ 	memset(&sa, 0, sizeof(struct sigaction));
+ 	sa.sa_handler = sigterm;
+@@ -849,4 +878,7 @@
  	writepidfile(pidfilename, pid);
  
 +	if (uid != (uid_t)-1 && setuid(uid) == -1)
@@ -58,13 +76,13 @@
 +
  	return 0;
  }
-@@ -841,4 +867,5 @@
+@@ -966,4 +998,5 @@
  #endif
  	}
 +#if defined(__linux__)
  	if( sqlite3_threadsafe() && sqlite3_libversion_number() >= 3005001 &&
  	    GETFLAG(INOTIFY_MASK) && pthread_create(&inotify_thread, NULL, start_inotify, NULL) )
-@@ -846,4 +873,5 @@
+@@ -971,4 +1004,5 @@
  		DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_inotify.\n");
  	}
 +#endif
