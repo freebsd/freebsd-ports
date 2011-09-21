@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.5
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
@@ -75,5 +75,5 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|share\/man|man|g' \
 		${WRKSRC}/mcs/jay/Makefile
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
+.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>
