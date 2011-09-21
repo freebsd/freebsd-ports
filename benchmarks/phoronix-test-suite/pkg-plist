@@ -56,6 +56,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/openbenchmarking_launcher.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_login.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_refresh.php
+%%DATADIR%%/pts-core/commands/openbenchmarking_repositories.php
 %%DATADIR%%/pts-core/commands/pts_version.php
 %%DATADIR%%/pts-core/commands/rebuild_composite_xml.php
 %%DATADIR%%/pts-core/commands/recover_run.php
@@ -76,6 +77,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/system_sensors.php
 %%DATADIR%%/pts-core/commands/test_module.php
 %%DATADIR%%/pts-core/commands/upload_result.php
+%%DATADIR%%/pts-core/commands/upload_test_profile.php
+%%DATADIR%%/pts-core/commands/upload_test_suite.php
 %%DATADIR%%/pts-core/commands/user_config_reset.php
 %%DATADIR%%/pts-core/commands/user_config_set.php
 %%DATADIR%%/pts-core/commands/validate_result_file.php
@@ -120,6 +123,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/modules/ekofisk.php
 %%DATADIR%%/pts-core/modules/graphics_event_checker.php
 %%DATADIR%%/pts-core/modules/graphics_override.php
+%%DATADIR%%/pts-core/modules/matisk.php
 %%DATADIR%%/pts-core/modules/phoromatic.php
 %%DATADIR%%/pts-core/modules/result_notifier.php
 %%DATADIR%%/pts-core/modules/system_monitor.php
@@ -132,6 +136,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_png_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php.bak
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer_web.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svg_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svgz_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_swf_renderer.php
@@ -155,6 +160,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/components/phodevi_memory.php
 %%DATADIR%%/pts-core/objects/phodevi/components/phodevi_monitor.php
 %%DATADIR%%/pts-core/objects/phodevi/components/phodevi_motherboard.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_network.php
 %%DATADIR%%/pts-core/objects/phodevi/components/phodevi_system.php
 %%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_bsd_parser.php
 %%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_linux_parser.php
@@ -194,12 +200,15 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_Graph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_HeatMapBarGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_HorizontalBarGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_HorizontalBoxPlotGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ImageComparisonGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_LineGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_MultiPassFailGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_OverviewGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_PassFailGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_PieChart.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_RadarOverviewGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileCompactSystemsTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileSystemsTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ScatterPlot.php
@@ -292,7 +301,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/bash_completion
 %%DATADIR%%/pts-core/static/certificates/openbenchmarking-server.pem
 %%DATADIR%%/pts-core/static/certificates/phoromatic-com.pem
-%%DATADIR%%/pts-core/static/error-gui.html
 %%DATADIR%%/pts-core/static/examples/apt-full-upgrade
 %%DATADIR%%/pts-core/static/examples/phoromatic-cron-starter
 %%DATADIR%%/pts-core/static/examples/phoromatic-init-starter
@@ -308,11 +316,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/images/pts-308x160-t.png
 %%DATADIR%%/pts-core/static/images/pts-308x160.png
 %%DATADIR%%/pts-core/static/images/pts-icon.png
-%%DATADIR%%/pts-core/static/lists/hal-values-remove.list
-%%DATADIR%%/pts-core/static/lists/module-variables.list
-%%DATADIR%%/pts-core/static/lists/option-command-aliases.list
-%%DATADIR%%/pts-core/static/lists/process-reporting-checks.list
-%%DATADIR%%/pts-core/static/lists/software-vendor-aliases.list
 %%DATADIR%%/pts-core/static/scripts/build-package-deb.php
 %%DATADIR%%/pts-core/static/scripts/build-package-rpm.php
 %%DATADIR%%/pts-core/static/scripts/root-access.sh
@@ -324,7 +327,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/user-agreement.txt
 @dirrm %%DATADIR%%/pts-core/static/xsl
 @dirrm %%DATADIR%%/pts-core/static/scripts
-@dirrm %%DATADIR%%/pts-core/static/lists
 @dirrm %%DATADIR%%/pts-core/static/images
 @dirrm %%DATADIR%%/pts-core/static/examples
 @dirrm %%DATADIR%%/pts-core/static/certificates
