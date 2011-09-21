@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monodevelop-database
-PORTVERSION=	2.4
+PORTVERSION=	2.6.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	MonoDevelop database support

@@ -102,6 +102,7 @@ lib/monodevelop/AddIns/MonoDevelop.Moonlight/MonoDevelop.Moonlight.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/Silverlight.js
 lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_2_0.xml
 lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_3_0.xml
+lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_4_0.xml
 lib/monodevelop/AddIns/MonoDevelop.MsVisualStudio/MonoDevelop.MsVisualStudio.dll
 lib/monodevelop/AddIns/MonoDevelop.MsVisualStudio/MonoDevelop.MsVisualStudio.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Refactoring/MonoDevelop.Refactoring.dll
@@ -114,6 +115,7 @@ lib/monodevelop/AddIns/MonoDevelop.TextTemplating/Mono.TextTemplating.dll
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/Mono.TextTemplating.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/MonoDevelop.TextTemplating.dll
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/MonoDevelop.TextTemplating.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.TextTemplating/Templates/T4PreprocessedTemplateCSharp.xft.xml
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/Templates/T4TemplateCSharp.xft.xml
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe
 lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe.mdb
@@ -141,11 +143,18 @@ lib/monodevelop/AddIns/NUnit/nunit.core.dll
 lib/monodevelop/AddIns/NUnit/nunit.core.interfaces.dll
 lib/monodevelop/AddIns/NUnit/nunit.framework.dll
 lib/monodevelop/AddIns/NUnit/nunit.util.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Git.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Git.dll.mdb
+%%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.Unix.dll
+%%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.Unix.dll.config
+%%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.Unix.dll.mdb
 %%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.dll
-%%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.dll.config
 %%SVN%%lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.dll.mdb
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.dll
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.dll.mdb
+%%GIT%%lib/monodevelop/AddIns/VersionControl/NGit.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/NSch.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/Sharpen.dll
 lib/monodevelop/AddIns/VersionControl/comment.png
 lib/monodevelop/AddIns/VersionControl/menu_add.png
 lib/monodevelop/AddIns/VersionControl/menu_commit.png
@@ -175,6 +184,7 @@ lib/monodevelop/bin/MonoDevelop.Core.dll
 lib/monodevelop/bin/MonoDevelop.Core.dll.config
 lib/monodevelop/bin/MonoDevelop.Core.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Ide.dll
+lib/monodevelop/bin/MonoDevelop.Ide.dll.config
 lib/monodevelop/bin/MonoDevelop.Ide.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe.config
@@ -190,9 +200,9 @@ lib/monodevelop/bin/mdhost.exe
 lib/monodevelop/bin/mdhost.exe.mdb
 lib/monodevelop/bin/mdmonitor.exe
 lib/monodevelop/bin/mdmonitor.exe.mdb
-lib/monodevelop/bin/mdrun.exe
-lib/monodevelop/bin/mdrun.exe.config
-lib/monodevelop/bin/mdrun.exe.mdb
+lib/monodevelop/bin/mdtool.exe
+lib/monodevelop/bin/mdtool.exe.config
+lib/monodevelop/bin/mdtool.exe.mdb
 lib/monodevelop/data/options/DefaultEditingLayout.xml
 lib/monodevelop/data/options/MonoDevelop-templates.xml
 lib/monodevelop/data/options/MonoDevelop-tools.xml
