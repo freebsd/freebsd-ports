@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110921:
+  AFFECTS: users of devel/maven2 and devel/maven3
+  AUTHOR: hq@FreeBSD.org
+
+  The devel/maven2 and devel/maven3 now rely on a wrapper port:
+  devel/maven-wrapper. If you plan to upgrade the devel/maven[23] ports, you
+  will have to uninstall all of them before reinstalling them.
+
 20110917:
   AFFECTS: users of misc/tvbrowser
   AUTHOR: lme@FreeBSD.org
