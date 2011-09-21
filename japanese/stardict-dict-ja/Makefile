@@ -12,7 +12,7 @@ DISTFILES=	stardict-jmdict-en-ja-${PORTVERSION}.tar.bz2 \
 		stardict-jmdict-ja-en-${PORTVERSION}.tar.bz2
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Japanese/Japanese-English dictionaries for StarDict
 
 NO_BUILD=	yes

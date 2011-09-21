@@ -13,7 +13,7 @@ MASTER_SITES=		GOOGLE_CODE
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		jupengfei@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		WebKit/JavaScriptCore Python bindings
 
 BUILD_DEPENDS=		cython:${PORTSDIR}/lang/cython

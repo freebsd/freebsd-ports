@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory mapping made simple and safe
 
 BUILD_DEPENDS=	p5-Const-Fast>=0:${PORTSDIR}/devel/p5-Const-Fast \

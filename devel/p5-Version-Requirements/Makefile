@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of version requirements for a CPAN dist
 
 BUILD_DEPENDS=	p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple

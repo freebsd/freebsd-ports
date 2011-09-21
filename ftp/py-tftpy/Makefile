@@ -12,7 +12,7 @@ MASTER_SITES=		SF \
 			CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		jupengfei@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A Pure Python TFTP Implementation
 
 USE_PYTHON=		yes

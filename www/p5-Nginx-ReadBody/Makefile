@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TPABA/Nginx
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jupengfei@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nginx embeded perl module to read and evaluate a request body
 
 OPTIONS=	NGINX_DEVEL	"Use nginx-devel" off

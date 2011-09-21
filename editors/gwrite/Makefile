@@ -10,7 +10,7 @@ PORTVERSION=		0.3.0
 CATEGORIES=		editors python
 MASTER_SITES=		GOOGLE_CODE
 
-MAINTAINER=		jupengfei@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A simple HTML format editor
 
 BUILD_DEPENDS=		pygtk-demo:${PORTSDIR}/x11-toolkits/py-gtk2 \
