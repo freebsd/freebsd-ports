@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.5.0
+PORTVERSION=	2.3.5
+PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/
+MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package

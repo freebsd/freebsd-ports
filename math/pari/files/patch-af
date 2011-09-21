@@ -1,30 +1,29 @@
-$FreeBSD$
-
---- config/Makefile.SH.orig	2011-05-30 18:28:34.000000000 +0900
-+++ config/Makefile.SH	2011-08-11 07:57:51.000000000 +0900
-@@ -235,8 +235,10 @@
+--- config/Makefile.SH.orig	2010-01-09 17:59:48.000000000 +0000
++++ config/Makefile.SH	2011-09-21 17:55:47.000000000 +0000
+@@ -216,9 +216,11 @@
  INCLUDEDIR= "\$(DESTDIR)$includedir"
  LIBDIR    = "\$(DESTDIR)$libdir"
  BINDIR    = "\$(DESTDIR)$bindir"
 -MANDIR    = "\$(DESTDIR)$mandir"
--DATADIR   = "\$(DESTDIR)$datadir"
 +MANDIR    = "\$(DESTDIR)\${PREFIX}/man/man1"
+ EMACSDIR  = "\$(DESTDIR)$emacsdir"
+-DATADIR   = "\$(DESTDIR)$datadir"
 +ALLDIR    = \${PREFIX}/share/doc/pari
 +READMEDIR = "\$(ALLDIR)"
 +DATADIR   = "\$(ALLDIR)"
  SYSDATADIR= "\$(DESTDIR)$sysdatadir"
  
  EXDIR     = \$(DATADIR)/examples
-@@ -344,7 +346,7 @@
+@@ -316,7 +318,7 @@
  .headers: $HEADERS
- 	@sleep 3; touch \$@
+ 	@touch \$@
  
 -install: install-lib-$dft install-include install-bin install-man install-misc install-doc install-examples install-cfg install-data
 +install: install-lib-$dft install-include install-bin install-man install-misc install-doc install-examples install-cfg install-data install-top
  
  install-include:
  	-mkdir -p \$(INCLUDEDIR)/pari
-@@ -394,6 +396,17 @@
+@@ -367,6 +369,17 @@
  	\$(INSTALL_DATA) $misc/pari.xpm  \$(MISCDIR)
  	\$(INSTALL_PROGRAM) $misc/xgp    \$(MISCDIR)
  
@@ -42,7 +41,7 @@ $FreeBSD$
  install-cfg::
  	-mkdir -p \$(SYSDATADIR)
  	-\$(INSTALL_DATA) pari.cfg \$(SYSDATADIR)
-@@ -404,7 +417,7 @@
+@@ -377,7 +390,7 @@
  
  install-doc::
  	-mkdir -p \$(BINDIR) \$(DOCDIR)
@@ -51,7 +50,7 @@ $FreeBSD$
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -422,11 +435,11 @@
+@@ -395,11 +408,11 @@
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
@@ -66,5 +65,5 @@ $FreeBSD$
 +#	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
 +#	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
  
- install-docpdf::
- 	-mkdir -p \$(BINDIR) \$(DOCDIR)
+ install-examples:
+ 	-mkdir -p \$(EXDIR)
