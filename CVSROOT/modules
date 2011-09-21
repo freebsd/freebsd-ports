@@ -387,6 +387,7 @@ afterstep-stable                ports/x11-wm/afterstep-stable
 aftp                            ports/emulators/aftp
 agame                           ports/games/agame
 agave                           ports/graphics/agave
+agedu                           ports/sysutils/agedu
 agef                            ports/sysutils/agef
 aget                            ports/net/aget
 agg                             ports/graphics/agg
@@ -875,6 +876,7 @@ awstats                         ports/www/awstats
 axe                             ports/editors/axe
 axel                            ports/ftp/axel
 axis                            ports/www/axis
+axis2                           ports/www/axis2
 axpoint                         ports/print/axpoint
 ayam                            ports/graphics/ayam
 ayttm                           ports/net-im/ayttm
@@ -10553,7 +10555,6 @@ openntpd                        ports/net/openntpd
 opennx                          ports/net/opennx
 openobex                        ports/comms/openobex
 openocd                         ports/devel/openocd
-openoffice.org-2                ports/editors/openoffice.org-2
 openoffice.org-3                ports/editors/openoffice.org-3
 openoffice.org-3-RC             ports/editors/openoffice.org-3-RC
 openoffice.org-3-devel          ports/editors/openoffice.org-3-devel
@@ -11154,6 +11155,7 @@ p5-CPAN-Reporter                ports/devel/p5-CPAN-Reporter
 p5-CPAN-Reporter-Smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
 p5-CPAN-Testers-Report          ports/devel/p5-CPAN-Testers-Report
+p5-CPAN-Uploader                ports/devel/p5-CPAN-Uploader
 p5-CPAN-YACSmoke                ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS                     ports/devel/p5-CPANPLUS
 p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
@@ -11190,6 +11192,7 @@ p5-Captcha-reCAPTCHA            ports/graphics/p5-Captcha-reCAPTCHA
 p5-Captcha-reCAPTCHA-Mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-Capture-Tiny                 ports/devel/p5-Capture-Tiny
 p5-Carp-Always                  ports/devel/p5-Carp-Always
+p5-Carp-Always-Color            ports/devel/p5-Carp-Always-Color
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan                    ports/devel/p5-Carp-Clan
@@ -11514,6 +11517,7 @@ p5-Config-IniRegEx              ports/devel/p5-Config-IniRegEx
 p5-Config-JFDI                  ports/devel/p5-Config-JFDI
 p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-MVP                   ports/devel/p5-Config-MVP
+p5-Config-MVP-Reader-INI        ports/devel/p5-Config-MVP-Reader-INI
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
 p5-Config-Options               ports/devel/p5-Config-Options
@@ -12781,6 +12785,7 @@ p5-Jonk                         ports/devel/p5-Jonk
 p5-KinoSearch                   ports/textproc/p5-KinoSearch
 p5-Kwalify                      ports/textproc/p5-Kwalify
 p5-Kwiki                        ports/www/p5-Kwiki
+p5-KyotoCabinet                 ports/databases/p5-KyotoCabinet
 p5-LEGO-RCX                     ports/misc/p5-LEGO-RCX
 p5-LMAP-CID2SPF                 ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-OAuth             ports/www/p5-LWP-Authen-OAuth
@@ -12880,6 +12885,7 @@ p5-Log-Any-Adapter-Log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-Log-Any-Adapter-Syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-Log-Any-App                  ports/devel/p5-Log-Any-App
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
+p5-Log-Dispatch-Array           ports/devel/p5-Log-Dispatch-Array
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
 p5-Log-Dispatch-Configurator-YAML  ports/devel/p5-Log-Dispatch-Configurator-YAML
@@ -12892,6 +12898,7 @@ p5-Log-Dispatch-FileShared      ports/devel/p5-Log-Dispatch-FileShared
 p5-Log-Dispatch-Perl            ports/devel/p5-Log-Dispatch-Perl
 p5-Log-Dispatch-Screen-Color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-Log-Dispatch-Scribe          ports/devel/p5-Log-Dispatch-Scribe
+p5-Log-Dispatchouli             ports/devel/p5-Log-Dispatchouli
 p5-Log-Handler                  ports/devel/p5-Log-Handler
 p5-Log-Log4perl                 ports/devel/p5-Log-Log4perl
 p5-Log-Log4perl-Appender-RabbitMQ  ports/devel/p5-Log-Log4perl-Appender-RabbitMQ
@@ -13197,6 +13204,7 @@ p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
 p5-MooseX-MultiMethods          ports/devel/p5-MooseX-MultiMethods
 p5-MooseX-NonMoose              ports/devel/p5-MooseX-NonMoose
 p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
+p5-MooseX-OneArgNew             ports/devel/p5-MooseX-OneArgNew
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-RelatedClassRoles     ports/devel/p5-MooseX-RelatedClassRoles
@@ -13747,6 +13755,7 @@ p5-Perl-Critic                  ports/textproc/p5-Perl-Critic
 p5-Perl-Critic-Bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-Perl-MinimumVersion          ports/textproc/p5-Perl-MinimumVersion
 p5-Perl-OSType                  ports/devel/p5-Perl-OSType
+p5-Perl-PrereqScanner           ports/devel/p5-Perl-PrereqScanner
 p5-Perl-Unsafe-Signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-Perl-Version                 ports/devel/p5-Perl-Version
 p5-Perl6-Builtins               ports/devel/p5-Perl6-Builtins
@@ -13935,6 +13944,8 @@ p5-ResourcePool-Resource-Net-LDAP  ports/net/p5-ResourcePool-Resource-Net-LDAP
 p5-ResourcePool-Resource-SOAP-Lite  ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-Resources                    ports/devel/p5-Resources
 p5-Return-Value                 ports/devel/p5-Return-Value
+p5-Role-HasMessage              ports/devel/p5-Role-HasMessage
+p5-Role-Identifiable            ports/devel/p5-Role-Identifiable
 p5-Roman                        ports/math/p5-Roman
 p5-Rose-DB                      ports/databases/p5-Rose-DB
 p5-Rose-DB-Object               ports/databases/p5-Rose-DB-Object
@@ -14156,9 +14167,11 @@ p5-String-Checker               ports/devel/p5-String-Checker
 p5-String-Diff                  ports/devel/p5-String-Diff
 p5-String-Divert                ports/textproc/p5-String-Divert
 p5-String-Ediff                 ports/devel/p5-String-Ediff
+p5-String-Errf                  ports/devel/p5-String-Errf
 p5-String-Escape                ports/textproc/p5-String-Escape
 p5-String-Flogger               ports/textproc/p5-String-Flogger
 p5-String-Format                ports/textproc/p5-String-Format
+p5-String-Formatter             ports/devel/p5-String-Formatter
 p5-String-Fraction              ports/textproc/p5-String-Fraction
 p5-String-Koremutake            ports/textproc/p5-String-Koremutake
 p5-String-LRC                   ports/devel/p5-String-LRC
@@ -14181,6 +14194,7 @@ p5-Sub-Current                  ports/devel/p5-Sub-Current
 p5-Sub-Delete                   ports/devel/p5-Sub-Delete
 p5-Sub-Exporter                 ports/devel/p5-Sub-Exporter
 p5-Sub-Exporter-ForMethods      ports/devel/p5-Sub-Exporter-ForMethods
+p5-Sub-Exporter-GlobExporter    ports/devel/p5-Sub-Exporter-GlobExporter
 p5-Sub-Identify                 ports/devel/p5-Sub-Identify
 p5-Sub-Install                  ports/devel/p5-Sub-Install
 p5-Sub-Installer                ports/devel/p5-Sub-Installer
@@ -14621,6 +14635,7 @@ p5-Tree-Nary                    ports/textproc/p5-Tree-Nary
 p5-Tree-Node                    ports/devel/p5-Tree-Node
 p5-Tree-Parser                  ports/devel/p5-Tree-Parser
 p5-Tree-R                       ports/devel/p5-Tree-R
+p5-Tree-RedBlack                ports/devel/p5-Tree-RedBlack
 p5-Tree-Simple                  ports/devel/p5-Tree-Simple
 p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
@@ -15400,6 +15415,7 @@ p5-captcha-recaptcha            ports/graphics/p5-Captcha-reCAPTCHA
 p5-captcha-recaptcha-mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-capture-tiny                 ports/devel/p5-Capture-Tiny
 p5-carp-always                  ports/devel/p5-Carp-Always
+p5-carp-always-color            ports/devel/p5-Carp-Always-Color
 p5-carp-assert                  ports/devel/p5-Carp-Assert
 p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
 p5-carp-clan                    ports/devel/p5-Carp-Clan
@@ -15805,6 +15821,7 @@ p5-config-jfdi                  ports/devel/p5-Config-JFDI
 p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-mvp                   ports/devel/p5-Config-MVP
+p5-config-mvp-reader-ini        ports/devel/p5-Config-MVP-Reader-INI
 p5-config-objective             ports/devel/p5-Config-Objective
 p5-config-options               ports/devel/p5-Config-Options
 p5-config-perl-v                ports/devel/p5-Config-Perl-V
@@ -15855,6 +15872,7 @@ p5-cpan-reporter                ports/devel/p5-CPAN-Reporter
 p5-cpan-reporter-smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
 p5-cpan-testers-report          ports/devel/p5-CPAN-Testers-Report
+p5-cpan-uploader                ports/devel/p5-CPAN-Uploader
 p5-cpan-yacsmoke                ports/devel/p5-CPAN-YACSmoke
 p5-cpanplus                     ports/devel/p5-CPANPLUS
 p5-cpanplus-dist-build          ports/devel/p5-CPANPLUS-Dist-Build
@@ -17117,6 +17135,7 @@ p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
 p5-kwalify                      ports/textproc/p5-Kwalify
 p5-kwiki                        ports/www/p5-Kwiki
+p5-kyotocabinet                 ports/databases/p5-KyotoCabinet
 p5-latex-driver                 ports/textproc/p5-LaTeX-Driver
 p5-latex-encode                 ports/textproc/p5-LaTeX-Encode
 p5-latex-pod                    ports/textproc/p5-LaTeX-Pod
@@ -17216,6 +17235,7 @@ p5-log-any-adapter-log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-log-any-adapter-syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-log-any-app                  ports/devel/p5-Log-Any-App
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
+p5-log-dispatch-array           ports/devel/p5-Log-Dispatch-Array
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
 p5-log-dispatch-configurator-yaml  ports/devel/p5-Log-Dispatch-Configurator-YAML
@@ -17228,6 +17248,7 @@ p5-log-dispatch-fileshared      ports/devel/p5-Log-Dispatch-FileShared
 p5-log-dispatch-perl            ports/devel/p5-Log-Dispatch-Perl
 p5-log-dispatch-screen-color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-log-dispatch-scribe          ports/devel/p5-Log-Dispatch-Scribe
+p5-log-dispatchouli             ports/devel/p5-Log-Dispatchouli
 p5-log-handler                  ports/devel/p5-Log-Handler
 p5-log-log4perl                 ports/devel/p5-Log-Log4perl
 p5-log-log4perl-appender-rabbitmq  ports/devel/p5-Log-Log4perl-Appender-RabbitMQ
@@ -17539,6 +17560,7 @@ p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
 p5-moosex-multimethods          ports/devel/p5-MooseX-MultiMethods
 p5-moosex-nonmoose              ports/devel/p5-MooseX-NonMoose
 p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
+p5-moosex-oneargnew             ports/devel/p5-MooseX-OneArgNew
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-relatedclassroles     ports/devel/p5-MooseX-RelatedClassRoles
@@ -18003,6 +18025,7 @@ p5-perl-critic-bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-perl-ldap                    ports/net/p5-perl-ldap
 p5-perl-minimumversion          ports/textproc/p5-Perl-MinimumVersion
 p5-perl-ostype                  ports/devel/p5-Perl-OSType
+p5-perl-prereqscanner           ports/devel/p5-Perl-PrereqScanner
 p5-perl-unsafe-signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-perl-version                 ports/devel/p5-Perl-Version
 p5-perl6-builtins               ports/devel/p5-Perl6-Builtins
@@ -18297,6 +18320,8 @@ p5-rest-google                  ports/net/p5-REST-Google
 p5-rest-google-apps-provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-return-value                 ports/devel/p5-Return-Value
 p5-riff-info                    ports/multimedia/p5-RIFF-Info
+p5-role-hasmessage              ports/devel/p5-Role-HasMessage
+p5-role-identifiable            ports/devel/p5-Role-Identifiable
 p5-roman                        ports/math/p5-Roman
 p5-rose-datetime                ports/devel/p5-Rose-DateTime
 p5-rose-db                      ports/databases/p5-Rose-DB
@@ -18508,9 +18533,11 @@ p5-string-crc32                 ports/devel/p5-String-CRC32
 p5-string-diff                  ports/devel/p5-String-Diff
 p5-string-divert                ports/textproc/p5-String-Divert
 p5-string-ediff                 ports/devel/p5-String-Ediff
+p5-string-errf                  ports/devel/p5-String-Errf
 p5-string-escape                ports/textproc/p5-String-Escape
 p5-string-flogger               ports/textproc/p5-String-Flogger
 p5-string-format                ports/textproc/p5-String-Format
+p5-string-formatter             ports/devel/p5-String-Formatter
 p5-string-fraction              ports/textproc/p5-String-Fraction
 p5-string-koremutake            ports/textproc/p5-String-Koremutake
 p5-string-lrc                   ports/devel/p5-String-LRC
@@ -18533,6 +18560,7 @@ p5-sub-current                  ports/devel/p5-Sub-Current
 p5-sub-delete                   ports/devel/p5-Sub-Delete
 p5-sub-exporter                 ports/devel/p5-Sub-Exporter
 p5-sub-exporter-formethods      ports/devel/p5-Sub-Exporter-ForMethods
+p5-sub-exporter-globexporter    ports/devel/p5-Sub-Exporter-GlobExporter
 p5-sub-identify                 ports/devel/p5-Sub-Identify
 p5-sub-install                  ports/devel/p5-Sub-Install
 p5-sub-installer                ports/devel/p5-Sub-Installer
@@ -19010,6 +19038,7 @@ p5-tree-nary                    ports/textproc/p5-Tree-Nary
 p5-tree-node                    ports/devel/p5-Tree-Node
 p5-tree-parser                  ports/devel/p5-Tree-Parser
 p5-tree-r                       ports/devel/p5-Tree-R
+p5-tree-redblack                ports/devel/p5-Tree-RedBlack
 p5-tree-simple                  ports/devel/p5-Tree-Simple
 p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
@@ -25607,6 +25636,7 @@ trac-email2trac                 ports/www/trac-email2trac
 trac-estimator                  ports/www/trac-estimator
 trac-fivestarvote               ports/www/trac-fivestarvote
 trac-fullblog                   ports/www/trac-fullblog
+trac-fullblognotification       ports/www/trac-fullblognotification
 trac-gantt                      ports/www/trac-gantt
 trac-gitplugin                  ports/www/trac-gitplugin
 trac-graphviz                   ports/www/trac-graphviz
@@ -27564,6 +27594,7 @@ xtux                            ports/games/xtux
 xtypo                           ports/misc/xtypo
 xv                              ports/graphics/xv
 xv-m17n                         ports/graphics/xv-m17n
+xvattr                          ports/x11/xvattr
 xvid                            ports/multimedia/xvid
 xvidcap                         ports/sysutils/xvidcap
 xvidtune                        ports/x11/xvidtune
