@@ -20,6 +20,8 @@ COMMENT=	UMIT is the nmap frontend developed with Python and PyGTK
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 			${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 
+BROKEN=		leaves files behind on deinstallation
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
