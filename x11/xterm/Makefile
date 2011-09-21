@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	275
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -16,7 +17,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
 USE_XORG=	xaw xft
-USE_GNOME=	desktopfileutils
+WANT_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
@@ -25,7 +26,8 @@ OPTIONS=	WIDE_CHARS "enable wide-character support" on \
 		LUIT "use LUIT for locale convertion from/to UTF-8" on \
 		256_COLOR "enable 256-color support" off \
 		DEC_LOCATOR "enable DECterm Locator support" off \
-		PCRE "use PCRE for regular-expressions" off
+		PCRE "use PCRE for regular-expressions" off \
+		DESKTOP "install desktop entries" off
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -53,6 +55,13 @@ CONFIGURE_ARGS+=	--with-pcre
 LIB_DEPENDS=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
+.if defined(WITH_DESKTOP)
+USE_GNOME=		desktopfileutils
+PLIST_SUB+=		DESKTOP=""
+.else
+PLIST_SUB+=		DESKTOP="@comment "
+.endif
+
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 
 .include <bsd.port.pre.mk>
@@ -65,9 +74,11 @@ post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
 .endfor
+.if defined(WITH_DESKTOP)
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${PREFIX}/share/applications/
 	@-update-desktop-database
+.endif
 
 .if defined(WITH_WIDE_CHARS)
 	@${CAT} ${PKGMESSAGE}
