@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	monodevelop
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	IDE for the .NET platform
@@ -24,14 +24,12 @@ USE_GNOME=	gnomehack gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-CONFIGURE_ARGS+=	DATADIRNAME=share GMSGFMT=msgfmt \
-			--enable-aspnet --enable-aspnetedit
 MAN1=		mdtool.1 monodevelop.1
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS=	MONOEXT "Enable extensions for Mono development" on \
-		VCS "Enable version control support" on \
+		GIT "Enable git support" on \
 		SVN "Enable subversion support" on
 
 # Restrict to stable (even) versions, indicated by the second component.
@@ -47,12 +45,13 @@ CONFIGURE_ARGS+=--disable-monoextensions
 PLIST_SUB+=	MONOEXT="@comment "
 .endif
 
-.if defined(WITH_VCS) && !defined(WITHOUT_VCS)
-CONFIGURE_ARGS+=--enable-versioncontrol
-PLIST_SUB+=	VCS=""
+.if !defined(WITHOUT_GIT)
+RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
+CONFIGURE_ARGS+=--enable-git
+PLIST_SUB+=	GIT=""
 .else
-CONFIGURE_ARGS+=--disable-versioncontrol
-PLIST_SUB+=	VCS="@comment "
+CONFIGURE_ARGS+=--disable-git
+PLIST_SUB+=	GIT="@comment "
 .endif
 
 .if !defined(WITHOUT_SVN)
