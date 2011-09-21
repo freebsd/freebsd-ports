@@ -12,14 +12,19 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of version requirements for a CPAN dist
 
-BUILD_DEPENDS=	p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Version::Requirements.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
