@@ -1041,6 +1041,7 @@
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database
     SUBDIR += monodevelop-java
+    SUBDIR += monodevelop-python
     SUBDIR += monodevelop-vala
     SUBDIR += monotone
     SUBDIR += monotone-viz

@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+libdata/pkgconfig/monodevelop-pybinding.pc
+lib/monodevelop/AddIns/PyBinding/PyBinding.dll
+lib/monodevelop/AddIns/PyBinding/PyBinding.dll.mdb
+@dirrm lib/monodevelop/AddIns/PyBinding
