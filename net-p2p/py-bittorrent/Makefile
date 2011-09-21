@@ -24,6 +24,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	web
 
+BROKEN=		does not build
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
 .ifndef(NOPORTDOCS)
