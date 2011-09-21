@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Memcache
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
