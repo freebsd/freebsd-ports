@@ -1,6 +1,5 @@
 bin/wget
 etc/wgetrc.sample
-lib/charset.alias
 %%NLS%%share/locale/be/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wget.mo
