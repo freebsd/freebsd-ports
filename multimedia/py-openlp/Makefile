@@ -7,8 +7,9 @@
 
 PORTNAME=	OpenLP
 PORTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	multimedia python
-MASTER_SITES=	SF/openlp/openlp/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,30 +22,28 @@ BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-mako>0:${PORTSDIR}/textproc/py-mako \
-		py*-sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
+		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy
 RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		py*-phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
 		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
-		py*-migrate>=0:${PORTSDIR}/databases/py-migrate \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-mako>0:${PORTSDIR}/textproc/py-mako \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
+		py*-migrate>=0:${PORTSDIR}/databases/py-migrate \
+		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-PLIST_SUB+=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
-
+PYDISTUTILS_NOEGGINFO=	yes
 USE_PYTHON=		2.5+
-USE_PYTHON_PREFIX=	yes
+USE_PYDISTUTILS=	easy_install
 USE_GSTREAMER=		good
-NO_BUILD=		yes
-
-do-install:
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	@${MV} ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
+	@${LN} -s ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/openlp-remoteclient.py \
+		${PREFIX}/bin/openlp-remoteclient.py
 
 .include <bsd.port.mk>
