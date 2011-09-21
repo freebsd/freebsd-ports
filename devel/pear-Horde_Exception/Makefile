@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Exception
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
