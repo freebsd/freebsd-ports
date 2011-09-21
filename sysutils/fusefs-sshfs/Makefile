@@ -11,7 +11,7 @@ MASTER_SITES=	SF/fuse/${PORTNAME}-fuse/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-fuse-${PORTVERSION}
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount remote directories over ssh
 
 KMODDIR?=	${LOCALBASE}/modules

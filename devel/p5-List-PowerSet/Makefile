@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that allows you to generate the power set of a list
 
 PERL_CONFIGURE=	yes
