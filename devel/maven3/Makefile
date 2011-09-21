@@ -7,6 +7,7 @@
 
 PORTNAME=	maven3
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
@@ -15,6 +16,8 @@ DISTNAME=	apache-maven-${DISTVERSION}-bin
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java project management tool, 3.x branch
 
+RUN_DEPENDS=	bin/mvn:${PORTSDIR}/devel/maven-wrapper
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
@@ -22,21 +25,20 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 SUB_FILES=	mvn.sh
 SUB_LIST=	CLASSWORLDS_JAR=plexus-classworlds-2.4.jar
-.if !exists(${LOCALBASE}/bin/mvn)
-PLIST_FILES+=	bin/mvn
-.endif
+INSTANCE_FILE=	030003-${PORTNAME}-${PORTVERSION}
+INSTANCES_DIR=	etc/maven-wrapper/instances.d/
+PLIST_FILES=	${INSTANCES_DIR}/${INSTANCE_FILE}
 
 post-extract:
 	${RM} -f ${WRKSRC}/bin/*.bat
+	${ECHO_CMD} "${DATADIR}" > ${WRKSRC}/${INSTANCE_FILE}
 
 do-install:
 	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} . -type f -not -path "\./bin/" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	${INSTALL_DATA} ${WRKSRC}/bin/m2.conf ${DATADIR}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/mvn.sh ${DATADIR}/bin/mvn
-.if !exists(${LOCALBASE}/bin/mvn)
-	${LN} -fs ${DATADIR}/bin/mvn ${PREFIX}/bin/mvn
-.endif
+	${INSTALL_DATA} ${WRKSRC}/${INSTANCE_FILE} ${PREFIX}/${INSTANCES_DIR}
 
 post-install:
 	@${FIND} -s ${WRKSRC} -not -type d 2>/dev/null | \
