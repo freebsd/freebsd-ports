@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	x11
-MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
-DISTNAME=	xkeyboard-config-${PORTVERSION}
+MASTER_SITE_SUBDIR=	individual/${XORG_CAT}/${PORTNAME}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Keyboard Configuration Database
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
+
+XORG_CAT=	data
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intlhack
+USE_GNOME=	intlhack gnomehack
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
@@ -28,7 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls --with-included-gettext
+CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ENV+=	MSGFMT="/bin/echo '(GNU '" \
 		XGETTEXT="/bin/echo '(GNU '" \
 		MSGMERGE="/bin/echo '(GNU '"

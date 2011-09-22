@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xfwp
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X firewall proxy
+
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	x11 ice xproxymngproto

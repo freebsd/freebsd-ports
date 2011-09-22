@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	libXxf86vm
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Vidmode Extension
+
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xextproto xext xf86vidmodeproto:both

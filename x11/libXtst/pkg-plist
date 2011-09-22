@@ -6,4 +6,3 @@ lib/libXtst.so
 lib/libXtst.so.6
 libdata/pkgconfig/xtst.pc
 @dirrmtry include/X11/extensions
-

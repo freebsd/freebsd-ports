@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	libXrandr
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Resize and Rotate extension library
+
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 randrproto:both xext xextproto xrender renderproto xproto:both

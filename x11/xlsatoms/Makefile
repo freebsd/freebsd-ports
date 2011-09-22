@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xlsatoms
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List interned atoms defined on a server
+
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	x11 xmuu

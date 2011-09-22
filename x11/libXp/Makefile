@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libXp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X print library
+
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xau printproto:both
