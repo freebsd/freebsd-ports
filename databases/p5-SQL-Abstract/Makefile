@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Acc
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep
+		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
