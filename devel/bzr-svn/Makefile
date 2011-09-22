@@ -1,25 +1,24 @@
 # Ports collection makefile for:	bzr-svn
 # Date created:				8 August 2010
-# Whom:					Carlo Strub <c-s@c-s.li>
+# Whom:					Carlo Strub
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bzr-svn
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/54612267/ \
+MASTER_SITES=	https://launchpadlibrarian.net/78203770/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Plugin for bzr to work with svn
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS+=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:${PORTSDIR}/devel/py-subvertpy \
 		bzr:${PORTSDIR}/devel/bazaar-ng
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.5+
