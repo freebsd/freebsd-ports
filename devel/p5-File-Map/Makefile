@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Memory mapping made simple and safe
 
 BUILD_DEPENDS=	p5-Const-Fast>=0:${PORTSDIR}/devel/p5-Const-Fast \
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Const-Fast>=0:${PORTSDIR}/devel/p5-Const-Fast \
 RUN_DEPENDS=	p5-Const-Fast>=0:${PORTSDIR}/devel/p5-Const-Fast \
 		p5-PerlIO-Layers>=0.007:${PORTSDIR}/devel/p5-PerlIO-Layers \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
