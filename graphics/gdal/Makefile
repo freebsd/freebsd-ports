@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -15,13 +16,15 @@ MASTER_SITES=	http://download.osgeo.org/gdal/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
+CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}
+MAKEFILE=	GNUmakefile
+MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
-MAKEFILE=	GNUmakefile
-MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
@@ -46,7 +49,7 @@ OPTIONS=	CFITSIO	"FITS support"			off \
 		PGSQL	"PostgreSQL support"		off \
 		PHP	"PHP support"			off \
 		PNG	"PNG support"			on \
-		PROJ4	"Projection support via proj4"	off \
+		PROJ	"Projection support via proj"	off \
 		PYTHON	"Python support"		on \
 		RUBY	"Ruby support"			off \
 		SQLITE	"SQLite support"		off \
@@ -54,8 +57,9 @@ OPTIONS=	CFITSIO	"FITS support"			off \
 		TIFF	"External libtiff"		off \
 		XERCES	"Xerces support"		off
 
-NETCDF_VER?=	4
 HDF5_VER?=	18
+NETCDF_VER?=	4
+XERCES_PORT?=	textproc/xerces-c3
 
 .include <bsd.port.options.mk>
 
@@ -82,7 +86,7 @@ CONFIGURE_ARGS+=	--with-curl=no
 LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE} \
 			--with-expat-inc=${LOCALBASE}/include \
-			--with-expat-lib=${LOCALBASE}/lib
+			--with-expat-lib=-lexpat
 .else
 CONFIGURE_ARGS+=	--with-expat=no
 .endif
@@ -96,12 +100,12 @@ CONFIGURE_ARGS+=	--with-geos=no
 
 .if !defined(WITHOUT_GEOTIFF)
 LIB_DEPENDS+=		geotiff.2:${PORTSDIR}/graphics/libgeotiff
-CONFIGURE_ARGS+=	--with-libgeotiff=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-geotiff=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_GIF)
 LIB_DEPENDS+=		ungif.5:${PORTSDIR}/graphics/libungif
-CONFIGURE_ARGS+=	--with-libgif=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-gif=${LOCALBASE}
 .endif
 
 .if defined(WITH_GRASS)
@@ -178,7 +182,7 @@ USE_PHP=		yes
 CONFIGURE_ARGS+=	--with-php
 .endif
 
-.if defined(WITH_PROJ4)
+.if defined(WITH_PROJ)
 LIB_DEPENDS+=		proj.6:${PORTSDIR}/graphics/proj
 CONFIGURE_ARGS+=	--with-static-proj4=${LOCALBASE}
 .else
@@ -221,9 +225,9 @@ CONFIGURE_ARGS+=	--with-ruby
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=		yes
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-sqlite=no
+CONFIGURE_ARGS+=	--with-sqlite3=no
 .endif
 
 .if !defined(WITHOUT_THREAD)
@@ -250,12 +254,10 @@ CONFIGURE_ARGS+=	--with-libtiff=internal
 .endif
 
 .if defined(WITH_XERCES)
-XERCESC_VER?=		27
-LIB_DEPENDS+=		xerces-c.${XERCESC_VER}:${PORTSDIR}/textproc/xerces-c2
-#LIB_DEPENDS+=		xalan-c.19:${PORTSDIR}/textproc/xalan-c
+LIB_DEPENDS+=		xerces-c:${PORTSDIR}/${XERCES_PORT}
 CONFIGURE_ARGS+=	--with-xerces=${LOCALBASE} \
 			--with-xerces-inc=${LOCALBASE}/include \
-			--with-xerces-lib=${LOCALBASE}/lib
+			--with-xerces-lib=-lxerces-c
 .else
 CONFIGURE_ARGS+=	--with-xerces=no
 .endif
