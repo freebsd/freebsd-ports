@@ -5,7 +5,7 @@
 
  GOOS=freebsd
  GOARCH=%%ARCH%%
- GOROOT=%%PREFIX%%/lib/go
+ GOROOT=%%PREFIX%%/go
 
  Your compiler is %%GOOBJ%%g and your linker is %%GOOBJ%%l.
 
