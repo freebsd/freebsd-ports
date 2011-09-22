@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.78.1
+DISTVERSION=	0.80.2
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
-		http://download.gna.org/kanicule/freebsd/distfiles/
+MASTER_SITES=	http://droidng.free.fr/freebsd/ \
+		http://glpi-project.org/IMG/gz/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
