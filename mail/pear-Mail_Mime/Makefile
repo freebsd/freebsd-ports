@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	PEAR classes to create and decode MIME messages
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 LICENSE=	BSD
+
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Mail
 FILES=		mime.php mimePart.php
-DATA=		xmail.dtd xmail.xsl
-_DATADIR=	.
 SCRIPTFILES=	phail.php
 
 TESTS=		class-filename.phpt encoding_case.phpt \
