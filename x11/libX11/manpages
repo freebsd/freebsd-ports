@@ -122,6 +122,7 @@ XContextDependentDrawing.3 \
 XContextualDrawing.3 \
 XConvertCase.3 \
 XConvertSelection.3 \
+XCompose.3 \
 XCopyArea.3 \
 XCopyColormapAndFree.3 \
 XCopyGC.3 \
@@ -217,7 +218,7 @@ XFreeFontNames.3 \
 XFreeFontPath.3 \
 XFreeFontSet.3 \
 XFreeGC.3 \
-XFreeModifierMap.3 \
+XFreeModifiermap.3 \
 XFreePixmap.3 \
 XFreeStringList.3 \
 XGCValues.3 \

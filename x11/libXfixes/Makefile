@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	libXfixes
-PORTVERSION=	4.0.4
+PORTVERSION=	5.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Fixes extension library
+
+LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 fixesproto:both xproto:both xextproto

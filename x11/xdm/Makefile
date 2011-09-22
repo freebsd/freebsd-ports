@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xdm
-PORTVERSION=	1.1.8
-PORTREVISION=	3
+PORTVERSION=	1.1.10
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X display manager
+
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xmu x11 xau xinerama xpm xdmcp xt xext xaw

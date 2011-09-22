@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xkbcomp
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Compile XKB keyboard description
+
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	x11 xkbfile

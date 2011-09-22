@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xinit
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Window System initializer
+
+LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	x11
@@ -23,6 +24,6 @@ MAN1=		startx.1 xinit.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/xinit.man
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/man/xinit.man
 
 .include <bsd.port.mk>
