@@ -7,7 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	275
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -27,7 +27,7 @@ OPTIONS=	WIDE_CHARS "enable wide-character support" on \
 		256_COLOR "enable 256-color support" off \
 		DEC_LOCATOR "enable DECterm Locator support" off \
 		PCRE "use PCRE for regular-expressions" off \
-		DESKTOP "install desktop entries" off
+		GNOME "include gnome support for .desktop file" off
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -55,11 +55,11 @@ CONFIGURE_ARGS+=	--with-pcre
 LIB_DEPENDS=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
-.if defined(WITH_DESKTOP)
+.if defined(WITH_GNOME)
 USE_GNOME=		desktopfileutils
-PLIST_SUB+=		DESKTOP=""
+PLIST_SUB+=		GNOME=""
 .else
-PLIST_SUB+=		DESKTOP="@comment "
+PLIST_SUB+=		GNOME="@comment "
 .endif
 
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
@@ -74,9 +74,9 @@ post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
 .endfor
-.if defined(WITH_DESKTOP)
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${PREFIX}/share/applications/
+.if defined(WITH_GNOME)
 	@-update-desktop-database
 .endif
 

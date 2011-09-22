@@ -8,11 +8,11 @@ lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/UXTerm-color
 lib/X11/app-defaults/XTerm
 lib/X11/app-defaults/XTerm-color
-%%DESKTOP%%share/applications/xterm.desktop
+share/applications/xterm.desktop
 share/pixmaps/xterm-color_32x32.xpm
 share/pixmaps/xterm-color_48x48.xpm
 share/pixmaps/xterm_32x32.xpm
 share/pixmaps/xterm_48x48.xpm
-%%DESKTOP%%@dirrmtry share/applications
-%%DESKTOP%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%DESKTOP%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
+%%GNOME%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+%%GNOME%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
