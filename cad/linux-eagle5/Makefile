@@ -10,7 +10,7 @@ EAGLEBASEVERSION?=	5.11
 EAGLEBUGFIX?=	0
 EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
 DISTNAME=	eagle-${EAGLEVERSION}
@@ -32,7 +32,7 @@ NO_CDROM=	Sale for profit is not permitted
 CONFLICTS=	linux-eagle-* de-linux-eagle-*
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX_APPS=	xorglibs jpeg png
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-deinstall
