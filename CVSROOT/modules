@@ -9014,6 +9014,7 @@ matwm2                          ports/x11-wm/matwm2
 maude                           ports/lang/maude
 mavbiff                         ports/mail/mavbiff
 maven-ant-tasks                 ports/devel/maven-ant-tasks
+maven-wrapper                   ports/devel/maven-wrapper
 maven2                          ports/devel/maven2
 maven3                          ports/devel/maven3
 maverik                         ports/graphics/maverik
@@ -9489,9 +9490,9 @@ mono-kmod                       ports/sysutils/mono-kmod
 mono-tools                      ports/devel/mono-tools
 mono-zeroconf                   ports/net/mono-zeroconf
 monodevelop                     ports/devel/monodevelop
-monodevelop-boo                 ports/devel/monodevelop-boo
 monodevelop-database            ports/devel/monodevelop-database
 monodevelop-java                ports/devel/monodevelop-java
+monodevelop-python              ports/devel/monodevelop-python
 monodevelop-vala                ports/devel/monodevelop-vala
 monotone                        ports/devel/monotone
 monotone-viz                    ports/devel/monotone-viz
@@ -27309,6 +27310,7 @@ xoids                           ports/games/xoids
 xoj                             ports/games/xoj
 xom                             ports/textproc/xom
 xonix                           ports/games/xonix
+xonotic                         ports/games/xonotic
 xoops                           ports/www/xoops
 xorg                            ports/x11/xorg
 xorg-apps                       ports/x11/xorg-apps
