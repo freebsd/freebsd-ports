@@ -1,188 +1,371 @@
 bin/zim
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Zim/.packlist
-%%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
-%%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
-%%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
-%%SITE_PERL%%/Gtk2/Ex/PathBar.pm
-%%SITE_PERL%%/Zim/FS/Bazaar.pm
-%%SITE_PERL%%/Zim/FS/Subversion.pm
-%%SITE_PERL%%/Zim/Formats/Pod.pm
-%%SITE_PERL%%/Zim/Formats/Wiki.pm
-%%SITE_PERL%%/Zim/Formats/Txt2tags.pm
-%%SITE_PERL%%/Zim/Formats/Html.pm
-%%SITE_PERL%%/Zim/GUI/Spell.pm
-%%SITE_PERL%%/Zim/GUI/PathBar.pm
-%%SITE_PERL%%/Zim/GUI/TODOListDialog.pm
-%%SITE_PERL%%/Zim/GUI/Automount.pm
-%%SITE_PERL%%/Zim/GUI/PageView.pm
-%%SITE_PERL%%/Zim/GUI/TreeView.pm
-%%SITE_PERL%%/Zim/GUI/NotebookDialog.pm
-%%SITE_PERL%%/Zim/GUI/ExportDialog.pm
-%%SITE_PERL%%/Zim/GUI/DiagramEditor.pm
-%%SITE_PERL%%/Zim/GUI/Component.pm
-%%SITE_PERL%%/Zim/GUI/Daemon.pm
-%%SITE_PERL%%/Zim/GUI/SearchDialog.pm
-%%SITE_PERL%%/Zim/GUI/TrayIcon.pm
-%%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
-%%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
-%%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
-%%SITE_PERL%%/Zim/GUI/VersionsDialog.pm
-%%SITE_PERL%%/Zim/GUI/EquationEditor.pm
-%%SITE_PERL%%/Zim/GUI/Calendar.pm
-%%SITE_PERL%%/Zim/OS/Win32.pm
-%%SITE_PERL%%/Zim/Store/Gjots.pm
-%%SITE_PERL%%/Zim/Store/Cached.pm
-%%SITE_PERL%%/Zim/Store/Man.pm
-%%SITE_PERL%%/Zim/Store/Files.pm
-%%SITE_PERL%%/Zim/Events.pm
-%%SITE_PERL%%/Zim/Formats.pm
-%%SITE_PERL%%/Zim/GUI.pm
-%%SITE_PERL%%/Zim/FS.pm
-%%SITE_PERL%%/Zim/Utils.pm
-%%SITE_PERL%%/Zim/Page.pm
-%%SITE_PERL%%/Zim/Store.pm
-%%SITE_PERL%%/Zim/Template.pm
-%%SITE_PERL%%/Zim/History.pm
-%%SITE_PERL%%/Zim/Selection.pm
-%%SITE_PERL%%/Zim.pm
-share/pixmaps/zim/stock_calendar-view-month.png
-share/pixmaps/zim/mail-attachment.png
-share/pixmaps/zim/gtk-connect.png
-share/pixmaps/zim/stock_todo.png
-share/pixmaps/zim/xchecked-box.png
-share/pixmaps/zim/unchecked-box.png
-share/pixmaps/zim/checked-box.png
-share/pixmaps/zim.png
+%%PYTHON_SITELIBDIR%%/zim/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.py
+%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.pyc
+%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.pyo
+%%PYTHON_SITELIBDIR%%/zim/_version.py
+%%PYTHON_SITELIBDIR%%/zim/_version.pyc
+%%PYTHON_SITELIBDIR%%/zim/_version.pyo
+%%PYTHON_SITELIBDIR%%/zim/applications.py
+%%PYTHON_SITELIBDIR%%/zim/applications.pyc
+%%PYTHON_SITELIBDIR%%/zim/applications.pyo
+%%PYTHON_SITELIBDIR%%/zim/async.py
+%%PYTHON_SITELIBDIR%%/zim/async.pyc
+%%PYTHON_SITELIBDIR%%/zim/async.pyo
+%%PYTHON_SITELIBDIR%%/zim/config.py
+%%PYTHON_SITELIBDIR%%/zim/config.pyc
+%%PYTHON_SITELIBDIR%%/zim/config.pyo
+%%PYTHON_SITELIBDIR%%/zim/daemon.py
+%%PYTHON_SITELIBDIR%%/zim/daemon.pyc
+%%PYTHON_SITELIBDIR%%/zim/daemon.pyo
+%%PYTHON_SITELIBDIR%%/zim/datetimetz.py
+%%PYTHON_SITELIBDIR%%/zim/datetimetz.pyc
+%%PYTHON_SITELIBDIR%%/zim/datetimetz.pyo
+%%PYTHON_SITELIBDIR%%/zim/errors.py
+%%PYTHON_SITELIBDIR%%/zim/errors.pyc
+%%PYTHON_SITELIBDIR%%/zim/errors.pyo
+%%PYTHON_SITELIBDIR%%/zim/exporter.py
+%%PYTHON_SITELIBDIR%%/zim/exporter.pyc
+%%PYTHON_SITELIBDIR%%/zim/exporter.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/formats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/html.py
+%%PYTHON_SITELIBDIR%%/zim/formats/html.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/html.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/latex.py
+%%PYTHON_SITELIBDIR%%/zim/formats/latex.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/latex.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/plain.py
+%%PYTHON_SITELIBDIR%%/zim/formats/plain.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/plain.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/wiki.py
+%%PYTHON_SITELIBDIR%%/zim/formats/wiki.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/wiki.pyo
+%%PYTHON_SITELIBDIR%%/zim/fs.py
+%%PYTHON_SITELIBDIR%%/zim/fs.pyc
+%%PYTHON_SITELIBDIR%%/zim/fs.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/applications.py
+%%PYTHON_SITELIBDIR%%/zim/gui/applications.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/applications.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/cleannotebookdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/cleannotebookdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/cleannotebookdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/clipboard.py
+%%PYTHON_SITELIBDIR%%/zim/gui/clipboard.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/clipboard.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/customtools.py
+%%PYTHON_SITELIBDIR%%/zim/gui/customtools.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/customtools.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/exportdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/exportdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/exportdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/imagegeneratordialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/imagegeneratordialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/imagegeneratordialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/notebookdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/notebookdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/notebookdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/pageindex.py
+%%PYTHON_SITELIBDIR%%/zim/gui/pageindex.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/pageindex.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/pageview.py
+%%PYTHON_SITELIBDIR%%/zim/gui/pageview.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/pageview.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/pathbar.py
+%%PYTHON_SITELIBDIR%%/zim/gui/pathbar.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/pathbar.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/preferencesdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/preferencesdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/preferencesdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/server.py
+%%PYTHON_SITELIBDIR%%/zim/gui/server.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/server.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/widgets.py
+%%PYTHON_SITELIBDIR%%/zim/gui/widgets.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/widgets.pyo
+%%PYTHON_SITELIBDIR%%/zim/history.py
+%%PYTHON_SITELIBDIR%%/zim/history.pyc
+%%PYTHON_SITELIBDIR%%/zim/history.pyo
+%%PYTHON_SITELIBDIR%%/zim/index.py
+%%PYTHON_SITELIBDIR%%/zim/index.pyc
+%%PYTHON_SITELIBDIR%%/zim/index.pyo
+%%PYTHON_SITELIBDIR%%/zim/notebook.py
+%%PYTHON_SITELIBDIR%%/zim/notebook.pyc
+%%PYTHON_SITELIBDIR%%/zim/notebook.pyo
+%%PYTHON_SITELIBDIR%%/zim/parsing.py
+%%PYTHON_SITELIBDIR%%/zim/parsing.pyc
+%%PYTHON_SITELIBDIR%%/zim/parsing.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/calendar.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnu_r_ploteditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnu_r_ploteditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnu_r_ploteditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnuplot_ploteditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnuplot_ploteditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/gnuplot_ploteditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/inlinecalculator.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/inlinecalculator.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/inlinecalculator.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/insertsymbol.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/insertsymbol.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/insertsymbol.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/linesorter.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/linesorter.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/linesorter.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/gui.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/gui.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/linkmap/gui.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/printtobrowser.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/printtobrowser.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/printtobrowser.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/quicknote.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/screenshot.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/spell.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/spell.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/spell.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/tags.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/tags.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/tags.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/tasklist.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/tasklist.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/tasklist.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/trayicon.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/trayicon.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/trayicon.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.pyo
+%%PYTHON_SITELIBDIR%%/zim/search.py
+%%PYTHON_SITELIBDIR%%/zim/search.pyc
+%%PYTHON_SITELIBDIR%%/zim/search.pyo
+%%PYTHON_SITELIBDIR%%/zim/stores/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/stores/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/stores/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/stores/files.py
+%%PYTHON_SITELIBDIR%%/zim/stores/files.pyc
+%%PYTHON_SITELIBDIR%%/zim/stores/files.pyo
+%%PYTHON_SITELIBDIR%%/zim/stores/gjots.py
+%%PYTHON_SITELIBDIR%%/zim/stores/gjots.pyc
+%%PYTHON_SITELIBDIR%%/zim/stores/gjots.pyo
+%%PYTHON_SITELIBDIR%%/zim/stores/memory.py
+%%PYTHON_SITELIBDIR%%/zim/stores/memory.pyc
+%%PYTHON_SITELIBDIR%%/zim/stores/memory.pyo
+%%PYTHON_SITELIBDIR%%/zim/stores/xml.py
+%%PYTHON_SITELIBDIR%%/zim/stores/xml.pyc
+%%PYTHON_SITELIBDIR%%/zim/stores/xml.pyo
+%%PYTHON_SITELIBDIR%%/zim/templates.py
+%%PYTHON_SITELIBDIR%%/zim/templates.pyc
+%%PYTHON_SITELIBDIR%%/zim/templates.pyo
+%%PYTHON_SITELIBDIR%%/zim/www.py
+%%PYTHON_SITELIBDIR%%/zim/www.pyc
+%%PYTHON_SITELIBDIR%%/zim/www.pyo
 share/applications/zim.desktop
-share/icons/hicolor/64x64/mimetypes/application-x-zim-notebook.png
-share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/16x16/apps/zim.png
+share/icons/hicolor/16x16/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/22x22/apps/zim.png
+share/icons/hicolor/22x22/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/22x22/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/24x24/apps/zim.png
+share/icons/hicolor/24x24/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/24x24/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/32x32/apps/zim.png
+share/icons/hicolor/32x32/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/48x48/apps/zim.png
+share/icons/hicolor/48x48/mimetypes/application-x-zim-notebook.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-zim-notebook.png
+share/icons/hicolor/scalable/apps/zim.svg
+share/icons/hicolor/scalable/mimetypes/application-x-zim-notebook.svg
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-zim-notebook.svg
+share/locale/ca/LC_MESSAGES/zim.mo
+share/locale/cs/LC_MESSAGES/zim.mo
+share/locale/da/LC_MESSAGES/zim.mo
+share/locale/de/LC_MESSAGES/zim.mo
+share/locale/el/LC_MESSAGES/zim.mo
+share/locale/en_GB/LC_MESSAGES/zim.mo
+share/locale/es/LC_MESSAGES/zim.mo
+share/locale/et/LC_MESSAGES/zim.mo
+share/locale/fr/LC_MESSAGES/zim.mo
+share/locale/he/LC_MESSAGES/zim.mo
+share/locale/hr/LC_MESSAGES/zim.mo
+share/locale/hu/LC_MESSAGES/zim.mo
+share/locale/it/LC_MESSAGES/zim.mo
+share/locale/ja/LC_MESSAGES/zim.mo
+share/locale/ko/LC_MESSAGES/zim.mo
+share/locale/nl/LC_MESSAGES/zim.mo
+share/locale/pl/LC_MESSAGES/zim.mo
+share/locale/ru/LC_MESSAGES/zim.mo
+share/locale/sk/LC_MESSAGES/zim.mo
+share/locale/sl/LC_MESSAGES/zim.mo
+share/locale/sv/LC_MESSAGES/zim.mo
+share/locale/tr/LC_MESSAGES/zim.mo
+share/locale/uk/LC_MESSAGES/zim.mo
+share/locale/zh_CN/LC_MESSAGES/zim.mo
+share/locale/zh_TW/LC_MESSAGES/zim.mo
+share/mime/application/x-gjots.xml
+share/mime/application/x-zim-notebook.xml
 share/mime/packages/zim.xml
 share/mime/text/x-zim-wiki.xml
-share/mime/application/x-zim-notebook.xml
-share/mime/application/x-gjots.xml
-%%DATADIR%%/doc/Install/OS_X.txt
-%%DATADIR%%/doc/Install/Unix.txt
-%%DATADIR%%/doc/Install/Windows.txt
-%%DATADIR%%/doc/Usage/plugins/DiagramEditor/diagram_01.dot
-%%DATADIR%%/doc/Usage/plugins/DiagramEditor/diagram_01.png
-%%DATADIR%%/doc/Usage/plugins/equation_01.png
-%%DATADIR%%/doc/Usage/plugins/TODOList.txt
-%%DATADIR%%/doc/Usage/plugins/EquationEditor.txt
-%%DATADIR%%/doc/Usage/plugins/DiagramEditor.txt
-%%DATADIR%%/doc/Usage/Encryption.txt
-%%DATADIR%%/doc/Usage/VersionControl.txt
-%%DATADIR%%/doc/Usage/searching.txt
-%%DATADIR%%/doc/Usage/getting_started.txt
-%%DATADIR%%/doc/Usage/syntax.txt
-%%DATADIR%%/doc/Usage/strategies.txt
-%%DATADIR%%/doc/Usage/checkboxes.txt
-%%DATADIR%%/doc/Usage/notebooks.txt
-%%DATADIR%%/doc/Usage/plugins.txt
-%%DATADIR%%/doc/Usage/linking.txt
-%%DATADIR%%/doc/Usage/preferences.txt
-%%DATADIR%%/doc/Usage/styles.txt
-%%DATADIR%%/doc/Usage/templates.txt
-%%DATADIR%%/doc/Usage/profiles.txt
-%%DATADIR%%/doc/Usage/Attaching_Files.txt
-%%DATADIR%%/doc/Usage/autoformat.txt
-%%DATADIR%%/doc/Usage/commandline.txt
-%%DATADIR%%/doc/Usage/exporting.txt
-%%DATADIR%%/doc/Usage/html_entities.txt
-%%DATADIR%%/doc/Usage/keybindings.txt
-%%DATADIR%%/doc/Usage/config.txt
-%%DATADIR%%/doc/Usage/properties.txt
-%%DATADIR%%/doc/About.txt
-%%DATADIR%%/doc/Usage.txt
-%%DATADIR%%/doc/globe_banner.png
-%%DATADIR%%/doc/FAQ.txt
-%%DATADIR%%/doc/Help.txt
-%%DATADIR%%/doc/Translations.txt
-%%DATADIR%%/doc/Contributing.txt
-%%DATADIR%%/doc/notebook.zim
-%%DATADIR%%/doc/Install.txt
-%%DATADIR%%/doc/start-zim.sh
-%%DATADIR%%/doc/Bugs.txt
-%%DATADIR%%/doc/changelog.txt
-%%DATADIR%%/lingua/cs.pl
-%%DATADIR%%/lingua/da.pl
-%%DATADIR%%/lingua/de.pl
-%%DATADIR%%/lingua/el.pl
-%%DATADIR%%/lingua/en_GB.pl
-%%DATADIR%%/lingua/es.pl
-%%DATADIR%%/lingua/fi.pl
-%%DATADIR%%/lingua/fr.pl
-%%DATADIR%%/lingua/gl.pl
-%%DATADIR%%/lingua/he.pl
-%%DATADIR%%/lingua/hu.pl
-%%DATADIR%%/lingua/it.pl
-%%DATADIR%%/lingua/ja.pl
-%%DATADIR%%/lingua/nb.pl
-%%DATADIR%%/lingua/nl.pl
-%%DATADIR%%/lingua/pl.pl
-%%DATADIR%%/lingua/pt.pl
-%%DATADIR%%/lingua/pt_BR.pl
-%%DATADIR%%/lingua/ru.pl
-%%DATADIR%%/lingua/sv.pl
-%%DATADIR%%/lingua/tr.pl
-%%DATADIR%%/lingua/uk.pl
-%%DATADIR%%/lingua/zh_CN.pl
-%%DATADIR%%/lingua/zh_TW.pl
-%%DATADIR%%/plugins/VersionControl/Subversion.pl
-%%DATADIR%%/plugins/VersionControl/Bazaar.pl
-%%DATADIR%%/plugins/InsertScreenshot.pl
-%%DATADIR%%/plugins/DiagramEditor.pl
-%%DATADIR%%/plugins/Spell.pl
-%%DATADIR%%/plugins/SortSelection.pl
-%%DATADIR%%/plugins/EquationEditor.pl
-%%DATADIR%%/plugins/TODOList.pl
-%%DATADIR%%/plugins/Calendar.pl
-%%DATADIR%%/plugins/VersionControl.pl
-%%DATADIR%%/plugins/PrintToBrowser.pl
-%%DATADIR%%/plugins/ToggleReadOnly.pl
-%%DATADIR%%/plugins/TrayIcon.pl
-%%DATADIR%%/templates/html/Print.html
-%%DATADIR%%/templates/html/Default.html
-%%DATADIR%%/templates/html/Presentation.html
-%%DATADIR%%/templates/html/SlideShow_(S5).html
-%%DATADIR%%/templates/latex/Default.tex
-%%DATADIR%%/templates/latex/_Equation.tex
-%%DATADIR%%/templates/txt2tags/Default.t2t
-%%DATADIR%%/templates/wiki/_New.txt
-%%DATADIR%%/templates/wiki/_Date.txt
-%%DATADIR%%/default.conf
-%%DATADIR%%/dates.list
-%%DATADIR%%/default.style
-%%DATADIR%%/reader.conf
-%%DATADIR%%/urls.list
-%%DATADIR%%/entities.list
-%%DATADIR%%/zim.svg
-%%DATADIR%%/globe_banner_small.png
-@dirrm %%DATADIR%%/templates/wiki
-@dirrm %%DATADIR%%/templates/txt2tags
-@dirrm %%DATADIR%%/templates/latex
-@dirrm %%DATADIR%%/templates/html
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/plugins/VersionControl
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lingua
-@dirrm %%DATADIR%%/doc/Usage/plugins/DiagramEditor
-@dirrm %%DATADIR%%/doc/Usage/plugins
-@dirrm %%DATADIR%%/doc/Usage
-@dirrm %%DATADIR%%/doc/Install
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
+share/pixmaps/zim.png
+share/zim/applications/firefox.desktop
+share/zim/applications/open.desktop
+share/zim/applications/thunderbird.desktop
+share/zim/applications/xdg-email.desktop
+share/zim/applications/xdg-open.desktop
+share/zim/dates.list
+share/zim/globe.svg
+share/zim/globe_banner.svg
+share/zim/globe_banner_small.png
+share/zim/manual/About.txt
+share/zim/manual/Bugs.txt
+share/zim/manual/FAQ.txt
+share/zim/manual/Help.txt
+share/zim/manual/Help/Auto_Formatting.txt
+share/zim/manual/Help/Check_Boxes.txt
+share/zim/manual/Help/Config_Files.txt
+share/zim/manual/Help/Custom_Tools.txt
+share/zim/manual/Help/Export.txt
+share/zim/manual/Help/Export/HTML.txt
+share/zim/manual/Help/Export/LaTeX.txt
+share/zim/manual/Help/Importing_external_files.txt
+share/zim/manual/Help/Key_Bindings.txt
+share/zim/manual/Help/Links.txt
+share/zim/manual/Help/Menu_Items.txt
+share/zim/manual/Help/Notebooks.txt
+share/zim/manual/Help/Pages.txt
+share/zim/manual/Help/Preferences.txt
+share/zim/manual/Help/Properties.txt
+share/zim/manual/Help/Searching.txt
+share/zim/manual/Help/Tags.txt
+share/zim/manual/Help/Templates.txt
+share/zim/manual/Help/Wiki_Syntax.txt
+share/zim/manual/Plugins.txt
+share/zim/manual/Plugins/Calendar.txt
+share/zim/manual/Plugins/Diagram_Editor.txt
+share/zim/manual/Plugins/Diagram_Editor/diagram.png
+share/zim/manual/Plugins/Equation_Editor.txt
+share/zim/manual/Plugins/Equation_Editor/equation_01.png
+share/zim/manual/Plugins/GNU_R_Plot_Editor.txt
+share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.png
+share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.r
+share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.png
+share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.r
+share/zim/manual/Plugins/Gnuplot_Editor.txt
+share/zim/manual/Plugins/Gnuplot_Editor/gnuplot.gnu
+share/zim/manual/Plugins/Gnuplot_Editor/gnuplot.png
+share/zim/manual/Plugins/Inline_Calculator.txt
+share/zim/manual/Plugins/Insert_Screenshot.txt
+share/zim/manual/Plugins/Insert_Symbol.txt
+share/zim/manual/Plugins/Link_Map.txt
+share/zim/manual/Plugins/Quick_Note.txt
+share/zim/manual/Plugins/Spell_Checker.txt
+share/zim/manual/Plugins/Tags.txt
+share/zim/manual/Plugins/Task_List.txt
+share/zim/manual/Plugins/Tray_Icon.txt
+share/zim/manual/Plugins/Version_Control.txt
+share/zim/manual/Start.txt
+share/zim/manual/Usage.txt
+share/zim/manual/Usage/Daily_Journal.txt
+share/zim/manual/Usage/GTD_flowchart.png
+share/zim/manual/Usage/GTD_flowchart.svg
+share/zim/manual/Usage/Getting_Started.txt
+share/zim/manual/Usage/Getting_Things_Done.txt
+share/zim/manual/notebook.zim
+share/zim/menubar-maemo4.xml
+share/zim/menubar-maemo5.xml
+share/zim/menubar.xml
+share/zim/pixmaps/attachment.png
+share/zim/pixmaps/calendar.png
+share/zim/pixmaps/checked-box.png
+share/zim/pixmaps/favicon.ico
+share/zim/pixmaps/link.png
+share/zim/pixmaps/linkmap.png
+share/zim/pixmaps/linkmap.svg
+share/zim/pixmaps/task-list.png
+share/zim/pixmaps/unchecked-box.png
+share/zim/pixmaps/xchecked-box.png
+share/zim/style.conf
+share/zim/symbols.list
+share/zim/templates/_Equation.tex
+share/zim/templates/_GNU_R_Plot.r
+share/zim/templates/_gnuplot.gnu
+share/zim/templates/_quicknote.txt
+share/zim/templates/html/Default.html
+share/zim/templates/html/Presentation.html
+share/zim/templates/html/Print.html
+share/zim/templates/html/SlideShow_(S5).html
+share/zim/templates/latex/Article.tex
+share/zim/templates/latex/Part.tex
+share/zim/templates/latex/Report.tex
+share/zim/templates/wiki/Calendar.txt
+share/zim/templates/wiki/Default.txt
+share/zim/urls.list
+share/zim/zim.png
+@dirrm share/zim/templates/wiki
+@dirrm share/zim/templates/latex
+@dirrm share/zim/templates/html
+@dirrm share/zim/templates
+@dirrm share/zim/pixmaps
+@dirrm share/zim/manual/Usage
+@dirrm share/zim/manual/Plugins/Gnuplot_Editor
+@dirrm share/zim/manual/Plugins/GNU_R_Plot_Editor
+@dirrm share/zim/manual/Plugins/Equation_Editor
+@dirrm share/zim/manual/Plugins/Diagram_Editor
+@dirrm share/zim/manual/Plugins
+@dirrm share/zim/manual/Help/Export
+@dirrm share/zim/manual/Help
+@dirrm share/zim/manual
+@dirrm share/zim/applications
+@dirrm share/zim
+@dirrmtry share/mime/text
+@dirrmtry share/mime/packages
+@dirrmtry share/mime/application
+@dirrmtry share/mime
 @dirrmtry share/applications
-@dirrmtry share/icons/hicolor/64x64/mimetypes
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/pixmaps/zim
-@dirrm %%SITE_PERL%%/Zim/Store
-@dirrm %%SITE_PERL%%/Zim/OS
-@dirrm %%SITE_PERL%%/Zim/GUI
-@dirrm %%SITE_PERL%%/Zim/Formats
-@dirrm %%SITE_PERL%%/Zim/FS
-@dirrm %%SITE_PERL%%/Zim
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/Gtk2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zim
+@dirrm %%PYTHON_SITELIBDIR%%/zim/stores
+@dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol
+@dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/linkmap
+@dirrm %%PYTHON_SITELIBDIR%%/zim/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/zim/gui
+@dirrm %%PYTHON_SITELIBDIR%%/zim/formats
+@dirrm %%PYTHON_SITELIBDIR%%/zim/_lib
+@dirrm %%PYTHON_SITELIBDIR%%/zim
