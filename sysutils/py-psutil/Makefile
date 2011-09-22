@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=		psutil
-PORTVERSION=		0.3.0
-CATEGORIES=		sysutils python
-MASTER_SITES=		GOOGLE_CODE
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	psutil
+PORTVERSION=	0.3.0
+CATEGORIES=	sysutils python
+MASTER_SITES=	GOOGLE_CODE
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A process utilities module for Python
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	A process utilities module for Python
 
-USE_PYTHON=		yes
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
 
