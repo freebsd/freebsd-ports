@@ -6,19 +6,19 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# sabnzbd_enable (bool):	Set to NO by default.
-#			Set it to YES to enable it.
-# sabnzbd_conf_dir:	Directory where sabnzbd configuration
-#			data is stored.
-#			Default: %%PREFIX%%/sabnzbd
-# sabnzbd_user:	    	The user account sabnzbd daemon runs as what
-#			you want it to be. It uses '_sabnzbd' user by
-#			default. Do not sets it as empty or it will run
-#			as root.
-# sabnzbd_group:    	The group account sabnzbd daemon runs as what
-#			you want it to be. It uses '_sabnzbd' group by
-#			default. Do not sets it as empty or it will run
-#			as wheel.
+# sabnzbd_enable (bool):        Set to NO by default.
+#                       Set it to YES to enable it.
+# sabnzbd_conf_dir:     Directory where sabnzbd configuration
+#                       data is stored.
+#                       Default: %%PREFIX%%/sabnzbd
+# sabnzbd_user:         The user account sabnzbd daemon runs as what
+#                       you want it to be. It uses '_sabnzbd' user by
+#                       default. Do not sets it as empty or it will run
+#                       as root.
+# sabnzbd_group:        The group account sabnzbd daemon runs as what
+#                       you want it to be. It uses '_sabnzbd' group by
+#                       default. Do not sets it as empty or it will run
+#                       as wheel.
 
 . /etc/rc.subr
 
@@ -34,12 +34,36 @@ load_rc_config ${name}
 
 required_dirs=${sabnzbd_conf_dir}
 
+start_cmd="${name}_start"
+#start_postcmd="${name}_poststart"
 status_cmd="${name}_status"
 stop_cmd="${name}_stop"
 start_precmd=sabnzbd_check_dir
 
-command="/usr/sbin/daemon"
-command_args="-f %%PREFIX%%/bin/SABnzbd.py ${sabnzbd_flags} --daemon -b 0 -w 0 -l 0 -f ${sabnzbd_conf_dir}"
+
+
+sabnzbd_start()
+{
+if [ ! -f "${sabnzbd_pid}" ]; then
+    su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
+    echo "Starting ${name}."
+else
+    GETPROCESSPID=`/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ && !/sh/ {print $2}'`
+    PIDFROMFILE=`cat ${sabnzbd_pid}`
+    if [ "$GETPROCESSPID" = "$PIDFROMFILE" ]; then
+        echo "${name} already running with PID: ${PIDFROMFILE} ?"
+        echo "Remove ${sabnzbd_pid} manually if needed."
+    else
+        rm -f ${sabnzbd_pid}
+        su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
+        echo "Starting ${name}."
+    fi
+fi
+}
+
+#sabnzbd_poststart() {
+#  echo `/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ {print $2}'` > $sabnzbd_pid
+#}
 
 # SABnzbd can only be cleanly stopped by calling the http api
 sabnzbd_stop() {

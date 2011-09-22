@@ -48,6 +48,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
 %%PORTDOCS%%%%DOCSDIR%%/GPL2.txt
@@ -67,6 +68,46 @@ bin/SABnzbd.py
 %%PORTDOCS%%%%DOCSDIR%%/License-rsslib.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-ssmtplib.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%DATADIR%%/cherrypy/LICENSE.txt
+%%DATADIR%%/cherrypy/VERSION.txt
+%%DATADIR%%/cherrypy/__init__.py
+%%DATADIR%%/cherrypy/_cpcgifs.py
+%%DATADIR%%/cherrypy/_cpchecker.py
+%%DATADIR%%/cherrypy/_cpconfig.py
+%%DATADIR%%/cherrypy/_cpdispatch.py
+%%DATADIR%%/cherrypy/_cperror.py
+%%DATADIR%%/cherrypy/_cplogging.py
+%%DATADIR%%/cherrypy/_cpmodpy.py
+%%DATADIR%%/cherrypy/_cprequest.py
+%%DATADIR%%/cherrypy/_cpserver.py
+%%DATADIR%%/cherrypy/_cpthreadinglocal.py
+%%DATADIR%%/cherrypy/_cptools.py
+%%DATADIR%%/cherrypy/_cptree.py
+%%DATADIR%%/cherrypy/_cpwsgi.py
+%%DATADIR%%/cherrypy/_cpwsgi_server.py
+%%DATADIR%%/cherrypy/cherryd
+%%DATADIR%%/cherrypy/favicon.ico
+%%DATADIR%%/cherrypy/lib/__init__.py
+%%DATADIR%%/cherrypy/lib/auth.py
+%%DATADIR%%/cherrypy/lib/caching.py
+%%DATADIR%%/cherrypy/lib/covercp.py
+%%DATADIR%%/cherrypy/lib/cptools.py
+%%DATADIR%%/cherrypy/lib/encoding.py
+%%DATADIR%%/cherrypy/lib/http.py
+%%DATADIR%%/cherrypy/lib/httpauth.py
+%%DATADIR%%/cherrypy/lib/profiler.py
+%%DATADIR%%/cherrypy/lib/safemime.py
+%%DATADIR%%/cherrypy/lib/sessions.py
+%%DATADIR%%/cherrypy/lib/static.py
+%%DATADIR%%/cherrypy/lib/tidy.py
+%%DATADIR%%/cherrypy/lib/wsgiapp.py
+%%DATADIR%%/cherrypy/lib/xmlrpc.py
+%%DATADIR%%/cherrypy/process/__init__.py
+%%DATADIR%%/cherrypy/process/plugins.py
+%%DATADIR%%/cherrypy/process/servers.py
+%%DATADIR%%/cherrypy/process/win32.py
+%%DATADIR%%/cherrypy/process/wspbus.py
+%%DATADIR%%/cherrypy/wsgiserver/__init__.py
 %%DATADIR%%/interfaces/Classic/README.TXT
 %%DATADIR%%/interfaces/Classic/templates/config.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_cat.tmpl
@@ -210,7 +251,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_70b2e1_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_999999_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_fbc856_256x240.png
-%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.9.custom.css
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.15.custom.css
 %%DATADIR%%/interfaces/smpl/CreativeCommons2-5.txt
 %%DATADIR%%/interfaces/smpl/CreativeCommons3-0.txt
 %%DATADIR%%/interfaces/smpl/GPL2.txt
@@ -397,10 +438,14 @@ bin/SABnzbd.py
 @dirrm %%DATADIR%%/interfaces/Classic/templates
 @dirrm %%DATADIR%%/interfaces/Classic
 @dirrm %%DATADIR%%/interfaces
+@dirrm %%DATADIR%%/cherrypy/wsgiserver
+@dirrm %%DATADIR%%/cherrypy/process
+@dirrm %%DATADIR%%/cherrypy/lib
+@dirrm %%DATADIR%%/cherrypy
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry sabnzbd
-@dirrmtry %%PYTHON_SITELIBDIR%%/sabnzbd/utils
-@dirrmtry %%PYTHON_SITELIBDIR%%/sabnzbd
+@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
+@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @exec mkdir -p %D/sabnzbd
