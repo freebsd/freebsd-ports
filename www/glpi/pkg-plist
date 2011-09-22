@@ -8,6 +8,7 @@ www/glpi/ajax/autocompletion.php
 www/glpi/ajax/autoupdatesystem.tabs.php
 www/glpi/ajax/bookmark.tabs.php
 www/glpi/ajax/budget.tabs.php
+www/glpi/ajax/calendar.tabs.php
 www/glpi/ajax/cartridgeitem.tabs.php
 www/glpi/ajax/cartridgeitemtype.tabs.php
 www/glpi/ajax/central.tabs.php
@@ -16,6 +17,7 @@ www/glpi/ajax/computer.tabs.php
 www/glpi/ajax/computerdisk.tabs.php
 www/glpi/ajax/computermodel.tabs.php
 www/glpi/ajax/computertype.tabs.php
+www/glpi/ajax/computervirtualmachine.tabs.php
 www/glpi/ajax/config.tabs.php
 www/glpi/ajax/consumableitem.tabs.php
 www/glpi/ajax/consumableitemtype.tabs.php
@@ -49,9 +51,11 @@ www/glpi/ajax/dropdownAllItems.php
 www/glpi/ajax/dropdownConnect.php
 www/glpi/ajax/dropdownConnectPort.php
 www/glpi/ajax/dropdownConnectPortDeviceType.php
+www/glpi/ajax/dropdownFieldsBlacklist.php
 www/glpi/ajax/dropdownFindNum.php
 www/glpi/ajax/dropdownInstallVersion.php
 www/glpi/ajax/dropdownMassiveAction.php
+www/glpi/ajax/dropdownMassiveActionAddActor.php
 www/glpi/ajax/dropdownMassiveActionAuthMethods.php
 www/glpi/ajax/dropdownMassiveActionField.php
 www/glpi/ajax/dropdownMassiveActionPorts.php
@@ -61,15 +65,23 @@ www/glpi/ajax/dropdownNotificationTemplate.php
 www/glpi/ajax/dropdownRubDocument.php
 www/glpi/ajax/dropdownRules.php
 www/glpi/ajax/dropdownSelectSoftware.php
+www/glpi/ajax/dropdownSelectSoftwareLicense.php
+www/glpi/ajax/dropdownSoftwareLicense.php
+www/glpi/ajax/dropdownTicketActors.php
 www/glpi/ajax/dropdownTrackingDeviceType.php
+www/glpi/ajax/dropdownUnicityFields.php
 www/glpi/ajax/dropdownUsers.php
 www/glpi/ajax/dropdownUsersTracking.php
 www/glpi/ajax/dropdownValue.php
 www/glpi/ajax/entity.tabs.php
 www/glpi/ajax/entitytree.php
 www/glpi/ajax/entitytreesons.php
+www/glpi/ajax/fieldblacklist.tabs.php
+www/glpi/ajax/fieldunicity.tabs.php
 www/glpi/ajax/filesystem.tabs.php
+www/glpi/ajax/genericdate.php
 www/glpi/ajax/group.tabs.php
+www/glpi/ajax/holiday.tabs.php
 www/glpi/ajax/index.php
 www/glpi/ajax/inputtext.php
 www/glpi/ajax/interfacetype.tabs.php
@@ -135,9 +147,11 @@ www/glpi/ajax/ruledictionnaryperipheralmodel.tabs.php
 www/glpi/ajax/ruledictionnaryperipheraltype.tabs.php
 www/glpi/ajax/ruledictionnaryphonemodel.tabs.php
 www/glpi/ajax/ruledictionnaryphonetype.tabs.php
+www/glpi/ajax/ruledictionnaryprinter.tabs.php
 www/glpi/ajax/ruledictionnaryprintermodel.tabs.php
 www/glpi/ajax/ruledictionnaryprintertype.tabs.php
 www/glpi/ajax/ruledictionnarysoftware.tabs.php
+www/glpi/ajax/ruleimportcomputer.tabs.php
 www/glpi/ajax/rulemailcollector.tabs.php
 www/glpi/ajax/ruleocs.tabs.php
 www/glpi/ajax/ruleright.tabs.php
@@ -147,11 +161,14 @@ www/glpi/ajax/rulesoftwarecategory.tabs.php
 www/glpi/ajax/ruleticket.tabs.php
 www/glpi/ajax/searchoption.php
 www/glpi/ajax/searchoptionvalue.php
+www/glpi/ajax/sla.tabs.php
+www/glpi/ajax/slalevel.tabs.php
 www/glpi/ajax/software.tabs.php
 www/glpi/ajax/softwarecategory.tabs.php
 www/glpi/ajax/softwarelicense.tabs.php
 www/glpi/ajax/softwarelicensetype.tabs.php
 www/glpi/ajax/softwareversion.tabs.php
+www/glpi/ajax/solution.php
 www/glpi/ajax/state.tabs.php
 www/glpi/ajax/supplier.tabs.php
 www/glpi/ajax/suppliertype.tabs.php
@@ -159,6 +176,8 @@ www/glpi/ajax/taskcategory.tabs.php
 www/glpi/ajax/textarea.php
 www/glpi/ajax/ticket.tabs.php
 www/glpi/ajax/ticketcategory.tabs.php
+www/glpi/ajax/ticketsatisfaction.php
+www/glpi/ajax/ticketsolutiontemplate.tabs.php
 www/glpi/ajax/ticketsolutiontype.tabs.php
 www/glpi/ajax/ticketvalidation.tabs.php
 www/glpi/ajax/transfer.tabs.php
@@ -171,6 +190,9 @@ www/glpi/ajax/user.tabs.php
 www/glpi/ajax/usercategory.tabs.php
 www/glpi/ajax/usertitle.tabs.php
 www/glpi/ajax/viewfollowup.php
+www/glpi/ajax/virtualmachinestate.tabs.php
+www/glpi/ajax/virtualmachinesystem.tabs.php
+www/glpi/ajax/virtualmachinetype.tabs.php
 www/glpi/ajax/vlan.tabs.php
 www/glpi/config/.htaccess
 www/glpi/config/based_config.php
@@ -206,6 +228,10 @@ www/glpi/front/backup.php
 www/glpi/front/bookmark.php
 www/glpi/front/budget.form.php
 www/glpi/front/budget.php
+www/glpi/front/calendar.form.php
+www/glpi/front/calendar.php
+www/glpi/front/calendar_holiday.form.php
+www/glpi/front/calendarsegment.form.php
 www/glpi/front/cartridge.form.php
 www/glpi/front/cartridgeitem.form.php
 www/glpi/front/cartridgeitem.php
@@ -215,12 +241,14 @@ www/glpi/front/central.php
 www/glpi/front/computer.form.php
 www/glpi/front/computer.php
 www/glpi/front/computer_device.form.php
+www/glpi/front/computer_softwarelicense.form.php
 www/glpi/front/computer_softwareversion.form.php
 www/glpi/front/computerdisk.form.php
 www/glpi/front/computermodel.form.php
 www/glpi/front/computermodel.php
 www/glpi/front/computertype.form.php
 www/glpi/front/computertype.php
+www/glpi/front/computervirtualmachine.form.php
 www/glpi/front/config.form.php
 www/glpi/front/consumable.form.php
 www/glpi/front/consumableitem.form.php
@@ -235,6 +263,7 @@ www/glpi/front/contract.form.php
 www/glpi/front/contract.php
 www/glpi/front/contracttype.form.php
 www/glpi/front/contracttype.php
+www/glpi/front/control.php
 www/glpi/front/cron.php
 www/glpi/front/crontask.form.php
 www/glpi/front/crontask.php
@@ -287,6 +316,10 @@ www/glpi/front/entity.php
 www/glpi/front/entitydata.form.php
 www/glpi/front/entitynotification.form.php
 www/glpi/front/event.php
+www/glpi/front/fieldblacklist.form.php
+www/glpi/front/fieldblacklist.php
+www/glpi/front/fieldunicity.form.php
+www/glpi/front/fieldunicity.php
 www/glpi/front/filesystem.form.php
 www/glpi/front/filesystem.php
 www/glpi/front/find_num.php
@@ -296,6 +329,8 @@ www/glpi/front/group.php
 www/glpi/front/helpdesk.faq.php
 www/glpi/front/helpdesk.html
 www/glpi/front/helpdesk.public.php
+www/glpi/front/holiday.form.php
+www/glpi/front/holiday.php
 www/glpi/front/index.php
 www/glpi/front/infocom.form.php
 www/glpi/front/interfacetype.form.php
@@ -314,6 +349,7 @@ www/glpi/front/link.send.php
 www/glpi/front/link_itemtype.form.php
 www/glpi/front/location.form.php
 www/glpi/front/location.php
+www/glpi/front/lostpassword.php
 www/glpi/front/mailcollector.form.php
 www/glpi/front/mailcollector.php
 www/glpi/front/manufacturer.form.php
@@ -446,12 +482,16 @@ www/glpi/front/ruledictionnaryphonemodel.form.php
 www/glpi/front/ruledictionnaryphonemodel.php
 www/glpi/front/ruledictionnaryphonetype.form.php
 www/glpi/front/ruledictionnaryphonetype.php
+www/glpi/front/ruledictionnaryprinter.form.php
+www/glpi/front/ruledictionnaryprinter.php
 www/glpi/front/ruledictionnaryprintermodel.form.php
 www/glpi/front/ruledictionnaryprintermodel.php
 www/glpi/front/ruledictionnaryprintertype.form.php
 www/glpi/front/ruledictionnaryprintertype.php
 www/glpi/front/ruledictionnarysoftware.form.php
 www/glpi/front/ruledictionnarysoftware.php
+www/glpi/front/ruleimportcomputer.form.php
+www/glpi/front/ruleimportcomputer.php
 www/glpi/front/rulemailcollector.form.php
 www/glpi/front/rulemailcollector.php
 www/glpi/front/ruleocs.form.php
@@ -469,6 +509,9 @@ www/glpi/front/search.php
 www/glpi/front/setup.auth.php
 www/glpi/front/setup.notification.php
 www/glpi/front/setup.templates.php
+www/glpi/front/sla.form.php
+www/glpi/front/sla.php
+www/glpi/front/slalevel.form.php
 www/glpi/front/software.form.php
 www/glpi/front/software.php
 www/glpi/front/softwarecategory.form.php
@@ -494,9 +537,13 @@ www/glpi/front/taskcategory.form.php
 www/glpi/front/taskcategory.php
 www/glpi/front/ticket.form.php
 www/glpi/front/ticket.php
+www/glpi/front/ticket_user.form.php
 www/glpi/front/ticketcategory.form.php
 www/glpi/front/ticketcategory.php
 www/glpi/front/ticketfollowup.form.php
+www/glpi/front/ticketsatisfaction.form.php
+www/glpi/front/ticketsolutiontemplate.form.php
+www/glpi/front/ticketsolutiontemplate.php
 www/glpi/front/ticketsolutiontype.form.php
 www/glpi/front/ticketsolutiontype.php
 www/glpi/front/tickettask.form.php
@@ -511,6 +558,12 @@ www/glpi/front/usercategory.form.php
 www/glpi/front/usercategory.php
 www/glpi/front/usertitle.form.php
 www/glpi/front/usertitle.php
+www/glpi/front/virtualmachinestate.form.php
+www/glpi/front/virtualmachinestate.php
+www/glpi/front/virtualmachinesystem.form.php
+www/glpi/front/virtualmachinesystem.php
+www/glpi/front/virtualmachinetype.form.php
+www/glpi/front/virtualmachinetype.php
 www/glpi/front/vlan.form.php
 www/glpi/front/vlan.php
 www/glpi/inc/ajax.function.php
@@ -524,6 +577,9 @@ www/glpi/inc/autoupdatesystem.class.php
 www/glpi/inc/bookmark.class.php
 www/glpi/inc/bookmark_user.class.php
 www/glpi/inc/budget.class.php
+www/glpi/inc/calendar.class.php
+www/glpi/inc/calendar_holiday.class.php
+www/glpi/inc/calendarsegment.class.php
 www/glpi/inc/cartridge.class.php
 www/glpi/inc/cartridgeitem.class.php
 www/glpi/inc/cartridgeitemtype.class.php
@@ -539,10 +595,12 @@ www/glpi/inc/commontreedropdown.class.php
 www/glpi/inc/computer.class.php
 www/glpi/inc/computer_device.class.php
 www/glpi/inc/computer_item.class.php
+www/glpi/inc/computer_softwarelicense.class.php
 www/glpi/inc/computer_softwareversion.class.php
 www/glpi/inc/computerdisk.class.php
 www/glpi/inc/computermodel.class.php
 www/glpi/inc/computertype.class.php
+www/glpi/inc/computervirtualmachine.class.php
 www/glpi/inc/config.class.php
 www/glpi/inc/consumable.class.php
 www/glpi/inc/consumableitem.class.php
@@ -584,10 +642,14 @@ www/glpi/inc/dropdown.class.php
 www/glpi/inc/entity.class.php
 www/glpi/inc/entitydata.class.php
 www/glpi/inc/event.class.php
+www/glpi/inc/fieldblacklist.class.php
+www/glpi/inc/fieldunicity.class.php
 www/glpi/inc/filesystem.class.php
 www/glpi/inc/graphpalette.class.php
 www/glpi/inc/group.class.php
+www/glpi/inc/group_ticket.class.php
 www/glpi/inc/group_user.class.php
+www/glpi/inc/holiday.class.php
 www/glpi/inc/includes.php
 www/glpi/inc/index.php
 www/glpi/inc/infocom.class.php
@@ -600,6 +662,7 @@ www/glpi/inc/location.class.php
 www/glpi/inc/log.class.php
 www/glpi/inc/mailcollector.class.php
 www/glpi/inc/manufacturer.class.php
+www/glpi/inc/migration.class.php
 www/glpi/inc/monitor.class.php
 www/glpi/inc/monitormodel.class.php
 www/glpi/inc/monitortype.class.php
@@ -622,15 +685,19 @@ www/glpi/inc/notificationtarget.class.php
 www/glpi/inc/notificationtargetcartridge.class.php
 www/glpi/inc/notificationtargetconsumable.class.php
 www/glpi/inc/notificationtargetcontract.class.php
+www/glpi/inc/notificationtargetcrontask.class.php
 www/glpi/inc/notificationtargetdbconnection.class.php
+www/glpi/inc/notificationtargetfieldunicity.class.php
 www/glpi/inc/notificationtargetinfocom.class.php
 www/glpi/inc/notificationtargetreservation.class.php
 www/glpi/inc/notificationtargetsoftwarelicense.class.php
 www/glpi/inc/notificationtargetticket.class.php
+www/glpi/inc/notificationtargetuser.class.php
 www/glpi/inc/notificationtemplate.class.php
 www/glpi/inc/notificationtemplatetranslation.class.php
 www/glpi/inc/notimportedemail.class.php
 www/glpi/inc/ocsadmininfoslink.class.php
+www/glpi/inc/ocslink.class.php
 www/glpi/inc/ocsserver.class.php
 www/glpi/inc/operatingsystem.class.php
 www/glpi/inc/operatingsystemservicepack.class.php
@@ -693,12 +760,16 @@ www/glpi/inc/ruledictionnaryphonemodel.class.php
 www/glpi/inc/ruledictionnaryphonemodelcollection.class.php
 www/glpi/inc/ruledictionnaryphonetype.class.php
 www/glpi/inc/ruledictionnaryphonetypecollection.class.php
+www/glpi/inc/ruledictionnaryprinter.class.php
+www/glpi/inc/ruledictionnaryprintercollection.class.php
 www/glpi/inc/ruledictionnaryprintermodel.class.php
 www/glpi/inc/ruledictionnaryprintermodelcollection.class.php
 www/glpi/inc/ruledictionnaryprintertype.class.php
 www/glpi/inc/ruledictionnaryprintertypecollection.class.php
 www/glpi/inc/ruledictionnarysoftware.class.php
 www/glpi/inc/ruledictionnarysoftwarecollection.class.php
+www/glpi/inc/ruleimportcomputer.class.php
+www/glpi/inc/ruleimportcomputercollection.class.php
 www/glpi/inc/rulemailcollector.class.php
 www/glpi/inc/rulemailcollectorcollection.class.php
 www/glpi/inc/ruleocs.class.php
@@ -713,6 +784,10 @@ www/glpi/inc/ruleticketcollection.class.php
 www/glpi/inc/search.class.php
 www/glpi/inc/setup.function.php
 www/glpi/inc/singletonrulelist.class.php
+www/glpi/inc/sla.class.php
+www/glpi/inc/slalevel.class.php
+www/glpi/inc/slalevel_ticket.class.php
+www/glpi/inc/slalevelaction.class.php
 www/glpi/inc/software.class.php
 www/glpi/inc/softwarecategory.class.php
 www/glpi/inc/softwarelicense.class.php
@@ -724,9 +799,13 @@ www/glpi/inc/supplier.class.php
 www/glpi/inc/suppliertype.class.php
 www/glpi/inc/taskcategory.class.php
 www/glpi/inc/ticket.class.php
+www/glpi/inc/ticket_ticket.class.php
+www/glpi/inc/ticket_user.class.php
 www/glpi/inc/ticketcategory.class.php
 www/glpi/inc/ticketfollowup.class.php
 www/glpi/inc/ticketplanning.class.php
+www/glpi/inc/ticketsatisfaction.class.php
+www/glpi/inc/ticketsolutiontemplate.class.php
 www/glpi/inc/ticketsolutiontype.class.php
 www/glpi/inc/tickettask.class.php
 www/glpi/inc/ticketvalidation.class.php
@@ -735,13 +814,16 @@ www/glpi/inc/transfer.class.php
 www/glpi/inc/user.class.php
 www/glpi/inc/usercategory.class.php
 www/glpi/inc/usertitle.class.php
+www/glpi/inc/virtualmachinestate.class.php
+www/glpi/inc/virtualmachinesystem.class.php
+www/glpi/inc/virtualmachinetype.class.php
 www/glpi/inc/vlan.class.php
 www/glpi/inc/xml.class.php
 www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.78.1-empty.sql
+www/glpi/install/mysql/glpi-0.80.1-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -759,8 +841,11 @@ www/glpi/install/update_0721_0722.php
 www/glpi/install/update_0722_0723.php
 www/glpi/install/update_0723_078.php
 www/glpi/install/update_072_0721.php
+www/glpi/install/update_0781_0782.php
+www/glpi/install/update_0782_080.php
 www/glpi/install/update_078_0781.php
 www/glpi/install/update_07_071.php
+www/glpi/install/update_080_0801.php
 www/glpi/install/update_content.php
 www/glpi/install/update_to_031.php
 www/glpi/lib/cache_lite/LICENSE
@@ -781,6 +866,7 @@ www/glpi/lib/extjs/gpl-3.0.txt
 www/glpi/lib/extjs/index.html
 www/glpi/lib/extjs/license.txt
 www/glpi/lib/extjs/locale/ext-lang-af.js
+www/glpi/lib/extjs/locale/ext-lang-am.js
 www/glpi/lib/extjs/locale/ext-lang-bg.js
 www/glpi/lib/extjs/locale/ext-lang-ca.js
 www/glpi/lib/extjs/locale/ext-lang-cs.js
@@ -848,6 +934,7 @@ www/glpi/lib/extjs/resources/css/structure/list-view.css
 www/glpi/lib/extjs/resources/css/structure/menu.css
 www/glpi/lib/extjs/resources/css/structure/panel-reset.css
 www/glpi/lib/extjs/resources/css/structure/panel.css
+www/glpi/lib/extjs/resources/css/structure/pivotgrid.css
 www/glpi/lib/extjs/resources/css/structure/progress.css
 www/glpi/lib/extjs/resources/css/structure/qtips.css
 www/glpi/lib/extjs/resources/css/structure/reset.css
@@ -897,6 +984,7 @@ www/glpi/lib/extjs/resources/css/theme-gray/layout.css
 www/glpi/lib/extjs/resources/css/theme-gray/list-view.css
 www/glpi/lib/extjs/resources/css/theme-gray/menu.css
 www/glpi/lib/extjs/resources/css/theme-gray/panel.css
+www/glpi/lib/extjs/resources/css/theme-gray/pivotgrid.css
 www/glpi/lib/extjs/resources/css/theme-gray/progress.css
 www/glpi/lib/extjs/resources/css/theme-gray/qtips.css
 www/glpi/lib/extjs/resources/css/theme-gray/resizable.css
@@ -921,6 +1009,7 @@ www/glpi/lib/extjs/resources/css/visual/layout.css
 www/glpi/lib/extjs/resources/css/visual/list-view.css
 www/glpi/lib/extjs/resources/css/visual/menu.css
 www/glpi/lib/extjs/resources/css/visual/panel.css
+www/glpi/lib/extjs/resources/css/visual/pivotgrid.css
 www/glpi/lib/extjs/resources/css/visual/progress.css
 www/glpi/lib/extjs/resources/css/visual/qtips.css
 www/glpi/lib/extjs/resources/css/visual/resizable.css
@@ -932,6 +1021,7 @@ www/glpi/lib/extjs/resources/css/visual/window.css
 www/glpi/lib/extjs/resources/css/xtheme-access.css
 www/glpi/lib/extjs/resources/css/xtheme-blue.css
 www/glpi/lib/extjs/resources/css/xtheme-gray.css
+www/glpi/lib/extjs/resources/css/yourtheme.css
 www/glpi/lib/extjs/resources/expressinstall.swf
 www/glpi/lib/extjs/resources/images/default/box/corners-blue.gif
 www/glpi/lib/extjs/resources/images/default/box/corners.gif
@@ -967,6 +1057,8 @@ www/glpi/lib/extjs/resources/images/default/form/radio.gif
 www/glpi/lib/extjs/resources/images/default/form/search-trigger.gif
 www/glpi/lib/extjs/resources/images/default/form/search-trigger.psd
 www/glpi/lib/extjs/resources/images/default/form/text-bg.gif
+www/glpi/lib/extjs/resources/images/default/form/trigger-square.gif
+www/glpi/lib/extjs/resources/images/default/form/trigger-square.psd
 www/glpi/lib/extjs/resources/images/default/form/trigger-tpl.gif
 www/glpi/lib/extjs/resources/images/default/form/trigger.gif
 www/glpi/lib/extjs/resources/images/default/form/trigger.psd
@@ -990,6 +1082,7 @@ www/glpi/lib/extjs/resources/images/default/grid/grid-vista-hd.gif
 www/glpi/lib/extjs/resources/images/default/grid/grid3-hd-btn.gif
 www/glpi/lib/extjs/resources/images/default/grid/grid3-hrow-over.gif
 www/glpi/lib/extjs/resources/images/default/grid/grid3-hrow.gif
+www/glpi/lib/extjs/resources/images/default/grid/grid3-rowheader.gif
 www/glpi/lib/extjs/resources/images/default/grid/grid3-special-col-bg.gif
 www/glpi/lib/extjs/resources/images/default/grid/grid3-special-col-sel-bg.gif
 www/glpi/lib/extjs/resources/images/default/grid/group-by.gif
@@ -1016,6 +1109,7 @@ www/glpi/lib/extjs/resources/images/default/grid/page-next.gif
 www/glpi/lib/extjs/resources/images/default/grid/page-prev-disabled.gif
 www/glpi/lib/extjs/resources/images/default/grid/page-prev.gif
 www/glpi/lib/extjs/resources/images/default/grid/pick-button.gif
+www/glpi/lib/extjs/resources/images/default/grid/refresh-disabled.gif
 www/glpi/lib/extjs/resources/images/default/grid/refresh.gif
 www/glpi/lib/extjs/resources/images/default/grid/row-check-sprite.gif
 www/glpi/lib/extjs/resources/images/default/grid/row-expand-sprite.gif
@@ -1152,10 +1246,16 @@ www/glpi/lib/extjs/resources/images/default/window/right-corners.png
 www/glpi/lib/extjs/resources/images/default/window/right-corners.psd
 www/glpi/lib/extjs/resources/images/default/window/top-bottom.png
 www/glpi/lib/extjs/resources/images/default/window/top-bottom.psd
-www/glpi/lib/extjs/resources/resources.jsb
 www/glpi/lib/extjs/s.gif
 www/glpi/lib/extrajs/datetime.js
 www/glpi/lib/extrajs/spancombobox.js
+www/glpi/lib/extrajs/starslider/images/slider-bg.jpg
+www/glpi/lib/extrajs/starslider/images/slider-bg.png
+www/glpi/lib/extrajs/starslider/images/slider-thumb.jpg
+www/glpi/lib/extrajs/starslider/images/slider-thumb.png
+www/glpi/lib/extrajs/starslider/slider.css
+www/glpi/lib/extrajs/starslider/slider.html
+www/glpi/lib/extrajs/starslider/slider.js
 www/glpi/lib/extrajs/xdatefield.js
 www/glpi/lib/ezcomponents/Base/CREDITS
 www/glpi/lib/ezcomponents/Base/ChangeLog
@@ -1321,14 +1421,18 @@ www/glpi/lib/ezpdf/class.ezpdf.php
 www/glpi/lib/ezpdf/class.pdf.php
 www/glpi/lib/ezpdf/fonts/Helvetica.afm
 www/glpi/lib/ezpdf/fonts/php_Helvetica.afm
+www/glpi/lib/icalcreator/iCalUtilityFunctions.class.php
 www/glpi/lib/icalcreator/iCalcreator.class.php
 www/glpi/lib/icalcreator/lgpl.txt
 www/glpi/lib/index.php
 www/glpi/lib/phpcas/CAS.php
+www/glpi/lib/phpcas/CAS/CookieJar.php
 www/glpi/lib/phpcas/CAS/PGTStorage/pgt-file.php
 www/glpi/lib/phpcas/CAS/PGTStorage/pgt-main.php
+www/glpi/lib/phpcas/CAS/Request/AbstractRequest.php
+www/glpi/lib/phpcas/CAS/Request/CurlRequest.php
+www/glpi/lib/phpcas/CAS/Request/RequestInterface.php
 www/glpi/lib/phpcas/CAS/client.php
-www/glpi/lib/phpcas/CAS/domxml-php4-to-php5.php
 www/glpi/lib/phpcas/CAS/languages/catalan.php
 www/glpi/lib/phpcas/CAS/languages/english.php
 www/glpi/lib/phpcas/CAS/languages/french.php
@@ -1607,7 +1711,16 @@ www/glpi/lib/tiny_mce/themes/advanced/editor_template.js
 www/glpi/lib/tiny_mce/themes/advanced/editor_template_src.js
 www/glpi/lib/tiny_mce/themes/advanced/image.htm
 www/glpi/lib/tiny_mce/themes/advanced/img/colorpicker.jpg
+www/glpi/lib/tiny_mce/themes/advanced/img/flash.gif
 www/glpi/lib/tiny_mce/themes/advanced/img/icons.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/iframe.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/pagebreak.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/quicktime.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/realmedia.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/shockwave.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/trans.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/video.gif
+www/glpi/lib/tiny_mce/themes/advanced/img/windowsmedia.gif
 www/glpi/lib/tiny_mce/themes/advanced/js/about.js
 www/glpi/lib/tiny_mce/themes/advanced/js/anchor.js
 www/glpi/lib/tiny_mce/themes/advanced/js/charmap.js
@@ -1754,6 +1867,7 @@ www/glpi/lib/tiny_mce/themes/advanced/langs/zh_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/zu.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/zu_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/link.htm
+www/glpi/lib/tiny_mce/themes/advanced/shortcuts.htm
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/content.css
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/dialog.css
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/buttons.png
@@ -1763,6 +1877,9 @@ www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/progress.gif
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/tabs.gif
 www/glpi/lib/tiny_mce/themes/advanced/skins/default/ui.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/highcontrast/content.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/highcontrast/ui.css
 www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/content.css
 www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/dialog.css
 www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
@@ -1863,11 +1980,15 @@ www/glpi/locales/ca_CA.php
 www/glpi/locales/cs_CZ.php
 www/glpi/locales/de_DE.php
 www/glpi/locales/dk_DK.php
+www/glpi/locales/ee_ET.php
 www/glpi/locales/el_EL.php
 www/glpi/locales/en_GB.php
 www/glpi/locales/es_AR.php
 www/glpi/locales/es_ES.php
 www/glpi/locales/es_MX.php
+www/glpi/locales/es_VE.php
+www/glpi/locales/eu_ES.php
+www/glpi/locales/fa_IR.php
 www/glpi/locales/fr_FR.php
 www/glpi/locales/gl_ES.php
 www/glpi/locales/he_HE.php
@@ -1877,7 +1998,6 @@ www/glpi/locales/it_IT.php
 www/glpi/locales/ja_JP.php
 www/glpi/locales/lt_LT.php
 www/glpi/locales/lv_LV.php
-www/glpi/locales/nl_BE.php
 www/glpi/locales/nl_NL.php
 www/glpi/locales/no_NB.php
 www/glpi/locales/no_NN.php
@@ -2007,6 +2127,7 @@ www/glpi/pics/icones/mov-dist.png
 www/glpi/pics/icones/mp3-dist.png
 www/glpi/pics/icones/mpg-dist.png
 www/glpi/pics/icones/odb-dist.png
+www/glpi/pics/icones/odc-dist.png
 www/glpi/pics/icones/odf-dist.png
 www/glpi/pics/icones/odg-dist.png
 www/glpi/pics/icones/odm-dist.png
@@ -2017,6 +2138,7 @@ www/glpi/pics/icones/ogg-dist.png
 www/glpi/pics/icones/otg-dist.png
 www/glpi/pics/icones/oth-dist.png
 www/glpi/pics/icones/otp-dist.png
+www/glpi/pics/icones/ots-dist.png
 www/glpi/pics/icones/ott-dist.png
 www/glpi/pics/icones/pas-dist.png
 www/glpi/pics/icones/pdf-dist.png
@@ -2109,6 +2231,7 @@ www/glpi/pics/showdeleted_no.png
 www/glpi/pics/slk.png
 www/glpi/pics/solved.png
 www/glpi/pics/stats_item.png
+www/glpi/pics/supplier.png
 www/glpi/pics/tb.gif
 www/glpi/pics/treeroot.png
 www/glpi/pics/users.png
@@ -2146,6 +2269,7 @@ www/glpi/status.php
 @dirrm www/glpi/lib/tiny_mce/themes/simple
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/highcontrast
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/default/img
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/default
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/skins
@@ -2169,6 +2293,7 @@ www/glpi/status.php
 @dirrm www/glpi/lib/phpmailer/language
 @dirrm www/glpi/lib/phpmailer
 @dirrm www/glpi/lib/phpcas/CAS/languages
+@dirrm www/glpi/lib/phpcas/CAS/Request
 @dirrm www/glpi/lib/phpcas/CAS/PGTStorage
 @dirrm www/glpi/lib/phpcas/CAS
 @dirrm www/glpi/lib/phpcas
@@ -2201,6 +2326,8 @@ www/glpi/status.php
 @dirrm www/glpi/lib/ezcomponents/Base/src
 @dirrm www/glpi/lib/ezcomponents/Base
 @dirrm www/glpi/lib/ezcomponents
+@dirrm www/glpi/lib/extrajs/starslider/images
+@dirrm www/glpi/lib/extrajs/starslider
 @dirrm www/glpi/lib/extrajs
 @dirrm www/glpi/lib/extjs/resources/images/default/window
 @dirrm www/glpi/lib/extjs/resources/images/default/tree
@@ -2245,13 +2372,13 @@ www/glpi/status.php
 @dirrm www/glpi/files/_tmp
 @dirrmtry www/glpi/files/_sessions
 @dirrmtry www/glpi/files/_plugins
-@dirrm www/glpi/files/_log
+@dirrmtry www/glpi/files/_log
 @dirrm www/glpi/files/_lock
 @dirrm www/glpi/files/_graphs
 @dirrm www/glpi/files/_dumps
 @dirrmtry www/glpi/files/_cron
 @dirrmtry www/glpi/files/_cache
-@dirrm www/glpi/files
+@dirrmtry www/glpi/files
 @dirrm www/glpi/css
 @dirrmtry www/glpi/config
 @dirrm www/glpi/ajax
