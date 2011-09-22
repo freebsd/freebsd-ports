@@ -7,6 +7,7 @@
 
 PORTNAME=	gomysql
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/wen
 DISTNAME=	Philio-GoMySQL-${PORTVERSION}-0-g3c1f411
@@ -20,5 +21,5 @@ PLIST_FILES=	${GO_LIBDIR}/mysql.a
 USE_GO=		yes
 
 .include <bsd.port.pre.mk>
-.include "../../lang/go/files/bsd.go.mk"
+.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.post.mk>
