@@ -3003,6 +3003,7 @@
     SUBDIR += py-json-py
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
+    SUBDIR += py-jsonrpclib
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
