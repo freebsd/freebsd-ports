@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}
 USE_GNOME=	gtksourceview
 USE_NANT=	yes
