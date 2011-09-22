@@ -678,6 +678,7 @@
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
     SUBDIR += py-pyPgSQL
+    SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
     SUBDIR += py-pymysql
     SUBDIR += py-pysqlite20
