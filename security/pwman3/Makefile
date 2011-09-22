@@ -7,6 +7,7 @@
 
 PORTNAME=	pwman3
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://pwman.bleurgh.com/~ivan/pwman3/source/ \
 		http://source.antisupport.com/pwman3/
@@ -16,8 +17,7 @@ MAINTAINER=	yarodin@gmail.com
 COMMENT=	Console password management application with sql storage
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}cElementTree>=1.0.5:${PORTSDIR}/devel/py-celementtree \
-		${PYTHON_PKGNAMEPREFIX}pysqlite>=2.0.5:${PORTSDIR}/databases/py-pysqlite23
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
