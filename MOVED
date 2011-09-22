@@ -2644,3 +2644,14 @@ mail/postfix-policyd-spf||2011-09-09|Relies on vulnerable mail/libspf2-10
 multimedia/bmpx||2011-09-11|Has expired: BROKEN for more than 6 month
 editors/openoffice.org-2|editors/openoffice.org-3|2011-09-20|unsupported upstream and vulnerable
 devel/monodevelop-boo||2011-09-21|Removed
+www/ruby-http-access||2011-09-22|Has expired: Deprecated upstream, please use www/rubygem-httpclient
+sysutils/wots||2011-09-22|Has expired: No more public distfiles
+sysutils/gpart||2011-09-22|Has expired: Upstream disappeared
+sysutils/plod||2011-09-22|Has expired: No more public distfiles
+sysutils/checkservice||2011-09-22|Has expired: BROKEN for more than 6 month
+security/nsm-console||2011-09-22|Has expired: BROKEN for more than 6 month
+security/fressh||2011-09-22|Has expired: No more public distfiles
+palm/pose||2011-09-22|Has expired: No more public distfiles
+palm/isilo||2011-09-22|Has expired: No more public distfiles
+news/ija||2011-09-22|Has expired: BROKEN for more than 6 month
+news/PicMonger||2011-09-22|Has expired: Abandonware
