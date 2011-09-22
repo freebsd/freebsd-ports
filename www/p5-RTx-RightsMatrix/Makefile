@@ -17,7 +17,10 @@ MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Bulk editing GUI for RT rights
 
 BUILD_DEPENDS=	${LOCALBASE}/${RTHOME}/bin/rt:${PORTSDIR}/www/rt36
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/${RTHOME}/bin/rt:${PORTSDIR}/www/rt36
+
+DEPRECATED=	Only works with www/rt36, which is due for removal
+EXPIRATION_DATE=	2011-09-30
 
 RTHOME?=	rt3
 PLIST_SUB+=	RTHOME=${RTHOME}
