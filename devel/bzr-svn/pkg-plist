@@ -43,12 +43,15 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/filegraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/filegraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/filegraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fileids.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fileids.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/fileids.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/format.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/format.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/format.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/graph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/graph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/graph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/info.pyo
@@ -58,9 +61,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/custom.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/custom.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/custom.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/guess.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/guess.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout/guess.pyo
@@ -91,15 +91,15 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/mapping4.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/mapping4.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/mapping4.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/metagraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/metagraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/metagraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/parents.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/parents.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/parents.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/push.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/push.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/push.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/pycompat.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/pycompat.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/pycompat.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/reconcile.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/reconcile.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/reconcile.pyo
@@ -133,6 +133,15 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_guess.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_guess.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_guess.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_standard.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_standard.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout/test_standard.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/mapping3/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/mapping3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/mapping3/__init__.pyo
@@ -172,6 +181,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit_ids.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit_ids.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_commit_ids.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_config.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_config.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_config.pyo
@@ -196,15 +208,18 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_mapping.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_mapping.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_mapping.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_metagraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_metagraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_metagraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_parents.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_parents.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_parents.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_push.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_push.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_push.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_radir.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_radir.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_radir.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_remote.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_remote.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_remote.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_repository.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_repository.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_repository.pyo
@@ -214,6 +229,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_revspec.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_revspec.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_revspec.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_send.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_send.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_send.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_svk.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_svk.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_svk.pyo
@@ -223,9 +241,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_tree.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_versionedfiles.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_versionedfiles.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_versionedfiles.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_workingtree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_workingtree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/test_workingtree.pyo
@@ -238,9 +253,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/util.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/util.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/util.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/versionedfiles.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/versionedfiles.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/versionedfiles.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/wiki.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/wiki.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/wiki.pyo
@@ -249,6 +261,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/workingtree.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/mapping_implementations
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/mapping3
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests/layout
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/mapping3
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/svn/layout
