@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coderay
-PORTVERSION=	0.9.8
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,6 @@ LICENSE=	LGPL21
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/coderay bin/coderay_stylesheet
+PLIST_FILES=	bin/coderay
 
 .include <bsd.port.mk>
