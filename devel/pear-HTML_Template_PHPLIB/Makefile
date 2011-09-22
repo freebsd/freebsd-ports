@@ -9,11 +9,13 @@ PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.5.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joehorn@gmail.com
 COMMENT=	PEAR template API ported from PHPLIB
 
+LICENSE=	LGPL3
+
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 SCRIPTFILES=	html_template_phplibtool
 FILES=		HTML/Template/PHPLIB.php HTML/Template/PHPLIB/Generator.php \
