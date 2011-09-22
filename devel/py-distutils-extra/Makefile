@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	distutils-extra
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/73619979/
+MASTER_SITES=	http://launchpadlibrarian.net/77777670/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
