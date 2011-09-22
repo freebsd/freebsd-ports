@@ -15,6 +15,7 @@ MAINTAINER=	fiziologus@gmail.com
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
+
 USE_BZIP2=	yes
 USE_SDL+=	image net sdl sound
 USE_GL=		yes
@@ -35,42 +36,44 @@ OPTIONS=	MAD "use libmad for mp3 playback" on \
 		TTF "enable SDL_ttf font rendering" on \
 		ZZIP "enable zziplib support" on
 
-.if !defined(WITHOUT_MAD)
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_MAD)
 CONFIGURE_ARGS+=--disable-mad
 .else
 LIB_DEPEND+=	mad.2:${PORTSDIR}/audio/libmad
 .endif
 
-.if !defined(WITHOUT_OGG)
+.if defined(WITHOUT_OGG)
 CONFIGURE_ARGS+=--disable-vorbis
 .else
 LIB_DEPEND+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if !defined(WITHOUT_SPEEX)
+.if defined(WITHOUT_SPEEX)
 CONFIGURE_ARGS+=--disable-speex
 .else
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .endif
 
-.if !defined(WITHOUT_SMPEG)
+.if defined(WITHOUT_SMPEG)
 CONFIGURE_ARGS+=--disable-smpeg
 .else
 LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 .endif
 
-.if !defined(WITHOUT_TTF)
+.if defined(WITHOUT_TTF)
 CONFIGURE_ARGS+=--disable-ttf
 .else
 USE_SDL+=	ttf
 .endif
 
-.if !defined(WITHOUT_ZZIP)
+.if defined(WITHOUT_ZZIP)
 CONFIGURE_ARGS+=--disable-zzip
 .else
 LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib
 .endif
-	
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -81,4 +84,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
