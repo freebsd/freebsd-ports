@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="53e531a7-e559-11e0-b481-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r183.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb11-26.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash
+	    Player 10.3.183.7 and earlier versions for Windows, Macintosh,
+	    Linux and Solaris, and Adobe Flash Player 10.3.186.6 and earlier
+	    versions for Android.  These vulnerabilities could cause a crash
+	    and potentially allow an attacker to take control of the
+	    affected system.</p>
+	  <p>There are reports that one of these vulnerabilities
+	    (CVE-2011-2444) is being exploited in the wild in active
+	    targeted attacks designed to trick the user into clicking on
+	    a malicious link delivered in an email message. This universal
+	    cross-site scripting issue could be used to take actions on a
+	    user's behalf on any website or webmail provider if the user
+	    visits a malicious website.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.adobe.com/support/security/bulletins/apsb11-26.html</url>
+      <cvename>CVE-2011-2426</cvename>
+      <cvename>CVE-2011-2427</cvename>
+      <cvename>CVE-2011-2428</cvename>
+      <cvename>CVE-2011-2429</cvename>
+      <cvename>CVE-2011-2430</cvename>
+      <cvename>CVE-2011-2444</cvename>
+    </references>
+    <dates>
+      <discovery>2011-06-06</discovery>
+      <entry>2011-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e44fe906-df27-11e0-a333-001cc0a36e12">
     <topic>phpmyadmin -- multiple XSS vulnerabilities</topic>
     <affects>
