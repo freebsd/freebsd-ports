@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RTx::Statistics - Produces statistical information based on RT3 data
 
+DEPRECATED=	Only works with www/rt36, which is due for removal 
+EXPIRATION_DATE=	2011-09-30
+
 # This module is not compatible with rt-3.8.0 or later.
 BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt36
