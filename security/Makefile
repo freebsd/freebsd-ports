@@ -140,7 +140,6 @@
     SUBDIR += fprint_demo
     SUBDIR += fragroute
     SUBDIR += fragrouter
-    SUBDIR += fressh
     SUBDIR += fsh
     SUBDIR += fswatch
     SUBDIR += ftimes
@@ -305,7 +304,6 @@
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapsi4
-    SUBDIR += nsm-console
     SUBDIR += nss
     SUBDIR += ocaml-cryptgps
     SUBDIR += ocaml-cryptokit

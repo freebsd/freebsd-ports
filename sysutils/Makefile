@@ -100,7 +100,6 @@
     SUBDIR += cfengine
     SUBDIR += cfengine3
     SUBDIR += cfvers
-    SUBDIR += checkservice
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
@@ -323,7 +322,6 @@
     SUBDIR += goaccess
     SUBDIR += googlog
     SUBDIR += gosa
-    SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graid5
@@ -652,7 +650,6 @@
     SUBDIR += pipemeter
     SUBDIR += plasma-applet-apcups
     SUBDIR += plconfig
-    SUBDIR += plod
     SUBDIR += pmap
     SUBDIR += pmt
     SUBDIR += policykit
@@ -957,7 +954,6 @@
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += worldtools
-    SUBDIR += wots
     SUBDIR += wtail
     SUBDIR += wtmp-tools
     SUBDIR += wuzzah

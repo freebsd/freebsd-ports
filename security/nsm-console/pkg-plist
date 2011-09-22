@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-bin/nsm
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry %%RUBY_SITELIBDIR%%/nsm-console

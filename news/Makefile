@@ -3,7 +3,6 @@
 
     COMMENT = Network news
 
-    SUBDIR += PicMonger
     SUBDIR += atp
     SUBDIR += aub
     SUBDIR += brag
@@ -39,7 +38,6 @@
     SUBDIR += husky-smapi-devel
     SUBDIR += husky-sqpack
     SUBDIR += ifmail
-    SUBDIR += ija
     SUBDIR += inn
     SUBDIR += klibido
     SUBDIR += knews

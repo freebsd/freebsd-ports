@@ -10,7 +10,6 @@
     SUBDIR += gnome-pilot-conduits
     SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
-    SUBDIR += isilo
     SUBDIR += jpilot
     SUBDIR += jpilot-db
     SUBDIR += jpilot-picsnvideos
@@ -26,7 +25,6 @@
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
     SUBDIR += plucker
-    SUBDIR += pose
     SUBDIR += ppmtoTbmp
     SUBDIR += py-synce-librapi2
     SUBDIR += py-synce-librra

@@ -1612,7 +1612,6 @@
     SUBDIR += ruby-google
     SUBDIR += ruby-gtkhtml2
     SUBDIR += ruby-gtkmozembed
-    SUBDIR += ruby-http-access
     SUBDIR += ruby-nora
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
