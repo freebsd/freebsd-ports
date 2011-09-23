@@ -15,6 +15,9 @@ DISTNAME=	Epoz-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-browser-wysiwyg-editor for Zope/CMF
 
+DEPRECATED=	Unmaintained upstream, isn't used by anything
+EXPIRATION_DATE=2011-12-23
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
