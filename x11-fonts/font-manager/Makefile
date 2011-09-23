@@ -7,6 +7,7 @@
 
 PORTNAME=	font-manager
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -24,6 +25,7 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 LICENSE_FILE=	${WRKSRC}/COPYING
+PORTDATA=	*
 
 OPTIONS=	REPORTLAB "Enable font-sampler (PDF sample sheet)" off \
 		NLS "Enable Native Language Support" on
