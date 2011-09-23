@@ -114,6 +114,8 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/View/JSON.pm
 %%SITE_PERL%%/MojoMojo/View/TT.pm
 %%SITE_PERL%%/MojoMojo/WordDiff.pm
+%%SITE_PERL%%/MojoMojo/app.psgi
+%%SITE_PERL%%/MojoMojo/dotcloud.yml
 %%SITE_PERL%%/MojoMojo/mojomojo.conf
 %%SITE_PERL%%/MojoMojo/resources/logo/mmlogovector.psd
 %%SITE_PERL%%/MojoMojo/root/base/admin/create_role.tt
