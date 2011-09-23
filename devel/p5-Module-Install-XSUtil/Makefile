@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Install-XSUtil
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -17,6 +18,7 @@ COMMENT=	Utility functions for XS modules
 
 BUILD_DEPENDS=	p5-Module-Install>=0.91:${PORTSDIR}/devel/p5-Module-Install
 RUN_DEPENDS=	p5-Module-Install>=0.91:${PORTSDIR}/devel/p5-Module-Install
+
 TEST_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:${PORTSDIR}/devel/p5-B-Hooks-OP-Annotation
 
 PERL_CONFIGURE=	yes
@@ -24,10 +26,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Module::Install::XSUtil.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
 
 .if ${PERL_LEVEL} < 501001
 TEST_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
