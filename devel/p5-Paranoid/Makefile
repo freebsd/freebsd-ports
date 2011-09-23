@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	Paranoid
-PORTVERSION=	0.27
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Paranoia support for safer programs
 
-RUN_DEPENDS=	p5-BerkeleyDB>0:${PORTSDIR}/databases/p5-BerkeleyDB \
-		p5-Unix-Syslog>0:${PORTSDIR}/sysutils/p5-Unix-Syslog
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-BerkeleyDB>=0.32:${PORTSDIR}/databases/p5-BerkeleyDB \
+		p5-Unix-Syslog>=1.1:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
