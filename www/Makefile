@@ -1691,6 +1691,7 @@
     SUBDIR += serf
     SUBDIR += servlet-api
     SUBDIR += session2
+    SUBDIR += sfnt2woff
     SUBDIR += shellinabox
     SUBDIR += shttpd
     SUBDIR += simplog
