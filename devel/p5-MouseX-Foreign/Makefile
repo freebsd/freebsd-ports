@@ -7,6 +7,7 @@
 
 PORTNAME=	MouseX-Foreign
 PORTVERSION=	0.004
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +17,7 @@ COMMENT=	Extends non-Mouse classes as well as Mouse classes
 
 BUILD_DEPENDS=	p5-Mouse>=0.77:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS=	p5-Mouse>=0.77:${PORTSDIR}/devel/p5-Mouse
+
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
@@ -27,10 +29,6 @@ MAN3=		MouseX::Foreign.3 \
 		MouseX::Foreign::Meta::Role::Method::Destructor.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
 
 .if ${PERL_LEVEL} < 501001
 TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
