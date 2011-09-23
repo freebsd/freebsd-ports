@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.2.33
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -53,9 +54,8 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="-levent-2.0"
 
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
+		GMAKE "parallel build safety via GNU make" off \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
@@ -73,6 +73,12 @@ MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GMAKE)
+USE_GMAKE=	yes
+.else
+MAKE_JOBS_UNSAFE=	yes
+.endif
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
