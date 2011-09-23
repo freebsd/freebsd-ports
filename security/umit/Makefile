@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	umit
-PORTVERSION=	0.9.3
-PORTREVISION=	7
+PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-RC2 \
-				http://bio3k.softboard.ru/uploads/arch/
-
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	UMIT is the nmap frontend developed with Python and PyGTK
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-			${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-BROKEN=		leaves files behind on deinstallation
-
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_PYTHON=	yes
 USE_GNOME=	pygtk2
-INSTALLS_EGGINFO=	yes
+USE_PYTHON=	2.5+
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" || ${PYTHON_REL} > 260
 WITHOUT_PSYCO=	yes
 .endif
 
@@ -42,10 +38,7 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
 .endif
 
-do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
-
-do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install --prefix ${PREFIX}
+post-patch:
+	${REINPLACE_CMD} 's/self.build_html_doc()//' ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
