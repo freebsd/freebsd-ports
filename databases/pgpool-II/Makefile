@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/3076/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3114/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
+
+LICENSE=	BSD
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
-LICENSE=	BSD
 
-CONFLICTS=	pgpool-3.* pgpool-II-*
+CONFLICTS=	pgpool-3.* pgpool-II-2.* pgpool-II-3.0.*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp
@@ -29,6 +30,9 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 MAN8=		pgpool.8
 
+FUNCTIONS=	pgpool-recovery pgpool-regclass
+#FUNCTIONS+=	pgpool-walrecrunning
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
@@ -36,10 +40,14 @@ post-patch:
 	${WRKSRC}/sql/pgpool-recovery/Makefile
 
 post-build:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE}
+.for f in ${FUNCTIONS}
+	@cd ${WRKSRC}/sql/${f} && ${GMAKE}
+.endfor
 
 post-install:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} ${INSTALL_TARGET}
+.for f in ${FUNCTIONS}
+	@cd ${WRKSRC}/sql/${f} && ${GMAKE} ${INSTALL_TARGET}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${DATADIR}
 	${MKDIR} ${DATADIR} ${EXAMPLESDIR}

@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#        
+#
 # PROVIDE: pgpool
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
@@ -37,6 +37,9 @@ command="%%PREFIX%%/bin/pgpool"
 command_args="${pgpool_flags}"
 start_cmd="pgpool_start"
 stop_cmd="${command} ${command_args} stop"
+
+extra_commands="reload"
+reload_cmd="${command} ${command_args} reload"
 
 required_files="${pgpool_conf}"
 
