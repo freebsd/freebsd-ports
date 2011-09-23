@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.3.24
+PORTVERSION=	0.4.0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://nodeload.github.com/${PORTNAME}/${PORTNAME}/tarball/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -30,9 +30,11 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 CXXFLAGS+=	-Wno-invalid-offsetof
 
-WRKSRC=		${WRKDIR}/bitcoin-bitcoin-36aa6bd/src
+WRKSRC=		${WRKDIR}/bitcoin-bitcoin-72274ed/src
 
-LOCALES=	cs de eo es fr it lt nl pt ru sv zh_cn
+DIST_SUBDIR=	${PORTNAME}
+
+LOCALES=	cs de eo es fr it lt nl pt ro ru sv zh_cn
 
 .include <bsd.port.options.mk>
 
@@ -69,6 +71,10 @@ PLIST_DIRSTRY+=	${LOCALES:C|^|share/locale/|}
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${CP} ${WRKSRC}/protocol.h ${WRKSRC}/protocol.h.orig
+	@${AWK} 'BEGIN { f = 0 } { if ( $$0 ~ /^#include/ && f == 0 ) { f = 1; print "#include <sys/socket.h>"; print "#include <netinet/in.h>" }; print }' \
+		${WRKSRC}/protocol.h.orig > ${WRKSRC}/protocol.h
+
 	@cd ${WRKSRC} && ${CP} -p makefile.unix Makefile
 	@${REINPLACE_CMD} \
 		-e 's|wx-config|${WX_CONFIG}|g' \
@@ -85,7 +91,7 @@ do-install:
 
 .if !defined(WITHOUT_NLS)
 .  for lo in ${LOCALES}
-	${MKDIR} -p ${PREFIX}/share/locale/${lo}/LC_MESSAGES
+	@${MKDIR} ${PREFIX}/share/locale/${lo}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/../locale/${lo}/LC_MESSAGES/bitcoin.mo \
 		${PREFIX}/share/locale/${lo}/LC_MESSAGES/
 .  endfor
