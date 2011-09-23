@@ -52,7 +52,6 @@
     SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
-    SUBDIR += jabber-users-agent
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl

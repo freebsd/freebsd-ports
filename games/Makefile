@@ -15,7 +15,6 @@
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += abe
-    SUBDIR += abuse
     SUBDIR += abuse_sdl
     SUBDIR += acm
     SUBDIR += actx
@@ -116,7 +115,6 @@
     SUBDIR += cardpics
     SUBDIR += cave9
     SUBDIR += cavezofphear
-    SUBDIR += cchess
     SUBDIR += ceferino
     SUBDIR += cgoban
     SUBDIR += chanta
@@ -795,7 +793,6 @@
     SUBDIR += secretmaryochronicles
     SUBDIR += secretmaryochronicles-music
     SUBDIR += senken
-    SUBDIR += senso
     SUBDIR += sex
     SUBDIR += sfbol
     SUBDIR += shaaft
