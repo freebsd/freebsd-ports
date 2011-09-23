@@ -15,6 +15,9 @@ EXTRACT_SUFX=	-source.tar.bz2
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	A free UNIX software/file packaging program
 
+LICENSE=	GPLv2
+
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
