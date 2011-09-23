@@ -252,7 +252,7 @@ libg2c_DETECT=		${libg2c${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libg2c_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-libg2c
 
 libgcrypt_FILE=		${LINUXBASE}/lib/libgcrypt.so.11
-libgcrypt_f10_FILE=	${LINUXBASE}/lib/libgcrypt.so.11.5.1
+libgcrypt_f10_FILE=	${LINUXBASE}/lib/libgcrypt.so.11.5.2
 libgcrypt_DETECT=	${libgcrypt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libgcrypt_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libgcrypt
 
