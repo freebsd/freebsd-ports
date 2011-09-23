@@ -7,6 +7,7 @@
 
 PORTNAME=	tornado
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://github.com/downloads/facebook/tornado/
@@ -17,12 +18,17 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	ASL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl \
-		${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 FETCH_ARGS=	-pRr
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 260
+RUN_DEPENDS+=     ${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
+.endif
+
+.include <bsd.port.post.mk>
