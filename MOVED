@@ -2656,3 +2656,11 @@ palm/isilo||2011-09-22|Has expired: No more public distfiles
 news/ija||2011-09-22|Has expired: BROKEN for more than 6 month
 news/PicMonger||2011-09-22|Has expired: Abandonware
 net/py-zopeproxy|net/py-zope.proxy|2011-09-23|Removed: please use net/py-zope.proxy instead
+devel/libnotifymm||2011-09-23|Has expired: Doesn't build and isn't used by anything.
+games/abuse||2011-09-23|Has expired: BROKEN after games/abuse_sdl update
+security/donkey||2011-09-23|Has expired: No more public distfiles
+graphics/moth||2011-09-23|Has expired: No more public distfiles
+net-mgmt/aguri||2011-09-23|Has expired: No more public distfiles
+games/senso||2011-09-23|Has expired: No more public distfiles
+net-im/jabber-users-agent||2011-09-23|Has expired: No more public distfiles
+games/cchess||2011-09-23|Has expired: No more public distfiles

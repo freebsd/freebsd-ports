@@ -6,7 +6,6 @@
     SUBDIR += 2ping
     SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
-    SUBDIR += aguri
     SUBDIR += aircrack-ng
     SUBDIR += airport
     SUBDIR += angst

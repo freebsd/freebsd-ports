@@ -111,7 +111,6 @@
     SUBDIR += distcache
     SUBDIR += distcache-devel
     SUBDIR += dmitry
-    SUBDIR += donkey
     SUBDIR += doorman
     SUBDIR += doscan
     SUBDIR += dradis

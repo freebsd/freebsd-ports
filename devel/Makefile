@@ -862,7 +862,6 @@
     SUBDIR += libnaji
     SUBDIR += libnfc
     SUBDIR += libnotify
-    SUBDIR += libnotifymm
     SUBDIR += libnxt
     SUBDIR += liboil
     SUBDIR += libol
