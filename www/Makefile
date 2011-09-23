@@ -1160,6 +1160,7 @@
     SUBDIR += p5-Pod-Site
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-Protocol-WebSocket
+    SUBDIR += p5-Protocol-XMLRPC
     SUBDIR += p5-REST-Google-Apps-Provisioning
     SUBDIR += p5-RT-Authen-ExternalAuth
     SUBDIR += p5-RT-Client-REST

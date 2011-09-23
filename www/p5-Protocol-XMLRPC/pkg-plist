@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Protocol/XMLRPC.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Client.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Dispatcher.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Method.pm
+%%SITE_PERL%%/Protocol/XMLRPC/MethodCall.pm
+%%SITE_PERL%%/Protocol/XMLRPC/MethodResponse.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Array.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Base64.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Boolean.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/DateTime.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Double.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Integer.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/String.pm
+%%SITE_PERL%%/Protocol/XMLRPC/Value/Struct.pm
+%%SITE_PERL%%/Protocol/XMLRPC/ValueFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMLRPC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMLRPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
+@dirrm %%SITE_PERL%%/Protocol/XMLRPC/Value
+@dirrm %%SITE_PERL%%/Protocol/XMLRPC
+@dirrmtry %%SITE_PERL%%/Protocol
