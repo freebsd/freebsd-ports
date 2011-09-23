@@ -24304,6 +24304,7 @@ seyon                           ports/comms/seyon
 sfbol                           ports/games/sfbol
 sfio                            ports/devel/sfio
 sflowtool                       ports/net/sflowtool
+sfnt2woff                       ports/www/sfnt2woff
 sfml                            ports/devel/sfml
 sformat                         ports/sysutils/sformat
 sfront                          ports/audio/sfront
