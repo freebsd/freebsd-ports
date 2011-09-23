@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.38
+PORTVERSION=	3.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process huge XML documents by chunks via a tree interface
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 # On Perl < 5.8.0, XML::Twig has a further optional dependency on WeakRef.
 # However, WeakRef needs Perl 5.005_55.
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Tree>3:${PORTSDIR}/www/p5-HTML-Tree
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 CONFIGURE_ARGS+=	-y
