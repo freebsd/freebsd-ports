@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nspr-libs=${LOCALBASE}/lib	\
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \

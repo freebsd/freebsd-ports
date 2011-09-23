@@ -29,8 +29,8 @@ USE_GNOME=	gnomeprefix intlhack gnomehack pygnomedesktop \
 		gnomecontrolcenter2 gnomedocutils
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-	       	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	hamster-applet.schemas
 

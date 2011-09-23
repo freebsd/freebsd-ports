@@ -23,8 +23,8 @@ USE_GNOME=	gtk12 gnomehier
 USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

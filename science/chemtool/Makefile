@@ -19,7 +19,7 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" CPPFLAGS+="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 
 .include <bsd.port.pre.mk>

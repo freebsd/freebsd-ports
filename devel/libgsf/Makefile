@@ -28,8 +28,8 @@ USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS?=--without-gnome-vfs --without-python --with-gio \
 		--without-bonobo
-CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(GSF_SLAVE)
 MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1

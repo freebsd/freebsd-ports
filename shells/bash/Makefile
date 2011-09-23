@@ -98,9 +98,7 @@ CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="${LDFLAGS}" \
-			YACC="bison -y"
+CONFIGURE_ENV=		YACC="bison -y"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1

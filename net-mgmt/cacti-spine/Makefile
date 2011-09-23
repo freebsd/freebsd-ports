@@ -24,8 +24,8 @@ LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
-CONFIGURE_ENV=	LDFLAGS="`net-snmp-config --libs`" \
-		CPPFLAGS="`net-snmp-config --cflags`"
+CPPFLAGS+=	`net-snmp-config --cflags`
+LDFLAGS+=	`net-snmp-config --libs`
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
 USE_AUTOTOOLS=	libtool

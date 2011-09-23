@@ -39,8 +39,8 @@ INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	f-spot.schemas
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--with-vendor-build-id=FreeBSD\ BSD\#\ Project
 

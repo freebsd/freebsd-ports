@@ -15,8 +15,8 @@ MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Gyach is a GTK+ based Yahoo! Chat client
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>

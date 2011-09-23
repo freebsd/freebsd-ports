@@ -22,8 +22,8 @@ LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 

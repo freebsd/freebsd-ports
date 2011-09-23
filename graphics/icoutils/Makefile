@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		extresso.1 genresscript.1 icotool.1 wrestool.1
@@ -32,8 +31,8 @@ PLIST_FILES=	bin/extresso \
 		bin/icotool \
 		bin/wrestool
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

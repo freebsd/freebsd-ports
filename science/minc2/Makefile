@@ -30,8 +30,8 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
 
 CONFLICTS=	minc-1*

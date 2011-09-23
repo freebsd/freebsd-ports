@@ -33,8 +33,8 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 .endif
 
 MAN1=		gendiff.1

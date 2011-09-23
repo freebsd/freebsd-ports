@@ -28,7 +28,7 @@ PLIST_FILES=	bin/tiff2png
 
 CFLAGS+=	-DINVERT_MINISWHITE -DFAXPECT -DDEFAULT_DESTDIR_IS_CURDIR \
 		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
+LDFLAGS+=	-L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tiff2png ${PREFIX}/bin

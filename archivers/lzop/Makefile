@@ -23,7 +23,7 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		lzop.1
 PLIST_FILES=	bin/lzop

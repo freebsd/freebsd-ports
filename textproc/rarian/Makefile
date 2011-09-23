@@ -37,8 +37,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-convert-dir=${LOCALBASE}/share/omf \
 		--datadir=${PREFIX}/share \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rarian|/db/rarian|' \

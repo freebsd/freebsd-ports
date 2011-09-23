@@ -32,7 +32,7 @@ MAN1=		prommgr.1
 
 .if defined(WITH_LUA)
 CONFIGURE_ARGS+=	--enable-lua
-CONFIGURE_ENV+=	LDFLAGS="-L${LUA_LIBDIR}"
+LDFLAGS+=	-L${LUA_LIBDIR}
 CFLAGS+=	-I${LUA_INCDIR}
 USE_LUA=	yes
 .endif

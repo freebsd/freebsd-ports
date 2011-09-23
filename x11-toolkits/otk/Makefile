@@ -24,8 +24,8 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	include/gadget_lib.h include/otk_lib.h \
 		lib/libotk.so lib/libotk.so.0
 
-CPPFLAGS=	-I${LOCALBASE}/include -fPIC
-LDFLAGS=	-lGLU -lGL -lXmu -lXext -lX11 -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
+LDFLAGS+=	-lGLU -lGL -lXmu -lXext -lX11 -L${LOCALBASE}/lib
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -shared otk_lib.c \

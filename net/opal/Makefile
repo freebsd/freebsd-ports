@@ -29,8 +29,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>

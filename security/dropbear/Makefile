@@ -24,7 +24,7 @@ USE_RC_SUBR=	${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_STATIC)
-CONFIGURE_ENV=	LDFLAGS=-static
+LDFLAGS+=	-static
 .endif
 
 post-patch:

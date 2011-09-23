@@ -20,9 +20,9 @@ USE_SDL=	sdl
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-DCONFIG_FILE_ETC_TIMIDITY \"${LOCALBASE}/etc/timidity.cfg\"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-DCONFIG_FILE_ETC_TIMIDITY=\"${LOCALBASE}/etc/timidity.cfg\"
 USE_LDCONFIG=	yes
 
 OPTIONS=	MIKMOD		"Enable MOD music via libMikMod"	On \

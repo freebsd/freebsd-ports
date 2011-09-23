@@ -30,11 +30,11 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
-			-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib/libquicktime	\
-			-L${LOCALBASE}/lib"	\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include/lqt		\
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/libquicktime	\
+		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-dv1394
 MAN1=	kino.1 kino2raw.1
 

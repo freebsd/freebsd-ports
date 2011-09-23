@@ -1,4 +1,5 @@
 bin/quantlib-config
+bin/quantlib-test-suite
 include/ql/auto_link.hpp
 include/ql/cashflow.hpp
 include/ql/cashflows/all.hpp

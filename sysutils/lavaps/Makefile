@@ -45,6 +45,4 @@ CONFIGURE_ARGS+=	--with-tcltk --disable-nls \
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
 .include <bsd.port.post.mk>

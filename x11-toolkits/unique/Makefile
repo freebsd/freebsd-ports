@@ -27,8 +27,8 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 gnomeprefix ltverhack:2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-flags
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \

@@ -20,8 +20,8 @@ LIB_DEPENDS=	gksu2:${PORTSDIR}/sysutils/libgksu \
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack gconf2 intlhack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gksu.1
 

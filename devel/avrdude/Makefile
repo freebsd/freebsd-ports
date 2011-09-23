@@ -18,7 +18,8 @@ MAN1=		avrdude.1
 MANCOMPRESSED=	no
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>

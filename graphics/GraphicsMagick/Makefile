@@ -56,8 +56,8 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 CFLAGS+=	-DPNG_DEPSTRUCT=
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"       \
-	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check

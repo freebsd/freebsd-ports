@@ -33,7 +33,8 @@ USE_PYTHON=	2.6+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	pygtk2
 MAN1=	system-config-printer-applet.1 system-config-printer.1
 PLIST_SUB=	PYTHON_VER=${PYTHON_VERSION:S/python//}

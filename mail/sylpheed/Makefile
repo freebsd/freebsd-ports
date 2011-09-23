@@ -26,9 +26,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 # Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
 		--with-libintl-prefix=${LOCALBASE} \

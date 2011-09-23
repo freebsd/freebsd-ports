@@ -34,7 +34,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomemenus \
 		gnomedesktop ltverhack libgnomeui librsvg2
 USE_GSTREAMER=	theora
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/js -I${LOCALBASE}/include/nspr"
+CPPFLAGS+=	-I${LOCALBASE}/include/js -I${LOCALBASE}/include/nspr
 
 GCONF_SCHEMAS=	gnome-shell.schemas
 

@@ -33,7 +33,7 @@ LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia
-CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1 LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -17,7 +17,8 @@ COMMENT=	Portable bandwidth monitor and rate estimator
 OPTIONS=	RRDTOOL "Enable RRD support" Off \
 		DBI	"Enable DBI support" On
 
-CONFIGURE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib" "CPPFLAGS=-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-asound
 USE_GMAKE=	YES

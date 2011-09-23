@@ -18,8 +18,8 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		rplay.1 rptp.1
 MAN5=		rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplay.servers.5

@@ -30,7 +30,6 @@ OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes

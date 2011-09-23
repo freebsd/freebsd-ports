@@ -26,8 +26,8 @@ USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxxlua \
 		--with-libintl-prefix="${LOCALBASE}"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

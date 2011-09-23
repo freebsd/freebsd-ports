@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	intlhack gtk20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/libs"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/libs
 
 .include <bsd.port.mk>

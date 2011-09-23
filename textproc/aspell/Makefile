@@ -27,8 +27,8 @@ CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-static
 PTHREAD_CFLAGS=		# Disable threading
 PTHREAD_LIBS=		# libaspell may be used by unthreaded apps.
-CPPFLAGS=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS} ${PTHREAD_LIBS}"
+CPPFLAGS+=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes

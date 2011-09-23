@@ -35,7 +35,8 @@ CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--disable-statsysbfd \
 	--disable-locbfd \
 	--enable-custreloc
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" C_INCLUDE_PATH=${PREFIX}/include LIBRARY_PATH=${PREFIX}/lib
+CONFIGURE_ENV=	C_INCLUDE_PATH=${PREFIX}/include LIBRARY_PATH=${PREFIX}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 MAKEFILE=	makefile
 
 INFO=	gcl-si gcl-tk

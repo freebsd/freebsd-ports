@@ -37,8 +37,8 @@ USE_XORG+=	x11 xau ice xproto xmu xpm
 WANT_GNOME=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	IODBC		"iODBC support"				on \
 		UNIXODBC	"unixODBC support (not with iODBC)"	off \

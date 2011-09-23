@@ -23,8 +23,8 @@ USE_GNOME=	gnomecanvas gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	XML_I18N_UPDATE="${TRUE}" XML_I18N_EXTRACT="${TRUE}"
 
 .include <bsd.port.mk>

@@ -21,8 +21,8 @@ USE_GNOME=	gnomehack gtk20
 WANT_GNOME=	yes
 WANT_SDL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
 PLIST_FILES=	bin/mhwaveedit \

@@ -17,9 +17,9 @@ COMMENT=	A set of utilities to configure and monitor wireless access points
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
-CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 .if !defined(WITHOUT_NLS)

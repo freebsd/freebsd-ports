@@ -28,7 +28,7 @@ MAN6=		nighthawk.6
 CFLAGS+=	-DINSTALL_DIR=\\\"\${DATADIR}\\\" \
 		-DSCORES_FILE=\\\"/var/games/nighthawk.scores\\\" \
 		-I${LOCALBASE}/include
-LDFLAGS=	-lm -L${LOCALBASE}/lib -lX11 -lGL -lGLU -lglut
+LDFLAGS+=	-lm -L${LOCALBASE}/lib -lX11 -lGL -lGLU -lglut
 
 post-patch:
 	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \

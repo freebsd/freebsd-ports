@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include"
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1_EN=	aconnect.1 alsactl.1 alsamixer.1 amidi.1 amixer.1 aplay.1 aplaymidi.1 \
 		arecordmidi.1 aseqdump.1 aseqnet.1 iecset.1 speaker-test.1
@@ -42,11 +42,11 @@ CONFIGURE_ARGS+=--disable-xmlto
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif

@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" TINYXML=-ltinyxml
+MAKE_ENV+=	TINYXML=-ltinyxml
 
 PLIST_FILES=	bin/cppcheck
 

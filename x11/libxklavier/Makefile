@@ -32,8 +32,7 @@ CONFIGURE_ARGS=	--disable-doxygen \
 		--with-xmodmap-base=${LOCALBASE}/share/xmodmap \
 		--disable-gtk-doc \
 		--with-html-dir=${GNOME_HTML_DIR}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

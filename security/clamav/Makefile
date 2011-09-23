@@ -44,8 +44,6 @@ PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
 USE_AUTOTOOLS=	libltdl
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \

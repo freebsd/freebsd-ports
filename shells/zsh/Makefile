@@ -31,7 +31,7 @@ USE_NCURSES=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .endif
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
 .if defined(WITH_ZSH_STATIC)
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
+LDFLAGS+=	-static
 CONFIGURE_ARGS+=	--disable-dynamic
 PLIST_SUB+=		SHARED="@comment "
 .else

@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	autoconf libtool:env
 CONFIGURE_ARGS=	--disable-shared \
 	--with-apr=${LOCALBASE}/bin/apr-1-config \
 	--with-apr-util=${LOCALBASE}/bin/apu-1-config
-CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib"
+LDFLAGS+=	-L${PREFIX}/lib
 USE_GMAKE=	yes
 USE_ICONV=	yes
 

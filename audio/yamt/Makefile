@@ -19,8 +19,8 @@ COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

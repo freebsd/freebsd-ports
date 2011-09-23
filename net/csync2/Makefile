@@ -30,9 +30,9 @@ MAN1=		csync2.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+CONFIGURE_ENV=	LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	csync2
 

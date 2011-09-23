@@ -46,7 +46,6 @@ CONFIGURE_ARGS=		--program-prefix='' \
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql
 .endif
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CFLAGS+=	-I"${BDB_INCLUDE_DIR}"
 LDFLAGS+=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 USE_RC_SUBR=	memcacheq
 USE_BDB=	47+

@@ -18,8 +18,8 @@ COMMENT=	Netcat clone with IPv6 support
 MAN1=	nc6.1
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

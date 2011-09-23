@@ -19,7 +19,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=/usr --enable-multi-byte
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		ltxml.1 xmlnorm.1 pesis.1 sgcount.1 sggrep.1 sgmlsb.1 \
 		sgmlseg.1 sgmltoken.1 sgmltrans.1 sgrpg.1 textonly.1 \

@@ -29,7 +29,7 @@ PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
 		-I${LOCALBASE}/include/tk${TK_VER} ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -ltcl${USE_TCL} -ltk${USE_TK} ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -ltcl${USE_TCL} -ltk${USE_TK} ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

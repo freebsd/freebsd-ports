@@ -17,8 +17,6 @@ COMMENT=	Command-line CD/DVD writing suite
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
 		isodebug.1 isodump.1 isoinfo.1 isovfy.1 list_audio_tracks.1 \

@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 MAN1=		less.1 lesskey.1 lessecho.1
 
 .if defined(COLOUR_LESS) || defined(COLOR_LESS)
-MAKE_ENV=	CPPFLAGS="-DCOLOR_LESS"
+CPPFLAGS+=	-DCOLOR_LESS
 
 pre-fetch:
 	@${ECHO_MSG} "Making a color version of less."

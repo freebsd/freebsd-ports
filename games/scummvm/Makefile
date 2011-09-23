@@ -28,8 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-debug \
 		--disable-nasm \
 		--disable-tremor
-CONFIGURE_ENV=	CXX="${CXX}"
- 		LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" on \
 		MP3 "Enable MP3 support" on \

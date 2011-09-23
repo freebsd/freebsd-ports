@@ -26,8 +26,8 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GNOME?=	gnomeprefix gnomehack gtk20 ltverhack referencehack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 #		BSD_PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS?=--disable-python \
 		--disable-Bsymbolic \

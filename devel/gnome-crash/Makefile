@@ -17,7 +17,7 @@ COMMENT=	A small coredump analysis tool for GNOME
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade gnomeprint
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

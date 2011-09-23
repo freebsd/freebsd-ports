@@ -33,8 +33,8 @@ BIN_FILES=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
 INC_FILES=	libmpeg3.h mpeg3private.h mpeg3protos.h
 LIB_FILES=	libmpeg3.a
 
-CPPFLAGS=	-I. -I${LOCALBASE}/include/a52dec ${PTHREAD_CFLAGS}
-LDFLAGS=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
+CPPFLAGS+=	-I. -I${LOCALBASE}/include/a52dec ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
 
 NASM?=		${LOCALBASE}/bin/nasm
 

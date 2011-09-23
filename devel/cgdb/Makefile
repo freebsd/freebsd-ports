@@ -28,7 +28,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LDFLAGS+=	-rpath ${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 post-patch:

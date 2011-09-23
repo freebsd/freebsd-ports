@@ -38,11 +38,11 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-mspack\
 		--with-gtk\
 		--disable-backtrace
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"\
 		X11BASE="${LOCALBASE}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 NO_LATEST_LINK=	yes
 PLIST=		${.CURDIR}/pkg-plist
 

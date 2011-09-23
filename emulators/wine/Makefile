@@ -28,7 +28,8 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		png.6:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2
 
-CPPFLAGS=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --with-glu \
@@ -36,8 +37,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--with-opengl --without-mpg123 --with-oss --without-sane \
 		--without-v4l --without-xcomposite --without-xinerama \
 		--with-xinput2 --with-xrandr
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		FLEX="${LOCALBASE}/bin/flex"
+CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine

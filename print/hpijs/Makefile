@@ -23,8 +23,8 @@ CONFIGURE_ARGS=		--disable-dependency-tracking
 USE_GHOSTSCRIPT_RUN=	yes
 WANT_PERL=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	CUPS		"install support for cups" on \
 		FOOMATIC	"install foomatic-rip and ppd files" on

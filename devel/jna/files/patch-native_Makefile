@@ -3,6 +3,15 @@ $FreeBSD$
 
 --- native/Makefile.orig
 +++ native/Makefile
+@@ -20,6 +20,8 @@
+ # protection simply by defining HAVE_PROTECTION.  This has been enabled
+ # only for those platforms on which it has been tested successfully.
+ 
++unexport LDFLAGS
++
+ OS=$(shell uname | sed -e 's/\(CYGWIN\|MINGW32\).*/win32/g' \
+                         -e 's/SunOS.*/solaris/g' \
+                         -e 's/FreeBSD.*/freebsd/g' \
 @@ -135,7 +135,7 @@
  ifeq ($(OS),freebsd)
  ARCH=$(shell uname -m | sed 's/i.86/i386/g')

@@ -27,7 +27,6 @@ USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
 INSTALLS_ICONS=	yes
@@ -36,8 +35,8 @@ MANCOMPRESSED=	yes
 MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
 INFO=		sawfish
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

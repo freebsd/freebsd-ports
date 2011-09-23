@@ -53,9 +53,8 @@ CONFIGURE_ARGS+=	--enable-replication
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CFLAGS+=		-I${LOCALBASE}/include
-CPPFLAGS=		${CFLAGS}
+CPPFLAGS+=		${CFLAGS}
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-sasl
 .endif

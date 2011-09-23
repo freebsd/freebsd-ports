@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	autoconf libtool aclocal automake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 OPTIONS=	HAMLIB "Use hamlib" ON
 
 MAN1=		tlf.1

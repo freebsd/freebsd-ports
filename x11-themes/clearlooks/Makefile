@@ -20,8 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(PORTNAME) && !defined(PKGNAMESUFFIX)
 OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off \

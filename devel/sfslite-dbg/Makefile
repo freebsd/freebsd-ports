@@ -13,5 +13,5 @@ COMMENT=	sfslite with dmalloc and without optimization
 LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
 PKG_INSTALL=	${MASTERDIR}/pkg-install
 
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include

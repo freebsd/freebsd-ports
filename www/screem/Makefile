@@ -22,8 +22,8 @@ USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix \
 USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	screem.schemas

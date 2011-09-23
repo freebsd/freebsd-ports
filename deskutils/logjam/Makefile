@@ -24,8 +24,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2 intlhack
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell

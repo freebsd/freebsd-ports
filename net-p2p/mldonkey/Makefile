@@ -30,15 +30,13 @@ ALL_TARGET=	opt
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS+=\
-		--enable-ocamlver=3 \
+CONFIGURE_ARGS+=--enable-ocamlver=3 \
 		--with-libiconv-prefix=${LOCALBASE}
-CONFIGURE_ENV+=	\
-		NEWCXX="${CXX}" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=	NEWCXX="${CXX}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 ###
 ## Library dependency handling

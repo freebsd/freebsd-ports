@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstr
 		--enable-info
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV=	MAKE="${GMAKE}"
 
 USE_LDCONFIG=	yes

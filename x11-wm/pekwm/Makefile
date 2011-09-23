@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-image-png --disable-debug \
 		--disable-pedantic
 CFLAGS+=	-DICONV_CONST -I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 MAN1=		pekwm.1
 MANCOMPRESSED=	no
 

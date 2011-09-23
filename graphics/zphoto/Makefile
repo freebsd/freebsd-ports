@@ -25,9 +25,9 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-	       	CPPFLAGS="-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
 USE_EFL=	imlib2
 .if defined (WITH_WXGTK2)
 USE_WX=		2.4

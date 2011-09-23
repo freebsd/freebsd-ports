@@ -21,8 +21,8 @@ RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtktalog.1
 

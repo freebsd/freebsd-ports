@@ -31,8 +31,8 @@ GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libxml2 gconf2
 USE_GSTREAMER=	gconf good
 CONFIGURE_ARGS=	--disable-gstmix
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gnome-audio-profiles.schemas \
 		gnome-sound-recorder.schemas

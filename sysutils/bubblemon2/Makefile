@@ -20,8 +20,8 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
-		LDFLAGS="-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`"
+CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 
 MAN1=		bubblemon-gnome2.1
 MANLANG=	"" hu sv

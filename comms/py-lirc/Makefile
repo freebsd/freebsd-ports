@@ -21,7 +21,6 @@ LIB_DEPENDS=	lirc_client.2:${PORTSDIR}/comms/lirc
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylircmodule.so
 
 USE_PYTHON=	yes

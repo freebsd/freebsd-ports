@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 GCONF_SCHEMAS=	buoh.schemas

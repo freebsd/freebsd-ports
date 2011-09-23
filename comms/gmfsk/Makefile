@@ -19,8 +19,8 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 GNU_CONFIGURE=	yes
 # This is pure evil but it looks like autoconf 2.53 has a bug in linking the
 # preprocessor include tests.  The following line is a work around.
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
 INSTALLS_OMF=	yes

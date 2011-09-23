@@ -19,8 +19,8 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
+CPPFLAGS+=	`${SDL_CONFIG} --cflags`
+LDFLAGS+=	`${SDL_CONFIG} --libs`
 CONFIGURE_ARGS=	--program-transform-name=
 
 OPTIONS=	EDITOR "Enable building of the map editor" on \

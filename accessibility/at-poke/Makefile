@@ -18,7 +18,7 @@ COMMENT=	Accessibility testing and poking tool
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix libglade2 libgailgnome
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

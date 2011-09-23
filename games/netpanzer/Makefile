@@ -20,8 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpan
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libphysfs=${LOCALBASE} --without-wx-config
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image ttf

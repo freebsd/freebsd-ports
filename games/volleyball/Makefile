@@ -21,7 +21,7 @@ USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
 MAKE_JOBS_SAFE=	yes
 

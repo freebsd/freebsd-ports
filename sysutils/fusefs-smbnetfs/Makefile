@@ -21,7 +21,7 @@ BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 SUB_FILES=	pkg-message
 
 post-install:

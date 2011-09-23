@@ -32,19 +32,19 @@ USE_GNOME=	gnomehack
 USE_SQLITE=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" HAVE_UNIX98=1
+CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		linuxsampler.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_JACK)
-CONFIGURE_ARGS+=--disable-jack-driver	
+CONFIGURE_ARGS+=--disable-jack-driver
 .else
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .endif
@@ -66,7 +66,7 @@ BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 PLIST_SUB+=	DSSI=""
 .else
-CONFIGURE_ENV+=	ac_cv_header_dssi_h=no	
+CONFIGURE_ENV+=	ac_cv_header_dssi_h=no
 PLIST_SUB+=	DSSI="@comment "
 .endif
 

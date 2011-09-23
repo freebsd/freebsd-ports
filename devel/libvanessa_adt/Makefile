@@ -21,8 +21,8 @@ USE_LDCONFIG=	YES
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} "s,^SUBDIRS = libvanessa_adt test debian,SUBDIRS = libvanessa_adt," \

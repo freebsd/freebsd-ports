@@ -28,7 +28,7 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${LOCALBASE} \
 		--with-gnome=no
-CONFIGURE_ENV=	CPPFLAGS="`${LOCALBASE}/bin/sigc-config --cflags`"
+CPPFLAGS+=	`${LOCALBASE}/bin/sigc-config --cflags`
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(gtkmm_config_args[[:space:]]*=).+$$|\1|' \

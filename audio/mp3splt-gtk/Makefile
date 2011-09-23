@@ -23,8 +23,8 @@ LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
 USE_AUTOTOOLS=	libltdl
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-audacious --with-mp3splt=${LOCALBASE} --with-mp3splt-includes=${LOCALBASE}/include --with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest
 
 MAN1=	mp3splt-gtk.1

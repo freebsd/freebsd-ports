@@ -32,9 +32,9 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-failing-tests \
 		--disable-gtk-doc
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		ac_cv_func_register_printf_function="no" \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	ac_cv_func_register_printf_function="no" \
 		FLEX_PATH="${LOCALBASE}/bin/flex"
 PLIST_SUB=	VERSION="${GST_VERSION}"
 USE_LDCONFIG=	yes

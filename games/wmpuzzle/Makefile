@@ -19,13 +19,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN6=		wmpuzzle.6
 PLIST_FILES=	bin/wmpuzzle
 
-CPPFLAGS=	-I${LOCALBASE}/include -DBSD
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -DBSD
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${PREFIX}/bin

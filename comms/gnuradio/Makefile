@@ -40,8 +40,8 @@ USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 		--enable-grc \

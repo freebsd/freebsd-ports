@@ -23,7 +23,7 @@ USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-xmame-dir=${LOCALBASE}/share/xmame
 
 .if defined(WITHOUT_NLS)

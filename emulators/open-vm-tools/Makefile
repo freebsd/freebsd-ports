@@ -42,8 +42,8 @@ CONFIGURE_ARGS+=	--disable-unity
 .endif
 LIB_DEPENDS+=		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 CONFIGURE_ARGS+=	--with-x
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
 			xtst
 USE_GNOME=		gtk20 glib20

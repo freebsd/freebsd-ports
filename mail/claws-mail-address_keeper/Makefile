@@ -25,7 +25,7 @@ USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

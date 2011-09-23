@@ -18,9 +18,9 @@ COMMENT=	Programs used to isolate some parts or texts before spell-checking
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
-		LIBS='-L${LOCALBASE}/lib'		\
-		LDFLAGS=-lintl
+CONFIGURE_ENV=		LIBS='-L${LOCALBASE}/lib'
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lintl
 
 MAN1=		pospell.1 newsbody.1
 

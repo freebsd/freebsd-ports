@@ -39,9 +39,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 		--with-omfdirs=${PREFIX}/share/omf \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
 
 MAN1=	scrollkeeper-config.1 scrollkeeper-gen-seriesid.1

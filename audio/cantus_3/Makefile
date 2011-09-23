@@ -30,9 +30,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 glib20
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--program-transform-name="" --disable-static
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 

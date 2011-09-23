@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}
 

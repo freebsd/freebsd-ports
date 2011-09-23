@@ -106,12 +106,12 @@ CONFIGURE_ARGS+=--disable-unihan
 PLIST_SUB+=	UNIHAN="@comment "
 .endif
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
-		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}" \
-		PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
+CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR} \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt"
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
+		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
 .if defined(WITH_UNIHAN)
 post-extract:

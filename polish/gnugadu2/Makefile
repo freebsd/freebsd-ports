@@ -46,8 +46,8 @@ CONFIGURE_ARGS=	--disable-esdtest \
 		--without-perl \
 		--without-remote
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	TLEN	"Enable Tlen.pl network plugin"		off \
 		JABBER	"Enable Jabber loudmouth plugin"	off \

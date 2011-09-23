@@ -13,8 +13,8 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Library C with some additional C++ bindings available
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes

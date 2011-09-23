@@ -16,8 +16,8 @@ COMMENT=	A clone of Activision's classic Atari 2600 console game "Kaboom!"
 
 USE_SDL=	mixer image sdl
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -DDATA_PREFIX=\"${DATADIR}/\"
-LDFLAGS=	`${SDL_CONFIG} --libs`
+CPPFLAGS+=	`${SDL_CONFIG} --cflags` -DDATA_PREFIX=\"${DATADIR}/\"
+LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME} \

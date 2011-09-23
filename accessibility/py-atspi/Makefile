@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomehier intlhack gtk20 libxml2
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

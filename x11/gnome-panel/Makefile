@@ -36,8 +36,8 @@ WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-network-manager
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CPPFLAGS="-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		gnome-panel.1
 GCONF_SCHEMAS=	clock.schemas fish.schemas \

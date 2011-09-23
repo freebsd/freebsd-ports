@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=	--with-authinfo-ldap
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
 AUTHINFO_EXT+=	authinfo_ldap.ext
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 CONFIGURE_ARGS+=	--program-transform-name=''
 

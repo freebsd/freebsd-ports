@@ -23,8 +23,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
 USE_GETTEXT=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	ggv.schemas
 

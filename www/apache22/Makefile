@@ -82,10 +82,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config
 
-CONFIGURE_ENV= \
-		CC="${CC}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	\
 		CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 

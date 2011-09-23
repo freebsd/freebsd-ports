@@ -19,7 +19,8 @@ COMMENT=An improved WHOIS client capable of selecting server to query
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CPPFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls

@@ -16,7 +16,7 @@ COMMENT=	TCPSER turns serial port into an emulated Hayes compatible modem
 WRKSRC=		${WRKDIR}/tcpser
 USE_GMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
-MAKE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS}
 PORTDOCS=	README CHANGES
 PLIST_FILES=	bin/tcpser
 

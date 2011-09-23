@@ -21,8 +21,8 @@ USE_GNOME=	gnomehack gnomeprefix libbonobo
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

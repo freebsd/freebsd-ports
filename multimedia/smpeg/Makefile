@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
 		CC="${CXX}" REAL_CC="${CC}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 #If you want to try the opengl player (which doesn't seem to work)
 #comment out the following line.

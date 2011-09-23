@@ -54,9 +54,8 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	collectd-4.[0-9]*
 
-CPPFLAGS=	-I${LOCALBASE}/include
-
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

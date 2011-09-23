@@ -17,8 +17,8 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

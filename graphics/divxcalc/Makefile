@@ -21,8 +21,8 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/divxcalc
 

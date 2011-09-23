@@ -30,8 +30,8 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME+=	gnomehack glib20 ltverhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-introspection=yes --with-libjasper
 
 MAN1=		gdk-pixbuf-csource.1 gdk-pixbuf-query-loaders.1

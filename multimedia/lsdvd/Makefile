@@ -17,7 +17,8 @@ COMMENT=	Print information about the contents and structure of a DVD
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		lsdvd.1
 PLIST_FILES=	bin/lsdvd

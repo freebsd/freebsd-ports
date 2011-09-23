@@ -16,15 +16,15 @@ COMMENT=	A fast Bayesian Mail Filter compatible with maildrop and procmail
 
 .if defined(WITH_BDB41)
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	DB_LIBNAME=-ldb41
 .elif defined(WITH_BDB4)
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	DB_LIBNAME=-ldb4
 .elif defined(WITH_BDB3)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	DB_LIBNAME=-ldb3
 .endif
 

@@ -17,8 +17,8 @@ COMMENT=	An application to help CSS style sheets creation and maintenance
 
 USE_GNOME=	gnomehack gtk20 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-plugin-headers
 
 MAN1=		cssed.1

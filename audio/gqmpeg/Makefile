@@ -28,8 +28,8 @@ USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	autoconf213 libtool
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gqmpeg.1
 

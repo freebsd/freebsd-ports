@@ -40,8 +40,8 @@ CONFIGURE_ARGS+=--without-gtkspell
 .endif
 
 .if !defined(WITHOUT_NLS)
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""

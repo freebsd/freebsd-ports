@@ -32,12 +32,12 @@ DOCFILES=	${FILESDIR}/porting.notes
 USE_TK=		82+
 
 .include <bsd.port.pre.mk>
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib \
-			-lX11 -ltcl${TCL_VER:S/.//} \
-			-ltk${TCL_VER:S/.//} -lm" \
-		CPPFLAGS="-I${TCL_INCLUDEDIR} -DHAVE_TCL \
-			-I${TK_INCLUDEDIR} -DHAVE_TK \
-			-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${TCL_INCLUDEDIR} -DHAVE_TCL \
+		-I${TK_INCLUDEDIR} -DHAVE_TK \
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib \
+		-lX11 -ltcl${TCL_VER:S/.//} \
+		-ltk${TCL_VER:S/.//} -lm
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/uuwish

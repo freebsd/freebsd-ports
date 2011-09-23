@@ -41,8 +41,8 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix gnomehack vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-vala \
 		--enable-introspection=no

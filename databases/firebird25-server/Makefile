@@ -41,8 +41,7 @@ CONFIGURE_ARGS=	--with-system-editline \
 		--with-fbsbin=${PREFIX}/sbin \
 		--with-fbsecure-db=${LOCALSTATEDIR} \
 		--with-fbudf=${LIBEXECDIR}/UDF
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 CFLAGS+=	-I${LOCALBASE}/include

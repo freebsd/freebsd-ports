@@ -25,7 +25,7 @@ USE_XORG=	x11 ice xtst xaw xproto xext
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-jni --disable-alsa --disable-dssi --disable-plugin
 USE_GMAKE=	yes
 

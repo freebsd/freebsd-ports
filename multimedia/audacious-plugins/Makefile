@@ -19,9 +19,8 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include" \
-		CPP=${CPP}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa \
 		--disable-pulse --disable-projectm-1.0
 WANT_GNOME=	yes

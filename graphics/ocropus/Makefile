@@ -30,7 +30,8 @@ USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GCC=	4.2+
 
 .include <bsd.port.pre.mk>

@@ -19,8 +19,8 @@ USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-sdltest --enable-static
 USE_LDCONFIG=	yes
 

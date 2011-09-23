@@ -20,8 +20,8 @@ LIB_DEPENDS=	poppler.13:${PORTSDIR}/graphics/poppler
 LIB_DEPENDS+=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS} \
-		CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/pdf2djvu

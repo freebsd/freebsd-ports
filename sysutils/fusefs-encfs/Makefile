@@ -27,7 +27,8 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
 		--with-boost-filesystem=boost_filesystem
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

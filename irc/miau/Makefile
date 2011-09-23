@@ -32,9 +32,8 @@ CONFIGURE_ARGS=		--enable-dccbounce \
 			--enable-empty-awaymsg \
 			--enable-dumpstatus \
 			--disable-dependency-tracking
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS}" \
-			LIBS="${LIBS}"
+CONFIGURE_ENV=		LIBS="${LIBS}"
+CPPFLAGS+=		-I${LOCALBASE}/include
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6

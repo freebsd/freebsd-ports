@@ -36,7 +36,7 @@ TIMIDITY_VERSION=	2.13.2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump --with-default-path=${LOCALBASE}/share/timidity
-CONFIGURE_ENV=	LDFLAGS=-export-dynamic
+LDFLAGS+=	-export-dynamic
 USE_GMAKE=	yes
 USE_XORG=	xpm xmu
 WANT_GNOME=	yes

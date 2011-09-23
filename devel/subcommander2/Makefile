@@ -38,8 +38,8 @@ CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}/include --with-neon=${LOCALBASE} \
 			--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config \
 			--with-openssl=${OPENSSLBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4 ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4 ${PTHREAD_LIBS}
 
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/configure

@@ -35,7 +35,7 @@ DO_NOT_COMPILE+=kopete lanbrowsing filesharing
 CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
 
 .if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

@@ -32,7 +32,6 @@ MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if ${ARCH} == "sparc64"

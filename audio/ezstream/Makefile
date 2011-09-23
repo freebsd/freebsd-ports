@@ -24,7 +24,6 @@ USE_GNOME=	libxml2
 USE_ICONV=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		ezstream.1 ezstream-file.sh.1
 PORTDOCS=	NEWS README
@@ -34,8 +33,8 @@ PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_vorbis.xml meta.sh play.sh
 PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml '@dirrm etc/ezstream'
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

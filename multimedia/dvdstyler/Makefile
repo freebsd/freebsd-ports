@@ -41,7 +41,7 @@ USE_GETTEXT=	yes
 USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
 GNU_CONFIGURE=	yes
 CPPFLAGS+= 	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAN1=		dvdstyler.1
 
 .include <bsd.port.pre.mk>

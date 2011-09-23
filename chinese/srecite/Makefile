@@ -19,8 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for the Chinese people to study foreign language
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 

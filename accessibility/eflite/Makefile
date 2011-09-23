@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--with-vox=${FL_VOX}
 CONFIGURE_ARGS+=	--with-vox=cmu_us_kal16
 .endif
 
-CONFIGURE_ENV+=		flite_dir=${LOCALBASE}
+CONFIGURE_ENV+=	flite_dir=${LOCALBASE}
 
 PLIST_FILES=	bin/eflite
 PORTDOCS=	AUTHORS CREDITS ChangeLog INSTALL README

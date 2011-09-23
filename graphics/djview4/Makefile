@@ -24,10 +24,10 @@ QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
 		--x-libraries="${X11BASE}/lib"
 CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
-		QMAKESPEC="${QMAKESPEC}" \
-		CFLAGS="-I${LOCALBASE}/include" \
-		CXXFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		QMAKESPEC="${QMAKESPEC}"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .if defined(CXX) && ${CXX:M*icc}

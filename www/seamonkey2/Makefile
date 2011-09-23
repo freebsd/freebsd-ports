@@ -32,8 +32,9 @@ ALL_TARGET=	default
 MAKE_JOBS_SAFE=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} CPPFLAGS="-I${LOCALBASE}/include/cairo" \
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func__Unwind_Backtrace=no
+CPPFLAGS+=	-I${LOCALBASE}/include/cairo
 USE_GCC=	4.2+
 
 MOZ_EXTENSIONS=	default

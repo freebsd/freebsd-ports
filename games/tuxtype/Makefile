@@ -19,8 +19,9 @@ USE_GMAKE=	yes
 USE_SDL=	image mixer sdl ttf pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread"
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.17/.16/}
 
 post-patch:

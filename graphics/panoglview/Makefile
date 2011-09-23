@@ -15,11 +15,11 @@ MAINTAINER=	ii@any.com.ru
 COMMENT=	Panorama viewer using OpenGL
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -ftemplate-depth-64" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lwx_gtk2_gl-${WX_VERSION}" \
-		WX_CONFIG_NAME=wxgtk2-${WX_VERSION}-config \
+CONFIGURE_ENV=	WX_CONFIG_NAME=wxgtk2-${WX_VERSION}-config \
 		PATH="$${PATH}:${LOCALBASE}/bin"
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lwx_gtk2_gl-${WX_VERSION}
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -ftemplate-depth-64
 USE_XORG=	x11
 USE_GMAKE=	yes
 

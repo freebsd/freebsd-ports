@@ -28,8 +28,8 @@ WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} \
 			--with-libavcodec-prefix=${LOCALBASE} \
 			--enable-oss

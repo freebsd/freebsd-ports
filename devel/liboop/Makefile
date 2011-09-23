@@ -24,13 +24,12 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	glib12 glib20 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libwww
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|8\.4|84|g' ${WRKSRC}/configure

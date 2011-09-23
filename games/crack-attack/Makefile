@@ -17,7 +17,7 @@ COMMENT=	OpenGL game based on Super Nintendo classic Tetris Attack
 USE_GL=		glut
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" CXXFLAGS="${CFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN6=		crack-attack.6
 

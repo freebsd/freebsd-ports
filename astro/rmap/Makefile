@@ -20,7 +20,7 @@ MAN1=		rmap.1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -28,7 +28,6 @@ USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-debug \
 		--disable-static \
 		--enable-dht \

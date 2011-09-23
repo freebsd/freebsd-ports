@@ -16,12 +16,11 @@ COMMENT=	TrueType to Type42 font converter
 
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/ttftot42
 
-CPPFLAGS=	-I${LOCALBASE}/include/freetype1/freetype \
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype1/freetype \
 		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

@@ -25,8 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \
 		--enable-devel
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/include ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/include ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

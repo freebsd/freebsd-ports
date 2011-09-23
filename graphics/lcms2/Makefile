@@ -17,9 +17,9 @@ COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack lthack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
 OPTIONS=	TIFFICC "Build color profile applier for TIFF" off \

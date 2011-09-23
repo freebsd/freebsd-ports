@@ -36,7 +36,7 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 .if !defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv
 LIB_DEPENDS+=	opencv_core.2:${PORTSDIR}/graphics/opencv-core
-CMAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 

@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack
 GCONF_SCHEMAS=	grdesktop.schemas
 INSTALLS_OMF=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-keymap-path=${LOCALBASE}/share/rdesktop/keymaps
 
 MAN1=		grdesktop.1

@@ -19,8 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 OPTIONS=	SPLASH "Show splash on startup" on \

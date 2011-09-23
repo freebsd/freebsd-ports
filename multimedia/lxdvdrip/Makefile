@@ -44,7 +44,6 @@ LXDVDRIPSRC=	cputest.c \
 		vaporize.c
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -ldvdread -lm
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	Changelog.de Changelog.en Changelog.fr \
 		README.de  README.en README.fr \

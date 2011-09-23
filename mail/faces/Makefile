@@ -38,8 +38,8 @@ WITH_AUDIO=	# none
 PLIST_SUB+=	X11=""
 USE_GNOME=	gnomehack gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I../compface -I${LOCALBASE}/include" \
-		LDFLAGS="-L../compface -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I../compface -I${LOCALBASE}/include
+LDFLAGS+=	-L../compface -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
 		--with-facedir=${DATADIR}

@@ -30,7 +30,6 @@ USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER} -L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/apt-${PORTVERSION}
 
 MAN1=		apt-extracttemplates.1 apt-ftparchive.1 apt-sortpkgs.1

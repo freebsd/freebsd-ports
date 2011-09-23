@@ -26,12 +26,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		atari800.1
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
 		demos2.xfd dos25.xfd mydos45d.atr

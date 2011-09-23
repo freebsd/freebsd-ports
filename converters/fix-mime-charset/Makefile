@@ -21,8 +21,8 @@ PORTDOCS=	README.koi8r README
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		fix-mime-charset.1
 PLIST_FILES=	bin/fix-mime-charset

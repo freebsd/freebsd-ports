@@ -25,8 +25,8 @@ USE_GNOME=	gtk20
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-hal --with-html-dir="${PREFIX}/share/doc"
 
 OPTIONS=	IMOBILE	"Support Apple iPhone/iPod Touch" on \

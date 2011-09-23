@@ -33,7 +33,6 @@ CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
 			--sysconfdir=${PREFIX}/etc
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
 		DEBUG "Build debug version" Off

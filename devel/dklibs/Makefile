@@ -35,10 +35,8 @@ CONFIGURE_ARGS+=	--datadir=${DATADIR} \
 			--datarootdir=${DATADIR} \
 			--sysconfdir=${ETCDIR}
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 # Need -lc for RELENG_6 support.
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${BDB_LIB_DIR} -lc"
+LDFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR} -lc
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN3=		dk.3 \

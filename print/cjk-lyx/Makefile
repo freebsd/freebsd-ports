@@ -49,8 +49,8 @@ CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include" \
 		--with-frontend=qt \
 		--program-prefix="${PKGNAMEPREFIX}"
-CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
-CFLAGS=		${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 MAN1=		${PKGNAMEPREFIX}lyx.1 ${PKGNAMEPREFIX}tex2lyx.1 ${PKGNAMEPREFIX}lyxclient.1
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}

@@ -17,8 +17,8 @@ COMMENT=	A visual simulator of an operating system to help understand how OSes w
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		VisualOS.1
 

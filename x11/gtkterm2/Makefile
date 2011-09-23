@@ -17,7 +17,6 @@ COMMENT=	A simple GTK-2 terminal with tabs
 USE_GNOME=	vte
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	README
 PLIST_FILES=	bin/gtkterm2 \
@@ -25,8 +24,8 @@ PLIST_FILES=	bin/gtkterm2 \
 		%%DATADIR%%/pixmaps/gtkterm2.png
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||g' ${WRKSRC}/configure

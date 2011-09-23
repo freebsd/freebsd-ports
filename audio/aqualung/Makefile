@@ -42,9 +42,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --with-alsa=no --with-ifp=no \
 		--with-cdda=no
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lstrfunc
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lstrfunc
 MAN1=		${PORTNAME}.1
 
 OPTIONS=	JACK "Enable JACK low-latency audio server support" Off \

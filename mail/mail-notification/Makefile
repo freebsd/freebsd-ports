@@ -23,8 +23,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gconf2 gnomeprefix gnomevfs2 libglade2 libgnomeui libxml2
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}"
 JB_CONF_ENV=	jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas

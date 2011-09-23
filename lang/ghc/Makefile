@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC} --with-gcc=${CC} \
 			--with-iconv-libraries=${LOCALBASE}/lib
 
 # libgmp:
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 # override TMPDIR because /tmp often doesn't have enough space

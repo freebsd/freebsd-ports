@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-shared --disable-trace
 USE_LDCONFIG=	yes
 

@@ -19,7 +19,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 USE_OPENSSL=	yes
 
 MAN1=		mboxgrep.1

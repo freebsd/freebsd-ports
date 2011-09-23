@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 OPTIONS=	EXAMPLES	"Compile examples, need libglut"	off
 

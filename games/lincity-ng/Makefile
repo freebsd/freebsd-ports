@@ -26,8 +26,8 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O| -I${LOCALBASE}/include&|g' \

@@ -45,8 +45,8 @@ USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tracker ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tracker ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--enable-file-monitoring=fam \
 		--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/services \

@@ -37,8 +37,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--without-gnome2_4-mime \

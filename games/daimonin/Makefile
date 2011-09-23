@@ -22,7 +22,7 @@ FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-simplelayout --enable-getaddrinfo
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	automake autoconf
 USE_SDL=	mixer image
 SUB_FILES=	daimonin.sh

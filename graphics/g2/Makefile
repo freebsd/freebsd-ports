@@ -19,7 +19,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CFLAGS+=	-I${LOCALBASE}/include
 
 do-build:
 	cd ${WRKSRC} ; make depend ; make

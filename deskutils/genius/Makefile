@@ -24,8 +24,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomevfs2 gtksourceview2 intlhack vte
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

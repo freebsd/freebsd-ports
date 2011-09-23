@@ -33,8 +33,8 @@ PORTDOCS=	*
 
 # Using LIBS instead of LDFLAGS, otherwise will break when
 # there's devel/bullet port installed
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-irrlicht="${LOCALBASE}"
 
 LICENSE=	GPLv3

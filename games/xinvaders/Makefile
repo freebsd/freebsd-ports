@@ -23,8 +23,8 @@ USE_GETTEXT=	yes
 USE_XORG=	x11 xmu xaw xt
 USE_AUTOTOOLS=	automake14 autoconf213
 AUTOMAKE_ARGS=	--include-deps
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-scorefile=${PREFIX}/share/xinvaders/xinvaders.scores
 
 MAN6=		xinvaders.6

@@ -21,8 +21,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		omindex.1 scriptindex.1
 

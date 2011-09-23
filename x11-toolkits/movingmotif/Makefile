@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-CONFIGURE_ENV+=	CFLAGS="-O0"
+CFLAGS+=	-O0
 .endif
 
 .include <bsd.port.post.mk>

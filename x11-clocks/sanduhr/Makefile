@@ -18,8 +18,8 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui oaf
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		sanduhr.1
 

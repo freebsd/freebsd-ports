@@ -24,7 +24,7 @@ MAN1=		vanessa_socket_pipe.1
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

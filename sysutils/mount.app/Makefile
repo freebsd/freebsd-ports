@@ -22,7 +22,5 @@ USE_GNOME=	gtk12 glib12
 GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lintl
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

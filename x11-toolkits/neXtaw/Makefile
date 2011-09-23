@@ -17,8 +17,8 @@ COMMENT=	Athena Widgets with N*XTSTEP appearance
 USE_AUTOTOOLS=	libtool
 USE_XORG=	xmu x11 xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		trickle.1
 MAN5=		trickled.conf.5

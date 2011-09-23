@@ -44,8 +44,8 @@ USE_SDL+=	mixer
 CONFIGURE_ARGS+=--disable-sound
 .endif
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

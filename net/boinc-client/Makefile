@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--disable-server
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS:=	${CXXFLAGS:N-O*:N-f*} -O3
 CFLAGS:=	${CFLAGS:N-O*:N-f*} -O3
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CXXFLAGSS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CXXFLAGSS="${CXXFLAGS}"
 
 OPTIONS=	X11 "Build Boinc Manager GUI" on \
 		ALT "Accept Linux science applications" off

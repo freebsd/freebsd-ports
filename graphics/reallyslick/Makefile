@@ -26,7 +26,6 @@ USE_GL=		glut
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
 		euphoria.1 feedback.1 fieldlines.1 flocks.1 flux.1 \
@@ -34,8 +33,8 @@ MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
 		lorenz.1 matrixview.1 pixelcity.1 plasma.1 skyrocket.1 \
 		solarwinds.1 spirographx.1 sundancer2.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

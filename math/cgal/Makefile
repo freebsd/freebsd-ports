@@ -35,7 +35,7 @@ CMAKE_USE_PTHREAD=	yes
 QT_COMPONENTS=		corelib opengl qmake_build gui moc_build rcc_build
 HAS_CONFIGURE=		yes
 DOCSDIR=		${PREFIX}/share/doc/CGAL-3.4
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=			cgal_create_cmake_script.1
 

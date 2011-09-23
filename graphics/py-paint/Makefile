@@ -24,7 +24,7 @@ USE_FREETYPE=	yes
 USE_GNOME=	libartlgpl2
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBASE}/include/freetype1
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

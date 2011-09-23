@@ -28,7 +28,6 @@ MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
 			--includedir=${LOCALBASE}/include \
 			--libdir=${LOCALBASE}/lib
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

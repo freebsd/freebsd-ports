@@ -46,7 +46,7 @@ INSTALLS_EGGINFO=	yes
 MANCOMPRESSED=	yes
 MAN1=		miro.1 miro.real.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 

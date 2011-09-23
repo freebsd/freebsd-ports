@@ -19,8 +19,8 @@ USE_PERL5_BUILD=	5.8.0+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I ${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I ${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Default charset (euc-jp/shift_jis/utf-8)
 .if defined(WITH_CHARSET)

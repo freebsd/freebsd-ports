@@ -31,8 +31,8 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xt
 CONFIGURE_ARGS+=--with-pty=BSD --with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		ives.1 xjpegroot.1 xnc.1 xnlaunch.1 iedit.1 iview.1
 

@@ -18,7 +18,7 @@ COMMENT=	PHP bindings to rrd tool system
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	PHP301
 

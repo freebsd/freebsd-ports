@@ -20,10 +20,10 @@ MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-qt4 --with-qt4-immodule
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-	DATADIRNAME="share"
+CONFIGURE_ENV=	DATADIRNAME="share"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 UIM_SLAVE=	yes
 
 .if defined(WITHOUT_X11)

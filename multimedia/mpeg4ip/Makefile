@@ -36,8 +36,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static

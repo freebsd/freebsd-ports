@@ -32,9 +32,9 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--localstatedir=/var \
 		--with-polkit-user=polkit \
 		--with-polkit-group=polkit
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTKDOC="false"
+CONFIGURE_ENV=	GTKDOC="false"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(NO_INSTALL_MANPAGES)
 CONFIGURE_ARGS+=--disable-man-pages

@@ -18,8 +18,8 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
 

@@ -20,8 +20,8 @@ LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice1
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GNOME=	gnomehack intlhack ltverhack
 
 .include <bsd.port.mk>

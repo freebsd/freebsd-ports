@@ -32,8 +32,8 @@ USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
 	@${TOUCH} ${PREFIX}/etc/gnome/fonts/gnome-print-x11.fontmap

@@ -19,7 +19,7 @@ COMMENT=	An enhanced Wide Area Information Server
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CONFIGURE_ARGS=	-sde -Dprefix="${PREFIX}" \
 		-Darchname="${MACHINE_ARCH}-freebsd"
 INSTALL_TARGET=	install install.man

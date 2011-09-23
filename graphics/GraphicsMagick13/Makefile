@@ -55,9 +55,8 @@ USE_LDCONFIG=	yes
 
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
-	LDFLAGS="${CONFIGURE_LDFLAGS}"
-CONFIGURE_LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
@@ -101,7 +100,7 @@ CONFIGURE_ARGS+=	--without-dps
 IGNORE=		does not support OpenMP on FreeBSD version ${OSVERSION}
 .endif
 
-CONFIGURE_LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=		${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-threads --enable-openmp --disable-openmp-slow
 .else
 CONFIGURE_ARGS+=	--without-threads --disable-openmp

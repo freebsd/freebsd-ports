@@ -22,8 +22,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 DEFINES=	-DMBMON_EXECUTABLE=\\\"${LOCALBASE}/bin/mbmon\\\" \
 		-DSMARTCTL_HELPER=\\\"${PREFIX}/libexec/smartctl-helper\\\"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${DEFINES}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include ${DEFINES}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${CP} -f ${FILESDIR}/mbmon-sensors-interface.* \

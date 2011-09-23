@@ -37,8 +37,8 @@ GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docbook-docs
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gnome-session.1 gnome-wm.1 gnome-session-properties.1 \
 		gnome-session-save.1

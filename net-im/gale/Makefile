@@ -30,7 +30,6 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-I${LOCALBASE}/include/w3c-libwww
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 # cheesy hack - test-oop doesn't build, but we don't care.
 pre-configure:

@@ -384,8 +384,7 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
-			GREP="${GREP}"
+CONFIGURE_ENV+=		GREP="${GREP}"
 
 PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \

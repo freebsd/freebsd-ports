@@ -34,10 +34,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-font-default=${FONTDEFAULT} \
 		--with-font-label=${FONTLABEL} \
 		--with-etcdir=${PREFIX}/etc
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		awffull.1
 MAN5=		awffull.conf.5

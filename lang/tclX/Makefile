@@ -20,8 +20,8 @@ USE_TCL=	83+
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${TCL_INCLUDEDIR}/unix\
-		-I${TCL_INCLUDEDIR}/generic"
+CPPFLAGS+=	-I${TCL_INCLUDEDIR}/unix\
+		-I${TCL_INCLUDEDIR}/generic
 CONFIGURE_ARGS=	--enable-shared \
 		--with-help=Help \
 		--with-tcl="${TCL_LIBDIR}"

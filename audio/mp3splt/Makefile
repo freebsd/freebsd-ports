@@ -17,7 +17,8 @@ LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt
 
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-oggsplt_symlink --disable-mp3splttest
 
 CPPFLAGS+=	-I${LOCALBASE}/include

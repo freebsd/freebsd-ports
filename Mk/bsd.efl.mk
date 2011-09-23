@@ -520,9 +520,9 @@ LIB_DEPENDS+=	${_${LIB}_SLIB}.${_${LIB}_VERSION}:${PORTSDIR}/${_${LIB}_CATEGORY}
 #
 # Initialize configure enviropment
 #
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_SUB+=	E17_ARCH=freebsd${OSREL}-${ARCH}
 

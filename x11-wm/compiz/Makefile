@@ -67,7 +67,7 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-zoom.schemas
 
 CONFIGURE_ARGS=	--disable-kde4
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 OPTIONS=	RSVG "Enable librsvg2 support" on \
 		GTK "Enable gtk2 support" on \

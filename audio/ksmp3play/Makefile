@@ -21,12 +21,11 @@ NO_WRKSUBDIR=	yes
 USE_GNOME=	gnomehack
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		ksmp3play.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)

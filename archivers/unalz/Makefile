@@ -20,8 +20,8 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 USE_ICONV=	yes
 PLIST_FILES=	bin/unalz
 MAKEFILE=	Makefile.freebsd
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/unalz
 
 pre-patch:

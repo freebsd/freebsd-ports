@@ -38,7 +38,6 @@ IGNORE=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 MANDIR=			${MANPREFIX}/man
 MANDIR=			${PREFIX}/share/man
 KRB5_DIR?=		${LOCALBASE}
-CONFIGURE_ENV=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"
 
 post-install:

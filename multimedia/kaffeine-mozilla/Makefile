@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=kaffeineplugin.so
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.pre.mk>

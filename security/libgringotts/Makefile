@@ -20,7 +20,8 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 

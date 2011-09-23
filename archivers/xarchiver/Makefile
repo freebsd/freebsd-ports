@@ -26,8 +26,8 @@ INSTALLS_ICONS=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

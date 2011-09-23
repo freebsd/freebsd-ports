@@ -19,9 +19,9 @@ GNU_CONFIGURE=  yes
 USE_GL=		glut
 USE_GNOME=	gnomehack
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
-		CXXFLAGS="-I${LOCALBASE}/include"       \
-		CFLAGS="-I${LOCALBASE}/include"         \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

@@ -17,8 +17,8 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xt xscrnsaver
 USE_GNOME=	#
 CONFIGURE_ARGS=	--with-map-extension=jpg
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lm"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lm"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	FREETYPE "Enable Freetype support" on \
 		PANGO "Enable PANGO support" on \

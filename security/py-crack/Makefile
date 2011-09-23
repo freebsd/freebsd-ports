@@ -26,13 +26,10 @@ GNU_CONFIGURE=	yes
 PLIST_FILES:=	${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,}/_crack.so \
 		${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,}/crack.py
 
-CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include" \
-		"LDFLAGS=-L${LOCALBASE}/lib" \
-		"DEFAULT_DICTPATH=${LOCALBASE}/libdata/cracklib/pw_dict"
-
-MAKE_ENV=	"LDFLAGS=-L${LOCALBASE}/lib"
-
-CFLAGS+=	"-I${LOCALBASE}/include"
+CONFIGURE_ENV=	"DEFAULT_DICTPATH=${LOCALBASE}/libdata/cracklib/pw_dict"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	${REINPLACE_CMD} -e 's/setup(/setup(name="${PORTNAME}",version="${PORTVERSION}",/' \

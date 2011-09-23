@@ -40,8 +40,6 @@ USE_RC_SUBR=	vsftpd.sh
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-.else
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_PIDFILE)

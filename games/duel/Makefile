@@ -24,8 +24,8 @@ USE_BZIP2=	yes
 USE_GL=		gl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` `freetype-config --cflags` -I${LOCALBASE}/include -I${LOCALBASE}/include/FTGL" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
+CPPFLAGS+=	`${SDL_CONFIG} --cflags` `freetype-config --cflags` -I${LOCALBASE}/include -I${LOCALBASE}/include/FTGL
+LDFLAGS+=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-sh

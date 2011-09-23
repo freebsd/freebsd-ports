@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
 			--disable-alsa \
 			--disable-bmpx
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		conky.1
 PLIST_FILES=	bin/conky

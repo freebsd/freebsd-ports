@@ -28,16 +28,15 @@ USE_MOTIF=	yes
 USE_GL=		gl glu glut
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		YACC="/usr/bin/byacc"
+CONFIGURE_ENV=	YACC="/usr/bin/byacc"
 CONFIGURE_ARGS=	--with-optimization \
 		--without-devil \
 		--with-helpurl="${DOCSDIR}/index.html" \
 		--with-vrml97am1url="${DOCSDIR}/vrml97Amendment1" \
 		--with-x3ddrafturl="${DOCSDIR}/x3dDraft" \
 		--with-scriptednodesurl="${DOCSDIR}/scriptedNodes"
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -DUSBHID_UCR_DATA -DUSBHID_NEW -D__FREEBSD__
-LDFLAGS=	`${SDL_CONFIG} --libs`
+CPPFLAGS+=	`${SDL_CONFIG} --cflags` -DUSBHID_UCR_DATA -DUSBHID_NEW -D__FREEBSD__
+LDFLAGS+=	`${SDL_CONFIG} --libs`
 ALL_TARGET=	dune
 
 MAN1=		dune.1 illegal2vrml.1

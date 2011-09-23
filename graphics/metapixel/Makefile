@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I.
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \
 		bin/metapixel-prepare bin/metapixel-sizesort \

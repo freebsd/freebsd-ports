@@ -27,8 +27,8 @@ GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls

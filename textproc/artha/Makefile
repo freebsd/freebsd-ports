@@ -28,8 +28,8 @@ USE_GNOME=	gtk20 intltool pkgconfig
 
 CONFIGURE_ARGS=	--enable-static=no --x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WordNet
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WordNet
 
 OPTIONS=	NOTIFY "Popup word definition as notification" On
 

@@ -17,13 +17,12 @@ COMMENT=	Quick & easy monitoring of logfiles and devices
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		xlogmaster.1
 INFO=		xlogmaster
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

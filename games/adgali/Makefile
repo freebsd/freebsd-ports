@@ -27,8 +27,8 @@ USE_SDL=	sdl
 USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS=	--enable-compile-optim=no
 USE_LDCONFIG=	yes
 

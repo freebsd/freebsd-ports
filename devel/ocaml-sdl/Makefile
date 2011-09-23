@@ -25,8 +25,8 @@ USE_OCAML_FINDLIB=yes
 USE_OCAML_LDCONFIG=yes
 USE_SDL=	sdl ttf image mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-findlib
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}

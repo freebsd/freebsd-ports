@@ -24,7 +24,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-mhash
 
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV=	"LDFLAGS=-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 test: install
 	${PYTHON_CMD} ${WRKSRC}/test.py

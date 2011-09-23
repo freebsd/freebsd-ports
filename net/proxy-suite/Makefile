@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 #
 # basic configure args
 #
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libwrap=/usr/lib --with-regex \
 		--localstatedir=/var/run \
 		--enable-warnings --enable-so-linger \

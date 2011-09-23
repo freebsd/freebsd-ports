@@ -26,14 +26,13 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
 MAN6=	trackballs.6
 MANCOMPRESSED=	no
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lintl
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|install -D|$$(INSTALL)|' \

@@ -23,10 +23,9 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 USE_GL=		glut
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf213
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -I${LOCALBASE}/include/tcl8.4 \
-			  -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/tcl8.4
 USE_GMAKE=	yes
 # for plib (sound):
 CONFIGURE_ARGS+= --with-plib=${LOCALBASE}/plib

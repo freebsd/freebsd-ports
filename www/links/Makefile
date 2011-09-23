@@ -25,7 +25,7 @@ CONFLICTS=	links-0*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
 			--without-gpm --without-fb
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_OPENSSL=	yes

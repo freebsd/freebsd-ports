@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--without-howl
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

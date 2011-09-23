@@ -31,6 +31,7 @@ USE_TCL_BUILD=	84+
 CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
+CPPFLAGS+=	-I. -I./src
 
 # Use an in-ram database for temporary tables (never,no,yes,always),
 # which is equivalent of SQLITE_TEMP_STORE=[0,1,2,3]
@@ -204,9 +205,6 @@ CONFIGURE_ARGS+=	--enable-load-extension
 .else
 CONFIGURE_ARGS+=	--disable-load-extension
 .endif
-
-CONFIGURE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 

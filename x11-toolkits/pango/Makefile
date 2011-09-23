@@ -50,15 +50,15 @@ MAN1=		pango-view.1 pango-querymodules.1
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-x=no
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-				${GLIB2_CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${LOCALBASE}/include/freetype2 \
+			${GLIB2_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		X11="@comment "
 .else
 USE_XORG+=		xft xrender
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-				${GLIB2_CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${LOCALBASE}/include/freetype2 \
+			${GLIB2_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		X11=""
 .endif
 

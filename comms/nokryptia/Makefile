@@ -18,7 +18,8 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		nokryptia.1
 PLIST_FILES=	bin/nokryptia

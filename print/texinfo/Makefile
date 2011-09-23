@@ -29,8 +29,8 @@ MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
 CONFIGURE_ARGS=	--without-included-gettext
-CPPFLAGS=	-I${LOCALBASE}/lib
-LDFLAGS=	-L${LOCALBASE}/lib -lintl
+CPPFLAGS+=	-I${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 INFO=		${PORTNAME} info-stnd info
 MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \

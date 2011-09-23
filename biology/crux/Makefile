@@ -27,7 +27,6 @@ OPTIONS=       SYS_LINALG "Enable system ATLAS/LAPACK" Off
 
 CPPFLAGS+=      -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib
-CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_FORTRAN=   yes
 .if defined(WITH_SYS_LINALG)
 CONFIGURE_ARGS+= --enable-sys-linalg

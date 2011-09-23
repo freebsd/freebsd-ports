@@ -46,8 +46,10 @@ OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
 		IPRSCAN		"InterPro scan" on \
 		CBSTOOLS	"CBS Tools" on
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${LOCALBASE}/emboss/include" \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/emboss/lib"
+CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include -I${LOCALBASE}/emboss/include
+LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/emboss/lib
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 EMBASSY_WRKDIR=		${WRKSRC}/EMBASSY
 DOMAINATRIX_VERSION=	0.1.0

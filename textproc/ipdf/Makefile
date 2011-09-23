@@ -20,8 +20,8 @@ LIB_DEPENDS=	pdf.8:${PORTSDIR}/print/pdflib \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		ipdf.1
 PLIST_FILES=	bin/ipdf

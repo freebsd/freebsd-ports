@@ -32,11 +32,10 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl=yes
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 		ControlPanel.1

@@ -27,8 +27,8 @@ DATADIR=	${PREFIX}/share/geda
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gsymcheck.1
 

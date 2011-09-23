@@ -18,10 +18,9 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--disable-helper-search
-CPPFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=		-L${LOCALBASE}/lib
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=		normalize.1 normalize-mp3.1
 

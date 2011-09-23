@@ -30,9 +30,9 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 GNOME_DESKTOP_VERSION=2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-static --disable-packagekit
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 

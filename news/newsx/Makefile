@@ -30,7 +30,7 @@ CONFLICTS=	leafnode-1.9.*
 
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/news/include"
+CPPFLAGS+=	-I${LOCALBASE}/news/include
 .endif
 .endif
 

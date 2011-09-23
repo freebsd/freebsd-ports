@@ -21,13 +21,13 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 WRKSRC=		${WRKDIR}/${DISTNAME}/sources
 
 MAKE_ENV=	DEFINES="${CPPFLAGS}" ALL_LIBS="${LDFLAGS}" \
-		PREVIEWER="${PREVIEWER}" 
+		PREVIEWER="${PREVIEWER}"
 
 MAN1=		hp2xx.1
 INFO=		hp2xx
 
-CPPFLAGS=	-DUNIX -I${LOCALBASE}/include
-LDFLAGS=	-lm -L${LOCALBASE}/lib -ltiff -lpng -lz
+CPPFLAGS+=	-DUNIX -I${LOCALBASE}/include
+LDFLAGS+=	-lm -L${LOCALBASE}/lib -ltiff -lpng -lz
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11

@@ -26,9 +26,9 @@ MAKE_ARGS=	QTDIR="${QT_PREFIX}" CC="${CXX}" MOC="${MOC}" \
 PORTDOCS=	*
 PLIST_FILES=	bin/mview
 
-CPPFLAGS=	-I. -Imesh -Imathvector \
+CPPFLAGS+=	-I. -Imesh -Imathvector \
 		`pkg-config --cflags QtOpenGL glu`
-LDFLAGS=	`pkg-config --libs QtOpenGL glu`
+LDFLAGS+=	`pkg-config --libs QtOpenGL glu`
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make |$$(MAKE) |g' ${WRKSRC}/Makefile

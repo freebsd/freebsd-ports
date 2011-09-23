@@ -26,7 +26,6 @@ USE_CMAKE=	yes
 CMAKE_ENV+=	OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" OPENSNC_ALLEGRO_VERSION="`allegro-config --version`"
 
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	CFLAGS="${CFLAGS}"
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
 		alpng>=1.3:${PORTSDIR}/graphics/alpng

@@ -24,8 +24,8 @@ USE_SDL=	sdl image
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*

@@ -28,8 +28,8 @@ USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2 libgnomeui \
 		desktopfileutils
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 

@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 CFLAGS+=	-fgnu89-inline
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 INFO=	prng
 PLIST_FILES=	include/prng.h lib/libprng.a
 PORTDOCS=	prng.dvi prng.pdf prng.ps prng.txt

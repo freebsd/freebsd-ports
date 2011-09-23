@@ -53,7 +53,8 @@ BROKEN=		does not compile
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		gl glu
 CONFIGURE_ARGS+=--with-opengl
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 do-extract:

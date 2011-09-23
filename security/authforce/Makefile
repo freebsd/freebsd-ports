@@ -15,7 +15,8 @@ COMMENT=	HTTP authentication brute forcer
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lintl"
+CONFIGURE_ENV=	LIBS="-lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

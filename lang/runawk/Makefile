@@ -15,8 +15,9 @@ COMMENT=	Wrapper for AWK interpreter that implements a modules system
 
 BUILD_DEPENDS=	mk-configure>=0.21.0:${PORTSDIR}/devel/mk-configure
 
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath -Wl,${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" SUBPRJ_DFLT="${SUBPRJ_DFLT}"
+MAKE_ENV+=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath -Wl,${LOCALBASE}/lib
 
 MAN1=		${PORTNAME}.1 alt_getopt.1
 

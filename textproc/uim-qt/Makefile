@@ -19,10 +19,10 @@ PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-qt --enable-pref --enable-default-toolkit=qt \
 		--disable-kde-applet
 CONFIGURE_ENV=	QTDIR=${LOCALBASE}/lib QTINCDIR=${LOCALBASE}/include \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+		LIBS="${LIBS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt_Makefile.in \

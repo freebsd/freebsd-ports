@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--enable-jpeg --enable-png --enable-gl --enable-xft \
 # fltk2 applications should only be linked statically for now to avoid trouble
 # after possibly incompatible updates to fltk2.
 CONFIGURE_ARGS+=	--disable-shared
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 DOCSDIR=	${PREFIX}/share/doc/fltk2
 PORTDOCS=	*

@@ -42,7 +42,7 @@ LUA_COMPS=	toluaxx
 USE_OPENAL=	al alut
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
-CPPFLAGS=	-DBR_NO_MACROS
+CPPFLAGS+=	-DBR_NO_MACROS
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

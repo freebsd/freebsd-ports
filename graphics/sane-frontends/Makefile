@@ -25,8 +25,8 @@ LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		scanadf.1 xcam.1 xscanimage.1
 SUB_FILES=	pkg-message

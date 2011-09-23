@@ -21,8 +21,8 @@ LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 HAS_CONFIGURE=	yes
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --exec-prefix="${PREFIX}"
 
 DESKTOP_ENTRIES="Trophy" "${COMMENT}" "" "trophy" "Application;Game;" false

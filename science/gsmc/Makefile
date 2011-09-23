@@ -16,8 +16,8 @@ COMMENT=	Smith chart program for impedance matching
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 AUTOMAKE_ARGS=	-i --add-missing --foreign --copy

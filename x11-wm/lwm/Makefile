@@ -22,7 +22,7 @@ PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 PLIST_FILES=	bin/${PORTNAME}
 
 CFLAGS+=	`pkg-config --cflags sm x11 xext` -DSHAPE
-LDFLAGS=	`pkg-config --libs sm x11 xext`
+LDFLAGS+=	`pkg-config --libs sm x11 xext`
 
 post-patch:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.1

@@ -40,8 +40,8 @@ CONFIGURE_ARGS=	--enable-threads \
 		--with-ssl \
 		--without-nm \
 		--with-canberra
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 MAN1=		balsa.1
 

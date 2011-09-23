@@ -52,7 +52,7 @@ PLIST_FILES+=	bin/${UDFCLIENTFS_NAME}
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ENV+=	CFLAGS="-O0 -ggdb3"
+CFLAGS+=	-O0 -ggdb3
 .endif
 
 post-patch:

@@ -22,7 +22,8 @@ USE_LDCONFIG=	yes
 USE_XORG=	ice xi
 USE_GL=		glu
 CONFIGURE_ARGS=	--disable-warnings
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-lusbhid"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lusbhid
 USE_LDCONFIG=	yes
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\

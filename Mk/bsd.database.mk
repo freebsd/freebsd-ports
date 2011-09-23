@@ -225,7 +225,6 @@ IGNORE=		cannot install: unknown PostgreSQL version: ${PGSQL_VER}
 .endif # Check for correct version
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif # USE_PGSQL
 
 

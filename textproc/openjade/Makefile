@@ -56,7 +56,6 @@ post-install:
 # Therefore, we'd better remove all machine optimizations and any -O
 # other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
 CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.post.mk>

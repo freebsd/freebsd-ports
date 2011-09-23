@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 		--enable-sargphp="${PREFIX}/etc/${PORTNAME}" \
 		--enable-fontdir="${PREFIX}/etc/${PORTNAME}/fonts" \

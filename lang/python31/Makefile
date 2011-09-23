@@ -75,13 +75,10 @@ CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
 .else
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
 .endif # defined(WITHOUT_HUGE_STACK_SIZE)
-CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+LDFLAGS+=		${PTHREAD_LIBS}
 .else # defined(WITHOUT_THREADS)
 PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
-.if defined(LDFLAGS)
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
-.endif # defined(LDFLAGS)
 .endif # !defined(WITHOUT_THREADS)
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)

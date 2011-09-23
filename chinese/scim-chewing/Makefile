@@ -25,7 +25,7 @@ USE_GNOME=	intltool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	CPPFLAGS="-D__STDC_ISO_10646__ -I${LOCALBASE}/include"
+CPPFLAGS+=	-D__STDC_ISO_10646__ -I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,@DATADIRNAME@,share,g' ${WRKSRC}/po/Makefile.in.in

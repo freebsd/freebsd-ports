@@ -34,8 +34,7 @@ USE_GNOME=	esound
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_header_mpeg_h=no \
+CONFIGURE_ENV=	ac_cv_header_mpeg_h=no \
 		ac_cv_header_libmpeg3_h=no \
 		ac_cv_header_decore_h=no \
 		ac_cv_header_avifile_h=no
@@ -43,8 +42,8 @@ CONFIGURE_ARGS=	--with-ungif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

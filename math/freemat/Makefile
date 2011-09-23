@@ -39,7 +39,7 @@ USE_QT_VER=		4
 USE_CMAKE=		yes
 QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build \
 			qmake_build xml svg
-CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
+CPPFLAGS+=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
 
 SLAVEDIRS=	math/freemat-mpi
 

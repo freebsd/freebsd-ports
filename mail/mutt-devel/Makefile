@@ -160,7 +160,7 @@ DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
 		--enable-external-dotlock --enable-pop --enable-imap \

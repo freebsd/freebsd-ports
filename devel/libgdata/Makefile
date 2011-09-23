@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack intltool ltverhack glib20
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include 
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-html-dir="${PREFIX}/share/doc"
 
 .include <bsd.port.mk>

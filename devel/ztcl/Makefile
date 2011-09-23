@@ -29,10 +29,8 @@ INFO=		${PORTNAME} ${PORTNAME}-zlib
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tclmorescripts=${PREFIX}/libexec/tclmore
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}" \
-		LDFLAGS="${LDFLAGS} -L ${PREFIX}/lib"
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}" \
-		LDFLAGS="${LDFLAGS} -L ${PREFIX}/lib"
+CPPFLAGS+=	-I ${PREFIX}/include -I ${TCL_INCLUDEDIR}
+LDFLAGS+=	-L ${PREFIX}/lib
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

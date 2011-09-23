@@ -57,7 +57,7 @@ WITH_CCP=	yes
 CONFIGURE_ARGS+=	--enable-ipfilter
 .endif
 .if defined(WITH_PF)
-CONFIGURE_ENV+=		"CPPFLAGS=-DPF"
+CPPFLAGS+=		-DPF
 .endif
 .if defined(WITH_VIRUS_SCAN)
 CONFIGURE_ARGS+=	--enable-virus-scan

@@ -26,8 +26,9 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
-		ac_cv_prog_acx_pthread_config=no
+CONFIGURE_ENV=	ac_cv_prog_acx_pthread_config=no
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--without-alsa
 
 SUB_FILES=	pkg-message

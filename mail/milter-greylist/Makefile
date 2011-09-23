@@ -81,7 +81,7 @@ LIBS+=		${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE} \
 			--enable-dnsrbl --with-thread-safe-resolver
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "
+CONFIGURE_ENV+=	LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
 SUB_FILES+=	pkg-message

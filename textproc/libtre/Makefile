@@ -51,10 +51,8 @@ CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 .endif
 
 .if defined(WITH_PGO)
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fprofile-generate" \
-		LDFLAGS="${LDFLAGS} -fprofile-generate"
-.else
-CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-fprofile-generate
+CFLAGS+=	-fprofile-generate
 .endif
 
 post-patch:

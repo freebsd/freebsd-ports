@@ -29,8 +29,8 @@ CONFIGURE_ARGS+=--with-mhash \
 		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
 
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		aide.1
 MAN5=		aide.conf.5

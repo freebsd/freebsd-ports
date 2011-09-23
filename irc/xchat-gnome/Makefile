@@ -26,8 +26,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui gnomedocutils desktopfileutils
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-tcl
 GCONF_SCHEMAS=	apps_xchat.schemas notification.schemas urlscraper.schemas
 INSTALLS_ICONS=	yes
@@ -70,10 +70,10 @@ PLIST_SUB+=		PYTHON="@comment "
 .if defined(WITH_TCL)
 LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
-		-I${LOCALBASE}/include/tcl8.3" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${LOCALBASE}/lib/tcl8.3"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-I${LOCALBASE}/include/tcl8.3
 PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=--enable-tcl=no

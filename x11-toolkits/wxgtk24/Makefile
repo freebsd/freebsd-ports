@@ -35,12 +35,12 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-opengl\
 		--enable-gtk2 \
 		--includedir=${PREFIX}/include/wx-2.4
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
-			  -I${LOCALBASE}/include \
-			  ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv \
-			 ${PTHREAD_LIBS}"\
-		X11BASE="${LOCALBASE}"
+CONFIGURE_ENV=	X11BASE="${LOCALBASE}"
+CPPFLAGS+=	-I${WRKSRC}/include \
+		-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv \
+		${PTHREAD_LIBS}
 NO_LATEST_LINK=	yes
 PLIST=		${.CURDIR}/pkg-plist
 

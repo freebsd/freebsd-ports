@@ -36,8 +36,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libwnck \
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
 		--disable-docbook-docs \
 		--enable-hal
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gnome-power-manager.schemas
 

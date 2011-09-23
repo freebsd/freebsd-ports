@@ -23,8 +23,8 @@ CONFIGURE_ARGS=	--disable-uspell \
 		--disable-voikko
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		enchant.1
 

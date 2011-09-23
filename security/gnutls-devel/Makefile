@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-fPIC
 CONFIGURE_ARGS+=	--disable-guile --disable-silent-rules \
 			--disable-hardware-acceleration
 MANCOMPRESSED=	no

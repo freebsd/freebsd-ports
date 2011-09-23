@@ -25,7 +25,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		zvbi-ntsc-cc.1
 
-CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -L/usr/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L/usr/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

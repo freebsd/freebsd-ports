@@ -31,7 +31,8 @@ MAKE_JOBS_SAFE=	yes
 USE_APACHE=	20+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--disable-libFLACtest --disable-vorbistest
 

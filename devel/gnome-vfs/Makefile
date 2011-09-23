@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--enable-openssl \
 		--disable-howl \
 		--with-hal-mount=/sbin/mount \
 		--with-hal-umount=/sbin/umount
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DPTHREAD_LIB=\"${PTHREAD_LIBS}\""
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DPTHREAD_LIB="${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PKGINSTALL=	${WRKDIR}/pkg-install

@@ -22,7 +22,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/scripts/
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	SCHEME	"Enable built-in Scheme interpreter" on \

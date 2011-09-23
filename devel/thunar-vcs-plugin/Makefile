@@ -25,7 +25,7 @@ USE_GNOME=	desktopfileutils gnomehack gtk20 glib20 intltool intlhack \
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	NLS "Enable Native Language Support" on \
 		GIT "Enable Git support" off \

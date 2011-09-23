@@ -26,6 +26,6 @@ USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .include <bsd.port.mk>

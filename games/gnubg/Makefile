@@ -32,8 +32,7 @@ OPTIONS=	ESOUND	"Enable sound support" ON	\
 
 CONFIGURE_ARGS=	--with-board3d
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
+CONFIGURE_ENV=	ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 
 USE_GNOME=	gnomehack libxml2
 USE_GMAKE=	yes
@@ -66,8 +65,8 @@ CONFIGURE_ARGS+=	--disable-sse
 MAN6=	gnubg.6
 INFO=	gnubg
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd

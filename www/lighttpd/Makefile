@@ -37,8 +37,6 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USE_RC_SUBR=	lighttpd.sh
 

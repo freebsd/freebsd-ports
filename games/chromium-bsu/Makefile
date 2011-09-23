@@ -19,8 +19,8 @@ LIB_DEPENDS=	glpng.1:${PORTSDIR}/graphics/glpng \
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-glc
 MAKE_JOBS_SAFE=	yes
 

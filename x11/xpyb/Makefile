@@ -24,8 +24,9 @@ USE_PYTHON=	2.5+
 USE_GNOME=	gnomehack
 PORTDOCS=	README COPYING INSTALL NEWS XcbPythonBinding.txt
 
-GNU_CONFIGURE=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-I${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

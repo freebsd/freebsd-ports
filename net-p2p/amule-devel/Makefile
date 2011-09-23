@@ -34,8 +34,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-denoise-level=0
 
 CONFIGURE_ENV=	LEX="${FLEX}" PKG_CONFIG="${PKG_CONFIG}" \
-		docdir='$${prefix}/${DOCSDIR_REL}' \
-		LDFLAGS="${LDFLAGS}"
+		docdir='$${prefix}/${DOCSDIR_REL}'
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${PTHREAD_CFLAGS}

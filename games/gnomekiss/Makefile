@@ -18,8 +18,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gnomekiss.1
 
 .include <bsd.port.mk>

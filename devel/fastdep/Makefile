@@ -17,7 +17,6 @@ COMMENT=	Fast dependency generator for C/C++ files
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-local-gnugetopt
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 DOCS=		AUTHORS CHANGELOG INSTALL README \
 		doc/fastdep.html doc/fastdep.pdf doc/c*.htm

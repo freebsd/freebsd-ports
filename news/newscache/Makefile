@@ -19,8 +19,8 @@ LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
 USE_AUTOTOOLS=	automake autoheader autoconf
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	${PORTNAME}.sh
 

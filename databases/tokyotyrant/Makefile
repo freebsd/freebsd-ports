@@ -27,14 +27,14 @@ MAN8=		ttservctl.8
 
 OPTIONS=	LUA	"Enable LUA support" off
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LUA)
 CONFIGURE_ARGS+=	--enable-lua
-CONFIGURE_ENV+=	LDFLAGS="-L${LUA_LIBDIR}"
+LDFLAGS+=	-L${LUA_LIBDIR}
 CFLAGS+=	-I${LUA_INCDIR}
 USE_LUA=	yes
 .else

@@ -20,10 +20,10 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
-			  -I${LOCALBASE}/include" \
-		SPOOLER="/usr/bin/lpr" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	SPOOLER="/usr/bin/lpr"
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype1/freetype \
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
 		--with-libungif
 

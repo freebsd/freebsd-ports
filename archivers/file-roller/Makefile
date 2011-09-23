@@ -32,8 +32,8 @@ USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gnomedocutils \
 GNOME_DESKTOP_VERSION=2
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-packagekit
 
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog

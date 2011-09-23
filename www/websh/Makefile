@@ -85,8 +85,4 @@ post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/mod_${MODULENAME}.so"
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

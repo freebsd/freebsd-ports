@@ -15,8 +15,8 @@ COMMENT=	A ncurses-based restriction shell
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -rdynamic" \
-		LDFLAGS="${LDFLAGS} -rdynamic"
+LDFLAGS+=	-rdynamic
+CFLAGS+=	-rdynamic
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

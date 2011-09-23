@@ -21,8 +21,8 @@ MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 MANLANG=	"" ja
 MAN1=	accept_check.1 \
 	adinrec.1 \

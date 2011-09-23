@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 post-patch:
 .for i in replacepage identityeditdialog identitysetting \

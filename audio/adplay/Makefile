@@ -30,7 +30,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libbinio
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 LICENSE=	GPLv2
 MAN1=		adplay.1

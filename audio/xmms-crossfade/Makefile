@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--enable-player=${APP}
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--enable-samplerate
 .endif
 

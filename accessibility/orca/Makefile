@@ -34,8 +34,8 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui gnomespeech pygnome2 \
 		pygnomedesktop
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		orca.1
 

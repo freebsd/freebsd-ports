@@ -29,7 +29,6 @@ LICENSE=	GPLv2
 USE_GNOME=	glib20
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-included-libmad \
 		--without-included-tre \
 		--with-included-argv \
@@ -39,8 +38,8 @@ MAN1=		streamripper.1
 PLIST_FILES=	bin/streamripper
 
 CFLAGS+=	-DANSI_PROTOTYPES
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-Lcdk-${CDK_VERSION} -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Lcdk-${CDK_VERSION} -L${LOCALBASE}/lib
 
 CDK_VERSION=	5.0-20060507
 

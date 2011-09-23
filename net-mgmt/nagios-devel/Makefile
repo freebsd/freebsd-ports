@@ -50,7 +50,7 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 .include <bsd.port.pre.mk>
 
-CPPFLAGS=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 CFLAGS+=	${CPPFLAGS}
 
 CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
@@ -69,10 +69,7 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
 MAKE_JOBS_UNSAFE=	yes

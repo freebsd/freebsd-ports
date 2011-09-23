@@ -17,7 +17,8 @@ COMMENT=	An English-Bulgarian-English dictionary
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--with-kde
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 USE_KDELIBS_VER=	3
 
 .include <bsd.port.mk>

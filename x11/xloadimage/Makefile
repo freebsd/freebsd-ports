@@ -32,8 +32,8 @@ PATCHREV=	.2
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 
+LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		xloadimage.1 uufilter.1

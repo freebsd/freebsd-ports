@@ -51,8 +51,6 @@ WITH_OPENSSL_PORT=	yes
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-.else
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 do-configure:

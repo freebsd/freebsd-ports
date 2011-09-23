@@ -26,9 +26,9 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gnumeric --enable-explicit-python-linking
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libglade-1.0" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		GNUMERIC_IDLDIR="${WRKDIR}/gnumeric"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libglade-1.0
 PLIST_SUB=	VERSION="${PORTVERSION}"
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

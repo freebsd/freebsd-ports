@@ -96,7 +96,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
 		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \

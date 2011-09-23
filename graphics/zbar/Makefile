@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--with-qt=no
 PLIST_SUB+=	QT4="@comment "
 .endif
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure

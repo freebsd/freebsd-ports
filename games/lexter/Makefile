@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time word puzzle for text terminals
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib'
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--localstatedir=/var/games
 USE_GETTEXT=	yes
 

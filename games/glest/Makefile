@@ -30,8 +30,8 @@ USE_SDL=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-			LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 SUB_FILES=		glest-wrapper pkg-message
 
 JAM_CMD=		${LOCALBASE}/bin/jam -qa

@@ -30,7 +30,7 @@ USE_RC_SUBR=	silcd
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
+CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 		--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \

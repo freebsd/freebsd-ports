@@ -42,12 +42,11 @@ OPTIONS=	GMERLIN	"Enable gmerlin support" on \
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

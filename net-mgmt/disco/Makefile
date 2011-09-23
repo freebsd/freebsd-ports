@@ -15,8 +15,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -26,7 +26,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}

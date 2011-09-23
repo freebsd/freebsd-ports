@@ -22,8 +22,8 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_XORG=	x11
 USE_LDCONFIG=	yes

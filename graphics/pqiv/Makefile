@@ -31,8 +31,8 @@ MAN1=		pqiv.1
 PORTDOCS=	README
 PLIST_FILES=	bin/pqiv
 
-CPPFLAGS=	`${pkgconfig_DETECT} --cflags gtk+-2.0 gthread-2.0`
-LDFLAGS=	`${pkgconfig_DETECT} --libs gtk+-2.0 gthread-2.0`
+CPPFLAGS+=	`${pkgconfig_DETECT} --cflags gtk+-2.0 gthread-2.0`
+LDFLAGS+=	`${pkgconfig_DETECT} --libs gtk+-2.0 gthread-2.0`
 
 .include <bsd.port.pre.mk>
 

@@ -23,7 +23,7 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-handlersocket=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${EXTRA_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
 .include <bsd.port.mk>

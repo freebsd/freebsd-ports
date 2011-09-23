@@ -23,7 +23,6 @@ USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits --enable-xsltproc
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS:S/-Werror//}" # clear -Werror from CFLAGS
 USE_LDCONFIG=	yes
 
 OPTIONS=	PNG "build with png support" off \
@@ -43,7 +42,7 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . endif
 CONFIGURE_ARGS+=--enable-libusb
-CONFIGURE_ENV+=LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -lusb"
+LDFLAGS+=	-L${PREFIX}/lib -lusb
 
 .if defined(WITHOUT_THREADS)
 IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconfigure using 'make config'

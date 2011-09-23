@@ -27,8 +27,8 @@ ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
 	-I ${LOCALBASE}/share/aclocal \
 	-I ${WRKDIR}/autotools/m4
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-				LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h)

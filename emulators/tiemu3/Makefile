@@ -28,7 +28,6 @@ USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 CONFIGURE_ARGS=	--disable-gdb
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		tiemu.1
 

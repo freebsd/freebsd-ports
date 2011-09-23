@@ -24,8 +24,8 @@ USE_NCURSES=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=	ncmpcpp.1
 MAKE_JOBS_SAFE=	yes

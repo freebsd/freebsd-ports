@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	${CPPFLAGS} -fPIC
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		dpipe.1 slirpvde.1 vdetaplib.1 vdeq.1 vde_plug.1 vde_switch.1
 

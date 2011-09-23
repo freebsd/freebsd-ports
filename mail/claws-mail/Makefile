@@ -46,8 +46,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	ALL		"Enable all options."			off \
 		ENCHANT		"Enable spell checking support."	on \

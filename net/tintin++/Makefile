@@ -23,7 +23,7 @@ OPTIONS=	BIG5 "Big5 support" off
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" ac_cv_file__dev_ptmx=no
+CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GMAKE=	yes

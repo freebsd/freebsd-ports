@@ -30,8 +30,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	install-am

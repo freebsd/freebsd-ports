@@ -35,9 +35,9 @@ CONFIGURE_ARGS=	--enable-mono \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

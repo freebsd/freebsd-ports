@@ -26,7 +26,6 @@ OPTIONS=	DAP	"Build DAP client and remote testing" off \
 
 CONFIGURE_ARGS=	--enable-cxx --enable-cxx-4 --enable-netcdf-4 --enable-shared \
 		--with-hdf5=${LOCALBASE} --with-zlib=/usr
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

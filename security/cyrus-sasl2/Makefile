@@ -165,7 +165,6 @@ CONFIGURE_ARGS+=--enable-ntlm
 
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-fPIC
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 .endif
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit

@@ -46,10 +46,10 @@ GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home \
 		--with-at-spi-registryd-directory=${LOCALBASE}/libexec
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAS_SA_LEN" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lm" \
+CONFIGURE_ENV=	LIBS="-lm" \
 		GTKDOC="false"
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES+=	gdm.pam
 

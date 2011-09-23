@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	# empty
 MAKE_JOBS_UNSAFE=	yes
@@ -27,8 +26,8 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		catdvi.1
 PLIST_FILES=	bin/catdvi
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/catdvi ${PREFIX}/bin

@@ -17,7 +17,7 @@ COMMENT=	Fast paced multiplayer pac-man clone
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D__linux__"
+CPPFLAGS+=	-I${LOCALBASE}/include -D__linux__
 USE_SDL=	mixer image net sdl
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*

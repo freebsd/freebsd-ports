@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-python \
 		--disable-python-plugin
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	planner.schemas
 

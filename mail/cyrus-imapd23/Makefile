@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \

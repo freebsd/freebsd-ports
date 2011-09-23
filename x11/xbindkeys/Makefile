@@ -19,8 +19,8 @@ OPTIONS=	GUILE "Guile support" off \
 
 USE_XORG=	x11 xi
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xbindkeys.1
 PLIST_FILES=	bin/xbindkeys %%EXAMPLESDIR%%/xbindkeysrc

@@ -27,9 +27,10 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_PPR=${LOCALBASE}/lib/ppr \
 		ac_cv_path_PPR_INTERFACES=${LOCALBASE}/lib/ppr/interfaces \
 		ac_cv_path_PPR_LIB=${LOCALBASE}/lib/ppr/lib \
-		ac_cv_path_TEXTTOPS=${LOCALBASE}/libexec/cups/filter/texttops \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		ac_cv_path_TEXTTOPS=${LOCALBASE}/libexec/cups/filter/texttops
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	CUPS_IMAGE	"Install cups image utilities"	on \
 		A2PS_A4	"Install a2ps convertor (A4)"	on \

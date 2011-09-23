@@ -26,7 +26,8 @@ PLIST_FILES=	bin/d2x
 .ifdef(WITH_OPENGL)
 USE_GL=		glut
 CONFIGURE_ARGS+=--with-opengl
-CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 pre-everything::

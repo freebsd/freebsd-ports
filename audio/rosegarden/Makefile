@@ -32,7 +32,7 @@ QT_COMPONENTS=	gui xml network corelib sql qt3support \
 		rcc_build moc_build uic_build linguist_build
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR} LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes

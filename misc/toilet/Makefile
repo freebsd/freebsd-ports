@@ -17,8 +17,8 @@ LIB_DEPENDS=	caca.0:${PORTSDIR}/graphics/libcaca
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-strength-reduce
 MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} caca2tlf share/figlet/*tlf

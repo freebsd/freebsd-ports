@@ -27,7 +27,6 @@ NOX11SUFFIX=	-nox11
 USE_XORG=	sm x11
 PLIST_SUB+=	X11=''
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 .endif
 
 post-install:

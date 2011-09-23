@@ -40,15 +40,14 @@ USE_XORG=	ice x11 xinerama xv
 USE_GL=		gl
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-alsa --disable-v4l --disable-v4l2 \
 		--disable-camelot --disable-alsamixer --disable-v4lconvert \
 		--without-doxygen --without-cpuflags 
 USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		gmerlin
 MAN1=		gmerlin_play.1

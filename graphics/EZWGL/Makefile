@@ -21,8 +21,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 .include <bsd.port.pre.mk>

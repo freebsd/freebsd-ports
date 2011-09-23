@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a

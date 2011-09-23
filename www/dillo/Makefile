@@ -28,8 +28,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 		--libdir=${PREFIX}/libexec
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)

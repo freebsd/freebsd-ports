@@ -46,8 +46,7 @@ MAN5=		cpio.5 \
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)

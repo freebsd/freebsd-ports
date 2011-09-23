@@ -293,9 +293,7 @@ EXTRA_PATCHES+=	${FILESDIR}/logresolve.c.patch
 EXTRA_PATCHES+=	${FILESDIR}/rotatelogs.c.patch
 .endif
 
-CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
-		LDFLAGS='${LDFLAGS}' \
-		OPTIM='${OPTIM}' \
+CONFIGURE_ENV=	OPTIM='${OPTIM}' \
 		SSL_BASE='${OPENSSLBASE}' \
 		EAPI_MM='SYSTEM' \
 		PATH="${PREFIX}/bin:${PATH}"

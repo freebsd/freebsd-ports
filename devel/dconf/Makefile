@@ -29,8 +29,8 @@ GNU_CONFIGURE=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-build:
 	${GMAKE} -C ${WRKSRC}/client dconf-client.c libdconf.so.0

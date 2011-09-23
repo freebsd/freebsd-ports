@@ -18,8 +18,8 @@ COMMENT=	Text Editor Widgets for the Fast Light ToolKit
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-shared --with-fltk=${LOCALBASE}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

@@ -25,9 +25,9 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib" \
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/GL -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm"  \
-		LIBS="-lcompat" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-lcompat" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include/GL -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lm
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>

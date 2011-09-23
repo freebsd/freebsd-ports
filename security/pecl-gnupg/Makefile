@@ -25,7 +25,7 @@ PHP_MODNAME=	gnupg
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
 CFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$GNUPG_DIR/lib|${LOCALBASE}/lib|" -e "s|-ldl||g" \

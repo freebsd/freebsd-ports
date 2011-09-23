@@ -16,7 +16,7 @@ COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-tcl
 
 .include <bsd.port.pre.mk>

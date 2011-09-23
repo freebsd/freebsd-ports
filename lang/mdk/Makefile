@@ -22,7 +22,8 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		mdk
 

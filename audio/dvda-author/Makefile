@@ -37,6 +37,5 @@ CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${WRKDIR}/doc
 .endif
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

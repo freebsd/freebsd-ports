@@ -24,7 +24,6 @@ MAN1=		dosbox.1
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=	--enable-core-inline
 
 post-patch:

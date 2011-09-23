@@ -29,7 +29,6 @@ LDFLAGS+= -L${LOCALBASE}/lib -L${LOCALBASE}/lib
 CFLAGS+= -I${LOCALBASE}/include
 CXXFLAGS+= -I${LOCALBASE}/include
 CPPFLAGS+= -I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 

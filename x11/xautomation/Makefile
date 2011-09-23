@@ -19,8 +19,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/pat2ppm bin/patextract bin/png2pat bin/rgb2pat \
 		bin/visgrep bin/xmousepos bin/xte

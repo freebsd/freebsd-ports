@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--without-xft
 USE_XORG=	xft xt
 CONFIGURE_ARGS+=	--libs="${LDFLAGS}"
 CFLAGS+=	`freetype-config --cflags`
-LDFLAGS=	`freetype-config --libs`
+LDFLAGS+=	`freetype-config --libs`
 .endif
 .endif
 

@@ -15,8 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2-based imond-client to control an on(e) disc fli4l router
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gtk20 gnomehier
 
 post-patch:

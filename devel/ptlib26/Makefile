@@ -80,8 +80,8 @@ PLIST_SUB+=	BSDVIDEO="@comment "
 
 .if defined(WITH_V4L)
 CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	V4L=""
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	v4l1.0:${PORTSDIR}/multimedia/libv4l

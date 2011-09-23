@@ -93,14 +93,7 @@ MILTERLIB=	-rpath=${MILTERRPATH}
 .endif
 
 .if !defined(WITHOUT_MILTER_LDFLAGS)
-.if defined(LDFLAGS)
 LDFLAGS+=${MILTERLIB}
-.else
-LDFLAGS=${MILTERLIB}
 .endif
-.endif
-
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 # eof

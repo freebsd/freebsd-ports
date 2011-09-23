@@ -15,8 +15,8 @@ COMMENT=	A one of the most useless dockapps in the world
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 PLIST_FILES=	bin/wmpal

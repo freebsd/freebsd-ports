@@ -24,8 +24,8 @@ USE_SDL=	sdl
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lm
 CONFIGURE_ARGS=	--enable-tif --enable-xcf
 USE_LDCONFIG=	yes
 

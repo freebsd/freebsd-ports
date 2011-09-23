@@ -26,8 +26,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack \
 		libgnomecanvas libgnome referencehack
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.mk>
 

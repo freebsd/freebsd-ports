@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	gnome-subtitles.schemas
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

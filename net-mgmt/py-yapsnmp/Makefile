@@ -23,14 +23,14 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}"  \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-site-packages-prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 800000) && (${ARCH} == "i386")
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -fstack-protector -I${LOCALBASE}/include"
+CPPFLAGS+=	-fstack-protector -I${LOCALBASE}/include
 .endif
 
 post-patch:

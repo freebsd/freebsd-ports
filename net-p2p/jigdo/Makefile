@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WITH_BDB_VER?=	43
 
-CONFIGURE_ENV+=	"CPPFLAGS=-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	GUI "Build the gtk2 gui" off \
 		BDB "Build with Berkeley DB support (for jigdo-file cache)" on \
@@ -44,8 +44,8 @@ PLIST_SUB+=	GUI="@comment "
 .endif
 
 .if !defined(WITHOUT_BDB)
-CONFIGURE_ENV+=	CPPFLAGS=-I${BDB_INCLUDE_DIR} \
-		LIBS=-L${BDB_LIB_DIR}
+CONFIGURE_ENV+=	LIBS=-L${BDB_LIB_DIR}
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=--with-libdb=-l${BDB_LIB_CXX_NAME}
 USE_BDB=	${WITH_BDB_VER}
 .else

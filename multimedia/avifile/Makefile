@@ -27,9 +27,9 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
 LIBTOOLFILES=	configure ffmpeg/configure
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-gnu-ld --enable-iconv \
 		--disable-v4l \
 		--disable-divx4

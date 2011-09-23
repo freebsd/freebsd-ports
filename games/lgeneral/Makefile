@@ -23,14 +23,13 @@ CONFLICTS=	lgeneral-data-[0-9]*
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		lgc-pg.1
 MAN6=		lgeneral.6
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_SOUND)
 CONFIGURE_ARGS+=--disable-sound

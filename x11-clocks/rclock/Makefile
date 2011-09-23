@@ -26,7 +26,7 @@ MAN1=		rclock.1
 
 PLIST_FILES=	bin/rclock
 
-CPPFLAGS=	-DMAIL_SPOOL='\"/var/mail/\"'
+CPPFLAGS+=	-DMAIL_SPOOL='\"/var/mail/\"'
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -21,9 +21,9 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-gtk
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig
+CONFIGURE_ENV=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
 MAN1=	dubdv.1 dvconnect.1 encodedv.1
@@ -39,7 +39,7 @@ OPTIONS+=	SDL	"Add SDL support" off
 # Optimizations -O{1,s,2,3} work
 # However, lack of -O{1,s,2,3} or -O0 BREAK the build
 # Therefore, make sure we have AT LEAST -O and avoid -O0
-CONFIGURE_ENV+=	CFLAGS="-O ${CFLAGS:N-O0}"
+CFLAGS:=	-O ${CFLAGS:N-O0}
 
 .if defined(WITH_SDL)
 USE_SDL=	sdl

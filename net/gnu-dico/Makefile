@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS=	PYTHON	"With PYTHON support" on \

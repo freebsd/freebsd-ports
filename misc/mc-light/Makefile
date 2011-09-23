@@ -52,7 +52,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITH_MC_IN_MC)
-CONFIGURE_ENV+=	CPPFLAGS=-DMC_IN_MC_ALLOWED
+CPPFLAGS+=	-DMC_IN_MC_ALLOWED
 .endif
 
 post-install:

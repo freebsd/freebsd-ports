@@ -40,8 +40,8 @@ LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libxml2 ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/libxml2 ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.mk>

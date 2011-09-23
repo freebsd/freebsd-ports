@@ -27,7 +27,6 @@ INFO=		pinentry
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(PINENTRY_SLAVE)
 OPTIONS=	NCURSES "Curses frontend" on \

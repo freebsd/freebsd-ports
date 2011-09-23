@@ -17,7 +17,6 @@ USE_GNOME=	gnomehack
 USE_BISON=	build
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-unac
 USE_LDCONFIG=	yes
 
@@ -31,8 +30,8 @@ MAN3=		WordContext.3 WordList.3 WordDict.3 WordListOne.3 \
 		WordCursorOne.3 WordMonitor.3 Configuration.3 mifluz.3
 INFO=		mifluz
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE -pthread|${PTHREAD_CFLAGS}|g' \

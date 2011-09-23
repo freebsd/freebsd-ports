@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 MAKE_ARGS+=	MAKE=${GMAKE}
 CFLAGS+=	-DNNTP_SERVER_FILE=\\\"${PREFIX}/etc/nntpserver\\\"
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	build
 MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1 tinurl_handler.pl.1
 MAN5=		tin.5 tin_mbox.5 tin_mmdf.5

@@ -21,6 +21,6 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	amf
 
 CONFIGURE_ARGS=	--enable-amf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/php/ext/standard"
+CPPFLAGS+=	-I${LOCALBASE}/include/php/ext/standard
 
 .include <bsd.port.mk>

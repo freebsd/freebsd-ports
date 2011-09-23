@@ -25,8 +25,8 @@ USE_GL=		glu
 USE_GMAKE=	yes
 USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`fltk-config --cxxflags`" \
-		LDFLAGS="`fltk-config --ldflags`"
+CPPFLAGS+=	`fltk-config --cxxflags`
+LDFLAGS+=	`fltk-config --ldflags`
 MAKE_JOBS_SAFE=	yes
 
 LICENSE=	GPLv3

@@ -27,7 +27,7 @@ PORTDOCS=	ChangeLog README TODO
 .if ${OSVERSION} < 800069
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
 CFLAGS+=	-I${LOCALBASE}/include		# does not uphold CPPFLAGS
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 post-patch:

@@ -39,7 +39,8 @@ CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include \
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=--with-mysql
 .endif
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		modlogan.1
 DOC1=		faq.txt glosar manual.txt translations.txt \

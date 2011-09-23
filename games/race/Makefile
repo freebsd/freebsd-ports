@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GL=		glut
 CFLAGS+=	"-I${LOCALBASE}/include"
 CC+=		${CFLAGS}
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \

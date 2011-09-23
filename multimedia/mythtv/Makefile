@@ -48,7 +48,8 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 
 CPPFLAGS+=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
-		QTDIR="${QT_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
+		QTDIR="${QT_PREFIX}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --dvb-path=${LOCALBASE}/include \
 		--extra-cflags=-g --extra-cxxflags=-g --enable-v4l \

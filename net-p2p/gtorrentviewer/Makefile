@@ -21,8 +21,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 USE_GNOME=	gtk20 gnomehier intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \
 		--with-desktopdir=${PREFIX}/share/applications
 

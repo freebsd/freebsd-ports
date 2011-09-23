@@ -31,14 +31,14 @@ MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-CPPFLAGS=	${CFLAGS} -I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fPIC
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 			--with-xgnokiidir=${PREFIX}/share
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${WRKSRC}/common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*

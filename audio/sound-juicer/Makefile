@@ -33,8 +33,8 @@ USE_GSTREAMER=	cdparanoia vorbis flac gconf good gio
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ignore-missing-cd
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		sound-juicer.1
 GCONF_SCHEMAS=	sound-juicer.schemas

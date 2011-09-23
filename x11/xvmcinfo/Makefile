@@ -15,7 +15,7 @@ COMMENT=	Print out XvMC extension adaptor information
 
 USE_XORG=	xvmc xv x11
 
-LDFLAGS=	-lXvMC -lXv -lX11
+LDFLAGS+=	-lXvMC -lXv -lX11
 NO_WRKSUBDIR=	defined
 
 PLIST_FILES=	bin/xvmcinfo

@@ -15,8 +15,8 @@ COMMENT=	Remote control service over Bluetooth, infrared or tcp/ip networking
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	GPLv2
 

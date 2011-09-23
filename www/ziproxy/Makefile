@@ -24,8 +24,6 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-cfgfile="${PREFIX}/etc/ziproxy/ziproxy.conf"
 

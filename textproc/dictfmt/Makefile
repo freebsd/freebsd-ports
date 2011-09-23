@@ -19,7 +19,6 @@ LIB_DEPENDS=	maa.3:${PORTSDIR}/devel/libmaa
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt

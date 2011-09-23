@@ -18,7 +18,7 @@ COMMENT=	Arithmetic quiz program for X Window System
 USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/garith
 CFLAGS+=	`${GTK_CONFIG} --cflags`
-LDFLAGS=	`${GTK_CONFIG} --libs`
+LDFLAGS+=	`${GTK_CONFIG} --libs`
 PORTDOCS=	BUGS HISTORY README TODO
 PLIST_FILES=	bin/garith
 

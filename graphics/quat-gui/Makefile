@@ -21,8 +21,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 USE_XORG=	xext
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		LIBS="-lXext -lGL" FLUID="${LOCALBASE}/bin/fluid"
+CONFIGURE_ENV=	LIBS="-lXext -lGL" FLUID="${LOCALBASE}/bin/fluid"
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math

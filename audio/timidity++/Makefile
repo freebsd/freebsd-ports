@@ -40,7 +40,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xpf - --exclude '*/libarc/*'	\
 CONFIGURE_ARGS=	--enable-interface=ncurses,vt100,server \
 		--program-transform-name= --enable-network
 CPPFLAGS+=	-I${LOCALBASE}/include/libarc
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS=-export-dynamic
+LDFLAGS+=	-export-dynamic
 
 DOCFILES=	README.alsaseq README.dl README.m2m README.mts README.sf
 DOCLANG=	C ja_JP.eucJP

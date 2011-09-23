@@ -14,7 +14,8 @@ MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	Device Firmware Update based USB programmer for Atmel chips
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/dfu-programmer

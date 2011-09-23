@@ -16,7 +16,7 @@ COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
 
 MAN1=		pfqueue.1
 MAN5=		pfqueue.conf.5

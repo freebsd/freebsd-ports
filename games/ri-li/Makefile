@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include"
+CPPFLAGS+=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 
 DESKTOP_ENTRIES="Ri-li" \
 		"Drive a toy wood train in many levels - snake-like arcade game" \

@@ -17,8 +17,8 @@ COMMENT=	XBox xdvdfs iso extraction utility
 LIB_DEPENDS=	ftp.3:${PORTSDIR}/ftp/ftplib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/xbiso
 

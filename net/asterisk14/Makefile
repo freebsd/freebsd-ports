@@ -26,10 +26,10 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_RC_SUBR=	asterisk.sh

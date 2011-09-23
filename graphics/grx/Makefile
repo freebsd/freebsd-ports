@@ -20,8 +20,8 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
 		--with-x11-base=${LOCALBASE}
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-bin install-fonts install-info
 

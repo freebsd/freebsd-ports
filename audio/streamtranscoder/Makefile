@@ -21,7 +21,8 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		mp3lame:${PORTSDIR}/audio/lame
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/streamTranscoder
 PORTDOCS=	AUTHORS README

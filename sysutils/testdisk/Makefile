@@ -18,7 +18,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CPPFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--without-ewf
 
 MAN8=		fidentify.8 testdisk.8 photorec.8

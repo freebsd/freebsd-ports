@@ -20,8 +20,8 @@ COMMENT=	Abstraction library that sits between apps and visual plugin
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 

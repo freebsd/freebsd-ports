@@ -24,10 +24,9 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	setup.rb
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		RUBY="${RUBY}"
+CONFIGURE_ENV=	RUBY="${RUBY}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}" --prefix="${PREFIX}" \
 		--allow-example-errors
 .if defined(NOPORTDOCS)

@@ -24,8 +24,8 @@ USE_GL=		yes
 USE_XORG=	x11 xt xmu
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include/tk8.4" \
-		LDFLAGS="-L${LOCALBASE}/lib/tk8.4"
+LDFLAGS+=	-L${LOCALBASE}/lib/tk8.4
+CFLAGS+=	-I${LOCALBASE}/include/tk8.4
 CONFIGURE_ARGS=	--with-tk=${LOCALBASE}/lib/tk8.4 \
 		--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tclinclude=${LOCALBASE}/include/tcl8.4 \

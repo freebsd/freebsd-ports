@@ -21,8 +21,8 @@ USE_XORG=	x11
 USE_GNOME=	gnomehack gnomeprefix libgnomeui vte
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
 		CDDA2WAV "Ripper: cdda2wav: Install sysutils/cdrtools" off

@@ -28,7 +28,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_ARGS+=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \

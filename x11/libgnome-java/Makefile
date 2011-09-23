@@ -28,9 +28,9 @@ JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libgnomeui
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd" \
-		ac_cv_path_DB1="nocommand" \
+CONFIGURE_ENV=	ac_cv_path_DB1="nocommand" \
 		ac_cv_path_DB2="nocommand"
+CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 MAKE_JOBS_UNSAFE=	yes
 
 # jikes related

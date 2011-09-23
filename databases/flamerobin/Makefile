@@ -22,7 +22,7 @@ WX_PREMK=	yes
 WX_UNICODE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 MAN1=		flamerobin.1

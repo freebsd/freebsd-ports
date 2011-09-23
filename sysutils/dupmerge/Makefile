@@ -18,7 +18,6 @@ USE_ZIP=	yes
 MAKE_FLAGS=
 MAKEFILE=
 LDFLAGS+=	-lroken -lcrypt
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
 PORTDOCS=	readme.txt

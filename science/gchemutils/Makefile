@@ -30,7 +30,8 @@ USE_GNOME=	gnomehack intlhack gnomedocutils gtk20 libgsf
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

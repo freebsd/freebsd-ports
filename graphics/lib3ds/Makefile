@@ -19,13 +19,12 @@ LICENSE=	LGPL21 # (or later)
 USE_ZIP=	yes
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		3dsdump.1 lib3ds-config.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

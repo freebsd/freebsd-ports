@@ -15,8 +15,8 @@ COMMENT=	Utility for listing USB devices
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-zlib
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

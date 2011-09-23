@@ -19,8 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		dwarfdump.1
 

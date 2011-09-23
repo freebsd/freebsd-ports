@@ -84,9 +84,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
 CONFIGURE_ENV=	\
-	CC="${CC}" \
-	CPPFLAGS="${CPPFLAGS}" \
-	LDFLAGS="${LDFLAGS}" \
 	CONFIG_SHELL="${SH}" \
 	LOCALBASE="${LOCALBASE}"
 

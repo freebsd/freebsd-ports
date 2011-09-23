@@ -22,7 +22,6 @@ OPTIONS=	JACK "Enable Jack audio support" On \
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-alsa-support --disable-midishare \
 		--disable-coreaudio --disable-coremidi \
 		--disable-dart --disable-lash \
@@ -31,8 +30,8 @@ USE_LDCONFIG=	yes
 
 MAN1=		fluidsynth.1
 
-CPPFLAGS=	${PA2_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	${PA2_LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	${PA2_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PA2_LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

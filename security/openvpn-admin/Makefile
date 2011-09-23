@@ -21,8 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 USE_GMAKE=	yes
 USE_GNOME=	gtksharp20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

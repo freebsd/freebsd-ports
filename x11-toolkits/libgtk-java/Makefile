@@ -29,7 +29,7 @@ USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR} \
 		--without-javadocs # needs docbook-utils
 NOPORTDOCS=	yes # needs docbook-utils and some parts are broken.
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
+CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 GTK_API_VERSION=	2.10
 CAIRO_API_VERSION=	1.0
 PLIST_SUB=		GTK_API_VERSION=${GTK_API_VERSION} PORTNAME=${PORTNAME}

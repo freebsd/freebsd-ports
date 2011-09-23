@@ -33,7 +33,6 @@ USE_GMAKE=	yes
 USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env

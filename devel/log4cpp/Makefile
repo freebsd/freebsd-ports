@@ -17,7 +17,8 @@ COMMENT=	A library of C++ classes for flexible logging
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
 

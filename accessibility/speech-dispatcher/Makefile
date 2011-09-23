@@ -22,9 +22,9 @@ LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf \
 USE_GNOME=	glib20 pkgconfig
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFFILES=	clients/emacs.conf clients/gnome-speech.conf \

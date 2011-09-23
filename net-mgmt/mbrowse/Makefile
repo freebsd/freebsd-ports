@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-snmp-prefix=${PREFIX} --with-snmp-type=net
-CONFIGURE_ENV=	LDFLAGS="`net-snmp-config --libs`" \
-		CPPFLAGS="`net-snmp-config --cflags`"
+CPPFLAGS+=	`net-snmp-config --cflags`
+LDFLAGS+=	`net-snmp-config --libs`
 
 .include <bsd.port.mk>

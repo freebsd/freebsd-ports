@@ -92,8 +92,9 @@ QTCPPFLAGS+=		-D_GETOPT_H		# added to work around broken getopt.h #inc
 .if !defined (QT_NONSTANDARD)
 CONFIGURE_ARGS+=--with-extra-libs="${LOCALBASE}/lib" \
 				--with-extra-includes="${LOCALBASE}/include"
-CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+CONFIGURE_ENV+=	MOC="${MOC}" LIBS="${QTCFGLIBS}" \
 				QTDIR="${QT_CVS_PREFIX}" KDEDIR="${KDE_CVS_PREFIX}"
+CPPFLAGS+=		${QTCPPFLAGS}
 .endif
 
 .elif ${USE_QT_VER} == 3
@@ -123,8 +124,9 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-qt-libraries=${QT_PREFIX}/lib \
 				--with-extra-libs=${LOCALBASE}/lib \
 				--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+CONFIGURE_ENV+=	MOC="${MOC}" LIBS="${QTCFGLIBS}" \
 				QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
+CPPFLAGS+=		${QTCPPFLAGS}
 .endif # !defined(QT_NONSTANDARD)
 
 .else

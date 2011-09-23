@@ -39,8 +39,8 @@ GCONF_SCHEMAS=	compiz-atlantis.schemas \
 		compiz-snow.schemas \
 		compiz-tile.schemas
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
 .include <bsd.port.mk>

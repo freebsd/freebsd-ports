@@ -28,8 +28,8 @@ USE_GMAKE=	yes
 USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=--with-zlib=/usr \
 		--disable-libappindicator \
 		--disable-gconf2 \

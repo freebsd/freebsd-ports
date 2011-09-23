@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--without-gif \
 			--without-libjpeg
 
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
+LDFLAGS+=		-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 CFLAGS+=		-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>

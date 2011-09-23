@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gnomehier intlhack
 USE_XORG=	x11 xi xtst
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

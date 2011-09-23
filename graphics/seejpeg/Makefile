@@ -25,8 +25,8 @@ MAN1=		seejpeg.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/seejpeg
 USE_GMAKE=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	${CHMOD} 0644 ${WRKSRC}/Makefile

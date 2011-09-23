@@ -29,8 +29,8 @@ USE_GL=		gl glu
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/smc
 

@@ -23,8 +23,8 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gsynaptics.1 gsynaptics-init.1
 

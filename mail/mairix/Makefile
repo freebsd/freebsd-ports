@@ -16,7 +16,6 @@ COMMENT=	Indexing and searching in Maildir, MH or mbox folders
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_BISON=	build
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=	mairix.1
 MAN5=	mairixrc.5

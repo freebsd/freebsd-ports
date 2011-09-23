@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(WITHOUT_PYTHON)
 CONFIGURE_ARGS=	--enable-python=yes
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--enable-python=no
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
+CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.post.mk>

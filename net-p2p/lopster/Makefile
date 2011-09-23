@@ -19,8 +19,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ARGS=	--with-pthread=yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	FLAC	"Include FLAC support"		On	\
 		OGG	"Include OGG support"		On	\

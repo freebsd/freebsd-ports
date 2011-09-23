@@ -22,7 +22,6 @@ ALL_TARGET=	Frodo
 WRKNAME=	Frodo-4.1b
 WRKSRC=		${WRKDIR}/${WRKNAME}/Src
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
 .endif

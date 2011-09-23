@@ -17,7 +17,8 @@ USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --program-suffix="" --enable-shared
 
 PLIST_SUB=	BUILD=${MACHINE_ARCH}-portbld-freebsd${OSREL}

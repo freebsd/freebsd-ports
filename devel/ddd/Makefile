@@ -24,8 +24,6 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
-		LDFLAGS='${LDFLAGS}'
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
 		--with-readline-libraries=/usr/lib
 

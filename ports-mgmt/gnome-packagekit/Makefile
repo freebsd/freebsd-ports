@@ -33,8 +33,8 @@ GCONF_SCHEMAS=	gnome-packagekit.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	gpk-application.1 gpk-backend-status.1 gpk-install-local-file.1 \
 	gpk-install-mime-type.1 gpk-install-package-name.1 \

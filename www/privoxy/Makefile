@@ -32,8 +32,8 @@ CONFLICTS=	privoxy-devel-[0-9]*
 
 MAN1=		privoxy.1
 
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
-		CPPFLAGS=-I${LOCALBASE}/include/
+CPPFLAGS+=	-I${LOCALBASE}/include/
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	ACCEPT_FILTER "Enable support for accf_http(9)" Off \
 		DEBUG "Build with debugging symbols" Off \

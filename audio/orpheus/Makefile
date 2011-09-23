@@ -24,7 +24,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	NLS	"Native language support"	on \
 		CDDB	"CDDB audio CD' auto fetch track info support"	on \

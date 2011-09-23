@@ -39,6 +39,5 @@ CONFIGURE_ARGS+=	--disable-openssl
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.post.mk>

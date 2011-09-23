@@ -17,7 +17,7 @@ OPTIONS=	BOOST	"Build with boost"	off
 
 USE_AUTOTOOLS=		autoconf libtool automake
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CFLAGS+=		-I${LOCALBASE}/include
 USE_LDCONFIG=		yes
 USE_GNOME=		pkgconfig gnomehack
 

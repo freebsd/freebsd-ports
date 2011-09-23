@@ -20,7 +20,7 @@ COMMENT=	An HP48 SX/GX graphic calculator emulator
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS=-lutil
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt

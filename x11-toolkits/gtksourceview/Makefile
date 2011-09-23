@@ -27,8 +27,8 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui intlhack \
 		ltverhack referencehack
 CONFIGURE_ARGS=	--enable-compile-warnings=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnuregex"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
 

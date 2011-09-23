@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-alsa \
 		--disable-octave
 CPPFLAGS+=	-isystem /usr/include -isystem ${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \

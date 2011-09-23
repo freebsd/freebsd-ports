@@ -34,7 +34,7 @@ OPTIONS=	THREADS "Enable threading (uses pthreads)"	on \
 
 .if defined (WITH_THREADS)
 CFLAGS+=	${PTHREAD_CFLAGS}
-MAKE_ENV=	LDFLAGS=${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CFLAGS+=-DNO_THREADS
 .endif

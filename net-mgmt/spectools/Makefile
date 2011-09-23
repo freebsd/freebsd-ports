@@ -18,8 +18,8 @@ COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 
 PORTDOCS=	README

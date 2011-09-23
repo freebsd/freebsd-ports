@@ -65,8 +65,8 @@ CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+CFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

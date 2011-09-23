@@ -25,9 +25,10 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 
-CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib \
-			LDFLAGS=-L${PREFIX}/lib \
-			PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
+CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
+		PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
+CPPFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 
 MAN1=	tablix2.1 tablix2_benchmark.1 tablix2_kernel.1 tablix2_output.1 \
 	tablix2_plot.1 tablix2_test.1

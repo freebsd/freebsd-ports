@@ -19,7 +19,8 @@ CONFLICTS=	openal-soft-[0-9]*
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack

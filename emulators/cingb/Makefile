@@ -17,14 +17,13 @@ COMMENT=	Yet another Nintendo GameBoy(tm) emulator
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11 xext
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	standard
 
 PORTDOCS=	README README.FAQ
 PLIST_FILES=	bin/cingb bin/cingb_conf
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

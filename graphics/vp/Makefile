@@ -16,7 +16,6 @@ COMMENT=	An image viewer for X
 
 USE_SDL=	image
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		vp.1
 PLIST_FILES=	bin/vp

@@ -29,7 +29,6 @@ USE_TK_BUILD=	yes
 USE_TK=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
 		--with-blt=${LOCALBASE} \
@@ -39,7 +38,7 @@ MAKE_ENV=	LIB_RUNTIME_DIR="${LOCABASE}/lib"
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
 
 CPPFLAG=	-I${LOCALBASE}/include/itcl3.4
-LDFLAGS=	-L${LOCALBASE}/lib -litcl
+LDFLAGS+=	-L${LOCALBASE}/lib -litcl
 
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \

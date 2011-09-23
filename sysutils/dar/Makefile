@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-build-html --datadir=${DATADIR} --disable-upx
 
-CPPFLAGS=	-DHAVE_DECL_GETOPT=0
+CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
 
 MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
 
@@ -29,7 +29,6 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-libintl-prefix=${PREFIX}
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "

@@ -37,8 +37,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		"etc/nail.rc.default" \
 		"@exec [ -f %B/nail.rc ] || ${CP} %B/%f %B/nail.rc"
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

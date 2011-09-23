@@ -20,7 +20,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	gtick.1
 

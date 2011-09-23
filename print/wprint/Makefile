@@ -23,13 +23,12 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 USE_ICONV=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		wprint.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 .for file in man/wprint.1.pod src/wprint.c

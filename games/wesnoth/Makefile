@@ -31,8 +31,7 @@ USE_LUA=	5.1
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
-CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}"
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-boost=${LOCALBASE} \
 		--with-icondir=${PREFIX}/share/pixmaps \

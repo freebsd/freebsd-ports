@@ -29,8 +29,8 @@ USE_GNOME=	gnomehack glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 post-patch:

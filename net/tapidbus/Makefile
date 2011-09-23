@@ -23,7 +23,6 @@ USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\-O2||' ${WRKSRC}/configure

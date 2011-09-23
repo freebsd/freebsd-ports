@@ -18,7 +18,6 @@ COMMENT=	Commandline client for DAV
 LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver
 MAKE_JOBS_SAFE=	yes
@@ -37,8 +36,8 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - \
 		--exclude 'glob.[ch]' --exclude 'mkstemp.[ch]'	\
 		--exclude 'tempname.[ch]' --exclude 'basename.[ch]'
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	yes

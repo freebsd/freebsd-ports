@@ -24,8 +24,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-static
 
 .include <bsd.port.mk>

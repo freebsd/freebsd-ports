@@ -36,10 +36,10 @@ USE_GNOME=	gtk20 libxslt ltverhack
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
+CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ac_cv_path_DOLT_BASH=""
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-icon-database \
 		--with-gtk=2.0 \
 		--enable-svg \

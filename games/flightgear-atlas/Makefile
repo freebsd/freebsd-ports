@@ -36,12 +36,11 @@ GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-DSG_GLUT_H='<GL/glut.h>' \
 		-DSG_GL_H='<GL/gl.h>' \
 		-DSTL_STRING='<string>'
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-fgbase="${LOCALBASE}/share/flightgear"
 
 post-patch:

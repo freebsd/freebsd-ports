@@ -26,7 +26,6 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 ALL_TARGET=	audinfo snd snd-info sndplay
@@ -35,8 +34,8 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		snd.1
 
 CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

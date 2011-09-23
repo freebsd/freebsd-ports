@@ -22,13 +22,12 @@ USE_GL=		gl
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
 MAKE_JOBS_SAFE=	yes
 
 MAN6=		abuse.6 abuse-tool.6
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

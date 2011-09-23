@@ -39,7 +39,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome --disable-silent-rules
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 MAKE_JOBS_SAFE=	yes
 
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \

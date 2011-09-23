@@ -40,9 +40,9 @@ USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
 CONFIGURE_ARGS=	--enable-gnet \
 		--enable-dbus
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="${PTHREAD_LIBS} -lm"
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lm"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		gcompris.6
 INFO=		gcompris

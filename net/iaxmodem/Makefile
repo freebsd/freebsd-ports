@@ -18,9 +18,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 MAN1=		iaxmodem.1
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	iaxmodem

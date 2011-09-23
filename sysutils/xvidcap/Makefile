@@ -25,9 +25,9 @@ RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
 # Remove MAKE="${GMAKE}" after ffmpeg-devel's upgrade
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"	\
-			LOCALBASE="${LOCALBASE}"		\
+CONFIGURE_ENV=		LOCALBASE="${LOCALBASE}"		\
 			MAKE="${GMAKE}"
+CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade

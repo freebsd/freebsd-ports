@@ -17,8 +17,8 @@ COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game
 USE_BZIP2=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 post-patch:

@@ -31,8 +31,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 		CATALOG_PORTS_XML="${LOCALBASE}/share/xml/catalog.ports"

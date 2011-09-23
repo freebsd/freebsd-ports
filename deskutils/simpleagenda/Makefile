@@ -26,7 +26,6 @@ USE_GNUSTEP_INSTALL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 ADDITIONAL_OBJCFLAGS=	'-Dsel_isEqual(x,y) (x==y)'
 
 pre-configure:

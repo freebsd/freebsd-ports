@@ -17,7 +17,7 @@ COMMENT=	Simple ifcico like Fidonet technology mailer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-builtin"
+CFLAGS+=	-fno-builtin
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 SUB_FILES=	pkg-message

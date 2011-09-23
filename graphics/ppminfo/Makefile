@@ -19,8 +19,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's|min(|MIN(|;s|max(|MAX(|' ${WRKSRC}/pi.c

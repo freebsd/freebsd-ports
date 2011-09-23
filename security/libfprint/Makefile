@@ -23,8 +23,8 @@ USE_OPENSSL=	yes
 USE_GNOME=	glib20 pkgconfig
 
 CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
-		CRYPTO_LIBS=-lcrypto \
-		CFLAGS="${CFLAGS} -DHAVE_MEMMEM"
+		CRYPTO_LIBS=-lcrypto
+CFLAGS+=	-DHAVE_MEMMEM
 
 .include <bsd.port.pre.mk>
 

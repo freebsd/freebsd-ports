@@ -23,7 +23,7 @@ USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/pinball"
-CPPFLAGS=	-DRZR_LIBSTATIC
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/pinball
+CPPFLAGS+=	-DRZR_LIBSTATIC
 
 .include <bsd.port.mk>

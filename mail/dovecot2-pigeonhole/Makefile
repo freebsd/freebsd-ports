@@ -25,7 +25,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir=${DOCSDIR} \
 		--with-dovecot="${LOCALBASE}/lib/dovecot"
-CONFIGURE_ENV=	LDFLAGS='${LDFLAGS}'
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 

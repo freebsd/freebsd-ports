@@ -32,7 +32,6 @@ USE_GNOME=	glib20 gtk20 pango
 USE_ICONV=	yes
 USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
 		--disable-send-postcard-to-developer \

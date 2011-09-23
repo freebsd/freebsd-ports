@@ -28,7 +28,8 @@ USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	ontv.schemas
 INSTALLS_ICONS=	yes
 

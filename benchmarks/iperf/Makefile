@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 .else
-CONFIGURE_ENV+=		CFLAGS+=${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 post-install:

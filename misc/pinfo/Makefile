@@ -15,8 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-readline \
 		--with-localedir=${PREFIX}/share/locale
 

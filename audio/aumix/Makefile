@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--enable-own-labels \
 		--libdir="${LOCALBASE}/lib"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		aumix.1 xaumix.1 mute.1
 PLIST_DIRS=	share/aumix

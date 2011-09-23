@@ -29,8 +29,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
 		--with-conf-dir=${PREFIX}/etc/${PORTNAME} \
@@ -75,7 +73,7 @@ PLIST_SUB+=	UNICODE="@comment "
 # TODO WITHOUT_NLS knob
 #.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lintl"
+LDFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 #.else
 #CONFIGURE_ARGS+=--disable-nls

@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 USE_CSTD=	gnu99
 CFLAGS+=	${PTHREAD_CFLAGS}
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-pthreads \
 		--disable-java-bindings \
 		--disable-hunspell \

@@ -26,7 +26,8 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \

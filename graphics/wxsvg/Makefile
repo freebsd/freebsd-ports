@@ -22,8 +22,8 @@ USE_AUTOTOOLS=	automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
 USE_WX=		2.8

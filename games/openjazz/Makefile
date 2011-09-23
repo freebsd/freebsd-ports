@@ -31,7 +31,6 @@ DOS2UNIX_REGEX=	.*\.(h|cpp)
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` \
 		-DDATAPATH=\\\"${DATADIR}/\\\" -DHOMEDIR
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 SUB_FILES=	pkg-message
 

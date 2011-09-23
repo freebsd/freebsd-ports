@@ -26,7 +26,6 @@ USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
-		LDFLAGS="${LDFLAGS}"			\
 		ac_cv_header_libusbhid_h=no
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

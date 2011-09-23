@@ -39,8 +39,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 		--libdir=${PREFIX}/libexec
 

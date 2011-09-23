@@ -28,9 +28,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	xaw ice
 
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES=	"Foobillard" \
 			"A free OpenGL-billard game" \

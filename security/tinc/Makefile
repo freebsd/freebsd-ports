@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 USE_RC_SUBR=	tincd.sh
 
 PLIST_FILES=	sbin/tincd

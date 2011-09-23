@@ -26,10 +26,10 @@ USE_GNOME=	gtk20 glib20 pango atk
 USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
 		automake:env libtool:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \
-			-I${LOCALBASE}/include/glib-2.0 \
-			-I${LOCALBASE}/include/pango-1.0 \
-			-I${LOCALBASE}/include/atk-1.0"
+CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
+		-I${LOCALBASE}/include/glib-2.0 \
+		-I${LOCALBASE}/include/pango-1.0 \
+		-I${LOCALBASE}/include/atk-1.0
 CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE}

@@ -29,8 +29,8 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	enca.1
 MLINKS=	enca.1 enconv.1

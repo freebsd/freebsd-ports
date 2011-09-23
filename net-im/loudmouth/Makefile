@@ -23,8 +23,8 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 
 OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on \
 		OPENSSL "Enable SSL (via OpenSSL) support" off

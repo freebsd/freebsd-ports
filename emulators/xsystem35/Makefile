@@ -35,8 +35,8 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound

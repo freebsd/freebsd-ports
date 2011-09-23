@@ -24,7 +24,6 @@ LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 USE_GNOME=	gnomehack pkgconfig
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 INFO=	gsasl
@@ -37,8 +36,8 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-CPPFLAGS=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS=	-L/usr/lib -L${LOCALBASE}/lib
+CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
+LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 
 post-patch:
 .for file in \

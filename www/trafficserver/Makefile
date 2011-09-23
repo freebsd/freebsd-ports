@@ -28,7 +28,7 @@ USE_TCL=	yes
 USE_RC_SUBR=	${PORTNAME}
 USE_LDCONFIG=	yes
 
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-expat=${LOCALBASE} \
 		--with-pcre=${LOCALBASE}
 

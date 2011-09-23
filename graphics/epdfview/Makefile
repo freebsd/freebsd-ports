@@ -26,8 +26,8 @@ INSTALLS_ICONS=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intlhack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	CUPS	"Use cups printing system"		off \
 		NLS	"Native language support"		on
@@ -48,7 +48,6 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "

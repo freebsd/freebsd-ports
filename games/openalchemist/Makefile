@@ -26,8 +26,6 @@ ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 USE_GNOME=	pkgconfig pygtk2
 USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
 USE_GL=		gl glu

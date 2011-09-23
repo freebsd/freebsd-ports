@@ -31,8 +31,8 @@ CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 USE_LDCONFIG=	yes
 
 post-patch:

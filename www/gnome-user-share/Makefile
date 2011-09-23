@@ -32,8 +32,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomedocutils nautilus2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	desktop_gnome_file_sharing.schemas
 

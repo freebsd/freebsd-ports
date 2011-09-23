@@ -22,7 +22,6 @@ USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-g -O0 -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-system-lua \
 		--with-lua-pkg=lua-${LUA_VER}
 

@@ -27,7 +27,7 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--enable-imfexamples
 
 # must be explicitely linked with -l{thr|pthread}
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 PTHREAD_LIBS+= `${CC} -dumpspecs | ${SED} -ne '/%{\!pg: %{pthread:/s/^.*%{\!pg: %{pthread:\([^}]*\)}.*$$/\1/p' || ${TRUE}`
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

@@ -140,8 +140,8 @@ CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
 
 .if !defined(WITHOUT_APACHE_EXPAT) && !defined(WITH_APACHE_INTERNAL_EXPAT)
 CONFIGURE_ENV+=	\
-		INCLUDES=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+		INCLUDES=-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1

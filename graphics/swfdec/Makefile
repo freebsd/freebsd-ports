@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20 ltverhack
 USE_GSTREAMER=	core good mp3 ffmpeg
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 

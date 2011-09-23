@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="`pkg-config --libs libgnomeui-2.0`"
+CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
+CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

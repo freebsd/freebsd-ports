@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	\
 	--with-ruby=${LOCALBASE}/bin/ruby \
 	--with-default-encoding=${DEFAULT_ENCODING} \
 	--with-filter-moduledir=${PREFIX}/lib/rast/filters
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-lz"
+LDFLAGS+=	-lz
+CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	YES
 MAKE_JOBS_UNSAFE=	yes
 

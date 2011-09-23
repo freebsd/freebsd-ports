@@ -19,8 +19,8 @@ USE_MYSQL=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 USE_LDCONFIG=	yes
 

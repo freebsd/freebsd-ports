@@ -27,8 +27,8 @@ USE_GNOME=	glib20 gtk20 gtksourceview2 libglade2
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 PLIST_SUB+=	GIGGLE_VER=${PORTVERSION}
 
 .include <bsd.port.options.mk>

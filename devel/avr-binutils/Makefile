@@ -23,8 +23,8 @@ USE_GMAKE=	yes
 USE_GETTEXT=	build
 CONFIGURE_ARGS=	--target=avr
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 .if (${MACHINE_ARCH} == "amd64")
 MACHINE_ARCH=	x86_64
 .endif

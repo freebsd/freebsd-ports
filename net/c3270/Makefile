@@ -21,9 +21,9 @@ GNU_CONFIGURE=	yes
 
 USE_ICONV=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/lib" \
-		LIBS="-L/usr/local/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		c3270.1 \
 		x3270if.1 \

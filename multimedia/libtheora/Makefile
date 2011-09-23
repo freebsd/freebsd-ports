@@ -22,9 +22,9 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="${PTHEAD_LIBS}"
+CONFIGURE_ENV=	LIBS="${PTHEAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include 
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-sdltest \
 		--enable-shared \
 		--disable-examples

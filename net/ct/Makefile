@@ -18,6 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/v6eval/bin/pktbuf:${PORTSDIR}/net/v6eval
 USE_PERL5=      yes
 NO_BUILD=	yes
 
-MAKE_ENV+=      "NUTTYPE=host"
+MAKE_ENV+=	"NUTTYPE=host"
 
 .include <bsd.port.mk>

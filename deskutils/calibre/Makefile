@@ -53,8 +53,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PYSETUP=	setup.py
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
-		FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
+MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}"

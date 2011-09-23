@@ -17,7 +17,7 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 GNU_CONFIGURE=	yes

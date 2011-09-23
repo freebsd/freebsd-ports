@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 USE_GNUSTEP=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes

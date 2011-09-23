@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
 USE_GMAKE=	yes
 
-CONFIGURE_ENV+=	"CPPFLAGS=-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/wmwifi
 

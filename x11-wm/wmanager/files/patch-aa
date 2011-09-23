@@ -36,7 +36,7 @@ diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
 -LDDIRS    = -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
 -
 +LD        = $(CXX)
-+LDFLAGS   ?= -lGL -lfltk -lXext -lX11 -lm ${PTHREAD_LIBS}
++LDFLAGS   += -lGL -lfltk -lXext -lX11 -lm ${PTHREAD_LIBS}
 +LDDIRS    = -L$(x11lib)
  
  # install settings

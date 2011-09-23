@@ -22,8 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MIMELIB_VERSION=	3.1.1
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mimelib-local \
 		--with-default-www-dir=${PREFIX}/www/lurker \
 		--with-cgi-bin-dir=${PREFIX}/www/lurker

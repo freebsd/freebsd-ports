@@ -23,8 +23,8 @@ USE_SDL=	sdl
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib"\
-		CPPFLAGS="-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
 
 PORTDOCS=	*
 

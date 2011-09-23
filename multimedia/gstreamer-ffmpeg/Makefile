@@ -26,9 +26,10 @@ USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-ffmpeg-extra-configure=--cc=${CC}"
-CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
-		CFLAGS="${CFLAGS} -fno-force-addr" \
-		LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic"
+CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
+
+LDFLAGS+=	-Wl,-Bsymbolic
+CFLAGS+=	-fno-force-addr
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}"
 WITHOUT_CPU_CFLAGS=	yes

@@ -26,7 +26,6 @@ USE_GL=		gl
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>

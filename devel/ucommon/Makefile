@@ -17,7 +17,7 @@ COMMENT=	A very light-weight C++ design patternlibrary
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 scrub-files.1 sockaddr.1 \
 	ucommon-config.1 zerofill.1

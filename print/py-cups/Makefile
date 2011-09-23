@@ -21,7 +21,6 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
 CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\\\"${PORTVERSION}\\\"
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYDISTUTILS=	yes

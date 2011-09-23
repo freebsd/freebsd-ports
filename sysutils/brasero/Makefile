@@ -35,8 +35,8 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-inotify --with-html-dir=${PREFIX}/share/doc \
 		--enable-gtk3=no --enable-introspection=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		brasero.1
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml

@@ -43,8 +43,7 @@ INCLUDES+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 		--with-includes=${PREFIX}/include \
 		--enable-thread-safety
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
-		INCLUDES="${INCLUDES}" \
+CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 

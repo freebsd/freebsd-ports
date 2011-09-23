@@ -25,7 +25,6 @@ USE_XORG=	x11
 USE_TK=		82
 USE_TCL=	82
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-I$(LOCALBASE)/include \
 		-I$(LOCALBASE)/include/tcl8.2 \
 		-I$(LOCALBASE)/include/tk8.2

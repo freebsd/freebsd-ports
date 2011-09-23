@@ -20,7 +20,6 @@ COMMENT=	A Borland-like IDE programming environment
 USE_GMAKE=	yes
 USE_XORG=	sm ice x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 ALL_TARGET=	# none
 

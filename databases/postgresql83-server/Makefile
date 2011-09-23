@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 		--with-includes=${PREFIX}/lib \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" INCLUDES="${INCLUDES}" \
+CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 

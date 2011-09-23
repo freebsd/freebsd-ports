@@ -27,7 +27,8 @@ OPTIONS=	FFI "use libffi to call native methods" ON \
 .if defined(WITH_FFI)
 LIB_DEPENDS+=		ffi:${PORTSDIR}/devel/libffi
 CONFIGURE_ARGS+=	--enable-ffi
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} `pkg-config libffi --cflags`" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	`pkg-config libffi --cflags`
 .endif
 
 .if defined(WITH_ZIP)

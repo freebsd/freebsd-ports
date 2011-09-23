@@ -18,13 +18,12 @@ COMMENT=	A simple video encoder
 LIB_DEPENDS=	fame-0.9.1:${PORTSDIR}/multimedia/libfame
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		recmpeg.1
 PLIST_FILES=	bin/recmpeg
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

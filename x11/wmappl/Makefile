@@ -18,9 +18,7 @@ COMMENT=	An application launcher dockapp similar to wmbutton
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm x11 xext sm ice
-MAKE_ENV=	DATADIR="${DATADIR}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	DATADIR="${DATADIR}"
 
 MAN1=	wmappl.1
 MAN5=	wmapplrc.5

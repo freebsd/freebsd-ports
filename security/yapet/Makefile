@@ -56,8 +56,6 @@ CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "

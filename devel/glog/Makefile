@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 PROJECTHOST=	google-glog
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 .include <bsd.port.pre.mk>
 

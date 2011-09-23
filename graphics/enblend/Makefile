@@ -33,8 +33,8 @@ USE_AUTOTOOLS=	automake:env autoconf:env
 USE_GCC=	4.4+
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		enblend.1 enfuse.1
 PLIST_FILES=	bin/enblend bin/enfuse

@@ -18,7 +18,6 @@ LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/spass

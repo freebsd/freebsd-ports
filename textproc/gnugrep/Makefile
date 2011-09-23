@@ -33,7 +33,6 @@ OPTIONS=	PCRE	"Compile with Perl-compatible regex support"	off
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=
 .else

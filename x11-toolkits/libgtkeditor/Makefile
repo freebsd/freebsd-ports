@@ -24,8 +24,8 @@ USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-configure:
 .for file in install-sh mkinstalldirs

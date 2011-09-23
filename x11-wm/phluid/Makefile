@@ -17,7 +17,7 @@ COMMENT=	A window manager that emphasizes efficiency, speed, and beauty
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lm
 
 .include <bsd.port.mk>

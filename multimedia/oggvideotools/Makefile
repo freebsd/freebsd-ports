@@ -20,7 +20,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAKEFILE=	makefile
 
 .for app in oggSplit oggDump oggJoin oggCut oggCat oggLength oggSlideshow oggThumb oggResize oggSilence oggScroll mkThumbs mkSlideshow

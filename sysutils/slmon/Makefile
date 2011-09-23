@@ -22,13 +22,12 @@ MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		slmon.1
 PLIST_FILES=	bin/slmon
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lncurses -lm
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lncurses -lm
 
 .include <bsd.port.pre.mk>
 

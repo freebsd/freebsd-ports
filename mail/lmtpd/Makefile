@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--without-db3 --without-db4
 .endif
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-perl
 
 MAN8=		lmtpd.8

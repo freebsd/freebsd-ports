@@ -33,8 +33,8 @@ CONFIGURE_ARGS=	--enable-jack \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>

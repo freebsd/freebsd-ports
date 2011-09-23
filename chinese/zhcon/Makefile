@@ -22,8 +22,8 @@ USE_ICONV=	yes
 # Don't bother to add ".if !defined(WITHOUT_NLS)", zhcon requires libintl
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

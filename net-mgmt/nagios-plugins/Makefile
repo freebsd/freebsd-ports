@@ -56,10 +56,10 @@ CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
 		--localstatedir=${NAGIOSDIR} \
 		--prefix=${PREFIX}
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		PERL=${PERL}
+CONFIGURE_ENV=	PERL=${PERL}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(WITH_QSTAT)
 BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat

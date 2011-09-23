@@ -52,7 +52,7 @@ PLIST_SUB+=	OPENEXR:=""
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
-CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	${CFLAGS}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

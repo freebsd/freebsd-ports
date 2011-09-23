@@ -22,8 +22,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 MAKE_JOBS_SAFE=	yes
 

@@ -27,7 +27,6 @@ USE_BZIP2=	yes
 USE_XORG=	xext
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs \
 		--without-builtin-ungif --without-afterbase \
 		--with-x
@@ -36,8 +35,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ascompose.1x
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

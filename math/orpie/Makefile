@@ -19,8 +19,8 @@ LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/orpie bin/orpie-curses-keys etc/orpierc
 

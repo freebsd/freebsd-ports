@@ -44,7 +44,6 @@ BROKEN=	does not build on 6.x
 .if ${ARCH} == "i386"
 CPPFLAGS+=-march=i686
 .endif
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .ifndef MNAME
 MAN8=	rsyslogd.8
