@@ -7,6 +7,7 @@
 
 PORTNAME=	PerlIO-Util
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,10 +27,6 @@ MAN3=		PerlIO::Util.3 \
 		PerlIO::tee.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
 
 .if ${PERL_LEVEL} < 501001
 BUILD_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort
