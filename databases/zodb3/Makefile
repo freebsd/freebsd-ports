@@ -7,6 +7,7 @@
 
 PORTNAME=	zodb
 PORTVERSION=	3.10.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
 		${PYTHON_PKGNAMEPREFIX}transaction>=1.1.0:${PORTSDIR}/devel/py-transaction \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:${PORTSDIR}/devel/py-zclockfile \
 		${PYTHON_PKGNAMEPREFIX}zopeevent>=1.0.0:${PORTSDIR}/devel/py-zopeevent \
-		${PYTHON_PKGNAMEPREFIX}zopeproxy>=3.4.2:${PORTSDIR}/net/py-zopeproxy
+		${PYTHON_PKGNAMEPREFIX}zope.proxy>=3.4.2:${PORTSDIR}/net/py-zope.proxy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
