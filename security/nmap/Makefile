@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap
-DISTVERSION=	5.59BETA1
+DISTVERSION=	5.61TEST1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
