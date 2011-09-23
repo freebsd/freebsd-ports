@@ -16,6 +16,7 @@
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-psych
+    SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
     SUBDIR += R-cran-spdep
