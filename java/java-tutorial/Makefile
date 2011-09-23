@@ -18,7 +18,7 @@ COMMENT=	Official Java 2 SDK tutorial
 
 BROKEN=		unfetchable
 DEPRECATED=	disappeared from vendor a long time ago
-EXPIRATION_DATE=	2001-10-11
+EXPIRATION_DATE=	2011-10-11
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	This software is under license and export control.
