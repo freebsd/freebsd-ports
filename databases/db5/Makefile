@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	db5
-PORTVERSION=	5.2.28.0
+PORTVERSION=	5.2.36.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
+# the distfiles aren't named db5-* but db-*:
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
