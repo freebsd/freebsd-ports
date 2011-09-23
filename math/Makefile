@@ -378,6 +378,7 @@
     SUBDIR += p5-Math-Polygon
     SUBDIR += p5-Math-Polygon-Tree
     SUBDIR += p5-Math-Polynomial-Solve
+    SUBDIR += p5-Math-Prime-XS
     SUBDIR += p5-Math-RPN
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-ISAAC
