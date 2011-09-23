@@ -762,6 +762,7 @@
     SUBDIR += libassa
     SUBDIR += libassetml
     SUBDIR += libast
+    SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
     SUBDIR += libbegemot
