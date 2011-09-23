@@ -199,7 +199,6 @@ ORBit2                          ports/devel/ORBit2
 ORBit2-reference                ports/devel/ORBit2-reference
 OpenEXR                         ports/graphics/OpenEXR
 PDL                             ports/math/PDL
-PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
@@ -1538,7 +1537,6 @@ checkmol                        ports/science/checkmol
 checkpassword                   ports/security/checkpassword
 checkpassword-pam               ports/security/checkpassword-pam
 checkrdf                        ports/deskutils/checkrdf
-checkservice                    ports/sysutils/checkservice
 cheech                          ports/games/cheech
 cheese                          ports/multimedia/cheese
 cheesetracker                   ports/audio/cheesetracker
@@ -3911,7 +3909,6 @@ frei0r-plugins-opencv           ports/graphics/frei0r-plugins-opencv
 freqsdwn                        ports/sysutils/freqsdwn
 frescobaldi                     ports/print/frescobaldi
 freshmeat-submit                ports/misc/freshmeat-submit
-fressh                          ports/security/fressh
 fretsonfire                     ports/games/fretsonfire
 fretsonfire-data                ports/games/fretsonfire-data
 fribidi                         ports/converters/fribidi
@@ -4820,7 +4817,6 @@ gpa                             ports/security/gpa
 gpac-libgpac                    ports/multimedia/gpac-libgpac
 gpac-mp4box                     ports/multimedia/gpac-mp4box
 gpaint                          ports/graphics/gpaint
-gpart                           ports/sysutils/gpart
 gpasman                         ports/security/gpasman
 gpass                           ports/security/gpass
 gpctool                         ports/x11/gpctool
@@ -5902,7 +5898,6 @@ igmpproxy                       ports/net/igmpproxy
 igraph                          ports/math/igraph
 ii                              ports/irc/ii
 iiview                          ports/graphics/iiview
-ija                             ports/news/ija
 ikarus                          ports/lang/ikarus
 ike                             ports/security/ike
 ike-scan                        ports/security/ike-scan
@@ -6107,7 +6102,6 @@ iserverd                        ports/net-im/iserverd
 ish                             ports/converters/ish
 ishido                          ports/games/ishido
 isic                            ports/net-mgmt/isic
-isilo                           ports/palm/isilo
 isiloxc                         ports/palm/iSiloXC
 ismail                          ports/www/ismail
 isnprober                       ports/security/isnprober
@@ -10170,7 +10164,6 @@ nsd                             ports/dns/nsd
 nsd2                            ports/dns/nsd2
 nsf                             ports/misc/nsf
 nslint                          ports/dns/nslint
-nsm-console                     ports/security/nsm-console
 nsnake                          ports/games/nsnake
 nsping                          ports/dns/nsping
 nspluginwrapper                 ports/www/nspluginwrapper
@@ -20850,7 +20843,6 @@ pib                             ports/ports-mgmt/pib
 pic2fig                         ports/print/pic2fig
 picard                          ports/audio/picard
 picasm                          ports/devel/picasm
-picmonger                       ports/news/PicMonger
 pico-alpine                     ports/editors/pico-alpine
 picoc                           ports/lang/picoc
 picocom                         ports/comms/picocom
@@ -21063,7 +21055,6 @@ plib                            ports/x11-toolkits/plib
 pligg                           ports/www/pligg
 plman                           ports/math/plman
 pload                           ports/net/pload
-plod                            ports/sysutils/plod
 plone                           ports/www/plone
 plone3                          ports/www/plone3
 plonx                           ports/games/plonx
@@ -21252,7 +21243,6 @@ portupdate-scan                 ports/ports-mgmt/portupdate-scan
 portupgrade                     ports/ports-mgmt/portupgrade
 portupgrade-devel               ports/ports-mgmt/portupgrade-devel
 posadis                         ports/dns/posadis
-pose                            ports/palm/pose
 poseidon                        ports/java/poseidon
 position                        ports/astro/position
 posixtestsuite                  ports/misc/posixtestsuite
@@ -21904,6 +21894,7 @@ py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
 py-jsonlib                      ports/devel/py-jsonlib
 py-jsonlib2                     ports/devel/py-jsonlib2
+py-jsonrpclib                   ports/devel/py-jsonrpclib
 py-jswebkit                     ports/www/py-jswebkit
 py-kaa-base                     ports/multimedia/py-kaa-base
 py-kaa-imlib2                   ports/multimedia/py-kaa-imlib2
@@ -22124,6 +22115,7 @@ py-pygments                     ports/textproc/py-pygments
 py-pygooglechart                ports/graphics/py-pygooglechart
 py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
+py-pyhs                         ports/databases/py-pyhs
 py-pyke                         ports/devel/py-pyke
 py-pylib                        ports/devel/py-pylib
 py-pylibacl                     ports/security/py-pylibacl
@@ -23468,7 +23460,6 @@ ruby-html-template              ports/textproc/ruby-html-template
 ruby-htmlrepair                 ports/textproc/ruby-htmlrepair
 ruby-htmlsplit                  ports/textproc/ruby-htmlsplit
 ruby-htree                      ports/textproc/ruby-htree
-ruby-http-access                ports/www/ruby-http-access
 ruby-icmp                       ports/net/ruby-icmp
 ruby-iconv                      ports/converters/ruby-iconv
 ruby-image_size                 ports/graphics/ruby-image_size
@@ -26657,7 +26648,6 @@ workman                         ports/audio/workman
 workrave                        ports/x11/workrave
 worldofpadman                   ports/games/worldofpadman
 worldtools                      ports/sysutils/worldtools
-wots                            ports/sysutils/wots
 wotsap                          ports/misc/wotsap
 wowzamediaserverpro             ports/net/wowzamediaserverpro
 wpa_gui                         ports/net/wpa_gui
