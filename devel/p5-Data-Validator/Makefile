@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-Validator
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +17,7 @@ COMMENT=	Rule based validator on type constraint system
 
 BUILD_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
+
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
@@ -28,10 +30,6 @@ MAN3=		Data::Validator.3 \
 		Data::Validator::Role::Sequenced.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
 
 .if ${PERL_LEVEL} < 501001
 TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
