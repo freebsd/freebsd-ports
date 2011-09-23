@@ -1,5 +1,5 @@
---- libsrc/conversion/im_tiff2vips.c.orig	Wed Aug 17 06:34:12 2005
-+++ libsrc/conversion/im_tiff2vips.c
+--- libvips/format/im_tiff2vips.c	Wed Aug 17 06:34:12 2005
++++ libvips/format/im_tiff2vips.c
 @@ -157,6 +157,12 @@
  #include <vips/vips.h>
  #include <vips/thread.h>

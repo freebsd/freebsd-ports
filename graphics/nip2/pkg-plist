@@ -2,15 +2,6 @@ bin/nip2
 bin/run-nip2.sh
 share/nip2/rc/ipgtkrc
 share/nip2/data/examples/logo/logo2.ws
-share/nip2/data/examples/1_point_mosiac/cd1.2.jpg
-share/nip2/data/examples/1_point_mosiac/cd4.2.jpg
-share/nip2/data/examples/1_point_mosiac/cd2.1.jpg
-share/nip2/data/examples/1_point_mosiac/cd4.1.jpg
-share/nip2/data/examples/1_point_mosiac/cd1.1.jpg
-share/nip2/data/examples/1_point_mosiac/cd3.2.jpg
-share/nip2/data/examples/1_point_mosiac/cd2.2.jpg
-share/nip2/data/examples/1_point_mosiac/cd3.1.jpg
-share/nip2/data/examples/1_point_mosiac/1pt_mosaic.ws
 share/nip2/data/examples/overlays_and_blending/overlay_blend.ws
 share/nip2/data/examples/overlays_and_blending/blend_example_ir.jpg
 share/nip2/data/examples/overlays_and_blending/blend_example_vis.jpg
@@ -21,14 +12,6 @@ share/nip2/data/examples/manual_balance/simp_base.png
 share/nip2/data/examples/manual_balance/mask_03.png
 share/nip2/data/examples/manual_balance/mask_control.png
 share/nip2/data/examples/manual_balance/manual_balance.ws
-share/nip2/data/examples/2_point_mosiac/example_im_02.jpg
-share/nip2/data/examples/2_point_mosiac/example_im_04.jpg
-share/nip2/data/examples/2_point_mosiac/example_im_03.jpg
-share/nip2/data/examples/2_point_mosiac/full_image.jpg
-share/nip2/data/examples/2_point_mosiac/example_im_01.jpg
-share/nip2/data/examples/2_point_mosiac/example_im_05.jpg
-share/nip2/data/examples/2_point_mosiac/example_im_06.jpg
-share/nip2/data/examples/2_point_mosiac/2pts_mosaic.ws
 share/nip2/data/examples/registering/example_im_2.jpg
 share/nip2/data/examples/registering/registering.ws
 share/nip2/data/examples/registering/example_im_1.jpg
@@ -166,13 +149,90 @@ share/nip2/compat/7.12/_list.def
 share/nip2/compat/7.12/_predicate.def
 share/nip2/compat/7.12/_stdenv.def
 share/nip2/compat/7.12/_types.def
+share/nip2/compat/7.14/Colour.def
+share/nip2/compat/7.14/Filter.def
+share/nip2/compat/7.14/Histogram.def
+share/nip2/compat/7.14/Image.def
+share/nip2/compat/7.14/Math.def
+share/nip2/compat/7.14/Matrix.def
+share/nip2/compat/7.14/Object.def
+share/nip2/compat/7.14/Preferences.ws
+share/nip2/compat/7.14/Tasks.def
+share/nip2/compat/7.14/Widgets.def
+share/nip2/compat/7.14/_Object.def
+share/nip2/compat/7.14/_convert.def
+share/nip2/compat/7.14/_generate.def
+share/nip2/compat/7.14/_joe_extra.def
+share/nip2/compat/7.14/_joe_utilities.def
+share/nip2/compat/7.14/_list.def
+share/nip2/compat/7.14/_predicate.def
+share/nip2/compat/7.14/_stdenv.def
+share/nip2/compat/7.14/_types.def
+share/nip2/compat/7.16/Colour.def
+share/nip2/compat/7.16/Filter.def
+share/nip2/compat/7.16/Histogram.def
+share/nip2/compat/7.16/Image.def
+share/nip2/compat/7.16/Math.def
+share/nip2/compat/7.16/Matrix.def
+share/nip2/compat/7.16/Object.def
+share/nip2/compat/7.16/Preferences.ws
+share/nip2/compat/7.16/Tasks.def
+share/nip2/compat/7.16/Widgets.def
+share/nip2/compat/7.16/_Object.def
+share/nip2/compat/7.16/_convert.def
+share/nip2/compat/7.16/_generate.def
+share/nip2/compat/7.16/_joe_extra.def
+share/nip2/compat/7.16/_joe_utilities.def
+share/nip2/compat/7.16/_list.def
+share/nip2/compat/7.16/_predicate.def
+share/nip2/compat/7.16/_stdenv.def
+share/nip2/compat/7.16/_types.def
+share/nip2/compat/7.24/Colour.def
+share/nip2/compat/7.24/Filter.def
+share/nip2/compat/7.24/Histogram.def
+share/nip2/compat/7.24/Image.def
+share/nip2/compat/7.24/Math.def
+share/nip2/compat/7.24/Matrix.def
+share/nip2/compat/7.24/Object.def
+share/nip2/compat/7.24/Preferences.ws
+share/nip2/compat/7.24/Tasks.def
+share/nip2/compat/7.24/Widgets.def
+share/nip2/compat/7.24/_Object.def
+share/nip2/compat/7.24/_convert.def
+share/nip2/compat/7.24/_generate.def
+share/nip2/compat/7.24/_joe_extra.def
+share/nip2/compat/7.24/_joe_utilities.def
+share/nip2/compat/7.24/_list.def
+share/nip2/compat/7.24/_predicate.def
+share/nip2/compat/7.24/_stdenv.def
+share/nip2/compat/7.24/_types.def
+share/nip2/data/examples/1_point_mosaic/1pt_mosaic.ws
+share/nip2/data/examples/1_point_mosaic/cd1.1.jpg
+share/nip2/data/examples/1_point_mosaic/cd1.2.jpg
+share/nip2/data/examples/1_point_mosaic/cd2.1.jpg
+share/nip2/data/examples/1_point_mosaic/cd2.2.jpg
+share/nip2/data/examples/1_point_mosaic/cd3.1.jpg
+share/nip2/data/examples/1_point_mosaic/cd3.2.jpg
+share/nip2/data/examples/1_point_mosaic/cd4.1.jpg
+share/nip2/data/examples/1_point_mosaic/cd4.2.jpg
+@dirrm share/nip2/data/examples/1_point_mosaic
+share/nip2/data/examples/2_point_mosaic/2pts_mosaic.ws
+share/nip2/data/examples/2_point_mosaic/example_im_01.jpg
+share/nip2/data/examples/2_point_mosaic/example_im_02.jpg
+share/nip2/data/examples/2_point_mosaic/example_im_03.jpg
+share/nip2/data/examples/2_point_mosaic/example_im_04.jpg
+share/nip2/data/examples/2_point_mosaic/example_im_05.jpg
+share/nip2/data/examples/2_point_mosaic/example_im_06.jpg
+share/nip2/data/examples/2_point_mosaic/full_image.jpg
+@dirrm share/nip2/data/examples/2_point_mosaic
 @dirrm share/nip2/compat/7.8
 @dirrm share/nip2/compat/7.9
 @dirrm share/nip2/compat/7.10
 @dirrm share/nip2/compat/7.12
+@dirrm share/nip2/compat/7.14
+@dirrm share/nip2/compat/7.16
+@dirrm share/nip2/compat/7.24
 @dirrm share/nip2/compat
-@dirrm share/nip2/data/examples/1_point_mosiac
-@dirrm share/nip2/data/examples/2_point_mosiac
 @dirrm share/nip2/data/examples/businesscard
 @dirrm share/nip2/data/examples/clone
 @dirrm share/nip2/data/examples/framing
