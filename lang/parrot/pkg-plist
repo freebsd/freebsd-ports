@@ -3,7 +3,6 @@ bin/parrot
 bin/parrot-nqp
 bin/parrot-prove
 bin/parrot_config
-bin/parrot_debugger
 bin/parrot_nci_thunk_gen
 bin/pbc_disassemble
 bin/pbc_dump
@@ -443,7 +442,6 @@ lib/parrot/%%PARROT_VER%%/library/pcre.pbc
 lib/parrot/%%PARROT_VER%%/library/pcre.pir
 lib/parrot/%%PARROT_VER%%/library/postgres.declarations
 lib/parrot/%%PARROT_VER%%/library/postgres.pir
-lib/parrot/%%PARROT_VER%%/library/random_lib.pir
 lib/parrot/%%PARROT_VER%%/library/uuid.pbc
 lib/parrot/%%PARROT_VER%%/library/uuid.pir
 lib/parrot/%%PARROT_VER%%/library/yaml_dumper.pir
@@ -543,7 +541,6 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/SearchOps.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Harness.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/PGE.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/PIR_PGE.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Pod.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Pod/Utils.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util.pm
@@ -552,7 +549,6 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Vtable.pm
 %%PARROT_DOCS%%/CREDITS
 %%PARROT_DOCS%%/DONORS.pod
 %%PARROT_DOCS%%/LICENSE
-%%PARROT_DOCS%%/NEWS
 %%PARROT_DOCS%%/PBC_COMPAT
 %%PARROT_DOCS%%/PLATFORMS
 %%PARROT_DOCS%%/README
