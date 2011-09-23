@@ -88,8 +88,6 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
-.elif ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
 .endif
 
 .if defined(WITH_BDB)
@@ -125,6 +123,12 @@ post-patch:
 	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
+	@test \! -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
+	    (cd ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
+	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
+	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
+	    (cd ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 && \
+	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
 	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
 	    (${CP} -r ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 \
 		${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \

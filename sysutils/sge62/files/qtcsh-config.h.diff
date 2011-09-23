@@ -1,0 +1,12 @@
+--- config.h.orig	2003-03-08 02:27:15.000000000 +0000
++++ config.h	2011-09-23 16:15:11.000000000 +0000
+@@ -147,5 +147,9 @@
+ # define NLS_CATALOGS
+ #endif
+ 
++#define	HAVEUTMPX
++#define UTMPX_FILE "/var/run/utx.active"
++#define	ut_name ut_user
++
+ #endif /* _h_config */
+ /* config.h.in.  Generated automatically from configure.in by autoheader.  */
