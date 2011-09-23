@@ -3,8 +3,10 @@ bin/pcp_attach_node
 bin/pcp_detach_node
 bin/pcp_node_count
 bin/pcp_node_info
+bin/pcp_pool_status
 bin/pcp_proc_count
 bin/pcp_proc_info
+bin/pcp_promote_node
 bin/pcp_recovery_node
 bin/pcp_stop_pgpool
 bin/pcp_systemdb_info
@@ -16,13 +18,16 @@ etc/pgpool.conf.sample-master-slave
 etc/pgpool.conf.sample-replication
 etc/pgpool.conf.sample-stream
 etc/pool_hba.conf.sample
+include/libpcp_ext.h
 include/pcp.h
+include/pool_process_reporting.h
 include/pool_type.h
 lib/libpcp.a
 lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
 %%DATADIR%%/dist_def_pgbench.sql
+%%DATADIR%%/insert_lock.sql
 %%DATADIR%%/pgpool.pam
 %%DATADIR%%/replicate_def_pgbench.sql
 %%DATADIR%%/system_db.sql
@@ -30,7 +35,13 @@ lib/libpcp.so.0
 %%EXAMPLESDIR%%/pgpool_recovery_pitr
 %%EXAMPLESDIR%%/pgpool_remote_start
 share/postgresql/contrib/pgpool-recovery.sql
+share/postgresql/contrib/pgpool-regclass.sql
+@comment share/postgresql/contrib/pgpool-walrecrunning.sql
+share/postgresql/contrib/uninstall_pgpool-recovery.sql
+share/postgresql/contrib/uninstall_pgpool-regclass.sql
 lib/postgresql/pgpool-recovery.so
+lib/postgresql/pgpool-regclass.so
+@comment lib/postgresql/pgpool-walrecrunning.so
 @dirrmtry share/postgresql/contrib
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
