@@ -175,6 +175,7 @@
     SUBDIR += libppd
     SUBDIR += libspectre
     SUBDIR += lilypond
+    SUBDIR += linux-f10-cups-libs
     SUBDIR += lout
     SUBDIR += lpr-wrapper
     SUBDIR += lprps-a4
