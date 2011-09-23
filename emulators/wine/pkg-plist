@@ -133,6 +133,8 @@ include/wine/windows/control.h
 include/wine/windows/control.idl
 include/wine/windows/cor.h
 include/wine/windows/cor.idl
+include/wine/windows/cordebug.h
+include/wine/windows/cordebug.idl
 include/wine/windows/corerror.h
 include/wine/windows/corhdr.h
 include/wine/windows/cpl.h
@@ -668,8 +670,6 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/xmllite.h
 include/wine/windows/xmllite.idl
-include/wine/windows/xmlparser.h
-include/wine/windows/xmlparser.idl
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/hidsdi.h
