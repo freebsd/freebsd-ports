@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	20110620
+PORTVERSION=	20110922
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/Roorback/ninja/tarball/${DISTVERSION}/
 DISTNAME=	Roorabck-${PORTNAME}-${DISTVERSION}-0-g${GITVERSION}
@@ -18,7 +18,7 @@ LICENSE=	ASL
 CONFLICTS=	irc/ninja-[0-9]*
 USE_PYTHON=	yes
 
-GITVERSION=	ed48ae5
+GITVERSION=	d342acd
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/Roorback-${PORTNAME}-${GITVERSION}
 
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/ninja
 PORTDOCS=	COPYING HACKING README manual.asciidoc todo
 
 do-build:
-	@(cd ${WRKSRC}; ./bootstrap.sh)
+	@(cd ${WRKSRC}; CXX=${CXX} ./bootstrap.sh)
 
 do-install:
 	@${INSTALL} -m 755 ${WRKSRC}/ninja ${PREFIX}/bin
