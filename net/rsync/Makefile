@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -19,6 +19,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
+
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd.sh
@@ -34,8 +36,6 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
-
-LICENSE=	GPLv3
 
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
