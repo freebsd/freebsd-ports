@@ -261,6 +261,7 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += linux-f10-cyrus-sasl2
+    SUBDIR += linux-f10-libgcrypt
     SUBDIR += linux-f10-libssh2
     SUBDIR += linux-f10-libtasn1
     SUBDIR += linux-f10-nss
