@@ -20,8 +20,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
 INSTALLS_ICONS=	yes
 

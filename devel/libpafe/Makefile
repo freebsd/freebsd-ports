@@ -27,8 +27,8 @@ PLIST_DIRS=	include/libpafe
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
-CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CPPFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 .endif
 
 .include <bsd.port.post.mk>

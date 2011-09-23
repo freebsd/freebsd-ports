@@ -16,9 +16,6 @@ MASTER_SITE_SUBDIR=	apps/math/calc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shell calculator
 
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
-
 MAN1=		gexpr.1
 PLIST_FILES=	bin/gexpr
 

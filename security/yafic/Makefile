@@ -15,7 +15,7 @@ COMMENT=	Yet Another File Integrity Checker, similar to Tripwire
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	LDFLAGS="-static"
+LDFLAGS+=	-static
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS=	--disable-crypto

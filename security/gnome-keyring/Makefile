@@ -27,8 +27,8 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \
 		--with-root-certs="${LOCALBASE}/share/certs/ca-root-nss.crt"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml \
 		org.gnome.crypto.pgp.gschema.xml
 

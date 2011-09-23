@@ -18,7 +18,7 @@ COMMENT=	Print program listings on postscript printer
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 MAN1=		trueprint.1
 INFO=		trueprint

@@ -19,8 +19,8 @@ USE_GNOME=	gtk20 gnomehack gnomeprefix
 
 ONLY_FOR_ARCHS=	alpha i386 ia64
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(doc/gqradio\)-\$$VERSION|\1|' \

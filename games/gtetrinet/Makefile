@@ -19,8 +19,8 @@ USE_BZIP2=	yes
 USE_GNOME=	esound gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --enable-ipv6
 
 MAN6=		gtetrinet.6

@@ -29,8 +29,8 @@ USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2
 USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-services
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.system-tools.gschema.xml
 

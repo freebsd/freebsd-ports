@@ -21,8 +21,8 @@ USE_BZIP2=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-optimize
 DATADIR=	${PREFIX}/share/Shaaft
 

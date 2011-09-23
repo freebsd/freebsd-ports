@@ -54,7 +54,6 @@ OPTIONS=	ALSA "ALSA output driver" off \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
 

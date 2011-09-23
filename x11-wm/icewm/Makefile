@@ -19,7 +19,8 @@ USE_XORG=	x11 ice xinerama xext xrandr sm
 USE_GNOME=	gtk20 # gdkpixbuf really :-)
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--enable-guievents \
 		--with-cfgdir=${DATADIR} \

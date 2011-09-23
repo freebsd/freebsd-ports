@@ -19,9 +19,8 @@ USE_GNOME=		glib20 gnomehack intlhack
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
-CPPFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc
 
 OPTIONS=		GENERIC "generic module" on \

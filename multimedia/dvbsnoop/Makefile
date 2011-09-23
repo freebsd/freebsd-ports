@@ -16,7 +16,7 @@ COMMENT=	DVB stream analyzer / MPEG analyzer
 DVB_HEADERS=	dmx.h frontend.h
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${WRKSRC}"
+CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -38,8 +38,8 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	TIPS \

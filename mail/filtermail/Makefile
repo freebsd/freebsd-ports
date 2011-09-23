@@ -33,13 +33,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		filtermail.1
 MAN5=		filtermailex.5 filtermailrc.5
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/filtermail
 

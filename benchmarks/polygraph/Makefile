@@ -18,7 +18,7 @@ MAINTAINER=	as@bsdgroup.de
 COMMENT=	A benchmarking tool for Web proxies
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -Wno-deprecated"
+CPPFLAGS+=	-Wno-deprecated
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

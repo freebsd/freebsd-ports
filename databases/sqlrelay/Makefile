@@ -19,8 +19,8 @@ LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf libtool
-CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV} \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV}
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-tcl \
 			--disable-java \

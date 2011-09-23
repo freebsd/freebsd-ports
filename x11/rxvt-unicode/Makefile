@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 USE_GNOME=		pkgconfig
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
-CPPFLAGS=		-I${LOCALBASE}/include
+CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ENV=		LIBS="-lutil"
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db

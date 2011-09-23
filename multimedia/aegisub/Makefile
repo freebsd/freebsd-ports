@@ -50,8 +50,6 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/wx-2.8 \
 		-L${LOCALBASE}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 
 INSTALLS_ICONS=	yes
 

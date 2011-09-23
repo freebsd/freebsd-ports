@@ -20,8 +20,8 @@ USE_GNOME=	intlhack libglade2 esound
 USE_GMAKE=	yes
 USE_FAM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # CXXFLAGS needed to work round issue with gcc and openssl 0.9.8a
 # /usr/local/include/openssl/sha.h:173: error: ISO C++ does not support `long long'

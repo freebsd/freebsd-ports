@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/WINGs"
+CPPFLAGS+=	-I${LOCALBASE}/include/WINGs
 CONFIGURE_ARGS+=--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib \
 		--with-libs-from=-L${LOCALBASE}/lib \

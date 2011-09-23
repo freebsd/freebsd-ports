@@ -18,8 +18,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		galculator.1

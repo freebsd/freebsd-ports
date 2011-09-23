@@ -23,7 +23,6 @@ OPTIONS=	HDF5	"HDF5 support"		on \
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-cdi-lib --program-transform-name="" --with-zlib=/usr
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GNOME=	gnomehack

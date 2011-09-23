@@ -25,8 +25,8 @@ USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}

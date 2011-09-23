@@ -32,8 +32,7 @@ USE_RAKE=	yes
 USE_RUBY=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
-		ac_cv_path_PO4A=no
+CONFIGURE_ENV+=	ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \

@@ -27,8 +27,8 @@ CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency \
 		--enable-utmp --enable-wtmp \
 		--with-xpm --with-xpm-includes=${LOCALBASE}/include/X11 \
 		--with-xpm-library=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt

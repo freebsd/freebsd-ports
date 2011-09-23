@@ -23,9 +23,8 @@ USE_GNOME=		gtk20 gnomehack gnomeprefix
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 GNU_CONFIGURE=		yes
-CPPFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 OPTIONS=		SHOUTCAST "SHOUTcast plugin" on \
 			LIVE365 "Live365 plugin" on \

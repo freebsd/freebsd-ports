@@ -22,12 +22,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 USE_GL=		glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

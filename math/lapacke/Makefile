@@ -52,7 +52,7 @@ LAPACK=		-lpthread -lalapack_r
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lgfortran -lgcc_s
 LDADD?=		-lgfortran -lgcc_s
-MAKE_ENV=	LDADD="${LDADD}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDADD="${LDADD}"
 .if defined(WITHOUT_LAPACK_LATEST)
 MAKE_ENV+=	WITHOUT_LAPACK_LATEST=yes
 .endif

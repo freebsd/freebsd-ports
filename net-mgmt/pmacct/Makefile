@@ -20,8 +20,8 @@ LICENSE=	GPLv2
 USE_RC_SUBR=	pmacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
-CPPFLAGS=	"-I${LOCALBASE}/include"
-LDFLAGS=	"-L${LOCALBASE}/lib"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \

@@ -17,8 +17,8 @@ COMMENT=	Online multiplayer clone of Bust a Move
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/pengupop
 

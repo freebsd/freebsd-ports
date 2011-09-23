@@ -22,8 +22,8 @@ USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 ALL_TARGET=	dict

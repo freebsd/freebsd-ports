@@ -28,10 +28,10 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops \
 		--enable-large-files
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" \
-		CXXFLAGS="${CXXFLAGS} -fPIC" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
 
 OOPSVAR=	/var/run/oops
 OOPSLOG=	/var/log/oops

@@ -27,8 +27,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 post-patch:
 	${REINPLACE_CMD} -e '/^libscim@SCIM_EPOCH@_la_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \

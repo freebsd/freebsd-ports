@@ -20,7 +20,8 @@ LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 USE_GNOME=	gnomehack gnomeprefix gnomepanel eel2 librsvg2 libgnomeui
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	link-monitor-applet.schemas
 INSTALLS_OMF=	yes

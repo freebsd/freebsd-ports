@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-gmp --with-zlib
 
 .include <bsd.port.pre.mk>

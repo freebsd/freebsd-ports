@@ -25,15 +25,14 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
-		ac_cv_lib_fc14audiodecoder_fc14dec_new=yes
+CONFIGURE_ENV=	ac_cv_lib_fc14audiodecoder_fc14dec_new=yes
 CONFIGURE_ARGS=	--disable-gtktest
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/Input/fcdecoder.so lib/xmms/Input/fcdecoder.la
 
-CPPFLAGS=	-I${WRKDIR}/${LIBFC_DISTNAME}/src
-LDFLAGS=	-L${WRKDIR}/${LIBFC_DISTNAME}/src/.libs -lstdc++
+CPPFLAGS+=	-I${WRKDIR}/${LIBFC_DISTNAME}/src
+LDFLAGS+=	-L${WRKDIR}/${LIBFC_DISTNAME}/src/.libs -lstdc++
 
 LIBFC_PORTNAME=	libfc14audiodecoder
 LIBFC_PORTVERSION=	1.0.2

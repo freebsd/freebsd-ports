@@ -24,11 +24,11 @@ ONLY_FOR_ARCHS=	i386 alpha
 USE_AUTOTOOLS=	autoconf libtool libltdl
 USE_EFL=	imlib2
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
+CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/gtk12 \
 		-I${LOCALBASE}/include/gdk-pixbuf-1.0 \
-		-I${LOCALBASE}/include/glib12" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		-I${LOCALBASE}/include/glib12
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if exists(/usr/include/dev/bktr/ioctl_bt848.h)
 post-patch:

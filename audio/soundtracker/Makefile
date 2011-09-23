@@ -19,8 +19,8 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_GNOME=	esound gdkpixbuf gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	GNOME "use GNOME 1.x (enables envelope editors)" off \
 		I386_ASM "i386 asm optimizations (potentially unstable)" off \

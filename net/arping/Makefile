@@ -17,10 +17,10 @@ COMMENT=	ARP level "ping" utility
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS+="`${LIBNET_CONFIG} --defines`" \
-		CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="`${LIBNET_CONFIG} --libs` -lpcap"
+CONFIGURE_ENV=	LIBS="`${LIBNET_CONFIG} --libs` -lpcap"
+CFLAGS+=	`${LIBNET_CONFIG} --defines`
+CPPFLAGS+=	-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 

@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 
 RESTRICTED=	Redistribution not allowed
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
 		${INSTALL_DATA} ${WRKDIR}/usr/share/apps/ksocrat/* \

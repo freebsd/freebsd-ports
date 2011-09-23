@@ -32,8 +32,8 @@ USE_GNOME=	pkgconfig
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-samba=${LOCALBASE}
 
 OPTIONS=	BOOST "Enable libmapi++ (needs boost)" yes \

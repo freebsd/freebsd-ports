@@ -15,7 +15,7 @@ COMMENT=	LOGO Interpreter for the KDE Desktop
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \

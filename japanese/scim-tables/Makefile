@@ -23,9 +23,9 @@ GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl" \
-		SCIM_DATADIR=${PREFIX}/share/scim \
+CONFIGURE_ENV+=	SCIM_DATADIR=${PREFIX}/share/scim \
 		SCIM_ICONDIR=${PREFIX}/share/scim/icons
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CONFIGURE_ARGS+=	--disable-skim-support
 

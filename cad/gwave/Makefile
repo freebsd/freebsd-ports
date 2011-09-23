@@ -20,8 +20,8 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	PLOTUTILS "Use GNU plotutils for plotting" off \
 		GNUPLOT "Use gnuplot for plotting" on \

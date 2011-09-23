@@ -17,7 +17,6 @@ COMMENT=	An interactive, multi-threaded web browser for text terminals
 
 USE_GETTEXT=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
 
@@ -29,8 +28,8 @@ PLIST_FILES=	bin/retawq \
 		share/locale/pt_BR/LC_MESSAGES/retawq.mo
 PORTDOCS=	*
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls

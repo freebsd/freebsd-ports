@@ -23,8 +23,8 @@ USE_LDCONFIG=	yes
 USE_BISON=	build
 CONFIGURE_ARGS+=	--enable-static=no --enable-bootrom=yes
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="${LIBS} -L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN5=		netboot.5 netboot.config.5 netboot.drivers.5 netboot.db.5
 MAN8=		mknbi-mgl.8 makerom.8 mknbi-dos.8 mknbi-linux.8 nbdbtool.8

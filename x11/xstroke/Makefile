@@ -20,15 +20,14 @@ LICENSE_COMB=	dual
 USE_BISON=	build
 USE_XORG=	xft x11 xext xi xtst
 USE_IMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		xstroke.1
 PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet
 PLIST_DIRS=	%%ETCDIR%%
 
 CFLAGS+=	-I.
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/etc/Imakefile

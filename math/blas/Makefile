@@ -30,7 +30,7 @@ PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.${SHLIB_MAJOR}
 LDFLAGS+=	${FFLAGS}
 LDADD ?=	-lgfortran -lm
 SRCCONF=	${NONEXISTENT}
-MAKE_ENV+=	LDADD="${LDADD}" LDFLAGS="${LDFLAGS}" \
+MAKE_ENV+=	LDADD="${LDADD}" \
 		SHLIB_MAJOR="${SHLIB_MAJOR}" SRCCONF="${SRCCONF}"
 .for _u in AR NM RANLIB
 MAKE_ENV+=	${_u}="${LOCALBASE}/bin/${_u:L}"

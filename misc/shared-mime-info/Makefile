@@ -20,7 +20,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2 intltool gnomehack intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		update-mime-database.1

@@ -17,7 +17,7 @@ LIB_DEPENDS=	ical.44:${PORTSDIR}/devel/libical
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libical -I${LOCALBASE}/include" \
-		LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/libical -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

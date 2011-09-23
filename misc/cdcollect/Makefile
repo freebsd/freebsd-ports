@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	${REINPLACE_CMD} -e 's,SqliteClient,Sqlite,' \

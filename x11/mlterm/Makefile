@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--mandir="${LOCALBASE}/man" --enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
 		--disable-iiimf
-CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \

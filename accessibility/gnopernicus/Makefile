@@ -26,8 +26,8 @@ INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gtk+-2.0`" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-2.0`
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	SED="${SED}"
 
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas

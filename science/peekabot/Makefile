@@ -20,8 +20,8 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="`fltk-config --ldflags`" \
-		CPPFLAGS="`fltk-config --cflags`"
+CPPFLAGS+=	`fltk-config --cflags`
+LDFLAGS+=	`fltk-config --ldflags`
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

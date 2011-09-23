@@ -43,7 +43,7 @@ ICINGACGIURL?=	${ICINGAHTMURL}/cgi-bin
 
 .include <bsd.port.pre.mk>
 
-CPPFLAGS=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 CFLAGS+=	${CPPFLAGS}
 
 CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
@@ -62,10 +62,7 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-checkresult-dir=${ICINGADIR}/checkresults \
 		--disable-statuswrl
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
 MAKE_JOBS_UNSAFE=	yes

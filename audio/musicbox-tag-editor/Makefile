@@ -20,8 +20,8 @@ LIB_DEPENDS=		tag:${PORTSDIR}/audio/taglib
 
 USE_GNOME=		gnomehack gnomeprefix libglade2
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 # do not conflict with audio/musicbox
 CONFIGURE_ARGS=		--program-suffix=-tag-editor
 

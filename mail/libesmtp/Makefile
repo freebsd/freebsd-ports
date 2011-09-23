@@ -21,10 +21,10 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 # require-all-recipients (implied by enable-all) is required for Balsa
 CONFIGURE_ARGS=	--enable-all --disable-isoc

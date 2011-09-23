@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-perftools \
 		--disable-broccoli \
 		--disable-broctl
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

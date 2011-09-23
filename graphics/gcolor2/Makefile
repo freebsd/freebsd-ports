@@ -16,8 +16,8 @@ COMMENT=	A simple GTK+ 2.0 color selector
 
 USE_GNOME=	gtk20 gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	gcolor2.desktop
 

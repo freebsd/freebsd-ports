@@ -39,9 +39,9 @@ USE_WX=		2.8
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
 CONFIGURE_FLAGS=--with_ncursesdir=/usr --with_readlinedir=/usr
-CPPFLAGS=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"	\
-		wxConfig=${WX_CONFIG}
+CONFIGURE_ENV=	wxConfig=${WX_CONFIG}
+CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 

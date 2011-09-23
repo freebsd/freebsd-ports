@@ -23,9 +23,9 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \
 		--with-xinput=xfree
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		X_CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	X_CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""

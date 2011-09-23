@@ -30,7 +30,10 @@ LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles \
 		mpfr.4:${PORTSDIR}/math/mpfr
 
 CONFIGURE_ARGS+= --with-system-spooles
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/spooles
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/spooles
+CXXFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/spooles
 
 PLIST_SUB+=	MANUALFILE=${MANUALFILE}
 

@@ -14,7 +14,8 @@ MASTER_SITES=		SF/tilp/OldFiles
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool

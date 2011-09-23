@@ -22,8 +22,8 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-gnome-print \
 		--with-popt
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		sodipodi.1
 

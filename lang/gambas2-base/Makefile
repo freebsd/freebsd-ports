@@ -25,7 +25,6 @@ GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--disable-debug \
 			--disable-optimization \
 			--disable-preloading \

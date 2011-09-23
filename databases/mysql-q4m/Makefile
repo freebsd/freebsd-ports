@@ -23,8 +23,8 @@ USE_MYSQL=	yes
 WANT_MYSQL_VER?=	51
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/mysql/plugin" \
 		--with-mysql="$$(cd ${PORTSDIR}/databases/mysql${MYSQL_VER}-server; ${MAKE} -V WRKSRC)"

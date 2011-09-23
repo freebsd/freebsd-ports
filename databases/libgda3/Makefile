@@ -32,8 +32,8 @@ USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bdb --without-sybase
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

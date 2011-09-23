@@ -26,8 +26,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgsf ltverhack
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
 

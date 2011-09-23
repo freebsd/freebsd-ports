@@ -22,8 +22,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x
 
 OPTIONS= GNUTLS "Adds GnuTLS support" Off \

@@ -19,8 +19,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

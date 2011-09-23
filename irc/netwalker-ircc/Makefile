@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 
 MAN1=		netwalker.1
 
-LDFLAGS=	-lncurses ${PTHREAD_LIBS}
+LDFLAGS+=	-lncurses ${PTHREAD_LIBS}
 CFLAGS?=	-O2 -Wall
 
 post-patch:

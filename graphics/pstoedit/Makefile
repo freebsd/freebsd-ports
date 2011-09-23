@@ -24,16 +24,15 @@ OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 USE_GNOME=	gnomehack pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pstoedit.1
 
 CFLAGS+=	-DHAVE_LIBGD
-CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
+CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 

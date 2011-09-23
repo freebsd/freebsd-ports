@@ -24,8 +24,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_SUB=	VERSION="1.0"
 

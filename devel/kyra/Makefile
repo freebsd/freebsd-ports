@@ -25,8 +25,8 @@ USE_AUTOTOOLS=	libtool
 USE_SDL=	image sdl
 USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

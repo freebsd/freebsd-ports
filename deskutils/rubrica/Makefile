@@ -25,13 +25,12 @@ USE_GNOME=	gconf2 gnomehack gnomeprefix libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
 GCONF_SCHEMAS=	rubrica2.schemas
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

@@ -25,9 +25,9 @@ GNU_CONFIGURE=	yes
 MAN1=	unieject.1
 MAN5=	unieject.conf.5
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lcdio -lconfuse
-CONFIGURE_ENV=	PKG_CONFIG="${TRUE}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lcdio -lconfuse
+CONFIGURE_ENV=	PKG_CONFIG="${TRUE}"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
 		--with-libpopt-prefix=${LOCALBASE}
 

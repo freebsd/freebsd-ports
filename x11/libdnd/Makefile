@@ -20,8 +20,8 @@ USE_XORG=	x11 xmu ice xaw
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/" \
-		LDFLAGS="-L${LOCALBASE}/lib/"
+CPPFLAGS+=	-I${LOCALBASE}/include/
+LDFLAGS+=	-L${LOCALBASE}/lib/
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:

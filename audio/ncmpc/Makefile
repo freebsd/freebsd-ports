@@ -17,8 +17,8 @@ LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	NLS "Native language support" on \
 		LYRICS "Compile with lyrics screen" on

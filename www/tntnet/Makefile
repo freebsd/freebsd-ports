@@ -21,15 +21,15 @@ USE_ICONV=	yes
 USE_CSTD=	gnu89
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--localstatedir=/var
 
 .if defined(WITH_GNUTLS)
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lgnutls"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lgnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-ssl=openssl
 .endif
 

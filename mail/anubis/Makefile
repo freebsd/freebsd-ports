@@ -27,8 +27,8 @@ MAN1=		anubis.1
 INFO=		anubis
 PORTEXAMPLES=	1anubisrc 2anubisrc
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	NLS "Native language support" on \

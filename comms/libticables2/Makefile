@@ -30,7 +30,6 @@ PLIST_SUB=	NLS="@comment "
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 

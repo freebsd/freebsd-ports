@@ -25,8 +25,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libelf.so.0:${PORTSDIR}/devel/libelf
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/libdwarf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I. -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I. -I${LOCALBASE}/include
 
 USE_DOS2UNIX=	*.h
 

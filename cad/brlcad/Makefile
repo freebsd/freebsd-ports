@@ -34,8 +34,7 @@ USE_GNOME=	gnomehack
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.5\
  -I${LOCALBASE}/include/tk8.5 -I${LOCALBASE}/include/tnt
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		TKINCDIR=${LOCALBASE}/include/tk8.5
+CONFIGURE_ENV+=	TKINCDIR=${LOCALBASE}/include/tk8.5
 CONFIGURE_ARGS+=--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name=""	\
 	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs	\
 	--disable-jove-build --disable-strict-build --disable-warnings		\

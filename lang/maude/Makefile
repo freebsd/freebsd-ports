@@ -21,7 +21,8 @@ LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 post-patch:

@@ -29,8 +29,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS= --enable-static --enable-shared \
 		--disable-more-warnings
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=	oafd.1
 

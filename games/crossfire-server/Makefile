@@ -30,14 +30,13 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-check=no
 
 MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
 		crossloop.web.6
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/utils/install-sh

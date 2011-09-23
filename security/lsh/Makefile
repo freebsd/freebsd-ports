@@ -23,10 +23,9 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xau
 USE_GMAKE=	yes
 INSTALL_TARGET=	install
-CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PLIST_SUB+=	KRB=""
 .else

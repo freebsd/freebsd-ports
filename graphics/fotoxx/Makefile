@@ -27,7 +27,7 @@ MAN1=		fotoxx.1
 ALL_TARGET=	fotoxx
 INSTALL_TARGET=	install manpage
 
-MAKE_ENV+=	LDFLAGS="-O3 -g -Wall -rdynamic -lexecinfo"
+LDFLAGS+=	-O3 -g -Wall -rdynamic -lexecinfo
 
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

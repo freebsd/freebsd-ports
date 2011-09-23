@@ -18,8 +18,8 @@ LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 PLIST_FILES=	bin/XScreenSaver.App
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	"LDFLAGS+=-L${LOCALBASE}/lib"
 

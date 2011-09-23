@@ -70,9 +70,9 @@ OOOCXX=		${CXX}
 .endif
 
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
-		CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		PATH=${WRKSRC}/solenv/bin:$$PATH
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \

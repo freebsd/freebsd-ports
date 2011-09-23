@@ -22,8 +22,8 @@ OPTIONS=	FLAC "Enable flac transcoding support" Off \
 		VORBIS "Enable ogg/vorbis transcoding support" Off \
 		PYTHON "Enable Python scripting" On
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes

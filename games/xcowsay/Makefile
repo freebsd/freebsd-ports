@@ -20,7 +20,6 @@ USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		xcowsay.6
 PLIST_FILES=	bin/xcowdream \
@@ -34,8 +33,8 @@ PLIST_FILES=	bin/xcowdream \
 		%%DATADIR%%/cow_small.png
 PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 

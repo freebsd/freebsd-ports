@@ -34,8 +34,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS =	--with-gfortran
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
-	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}" \
-	LDFLAGS="${LDFLAGS}"
+	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \

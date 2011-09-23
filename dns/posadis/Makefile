@@ -18,7 +18,8 @@ LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
 
 USE_AUTOTOOLS=	autoconf libltdl libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
 CONFIGURE_ARGS=	--enable-fam

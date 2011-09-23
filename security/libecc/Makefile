@@ -19,8 +19,8 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include"
+CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
+LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's@endian\.h@sys/&@' ${WRKSRC}/include/libecc/bitset.h

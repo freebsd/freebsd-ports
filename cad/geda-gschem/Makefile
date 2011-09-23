@@ -31,8 +31,8 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR} \
 		--disable-update-mime-database \
 		--disable-update-desktop-database
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gschem.1
 

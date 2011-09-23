@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-docdir=${PREFIX}/share/doc/cost --with-charmaps
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.4"
+CONFIGURE_ENV+=	TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.4"
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|TCL_SRC_DIR%g|TCL_INCLUDE_SPEC%g|' \

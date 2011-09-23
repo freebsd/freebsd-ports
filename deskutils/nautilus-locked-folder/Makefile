@@ -19,10 +19,12 @@ COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 eel2 libgnomeui
+CONFIGURE_ENV=	LIBS="-lssl"
 PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
-		LDFLASG="-L${LOCALBASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \
-		LIBS="-lssl"
+# XXX: if was LDFLASG="..." Since variable is spelled incorrect,
+# this may be not needed at all
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs ${PKGCONFIGS}`
+CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags ${PKGCONFIGS}`
 PLIST_FILES=	lib/nautilus/extensions-2.0/libnautilus-locked-folder.a \
 		lib/nautilus/extensions-2.0/libnautilus-locked-folder.la \
 		lib/nautilus/extensions-2.0/libnautilus-locked-folder.so

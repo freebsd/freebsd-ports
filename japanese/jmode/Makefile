@@ -18,8 +18,8 @@ LIB_DEPENDS?=	anthy.1:${PORTSDIR}/japanese/anthy
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

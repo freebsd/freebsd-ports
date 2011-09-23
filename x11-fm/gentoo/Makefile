@@ -19,13 +19,12 @@ OPTIONS=	FAM "File Alteration Monitor Support" off
 USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		MKDIR_P="${MKDIR}"
+CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 
 MAN1=		gentoo.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

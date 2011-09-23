@@ -22,11 +22,11 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
-		CC="${CC} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 #                             ^
 # this was done intentionaly in order to make `configure' pick up libintl.h
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 

@@ -32,7 +32,7 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-avahi --enable-applet -enable-ssh
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	vinagre.schemas
 

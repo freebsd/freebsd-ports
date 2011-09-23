@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 # Problems reported with higher optimization levels
-CONFIGURE_ENV=CFLAGS="${CFLAGS} -O"
+CFLAGS+=	-O
 CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
 USE_LDCONFIG=	yes

@@ -32,8 +32,7 @@ USE_SQLITE=	yes
 USE_GMAKE=	yes
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
-		ac_cv_prog_EMACS=no
+CONFIGURE_ENV=	ac_cv_prog_EMACS=no
 CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--enable-gtk=no \
 		--with-emacs=no \
@@ -51,8 +50,8 @@ MAN1=		gst.1 gst-load.1 gst-package.1 gst-sunit.1 gst-config.1 \
 MLINKS=		gst-load.1 gst-reload.1
 INFO=		gst gst-base gst-libs
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

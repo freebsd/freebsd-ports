@@ -19,8 +19,9 @@ LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre \
 		utf8proc:${PORTSDIR}/textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_lib_tre_regwcomp=yes
+CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes

@@ -19,8 +19,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

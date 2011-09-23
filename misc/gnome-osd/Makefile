@@ -18,14 +18,13 @@ USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 GCONF_SCHEMAS=	gnome-osd.schemas
 
 MAN1=		gnome-osd-client.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)

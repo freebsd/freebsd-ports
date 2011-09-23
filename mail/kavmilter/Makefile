@@ -23,10 +23,8 @@ USE_BZIP2=	yes
 MAN5=		kavmilter.5
 MAN8=		kavmilter.8
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/libexec/kavmilter

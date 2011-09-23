@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_GNOME=	desktopfileutils libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 

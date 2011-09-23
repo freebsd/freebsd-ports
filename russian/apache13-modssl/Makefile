@@ -167,8 +167,7 @@ OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
-		OPTIM='${OPTIM}' \
+CONFIGURE_ENV=	OPTIM='${OPTIM}' \
 		SSL_BASE='SYSTEM' \
 		EAPI_MM='SYSTEM' \
 		PATH="${PREFIX}/bin:${PATH}"

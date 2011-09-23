@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 
 # Nickle now has bindings which are likely to pull in libraries that need
 # libpthread.  Link to it now, since it wouldn't work at runtime.
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		nickle.1
 

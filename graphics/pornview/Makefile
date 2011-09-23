@@ -22,8 +22,8 @@ USE_XORG=	x11 xi xext xinerama
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_LIBXINE)
 LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine

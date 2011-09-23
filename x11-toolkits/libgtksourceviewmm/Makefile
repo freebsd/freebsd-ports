@@ -21,8 +21,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gtksourceview2 gnomeprefix gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBAS}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBAS}/lib
 CONFIGURE_ARGS=	--disable-docs
 
 .include <bsd.port.mk>

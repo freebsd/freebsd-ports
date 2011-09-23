@@ -20,8 +20,8 @@ MAKE_JOBS_SAFE=  yes
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -ltermcap"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -ltermcap
 
 MAN6=		gspades.6 slspades.6 spadesd.6
 

@@ -34,7 +34,6 @@ USE_GNOME=	gnomehack gnomehier gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-alsa \
 		--disable-alsamidi \
 		--disable-scheduler
@@ -42,8 +41,8 @@ INSTALLS_OMF=	yes
 
 MAN1=		terminatorX.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

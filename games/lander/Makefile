@@ -24,8 +24,8 @@ USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-boost="${LOCALBASE}" \
 		--with-boost-filesystem=boost_filesystem
 

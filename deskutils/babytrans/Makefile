@@ -18,8 +18,8 @@ COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

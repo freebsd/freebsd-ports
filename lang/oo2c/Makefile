@@ -22,8 +22,8 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGC_PTR='void*'" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -DGC_PTR='void*'
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		oo2c.1 oob.1 ooef.1 oowhereis.1
 

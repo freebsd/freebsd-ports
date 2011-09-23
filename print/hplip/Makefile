@@ -42,7 +42,6 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-mimedir=${PREFIX}/etc/cups \
 		--with-docdir=${DOCSDIR} \
 		--with-drvdir=${PREFIX}/libexec/cups/driver
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 

@@ -25,6 +25,6 @@ WX_COMPS=	python:run
 
 PYDISTUTILS_PKGNAME=	pyenchant
 
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

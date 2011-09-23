@@ -27,9 +27,9 @@ CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
 		--disable-libxml --disable-xerces-c --disable-expat --disable-samples
 
 CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
-		Lua_CFLAGS="-I${LUA_INCDIR}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
+		Lua_CFLAGS="-I${LUA_INCDIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes

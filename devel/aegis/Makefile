@@ -23,8 +23,8 @@ USE_TK=		yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-nlsdir="${PREFIX}/share/locale"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		WISH="${WISH}"
+CONFIGURE_ENV=	WISH="${WISH}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 # XXX Manpages are installed into ${DATADIR} too -- there's no easy way to

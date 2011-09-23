@@ -43,7 +43,6 @@ USE_AUTOTOOLS=		autoconf autoheader
 # Flags
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 # Directories
 VARDIR=			/var
 SAMBA_LOGDIR=		${VARDIR}/log/${PORTNAME}

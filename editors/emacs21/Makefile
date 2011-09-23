@@ -62,7 +62,6 @@ LATEST_LINK=	emacs21
 
 .if ${ARCH} == "ia64"
 CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 .endif
 
 pre-everything::

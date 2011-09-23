@@ -17,8 +17,8 @@ COMMENT=	A preprocessor for making GObjects with inline C
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//}
 PLIST_DIRS=	%%EXAMPLESDIR%%

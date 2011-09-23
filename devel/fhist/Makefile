@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to maintain file history, do file comparisions and merges
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	binaries po
 MAKE_JOBS_UNSAFE=	yes
 
@@ -23,8 +22,8 @@ MAN1=		fcomp.1 fhist.1 fmerge.1
 PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
 
 CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

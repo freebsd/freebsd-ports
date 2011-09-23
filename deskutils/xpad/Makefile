@@ -20,8 +20,8 @@ USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	pkgconfig gtk20 gnomehier intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xpad.1
 

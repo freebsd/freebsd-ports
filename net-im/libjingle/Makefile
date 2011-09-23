@@ -13,10 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
-BUILD_DEPENDS=	\
-		pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	\
-		speex.1:${PORTSDIR}/audio/speex \
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		ortp.5:${PORTSDIR}/net/ortp \
 		expat.6:${PORTSDIR}/textproc/expat2
@@ -30,12 +28,9 @@ USE_AUTOTOOLS=	libtool
 USE_DOS2UNIX=	README
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	\
-		--with-ilbc=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \
 		--with-speex=${LOCALBASE}
-CONFIGURE_ENV=	\
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${OPENSSLINC} ${PTHREAD_CFLAGS} -g" \
-		PKG_CONFIG="${PKG_CONFIG}" \
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
 		EXPAT_CFLAGS="-I${LOCALBASE}/include" \
 		EXPAT_LIBS="-L${LOCALBASE}/lib -lexpat" \
 		GLIB_CFLAGS="$$(${PKG_CONFIG} --cflags glib-2.0)" \
@@ -44,22 +39,20 @@ CONFIGURE_ENV=	\
 		ILBC_LIBS="-L${LOCALBASE}/lib -lilbc" \
 		SPEEX_CFLAGS="$$(${PKG_CONFIG} --cflags speex)" \
 		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC} ${PTHREAD_CFLAGS} -g
 MAKE_JOBS_SAFE=	yes
 
-DOC_FILES=	\
-		AUTHORS \
+DOC_FILES=	AUTHORS \
 		ChangeLog \
 		DOCUMENTATION \
 		NEWS \
 		README
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	\
-		${DOC_FILES}
+PORTDOCS=	${DOC_FILES}
 .endif
 
-PLIST_FILES+=	\
-		bin/login \
+PLIST_FILES+=	bin/login \
 		bin/pcp \
 		bin/relayserver \
 		bin/stunserver \

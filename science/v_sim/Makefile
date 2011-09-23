@@ -21,8 +21,8 @@ USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)

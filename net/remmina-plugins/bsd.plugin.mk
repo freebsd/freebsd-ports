@@ -14,8 +14,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=--disable-nx --disable-rdp --disable-ssh --disable-telepathy \
 		--disable-vnc --disable-xdmcp --disable-nls
 

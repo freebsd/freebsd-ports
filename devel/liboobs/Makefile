@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc --with-hal
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

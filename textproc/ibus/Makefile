@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-iso-codes-check
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif

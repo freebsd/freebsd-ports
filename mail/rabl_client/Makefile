@@ -16,7 +16,7 @@ COMMENT=	Reactive Autonomous Blackhole List client
 
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--localstatedir=${VAR_DIR}
 

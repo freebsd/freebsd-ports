@@ -48,8 +48,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg			\
 		${LOCALBASE}/libdata/pkgconfig/pango.pc:${PORTSDIR}/x11-toolkits/pango
 .endif
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-
 # Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

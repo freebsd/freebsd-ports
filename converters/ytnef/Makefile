@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/ytnef bin/ytnefprocess.pl bin/ytnefprint
 PORTDOCS=	AUTHORS NEWS README

@@ -25,7 +25,7 @@ RUN_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer net ttf
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}
 MAN6=		tmw.6
 
 OPTIONS=	MUSIC	"Install additional music" on \
@@ -35,11 +35,11 @@ OPTIONS=	MUSIC	"Install additional music" on \
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .endif
 
 .if !defined(WITHOUT_MUSIC)

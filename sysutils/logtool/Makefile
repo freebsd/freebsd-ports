@@ -16,7 +16,6 @@ COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

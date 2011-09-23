@@ -25,13 +25,10 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl
 
-
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
-CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash \
-		CPPFLAGS='${CPPFLAGS}' \
-		CXXFLAGS='${CPPFLAGS}' \
-		LDFLAGS='${LDFLAGS}'
+CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
+
 MAKE_ENV:=	${CONFIGURE_ENV}
 
 #
@@ -100,8 +97,7 @@ CONFIGURE_ARGS+=--with-trashquota
 .endif
 
 .if defined(WITH_FAM)
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_FAM=	yes
 .endif

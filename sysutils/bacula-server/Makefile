@@ -22,9 +22,9 @@ PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 
 .if !defined(WITH_BAT) && !defined(WITH_NAGIOS_CHECK_ONLY)  #Till end of the file
 PKGNAMESUFFIX?=	-server

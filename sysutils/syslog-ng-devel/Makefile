@@ -45,8 +45,8 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
-CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}"
+CFLAGS+=	`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS+=	`${LIBNET_CONFIG} --libs`
 
 .if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
 BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive

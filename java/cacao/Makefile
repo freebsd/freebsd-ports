@@ -22,8 +22,8 @@ JAVA_VERSION=	1.5+
 GNU_CONFIGURE=	yes
 MAN1=		cacao.1
 CONFIGURE_ARGS+=	--with-classpath-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

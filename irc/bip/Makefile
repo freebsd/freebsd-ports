@@ -15,7 +15,7 @@ COMMENT=	A simple IRC proxy with SSL support
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 INSTALL_TARGET=	SUBDIR=src install-exec
 

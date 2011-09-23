@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

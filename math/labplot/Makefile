@@ -31,8 +31,8 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-system-qwtplot3d=yes --enable-system-liborigin=yes \
 		--enable-ocaml=no --enable-fftw=no
 

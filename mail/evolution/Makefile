@@ -38,8 +38,8 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 		--enable-mono=no \
 		--disable-nm \
 		--with-sub-version=" FreeBSD GNOME Team Port"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
 		apps-evolution-attachment-reminder.schemas \

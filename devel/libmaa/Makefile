@@ -17,7 +17,7 @@ COMMENT=	Provides a few data structures and helpful functions
 ALL_TARGET=	lib
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

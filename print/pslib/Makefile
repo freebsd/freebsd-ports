@@ -22,8 +22,8 @@ USE_GNOME=	gnomehack intlhack pkgconfig
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 USE_LDCONFIG=	yes
 
 OPTIONS=	EXAMPLES	"Install additional examples" On \

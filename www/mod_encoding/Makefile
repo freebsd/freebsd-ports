@@ -36,9 +36,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${APACHEINCLUDEDIR} \
 		--with-apxs=${APXS}
 
-CONFIGURE_ENV=	CPPFLAGS='-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include' \
-		LIBS='-L${LOCALBASE}/lib' \
+CONFIGURE_ENV=	LIBS='-L${LOCALBASE}/lib' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
+CPPFLAGS+=	-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include
 
 PLIST_FILES=	${APACHEMODDIR}/mod_encoding.so
 

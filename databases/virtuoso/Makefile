@@ -28,8 +28,8 @@ CONFIGURE_ARGS=	--with-readline\
 		--enable-bpel-vad\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_RC_SUBR=	virtuoso.sh
 ONLY_FOR_ARCHS=	i386 amd64
 USERS=		virtuoso

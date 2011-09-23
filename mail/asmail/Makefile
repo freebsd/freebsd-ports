@@ -17,7 +17,6 @@ COMMENT=	Biff-type program, designed to match AfterStep
 USE_XORG=	xpm
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shaping \
 		--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \

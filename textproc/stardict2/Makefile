@@ -16,8 +16,8 @@ MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix

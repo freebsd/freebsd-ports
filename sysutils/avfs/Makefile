@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 NO_INSTALL_MANPAGES=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

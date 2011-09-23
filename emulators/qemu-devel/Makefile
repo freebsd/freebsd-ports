@@ -30,7 +30,7 @@ USE_PYTHON=	yes
 USE_GNOME=	glib20
 USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
-MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	BSD_MAKE="${MAKE}"
 MAN1=		qemu.1 qemu-img.1
 MAN8=		qemu-nbd.8
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?

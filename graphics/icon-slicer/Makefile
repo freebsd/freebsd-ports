@@ -18,7 +18,8 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/icon-slicer
 

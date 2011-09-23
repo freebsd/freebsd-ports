@@ -44,8 +44,8 @@ CONFIGURE_ARGS=	--disable-perl \
 		--enable-static \
 		--disable-print \
 		--with-desktop-dir=${LOCALBASE}/share
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/gimp-${PORTVERSION}
 

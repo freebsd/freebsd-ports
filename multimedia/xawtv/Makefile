@@ -32,8 +32,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_XORG=	x11 xaw
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
-		CFLAGS="-I${WRKSRC}/common"
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
+CFLAGS+=	-I${WRKSRC}/common
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	alpha amd64 i386

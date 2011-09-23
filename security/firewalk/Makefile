@@ -22,8 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/Firewalk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAN8=		firewalk.8
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config

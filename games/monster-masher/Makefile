@@ -23,8 +23,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnome esound
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lesd"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lesd
 
 GCONF_SCHEMAS=	monster-masher.schemas
 

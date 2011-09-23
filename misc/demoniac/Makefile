@@ -20,8 +20,8 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_GL=		yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 PLIST_FILES=	bin/demoniac share/demoniac/pixmaps/logo.xpm
 PLIST_DIRS=	share/demoniac/pixmaps share/demoniac
 

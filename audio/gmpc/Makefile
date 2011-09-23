@@ -28,7 +28,8 @@ USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libglade2
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-system-libsexy
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gmpc-remote.1 gmpc.1
 

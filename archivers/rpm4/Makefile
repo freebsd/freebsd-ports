@@ -67,7 +67,6 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--without-db \
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \

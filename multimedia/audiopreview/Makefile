@@ -17,8 +17,8 @@ USE_GMAKE=	yes
 USE_GSTREAMER=	core
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/audiopreview
 MAN1=		audiopreview.1

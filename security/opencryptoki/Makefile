@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--localstatedir=${PREFIX}/var \
 		--with-pkcs11user=${USERS} \
 		--with-pkcs11group=${GROUPS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

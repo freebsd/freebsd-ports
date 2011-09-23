@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--enable-widechar
 .endif
 
 CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
-CONFIGURE_ENV+=		LDFLAGS="-L${BDB_LIB_DIR} -L${LOCALBASE}/lib"
+LDFLAGS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
 # configure is 555, so you can't do a "make configure" as non-root.
 post-patch:

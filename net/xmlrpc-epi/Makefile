@@ -19,8 +19,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README

@@ -17,8 +17,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-docs
 USE_LDCONFIG=	yes
 

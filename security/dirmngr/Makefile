@@ -32,7 +32,7 @@ INFO=		dirmngr
 MAN1=		dirmngr-client.1 dirmngr.1
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	NLS "National Language Support" off
 

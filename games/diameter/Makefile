@@ -26,8 +26,8 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/gamediameter
 
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
+CPPFLAGS+=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS+=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/gamediameter
 

@@ -22,7 +22,7 @@ LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
 USE_GNOME=	pkgconfig
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=	${WRKDIR}/telepathy-${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

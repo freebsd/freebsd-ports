@@ -29,7 +29,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
-MAKE_ENV+=	CPPFLAGS=-DNDEBUG
+CPPFLAGS+=	-DNDEBUG
 .endif
 
 post-extract:

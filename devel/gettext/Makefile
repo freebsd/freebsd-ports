@@ -26,9 +26,9 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}" \
 		MAKEINFO="makeinfo --no-split" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		EMACS="no"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp \
 		--with-included-gettext --with-included-glib \
 		--with-included-libcroco --with-included-libxml \

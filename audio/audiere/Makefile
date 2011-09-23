@@ -20,9 +20,9 @@ WANT_WX=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include/speex -I${LOCALBASE}/include" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include/speex -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	changelog.txt cvs.txt dependencies.txt faq.txt glossary.txt \
 		license.txt overview.txt readme.txt release-howto.txt \

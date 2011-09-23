@@ -24,14 +24,13 @@ USE_GNOME=	pkgconfig
 USE_BISON=	build
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--disable-debug --disable-yydebug

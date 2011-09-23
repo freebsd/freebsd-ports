@@ -20,14 +20,13 @@ LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 USE_BZIP2=	yes
 USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		elk.1
 
-CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

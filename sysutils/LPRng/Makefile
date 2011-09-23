@@ -34,8 +34,8 @@ SUB_LIST=	SYSCONFDIR="${SYSCONFDIR}"
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	\
 		--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \

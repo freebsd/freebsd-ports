@@ -20,8 +20,6 @@ USE_GMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 EXAMPLES=	graph_gen maxbit tsp tsp_bf
 
 .if !defined(NOPORTDOCS)

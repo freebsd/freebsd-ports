@@ -28,7 +28,7 @@ MAN5=			miredo-server.conf.5 miredo.conf.5
 MAN8=			miredo-server.8 miredo.8 miredo-checkconf.8
 USE_RC_SUBR=		miredo_server miredo
 
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes

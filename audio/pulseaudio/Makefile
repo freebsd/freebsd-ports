@@ -34,13 +34,13 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
 		LIBS="-lm -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-database=gdbm \

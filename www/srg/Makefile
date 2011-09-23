@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_BISON=	build
 USE_BZIP2=	yes
 NO_INSTALL_MANPAGES=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-g |${CFLAGS} ${CPPFLAGS} |' ${WRKSRC}/Makefile \

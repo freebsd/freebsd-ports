@@ -37,7 +37,7 @@ PLIST_FILES=	lib/libakode_src_resampler.a \
 		lib/libakode_src_resampler.la \
 		lib/libakode_src_resampler.so
 
-CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
+LDFLAGS+=	-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
 

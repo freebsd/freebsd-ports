@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_GONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env libtool
 CPPFLAGS+=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
 

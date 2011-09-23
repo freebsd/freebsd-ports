@@ -32,7 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
-CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" EXTRA_CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" EXTRA_CXXFLAGS="${CXXFLAGS}" \
 		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config" libgnutls_config_args="gnutls"
 
 DOCSDIR=	${PREFIX}/share/doc/vmime

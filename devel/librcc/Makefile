@@ -30,11 +30,10 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoheader
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LIBS="${LIBS}" \
+CONFIGURE_ENV=	LIBS="${LIBS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	BDB "Translation database support" off \

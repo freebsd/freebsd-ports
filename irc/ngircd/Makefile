@@ -20,8 +20,8 @@ LICENSE=	GPLv2
 
 USE_RC_SUBR=	ngircd
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN5=		ngircd.conf.5
 MAN8=		ngircd.8

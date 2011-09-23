@@ -65,8 +65,9 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-stlport-libname=stlport_${STL_COMPILER}		\
 		--with-stlport-library=${LOCALBASE}/lib			\
 		--enable-production=yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
-		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" ARCH=${ARCH} LD=${CXX}
+CONFIGURE_ENV=	ARCH=${ARCH} LD=${CXX}
+CPPFLAGS+=	${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
+		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
 # We strip the libs
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
 		OCC_INSTALLDIR="${OCCROOT}" PTHREAD_LIBS="${PTHREAD_LIBS}" LD=${CXX}

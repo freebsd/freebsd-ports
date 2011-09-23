@@ -30,8 +30,8 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		LIBVERSION=2.2

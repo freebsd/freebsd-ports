@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

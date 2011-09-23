@@ -23,10 +23,9 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	`pkg-config --cflags WINGs`
-LDFLAGS=	`pkg-config --libs WINGs`
+CPPFLAGS+=	`pkg-config --cflags WINGs`
+LDFLAGS+=	`pkg-config --libs WINGs`
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/FSViewer

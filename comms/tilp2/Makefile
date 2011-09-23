@@ -35,7 +35,6 @@ PLIST_SUB=	NLS="@comment "
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-kde
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=	tilp.1
 

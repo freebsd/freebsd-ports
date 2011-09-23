@@ -32,10 +32,8 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	2.5+
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lexecinfo
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
 		--disable-gtk-doc \

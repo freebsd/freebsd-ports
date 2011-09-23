@@ -75,6 +75,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
+# ignore LDFLAGS from env, as it overrides internal flags (e.g. -shared) for some reason
+	@${REINPLACE_CMD} -e "s|'LDFLAGS'|None|" ${WRKSRC}/numpy/distutils/fcompiler/__init__.py
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//
 pre-configure:

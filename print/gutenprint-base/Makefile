@@ -23,12 +23,11 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${PREFIX}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 

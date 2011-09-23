@@ -31,7 +31,6 @@ OPTIONS=	USB "USB support" on \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
 		--disable-locking \
@@ -45,8 +44,8 @@ SUB_FILES+=	pkg-message
 USERS=	saned
 GROUPS=	saned
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>

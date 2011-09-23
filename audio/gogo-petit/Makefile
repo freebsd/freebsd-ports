@@ -25,8 +25,7 @@ AS =		nasm
 AFLAGS =	-f elf -Ox
 ALL_TARGET=	test
 MAKE_ENV+=	AS="${AS}" \
-		AFLAGS="${AFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+		AFLAGS="${AFLAGS}"
 
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/gogo-petit

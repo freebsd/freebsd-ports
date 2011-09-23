@@ -53,9 +53,9 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary \
 		--without-gnomevfs
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(GIMP_SLAVE)
 WANT_GNOME=	yes

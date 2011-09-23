@@ -35,8 +35,8 @@ QT_COMPONENTS=	gui moc_build uic_build rcc_build
 USE_PYTHON=	yes
 USE_PERL=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-frontend=qt4 \
 		--without-included-boost \
 		--without-included-gettext \

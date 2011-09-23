@@ -20,9 +20,8 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-gmp --enable-boehm=system
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 OPTIONS=	ASDF "Enable ASDF building facility" on \

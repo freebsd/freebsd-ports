@@ -32,8 +32,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtksourceview2 \
 		desktopfileutils gnomedocutils ltasneededhack
 GNOME_DESKTOP_VERSION=2
 WANT_GNOME=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="2.20"
 
 MAN1=		gedit.1

@@ -20,8 +20,8 @@ USE_AUTOTOOLS=	libtool
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fPIC
 
 MAN1=		recode.1

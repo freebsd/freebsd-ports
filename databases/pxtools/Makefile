@@ -16,9 +16,8 @@ COMMENT=	Collection of tools to work with Paradox databases
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' \

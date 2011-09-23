@@ -25,8 +25,8 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 USE_PYTHON=		2.5+
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

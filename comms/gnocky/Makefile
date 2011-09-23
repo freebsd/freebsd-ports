@@ -19,8 +19,8 @@ LIB_DEPENDS=	gnokii.7:${PORTSDIR}/comms/gnokii
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	NLS	"Build with Native Language Support"	on
 

@@ -18,8 +18,8 @@ LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc \
 		lfcxml.1:${PORTSDIR}/devel/lfcxml
 
 GNU_CONFIGURE=	yes
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env

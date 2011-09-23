@@ -21,7 +21,8 @@ USE_TCL=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	autoconf libtool libltdl
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-perl-binding \
 		--enable-tcl-binding --with-tcl=${TCL_LIBDIR} \
 		--with-python-binding --without-rigmatrix

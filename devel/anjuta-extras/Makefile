@@ -21,8 +21,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include 
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-plugin-valgrind \
 		--localedir=${PREFIX}/share
 

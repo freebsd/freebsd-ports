@@ -28,8 +28,8 @@ USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XORG=	x11
 USE_XFCE=	libexo libgui libutil
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING

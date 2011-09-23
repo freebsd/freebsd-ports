@@ -24,8 +24,8 @@ USE_GNOME=	desktopfileutils gnomehack gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		gbrainy.6
 INSTALLS_ICONS=	yes

@@ -34,10 +34,10 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	net sdl
 CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" \
 		PATH="${LOCALBASE}/bin:$$PATH"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 REINPLACE_ARGS=	-i ''
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*

@@ -26,10 +26,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/fcitx
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		SCIM_DATADIR=${PREFIX}/share/scim \
+CONFIGURE_ENV+=	SCIM_DATADIR=${PREFIX}/share/scim \
 		SCIM_ICONDIR=${PREFIX}/share/scim/icons
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 SUB_FILES=	pkg-message
 

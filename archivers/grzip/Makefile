@@ -19,7 +19,6 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	${PORTNAME}
 WRAPPERS=	grztar grzdiff grzgrep grzmore
 PLIST_FILES=	bin/${PORTNAME} bin/grunzip bin/grzcat ${WRAPPERS:S|^|bin/|} \

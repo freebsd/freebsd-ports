@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "alpha")
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lio"
+LDFLAGS+=	-lio
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"

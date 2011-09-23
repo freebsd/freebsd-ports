@@ -24,8 +24,8 @@ USE_ICONV=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-boxchar --enable-ansi-color \
 			--enable-256-color --enable-chat --enable-now-chat
-CONFIGURE_ENV+=		LIBS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV+=		LIBS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		hanterm.1
 

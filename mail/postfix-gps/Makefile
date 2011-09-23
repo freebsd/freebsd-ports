@@ -29,9 +29,9 @@ WRKSRC=		${WRKDIR}/release-${PORTVERSION}
 USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\
-		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}

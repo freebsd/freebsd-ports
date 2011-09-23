@@ -22,8 +22,8 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

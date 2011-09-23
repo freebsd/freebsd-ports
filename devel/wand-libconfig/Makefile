@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	include/libconfig.h lib/libconfig.a lib/libconfig.la \
 		lib/libconfig.so lib/libconfig.so.1

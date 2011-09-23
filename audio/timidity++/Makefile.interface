@@ -25,7 +25,7 @@ PKGMESSAGE=	${NONEXISTENT}
 .endif
 
 CONFIGURE_ENV+=	SHLD="${CC} -shared ${LDFLAGS}"
-LDFLAGS=	-export-dynamic
+LDFLAGS+=	-export-dynamic
 
 CONFIGURE_ARGS+=--enable-dynamic=${INTERFACE}
 

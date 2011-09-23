@@ -20,8 +20,8 @@ USE_GNOME=	gnomeprefix gnomehack libglade2 gconf2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-libnotify
 MAKE_JOBS_SAFE=	yes
 

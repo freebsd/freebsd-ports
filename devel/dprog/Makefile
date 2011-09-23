@@ -18,8 +18,8 @@ COMMENT=	A language for specifying dynamic programming algorithms
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	EMACS "Install emacs syntax files" on
 

@@ -26,8 +26,8 @@ USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libical" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include/libical
 
 USE_GMAKE=	yes
 

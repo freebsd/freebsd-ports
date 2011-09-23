@@ -20,8 +20,8 @@ LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 GUILE_CONFIG=	${LOCALBASE}/bin/guile-config
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${GUILE_CONFIG} compile`" \
-		LDFLAGS="`${GUILE_CONFIG} link`"
+LDFLAGS+=	`${GUILE_CONFIG} link`
+CFLAGS+=	`${GUILE_CONFIG} compile`
 USE_GMAKE=	yes
 
 INFO=		crank

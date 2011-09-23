@@ -38,7 +38,7 @@ USE_AUTOTOOLS=	automake autoconf
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--without-wc-funcs \

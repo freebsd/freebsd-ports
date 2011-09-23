@@ -32,7 +32,7 @@ PLIST_FILES+=	bin/rsvndump
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700041
-CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if !defined(NOPORTDOCS)

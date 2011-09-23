@@ -26,8 +26,8 @@ USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint gnomevfs \
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-regex
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/gnu" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnuregex"
+CPPFLAGS+=	-I${LOCALBASE}/include -I/usr/include/gnu
 
 .if exists(/usr/lib/libcrypto.a)
 PYTHON_LIBS=	-lssl -lcrypto

@@ -16,7 +16,7 @@ COMMENT=	PPM to Pilot bitmap converter
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm
 
 post-patch:

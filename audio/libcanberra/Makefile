@@ -23,8 +23,8 @@ USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(SLAVEPORT)
 GCONF_SCHEMAS=	libcanberra.schemas

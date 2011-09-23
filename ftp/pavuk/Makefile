@@ -18,15 +18,14 @@ USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-js \
 		--enable-utf-8 --enable-threads
 
 MAN1=		pavuk.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

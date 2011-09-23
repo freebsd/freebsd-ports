@@ -18,8 +18,8 @@ LIB_DEPENDS=	wavpack.2:${PORTSDIR}/audio/wavpack \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 post-install:

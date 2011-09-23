@@ -36,8 +36,8 @@ USE_XORG=	x11 xext xrandr
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-O*:N-pipe}
 CXXFLAGS:=	${CXXFLAGS:N-O*:N-pipe}
 

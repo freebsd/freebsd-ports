@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 USE_GNOME=	pygnomedesktop pygnomeextras gnomeprefix
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	scribes.schemas
 INSTALLS_ICONS=	yes

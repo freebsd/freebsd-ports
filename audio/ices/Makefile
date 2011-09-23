@@ -19,8 +19,8 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 USE_BZIP2=	yes

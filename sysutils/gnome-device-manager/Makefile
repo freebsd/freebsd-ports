@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

@@ -149,11 +149,11 @@ MAN8=		gearmand.8
 # This hack is required for the test programs invoked by configure,
 # in the event that libmemcached was compiled with SASL support.
 .if exists(${LOCALBASE}/lib/libsasl.so)
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lsasl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lsasl
 .elif exists(${LOCALBASE}/lib/libsasl2.a)
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lsasl2"
+LDFLAGS+=	-L${LOCALBASE}/lib -lsasl2
 .else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .ifdef(WITH_DRIZZLE)

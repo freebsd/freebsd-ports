@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--with-htmldir="${DOCSDIR}/html" \
 		--with-readmedir="${DOCSDIR}"
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	${CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	top_builddir="${WRKSRC}"
 MAKE_JOBS_SAFE=	yes
 

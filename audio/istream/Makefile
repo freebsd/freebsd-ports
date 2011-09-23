@@ -20,7 +20,7 @@ USE_GSTREAMER=	yes
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}c
-CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`"
+CPPFLAGS+=	`pkg-config --cflags libgnomeui-2.0`
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

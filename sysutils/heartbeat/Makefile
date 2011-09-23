@@ -37,8 +37,8 @@ USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libnet115" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet115"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libnet115
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet115
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=/var \

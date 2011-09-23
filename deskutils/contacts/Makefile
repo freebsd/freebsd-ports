@@ -15,7 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	smyru@heron.pl
 COMMENT=	Simple yet powerful address book based on Evolution data server
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehier evolutiondataserver gnomevfs2

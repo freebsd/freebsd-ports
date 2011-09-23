@@ -17,8 +17,8 @@ COMMENT=	A cuddlesome teddy for the X desktop
 NO_CDROM=	Can only be distributed for free
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	imlib
 
 MAN6=		xteddy.6

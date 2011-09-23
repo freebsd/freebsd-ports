@@ -37,8 +37,8 @@ USE_GMAKE=	yes
 # We just need the ghostscript fonts, nothing more
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x --with-gs=espgs
 MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev \$$(DD)pxlcolor.dev \$$(DD)pxlmono.dev"

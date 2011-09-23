@@ -31,7 +31,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
 
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-system-zlib \
 			--disable-werror \
 			--with-gmp=${LOCALBASE} \

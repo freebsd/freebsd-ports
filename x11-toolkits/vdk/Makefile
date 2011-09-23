@@ -18,14 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 USE_LDCONFIG=	yes
 
 MAN1=		vdk-config-2.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

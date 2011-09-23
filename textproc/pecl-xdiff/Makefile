@@ -22,7 +22,6 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-configure:
 	echo "#define HAVE_XDL_ALLOCATOR_PRIV 1" >>${WRKSRC}/config.h

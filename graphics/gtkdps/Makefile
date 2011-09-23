@@ -25,8 +25,8 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
 		--with-dps-libraries=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

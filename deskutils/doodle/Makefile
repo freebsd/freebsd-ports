@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_FAM=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		doodle.1 doodled.1
 MAN3=		libdoodle.3

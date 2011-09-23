@@ -29,8 +29,6 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-
 OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
 		IPV6	"Enable ipv6 support." on
 

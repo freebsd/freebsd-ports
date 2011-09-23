@@ -26,7 +26,8 @@ USE_LDCONFIG=	yes
 
 USE_GNOME=	pkgconfig
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include `${PKG_CONFIG} libffi --cflags`" LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include `${PKG_CONFIG} libffi --cflags`
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 
 OPTIONS=	SVMCP "Install SableVM classpath" ON \

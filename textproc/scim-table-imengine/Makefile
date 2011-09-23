@@ -27,10 +27,10 @@ MAN1=		scim-make-table.1
 
 .include <bsd.port.pre.mk>
 
-CPPFLAGS=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
+CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl" \
-		PREFIX="${PREFIX}"
+CONFIGURE_ENV+=	PREFIX="${PREFIX}"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 PLIST_SUB=	SKIM="@comment "
 

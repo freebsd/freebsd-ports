@@ -22,7 +22,6 @@ USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -33,8 +32,8 @@ MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		MagickCore-config.1 MagickWand-config.1 \
 		identify.1 import.1 mogrify.1 montage.1 stream.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 

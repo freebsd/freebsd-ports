@@ -17,8 +17,8 @@ COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gnomedesktop libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

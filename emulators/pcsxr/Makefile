@@ -33,7 +33,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CSTD=	gnu89
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
 USE_LDCONFIG=	yes
 

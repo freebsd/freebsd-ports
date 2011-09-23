@@ -21,8 +21,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomepanel libgnomeui atspi
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	lib/gtk-2.0/modules/libgail-gnome.la \
 		lib/gtk-2.0/modules/libgail-gnome.so \
 		libdata/pkgconfig/libgail-gnome.pc

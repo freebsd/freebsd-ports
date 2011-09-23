@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-transparency --enable-xpm-background \
 		--enable-next-scrollbar --enable-utmp --enable-wtmp \
 		--enable-menubar --enable-graphics --with-term=xterm-color \
 		--with-xpm-includes=${LOCALBASE} --with-xpm-library=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/WINGs"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WINGs
 
 MAN1=		wterm.1
 PLIST_FILES=	bin/wterm

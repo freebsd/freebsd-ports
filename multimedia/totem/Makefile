@@ -38,9 +38,9 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-	       	LIBS="-L${LOCALBASE}/lib -lXrandr" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lXrandr" \
 		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
 MAN1=		totem.1 totem-video-thumbnailer.1

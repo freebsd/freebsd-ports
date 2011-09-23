@@ -22,11 +22,10 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-mpeg2enc
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

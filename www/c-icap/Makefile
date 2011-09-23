@@ -51,8 +51,8 @@ CONFIGURE_ARGS+=	--without-perl
 LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 PLIST_SUB+=	CLAMAV=""
 CONFIGURE_ARGS+=	--with-clamav
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 .else
 PLIST_SUB+=	CLAMAV="@comment "
 CONFIGURE_ARGS+=	--without-clamav

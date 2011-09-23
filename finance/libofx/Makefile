@@ -21,15 +21,14 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

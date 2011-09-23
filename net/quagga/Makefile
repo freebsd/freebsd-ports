@@ -50,9 +50,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-fstack-protector
 .endif
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+CONFIGURE_ENV+=	LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 		LIBTOOL_VERSION=${LIBTOOL_VERSION}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(ENABLE_USER)
 ENABLE_USER=quagga

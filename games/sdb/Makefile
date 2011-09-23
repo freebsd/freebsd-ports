@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
-LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
+LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
 PORTDOCS=	*

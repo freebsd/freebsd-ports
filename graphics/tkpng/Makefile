@@ -28,8 +28,7 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}/generic \
 		--with-tkinclude=${TK_INCLUDEDIR}/generic \
 		--exec-prefix=${PREFIX} --enable-shared
-CPPFLAGS=	-I${TK_INCLUDEDIR}/generic -I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
+CPPFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${LOCALBASE}/include
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
 

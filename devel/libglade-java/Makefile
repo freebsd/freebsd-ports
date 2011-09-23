@@ -30,7 +30,7 @@ JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libglade2
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
+CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 
 GLADE_API_VERSION=	2.12
 GTK_API_VERSION=	2.10

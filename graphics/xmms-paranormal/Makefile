@@ -19,7 +19,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml"
+CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes

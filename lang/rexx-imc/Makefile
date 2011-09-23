@@ -19,8 +19,7 @@ CONFLICTS=	rexx-regina-* oorexx-[0-9]*
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Make
-CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
-			PREFIX="${PREFIX}"
+CONFIGURE_ENV=		PREFIX="${PREFIX}"
 CONFIGURE_ARGS=		o all
 
 # configures and builds in one step

@@ -19,7 +19,7 @@ LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
 		curl.6:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/xmms2-scrobbler
 PORTDOCS=	README

@@ -18,7 +18,8 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		xerces-c:${PORTSDIR}/textproc/xerces-c2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 post-install:

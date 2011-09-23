@@ -33,10 +33,8 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--with-pngdir=${NAGIOSDIR}/snmp4nagios/png \
 		--prefix=${PREFIX}
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

@@ -22,7 +22,7 @@ LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib"
+LDFLAGS+=	-L${PREFIX}/lib
 PORTDOCS=	README AUTHORS
 PLIST_FILES=	lib/jpilot/plugins/libpicsnvideos.la	\
 		lib/jpilot/plugins/libpicsnvideos.so

@@ -17,8 +17,8 @@ COMMENT=	Figaro's Password Manager, an app to securely store your passwords
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+=	--without-included-gettext
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		fpm.1
 PORTDOCS=	AUTHORS ChangeLog README TODO

@@ -18,12 +18,11 @@ USE_GNOME=	gtk20
 WANT_UNICODE=	yes
 USE_WX=		2.6+
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .if !defined(CFLAGS) || ${CFLAGS:M-fno-strict-aliasing*} == ""
 CFLAGS+=	-O2 -fno-strict-aliasing
 .endif

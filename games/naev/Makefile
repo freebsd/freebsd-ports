@@ -28,7 +28,8 @@ USE_GNOME=	libxml2
 USE_SDL=	sdl image
 
 CONFIGURE_ARGS=	--with-ndata-path=${DATADIR}/ndata-${PORTVERSION}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		naev.6
 PLIST_FILES=	bin/${PORTNAME}

@@ -91,12 +91,12 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
 LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
 _PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
 _PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
-CONFIGURE_ENV+=		CPPFLAGS="${_PTH_CPPFLAGS} ${CPPFLAGS}"
-CONFIGURE_ENV+=		LDFLAGS="${_PTH_LDFLAGS} ${LDFLAGS}"
+CPPFLAGS:=		${_PTH_CPPFLAGS} ${CPPFLAGS}
+LDFLAGS+=		${_PTH_LDFLAGS}
 .else # !defined(WITH_PTH)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+LDFLAGS+=		${PTHREAD_LIBS}
 .endif # defined(WITH_PTH)
 .if defined(WITHOUT_HUGE_STACK_SIZE)
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
@@ -106,9 +106,6 @@ CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
 .else # defined(WITHOUT_THREADS)
 PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
-.if defined(LDFLAGS)
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
-.endif # defined(LDFLAGS)
 .endif # !defined(WITHOUT_THREADS)
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
@@ -130,7 +127,7 @@ PLIST_SUB+=	32BIT_ONLY="@comment "
 PLIST_SUB+=	32BIT_ONLY=""
 .endif
 .if ${ARCH} == powerpc64
-MAKE_ENV+= UNAME_m="powerpc64"
+MAKE_ENV+=	UNAME_m="powerpc64"
 .endif
 .if ${ARCH} == sparc64
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900

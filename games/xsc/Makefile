@@ -16,8 +16,6 @@ COMMENT=	A vector graphics space shoot'em up game
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/xsc
 
 .include <bsd.port.mk>

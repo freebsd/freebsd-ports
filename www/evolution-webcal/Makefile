@@ -22,8 +22,8 @@ USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	evolution-webcal.schemas
 

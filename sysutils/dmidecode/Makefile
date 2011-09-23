@@ -18,7 +18,7 @@ COMMENT=	A tool for dumping DMI (SMBIOS) contents in human-readable format
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 USE_BZIP2=	yes
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
 LICENSE=	GPLv2
 
 .if defined(NOPORTDOCS)

@@ -21,8 +21,8 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_XORG=       x11 xext xt xtst xfixes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--program-prefix=''
 
 MAN1=		lineak_defaultplugin.1

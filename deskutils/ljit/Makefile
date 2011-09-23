@@ -21,8 +21,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 

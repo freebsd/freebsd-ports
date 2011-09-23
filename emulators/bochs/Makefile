@@ -19,7 +19,6 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-docbook
 
 OPTIONS=	A20_PIN "Enable support for A20 pin" on \
@@ -73,8 +72,8 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 
 CFLAGS+=	-fno-exceptions -fomit-frame-pointer ${CPPFLAGS}
 CXXFLAGS+=	-fno-rtti
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MANCOMPRESSED=	yes
 MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1

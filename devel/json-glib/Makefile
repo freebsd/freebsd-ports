@@ -22,7 +22,7 @@ USE_XZ=		yes
 USE_GNOME=	glib20 gnomehack gnomeprefix ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

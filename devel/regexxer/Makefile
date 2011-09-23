@@ -22,8 +22,8 @@ USE_GETTEXT=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix intltool intlhack
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=		regexxer.schemas
 INSTALLS_ICONS=		regexxer.png

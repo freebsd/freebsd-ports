@@ -16,8 +16,8 @@ COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 USE_ICONV=	yes
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="-L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv"
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f -print0 | \

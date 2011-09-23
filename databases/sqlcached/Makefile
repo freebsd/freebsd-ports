@@ -16,7 +16,7 @@ COMMENT=	A cache daemon using SQL for data manipulation
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
-MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS=		-O2 -Wall -I${LOCALBASE}/include
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

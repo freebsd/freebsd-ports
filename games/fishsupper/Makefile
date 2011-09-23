@@ -21,8 +21,8 @@ USE_SDL=	sdl image mixer
 USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 

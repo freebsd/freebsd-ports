@@ -23,7 +23,8 @@ CONFIGURE_ARGS= --enable-wtmp \
 		--disable-thai \
 		--without-afterstep-config
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	TRANS "Transparency support" on \
 		BSDEL "BSD-style backspace and delete" on \

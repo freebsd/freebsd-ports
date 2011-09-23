@@ -31,7 +31,6 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \
 		--with-etcdir="${PREFIX}/etc" \

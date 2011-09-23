@@ -37,7 +37,6 @@ USE_GNOME=	gnomehack libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-dialog=no \
 		--with-cdialog=no \
 		--with-qt=no \
@@ -55,8 +54,8 @@ MAN1=		gnunet-auto-share.1 gnunet-chat.1 gnunet-directory.1 \
 		gnunet-update.1 gnunet-vpn.1 gnunetd.1
 MAN5=		gnunet.conf.5 gnunetd.conf.5
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 DBDIR=		/var/db/${PORTNAME}
 

@@ -19,14 +19,13 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 
 USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
-		OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \
+CONFIGURE_ENV=	OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \
 		OPENBOX_LIBS="`pkg-config --libs obrender-3.5 obt-3.5`"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox
 MAKE_ARGS=	mkdir_p='${MKDIR}'
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	ABOUT-NLS AUTHORS README TODO
 

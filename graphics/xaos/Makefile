@@ -24,8 +24,8 @@ OPTIONS=	PTHREAD "Enable SMP support (experimental)" off \
 		GTK2 "GTK+ User Interface (experimental)" off \
 		NLS "Native Language Support" on
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
 		--with-ggi-driver=no --with-svga-driver=no \
 		--with-sffe=no
@@ -41,8 +41,8 @@ DESKTOP_ENTRIES=	"XaoS" "Fractal zoomer" "" "xaos" "" false
 
 .if defined(WITH_PTHREAD)
 CONFIGURE_ARGS+=	--with-pthread=yes
-CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}" \
-			CFLAGS="${PTHREAD_CFLAGS} ${CFLAGS}"
+CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}"
+CFLAGS+=		${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--with-pthread=no
 .endif

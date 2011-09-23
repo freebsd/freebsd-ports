@@ -46,8 +46,6 @@ LESTATIC=	${LOCALBASE}/lib/libevent.a
 . endif
 .endif
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 .if defined(WITH_BACKSPACE)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 .endif

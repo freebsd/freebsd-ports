@@ -61,7 +61,8 @@ PLIST_SUB=	CHARSETS="@comment "
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 _MANLANG=	es hu it pl ru sr

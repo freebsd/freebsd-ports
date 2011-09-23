@@ -46,9 +46,9 @@ USE_GETTEXT=	yes
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-			  -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 \
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtk-query-immodules-2.0.1
 

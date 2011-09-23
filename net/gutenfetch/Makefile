@@ -16,8 +16,8 @@ COMMENT=	Fetch listings and books from Project Gutenberg
 LIB_DEPENDS=	gutenfetch:${PORTSDIR}/devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 

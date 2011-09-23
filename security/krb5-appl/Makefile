@@ -33,8 +33,7 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool autoheader autoconf
 CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
-CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
-			CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
 PATCH_DIST_STRIP=	-p1
 

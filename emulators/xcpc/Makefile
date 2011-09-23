@@ -15,7 +15,8 @@ MAINTAINER=	pixel@hugbox.org
 COMMENT=	A portable Amstrad 464&/664/6128 emulator
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 
 USE_XORG=	ice

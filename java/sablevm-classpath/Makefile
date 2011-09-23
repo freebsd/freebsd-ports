@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CFLAGS+=	-I${PREFIX}/include -L${PREFIX}/lib -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

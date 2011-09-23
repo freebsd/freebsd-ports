@@ -21,8 +21,9 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
-		ac_cv_path_DOXYGEN=""
+CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

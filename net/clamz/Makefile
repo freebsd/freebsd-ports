@@ -18,8 +18,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

@@ -19,7 +19,8 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	FREETYPE "Enable FreeType2 support" off \
 		SLANG "Enable sLang support (for video driver)" off

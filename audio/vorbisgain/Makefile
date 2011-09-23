@@ -18,8 +18,8 @@ COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		vorbisgain.1
 PLIST_FILES=	bin/vorbisgain

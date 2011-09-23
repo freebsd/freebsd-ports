@@ -37,10 +37,10 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
 		--enable-compat-howl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_KQUEUE
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${AVAHI_SLAVE}=="no"
 CONFLICTS=	howl-[0-9]*

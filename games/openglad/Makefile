@@ -18,7 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 NOT_FOR_ARCHS=	sparc64
 

@@ -21,8 +21,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 USE_SDL=	sdl
 USE_GL=		gl
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-system-ftgl
 USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes

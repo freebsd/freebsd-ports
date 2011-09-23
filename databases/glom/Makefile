@@ -38,8 +38,8 @@ USE_GNOME=	gnomedocutils gnomehack gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin
 INSTALLS_ICONS=	yes
 

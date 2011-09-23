@@ -19,13 +19,13 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl
 USE_GL=		gl
 USE_GMAKE=	yes
-MAKE_ENV=	OPT="${OPT}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	OPT="${OPT}"
 USE_LDCONFIG=	yes
 
 OPT=		${CFLAGS} -fPIC -DPIC -Iinclude \
 		`${SDL_CONFIG} --cflags` `freetype-config --cflags` \
 		-I${LOCALBASE}/include
-LDFLAGS=	`${SDL_CONFIG} --libs` `freetype-config --libs` \
+LDFLAGS+=	`${SDL_CONFIG} --libs` `freetype-config --libs` \
 		-L${LOCALBASE}/lib
 
 post-patch:

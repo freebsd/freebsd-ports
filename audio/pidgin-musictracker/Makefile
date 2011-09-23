@@ -22,6 +22,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include" "LIBS=-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

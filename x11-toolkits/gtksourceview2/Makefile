@@ -29,8 +29,8 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2 libxml2 intlhack \
 		ltverhack referencehack
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
 

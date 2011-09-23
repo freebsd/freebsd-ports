@@ -18,7 +18,7 @@ MAN6=		greed.6
 PLIST_FILES=	bin/greed
 SCOREFILE?=	/var/games/greed.hs
 CFLAGS+=	-DSCOREFILE=\"${SCOREFILE}\" -DNOTBSD -DRELEASE=\"${PORTVERSION}\"
-LDFLAGS=	-lcurses
+LDFLAGS+=	-lcurses
 
 do-build:
 	@cd ${WRKSRC}&&${CC} ${CFLAGS} -o greed greed.c ${LDFLAGS}

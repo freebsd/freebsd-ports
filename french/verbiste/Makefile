@@ -23,9 +23,8 @@ USE_GNOME=	gnomehack ltverhack libxml2
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3

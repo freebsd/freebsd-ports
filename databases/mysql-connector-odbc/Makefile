@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	yes
 CFLAGS+=		-L${LOCALBASE}/lib
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mysql-path=${LOCALBASE} --without-samples \
 		--disable-gui --enable-test=no
 

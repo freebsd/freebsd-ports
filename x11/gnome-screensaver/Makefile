@@ -31,8 +31,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomemenus libgnomekbd \
 CONFIGURE_ARGS=	--with-gdm-config=${LOCALBASE}/etc/gdm/custom.conf \
 		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
 		--with-xscreensaverhackdir=${LOCALBASE}/bin/xscreensaver-hacks
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gnome-screensaver.schemas
 MAN1=		gnome-screensaver-command.1 gnome-screensaver-preferences.1 \

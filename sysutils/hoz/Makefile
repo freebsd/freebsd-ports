@@ -18,8 +18,6 @@ COMMENT=	File splitter, GTK and CLI versions
 USE_GNOME=	#
 USE_GMAKE=	yes
 
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
 PORTDOCS=	README
 
 OPTIONS=	CLI	"CLI interface" on \

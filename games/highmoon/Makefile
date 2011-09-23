@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
-LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image
+LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image
 
 post-patch:
 	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -e \

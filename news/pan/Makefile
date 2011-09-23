@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack intlhack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex
 
 OPTIONS=	GTKSPELL "Enable spell checking support (gtk+2 only)" on \
 		GTK3 "Build with gtk+3 based UI instead of gtk+2" off

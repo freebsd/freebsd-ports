@@ -31,8 +31,8 @@ USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	nautilus-cd-burner.schemas
 

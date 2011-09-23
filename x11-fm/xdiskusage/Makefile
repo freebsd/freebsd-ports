@@ -23,8 +23,6 @@ USE_GMAKE=	yes
 CXXFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 PLIST_FILES=	bin/xdiskusage
 MAN1=		xdiskusage.1
 

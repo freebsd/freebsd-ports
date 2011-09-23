@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 BUILD_WRKSRC=	${WRKSRC}/source/linux
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ClanLib-0.8
-LDFLAGS=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/ClanLib-0.8
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ClanLib-0.8
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/ClanLib-0.8
 
 post-patch:
 	@${REINPLACE_CMD} -e \

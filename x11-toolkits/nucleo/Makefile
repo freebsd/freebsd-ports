@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 USE_GL=		glu
 USE_QT_VER=	4
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 OPTIONS=	GNUTLS	"Build with GnuTLS support"	off \

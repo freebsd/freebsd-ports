@@ -20,8 +20,8 @@ USE_GMAKE=	yes
 USE_GL=		gl
 USE_SDL=	sdl mixer image
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

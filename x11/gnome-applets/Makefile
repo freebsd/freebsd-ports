@@ -39,9 +39,9 @@ USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mixer-applet \
 		--disable-networkmanager
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		OS_SYS="/usr/include"
+CONFIGURE_ENV=	OS_SYS="/usr/include"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas stickynotes.schemas
@@ -61,7 +61,7 @@ LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
+CFLAGS+=	-fPIC
 PLIST_SUB=	BATTERY="@comment "
 .else
 GCONF_SCHEMAS+=	battstat.schemas

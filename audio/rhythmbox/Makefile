@@ -41,9 +41,10 @@ CONFIGURE_ARGS=	--disable-vala --with-libbrasero-media \
 		--without-libnautilus-burn
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-lm" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LIBS="-lm"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	rhythmbox.schemas
 

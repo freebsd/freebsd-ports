@@ -17,6 +17,8 @@ COMMENT=	CUPS backend for Canon USB over IP protocol
 LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-base
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lcompat"
+CONFIGURE_ENV=	LIBS="-lcompat"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

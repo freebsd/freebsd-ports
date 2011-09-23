@@ -21,8 +21,8 @@ USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*

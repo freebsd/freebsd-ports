@@ -26,7 +26,6 @@ USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I m4
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-python-binding \
 		--disable-examples \
@@ -43,8 +42,8 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-zlib=system
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

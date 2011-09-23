@@ -38,8 +38,8 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 #		--enable-gconf-source=${PREFIX}/etc/gconf/schemas \
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gconftool-2.1 gsettings-data-convert.1 \
 		gsettings-schema-convert.1
 

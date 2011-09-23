@@ -63,7 +63,7 @@ LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
 .endif # defined ($(WITH_GNOKII))
 
 .if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 pre-everything::

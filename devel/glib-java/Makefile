@@ -25,7 +25,7 @@ JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_GNOME=	gnomehack glib20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
+CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 GLIB_API_VERSION=	0.4
 PLIST_SUB=		GLIB_API_VERSION=${GLIB_API_VERSION} PORTNAME=${PORTNAME}
 PKGMESSAGE=		${WRKDIR}/pkg-message

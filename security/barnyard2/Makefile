@@ -24,7 +24,6 @@ OPTIONS+=	TCL "Enable TCL support" off
 
 USE_RC_SUBR=	barnyard2.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
 PORTDOCS1=	README

@@ -24,8 +24,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	nautilus2 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-nautilus-extdir=${LOCALBASE}/lib/nautilus/extensions-2.0
 
 PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog-2008 ChangeLog-2009 INSTALL \

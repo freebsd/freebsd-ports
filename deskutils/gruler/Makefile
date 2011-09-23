@@ -16,8 +16,8 @@ COMMENT=	A simple customizable GTK screen ruler
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure

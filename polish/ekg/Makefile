@@ -26,9 +26,9 @@ CONFIGURE_ARGS+=--disable-shared \
 		--without-libungif \
 		--without-libjpeg
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	ASPELL "Build with ASPELL support" off \
 		OPENSSL "Build with OPENSSL support" on

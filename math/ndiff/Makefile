@@ -22,7 +22,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gmp
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 .else
 .if ${ARCH} == sparc64
 CONFIGURE_ARGS= --with-long-double

@@ -19,8 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 USE_GL=		gl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lusbhid"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lusbhid"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 
 .include <bsd.port.pre.mk>

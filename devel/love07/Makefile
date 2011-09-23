@@ -25,9 +25,9 @@ USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
-		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
 
 PLIST_FILES=	bin/love

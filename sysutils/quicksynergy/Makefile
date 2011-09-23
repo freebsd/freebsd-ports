@@ -21,8 +21,8 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/quicksynergy \
 		share/locale/pt_BR/LC_MESSAGES/quicksynergy.mo

@@ -22,8 +22,8 @@ USE_GL=		gl
 USE_SDL=	sdl
 USE_GNOME=	gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG} \
-		CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`"
+CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
+CPPFLAGS+=	`pkg-config --cflags libgnomeui-2.0`
 
 PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
 		lib/libgai.so.0 lib/libgai.so libdata/pkgconfig/gai.pc \

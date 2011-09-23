@@ -25,8 +25,8 @@ INSTALLS_OMF=		yes
 USE_GETTEXT=		yes
 USE_GSTREAMER=		vorbis mp3 flac
 INSTALLS_ICONS=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 
 ONLY_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Coredump on amd64, see PR: ports/130972 

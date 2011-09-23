@@ -56,7 +56,6 @@ JABBER_RUNDIR=	"/var/run/jabberd"
 JABBER_SPOOLDIR="/var/spool/jabberd"
 JABBER_LOGDIR=	"/var/log/jabberd"
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${JABBER_ETCDIR} \
 		--includedir=${PREFIX}/include/jabber \

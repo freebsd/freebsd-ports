@@ -40,10 +40,10 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--enable-mediactrl\
 		--disable-backtrace\
 		--enable-graphics_ctx
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"\
 		X11BASE="${LOCALBASE}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 NO_LATEST_LINK=	yes
 
 OPTIONS=	GSTREAMER "media support" on\

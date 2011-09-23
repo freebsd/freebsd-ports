@@ -21,7 +21,7 @@ PORTDOCS=	README COPYRIGHT
 
 NO_CDROM=	Restrictive copyright (don not sell for profit)
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1 -D__STRICT_ANSI__"
+CFLAGS+=	-DISO_CHAR_SET=1 -D__STRICT_ANSI__
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
 pre-configure:

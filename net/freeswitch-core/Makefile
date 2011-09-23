@@ -61,8 +61,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-ogg-libraries=${LOCALBASE}/lib \
 		--with-ogg-includes=${LOCALBASE}/include
 
-CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 

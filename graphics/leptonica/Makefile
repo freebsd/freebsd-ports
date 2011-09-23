@@ -24,7 +24,8 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool aclocal automake autoconf
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/makefile.linux

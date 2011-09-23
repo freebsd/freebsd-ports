@@ -25,7 +25,7 @@ MAN1=		traceanon.1 traceconvert.1 tracefilter.1 tracemerge.1  tracepktdump.1 \
 		tracereport.1 tracertstats.1 tracesplit.1 tracesplit_dir.1 tracestats.1 \
 		tracesummary.1
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \

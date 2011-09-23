@@ -17,7 +17,6 @@ COMMENT=	3D Virtual Desktop Switcher
 USE_GL=		glut
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		3ddesk.1 3ddeskd.1
 PORTDOCS=	README README.windowmanagers
@@ -25,8 +24,8 @@ PLIST_FILES=	bin/3ddesk bin/3ddeskd etc/3ddesktop.conf \
 		%%DATADIR%%/digits.bmp
 PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

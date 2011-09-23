@@ -17,8 +17,8 @@ COMMENT=	Useful to correct images from digtal camera with CCD defects
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MANLANG=	"" de fi fr
 MAN1=		jpeghotp.1 jpegpixi.1

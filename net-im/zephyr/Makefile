@@ -43,6 +43,5 @@ KRB5_DIR?=	${DESTDIR}/usr
 
 # it is an upstream bug that --with-krb5 needs a path
 CONFIGURE_ARGS=	--with-krb5="${KRB5_DIR}"
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 .include <bsd.port.mk>

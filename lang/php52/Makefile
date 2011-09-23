@@ -170,10 +170,8 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-
 .if defined(WITH_LINKTHR)
-CONFIGURE_ENV+=        LIBS="${LIBS} ${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 .endif
 
 .if defined(WITH_DEBUG)

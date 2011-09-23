@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 USE_XORG=	xt x11 ice xaw xmu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="`${LIBNET_CONFIG} --libs`"
+LDFLAGS+=	`${LIBNET_CONFIG} --libs`
 CFLAGS+=	`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines` \
 		-I/usr/include
 

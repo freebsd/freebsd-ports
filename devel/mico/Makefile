@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-coss
 MICO_SERVICE=		"@comment "
 .endif
 
-CONFIGURE_ENV+=		CXXFLAGS="${CPPFLAGS} -Wno-unused"
+CXXFLAGS+=		${CPPFLAGS} -Wno-unused
 
 .if defined(WITH_X11)
 USE_XORG=		x11
@@ -84,7 +84,6 @@ MICO_GTK=		"@comment "
 LIB_DEPENDS=		tcl83:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=	--with-tcl
 CPPFLAGS+=		-I${LOCALBASE}/include/tcl8.3
-CONFIGURE_ENV+=		CPPFLAGS=${CPPFLAGS}
 .else
 MICO_TCL=		"@comment "
 .endif

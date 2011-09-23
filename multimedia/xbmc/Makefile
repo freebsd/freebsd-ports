@@ -99,8 +99,8 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--enable-external-libraries
 

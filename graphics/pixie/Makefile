@@ -29,7 +29,6 @@ USE_GNOME=	gnomehack
 USE_GL=		glu
 USE_BISON=	build
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \
 		--with-docdir=${DOCSDIR} \
@@ -46,8 +45,8 @@ MAN1=		rndr.1 sdrc.1 sdrinfo.1 texmake.1
 PORTDOCS=	*
 
 CFLAGS+=	-fPIC
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

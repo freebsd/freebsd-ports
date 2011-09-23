@@ -28,11 +28,11 @@ USE_GNOME=	gnomehack libglade2 pygobject
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-lintl" \
+CONFIGURE_ENV=	LIBS="-lintl" \
 		PYTHON="${PYTHON_VERSION}"
-CONFIGURE_ARGS=	--disable-docs
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-docs
 
 DOCSDIR=	${PREFIX}/share/doc/py-gtk
 EG_SRC_DIR=	${WRKSRC}/examples
@@ -59,12 +59,9 @@ CONFIGURE_ARGS+=--disable-numpy
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-thread
 CFLAGS+=		${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+LDFLAGS+=		${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--disable-thread
-.if defined(LDFLAGS)
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
-.endif
 .endif
 
 post-install:

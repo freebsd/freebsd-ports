@@ -29,7 +29,7 @@ INSTALLS_ICONS=	yes
 
 USE_AUTOTOOLS=	libtool aclocal
 LIBTOOLFILES=	acinclude.m4 configure
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -lintl -L${PREFIX}/lib"
+LDFLAGS+=	${PTHREAD_LIBS} -lintl -L${PREFIX}/lib
 CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
 

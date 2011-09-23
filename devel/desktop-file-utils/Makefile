@@ -21,8 +21,9 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" EMACS="no"
+CONFIGURE_ENV=	EMACS="no"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		desktop-file-install.1 desktop-file-validate.1 \
 		update-desktop-database.1

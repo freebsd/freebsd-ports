@@ -40,8 +40,8 @@ MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--enable-introspection=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if ${LIBGDA4_SLAVE}=="no"
 OPTIONS=	UI "Build UI tools" on

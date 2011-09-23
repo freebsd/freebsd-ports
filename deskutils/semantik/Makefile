@@ -26,8 +26,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui linguist svg webkit xml \
 		moc_build qmake_build uic_build
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		PATH="${KDE4_PREFIX}/bin:$$PATH" WAF_HOME="${WRKSRC}"
+CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH" WAF_HOME="${WRKSRC}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 

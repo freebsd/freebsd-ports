@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig ltasneededhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=ac_cv_lib_ICE_IceConnectionNumber=no
 
 .include <bsd.port.mk>

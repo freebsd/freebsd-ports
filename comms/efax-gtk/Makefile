@@ -33,7 +33,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 CONFIGURE_ARGS+=	--with-gtk-version=gtk2
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

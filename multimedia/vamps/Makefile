@@ -17,7 +17,6 @@ COMMENT=	High performance tool to transcode DVD videos to a smaller size
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-DHAVE_BUILTIN_EXPECT \

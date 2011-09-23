@@ -23,12 +23,12 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		INTLTOOL_PERL="${PERL}"
+CONFIGURE_ENV=	INTLTOOL_PERL="${PERL}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
 		--with-tutorial-path="${DOCSDIR}" \
 		--with-lib3ds-prefix="${LOCALBASE}"
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		giram.1
 

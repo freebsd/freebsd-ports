@@ -19,8 +19,8 @@ BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	xext sm x11 xau xcursor xi
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
-		LDFLAGS="`pkg-config --libs xft`"
+CPPFLAGS+=	`pkg-config --cflags xft`
+LDFLAGS+=	`pkg-config --libs xft`
 
 DOCS=		AUTHORS BUGS COPYING ChangeLog INSTALL NEWS \
 		README TODO

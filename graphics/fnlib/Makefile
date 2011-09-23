@@ -19,6 +19,6 @@ USE_GMAKE=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

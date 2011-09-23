@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm-includes=${LOCALBASE}/include --with-xpm-library=${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
 
 MAN1=		ascpu.1

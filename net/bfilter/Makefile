@@ -17,8 +17,8 @@ LIB_DEPENDS=	ACE.5:${PORTSDIR}/devel/ace \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN8=		bfilter.8
 USE_RC_SUBR=	bfilter.sh

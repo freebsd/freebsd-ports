@@ -16,8 +16,6 @@ MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 
 MAN1=		pwgen.1
 PLIST_FILES=	bin/pwgen

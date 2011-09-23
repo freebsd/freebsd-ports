@@ -24,9 +24,8 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool automake:env autoheader:env
 INSTALLS_ICONS=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=		XFCE4_PANEL "Xfce panel applet" Off
 

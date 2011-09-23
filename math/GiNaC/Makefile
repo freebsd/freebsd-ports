@@ -22,14 +22,13 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 MAN1=	ginsh.1 viewgar.1
 INFO=	ginac ginac-examples
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

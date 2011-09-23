@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${LOCALBASE}/lib/libnetcdf.so:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LDFLAGS=	"-L${LOCALBASE}/lib"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes

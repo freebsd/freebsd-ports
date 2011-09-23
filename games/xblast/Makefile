@@ -43,7 +43,6 @@ WANT_SDL=	yes
 .endif
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-admin
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
@@ -53,8 +52,8 @@ MAN6=		xblast.6
 
 DATADIR=	${PREFIX}/share/XBlast-TNT
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 FONTSDIR=	${LOCALBASE}/lib/X11/fonts/bitstream-vera
 

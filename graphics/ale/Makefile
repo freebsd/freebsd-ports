@@ -21,14 +21,13 @@ OPTIONS=	DOUBLE "64bit Data Precision Support" off \
 
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-assertions
 
 MAN1=		ale.1
 PLIST_FILES=	bin/ale bin/ale-bin
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even

@@ -18,8 +18,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 POPT_INCLUDE=	`pkg_info -xL ^popt | ${GREP} popt.h | ${SED} -e 's?/popt.h??'`
 POPT_LIB=	`pkg_info -xL ^popt | ${GREP} libpopt.a | ${SED} -e 's?/libpopt.a??'`
-CONFIGURE_ENV=	CPPFLAGS="-I${POPT_INCLUDE}" \
-		LIBS="-lpopt -L${POPT_LIB}"
+CONFIGURE_ENV=	LIBS="-lpopt -L${POPT_LIB}"
+CPPFLAGS+=	-I${POPT_INCLUDE}
 .if defined(DEFAULT_CVS_SERVER)
 CONFIGURE_ARGS+=	--enable-default-server=${DEFAULT_CVS_SERVER}
 .endif

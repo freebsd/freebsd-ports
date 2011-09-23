@@ -81,6 +81,6 @@ PLIST_FILES+=	"@dirrmtry share/locale/de_DE"
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.post.mk>

@@ -25,8 +25,8 @@ PLIST_FILES+=	bin/fprint_demo
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
-		CRYPTO_LIBS=-lcrypto \
-		CFLAGS="${CFLAGS} -DHAVE_MEMMEM"
+		CRYPTO_LIBS=-lcrypto
+CFLAGS+=	-DHAVE_MEMMEM
 
 post-install:
 	@${ECHO}

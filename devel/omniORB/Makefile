@@ -20,8 +20,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
-CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CPP=${CPP} \
-		PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-openssl=${OPENSSLBASE} \
 		--with-omniORB-config=${PREFIX}/etc/omniORB.cfg \
 		--with-omniNames-logdir=/var/log

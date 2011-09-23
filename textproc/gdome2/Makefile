@@ -19,8 +19,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"
+CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	DOCSDIR="share/doc/${DISTNAME}"
 USE_LDCONFIG=	yes
 

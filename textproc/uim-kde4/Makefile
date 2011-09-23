@@ -23,10 +23,10 @@ MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-qt4 --enable-pref --enable-default-toolkit=qt4 \
 		--enable-kde4-applet
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+CONFIGURE_ENV=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt4_toolbar_CMakeLists.txt

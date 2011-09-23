@@ -18,9 +18,9 @@ OPTIONS=	PULSE "Pulseaudio soundserver support" OFF
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+CONFIGURE_ENV=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-alsa
 INSTALLS_ICONS=	yes
 

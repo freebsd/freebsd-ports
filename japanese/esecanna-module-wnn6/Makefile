@@ -22,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include/wnn6" \
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+LDFLAGS+=	-L${PREFIX}/lib
+CFLAGS+=	-I${PREFIX}/include/wnn6
 
 DIST_SUBDIR=    esecanna
 

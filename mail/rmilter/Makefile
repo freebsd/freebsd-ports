@@ -17,8 +17,8 @@ PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WITH_SENDMAIL_BASE=	yes
 

@@ -29,8 +29,8 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
-CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags`" \
-		LDFLAGS="`${LIBNET_CONFIG} --libs`"
+LDFLAGS+=	`${LIBNET_CONFIG} --libs`
+CFLAGS+=	`${LIBNET_CONFIG} --cflags`
 
 .include <bsd.port.pre.mk>
 

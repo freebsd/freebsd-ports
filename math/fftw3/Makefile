@@ -27,8 +27,8 @@ USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-threads
-CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}=="default"
 MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1
@@ -43,7 +43,7 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer"
+CFLAGS:=	${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer
 .if ${FFTW3_FLAVOR}=="default" && ${MACHINE_CPU:Msse}
 # !!Detect SSE and not SSE2!!
 CONFIGURE_ARGS+=--enable-sse2
@@ -61,7 +61,7 @@ CFLAGS_3DNOW=	${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
 .if ${ARCH} != "amd64"
 CFLAGS_3DNOW+=	-malign-double
 .endif
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS_3DNOW}"
+CFLAGS+=	${CFLAGS_3DNOW}
 .endif
 .endif # end WITH_OPTIMIZED_CFLAGS
 

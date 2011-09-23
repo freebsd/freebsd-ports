@@ -20,8 +20,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--with-configfile=${LOCALBASE}/etc/noffle.conf \
 		--with-usersfile=${LOCALBASE}/etc/noffle.users
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 SPOOL_DIR=	/var/spool/noffle
 PLIST_SUB+=	SPOOL_DIR=${SPOOL_DIR}

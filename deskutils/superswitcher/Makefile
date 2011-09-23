@@ -21,8 +21,8 @@ RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libwnck pango
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -f

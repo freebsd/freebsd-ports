@@ -46,15 +46,15 @@ MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
-CONFIGURE_ENV=	${MAKE_ENV} CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	${MAKE_ENV}
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
 		--with-jasper \
 		--with-drivers=""
-CPPFLAGS=	-DUPD_SIGNAL=0 -I. \
+CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/jasper/src/libjasper/include \
 		-I${LOCALBASE}/include/libpng \
 		-I${LOCALBASE}/include

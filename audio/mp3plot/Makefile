@@ -22,15 +22,14 @@ OPTIONS=	GD "Enable support for GD library" on \
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

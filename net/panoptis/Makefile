@@ -18,7 +18,6 @@ LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'
 PLIST_FILES=	bin/panoptis bin/mail.py bin/pview.py bin/speed.py
 
 do-install:

@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${OPENSSLBASE}/include"
+CPPFLAGS+=	-I${OPENSSLBASE}/include
 LDFLAGS+=	-L${OPENSSLBASE}/lib -lssl -lcrypto
 .endif
 

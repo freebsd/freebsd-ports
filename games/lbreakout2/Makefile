@@ -19,14 +19,13 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 USE_SDL=	mixer net sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-sdl-net \
 		--localstatedir=/var/games \
 		--disable-nls
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

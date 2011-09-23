@@ -30,8 +30,8 @@ USE_GL=		gl glu
 USE_XORG=	x11 xtst xrandr xau xdmcp xext xrender
 USE_ICONV=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 # Not yet implemented
 #		FFMPEG		"Enable ffmpeg support"			off \

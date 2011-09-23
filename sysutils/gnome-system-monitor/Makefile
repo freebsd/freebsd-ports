@@ -27,8 +27,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libwnck gnomevfs2 gnomedocutils \
 		librsvg2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lutil"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lutil"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 GCONF_SCHEMAS=	gnome-system-monitor.schemas
 

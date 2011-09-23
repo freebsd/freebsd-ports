@@ -23,7 +23,7 @@ USE_PHPEXT=	yes
 USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	--with-qrencode=${LOCALBASE}
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${EXTRA_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

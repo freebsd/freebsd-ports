@@ -16,7 +16,7 @@ COMMENT=	System monitor that renders text on desktop
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		torsmo.1
 
 PLIST_FILES=	bin/torsmo \

@@ -22,7 +22,6 @@ MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-default-8bit
 
 MAN1=		spamprobe.1

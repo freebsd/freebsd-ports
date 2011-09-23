@@ -26,8 +26,8 @@ USE_XORG=	x11 xau xdmcp
 USE_ICONV=	yes
 USE_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`"
+CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 
 MAN6=	cosmosmash.6
 

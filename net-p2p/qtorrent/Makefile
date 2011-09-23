@@ -23,9 +23,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 .if defined(PACKAGE_BUILDING)
-TMPDIR?=	/tmp                
-MAKE_ENV+=	TMPDIR="${TMPDIR}"      
-CONFIGURE_ENV+=	TMPDIR="${TMPDIR}" 
+TMPDIR?=	/tmp
+MAKE_ENV+=	TMPDIR="${TMPDIR}"
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
 .endif
 
 pre-everything::

@@ -20,9 +20,8 @@ PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \
 		passwordfile wputrc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="${LDFLAGS}"
+CONFIGURE_ENV=	LIBS="${LDFLAGS}"
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	TLS "Enable TLS support" On \

@@ -16,7 +16,7 @@ COMMENT=	Unit Testing Framework for C and C++
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		pangocairo:${PORTSDIR}/x11-toolkits/pango
 
-CPPFLAGS=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

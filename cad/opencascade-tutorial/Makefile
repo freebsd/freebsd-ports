@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-gl-include=${LOCALBASE}/include	\
 		--with-qt-dir=${QTDIR}			\
 		--enable-qt-mt				\
 		--with-cascade-dir=${CASROOT}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 WRKSRC=		${WRKDIR}/opencascade-${PORTVERSION}/samples/tutorial
 CONFIGURE_LOG=	adm/${OPSYS}/config.log

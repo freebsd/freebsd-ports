@@ -30,10 +30,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
 		--with-html-dir=${DOCSDIR}
-CPPFLAGS=-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}
-LDFLAGS=-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if !defined(SLAVEPORT)
 OPTIONS=	CAIRO "Enable cairo output backend" on \

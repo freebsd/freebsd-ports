@@ -19,9 +19,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image ttf
 
-CONFIGURE_ENV=	LDFLAGS="`${SDL_CONFIG} --libs`" \
-		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CPPFLAGS+=	`${SDL_CONFIG} --cflags`
+LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 MAN6=		hangman.6
 

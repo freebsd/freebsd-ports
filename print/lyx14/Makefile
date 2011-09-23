@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=--without-aiksaurus
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 CONFIGURE_ARGS+=	--with-frontend=qt
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
 BROKEN=		Does not work with the latest xforms version

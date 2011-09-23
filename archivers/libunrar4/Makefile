@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/unrar
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unix
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	lib
 USE_LDCONFIG=	yes
 

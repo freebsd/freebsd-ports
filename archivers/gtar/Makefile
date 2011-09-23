@@ -27,9 +27,9 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
-		DEFAULT_ARCHIVE=/dev/sa0 \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${LDSTATIC}
+CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
 
 .if defined(WANT_STATIC)
@@ -60,7 +60,7 @@ RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
 .if ${OSVERSION} < 800040
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=no
 .else
-CONFIGURE_ENV+= gl_cv_func_mknod_works=yes
+CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 .endif
 
 .include <bsd.port.post.mk>

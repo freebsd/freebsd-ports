@@ -26,7 +26,7 @@ USE_GSTREAMER=	vorbis
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-systray --with-ssl=${OPENSSLBASE}
 
 GCONF_SCHEMAS=	g2ipmsg.schemas

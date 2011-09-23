@@ -18,7 +18,7 @@ LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 		mhash:${PORTSDIR}/security/mhash
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
+LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 USE_GMAKE=	yes
 
 MAN1=		gpass.1 gpass.ja.1 gpass-convert.1 gpass-convert.ja.1

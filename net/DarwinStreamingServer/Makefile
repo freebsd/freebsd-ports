@@ -38,7 +38,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_ENV+=	MAKE="${MAKE}"				\
 		DATADIR="${DATADIR}"			\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 .include <bsd.port.pre.mk>
 

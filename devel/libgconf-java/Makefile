@@ -28,7 +28,7 @@ JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_GNOME=	gnomehack gconf2
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
+CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 
 GCONF_API_VERSION=	2.12
 GTK_API_VERSION=	2.10

@@ -30,9 +30,9 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-os-type=freebsd \
 		--enable-introspection \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTKDOC="false"
+CONFIGURE_ENV=	GTKDOC="false"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(NO_INSTALL_MANPAGES)
 CONFIGURE_ARGS+=--disable-man-pages

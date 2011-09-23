@@ -39,8 +39,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 MAKE_JOBS_SAFE=	yes
 
@@ -53,8 +52,8 @@ CONFIGURE_ARGS+=--disable-optimizations
 MAN6=		heroes.6 heroeslvl.6
 INFO=		heroes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
 
 pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)

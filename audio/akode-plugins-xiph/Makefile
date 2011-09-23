@@ -41,7 +41,7 @@ PLIST_FILES=	lib/libakode_xiph_decoder.a \
 		lib/libakode_xiph_decoder.la \
 		lib/libakode_xiph_decoder.so
 
-CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
+LDFLAGS+=	-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
 

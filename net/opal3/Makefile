@@ -30,8 +30,8 @@ USE_LDCONFIG=	yes
 #MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	ZRTP	"Enable ZRTP protocol support" off \
 		JAVA	"Enable Java JNI support" off \

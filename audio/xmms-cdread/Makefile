@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
+CFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/xmms/Input/libcdread.so lib/xmms/Input/libcdread.la
 

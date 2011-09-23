@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
 NOT_FOR_ARCHS=	ia64
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
+CFLAGS+=		-fPIC
 CONFIGURE_ARGS=		--disable-Werror
 
 post-patch:

@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME_SUBR=	yes
 CONFIGURE_ARGS=	--with-stb-group=wheel \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|@GETTEXT_PACKAGE@|system-tools-backends|g' \

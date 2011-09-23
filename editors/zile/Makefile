@@ -18,7 +18,6 @@ LIB_DEPENDS=	gc:${PORTSDIR}/devel/boehm-gc
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-included-regex
 
 MAN1=		${PORTNAME}.1

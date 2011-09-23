@@ -23,8 +23,8 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libxml2
 USE_GETTEXT=	yes
 

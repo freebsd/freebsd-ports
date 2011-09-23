@@ -25,8 +25,8 @@ USE_GNOME=	gtk20 gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database \
 		--disable-update-desktop-database
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

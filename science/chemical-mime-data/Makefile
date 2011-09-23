@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 INSTALLS_ICONS=	yes
 
 post-patch:

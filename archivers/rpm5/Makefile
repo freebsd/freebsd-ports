@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=--without-lua \
 
 .if defined(WITH_PERL)
 CONFIGURE_ARGS+=--with-perl
-CONFIGURE_ENV+=__PERL=${PERL}
+CONFIGURE_ENV+=	__PERL=${PERL}
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .else
@@ -71,7 +71,7 @@ PLIST_SUB+=	PERL="@comment "
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=--with-python=${PYTHON_VER}
-CONFIGURE_ENV+=__PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	__PYTHON=${PYTHON_CMD}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
@@ -96,7 +96,6 @@ CONFIGURE_ARGS+=--with-apidocs
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/xar
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-db=external --with-bugreport="${MAINTAINER}" \
 		--with-sqlite=external --with-dbabi=db \
 		--with-zlib=external \

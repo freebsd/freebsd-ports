@@ -24,7 +24,7 @@ PLIST_SUB=	NLS="@comment "
 MAKE_ENV+=	DI_NO_NLS=T
 .endif
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" prefix="${PREFIX}"
+MAKE_ENV+=	prefix="${PREFIX}"
 
 .include <bsd.port.pre.mk>
 

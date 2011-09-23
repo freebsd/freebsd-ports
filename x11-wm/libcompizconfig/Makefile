@@ -24,8 +24,8 @@ USE_AUTOTOOLS=	libtool
 
 USE_GNOME=	gnomehack intltool libxml2
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	echo ${OSVERSION}

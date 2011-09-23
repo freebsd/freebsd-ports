@@ -20,7 +20,8 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		avarice.1 ice-gdb.1 ice-insight.1
 

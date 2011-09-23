@@ -41,8 +41,8 @@ USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS+=--enable-introspection \
 		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 

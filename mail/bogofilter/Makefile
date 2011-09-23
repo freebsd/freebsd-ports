@@ -51,8 +51,9 @@ LIB_DEPENDS+=		gsl.16:${PORTSDIR}/math/gsl
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
 CPPFLAGS+=	${BF_CPPFLAGS}
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
+CONFIGURE_ENV+=	LIBS="${BF_LIBS}" \
 		PERL="${PERL}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \

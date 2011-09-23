@@ -11,6 +11,6 @@ MAINTAINER=	nork@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../games/quit
 
-CPPFLAGS=	-DJAPANESE
+CPPFLAGS+=	-DJAPANESE
 
 .include "${MASTERDIR}/Makefile"

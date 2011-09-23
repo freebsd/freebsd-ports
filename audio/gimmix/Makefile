@@ -37,8 +37,8 @@ MAN1=		gimmix.1
 CONFIGURE_ENV=	DATADIRNAME=share
 
 .if !defined(WITHOUT_NLS)
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""

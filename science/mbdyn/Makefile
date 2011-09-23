@@ -24,7 +24,6 @@ USE_FORTRAN=	yes
 MAN1=		mbdyn.1
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--program-prefix=''
 
 OPTIONS=	MPI "Enable mpich-support" off \

@@ -21,8 +21,8 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

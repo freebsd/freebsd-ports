@@ -23,9 +23,9 @@ USE_ICONV=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib" \
-		LIBS="-L${PREFIX}/lib"
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
+CPPFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else

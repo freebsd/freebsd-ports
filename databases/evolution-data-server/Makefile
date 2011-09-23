@@ -39,8 +39,8 @@ CONFIGURE_ARGS=	--enable-static \
 		--enable-gnome-keyring=yes \
 		--with-openldap=yes \
 		--with-libdb=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_SUB=	VERSION="2.32" EVO_VERSION="1.2"
 

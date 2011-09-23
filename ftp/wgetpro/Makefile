@@ -20,7 +20,6 @@ RESTRICTED=	"may implement United States Patent 6,041,345"
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls

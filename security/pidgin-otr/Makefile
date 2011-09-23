@@ -36,8 +36,8 @@ USE_GNOME=	intltool
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
 

@@ -28,8 +28,8 @@ USE_OPENLDAP=	yes
 
 OPTIONS=	LCLASS "Enable login classes via the loginClass attribute" on
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret \

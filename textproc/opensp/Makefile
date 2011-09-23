@@ -22,8 +22,8 @@ USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade \
 		--disable-doc-build
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

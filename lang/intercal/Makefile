@@ -16,7 +16,7 @@ COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
+CFLAGS+=	-D_POSIX_SOURCE
 
 post-patch:
 #

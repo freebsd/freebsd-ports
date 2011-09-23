@@ -49,8 +49,7 @@ LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc \
 		--enable-linker-hardening
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
-		TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="-levent-2.0"
 

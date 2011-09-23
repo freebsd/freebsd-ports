@@ -74,8 +74,7 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
-			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 # pkg-config is used to find talloc, tevent and tdb
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig

@@ -30,9 +30,9 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack libgnomeui pygtk2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome

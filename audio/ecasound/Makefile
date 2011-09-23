@@ -27,7 +27,6 @@ LICENSE_COMB=	dual
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound \
 		--disable-rubyecasound \
 		--enable-sys-readline
@@ -38,8 +37,8 @@ MAN1=		ecaconvert.1 ecafixdc.1 ecalength.1 ecamonitor.1 \
 		ecasound-iam.1 ecatools.1
 MAN5=		ecasoundrc.5
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

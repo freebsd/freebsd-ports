@@ -56,8 +56,8 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-vpswitch.schemas \
 		compiz-shift.schemas
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
 .include <bsd.port.mk>

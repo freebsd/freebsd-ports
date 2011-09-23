@@ -22,8 +22,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin
 

@@ -23,15 +23,14 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 USE_SDL=	sdl
 USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-sdl
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/sdlgnuboy bin/sgnuboy bin/xgnuboy
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
 .for file in sdlgnuboy sgnuboy xgnuboy

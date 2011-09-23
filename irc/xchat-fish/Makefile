@@ -25,7 +25,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 CCFLAGS+=	-Wall -O2 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	CCFLAGS="${CCFLAGS}"
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	lib/xchat/plugins/xfish.so
 PORTDOCS=	FiSH-xchat.txt \

@@ -40,9 +40,9 @@ CONFIGURE_ARGS+=	--with-gtk2
 CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime
 .endif
 
-CONFIGURE_ENV?=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(UIM_SLAVE)
 .if !defined(WITHOUT_X11)

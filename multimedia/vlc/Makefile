@@ -109,8 +109,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${FAKEDIR}/include -I${WRKSRC}/include \
 		-I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg \
 		${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib \
-		-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" LIBS="-lc"
+CONFIGURE_ENV=	LIBS="-lc"
+LDFLAGS+=	-L${FAKEDIR}/lib \
+		-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc
 
 CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avcodec \

@@ -17,7 +17,7 @@ COMMENT=	Mouse and keyboard sharing utility
 USE_CMAKE=	yes
 USE_XORG=	ice xtst x11 sm
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 

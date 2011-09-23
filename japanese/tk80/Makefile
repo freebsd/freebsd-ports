@@ -36,8 +36,8 @@ USE_AUTOTOOLS=	autoconf213
 USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
 	--enable-xlibHack --enable-onTheSpot
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 RANLIB=		ranlib
 USE_LDCONFIG=	yes
 

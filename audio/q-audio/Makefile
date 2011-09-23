@@ -28,6 +28,5 @@ DATADIR=	${PREFIX}/share/q
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

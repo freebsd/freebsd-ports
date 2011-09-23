@@ -30,9 +30,9 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2 pkgconfig
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7 
-PLIST_SUB=      GHEMICAL_VERSION="${PORTVERSION}"
+CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7
+PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"
 
-MAKE_ENV=       PKG_CONFIG=${LOCALBASE}/pkg-config
+MAKE_ENV=	PKG_CONFIG=${LOCALBASE}/pkg-config
 
 .include <bsd.port.mk>

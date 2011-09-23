@@ -36,7 +36,8 @@ USE_GMAKE=	yes
 USE_GCC=	4.2+
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -Wno-deprecated-declarations
 CONFIGURE_ARGS=	--disable-werror --enable-ltdl-install=no --with-browser-plugins-dir=${LOCALBASE}/lib/browser_plugins
 USE_AUTOTOOLS=	libtool:env autoconf:env automake:env aclocal:env libltdl
 WANT_GNOME=	yes
@@ -79,7 +80,7 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -Wno-deprecated-declarations"
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-deprecated-declarations
 
 .if ${OSVERSION} < 700000
 IGNORE=	needs 7.X or higher

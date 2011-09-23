@@ -25,8 +25,9 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
 		--with-qt-libraries=${QT_LIBDIR} \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC}" LIBS="${QTCFGLIBS}" \
 		QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" QTDIR="${QT_PREFIX}"
+CPPFLAGS+=	${QTCPPFLAGS}
 MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .endif # !defined(QT_NONSTANDARD)
 

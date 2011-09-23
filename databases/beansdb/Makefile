@@ -15,8 +15,7 @@ MAINTAINER=	qingfeng@douban.com
 COMMENT=	Yet anonther distributed key-value storage system from Douban Inc
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-pthread
-MAKE_ENV+=	CFLAGS="${CFLAGS}"
+CFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		beansdb.1
 PLIST_FILES=	bin/beansdb

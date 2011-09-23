@@ -30,9 +30,9 @@ USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/tests//" \

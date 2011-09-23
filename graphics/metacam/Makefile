@@ -18,7 +18,6 @@ MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/metacam
 PORTDOCS=	README.canon README.casio

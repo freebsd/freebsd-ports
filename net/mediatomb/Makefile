@@ -23,9 +23,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 		--disable-inotify
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		CFLAGS="${CFLAGS}"
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 USE_RC_SUBR=	mediatomb.sh
 
 # --- configurable variables ---

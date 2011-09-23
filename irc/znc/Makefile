@@ -94,7 +94,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .if defined(WITH_SASL)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		SASL=""
 .else
 PLIST_SUB+=		SASL="@comment "

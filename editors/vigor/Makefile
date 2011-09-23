@@ -21,7 +21,7 @@ USE_TK_BUILD=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/tk${TK_VER}

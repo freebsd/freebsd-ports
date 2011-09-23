@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-system-readline \

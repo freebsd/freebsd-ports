@@ -37,7 +37,6 @@ LUA_COMPS=	lua
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		asc.6 asc_demount.6 asc_mapedit.6 asc_mount.6 \
 		asc_weaponguide.6
@@ -47,8 +46,8 @@ PLIST_FILES=	bin/asc bin/asc_demount bin/asc_mapedit bin/asc_mount \
 PLIST_DIRS=	${ASC_MUSICDIR} %%DATADIR%%
 
 CFLAGS+=	-D_UNICODE_BROKEN_
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

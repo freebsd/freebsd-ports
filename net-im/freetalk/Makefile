@@ -21,8 +21,8 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
 
 USE_GNOME=	pkgconfig glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		freetalk.1
 INFO=		freetalk

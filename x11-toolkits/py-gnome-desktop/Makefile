@@ -36,8 +36,8 @@ USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
 		evolutiondataserver
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-metacity --disable-nautilusburn
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome

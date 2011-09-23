@@ -31,8 +31,8 @@ MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="`pkg-config --libs libgnomeui-2.0`"
+CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
 .include <bsd.port.pre.mk>

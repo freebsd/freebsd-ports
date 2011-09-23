@@ -75,13 +75,13 @@ BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually excl
 .if defined(WITH_UCONTEXT)
 CONFIGURE_ARGS+=--with-threads=ucontext
 CPPFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 .elif defined(WITH_FORK)
 CONFIGURE_ARGS+=--with-threads=fork
 .else
 CONFIGURE_ARGS+=--with-threads=pthread
 CPPFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 post-patch:

@@ -30,9 +30,9 @@ USE_GMAKE=	yes
 USE_LUA=	5.1+
 
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/mtn bin/mtn-cleanup bin/mtnopt \
 		share/monotone/hooks/authorize_remote_automate.lua \

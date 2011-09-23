@@ -25,8 +25,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} \
 		--with-vorbis=${LOCALBASE}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g ; \

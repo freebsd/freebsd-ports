@@ -20,8 +20,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf gnomeprint
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	halifax.1 ghfaxviewer.1
 

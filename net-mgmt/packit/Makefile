@@ -18,7 +18,7 @@ COMMENT=	Network auditing tool
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
+CPPFLAGS+=	`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`
 
 MAN8=		packit.8
 PLIST_FILES=	sbin/packit

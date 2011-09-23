@@ -43,7 +43,8 @@ LICENSE=	GPLv2
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
+CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_XORG=	pixman
 USE_GETTEXT=	yes

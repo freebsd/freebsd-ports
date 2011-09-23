@@ -19,8 +19,8 @@ BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 USE_PERL5_BUILD=	yes
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
-		LDFLAGS="`pkg-config --libs xft`"
+CPPFLAGS+=	`pkg-config --cflags xft`
+LDFLAGS+=	`pkg-config --libs xft`
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5

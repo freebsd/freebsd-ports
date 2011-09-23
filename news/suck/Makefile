@@ -26,7 +26,6 @@ EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
 
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)

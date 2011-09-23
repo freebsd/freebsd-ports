@@ -32,8 +32,8 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack \
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_BISON=	build
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
 

@@ -19,8 +19,8 @@ LICENSE=	GPLv3
 
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"cbrPager" "Comic book files viewer" "" \

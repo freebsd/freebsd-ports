@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-png-inc=${LOCALBASE}/include \
 		--with-rgbtxt=${LOCALBASE}/lib/X11/rgb.txt
 

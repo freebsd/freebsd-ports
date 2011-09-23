@@ -23,7 +23,7 @@ USE_GNOME=	glib20
 MAN1=	${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

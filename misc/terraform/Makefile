@@ -28,11 +28,10 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s| desktop-links docs | |' \

@@ -19,8 +19,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/security/fwtk:build
 RESTRICTED=	No form of redistribution is allowed, because of linkging against fwtk
 
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${PORTSDIR}/security/fwtk/work/fwtk" \
-		CFLAGS="${CFLAGS} -I${PORTSDIR}/security/fwtk/work/fwtk"
+LDFLAGS+=	-L${PORTSDIR}/security/fwtk/work/fwtk
+CFLAGS+=	-I${PORTSDIR}/security/fwtk/work/fwtk
 CONFIGURE_ARGS=	--disable-encap --disable-epkg-install
 INSTALL_TARGET=	install-real
 

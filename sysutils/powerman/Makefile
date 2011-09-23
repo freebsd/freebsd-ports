@@ -19,7 +19,6 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
@@ -32,8 +31,8 @@ MAN3=		libpowerman.3
 MAN5=		powerman.conf.5 powerman.dev.5
 MAN8=		httppower.8 plmpower.8 powermand.8 vpcd.8
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -29,7 +29,6 @@ USE_PHPEXT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_ARGS+=	--with-facedetect
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 

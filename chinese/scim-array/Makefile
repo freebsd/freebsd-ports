@@ -25,7 +25,6 @@ USE_ICONV=	yes
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s,@SCIM_MODULEDIR@,$$(pkg-config --variable=moduledir scim | ${SED} -e s,`pkg-config --variable=prefix scim`,${PREFIX},)," ${WRKSRC}/src/Makefile.in

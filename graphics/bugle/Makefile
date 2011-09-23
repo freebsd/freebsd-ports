@@ -25,9 +25,9 @@ USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_ARGS=--enable-ltdl-install=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		GL_LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=	gldb.1 gldb-gui.1
 MAN3=	bugle.3

@@ -35,7 +35,7 @@ PLIST_FILES=	lib/libakode_oss_sink.a \
 		lib/libakode_oss_sink.la \
 		lib/libakode_oss_sink.so
 
-CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
+LDFLAGS+=	-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
 

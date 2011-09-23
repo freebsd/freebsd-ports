@@ -53,8 +53,6 @@ CONFIGURE_ARGS+=	--enable-64-bit
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 
 PLIST_SUB+=		POPT=''
 CONFIGURE_ARGS+=	--with-popt

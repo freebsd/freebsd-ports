@@ -19,8 +19,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		idutils
 MAN1=		aid.1 defid.1 eid.1 fid.1 fnid.1 gid.1 lid.1 mkid.1 xtokid.1

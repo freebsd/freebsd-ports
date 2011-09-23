@@ -45,7 +45,7 @@ USE_GNOME=	gnomeprefix libglade2 libgnomeui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 

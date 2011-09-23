@@ -27,7 +27,7 @@ PLIST_FILES=	lib/libeispack.a lib/libeispack.so lib/libeispack.so.${SHLIB_MAJOR}
 
 LDFLAGS+=	${FFLAGS}
 SRCCONF=	${NONEXISTENT}
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
+MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
 
 OPTIONS=	PROFILE "Build and install a profiling library" Off

@@ -44,9 +44,9 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-pid-file=/var/run/hald/hald.pid \
 		--with-deprecated-keys \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTKDOC="false"
+CONFIGURE_ENV=	GTKDOC="false"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 #HALVERSION=	0.5.10
 #SNAPVERSION=	20080218

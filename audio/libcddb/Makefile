@@ -21,7 +21,7 @@ USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio
-CONFIGURE_ENV=	CPPFLAGS="-DICONV_CONST=\"const\" -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-DICONV_CONST="const" -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

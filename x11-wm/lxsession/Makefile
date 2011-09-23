@@ -29,7 +29,6 @@ MAN1=		lxsession.1 lxsession-logout.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

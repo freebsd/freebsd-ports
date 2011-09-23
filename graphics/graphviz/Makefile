@@ -109,10 +109,7 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		MISSING=${TRUE}
+CONFIGURE_ENV+=	MISSING=${TRUE}
 
 .if defined(WITH_TK)
 CPPFLAGS+=		-I${TK_INCLUDEDIR}

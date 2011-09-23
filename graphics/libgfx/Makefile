@@ -27,15 +27,14 @@ BUILD_WRKSRC=	${WRKSRC}/src
 USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
 ALL_TARGET=	${PORTNAME}.so
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fPIC
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

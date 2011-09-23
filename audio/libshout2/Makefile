@@ -20,8 +20,8 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

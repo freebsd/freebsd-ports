@@ -18,8 +18,7 @@ COMMENT=	A collection of tools for manipulating MSDOS files
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_header_malloc_h=no
+CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
 
 SUB_FILES=	pkg-message

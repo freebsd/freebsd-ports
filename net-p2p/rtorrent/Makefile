@@ -25,7 +25,7 @@ CONFLICTS?=	rtorrent-devel-[0-9]*
 USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -pthread"
+LDFLAGS+=	-pthread
 CONFIGURE_ARGS=	--disable-debug
 
 SUB_FILES=	pkg-message

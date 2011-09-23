@@ -19,8 +19,8 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/sphinxbase" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sphinxbase
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}

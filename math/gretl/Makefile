@@ -28,8 +28,7 @@ ALL_TARGET=	# empty
 CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake --without-gnome
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}"
 
 MAN1=		gretl.1
 OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \

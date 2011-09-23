@@ -20,8 +20,8 @@ USE_GNOME=	gtk20 esound
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-llk_linuxdocDATA

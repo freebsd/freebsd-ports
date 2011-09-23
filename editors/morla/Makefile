@@ -24,7 +24,8 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 OPTIONS=	XULRUNNER	"Install xulrunner as JavaScript engine" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=auto
 USE_GETTEXT=	yes
 USE_GNOME=	gconf2 libgtkhtml libxslt

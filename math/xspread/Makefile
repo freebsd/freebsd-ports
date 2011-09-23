@@ -18,8 +18,8 @@ COMMENT=	A spreadsheet program for X and terminals
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		xspread.1 pxspread.1
 

@@ -25,7 +25,8 @@ USE_GNOME=	gnomehack
 USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 # needs GLEW MX (multiple rendering contexts), so system glew won't go
 CONFIGURE_ARGS=	--without-glew --with-fribidi
 

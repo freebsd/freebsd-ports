@@ -18,8 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
 
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=	-fpermissive
 

@@ -23,7 +23,7 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 		flac:${PORTSDIR}/audio/flac
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="`fltk-config --ldflags`"
+LDFLAGS+=	`fltk-config --ldflags`
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 

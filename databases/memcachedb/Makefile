@@ -19,9 +19,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 CFLAGS=		-I"${BDB_INCLUDE_DIR}"
 CONFIGURE_ARGS=	--enable-threads --with-bdb="${LOCALBASE}" \
 		--with-libevent="${LOCALBASE}"
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
-LDFLAGS=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
+LDFLAGS+=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
 MCDBDIR?=	/var/db/memcachedb
 USE_BDB=	47+
 USE_RC_SUBR=	${PORTNAME}

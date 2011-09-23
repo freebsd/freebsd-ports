@@ -25,8 +25,8 @@ USE_XORG=	sm
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 vte gnomedocutils \
 		libgnome
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gnome-terminal.schemas
 

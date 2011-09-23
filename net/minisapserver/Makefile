@@ -25,7 +25,7 @@ SUB_FILES=	pkg-message
 OPTIONS=	SLP "Enable SLP support via openslp" off
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV= LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 

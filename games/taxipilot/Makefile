@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 EXTRA_PATCHES= ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

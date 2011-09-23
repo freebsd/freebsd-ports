@@ -28,7 +28,7 @@ PYDISTUTILS_PKGVERSION=	0.0.0
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV:=	${CONFIGURE_ENV}
 
 post-extract:

@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 # Workaround configure.in lameness.
-CONFIGURE_ENV+=	CPPFLAGS="`net-snmp-config --cflags`"
+CPPFLAGS+=	`net-snmp-config --cflags`
 
 .include <bsd.port.pre.mk>
 

@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 LIB_DEPENDS=	glib:${PORTSDIR}/devel/glib20 \
 		soup:${PORTSDIR}/devel/libsoup
 
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 

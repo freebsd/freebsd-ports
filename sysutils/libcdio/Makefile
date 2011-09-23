@@ -30,7 +30,8 @@ USE_NCURSES=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 USE_PERL5_BUILD=yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 MAN1=	cd-drive.1 cd-info.1 iso-read.1 iso-info.1 cd-read.1
 
 INFO=		libcdio

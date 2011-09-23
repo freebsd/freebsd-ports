@@ -17,7 +17,7 @@ MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -Wno-deprecated"
+CPPFLAGS+=	-Wno-deprecated
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/31//}-${PORTVERSION}
 

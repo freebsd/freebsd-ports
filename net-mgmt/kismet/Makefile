@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		kismet.1 kismet_drone.1
 MAN5=		kismet.conf.5 kismet_drone.conf.5

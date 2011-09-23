@@ -27,8 +27,8 @@ USE_GMAKE=	yes
 USE_BDB=	41
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no \
 		--with-libdb=${LOCALBASE}
@@ -54,7 +54,7 @@ KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
 .if ${ARCH} == "amd64"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
+CFLAGS+=	-fPIC
 .endif
 
 .if exists(${LOCALBASE}/include/mapi.h)

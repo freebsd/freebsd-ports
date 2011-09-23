@@ -50,7 +50,6 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .if ${ARCH} == "i386"
 CPPFLAGS+=-march=i686
 .endif
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .ifndef MNAME
 MAN8=	rsyslogd.8

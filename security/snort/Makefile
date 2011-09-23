@@ -46,7 +46,6 @@ OPTIONS=	IPV6 "Enable IPv6 support" on \
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIG_DIR?=	${PREFIX}/etc/snort

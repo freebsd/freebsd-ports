@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "bin/ld"|g' ${WRKSRC}/configure

@@ -15,7 +15,6 @@ COMMENT=	A puzzle game based on hexagonal tiles
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include

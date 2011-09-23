@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-gtk-doc=no
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gksu.schemas
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

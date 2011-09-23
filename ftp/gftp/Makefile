@@ -19,8 +19,8 @@ COMMENT=	A free multithreaded GTK-based GUI ftp and sftp client
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-included-gettext
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 WANT_GNOME=	yes
 

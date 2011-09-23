@@ -18,12 +18,11 @@ COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/gbe
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gbe ${PREFIX}/bin

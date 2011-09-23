@@ -28,8 +28,8 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-test-gnome
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		dns-helper.1 gconfigger.1 gnome-bug.1 gnome-config.1 \
 		gnome-doc.1 gnome-dump-metadata.1 gnome-gen-mimedb.1 \

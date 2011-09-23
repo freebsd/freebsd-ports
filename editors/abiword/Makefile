@@ -32,8 +32,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack libxml2 gtk20 desktopfileutils librsvg2
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-gnomevfs --disable-collab-backend-xmpp \
 		--disable-collab-backend-sugar
 USE_LDCONFIG=	yes

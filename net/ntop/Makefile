@@ -80,10 +80,10 @@ CONFIGURE_ARGS+=	--enable-i18n \
 
 .if defined(WITH_XMLDUMP)
 LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
+CPPFLAGS+=		-I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
 			-I${LOCALBASE}/include/libgdome \
-			-I${LOCALBASE}/include/glib-2.0"
+			-I${LOCALBASE}/include/glib-2.0
 .endif
 
 .if ${OSVERSION} < 700000

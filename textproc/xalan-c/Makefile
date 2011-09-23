@@ -107,8 +107,7 @@ MAKE_ENV+=		ICUROOT=${ICUROOT}
 PLIST_SUB+=		ICUDEP=""
 .else
 USE_ICONV=		yes
-CONFIGURE_ENV+=		LDFLAGS='-L${LOCALBASE}/lib -liconv'
-MAKE_ENV+=		LDFLAGS='-L${LOCALBASE}/lib -liconv'
+LDFLAGS+=		-L${LOCALBASE}/lib -liconv
 PLIST_SUB+=		ICUDEP="@comment "
 .endif
 

@@ -94,7 +94,7 @@ SPHINX_LOG?=	/var/log/${PORTNAME}
 # don't ask.
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CC=${CC} CPPFLAGS="${CXXFLAGS}"
+CPPFLAGS+=	${CXXFLAGS}
 CFGFILE=	${PREFIX}/etc/sphinx.conf
 USE_RC_SUBR=	sphinxsearch.sh
 SUB_LIST+=	PORTNAME=${PORTNAME}	 \

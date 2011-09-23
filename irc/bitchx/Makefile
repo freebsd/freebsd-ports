@@ -24,8 +24,8 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS}" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		BitchX.1
 

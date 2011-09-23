@@ -29,8 +29,8 @@ USE_LDCONFIG=	yes
 NOMAN=		defined
 
 .if !defined(WITHOUT_NLS)
-CPPFLAGS=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=	yes
 PLIST_SUB+=	GETTEXT=""

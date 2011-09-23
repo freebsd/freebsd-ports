@@ -40,7 +40,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no PYTHON=:
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1

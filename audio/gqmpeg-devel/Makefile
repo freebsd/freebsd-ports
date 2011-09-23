@@ -34,8 +34,8 @@ USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 USE_GNOME=	gtk20
 GNU_CONFIGURE=  yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	gqmpeg-0.2*
 

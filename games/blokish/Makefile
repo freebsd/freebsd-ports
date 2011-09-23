@@ -21,8 +21,8 @@ USE_GMAKE=	yes
 USE_GL=		gl
 USE_WX=		2.6+
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKEFILE=	makefile
 

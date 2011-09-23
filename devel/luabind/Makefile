@@ -18,8 +18,8 @@ LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include
-LDFLAGS=	-L${LUA_LIBDIR}
+CPPFLAGS+=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LUA_LIBDIR}
 CXXFLAGS+=	-fPIC
 
 PORTDOCS=	*

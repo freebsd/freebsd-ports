@@ -75,7 +75,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_ICONV=	yes
 CONFIGUREDCFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
+CONFIGURE_ENV+=	CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 CONFIGURE_ENV+=		ac_cv_search_libiconv_open=no
@@ -94,8 +94,8 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 
 .if defined(WITH_POPT_PORT)
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif

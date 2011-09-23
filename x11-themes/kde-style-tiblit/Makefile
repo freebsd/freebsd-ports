@@ -19,7 +19,7 @@ COMMENT=	KDE style focused on customization
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

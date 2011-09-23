@@ -17,14 +17,13 @@ COMMENT=	An overhead shooting game
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-games-dir=${PREFIX}/share
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README TODO readme.txt
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags`
-LDFLAGS=	`${SDL_CONFIG} --libs`
+CPPFLAGS+=	`${SDL_CONFIG} --cflags`
+LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 post-install:
 .if !defined(NOPORTDOCS)

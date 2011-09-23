@@ -21,7 +21,7 @@ RUN_DEPENDS=	${KMODDIR}/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GNOME=	glib20
 
 MAN1=	sshfs.1

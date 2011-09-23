@@ -27,8 +27,8 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gpilot-install-file.1
 GCONF_SCHEMAS=	pilot.schemas

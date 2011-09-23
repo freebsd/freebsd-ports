@@ -25,15 +25,14 @@ USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 MAKE_JOBS_SAFE=	yes
 
 GCONF_SCHEMAS=	drivel.schemas
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

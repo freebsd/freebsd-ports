@@ -29,9 +29,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		BUILD_CANVAS="${BUILD_CANVAS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 BUILD_CANVAS?=	no
 

@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 .include <bsd.port.pre.mk>
 

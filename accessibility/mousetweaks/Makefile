@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	mousetweaks.schemas pointer-capture-applet.schemas
 MAN1=		dwell-click-applet.1 mousetweaks.1 pointer-capture-applet.1

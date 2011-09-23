@@ -22,8 +22,8 @@ MAN1=		sipp.1
 
 USE_GMAKE=	yes
 CPP=		${CXX}
-MAKE_ENV+=	CPPFLAGS="${CXXFLAGS}" \
-		CCLINK="${CXX}"
+MAKE_ENV+=	CCLINK="${CXX}"
+CPPFLAGS+=	${CXXFLAGS}
 WRKSRC=		${WRKDIR}/sipp.svn
 
 OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \

@@ -19,7 +19,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-slang-libraries=${LOCALBASE}/lib \
 		--with-slang-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-lcurses"
+LDFLAGS+=	-lcurses
 
 PLIST_FILES=	bin/nettop
 PORTDOCS=	README THANKS ChangeLog

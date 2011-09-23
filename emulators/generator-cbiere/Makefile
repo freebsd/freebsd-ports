@@ -32,8 +32,8 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/
 CONFIGURE_ARGS+=--with-gtk
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}-gtk
 

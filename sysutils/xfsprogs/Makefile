@@ -22,7 +22,6 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	autoconf libtool:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
-			CFLAGS="${CFLAGS}" \
 			LIBTOOL=${LIBTOOL}
 MAKE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}"
 CONFIGURE_ARGS+=	--disable-shared --enable-readline

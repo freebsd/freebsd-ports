@@ -26,8 +26,6 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
 LICENSE=	GPLv2
 
 PLIST_FILES=	bin/exrblur bin/exrchr bin/exricamtm bin/exrnlm \

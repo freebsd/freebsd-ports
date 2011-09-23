@@ -25,9 +25,9 @@ USE_GNOME=	pkgconfig
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
-CPPFLAGS=	`${pkgconfig_DETECT} --cflags SDL_image glut` \
+CPPFLAGS+=	`${pkgconfig_DETECT} --cflags SDL_image glut` \
 		`${LOCALBASE}/bin/smpeg-config --cflags`
-LDFLAGS=	`${pkgconfig_DETECT} --libs SDL_image glut` \
+LDFLAGS+=	`${pkgconfig_DETECT} --libs SDL_image glut` \
 		`${LOCALBASE}/bin/smpeg-config --libs`
 
 .include <bsd.port.pre.mk>

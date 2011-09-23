@@ -22,8 +22,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomehack atk
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation
 
 .include <bsd.port.mk>

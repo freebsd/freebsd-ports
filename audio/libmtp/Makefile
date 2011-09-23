@@ -16,14 +16,13 @@ COMMENT=	Media Transfer Protocol (MTP) library
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -liconv
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800069

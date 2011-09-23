@@ -22,8 +22,8 @@ USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 
 USERS?=		prelude
 GROUPS?=	prelude

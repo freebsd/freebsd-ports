@@ -18,7 +18,8 @@ COMMENT=	Mechanized Assault and Exploration Reloaded
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer net
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="M.A.X.R." \

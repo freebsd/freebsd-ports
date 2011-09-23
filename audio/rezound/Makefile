@@ -20,7 +20,8 @@ LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-alsa
 
 OPTIONS=	LARGEFILE	"Enable 64-bit I/O support (not yet!)"	off \

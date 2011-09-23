@@ -68,9 +68,7 @@ CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include
 CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
 CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
 
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		WX_CONFIG="${WX_CONFIG}"
+CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
 .if !defined(NOPORTDOCS)
 MAKE_ENV=	DOC=yes

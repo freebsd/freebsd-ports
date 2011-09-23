@@ -21,8 +21,8 @@ CONFLICTS=	nntp-[0-9]*
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-confdir=${PREFIX}/etc/s-news \
 		--with-spooldir=/var/spool/s-news
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^statichere ,,' ${WRKSRC}/src/rpymodule.c

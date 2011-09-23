@@ -58,8 +58,8 @@ GCONF_SCHEMAS=	compiz-3d.schemas \
 		compiz-wallpaper.schemas \
 		compiz-widget.schemas
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
 post-patch:

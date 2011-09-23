@@ -26,8 +26,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	PNG "Enable PNG support" On \
 		SVG "Enable SVG support" On \

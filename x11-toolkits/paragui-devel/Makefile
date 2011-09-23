@@ -26,8 +26,8 @@ CONFLICTS=	paragui-[0-9]*
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
 SHLIB_VER=	4

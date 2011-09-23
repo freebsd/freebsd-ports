@@ -22,15 +22,14 @@ CONFLICTS=	heimdal-[0-9]*
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-kerberos5
 USE_LDCONFIG=	yes
 
 INFO=		gss
 PORTDOCS=	gss.html gss.ps gss.pdf
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>

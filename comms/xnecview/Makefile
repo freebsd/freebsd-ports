@@ -20,8 +20,6 @@ RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-
 MAN1=		xnecview.1
 PLIST_FILES=	bin/xnecview
 

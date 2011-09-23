@@ -19,8 +19,8 @@ LIB_DEPENDS=	rcc.2:${PORTSDIR}/devel/librcc
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/rcc-recode
 

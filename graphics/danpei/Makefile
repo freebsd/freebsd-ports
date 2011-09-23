@@ -23,7 +23,8 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-included-gettext
 
 .include <bsd.port.mk>

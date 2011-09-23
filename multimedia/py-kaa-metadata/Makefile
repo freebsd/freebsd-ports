@@ -24,6 +24,5 @@ USE_PYDISTUTILS=	yes
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"	# ${CFLAGS} is already there
 
 .include <bsd.port.mk>

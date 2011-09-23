@@ -56,7 +56,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ENV+=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
 MAN1=		vice.1 c1541.1 petcat.1

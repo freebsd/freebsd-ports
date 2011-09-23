@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--sysconfdir=${CONF_DIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

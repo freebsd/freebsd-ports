@@ -452,6 +452,7 @@ do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 		INSTALL_DATA="${INSTALL} -c" \
 		INSTALL_PROGRAM="${INSTALL} -c" \

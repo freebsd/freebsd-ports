@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 

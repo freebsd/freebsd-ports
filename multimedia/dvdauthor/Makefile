@@ -22,7 +22,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/dvdauthor
 MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
 
@@ -40,7 +40,7 @@ WITH_IMAGEMAGICK=	yes
 
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
-CFLAGS+=	"-DICONV_CONV=yes"
+CFLAGS+=	-DICONV_CONV=yes
 .endif
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick

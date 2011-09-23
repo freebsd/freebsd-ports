@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		esmtp.1
 MAN5=		esmtprc.5
@@ -30,8 +29,8 @@ PLIST_FILES=	bin/esmtp etc/esmtprc.sample
 
 SUB_FILES=	pkg-message
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 .for file in ${PORTNAME}.1

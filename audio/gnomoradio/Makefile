@@ -26,8 +26,8 @@ USE_GNOME=		gnomehack gnomeprefix
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \

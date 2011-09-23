@@ -24,7 +24,7 @@ LICENSE=	GPLv2
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	all madtime
 
 MAN1=		abxtest.1 madplay.1

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/database/proprietary
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View dBase III files
 
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
 MAN1=		dbview.1
 DOCS=		README dBASE
 

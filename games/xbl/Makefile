@@ -15,8 +15,7 @@ COMMENT=	A 3D block-dropping game
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_prog_IMAKE="" ac_cv_prog_XMKMF=""
+CONFIGURE_ENV=	ac_cv_prog_IMAKE="" ac_cv_prog_XMKMF=""
 MAKE_ARGS=	USE_SETGID="" \
 		GROUP_GID="" \
 		RESOURCEDIR="${PREFIX}/lib/X11/app-defaults" \
@@ -29,8 +28,8 @@ MAKE_ARGS=	USE_SETGID="" \
 MAN1=		xbl.1
 
 CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CFLA@ -g|@CFLA@|g' ${WRKSRC}/Makefile.in

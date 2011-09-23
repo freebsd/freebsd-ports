@@ -21,8 +21,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 libgnome
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN6=		pioneers.6 pioneers-server-gtk.6 pioneers-server-console.6 \
 		pioneersai.6 pioneers-meta-server.6 pioneers-editor.6

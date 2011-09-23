@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 .if defined(WITH_PTHREADS)
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
+CFLAGS+=		${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--without-pthreads
 .endif

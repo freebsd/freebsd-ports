@@ -24,7 +24,6 @@ USE_EFL=	imlib2
 MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/telak
 MAN1=		telak.1

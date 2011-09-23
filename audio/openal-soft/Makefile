@@ -29,7 +29,7 @@ OPTIONS=	PULSEAUDIO	"Enable sound streaming using PulseAudio" off
 .if defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
 CFLAGS+=	-Iinclude -I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
 .else
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=OFF

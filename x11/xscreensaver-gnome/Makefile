@@ -34,9 +34,9 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lintl"
+CONFIGURE_ENV=	LIBS="-lintl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS?=	PAM "Pluggable Authentication Module support" on \
 		KEYRING "Enable GnomeKeyring integration (needs PAM)" on \

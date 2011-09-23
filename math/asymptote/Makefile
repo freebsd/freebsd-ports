@@ -50,10 +50,10 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-latex=${LOCALBASE}/share/texmf/tex/latex \
 		--with-context=${LOCALBASE}/share/texmf/tex/context/third
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" \
-		LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" \
-		CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
+CONFIGURE_ENV=	LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	${CONFIGURE_ENV}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr

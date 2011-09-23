@@ -23,8 +23,8 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-compile-warnings=no
 

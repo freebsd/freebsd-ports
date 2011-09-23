@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	desktopfileutils gnomehack gtk20
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
@@ -27,8 +26,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		gerbv.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in

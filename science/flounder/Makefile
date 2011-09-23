@@ -22,8 +22,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lstdc++"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lstdc++
 USE_GMAKE=	yes
 
 .if !defined(WITHOUT_PLOT)

@@ -26,8 +26,8 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-obexftp
 OPTIONS=	FUSE "Enable fuse" off \
 		AVAHI "Enable AVAHI" on \

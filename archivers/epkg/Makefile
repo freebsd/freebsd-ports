@@ -19,7 +19,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 HAS_CONFIGURE=	YES
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${PREFIX}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-encap --disable-epkg-install --without-libtar \
 		--with-libfget \
 		--prefix=${PREFIX}

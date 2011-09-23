@@ -38,7 +38,6 @@ SUB_LIST+=	RUNDIR=${RUNDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	${CPPFLAGS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-listen=5 \
 		--with-dpath=${CONFIGDIR} \
 		--with-spath=${PREFIX}/libexec/ircd \

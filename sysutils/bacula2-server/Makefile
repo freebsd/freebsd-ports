@@ -63,10 +63,10 @@ CONFIGURE_ARGS+=--with-dir-user=bacula \
 		--with-sd-group=operator
 .endif
 
-CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})

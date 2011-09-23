@@ -19,7 +19,6 @@ LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 GNU_CONFIGURE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sasldir=${LOCALBASE} \
 		--with-sasl=${LOCALBASE} \

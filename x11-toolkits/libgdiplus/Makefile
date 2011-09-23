@@ -23,8 +23,8 @@ USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.la \

@@ -24,11 +24,10 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader autoconf
 AUTOMAKE_ARGS=	--add-missing --force
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

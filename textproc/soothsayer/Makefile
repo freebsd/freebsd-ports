@@ -18,8 +18,7 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 USE_GNOME=	pkgconfig
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_path_CPPUNIT_CONFIG=no \
+CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \
 		ac_cv_path_SWIG=no \
 		ac_cv_prog_HAVE_DOT=no \
@@ -30,8 +29,8 @@ USE_LDCONFIG=	yes
 MAN1=		soothsayer_demo.1 soothsayer_demo_text.1 \
 		soothsayer_simulator.1 text2ngram.1
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORT_VERBS=	${PORTNAME} text2ngram
 

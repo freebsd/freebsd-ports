@@ -23,7 +23,7 @@ USE_SDL=	sdl
 
 MAN3=		sage.3 sage_init.3
 
-CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include"
+CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure

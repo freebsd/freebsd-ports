@@ -25,15 +25,14 @@ USE_GNOME=	glib20 gnomehack intlhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-ipv6 --disable-manual --disable-ewarning \
 		--disable-strict --disable-video --disable-external-ortp \
 		--with-osip=${LOCALBASE} --with-gsm=${LOCALBASE}
 MAKE_ENV=	SUBDIRS="${SUBDIRS}"
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

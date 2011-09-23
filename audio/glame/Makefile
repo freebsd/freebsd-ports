@@ -26,13 +26,12 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
 INFO=		glame glame-dev
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lltdl
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lltdl
 
 post-extract:
 	@cd ${WRKSRC}/doc && ${RM} -f *.info*

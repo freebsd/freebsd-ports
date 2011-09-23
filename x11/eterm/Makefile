@@ -23,8 +23,8 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS=	MMX	"With MMX instruction set" off
 USE_XORG=	x11 xt
 USE_ICONV=	yes

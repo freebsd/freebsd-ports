@@ -27,8 +27,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GTK" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GTK
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_WAVPACK)
 LIB_DEPENDS+=		wavpack.2:${PORTSDIR}/audio/wavpack

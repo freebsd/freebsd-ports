@@ -25,7 +25,8 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
 		--sysconfdir=${EXAMPLESDIR} \
 		--libdir=${LOCALBASE}/lib --with-libwrap
-MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib SUBDIRS=
+MAKE_ENV+=	SUBDIRS=
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
 
 USE_RC_SUBR=	pksd.sh

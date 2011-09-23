@@ -22,14 +22,13 @@ GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 MAN1=	serveez.1 serveez-config.1
 INFO=	serveez serveez-api
 
-CPPFLAGS=	`${GUILE_CONFIG} compile`
-LDFLAGS=	`${GUILE_CONFIG} link`
+CPPFLAGS+=	`${GUILE_CONFIG} compile`
+LDFLAGS+=	`${GUILE_CONFIG} link`
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-release||g' \

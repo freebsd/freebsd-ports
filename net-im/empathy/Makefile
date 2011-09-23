@@ -42,8 +42,8 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-Werror \
 		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 

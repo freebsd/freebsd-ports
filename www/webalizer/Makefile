@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--enable-dns \
 			--with-gdlib=${LOCALBASE}/lib \
 			--with-gd=${LOCALBASE}/include
 
-CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
+LDFLAGS+=	-L${PREFIX}/lib
 CFLAGS+=	-Wall
 MAN1=		${PKGNAMEPREFIX}webalizer.1 ${PKGNAMEPREFIX}wcmgr.1
 DOC1=		CHANGES Copyright INSTALL \

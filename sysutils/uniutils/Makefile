@@ -17,9 +17,9 @@ COMMENT=	Unicode Description Utilities
 RUN_DEPENDS=	ascii2binary:${PORTSDIR}/converters/ascii2binary
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
-		LIBS="-lintl"
+CONFIGURE_ENV=	LIBS="-lintl"
+CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 
 TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\

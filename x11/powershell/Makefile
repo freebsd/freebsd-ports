@@ -16,8 +16,8 @@ COMMENT=	A terminal emulator for the X11
 
 USE_GNOME=	gnomelibs gnomehier
 USE_AUTOTOOLS=	autoconf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib  `${IMLIB_CONFIG} --libs`"
+CPPFLAGS+=	-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib  `${IMLIB_CONFIG} --libs`
 ALL_TARGET=	${PORTNAME}
 
 .include <bsd.port.mk>

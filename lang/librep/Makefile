@@ -26,7 +26,6 @@ USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \
 		--with-stack-direction=-1
 USE_LDCONFIG=	yes
@@ -35,8 +34,8 @@ MANCOMPRESSED=	yes
 MAN1=		rep.1 rep-remote.1 rep-xgettext.1 repdoc.1
 INFO=		librep
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

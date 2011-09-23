@@ -17,7 +17,7 @@ COMMENT=	A tool to indent the C preprocessor directives
 USE_XZ=		yes
 USE_GETTEXT=	yes                                                             
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/cppi
 MAN1=		cppi.1

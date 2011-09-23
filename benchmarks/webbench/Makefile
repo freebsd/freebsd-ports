@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	apps/www/servers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple forking web benchmark
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS}"
 
 .if !defined(NO_INSTALL_MANPAGES)

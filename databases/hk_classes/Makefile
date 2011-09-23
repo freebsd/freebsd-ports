@@ -22,9 +22,9 @@ USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//}
 CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
 		--with-python-incdir=${PYTHON_INCLUDEDIR} \
 		--with-fontconfig-incdir=${LOCALBASE}/include/fontconfig \
@@ -56,8 +56,8 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-dir=${LOCALBASE} \
 			--with-mysql-incdir=${LOCALBASE}/include/mysql \
 			--with-mysql-libdir=${LOCALBASE}/lib/mysql
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
+CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=	--without-mysql
@@ -68,7 +68,8 @@ PLIST_SUB+=	MYSQL="@comment "
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgres-incdir=${LOCALBASE}/include/ \
 			--with-postgres-libdir=${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB+=	POSTGRESQL=""
 .else
 CONFIGURE_ARGS+=	--without-postgres

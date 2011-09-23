@@ -15,8 +15,8 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--program-prefix=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack

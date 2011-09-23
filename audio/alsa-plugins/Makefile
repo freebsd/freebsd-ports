@@ -20,7 +20,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	JACK		"JACK audio support (requires SAMPLERATE)"	Off \
 		LAVC		"libavcodec support"	Off \
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--disable-jack
 
 .if defined(WITH_LAVC)
 CONFIGURE_ARGS+=	--enable-avcodec
-CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include
+CFLAGS+=		-I${LOCALBASE}/include
 LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=		LAVC=""
 .else

@@ -26,8 +26,8 @@ USE_PYTHON=	build
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack glib20 ltverhack
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

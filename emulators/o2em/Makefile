@@ -23,7 +23,7 @@ WRKSRC=			${WRKDIR}/o2em117src
 MAKEFILE=		Makefile.freebsd
 USE_ZIP=		yes
 USE_GMAKE=		yes
-MAKE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
+LDFLAGS+=		${PTHREAD_LIBS}
 
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h|txt)" -print0 | \

@@ -16,7 +16,7 @@ COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
 
 CONFLICTS=	scheme48-[0-9]*
 
-CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
+LDFLAGS+=	-Wl,-E
 
 .include <bsd.port.pre.mk>
 

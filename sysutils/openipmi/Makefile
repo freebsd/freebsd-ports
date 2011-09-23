@@ -27,7 +27,6 @@ AUTOMAKE_ARGS+=	--add-missing --copy --foreign
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		ipmi_ui.1 openipmicmd.1 openipmigui.1 \
 		openipmish.1 rmcp_ping.1 solterm.1

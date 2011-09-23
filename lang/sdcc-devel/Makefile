@@ -36,7 +36,6 @@ OPTIONS=	MCS51   "Intel 8051 port" on \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>

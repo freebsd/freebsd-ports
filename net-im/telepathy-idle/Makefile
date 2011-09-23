@@ -30,7 +30,8 @@ USE_GNOME=	gnomehack pkgconfig glib20
 
 MAN8=		telepathy-idle.8
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

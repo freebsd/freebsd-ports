@@ -24,7 +24,8 @@ CONFLICTS=	bmp-scrobbler-[0-9]* \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SLAVEDIRS=	audio/xmms-scrobbler audio/bmp-scrobbler
 

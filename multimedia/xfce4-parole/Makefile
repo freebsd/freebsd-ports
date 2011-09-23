@@ -35,9 +35,9 @@ CONFIGURE_ARGS=	--disable-power-manager-plugin \
 		--enable-taglib \
 		--disable-gtk-doc-html \
 		--without-html-dir
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_prog_AWK="${AWK}"
+CONFIGURE_ENV=	ac_cv_prog_AWK="${AWK}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig \
 		desktopfileutils
 USE_XFCE=	configenv libgui libutil

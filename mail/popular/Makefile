@@ -24,7 +24,8 @@ USE_PERL5=	yes
 PDM_MODULES=	any master
 CONFIGURE_ARGS=	--without-bdb --disable-docbook --with-confdir=${PREFIX}/etc/popular \
 		--enable-ssl --with-pdm="${PDM_MODULES}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	pcheckd.sh pproxy.sh pserv.sh 0ringd.sh
 

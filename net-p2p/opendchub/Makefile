@@ -17,13 +17,12 @@ USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 PORTDOCS=	README configfiles general scriptdoc
 PLIST_FILES=	bin/${PORTNAME}
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-install:
 	@${CHMOD} a+rx ${WRKSRC}/install-sh

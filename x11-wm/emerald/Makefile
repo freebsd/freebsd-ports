@@ -31,8 +31,8 @@ USE_AUTOTOOLS=	libtool
 MAN1=		emerald.1 \
 		emerald-theme-manager.1
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 # XXX - might want to change that
 post-patch:

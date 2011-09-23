@@ -27,8 +27,8 @@ USE_LUA=	5.0+	# should be optional, but the build fails without it
 WANT_GNOME=	yes
 
 CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 UI_LIST=	glut gtk gnome kde
 CELESTIA_UI?=	glut

@@ -26,8 +26,8 @@ WANT_GSTREAMER=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gthumb.schemas gthumb-comments.schemas gthumb-image-viewer.schemas \
 		gthumb-importer.schemas gthumb-pixbuf-savers.schemas gthumb-slideshow.schemas \
