@@ -28,7 +28,7 @@ FETCH_ARGS=	-pRr
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 260
-RUN_DEPENDS+=     ${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
 .endif
 
 .include <bsd.port.post.mk>
