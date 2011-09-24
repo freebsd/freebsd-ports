@@ -45,7 +45,7 @@ ejabberd_status()
 
 ejabberd_checkstatus()
 {
-    su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node status > /dev/null"
+    su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node status > /dev/null"
 }
 
 ejabberd_start()
@@ -57,7 +57,7 @@ ejabberd_start()
 ejabberd_stop()
 {
     echo "Stopping $name."
-    if su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node stop"; then
+    if su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node stop"; then
 #        sleep 2
 #        killall -u ejabberd -kill
     else
@@ -69,7 +69,7 @@ ejabberd_reload()
 {
     echo "Restarting $name."
     if ejabberd_checkstatus; then
-        su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node restart"
+        su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node restart"
     else
         ejabberd_start
     fi
