@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	savelogs
-PORTVERSION=	1.94
+PORTVERSION=	1.97
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SCOTTW
@@ -14,16 +14,19 @@ MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Save log files in a nice way
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
+
 MAN1=		rotation.1 savelogs.1
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/conf/savelogs.conf.sample ${PREFIX}/etc/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/FAQ ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/conf/savelogs.conf.lint ${EXAMPLESDIR}
 .endif
-	${INSTALL_MAN} ${WRKSRC}/conf/savelogs.conf.sample ${PREFIX}/etc/
 
 .include <bsd.port.mk>
