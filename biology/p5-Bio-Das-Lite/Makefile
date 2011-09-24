@@ -14,9 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the DAS (HTTP+XML) Protocol
 
-RUN_DEPENDS=	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
+BUILD_DEPENDS=	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-WWW-Curl>=4.07:${PORTSDIR}/www/p5-WWW-Curl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>0.8:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	YES
