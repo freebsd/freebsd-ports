@@ -13,6 +13,10 @@ MASTER_SITES=	http://freebsd.dev-urandom.com/open-cobol/
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
+BROKEN=		Does not fetch
+DEPRECATED=	No activity since 2007
+EXPIRATION_DATE=	2011-10-23
+
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	open-cobol-1.[0]*
