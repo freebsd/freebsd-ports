@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Tiny
-PORTVERSION=	0.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Template Toolkit reimplemented in as little code as possible
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0.07:${PORTSDIR}/devel/p5-Capture-Tiny
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Template::Tiny.3
