@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Allows you to execute common commands using mouse gestures
 
+DEPRECATED=	Development has been ceased and not compatible with Firefox > 2.
+EXPIRATION_DATE=	2011-12-01
+
 XPI_DISTNAME=	mouse_gestures
 XPI_NUM=	39
 XPI_ID=		{FFA36170-80B1-4535-B0E3-A4569E497DD0}
