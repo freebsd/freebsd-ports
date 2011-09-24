@@ -18,6 +18,8 @@ COMMENT=	X11R6-based xterm hacked for managing Korean languages
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
+BROKEN=		does not compile
+
 USE_XORG=	xaw xext x11
 CONFLICTS=	ko-hanterm-3.*
 USE_ICONV=	yes
