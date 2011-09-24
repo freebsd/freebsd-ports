@@ -1,24 +1,20 @@
-The ATLAS (Automatically Tuned Linear Algebra Software) project is
-an ongoing research effort focusing on applying empirical techniques
-in order to provide portable performance. 
+The ATLAS (Automatically Tuned Linear Algebra Software) project is an ongoing
+research effort focusing on applying empirical techniques in order to provide
+portable performance.  At present, it provides C and Fortran77 interfaces to
+a portable, efficient BLAS implementation, as well as enhanced versions of a
+few routines from LAPACK.  To link with ATLAS shared libraries:
 
-At present, it provides C and Fortran77 interfaces to a portable,
-efficient BLAS implementation, as well as enhanced versions of 
-a few routines from LAPACK.
-
-If you want to link software to ATLAS rather than the standard BLAS, simply 
-use -lf77blas -latlas (order is important), or -lptf77blas -latlas for the 
-threaded library (which is primarily useful on SMP machines), in place of 
-the usual -lblas.  Corresponding pure C versions of the ATLAS libraries are 
-also included, in libcblas and libptcblas.
-
-The ATLAS-enhanced LAPACK routines are also provided.
-To link software with this library instead of the standard LAPACK, for example, use 
--L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack -lf77blas -lcblas -latlas -lgfortranbegin -lgfortran -lm, or 
--L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack_r -lptf77blas -lptcblas -latlas -lgfortranbegin -lgfortran
--lm for the threaded library, in place of the usual -llapack.
-Note that
--L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3
-depends on your environment.
+Serial (thread-safe) Fortran77 BLAS:
+	-lf77blas
+Multi-threaded Fortran77 BLAS:
+	-lptf77blas
+Serial (thread-safe) C BLAS:
+	-lcblas
+Multi-threaded C BLAS:
+	-lptcblas
+ATLAS-enhanced LAPACK, serial (thread-safe) interface:
+	-lalapack -lf77blas -lcblas
+ATLAS-enhanced LAPACK, multi-threaded interface:
+	-lalapack -lptf77blas -lptcblas
 
 WWW: http://math-atlas.sourceforge.net/
