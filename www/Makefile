@@ -417,6 +417,7 @@
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
     SUBDIR += mod_accounting
+    SUBDIR += mod_amazon_proxy
     SUBDIR += mod_antiloris
     SUBDIR += mod_asn
     SUBDIR += mod_auth_cas
