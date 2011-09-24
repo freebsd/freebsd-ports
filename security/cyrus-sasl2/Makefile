@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.23
-PORTREVISION=	3
+PORTVERSION=	2.1.25
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
-		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
-		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	${PORTNAME}2
 
@@ -59,16 +59,19 @@ OPTIONS=	BDB		"Use Berkeley DB"			off \
 		MYSQL		"Use MySQL"				off \
 		PGSQL		"Use PostgreSQL"			off \
 		SQLITE		"Use SQLite"				off \
+		SQLITE3		"Use SQLite3"				off \
 		DEV_URANDOM	"Use /dev/urandom"			off \
 		ALWAYSTRUE	"Enable the alwaystrue password verifier" off \
 		KEEP_DB_OPEN	"Keep handle to Berkeley DB open"	off \
+		OBSOLETE_CRAM_ATTR "Enable cmusaslsecretCRAM-MD5 property" on \
 		AUTHDAEMOND	"Enable use of authdaemon"		on \
 		LOGIN		"Enable LOGIN authentication"		on \
 		PLAIN		"Enable PLAIN authentication"		on \
 		CRAM		"Enable CRAM-MD5 authentication"	on \
 		DIGEST		"Enable DIGEST-MD5 authentication"	on \
+		NTLM		"Enable NTLM authentication"		on \
 		OTP		"Enable OTP authentication"		on \
-		NTLM		"Enable NTLM authentication"		on
+		SCRAM		"Enable SCRAM authentication"		on
 
 .include <bsd.port.pre.mk>
 
@@ -99,6 +102,10 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 CONFIGURE_ARGS+=--without-pgsql
 .endif
 
+.if defined(WITH_SQLITE) && defined(WITH_SQLITE3)
+BROKEN=		SQLITE and SQLITE3 are mutually exclusive.
+.endif
+
 .if defined(WITH_SQLITE)
 USE_SQLITE=	2
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
@@ -106,7 +113,15 @@ CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 CONFIGURE_ARGS+=--without-sqlite
 .endif
 
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_SQLITE)
+.if defined(WITH_SQLITE3)
+USE_SQLITE=	3
+CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-sqlite3
+.endif
+
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_SQLITE) || \
+    defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
@@ -122,6 +137,10 @@ CONFIGURE_ARGS+=--enable-alwaystrue
 
 .if defined(WITH_KEEP_DB_OPEN)
 CONFIGURE_ARGS+=--enable-keep-db-open
+.endif
+
+.if defined(WITHOUT_OBSOLETE_CRAM_ATTR)
+CONFIGURE_ARGS+=--enable-obsolete_cram_attr=no
 .endif
 
 .if defined(WITHOUT_AUTHDAEMOND)
@@ -161,6 +180,11 @@ CONFIGURE_ARGS+=--disable-ntlm
 NTLM=	"@comment "
 .else
 CONFIGURE_ARGS+=--enable-ntlm
+.endif
+
+.if defined(WITHOUT_SCRAM)
+CONFIGURE_ARGS+=--disable-scram
+SCRAM=	"@comment "
 .endif
 
 .if ${ARCH} == "amd64"
@@ -213,6 +237,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		NTLM=${NTLM} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
+		SCRAM=${SCRAM} \
 		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 

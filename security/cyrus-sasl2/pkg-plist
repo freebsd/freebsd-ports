@@ -30,6 +30,10 @@ lib/sasl2/libanonymous.so.2
 %%LOGIN%%lib/sasl2/liblogin.la
 %%LOGIN%%lib/sasl2/liblogin.so
 %%LOGIN%%lib/sasl2/liblogin.so.2
+%%SCRAM%%lib/sasl2/libscram.a
+%%SCRAM%%lib/sasl2/libscram.la
+%%SCRAM%%lib/sasl2/libscram.so
+%%SCRAM%%lib/sasl2/libscram.so.2
 %%SQL%%lib/sasl2/libsql.a
 %%SQL%%lib/sasl2/libsql.la
 %%SQL%%lib/sasl2/libsql.so

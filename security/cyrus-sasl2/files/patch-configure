@@ -1,68 +1,50 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Fri May 19 04:30:13 2006
-+++ configure	Sat May 20 04:04:39 2006
-@@ -1586,6 +1586,7 @@
+--- configure.orig	2011-09-07 22:29:25.000000000 +0900
++++ configure	2011-09-14 15:48:43.574171984 +0900
+@@ -2365,6 +2365,7 @@
  fi
- echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+ { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
 +program_prefix=NONE
  test "$program_prefix" != NONE &&
-   program_transform_name="s,^,$program_prefix,;$program_transform_name"
+   program_transform_name="s&^&$program_prefix&;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -5125,7 +5126,7 @@
- 	fi
- 
- 	saved_LIBS=$LIBS
--        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-           do
- 	    LIBS="$saved_LIBS -l$dbname"
- 	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5135,6 +5136,7 @@
+@@ -6329,6 +6330,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <db.h>
- int
- main ()
-@@ -5882,7 +5884,7 @@
- 	fi
- 
- 	saved_LIBS=$LIBS
--        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-           do
- 	    LIBS="$saved_LIBS -l$dbname"
- 	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5892,6 +5894,7 @@
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -7139,6 +7141,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <db.h>
- int
- main ()
-@@ -7193,6 +7196,8 @@
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -8666,6 +8669,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
 +SASLAUTHD_TRUE='#'
 +SASLAUTHD_FALSE=
  
- echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
- echo $ECHO_N "checking if I should include saslauthd... $ECHO_C" >&6
-@@ -10650,7 +10655,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+ { $as_echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
+ $as_echo_n "checking if I should include saslauthd... " >&6; }
+@@ -12537,7 +12542,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
 +LIBS="${GSSAPIBASE_LIBS} `krb5-config --libs gssapi` $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11060,7 +11065,7 @@
+ _ACEOF
+@@ -13013,7 +13018,7 @@
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -71,12 +53,12 @@ diff -u configure.orig configure
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -11898,7 +11903,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -14358,7 +14363,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpq  $LIBS"
 +LIBS="-lpq $GSSAPIBASE_LIBS $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
+ _ACEOF
