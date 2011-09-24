@@ -13,6 +13,9 @@ MASTER_SITES=	MOZDEV
 MAINTAINER=	simon@olofsson.de
 COMMENT=	External commands integration
 
+DEPRECATED=	Development has been ceased and not compatible with Firefox > 3.
+EXPIRATION_DATE=	2011-12-01
+
 XPI_ID=		{01bc0112-afff-4fb5-8772-191bf35a8ffb}
 XPI_FILES=	chrome/mozex.jar install.js install.rdf chrome.manifest
 XPI_DIRS=	chrome
