@@ -826,6 +826,7 @@
     SUBDIR += steelstorm
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
+    SUBDIR += stockfish
     SUBDIR += stonesoup
     SUBDIR += stonesoup-sdl
     SUBDIR += stormbaancoureur

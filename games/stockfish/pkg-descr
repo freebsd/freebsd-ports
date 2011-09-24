@@ -1,0 +1,7 @@
+Stockfish is an open-source UCI chess engine based on Glaurung.
+Stockfish is an alpha-beta searcher and uses a bitboard representation.
+
+Stockfish is free and uses the GPL license. You can download, read, 
+and modify the source code.
+
+WWW: http://www.stockfishchess.com/
