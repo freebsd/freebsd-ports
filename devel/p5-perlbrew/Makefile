@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perlbrew
-PORTVERSION=	0.20
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -16,10 +16,14 @@ DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Perl Environment manager
 
-BUILD_DEPENDS=	p5-File-Path-Tiny>=0.1:${PORTSDIR}/devel/p5-File-Path-Tiny\
-		p5-HTTP-Lite>=2.2:${PORTSDIR}/www/p5-HTTP-Lite
-RUN_DEPENDS=	p5-File-Path-Tiny>=0.1:${PORTSDIR}/devel/p5-File-Path-Tiny\
-		p5-HTTP-Lite>=2.2:${PORTSDIR}/www/p5-HTTP-Lite
+BUILD_DEPENDS=	p5-File-Path-Tiny>=0:${PORTSDIR}/devel/p5-File-Path-Tiny
+RUN_DEPENDS=	p5-File-Path-Tiny>=0:${PORTSDIR}/devel/p5-File-Path-Tiny
+
+TEST_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
+		p5-Test-Spec>=0:${PORTSDIR}/devel/p5-Test-Spec
 
 PERL_CONFIGURE=	yes
 
