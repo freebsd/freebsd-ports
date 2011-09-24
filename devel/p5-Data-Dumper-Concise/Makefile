@@ -12,13 +12,13 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FREW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Less indentation and newlines plus sub deparsing
 
 BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 
-TEST_DEPENDS =	p5-Error-Simple>=0:${PORTSDIR}/devel/p5-Error-Simple
+TEST_DEPENDS =	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 
 OPTIONS=	ARGNAMES "Enable DwarnN subroutine" On
 
