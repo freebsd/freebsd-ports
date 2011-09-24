@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Debug-Client
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Client for the standard Perl debugger
 
-USE_PERL5=	yes
+BUILD_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir
+RUN_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir
+
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Debug::Client.3

@@ -2,4 +2,5 @@ Client for the standard perl debugger.
 
 Debug::Client was spun off from Padre.
 
-WWW:	http://padre.perlide.org/wiki/Projects
+WWW: http://search.cpan.org/dist/Debug-Client/
+WWW: http://padre.perlide.org/wiki/Projects
