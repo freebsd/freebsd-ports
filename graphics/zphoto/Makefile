@@ -17,14 +17,12 @@ COMMENT=	Zooming photo album generator
 
 LIB_DEPENDS=	ming.5:${PORTSDIR}/graphics/ming \
 		popt.0:${PORTSDIR}/devel/popt
-.if !defined (WITHOUT_AVIPLAY)
-LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
-.endif
 .if !defined (WITHOUT_ZIP)
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 .endif
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-avifile
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
@@ -35,9 +33,6 @@ WX_CONF_ARGS=	absolute
 PLIST_FILES+=	bin/wxzphoto
 .else
 CONFIGURE_ARGS+=	--disable-wx
-.endif
-.if defined (WITHOUT_AVIPLAY)
-CONFIGURE_ARGS+=	--disable-avifile
 .endif
 .if defined (WITHOUT_ZIP)
 CONFIGURE_ARGS+=	--disable-zip
