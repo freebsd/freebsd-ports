@@ -20,6 +20,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-eps
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 
+DEPRECATED=	distfile is missing on mastersite, does not run
+EXPIRED=	2010-10-23
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	conch
