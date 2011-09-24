@@ -10,7 +10,7 @@ PORTVERSION=	1.5.8.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another ircII based irc client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
