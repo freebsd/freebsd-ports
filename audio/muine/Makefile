@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:${PORTSDIR}/audio/taglib-sharp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui gnomesharp20
