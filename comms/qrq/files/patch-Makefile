@@ -1,15 +1,15 @@
---- Makefile.orig	2011-05-07 17:00:51.000000000 -0400
-+++ Makefile	2011-05-16 11:43:02.000000000 -0400
+--- Makefile.orig	2011-09-19 16:01:41.000000000 -0400
++++ Makefile	2011-09-20 17:38:45.000000000 -0400
 @@ -1,14 +1,14 @@
  # qrq Makefile -- Fabian Kurz, DJ1YFK -- http://fkurz.net/ham/qrq.html
  
- VERSION=0.2.0
+ VERSION=0.2.1
 -DESTDIR?=/usr
 +DESTDIR?=%%PREFIX%%
  
- # set to YES if you want to use OpenAL instead of OSS
- # note that you must use OpenAL for OSX
- USE_OPENAL=NO
+ # set to YES if you want to use Core Audio
+ # note that you must use Core Audio for OSX
+ USE_CA=NO
  
  # set to YES if you want to use PulseAudio instead of OSS
 -USE_PA=YES
@@ -17,30 +17,26 @@
  
  # set to YES if building on OSX
  OSX_PLATFORM=NO
-@@ -49,10 +49,10 @@
- all: qrq
+@@ -23,7 +23,7 @@
+ endif
  
- qrq: $(OBJECTS)
--	g++ -pthread -Wall -lm -lncurses $(LDFLAGS) -o $@ $^
-+	${CC} -pthread -Wall -lm -lncurses $(LDFLAGS) -o $@ $^
- 	
- .c.o:
--	gcc -Wall $(CFLAGS) -c $<
-+	${CC} -Wall $(CFLAGS) -c $<
+ CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\"
+-CC=gcc
++CC?=gcc
  
- .cpp.o:
- 	g++ $(CFLAGS) -c $<
-@@ -83,11 +83,11 @@
+ ifeq ($(USE_CA), YES)
+ 		OBJECTS=qrq.o coreaudio.o
+@@ -88,11 +88,11 @@
  
  install: qrq
- 	install -d -v                   $(DESTDIR)/share/qrq/
--	install -d -v                   $(DESTDIR)/share/man/man1/
-+	install -d -v                   $(DESTDIR)/man/man1/
- 	install -d -v                   $(DESTDIR)/bin/
- 	install -s -m 0755 qrq          $(DESTDIR)/bin/
- 	install    -m 0755 qrqscore     $(DESTDIR)/bin/
--	install    -m 0644 qrq.1        $(DESTDIR)/share/man/man1/
-+	install    -m 0644 qrq.1        $(DESTDIR)/man/man1/
- 	install    -m 0644 callbase.qcb $(DESTDIR)/share/qrq/
- 	install    -m 0644 english.qcb  $(DESTDIR)/share/qrq/
- 	install    -m 0644 qrqrc        $(DESTDIR)/share/qrq/
+ 	install -d -v                      $(DESTDIR)/share/qrq/
+-	install -d -v                      $(DESTDIR)/share/man/man1/
++	install -d -v                      $(DESTDIR)/man/man1/
+ 	install -d -v                      $(DESTDIR)/bin/
+ 	install -s -m 0755 qrq             $(DESTDIR)/bin/
+ 	install    -m 0755 qrqscore        $(DESTDIR)/bin/
+-	install    -m 0644 qrq.1           $(DESTDIR)/share/man/man1/
++	install    -m 0644 qrq.1           $(DESTDIR)/man/man1/
+ 	install    -m 0644 callbase.qcb    $(DESTDIR)/share/qrq/
+ 	install    -m 0644 english.qcb     $(DESTDIR)/share/qrq/
+ 	install    -m 0644 qrqrc           $(DESTDIR)/share/qrq/
