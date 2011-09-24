@@ -10,7 +10,7 @@ PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the nifty little Macintosh game
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG"
