@@ -18,6 +18,8 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 RELEASE_DATE=		2010.10.18
 BUILD_VER=		313025
 
+BROKEN=			does not compile
+
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
