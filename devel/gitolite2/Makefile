@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
@@ -45,7 +45,7 @@ exec ${PREFIX}/libexec/gitolite/gl-setup \"\$$@\"\n
 post-patch:
 	@${ECHO} -e "${GLAUTHCOMMAND}" > ${WRKDIR}/auth-command
 	@${ECHO} -e "${GLSETUP}" > ${WRKDIR}/setup
-.for FILE in gl-auth-command gl-compile-conf gl-conf-convert gl-dont-panic gl-mirror-shell gl-mirror-sync gl-query-rc gl-setup gl-setup-authkeys gl-time gl-tool sshkeys-lint
+.for FILE in gl-admin-push gl-auth-command gl-compile-conf gl-conf-convert gl-mirror-shell gl-mirror-sync gl-query-rc gl-setup gl-setup-authkeys gl-time gl-tool sshkeys-lint
 	@${REINPLACE_CMD} \
 		-Ee '1s|#!/usr/bin/perl|#!${PERL}|' \
 		${WRKSRC}/src/${FILE}
