@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	atlas
-PORTVERSION=	3.8.3
-PORTREVISION=	1
+PORTVERSION=	3.8.4
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
@@ -16,23 +15,30 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
-MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
+LICENSE=	BSD
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/lapack:checksum
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/ATLAS
-USE_LDCONFIG=	yes
+USE_FORTRAN=	yes
+
 CONFLICTS=	atlas-devel-[0-9]*
+MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
+
+OPTIONS=	ARCHDEF		"Use a specified architectural default" off \
+		SHARED		"Build static PIC archives and shared libraries" on \
+		STATIC		"Build static (non-PIC) archives" off \
+		TSC		"If WALL_TIMER is enabled, use the TSC" off \
+		WALL_TIMER	"Use less robust timing with higher resolution" off
+
 PORTSCOUT=	limitw:1,even
+WRKSRC=		${WRKDIR}/ATLAS
 
 .include <bsd.port.pre.mk>
 
-NOT_FOR_ARCHS=	alpha
-
-USE_FORTRAN=	yes
-CCOMPILER=	${CC}
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+#Increase ATLAS_MAXMALLOC if the atlas threaded libraries perform poorly on large problems:
+# http://math-atlas.sourceforge.net/errata.html#MaxMalloc
+ATLAS_MAXMALLOC?=	67108864
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -40,229 +46,211 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-.if ${ARCH} == "i386"
-POINTER=	32
-.endif
-.if ${ARCH} == "amd64"
-POINTER=	64
-.endif
-.if ${ARCH} == "sparc64"
-POINTER=	64
+.if defined(MAINTAINER_MODE)
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 .endif
 
-.if (${OSVERSION} < 700000) && defined(WITH_GCC42KERNEL)
-BUILD_DEPENDS+=	gcc42:${PORTSDIR}/lang/gcc42
-KERNELFLAG=	-Ss kern gcc42
-.else
-KERNELFLAG=	""
-.endif
-
-.if defined(WITH_WALL_TIMER)
-.  if defined(MHZ) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
-TIMEFLAG=	-D c -DPentiumCPS=${MHZ}
-.  else
-TIMEFLAG=	-D c -DWALL
+.for i in DATA DOCS
+.  if !defined(NOPORT${i})
+PORT${i}=	*
 .  endif
-.else
-TIMEFLAG=	""
+.endfor
+
+.if defined(WITH_ARCHDEF)
+.  if defined(ARCHDEF)
+.    if ${ARCHDEF} == "NONE"
+ARCHDEFFLAG=	-Si archdef 0
+.    endif
+.  else
+IGNORE =	: You have set WITH_ARCHDEF, but have not defined ARCHDEF
+.  endif
 .endif
 
-# only used for lapack sub-project
-.if defined(WITH_OPTIMIZED_FLAGS)
-.if defined(CPUTYPE)
-FFLAGS+=	-march=${CPUTYPE} -pipe -O2 -ffast-math
-.else
-FFLAGS+=	-pipe -O2 -ffast-math
-.endif
-.endif
-.if defined(WITH_STATICLIB)
-PLIST_SUB+=	WITH_STATICLIB=""
-.else
-PLIST_SUB+=	WITH_STATICLIB="@comment "
+.if defined(WITH_SHARED)
+USE_LDCONFIG=	yes
+.elifndef(WITH_STATIC)
+IGNORE =	: You must select at least one of WITH_SHARED and WITH_STATIC
 .endif
 
-post-extract:
-	@${ECHO_MSG} 'This port engages in a long, computationally-demanding tuning process.'
-	@${ECHO_MSG} 'Builds can take a day or more on older hardware, and temporarily occupy'
-	@${ECHO_MSG} 'several hundred megabytes of disk space.  You are advised to disable'
-	@${ECHO_MSG} 'all forms of power management or CPU throttling (APM, ACPI, Intel'
-	@${ECHO_MSG} 'SpeedStep, AMD PowerNow, AMD Cool and Quiet, p4tcc, powerd, etc.)'
-	@${ECHO_MSG} 'that may change the disk I/O or CPU behavior during the build, and'
-	@${ECHO_MSG} 'to set operating parameters to static values at which you ultimately'
-	@${ECHO_MSG} 'intend to use the software.  You should also avoid placing heavy loads'
-	@${ECHO_MSG} 'on the system during the build, and temporarily disable any automatons'
-	@${ECHO_MSG} 'that may do so.  If you fail to follow these guidelines, you may prolong'
-	@${ECHO_MSG} 'the build, perhaps indefinitely, and you may obtain libraries with'
-	@${ECHO_MSG} 'sub-optimal performance.'
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'Occasionally the autoconfiguration may fail for certain platforms, and'
-	@${ECHO_MSG} 'you may have to override the architecture, compiler flags, assembly'
-	@${ECHO_MSG} 'language dialect, or pointer bit-width by issuing additional configure'
-	@${ECHO_MSG} 'arguments.  Consult the FAQ, installation guide, and errata page at'
-	@${ECHO_MSG} 'the project website for help if this is necessary, and notify the'
-	@${ECHO_MSG} 'port maintainer.'
-	@${ECHO_MSG}
-	@${ECHO_MSG} "This port purposely ignores the CC and CFLAGS settings"
-	@${ECHO_MSG} "Program and compiler flags are fine-tuned to the gcc 4.2.x"
-	@${ECHO_MSG} "compiler, although other gcc versions may be used; gcc 4.1.x"
-	@${ECHO_MSG} "is NOT recommended"
-	@${ECHO_MSG}
-.if !defined(WITH_STATICLIB)
-	@${ECHO_MSG} "You can build static libraries with"
-	@${ECHO_MSG} "make -DWITH_STATICLIB"
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_WALL_TIMER)
-	@${ECHO_MSG} "If your machine will be solely dedicated to"
-	@${ECHO_MSG} "building atlas with gcc during the lengthy optimization"
-	@${ECHO_MSG} "process, and not subjected to other loads, you"
-	@${ECHO_MSG} "may enable the more accurate wall timer (instead of"
-	@${ECHO_MSG} "the default CPU-time timer) with make -DWITH_WALL_TIMER"
-	@${ECHO_MSG} "If, in addition, you are on i386 or amd64, you may set MHZ"
-	@${ECHO_MSG} "to your CPU clock frequency in MHz (rounded to the nearest"
-	@${ECHO_MSG} "integer value) in the build environment for cycle-to-time"
-	@${ECHO_MSG} "conversion"
-	@${ECHO_MSG}
-.endif
-.if (${OSVERSION} < 700000)
-.if !defined(WITH_GCC42KERNEL)
-	@${ECHO_MSG} "If you don't want to make gcc 4.2.x your default compiler (CC),"
-	@${ECHO_MSG} "but you want to have ATLAS use it to compile all the kernel"
-	@${ECHO_MSG} "routines (this usually results in superior performance, and a"
-	@${ECHO_MSG} "slightly faster build), while compiling interface routines and"
-	@${ECHO_MSG} "doing any linking with gcc 3.x, make a hybrid build with"
-	@${ECHO_MSG} "make -DWITH_GCC42KERNEL"
-	@${ECHO_MSG}
-.endif
-.endif
+.for opt in SHARED STATIC
+.  if defined(WITH_${opt})
+PLIST_SUB+=	${opt}=""
+.  else
+PLIST_SUB+=	${opt}="@comment "
+.  endif
+.endfor
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|%%CC%%|${CCOMPILER}|g" \
-		-e "s|%%FC%%|${FC}|g"  ${WRKSRC}/CONFIG/src/atlcomp.txt
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
-			  -e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g" \
-			  -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+EXTRA_FLAGS?=	-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+SHARED_FLAGS=	${PTHREAD_CFLAGS} ${PICFLAG} -DPIC
+SHARED_LAPACK_WRKSRC=	WRKSRC_SHARED
+STATIC_FLAGS=	${PTHREAD_CFLAGS}
+STATIC_LAPACK_WRKSRC=	WRKSRC
+
+post-patch:
+	@cd ${WRKSRC}/CONFIG/ARCHS ; for t in *.tgz ; do \
+		${MV} $${t} $${t}.bak ; \
+		${TAR} -s '/gcc/${CC}/' -xf $${t}.bak ; \
+		${TAR} -czf $${t} $${t%.tgz} ; \
+		${RM} -r $${t%.tgz} $${t}.bak ; \
+		done
+	@${REINPLACE_CMD} -e 's|$$(ARCH)|$$(ATLAS_ARCH)|g' \
+		${WRKSRC}/Make.top \
+		${WRKSRC}/makes/Make.bin \
+		${WRKSRC}/makes/Make.lib \
+		${WRKSRC}/makes/Make.sysinfo \
+		${WRKSRC}/CONFIG/src/Makefile \
+		${WRKSRC}/CONFIG/ARCHS/Makefile
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|" ${WRKSRC}/CONFIG/ARCHS/Makefile
+	@${REINPLACE_CMD} -e "\|OS=ALL|{N; s|'gcc'|'${CC}'|; \
+		s|'gfortran'|'${FC}'|; s|-mavx|-msse3|;s|'| ${EXTRA_FLAGS}'|4;}" \
+		${WRKSRC}/CONFIG/src/atlcomp.txt
+	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
+		-e "s|%%CC%%|${CC}|" \
 		${WRKSRC}/CONFIG/src/SpewMakeInc.c
+	@${REINPLACE_CMD} -E -e \
+	"\|(#define ATL_MaxMalloc[[:blank:]]+)([[:digit:]]+)|s||\1${ATLAS_MAXMALLOC}|" \
+		${WRKSRC}/include/atlas_lvl3.h
+	@${CAT} ${FILESDIR}/tuning-message
 
 do-configure:
-#non-threaded
-#dummy f77lib, it is not used.
-	${MKDIR} ${WRKSRC}/NON_THREADED ; cd ${WRKSRC}/NON_THREADED ; \
-		../configure -v 2 -t 0 ${TIMEFLAG} -b ${POINTER} -Si cputhrchk 0 ${KERNELFLAG} -Ss f77lib " "
-	${MKDIR} ${WRKSRC}/NON_THREADED_PIC ; cd ${WRKSRC}/NON_THREADED_PIC ; \
-		../configure -v 2 -t 0 -b ${POINTER} -Fa alg '${PICFLAG} -DPIC' ${TIMEFLAG} -Si cputhrchk 0 ${KERNELFLAG} -Ss f77lib " "
-#threaded
-#dummy f77lib, it is not used.
-	cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch
-	${MKDIR} ${WRKSRC}/THREADED ; cd ${WRKSRC}/THREADED ; \
-		../configure -v 2 -b ${POINTER} -Fa alg '${PTHREAD_CFLAGS} ' ${TIMEFLAG} -Si cputhrchk 0 ${KERNELFLAG} -Ss f77lib " "
-	${MKDIR} ${WRKSRC}/THREADED_PIC ; cd ${WRKSRC}/THREADED_PIC ; \
-		../configure -v 2 -b ${POINTER} -Fa alg '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC' ${TIMEFLAG} -Si cputhrchk 0 ${KERNELFLAG} -Ss f77lib " "
+	@if [ "x${WITH_WALL_TIMER}" != "x" ] ; then \
+		TIMEFLAG= ; \
+		if [ \( ${ARCH} = "i386" -o ${ARCH} = "amd64" \) -a "x${WITH_TSC}" != "x" ] ; then \
+			freq=`${SYSCTL} -ni machdep.tsc_freq` ; \
+			if [ "x$${freq}" != "x" ] ; then \
+				if [ $${freq} -gt 1000000 ] ; then \
+					MHZ=$$(($${freq}/1000000)) ; \
+					TIMEFLAG="-D c -DPentiumCPS=$${MHZ}" ; \
+				fi ; \
+			fi ; \
+		fi ; \
+		if [ "x$${TIMEFLAG}" = "x" ] ; then \
+			TIMEFLAG="-D c -DWALL" ; \
+		fi ; \
+	fi ; \
+	${ECHO_CMD} "TIMEFLAG = $${TIMEFLAG}" \
+		> ${WRKSRC}/saved_flags ; \
+	${ECHO_CMD} "Dummy configuration of ATLAS to obtain compiler flags:" ; \
+	${MKDIR} ${WRKSRC}/static ; cd ${WRKSRC}/static ; \
+		../configure --cc="${CC}" --cflags="${CFLAGS}" \
+		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
+		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
+		-Fa alg "${STATIC_FLAGS} "
+	@${SED} -ne "\|F77FLAGS =|p" ${WRKSRC}/static/Make.inc \
+		>> ${WRKSRC}/saved_flags
+
+post-configure:
+	@${RM} -r ${WRKSRC}/static
 
 do-build:
-# make lapack
-.if ! exists(${WRKDIR}/lapack/Makefile)
-	@${ECHO_MSG} "===>  Extracting lapack sub project"
-	@${MKDIR} ${WRKDIR}/lapack
-	@${CP} -r ${PORTSDIR}/math/lapack/files ${WRKDIR}/lapack
-	@${CP} ${PORTSDIR}/math/lapack/Makefile ${WRKDIR}/lapack
-	@${CP} ${PORTSDIR}/math/lapack/distinfo ${WRKDIR}/lapack
-	@${CP} ${PORTSDIR}/math/lapack/pkg-descr ${WRKDIR}/lapack
-	@cd ${WRKDIR}/lapack ; ${MAKE} "FFLAGS=${FFLAGS}" FC="${FC}" build WRKDIRPREFIX=""
-.endif
-.if defined(WITH_STATICLIB)
-	(cd ${WRKSRC}/NON_THREADED ; ${MAKE})
-	(cd ${WRKSRC}/THREADED ; ${MAKE})
-.endif
-	(cd ${WRKSRC}/NON_THREADED_PIC ; ${MAKE})
-	(cd ${WRKSRC}/THREADED_PIC ; ${MAKE})
-test:
-	@${MAKE} do-test
+.for opt in shared static
+.  if defined(WITH_${opt:U})
+	@${ECHO_CMD} "Building the LAPACK archives with ${opt} ATLAS flags:"
+	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
+	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:U}_LAPACK_WRKSRC}` ; \
+	${MAKE} -C ${PORTSDIR}/math/lapack FFLAGS="-pipe $${F77FLAGS}" \
+		clean patch ; \
+	${MAKE} -C $${LW} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}" \
+		FFLAGS="-pipe $${F77FLAGS}" lapacklib ; \
+	TIMEFLAG=`${MAKE} -f ${WRKSRC}/saved_flags -V TIMEFLAG` ; \
+	${MKDIR} ${WRKSRC}/${opt} ; cd ${WRKSRC}/${opt} ; \
+	${MV} $${LW}/liblapack.a liblapack_${opt}.a ; \
+	${MAKE} -C ${PORTSDIR}/math/lapack clean ; \
+	${ECHO_CMD} "Configuring ${opt} ATLAS:" ; \
+		../configure --cc="${CC}" --cflags="${CFLAGS}" \
+		--with-netlib-lapack="${WRKSRC}/${opt}/liblapack_${opt}.a" \
+		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
+		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
+		-Fa alg "${${opt:U}_FLAGS} " ; \
+	if [ "x${WITH_ARCHDEF}" != "x" ] ; then \
+		if [ "x${ARCHDEF}" != "xNONE" ] ; then \
+			if [ -f ${ARCHDEF} ] ; then \
+				${CP} -f ${ARCHDEF} ${WRKSRC}/CONFIG/ARCHS/ ; \
+			elif [ ! -f ${WRKSRC}/CONFIG/ARCHS/${ARCHDEF} ] ; then \
+				${ECHO_CMD} \
+				"==> ${PKGNAME} : ARCHDEF \"${ARCHDEF}\" does not exist" ; \
+				exit 1 ; \
+			fi ; \
+			${REINPLACE_CMD} -E -e \
+			"\|[[:blank:]]*ARCH =|s|=.*|= ${ARCHDEF:T:S/.tgz$//}|" \
+			${WRKSRC}/${opt}/Make.inc ; \
+		fi ; \
+	fi ; \
+	${ECHO_CMD} "Building ${opt} ATLAS:" ; cd ${WRKSRC}/${opt} ; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} all
+.  endif
+.endfor
 
-ATLAS_LIBS1=libalapack libatlas libcblas libf77blas #libtstatlas
-ATLAS_LIBS2=libptcblas libptf77blas
-LAPACKWRKSRC=`cd ${WRKDIR}/lapack; ${MAKE} -V WRKSRC WRKDIRPREFIX=""`
+L1=	${FC} $${F77FLAGS} ${SHARED_FLAGS} ${LDFLAGS} -shared -Wl,-x \
+	-Wl,--whole-archive -Wl,-soname,
+L2=	-Wl,--no-whole-archive -Wl,--as-needed ${PTHREAD_LIBS}
 
 post-build:
-.if defined(WITH_STATICLIB)
-# make atlas-enhanced lapack (static ver)
-	(cd ${WRKSRC}; ${MKDIR} tmp1 ; \
-		${CP} ${LAPACKWRKSRC}/liblapack.a tmp1 ;\
-		cd tmp1 ;\
-		ar x liblapack.a ;\
-		ar x ../NON_THREADED/lib/liblapack.a ;\
-		ar r ../NON_THREADED/lib/libalapack.a *.o ;\
-		ranlib ../NON_THREADED/lib/libalapack.a )
-#  make atlas-enhanced lapack (static and thread-safe ver)
-	(cd ${WRKSRC}; ${MKDIR} tmp2 ; \
-		${CP} ${LAPACKWRKSRC}/liblapack.a tmp2 ;\
-		cd tmp2 ;\
-		ar x liblapack.a ;\
-		ar x ../THREADED/lib/liblapack.a ;\
-		ar r ../THREADED/lib/libalapack.a *.o ;\
-		ranlib ../THREADED/lib/libalapack.a )
+.for opt in shared static
+.  if defined(WITH_${opt:U})
+	@${ECHO_CMD} "Timing ${opt} ATLAS:"
+	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} time ; \
+	cd ARCHS ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ArchNew tarfile
+.  endif
+.endfor
+.if defined(WITH_SHARED)
+	@${ECHO_CMD} "Building ATLAS shared libraries:"
+	@F77FLAGS=`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ; \
+	cd ${WRKSRC}/shared/lib ; \
+	${L1}libatlas.so.2 -o libatlas.so.2 libatlas.a ${L2} ; \
+	${L1}libf77blas.so.2 -o libf77blas.so.2 libf77blas.a ${L2} libatlas.so.2 ; \
+	${L1}libptf77blas.so.2 -o libptf77blas.so.2 libptf77blas.a ${L2} libatlas.so.2 ; \
+	${L1}libcblas.so.2 -o libcblas.so.2 libcblas.a ${L2} libatlas.so.2 ; \
+	${L1}libptcblas.so.2 -o libptcblas.so.2 libptcblas.a ${L2} libatlas.so.2 ; \
+	${L1}libalapack.so.2 -o libalapack.so.2 liblapack.a ${L2} libatlas.so.2
 .endif
-# make atlas-enhanced lapack (shared ver)
-	( cd ${WRKSRC}; ${MKDIR} tmp3 ;\
-		${CP} ${LAPACKWRKSRC}_shared/liblapack.a tmp3 ;\
-		cd tmp3 ;\
-		ar x liblapack.a ;\
-		ar x ../NON_THREADED_PIC/lib/liblapack.a ;\
-		ar r ../NON_THREADED_PIC/lib/libalapack.a *.o ;\
-		ranlib ../NON_THREADED_PIC/lib/libalapack.a )
-# make atlas-enhanced lapack (shared and thread-safe ver)
-	( cd ${WRKSRC}; ${MKDIR} tmp4 ;\
-		${CP} ${LAPACKWRKSRC}_shared/liblapack.a tmp4 ;\
-		cd tmp4 ;\
-		ar x liblapack.a ;\
-		ar x ../THREADED_PIC/lib/liblapack.a ;\
-		ar r ../THREADED_PIC/lib/libalapack.a *.o ;\
-		ranlib ../THREADED_PIC/lib/libalapack.a )
 
-# make atlas shared library
-.for i in ${ATLAS_LIBS1}
-	( cd ${WRKSRC}/NON_THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
-.endfor
+.if defined(MAINTAINER_MODE)
+STATIC_BLAS=	${LOCALBASE}/lib/libblas.a
+SHARED_BLAS=	-L${LOCALBASE}/lib -lblas
 
-# make atlas shared (thread-safe) library
-.for i in ${ATLAS_LIBS1}
-	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}_r.so.2 -x -soname ${i}_r.so.2 --whole-archive ${i}.a )
-.endfor
-.for i in ${ATLAS_LIBS2}
-	( cd ${WRKSRC}/THREADED_PIC/lib ; \
-		ld -Bshareable -o ${i}.so.2 -x -soname ${i}.so.2 --whole-archive ${i}.a )
-.endfor
+check regression-test test: build
+.  for opt in shared static
+.    if defined(WITH_${opt:U})
+	@${ECHO_CMD} "Testing ${opt} ATLAS:"
+	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} BLAS="${${opt:U}_BLAS}" \
+	${MAKE} ${MAKE_ARGS} check ptcheck error_report
+.    endif
+.  endfor
+.endif
+
 do-install:
-.for i in ${ATLAS_LIBS1}
-.if defined(WITH_STATICLIB)
-	@${INSTALL_DATA} ${WRKSRC}/NON_THREADED/lib/${i}.a       ${PREFIX}/lib
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/NON_THREADED_PIC/lib/${i}.so.2    ${PREFIX}/lib
-	@${LN} -sf ${i}.so.2 ${PREFIX}/lib/${i}.so
+.for i in libatlas libcblas libf77blas liblapack libptcblas libptf77blas
+.  if defined(WITH_STATIC)
+	@${INSTALL_DATA} ${WRKSRC}/static/lib/${i}.a ${PREFIX}/lib/${i:S|lapack|alapack|}.a
+.  endif
+.  if defined(WITH_SHARED)
+	@${INSTALL_DATA} ${WRKSRC}/shared/lib/${i}.a ${PREFIX}/lib/${i:S|lapack|alapack|}_pic.a
+	@${INSTALL_DATA} ${WRKSRC}/shared/lib/${i:S|lapack|alapack|}.so.2 ${PREFIX}/lib
+	@${LN} -sf ${i:S|lapack|alapack|}.so.2 ${PREFIX}/lib/${i:S|lapack|alapack|}.so
+.  endif
 .endfor
-.for i in ${ATLAS_LIBS1}
-.if defined(WITH_STATICLIB)
-	@${INSTALL_DATA} ${WRKSRC}/THREADED/lib/${i}.a       ${PREFIX}/lib/${i}_r.a
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/THREADED_PIC/lib/${i}_r.so.2    ${PREFIX}/lib/${i}_r.so.2
-	@${LN} -sf ${i}_r.so.2 ${PREFIX}/lib/${i}_r.so
-.endfor
-.for i in ${ATLAS_LIBS2}
-.if defined(WITH_STATICLIB)
-	@${INSTALL_DATA} ${WRKSRC}/THREADED/lib/${i}.a       ${PREFIX}/lib
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/THREADED_PIC/lib/${i}.so.2    ${PREFIX}/lib
-	@${LN} -sf ${i}.so.2 ${PREFIX}/lib/${i}.so
-.endfor
-
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/clapack.h ${PREFIX}/include
+.for opt in shared static
+.  if defined(WITH_${opt:U})
+	@${MKDIR} ${PREFIX}/include/atlas/${opt}
+	@${INSTALL_DATA} ${WRKSRC}/${opt}/include/* ${PREFIX}/include/atlas/${opt}
+	@cd ${PREFIX} ; \
+	${FIND} include/atlas/${opt} -type f -o -type l | ${SORT} >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm include/atlas/${opt}" >> ${TMPPLIST}
+.    if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}/${opt}
+	@cd ${WRKSRC}/${opt}/bin ; ${TAR} -czf INSTALL_LOG.tgz INSTALL_LOG ; \
+	${INSTALL_DATA} INSTALL_LOG.tgz ${DATADIR}/${opt}
+	@${INSTALL_DATA} ${WRKSRC}/${opt}/ARCHS/*.tgz ${DATADIR}/${opt}
+.    endif
+.  endif
+.endfor
+	@${ECHO_CMD} "@dirrm include/atlas" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <${FILESDIR}/Makefile.test>
 .include <bsd.port.post.mk>
