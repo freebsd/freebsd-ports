@@ -13,4 +13,6 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-gui
 SAL_MODULE_UPPER=	GUI
 
+BROKEN=		does not compile
+
 .include "${MASTERDIR}/Makefile"
