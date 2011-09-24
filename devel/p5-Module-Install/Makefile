@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Install
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,19 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Standalone, extensible Perl module installer
 
-RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
-		${SITE_PERL}/Module/ScanDeps.pm:${PORTSDIR}/devel/p5-Module-ScanDeps \
-		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist \
-		${SITE_PERL}/YAML/Tiny.pm:${PORTSDIR}/textproc/p5-YAML-Tiny \
-		${SITE_PERL}/${PERL_ARCH}/Devel/PPPort.pm:${PORTSDIR}/devel/p5-Devel-PPPort
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-File-Remove>=1.42:${PORTSDIR}/devel/p5-File-Remove \
+		p5-JSON>=2.14:${PORTSDIR}/converters/p5-JSON \
+		p5-Module-ScanDeps>=0.89:${PORTSDIR}/devel/p5-Module-ScanDeps \
+		p5-PAR-Dist>=0.29:${PORTSDIR}/devel/p5-PAR-Dist \
+		p5-YAML-Tiny>=1.38:${PORTSDIR}/textproc/p5-YAML-Tiny \
+		p5-libwww>=5.812:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--skip
+CONFIGURE_ARGS=	--skip
 
 MAN3=		inc::Module::Install.3 \
 		inc::Module::Install::DSL.3 \
@@ -51,12 +49,20 @@ MAN3=		inc::Module::Install.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+.if ${PERL_LEVEL} == 501000
+BUILD_DEPENDS+=	p5-Module-CoreList>=2.17:${PORTSDIR}/devel/p5-Module-CoreList
+RUN_DEPENDS+=	p5-Module-CoreList>=2.17:${PORTSDIR}/devel/p5-Module-CoreList
 .endif
 
-.if ${PERL_LEVEL} < 500809
-BUILD_DEPENDS+=	${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreList
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Archive-Tar>=1.44:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Devel-PPPort>=3.16:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-Module-Build>=0.29:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Parse-CPAN-Meta>=1.39:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
+RUN_DEPENDS+=	p5-Archive-Tar>=1.44:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Devel-PPPort>=3.16:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-Module-Build>=0.29:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Parse-CPAN-Meta>=1.39:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 .endif
 
 .include <bsd.port.post.mk>
