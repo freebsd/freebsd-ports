@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTVERSION=	0.9.16
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,6 +29,10 @@ QT_COMPONENTS=	corelib gui moc_build network \
 		uic_build linguist_build
 MAKE_JOBS_SAFE=	yes
 
+PLIST_FILES=	bin/hedgewars bin/hwengine share/applications/hedgewars.desktop
+PLIST_DIRSTRY=	share/applications
+PORTDATA=	*
+
 DESKTOP_ENTRIES="Hedgewars" \
 		"Worms-like turn based strategy game" \
 		"${DATADIR}/Data/Forts/FlowerhogL.png" \
@@ -38,7 +41,11 @@ DESKTOP_ENTRIES="Hedgewars" \
 		false
 
 post-patch:
-	${ECHO} "include_directories(${LOCALBASE}/include)" >> \
+	@${ECHO} "include_directories(${LOCALBASE}/include)" >> \
 		${WRKSRC}/QTfrontend/CMakeLists.txt
+.if defined(NOPORTDATA)
+	@${REINPLACE_CMD} -e '/add_subdirectory.*Data/I d' \
+		${WRKSRC}/share/hedgewars/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
