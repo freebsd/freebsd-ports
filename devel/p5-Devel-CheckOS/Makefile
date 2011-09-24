@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.63
-PORTREVISION=	1
+PORTVERSION=	1.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module to check currently running OS
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-Data-Compare>=1.21:${PORTSDIR}/devel/p5-Data-Compare
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
+RUN_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN1=		use-devel-assertos.1
 MAN3=		Devel::AssertOS.3 \
@@ -36,6 +36,7 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::AssertOS::EBCDIC.3 \
 		Devel::AssertOS::Extending.3 \
 		Devel::AssertOS::FreeBSD.3 \
+		Devel::AssertOS::GNUkFreeBSD.3 \
 		Devel::AssertOS::HPUX.3 \
 		Devel::AssertOS::Haiku.3 \
 		Devel::AssertOS::Interix.3 \
@@ -82,4 +83,11 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::CheckOS.3 \
 		Devel::CheckOS::Families.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} == 501000
+BUILD_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>

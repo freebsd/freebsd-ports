@@ -13,6 +13,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/EBCDIC.pm
 %%SITE_PERL%%/Devel/AssertOS/Extending.pod
 %%SITE_PERL%%/Devel/AssertOS/FreeBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/GNUkFreeBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/HPUX.pm
 %%SITE_PERL%%/Devel/AssertOS/Haiku.pm
 %%SITE_PERL%%/Devel/AssertOS/Interix.pm
@@ -59,12 +60,12 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/CheckOS.pm
 %%SITE_PERL%%/Devel/CheckOS/Families.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/CheckOS
-@dirrmtry %%SITE_PERL%%/Devel/AssertOS/QNX
-@dirrmtry %%SITE_PERL%%/Devel/AssertOS/OSFeatures
-@dirrmtry %%SITE_PERL%%/Devel/AssertOS/MacOSX
-@dirrmtry %%SITE_PERL%%/Devel/AssertOS/Linux
-@dirrmtry %%SITE_PERL%%/Devel/AssertOS
+@dirrm %%SITE_PERL%%/Devel/CheckOS
+@dirrm %%SITE_PERL%%/Devel/AssertOS/QNX
+@dirrm %%SITE_PERL%%/Devel/AssertOS/OSFeatures
+@dirrm %%SITE_PERL%%/Devel/AssertOS/MacOSX
+@dirrm %%SITE_PERL%%/Devel/AssertOS/Linux
+@dirrm %%SITE_PERL%%/Devel/AssertOS
 @dirrmtry %%SITE_PERL%%/Devel
