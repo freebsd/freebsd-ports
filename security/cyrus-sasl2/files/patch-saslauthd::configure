@@ -1,32 +1,25 @@
---- saslauthd/configure.orig	2006-05-19 03:30:20.000000000 +0800
-+++ saslauthd/configure	2008-05-21 10:00:20.000000000 +0800
-@@ -1234,7 +1234,7 @@
-       ac_cache_corrupted=: ;;
-     ,);;
-     *)
--      if test "x$ac_old_val" != "x$ac_new_val"; then
-+      if test "`echo $ac_old_val`" != "`echo $ac_new_val`"; then
-         { echo "$as_me:$LINENO: error: \`$ac_var' has changed since the previous run:" >&5
- echo "$as_me: error: \`$ac_var' has changed since the previous run:" >&2;}
-         { echo "$as_me:$LINENO:   former value:  $ac_old_val" >&5
-@@ -1526,6 +1526,7 @@
+Index: saslauthd/configure
+diff -u saslauthd/configure.orig saslauthd/configure
+--- saslauthd/configure.orig	2011-09-03 00:40:17.000000000 +0900
++++ saslauthd/configure	2011-09-14 15:22:38.269314778 +0900
+@@ -2185,6 +2185,7 @@
  fi
- echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+ { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
 +program_prefix=NONE
  test "$program_prefix" != NONE &&
-   program_transform_name="s,^,$program_prefix,;$program_transform_name"
+   program_transform_name="s&^&$program_prefix&;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -6843,7 +6844,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -8320,7 +8321,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
 +LIBS="${GSSAPIBASE_LIBS} `krb5-config --libs gssapi` $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -7253,7 +7254,7 @@
+ _ACEOF
+@@ -8796,7 +8797,7 @@
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -35,37 +28,19 @@
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -8010,7 +8011,7 @@
- 	fi
- 
- 	saved_LIBS=$LIBS
--        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-           do
- 	    LIBS="$saved_LIBS -l$dbname"
- 	    cat >conftest.$ac_ext <<_ACEOF
-@@ -8020,6 +8021,7 @@
+@@ -9978,6 +9979,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <db.h>
- int
- main ()
-@@ -8767,7 +8769,7 @@
- 	fi
- 
- 	saved_LIBS=$LIBS
--        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-           do
- 	    LIBS="$saved_LIBS -l$dbname"
- 	    cat >conftest.$ac_ext <<_ACEOF
-@@ -8777,6 +8779,7 @@
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
+@@ -10788,6 +10790,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <db.h>
- int
- main ()
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"

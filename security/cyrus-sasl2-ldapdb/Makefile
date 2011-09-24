@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	ldapdb
-PORTVERSION=	2.1.23
+PORTVERSION=	2.1.25
 #PORTREVISION=	0
-PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -20,12 +19,15 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SASL LDAPDB auxprop plugin
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 CYRUS_SASL2_DIR=${MASTERDIR}/../cyrus-sasl2
 DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
-INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/plugins
+INSTALL_WRKSRC=	${WRKSRC}/plugins
 
 USE_LDCONFIG=	yes
 
@@ -53,7 +55,8 @@ CONFIGURE_ARGS+=--with-dblib=none \
 		--disable-krb4 \
 		--disable-ntlm \
 		--disable-otp \
-		--disable-plain
+		--disable-plain \
+		--disable-scram
 
 CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
 
