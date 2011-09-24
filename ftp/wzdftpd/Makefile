@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
 USE_AUTOTOOLS=	libtool
