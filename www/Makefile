@@ -375,6 +375,7 @@
     SUBDIR += linkchecker
     SUBDIR += linklint
     SUBDIR += links
+    SUBDIR += links-hacked
     SUBDIR += links1
     SUBDIR += linux-f10-flashplugin10
     SUBDIR += linux-firefox
