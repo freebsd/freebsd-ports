@@ -196,6 +196,7 @@ lib/parrot/%%PARROT_VER%%/dynext/os.so
 lib/parrot/%%PARROT_VER%%/dynext/rational.so
 lib/parrot/%%PARROT_VER%%/dynext/sys_ops.so
 lib/parrot/%%PARROT_VER%%/dynext/trans_ops.so
+lib/parrot/%%PARROT_VER%%/dynext/select.so
 lib/parrot/%%PARROT_VER%%/include/call_bits.pasm
 lib/parrot/%%PARROT_VER%%/include/cclass.pasm
 lib/parrot/%%PARROT_VER%%/include/config.fpmc
