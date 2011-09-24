@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Perl 5 module to deploy a a DBIx::Class schema
 
+BUILD_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator
 
