@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-image
-PORTVERSION=	1.0.14
-PORTREVISION=	2
+PORTVERSION=	1.0.15
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
