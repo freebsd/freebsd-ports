@@ -38,6 +38,8 @@ MAN4=		uhso.4
 IGNORE=		requires kernel source files
 .elif ${OSVERSION} <= 800063
 IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
+.elif ${OSVERSION} >= 800501
+IGNORE=	the uhso driver is already available in the base system
 .endif
 
 .if !defined(WITHOUT_UHSOCTL)
@@ -52,16 +54,6 @@ PLIST_SUB+=	PL_UHSOCTL="@comment "
 
 .if !defined(WITH_DEBUG)
 EXTRA_PATCHES+=	${PATCHDIR}/UHSO-NODEBUG-patch-Makefile
-.endif
-
-pre-fetch:
-.if ${OSVERSION} >= 800501
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "==================================================================="
-	@${ECHO_CMD} " Warning: the uhso driver is already available in the base system,"
-	@${ECHO_CMD} "          you may want to use this version instead of the port."
-	@${ECHO_CMD} "==================================================================="
-	@${ECHO_CMD} ""
 .endif
 
 post-patch:
