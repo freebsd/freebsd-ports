@@ -18,6 +18,8 @@ COMMENT=	Edinburgh-style Prolog compiler
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		readline:${PORTSDIR}/devel/readline
 
+BROKEN=		does not compile
+
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 LIB_DEPENDS+=	Xt:${PORTSDIR}/x11-toolkits/libXt \
 		jpeg:${PORTSDIR}/graphics/jpeg \
