@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	logjam
-PORTVERSION=	4.5.3
-PORTREVISION=	11
+PORTVERSION=	4.6.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://logjam.danga.com/download/
+MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+	        dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 MAN1=		logjam.1
 
