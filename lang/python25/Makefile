@@ -6,6 +6,7 @@
 
 PORTNAME=	python25
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -47,7 +48,6 @@ BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
 		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
-		HUGE_STACK_SIZE "Use a larger thread stack" off \
 		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Use python's internal malloc" on \
 		IPV6 "Enable IPv6 support" on \
@@ -68,11 +68,6 @@ CFLAGS+=	-D__wchar_t=wchar_t
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
-.if defined(WITHOUT_HUGE_STACK_SIZE)
-CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
-.else
-CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
-.endif # defined(WITHOUT_HUGE_STACK_SIZE)
 LDFLAGS+=		${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--without-threads

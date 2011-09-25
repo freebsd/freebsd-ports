@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110925:
+  AFFECTS: users of lang/python*
+  AUTHOR: lwhsu@FreeBSD.org
+
+  The HUGE_STACK_SIZE option has been removed, now Python will use default
+  thread stack size of the system.  If you want to change it, specify it
+  with -DTHREAD_STACK_SIZE=<size> in CFLAGS.
+
+20110925:
   AFFECTS: users of net/openldap*
   AUTHOR: ume@FreeBSD.org
 
