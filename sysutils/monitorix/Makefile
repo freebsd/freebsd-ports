@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
@@ -16,13 +16,13 @@ MASTER_SITES=	http://www.monitorix.org/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A web based monitoring system
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
-
-LICENSE=	GPLv2
 
 USE_PERL=	5.8+
 MAN5=		monitorix.conf.5
