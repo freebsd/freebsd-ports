@@ -14,9 +14,6 @@ MASTER_SITES=	http://www.tnsp.org/xs-files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play SID files
 
-DEPRECATED=	Relies on audio/libsidplay, which is deprecated
-EXPIRATION_DATE=	2011-09-30
-
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

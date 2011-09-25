@@ -8,14 +8,11 @@
 PORTNAME=	libsidplay
 PORTVERSION=	1.36.59
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
+MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Commodore SID-chip emulator library to play SID music files
-
-DEPRECATED=	No Master Site
-EXPIRATION_DATE=	2011-09-30
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
