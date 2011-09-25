@@ -100,9 +100,11 @@ OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
+.endif # !SLAVE_ONLY
 
 .include <bsd.port.pre.mk>
 
+.if !defined(SLAVE_ONLY)
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
