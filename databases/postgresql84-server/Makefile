@@ -83,8 +83,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
@@ -102,6 +100,8 @@ OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
+
+.include <bsd.port.pre.mk>
 
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf
@@ -161,8 +161,12 @@ INSTALL_TARGET=	install-strip
 
 .if defined(WITH_GSSAPI)
 CONFIGURE_ARGS+=--with-gssapi
-.if ${OSVERSION} >= 900000
-BROKEN=		does not link on FreeBSD 9.X
+.if !defined(WITH_MIT_KRB5) && !defined(WITH_HEIMDAL_KRB5)
+# Kerberos libraries will pull the proper GSSAPI library
+# via linker dependencies, but otherwise we must specify
+# it explicitely: ld --as-needed is used for compilation,
+# so configure's -lgssapi_krb5 won't go.
+LDFLAGS+=	-lgssapi
 .endif
 .else
 CONFIGURE_ARGS+=--without-gssapi

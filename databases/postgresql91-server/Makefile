@@ -178,6 +178,13 @@ INSTALL_TARGET=	install-strip
 
 .if (${OSVERSION} >= 700000) && !defined(WITHOUT_GSSAPI)
 CONFIGURE_ARGS+=--with-gssapi
+.if !defined(WITH_MIT_KRB5) && !defined(WITH_HEIMDAL_KRB5)
+# Kerberos libraries will pull the proper GSSAPI library
+# via linker dependencies, but otherwise we must specify
+# it explicitely: ld --as-needed is used for compilation,
+# so configure's -lgssapi_krb5 won't go.
+LDFLAGS+=	-lgssapi
+.endif
 .endif
 
 .  if defined(WITH_MIT_KRB5)
