@@ -15,7 +15,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Preparation of Internationalized Strings (RFC 3454)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Normalize.pm:${PORTSDIR}/textproc/p5-Unicode-Normalize
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	yes
 
