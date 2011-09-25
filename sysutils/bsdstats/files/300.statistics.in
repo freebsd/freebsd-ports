@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.44 2010-08-19 03:06:13 amdmi3 Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.45 2011-09-25 21:35:26 eadler Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -172,7 +172,7 @@ report_ports () {
 
 	# Make the request	
 	string_length=`echo ${query_string} | wc -m` 
-	string_length=`expr ${string_length} - 1`
+	string_length=$((string_length - 1))
 
 	echo "POST ${url_prefix}/scripts/report_ports.php HTTP/1.0
 Host: ${checkin_server}
