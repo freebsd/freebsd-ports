@@ -18,6 +18,6 @@ load_rc_config $name
 
 : ${ndpmonitor_enable="NO"}
 
-command_args=">/dev/null &"
+command_args=">/dev/null 2>&1 &"
 
 run_rc_command "$1"
