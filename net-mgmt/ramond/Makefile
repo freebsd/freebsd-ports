@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_${PORTVERSION}/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	On-link IPv6 router advertisment monitoring and reporting daemon
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	YES
 USE_GNOME=	libxml2
