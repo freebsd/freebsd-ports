@@ -9,7 +9,7 @@ PORTNAME=	xnview
 PORTVERSION=	1.70
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xnview-download.de/download/
+MASTER_SITES=	http://download.xnview.com/
 DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
@@ -26,13 +26,9 @@ MLINKS=		nview.1 nv.1 \
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=       c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 DISTFILES+=	NConvert-x86-unknown-FreeBSD6.x.tgz
 WRKSRC_NC=	${WRKDIR}/NConvert
-
-.if ${OSVERSION} >= 700000
-    LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xnview ${PREFIX}/bin/xnview
