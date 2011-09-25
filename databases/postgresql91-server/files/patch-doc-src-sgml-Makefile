@@ -1,0 +1,17 @@
+Manual pages are already present in the PostgreSQL tarball, so we avoid
+messing with timestamp: it depends on postgres.xml that, in turn,
+depends on almost all SGML files, most notably, version.sgml.  And the
+latter depends on the configure in the top-level directory, so when
+we patch it, build system wants to regenerate manual pages.
+
+--- doc/src/sgml/Makefile.orig	2011-09-13 23:42:58.508672251 +0400
++++ doc/src/sgml/Makefile	2011-09-13 23:43:01.676668807 +0400
+@@ -75,8 +75,6 @@
+ ## Man pages
+ ##
+ 
+-man distprep-man: man-stamp
+-
+ man-stamp: stylesheet-man.xsl postgres.xml
+ 	$(XSLTPROC) $(XSLTPROCFLAGS) $(XSLTPROC_MAN_FLAGS) $^
+ 	touch $@
