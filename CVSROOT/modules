@@ -8422,6 +8422,7 @@ linkchecker                     ports/www/linkchecker
 linklint                        ports/www/linklint
 linknx                          ports/net/linknx
 links                           ports/www/links
+links-hacked                    ports/www/links-hacked
 links1                          ports/www/links1
 linm                            ports/misc/linm
 linneighborhood                 ports/net/linneighborhood
@@ -9329,6 +9330,7 @@ moc                             ports/audio/moc
 mod_access_identd               ports/www/mod_access_identd
 mod_access_referer              ports/www/mod_access_referer
 mod_accounting                  ports/www/mod_accounting
+mod_amazon_proxy                ports/www/mod_amazon_proxy
 mod_antiloris                   ports/www/mod_antiloris
 mod_asn                         ports/www/mod_asn
 mod_auth_cas                    ports/www/mod_auth_cas
@@ -24941,6 +24943,7 @@ stldoc                          ports/lang/stldoc
 stlfilt                         ports/devel/stlfilt
 stlport                         ports/devel/stlport
 stmpclean                       ports/sysutils/stmpclean
+stockfish                       ports/games/stockfish
 stone                           ports/net/stone
 stonesoup                       ports/games/stonesoup
 stonesoup-sdl                   ports/games/stonesoup-sdl
