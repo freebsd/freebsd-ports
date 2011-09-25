@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	ninix-aya
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/53177
-DISTNAME=	ninix-aya-${PORTVERSION}
+MASTER_SITE_SUBDIR=	ninix-aya/53302
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Ninix-aya is a compatible with desktop mascot program "Ukagaka"
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
