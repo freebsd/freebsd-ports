@@ -14,7 +14,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 
-OPTIONS=	PY4SUITE	"Depend on py-4suite-xml (for generating HTML)"	off
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS=	PY4SUITE	"Depend on py-4suite-xml (for generating HTML)"	off \
+		MACRESOLV	"Enable MAC Manufacturer Resolution" off
 
 .include <bsd.port.options.mk>
 
@@ -30,12 +34,18 @@ USE_GNOME=	libxml2
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	ndpmonitor
 
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OSTYPE=FreeBSD
-CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${ETCDIR}
+CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${ETCDIR} \
+		--with-libxml2=${LOCALBASE} --cache-file=/dev/null
 
 MAN8=		ndpmon.8
 PORTDOCS=	INSTALL README
+
+.if defined(WITH_MACRESOLV)
+CONFIGURE_ARGS+=--enable-mac-resolv
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
