@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: ndpmonitor
-# REQUIRE: DAEMON NETWORKING
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 
 . /etc/rc.subr
