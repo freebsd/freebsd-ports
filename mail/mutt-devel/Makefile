@@ -196,7 +196,7 @@ OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
 		MUTT_NCURSES			"Enable ncurses support"	on \
 		MUTT_NCURSES_PORT		"Use ncurses from port"		off \
 		MUTT_NNTP			"Enable news reader"		off \
-		MUTT_PARENT_CHILD_MATCH		"Enable parent/child match"	off \
+		MUTT_PARENT_CHILD_MATCH_PATCH	"Enable parent/child match"	off \
 		MUTT_QUOTE_PATCH		"Enable extended quoting"	on  \
 		MUTT_REVERSE_REPLY_PATCH	"Enable reverse_reply"		off \
 		MUTT_SGMLFORMAT			"Enable sgml support"		on  \
@@ -206,7 +206,7 @@ OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
 		MUTT_SMIME_OUTLOOK_COMPAT	"SMIME outlook compatible"	on \
 		MUTT_SMTP			"Enable SMTP relay support"	off \
 		MUTT_TRASH_PATCH		"Enable trash folder support"	off \
-		MUTT_XML			"Use XML tools for documentation"		on 
+		MUTT_XML			"Use XML tools for documentation"	on
 .endif
 
 PLIST=		${WRKDIR}/PLIST
@@ -337,7 +337,7 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-IGNORE=	The WITH_MUTT_SIGNATURE_MENU does not work at the moment
+IGNORE=	the WITH_MUTT_SIGNATURE_MENU does not work at the moment
 XML_NEEDED=	yes
 post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
@@ -452,7 +452,7 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-IGNORE=	The WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment
+IGNORE=	the WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment
 #PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
