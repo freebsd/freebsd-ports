@@ -8,6 +8,7 @@
 
 PORTNAME=	fcron
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/archives/ \
