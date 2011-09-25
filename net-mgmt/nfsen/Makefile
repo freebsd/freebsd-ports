@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
 
-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
 RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -36,7 +37,6 @@ post-patch:
 		${WRKSRC}/etc/nfsen-dist.conf
 	@${RM} ${WRKSRC}/etc/nfsen-dist.conf.*
 	@${REINPLACE_CMD} -e 's,%%PERL%%,${PERL},' -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/install.pl
-	@${RM} ${WRKSRC}/libexec/NfSenRRD.pm.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/var/${PORTNAME}/profiles/live
