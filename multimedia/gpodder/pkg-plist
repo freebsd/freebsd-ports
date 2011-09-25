@@ -201,6 +201,7 @@ share/locale/da/LC_MESSAGES/gpodder.mo
 share/locale/de/LC_MESSAGES/gpodder.mo
 share/locale/el/LC_MESSAGES/gpodder.mo
 share/locale/es/LC_MESSAGES/gpodder.mo
+share/locale/es_ES/LC_MESSAGES/gpodder.mo
 share/locale/fi/LC_MESSAGES/gpodder.mo
 share/locale/fr/LC_MESSAGES/gpodder.mo
 share/locale/gl/LC_MESSAGES/gpodder.mo
@@ -216,6 +217,7 @@ share/locale/pt_BR/LC_MESSAGES/gpodder.mo
 share/locale/ro/LC_MESSAGES/gpodder.mo
 share/locale/ru/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
+share/locale/tr/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
 share/pixmaps/gpodder.png
 @dirrmtry share/locale/kk/LC_MESSAGES
