@@ -7,6 +7,7 @@
 
 PORTNAME=	ramond
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_${PORTVERSION}/
 
@@ -23,6 +24,11 @@ PORTDOCS=	README
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/main.c
+	@${REINPLACE_CMD} -e 's|"/etc/|"${PREFIX}/etc/|g' ${WRKSRC}/src/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ramond ${PREFIX}/sbin
