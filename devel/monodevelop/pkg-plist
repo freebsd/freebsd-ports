@@ -85,6 +85,8 @@ lib/monodevelop/AddIns/MonoDevelop.Deployment/MonoDevelop.Deployment.dll
 lib/monodevelop/AddIns/MonoDevelop.Deployment/MonoDevelop.Deployment.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.DesignerSupport/MonoDevelop.DesignerSupport.dll
 lib/monodevelop/AddIns/MonoDevelop.DesignerSupport/MonoDevelop.DesignerSupport.dll.mdb
+lib/monodevelop/AddIns/MonoDevelop.DocFood.dll
+lib/monodevelop/AddIns/MonoDevelop.DocFood.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Gettext/MonoDevelop.Gettext.dll
 lib/monodevelop/AddIns/MonoDevelop.Gettext/MonoDevelop.Gettext.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/MonoDevelop.GtkCore.dll
