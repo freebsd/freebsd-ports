@@ -23,7 +23,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  #define VIDEOBUFSIZE        (128*1024)
  #define SLICE_BUFFER_SIZE   (1194*1024)
  
-@@ -73,6 +88,7 @@ typedef struct ff_video_class_s {
+@@ -89,6 +104,7 @@ typedef struct ff_video_class_s {
    int                     thread_count;
    int8_t                  skip_loop_filter_enum;
    int8_t                  choose_speed_over_accuracy;
@@ -31,7 +31,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  
    xine_t                 *xine;
  } ff_video_class_t;
-@@ -111,6 +127,7 @@ struct ff_video_decoder_s {
+@@ -127,6 +143,7 @@ struct ff_video_decoder_s {
    int               slice_offset_size;
  
    AVFrame          *av_frame;
@@ -39,7 +39,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    AVCodecContext   *context;
    AVCodec          *codec;
  
-@@ -138,8 +155,31 @@ struct ff_video_decoder_s {
+@@ -154,8 +171,31 @@ struct ff_video_decoder_s {
  #ifdef LOG
    enum PixelFormat  debug_fmt;
  #endif
@@ -71,7 +71,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  
  static void set_stream_info(ff_video_decoder_t *this) {
    _x_stream_info_set(this->stream, XINE_STREAM_INFO_VIDEO_WIDTH,  this->bih.biWidth);
-@@ -147,7 +187,70 @@ static void set_stream_info(ff_video_dec
+@@ -163,7 +203,70 @@ static void set_stream_info(ff_video_dec
    _x_stream_info_set(this->stream, XINE_STREAM_INFO_VIDEO_RATIO,  this->aspect_ratio * 10000);
  }
  
@@ -142,7 +142,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  /* called from ffmpeg to do direct rendering method 1 */
  static int get_buffer(AVCodecContext *context, AVFrame *av_frame){
    ff_video_decoder_t *this = (ff_video_decoder_t *)context->opaque;
-@@ -169,6 +272,43 @@ static int get_buffer(AVCodecContext *co
+@@ -185,6 +288,43 @@ static int get_buffer(AVCodecContext *co
  
    avcodec_align_dimensions(context, &width, &height);
  
@@ -186,7 +186,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    if( this->context->pix_fmt != PIX_FMT_YUV420P && this->context->pix_fmt != PIX_FMT_YUVJ420P ) {
      if (!this->is_direct_rendering_disabled) {
        xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
-@@ -238,10 +378,33 @@ static int get_buffer(AVCodecContext *co
+@@ -254,10 +394,33 @@ static int get_buffer(AVCodecContext *co
  static void release_buffer(struct AVCodecContext *context, AVFrame *av_frame){
    ff_video_decoder_t *this = (ff_video_decoder_t *)context->opaque;
  
@@ -222,7 +222,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
        img->free(img);
      }
  
-@@ -283,13 +446,272 @@ static const int skip_loop_filter_enum_v
+@@ -299,13 +462,272 @@ static const int skip_loop_filter_enum_v
    AVDISCARD_ALL
  };
  
@@ -285,7 +285,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
 +            //context->draw_horiz_band = draw_slice;
 +            context->draw_horiz_band = NULL;
 +            context->slice_flags = SLICE_FLAG_CODED_ORDER | SLICE_FLAG_ALLOW_FIELD;
-+            context->dsp_mask = FF_MM_FORCE | FF_MM_MMX | FF_MM_MMXEXT | FF_MM_SSE;
++            context->dsp_mask = AV_CPU_FLAG_FORCE | AV_CPU_FLAG_MMX | AV_CPU_FLAG_MMX2 | AV_CPU_FLAG_SSE;
 +
 +            va_context->vaapi_context->config_id   = va_context->va_config_id;
 +            va_context->vaapi_context->context_id  = va_context->va_context_id;
@@ -496,7 +496,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
      if(ff_video_lookup[i].type == codec_type) {
        pthread_mutex_lock(&ffmpeg_lock);
        this->codec = avcodec_find_decoder(ff_video_lookup[i].id);
-@@ -298,6 +720,8 @@ static void init_video_codec (ff_video_d
+@@ -314,6 +736,8 @@ static void init_video_codec (ff_video_d
                              ff_video_lookup[i].name);
        break;
      }
@@ -505,7 +505,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  
    if (!this->codec) {
      xprintf (this->stream->xine, XINE_VERBOSITY_LOG,
-@@ -311,9 +735,11 @@ static void init_video_codec (ff_video_d
+@@ -327,9 +751,11 @@ static void init_video_codec (ff_video_d
  
    this->context->width = this->bih.biWidth;
    this->context->height = this->bih.biHeight;
@@ -517,7 +517,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  
    /* Some codecs (eg rv10) copy flags in init so it's necessary to set
     * this flag here in case we are going to use direct rendering */
-@@ -323,7 +749,6 @@ static void init_video_codec (ff_video_d
+@@ -339,7 +765,6 @@ static void init_video_codec (ff_video_d
  
    if (this->class->choose_speed_over_accuracy)
      this->context->flags2 |= CODEC_FLAG2_FAST;
@@ -525,7 +525,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    pthread_mutex_lock(&ffmpeg_lock);
    if (avcodec_open (this->context, this->codec) < 0) {
      pthread_mutex_unlock(&ffmpeg_lock);
-@@ -337,7 +762,6 @@ static void init_video_codec (ff_video_d
+@@ -353,7 +778,6 @@ static void init_video_codec (ff_video_d
  
    if (this->codec->id == CODEC_ID_VC1 &&
        (!this->bih.biWidth || !this->bih.biHeight)) {
@@ -533,7 +533,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
      avcodec_close(this->context);
  
      if (avcodec_open (this->context, this->codec) < 0) {
-@@ -390,6 +814,13 @@ static void init_video_codec (ff_video_d
+@@ -406,6 +830,13 @@ static void init_video_codec (ff_video_d
      xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
  	    _("ffmpeg_video_dec: direct rendering enabled\n"));
    }
@@ -547,7 +547,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  #endif
  
    /* flag for interlaced streams */
-@@ -413,7 +844,13 @@ static void init_video_codec (ff_video_d
+@@ -429,7 +860,13 @@ static void init_video_codec (ff_video_d
        this->frame_flags |= VO_INTERLACED_FLAG;
        break;
    }
@@ -561,7 +561,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  }
  
  static void choose_speed_over_accuracy_cb(void *user_data, xine_cfg_entry_t *entry) {
-@@ -542,6 +979,36 @@ static int ff_handle_mpeg_sequence(ff_vi
+@@ -558,6 +995,36 @@ static int ff_handle_mpeg_sequence(ff_vi
    return 1;
  }
  
@@ -598,7 +598,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  static void ff_convert_frame(ff_video_decoder_t *this, vo_frame_t *img) {
    int         y;
    uint8_t    *dy, *du, *dv, *sy, *su, *sv;
-@@ -551,6 +1018,49 @@ static void ff_convert_frame(ff_video_de
+@@ -567,6 +1034,49 @@ static void ff_convert_frame(ff_video_de
      printf ("frame format == %08x\n", this->debug_fmt = this->context->pix_fmt);
  #endif
  
@@ -648,7 +648,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    dy = img->base[0];
    du = img->base[1];
    dv = img->base[2];
-@@ -1022,6 +1532,11 @@ static void ff_handle_mpeg12_buffer (ff_
+@@ -1038,6 +1548,11 @@ static void ff_handle_mpeg12_buffer (ff_
  
    lprintf("handle_mpeg12_buffer\n");
  
@@ -660,27 +660,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    while ((size > 0) || (flush == 1)) {
  
      uint8_t *current;
-@@ -1307,10 +1822,19 @@ static void ff_handle_buffer (ff_video_d
-         this->context->hurry_up = (this->skipframes > 0);
- 
-         lprintf("buffer size: %d\n", this->size);
-+
-+        //this->av_pkt.size = this->size;
-+        //this->av_pkt.data = &chunk_buf[offset];
-+        //this->av_pkt.data = this->buf;
-+
-+        //len = avcodec_decode_video2 (this->context, this->av_frame, &got_picture, &this->av_pkt);
-+
-         len = avcodec_decode_video (this->context, this->av_frame,
-                                     &got_picture, &chunk_buf[offset],
-                                     this->size);
- 
-+        //av_free_packet(&this->av_pkt);
-+
- #ifdef AVCODEC_HAS_REORDERED_OPAQUE
-         /* reset consumed pts value */
-         this->context->reordered_opaque = ff_tag_pts(this, 0);
-@@ -1355,47 +1879,48 @@ static void ff_handle_buffer (ff_video_d
+@@ -1403,47 +1918,48 @@ static void ff_handle_buffer (ff_video_d
  
        /* aspect ratio provided by ffmpeg, override previous setting */
        if ((this->aspect_ratio_prio < 2) &&
@@ -757,7 +737,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
  
            /* xine-lib expects the framesize to be a multiple of 16x16 (macroblock) */
            img = this->stream->video_out->get_frame (this->stream->video_out,
-@@ -1436,7 +1961,7 @@ static void ff_handle_buffer (ff_video_d
+@@ -1484,7 +2000,7 @@ static void ff_handle_buffer (ff_video_d
                          this->av_frame->pict_type);
  
          } else if (!this->av_frame->opaque) {
@@ -766,7 +746,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
            ff_convert_frame(this, img);
          }
  
-@@ -1524,6 +2049,15 @@ static void ff_decode_data (video_decode
+@@ -1572,6 +2088,15 @@ static void ff_decode_data (video_decode
      _x_stream_info_set(this->stream, XINE_STREAM_INFO_FRAME_DURATION, (this->reported_video_step = this->video_step));
    }
  
@@ -782,7 +762,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    if (buf->decoder_flags & BUF_FLAG_PREVIEW) {
  
      ff_handle_preview_buffer(this, buf);
-@@ -1541,24 +2075,24 @@ static void ff_decode_data (video_decode
+@@ -1589,24 +2114,24 @@ static void ff_decode_data (video_decode
        ff_handle_header_buffer(this, buf);
  
        if (buf->decoder_flags & BUF_FLAG_ASPECT) {
@@ -816,7 +796,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
        }
  
      }
-@@ -1637,6 +2171,8 @@ static void ff_dispose (video_decoder_t 
+@@ -1685,6 +2210,8 @@ static void ff_dispose (video_decoder_t 
  
    lprintf ("ff_dispose\n");
  
@@ -825,7 +805,7 @@ diff -Naur xine-lib-1.1.19.orig/src/combined/ffmpeg/ff_video_decoder.c xine-lib-
    if (this->decoder_ok) {
      xine_list_iterator_t it;
      AVFrame *av_frame;
-@@ -1728,10 +2264,31 @@ static video_decoder_t *ff_video_open_pl
+@@ -1776,10 +2303,31 @@ static video_decoder_t *ff_video_open_pl
  
    this->dr1_frames        = xine_list_new();
  
