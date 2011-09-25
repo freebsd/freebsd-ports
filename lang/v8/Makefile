@@ -52,6 +52,7 @@ V8ARCH=x64
 .endif
 PLIST_SUB+=	ARCH=${V8ARCH}
 SCONS_ARGS+=	arch=${V8ARCH}
+SCONS_BUILDENV+= CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}"
 
 do-build:
 	@cd ${BUILD_WRKSRC} && \
