@@ -10,3 +10,4 @@ lib/cgit/filters/syntax-highlighting.sh
 @dirrm %%WWWDIR%%
 @exec mkdir -p /var/cache/%%PORTNAME%%
 @unexec rmdir /var/cache/%%PORTNAME%% 2>/dev/null || true
+@unexec rmdir /var/cache  2>/dev/null || true

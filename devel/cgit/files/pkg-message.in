@@ -4,7 +4,7 @@
 Now you need to change your webserver configuration
 as follows:
 
-  <Directory "%%WWWDIR%%/cgit/">
+  <Directory "%%WWWDIR%%/">
       AllowOverride None
       Options ExecCGI
       Order allow,deny
