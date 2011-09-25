@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A data model and utility API for the MAGE-TAB format
 
-RUN_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
+BUILD_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-DateManip>=0.04:${PORTSDIR}/devel/p5-DateTime-Format-DateManip \
 		p5-Email-Valid>=0.179:${PORTSDIR}/mail/p5-Email-Valid \
@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Parse-RecDescent>=1.960:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Text-CSV_XS>=0.32:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
