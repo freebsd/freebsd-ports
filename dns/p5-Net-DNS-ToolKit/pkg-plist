@@ -50,6 +50,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_arcount.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_nscount.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_qdcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/putflags.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/sec2time.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/strip.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ttlAlpha2Num.al
