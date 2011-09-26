@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	bsd-
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	BSD-licensed version of grep
 
+BROKEN=		incomplete plist
+
 MANCOMPRESSED=	maybe
 MAN1=		grep.1
 MLINKS=		grep.1 bzegrep.1 \
