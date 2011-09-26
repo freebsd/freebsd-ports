@@ -6,47 +6,33 @@
 #
 
 PORTNAME=	git-annex
-PORTVERSION=	3.20110702
-PORTREVISION=	1
+PORTVERSION=	3.20110707
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://git.kitenet.net/?p=git-annex.git;a=snapshot;sf=tgz;h=refs/tags/
-DISTFILES=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	frase@frase.id.au
-COMMENT=	Manage file hierarchies with git
-
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		hs-MissingH>=0:${PORTSDIR}/devel/hs-MissingH \
-		hs-pcre-light>=0:${PORTSDIR}/devel/hs-pcre-light \
-		hs-utf8-string>=0:${PORTSDIR}/devel/hs-utf8-string \
-		hs-SHA>=0:${PORTSDIR}/security/hs-SHA \
-		hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc \
-		hs-curl>0:${PORTSDIR}/ftp/hs-curl \
-		git:${PORTSDIR}/devel/git \
-		rsync:${PORTSDIR}/net/rsync
-
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		hs-MissingH>=0:${PORTSDIR}/devel/hs-MissingH \
-		hs-pcre-light>=0:${PORTSDIR}/devel/hs-pcre-light \
-		hs-utf8-string>=0:${PORTSDIR}/devel/hs-utf8-string \
-		hs-SHA>=0:${PORTSDIR}/security/hs-SHA \
-		hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc \
-		hs-curl>0:${PORTSDIR}/ftp/hs-curl \
-		git:${PORTSDIR}/devel/git \
-		rsync:${PORTSDIR}/net/rsync
-
-USE_PERL5=	yes
-USE_GMAKE=	yes
-
-MAN1=		git-annex.1 \
-		git-annex-shell.1 \
-		git-union-merge.1
+COMMENT=	Manage files with git, without checking their contents into git
 
 LICENSE=	GPLv3
+FILE_LICENSE=	GPL
 
-PLIST_FILES=	bin/git-annex \
-		bin/git-annex-shell \
-		bin/git-union-merge
+USE_CABAL=	dataenc hS3 hslogger HTTP MissingH mtl network pcre-light \
+		SHA utf8-string
+CABAL_SETUP=	Setup.hs
 
-.include	<bsd.port.mk>
+USE_GMAKE=		yes
+USE_PERL5_BUILD=	yes
+
+BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
+		git:${PORTSDIR}/devel/git
+
+RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
+		git:${PORTSDIR}/devel/git
+
+EXECUTABLE=	git-union-merge git-annex-shell git-annex
+STANDALONE=	yes
+
+MAN1SRC=	.
+MAN1=		git-union-merge.1 git-annex-shell.1 git-annex.1
+
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+.include <bsd.port.mk>
