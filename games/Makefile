@@ -536,6 +536,7 @@
     SUBDIR += moon-buggy
     SUBDIR += moonlander
     SUBDIR += moria
+    SUBDIR += motogt
     SUBDIR += mt_dolphin_ia
     SUBDIR += mt_gtk_client
     SUBDIR += mtaserver
