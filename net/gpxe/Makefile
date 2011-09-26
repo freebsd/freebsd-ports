@@ -14,17 +14,16 @@ MASTER_SITE_SUBDIR=software/utils/boot/gpxe
 MAINTAINER=	gk.freebsd@googlemail.com
 COMMENT=	Create an open-source PXE implementation and bootloader
 
-BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
-
-BROKEN=		does not build
-
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-ONLY_FOR_ARCHS=	i386
+MAKE_JOBS_SAFE=	yes
 
 PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
@@ -32,6 +31,12 @@ PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 		%%DATADIR%%/gpxe.iso
 
 SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MAKE_ARGS+=	ARCH=i386
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/arch/i386/Makefile
@@ -45,4 +50,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
