@@ -473,7 +473,6 @@
     SUBDIR += gio-fam-backend
     SUBDIR += gio-sharp
     SUBDIR += git
-    SUBDIR += git-annex
     SUBDIR += git-merge-changelog
     SUBDIR += git-subversion
     SUBDIR += gitg
@@ -611,6 +610,7 @@
     SUBDIR += hs-ghc-paths
     SUBDIR += hs-ghc-paths-docs
     SUBDIR += hs-gio
+    SUBDIR += hs-git-annex
     SUBDIR += hs-glade
     SUBDIR += hs-glib
     SUBDIR += hs-gtk2hs-buildtools
