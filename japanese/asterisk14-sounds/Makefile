@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX:S|s$||}-jp_${PORTVERSION:S|.||}_beta
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	Japanese sound files for Asterisk 1.4
 
+DEPRECATED=	Depends on net/asterisk14, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 NO_BUILD=	yes

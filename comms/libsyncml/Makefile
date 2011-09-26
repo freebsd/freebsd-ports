@@ -15,6 +15,9 @@ MASTER_SITES=	http://libsyncml.opensync.org/download/releases/${PORTVERSION}/ \
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	SyncML protocol library for PIM data synchronization
 
+DEPRECATED=	Depends on devel/libsoup22, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2 \
 		openobex:${PORTSDIR}/comms/openobex \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup22

@@ -20,6 +20,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	Hugo@Meiland.nl
 COMMENT=	The well known Bind9, patched for use of an LDAP based backend
 
+FORBIDDEN=	Vulnerable since 2011-06-04, http://portaudit.freebsd.org/1e1421f0-8d6f-11e0-89b4-001ec9578670.html
+EXPIRATION_DATE=	2011-10-14
+
 USE_OPENLDAP=	yes
 
 CONFLICTS=	bind9-9.* bind9-sdb-postgresql-* host-* skalibs-*

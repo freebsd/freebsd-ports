@@ -21,6 +21,9 @@ DIST_SUBDIR=	mutt
 MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised Version)
 
+FORBIDDEN=	Vulnerable since 2007-07-29, http://portaudit.freebsd.org/863f95d3-3df1-11dc-b3d3-0016179b2dd5.html
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 

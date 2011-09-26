@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.inter7.com/astfax/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AstFax provides an outgoing email to fax gateway for Asterisk
 
+DEPRECATED=	Depends on net/asterisk14, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	spandsp.1:${PORTSDIR}/comms/spandsp
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
 RUN_DEPENDS=	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk14

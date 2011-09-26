@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Wget with "PRO" features
 
+FORBIDDEN=	Vulnerable since 2004-12-14, http://portaudit.freebsd.org/06f142ff-4df3-11d9-a9e7-0001020eed82.html
+EXPIRATION_DATE=	2011-10-14
+
 RESTRICTED=	"may implement United States Patent 6,041,345"
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

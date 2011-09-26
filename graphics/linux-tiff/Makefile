@@ -15,6 +15,9 @@ DISTNAME=	libtiff-${PORTVERSION}-6.fc4.2
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	TIFF library, Linux/i386 binary
 
+FORBIDDEN=	Vulnerable since 2004-10-13, http://portaudit.freebsd.org/8816bf3a-7929-11df-bcce-0018f3e2eb82.html
+EXPIRATION_DATE=	2011-10-14
+
 CONFLICTS=	linux-f8-tiff-[0-9]* linux-f10-tiff-[0-9]*
 
 ONLY_FOR_ARCHS=	amd64 i386

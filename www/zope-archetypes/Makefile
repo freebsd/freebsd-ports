@@ -17,6 +17,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for the development of new Content Types in Zope/CMF/Plone
 
+DEPRECATED=	Depends on www/plone, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
 	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-portaltransforms \
 	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/validation/__init__.py:${PORTSDIR}/www/zope-validation \

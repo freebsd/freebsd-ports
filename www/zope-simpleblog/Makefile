@@ -17,6 +17,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SimpleBlog is an easy to use Plone based weblog application
 
+DEPRECATED=	Depends on www/plone, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 
 WRKSRC=${WRKDIR}

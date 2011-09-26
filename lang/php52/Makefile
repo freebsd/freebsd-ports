@@ -16,6 +16,9 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	admin@lissyara.su
 COMMENT=	PHP Scripting Language
 
+FORBIDDEN=	Vulnerable since 2011-01-13, http://portaudit.freebsd.org/3761df02-0f9c-11e0-becc-0022156e8794.html
+EXPIRATION_DATE=	2011-10-14
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes

@@ -18,6 +18,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Bind9, patched for use with a PostgreSQL-based backend
 
+FORBIDDEN=	Vulnerable since 2011-06-04, http://portaudit.freebsd.org/1e1421f0-8d6f-11e0-89b4-001ec9578670.html
+EXPIRATION_DATE=	2011-10-14
+
 CONFLICTS=	bind9-9.* bind9-sdb-ldap-* host-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like

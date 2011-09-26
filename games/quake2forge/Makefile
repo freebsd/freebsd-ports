@@ -15,6 +15,9 @@ DISTNAME=	quake2-${PORTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
+FORBIDDEN=	Vulnerable since 2005-01-21, http://portaudit.freebsd.org/2c25e762-6bb9-11d9-93db-000a95bc6fae.html
+EXPIRATION_DATE=	2011-10-14
+
 USE_AUTOTOOLS=	autoconf libtool
 USE_BZIP2=	yes
 

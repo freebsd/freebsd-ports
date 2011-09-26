@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully-featured blog product for Plone
 
-DEPRECATED=	Unmaintained upstream, isn't used by anything
-EXPIRATION_DATE=2011-12-23
+DEPRECATED=	Depends on www/plone, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 

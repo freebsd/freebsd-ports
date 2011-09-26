@@ -16,6 +16,9 @@ DISTNAME=	I18NLayer-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	I18NLayer product for Zope
 
+DEPRECATED=	Depends on www/plone, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
 		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Archetypes/__init__.py:${PORTSDIR}/www/zope-archetypes \
 		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PlacelessTranslationService/__init__.py:${PORTSDIR}/www/zope-placelesstranslationservice

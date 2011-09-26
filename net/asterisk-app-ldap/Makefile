@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	idefix@fechner.net
 COMMENT=	LDAPget application module for the Asterisk PBX 1.4
 
+DEPRECATED=	Depends on net/asterisk14, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 USE_GMAKE=	yes

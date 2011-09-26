@@ -19,7 +19,7 @@ COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 
-DEPRECATED=	vulnerable and unsupported upstream
+FORBIDDEN=	vulnerable and unsupported upstream
 EXPIRATION_DATE=	2011-10-23
 
 WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}

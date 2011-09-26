@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	14
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
+FORBIDDEN=	Vulnerable since 2011-06-25, http://portaudit.freebsd.org/40544e8c-9f7b-11e0-9bec-6c626dd55a41.html
+EXPIRATION_DATE=	2011-10-14
+
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \

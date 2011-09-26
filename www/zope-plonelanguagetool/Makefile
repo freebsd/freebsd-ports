@@ -16,6 +16,9 @@ DISTNAME=	PloneLanguageTool-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	PloneLanguageTool product for Zope
 
+DEPRECATED=	Depends on www/plone, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
 				${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/I18NLayer/__init__.py:${PORTSDIR}/www/zope-i18nlayer
 

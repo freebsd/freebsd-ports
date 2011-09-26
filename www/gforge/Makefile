@@ -14,6 +14,9 @@ MASTER_SITES=	http://gforge.org/gf/download/frsrelease/150/245/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
 
+FORBIDDEN=	Vulnerable since 2005-08-09, http://portaudit.freebsd.org/d7cd5015-08c9-11da-bc08-0001020eed82.html
+EXPIRATION_DATE=	2011-10-14
+
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 LICENSE=		GPLv2

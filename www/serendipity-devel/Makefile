@@ -14,6 +14,9 @@ DISTNAME=	s9y_${SNAPSHOT}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP based weblog software
 
+FORBIDDEN=	Vulnerable since 2008-04-25, http://portaudit.freebsd.org/9c133aa0-12bd-11dd-bab7-0016179b2dd5.html
+EXPIRATION_DATE=	2011-10-14
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
 SNAPSHOT=	201002112342
