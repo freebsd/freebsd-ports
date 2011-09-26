@@ -43,26 +43,32 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS:=	${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer
-.if ${FFTW3_FLAVOR}=="default" && ${MACHINE_CPU:Msse}
-# !!Detect SSE and not SSE2!!
+CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
+.  if !defined(WITH_DEBUG)
+CFLAGS+=	-fomit-frame-pointer
+.  endif
+.  if empty(CC:Mclang)
+CODELET_OPTIM +=	-fno-schedule-insns -fno-web -fno-loop-optimize \
+			--param inline-unit-growth=1000 \
+			--param large-function-growth=1000
+.  endif
+.  if ${ARCH} == "i386"
+CFLAGS+=	-malign-double
+CODELET_OPTIM +=	-O
+.  endif
+CONFIGURE_ENV +=	CODELET_OPTIM="${CODELET_OPTIM}"
+WITHOUT_NO_STRICT_ALIASING=	yes
+.  if !empty(MACHINE_CPU:Msse)
+.    if ${FFTW3_FLAVOR} == "default"
 CONFIGURE_ARGS+=--enable-sse2
-.else
-.if ${FFTW3_FLAVOR}=="float" && ${MACHINE_CPU:Msse}
+.    elif ${FFTW3_FLAVOR} == "float"
 CONFIGURE_ARGS+=--enable-sse
-.endif
-.endif
-.if ${MACHINE_CPU:M3dnow}
-.if ${FFTW3_FLAVOR}!="float"
-CONFIGURE_ARGS+=--enable-k7
-.endif
-CFLAGS_3DNOW=	${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
-		-fstrict-aliasing -mpreferred-stack-boundary=4 -ffast-math
-.if ${ARCH} != "amd64"
-CFLAGS_3DNOW+=	-malign-double
-.endif
-CFLAGS+=	${CFLAGS_3DNOW}
-.endif
+.    endif
+.  elif !empty(ARCH:Mpowerpc*)
+#users should set ALTIVEC_ARG to be empty if sysctl hw.altivec=0 on the target machine
+ALTIVEC_ARG?=	--enable-altivec
+CONFIGURE_ARGS+=	${ALTIVEC_ARG}
+.  endif
 .endif # end WITH_OPTIMIZED_CFLAGS
 
 .if defined(FFTW3_FLAVOR)
@@ -73,7 +79,7 @@ CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
 . if ${OSVERSION} < 800000
-ONLY_FOR_ARCHS= i386 sparc64
+ONLY_FOR_ARCHS =	i386 sparc64
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
 . endif
 FFTW3_SUFX=	l
