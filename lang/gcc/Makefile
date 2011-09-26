@@ -1,16 +1,16 @@
 # ex:ts=8
-# Ports collection makefile for:	gcc46
-# Date created:				2010-04-25
+# Ports collection makefile for:	gcc
+# Date created:				2011-09-25
 # Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.2.20110916
+PORTVERSION=	4.6.1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	gcc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -25,7 +25,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
+CONFLICTS=	gcc-4.6.[2-9]*
+
+# VERSIONSTRING relates to downloads, GCC_VERSION and SUFFIX to names
+# of executables and directories once installed.
+VERSIONSTRING=	${PORTVERSION}
+GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
@@ -75,7 +80,7 @@ CONFIGURE_ARGS+=--disable-nls \
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
-PLIST_SUB=	GCC_VER=${PORTVERSION:C/(.+)\.[0-9]+/\1/} \
+PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
