@@ -22,30 +22,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	RT36 "Install for rt-3.6.x (default rt-3.8.x)" off
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_RT36)
-
-DEPRECATED=	Depends on www/rt36, which is FORBIDDEN
-EXPIRATION_DATE=	2011-09-30
-
-RTHOME?=	rt3
-RT_PM_DIR=	${LOCALBASE}/${RTHOME}/lib
-BUILD_DEPENDS+=	${RT_PM_DIR}/RT.pm:${PORTSDIR}/www/rt36
-PLIST=		${PKGDIR}/pkg-plist.rt36
-MAN3PREFIX=	${PREFIX}/${RTHOME}/local
-
-.else
-
 RTHOME?=	share/rt38
 RT_PM_DIR=	${SITE_PERL}
 BUILD_DEPENDS+=	${RT_PM_DIR}/RT.pm:${PORTSDIR}/www/rt38
-PLIST=		${PKGDIR}/pkg-plist.rt38
 MAN3PREFIX=	${PREFIX}
-
-.endif
 
 MAN3=		RTx::Calendar.3
 PLIST_SUB+=	RTHOME=${RTHOME}
