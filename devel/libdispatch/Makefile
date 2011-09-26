@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
+BROKEN=		unsatisfiable dependency object
+
 USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
