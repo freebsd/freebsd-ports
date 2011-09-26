@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple ecommerce framework with AxKit/Catalyst support
 
+DEPRECATED=	Depends on textproc/p5-FormValidator-Simple, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 BUILD_DEPENDS=	p5-Error>=0.17016:${PORTSDIR}/lang/p5-Error \
 	p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 	p5-Data-Currency>=0.04002:${PORTSDIR}/finance/p5-Data-Currency \

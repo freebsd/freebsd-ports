@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML Widget And Validation Framework
 
+DEPRECATED=	Depends on www/p5-HTML-Widget, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-Widget>=0:${PORTSDIR}/www/p5-HTML-Widget
 RUN_DEPENDS=	${BUILD_DEPENDS}

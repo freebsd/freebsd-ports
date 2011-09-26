@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like FromForm but with DBIx::Class and HTML::Widget
 
+DEPRECATED=	Depends on www/p5-HTML-Widget, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \
 		p5-DBIx-Class>=0.05:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
