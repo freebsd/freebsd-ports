@@ -173,6 +173,7 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_attribute_and_group.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_has_multilined_label.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_height.diag
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_icon.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_id_includes_dot.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_in_group_follows_outer_node.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_shape.diag
@@ -238,6 +239,12 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/ellipse.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/ellipse.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/ellipse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/images.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/images.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/images.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/jpeg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/jpeg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/jpeg.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/myitertools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/myitertools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/utils/myitertools.pyo
