@@ -18,6 +18,9 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}.${OPERA_MINVER}-${OPERA_BUILD}.freebsd${OPERA
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
+FORBIDDEN=	Vulnerable since 2010-06-25, http://portaudit.freebsd.org/77b9f9bc-7fdf-11df-8a8d-0008743bf21a.html
+EXPIRATION_DATE=	2011-10-14
+
 OPERA_VER=	10
 OPERA_MINVER=	20
 OPERA_BUILD=	4744

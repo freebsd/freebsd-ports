@@ -16,6 +16,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
+FORBIDDEN=	Vulnerable since 2011-07-28, http://portaudit.freebsd.org/30cb4522-b94d-11e0-8182-485d60cb5385.html
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 NO_LATEST_LINK=	yes

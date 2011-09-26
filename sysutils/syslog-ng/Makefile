@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/1.6/src/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+FORBIDDEN=	Vulnerable since 2008-11-18, http://portaudit.freebsd.org/75f2382e-b586-11dd-95f9-00e0815b8da8.html
+EXPIRATION_DATE=	2011-10-14
+
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 USE_RC_SUBR=	syslog-ng.sh

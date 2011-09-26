@@ -15,6 +15,9 @@ MASTER_SITES=	http://buoh.steve-o.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A reader for online strips comics
 
+DEPRECATED=	Depends on devel/libsoup22, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup22
 
 USE_BZIP2=	yes

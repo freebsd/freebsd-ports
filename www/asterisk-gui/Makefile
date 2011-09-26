@@ -14,6 +14,9 @@ MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk-gui/releases/
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	An asterisk ajax web manager
 
+DEPRECATED=	Depends on net/asterisk14, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14 \
 		wget:${PORTSDIR}/ftp/wget
 

@@ -17,6 +17,9 @@ MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux pango binary
 
+FORBIDDEN=	Vulnerable since 2009-05-13, http://portaudit.freebsd.org/4b172278-3f46-11de-becb-001cc0377035.html
+EXPIRATION_DATE=	2011-10-14
+
 CONFLICTS=	linux-f8-pango-[0-9]* linux-f10-pango-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

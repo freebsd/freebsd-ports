@@ -38,6 +38,9 @@ PLIST_SUB+=		GENERIC=""
 USE_GNOME+=		libxml2
 LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup22
 MAN5+=			services.xml.5
+
+DEPRECATED=	Depends on devel/libsoup22, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
 .endif
 
 .if defined(WITHOUT_TALKFILTERS)

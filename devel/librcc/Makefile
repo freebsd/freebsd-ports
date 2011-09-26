@@ -18,6 +18,9 @@ MASTER_SITE_SUBDIR=	fluffy
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for language autodetection
 
+DEPRECATED=	Depends on textproc/libtranslate, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd \
 		enca.5:${PORTSDIR}/converters/enca \
 		aspell.16:${PORTSDIR}/textproc/aspell

@@ -14,6 +14,9 @@ MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 MAINTAINER=	magik@roorback.net
 COMMENT=	Ario is a GTK2 client for MPD
 
+DEPRECATED=	Depends on devel/libsoup22, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \

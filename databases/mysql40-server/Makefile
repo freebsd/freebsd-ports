@@ -16,6 +16,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+FORBIDDEN=	Vulnerable since 2006-10-29, http://portaudit.freebsd.org/a0e92718-6603-11db-ab90-000e35fd8194.html
+EXPIRATION_DATE=	2011-10-14
+
 SLAVEDIRS=	databases/mysql40-client
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes

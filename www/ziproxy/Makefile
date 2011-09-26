@@ -12,6 +12,9 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=		pankov_p@mail.ru
 COMMENT=		A forwarding, non-caching, compressing proxy server
 
+FORBIDDEN=	Vulnerable since 2010-06-15, http://portaudit.freebsd.org/25673e6e-786b-11df-a921-0245fb008c0b.html
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 			png.6:${PORTSDIR}/graphics/png \
 			jpeg.11:${PORTSDIR}/graphics/jpeg

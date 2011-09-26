@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Extremely powerful network monitoring system
 
+FORBIDDEN=	Vulnerable since 2009-06-30, http://portaudit.freebsd.org/3ebd4cb5-657f-11de-883a-00e0815b8da8.html
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 

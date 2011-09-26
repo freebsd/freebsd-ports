@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	This plugin allows to be synchronized against SyncML capable devices
 
+DEPRECATED=	Depends on comms/libsyncml, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-14
+
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 syncml.0:${PORTSDIR}/comms/libsyncml
 
 USE_BZIP2=	yes

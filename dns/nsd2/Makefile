@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	An authoritative only non-recursive name server
 
+FORBIDDEN=	Vulnerable since 2009-05-19, http://portaudit.freebsd.org/37a8603d-4494-11de-bea7-000c29a67389.html
+EXPIRATION_DATE=	2011-10-14
+
 CONFLICTS=	nsd-[3-9]*
 
 USE_RC_SUBR=	nsd.sh

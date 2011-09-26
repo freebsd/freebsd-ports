@@ -18,6 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+FORBIDDEN=	Vulnerable since at least 2008-05-30, http://portaudit.freebsd.org/04c6187d-2d8f-11dd-98c9-00163e000016.html
+EXPIRATION_DATE=	2011-10-14
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_ZIP=	yes

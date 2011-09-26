@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mayo@oyam.ca
 COMMENT=	Notify application module for the Asterisk PBX
 
+DEPRECATED=	Depends on net/asterisk14, which is FORBIDDEN
+EXPIRATION_DATE=	2011-10-14
+
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 

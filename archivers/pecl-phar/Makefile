@@ -16,6 +16,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension which allows running applications out of .phar files
 
+FORBIDDEN=	Vulnerable since 2011-01-13, http://portaudit.freebsd.org/da3d381b-0ee6-11e0-becc-0022156e8794.html
+EXPIRATION_DATE=	2011-10-14
+
 LICENSE=	PHP301
 
 USE_PHP=	hash spl pcre

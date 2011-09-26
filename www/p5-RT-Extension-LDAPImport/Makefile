@@ -29,6 +29,9 @@ OPTIONS=	RT36 "Install for rt-3.6.x (default rt-3.8.x)" off
 
 .if defined(WITH_RT36)
 
+DEPRECATED=	Depends on www/rt36, which is FORBIDDEN
+EXPIRATION_DATE=	2011-09-30
+
 RTHOME?=	rt3
 RT_PM_DIR=	${LOCALBASE}/${RTHOME}/lib
 BUILD_DEPENDS+=	${RT_PM_DIR}/RT.pm:${PORTSDIR}/www/rt36
