@@ -5,7 +5,7 @@
  EMACS	  = emacs
  ETAGS	  = etags
 -FLAGS     = -batch -q -no-site-file -l SKK-MK
-+FLAGS     = -batch -q -no-site-file --eval '(setq PREFIX "${PREFIX}")' -l SKK-MK
++FLAGS     = -batch -q -no-site-file --eval '(setq PREFIX "${PREFIX}")' --eval '(setq SKK_LISPDIR "${SKK_LISPDIR}")' -l SKK-MK
  GZIP      = gzip -9
  MD5	  = md5
  RM	  = /bin/rm -f
