@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	knock
-PORTVERSION=	0.5.20051124
-PORTREVISION=	1
+PORTVERSION=	0.5
+PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shaun
+MASTER_SITES=	http://www.zeroflux.org/proj/knock/files/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A flexible port-knocking server and client
+
+LICENSE=       GPLv2
+LICENSE_FILE=  ${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
@@ -21,9 +24,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	SERVER		"Install knockd server"		on \
 		CLIENT		"Install knock client"		on
-
-RUNDIR=		/var/run
-SUB_LIST=	RUNDIR=${RUNDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -46,14 +46,15 @@ IGNORE=		at least one component must be selected for installation
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"	\
-			  -e "s#%%RUNDIR%%#${RUNDIR}#g"	\
 			  -e "s#eth0#fxp0#g"		\
 			  ${WRKSRC}/src/knockd.c
 
 	@${REINPLACE_CMD} -e "s/#VERSION#/${PORTVERSION}/g" \
-			  -e "s#eth0#fxp0#g"		    \
-			  ${WRKSRC}/doc/knock.1.in	    \
-			  ${WRKSRC}/doc/knockd.1.in
+			  -e "s#eth0#fxp0#g"		\
+			  ${WRKSRC}/doc/knock.1.in	\
+			  ${WRKSRC}/doc/knockd.1.in	\
+			  ${WRKSRC}/src/knockd.c	\
+			  ${WRKSRC}/src/knock.c
 
 do-install:
 .if defined(WITH_SERVER)
