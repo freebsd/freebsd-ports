@@ -45,6 +45,7 @@ LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
 .endif
 .if defined(WITH_SSH)
 LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 .if defined(WITH_SVN)
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
@@ -59,6 +60,7 @@ CONFIGURE_ARGS+=	--disable-xhydra
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|CC = gcc||; \
 		s|-O2|${CFLAGS}|; s|md4\..||g' \
 		${WRKSRC}/Makefile.am
