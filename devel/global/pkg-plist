@@ -16,6 +16,9 @@ bin/htags
 lib/gtags/exuberant-ctags.a
 lib/gtags/exuberant-ctags.la
 lib/gtags/exuberant-ctags.so
+lib/gtags/user-custom.a
+lib/gtags/user-custom.la
+lib/gtags/user-custom.so
 share/gtags/BOKIN_MODEL
 share/gtags/BOKIN_MODEL_FAQ
 share/gtags/DONORS
