@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--without-gimp2
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \
