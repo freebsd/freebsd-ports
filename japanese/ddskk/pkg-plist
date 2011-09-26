@@ -88,14 +88,3 @@ share/skk/SKK.tut
 share/skk/SKK.tut.E
 share/skk/skk.xpm
 @dirrmtry share/skk
-%%EXAMPLESDIR%%/Emacs.ad
-%%EXAMPLESDIR%%/dot.emacs
-%%EXAMPLESDIR%%/dot.skk
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.ja
-%%PORTDOCS%%%%DOCSDIR%%/CODENAME.ja
-%%PORTDOCS%%%%DOCSDIR%%/Contributors
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.ja
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.ja
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
