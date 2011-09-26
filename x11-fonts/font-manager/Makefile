@@ -7,7 +7,7 @@
 
 PORTNAME=	font-manager
 PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -31,6 +31,10 @@ OPTIONS=	REPORTLAB "Enable font-sampler (PDF sample sheet)" off \
 		NLS "Enable Native Language Support" on
 
 .include <bsd.port.options.mk>
+
+.if defined(NOPORTDATA)
+IGNORE=	port data is source code, undefine NOPORTDATA
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
