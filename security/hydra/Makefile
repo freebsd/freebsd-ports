@@ -7,14 +7,10 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	6.5
-PORTREVISION=	1
+PORTVERSION=	7.0
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
-
-PATCH_SITES=	http://freeworld.thc.org/thc-hydra/
-PATCHFILES=	hydra-6.5-fix.diff
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Brute force attack utility working on multiple network services
@@ -32,6 +28,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
+MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 MAN1=		hydra.1 pw-inspector.1
