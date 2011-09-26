@@ -16,7 +16,7 @@ DISTNAME=	apache-maven-${DISTVERSION}-bin
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java project management tool, 2.0 branch
 
-RUN_DEPENDS=	bin/mvn:${PORTSDIR}/devel/maven-wrapper
+RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
