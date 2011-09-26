@@ -13,6 +13,9 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Japanese phone number validation
 
+DEPRECATED=	Depends on textproc/p5-FormValidator-Simple, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	p5-FormValidator-Simple>=0.03:${PORTSDIR}/textproc/p5-FormValidator-Simple \
 	ja-p5-Number-Phone-JP>=0.03:${PORTSDIR}/japanese/p5-Number-Phone-JP
 

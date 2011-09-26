@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a working CRUD Catalyst example with the least of effort
 
+DEPRECATED=	Depends on www/p5-HTML-Widget, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 BUILD_DEPENDS=	\
 	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \

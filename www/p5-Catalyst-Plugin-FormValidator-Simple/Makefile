@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validator for Catalyst with FormValidator::Simple
 
+DEPRECATED=	Depends on textproc/p5-FormValidator-Simple, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 		p5-FormValidator-Simple>=0.28:${PORTSDIR}/textproc/p5-FormValidator-Simple
