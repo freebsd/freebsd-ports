@@ -313,3 +313,5 @@ share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm lib/gutenprint
 @dirrm include/gutenprintui2
 @dirrm include/gutenprint
+@dirrmtry libexec/cups/driver
+@dirrmtry libexec/cups
