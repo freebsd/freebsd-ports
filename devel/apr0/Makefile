@@ -17,6 +17,9 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+DEPRECATED= will be unsupported by ASF when 2.4.0 is released, migrate to devel/apr1 now
+EXPIRATION_DATE=    2011-11-01
+
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	THREADS "Enable Threads in apr"				on  \
