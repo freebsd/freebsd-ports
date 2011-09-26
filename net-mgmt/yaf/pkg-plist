@@ -35,8 +35,8 @@ include/yaf/yafcore.h
 include/yaf/yafhooks.h
 include/yaf/yafrag.h
 include/yaf/yaftab.h
-lib/libairframe-1.3.1.so
-lib/libairframe-1.3.1.so.4
+lib/libairframe-%%PORTVERSION%%.so
+lib/libairframe-%%PORTVERSION%%.so.4
 lib/libairframe.a
 lib/libairframe.la
 lib/libairframe.so
@@ -44,8 +44,8 @@ lib/libltdl.a
 lib/libltdl.la
 lib/libltdl.so
 lib/libltdl.so.9
-lib/libyaf-1.3.1.so
-lib/libyaf-1.3.1.so.4
+lib/libyaf-%%PORTVERSION%%.so
+lib/libyaf-%%PORTVERSION%%.so.4
 lib/libyaf.a
 lib/libyaf.la
 lib/libyaf.so
