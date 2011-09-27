@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
@@ -18,10 +17,10 @@ COMMENT?=	A security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
 
-.if defined(WITH_DB)
-USE_MYSQL=	yes
-USE_PGSQL=	yes
-USE_BDB=	yes
+.if !defined(CLIENT_ONLY)
+OPTIONS=	MYSQL "Enable MySQL support" off \
+		PGSQL "Enable PostgreSQL support" off \
+		BDB "Enable with Berkeley DB" off
 .endif
 
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -30,6 +29,23 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 PORTDOCS=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE README
 
 .include <bsd.port.pre.mk>
+
+.if !defined(CLIENT_ONLY)
+.if defined(WITH_MYSQL)
+WITH_DB=	yes
+USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+WITH_DB=	yes
+USE_PGSQL=	yes
+.endif
+
+.if defined(WITH_BDB)
+WITH_DB=	yes
+USE_BDB=	yes
+.endif
+.endif
 
 .if defined(CLIENT_ONLY)
 PKGNAMESUFFIX=	-client
