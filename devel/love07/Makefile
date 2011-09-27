@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	love
-DISTVERSION=	0.5-0
-PORTREVISION=	7
+PORTVERSION=	0.7.2
 CATEGORIES=	devel games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
+		http://mirror.amdmi3.ru/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
+		modplug.1:${PORTSDIR}/audio/libmodplug \
+		mpg123.0:${PORTSDIR}/audio/mpg123 \
+		vorbisfile.6:${PORTSDIR}/audio/libvorbis \
 		physfs.1:${PORTSDIR}/devel/physfs \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_OPENAL=	yes
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
@@ -29,14 +33,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
+WRKSRC=		${WRKDIR}/love-HEAD
 
 PLIST_FILES=	bin/love
 
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
-		${WRKSRC}/src/opengl/love_opengl.cpp
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
 		${WRKSRC}/configure
 
