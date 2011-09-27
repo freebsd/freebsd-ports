@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
-BROKEN=		unsatisfiable dependency object
-
 USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
@@ -87,12 +85,12 @@ IGNORE=	is not supported on this OS version
 
 .if !defined(WITHOUT_CLANG)
 . if ${OSVERSION} < 900024
-BUILD_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
+BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
-RUN_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
+RUN_DEPENDS+=	clang:${PORTSDIR}/lang/clang-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
 CONFIGURE_ARGS+=	--with-blocks-runtime=${LOCALBASE}/lib
-CONFIGURE_ENV+=	CC="${LOCALBASE}/clang"
+CONFIGURE_ENV+=	CC="${LOCALBASE}/bin/clang" CPPFLAGS="-I${LOCALBASE}/include"
 . else
 CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/lib
 CONFIGURE_ENV+=	CC="/usr/bin/clang"
