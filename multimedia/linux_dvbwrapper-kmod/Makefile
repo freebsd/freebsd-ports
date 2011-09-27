@@ -40,10 +40,4 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile ${FILESDIR}/*.[ch] ${WRKSRC}
 
-post-patch:
-# Fix the build after fget(9) KPI was changed in r224778
-.if ${OSVERSION} > 900040
-	${REINPLACE_CMD} -e '/fget/s/&fp/CAP_IOCTL, &/' ${WRKSRC}/*.c
-.endif
-
 .include <bsd.port.post.mk>
