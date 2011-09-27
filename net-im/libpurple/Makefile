@@ -49,8 +49,8 @@ PRPL_MODULES=
 
 OPTIONS=	BONJOUR "Enable mDNS support" on \
 		DBUS "Enable DBUS bindings" on \
-		GNUTLS "GNUTLS encryption support" off \
-		NSS "Mozilla NSS encryption support" on \
+		GNUTLS "Use GNUTLS for encryption support" off \
+		NSS "Use Mozilla NSS for encryption support" on \
 		SASL "Cyrus SASL support (for jabberd)" off \
 		GSTREAMER "Use GStreamer for playing sounds" on \
 		VV "Enable video and voice support" on \
@@ -77,6 +77,19 @@ OPTIONS+=	GTKSPELL "Spell checking support" on \
 .endif
 
 CONFIGURE_ARGS+=--disable-doxygen
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_TCLTK)
+USE_TK=			yes
+CFLAGS+=		-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tcl${TCL_VER}
+CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
+			--with-tkconfig=${LOCALBASE}/lib/tk${TK_VER}
+PLIST_SUB+=		TCL:=""
+.else
+CONFIGURE_ARGS+=	--disable-tcl
+PLIST_SUB+=		TCL:="@comment not installed: "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -163,19 +176,6 @@ PRPL_MODULES:=	bonjour,${PRPL_MODULES}
 .else
 CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	BONJOUR="@comment not installed: "
-.endif
-
-.if defined(WITH_TCLTK)
-TCLTK_VER?=		8.4	# user can override it
-TCLTK_VER_NODOT=	${TCLTK_VER:S/.//}
-LIB_DEPENDS+=		tk${TCLTK_VER_NODOT}:${PORTSDIR}/x11-toolkits/tk${TCLTK_VER_NODOT}
-CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCLTK_VER} \
-			--with-tkconfig=${LOCALBASE}/lib/tk${TCLTK_VER}
-CFLAGS+=		-I${LOCALBASE}/include/tk${TCLTK_VER} -I${LOCALBASE}/include/tcl${TCLTK_VER}
-PLIST_SUB+=		TCL:=""
-.else
-CONFIGURE_ARGS+=	--disable-tcl
-PLIST_SUB+=		TCL:="@comment not installed: "
 .endif
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_GTKSPELL)
