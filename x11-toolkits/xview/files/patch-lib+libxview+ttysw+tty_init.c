@@ -1,5 +1,5 @@
 --- lib/libxview/ttysw/tty_init.c.orig	1993-06-28 22:17:19.000000000 -0700
-+++ lib/libxview/ttysw/tty_init.c	2011-09-24 22:14:48.726921496 -0700
++++ lib/libxview/ttysw/tty_init.c	2011-09-26 12:14:34.093549504 -0700
 @@ -14,6 +14,7 @@
   * Ttysw initialization, destruction and error procedures
   */
@@ -46,7 +46,30 @@
  
  struct ttysw_createoptions {
      int             becomeconsole;	/* be the console */
-@@ -518,6 +531,9 @@
+@@ -403,14 +416,22 @@
+     int             fdflags;
+ 
+ #ifdef SVR4
++#if defined(__FreeBSD_version) && __FreeBSD_version > 900007
++    if ((fdflags = fcntl(fd, F_GETFL, 0)) == -1)
++#else
+     if ((fdflags = xv_fcntl(fd, F_GETFL, 0)) == -1)
++#endif
+ #else
+     if ((fdflags = fcntl(fd, F_GETFL, 0)) == -1)
+ #endif
+ 	return (-1);
+     fdflags |= FNDELAY;
+ #ifdef SVR4
++#if defined(__FreeBSD_version) && __FreeBSD_version > 900007
++    if (fcntl(fd, F_SETFL, fdflags) == -1)
++#else
+     if (xv_fcntl(fd, F_SETFL, fdflags) == -1)
++#endif
+ #else
+     if (fcntl(fd, F_SETFL, fdflags) == -1)
+ #endif
+@@ -518,6 +539,9 @@
      (void) dup2(ttysw->ttysw_tty, 2);
      (void) close(ttysw->ttysw_tty);
  
@@ -56,7 +79,7 @@
      if (*argv == (char *) NULL || strcmp("-c", *argv) == 0) {
  	/* Process arg list */
  	int             argc;
-@@ -544,15 +560,25 @@
+@@ -544,15 +568,25 @@
   * ttcompat seems to leave things in a funny state and assumes
   * (seemingly) that login will fix things up.  Do it here.
   */
@@ -82,7 +105,7 @@
  #endif /* BSD_TTY_COMPAT */
  #endif /* SVR4 */
  
-@@ -739,7 +765,9 @@
+@@ -739,7 +773,9 @@
  
  #ifdef SB_NO_DROPS /* defined as result of including new bufmod.h */
  
@@ -92,7 +115,7 @@
        
        /* we can't push bufmod... this means we're probably 
  	 running on a generic SVR4 system - we can ignore this
-@@ -864,13 +892,16 @@
+@@ -864,13 +900,16 @@
  #endif SB_NO_DROPS
  
  
@@ -109,7 +132,7 @@
      if (ioctl(tty, I_PUSH, "ptem") == -1) {
          perror("push ptem");
  	return XV_ERROR;
-@@ -879,12 +910,15 @@
+@@ -879,12 +918,15 @@
          perror("push ldterm");
  	return XV_ERROR;
      }
@@ -125,7 +148,7 @@
   
  #endif /* SVR4 */
  
-@@ -955,7 +989,11 @@
+@@ -955,7 +997,11 @@
      struct utmpx     utmp;
  #endif
      struct passwd  *passwdent;
@@ -137,7 +160,7 @@
      int             f;
      char           *ttyn;
      extern char    *ttyname();
-@@ -1007,13 +1045,22 @@
+@@ -1007,13 +1053,22 @@
  		XV_MSG("Add tty[qrs][0-f] to /etc/ttys file.\n"));
  	return (0);
      }
