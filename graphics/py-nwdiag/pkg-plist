@@ -30,6 +30,9 @@ bin/nwdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder_errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder_errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder_errors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.pyo
