@@ -16,6 +16,8 @@ COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	ASL
 
+USE_ZIP=	yes
+
 OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     on \
 			TOMCAT6 "Enable Tomcat 6.x support"     off \
 			TOMCAT7 "Enable Tomcat 7.x support"     off
@@ -47,18 +49,23 @@ WEBAPPDIR=	${APPHOME}/webapps
 IGNORE=	you can only define one application server
 .elif ( defined(WITH_TOMCAT6) && defined(WITH_TOMCAT7) )
 IGNORE=	you can only define one application server
+.elif !defined(WEBAPPDIR)
+IGNORE=	you need at least one application server
 .endif
 
-.include <bsd.port.options.mk>
-
-USE_ZIP=	yes
-NO_BUILD=	YES
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+SHAREOWN=	www
+SHAREGRP=	www
 PLIST_SUB+=	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}/||}
+
+do-build:
+	@${MKDIR} ${WRKSRC}
+	@(cd ${WRKSRC} && ${TAR} xf ${WRKDIR}/${PORTNAME}.war)
 
 do-install:
 	${MKDIR} ${WEBAPPDIR}/${PORTNAME}
 	${UNZIP_CMD} ${WRKDIR}/${PORTNAME}.war -d ${WEBAPPDIR}/${PORTNAME}
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME} )
 
 .include <bsd.port.mk>
