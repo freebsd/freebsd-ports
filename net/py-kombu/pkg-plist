@@ -4,6 +4,12 @@
 %%PYTHON_SITELIBDIR%%/kombu/abstract.py
 %%PYTHON_SITELIBDIR%%/kombu/abstract.pyc
 %%PYTHON_SITELIBDIR%%/kombu/abstract.pyo
+%%PYTHON_SITELIBDIR%%/kombu/clocks.py
+%%PYTHON_SITELIBDIR%%/kombu/clocks.pyc
+%%PYTHON_SITELIBDIR%%/kombu/clocks.pyo
+%%PYTHON_SITELIBDIR%%/kombu/common.py
+%%PYTHON_SITELIBDIR%%/kombu/common.pyc
+%%PYTHON_SITELIBDIR%%/kombu/common.pyo
 %%PYTHON_SITELIBDIR%%/kombu/compat.py
 %%PYTHON_SITELIBDIR%%/kombu/compat.pyc
 %%PYTHON_SITELIBDIR%%/kombu/compat.pyo
@@ -22,6 +28,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/messaging.py
 %%PYTHON_SITELIBDIR%%/kombu/messaging.pyc
 %%PYTHON_SITELIBDIR%%/kombu/messaging.pyo
+%%PYTHON_SITELIBDIR%%/kombu/mixins.py
+%%PYTHON_SITELIBDIR%%/kombu/mixins.pyc
+%%PYTHON_SITELIBDIR%%/kombu/mixins.pyo
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.py
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.pyc
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.pyo
@@ -148,6 +157,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/utils/debug.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/debug.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/debug.pyo
+%%PYTHON_SITELIBDIR%%/kombu/utils/encoding.py
+%%PYTHON_SITELIBDIR%%/kombu/utils/encoding.pyc
+%%PYTHON_SITELIBDIR%%/kombu/utils/encoding.pyo
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.pyo
@@ -157,6 +169,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.pyo
+%%PYTHON_SITELIBDIR%%/kombu/utils/limits.py
+%%PYTHON_SITELIBDIR%%/kombu/utils/limits.pyc
+%%PYTHON_SITELIBDIR%%/kombu/utils/limits.pyo
 %%PYTHON_SITELIBDIR%%/kombu/utils/log.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/log.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/log.pyo
