@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/surrealtodo/Surreal%20ToDo/
 DISTNAME=	surrealtodo-v${PORTVERSION}
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Surreal ToDo is an AJAX enabled web 2.0 list manager
 
 USE_ZIP=	yes

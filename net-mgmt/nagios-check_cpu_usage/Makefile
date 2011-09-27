@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check CPU usage
 
 NO_BUILD=	yes

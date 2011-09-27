@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/simplgroup/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	SimpleGroupware_${PORTVERSION}
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Groupware is an open source enterprise application
 
 USE_PHP+=	mysql

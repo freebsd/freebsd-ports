@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	# No distfile
 DISTFILES=	# No distfile
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check HDD health from S.M.A.R.T
 
 RUN_DEPENDS=	smartmontools>=0:${PORTSDIR}/sysutils/smartmontools
