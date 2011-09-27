@@ -7,6 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.3.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
@@ -141,7 +142,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -name ._\* -delete
 
 post-patch:
-	@${RM} ${WRKSRC}/cake/console/cake.orig \
+	@${RM} -f ${WRKSRC}/cake/console/cake.orig \
 		${WRKSRC}/app/config/core.php.orig
 
 do-install:
