@@ -9,7 +9,6 @@
     SUBDIR += astrometry
     SUBDIR += boinc-astropulse
     SUBDIR += boinc-einsteinathome
-    SUBDIR += boinc-milkyway
     SUBDIR += boinc-setiathome-enhanced
     SUBDIR += celestia
     SUBDIR += celestia-gnome
