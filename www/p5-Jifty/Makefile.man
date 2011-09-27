@@ -159,7 +159,6 @@ MAN3+=	Jifty::Subs::Render.3
 MAN3+=	Jifty::Test.3
 MAN3+=	Jifty::Test::Dist.3
 MAN3+=	Jifty::Test::Email.3
-MAN3+=	Jifty::Test::WWW::Declare.3
 MAN3+=	Jifty::Test::WWW::Mechanize.3
 MAN3+=	Jifty::Test::WWW::Selenium.3
 MAN3+=	Jifty::TestServer.3
