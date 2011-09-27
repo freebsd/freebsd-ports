@@ -14,6 +14,9 @@ DISTNAME=	Myghty-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python based templating framework
 
+DEPRECATED=	Upstream suggests textproc/py-mako instead
+EXPIRATION_DATE=2011-10-27
+
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	2.5+
