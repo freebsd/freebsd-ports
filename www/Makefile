@@ -379,7 +379,6 @@
     SUBDIR += links1
     SUBDIR += linux-f10-flashplugin10
     SUBDIR += linux-firefox
-    SUBDIR += linux-firefox-devel
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-flashplugin9
     SUBDIR += linux-libgtkembedmoz
