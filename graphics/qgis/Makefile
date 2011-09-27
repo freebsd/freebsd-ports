@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
