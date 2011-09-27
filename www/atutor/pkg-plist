@@ -22,6 +22,7 @@
 %%WWWDIR%%/documentation/admin/administrators.php
 %%WWWDIR%%/documentation/admin/auto_enroll.php
 %%WWWDIR%%/documentation/admin/backups.php
+%%WWWDIR%%/documentation/admin/basiclti_external_tools.php
 %%WWWDIR%%/documentation/admin/categories.php
 %%WWWDIR%%/documentation/admin/configuration.php
 %%WWWDIR%%/documentation/admin/courses.php
@@ -83,12 +84,14 @@
 %%WWWDIR%%/documentation/developer/modules.html
 %%WWWDIR%%/documentation/developer/styles.css
 %%WWWDIR%%/documentation/developer/themes.html
+%%WWWDIR%%/documentation/general/assignment_dropbox.php
 %%WWWDIR%%/documentation/general/browse_courses.php
 %%WWWDIR%%/documentation/general/create_course.php
 %%WWWDIR%%/documentation/general/en/index.php
 %%WWWDIR%%/documentation/general/export_content.php
 %%WWWDIR%%/documentation/general/file_storage.php
 %%WWWDIR%%/documentation/general/fr/index.php
+%%WWWDIR%%/documentation/general/fs_new_file.php
 %%WWWDIR%%/documentation/general/inbox.php
 %%WWWDIR%%/documentation/general/index.php
 %%WWWDIR%%/documentation/general/inside_course.php
@@ -122,6 +125,7 @@
 %%WWWDIR%%/documentation/instructor/add_questions.php
 %%WWWDIR%%/documentation/instructor/announcements.php
 %%WWWDIR%%/documentation/instructor/arrange_content.php
+%%WWWDIR%%/documentation/instructor/assignment_dropbox.php
 %%WWWDIR%%/documentation/instructor/assignments.php
 %%WWWDIR%%/documentation/instructor/authenticated_access.php
 %%WWWDIR%%/documentation/instructor/backups.php
@@ -623,6 +627,7 @@
 %%WWWDIR%%/install/db/atutor_upgrade_1.6.4_to_2.0.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.6_to_1.6.1.sql
 %%WWWDIR%%/install/db/atutor_upgrade_2.0.1_to_2.0.2.sql
+%%WWWDIR%%/install/db/atutor_upgrade_2.0.2_to_2.0.3.sql
 %%WWWDIR%%/install/db/atutor_upgrade_2.0_to_2.0.1.sql
 %%WWWDIR%%/install/images/bad.gif
 %%WWWDIR%%/install/images/feedback.gif
@@ -678,6 +683,7 @@
 %%WWWDIR%%/jscripts/infusion/InfusionAll.js
 %%WWWDIR%%/jscripts/infusion/README.txt
 %%WWWDIR%%/jscripts/infusion/components/inlineEdit/css/InlineEdit.css
+%%WWWDIR%%/jscripts/infusion/components/inlineEdit/images/inline_edit_edit_button_16x16.png
 %%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/InlineEdit.js
 %%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/InlineEditIntegrations.js
 %%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/jquery.tinymce.js
@@ -708,25 +714,139 @@
 %%WWWDIR%%/jscripts/infusion/components/reorderer/js/LayoutReorderer.js
 %%WWWDIR%%/jscripts/infusion/components/reorderer/js/ModuleLayout.js
 %%WWWDIR%%/jscripts/infusion/components/reorderer/js/Reorderer.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/ReordererDOMUtilities.js
+%%WWWDIR%%/jscripts/infusion/components/tableOfContents/css/TableOfContents.css
 %%WWWDIR%%/jscripts/infusion/components/tableOfContents/html/TableOfContents.html
 %%WWWDIR%%/jscripts/infusion/components/tableOfContents/js/TableOfContents.js
+%%WWWDIR%%/jscripts/infusion/components/tabs/js/Tabs.js
+%%WWWDIR%%/jscripts/infusion/components/tooltip/js/Tooltip.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/FatPanelUIOptions.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/FatPanelUIOptionsFrame.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/FullNoPreviewUIOptions.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/FullPreviewUIOptions.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/FullUIOptions.css
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/css/Slider.css
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/css/UIOptions.css
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/css/UIOptionsPreview.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-bw-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-by-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-coal-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-mist-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-rust-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-slate-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-wb-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss/fss-theme-yb-uio.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/FatPanelUIOptions.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/FatPanelUIOptionsFrame.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/FullNoPreviewUIOptions-test.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/FullNoPreviewUIOptions.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/FullPreviewUIOptions.html
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptions.html
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptionsPreview.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptionsTemplate-layout.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptionsTemplate-links.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptionsTemplate-text.html
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/500x327_mint_truffle.jpg
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/border_1.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_bigA_hc_20x20.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_cancel_hc_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_layoutandnavigation_hcInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_layoutandnavigation_hc_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_layoutandnavigation_hc_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_linesNarrow_hc_16x12.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_linesWide_hc_16x21.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_linksandbuttons_hcInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_linksandbuttons_hc_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_linksandbuttons_hc_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_reset_hcInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_save_hc_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_smallA_hc_10x10.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_textanddisplay_hcInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_textanddisplay_hc_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw/uio_icon_textanddisplay_hc_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_bigA_blackYellow_20x20.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_cancel_blackYellow_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_layoutandnavigation_blackYellowInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_layoutandnavigation_blackYellow_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_layoutandnavigation_blackYellow_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_linesNarrow_blackYellow_16x12.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_linesWide_blackYellow_16x21.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_linksandbuttons_blackYellowInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_linksandbuttons_blackYellow_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_linksandbuttons_blackYellow_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_reset_blackYellowInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_save_blackYellow_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_smallA_blackYellow_10x10.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_textanddisplay_blackYellowInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_textanddisplay_blackYellow_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by/uio_icon_textanddisplay_blackYellow_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_bigA_default_20x20.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_cancel_default_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_layoutandnavigation_defaultInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_layoutandnavigation_default_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_layoutandnavigation_default_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_linesNarrow_default_16x12.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_linesWide_default_16x21.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_linksandbuttons_defaultInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_linksandbuttons_default_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_linksandbuttons_default_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_reset_defaultInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_save_default_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_sliderhandle.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_smallA_default_10x10.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_textanddisplay_defaultInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_textanddisplay_default_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default/uio_icon_textanddisplay_default_18x18.png
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/expand_collapse.png
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/h1.png
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/main_bg.png
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/mintleaf.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_bigA_hci_20x20.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_cancel_hci_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_layoutandnavigation_hciInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_layoutandnavigation_hci_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_layoutandnavigation_hci_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_linesNarrow_hci_16x12.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_linesWide_hci_16x21.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_linksandbuttons_hciInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_linksandbuttons_hci_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_linksandbuttons_hci_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_reset_hciInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_reset_hci_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_save_hci_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_smallA_hci_10x10.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_textanddisplay_hciInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_textanddisplay_hci_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb/uio_icon_textanddisplay_hci_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_bigA_yellowBlack_20x20.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_cancel_yellowBlack_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_layoutandnavigation_yellowBlackInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_layoutandnavigation_yellowBlack_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_layoutandnavigation_yellowBlack_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_linesNarrow_yellowBlack_16x12.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_linesWide_yellowBlack_16x21.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_linksandbuttons_yellowBlackInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_linksandbuttons_yellowBlack_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_linksandbuttons_yellowBlack_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_reset_yellowBlackInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_save_yellowBlack_13x13.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_smallA_yellowBlack_10x10.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_textanddisplay_yellowBlackInverted_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_textanddisplay_yellowBlack_16x16.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb/uio_icon_textanddisplay_yellowBlack_18x18.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/FatPanelUIOptions.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/FullNoPreviewUIOptions.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/FullPreviewUIOptions.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/SlidingPanel.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/Store.js
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/js/UIEnhancer.js
 %%WWWDIR%%/jscripts/infusion/components/uiOptions/js/UIOptions.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/URLUtilities.js
 %%WWWDIR%%/jscripts/infusion/components/undo/js/Undo.js
 %%WWWDIR%%/jscripts/infusion/components/uploader/ReadMe.txt
 %%WWWDIR%%/jscripts/infusion/components/uploader/css/Uploader.css
 %%WWWDIR%%/jscripts/infusion/components/uploader/html/Uploader.html
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/add-grey.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/add.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/browse.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/error.png
@@ -735,25 +855,50 @@
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-green.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-grey.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-yellow.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/grey-4d4d4d-x-button.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/grey-999999-x-button.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/remove.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/images/tick.png
 %%WWWDIR%%/jscripts/infusion/components/uploader/js/DemoUploadManager.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/ErrorPanel.js
 %%WWWDIR%%/jscripts/infusion/components/uploader/js/FileQueue.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/FileQueueView.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/Flash9UploaderSupport.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/FlashUploaderSupport.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/HTML5UploaderSupport.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/MimeTypeExtensions.js
 %%WWWDIR%%/jscripts/infusion/components/uploader/js/SWFUploadManager.js
 %%WWWDIR%%/jscripts/infusion/components/uploader/js/Scroller.js
 %%WWWDIR%%/jscripts/infusion/components/uploader/js/Uploader.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/UploaderCompatibility-Infusion1.2.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/UploaderCompatibility-Infusion1.3.js
 %%WWWDIR%%/jscripts/infusion/framework/core/js/DataBinding.js
 %%WWWDIR%%/jscripts/infusion/framework/core/js/Fluid.js
 %%WWWDIR%%/jscripts/infusion/framework/core/js/FluidDOMUtilities.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidDebugging.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidDocument.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidIoC.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidRequests.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidView.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/JavaProperties.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/ModelTransformations.js
 %%WWWDIR%%/jscripts/infusion/framework/core/js/ProgressiveEnhancement.js
 %%WWWDIR%%/jscripts/infusion/framework/core/js/jquery.keyboard-a11y.js
+%%WWWDIR%%/jscripts/infusion/framework/enhancement/js/ProgressiveEnhancement.js
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-JSR168Bridge.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-base-context.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-base-global.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-layout.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-mobile-layout.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-mobile-theme-android.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-mobile-theme-iphone.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-reset-context.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-reset-global.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-reset.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-text.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-blackYellow.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-bw.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-by.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-coal.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-debug.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-hc.css
@@ -761,6 +906,10 @@
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-mist.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-rust.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-slate.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-wb.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-yb.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-yellowBlack.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-transitions.css
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/exclamation.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/gripper.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common/exclamation.png
@@ -773,6 +922,27 @@
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/android/listmenu_loader.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/android/navbar_back_button_insetShadow.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/android/navbar_normal_button_insetShadow.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by/icon-widget-gripper.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-light-bg.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-light-cap.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-med-bg.png
@@ -799,6 +969,20 @@
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-container-bg.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-content-bg.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/widget-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci/icon-widget-gripper.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/iphone/backbutton_mask.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/iphone/button_bg_insetShadow.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/iphone/listmenu_arrow.png
@@ -863,15 +1047,71 @@
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-container-bg.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/widget-bg.png
 %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/widget-earmark.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/renderer/js/RendererUtilities.js
 %%WWWDIR%%/jscripts/infusion/framework/renderer/js/fluidParser.js
 %%WWWDIR%%/jscripts/infusion/framework/renderer/js/fluidRenderer.js
 %%WWWDIR%%/jscripts/infusion/jquery.autoHeight.js
 %%WWWDIR%%/jscripts/infusion/lib/fastXmlPull/js/fastXmlPull.js
 %%WWWDIR%%/jscripts/infusion/lib/jquery/core/js/jquery.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/ariaTabs/js/ui.ariaTabs.js
 %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe/js/jquery.bgiframe.js
 %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate/js/jquery.delegate.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/scrollTo/js/jquery.scrollTo.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/README
 %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/css/jquery.tooltip.css
 %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/js/jquery.tooltip.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/js/jquery.ui.tooltip.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/jquery.ui.theme.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/blackYellow.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images/ui-bg_flat_100_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images/ui-icons_ffff00_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/bw.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/images/ui-bg_flat_0_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/by.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/images/ui-bg_flat_0_ffff00_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/images/ui-icons_ffff00_256x240.png
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/coal.css
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_flat_0_000000_40x100.png
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_flat_75_cccccc_40x100.png
@@ -928,6 +1168,33 @@
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_ebebeb_256x240.png
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_ffffff_256x240.png
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/slate.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/images/ui-bg_flat_0_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/wb.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/images/ui-bg_flat_0_ffff00_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/images/ui-icons_ffff00_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/yb.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-bg_flat_0_ffff00_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-bg_flat_100_ffff00_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/yellowBlack.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/jquery.ui.theme.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.core.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.dialog.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.draggable.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.mouse.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.position.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.slider.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.tabs.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/jquery.ui.widget.js
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui-FLUID-readme.txt
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.accordion.js
 %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.core.js
@@ -939,6 +1206,7 @@
 %%WWWDIR%%/jscripts/infusion/lib/swfupload/flash/swfupload.swf
 %%WWWDIR%%/jscripts/infusion/lib/swfupload/js/swfupload.js
 %%WWWDIR%%/jscripts/infusion/licenses/Infusion-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/LICENSE.txt
 %%WWWDIR%%/jscripts/infusion/licenses/fastXmlPull-LICENSE.txt
 %%WWWDIR%%/jscripts/infusion/licenses/fckeditor-LICENSE.txt
 %%WWWDIR%%/jscripts/infusion/licenses/jQuery-LICENSE.txt
@@ -1367,6 +1635,7 @@
 %%WWWDIR%%/mods/_core/imscc/ims_import.php
 %%WWWDIR%%/mods/_core/imscc/include/ims_template.inc.php
 %%WWWDIR%%/mods/_core/imscp/domainProfile_0/imsccauth_v1p0.xsd
+%%WWWDIR%%/mods/_core/imscp/domainProfile_0/imsccauth_v1p0_constraintsDocument.scmt
 %%WWWDIR%%/mods/_core/imscp/domainProfile_0/imsccauth_v1p0_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/anyElement.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/anyElement_localised.xsd
@@ -1383,6 +1652,7 @@
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/extend/custom.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/imscc_m_definition.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/lomLoose.xsd
+%%WWWDIR%%/mods/_core/imscp/domainProfile_1/lomLoose_constraintsDocument.scmt
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/lomLoose_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/loose.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_1/rootElement_localised.xsd
@@ -1405,6 +1675,7 @@
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/extend/custom.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/imscc_mR_definition.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/lomLoose.xsd
+%%WWWDIR%%/mods/_core/imscp/domainProfile_2/lomLoose_constraintsDocument.scmt
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/lomLoose_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/loose.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/rootElement_localised.xsd
@@ -1413,6 +1684,7 @@
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/vocabTypes_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_2/vocabValues_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_3/imscp_extensionv1p2.xsd
+%%WWWDIR%%/mods/_core/imscp/domainProfile_3/imscp_extensionv1p2_constraintsDocument.scmt
 %%WWWDIR%%/mods/_core/imscp/domainProfile_3/imscp_extensionv1p2_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_4/ims_qtiasiv1p2.xsd
 %%WWWDIR%%/mods/_core/imscp/domainProfile_4/ims_qtiasiv1p2_def_copy.xsd
@@ -1433,7 +1705,6 @@
 %%WWWDIR%%/mods/_core/imscp/imscp_v1p2_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/imsmanifest.xml
 %%WWWDIR%%/mods/_core/imscp/include/adlcp_rootv1p2.xsd
-%%WWWDIR%%/mods/_core/imscp/include/footer.html
 %%WWWDIR%%/mods/_core/imscp/include/ims.css
 %%WWWDIR%%/mods/_core/imscp/include/ims_template.inc.php
 %%WWWDIR%%/mods/_core/imscp/include/ims_xml.xsd
@@ -1447,6 +1718,7 @@
 %%WWWDIR%%/mods/_core/imscp/oauth/OAuth.php
 %%WWWDIR%%/mods/_core/imscp/oauth/OAuthUtility.class.php
 %%WWWDIR%%/mods/_core/imscp/oauth/oauth_authenticate.php
+%%WWWDIR%%/mods/_core/imscp/xml.xsd
 %%WWWDIR%%/mods/_core/imsqti/classes/QTIImport.class.php
 %%WWWDIR%%/mods/_core/imsqti/classes/QTIParser.class.php
 %%WWWDIR%%/mods/_core/imsqti/lib/qti.inc.php
@@ -1557,6 +1829,16 @@
 %%WWWDIR%%/mods/_standard/announcements/module_backup.php
 %%WWWDIR%%/mods/_standard/announcements/module_delete.php
 %%WWWDIR%%/mods/_standard/announcements/module_news.php
+%%WWWDIR%%/mods/_standard/assignment_dropbox/README
+%%WWWDIR%%/mods/_standard/assignment_dropbox/assignment_dropbox.inc.php
+%%WWWDIR%%/mods/_standard/assignment_dropbox/assignment_dropbox.png
+%%WWWDIR%%/mods/_standard/assignment_dropbox/assignment_dropbox_sm.png
+%%WWWDIR%%/mods/_standard/assignment_dropbox/flag.png
+%%WWWDIR%%/mods/_standard/assignment_dropbox/index.php
+%%WWWDIR%%/mods/_standard/assignment_dropbox/module.css
+%%WWWDIR%%/mods/_standard/assignment_dropbox/module.php
+%%WWWDIR%%/mods/_standard/assignment_dropbox/module.xml
+%%WWWDIR%%/mods/_standard/assignment_dropbox/sublinks.php
 %%WWWDIR%%/mods/_standard/assignments/add_assignment.php
 %%WWWDIR%%/mods/_standard/assignments/delete_assignment.php
 %%WWWDIR%%/mods/_standard/assignments/edit_assignment.php
@@ -1569,6 +1851,42 @@
 %%WWWDIR%%/mods/_standard/assignments/module_delete.php
 %%WWWDIR%%/mods/_standard/assignments/module_groups.php
 %%WWWDIR%%/mods/_standard/assignments/module_news.php
+%%WWWDIR%%/mods/_standard/basiclti/ModuleCallbacks.class.php
+%%WWWDIR%%/mods/_standard/basiclti/README.txt
+%%WWWDIR%%/mods/_standard/basiclti/TODO.txt
+%%WWWDIR%%/mods/_standard/basiclti/basiclti.jpg
+%%WWWDIR%%/mods/_standard/basiclti/content_tool_action.js
+%%WWWDIR%%/mods/_standard/basiclti/images/basiclti-icon.png
+%%WWWDIR%%/mods/_standard/basiclti/include/constants.inc.php
+%%WWWDIR%%/mods/_standard/basiclti/index.php
+%%WWWDIR%%/mods/_standard/basiclti/index_admin.php
+%%WWWDIR%%/mods/_standard/basiclti/index_instructor.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/TrivialStore.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/LICENSE.txt
+%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/OAuth.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/blti.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti/blti_util.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/launch.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/loadrows.php
+%%WWWDIR%%/mods/_standard/basiclti/launch/service.php
+%%WWWDIR%%/mods/_standard/basiclti/lib/at_form_util.php
+%%WWWDIR%%/mods/_standard/basiclti/module.css
+%%WWWDIR%%/mods/_standard/basiclti/module.php
+%%WWWDIR%%/mods/_standard/basiclti/module.xml
+%%WWWDIR%%/mods/_standard/basiclti/module_backup.php
+%%WWWDIR%%/mods/_standard/basiclti/module_delete.php
+%%WWWDIR%%/mods/_standard/basiclti/module_install.php
+%%WWWDIR%%/mods/_standard/basiclti/module_uninstall.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/admin_create.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/admin_delete.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/admin_edit.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/admin_view.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/content_edit.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/forms.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/instructor_create.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/instructor_delete.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/instructor_edit.php
+%%WWWDIR%%/mods/_standard/basiclti/tool/instructor_view.php
 %%WWWDIR%%/mods/_standard/blogs/add_post.php
 %%WWWDIR%%/mods/_standard/blogs/delete_comment.php
 %%WWWDIR%%/mods/_standard/blogs/delete_post.php
@@ -1673,6 +1991,7 @@
 %%WWWDIR%%/mods/_standard/file_storage/new.php
 %%WWWDIR%%/mods/_standard/file_storage/revisions.php
 %%WWWDIR%%/mods/_standard/file_storage/sublinks.php
+%%WWWDIR%%/mods/_standard/flowplayer/.htaccess
 %%WWWDIR%%/mods/_standard/flowplayer/LICENSE.txt
 %%WWWDIR%%/mods/_standard/flowplayer/README.txt
 %%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.2.4.min.js
@@ -1814,10 +2133,8 @@
 %%WWWDIR%%/mods/_standard/photos/include/imageReorderer.js
 %%WWWDIR%%/mods/_standard/photos/include/lib.inc.php
 %%WWWDIR%%/mods/_standard/photos/include/profile_album.inc.php
-%%WWWDIR%%/mods/_standard/photos/include/upload.js
 %%WWWDIR%%/mods/_standard/photos/index.php
 %%WWWDIR%%/mods/_standard/photos/index_admin.php
-%%WWWDIR%%/mods/_standard/photos/module.css
 %%WWWDIR%%/mods/_standard/photos/module.php
 %%WWWDIR%%/mods/_standard/photos/module.xml
 %%WWWDIR%%/mods/_standard/photos/module_groups.php
@@ -2754,7 +3071,6 @@
 %%WWWDIR%%/users/alt_to_visual.inc.php
 %%WWWDIR%%/users/atutor_settings.inc.php
 %%WWWDIR%%/users/browse.php
-%%WWWDIR%%/users/contact_instructor.php
 %%WWWDIR%%/users/content_settings.inc.php
 %%WWWDIR%%/users/control_settings.inc.php
 %%WWWDIR%%/users/display_settings.inc.php
@@ -2831,6 +3147,7 @@
 @dirrm %%WWWDIR%%/jscripts/ATutor_tiny_mce_plugins/swap_toolbar
 @dirrm %%WWWDIR%%/jscripts/ATutor_tiny_mce_plugins
 @dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit/images
 @dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit/js
 @dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit
 @dirrm %%WWWDIR%%/jscripts/infusion/components/pager/css
@@ -2844,11 +3161,22 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/images
 @dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/js
 @dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents/css
 @dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents/html
 @dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents/js
 @dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tabs/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tabs
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tooltip/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tooltip
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/css/fss
 @dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/css
 @dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/html
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/bw
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/by
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/default
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/wb
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images/yb
 @dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images
 @dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/js
 @dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions
@@ -2862,15 +3190,25 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/components
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/core/js
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/core
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/enhancement/js
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/enhancement
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/css
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/android
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/blackYellow
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/bw
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/by
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hc
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/hci
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/high_contrast_bw
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/iphone
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/wb
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yb
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/yellowBlack
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images
 @dirrm %%WWWDIR%%/jscripts/infusion/framework/fss
@@ -2881,14 +3219,26 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/fastXmlPull
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/core/js
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/core
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/ariaTabs/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/ariaTabs
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe/js
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate/js
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/scrollTo/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/scrollTo
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/css
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/js
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/default-theme
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-blackYellow
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-bw
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-by
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images
@@ -2899,6 +3249,12 @@
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-wb
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yb
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-yellowBlack
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js
 @dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui
@@ -3096,7 +3452,15 @@
 @dirrm %%WWWDIR%%/mods/_core/users
 @dirrm %%WWWDIR%%/mods/_core
 @dirrm %%WWWDIR%%/mods/_standard/announcements
+@dirrm %%WWWDIR%%/mods/_standard/assignment_dropbox
 @dirrm %%WWWDIR%%/mods/_standard/assignments
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/images
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/include
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/launch/ims-blti
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/launch
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/lib
+@dirrm %%WWWDIR%%/mods/_standard/basiclti/tool
+@dirrm %%WWWDIR%%/mods/_standard/basiclti
 @dirrm %%WWWDIR%%/mods/_standard/blogs
 @dirrm %%WWWDIR%%/mods/_standard/calendar
 @dirrm %%WWWDIR%%/mods/_standard/chat/bings
