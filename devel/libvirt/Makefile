@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -14,6 +14,12 @@ MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
+
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gnutls.47:${PORTSDIR}/security/gnutls
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
 CONFIGURE_ARGS=	--without-libssh2 \
@@ -25,17 +31,16 @@ CONFIGURE_ARGS=	--without-libssh2 \
 		--without-udev \
 		--without-netcf \
 		--without-network
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 GNOME_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-PLIST_SUB=	PORTVERSION="-${PORTVERSION}"
-
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnutls.47:${PORTSDIR}/security/gnutls
+SHLIB_VER=	9
+PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
+		SHLIB_VER=${SHLIB_VER}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
