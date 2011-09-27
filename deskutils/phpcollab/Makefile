@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/phpcollab/final/${PORTVERSION}/
 DISTNAME=	phpcollab-${PORTVERSION}
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHPcollab is project management and collaboration over the internet
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/myitcrm/
 DISTNAME=	MyITCRM-${PORTVERSION}
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MYIT CRM is a CRM project designed for Computer Servicing and Repairs
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/phpscheduleit/1.%20phpScheduleIt/${PORTVERSION}
 DISTNAME=	phpScheduleIt_${PORTVERSION}
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web-based resource scheduling and management system
 
 RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5 \
