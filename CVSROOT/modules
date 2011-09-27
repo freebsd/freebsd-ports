@@ -4143,6 +4143,7 @@ gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
 gcap                            ports/multimedia/gcap
 gcb                             ports/x11/gcb
+gcc                             ports/lang/gcc
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
 gcc44                           ports/lang/gcc44
@@ -9524,6 +9525,7 @@ mosh                            ports/lang/mosh
 mosref                          ports/security/mosref
 most                            ports/sysutils/most
 motion                          ports/multimedia/motion
+motogt                          ports/games/motogt
 motor                           ports/devel/motor
 mount.app                       ports/sysutils/mount.app
 mountsmb2                       ports/sysutils/mountsmb2
