@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	3.1.14
+PORTVERSION=	7.0
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
-
-DEPRECATED=	Depends on www/seamonkey2, which is FORBIDDEN
-EXPIRATION_DATE=	2011-10-14
 
 USE_BZIP2=	yes
 
