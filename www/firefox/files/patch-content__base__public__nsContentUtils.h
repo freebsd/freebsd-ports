@@ -1,6 +1,6 @@
---- content/xslt/public/txDouble.h.orig	2009-08-16 21:46:27.000000000 +0200
-+++ content/xslt/public/txDouble.h	2009-08-16 21:49:53.000000000 +0200
-@@ -43,7 +43,7 @@
+--- content/base/public/nsContentUtils.h.orig	2011-07-07 10:44:49.000000000 +0200
++++ content/base/public/nsContentUtils.h	2011-07-07 10:46:12.000000000 +0200
+@@ -54,7 +54,7 @@
  //A trick to handle IEEE floating point exceptions on FreeBSD - E.D.
  #ifdef __FreeBSD__
  #include <ieeefp.h>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	6.0.2
+PORTVERSION=	7.0
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -18,7 +18,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	60
+USE_FIREFOX=	70
 USE_XPI=	firefox
 
 USE_SUBMAKE=	yes
