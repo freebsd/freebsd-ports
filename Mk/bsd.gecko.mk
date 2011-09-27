@@ -203,9 +203,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 60+ 31+ 60 31
+#                         Available values: yes 70+ 31+ 70 31
 #                         NOTE:
-#                         default value 60 is used in case of USE_THUNDERBIRD=yes
+#                         default value 70 is used in case of USE_THUNDERBIRD=yes
 #
 # USE_THUNDERBIRD_BUILD   Add buildtime dependency on Thunderbird.
 #                         Available values: see USE_THUNDERBIRD
@@ -368,13 +368,13 @@ USE_THUNDERBIRD:=			${USE_THUNDERBIRD_BUILD}
 _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
-_THUNDERBIRD_DEFAULT_VERSION=	60
-_THUNDERBIRD_VERSIONS=			60 31
-_THUNDERBIRD_RANGE_VERSIONS=	60+ 31+
+_THUNDERBIRD_DEFAULT_VERSION=	70
+_THUNDERBIRD_VERSIONS=			70 31
+_THUNDERBIRD_RANGE_VERSIONS=	70+ 31+
 
 # For specifying [31, 30, ..]+
 _THUNDERBIRD_31P=	31 ${_THUNDERBIRD_31P}
-_THUNDERBIRD_60P=	60
+_THUNDERBIRD_70P=	70
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
 .if ${USE_THUNDERBIRD} == "yes"
@@ -418,7 +418,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 .endif
 
 # Dependence lines for different Thunderbird versions
-60_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+70_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 31_DEPENDS=		${LOCALBASE}/lib/thunderbird3/thunderbird:${PORTSDIR}/mail/thunderbird3
 
 # Add dependencies
