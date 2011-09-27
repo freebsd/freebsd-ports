@@ -1,5 +1,5 @@
 --- makefile.orig	2011-07-31 22:49:29.000000000 -0400
-+++ makefile	2011-09-06 22:02:21.000000000 -0400
++++ makefile	2011-09-27 05:23:10.000000000 -0400
 @@ -5,13 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -31,7 +31,7 @@
 -	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
 +	$(CC) -DGTK $(CXXFLAGS) -rdynamic -Wl,--version-script lua.vers $(LDFLAGS) \
-+	-o $@ $^ -Wl,--as-needed -lscintilla -lscintilla_lexers $(CONFIGLIB)
++	-o $@ $^ -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
