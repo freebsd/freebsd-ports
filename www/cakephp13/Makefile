@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	theis@gmx.at
 COMMENT=	A framework for developing PHP web applications
 
-GITVERSION=	4-g762fcf2
+GITVERSION=	0-g96a8d97
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-3b830a4
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-8236c7e
 
 LICENSE=	MIT
 
@@ -141,7 +141,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name ._\* -delete
 
 post-patch:
-	@${RM} ${WRKSRC}/cake/console/cake.orig
+	@${RM} ${WRKSRC}/cake/console/cake.orig \
+		${WRKSRC}/app/config/core.php.orig
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \

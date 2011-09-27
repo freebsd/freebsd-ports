@@ -9,7 +9,6 @@
 @unexec if cmp -s %D/%%WWWDIR%%/app/config/core.php.default %D/%%WWWDIR%%/app/config/core.php; then rm -f %D/%%WWWDIR%%/app/config/core.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/core.php has not been removed"; fi
 %%WWWDIR%%/app/config/core.php.default
 @exec if [ ! -f %D/%%WWWDIR%%/app/config/core.php.default ]; then cp -p %B/core.php %B/core.php.default; fi
-%%WWWDIR%%/app/config/core.php.orig
 @unexec if cmp -s %D/%%WWWDIR%%/app/config/database.php.default %D/%%WWWDIR%%/app/config/database.php; then rm -f %D/%%WWWDIR%%/app/config/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/database.php has not been removed"; fi
 %%WWWDIR%%/app/config/database.php.default
 @exec if [ ! -f %D/%%WWWDIR%%/app/config/database.php ]; then cp -p %D/%F %B/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/database.php has not been overwritten"; fi
