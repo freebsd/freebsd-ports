@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	6.0.2
+DISTVERSION=	7.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -55,7 +55,7 @@ PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
-OPTIONS=	LIGHTNING       "Enable calendar extension" off
+OPTIONS=	LIGHTNING	"Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
 
