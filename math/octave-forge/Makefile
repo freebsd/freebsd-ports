@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110927
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -51,6 +52,7 @@ OPTIONS=	\
 	IRSA "Install package: irsa" On \
 	LINEAR_ALGEBRA "Install package: linear-algebra" On \
 	MAPPING "Install package: mapping" On \
+	MECHANICS "Install package: mechanics" On \
 	MISCELLANEOUS "Install package: miscellaneous" On \
 	MISSING_FUNCTIONS "Install package: missing-functions" On \
 	MSH "Install package: msh" On \
@@ -204,6 +206,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/linear-algebra.tar.gz:${PORTSDIR}/math/octave-forg
 .endif
 .if defined(WITH_MAPPING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mapping
+.endif
+.if defined(WITH_MECHANICS)
+RUN_DEPENDS+=	${TARBALLS_DIR}/mechanics.tar.gz:${PORTSDIR}/math/octave-forge-mechanics
 .endif
 .if defined(WITH_MISCELLANEOUS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
