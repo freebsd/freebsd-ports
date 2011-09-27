@@ -164,7 +164,6 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Test.pm
 %%SITE_PERL%%/Jifty/Test/Dist.pm
 %%SITE_PERL%%/Jifty/Test/Email.pm
-%%SITE_PERL%%/Jifty/Test/WWW/Declare.pm
 %%SITE_PERL%%/Jifty/Test/WWW/Mechanize.pm
 %%SITE_PERL%%/Jifty/Test/WWW/Selenium.pm
 %%SITE_PERL%%/Jifty/TestServer.pm
