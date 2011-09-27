@@ -7,7 +7,7 @@
 
 PORTNAME=	gunfudeadlands
 PORTVERSION=	1.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/GunFu%20Deadlands%20${PORTVERSION}/
 DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
@@ -15,7 +15,7 @@ DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Far West themed 2D shooter featuring bullet time
 
-RUN_DEPENDS=	love:${PORTSDIR}/devel/love
+RUN_DEPENDS=	love5:${PORTSDIR}/devel/love5
 
 USE_ZIP=	yes
 NO_BUILD=	yes
