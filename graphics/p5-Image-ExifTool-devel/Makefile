@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	8.63
+PORTVERSION=	8.65
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
