@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Umph/Prompt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph/Prompt/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph/Prompt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph
+@dirrmtry %%SITE_PERL%%/Umph
