@@ -123,12 +123,14 @@ post-patch:
 	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
+.if ${OSVERSION} > 900007
 	@test \! -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
 	    (cd ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
 	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
 	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
 	    (cd ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 && \
 	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
+.endif
 	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
 	    (${CP} -r ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 \
 		${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
