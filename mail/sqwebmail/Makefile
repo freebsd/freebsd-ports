@@ -14,12 +14,12 @@ MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
-CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
-CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
-
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+
+CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
+CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
 
 OPTIONS=	CACHEDIR	"Cache logins"					on \
 		FAM		"Build in fam support for IDLE command"		on \
@@ -58,7 +58,6 @@ CACHEOWNER?=	bin
 # End of user variables
 
 USE_PERL5=	YES
-HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_GETTEXT=	YES
 USE_GMAKE=	YES
@@ -161,16 +160,16 @@ CONFIGURE_ARGS+=	--enable-unicode
 .endif
 
 .if defined(WITH_AUTOPURGE)
-CONFIGURE_ARGS+=        --enable-autopurge=${WITH_AUTOPURGE}
+CONFIGURE_ARGS+=	--enable-autopurge=${WITH_AUTOPURGE}
 .endif
 
 .if defined(WITH_MAXPURGE)
-CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
+CONFIGURE_ARGS+=	--enable-maxpurge=${WITH_MAXPURGE}
 .endif
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=--with-db=gdbm
-LIB_DEPENDS+=   gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db
 .endif
