@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-threads
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}=="default"
+.if ${FFTW3_FLAVOR} == "default"
 MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1
 INFO=	fftw3
 .else
@@ -58,38 +58,34 @@ CODELET_OPTIM +=	-O
 .  endif
 CONFIGURE_ENV +=	CODELET_OPTIM="${CODELET_OPTIM}"
 WITHOUT_NO_STRICT_ALIASING=	yes
-.  if !empty(MACHINE_CPU:Msse)
-.    if ${FFTW3_FLAVOR} == "default"
+.  if !empty(MACHINE_CPU:Msse2) && ${FFTW3_FLAVOR} == "default"
 CONFIGURE_ARGS+=--enable-sse2
-.    elif ${FFTW3_FLAVOR} == "float"
+.  elif ${FFTW3_FLAVOR} == "float"
+.    if !empty(MACHINE_CPU:Msse)
 CONFIGURE_ARGS+=--enable-sse
-.    endif
-.  elif !empty(ARCH:Mpowerpc*)
-#users should set ALTIVEC_ARG to be empty if sysctl hw.altivec=0 on the target machine
+.    elif !empty(ARCH:Mpowerpc*)
+#users should set ALTIVEC_ARG to be empty if sysctl hw.altivec = 0 on the target machine
 ALTIVEC_ARG?=	--enable-altivec
 CONFIGURE_ARGS+=	${ALTIVEC_ARG}
+.    endif
 .  endif
 .endif # end WITH_OPTIMIZED_CFLAGS
 
-.if defined(FFTW3_FLAVOR)
-.if ${FFTW3_FLAVOR}=="float"
+.if ${FFTW3_FLAVOR} == "float"
 FFTW3_SUFX=	f
 FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
-.else
-.if ${FFTW3_FLAVOR}=="long"
-. if ${OSVERSION} < 800000
+.elif ${FFTW3_FLAVOR} == "long"
+.  if ${OSVERSION} < 800000
 ONLY_FOR_ARCHS =	i386 sparc64
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
-. endif
+.  endif
 FFTW3_SUFX=	l
 FFTW3_PKGNAMESUFFIX=	-long
 CONFIGURE_ARGS+=--enable-long-double
 .endif
-.endif
-.endif
 
-.if ${FFTW3_FLAVOR}=="default"
+.if ${FFTW3_FLAVOR} == "default"
 PLIST_SUB+=	DEF=""
 .else
 PLIST_SUB+=	DEF="@comment "
@@ -105,18 +101,18 @@ post-patch:
 		${WRKSRC}/doc/fftw3* \
 		${WRKSRC}/tools/*
 	@${FIND} ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
-.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
+.if ${FFTW3_FLAVOR} != "default"
 	@${REINPLACE_CMD} -e \
 		's|EXTRA_DIST = fftw-wisdom-to-conf.in||; \
 		s|fftw-wisdom-to-conf.in||; \
 		s|fftw-wisdom-to-conf: $(top_builddir)/config.status||; \
 		s|bin_SCRIPTS = fftw-wisdom-to-conf||' \
 			${WRKSRC}/tools/Makefile.in
-.if ${FFTW3_FLAVOR}=="long" && ${OSVERSION} < 800000
+.  if ${FFTW3_FLAVOR} == "long" && ${OSVERSION} < 800000
 	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|@LIBS@|-lml @LIBS@|'
-.endif
+.  endif
 .endif
 
 post-configure:
@@ -124,12 +120,12 @@ post-configure:
 	@echo "#define F77_FUNC_(name,NAME) name ## _" >>${WRKSRC}/config.h
 	@echo "#define F77_FUNC_EQUIV 1" >>${WRKSRC}/config.h
 
-.if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
+.if ${FFTW3_FLAVOR} != "default"
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${PREFIX}/man/man1
 .endif
 
-regression-test: build
+check regression-test test: build
 	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} smallcheck
 
 .include <bsd.port.post.mk>
