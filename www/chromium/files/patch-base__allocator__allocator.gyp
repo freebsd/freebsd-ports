@@ -1,5 +1,5 @@
---- base/allocator/allocator.gyp.orig	2011-09-16 17:00:33.000000000 +0300
-+++ base/allocator/allocator.gyp	2011-09-16 17:03:48.000000000 +0300
+--- base/allocator/allocator.gyp.orig	2011-09-14 11:01:29.000000000 +0300
++++ base/allocator/allocator.gyp	2011-09-25 22:56:07.000000000 +0300
 @@ -7,324 +7,196 @@
      'jemalloc_dir': '../../third_party/jemalloc/chromium',
      'tcmalloc_dir': '../../third_party/tcmalloc/chromium',
@@ -43,10 +43,10 @@
 +          },
 +          'link_settings': {
 +            'ldflags': [
-+              '<!@(pkg-config libtcmalloc --libs-only-l)',
++              '<!@(pkg-config libtcmalloc --libs-only-L)',
 +            ],
 +            'libraries': [
-+              '<!@(pkg-config libtcmalloc --libs-only-L)',
++              '<!@(pkg-config libtcmalloc --libs-only-l)',
              ],
 -          }],
 -        ],
