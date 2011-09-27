@@ -7,6 +7,7 @@
 %%PORTNAME%%/active-response/bin/pf.sh
 %%PORTNAME%%/active-response/bin/restart-ossec.sh
 %%PORTNAME%%/active-response/bin/route-null.sh
+%%PORTNAME%%/bin/agent-auth
 %%PORTNAME%%/bin/manage_agents
 %%PORTNAME%%/bin/ossec-agentd
 %%PORTNAME%%/bin/ossec-control

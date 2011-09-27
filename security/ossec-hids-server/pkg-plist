@@ -14,6 +14,7 @@
 %%PORTNAME%%/bin/ossec-agentd
 %%PORTNAME%%/bin/ossec-agentlessd
 %%PORTNAME%%/bin/ossec-analysisd
+%%PORTNAME%%/bin/ossec-authd
 %%PORTNAME%%/bin/ossec-control
 %%PORTNAME%%/bin/ossec-csyslogd
 %%PORTNAME%%/bin/ossec-dbd
@@ -49,10 +50,13 @@
 %%PORTNAME%%/rules/arpwatch_rules.xml
 %%PORTNAME%%/rules/asterisk_rules.xml
 %%PORTNAME%%/rules/attack_rules.xml
+%%PORTNAME%%/rules/bro-ids_rules.xml
 %%PORTNAME%%/rules/cimserver_rules.xml
 %%PORTNAME%%/rules/cisco-ios_rules.xml
+%%PORTNAME%%/rules/clam_av_rules.xml
 %%PORTNAME%%/rules/courier_rules.xml
 %%PORTNAME%%/rules/dovecot_rules.xml
+%%PORTNAME%%/rules/dropbear_rules.xml
 %%PORTNAME%%/rules/firewall_rules.xml
 %%PORTNAME%%/rules/ftpd_rules.xml
 %%PORTNAME%%/rules/hordeimp_rules.xml
@@ -70,6 +74,7 @@
 %%PORTNAME%%/rules/named_rules.xml
 %%PORTNAME%%/rules/netscreenfw_rules.xml
 %%PORTNAME%%/rules/nginx_rules.xml
+%%PORTNAME%%/rules/openbsd_rules.xml
 %%PORTNAME%%/rules/ossec_rules.xml
 %%PORTNAME%%/rules/pam_rules.xml
 %%PORTNAME%%/rules/php_rules.xml
