@@ -66,6 +66,7 @@
     SUBDIR += dislin
     SUBDIR += djbfft
     SUBDIR += drgeo
+    SUBDIR += dynare
     SUBDIR += e
     SUBDIR += edenmath
     SUBDIR += eigen
