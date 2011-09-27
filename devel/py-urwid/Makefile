@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.9.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,12 @@ PORTEXAMPLES=	bigtext.py \
 		fib.py \
 		graph.py \
 		input_test.py \
-		test_urwid.py \
-		tour.py
+		lcd_cf635.py \
+		palette_test.py \
+		pop_up.py \
+		subproc.py \
+		tour.py \
+		treesample.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
