@@ -28,6 +28,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/apache/commons-beanutils.jar
 %%DATADIR%%/lib/apache/commons-codec.jar
 %%DATADIR%%/lib/apache/commons-collections.jar
+%%DATADIR%%/lib/apache/commons-compress.jar
 %%DATADIR%%/lib/apache/commons-configuration.jar
 %%DATADIR%%/lib/apache/commons-dbcp.jar
 %%DATADIR%%/lib/apache/commons-dbutils.jar
@@ -56,6 +57,9 @@ bin/runscript.sh
 %%DATADIR%%/lib/aqua-lib.jar
 %%DATADIR%%/lib/aquafold/geo.jar
 %%DATADIR%%/lib/aspose/aspc.jar
+%%DATADIR%%/lib/aspose/jsr173-api.jar
+%%DATADIR%%/lib/aspose/stax2-api.jar
+%%DATADIR%%/lib/aspose/woodstox-core-asl.jar
 %%DATADIR%%/lib/dnsjava/dnsjava.jar
 %%DATADIR%%/lib/drivers/db2java.jar
 %%DATADIR%%/lib/drivers/db2jcc.jar
@@ -73,10 +77,13 @@ bin/runscript.sh
 %%DATADIR%%/lib/drivers/ncluster.jar
 %%DATADIR%%/lib/drivers/nlscharset12.jar
 %%DATADIR%%/lib/drivers/oracle.jar
+%%DATADIR%%/lib/drivers/paraccel-jdbc.jar
 %%DATADIR%%/lib/drivers/postgresql.jar
 %%DATADIR%%/lib/drivers/util400.jar
 %%DATADIR%%/lib/drivers/xdb.jar
 %%DATADIR%%/lib/drivers/xmlparserv2.jar
+%%DATADIR%%/lib/icepdf/icepdf-core-src.zip
+%%DATADIR%%/lib/icepdf/icepdf-core.jar
 %%DATADIR%%/lib/infragistics/infragistics.jar
 %%DATADIR%%/lib/itext/itext.jar
 %%DATADIR%%/lib/java/activation.jar
@@ -103,6 +110,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/jna/platform.jar
 %%DATADIR%%/lib/jogl/gluegen-rt.jar
 %%DATADIR%%/lib/jogl/jogl.jar
+%%DATADIR%%/lib/perforce/p4java.jar
 %%DATADIR%%/lib/quartz/quartz.jar
 %%DATADIR%%/lib/snmp4j/snmp4j.jar
 %%DATADIR%%/lib/ssh2/ssh2.jar
@@ -121,33 +129,41 @@ bin/runscript.sh
 %%DATADIR%%/lib/svnkit/svnkit.jar
 %%DATADIR%%/license/ANTLR-LICENSE.txt
 %%DATADIR%%/license/Apache-Apache-2.txt
+%%DATADIR%%/license/CCITTFAX-LICENSE.txt
 %%DATADIR%%/license/CDDL-LICENSE.txt
 %%DATADIR%%/license/DB2-JDBC-LICENSE.txt
 %%DATADIR%%/license/DNSJava-LICENSE.txt
 %%DATADIR%%/license/Dom4j_LICENSE.txt
 %%DATADIR%%/license/EPL-LICENSE.txt
+%%DATADIR%%/license/ICEPDF-LICENSE.txt
+%%DATADIR%%/license/JBIG2-LICENSE.txt
 %%DATADIR%%/license/JCraft-BSD-License.txt
 %%DATADIR%%/license/JGoodies-LICENSE.txt
 %%DATADIR%%/license/JNA-LGPL-License.txt
 %%DATADIR%%/license/JOGL-License.txt
 %%DATADIR%%/license/MySQL-JDBC-LICENSE.txt
 %%DATADIR%%/license/Oracle-JDBC-LICENSE.txt
+%%DATADIR%%/license/ParAccel-LICENSE.txt
+%%DATADIR%%/license/Perforce-LICENSE.txt
 %%DATADIR%%/license/Postgresql-JDBC-LICENSE.txt
 %%DATADIR%%/license/Quartz-Apache-2-License.txt
 %%DATADIR%%/license/SNMP4j-Apache-2-License.txt
 %%DATADIR%%/license/TableLayout-LICENSE.txt
 %%DATADIR%%/license/Tidy-MIT-style-LICENSE.txt
 %%DATADIR%%/license/Trilead-SSH-BSD-License.txt
+%%DATADIR%%/license/Woodstox_LICENSE
 %%DATADIR%%/license/iText-Mozilla-LICENSE.txt
 %%DATADIR%%/license/jConnect-LICENSE.txt
 %%DATADIR%%/license/jInterop-LGPL-License.txt
 %%DATADIR%%/license/jTDS-LICENSE.txt
+%%DATADIR%%/license/jsr173_LICENSE
 @dirrm %%DATADIR%%/license
 @dirrm %%DATADIR%%/lib/svnkit
 @dirrm %%DATADIR%%/lib/stndeditor
 @dirrm %%DATADIR%%/lib/ssh2
 @dirrm %%DATADIR%%/lib/snmp4j
 @dirrm %%DATADIR%%/lib/quartz
+@dirrm %%DATADIR%%/lib/perforce
 @dirrm %%DATADIR%%/lib/jogl
 @dirrm %%DATADIR%%/lib/jna
 @dirrm %%DATADIR%%/lib/jinterop
@@ -157,6 +173,7 @@ bin/runscript.sh
 @dirrm %%DATADIR%%/lib/java
 @dirrm %%DATADIR%%/lib/itext
 @dirrm %%DATADIR%%/lib/infragistics
+@dirrm %%DATADIR%%/lib/icepdf
 @dirrm %%DATADIR%%/lib/drivers
 @dirrm %%DATADIR%%/lib/dnsjava
 @dirrm %%DATADIR%%/lib/aspose
