@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	9.0.13
+PORTVERSION=	10.0.0
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://dd1.aquafold.com/download/v${PORTVERSION:R}.0/java/
 DISTNAME=	ads-java-novm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database query and administration tool
+
+LICENSE=	EULA
+LICENSE_NAME=	EULA
+LICENSE_FILE=	${WRKSRC}/${INSTLICENSE}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
@@ -22,11 +27,6 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 RESTRICTED=	See <http://www.aquafold.com/licensing.html>
-
-LICENSE=	EULA
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_NAME=	EULA
-LICENSE_FILE=	${WRKSRC}/${INSTLICENSE}
 
 WRKSRC=		${WRKDIR}/datastudio
 
