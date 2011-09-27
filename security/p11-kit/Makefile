@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
