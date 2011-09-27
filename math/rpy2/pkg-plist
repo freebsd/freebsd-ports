@@ -2,10 +2,19 @@
 %%PYTHON_SITELIBDIR%%/rpy2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/__init__.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/images/rpy2_logo.png
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.py
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.py
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rpy2/rinterface/rinterface.so
+%%PYTHON_SITELIBDIR%%/rpy2/rinterface/_rinterface.so
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/rpy_device.so
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/__init__.pyc
@@ -25,6 +34,9 @@
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpEnvironment.py
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpEnvironment.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpEnvironment.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpExtPtr.py
+%%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpExtPtr.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpExtPtr.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpVector.py
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpVector.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/test_SexpVector.pyo
@@ -58,12 +70,24 @@
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/constants.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/constants.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/constants.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/conversion.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/conversion.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/conversion.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/environments.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/environments.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/environments.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/functions.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/functions.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/functions.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/help.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/help.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/help.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/language.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/language.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/language.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/__init__.pyo
@@ -103,6 +127,12 @@
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testFunction.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testFunction.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testFunction.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testHelp.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testHelp.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testHelp.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testLanguage.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testLanguage.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testLanguage.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testMethods.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testMethods.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testMethods.pyo
@@ -134,6 +164,8 @@
 %%PYTHON_SITELIBDIR%%/rpy2/tests_rpy_classic.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/tests_rpy_classic.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/images
+@dirrm %%PYTHON_SITELIBDIR%%/rpy2/interactive/tests
+@dirrm %%PYTHON_SITELIBDIR%%/rpy2/interactive
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rinterface
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rlike/tests
