@@ -15,7 +15,6 @@ MASTER_SITES=	http://download.goodking.org/downloads/ \
 		http://files.etoilebsd.net/goodking/ \
                 http://distfiles.cybertron.gr/
 
-
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 
@@ -45,7 +44,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4:${PORTSDIR}/devel/libevent \
 		vpx:${PORTSDIR}/multimedia/libvpx \
 		tcmalloc.2:${PORTSDIR}/devel/google-perftools
-# TODO(gliaskos): We should add --enable-heap-checker on perftools to set linux_use_heapchecker.
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
@@ -84,7 +82,7 @@ GYP_DEFINES+=	use_cups=1 \
 		python_ver=${PYTHON_VER}
 
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
-		GCONF	"Use GConf2 for preferences"			on \
+		GCONF	"Use GConf2 for preferences"			on
 #		CLANG	"Compile Chromium with clang"			off
 
 .include <bsd.port.options.mk>

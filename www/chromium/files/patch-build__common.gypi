@@ -1,5 +1,5 @@
---- build/common.gypi.orig	2011-09-12 11:35:33.000000000 +0300
-+++ build/common.gypi	2011-09-16 19:05:37.000000000 +0300
+--- build/common.gypi.orig	2011-09-14 11:01:28.000000000 +0300
++++ build/common.gypi	2011-09-20 23:07:03.727643942 +0300
 @@ -303,6 +303,10 @@
      'enable_register_protocol_handler%': '<(enable_register_protocol_handler)',
      'enable_smooth_scrolling%': '<(enable_smooth_scrolling)',
@@ -29,7 +29,7 @@
              'sources/': [
                ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
                ['exclude', '(^|/)linux/'],
-@@ -1536,6 +1540,15 @@
+@@ -1536,6 +1540,19 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],
@@ -39,8 +39,12 @@
 +        'libraries!': [
 +          '-ldl',
 +        ],
-+        'cflags!': [
-+          '-fno-signed-zeros',
++        'conditions': [
++          ['gcc_version == 42', {
++            'cflags!': [
++              '-fno-signed-zeros',
++            ],
++          }],
 +        ],
        },
      }],
