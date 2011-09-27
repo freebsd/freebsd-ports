@@ -1,0 +1,4 @@
+bin/dynare++
+info/dynare.info
+lib/matlab/dynare_m
+@dirrm lib/matlab
