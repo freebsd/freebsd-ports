@@ -38,6 +38,9 @@ bin/terminator
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/ipc.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/ipc.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/ipc.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.pyo
@@ -53,12 +56,18 @@ bin/terminator
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugin.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugin.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugin.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/activitywatch.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/activitywatch.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/activitywatch.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/custom_commands.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/custom_commands.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/custom_commands.pyo
-%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminal_menu.py
-%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminal_menu.pyc
-%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminal_menu.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/maven.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/maven.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/maven.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminalshot.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminalshot.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/plugins/terminalshot.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/testplugin.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/testplugin.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/plugins/testplugin.pyo
@@ -115,13 +124,18 @@ share/icons/hicolor/22x22/apps/terminator.png
 share/icons/hicolor/24x24/apps/terminator.png
 share/icons/hicolor/32x32/apps/terminator.png
 share/icons/hicolor/48x48/apps/terminator.png
+%%NLS%%share/locale/af/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/da/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/de/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/el/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/terminator.mo
@@ -142,16 +156,19 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/it/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/terminator.mo
@@ -160,6 +177,7 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/si/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/terminator.mo
@@ -167,18 +185,22 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/te/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/th/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/tyv/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fy
-%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/jv
+%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tyv
+%%NLS%%@dirrmtry share/locale/tyv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/configobj
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib

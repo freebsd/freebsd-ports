@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	terminator
-PORTVERSION=	0.93
+PORTVERSION=	0.96
 PORTREVISION=	1
 CATEGORIES=	x11 python
-MASTER_SITES=	http://launchpadlibrarian.net/44348818/ \
+MASTER_SITES=	http://launchpadlibrarian.net/80778747/ \
 		http://hur.st/mirror/terminator/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Multiple GNOME terminals in one window
+
+LICENSE=	GPLv2
 
 OPTIONS=	NLS	"Native language support" 	on \
 		GCONF	"Use GNOME Terminal settings"	on
