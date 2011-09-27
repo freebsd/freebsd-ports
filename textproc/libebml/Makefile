@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
@@ -15,7 +15,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
