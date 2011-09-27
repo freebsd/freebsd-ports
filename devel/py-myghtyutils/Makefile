@@ -17,6 +17,9 @@ DISTNAME=	MyghtyUtils-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Container and Utility Functions from the Myghty Template Framework
 
+DEPRECATED=	Merged into Beaker; use www/py-beaker instead
+EXPIRATION_DATE=2011-10-27
+
 USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	easy_install
