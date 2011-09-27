@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20110912
+PORTVERSION=	20110927
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -38,6 +38,7 @@ OPTIONS=	\
 	FPL "Install package: fpl" On \
 	FUZZY_LOGIC_TOOLKIT "Install package: fuzzy-logic-toolkit" On \
 	GA "Install package: ga" On \
+	GEOMETRY "Install package: geometry" On \
 	GENERAL "Install package: general" On \
 	GENERATE_HTML "Install package: generate_html" On \
 	GNUPLOT "Install package: gnuplot" On \
@@ -164,6 +165,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/fuzzy-logic-toolkit.tar.gz:${PORTSDIR}/math/octave
 .endif
 .if defined(WITH_GA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ga.tar.gz:${PORTSDIR}/math/octave-forge-ga
+.endif
+.if defined(WITH_GEOMETRY)
+RUN_DEPENDS+=	${TARBALLS_DIR}/geometry.tar.gz:${PORTSDIR}/math/octave-forge-geometry
 .endif
 .if defined(WITH_GENERAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:${PORTSDIR}/math/octave-forge-general
