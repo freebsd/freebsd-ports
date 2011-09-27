@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zopetesting
+PORTNAME=	zope.testing
 PORTVERSION=	3.10.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	zope.testing-${PORTVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Zope Testing Framework(including the testrunner script)
@@ -21,6 +20,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	zope.testing
 
 .include <bsd.port.mk>
