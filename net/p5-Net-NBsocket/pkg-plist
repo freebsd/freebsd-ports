@@ -8,6 +8,7 @@
 %%SITE_PERL%%/auto/Net/NBsocket/bind2pp.al
 %%SITE_PERL%%/auto/Net/NBsocket/connectBlk.al
 %%SITE_PERL%%/auto/Net/NBsocket/connect_NB.al
+%%SITE_PERL%%/auto/Net/NBsocket/dyn_bind.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_Listen.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_UDP.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_listenNB.al
