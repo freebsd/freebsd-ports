@@ -973,6 +973,7 @@
     SUBDIR += loki
     SUBDIR += looks
     SUBDIR += love
+    SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
     SUBDIR += lua-alien
