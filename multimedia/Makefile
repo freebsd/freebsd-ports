@@ -195,6 +195,7 @@
     SUBDIR += miro
     SUBDIR += mjpegtools
     SUBDIR += mkclean
+    SUBDIR += mkvalidator
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mlt
