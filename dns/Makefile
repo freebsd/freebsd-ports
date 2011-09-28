@@ -132,6 +132,7 @@
     SUBDIR += py-dnspython
     SUBDIR += py-namebench
     SUBDIR += py-twistedNames
+    SUBDIR += radns
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng

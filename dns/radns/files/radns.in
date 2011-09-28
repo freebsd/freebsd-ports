@@ -1,0 +1,70 @@
+#! /bin/sh
+#
+# PROVIDE: radns
+# REQUIRE: DAEMON LOGIN
+# KEYWORD: shutdown
+# 
+# Add the following lines to /etc/rc.conf to enable radns:
+#
+# radns_enable (bool):	Set it to "YES" to enable radns
+#			Default is "NO".
+# radns_resolv (path):	Full path to radns' own resolv.conf
+# radns_pidfile (path):	Full path to pid file.
+# radns_script (path): Full path to script file or empty string if no script.
+# radns_username (user): Username the daemon will run as.
+#
+
+. /etc/rc.subr
+
+name=radns
+rcvar=`set_rcvar`
+radns_dir="%%PREFIX%%/etc/radns"
+
+load_rc_config $name
+
+# Default values
+: ${radns_enable="NO"}
+: ${radns_pidfile="/var/run/${name}.pid"}
+: ${radns_resolv="${radns_dir}/radns-resolv.conf"}
+: ${radns_script=""}
+: ${radns_username="radns"}
+
+command="%%PREFIX%%/bin/${name}"
+
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+
+start_precmd()
+{
+    [ -d ${radns_dir} ] || mkdir ${radns_dir}
+    chown ${radns_username} ${radns_dir}
+}
+
+stop_postcmd()
+{
+    rm -f ${radns_resolv}
+    rm -f ${radns_pidfile}
+}
+
+# if script:
+if [ x${radns_script} != "x" ]
+then
+    command_args="-f ${radns_resolv} -s ${radns_script} -u ${radns_username} \
+    -p ${radns_pidfile}"
+else
+    command_args="-f ${radns_resolv} -u ${radns_username} -p ${radns_pidfile}"
+fi
+
+reload_precmd()
+{
+    echo "Stopping ${name} and start gracefully."
+}
+
+reload_postcmd()
+{
+    rm -f ${radns_pidfile}
+    run_rc_command start
+}
+
+# actually execute the program
+run_rc_command "$1"
