@@ -7,18 +7,20 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
-		ftp://ftp.netlib.org/lapack/:lapack \
-		ftp://ftp.netlib.org/lapack/timing/:lapack_tmg \
-		ftp://ftp.netlib.no/netlib/lapack/:lapack \
-		ftp://ftp.netlib.no/netlib/lapack/timing/:lapack_tmg
-DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz lapack-3.1.1.tgz:lapack large.tgz:lapack_tmg timing.tgz:lapack_tmg
-EXTRACT_ONLY=   ${GOTOBLAS2_SRCFILE}
+		NL:lapack,lapack_tmg
+MASTER_SITE_SUBDIR=	lapack/:lapack lapack/timing/:lapack_tmg
+DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
+		lapack-3.1.1.tgz:lapack \
+		large.tgz:lapack_tmg timing.tgz:lapack_tmg
+EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A fast implementation of Basic Linear Algebra Subprograms
+
+LICENSE=	BSD
 
 DIST_SUBDIR=	gotoblas
 GOTOBLAS2VER=	1.13
@@ -31,106 +33,115 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
 USE_PERL5_BUILD=	yes
-USE_FORTRAN=   yes
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+USE_FORTRAN=	yes
 GOTOLIBS=	libgoto2 libgoto2p
 GOTOFILES=	${GOTOLIBS:S|$|.so|} ${GOTOLIBS:S|$|.so.1|} ${GOTOLIBS:S|$|.a|}
 PLIST_FILES=	${GOTOFILES:S|^|lib/|}
+SUB_FILES=	pkg-message
+SUB_LIST=	MAXTHREADS=${MAXTHREADS}
+
+OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
+							${DYNAMIC_ARCH_DEFAULT} \
+		INTERFACE64	"Use 8 byte integers on 64-bit architectures" off \
+		OPENMP		"Use OpenMP for threading" off
+#		QUAD_PRECISION	"Support IEEE quad precision (experimental)" off
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-MAKE_FLAGS+=	BINARY64=1
+.if defined(PACKAGE_BUILDING)
+DYNAMIC_ARCH_DEFAULT=	on
 .else
-MAKE_FLAGS+=	BINARY32=1
+DYNAMIC_ARCH_DEFAULT=	off
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not link: searches for x86-specific optimizations
+MAXTHREADS?=	8
+
+.if ${ARCH:M*64} == ""
+GOTOFLAGS+=	BINARY32=1
+.else
+GOTOFLAGS+=	BINARY64=1
+.endif
+
+.if defined(WITH_DYNAMIC_ARCH)
+GOTOFLAGS+=	DYNAMIC_ARCH=1
 .endif
 
 .if defined(WITH_INTERFACE64)
-MAKE_FLAGS+=	INTERFACE64=1
+GOTOFLAGS+=	INTERFACE64=1
 .endif
 
-.if defined(WITH_GFORTRAN)
-MAKE_FLAGS+=	F_COMPILER=GFORTRAN
-.elif defined(WITH_G77)
-MAKE_FLAGS+=	F_COMPILER=G77
-.elif defined(WITH_G95)
-MAKE_FLAGS+=	F_COMPILER=G95
-.elif defined(WITH_IFORT)
-MAKE_FLAGS+=	F_COMPILER=INTEL
-.elif defined(WITH_PGF77)
-MAKE_FLAGS+=	F_COMPILER=PGI
-.elif defined(WITH_PATHF90)
-MAKE_FLAGS+=	F_COMPILER=PATHF90
-.elif defined(WITH_XLF)
-MAKE_FLAGS+=	F_COMPILER=IBM
+.if defined(WITH_OPENMP)
+GOTOFLAGS+=	USE_OPENMP=1
 .endif
 
-pre-build::
-	@${ECHO_CMD} "****"
-	@${ECHO_CMD} "You can choose FORTRAN compiler" \
-		"by using the following knobs:"
-	@${ECHO_CMD} "   WITH_GFORTRAN=yes (gfortran; default)"
-	@${ECHO_CMD} "   WITH_G77=yes (g77)"
-	@${ECHO_CMD} "   WITH_G95=yes (g95)"
-	@${ECHO_CMD} "   WITH_IFORT=yes (ifort)"
-	@${ECHO_CMD} "   WITH_PGF77=yes (pgf77)"
-	@${ECHO_CMD} "   WITH_PATHF90=yes (pathf90)"
-	@${ECHO_CMD} "   WITH_XLF=yes (xlf)"
-	@${ECHO_CMD} "   WITH_INTERFACE64=yes (for using 64-bit integer interface)"
-	@${ECHO_CMD} "- Note that if the specified compiler does not exist" \
-		"on your system, build will fail."
-	@${ECHO_CMD} "- None is specified, gfortran will be used."
-	@${ECHO_CMD} "****"
+.if defined(WITH_QUAD_PRECISION)
+BROKEN =	WITH_QUAD_PRECISION is broken; please disable this option
+GOTOFLAGS+=	QUAD_PRECISION=1
+.endif
+
+post-extract:
+	${FIND} ${WRKSRC} -type f -name '.*' -delete
+	cd ${DISTDIR}/${DIST_SUBDIR} ; \
+	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
+	${MKDIR} ${WRKDIR}/lib
 
 post-patch:
-	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" ${WRKSRC}/Makefile.rule
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.system
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.rule
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/Makefile.tail
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/driver/level3/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/driver/others/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/exports/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/interface/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/kernel/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/kernel/Makefile.L3
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/lapack/laswp/Makefile
-	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" ${WRKSRC}/reference/Makefile
+	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" \
+		${WRKSRC}/Makefile.rule
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
+		${WRKSRC}/Makefile.rule \
+		${WRKSRC}/Makefile.tail \
+		${WRKSRC}/driver/level3/Makefile \
+		${WRKSRC}/driver/others/Makefile \
+		${WRKSRC}/exports/Makefile \
+		${WRKSRC}/interface/Makefile \
+		${WRKSRC}/kernel/Makefile \
+		${WRKSRC}/kernel/Makefile.L3 \
+		${WRKSRC}/lapack/laswp/Makefile \
+		${WRKSRC}/reference/Makefile
+	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
+	-e 's+${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
+		${WRKSRC}/Makefile.system
+.if defined(WITH_OPENMP)
+	${REINPLACE_CMD} -e "s+GOTO_NUM_THREADS+OMP_NUM_THREADS+g" \
+		${WRKSRC}/test/Makefile \
+		${WRKSRC}/ctest/Makefile
+.endif
 
 do-build:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LAPACK_SRCFILE} ${WRKSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LARGE_FILE} ${WRKSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${TIMING_FILE} ${WRKSRC}
-	${MKDIR} ${WRKDIR}/lib
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 DYNAMIC_ARCH=1
-	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=1 DYNAMIC_ARCH=1
-	${INSTALL_DATA} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
-	${INSTALL_DATA} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so
+	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=1 USE_THREAD=0 \
+	${GMAKE} ${MAKE_ARGS}
+	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
+	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so.1
+	cd ${WRKSRC} ; ${GMAKE} ${MAKE_ARGS} clean
+	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
+	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS}
+	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
+	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so.1
+.if !defined(WITH_DEBUG)
+	${LOCALBASE}/bin/strip -X ${WRKDIR}/lib/*.so.1
+.endif
 
-	cd ${WRKSRC} && ${GMAKE} clean
-	cd ${WRKSRC}/exports && ${GMAKE} clean
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 DYNAMIC_ARCH=1
-	cd ${WRKSRC}/exports && ${GMAKE} ${MAKE_FLAGS} USE_THREAD=0 DYNAMIC_ARCH=1
-	${INSTALL_DATA} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
-	${INSTALL_DATA} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so
+BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
+.if defined(WITH_OPENMP)
+BENCHMARK_THREADS_FLAG =	OMP_NUM_THREADS=${BENCHMARK_MAXTHREADS}
+.else
+BENCHMARK_THREADS_FLAG =	GOTO_NUM_THREADS=${BENCHMARK_MAXTHREADS}
+.endif
 
-benchmark:
-	cd ${WRKSRC}/ && \
-		${GMAKE} ${MAKE_FLAGS} hpl
-	cd ${WRKSRC}/benchmark && \
-		${GMAKE} ${MAKE_FLAGS} dlinpack.goto
+benchmark: build
+	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
+	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS} hpl
+	cd ${WRKSRC}/benchmark ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
+	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${GMAKE} ${MAKE_ARGS}
 
 do-install:
-	cd ${WRKDIR}/lib/ && \
-	${INSTALL_DATA} ${GOTOLIBS:S|$|.a|} ${PREFIX}/lib/ && \
-	${INSTALL_DATA} ${GOTOLIBS:S|$|.so|} ${PREFIX}/lib/
-	cd ${PREFIX}/lib/ && \
+	cd ${WRKDIR}/lib ; \
+	${INSTALL_DATA} ${GOTOLIBS:S|$|.a|} ${GOTOLIBS:S|$|.so.1|} \
+	${PREFIX}/lib/
+	cd ${PREFIX}/lib ; \
 	for i in ${GOTOLIBS:S|$|.so|}; do \
-		${LN} -sf $$i $$i.1;done
+		${LN} -sf $$i.1 $$i ; \
+	done
 
 .include <bsd.port.post.mk>
