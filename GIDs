@@ -94,6 +94,7 @@ icinga:*:183:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:
+radns:*:195:
 sympa:*:200:
 dspam:*:202:
 yate:*:204:
