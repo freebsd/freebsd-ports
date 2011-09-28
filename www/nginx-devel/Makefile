@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -69,7 +69,6 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
-		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
 		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
@@ -244,7 +243,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_
 .endif
 
 .if defined(WITH_HTTP_GUNZIP_FILTER)
-NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.3
+NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.4
 MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
 DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}.tar.gz:gunzipfilter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}
@@ -320,7 +319,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.3.4
+NGINX_REDIS_MODULE_VERSION=	0.3.5
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
@@ -388,13 +387,6 @@ MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
 DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
-.endif
-
-.if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
-NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.4
-MASTER_SITES+=	http://mdounin.ru/files/:upstream
-DISTFILES+=	ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}.tar.gz:upstream
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_XSLT_MODULE)
@@ -491,7 +483,8 @@ NGINX_POSTGRES_MODULE_VERSION=	0.8
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
 DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}.tar.gz:postgres
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config \
+		${PATCHDIR}/extra-patch-ngx_postgres_output.c
 .endif
 
 .if defined(WITH_REDIS2_MODULE)
