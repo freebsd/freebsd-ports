@@ -1,5 +1,4 @@
 bin/battray
-bin/playwav.py
 %%PYTHON_SITELIBDIR%%/battray/__init__.py
 %%PYTHON_SITELIBDIR%%/battray/__init__.pyc
 %%PYTHON_SITELIBDIR%%/battray/__init__.pyo
