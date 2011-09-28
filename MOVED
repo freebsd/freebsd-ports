@@ -2668,3 +2668,4 @@ devel/git-annex|devel/hs-git-annex|2011-09-26|It has become a Cabal transcript
 devel/zopetesting|devel/zope.testing|2011-09-27|Removed: please use devel/zope.testing instead
 astro/boinc-milkyway||2011-09-27|No more useful
 www/linux-firefox-devel|www/linux-firefox|2011-09-27|Older than www/linux-firefox
+graphics/pgperl|graphics/p5-PGPLOT|2011-09-28|Move to a better place via repocopy
