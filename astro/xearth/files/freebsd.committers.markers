@@ -59,7 +59,6 @@
  43.219564,	76.851597,	"bp"				# Almaty, Kazakhstan
  51.33,		46.00,		"novel"				# Saratov, Russia
  48.805,	44.586,		"den"				# Volgograd, Russia
- 56.021256,	38.389701,	"makc"				# Chernogolovka, Russia
  55.740978,	37.830851,	"sem"				# Moscow, Russia
  55.7,		37.8,		"az"				# Moscow, Russia
  55.795636,	37.691646,	"marck"				# Moscow, Russia
@@ -207,6 +206,7 @@
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
  48.10927,	-1.61104,	"jadawin"			# Cesson-Sevigne, France
  57.114807,	-2.179896,	"brucec"			# Aberdeen, United Kingdom
+ 53.466667,	-2.233333,	"makc"				# Manchester, United Kingdom
  52.188649,	-2.2341,	"crees"				# Worcester, West Midlands, United Kingdom
  42.8474,	-2.66976,	"carvay"			# Araba, Vitoria-Gasteiz, Spain
  51.49,		-3.16,		"ceri"				# Cardiff, UK
