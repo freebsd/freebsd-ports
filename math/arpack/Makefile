@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -70,7 +70,7 @@ SYMTESTS=	ssdrv1 ssdrv2 ssdrv3 ssdrv4 ssdrv5 ssdrv6 \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so)
+.if exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
@@ -121,7 +121,7 @@ post-patch:
 			toupper($$i), "ARPACK_", toupper($$i), "#define", $$i, \
 			"ARPACK_", toupper($$i) \
 			> "${WRKDIR}/arpack_compat_f.h" ; \
-			printf "%s%s%s\n", $$i, " arpack_", $$i \
+			printf "%s%s%s%s\n", $$i, "_ arpack_", $$i, "_" \
 			> "${WRKDIR}/rename" } } ; \
 		END { print "\n#endif" >  "${WRKDIR}/arpack_compat_c.h" ; \
 		print "\n#endif" >  "${WRKDIR}/arpack_compat_f.h" }' -
