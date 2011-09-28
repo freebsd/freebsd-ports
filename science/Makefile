@@ -10,6 +10,7 @@
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
     SUBDIR += R-cran-bayesm
+    SUBDIR += R-cran-eco
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += at
