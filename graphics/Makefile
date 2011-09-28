@@ -658,6 +658,7 @@
     SUBDIR += p5-Imlib2
     SUBDIR += p5-Layout-Manager
     SUBDIR += p5-OpenGL
+    SUBDIR += p5-PGPLOT
     SUBDIR += p5-SVG-DOM2
     SUBDIR += p5-SVG-Graph
     SUBDIR += p5-SVG-Metadata
@@ -694,7 +695,6 @@
     SUBDIR += pfscalibration
     SUBDIR += pfstmo
     SUBDIR += pfstools
-    SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photoclip
