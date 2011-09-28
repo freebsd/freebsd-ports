@@ -65,7 +65,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${WEBAPPDIR}/${PORTNAME}
-	${UNZIP_CMD} ${WRKDIR}/${PORTNAME}.war -d ${WEBAPPDIR}/${PORTNAME}
 	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME} )
 
 .include <bsd.port.mk>
