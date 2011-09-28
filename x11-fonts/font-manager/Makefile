@@ -15,7 +15,8 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	A font management application for the GNOME desktop
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.6-2.7
