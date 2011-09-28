@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
+FFLAGS+=	-ffixed-line-length-none
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
@@ -120,11 +121,16 @@ post-patch:
 			printf  "%s\t%s\t%s%s\n%s\t%s\t%s%s\n", "#define", \
 			toupper($$i), "ARPACK_", toupper($$i), "#define", $$i, \
 			"ARPACK_", toupper($$i) \
-			> "${WRKDIR}/arpack_compat_f.h" ; \
-			printf "%s%s%s%s\n", $$i, "_ arpack_", $$i, "_" \
-			> "${WRKDIR}/rename" } } ; \
+			> "${WRKDIR}/arpack_compat_f.h" } } ; \
 		END { print "\n#endif" >  "${WRKDIR}/arpack_compat_c.h" ; \
 		print "\n#endif" >  "${WRKDIR}/arpack_compat_f.h" }' -
+
+pre-build:
+	@${ECHO_CMD} "Renaming LAPACK functions ..."
+	@for f in `${FIND} ${WRKDIR} -type f -mindepth 2 -name '*.f'` ; do \
+		${MV} $${f} $${f}.unproc ; \
+		${CPP} -C -I${WRKDIR} -imacros arpack_compat_f.h -traditional-cpp \
+			$${f}.unproc $${f} ; done
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} \
@@ -140,10 +146,8 @@ do-build:
 do-install:
 	@${INSTALL_DATA} ${FILESDIR}/arpack.h ${WRKDIR}/arpack_compat_c.h \
 		${WRKDIR}/arpack_compat_f.h ${PREFIX}/include
-.for lib in /libarpack.a _SHARED/libarpack.so.1
-	@${OBJCOPY} --redefine-syms ${WRKDIR}/rename ${WRKSRC}${lib}
-	@${INSTALL_DATA} ${WRKSRC}${lib} ${PREFIX}/lib
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}_SHARED/libarpack.so.1 ${PREFIX}/lib
 	@${LN} -sf libarpack.so.1 ${PREFIX}/lib/libarpack.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
