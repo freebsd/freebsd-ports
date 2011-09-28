@@ -7,7 +7,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	http://launchpadlibrarian.net/80778747/ \
 		http://hur.st/mirror/terminator/
