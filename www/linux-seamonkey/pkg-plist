@@ -1,18 +1,10 @@
 bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
-lib/%%APP_NAME%%/.autoreg
 lib/%%APP_NAME%%/README
 lib/%%APP_NAME%%/Throbber-small.gif
 lib/%%APP_NAME%%/application.ini
 lib/%%APP_NAME%%/blocklist.xml
-lib/%%APP_NAME%%/chrome/classic.jar
-lib/%%APP_NAME%%/chrome/classic.manifest
-lib/%%APP_NAME%%/chrome/comm.jar
-lib/%%APP_NAME%%/chrome/comm.manifest
-lib/%%APP_NAME%%/chrome/en-US.jar
-lib/%%APP_NAME%%/chrome/en-US.manifest
-lib/%%APP_NAME%%/chrome/gloda.jar
-lib/%%APP_NAME%%/chrome/gloda.manifest
+lib/%%APP_NAME%%/chrome.manifest
 lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow.png
 lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow16.png
 lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow48.png
@@ -62,135 +54,28 @@ lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window16.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window48.png
-lib/%%APP_NAME%%/chrome/messenger.jar
-lib/%%APP_NAME%%/chrome/messenger.manifest
-lib/%%APP_NAME%%/chrome/newsblog.jar
-lib/%%APP_NAME%%/chrome/newsblog.manifest
-lib/%%APP_NAME%%/chrome/pippki.jar
-lib/%%APP_NAME%%/chrome/pippki.manifest
-lib/%%APP_NAME%%/chrome/reporter.jar
-lib/%%APP_NAME%%/chrome/reporter.manifest
-lib/%%APP_NAME%%/chrome/toolkit.jar
-lib/%%APP_NAME%%/chrome/toolkit.manifest
-lib/%%APP_NAME%%/components/FeedConverter.js
-lib/%%APP_NAME%%/components/FeedProcessor.js
-lib/%%APP_NAME%%/components/FeedWriter.js
-lib/%%APP_NAME%%/components/NetworkGeolocationProvider.js
-lib/%%APP_NAME%%/components/WebContentConverter.js
-lib/%%APP_NAME%%/components/browser.xpt
-lib/%%APP_NAME%%/components/glautocomp.js
-lib/%%APP_NAME%%/components/jsconsole-clhandler.js
-lib/%%APP_NAME%%/components/jsmimeemitter.js
+lib/%%APP_NAME%%/components/binary.manifest
 lib/%%APP_NAME%%/components/libdbusservice.so
-lib/%%APP_NAME%%/components/libimgicon.so
-lib/%%APP_NAME%%/components/libjar50.so
-lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libsuite.so
-lib/%%APP_NAME%%/components/libxpinstall.so
-lib/%%APP_NAME%%/components/mail.xpt
-lib/%%APP_NAME%%/components/mdn-service.js
-lib/%%APP_NAME%%/components/newsblog.js
-lib/%%APP_NAME%%/components/nsAbAutoCompleteMyDomain.js
-lib/%%APP_NAME%%/components/nsAbAutoCompleteSearch.js
-lib/%%APP_NAME%%/components/nsAbLDAPAttributeMap.js
-lib/%%APP_NAME%%/components/nsAboutAbout.js
-lib/%%APP_NAME%%/components/nsAboutCertError.js
-lib/%%APP_NAME%%/components/nsAboutFeeds.js
-lib/%%APP_NAME%%/components/nsAboutRights.js
-lib/%%APP_NAME%%/components/nsAboutSessionRestore.js
-lib/%%APP_NAME%%/components/nsAddonRepository.js
-lib/%%APP_NAME%%/components/nsBadCertHandler.js
-lib/%%APP_NAME%%/components/nsBlocklistService.js
-lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
-lib/%%APP_NAME%%/components/nsComposerCmdLineHandler.js
-lib/%%APP_NAME%%/components/nsContentDispatchChooser.js
-lib/%%APP_NAME%%/components/nsContentPrefService.js
-lib/%%APP_NAME%%/components/nsDefaultCLH.js
-lib/%%APP_NAME%%/components/nsExtensionManager.js
-lib/%%APP_NAME%%/components/nsFilePicker.js
-lib/%%APP_NAME%%/components/nsHandlerService.js
-lib/%%APP_NAME%%/components/nsHelperAppDlg.js
-lib/%%APP_NAME%%/components/nsLDAPProtocolHandler.js
-lib/%%APP_NAME%%/components/nsLivemarkService.js
-lib/%%APP_NAME%%/components/nsLoginInfo.js
-lib/%%APP_NAME%%/components/nsLoginManager.js
-lib/%%APP_NAME%%/components/nsLoginManagerPrompter.js
-lib/%%APP_NAME%%/components/nsMailNewsCommandLineHandler.js
-lib/%%APP_NAME%%/components/nsMsgTraitService.js
-lib/%%APP_NAME%%/components/nsPlacesDBFlush.js
-lib/%%APP_NAME%%/components/nsProgressDialog.js
-lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
-lib/%%APP_NAME%%/components/nsSMTPProtocolHandler.js
-lib/%%APP_NAME%%/components/nsSessionStartup.js
-lib/%%APP_NAME%%/components/nsSessionStore.js
-lib/%%APP_NAME%%/components/nsSidebar.js
-lib/%%APP_NAME%%/components/nsSuiteDownloadManagerUI.js
-lib/%%APP_NAME%%/components/nsSuiteGlue.js
-lib/%%APP_NAME%%/components/nsTaggingService.js
-lib/%%APP_NAME%%/components/nsTryToClose.js
-lib/%%APP_NAME%%/components/nsTypeAheadFind.js
-lib/%%APP_NAME%%/components/nsURLFormatter.js
-lib/%%APP_NAME%%/components/nsUpdateService.js
-lib/%%APP_NAME%%/components/nsWebHandlerApp.js
-lib/%%APP_NAME%%/components/offlineStartup.js
-lib/%%APP_NAME%%/components/pluginGlue.js
-lib/%%APP_NAME%%/components/smileApplication.js
-lib/%%APP_NAME%%/components/smime-service.js
-lib/%%APP_NAME%%/components/storage-Legacy.js
-lib/%%APP_NAME%%/components/storage-mozStorage.js
-lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
 lib/%%APP_NAME%%/crashreporter
+lib/%%APP_NAME%%/crashreporter-override.ini
 lib/%%APP_NAME%%/crashreporter.ini
-lib/%%APP_NAME%%/defaults/autoconfig/platform.js
-lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
-lib/%%APP_NAME%%/defaults/pref/composer.js
-lib/%%APP_NAME%%/defaults/pref/mailnews.js
-lib/%%APP_NAME%%/defaults/pref/mdn.js
-lib/%%APP_NAME%%/defaults/pref/reporter.js
-lib/%%APP_NAME%%/defaults/pref/smime.js
-lib/%%APP_NAME%%/defaults/pref/suite-l10n.js
-lib/%%APP_NAME%%/defaults/profile/bookmarks.html
-lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
-lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
 lib/%%APP_NAME%%/defaults/profile/localstore.rdf
-lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/panels.rdf
-lib/%%APP_NAME%%/defaults/profile/search.rdf
+lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
-lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome.manifest
-lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome/modern.jar
-lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/icon.png
-lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/install.rdf
-lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/preview.png
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome.manifest
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/chatzilla.jar
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.xpm
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window16.xpm
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/chatzilla-service.js
-lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/install.rdf
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
-lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome.manifest
-lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/venkman.jar
-lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
-lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
-lib/%%APP_NAME%%/greprefs/all.js
-lib/%%APP_NAME%%/greprefs/security-prefs.js
-lib/%%APP_NAME%%/greprefs/xpinstall.js
+lib/%%APP_NAME%%/distribution/extensions/inspector@mozilla.org.xpi
+lib/%%APP_NAME%%/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
+lib/%%APP_NAME%%/distribution/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org.xpi
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/%%APP_NAME%%/hyphenation/hyph_en_US.dic
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/isp/SpamAssassin.sfd
 lib/%%APP_NAME%%/isp/SpamPal.sfd
@@ -200,7 +85,8 @@ lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libldap60.so
 lib/%%APP_NAME%%/libldif60.so
-lib/%%APP_NAME%%/libmozjs.so
+lib/%%APP_NAME%%/libmozalloc.so
+lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
 lib/%%APP_NAME%%/libnssckbi.so
@@ -213,124 +99,23 @@ lib/%%APP_NAME%%/libprldap60.so
 lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
-lib/%%APP_NAME%%/libsqlite3.so
 lib/%%APP_NAME%%/libssl3.so
 lib/%%APP_NAME%%/libxpcom.so
-lib/%%APP_NAME%%/libxpcom_core.so
+lib/%%APP_NAME%%/libxul.so
 lib/%%APP_NAME%%/license.txt
-lib/%%APP_NAME%%/modules/DownloadLastDir.jsm
-lib/%%APP_NAME%%/modules/DownloadUtils.jsm
-lib/%%APP_NAME%%/modules/ISO8601DateUtils.jsm
-lib/%%APP_NAME%%/modules/MailUtils.js
-lib/%%APP_NAME%%/modules/Microformats.js
-lib/%%APP_NAME%%/modules/PlacesDBUtils.jsm
-lib/%%APP_NAME%%/modules/PluralForm.jsm
-lib/%%APP_NAME%%/modules/Sanitizer.jsm
-lib/%%APP_NAME%%/modules/SpatialNavigation.js
-lib/%%APP_NAME%%/modules/StringBundle.js
-lib/%%APP_NAME%%/modules/WindowDraggingUtils.jsm
-lib/%%APP_NAME%%/modules/XPCOMUtils.jsm
-lib/%%APP_NAME%%/modules/autoconfigUtils.jsm
-lib/%%APP_NAME%%/modules/debug.js
-lib/%%APP_NAME%%/modules/errUtils.js
-lib/%%APP_NAME%%/modules/folderUtils.jsm
-lib/%%APP_NAME%%/modules/gloda/collection.js
-lib/%%APP_NAME%%/modules/gloda/connotent.js
-lib/%%APP_NAME%%/modules/gloda/databind.js
-lib/%%APP_NAME%%/modules/gloda/datamodel.js
-lib/%%APP_NAME%%/modules/gloda/datastore.js
-lib/%%APP_NAME%%/modules/gloda/dbview.js
-lib/%%APP_NAME%%/modules/gloda/everybody.js
-lib/%%APP_NAME%%/modules/gloda/explattr.js
-lib/%%APP_NAME%%/modules/gloda/facet.js
-lib/%%APP_NAME%%/modules/gloda/fundattr.js
-lib/%%APP_NAME%%/modules/gloda/gloda.js
-lib/%%APP_NAME%%/modules/gloda/index_ab.js
-lib/%%APP_NAME%%/modules/gloda/index_msg.js
-lib/%%APP_NAME%%/modules/gloda/indexer.js
-lib/%%APP_NAME%%/modules/gloda/log4moz.js
-lib/%%APP_NAME%%/modules/gloda/mimeTypeCategories.js
-lib/%%APP_NAME%%/modules/gloda/mimemsg.js
-lib/%%APP_NAME%%/modules/gloda/msg_search.js
-lib/%%APP_NAME%%/modules/gloda/noun_freetag.js
-lib/%%APP_NAME%%/modules/gloda/noun_mimetype.js
-lib/%%APP_NAME%%/modules/gloda/noun_tag.js
-lib/%%APP_NAME%%/modules/gloda/public.js
-lib/%%APP_NAME%%/modules/gloda/query.js
-lib/%%APP_NAME%%/modules/gloda/suffixtree.js
-lib/%%APP_NAME%%/modules/gloda/utils.js
-lib/%%APP_NAME%%/modules/iteratorUtils.jsm
-lib/%%APP_NAME%%/modules/jsTreeSelection.js
-lib/%%APP_NAME%%/modules/templateUtils.js
-lib/%%APP_NAME%%/modules/traceHelper.js
-lib/%%APP_NAME%%/modules/utils.js
-lib/%%APP_NAME%%/modules/virtualFolderWrapper.js
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/omni.jar
 lib/%%APP_NAME%%/platform.ini
-lib/%%APP_NAME%%/plugins/libnullplugin.so
+lib/%%APP_NAME%%/plugin-container
+lib/%%APP_NAME%%/precomplete
 lib/%%APP_NAME%%/removed-files
-lib/%%APP_NAME%%/res/EditorOverride.css
-lib/%%APP_NAME%%/res/arrow.gif
-lib/%%APP_NAME%%/res/arrowd.gif
-lib/%%APP_NAME%%/res/broken-image.gif
-lib/%%APP_NAME%%/res/charsetData.properties
-lib/%%APP_NAME%%/res/charsetalias.properties
-lib/%%APP_NAME%%/res/contenteditable.css
-lib/%%APP_NAME%%/res/designmode.css
-lib/%%APP_NAME%%/res/dtd/mathml.dtd
-lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
-lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
-lib/%%APP_NAME%%/res/entityTables/html40Special.properties
-lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
-lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
-lib/%%APP_NAME%%/res/entityTables/mathml20.properties
-lib/%%APP_NAME%%/res/entityTables/transliterate.properties
-lib/%%APP_NAME%%/res/fonts/mathfont.properties
-lib/%%APP_NAME%%/res/fonts/mathfontSTIXNonUnicode.properties
-lib/%%APP_NAME%%/res/fonts/mathfontSTIXSize1.properties
-lib/%%APP_NAME%%/res/fonts/mathfontStandardSymbolsL.properties
-lib/%%APP_NAME%%/res/fonts/mathfontUnicode.properties
-lib/%%APP_NAME%%/res/forms.css
-lib/%%APP_NAME%%/res/grabber.gif
-lib/%%APP_NAME%%/res/hiddenWindow.html
-lib/%%APP_NAME%%/res/html.css
-lib/%%APP_NAME%%/res/html/folder.png
-lib/%%APP_NAME%%/res/langGroups.properties
-lib/%%APP_NAME%%/res/language.properties
-lib/%%APP_NAME%%/res/loading-image.gif
-lib/%%APP_NAME%%/res/mathml.css
-lib/%%APP_NAME%%/res/quirk.css
-lib/%%APP_NAME%%/res/svg.css
-lib/%%APP_NAME%%/res/table-add-column-after-active.gif
-lib/%%APP_NAME%%/res/table-add-column-after-hover.gif
-lib/%%APP_NAME%%/res/table-add-column-after.gif
-lib/%%APP_NAME%%/res/table-add-column-before-active.gif
-lib/%%APP_NAME%%/res/table-add-column-before-hover.gif
-lib/%%APP_NAME%%/res/table-add-column-before.gif
-lib/%%APP_NAME%%/res/table-add-row-after-active.gif
-lib/%%APP_NAME%%/res/table-add-row-after-hover.gif
-lib/%%APP_NAME%%/res/table-add-row-after.gif
-lib/%%APP_NAME%%/res/table-add-row-before-active.gif
-lib/%%APP_NAME%%/res/table-add-row-before-hover.gif
-lib/%%APP_NAME%%/res/table-add-row-before.gif
-lib/%%APP_NAME%%/res/table-remove-column-active.gif
-lib/%%APP_NAME%%/res/table-remove-column-hover.gif
-lib/%%APP_NAME%%/res/table-remove-column.gif
-lib/%%APP_NAME%%/res/table-remove-row-active.gif
-lib/%%APP_NAME%%/res/table-remove-row-hover.gif
-lib/%%APP_NAME%%/res/table-remove-row.gif
-lib/%%APP_NAME%%/res/ua.css
-lib/%%APP_NAME%%/res/unixcharset.properties
-lib/%%APP_NAME%%/res/viewsource.css
 lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/seamonkey
 lib/%%APP_NAME%%/seamonkey-bin
-lib/%%APP_NAME%%/searchplugins/dmoz.png
-lib/%%APP_NAME%%/searchplugins/dmoz.src
-lib/%%APP_NAME%%/searchplugins/google.png
-lib/%%APP_NAME%%/searchplugins/google.src
-lib/%%APP_NAME%%/searchplugins/jeeves.png
-lib/%%APP_NAME%%/searchplugins/jeeves.src
+lib/%%APP_NAME%%/searchplugins/creativecommons.xml
+lib/%%APP_NAME%%/searchplugins/google.xml
+lib/%%APP_NAME%%/searchplugins/wikipedia.xml
+lib/%%APP_NAME%%/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/update.locale
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
@@ -339,45 +124,16 @@ lib/%%APP_NAME%%/updater.ini
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
 @dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/modules/gloda
-@dirrm lib/%%APP_NAME%%/modules
 @dirrm lib/%%APP_NAME%%/isp
 @dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/greprefs
-@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components
-@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome
-@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components
-@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default
-@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons
-@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome
-@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}
-@dirrm lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome
-@dirrm lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org
+@dirrm lib/%%APP_NAME%%/hyphenation
 @dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/distribution/extensions
+@dirrm lib/%%APP_NAME%%/distribution
 @dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile
 @dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/messenger
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
