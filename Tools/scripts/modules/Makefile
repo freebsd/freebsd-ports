@@ -3,7 +3,7 @@
 #
 
 PORTSDIR=	../incoming-PRs/ports/
-INDEX=		INDEX-6
+INDEX=		INDEX-8
 MODULES_HEAD=	modules.head
 MODULES_SRC=	src/CVSROOT/modules
 MODULES_PROJ=	projects/CVSROOT/modules
