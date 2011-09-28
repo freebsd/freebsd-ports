@@ -87,6 +87,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/fake_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/fake_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/fake_branch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.pyo
@@ -153,6 +156,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/shelvewindow.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/shelvewindow.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/shelvewindow.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.pyo
@@ -207,6 +213,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_decorator.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_decorator.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_decorator.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.pyo
@@ -273,6 +282,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge_config.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge_config.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge_config.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.pyo
@@ -297,6 +309,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_verify_signatures.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_verify_signatures.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_verify_signatures.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.pyo
@@ -312,6 +327,27 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/verify_signatures.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/verify_signatures.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/verify_signatures.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelve.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelve.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelve.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelvelist.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelvelist.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/shelvelist.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/splitters.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/splitters.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/splitters.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/cs/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/da/LC_MESSAGES/qbzr.mo
@@ -388,6 +424,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib
