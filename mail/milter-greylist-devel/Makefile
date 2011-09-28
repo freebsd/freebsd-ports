@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.3.5
+PORTVERSION=	4.3.9
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
+MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
+		http://fossies.org/unix/privat/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	milter-greylist-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix (development)
+
+LICENSE=	BSD
 
 CONFLICTS=	milter-greylist-4.2.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
