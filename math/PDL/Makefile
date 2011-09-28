@@ -46,7 +46,7 @@ OPTIONS=	PGPLOT "Enable PDL::Graphics::PGPLOT" on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_PGPLOT)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl
+BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 .endif
 
 .if defined(WITH_PLPLOT)
