@@ -6,34 +6,32 @@
 #
 
 PORTNAME=	mkclean
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.6
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/matroska/${PORTNAME}
+MASTER_SITES=	SF/matroska/${PORTNAME}/
 
-MAINTAINER=	johnson.peter@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Clean and optimize Matroska and WebM files
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
-USE_ICONV=	yes
-USE_GMAKE=	yes
-
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	CCFLAGS="-I${LOCALBASE}/include" \
-		LFLAGS="-L${LOCALBASE}/lib -liconv"
 
+USE_GMAKE=	yes
+USE_ICONV=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+
+MAKE_ENV+=	"LFLAGS=${LDFLAGS}"
 MAKEFILE=	GNUmakefile
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-PLIST_FILES=	bin/mkclean bin/mkWDclean bin/mkvtree
+PLIST_FILES=	bin/mkclean
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
+	@${RM} ${WRKSRC}/libmatroska2/test/test.proj
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64
-.endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkclean ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkWDclean ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkvtree ${PREFIX}/bin
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
