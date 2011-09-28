@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110928:
+  AFFECTS: users of www/nginx-devel
+  AUTHOR: osa@FreeBSD.ORG
+
+  Note: 1.1.4 release introduces several API changes which may affect
+  third-party modules.
+
 20110925:
   AFFECTS: users of lang/python*
   AUTHOR: lwhsu@FreeBSD.org
