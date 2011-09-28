@@ -7,13 +7,14 @@
 
 PORTNAME=	tclxml
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tclxml/TclXML/${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/xslt-config:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
 
 PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
