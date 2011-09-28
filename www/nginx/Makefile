@@ -244,7 +244,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_
 .endif
 
 .if defined(WITH_HTTP_GUNZIP_FILTER)
-NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.3
+NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.4
 MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
 DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}.tar.gz:gunzipfilter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}
@@ -312,7 +312,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.3.4
+NGINX_REDIS_MODULE_VERSION=	0.3.5
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
