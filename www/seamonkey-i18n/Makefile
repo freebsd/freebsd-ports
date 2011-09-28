@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -14,11 +14,11 @@ DISTFILES=	${SEAMONKEY_I18N_:S/$/.langpack.xpi/:S/^/seamonkey-${PORTVERSION}./}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	Localized interface for SeaMonkey 2.3
+COMMENT=	Localized interface for SeaMonkey 2.4
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_SEAMONKEY=	23
+USE_SEAMONKEY=	24
 USE_XPI=	seamonkey
 
 USE_SUBMAKE=	yes
