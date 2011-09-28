@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 

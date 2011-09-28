@@ -6,7 +6,6 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/bot.py
 %%PYTHON_SITELIBDIR%%/buildslave/bot.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/bot.pyo
-%%PYTHON_SITELIBDIR%%/buildslave/commands
 %%PYTHON_SITELIBDIR%%/buildslave/commands/__init__.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/__init__.pyo
@@ -34,6 +33,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/commands/hg.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/hg.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/hg.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/commands/mtn.py
+%%PYTHON_SITELIBDIR%%/buildslave/commands/mtn.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/commands/mtn.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/commands/p4.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/p4.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/p4.pyo
@@ -61,6 +63,15 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/interfaces.py
 %%PYTHON_SITELIBDIR%%/buildslave/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/__init__.py
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/__init__.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/__init__.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug4881.py
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug4881.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug4881.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug5079.py
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug5079.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/monkeypatches/bug5079.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/pbutil.py
 %%PYTHON_SITELIBDIR%%/buildslave/pbutil.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/pbutil.pyo
@@ -94,9 +105,15 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/test/fake/slavebuilder.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/fake/slavebuilder.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/fake/slavebuilder.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/test/test_extra_coverage.py
+%%PYTHON_SITELIBDIR%%/buildslave/test/test_extra_coverage.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/test/test_extra_coverage.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/__init__.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/runprocess-scripts.py
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/runprocess-scripts.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/runprocess-scripts.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_bot.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_bot.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_bot.pyo
@@ -127,6 +144,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_hg.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_hg.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_hg.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_mtn.py
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_mtn.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_mtn.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_p4.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_p4.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_p4.pyo
@@ -157,6 +177,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/command.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/command.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/command.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/test/util/compat.py
+%%PYTHON_SITELIBDIR%%/buildslave/test/util/compat.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/test/util/compat.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/misc.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/util/misc.pyo
@@ -171,5 +194,6 @@ bin/buildslave
 @dirrm %%PYTHON_SITELIBDIR%%/buildslave/test/fake
 @dirrm %%PYTHON_SITELIBDIR%%/buildslave/test
 @dirrm %%PYTHON_SITELIBDIR%%/buildslave/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/buildslave/monkeypatches
 @dirrm %%PYTHON_SITELIBDIR%%/buildslave/commands
 @dirrm %%PYTHON_SITELIBDIR%%/buildslave

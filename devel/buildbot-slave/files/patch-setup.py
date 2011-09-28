@@ -1,6 +1,6 @@
---- setup.py.orig	2011-02-10 18:18:31.000000000 +0100
-+++ setup.py	2011-02-10 18:18:42.000000000 +0100
-@@ -102,18 +102,4 @@
+--- setup.py.orig	2011-06-20 11:58:27.000000000 +0800
++++ setup.py	2011-06-20 11:59:29.000000000 +0800
+@@ -103,18 +103,4 @@
  if sys.platform == "win32":
      setup_args['zip_safe'] = False
  
@@ -12,7 +12,7 @@
 -    pass
 -else:
 -    setup_args['install_requires'] = [
--        'twisted >= 2.0.0',
+-        'twisted >= 8.0.0',
 -    ]
 -
 -    if os.getenv('NO_INSTALL_REQS'):
