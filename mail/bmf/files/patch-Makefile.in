@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Mar 15 13:35:31 2003
-+++ Makefile.in	Sat Mar 15 13:36:05 2003
-@@ -1,7 +1,7 @@
+--- Makefile.in.orig	2002-10-21 04:27:56.000000000 +0800
++++ Makefile.in	2011-09-28 14:53:25.000000000 +0800
+@@ -1,11 +1,11 @@
  # Makefile for bmf
  
 -BINDIR=/usr/bin
@@ -10,3 +10,8 @@
  
  VERSION=0.9.4
  
+-CC=@CC@
++CC?=@CC@
+ CFLAGS=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+ SYSLIBS=@SYSLIBS@
