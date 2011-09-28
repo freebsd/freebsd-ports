@@ -1162,7 +1162,6 @@ boiling-egg                     ports/editors/boiling-egg
 boinc-astropulse                ports/astro/boinc-astropulse
 boinc-client                    ports/net/boinc-client
 boinc-einsteinathome            ports/astro/boinc-einsteinathome
-boinc-milkyway                  ports/astro/boinc-milkyway
 boinc-setiathome-enhanced       ports/astro/boinc-setiathome-enhanced
 boinc-simap                     ports/biology/boinc-simap
 boinc_curses                    ports/net/boinc_curses
@@ -2732,6 +2731,7 @@ dynamechs                       ports/graphics/dynamechs
 dynamips                        ports/emulators/dynamips
 dynamips-community              ports/emulators/dynamips-community
 dynamips-devel                  ports/emulators/dynamips-devel
+dynare                          ports/math/dynare
 dyncall                         ports/devel/dyncall
 dzen2                           ports/x11/dzen2
 dzip                            ports/archivers/dzip
@@ -4373,7 +4373,6 @@ giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
-git-annex                       ports/devel/git-annex
 git-merge-changelog             ports/devel/git-merge-changelog
 git-subversion                  ports/devel/git-subversion
 gitg                            ports/devel/gitg
@@ -5535,6 +5534,7 @@ hs-ghc-mtl                      ports/devel/hs-ghc-mtl
 hs-ghc-paths                    ports/devel/hs-ghc-paths
 hs-ghc-paths-docs               ports/devel/hs-ghc-paths-docs
 hs-gio                          ports/devel/hs-gio
+hs-git-annex                    ports/devel/hs-git-annex
 hs-glade                        ports/devel/hs-glade
 hs-glib                         ports/devel/hs-glib
 hs-glut                         ports/x11-toolkits/hs-GLUT
@@ -8546,7 +8546,6 @@ linux-f10-ungif                 ports/graphics/linux-f10-ungif
 linux-f10-upx                   ports/archivers/linux-f10-upx
 linux-f10-xorg-libs             ports/x11/linux-f10-xorg-libs
 linux-firefox                   ports/www/linux-firefox
-linux-firefox-devel             ports/www/linux-firefox-devel
 linux-flashplugin7              ports/www/linux-flashplugin7
 linux-flashplugin9              ports/www/linux-flashplugin9
 linux-fmodapi                   ports/audio/linux-fmodapi
@@ -8771,6 +8770,7 @@ lottanzb                        ports/news/lottanzb
 loudmouth                       ports/net-im/loudmouth
 lout                            ports/print/lout
 love                            ports/devel/love
+love5                           ports/devel/love5
 lp_solve                        ports/math/lp_solve
 lpac                            ports/audio/lpac
 lpairs                          ports/games/lpairs
@@ -9186,6 +9186,7 @@ midori                          ports/www/midori
 mifluz                          ports/textproc/mifluz
 migrate                         ports/biology/migrate
 mikmod                          ports/audio/mikmod
+mikutter                        ports/net-im/mikutter
 milkytracker                    ports/audio/milkytracker
 milter-bogom                    ports/mail/milter-bogom
 milter-callback                 ports/mail/milter-callback
@@ -10340,6 +10341,7 @@ octave-forge-fuzzy-logic-toolkit  ports/math/octave-forge-fuzzy-logic-toolkit
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
 octave-forge-generate_html      ports/math/octave-forge-generate_html
+octave-forge-geometry           ports/math/octave-forge-geometry
 octave-forge-gnuplot            ports/math/octave-forge-gnuplot
 octave-forge-gsl                ports/math/octave-forge-gsl
 octave-forge-ident              ports/math/octave-forge-ident
@@ -10350,6 +10352,7 @@ octave-forge-io                 ports/math/octave-forge-io
 octave-forge-irsa               ports/math/octave-forge-irsa
 octave-forge-linear-algebra     ports/math/octave-forge-linear-algebra
 octave-forge-mapping            ports/math/octave-forge-mapping
+octave-forge-mechanics          ports/math/octave-forge-mechanics
 octave-forge-miscellaneous      ports/math/octave-forge-miscellaneous
 octave-forge-missing-functions  ports/math/octave-forge-missing-functions
 octave-forge-msh                ports/math/octave-forge-msh
@@ -14678,6 +14681,7 @@ p5-URI-imap                     ports/mail/p5-URI-imap
 p5-URI-imaps                    ports/mail/p5-URI-imaps
 p5-UUID                         ports/devel/p5-UUID
 p5-UUID-Tiny                    ports/devel/p5-UUID-Tiny
+p5-Umph-Prompt                  ports/multimedia/p5-Umph-Prompt
 p5-Unicode-CheckUTF8            ports/textproc/p5-Unicode-CheckUTF8
 p5-Unicode-EastAsianWidth       ports/textproc/p5-Unicode-EastAsianWidth
 p5-Unicode-Escape               ports/textproc/p5-Unicode-Escape
@@ -19058,6 +19062,7 @@ p5-ui-dialog                    ports/devel/p5-UI-Dialog
 p5-uml-class-simple             ports/textproc/p5-UML-Class-Simple
 p5-uml-sequence                 ports/textproc/p5-UML-Sequence
 p5-uml-state                    ports/textproc/p5-UML-State
+p5-umph-prompt                  ports/multimedia/p5-Umph-Prompt
 p5-uni-perl                     ports/devel/p5-uni-perl
 p5-unicode-checkutf8            ports/textproc/p5-Unicode-CheckUTF8
 p5-unicode-eastasianwidth       ports/textproc/p5-Unicode-EastAsianWidth
@@ -22480,10 +22485,10 @@ py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
+py-zope.testing                 ports/devel/py-zope.testing
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeevent                    ports/devel/py-zopeevent
 py-zopeinterface                ports/devel/py-zopeInterface
-py-zopetesting                  ports/devel/py-zopetesting
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
