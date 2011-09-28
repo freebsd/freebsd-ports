@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-IO-Socket-SSL>=1.26:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
-BUILD_DEPENDS:=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
+RUN_DEPENDS=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-Convert-ASN1>=0.07:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		p5-IO-Socket-SSL>=1.26:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI \
