@@ -1,19 +1,19 @@
---- Makefile.orig	2009-11-07 15:57:54.000000000 +0800
-+++ Makefile	2009-11-18 20:32:56.000000000 +0800
-@@ -98,11 +98,11 @@
- #NUM_FILES=2
+--- Makefile.orig	2011-09-16 02:22:31.000000000 +0800
++++ Makefile	2011-09-28 11:51:26.000000000 +0800
+@@ -109,11 +109,11 @@
+ #NUM_FILES=3
  
  # FreeBSD
 -#PREFIX_PYTHON=/usr
 -#ANT=ant
 -#PYTHON=$(PREFIX_PYTHON)/bin/python
 -#JCC=$(PYTHON) -m jcc
--#NUM_FILES=2
+-#NUM_FILES=3
 +PREFIX_PYTHON=$(PREFIX)
 +ANT=$(PREFIX)/bin/ant
 +PYTHON=$(PREFIX_PYTHON)/bin/python
 +JCC=$(PYTHON) -m jcc
-+NUM_FILES=2
++NUM_FILES=3
  
  # Solaris   (Solaris 11, Python 2.4 32-bit, Sun Studio 12, Java 1.6)
  #PREFIX_PYTHON=/usr
