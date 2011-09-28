@@ -22,15 +22,13 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc \
 		${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
-BROKEN=		does not build
-
 USE_PYTHON=	2.5+
 USE_GCC=	4.2+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_GMAKE=	yes
 PATCHSET=	-1
-LUCENE_VER=	2.4.1
+LUCENE_VER=	2.9.4
 EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
 #EGG_INFO=	lucene-${LUCENE_VER}-${PYTHON_VERSION:S/thon//}.egg-info
 
