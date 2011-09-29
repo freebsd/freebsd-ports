@@ -14,15 +14,17 @@ PKGNAMEPREFIX=	nagios-
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor your mail environment
 
-RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
-		p5-Mail-IMAPClient>=0:${PORTSDIR}/mail/p5-Mail-IMAPClient
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
+		p5-Mail-IMAPClient>=0:${PORTSDIR}/mail/p5-Mail-IMAPClient
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 DOC_FILES=	check_email_delivery.html check_email_delivery.pod check_imap_receive.html check_imap_receive.pod check_smtp_send.html check_smtp_send.pod
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.pre.mk>
 
