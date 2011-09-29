@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Atom
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Perl5 modules for Atom feed and API implementation
 
 RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-LWP-Authen-Wsse>=0:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
