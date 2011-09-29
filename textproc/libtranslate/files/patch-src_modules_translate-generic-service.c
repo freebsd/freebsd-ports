@@ -1,4 +1,8 @@
---- src/modules/translate-generic-service.c.orig	Mon Apr 11 23:08:47 2005
+Copied from
+
+	http://nongnu.askapache.com/libtranslate/libtranslate-0.99-charsetparse.diff
+
+--- src/modules/translate-generic-service.c	Mon Apr 11 23:08:47 2005
 +++ src/modules/translate-generic-service.c	Mon Apr 11 23:15:54 2005
 @@ -484,7 +484,7 @@
  
