@@ -3169,7 +3169,6 @@
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.testing
-    SUBDIR += py-zopeInterface
     SUBDIR += py-zopeevent
     SUBDIR += pybaz
     SUBDIR += pychecker

@@ -2669,3 +2669,4 @@ devel/zopetesting|devel/zope.testing|2011-09-27|Removed: please use devel/zope.t
 astro/boinc-milkyway||2011-09-27|No more useful
 www/linux-firefox-devel|www/linux-firefox|2011-09-27|Older than www/linux-firefox
 graphics/pgperl|graphics/p5-PGPLOT|2011-09-28|Move to a better place via repocopy
+devel/py-zopeInterface||2011-09-29|Removed
