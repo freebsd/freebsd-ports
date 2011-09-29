@@ -7,6 +7,7 @@
 
 PORTNAME=	zope.testing
 PORTVERSION=	3.10.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Zope Testing Framework(including the testrunner script)
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}zope.exceptions>=3.5.2:${PORTSDIR}/devel/py-zope.exceptions
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
