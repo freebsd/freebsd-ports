@@ -1,6 +1,5 @@
-%%PYTHON_SITELIBDIR%%/_rl_accel.so
 %%PYTHON_SITELIBDIR%%/_renderPM.so
-%%PYTHON_SITELIBDIR%%/sgmlop.so
+%%PYTHON_SITELIBDIR%%/_rl_accel.so
 %%PYTHON_SITELIBDIR%%/pyHnj.so
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyc
@@ -16,23 +15,19 @@
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBI.ttf
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBd.ttf
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraIt.ttf
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/bitstream-vera-license.txt
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/_abi____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ab_____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ai_____.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/_a______.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/cobo____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/cob_____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/com_____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/coo_____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ebi____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ab_____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/_abi____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ai_____.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/_eb_____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/_ebi____.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/_ei_____.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/_er_____.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/Sy______.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/Zd______.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/Zx______.pfb
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/Zy______.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/bitstream-vera-license.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/cob_____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/cobo____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/com_____.pfb
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/coo_____.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyo
@@ -60,6 +55,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/qr.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/qr.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/qr.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.pyo
@@ -331,6 +329,69 @@
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macexpert.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macexpert.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macexpert.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macroman.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macroman.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_macroman.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_pdfdoc.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_pdfdoc.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_pdfdoc.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_standard.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_standard.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_standard.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_symbol.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_symbol.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_symbol.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_winansi.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_winansi.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_winansi.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_zapfdingbats.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_zapfdingbats.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_enc_zapfdingbats.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courier.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courier.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courier.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierbold.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierbold.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierbold.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierboldoblique.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierboldoblique.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courierboldoblique.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courieroblique.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courieroblique.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_courieroblique.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helvetica.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helvetica.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helvetica.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticabold.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticabold.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticabold.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaboldoblique.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaboldoblique.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaboldoblique.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaoblique.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaoblique.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_helveticaoblique.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_symbol.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_symbol.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_symbol.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbold.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbold.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbold.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbolditalic.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbolditalic.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesbolditalic.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesitalic.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesitalic.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesitalic.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesroman.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesroman.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_timesroman.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_zapfdingbats.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_zapfdingbats.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/_fontdata_widths_zapfdingbats.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/cidfonts.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/cidfonts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/cidfonts.pyo
@@ -412,16 +473,17 @@
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.py
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/fonts
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/samples
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/lib
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfbase
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfgen
+%%PYTHON_SITELIBDIR%%/sgmlop.so
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/platypus
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfgen
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfbase
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/lib
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/samples
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/fonts
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab
 %%PORTDOCS%%%%DOCSDIR%%/reportlab-graphics-reference.pdf
 %%PORTDOCS%%%%DOCSDIR%%/reportlab-reference.pdf
