@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.82.1
+PORTVERSION=	0.83
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.1//g}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +18,7 @@ USE_TK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		ncid.1 ncid2ncid.1 ncidrotate.1 yac2ncid.1 ncidmodules.1 ncidtools.1 \
 		cidalias.1 cidcall.1 cidupdate.1 ncid-initmodem.1 ncid-kpopup.1 ncid-mythtv.1 \
-		ncid-page.1 ncid-samba.1 ncid-skel.1 ncid-speak.1 ncid-tivo.1 ncid-yac.1
+		ncid-page.1 ncid-samba.1 ncid-skel.1 ncid-speak.1 ncid-yac.1
 MAN5=		ncid.conf.5 ncidmodules.conf.5 ncidd.alias.5 ncidrotate.conf.5 ncidd.blacklist.5 \
 		ncidsip.conf.5 sip2ncid.conf.5 ncidd.conf.5 ncid2ncid.conf.5 yac2ncid.conf.5
 MAN8=		ncidd.8 ncidsip.8 sip2ncid.8

@@ -28,7 +28,6 @@ etc/rc.d/sip2ncid
 %%DATADIR%%/ncid-samba
 %%DATADIR%%/ncid-skel
 %%DATADIR%%/ncid-speak
-%%DATADIR%%/ncid-tivo
 %%DATADIR%%/ncid-yac
 @dirrm %%DATADIR%%
 share/pixmaps/ncid/ncid.gif
