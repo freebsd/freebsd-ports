@@ -7,20 +7,19 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.2
 CATEGORIES=	net rubygems
 MASTER_SITES=   RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
 RUN_DEPENDS=	rubygem-simple_oauth>=0.1.5:${PORTSDIR}/net/rubygem-simple_oauth \
-		rubygem-multi_xml>=0.2.0:${PORTSDIR}/textproc/rubygem-multi_xml \
+		rubygem-multi_xml>=0.4.1:${PORTSDIR}/textproc/rubygem-multi_xml \
 		rubygem-multi_json>=1.0.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rash>=0.3.0:${PORTSDIR}/devel/rubygem-rash \
-		rubygem-faraday_middleware>=0.6.3:${PORTSDIR}/www/rubygem-faraday_middleware \
-		rubygem-faraday>=0.6.1:${PORTSDIR}/www/rubygem-faraday \
-		rubygem-hashie>=1.0.0:${PORTSDIR}/devel/rubygem-hashie
+		rubygem-faraday_middleware>=0.7.0:${PORTSDIR}/www/rubygem-faraday_middleware \
+		rubygem-faraday>=0.7.4:${PORTSDIR}/www/rubygem-faraday \
+		rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
