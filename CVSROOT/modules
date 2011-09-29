@@ -224,6 +224,7 @@ R-cran-colorspace               ports/graphics/R-cran-colorspace
 R-cran-deldir                   ports/math/R-cran-deldir
 R-cran-diagram                  ports/graphics/R-cran-diagram
 R-cran-digest                   ports/security/R-cran-digest
+R-cran-eco                      ports/science/R-cran-eco
 R-cran-foreach                  ports/devel/R-cran-foreach
 R-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 R-cran-gmm                      ports/finance/R-cran-gmm
@@ -9288,6 +9289,7 @@ mksh                            ports/shells/mksh
 mksunbootcd                     ports/sysutils/mksunbootcd
 mktool                          ports/sysutils/mktool
 mktorrent                       ports/net-p2p/mktorrent
+mkvalidator                     ports/multimedia/mkvalidator
 mkvtoolnix                      ports/multimedia/mkvtoolnix
 mkxvcd                          ports/multimedia/mkxvcd
 ml                              ports/mail/ml
@@ -13593,6 +13595,7 @@ p5-PDFLib                       ports/print/p5-PDFLib
 p5-PFProAPI                     ports/finance/p5-PFProAPI
 p5-PGP                          ports/security/p5-PGP
 p5-PGP-Sign                     ports/security/p5-PGP-Sign
+p5-PGPLOT                       ports/graphics/p5-PGPLOT
 p5-PHP-Serialization            ports/devel/p5-PHP-Serialization
 p5-PHP-Session                  ports/www/p5-PHP-Session
 p5-POD2-Base                    ports/textproc/p5-POD2-Base
@@ -18071,6 +18074,7 @@ p5-pg                           ports/databases/p5-Pg
 p5-pgeodns                      ports/dns/p5-pgeodns
 p5-pgp                          ports/security/p5-PGP
 p5-pgp-sign                     ports/security/p5-PGP-Sign
+p5-pgplot                       ports/graphics/p5-PGPLOT
 p5-phone-info                   ports/net/p5-Phone-Info
 p5-php-serialization            ports/devel/p5-PHP-Serialization
 p5-php-session                  ports/www/p5-PHP-Session
@@ -20528,7 +20532,6 @@ pglogd                          ports/www/pglogd
 pgp                             ports/security/pgp
 pgp6                            ports/security/pgp6
 pgpdump                         ports/security/pgpdump
-pgperl                          ports/graphics/pgperl
 pgpgpg                          ports/security/pgpgpg
 pgpin                           ports/security/pgpin
 pgplot                          ports/graphics/pgplot
@@ -21744,6 +21747,7 @@ py-django-haystack              ports/www/py-django-haystack
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-mptt                  ports/www/py-django-mptt
+py-django-pipeline              ports/www/py-django-pipeline
 py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
@@ -22888,6 +22892,7 @@ r-cran-dcluster                 ports/science/R-cran-DCluster
 r-cran-deldir                   ports/math/R-cran-deldir
 r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-digest                   ports/security/R-cran-digest
+r-cran-eco                      ports/science/R-cran-eco
 r-cran-epi                      ports/science/R-cran-Epi
 r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-ggplot2                  ports/graphics/R-cran-ggplot2
@@ -22942,6 +22947,7 @@ radiusclient                    ports/net/radiusclient
 radiusd-cistron                 ports/net/radiusd-cistron
 radiusniff                      ports/security/radiusniff
 radmind                         ports/sysutils/radmind
+radns                           ports/dns/radns
 radreport                       ports/net/radreport
 radvd                           ports/net/radvd
 ragel                           ports/devel/ragel
@@ -23614,6 +23620,7 @@ rubygem-addressable             ports/www/rubygem-addressable
 rubygem-ai4r                    ports/science/rubygem-ai4r
 rubygem-allison                 ports/devel/rubygem-allison
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
+rubygem-amq-protocol            ports/net/rubygem-amq-protocol
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-amqp-utils              ports/net/rubygem-amqp-utils
 rubygem-analogger               ports/devel/rubygem-analogger
