@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.1
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}%20(plain%20zip)
+MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	A universal SQL Client
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	squirrel-sql
 PKGMESSAGE=	pkg-messages
