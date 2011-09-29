@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedCore
 PORTVERSION=	11.0.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	An asynchronous networking framework for Python - Core module
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py-zope.interface
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # - Note that Twisted ships with some graphical examples and clients that

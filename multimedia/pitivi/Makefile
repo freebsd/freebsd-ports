@@ -7,14 +7,14 @@
 
 PORTNAME=	pitivi
 PORTVERSION=	0.13.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor
 
-RUN_DEPENDS=	py*-zopeInterface>=0:${PORTSDIR}/devel/py-zopeInterface \
+RUN_DEPENDS=	py*-zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas
 
 USE_BZIP2=	yes

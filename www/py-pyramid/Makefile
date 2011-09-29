@@ -7,6 +7,7 @@
 
 PORTNAME=	pyramid
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Chameleon>=1.2.3:${PORTSDIR}/textproc/py-C
 		${PYTHON_PKGNAMEPREFIX}webob>=1.0.2:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:${PORTSDIR}/devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=0:${PORTSDIR}/devel/py-zope.deprecation \
-		${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.5.1:${PORTSDIR}/devel/py-zopeInterface
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.5.1:${PORTSDIR}/devel/py-zope.interface
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 #TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:${PORTSDIR}/www/py-WebTest

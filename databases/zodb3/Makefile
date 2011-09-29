@@ -7,7 +7,7 @@
 
 PORTNAME=	zodb
 PORTVERSION=	3.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
@@ -18,7 +18,7 @@ COMMENT=	The Z - Object Database for python
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
 		${LOCALBASE}/bin/zdaemon:${PORTSDIR}/sysutils/py-zdaemon \
-		${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>=3.7.1:${PORTSDIR}/devel/py-zope.testing \
 		${PYTHON_PKGNAMEPREFIX}transaction>=1.1.0:${PORTSDIR}/devel/py-transaction \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:${PORTSDIR}/devel/py-zclockfile \
