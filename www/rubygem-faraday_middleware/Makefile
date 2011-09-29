@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	faraday_middleware
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Collection of Ruby Faraday middlewares
 
-RUN_DEPENDS=	rubygem-faraday>=0.6.0:${PORTSDIR}/www/rubygem-faraday
+RUN_DEPENDS=	rubygem-faraday>=0.7.4:${PORTSDIR}/www/rubygem-faraday
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
