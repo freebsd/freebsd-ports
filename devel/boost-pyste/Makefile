@@ -13,6 +13,9 @@ CONFLICTS+=	boost-python-libs-1.3* boost-python-libs-1.40
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 
+DEPRECATED=	Still requires GCC 3.4 (strictly) and gccxml which is deprecated (and has been broken for a while)
+EXPIRATION_DATE=2011-10-13
+
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
