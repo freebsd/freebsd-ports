@@ -7,14 +7,14 @@
 
 PORTNAME=	osdmixer
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays audio volume with an OSD
 
-BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
 PLIST_FILES=	bin/osdmixer
 
