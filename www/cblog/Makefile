@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cblog
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	www
-MASTER_SITES=	http://files.etoilebsd.net/cblog/ \
-		LOCAL/bapt
+MASTER_SITES=	http://files.etoilebsd.net/cblog/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple weblog in C using markdown
