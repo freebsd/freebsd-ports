@@ -1,0 +1,8 @@
+%%SITE_PERL%%/SVG/Parser.pm
+%%SITE_PERL%%/SVG/Parser/Base.pm
+%%SITE_PERL%%/SVG/Parser/Expat.pm
+%%SITE_PERL%%/SVG/Parser/SAX.pm
+%%SITE_PERL%%/SVG/Parser/SAX/Handler.pm
+@dirrm %%SITE_PERL%%/SVG/Parser/SAX
+@dirrm %%SITE_PERL%%/SVG/Parser
+@dirrmtry %%SITE_PERL%%/SVG

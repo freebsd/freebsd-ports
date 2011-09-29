@@ -1,0 +1,14 @@
+SVG::Parser is an XML parser for SVG Documents. It takes XML as input and
+produces an SVG object as its output.
+
+SVG::Parser supports both XML::SAX and XML::Parser (Expat) parsers, with SAX
+preferred by default. Only one of these needs to be installed for SVG::Parser to
+function.
+
+A list of preferred parsers may be specified in the import list - SVG::Parser
+will use the first parser that successfully loads. Some basic measures are taken
+to provide cross-compatability. Applications requiring more advanced parser
+features should use the relevant parser module directly; see SVG::Parser::Expat
+and SVG::Parser::SAX.
+
+WWW: http://search.cpan.org/dist/SVG-Parser/
