@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Weather-Underground
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Weather
@@ -17,7 +17,7 @@ COMMENT=	Retrieve weather information from wunderground.com
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
