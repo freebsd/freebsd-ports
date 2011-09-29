@@ -7,7 +7,7 @@
 
 PORTNAME=	kiwi
 PORTVERSION=	1.9.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -40,7 +40,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_ZOPEINTERFACE)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface
 .endif
 
 .if defined (WITH_PYGOBJECT)

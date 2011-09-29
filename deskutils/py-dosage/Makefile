@@ -7,6 +7,7 @@
 
 PORTNAME=	dosage
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://slipgate.za.net/dosage/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Dosage
 USE_TWISTED_RUN=yes
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py-zope.interface
 
 MAN1=		mainline.1
 
