@@ -25,8 +25,9 @@ ALL_TARGET=	build ARCH=${MYARCH}
 
 # workaround the ARCH usage in the stockfish Makefile
 .if ${MYARCH} == "i386"
-MYARCH=		x86-32
-ALL_TARGET=	build ARCH=${MYARCH}
+ALL_TARGET=	build ARCH=x86-32
+.elif ${MYARCH} == "amd64"
+ALL_TARGET=	build ARCH=x86-64
 .endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
