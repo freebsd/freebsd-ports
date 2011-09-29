@@ -17,7 +17,6 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
 
 DEPRECATED=	Depends on www/seamonkey2, which is FORBIDDEN
-EXPIRATION_DATE=	2011-10-14
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
 
