@@ -20,10 +20,6 @@ MAN1=		barrier.1 barrierd.1 clustersed.1 dsh.1 dshbak.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if defined (WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '
 .else
