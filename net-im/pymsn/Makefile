@@ -29,4 +29,10 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g} \
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not configure
+.endif
+
+.include <bsd.port.post.mk>
