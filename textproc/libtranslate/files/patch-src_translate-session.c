@@ -1,4 +1,8 @@
---- src/translate-session.c.orig	Mon Apr 11 22:44:53 2005
+Copied from:
+
+	http://nongnu.askapache.com/libtranslate/libtranslate-0.99-condfix.diff
+
+--- src/translate-session.c	Mon Apr 11 22:44:53 2005
 +++ src/translate-session.c	Mon Apr 11 22:51:48 2005
 @@ -703,7 +703,14 @@
  	  GError *tmp_err = NULL;
