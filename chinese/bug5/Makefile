@@ -12,7 +12,7 @@ MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	buganini@gmail.com
-COMMENT=	A Big5 <-> UTF-8 translating layer in terminal
+COMMENT=	A Big5/GBK <-> UTF-8 translating layer in terminal
 
 LICENSE=	BSD
 
