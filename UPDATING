@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110929:
+  AFFECTS: users of net/py-zope.proxy, devel/zope.testing and
+           devel/zope.interface
+  AUTHOR: Ruslan Mahmatkhanov <cvs-src@yandex.ru>
+
+  Several Zope ports have been renamed for consistency with their
+  upstream distributions. Please run the following commands to update
+  your local installations:
+
+  If you use portmaster run:
+  # portmaster -o devel/py-zope.interface net/py-zopeInterface
+  # portmaster -o net/py-zope.proxy net/py-zopeproxy
+  # portmaster -o devel/py-zope.testing devel/py-zopetesting
+
+  If you use portupgrade run:
+  # portupgrade -o devel/py-zope.interface net/py-zopeInterface
+  # portupgrade -o net/py-zope.proxy net/py-zopeproxy
+  # portupgrade -o devel/py-zope.testing devel/py-zopetesting 
+
 20110928:
   AFFECTS: users of 10-current
   AUTHOR: eadler@FreeBSD.org
