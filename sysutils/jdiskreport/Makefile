@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jdiskreport
-PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
@@ -25,6 +24,9 @@ PLIST_SUB=	JDISKDIR=${JDISKDIR:S,${PREFIX}/,,g}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 JAVAVM?=	${LOCALBASE}/bin/java
 JDISKDIR?=	${PREFIX}/lib/jdiskreport
+
+DESKTOP_ENTRIES="JDiskReport" "${COMMENT}" "" "jdiskreport" \
+		"System;Filesystem;" "false"
 
 do-build:
 	@cd ${WRKDIR}
