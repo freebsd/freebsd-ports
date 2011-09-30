@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -33,6 +32,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_GEOIP_MODULE	"Enable http_geoip module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
 		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
+		HTTP_MP4_MODULE		"Enable http_mp4 module" off \
 		HTTP_PERL_MODULE	"Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE	"Enable http_realip module" off \
@@ -266,6 +266,14 @@ CONFIGURE_ARGS+=--with-http_gzip_static_module
 .if defined(WITH_HTTP_IMAGE_FILTER_MODULE)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module
+.endif
+
+.if defined(WITH_HTTP_MP4_MODULE) && defined(WITH_HTTP_MP4_H264_MODULE)
+IGNORE=	http_mp4 and third-party http_mp4_h264 modules are incompatible. Please select one
+.endif
+
+.if defined(WITH_HTTP_MP4_MODULE)
+CONFIGURE_ARGS+=--with-http_mp4_module
 .endif
 
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
