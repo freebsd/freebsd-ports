@@ -34,8 +34,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee
 
-OPTIONS=	GNUPG	"Enable message signing via GnuPG (no PGP6)" On \
-		PGP6	"Enable message signing via PGP6 (no GnuPG)" Off \
+OPTIONS=	GNUPG	"Enable message signing via GnuPG" On \
 		ISPELL	"Enable spell checking via ispell" On \
 		METAMAIL  "Enable MIME support via metamail" On \
 		CANLOCK	  "Enable Cancel-Lock key support via libcanlock" Off \
@@ -79,10 +78,6 @@ CONFIGURE_ARGS+=	--enable-nntp-only
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg \
 		 	--without-pgp --without-pgpk
-.elifdef WITH_PGP6
-RUN_DEPENDS+=		pgp:${PORTSDIR}/security/pgp6
-CONFIGURE_ARGS+=	--with-pgp=${PREFIX}/bin/pgp \
-		 	--without-pgpk --without-gpg
 .else
 CONFIGURE_ARGS+=	--disable-pgp-gpg
 .endif
