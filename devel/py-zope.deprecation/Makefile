@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Zope 3 Deprecation Infrastructure
 
+DIST_SUBDIR=	zope
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
