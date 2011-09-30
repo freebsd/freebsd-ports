@@ -1,0 +1,10 @@
+amq-client is a fully-featured, low-level AMQP 0.9.1 client that
+runs on Ruby 1.8.7, 1.9.2, REE, Rubinius and JRuby.
+
+It's sweet spot is in serving as foundation for higher-level, more
+opinionated AMQP libraries.
+
+It can be used directly by applications code when performance and access
+to advanced AMQP protocol features is more important that API convenience.
+
+WWW: https://github.com/ruby-amqp/amq-client
