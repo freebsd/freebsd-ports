@@ -7,7 +7,7 @@
 
 PORTNAME=	seamonkey2-i18n
 PORTVERSION=	2.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -18,7 +18,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey 2
 
 USE_SEAMONKEY=	20
-USE_XPI=	seamonkey2 linux-seamonkey
+USE_XPI=	seamonkey2
 
 USE_SUBMAKE=	yes
 
