@@ -26,7 +26,6 @@ MAN3=		PGP::Sign.3
 # Currently useful values for DEFAULTPGP are:
 # PGP2 - PGP 2.6.* or a reasonable facsimile thereof
 # PGP5 - PGP 5 or a work-alike
-# PGP6 - PGP 6.5 (effectively the same as PGP2)
 # GPG  - Gnu Privacy Guard
 
 .ifndef DEFAULTPGP
@@ -48,9 +47,6 @@ PGPS!=	which pgps || ${ECHO} ${PREFIX}/bin/pgps
 .ifndef PGPV
 PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
 .endif
-.elif (${DEFAULTPGP} == PGP6)
-RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp6
-PGPSTYLE?=	PGP6
 .ifndef PGP
 PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif

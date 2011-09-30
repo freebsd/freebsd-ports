@@ -46,7 +46,6 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # security/gnupg
 # security/pgp
 # security/pgp5
-# security/pgp6
 # mail/faces
 # audio/rplay
 
