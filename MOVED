@@ -2670,3 +2670,29 @@ astro/boinc-milkyway||2011-09-27|No more useful
 www/linux-firefox-devel|www/linux-firefox|2011-09-27|Older than www/linux-firefox
 graphics/pgperl|graphics/p5-PGPLOT|2011-09-28|Move to a better place via repocopy
 devel/py-zopeInterface|devel/py-zope.interface|2011-09-29|Removed: please use devel/py-zope.interface instead
+audio/mt-daapd||2011-09-30|Use audio/firefly instead
+databases/p5-DBIx-Class-Validation||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
+devel/p5-Class-Data-Accessor||2011-09-30|Please consider using p5-Class-Accessor-Grouped or p5-Moose
+graphics/libflash||2011-09-30|gplflash is no longer supported. Please use gnash instead
+graphics/flashplayer||2011-09-30|Depends on DEPRECATED graphics/libflash
+japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
+net/p5-OAuth-Lite||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
+net-mgmt/py-snmp||2011-09-30|use net-mgmt/py-snmp4 instead
+net-mgmt/py-twistedSNMP||2011-09-30|Relies on net-mgmt/py-snmp, which is DEPRECATED
+net-p2p/gift||2011-09-30|unmaintained upstream for several years
+net-p2p/giftcurs||2011-09-30|unmaintained upstream for several years
+net-p2p/giftoxic||2011-09-30|unmaintained upstream for several years
+net-p2p/giftui||2011-09-30|unmaintained upstream for several years
+net-p2p/apollon||2011-09-30|Depends on net-p2p/gift, which is DEPRECATED
+textproc/p5-FormValidator-Simple||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
+www/flashplugin-mozilla||2011-09-30|gplflash is no longer supported. Please use graphics/gnash, \
+www/p5-HTML-Widget||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
+www/p5-Catalyst-Plugin-AutoRestart||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
+www/p5-Catalyst-Example-InstantCRUD||2011-09-30|Depends on www/p5-HTML-Widget, which is DEPRECATED
+www/p5-Catalyst-Plugin-FormValidator-Simple||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
+www/p5-Catalyst-Plugin-HTML-Widget||2011-09-30|Depends on www/p5-HTML-Widget, which is DEPRECATED
+www/asterisk-fop||2011-09-30|Depends on www/flashplugin-mozilla which is DEPRECATED
+www/p5-Handel||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
+www/p5-DBIx-Class-HTMLWidget||2011-09-30|Depends on www/p5-HTML-Widget, which is DEPRECATED
+www/p5-HTML-Widget-DBIC||2011-09-30|Disappear from CPAN
+x11-wm/fvwm24||2011-09-30|No longer supported by fvwm.org

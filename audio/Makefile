@@ -500,7 +500,6 @@
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpiosh
-    SUBDIR += mt-daapd
     SUBDIR += muine
     SUBDIR += mumble
     SUBDIR += murmur
