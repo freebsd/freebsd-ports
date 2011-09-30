@@ -26,8 +26,8 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.0.50
-EMACS_REV=	105651
+EMACS_VER=	24.0.90
+EMACS_REV=	105951
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
