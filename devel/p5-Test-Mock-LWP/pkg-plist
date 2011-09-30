@@ -5,6 +5,8 @@
 %%SITE_PERL%%/Test/Mock/LWP.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Mock/LWP
 @dirrmtry %%SITE_PERL%%/Test/Mock/HTTP
 @dirrmtry %%SITE_PERL%%/Test/Mock
+@dirrmtry %%SITE_PERL%%/Test
