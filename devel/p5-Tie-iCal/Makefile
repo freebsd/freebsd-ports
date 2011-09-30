@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tie-iCal
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BSDZ
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Tie iCal files to Perl hashes
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 USE_PERL5_REASON=	requires newer version of Perl with Tie::File 0.97 or later
