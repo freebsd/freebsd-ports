@@ -24,7 +24,7 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/nagios"
 command_args="-d"
-extra_commands="reload"
+extra_commands="reload configtest"
 pidfile="%%NAGIOSDIR%%/nagios.lock"
 nagios_user="%%NAGIOSUSER%%"
 
@@ -32,6 +32,7 @@ start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_precmd="nagios_checkconfig"
 reload_precmd="reload_precmd"
+configtest_cmd="nagios_checkconfig"
 sig_reload=HUP
 
 load_rc_config "${name}"
