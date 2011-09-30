@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurialserver
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://dev.lshift.net/paul/mercurial-server/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,13 @@ DISTNAME=	${SNAME}_${SVERSION}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Software for hosting mercurial repositories
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial
 
-WRKSRC=		${WRKDIR}/${SNAME}_${SVERSION}
-LICENSE=	GPLv2
+WRKSRC=		${WRKDIR}/${SNAME}_${SVERSION}.orig
 SNAME=		mercurial-server
-SVERSION=	1.1
+SVERSION=	1.2
 
 HGUSER=		hg
 HGGROUP=	hg
@@ -47,15 +48,12 @@ post-install:
 .for i in ${HGSVCONF_FILES}
 	${INSTALL_DATA} ${WRKSRC}/src/init/conf/${i} ${PREFIX}/etc/${PORTNAME}/${i}
 .endfor
-	${MV} ${PREFIX}/hg/dot-mercurial-server ${PREFIX}/hg/.mercurial-server
-	${MV} ${PREFIX}/hg/hgadmin-hgrc ${PREFIX}/hg/.hgadmin-hgrc
-	${RM} ${PREFIX}/hg/hginit
-	${MKDIR} ${PREFIX}/hg/.ssh
-	${MKDIR} ${PREFIX}/hg/repos
-	${CHOWN} -R ${HGUSER}:${HGGROUP} ${PREFIX}/hg
 	@${ECHO_MSG}
 	@${ECHO_MSG} "NOTE: ${PORTNAME} has been patched to use ${PREFIX}/etc/${PORTNAME}"
 	@${ECHO_MSG} "      instead of /etc/mercurial-server"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Now you need to create ${HGUSER} home (if nessacery) and run"
+	@${ECHO_MSG} "      ${PREFIX}/etc/hginit as ${HGUSER} user from home directory"
 	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
