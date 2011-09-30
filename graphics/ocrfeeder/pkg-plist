@@ -1,0 +1,318 @@
+bin/ocrfeeder
+bin/ocrfeeder-cli
+lib/locale/ca/LC_MESSAGES/ocrfeeder.mo
+lib/locale/ca@valencia/LC_MESSAGES/ocrfeeder.mo
+lib/locale/cs/LC_MESSAGES/ocrfeeder.mo
+lib/locale/da/LC_MESSAGES/ocrfeeder.mo
+lib/locale/de/LC_MESSAGES/ocrfeeder.mo
+lib/locale/el/LC_MESSAGES/ocrfeeder.mo
+lib/locale/en_GB/LC_MESSAGES/ocrfeeder.mo
+lib/locale/es/LC_MESSAGES/ocrfeeder.mo
+lib/locale/fr/LC_MESSAGES/ocrfeeder.mo
+lib/locale/gl/LC_MESSAGES/ocrfeeder.mo
+lib/locale/hu/LC_MESSAGES/ocrfeeder.mo
+lib/locale/it/LC_MESSAGES/ocrfeeder.mo
+lib/locale/nb/LC_MESSAGES/ocrfeeder.mo
+lib/locale/pl/LC_MESSAGES/ocrfeeder.mo
+lib/locale/pt/LC_MESSAGES/ocrfeeder.mo
+lib/locale/pt_BR/LC_MESSAGES/ocrfeeder.mo
+lib/locale/ro/LC_MESSAGES/ocrfeeder.mo
+lib/locale/sl/LC_MESSAGES/ocrfeeder.mo
+lib/locale/sv/LC_MESSAGES/ocrfeeder.mo
+lib/locale/uk/LC_MESSAGES/ocrfeeder.mo
+lib/locale/zh_CN/LC_MESSAGES/ocrfeeder.mo
+lib/locale/zh_HK/LC_MESSAGES/ocrfeeder.mo
+lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/__init__.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/documentGeneration.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/documentGeneration.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/documentGeneration.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/imageManipulation.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/imageManipulation.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/imageManipulation.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/layoutAnalysis.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/layoutAnalysis.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/layoutAnalysis.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/ocrEngines.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/ocrEngines.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/feeder/ocrEngines.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/__init__.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/anim.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/anim.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/anim.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/attrconverters.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/attrconverters.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/attrconverters.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/chart.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/chart.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/chart.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/config.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/config.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/config.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dc.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dc.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dc.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dr3d.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dr3d.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/dr3d.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/draw.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/draw.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/draw.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/element.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/element.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/element.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/form.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/form.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/form.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/grammar.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/grammar.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/grammar.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/load.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/load.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/load.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/manifest.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/manifest.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/manifest.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/math.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/math.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/math.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/meta.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/meta.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/meta.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/namespaces.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/namespaces.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/namespaces.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/number.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/number.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/number.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odf2xhtml.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odf2xhtml.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odf2xhtml.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odfmanifest.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odfmanifest.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/odfmanifest.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/office.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/office.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/office.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/ooostyles.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/ooostyles.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/ooostyles.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/opendocument.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/opendocument.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/opendocument.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/presentation.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/presentation.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/presentation.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/script.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/script.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/script.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/style.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/style.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/style.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/svg.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/svg.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/svg.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/table.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/table.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/table.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/text.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/text.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/text.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/thumbnail.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/thumbnail.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/thumbnail.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/userfield.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/userfield.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/userfield.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/xforms.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/xforms.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/odf/xforms.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetModeler.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetModeler.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetModeler.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetPresenter.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetPresenter.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/widgetPresenter.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/__init__.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/graphics.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/graphics.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/graphics.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.pyo
+share/applications/ocrfeeder.desktop
+share/gnome/help/ocrfeeder/C/addingfolder.page
+share/gnome/help/ocrfeeder/C/addingimage.page
+share/gnome/help/ocrfeeder/C/automaticrecognition.page
+share/gnome/help/ocrfeeder/C/deskewing.page
+share/gnome/help/ocrfeeder/C/documentgeneration.page
+share/gnome/help/ocrfeeder/C/figures/areas-edition.png
+share/gnome/help/ocrfeeder/C/figures/content-areas.png
+share/gnome/help/ocrfeeder/C/finetuning.page
+share/gnome/help/ocrfeeder/C/importingfromscanner.page
+share/gnome/help/ocrfeeder/C/importingpdf.page
+share/gnome/help/ocrfeeder/C/index.page
+share/gnome/help/ocrfeeder/C/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/C/ocrconfiguration.page
+share/gnome/help/ocrfeeder/C/projects.page
+share/gnome/help/ocrfeeder/C/unpaper.page
+share/gnome/help/ocrfeeder/cs/addingfolder.page
+share/gnome/help/ocrfeeder/cs/addingimage.page
+share/gnome/help/ocrfeeder/cs/automaticrecognition.page
+share/gnome/help/ocrfeeder/cs/deskewing.page
+share/gnome/help/ocrfeeder/cs/documentgeneration.page
+share/gnome/help/ocrfeeder/cs/figures/areas-edition.png
+share/gnome/help/ocrfeeder/cs/figures/content-areas.png
+share/gnome/help/ocrfeeder/cs/finetuning.page
+share/gnome/help/ocrfeeder/cs/importingfromscanner.page
+share/gnome/help/ocrfeeder/cs/importingpdf.page
+share/gnome/help/ocrfeeder/cs/index.page
+share/gnome/help/ocrfeeder/cs/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/cs/ocrconfiguration.page
+share/gnome/help/ocrfeeder/cs/projects.page
+share/gnome/help/ocrfeeder/cs/unpaper.page
+share/gnome/help/ocrfeeder/de/addingfolder.page
+share/gnome/help/ocrfeeder/de/addingimage.page
+share/gnome/help/ocrfeeder/de/automaticrecognition.page
+share/gnome/help/ocrfeeder/de/deskewing.page
+share/gnome/help/ocrfeeder/de/documentgeneration.page
+share/gnome/help/ocrfeeder/de/figures/areas-edition.png
+share/gnome/help/ocrfeeder/de/figures/content-areas.png
+share/gnome/help/ocrfeeder/de/finetuning.page
+share/gnome/help/ocrfeeder/de/importingfromscanner.page
+share/gnome/help/ocrfeeder/de/importingpdf.page
+share/gnome/help/ocrfeeder/de/index.page
+share/gnome/help/ocrfeeder/de/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/de/ocrconfiguration.page
+share/gnome/help/ocrfeeder/de/projects.page
+share/gnome/help/ocrfeeder/de/unpaper.page
+share/gnome/help/ocrfeeder/es/addingfolder.page
+share/gnome/help/ocrfeeder/es/addingimage.page
+share/gnome/help/ocrfeeder/es/automaticrecognition.page
+share/gnome/help/ocrfeeder/es/deskewing.page
+share/gnome/help/ocrfeeder/es/documentgeneration.page
+share/gnome/help/ocrfeeder/es/figures/areas-edition.png
+share/gnome/help/ocrfeeder/es/figures/content-areas.png
+share/gnome/help/ocrfeeder/es/finetuning.page
+share/gnome/help/ocrfeeder/es/importingfromscanner.page
+share/gnome/help/ocrfeeder/es/importingpdf.page
+share/gnome/help/ocrfeeder/es/index.page
+share/gnome/help/ocrfeeder/es/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/es/ocrconfiguration.page
+share/gnome/help/ocrfeeder/es/projects.page
+share/gnome/help/ocrfeeder/es/unpaper.page
+share/gnome/help/ocrfeeder/sl/addingfolder.page
+share/gnome/help/ocrfeeder/sl/addingimage.page
+share/gnome/help/ocrfeeder/sl/automaticrecognition.page
+share/gnome/help/ocrfeeder/sl/deskewing.page
+share/gnome/help/ocrfeeder/sl/documentgeneration.page
+share/gnome/help/ocrfeeder/sl/figures/areas-edition.png
+share/gnome/help/ocrfeeder/sl/figures/content-areas.png
+share/gnome/help/ocrfeeder/sl/finetuning.page
+share/gnome/help/ocrfeeder/sl/importingfromscanner.page
+share/gnome/help/ocrfeeder/sl/importingpdf.page
+share/gnome/help/ocrfeeder/sl/index.page
+share/gnome/help/ocrfeeder/sl/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/sl/ocrconfiguration.page
+share/gnome/help/ocrfeeder/sl/projects.page
+share/gnome/help/ocrfeeder/sl/unpaper.page
+%%DATADIR%%/icons/detect_icon.svg
+%%DATADIR%%/icons/ocr.svg
+%%DATADIR%%/icons/ocrfeeder.svg
+%%DATADIR%%/icons/window_icon.png
+%%DATADIR%%/spell-checker.ui
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/ocrfeeder/sl/figures
+@dirrm share/gnome/help/ocrfeeder/sl
+@dirrm share/gnome/help/ocrfeeder/es/figures
+@dirrm share/gnome/help/ocrfeeder/es
+@dirrm share/gnome/help/ocrfeeder/de/figures
+@dirrm share/gnome/help/ocrfeeder/de
+@dirrm share/gnome/help/ocrfeeder/cs/figures
+@dirrm share/gnome/help/ocrfeeder/cs
+@dirrm share/gnome/help/ocrfeeder/C/figures
+@dirrm share/gnome/help/ocrfeeder/C
+@dirrm share/gnome/help/ocrfeeder
+@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/util
+@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/studio
+@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/odf
+@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/feeder
+@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder
+@dirrmtry lib/locale/ca/LC_MESSAGES
+@dirrmtry lib/locale/ca
+@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
+@dirrmtry lib/locale/ca@valencia
+@dirrmtry lib/locale/cs/LC_MESSAGES
+@dirrmtry lib/locale/cs
+@dirrmtry lib/locale/da/LC_MESSAGES
+@dirrmtry lib/locale/da
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
+@dirrmtry lib/locale/en_GB/LC_MESSAGES
+@dirrmtry lib/locale/en_GB
+@dirrmtry lib/locale/es/LC_MESSAGES
+@dirrmtry lib/locale/es
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrmtry lib/locale/gl/LC_MESSAGES
+@dirrmtry lib/locale/gl
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrmtry lib/locale/it/LC_MESSAGES
+@dirrmtry lib/locale/it
+@dirrmtry lib/locale/nb/LC_MESSAGES
+@dirrmtry lib/locale/nb
+@dirrmtry lib/locale/pl/LC_MESSAGES
+@dirrmtry lib/locale/pl
+@dirrmtry lib/locale/pt/LC_MESSAGES
+@dirrmtry lib/locale/pt
+@dirrmtry lib/locale/pt_BR/LC_MESSAGES
+@dirrmtry lib/locale/pt_BR
+@dirrmtry lib/locale/ro/LC_MESSAGES
+@dirrmtry lib/locale/ro
+@dirrmtry lib/locale/sl/LC_MESSAGES
+@dirrmtry lib/locale/sl
+@dirrmtry lib/locale/sv/LC_MESSAGES
+@dirrmtry lib/locale/sv
+@dirrmtry lib/locale/uk/LC_MESSAGES
+@dirrmtry lib/locale/uk
+@dirrmtry lib/locale/zh_CN/LC_MESSAGES
+@dirrmtry lib/locale/zh_CN
+@dirrmtry lib/locale/zh_HK/LC_MESSAGES
+@dirrmtry lib/locale/zh_HK
+@dirrmtry lib/locale/zh_TW/LC_MESSAGES
+@dirrmtry lib/locale/zh_TW
+@dirrmtry lib/locale
