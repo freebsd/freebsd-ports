@@ -6101,6 +6101,7 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.standardDecorators.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.standardElements.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.authsub.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.books.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.calendar.html
@@ -6917,6 +6918,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithCodeInMethod.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithManyProperties.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/zf-11703.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/zf-11703_1.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/IniTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/JsonTest.php
@@ -8613,6 +8616,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/encryptedkey_missing_enc_algo.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/encryptedkey_missing_encryptionmethod.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/encryptedtoken.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/encryptedtoken2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/encryptedtoken_bad_type.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/security_token_bad_keyref.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/_files/signedToken.xml
@@ -9511,6 +9515,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/Context/RegistryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/ProfileTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/Provider/ControllerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/.zfproject.xml.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/ArrayTest.php
@@ -9678,6 +9683,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ActionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/AttributeJsEscapingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/BaseUrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/CurrencyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/CycleTest.php
@@ -9727,6 +9733,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/partial.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/separator.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/translated.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/accesskey.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl_role_interface.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl_string.html
@@ -9948,6 +9955,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Translate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/project1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/Provider
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/Context
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/_files
