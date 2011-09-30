@@ -25,8 +25,6 @@ LICENSE=	GPLv2
 # of turning this off. So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-LICENSE=	GPLv2
-
 OPTIONS=	MYSQL            "MySQL support"                    on  \
 		PGSQL            "PostgreSQL support"               off \
 		ICONV		 "Iconv support"		    on  \
