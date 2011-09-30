@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	7.0
-PORTREVISION=	1
+DISTVERSION=	7.0.1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -117,7 +116,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in \
 		${WRKSRC}/js/src/config/mkdepend/Makefile.in \
-		${WRKSRC}/js/src/config/config.mk
+		${WRKSRC}/js/src/config/config.mk \
+		${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \
