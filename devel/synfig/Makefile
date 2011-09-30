@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synfig
-DISTVERSION=	0.63.01
+DISTVERSION=	0.63.02
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
