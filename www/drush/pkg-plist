@@ -4,15 +4,15 @@ bin/drush
 %%DATADIR%%/commands/core/core.drush.inc
 %%DATADIR%%/commands/core/docs.drush.inc
 %%DATADIR%%/commands/core/drupal/batch_6.inc
-%%DATADIR%%/commands/core/drupal/batch_7.inc
+%%DATADIR%%/commands/core/drupal/batch.inc
 %%DATADIR%%/commands/core/drupal/environment_5.inc
 %%DATADIR%%/commands/core/drupal/environment_6.inc
-%%DATADIR%%/commands/core/drupal/environment_7.inc
+%%DATADIR%%/commands/core/drupal/environment.inc
 %%DATADIR%%/commands/core/drupal/site_install_6.inc
-%%DATADIR%%/commands/core/drupal/site_install_7.inc
+%%DATADIR%%/commands/core/drupal/site_install.inc
 %%DATADIR%%/commands/core/drupal/update_5.inc
 %%DATADIR%%/commands/core/drupal/update_6.inc
-%%DATADIR%%/commands/core/drupal/update_7.inc
+%%DATADIR%%/commands/core/drupal/update.inc
 %%DATADIR%%/commands/core/field.drush.inc
 %%DATADIR%%/commands/core/help.drush.inc
 %%DATADIR%%/commands/core/image.drush.inc
@@ -32,7 +32,7 @@ bin/drush
 %%DATADIR%%/commands/pm/pm.drush.inc
 %%DATADIR%%/commands/pm/update_info/drupal_5.inc
 %%DATADIR%%/commands/pm/update_info/drupal_6.inc
-%%DATADIR%%/commands/pm/update_info/drupal_7.inc
+%%DATADIR%%/commands/pm/update_info/drupal.inc
 %%DATADIR%%/commands/pm/updatecode.pm.inc
 %%DATADIR%%/commands/pm/version_control/backup.inc
 %%DATADIR%%/commands/pm/version_control/bzr.inc
@@ -67,6 +67,29 @@ bin/drush
 %%DATADIR%%/includes/drush.inc
 %%DATADIR%%/includes/environment.inc
 %%DATADIR%%/includes/sitealias.inc
+%%DATADIR%%/commands/core/cache.drush.inc
+%%DATADIR%%/commands/core/archive.drush.inc
+%%DATADIR%%/tests/siteUpgradeTest.php
+%%DATADIR%%/tests/sqlSyncTest.php
+%%DATADIR%%/tests/variableTest.php
+%%DATADIR%%/tests/siteAliasTest.php
+%%DATADIR%%/tests/COVERAGE.txt
+%%DATADIR%%/tests/drush_testcase.inc
+%%DATADIR%%/tests/phpunit.xml.dist
+%%DATADIR%%/tests/userTest.php
+%%DATADIR%%/tests/README.txt
+%%DATADIR%%/tests/runner.php
+%%DATADIR%%/tests/archiveDumpTest.php
+%%DATADIR%%/tests/pmDownloadTest.php
+%%DATADIR%%/tests/contextTest.php
+%%DATADIR%%/tests/backendTest.php
+%%DATADIR%%/tests/commandTest.php
+%%DATADIR%%/tests/pmUpdateCodeTest.php
+%%DATADIR%%/tests/pmEnDisUnListTest.php
+%%DATADIR%%/tests/coreTest.php
+%%DATADIR%%/tests/devel.xml
+%%DATADIR%%/tests/fieldTest.php
+%%DATADIR%%/tests/unit.drush.inc
 @dirrm %%DATADIR%%/includes
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/docs
@@ -79,4 +102,5 @@ bin/drush
 @dirrm %%DATADIR%%/commands/core/drupal
 @dirrm %%DATADIR%%/commands/core
 @dirrm %%DATADIR%%/commands
+@dirrm %%DATADIR%%/tests
 @dirrm %%DATADIR%%
