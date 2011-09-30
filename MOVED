@@ -2716,3 +2716,4 @@ www/zope-coreblog2||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-i18nlayer||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-plonelanguagetool||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-simpleblog||2011-09-30|Depends on www/plone, which is FORBIDDEN
+dns/nsd2||2011-09-30|EOL since 2007, unsupported. Use dns/nsd instead.
