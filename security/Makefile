@@ -627,7 +627,6 @@
     SUBDIR += pecl-tcpwrap
     SUBDIR += pft
     SUBDIR += pgp
-    SUBDIR += pgp6
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin

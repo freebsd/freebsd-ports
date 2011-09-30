@@ -2696,3 +2696,23 @@ www/p5-Handel||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is 
 www/p5-DBIx-Class-HTMLWidget||2011-09-30|Depends on www/p5-HTML-Widget, which is DEPRECATED
 www/p5-HTML-Widget-DBIC||2011-09-30|Disappear from CPAN
 x11-wm/fvwm24||2011-09-30|No longer supported by fvwm.org
+math/mupad||2011-09-30|Relies on xpm, vulnerable since 2004-09-15
+net-p2p/torrentflux||2011-09-30|Vulnerable since 2006-10-07
+net/tptest||2011-09-30|Vulnerable since 2009-12-17
+security/pgp6||2011-09-30|Vulnerable since 2005-07-31
+www/p5-RT-Authen-ExternalAuth||2011-09-30|Depends on www/rt36, which is FORBIDDEN
+www/p5-RT-Extension-LDAPImport||2011-09-30|Depends on www/rt36, which is FORBIDDEN
+www/p5-RT-Extension-SLA||2011-09-30|Depends on www/rt36, which is FORBIDDEN
+www/p5-RTx-Calendar||2011-09-30|Depends on www/rt36, which is FORBIDDEN
+www/p5-RTx-RightsMatrix||2011-09-30|Only works with www/rt36, which is FORBIDDEN
+www/p5-RTx-Shredder||2011-09-30|Only works with www/rt36, which is FORBIDDEN
+www/p5-RTx-Statistics||2011-09-30|Only works with www/rt36, which is FORBIDDEN
+www/plone||2011-09-30|Vulnerable since 2011-02-10
+www/pyblosxom||2011-09-30|Vulnerable since 2009-02-11
+www/rt36||2011-09-30|Vulnerable since 2009-12-09
+www/zope-archetypes||2011-09-30|Depends on www/plone, which is FORBIDDEN
+www/zope-calendaring||2011-09-30|Depends on www/plone, which is FORBIDDEN
+www/zope-coreblog2||2011-09-30|Depends on www/plone, which is FORBIDDEN
+www/zope-i18nlayer||2011-09-30|Depends on www/plone, which is FORBIDDEN
+www/zope-plonelanguagetool||2011-09-30|Depends on www/plone, which is FORBIDDEN
+www/zope-simpleblog||2011-09-30|Depends on www/plone, which is FORBIDDEN

@@ -1101,7 +1101,6 @@
     SUBDIR += tn5250j
     SUBDIR += toonel
     SUBDIR += torsocks
-    SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += traff
     SUBDIR += trafshow

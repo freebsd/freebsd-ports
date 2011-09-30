@@ -99,7 +99,6 @@
     SUBDIR += sharktorrent
     SUBDIR += squall
     SUBDIR += teknap
-    SUBDIR += torrentflux
     SUBDIR += torrentsniff
     SUBDIR += transmission
     SUBDIR += transmission-cli
