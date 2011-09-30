@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hotcrp
-PORTVERSION=	2.45
-PORTREVISION=	1
+PORTVERSION=	2.46
 CATEGORIES=	www
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/hotcrp/
 
