@@ -222,7 +222,6 @@
     SUBDIR += p5-Encode-EUCJPMS
     SUBDIR += p5-Encode-JP-Emoji
     SUBDIR += p5-Encode-JP-Mobile
-    SUBDIR += p5-FormValidator-Simple-Plugin-Number-Phone-JP
     SUBDIR += p5-HTML-MobileJp
     SUBDIR += p5-Jcode
     SUBDIR += p5-Lingua-JA-Kana

@@ -180,7 +180,6 @@
     SUBDIR += fig2sxd
     SUBDIR += figurine
     SUBDIR += flam3
-    SUBDIR += flashplayer
     SUBDIR += flasm
     SUBDIR += fli2gif
     SUBDIR += flip
@@ -445,7 +444,6 @@
     SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk
-    SUBDIR += libflash
     SUBDIR += libfpx
     SUBDIR += libgeotiff
     SUBDIR += libgfx

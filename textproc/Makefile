@@ -497,7 +497,6 @@
     SUBDIR += p5-File-Inplace
     SUBDIR += p5-Filter-Simple
     SUBDIR += p5-FormValidator-Lite
-    SUBDIR += p5-FormValidator-Simple
     SUBDIR += p5-Games-Dissociate
     SUBDIR += p5-Geo-Parse-OSM
     SUBDIR += p5-Getopt-Lucid

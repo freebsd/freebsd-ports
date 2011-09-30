@@ -1313,7 +1313,6 @@
     SUBDIR += p5-Class-Constant
     SUBDIR += p5-Class-Container
     SUBDIR += p5-Class-Contract
-    SUBDIR += p5-Class-Data-Accessor
     SUBDIR += p5-Class-Data-ConfigHash
     SUBDIR += p5-Class-Data-Inheritable
     SUBDIR += p5-Class-Date

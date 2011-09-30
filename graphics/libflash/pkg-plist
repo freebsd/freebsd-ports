@@ -1,5 +1,0 @@
-include/flash.h
-lib/libflash.a
-lib/libflash.la
-lib/libflash.so
-lib/libflash.so.0

@@ -103,7 +103,6 @@
     SUBDIR += fvwm2
     SUBDIR += fvwm2-devel
     SUBDIR += fvwm2-i18n
-    SUBDIR += fvwm24
     SUBDIR += fvwm95
     SUBDIR += fvwm95-i18n
     SUBDIR += gcompmgr

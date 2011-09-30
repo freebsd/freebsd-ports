@@ -5,7 +5,6 @@
 
     SUBDIR += amule
     SUBDIR += amule-devel
-    SUBDIR += apollon
     SUBDIR += azureus
     SUBDIR += azureus2
     SUBDIR += bitcoin
@@ -32,10 +31,6 @@
     SUBDIR += fidelio
     SUBDIR += frost
     SUBDIR += frostwire
-    SUBDIR += gift
-    SUBDIR += giftcurs
-    SUBDIR += giftoxic
-    SUBDIR += giftui
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
     SUBDIR += gnunet

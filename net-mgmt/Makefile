@@ -239,12 +239,10 @@
     SUBDIR += py-flowtools
     SUBDIR += py-ipy
     SUBDIR += py-pyang
-    SUBDIR += py-snmp
     SUBDIR += py-snmp2
     SUBDIR += py-snmp4
     SUBDIR += py-snmp4-apps
     SUBDIR += py-snmp4-mibs
-    SUBDIR += py-twistedSNMP
     SUBDIR += py-yapsnmp
     SUBDIR += qkismet
     SUBDIR += rackmonkey

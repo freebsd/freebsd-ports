@@ -1,6 +1,0 @@
-Class::Data::Accessor is the marriage of Class::Accessor and
-Class::Data::Inheritable into a single module. It is used for creating
-accessors to class data that overridable in subclasses as well as in
-class instances.
-
-WWW: http://search.cpan.org/dist/Class-Data-Accessor/

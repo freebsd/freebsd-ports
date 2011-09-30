@@ -39,7 +39,6 @@
     SUBDIR += arora
     SUBDIR += asp2php
     SUBDIR += asql
-    SUBDIR += asterisk-fop
     SUBDIR += asterisk-gui
     SUBDIR += asterisk-stat
     SUBDIR += aswedit
@@ -215,7 +214,6 @@
     SUBDIR += firefox-sync
     SUBDIR += firefox36
     SUBDIR += firefox36-i18n
-    SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
@@ -772,7 +770,6 @@
     SUBDIR += p5-Catalyst-Engine-HTTP-Prefork
     SUBDIR += p5-Catalyst-Engine-PSGI
     SUBDIR += p5-Catalyst-Enzyme
-    SUBDIR += p5-Catalyst-Example-InstantCRUD
     SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
     SUBDIR += p5-Catalyst-Log-Log4perl
     SUBDIR += p5-Catalyst-Manual
@@ -796,7 +793,6 @@
     SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
     SUBDIR += p5-Catalyst-Plugin-AutoCRUD
-    SUBDIR += p5-Catalyst-Plugin-AutoRestart
     SUBDIR += p5-Catalyst-Plugin-Browser
     SUBDIR += p5-Catalyst-Plugin-C3
     SUBDIR += p5-Catalyst-Plugin-Cache
@@ -815,8 +811,6 @@
     SUBDIR += p5-Catalyst-Plugin-FormBuilder
     SUBDIR += p5-Catalyst-Plugin-FormCanary
     SUBDIR += p5-Catalyst-Plugin-FormValidator
-    SUBDIR += p5-Catalyst-Plugin-FormValidator-Simple
-    SUBDIR += p5-Catalyst-Plugin-HTML-Widget
     SUBDIR += p5-Catalyst-Plugin-I18N
     SUBDIR += p5-Catalyst-Plugin-Log-Dispatch
     SUBDIR += p5-Catalyst-Plugin-LogWarnings
@@ -880,7 +874,6 @@
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-Continuity
     SUBDIR += p5-Corona
-    SUBDIR += p5-DBIx-Class-HTMLWidget
     SUBDIR += p5-Dancer
     SUBDIR += p5-Dancer-Plugin-DataFu
     SUBDIR += p5-Dancer-Plugin-Feed
@@ -995,8 +988,6 @@
     SUBDIR += p5-HTML-TreeBuilder-LibXML
     SUBDIR += p5-HTML-TreeBuilder-XPath
     SUBDIR += p5-HTML-Webmake
-    SUBDIR += p5-HTML-Widget
-    SUBDIR += p5-HTML-Widget-DBIC
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
     SUBDIR += p5-HTML-WikiConverter-DokuWiki
@@ -1062,7 +1053,6 @@
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-User-Manage
-    SUBDIR += p5-Handel
     SUBDIR += p5-I18N-AcceptLanguage
     SUBDIR += p5-IMDB-Film
     SUBDIR += p5-IMDB-Movie

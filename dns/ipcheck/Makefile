@@ -25,15 +25,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/ipcheck.py
 
-.ifdef(WITH_SNMP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/pysnmp/v2c.py:${PORTSDIR}/net-mgmt/py-snmp
-.endif
-
-pre-everything::
-.ifndef(WITH_SNMP)
-	@${ECHO_MSG} '===> Enable SNMP support by defining WITH_SNMP'
-.endif
-
 do-patch:
 	@${SED} \
 		-e "s!/usr/bin/python!${LOCALBASE}/bin/python!" \
