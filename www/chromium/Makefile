@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
 		http://files.etoilebsd.net/goodking/ \
-                http://distfiles.cybertron.gr/
+		http://distfiles.cybertron.gr/
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
+		flock:${PORTSDIR}/sysutils/flock \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat \
 		nss>=3.12:${PORTSDIR}/security/nss
 # minimal version of nss, LIB_DEPENDS does not enforce this
@@ -82,12 +83,14 @@ GYP_DEFINES+=	use_cups=1 \
 		python_ver=${PYTHON_VER}
 
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
-		GCONF	"Use GConf2 for preferences"			on
-#		CLANG	"Compile Chromium with clang"			off
+		GCONF	"Use GConf2 for preferences"			on \
+		CLANG	"Compile Chromium with clang"			off \
+		GCC45	"Compile Chromium with gcc 4.5+"		off \
+		DEBUG	"Compile with debug symbols and verbose output"	off
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033
+.if ${OSVERSION} < 900033 || defined(WITH_GCC45)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -117,21 +120,27 @@ GYP_DEFINES+=	use_gconf=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
+.if defined(WITH_GCC45)
+USE_GCC?=	4.5+
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
+.endif
+
 .if defined(WITH_CLANG)
-CC=		/usr/bin/clang
-CXX=		/usr/bin/clang++
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
+.endif
+CC=		clang
+CXX=		clang++
 GYP_DEFINES+=   clang=1
 .endif
 
 .if !defined(WITH_DEBUG)
 BUILDTYPE=	Release
 .else
+MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
-STRIP=
 .endif
 
-# Override the flock command in make.py
-MAKE_ENV+=	FLOCK=
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 
