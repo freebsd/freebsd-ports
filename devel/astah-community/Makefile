@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astah
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
@@ -50,11 +50,12 @@ PORTDATA=	astah-community.jar astah-api.jar astah-gui_en.properties_org \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ReleaseNote-e.html ReleaseNote.html \
 		API_sample_program_license_agreement-e.txt \
-		API_sample_program_license_agreement.txt
+		API_sample_program_license_agreement.txt \
+		api
 .endif
 
 .if !defined(NOPORTEXAMPLES)
-PORTEXAMPLES=	astah-key.properties_org
+PORTEXAMPLES=	astah-key.properties_org Sample.asta
 .endif
 
 post-patch:
@@ -72,19 +73,17 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
+.for docfile in ${PORTDOCS:Napi}
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	${MKDIR} ${DOCSDIR}/api
 	(cd ${WRKSRC}/api && ${COPYTREE_SHARE} \* ${DOCSDIR}/api)
-	@ cd ${PREFIX} && ${FIND} share/doc/${PORTNAME}${PKGNAMESUFFIX}/api -type f -print | \
-		${SORT} -r >> ${TMPPLIST}
-	@ cd ${PREFIX} && ${FIND} share/doc/${PORTNAME}${PKGNAMESUFFIX}/api -type d -print | \
-		${SORT} -r |  ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
+.for examplefile in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${examplefile} ${EXAMPLESDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
