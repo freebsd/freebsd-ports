@@ -15,9 +15,6 @@ MASTER_SITE_SUBDIR=	libtranslate
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A natural language translator
 
-DEPRECATED=	Depends on textproc/libtranslate, which is DEPRECATED
-EXPIRATION_DATE=	2011-10-14
-
 LIB_DEPENDS=		translate:${PORTSDIR}/textproc/libtranslate
 
 INSTALLS_OMF=		yes
