@@ -28,3 +28,13 @@
  #include <string>
  
  #include "base/scoped_ptr.h"
+--- media/filters/file_data_source.h.orig	2011-09-14 10:01:06.000000000 +0200
++++ media/filters/file_data_source.h	2011-09-26 19:08:17.000000000 +0200
+@@ -5,6 +5,7 @@
+ #ifndef MEDIA_FILTERS_FILE_DATA_SOURCE_H_
+ #define MEDIA_FILTERS_FILE_DATA_SOURCE_H_
+ 
++#include <cstdio>
+ #include <string>
+ 
+ #include "base/gtest_prod_util.h"
