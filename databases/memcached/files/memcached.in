@@ -1,9 +1,9 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: memcached
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run memcached:
@@ -16,36 +16,35 @@
 #				Default is "nobody".
 # memcached_profiles (str):     Set to "" by default.
 #                               Define your profiles here.
-#
 
 . /etc/rc.subr
 
 name="memcached"
 rcvar=${name}_enable
 
-_pidprefix="/var/run/memcached/memcached"
-pidfile="${_pidprefix}.pid"
+_piddir="/var/run/memcached"
+pidfile="${_piddir}/memcached.pid"
 
 load_rc_config ${name}
 
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${memcached_profiles}" != "x" ]; then
-		pidfile="${_pidprefix}.${profile}.pid"
+		pidfile="${_piddir}/memcached.${profile}.pid"
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
 	else
 		echo "$0: extra argument ignored"
 	fi
 else
-	if [ "x${memcached_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ -n "${memcached_profiles}" -a -n "$1" ]; then
 		for profile in ${memcached_profiles}; do
 			eval _enable="\${memcached_${profile}_enable}"
-			case "x${_enable:-${memcached_enable}}" in
-			x[Nn][Oo]|x[Ff][Aa][Ll][Ss][Ee]|x[Oo][Ff][Ff]|x0)
+			case "${_enable:-${memcached_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
 				continue
 				;;
-			x[Yy][Ee][Ss]|x[Tt][Rr][Uu][Ee]|x[Oo][Nn]|x1)
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
 				;;
 			*)
 				if test -z "$_enable"; then
@@ -53,7 +52,7 @@ else
 				else
 					_var=memcached_"${profile}"_enable
 				fi
-				echo "Bad value" \
+				warn "Bad value" \
 				    "'${_enable:-${memcached_enable}}'" \
 				    "for ${_var}. " \
 				    "Profile ${profile} skipped."
@@ -61,22 +60,33 @@ else
 				;;
 			esac
 			echo "===> memcached profile: ${profile}"
-			/usr/local/etc/rc.d/memcached $1 ${profile}
-			retcode="$?"
-			if [ "0${retcode}" -ne 0 ]; then
-				failed="${profile} (${retcode}) ${failed:-}"
-			else
+			if $0 $1 ${profile} ; then
 				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
 			fi
 		done
 		exit 0
 	fi
 fi
 
+memcached_poststop()
+{
+	local file
+
+	for file in ${_piddir}/* ; do
+		case "$file" in *\*) continue ;; esac
+		unlink $file
+	done
+}
+
 : ${memcached_enable="NO"}
 : ${memcached_user="nobody"}
 
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user} -P ${pidfile} "
+
+start_precmd="install -d -o $memcached_user -g $memcached_user -m 755 $_piddir"
+stop_postcmd="${name}_poststop"
 
 run_rc_command "$1"
