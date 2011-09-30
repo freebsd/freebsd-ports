@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
 		p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
