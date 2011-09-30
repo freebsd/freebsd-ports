@@ -17,7 +17,9 @@ COMMENT=	Extension for App::CLI extension module
 
 BUILD_DEPENDS=	p5-App-CLI>=0:${PORTSDIR}/devel/p5-App-CLI \
 		p5-Class-Accessor-Grouped>=0:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
