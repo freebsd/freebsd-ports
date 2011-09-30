@@ -1,8 +1,19 @@
-
-$FreeBSD$
-
---- configure	2001/02/23 11:37:15	1.1
-+++ configure	2001/02/23 11:37:28
+Index: configure
+@@ -897,12 +897,12 @@
+ 
+ if test x$ADD_OPT \!= xno; then
+ 	case $machtype in
+-	i?86)
++	disabled)
+ 		CFLAGS="$CFLAGS -O3 -mpentium -march=pentium -fstrength-reduce -fomit-frame-pointer -frerun-cse-after-loop -funroll-loops -ffast-math -malign-functions=5 -malign-jumps=5 -malign-loops=5 -malign-double -fno-exceptions -fno-rtti"
+ 		CXXFLAGS="$CXXFLAGS -O3 -mpentium -march=pentium -fstrength-reduce -fomit-frame-pointer -frerun-cse-after-loop -funroll-loops -ffast-math -malign-functions=5 -malign-jumps=5 -malign-loops=5 -malign-double -fno-exceptions -fno-rtti"
+ 		;;
+ 	*)
+-		CFLAGS="$CFLAGS -O3 -ffast-math -fomit-frame-pointer -fno-exceptions -fno-rtti -funroll-loops -frerun-cse-after-loop"
++		CFLAGS="$CFLAGS -O3 -ffast-math -fomit-frame-pointer -fno-exceptions -funroll-loops -frerun-cse-after-loop"
+ 		CXXFLAGS="$CXXFLAGS -O3 -ffast-math -fomit-frame-pointer -fno-exceptions -fno-rtti -funroll-loops -frerun-cse-after-loop"
+ 		;;
+ 	esac
 @@ -1779,7 +1779,7 @@
  #include <stdio.h>
  #include <stdlib.h>
