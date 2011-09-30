@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.17001
+PORTVERSION=	3.18001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to twitter.com
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
     		${SITE_PERL}/Data/Visitor/Callback.pm:${PORTSDIR}/devel/p5-Data-Visitor \
@@ -22,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/MooseX/Traits.pm:${PORTSDIR}/devel/p5-MooseX-Traits \
 		${SITE_PERL}/namespace/autoclean.pm:${PORTSDIR}/devel/p5-namespace-autoclean \
 		${SITE_PERL}/Net/OAuth/Simple.pm:${PORTSDIR}/net/p5-Net-OAuth-Simple \
-		${SITE_PERL}/JSON/Any.pm:${PORTSDIR}/converters/p5-JSON-Any \
+		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
 		${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -36,6 +39,7 @@ MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
 		Net::Twitter::Role::API::REST.3 \
 		Net::Twitter::Role::API::Search::Trends.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
+		Net::Twitter::Role::API::Upload.3 \
 		Net::Twitter::Role::AutoCursor.3 \
 		Net::Twitter::Role::InflateObjects.3 \
 		Net::Twitter::Role::Legacy.3 \
