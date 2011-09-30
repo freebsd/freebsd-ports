@@ -19,18 +19,17 @@
 %%PYTHON_SITELIBDIR%%/mercurialserver/servelog.py
 %%PYTHON_SITELIBDIR%%/mercurialserver/servelog.pyc
 %%PYTHON_SITELIBDIR%%/mercurialserver/servelog.pyo
+
 bin/hg-ssh
 bin/refresh-auth
 etc/mercurialserver/access.conf
+etc/mercurialserver/dot-mercurial-server
+etc/mercurialserver/hgadmin-hgrc
+etc/mercurialserver/hginit
 etc/mercurialserver/remote-hgrc.d/access.rc
 etc/mercurialserver/remote-hgrc.d/logging.rc
-hg/.hgadmin-hgrc
-hg/.mercurial-server
 
 @dirrm %%PYTHON_SITELIBDIR%%/mercurialserver
-
-@dirrmtry hg/repos
-@dirrmtry hg/.ssh
 @dirrmtry hg
 @dirrmtry etc/mercurialserver/remote-hgrc.d
 @dirrmtry etc/mercurialserver/keys/users
