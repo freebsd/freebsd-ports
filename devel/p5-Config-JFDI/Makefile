@@ -26,7 +26,8 @@ BUILD_DEPENDS=	\
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
 	p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 PERL_CONFIGURE=	yes
 
