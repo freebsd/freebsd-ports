@@ -7,7 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
@@ -26,6 +26,9 @@ MAN1=		ccache.1
 
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
+OPTIONS=	CLANGLINK	"Create clang compiler links if clang is installed" off \
+		LLVMLINK	"Create llvm compiler links if llvm is installed" off
+
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	CCLINKDIR="${CCLINKDIR}"
@@ -33,9 +36,18 @@ PLIST_SUB+=	CCLINKDIR="${CCLINKDIR}"
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc
 .endif
+
 GNU_COMPILERS+=		34 42 43 44 45 46
 CCACHE_COMPILERS+=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
-CCACHE_COMPILERS+=	clang clang++ llvm-gcc llvm-c++ llvm-g++
+
+.if defined(WITH_CLANGLINK)
+CCACHE_COMPILERS+=	clang clang++
+.endif
+
+.if defined(WITH_LLVMLINK)
+CCACHE_COMPILERS+=	llvm-gcc llvm-c++ llvm-g++
+.endif
+
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
 SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
 		CCLINKDIR="${CCLINKDIR}" \
@@ -72,5 +84,8 @@ post-install:
 	@${ECHO_CMD} "Create compiler links..."
 	@${PREFIX}/bin/ccache-update-links -v
 	@${CAT} ${PKGMESSAGE}
+.if defined(WITH_CLANGLINK)
+	@${CAT} ${FILESDIR}/pkg-message-clang
+.endif
 
 .include <bsd.port.post.mk>
