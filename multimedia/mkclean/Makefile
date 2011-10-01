@@ -7,6 +7,7 @@
 
 PORTNAME=	mkclean
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
@@ -28,7 +29,8 @@ MAKE_ENV+=	"LFLAGS=${LDFLAGS}"
 MAKEFILE=	GNUmakefile
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-PLIST_FILES=	bin/mkclean
+PLIST_FILES=	bin/mkclean \
+		bin/mkWDclean
 
 post-extract:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
