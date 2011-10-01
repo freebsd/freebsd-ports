@@ -1,12 +1,12 @@
-# New ports collection makefile for:    xscreensaver
-# Date created:         10 July 1995
-# Whom:                 dom@myrddin.demon.co.uk
+# New ports collection makefile for:	xscreensaver
+# Date created:				10 July 1995
+# Whom:					dom@myrddin.demon.co.uk
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.14
+PORTVERSION=	5.15
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -19,6 +19,9 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
+
+RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		giftopnm:${PORTSDIR}/graphics/netpbm
 
 MAKE_JOBS_SAFE=	yes
 
@@ -126,6 +129,7 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	xspirograph.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
 	abstractile.6 moebiusgears.6 lockward.6 cubicgrid.6 hypnowheel.6 \
 	lcdscrub.6 skytentacles.6 photopile.6 rubikblocks.6 surfaces.6 \
+	companioncube.6 hilbert.6 tronbit.6 \
 	xscreensaver-gl-helper.6
 
 .if ${ARCH} == "amd64"
@@ -138,6 +142,9 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
+	@ ${CP} ${WRKSRC}/hacks/vidwhacker ${WRKSRC}/hacks/vidwhacker.presed
+	@ ${SED} -e '329s#.*#      $$fn = "$$imagedir/$$fn";#' \
+	    ${WRKSRC}/hacks/vidwhacker.presed > ${WRKSRC}/hacks/vidwhacker
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed

@@ -11,34 +11,3 @@
  
  UTILS_SRC	= $(srcdir)/../utils
  UTILS_BIN	= ../utils
-@@ -239,7 +239,6 @@
- EXTRAS		= README Makefile.in \
- 		  XScreenSaver.ad.in XScreenSaver-Xm.ad xscreensaver.pam \
- 		  xscreensaver-demo.glade2 xscreensaver-demo.glade2p \
--		  screensaver-properties.desktop.in \
- 		  .gdbinit
- VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
- 		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
-@@ -490,22 +489,6 @@
- 	  fi ;								\
- 	fi
- 
--# screensaver-properties.desktop
--# into /usr/share/applications/
--install-gnome:: screensaver-properties.desktop
--	@if [ "$(GTK_DATADIR)" != "" ]; then				      \
--	   if [ ! -d "$(install_prefix)$(GTK_APPDIR)" ]; then		      \
--	     echo $(INSTALL_DIRS) "$(install_prefix)$(GTK_APPDIR)"	     ;\
--		  $(INSTALL_DIRS) "$(install_prefix)$(GTK_APPDIR)"	     ;\
--	   fi								     ;\
--	   name2=xscreensaver-properties.desktop			     ;\
--	   echo $(INSTALL_DATA) screensaver-properties.desktop		      \
--		  $(install_prefix)$(GTK_APPDIR)/$$name2		     ;\
--		$(INSTALL_DATA) screensaver-properties.desktop		      \
--		  $(install_prefix)$(GTK_APPDIR)/$$name2		     ;\
--	 fi
--
--
- # xscreensaver.xpm
- # into /usr/share/pixmaps/
- install-gnome:: $(LOGO)
