@@ -17,7 +17,7 @@ COMMENT=	Tool to make it easier to manage multiple git repositories
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
+BUILD_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Git-Wrapper>=0.014:${PORTSDIR}/devel/p5-Git-Wrapper \
@@ -29,6 +29,13 @@ RUN_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-File>=0:${PORTSDIR}/devel/p5-Test-File \
+		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
 
 PERL_CONFIGURE=	yes
 
