@@ -11,6 +11,8 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt
 
 COMMENT=	mutt, the Mongrel of Mail User Agents (lite package)
 
+CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* zh-mutt-devel-[0-9]*
+
 MUTT_LITE=	yes
 
 .include "${MASTERDIR}/Makefile"
