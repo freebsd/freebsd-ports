@@ -1,6 +1,6 @@
 --- PATCHES~	never
 +++ PATCHES	Thu Jun 13 16:25:05 CDT 2002
-@@ -1,0 +1 @@
+@@ -0,0 +1 @@
 +dgc.deepif.1
 diff -Pur mutt-1.5.1-base/muttlib.c mutt-1.5.1/muttlib.c
 --- muttlib.c	Tue Mar 26 16:47:06 2002
@@ -37,7 +37,7 @@ Index: PATCHES
 ===================================================================
 --- PATCHES	(revision 22)
 +++ PATCHES	(revision 22)
-@@ -1,0 +1 @@
+@@ -0,0 +1 @@
 +patch-1.5.0.ats.date_conditional.1
 Index: muttlib.c
 ===================================================================

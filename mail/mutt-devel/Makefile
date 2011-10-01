@@ -206,7 +206,7 @@ OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
 		MUTT_SMIME_OUTLOOK_COMPAT	"SMIME outlook compatible"	on \
 		MUTT_SMTP			"Enable SMTP relay support"	off \
 		MUTT_TRASH_PATCH		"Enable trash folder support"	off \
-		MUTT_XML			"Use XML tools for documentation"	on
+		MUTT_XML			"Use XML tools for docu"	on
 .endif
 
 PLIST=		${WRKDIR}/PLIST
