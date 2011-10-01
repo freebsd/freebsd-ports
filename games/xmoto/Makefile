@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig libxml2
 USE_LUA=	5.1
 USE_SQLITE=	3
 USE_SDL=	sdl mixer ttf net
