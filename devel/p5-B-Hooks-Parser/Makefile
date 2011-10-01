@@ -16,9 +16,11 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to perls parser variables
 
 BUILD_DEPENDS=	p5-B-Hooks-OP-Check>0:${PORTSDIR}/devel/p5-B-Hooks-OP-Check:patch \
+		p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-ExtUtils-Depends>0:${PORTSDIR}/devel/p5-ExtUtils-Depends
 RUN_DEPENDS=	p5-B-Hooks-OP-Check>0:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
 		p5-parent>:${PORTSDIR}/devel/p5-parent
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
