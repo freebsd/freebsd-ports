@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
@@ -18,6 +18,8 @@ PORTREVISION=	${REVISEDATE}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
+
+CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]*
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
