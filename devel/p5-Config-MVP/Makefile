@@ -6,7 +6,7 @@
 
 PORTNAME=	Config-MVP
 PORTVERSION=	2.200001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +21,13 @@ BUILD_DEPENDS=	p5-Moose>=0.91:${PORTSDIR}/devel/p5-Moose \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
 		p5-MooseX-OneArgNew>=0:${PORTSDIR}/devel/p5-MooseX-OneArgNew \
 		p5-Role-HasMessage>=0:${PORTSDIR}/devel/p5-Role-HasMessage \
-		p5-Role-Identifiable>=0:${PORTSDIR}/devel/p5-Role-Identifiable
+		p5-Role-Identifiable>=0:${PORTSDIR}/devel/p5-Role-Identifiable \
+		p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Throwable>=0:${PORTSDIR}/devel/p5-Throwable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Simple>0.96:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	YES
 MAN3=	Config::MVP.3\
