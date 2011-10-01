@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTVERSION=	1.3.4
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Prayer Webmail System
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/LICENCE
 
 LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 
@@ -26,9 +28,6 @@ MAKE_ENV+=	PORTCFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 		INSTALL LOGS NOTICE README ROADMAP SECURITY TODO
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/docs/LICENCE
 
 USE_RC_SUBR=	prayer
 
@@ -67,9 +66,9 @@ post-patch:
 	@${REINPLACE_CMD} "s#prayer_user           = \"prayer\"#prayer_user           = \"_prayer\"#" ${WRKSRC}/files/etc/prayer.cf.SRC
 	@${REINPLACE_CMD} "s#\"prayer\" \"prayer\"#\"_prayer\" \"prayer\"#" ${WRKSRC}/utils/prayer-cyclog.SRC
 	@${REINPLACE_CMD} "/^CC\s.*/d" ${WRKSRC}/Config
+	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
 
 post-configure:
-	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
 .if defined(WITH_SESSIONCACHE)
 	@${REINPLACE_CMD} "s|^#DB_INCLUDE=.*|DB_INCLUDE=-I${BDB_INCLUDE_DIR}|" ${WRKSRC}/Config
 	@${REINPLACE_CMD} "s|^#DB_LIBS=.*|DB_LIBS=-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}|" ${WRKSRC}/Config
