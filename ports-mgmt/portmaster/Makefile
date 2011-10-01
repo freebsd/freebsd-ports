@@ -3,9 +3,6 @@
 # Whom:					Doug Barton <dougb@FreeBSD.org>
 #
 # $FreeBSD$
-#
-# This port is self contained in the files directory.
-#
 
 PORTNAME=	portmaster
 PORTVERSION=	3.10
