@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kiconvtool
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		LOCAL/amdmi3
