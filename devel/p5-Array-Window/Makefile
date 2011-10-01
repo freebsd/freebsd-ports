@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculate windows/subsets/pages of arrays
 
-RUN_DEPENDS=	p5-Params-Util>=0.12:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.12:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
