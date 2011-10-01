@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	libwps
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	A Microsoft file word processor format import filter library
 
-LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
-
 LICENSE=	LGPL21
+
+LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=     gnomeprefix gnomehack ltverhack
