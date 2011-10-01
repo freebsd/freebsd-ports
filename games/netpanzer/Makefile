@@ -9,7 +9,7 @@ PORTNAME=	netpanzer
 PORTVERSION=	0.8.1
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Real time, isometric view, tank multiplayer strategy game
