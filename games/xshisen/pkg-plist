@@ -1,0 +1,83 @@
+bin/xshisen
+lib/X11/app-defaults/XShisen
+lib/X11/ja_JP.eucJP/app-defaults/XShisen
+%%DATADIR%%/s1/chun.xpm
+%%DATADIR%%/s1/haku.xpm
+%%DATADIR%%/s1/hana.xpm
+%%DATADIR%%/s1/hatsu.xpm
+%%DATADIR%%/s1/hishi.xpm
+%%DATADIR%%/s1/m1.xpm
+%%DATADIR%%/s1/m2.xpm
+%%DATADIR%%/s1/m3.xpm
+%%DATADIR%%/s1/m4.xpm
+%%DATADIR%%/s1/m5.xpm
+%%DATADIR%%/s1/m6.xpm
+%%DATADIR%%/s1/m7.xpm
+%%DATADIR%%/s1/m8.xpm
+%%DATADIR%%/s1/m9.xpm
+%%DATADIR%%/s1/nan.xpm
+%%DATADIR%%/s1/p1.xpm
+%%DATADIR%%/s1/p2.xpm
+%%DATADIR%%/s1/p3.xpm
+%%DATADIR%%/s1/p4.xpm
+%%DATADIR%%/s1/p5.xpm
+%%DATADIR%%/s1/p6.xpm
+%%DATADIR%%/s1/p7.xpm
+%%DATADIR%%/s1/p8.xpm
+%%DATADIR%%/s1/p9.xpm
+%%DATADIR%%/s1/pei.xpm
+%%DATADIR%%/s1/s1.xpm
+%%DATADIR%%/s1/s2.xpm
+%%DATADIR%%/s1/s3.xpm
+%%DATADIR%%/s1/s4.xpm
+%%DATADIR%%/s1/s5.xpm
+%%DATADIR%%/s1/s6.xpm
+%%DATADIR%%/s1/s7.xpm
+%%DATADIR%%/s1/s8.xpm
+%%DATADIR%%/s1/s9.xpm
+%%DATADIR%%/s1/sha.xpm
+%%DATADIR%%/s1/ton.xpm
+%%DATADIR%%/s2/chun.xpm
+%%DATADIR%%/s2/haku.xpm
+%%DATADIR%%/s2/hana.xpm
+%%DATADIR%%/s2/hatsu.xpm
+%%DATADIR%%/s2/hishi.xpm
+%%DATADIR%%/s2/m1.xpm
+%%DATADIR%%/s2/m2.xpm
+%%DATADIR%%/s2/m3.xpm
+%%DATADIR%%/s2/m4.xpm
+%%DATADIR%%/s2/m5.xpm
+%%DATADIR%%/s2/m6.xpm
+%%DATADIR%%/s2/m7.xpm
+%%DATADIR%%/s2/m8.xpm
+%%DATADIR%%/s2/m9.xpm
+%%DATADIR%%/s2/nan.xpm
+%%DATADIR%%/s2/p1.xpm
+%%DATADIR%%/s2/p2.xpm
+%%DATADIR%%/s2/p3.xpm
+%%DATADIR%%/s2/p4.xpm
+%%DATADIR%%/s2/p5.xpm
+%%DATADIR%%/s2/p6.xpm
+%%DATADIR%%/s2/p7.xpm
+%%DATADIR%%/s2/p8.xpm
+%%DATADIR%%/s2/p9.xpm
+%%DATADIR%%/s2/pei.xpm
+%%DATADIR%%/s2/s1.xpm
+%%DATADIR%%/s2/s2.xpm
+%%DATADIR%%/s2/s3.xpm
+%%DATADIR%%/s2/s4.xpm
+%%DATADIR%%/s2/s5.xpm
+%%DATADIR%%/s2/s6.xpm
+%%DATADIR%%/s2/s7.xpm
+%%DATADIR%%/s2/s8.xpm
+%%DATADIR%%/s2/s9.xpm
+%%DATADIR%%/s2/sha.xpm
+%%DATADIR%%/s2/ton.xpm
+%%DATADIR%%/xshisen.scores
+@dirrm %%DATADIR%%/s2
+@dirrm %%DATADIR%%/s1
+@dirrm %%DATADIR%%
+@dirrmtry lib/X11/ja_JP.eucJP/app-defaults
+@dirrmtry lib/X11/ja_JP.eucJP
+@exec [ -d %D/lib/X11/ja_JP.EUC/ -a -d %D/lib/X11/ja_JP.EUC/app-defaults ] && ln -s %D/lib/X11/ja_JP.eucJP/app-defaults/XShisen %D/lib/X11/ja_JP.EUC/app-defaults || true
+@unexec rm %D/lib/X11/ja_JP.EUC/app-defaults/XShisen 2>/dev/null || true
