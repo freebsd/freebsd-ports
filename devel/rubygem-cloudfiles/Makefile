@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cloudfiles
-PORTVERSION=	1.4.17
+PORTVERSION=	1.4.18
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
