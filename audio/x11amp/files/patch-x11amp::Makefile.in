@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- x11amp/Makefile.in.orig	Mon Apr 12 04:21:06 1999
++++ x11amp/Makefile.in	Mon Nov 26 19:55:52 2001
+@@ -92,8 +92,8 @@
+ 
+ bin_PROGRAMS = x11amp
+ 
+-LIBS = @GTK_LIBS@ -lpthread $(top_builddir)/libx11amp/libx11amp.la 
+-CFLAGS = -O6 @GTK_CFLAGS@ -DX11AMP_DIR=\"$(x11ampdir)\" -DPLUGIN_DIR=\"$(plugindir)\" -DPLUGINSUBS=$(pluginsubs) -D_REENTRANT
++LIBS = @GTK_LIBS@ $(PTHREAD_LIBS) $(top_builddir)/libx11amp/libx11amp.la 
++CFLAGS += @GTK_CFLAGS@ -DX11AMP_DIR=\"$(x11ampdir)\" -DPLUGIN_DIR=\"$(plugindir)\" -DPLUGINSUBS=$(pluginsubs) -D_REENTRANT
+ 
+ x11amp_SOURCES = bmp.c bmp.h skin.c skin.h util.c util.h output.c output.h input.c input.h effect.c effect.h general.c general.h pluginenum.c pluginenum.h playlist.c playlist.h controlsocket.c controlsocket.h widget.c widget.h sbutton.c sbutton.h pbutton.c pbutton.h tbutton.c tbutton.h textbox.c textbox.h menurow.c menurow.h hslider.c hslider.h monostereo.c monostereo.h vis.c vis.h svis.c svis.h number.c number.h playstatus.c playstatus.h playlist_list.c playlist_list.h playlist_slider.c playlist_slider.h playlist_popup.c playlist_popup.h eq_graph.c eq_graph.h eq_slider.c eq_slider.h main.c main.h skinwin.c skinwin.h prefswin.c prefswin.h playlistwin.c playlistwin.h dirbrowser.c dirbrowser.h equalizer.c equalizer.h hints.c hints.h plugin.h x11amp.h getopt.c getopt1.c getopt.h
+ 

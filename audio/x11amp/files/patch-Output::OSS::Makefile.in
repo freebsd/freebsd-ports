@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Output/OSS/Makefile.in	2001/11/26 18:04:59	1.1
++++ Output/OSS/Makefile.in	2001/11/26 18:05:10
+@@ -94,7 +94,7 @@
+ 
+ lib_LTLIBRARIES = $(ossltlibs)
+ 
+-CFLAGS = @GTK_CFLAGS@ -D_REENTRANT -I$(top_srcdir)
++CFLAGS += @GTK_CFLAGS@ -D_REENTRANT -I$(top_srcdir)
+ libdir = $(plugindir)/$(OUTPUT_PLUGIN_DIR)
+ 
+ libOSS_la_LDFLAGS = $(ossldflags)

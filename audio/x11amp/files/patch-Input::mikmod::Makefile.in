@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Input/mikmod/Makefile.in	2001/11/26 17:58:25	1.1
++++ Input/mikmod/Makefile.in	2001/11/26 17:59:23
+@@ -94,7 +94,7 @@
+ 
+ libmikmod_la_LDFLAGS = -module -avoid-version
+ LIBS = 
+-CFLAGS = -I$(top_srcdir) -O2 -fomit-frame-pointer -funroll-all-loops       -finline-functions -ffast-math -D_REENTRANT @GTK_CFLAGS@
++CFLAGS += -I$(top_srcdir) -fomit-frame-pointer -funroll-all-loops       -finline-functions -ffast-math -D_REENTRANT @GTK_CFLAGS@
+ 
+ 
+ libmikmod_la_SOURCES =  load_669.c load_amf.c load_dsm.c load_far.c load_it.c load_m15.c load_med.c load_mod.c load_mtm.c load_s3m.c load_stm.c load_ult.c load_xm.c mmalloc.c mmerror.c mmio.c drv_x11amp.c drv_nos.c mdreg.c mdriver.c mloader.c mlreg.c mplayer.c munitrk.c mwav.c npertab.c s3m_it.c sloader.c virtch.c marchive.c mikmod.h mikmod.xpm mikmod_internals.h mikmod-plugin.h plugin.c
