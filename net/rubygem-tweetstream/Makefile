@@ -6,33 +6,28 @@
 #
 
 PORTNAME=	tweetstream
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	TweetStream provides simple Ruby access to Twitter\'s Streaming API
 
-RUN_DEPENDS=	rubygem-twitter-stream>=0:${PORTSDIR}/net/rubygem-twitter-stream \
-		rubygem-daemons>=0:${PORTSDIR}/devel/rubygem-daemons \
-		rubygem-json>=0.0.0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-twitter-stream>=0.1.14:${PORTSDIR}/net/rubygem-twitter-stream \
+		rubygem-daemons>=1.1.2:${PORTSDIR}/devel/rubygem-daemons \
+		rubygem-multi_json>=1.0.3:${PORTSDIR}/devel/rubygem-multi_json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 OPTIONS=	JSON_PURE	"JSON implementation in pure Ruby support"	Off \
-		ACTIVESUPPORT	"ActiveSupport::JSON.decode support"	Off \
 		YAJL_RUBY	"yajl-ruby support"	Off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_JSON_PURE)
 RUN_DEPENDS+=	rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
-.endif
-
-.if defined(WITH_ACTIVESUPPORT)
-RUN_DEPENDS+=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport
 .endif
 
 .if defined(WITH_YAJL_RUBY)
