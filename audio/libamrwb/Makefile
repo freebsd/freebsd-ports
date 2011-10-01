@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libamrwb
-PORTVERSION=	7.0.0.3
+PORTVERSION=	7.0.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.penguin.cz/pub/users/utx/amr/ \
 		http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/:3GPP
@@ -17,8 +17,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	3GPP Adaptive Multi-Rate - Wideband (AMR-WB) Speech Codec
 
+LICENSE=	LGPL20
+
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 RESTRICTED=	license prohibits redistribution
 RESTRICTED_FILES=	${SRC3GPP}
 USE_BZIP2=	yes
