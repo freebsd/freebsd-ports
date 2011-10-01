@@ -7,20 +7,19 @@
 
 PORTNAME=	dmake
 PORTVERSION=	4.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://ooo-dmake.googlecode.com/files/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Another hyper make utility
 
 LICENSE=	GPLv1
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_BZIP2=        yes
+
 GNU_CONFIGURE=	yes
-#CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -Wall -Werror"
-CONFIGURE_ARGS+=--datarootdir=${PREFIX}/share/${PORTNAME}
+CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
 MAN1=		dmake.1
 
