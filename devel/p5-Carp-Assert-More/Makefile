@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convenience wrappers around Carp::Assert
 
-BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert
 RUN_DEPENDS=	p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert
 
 MAN3=	Carp::Assert::More.3
