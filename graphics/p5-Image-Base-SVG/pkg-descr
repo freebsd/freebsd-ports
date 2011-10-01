@@ -1,0 +1,17 @@
+Image::Base::SVG extends Image::Base to create or update SVG format image files
+using the SVG.pm module (see SVG::Manual).
+
+Image::Base is pixel oriented so isn't really the sort of thing SVG is meant
+for, but this module can direct some Image::Base style code at an SVG object. Of
+course the SVG module has many more features if used natively.
+
+It's often fairly easy to spit out SVG directly too, and for instance the
+Image::Base::SVGout module can do that. The advantages of the SVG document
+object model comes when combining images or fragments, or going through elements
+for post-facto mangling.
+
+In the current code the SVG elements emitted assume some default style
+attributes such as stroke-width 1. Perhaps that should be set explicitly on each
+element.
+
+WWW: http://search.cpan.org/dist/Image-Base-SVG/

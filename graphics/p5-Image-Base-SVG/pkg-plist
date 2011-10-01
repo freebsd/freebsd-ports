@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Image/Base/SVG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Base/SVG/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Base/SVG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Base
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/Base
+@dirrmtry %%SITE_PERL%%/Image
