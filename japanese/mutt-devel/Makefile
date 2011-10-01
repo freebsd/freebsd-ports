@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/:body \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/:body \
@@ -50,7 +50,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-CONFLICTS=	mutt-[0-9]* ja-mutt-1.[0-4]*
+CONFLICTS=	ja-mutt-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
 VERSION=	1.5.21
 JP_VERSION=	1
