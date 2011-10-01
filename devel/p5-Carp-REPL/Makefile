@@ -27,6 +27,7 @@ RUN_DEPENDS=	devel/p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Strea
 		p5-Devel-StackTrace-WithLexicals>0:${PORTSDIR}/devel/p5-Devel-StackTrace-WithLexicals \
 		p5-Lexical-Persistence>0:${PORTSDIR}/devel/p5-Lexical-Persistence \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+TEST_DEPENDS=	p5-Test-Expect>=0:${PORTSDIR}/devel/p5-Test-Expect
 
 USE_PERL=	yes
 PERL_CONFIGURE=	yes
