@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- General/ir/Makefile.in	2001/11/26 17:58:25	1.1
++++ General/ir/Makefile.in	2001/11/26 18:00:50
+@@ -90,7 +90,7 @@
+ libdir = $(plugindir)/$(GENERAL_PLUGIN_DIR)
+ 
+ libir_la_LDFLAGS = -module -avoid-version
+-CFLAGS = -O2 -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
++CFLAGS += -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
+ LIBS = 
+ 
+ libir_la_SOURCES =  ir.c ir.h irman.h configure.c about.c irio.c irfunc.c 

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Effect/voice/Makefile.in	2001/11/26 17:58:25	1.1
++++ Effect/voice/Makefile.in	2001/11/26 17:59:37
+@@ -90,7 +90,7 @@
+ libdir = $(plugindir)/$(EFFECT_PLUGIN_DIR)
+ 
+ libvoice_la_LDFLAGS = -module -avoid-version 
+-CFLAGS = -O2 -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
++CFLAGS += -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
+ LIBS = 
+ 
+ libvoice_la_SOURCES =  about.c voice.c voice.h
