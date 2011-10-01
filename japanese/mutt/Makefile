@@ -6,7 +6,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.4/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
@@ -26,6 +26,8 @@ EXPIRATION_DATE=	2011-10-14
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+
+CONFLICTS=	ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
 USE_GETTEXT=	yes
 
