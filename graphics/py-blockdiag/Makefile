@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blockdiag
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.4:${PORTSDIR}/devel/py-funcparserlib \
 		${PKGNAMEPREFIX}webcolors>=0:${PORTSDIR}/graphics/py-webcolors
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=	easy_install
 
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
