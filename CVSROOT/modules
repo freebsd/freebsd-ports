@@ -574,7 +574,6 @@ apg                             ports/security/apg
 api-sanity-autotest             ports/devel/api-sanity-autotest
 apinger                         ports/net/apinger
 apngasm                         ports/graphics/apngasm
-apollon                         ports/net-p2p/apollon
 apoolGL                         ports/games/apoolGL
 apoolgl                         ports/games/apoolGL
 apparix                         ports/misc/apparix
@@ -721,7 +720,6 @@ astah-community                 ports/devel/astah-community
 asterisk                        ports/net/asterisk
 asterisk-app-ldap               ports/net/asterisk-app-ldap
 asterisk-app-notify             ports/net/asterisk-app-notify
-asterisk-fop                    ports/www/asterisk-fop
 asterisk-gui                    ports/www/asterisk-gui
 asterisk-oh323                  ports/net/asterisk-oh323
 asterisk-stat                   ports/www/asterisk-stat
@@ -3491,8 +3489,6 @@ flamerobin                      ports/databases/flamerobin
 flare                           ports/databases/flare
 flash                           ports/shells/flash
 flasher                         ports/sysutils/flasher
-flashplayer                     ports/graphics/flashplayer
-flashplugin-mozilla             ports/www/flashplugin-mozilla
 flashrom                        ports/sysutils/flashrom
 flasm                           ports/graphics/flasm
 flat-frog                       ports/www/flat-frog
@@ -4016,7 +4012,6 @@ fvwm-themes                     ports/x11-themes/fvwm-themes
 fvwm2                           ports/x11-wm/fvwm2
 fvwm2-devel                     ports/x11-wm/fvwm2-devel
 fvwm2-i18n                      ports/x11-wm/fvwm2-i18n
-fvwm24                          ports/x11-wm/fvwm24
 fvwm95                          ports/x11-wm/fvwm95
 fvwm95-i18n                     ports/x11-wm/fvwm95-i18n
 fwanalog                        ports/security/fwanalog
@@ -4329,12 +4324,8 @@ gif2png                         ports/graphics/gif2png
 giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
 gifsicle                        ports/graphics/gifsicle
-gift                            ports/net-p2p/gift
-giftcurs                        ports/net-p2p/giftcurs
 giftool                         ports/graphics/giftool
-giftoxic                        ports/net-p2p/giftoxic
 giftrans                        ports/graphics/giftrans
-giftui                          ports/net-p2p/giftui
 gigabase                        ports/databases/gigabase
 gigedit                         ports/audio/gigedit
 giggle                          ports/devel/giggle
@@ -6377,7 +6368,6 @@ ja-p5-DateTime-Format-Japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-Encode-EUCJPMS            ports/japanese/p5-Encode-EUCJPMS
 ja-p5-Encode-JP-Emoji           ports/japanese/p5-Encode-JP-Emoji
 ja-p5-Encode-JP-Mobile          ports/japanese/p5-Encode-JP-Mobile
-ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-HTML-MobileJp             ports/japanese/p5-HTML-MobileJp
 ja-p5-Jcode                     ports/japanese/p5-Jcode
 ja-p5-Lingua-JA-Kana            ports/japanese/p5-Lingua-JA-Kana
@@ -6402,7 +6392,6 @@ ja-p5-datetime-format-japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-encode-eucjpms            ports/japanese/p5-Encode-EUCJPMS
 ja-p5-encode-jp-emoji           ports/japanese/p5-Encode-JP-Emoji
 ja-p5-encode-jp-mobile          ports/japanese/p5-Encode-JP-Mobile
-ja-p5-formvalidator-simple-plugin-number-phone-jp  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-html-mobilejp             ports/japanese/p5-HTML-MobileJp
 ja-p5-jcode                     ports/japanese/p5-Jcode
 ja-p5-lingua-ja-kana            ports/japanese/p5-Lingua-JA-Kana
@@ -7838,7 +7827,6 @@ libffi                          ports/devel/libffi
 libfirm                         ports/devel/libfirm
 libfishsound                    ports/audio/libfishsound
 libfixbuf                       ports/net/libfixbuf
-libflash                        ports/graphics/libflash
 libfm                           ports/x11/libfm
 libfontenc                      ports/x11-fonts/libfontenc
 libfov                          ports/games/libfov
@@ -9649,7 +9637,6 @@ msynctool                       ports/deskutils/msynctool
 msynctool-devel                 ports/deskutils/msynctool-devel
 msyslog                         ports/sysutils/msyslog
 mt-aspell                       ports/textproc/mt-aspell
-mt-daapd                        ports/audio/mt-daapd
 mt_dolphin_ia                   ports/games/mt_dolphin_ia
 mt_gtk_client                   ports/games/mt_gtk_client
 mtail                           ports/misc/mtail
@@ -9696,7 +9683,6 @@ munin-common                    ports/sysutils/munin-common
 munin-master                    ports/sysutils/munin-master
 munin-node                      ports/sysutils/munin-node
 mup                             ports/print/mup
-mupad                           ports/math/mupad
 muparser                        ports/math/muparser
 mupdf                           ports/graphics/mupdf
 mupen64                         ports/emulators/mupen64
@@ -10169,7 +10155,6 @@ nsca                            ports/net-mgmt/nsca
 nsca-client                     ports/net-mgmt/nsca-client
 nscache                         ports/www/nscache
 nsd                             ports/dns/nsd
-nsd2                            ports/dns/nsd2
 nsf                             ports/misc/nsf
 nslint                          ports/dns/nslint
 nsnake                          ports/games/nsnake
@@ -11223,7 +11208,6 @@ p5-Catalyst-Engine-Apache       ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Engine-HTTP-Prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-Catalyst-Engine-PSGI         ports/www/p5-Catalyst-Engine-PSGI
 p5-Catalyst-Enzyme              ports/www/p5-Catalyst-Enzyme
-p5-Catalyst-Example-InstantCRUD  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-Catalyst-Helper-Controller-Scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
 p5-Catalyst-Log-Log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-Catalyst-Manual              ports/www/p5-Catalyst-Manual
@@ -11247,7 +11231,6 @@ p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-A
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-Catalyst-Plugin-AutoCRUD     ports/www/p5-Catalyst-Plugin-AutoCRUD
-p5-Catalyst-Plugin-AutoRestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-Catalyst-Plugin-Browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-Catalyst-Plugin-C3           ports/www/p5-Catalyst-Plugin-C3
 p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
@@ -11266,8 +11249,6 @@ p5-Catalyst-Plugin-FillInForm   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormBuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-Catalyst-Plugin-FormCanary   ports/www/p5-Catalyst-Plugin-FormCanary
 p5-Catalyst-Plugin-FormValidator  ports/www/p5-Catalyst-Plugin-FormValidator
-p5-Catalyst-Plugin-FormValidator-Simple  ports/www/p5-Catalyst-Plugin-FormValidator-Simple
-p5-Catalyst-Plugin-HTML-Widget  ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-Catalyst-Plugin-I18N         ports/www/p5-Catalyst-Plugin-I18N
 p5-Catalyst-Plugin-Log-Dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
 p5-Catalyst-Plugin-LogWarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
@@ -11422,7 +11403,6 @@ p5-Class-DBI-Sweet              ports/databases/p5-Class-DBI-Sweet
 p5-Class-DBI-ToSax              ports/databases/p5-Class-DBI-ToSax
 p5-Class-DBI-Untaint            ports/databases/p5-Class-DBI-Untaint
 p5-Class-DBI-mysql              ports/databases/p5-Class-DBI-mysql
-p5-Class-Data-Accessor          ports/devel/p5-Class-Data-Accessor
 p5-Class-Data-ConfigHash        ports/devel/p5-Class-Data-ConfigHash
 p5-Class-Data-Inheritable       ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date                   ports/devel/p5-Class-Date
@@ -11700,7 +11680,6 @@ p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-EncodedColumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-DBIx-Class-Fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
-p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-FS  ports/databases/p5-DBIx-Class-InflateColumn-FS
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -11715,7 +11694,6 @@ p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-DBIx-Class-Tree              ports/databases/p5-DBIx-Class-Tree
 p5-DBIx-Class-Tree-NestedSet    ports/databases/p5-DBIx-Class-Tree-NestedSet
 p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
-p5-DBIx-Class-Validation        ports/databases/p5-DBIx-Class-Validation
 p5-DBIx-Class-WebForm           ports/databases/p5-DBIx-Class-WebForm
 p5-DBIx-Connector               ports/databases/p5-DBIx-Connector
 p5-DBIx-ContextualFetch         ports/databases/p5-DBIx-ContextualFetch
@@ -12285,7 +12263,6 @@ p5-Font-TTF                     ports/x11-fonts/p5-Font-TTF
 p5-Font-TTFMetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-Forest                       ports/devel/p5-Forest
 p5-FormValidator-Lite           ports/textproc/p5-FormValidator-Lite
-p5-FormValidator-Simple         ports/textproc/p5-FormValidator-Simple
 p5-Format-Human-Bytes           ports/converters/p5-Format-Human-Bytes
 p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-FreeBSD-Pkgs-FindUpdates     ports/ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates
@@ -12547,8 +12524,6 @@ p5-HTML-TreeBuilder-LibXML      ports/www/p5-HTML-TreeBuilder-LibXML
 p5-HTML-TreeBuilder-XPath       ports/www/p5-HTML-TreeBuilder-XPath
 p5-HTML-Truncate                ports/textproc/p5-HTML-Truncate
 p5-HTML-Webmake                 ports/www/p5-HTML-Webmake
-p5-HTML-Widget                  ports/www/p5-HTML-Widget
-p5-HTML-Widget-DBIC             ports/www/p5-HTML-Widget-DBIC
 p5-HTML-Widgets-SelectLayers    ports/www/p5-HTML-Widgets-SelectLayers
 p5-HTML-WikiConverter           ports/www/p5-HTML-WikiConverter
 p5-HTML-WikiConverter-DokuWiki  ports/www/p5-HTML-WikiConverter-DokuWiki
@@ -12615,7 +12590,6 @@ p5-HTTP-WebTest                 ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter             ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage            ports/www/p5-HTTPD-User-Manage
 p5-Hailo                        ports/textproc/p5-Hailo
-p5-Handel                       ports/www/p5-Handel
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-AutoHash                ports/devel/p5-Hash-AutoHash
 p5-Hash-Case                    ports/devel/p5-Hash-Case
@@ -13547,7 +13521,6 @@ p5-Number-Tolerant              ports/devel/p5-Number-Tolerant
 p5-Number-WithError             ports/math/p5-Number-WithError
 p5-Number-WithError-LaTeX       ports/math/p5-Number-WithError-LaTeX
 p5-OAI-Harvester                ports/net/p5-OAI-Harvester
-p5-OAuth-Lite                   ports/net/p5-OAuth-Lite
 p5-ODF-lpOD                     ports/textproc/p5-ODF-lpOD
 p5-OLE-Storage_Lite             ports/devel/p5-OLE-Storage_Lite
 p5-OOTools                      ports/devel/p5-OOTools
@@ -13912,9 +13885,6 @@ p5-RTF-Parser                   ports/textproc/p5-RTF-Parser
 p5-RTF-Tokenizer                ports/textproc/p5-RTF-Tokenizer
 p5-RTF-Writer                   ports/textproc/p5-RTF-Writer
 p5-RTx-Calendar                 ports/www/p5-RTx-Calendar
-p5-RTx-RightsMatrix             ports/www/p5-RTx-RightsMatrix
-p5-RTx-Shredder                 ports/www/p5-RTx-Shredder
-p5-RTx-Statistics               ports/www/p5-RTx-Statistics
 p5-Range-String                 ports/devel/p5-Range-String
 p5-Rcs                          ports/devel/p5-Rcs
 p5-Rcs-Agent                    ports/devel/p5-Rcs-Agent
@@ -15453,7 +15423,6 @@ p5-catalyst-engine-apache       ports/www/p5-Catalyst-Engine-Apache
 p5-catalyst-engine-http-prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-catalyst-engine-psgi         ports/www/p5-Catalyst-Engine-PSGI
 p5-catalyst-enzyme              ports/www/p5-Catalyst-Enzyme
-p5-catalyst-example-instantcrud  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-catalyst-helper-controller-scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
 p5-catalyst-log-log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-catalyst-manual              ports/www/p5-Catalyst-Manual
@@ -15477,7 +15446,6 @@ p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-A
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-catalyst-plugin-autocrud     ports/www/p5-Catalyst-Plugin-AutoCRUD
-p5-catalyst-plugin-autorestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-catalyst-plugin-browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-catalyst-plugin-c3           ports/www/p5-Catalyst-Plugin-C3
 p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
@@ -15496,8 +15464,6 @@ p5-catalyst-plugin-fillinform   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-catalyst-plugin-formbuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-catalyst-plugin-formcanary   ports/www/p5-Catalyst-Plugin-FormCanary
 p5-catalyst-plugin-formvalidator  ports/www/p5-Catalyst-Plugin-FormValidator
-p5-catalyst-plugin-formvalidator-simple  ports/www/p5-Catalyst-Plugin-FormValidator-Simple
-p5-catalyst-plugin-html-widget  ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-catalyst-plugin-i18n         ports/www/p5-Catalyst-Plugin-I18N
 p5-catalyst-plugin-log-dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
 p5-catalyst-plugin-logwarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
@@ -15699,7 +15665,6 @@ p5-class-constant               ports/devel/p5-Class-Constant
 p5-class-container              ports/devel/p5-Class-Container
 p5-class-contract               ports/devel/p5-Class-Contract
 p5-class-csv                    ports/textproc/p5-Class-CSV
-p5-class-data-accessor          ports/devel/p5-Class-Data-Accessor
 p5-class-data-confighash        ports/devel/p5-Class-Data-ConfigHash
 p5-class-data-inheritable       ports/devel/p5-Class-Data-Inheritable
 p5-class-date                   ports/devel/p5-Class-Date
@@ -16223,7 +16188,6 @@ p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-encodedcolumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-dbix-class-fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
-p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-fs  ports/databases/p5-DBIx-Class-InflateColumn-FS
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -16238,7 +16202,6 @@ p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-dbix-class-tree              ports/databases/p5-DBIx-Class-Tree
 p5-dbix-class-tree-nestedset    ports/databases/p5-DBIx-Class-Tree-NestedSet
 p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
-p5-dbix-class-validation        ports/databases/p5-DBIx-Class-Validation
 p5-dbix-class-webform           ports/databases/p5-DBIx-Class-WebForm
 p5-dbix-connector               ports/databases/p5-DBIx-Connector
 p5-dbix-contextualfetch         ports/databases/p5-DBIx-ContextualFetch
@@ -16637,7 +16600,6 @@ p5-forest                       ports/devel/p5-Forest
 p5-forks                        ports/devel/p5-forks
 p5-format-human-bytes           ports/converters/p5-Format-Human-Bytes
 p5-formvalidator-lite           ports/textproc/p5-FormValidator-Lite
-p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
 p5-freebsd-i386-ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
 p5-freebsd-pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-freebsd-pkgs-findupdates     ports/ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates
@@ -16791,7 +16753,6 @@ p5-gtk2-webkit                  ports/www/p5-Gtk2-WebKit
 p5-guard                        ports/devel/p5-Guard
 p5-gungho                       ports/www/p5-Gungho
 p5-hailo                        ports/textproc/p5-Hailo
-p5-handel                       ports/www/p5-Handel
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-autohash                ports/devel/p5-Hash-AutoHash
 p5-hash-case                    ports/devel/p5-Hash-Case
@@ -16922,8 +16883,6 @@ p5-html-treebuilder-libxml      ports/www/p5-HTML-TreeBuilder-LibXML
 p5-html-treebuilder-xpath       ports/www/p5-HTML-TreeBuilder-XPath
 p5-html-truncate                ports/textproc/p5-HTML-Truncate
 p5-html-webmake                 ports/www/p5-HTML-Webmake
-p5-html-widget                  ports/www/p5-HTML-Widget
-p5-html-widget-dbic             ports/www/p5-HTML-Widget-DBIC
 p5-html-widgets-selectlayers    ports/www/p5-HTML-Widgets-SelectLayers
 p5-html-wikiconverter           ports/www/p5-HTML-WikiConverter
 p5-html-wikiconverter-dokuwiki  ports/www/p5-HTML-WikiConverter-DokuWiki
@@ -17921,7 +17880,6 @@ p5-number-tolerant              ports/devel/p5-Number-Tolerant
 p5-number-witherror             ports/math/p5-Number-WithError
 p5-number-witherror-latex       ports/math/p5-Number-WithError-LaTeX
 p5-oai-harvester                ports/net/p5-OAI-Harvester
-p5-oauth-lite                   ports/net/p5-OAuth-Lite
 p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
 p5-object-declare               ports/devel/p5-Object-Declare
@@ -18359,9 +18317,6 @@ p5-rtf-parser                   ports/textproc/p5-RTF-Parser
 p5-rtf-tokenizer                ports/textproc/p5-RTF-Tokenizer
 p5-rtf-writer                   ports/textproc/p5-RTF-Writer
 p5-rtx-calendar                 ports/www/p5-RTx-Calendar
-p5-rtx-rightsmatrix             ports/www/p5-RTx-RightsMatrix
-p5-rtx-shredder                 ports/www/p5-RTx-Shredder
-p5-rtx-statistics               ports/www/p5-RTx-Statistics
 p5-runapp                       ports/devel/p5-RunApp
 p5-s3                           ports/net/p5-S3
 p5-safe-hole                    ports/security/p5-Safe-Hole
@@ -20532,7 +20487,6 @@ pglesslog                       ports/databases/pglesslog
 pgloader                        ports/databases/pgloader
 pglogd                          ports/www/pglogd
 pgp                             ports/security/pgp
-pgp6                            ports/security/pgp6
 pgpdump                         ports/security/pgpdump
 pgpgpg                          ports/security/pgpgpg
 pgpin                           ports/security/pgpin
@@ -21078,7 +21032,6 @@ plib                            ports/x11-toolkits/plib
 pligg                           ports/www/pligg
 plman                           ports/math/plman
 pload                           ports/net/pload
-plone                           ports/www/plone
 plone3                          ports/www/plone3
 plonx                           ports/games/plonx
 plopfolio                       ports/deskutils/plopfolio
@@ -22274,7 +22227,6 @@ py-slimmer                      ports/www/py-slimmer
 py-smb                          ports/net/py-smb
 py-smbpasswd                    ports/net/py-smbpasswd
 py-smmap                        ports/devel/py-smmap
-py-snmp                         ports/net-mgmt/py-snmp
 py-snmp2                        ports/net-mgmt/py-snmp2
 py-snmp4                        ports/net-mgmt/py-snmp4
 py-snmp4-apps                   ports/net-mgmt/py-snmp4-apps
@@ -22376,7 +22328,6 @@ py-twistedNames                 ports/dns/py-twistedNames
 py-twistedNews                  ports/news/py-twistedNews
 py-twistedPair                  ports/net/py-twistedPair
 py-twistedRunner                ports/devel/py-twistedRunner
-py-twistedSNMP                  ports/net-mgmt/py-twistedSNMP
 py-twistedWeb                   ports/www/py-twistedWeb
 py-twistedWeb2                  ports/www/py-twistedWeb2
 py-twistedWords                 ports/net-im/py-twistedWords
@@ -22389,7 +22340,6 @@ py-twistednames                 ports/dns/py-twistedNames
 py-twistednews                  ports/news/py-twistedNews
 py-twistedpair                  ports/net/py-twistedPair
 py-twistedrunner                ports/devel/py-twistedRunner
-py-twistedsnmp                  ports/net-mgmt/py-twistedSNMP
 py-twistedweb                   ports/www/py-twistedWeb
 py-twistedweb2                  ports/www/py-twistedWeb2
 py-twistedwords                 ports/net-im/py-twistedWords
@@ -22489,12 +22439,11 @@ py-zope.deprecation             ports/devel/py-zope.deprecation
 py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
+py-zope.interface               ports/devel/py-zope.interface
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
 py-zope.testing                 ports/devel/py-zope.testing
-py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeevent                    ports/devel/py-zopeevent
-py-zopeinterface                ports/devel/py-zopeInterface
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
@@ -22503,7 +22452,6 @@ py31-tkinter                    ports/x11-toolkits/py31-tkinter
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
 pybench                         ports/benchmarks/pybench
-pyblosxom                       ports/www/pyblosxom
 pybook                          ports/textproc/pybook
 pybookreader                    ports/deskutils/pybookreader
 pybrain                         ports/science/pybrain
@@ -23304,7 +23252,6 @@ rsyslog6-devel-relp             ports/sysutils/rsyslog6-devel-relp
 rsyslog6-devel-rfc3195          ports/sysutils/rsyslog6-devel-rfc3195
 rsyslog6-devel-snmp             ports/sysutils/rsyslog6-devel-snmp
 rt2-demo                        ports/games/rt2-demo
-rt36                            ports/www/rt36
 rt38                            ports/www/rt38
 rtb                             ports/games/rtb
 rtc                             ports/emulators/rtc
@@ -23622,6 +23569,7 @@ rubygem-addressable             ports/www/rubygem-addressable
 rubygem-ai4r                    ports/science/rubygem-ai4r
 rubygem-allison                 ports/devel/rubygem-allison
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
+rubygem-amq-client              ports/net/rubygem-amq-client
 rubygem-amq-protocol            ports/net/rubygem-amq-protocol
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-amqp-utils              ports/net/rubygem-amqp-utils
@@ -25607,7 +25555,6 @@ tork                            ports/net-mgmt/tork
 tornado                         ports/games/tornado
 torque                          ports/sysutils/torque
 torrent                         ports/games/torrent
-torrentflux                     ports/net-p2p/torrentflux
 torrentsniff                    ports/net-p2p/torrentsniff
 torrentzip                      ports/archivers/torrentzip
 torrus                          ports/net-mgmt/torrus
@@ -25630,7 +25577,6 @@ tpm-tools                       ports/security/tpm-tools
 tpmmanager                      ports/security/tpmmanager
 tpop3d                          ports/mail/tpop3d
 tpp                             ports/misc/tpp
-tptest                          ports/net/tptest
 tr-aspell                       ports/textproc/tr-aspell
 tr-ircd                         ports/irc/tr-ircd
 trac                            ports/www/trac
@@ -27986,9 +27932,7 @@ zoom                            ports/games/zoom
 zope                            ports/www/zope
 zope-FileSystemSite             ports/www/zope-FileSystemSite
 zope-annotations                ports/www/zope-annotations
-zope-archetypes                 ports/www/zope-archetypes
 zope-btreefolder2               ports/www/zope-btreefolder2
-zope-calendaring                ports/www/zope-calendaring
 zope-cmf                        ports/www/zope-cmf
 zope-cmfactionicons             ports/www/zope-cmfactionicons
 zope-cmfformcontroller          ports/www/zope-cmfformcontroller
@@ -27997,26 +27941,22 @@ zope-cmfphoto                   ports/www/zope-cmfphoto
 zope-cmfphotoalbum              ports/www/zope-cmfphotoalbum
 zope-cmfquickinstaller          ports/www/zope-cmfquickinstaller
 zope-coreblog                   ports/www/zope-coreblog
-zope-coreblog2                  ports/www/zope-coreblog2
 zope-epoz                       ports/www/zope-epoz
 zope-exuserfolder               ports/www/zope-exuserfolder
 zope-filesystemsite             ports/www/zope-FileSystemSite
 zope-formulator                 ports/www/zope-formulator
 zope-generator                  ports/www/zope-generator
 zope-groupuserfolder            ports/www/zope-groupuserfolder
-zope-i18nlayer                  ports/www/zope-i18nlayer
 zope-kupu                       ports/www/zope-kupu
 zope-mimetypesregistry          ports/www/zope-mimetypesregistry
 zope-mindmapbbs                 ports/www/zope-mindmapbbs
 zope-mysqluserfolder            ports/www/zope-mysqluserfolder
 zope-parsedxml                  ports/www/zope-parsedxml
 zope-placelesstranslationservice  ports/www/zope-placelesstranslationservice
-zope-plonelanguagetool          ports/www/zope-plonelanguagetool
 zope-portaltransforms           ports/www/zope-portaltransforms
 zope-proxyindex                 ports/www/zope-proxyindex
 zope-silva                      ports/www/zope-silva
 zope-silvaviews                 ports/www/zope-silvaviews
-zope-simpleblog                 ports/www/zope-simpleblog
 zope-ttwtype                    ports/www/zope-ttwtype
 zope-validation                 ports/www/zope-validation
 zope-xmlmethods                 ports/www/zope-xmlmethods
