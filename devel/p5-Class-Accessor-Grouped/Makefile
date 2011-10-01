@@ -17,10 +17,12 @@ COMMENT=	Lets you build groups of accessors
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-RUN_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Class-XSAccessor>=1.11:${PORTSDIR}/devel/p5-Class-XSAccessor
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
