@@ -20,6 +20,7 @@ RUN_DEPENDS=	\
 		p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
 		p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS=  ${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	Yes
 MAN3=		Config::JSON.3
