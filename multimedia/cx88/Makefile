@@ -30,6 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS+= cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
 BUILD_DEPENDS+= v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
 		cuse4bsd-kmod>=0.1.12:${PORTSDIR}/multimedia/cuse4bsd-kmod
+BROKEN=		incorrect dependency object for cuse4bsd-kmod dependency
 MAKE_ARGS+= -D WITH_LINUX_DVB
 .endif
 
