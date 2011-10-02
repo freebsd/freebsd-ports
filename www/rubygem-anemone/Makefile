@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	anemone
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
