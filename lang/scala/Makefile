@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	scala
-PORTVERSION=	2.9.0.1
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/downloads/distrib/files/ \
 		LOCAL/glarkin
+DISTNAME=	${PORTNAME}-${PORTVERSION}.final
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mitsururike@gmail.com
@@ -24,7 +24,7 @@ JAVA_VERSION=	1.5+
 
 MAN1=		fsc.1 sbaz.1 scala.1 scalac.1 scaladoc.1 scalap.1
 
-SCALA_HOME=	${PREFIX}/share/${PORTNAME}
+SCALA_HOME=	${DATADIR}
 SCALA_SHRDIRS=	lib meta misc
 SCALA_BINS=	fsc \
 		sbaz \
