@@ -608,6 +608,7 @@
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
+    SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
