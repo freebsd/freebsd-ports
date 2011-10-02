@@ -38,6 +38,7 @@ do-install:
 	cd ${WRKSRC} && ${FIND} . -type f -not -path "\./bin/" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	${INSTALL_DATA} ${WRKSRC}/bin/m2.conf ${DATADIR}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/mvn.sh ${DATADIR}/bin/mvn
+	${MKDIR} ${PREFIX}/${INSTANCES_DIR}
 	${INSTALL_DATA} ${WRKSRC}/${INSTANCE_FILE} ${PREFIX}/${INSTANCES_DIR}
 
 post-install:
