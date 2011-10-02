@@ -1,25 +1,10 @@
---- ./setup.py.orig	2004-04-23 22:05:41.000000000 -0400
-+++ ./setup.py	2007-12-20 11:34:57.000000000 -0500
-@@ -24,6 +24,26 @@
+--- setup.py.orig	2004-04-24 06:05:41.000000000 +0400
++++ setup.py	2011-09-29 22:14:01.000000000 +0400
+@@ -24,6 +24,11 @@
      extra_link_args = []
      bison2pyscript = 'utils/bison2py'
      bisondynlibModule = "src/c/bisondynlib-linux.c"
-+elif sys.platform == 'freebsd5':
-+    libs = []
-+    extra_link_args = []
-+    bison2pyscript = 'utils/bison2py'
-+    bisondynlibModule = "src/c/bisondynlib-linux.c"
-+elif sys.platform == 'freebsd6':
-+    libs = []
-+    extra_link_args = []
-+    bison2pyscript = 'utils/bison2py'
-+    bisondynlibModule = "src/c/bisondynlib-linux.c"
-+elif sys.platform == 'freebsd7':
-+    libs = []
-+    extra_link_args = []
-+    bison2pyscript = 'utils/bison2py'
-+    bisondynlibModule = "src/c/bisondynlib-linux.c"
-+elif sys.platform == 'freebsd8':
++elif 'freebsd' in sys.platform:
 +    libs = []
 +    extra_link_args = []
 +    bison2pyscript = 'utils/bison2py'
