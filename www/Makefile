@@ -1657,6 +1657,7 @@
     SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
+    SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-yapra
     SUBDIR += runsomebrowser
