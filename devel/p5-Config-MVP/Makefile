@@ -26,7 +26,6 @@ BUILD_DEPENDS=	p5-Moose>=0.91:${PORTSDIR}/devel/p5-Moose \
 		p5-Throwable>=0:${PORTSDIR}/devel/p5-Throwable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Simple>0.96:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	YES
