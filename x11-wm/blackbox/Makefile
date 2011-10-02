@@ -16,6 +16,8 @@ COMMENT=	A small and fast window manager for X11R6
 
 LICENSE=	MIT
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig
