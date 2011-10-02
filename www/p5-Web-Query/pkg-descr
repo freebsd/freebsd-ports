@@ -1,0 +1,12 @@
+Web::Query is a yet another scraping framework, have a jQuery like
+interaface.
+
+Yes, I know ingy's pQuery. But it's just a alpha quality. It doesn't
+works.  Web::Query built at top of the CPAN modules,
+HTML::TreeBuilder::XPath, LWP::UserAgent, and HTML::Selector::XPath.
+
+So, this module uses HTML::Selector::XPath, then this module only
+supports CSS3 selector supported by HTML::Selector::XPath. Web::Query
+doesn't support jQuery's extended quries(yet?).
+
+WWW:	http://search.cpan.org/dist/Web-Query/
