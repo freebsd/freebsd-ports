@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
+DEPRECATED=	Development branch no longer supported by fvwm.org.
+EXPIRATION_DATE=	2011-10-10
+
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 # Other ports this port cannot coexist with
