@@ -35,8 +35,7 @@ MLINKS=		grep.1 bzegrep.1 \
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man" \
-		NLSDIR="${PREFIX}/share/nls" \
-		MK_BSD_GREP="yes"
+		NLSDIR="${PREFIX}/share/nls"
 
 OPTIONS=	NLS		"Compile with NLS support"		on \
 		GNU_COMPAT	"Use GNU regex library (recommended)"	on
