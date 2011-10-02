@@ -1,6 +1,6 @@
---- Makefile.old	2011-09-14 01:10:08.000000000 +0200
-+++ Makefile	2011-09-14 01:10:38.000000000 +0200
-@@ -4,15 +4,7 @@
+--- Makefile.orig	2011-09-21 15:26:48.000000000 +0200
++++ Makefile	2011-09-21 15:29:01.000000000 +0200
+@@ -4,16 +4,9 @@
  
  .include <bsd.own.mk>
  
@@ -14,14 +14,7 @@
 -	cp ${.ALLSRC} ${.TARGET}
 -.endif
  SRCS=	file.c grep.c queue.c util.c
++CFLAGS+=-std=gnu99
  
  # Extra files ported backported form some regex improvements
-@@ -30,7 +22,7 @@
- 	${BINDIR}/grep ${BINDIR}/bzegrep \
- 	${BINDIR}/grep ${BINDIR}/bzfgrep \
- 	${BINDIR}/grep ${BINDIR}/xzgrep \
--	${BINDIR}/grep ${BINDIR}/xzefgrep \
-+	${BINDIR}/grep ${BINDIR}/xzegrep \
- 	${BINDIR}/grep ${BINDIR}/xzfgrep \
- 	${BINDIR}/grep ${BINDIR}/lzgrep \
- 	${BINDIR}/grep ${BINDIR}/lzegrep \
+ .PATH: ${.CURDIR}/regex
