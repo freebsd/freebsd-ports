@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JavaScript-Packer
-PORTVERSION=	1.004
+PORTVERSION=	1.006
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl version of Dean Edwards' Packer.js
 
+BUILD_DEPENDS=	p5-Regexp-RegGrp>=1.001.001:${PORTSDIR}/devel/p5-Regexp-RegGrp
 RUN_DEPENDS=	p5-Regexp-RegGrp>=1.001.001:${PORTSDIR}/devel/p5-Regexp-RegGrp
 
 PERL_CONFIGURE=	yes
