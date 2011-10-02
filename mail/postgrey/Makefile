@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
 	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' ${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
 
-pre-install:
+pre-su-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
