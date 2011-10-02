@@ -1,0 +1,23 @@
+%%SITE_PERL%%/PocketIO.pm
+%%SITE_PERL%%/PocketIO/Broadcast.pm
+%%SITE_PERL%%/PocketIO/Connection.pm
+%%SITE_PERL%%/PocketIO/Handle.pm
+%%SITE_PERL%%/PocketIO/Message.pm
+%%SITE_PERL%%/PocketIO/Pool.pm
+%%SITE_PERL%%/PocketIO/Pool/Redis.pm
+%%SITE_PERL%%/PocketIO/Resource.pm
+%%SITE_PERL%%/PocketIO/Socket.pm
+%%SITE_PERL%%/PocketIO/Sockets.pm
+%%SITE_PERL%%/PocketIO/Test.pm
+%%SITE_PERL%%/PocketIO/Transport/Base.pm
+%%SITE_PERL%%/PocketIO/Transport/BasePolling.pm
+%%SITE_PERL%%/PocketIO/Transport/Htmlfile.pm
+%%SITE_PERL%%/PocketIO/Transport/JSONPPolling.pm
+%%SITE_PERL%%/PocketIO/Transport/WebSocket.pm
+%%SITE_PERL%%/PocketIO/Transport/XHRMultipart.pm
+%%SITE_PERL%%/PocketIO/Transport/XHRPolling.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO
+@dirrm %%SITE_PERL%%/PocketIO/Transport
+@dirrm %%SITE_PERL%%/PocketIO/Pool
+@dirrm %%SITE_PERL%%/PocketIO

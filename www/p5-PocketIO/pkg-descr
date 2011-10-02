@@ -1,0 +1,7 @@
+PocketIO is a server implementation of SocketIO in Perl, you still need
+socket.io javascript library on the client.
+
+PocketIO aims to have API as close as possible to the node.js implementation and
+sometimes it might look not very perlish.
+
+WWW: http://search.cpan.org/dist/PocketIO/

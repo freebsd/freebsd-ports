@@ -1148,6 +1148,7 @@
     SUBDIR += p5-Plack-Server-POE
     SUBDIR += p5-Plack-Server-ReverseHTTP
     SUBDIR += p5-Plack-Test-ExternalServer
+    SUBDIR += p5-PocketIO
     SUBDIR += p5-Pod-Site
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-Protocol-WebSocket
