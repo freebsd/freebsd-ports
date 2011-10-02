@@ -33,8 +33,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
-.elif ${OSVERSION} >= 900000
-BROKEN=		Does not support FreeBSD 9.0 or higher
 .endif
 
 .if !defined(NOPORTDOCS)
