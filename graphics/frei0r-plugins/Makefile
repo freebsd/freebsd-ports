@@ -13,6 +13,9 @@ EXTRACT_ONLY=	# empty
 
 COMMENT=	Frei0r meta-port
 
+# Required in order to avoid conflicts with graphics/frei0r's OPTIONS.
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+
 RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 
 MASTERDIR=	${.CURDIR}/../frei0r
