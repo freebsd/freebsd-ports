@@ -1,0 +1,64 @@
+bin/ubic
+bin/ubic-admin
+bin/ubic-daemon
+bin/ubic-periodic
+bin/ubic-update
+bin/ubic-watchdog
+%%SITE_PERL%%/Ubic.pm
+%%SITE_PERL%%/Ubic/AccessGuard.pm
+%%SITE_PERL%%/Ubic/Admin/Setup.pm
+%%SITE_PERL%%/Ubic/AtomicFile.pm
+%%SITE_PERL%%/Ubic/Cmd.pm
+%%SITE_PERL%%/Ubic/Cmd/Results.pm
+%%SITE_PERL%%/Ubic/Credentials.pm
+%%SITE_PERL%%/Ubic/Credentials/OS/MacOSX.pm
+%%SITE_PERL%%/Ubic/Credentials/OS/POSIX.pm
+%%SITE_PERL%%/Ubic/Credentials/OS/Windows.pm
+%%SITE_PERL%%/Ubic/Daemon.pm
+%%SITE_PERL%%/Ubic/Daemon/OS.pm
+%%SITE_PERL%%/Ubic/Daemon/OS/Linux.pm
+%%SITE_PERL%%/Ubic/Daemon/OS/POSIX.pm
+%%SITE_PERL%%/Ubic/Daemon/PidState.pm
+%%SITE_PERL%%/Ubic/Daemon/Status.pm
+%%SITE_PERL%%/Ubic/Lockf.pm
+%%SITE_PERL%%/Ubic/Lockf/Alarm.pm
+%%SITE_PERL%%/Ubic/Logger.pm
+%%SITE_PERL%%/Ubic/Manual/FAQ.pod
+%%SITE_PERL%%/Ubic/Manual/Intro.pod
+%%SITE_PERL%%/Ubic/Manual/Multiservices.pod
+%%SITE_PERL%%/Ubic/Manual/Overview.pod
+%%SITE_PERL%%/Ubic/Multiservice.pm
+%%SITE_PERL%%/Ubic/Multiservice/Dir.pm
+%%SITE_PERL%%/Ubic/Multiservice/Simple.pm
+%%SITE_PERL%%/Ubic/Persistent.pm
+%%SITE_PERL%%/Ubic/Ping.pm
+%%SITE_PERL%%/Ubic/Ping/Service.pm
+%%SITE_PERL%%/Ubic/PortMap.pm
+%%SITE_PERL%%/Ubic/Result.pm
+%%SITE_PERL%%/Ubic/Result/Class.pm
+%%SITE_PERL%%/Ubic/Run.pm
+%%SITE_PERL%%/Ubic/Service.pm
+%%SITE_PERL%%/Ubic/Service/Common.pm
+%%SITE_PERL%%/Ubic/Service/SimpleDaemon.pm
+%%SITE_PERL%%/Ubic/Service/Skeleton.pm
+%%SITE_PERL%%/Ubic/Service/Utils.pm
+%%SITE_PERL%%/Ubic/Settings.pm
+%%SITE_PERL%%/Ubic/Settings/ConfigFile.pm
+%%SITE_PERL%%/Ubic/SingletonLock.pm
+%%SITE_PERL%%/Ubic/Watchdog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ubic/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ubic
+@dirrm %%SITE_PERL%%/Ubic/Settings
+@dirrm %%SITE_PERL%%/Ubic/Service
+@dirrm %%SITE_PERL%%/Ubic/Result
+@dirrm %%SITE_PERL%%/Ubic/Ping
+@dirrm %%SITE_PERL%%/Ubic/Multiservice
+@dirrm %%SITE_PERL%%/Ubic/Manual
+@dirrm %%SITE_PERL%%/Ubic/Lockf
+@dirrm %%SITE_PERL%%/Ubic/Daemon/OS
+@dirrm %%SITE_PERL%%/Ubic/Daemon
+@dirrm %%SITE_PERL%%/Ubic/Credentials/OS
+@dirrm %%SITE_PERL%%/Ubic/Credentials
+@dirrm %%SITE_PERL%%/Ubic/Cmd
+@dirrm %%SITE_PERL%%/Ubic/Admin
+@dirrm %%SITE_PERL%%/Ubic
