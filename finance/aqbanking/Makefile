@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.0.14
+PORTVERSION=	5.0.16
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=85&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=87&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
@@ -16,7 +16,7 @@ COMMENT=	Online banking interface and financial data framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gwenhywfar.62:${PORTSDIR}/devel/gwenhywfar \
+LIB_DEPENDS=	gwenhywfar.63:${PORTSDIR}/devel/gwenhywfar \
 		gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes

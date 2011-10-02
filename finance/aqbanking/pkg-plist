@@ -322,6 +322,7 @@ share/aqbanking/imexporters/dtaus/profiles/transfer.conf
 share/aqbanking/imexporters/eri/profiles/default.conf
 share/aqbanking/imexporters/eri2/eriformat.xml
 share/aqbanking/imexporters/ofx/profiles/default.conf
+share/aqbanking/imexporters/ofx/profiles/iso8859.conf
 share/aqbanking/imexporters/openhbci1/profiles/default.conf
 share/aqbanking/imexporters/q43/profiles/default.conf
 share/aqbanking/imexporters/sepa/profiles/ccm.conf
