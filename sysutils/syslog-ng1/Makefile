@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/1.6/src/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+DEPRECATED=	Suggested by syslog-ng upline, no longer supported
+EXPIRATION_DATE=	2011-11-01
+
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 USE_RC_SUBR=	syslog-ng.sh
