@@ -16,6 +16,8 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN=		does not compile
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 PERL_CONFIGURE=	yes
