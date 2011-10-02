@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amqp-utils
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -25,6 +25,7 @@ USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+= bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue bin/amqp-peek bin/amqp-pop \
-		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind
+		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind \
+		bin/amqp-delexch bin/amqp-exchange
 
 .include <bsd.port.mk>
