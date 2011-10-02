@@ -10295,6 +10295,7 @@ oclock                          ports/x11-clocks/oclock
 ocp                             ports/audio/ocp
 ocrad                           ports/graphics/ocrad
 ocre                            ports/graphics/ocre
+ocrfeeder                       ports/graphics/ocrfeeder
 ocropus                         ports/graphics/ocropus
 ocs                             ports/lang/ocs
 ocsigen                         ports/www/ocsigen
@@ -10628,7 +10629,6 @@ orc                             ports/devel/orc
 org-mode.el                     ports/deskutils/org-mode.el
 org-mode.el6                    ports/deskutils/org-mode.el6
 oroborus                        ports/x11-wm/oroborus
-orpheus                         ports/audio/orpheus
 orpie                           ports/math/orpie
 orsa                            ports/astro/orsa
 ortep3                          ports/biology/ortep3
@@ -12686,6 +12686,7 @@ p5-IRC-Utils                    ports/irc/p5-IRC-Utils
 p5-Ima-DBI                      ports/databases/p5-Ima-DBI
 p5-Ima-DBI-Contextual           ports/databases/p5-Ima-DBI-Contextual
 p5-Image-Base                   ports/graphics/p5-Image-Base
+p5-Image-Base-SVG               ports/graphics/p5-Image-Base-SVG
 p5-Image-Caa                    ports/graphics/p5-Image-Caa
 p5-Image-Compare                ports/graphics/p5-Image-Compare
 p5-Image-Delivery               ports/www/p5-Image-Delivery
@@ -16957,6 +16958,7 @@ p5-idna-punycode                ports/textproc/p5-IDNA-Punycode
 p5-ima-dbi                      ports/databases/p5-Ima-DBI
 p5-ima-dbi-contextual           ports/databases/p5-Ima-DBI-Contextual
 p5-image-base                   ports/graphics/p5-Image-Base
+p5-image-base-svg               ports/graphics/p5-Image-Base-SVG
 p5-image-caa                    ports/graphics/p5-Image-Caa
 p5-image-compare                ports/graphics/p5-Image-Compare
 p5-image-delivery               ports/www/p5-Image-Delivery
@@ -22196,6 +22198,7 @@ py-rtree                        ports/devel/py-rtree
 py-ruledispatch                 ports/devel/py-ruledispatch
 py-rxp                          ports/textproc/py-rxp
 py-s3cmd                        ports/net/py-s3cmd
+py-sane                         ports/graphics/py-sane
 py-satchmo                      ports/www/py-satchmo
 py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
