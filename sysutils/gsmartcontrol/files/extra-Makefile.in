@@ -1,33 +1,11 @@
---- ./Makefile.in.orig	2009-03-23 18:59:37.000000000 +0100
-+++ Makefile.in	2009-03-26 17:34:55.000000000 +0100
-@@ -328,14 +328,6 @@
- compilation_flags: $(top_builddir)/config.status $(srcdir)/compilation_flags.in
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
- install-dist_docDATA: $(dist_doc_DATA)
--	@$(NORMAL_INSTALL)
--	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
--	@list='$(dist_doc_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
--	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
--	done
+--- Makefile.in.orig	2011-10-02 22:15:43.000000000 +0200
++++ Makefile.in	2011-10-02 22:16:06.000000000 +0200
+@@ -745,7 +745,7 @@
+ uninstall: uninstall-recursive
  
- uninstall-dist_docDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -345,15 +337,6 @@
- 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
- 	done
- install-nobase_dist_docDATA: $(nobase_dist_doc_DATA)
--	@$(NORMAL_INSTALL)
--	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_dist_doc_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  $(am__vpath_adj) \
--	  echo " $(nobase_dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
--	  $(nobase_dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
--	done
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
  
- uninstall-nobase_dist_docDATA:
- 	@$(NORMAL_UNINSTALL)
+ installcheck: installcheck-recursive
+ install-strip:
