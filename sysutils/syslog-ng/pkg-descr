@@ -1,4 +1,4 @@
-syslog-ng (Syslog New Generation) is a powerful replacement for the standard
+syslog-ng3 (Syslog New Generation) is a powerful replacement for the standard
 syslogd.  Features include:
 
   - ability to filter messages based on content using regular expressions
