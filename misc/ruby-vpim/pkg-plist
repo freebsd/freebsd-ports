@@ -1,3 +1,5 @@
+%%RUBY_SITELIBDIR%%/atom.rb
+%%RUBY_SITELIBDIR%%/plist.rb
 %%RUBY_SITELIBDIR%%/vpim.rb
 %%RUBY_SITELIBDIR%%/vpim/address.rb
 %%RUBY_SITELIBDIR%%/vpim/attachment.rb
@@ -7,15 +9,6 @@
 %%RUBY_SITELIBDIR%%/vpim/enumerator.rb
 %%RUBY_SITELIBDIR%%/vpim/field.rb
 %%RUBY_SITELIBDIR%%/vpim/icalendar.rb
-%%RUBY_SITELIBDIR%%/vpim/rfc2425.rb
-%%RUBY_SITELIBDIR%%/vpim/rrule.rb
-%%RUBY_SITELIBDIR%%/vpim/time.rb
-%%RUBY_SITELIBDIR%%/vpim/vcard.rb
-%%RUBY_SITELIBDIR%%/vpim/version.rb
-%%RUBY_SITELIBDIR%%/vpim/vevent.rb
-%%RUBY_SITELIBDIR%%/vpim/vjournal.rb
-%%RUBY_SITELIBDIR%%/vpim/vpim.rb
-%%RUBY_SITELIBDIR%%/vpim/vtodo.rb
 %%RUBY_SITELIBDIR%%/vpim/maker/vcard.rb
 %%RUBY_SITELIBDIR%%/vpim/property/base.rb
 %%RUBY_SITELIBDIR%%/vpim/property/common.rb
@@ -23,6 +16,17 @@
 %%RUBY_SITELIBDIR%%/vpim/property/priority.rb
 %%RUBY_SITELIBDIR%%/vpim/property/recurrence.rb
 %%RUBY_SITELIBDIR%%/vpim/property/resources.rb
+%%RUBY_SITELIBDIR%%/vpim/repo.rb
+%%RUBY_SITELIBDIR%%/vpim/rfc2425.rb
+%%RUBY_SITELIBDIR%%/vpim/rrule.rb
+%%RUBY_SITELIBDIR%%/vpim/time.rb
+%%RUBY_SITELIBDIR%%/vpim/vcard.rb
+%%RUBY_SITELIBDIR%%/vpim/version.rb
+%%RUBY_SITELIBDIR%%/vpim/vevent.rb
+%%RUBY_SITELIBDIR%%/vpim/view.rb
+%%RUBY_SITELIBDIR%%/vpim/vjournal.rb
+%%RUBY_SITELIBDIR%%/vpim/vpim.rb
+%%RUBY_SITELIBDIR%%/vpim/vtodo.rb
 @dirrm %%RUBY_SITELIBDIR%%/vpim/property
 @dirrm %%RUBY_SITELIBDIR%%/vpim/maker
 @dirrm %%RUBY_SITELIBDIR%%/vpim
