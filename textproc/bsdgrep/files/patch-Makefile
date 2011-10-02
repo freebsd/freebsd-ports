@@ -1,6 +1,6 @@
---- Makefile.orig	2011-09-21 15:26:48.000000000 +0200
-+++ Makefile	2011-09-21 15:29:01.000000000 +0200
-@@ -4,16 +4,9 @@
+--- Makefile.orig	2011-10-02 00:39:02.000000000 +0200
++++ Makefile	2011-10-02 17:25:40.000000000 +0200
+@@ -4,23 +4,15 @@
  
  .include <bsd.own.mk>
  
@@ -18,3 +18,18 @@
  
  # Extra files ported backported form some regex improvements
  .PATH: ${.CURDIR}/regex
+ SRCS+=	fastmatch.c hashtable.c tre-compile.c tre-fastmatch.c xmalloc.c
+ CFLAGS+=-I${.CURDIR}/regex
+ 
+-.if ${MK_BSD_GREP} == "yes"
+ LINKS=	${BINDIR}/grep ${BINDIR}/egrep \
+ 	${BINDIR}/grep ${BINDIR}/fgrep \
+ 	${BINDIR}/grep ${BINDIR}/zgrep \
+@@ -50,7 +42,6 @@
+ 	grep.1 lzgrep.1 \
+ 	grep.1 lzegrep.1 \
+ 	grep.1 lzfgrep.1
+-.endif
+ 
+ LDADD=	-lz -lbz2 -llzma
+ DPADD=	${LIBZ} ${LIBBZ2} ${LIBLZMA}
