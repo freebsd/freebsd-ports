@@ -18,14 +18,13 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=     gnomeprefix gnomehack ltverhack
+USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--without-docs
+CONFIGURE_ARGS=	--without-docs
 .else
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
