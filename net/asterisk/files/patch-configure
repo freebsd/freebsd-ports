@@ -1,6 +1,6 @@
---- configure.orig	2011-01-27 18:03:01.000000000 +0100
-+++ configure	2011-05-10 20:10:47.007174008 +0200
-@@ -4681,9 +4681,9 @@
+--- configure.orig	2011-09-19 18:57:40.000000000 +0200
++++ configure	2011-10-02 17:05:59.000000000 +0200
+@@ -4221,9 +4221,9 @@
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -12,7 +12,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4706,8 +4706,6 @@
+@@ -4246,8 +4246,6 @@
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -21,16 +21,16 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -17540,6 +17538,8 @@
- 
- 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -27486,6 +27484,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
-+ #include <sys/types.h>
-+ #include <sys/socket.h>
-  #include <ifaddrs.h>
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <ifaddrs.h>
  int
  main ()
-@@ -25290,7 +25290,7 @@
+@@ -45521,7 +45521,7 @@
  
  	fi
  
@@ -38,4 +38,4 @@
 +	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
- 	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5
+ 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
