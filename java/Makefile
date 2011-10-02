@@ -135,6 +135,7 @@
     SUBDIR += netbeans61
     SUBDIR += netcomponents
     SUBDIR += netrexx
+    SUBDIR += netty
     SUBDIR += openjdk6
     SUBDIR += openjdk7
     SUBDIR += phpeclipse
