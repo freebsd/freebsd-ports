@@ -1,0 +1,3 @@
+bin/stty.pl
+%%SITE_PERL%%/IO/Stty.pm
+@dirrmtry %%SITE_PERL%%/IO

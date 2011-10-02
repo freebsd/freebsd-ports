@@ -1831,6 +1831,7 @@
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-String
+    SUBDIR += p5-IO-Stty
     SUBDIR += p5-IO-Tee
     SUBDIR += p5-IO-TieCombine
     SUBDIR += p5-IO-Toolkit
