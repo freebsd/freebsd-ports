@@ -166,7 +166,7 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.xml
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
-lib/libgwenhywfar.so.62
+lib/libgwenhywfar.so.63
 %%WITH_FOX16%%libdata/pkgconfig/gwengui-fox16.pc
 %%WITH_GTK2%%libdata/pkgconfig/gwengui-gtk2.pc
 %%WITH_QT4%%libdata/pkgconfig/gwengui-qt4.pc
@@ -180,6 +180,7 @@ share/gwenhywfar/dialogs/dlg_showbox.dlg
 share/gwenhywfar/typemaker2/c/char.tm2
 share/gwenhywfar/typemaker2/c/char_array.tm2
 share/gwenhywfar/typemaker2/c/char_ptr.tm2
+share/gwenhywfar/typemaker2/c/double.tm2
 share/gwenhywfar/typemaker2/c/gwen_buffer.tm2
 share/gwenhywfar/typemaker2/c/gwen_date.tm2
 share/gwenhywfar/typemaker2/c/gwen_idlist64.tm2
