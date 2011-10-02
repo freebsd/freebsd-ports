@@ -7,6 +7,7 @@
 
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=26&file=01&dummy=/
 
@@ -17,7 +18,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite \
-		gwenhywfar.62:${PORTSDIR}/devel/gwenhywfar
+		gwenhywfar.63:${PORTSDIR}/devel/gwenhywfar
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
