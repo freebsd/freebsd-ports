@@ -1,0 +1,13 @@
+Sanitize is a whitelist-based HTML sanitizer.  Given a list of 
+acceptable elements and attributes, Sanitize will remove all
+unacceptable HTML from a string.
+
+Using a simple configuration syntax, you can tell Sanitize to
+allow certain elements, certain attributes within those elements,
+and even certain URL protocols within attributes that contain URLs.
+Any HTML elements or attributes that you don't explicitly allow
+will be removed.
+
+Author: Ryan Grove
+WWW: https://github.com/rgrove/sanitize/
+WWW: http://wonko.com/post/sanitize
