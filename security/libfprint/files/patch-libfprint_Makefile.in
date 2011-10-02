@@ -1,11 +1,11 @@
---- libfprint/Makefile.in.orig	2008-04-19 12:50:56.000000000 +0200
-+++ libfprint/Makefile.in	2008-04-19 12:51:11.000000000 +0200
-@@ -275,7 +275,7 @@
- 	nbis/mindtct/sort.c \
- 	nbis/mindtct/util.c
+--- libfprint/Makefile.in~	2011-10-01 23:20:55.218924048 -0500
++++ libfprint/Makefile.in	2011-10-01 23:23:50.108796610 -0500
+@@ -1195,7 +1195,7 @@ info: info-am
  
--libfprint_la_CFLAGS = -fvisibility=hidden -I$(srcdir)/nbis/include $(LIBUSB_CFLAGS) $(GLIB_CFLAGS) $(IMAGEMAGICK_CFLAGS) $(CRYPTO_CFLAGS) $(AM_CFLAGS)
-+libfprint_la_CFLAGS = -I$(srcdir)/nbis/include $(LIBUSB_CFLAGS) $(GLIB_CFLAGS) $(IMAGEMAGICK_CFLAGS) $(CRYPTO_CFLAGS) $(AM_CFLAGS)
- libfprint_la_LDFLAGS = -version-info @lt_major@:@lt_revision@:@lt_age@
- libfprint_la_LIBADD = -lm $(LIBUSB_LIBS) $(GLIB_LIBS) $(IMAGEMAGICK_LIBS) $(CRYPTO_LIBS)
- libfprint_la_SOURCES = \
+ info-am:
+ 
+-install-data-am: install-pkgincludeHEADERS install-udev_rulesDATA
++install-data-am: install-pkgincludeHEADERS
+ 
+ install-dvi: install-dvi-am
+ 

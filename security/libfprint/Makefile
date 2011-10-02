@@ -6,32 +6,31 @@
 #
 
 PORTNAME=	libfprint
-PORTVERSION=	0.0.6
-PORTREVISION=	4
+PORTVERSION=	0.4.0
 CATEGORIES=	security
-MASTER_SITES=	SF/fprint/${PORTNAME}/v${PORTVERSION}
+MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lichray@gmail.com
 COMMENT=	Library for fingerprint reader devices
 
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick \
+		nss3:${PORTSDIR}/security/nss
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_GNOME=	glib20 pkgconfig
+USE_GNOME=	gnomehack glib20 pkgconfig
 
-CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
-		CRYPTO_LIBS=-lcrypto
 CFLAGS+=	-DHAVE_MEMMEM
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+IGNORE=		libusb-1.0 is not avaible on FreeBSD < 8
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
+CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 .endif
 
 .include <bsd.port.post.mk>
