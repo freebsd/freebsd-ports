@@ -1,0 +1,10 @@
+Typhoeus runs HTTP requests in parallel while 
+cleanly encapsulating handling logic.
+
+It's a library for accessing web services in Ruby, 
+specifically designed for building RESTful service
+oriented architectures in Ruby that need to be fast 
+enough to process calls to multiple services within
+the client's HTTP request/response life cycle.
+
+WWW: https://github.com/dbalatero/typhoeus
