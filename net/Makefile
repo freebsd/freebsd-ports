@@ -977,6 +977,7 @@
     SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-rubytter
     SUBDIR += rubygem-simple_oauth
+    SUBDIR += rubygem-stompserver
     SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
