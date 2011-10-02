@@ -11,7 +11,7 @@ CATEGORIES=	www converters
 MASTER_SITES=	http://people.mozilla.org/~jkew/woff/
 DISTNAME=	woff-code-latest
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 
 NO_WRKSUBDIR=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.8.1
 CATEGORIES=	korean comms
 MASTER_SITES=	http://kldp.net/frs/download.php/480/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serial controlling software, with gtk+ widget
 
 LICENSE=	GPLv2
