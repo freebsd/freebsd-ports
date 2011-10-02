@@ -1,0 +1,11 @@
+--- config.h.in~	2011-04-18 12:02:59.000000000 -0500
++++ config.h.in	2011-10-01 23:12:01.979122045 -0500
+@@ -117,3 +117,8 @@
+ #ifndef __cplusplus
+ #undef inline
+ #endif
++
++/* FreeBSD >=8 */
++#ifndef ETIME
++#define ETIME ETIMEDOUT
++#endif
