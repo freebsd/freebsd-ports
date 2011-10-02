@@ -1,0 +1,37 @@
+%%SITE_PERL%%/Excel/Writer/XLSX.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Area.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Bar.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Column.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Line.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Pie.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Scatter.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Stock.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chartsheet.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Drawing.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Examples.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Format.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/App.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Comments.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/ContentTypes.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Core.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Packager.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Relationships.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/SharedStrings.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Styles.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Theme.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/VML.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriter.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriterSimple.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Utility.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Worksheet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel
+@dirrm %%SITE_PERL%%/Excel/Writer/XLSX/Package
+@dirrm %%SITE_PERL%%/Excel/Writer/XLSX/Chart
+@dirrm %%SITE_PERL%%/Excel/Writer/XLSX
+@dirrmtry %%SITE_PERL%%/Excel/Writer
+@dirrmtry %%SITE_PERL%%/Excel

@@ -1,0 +1,8 @@
+The Excel::Writer::XLSX module can be used to create an Excel file in the 2007+
+XLSX format. The XLSX format is the Office Open XML (OOXML) format used by Excel
+2007 and later. Multiple worksheets can be added to a workbook and formatting
+can be applied to cells. Text, numbers, and formulas can be written to the
+cells. This module cannot, as yet, be used to write to an existing Excel XLSX
+file.
+
+WWW: http://search.cpan.org/dist/Excel-Writer-XLSX/
