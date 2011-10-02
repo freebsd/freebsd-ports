@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.24
+PORTVERSION=	2.25
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,28 +14,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate GD Images of Bio::Seq Objects
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
+BUILD_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
 		p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \
 		p5-Statistics-Descriptive>=2.6:${PORTSDIR}/math/p5-Statistics-Descriptive \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-
-PERL_MODBUILD=	YES
+PERL_CONFIGURE=	yes
 
 MAN1=		contig_draw.pl.1 \
 		feature_draw.pl.1 \
 		frend.pl.1 \
 		search_overview.pl.1
-
 MAN3=		Bio::Graphics.3 \
-		Bio::Graphics::Glyph::transcript2.3 \
-		Bio::Graphics::Glyph::extending_arrow.3 \
-		Bio::Graphics::Wiggle.3 \
 		Bio::Graphics::ConfiguratorI.3 \
 		Bio::Graphics::DrawTransmembrane.3 \
 		Bio::Graphics::Feature.3 \
@@ -61,6 +56,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::dumbbell.3 \
 		Bio::Graphics::Glyph::ellipse.3 \
 		Bio::Graphics::Glyph::ex.3 \
+		Bio::Graphics::Glyph::extending_arrow.3 \
 		Bio::Graphics::Glyph::fixedwidth.3 \
 		Bio::Graphics::Glyph::flag.3 \
 		Bio::Graphics::Glyph::gene.3 \
@@ -112,6 +108,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::trace.3 \
 		Bio::Graphics::Glyph::track.3 \
 		Bio::Graphics::Glyph::transcript.3 \
+		Bio::Graphics::Glyph::transcript2.3 \
 		Bio::Graphics::Glyph::translation.3 \
 		Bio::Graphics::Glyph::triangle.3 \
 		Bio::Graphics::Glyph::two_bolts.3 \
@@ -127,6 +124,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Pictogram.3 \
 		Bio::Graphics::RendererI.3 \
 		Bio::Graphics::Util.3 \
+		Bio::Graphics::Wiggle.3 \
 		Bio::Graphics::Wiggle::Loader.3
 
 .include <bsd.port.mk>

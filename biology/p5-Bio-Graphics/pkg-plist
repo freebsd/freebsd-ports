@@ -1,3 +1,9 @@
+bin/contig_draw.pl
+bin/feature_draw.pl
+bin/frend.pl
+bin/glyph_help.pl
+bin/render_msa.pl
+bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics.pm
 %%SITE_PERL%%/Bio/Graphics/ConfiguratorI.pm
 %%SITE_PERL%%/Bio/Graphics/DrawTransmembrane.pm
@@ -100,14 +106,11 @@
 %%SITE_PERL%%/Bio/Graphics/Util.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle/Loader.pm
-bin/contig_draw.pl
-bin/feature_draw.pl
-bin/frend.pl
-bin/glyph_help.pl
-bin/render_msa.pl
-bin/search_overview.pl
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/Wiggle
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/Glyph
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/FeatureFile
-@dirrmtry %%SITE_PERL%%/Bio/Graphics
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Graphics/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Graphics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
+@dirrm %%SITE_PERL%%/Bio/Graphics/Wiggle
+@dirrm %%SITE_PERL%%/Bio/Graphics/Glyph
+@dirrm %%SITE_PERL%%/Bio/Graphics/FeatureFile
+@dirrm %%SITE_PERL%%/Bio/Graphics
 @dirrmtry %%SITE_PERL%%/Bio
