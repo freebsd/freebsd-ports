@@ -54,6 +54,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+CFLAGS=	-O0
+.endif
+
 .if !defined(WITHOUT_GTK2) && defined(WITHOUT_SDL)
 IGNORE=		GTK+2 player needs SDL
 .endif # GTK2/SDL
