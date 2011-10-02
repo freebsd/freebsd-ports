@@ -756,6 +756,7 @@
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
+    SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest
