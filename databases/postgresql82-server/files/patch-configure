@@ -1,0 +1,11 @@
+--- configure.orig	2011-04-15 11:19:01.000000000 +0800
++++ configure	2011-09-12 15:51:28.020669918 +0800
+@@ -5077,7 +5077,7 @@
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+   case $host_os in
+-  openbsd*|freebsd*)
++  openbsd*)
+     { { echo "$as_me:$LINENO: error: threaded Python not supported on this platform" >&5
+ echo "$as_me: error: threaded Python not supported on this platform" >&2;}
+    { (exit 1); exit 1; }; }
