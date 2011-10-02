@@ -42,6 +42,7 @@
 %%WWWDIR%%/import/bookmarks.html
 %%WWWDIR%%/import/data_cms.xml
 %%WWWDIR%%/import/data_cms_sys.xml
+%%WWWDIR%%/import/data_console.xml
 %%WWWDIR%%/import/data_news.xml
 %%WWWDIR%%/import/data_surveys.xml
 %%WWWDIR%%/import/example.ldif
@@ -173,6 +174,7 @@
 %%WWWDIR%%/lang/de.lang
 %%WWWDIR%%/lang/enUK.lang
 %%WWWDIR%%/lang/es.lang
+%%WWWDIR%%/lang/fi.lang
 %%WWWDIR%%/lang/fr.lang
 %%WWWDIR%%/lang/gr.lang
 %%WWWDIR%%/lang/hr.lang
@@ -207,7 +209,6 @@
 %%WWWDIR%%/src/core/classes/ajax.php
 %%WWWDIR%%/src/core/classes/asset.php
 %%WWWDIR%%/src/core/classes/asset_ccp.php
-%%WWWDIR%%/src/core/classes/custom.php
 %%WWWDIR%%/src/core/classes/date.php
 %%WWWDIR%%/src/core/classes/export.php
 %%WWWDIR%%/src/core/classes/extjs.php
@@ -215,10 +216,13 @@
 %%WWWDIR%%/src/core/classes/import.php
 %%WWWDIR%%/src/core/classes/login.php
 %%WWWDIR%%/src/core/classes/modify.php
+%%WWWDIR%%/src/core/classes/notify.php
 %%WWWDIR%%/src/core/classes/select.php
 %%WWWDIR%%/src/core/classes/setup.php
 %%WWWDIR%%/src/core/classes/sgsml.php
+%%WWWDIR%%/src/core/classes/sgsml_customizer.php
 %%WWWDIR%%/src/core/classes/sgsml_parser.php
+%%WWWDIR%%/src/core/classes/sync4j.php
 %%WWWDIR%%/src/core/classes/trigger.php
 %%WWWDIR%%/src/core/classes/validate.php
 %%WWWDIR%%/src/core/functions.php
@@ -271,8 +275,11 @@
 %%WWWDIR%%/src/ext/cms/wsplus/wsplus.css
 %%WWWDIR%%/src/ext/icons/accept.gif
 %%WWWDIR%%/src/ext/icons/add.gif
+%%WWWDIR%%/src/ext/icons/all.gif
+%%WWWDIR%%/src/ext/icons/archive.gif
 %%WWWDIR%%/src/ext/icons/asc.gif
 %%WWWDIR%%/src/ext/icons/attachment.gif
+%%WWWDIR%%/src/ext/icons/book.gif
 %%WWWDIR%%/src/ext/icons/chat.gif
 %%WWWDIR%%/src/ext/icons/contact.gif
 %%WWWDIR%%/src/ext/icons/copy.gif
@@ -308,6 +315,7 @@
 %%WWWDIR%%/src/ext/icons/minus.gif
 %%WWWDIR%%/src/ext/icons/paste.gif
 %%WWWDIR%%/src/ext/icons/phone.gif
+%%WWWDIR%%/src/ext/icons/php.gif
 %%WWWDIR%%/src/ext/icons/plus.gif
 %%WWWDIR%%/src/ext/icons/purge.gif
 %%WWWDIR%%/src/ext/icons/purgeall.gif
@@ -316,9 +324,11 @@
 %%WWWDIR%%/src/ext/icons/replyall.gif
 %%WWWDIR%%/src/ext/icons/search.gif
 %%WWWDIR%%/src/ext/icons/settings.gif
+%%WWWDIR%%/src/ext/icons/sql.gif
 %%WWWDIR%%/src/ext/icons/star.png
 %%WWWDIR%%/src/ext/icons/star2.png
 %%WWWDIR%%/src/ext/icons/subitem.gif
+%%WWWDIR%%/src/ext/icons/sys.gif
 %%WWWDIR%%/src/ext/icons/user_add.gif
 %%WWWDIR%%/src/ext/icons/user_delete.gif
 %%WWWDIR%%/src/ext/images/bg_autumn.jpg
@@ -341,6 +351,7 @@
 %%WWWDIR%%/src/ext/images/logo_dark.gif
 %%WWWDIR%%/src/ext/images/sgs_logo.gif
 %%WWWDIR%%/src/ext/images/sgs_logo_setup.jpg
+%%WWWDIR%%/src/ext/import_local_fs.php.txt
 %%WWWDIR%%/src/ext/install_unattended.php.txt
 %%WWWDIR%%/src/ext/js/functions.js
 %%WWWDIR%%/src/ext/js/functions_edit.js
@@ -715,6 +726,16 @@
 %%WWWDIR%%/src/ext/lib/extjs/index.php
 %%WWWDIR%%/src/ext/lib/extjs/license.txt
 %%WWWDIR%%/src/ext/lib/json/json.js
+%%WWWDIR%%/src/ext/lib/lightbox/blank.gif
+%%WWWDIR%%/src/ext/lib/lightbox/close.gif
+%%WWWDIR%%/src/ext/lib/lightbox/jquery.js
+%%WWWDIR%%/src/ext/lib/lightbox/jquery.lightbox-0.5.css
+%%WWWDIR%%/src/ext/lib/lightbox/jquery.lightbox-0.5.js
+%%WWWDIR%%/src/ext/lib/lightbox/jquery.lightbox-0.5.pack.js
+%%WWWDIR%%/src/ext/lib/lightbox/license.txt
+%%WWWDIR%%/src/ext/lib/lightbox/loading.gif
+%%WWWDIR%%/src/ext/lib/lightbox/next.gif
+%%WWWDIR%%/src/ext/lib/lightbox/prev.gif
 %%WWWDIR%%/src/ext/lib/player/license.txt
 %%WWWDIR%%/src/ext/lib/player/player_flv_maxi_1.6.0.swf
 %%WWWDIR%%/src/ext/lib/player/player_mp3_1.0.0.swf
@@ -970,6 +991,7 @@
 %%WWWDIR%%/src/ext/modules/graphviz.png
 %%WWWDIR%%/src/ext/modules/helpdesk.png
 %%WWWDIR%%/src/ext/modules/htmldocs.png
+%%WWWDIR%%/src/ext/modules/intranet.png
 %%WWWDIR%%/src/ext/modules/inventories.png
 %%WWWDIR%%/src/ext/modules/locations.png
 %%WWWDIR%%/src/ext/modules/news.png
@@ -995,6 +1017,7 @@
 %%WWWDIR%%/src/ext/modules/sys_nodb_csv_calendar.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_csv_contacts.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_fs.png
+%%WWWDIR%%/src/ext/modules/sys_nodb_gdocs.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_icalendar.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_imap.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_imap_trash.png
@@ -1012,6 +1035,7 @@
 %%WWWDIR%%/src/ext/modules/sys_nodb_vcard.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_workspace.png
 %%WWWDIR%%/src/ext/modules/sys_nodb_xml.png
+%%WWWDIR%%/src/ext/modules/sys_notifications.png
 %%WWWDIR%%/src/ext/modules/sys_session.png
 %%WWWDIR%%/src/ext/modules/sys_stats.png
 %%WWWDIR%%/src/ext/modules/sys_tree.png
@@ -1026,6 +1050,7 @@
 %%WWWDIR%%/src/extensions.php
 %%WWWDIR%%/src/files.php
 %%WWWDIR%%/src/images.php
+%%WWWDIR%%/src/import.php
 %%WWWDIR%%/src/index.php
 %%WWWDIR%%/src/lib/.htaccess
 %%WWWDIR%%/src/lib/artichow/AntiSpam.class.php
@@ -1230,6 +1255,9 @@
 %%WWWDIR%%/src/lib/smarty/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/src/lib/smarty/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/src/lib/smarty/plugins/shared.make_timestamp.php
+%%WWWDIR%%/src/lib/spreadsheet/OLERead.php
+%%WWWDIR%%/src/lib/spreadsheet/README
+%%WWWDIR%%/src/lib/spreadsheet/Reader.php
 %%WWWDIR%%/src/lib/spreadsheet/Writer.php
 %%WWWDIR%%/src/lib/spreadsheet/Writer/BIFFwriter.php
 %%WWWDIR%%/src/lib/spreadsheet/Writer/Format.php
@@ -1341,10 +1369,10 @@
 %%WWWDIR%%/src/modules/core/folders_minimal.xml
 %%WWWDIR%%/src/modules/core/folders_small.xml
 %%WWWDIR%%/src/modules/core/pgsql.sql
-%%WWWDIR%%/src/modules/core/pgsql_830.sql
 %%WWWDIR%%/src/modules/core/popup_write.txt
 %%WWWDIR%%/src/modules/core/projects.xml
 %%WWWDIR%%/src/modules/core/projects_portal.xml
+%%WWWDIR%%/src/modules/core/select_asset_perm.txt
 %%WWWDIR%%/src/modules/core/users.xml
 %%WWWDIR%%/src/modules/core/users_portal.xml
 %%WWWDIR%%/src/modules/index.htm
@@ -1356,6 +1384,7 @@
 %%WWWDIR%%/src/modules/lib/csv_contacts.php
 %%WWWDIR%%/src/modules/lib/default.php
 %%WWWDIR%%/src/modules/lib/fs.php
+%%WWWDIR%%/src/modules/lib/gdocs.php
 %%WWWDIR%%/src/modules/lib/icalendar.php
 %%WWWDIR%%/src/modules/lib/imap.php
 %%WWWDIR%%/src/modules/lib/index.htm
@@ -1401,6 +1430,7 @@
 %%WWWDIR%%/src/modules/schema/htmldocs.xml
 %%WWWDIR%%/src/modules/schema/index.htm
 %%WWWDIR%%/src/modules/schema/index.html
+%%WWWDIR%%/src/modules/schema/intranet.xml
 %%WWWDIR%%/src/modules/schema/inventories.xml
 %%WWWDIR%%/src/modules/schema/locations.xml
 %%WWWDIR%%/src/modules/schema/mappings.txt
@@ -1422,6 +1452,8 @@
 %%WWWDIR%%/src/modules/schema/timesheets.xml
 %%WWWDIR%%/src/modules/schema/wiki.xml
 %%WWWDIR%%/src/modules/schema_sys/chat2.xml
+%%WWWDIR%%/src/modules/schema_sys/console.xml
+%%WWWDIR%%/src/modules/schema_sys/custom_fields.xml
 %%WWWDIR%%/src/modules/schema_sys/events.xml
 %%WWWDIR%%/src/modules/schema_sys/experiment.xml
 %%WWWDIR%%/src/modules/schema_sys/groups.xml
@@ -1439,13 +1471,13 @@
 %%WWWDIR%%/src/modules/schema_sys/nodb_csv_calendar.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_csv_contacts.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_fs.xml
+%%WWWDIR%%/src/modules/schema_sys/nodb_gdocs.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_icalendar.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_imap.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_index.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_ldap.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_ldif_contacts.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_modules.xml
-%%WWWDIR%%/src/modules/schema_sys/nodb_phpinclude.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_pmwiki.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_pop3.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_processes.xml
@@ -1461,6 +1493,7 @@
 %%WWWDIR%%/src/modules/schema_sys/nodb_variables.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_vcard.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_xml.xml
+%%WWWDIR%%/src/modules/schema_sys/notifications.xml
 %%WWWDIR%%/src/modules/schema_sys/search.xml
 %%WWWDIR%%/src/modules/schema_sys/session.xml
 %%WWWDIR%%/src/modules/schema_sys/stats.xml
@@ -1489,6 +1522,7 @@
 %%WWWDIR%%/src/templates/core.css
 %%WWWDIR%%/src/templates/core_css.conf
 %%WWWDIR%%/src/templates/helper/buttons.tpl
+%%WWWDIR%%/src/templates/helper/customize.tpl
 %%WWWDIR%%/src/templates/helper/data.tpl
 %%WWWDIR%%/src/templates/helper/data_files.tpl
 %%WWWDIR%%/src/templates/helper/data_others.tpl
@@ -1520,6 +1554,7 @@
 %%WWWDIR%%/src/tools/java_bridge/JavaBridge.jar
 %%WWWDIR%%/src/tools/java_bridge/jcifs-1.3.8_tb.jar
 %%WWWDIR%%/src/tools/java_bridge/jcifs-1.3.8_tb_src.tgz
+%%WWWDIR%%/src/tools/nginx/nginx.conf
 %%WWWDIR%%/src/tools/webdav/vista_webdav.reg
 %%WWWDIR%%/src/tools/webdav/webdav.htaccess
 %%WWWDIR%%/src/tools/webdav/win7_webdav.reg
@@ -1527,7 +1562,11 @@
 %%WWWDIR%%/src/updater.php
 %%WWWDIR%%/src/upload.php
 %%WWWDIR%%/src/webdav.php
+@exec mkdir -p %D/%%WWWDIR%%/docs/map
+@exec mkdir -p %D/%%WWWDIR%%/src/ext/lib/simple_spreadsheet/data
+@exec mkdir -p %D/%%WWWDIR%%/src/lib/artichow/cache
 @dirrm %%WWWDIR%%/src/tools/webdav
+@dirrm %%WWWDIR%%/src/tools/nginx
 @dirrm %%WWWDIR%%/src/tools/java_bridge
 @dirrm %%WWWDIR%%/src/tools/funambolv7_syncML/postgresql
 @dirrm %%WWWDIR%%/src/tools/funambolv7_syncML/mysql
@@ -1624,6 +1663,7 @@
 @dirrm %%WWWDIR%%/src/ext/lib/simple_spreadsheet/data
 @dirrm %%WWWDIR%%/src/ext/lib/simple_spreadsheet
 @dirrm %%WWWDIR%%/src/ext/lib/player
+@dirrm %%WWWDIR%%/src/ext/lib/lightbox
 @dirrm %%WWWDIR%%/src/ext/lib/json
 @dirrm %%WWWDIR%%/src/ext/lib/extjs/images/gray/window
 @dirrm %%WWWDIR%%/src/ext/lib/extjs/images/gray/tree
@@ -1695,6 +1735,4 @@
 @dirrm %%WWWDIR%%/custom/ext
 @dirrm %%WWWDIR%%/custom
 @dirrm %%WWWDIR%%/bin
-@exec mkdir -p %D/%%WWWDIR%%/src/lib/artichow/cache
-@exec mkdir -p %D/%%WWWDIR%%/src/ext/lib/simple_spreadsheet/data
-@exec mkdir -p %D/%%WWWDIR%%/docs/map
+@dirrmtry %%WWWDIR%%
