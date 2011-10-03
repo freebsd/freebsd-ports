@@ -1,0 +1,8 @@
+--- Source/Core/DolphinWX/CMakeLists.txt.orig	2011-09-14 08:18:20.920474936 +0200
++++ Source/Core/DolphinWX/CMakeLists.txt	2011-09-14 08:18:42.246379206 +0200
+@@ -1,4 +1,5 @@
+ set(LIBS	core
++			execinfo
+ 			lzo2
+ 			discio
+ 			bdisasm

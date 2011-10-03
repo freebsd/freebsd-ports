@@ -25,6 +25,7 @@
     SUBDIR += dboxfe
     SUBDIR += desmume
     SUBDIR += dgen-sdl
+    SUBDIR += dolphin-emu-devel
     SUBDIR += dosbox
     SUBDIR += doscmd
     SUBDIR += dtcyber
