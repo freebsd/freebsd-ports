@@ -1,4 +1,2 @@
-SHA256 (qhull-2003.1.tar.gz) = 68725c96603a426da748d38d0f83e7a9dd6a0bfc483525debe04001846475b0b
-SIZE (qhull-2003.1.tar.gz) = 724313
-SHA256 (poly.c-qh_gethash.patch) = fb42b86fa80e1d4e671043a07ff3bdf4ad641094f93630241877fce096916737
-SIZE (poly.c-qh_gethash.patch) = 684
+SHA256 (qhull-2011.1-src.tgz) = adae4425f51c2eaf491e822dc5b0a0c2fdebc258841e1c185bbb8a5200c754c4
+SIZE (qhull-2011.1-src.tgz) = 687728
