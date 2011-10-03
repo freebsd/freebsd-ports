@@ -37,6 +37,27 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
+@@ -837,14 +837,14 @@
+ #
+ # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
+ #
+-USE_READLINE=
+-#USE_READLINE= -DUSE_READLINE
++#USE_READLINE=
++USE_READLINE= -DUSE_READLINE
+ #
+-READLINE_LIB=
+-READLINE_EXTRAS=
++#READLINE_LIB=
++#READLINE_EXTRAS=
+ #
+-#READLINE_LIB= -lreadline
+-#READLINE_EXTRAS= -lhistory -lncurses
++READLINE_LIB= -lreadline
++READLINE_EXTRAS= -lhistory -lncurses
+ #
+ #READLINE_LIB= -L/usr/gnu/lib -lreadline
+ #READLINE_EXTRAS= -lhistory -lncurses
 @@ -857,7 +857,7 @@
  #CALCPAGER= more
  #CALCPAGER= pg
