@@ -505,6 +505,7 @@
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
+    SUBDIR += qhull5
     SUBDIR += qrupdate
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
