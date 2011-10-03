@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111003:
+  AFFECTS: users of math/qhull
+  AUTHOR: Stephen Montgomery-Smith <stephen@FreeBSD.org>
+
+  The port math/qhull has been moved to math/qhull5, and math/qhull has been
+  updated to a version that is incompatible with all ports previously using
+  math/qhull.  If you are upgrading a port that has math/qhull as a dependency,
+  please delete the port math/qhull first, so that math/qhull5 is properly
+  made as a dependency.
+
 20110929:
   AFFECTS: users of net/py-zope.proxy, devel/py-zope.testing and
            devel/py-zope.interface
