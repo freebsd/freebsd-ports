@@ -5,19 +5,19 @@ lib/libsamplerate.la
 lib/libsamplerate.so
 lib/libsamplerate.so.1
 libdata/pkgconfig/samplerate.pc
-%%DOCSDIR%%/SRC.css
-%%DOCSDIR%%/SRC.png
-%%DOCSDIR%%/api.html
-%%DOCSDIR%%/api_callback.html
-%%DOCSDIR%%/api_full.html
-%%DOCSDIR%%/api_misc.html
-%%DOCSDIR%%/api_simple.html
-%%DOCSDIR%%/download.html
-%%DOCSDIR%%/faq.html
-%%DOCSDIR%%/history.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/license.html
-%%DOCSDIR%%/lists.html
-%%DOCSDIR%%/quality.html
-%%DOCSDIR%%/win32.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/SRC.css
+%%PORTDOCS%%%%DOCSDIR%%/SRC.png
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/api_callback.html
+%%PORTDOCS%%%%DOCSDIR%%/api_full.html
+%%PORTDOCS%%%%DOCSDIR%%/api_misc.html
+%%PORTDOCS%%%%DOCSDIR%%/api_simple.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/lists.html
+%%PORTDOCS%%%%DOCSDIR%%/quality.html
+%%PORTDOCS%%%%DOCSDIR%%/win32.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
