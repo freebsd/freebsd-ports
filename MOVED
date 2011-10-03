@@ -2718,3 +2718,4 @@ www/zope-plonelanguagetool||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-simpleblog||2011-09-30|Depends on www/plone, which is FORBIDDEN
 dns/nsd2||2011-09-30|EOL since 2007, unsupported. Use dns/nsd instead.
 audio/orpheus|audio/cmus|2011-10-01|Has expired: Contains problem with autotools, security CVE-2005-3863. Use audio/cmus instead
+sysutils/syslog-ng3-devel|sysutils/syslog-ng-devel|2011-10-04|Port renamed
