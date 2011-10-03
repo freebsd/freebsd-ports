@@ -1,0 +1,9 @@
+--- Makefile.orig	2011-08-13 20:17:22.000000000 -0700
++++ Makefile	2011-08-13 20:17:30.000000000 -0700
+@@ -46,5 +46,5 @@
+ I := /include/parserutils/utils
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):$(Is)/buffer.h;$(Is)/stack.h;$(Is)/vector.h
+ 
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /lib/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
+ INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
