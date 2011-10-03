@@ -1,0 +1,6 @@
+bin/genpass
+%%SITE_PERL%%/App/Genpass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Genpass/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Genpass
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App
