@@ -5,6 +5,6 @@
 +
 +urxvtc "$@"
 +if [ $? -eq 2 ]; then
-+    urxvtd -q -f
++    urxvtd -q -o -f
 +    exec urxvtc "$@"
 +fi
