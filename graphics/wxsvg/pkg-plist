@@ -157,6 +157,7 @@ include/wxSVG/SVGStylable.h
 include/wxSVG/SVGStyleElement.h
 include/wxSVG/SVGSwitchElement.h
 include/wxSVG/SVGSymbolElement.h
+include/wxSVG/SVGTBreakElement.h
 include/wxSVG/SVGTRefElement.h
 include/wxSVG/SVGTSpanElement.h
 include/wxSVG/SVGTests.h
@@ -187,7 +188,7 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
 lib/libwxsvg.so
-lib/libwxsvg.so.0
+lib/libwxsvg.so.2
 libdata/pkgconfig/libwxsvg.pc
 @dirrm include/wxSVGXML
 @dirrm include/wxSVG
