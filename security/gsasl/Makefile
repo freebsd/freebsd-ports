@@ -39,6 +39,10 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
 LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 
+.if exists(${LOCALBASE}/lib/libgssapi.so)
+BROKEN=		Does not work with Heimdal's GSSAPI from ports
+.endif
+
 post-patch:
 .for file in \
 	lib/po/LINGUAS \
