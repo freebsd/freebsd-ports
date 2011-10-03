@@ -18,6 +18,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+BROKEN=		does not package
+
 USE_IMAKE=	yes
 USE_ICONV=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
