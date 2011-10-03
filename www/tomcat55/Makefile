@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomcat
-PORTVERSION=	5.5.33
-PORTREVISION=	2
+PORTVERSION=	5.5.34
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
@@ -97,7 +96,7 @@ RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog-devel
 .if !( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
 LOG_ARGS?=">> \$${tomcat\%\%TOMCAT_VERSION\%\%_stdout_log} 2>> \$${tomcat\%\%TOMCAT_VERSION\%\%_stderr_log}"
 .else
-LOG_ARGS?="2>\&1 | ${LOCALBASE}/sbin/cronolog --link \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.out \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.\%Y_\%m_\%d.out \&"
+LOG_ARGS?="2>\&1 | ${LOCALBASE}/sbin/cronolog --link \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.out \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.\%Y_\%m_\%d.out >/dev/null 2>\&1 \&"
 .endif
 
 .if ( defined(WITH_CRONOLOG) && defined(WITH_CRONOLOG_DEVEL) )
