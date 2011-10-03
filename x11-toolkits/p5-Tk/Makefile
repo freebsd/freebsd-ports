@@ -6,32 +6,31 @@
 #
 
 PORTNAME=	Tk
-DISTVERSION=	804.029
+DISTVERSION=	804.029.500
 CATEGORIES=	x11-toolkits tk perl5
-MASTER_SITES=	CPAN/Tk/SREZIC
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SREZIC
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}_${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A re-port of a perl5 interface to Tk8.4
 
-MAKE_JOBS_UNSAFE=	yes
-
-BROKEN=		does not compile
-
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
+
+CONFIGURE_ARGS=	X11INC=${LOCALBASE}/include X11LIB=${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
 USE_XORG=	x11
-CONFIGURE_ARGS=	X11LIB=${LOCALBASE}/lib X11INC=${LOCALBASE}/include
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		ptked.1 \
 		ptksh.1 \
 		tkjpeg.1 \
 		widget.1
-
 MAN3=		Tie::Watch.3 \
 		Tk.3 \
+		Tk::804delta.3 \
 		Tk::Adjuster.3 \
 		Tk::Animation.3 \
 		Tk::Balloon.3 \
@@ -71,8 +70,8 @@ MAN3=		Tie::Watch.3 \
 		Tk::Labelframe.3 \
 		Tk::Listbox.3 \
 		Tk::MainWindow.3 \
-		Tk::Menu::Item.3 \
 		Tk::Menu.3 \
+		Tk::Menu::Item.3 \
 		Tk::Menubutton.3 \
 		Tk::Message.3 \
 		Tk::MsgBox.3 \
@@ -120,6 +119,8 @@ MAN3=		Tie::Watch.3 \
 		Tk::chooseColor.3 \
 		Tk::chooseDirectory.3 \
 		Tk::composite.3 \
+		Tk::demos::widget_lib::slide.3 \
+		Tk::demos::widget_lib::trace2.3 \
 		Tk::event.3 \
 		Tk::exit.3 \
 		Tk::fileevent.3 \
@@ -141,10 +142,7 @@ MAN3=		Tie::Watch.3 \
 		Tk::send.3 \
 		Tk::tixWm.3 \
 		Tk::tkvars.3 \
-		Tk::widgets.3 \
-		Tk::804delta.3 \
-		Tk::demos::widget_lib::slide.3 \
-		Tk::demos::widget_lib::trace2.3
+		Tk::widgets.3
 
 .include <bsd.port.pre.mk>
 
