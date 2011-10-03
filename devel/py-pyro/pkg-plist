@@ -1,48 +1,4 @@
-%%PYTHON_SITELIBDIR%%/Pyro4/__init__.py
-%%PYTHON_SITELIBDIR%%/Pyro4/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/configuration.py
-%%PYTHON_SITELIBDIR%%/Pyro4/configuration.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/configuration.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/constants.py
-%%PYTHON_SITELIBDIR%%/Pyro4/constants.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/constants.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/core.py
-%%PYTHON_SITELIBDIR%%/Pyro4/core.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/core.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/errors.py
-%%PYTHON_SITELIBDIR%%/Pyro4/errors.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/errors.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/naming.py
-%%PYTHON_SITELIBDIR%%/Pyro4/naming.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/naming.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/nsc.py
-%%PYTHON_SITELIBDIR%%/Pyro4/nsc.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/nsc.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.py
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.py
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.py
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/socketutil.py
-%%PYTHON_SITELIBDIR%%/Pyro4/socketutil.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/socketutil.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.py
-%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.py
-%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/threadutil.py
-%%PYTHON_SITELIBDIR%%/Pyro4/threadutil.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/threadutil.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/util.py
-%%PYTHON_SITELIBDIR%%/Pyro4/util.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/make.bat
 %%PORTDOCS%%%%DOCSDIR%%/source/_static/pyro-large.png
@@ -60,13 +16,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/api/socketserver.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/util.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/changelog.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/clientcode.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/commandline.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/source/config.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/errors.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/intro.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/license.rst
-%%PORTDOCS%%%%DOCSDIR%%/source/other.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/nameserver.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/pyrolite.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/security.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/servercode.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/tipstricks.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorials.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/upgrading.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/Readme.txt
@@ -112,6 +75,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servA.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servB.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servC.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/bouncer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/dispatcher.py
@@ -126,9 +93,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/excep.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/gui_nothreads.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/gui_threads.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/itunescontroller.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/remote.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/stress.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nonameserver/Readme.txt
@@ -201,11 +175,14 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nonameserver
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nameserverstress
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itunes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gui_eventloop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/deadlock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
@@ -221,6 +198,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/test
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/socketserver
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4
