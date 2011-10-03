@@ -1,7 +1,6 @@
-diff -ur src/command.C.orig src/command.C
---- src/command.C.orig	Mon Feb 20 22:41:16 2006
-+++ src/command.C	Sun May 21 09:36:40 2006
-@@ -301,6 +301,26 @@
+--- src/command.C.orig	2011-06-22 14:44:37.000000000 +0400
++++ src/command.C	2011-09-30 01:31:30.000000000 +0400
+@@ -256,6 +256,26 @@
  }
  #endif
  
@@ -26,9 +25,9 @@ diff -ur src/command.C.orig src/command.C
 +}
 +
  void
- rxvt_term::key_press (XKeyEvent &ev)
+ rxvt_term::commit_iso14755 ()
  {
-@@ -361,6 +381,9 @@
+@@ -451,6 +471,9 @@
            if (rs[Rs_imLocale])
              SET_LOCALE (locale);
  
@@ -38,10 +37,9 @@ diff -ur src/command.C.orig src/command.C
            if (status_return == XLookupChars
                || status_return == XLookupBoth)
              {
-diff -ur src/encoding.C.orig src/encoding.C
---- src/encoding.C.orig	Mon Feb 20 22:41:16 2006
-+++ src/encoding.C	Sun May 21 09:36:40 2006
-@@ -151,6 +151,7 @@
+--- src/encoding.C.orig	2011-06-22 14:44:37.000000000 +0400
++++ src/encoding.C	2011-09-30 01:31:30.000000000 +0400
+@@ -152,6 +152,7 @@
  static uint32_t cs_us_ascii_from_unicode (unicode_t unicode)   { return unicode <= 127 ? unicode : NOCHAR; }
  
  #define cs_us_ascii_to_unicode_16 cs_unicode_to_unicode
@@ -49,9 +47,8 @@ diff -ur src/encoding.C.orig src/encoding.C
  static uint32_t cs_unicode_16_from_unicode (unicode_t unicode) { return unicode <= 65535 ? unicode : NOCHAR; }
  
  #define ENCODING_DEFAULT
-diff -ur src/encoding.h.orig src/encoding.h
---- src/encoding.h.orig	Sun May 21 08:14:15 2006
-+++ src/encoding.h	Sun May 21 08:16:54 2006
+--- src/encoding.h.orig	2011-02-21 10:39:50.000000000 +0300
++++ src/encoding.h	2011-09-30 01:31:30.000000000 +0400
 @@ -2,6 +2,7 @@
  #define ENCODING_H
  
@@ -60,9 +57,8 @@ diff -ur src/encoding.h.orig src/encoding.h
  
  typedef uint32_t unicode_t;
  
-diff -ur src/gentables.orig src/gentables
---- src/gentables	Sun May 21 08:14:15 2006
-+++ src/gentables.orig	Sun May 21 08:15:08 2006
+--- src/gentables.orig	2011-02-21 10:39:50.000000000 +0300
++++ src/gentables	2011-09-30 01:31:30.000000000 +0400
 @@ -13,7 +13,7 @@
  
  my $gen;

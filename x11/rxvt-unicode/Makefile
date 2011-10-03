@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.11
+PORTVERSION=	9.12
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
@@ -190,8 +192,6 @@ post-patch:
 
 pre-configure:
 	${RM} ${WRKSRC}/src/perl/kuake.orig
-	${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
-		${WRKSRC}/src/ptytty.C
 
 post-install:
 	${CHMOD} 4711 ${PREFIX}/bin/urxvt ${PREFIX}/bin/urxvtd
