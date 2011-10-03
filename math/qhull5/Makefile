@@ -11,12 +11,14 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
 DISTNAME=	${PORTNAME}-2003.1
 
-MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
-
 PATCH_SITES=		http://www.qhull.org/download/
 PATCHFILES=		poly.c-qh_gethash.patch
 PATCH_DIST_STRIP=	-p2
+
+MAINTAINER=	stephen@FreeBSD.org
+COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
+
+LATEST_LINK=	qhull5
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
