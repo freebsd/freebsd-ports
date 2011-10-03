@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.55
+PORTVERSION=	2.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,5 +36,8 @@ pre-patch:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.post.mk>
