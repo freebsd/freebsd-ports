@@ -424,6 +424,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/glade/screensaver-snap.png
 %%DATADIR%%/glade/xscreensaver-demo.glade2
 @dirrmtry bin/xscreensaver-hacks
+@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/config
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
