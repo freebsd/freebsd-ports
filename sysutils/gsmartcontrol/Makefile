@@ -7,6 +7,7 @@
 
 PORTNAME=		gsmartcontrol
 PORTVERSION=		0.8.6
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,8 @@ COMMENT=	Graphical user interface for smartmontools
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		pcre:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		smartctl:${PORTSDIR}/sysutils/smartmontools
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
