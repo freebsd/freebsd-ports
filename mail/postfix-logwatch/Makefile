@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix-logwatch
-PORTVERSION=	1.39.05
+PORTVERSION=	1.39.07
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,6 +15,7 @@ MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Postfix MTA log parser
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	Bugs Changes README
 PORTEXAMPLES=	${PORTNAME}.conf ${PORTNAME}.conf-topn
