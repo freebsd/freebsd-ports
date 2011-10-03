@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyro
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,12 @@ MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_DOS2UNIX=	yes
+# Python 3 ready
 USE_PYTHON=	2.6+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pyro4
 
 .include <bsd.port.pre.mk>
