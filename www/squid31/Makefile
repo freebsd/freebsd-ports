@@ -51,6 +51,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -81,7 +82,10 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=	squid-3.1-10373.patch
+PATCHFILES=	squid-3.1-10373.patch squid-3.1-10374.patch \
+		squid-3.1-10375.patch squid-3.1-10376.patch \
+		squid-3.1-10377.patch squid-3.1-10378.patch \
+		squid-3.1-10379.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -118,6 +122,7 @@ OPTIONS=	SQUID_KERB_AUTH "Install Kerberos authentication helpers" on \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
 		SQUID_SNMP "Enable SNMP support" on \
 		SQUID_SSL "Enable SSL support for reverse proxies" off \
+		SQUID_SSL_CRTD "Enable SSL certificate daemon" off \
 		SQUID_PINGER "Install the icmp helper" off \
 		SQUID_DNS_HELPER "Use the old 'dnsserver' helper" off \
 		SQUID_HTCP "Enable HTCP support" on \
@@ -320,6 +325,10 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+.endif
+.if defined(WITH_SQUID_SSL_CRTD)
+CONFIGURE_ARGS+=	--enable-ssl-crtd
+libexec+=	ssl_crtd
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
