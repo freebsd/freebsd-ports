@@ -111,6 +111,103 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testapp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/compat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/fixers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/fixers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/fixers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/iterio.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/iterio.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/iterio.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/securecookie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/securecookie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/securecookie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/sessions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/sessions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/sessions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/wrappers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/wrappers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/datastructures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/debug.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/debug.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/debug.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/formparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/formparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/formparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/http.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/http.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/internal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/internal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/internal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/local.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/local.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/local.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/collect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/collect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/collect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2png1txt/file1.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2png1txt/file2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2png1txt/request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2png1txt/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2pnglongtext/file1.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2pnglongtext/file2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2pnglongtext/request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2pnglongtext/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie6-2png1txt/file1.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie6-2png1txt/file2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie6-2png1txt/request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie6-2png1txt/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie7_full_path_request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/opera8-2png1txt/file1.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/opera8-2png1txt/file2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/opera8-2png1txt/request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/opera8-2png1txt/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/webkit3-2png1txt/file1.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/webkit3-2png1txt/file2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/webkit3-2png1txt/request.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/webkit3-2png1txt/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/res/test.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/routing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/routing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/routing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/security.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/security.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/security.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/serving.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/serving.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/serving.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wrappers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wrappers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/wsgi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/urls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/urls.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/urls.pyo
@@ -126,6 +223,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/wsgi.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/res
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/webkit3-2png1txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/opera8-2png1txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/ie6-2png1txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2pnglongtext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart/firefox3-2png1txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/multipart
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/testsuite
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug/shared
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/debug
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/werkzeug/contrib
