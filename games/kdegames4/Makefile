@@ -6,6 +6,7 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +17,7 @@ COMMENT=	Games for the KDE integrated X11 desktop
 
 LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 		qca.2:${PORTSDIR}/devel/qca \
-		qhull.5:${PORTSDIR}/math/qhull \
+		qhull.5:${PORTSDIR}/math/qhull5 \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 LATEST_LINK=	${PORTNAME}4

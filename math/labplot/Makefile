@@ -7,7 +7,7 @@
 
 PORTNAME=	LabPlot
 PORTVERSION=	1.6.0.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math kde
 MASTER_SITES=	SF
 
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--enable-R=no
 .endif
 
 .if defined(WITH_QHULL)
-LIB_DEPENDS+=	qhull.5:${PORTSDIR}/math/qhull
+LIB_DEPENDS+=	qhull.5:${PORTSDIR}/math/qhull5
 CONFIGURE_ARGS+=--enable-qhull=yes
 .else
 CONFIGURE_ARGS+=--enable-qhull=no

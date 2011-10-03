@@ -7,6 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.9.7
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gd.4:${PORTSDIR}/graphics/gd \
-		qhull.5:${PORTSDIR}/math/qhull
+		qhull.5:${PORTSDIR}/math/qhull5
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 
