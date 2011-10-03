@@ -10013,6 +10013,7 @@ nettest                         ports/net/nettest
 nettle                          ports/security/nettle
 nettoe                          ports/games/nettoe
 nettop                          ports/net-mgmt/nettop
+netty                           ports/java/netty
 netustad                        ports/net-mgmt/netustad
 netwag                          ports/net-mgmt/netwag
 netwalker-ircc                  ports/irc/netwalker-ircc
@@ -12091,6 +12092,7 @@ p5-Event-RPC                    ports/devel/p5-Event-RPC
 p5-Event-tcp                    ports/net/p5-Event-tcp
 p5-Every                        ports/devel/p5-Every
 p5-Excel-Template               ports/textproc/p5-Excel-Template
+p5-Excel-Writer-XLSX            ports/textproc/p5-Excel-Writer-XLSX
 p5-Exception-Class              ports/devel/p5-Exception-Class
 p5-Exception-Class-DBI          ports/databases/p5-Exception-Class-DBI
 p5-Exception-Class-TryCatch     ports/devel/p5-Exception-Class-TryCatch
@@ -12651,6 +12653,7 @@ p5-IO-Socket-Multicast          ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-Multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-IO-Socket-SSL                ports/security/p5-IO-Socket-SSL
 p5-IO-String                    ports/devel/p5-IO-String
+p5-IO-Stty                      ports/devel/p5-IO-Stty
 p5-IO-Tee                       ports/devel/p5-IO-Tee
 p5-IO-TieCombine                ports/devel/p5-IO-TieCombine
 p5-IO-Toolkit                   ports/devel/p5-IO-Toolkit
@@ -14656,6 +14659,7 @@ p5-URI-imap                     ports/mail/p5-URI-imap
 p5-URI-imaps                    ports/mail/p5-URI-imaps
 p5-UUID                         ports/devel/p5-UUID
 p5-UUID-Tiny                    ports/devel/p5-UUID-Tiny
+p5-Ubic                         ports/sysutils/p5-Ubic
 p5-Umph-Prompt                  ports/multimedia/p5-Umph-Prompt
 p5-Unicode-CheckUTF8            ports/textproc/p5-Unicode-CheckUTF8
 p5-Unicode-EastAsianWidth       ports/textproc/p5-Unicode-EastAsianWidth
@@ -14791,6 +14795,7 @@ p5-WWW-iTunesConnect            ports/www/p5-WWW-iTunesConnect
 p5-Want                         ports/devel/p5-Want
 p5-WeakRef                      ports/devel/p5-WeakRef
 p5-Weather-Underground          ports/astro/p5-Weather-Underground
+p5-Web-Query                    ports/www/p5-Web-Query
 p5-Web-Scraper                  ports/www/p5-Web-Scraper
 p5-Web-Scraper-Config           ports/www/p5-Web-Scraper-Config
 p5-Web-oEmbed                   ports/www/p5-Web-oEmbed
@@ -16428,6 +16433,7 @@ p5-event-tcp                    ports/net/p5-Event-tcp
 p5-every                        ports/devel/p5-Every
 p5-ex-lib                       ports/devel/p5-ex-lib
 p5-excel-template               ports/textproc/p5-Excel-Template
+p5-excel-writer-xlsx            ports/textproc/p5-Excel-Writer-XLSX
 p5-exception-class              ports/devel/p5-Exception-Class
 p5-exception-class-dbi          ports/databases/p5-Exception-Class-DBI
 p5-exception-class-trycatch     ports/devel/p5-Exception-Class-TryCatch
@@ -17035,6 +17041,7 @@ p5-io-socket-multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-io-socket-ssl                ports/security/p5-IO-Socket-SSL
 p5-io-string                    ports/devel/p5-IO-String
 p5-io-stringy                   ports/devel/p5-IO-stringy
+p5-io-stty                      ports/devel/p5-IO-Stty
 p5-io-tee                       ports/devel/p5-IO-Tee
 p5-io-tiecombine                ports/devel/p5-IO-TieCombine
 p5-io-toolkit                   ports/devel/p5-IO-Toolkit
@@ -19020,6 +19027,7 @@ p5-try-tiny                     ports/lang/p5-Try-Tiny
 p5-trycatch                     ports/lang/p5-TryCatch
 p5-twiggy                       ports/www/p5-Twiggy
 p5-type1inst                    ports/x11-fonts/p5-type1inst
+p5-ubic                         ports/sysutils/p5-Ubic
 p5-udcode                       ports/devel/p5-UDCode
 p5-ui-dialog                    ports/devel/p5-UI-Dialog
 p5-uml-class-simple             ports/textproc/p5-UML-Class-Simple
@@ -19110,6 +19118,7 @@ p5-wddx                         ports/textproc/p5-WDDX
 p5-weakref                      ports/devel/p5-WeakRef
 p5-weather-underground          ports/astro/p5-Weather-Underground
 p5-web-oembed                   ports/www/p5-Web-oEmbed
+p5-web-query                    ports/www/p5-Web-Query
 p5-web-scraper                  ports/www/p5-Web-Scraper
 p5-web-scraper-config           ports/www/p5-Web-Scraper-Config
 p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
@@ -20833,6 +20842,7 @@ picviz                          ports/graphics/picviz
 piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
+pidgin-audacious-remote         ports/net-im/pidgin-audacious-remote
 pidgin-birthday-reminder        ports/net-im/pidgin-birthday-reminder
 pidgin-bs                       ports/net-im/pidgin-bs
 pidgin-encryption               ports/security/pidgin-encryption
@@ -21881,6 +21891,7 @@ py-kaa-metadata                 ports/multimedia/py-kaa-metadata
 py-karaoke                      ports/audio/py-karaoke
 py-kde                          ports/x11-toolkits/py-kde
 py-kenosis                      ports/net-p2p/py-kenosis
+py-kerberos                     ports/security/py-kerberos
 py-keyring                      ports/security/py-keyring
 py-kid                          ports/devel/py-kid
 py-kiwi                         ports/x11-toolkits/py-kiwi
@@ -23571,6 +23582,7 @@ rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
 rubygem-ai4r                    ports/science/rubygem-ai4r
 rubygem-allison                 ports/devel/rubygem-allison
+rubygem-amalgalite              ports/databases/rubygem-amalgalite
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-amq-client              ports/net/rubygem-amq-client
 rubygem-amq-protocol            ports/net/rubygem-amq-protocol
@@ -23725,6 +23737,7 @@ rubygem-json                    ports/devel/rubygem-json
 rubygem-json146                 ports/devel/rubygem-json146
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-kwalify                 ports/textproc/rubygem-kwalify
+rubygem-larch                   ports/mail/rubygem-larch
 rubygem-launchy                 ports/devel/rubygem-launchy
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-less                    ports/www/rubygem-less
@@ -23884,6 +23897,7 @@ rubygem-rubytter                ports/net/rubygem-rubytter
 rubygem-rubyzip2                ports/archivers/rubygem-rubyzip2
 rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
+rubygem-sanitize                ports/textproc/rubygem-sanitize
 rubygem-sass                    ports/textproc/rubygem-sass
 rubygem-sax-machine             ports/textproc/rubygem-sax-machine
 rubygem-scrapi                  ports/www/rubygem-scrapi
@@ -23910,6 +23924,7 @@ rubygem-state_machine           ports/devel/rubygem-state_machine
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
+rubygem-stompserver             ports/net/rubygem-stompserver
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-stringex                ports/devel/rubygem-stringex
@@ -23945,6 +23960,7 @@ rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter-stream          ports/net/rubygem-twitter-stream
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-twitter_oauth           ports/security/rubygem-twitter_oauth
+rubygem-typhoeus                ports/www/rubygem-typhoeus
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-uuid                    ports/devel/rubygem-uuid
@@ -25087,8 +25103,8 @@ sysgather                       ports/sysutils/sysgather
 sysinfo                         ports/sysutils/sysinfo
 syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
+syslog-ng1                      ports/sysutils/syslog-ng1
 syslog-ng2                      ports/sysutils/syslog-ng2
-syslog-ng3                      ports/sysutils/syslog-ng3
 syslog-ng3-devel                ports/sysutils/syslog-ng3-devel
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
