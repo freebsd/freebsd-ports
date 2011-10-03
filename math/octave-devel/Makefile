@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.3.50
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -27,7 +27,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		glpk.30:${PORTSDIR}/math/glpk \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
-		qhull:${PORTSDIR}/math/qhull
+		qhull.5:${PORTSDIR}/math/qhull5
 
 BROKEN=		fails to work with recent versions of GCC
 
