@@ -25,4 +25,9 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_ARGS=	htmldocdir=${PREFIX}/share/doc/libsamplerate
 
+pre-install:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's/SUBDIRS = M4 src doc examples tests/SUBDIRS = M4 src examples tests/' ${WRKSRC}/Makefile
+.endif
+
 .include <bsd.port.mk>
