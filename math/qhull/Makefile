@@ -5,34 +5,33 @@
 # $FreeBSD$
 
 PORTNAME=	qhull
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	2011.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
-DISTNAME=	${PORTNAME}-2003.1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 
-PATCH_SITES=		http://www.qhull.org/download/
-PATCHFILES=		poly.c-qh_gethash.patch
-PATCH_DIST_STRIP=	-p2
-
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAN1=	qhull.1 rbox.1
+
+CONFLICTS=	qhull-1.0*
+
+post-patch:
 .if !defined(NOPORTDOCS)
-MAN1=		qhull.1 rbox.1
+	${REINPLACE_CMD} -e 's#share/doc/packages#share/doc#g' \
+		${WRKSRC}/CMakeLists.txt
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
 .endif
 
-pre-configure:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|src html eg config|src config|"		\
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-docDATA install-examplesDATA||"	\
-		${WRKSRC}/src/Makefile.in
-.endif
+post-install:
+	${LN} -sf ${PREFIX}/lib/libqhull6.so.6.2.0.1385 \
+		${PREFIX}/lib/libqhull6.so.6
 
 .include <bsd.port.mk>
