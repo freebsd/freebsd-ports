@@ -19,6 +19,5 @@ sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/RFC.txt
 %%PORTDOCS%%%%DOCSDIR%%/SSL.txt
 %%PORTDOCS%%%%DOCSDIR%%/Services.txt
-%%PORTDOCS%%%%DOCSDIR%%/Zeroconf.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-ngircd.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

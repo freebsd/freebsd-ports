@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.17.1
+PORTVERSION=	0.18
 CATEGORIES=	irc ipv6
-MASTER_SITES=	${MASTER_SITE_BERLIOS} \
-		ftp://ngircd.barton.de/pub/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/%SUBDIR%/ \
+		http://arthur.barton.de/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTVERSION=	${PORTVERSION:S/0.//}
 
