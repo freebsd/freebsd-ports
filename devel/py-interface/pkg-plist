@@ -26,13 +26,17 @@
 %%PYTHON_SITELIBDIR%%/py_interface/erl_term.pyc
 %%PYTHON_SITELIBDIR%%/py_interface/erl_term.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_remote_exec_wrapper.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_test_erl_node_pingpong.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_test_erl_node_pingpong_qc.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_epmd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_conn.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_pingpong.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_pingpong.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_pingpong_qc.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_tk_1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_remote_exec.py
 @dirrm %%PYTHON_SITELIBDIR%%/py_interface
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
