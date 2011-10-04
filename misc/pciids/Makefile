@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20110714
+PORTVERSION=	20111002
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -34,7 +34,6 @@ MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
 MS_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
 MS_DISTFILES=	pci.ids
-REINPLACE_ARGS=	-i ''
 
 maketar: do-clean extract
 	${MKDIR} ${MS_WRKSRC}/
@@ -47,12 +46,12 @@ maketar: do-clean extract
 	(${DIFF} -u ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
 		cd ${MS_WRKSRC}/ && ${TAR} -jcf ${PORTNAME}-${MS_VERSION}.tar.bz2 ${PORTNAME}-${MS_VERSION}/; \
-		${REINPLACE_CMD} -e "s|${PORTVERSION}|${MS_VERSION}|" ${.CURDIR}/Makefile; \
+		${SED} -i '' -e "s|${PORTVERSION}|${MS_VERSION}|" ${.CURDIR}/Makefile; \
 		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.bz2 ${DISTDIR}/; \
 		cd ${.CURDIR}/ && ${MAKE} makesum; \
-		${ECHO_CMD} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF}"; \
+		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF} ***"; \
 	else \
-		${ECHO_CMD} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION})."; \
+		${ECHO_MSG} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION}) ***"; \
 	fi
 
 .include <bsd.port.mk>
