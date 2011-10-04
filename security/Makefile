@@ -295,6 +295,7 @@
     SUBDIR += monkeysphere
     SUBDIR += mosref
     SUBDIR += mussh
+    SUBDIR += nacl
     SUBDIR += nbaudit
     SUBDIR += ncrack
     SUBDIR += ncrypt
