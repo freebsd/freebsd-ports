@@ -1,0 +1,10 @@
+Ding-libs provides utility functions to manipulate filesystem pathnames
+(libpath_utils), a hash table which dynamically resizes to achieve
+optimal storage and access time properties (libdhash), a data type to
+collect data in a hierarchical structure for easy iteration and
+serialization (libcollection), a dynamically growing, reference-counted
+array (libref_array), and a library to process configuration files in
+initialization format (INI) into a library collection data structure
+(libini_config).
+
+WWW: https://fedorahosted.org/sssd/
