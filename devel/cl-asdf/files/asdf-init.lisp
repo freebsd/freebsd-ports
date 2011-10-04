@@ -226,10 +226,13 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 (pushnew :inherit-configuration *freebsd-output-translations*)
 
 (dolist (path (directory "/usr/local/lib/common-lisp/*/"))
-  (let ((fasldir (make-pathname 
-		  :directory (append (pathname-directory path)
-				     (list (lisp-specific-fasl-subdir))))))
-    (pushnew (list path fasldir) *freebsd-output-translations*)))
+  (let ((source (make-pathname
+                 :directory (append (pathname-directory path)
+                                    (list :wild-inferiors))))
+        (target (make-pathname
+                 :directory (append (pathname-directory path)
+                                    (list (lisp-specific-fasl-subdir) :wild-inferiors)))))
+    (pushnew (list source target) *freebsd-output-translations*)))
 
 (if (and (getenv "FBSD_ASDF_COMPILE_PORT")
          (getenv "PORTNAME")
