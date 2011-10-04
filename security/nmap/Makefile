@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap
-DISTVERSION=	5.61TEST1
+DISTVERSION=	5.61TEST2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -51,6 +51,17 @@ PLIST_SUB+=		WITHSSL=""
 PKGNAMESUFFIX=		-nossl
 CONFIGURE_ARGS+=	--without-openssl
 PLIST_SUB+=		WITHSSL="@comment "
+.endif
+
+# XXX: Workaround if OS is build with WITHOUT_INET6
+#  PR: ports/159376
+#
+# Note: If this option is specified in src.conf it has to
+#  be defined as param -DWITHOUT_INET6 during build time
+#  since the port system has no access to src.conf
+.if defined(WITHOUT_INET6)
+LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
 .endif
 
 PORTDOCS=	CHANGELOG HACKING
