@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.3.0b2
-PORTREVISION=	1
+PORTVERSION=	3.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.0beta2/source/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.1/source/
 PKGNAMESUFFIX=	3-devel
-DISTFILES=	$(PORTNAME)_3.3.0beta2.tar.gz
+DISTFILES=	$(PORTNAME)_3.3.1.tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.0beta2
+WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.1
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PORTS_SSL "Build with OpenSSL support (from ports)" off \
@@ -145,7 +144,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/syslog-ng
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/syslog-ng
 .endif
 	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.sample ]; then \
 		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc; \

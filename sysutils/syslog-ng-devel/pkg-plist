@@ -16,6 +16,7 @@ include/syslog-ng/apphook.h
 include/syslog-ng/atomic.h
 include/syslog-ng/block-ref-parser.h
 include/syslog-ng/center.h
+include/syslog-ng/cfg-grammar.h
 include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
 include/syslog-ng/cfg.h
@@ -73,7 +74,7 @@ include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng.so.0
+lib/libsyslog-ng-3.3.1.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
@@ -100,7 +101,6 @@ lib/syslog-ng/libdummy.la
 lib/syslog-ng/libdummy.so
 lib/syslog-ng/libsyslog-ng-crypto.la
 lib/syslog-ng/libsyslog-ng-crypto.so
-lib/syslog-ng/libsyslog-ng-crypto.so.0
 lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
 share/include/scl/pacct/plugin.conf
@@ -119,7 +119,6 @@ share/xsd/patterndb-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/patterndb.d
