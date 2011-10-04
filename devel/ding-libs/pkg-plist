@@ -1,0 +1,41 @@
+include/collection.h
+include/collection_queue.h
+include/collection_stack.h
+include/collection_tools.h
+include/dhash.h
+include/ini_config.h
+include/path_utils.h
+include/ref_array.h
+lib/libcollection.a
+lib/libcollection.la
+lib/libcollection.so
+lib/libcollection.so.2
+lib/libdhash.a
+lib/libdhash.la
+lib/libdhash.so
+lib/libdhash.so.1
+lib/libini_config.a
+lib/libini_config.la
+lib/libini_config.so
+lib/libini_config.so.2
+lib/libpath_utils.a
+lib/libpath_utils.la
+lib/libpath_utils.so
+lib/libpath_utils.so.1
+lib/libref_array.a
+lib/libref_array.la
+lib/libref_array.so
+lib/libref_array.so.1
+libdata/pkgconfig/path_utils.pc
+libdata/pkgconfig/dhash.pc
+libdata/pkgconfig/collection.pc
+libdata/pkgconfig/ref_array.pc
+libdata/pkgconfig/ini_config.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.path_utils
+%%PORTDOCS%%%%DOCSDIR%%/README.dhash
+%%PORTDOCS%%%%DOCSDIR%%/README.ref_array
+%%PORTDOCS%%%%DOCSDIR%%/examples/dhash_test.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/dhash_example.c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/pkgconfig

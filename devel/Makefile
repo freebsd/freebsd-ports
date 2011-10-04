@@ -301,6 +301,7 @@
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += diffuse
+    SUBDIR += ding-libs
     SUBDIR += directfb
     SUBDIR += dissy
     SUBDIR += distcc
