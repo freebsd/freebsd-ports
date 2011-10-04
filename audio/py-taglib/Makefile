@@ -16,6 +16,9 @@ DISTNAME=	python-taglib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the taglib audio file tagging library
 
+DEPRECATED=	Only compatible with Python 2.4. Please use audio/py-tagpy instead
+EXPIRATION_DATE=2011-12-04
+
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 WRKSRC=		${WRKDIR}/python-taglib-${PORTVERSION}
