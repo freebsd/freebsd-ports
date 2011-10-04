@@ -5481,13 +5481,31 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>14.0.835.163</lt></range>
+	<range><lt>14.0.835.202</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 14.0.835.202:<br/>
+	    [93788] High CVE-2011-2876: Use-after-free in text line box
+	      handling. Credit to miaubiz.<br/>
+	    [95072] High CVE-2011-2877: Stale font in SVG text handling. Credit
+	      to miaubiz.<br/>
+	    [95671] High CVE-2011-2878: Inappropriate cross-origin access to the
+	      window prototype. Credit to Sergey Glazunov.<br/>
+	    [96150] High CVE-2011-2879: Lifetime and threading issues in audio
+	      node handling. Credit to Google Chrome Security Team
+	      (Inferno).<br/>
+	    [97451] [97520] [97615] High CVE-2011-2880: Use-after-free in the v8
+	      bindings. Credit to Sergey Glazunov.<br/>
+	    [97784] High CVE-2011-2881: Memory corruption with v8 hidden
+	      objects. Credit to Sergey Glazunov.<br/>
+	    [98089] Critical CVE-2011-3873: Memory corruption in shader
+	      translator. Credit to Zhenyao Mo of the Chromium development
+	      community.</p>
+
 	  <p>Fixed in 14.0.835.163:<br/>
 	    [49377] High CVE-2011-2835: Race condition in the certificate cache.	      Credit to Ryan Sleevi of the Chromium development community.<br/>
 	    [51464] Low CVE-2011-2836: Infobar the Windows Media Player plug-in
@@ -6175,12 +6193,19 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2864</cvename>
       <cvename>CVE-2011-2874</cvename>
       <cvename>CVE-2011-2875</cvename>
+      <cvename>CVE-2011-2876</cvename>
+      <cvename>CVE-2011-2877</cvename>
+      <cvename>CVE-2011-2878</cvename>
+      <cvename>CVE-2011-2879</cvename>
+      <cvename>CVE-2011-2880</cvename>
+      <cvename>CVE-2011-2881</cvename>
       <cvename>CVE-2011-3234</cvename>
+      <cvename>CVE-2011-3873</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-09-20</modified>
+      <modified>2011-10-04</modified>
     </dates>
   </vuln>
 
