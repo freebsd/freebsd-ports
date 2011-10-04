@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	4399
+PORTVERSION=	4487
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://mirror.amdmi3.ru/distfiles/:josm \
@@ -31,7 +31,7 @@ WEBKITIMG_SRC=	${WEBKITIMG}.cpp
 
 PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 
-OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" on
+OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" off
 
 .include <bsd.port.options.mk>
 
