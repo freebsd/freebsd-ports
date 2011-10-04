@@ -8,12 +8,10 @@
 PORTNAME=	fortune-bashorgru
 PORTVERSION=	20080903
 CATEGORIES=	russian
-MASTER_SITES=	http://www.dindin.ru/download/
+MASTER_SITES=	http://limbo.xim.bz/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortunes from bash.org.ru and freebsd.rusnet.org.ru/bash
-
-BROKEN=	Does not fetch
 
 NO_BUILD=	yes
 
