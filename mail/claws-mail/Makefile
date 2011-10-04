@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.10
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -20,6 +21,7 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		png:${PORTSDIR}/graphics/png \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		execinfo:${PORTSDIR}/devel/libexecinfo
@@ -49,8 +51,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ALL		"Enable all options."			off \
-		ENCHANT		"Enable spell checking support."	on \
+OPTIONS=	ENCHANT		"Enable spell checking support."	on \
 		BOGOFILTER	"Enable bogofilter support."		off \
 		COMPFACE	"Enable X-Face support."		on \
 		DEBUG		"Enable debug support."			off \
@@ -66,7 +67,7 @@ OPTIONS=	ALL		"Enable all options."			off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BOGOFILTER) || defined(WITH_ALL)
+.if defined(WITH_BOGOFILTER)
 RUN_DEPENDS+=		bogofilter:${PORTSDIR}/mail/bogofilter
 CONFIGURE_ARGS+=	--enable-bogofilter-plugin
 PLIST_SUB+=		BOGO_PLUG=""
@@ -75,32 +76,36 @@ CONFIGURE_ARGS+=	--disable-bogofilter-plugin
 PLIST_SUB+=		BOGO_PLUG="@comment "
 .endif
 
-.if defined(WITH_COMPFACE) || defined(WITH_ALL)
+.if defined(WITH_COMPFACE)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
-.if defined(WITH_ENCHANT) || defined(WITH_ALL)
+
+.if defined(WITH_ENCHANT)
 LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--enable-enchant
 .else
 CONFIGURE_ARGS+=	--disable-enchant
 .endif
-.if defined(WITH_JPILOT) || defined(WITH_ALL)
+
+.if defined(WITH_JPILOT)
 LIB_DEPENDS+=		pisock:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
-.if defined(WITH_LDAP) || defined(WITH_ALL)
+
+.if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
-.if defined(WITH_MANUAL) || defined(WITH_ALL)
+
+.if defined(WITH_MANUAL)
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
 CONFIGURE_ARGS+=	--enable-manual --with-manualdir=${DOCSDIR}/manual
 PLIST_SUB+=		MANUAL=""
@@ -108,7 +113,8 @@ PLIST_SUB+=		MANUAL=""
 CONFIGURE_ARGS+=	--disable-manual
 PLIST_SUB+=		MANUAL="@comment "
 .endif
-.if defined(WITH_SA_PLUG) || defined(WITH_ALL)
+
+.if defined(WITH_SA_PLUG)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG=""
@@ -116,7 +122,8 @@ PLIST_SUB+=		SA_PLUG=""
 CONFIGURE_ARGS+=	--disable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG="@comment "
 .endif
-.if defined(WITH_GPGME) || defined(WITH_ALL)
+
+.if defined(WITH_GPGME)
 PLIST_SUB+=		GPGME=""
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
 			--enable-pgpinline-plugin --enable-smime-plugin
@@ -128,11 +135,13 @@ PLIST_SUB+=		GPGME="@comment "
 CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 			--disable-pgpinline-plugin --disable-smime-plugin
 .endif
-.if defined(WITH_DEBUG) || defined(WITH_ALL)
+
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
 STRIP=
 .endif
-.if defined(WITH_DILLO) || defined(WITH_ALL)
+
+.if defined(WITH_DILLO)
 PLIST_SUB+=	DILLO=""
 RUN_DEPENDS+=	dillo:${PORTSDIR}/www/dillo
 .else
@@ -140,13 +149,13 @@ PLIST_SUB+=	DILLO="@comment "
 CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
 .endif
 
-.if !defined(WITHOUT_IPV6) || defined(WITH_ALL)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if !defined(WITHOUT_STARTUP) || defined(WITH_ALL)
+.if !defined(WITHOUT_STARTUP)
 LIB_DEPENDS+=		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=	--enable-startup-notification
 .else
