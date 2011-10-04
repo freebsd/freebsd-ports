@@ -13,6 +13,8 @@ MASTER_SITES=	http://flatassembler.net/
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 
+BROKEN=		unfetchable: size mismatch
+
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 IA32_BINARY_PORT=	yes
 
