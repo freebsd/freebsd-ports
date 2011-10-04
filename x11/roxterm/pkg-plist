@@ -8,10 +8,6 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/index.html
 %%PORTDOCS%%%%DOCSDIR%%/en/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/en/news.html
-%%PORTDOCS%%%%DOCSDIR%%/es/guide.html
-%%PORTDOCS%%%%DOCSDIR%%/es/index.html
-%%PORTDOCS%%%%DOCSDIR%%/es/installation.html
-%%PORTDOCS%%%%DOCSDIR%%/es/news.html
 %%PORTDOCS%%%%DOCSDIR%%/lib/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/lib/header.png
 %%PORTDOCS%%%%DOCSDIR%%/lib/logo_text.png
@@ -21,17 +17,15 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
-share/locale/es/LC_MESSAGES/roxterm.mo
 %%DATADIR%%/Config/Colours/GTK
 %%DATADIR%%/Config/Colours/Tango
 %%DATADIR%%/Config/Shortcuts/Default
-%%DATADIR%%/roxterm-config.glade
+%%DATADIR%%/roxterm-config.ui
 @dirrm %%DATADIR%%/Config/Shortcuts
 @dirrm %%DATADIR%%/Config/Colours
 @dirrm %%DATADIR%%/Config
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
