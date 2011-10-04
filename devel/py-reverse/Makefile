@@ -16,6 +16,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of tools for reverse engineering Python code
 
+DEPRECATED=	Now part of pylint
+EXPIRATION_DATE=2011-11-04
+
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML} \
 		pytest:${PORTSDIR}/devel/py-logilab-common

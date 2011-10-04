@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Arrays on mmap()
 
+DEPRECATED=	Author recommends using math/py-numpy instead
+EXPIRATION_DATE=2011-11-04
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Vmaps
