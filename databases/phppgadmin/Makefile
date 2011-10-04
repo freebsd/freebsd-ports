@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.0
 DISTNAME=	phpPgAdmin-${PORTVERSION}
