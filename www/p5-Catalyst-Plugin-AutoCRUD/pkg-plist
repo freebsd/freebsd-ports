@@ -1,69 +1,65 @@
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/AJAX.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Root.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Skinny.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Static.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/DBIC.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/Backend/DBIC.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/Metadata/DBIC.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View/JSON.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View/TT.pm
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/add.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/application_view_detail.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/arrow_refresh_small.png
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/bullet_red.png
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/iefix.css
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/skinny_body.css
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/xdatetime.js
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/add.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/bin_closed.png
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/skinny.css
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/body.css
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/lfb.css
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/find.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/bullet_green.png
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/bullet_red.png
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/cpac.css
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/find.png
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/iefix.css
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/magnifier.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/page_lightning.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/script_lightning.png
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/sitemap_color.png
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/skinny.css
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/skinny_body.css
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static/xdatetime.js
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid/columns.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid/toolbar.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid/pagebar.tt
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid/toolbar.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid/view.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/store.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/update.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/update/tabs.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/update/window.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/util.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/list.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/wrapper.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/pager.tt
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/helloworld.tt
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/cell.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/list.tt
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/pager.tt
+%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/row.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/table.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/wrapper.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/row.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/cell.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/helloworld.tt
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/tables.tt
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/Metadata.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/DBIC.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/AJAX.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Root.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Static.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/Skinny.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View/JSON.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View/TT.pm
-%%SITE_PERL%%/Catalyst/Plugin/AutoCRUD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD/.packlist
-@dirrmtry %%SITE_PERL%%/auto/Catalyst/Plugin/AutoCRUD
-@dirrmtry %%SITE_PERL%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/update
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/update
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript/grid
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat/javascript
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/full-fat
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/Metadata
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/Backend
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller
+@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
