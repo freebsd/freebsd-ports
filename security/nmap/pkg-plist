@@ -204,8 +204,8 @@ bin/nping
 %%DATADIR%%/scripts/http-vuln-cve2011-3192.nse
 %%DATADIR%%/scripts/http-waf-detect.nse
 %%DATADIR%%/scripts/http-wordpress-brute.nse
-%%DATADIR%%/scripts/http-wp-enum.nse
-%%DATADIR%%/scripts/http-wp-plugins.nse
+%%DATADIR%%/scripts/http-wordpress-enum.nse
+%%DATADIR%%/scripts/http-wordpress-plugins.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/imap-brute.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
@@ -227,6 +227,7 @@ bin/nping
 %%DATADIR%%/scripts/ldap-rootdse.nse
 %%DATADIR%%/scripts/ldap-search.nse
 %%DATADIR%%/scripts/lexmark-config.nse
+%%DATADIR%%/scripts/lltd-discovery.nse
 %%DATADIR%%/scripts/modbus-discover.nse
 %%DATADIR%%/scripts/mongodb-databases.nse
 %%DATADIR%%/scripts/mongodb-info.nse
@@ -274,6 +275,7 @@ bin/nping
 %%DATADIR%%/scripts/pop3-capabilities.nse
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/qscan.nse
+%%DATADIR%%/scripts/quake3-info.nse
 %%DATADIR%%/scripts/quake3-master-getservers.nse
 %%DATADIR%%/scripts/realvnc-auth-bypass.nse
 %%DATADIR%%/scripts/resolveall.nse
@@ -326,6 +328,7 @@ bin/nping
 %%DATADIR%%/scripts/sshv1.nse
 %%DATADIR%%/scripts/ssl-cert.nse
 %%DATADIR%%/scripts/ssl-enum-ciphers.nse
+%%DATADIR%%/scripts/ssl-google-cert-catalog.nse
 %%DATADIR%%/scripts/ssl-known-key.nse
 %%DATADIR%%/scripts/sslv2.nse
 %%DATADIR%%/scripts/stuxnet-detect.nse
