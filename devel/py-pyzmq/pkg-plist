@@ -7,9 +7,9 @@
 %%PYTHON_SITELIBDIR%%/zmq/core/constants.so
 %%PYTHON_SITELIBDIR%%/zmq/core/context.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/context.so
-%%PYTHON_SITELIBDIR%%/zmq/core/czmq.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/device.so
 %%PYTHON_SITELIBDIR%%/zmq/core/error.so
+%%PYTHON_SITELIBDIR%%/zmq/core/libzmq.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/message.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/message.so
 %%PYTHON_SITELIBDIR%%/zmq/core/poll.so
@@ -50,6 +50,15 @@
 %%PYTHON_SITELIBDIR%%/zmq/log/handlers.py
 %%PYTHON_SITELIBDIR%%/zmq/log/handlers.pyc
 %%PYTHON_SITELIBDIR%%/zmq/log/handlers.pyo
+%%PYTHON_SITELIBDIR%%/zmq/ssh/__init__.py
+%%PYTHON_SITELIBDIR%%/zmq/ssh/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zmq/ssh/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zmq/ssh/forward.py
+%%PYTHON_SITELIBDIR%%/zmq/ssh/forward.pyc
+%%PYTHON_SITELIBDIR%%/zmq/ssh/forward.pyo
+%%PYTHON_SITELIBDIR%%/zmq/ssh/tunnel.py
+%%PYTHON_SITELIBDIR%%/zmq/ssh/tunnel.pyc
+%%PYTHON_SITELIBDIR%%/zmq/ssh/tunnel.pyo
 %%PYTHON_SITELIBDIR%%/zmq/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/__init__.pyo
@@ -59,6 +68,15 @@
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_device.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_device.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_device.pyo
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.py
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.pyc
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.pyo
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.py
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.pyc
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.pyo
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.py
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.pyc
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.pyo
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_log.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_log.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_log.pyo
@@ -86,15 +104,6 @@
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_socket.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_socket.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_socket.pyo
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.py
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.pyc
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_error.pyo
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.py
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.pyc
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_imports.pyo
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.py
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.pyc
-%%PYTHON_SITELIBDIR%%/zmq/tests/test_ioloop.pyo
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_stopwatch.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_stopwatch.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_stopwatch.pyo
@@ -111,14 +120,16 @@
 %%PYTHON_SITELIBDIR%%/zmq/utils/jsonapi.pyc
 %%PYTHON_SITELIBDIR%%/zmq/utils/jsonapi.pyo
 %%PYTHON_SITELIBDIR%%/zmq/utils/pyversion_compat.h
+%%PYTHON_SITELIBDIR%%/zmq/utils/rebuffer.so
 %%PYTHON_SITELIBDIR%%/zmq/utils/strtypes.py
 %%PYTHON_SITELIBDIR%%/zmq/utils/strtypes.pyc
 %%PYTHON_SITELIBDIR%%/zmq/utils/strtypes.pyo
 %%PYTHON_SITELIBDIR%%/zmq/utils/zmq_compat.h
-@dirrm %%PYTHON_SITELIBDIR%%/zmq/utils
-@dirrm %%PYTHON_SITELIBDIR%%/zmq/tests
-@dirrm %%PYTHON_SITELIBDIR%%/zmq/log
-@dirrm %%PYTHON_SITELIBDIR%%/zmq/eventloop
-@dirrm %%PYTHON_SITELIBDIR%%/zmq/devices
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/core
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/devices
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/eventloop
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/log
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/ssh
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/tests
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/utils
 @dirrm %%PYTHON_SITELIBDIR%%/zmq
