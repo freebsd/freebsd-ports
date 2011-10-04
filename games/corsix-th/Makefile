@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	corsixth
-DISTVERSION=	0.Beta7
+DISTVERSION=	0.Beta8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	corsix-th
@@ -22,6 +22,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 USE_CMAKE=	yes
 USE_LUA=	yes
 USE_SDL=	mixer
+WRKSRC=		${WRKDIR}/CorsixTH
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts

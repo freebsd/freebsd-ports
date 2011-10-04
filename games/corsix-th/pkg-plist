@@ -87,6 +87,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/drug_casebook.lua
 %%DATADIR%%/Lua/dialogs/edit_room.lua
 %%DATADIR%%/Lua/dialogs/fax.lua
+%%DATADIR%%/Lua/dialogs/file_browser.lua
 %%DATADIR%%/Lua/dialogs/fullscreen.lua
 %%DATADIR%%/Lua/dialogs/furnish_corridor.lua
 %%DATADIR%%/Lua/dialogs/graphs.lua
@@ -141,6 +142,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/diseases/jellyitis.lua
 %%DATADIR%%/Lua/diseases/kidney_beans.lua
 %%DATADIR%%/Lua/diseases/king_complex.lua
+%%DATADIR%%/Lua/diseases/pregnant.lua
 %%DATADIR%%/Lua/diseases/ruptured_nodules.lua
 %%DATADIR%%/Lua/diseases/serious_radiation.lua
 %%DATADIR%%/Lua/diseases/slack_tongue.lua
@@ -158,6 +160,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/entities/object.lua
 %%DATADIR%%/Lua/entities/patient.lua
 %%DATADIR%%/Lua/entities/staff.lua
+%%DATADIR%%/Lua/entities/vip.lua
 %%DATADIR%%/Lua/entity.lua
 %%DATADIR%%/Lua/filesystem.lua
 %%DATADIR%%/Lua/game_ui.lua
@@ -165,11 +168,13 @@ bin/CorsixTH
 %%DATADIR%%/Lua/hospital.lua
 %%DATADIR%%/Lua/humanoid_actions/answer_call.lua
 %%DATADIR%%/Lua/humanoid_actions/call_checkpoint.lua
+%%DATADIR%%/Lua/humanoid_actions/check_watch.lua
 %%DATADIR%%/Lua/humanoid_actions/die.lua
 %%DATADIR%%/Lua/humanoid_actions/idle.lua
 %%DATADIR%%/Lua/humanoid_actions/knock_door.lua
 %%DATADIR%%/Lua/humanoid_actions/meander.lua
 %%DATADIR%%/Lua/humanoid_actions/multi_use_object.lua
+%%DATADIR%%/Lua/humanoid_actions/pee.lua
 %%DATADIR%%/Lua/humanoid_actions/pickup.lua
 %%DATADIR%%/Lua/humanoid_actions/queue.lua
 %%DATADIR%%/Lua/humanoid_actions/seek_reception.lua
@@ -179,9 +184,11 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/spawn.lua
 %%DATADIR%%/Lua/humanoid_actions/staff_reception.lua
 %%DATADIR%%/Lua/humanoid_actions/sweep_floor.lua
+%%DATADIR%%/Lua/humanoid_actions/tap_foot.lua
 %%DATADIR%%/Lua/humanoid_actions/use_object.lua
 %%DATADIR%%/Lua/humanoid_actions/use_screen.lua
 %%DATADIR%%/Lua/humanoid_actions/use_staffroom.lua
+%%DATADIR%%/Lua/humanoid_actions/vomit.lua
 %%DATADIR%%/Lua/humanoid_actions/walk.lua
 %%DATADIR%%/Lua/key_mapping.lua
 %%DATADIR%%/Lua/languages/czech.lua
@@ -195,6 +202,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/languages/italian.lua
 %%DATADIR%%/Lua/languages/norwegian.lua
 %%DATADIR%%/Lua/languages/original_strings.lua
+%%DATADIR%%/Lua/languages/polish.lua
 %%DATADIR%%/Lua/languages/portuguese.lua
 %%DATADIR%%/Lua/languages/russian.lua
 %%DATADIR%%/Lua/languages/simplified_chinese.lua
