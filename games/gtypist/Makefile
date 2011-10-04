@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.8.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
 MAKE_JOBS_SAFE=	yes
 
-INFO=		gtypist
+INFO=		gtypist gtypist.cs
 MAN1=		gtypist.1 typefortune.1
 
 .if !defined(WITHOUT_NLS)
