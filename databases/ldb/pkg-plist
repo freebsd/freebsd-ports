@@ -1,0 +1,31 @@
+bin/ldbadd
+bin/ldbdel
+bin/ldbedit
+bin/ldbmodify
+bin/ldbrename
+bin/ldbsearch
+include/ldb.h
+include/ldb_errors.h
+include/ldb_handlers.h
+include/ldb_module.h
+include/ldb_version.h
+include/pyldb.h
+lib/ldb/libldb-cmdline.so
+lib/ldb/paged_results.so
+lib/ldb/asq.so
+lib/ldb/server_sort.so
+lib/ldb/paged_searches.so
+lib/ldb/rdn_name.so
+lib/ldb/sample.so
+lib/ldb/skel.so
+lib/libldb.so
+lib/libldb.so.1
+lib/libldb.so.1.1.0
+lib/libpyldb-util.so
+lib/libpyldb-util.so.1
+lib/libpyldb-util.so.1.1.0
+libdata/pkgconfig/pyldb-util.pc
+libdata/pkgconfig/ldb.pc
+@dirrmtry libdata/pkgconfig
+lib/%%PYTHON_VERSION%%/site-packages/ldb.so
+@dirrmtry lib/ldb

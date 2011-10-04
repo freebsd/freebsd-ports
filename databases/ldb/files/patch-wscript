@@ -1,0 +1,19 @@
+--- ./wscript.orig	2011-10-04 07:47:27.000000000 -0400
++++ ./wscript	2011-10-04 07:47:35.000000000 -0400
+@@ -220,16 +220,6 @@
+                          deps='ldb',
+                          subsystem='ldb')
+ 
+-        bld.SAMBA_MODULE('ldb_tdb',
+-                         bld.SUBDIR('ldb_tdb',
+-                                    '''ldb_tdb.c ldb_pack.c ldb_search.c ldb_index.c
+-                                    ldb_cache.c ldb_tdb_wrap.c'''),
+-                         init_function='ldb_tdb_init',
+-                         module_init_name='ldb_init_module',
+-                         internal_module=False,
+-                         deps='tdb ldb',
+-                         subsystem='ldb')
+-
+         # have a separate subsystem for common/ldb.c, so it can rebuild
+         # for install with a different -DLDB_MODULESDIR=
+         bld.SAMBA_SUBSYSTEM('LIBLDB_MAIN',
