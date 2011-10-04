@@ -86,7 +86,6 @@ bzip-*			archivers/bzip		Some algorithms used may
 ccc-*.alpha.rpm		lang/compaq-cc		Distribution not allowed
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed
-cfs-*			security/cfs		Crypto; export-controlled
 contool-*		sysutils/contool	Do not incorporate the source
 						code into a product which is
 						subsequently sold
