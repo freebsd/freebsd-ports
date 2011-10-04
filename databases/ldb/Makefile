@@ -25,7 +25,7 @@ LIB_DEPENDS=	talloc.2:${PORTSDIR}/devel/talloc \
 CONFLICTS=	samba4-devel-4*
 
 CONFIGURE_ARGS=	--with-modulesdir=${PREFIX}/lib \
-		--builtin-libraries=replace \
+		--builtin-libraries="tdb replace" \
 		--bundled-libraries=NONE
 CFLAGS+=	-L${LOCALBASE}/lib
 
