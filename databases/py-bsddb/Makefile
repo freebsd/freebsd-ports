@@ -38,9 +38,9 @@ post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
 
 .if ${PYTHON_REL} < 260
-BSDDB_PATCH=_bsddb.c
+BSDDB_PATCH=	_bsddb.c
 .else
-BSDDB_PATCH=bsddb.h
+BSDDB_PATCH=	bsddb.h
 .endif
 
 post-patch:
