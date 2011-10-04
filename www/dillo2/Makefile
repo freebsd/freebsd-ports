@@ -38,7 +38,7 @@ OPTIONS=	COOKIES 	"Enable cookies" On \
 		SSL		"Enable (experimental) https support" On \
 		THREADED_DNS	"Enable re-entrant resolver library" On
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_COOKIES)
 CONFIGURE_ARGS+=	--enable-cookies
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .ifdef(WITH_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
@@ -94,4 +94,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
