@@ -62,6 +62,8 @@ OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" off \
 		THREADS "multi-threading support" on \
 		TRANSPARENT "transparent proxy support" on
 
+USE_OPENSSL=	yes
+
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
@@ -73,7 +75,7 @@ CONFLICTS=		tor-[0-9]*
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GMAKE)
 USE_GMAKE=	yes
@@ -92,7 +94,6 @@ CONFIGURE_ARGS+=	--enable-gcc-hardening
 (${OSVERSION} >= 900000 && ${OSVERSION} < 900027) )
 WITH_OPENSSL_PORT=	yes
 .endif
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 .if defined(WITH_BUFFEREVENTS)
 CONFIGURE_ARGS+=	--enable-bufferevents
@@ -181,4 +182,4 @@ check regression-test test: build
 	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
