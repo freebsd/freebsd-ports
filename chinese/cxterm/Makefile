@@ -28,6 +28,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice
