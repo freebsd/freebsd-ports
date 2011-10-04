@@ -29,7 +29,7 @@ load_rc_config ${name}
 
 if [ -n "$2" ]; then
 	profile="$2"
-	if [ "x${memcached_profiles}" != "x" ]; then
+	if [ -n "${memcached_profiles}" ]; then
 		pidfile="${_piddir}/memcached.${profile}.pid"
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
@@ -72,12 +72,19 @@ fi
 
 memcached_poststop()
 {
-	local file
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
 
-	for file in ${_piddir}/* ; do
-		case "$file" in *\*) continue ;; esac
-		unlink $file
-	done
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
 }
 
 : ${memcached_enable="NO"}
