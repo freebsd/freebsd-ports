@@ -17,7 +17,7 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LATEST_LINK=	openvpn20
-CONFLICTS=	openvpn-2.[!0]* openvpn-devel-[0-9]*
+CONFLICTS_INSTALL=	openvpn-2.[!0]* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
