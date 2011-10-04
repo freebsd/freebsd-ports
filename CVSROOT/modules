@@ -2542,6 +2542,7 @@ dokeos                          ports/www/dokeos
 dokuwiki                        ports/www/dokuwiki
 dolly                           ports/sysutils/dolly
 dolphin                         ports/x11-fm/dolphin
+dolphin-emu-devel               ports/emulators/dolphin-emu-devel
 dom4j                           ports/textproc/dom4j
 domc                            ports/textproc/domc
 domtools                        ports/dns/domtools
@@ -8106,6 +8107,7 @@ libpano13                       ports/graphics/libpano13
 libpaper                        ports/print/libpaper
 libpar2                         ports/archivers/libpar2
 libparanoia                     ports/security/libparanoia
+libparserutils                  ports/devel/libparserutils
 libparsifal                     ports/textproc/libparsifal
 libpasori                       ports/devel/libpasori
 libpathan                       ports/textproc/libpathan
@@ -10836,6 +10838,7 @@ p5-App-CLI-Extension            ports/devel/p5-App-CLI-Extension
 p5-App-Cache                    ports/devel/p5-App-Cache
 p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
+p5-App-Genpass                  ports/security/p5-App-Genpass
 p5-App-GitGot                   ports/devel/p5-App-GitGot
 p5-App-GitHub                   ports/devel/p5-App-GitHub
 p5-App-Info                     ports/devel/p5-App-Info
@@ -13813,6 +13816,7 @@ p5-Plucene-Plugin-Analyzer-SnowballAnalyzer  ports/textproc/p5-Plucene-Plugin-An
 p5-Plucene-Simple               ports/textproc/p5-Plucene-Simple
 p5-Plugtools                    ports/sysutils/p5-Plugtools
 p5-Plugtools-Plugins-HomeOU     ports/sysutils/p5-Plugtools-Plugins-HomeOU
+p5-PocketIO                     ports/www/p5-PocketIO
 p5-Pod-Abstract                 ports/textproc/p5-Pod-Abstract
 p5-Pod-Autopod                  ports/textproc/p5-Pod-Autopod
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
@@ -15149,6 +15153,7 @@ p5-app-cli-extension            ports/devel/p5-App-CLI-Extension
 p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-cpanminus                ports/devel/p5-App-cpanminus
+p5-app-genpass                  ports/security/p5-App-Genpass
 p5-app-gitgot                   ports/devel/p5-App-GitGot
 p5-app-github                   ports/devel/p5-App-GitHub
 p5-app-info                     ports/devel/p5-App-Info
@@ -18088,6 +18093,7 @@ p5-plucene-plugin-analyzer-snowballanalyzer  ports/textproc/p5-Plucene-Plugin-An
 p5-plucene-simple               ports/textproc/p5-Plucene-Simple
 p5-plugtools                    ports/sysutils/p5-Plugtools
 p5-plugtools-plugins-homeou     ports/sysutils/p5-Plugtools-Plugins-HomeOU
+p5-pocketio                     ports/www/p5-PocketIO
 p5-pod-abstract                 ports/textproc/p5-Pod-Abstract
 p5-pod-autopod                  ports/textproc/p5-Pod-Autopod
 p5-pod-constants                ports/textproc/p5-Pod-Constants
@@ -22596,6 +22602,7 @@ qgo                             ports/games/qgo
 qgoogletranslator               ports/textproc/qgoogletranslator
 qhacc                           ports/finance/qhacc
 qhull                           ports/math/qhull
+qhull5                          ports/math/qhull5
 qico                            ports/comms/qico
 qimageblitz                     ports/x11/qimageblitz
 qinx                            ports/x11-themes/qinx
@@ -25103,9 +25110,9 @@ sysgather                       ports/sysutils/sysgather
 sysinfo                         ports/sysutils/sysinfo
 syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
+syslog-ng-devel                 ports/sysutils/syslog-ng-devel
 syslog-ng1                      ports/sysutils/syslog-ng1
 syslog-ng2                      ports/sysutils/syslog-ng2
-syslog-ng3-devel                ports/sysutils/syslog-ng3-devel
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
 system-config-printer           ports/print/system-config-printer
