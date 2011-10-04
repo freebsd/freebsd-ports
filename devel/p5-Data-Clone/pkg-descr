@@ -1,0 +1,13 @@
+Data::Clone does data cloning, i.e. copies things recursively. This is smart so
+that it works with not only non-blessed references, but also with blessed
+references (i.e. objects). When clone() finds an object, it calls a clone method
+of the object if the object has a clone, otherwise it makes a surface copy of
+the object. That is, this module does polymorphic data cloning.
+
+Although there are several modules on CPAN which can clone data, this module has
+a different cloning policy from almost all of them. See "Cloning policy" and
+"Comparison to other cloning modules" [1] for details.
+
+[1] http://search.cpan.org/dist/Data-Clone/lib/Data/Clone.pm
+
+WWW: http://search.cpan.org/dist/Data-Clone/

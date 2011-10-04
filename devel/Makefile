@@ -1432,6 +1432,7 @@
     SUBDIR += p5-Data-Average
     SUBDIR += p5-Data-Bind
     SUBDIR += p5-Data-ClearSilver-HDF
+    SUBDIR += p5-Data-Clone
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Domain
     SUBDIR += p5-Data-Dump

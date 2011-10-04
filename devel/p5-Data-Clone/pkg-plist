@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Clone.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/Clone.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/Clone.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/data_clone.h
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data
