@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zmq
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.10
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
