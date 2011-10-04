@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	201126
+DISTVERSION=	201139
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS=	openvpn-2.0* openvpn-beta-[0-9]*
+CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -38,7 +38,7 @@ OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
 USE_RC_SUBR=	openvpn.sh
 USE_LDCONFIG=	${PREFIX}/lib
 
-SUB_FILES=	pkg-message pkg-req
+SUB_FILES=	pkg-message
 SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .if defined(PACKAGE_BUILDING)
@@ -84,9 +84,6 @@ post-build:
 .if !defined(WITHOUT_CHECK)
 	cd ${WRKSRC} && ${MAKE} check
 .endif
-
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
 	${MKDIR} ${PREFIX}/lib
