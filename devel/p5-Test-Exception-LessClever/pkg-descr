@@ -1,0 +1,7 @@
+Test::Exception::LessClever is an alternative to Test::Exception that is much
+simpler. This alternative does not use fancy stack tricks to hide itself. The
+idea here is to keep it simple.  This also solves the Test::Exception bug where
+some dies will be hidden when a DESTROY method calls eval. If a DESTROY method
+masks $@ a warning will be generated as well.
+
+WWW: http://search.cpan.org/dist/Test-Exception-LessClever/
