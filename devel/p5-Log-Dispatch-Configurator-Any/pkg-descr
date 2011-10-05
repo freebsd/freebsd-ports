@@ -1,0 +1,10 @@
+Log::Dispatch::Config is a wrapper for Log::Dispatch and provides a way to
+configure Log::Dispatch objects with configuration files. Somewhat like a lite
+version of log4j and Log::Log4perl it allows multiple log destinations. The
+standard configuration file format for Log::Dispatch::Config is AppConfig.
+
+This module plugs in to Log::Dispatch::Config and allows the use of other file
+formats, in fact any format supported by the Config::Any module. As a bonus you
+can also pass in a configuration data structure instead of a file name.
+
+WWW: http://search.cpan.org/dist/Log-Dispatch-Configurator-Any/
