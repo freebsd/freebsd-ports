@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.11
-PORTREVISION=	3
+DISTVERSION=	2.1.12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -301,15 +300,16 @@ SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
-		radzap.1
+		radzap.1 smbencrypt.1
 MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
 		radrelay.conf.5 rlm_acct_unique.5 rlm_always.5 \
 		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
 		rlm_detail.5 rlm_digest.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 \
 		rlm_pap.5 rlm_passwd.5 rlm_policy.5 rlm_realm.5 rlm_sql.5 \
-		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5
+		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5 checkrad.5
 MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
-		radwatch.8 rlm_ippool_tool.8
+		radwatch.8 rlm_ippool_tool.8 radconf2xml.8 radcrypt.8 \
+		radsniff.8 rlm_dbm_cat.8 rlm_dbm_parse.8
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 

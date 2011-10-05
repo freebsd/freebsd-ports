@@ -765,11 +765,14 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
+%%DATADIR%%/dictionary.siemens
 %%DATADIR%%/dictionary.slipstream
 %%DATADIR%%/dictionary.sofaware
 %%DATADIR%%/dictionary.sonicwall
 %%DATADIR%%/dictionary.springtide
 %%DATADIR%%/dictionary.starent
+%%DATADIR%%/dictionary.starent.vsa1
+%%DATADIR%%/dictionary.symbol
 %%DATADIR%%/dictionary.t_systems_nova
 %%DATADIR%%/dictionary.telebit
 %%DATADIR%%/dictionary.telkom
