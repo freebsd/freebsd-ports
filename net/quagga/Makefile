@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.17
-PORTREVISION=	9
+PORTVERSION=	0.99.20
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -104,6 +103,7 @@ CONFIGURE_ARGS+=--enable-nssa
 CONFIGURE_ARGS+=--enable-opaque-lsa
 PLIST_SUB+=	OSPFAPI=""
 .else
+CONFIGURE_ARGS+=--disable-opaque-lsa
 PLIST_SUB+=	OSPFAPI="@comment "
 .endif
 
