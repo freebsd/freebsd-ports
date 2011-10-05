@@ -14,6 +14,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for generating a C function which parses command line arguments
 
+MAKE_JOBS_UNSAFE=	yes
+
 INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_GMAKE=	yes
