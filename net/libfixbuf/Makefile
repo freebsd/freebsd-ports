@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfixbuf
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
