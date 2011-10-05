@@ -14,6 +14,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
+DEPRECATED=	unmaintained and not used anymore
+EXPIRATION_DATE=	2011-11-06
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		popt.0:${PORTSDIR}/devel/popt

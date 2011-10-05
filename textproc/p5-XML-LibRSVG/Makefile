@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to GNOME's librsvg
 
+DEPRECATED=	unmaintained and not used anymore
+EXPIRATION_DATE=	2011-11-06
+
 LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
