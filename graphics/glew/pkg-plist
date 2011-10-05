@@ -12,6 +12,7 @@ lib/libGLEW.so.1
 libdata/pkgconfig/glew.pc
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/basic.html
+%%PORTDOCS%%%%DOCSDIR%%/build.html
 %%PORTDOCS%%%%DOCSDIR%%/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/glew.css
 %%PORTDOCS%%%%DOCSDIR%%/glew.html
