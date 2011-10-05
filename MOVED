@@ -2722,3 +2722,4 @@ sysutils/syslog-ng3-devel|sysutils/syslog-ng-devel|2011-10-04|Port renamed
 sysutils/cfvers||2011-10-04|Has expired: Dead upstream, author disowns it, use git/hg instead
 security/cfs||2011-10-04|Has expired: Locks don't work, ports/137378, unmaintained, dead upstream, insecure
 devel/p5-Scalar-Util-Clone||2011-10-05|Disappear from CPAN
+print/lyx14||2011-10-05|Has expired: last release in 2007, use print/lyx16 or print/lyx instead
