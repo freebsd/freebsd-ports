@@ -1,0 +1,23 @@
+--- libltdl/Makefile.in.orig	2009-11-19 14:55:46.000000000 +0100
++++ libltdl/Makefile.in	2009-11-19 14:56:35.000000000 +0100
+@@ -402,12 +402,6 @@
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+ 
+-$(top_srcdir)/configure:  $(am__configure_deps)
+-	$(am__cd) $(srcdir) && $(AUTOCONF)
+-$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+-	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+-$(am__aclocal_m4_deps):
+-
+ config.h: stamp-h1
+ 	@if test ! -f $@; then \
+ 	  rm -f stamp-h1; \
+@@ -418,7 +412,6 @@
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status config.h
+ $(srcdir)/config-h.in:  $(am__configure_deps) 
+-	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+ 	rm -f stamp-h1
+ 	touch $@
+ 

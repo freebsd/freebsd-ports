@@ -919,6 +919,7 @@
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool
+    SUBDIR += libtool-fixed
     SUBDIR += libtpl
     SUBDIR += libublio
     SUBDIR += libukcprog
