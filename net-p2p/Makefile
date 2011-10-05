@@ -24,6 +24,7 @@
     SUBDIR += deluge
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
+    SUBDIR += eiskaltdcpp-daemon
     SUBDIR += eiskaltdcpp-data
     SUBDIR += eiskaltdcpp-gtk
     SUBDIR += eiskaltdcpp-lib
