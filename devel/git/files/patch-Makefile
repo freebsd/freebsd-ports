@@ -1,6 +1,6 @@
---- Makefile.orig	2011-05-26 18:12:35.000000000 -0400
-+++ Makefile	2011-05-27 10:45:37.874486678 -0400
-@@ -262,8 +262,8 @@
+--- ./Makefile.orig	2011-10-05 10:02:13.605889189 -0400
++++ ./Makefile	2011-10-05 10:05:22.414881672 -0400
+@@ -278,8 +278,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,7 +11,7 @@
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -283,13 +283,13 @@
+@@ -299,14 +299,14 @@
  prefix = $(HOME)
  bindir_relative = bin
  bindir = $(prefix)/$(bindir_relative)
@@ -20,6 +20,7 @@
 +mandir = $(prefix)/man
 +infodir = $(prefix)/info
  gitexecdir = libexec/git-core
+ mergetoolsdir = $(gitexecdir)/mergetools
  sharedir = $(prefix)/share
 -gitwebdir = $(sharedir)/gitweb
 +gitwebdir = $(sharedir)/examples/git/gitweb
@@ -29,7 +30,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -298,20 +298,20 @@
+@@ -315,20 +315,20 @@
  
  export prefix bindir sharedir sysconfdir gitwebdir
  
@@ -64,7 +65,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -1290,9 +1290,9 @@
+@@ -1356,9 +1356,9 @@
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl

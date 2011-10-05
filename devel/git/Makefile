@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.6.1
+PORTVERSION=	1.7.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}
-		
-MASTER_SITE_SUBDIR=	software/scm/${PORTNAME} \
-			distfiles
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	git-core
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
@@ -117,6 +114,7 @@ MAN1=		git.1 \
 		git-remote-ext.1 \
 		git-remote-fd.1 \
 		git-remote-helpers.1 \
+		git-remote-testgit.1 \
 		git-remote.1 \
 		git-repack.1 \
 		git-replace.1 \
@@ -172,14 +170,14 @@ MAN7=		gitcli.7 \
 		gitdiffcore.7 \
 		gittutorial-2.7 \
 		gitworkflows.7 \
-		gitrevisions.7
+		gitrevisions.7 \
+		gitnamespaces.7
 
 CONFLICTS?=	git-subversion-[0-9]*
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -383,10 +381,8 @@ post-build:
 		${WRKSRC}/contrib/p4import/git-p4import.py
 	@${CP} ${WRKSRC}/contrib/p4import/git-p4import.py \
 		${WRKSRC}/contrib/p4import/git-p4import
-.endif
-	@${REINPLACE_CMD} -e 's|#\. /usr/share/doc/git-core/contrib/hooks/post-receive-email|#. ${PREFIX}/share/git-core/contrib/hooks/post-receive-email|' \
-		${WRKSRC}/templates/blt/hooks/post-receive.sample
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
+.endif
 
 post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
