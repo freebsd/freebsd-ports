@@ -2395,6 +2395,7 @@
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-HasVersion
     SUBDIR += p5-Test-HexString
+    SUBDIR += p5-Test-InDistDir
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-Inter
     SUBDIR += p5-Test-JSON

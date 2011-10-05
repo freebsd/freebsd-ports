@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/InDistDir.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/InDistDir/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/InDistDir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
