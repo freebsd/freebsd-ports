@@ -9,7 +9,6 @@ PORTNAME=	FCGI-Engine
 PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	FCGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -28,6 +27,18 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	FCGI::Engine::Manager::Server::FreeBSD6.3 FCGI::Engine::Manager.3 Plack::Handler::FCGI::Engine::ProcManager.3 Plack::Server::FCGI::Engine.3 FCGI::Engine::ProcManager.3 FCGI::Engine.3 FCGI::Engine::Manager::Server::Plackup.3 Plack::Server::FCGI::Engine::ProcManager.3 Plack::Handler::FCGI::Engine.3 FCGI::Engine::PSGI.3 FCGI::Engine::Core.3 FCGI::Engine::Types.3 FCGI::Engine::Manager::Server.3
+MAN3=		FCGI::Engine.3 \
+		FCGI::Engine::Core.3 \
+		FCGI::Engine::Manager.3 \
+		FCGI::Engine::Manager::Server.3 \
+		FCGI::Engine::Manager::Server::FreeBSD6.3 \
+		FCGI::Engine::Manager::Server::Plackup.3 \
+		FCGI::Engine::PSGI.3 \
+		FCGI::Engine::ProcManager.3 \
+		FCGI::Engine::Types.3 \
+		Plack::Handler::FCGI::Engine.3 \
+		Plack::Handler::FCGI::Engine::ProcManager.3 \
+		Plack::Server::FCGI::Engine.3 \
+		Plack::Server::FCGI::Engine::ProcManager.3
 
 .include <bsd.port.mk>
