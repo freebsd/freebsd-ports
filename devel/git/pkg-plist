@@ -183,6 +183,21 @@ libexec/git-core/git-verify-tag
 libexec/git-core/git-web--browse
 libexec/git-core/git-whatchanged
 libexec/git-core/git-write-tree
+libexec/git-core/mergetools/xxdiff
+libexec/git-core/mergetools/tortoisemerge
+libexec/git-core/mergetools/tkdiff
+libexec/git-core/mergetools/bc3
+libexec/git-core/mergetools/kdiff3
+libexec/git-core/mergetools/vim
+libexec/git-core/mergetools/meld
+libexec/git-core/mergetools/ecmerge
+libexec/git-core/mergetools/diffuse
+libexec/git-core/mergetools/p4merge
+libexec/git-core/mergetools/kompare
+libexec/git-core/mergetools/opendiff
+libexec/git-core/mergetools/defaults
+libexec/git-core/mergetools/emerge
+libexec/git-core/mergetools/araxis
 %%GUI%%bin/gitk
 %%PERLSUB%%%%SITE_PERL%%/Git.pm
 %%PERLSUB%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
@@ -193,8 +208,6 @@ share/emacs/site-lisp/git/git-blame.el
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
-share/git-core/templates/hooks/post-commit.sample
-share/git-core/templates/hooks/post-receive.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample
 share/git-core/templates/hooks/pre-commit.sample
@@ -368,6 +381,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-fd.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-testgit.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-testgit.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-replace.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-replace.txt
@@ -423,6 +438,9 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/gitignore.html
 %%HTMLDOCS%%%%DOCSDIR%%/gitk.html
 %%HTMLDOCS%%%%DOCSDIR%%/gitmodules.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitmodules.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitnamespaces.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitnamespaces.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitrepository-layout.html
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial-2.html
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial.html
@@ -830,6 +848,10 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.5.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -934,6 +956,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%@dirrm %%DOCSDIR%%/RelNotes
 %%HTMLDOCS%%@dirrm %%DOCSDIR%%/howto
 %%HTMLDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/git-core/mergetools
 @dirrm libexec/git-core
 @dirrmtry share/git-core/templates/branches
 @dirrmtry share/git-core/templates/hooks
