@@ -2460,6 +2460,7 @@
     SUBDIR += p5-Test-WWW-Mechanize-PSGI
     SUBDIR += p5-Test-WWW-Selenium
     SUBDIR += p5-Test-Warn
+    SUBDIR += p5-Test-Weaken
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Test-XML-Valid
     SUBDIR += p5-Test-YAML-Meta
