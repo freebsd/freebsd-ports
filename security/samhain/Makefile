@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.8.5
+PORTVERSION=	2.8.6
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -13,6 +13,8 @@ DISTNAME=	samhain_signed-${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Samhain Intrusion Detection System
+
+LICENSE=	GPLv2
 
 OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		GPG "Enable GnuPG support" off \
@@ -27,8 +29,6 @@ SUB_FILES+=	pkg-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CONFLICTS=	samhain-client-2*
-
-LICENSE=	GPLv2
 
 .include <bsd.port.pre.mk>
 
