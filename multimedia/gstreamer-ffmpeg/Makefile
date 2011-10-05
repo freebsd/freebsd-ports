@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.11
-PORTREVISION=	1
+PORTVERSION=	0.10.12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -17,37 +16,55 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	orc-0.4.0:${PORTSDIR}/devel/orc
 
-CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--with-ffmpeg-extra-configure=--cc=${CC}"
-CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
-
+FFMPEG_CONFIG=	--cc=${CC} \
+		--enable-runtime-cpudetect \
+		--enable-pic
 LDFLAGS+=	-Wl,-Bsymbolic
 CFLAGS+=	-fno-force-addr
-PLIST_SUB=	\
-		VERSION="${GST_VERSION}"
-WITHOUT_CPU_CFLAGS=	yes
+CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
+
+PLIST_SUB=	VERSION="${GST_VERSION}"
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
 
+# sse hardware vector support
+.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
+WITH_BUILTIN_VECTOR=	yes
+.else
+FFMPEG_CONFIG+=	--disable-sse
+.endif
+
+# mmx support
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "" && ${MACHINE_CPU:Mamd64} == ""
+FFMPEG_CONFIG+=	--disable-mmx
+WITHOUT_BUILTIN_VECTOR=	yes
+.endif
+
+# builtin vector, requires mmx and sse
+.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
+CFLAGS+=		-msse
+.endif
+
+CONFIGURE_ARGS+=	--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
+
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|make|${GMAKE}|' \
-		${WRKSRC}/gst-libs/ext/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g'\
-		${WRKSRC}/gst-libs/ext/ffmpeg/doc/texi2pod.pl
-	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
-		${WRKSRC}/configure
-	@cd ${WRKSRC}/gst-libs/ext/ffmpeg/libavcodec && \
-		${LN} -s x86 i386 && ${LN} -s x86 amd64
+.if ${OSVERSION} < 900033
 
-.include <bsd.port.post.mk>
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+
+.endif
+
+.include <bsd.port.mk>
