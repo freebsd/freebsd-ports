@@ -18,6 +18,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
 %%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP.pm
 %%SITE_PERL%%/Catalyst/EngineLoader.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Exception/Basic.pm
