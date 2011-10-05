@@ -26,13 +26,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	FAST_CLONE	"use Scalar::Util::Clone (requires perl5.8+)"	off
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_FAST_CLONE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util/Clone.pm:${PORTSDIR}/devel/p5-Scalar-Util-Clone
-.endif
 
 MAN3=	Rose::DB::Object.3 \
 	Rose::DB::Object::Cached.3 \
