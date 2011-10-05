@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111005:
+  AFFECTS: users of lang/erlang
+  AUTHOR: Jimmy Olgeni <olgeni@FreeBSD.org>
+
+  Following the R14B04 upgrade the JAVA, X11, WX and ODBC port
+  options have been set to OFF by default; this will allow to replace
+  lang/erlang-lite with lang/erlang for headless operation in the
+  near future.
+
+  If you need any of these options, run "make config" in lang/erlang
+  before upgrading, or set your make.conf accordingly.
+
 20111003:
   AFFECTS: users of math/qhull
   AUTHOR: Stephen Montgomery-Smith <stephen@FreeBSD.org>
