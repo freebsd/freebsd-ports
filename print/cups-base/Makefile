@@ -95,6 +95,8 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+# force build if old cups is installed.
+BUILD_DEPENDS+=	cups-client>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Library cupsimage
 CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
@@ -103,10 +105,11 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
-		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
+LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
+BUILD_DEPENDS+=	cups-client>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
+BUILD_DEPENDS+=	cups-image>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-image
 COMMENT2=	Server
 USE_RC_SUBR=	cupsd
 PLIST_SUB+=	CACHEDIR="${CUPS_CACHEDIR}"
