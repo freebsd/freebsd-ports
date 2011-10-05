@@ -248,7 +248,7 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
-.if defined(WITH_TDS)
+.if defined(WITH_TDS) || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	mod_sql_tds-4.13.tar.bz2:sql_tds
 EXTRACT_ONLY+=	mod_sql_tds-4.13.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
@@ -306,7 +306,7 @@ MODULES:=${MODULES}:mod_quotatab_sql
 PLIST_SUB+=	QUOTA="@comment "
 .endif
 
-.if defined(WITH_CLAMAV)
+.if defined(WITH_CLAMAV) || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
