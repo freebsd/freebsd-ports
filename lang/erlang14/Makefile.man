@@ -484,6 +484,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxListCtrl.3 \
 	wxListEvent.3 \
 	wxListItem.3 \
+	wxListItemAttr.3 \
 	wxListView.3 \
 	wxListbook.3 \
 	wxLogNull.3 \

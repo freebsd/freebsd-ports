@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r14b03
+PORTVERSION=	r14b04
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-DISTNAME=	otp_src_R14B03
+DISTNAME=	otp_src_R14B04
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
@@ -40,10 +40,10 @@ CONFLICTS?=	erlang-lite-r[0-9]*
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
-OPTIONS=	JAVA	"Enable Java applications"	on \
-		X11	"Enable X11 support"		on \
-		WX	"Enable WX extensions"		on \
-		ODBC	"Enable ODBC"			on \
+OPTIONS=	JAVA	"Enable Java applications"	off \
+		X11	"Enable X11 support"		off \
+		WX	"Enable WX extensions"		off \
+		ODBC	"Enable ODBC"			off \
 		SMP	"Enable SMP"			on
 
 .include <bsd.port.pre.mk>
@@ -96,9 +96,9 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R14B03.tar.gz
+ERLANG_MAN=	otp_doc_man_R14B04.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R14B03.tar.gz
+ERLANG_DOCS=	otp_doc_html_R14B04.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
