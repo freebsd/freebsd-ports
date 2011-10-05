@@ -1,6 +1,16 @@
---- libptytty/src/logging.C.orig	2011-05-31 00:59:42.000000000 +0400
-+++ libptytty/src/logging.C	2011-09-21 16:19:44.000000000 +0400
-@@ -284,11 +284,19 @@
+--- libptytty/src/logging.C.orig	2011-05-30 22:59:42.000000000 +0200
++++ libptytty/src/logging.C	2011-10-05 11:12:04.370185467 +0200
+@@ -223,7 +223,8 @@
+   // records, but most implementations of last use ut_line to
+   // associate records in wtmp file
+   strncpy (utx->ut_line, line, sizeof (utx->ut_line));
+-  strncpy (utx->ut_id, id, sizeof (utx->ut_id));
++  if(id)
++  	strncpy (utx->ut_id, id, sizeof (utx->ut_id));
+   utx->ut_pid = pid;
+   utx->ut_type = login ? USER_PROCESS : DEAD_PROCESS;
+   utx->ut_tv.tv_sec = time (NULL);
+@@ -284,11 +285,19 @@
  #endif
  
  #ifdef HAVE_STRUCT_UTMP
@@ -20,7 +30,7 @@
  #endif
  
  #ifdef HAVE_STRUCT_UTMP
-@@ -363,11 +371,19 @@
+@@ -363,11 +372,19 @@
  #endif
  
  #ifdef HAVE_STRUCT_UTMP
