@@ -181,7 +181,6 @@
     SUBDIR += lprps-a4
     SUBDIR += lprps-letter
     SUBDIR += lyx
-    SUBDIR += lyx14
     SUBDIR += lyx16
     SUBDIR += magicfilter
     SUBDIR += makeindex
