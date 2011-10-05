@@ -18,6 +18,9 @@ LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 BROKEN=		Doesn't build with Glib-2.26
 
+DEPRECATED=     upstream distfile and doesn't build, and doesn't seem to be developed anymore
+EXPIRATION_DATE=2011-11-06
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
