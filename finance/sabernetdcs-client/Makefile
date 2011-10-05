@@ -16,7 +16,10 @@ DISTNAME=	sndcs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SaberNet DCS - A labor data collection system
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Pyro4/__init__.py:${PORTSDIR}/devel/py-pyro
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:${PORTSDIR}/devel/py-pyro
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.5+
