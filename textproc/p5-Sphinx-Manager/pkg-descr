@@ -1,0 +1,6 @@
+Sphinx::Manager provides utilities to start, stop, restart, and reload the
+Sphinx search engine binary (searchd), and to run the Sphinx indexer program.
+The utilities are designed to handle abnormal conditions, such as PID files not
+being present when expected, and so should be robust in most situations.
+
+WWW: http://search.cpan.org/dist/Sphinx-Manager/

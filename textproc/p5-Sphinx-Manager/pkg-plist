@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Sphinx/Manager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sphinx/Manager/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sphinx/Manager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sphinx
+@dirrmtry %%SITE_PERL%%/Sphinx

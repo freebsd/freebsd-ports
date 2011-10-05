@@ -683,6 +683,7 @@
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-Naturally
     SUBDIR += p5-Sphinx-Config
+    SUBDIR += p5-Sphinx-Manager
     SUBDIR += p5-Sphinx-Search
     SUBDIR += p5-Spork
     SUBDIR += p5-Spreadsheet-ParseExcel
