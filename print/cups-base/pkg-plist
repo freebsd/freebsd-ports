@@ -44,6 +44,7 @@ etc/cups/snmp.conf.N
 bin/cancel
 bin/cupstestdsc
 bin/cupstestppd
+bin/ipptool
 bin/lp
 bin/lpoptions
 bin/lppasswd
@@ -73,10 +74,11 @@ lib/libcupsppdc.so
 lib/libcupsppdc.so.1
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/phpcups.so
 libexec/cups/backend/http
+libexec/cups/backend/https
 libexec/cups/backend/ipp
+libexec/cups/backend/ipps
 libexec/cups/backend/lpd
 libexec/cups/backend/parallel
-libexec/cups/backend/scsi
 libexec/cups/backend/serial
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
@@ -88,6 +90,7 @@ libexec/cups/cgi-bin/jobs.cgi
 libexec/cups/cgi-bin/printers.cgi
 libexec/cups/daemon/cups-deviced
 libexec/cups/daemon/cups-driverd
+libexec/cups/daemon/cups-exec
 libexec/cups/daemon/cups-lpd
 libexec/cups/daemon/cups-polld
 libexec/cups/filter/commandtoescpx
@@ -121,46 +124,7 @@ sbin/reject
 %%DATADIR%%/banners/standard
 %%DATADIR%%/banners/topsecret
 %%DATADIR%%/banners/unclassified
-%%DATADIR%%/charmaps/euc-cn.txt
-%%DATADIR%%/charmaps/euc-jp.txt
-%%DATADIR%%/charmaps/euc-kr.txt
-%%DATADIR%%/charmaps/euc-tw.txt
-%%DATADIR%%/charmaps/iso-8859-1.txt
-%%DATADIR%%/charmaps/iso-8859-10.txt
-%%DATADIR%%/charmaps/iso-8859-11.txt
-%%DATADIR%%/charmaps/iso-8859-13.txt
-%%DATADIR%%/charmaps/iso-8859-14.txt
-%%DATADIR%%/charmaps/iso-8859-15.txt
-%%DATADIR%%/charmaps/iso-8859-16.txt
-%%DATADIR%%/charmaps/iso-8859-2.txt
-%%DATADIR%%/charmaps/iso-8859-3.txt
-%%DATADIR%%/charmaps/iso-8859-4.txt
-%%DATADIR%%/charmaps/iso-8859-5.txt
-%%DATADIR%%/charmaps/iso-8859-6.txt
-%%DATADIR%%/charmaps/iso-8859-7.txt
-%%DATADIR%%/charmaps/iso-8859-8.txt
-%%DATADIR%%/charmaps/iso-8859-9.txt
-%%DATADIR%%/charmaps/jis-x0213.txt
-%%DATADIR%%/charmaps/koi8-r.txt
-%%DATADIR%%/charmaps/koi8-u.txt
-%%DATADIR%%/charmaps/mac-roman.txt
-%%DATADIR%%/charmaps/windows-1250.txt
-%%DATADIR%%/charmaps/windows-1251.txt
-%%DATADIR%%/charmaps/windows-1252.txt
-%%DATADIR%%/charmaps/windows-1253.txt
-%%DATADIR%%/charmaps/windows-1254.txt
-%%DATADIR%%/charmaps/windows-1255.txt
-%%DATADIR%%/charmaps/windows-1256.txt
-%%DATADIR%%/charmaps/windows-1257.txt
-%%DATADIR%%/charmaps/windows-1258.txt
-%%DATADIR%%/charmaps/windows-1361.txt
-%%DATADIR%%/charmaps/windows-874.txt
-%%DATADIR%%/charmaps/windows-932.txt
-%%DATADIR%%/charmaps/windows-936.txt
-%%DATADIR%%/charmaps/windows-949.txt
-%%DATADIR%%/charmaps/windows-950.txt
 %%DATADIR%%/charsets/utf-8
-%%DATADIR%%/data/HPGLprolog
 %%DATADIR%%/data/psglyphs
 %%DATADIR%%/data/testprint
 %%DATADIR%%/drv/sample.drv
@@ -851,6 +815,8 @@ sbin/reject
 %%DOCSDIR%%/help/man-cupstestdsc.html
 %%DOCSDIR%%/help/man-cupstestppd.html
 %%DOCSDIR%%/help/man-filter.html
+%%DOCSDIR%%/help/man-ipptool.html
+%%DOCSDIR%%/help/man-ipptoolfile.html
 %%DOCSDIR%%/help/man-lp.html
 %%DOCSDIR%%/help/man-lpadmin.html
 %%DOCSDIR%%/help/man-lpc.html
@@ -923,6 +889,16 @@ sbin/reject
 %%DOCSDIR%%/images/unsel.gif
 %%DOCSDIR%%/images/wait.gif
 %%DOCSDIR%%/index.html
+%%DATADIR%%/ipptool/create-printer-subscription.test
+%%DATADIR%%/ipptool/get-completed-jobs.test
+%%DATADIR%%/ipptool/get-jobs.test
+%%DATADIR%%/ipptool/ipp-1.1.test
+%%DATADIR%%/ipptool/ipp-2.0.test
+%%DATADIR%%/ipptool/ipp-2.1.test
+%%DATADIR%%/ipptool/testfile.jpg
+%%DATADIR%%/ipptool/testfile.pdf
+%%DATADIR%%/ipptool/testfile.ps
+%%DATADIR%%/ipptool/testfile.txt
 %%DOCSDIR%%/it/index.html
 %%DOCSDIR%%/ja/index.html
 %%DOCSDIR%%/pl/index.html
@@ -968,6 +944,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/pl
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DOCSDIR%%/it
+@dirrm %%DATADIR%%/ipptool
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/id
 @dirrm %%DOCSDIR%%/help
@@ -996,7 +973,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/drv
 @dirrm %%DATADIR%%/charsets
-@dirrm %%DATADIR%%/charmaps
 @dirrm %%DATADIR%%/banners
 @dirrmtry %%DATADIR%%
 @dirrm libexec/cups/notifier
