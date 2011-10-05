@@ -1,0 +1,8 @@
+Automating command line interface (CLI) interactions is not a new idea, but can
+be tricky to implement. This module aims to provide a simple and manageable
+interface to CLI interactions, supporting:
+- SSH, Telnet and Serial-Line connections
+- Unix and Windows support
+- Reuseable device command phrasebooks
+
+WWW: http://search.cpan.org/dist/Net-CLI-Interact/
