@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Load
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,6 @@ LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Module::Load.3
+MAN3=		Module::Load.3
 
 .include <bsd.port.mk>
