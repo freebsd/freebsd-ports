@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ab9be2c8-ef91-11e0-ad5a-00215c6a37bb">
+    <topic>quagga -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.99.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CERT-FI reports:</p>
+	<blockquote cite="https://www.cert.fi/en/reports/2011/vulnerability539178.html">
+	  <p>Five vulnerabilities have been found in the BGP, OSPF and
+	    OSPFv3 components of Quagga. The vulnerabilities allow an
+	    attacker to cause a denial of service or potentially to
+	    execute his own code by sending a specially modified packets
+	    to an affected server. Routing messages are typically accepted
+	    from the routing peers. Exploiting these vulnerabilities may
+	    require an established routing session (BGP peering or
+	    OSPF/OSPFv3 adjacency) to the router.</p>
+	  <p>The vulnerability <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3327">CVE-2011-3327</a>
+	    is related to the extended communities handling in BGP
+	    messages.  Receiving a malformed BGP update can result
+	    in a buffer overflow and disruption of IPv4 routing.</p>
+	  <p>The vulnerability <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3326">CVE-2011-3326</a>
+	    results from the handling of LSA (Link State Advertisement)
+	    states in the OSPF service. Receiving a modified Link State
+	    Update message with malicious state information can result
+	    in denial of service in IPv4 routing.</p>
+	  <p>The vulnerability <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3325">CVE-2011-3325</a>
+	    is a denial of service vulnerability related to Hello
+	    message handling by the OSPF service. As Hello messages
+	    are used to initiate adjacencies, exploiting the
+	    vulnerability may be feasible from the same broadcast
+	    domain without an established adjacency. A malformed
+	    packet may result in denial of service in IPv4 routing.</p>
+	  <p>The vulnerabilities <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3324">CVE-2011-3324</a>
+	    and <a href="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3323">CVE-2011-3323</a>
+	    are related to the IPv6 routing protocol (OSPFv3)
+	    implemented in ospf6d daemon. Receiving modified Database
+	    Description and Link State Update messages, respectively,
+	    can result in denial of service in IPv6 routing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3323</cvename>
+      <cvename>CVE-2011-3324</cvename>
+      <cvename>CVE-2011-3325</cvename>
+      <cvename>CVE-2011-3326</cvename>
+      <cvename>CVE-2011-3327</cvename>
+    </references>
+    <dates>
+      <discovery>2011-09-26</discovery>
+      <entry>2011-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1fade8a3-e9e8-11e0-9580-4061862b8c22">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
