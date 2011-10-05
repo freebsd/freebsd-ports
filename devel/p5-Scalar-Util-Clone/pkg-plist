@@ -1,9 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Scalar/Util/Clone.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Util/Clone/Clone.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Util/Clone/Clone.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Util/Clone/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scalar/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scalar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Util/Clone
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Util/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar
