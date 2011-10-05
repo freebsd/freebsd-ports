@@ -1,0 +1,56 @@
+bin/libtool
+bin/libtoolize
+share/aclocal/argz.m4
+share/aclocal/libtool.m4
+share/aclocal/ltdl.m4
+share/aclocal/ltoptions.m4
+share/aclocal/ltsugar.m4
+share/aclocal/ltversion.m4
+share/aclocal/lt~obsolete.m4
+share/libtool/config/compile
+share/libtool/config/config.guess
+share/libtool/config/config.sub
+share/libtool/config/depcomp
+share/libtool/config/install-sh
+share/libtool/config/ltmain.sh
+share/libtool/config/missing
+share/libtool/libltdl/COPYING.LIB
+share/libtool/libltdl/Makefile.am
+share/libtool/libltdl/Makefile.in
+share/libtool/libltdl/Makefile.inc
+share/libtool/libltdl/README
+share/libtool/libltdl/aclocal.m4
+share/libtool/libltdl/argz.c
+share/libtool/libltdl/argz_.h
+share/libtool/libltdl/config-h.in
+share/libtool/libltdl/configure
+share/libtool/libltdl/configure.ac
+share/libtool/libltdl/libltdl/lt__alloc.h
+share/libtool/libltdl/libltdl/lt__dirent.h
+share/libtool/libltdl/libltdl/lt__glibc.h
+share/libtool/libltdl/libltdl/lt__private.h
+share/libtool/libltdl/libltdl/lt__strl.h
+share/libtool/libltdl/libltdl/lt_dlloader.h
+share/libtool/libltdl/libltdl/lt_error.h
+share/libtool/libltdl/libltdl/lt_system.h
+share/libtool/libltdl/libltdl/slist.h
+share/libtool/libltdl/loaders/dld_link.c
+share/libtool/libltdl/loaders/dlopen.c
+share/libtool/libltdl/loaders/dyld.c
+share/libtool/libltdl/loaders/load_add_on.c
+share/libtool/libltdl/loaders/loadlibrary.c
+share/libtool/libltdl/loaders/preopen.c
+share/libtool/libltdl/loaders/shl_load.c
+share/libtool/libltdl/lt__alloc.c
+share/libtool/libltdl/lt__dirent.c
+share/libtool/libltdl/lt__strl.c
+share/libtool/libltdl/lt_dlloader.c
+share/libtool/libltdl/lt_error.c
+share/libtool/libltdl/ltdl.c
+share/libtool/libltdl/ltdl.h
+share/libtool/libltdl/slist.c
+@dirrm share/libtool/libltdl/loaders
+@dirrm share/libtool/libltdl/libltdl
+@dirrm share/libtool/libltdl
+@dirrm share/libtool/config
+@dirrm share/libtool
