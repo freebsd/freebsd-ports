@@ -52,7 +52,6 @@
     SUBDIR += dvts
     SUBDIR += emotion
     SUBDIR += emovix
-    SUBDIR += enjoympeg
     SUBDIR += etoile-babbler
     SUBDIR += etoile-mediakit
     SUBDIR += etoile-multimediakit
