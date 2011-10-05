@@ -1,0 +1,27 @@
+--- ./nasdc/CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
++++ ./nasdc/CMakeLists.txt	2011-03-10 19:52:25.000000000 +0200
+@@ -47,7 +47,16 @@
+ target_link_libraries (sampleclient ${XMLRPCLIBS})
+ endif()
+ 
+-target_link_libraries (nasdc dcpp ${XMLRPCLIBS} ${RL_LIBS})
++if (BUILD_LIB)
++	set(DCPP_LIB dcpp)
++else (BUILD_LIB)
++	find_library(DCPP_LIB eiskaltdcpp)
++	if (DCPP_LIB)
++		message(STATUS "EiskaltDC++ shared library found at ${DCPP_LIB}")
++	endif (DCPP_LIB)
++endif (BUILD_LIB)
++
++target_link_libraries (nasdc ${DCPP_LIB} ${XMLRPCLIBS} ${RL_LIBS})
+ 
+ if (UNIX)
+  set (BINDIR bin)
+@@ -77,5 +86,5 @@
+ if (APPLE)
+   install (FILES ${PROJECT_BINARY_DIR}/eiskaltdcpp-daemon.1.gz DESTINATION ${PROJECT_NAME_GLOBAL}.app/man/man1)
+ elseif (UNIX AND NOT APPLE)
+-  install (FILES ${PROJECT_BINARY_DIR}/eiskaltdcpp-daemon.1.gz DESTINATION ${SHARE_DIR}/man/man1)
++  install (FILES ${PROJECT_BINARY_DIR}/eiskaltdcpp-daemon.1.gz DESTINATION man/man1)
+ endif (APPLE)
