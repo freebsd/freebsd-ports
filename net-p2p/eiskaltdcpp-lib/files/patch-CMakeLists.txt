@@ -1,6 +1,17 @@
---- ./CMakeLists.txt.orig	2010-11-22 00:38:14.000000000 +0200
-+++ ./CMakeLists.txt	2010-11-22 01:35:58.000000000 +0200
-@@ -493,3 +493,12 @@
+--- ./CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
++++ ./CMakeLists.txt	2011-03-09 19:18:26.000000000 +0200
+@@ -316,10 +316,6 @@
+     if (MINGW)
+         set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--enable-auto-import")
+     endif (MINGW)
+-    if (NOT APPLE)
+-        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--as-needed")
+-        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--as-needed")
+-    endif (NOT APPLE)
+     set (CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -pipe -DNDEBUG")
+     set (CMAKE_CXX_FLAGS_RELEASE     "${CMAKE_CXX_FLAGS_RELEASE} -DQT_NO_DEBUG -pipe")
+     set (CMAKE_CXX_FLAGS_DEBUG       "${CMAKE_CXX_FLAGS_DEBUG} -UNDEBUG -g3 -pipe")
+@@ -514,3 +510,12 @@
    install (FILES icons/icon_128x128.png DESTINATION ${SHARE_DIR}/pixmaps/ RENAME eiskaltdcpp.png)
  endif (APPLE)
  endif (USE_QT OR USE_GTK)

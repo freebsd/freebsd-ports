@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp-qt
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -14,14 +14,17 @@ DISTNAME=	eiskaltdcpp-${DISTVERSION}
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	EiskaltDC++ Direct Connect client Qt GUI
 
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
 
-LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 
 PROJECTHOST=	eiskaltdc
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GCC=	4.2+
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
@@ -35,6 +38,8 @@ OPTIONS=	ASPELL		"Build with aspell support" off \
 		FREE_SPACE	"Free space bar in status panel"	on \
 		DBUS_NOTIFY	"DBus notification support"	on \
 		QTSCRIPT	"QtScript support"	off \
+		QML	"Qt Declarative ui support" off \
+		SQLITE	"SQLite support (experimental)" off \
 		MINIUPNP	"UPnP support"	on
 
 USE_QT_VER=	4
@@ -74,10 +79,25 @@ CMAKE_ARGS+=	-DDBUS_NOTIFY:BOOL=OFF
 .if defined(WITH_QTSCRIPT)
 CMAKE_ARGS+=	-DUSE_JS:BOOL=ON
 QT_COMPONENTS+=	script
+RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
 PLIST_SUB+=	QTSCRIPT=""
 .else
 CMAKE_ARGS+=	-DUSE_JS:BOOL=OFF
 PLIST_SUB+=	QTSCRIPT="@comment "
+.endif
+
+.if defined(WITH_QML)
+CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=ON
+QT_COMPONENTS+=	declarative
+.else
+CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=OFF
+.endif
+
+.if defined(WITH_SQLITE) && !defined(WITHOUT_SQLITE)
+CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=ON
+QT_COMPONENTS+=	sql-sqlite3
+.else
+CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=OFF
 .endif
 
 .if defined(WITH_MINIUPNP)

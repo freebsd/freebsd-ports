@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp-data
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -14,10 +14,13 @@ DISTNAME=	eiskaltdcpp-${DISTVERSION}
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Shared data for EiskaltDC++ GUIs
 
+LICENSE=	GPLv3
+
 PROJECTHOST=	eiskaltdc
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 NO_BUILD=	yes
+INSTALLS_ICONS=	yes
 
 OPTIONS=	EMOTICONS	"Install emoticons"	on \
 		EXAMPLES	"Install script examples"	on \
@@ -53,20 +56,24 @@ PLIST_SUB+=	SOUNDS="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${DATA_DIR}
-	${TOUCH} ${DATA_DIR}/keep_me
+	@${MKDIR} ${DATA_DIR}
+	@${TOUCH} ${DATA_DIR}/keep_me
+.for SIZE in 16x16 22x22 24x24 32x32 48x48 64x64 128x128
+	@${MKDIR} "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps"
+	@${CP} -v "${WRKSRC}/icons/icon_${SIZE}.png" "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps/eiskaltdcpp.png"
+.endfor
 .if defined(WITH_EMOTICONS)
-	${CP} -rv ${WRKSRC}/emoticons ${DATA_DIR}
+	@${CP} -rv ${WRKSRC}/emoticons ${DATA_DIR}
 .endif
 .if defined(WITH_EXAMPLES)
-	${MKDIR} ${DATA_DIR}/examples
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${DATA_DIR}/examples
+	@${MKDIR} ${DATA_DIR}/examples
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${DATA_DIR}/examples
 .endif
 .if defined(WITH_LUASCRIPTS)
-	${CP} -rv ${WRKSRC}/luascripts ${DATA_DIR}
+	@${CP} -rv ${WRKSRC}/luascripts ${DATA_DIR}
 .endif
 .if defined(WITH_SOUNDS)
-	${CP} -rv ${WRKSRC}/sounds ${DATA_DIR}
+	@${CP} -rv ${WRKSRC}/sounds ${DATA_DIR}
 .endif
 
 .include <bsd.port.mk>
