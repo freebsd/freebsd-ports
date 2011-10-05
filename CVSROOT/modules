@@ -1492,7 +1492,6 @@ cfortran                        ports/lang/cfortran
 cfs                             ports/security/cfs
 cftp                            ports/ftp/cftp
 cfv                             ports/security/cfv
-cfvers                          ports/sysutils/cfvers
 cg                              ports/news/cg
 cgal                            ports/math/cgal
 cgdb                            ports/devel/cgdb
@@ -2405,6 +2404,7 @@ dillo-i18n                      ports/www/dillo-i18n
 dillo2                          ports/www/dillo2
 dim                             ports/sysutils/dim
 dimes                           ports/net/dimes
+ding-libs                       ports/devel/ding-libs
 dinotrace                       ports/cad/dinotrace
 dir2ogg                         ports/audio/dir2ogg
 dirac                           ports/multimedia/dirac
@@ -7587,6 +7587,7 @@ ldapscripts                     ports/net/ldapscripts
 ldapsdk                         ports/net/ldapsdk
 ldapsh                          ports/net/ldapsh
 ldapvi                          ports/sysutils/ldapvi
+ldb                             ports/databases/ldb
 ldc-devel                       ports/lang/ldc-devel
 ldmud                           ports/games/ldmud
 ldns                            ports/dns/ldns
@@ -9805,6 +9806,7 @@ mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
 nInvaders                       ports/games/nInvaders
+nacl                            ports/security/nacl
 nadar                           ports/games/nadar
 naev                            ports/games/naev
 naev-data                       ports/games/naev-data
@@ -11761,6 +11763,7 @@ p5-Data-Average                 ports/devel/p5-Data-Average
 p5-Data-Bind                    ports/devel/p5-Data-Bind
 p5-Data-Buffer                  ports/misc/p5-Data-Buffer
 p5-Data-ClearSilver-HDF         ports/devel/p5-Data-ClearSilver-HDF
+p5-Data-Clone                   ports/devel/p5-Data-Clone
 p5-Data-Compare                 ports/devel/p5-Data-Compare
 p5-Data-Currency                ports/finance/p5-Data-Currency
 p5-Data-Domain                  ports/devel/p5-Data-Domain
@@ -14325,6 +14328,7 @@ p5-Test-Dir                     ports/misc/p5-Test-Dir
 p5-Test-Distribution            ports/devel/p5-Test-Distribution
 p5-Test-EOL                     ports/devel/p5-Test-EOL
 p5-Test-Exception               ports/devel/p5-Test-Exception
+p5-Test-Exception-LessClever    ports/devel/p5-Test-Exception-LessClever
 p5-Test-Expect                  ports/devel/p5-Test-Expect
 p5-Test-Fatal                   ports/devel/p5-Test-Fatal
 p5-Test-File                    ports/devel/p5-Test-File
@@ -15993,6 +15997,7 @@ p5-data-average                 ports/devel/p5-Data-Average
 p5-data-bind                    ports/devel/p5-Data-Bind
 p5-data-buffer                  ports/misc/p5-Data-Buffer
 p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
+p5-data-clone                   ports/devel/p5-Data-Clone
 p5-data-compare                 ports/devel/p5-Data-Compare
 p5-data-currency                ports/finance/p5-Data-Currency
 p5-data-domain                  ports/devel/p5-Data-Domain
@@ -18722,6 +18727,7 @@ p5-test-dir                     ports/misc/p5-Test-Dir
 p5-test-distribution            ports/devel/p5-Test-Distribution
 p5-test-eol                     ports/devel/p5-Test-EOL
 p5-test-exception               ports/devel/p5-Test-Exception
+p5-test-exception-lessclever    ports/devel/p5-Test-Exception-LessClever
 p5-test-expect                  ports/devel/p5-Test-Expect
 p5-test-fatal                   ports/devel/p5-Test-Fatal
 p5-test-file                    ports/devel/p5-Test-File
