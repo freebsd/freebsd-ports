@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp-gtk
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -15,13 +14,15 @@ DISTNAME=	eiskaltdcpp-${DISTVERSION}
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	EiskaltDC++ Direct Connect client GTK GUI
 
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
 LIB_DEPENDS=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_GETTEXT=	yes

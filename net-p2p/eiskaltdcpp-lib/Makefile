@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp-lib
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -14,11 +14,13 @@ DISTNAME=	eiskaltdcpp-${DISTVERSION}
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A Direct Connect client shared library
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs
 
 PROJECTHOST=	eiskaltdc
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_GETTEXT=	yes

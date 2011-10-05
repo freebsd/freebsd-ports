@@ -1,6 +1,7 @@
 bin/eiskaltdcpp-gtk
 share/applications/eiskaltdcpp-gtk.desktop
 share/eiskaltdcpp/gtk/glade/adlsearch.glade
+share/eiskaltdcpp/gtk/glade/cmddebug.glade
 share/eiskaltdcpp/gtk/glade/downloadqueue.glade
 share/eiskaltdcpp/gtk/glade/favoritehubs.glade
 share/eiskaltdcpp/gtk/glade/favoriteusers.glade

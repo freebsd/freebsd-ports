@@ -55,6 +55,8 @@ share/eiskaltdcpp/qt/icons/appl/default/reconnect.png
 share/eiskaltdcpp/qt/icons/appl/default/refrlist.png
 share/eiskaltdcpp/qt/icons/appl/default/reload.png
 share/eiskaltdcpp/qt/icons/appl/default/server.png
+share/eiskaltdcpp/qt/icons/appl/default/slow.png
+share/eiskaltdcpp/qt/icons/appl/default/slow_off.png
 share/eiskaltdcpp/qt/icons/appl/default/spam.png
 share/eiskaltdcpp/qt/icons/appl/default/spy.png
 share/eiskaltdcpp/qt/icons/appl/default/status.png
@@ -68,11 +70,83 @@ share/eiskaltdcpp/qt/icons/appl/default/view-filter.png
 share/eiskaltdcpp/qt/icons/appl/default/zoom-in.png
 share/eiskaltdcpp/qt/icons/appl/default/zoom-out.png
 share/eiskaltdcpp/qt/icons/user/default/usericons.png
+share/eiskaltdcpp/qt/icons/appl/faenza/adls.png
+share/eiskaltdcpp/qt/icons/appl/faenza/application-exit.png
+share/eiskaltdcpp/qt/icons/appl/faenza/application-x-archive.png
+share/eiskaltdcpp/qt/icons/appl/faenza/application-x-executable.png
+share/eiskaltdcpp/qt/icons/appl/faenza/audio-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/faenza/ball_green.png
+share/eiskaltdcpp/qt/icons/appl/faenza/bookmark-new.png
+share/eiskaltdcpp/qt/icons/appl/faenza/chat.png
+share/eiskaltdcpp/qt/icons/appl/faenza/configure.png
+share/eiskaltdcpp/qt/icons/appl/faenza/console.png
+share/eiskaltdcpp/qt/icons/appl/faenza/dialog-close.png
+share/eiskaltdcpp/qt/icons/appl/faenza/document-edit.png
+share/eiskaltdcpp/qt/icons/appl/faenza/download.png
+share/eiskaltdcpp/qt/icons/appl/faenza/edit-clear-locationbar-rtl.png
+share/eiskaltdcpp/qt/icons/appl/faenza/edit-clear.png
+share/eiskaltdcpp/qt/icons/appl/faenza/edit-copy.png
+share/eiskaltdcpp/qt/icons/appl/faenza/edit-delete.png
+share/eiskaltdcpp/qt/icons/appl/faenza/edit-find.png
+share/eiskaltdcpp/qt/icons/appl/faenza/eraser.png
+share/eiskaltdcpp/qt/icons/appl/faenza/face-smile.png
+share/eiskaltdcpp/qt/icons/appl/faenza/fav.png
+share/eiskaltdcpp/qt/icons/appl/faenza/favadd.png
+share/eiskaltdcpp/qt/icons/appl/faenza/favrem.png
+share/eiskaltdcpp/qt/icons/appl/faenza/favserver.png
+share/eiskaltdcpp/qt/icons/appl/faenza/favusers.png
+share/eiskaltdcpp/qt/icons/appl/faenza/find.png
+share/eiskaltdcpp/qt/icons/appl/faenza/folder-blue.png
+share/eiskaltdcpp/qt/icons/appl/faenza/freespace.png
+share/eiskaltdcpp/qt/icons/appl/faenza/go-down-search.png
+share/eiskaltdcpp/qt/icons/appl/faenza/go-down.png
+share/eiskaltdcpp/qt/icons/appl/faenza/go-up-search.png
+share/eiskaltdcpp/qt/icons/appl/faenza/go-up.png
+share/eiskaltdcpp/qt/icons/appl/faenza/gui.png
+share/eiskaltdcpp/qt/icons/appl/faenza/hashing.png
+share/eiskaltdcpp/qt/icons/appl/faenza/hubmsg.png
+share/eiskaltdcpp/qt/icons/appl/faenza/icon_appl.png
+share/eiskaltdcpp/qt/icons/appl/faenza/icon_appl_big.png
+share/eiskaltdcpp/qt/icons/appl/faenza/icon_msg.png
+share/eiskaltdcpp/qt/icons/appl/faenza/im-user-away.png
+share/eiskaltdcpp/qt/icons/appl/faenza/image-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/faenza/list-add.png
+share/eiskaltdcpp/qt/icons/appl/faenza/log_file.png
+share/eiskaltdcpp/qt/icons/appl/faenza/message.png
+share/eiskaltdcpp/qt/icons/appl/faenza/network-connect.png
+share/eiskaltdcpp/qt/icons/appl/faenza/network-disconnect.png
+share/eiskaltdcpp/qt/icons/appl/faenza/openlist.png
+share/eiskaltdcpp/qt/icons/appl/faenza/own_filelist.png
+share/eiskaltdcpp/qt/icons/appl/faenza/plugin.png
+share/eiskaltdcpp/qt/icons/appl/faenza/pmmsg.png
+share/eiskaltdcpp/qt/icons/appl/faenza/qt-logo.png
+share/eiskaltdcpp/qt/icons/appl/faenza/reconnect.png
+share/eiskaltdcpp/qt/icons/appl/faenza/refrlist.png
+share/eiskaltdcpp/qt/icons/appl/faenza/reload.png
+share/eiskaltdcpp/qt/icons/appl/faenza/server.png
+share/eiskaltdcpp/qt/icons/appl/faenza/slow.png
+share/eiskaltdcpp/qt/icons/appl/faenza/slow_off.png
+share/eiskaltdcpp/qt/icons/appl/faenza/spam.png
+share/eiskaltdcpp/qt/icons/appl/faenza/spy.png
+share/eiskaltdcpp/qt/icons/appl/faenza/status.png
+share/eiskaltdcpp/qt/icons/appl/faenza/text-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/faenza/transfer.png
+share/eiskaltdcpp/qt/icons/appl/faenza/unknown.png
+share/eiskaltdcpp/qt/icons/appl/faenza/users.png
+share/eiskaltdcpp/qt/icons/appl/faenza/video-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/faenza/view-close.png
+share/eiskaltdcpp/qt/icons/appl/faenza/view-filter.png
+share/eiskaltdcpp/qt/icons/appl/faenza/zoom-in.png
+share/eiskaltdcpp/qt/icons/appl/faenza/zoom-out.png
 share/eiskaltdcpp/qt/icons/user/valknut/usericons.png
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.png
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.sh
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/main.js
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/clementine_nowplay/clementine.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/clementine_nowplay/clementine.sh
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/clementine_nowplay/main.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/clementine_nowplay/script.desc
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/commands.ru_RU.UTF-8.php
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/gnome.png
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/main.js
@@ -96,6 +170,7 @@ share/eiskaltdcpp/qt/icons/user/valknut/usericons.png
 share/eiskaltdcpp/qt/resources/default.rcc
 share/eiskaltdcpp/qt/ts/be.qm
 share/eiskaltdcpp/qt/ts/bg.qm
+share/eiskaltdcpp/qt/ts/cs.qm
 share/eiskaltdcpp/qt/ts/en.qm
 share/eiskaltdcpp/qt/ts/es.qm
 share/eiskaltdcpp/qt/ts/fr.qm
@@ -106,6 +181,7 @@ share/eiskaltdcpp/qt/ts/sr.qm
 share/eiskaltdcpp/qt/ts/sk.qm
 share/eiskaltdcpp/qt/ts/uk.qm
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/amarok_nowplay
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/clementine_nowplay
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/gnome
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/logmanager
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/pics
@@ -114,6 +190,7 @@ share/eiskaltdcpp/qt/ts/uk.qm
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/konsole
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts
 @dirrm share/eiskaltdcpp/qt/icons/appl/default
+@dirrm share/eiskaltdcpp/qt/icons/appl/faenza
 @dirrm share/eiskaltdcpp/qt/icons/appl
 @dirrm share/eiskaltdcpp/qt/icons/user/default
 @dirrm share/eiskaltdcpp/qt/icons/user/valknut

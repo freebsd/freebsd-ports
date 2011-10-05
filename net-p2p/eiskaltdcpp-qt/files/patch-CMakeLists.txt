@@ -1,31 +1,26 @@
---- CMakeLists.txt.orig	2010-11-21 23:38:14.000000000 +0100
-+++ CMakeLists.txt	2010-11-26 15:00:17.000000000 +0100
-@@ -301,19 +301,17 @@
-     if (CMAKE_CROSSCOMPILING)
-         set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -enable-auto-import")
-     endif (CMAKE_CROSSCOMPILING)
+--- ./CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
++++ ./CMakeLists.txt	2011-03-09 15:49:15.000000000 +0200
+@@ -316,16 +316,14 @@
+     if (MINGW)
+         set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--enable-auto-import")
+     endif (MINGW)
 -    if (NOT APPLE)
--    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--as-needed")
--    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--as-needed")
+-        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--as-needed")
+-        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--as-needed")
 -    endif (NOT APPLE)
      set (CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -pipe -DNDEBUG")
      set (CMAKE_CXX_FLAGS_RELEASE     "${CMAKE_CXX_FLAGS_RELEASE} -DQT_NO_DEBUG -pipe")
      set (CMAKE_CXX_FLAGS_DEBUG       "${CMAKE_CXX_FLAGS_DEBUG} -UNDEBUG -g3 -pipe")
- #endif (CMAKE_COMPILER_IS_GNUСXX AND CMAKE_COMPILER_IS_GNUC)
- endif (NOT MSVC)
+ endif ()
  
 -include_directories(${eiskaltdcpp_BINARY_DIR}
--   ${eiskaltdcpp_SOURCE_DIR}
--   ${GMP_INCLUDE_DIR}
 +include_directories(
-+	${EISKALTDCPP_INCLUDE_DIR}
-+	${eiskaltdcpp_BINARY_DIR}
-+	${eiskaltdcpp_SOURCE_DIR}
-+	${GMP_INCLUDE_DIR}
++   ${EISKALTDCPP_INCLUDE_DIR}
++   ${eiskaltdcpp_BINARY_DIR}
+    ${eiskaltdcpp_SOURCE_DIR}
+    ${GMP_INCLUDE_DIR}
     )
- 
- message(STATUS "CMAKE will use this libs (and headers) during build:
-@@ -375,7 +373,9 @@
+@@ -395,7 +393,9 @@
  add_subdirectory (dht)
  endif (DHT)
  
@@ -36,7 +31,7 @@
  
  if (USE_QT)
    add_subdirectory (eiskaltdcpp-qt)
-@@ -420,11 +420,11 @@
+@@ -443,11 +443,11 @@
        LOCALE_LIST "${LANGUAGES}"
        COPYRIGHT_HOLDER "EiskaltDC++ team"
        SOURCES "${DCPP_SRCS};${DCPP_HDRS}"
