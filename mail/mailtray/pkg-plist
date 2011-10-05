@@ -1,0 +1,8 @@
+bin/mailtray
+%%DATADIR%%/alert.wav
+%%DATADIR%%/mailtrayrc_default.py
+%%DATADIR%%/icons/disconnect.png
+%%DATADIR%%/icons/newmail.png
+%%DATADIR%%/icons/nomail.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%

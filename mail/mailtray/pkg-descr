@@ -1,0 +1,7 @@
+Mailtray is a Python program that displays a tray icon which informs you when
+you have new email.
+
+It's simple, easy, fairly environment-independent, and "just works" without
+tons of (Gnome|KDE|..) dependencies.
+
+WWW: http://code.google.com/p/mailtray/
