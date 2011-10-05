@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	Net-Appliance-Phrasebook
-PORTVERSION=	1.8
+PORTVERSION=	2.103.642
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Network appliance command-line phrasebook
 
-BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		${SITE_PERL}/Data/Phrasebook.pm:${PORTSDIR}/textproc/p5-Data-Phrasebook \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Data/Phrasebook/Loader/YAML.pm:${PORTSDIR}/textproc/p5-Data-Phrasebook-Loader-YAML \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Data-Phrasebook>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook \
+		p5-Data-Phrasebook-Loader-YAML>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook-Loader-YAML \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Data-Phrasebook>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook \
+		p5-Data-Phrasebook-Loader-YAML>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook-Loader-YAML \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Net::Appliance::Phrasebook.3
+MAN3=		Net::Appliance::Phrasebook.3
 
 .include <bsd.port.mk>
