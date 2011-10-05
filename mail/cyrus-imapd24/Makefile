@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.11
+PORTVERSION=	2.4.12
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
@@ -142,7 +142,6 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in
 .if ${OSVERSION} >= 800037
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 .endif
