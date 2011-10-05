@@ -5,7 +5,6 @@ lib/libcupsimage.so.2
 libexec/cups/filter/bannertops
 libexec/cups/filter/commandtops
 libexec/cups/filter/gziptoany
-libexec/cups/filter/hpgltops
 libexec/cups/filter/imagetops
 libexec/cups/filter/imagetoraster
 libexec/cups/filter/pstops
@@ -13,6 +12,7 @@ libexec/cups/filter/rastertodymo
 libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
 libexec/cups/filter/rastertolabel
+libexec/cups/filter/rastertopwg
 libexec/cups/filter/texttops
 @dirrm libexec/cups/filter
 @dirrm libexec/cups
