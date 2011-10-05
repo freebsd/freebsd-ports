@@ -17,7 +17,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTFILES=	INIT.${KSHVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
