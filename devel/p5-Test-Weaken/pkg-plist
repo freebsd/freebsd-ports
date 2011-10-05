@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Weaken.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Weaken/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Weaken
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
