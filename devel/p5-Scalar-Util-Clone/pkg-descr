@@ -1,4 +1,0 @@
-This module exports a clone() function which unlocks the builtin 
-functionality perl uses to clone a new interpreter and its values.
-
-WWW: http://search.cpan.org/dist/Scalar-Util-Clone/
