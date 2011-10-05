@@ -1919,6 +1919,7 @@
     SUBDIR += p5-Log-Dispatch-Array
     SUBDIR += p5-Log-Dispatch-Colorful
     SUBDIR += p5-Log-Dispatch-Config
+    SUBDIR += p5-Log-Dispatch-Configurator-Any
     SUBDIR += p5-Log-Dispatch-Configurator-YAML
     SUBDIR += p5-Log-Dispatch-DBI
     SUBDIR += p5-Log-Dispatch-Dir
