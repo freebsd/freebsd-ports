@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Test/Timer/TimeoutException.pm
+%%SITE_PERL%%/Test/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Timer/.packlist
+@dirrmtry %%SITE_PERL%%/Test/Timer
+@dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Timer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
