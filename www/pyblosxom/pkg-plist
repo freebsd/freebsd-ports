@@ -1,0 +1,309 @@
+bin/pyblosxom-cmd
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/pyblosxom-cmd
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entrypickle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entrypickle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entrypickle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entryshelve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entryshelve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache/entryshelve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/commandline.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/commandline.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/commandline.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/crashhandling.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/crashhandling.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/crashhandling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data/blog.ini
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data/pyblosxom.cgi
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/fileentry.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/fileentry.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries/fileentry.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/atom.flav/content_type
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/atom.flav/foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/atom.flav/head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/atom.flav/story
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/error.flav/content_type
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/error.flav/foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/error.flav/head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/error.flav/story
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/content_type
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/date_foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/date_head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav/story
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss.flav/content_type
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss.flav/foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss.flav/head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss.flav/story
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss20.flav/content_type
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss20.flav/foot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss20.flav/head
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss20.flav/story
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/plugin_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/plugin_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/plugin_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/pyblosxom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/pyblosxom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/pyblosxom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/blosxom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/blosxom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/blosxom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/debug.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/debug.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers/debug.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_backwards_compatibility.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_backwards_compatibility.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_backwards_compatibility.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blosxom_renderer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blosxom_renderer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_blosxom_renderer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entries.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entries.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entries.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entryparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entryparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_entryparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_pathinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_pathinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_pathinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/test_tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/testrunner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/testrunner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests/testrunner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/pyarchives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/pyarchives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/pyarchives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/yeararchives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/yeararchives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives/yeararchives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/pycategories.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/pycategories.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category/pycategories.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismet.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismet.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismetcomments.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismetcomments.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/akismetcomments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_blacklist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_blacklist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_blacklist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_javascript.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_javascript.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_javascript.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_nonhuman.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_nonhuman.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/check_nonhuman.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/commentAPI.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/commentAPI.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/commentAPI.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/comments.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/comments.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/comments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/magicword.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/magicword.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/magicword.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/no_old_comments.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/no_old_comments.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/no_old_comments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/trackback.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/trackback.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/trackback.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/xmlrpc_pingback.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/xmlrpc_pingback.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments/xmlrpc_pingback.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/pages.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/pages.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content/pages.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/firstdaydiv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/firstdaydiv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/firstdaydiv.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pycalendar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pycalendar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pycalendar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pyfilenamemtime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pyfilenamemtime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/pyfilenamemtime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/w3cdate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/w3cdate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date/w3cdate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/entrytitle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/entrytitle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/entrytitle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/paginate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/paginate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display/paginate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/conditionalhttp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/conditionalhttp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers/conditionalhttp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags/tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/testrunner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/testrunner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/testrunner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/test_yeararchives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/test_yeararchives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives/test_yeararchives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/test_pycategories.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/test_pycategories.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories/test_pycategories.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_akismetcomments.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_akismetcomments.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_akismetcomments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_blacklist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_blacklist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_blacklist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_javascript.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_javascript.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_javascript.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_nonhuman.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_nonhuman.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_check_nonhuman.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_comments.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_comments.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments/test_comments.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/test_entrytitle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/test_entrytitle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display/test_entrytitle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/test_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/test_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags/test_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/test_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/test_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/test_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/test_acronyms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/test_acronyms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text/test_acronyms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/acronyms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/acronyms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/acronyms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/rst.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/rst.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text/rst.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/cache
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/entries
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/atom.flav
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/error.flav
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/html.flav
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss.flav
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours/rss20.flav
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/flavours
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/renderers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyblosxom
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/archives
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/category
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/comments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/date
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/display
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/headers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/archives
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/categories
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/comments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/display
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/tags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
