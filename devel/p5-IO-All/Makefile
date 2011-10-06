@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IO::All combines all of the best Perl IO modules
 
-RUN_DEPENDS=	p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String 
+BUILD_DEPENDS=	p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
