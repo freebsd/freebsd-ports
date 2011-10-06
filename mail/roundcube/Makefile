@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.5.4
+DISTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -100,7 +100,8 @@ post-patch:
 		${WRKSRC}/program/js/editor.js \
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc \
-		${WRKSRC}/skins/default/functions.js
+		${WRKSRC}/skins/default/functions.js \
+		${WRKSRC}/skins/default/includes/links.html
 	@${REINPLACE_CMD} "s/'mail|/'${MAIL}|/g" ${WRKSRC}/plugins/*/*.php
 	@${REINPLACE_CMD} "s/|mail'/|${MAIL}'/g" ${WRKSRC}/plugins/*/*.php
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
@@ -116,6 +117,8 @@ post-patch:
 		${WRKSRC}/skins/default/templates/login.html
 	@${MV} ${WRKSRC}/program/steps/mail \
 		${WRKSRC}/program/steps/${MAIL}
+	@${MV} ${WRKSRC}/skins/default/images/mail_footer.gif \
+		${WRKSRC}/skins/default/images/${MAIL}_footer.gif
 	@${MV} ${WRKSRC}/skins/default/images/mail_footer.png \
 		${WRKSRC}/skins/default/images/${MAIL}_footer.png
 	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.gif \
