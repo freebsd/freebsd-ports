@@ -228,6 +228,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dushanbe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Gaza.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Harbin.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Hebron.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ho_Chi_Minh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hong_Kong.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hovd.pm
