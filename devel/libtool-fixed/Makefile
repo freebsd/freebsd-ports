@@ -7,6 +7,7 @@
 
 PORTNAME=	libtool
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -33,7 +34,12 @@ post-patch:
 		-e 's|CC=cc|CC=${CC}|g' \
 		${WRKSRC}/configure ${WRKSRC}/libltdl/configure
 	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1.\*)|g' \
-		${WRKSRC}/configure ${WRKSRC}/libltdl/configure \
+		-e 's|freebsd\[12\]\*)|freebsd[12].*)|g' \
+		-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \
+		${WRKSRC}/configure ${WRKSRC}/libltdl/configure
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1.\*)|g' \
+		-e 's|freebsd\[\[12\]\]\*)|freebsd[[12]].*)|g' \
+		-e 's|freebsd\[\[123\]\]\*)|freebsd[[123]].*)|g' \
 		${WRKSRC}/libltdl/m4/libtool.m4
 
 post-configure:
