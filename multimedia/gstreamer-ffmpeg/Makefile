@@ -67,4 +67,4 @@ MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
