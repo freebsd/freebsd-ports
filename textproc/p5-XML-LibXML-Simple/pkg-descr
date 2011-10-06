@@ -2,4 +2,4 @@ This module is a blunt rewrite of XML::Simple (by Grant McLean)
 to use the XML::LibXML parser for XML structures, where the original
 uses plain Perl or SAX parsers.
 
-WWW:	http://http://search.cpan.org/dist/XML-LibXML-Simple/
+WWW:	http://search.cpan.org/dist/XML-LibXML-Simple/
