@@ -1,0 +1,4 @@
+Test::Timer implements a set of test primitives to test and assert test times
+from bodies of code.
+
+WWW:	http://search.cpan.org/dist/Test-Timer/
