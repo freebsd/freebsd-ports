@@ -15,6 +15,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
+DEPRECATED=	Unmaintain, use devel/libsoup
+EXPIRATION_DATE=	2011-11-06
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
