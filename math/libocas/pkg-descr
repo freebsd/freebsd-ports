@@ -1,0 +1,10 @@
+libocas implements an Optimized Cutting Plane Algorithm (OCAS) for training
+linear SVM classifiers from large-scale data. The computational effort of
+OCAS scales with O(m log m) where m is the sample size. In an extensive
+empirical evaluation, OCAS significantly outperforms current state-of-the-art
+SVM solvers.
+
+libocas also implements the COFFIN framework for efficient training of
+translation invariant image classifiers from virtual examples.
+
+WWW:	http://cmp.felk.cvut.cz/~xfrancv/ocas/html/index.html
