@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transport agnostic JSON RPC helper objects
 
-RUN_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-Moose>=0.81:${PORTSDIR}/devel/p5-Moose \
 		p5-JSON>=2.11:${PORTSDIR}/converters/p5-JSON \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
@@ -23,6 +23,7 @@ RUN_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
