@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hgview
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	LOGILAB
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
 BUILD_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
+		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		asciidoc:${PORTSDIR}/textproc/asciidoc
 
