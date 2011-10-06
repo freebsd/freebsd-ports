@@ -72,6 +72,7 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/da/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
@@ -79,8 +80,10 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/fr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/ia/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/mc.mo
@@ -98,6 +101,7 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/sl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mc.mo
@@ -125,11 +129,13 @@ libexec/mc/mc.sh
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh
 %%CHARSETS%%%%DATADIR%%/mc.charsets
 %%DATADIR%%/mc.lib
+%%DATADIR%%/skins/dark.ini
 %%DATADIR%%/skins/darkfar.ini
 %%DATADIR%%/skins/default.ini
 %%DATADIR%%/skins/double-lines.ini
 %%DATADIR%%/skins/featured.ini
 %%DATADIR%%/skins/gotar.ini
+%%DATADIR%%/skins/mc46.ini
 %%DATADIR%%/skins/nicedark.ini
 %%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
 %%EDITOR%%%%DATADIR%%/syntax/Syntax
@@ -207,8 +213,12 @@ libexec/mc/mc.sh
 @dirrm %%DATADIR%%/hints
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-%%NLS%%@dirrm share/locale/fi_FI/LC_MESSAGES
-%%NLS%%@dirrm share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi_FI
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
