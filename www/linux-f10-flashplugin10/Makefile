@@ -10,7 +10,8 @@ PORTNAME=	flashplugin
 PORTVERSION=	10.3r183.10
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
-		ftp://ftp.ipt.ru/pub/download/:suplib
+		ftp://ftp.ipt.ru/pub/download/:suplib \
+		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	install_flash_player_10_linux.tar.gz:plugin \
 		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
