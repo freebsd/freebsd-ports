@@ -1,130 +1,16 @@
-man/man7/Consortium.7
-man/man7/security.7
-man/man7/Standards.7
-man/man7/X.7
-man/man7/XOrgFoundation.7
-man/man7/Xprint.7
-man/man7/XProjectTeam.7
-share/X11/doc/hardcopy/BDF/bdf.PS.gz
-share/X11/doc/hardcopy/CTEXT/ctext.PS.gz
-share/X11/doc/hardcopy/FSProtocol/fsproto.PS.gz
-share/X11/doc/hardcopy/i18n/Framework.PS.gz
-share/X11/doc/hardcopy/i18n/LocaleDB.PS.gz
-share/X11/doc/hardcopy/i18n/Trans.PS.gz
-share/X11/doc/hardcopy/ICCCM/icccm.idx.PS.gz
-share/X11/doc/hardcopy/ICCCM/icccm.PS.gz
-share/X11/doc/hardcopy/ICE/ICElib.PS.gz
-share/X11/doc/hardcopy/ICE/ice.PS.gz
-share/X11/doc/hardcopy/man/man.PS.gz
-share/X11/doc/hardcopy/rstart/rstart.PS.gz
-share/X11/doc/hardcopy/RX/RX.PS.gz
-share/X11/doc/hardcopy/saver/saver.PS.gz
-share/X11/doc/hardcopy/SM/SMlib.PS.gz
-share/X11/doc/hardcopy/SM/xsmp.PS.gz
-share/X11/doc/hardcopy/X11/xlib.idx.PS.gz
-share/X11/doc/hardcopy/X11/xlib.PS.gz
-share/X11/doc/hardcopy/Xaw/widgets.PS.gz
-share/X11/doc/hardcopy/Xaw/widg.idx.PS.gz
-share/X11/doc/hardcopy/XDMCP/xdmcp.PS.gz
-share/X11/doc/hardcopy/Xext/AppGroup.PS.gz
-share/X11/doc/hardcopy/Xext/bigreq.PS.gz
-share/X11/doc/hardcopy/Xext/buffer.PS.gz
-share/X11/doc/hardcopy/Xext/dbelib.PS.gz
-share/X11/doc/hardcopy/Xext/dbe.PS.gz
-share/X11/doc/hardcopy/Xext/DPMSLib.PS.gz
-share/X11/doc/hardcopy/Xext/DPMS.PS.gz
-share/X11/doc/hardcopy/Xext/evi.PS.gz
-share/X11/doc/hardcopy/Xext/lbxalg.PS.gz
-share/X11/doc/hardcopy/Xext/lbx.html
-share/X11/doc/hardcopy/Xext/lbx.PS.gz
-share/X11/doc/hardcopy/Xext/lbxTOC.html
-share/X11/doc/hardcopy/Xext/mit-shm.PS.gz
-share/X11/doc/hardcopy/Xext/recordlib.PS.gz
-share/X11/doc/hardcopy/Xext/record.PS.gz
-share/X11/doc/hardcopy/Xext/security.PS.gz
-share/X11/doc/hardcopy/Xext/shapelib.PS.gz
-share/X11/doc/hardcopy/Xext/shape.PS.gz
-share/X11/doc/hardcopy/Xext/synclib.PS.gz
-share/X11/doc/hardcopy/Xext/sync.PS.gz
-share/X11/doc/hardcopy/Xext/tog-cup.PS.gz
-share/X11/doc/hardcopy/Xext/xc-misc.PS.gz
-share/X11/doc/hardcopy/Xext/xtestlib.PS.gz
-share/X11/doc/hardcopy/Xext/xtest.PS.gz
-share/X11/doc/hardcopy/xfs/design.PS.gz
-share/X11/doc/hardcopy/Xi/lib.PS.gz
-share/X11/doc/hardcopy/Xi/port.PS.gz
-share/X11/doc/hardcopy/Xi/proto.PS.gz
-share/X11/doc/hardcopy/XIM/xim.PS.gz
-share/X11/doc/hardcopy/XKB/XKBlib.ps.gz
-share/X11/doc/hardcopy/XKB/XKBproto.ps.gz
-share/X11/doc/hardcopy/XLFD/xlfd.PS.gz
-share/X11/doc/hardcopy/Xmu/xmu.PS.gz
-share/X11/doc/hardcopy/XPRINT/dtprint_fspec.PS.gz
-share/X11/doc/hardcopy/XPRINT/xp_library.PS.gz
-share/X11/doc/hardcopy/XPRINT/xp_proto.PS.gz
-share/X11/doc/hardcopy/XPRINT/Xprint_FAQ.html
-share/X11/doc/hardcopy/XPRINT/Xprint_FAQ.txt
-share/X11/doc/hardcopy/XPRINT/Xprint_FAQ.xml
-share/X11/doc/hardcopy/XPRINT/Xprint_old_FAQ.txt
-share/X11/doc/hardcopy/XProtocol/proto.idx.PS.gz
-share/X11/doc/hardcopy/XProtocol/proto.PS.gz
-share/X11/doc/hardcopy/Xserver/analysis.PS.gz
-share/X11/doc/hardcopy/Xserver/appgroup.PS.gz
-share/X11/doc/hardcopy/Xserver/ddx.PS.gz
-share/X11/doc/hardcopy/Xserver/fontlib.PS.gz
-share/X11/doc/hardcopy/Xserver/secint.PS.gz
-share/X11/doc/hardcopy/Xserver/Xprt.PS.gz
-share/X11/doc/hardcopy/Xt/intr.idx.PS.gz
-share/X11/doc/hardcopy/Xt/intrinsics.PS.gz
-share/X11/doc/hardcopy/xtrans/Xtrans.PS.gz
-share/X11/doc/hardcopy/Xv/video
-share/X11/doc/hardcopy/Xv/xv-protocol-v2.PS
-share/X11/doc/MAINTAINERS
-@exec mkdir -p %D/share/X11/doc/core
-@exec mkdir -p %D/share/X11/doc/ddx
-@exec mkdir -p %D/share/X11/doc/fonts
-@exec mkdir -p %D/share/X11/doc/graphics
-@exec mkdir -p %D/share/X11/doc/input
-@exec mkdir -p %D/share/X11/doc/output
-@exec mkdir -p %D/share/X11/doc/platforms
-@exec mkdir -p %D/share/X11/doc/registry
-@exec mkdir -p %D/share/X11/doc/security
-@dirrm share/X11/doc/security
-@dirrm share/X11/doc/registry
-@dirrm share/X11/doc/platforms
-@dirrm share/X11/doc/output
-@dirrm share/X11/doc/input
-@dirrm share/X11/doc/hardcopy/BDF
-@dirrm share/X11/doc/hardcopy/CTEXT
-@dirrm share/X11/doc/hardcopy/FSProtocol
-@dirrm share/X11/doc/hardcopy/i18n
-@dirrm share/X11/doc/hardcopy/ICCCM
-@dirrm share/X11/doc/hardcopy/ICE
-@dirrm share/X11/doc/hardcopy/man
-@dirrm share/X11/doc/hardcopy/rstart
-@dirrm share/X11/doc/hardcopy/RX
-@dirrm share/X11/doc/hardcopy/saver
-@dirrm share/X11/doc/hardcopy/SM
-@dirrm share/X11/doc/hardcopy/X11
-@dirrm share/X11/doc/hardcopy/Xaw
-@dirrm share/X11/doc/hardcopy/XDMCP
-@dirrm share/X11/doc/hardcopy/Xext
-@dirrm share/X11/doc/hardcopy/xfs
-@dirrm share/X11/doc/hardcopy/Xi
-@dirrm share/X11/doc/hardcopy/XIM
-@dirrm share/X11/doc/hardcopy/XKB
-@dirrm share/X11/doc/hardcopy/XLFD
-@dirrm share/X11/doc/hardcopy/Xmu
-@dirrm share/X11/doc/hardcopy/XPRINT
-@dirrm share/X11/doc/hardcopy/XProtocol
-@dirrm share/X11/doc/hardcopy/Xserver
-@dirrm share/X11/doc/hardcopy/Xt
-@dirrm share/X11/doc/hardcopy/xtrans
-@dirrm share/X11/doc/hardcopy/Xv
-@dirrm share/X11/doc/hardcopy
-@dirrm share/X11/doc/graphics
-@dirrm share/X11/doc/fonts
-@dirrm share/X11/doc/ddx
-@dirrm share/X11/doc/core
-@dirrm share/X11/doc
-@dirrmtry share/X11
+%%DOCSDIR%%/fonts/fonts.xml
+%%DOCSDIR%%/input/XKB-Config.xml
+%%DOCSDIR%%/input/XKB-Enhancing.xml
+%%DOCSDIR%%/graphics/dps.xml
+%%DOCSDIR%%/platforms/Darwin.xml
+%%DOCSDIR%%/platforms/Solaris.xml
+%%DOCSDIR%%/License.xml
+%%DOCSDIR%%/README.xml
+%%DOCSDIR%%/ReleaseNotes.xml
+%%DOCSDIR%%/MAINTAINERS
+%%DOCSDIR%%/Versions.xml
+@dirrm %%DOCSDIR%%/fonts
+@dirrm %%DOCSDIR%%/input
+@dirrm %%DOCSDIR%%/graphics
+@dirrm %%DOCSDIR%%/platforms
+@dirrm %%DOCSDIR%%
