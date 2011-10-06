@@ -8,9 +8,45 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/__pkginfo__.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/application.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/application.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/application.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/config.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/config.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/config.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/__init__.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/application.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/application.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/application.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/canvas.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/canvas.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/canvas.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/exceptions.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/graphlog.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/graphlog.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/graphlog.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/helpviewer.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/helpviewer.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/helpviewer.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/hgrepoviewer.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/hgrepoviewer.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/hgrepoviewer.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/mainframe.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/mainframe.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/mainframe.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/manifest.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/manifest.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/manifest.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/utils.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/utils.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/utils.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/widgets.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/widgets.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/curses/widgets.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/decorators.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/decorators.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/decorators.pyo
@@ -20,9 +56,15 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/hgviewhelp.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/inotify.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/inotify.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/inotify.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/application.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/application.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/application.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/blockmatcher.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/blockmatcher.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/blockmatcher.pyo
@@ -78,4 +120,5 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/hgviewlib/qt4
+@dirrm %%PYTHON_SITELIBDIR%%/hgviewlib/curses
 @dirrm %%PYTHON_SITELIBDIR%%/hgviewlib
