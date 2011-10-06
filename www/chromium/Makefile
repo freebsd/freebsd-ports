@@ -119,6 +119,10 @@ GYP_DEFINES+=	use_gconf=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
+.if defined(GCC45) && defined(CLANG)
+IGNORE=	conflicting options (CLANG or GCC45)
+.endif
+
 .if defined(WITH_GCC45)
 USE_GCC?=	4.5+
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
@@ -130,7 +134,7 @@ BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
 .endif
 CC=		clang
 CXX=		clang++
-GYP_DEFINES+=   clang=1
+GYP_DEFINES+=	clang=1
 .endif
 
 .if !defined(WITH_DEBUG)
