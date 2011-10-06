@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -43,5 +43,5 @@ CONFIGURE_ARGS+=--enable-man
 CONFIGURE_ARGS+=--disable-man
 .endif
 
-BUILD_DEPENDS+=	subversion>=0:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .include <bsd.port.post.mk>
