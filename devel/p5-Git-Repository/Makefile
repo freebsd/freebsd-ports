@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Git repositories
 
-RUN_DEPENDS=	p5-System-Command>=0:${PORTSDIR}/devel/p5-System-Command
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-System-Command>=0:${PORTSDIR}/devel/p5-System-Command
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
