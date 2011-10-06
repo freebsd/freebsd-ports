@@ -18,6 +18,8 @@ COMMENT=	Write Perl subroutines in other programming languages
 BUILD_DEPENDS=	p5-Parse-RecDescent>=1.8:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Inline-API.3 Inline-FAQ.3 Inline-Support.3 Inline.3 \
