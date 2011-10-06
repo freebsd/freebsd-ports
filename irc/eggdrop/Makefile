@@ -10,6 +10,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.20
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
 	http://www.egghelp.org/files/patches/:ssl
@@ -20,8 +21,9 @@ DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2 \
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-USE_TCL=	85+
+LICENSE=        GPLv2
 
+USE_TCL=	85+
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 #		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
@@ -34,8 +36,6 @@ MAN1=		eggdrop.1
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-LICENSE=	GPLv2
 
 .if defined(WITH_SSL)
 . if ${ARCH} == "amd64"
