@@ -1,0 +1,9 @@
+This portable, modular Fortran 90 software package implements the thick-restart
+Lanczos method, for use with real symmetric or complex Hermitian eigenvalue
+problems where a small number of eigevalues and eigenvectors are needed, and
+the matrices involved may be too large to store in computer memory. Most of
+the arithmetic computations in the software are done through calls to BLAS
+and LAPACK.  The software can be instructed to write checkpoint files so that
+it can be restarted is a later time.
+
+WWW:	http://crd.lbl.gov/~kewu/trlan.html
