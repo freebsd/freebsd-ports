@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weatherspect
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	astro
 MASTER_SITES=	http://www.robobunny.com/projects/weatherspect/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -14,9 +14,12 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Weather simulation in ASCII art
 
-RUN_DEPENDS=	\
-${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation \
-${SITE_PERL}/Weather/Underground.pm:${PORTSDIR}/astro/p5-Weather-Underground
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation \
+		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PORTSCOUT=	skipv:1.31	# Wrong versioning upstream
 
