@@ -16583,7 +16583,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>pyblosxom</name>
-        <range><ge>0</ge></range>
+        <range><lt>1.5.r3</lt></range>
       </package>
     </affects>
     <description>
