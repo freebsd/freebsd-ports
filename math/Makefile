@@ -179,6 +179,7 @@
     SUBDIR += liblbfgs
     SUBDIR += libmath++
     SUBDIR += libneural
+    SUBDIR += libocas
     SUBDIR += liborigin
     SUBDIR += libqalculate
     SUBDIR += libranlip
