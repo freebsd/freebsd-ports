@@ -15,12 +15,14 @@ MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ 
 		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/racket/ \
 		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/racket/ \
 		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/racket/
-DISTFILES=	racket-${PORTVERSION}-src-unix.tgz
+DISTNAME=	racket-${PORTVERSION}-src-unix
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	racket/${PORTVERSION}
-EXTRACT_ONLY=	racket-${PORTVERSION}-src-unix.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
+
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	X11	"X11 support"	ON
 
@@ -75,6 +77,6 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}
 
 post-patch:
-	@${FIND} ${WRKDIR} -name *.orig | ${XARGS} ${RM}
+	@${FIND} ${WRKDIR} -name *.orig -delete
 
 .include <bsd.port.post.mk>
