@@ -9,14 +9,13 @@
 PORTNAME=	vis2u
 PORTVERSION=	1.0
 CATEGORIES=	vietnamese textproc
-MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
+#MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	VISCII->Unicode conversion
-
-DEPRECATED=	No Master Site
-EXPIRATION_DATE=	2011-09-01
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

@@ -10,14 +10,13 @@ PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	vietnamese x11-fonts
-MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
+#MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	uhoaiw21
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
-
-DEPRECATED=	No Master Site
-EXPIRATION_DATE=	2011-09-01
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
