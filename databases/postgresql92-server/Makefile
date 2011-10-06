@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	9.1.0
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -79,16 +80,6 @@ MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
-# Cannot check this with standard OPTION due to a catch-22.
-# USE_OPENSSL must precede bsd.port.pre.mk, but then we don't know
-# what OPTIONS are set.
-#
-# If you *don't* want SSL, set WITHOUT_SSL=YES when making
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
-.endif
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
 OPTIONS+=	PAM "Build with PAM support (server only)" off
@@ -99,24 +90,34 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 OPTIONS+=	XML "Build with XML data type (server)" on
 OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
-OPTIONS+=	GSSAPI "BUild with GSSAPI support" off
+OPTIONS+=	GSSAPI "Build with GSSAPI support" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-##OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
+OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 
-#.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-#USE_AUTOTOOLS=	autoconf
-#CONFIGURE_ARGS+=--with-icu
-#PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-#PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
-#LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
-#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
-#.  endif
+OPTIONS+=	SSL "Build with OpenSSL support" on
+.endif # !SLAVE_ONLY
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl
 .endif
+
+.if !defined(SLAVE_ONLY)
+.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+USE_AUTOTOOLS=	autoconf
+CONFIGURE_ARGS+=--with-icu
+PATCH_SITES+=	http://people.freebsd.org/~mm/patches/postgresql-icu/:icu
+PATCHFILES+=	pg-910-icu-2011-09-22.diff.gz:icu
+LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
+.  endif
+.endif # !SLAVE_ONLY
 
 .include <bsd.port.pre.mk>
 
@@ -189,7 +190,7 @@ LDFLAGS+=	-lgssapi
 
 .  if defined(WITH_MIT_KRB5)
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
-BROKEN=		"You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB"
+BROKEN=		You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB
 .    endif
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
@@ -328,23 +329,23 @@ SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
-SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
-SUB_LIST=	PG_GROUP=$(PG_GROUP) \
-		PG_USER=$(PG_USER) \
-		PG_UID=$(PG_UID)
-PLIST_SUB+=	PG_USER=$(PG_USER)
-PKGINSTALL=     ${WRKDIR}/pkg-install${PKGNAMESUFFIX}
+SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
+SUB_LIST=	PG_GROUP=${PG_GROUP} \
+		PG_USER=${PG_USER} \
+		PG_UID=${PG_UID}
+PLIST_SUB+=	PG_USER=${PG_USER}
+PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
 .endif
 
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
-#.  if defined(WITH_ICU)
-#	@${REINPLACE_CMD} -E -e \
-#		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
-#		${WRKSRC}/configure.in
-#.  endif
+.  if defined(WITH_ICU)
+	@${REINPLACE_CMD} -E -e \
+		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
+		${WRKSRC}/configure.in
+.  endif
 
 .  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
 pre-install:
