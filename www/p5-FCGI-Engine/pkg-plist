@@ -6,6 +6,7 @@
 %%SITE_PERL%%/FCGI/Engine/Manager/Server/Plackup.pm
 %%SITE_PERL%%/FCGI/Engine/PSGI.pm
 %%SITE_PERL%%/FCGI/Engine/ProcManager.pm
+%%SITE_PERL%%/FCGI/Engine/ProcManager/Constrained.pm
 %%SITE_PERL%%/FCGI/Engine/Types.pm
 %%SITE_PERL%%/Plack/Handler/FCGI/Engine.pm
 %%SITE_PERL%%/Plack/Handler/FCGI/Engine/ProcManager.pm
@@ -21,6 +22,7 @@
 @dirrmtry %%SITE_PERL%%/Plack/Handler/FCGI
 @dirrmtry %%SITE_PERL%%/Plack/Handler
 @dirrmtry %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/FCGI/Engine/ProcManager
 @dirrmtry %%SITE_PERL%%/FCGI/Engine/Manager/Server
 @dirrmtry %%SITE_PERL%%/FCGI/Engine/Manager
 @dirrmtry %%SITE_PERL%%/FCGI/Engine
