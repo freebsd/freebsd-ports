@@ -100,7 +100,7 @@ post-patch:
 		${WRKSRC}/lapack/laswp/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
-	-e 's+${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
+	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if defined(WITH_OPENMP)
 	${REINPLACE_CMD} -e "s+GOTO_NUM_THREADS+OMP_NUM_THREADS+g" \
