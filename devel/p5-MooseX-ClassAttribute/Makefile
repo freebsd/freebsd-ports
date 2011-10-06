@@ -21,6 +21,9 @@ BUILD_DEPENDS=	p5-Moose>=1.23:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+
 PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::ClassAttribute.3 \
