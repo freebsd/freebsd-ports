@@ -7,14 +7,14 @@
 
 PORTNAME=	sanduhr
 PORTVERSION=	1.93
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://seehuhn.de/media/programs/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
-USE_GNOME=	gnomehack gnomeprefix libgnomeui oaf
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
