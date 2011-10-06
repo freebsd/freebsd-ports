@@ -1489,7 +1489,6 @@ cflow                           ports/devel/cflow
 cflow2vcg                       ports/devel/cflow2vcg
 cflowd                          ports/net-mgmt/cflowd
 cfortran                        ports/lang/cfortran
-cfs                             ports/security/cfs
 cftp                            ports/ftp/cftp
 cfv                             ports/security/cfv
 cg                              ports/news/cg
@@ -8927,6 +8926,7 @@ mailmgr                         ports/mail/mailmgr
 mailscanner                     ports/mail/mailscanner
 mailscanner-mrtg                ports/mail/mailscanner-mrtg
 mailsync                        ports/mail/mailsync
+mailtray                        ports/mail/mailtray
 mailx                           ports/mail/mailx
 mailzu                          ports/security/mailzu
 mairix                          ports/mail/mairix
@@ -12877,6 +12877,7 @@ p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Array           ports/devel/p5-Log-Dispatch-Array
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
+p5-Log-Dispatch-Configurator-Any  ports/devel/p5-Log-Dispatch-Configurator-Any
 p5-Log-Dispatch-Configurator-YAML  ports/devel/p5-Log-Dispatch-Configurator-YAML
 p5-Log-Dispatch-DBI             ports/devel/p5-Log-Dispatch-DBI
 p5-Log-Dispatch-Dir             ports/devel/p5-Log-Dispatch-Dir
@@ -13280,6 +13281,7 @@ p5-Net-Bonjour                  ports/dns/p5-Net-Bonjour
 p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
 p5-Net-CIDR-MobileJP            ports/net/p5-Net-CIDR-MobileJP
+p5-Net-CLI-Interact             ports/net/p5-Net-CLI-Interact
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
 p5-Net-CUPS                     ports/print/p5-Net-CUPS
 p5-Net-CascadeCopy              ports/net/p5-Net-CascadeCopy
@@ -13420,6 +13422,7 @@ p5-Net-Pcap                     ports/net/p5-Net-Pcap
 p5-Net-PcapUtils                ports/net/p5-Net-PcapUtils
 p5-Net-Ping                     ports/net/p5-Net-Ping
 p5-Net-Ping-External            ports/net/p5-Net-Ping-External
+p5-Net-Plurk                    ports/www/p5-Net-Plurk
 p5-Net-Printer                  ports/print/p5-Net-Printer
 p5-Net-Proxy                    ports/net/p5-Net-Proxy
 p5-Net-PubSubHubbub-Publisher   ports/net/p5-Net-PubSubHubbub-Publisher
@@ -14033,7 +14036,6 @@ p5-Scalar-Defer                 ports/devel/p5-Scalar-Defer
 p5-Scalar-List-Utils            ports/lang/p5-Scalar-List-Utils
 p5-Scalar-Listify               ports/devel/p5-Scalar-Listify
 p5-Scalar-String                ports/devel/p5-Scalar-String
-p5-Scalar-Util-Clone            ports/devel/p5-Scalar-Util-Clone
 p5-Schedule-At                  ports/sysutils/p5-Schedule-At
 p5-Schedule-Cron                ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Load                ports/sysutils/p5-Schedule-Load
@@ -14108,6 +14110,8 @@ p5-Sort-Maker                   ports/devel/p5-Sort-Maker
 p5-Sort-Naturally               ports/textproc/p5-Sort-Naturally
 p5-Sort-Tree                    ports/devel/p5-Sort-Tree
 p5-Sort-Versions                ports/devel/p5-Sort-Versions
+p5-Sphinx-Config                ports/textproc/p5-Sphinx-Config
+p5-Sphinx-Manager               ports/textproc/p5-Sphinx-Manager
 p5-Sphinx-Search                ports/textproc/p5-Sphinx-Search
 p5-Spiffy                       ports/devel/p5-Spiffy
 p5-Spoon                        ports/devel/p5-Spoon
@@ -14342,6 +14346,7 @@ p5-Test-HTTP-Server-Simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness                 ports/devel/p5-Test-Harness
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
 p5-Test-HexString               ports/devel/p5-Test-HexString
+p5-Test-InDistDir               ports/devel/p5-Test-InDistDir
 p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-Inter                   ports/devel/p5-Test-Inter
 p5-Test-JSON                    ports/devel/p5-Test-JSON
@@ -14410,6 +14415,7 @@ p5-Test-WWW-Mechanize-Catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-Test-WWW-Mechanize-PSGI      ports/devel/p5-Test-WWW-Mechanize-PSGI
 p5-Test-WWW-Selenium            ports/devel/p5-Test-WWW-Selenium
 p5-Test-Warn                    ports/devel/p5-Test-Warn
+p5-Test-Weaken                  ports/devel/p5-Test-Weaken
 p5-Test-XML                     ports/devel/p5-Test-XML
 p5-Test-XML-Valid               ports/devel/p5-Test-XML-Valid
 p5-Test-XPath                   ports/lang/p5-Test-XPath
@@ -17228,6 +17234,7 @@ p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-array           ports/devel/p5-Log-Dispatch-Array
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
+p5-log-dispatch-configurator-any  ports/devel/p5-Log-Dispatch-Configurator-Any
 p5-log-dispatch-configurator-yaml  ports/devel/p5-Log-Dispatch-Configurator-YAML
 p5-log-dispatch-dbi             ports/devel/p5-Log-Dispatch-DBI
 p5-log-dispatch-dir             ports/devel/p5-Log-Dispatch-Dir
@@ -17647,6 +17654,7 @@ p5-net-cassandra-easy           ports/net/p5-Net-Cassandra-Easy
 p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
 p5-net-cidr-lite                ports/net/p5-Net-CIDR-Lite
 p5-net-cidr-mobilejp            ports/net/p5-Net-CIDR-MobileJP
+p5-net-cli-interact             ports/net/p5-Net-CLI-Interact
 p5-net-csta                     ports/net/p5-Net-CSTA
 p5-net-cups                     ports/print/p5-Net-CUPS
 p5-net-daap-client              ports/audio/p5-Net-DAAP-Client
@@ -17785,6 +17793,7 @@ p5-net-pcap                     ports/net/p5-Net-Pcap
 p5-net-pcaputils                ports/net/p5-Net-PcapUtils
 p5-net-ping                     ports/net/p5-Net-Ping
 p5-net-ping-external            ports/net/p5-Net-Ping-External
+p5-net-plurk                    ports/www/p5-Net-Plurk
 p5-net-pop3-sslwrapper          ports/mail/p5-Net-POP3-SSLWrapper
 p5-net-printer                  ports/print/p5-Net-Printer
 p5-net-proxy                    ports/net/p5-Net-Proxy
@@ -18348,7 +18357,6 @@ p5-scalar-defer                 ports/devel/p5-Scalar-Defer
 p5-scalar-list-utils            ports/lang/p5-Scalar-List-Utils
 p5-scalar-listify               ports/devel/p5-Scalar-Listify
 p5-scalar-string                ports/devel/p5-Scalar-String
-p5-scalar-util-clone            ports/devel/p5-Scalar-Util-Clone
 p5-scgi                         ports/www/p5-SCGI
 p5-schedule-at                  ports/sysutils/p5-Schedule-At
 p5-schedule-cron                ports/sysutils/p5-Schedule-Cron
@@ -18460,6 +18468,8 @@ p5-sort-maker                   ports/devel/p5-Sort-Maker
 p5-sort-naturally               ports/textproc/p5-Sort-Naturally
 p5-sort-tree                    ports/devel/p5-Sort-Tree
 p5-sort-versions                ports/devel/p5-Sort-Versions
+p5-sphinx-config                ports/textproc/p5-Sphinx-Config
+p5-sphinx-manager               ports/textproc/p5-Sphinx-Manager
 p5-sphinx-search                ports/textproc/p5-Sphinx-Search
 p5-spiffy                       ports/devel/p5-Spiffy
 p5-spoon                        ports/devel/p5-Spoon
@@ -18741,6 +18751,7 @@ p5-test-hexstring               ports/devel/p5-Test-HexString
 p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
 p5-test-http                    ports/www/p5-Test-HTTP
 p5-test-http-server-simple      ports/www/p5-Test-HTTP-Server-Simple
+p5-test-indistdir               ports/devel/p5-Test-InDistDir
 p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-inter                   ports/devel/p5-Test-Inter
 p5-test-json                    ports/devel/p5-Test-JSON
@@ -18804,6 +18815,7 @@ p5-test-uri                     ports/net/p5-Test-URI
 p5-test-use-ok                  ports/devel/p5-Test-use-ok
 p5-test-useallmodules           ports/devel/p5-Test-UseAllModules
 p5-test-warn                    ports/devel/p5-Test-Warn
+p5-test-weaken                  ports/devel/p5-Test-Weaken
 p5-test-www-declare             ports/devel/p5-Test-WWW-Declare
 p5-test-www-mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-test-www-mechanize-catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
