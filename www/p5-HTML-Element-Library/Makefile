@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	HTML-Element-Library
-PORTVERSION=	4.3
+PORTVERSION=	5.112.170
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML::Element convenience functions
 
-RUN_DEPENDS=	p5-Array-Group>=1:${PORTSDIR}/devel/p5-Array-Group \
-		p5-File-Slurp>=9999.06:${PORTSDIR}/devel/p5-File-Slurp \
+BUILD_DEPENDS=	p5-Array-Group>=0:${PORTSDIR}/devel/p5-Array-Group \
+		p5-Data-Rmap>=0:${PORTSDIR}/devel/p5-Data-Rmap \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
-		p5-HTML-PrettyPrinter>=0.03:${PORTSDIR}/www/p5-HTML-PrettyPrinter \
-		p5-HTML-Tree>=4.1:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-List-MoreUtils>=0.09:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-List-Rotation-Cycle>=1.003:${PORTSDIR}/devel/p5-List-Rotation-Cycle \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Params-Validate>=0.8:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Scalar-Listify>=0.02:${PORTSDIR}/devel/p5-Scalar-Listify
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-HTML-PrettyPrinter>=0:${PORTSDIR}/www/p5-HTML-PrettyPrinter \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-List-Rotation-Cycle>=0:${PORTSDIR}/devel/p5-List-Rotation-Cycle \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Scalar-Listify>=0:${PORTSDIR}/devel/p5-Scalar-Listify
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
