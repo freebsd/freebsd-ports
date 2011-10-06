@@ -18,6 +18,8 @@ COMMENT?=	Generic shared library support script
 LICENSE?=        GPLv2
 LICENSE_FILE?=   ${WRKSRC}/COPYING
 
+CONFLICTS=	libtool-fixed-[0-9]*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
