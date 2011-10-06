@@ -1,11 +1,12 @@
 --- Makefile.system.orig	2010-01-28 15:11:08.000000000 -0500
 +++ Makefile.system	2011-09-05 12:30:26.000000000 -0400
-@@ -93,6 +93,10 @@
+@@ -93,6 +93,11 @@
  EXTRALIB	+= -lm
  endif
  
 +ifeq ($(OSNAME), FreeBSD)
 +EXTRALIB	+= -lm
++FCOMMON_OPT	+= -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
 +endif
 +
  ifeq ($(OSNAME), AIX)

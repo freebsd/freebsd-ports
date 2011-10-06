@@ -100,6 +100,8 @@ post-patch:
 		${WRKSRC}/lapack/laswp/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
+	-e 's+%%LOCALBASE%%+${LOCALBASE}+' \
+	-e 's+%%_GCC_BUILD_DEPENDS%%+${_GCC_BUILD_DEPENDS}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if defined(WITH_OPENMP)
