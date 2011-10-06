@@ -14,9 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of Rx schema system
 
-RUN_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
+BUILD_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
 		p5-Number-Tolerant>=0:${PORTSDIR}/devel/p5-Number-Tolerant
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_CONFIGURE=	yes
 
