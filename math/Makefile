@@ -564,6 +564,7 @@
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle
+    SUBDIR += trlan
     SUBDIR += truthtable
     SUBDIR += tvmet
     SUBDIR += umatrix
