@@ -570,6 +570,7 @@ lib/asterisk/modules/codec_g726.so
 %%WITH_GSM%%lib/asterisk/modules/codec_gsm.so
 %%WITH_ILBC%%lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
+lib/asterisk/modules/codec_resample.so
 lib/asterisk/modules/codec_speex.so
 lib/asterisk/modules/codec_ulaw.so
 lib/asterisk/modules/format_g723.so
@@ -667,6 +668,7 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.21
 share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.21
 share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.21
 share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.21
@@ -1124,7 +1126,6 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.21
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
@@ -1151,10 +1152,7 @@ share/asterisk/static-http/mantest.html
 @dirrm share/asterisk/sounds/en/followme
 @dirrm share/asterisk/sounds/en/digits
 @dirrm share/asterisk/sounds/en/dictate
-@dirrm share/asterisk/sounds/en_AU
 @dirrm share/asterisk/sounds/en
-@dirrm share/asterisk/sounds/es
-@dirrm share/asterisk/sounds/fr
 @dirrm share/asterisk/sounds
 @dirrm share/asterisk/phoneprov
 @dirrm share/asterisk/moh
