@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scss
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/
@@ -15,9 +15,9 @@ MASTER_SITES=	SAVANNAH \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A Scheme module for W3C Cascading Stylesheets recommendation
 
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
-
 LICENSE=	GPLv3
+
+RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 NO_BUILD=	yes
 
