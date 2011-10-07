@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.1.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort
 
@@ -19,9 +19,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	daq>=0.6.1:${PORTSDIR}/net/daq \
+BUILD_DEPENDS=	daq>=0.6.2:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
-RUN_DEPENDS=	daq>=0.6.1:${PORTSDIR}/net/daq \
+RUN_DEPENDS=	daq>=0.6.2:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
 OPTIONS=	IPV6 "Enable IPv6 support" on \

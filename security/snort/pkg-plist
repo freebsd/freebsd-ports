@@ -60,8 +60,10 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_packet.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_plugin_api.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_types.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfcontrol.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfghash.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfhashfcn.h
+%%DYNAMIC%%src/snort_dynamicsrc/idle_processing.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/signature.h
@@ -86,7 +88,9 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%include/snort/dynamic_preproc/cpuclock.h
 %%DYNAMIC%%include/snort/dynamic_preproc/profiler.h
 %%DYNAMIC%%include/snort/dynamic_preproc/bitop.h
+%%DYNAMIC%%include/snort/dynamic_preproc/idle_processing.h
 %%DYNAMIC%%include/snort/dynamic_preproc/mempool.h
+%%DYNAMIC%%include/snort/dynamic_preproc/segment_mem.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_sdlist_types.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_ip.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_dynamic_common.h
@@ -95,10 +99,13 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_dynamic_meta.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_dynamic_preprocessor.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_dynamic_preproc_lib.h
+%%DYNAMIC%%include/snort/dynamic_preproc/sfcontrol.h
 %%DYNAMIC%%include/snort/dynamic_preproc/ipv6_port.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfPolicy.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfrt.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfrt_dir.h
+%%DYNAMIC%%include/snort/dynamic_preproc/sfrt_flat.h
+%%DYNAMIC%%include/snort/dynamic_preproc/sfrt_flat_dir.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfrt_trie.h
 %%DYNAMIC%%include/snort/dynamic_preproc/obfuscation.h
 %%DYNAMIC%%include/snort/dynamic_preproc/stream_api.h
