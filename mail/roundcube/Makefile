@@ -7,6 +7,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -17,8 +18,6 @@ COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-IGNORE=		doesn't work, a fix will be committed tomorrow
 
 NO_BUILD=	yes
 CONFLICTS=	ja-roundcube-[0-9]*

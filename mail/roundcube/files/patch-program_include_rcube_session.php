@@ -1,5 +1,5 @@
---- program/include/rcube_session.php.orig	2011-09-21 14:22:40.000000000 +0200
-+++ program/include/rcube_session.php	2011-10-04 18:06:20.000000000 +0200
+--- program/include/rcube_session.php.orig	2011-10-07 08:21:40.000000000 +0200
++++ program/include/rcube_session.php	2011-10-07 08:28:55.000000000 +0200
 @@ -33,7 +33,6 @@
    private $ip;
    private $start;
@@ -17,24 +17,23 @@
        $this->key     = $key;
  
        if (!empty($this->vars))
-@@ -169,15 +168,7 @@
+@@ -169,13 +168,13 @@
      }
  
      if ($oldvars !== false) {
 -      $newvars = $this->_fixvars($vars, $oldvars);
--
--      if ($newvars !== $oldvars) {
--        $this->db->query(
--          sprintf("UPDATE %s SET vars=?, changed=%s WHERE sess_id=?",
--            get_table_name('session'), $now),
++      $newvars = $vars;
+ 
+       if ($newvars !== $oldvars) {
+         $this->db->query(
+           sprintf("UPDATE %s SET vars=?, changed=%s WHERE sess_id=?",
+             get_table_name('session'), $now),
 -          base64_encode($newvars), $key);
--      }
--      else if ($ts - $this->changed > $this->lifetime / 2) {
-+      if ($ts - $this->changed > $this->lifetime / 2) {
-         $this->db->query("UPDATE ".get_table_name('session')." SET changed=$now WHERE sess_id=?", $key);
++          $newvars, $key);
        }
-     }
-@@ -186,7 +177,7 @@
+       else if ($ts - $this->changed > $this->lifetime / 2) {
+         $this->db->query("UPDATE ".get_table_name('session')." SET changed=$now WHERE sess_id=?", $key);
+@@ -186,7 +185,7 @@
          sprintf("INSERT INTO %s (sess_id, vars, ip, created, changed) ".
            "VALUES (?, ?, ?, %s, %s)",
            get_table_name('session'), $now, $now),
@@ -43,7 +42,7 @@
      }
  
      return true;
-@@ -194,29 +185,6 @@
+@@ -194,29 +193,6 @@
  
  
    /**
@@ -73,16 +72,16 @@
     * Handler for session_destroy()
     *
     * @param string Session ID
-@@ -295,7 +263,7 @@
+@@ -295,7 +271,7 @@
      else // else read data again
        $oldvars = $this->mc_read($key);
  
 -    $newvars = $oldvars !== false ? $this->_fixvars($vars, $oldvars) : $vars;
-+    $newvars = $oldvars !== false ? $oldvars : $vars;
++    $newvars = $vars;
      
      if ($newvars !== $oldvars || $ts - $this->changed > $this->lifetime / 2) {
        $value = serialize(array('changed' => time(), 'ip' => $this->ip, 'vars' => $newvars));
-@@ -386,7 +354,6 @@
+@@ -386,7 +362,6 @@
      if (empty($var))
        return $this->destroy(session_id());
  
