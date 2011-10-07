@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple .ini files emitter and parser for Perl
 
-RUN_DEPENDS+=   p5-Mixin-Linewise>=0:${PORTSDIR}/devel/p5-Mixin-Linewise \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS+=	p5-Mixin-Linewise>=0:${PORTSDIR}/devel/p5-Mixin-Linewise \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
 PERL_CONFIGURE=	yes
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 MAN3=		Config::INI.3 \
 		Config::INI::Reader.3 \

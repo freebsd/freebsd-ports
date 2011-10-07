@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Perl extension for starting a text editor
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 

@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple git-compatible config file parser for Perl
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	devel/p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -27,8 +30,5 @@ MAN3+=		Config::GitLike::Git.3 \
 		Config::GitLike.3
 
 PERL_CONFIGURE=	yes
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 .include <bsd.port.mk>

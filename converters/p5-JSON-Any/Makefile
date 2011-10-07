@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Wrapper Class for the various JSON classes
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
 RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 

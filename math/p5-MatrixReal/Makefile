@@ -15,8 +15,8 @@ DISTNAME=	Math-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module implementing a Matrix of Reals
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	YES
 

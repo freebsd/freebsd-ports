@@ -13,18 +13,18 @@ MASTER_SITE_SUBDIR=	CPAN:SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	sugary dispatcher for perl
+COMMENT=	Sugary dispatcher for perl
 
-PERL_CONFIGURE=	yes
-
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Path-Dispatcher>=1.02:${PORTSDIR}/devel/p5-Path-Dispatcher \
 		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=	Path::Dispatcher::Declarative.3
 

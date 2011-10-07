@@ -15,13 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Moose role for processing command line options
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-MooseX-Role-Parameterized>0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
 		p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 

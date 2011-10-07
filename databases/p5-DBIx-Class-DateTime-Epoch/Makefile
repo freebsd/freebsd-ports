@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatic inflation/deflation of epoch-based DateTime objects
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBIx-Class-TimeStamp>=0.11:${PORTSDIR}/databases/p5-DBIx-Class-TimeStamp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PDF manipulation library
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Crypt-RC4>=2.02:${PORTSDIR}/security/p5-Crypt-RC4 \
 		p5-Text-PDF>=0.29:${PORTSDIR}/print/p5-Text-PDF

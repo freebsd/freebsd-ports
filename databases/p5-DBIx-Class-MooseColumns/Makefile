@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Allow write DBIC add_column definitions as attribute options
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Moose>=1.24:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 

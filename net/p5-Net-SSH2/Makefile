@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Support for the SSH 2 protocol via libSSH2
 
-LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
-
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+
+LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
 
 PERL_CONFIGURE=	yes
 

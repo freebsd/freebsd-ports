@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An HTTP mobile user agent string parser for Perl
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-libwww>=1.43:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
