@@ -229,6 +229,7 @@ go/src/Make.pkg
 %%PORTDOCS%%%%DOCSDIR%%/community.html
 %%PORTDOCS%%%%DOCSDIR%%/contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/contribute.html
+%%PORTDOCS%%%%DOCSDIR%%/debugging_with_gdb.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/index.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/release.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/roadmap.html
