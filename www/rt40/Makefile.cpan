@@ -1,101 +1,133 @@
-##########################################################################################################
+###############################################################################
 ### File::Find       1.10                 core
 ### File::Glob       1.05                 core
 ### File::Spec       3.12         0.08    core
 ### Pod::Usage       1.33                 core
 ### Scalar::Util     1.18                 core
 ### Text::ParseWords 3.24                 core
-### Term::ReadLine	 					  core
-### Term::ReadKey	 					  core
+### Term::ReadLine	 		  core
+### 
+### Digest::base                          core
+### Time::HiRes                           core
+### Errno                                 core
+### CGI					  core
+### CGI::Cookie                           core
+### Storable                              core
+### Getopt::Long			  core
+### Pod::Usage				  core
+### File::Find				  core
+### Net::SMTP				  core
+### Digest::MD5			2.39	  core
+### Digest::SHA			5.47	  core
+### File::Temp			0.22	  core
+### Sys::Syslog			0.27	  core
 
-CLI_DEPS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
-  			p5-Getopt-Long>=2.24:${PORTSDIR}/devel/p5-Getopt-Long \
-			p5-libwww>=5.823:${PORTSDIR}/www/p5-libwww \
-			p5-ReadLine-Perl>=1.0302:${PORTSDIR}/devel/p5-ReadLine-Perl \
-			p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay
+CORE_DEPS=	p5-CSS-Squish>=0.06:${PORTSDIR}/textproc/p5-CSS-Squish \
+		p5-Cache-Simple-TimedExpiry>0:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
+		p5-Class-Accessor>=0.34:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-ReturnValue>=0.40:${PORTSDIR}/devel/p5-Class-ReturnValue \
+		p5-DBI>=1.37:${PORTSDIR}/databases/p5-DBI \
+		p5-DBIx-SearchBuilder>=1.59:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
+		p5-DateTime-Locale>=0.40:${PORTSDIR}/devel/p5-DateTime-Locale \
+		p5-DateTime>=0.44:${PORTSDIR}/devel/p5-DateTime \
+		p5-Devel-GlobalDestruction>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
+		p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address \
+		p5-Encode>=2.39:${PORTSDIR}/converters/p5-Encode \
+		p5-File-ShareDir>0:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Quoted>0:${PORTSDIR}/textproc/p5-HTML-Quoted \
+		p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Locale-Maketext-Fuzzy>0:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
+		p5-Locale-Maketext-Lexicon>=0.32:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+		p5-Locale-Maketext>=1.06:${PORTSDIR}/devel/p5-Locale-Maketext \
+		p5-Log-Dispatch>=2.23:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-MIME-Tools>=5.425,2:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Mail-Tools>=1.57:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Module-Versions-Report>=1.05:${PORTSDIR}/devel/p5-Module-Versions-Report \
+		p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+		p5-Regexp-Common-net-CIDR>0:${PORTSDIR}/textproc/p5-Regexp-Common-net-CIDR \
+		p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-Regexp-IPv6>0:${PORTSDIR}/textproc/p5-Regexp-IPv6 \
+		p5-Text-Password-Pronounceable>0:${PORTSDIR}/security/p5-Text-Password-Pronounceable \
+		p5-Text-Quoted>=2.02:${PORTSDIR}/textproc/p5-Text-Quoted \
+		p5-Text-Template>=1.44:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-Text-Wrapper>0:${PORTSDIR}/textproc/p5-Text-Wrapper \
+		p5-Time-modules>0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-Tree-Simple>=1.04:${PORTSDIR}/devel/p5-Tree-Simple \
+		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-CORE_DEPS=	p5-Encode>=2.21:${PORTSDIR}/converters/p5-Encode \
-			p5-Class-ReturnValue>=0.55:${PORTSDIR}/devel/p5-Class-ReturnValue \
-  			p5-Text-Quoted>=2.05:${PORTSDIR}/textproc/p5-Text-Quoted \
-			p5-CSS-Squish>=0.07:${PORTSDIR}/textproc/p5-CSS-Squish \
-			p5-Module-Versions-Report>=1.05:${PORTSDIR}/devel/p5-Module-Versions-Report \
-			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
-			p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
-			p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp \
-			p5-Tree-Simple>=1.04:${PORTSDIR}/devel/p5-Tree-Simple \
-			p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
-			p5-DBIx-SearchBuilder>=1.54:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
-			p5-Mail-Tools>=1.57:${PORTSDIR}/mail/p5-Mail-Tools \
-			p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
-			p5-Cache-Simple-TimedExpiry>=0.27:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
-			p5-Text-Template>=1.44:${PORTSDIR}/textproc/p5-Text-Template \
-			p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
-			p5-Locale-Maketext>=1.06:${PORTSDIR}/devel/p5-Locale-Maketext \
-			p5-Locale-Maketext-Lexicon>=0.32:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-			p5-MIME-Tools>=5.425:${PORTSDIR}/mail/p5-MIME-Tools \
-			${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
-			${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-			${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-			${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
-			${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-			${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
-			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-			${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
-			${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-			p5-Parse-BooleanLogic>=0.09:${PORTSDIR}/textproc/p5-Parse-BooleanLogic
+MASON_DEPS=	p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session \
+		p5-HTML-Mason>=1.43:${PORTSDIR}/www/p5-HTML-Mason \
+		p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+		p5-Text-WikiFormat>=0.76:${PORTSDIR}/textproc/p5-Text-WikiFormat \
+		p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS
 
-DASHBOARD_DEPS=	p5-MIME-Types>=1.25:${PORTSDIR}/mail/p5-MIME-Types \
-			p5-HTML-RewriteAttributes>=0.02:${PORTSDIR}/textproc/p5-HTML-RewriteAttributes
+PSGI_DEPS=	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
+		p5-CGI-PSGI>=0.12:${PORTSDIR}/www/p5-CGI-PSGI \
+		p5-HTML-Mason-PSGIHandler>=0.52:${PORTSDIR}/www/p5-HTML-Mason-PSGIHandler \
+		p5-Plack>=0.9971:${PORTSDIR}/www/p5-Plack \
+		p5-Starlet>0:${PORTSDIR}/www/p5-Starlet
 
-DEV_DEPS=	${SITE_PERL}/Log/Dispatch/Perl.pm:${PORTSDIR}/devel/p5-Log-Dispatch-Perl \
-  			${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep \
-			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-			${SITE_PERL}/Module/Refresh>=0.03:${PORTSDIR}/devel/p5-Module-Refresh \
-			${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/devel/p5-String-ShellQuote \
-			${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-			${SITE_PERL}/IPC/Run3.pm:${PORTSDIR}/devel/p5-IPC-Run3 \
-			${SITE_PERL}/${PERL_ARCH}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-			${SITE_PERL}/Test/Expect.pm>=0.31:${PORTSDIR}/devel/p5-Test-Expect \
-			${SITE_PERL}/Test/WWW/Mechanize.pm>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-			${SITE_PERL}/Test/HTTP/Server/Simple.pm>=0.09:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
-			${SITE_PERL}/Test/Simple.pm>=0.77:${PORTSDIR}/devel/p5-Test-Simple \
-			${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-			${SITE_PERL}/Test/MockTime.pm:${PORTSDIR}/devel/p5-Test-MockTime \
-			${SITE_PERL}/HTTP/Server/Simple/Mason.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
+MAILGATE_DEPS=	p5-HTML-Format>0:${PORTSDIR}/textproc/p5-HTML-Format \
+		p5-HTML-Tree>0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+	
+CLI_DEPS=	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
+		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
 
-GD_DEPS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-			${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
-  			${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+# ports to add:
+# Test::Email
+# Test::Builder >= 0.90 
+# Plack::Middleware::Test::StashWarnings
+DEV_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract \
+		p5-HTML-Form>0:${PORTSDIR}/www/p5-HTML-Form \
+		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Log-Dispatch-Perl>0:${PORTSDIR}/devel/p5-Log-Dispatch-Perl \
+		p5-Module-Refresh>=0.03:${PORTSDIR}/devel/p5-Module-Refresh \
+		p5-String-ShellQuote>0:${PORTSDIR}/textproc/p5-String-ShellQuote \
+		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Expect>=0.31:${PORTSDIR}/devel/p5-Test-Expect \
+		p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString \
+		p5-Test-MockTime>0:${PORTSDIR}/devel/p5-Test-MockTime \
+		p5-Test-WWW-Mechanize-PSGI>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI \
+		p5-Test-WWW-Mechanize>=1.30:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		p5-Test-Warn>0:${PORTSDIR}devel/p5-Test-Warn \
+		p5-WWW-Mechanize>=1.52:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 
-GPG_DEPS=	${SITE_PERL}/${PERL_ARCH}/PerlIO/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eol \
-  			${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface 
+FASTCGI_DEPS=	p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager \
+		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI
 
-GRAPHVIZ_DEPS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-			${SITE_PERL}/IPC/Run/SafeHandles.pm:${PORTSDIR}/devel/p5-IPC-Run-SafeHandles \
-			${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
+MODPERL2_DEPS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
+		p5-Apache-DBI-mp2>0:${PORTSDIR}/www/p5-Apache-DBI-mp2
 
-ICAL_DEPS=	${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal
+MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql 
 
-MAILGATE_DEPS=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-			${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-			${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
-			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+ORACLE_DEPS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle
 
-MASON_DEPS=	p5-Storable>=2.08:${PORTSDIR}/devel/p5-Storable \
-  			p5-CSS-Squish>=0.07:${PORTSDIR}/textproc/p5-CSS-Squish \
-			p5-Text-WikiFormat>=0.79:${PORTSDIR}/textproc/p5-Text-WikiFormat \
-			p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
-			p5-Errno>=1.10:${PORTSDIR}/devel/p5-Errno \
-			p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session \
-			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
-			p5-CGI.pm>=1.20:${PORTSDIR}/www/p5-CGI.pm \
-			p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS \
-			p5-HTML-Mason>=1.36:${PORTSDIR}/www/p5-HTML-Mason
+POSTGRESQL_DEPS=	p5-DBD-Pg>=1.43:${PORTSDIR}/databases/p5-DBD-Pg
 
-SMTP_DEPS=	p5-Net>=1.22:${PORTSDIR}/net/p5-Net
+SQLITE_DEPS=	p5-DBD-SQLite>=1.00:${PORTSDIR}/databases/p5-DBD-SQLite
 
-STANDALONE_DEPS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
-				p5-HTTP-Server-Simple>=0.34:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-				p5-HTTP-Server-Simple-Mason>=0.09:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
+GPG_DEPS=	p5-GnuPG-Interface>0:${PORTSDIR}/security/p5-GnuPG-Interface \
+		p5-PerlIO-eol>0:${PORTSDIR}/devel/p5-PerlIO-eol
+
+ICAL_DEPS=	p5-Data-ICal>0:${PORTSDIR}/deskutils/p5-Data-ICal
+
+SMTP_DEPS=	## -- only needs perl core modules
+
+DASHBOARDS_DEPS=	p5-HTML-RewriteAttributes>=0.04:${PORTSDIR}/textproc/p5-HTML-RewriteAttributes \
+		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types
+
+GRAPHVIZ_DEPS=	p5-GraphViz>0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-IPC-Run>0:${PORTSDIR}/devel/p5-IPC-Run
+
+GD_DEPS=	p5-GD>0:${PORTSDIR}/graphics/p5-GD \
+		p5-GD-Graph>0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-GD-TextUtil>0:${PORTSDIR}/graphics/p5-GD-TextUtil 
+
+USERLOGO_DEPS=	p5-Convert-Color>0:${PORTSDIR}/graphics/p5-Convert-Color

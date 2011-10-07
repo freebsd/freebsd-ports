@@ -15,7 +15,7 @@ To complete the installation of this port, please follow these steps:
 If you're upgrading RT then it worth to read UPGRADING document at this
 moment. Some extension you're using may have been integrated into 
 core. It's recommended to use new clean directory when you're
-upgrading to new major release (for example from 3.6.x to 3.8.x).
+upgrading to new major release (for example from 3.8.x to 4.0.x).
 
 RT does not work with perl taint mode (-T) you must disable it.
 Note, some other ports like devel/bugzilla have you add this to your

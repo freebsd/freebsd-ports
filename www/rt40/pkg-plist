@@ -1,42 +1,27 @@
-@comment $FreeBSD$
-@unexec if cmp -s %D/etc/rt38/RT_SiteConfig.pm %D/etc/rt38/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt38/RT_SiteConfig.pm; fi
-@exec [ -f %D/etc/rt38/RT_SiteConfig.pm ] || cp %D/rt38/RT_SiteConfig.pm-dist %D/etc/rt38/RT_SiteConfig.pm
-bin/fastcgi_server
-bin/mason_handler.fcgi
-bin/mason_handler.scgi
-bin/mason_handler.svc
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
-bin/standalone_httpd
-bin/webmux.pl
-etc/rt38/RT_Config.pm
-etc/rt38/RT_SiteConfig.pm-dist
-etc/rt38/acl.Informix
-etc/rt38/acl.Oracle
-etc/rt38/acl.Pg
-etc/rt38/acl.Sybase
-etc/rt38/acl.mysql
-etc/rt38/initialdata
-etc/rt38/schema.Informix
-etc/rt38/schema.Oracle
-etc/rt38/schema.Pg
-etc/rt38/schema.SQLite
-etc/rt38/schema.Sybase
-etc/rt38/schema.mysql-4.0
-etc/rt38/schema.mysql-4.1
+etc/rt40/RT_Config.pm
+@unexec if cmp -s %D/etc/rt40/RT_SiteConfig.pm %D/etc/rt40/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt40/RT_SiteConfig.pm; fi
+etc/rt40/RT_SiteConfig.pm-dist
+@exec [ -f %B/RT_SiteConfig.pm ] || cp -p %B/%f %B/RT_SiteConfig.pm
+etc/rt40/acl.Oracle
+etc/rt40/acl.Pg
+etc/rt40/acl.mysql
+etc/rt40/initialdata
+etc/rt40/schema.Oracle
+etc/rt40/schema.Pg
+etc/rt40/schema.SQLite
+etc/rt40/schema.mysql
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
-%%SITE_PERL%%/RT/ACE_Overlay.pm
 %%SITE_PERL%%/RT/ACL.pm
-%%SITE_PERL%%/RT/ACL_Overlay.pm
 %%SITE_PERL%%/RT/Action.pm
 %%SITE_PERL%%/RT/Action/AutoOpen.pm
 %%SITE_PERL%%/RT/Action/Autoreply.pm
 %%SITE_PERL%%/RT/Action/CreateTickets.pm
 %%SITE_PERL%%/RT/Action/EscalatePriority.pm
 %%SITE_PERL%%/RT/Action/ExtractSubjectTag.pm
-%%SITE_PERL%%/RT/Action/Generic.pm
 %%SITE_PERL%%/RT/Action/LinearEscalate.pm
 %%SITE_PERL%%/RT/Action/Notify.pm
 %%SITE_PERL%%/RT/Action/NotifyAsComment.pm
@@ -44,9 +29,9 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Action/NotifyGroupAsComment.pm
 %%SITE_PERL%%/RT/Action/RecordComment.pm
 %%SITE_PERL%%/RT/Action/RecordCorrespondence.pm
-%%SITE_PERL%%/RT/Action/ResolveMembers.pm
 %%SITE_PERL%%/RT/Action/SendEmail.pm
 %%SITE_PERL%%/RT/Action/SetPriority.pm
+%%SITE_PERL%%/RT/Action/SetStatus.pm
 %%SITE_PERL%%/RT/Action/UserDefined.pm
 %%SITE_PERL%%/RT/Approval.pm
 %%SITE_PERL%%/RT/Approval/Rule.pm
@@ -54,24 +39,21 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Approval/Rule/NewPending.pm
 %%SITE_PERL%%/RT/Approval/Rule/Passed.pm
 %%SITE_PERL%%/RT/Approval/Rule/Rejected.pm
+%%SITE_PERL%%/RT/Article.pm
+%%SITE_PERL%%/RT/Articles.pm
 %%SITE_PERL%%/RT/Attachment.pm
-%%SITE_PERL%%/RT/Attachment_Overlay.pm
 %%SITE_PERL%%/RT/Attachments.pm
-%%SITE_PERL%%/RT/Attachments_Overlay.pm
 %%SITE_PERL%%/RT/Attribute.pm
-%%SITE_PERL%%/RT/Attribute_Overlay.pm
 %%SITE_PERL%%/RT/Attributes.pm
-%%SITE_PERL%%/RT/Attributes_Overlay.pm
 %%SITE_PERL%%/RT/Base.pm
 %%SITE_PERL%%/RT/CachedGroupMember.pm
-%%SITE_PERL%%/RT/CachedGroupMember_Overlay.pm
 %%SITE_PERL%%/RT/CachedGroupMembers.pm
-%%SITE_PERL%%/RT/CachedGroupMembers_Overlay.pm
+%%SITE_PERL%%/RT/Class.pm
+%%SITE_PERL%%/RT/Classes.pm
 %%SITE_PERL%%/RT/Condition.pm
 %%SITE_PERL%%/RT/Condition/AnyTransaction.pm
 %%SITE_PERL%%/RT/Condition/BeforeDue.pm
 %%SITE_PERL%%/RT/Condition/CloseTicket.pm
-%%SITE_PERL%%/RT/Condition/Generic.pm
 %%SITE_PERL%%/RT/Condition/Overdue.pm
 %%SITE_PERL%%/RT/Condition/OwnerChange.pm
 %%SITE_PERL%%/RT/Condition/PriorityChange.pm
@@ -85,105 +67,56 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/CurrentUser.pm
 %%SITE_PERL%%/RT/CustomField.pm
 %%SITE_PERL%%/RT/CustomFieldValue.pm
-%%SITE_PERL%%/RT/CustomFieldValue_Overlay.pm
 %%SITE_PERL%%/RT/CustomFieldValues.pm
 %%SITE_PERL%%/RT/CustomFieldValues/External.pm
 %%SITE_PERL%%/RT/CustomFieldValues/Groups.pm
-%%SITE_PERL%%/RT/CustomFieldValues_Overlay.pm
-%%SITE_PERL%%/RT/CustomField_Overlay.pm
 %%SITE_PERL%%/RT/CustomFields.pm
-%%SITE_PERL%%/RT/CustomFields_Overlay.pm
 %%SITE_PERL%%/RT/Dashboard.pm
+%%SITE_PERL%%/RT/Dashboard/Mailer.pm
+%%SITE_PERL%%/RT/Dashboards.pm
 %%SITE_PERL%%/RT/Date.pm
 %%SITE_PERL%%/RT/EmailParser.pm
+%%SITE_PERL%%/RT/Generated.pm
+%%SITE_PERL%%/RT/Generated.pm.in
 %%SITE_PERL%%/RT/Graph/Tickets.pm
 %%SITE_PERL%%/RT/Group.pm
 %%SITE_PERL%%/RT/GroupMember.pm
-%%SITE_PERL%%/RT/GroupMember_Overlay.pm
 %%SITE_PERL%%/RT/GroupMembers.pm
-%%SITE_PERL%%/RT/GroupMembers_Overlay.pm
-%%SITE_PERL%%/RT/Group_Overlay.pm
 %%SITE_PERL%%/RT/Groups.pm
-%%SITE_PERL%%/RT/Groups_Overlay.pm
 %%SITE_PERL%%/RT/Handle.pm
 %%SITE_PERL%%/RT/I18N.pm
-%%SITE_PERL%%/RT/I18N/ar.po
-%%SITE_PERL%%/RT/I18N/bg.po
 %%SITE_PERL%%/RT/I18N/cs.pm
-%%SITE_PERL%%/RT/I18N/cs.po
-%%SITE_PERL%%/RT/I18N/da.po
-%%SITE_PERL%%/RT/I18N/de.po
-%%SITE_PERL%%/RT/I18N/el.po
-%%SITE_PERL%%/RT/I18N/en.po
-%%SITE_PERL%%/RT/I18N/en_GB.po
-%%SITE_PERL%%/RT/I18N/es.po
-%%SITE_PERL%%/RT/I18N/et.po
-%%SITE_PERL%%/RT/I18N/fi.po
-%%SITE_PERL%%/RT/I18N/fr.po
-%%SITE_PERL%%/RT/I18N/he.po
-%%SITE_PERL%%/RT/I18N/hr.po
-%%SITE_PERL%%/RT/I18N/hu.po
 %%SITE_PERL%%/RT/I18N/i_default.pm
-%%SITE_PERL%%/RT/I18N/id.po
-%%SITE_PERL%%/RT/I18N/is.po
-%%SITE_PERL%%/RT/I18N/it.po
-%%SITE_PERL%%/RT/I18N/ja.po
-%%SITE_PERL%%/RT/I18N/lt.po
-%%SITE_PERL%%/RT/I18N/lv.po
-%%SITE_PERL%%/RT/I18N/mk.po
-%%SITE_PERL%%/RT/I18N/nb.po
-%%SITE_PERL%%/RT/I18N/nl.po
-%%SITE_PERL%%/RT/I18N/nn.po
-%%SITE_PERL%%/RT/I18N/pl.po
-%%SITE_PERL%%/RT/I18N/pt.po
-%%SITE_PERL%%/RT/I18N/pt_BR.po
-%%SITE_PERL%%/RT/I18N/pt_PT.po
-%%SITE_PERL%%/RT/I18N/rt.pot
 %%SITE_PERL%%/RT/I18N/ru.pm
-%%SITE_PERL%%/RT/I18N/ru.po
-%%SITE_PERL%%/RT/I18N/sl.po
-%%SITE_PERL%%/RT/I18N/sv.po
-%%SITE_PERL%%/RT/I18N/tr.po
-%%SITE_PERL%%/RT/I18N/zh_CN.po
-%%SITE_PERL%%/RT/I18N/zh_TW.po
 %%SITE_PERL%%/RT/Installer.pm
 %%SITE_PERL%%/RT/Interface/CLI.pm
 %%SITE_PERL%%/RT/Interface/Email.pm
 %%SITE_PERL%%/RT/Interface/Email/Auth/GnuPG.pm
 %%SITE_PERL%%/RT/Interface/Email/Auth/MailFrom.pm
-%%SITE_PERL%%/RT/Interface/Email/Filter/SpamAssassin.pm
 %%SITE_PERL%%/RT/Interface/REST.pm
 %%SITE_PERL%%/RT/Interface/Web.pm
 %%SITE_PERL%%/RT/Interface/Web/Handler.pm
 %%SITE_PERL%%/RT/Interface/Web/Menu.pm
-%%SITE_PERL%%/RT/Interface/Web/Menu/Item.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder/Tree.pm
 %%SITE_PERL%%/RT/Interface/Web/Request.pm
 %%SITE_PERL%%/RT/Interface/Web/Session.pm
-%%SITE_PERL%%/RT/Interface/Web/Standalone.pm
-%%SITE_PERL%%/RT/Interface/Web/Standalone/PreFork.pm
+%%SITE_PERL%%/RT/Lifecycle.pm
 %%SITE_PERL%%/RT/Link.pm
-%%SITE_PERL%%/RT/Link_Overlay.pm
 %%SITE_PERL%%/RT/Links.pm
-%%SITE_PERL%%/RT/Links_Overlay.pm
+%%SITE_PERL%%/RT/ObjectClass.pm
+%%SITE_PERL%%/RT/ObjectClasses.pm
 %%SITE_PERL%%/RT/ObjectCustomField.pm
 %%SITE_PERL%%/RT/ObjectCustomFieldValue.pm
-%%SITE_PERL%%/RT/ObjectCustomFieldValue_Overlay.pm
 %%SITE_PERL%%/RT/ObjectCustomFieldValues.pm
-%%SITE_PERL%%/RT/ObjectCustomFieldValues_Overlay.pm
-%%SITE_PERL%%/RT/ObjectCustomField_Overlay.pm
 %%SITE_PERL%%/RT/ObjectCustomFields.pm
-%%SITE_PERL%%/RT/ObjectCustomFields_Overlay.pm
+%%SITE_PERL%%/RT/ObjectTopic.pm
+%%SITE_PERL%%/RT/ObjectTopics.pm
 %%SITE_PERL%%/RT/Plugin.pm
 %%SITE_PERL%%/RT/Principal.pm
-%%SITE_PERL%%/RT/Principal_Overlay.pm
 %%SITE_PERL%%/RT/Principals.pm
-%%SITE_PERL%%/RT/Principals_Overlay.pm
 %%SITE_PERL%%/RT/Queue.pm
-%%SITE_PERL%%/RT/Queue_Overlay.pm
 %%SITE_PERL%%/RT/Queues.pm
-%%SITE_PERL%%/RT/Queues_Overlay.pm
 %%SITE_PERL%%/RT/Record.pm
 %%SITE_PERL%%/RT/Reminders.pm
 %%SITE_PERL%%/RT/Report/Tickets.pm
@@ -195,23 +128,17 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/SavedSearches.pm
 %%SITE_PERL%%/RT/Scrip.pm
 %%SITE_PERL%%/RT/ScripAction.pm
-%%SITE_PERL%%/RT/ScripAction_Overlay.pm
 %%SITE_PERL%%/RT/ScripActions.pm
-%%SITE_PERL%%/RT/ScripActions_Overlay.pm
 %%SITE_PERL%%/RT/ScripCondition.pm
-%%SITE_PERL%%/RT/ScripCondition_Overlay.pm
 %%SITE_PERL%%/RT/ScripConditions.pm
-%%SITE_PERL%%/RT/ScripConditions_Overlay.pm
-%%SITE_PERL%%/RT/Scrip_Overlay.pm
 %%SITE_PERL%%/RT/Scrips.pm
-%%SITE_PERL%%/RT/Scrips_Overlay.pm
 %%SITE_PERL%%/RT/Search.pm
 %%SITE_PERL%%/RT/Search/ActiveTicketsInQueue.pm
 %%SITE_PERL%%/RT/Search/FromSQL.pm
-%%SITE_PERL%%/RT/Search/Generic.pm
 %%SITE_PERL%%/RT/Search/Googleish.pm
 %%SITE_PERL%%/RT/SearchBuilder.pm
 %%SITE_PERL%%/RT/SharedSetting.pm
+%%SITE_PERL%%/RT/SharedSettings.pm
 %%SITE_PERL%%/RT/Shredder.pm
 %%SITE_PERL%%/RT/Shredder/ACE.pm
 %%SITE_PERL%%/RT/Shredder/Attachment.pm
@@ -247,1092 +174,1203 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Shredder/Ticket.pm
 %%SITE_PERL%%/RT/Shredder/Transaction.pm
 %%SITE_PERL%%/RT/Shredder/User.pm
+%%SITE_PERL%%/RT/Squish.pm
+%%SITE_PERL%%/RT/Squish/CSS.pm
+%%SITE_PERL%%/RT/Squish/JS.pm
 %%SITE_PERL%%/RT/StyleGuide.pod
 %%SITE_PERL%%/RT/System.pm
 %%SITE_PERL%%/RT/Template.pm
-%%SITE_PERL%%/RT/Template_Overlay.pm
 %%SITE_PERL%%/RT/Templates.pm
-%%SITE_PERL%%/RT/Templates_Overlay.pm
 %%SITE_PERL%%/RT/Test.pm
+%%SITE_PERL%%/RT/Test/Apache.pm
 %%SITE_PERL%%/RT/Test/Email.pm
+%%SITE_PERL%%/RT/Test/GnuPG.pm
 %%SITE_PERL%%/RT/Test/Web.pm
 %%SITE_PERL%%/RT/Ticket.pm
-%%SITE_PERL%%/RT/Ticket_Overlay.pm
 %%SITE_PERL%%/RT/Tickets.pm
-%%SITE_PERL%%/RT/Tickets_Overlay.pm
-%%SITE_PERL%%/RT/Tickets_Overlay_SQL.pm
+%%SITE_PERL%%/RT/Tickets_SQL.pm
+%%SITE_PERL%%/RT/Topic.pm
+%%SITE_PERL%%/RT/Topics.pm
 %%SITE_PERL%%/RT/Transaction.pm
-%%SITE_PERL%%/RT/Transaction_Overlay.pm
 %%SITE_PERL%%/RT/Transactions.pm
-%%SITE_PERL%%/RT/Transactions_Overlay.pm
 %%SITE_PERL%%/RT/URI.pm
+%%SITE_PERL%%/RT/URI/a.pm
 %%SITE_PERL%%/RT/URI/base.pm
+%%SITE_PERL%%/RT/URI/fsck_com_article.pm
 %%SITE_PERL%%/RT/URI/fsck_com_rt.pm
 %%SITE_PERL%%/RT/URI/t.pm
 %%SITE_PERL%%/RT/User.pm
-%%SITE_PERL%%/RT/User_Overlay.pm
 %%SITE_PERL%%/RT/Users.pm
-%%SITE_PERL%%/RT/Users_Overlay.pm
 %%SITE_PERL%%/RT/Util.pm
 sbin/rt-attributes-viewer
 sbin/rt-clean-sessions
-sbin/rt-dump-database
+sbin/rt-dump-metadata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
 sbin/rt-email-group-admin
+sbin/rt-fulltext-indexer
+sbin/rt-preferences-viewer
 sbin/rt-server
+sbin/rt-server.fcgi
+sbin/rt-session-viewer
 sbin/rt-setup-database
+sbin/rt-setup-fulltext-index
 sbin/rt-shredder
 sbin/rt-test-dependencies
 sbin/rt-validator
+sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/rt38/fonts/Droid.README
-share/rt38/fonts/DroidSans.ttf
-share/rt38/fonts/DroidSansFallback.ttf
-share/rt38/html/Admin/CustomFields/GroupRights.html
-share/rt38/html/Admin/CustomFields/Modify.html
-share/rt38/html/Admin/CustomFields/Objects.html
-share/rt38/html/Admin/CustomFields/UserRights.html
-share/rt38/html/Admin/CustomFields/index.html
-share/rt38/html/Admin/Elements/AddCustomFieldValue
-share/rt38/html/Admin/Elements/ConfigureMyRT
-share/rt38/html/Admin/Elements/CreateUserCalled
-share/rt38/html/Admin/Elements/CustomFieldTabs
-share/rt38/html/Admin/Elements/EditCustomField
-share/rt38/html/Admin/Elements/EditCustomFieldValues
-share/rt38/html/Admin/Elements/EditCustomFieldValuesSource
-share/rt38/html/Admin/Elements/EditCustomFields
-share/rt38/html/Admin/Elements/EditQueueWatchers
-share/rt38/html/Admin/Elements/EditScrip
-share/rt38/html/Admin/Elements/EditScrips
-share/rt38/html/Admin/Elements/EditTemplates
-share/rt38/html/Admin/Elements/EditUserComments
-share/rt38/html/Admin/Elements/GlobalCustomFieldTabs
-share/rt38/html/Admin/Elements/GroupTabs
-share/rt38/html/Admin/Elements/Header
-share/rt38/html/Admin/Elements/ListGlobalCustomFields
-share/rt38/html/Admin/Elements/ListGlobalScrips
-share/rt38/html/Admin/Elements/ModifyTemplate
-share/rt38/html/Admin/Elements/ObjectCustomFields
-share/rt38/html/Admin/Elements/PickCustomFields
-share/rt38/html/Admin/Elements/PickObjects
-share/rt38/html/Admin/Elements/QueueRightsForUser
-share/rt38/html/Admin/Elements/QueueTabs
-share/rt38/html/Admin/Elements/SelectCustomField
-share/rt38/html/Admin/Elements/SelectCustomFieldLookupType
-share/rt38/html/Admin/Elements/SelectCustomFieldType
-share/rt38/html/Admin/Elements/SelectGroups
-share/rt38/html/Admin/Elements/SelectModifyGroup
-share/rt38/html/Admin/Elements/SelectModifyQueue
-share/rt38/html/Admin/Elements/SelectModifyUser
-share/rt38/html/Admin/Elements/SelectNewGroupMembers
-share/rt38/html/Admin/Elements/SelectRights
-share/rt38/html/Admin/Elements/SelectScrip
-share/rt38/html/Admin/Elements/SelectScripAction
-share/rt38/html/Admin/Elements/SelectScripCondition
-share/rt38/html/Admin/Elements/SelectSingleOrMultiple
-share/rt38/html/Admin/Elements/SelectStage
-share/rt38/html/Admin/Elements/SelectTemplate
-share/rt38/html/Admin/Elements/SelectUsers
-share/rt38/html/Admin/Elements/ShowKeyInfo
-share/rt38/html/Admin/Elements/SystemTabs
-share/rt38/html/Admin/Elements/Tabs
-share/rt38/html/Admin/Elements/ToolTabs
-share/rt38/html/Admin/Elements/UserTabs
-share/rt38/html/Admin/Global/CustomFields/Groups.html
-share/rt38/html/Admin/Global/CustomFields/Queue-Tickets.html
-share/rt38/html/Admin/Global/CustomFields/Queue-Transactions.html
-share/rt38/html/Admin/Global/CustomFields/Queues.html
-share/rt38/html/Admin/Global/CustomFields/Users.html
-share/rt38/html/Admin/Global/CustomFields/index.html
-share/rt38/html/Admin/Global/GroupRights.html
-share/rt38/html/Admin/Global/MyRT.html
-share/rt38/html/Admin/Global/Scrip.html
-share/rt38/html/Admin/Global/Scrips.html
-share/rt38/html/Admin/Global/Template.html
-share/rt38/html/Admin/Global/Templates.html
-share/rt38/html/Admin/Global/UserRights.html
-share/rt38/html/Admin/Global/index.html
-share/rt38/html/Admin/Groups/CustomFields.html
-share/rt38/html/Admin/Groups/GroupRights.html
-share/rt38/html/Admin/Groups/History.html
-share/rt38/html/Admin/Groups/Members.html
-share/rt38/html/Admin/Groups/Modify.html
-share/rt38/html/Admin/Groups/UserRights.html
-share/rt38/html/Admin/Groups/index.html
-share/rt38/html/Admin/Queues/CustomField.html
-share/rt38/html/Admin/Queues/CustomFields.html
-share/rt38/html/Admin/Queues/GroupRights.html
-share/rt38/html/Admin/Queues/History.html
-share/rt38/html/Admin/Queues/Modify.html
-share/rt38/html/Admin/Queues/People.html
-share/rt38/html/Admin/Queues/Scrip.html
-share/rt38/html/Admin/Queues/Scrips.html
-share/rt38/html/Admin/Queues/Template.html
-share/rt38/html/Admin/Queues/Templates.html
-share/rt38/html/Admin/Queues/UserRights.html
-share/rt38/html/Admin/Queues/index.html
-share/rt38/html/Admin/Tools/Configuration.html
-share/rt38/html/Admin/Tools/Shredder/Dumps/dhandler
-share/rt38/html/Admin/Tools/Shredder/Elements/DumpFileLink
-share/rt38/html/Admin/Tools/Shredder/Elements/Error/NoRights
-share/rt38/html/Admin/Tools/Shredder/Elements/Error/NoStorage
-share/rt38/html/Admin/Tools/Shredder/Elements/Object/RT--Attachment
-share/rt38/html/Admin/Tools/Shredder/Elements/Object/RT--Ticket
-share/rt38/html/Admin/Tools/Shredder/Elements/Object/RT--User
-share/rt38/html/Admin/Tools/Shredder/Elements/ObjectCheckBox
-share/rt38/html/Admin/Tools/Shredder/Elements/PluginArguments
-share/rt38/html/Admin/Tools/Shredder/Elements/PluginHelp
-share/rt38/html/Admin/Tools/Shredder/Elements/SelectObjects
-share/rt38/html/Admin/Tools/Shredder/Elements/SelectPlugin
-share/rt38/html/Admin/Tools/Shredder/autohandler
-share/rt38/html/Admin/Tools/Shredder/index.html
-share/rt38/html/Admin/Tools/index.html
-share/rt38/html/Admin/Users/CustomFields.html
-share/rt38/html/Admin/Users/GnuPG.html
-share/rt38/html/Admin/Users/History.html
-share/rt38/html/Admin/Users/Memberships.html
-share/rt38/html/Admin/Users/Modify.html
-share/rt38/html/Admin/Users/MyRT.html
-share/rt38/html/Admin/Users/index.html
-share/rt38/html/Admin/autohandler
-share/rt38/html/Admin/index.html
-share/rt38/html/Approvals/Display.html
-share/rt38/html/Approvals/Elements/Approve
-share/rt38/html/Approvals/Elements/PendingMyApproval
-share/rt38/html/Approvals/Elements/ShowDependency
-share/rt38/html/Approvals/Elements/Tabs
-share/rt38/html/Approvals/autohandler
-share/rt38/html/Approvals/index.html
-share/rt38/html/Dashboards/Elements/DashboardsForObject
-share/rt38/html/Dashboards/Elements/DashboardsForObjects
-share/rt38/html/Dashboards/Elements/Deleted
-share/rt38/html/Dashboards/Elements/HiddenSearches
-share/rt38/html/Dashboards/Elements/ListOfDashboards
-share/rt38/html/Dashboards/Elements/SelectPrivacy
-share/rt38/html/Dashboards/Elements/ShowDashboards
-share/rt38/html/Dashboards/Elements/ShowPortlet/component
-share/rt38/html/Dashboards/Elements/ShowPortlet/dashboard
-share/rt38/html/Dashboards/Elements/ShowPortlet/search
-share/rt38/html/Dashboards/Elements/ShowSubscription
-share/rt38/html/Dashboards/Elements/Tabs
-share/rt38/html/Dashboards/Modify.html
-share/rt38/html/Dashboards/Queries.html
-share/rt38/html/Dashboards/Render.html
-share/rt38/html/Dashboards/Subscription.html
-share/rt38/html/Dashboards/dhandler
-share/rt38/html/Dashboards/index.html
-share/rt38/html/Download/CustomFieldValue/dhandler
-share/rt38/html/Download/Tabular/dhandler
-share/rt38/html/Elements/BevelBoxRaisedEnd
-share/rt38/html/Elements/BevelBoxRaisedStart
-share/rt38/html/Elements/Callback
-share/rt38/html/Elements/Checkbox
-share/rt38/html/Elements/CollectionAsTable/Header
-share/rt38/html/Elements/CollectionAsTable/ParseFormat
-share/rt38/html/Elements/CollectionAsTable/Row
-share/rt38/html/Elements/CollectionList
-share/rt38/html/Elements/CollectionListPaging
-share/rt38/html/Elements/ColumnMap
-share/rt38/html/Elements/CreateTicket
-share/rt38/html/Elements/Dashboards
-share/rt38/html/Elements/DashboardTabs
-share/rt38/html/Elements/EditCustomField
-share/rt38/html/Elements/EditCustomFieldAutocomplete
-share/rt38/html/Elements/EditCustomFieldBinary
-share/rt38/html/Elements/EditCustomFieldCombobox
-share/rt38/html/Elements/EditCustomFieldFreeform
-share/rt38/html/Elements/EditCustomFieldImage
-share/rt38/html/Elements/EditCustomFieldSelect
-share/rt38/html/Elements/EditCustomFieldText
-share/rt38/html/Elements/EditCustomFieldWikitext
-share/rt38/html/Elements/EditLinks
-share/rt38/html/Elements/EditPassword
-share/rt38/html/Elements/EditTimeValue
-share/rt38/html/Elements/EmailInput
-share/rt38/html/Elements/Error
-share/rt38/html/Elements/Footer
-share/rt38/html/Elements/GnuPG/KeyIssues
-share/rt38/html/Elements/GnuPG/SelectKeyForEncryption
-share/rt38/html/Elements/GnuPG/SelectKeyForSigning
-share/rt38/html/Elements/GnuPG/SignEncryptWidget
-share/rt38/html/Elements/GotoTicket
-share/rt38/html/Elements/Header
-share/rt38/html/Elements/HeaderJavascript
-share/rt38/html/Elements/ListActions
-share/rt38/html/Elements/ListMenu
-share/rt38/html/Elements/Login
-share/rt38/html/Elements/Logo
-share/rt38/html/Elements/Logout
-share/rt38/html/Elements/MakeClicky
-share/rt38/html/Elements/Menu
-share/rt38/html/Elements/MessageBox
-share/rt38/html/Elements/MyAdminQueues
-share/rt38/html/Elements/MyRT
-share/rt38/html/Elements/MyReminders
-share/rt38/html/Elements/MyRequests
-share/rt38/html/Elements/MySupportQueues
-share/rt38/html/Elements/MyTickets
-share/rt38/html/Elements/PageLayout
-share/rt38/html/Elements/PersonalQuickbar
-share/rt38/html/Elements/QueryString
-share/rt38/html/Elements/QueueSummary
-share/rt38/html/Elements/QuickCreate
-share/rt38/html/Elements/Quicksearch
-share/rt38/html/Elements/RT__CustomField/ColumnMap
-share/rt38/html/Elements/RT__Group/ColumnMap
-share/rt38/html/Elements/RT__Queue/ColumnMap
-share/rt38/html/Elements/RT__Scrip/ColumnMap
-share/rt38/html/Elements/RT__Template/ColumnMap
-share/rt38/html/Elements/RT__Ticket/ColumnMap
-share/rt38/html/Elements/RT__User/ColumnMap
-share/rt38/html/Elements/Refresh
-share/rt38/html/Elements/RefreshHomepage
-share/rt38/html/Elements/ScrubHTML
-share/rt38/html/Elements/Section
-share/rt38/html/Elements/SelectAttachmentField
-share/rt38/html/Elements/SelectBoolean
-share/rt38/html/Elements/SelectCustomFieldOperator
-share/rt38/html/Elements/SelectCustomFieldValue
-share/rt38/html/Elements/SelectDate
-share/rt38/html/Elements/SelectDateRelation
-share/rt38/html/Elements/SelectDateType
-share/rt38/html/Elements/SelectEqualityOperator
-share/rt38/html/Elements/SelectGroups
-share/rt38/html/Elements/SelectLang
-share/rt38/html/Elements/SelectLinkType
-share/rt38/html/Elements/SelectMatch
-share/rt38/html/Elements/SelectNewTicketQueue
-share/rt38/html/Elements/SelectOwner
-share/rt38/html/Elements/SelectPriority
-share/rt38/html/Elements/SelectQueue
-share/rt38/html/Elements/SelectResultsPerPage
-share/rt38/html/Elements/SelectSortOrder
-share/rt38/html/Elements/SelectStatus
-share/rt38/html/Elements/SelectTicketSortBy
-share/rt38/html/Elements/SelectTicketTypes
-share/rt38/html/Elements/SelectTimeUnits
-share/rt38/html/Elements/SelectTimezone
-share/rt38/html/Elements/SelectUsers
-share/rt38/html/Elements/SelectWatcherType
-share/rt38/html/Elements/SetupSessionCookie
-share/rt38/html/Elements/ShowCustomFieldBinary
-share/rt38/html/Elements/ShowCustomFieldImage
-share/rt38/html/Elements/ShowCustomFieldText
-share/rt38/html/Elements/ShowCustomFieldWikitext
-share/rt38/html/Elements/ShowCustomFields
-share/rt38/html/Elements/ShowLink
-share/rt38/html/Elements/ShowLinks
-share/rt38/html/Elements/ShowMemberships
-share/rt38/html/Elements/ShowRelationLabel
-share/rt38/html/Elements/ShowSearch
-share/rt38/html/Elements/ShowUser
-share/rt38/html/Elements/ShowUserConcise
-share/rt38/html/Elements/ShowUserEmailFrequency
-share/rt38/html/Elements/ShowUserVerbose
-share/rt38/html/Elements/SimpleSearch
-share/rt38/html/Elements/Submit
-share/rt38/html/Elements/Tabs
-share/rt38/html/Elements/TicketList
-share/rt38/html/Elements/TitleBox
-share/rt38/html/Elements/TitleBoxEnd
-share/rt38/html/Elements/TitleBoxStart
-share/rt38/html/Elements/ValidateCustomFields
-share/rt38/html/Helpers/Autocomplete/CustomFieldValues
-share/rt38/html/Helpers/CalPopup.html
-share/rt38/html/Helpers/Toggle/TicketBookmark
-share/rt38/html/Install/Basics.html
-share/rt38/html/Install/DatabaseDetails.html
-share/rt38/html/Install/DatabaseType.html
-share/rt38/html/Install/Elements/Errors
-share/rt38/html/Install/Elements/Wrapper
-share/rt38/html/Install/Finish.html
-share/rt38/html/Install/Global.html
-share/rt38/html/Install/Initialize.html
-share/rt38/html/Install/Sendmail.html
-share/rt38/html/Install/autohandler
-share/rt38/html/Install/index.html
-share/rt38/html/NoAuth/Login.html
-share/rt38/html/NoAuth/Logout.html
-share/rt38/html/NoAuth/Reminder.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckcontextmenu.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdataprocessor.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdocumentfragment_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdocumentfragment_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrangeiterator.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckeditingarea.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckelementpath.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckenterkey.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckevents.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckhtmliterator.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckicon.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckiecleanup.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckimagepreloader.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckkeystrokehandler.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenublock.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenublockpanel.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenuitem.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckpanel.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckspecialcombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckstyle.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbar.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbreak_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbutton.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbuttonui.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontscombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarpanelbutton.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarspecialcombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarstylecombo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckw3crange.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fck_othercommands.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckblockquotecommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckcorestylecommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckfitwindow.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckindentcommands.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckjustifycommands.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcklistcommands.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcknamedcommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckpastewordcommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckremoveformatcommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckshowblocks.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckstylecommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcktablecommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcktextcolorcommand.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckconstants.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckeditorapi.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckjscoreextensions.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckscriptloader.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_contextmenu.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckbrowserinfo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckcodeformatter.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckcommands.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckconfig.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdebug.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdebug_empty.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdialog.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdocumentprocessor.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdomtools.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklanguagemanager.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklisthandler.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklistslib.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckplugins.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckregexlib.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckstyles.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktoolbaritems.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktoolbarset.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckundo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckurlparams.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtmlentities.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors/disablehandles.htc
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors/showtableborders.htc
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/fck_editorarea.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/fck_internal.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/fck_showtableborders_gecko.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_address.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_blockquote.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_div.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h1.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h2.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h3.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h4.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h5.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_h6.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_p.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/block_pre.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_anchor.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_flashlogo.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_hiddenfield.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_pagebreak.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_plugin.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/fck_dialog_common.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/fck_dialog_common.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images/locked.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images/reset.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images/unlocked.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/logo_fckeditor.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/logo_fredck.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_anchor.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_button.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_checkbox.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_colorselector.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_div.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash/fck_flash.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash/fck_flash_preview.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_form.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_hiddenfield.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_image.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_image/fck_image.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_image/fck_image_preview.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_link.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_link/fck_link.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_listprop.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_paste.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_radiobutton.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_replace.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_select.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_select/fck_select.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_smiley.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_source.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_specialchar.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.cfm
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_table.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_tablecell.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template/images/template1.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template/images/template2.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template/images/template3.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_textarea.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_textfield.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dtd/fck_dtd_test.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dtd/fck_xhtml10strict.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/dtd/fck_xhtml10transitional.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckdebug.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckdialog.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckeditor.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckeditor.original.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/anchor.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/arrow_ltr.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/arrow_rtl.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/angel_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/angry_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/broken_heart.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/cake.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/confused_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/cry_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/devil_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/embaressed_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/envelope.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/heart.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/kiss.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/lightbulb.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/omg_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/regular_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/sad_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/shades_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/teeth_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/thumbs_down.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/thumbs_up.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/tounge_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/wink_smile.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/spacer.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckadobeair.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckeditorcode_gecko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckeditorcode_ie.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/_translationstatus.txt
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/af.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ar.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/bg.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/bn.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/bs.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ca.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/cs.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/da.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/de.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/el.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/en-au.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/en-ca.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/en-uk.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/en.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/eo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/es.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/et.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/eu.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fa.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fi.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fo.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fr-ca.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fr.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/gl.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/gu.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/he.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hi.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hr.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hu.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/is.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/it.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ja.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/km.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ko.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/lt.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/lv.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/mn.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ms.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/nb.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/nl.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/no.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/pl.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/pt-br.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/pt.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ro.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/ru.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/sk.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/sl.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/sr-latn.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/sr.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/sv.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/th.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/tr.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/uk.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/vi.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/zh-cn.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/zh.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/autogrow/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/bbcode/_sample/sample.config.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/bbcode/_sample/sample.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/bbcode/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/dragresizetable/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/fck_placeholder.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/de.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/en.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/es.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/fr.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/it.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/pl.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/placeholder.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/simplecommands/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/tablecommands/fckplugin.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/_fckviewstrips.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_dialog.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_dialog_ie6.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_editor.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_strip.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.rtl.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/sprites.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/sprites.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.arrowright.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.buttonarrow.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.collapse.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.end.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.expand.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.separator.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.start.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_dialog.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_dialog_ie6.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_editor.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_strip.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.rtl.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/sprites.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/sprites.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.arrowright.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.bg.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.collapse.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.end.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.expand.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.separator.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.start.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_dialog.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_dialog_ie6.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_editor.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_strip.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.rtl.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/sprites.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/sprites.png
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.arrowright.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.buttonarrow.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.buttonbg.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.collapse.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.end.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.expand.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.start.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/ciframe.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/tmpFrameset.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc/w.html
-share/rt38/html/NoAuth/RichText/FCKeditor/fckconfig.js
-share/rt38/html/NoAuth/RichText/FCKeditor/fckeditor.js
-share/rt38/html/NoAuth/RichText/FCKeditor/fckpackager.xml
-share/rt38/html/NoAuth/RichText/FCKeditor/fckstyles.xml
-share/rt38/html/NoAuth/RichText/FCKeditor/fcktemplates.xml
-share/rt38/html/NoAuth/RichText/FCKeditor/license.txt
-share/rt38/html/NoAuth/RichText/autohandler
-share/rt38/html/NoAuth/RichText/dhandler
-share/rt38/html/NoAuth/css/3.4-compat/body.css
-share/rt38/html/NoAuth/css/3.4-compat/footer.css
-share/rt38/html/NoAuth/css/3.4-compat/forms.css
-share/rt38/html/NoAuth/css/3.4-compat/header.css
-share/rt38/html/NoAuth/css/3.4-compat/login.css
-share/rt38/html/NoAuth/css/3.4-compat/main.css
-share/rt38/html/NoAuth/css/3.4-compat/misc.css
-share/rt38/html/NoAuth/css/3.4-compat/nav.css
-share/rt38/html/NoAuth/css/3.4-compat/quickbar.css
-share/rt38/html/NoAuth/css/3.4-compat/ticket.css
-share/rt38/html/NoAuth/css/3.4-compat/titlebox.css
-share/rt38/html/NoAuth/css/3.4-compat/transactions.css
-share/rt38/html/NoAuth/css/3.5-default/approvals.css
-share/rt38/html/NoAuth/css/3.5-default/body.css
-share/rt38/html/NoAuth/css/3.5-default/footer.css
-share/rt38/html/NoAuth/css/3.5-default/forms.css
-share/rt38/html/NoAuth/css/3.5-default/header.css
-share/rt38/html/NoAuth/css/3.5-default/local.css
-share/rt38/html/NoAuth/css/3.5-default/login.css
-share/rt38/html/NoAuth/css/3.5-default/logo.css
-share/rt38/html/NoAuth/css/3.5-default/main.css
-share/rt38/html/NoAuth/css/3.5-default/misc.css
-share/rt38/html/NoAuth/css/3.5-default/nav-left.css
-share/rt38/html/NoAuth/css/3.5-default/nav.css
-share/rt38/html/NoAuth/css/3.5-default/quickbar.css
-share/rt38/html/NoAuth/css/3.5-default/ticket-search.css
-share/rt38/html/NoAuth/css/3.5-default/ticket.css
-share/rt38/html/NoAuth/css/3.5-default/titlebox.css
-share/rt38/html/NoAuth/css/3.5-default/transactions.css
-share/rt38/html/NoAuth/css/autohandler
-share/rt38/html/NoAuth/css/base/misc.css
-share/rt38/html/NoAuth/css/dhandler
-share/rt38/html/NoAuth/css/print.css
-share/rt38/html/NoAuth/css/web2/InHeader
-share/rt38/html/NoAuth/css/web2/admin.css
-share/rt38/html/NoAuth/css/web2/base.css
-share/rt38/html/NoAuth/css/web2/boxes.css
-share/rt38/html/NoAuth/css/web2/collection.css
-share/rt38/html/NoAuth/css/web2/forms.css
-share/rt38/html/NoAuth/css/web2/images/dhandler
-share/rt38/html/NoAuth/css/web2/images/source/background-gradient.png
-share/rt38/html/NoAuth/css/web2/layout.css
-share/rt38/html/NoAuth/css/web2/login.css
-share/rt38/html/NoAuth/css/web2/main.css
-share/rt38/html/NoAuth/css/web2/misc.css
-share/rt38/html/NoAuth/css/web2/msie.css
-share/rt38/html/NoAuth/css/web2/msie6.css
-share/rt38/html/NoAuth/css/web2/nav.css
-share/rt38/html/NoAuth/css/web2/portlets.css
-share/rt38/html/NoAuth/css/web2/ticket-lists.css
-share/rt38/html/NoAuth/css/web2/ticket-search.css
-share/rt38/html/NoAuth/css/web2/ticket.css
-share/rt38/html/NoAuth/css/web2/tools.css
-share/rt38/html/NoAuth/css/web2/yui-fonts.css
-share/rt38/html/NoAuth/iCal/dhandler
-share/rt38/html/NoAuth/images/autohandler
-share/rt38/html/NoAuth/images/bplogo.gif
-share/rt38/html/NoAuth/images/css/cb-light.gif
-share/rt38/html/NoAuth/images/css/cb.gif
-share/rt38/html/NoAuth/images/css/cbr-b2g.gif
-share/rt38/html/NoAuth/images/css/cbr-b2lb.gif
-share/rt38/html/NoAuth/images/css/cbr-gray.gif
-share/rt38/html/NoAuth/images/css/cbr-trans.gif
-share/rt38/html/NoAuth/images/css/cbr.gif
-share/rt38/html/NoAuth/images/css/ct-light.gif
-share/rt38/html/NoAuth/images/css/ct.gif
-share/rt38/html/NoAuth/images/css/ctr-b2g.gif
-share/rt38/html/NoAuth/images/css/ctr-b2lb.gif
-share/rt38/html/NoAuth/images/css/ctr-gray.gif
-share/rt38/html/NoAuth/images/css/ctr-trans.gif
-share/rt38/html/NoAuth/images/css/ctr.gif
-share/rt38/html/NoAuth/images/css/dark-arrow-up.png
-share/rt38/html/NoAuth/images/css/dark-arrow.png
-share/rt38/html/NoAuth/images/css/fieldbg-autocomplete.gif
-share/rt38/html/NoAuth/images/css/light-arrow-up.png
-share/rt38/html/NoAuth/images/css/light-arrow.png
-share/rt38/html/NoAuth/images/css/rolldown-arrow.gif
-share/rt38/html/NoAuth/images/css/rolldown-arrow.png
-share/rt38/html/NoAuth/images/css/rollup-arrow.gif
-share/rt38/html/NoAuth/images/empty_star.gif
-share/rt38/html/NoAuth/images/favicon.png
-share/rt38/html/NoAuth/images/star.gif
-share/rt38/html/NoAuth/images/test.png
-share/rt38/html/NoAuth/js/IE7/IE7.js
-share/rt38/html/NoAuth/js/IE7/IE8.js
-share/rt38/html/NoAuth/js/IE7/blank.gif
-share/rt38/html/NoAuth/js/IE7/ie7-recalc.js
-share/rt38/html/NoAuth/js/IE7/ie7-squish.js
-share/rt38/html/NoAuth/js/ahah.js
-share/rt38/html/NoAuth/js/autohandler
-share/rt38/html/NoAuth/js/cascaded.js
-share/rt38/html/NoAuth/js/class.js
-share/rt38/html/NoAuth/js/combobox.js
-share/rt38/html/NoAuth/js/list.js
-share/rt38/html/NoAuth/js/prototype/prototype.js
-share/rt38/html/NoAuth/js/scriptaculous/controls.js
-share/rt38/html/NoAuth/js/scriptaculous/effects.js
-share/rt38/html/NoAuth/js/scriptaculous/scriptaculous.js
-share/rt38/html/NoAuth/js/titlebox-state.js
-share/rt38/html/NoAuth/js/util.js
-share/rt38/html/NoAuth/rss/dhandler
-share/rt38/html/Prefs/Elements/Tabs
-share/rt38/html/Prefs/MyRT.html
-share/rt38/html/Prefs/Other.html
-share/rt38/html/Prefs/Quicksearch.html
-share/rt38/html/Prefs/Search.html
-share/rt38/html/Prefs/SearchOptions.html
-share/rt38/html/REST/1.0/Forms/attachment/default
-share/rt38/html/REST/1.0/Forms/group/customfields
-share/rt38/html/REST/1.0/Forms/group/default
-share/rt38/html/REST/1.0/Forms/group/ns
-share/rt38/html/REST/1.0/Forms/queue/customfields
-share/rt38/html/REST/1.0/Forms/queue/default
-share/rt38/html/REST/1.0/Forms/queue/ns
-share/rt38/html/REST/1.0/Forms/queue/ticketcustomfields
-share/rt38/html/REST/1.0/Forms/ticket/attachments
-share/rt38/html/REST/1.0/Forms/ticket/comment
-share/rt38/html/REST/1.0/Forms/ticket/default
-share/rt38/html/REST/1.0/Forms/ticket/history
-share/rt38/html/REST/1.0/Forms/ticket/links
-share/rt38/html/REST/1.0/Forms/ticket/merge
-share/rt38/html/REST/1.0/Forms/ticket/take
-share/rt38/html/REST/1.0/Forms/transaction/default
-share/rt38/html/REST/1.0/Forms/user/default
-share/rt38/html/REST/1.0/Forms/user/ns
-share/rt38/html/REST/1.0/NoAuth/mail-gateway
-share/rt38/html/REST/1.0/autohandler
-share/rt38/html/REST/1.0/dhandler
-share/rt38/html/REST/1.0/logout
-share/rt38/html/REST/1.0/search/dhandler
-share/rt38/html/REST/1.0/search/ticket
-share/rt38/html/REST/1.0/ticket/comment
-share/rt38/html/REST/1.0/ticket/link
-share/rt38/html/REST/1.0/ticket/merge
-share/rt38/html/Search/Build.html
-share/rt38/html/Search/Bulk.html
-share/rt38/html/Search/Chart
-share/rt38/html/Search/Chart.html
-share/rt38/html/Search/Edit.html
-share/rt38/html/Search/Elements/BuildFormatString
-share/rt38/html/Search/Elements/Chart
-share/rt38/html/Search/Elements/ConditionRow
-share/rt38/html/Search/Elements/DisplayOptions
-share/rt38/html/Search/Elements/EditFormat
-share/rt38/html/Search/Elements/EditQuery
-share/rt38/html/Search/Elements/EditSearches
-share/rt38/html/Search/Elements/Graph
-share/rt38/html/Search/Elements/NewListActions
-share/rt38/html/Search/Elements/PickBasics
-share/rt38/html/Search/Elements/PickCFs
-share/rt38/html/Search/Elements/PickCriteria
-share/rt38/html/Search/Elements/ResultViews
-share/rt38/html/Search/Elements/ResultsRSSView
-share/rt38/html/Search/Elements/SearchPrivacy
-share/rt38/html/Search/Elements/SearchesForObject
-share/rt38/html/Search/Elements/SelectAndOr
-share/rt38/html/Search/Elements/SelectChartType
-share/rt38/html/Search/Elements/SelectGroup
-share/rt38/html/Search/Elements/SelectGroupBy
-share/rt38/html/Search/Elements/SelectLinks
-share/rt38/html/Search/Elements/SelectPersonType
-share/rt38/html/Search/Elements/SelectSearchObject
-share/rt38/html/Search/Elements/SelectSearchesForObjects
-share/rt38/html/Search/Graph.html
-share/rt38/html/Search/Results.html
-share/rt38/html/Search/Results.rdf
-share/rt38/html/Search/Results.tsv
-share/rt38/html/Search/Simple.html
-share/rt38/html/SelfService/Attachment/dhandler
-share/rt38/html/SelfService/Closed.html
-share/rt38/html/SelfService/Create.html
-share/rt38/html/SelfService/CreateTicketInQueue.html
-share/rt38/html/SelfService/Display.html
-share/rt38/html/SelfService/Elements/GotoTicket
-share/rt38/html/SelfService/Elements/Header
-share/rt38/html/SelfService/Elements/MyRequests
-share/rt38/html/SelfService/Elements/Tabs
-share/rt38/html/SelfService/Error.html
-share/rt38/html/SelfService/Prefs.html
-share/rt38/html/SelfService/Update.html
-share/rt38/html/SelfService/index.html
-share/rt38/html/Ticket/Attachment/WithHeaders/dhandler
-share/rt38/html/Ticket/Attachment/dhandler
-share/rt38/html/Ticket/Create.html
-share/rt38/html/Ticket/Display.html
-share/rt38/html/Ticket/Elements/AddWatchers
-share/rt38/html/Ticket/Elements/Bookmark
-share/rt38/html/Ticket/Elements/BulkLinks
-share/rt38/html/Ticket/Elements/EditBasics
-share/rt38/html/Ticket/Elements/EditCustomFields
-share/rt38/html/Ticket/Elements/EditDates
-share/rt38/html/Ticket/Elements/EditPeople
-share/rt38/html/Ticket/Elements/EditTransactionCustomFields
-share/rt38/html/Ticket/Elements/EditWatchers
-share/rt38/html/Ticket/Elements/FindAttachments
-share/rt38/html/Ticket/Elements/LoadTextAttachments
-share/rt38/html/Ticket/Elements/PreviewScrips
-share/rt38/html/Ticket/Elements/Reminders
-share/rt38/html/Ticket/Elements/ShowAttachments
-share/rt38/html/Ticket/Elements/ShowBasics
-share/rt38/html/Ticket/Elements/ShowCustomFields
-share/rt38/html/Ticket/Elements/ShowDates
-share/rt38/html/Ticket/Elements/ShowDependencies
-share/rt38/html/Ticket/Elements/ShowGnuPGStatus
-share/rt38/html/Ticket/Elements/ShowGroupMembers
-share/rt38/html/Ticket/Elements/ShowHistory
-share/rt38/html/Ticket/Elements/ShowMembers
-share/rt38/html/Ticket/Elements/ShowMessageHeaders
-share/rt38/html/Ticket/Elements/ShowMessageStanza
-share/rt38/html/Ticket/Elements/ShowParents
-share/rt38/html/Ticket/Elements/ShowPeople
-share/rt38/html/Ticket/Elements/ShowPriority
-share/rt38/html/Ticket/Elements/ShowQueue
-share/rt38/html/Ticket/Elements/ShowRequestor
-share/rt38/html/Ticket/Elements/ShowSummary
-share/rt38/html/Ticket/Elements/ShowTime
-share/rt38/html/Ticket/Elements/ShowTransaction
-share/rt38/html/Ticket/Elements/ShowTransactionAttachments
-share/rt38/html/Ticket/Elements/ShowUpdateStatus
-share/rt38/html/Ticket/Elements/ShowUserEntry
-share/rt38/html/Ticket/Elements/Tabs
-share/rt38/html/Ticket/Elements/UpdateCc
-share/rt38/html/Ticket/Forward.html
-share/rt38/html/Ticket/GnuPG.html
-share/rt38/html/Ticket/Graphs/Elements/EditGraphProperties
-share/rt38/html/Ticket/Graphs/Elements/ShowGraph
-share/rt38/html/Ticket/Graphs/Elements/ShowLegends
-share/rt38/html/Ticket/Graphs/dhandler
-share/rt38/html/Ticket/Graphs/index.html
-share/rt38/html/Ticket/History.html
-share/rt38/html/Ticket/Modify.html
-share/rt38/html/Ticket/ModifyAll.html
-share/rt38/html/Ticket/ModifyDates.html
-share/rt38/html/Ticket/ModifyLinks.html
-share/rt38/html/Ticket/ModifyPeople.html
-share/rt38/html/Ticket/Reminders.html
-share/rt38/html/Ticket/ShowEmailRecord.html
-share/rt38/html/Ticket/Update.html
-share/rt38/html/Tools/Elements/Tabs
-share/rt38/html/Tools/MyDay.html
-share/rt38/html/Tools/Offline.html
-share/rt38/html/Tools/Reports/CreatedByDates.html
-share/rt38/html/Tools/Reports/Elements/Tabs
-share/rt38/html/Tools/Reports/ResolvedByDates.html
-share/rt38/html/Tools/Reports/ResolvedByOwner.html
-share/rt38/html/Tools/Reports/index.html
-share/rt38/html/Tools/index.html
-share/rt38/html/User/Delegation.html
-share/rt38/html/User/Elements/DelegateRights
-share/rt38/html/User/Elements/GroupTabs
-share/rt38/html/User/Elements/Tabs
-share/rt38/html/User/Groups/Members.html
-share/rt38/html/User/Groups/Modify.html
-share/rt38/html/User/Groups/index.html
-share/rt38/html/User/Prefs.html
-share/rt38/html/Widgets/BulkEdit
-share/rt38/html/Widgets/BulkProcess
-share/rt38/html/Widgets/ComboBox
-share/rt38/html/Widgets/FinalizeWidgetArguments
-share/rt38/html/Widgets/Form/Boolean
-share/rt38/html/Widgets/Form/Integer
-share/rt38/html/Widgets/Form/Select
-share/rt38/html/Widgets/Form/String
-share/rt38/html/Widgets/SavedSearch
-share/rt38/html/Widgets/SelectionBox
-share/rt38/html/Widgets/TitleBox
-share/rt38/html/Widgets/TitleBoxEnd
-share/rt38/html/Widgets/TitleBoxStart
-share/rt38/html/autohandler
-share/rt38/html/dhandler
-share/rt38/html/index.html
-share/rt38/html/l
-@dirrmtry www/rt38
-@dirrm share/rt38/po
-@exec mkdir -p %D/share/rt38/plugins
-@dirrm share/rt38/plugins
-@dirrm share/rt38/lib
-@dirrm share/rt38/html/Widgets/Form
-@dirrm share/rt38/html/Widgets
-@dirrm share/rt38/html/User/Groups
-@dirrm share/rt38/html/User/Elements
-@dirrm share/rt38/html/User
-@dirrm share/rt38/html/Tools/Reports/Elements
-@dirrm share/rt38/html/Tools/Reports
-@dirrm share/rt38/html/Tools/Elements
-@dirrm share/rt38/html/Tools
-@dirrm share/rt38/html/Ticket/Graphs/Elements
-@dirrm share/rt38/html/Ticket/Graphs
-@dirrm share/rt38/html/Ticket/Elements
-@dirrm share/rt38/html/Ticket/Attachment/WithHeaders
-@dirrm share/rt38/html/Ticket/Attachment
-@dirrm share/rt38/html/Ticket
-@dirrm share/rt38/html/SelfService/Elements
-@dirrm share/rt38/html/SelfService/Attachment
-@dirrm share/rt38/html/SelfService
-@dirrm share/rt38/html/Search/Elements
-@dirrm share/rt38/html/Search
-@dirrm share/rt38/html/REST/1.0/ticket
-@dirrm share/rt38/html/REST/1.0/search
-@dirrm share/rt38/html/REST/1.0/NoAuth
-@dirrm share/rt38/html/REST/1.0/Forms/user
-@dirrm share/rt38/html/REST/1.0/Forms/transaction
-@dirrm share/rt38/html/REST/1.0/Forms/ticket
-@dirrm share/rt38/html/REST/1.0/Forms/queue
-@dirrm share/rt38/html/REST/1.0/Forms/group
-@dirrm share/rt38/html/REST/1.0/Forms/attachment
-@dirrm share/rt38/html/REST/1.0/Forms
-@dirrm share/rt38/html/REST/1.0
-@dirrm share/rt38/html/REST
-@dirrm share/rt38/html/Prefs/Elements
-@dirrm share/rt38/html/Prefs
-@dirrm share/rt38/html/NoAuth/rss
-@dirrm share/rt38/html/NoAuth/js/scriptaculous
-@dirrm share/rt38/html/NoAuth/js/prototype
-@dirrm share/rt38/html/NoAuth/js/IE7
-@dirrm share/rt38/html/NoAuth/js
-@dirrm share/rt38/html/NoAuth/images/css
-@dirrm share/rt38/html/NoAuth/images
-@dirrm share/rt38/html/NoAuth/iCal
-@dirrm share/rt38/html/NoAuth/css/web2/images/source
-@dirrm share/rt38/html/NoAuth/css/web2/images
-@dirrm share/rt38/html/NoAuth/css/web2
-@dirrm share/rt38/html/NoAuth/css/base
-@dirrm share/rt38/html/NoAuth/css/3.5-default
-@dirrm share/rt38/html/NoAuth/css/3.4-compat
-@dirrm share/rt38/html/NoAuth/css
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/tablecommands
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/simplecommands
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/dragresizetable
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/bbcode/_sample
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/bbcode
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/autogrow
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/js
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dtd
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_select
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_link
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_image
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/sponsors
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor
-@dirrm share/rt38/html/NoAuth/RichText
-@dirrm share/rt38/html/NoAuth
-@dirrm share/rt38/html/Install/Elements
-@dirrm share/rt38/html/Install
-@dirrm share/rt38/html/Helpers/Toggle
-@dirrm share/rt38/html/Helpers/Autocomplete
-@dirrm share/rt38/html/Helpers
-@dirrm share/rt38/html/Elements/RT__User
-@dirrm share/rt38/html/Elements/RT__Ticket
-@dirrm share/rt38/html/Elements/RT__Template
-@dirrm share/rt38/html/Elements/RT__Scrip
-@dirrm share/rt38/html/Elements/RT__Queue
-@dirrm share/rt38/html/Elements/RT__Group
-@dirrm share/rt38/html/Elements/RT__CustomField
-@dirrm share/rt38/html/Elements/GnuPG
-@dirrm share/rt38/html/Elements/CollectionAsTable
-@dirrm share/rt38/html/Elements
-@dirrm share/rt38/html/Download/Tabular
-@dirrm share/rt38/html/Download/CustomFieldValue
-@dirrm share/rt38/html/Download
-@dirrm share/rt38/html/Dashboards/Elements/ShowPortlet
-@dirrm share/rt38/html/Dashboards/Elements
-@dirrm share/rt38/html/Dashboards
-@dirrm share/rt38/html/Approvals/Elements
-@dirrm share/rt38/html/Approvals
-@dirrm share/rt38/html/Admin/Users
-@dirrm share/rt38/html/Admin/Tools/Shredder/Elements/Object
-@dirrm share/rt38/html/Admin/Tools/Shredder/Elements/Error
-@dirrm share/rt38/html/Admin/Tools/Shredder/Elements
-@dirrm share/rt38/html/Admin/Tools/Shredder/Dumps
-@dirrm share/rt38/html/Admin/Tools/Shredder
-@dirrm share/rt38/html/Admin/Tools
-@dirrm share/rt38/html/Admin/Queues
-@dirrm share/rt38/html/Admin/Groups
-@dirrm share/rt38/html/Admin/Global/CustomFields
-@dirrm share/rt38/html/Admin/Global
-@dirrm share/rt38/html/Admin/Elements
-@dirrm share/rt38/html/Admin/CustomFields
-@dirrm share/rt38/html/Admin
-@dirrm share/rt38/html
-@dirrm share/rt38/fonts
-@dirrm share/rt38/etc
-@dirrm share/rt38
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.2
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.4
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.6
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.8
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING-4.0
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING.mysql
+%%PORTDOCS%%%%DOCSDIR%%/customizing/articles_introduction.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/templates.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/timezones_in_charts.pod
+%%PORTDOCS%%%%DOCSDIR%%/extending/clickable_links.pod
+%%PORTDOCS%%%%DOCSDIR%%/extending/external_custom_fields.pod
+%%PORTDOCS%%%%DOCSDIR%%/extending/using_forms_widgets.pod
+%%PORTDOCS%%%%DOCSDIR%%/full_text_indexing.pod
+%%PORTDOCS%%%%DOCSDIR%%/glossary.pod
+%%PORTDOCS%%%%DOCSDIR%%/hacking.pod
+%%PORTDOCS%%%%DOCSDIR%%/network-diagram.svg
+%%PORTDOCS%%%%DOCSDIR%%/security.pod
+%%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
+share/rt40/fonts/Droid.README
+share/rt40/fonts/DroidSans.ttf
+share/rt40/fonts/DroidSansFallback.ttf
+share/rt40/html/Admin/Articles/Classes/CustomFields.html
+share/rt40/html/Admin/Articles/Classes/GroupRights.html
+share/rt40/html/Admin/Articles/Classes/Modify.html
+share/rt40/html/Admin/Articles/Classes/Objects.html
+share/rt40/html/Admin/Articles/Classes/Topics.html
+share/rt40/html/Admin/Articles/Classes/UserRights.html
+share/rt40/html/Admin/Articles/Classes/index.html
+share/rt40/html/Admin/Articles/Elements/Topics
+share/rt40/html/Admin/Articles/index.html
+share/rt40/html/Admin/CustomFields/GroupRights.html
+share/rt40/html/Admin/CustomFields/Modify.html
+share/rt40/html/Admin/CustomFields/Objects.html
+share/rt40/html/Admin/CustomFields/UserRights.html
+share/rt40/html/Admin/CustomFields/index.html
+share/rt40/html/Admin/Elements/AddCustomFieldValue
+share/rt40/html/Admin/Elements/ConfigureMyRT
+share/rt40/html/Admin/Elements/CreateUserCalled
+share/rt40/html/Admin/Elements/EditCustomField
+share/rt40/html/Admin/Elements/EditCustomFieldValues
+share/rt40/html/Admin/Elements/EditCustomFieldValuesSource
+share/rt40/html/Admin/Elements/EditCustomFields
+share/rt40/html/Admin/Elements/EditQueueWatcherGroup
+share/rt40/html/Admin/Elements/EditQueueWatchers
+share/rt40/html/Admin/Elements/EditRights
+share/rt40/html/Admin/Elements/EditRightsCategoryTabs
+share/rt40/html/Admin/Elements/EditScrip
+share/rt40/html/Admin/Elements/EditScrips
+share/rt40/html/Admin/Elements/EditTemplates
+share/rt40/html/Admin/Elements/EditUserComments
+share/rt40/html/Admin/Elements/Header
+share/rt40/html/Admin/Elements/ListGlobalCustomFields
+share/rt40/html/Admin/Elements/ListGlobalScrips
+share/rt40/html/Admin/Elements/ModifyTemplate
+share/rt40/html/Admin/Elements/PickCustomFields
+share/rt40/html/Admin/Elements/PickObjects
+share/rt40/html/Admin/Elements/Portal
+share/rt40/html/Admin/Elements/QueueRightsForUser
+share/rt40/html/Admin/Elements/SelectCustomField
+share/rt40/html/Admin/Elements/SelectCustomFieldLookupType
+share/rt40/html/Admin/Elements/SelectCustomFieldRenderType
+share/rt40/html/Admin/Elements/SelectCustomFieldType
+share/rt40/html/Admin/Elements/SelectGroups
+share/rt40/html/Admin/Elements/SelectModifyGroup
+share/rt40/html/Admin/Elements/SelectModifyQueue
+share/rt40/html/Admin/Elements/SelectModifyUser
+share/rt40/html/Admin/Elements/SelectNewGroupMembers
+share/rt40/html/Admin/Elements/SelectRights
+share/rt40/html/Admin/Elements/SelectScrip
+share/rt40/html/Admin/Elements/SelectScripAction
+share/rt40/html/Admin/Elements/SelectScripCondition
+share/rt40/html/Admin/Elements/SelectSingleOrMultiple
+share/rt40/html/Admin/Elements/SelectStage
+share/rt40/html/Admin/Elements/SelectTemplate
+share/rt40/html/Admin/Elements/SelectUsers
+share/rt40/html/Admin/Elements/ShowKeyInfo
+share/rt40/html/Admin/Global/CustomFields/Class-Article.html
+share/rt40/html/Admin/Global/CustomFields/Groups.html
+share/rt40/html/Admin/Global/CustomFields/Queue-Tickets.html
+share/rt40/html/Admin/Global/CustomFields/Queue-Transactions.html
+share/rt40/html/Admin/Global/CustomFields/Queues.html
+share/rt40/html/Admin/Global/CustomFields/Users.html
+share/rt40/html/Admin/Global/CustomFields/index.html
+share/rt40/html/Admin/Global/GroupRights.html
+share/rt40/html/Admin/Global/MyRT.html
+share/rt40/html/Admin/Global/Scrip.html
+share/rt40/html/Admin/Global/Scrips.html
+share/rt40/html/Admin/Global/Template.html
+share/rt40/html/Admin/Global/Templates.html
+share/rt40/html/Admin/Global/Topics.html
+share/rt40/html/Admin/Global/UserRights.html
+share/rt40/html/Admin/Global/index.html
+share/rt40/html/Admin/Groups/GroupRights.html
+share/rt40/html/Admin/Groups/History.html
+share/rt40/html/Admin/Groups/Members.html
+share/rt40/html/Admin/Groups/Modify.html
+share/rt40/html/Admin/Groups/UserRights.html
+share/rt40/html/Admin/Groups/index.html
+share/rt40/html/Admin/Queues/CustomField.html
+share/rt40/html/Admin/Queues/CustomFields.html
+share/rt40/html/Admin/Queues/GroupRights.html
+share/rt40/html/Admin/Queues/History.html
+share/rt40/html/Admin/Queues/Modify.html
+share/rt40/html/Admin/Queues/People.html
+share/rt40/html/Admin/Queues/Scrip.html
+share/rt40/html/Admin/Queues/Scrips.html
+share/rt40/html/Admin/Queues/Template.html
+share/rt40/html/Admin/Queues/Templates.html
+share/rt40/html/Admin/Queues/UserRights.html
+share/rt40/html/Admin/Queues/index.html
+share/rt40/html/Admin/Tools/Configuration.html
+share/rt40/html/Admin/Tools/Queries.html
+share/rt40/html/Admin/Tools/Shredder/Dumps/dhandler
+share/rt40/html/Admin/Tools/Shredder/Elements/DumpFileLink
+share/rt40/html/Admin/Tools/Shredder/Elements/Error/NoRights
+share/rt40/html/Admin/Tools/Shredder/Elements/Error/NoStorage
+share/rt40/html/Admin/Tools/Shredder/Elements/Object/RT--Attachment
+share/rt40/html/Admin/Tools/Shredder/Elements/Object/RT--Ticket
+share/rt40/html/Admin/Tools/Shredder/Elements/Object/RT--User
+share/rt40/html/Admin/Tools/Shredder/Elements/ObjectCheckBox
+share/rt40/html/Admin/Tools/Shredder/Elements/PluginArguments
+share/rt40/html/Admin/Tools/Shredder/Elements/PluginHelp
+share/rt40/html/Admin/Tools/Shredder/Elements/SelectObjects
+share/rt40/html/Admin/Tools/Shredder/Elements/SelectPlugin
+share/rt40/html/Admin/Tools/Shredder/autohandler
+share/rt40/html/Admin/Tools/Shredder/index.html
+share/rt40/html/Admin/Tools/Theme.html
+share/rt40/html/Admin/Tools/index.html
+share/rt40/html/Admin/Users/CustomFields.html
+share/rt40/html/Admin/Users/GnuPG.html
+share/rt40/html/Admin/Users/History.html
+share/rt40/html/Admin/Users/Memberships.html
+share/rt40/html/Admin/Users/Modify.html
+share/rt40/html/Admin/Users/MyRT.html
+share/rt40/html/Admin/Users/index.html
+share/rt40/html/Admin/autohandler
+share/rt40/html/Admin/index.html
+share/rt40/html/Approvals/Display.html
+share/rt40/html/Approvals/Elements/Approve
+share/rt40/html/Approvals/Elements/PendingMyApproval
+share/rt40/html/Approvals/Elements/ShowDependency
+share/rt40/html/Approvals/autohandler
+share/rt40/html/Approvals/index.html
+share/rt40/html/Articles/Article/Delete.html
+share/rt40/html/Articles/Article/Display.html
+share/rt40/html/Articles/Article/Edit.html
+share/rt40/html/Articles/Article/Elements/EditBasics
+share/rt40/html/Articles/Article/Elements/EditCustomFields
+share/rt40/html/Articles/Article/Elements/EditLinks
+share/rt40/html/Articles/Article/Elements/EditTopics
+share/rt40/html/Articles/Article/Elements/LinkEntryInstructions
+share/rt40/html/Articles/Article/Elements/Preformatted
+share/rt40/html/Articles/Article/Elements/SearchByCustomField
+share/rt40/html/Articles/Article/Elements/SelectSavedSearches
+share/rt40/html/Articles/Article/Elements/SelectSearchPrivacy
+share/rt40/html/Articles/Article/Elements/ShowHistory
+share/rt40/html/Articles/Article/Elements/ShowLinks
+share/rt40/html/Articles/Article/Elements/ShowSavedSearches
+share/rt40/html/Articles/Article/Elements/ShowSearchCriteria
+share/rt40/html/Articles/Article/Elements/ShowTopics
+share/rt40/html/Articles/Article/ExtractFromTicket.html
+share/rt40/html/Articles/Article/ExtractIntoClass.html
+share/rt40/html/Articles/Article/ExtractIntoTopic.html
+share/rt40/html/Articles/Article/History.html
+share/rt40/html/Articles/Article/PreCreate.html
+share/rt40/html/Articles/Article/Search.html
+share/rt40/html/Articles/Elements/BeforeMessageBox
+share/rt40/html/Articles/Elements/CheckSkipCreate
+share/rt40/html/Articles/Elements/CreateArticle
+share/rt40/html/Articles/Elements/GotoArticle
+share/rt40/html/Articles/Elements/IncludeArticle
+share/rt40/html/Articles/Elements/NewestArticles
+share/rt40/html/Articles/Elements/QuickSearch
+share/rt40/html/Articles/Elements/SelectClass
+share/rt40/html/Articles/Elements/ShowTopic
+share/rt40/html/Articles/Elements/UpdatedArticles
+share/rt40/html/Articles/Topics.html
+share/rt40/html/Articles/index.html
+share/rt40/html/Dashboards/Elements/DashboardsForObject
+share/rt40/html/Dashboards/Elements/Deleted
+share/rt40/html/Dashboards/Elements/HiddenSearches
+share/rt40/html/Dashboards/Elements/ListOfDashboards
+share/rt40/html/Dashboards/Elements/SelectPrivacy
+share/rt40/html/Dashboards/Elements/ShowDashboards
+share/rt40/html/Dashboards/Elements/ShowPortlet/component
+share/rt40/html/Dashboards/Elements/ShowPortlet/dashboard
+share/rt40/html/Dashboards/Elements/ShowPortlet/search
+share/rt40/html/Dashboards/Modify.html
+share/rt40/html/Dashboards/Queries.html
+share/rt40/html/Dashboards/Render.html
+share/rt40/html/Dashboards/Subscription.html
+share/rt40/html/Dashboards/dhandler
+share/rt40/html/Dashboards/index.html
+share/rt40/html/Download/CustomFieldValue/dhandler
+share/rt40/html/Elements/BevelBoxRaisedEnd
+share/rt40/html/Elements/BevelBoxRaisedStart
+share/rt40/html/Elements/Callback
+share/rt40/html/Elements/Checkbox
+share/rt40/html/Elements/CollectionAsTable/Header
+share/rt40/html/Elements/CollectionAsTable/ParseFormat
+share/rt40/html/Elements/CollectionAsTable/Row
+share/rt40/html/Elements/CollectionList
+share/rt40/html/Elements/CollectionListPaging
+share/rt40/html/Elements/ColumnMap
+share/rt40/html/Elements/CreateTicket
+share/rt40/html/Elements/Dashboards
+share/rt40/html/Elements/EditCustomField
+share/rt40/html/Elements/EditCustomFieldAutocomplete
+share/rt40/html/Elements/EditCustomFieldBinary
+share/rt40/html/Elements/EditCustomFieldCombobox
+share/rt40/html/Elements/EditCustomFieldDate
+share/rt40/html/Elements/EditCustomFieldDateTime
+share/rt40/html/Elements/EditCustomFieldFreeform
+share/rt40/html/Elements/EditCustomFieldIPAddress
+share/rt40/html/Elements/EditCustomFieldIPAddressRange
+share/rt40/html/Elements/EditCustomFieldImage
+share/rt40/html/Elements/EditCustomFieldSelect
+share/rt40/html/Elements/EditCustomFieldText
+share/rt40/html/Elements/EditCustomFieldWikitext
+share/rt40/html/Elements/EditLinks
+share/rt40/html/Elements/EditPassword
+share/rt40/html/Elements/EditTimeValue
+share/rt40/html/Elements/EmailInput
+share/rt40/html/Elements/Error
+share/rt40/html/Elements/Footer
+share/rt40/html/Elements/Framekiller
+share/rt40/html/Elements/GnuPG/KeyIssues
+share/rt40/html/Elements/GnuPG/SelectKeyForEncryption
+share/rt40/html/Elements/GnuPG/SelectKeyForSigning
+share/rt40/html/Elements/GnuPG/SignEncryptWidget
+share/rt40/html/Elements/GotoTicket
+share/rt40/html/Elements/Header
+share/rt40/html/Elements/HeaderJavascript
+share/rt40/html/Elements/ListActions
+share/rt40/html/Elements/ListMenu
+share/rt40/html/Elements/Login
+share/rt40/html/Elements/Logo
+share/rt40/html/Elements/MakeClicky
+share/rt40/html/Elements/Menu
+share/rt40/html/Elements/MessageBox
+share/rt40/html/Elements/MyAdminQueues
+share/rt40/html/Elements/MyRT
+share/rt40/html/Elements/MyReminders
+share/rt40/html/Elements/MyRequests
+share/rt40/html/Elements/MySupportQueues
+share/rt40/html/Elements/MyTickets
+share/rt40/html/Elements/PageLayout
+share/rt40/html/Elements/PersonalQuickbar
+share/rt40/html/Elements/QueriesAsComment
+share/rt40/html/Elements/QueryString
+share/rt40/html/Elements/QueueSummaryByLifecycle
+share/rt40/html/Elements/QueueSummaryByStatus
+share/rt40/html/Elements/QuickCreate
+share/rt40/html/Elements/Quicksearch
+share/rt40/html/Elements/RT__Article/ColumnMap
+share/rt40/html/Elements/RT__Class/ColumnMap
+share/rt40/html/Elements/RT__CustomField/ColumnMap
+share/rt40/html/Elements/RT__Dashboard/ColumnMap
+share/rt40/html/Elements/RT__Group/ColumnMap
+share/rt40/html/Elements/RT__Queue/ColumnMap
+share/rt40/html/Elements/RT__SavedSearch/ColumnMap
+share/rt40/html/Elements/RT__Scrip/ColumnMap
+share/rt40/html/Elements/RT__Template/ColumnMap
+share/rt40/html/Elements/RT__Ticket/ColumnMap
+share/rt40/html/Elements/RT__User/ColumnMap
+share/rt40/html/Elements/Refresh
+share/rt40/html/Elements/RefreshHomepage
+share/rt40/html/Elements/SavedSearches
+share/rt40/html/Elements/ScrubHTML
+share/rt40/html/Elements/Section
+share/rt40/html/Elements/SelectAttachmentField
+share/rt40/html/Elements/SelectBoolean
+share/rt40/html/Elements/SelectCustomFieldOperator
+share/rt40/html/Elements/SelectCustomFieldValue
+share/rt40/html/Elements/SelectDate
+share/rt40/html/Elements/SelectDateRelation
+share/rt40/html/Elements/SelectDateType
+share/rt40/html/Elements/SelectEqualityOperator
+share/rt40/html/Elements/SelectGroups
+share/rt40/html/Elements/SelectIPRelation
+share/rt40/html/Elements/SelectLang
+share/rt40/html/Elements/SelectLinkType
+share/rt40/html/Elements/SelectMatch
+share/rt40/html/Elements/SelectNewTicketQueue
+share/rt40/html/Elements/SelectOwner
+share/rt40/html/Elements/SelectOwnerAutocomplete
+share/rt40/html/Elements/SelectOwnerDropdown
+share/rt40/html/Elements/SelectPriority
+share/rt40/html/Elements/SelectQueue
+share/rt40/html/Elements/SelectResultsPerPage
+share/rt40/html/Elements/SelectSortOrder
+share/rt40/html/Elements/SelectStatus
+share/rt40/html/Elements/SelectTicketSortBy
+share/rt40/html/Elements/SelectTicketTypes
+share/rt40/html/Elements/SelectTimeUnits
+share/rt40/html/Elements/SelectTimezone
+share/rt40/html/Elements/SelectUsers
+share/rt40/html/Elements/SelectWatcherType
+share/rt40/html/Elements/SetupSessionCookie
+share/rt40/html/Elements/ShowCustomFieldBinary
+share/rt40/html/Elements/ShowCustomFieldDate
+share/rt40/html/Elements/ShowCustomFieldDateTime
+share/rt40/html/Elements/ShowCustomFieldImage
+share/rt40/html/Elements/ShowCustomFieldText
+share/rt40/html/Elements/ShowCustomFieldWikitext
+share/rt40/html/Elements/ShowCustomFields
+share/rt40/html/Elements/ShowLink
+share/rt40/html/Elements/ShowLinks
+share/rt40/html/Elements/ShowMemberships
+share/rt40/html/Elements/ShowRelationLabel
+share/rt40/html/Elements/ShowReminders
+share/rt40/html/Elements/ShowSearch
+share/rt40/html/Elements/ShowUser
+share/rt40/html/Elements/ShowUserConcise
+share/rt40/html/Elements/ShowUserEmailFrequency
+share/rt40/html/Elements/ShowUserVerbose
+share/rt40/html/Elements/SimpleSearch
+share/rt40/html/Elements/Submit
+share/rt40/html/Elements/Tabs
+share/rt40/html/Elements/TicketList
+share/rt40/html/Elements/TitleBox
+share/rt40/html/Elements/TitleBoxEnd
+share/rt40/html/Elements/TitleBoxStart
+share/rt40/html/Elements/ValidateCustomFields
+share/rt40/html/Elements/WidgetBar
+share/rt40/html/Helpers/Autocomplete/CustomFieldValues
+share/rt40/html/Helpers/Autocomplete/Groups
+share/rt40/html/Helpers/Autocomplete/Owners
+share/rt40/html/Helpers/Autocomplete/Users
+share/rt40/html/Helpers/TicketHistory
+share/rt40/html/Helpers/Toggle/ShowRequestor
+share/rt40/html/Helpers/Toggle/TicketBookmark
+share/rt40/html/Install/Basics.html
+share/rt40/html/Install/DatabaseDetails.html
+share/rt40/html/Install/DatabaseType.html
+share/rt40/html/Install/Elements/Errors
+share/rt40/html/Install/Elements/Wrapper
+share/rt40/html/Install/Finish.html
+share/rt40/html/Install/Global.html
+share/rt40/html/Install/Initialize.html
+share/rt40/html/Install/Sendmail.html
+share/rt40/html/Install/autohandler
+share/rt40/html/Install/index.html
+share/rt40/html/NoAuth/Helpers/CustomLogo/dhandler
+share/rt40/html/NoAuth/Login.html
+share/rt40/html/NoAuth/Logout.html
+share/rt40/html/NoAuth/Reminder.html
+share/rt40/html/NoAuth/RichText/autohandler
+share/rt40/html/NoAuth/RichText/ckeditor/LICENSE.html
+share/rt40/html/NoAuth/RichText/ckeditor/adapters/jquery.js
+share/rt40/html/NoAuth/RichText/ckeditor/ckeditor.js
+share/rt40/html/NoAuth/RichText/ckeditor/config.js
+share/rt40/html/NoAuth/RichText/ckeditor/contents.css
+share/rt40/html/NoAuth/RichText/ckeditor/images/spacer.gif
+share/rt40/html/NoAuth/RichText/ckeditor/lang/_languages.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/_translationstatus.txt
+share/rt40/html/NoAuth/RichText/ckeditor/lang/af.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ar.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/bg.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/bn.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/bs.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ca.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/cs.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/cy.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/da.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/de.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/el.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/en-au.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/en-ca.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/en-gb.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/eo.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/es.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/et.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/eu.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/fa.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/fi.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/fo.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/fr-ca.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/fr.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/gl.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/gu.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/hi.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/hr.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/hu.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/is.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/it.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ja.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/km.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ko.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/lt.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/lv.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/mn.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ms.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/nb.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/nl.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/no.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/pl.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/pt-br.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/pt.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ro.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/ru.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/sk.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/sl.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/sr-latn.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/sr.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/sv.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/th.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/tr.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/uk.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/vi.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/zh-cn.js
+share/rt40/html/NoAuth/RichText/ckeditor/lang/zh.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang/he.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs/about.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/autogrow/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard/dialogs/paste.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog/dialogs/colordialog.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/dialog/dialogDefinition.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/div/dialogs/div.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/find/dialogs/find.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/dialogs/flash.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/images/placeholder.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/button.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/checkbox.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/form.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/hiddenfield.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/radio.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/select.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/textarea.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs/textfield.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/images/hiddenfield.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframedialog/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/image/dialogs/image.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/dialogs/anchor.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/dialogs/link.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/images/anchor.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/liststyle/dialogs/liststyle.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/pagebreak/images/pagebreak.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastefromword/filter/default.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext/dialogs/pastetext.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs/options.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs/toolbar.css
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_address.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_blockquote.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_div.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h1.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h2.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h3.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h4.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h5.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_h6.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_p.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images/block_pre.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/dialogs/smiley.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/angel_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/angry_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/broken_heart.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/confused_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/cry_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/devil_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/embaressed_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/envelope.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/heart.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/kiss.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/lightbulb.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/omg_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/regular_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/sad_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/shades_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/teeth_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/thumbs_down.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/thumbs_up.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/tounge_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images/wink_smile.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs/specialchar.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles/styles/default.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/table/dialogs/table.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/tableresize/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/tabletools/dialogs/tableCell.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/dialogs/templates.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/default.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/template1.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/template2.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images/template3.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs/uicolor.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang/en.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/plugin.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/uicolor.gif
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/hue_bg.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/hue_thumb.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/picker_mask.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/picker_thumb.png
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets/yui.css
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/yui.js
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/ciframe.html
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/wsc.css
+share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs/wsc.js
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/dialog.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/editor.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/icons.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/icons_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/dialog_sides.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/dialog_sides.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/dialog_sides_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/mini.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/noimage.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/sprites.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/sprites_ie6.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images/toolbar_start.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/skin.js
+share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/templates.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/dialog.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/editor.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/icons.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/icons_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/dialog_sides.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/dialog_sides.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/dialog_sides_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/mini.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/noimage.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/sprites.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images/sprites_ie6.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/skin.js
+share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/templates.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/dialog.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/editor.css
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/icons.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/icons_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/dialog_sides.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/dialog_sides.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/dialog_sides_rtl.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/mini.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/noimage.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/sprites.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/sprites_ie6.png
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images/toolbar_start.gif
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/skin.js
+share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/templates.css
+share/rt40/html/NoAuth/RichText/ckeditor/themes/default/theme.js
+share/rt40/html/NoAuth/RichText/dhandler
+share/rt40/html/NoAuth/css/aileron/InHeader
+share/rt40/html/NoAuth/css/aileron/base.css
+share/rt40/html/NoAuth/css/aileron/boxes.css
+share/rt40/html/NoAuth/css/aileron/forms.css
+share/rt40/html/NoAuth/css/aileron/images/dhandler
+share/rt40/html/NoAuth/css/aileron/images/source/background-gradient.png
+share/rt40/html/NoAuth/css/aileron/layout.css
+share/rt40/html/NoAuth/css/aileron/login.css
+share/rt40/html/NoAuth/css/aileron/main.css
+share/rt40/html/NoAuth/css/aileron/misc.css
+share/rt40/html/NoAuth/css/aileron/msie-pie.css
+share/rt40/html/NoAuth/css/aileron/msie.css
+share/rt40/html/NoAuth/css/aileron/msie6.css
+share/rt40/html/NoAuth/css/aileron/nav.css
+share/rt40/html/NoAuth/css/aileron/ticket-lists.css
+share/rt40/html/NoAuth/css/aileron/ticket-search.css
+share/rt40/html/NoAuth/css/aileron/ticket.css
+share/rt40/html/NoAuth/css/autohandler
+share/rt40/html/NoAuth/css/ballard/InHeader
+share/rt40/html/NoAuth/css/ballard/base.css
+share/rt40/html/NoAuth/css/ballard/boxes.css
+share/rt40/html/NoAuth/css/ballard/images/dhandler
+share/rt40/html/NoAuth/css/ballard/images/source/background-gradient.png
+share/rt40/html/NoAuth/css/ballard/layout.css
+share/rt40/html/NoAuth/css/ballard/main.css
+share/rt40/html/NoAuth/css/ballard/misc.css
+share/rt40/html/NoAuth/css/ballard/msie.css
+share/rt40/html/NoAuth/css/ballard/msie6.css
+share/rt40/html/NoAuth/css/ballard/nav.css
+share/rt40/html/NoAuth/css/ballard/ticket-lists.css
+share/rt40/html/NoAuth/css/ballard/ticket-search.css
+share/rt40/html/NoAuth/css/ballard/ticket.css
+share/rt40/html/NoAuth/css/base/admin.css
+share/rt40/html/NoAuth/css/base/articles.css
+share/rt40/html/NoAuth/css/base/collection.css
+share/rt40/html/NoAuth/css/base/farbtastic.css
+share/rt40/html/NoAuth/css/base/forms.css
+share/rt40/html/NoAuth/css/base/history-folding.css
+share/rt40/html/NoAuth/css/base/jquery-ui.css
+share/rt40/html/NoAuth/css/base/jquery-ui.custom.modified.css
+share/rt40/html/NoAuth/css/base/login.css
+share/rt40/html/NoAuth/css/base/main.css
+share/rt40/html/NoAuth/css/base/misc.css
+share/rt40/html/NoAuth/css/base/nav.css
+share/rt40/html/NoAuth/css/base/portlets.css
+share/rt40/html/NoAuth/css/base/rights-editor.css
+share/rt40/html/NoAuth/css/base/superfish-navbar.css
+share/rt40/html/NoAuth/css/base/superfish-vertical.css
+share/rt40/html/NoAuth/css/base/superfish.css
+share/rt40/html/NoAuth/css/base/tablesorter.css
+share/rt40/html/NoAuth/css/base/theme-editor.css
+share/rt40/html/NoAuth/css/base/ticket-form.css
+share/rt40/html/NoAuth/css/base/ticket.css
+share/rt40/html/NoAuth/css/base/tools.css
+share/rt40/html/NoAuth/css/base/ui.timepickr.css
+share/rt40/html/NoAuth/css/base/ui.timepickr.custom.css
+share/rt40/html/NoAuth/css/base/yui-fonts.css
+share/rt40/html/NoAuth/css/dhandler
+share/rt40/html/NoAuth/css/images/PIE.htc
+share/rt40/html/NoAuth/css/images/arrows-ffffff.gif
+share/rt40/html/NoAuth/css/images/arrows-ffffff.png
+share/rt40/html/NoAuth/css/images/arrows-grey.gif
+share/rt40/html/NoAuth/css/images/arrows-grey.png
+share/rt40/html/NoAuth/css/images/shadow.gif
+share/rt40/html/NoAuth/css/images/shadow.png
+share/rt40/html/NoAuth/css/print.css
+share/rt40/html/NoAuth/css/web2/InHeader
+share/rt40/html/NoAuth/css/web2/base.css
+share/rt40/html/NoAuth/css/web2/boxes.css
+share/rt40/html/NoAuth/css/web2/images/dhandler
+share/rt40/html/NoAuth/css/web2/images/source/background-gradient.png
+share/rt40/html/NoAuth/css/web2/layout.css
+share/rt40/html/NoAuth/css/web2/main.css
+share/rt40/html/NoAuth/css/web2/misc.css
+share/rt40/html/NoAuth/css/web2/msie-pie.css
+share/rt40/html/NoAuth/css/web2/msie.css
+share/rt40/html/NoAuth/css/web2/msie6.css
+share/rt40/html/NoAuth/css/web2/nav.css
+share/rt40/html/NoAuth/css/web2/ticket-lists.css
+share/rt40/html/NoAuth/css/web2/ticket-search.css
+share/rt40/html/NoAuth/css/web2/ticket.css
+share/rt40/html/NoAuth/iCal/dhandler
+share/rt40/html/NoAuth/images/autohandler
+share/rt40/html/NoAuth/images/bpslogo.png
+share/rt40/html/NoAuth/images/css/cb-light.gif
+share/rt40/html/NoAuth/images/css/cb.gif
+share/rt40/html/NoAuth/images/css/cbr-b2g.gif
+share/rt40/html/NoAuth/images/css/cbr-b2lb.gif
+share/rt40/html/NoAuth/images/css/cbr-gray.gif
+share/rt40/html/NoAuth/images/css/cbr-trans.gif
+share/rt40/html/NoAuth/images/css/cbr.gif
+share/rt40/html/NoAuth/images/css/ct-light.gif
+share/rt40/html/NoAuth/images/css/ct.gif
+share/rt40/html/NoAuth/images/css/ctr-b2g.gif
+share/rt40/html/NoAuth/images/css/ctr-b2lb.gif
+share/rt40/html/NoAuth/images/css/ctr-gray.gif
+share/rt40/html/NoAuth/images/css/ctr-trans.gif
+share/rt40/html/NoAuth/images/css/ctr.gif
+share/rt40/html/NoAuth/images/css/dark-arrow-up.png
+share/rt40/html/NoAuth/images/css/dark-arrow.png
+share/rt40/html/NoAuth/images/css/fieldbg-autocomplete.gif
+share/rt40/html/NoAuth/images/css/light-arrow-up.png
+share/rt40/html/NoAuth/images/css/light-arrow.png
+share/rt40/html/NoAuth/images/css/rolldown-arrow.gif
+share/rt40/html/NoAuth/images/css/rolldown-arrow.png
+share/rt40/html/NoAuth/images/css/rollup-arrow.gif
+share/rt40/html/NoAuth/images/empty_star.gif
+share/rt40/html/NoAuth/images/farbtastic/marker.png
+share/rt40/html/NoAuth/images/farbtastic/mask.png
+share/rt40/html/NoAuth/images/farbtastic/wheel.png
+share/rt40/html/NoAuth/images/favicon.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-anim_basic_16x16.gif
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_diagonals-thick_18_b81900_40x40.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_diagonals-thick_20_666666_40x40.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_flat_10_000000_40x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_flat_75_ffffff_40x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_100_f6f6f6_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_100_fdf5ce_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_75_dadada_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_75_e6e6e6_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_glass_95_fef1ec_1x400.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_gloss-wave_35_f6a828_500x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_highlight-soft_100_eeeeee_1x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_highlight-soft_75_cccccc_1x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-bg_highlight-soft_75_ffe45c_1x100.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_222222_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_228ef1_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_2e83ff_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_4488cc_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_454545_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_888888_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_cd0a0a_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_ef8c08_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_ffd27a_256x240.png
+share/rt40/html/NoAuth/images/jquery_ui/ui-icons_ffffff_256x240.png
+share/rt40/html/NoAuth/images/star.gif
+share/rt40/html/NoAuth/images/tablesorter/asc.gif
+share/rt40/html/NoAuth/images/tablesorter/bg.gif
+share/rt40/html/NoAuth/images/tablesorter/desc.gif
+share/rt40/html/NoAuth/images/test.png
+share/rt40/html/NoAuth/js/autohandler
+share/rt40/html/NoAuth/js/cascaded.js
+share/rt40/html/NoAuth/js/class.js
+share/rt40/html/NoAuth/js/combobox.js
+share/rt40/html/NoAuth/js/dhandler
+share/rt40/html/NoAuth/js/farbtastic.js
+share/rt40/html/NoAuth/js/history-folding.js
+share/rt40/html/NoAuth/js/jquery-1.4.2.min.js
+share/rt40/html/NoAuth/js/jquery-ui-1.8.4.custom.min.js
+share/rt40/html/NoAuth/js/jquery-ui-patch-datepicker.js
+share/rt40/html/NoAuth/js/jquery.event.hover-1.0.js
+share/rt40/html/NoAuth/js/jquery.supposition.js
+share/rt40/html/NoAuth/js/jquery.tablesorter.min.js
+share/rt40/html/NoAuth/js/jquery_noconflict.js
+share/rt40/html/NoAuth/js/late.js
+share/rt40/html/NoAuth/js/list.js
+share/rt40/html/NoAuth/js/superfish.js
+share/rt40/html/NoAuth/js/supersubs.js
+share/rt40/html/NoAuth/js/titlebox-state.js
+share/rt40/html/NoAuth/js/ui.timepickr.js
+share/rt40/html/NoAuth/js/userautocomplete.js
+share/rt40/html/NoAuth/js/util.js
+share/rt40/html/NoAuth/rss/dhandler
+share/rt40/html/Prefs/MyRT.html
+share/rt40/html/Prefs/Other.html
+share/rt40/html/Prefs/Quicksearch.html
+share/rt40/html/Prefs/Search.html
+share/rt40/html/Prefs/SearchOptions.html
+share/rt40/html/REST/1.0/Forms/attachment/default
+share/rt40/html/REST/1.0/Forms/group/customfields
+share/rt40/html/REST/1.0/Forms/group/default
+share/rt40/html/REST/1.0/Forms/group/ns
+share/rt40/html/REST/1.0/Forms/queue/customfields
+share/rt40/html/REST/1.0/Forms/queue/default
+share/rt40/html/REST/1.0/Forms/queue/ns
+share/rt40/html/REST/1.0/Forms/queue/ticketcustomfields
+share/rt40/html/REST/1.0/Forms/ticket/attachments
+share/rt40/html/REST/1.0/Forms/ticket/comment
+share/rt40/html/REST/1.0/Forms/ticket/default
+share/rt40/html/REST/1.0/Forms/ticket/history
+share/rt40/html/REST/1.0/Forms/ticket/links
+share/rt40/html/REST/1.0/Forms/ticket/merge
+share/rt40/html/REST/1.0/Forms/ticket/take
+share/rt40/html/REST/1.0/Forms/transaction/default
+share/rt40/html/REST/1.0/Forms/user/default
+share/rt40/html/REST/1.0/Forms/user/ns
+share/rt40/html/REST/1.0/NoAuth/mail-gateway
+share/rt40/html/REST/1.0/autohandler
+share/rt40/html/REST/1.0/dhandler
+share/rt40/html/REST/1.0/logout
+share/rt40/html/REST/1.0/search/dhandler
+share/rt40/html/REST/1.0/search/ticket
+share/rt40/html/REST/1.0/ticket/comment
+share/rt40/html/REST/1.0/ticket/link
+share/rt40/html/REST/1.0/ticket/merge
+share/rt40/html/Search/Article.html
+share/rt40/html/Search/Build.html
+share/rt40/html/Search/Bulk.html
+share/rt40/html/Search/Chart
+share/rt40/html/Search/Chart.html
+share/rt40/html/Search/Edit.html
+share/rt40/html/Search/Elements/Article
+share/rt40/html/Search/Elements/BuildFormatString
+share/rt40/html/Search/Elements/Chart
+share/rt40/html/Search/Elements/ConditionRow
+share/rt40/html/Search/Elements/DisplayOptions
+share/rt40/html/Search/Elements/EditFormat
+share/rt40/html/Search/Elements/EditQuery
+share/rt40/html/Search/Elements/EditSearches
+share/rt40/html/Search/Elements/EditSort
+share/rt40/html/Search/Elements/Graph
+share/rt40/html/Search/Elements/NewListActions
+share/rt40/html/Search/Elements/PickBasics
+share/rt40/html/Search/Elements/PickCFs
+share/rt40/html/Search/Elements/PickCriteria
+share/rt40/html/Search/Elements/ResultsRSSView
+share/rt40/html/Search/Elements/SearchPrivacy
+share/rt40/html/Search/Elements/SearchesForObject
+share/rt40/html/Search/Elements/SelectAndOr
+share/rt40/html/Search/Elements/SelectChartType
+share/rt40/html/Search/Elements/SelectGroup
+share/rt40/html/Search/Elements/SelectGroupBy
+share/rt40/html/Search/Elements/SelectLinks
+share/rt40/html/Search/Elements/SelectPersonType
+share/rt40/html/Search/Elements/SelectSearchObject
+share/rt40/html/Search/Elements/SelectSearchesForObjects
+share/rt40/html/Search/Graph.html
+share/rt40/html/Search/Results.html
+share/rt40/html/Search/Results.rdf
+share/rt40/html/Search/Results.tsv
+share/rt40/html/Search/Simple.html
+share/rt40/html/SelfService/Article/Display.html
+share/rt40/html/SelfService/Article/Search.html
+share/rt40/html/SelfService/Article/autohandler
+share/rt40/html/SelfService/Attachment/dhandler
+share/rt40/html/SelfService/Closed.html
+share/rt40/html/SelfService/Create.html
+share/rt40/html/SelfService/CreateTicketInQueue.html
+share/rt40/html/SelfService/Display.html
+share/rt40/html/SelfService/Elements/GotoTicket
+share/rt40/html/SelfService/Elements/Header
+share/rt40/html/SelfService/Elements/MyRequests
+share/rt40/html/SelfService/Elements/SearchArticle
+share/rt40/html/SelfService/Error.html
+share/rt40/html/SelfService/Prefs.html
+share/rt40/html/SelfService/Update.html
+share/rt40/html/SelfService/index.html
+share/rt40/html/Ticket/Attachment/WithHeaders/dhandler
+share/rt40/html/Ticket/Attachment/dhandler
+share/rt40/html/Ticket/Create.html
+share/rt40/html/Ticket/Display.html
+share/rt40/html/Ticket/Elements/AddAttachments
+share/rt40/html/Ticket/Elements/AddWatchers
+share/rt40/html/Ticket/Elements/Bookmark
+share/rt40/html/Ticket/Elements/BulkLinks
+share/rt40/html/Ticket/Elements/ClickToShowHistory
+share/rt40/html/Ticket/Elements/EditBasics
+share/rt40/html/Ticket/Elements/EditCustomFields
+share/rt40/html/Ticket/Elements/EditDates
+share/rt40/html/Ticket/Elements/EditPeople
+share/rt40/html/Ticket/Elements/EditTransactionCustomFields
+share/rt40/html/Ticket/Elements/EditWatchers
+share/rt40/html/Ticket/Elements/FindAttachments
+share/rt40/html/Ticket/Elements/FindTransactions
+share/rt40/html/Ticket/Elements/FoldStanzaJS
+share/rt40/html/Ticket/Elements/LoadTextAttachments
+share/rt40/html/Ticket/Elements/PreviewScrips
+share/rt40/html/Ticket/Elements/Reminders
+share/rt40/html/Ticket/Elements/ShowAttachments
+share/rt40/html/Ticket/Elements/ShowBasics
+share/rt40/html/Ticket/Elements/ShowCustomFields
+share/rt40/html/Ticket/Elements/ShowDates
+share/rt40/html/Ticket/Elements/ShowDependencies
+share/rt40/html/Ticket/Elements/ShowGnuPGStatus
+share/rt40/html/Ticket/Elements/ShowGroupMembers
+share/rt40/html/Ticket/Elements/ShowHistory
+share/rt40/html/Ticket/Elements/ShowMembers
+share/rt40/html/Ticket/Elements/ShowMessageHeaders
+share/rt40/html/Ticket/Elements/ShowMessageStanza
+share/rt40/html/Ticket/Elements/ShowParents
+share/rt40/html/Ticket/Elements/ShowPeople
+share/rt40/html/Ticket/Elements/ShowPriority
+share/rt40/html/Ticket/Elements/ShowQueue
+share/rt40/html/Ticket/Elements/ShowRequestor
+share/rt40/html/Ticket/Elements/ShowRequestorExtraInfo
+share/rt40/html/Ticket/Elements/ShowRequestorTickets
+share/rt40/html/Ticket/Elements/ShowRequestorTicketsActive
+share/rt40/html/Ticket/Elements/ShowRequestorTicketsAll
+share/rt40/html/Ticket/Elements/ShowRequestorTicketsInactive
+share/rt40/html/Ticket/Elements/ShowSimplifiedRecipients
+share/rt40/html/Ticket/Elements/ShowSummary
+share/rt40/html/Ticket/Elements/ShowTime
+share/rt40/html/Ticket/Elements/ShowTransaction
+share/rt40/html/Ticket/Elements/ShowTransactionAttachments
+share/rt40/html/Ticket/Elements/ShowUpdateStatus
+share/rt40/html/Ticket/Elements/ShowUserEntry
+share/rt40/html/Ticket/Elements/UpdateCc
+share/rt40/html/Ticket/Forward.html
+share/rt40/html/Ticket/GnuPG.html
+share/rt40/html/Ticket/Graphs/Elements/EditGraphProperties
+share/rt40/html/Ticket/Graphs/Elements/ShowGraph
+share/rt40/html/Ticket/Graphs/Elements/ShowLegends
+share/rt40/html/Ticket/Graphs/dhandler
+share/rt40/html/Ticket/Graphs/index.html
+share/rt40/html/Ticket/History.html
+share/rt40/html/Ticket/Modify.html
+share/rt40/html/Ticket/ModifyAll.html
+share/rt40/html/Ticket/ModifyDates.html
+share/rt40/html/Ticket/ModifyLinks.html
+share/rt40/html/Ticket/ModifyPeople.html
+share/rt40/html/Ticket/Reminders.html
+share/rt40/html/Ticket/ShowEmailRecord.html
+share/rt40/html/Ticket/Update.html
+share/rt40/html/Tools/MyDay.html
+share/rt40/html/Tools/MyReminders.html
+share/rt40/html/Tools/Offline.html
+share/rt40/html/Tools/index.html
+share/rt40/html/User/Prefs.html
+share/rt40/html/Widgets/BulkEdit
+share/rt40/html/Widgets/BulkProcess
+share/rt40/html/Widgets/ComboBox
+share/rt40/html/Widgets/FinalizeWidgetArguments
+share/rt40/html/Widgets/Form/Boolean
+share/rt40/html/Widgets/Form/Integer
+share/rt40/html/Widgets/Form/Select
+share/rt40/html/Widgets/Form/String
+share/rt40/html/Widgets/SavedSearch
+share/rt40/html/Widgets/SelectionBox
+share/rt40/html/Widgets/TitleBox
+share/rt40/html/Widgets/TitleBoxEnd
+share/rt40/html/Widgets/TitleBoxStart
+share/rt40/html/autohandler
+share/rt40/html/dhandler
+share/rt40/html/index.html
+share/rt40/html/l
+share/rt40/html/m/_elements/footer
+share/rt40/html/m/_elements/full_site_link
+share/rt40/html/m/_elements/header
+share/rt40/html/m/_elements/menu
+share/rt40/html/m/_elements/raw_style
+share/rt40/html/m/_elements/ticket_list
+share/rt40/html/m/_elements/ticket_menu
+share/rt40/html/m/_elements/wrapper
+share/rt40/html/m/dhandler
+share/rt40/html/m/index.html
+share/rt40/html/m/login
+share/rt40/html/m/logout
+share/rt40/html/m/style.css
+share/rt40/html/m/ticket/create
+share/rt40/html/m/ticket/history
+share/rt40/html/m/ticket/modify
+share/rt40/html/m/ticket/reply
+share/rt40/html/m/ticket/select_create_queue
+share/rt40/html/m/ticket/show
+share/rt40/html/m/tickets/search
+share/rt40/po/bg.po
+share/rt40/po/cs.po
+share/rt40/po/da.po
+share/rt40/po/de.po
+share/rt40/po/el.po
+share/rt40/po/en.po
+share/rt40/po/en_GB.po
+share/rt40/po/es.po
+share/rt40/po/et.po
+share/rt40/po/fi.po
+share/rt40/po/fr.po
+share/rt40/po/he.po
+share/rt40/po/hr.po
+share/rt40/po/hu.po
+share/rt40/po/id.po
+share/rt40/po/is.po
+share/rt40/po/it.po
+share/rt40/po/ja.po
+share/rt40/po/lt.po
+share/rt40/po/lv.po
+share/rt40/po/mk.po
+share/rt40/po/nb.po
+share/rt40/po/nl.po
+share/rt40/po/nn.po
+share/rt40/po/pl.po
+share/rt40/po/pt.po
+share/rt40/po/pt_BR.po
+share/rt40/po/pt_PT.po
+share/rt40/po/rt.pot
+share/rt40/po/ru.po
+share/rt40/po/sl.po
+share/rt40/po/sv.po
+share/rt40/po/tr.po
+share/rt40/po/zh_CN.po
+share/rt40/po/zh_TW.po
+@dirrmtry www/rt40
+@dirrm share/rt40/po
+@exec mkdir -p %D/share/rt40/plugins
+@dirrm share/rt40/plugins
+@dirrm share/rt40/lib
+@dirrm share/rt40/html/m/tickets
+@dirrm share/rt40/html/m/ticket
+@dirrm share/rt40/html/m/_elements
+@dirrm share/rt40/html/m
+@dirrm share/rt40/html/Widgets/Form
+@dirrm share/rt40/html/Widgets
+@dirrm share/rt40/html/User
+@dirrm share/rt40/html/Tools
+@dirrm share/rt40/html/Ticket/Graphs/Elements
+@dirrm share/rt40/html/Ticket/Graphs
+@dirrm share/rt40/html/Ticket/Elements
+@dirrm share/rt40/html/Ticket/Attachment/WithHeaders
+@dirrm share/rt40/html/Ticket/Attachment
+@dirrm share/rt40/html/Ticket
+@dirrm share/rt40/html/SelfService/Elements
+@dirrm share/rt40/html/SelfService/Attachment
+@dirrm share/rt40/html/SelfService/Article
+@dirrm share/rt40/html/SelfService
+@dirrm share/rt40/html/Search/Elements
+@dirrm share/rt40/html/Search
+@dirrm share/rt40/html/REST/1.0/ticket
+@dirrm share/rt40/html/REST/1.0/search
+@dirrm share/rt40/html/REST/1.0/NoAuth
+@dirrm share/rt40/html/REST/1.0/Forms/user
+@dirrm share/rt40/html/REST/1.0/Forms/transaction
+@dirrm share/rt40/html/REST/1.0/Forms/ticket
+@dirrm share/rt40/html/REST/1.0/Forms/queue
+@dirrm share/rt40/html/REST/1.0/Forms/group
+@dirrm share/rt40/html/REST/1.0/Forms/attachment
+@dirrm share/rt40/html/REST/1.0/Forms
+@dirrm share/rt40/html/REST/1.0
+@dirrm share/rt40/html/REST
+@dirrm share/rt40/html/Prefs
+@dirrm share/rt40/html/NoAuth/rss
+@dirrm share/rt40/html/NoAuth/js
+@dirrm share/rt40/html/NoAuth/images/tablesorter
+@dirrm share/rt40/html/NoAuth/images/jquery_ui
+@dirrm share/rt40/html/NoAuth/images/farbtastic
+@dirrm share/rt40/html/NoAuth/images/css
+@dirrm share/rt40/html/NoAuth/images
+@dirrm share/rt40/html/NoAuth/iCal
+@dirrm share/rt40/html/NoAuth/css/web2/images/source
+@dirrm share/rt40/html/NoAuth/css/web2/images
+@dirrm share/rt40/html/NoAuth/css/web2
+@dirrm share/rt40/html/NoAuth/css/images
+@dirrm share/rt40/html/NoAuth/css/base
+@dirrm share/rt40/html/NoAuth/css/ballard/images/source
+@dirrm share/rt40/html/NoAuth/css/ballard/images
+@dirrm share/rt40/html/NoAuth/css/ballard
+@dirrm share/rt40/html/NoAuth/css/aileron/images/source
+@dirrm share/rt40/html/NoAuth/css/aileron/images
+@dirrm share/rt40/html/NoAuth/css/aileron
+@dirrm share/rt40/html/NoAuth/css
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/themes/default
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/themes
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/v2/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/v2
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/office2003
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/kama/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins/kama
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/skins
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/wsc
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/tabletools/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/tabletools
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/tableresize
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/table/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/table
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles/styles
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/showblocks
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/scayt
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastetext
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastefromword/filter
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pastefromword
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pagebreak/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/pagebreak
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/liststyle/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/liststyle
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/link/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/link
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/image/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/image
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/iframedialog
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/forms
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/flash
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/find/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/find
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/div/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/div
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/dialog
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/colordialog
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/clipboard
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/autogrow
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/about/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/about
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/dialogs
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/a11yhelp
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/lang
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/images
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor/adapters
+@dirrm share/rt40/html/NoAuth/RichText/ckeditor
+@dirrm share/rt40/html/NoAuth/RichText
+@dirrm share/rt40/html/NoAuth/Helpers/CustomLogo
+@dirrm share/rt40/html/NoAuth/Helpers
+@dirrm share/rt40/html/NoAuth
+@dirrm share/rt40/html/Install/Elements
+@dirrm share/rt40/html/Install
+@dirrm share/rt40/html/Helpers/Toggle
+@dirrm share/rt40/html/Helpers/Autocomplete
+@dirrm share/rt40/html/Helpers
+@dirrm share/rt40/html/Elements/RT__User
+@dirrm share/rt40/html/Elements/RT__Ticket
+@dirrm share/rt40/html/Elements/RT__Template
+@dirrm share/rt40/html/Elements/RT__Scrip
+@dirrm share/rt40/html/Elements/RT__SavedSearch
+@dirrm share/rt40/html/Elements/RT__Queue
+@dirrm share/rt40/html/Elements/RT__Group
+@dirrm share/rt40/html/Elements/RT__Dashboard
+@dirrm share/rt40/html/Elements/RT__CustomField
+@dirrm share/rt40/html/Elements/RT__Class
+@dirrm share/rt40/html/Elements/RT__Article
+@dirrm share/rt40/html/Elements/GnuPG
+@dirrm share/rt40/html/Elements/CollectionAsTable
+@dirrm share/rt40/html/Elements
+@dirrm share/rt40/html/Download/CustomFieldValue
+@dirrm share/rt40/html/Download
+@dirrm share/rt40/html/Dashboards/Elements/ShowPortlet
+@dirrm share/rt40/html/Dashboards/Elements
+@dirrm share/rt40/html/Dashboards
+@dirrm share/rt40/html/Articles/Elements
+@dirrm share/rt40/html/Articles/Article/Elements
+@dirrm share/rt40/html/Articles/Article
+@dirrm share/rt40/html/Articles
+@dirrm share/rt40/html/Approvals/Elements
+@dirrm share/rt40/html/Approvals
+@dirrm share/rt40/html/Admin/Users
+@dirrm share/rt40/html/Admin/Tools/Shredder/Elements/Object
+@dirrm share/rt40/html/Admin/Tools/Shredder/Elements/Error
+@dirrm share/rt40/html/Admin/Tools/Shredder/Elements
+@dirrm share/rt40/html/Admin/Tools/Shredder/Dumps
+@dirrm share/rt40/html/Admin/Tools/Shredder
+@dirrm share/rt40/html/Admin/Tools
+@dirrm share/rt40/html/Admin/Queues
+@dirrm share/rt40/html/Admin/Groups
+@dirrm share/rt40/html/Admin/Global/CustomFields
+@dirrm share/rt40/html/Admin/Global
+@dirrm share/rt40/html/Admin/Elements
+@dirrm share/rt40/html/Admin/CustomFields
+@dirrm share/rt40/html/Admin/Articles/Elements
+@dirrm share/rt40/html/Admin/Articles/Classes
+@dirrm share/rt40/html/Admin/Articles
+@dirrm share/rt40/html/Admin
+@dirrm share/rt40/html
+@dirrm share/rt40/fonts
+@dirrm share/rt40/etc
+@dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extending
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/customizing
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/RT/URI
 @dirrm %%SITE_PERL%%/RT/Test
+@dirrm %%SITE_PERL%%/RT/Squish
 @dirrm %%SITE_PERL%%/RT/Shredder/Plugin/Base
 @dirrm %%SITE_PERL%%/RT/Shredder/Plugin
 @dirrm %%SITE_PERL%%/RT/Shredder
 @dirrm %%SITE_PERL%%/RT/Search
 @dirrm %%SITE_PERL%%/RT/Report/Tickets
 @dirrm %%SITE_PERL%%/RT/Report
-@dirrm %%SITE_PERL%%/RT/Interface/Web/Standalone
 @dirrm %%SITE_PERL%%/RT/Interface/Web/QueryBuilder
-@dirrm %%SITE_PERL%%/RT/Interface/Web/Menu
 @dirrm %%SITE_PERL%%/RT/Interface/Web
-@dirrm %%SITE_PERL%%/RT/Interface/Email/Filter
 @dirrm %%SITE_PERL%%/RT/Interface/Email/Auth
 @dirrm %%SITE_PERL%%/RT/Interface/Email
 @dirrm %%SITE_PERL%%/RT/Interface
 @dirrm %%SITE_PERL%%/RT/I18N
 @dirrm %%SITE_PERL%%/RT/Graph
+@dirrm %%SITE_PERL%%/RT/Dashboard
 @dirrm %%SITE_PERL%%/RT/CustomFieldValues
 @dirrm %%SITE_PERL%%/RT/Crypt
 @dirrm %%SITE_PERL%%/RT/Condition
@@ -1340,4 +1378,4 @@ share/rt38/html/l
 @dirrm %%SITE_PERL%%/RT/Approval
 @dirrm %%SITE_PERL%%/RT/Action
 @dirrm %%SITE_PERL%%/RT
-@dirrm etc/rt38
+@dirrmtry etc/rt40

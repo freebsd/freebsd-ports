@@ -1,5 +1,5 @@
---- Makefile.in.orig	2010-05-05 13:09:21.000000000 -0700
-+++ Makefile.in	2010-08-05 13:11:47.000000000 -0700
+--- Makefile.in.orig	2011-08-12 16:41:09.000000000 +0200
++++ Makefile.in	2011-10-04 17:54:32.000000000 +0200
 @@ -58,7 +58,7 @@
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
@@ -10,49 +10,38 @@
  
  RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
 @@ -108,7 +108,7 @@
- RT_DOC_PATH		=	@RT_DOC_PATH_R@
  RT_FONT_PATH		=	@RT_FONT_PATH_R@
+ RT_LEXICON_PATH		=	@RT_LEXICON_PATH_R@
  RT_LOCAL_PATH		=	@RT_LOCAL_PATH_R@
 -LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/plugins
-+LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt38/plugins
++LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt40/plugins
  LOCAL_ETC_PATH		=	@LOCAL_ETC_PATH_R@
  LOCAL_LIB_PATH		=	@LOCAL_LIB_PATH_R@
  LOCAL_LEXICON_PATH	=	@LOCAL_LEXICON_PATH_R@
-@@ -286,9 +286,9 @@
- 	@echo "    $(RT_SBIN_PATH)/rt-setup-database --dba $(DB_DBA) --prompt-for-dba-password --action upgrade"
+@@ -265,16 +265,13 @@
+ depends: fixdeps
  
+ fixdeps:
+-	$(PERL) ./sbin/rt-test-dependencies --verbose --install --with-$(DB_TYPE) $(my_with_web_handlers)
++	$(PERL) ./sbin/rt-test-dependencies --verbose --with-$(DB_TYPE) $(my_with_web_handlers)
  
--upgrade: testdeps config-install dirs files-install fixperms upgrade-instruct
-+upgrade:  config-install dirs files-install fixperms upgrade-instruct
+ #}}}
  
--upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install font-install fixperms
-+upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install font-install
- 
- 
- # {{{ dependencies
-@@ -306,13 +306,6 @@
- 
- # {{{ fixperms
  fixperms:
--	# Make the libraries readable
--	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
+ 	# Make the libraries readable
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
 -	chown -R $(LIBS_OWNER) $(DESTDIR)$(RT_LIB_PATH)
 -	chgrp -R $(LIBS_GROUP) $(DESTDIR)$(RT_LIB_PATH)
 -	chmod -R  u+rwX,go-w,go+rX $(DESTDIR)$(RT_LIB_PATH)
--
--
+ 
+ 
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
+@@ -337,7 +334,7 @@
  
- 	chmod 0755 $(DESTDIR)$(RT_ETC_PATH)
-@@ -367,9 +360,9 @@
- 	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
- # }}}
+ install: testdeps config-install dirs files-install fixperms instruct
  
--install: testdeps config-install dirs files-install fixperms instruct
-+install: config-install dirs files-install fixperms instruct
- 
--files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install font-install
-+files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install
+-files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install font-install po-install
++files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install
  
  config-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
