@@ -11,7 +11,6 @@ PORTREVISION=	3
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
-PKGNAMESUFFIX=	-kde4
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -39,6 +38,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		dcmdata.3:${PORTSDIR}/devel/dcmtk
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
+
+LATEST_LINK=	${PORTNAME}-kde4
 
 CONFLICTS=	calligra-[0-9]*
 
