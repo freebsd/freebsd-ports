@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Liteweight context-aware dbi handle cache and utility methods
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 BUILD_DEPENDS:=	${RUN_DEPENDS}

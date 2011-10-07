@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically encode columns
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
@@ -29,7 +29,6 @@ MAN3=	DBIx::Class::EncodedColumn.3 \
 	DBIx::Class::EncodedColumn::Crypt::Eksblowfish::Bcrypt.3 \
 	DBIx::Class::EncodedColumn::Crypt::OpenPGP.3 \
 	DBIx::Class::EncodedColumn::Digest.3
-
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL

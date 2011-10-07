@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sensible default end action for Catalyst
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.70:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Color-Scheme>=0:${PORTSDIR}/graphics/p5-Color-Scheme \

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	High performance template engine
 
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 COMMON_DEPENDS=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent \

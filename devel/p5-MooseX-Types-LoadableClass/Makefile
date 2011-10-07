@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	ClassName type constraint with coercion to load the class
 
-LICENSE=        ART20 GPLv1
-LICENSE_COMB=   dual
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \

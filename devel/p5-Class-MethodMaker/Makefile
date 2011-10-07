@@ -14,8 +14,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl module for creating generic methods
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=		yes
 

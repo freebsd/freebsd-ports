@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load distribution and status across multiple host machines
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-Proc-ProcessTable>=0.40:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		p5-Unix-Processors>=2.02:${PORTSDIR}/sysutils/p5-Unix-Processors \

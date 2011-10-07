@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose minus the antlers
 
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Exception-LessClever>=0.005:${PORTSDIR}/devel/p5-Test-Exception-LessClever \

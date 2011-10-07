@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \

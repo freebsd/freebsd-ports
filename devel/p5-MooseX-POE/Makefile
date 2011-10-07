@@ -14,14 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Illicit Love Child of Moose and POE
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Async>=0.01:${PORTSDIR}/devel/p5-MooseX-Async \
 		p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
 		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 

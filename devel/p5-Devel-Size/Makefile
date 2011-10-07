@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for finding the memory usage of Perl variables
 
 LICENSE_COMB=	dual
-LICENSES=	ART20 GPLv1
+LICENSES=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 

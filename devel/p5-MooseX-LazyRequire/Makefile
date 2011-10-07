@@ -14,14 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Required attributes which fail only when trying to use them
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-aliased>=0.30:${PORTSDIR}/devel/p5-aliased
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

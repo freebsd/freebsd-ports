@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Jifty::DBI - An object-relational persistence framework
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	\
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
@@ -44,7 +44,7 @@ BUILD_DEPENDS=	\
 		p5-version>0:${PORTSDIR}/devel/p5-version \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-Cache-Memcached>0:${PORTSDIR}/databases/p5-Cache-Memcached
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

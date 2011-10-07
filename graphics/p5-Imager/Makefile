@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
