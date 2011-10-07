@@ -1,12 +1,10 @@
-quvi is a command line tool for parsing video download links.
-It supports Youtube and other similar video websites.
+quvi is a command line tool for parsing flash media stream URLs. It supports
+many websites including YouTube and Dailymotion.
 
-libquvi is a library for parsing video download links with
-C API. It is written in C and intended to be a cross-platform
-library.
+Starting from 0.4.0, the quvi distribution has split into libquvi-scripts,
+libquvi and quvi.
 
-This project started as a cclive spin-off after receiving
-a request for a cclive library.
+git repo: http://repo.or.cz/w/quvi-tool.git
 
 WWW: http://quvi.sourceforge.net/
-     http://quvi.googlecode.com/
+WWW: http://quvi.googlecode.com/

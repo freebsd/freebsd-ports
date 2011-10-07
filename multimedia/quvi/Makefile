@@ -6,43 +6,25 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.19
+PORTVERSION=	0.4.0
 CATEGORIES=	multimedia devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/ \
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Query video library for Youtube like websites
+COMMENT=	Command line tool for parsing flash media stream URLs
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	libquvi>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	libquvi>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi
 
-OPTIONS=	NSFW "Enable adult website support" off
-
-CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_ICONV=	yes
-USE_LDCONFIG=	yes
-USE_LUA=	yes
+USE_GNOME=	pkgconfig
 USE_XZ=		yes
 
 MAN1=		quvi.1
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_NSFW)
-CONFIGURE_ARGS+=--enable-nsfw
-PLIST_SUB+=	NSFW=""
-.else
-PLIST_SUB+=	NSFW="@comment "
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/doc/nd/ && ${COPYTREE_SHARE} . ${DOCSDIR}/
-.endif
+PLIST_FILES=	bin/quvi
 
 .include <bsd.port.mk>
