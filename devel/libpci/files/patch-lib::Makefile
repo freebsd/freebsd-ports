@@ -4,7 +4,7 @@
  	rm -f $@
  	$(AR) rcs $@ $^
  	$(RANLIB) $@
-+	$(CC) $(CFLAGS) -shared $^ -o libpci.so
++	$(CC) $(CFLAGS) -shared $^ -lz -o libpci.so
  else
  CFLAGS += -fPIC -fvisibility=hidden
  $(PCILIB): $(addsuffix .o,$(OBJS))
