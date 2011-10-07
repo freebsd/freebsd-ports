@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	glog
-DISTVERSION=	0.3.1
+PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		gflags.2:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
@@ -21,6 +23,7 @@ USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 PROJECTHOST=	google-glog
 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 .include <bsd.port.pre.mk>
