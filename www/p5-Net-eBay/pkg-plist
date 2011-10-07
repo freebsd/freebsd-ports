@@ -1,5 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/eBay/.packlist
 %%SITE_PERL%%/Net/eBay.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/eBay/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-add-item.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-api-usage.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-end-item-early.pl
