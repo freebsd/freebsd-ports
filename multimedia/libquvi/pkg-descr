@@ -1,0 +1,17 @@
+quvi is a command line tool for parsing flash media stream URLs. It supports
+many websites including YouTube and Dailymotion.
+
+Starting from 0.4.0, the quvi distribution has split into libquvi-scripts,
+libquvi and quvi.
+
+libquvi is a cross-platform library for parsing flash media stream URLs with C
+API.
+
+libquvi originates from the idea of allowing users to view the videos without
+having to install or use flash. It is a "workaround", not an "alternative" to
+flash.
+
+git repo: http://repo.or.cz/w/libquvi.git
+
+WWW: http://quvi.sourceforge.net/
+WWW: http://quvi.googlecode.com/

@@ -1,0 +1,25 @@
+include/quvi/llst.h
+include/quvi/net.h
+include/quvi/quvi.h
+lib/libquvi.a
+lib/libquvi.la
+lib/libquvi.so
+lib/libquvi.so.7
+libdata/pkgconfig/libquvi.pc
+%%PORTDOCS%%%%DOCSDIR%%/About.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Development.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Help.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Patches.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Style.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Formats.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_LinkedList.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_Network.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Guidelines.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Webscript.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Webscripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Overviews
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/quvi
