@@ -21,7 +21,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose
 
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
