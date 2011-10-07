@@ -1592,6 +1592,7 @@
     SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rt38
+    SUBDIR += rt40
     SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
