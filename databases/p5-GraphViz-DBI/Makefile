@@ -9,19 +9,16 @@ PORTNAME=	GraphViz-DBI
 PORTVERSION=	1.100860
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITES_SUBDIR=	CPAN:MARCEL
+MASTER_SITE_SUBDIR=	CPAN:MARCEL
 PKGNAMEPREFIX=	p5-
 
-# Note: DEPRECATION candidate.
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz::DBI - graph database tables and relations
 
-BROKEN=	does not fetch
-
-PERL_CONFIGURE=	yes
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 
 PERL_CONFIGURE=	yes
 
