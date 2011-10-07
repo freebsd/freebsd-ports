@@ -15,9 +15,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-FORBIDDEN=	Vulnerable since 2009-08-17, http://portaudit.freebsd.org/856a6f84-8b30-11de-8062-00e0815b8da8.html
-EXPIRATION_DATE=	2011-10-14
-
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		nettle.4:${PORTSDIR}/security/nettle \
 		p11-kit.0:${PORTSDIR}/security/p11-kit
