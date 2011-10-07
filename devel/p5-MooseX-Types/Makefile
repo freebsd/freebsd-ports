@@ -25,6 +25,9 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+
 PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::Types.3 \
@@ -36,8 +39,5 @@ MAN3=	MooseX::Types.3 \
 	MooseX::Types::UndefinedType.3 \
 	MooseX::Types::Util.3 \
 	MooseX::Types::Wrapper.3
-
-post-extract:
-	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
