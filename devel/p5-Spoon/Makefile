@@ -7,6 +7,7 @@
 
 PORTNAME=	Spoon
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
@@ -17,7 +18,8 @@ COMMENT=	A Spiffy Application Building Framework
 
 BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
 		${SITE_PERL}/IO/All.pm:${PORTSDIR}/devel/p5-IO-All \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
