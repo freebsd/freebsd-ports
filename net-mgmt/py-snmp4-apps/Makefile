@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp4-apps
-PORTVERSION=	0.2.11a
+PORTVERSION=	0.2.11b
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysnmp/pysnmp-apps-devel/${PORTVERSION}
@@ -16,10 +16,10 @@ DISTNAME=	pysnmp-apps-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Command line utilities for pysnmp4
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=0:${PORTSDIR}/net-mgmt/py-snmp4
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=0:${PORTSDIR}/net-mgmt/py-snmp4
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
