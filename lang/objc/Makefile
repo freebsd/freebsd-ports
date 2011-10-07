@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	objc
-PORTVERSION=	3.2.8
-PORTREVISION=	1
+PORTVERSION=	3.2.11
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://users.telenet.be/stes/
 DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
@@ -15,22 +15,15 @@ DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
-BOOTVERSION=	3.2.8
+BOOTVERSION=	3.2.11
 
 ALL_TARGET=	default
 MAKE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
-USE_GCC=	3.4
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
-#
-# We need the compiler in run-time
-#
-.if ${OSVERSION} >= 700042
-RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
-.endif
 
 pre-configure:
 	cd ${WRKDIR}/${PORTNAME}-bootstrap-${BOOTVERSION};\

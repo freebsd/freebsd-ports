@@ -227,14 +227,14 @@ lib/objpakr.a
 %%DOCSDIR%%/html/objpak/TextStyle.html
 %%DOCSDIR%%/html/objpak/TypeInconsistency.html
 %%DOCSDIR%%/html/objpak/UnknownType.html
-@dirrmtry %%DOCSDIR%%/html/objpak
-@dirrmtry %%DOCSDIR%%/html/objcrt
-@dirrmtry %%DOCSDIR%%/html/cakit
-@dirrmtry %%DOCSDIR%%/html
-@dirrmtry %%DOCSDIR%%/examples
-@dirrmtry %%DOCSDIR%%
-@dirrmtry include/ppi
-@dirrmtry include/oclib
-@dirrmtry include/objpak
-@dirrmtry include/objcrt
-@dirrmtry include/cakit
+@dirrm %%DOCSDIR%%/html/objpak
+@dirrm %%DOCSDIR%%/html/objcrt
+@dirrm %%DOCSDIR%%/html/cakit
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
+@dirrm include/ppi
+@dirrm include/oclib
+@dirrm include/objpak
+@dirrm include/objcrt
+@dirrm include/cakit
