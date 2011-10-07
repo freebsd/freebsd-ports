@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gflags
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Commandline flags module for C++
@@ -20,7 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
-		gflags.html designstyle.css
+		designstyle.css gflags.html
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(pkgconfigdir = \).*|\1$$\(DESTDIR\)$$\(prefix\)/libdata/pkgconfig|' \

@@ -1,16 +1,17 @@
 bin/gflags_completions.sh
 include/gflags/gflags.h
 include/gflags/gflags_completions.h
+include/gflags/gflags_declare.h
 include/google/gflags.h
 include/google/gflags_completions.h
 lib/libgflags.a
 lib/libgflags.la
 lib/libgflags.so
-lib/libgflags.so.1
+lib/libgflags.so.2
 lib/libgflags_nothreads.a
 lib/libgflags_nothreads.la
 lib/libgflags_nothreads.so
-lib/libgflags_nothreads.so.1
+lib/libgflags_nothreads.so.2
 libdata/pkgconfig/libgflags.pc
 libdata/pkgconfig/libgflags_nothreads.pc
 @dirrmtry include/google
