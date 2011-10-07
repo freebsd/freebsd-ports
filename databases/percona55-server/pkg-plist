@@ -8,6 +8,7 @@ bin/myisampack
 bin/mysql_convert_table_format
 bin/mysql_fix_extensions
 bin/mysql_install_db
+bin/mysql_plugin
 bin/mysql_secure_installation
 bin/mysql_setpermission
 bin/mysql_tzinfo_to_sql
@@ -27,6 +28,7 @@ lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/ha_archive.so
 lib/mysql/plugin/ha_blackhole.so
 lib/mysql/plugin/ha_example.so
