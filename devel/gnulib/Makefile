@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnulib
-PORTVERSION=	20110609
+PORTVERSION=	20110908
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
