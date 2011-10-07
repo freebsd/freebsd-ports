@@ -2921,6 +2921,7 @@ eigen2                          ports/math/eigen2
 eights                          ports/games/eights
 eina                            ports/devel/eina
 einstein                        ports/games/einstein
+eiskaltdcpp-daemon              ports/net-p2p/eiskaltdcpp-daemon
 eiskaltdcpp-data                ports/net-p2p/eiskaltdcpp-data
 eiskaltdcpp-gtk                 ports/net-p2p/eiskaltdcpp-gtk
 eiskaltdcpp-lib                 ports/net-p2p/eiskaltdcpp-lib
@@ -3027,7 +3028,6 @@ enigmail-seamonkey              ports/mail/enigmail-seamonkey
 enigmail-seamonkey2             ports/mail/enigmail-seamonkey2
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
 enigmail-thunderbird3           ports/mail/enigmail-thunderbird3
-enjoympeg                       ports/multimedia/enjoympeg
 enlightenment                   ports/x11-wm/enlightenment
 enlightenment-docs              ports/x11-wm/enlightenment-docs
 enma                            ports/mail/enma
@@ -8058,6 +8058,7 @@ libntlm                         ports/security/libntlm
 libnxml                         ports/textproc/libnxml
 libnxt                          ports/devel/libnxt
 liboauth                        ports/net/liboauth
+libocas                         ports/math/libocas
 libodbc++                       ports/databases/libodbc++
 libofa                          ports/audio/libofa
 libofx                          ports/finance/libofx
@@ -8250,6 +8251,7 @@ libtnl                          ports/net/libtnl
 libtomcrypt                     ports/security/libtomcrypt
 libtommath                      ports/math/libtommath
 libtool                         ports/devel/libtool
+libtool-fixed                   ports/devel/libtool-fixed
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
@@ -8861,7 +8863,6 @@ lynis                           ports/security/lynis
 lynx                            ports/www/lynx
 lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
-lyx14                           ports/print/lyx14
 lyx16                           ports/print/lyx16
 lzip                            ports/archivers/lzip
 lzlib                           ports/archivers/lzlib
@@ -22490,6 +22491,7 @@ py31-tkinter                    ports/x11-toolkits/py31-tkinter
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
 pybench                         ports/benchmarks/pybench
+pyblosxom                       ports/www/pyblosxom
 pybook                          ports/textproc/pybook
 pybookreader                    ports/deskutils/pybookreader
 pybrain                         ports/science/pybrain
@@ -25750,6 +25752,7 @@ tripwire                        ports/security/tripwire
 tripwire-131                    ports/security/tripwire-131
 tripwire12                      ports/security/tripwire12
 trix                            ports/net-im/trix
+trlan                           ports/math/trlan
 trn                             ports/news/trn
 trn4                            ports/news/trn4
 trnascan-se                     ports/biology/tRNAscan-SE
