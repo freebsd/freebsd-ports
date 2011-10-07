@@ -7,7 +7,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	2.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
 		http://openwebmail.org/openwebmail/download/%SUBDIR%/
@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR?=	release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
 
 USE_PERL5=	yes
 NO_BUILD=	yes
