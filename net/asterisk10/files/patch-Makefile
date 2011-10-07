@@ -1,5 +1,5 @@
---- Makefile.orig	2011-07-19 23:31:16.000000000 +0200
-+++ Makefile	2011-07-23 00:32:54.955232647 +0200
+--- Makefile.orig	2011-09-19 22:29:40.000000000 +0200
++++ Makefile	2011-10-07 11:17:16.000000000 +0200
 @@ -122,7 +122,7 @@
  OVERWRITE=y
  
@@ -39,8 +39,8 @@
 +	fi
 +
  	for x in images/*.jpg; do \
--		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/images ; \
-+		$(INSTALL) -m 644 $$x $(DESTDIR)$(DOCSDIR)/images ; \
+-		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/images" ; \
++		$(INSTALL) -m 644 $$x "$(DESTDIR)$(DOCSDIR)/images" ; \
  	done
  	$(MAKE) -C sounds install
  
@@ -52,20 +52,20 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/system"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/tmp"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail"
-@@ -617,7 +624,7 @@
+@@ -618,7 +625,7 @@
  	@exit 1
  endif
  
 -install: badshell bininstall datafiles
 +install: badshell bininstall datafiles samples
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
- 		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
+ 		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -659,29 +666,18 @@
+@@ -660,29 +667,18 @@
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
--		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x` ; \
+-		$(INSTALL) -m 644 "$$x" "$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`" ; \
 +		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`-dist ; \
  	done
  
@@ -73,13 +73,13 @@
  	@echo Installing other config files...
  	@for x in configs/*.sample; do \
 -		dst="$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`" ;	\
--		if [ -f $${dst} ]; then \
+-		if [ -f "$${dst}" ]; then \
 -			if [ "$(OVERWRITE)" = "y" ]; then \
--				if cmp -s $${dst} $$x ; then \
+-				if cmp -s "$${dst}" "$$x" ; then \
 -					echo "Config file $$x is unchanged"; \
 -					continue; \
 -				fi ; \
--				mv -f $${dst} $${dst}.old ; \
+-				mv -f "$${dst}" "$${dst}.old" ; \
 -			else \
 -				echo "Skipping config file $$x"; \
 -				continue; \
@@ -89,18 +89,18 @@
 +			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`; \
  		fi ; \
 -		echo "Installing file $$x"; \
--		$(INSTALL) -m 644 $$x $${dst} ;\
+-		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
  	done
 -	if [ "$(OVERWRITE)" = "y" ]; then \
 +	@if true; then \
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
-@@ -695,6 +691,7 @@
+@@ -696,6 +692,7 @@
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
- 			$(DESTDIR)$(ASTCONFPATH) > $(DESTDIR)$(ASTCONFPATH).tmp ; \
- 		$(INSTALL) -m 644 $(DESTDIR)$(ASTCONFPATH).tmp $(DESTDIR)$(ASTCONFPATH) ; \
-+		$(INSTALL) -m 644 $(DESTDIR)$(ASTCONFPATH).tmp $(DESTDIR)$(ASTCONFPATH)-dist ; \
- 		rm -f $(DESTDIR)$(ASTCONFPATH).tmp ; \
+ 			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
+ 		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \
++		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)-dist" ; \
+ 		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	fi ; \
- 	$(INSTALL) -d $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX
+ 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX"
