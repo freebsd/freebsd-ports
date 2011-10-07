@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
 PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Types::Common.3 \
