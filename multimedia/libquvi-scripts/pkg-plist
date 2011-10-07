@@ -1,0 +1,64 @@
+libdata/pkgconfig/libquvi-scripts.pc
+%%DATADIR%%/lua/README
+%%DATADIR%%/lua/util/charset.lua
+%%DATADIR%%/lua/util/content_type.lua
+%%DATADIR%%/lua/util/trim.lua
+%%DATADIR%%/lua/website/README
+%%DATADIR%%/lua/website/academicearth.lua
+%%DATADIR%%/lua/website/arte.lua
+%%DATADIR%%/lua/website/audioboo.lua
+%%DATADIR%%/lua/website/bikeradar.lua
+%%DATADIR%%/lua/website/blip.lua
+%%DATADIR%%/lua/website/bloomberg.lua
+%%DATADIR%%/lua/website/break.lua
+%%DATADIR%%/lua/website/buzzhumor.lua
+%%DATADIR%%/lua/website/cbsnews.lua
+%%DATADIR%%/lua/website/charlierose.lua
+%%DATADIR%%/lua/website/clipfish.lua
+%%DATADIR%%/lua/website/collegehumor.lua
+%%DATADIR%%/lua/website/dailymotion.lua
+%%NSFW%%%%DATADIR%%/lua/website/foundrymusic.lua
+%%DATADIR%%/lua/website/foxnews.lua
+%%DATADIR%%/lua/website/francetelevisions.lua
+%%DATADIR%%/lua/website/funnyhub.lua
+%%DATADIR%%/lua/website/funnyordie.lua
+%%DATADIR%%/lua/website/gaskrank.lua
+%%DATADIR%%/lua/website/globo.lua
+%%DATADIR%%/lua/website/golem.lua
+%%DATADIR%%/lua/website/google.lua
+%%DATADIR%%/lua/website/guardian.lua
+%%NSFW%%%%DATADIR%%/lua/website/keezmovies.lua
+%%DATADIR%%/lua/website/liveleak.lua
+%%DATADIR%%/lua/website/megavideo.lua
+%%DATADIR%%/lua/website/metacafe.lua
+%%DATADIR%%/lua/website/pluzz.lua
+%%DATADIR%%/lua/website/publicsenat.lua
+%%DATADIR%%/lua/website/quvi/bit.lua
+%%DATADIR%%/lua/website/quvi/const.lua
+%%DATADIR%%/lua/website/quvi/url.lua
+%%DATADIR%%/lua/website/quvi/util.lua
+%%DATADIR%%/lua/website/sapo.lua
+%%DATADIR%%/lua/website/sevenload.lua
+%%DATADIR%%/lua/website/soundcloud.lua
+%%NSFW%%%%DATADIR%%/lua/website/spankwire.lua
+%%DATADIR%%/lua/website/spiegel.lua
+%%DATADIR%%/lua/website/tagtele.lua
+%%DATADIR%%/lua/website/ted.lua
+%%DATADIR%%/lua/website/theonion.lua
+%%DATADIR%%/lua/website/tmunderground.lua
+%%NSFW%%%%DATADIR%%/lua/website/totallynsfw.lua
+%%NSFW%%%%DATADIR%%/lua/website/tube8.lua
+%%DATADIR%%/lua/website/tvlux.lua
+%%DATADIR%%/lua/website/videobash.lua
+%%DATADIR%%/lua/website/vimeo.lua
+%%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
+%%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
+%%DATADIR%%/lua/website/yfrog.lua
+%%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
+%%DATADIR%%/lua/website/youtube.lua
+%%DATADIR%%/version
+@dirrm %%DATADIR%%/lua/website/quvi
+@dirrm %%DATADIR%%/lua/website
+@dirrm %%DATADIR%%/lua/util
+@dirrm %%DATADIR%%/lua
+@dirrmtry %%DATADIR%%
