@@ -15,9 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Apply roles to a class related to yours
 
-RUN_DEPENDS=	\
+BUILD_DEPENDS=	\
 	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Role-Parameterized>=0.04:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
