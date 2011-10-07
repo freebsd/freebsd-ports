@@ -1,5 +1,5 @@
 %%SITE_PERL%%/GraphViz/DBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/DBI/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/DBI
-@unexec rmdir %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz
 @dirrmtry %%SITE_PERL%%/GraphViz
