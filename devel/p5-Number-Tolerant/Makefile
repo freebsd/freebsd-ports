@@ -7,6 +7,7 @@
 
 PORTNAME=	Number-Tolerant
 PORTVERSION=	1.701
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -14,6 +15,14 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides inexact number comparisons with tolerance ranges
+
+BUILD_DEPENDS=	p5-Math-BigRat>=0:${PORTSDIR}/math/p5-Math-BigRat \
+		p5-Math-BigInt>=0:${PORTSDIR}/math/p5-Math-BigInt \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
 
 PERL_CONFIGURE=	yes
 
