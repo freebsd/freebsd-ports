@@ -13264,7 +13264,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>gnutls-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.9.0</lt></range>
       </package>
     </affects>
     <description>
