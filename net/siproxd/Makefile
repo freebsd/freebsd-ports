@@ -7,14 +7,14 @@
 
 PORTNAME=	siproxd
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
-LIB_DEPENDS=	osip2.8:${PORTSDIR}/net/libosip
+LIB_DEPENDS=	osip2.9:${PORTSDIR}/net/libosip
 
 USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes
