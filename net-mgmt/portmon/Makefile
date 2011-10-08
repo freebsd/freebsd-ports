@@ -14,9 +14,6 @@ MASTER_SITES=	http://voodoo.bawue.com/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
 GNU_CONFIGURE=	yes
 
 MAN8=		portmon.8
