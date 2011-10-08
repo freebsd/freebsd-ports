@@ -18,13 +18,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A library for multiple-precision floating-point computations
 
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
+
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 PATCHLEVEL=	1
 PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
-
-LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
@@ -43,6 +43,8 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} 's/install-nobase_dist_docDATA$$//' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's/install-data-am: install-dist_docDATA/install-data-am:/' \
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 regression-test: build
