@@ -52,20 +52,20 @@ share/gtags/icons/right.png
 share/gtags/icons/text.png
 share/gtags/icons/top.png
 share/gtags/jquery/images/file.gif
-share/gtags/jquery/images/folder.gif
 share/gtags/jquery/images/folder-closed.gif
+share/gtags/jquery/images/folder.gif
 share/gtags/jquery/images/minus.gif
 share/gtags/jquery/images/plus.gif
-share/gtags/jquery/images/treeview-black.gif
 share/gtags/jquery/images/treeview-black-line.gif
-share/gtags/jquery/images/treeview-default.gif
+share/gtags/jquery/images/treeview-black.gif
 share/gtags/jquery/images/treeview-default-line.gif
-share/gtags/jquery/images/treeview-famfamfam.gif
+share/gtags/jquery/images/treeview-default.gif
 share/gtags/jquery/images/treeview-famfamfam-line.gif
-share/gtags/jquery/images/treeview-gray.gif
+share/gtags/jquery/images/treeview-famfamfam.gif
 share/gtags/jquery/images/treeview-gray-line.gif
-share/gtags/jquery/images/treeview-red.gif
+share/gtags/jquery/images/treeview-gray.gif
 share/gtags/jquery/images/treeview-red-line.gif
+share/gtags/jquery/images/treeview-red.gif
 share/gtags/jquery/jquery.js
 share/gtags/jquery/jquery.suggest.css
 share/gtags/jquery/jquery.suggest.js
@@ -73,10 +73,17 @@ share/gtags/jquery/jquery.treeview.css
 share/gtags/jquery/jquery.treeview.js
 share/gtags/jscode_suggest.tmpl
 share/gtags/jscode_treeview.tmpl
+share/gtags/script/README
+share/gtags/script/elvis-global
+share/gtags/script/global-client
+share/gtags/script/gtags-client
+share/gtags/script/htags-client
+share/gtags/script/less-global
 share/gtags/style.css.tmpl
 @dirrm lib/gtags
-@dirrm share/gtags/icons
+@dirrm share/gtags/script
 @dirrm share/gtags/jquery/images
 @dirrm share/gtags/jquery
+@dirrm share/gtags/icons
 @dirrm share/gtags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
