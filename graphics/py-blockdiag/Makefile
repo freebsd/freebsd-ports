@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blockdiag
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,8 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=	easy_install
 
+MAN1=	${PORTNAME}.1
+
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
@@ -39,6 +41,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/examples/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 
 x-generate-plist:
 	${ECHO} bin/blockdiag > pkg-plist.new
