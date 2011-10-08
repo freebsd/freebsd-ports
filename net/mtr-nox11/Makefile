@@ -5,10 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mtr
-
-MAINTAINER=	sunpoet@FreeBSD.org
-
 MASTERDIR=	${.CURDIR}/../mtr
 
 WITHOUT_X11=	yes
