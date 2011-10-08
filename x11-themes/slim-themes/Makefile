@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:old_themes/g} \
 		http://slim.berlios.de/themes/:new_themes
-MASTER_SITE_SUBDIR=	slim
+MASTER_SITE_SUBDIR=	slim/:old_themes
 DISTFILES=
 
 MAINTAINER=	rea@FreeBSD.org
