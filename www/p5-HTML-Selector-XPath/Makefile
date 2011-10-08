@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Selector-XPath
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -19,6 +19,6 @@ TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base
 
 PERL_CONFIGURE=	yes
 
-MAN3=	HTML::Selector::XPath.3
+MAN3=		HTML::Selector::XPath.3
 
 .include <bsd.port.mk>
