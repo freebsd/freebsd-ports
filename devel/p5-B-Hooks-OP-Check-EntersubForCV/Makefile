@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Hooks-OP-Check-EntersubForCV
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to invoke callback on construction of entersub OPs
 
 RUN_DEPENDS=	\
-	p5-B-Hooks-OP-Check>=0.11:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
+	p5-B-Hooks-OP-Check>=0.19:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
 	p5-B-Utils>0:${PORTSDIR}/devel/p5-B-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
