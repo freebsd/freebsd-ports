@@ -8148,6 +8148,8 @@ libqrencode                     ports/graphics/libqrencode
 libquantum                      ports/science/libquantum
 libquicktime                    ports/multimedia/libquicktime
 libquicktime-lame               ports/multimedia/libquicktime-lame
+libquvi                         ports/multimedia/libquvi
+libquvi-scripts                 ports/multimedia/libquvi-scripts
 libr                            ports/math/libR
 libranlip                       ports/math/libranlip
 libraw                          ports/graphics/libraw
@@ -14404,6 +14406,7 @@ p5-Test-TableDriven             ports/devel/p5-Test-TableDriven
 p5-Test-Taint                   ports/devel/p5-Test-Taint
 p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
+p5-Test-Timer                   ports/devel/p5-Test-Timer
 p5-Test-Trap                    ports/devel/p5-Test-Trap
 p5-Test-URI                     ports/net/p5-Test-URI
 p5-Test-Unit                    ports/devel/p5-Test-Unit
@@ -18810,6 +18813,7 @@ p5-test-tap-model               ports/devel/p5-Test-TAP-Model
 p5-test-tcp                     ports/devel/p5-Test-TCP
 p5-test-tempdir                 ports/devel/p5-Test-TempDir
 p5-test-tester                  ports/devel/p5-Test-Tester
+p5-test-timer                   ports/devel/p5-Test-Timer
 p5-test-trap                    ports/devel/p5-Test-Trap
 p5-test-unit                    ports/devel/p5-Test-Unit
 p5-test-uri                     ports/net/p5-Test-URI
@@ -23294,6 +23298,7 @@ rsyslog6-devel-rfc3195          ports/sysutils/rsyslog6-devel-rfc3195
 rsyslog6-devel-snmp             ports/sysutils/rsyslog6-devel-snmp
 rt2-demo                        ports/games/rt2-demo
 rt38                            ports/www/rt38
+rt40                            ports/www/rt40
 rtb                             ports/games/rtb
 rtc                             ports/emulators/rtc
 rtcw                            ports/games/rtcw
@@ -27912,6 +27917,7 @@ zh-qe                           ports/chinese/qe
 zh-qt4-codecs-cn                ports/chinese/qt4-codecs-cn
 zh-qt4-codecs-tw                ports/chinese/qt4-codecs-tw
 zh-qterm                        ports/chinese/qterm
+zh-reciteword                   ports/chinese/reciteword
 zh-scim-array                   ports/chinese/scim-array
 zh-scim-chewing                 ports/chinese/scim-chewing
 zh-scim-fcitx                   ports/chinese/scim-fcitx
