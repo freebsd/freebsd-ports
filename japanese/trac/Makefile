@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.2
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -28,7 +28,7 @@ OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 CONFLICTS=	trac-0.*
 
 USE_ZIP=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes
