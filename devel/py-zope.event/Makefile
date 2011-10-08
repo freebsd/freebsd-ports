@@ -5,18 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zopeevent
+PORTNAME=	zope.event
 PORTVERSION=	3.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	zope.event-${PORTVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Very basic event publishing system
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	zope.event
 
 .include <bsd.port.mk>
