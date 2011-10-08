@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	faraday
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
