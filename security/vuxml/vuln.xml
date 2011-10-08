@@ -544,7 +544,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="1b27af46-d6f6-11e0-89a6-080027ef73ec">
-    <topic>ca_root_nss -- Extraction of explicitly-untrusted certificates into trust bundle</topic>
+    <topic>ca_root_nss -- extraction of explicitly-untrusted certificates into trust bundle</topic>
     <affects>
       <package>
 	<name>ca_root_nss</name>
@@ -570,7 +570,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="aa5bc971-d635-11e0-b3cf-080027ef73ec">
-    <topic>nss/ca_root_nss -- Fraudulent Certificates issued by DigiNotar.nl</topic>
+    <topic>nss/ca_root_nss -- fraudulent certificates issued by DigiNotar.nl</topic>
     <affects>
       <package>
         <name>nss</name>
