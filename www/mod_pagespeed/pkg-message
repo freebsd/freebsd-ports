@@ -1,0 +1,7 @@
+----------------------------------------------------------------------
+To enable mod_pagespeed add this line:
+
+Include etc/apache22/pagespeed.conf
+
+to etc/apache22/httpd.conf
+----------------------------------------------------------------------

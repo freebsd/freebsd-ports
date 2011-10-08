@@ -1,0 +1,9 @@
+libexec/apache22/mod_pagespeed.so
+@unexec if cmp -s %D/etc/apache22/pagespeed.conf %D/etc/apache22/pagespeed.conf-dist; then rm -f %D/etc/apache22/pagespeed.conf; fi
+etc/apache22/pagespeed.conf-dist
+@exec [ ! -f %B/pagespeed.conf ] && cp %B/pagespeed.conf-dist %B/pagespeed.conf
+@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 755 /var/mod_pagespeed/cache
+@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 755 /var/mod_pagespeed/files
+@unexec rmdir /var/mod_pagespeed/cache
+@unexec rmdir /var/mod_pagespeed/files
+@unexec rmdir /var/mod_pagespeed

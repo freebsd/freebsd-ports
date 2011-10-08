@@ -1,0 +1,8 @@
+mod_pagespeed is an open-source Apache module that automatically optimizes web
+pages and resources on them. It does this by rewriting the resources using
+filters that implement web performance best practices. Webmasters and web
+developers can use mod_pagespeed to improve the performance of their web pages
+when serving content with the Apache HTTP Server.
+
+
+WWW:	http://code.google.com/speed/page-speed/docs/module.html
