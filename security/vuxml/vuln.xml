@@ -544,7 +544,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="1b27af46-d6f6-11e0-89a6-080027ef73ec">
-    <topic>ca_root_nss -- Extraction of unsafe certificates into trust bundle.</topic>
+    <topic>ca_root_nss -- Extraction of explicitly-untrusted certificates into trust bundle</topic>
     <affects>
       <package>
 	<name>ca_root_nss</name>
