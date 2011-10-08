@@ -3173,12 +3173,12 @@
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.deprecation
+    SUBDIR += py-zope.event
     SUBDIR += py-zope.exceptions
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.testing
-    SUBDIR += py-zopeevent
     SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount
