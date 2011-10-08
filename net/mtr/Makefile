@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.80
-PORTREVISION?=	2
-CATEGORIES=	net ipv6
+PORTVERSION=	0.81
+PORTREVISION?=	0
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://mirrors.evolva.ro/util/mtr/ \
+		http://launchpadlibrarian.net/82181604/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -29,6 +29,7 @@ PLIST_FILES=	sbin/mtr
 
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
+CATEGORIES+=	ipv6
 .else
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
@@ -43,9 +44,8 @@ PKGNAMESUFFIX=	-nox11
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|getopt.*$$(OBJEXT)||g ; \
-		 s|getopt.*[ch]||g ; \
-		 /getopt.*Po/d' ${WRKSRC}/Makefile.in
+		's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
 
