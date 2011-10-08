@@ -17,6 +17,8 @@ COMMENT=	Perl extension for MessagePack
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xs
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN3=	Data::MessagePack.3 \
 	Data::MessagePack::PP.3 \
 	Data::MessagePack::Unpacker.3
