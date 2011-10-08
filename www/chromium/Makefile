@@ -119,7 +119,7 @@ GYP_DEFINES+=	use_gconf=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
-.if defined(GCC45) && defined(CLANG)
+.if defined(WITH_GCC45) && defined(WITH_CLANG)
 IGNORE=	conflicting options (CLANG or GCC45)
 .endif
 
