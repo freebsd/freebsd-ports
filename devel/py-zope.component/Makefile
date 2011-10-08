@@ -7,6 +7,7 @@
 
 PORTNAME=	zope.component
 PORTVERSION=	3.11.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ COMMENT=	Zope Component Architecture
 LICENSE=	ZPL21
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zopeevent>=0:${PORTSDIR}/devel/py-zopeevent
+		${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.event
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DIST_SUBDIR=	zope
