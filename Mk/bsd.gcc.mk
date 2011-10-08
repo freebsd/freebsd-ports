@@ -182,8 +182,10 @@ CPP:=			cpp${V}
 .   if ${_USE_GCC} != 3.4
 CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+.    if defined (USE_FORTRAN)
 .    if ${USE_FORTRAN} == yes
 FFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+.    endif
 .    endif
 .   endif
 .  endif
