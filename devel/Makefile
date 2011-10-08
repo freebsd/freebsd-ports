@@ -670,6 +670,7 @@
     SUBDIR += hs-vector
     SUBDIR += hs-vector-algorithms
     SUBDIR += hs-void
+    SUBDIR += ht
     SUBDIR += htable
     SUBDIR += hyena
     SUBDIR += hypersrc

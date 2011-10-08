@@ -1,0 +1,5 @@
+HT is a file editor/viewer/analyzer for executables.
+The goal is to combine the low-level functionality
+of a debugger and the usability of IDEs.
+
+WWW: http://sourceforge.net/projects/hte/

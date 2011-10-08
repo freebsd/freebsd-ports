@@ -1,0 +1,32 @@
+This patch enables configure to use available FreeBSD build
+tools instead of searching for the GNU ones.
+--- configure.orig	2009-06-17 22:44:31.000000000 +0400
++++ configure	2011-10-01 14:01:02.939416899 +0400
+@@ -2258,6 +2258,9 @@
+ if test -z "$MKDIR_P"; then
+   if test "${ac_cv_path_mkdir+set}" = set; then
+   $as_echo_n "(cached) " >&6
++elif true; then
++  # FreeBSD mkdir is thread-safe
++  ac_cv_path_mkdir=/bin/mkdir
+ else
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+@@ -2301,7 +2304,7 @@
+   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
+ esac
+ 
+-for ac_prog in gawk mawk nawk awk
++for ac_prog in awk gawk mawk nawk
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -2733,7 +2736,7 @@
+   RANLIB="$ac_cv_prog_RANLIB"
+ fi
+ 
+-for ac_prog in gmake make
++for ac_prog in make gmake
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
