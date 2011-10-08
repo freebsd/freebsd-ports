@@ -13,6 +13,8 @@ MASTER_SITES=	http://code.call-cc.org/releases/${PORTVERSION}/
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	A Scheme-to-C compiler
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
