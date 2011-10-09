@@ -1,6 +1,5 @@
-bin/tmw
-share/applications/tmw.desktop
-share/pixmaps/tmw.png
+bin/mana
+share/applications/mana.desktop
 %%DATADIR%%/data/fonts/dejavusans.ttf
 %%DATADIR%%/data/fonts/dejavusans-bold.ttf
 %%DATADIR%%/data/graphics/gui/bubble.png
@@ -12,8 +11,8 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/circle-gray.png
 %%DATADIR%%/data/graphics/gui/circle-green.png
 %%DATADIR%%/data/graphics/gui/close_button.png
+%%DATADIR%%/data/graphics/gui/colors.xml
 %%DATADIR%%/data/graphics/gui/deepbox.png
-%%DATADIR%%/data/graphics/gui/gui.xml
 %%DATADIR%%/data/graphics/gui/hscroll_left_default.png
 %%DATADIR%%/data/graphics/gui/hscroll_left_highlight.png
 %%DATADIR%%/data/graphics/gui/hscroll_left_pressed.png
@@ -22,14 +21,19 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/hscroll_right_pressed.png
 %%DATADIR%%/data/graphics/gui/item_shortcut_bgr.png
 %%DATADIR%%/data/graphics/gui/mouse.png
+%%DATADIR%%/data/graphics/gui/progress-indicator.png
 %%DATADIR%%/data/graphics/gui/radioin.png
+%%DATADIR%%/data/graphics/gui/radioin_highlight.png
 %%DATADIR%%/data/graphics/gui/radioout.png
+%%DATADIR%%/data/graphics/gui/radioout_highlight.png
 %%DATADIR%%/data/graphics/gui/resize.png
 %%DATADIR%%/data/graphics/gui/selection.png
 %%DATADIR%%/data/graphics/gui/slider.png
+%%DATADIR%%/data/graphics/gui/slider_hilight.png
 %%DATADIR%%/data/graphics/gui/speechbubble.xml
 %%DATADIR%%/data/graphics/gui/sticky_button.png
 %%DATADIR%%/data/graphics/gui/tab.png
+%%DATADIR%%/data/graphics/gui/tab_hilight.png
 %%DATADIR%%/data/graphics/gui/tabselected.png
 %%DATADIR%%/data/graphics/gui/target-cursor-blue-l.png
 %%DATADIR%%/data/graphics/gui/target-cursor-blue-m.png
@@ -42,47 +46,35 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/vscroll_down_highlight.png
 %%DATADIR%%/data/graphics/gui/vscroll_down_pressed.png
 %%DATADIR%%/data/graphics/gui/vscroll_grey.png
+%%DATADIR%%/data/graphics/gui/vscroll_highlight.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_default.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_highlight.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_pressed.png
 %%DATADIR%%/data/graphics/gui/window.png
-%%DATADIR%%/data/graphics/images/error.png
+%%DATADIR%%/data/graphics/gui/window.xml
 %%DATADIR%%/data/graphics/images/login_wallpaper.png
-%%DATADIR%%/data/icons/tmw.xpm
+%%DATADIR%%/data/graphics/sprites/error.png
+%%DATADIR%%/data/graphics/sprites/error.xml
 %%DATADIR%%/data/help/about.txt
 %%DATADIR%%/data/help/changes.txt
 %%DATADIR%%/data/help/commands.txt
 %%DATADIR%%/data/help/header.txt
 %%DATADIR%%/data/help/index.txt
-%%DATADIR%%/data/help/skills.txt
 %%DATADIR%%/data/help/support.txt
-%%DATADIR%%/data/help/team.txt
-%%DATADIR%%/data/icons/tmw.png
-%%NLS%%share/locale/ar/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/da/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/de/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/es/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/id/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/it/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/tmw.mo
-%%NLS%%share/locale/th/LC_MESSAGES/tmw.mo
+%%DATADIR%%/data/help/windows.txt
+%%DATADIR%%/data/icons/mana.png
+share/pixmaps/mana.png
+%%NLS%%share/locale/de/LC_MESSAGES/mana.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mana.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/mana.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/mana.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/mana.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/mana.mo
 %%MUSICADDON%%%%DATADIR%%/data/music/Faith.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Feline Monstrosity - Graveyard.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Clouds Calling.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Magick - Real.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/The Mana World - Peace.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/The Mana World - The Forest.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/The Mana World - Snow Village.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/finalman_and_yakslem-cavesong.ogg
@@ -90,6 +82,7 @@ share/pixmaps/tmw.png
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/help
 @dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/graphics/sprites
 @dirrm %%DATADIR%%/data/graphics/images
 @dirrm %%DATADIR%%/data/graphics/gui
 @dirrm %%DATADIR%%/data/graphics
