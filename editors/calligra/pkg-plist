@@ -410,7 +410,6 @@ lib/kde4/kexidb_mysqldriver.so
 lib/kde4/kexidb_pqxxsqldriver.so
 lib/kde4/kexidb_sqlite3driver.so
 %%SYBASE%%lib/kde4/kexidb_sybasedriver.so
-%%XBASE%%lib/kde4/kexidb_xbasedriver.so
 lib/kde4/kexihandler_csv_importexport.so
 lib/kde4/kexihandler_form.so
 lib/kde4/kexihandler_migration.so
@@ -424,7 +423,6 @@ lib/kde4/keximigrate_mysql.so
 lib/kde4/keximigrate_pqxx.so
 %%SYBASE%%lib/kde4/keximigrate_sybase.so
 lib/kde4/keximigrate_txt.so
-%%XBASE%%lib/kde4/keximigrate_xbase.so
 lib/kde4/kexirelationdesignshape.so
 lib/kde4/kformdesigner_containers.so
 lib/kde4/kformdesigner_kexidbwidgets.so
@@ -2615,14 +2613,12 @@ share/kde4/services/kexidb_mysqldriver.desktop
 share/kde4/services/kexidb_pqxxsqldriver.desktop
 share/kde4/services/kexidb_sqlite3driver.desktop
 %%SYBASE%%share/kde4/services/kexidb_sybasedriver.desktop
-%%XBASE%%share/kde4/services/kexidb_xbasedriver.desktop
 share/kde4/services/keximigrate_kspread.desktop
 share/kde4/services/keximigrate_mdb.desktop
 share/kde4/services/keximigrate_mysql.desktop
 share/kde4/services/keximigrate_pqxx.desktop
 %%SYBASE%%share/kde4/services/keximigrate_sybase.desktop
 share/kde4/services/keximigrate_txt.desktop
-%%XBASE%%share/kde4/services/keximigrate_xbase.desktop
 share/kde4/services/kexirelationdesignshape.desktop
 share/kde4/services/kformdesigner/kformdesigner_containers.desktop
 share/kde4/services/kformdesigner/kformdesigner_kexidbfactory.desktop
