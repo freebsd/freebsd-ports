@@ -1,3 +1,6 @@
+%%WWWDIR%%/albums/.keepme
+%%WWWDIR%%/cache/.keepme
+%%WWWDIR%%/cache_html/rss/.keepme
 %%WWWDIR%%/dev-tools/plugins/FilterDoc.php
 %%WWWDIR%%/dev-tools/plugins/PluginNews.php
 %%WWWDIR%%/dev-tools/plugins/createTSarticles.php
@@ -17,6 +20,11 @@
 %%WWWDIR%%/doc_files/zenphoto_developer_quick_reference.pdf
 %%WWWDIR%%/doc_files/zenphoto_quick_reference.pdf
 %%WWWDIR%%/index.php
+%%WWWDIR%%/plugins/flag_thumbnail/.keepme
+%%WWWDIR%%/plugins/flvplayer/.keepme
+%%WWWDIR%%/plugins/gd_fonts/.keepme
+%%WWWDIR%%/plugins/imagick_fonts/.keepme
+%%WWWDIR%%/plugins/watermarks/.keepme
 %%WWWDIR%%/themes/default/404.php
 %%WWWDIR%%/themes/default/album.php
 %%WWWDIR%%/themes/default/archive.php
@@ -1241,6 +1249,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/langs/pl.js
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/langs/pt.js
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/langs/zh_cn.js
+%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/plugins/.keepme
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/reg_syntax/basic.js
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/reg_syntax/brainfuck.js
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/reg_syntax/c.js
@@ -2552,6 +2561,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/zenphoto_news/rsslib.php
 %%WWWDIR%%/zp-core/zp-extensions/zenphoto_sendmail.php
 %%WWWDIR%%/zp-core/zp-extensions/zenphoto_seo.php
+%%WWWDIR%%/zp-data/.keepme
 @dirrm %%WWWDIR%%/zp-data
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/zenphoto_news
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/zenpage/images
@@ -2601,33 +2611,25 @@
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/js
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/css
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/includes
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/img
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/css
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/classes/utils
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/classes
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/js
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/css
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/save
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/safari
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/print
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/jscripts
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/js
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/css
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak/img
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak/css
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/noneditable
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/nonbreaking
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/js
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/img
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/css
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/legacyoutput
@@ -2653,10 +2655,8 @@
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/directionality
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/contextmenu
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/compat2x
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/bbcode
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave/langs
-@dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave/images
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/theme/default/images/small_icon
