@@ -5684,6 +5684,7 @@ hsetroot                        ports/graphics/hsetroot
 hsftp                           ports/ftp/hsftp
 hso-kmod                        ports/comms/hso-kmod
 hsqldb                          ports/databases/hsqldb
+ht                              ports/devel/ht
 htable                          ports/devel/htable
 htdig                           ports/textproc/htdig
 htdump                          ports/www/htdump
@@ -22479,6 +22480,7 @@ py-zfs                          ports/sysutils/py-zfs
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
 py-zope.deprecation             ports/devel/py-zope.deprecation
+py-zope.event                   ports/devel/py-zope.event
 py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
@@ -22486,7 +22488,6 @@ py-zope.interface               ports/devel/py-zope.interface
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
 py-zope.testing                 ports/devel/py-zope.testing
-py-zopeevent                    ports/devel/py-zopeevent
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
