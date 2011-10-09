@@ -15,6 +15,7 @@ COMMENT=	Handling page faults in user mode
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS+=AWK=$(AWK)
 
 PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.a \
