@@ -15,8 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line parser and manual page generator
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+# Depended on by comms/conserver
+DEPRECATED=     Upstream disapeared and distfile is not available
+EXPIRATION_DATE=        2011-10-31
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 

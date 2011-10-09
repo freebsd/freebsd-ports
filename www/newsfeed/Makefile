@@ -14,6 +14,9 @@ DISTNAME=	NewsFeed-${DISTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	RSS/RDF/Atom reader and aggregator
 
+DEPRECATED=	Depends on net/py-timeoutsocket, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	py*-tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
 		py*-feedfinder>=0:${PORTSDIR}/www/py-feedfinder \

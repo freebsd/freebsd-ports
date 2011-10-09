@@ -15,8 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java parser generator and lexical analyzer
 
+# Depended on by www/commonist
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+EXPIRATION_DATE=	2011-10-31
 
 USE_JAVA=	yes
 USE_ANT=	yes

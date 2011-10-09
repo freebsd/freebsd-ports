@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 
+DEPRECATED=	Depends on multimedia/mplex, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 

@@ -13,6 +13,9 @@ MASTER_SITES=	http://iainlea.dyndns.org/software/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for renaming mp3 files and looking ID3 tags for it
 
+DEPRECATED=	Depends on audio/p5-MusicBrainz-Client which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \
 		${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
 	${SITE_PERL}/${PERL_ARCH}/MusicBrainz/Client.pm:${PORTSDIR}/audio/p5-MusicBrainz-Client

@@ -14,10 +14,10 @@ MASTER_SITES=	http://tiger.bioinf.cs.uni-potsdam.de/free/Graphics/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
+# Depended on by textproc/p5-XML-LibRSVG
 BROKEN=	Does not fetch
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-11-06
 
 USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}

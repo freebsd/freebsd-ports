@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create an object for a point and to transform coordinate systems
 
-DEPRECATED=	Disappear from CPAN
-EXPIRATION_DATE=	2011-09-01
+# Depended on by misc/p5-Geography-NationalGrid-TW
+DEPRECATED=	Disappeared from CPAN
+EXPIRATION_DATE=	2011-10-31
 
 PERL_CONFIGURE=	yes
 

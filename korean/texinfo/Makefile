@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean enabled Texinfo formatter
 
+DEPRECATED=	Depends on korean/hlatex, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	hbibtex:${PORTSDIR}/korean/hlatex
 
 GNU_CONFIGURE=	YES

@@ -17,6 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra Korean PostScript font collection for HLaTeX(UHC encoding)
 
+DEPRECATED=	Depends on korean/hlatex, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	hbibtex:${PORTSDIR}/korean/hlatex
 
 # just install directly

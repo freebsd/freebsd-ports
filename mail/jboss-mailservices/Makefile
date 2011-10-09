@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-final
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	JBoss Mail Services
 
+DEPRECATED=	Depends on java/jboss4, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	${LOCALBASE}/jboss4/server/default/conf/jboss-service.xml:${PORTSDIR}/java/jboss4
 
 USE_JAVA=	YES

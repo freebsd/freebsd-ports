@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+EXPIRATION_DATE=	2011-10-31
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

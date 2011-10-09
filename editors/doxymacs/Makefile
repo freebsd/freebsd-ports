@@ -12,9 +12,11 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Doxymacs is Doxygen + {X}Emacs
+
+DEPRECATED=	Depends on www/w3-4, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
