@@ -37,6 +37,8 @@ RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		iceauth:${PORTSDIR}/x11/iceauth
 
+BROKEN=		does not build
+
 CONFLICTS_BUILD=	openssl-1.*
 CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-4]* kdepim-3.2*
 .if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
