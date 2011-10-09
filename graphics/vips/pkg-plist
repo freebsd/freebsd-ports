@@ -65,9 +65,11 @@ include/vips/vips
 include/vips/vipsc++.h
 @dirrm include/vips
 lib/libvips.so.30
+lib/libvips.so
 lib/libvips.la
 lib/libvips.a
 lib/libvipsCC.so.30
+lib/libvipsCC.so
 lib/libvipsCC.la
 lib/libvipsCC.a
 libdata/pkgconfig/vips-%%VERSION%%.pc
