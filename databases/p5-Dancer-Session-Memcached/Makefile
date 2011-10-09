@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	Dancer-Session-Memcached
-PORTVERSION=	0.1
+PORTVERSION=	0.2.01
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:SUKRIA
+MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Memcached-based session backend for Dancer
 
-RUN_DEPENDS=	\
-	p5-Dancer>=1.130:${PORTSDIR}/www/p5-Dancer \
-	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
+		p5-Dancer>=0:${PORTSDIR}/www/p5-Dancer
+RUN_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
+		p5-Dancer>=0:${PORTSDIR}/www/p5-Dancer
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Dancer::Session::Memcached.3
+MAN3=		Dancer::Session::Memcached.3
 
 .include <bsd.port.mk>
