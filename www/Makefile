@@ -810,7 +810,6 @@
     SUBDIR += p5-Catalyst-Plugin-ErrorCatcher
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormBuilder
-    SUBDIR += p5-Catalyst-Plugin-FormCanary
     SUBDIR += p5-Catalyst-Plugin-FormValidator
     SUBDIR += p5-Catalyst-Plugin-I18N
     SUBDIR += p5-Catalyst-Plugin-Log-Dispatch

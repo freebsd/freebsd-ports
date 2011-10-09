@@ -2767,3 +2767,6 @@ science/pyvox||2011-10-08|No more public distfiles
 security/p5-Email-Obfuscate||2011-10-08|No more public distfiles
 security/libparanoia||2011-10-08|No more public distfiles
 security/execwrap||2011-10-08|No more public distfiles
+audio/p5-MusicBrainz-TRM||2011-10-08|Disappeared from CPAN
+mail/p5-Mail-QuoteWrap||2011-10-08|Disappeared from CPAN
+www/p5-Catalyst-Plugin-FormCanary||2011-10-08|Disappeared from CPAN

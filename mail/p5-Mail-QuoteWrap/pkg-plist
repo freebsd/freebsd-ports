@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Mail/QuoteWrap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/QuoteWrap/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/QuoteWrap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail

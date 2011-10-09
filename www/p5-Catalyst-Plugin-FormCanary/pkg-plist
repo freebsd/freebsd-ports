@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Catalyst/Plugin/FormCanary.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormCanary/.packlist
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormCanary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
