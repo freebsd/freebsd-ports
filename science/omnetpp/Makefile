@@ -42,8 +42,7 @@ INCLDIR_REL=	${INCLDIR:S,^${PREFIX}/,,}
 
 OPTIONS=	MAGICK "Install ImageMagick for EPS-JPG conversion" ON \
 		GRAPHVIZ "Install Graphviz for generating diagrams" ON \
-		DOXYGEN "Install Doxygen to create the API reference" ON \
-		GIFTRANS "Make the background of diagrams transparent" ON
+		DOXYGEN "Install Doxygen to create the API reference" ON
 
 .include <bsd.port.pre.mk>
 
@@ -57,10 +56,6 @@ depend+=	dot:${PORTSDIR}/graphics/graphviz
 
 .if defined(WITH_DOXYGEN)
 depend+=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
-
-.if defined(WITH_GIFTRANS)
-depend+=	giftrans:${PORTSDIR}/graphics/giftrans
 .endif
 
 BUILD_DEPENDS+=	${depend}
