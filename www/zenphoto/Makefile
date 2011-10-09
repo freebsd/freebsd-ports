@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.1.3
+PORTVERSION=	1.4.1.4
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.zenphoto.org/files/
@@ -26,15 +26,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME}
 
+post-extract:
+	@${RM} ${WRKSRC}/doc_files/License.txt ${WRKSRC}/doc_files/README.html ${WRKSRC}/zp-core/Zenphoto.package
+.for i in albums cache cache_html/rss plugins/flag_thumbnail plugins/flvplayer plugins/gd_fonts plugins/imagick_fonts \
+	plugins/watermarks uploaded zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/plugins zp-data
+	@${TOUCH} ${WRKSRC}/${i}/.keepme
+.endfor
+
 do-install:
-	${MKDIR} ${WWWDIR}
-	@${RM} ${WRKSRC}/doc_files/License.txt \
-		${WRKSRC}/doc_files/README.html \
-		${WRKSRC}/zp-core/Zenphoto.package
-	@${TOUCH} ${WRKSRC}/uploaded/.keepme
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${CHMOD} 644 ${WWWDIR}/zp-core/images/*
+	${MKDIR} ${WWWDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${WWWDIR}/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
