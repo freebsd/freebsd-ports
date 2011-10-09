@@ -10,18 +10,12 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/data.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/data.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/data.py
-%%PYTHON_SITELIBDIR%%/rednotebook/encrypt.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/encrypt.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/encrypt.py
 %%PYTHON_SITELIBDIR%%/rednotebook/external/__init__.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/external/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/external/__init__.py
 %%PYTHON_SITELIBDIR%%/rednotebook/external/elibintl.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/external/elibintl.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/external/elibintl.py
-%%PYTHON_SITELIBDIR%%/rednotebook/external/htmltextview.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/external/htmltextview.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/external/htmltextview.py
 %%PYTHON_SITELIBDIR%%/rednotebook/external/msgfmt.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/external/msgfmt.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/external/msgfmt.py
@@ -30,7 +24,6 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/external/txt2tags.py
 %%PYTHON_SITELIBDIR%%/rednotebook/files/default.cfg
 %%PYTHON_SITELIBDIR%%/rednotebook/files/main_window.glade
-%%PYTHON_SITELIBDIR%%/rednotebook/files/stylesheet.css
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/__init__.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/__init__.py
@@ -46,114 +39,18 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/customwidgets.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/customwidgets.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/customwidgets.py
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/editor.pyo
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/editor.pyc
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/editor.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/exports.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/htmlparser.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/htmlparser.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/htmlparser.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/imports.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/journalgeist.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/journalgeist.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/journalgeist.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/__init__.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/__init__.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/__init__.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/basetreeview.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/basetreeview.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/basetreeview.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/colortool.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/colortool.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/colortool.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_app_options.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_app_options.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_app_options.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_drag_drop_test.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_drag_drop_test.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_drag_drop_test.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_find.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_find.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_find.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_image_resize.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_image_resize.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_image_resize.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_node_icon.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_node_icon.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_node_icon.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_update_notebook.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_update_notebook.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_update_notebook.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_wait.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_wait.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/dialog_wait.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/editor.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/editor.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/editor.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/font_selector.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/font_selector.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/font_selector.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/icon_menu.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/icon_menu.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/icon_menu.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/listview.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/listview.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/listview.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/main_window.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/main_window.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/main_window.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/__init__.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/__init__.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/indent_handler.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/indent_handler.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/indent_handler.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_html.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_html.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_html.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_tags.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_tags.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtext_tags.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbase_tags.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbase_tags.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbase_tags.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbasebuffer.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbasebuffer.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbasebuffer.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbuffer.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbuffer.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/richtextbuffer.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/textbuffer_tools.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/textbuffer_tools.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/textbuffer_tools.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/undo_handler.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/undo_handler.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext/undo_handler.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/screenshot_win.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/screenshot_win.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/screenshot_win.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treemodel.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treemodel.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treemodel.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treeview.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treeview.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/treeview.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_list.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_list.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_list.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_tree.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_tree.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/linked_tree.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/listening.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/listening.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/listening.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/undo.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/undo.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/undo.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/main_window.py
@@ -163,9 +60,9 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/options.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/options.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/options.py
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/richtext.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/richtext.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/gui/richtext.py
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/search.pyo
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/search.pyc
+%%PYTHON_SITELIBDIR%%/rednotebook/gui/search.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.py
@@ -173,6 +70,7 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ast/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/be/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cs/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cy/LC_MESSAGES/rednotebook.mo
@@ -190,9 +88,11 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/he/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hr/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/id/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/it/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ko/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/lt/LC_MESSAGES/rednotebook.mo
@@ -218,6 +118,7 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/tr/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ug/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN/LC_MESSAGES/rednotebook.mo
@@ -282,9 +183,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/util
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/images
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui/richtext
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote/gui
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui/keepnote
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ar
@@ -294,6 +192,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/be
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cs/LC_MESSAGES
@@ -328,12 +228,16 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hr
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/id/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/id
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/it/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/it
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ko/LC_MESSAGES
@@ -384,6 +288,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ug
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae/LC_MESSAGES
