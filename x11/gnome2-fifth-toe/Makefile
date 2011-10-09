@@ -21,7 +21,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		tsclient:${PORTSDIR}/net/tsclient \
 		${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
-		gossip:${PORTSDIR}/net-im/gossip \
 		liferea:${PORTSDIR}/net/liferea \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		${LOCALBASE}/share/gnome-games/glines/pixmaps/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
