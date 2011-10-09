@@ -108,15 +108,7 @@ PLIST_SUB+=	MSACCESS="@comment "
 .endif
 
 # XXX does not work yet
-.if defined(WITH_DBASE)
-LIB_DEPENDS+=		xbase:${PORTSDIR}/databases/xbase
-CONFIGURE_ARGS+=	--with-xbase-incdir=${LOCALBASE}/include/xbase \
-			--with-xbase-libdir=${LOCALBASE}/lib
-PLIST_SUB+=	DBASE=""
-.else
 CONFIGURE_ARGS+=	--without-xbase
-PLIST_SUB+=	DBASE="@comment "
-.endif
 
 .if defined(WITH_SQLITE2)
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2

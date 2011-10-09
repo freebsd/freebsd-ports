@@ -63,7 +63,6 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 OPTIONS+=	GTL	"Color transformations in Krita" off
 OPTIONS+=	SYBASE	"SyBase support in Kexi" off
-OPTIONS+=	XBASE	"XBase support in Kexi" off
 
 .include <bsd.port.options.mk>
 
@@ -93,13 +92,6 @@ LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
 PLIST_SUB+=	SYBASE=""
 .else
 PLIST_SUB+=	SYBASE="@comment "
-.endif
-
-.if defined(WITH_XBASE) || exists (${LOCALBASE}/lib/libxbase-2.0.so)
-LIB_DEPENDS+=	xbase-2.0.0:${PORTSDIR}/databases/xbase
-PLIST_SUB+=	XBASE=""
-.else
-PLIST_SUB+=	XBASE="@comment "
 .endif
 
 post-patch:
