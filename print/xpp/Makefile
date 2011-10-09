@@ -18,6 +18,8 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 BUILD_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
