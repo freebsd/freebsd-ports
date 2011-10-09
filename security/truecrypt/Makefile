@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	truecrypt
-PORTVERSION=	7.0a
+PORTVERSION=	7.1
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
 		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa
@@ -44,6 +44,17 @@ PLIST_FILES+=	%%DOCSDIR%%/License.txt
 PLIST_DIRS=	%%DOCSDIR%%
 .endif
 
+OPTIONS=	GUI     "With GUI" off
+
+.include <bsd.port.options.mk>
+
+.ifdef(WITH_GUI)
+USE_GNOME=	gtk20
+NOGUI=
+.else
+NOGUI=		NOGUI=1
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${TC_SRCFILE}))
@@ -67,8 +78,8 @@ do-build:
 	@${CP} ${DISTDIR}/pkcs11.h ${WRKDIR}/rsa
 	@${CP} ${DISTDIR}/pkcs11t.h ${WRKDIR}/rsa
 	@${CP} ${DISTDIR}/pkcs11f.h ${WRKDIR}/rsa
-	cd ${WRKSRC} && ${GMAKE} NOGUI=1 PKCS11_INC=${WRKDIR}/rsa WX_ROOT=${WRKDIR}/wxWidgets-${WX_VER} wxbuild
-	cd ${WRKSRC} && ${GMAKE} NOGUI=1 WXSTATIC=1 PKCS11_INC=${WRKDIR}/rsa
+	cd ${WRKSRC} && ${GMAKE} ${NOGUI} PKCS11_INC=${WRKDIR}/rsa WX_ROOT=${WRKDIR}/wxWidgets-${WX_VER} wxbuild
+	cd ${WRKSRC} && ${GMAKE} ${NOGUI} WXSTATIC=1 PKCS11_INC=${WRKDIR}/rsa
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Main/truecrypt ${PREFIX}/bin
