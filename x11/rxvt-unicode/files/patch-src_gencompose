@@ -1,5 +1,5 @@
---- ./src/gentables.orig	Wed Aug  4 04:59:09 2004
-+++ ./src/gentables	Tue Aug 10 00:03:21 2004
+--- ./src/gencompose.orig	Wed Aug  4 04:59:09 2004
++++ ./src/gencompose	Tue Aug 10 00:03:21 2004
 @@ -1,4 +1,4 @@
 -#!/opt/bin/perl
 +#!/usr/bin/env perl
