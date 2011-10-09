@@ -792,7 +792,6 @@
     SUBDIR += snoopy
     SUBDIR += snort
     SUBDIR += snort-rep
-    SUBDIR += snort_inline
     SUBDIR += snortreport
     SUBDIR += snortsam
     SUBDIR += snortsms
