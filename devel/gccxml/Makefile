@@ -16,7 +16,7 @@ COMMENT=	XML output extension to GCC
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
 DEPRECATED=	Unmaintained upstream, still requires GCC 3.4 (strictly), just used by boost-pyste which is of archeological interest only itself
-EXPIRATION_DATE=2011-10-04
+EXPIRATION_DATE=2011-10-13
 
 BROKEN=		does not compile
 
