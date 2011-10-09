@@ -1,4 +1,4 @@
-bin/Xvnc
+%%XVNC%%bin/Xvnc
 bin/vncviewer
 bin/vncpasswd
 bin/vncserver
