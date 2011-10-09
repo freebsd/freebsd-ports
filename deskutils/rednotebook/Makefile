@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		rednotebook
-PORTVERSION=		1.1.8
+PORTVERSION=		1.2.0
 CATEGORIES=		deskutils python
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	rednotebook
