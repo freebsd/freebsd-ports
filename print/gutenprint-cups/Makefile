@@ -17,4 +17,6 @@ MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 GUT_SLAVE=	cups
 PLIST=		${.CURDIR}/pkg-plist
 
+BROKEN=		does not compile
+
 .include "${MASTERDIR}/Makefile"
