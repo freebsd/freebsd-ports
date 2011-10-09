@@ -7,6 +7,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.x/}/:doc \
@@ -91,7 +92,7 @@ pre-configure:
 .ifdef WITH_ATLAS
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
-	    -e "s+%%ATLASLIBS%%+alapack_r, f77blas_r, cblas_r, atlas_r+" \
+	    -e "s+%%ATLASLIBS%%+alapack, f77blas, cblas, atlas+" \
 		${WRKSRC}/site.cfg
 .else
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" \
