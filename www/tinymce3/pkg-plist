@@ -156,10 +156,12 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css/content.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css/props.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
@@ -315,8 +317,11 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/includes
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes/utils
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/classes
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js
