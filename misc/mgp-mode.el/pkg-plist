@@ -1,4 +1,0 @@
-share/emacs/site-lisp/mgp-mode.el
-lib/xemacs/site-lisp/mgp-mode.el
-@dirrm lib/xemacs/site-lisp
-@dirrm lib/xemacs

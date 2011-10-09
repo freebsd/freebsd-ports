@@ -64,7 +64,6 @@
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-perlreactor
-    SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-urlslave
     SUBDIR += moodriver
     SUBDIR += mooseekd

@@ -833,8 +833,6 @@
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
     SUBDIR += xapian-core
-    SUBDIR += xbase
-    SUBDIR += xbsql
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
     SUBDIR += xtrabackup

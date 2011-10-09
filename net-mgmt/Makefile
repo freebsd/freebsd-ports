@@ -170,7 +170,6 @@
     SUBDIR += nfdump-devel
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
-    SUBDIR += nipper
     SUBDIR += nitpicker
     SUBDIR += noc
     SUBDIR += nocol

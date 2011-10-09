@@ -59,7 +59,6 @@
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
-    SUBDIR += epsmerge
     SUBDIR += epsonepl
     SUBDIR += es-acroread8
     SUBDIR += fi-acroread8

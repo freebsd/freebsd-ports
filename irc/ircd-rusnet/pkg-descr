@@ -1,7 +1,0 @@
-Special version of IRC server for RusNet IRC Network.
-In addition to base features of ircd 2.9.10 it supports
-russian charsets translation (koi8-r,cp1251,translit, etc..)
-and also some RusNet protocol extensions.
-
-Author: see Authors
-WWW: http://www.rusnet.org.ru/programms.html

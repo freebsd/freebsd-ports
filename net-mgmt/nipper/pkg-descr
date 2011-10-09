@@ -1,7 +1,0 @@
-nipper processes network device configuration files, performs a
-security audit and outputs a security report with recommendations and
-a configuration report. nipper currently supports Cisco IOS, PIX, ASA,
-FWSM, NMP, CatOS and Juniper NetScreen devices.
-
-WWW: http://nipper.titania.co.uk/
-Author: Ian Ventura-Whiting <fizz@titania.co.uk>

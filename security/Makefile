@@ -118,7 +118,6 @@
     SUBDIR += duo
     SUBDIR += easypg
     SUBDIR += engine_pkcs11
-    SUBDIR += execwrap
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += fakebo
@@ -249,7 +248,6 @@
     SUBDIR += libntlm
     SUBDIR += libotr
     SUBDIR += libp11
-    SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libpreludedb
     SUBDIR += libpwstor
@@ -509,7 +507,6 @@
     SUBDIR += p5-Digest-SV1
     SUBDIR += p5-Digest-Tiger
     SUBDIR += p5-Digest-Whirlpool
-    SUBDIR += p5-Email-Obfuscate
     SUBDIR += p5-File-Scan
     SUBDIR += p5-File-Scan-ClamAV
     SUBDIR += p5-Filter-CBC

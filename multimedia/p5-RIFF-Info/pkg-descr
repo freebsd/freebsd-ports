@@ -1,9 +1,0 @@
-RIFF::Info - Probe DivX and AVI files for attributes like:
-
- -video codec
- -audio codec
- -frame height
- -frame width
- -frame count
-
-WWW: http://search.cpan.org/dist/RIFF-Info/

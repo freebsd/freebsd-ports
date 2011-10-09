@@ -1,9 +1,0 @@
-The names of the input and output files are hard-coded. You must have:
-
-- the computation configuration (Mach, Reynolds,...) in file a 'DATA';
-
-- the mesh in a file 'MESH'.
-
-Put these files in a working directory (see the examples), cd to this
-directory, and run NSC2KE. The example gnu.data shows you how to visualize
-the results by typing 'gnuplot < gnu.data'.

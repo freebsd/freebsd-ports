@@ -1,7 +1,0 @@
-games/stvef/linuxstvefded_1.2-glibc2.1.3
-games/stvef/linuxstvefded_1.2-static
-games/stvef/readme.txt
-games/stvef/baseEF/server.cfg
-@dirrm games/stvef/baseEF
-@dirrm games/stvef
-@dirrmtry games

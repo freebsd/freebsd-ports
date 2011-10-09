@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Email/Obfuscate.pm
-%%SITE_PERL%%/Email/Obfuscate.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Obfuscate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Obfuscate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
-@dirrmtry %%SITE_PERL%%/Email

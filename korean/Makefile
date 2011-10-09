@@ -36,7 +36,6 @@
     SUBDIR += ko.TeX-fonts-extra
     SUBDIR += libhangul
     SUBDIR += man-doc
-    SUBDIR += mizifont
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
     SUBDIR += nanumcoding-ttf

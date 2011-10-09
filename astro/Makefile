@@ -20,7 +20,6 @@
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
     SUBDIR += gkrellmoon2
-    SUBDIR += gkrellsun
     SUBDIR += glunarclock
     SUBDIR += gmapcatcher
     SUBDIR += google-earth
@@ -118,7 +117,6 @@
     SUBDIR += xmoontool
     SUBDIR += xphoon
     SUBDIR += xplanet
-    SUBDIR += xrmap
     SUBDIR += xtide
     SUBDIR += xworld
 
