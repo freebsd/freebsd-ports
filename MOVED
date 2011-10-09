@@ -2724,3 +2724,46 @@ devel/p5-Scalar-Util-Clone||2011-10-05|Disappear from CPAN
 print/lyx14||2011-10-05|Has expired: last release in 2007, use print/lyx16 or print/lyx instead
 multimedia/enjoympeg||2011-10-05|Has expired: Look like an abandonware, no more public distfiles
 devel/py-zopeevent|devel/py-zope.event|2011-10-08|Removed: please use devel/py-zope.event instead
+astro/gkrellsun||2011-10-08|Abandonware
+astro/xrmap||2011-10-08|No more distfiles
+audio/midimountain||2011-10-08|Abandonware
+audio/gkrellmss||2011-10-08|Abandonware
+audio/gnapster||2011-10-08|Abandonware
+databases/xbase||2011-10-08|No more public distfiles
+databases/xbsql||2011-10-08|No more public distfiles
+games/gtkabale||2011-10-08|No more public distfiles
+games/battleball||2011-10-08|No more public distfiles, does not compile on ia64 or sparc64
+games/race||2011-10-08|No more public distfiles
+games/stvef-paks||2011-10-08|No more public distfiles
+games/stvef-server||2011-10-08|No more public distfiles
+games/tome||2011-10-08|No more public distfiles
+games/qkmj||2011-10-08|No more public distfiles
+games/oilwar||2011-10-08|No more public distfiles
+games/xbaby||2011-10-08|No more public distfiles
+games/xword||2011-10-08|Abandonware
+games/kslide||2011-10-08|No more public distfiles
+graphics/xmrm||2011-10-08|No more public distfiles, does not compile on amd64 or sparc64
+graphics/giftrans||2011-10-08|Upstream disappeared and distfile is not available
+graphics/wildmagic||2011-10-08|BROKEN for more than 6 months, does not fetch
+irc/ircd-rusnet||2011-10-08|No more public distfiles
+irc/tkirc||2011-10-08|No more public distfiles
+korean/mizifont||2011-10-08|No more public distfiles
+lang/freetxl||2011-10-08|No more public distfiles
+math/nsc2ke||2011-10-08|No more public distfiles
+misc/mgp-mode.el||2011-10-08|No more public distfiles
+multimedia/p5-RIFF-Info||2011-10-08|No more public distfiles
+net/p5-Net-OpenDHT||2011-10-08|No more public distfiles
+net/mudix||2011-10-08|No more public distfiles
+net-im/newsbot||2011-10-08|No more public distfiles
+net-im/libicq2000||2011-10-08|Abandonware
+net-im/gossip||2011-10-08|No longer maintain by upstream, use net-im/empathy instead
+net-im/ickle||2011-10-08|Abandonware
+net-mgmt/nipper||2011-10-08|BROKEN for more than 6 month, does not fetch
+net-p2p/mldonkey-serverspy||2011-10-08|No more public distfiles
+news/p5-Gateway||2011-10-08|No more public distfiles
+print/epsmerge||2011-10-08|No more public distfiles
+science/at||2011-10-08|No more public distfiles
+science/pyvox||2011-10-08|No more public distfiles
+security/p5-Email-Obfuscate||2011-10-08|No more public distfiles
+security/libparanoia||2011-10-08|No more public distfiles
+security/execwrap||2011-10-08|No more public distfiles

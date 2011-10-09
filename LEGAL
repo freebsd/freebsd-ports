@@ -360,8 +360,6 @@ nero2_linux_*		games/linux-nerogame	Freeware, but license terms
 						are unclear
 nntpcache-*		news/nntpcache		Commercial or government use
 						requires license
-nsc2ke.*		math/nsc2ke		No resale, contact author for
-						commercial usage
 OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron
 						Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from
@@ -399,7 +397,6 @@ hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM
 						distribution coming with the
 						TV card
-qkmj95p5-freebsd	games/qkmj		Do not sell for profit
 qtools-*		mail/qtools		Possibly restricted binary
 						distribution of modified
 						versions

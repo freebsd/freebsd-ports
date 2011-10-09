@@ -1,9 +1,0 @@
---- po/POTFILES.in.orig	Sun Jan 30 17:46:45 2000
-+++ po/POTFILES.in	Sun Jan 30 17:46:51 2000
-@@ -6,5 +6,5 @@
- src/game.c
- src/interface.c
- src/main.c
--src/support.c
-+src/support2.c
- 

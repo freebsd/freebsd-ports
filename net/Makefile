@@ -394,7 +394,6 @@
     SUBDIR += msend
     SUBDIR += mtr
     SUBDIR += mtr-nox11
-    SUBDIR += mudix
     SUBDIR += nakenchat
     SUBDIR += nam
     SUBDIR += nast
@@ -609,7 +608,6 @@
     SUBDIR += p5-Net-Nessus-XMLRPC
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
-    SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-OpenID-Consumer
     SUBDIR += p5-Net-OpenSSH
     SUBDIR += p5-Net-Packet

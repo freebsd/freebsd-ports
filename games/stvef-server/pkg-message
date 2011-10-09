@@ -1,6 +1,0 @@
-You must install several files from the Elite Forces CD before the server
-will operate.  Please see the readme.txt file that has been installed 
-alongside the server binaries.
-
-You can use the games/stvef-paks port to install these files using
-the FreeBSD package system, and register them in the package database.

@@ -250,7 +250,6 @@
     SUBDIR += gifmerge
     SUBDIR += gifsicle
     SUBDIR += giftool
-    SUBDIR += giftrans
     SUBDIR += gimageview
     SUBDIR += gimmage
     SUBDIR += gimp
@@ -959,7 +958,6 @@
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune
-    SUBDIR += wildmagic
     SUBDIR += wings
     SUBDIR += wings-devel
     SUBDIR += wmgrabimage
@@ -1002,7 +1000,6 @@
     SUBDIR += xmms-waterfall
     SUBDIR += xmorph
     SUBDIR += xmountains
-    SUBDIR += xmrm
     SUBDIR += xnview
     SUBDIR += xoris
     SUBDIR += xournal

@@ -13,7 +13,6 @@
     SUBDIR += R-cran-eco
     SUBDIR += abinit
     SUBDIR += afni
-    SUBDIR += at
     SUBDIR += avogadro
     SUBDIR += bddsolve
     SUBDIR += bft
@@ -168,7 +167,6 @@
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += pynn
-    SUBDIR += pyvox
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl

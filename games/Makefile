@@ -65,7 +65,6 @@
     SUBDIR += bass
     SUBDIR += bastet
     SUBDIR += battalion
-    SUBDIR += battleball
     SUBDIR += battletanks
     SUBDIR += belooted
     SUBDIR += biloba
@@ -344,7 +343,6 @@
     SUBDIR += grubinvaders
     SUBDIR += gshisen
     SUBDIR += gtetrinet
-    SUBDIR += gtkabale
     SUBDIR += gtkatlantic
     SUBDIR += gtkballs
     SUBDIR += gtklife
@@ -425,7 +423,6 @@
     SUBDIR += kpicframer
     SUBDIR += kpictorial
     SUBDIR += kpuzzle
-    SUBDIR += kslide
     SUBDIR += ksudoku
     SUBDIR += ktritoc
     SUBDIR += kuklomenos
@@ -588,7 +585,6 @@
     SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
     SUBDIR += odamex
-    SUBDIR += oilwar
     SUBDIR += oldrunner
     SUBDIR += omega
     SUBDIR += oneko
@@ -706,7 +702,6 @@
     SUBDIR += qccx
     SUBDIR += qgo
     SUBDIR += qix
-    SUBDIR += qkmj
     SUBDIR += qmars
     SUBDIR += qnetchess
     SUBDIR += qnetwalk
@@ -751,7 +746,6 @@
     SUBDIR += quit
     SUBDIR += qwdtools
     SUBDIR += r1q2
-    SUBDIR += race
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
     SUBDIR += reminiscence
@@ -834,8 +828,6 @@
     SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += stroq
-    SUBDIR += stvef-paks
-    SUBDIR += stvef-server
     SUBDIR += sudoku
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
@@ -867,7 +859,6 @@
     SUBDIR += tksol
     SUBDIR += tmw
     SUBDIR += tomatoes
-    SUBDIR += tome
     SUBDIR += toppler
     SUBDIR += torcs
     SUBDIR += tornado
@@ -959,7 +950,6 @@
     SUBDIR += xarchon
     SUBDIR += xasteroids
     SUBDIR += xataxx
-    SUBDIR += xbaby
     SUBDIR += xbattle
     SUBDIR += xbill
     SUBDIR += xbl
@@ -1075,7 +1065,6 @@
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
     SUBDIR += xwelltris
-    SUBDIR += xword
     SUBDIR += xwordpy
     SUBDIR += xworm
     SUBDIR += xye

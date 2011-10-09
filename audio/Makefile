@@ -206,7 +206,6 @@
     SUBDIR += gimmix
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
-    SUBDIR += gkrellmss
     SUBDIR += gkrellmss2
     SUBDIR += gkrellmvolume
     SUBDIR += gkrellmvolume2
@@ -229,7 +228,6 @@
     SUBDIR += gmpc-mserver
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-wikipedia
-    SUBDIR += gnapster
     SUBDIR += gnome-audio
     SUBDIR += gnome-media
     SUBDIR += gnomoradio
@@ -453,7 +451,6 @@
     SUBDIR += mctoolame-encoder
     SUBDIR += mehdiaplayer
     SUBDIR += mhwaveedit
-    SUBDIR += midimountain
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker

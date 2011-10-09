@@ -354,7 +354,6 @@
     SUBDIR += metalink-editor
     SUBDIR += metalink-tools
     SUBDIR += metromap
-    SUBDIR += mgp-mode.el
     SUBDIR += mime-support
     SUBDIR += mirmon
     SUBDIR += misterproper

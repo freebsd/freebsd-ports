@@ -220,7 +220,6 @@
     SUBDIR += ndiff
     SUBDIR += newmat
     SUBDIR += ngraph
-    SUBDIR += nsc2ke
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += nyh-hoc

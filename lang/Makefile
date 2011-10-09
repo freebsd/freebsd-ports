@@ -79,7 +79,6 @@
     SUBDIR += fpc-tcl
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
-    SUBDIR += freetxl
     SUBDIR += fsharp
     SUBDIR += g95
     SUBDIR += gambas

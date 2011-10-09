@@ -41,7 +41,6 @@
     SUBDIR += ircd-ratbox
     SUBDIR += ircd-ratbox-devel
     SUBDIR += ircd-ru
-    SUBDIR += ircd-rusnet
     SUBDIR += irchat-jp
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs21-mule
@@ -131,7 +130,6 @@
     SUBDIR += thales
     SUBDIR += tircd
     SUBDIR += tircproxy
-    SUBDIR += tkirc
     SUBDIR += tr-ircd
     SUBDIR += trickyirc
     SUBDIR += undernet-ircu

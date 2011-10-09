@@ -1,8 +1,0 @@
-%%SITE_PERL%%/RIFF/Info.pm
-%%SITE_PERL%%/RIFF/Info/AVI.pm
-%%SITE_PERL%%/RIFF/Info/DivX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF/Info/.packlist
-@dirrm %%SITE_PERL%%/RIFF/Info
-@dirrmtry %%SITE_PERL%%/RIFF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF
