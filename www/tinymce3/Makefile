@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.6
 CATEGORIES=	www
-MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
+MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
+		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,8 +19,13 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+post-extract:
+	@${TOUCH} \
+		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme \
+		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
+
 do-install:
-	${INSTALL} -d -m 0755 ${WWWDIR}
-	(cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${WWWDIR})
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 
 .include <bsd.port.mk>
