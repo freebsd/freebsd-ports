@@ -19,12 +19,12 @@ CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
+USE_GCC=	4.4+
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 
 pre-patch:
-	${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,^.../\*,/*,' ${WRKDIR}/astyle/src/ASLocalizer.cpp
+	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
 
 PLIST_FILES=	bin/astyle
 .if !defined(NOPORTDOCS)
