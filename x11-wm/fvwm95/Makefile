@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike version of the fvwm2 window manager
 
+DEPRECATED=	Depends on x11/fbsd-icons, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${LOCALBASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 

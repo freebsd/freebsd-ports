@@ -13,6 +13,9 @@ MASTER_SITES=	http://djini.de/software/commonist/
 MAINTAINER=	saper@saper.info
 COMMENT=	Easy upload of images to Wikimedia Commons and Mediawiki
 
+DEPRECATED=	Depends on textproc/javacc, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 TARGET_JAR=	${JAVAJARDIR}/${PORTNAME}.jar
 USE_ZIP=	yes
 USE_JAVA=	1.5+

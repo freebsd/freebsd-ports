@@ -15,6 +15,9 @@ MASTER_SITES=	http://hanterm.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm hacked for managing Korean languages
 
+DEPRECATED=	Depends on korean/johabfonts, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
 CONFLICTS=	ko-hanterm-xf-2.*

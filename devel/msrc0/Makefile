@@ -15,8 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+# Depended on by comms/conserver devel/mkcmd
+DEPRECATED=     Upstream disapeared and distfile is not available
+EXPIRATION_DATE=        2011-10-31
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/makeme

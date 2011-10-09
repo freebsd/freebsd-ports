@@ -14,8 +14,9 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/X11/mpeg/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplexes MPEG component streams into system layers
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+# Depended on by multimedia/fxtv
+DEPRECATED=     Upstream disapeared and distfile is not available
+EXPIRATION_DATE=        2011-10-31
 
 CONFLICTS=	mjpegtools-*
 

@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+DEPRECATED=	Depends on textproc/htmlize.el, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 

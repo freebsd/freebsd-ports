@@ -16,6 +16,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A basic language with object extensions (meta port)
 
+DEPRECATED=	Depends on x11-toolkits/gambas2-gb-qt, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	gbi2:${PORTSDIR}/lang/gambas2-base \
 		${GAMBASCOMPDIR}/gb.settings.component:${PORTSDIR}/lang/gambas2-components
 

@@ -16,6 +16,9 @@ DISTNAME=	3952-Geramik-${PORTVERSION}
 MAINTAINER=	haesu@TowardEX.com
 COMMENT=	A Keramik KDE styled theme for GTK
 
+DEPRECATED=	Depends on x11-toolkits/qtpixmap, which is DEPRECATED
+EXPIRATION_DATE=	2011-10-31
+
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libqtpixmap.so:${PORTSDIR}/x11-toolkits/qtpixmap
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
