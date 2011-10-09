@@ -110,6 +110,8 @@ post-patch:
 	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
 		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/skins/default/includes/taskbar.html
+	@${REINPLACE_CMD} "s/\"mail\//\"${MAIL}\//g" \
+		${WRKSRC}/program/js/app.js
 	@${REINPLACE_CMD} "s/mail_footer/${MAIL}_footer/g" \
 		${WRKSRC}/skins/default/*.css \
 		${WRKSRC}/skins/default/templates/login.html
