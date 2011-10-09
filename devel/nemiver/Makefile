@@ -23,6 +23,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 BUILD_DEPENDS=	gdb72:${PORTSDIR}/devel/gdb
 RUN_DEPENDS=	gdb72:${PORTSDIR}/devel/gdb
 
+BROKEN=		unsatisfiable dependency object on gdb
+
 OPTIONS=	GHEX "Enable memory view" off
 
 GNU_CONFIGURE=	yes
