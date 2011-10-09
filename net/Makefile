@@ -512,6 +512,7 @@
     SUBDIR += p5-Google-SAML-Request
     SUBDIR += p5-Google-SAML-Response
     SUBDIR += p5-Gopher-Server
+    SUBDIR += p5-Growl-GNTP
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-INET6
     SUBDIR += p5-IO-Socket-Multicast

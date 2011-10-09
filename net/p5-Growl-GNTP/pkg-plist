@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl/GNTP/.packlist
+%%SITE_PERL%%/Growl/GNTP.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl/GNTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl
+@dirrmtry %%SITE_PERL%%/Growl
