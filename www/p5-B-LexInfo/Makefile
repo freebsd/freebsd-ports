@@ -11,7 +11,7 @@ CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tcornpropst@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show information about subroutine lexical variables
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now

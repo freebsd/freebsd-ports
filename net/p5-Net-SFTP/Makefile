@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tcornpropst@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module implementing Secure File Transfer Protocol client
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/SSH/Perl.pm:${PORTSDIR}/net/p5-Net-SSH-Perl

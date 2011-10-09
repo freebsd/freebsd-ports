@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.crazygreek.co.uk/data/pages/mod_shapvh/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	steven@krx.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that provides virtual hosts from a database
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
