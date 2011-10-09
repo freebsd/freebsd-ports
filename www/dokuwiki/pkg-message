@@ -2,7 +2,7 @@
           	**** NOTE ****
 1) Please add the following to your apache config, and restart.
     [1;32m#
-    # Directives to allow use of dokuwki
+    # Directives to allow use of dokuwiki
     #
     Alias /%%PORTNAME%% "%%PREFIX%%/%%DOKUWIKI_DIR%%/"[m
 
