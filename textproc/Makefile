@@ -838,6 +838,7 @@
     SUBDIR += p5-UML-State
     SUBDIR += p5-URI-Find
     SUBDIR += p5-Unicode-CheckUTF8
+    SUBDIR += p5-Unicode-Collate
     SUBDIR += p5-Unicode-EastAsianWidth
     SUBDIR += p5-Unicode-Escape
     SUBDIR += p5-Unicode-LineBreak
