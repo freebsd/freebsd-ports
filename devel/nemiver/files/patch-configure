@@ -8,7 +8,7 @@ $FreeBSD$
  
  # Extract the first word of "gdb", so it can be a program name with args.
 -set dummy gdb; ac_word=$2
-+set dummy gdb72; ac_word=$2
++set dummy gdb73.1; ac_word=$2
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
  if ${ac_cv_path_GDB_PROG+:} false; then :
