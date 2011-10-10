@@ -13,6 +13,8 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/PreProc/user_browser.pm
 %%SITE_PERL%%/Log2t/PreProc/win_sysinfo.pm
 %%SITE_PERL%%/Log2t/base/input.pm
+%%SITE_PERL%%/Log2t/input/altiris.pm
+%%SITE_PERL%%/Log2t/input/analog_cache.pm
 %%SITE_PERL%%/Log2t/input/apache2_access.pm
 %%SITE_PERL%%/Log2t/input/apache2_error.pm
 %%SITE_PERL%%/Log2t/input/chrome.pm
@@ -29,9 +31,13 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/iis.pm
 %%SITE_PERL%%/Log2t/input/isatxt.pm
 %%SITE_PERL%%/Log2t/input/jp_ntfs_change.pm
+%%SITE_PERL%%/Log2t/input/l2t_csv.pm
 %%SITE_PERL%%/Log2t/input/linux.lst
 %%SITE_PERL%%/Log2t/input/mactime.pm
 %%SITE_PERL%%/Log2t/input/mcafee.pm
+%%SITE_PERL%%/Log2t/input/mcafeefireup.pm
+%%SITE_PERL%%/Log2t/input/mcafeehel.pm
+%%SITE_PERL%%/Log2t/input/mcafeehs.pm
 %%SITE_PERL%%/Log2t/input/mft.pm
 %%SITE_PERL%%/Log2t/input/mssql_errlog.pm
 %%SITE_PERL%%/Log2t/input/ntuser.pm
@@ -50,6 +56,7 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/software.pm
 %%SITE_PERL%%/Log2t/input/sol.pm
 %%SITE_PERL%%/Log2t/input/squid.pm
+%%SITE_PERL%%/Log2t/input/symantec.pm
 %%SITE_PERL%%/Log2t/input/syslog.pm
 %%SITE_PERL%%/Log2t/input/system.pm
 %%SITE_PERL%%/Log2t/input/tln.pm
@@ -58,6 +65,7 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/win7.lst
 %%SITE_PERL%%/Log2t/input/win7_no_reg.lst
 %%SITE_PERL%%/Log2t/input/win_link.pm
+%%SITE_PERL%%/Log2t/input/winsrv.lst
 %%SITE_PERL%%/Log2t/input/winxp.lst
 %%SITE_PERL%%/Log2t/input/winxp_no_reg.lst
 %%SITE_PERL%%/Log2t/input/wmiprov.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log2timeline
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	security
 MASTER_SITES=	http://log2timeline.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -54,6 +54,7 @@ MAN3=	Log2Timeline.3 \
 	Log2t::Numbers.3 \
 	Log2t::Time.3 \
 	Log2t::base::input.3 \
+	Log2t::input::altiris.3 \
 	Log2t::input::encase_dirlisting.3 \
 	Log2t::input::evt.3 \
 	Log2t::input::evtx.3 \
@@ -62,6 +63,9 @@ MAN3=	Log2Timeline.3 \
 	Log2t::input::ftk_dirlisting.3 \
 	Log2t::input::jp_ntfs_change.3 \
 	Log2t::input::mcafee.3 \
+	Log2t::input::mcafeefireup.3 \
+	Log2t::input::mcafeehel.3 \
+	Log2t::input::mcafeehs.3 \
 	Log2t::input::mft.3 \
 	Log2t::input::mssql_errlog.3 \
 	Log2t::input::opera.3 \
@@ -69,6 +73,7 @@ MAN3=	Log2Timeline.3 \
 	Log2t::input::pdf.3 \
 	Log2t::input::setupapi.3 \
 	Log2t::input::sol.3 \
+	Log2t::input::symantec.3 \
 	Log2t::input::volatility.3 \
 	Log2t::input::wmiprov.3 \
 	Log2t::output::beedocs.3 \
