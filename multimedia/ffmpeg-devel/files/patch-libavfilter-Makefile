@@ -1,11 +1,11 @@
---- libavfilter/Makefile.orig	2010-11-30 14:35:44.372975001 +0100
-+++ libavfilter/Makefile	2010-11-30 14:35:50.292359891 +0100
-@@ -50,7 +50,7 @@
+--- libavfilter/Makefile.orig	2011-10-10 09:57:41.000000000 +0200
++++ libavfilter/Makefile	2011-10-10 10:20:17.318954919 +0200
+@@ -148,7 +148,7 @@
+ OBJS-$(CONFIG_MP_FILTER) += libmpcodecs/pullup.o
  
- OBJS-$(CONFIG_NULLSINK_FILTER)               += vsink_nullsink.o
  
---include $(SUBDIR)$(ARCH)/Makefile
-+-include $(SUBDIR)$(FFMPEG_ARCH)/Makefile
+--include $(SRC_PATH)/$(SUBDIR)$(ARCH)/Makefile
++-include $(SRC_PATH)/$(SUBDIR)$(FFMPEG_ARCH)/Makefile
  
- DIRS = x86
+ DIRS = x86 libmpcodecs
  

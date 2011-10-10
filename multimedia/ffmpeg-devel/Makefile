@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2011-06-25
-PORTREVISION=	1
+DISTVERSION=	2011-10-09
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm
-DISTNAME=	ffmpeg-${GIT_SUFFIX}
+MASTER_SITE_SUBDIR=	mm/ffmpeg
+DISTNAME=	ffmpeg-HEAD-${GIT_SUFFIX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
@@ -23,7 +22,7 @@ CONFLICTS=	ffmpeg-0.*
 
 LATEST_LINK=	ffmpeg-devel
 
-GIT_SNAPSHOT=	dca3542d35c8b1769f9fd32641567ffa2346327e
+GIT_SNAPSHOT=	9719f25e7b5a7222ca4a1e0966bb35f363752814
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 
 USE_XZ=		yes
@@ -33,7 +32,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	ALSA	"Enable alsa input/output device" off \
+OPTIONS=	AACPLUS	"Enable aac via libaacplus" off \
+		ALSA	"Enable alsa input/output device" off \
 		AMR_NB	"AMR Narrow Band audio encoder (opencore)" off \
 		AMR_WB	"AMR Wide Band audio decoder (opencore)" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
@@ -117,10 +117,7 @@ USE_LDCONFIG=	yes
 
 DOC_FILES=	Changelog CREDITS INSTALL LICENSE MAINTAINERS README
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
-		ffmpeg.html ffprobe.html general.html issue_tracker.txt \
-		libavfilter.html optimization.txt rate_distortion.txt \
-		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
+DOC_DOCFILES=	APIchanges RELEASE_NOTES *.txt *.html
 PORTDOCS=	*
 
 .if !defined(WITH_DEBUG)
@@ -154,12 +151,21 @@ FFMPEG_CFLAGS+=		-msse
 # PORTDOCS
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=		ffmpeg.1 ffprobe.1
+MAN1+=		avconv.1 ffmpeg.1 ffprobe.1
 .endif
 
 # optimizations
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
+.endif
+
+#aacplus
+.if defined(WITH_AACPLUS)
+FFMPEG_NONFREE=	yes
+LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus
+CONFIGURE_ARGS+=	--enable-libaacplus
+.else
+CONFIGURE_ARGS+=	--disable-libaacplus
 .endif
 
 #alsa
@@ -206,9 +212,9 @@ CONFIGURE_ARGS+=	--disable-libdirac
 
 # faac
 .if defined(WITH_FAAC)
-RESTRICTED=	linking to libfaac restricts redistribution
+FFMPEG_NONFREE=	yes
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
+CONFIGURE_ARGS+=	--enable-libfaac
 .else
 CONFIGURE_ARGS+=	--disable-libfaac
 .endif
@@ -370,7 +376,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.116:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
@@ -385,16 +391,24 @@ CONFIGURE_ARGS+=	--disable-libxvid
 .endif
 
 # License knobs
+.if defined(FFMPEG_NONFREE)
+RESTRICTED=	linking to libfaac or libaacplus restricts redistribution
+CONFIGURE_ARGS+=	--enable-nonfree
+. if defined(FFMPEG_LICENSE_GPL3)
+CONFIGURE_ARGS+=	--enable-version3
+. endif
+.else
 LICENSE_COMB=	multi
-.if defined(FFMPEG_LICENSE_GPL3)
+. if defined(FFMPEG_LICENSE_GPL3)
 LICENSE=		GPLv3 LGPL3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3
-.else
+. else
 LICENSE=		GPLv2 LGPL21
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
+. endif
 .endif
 
 pre-configure:

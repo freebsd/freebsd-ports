@@ -1,11 +1,19 @@
---- libavcodec/Makefile.orig	2010-07-21 14:37:37.000000000 +0200
-+++ libavcodec/Makefile	2010-08-01 21:19:55.324513241 +0200
-@@ -615,7 +615,7 @@
+--- libavcodec/Makefile.orig	2011-10-10 09:57:41.000000000 +0200
++++ libavcodec/Makefile	2011-10-10 10:19:10.382958515 +0200
+@@ -686,14 +686,14 @@
  # well.
  OBJS-$(!CONFIG_SMALL)                  += inverse.o
  
---include $(SUBDIR)$(ARCH)/Makefile
-+-include $(SUBDIR)$(FFMPEG_ARCH)/Makefile
+--include $(SRC_PATH)/$(SUBDIR)$(ARCH)/Makefile
++-include $(SRC_PATH)/$(SUBDIR)$(FFMPEG_ARCH)/Makefile
  
- SKIPHEADERS                             = %_tablegen.h
+ SKIPHEADERS                            += %_tablegen.h                  \
+                                           %_tables.h                    \
+                                           aac_tablegen_decl.h           \
+                                           fft-internal.h                \
+                                           tableprint.h                  \
+-                                          $(ARCH)/vp56_arith.h
++                                          $(FFMPEG_ARCH)/vp56_arith.h
  SKIPHEADERS-$(CONFIG_DXVA2)            += dxva2.h dxva2_internal.h
+ SKIPHEADERS-$(CONFIG_LIBDIRAC)         += libdirac.h
+ SKIPHEADERS-$(CONFIG_LIBSCHROEDINGER)  += libschroedinger.h

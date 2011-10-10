@@ -1,3 +1,4 @@
+bin/avconv
 bin/ffmpeg
 bin/ffprobe
 %%FFSERVER%%bin/ffserver
@@ -41,7 +42,7 @@ include/libavdevice/avdevice.h
 include/libavfilter/avcodec.h
 include/libavfilter/avfilter.h
 include/libavfilter/avfiltergraph.h
-include/libavfilter/vsink_buffer.h
+include/libavfilter/buffersink.h
 include/libavfilter/vsrc_buffer.h
 include/libavformat/avformat.h
 include/libavformat/avio.h
@@ -82,35 +83,40 @@ include/libavutil/rational.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
 include/libpostproc/postprocess.h
-include/postproc/postprocess.h
+include/libswresample/swresample.h
 include/libswscale/swscale.h
+include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
-lib/libavcodec.so.53.7.0
+lib/libavcodec.so.53.19.1
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.1
-lib/libavdevice.so.53.1.1
+lib/libavdevice.so.53.4.0
 lib/libavfilter.a
 lib/libavfilter.so
-lib/libavfilter.so.2.23.0
 lib/libavfilter.so.1
+lib/libavfilter.so.2.43.6
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.1
-lib/libavformat.so.53.4.0
+lib/libavformat.so.53.14.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.1
-lib/libavutil.so.51.10.0
+lib/libavutil.so.51.20.1
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.1
 lib/libpostproc.so.51.2.0
+lib/libswresample.a
+lib/libswresample.so
+lib/libswresample.so.0.0.0
+lib/libswresample.so.1
 lib/libswscale.a
 lib/libswscale.so
-lib/libswscale.so.2.0.0
+lib/libswscale.so.2.1.0
 lib/libswscale.so.1
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavdevice.pc
@@ -118,24 +124,19 @@ libdata/pkgconfig/libavfilter.pc
 libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libpostproc.pc
+libdata/pkgconfig/libswresample.pc
 libdata/pkgconfig/libswscale.pc
 %%DATADIR%%/libvpx-1080p.ffpreset
 %%DATADIR%%/libvpx-1080p50_60.ffpreset
 %%DATADIR%%/libvpx-360p.ffpreset
 %%DATADIR%%/libvpx-720p.ffpreset
 %%DATADIR%%/libvpx-720p50_60.ffpreset
-%%DATADIR%%/libx264-baseline.ffpreset
 %%DATADIR%%/libx264-ipod320.ffpreset
 %%DATADIR%%/libx264-ipod640.ffpreset
-%%DATADIR%%/libx264-lossless_fast.ffpreset
-%%DATADIR%%/libx264-lossless_max.ffpreset
-%%DATADIR%%/libx264-lossless_medium.ffpreset
-%%DATADIR%%/libx264-lossless_slow.ffpreset
-%%DATADIR%%/libx264-lossless_slower.ffpreset
-%%DATADIR%%/libx264-lossless_ultrafast.ffpreset
 @dirrm %%DATADIR%%/
 @dirrm include/postproc
 @dirrm include/libswscale
+@dirrm include/libswresample
 @dirrm include/libpostproc
 @dirrm include/libavutil
 @dirrm include/libavformat
