@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -25,7 +25,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	ALSA	"Enable alsa input/output device" off \
+OPTIONS=	AACPLUS "Enable aac via libaacplus" off \
+		ALSA	"Enable alsa input/output device" off \
 		AMR_NB	"AMR Narrow Band audio encoder (opencore)" off \
 		AMR_WB	"AMR Wide Band audio decoder (opencore)" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
@@ -150,6 +151,15 @@ MAN1+=		ffserver.1
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .endif
 
+#aacplus
+.if defined(WITH_AACPLUS)
+FFMPEG_NONFREE=	yes
+LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus
+CONFIGURE_ARGS+=	--enable-libaacplus
+.else
+CONFIGURE_ARGS+=	--disable-libaacplus
+.endif
+
 #alsa
 .if defined(WITH_ALSA)
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
@@ -194,9 +204,9 @@ CONFIGURE_ARGS+=	--disable-libdirac
 
 # faac
 .if defined(WITH_FAAC)
-RESTRICTED=	linking to libfaac restricts redistribution
+FFMPEG_NONFREE=	yes
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
+CONFIGURE_ARGS+=	--enable-libfaac
 .else
 CONFIGURE_ARGS+=	--disable-libfaac
 .endif
@@ -354,7 +364,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.116:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
@@ -369,16 +379,24 @@ CONFIGURE_ARGS+=	--disable-libxvid
 .endif
 
 # License knobs
+.if defined(FFMPEG_NONFREE)
+RESTRICTED=	linking to libfaac or libaacplus restricts redistribution
+CONFIGURE_ARGS+=	--enable-nonfree
+. if defined(FFMPEG_LICENSE_GPL3)
+CONFIGURE_ARGS+=	--enable-version3
+. endif
+.else
 LICENSE_COMB=	multi
-.if defined(FFMPEG_LICENSE_GPL3)
+. if defined(FFMPEG_LICENSE_GPL3)
 LICENSE=		GPLv3 LGPL3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3
-.else
+. else
 LICENSE=		GPLv2 LGPL21
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
+. endif
 .endif
 
 pre-configure:
