@@ -14,8 +14,7 @@
 # For development version, please try graphics/p5-Image-ExifTool-devel
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	8.60
-PORTREVISION=	1
+PORTVERSION=	8.65
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -41,12 +40,12 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BigTIFF BuildTagLookup	\
 		Kodak KyoceraRaw LNK Leaf M2TS MIE MIEUnits MIFF MNG	\
 		MPC MPEG MPF MWG MXF MakerNotes Matroska Microsoft	\
 		Minolta	MinoltaRaw Nikon NikonCapture NikonCustom OOXML	\
-		Olympus PDF PGF PICT PNG PPM PSP Panasonic		\
+		Ogg Olympus PDF PGF PICT PNG PPM PSP Panasonic		\
 		PanasonicRaw Pentax PhotoMechanic Photoshop		\
 		PostScript PrintIM QuickTime RIFF RSRC RTF Rawzor	\
 		Real Reconyx Ricoh Samsung Sanyo Shift Shortcuts Sigma	\
 		SigmaRaw Sony SonyIDC Stim TagInfoXML TagLookup		\
-		TagNames Unknown Vorbis WriteCanonRaw WriteExif		\
+		TagNames Theora Unknown Vorbis WriteCanonRaw WriteExif	\
 		WriteIPTC WritePDF WritePNG WritePhotoshop		\
 		WritePostScript WriteXMP Writer XMP XMP2 XMPStruct	\
 		ZIP iWork
