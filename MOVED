@@ -14,8 +14,9 @@
 #		in PST/PDT)
 #     Why:	The reason why the port was moved or removed
 #
-# Keep this list sorted in the chronological order.  New entries must
-# be added at the tail.  Reason for (re)move should not end with the dot.
+# Keep this list sorted in the chronological order.  New entries must be
+# added at the tail.  Reason for (re)move should start with a capital letter
+# (unless it's a file or other special name) and not end with the dot.
 #
 # If previously removed port gets restored, make sure to delete the relevant
 # line.  If a port is copied to a new location and the old location is kept
@@ -24,12 +25,12 @@
 # Port|Moved to|Date|Why
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of pulseaudio
-audio/teknap|net-p2p/teknap|2008-01-09|moved to net-p2p category
+audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
 net/freeradius-devel|net/freeradius2|2008-01-18|Development version no longer necessary
 devel/p5-gearmand|devel/p5-Gearman-Server|2008-01-20|Replaced by p5-Gearman-Server
-database/mysqltoolkit|database/maatkit|2008-01-21|project was renamed
-games/sturmbahnfahrer|games/stormbaancoureur|2008-01-27|project was renamed
-net/cactid|net-mgmt/cacti-spine|2008-01-27|project was renamed
+database/mysqltoolkit|database/maatkit|2008-01-21|Project was renamed
+games/sturmbahnfahrer|games/stormbaancoureur|2008-01-27|Project was renamed
+net/cactid|net-mgmt/cacti-spine|2008-01-27|Project was renamed
 devel/wxGlade-devel||2008-02-11|Has expired: has been the same version as wxGlade for a long time; use it instead
 sysutils/sge|sysutils/sge60|2008-02-12|Splitting into 6.0 and 6.1 versions
 mail/linux-netscape-messenger|mail/thunderbird|2008-02-13|Abandoned by AOL
@@ -55,11 +56,11 @@ misc/seizedesktop||2008-02-28|Has expired: development stalled for years, outdat
 net-im/wildfire||2008-02-28|Has expired: Use net-im/openfire instead of this port
 www/gekko||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion (http://code.google.com/p/textmotion/)
 www/gekko-modules||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion (http://code.google.com/p/textmotion/)
-java/linux-blackdown-jre11||2008-02-28|Has expired: Obsolete version; Support for Java 1.1 is to be removed from the ports tree
+java/linux-blackdown-jre11||2008-02-28|Has expired: Obsolete version; support for Java 1.1 is to be removed from the ports tree
 french/pluxml||2008-02-28|Has expired: no active development and known security vulnerabilities, see http://www.securityfocus.com/bid/24607/info for details
 french/pluxml-theme-bridge||2008-02-28|Has expired: pluxml is marked as deprecated
 french/pluxml-theme-snowxml||2008-02-28|Has expired: pluxml is marked as deprecated
-databases/pgbash||2008-02-28|Has expired: Last release in 2003, relies on outdated Postgre 7.3 and bash 2.05a
+databases/pgbash||2008-02-28|Has expired: Last release in 2003, relies on outdated PostgreSQL 7.3 and bash 2.05a
 audio/nogger||2008-02-28|Has expired: "just makes a humming noise""
 x11-wm/wmDeskGuide||2008-02-28|Has expired: Version branch long since retired
 ftp/axelq||2008-02-28|Has expired: Unmaintained, website disappeared
@@ -69,7 +70,7 @@ graphics/jgv||2008-02-28|Has expired: development stalled for years, outdated, u
 editors/muggy||2008-02-28|Has expired: development stalled for years, unmaintained
 x11-fm/binder||2008-02-28|Has expired: development stalled for years, outdated, unmaintained
 x11-toolkits/guile-gnome||2008-03-02|Software is obsolete
-security/openssh||2008-03-02|Has expired: Outdate and has security issues
+security/openssh||2008-03-02|Has expired: Outdated and has security issues
 www/p5-FastCGI-ProcManager||2008-03-07|Duplicate of www/p5-FCGI-ProcManager
 x11/compositeext|x11/compositeproto|2008-03-07|Port has been outdated since X.org 7.2 merge
 x11/damageext|x11/damageproto|2008-03-07|Port has been outdated since X.org 7.2 merge
@@ -111,7 +112,7 @@ x11/e17-module-devian||2008-03-21|Has expired: abandoned by developer
 x11/e17-module-engage||2008-03-21|Has expired: abandoned by developer
 x11/e17-module-eveil||2008-03-21|Has expired: abandoned by developer
 sysutils/hal-device-manager|sysutils/gnome-device-manager|2008-03-23|hal-device-manager has been retired
-security/gnome-keyring-manager|security/seahorse|2008-03-23|functionality has been rolled into seahorse
+security/gnome-keyring-manager|security/seahorse|2008-03-23|Functionality has been rolled into seahorse
 ports-mgmt/pkg_install-devel|ports-mgmt/pkg_install|2008-03-31|Port has been unmaintained for a few years
 x11-toolkits/qwt|x11-toolkits/qwt4|2008-04-02|Renamed for better naming
 x11-toolkits/qwt-devel|x11-toolkits/qwt5|2008-04-02|Renamed for better naming
@@ -121,12 +122,12 @@ devel/check|devel/libcheck|2008-04-07|Removed in favour to devel/libcheck
 archivers/deepforest||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
 graphics/libimg-tkstep80||2008-04-09|Has expired: tkstep80 scheduled for expiration
 x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
-devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|bundled with p5-Tk
+devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|Bundled with p5-Tk
 games/teewars|games/teeworls|2008-04-17|Project renamed
 multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
 multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
-graphics/ascii0|graphics/asciio|2008-04-22|renamed by delete+add
-misc/kde3-i18n-id||2008-04-25|Has expired: "Distfile no longer available, outdated"
+graphics/ascii0|graphics/asciio|2008-04-22|Renamed by delete+add
+misc/kde3-i18n-id||2008-04-25|Has expired: Distfile no longer available, outdated
 net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does not build with guile-1.8, and it is unmaintained
 net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
 net/samplicator||2008-04-25|Has expired: Project has vanished
@@ -191,7 +192,7 @@ security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer
 devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme
 devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official python modules naming scheme
 devel/subversion-ruby|devel/ruby-subversion|2008-06-30|Rename to reflect official ruby modules naming scheme
-misc/goblin|math/goblin|2008-06-30|repo move to a better category
+misc/goblin|math/goblin|2008-06-30|Moved to a better category
 editors/openoffice.org-1.0||2008-07-02|Removed
 editors/openoffice.org-1.1||2008-07-02|Removed
 editors/openoffice.org-1.1-devel||2008-07-02|Removed
@@ -331,8 +332,8 @@ japanese/jvim3-direct_canna|japanese/jvim3|2008-10-28|Integrated into japanese/j
 japanese/jvim3-freewnn|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-wnn6|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-wnn7|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
-security/libfwbuilder2|security/libfwbuilder|2008-11-05|replaced by libfwbuilder 3.0
-security/fwbuilder2|security/fwbuilder|2008-11-05|replaced by fwbuilder 3.0
+security/libfwbuilder2|security/libfwbuilder|2008-11-05|Replaced by libfwbuilder 3.0
+security/fwbuilder2|security/fwbuilder|2008-11-05|Replaced by fwbuilder 3.0
 japanese/magicpoint|misc/magicpoint|2008-11-07|Integrated into misc/magicpoint
 x11-drivers/xf86-input-wacom|x11-drivers/input-wacom|2008-11-18|Port was renamed
 databases/firebird2-client|databases/firebird20-client|2008-11-24|Renamed
@@ -387,7 +388,7 @@ irc/erc||2008-12-19|Has expired: Has been broken for more than 6 months
 lang/chameleon||2008-12-19|Has expired: Has been broken for more than 6 months
 math/ses||2008-12-19|Has expired: Has been broken for more than 6 months
 x11-toolkits/p5-qt||2008-12-19|Has expired: Has been broken for more than 6 months
-www/phpSysInfo||2008-12-24|split into www/phpsysinfo and www/phpsysinfo-dev
+www/phpSysInfo||2008-12-24|Split into www/phpsysinfo and www/phpsysinfo-dev
 japanese/msdosfs||2008-12-28|Removed: only for 5.x
 korean/msdosfs||2008-12-28|Removed: only for 5.x
 security/openssl-stable|security/openssl|2008-12-30|Removed: only for 6.0
@@ -434,7 +435,7 @@ x11-toolkits/fox10||2009-01-21|Removed deprecated port, use x11-toolkits/fox16 i
 x11-toolkits/fxscintilla-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/fxscintilla instead
 x11-toolkits/py-fox||2009-01-21|Removed deprecated port, has a broken dependency
 x11-toolkits/ruby-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/ruby-fox16 instead
-devel/linux-glib2||2009-01-21|Removed since the port is incorporated into all linux base ports
+devel/linux-glib2||2009-01-21|Removed since the port is incorporated into all Linux base ports
 x11/xorg-protos||2009-01-23|Not really necessary
 x11-drivers/synaptics|x11-drivers/xf86-input-synaptics|2009-01-23|Now an official X.org driver
 net/mpich|net/mpich2|2009-01-23|Broken and superseded by mpich2
@@ -492,11 +493,11 @@ net/samba32-devel|net/samba32|2009-02-16|Samba 3.2 became stable enough to be us
 editors/sam||2009-02-19|Has expired: distfile and homepage disappeared
 math/slsc||2009-02-28|Has expired: No longer maintained by author
 finance/eqonomize|finance/eqonomize-kde3|2009-03-02|Use finance/eqonomize-kde3
-x11/libxfce4mcs||2009-03-02|got obsolete by xfce 4.6 update
-sysutils/xfce4-mcs-manager||2009-03-02|got obsolete by xfce 4.6 update
-sysutils/xfce4-mcs-plugins||2009-03-02|got obsolete by xfce 4.6 update
-x11-themes/xfce4-icon-theme||2009-03-02|got obsolete by xfce 4.6 update
-comms/py-gammu||2009-03-04|incorporated into comms/gammu
+x11/libxfce4mcs||2009-03-02|Got obsolete by Xfce 4.6 update
+sysutils/xfce4-mcs-manager||2009-03-02|Got obsolete by Xfce 4.6 update
+sysutils/xfce4-mcs-plugins||2009-03-02|Got obsolete by Xfce 4.6 update
+x11-themes/xfce4-icon-theme||2009-03-02|Got obsolete by Xfce 4.6 update
+comms/py-gammu||2009-03-04|Incorporated into comms/gammu
 x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
 audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
@@ -523,11 +524,11 @@ x11-toolkits/inti-gl||2009-03-09|Has expired: not maintain by upstream for more 
 x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 misc/git|misc/gnuit|2009-03-14|Renamed
 lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
-sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was Renamed
-games/PySolFC|games/pysolfc|2009-03-19|port renamed
+sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was renamed
+games/PySolFC|games/pysolfc|2009-03-19|Port renamed
 net-im/ruby-xmpp4r|net-im/rubygem-xmpp4r|2009-03-21|Renamed
-audio/rhythmbox-devel|audio/rhythmbox|2009-03-21|main port updated to latest stable version
-net/penguintv-devel||2009-03-23|main port updated to latest stable version
+audio/rhythmbox-devel|audio/rhythmbox|2009-03-21|Main port updated to the latest stable version
+net/penguintv-devel||2009-03-23|Main port updated to the latest stable version
 x11/oclock|x11-clocks/oclock|2009-03-23|Moved to a more appropriate category
 www/p5-Catalyst-Plugin-Authentication-Store-DBIx-Class||2009-03-23|Removed
 emulators/dlx||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
@@ -600,9 +601,9 @@ devel/sparc-rtems-g77|devel/sparc-rtems-gcc|2009-04-11|Has expired: use sparc-rt
 devel/sparc-rtems-objc|devel/sparc-rtems-gcc|2009-04-11|Has expired: use sparc-rtems-gcc instead
 polish/gnugadu|polish/gnugadu2|2009-04-11|Has expired: Not developed anymore, unmaintained
 security/cutlass||2009-04-11|Has expired: does not work with current version of security/botan
-www/rt2|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
-www/rt32|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
-www/rt34|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
+www/rt2|www/rt38|2009-04-11|Obsolete version, use www/rt38 instead
+www/rt32|www/rt38|2009-04-11|Obsolete version, use www/rt38 instead
+www/rt34|www/rt38|2009-04-11|Obsolete version, use www/rt38 instead
 www/mod_snake||2009-04-12|Doesn't compile; abandoned upstream since 2002
 www/mod_mya||2009-04-13|Depends on broken databases/mysql323-client
 www/mod_mysqluserdir||2009-04-13|Depends on broken databases/mysql323-client
@@ -627,8 +628,8 @@ textproc/sp||2009-05-03|Has expired: unmaintained, does not work with current ve
 net-mgmt/nrpe||2009-05-04|Has expired: Obsolete version, consider migration to net-mgmt/nrpe2
 www/phpsurveyor|www/limesurvey|2009-05-05|Project was renamed
 devel/oskit||2009-05-07|Has expired: does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no active maintainer
-www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|directory renamed
-german/swissgerman-ding|german/ding|2009-05-12|integrated into german/ding
+www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|Directory renamed
+german/swissgerman-ding|german/ding|2009-05-12|Integrated into german/ding
 misc/sonytv||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 mail/postilion||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 x11-toolkits/p5-TclTk||2009-05-28|Has expired: replaced by x11-toolkits/p5-Tcl-Tk
@@ -720,54 +721,54 @@ www/postnuke||2009-06-16|Project abandoned
 x11-toolkits/py-anygui||2009-06-16|No longer actively developed or supported
 mail/mailrep||2009-06-18|Project abandoned
 devel/monodoc||2009-06-19|Now included in lang/mono
-misc/koffice-i18n|editors/koffice-i18n|2009-06-29|moved to editors category
-misc/koffice-i18n-af|editors/koffice-i18n-af|2009-06-29|moved to editors category
-misc/koffice-i18n-bg|editors/koffice-i18n-bg|2009-06-29|moved to editors category
-misc/koffice-i18n-br|editors/koffice-i18n-br|2009-06-29|moved to editors category
-misc/koffice-i18n-bs|editors/koffice-i18n-bs|2009-06-29|moved to editors category
-misc/koffice-i18n-ca|editors/koffice-i18n-ca|2009-06-29|moved to editors category
-misc/koffice-i18n-cs|editors/koffice-i18n-cs|2009-06-29|moved to editors category
-misc/koffice-i18n-cy|editors/koffice-i18n-cy|2009-06-29|moved to editors category
-misc/koffice-i18n-da|editors/koffice-i18n-da|2009-06-29|moved to editors category
-misc/koffice-i18n-el|editors/koffice-i18n-el|2009-06-29|moved to editors category
-misc/koffice-i18n-en_GB|misc/koffice-i18n-en_GB|2009-06-29|moved to editors category
-misc/koffice-i18n-eo|editors/koffice-i18n-eo|2009-06-29|moved to editors category
-misc/koffice-i18n-es|editors/koffice-i18n-es|2009-06-29|moved to editors category
-misc/koffice-i18n-et|editors/koffice-i18n-et|2009-06-29|moved to editors category
-misc/koffice-i18n-eu|editors/koffice-i18n-eu|2009-06-29|moved to editors category
-misc/koffice-i18n-fa|editors/koffice-i18n-fa|2009-06-29|moved to editors category
-misc/koffice-i18n-fi|editors/koffice-i18n-fi|2009-06-29|moved to editors category
-misc/koffice-i18n-ga|editors/koffice-i18n-ga|2009-06-29|moved to editors category
-misc/koffice-i18n-gl|editors/koffice-i18n-gl|2009-06-29|moved to editors category
-misc/koffice-i18n-hi|editors/koffice-i18n-hi|2009-06-29|moved to editors category
-misc/koffice-i18n-hsb|editors/koffice-i18n-hsb|2009-06-29|moved to editors category
-misc/koffice-i18n-is|editors/koffice-i18n-is|2009-06-29|moved to editors category
-misc/koffice-i18n-it|editors/koffice-i18n-it|2009-06-29|moved to editors category
-misc/koffice-i18n-km|editors/koffice-i18n-km|2009-06-29|moved to editors category
-misc/koffice-i18n-lo|editors/koffice-i18n-lo|2009-06-29|moved to editors category
-misc/koffice-i18n-lt|editors/koffice-i18n-lt|2009-06-29|moved to editors category
-misc/koffice-i18n-lv|editors/koffice-i18n-lv|2009-06-29|moved to editors category
-misc/koffice-i18n-mk|editors/koffice-i18n-mk|2009-06-29|moved to editors category
-misc/koffice-i18n-ms|editors/koffice-i18n-ms|2009-06-29|moved to editors category
-misc/koffice-i18n-mt|editors/koffice-i18n-mt|2009-06-29|moved to editors category
-misc/koffice-i18n-nb|editors/koffice-i18n-nb|2009-06-29|moved to editors category
-misc/koffice-i18n-nl|editors/koffice-i18n-nl|2009-06-29|moved to editors category
-misc/koffice-i18n-nn|editors/koffice-i18n-nn|2009-06-29|moved to editors category
-misc/koffice-i18n-ro|editors/koffice-i18n-ro|2009-06-29|moved to editors category
-misc/koffice-i18n-se|editors/koffice-i18n-se|2009-06-29|moved to editors category
-misc/koffice-i18n-sk|editors/koffice-i18n-sk|2009-06-29|moved to editors category
-misc/koffice-i18n-sl|editors/koffice-i18n-sl|2009-06-29|moved to editors category
-misc/koffice-i18n-sr|editors/koffice-i18n-sr|2009-06-29|moved to editors category
-misc/koffice-i18n-sr@Latn|editors/koffice-i18n-sr@Latn|2009-06-29|moved to editors category
-misc/koffice-i18n-sv|editors/koffice-i18n-sv|2009-06-29|moved to editors category
-misc/koffice-i18n-ta|editors/koffice-i18n-ta|2009-06-29|moved to editors category
-misc/koffice-i18n-tg|editors/koffice-i18n-tg|2009-06-29|moved to editors category
-misc/koffice-i18n-th|editors/koffice-i18n-th|2009-06-29|moved to editors category
-misc/koffice-i18n-tr|editors/koffice-i18n-tr|2009-06-29|moved to editors category
-misc/koffice-i18n-uz|editors/koffice-i18n-uz|2009-06-29|moved to editors category
-misc/koffice-i18n-ven|editors/koffice-i18n-ven|2009-06-29|moved to editors category
-misc/koffice-i18n-xh|editors/koffice-i18n-xh|2009-06-29|moved to editors category
-misc/koffice-i18n-zu|editors/koffice-i18n-zu|2009-06-29|moved to editors category
+misc/koffice-i18n|editors/koffice-i18n|2009-06-29|Moved to editors category
+misc/koffice-i18n-af|editors/koffice-i18n-af|2009-06-29|Moved to editors category
+misc/koffice-i18n-bg|editors/koffice-i18n-bg|2009-06-29|Moved to editors category
+misc/koffice-i18n-br|editors/koffice-i18n-br|2009-06-29|Moved to editors category
+misc/koffice-i18n-bs|editors/koffice-i18n-bs|2009-06-29|Moved to editors category
+misc/koffice-i18n-ca|editors/koffice-i18n-ca|2009-06-29|Moved to editors category
+misc/koffice-i18n-cs|editors/koffice-i18n-cs|2009-06-29|Moved to editors category
+misc/koffice-i18n-cy|editors/koffice-i18n-cy|2009-06-29|Moved to editors category
+misc/koffice-i18n-da|editors/koffice-i18n-da|2009-06-29|Moved to editors category
+misc/koffice-i18n-el|editors/koffice-i18n-el|2009-06-29|Moved to editors category
+misc/koffice-i18n-en_GB|misc/koffice-i18n-en_GB|2009-06-29|Moved to editors category
+misc/koffice-i18n-eo|editors/koffice-i18n-eo|2009-06-29|Moved to editors category
+misc/koffice-i18n-es|editors/koffice-i18n-es|2009-06-29|Moved to editors category
+misc/koffice-i18n-et|editors/koffice-i18n-et|2009-06-29|Moved to editors category
+misc/koffice-i18n-eu|editors/koffice-i18n-eu|2009-06-29|Moved to editors category
+misc/koffice-i18n-fa|editors/koffice-i18n-fa|2009-06-29|Moved to editors category
+misc/koffice-i18n-fi|editors/koffice-i18n-fi|2009-06-29|Moved to editors category
+misc/koffice-i18n-ga|editors/koffice-i18n-ga|2009-06-29|Moved to editors category
+misc/koffice-i18n-gl|editors/koffice-i18n-gl|2009-06-29|Moved to editors category
+misc/koffice-i18n-hi|editors/koffice-i18n-hi|2009-06-29|Moved to editors category
+misc/koffice-i18n-hsb|editors/koffice-i18n-hsb|2009-06-29|Moved to editors category
+misc/koffice-i18n-is|editors/koffice-i18n-is|2009-06-29|Moved to editors category
+misc/koffice-i18n-it|editors/koffice-i18n-it|2009-06-29|Moved to editors category
+misc/koffice-i18n-km|editors/koffice-i18n-km|2009-06-29|Moved to editors category
+misc/koffice-i18n-lo|editors/koffice-i18n-lo|2009-06-29|Moved to editors category
+misc/koffice-i18n-lt|editors/koffice-i18n-lt|2009-06-29|Moved to editors category
+misc/koffice-i18n-lv|editors/koffice-i18n-lv|2009-06-29|Moved to editors category
+misc/koffice-i18n-mk|editors/koffice-i18n-mk|2009-06-29|Moved to editors category
+misc/koffice-i18n-ms|editors/koffice-i18n-ms|2009-06-29|Moved to editors category
+misc/koffice-i18n-mt|editors/koffice-i18n-mt|2009-06-29|Moved to editors category
+misc/koffice-i18n-nb|editors/koffice-i18n-nb|2009-06-29|Moved to editors category
+misc/koffice-i18n-nl|editors/koffice-i18n-nl|2009-06-29|Moved to editors category
+misc/koffice-i18n-nn|editors/koffice-i18n-nn|2009-06-29|Moved to editors category
+misc/koffice-i18n-ro|editors/koffice-i18n-ro|2009-06-29|Moved to editors category
+misc/koffice-i18n-se|editors/koffice-i18n-se|2009-06-29|Moved to editors category
+misc/koffice-i18n-sk|editors/koffice-i18n-sk|2009-06-29|Moved to editors category
+misc/koffice-i18n-sl|editors/koffice-i18n-sl|2009-06-29|Moved to editors category
+misc/koffice-i18n-sr|editors/koffice-i18n-sr|2009-06-29|Moved to editors category
+misc/koffice-i18n-sr@Latn|editors/koffice-i18n-sr@Latn|2009-06-29|Moved to editors category
+misc/koffice-i18n-sv|editors/koffice-i18n-sv|2009-06-29|Moved to editors category
+misc/koffice-i18n-ta|editors/koffice-i18n-ta|2009-06-29|Moved to editors category
+misc/koffice-i18n-tg|editors/koffice-i18n-tg|2009-06-29|Moved to editors category
+misc/koffice-i18n-th|editors/koffice-i18n-th|2009-06-29|Moved to editors category
+misc/koffice-i18n-tr|editors/koffice-i18n-tr|2009-06-29|Moved to editors category
+misc/koffice-i18n-uz|editors/koffice-i18n-uz|2009-06-29|Moved to editors category
+misc/koffice-i18n-ven|editors/koffice-i18n-ven|2009-06-29|Moved to editors category
+misc/koffice-i18n-xh|editors/koffice-i18n-xh|2009-06-29|Moved to editors category
+misc/koffice-i18n-zu|editors/koffice-i18n-zu|2009-06-29|Moved to editors category
 x11-toolkits/tk80||2009-07-07|Has expired: tcl8.0 support dropped
 lang/tcl80||2009-07-07|Has expired: tcl8.0 support dropped
 audio/gai-album||2009-07-07|Has expired: abandoned project, does not build
@@ -779,7 +780,7 @@ mail/bogofilter-qdbm||2009-07-07|Has expired: Migrate to bogofilter-tc instead
 mail/xc-mail||2009-07-07|Has expired: depends on a port that expired in 2007
 www/trac-blog||2009-07-07|Has expired: Not supported anymore for trac > 0.10; use FullBlogPlugin instead
 www/trac-restrictedarea||2009-07-07|Has expired: Not supported anymore; functionality included in trac since 0.11
-mail/claws-mail-pdf_viewer||2009-07-07|license problems
+mail/claws-mail-pdf_viewer||2009-07-07|Licensing problems
 deskutils/plasma-applet-quicklauncher||2009-07-10|Not supported anymore; functionality in kdebase4-workspace now
 databases/phpminadmin|databases/adminer|2009-07-14|Project was renamed
 net-mgmt/net-snmp53||2009-07-13|Has expired: Use net-mgmt/net-snmp
@@ -831,7 +832,7 @@ devel/p5-Data-Postponed||2009-09-16|Has expired: the module was removed from CPA
 net/asterisk12-addons||2009-09-16|Has expired: does not build
 archivers/lzmautils|archivers/xz|2009-09-21|Project was renamed
 archivers/lzmautils-devel|archivers/xz|2009-09-21|Project was renamed
-audio/audacious-mac||2009-09-21|does not work with audacious 2 and audacious-plugins already delivers a demac plugin
+audio/audacious-mac||2009-09-21|Does not work with audacious 2 and audacious-plugins already delivers a demac plugin
 systutils/uptimec||2009-09-23|Project is gone since 2007
 www/cakephp||2009-09-23|Repomoved to www/cakephp11
 www/cakephp-devel||2009-09-23|Repomoved to www/cakephp12
@@ -850,7 +851,7 @@ sysutils/fusefs-gphotofs||2009-10-05|Removed
 x11/kxgenerator||2009-10-07|Has expired: Project abandoned, master site disappeared
 hebrew/geresh||2009-10-08|No longer maintained upstream
 misc/tmux|sysutils/tmux|2009-10-14|Moved to sysutils category
-audio/xmms-uade|audio/uade|2009-10-18|decoupled from xmms
+audio/xmms-uade|audio/uade|2009-10-18|Decoupled from xmms port
 net-p2p/mute-net-gui|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
 net-p2p/mute-net-text|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
 archivers/zlib||2009-10-19|Removed
@@ -858,7 +859,7 @@ graphics/libwpcg||2009-10-25|Unmaintained upstream, depends on an old version of
 databases/ruby-dbd_msql||2009-10-29|Has expired: no longer under development
 databases/ruby-dbd_proxy||2009-10-29|Has expired: no longer under development
 databases/ruby-dbd_interbase||2009-10-29|Has expired: no longer under development
-textproc/p5-XML-LibXML-Common|textproc/p5-XML-LibXML|2009-10-30|merged
+textproc/p5-XML-LibXML-Common|textproc/p5-XML-LibXML|2009-10-30|Merged
 misc/bibletime-kde4|misc/bibletime|2009-10-30|Renamed now that KDE dependencies are removed
 net/xmlrpc++||2009-10-31|Unmaintained upstream and on the FreeBSD side
 net-p2p/mute-net||2009-10-31|Broken for extensive period of time and unmaintained
@@ -883,13 +884,13 @@ mail/p5-Email-MIME-Creator||2009-11-24|Folded into p5-Email-MIME package
 mail/p5-Email-MIME-Modifier||2009-11-24|Folded into p5-Email-MIME package
 mail/p5-Email-Simple-Creator||2009-11-24|Folded into p5-Email-Simple package
 www/gecko-sharp10|www/gecko-sharp20|2009-11-26|Superseded by later version
-devel/tclxml-libxml2|devel/tclxml|2009-11-26|port now do part of devel/tclxml
-devel/tclxml-expat|devel/tclxml|2009-11-26|port now do part of devel/tclxml
-www/tcldom|devel/tclxml|2009-11-26|port now do part of devel/tclxml
-www/tcldom-libxml2|devel/tclxml|2009-11-26|port now do part of devel/tclxml
+devel/tclxml-libxml2|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
+devel/tclxml-expat|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
+www/tcldom|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
+www/tcldom-libxml2|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 lang/erlang-doc||2009-11-27|Documentation now part of lang/erlang package
 devel/gtkmozedit||2009-11-27|No longer under development, does not build with libxul
-audio/exaile-devel|audio/exaile|2009-11-28|main port updated to latest stable version
+audio/exaile-devel|audio/exaile|2009-11-28|Main port updated to the latest stable version
 finance/p5-HTML-Query|www/p5-HTML-Query|2009-11-28|Moved to www category
 graphics/clutter-cairo|graphics/clutter|2009-11-28|This port is obsolete, all functionality is now in graphics/clutter
 www/galeon||2009-11-28|This port is obsolete; similar functionality can be found in www/epiphany
@@ -914,16 +915,16 @@ x11-toolkits/p5-Gnome||2009-12-08|Has expired: Has been broken for more than 6 m
 editors/abiword-extras|editors/abiword|2009-12-08|This subport has been included in the main port
 editors/abiword-plugins|editors/abiword|2009-12-08|This subport has been included in the main port
 www/jakarta-tomcat5||2009-12-10|Has expired: Old version, consider using www/tomcat55 or www/tomcat6 instead
-net-mgmt/zabbix|net-mgmt/zabbix-server|2009-12-13|port was split into three components
+net-mgmt/zabbix|net-mgmt/zabbix-server|2009-12-13|Port was split into three components
 net/grdc|net/remmina|2009-12-14|Project was renamed
 net/grdc-applet|net/remmina-applet|2009-12-14|Project was renamed
 security/pfw||2009-12-14|Project is no longer maintainer
 ftp/pftpx||2009-12-15|Broken by libevent update and the project is dead
 x11-toolkits/evilvte|x11/evilvte|2009-12-15|Moved to x11 category
-lang/python23||2009-12-18|no longer under development
-lang/python30||2009-12-18|no longer under development
-cad/fandango||2009-12-18|no longer under development
-math/py-mpz||2009-12-18|depended on expired Python ports
+lang/python23||2009-12-18|No longer under development
+lang/python30||2009-12-18|No longer under development
+cad/fandango||2009-12-18|No longer under development
+math/py-mpz||2009-12-18|Depends on expired Python ports
 www/neon26|www/neon28|2009-12-19|Removed due to security vulnerabilities
 misc/bsdiff||2009-12-24|Incorporated into base system long ago
 security/freebsd-update||2009-12-24|Incorporated into base system long ago
@@ -941,14 +942,14 @@ databases/p5-DBD-mysql54|databases/p5-DBD-mysql55|2010-01-04|Updated to mileston
 misc/sword15|misc/sword|2010-01-06|Has expired: use misc/sword
 misc/bibletime-kde3|misc/bibletime|2010-01-06|Has expired: use misc/bibletime
 mail/squirrelmail-devel|mail/squirrelmail|2010-01-06|Has expired: use mail/squirrelmail
-lang/drscheme|lang/plt-scheme|2010-01-07|superceded by lang/plt-scheme
+lang/drscheme|lang/plt-scheme|2010-01-07|Superseded by lang/plt-scheme
 databases/mysql60-client||2010-01-10|Has expired: no longer under development
 databases/mysql60-server||2010-01-10|Has expired: no longer under development
 databases/mysql60-scripts||2010-01-10|Has expired: no longer under development
 databases/p5-DBD-mysql60||2010-01-10|Has expired: no longer under development
 devel/cl-asdf-sbcl||2010-01-12|lang/sbcl has a bundled asdf version
 emulators/virtualbox|emulators/virtualbox-ose|2010-01-13|Renamed and split into two components
-devel/gold|devel/binutils|2010-01-13|part of binutils
+devel/gold|devel/binutils|2010-01-13|Part of binutils
 shells/tcsh-bofh||2010-01-15|Removed
 audio/ccaudio||2010-01-18|Has expired: has been broken for 4 months
 audio/py-libmpdclient||2010-01-18|Has expired: has been broken for 3 months
@@ -1001,7 +1002,7 @@ x11-fm/velocity||2010-01-28|Has expired: has been broken for 7 months
 x11-drivers/xf86-video-nsc||2010-01-28|Has expired: has been broken for 5 months
 www/rubygem-merb||2010-01-28|Has expired: has been broken for 5 months
 security/shibboleth-sp||2010-01-28|Has expired: has been broken for 3 months
-www/pecl-pecl_http|www/pecl-http|2010-01-31|duplicate ports
+www/pecl-pecl_http|www/pecl-http|2010-01-31|Duplicate ports
 chinese/stardict2-dict-zh_CN||2010-01-31|Please use chinese/stardict-dict-zh_CN
 math/octave-forge-ann||2010-02-02|Has expired: has been broken for 3 months
 math/octave-forge-fixed||2010-02-02|Has expired: has been broken for 3 months
@@ -1058,7 +1059,7 @@ databases/php5-pdo_oci||2010-04-11|Doesn't support Oracle8 client library
 sysutils/rc_subr||2010-04-16|No longer needed
 math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
-security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1
+security/krb5-17||2010-04-25|Deleted: no longer builds with new OpenSSL 1.0; security/krb5 now contains 1.8.1
 www/blogd|www/ephemera|2010-04-26|Port renamed
 net-p2p/qbittorrent||2010-05-01|Old version no longer updated
 audio/py-flac||2010-05-02|Has expired: has been marked IGNORE for past 24 months
@@ -1092,7 +1093,7 @@ print/hplip3|print/hplip|2010-05-17|hplip port updated to 3.X version
 emulators/sdlmame|emulators/mame|2010-05-17|SDL port has been integrated into mainstream
 devel/apr|devel/apr1|2010-05-18|Renamed to devel/apr1
 science/pyNN|science/pynn|2010-05-19|Rename to science/pynn
-databases/postgresql-contrib|databases/postgresql82-contrib|2010-05-20|Use databases/postgresqlNN-contrib, select version to match your postgresql server
+databases/postgresql-contrib|databases/postgresql82-contrib|2010-05-20|Use databases/postgresqlNN-contrib, select version to match your PostgreSQL server
 lang/yorick-doc||2010-05-20|Has expired: up-to-date docs are included in the lang/yorick port
 devel/perforce|devel/p4|2010-05-20|Split into multiple ports
 net/dgd-net||2010-05-24|Has expired: all network functionality is included in net/dgd
@@ -1113,7 +1114,7 @@ textproc/pandoc|textproc/hs-pandoc|2010-05-24|Renamed: It has become a Cabal tra
 x11/hs-x11-ghc|x11/hs-X11|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
 x11/hs-x11-xft-ghc|x11/hs-X11-xft|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
 x11/xmobar|x11/hs-xmobar|2010-05-24|Renamed: It has become a hackage transcript
-x11-toolkits/hs-OpenGLRaw-ghc|x11-toolkits/hs-OpenGLRaw|2010-05-24|Renamed; No need for suffix
+x11-toolkits/hs-OpenGLRaw-ghc|x11-toolkits/hs-OpenGLRaw|2010-05-24|Renamed: No need for suffix
 x11-toolkits/hs-GLURaw-ghc|x11-toolkits/hs-GLURaw|2010-05-24|Renamed: No need for suffix
 x11-toolkits/hs-opengl-ghc|x11-toolkits/hs-OpenGL|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
 x11-toolkits/hs-glut-ghc|x11-toolkits/hs-GLUT|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
@@ -1126,8 +1127,8 @@ misc/ipod-sharp|audio/ipod-sharp|2010-06-02|Fix category
 lang/pike72|lang/pike76|2010-06-02|Has expired: Please use pike76 or pike78
 lang/pexts||2010-06-02|Depends on expired port lang/pike72
 databases/ptop||2010-06-04|Broken with no update from maintainer or upstream
-deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|no longer supported by upstream
-irc/p5-IRC|irc/p5-Bot-BasicBot|2010-06-07|has been deceased for 5+ yrs
+deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|No longer supported by upstream
+irc/p5-IRC|irc/p5-Bot-BasicBot|2010-06-07|Has been deceased for over 5 years
 emulators/linux_base-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_base-gentoo-stage3
 emulators/linux_dist-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_dist-gentoo-stage3
 www/weave|www/firefox-sync|2010-06-09|Project was renamed
@@ -1137,9 +1138,9 @@ sysutils/tinybsd||2010-06-18|Incorporated into base system long ago
 www/mythweb|www/mythplugin-mythweb|2010-06-21|Renamed: Common prefix for all MythTV plugins
 www/firefox3|www/firefox35|2010-06-23|Upstream support dropped
 www/firefox3-i18n|www/firefox35-i18n|2010-06-23|Upstream support dropped
-security/krb4||2010-06-26|security vulnerability and isn't more developed
+security/krb4||2010-06-26|Security vulnerability and no longer developed
 www/linux-mozilla|www/linux-seamonkey|2010-06-27|Security vulnerabilities and abandoned upstream since 2006
-security/audit||2010-07-01|development has been discontinued
+security/audit||2010-07-01|Development has been discontinued
 net/isc-dhcp30-client|net/isc-dhcp31-client|2010-07-09|Has expired: deprecated upstream since March 2009
 net/isc-dhcp30-relay|net/isc-dhcp31-relay|2010-07-09|Has expired: deprecated upstream since March 2009
 net/isc-dhcp30-server|net/isc-dhcp31-server|2010-07-09|Has expired: deprecated upstream since March 2009
@@ -1148,7 +1149,7 @@ sysutils/bacula-client-devel||2010-07-16|Removed
 sysutils/bacula-server-devel||2010-07-16|Removed
 java/eclipse-v4all||2010-07-16|Not useful with Eclipse 3.x
 irc/kvirc-devel||2010-07-17|irc/kvirc has been updated to the latest version
-www/p5-Plack-Server-AnyEvent||2010-07-19|use www/p5-Twiggy instead
+www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
 mail/squirrelmail-compatibility-plugin1|mail/squirrelmail-compatibility-plugin|2010-07-21|Has expired: use mail/squirrelmail-compatibility-plugin
 mail/squirrelmail-newuser_wiz-plugin|mail/squirrelmail-askuserinfo-plugin|2010-07-21|Has expired: use mail/squirrelmail-askuserinfo-plugin
@@ -1169,7 +1170,7 @@ emulators/sdlmess|emulators/mess|2010-08-08|SDL port has been integrated into ma
 security/libassuan-1||2010-08-08|This is an ex-library (Superseded by security/libassuan, but not compatible)
 www/mod_webapp||2010-08-08|Removed
 net/p5-IO-INET6|net/p5-IO-Socket-INET6|2010-08-09|Renamed
-net-p2p/ktorrent-devel||2010-08-11|obsoleted: please use net-p2p/ktorrent2 or net-p2p/ktorrent
+net-p2p/ktorrent-devel||2010-08-11|Obsoleted: please use net-p2p/ktorrent2 or net-p2p/ktorrent
 multimedia/mpeg4ip-libmp4v2|multimedia/mp4v2|2010-08-11|Superseded by multimedia/mp4v2
 lang/ifc7||2010-08-12|Distfile no longer available
 multimedia/kaffeine-devel|multimedia/kaffeine|2010-08-14|New non-development version
@@ -1344,7 +1345,7 @@ security/samba-vscan||2010-10-18|Removed
 net-p2p/amule2|net-p2p/amule|2010-10-05|Split to -devel and non-devel ports
 www/firefox3-devel|www/firefox|2010-10-24|Upstream development focuses on Firefox 4.0
 editors/vim5||2010-10-26|Has expired: Outdated, superceded by editors/vim7 and has security issues
-sysutils/sfdisk||2010-10-27|Has expired: All supported freebsd versions now have sade, sfdisk 0.2 is outdated
+sysutils/sfdisk||2010-10-27|Has expired: All supported FreeBSD versions now have sade, sfdisk 0.2 is outdated
 sysutils/synergy-plus|sysutils/synergy|2010-11-01|Synergy+ and Synergy have merged
 ftp/kwebget||2010-11-04|Has expired: Development has ceased
 multimedia/clive-utils||2010-11-04|Has expired: development has ceased; use multimedia/umph instead
@@ -1375,17 +1376,17 @@ misc/bidwatcher||2010-11-08|Has expired: Obsoleted by JBidwatcher and changes at
 security/vscan||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 www/ssserver||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 graphics/qtpfsgui|graphics/luminance|2010-11-12|Project has been renamed
-devel/gir-repository-gconf2|devel/gconf2|2010-11-20|merged into gconf2
-x11-fm/gir-repository-nautilus|x11-fm/nautilus|2010-11-20|merged into nautilus
-devel/gir-repository-libsoup|devel/libsoup|2010-11-20|merged into libsoup
-x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-20|merged into gtksourceview2
+devel/gir-repository-gconf2|devel/gconf2|2010-11-20|Merged into gconf2
+x11-fm/gir-repository-nautilus|x11-fm/nautilus|2010-11-20|Merged into nautilus
+devel/gir-repository-libsoup|devel/libsoup|2010-11-20|Merged into libsoup
+x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-20|Merged into gtksourceview2
 security/gir-repository-gnome-keyring||2010-11-20|Not buildable
-devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|merged into gobject-introspection
+devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|Merged into gobject-introspection
 net/asterisk-addons|net/asterisk14-addons|2010-11-22|Renamed via repocopy
 devel/gdb6|devel/gdb66|2010-11-24|Directory renamed
 net-p2p/eiskaltdc|net-p2p/eiskaltdcpp-qt|2010-11-26|GUI ports separated
-japanese/uim-canna|textproc/uim|2010-11-26|integrated into textproc/uim
-japanese/uim-prime|textproc/uim|2010-11-26|integrated into textproc/uim
+japanese/uim-canna|textproc/uim|2010-11-26|Integrated into textproc/uim
+japanese/uim-prime|textproc/uim|2010-11-26|Integrated into textproc/uim
 www/google_shortcuts|www/xpi-google_shortcuts|2010-11-26|Use www/xpi-google_shortcuts instead
 x11-toolkits/ruby-gtksourceview||2010-11-27|Removed
 misc/libpri-bristuff||2010-11-28|Superseded by asterisk 1.8
@@ -1570,14 +1571,14 @@ mbone/rtptools|net/rtptools|2011-03-06|Changed category
 mbone/sdr|net/sdr|2011-03-06|Changed category
 mbone/udpcast|net/udpcast|2011-03-06|Changed category
 mbone/wb|net/wb|2011-03-06|Changed category
-lang/gnat-doc-html||2011-03-07|unmaintained and obsolete
-lang/gnat-doc-info||2011-03-07|unmaintained and obsolete
-lang/gnat-doc-ps||2011-03-07|unmaintained and obsolete
-lang/gnat-doc-texi||2011-03-07|unmaintained and obsolete
-lang/gnat-doc-txt||2011-03-07|unmaintained and obsolete
+lang/gnat-doc-html||2011-03-07|Unmaintained and obsolete
+lang/gnat-doc-info||2011-03-07|Unmaintained and obsolete
+lang/gnat-doc-ps||2011-03-07|Unmaintained and obsolete
+lang/gnat-doc-texi||2011-03-07|Unmaintained and obsolete
+lang/gnat-doc-txt||2011-03-07|Unmaintained and obsolete
 www/py-cherrypy-devel|www/py-cherrypy|2011-03-15|Removed, use www/py-cherrypy instead
 science/py-obspy.core|science/py-obspy-core|2011-03-16|Removed, use science/py-obspy-core instead
-devel/py-unit||2011-03-17|unmaintained and obsolete, include in python distribution since 2.1
+devel/py-unit||2011-03-17|Unmaintained and obsolete, included in Python distribution since 2.1
 lang/gnat-gcc42||2011-03-17|Removed unmaintained and obsolete
 lang/gnat-gcc43||2011-03-17|Removed unmaintained and obsolete
 lang/gnat-gcc44||2011-03-17|Removed unmaintained and obsolete
@@ -1609,10 +1610,10 @@ audio/linux-f8-nas-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009
 audio/linux-f8-openal||2011-04-04|Has expired: End of Life since Jan 7, 2009
 audio/linux-f8-sdl_mixer||2011-04-04|Has expired: End of Life since Jan 7, 2009
 databases/linux-f8-sqlite3||2011-04-04|Has expired: End of Life since Jan 7, 2009
-databases/postgresql81-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
-databases/postgresql73-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
-databases/postgresql74-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
-databases/postgresql80-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql81-server||2011-04-04|Has expired: EOL; see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql73-server||2011-04-04|Has expired: EOL; see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql74-server||2011-04-04|Has expired: EOL; see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql80-server||2011-04-04|Has expired: EOL; see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
 devel/linux-f8-libglade||2011-04-04|Has expired: End of Life since Jan 7, 2009
 devel/linux-f8-sdl12||2011-04-04|Has expired: End of Life since Jan 7, 2009
 devel/linux-f8-allegro||2011-04-04|Has expired: End of Life since Jan 7, 2009
@@ -2149,7 +2150,7 @@ math/geometry|math/ros-geometry|2011-05-03|Renamed
 devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed
 devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript
 devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript
-graphics/hs-hgl||2011-05-08|deleted: overriden by graphics/hs-HGL
+graphics/hs-hgl||2011-05-08|Deleted: overriden by graphics/hs-HGL
 x11-toolkits/hs-GLURaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform
 x11-toolkits/hs-OpenGLRaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform
 net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network
@@ -2159,7 +2160,7 @@ devel/jude-community|devel/astah-community|2011-05-09|Project was renamed
 net/skype12|net-im/skype12|2011-05-09|Moved to better category
 net/skype|net-im/skype|2011-05-09|Moved to better category
 net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
-devel/libchipcard-kde||2011-05-14|obsolete
+devel/libchipcard-kde||2011-05-14|Obsolete
 sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now
 security/barnyard-sguil|security/barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
 multimedia/rebot3||2011-05-16|Removed
@@ -2210,7 +2211,7 @@ deskutils/mcatalog||2011-06-13|Removed, upstream disapear and distfile is no mor
 mail/evolution-sharp||2011-06-13|Has expired: has been broken for over a year
 print/cmpsfont|print/font-amsfonts|2011-06-15|Renamed
 print/amspsfnt|print/font-amsfonts|2011-06-15|Renamed
-irc/ezbounce-devel|irc/ezbounce|2011-06-19|main port updated to latest available version
+irc/ezbounce-devel|irc/ezbounce|2011-06-19|Main port updated to the latest available version
 graphics/povray|graphics/povray36|2011-06-21|Renamed
 x11/widgetfactory|x11-themes/thewidgetfactory|2011-06-23|Duplicate ports merged
 deskutils/opengoo|deskutils/fengoffice|2011-06-24|It was renamed to deskutils/fengoffice
@@ -2273,7 +2274,7 @@ net-p2p/tvrss||2011-7-14|tvrss site does not exist anymore
 www/horde4-meta||2011-07-14|Removed
 graphics/crystalentitylayer||2011-07-17|Removed
 graphics/crystalspace||2011-07-17|Has expired: has been broken for a year
-hungarian/hunspell|textproc/hunspell|2011-07-18|moved to textproc as it is language independent
+hungarian/hunspell|textproc/hunspell|2011-07-18|Moved to textproc as it is language independent
 mail/qmail-vida||2011-07-18|Has expired: UID collisions, IGNOREd for four years with no-one caring
 java/jdk13|java/jdk15|2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk13|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
@@ -2284,8 +2285,8 @@ security/jce_policy14||2011-07-21|Has expired: Only for Java 1.4, which is depre
 java/linux-blackdown-jdk14||2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk14|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
 dns/dhid||2011-07-28|Has expired: Unmaintained, distfile has changed with no explanation
-math/librandlib|math/randlib|2011-07-28|move to a location that matches the name
-science/bblimage|science/pyvox|2011-07-28|track the upstream name change
+math/librandlib|math/randlib|2011-07-28|Move to a location that matches the name
+science/bblimage|science/pyvox|2011-07-28|Track the upstream name change
 net-im/gnome-jabber|net-im/empathy|2011-07-28|Has expired: No longer maintain by upstream since 2005, use net-im/empathy instead
 misc/logsurfer|misc/logsurfer+|2011-07-25|Renamed
 devel/gir-repository||2011-07-30|Removed
@@ -2592,7 +2593,7 @@ www/p5-Catalyst-Plugin-Cache-Store-FastMmap||2011-09-03|Deprecated, not depended
 p5-HTTP-MobileAttribute||2011-09-03|Use www/p5-HTTP-MobileAgent instead
 irc/ptlink-ircd||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
 irc/ptlink-services||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
-www/mediawiki115||2011-09-03|unsupported upstream
+www/mediawiki115||2011-09-03|Unsupported upstream
 www/p5-Catalyst-Plugin-Authentication-Store-DBIC||2011-09-03|Use p5-Catalyst-Authentication-Store-DBIx-Class instead
 net/uproxy||2011-09-04|Master site disappeared, abandonware
 x11/ebuttons||2011-09-05|Has expired: Website has disappeared
@@ -2642,7 +2643,7 @@ net-mgmt/cfgstoragemk||2011-09-07|Has expired: No more public distfiles
 mail/libspf2-10||2011-09-09|Vulnerable, use mail/libspf2 instead
 mail/postfix-policyd-spf||2011-09-09|Relies on vulnerable mail/libspf2-10
 multimedia/bmpx||2011-09-11|Has expired: BROKEN for more than 6 months
-editors/openoffice.org-2|editors/openoffice.org-3|2011-09-20|unsupported upstream and vulnerable
+editors/openoffice.org-2|editors/openoffice.org-3|2011-09-20|Unsupported upstream and vulnerable
 devel/monodevelop-boo||2011-09-21|Removed
 www/ruby-http-access||2011-09-22|Has expired: Deprecated upstream, please use www/rubygem-httpclient
 sysutils/wots||2011-09-22|Has expired: No more public distfiles
@@ -2673,19 +2674,19 @@ devel/py-zopeInterface|devel/py-zope.interface|2011-09-29|Removed: please use de
 audio/mt-daapd||2011-09-30|Use audio/firefly instead
 databases/p5-DBIx-Class-Validation||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
 devel/p5-Class-Data-Accessor||2011-09-30|Please consider using p5-Class-Accessor-Grouped or p5-Moose
-graphics/libflash||2011-09-30|gplflash is no longer supported. Please use gnash instead
+graphics/libflash||2011-09-30|gplflash is no longer supported, please use gnash instead
 graphics/flashplayer||2011-09-30|Depends on DEPRECATED graphics/libflash
 japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP||2011-09-30|Depends on textproc/p5-FormValidator-Simple, which is DEPRECATED
 net/p5-OAuth-Lite||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
-net-mgmt/py-snmp||2011-09-30|use net-mgmt/py-snmp4 instead
+net-mgmt/py-snmp||2011-09-30|Use net-mgmt/py-snmp4 instead
 net-mgmt/py-twistedSNMP||2011-09-30|Relies on net-mgmt/py-snmp, which is DEPRECATED
-net-p2p/gift||2011-09-30|unmaintained upstream for several years
-net-p2p/giftcurs||2011-09-30|unmaintained upstream for several years
-net-p2p/giftoxic||2011-09-30|unmaintained upstream for several years
-net-p2p/giftui||2011-09-30|unmaintained upstream for several years
+net-p2p/gift||2011-09-30|Unmaintained upstream for several years
+net-p2p/giftcurs||2011-09-30|Unmaintained upstream for several years
+net-p2p/giftoxic||2011-09-30|Unmaintained upstream for several years
+net-p2p/giftui||2011-09-30|Unmaintained upstream for several years
 net-p2p/apollon||2011-09-30|Depends on net-p2p/gift, which is DEPRECATED
 textproc/p5-FormValidator-Simple||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
-www/flashplugin-mozilla||2011-09-30|gplflash is no longer supported. Please use graphics/gnash, \
+www/flashplugin-mozilla||2011-09-30|gplflash is no longer supported, please use graphics/gnash
 www/p5-HTML-Widget||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
 www/p5-Catalyst-Plugin-AutoRestart||2011-09-30|Depends on devel/p5-Class-Data-Accessor, which is DEPRECATED
 www/p5-Catalyst-Example-InstantCRUD||2011-09-30|Depends on www/p5-HTML-Widget, which is DEPRECATED
@@ -2771,6 +2772,6 @@ audio/p5-MusicBrainz-TRM||2011-10-08|Disappeared from CPAN
 mail/p5-Mail-QuoteWrap||2011-10-08|Disappeared from CPAN
 www/p5-Catalyst-Plugin-FormCanary||2011-10-08|Disappeared from CPAN
 security/snort_inline||2011-10-09|Does not build properly, no longer supported upstream
-databases/ruby-pg|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
-databases/rubygem-postgres|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
-databases/ruby-postgres|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
+databases/ruby-pg|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
+databases/rubygem-postgres|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
+databases/ruby-postgres|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
