@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+include/afrodite-0.12/afrodite.h
+lib/libafrodite-0.12.la
+lib/libafrodite-0.12.so
+lib/libafrodite-0.12.so.2
+libdata/pkgconfig/libafrodite-0.12.pc
+%%DOCSDIR%%/vtg/AUTHORS
+%%DOCSDIR%%/vtg/COPYING
+%%DOCSDIR%%/vtg/COPYING-GPL
+%%DOCSDIR%%/vtg/COPYING-LGPL
+%%DOCSDIR%%/vtg/INSTALL
+%%DOCSDIR%%/vtg/NEWS
+%%DOCSDIR%%/vtg/README
+share/vala/vapi/afrodite-0.12.vapi
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
+@dirrm %%DOCSDIR%%/vtg
+@dirrm %%DOCSDIR%%
+@dirrm include/afrodite-0.12
