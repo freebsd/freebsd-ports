@@ -122,6 +122,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCustom.pm
 %%SITE_PERL%%/Image/ExifTool/OOXML.pm
+%%SITE_PERL%%/Image/ExifTool/Ogg.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
@@ -157,6 +158,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/TagInfoXML.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
+%%SITE_PERL%%/Image/ExifTool/Theora.pm
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
@@ -238,6 +240,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/NikonCapture.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/NikonCustom.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/OOXML.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Ogg.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PDF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PGF.html
@@ -267,6 +270,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sony.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/SonyIDC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Stim.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Theora.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Vorbis.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
