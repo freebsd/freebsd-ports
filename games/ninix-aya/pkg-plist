@@ -36,6 +36,8 @@ libexec/ninix/ninix/dll/osuwari.py
 libexec/ninix/ninix/dll/osuwari.pyc
 libexec/ninix/ninix/dll/httpc.py
 libexec/ninix/ninix/dll/httpc.pyc
+libexec/ninix/ninix/dll/win_dll.py
+libexec/ninix/ninix/dll/win_dll.pyc
 libexec/ninix/ninix/__init__.py
 libexec/ninix/ninix/alias.py
 libexec/ninix/ninix/balloon.py
