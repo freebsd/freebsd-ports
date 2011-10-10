@@ -23,6 +23,9 @@ lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
 lib/libmkf.so.16
+lib/libmlterm_core.a
+lib/libmlterm_core.la
+lib/libmlterm_core.so
 lib/libvte-mlterm.a
 lib/libvte-mlterm.la
 lib/libvte-mlterm.so
@@ -42,6 +45,9 @@ lib/mkf/libmkf_zh.so
 lib/mlterm/libathena.a
 lib/mlterm/libathena.la
 lib/mlterm/libathena.so
+%%FRIBIDI%%lib/mlterm/libctl_bidi.a
+%%FRIBIDI%%lib/mlterm/libctl_bidi.la
+%%FRIBIDI%%lib/mlterm/libctl_bidi.so
 %%IBUS%%lib/mlterm/libim-ibus.a
 %%IBUS%%lib/mlterm/libim-ibus.la
 %%IBUS%%lib/mlterm/libim-ibus.so
@@ -72,6 +78,12 @@ lib/mlterm/libsample.so
 lib/mlterm/libsample2.a
 lib/mlterm/libsample2.la
 lib/mlterm/libsample2.so
+%%CAIRO%%lib/mlterm/libtype_cairo.a
+%%CAIRO%%lib/mlterm/libtype_cairo.la
+%%CAIRO%%lib/mlterm/libtype_cairo.so
+lib/mlterm/libtype_xft.a
+lib/mlterm/libtype_xft.la
+lib/mlterm/libtype_xft.so
 libexec/mlconfig
 libexec/mlimgloader
 libexec/mlterm-menu
