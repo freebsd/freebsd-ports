@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Test/Sys/Info.pm
+%%SITE_PERL%%/Test/Sys/Info/Driver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Sys/Info/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Sys/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/Sys/Info
+@dirrmtry %%SITE_PERL%%/Test/Sys
+@dirrmtry %%SITE_PERL%%/Test
