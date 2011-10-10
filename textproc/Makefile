@@ -830,6 +830,7 @@
     SUBDIR += p5-Text-Xslate
     SUBDIR += p5-Text-vCard
     SUBDIR += p5-Time-Human
+    SUBDIR += p5-Tk-Pod
     SUBDIR += p5-Tk-XMLViewer
     SUBDIR += p5-Tree-Nary
     SUBDIR += p5-Tree-Suffix

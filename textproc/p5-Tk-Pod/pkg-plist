@@ -1,0 +1,20 @@
+bin/tkmore
+bin/tkpod
+%%SITE_PERL%%/Tk/More.pm
+%%SITE_PERL%%/Tk/Pod.pm
+%%SITE_PERL%%/Tk/Pod/Cache.pm
+%%SITE_PERL%%/Tk/Pod/FindPods.pm
+%%SITE_PERL%%/Tk/Pod/Search.pm
+%%SITE_PERL%%/Tk/Pod/Search_db.pm
+%%SITE_PERL%%/Tk/Pod/SimpleBridge.pm
+%%SITE_PERL%%/Tk/Pod/Styles.pm
+%%SITE_PERL%%/Tk/Pod/Text.pm
+%%SITE_PERL%%/Tk/Pod/Tree.pm
+%%SITE_PERL%%/Tk/Pod/Util.pm
+%%SITE_PERL%%/Tk/Pod/WWWBrowser.pm
+%%SITE_PERL%%/Tk/Pod_usage.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pod/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrm %%SITE_PERL%%/Tk/Pod
+@dirrmtry %%SITE_PERL%%/Tk
