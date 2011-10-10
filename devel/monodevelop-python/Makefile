@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monodevelop-python
-PORTVERSION=	2.6.0.1
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

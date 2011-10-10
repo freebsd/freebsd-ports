@@ -168,11 +168,10 @@ lib/monodevelop/AddIns/VersionControl/menu_resolve.png
 lib/monodevelop/AddIns/VersionControl/menu_revert.png
 lib/monodevelop/AddIns/VersionControl/menu_status.png
 lib/monodevelop/AddIns/VersionControl/menu_update.png
-lib/monodevelop/AddIns/WelcomePage/WelcomePage.dll
-lib/monodevelop/AddIns/WelcomePage/WelcomePage.dll.mdb
-lib/monodevelop/AddIns/WelcomePage/md-bg.png
-lib/monodevelop/AddIns/WelcomePage/md-logo.png
-lib/monodevelop/bin/Cecil.Decompiler.dll
+lib/monodevelop/bin/ICSharpCode.Decompiler.dll
+lib/monodevelop/bin/ICSharpCode.Decompiler.dll.mdb
+lib/monodevelop/bin/ICSharpCode.NRefactory.dll
+lib/monodevelop/bin/ICSharpCode.NRefactory.dll.mdb
 lib/monodevelop/bin/Mono.Cecil.Mdb.dll
 lib/monodevelop/bin/Mono.Cecil.Mdb.dll.mdb
 lib/monodevelop/bin/Mono.Cecil.dll
@@ -195,10 +194,11 @@ lib/monodevelop/bin/MonoDevelop.exe
 lib/monodevelop/bin/MonoDevelop.exe.addins
 lib/monodevelop/bin/MonoDevelop.exe.config
 lib/monodevelop/bin/MonoDevelop.exe.mdb
-lib/monodevelop/bin/NRefactory.dll
-lib/monodevelop/bin/NRefactory.dll.mdb
+lib/monodevelop/bin/OldNRefactory.dll
+lib/monodevelop/bin/OldNRefactory.dll.mdb
 lib/monodevelop/bin/buildinfo
 lib/monodevelop/bin/mdhost.exe
+lib/monodevelop/bin/mdhost.exe.config
 lib/monodevelop/bin/mdhost.exe.mdb
 lib/monodevelop/bin/mdmonitor.exe
 lib/monodevelop/bin/mdmonitor.exe.mdb
@@ -288,7 +288,6 @@ share/mime/types
 @dirrm lib/monodevelop/data/options
 @dirrm lib/monodevelop/data
 @dirrm lib/monodevelop/bin
-@dirrm lib/monodevelop/AddIns/WelcomePage
 @dirrm lib/monodevelop/AddIns/VersionControl
 @dirrm lib/monodevelop/AddIns/NUnit
 @dirrm lib/monodevelop/AddIns/MonoDeveloperExtensions
