@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	PDL
 # Date created:		08 February 1999
 # Whom:			Anton Berezin <tobez@plab.ku.dk>
@@ -8,6 +7,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -16,11 +16,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan,sf
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
-		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
-		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
+		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
+		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header 
+RUN_DEPENDS=	p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
+		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
+		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header 
 
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -54,6 +55,9 @@ LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot
 .endif
 
 .if defined(WITH_GL)
+# Please uncomment this two lines after updating OpenGL to 0.60+
+#BUILD_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
+#RUN_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
 USE_GL=		yes
 .endif
 
@@ -62,7 +66,7 @@ LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 .endif
 
 .if defined(WITH_F77)
-BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
+BUILD_DEPENDS+=	p5-F77>=0:${PORTSDIR}/lang/p5-F77 
 .endif
 
 .if defined(WITH_FFTW)
@@ -82,9 +86,9 @@ LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .endif
 
 .if defined(WITH_READLINE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
+RUN_DEPENDS+=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu 
 .else
-RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl 
 .endif
 
 .if defined(WITH_SINK)
@@ -99,7 +103,7 @@ post-patch:
 	@${GREP} -lR "x86_64" ${WRKSRC} | ${XARGS} \
 	    	${PERL} -pi -e "s!x86_64!amd64!"
 
-test:
+test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make test
 
 # autogen plist
