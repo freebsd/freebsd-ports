@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Sys/Info/Driver/BSD.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/Device.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/Device/CPU.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/OS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Driver/BSD/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Driver/BSD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Driver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrm %%SITE_PERL%%/Sys/Info/Driver/BSD/Device
+@dirrm %%SITE_PERL%%/Sys/Info/Driver/BSD
+@dirrmtry %%SITE_PERL%%/Sys/Info/Driver
+@dirrmtry %%SITE_PERL%%/Sys/Info
+@dirrmtry %%SITE_PERL%%/Sys
