@@ -178,6 +178,7 @@
     SUBDIR += p5-Tk-Role-HasWidgets
     SUBDIR += p5-Tk-ResizeButton
     SUBDIR += p5-Tk-Splashscreen
+    SUBDIR += p5-Tk-Sugar
     SUBDIR += p5-Tk-TableMatrix
     SUBDIR += p5-Wx
     SUBDIR += p5-Wx-Perl-ProcessStream

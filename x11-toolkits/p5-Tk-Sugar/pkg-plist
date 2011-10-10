@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Tk/Sugar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Sugar/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Sugar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrmtry %%SITE_PERL%%/Tk

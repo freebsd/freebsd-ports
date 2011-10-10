@@ -1,0 +1,15 @@
+Tk is a great graphical toolkit to write desktop applications. However, one can
+get bothered with the constant typing of quotes and options. Tk::Sugar provides
+handy subs for common options used when programming Tk.
+
+Benefits are obvious:
+- Reduced typing: The constant need to type => and '' is fine for one-off cases,
+  but the instant you start using Tk it starts to get annoying.
+- More compact statements: Reduces much of the redundant typing in most cases,
+  which makes your life easier, and makes it take up less visual space, which
+  makes it faster to read.
+- No string worries: Strings are often problematic, since they aren't checked at
+  compile-time. Sometimes it makes spotting an error a difficult task. Using
+  this alleviates that worry.
+
+WWW: http://search.cpan.org/dist/Tk-Sugar/
