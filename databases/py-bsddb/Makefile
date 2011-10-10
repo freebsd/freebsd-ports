@@ -27,6 +27,7 @@ WRKSRC=		${PYTHON_WRKSRC}/Modules
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_bsddb.so
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-py${PYTHON_SUFFIX}-_bsddb.c
 
 .include <bsd.port.pre.mk>
 
