@@ -681,6 +681,7 @@
     SUBDIR += pwman3
     SUBDIR += pxytest
     SUBDIR += py-PF
+    SUBDIR += py-RestrictedPython
     SUBDIR += py-bcrypt
     SUBDIR += py-cerealizer
     SUBDIR += py-clamav

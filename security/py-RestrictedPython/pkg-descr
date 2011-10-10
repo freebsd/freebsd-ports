@@ -1,0 +1,4 @@
+RestrictedPython provides a restricted execution environment for Python,
+e.g. for running untrusted code.
+
+WWW: http://pypi.python.org/pypi/ExtensionClass
