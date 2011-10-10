@@ -580,7 +580,7 @@ gst_vp8_PLIST_FILES=	${GST_LIB_DIR}/libgstvp8.la \
 gst_vp8_DIST=		bad
 
 # x264
-gst_x264_LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
+gst_x264_LIB_DEPENDS+=	x264.116:${PORTSDIR}/multimedia/x264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 		${GST_LIB_DIR}/libgstx264.so \
 		share/gstreamer-${VERSION}/presets/GstX264Enc.prs
