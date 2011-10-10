@@ -8,19 +8,20 @@
 PORTNAME=	xmltv
 PORTVERSION=	1.3
 CATEGORIES=	textproc python
-MASTER_SITES=	http://www.funktronics.ca/python-xmltv/releases/
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-xmltv-${PORTVERSION}
 
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A Python module that provides access to XMLTV TV listings
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LICENSE=	LGPL21
 
-USE_PYTHON=		yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-xmltv
+
+PROJECTHOST=	python-xmltv
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	README.txt
