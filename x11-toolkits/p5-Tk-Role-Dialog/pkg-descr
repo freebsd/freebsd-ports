@@ -1,0 +1,15 @@
+Tk::Role::Dialog is meant to be used as a Moose role to be composed for easy Tk
+dialogs creation.
+
+It will create a new toplevel with a title, and possibly a header as well as
+some buttons.
+
+One can create the middle part of the dialog by providing a _build_gui() method,
+that will receive a Tk::Frame where widgets are supposed to be placed.
+
+The attributes (see below) can be either defined as defaults using the
+_build_attr() methods, or passed arguments to the constructor call. The only
+mandatory attribute is parent, but you'd better provide some other attributes if
+you want your dialog to be somehow usable! :-)
+
+WWW: http://search.cpan.org/dist/Tk-Role-Dialog/
