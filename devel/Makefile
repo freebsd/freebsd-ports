@@ -2329,6 +2329,7 @@
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sub-WrapPackages
     SUBDIR += p5-Sys-Cpu
+    SUBDIR += p5-Sys-Info
     SUBDIR += p5-Sys-Info-Base
     SUBDIR += p5-Sys-Info-Driver-BSD
     SUBDIR += p5-Sys-MemInfo

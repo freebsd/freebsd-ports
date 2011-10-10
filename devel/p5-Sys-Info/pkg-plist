@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Sys/Info.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/Sys
