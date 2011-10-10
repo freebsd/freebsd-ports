@@ -14,6 +14,7 @@ Details:
  Store sessions on database(mysql/sqlite) or a cache like redis/memcache/apc.
  Easy to use/install/adapt DALMP is just a single file.
  Nested Transactions (SAVEPOINT / ROLLBACK TO SAVEPOINT).
- sql queue.
+ SQL queues.
+ support connections via unix sockets.
 
 WWW: http://code.google.com/p/dalmp

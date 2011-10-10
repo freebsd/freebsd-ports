@@ -11,6 +11,7 @@
 %%DATADIR%%/examples/queueURL.php
 %%DATADIR%%/examples/sessions.php
 %%DATADIR%%/examples/sqliteSessions.php
+%%DATADIR%%/examples/start.php
 %%DATADIR%%/examples/transactions.php
 %%DATADIR%%/mplt.php
 @dirrm %%DATADIR%%/examples
