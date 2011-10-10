@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icalendar
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${WRKSRC}/docs/changelog.rst ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
