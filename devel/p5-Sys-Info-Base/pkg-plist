@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Sys/Info/Base.pm
+%%SITE_PERL%%/Sys/Info/Constants.pm
+%%SITE_PERL%%/Sys/Info/Device.pm
+%%SITE_PERL%%/Sys/Info/Device/CPU.pm
+%%SITE_PERL%%/Sys/Info/Driver.pm
+%%SITE_PERL%%/Sys/Info/OS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Base/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Base
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrm %%SITE_PERL%%/Sys/Info/Device
+@dirrmtry %%SITE_PERL%%/Sys/Info
+@dirrmtry %%SITE_PERL%%/Sys
