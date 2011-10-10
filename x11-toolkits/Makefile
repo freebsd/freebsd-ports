@@ -162,6 +162,7 @@
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tk
+    SUBDIR += p5-Tk-Action
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser
     SUBDIR += p5-Tk-Contrib

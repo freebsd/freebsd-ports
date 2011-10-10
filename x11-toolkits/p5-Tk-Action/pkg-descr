@@ -1,0 +1,9 @@
+Menu entries are often also available in toolbars or other widgets. And
+sometimes, we want to enable or disable a given action, and this means having to
+update everywhere this action is allowed.
+
+This module helps managing actions in a Tk GUI: just create a new object,
+associate some widgets and bindings with add_widget() and then de/activate the
+whole action at once with enable() or disable().
+
+WWW: http://search.cpan.org/dist/Tk-Action/
