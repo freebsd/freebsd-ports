@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/ToolBar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/ToolBar/tkIcons
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/toolbar.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ToolBar/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ToolBar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ToolBar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
