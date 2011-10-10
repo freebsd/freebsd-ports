@@ -5,4 +5,4 @@ very different from the model support by the ConfigParser module
 found in Python's standard library, and is more suitable to
 configuration-intensive applications.
 
-WWW: http://www.zope.org/Members/fdrake/zconfig/
+WWW: http://pypi.python.org/pypi/ZConfig
