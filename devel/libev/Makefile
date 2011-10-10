@@ -7,6 +7,7 @@
 
 PORTNAME=	libev
 PORTVERSION=	4.04
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
