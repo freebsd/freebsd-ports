@@ -1,0 +1,11 @@
+--- xwindow/Makefile.in.orig	2011-10-10 22:14:33.000000000 +0900
++++ xwindow/Makefile.in	2011-10-10 22:14:45.000000000 +0900
+@@ -68,7 +68,7 @@
+ 	$(MAKE) LKIK="$(LKIK_DEB)" LMKF="$(LMKF_DEB)" all
+ 
+ $(PROG): $(OBJ) $(LMLTERM)
+-	$(LIBTOOL_LINK) -o $(PROG) $(OBJ@XWINDOW_OBJ_SUFFIX@) @DEXPORT@ $(LIBS) @CTL_LIBS_FOR_PROG@
++	$(LIBTOOL_LINK) -o $(PROG) $(OBJ@XWINDOW_OBJ_SUFFIX@) $(LIBS) @CTL_LIBS_FOR_PROG@
+ 
+ .SUFFIXES: .c .o
+ 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.8
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -40,8 +40,10 @@ OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 .if defined(WITH_FRIBIDI)
 CONFIGURE_ARGS+=	--enable-fribidi
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+PLIST_SUB+=	FRIBIDI=""
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
+PLIST_SUB+=	FRIBIDI="@comment "
 .endif
 
 .if defined(WITH_UIM)
@@ -88,8 +90,10 @@ PLIST_SUB+=	IBUS="@comment "
 CONFIGURE_ARGS+=	--with-type-engines="xcore,xft,cairo"
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
+PLIST_SUB+=	CAIRO="@comment "
 .endif
 
 
