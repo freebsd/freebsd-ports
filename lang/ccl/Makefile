@@ -54,11 +54,11 @@ post-patch:
 do-build:
 	@${RM} -f ${WRKSRC}/fx86cl ${WRKSRC}/fx86cl64
 	@cd ${WRKSRC}/lisp-kernel/freebsd${LISP_ARCH} && ${MAKE} && ${RM} -f *.o
-	@cd ${WRKSRC} && if ! ${ECHO_CMD} | ./${FX86CL} --batch --quiet >/dev/null 2>&1; then \
+	@cd ${WRKSRC} && if ! ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --batch --quiet >/dev/null 2>&1; then \
 		${ECHO_MSG} "===>  This CPU doesn't support the SSE2 instruction set: cannot build port."; \
 		exit 1; \
 	fi
-	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
+	@cd ${WRKSRC} && ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --no-init --batch --quiet \
 		--eval "(ccl:rebuild-ccl :full t)" \
 		--eval "(quit)"
 
@@ -71,7 +71,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${PREFIX}/bin/ccl
 
 post-install:
-	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
+	@cd ${WRKSRC} && ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --no-init --batch --quiet \
 		--eval "(require 'asdf)" \
 		--eval '(load "/usr/local/etc/asdf-init.lisp")' \
 		--eval "(quit)"
