@@ -7,6 +7,7 @@
 
 PORTNAME=	nemiver
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -20,10 +21,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gtksourceviewmm-2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
-BUILD_DEPENDS=	gdb72:${PORTSDIR}/devel/gdb
-RUN_DEPENDS=	gdb72:${PORTSDIR}/devel/gdb
-
-BROKEN=		unsatisfiable dependency object on gdb
+BUILD_DEPENDS=	gdb73.1:${PORTSDIR}/devel/gdb
+RUN_DEPENDS=	gdb73.1:${PORTSDIR}/devel/gdb
 
 OPTIONS=	GHEX "Enable memory view" off
 
