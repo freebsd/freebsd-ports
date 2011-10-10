@@ -3646,6 +3646,7 @@
     SUBDIR += violet
     SUBDIR += vstr
     SUBDIR += vtcl
+    SUBDIR += vtg
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += websvn
