@@ -1,6 +1,6 @@
 prefix=%PREFIX%
 libdir=${prefix}/lib
-includedi=${prefix}/include
+includedir=${prefix}/include
 
 Name: libev
 Description: High-performance event loop/event model
