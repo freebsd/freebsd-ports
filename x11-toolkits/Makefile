@@ -183,6 +183,7 @@
     SUBDIR += p5-Tk-Splashscreen
     SUBDIR += p5-Tk-Sugar
     SUBDIR += p5-Tk-TableMatrix
+    SUBDIR += p5-Tk-ToolBar
     SUBDIR += p5-Wx
     SUBDIR += p5-Wx-Perl-ProcessStream
     SUBDIR += pango
