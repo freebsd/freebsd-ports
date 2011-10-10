@@ -1,0 +1,47 @@
+--- modules/ReadMap.py	2010-07-01 11:22:36.000000000 +0400
++++ modules/ReadMap.py	2011-01-03 02:28:53.000000000 +0300
+@@ -85,7 +85,7 @@
+                 return None
+ 
+ def GetMapName(ini):
+-        cp = ConfigParser.RawConfigParser()
++        cp = ConfigParser.RawConfigParser(allow_no_value=True)
+         try:
+                 cp.readfp(ini)
+         except:
+@@ -105,7 +105,7 @@
+         return None
+ 
+ def GetMapVec(ini):
+-        cp = ConfigParser.RawConfigParser()
++        cp = ConfigParser.RawConfigParser(allow_no_value=True)
+         try:
+                 cp.readfp(ini)
+         except:
+@@ -568,7 +568,7 @@
+                                 self.Graph[i] = filter(lambda a: a[0] not in uclist, self.Graph[i])
+ 
+         def _load_vec(self):
+-                cp = ConfigParser.RawConfigParser()
++                cp = ConfigParser.RawConfigParser(allow_no_value=True)
+                 try:
+                         cp.readfp(self.vec)
+                 except: #ConfigParser.readfp raises exception, when he thinks,
+@@ -594,7 +594,7 @@
+                                                 self.Stations[st]['vfile'] = cp_get(cp, section, self.Stations[st]['name_orig'], None)
+ 
+         def _load(self):
+-                cp = ConfigParser.RawConfigParser()
++                cp = ConfigParser.RawConfigParser(allow_no_value=True)
+                 try:
+                         cp.readfp(self.ini)
+                 except: #ConfigParser.readfp raises exception, when he thinks,
+@@ -945,7 +945,7 @@
+                 self.name = None
+                 self.data = dict()
+                 self.enc = encoding
+-                cp = ConfigParser.RawConfigParser()
++                cp = ConfigParser.RawConfigParser(allow_no_value=True)
+                 try:
+                         cp.readfp(infodata)
+                 except:
