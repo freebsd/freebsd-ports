@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Tk/Role/HasWidgets.pm
+@dirrmtry %%SITE_PERL%%/Tk/Role
+@dirrmtry %%SITE_PERL%%/Tk

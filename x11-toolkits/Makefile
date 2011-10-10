@@ -175,6 +175,7 @@
     SUBDIR += p5-Tk-Getopt
     SUBDIR += p5-Tk-HistEntry
     SUBDIR += p5-Tk-JComboBox
+    SUBDIR += p5-Tk-Role-HasWidgets
     SUBDIR += p5-Tk-ResizeButton
     SUBDIR += p5-Tk-Splashscreen
     SUBDIR += p5-Tk-TableMatrix

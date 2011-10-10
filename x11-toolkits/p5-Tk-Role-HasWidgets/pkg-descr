@@ -1,0 +1,11 @@
+When programming Tk, it's almost always a good idea to keep a reference to the
+widgets that you created in the interface. Most of the time, a simple hash is
+enough; but it is usually wrapped up in methods to make the hash private to the
+window object. And of course, those methods are duplicated in all modules, under
+a form or another.
+
+Since duplication is bad, this module implements a Moose role implementing those
+methods once and forever. This implies that your class is using Moose in order
+to consume the role.
+
+WWW: http://search.cpan.org/dist/Tk-Role-HasWidgets/
