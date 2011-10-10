@@ -91,7 +91,7 @@ Index: sysdep/bsd/krt-sock.c
  int
  krt_capable(rte *e)
  {
-@@ -53,6 +51,49 @@ krt_capable(rte *e)
+@@ -53,6 +51,49 @@
       );
  }
  
@@ -141,44 +141,44 @@ Index: sysdep/bsd/krt-sock.c
  #define ROUNDUP(a) \
          ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
  
-@@ -69,7 +110,7 @@ krt_capable(rte *e)
+@@ -69,7 +110,7 @@
      body += l;}
  
- static void
+ static int
 -krt_sock_send(int cmd, rte *e)
 +krt_sock_send(struct krt_proto *p, int cmd, rte *e)
  {
    net *net = e->net;
    rta *a = e->attrs;
-@@ -180,23 +221,23 @@ static void
+@@ -180,7 +221,7 @@
    l = body - (char *)&msg;
    msg.rtm.rtm_msglen = l;
  
 -  if ((l = write(rt_sock, (char *)&msg, l)) < 0) {
 +  if ((l = write(p->rt_sock, (char *)&msg, l)) < 0) {
-     log(L_ERR "KRT: Error sending route %I/%d to kernel", net->n.prefix, net->n.pxlen);
+     log(L_ERR "KRT: Error sending route %I/%d to kernel: %m", net->n.prefix, net->n.pxlen);
+     return -1;
    }
+@@ -189,15 +230,15 @@
  }
  
  void
--krt_set_notify(struct krt_proto *p UNUSED, net *net, rte *new, rte *old)
-+krt_set_notify(struct krt_proto *p, net *net, rte *new, rte *old)
+-krt_set_notify(struct krt_proto *p UNUSED, net *n, rte *new, rte *old)
++krt_set_notify(struct krt_proto *p, net *n, rte *new, rte *old)
  {
-   if (old)
-     {
-       DBG("krt_remove_route(%I/%d)\n", net->n.prefix, net->n.pxlen);
--      krt_sock_send(RTM_DELETE, old);
-+      krt_sock_send(p, RTM_DELETE, old);
-     }
-   if (new)
-     {
-       DBG("krt_add_route(%I/%d)\n", net->n.prefix, net->n.pxlen);
--      krt_sock_send(RTM_ADD, new);
-+      krt_sock_send(p, RTM_ADD, new);
-     }
- }
+   int err = 0;
  
-@@ -218,25 +259,34 @@ void
+   if (old)
+-    krt_sock_send(RTM_DELETE, old);
++    krt_sock_send(p, RTM_DELETE, old);
+ 
+   if (new)
+-    err = krt_sock_send(RTM_ADD, new);
++    err = krt_sock_send(p, RTM_ADD, new);
+ 
+   if (err < 0)
+     n->n.flags |= KRF_SYNC_ERROR;
+@@ -223,25 +264,34 @@
  krt_set_start(struct krt_proto *x, int first UNUSED)
  {
    sock *sk_rt;
@@ -188,18 +188,18 @@ Index: sysdep/bsd/krt-sock.c
  
 -  if (ks_open_tried)
 -    return;
+-
+-  ks_open_tried = 1;
 +  if (!strcmp(x->p.proto->name, "Kernel"))
 +  {
 +    c = (struct krt_config *)x->p.cf;
 +    fib = c->scan.table_id;
  
--  ks_open_tried = 1;
+-  DBG("KRT: Opening kernel socket\n");
 +    DBG("KRT: Opening kernel route socket to fib %d\n", fib);
 +    if (x->p.debug & D_ROUTES)
 +      log(L_TRACE "Opening route socket to fib %d", fib);
  
--  DBG("KRT: Opening kernel socket\n");
--
 -  if( (rt_sock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC)) < 0)
 +    old_fib = my_fib_set(fib);
 +  }
@@ -221,7 +221,7 @@ Index: sysdep/bsd/krt-sock.c
  }
  
  #define SKIP(ARG...) do { DBG("KRT: Ignoring route - " ARG); return; } while(0)
-@@ -624,6 +674,8 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
+@@ -629,6 +679,8 @@
    size_t obl, needed;
    struct ks_msg *m;
    int retries = 3;
@@ -230,7 +230,7 @@ Index: sysdep/bsd/krt-sock.c
  
    mib[0] = CTL_NET;
    mib[1] = PF_ROUTE;
-@@ -632,6 +684,17 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
+@@ -637,6 +689,17 @@
    mib[4] = cmd;
    mib[5] = 0;
  
@@ -248,7 +248,7 @@ Index: sysdep/bsd/krt-sock.c
   try:
    if (sysctl(mib, 6 , NULL , &needed, NULL, 0) < 0)
      die("krt_sysctl_scan 1: %m");
-@@ -656,6 +719,7 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
+@@ -661,6 +724,7 @@
  	goto try;
  
        log(L_ERR "KRT: Route scan failed");
@@ -256,7 +256,7 @@ Index: sysdep/bsd/krt-sock.c
        return;
      }
      die("krt_sysctl_scan 2: %m");
-@@ -666,6 +730,8 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
+@@ -671,6 +735,8 @@
      m = (struct ks_msg *)next;
      krt_read_msg(p, m, 1);
    }
@@ -265,7 +265,7 @@ Index: sysdep/bsd/krt-sock.c
  }
  
  static byte *krt_buffer = NULL;
-@@ -695,13 +761,16 @@ krt_set_construct(struct krt_config *c U
+@@ -700,13 +766,16 @@
  }
  
  void

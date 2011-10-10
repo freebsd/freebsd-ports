@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird6
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 DISTNAME=	bird-${PORTVERSION}
