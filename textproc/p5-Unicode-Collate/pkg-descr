@@ -1,0 +1,4 @@
+Unicode::Collate is an implementation of Unicode Technical Standard #10 (a.k.a.
+UTS #10) - Unicode Collation Algorithm (a.k.a. UCA).
+
+WWW: http://search.cpan.org/dist/Unicode-Collate/
