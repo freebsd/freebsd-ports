@@ -46,7 +46,7 @@ post-extract:
 	${CHMOD} -R u+w ${WRKDIR}/tinker
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%FFLAGS%%,${FFLAGS},g' ${WRKSRC}/../make/Makefile
+	@${REINPLACE_CMD} -e 's|%%FFLAGS%%|${FFLAGS}|g' ${WRKSRC}/../make/Makefile
 
 post-install:
 	@${MKDIR} ${DATADIR}/params
