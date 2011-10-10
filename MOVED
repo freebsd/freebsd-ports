@@ -2771,3 +2771,6 @@ audio/p5-MusicBrainz-TRM||2011-10-08|Disappeared from CPAN
 mail/p5-Mail-QuoteWrap||2011-10-08|Disappeared from CPAN
 www/p5-Catalyst-Plugin-FormCanary||2011-10-08|Disappeared from CPAN
 security/snort_inline||2011-10-09|Does not build properly, no longer supported upstream
+databases/ruby-pg|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
+databases/rubygem-postgres|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
+databases/ruby-postgres|databases/rubygem-pg|2011-10-10|replaced by rubygem-pg
