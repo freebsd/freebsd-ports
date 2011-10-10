@@ -2911,6 +2911,7 @@
     SUBDIR += py-AddOns
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
+    SUBDIR += py-DateTime
     SUBDIR += py-EnthoughtBase
     SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
