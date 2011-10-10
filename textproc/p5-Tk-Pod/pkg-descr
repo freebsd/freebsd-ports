@@ -1,0 +1,4 @@
+Tk::Pod is a simple Pod browser with hypertext capabilities in a Toplevel
+widget.
+
+WWW: http://search.cpan.org/dist/Tk-Pod/
