@@ -7,7 +7,6 @@
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/
 
@@ -16,6 +15,7 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 
 LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
+		dmenu:${PORTSDIR}/x11/dmenu \
 		${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_GNOME=	gtk20
@@ -23,8 +23,8 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
-GITDATE=	2011.07.25
-GITVERSION=	9b73b93
+GITDATE=	2011.10.01
+GITVERSION=	9576f59
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
