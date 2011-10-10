@@ -13,4 +13,5 @@ the whole image in a few seconds.
 A simple interactive shell (perldl) is provided for command line use
 together with a module (PDL) for use in perl scripts.
 
+WWW: http://search.cpan.org/dist/PDL/
 WWW: http://pdl.perl.org/
