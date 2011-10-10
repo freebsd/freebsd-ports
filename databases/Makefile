@@ -426,7 +426,7 @@
     SUBDIR += p5-Ima-DBI-Contextual
     SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
-    SUBDIR += p5-KyotoCabinet
+    uUBDIR += p5-KyotoCabinet
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-Memcached-libmemcached
@@ -747,8 +747,6 @@
     SUBDIR += ruby-o_dbm
     SUBDIR += ruby-oci8
     SUBDIR += ruby-odbc
-    SUBDIR += ruby-pg
-    SUBDIR += ruby-postgres
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-sybct
@@ -790,7 +788,6 @@
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-pg
-    SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-sqlite3
