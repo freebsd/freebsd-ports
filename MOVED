@@ -15,7 +15,7 @@
 #     Why:	The reason why the port was moved or removed
 #
 # Keep this list sorted in the chronological order.  New entries must
-# be added at the tail.
+# be added at the tail.  Reason for (re)move should not end with the dot.
 #
 # If previously removed port gets restored, make sure to delete the relevant
 # line.  If a port is copied to a new location and the old location is kept
@@ -53,8 +53,8 @@ sysutils/cdbakeoven||2008-02-28|Has expired: Abandonware
 net/gnu-finger||2008-02-28|Has expired: no active development and known security vulnerabilities
 misc/seizedesktop||2008-02-28|Has expired: development stalled for years, outdated, unmaintained
 net-im/wildfire||2008-02-28|Has expired: Use net-im/openfire instead of this port
-www/gekko||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion  http://code.google.com/p/textmotion/
-www/gekko-modules||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion  http://code.google.com/p/textmotion/
+www/gekko||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion (http://code.google.com/p/textmotion/)
+www/gekko-modules||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion (http://code.google.com/p/textmotion/)
 java/linux-blackdown-jre11||2008-02-28|Has expired: Obsolete version; Support for Java 1.1 is to be removed from the ports tree
 french/pluxml||2008-02-28|Has expired: no active development and known security vulnerabilities, see http://www.securityfocus.com/bid/24607/info for details
 french/pluxml-theme-bridge||2008-02-28|Has expired: pluxml is marked as deprecated
@@ -127,7 +127,7 @@ multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo por
 multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
 graphics/ascii0|graphics/asciio|2008-04-22|renamed by delete+add
 misc/kde3-i18n-id||2008-04-25|Has expired: "Distfile no longer available, outdated"
-net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does  not build with guile-1.8, and it is unmaintained
+net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does not build with guile-1.8, and it is unmaintained
 net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
 net/samplicator||2008-04-25|Has expired: Project has vanished
 graphics/entice||2008-04-25|Has expired: Broken and unmaintained
@@ -345,7 +345,7 @@ x11-wm/kahakai||2008-12-07|Has expired: "Development ceased"
 palm/synce-gnomevfs||2008-12-07|Has expired: No longer supported by developers
 palm/synce-kde||2008-12-07|Has expired: No longer supported by developers
 palm/synce-multisync||2008-12-07|Has expired: No longer supported by developers
-shells/ksh93-devel||2008-12-07|Has expired: This port is Outdated.  Please use shells/ksh93
+shells/ksh93-devel||2008-12-07|Has expired: This port is outdated, please use shells/ksh93
 sysutils/dtc-toaster||2008-12-07|Has expired: Has been broken for more than 6 months
 sysutils/dusage||2008-12-07|Has expired: Has been broken for more than 6 months
 games/linux-alienarena||2008-12-07|Has expired: Has been broken for more than 6 months
@@ -452,7 +452,7 @@ databases/mysqlbigram||2009-02-03|Has expired: has been broken for more than 6 m
 mail/claws-mail-clamav||2009-02-03|Has expired: has been broken for more than 6 months
 mail/sylpheed2-devel||2009-02-03|Has expired: has been broken for more than 6 months
 www/pecl-mnogosearch||2009-02-03|Has expired: has been broken for more than 6 months
-x11-fonts/mathfonts||2009-02-03|Has expired: This port was supported by Mozilla 1.8 (including Firefox 2.0) - to be replaced by  STIX fonts for Firefox 3.x
+x11-fonts/mathfonts||2009-02-03|Has expired: This port was supported by Mozilla 1.8 (including Firefox 2.0) - to be replaced by STIX fonts for Firefox 3.x
 x11-wm/fluxspace||2009-02-03|Has expired: has been broken for more than 6 months
 x11-wm/expocity||2009-02-03|Has expired: project has been abandoned
 x11/bbuname||2009-02-03|Has expired: has been broken for more than 6 months
@@ -801,7 +801,7 @@ net/ppptraf||2009-08-08|Removed: "author has abandoned this program"
 www/zope-guf||2009-08-08|Removed: "no longer being developed: use SimpleUserFolder or exUserFolder instead"
 misc/xenmenu||2009-08-08|Removed: Project abandoned in 1998
 security/dns-proxy-tor||2009-08-09|Removed
-security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsolete by Tor\'s TransPort option  (currently only available in tor-devel)
+security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsolete by Tor's TransPort option (currently only available in tor-devel)
 science/dft++||2009-08-11|Removed
 devel/p5-MooseX-Policy-SemiAffordanceAccessor|devel/p5-MooseX-SemiAffordanceAccessor|2009-08-18|Renamed
 misc/bibletime-devel||2009-08-17|Has expired
@@ -1367,7 +1367,7 @@ x11/e17-module-snow|x11-wm/e17-module-snow|2010-11-07|Fix category
 x11/e17-module-uptime|x11-wm/e17-module-uptime|2010-11-07|Fix category
 x11/e17-module-weather|x11-wm/e17-module-weather|2010-11-07|Fix category
 x11/e17-module-winselector|x11-wm/e17-module-winselector|2010-11-07|Fix category
-devel/libisc||2010-11-08|Has expired: Unlikely to be used..
+devel/libisc||2010-11-08|Has expired: Unlikely to be used...
 emulators/vmware-guestd3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 emulators/vmware-tools3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 misc/compat3x||2010-11-08|Has expired: "Only FreeBSD 6.4+ are supported in ports"
@@ -1750,57 +1750,57 @@ ports-mgmt/portmk||2011-04-29|Has expired: has not been kept up to date for > 6 
 ports-mgmt/portsman||2011-04-29|Has expired: hardwires an ancient version of INDEX
 mail/kiltdown||2011-04-29|Has expired: upstream seems dead since 2001
 devel/pinstall||2011-04-30|Removed
-x11-wm/kappdock||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-wm/wmg||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-toolkits/gtkglarea--||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+x11-wm/kappdock||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-wm/wmg||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-toolkits/gtkglarea--||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 x11-toolkits/php-gtk||2011-05-01|Has expired: Abandoned upstream
 x11-toolkits/py-gtkextra||2011-05-01|Has expired: Abandoned upstream
-x11-toolkits/viewkit||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/buffy||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/clean-theme-gtk||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/colorstep||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/engradient||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/flux-art||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/gtk-Mac2-theme||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/gtk-flat-theme||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/gtkbe||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/gtkstep||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/gtkstep-pastel||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/icegradient||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/notif2||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/whistlerk||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/xenophilia||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-themes/xenostep||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-fm/cfm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+x11-toolkits/viewkit||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/buffy||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/clean-theme-gtk||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/colorstep||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/engradient||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/flux-art||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/gtk-Mac2-theme||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/gtk-flat-theme||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/gtkbe||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/gtkstep||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/gtkstep-pastel||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/icegradient||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/notif2||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/whistlerk||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/xenophilia||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-themes/xenostep||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-fm/cfm||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 x11-fm/gnome-commander||2011-05-01|Has expired: Gnome1 is deprecated, consider using gnome-commander2
-x11-fm/jaffm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-fm/workplace||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-clocks/bdesktopclock||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-clocks/washerdryer||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-clocks/wmtz||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-clocks/xmms-alarm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/buttonbox||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/cnslock||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/gnome-launch-box||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/gtk-themepreview||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/gxset||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/portoseguro||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/wmfstatus||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/wmoldmenu2new||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/xbindkeys_config||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/xmold||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/xtattr||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-www/indexme||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+x11-fm/jaffm||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-fm/workplace||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-clocks/bdesktopclock||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-clocks/washerdryer||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-clocks/wmtz||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11-clocks/xmms-alarm||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/buttonbox||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/cnslock||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/gnome-launch-box||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/gtk-themepreview||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/gxset||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/portoseguro||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/wmfstatus||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/wmoldmenu2new||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/xbindkeys_config||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/xmold||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+x11/xtattr||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+www/indexme||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 www/osb-browser||2011-05-01|Has expired: Abandonware, please use www/webkit-gtk2
 www/osb-nrcit||2011-05-01|Has expired: Abandonware, please use www/webkit-gtk2
 www/osb-nrcore||2011-05-01|Has expired: Abandonware, please use www/webkit-gtk2
-www/pumperweb||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-www/py-ez_web||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+www/pumperweb||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+www/py-ez_web||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 www/py-pullparser||2011-05-01|Has expired: Obsolete and deprecated
-www/sidplug||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-www/twhttpd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-www/wnews||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-www/xpath2rss||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+www/sidplug||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+www/twhttpd||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+www/wnews||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+www/xpath2rss||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 japanese/iiimf-le-freewnn||2011-05-01|Removed, depends on expired library
 japanese/iiimf-le-canna||2011-05-01|Removed, depends on expired library
 chinese/iiimf-le-newpy||2011-05-01|Removed, depends on expired library
@@ -1809,158 +1809,158 @@ chinese/iiimf-le-ude||2011-05-01|Removed, depends on expired library
 textproc/ctpp|textproc/ctpp2|2011-05-01|Has expired: Deprecated please use ctpp2 textproc/ctpp2
 textproc/dsssl-docbook-cygnus||2011-05-01|Has expired: Distfile is no more available
 textproc/fdp-tools||2011-05-01|Has expired: Distfile is no more available
-textproc/iiimf-client-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-csconv||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-headers||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-le-unit||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-protocol-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-server||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-x||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/iiimf-x-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/maketeidtd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/minidom||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/ocaml-yaxpo||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/p5-LJ-SpellCheck||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/py-HyperText||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/smartdoc||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-textproc/xmlpp||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/acidlaunch||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/cpbk||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/dc42wrap||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/deleted||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/dolly+||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/durep||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/dvdtape||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/fontedit||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/ftrace||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/gfslicer||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/ghasher||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/gkrellmouse||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/gkrellmwho||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/glload||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-client-lib||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-csconv||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-headers||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-le-unit||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-protocol-lib||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-server||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-x||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/iiimf-x-lib||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/maketeidtd||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/minidom||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/ocaml-yaxpo||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/p5-LJ-SpellCheck||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/py-HyperText||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/smartdoc||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+textproc/xmlpp||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/acidlaunch||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/cpbk||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/dc42wrap||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/deleted||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/dolly+||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/durep||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/dvdtape||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/fontedit||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/ftrace||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/gfslicer||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/ghasher||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/gkrellmouse||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/gkrellmwho||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/glload||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
 sysutils/gnomefind||2011-05-01|Has expired: Abandoned upstream
-sysutils/graft||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/growspd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/gtoaster||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/idled||2011-05-01|Has expired: Upstream disapear and distfile is no more available, consider using sysutils/doinkd
-sysutils/maint||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/ndir||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/p5-LJ-Cache||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/p5-LJ-TextMessage||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/reclinker||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/rotate||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/ticker.app||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/upsmon||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/usbutil||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/uwatch||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmavgload||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmfsm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmhm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wminet||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmlmmon||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmlongrun||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmmemmon||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmmount||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmpccard||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmshutdown||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-sysutils/wmzazof||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/aafid2||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/bjorb||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/borzoi||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/cmd5checkpw||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/find_ddos||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/ftpmap||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/hafiye||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/ident2||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/liedentd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/pam_pop3||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/poc||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/portscanner||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/ppgen||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/qident||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/quintuple-agent||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/rc5pipe||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/rid||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/ssh||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/tea-total||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-security/uberkey||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilter360||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilter850||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilter850ug||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilter860||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilter870||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfiltercom||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilters600||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilters630||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bjfilters6300||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/bsd_lpr||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/dvi2xx||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/envelope||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/pclprint||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/psmark||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/tipograf||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/tr2latex||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-print/wmlpq||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-palm/jfconv||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-palm/palmpower||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-palm/sitescooper||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-palm/uppc-kmod||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-news/leafnode+||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-news/pyne||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-news/slurp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-news/unpost||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+sysutils/graft||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/growspd||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/gtoaster||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/idled||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available, consider using sysutils/doinkd
+sysutils/maint||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/ndir||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/p5-LJ-Cache||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/p5-LJ-TextMessage||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/reclinker||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/rotate||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/ticker.app||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/upsmon||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/usbutil||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/uwatch||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmavgload||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmfsm||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmhm||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wminet||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmlmmon||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmlongrun||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmmemmon||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmmount||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmpccard||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmshutdown||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+sysutils/wmzazof||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/aafid2||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/bjorb||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/borzoi||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/cmd5checkpw||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/find_ddos||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/ftpmap||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/hafiye||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/ident2||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/liedentd||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/pam_pop3||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/poc||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/portscanner||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/ppgen||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/qident||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/quintuple-agent||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/rc5pipe||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/rid||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/ssh||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/tea-total||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+security/uberkey||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilter360||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilter850||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilter850ug||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilter860||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilter870||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfiltercom||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilters600||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilters630||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bjfilters6300||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/bsd_lpr||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/dvi2xx||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/envelope||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/pclprint||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/psmark||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/tipograf||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/tr2latex||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+print/wmlpq||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+palm/jfconv||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+palm/palmpower||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+palm/sitescooper||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+palm/uppc-kmod||2011-05-01|Has expired: Upstream disappeared and distfile is no longer available
+news/leafnode+||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+news/pyne||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+news/slurp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+news/unpost||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 net-p2p/edonkey-gui-gtk||2011-05-02|Removed, depends on linux-edonkey-core which has expired
 net-p2p/edonkey-gui-gtk-urlslave||2011-05-02|Removed, depends on linux-edonkey-core which has expired
-net-p2p/fcptools||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-p2p/hx||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-p2p/linux-edonkey-core||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-p2p/linux-edonkey-server||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-p2p/linux-edonkey-tool-recovermet||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-p2p/fcptools||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-p2p/hx||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-p2p/linux-edonkey-core||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-p2p/linux-edonkey-server||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-p2p/linux-edonkey-tool-recovermet||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 net-mgmt/junipoll||2011-05-02|Removed, depends on expired net-mgmt/p5-Altoids
-net-mgmt/annextools||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/asused||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/ipsectrace||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/knowlan||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/p5-Altoids||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/pktstat||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/scotty3||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-im/aim||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-im/jit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-im/kf||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/bbsnet||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/bing||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/brutecopy||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/crescendo||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/danamics||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/etunnel||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/gastman||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/generic-nqs||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/gkrellmmultiping2||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/gkrellmwireless||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/gnoemoe||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/gnosamba||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/merlinmon||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/msntp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/ntalk||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/onion-fec||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/openverse||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/poink||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/roadrunner||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/sambasentinel||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/scand||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/tacshell||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/telserv||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/tvark||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/warppipe||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/wistumbler2||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/wmq3||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-mgmt/annextools||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/asused||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/ipsectrace||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/knowlan||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/p5-Altoids||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/pktstat||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-mgmt/scotty3||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-im/aim||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-im/jit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net-im/kf||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/bbsnet||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/bing||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/brutecopy||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/crescendo||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/danamics||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/etunnel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/gastman||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/generic-nqs||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/gkrellmmultiping2||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/gkrellmwireless||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/gnoemoe||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/gnosamba||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/merlinmon||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/msntp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/ntalk||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/onion-fec||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/openverse||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/poink||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/roadrunner||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/sambasentinel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/scand||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/tacshell||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/telserv||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/tvark||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/warppipe||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/wistumbler2||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/wmq3||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 net/xbone-gui||2011-05-02|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
-net/xsmbrowser||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/xtraceroute||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/ytalk||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net/zniper||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-multimedia/gtksubtitler||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-multimedia/hayes||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net/xsmbrowser||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/xtraceroute||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/ytalk||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+net/zniper||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+multimedia/gtksubtitler||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+multimedia/hayes||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 multimedia/netshow||2011-05-02|Has expired: Distfile is no more available
 multimedia/smpeg-xmms||2011-05-02|Has expired: Distfile is no more available
 multimedia/streamdvd||2011-05-02|Has expired: upstream and distfile is no more available
@@ -1972,93 +1972,93 @@ multimedia/xdvshow||2011-05-02|Has expired: upstream has disapear and distfile i
 multimedia/xmms-avi||2011-05-02|Has expired: Distfile is no more available
 multimedia/xmps||2011-05-02|Has expired: Upstream has disapear and distfile is no more available
 multimedia/xvid4conf||2011-05-02|Has expired: Upstream has disapear and distfile is no more available
-misc/acron||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/chord||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/datedif||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/earthview||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/fcalc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/gkrellscore||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/goldstr||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/gtl||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/kp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/nserver||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/patanjali||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/qmc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/snowflake||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/translator||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-misc/videotext||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+misc/acron||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/chord||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/datedif||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/earthview||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/fcalc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/gkrellscore||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/goldstr||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/gtl||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/kp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/nserver||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/patanjali||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/qmc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/snowflake||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/translator||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+misc/videotext||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 misc/wmweather||2011-05-02|Has expired: Distfile is no longer available, try misc/wmweather+
-misc/wmx10||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/fudgit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/kaskade||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/qscanplot||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/rpc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/ss||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-math/wmcalc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/crashecho||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/drbl||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/glbiff||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/libsrs||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/majorcool||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/messagewall||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/pgen||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/regm||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/ricochet||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/smtpclient||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/smtpproxy||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/solidpop3d||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/spruce||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/teapop-devel||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/wmmail||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/wmmultipop3||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/wmymail||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-java/avalon-logkit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-java/gnu-regexp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-java/jce-aba||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-java/jsdk||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-irc/garnaxfs||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-irc/party||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/cqcam||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/dc3play||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/dore||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/fig2pstricks||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/geist||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/gfont||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+misc/wmx10||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/fudgit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/kaskade||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/qscanplot||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/rpc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/ss||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+math/wmcalc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/crashecho||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/drbl||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/glbiff||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/libsrs||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/majorcool||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/messagewall||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/pgen||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/regm||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/ricochet||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/smtpclient||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/smtpproxy||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/solidpop3d||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/spruce||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/teapop-devel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/wmmail||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/wmmultipop3||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+mail/wmymail||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+java/avalon-logkit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+java/gnu-regexp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+java/jce-aba||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+java/jsdk||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+irc/garnaxfs||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+irc/party||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/cqcam||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/dc3play||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/dore||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/fig2pstricks||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/geist||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/gfont||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 graphics/gimp-greycstoration||2011-05-02|Has expired: Superseded by graphics/gimp-gmic-plugin
-graphics/glean||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/gltk||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/gridpix||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/gtkfig||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/gview||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/icod||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/isreal||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/oglext||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/ophoto||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/py-gdchart||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/py-gdchart2||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/qglviewer||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/robot||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/s3switch||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/sced||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/shim||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/snx101util||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/tcm||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/vertex||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/vvv||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/xdl||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/xmms-goom||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-graphics/xmms-infinity||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/axyftp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/emacs-wget||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/moftpd||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/wu-ftpd||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/xrmftp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-ftp/yale-tftpd||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+graphics/glean||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/gltk||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/gridpix||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/gtkfig||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/gview||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/icod||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/isreal||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/oglext||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/ophoto||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/py-gdchart||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/py-gdchart2||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/qglviewer||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/robot||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/s3switch||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/sced||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/shim||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/snx101util||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/tcm||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/vertex||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/vvv||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/xdl||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/xmms-goom||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+graphics/xmms-infinity||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/axyftp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/emacs-wget||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/moftpd||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/wu-ftpd||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/xrmftp||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+ftp/yale-tftpd||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 emulators/basiliskII||2011-05-02|Has expired: Distfile is no more available official website has older distfiles
-emulators/tkhfs||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-emulators/twin||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+emulators/tkhfs||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+emulators/twin||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 emulators/vgb||2011-05-02|Has expired: Distfile is no more available (lastest binaries provided by upstream are for 5.x)
-emulators/vpce||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+emulators/vpce||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 chinese/nvi-big5||2011-05-02|Has expired: Distfile is no more available
 chinese/nvi-euc-cn||2011-05-02|Has expired: Distfile is no more available
 chinese/nvi-euc-tw||2011-05-02|Has expired: Distfile is no more available
@@ -2069,79 +2069,79 @@ japanese/nvi-sjis||2011-05-02|Has expired: Distfile is no more available
 korean/nvi-euc-kr||2011-05-02|Has expired: Distfile is no more available
 korean/nvi-iso-2022-kr||2011-05-02|Has expired: Distfile is no more available
 editors/MathPlanner||2011-05-02|Has expired: Upstream says project is canceled and no more distfiles can be found
-editors/bitmap||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/bitmap-emacs21||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/cle||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/dedit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/em||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+editors/bitmap||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/bitmap-emacs21||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/cle||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/dedit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/em||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 editors/leim21||2011-05-02|Has expired: Distfile is no more available
-editors/lpe||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/vilearn||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-editors/xenon||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/a2dev||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/c2lib||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/c2man||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/c2mdoc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/c_parser||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/cdoc||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/diffconvert||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/ecgi||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/error||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/excalibur-configuration||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/freelibiberty||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/gengameng||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/hptools||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/invitation_to_ruby||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/kimwitu++||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/libU77||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/libcoro||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/libpperl||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/lincvs||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+editors/lpe||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/vilearn||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+editors/xenon||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/a2dev||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/c2lib||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/c2man||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/c2mdoc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/c_parser||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/cdoc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/diffconvert||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/ecgi||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/error||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/excalibur-configuration||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/freelibiberty||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/gengameng||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/hptools||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/invitation_to_ruby||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/kimwitu++||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/libU77||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/libcoro||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/libpperl||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/lincvs||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/linux-runrev||2011-05-02|Has expired: Abandon upstream and distfile is no more available
-devel/makeplus||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/maketool||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/mob||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/mprof||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/ngpt||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/pedisassem||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/rinfo||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/templ||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-devel/towitoko||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-x11-fonts/avifonts||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+devel/makeplus||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/maketool||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/mob||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/mprof||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/ngpt||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/pedisassem||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/rinfo||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/templ||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+devel/towitoko||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+x11-fonts/avifonts||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 x11-fonts/bitmap-fonts||2011-05-02|Has expired: Distfile is no more available
-x11-fonts/mozilla-fonts||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-x11-fonts/xfed||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-x11-fonts/xmbdfed||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-audio/dap||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+x11-fonts/mozilla-fonts||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+x11-fonts/xfed||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+x11-fonts/xmbdfed||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+audio/dap||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 audio/gdrdao||2011-05-02|Has expired: Upstream disapear and no more distfiles available
-databases/gmysql||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-deskutils/kuake||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+databases/gmysql||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+deskutils/kuake||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 finance/xinvest||2011-05-02|Has expired: Outdated, abandoned
 finance/xquote||2011-05-02|Has expired: Outdated, abandoned
-french/plgrenouille||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+french/plgrenouille||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 editors/xemacs-devel-mule-xft||2011-05-02|Remove, editors/xemacs-devel-mule builds with xft support now
-lang/cim||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-lang/clips||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-lang/eiffel||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-lang/libutils||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-lang/linux-libperl5.8||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+lang/cim||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+lang/clips||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+lang/eiffel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+lang/libutils||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+lang/linux-libperl5.8||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/osb-jscore||2011-05-02|Has expired: Abandonware, please use www/webkit-gtk2
-devel/kxl||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-games/geki2||2011-05-02|Removed, Upstream disapear and distfile is no more available
-games/geki3||2011-05-02|Removed, Upstream disapear and distfile is no more available
-games/grande||2011-05-02|Removed, Upstream disapear and distfile is no more available
-games/spacearyarya||2011-05-02|Removed, Upstream disapear and distfile is no more available
+devel/kxl||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
+games/geki2||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
+games/geki3||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
+games/grande||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
+games/spacearyarya||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
 ftp/ftptool||2011-05-02|Removed, depend on this expired editors/textedit
-editors/textedit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+editors/textedit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 security/libfwbuilder||2011-05-02|libfwbuilder merged into fwbuilder
 games/monopd||2011-05-03|Removed, depends on an expired library: devel/libcapsinetwork
-devel/libcapsinetwork||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-audio/albumart||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-audio/aylet||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-audio/cantus||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-audio/xaylet||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-science/oases||2011-05-03|Has expired: Upstream disapear and distfile is no more available
-shells/pash||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+devel/libcapsinetwork||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+audio/albumart||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+audio/aylet||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+audio/cantus||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+audio/xaylet||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+science/oases||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
+shells/pash||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
 www/codeigniter|www/codeigniter17|2011-05-03|Renamed to track deprecated branch
 www/codeigniter-devel||2011-05-03|Removed
 devel/common_msgs|devel/ros-common_msgs|2011-05-03|Renamed
@@ -2180,11 +2180,11 @@ german/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 japanese/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 net/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 comms/gammu-python||2011-06-01|Has expired: since version 1.29.0 comms/gammu uses python by default
-java/gj||2011-06-01|Has expired: Upstream disapear and distfile is no more available
-net/ipv6socket_scrub||2011-06-01|Has expired: Upstream disapear and distfile is no more available
+java/gj||2011-06-01|Has expired: Upstream disappeared and distfile is no longer available
+net/ipv6socket_scrub||2011-06-01|Has expired: Upstream disappeared and distfile is no longer available
 graphics/lodju||2011-06-01|Has expired: depends on rep-gtk, which doesn't build anymore
 www/mod_pubcookie||2011-06-01|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
-ftp/prozilla||2011-06-01|Has expired: Upstream disapear and distfile is no more available
+ftp/prozilla||2011-06-01|Has expired: Upstream disappeared and distfile is no longer available
 www/py-django11||2011-06-01|Has expired: Unsupported (no longer receive security updates or bugfixes)
 x11-toolkits/rep-gtk||2011-06-01|Has expired: missing rep-config from librep port broke the build
 games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't work with newer CEGUI and is generally broken
@@ -2202,9 +2202,9 @@ devel/bugzilla2||2011-06-07|Removed: no longer under development
 lang/ruby-js||2011-06-09|Removed, depends on expired port, seems abandonware itself
 textproc/ruby-xml-script||2011-06-09|Removed, depends on expired port, seems abandonware itself
 www/ruby-asp||2011-06-09|Removed, depends on expired port, seems abandonware itself
-lang/njs||2011-06-09|Has expired: Upstream disapear and distfile is no more available
+lang/njs||2011-06-09|Has expired: Upstream disappeared and distfile is no longer available
 editors/wily||2011-06-09|Removed, depends on an expired port
-x11-fonts/Xg||2011-06-09|Has expired: Upstream disapear and distfile is no more available
+x11-fonts/Xg||2011-06-09|Has expired: Upstream disappeared and distfile is no longer available
 irc/bitlbee-otr||2011-06-13|Removed, overridden by irc/bitlbee
 deskutils/mcatalog||2011-06-13|Removed, upstream disapear and distfile is no more available
 mail/evolution-sharp||2011-06-13|Has expired: has been broken for over a year
@@ -2214,7 +2214,7 @@ irc/ezbounce-devel|irc/ezbounce|2011-06-19|main port updated to latest available
 graphics/povray|graphics/povray36|2011-06-21|Renamed
 x11/widgetfactory|x11-themes/thewidgetfactory|2011-06-23|Duplicate ports merged
 deskutils/opengoo|deskutils/fengoffice|2011-06-24|It was renamed to deskutils/fengoffice
-irc/gdesklets-irc||2011-06-25|Has expired: Upstream disapear and distfile is no more available
+irc/gdesklets-irc||2011-06-25|Has expired: Upstream disappeared and distfile is no longer available
 net/libevnet||2011-06-25|Has expired: no longer necessary now that libevent2 has been released
 www/mod_auth_ldap||2011-06-25|Has expired: apache 13/20 is sceduled for deletion, migrate to 2.2.x+ and mod_authnz_ldap now
 www/mod_auth_remote||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
@@ -2241,11 +2241,11 @@ math/femlab||2011-07-02|Has expired: No more distfile, looks like abandonware
 japanese/wikicker||2011-07-02|Has expired: Looks like an abandonware
 emulators/vmware3||2011-07-02|Has expired: No more distfiles available. emulators/virtualbox-ose can be used as a replacement
 devel/libevocosm||2011-07-02|Has expired: Looks like and abandonware
-devel/acovea||2011-07-02|Has expired: Looks like abandonware.
-devel/acovea-gtk||2011-07-02|Has expired: Looks like abandonware.
+devel/acovea||2011-07-02|Has expired: Looks like abandonware
+devel/acovea-gtk||2011-07-02|Has expired: Looks like abandonware
 sysutils/service-config||2011-07-02|Has expired: "mastersite disappeared"
 print/lyx-devel||2011-07-03|print/lyx has been updated to a newer version, use it instead
-archivers/lzo||2011-07-07|Use archivers/lzo2 instead.
+archivers/lzo||2011-07-07|Use archivers/lzo2 instead
 www/horde4-browser||2011-07-07|Removed
 www/horde4-template||2011-07-07|Removed
 deskutils/horde4-itip||2011-07-07|Removed
@@ -2266,7 +2266,7 @@ x11-wm/boxtools|x11-wm/blackbox|2011-07-08|Ports merged together
 audio/ruby-ogginfo||2011-07-09|Replaced with audio/rubygem-ogginfo
 audio/ruby-shout||2011-07-10|Replaced with audio/rubygem-shout
 textproc/xpp3||2011-07-11|Removed depends on an expired ports
-textproc/xmlpull||2011-07-11|Has expired: Upstream disapear and distfile is no more available
+textproc/xmlpull||2011-07-11|Has expired: Upstream disappeared and distfile is no longer available
 java/shujit||2011-07-13|Has expired: ancient version of Java
 net-im/skype12||2011-07-13|Has expired: very old version
 net-p2p/tvrss||2011-7-14|tvrss site does not exist anymore
@@ -2356,43 +2356,43 @@ games/amphetamine||2011-08-01|Has expired: Looks like an abandonware, no more pu
 games/anagramarama||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
 games/connect4||2011-08-01|Has expired
 games/wrogue||2011-08-01|Has expired: No more public distfiles, looks like an abandonware
-graphics/xmms-msa||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
-japanese/chimera||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/drpl||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/dvi2tty||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/easypr||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/elisp-manual||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/emacs-manual||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/ewipe||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/ircII||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/jhd||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/libjconv||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/mimekit||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/nethack32||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/paledit||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/plain2||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/recjis||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/typist||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/weblint97||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/xmsgsaver||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-japanese/xshodo||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+graphics/xmms-msa||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/chimera||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/drpl||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/dvi2tty||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/easypr||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/elisp-manual||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/emacs-manual||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/ewipe||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/ircII||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/jhd||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/libjconv||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/mimekit||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/nethack32||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/paledit||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/plain2||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/recjis||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/typist||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/weblint97||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/xmsgsaver||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+japanese/xshodo||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 japanese/xvi-euc||2011-08-01|Has expired: No more public distfiles
 japanese/xvi-sjis||2011-08-01|Has expired: No more public distfiles
-japanese/xyagamo||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+japanese/xyagamo||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 korean/a2ps||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
-korean/bitchx||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-korean/elm||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-korean/linuxdoc-sgml||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-korean/mod_url||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-korean/nh2ps||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+korean/bitchx||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+korean/elm||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+korean/linuxdoc-sgml||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+korean/mod_url||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+korean/nh2ps||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 korean/pinetreefonts||2011-08-01|Has expired: No more public distfile
 mail/bincimap||2011-08-01|Has expired: No more public distfile
 mail/cmail||2011-08-01|Has expired: No more public distfile
-math/hexcalc||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-math/qgfe||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-misc/ewipe||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-misc/gkrellmfmonitor2||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-misc/gkx86info||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+math/hexcalc||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+math/qgfe||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+misc/ewipe||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+misc/gkrellmfmonitor2||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+misc/gkx86info||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 multimedia/goggles||2011-08-01|Has expired: Abandonware, see: http://www.fifthplanet.net/2010/01/dead-projects-goggles-dvd-player.html
 multimedia/ldvd||2011-08-01|Has expired: Abandonware
 multimedia/linux-divx4linux||2011-08-01|Has expired: No more needed
@@ -2400,15 +2400,15 @@ multimedia/linux-divx4linux4||2011-08-01|Has expired: No more needed
 multimedia/ogle||2011-08-01|Has expired: Abandonware
 multimedia/ogle-gui||2011-08-01|Has expired: Abandonware
 multimedia/okle||2011-08-01|Has expired: Abandonware
-multimedia/subconv||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-net/callgen323||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+multimedia/subconv||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+net/callgen323||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 net/lyntin||2011-08-01|Has expired: No longer under active development
 net/py-rt||2011-08-01|Has expired: No more public distfiles, looks like an abandonware
 net/rwhoisd||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 net/traffic||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 net-im/gnomeicu||2011-08-01|Has expired: No longer maintain by upstream, use net-im/empathy instead
-net-mgmt/trafd||2011-08-01|Has expired: Look like an abandonware, no more public distifles
-net-p2p/gkrellm-gift||2011-08-01|Has expired: Look like an abandonware, no more public distifles
+net-mgmt/trafd||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+net-p2p/gkrellm-gift||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 news/bgrab||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 news/rkive||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 polish/sap||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
@@ -2489,9 +2489,9 @@ textproc/ruby-raspell||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 textproc/ruby-tempura||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 textproc/ruby-xtemplate||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 www/ruby-tmpl||2011-08-03|Has expired: Doesn't work with Ruby 1.9
-x11/gcursor||2011-08-03|No longer maintained by upline.
-www/firefox35||2011-08-03|Has expired: Upstream support dropped. Please consider using www/firefox instead.
-www/firefox35-i18n||2011-08-03|Has expired: Upstream support dropped. Please consider using www/firefox-i18n instead.
+x11/gcursor||2011-08-03|No longer maintained upstream
+www/firefox35||2011-08-03|Has expired: Upstream support dropped. Please consider using www/firefox instead
+www/firefox35-i18n||2011-08-03|Has expired: Upstream support dropped. Please consider using www/firefox-i18n instead
 graphics/leptonlib|graphics/leptonica|2011-08-05|Follow upstream name change
 lang/gnustep-libobjc|lang/libobjc2|2011-08-06|Replaced with libobjc2
 sysutils/p5-mogilefs-server|sysutils/p5-MogileFS-Server|2011-08-08|Move to a better place via repocopy
@@ -2501,7 +2501,7 @@ security/drweb||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-postfix||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-qmail||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-sendmail||2011-08-10|Has expired: fails to fetch (website rearranged)
-math/hs-category-extras||2011-08-14|Removed: this package is obsolete.
+math/hs-category-extras||2011-08-14|Removed: this package is obsolete
 lang/p5-POE-Component-Hailo||2011-08-14|Removed
 java/jdk14-doc|java/jdk16-doc|2011-08-14|Removed: jdk14 has been removed
 audio/coverhunter||2011-08-14|Has expired: required Amazon Developer Tokens are no longer available
@@ -2656,7 +2656,7 @@ palm/isilo||2011-09-22|Has expired: No more public distfiles
 news/ija||2011-09-22|Has expired: BROKEN for more than 6 month
 news/PicMonger||2011-09-22|Has expired: Abandonware
 net/py-zopeproxy|net/py-zope.proxy|2011-09-23|Removed: please use net/py-zope.proxy instead
-devel/libnotifymm||2011-09-23|Has expired: Doesn't build and isn't used by anything.
+devel/libnotifymm||2011-09-23|Has expired: Doesn't build and isn't used by anything
 games/abuse||2011-09-23|Has expired: BROKEN after games/abuse_sdl update
 security/donkey||2011-09-23|Has expired: No more public distfiles
 graphics/moth||2011-09-23|Has expired: No more public distfiles
@@ -2715,7 +2715,7 @@ www/zope-coreblog2||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-i18nlayer||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-plonelanguagetool||2011-09-30|Depends on www/plone, which is FORBIDDEN
 www/zope-simpleblog||2011-09-30|Depends on www/plone, which is FORBIDDEN
-dns/nsd2||2011-09-30|EOL since 2007, unsupported. Use dns/nsd instead.
+dns/nsd2||2011-09-30|EOL since 2007, unsupported. Use dns/nsd instead
 audio/orpheus|audio/cmus|2011-10-01|Has expired: Contains problem with autotools, security CVE-2005-3863. Use audio/cmus instead
 sysutils/syslog-ng3-devel|sysutils/syslog-ng-devel|2011-10-04|Port renamed
 sysutils/cfvers||2011-10-04|Has expired: Dead upstream, author disowns it, use git/hg instead
