@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/CursorControl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/cursorcontrol.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/trans_cur.mask
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/trans_cur.xbm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/CursorControl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/CursorControl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
