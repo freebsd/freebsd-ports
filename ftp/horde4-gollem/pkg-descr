@@ -1,0 +1,5 @@
+Gollem is a web-based File Manager, providing the ability to fully manage
+a hierarchical file system stored in a variety of backends such as a SQL
+database, as part of a real filesystem, or on FTP, Samba or SSH servers.
+
+WWW: http://www.horde.org/apps/gollem/
