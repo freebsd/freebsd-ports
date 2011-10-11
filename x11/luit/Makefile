@@ -15,6 +15,7 @@ COMMENT=	Locale and ISO 2022 support for Unicode terminals
 XORG_CAT=	app
 USE_XORG=	x11 fontenc
 
+CFLAGS+=	-DBSD
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/lib
 
 PLIST_FILES=	bin/luit
