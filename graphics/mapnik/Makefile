@@ -5,14 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mapnik
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTNAME=	mapnik2
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	BERLIOS
+MASTER_SITE_SUBDIR=	mapnik
+DISTNAME=	mapnik-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Free Toolkit For Developing Mapping Applications
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		png:${PORTSDIR}/graphics/png \
@@ -21,30 +25,28 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		icuuc:${PORTSDIR}/devel/icu \
 		boost_system:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
-		icu>=4.1.4:${PORTSDIR}/devel/icu \
+		icu>=4.2:${PORTSDIR}/devel/icu \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu \
-		boost-libs>1.41:${PORTSDIR}/devel/boost-libs \
+		boost-libs>=1.45:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python-libs
 
-LICENSE=	LGPL21
-LICENSE_FILE=   ${WRKSRC}/COPYING
-
 USE_BZIP2=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 USE_LDCONFIG=	yes
 USE_SCONS=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig libxml2
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+CONFLICTS=	mapnik-1.*
 
 INPUT_PLUGINS=	raster shape
 
 OPTIONS=	CAIRO "Enable cairo rendering" on \
+		SQLITE "SQLite input plugin" on \
+		OGR "ogr input plugin" on \
+		GDAL "gdal input plugin" on \
 		POSTGIS "Postgis input plugin" on \
-		GDAL "gdal input plugin" off \
-		OGR "ogr input plugin" off \
-		SQLITE "SQLite input plugin" off \
 		OSM "OSM input plugin" off
 
 .include <bsd.port.options.mk>
@@ -65,7 +67,7 @@ PLIST_SUB+=	POSTGIS=""
 PLIST_SUB+=	POSTGIS="@comment "
 .endif
 
-.if defined(WITH_GDAL)
+.if !defined(WITHOUT_GDAL)
 INPUT_PLUGINS+=	gdal
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
@@ -73,7 +75,7 @@ PLIST_SUB+=	GDAL=""
 PLIST_SUB+=	GDAL="@comment "
 .endif
 
-.if defined(WITH_OGR)
+.if !defined(WITHOUT_OGR)
 INPUT_PLUGINS+=	ogr
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	OGR=""
@@ -81,7 +83,7 @@ PLIST_SUB+=	OGR=""
 PLIST_SUB+=	OGR="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if !defined(WITHOUT_SQLITE)
 INPUT_PLUGINS+=	sqlite
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 PLIST_SUB+=	SQLITE=""
