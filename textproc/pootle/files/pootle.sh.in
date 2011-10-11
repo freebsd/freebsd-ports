@@ -46,7 +46,7 @@ start_cmd="pootle_start_cmd"
 
 pootle_start_cmd () {
 	[ -z "${rc_quiet}" ] && echo "Starting ${name}."
-	/usr/sbin/daemon -p ${pidfile} -u ${pootle_user} ${command} \
+	/usr/sbin/daemon -p ${pidfile} -u ${pootle_user} ${command} ${pootle_flags} \
 		>>${pootle_stdout} 2>>${pootle_stderr}
 }
 
