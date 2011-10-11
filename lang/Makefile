@@ -16,6 +16,7 @@
     SUBDIR += atlast
     SUBDIR += awka
     SUBDIR += bas2tap
+    SUBDIR += basic256
     SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += boo
