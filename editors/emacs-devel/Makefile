@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -190,7 +191,7 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .if defined(WITHOUT_IMAGEMAGICK)
 CONFIGURE_ARGS+=	--without-imagemagick
 .else
-LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=		MagickCore.5:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITHOUT_M17N)

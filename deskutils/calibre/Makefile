@@ -7,13 +7,14 @@
 
 PORTNAME=	calibre
 PORTVERSION=	0.8.15
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		wmflite:${PORTSDIR}/graphics/libwmf \

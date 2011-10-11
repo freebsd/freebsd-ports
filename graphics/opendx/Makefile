@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick	\
+LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick	\
 		tiff.4:${PORTSDIR}/graphics/tiff		\
 		cdf.0:${PORTSDIR}/science/cdf
 
