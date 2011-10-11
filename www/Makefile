@@ -282,6 +282,7 @@
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
     SUBDIR += horde4-base
+    SUBDIR += horde4-wicked
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
