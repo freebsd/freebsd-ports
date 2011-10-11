@@ -1,6 +1,6 @@
 #!/bin/sh
 #-
-# Copyright (c) 2007 Dag-Erling Coïdan Smørgrav
+# Copyright (c) 2007 Dag-Erling SmÃ¸rgrav
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
