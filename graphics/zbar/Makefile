@@ -7,6 +7,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=	--with-x=no --without-xshm --without-xv
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick++.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick=yes
 PLIST_SUB+=	IMAGEMAGICK=""
 MAN1=	zbarimg.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	mp3plot
 DISTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick++.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--disable-magick
 .endif

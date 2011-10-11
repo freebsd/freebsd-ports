@@ -7,6 +7,7 @@
 
 PORTNAME=	cuneiform
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://launchpadlibrarian.net/69906918/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
@@ -34,7 +35,7 @@ CMAKE_ARGS=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -ldlmalloc"
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-extract:

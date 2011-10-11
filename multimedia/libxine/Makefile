@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.19
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "

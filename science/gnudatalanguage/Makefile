@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -56,7 +56,7 @@ PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=--with-Magick=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-Magick=no

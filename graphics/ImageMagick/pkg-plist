@@ -21,7 +21,7 @@ etc/ImageMagick/log.xml
 etc/ImageMagick/magic.xml
 etc/ImageMagick/mime.xml
 etc/ImageMagick/policy.xml
-etc/ImageMagick/sRGB.icm
+etc/ImageMagick/sRGB.icc
 etc/ImageMagick/thresholds.xml
 etc/ImageMagick/type.xml
 etc/ImageMagick/type-dejavu.xml
@@ -384,15 +384,15 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
-lib/libMagick++.so.4
+lib/libMagick++.so.5
 lib/libMagickCore.a
 lib/libMagickCore.la
 lib/libMagickCore.so
-lib/libMagickCore.so.4
+lib/libMagickCore.so.5
 lib/libMagickWand.a
 lib/libMagickWand.la
 lib/libMagickWand.so
-lib/libMagickWand.so.4
+lib/libMagickWand.so.5
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/Magick++.pc
 libdata/pkgconfig/ImageMagick.pc

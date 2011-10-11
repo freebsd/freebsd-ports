@@ -7,14 +7,14 @@
 
 PORTNAME=	kallery
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics www kde
 MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image gallery generator for KDE
 
-LIB_DEPENDS=	MagickCore.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickCore.5:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		does not build
 DEPRECATED=		does not build; last release 20010511

@@ -8,7 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.8.11.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -51,7 +51,7 @@ LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
 .if defined(WITHOUT_IMAGEMAGICK)
 CONFIGURE_ARGS+=	--without-imagemagick
 .else
-LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .include <bsd.port.post.mk>

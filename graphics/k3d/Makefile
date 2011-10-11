@@ -9,7 +9,7 @@
 PORTNAME=	k3d
 PORTVERSION=	0.6.7.0
 DISTVERSIONSUFFIX=-src
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/K-3D%20Source/K-3D%20${PORTVERSION}
 
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling, animation, and rendering system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		gts.5:${PORTSDIR}/graphics/gts \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \

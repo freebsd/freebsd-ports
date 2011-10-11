@@ -7,6 +7,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -34,7 +35,7 @@ WITH_FREETYPE=		yes
 .if exists(${LOCALBASE}/lib/libiconv.so)
 WITH_ICONV=		yes
 .endif
-.if exists(${LOCALBASE}/lib/libMagickWand.so.4)
+.if exists(${LOCALBASE}/lib/libMagickWand.so.5)
 WITH_IMAGEMAGICK=	yes
 .endif
 
@@ -43,7 +44,7 @@ USE_ICONV=	yes
 CFLAGS+=	-DICONV_CONV=yes
 .endif
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
