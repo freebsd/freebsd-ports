@@ -4,6 +4,6 @@ architectures), DOS, Win32, BeOS, and OpenVMS.  Its primary purpose is to
 detect weak Unix passwords.  Besides several crypt(3) password hash types
 most commonly found on various Unix flavors, supported out of the box are
 Kerberos AFS and Windows NT/2000/XP/2003 LM hashes, plus several more with
-contributed patches.
+contributed patches (over 40 of additional hash and cipher types).
 
 WWW: http://www.openwall.com/john/
