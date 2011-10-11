@@ -7,6 +7,7 @@
 
 PORTNAME=	RestrictedPython
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +18,16 @@ COMMENT=	Restricted execution environment for Python
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 270
+PLIST_SUB+=	PYTHON27=""
+.else
+PLIST_SUB+=	PYTHON27="@comment "
+.endif
+
+.include <bsd.port.post.mk>
