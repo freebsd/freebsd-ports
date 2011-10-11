@@ -1,4 +1,5 @@
 bin/html2xhtml
+bin/html5debug
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/DecodeHandle.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/Info.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/UnicodeChecker.pm
@@ -6,7 +7,6 @@ bin/html2xhtml
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/WebLatin1.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/WebThai.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Error.pm
-%%SITE_PERL%%/HTML/HTML5/Parser/NamedEntityList.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/TagSoupParser.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Tokenizer.pm
 %%SITE_PERL%%/HTML/HTML5/Parser.pm
