@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	280.13
+DISTVERSION?=	285.05.09
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -28,7 +28,8 @@ USE_LDCONFIG=	yes
 # NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
 # passed to compiler and broken build on HEAD since r221320 when option
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
-# fixed upstream, use this hack below to universally set NVIDIA_ROOT.
+# fixed upstream across all versions (including legacy ones), use this
+# hack below to universally set NVIDIA_ROOT.
 MAKE_ENV=	NVIDIA_ROOT=${WRKSRC}
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
@@ -101,19 +102,6 @@ post-patch: .SILENT
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
-.endif
-# Fix the build against Clang (also GCC with -Wformat-security)
-.if ${NVVERSION} >= 2704106
-	${REINPLACE_CMD} -E \
-		's/(^ +)snprintf(\(.+)(, .+)(, .+)\)/\1strlcpy\2\4\3)/' \
-			${WRKSRC}/src/nvidia_os.c
-.endif
-# Fix an apparent typo (present in several versions since 260.19.12)
-	${REINPLACE_CMD} -e 's/status != status/status != RM_OK/' \
-		${WRKSRC}/src/nvidia_os.c
-# Fix the build after fget(9) KPI was changed in r224778
-.if ${OSVERSION} > 900040 && ${NVVERSION} >= 1952200
-	${REINPLACE_CMD} -e '/fget/s/&fp/0, &/' ${WRKSRC}/src/nvidia_linux.c
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
