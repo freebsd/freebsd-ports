@@ -24,7 +24,7 @@ ADS			Adds Asyncronous DNS Support
 ALSA			Adds ALSA support
 APACHE			Include support for APACHE_PORT
 ARTS			aRts support via the KDE sound daemon
-ASPELL			Use textproc/aspell for spell checking
+ASPELL			Use Aspell (textproc/aspell) for spell checking
 ATLAS			Use ATLAS instead of BLAS/LAPACK
 AUDIOFILE		Adds audiofile support
 AVAHI			Adds Avahi support
@@ -46,11 +46,11 @@ CURL			cURL generic file transfer library support
 DBUS			Adds support for D-Bus (Desktop Bus)
 DEBUG			Enables debugging support
 DEDICATED		Enables dedicated server
-DOCS			Install Documentation
-DOXYGEN			Build Doxygen Documentation
+DOCS			Install documentation
+DOXYGEN			Build Doxygen documentation
 DTS			DTS coherent acoustics decoding (some DVDs)
 DV			Digital Video used by many digital camcorders
-DVD			Enables General DVD support
+DVD			Enables general DVD support
 DVDNAV			Enables DVD Menu support
 DVDREAD			Enables DVD support
 EJABBERD		Adds support for the ejabberd jabber server
@@ -73,7 +73,7 @@ GCONF			Use GConf/GConf2
 GD			Adds support for gd
 GDBM			Use gdbm db instead of system bdb
 GEOIP			Adds GeoIP support
-GETTEXT			Adds gettext support
+GETTEXT			Adds GetText support
 GHC			Prefer/use Glasgow Haskell Compiler
 GHOSTSCRIPT		Adds ghostscript support
 GIF			Adds GIF support
@@ -238,7 +238,7 @@ TRACING			Enable tracing
 TREMOR			Tremor (integer-only Vorbis) audio support
 UNICODE			Adds unicode support
 UNIXODBC		Use UnixODBC as the ODBC driver
-USB			Add devel/libusb support for USB devices
+USB			Adds devel/libusb support for USB devices
 V4L			Adds Video 4 Linux support
 VIDEO			Enable video support
 VORBIS			OGG/Vorbis audio support
