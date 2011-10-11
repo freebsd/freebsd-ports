@@ -7,10 +7,15 @@ etc/john.conf.default
 %%DATADIR%%/all.chr
 %%DATADIR%%/alnum.chr
 %%DATADIR%%/alpha.chr
+%%DATADIR%%/cmpt_cp.pl
 %%DATADIR%%/digits.chr
+%%DATADIR%%/dumb16.conf
+%%DATADIR%%/dumb32.conf
+%%DATADIR%%/generic.conf
 %%DATADIR%%/genincstats.rb
 %%DATADIR%%/lanman.chr
 %%DATADIR%%/ldif2pw.pl
+%%DATADIR%%/mailer
 %%DATADIR%%/netntlm.pl
 %%DATADIR%%/netscreen.py
 %%DATADIR%%/password.lst

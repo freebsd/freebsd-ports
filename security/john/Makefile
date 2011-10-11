@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	john
-DISTVERSION=	1.7.7-jumbo-6
+DISTVERSION=	1.7.8-jumbo-7
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
@@ -19,6 +19,7 @@ COMMENT=	Featureful Unix password cracker
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 OSNAME=		${OPSYS:L}
@@ -69,8 +70,8 @@ do-install:
 	${LN} -sf john ${PREFIX}/bin/xtract
 	${LN} -sf john ${PREFIX}/bin/unshadow
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/run/*.??? ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/run/*.?? ${DATADIR}
+	cd ${WRKSRC}/run && ${INSTALL_DATA} *.??? [^j]*.conf ${DATADIR}
+	cd ${WRKSRC}/run && ${INSTALL_SCRIPT} *.?? mailer ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
 		${PREFIX}/etc/john.conf.default
 .if !exists(${PREFIX}/etc/john.conf)
