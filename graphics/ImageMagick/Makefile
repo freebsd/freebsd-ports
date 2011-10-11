@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.2-10
+DISTVERSION=	6.7.3-0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
-		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/
+		http://image_magick.veidrodis.com/image_magick/ \
+		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
+		ftp://ftp.nluug.nl/pub/ImageMagick/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
@@ -49,7 +50,8 @@ OPTIONS=\
 	IMAGEMAGICK_JBIG	"JBIG format support" on \
 	IMAGEMAGICK_JPEG	"JPG format support" on \
 	IMAGEMAGICK_JPEG2000	"JPEG2000 format support" on \
-	IMAGEMAGICK_LCMS	"LCMS support" on \
+	IMAGEMAGICK_LCMS2	"LCMS version 2 support" on \
+	IMAGEMAGICK_LCMS	"LCMS version 1 support" off \
 	IMAGEMAGICK_LZMA	"LZMA support" on \
 	IMAGEMAGICK_LQR		"Liquid Rescale support" on \
 	IMAGEMAGICK_MODULES	"Modules support" on \
@@ -59,10 +61,11 @@ OPTIONS=\
 	IMAGEMAGICK_PERL	"Perl support" on \
 	IMAGEMAGICK_PNG		"PNG format support" on \
 	IMAGEMAGICK_SVG		"SVG format support (requires X11)" on \
-	IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
+	IMAGEMAGICK_TESTS	"Run bundled self-tests after build" off \
 	IMAGEMAGICK_TIFF	"TIFF format support" on \
 	IMAGEMAGICK_TTF		"Freetype support" on \
-	IMAGEMAGICK_WMF		"WMF format support" off \
+	IMAGEMAGICK_WEBP	"WEBP support" on \
+	IMAGEMAGICK_WMF		"WMF format support" on \
 	THREADS			"Threads support" off
 
 .include <bsd.port.pre.mk>
@@ -74,6 +77,7 @@ IGNORE=		support for the PDF format requires ghostscript 8 and higher
 #.if defined(WITH_IMAGEMAGICK_HDRI)
 #BROKEN=			hdri support broken, disable in options
 #CONFIGURE_ARGS+=	--enable-hdri
+#_NO_IMAGEMAGICK_TESTS=yes
 #.else
 CONFIGURE_ARGS+=	--disable-hdri
 #.endif
@@ -272,11 +276,17 @@ LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/xz
 CONFIGURE_ARGS+=	--without-lzma
 .endif
 
-# LCMS (Little CMS) color management
-.if !defined(WITHOUT_IMAGEMAGICK_LCMS)
-LIB_DEPENDS+=		lcms:${PORTSDIR}/graphics/lcms
-.else
+# LCMS (Little CMS) color management version 2 and 1 (mutually exclusive)
+.if !defined(WITHOUT_IMAGEMAGICK_LCMS2)
+LIB_DEPENDS+=		lcms2:${PORTSDIR}/graphics/lcms2
 CONFIGURE_ARGS+=	--without-lcms
+.else
+CONFIGURE_ARGS+=	--without-lcms2
+. if !defined(WITHOUT_IMAGEMAGICK_LCMS)
+LIB_DEPENDS+=		lcms:${PORTSDIR}/graphics/lcms
+. else
+CONFIGURE_ARGS+=	--without-lcms
+. endif
 .endif
 
 # Freetype (TrueType Font) support
@@ -286,6 +296,16 @@ USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
+.endif
+
+# Webp support
+.if !defined(WITHOUT_IMAGEMAGICK_WEBP)
+LIB_DEPENDS+=		webp:${PORTSDIR}/graphics/webp
+CONFIGURE_ARGS+=	--with-webp
+PLIST_SUB+=		WEBP=""
+.else
+CONFIGURE_ARGS+=	--without-webp
+PLIST_SUB+=		WEBP="@comment "
 .endif
 
 # Fontconfig support
@@ -300,8 +320,12 @@ CONFIGURE_ARGS+=	--without-fontconfig
 .endif
 
 # WMF (Windows Meta File) images
-.if defined(WITH_IMAGEMAGICK_WMF)
+.if !defined(WITHOUT_IMAGEMAGICK_WMF)
+. if !defined(WITHOUT_X11)
 LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf
+. else
+LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf-nox11
+. endif
 CONFIGURE_ARGS+=	--with-wmf=yes
 CFLAGS+=		-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=		WMF=""
@@ -329,8 +353,10 @@ USE_GHOSTSCRIPT=	yes
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x
+CONFLICTS+=		ImageMagick-6*
 PLIST_SUB+=		X11='@comment '
 .else
+CONFLICTS+=		ImageMagick-nox11-6*
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=		xext xt
@@ -347,8 +373,15 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install install-data-html
 .endif
 
+# Test suite, requires installed ghostscript to pass
 .if ${ARCH} == sparc64
-WITHOUT_IMAGEMAGICK_TESTS=yes
+_NO_IMAGEMAGICK_TESTS=yes
+.endif
+
+.if defined(PACKAGE_BUILDING) || defined(WITH_IMAGEMAGICK_TESTS)
+. if !defined(_NO_IMAGEMAGICK_TESTS)
+USE_GHOSTSCRIPT_BUILD=yes
+. endif
 .endif
 
 post-patch:
@@ -389,6 +422,13 @@ pre-configure:
 	@${ECHO_CMD} NOTICE: ${_IMAGEMAGICK_THREADS_PERL_MSG}. Building ImageMagick ${_IMAGEMAGICK_THREADS_MSG}.
 	@${ECHO_CMD} '###################################################################'
 .endif
+.if !defined(WITHOUT_IMAGEMAGICK_LCMS2) && defined(WITH_IMAGEMAGICK_LCMS)
+	@${ECHO_CMD} '###################################################################'
+	@${ECHO_CMD} 'WARNING: both WITH_IMAGEMAGICK_LCMS and WITH_IMAGEMAGICK LCMS2'
+	@${ECHO_CMD} '         selected, LCMS2 has precedence and will be used'
+	@${ECHO_CMD} '###################################################################'
+.endif
+
 .if defined(WITH_IMAGEMAGICK_SVG) && defined(WITHOUT_X11)
 	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
@@ -408,23 +448,11 @@ post-install:
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
 
-.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
-.	for m in TTF
-.		if defined(WITHOUT_IMAGEMAGICK_$m)
-WITHOUT_IMAGEMAGICK_TESTS=yes
-.		endif
-.	endfor
-.endif
-.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
-.	for m in MODULES HDRI
-.		if defined(WITH_IMAGEMAGICK_$m)
-WITHOUT_IMAGEMAGICK_TESTS=yes
-.		endif
-.	endfor
-.endif
-
-.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
-post-build:	test
+.if !defined(_NO_IMAGEMAGICK_TESTS)
+regression-test:	test
+. if !defined(PACKAGE_BUILDING) && defined(WITH_IMAGEMAGICK_TESTS)
+post-build:	regression-test
+. endif
 .endif
 
 .include <bsd.port.post.mk>
