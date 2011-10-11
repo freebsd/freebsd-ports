@@ -356,6 +356,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/viff.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/wbmp.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/wbmp.so
+%%WEBP%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/webp.la
+%%WEBP%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/webp.so
 %%WMF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/wmf.la
 %%WMF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/wmf.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/wpg.la
