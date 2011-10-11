@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -45,7 +45,6 @@ PKGNAMESUFFIX=	-nocups
 CONFIGURE_ARGS+=--disable-cups
 PLIST=		${.CURDIR}/../kdelibs3-nocups/pkg-plist
 .else
-BROKEN=		does not build
 CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
