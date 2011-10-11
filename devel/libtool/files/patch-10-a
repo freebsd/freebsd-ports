@@ -1,0 +1,40 @@
+From e94c6d6e0359d92f08f491f57e0ef3371e978952 Mon Sep 17 00:00:00 2001
+From: Gerald Pfeifer <gerald@pfeifer.com>
+Date: Thu, 20 Jan 2011 18:35:14 +0000
+Subject: Remove support for FreeBSD 1.x.
+
+* libltdl/m4/libtool.m4 (_LT_LINKER_SHLIBS)
+(_LT_SYS_DYNAMIC_LINKER): Remove handling of freebsd1* which
+soon would incorrectly match FreeBSD 10.0.
+* NEWS, THANKS: Update.
+
+Signed-off-by: Ralf Wildenhues <Ralf.Wildenhues@gmx.de>
+---
+diff --git a/libltdl/m4/libtool.m4 b/libltdl/m4/libtool.m4
+index ba2d5e4..033c9a0 100644
+--- libltdl/m4/libtool.m4
++++ libltdl/m4/libtool.m4
+@@ -2455,10 +2455,6 @@ dgux*)
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ freebsd* | dragonfly*)
+   # DragonFly does not have aout.  When/if they implement a new
+   # versioning mechanism, adjust this.
+@@ -5178,10 +5174,6 @@ _LT_EOF
+       _LT_TAGVAR(hardcode_shlibpath_var, $1)=no
+       ;;
+ 
+-    freebsd1*)
+-      _LT_TAGVAR(ld_shlibs, $1)=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+--
+cgit v0.8.3.4
