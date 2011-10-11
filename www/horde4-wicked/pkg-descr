@@ -1,0 +1,15 @@
+Wicked is a Wiki for the Horde framework. It uses PEAR's Text_Wiki package
+for markup rules, parsing, and rendering. It supports Creole, Mediawiki,
+Tiki Wiki, and its own markup engine.
+
+Some of Wicked's features are:
+
+    Configurable markup engine
+    HTML, plain text, Latex, reStructuredText output rendering
+    Change tracking and revision history
+    Full-text searching
+    Per-page permissions
+    Attachments with versioning
+    Wiki synchronization
+
+WWW: http://www.horde.org/apps/wicked/
