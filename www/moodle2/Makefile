@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable21/ \
 		http://download2.moodle.org/stable21/ \
