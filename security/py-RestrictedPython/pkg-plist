@@ -52,8 +52,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after26.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after26.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after27.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after27.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after27.pyo
+%%PYTHON27%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after27.pyc
+%%PYTHON27%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/before_and_after27.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/class.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/class.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/class.pyo
@@ -70,8 +70,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax26.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax26.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax27.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax27.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax27.pyo
+%%PYTHON27%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax27.pyc
+%%PYTHON27%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/security_in_syntax27.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/testCompile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/testCompile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/RestrictedPython/tests/testCompile.pyo
