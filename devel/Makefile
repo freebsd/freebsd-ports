@@ -3177,6 +3177,7 @@
     SUBDIR += py-zconfig
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
+    SUBDIR += py-zope.datetime
     SUBDIR += py-zope.deprecation
     SUBDIR += py-zope.event
     SUBDIR += py-zope.exceptions
