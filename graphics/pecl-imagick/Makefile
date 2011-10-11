@@ -17,7 +17,11 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+.else
+LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick-nox11
+.endif
 
 LICENSE=	PHP301
 
