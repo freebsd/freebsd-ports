@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2011k
+DISTVERSION=	2011l
 CATEGORIES=	misc
-MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
+MASTER_SITES=	ftp://munnari.oz.au/pub/
 DISTNAME=	tzdata${DISTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
