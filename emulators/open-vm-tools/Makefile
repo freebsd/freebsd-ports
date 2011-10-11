@@ -15,13 +15,12 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@FreeBSD.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
+LICENSE=		LGPL21
+LICENSE_FILE=		${WRKSRC}/COPYING
+
 RELEASE_DATE=		2010.10.18
 BUILD_VER=		313025
 
-BROKEN=			does not compile
-
-LICENSE=		LGPL21
-LICENSE_FILE=		${WRKSRC}/COPYING
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
@@ -51,6 +50,7 @@ USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
+BROKEN=			Does not compile with X11 support
 .endif
 
 .if !defined(WITHOUT_FUSE)
