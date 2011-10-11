@@ -1,0 +1,22 @@
+--- configure.orig	2011-10-11 16:57:23.403957757 +0200
++++ configure	2011-10-11 16:58:06.944958010 +0200
+@@ -30070,8 +30070,8 @@
+ 
+   if test $passed -gt 0; then
+     for var in 5 4 2 '' ; do
+-      if test "$have_png" == 'no' ; then
+-        if test "x${var}" == 'x' ; then
++      if test "$have_png" = 'no' ; then
++        if test "x${var}" = 'x' ; then
+           pnglib='png'
+         else
+           pnglib="png1${var}"
+@@ -30080,7 +30080,7 @@
+ #       Test for compatible LIBPNG library
+         failed=0
+         passed=0
+-        if test "$with_png" == 'yes' -o "$with_png" == "libpng1${var}" ; then
++        if test "$with_png" = 'yes' -o "$with_png" = "libpng1${var}" ; then
+           if test "${pnglib}" != 'png' ; then
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBPNG1${var} support " >&5
+ $as_echo_n "checking for LIBPNG1${var} support ... " >&6; }
