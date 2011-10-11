@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.13.1
-PORTREVISION=	1
+PORTVERSION=	2.13.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -50,7 +49,7 @@ CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
 		ICU		"Improve collation in multibyte locales with ICU" on \
 		NLS		"Build with NLS support" on \
-		PCRE_PORT	"Use PCRE port instead of bundled source" off \
+		PCRE_PORT	"Use PCRE port instead of bundled source" on \
 		THREADS		"Build a multithreaded R" on
 .if !defined(LIBR_SLAVEPORT)
 OPTIONS+=	GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
@@ -130,7 +129,6 @@ PLIST_SUB+=		NLS="@comment "
 .if defined(WITHOUT_PCRE_PORT)
 CONFIGURE_ARGS+=	--without-system-pcre
 .else
-BROKEN =	WITH_PCRE_PORT breaks document generation with pcre 8.13
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-system-pcre
 .endif
