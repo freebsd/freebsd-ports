@@ -217,6 +217,8 @@ libexec/mc/mc.sh
 %%NLS%%@dirrmtry share/locale/sv_SE
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ia
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
 @dirrm libexec/mc/fish
