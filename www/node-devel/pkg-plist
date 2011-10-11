@@ -14,7 +14,6 @@ include/node/uv-private/eio.h
 include/node/uv-private/ev.h
 include/node/uv-private/ngx-queue.h
 include/node/uv-private/tree.h
-include/node/uv-private/uv-linux.h
 include/node/uv-private/uv-unix.h
 include/node/uv-private/uv-win.h
 include/node/uv.h
