@@ -561,6 +561,7 @@
     SUBDIR += horde-whups
     SUBDIR += horde4-content
     SUBDIR += horde4-timeobjects
+    SUBDIR += horde4-whups
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hs-BNFC
