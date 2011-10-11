@@ -7,6 +7,7 @@
 
 PORTNAME=	cuse4bsd-kmod
 PORTVERSION=	0.1.21
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -23,6 +24,7 @@ KMODNAME=	cuse4bsd
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 MANDIR=		${PREFIX}/man/man
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	KMODNAME="${KMODNAME}" \
 		KMODDIR="${KMODDIR}" \
