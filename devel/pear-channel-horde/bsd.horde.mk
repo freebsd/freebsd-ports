@@ -71,6 +71,7 @@ horde-Horde_Routes-DEPEND=	${PEARDIR}/Horde/Routes/Route.php:${PORTSDIR}/www/pea
 horde-Horde_Secret-DEPEND=	${PEARDIR}/Horde/Secret.php:${PORTSDIR}/security/pear-Horde_Secret
 horde-Horde_Serialize-DEPEND=	${PEARDIR}/Horde/Serialize.php:${PORTSDIR}/devel/pear-Horde_Serialize
 horde-Horde_SessionHandler-DEPEND=	${PEARDIR}/Horde/SessionHandler.php:${PORTSDIR}/www/pear-Horde_SessionHandler
+horde-Horde_Scheduler-DEPEND=	${PEARDIR}/Horde/Scheduler.php:${PORTSDIR}/devel/pear-Horde_Scheduler
 horde-Horde_Scribe-DEPEND=	${PEARDIR}/Horde/Scribe.php:${PORTSDIR}/net/pear-Horde_Scribe
 horde-Horde_Share-DEPEND=	${PEARDIR}/Horde/Share/Base.php:${PORTSDIR}/security/pear-Horde_Share
 horde-Horde_SpellChecker-DEPEND=	${PEARDIR}/Horde/SpellChecker.php:${PORTSDIR}/textproc/pear-Horde_SpellChecker
