@@ -368,6 +368,9 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/previewerr.py
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/previewerr.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/previewerr.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/dialogs/recognition.py
+%%PYTHON_SITELIBDIR%%/gaupol/dialogs/recognition.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/dialogs/recognition.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/save.py
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/save.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/dialogs/save.pyo
@@ -468,7 +471,12 @@ share/applications/gaupol.desktop
 %%DATADIR%%/extensions/bookmarks/bookmarks.py
 %%DATADIR%%/extensions/bookmarks/bookmarks.pyo
 %%DATADIR%%/extensions/bookmarks/bookmarks.ui.xml
+%%DATADIR%%/extensions/custom-framerates/add-framerate-dialog.ui
 %%DATADIR%%/extensions/custom-framerates/custom-framerates.gaupol-extension
+%%DATADIR%%/extensions/custom-framerates/custom-framerates.py
+%%DATADIR%%/extensions/custom-framerates/custom-framerates.pyo
+%%DATADIR%%/extensions/custom-framerates/custom-framerates.ui.xml
+%%DATADIR%%/extensions/custom-framerates/preferences-dialog.ui
 %%DATADIR%%/extensions/side-pane/side-pane.gaupol-extension
 %%DATADIR%%/extensions/side-pane/side-pane.py
 %%DATADIR%%/extensions/side-pane/side-pane.pyo
@@ -518,6 +526,7 @@ share/applications/gaupol.desktop
 %%DATADIR%%/ui/open-dialog.ui
 %%DATADIR%%/ui/preferences-dialog.ui
 %%DATADIR%%/ui/previewerr-dialog.ui
+%%DATADIR%%/ui/recognition-dialog.ui
 %%DATADIR%%/ui/save-dialog.ui
 %%DATADIR%%/ui/search-dialog.ui
 %%DATADIR%%/ui/shift-dialog.ui
@@ -562,7 +571,6 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/ui/text-assistant
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/patterns

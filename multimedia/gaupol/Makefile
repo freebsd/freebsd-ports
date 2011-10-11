@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.18
+PORTVERSION=	0.19.1
 CATEGORIES=	multimedia python
-MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION}/ \
+MASTER_SITES=	http://download.gna.org/gaupol/0.19/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Subtitle editor
 
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant
-
-LICENSE=	GPLv3
 
 USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	2.6+
