@@ -31,9 +31,11 @@ USE_LDCONFIG=	yes
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--with-x=no
 PLIST_SUB+=	X11='@comment '
+CONFLICTS+=	libwmf-0.*
 .else
 USE_XORG=	x11
 PLIST_SUB+=	X11=''
+CONFLICTS+=	libwmf-nox11-0.*
 .endif
 
 post-patch:
