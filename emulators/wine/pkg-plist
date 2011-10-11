@@ -244,7 +244,6 @@ include/wine/windows/dplobby.h
 include/wine/windows/dplobby8.h
 include/wine/windows/dpnathlp.h
 include/wine/windows/dsconf.h
-include/wine/windows/dsdriver.h
 include/wine/windows/dsgetdc.h
 include/wine/windows/dshow.h
 include/wine/windows/dsound.h
@@ -337,6 +336,7 @@ include/wine/windows/ksmedia.h
 include/wine/windows/lm.h
 include/wine/windows/lmaccess.h
 include/wine/windows/lmapibuf.h
+include/wine/windows/lmat.h
 include/wine/windows/lmbrowsr.h
 include/wine/windows/lmcons.h
 include/wine/windows/lmerr.h
@@ -466,6 +466,7 @@ include/wine/windows/oleidl.idl
 include/wine/windows/opnrst.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
+include/wine/windows/patchapi.h
 include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
 include/wine/windows/perhist.h
