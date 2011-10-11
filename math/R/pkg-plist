@@ -416,7 +416,6 @@ lib/R/library/datasets/help/datasets.rdx
 lib/R/library/datasets/help/paths.rds
 lib/R/library/datasets/html/00Index.html
 lib/R/library/datasets/html/R.css
-lib/R/library/foreign/COPYING
 lib/R/library/foreign/DESCRIPTION
 lib/R/library/foreign/INDEX
 lib/R/library/foreign/LICENCE
@@ -707,9 +706,9 @@ lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/grid.mo
 lib/R/library/lattice/CITATION
-lib/R/library/lattice/COPYING
 lib/R/library/lattice/DESCRIPTION
 lib/R/library/lattice/INDEX
+lib/R/library/lattice/LICENSE
 lib/R/library/lattice/Meta/Rd.rds
 lib/R/library/lattice/Meta/data.rds
 lib/R/library/lattice/Meta/demo.rds
@@ -798,7 +797,6 @@ lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/CITATION
-lib/R/library/nlme/COPYING
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
 lib/R/library/nlme/LICENCE
