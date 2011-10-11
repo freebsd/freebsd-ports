@@ -1,0 +1,4 @@
+HTML::HTML5::Entities is a pure Perl, drop-in replacement for HTML::Entities,
+providing the character entities defined in HTML5.
+
+WWW: http://search.cpan.org/dist/HTML-HTML5-Entities/

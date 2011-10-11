@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTML/HTML5/Entities.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/HTML5/Entities/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/HTML5/Entities
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/HTML5
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/HTML5
+@dirrmtry %%SITE_PERL%%/HTML
