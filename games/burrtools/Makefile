@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	burrtools
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A puzzle solver
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xmlwrapp.5:${PORTSDIR}/textproc/xmlwrapp \
@@ -28,8 +30,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv3
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
