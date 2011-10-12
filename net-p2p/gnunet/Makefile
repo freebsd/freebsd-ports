@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.8.1b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -25,7 +25,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gmp.10:${PORTSDIR}/math/gmp \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		extractor.3:${PORTSDIR}/textproc/libextractor \
-		microhttpd.20:${PORTSDIR}/www/libmicrohttpd
+		microhttpd.23:${PORTSDIR}/www/libmicrohttpd
 
 BROKEN=		does not configure
 
