@@ -1,14 +1,16 @@
-@version:3.2
+@version:3.3
 
 #
 # This sample configuration file is essentially equilivent to the stock
 # FreeBSD /etc/syslog.conf file.
 #
+# $FreeBSD$
+#
 
 #
 # options
 #
-options { long_hostnames(off); flush_lines(0); };
+options { chain_hostnames(off); flush_lines(0); threaded(yes); };
 
 #
 # sources
