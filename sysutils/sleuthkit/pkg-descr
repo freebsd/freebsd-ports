@@ -1,7 +1,7 @@
-The Sleuth Kit (previously known as TASK) is a collection of UNIX-based
-command line file system and media management forensic analysis tools.  The
-file system tools allow you to examine file systems of a suspect computer in
-a non-intrusive fashion.
+The Sleuth Kit (TSK) is a library and collection of command line tools that
+allow you to investigate volume and file system data.  The library can be
+incorporated into larger digital forensics tools and the command line tools
+can be directly used to find evidence.
 
 The media management tools allow you to examine the layout of disks and
 other media.  The Sleuth Kit supports DOS partitions, BSD partitions (disk
