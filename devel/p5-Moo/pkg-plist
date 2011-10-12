@@ -11,6 +11,7 @@
 %%SITE_PERL%%/Method/Inliner.pm
 %%SITE_PERL%%/Method/Generate/Accessor.pm
 %%SITE_PERL%%/Method/Generate/Constructor.pm
+%%SITE_PERL%%/Method/Generate/DemolishAll.pm
 %%SITE_PERL%%/Method/Generate/BuildAll.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo
