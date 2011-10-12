@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
+PORTSCOUT=	limit:.*[0-9]$$		# letter-suffixed files are binaries
+
 SCRIPTS=	dema dm2cat procdm2.pl
 PROGRAMS=	dbs demcut lmpc
 FETCHED_DOCS=	${PORTNAME}.html ${PORTNAME}.pdf ${PORTNAME}.sgml
