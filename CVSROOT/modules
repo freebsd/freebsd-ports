@@ -926,6 +926,7 @@ bash-completion                 ports/shells/bash-completion
 bash-static                     ports/shells/bash-static
 bashburn                        ports/sysutils/bashburn
 bashc                           ports/shells/bashc
+basic256                        ports/lang/basic256
 basicdsp                        ports/cad/basicdsp
 basket                          ports/deskutils/basket
 bass                            ports/games/bass
@@ -8290,6 +8291,7 @@ libvpx                          ports/multimedia/libvpx
 libwfut                         ports/devel/libwfut
 libwhisker                      ports/security/libwhisker
 libwmf                          ports/graphics/libwmf
+libwmf-nox11                    ports/graphics/libwmf-nox11
 libwnck                         ports/x11-toolkits/libwnck
 libwnck-reference               ports/x11-toolkits/libwnck-reference
 libworkman                      ports/audio/libworkman
@@ -12441,6 +12443,7 @@ p5-HTML-FromText                ports/www/p5-HTML-FromText
 p5-HTML-GenToc                  ports/www/p5-HTML-GenToc
 p5-HTML-GenerateUtil            ports/www/p5-HTML-GenerateUtil
 p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
+p5-HTML-HTML5-Entities          ports/textproc/p5-HTML-HTML5-Entities
 p5-HTML-HTML5-Parser            ports/textproc/p5-HTML-HTML5-Parser
 p5-HTML-HTMLDoc                 ports/textproc/p5-HTML-HTMLDoc
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
@@ -16822,6 +16825,7 @@ p5-html-generateutil            ports/www/p5-HTML-GenerateUtil
 p5-html-gentoc                  ports/www/p5-HTML-GenToc
 p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
+p5-html-html5-entities          ports/textproc/p5-HTML-HTML5-Entities
 p5-html-html5-parser            ports/textproc/p5-HTML-HTML5-Parser
 p5-html-htmldoc                 ports/textproc/p5-HTML-HTMLDoc
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
@@ -22468,6 +22472,7 @@ py-zdaemon                      ports/sysutils/py-zdaemon
 py-zfs                          ports/sysutils/py-zfs
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
+py-zope.datetime                ports/devel/py-zope.datetime
 py-zope.deprecation             ports/devel/py-zope.deprecation
 py-zope.event                   ports/devel/py-zope.event
 py-zope.exceptions              ports/devel/py-zope.exceptions
