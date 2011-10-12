@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnatpmp
-PORTVERSION=	20110618
+PORTVERSION=	20110808
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
