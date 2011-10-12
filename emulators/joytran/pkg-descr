@@ -1,0 +1,21 @@
+Joytran is a joystick to keyboard/mouse events translator written in C.
+
+The project has several advantages over similar software:
+
+- Portable to a wide variety of platforms, since it is based on SDL and the X11
+  XTest Extension (Developed on FreeBSD)
+- It is easy to use the joystick in places where it is not usually supported
+- Supports keyboard and mouse emulation
+- Supports multiple joysticks
+- Handles the presence of non-joystick devices, such as USB mice/trackballs
+  that masquerade as joysticks gracefully
+- Easy switching between profiles
+- Lightweight, with few dependencies
+- Comprehensive feature set (if there are features missing that are important
+  to you, I will at least consider implementing them)
+- Freely available (MIT License)
+
+WWW: http://chiselapp.com/user/beyert/repository/joytran/
+
+- Timothy Beyer
+beyert@cs.ucr.edu

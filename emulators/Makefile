@@ -62,6 +62,7 @@
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += its
+    SUBDIR += joytran
     SUBDIR += jzintv
     SUBDIR += klh10
     SUBDIR += kqemu-kmod
