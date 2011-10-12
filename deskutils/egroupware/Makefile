@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.002.20110811
+PORTVERSION=	1.8.002.20111011
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
 		${PEARDIR}/XML/Feed/Parser.php:${PORTSDIR}/textproc/pear-XML_Feed_Parser \
 		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log \
 		${PEARDIR}/HTTP/WebDAV/Server.php:${PORTSDIR}/www/pear-HTTP_WebDAV_Server
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PEARDIR=	${LOCALBASE}/share/pear
 USE_BZIP2=	yes
