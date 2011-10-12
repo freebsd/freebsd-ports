@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seqdiag
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,8 @@ USE_PYDISTUTILS=	easy_install
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
+MAN1=	${PORTNAME}.1
+
 PORTDOCS=	README.txt
 PORTEXAMPLES=	*
 
@@ -39,6 +41,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/examples/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 
 x-generate-plist:
 	${ECHO} bin/${PORTNAME} > pkg-plist.new
