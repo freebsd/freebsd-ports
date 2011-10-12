@@ -1,0 +1,8 @@
+File::HomeDir::PathClass is just a wrapper around File::HomeDir methods,
+transforming their return value to Path::Class objects. This allows for easier
+usage of the value.
+
+Refer to File::HomeDir#METHODS for a list of which functions are supported.
+File::HomeDir::PathClass supports both original File::HomeDir interfaces.
+
+WWW: http://search.cpan.org/dist/File-HomeDir-PathClass/
