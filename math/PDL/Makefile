@@ -66,7 +66,7 @@ LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 .endif
 
 .if defined(WITH_F77)
-BUILD_DEPENDS+=	p5-F77>=0:${PORTSDIR}/lang/p5-F77 
+BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-F77 
 .endif
 
 .if defined(WITH_FFTW)
