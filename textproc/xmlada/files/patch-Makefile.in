@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2011-10-08 21:19:00.000000000 +0200
++++ Makefile.in	2011-10-09 00:50:05.000000000 +0200
+@@ -52,10 +52,10 @@
+ .PHONY: all obj clean install install_dirs build_library_type install_library_type
+ 
+ ifeq (${BUILDS_SHARED},yes)
+-all: static relocatable
++all: static relocatable docs
+ install: install_static install_relocatable
+ else
+-all: static
++all: static docs
+ install: install_static
+ endif
+ 
+@@ -132,8 +132,6 @@
+ 	${INSTALL} distrib/xmlada_schema.gpr         ${libdir}/gnat/
+ 	${INSTALL} distrib/xmlada_unicode.gpr        ${libdir}/gnat/
+ 	${INSTALL} xmlada-config  ${bindir}
+-	-${INSTALL} docs/xml.ps   ${datadir}/doc/xmlada 2>/dev/null
+-	-${INSTALL} docs/xml.pdf  ${datadir}/doc/xmlada
+ 	-${INSTALL} docs/xml.html ${datadir}/doc/xmlada
+ 	-${INSTALL} docs/xml.info ${datadir}/doc/xmlada
+ 	${CHMOD} +x ${bindir}/xmlada-config
