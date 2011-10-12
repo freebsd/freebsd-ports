@@ -1,0 +1,9 @@
+Text::Padding provides a simple way to align a text on the left, right or
+center. If left & right are easy to achieve (see sprintf()), i found no cpan
+module that achieved a simple text centering. Well, of course, Perl6::Form
+provides it, but it's incredibly slow during startup / destroy time. And
+Text::Reform was segfaulting during destroy time.
+
+Hence this module, which aims to provide only those 3 methods.
+
+WWW: http://search.cpan.org/dist/Text-Padding/
