@@ -1717,6 +1717,7 @@
     SUBDIR += p5-File-Grep
     SUBDIR += p5-File-HStore
     SUBDIR += p5-File-HomeDir
+    SUBDIR += p5-File-HomeDir-PathClass
     SUBDIR += p5-File-Iterator
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
