@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	actdiag
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,14 +24,17 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=	easy_install
 
+MAN1=	${PORTNAME}.1
+
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 PORTDOCS=	README.txt
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/src/${PORTDOCS} ${DOCSDIR}
 .endif
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 
 x-generate-plist:
 	${ECHO} bin/${PORTNAME} > pkg-plist.new
