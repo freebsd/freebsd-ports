@@ -55,7 +55,7 @@ include/tsk3/tsk_incs.h
 lib/libtsk3.a
 lib/libtsk3.la
 lib/libtsk3.so
-lib/libtsk3.so.6
+lib/libtsk3.so.7
 %%DATADIR%%/sorter/default.sort
 %%DATADIR%%/sorter/freebsd.sort
 %%DATADIR%%/sorter/images.sort
