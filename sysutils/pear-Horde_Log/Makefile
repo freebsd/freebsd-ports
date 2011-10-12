@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Log
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
