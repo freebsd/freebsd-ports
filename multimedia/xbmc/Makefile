@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -195,7 +195,7 @@ CONFIGURE_ARGS+=	--disable-vdpau
 
 .if defined(WITH_WEBSERVER)
 CONFIGURE_ARGS+=	--enable-webserver
-LIB_DEPENDS+=	microhttpd.20:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS+=	microhttpd.23:${PORTSDIR}/www/libmicrohttpd
 PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver
