@@ -6,7 +6,7 @@ lib/libz80ex.so.1
 lib/libz80ex_dasm.a
 lib/libz80ex_dasm.so.1
 lib/libz80ex.so
-lib/libz80ex.so.1.1.18
+lib/libz80ex.so.1.1.19
 lib/libz80ex_dasm.so
-lib/libz80ex_dasm.so.1.1.18
+lib/libz80ex_dasm.so.1.1.19
 @dirrm include/z80ex
