@@ -1,0 +1,35 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/configure.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/location.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/location.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/location.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/location.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/pickling.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/pickling.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/pickling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/traversing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/traversing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location/traversing.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/location
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
