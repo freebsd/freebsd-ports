@@ -1,0 +1,13 @@
+A continuous integration plugin for Trac.
+
+Bitten is a Python-based framework for collecting various software
+metrics via continuous integration. It builds on Trac to provide
+an integrated web-based user interface. Build slaves are usually
+installed and run on multiple different systems to compile and test
+the software on these platforms on new checkins.
+
+Set bitten_slave_enable to "yes" and bitten_slave_urls to contain
+one or more Bitten build URLs. For form authentication add --form-auth
+to flags.
+
+WWW: http://bitten.edgewall.org/

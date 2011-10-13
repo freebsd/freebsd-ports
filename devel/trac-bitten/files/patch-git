@@ -1,0 +1,103 @@
+diff -urN Bitten-0.6dev-r777/bitten/build/gittools.py Bitten-0.6dev-r777.git/bitten/build/gittools.py
+--- Bitten-0.6dev-r777/bitten/build/gittools.py	1970-01-01 01:00:00.000000000 +0100
++++ Bitten-0.6dev-r777.git/bitten/build/gittools.py	2009-10-24 17:03:02.000000000 +0200
+@@ -0,0 +1,77 @@
++# -*- coding: utf-8 -*-
++# Copyright (C) Tim Niemueller [www.niemueller.de]
++# Copyright (C) 2007 Edgewall Software
++# based on hgtools.py
++#
++# This software is licensed as described in the file COPYING, which
++# you should have received as part of this distribution. The terms
++# are also available at http://bitten.edgewall.org/wiki/License.
++
++"""Recipe commands for git."""
++
++import logging
++
++log = logging.getLogger('bitten.build.gittools')
++
++__docformat__ = 'restructuredtext en'
++
++def clone(ctxt, url, dir_='.'):
++    """pull and update the local working copy from the git repository.
++    
++    :param ctxt: the build context
++    :type ctxt: `Context`
++    :param url: the url of the repository to clone
++    :param dir\_: the name of a local subdirectory containing the working copy
++    """
++    args = ['clone', url, dir_]
++
++    from bitten.build import shtools
++    returncode = shtools.execute(ctxt, file_='git', args=args)
++    if returncode != 0:
++        ctxt.error('git clone failed (%s)' % returncode)
++
++def pull(ctxt, revision, remote='origin', dir_='.'):
++    """pull and update the local working copy from the git repository.
++    
++    :param ctxt: the build context
++    :type ctxt: `Context`
++    :param remote: the remote repository to pull from
++    :param dir\_: the name of a local subdirectory containing the working copy
++    """
++    args = ['pull', '-u', remote, revision]
++
++    from bitten.build import shtools
++    returncode = shtools.execute(ctxt, file_='git', dir_=dir_, args=args)
++    if returncode != 0:
++        ctxt.error('git pull failed (%s)' % returncode)
++
++def checkout(ctxt, branch, dir_='.'):
++    """checkout specific branch
++    
++    :param ctxt: the build context
++    :type ctxt: `Context`
++    :param branch: branch to checkout
++    :param dir\_: the name of a local subdirectory containing the working copy
++    """
++    args = ['checkout', branch]
++
++    from bitten.build import shtools
++    returncode = shtools.execute(ctxt, file_='git', dir_=dir_, args=args)
++    if returncode != 0:
++        ctxt.error('git branch failed (%s)' % returncode)
++
++def reset(ctxt, revision, dir_='.'):
++    """reset git tree to given revision/commit
++    
++    :param ctxt: the build context
++    :type ctxt: `Context`
++    :param revision: the revision/commit to reset to
++    :param dir\_: the name of a local subdirectory containing the working copy
++    """
++    args = ['reset', '--hard', revision]
++
++    from bitten.build import shtools
++    returncode = shtools.execute(ctxt, file_='git', dir_=dir_, args=args)
++    if returncode != 0:
++        ctxt.error('git reset failed (%s)' % returncode)
++
+diff -urN Bitten-0.6dev-r777/setup.py Bitten-0.6dev-r777.git/setup.py
+--- Bitten-0.6dev-r777/setup.py	2009-10-16 14:15:34.000000000 +0200
++++ Bitten-0.6dev-r777.git/setup.py	2009-10-24 17:05:22.000000000 +0200
+@@ -55,6 +55,10 @@
+         'svn#export = bitten.build.svntools:export',
+         'svn#update = bitten.build.svntools:update',
+         'hg#pull = bitten.build.hgtools:pull',
++        'git#clone = bitten.build.gittools:clone',
++        'git#pull = bitten.build.gittools:pull',
++        'git#reset = bitten.build.gittools:reset',
++        'git#checkout = bitten.build.gittools:checkout',
+         'xml#transform = bitten.build.xmltools:transform'
+     ]
+ recipe_commands = [NS_old + tool for tool in tools] \
+@@ -133,6 +137,7 @@
+                   "bitten.build.pythontools",
+                   "bitten.build.shtools",
+                   "bitten.build.svntools",
++                  "bitten.build.gittools",
+                   "bitten.build.xmltools",
+                   "bitten.recipe",
+                   "bitten.slave",

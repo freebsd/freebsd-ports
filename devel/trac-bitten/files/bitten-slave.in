@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bitten_slave
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Bitten continuous integration build slave
+#
+
+. /etc/rc.subr
+
+name=bitten_slave
+rcvar=`set_rcvar`
+logfile=/var/log/bitten-slave.log
+conffile=%%ETCDIR%%/bitten-slave.conf
+workdir=/var/lib/bitten-slave
+
+load_rc_config ${name}
+
+command=%%PREFIX%%/bin/bitten-slave
+command_args="-f ${conffile} -d ${workdir} --log=${logfile} ${bitten_slave_urls}"
+command_interpreter=%%PYTHON_CMD%%
+bitten_slave_user=%%USERS%%
+pidfile=/var/lib/bitten-slave/bitten-slave.pid
+
+start_cmd=bitten_start
+stop_postcmd=bitten_cleanup
+
+bitten_start()
+{
+    echo "Starting ${name}."
+    %%TOUCH%% $logfile && %%CHOWN%% ${bitten_slave_user} $logfile
+    /usr/sbin/daemon -cf -p ${pidfile} -u ${bitten_slave_user} ${command} ${command_args}
+}
+
+bitten_cleanup() {
+    [ -f ${pidfile} ] && %%RM%% ${pidfile}
+}
+
+run_rc_command "$1"

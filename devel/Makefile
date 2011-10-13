@@ -3627,6 +3627,7 @@
     SUBDIR += tortoisehg1
     SUBDIR += tortoisehg2
     SUBDIR += tpasm
+    SUBDIR += trac-bitten
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += u-boot
