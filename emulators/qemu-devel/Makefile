@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.15.1
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
 		http://wiki.qemu.org/download/:release \
@@ -85,7 +84,8 @@ CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--disable-linux-user --disable-linux-aio \
 	--disable-darwin-user --disable-kvm --disable-xen \
-	--extra-cflags=-DSMBD_COMMAND=\\\"${LOCALBASE}/sbin/smbd\\\"\ -I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
+	--smbd=${LOCALBASE}/sbin/smbd \
+	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl

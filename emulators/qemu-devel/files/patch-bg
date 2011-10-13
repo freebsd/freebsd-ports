@@ -1,21 +1,15 @@
 Index: qemu/net.h
-@@ -99,12 +99,14 @@
- int slirp_is_inited(void);
- void net_client_check(void);
+@@ -173,8 +173,8 @@ void net_host_device_remove(Monitor *mon
+ int do_netdev_add(Monitor *mon, const QDict *qdict, QObject **ret_data);
+ int do_netdev_del(Monitor *mon, const QDict *qdict, QObject **ret_data);
  
 -#define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
 -#define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
 +#define DEFAULT_NETWORK_SCRIPT PREFIX "/etc/qemu-ifup"
 +#define DEFAULT_NETWORK_DOWN_SCRIPT PREFIX "/etc/qemu-ifdown"
-+#ifndef SMBD_COMMAND 
- #ifdef __sun__
- #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
- #else
- #define SMBD_COMMAND "/usr/sbin/smbd"
- #endif
-+#endif
  
- #endif
+ void qdev_set_nic_properties(DeviceState *dev, NICInfo *nd);
+ 
 Index: qemu/net/tap.h
 @@ -29,8 +29,8 @@
  #include "qemu-common.h"
