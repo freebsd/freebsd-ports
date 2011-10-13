@@ -18,10 +18,10 @@ COMMENT=	Perl Data Language
 
 BUILD_DEPENDS=	p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
-		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header 
+		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header
 RUN_DEPENDS=	p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
-		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header 
+		p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header
 
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -66,7 +66,7 @@ LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 .endif
 
 .if defined(WITH_F77)
-BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-F77 
+BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-F77
 .endif
 
 .if defined(WITH_FFTW)
@@ -86,9 +86,9 @@ LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .endif
 
 .if defined(WITH_READLINE)
-RUN_DEPENDS+=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu 
+RUN_DEPENDS+=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 .else
-RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl 
+RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 .endif
 
 .if defined(WITH_SINK)
