@@ -5386,6 +5386,7 @@ horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
 horde4-base                     ports/www/horde4-base
 horde4-content                  ports/devel/horde4-content
+horde4-gollem                   ports/ftp/horde4-gollem
 horde4-groupware                ports/deskutils/horde4-groupware
 horde4-imp                      ports/mail/horde4-imp
 horde4-ingo                     ports/mail/horde4-ingo
@@ -5395,6 +5396,8 @@ horde4-nag                      ports/deskutils/horde4-nag
 horde4-timeobjects              ports/devel/horde4-timeobjects
 horde4-turba                    ports/mail/horde4-turba
 horde4-webmail                  ports/mail/horde4-webmail
+horde4-whups                    ports/devel/horde4-whups
+horde4-wicked                   ports/www/horde4-wicked
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotcrp                          ports/www/hotcrp
@@ -12156,6 +12159,7 @@ p5-File-Format-RIFF             ports/multimedia/p5-File-Format-RIFF
 p5-File-Grep                    ports/devel/p5-File-Grep
 p5-File-HStore                  ports/devel/p5-File-HStore
 p5-File-HomeDir                 ports/devel/p5-File-HomeDir
+p5-File-HomeDir-PathClass       ports/devel/p5-File-HomeDir-PathClass
 p5-File-Inplace                 ports/textproc/p5-File-Inplace
 p5-File-Iterator                ports/devel/p5-File-Iterator
 p5-File-Listing                 ports/sysutils/p5-File-Listing
@@ -14477,6 +14481,7 @@ p5-Text-Ngrams                  ports/textproc/p5-Text-Ngrams
 p5-Text-Original                ports/textproc/p5-Text-Original
 p5-Text-Outdent                 ports/devel/p5-Text-Outdent
 p5-Text-PDF                     ports/print/p5-Text-PDF
+p5-Text-Padding                 ports/textproc/p5-Text-Padding
 p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
 p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable  ports/security/p5-Text-Password-Pronounceable
@@ -16513,6 +16518,7 @@ p5-file-fnmatch                 ports/devel/p5-File-FnMatch
 p5-file-format-riff             ports/multimedia/p5-File-Format-RIFF
 p5-file-grep                    ports/devel/p5-File-Grep
 p5-file-homedir                 ports/devel/p5-File-HomeDir
+p5-file-homedir-pathclass       ports/devel/p5-File-HomeDir-PathClass
 p5-file-hstore                  ports/devel/p5-File-HStore
 p5-file-inplace                 ports/textproc/p5-File-Inplace
 p5-file-iterator                ports/devel/p5-File-Iterator
@@ -18890,6 +18896,7 @@ p5-text-ngrams                  ports/textproc/p5-Text-Ngrams
 p5-text-nsp                     ports/textproc/p5-Text-NSP
 p5-text-original                ports/textproc/p5-Text-Original
 p5-text-outdent                 ports/devel/p5-Text-Outdent
+p5-text-padding                 ports/textproc/p5-Text-Padding
 p5-text-paragraphdiff           ports/textproc/p5-Text-ParagraphDiff
 p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
@@ -19769,6 +19776,7 @@ pear-Horde_Rdo                  ports/devel/pear-Horde_Rdo
 pear-Horde_Role                 ports/devel/pear-Horde_Role
 pear-Horde_Routes               ports/www/pear-Horde_Routes
 pear-Horde_Rpc                  ports/net/pear-Horde_Rpc
+pear-Horde_Scheduler            ports/devel/pear-Horde_Scheduler
 pear-Horde_Scribe               ports/net/pear-Horde_Scribe
 pear-Horde_Secret               ports/security/pear-Horde_Secret
 pear-Horde_Serialize            ports/devel/pear-Horde_Serialize
@@ -20110,6 +20118,7 @@ pear-horde_rdo                  ports/devel/pear-Horde_Rdo
 pear-horde_role                 ports/devel/pear-Horde_Role
 pear-horde_routes               ports/www/pear-Horde_Routes
 pear-horde_rpc                  ports/net/pear-Horde_Rpc
+pear-horde_scheduler            ports/devel/pear-Horde_Scheduler
 pear-horde_scribe               ports/net/pear-Horde_Scribe
 pear-horde_secret               ports/security/pear-Horde_Secret
 pear-horde_serialize            ports/devel/pear-Horde_Serialize
