@@ -220,4 +220,5 @@ dnrd:*:948:
 zenoss:*:949:
 conquest:*:950:
 openerpd:*:951:
+bitten-slave:*:952:
 nobody:*:65534:
