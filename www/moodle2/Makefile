@@ -8,10 +8,7 @@
 PORTNAME=	moodle
 PORTVERSION=	2.1.2
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable21/ \
-		http://download2.moodle.org/stable21/ \
-		http://download3.moodle.org/stable21/ \
-		http://download4.moodle.org/stable21/
+MASTER_SITES=	SF/moodle/Moodle/stable21/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
