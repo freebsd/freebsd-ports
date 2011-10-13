@@ -9,15 +9,18 @@ PORTNAME=	ctris
 PORTVERSION=	0.42
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
-		http://www.liquidx.org/distfiles/
+		http://www.liquidx.org/distfiles/ \
+		CRITICAL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
+MANCOMPRESSED=	yes
 
 MAN6=		ctris.6
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/ctris
 
 post-patch:
