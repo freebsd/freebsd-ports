@@ -3177,6 +3177,7 @@
     SUBDIR += py-ydbf
     SUBDIR += py-yum-metadata-parser
     SUBDIR += py-zLOG
+    SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
     SUBDIR += py-zope.component
