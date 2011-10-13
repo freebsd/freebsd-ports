@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mediainfo
-PORTVERSION=	0.7.48
+PORTVERSION=	0.7.50
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/binary/${PORTNAME}/${PORTVERSION}
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Supplies technical and tag information about a video or audio file
 
 LICENSE=	GPLv3 LGPL3
