@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/sources/${PORTVERSION}/
 
@@ -25,27 +25,19 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PERL5=	yes
-NO_BUILD=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	build
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 OPTIONS=	MIGRATION_SCRIPTS	"Install migration scripts"	off \
 		PDF_DOC			"Install PDF documentation"	off
 
-SMBLDAP_TOOLS=	smbldap-groupadd \
-		smbldap-groupdel \
-		smbldap-grouplist \
-		smbldap-groupmod \
-		smbldap-groupshow \
-		smbldap-useradd \
-		smbldap-userdel \
-		smbldap-userinfo \
-		smbldap-userlist \
-		smbldap-usermod \
-		smbldap-usershow \
-		smbldap-passwd \
-		smbldap-populate
+CONFIGURE_ARGS+=	--with-samba-sysconfdir=${LOCALBASE}/etc \
+			--with-samba-bindir=${LOCALBASE}/bin \
+			--with-perl=${PERL} \
+			--with-perl-libdir=sitelib
 
 .include <bsd.port.pre.mk>
 
@@ -57,51 +49,27 @@ PLIST_SUB+=	MIGRATION_SCRIPTS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			-e "s|/etc/samba|${PREFIX}/etc|g" \
-			-e "s|/etc/smb/|${PREFIX}/etc/smb/|g" \
-			${WRKSRC}/configure.pl \
-			${WRKSRC}/doc/smb.conf \
-			${WRKSRC}/smbldap_tools.pm
-.for i in smbldap_tools.pm ${SMBLDAP_TOOLS} \
-doc/migration_scripts/smbldap-migrate-pwdump-groups \
-doc/migration_scripts/smbldap-migrate-unix-accounts \
-doc/migration_scripts/smbldap-migrate-unix-groups \
-doc/migration_scripts/smbldap-migrate-pwdump-accounts
-	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|g" \
-			-e "s|/usr/sbin|${LOCALBASE}/sbin|g" \
-			-e "s|/etc/opt/IDEALX|${PREFIX}/etc|g" \
-			${WRKSRC}/$i
-.endfor
+			${WRKSRC}/smbldap-config.pl
 
-do-install:
-	${MKDIR} ${PREFIX}/etc/smbldap-tools
+post-install:
+	@${MKDIR} ${PREFIX}/etc/smbldap-tools
 .for i in smbldap.conf smbldap_bind.conf
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/smbldap-tools/$i.sample
 	@[ -f ${PREFIX}/etc/smbldap-tools/$i ] || ${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/smbldap-tools/$i
 .endfor
-.for i in ${SMBLDAP_TOOLS}
-	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/smb.conf ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/slapd.conf ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/configure.pl ${EXAMPLESDIR}/
-.endif
 
 .if defined(WITH_MIGRATION_SCRIPTS)
-	${MKDIR} ${DOCSDIR}/migration_scripts
-.for i in smbldap-migrate-pwdump-accounts smbldap-migrate-pwdump-groups \
+. for i in smbldap-migrate-pwdump-accounts smbldap-migrate-pwdump-groups \
 smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/migration_scripts/$i ${PREFIX}/sbin
-.endfor
+	@${SED} -e 's|/usr/bin/perl|${PERL}|g' \
+		${WRKSRC}/doc/migration_scripts/$i > ${PREFIX}/sbin/$i
+. endfor
 .endif
 
-
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/smbldap-config.cmd ${DOCSDIR}/smbldap-config
+	${INSTALL_SCRIPT} ${WRKSRC}/smbldap-upgrade-0.9.6.cmd ${DOCSDIR}/smbldap-upgrade-0.9.6
 .for file in CONTRIBUTORS COPYING ChangeLog FILES INFRA INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
