@@ -47,16 +47,16 @@
 -  .rel.plt      :
 -  {
 -    *(.rel.plt)
--    PROVIDE_HIDDEN (__rel_iplt_start = .);
+-    PROVIDE (__rel_iplt_start = .);
 -    *(.rel.iplt)
--    PROVIDE_HIDDEN (__rel_iplt_end = .);
+-    PROVIDE (__rel_iplt_end = .);
 -  }
 -  .rela.plt       :
 -  {
 -    *(.rela.plt)
--    PROVIDE_HIDDEN (__rela_iplt_start = .);
+-    PROVIDE (__rela_iplt_start = .);
 -    *(.rela.iplt)
--    PROVIDE_HIDDEN (__rela_iplt_end = .);
+-    PROVIDE (__rela_iplt_end = .);
 -  }
 +  .rel.dyn        :
 +    {
@@ -106,11 +106,11 @@
      /* .gnu.warning sections are handled specially by elf32.em.  */
      *(.gnu.warning)
    } =0x90909090
-@@ -71,35 +76,36 @@ SECTIONS
+@@ -70,34 +75,37 @@ SECTIONS
+   .rodata         : { *(.rodata .rodata.* .gnu.linkonce.r.*) }
    .rodata1        : { *(.rodata1) }
    .eh_frame_hdr : { *(.eh_frame_hdr) }
-   .eh_frame       : ONLY_IF_RO { KEEP (*(.eh_frame)) }
--  .gcc_except_table   : ONLY_IF_RO { *(.gcc_except_table) }
++  .eh_frame       : ONLY_IF_RO { KEEP (*(.eh_frame)) }
 +  .gcc_except_table   : ONLY_IF_RO { *(.gcc_except_table .gcc_except_table.*) }
    /* Adjust the address for the data segment.  We want to adjust up to
       the same address within the page on the next page up.  */
@@ -142,8 +142,8 @@
 +  /* Thread Local Storage sections  */
    .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
    .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
--  .eh_frame       : ONLY_IF_RW { KEEP (*(.eh_frame)) }
--  .gcc_except_table   : ONLY_IF_RW { *(.gcc_except_table) }
+-  .eh_frame       : { KEEP (*(.eh_frame)) }
+-  .gcc_except_table   : { *(.gcc_except_table) }
 -  .dynamic        : { *(.dynamic) }
 +  .preinit_array     :
 +  {
@@ -168,7 +168,7 @@
    .ctors          :
    {
      /* gcc uses crtbegin.o to find the start of
-@@ -112,25 +118,37 @@ SECTIONS
+@@ -110,25 +118,37 @@ SECTIONS
         doesn't matter which directory crtbegin.o
         is in.  */
      KEEP (*crtbegin.o(.ctors))
@@ -212,7 +212,7 @@
    __bss_start = .;
    .bss            :
    {
-@@ -139,12 +157,29 @@ SECTIONS
+@@ -137,12 +157,29 @@ SECTIONS
     *(COMMON)
     /* Align here to ensure that the .bss section occupies space up to
        _end.  Align after .bss to ensure correct alignment even if the
@@ -246,7 +246,7 @@
    . = DATA_SEGMENT_END (.);
    /* Stabs debugging sections.  */
    .stab          0 : { *(.stab) }
-@@ -179,4 +214,9 @@ SECTIONS
+@@ -177,4 +214,9 @@ SECTIONS
    .debug_funcnames 0 : { *(.debug_funcnames) }
    .debug_typenames 0 : { *(.debug_typenames) }
    .debug_varnames  0 : { *(.debug_varnames) }
@@ -258,7 +258,7 @@
  }
 --- a/i386.ld
 +++ b/i386.ld
-@@ -1,69 +1,88 @@
+@@ -1,45 +1,47 @@
 -/* ld script to make i386 Linux kernel
 - * Written by Martin Mares <mj@atrey.karlin.mff.cuni.cz>;
 - */
@@ -342,20 +342,10 @@
 +  .rel.plt        :
    {
      *(.rel.plt)
--    PROVIDE_HIDDEN (__rel_iplt_start = .);
-+    PROVIDE (__rel_iplt_start = .);
-     *(.rel.iplt)
--    PROVIDE_HIDDEN (__rel_iplt_end = .);
-+    PROVIDE (__rel_iplt_end = .);
-   }
-   .rela.plt       :
-   {
-     *(.rela.plt)
--    PROVIDE_HIDDEN (__rela_iplt_start = .);
-+    PROVIDE (__rela_iplt_start = .);
+     PROVIDE (__rel_iplt_start = .);
+@@ -53,17 +55,34 @@ SECTIONS
      *(.rela.iplt)
--    PROVIDE_HIDDEN (__rela_iplt_end = .);
-+    PROVIDE (__rela_iplt_end = .);
+     PROVIDE (__rela_iplt_end = .);
    }
 -  .init          : { *(.init)	} =0x47ff041f
 -  .text      :
