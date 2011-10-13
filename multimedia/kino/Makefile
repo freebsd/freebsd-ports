@@ -7,7 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	1.3.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
-		MagickWand.4:${PORTSDIR}/graphics/ImageMagick	\
+		MagickWand.5:${PORTSDIR}/graphics/ImageMagick	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder	\
 		mplex:${PORTSDIR}/multimedia/mjpegtools
