@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	valerio.daelli@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	A security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
