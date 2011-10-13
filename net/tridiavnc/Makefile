@@ -38,6 +38,7 @@ MAKE_ENV+=	DESTDIR=${TRIDIAVNC_BASE}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386
+BROKEN=		Does not compile on ${MACHINE_ARCH}
 NO_XVNC=	yes
 PLIST_SUB+=	XVNC="@comment "
 .else
