@@ -7,6 +7,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.5.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -19,7 +20,7 @@ COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		Magick++.4:${PORTSDIR}/graphics/ImageMagick \
+		Magick++.5:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
