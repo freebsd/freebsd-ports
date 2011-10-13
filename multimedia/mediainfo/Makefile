@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/binary/${PORTNAME}/${PORTVERSION}
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
-MAINTAINER=	freebsd-ports@evilcode.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplies technical and tag information about a video or audio file
 
 LICENSE=	GPLv3 LGPL3
