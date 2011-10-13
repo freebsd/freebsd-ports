@@ -1,2 +1,4 @@
-SHA256 (stockfish-211-ja.zip) = bbc01a873183d213903260e4262fbee3cc79f51c62a601fce6b66a405b13d93a
-SIZE (stockfish-211-ja.zip) = 2623630
+SHA256 (sf-211-linux-eng.zip) = 65398505d9582160a62520eb1bebe4527df7d90e3af2b88d0458919bf65c2def
+SIZE (sf-211-linux-eng.zip) = 1218458
+SHA256 (sf-211-book.zip) = fc4b2964128278dcf076b1601a5fb7a6cc88d87d9f617d32fa82aeb05cfdff74
+SIZE (sf-211-book.zip) = 8831695
