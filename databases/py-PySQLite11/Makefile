@@ -19,6 +19,9 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 CONFLICTS=	py*-PySQLite-1.0.*
 
+DEPRECATED=	unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
+EXPIRATION_DATE=	2011-12-11
+
 NO_LATEST_LINK=	yes
 
 USE_PYTHON=	yes
