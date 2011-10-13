@@ -1,0 +1,9 @@
+bin/logstalgia
+%%DATADIR%%/fonts/README
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/FreeSerif.ttf
+%%DATADIR%%/ball.tga
+%%DATADIR%%/example.log
+%%DATADIR%%/glow.tga
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
