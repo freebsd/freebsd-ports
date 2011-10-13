@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	valerio.daelli@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sql Server exploit toolkit
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
