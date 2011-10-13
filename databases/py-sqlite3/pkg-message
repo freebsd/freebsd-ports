@@ -1,7 +1,0 @@
-====
-**CAUTION**
-This port installs the sqlite3 module which is distributed as a
-part of standard library collection of Python 2.5 and laters.  If
-you're using Python 2.4 or former, you must install databases/py-pysqlite22
-instead.
-====

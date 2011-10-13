@@ -19,7 +19,7 @@ COMMENT=	Standard Python binding to the SQLite3 library
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/_sqlite3.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_sqlite3.so
 DIST_SUBDIR=	python
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
@@ -29,9 +29,6 @@ DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.pre.mk>
-
-pre-extract:
-	@${CAT} ${PKGMESSAGE}
 
 post-extract:
 .if ${PYTHON_REL} < 300
