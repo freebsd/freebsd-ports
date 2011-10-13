@@ -1,0 +1,12 @@
+;[authentication]
+; user/pass for login to Trac
+;username = <user>
+;password = <pass>
+
+[os]
+name = @DISTRO@
+version = @DISTRO_VERSION@
+
+;[package:some-package]
+;version = 2.0
+

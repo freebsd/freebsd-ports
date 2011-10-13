@@ -1,0 +1,12 @@
+If your system is the build master, i.e. it is the system that runs
+the Trac instance and integrates with the SCM, you need to configure
+Trac to load the Bitten plugin and give permissions to the build
+slaves.
+
+To run a build slave (which can also be on the same host), you need
+to configure it by editing %%ETCDIR%%/bitten-slave.conf.
+It is recommended to use a password secured Trac instance and set
+username and password appropriately for the build slaves.
+
+For more detailed instructions please have a look at the documentation
+at http://bitten.edgewall.org/wiki/Documentation/install.html
