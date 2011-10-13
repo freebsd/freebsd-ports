@@ -453,6 +453,7 @@
     SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logserial
+    SUBDIR += logstalgia
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
