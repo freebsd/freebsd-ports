@@ -19,6 +19,9 @@ COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+DEPRECATED=	unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
+EXPIRATION_DATE=	2011-12-11
+
 CONFLICTS=	py*-pysqlite-2.[0-24-9].*
 
 USE_PYTHON=	2.5+
