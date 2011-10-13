@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Xml_Wbxml
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
