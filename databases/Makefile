@@ -52,7 +52,6 @@
     SUBDIR += dbf2mysql
     SUBDIR += dbh
     SUBDIR += dbh10
-    SUBDIR += dbmetrix
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
@@ -825,7 +824,6 @@
     SUBDIR += xapian-bindings
     SUBDIR += xapian-core
     SUBDIR += xmbase-grok
-    SUBDIR += xmysqladmin
     SUBDIR += xtrabackup
     SUBDIR += yasql
     SUBDIR += zodb3
