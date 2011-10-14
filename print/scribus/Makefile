@@ -26,6 +26,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_GNOME=	libartlgpl2 libxml2
