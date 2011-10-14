@@ -18,6 +18,7 @@ lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
+share/applications/midori-private.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -32,6 +33,7 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeItem.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzePreferences.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeScrolled.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-gtk3-compat.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-arrayaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-auth.html
@@ -40,7 +42,6 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-separatoraction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-throbber.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-utils.html
-%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/left.png
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/right.png
@@ -48,11 +49,11 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/up.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/api-index-full.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/ch01.html
-%%APIDOCS%%%%DOCSDIR%%/api/midori/html/deprecated-api-index.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/home.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.sgml
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/left.png
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/deprecated-api-index.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-GtkIconEntry.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriBrowser.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriExtension.html
@@ -62,6 +63,7 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-locationaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panel.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-platform.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-searchaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-stock.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-view.html
@@ -69,7 +71,6 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-socket.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-sokoke.html
-%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/right.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/style.css
@@ -136,7 +137,6 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%DATADIR%%/res/autosuggestcontrol.js
 %%DATADIR%%/res/error.html
 %%DATADIR%%/res/logo-shade.png
-%%DATADIR%%/res/mootools.js
 %%DATADIR%%/res/speeddial-head.html
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
