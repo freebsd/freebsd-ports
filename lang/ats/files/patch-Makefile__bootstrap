@@ -1,0 +1,11 @@
+--- Makefile_bootstrap.orig	2011-10-06 21:17:51.000000000 +0800
++++ Makefile_bootstrap	2011-10-06 21:18:13.000000000 +0800
+@@ -78,7 +78,7 @@
+ 
+ BOOTSTRAP1=1
+ ifdef BOOTSTRAP1
+-ATSCCFLAGS=-I$(ATSHOMEQ) -I$(ATSRUNTIME) -O2 -g
++ATSCCFLAGS=-I$(ATSHOMEQ) -I$(ATSRUNTIME) -O2 -g $(CFLAGS)
+ endif
+ 
+ LIBGMP=
