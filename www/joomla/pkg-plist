@@ -1,6 +1,5 @@
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.txt
-%%WWWDIR%%/web.config.txt
 %%WWWDIR%%/administrator/cache/index.html
 %%WWWDIR%%/administrator/components/com_admin/admin.php
 %%WWWDIR%%/administrator/components/com_admin/admin.xml
@@ -19,6 +18,19 @@
 %%WWWDIR%%/administrator/components/com_admin/models/index.html
 %%WWWDIR%%/administrator/components/com_admin/models/profile.php
 %%WWWDIR%%/administrator/components/com_admin/models/sysinfo.php
+%%WWWDIR%%/administrator/components/com_admin/script.php
+%%WWWDIR%%/administrator/components/com_admin/sql/index.html
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/index.html
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.0-2011-06-06-2.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.0-2011-06-06.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.0.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-15-2.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-15-3.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-15-4.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-15.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-17.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/1.7.1-2011-09-20.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/index.html
@@ -70,6 +82,9 @@
 %%WWWDIR%%/administrator/components/com_banners/models/forms/index.html
 %%WWWDIR%%/administrator/components/com_banners/models/index.html
 %%WWWDIR%%/administrator/components/com_banners/models/tracks.php
+%%WWWDIR%%/administrator/components/com_banners/sql/index.html
+%%WWWDIR%%/administrator/components/com_banners/sql/install.mysql.utf8.sql
+%%WWWDIR%%/administrator/components/com_banners/sql/uninstall.mysql.utf8.sql
 %%WWWDIR%%/administrator/components/com_banners/tables/banner.php
 %%WWWDIR%%/administrator/components/com_banners/tables/client.php
 %%WWWDIR%%/administrator/components/com_banners/tables/index.html
@@ -221,6 +236,9 @@
 %%WWWDIR%%/administrator/components/com_contact/models/forms/contact.xml
 %%WWWDIR%%/administrator/components/com_contact/models/forms/index.html
 %%WWWDIR%%/administrator/components/com_contact/models/index.html
+%%WWWDIR%%/administrator/components/com_contact/sql/index.html
+%%WWWDIR%%/administrator/components/com_contact/sql/install.mysql.utf8.sql
+%%WWWDIR%%/administrator/components/com_contact/sql/uninstall.mysql.utf8.sql
 %%WWWDIR%%/administrator/components/com_contact/tables/contact.php
 %%WWWDIR%%/administrator/components/com_contact/tables/index.html
 %%WWWDIR%%/administrator/components/com_contact/views/contact/index.html
@@ -273,6 +291,7 @@
 %%WWWDIR%%/administrator/components/com_content/views/article/view.html.php
 %%WWWDIR%%/administrator/components/com_content/views/articles/index.html
 %%WWWDIR%%/administrator/components/com_content/views/articles/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_content/views/articles/tmpl/default_batch.php
 %%WWWDIR%%/administrator/components/com_content/views/articles/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_content/views/articles/tmpl/modal.php
 %%WWWDIR%%/administrator/components/com_content/views/articles/view.html.php
@@ -339,7 +358,6 @@
 %%WWWDIR%%/administrator/components/com_installer/views/manage/view.html.php
 %%WWWDIR%%/administrator/components/com_installer/views/update/index.html
 %%WWWDIR%%/administrator/components/com_installer/views/update/tmpl/default.php
-%%WWWDIR%%/administrator/components/com_installer/views/update/tmpl/default_item.php
 %%WWWDIR%%/administrator/components/com_installer/views/update/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_installer/views/update/view.html.php
 %%WWWDIR%%/administrator/components/com_installer/views/warnings/index.html
@@ -356,6 +374,7 @@
 %%WWWDIR%%/administrator/components/com_languages/helpers/html/languages.php
 %%WWWDIR%%/administrator/components/com_languages/helpers/index.html
 %%WWWDIR%%/administrator/components/com_languages/helpers/languages.php
+%%WWWDIR%%/administrator/components/com_languages/helpers/multilangstatus.php
 %%WWWDIR%%/administrator/components/com_languages/index.html
 %%WWWDIR%%/administrator/components/com_languages/languages.php
 %%WWWDIR%%/administrator/components/com_languages/languages.xml
@@ -369,6 +388,7 @@
 %%WWWDIR%%/administrator/components/com_languages/views/installed/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default_ftp.php
+%%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/default_navigation.php
 %%WWWDIR%%/administrator/components/com_languages/views/installed/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/installed/view.html.php
 %%WWWDIR%%/administrator/components/com_languages/views/language/index.html
@@ -379,6 +399,10 @@
 %%WWWDIR%%/administrator/components/com_languages/views/languages/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_languages/views/languages/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_languages/views/languages/view.html.php
+%%WWWDIR%%/administrator/components/com_languages/views/multilangstatus/index.html
+%%WWWDIR%%/administrator/components/com_languages/views/multilangstatus/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_languages/views/multilangstatus/tmpl/index.html
+%%WWWDIR%%/administrator/components/com_languages/views/multilangstatus/view.html.php
 %%WWWDIR%%/administrator/components/com_login/controller.php
 %%WWWDIR%%/administrator/components/com_login/index.html
 %%WWWDIR%%/administrator/components/com_login/login.php
@@ -443,6 +467,8 @@
 %%WWWDIR%%/administrator/components/com_menus/controllers/items.php
 %%WWWDIR%%/administrator/components/com_menus/controllers/menu.php
 %%WWWDIR%%/administrator/components/com_menus/controllers/menus.php
+%%WWWDIR%%/administrator/components/com_menus/helpers/html/index.html
+%%WWWDIR%%/administrator/components/com_menus/helpers/html/menus.php
 %%WWWDIR%%/administrator/components/com_menus/helpers/index.html
 %%WWWDIR%%/administrator/components/com_menus/helpers/menus.php
 %%WWWDIR%%/administrator/components/com_menus/index.html
@@ -455,7 +481,6 @@
 %%WWWDIR%%/administrator/components/com_menus/models/forms/item.xml
 %%WWWDIR%%/administrator/components/com_menus/models/forms/item_alias.xml
 %%WWWDIR%%/administrator/components/com_menus/models/forms/item_component.xml
-%%WWWDIR%%/administrator/components/com_menus/models/forms/item_options.xml
 %%WWWDIR%%/administrator/components/com_menus/models/forms/item_separator.xml
 %%WWWDIR%%/administrator/components/com_menus/models/forms/item_url.xml
 %%WWWDIR%%/administrator/components/com_menus/models/forms/menu.xml
@@ -594,6 +619,9 @@
 %%WWWDIR%%/administrator/components/com_newsfeeds/models/newsfeeds.php
 %%WWWDIR%%/administrator/components/com_newsfeeds/newsfeeds.php
 %%WWWDIR%%/administrator/components/com_newsfeeds/newsfeeds.xml
+%%WWWDIR%%/administrator/components/com_newsfeeds/sql/index.html
+%%WWWDIR%%/administrator/components/com_newsfeeds/sql/install.mysql.utf8.sql
+%%WWWDIR%%/administrator/components/com_newsfeeds/sql/uninstall.mysql.utf8.sql
 %%WWWDIR%%/administrator/components/com_newsfeeds/tables/index.html
 %%WWWDIR%%/administrator/components/com_newsfeeds/tables/newsfeed.php
 %%WWWDIR%%/administrator/components/com_newsfeeds/views/index.html
@@ -815,8 +843,6 @@
 %%WWWDIR%%/administrator/components/com_weblinks/controllers/index.html
 %%WWWDIR%%/administrator/components/com_weblinks/controllers/weblink.php
 %%WWWDIR%%/administrator/components/com_weblinks/controllers/weblinks.php
-%%WWWDIR%%/administrator/components/com_weblinks/helpers/html/index.html
-%%WWWDIR%%/administrator/components/com_weblinks/helpers/html/weblink.php
 %%WWWDIR%%/administrator/components/com_weblinks/helpers/index.html
 %%WWWDIR%%/administrator/components/com_weblinks/helpers/weblinks.php
 %%WWWDIR%%/administrator/components/com_weblinks/index.html
@@ -841,6 +867,7 @@
 %%WWWDIR%%/administrator/components/com_weblinks/views/weblink/view.html.php
 %%WWWDIR%%/administrator/components/com_weblinks/views/weblinks/index.html
 %%WWWDIR%%/administrator/components/com_weblinks/views/weblinks/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_weblinks/views/weblinks/tmpl/default_batch.php
 %%WWWDIR%%/administrator/components/com_weblinks/views/weblinks/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_weblinks/views/weblinks/view.html.php
 %%WWWDIR%%/administrator/components/com_weblinks/weblinks.php
@@ -849,28 +876,28 @@
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Banners.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Banners_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Categories.html
-%%WWWDIR%%/administrator/help/en-GB/Components_Banners_Categories_Edit.html
+%%WWWDIR%%/administrator/help/en-GB/Components_Banners_Category_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Clients.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Clients_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Banners_Tracks.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Contact_Categories.html
-%%WWWDIR%%/administrator/help/en-GB/Components_Contact_Categories_Edit.html
+%%WWWDIR%%/administrator/help/en-GB/Components_Contact_Category_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Contacts_Contacts.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Contacts_Contacts_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Content_Categories.html
-%%WWWDIR%%/administrator/help/en-GB/Components_Content_Categories_Edit.html
+%%WWWDIR%%/administrator/help/en-GB/Components_Content_Category_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Messaging_Inbox.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Messaging_Read.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Messaging_Write.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Newsfeeds_Categories.html
-%%WWWDIR%%/administrator/help/en-GB/Components_Newsfeeds_Categories_Edit.html
+%%WWWDIR%%/administrator/help/en-GB/Components_Newsfeeds_Category_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Newsfeeds_Feeds.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Newsfeeds_Feeds_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Redirect_Manager.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Redirect_Manager_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Search.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Weblinks_Categories.html
-%%WWWDIR%%/administrator/help/en-GB/Components_Weblinks_Categories_Edit.html
+%%WWWDIR%%/administrator/help/en-GB/Components_Weblinks_Category_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Weblinks_Links.html
 %%WWWDIR%%/administrator/help/en-GB/Components_Weblinks_Links_Edit.html
 %%WWWDIR%%/administrator/help/en-GB/Content_Article_Manager.html
@@ -917,7 +944,7 @@
 %%WWWDIR%%/administrator/help/en-GB/css/help.css
 %%WWWDIR%%/administrator/help/en-GB/css/index.html
 %%WWWDIR%%/administrator/help/en-GB/index.html
-%%WWWDIR%%/administrator/help/helpsites-16.xml
+%%WWWDIR%%/administrator/help/helpsites.xml
 %%WWWDIR%%/administrator/help/index.html
 %%WWWDIR%%/administrator/includes/application.php
 %%WWWDIR%%/administrator/includes/defines.php
@@ -992,8 +1019,8 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_login.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_menu.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_menu.sys.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_online.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_online.sys.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_multilangstatus.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_multilangstatus.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_popular.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_popular.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_quickicon.ini
@@ -1006,10 +1033,6 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_title.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_toolbar.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_toolbar.sys.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_unread.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_unread.sys.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_example.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_example.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_gmail.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_gmail.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_authentication_joomla.ini
@@ -1087,8 +1110,8 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.xml
 %%WWWDIR%%/administrator/language/en-GB/index.html
 %%WWWDIR%%/administrator/language/index.html
+%%WWWDIR%%/administrator/language/overrides/en-GB.override.ini
 %%WWWDIR%%/administrator/language/overrides/index.html
-%%WWWDIR%%/administrator/language/overrides/xx-XX.override.ini
 %%WWWDIR%%/administrator/manifests/files/index.html
 %%WWWDIR%%/administrator/manifests/files/joomla.xml
 %%WWWDIR%%/administrator/manifests/index.html
@@ -1098,7 +1121,7 @@
 %%WWWDIR%%/administrator/manifests/libraries/phputf8.xml
 %%WWWDIR%%/administrator/manifests/libraries/simplepie.xml
 %%WWWDIR%%/administrator/manifests/packages/index.html
-%%WWWDIR%%/administrator/manifests/packages/joomla.xml
+%%WWWDIR%%/administrator/manifests/packages/pkg_joomla.xml
 %%WWWDIR%%/administrator/modules/index.html
 %%WWWDIR%%/administrator/modules/mod_custom/index.html
 %%WWWDIR%%/administrator/modules/mod_custom/mod_custom.php
@@ -1138,12 +1161,13 @@
 %%WWWDIR%%/administrator/modules/mod_menu/tmpl/default_disabled.php
 %%WWWDIR%%/administrator/modules/mod_menu/tmpl/default_enabled.php
 %%WWWDIR%%/administrator/modules/mod_menu/tmpl/index.html
-%%WWWDIR%%/administrator/modules/mod_online/helper.php
-%%WWWDIR%%/administrator/modules/mod_online/index.html
-%%WWWDIR%%/administrator/modules/mod_online/mod_online.php
-%%WWWDIR%%/administrator/modules/mod_online/mod_online.xml
-%%WWWDIR%%/administrator/modules/mod_online/tmpl/default.php
-%%WWWDIR%%/administrator/modules/mod_online/tmpl/index.html
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/index.html
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/language/en-GB/en-GB.mod_multilangstatus.ini
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/language/en-GB/en-GB.mod_multilangstatus.sys.ini
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/mod_multilangstatus.php
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/mod_multilangstatus.xml
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/tmpl/default.php
+%%WWWDIR%%/administrator/modules/mod_multilangstatus/tmpl/index.html
 %%WWWDIR%%/administrator/modules/mod_popular/helper.php
 %%WWWDIR%%/administrator/modules/mod_popular/index.html
 %%WWWDIR%%/administrator/modules/mod_popular/mod_popular.php
@@ -1178,20 +1202,12 @@
 %%WWWDIR%%/administrator/modules/mod_toolbar/mod_toolbar.xml
 %%WWWDIR%%/administrator/modules/mod_toolbar/tmpl/default.php
 %%WWWDIR%%/administrator/modules/mod_toolbar/tmpl/index.html
-%%WWWDIR%%/administrator/modules/mod_unread/helper.php
-%%WWWDIR%%/administrator/modules/mod_unread/index.html
-%%WWWDIR%%/administrator/modules/mod_unread/mod_unread.php
-%%WWWDIR%%/administrator/modules/mod_unread/mod_unread.xml
-%%WWWDIR%%/administrator/modules/mod_unread/tmpl/default.php
-%%WWWDIR%%/administrator/modules/mod_unread/tmpl/index.html
 %%WWWDIR%%/administrator/templates/bluestork/component.php
 %%WWWDIR%%/administrator/templates/bluestork/cpanel.php
 %%WWWDIR%%/administrator/templates/bluestork/css/highcontrast.css
 %%WWWDIR%%/administrator/templates/bluestork/css/ie7.css
 %%WWWDIR%%/administrator/templates/bluestork/css/ie8.css
 %%WWWDIR%%/administrator/templates/bluestork/css/index.html
-%%WWWDIR%%/administrator/templates/bluestork/css/norounded.css
-%%WWWDIR%%/administrator/templates/bluestork/css/rounded.css
 %%WWWDIR%%/administrator/templates/bluestork/css/template.css
 %%WWWDIR%%/administrator/templates/bluestork/css/template_rtl.css
 %%WWWDIR%%/administrator/templates/bluestork/css/textbig.css
@@ -1345,30 +1361,8 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/j_button2_readmore_rtl.png
 %%WWWDIR%%/administrator/templates/bluestork/images/j_button2_right.png
 %%WWWDIR%%/administrator/templates/bluestork/images/j_button2_right_cap.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_corner_bl.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_corner_br.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_bl_black.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_bl_dark.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_bl_light.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_bl_med.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_br_black.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_br_dark.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_br_light.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_br_med.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tl_black.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tl_dark.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tl_light.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tl_med.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tr_black.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tr_dark.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tr_light.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_crn_tr_med.png
 %%WWWDIR%%/administrator/templates/bluestork/images/j_divider.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_header_left.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_header_left_rtl.png
 %%WWWDIR%%/administrator/templates/bluestork/images/j_header_middle.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_header_right.png
-%%WWWDIR%%/administrator/templates/bluestork/images/j_header_right_rtl.png
 %%WWWDIR%%/administrator/templates/bluestork/images/j_login_lock.png
 %%WWWDIR%%/administrator/templates/bluestork/images/logo.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-alert.png
@@ -1436,6 +1430,7 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-newsfeeds-cat.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-newsfeeds.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-newuser.png
+%%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-nopreview.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-notdefault.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-notice.png
 %%WWWDIR%%/administrator/templates/bluestork/images/menu/icon-16-plugin.png
@@ -1586,10 +1581,8 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_cache/cache/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_cache/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/categories/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_categories/categories/default_batch.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/categories/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/category/edit.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_categories/category/edit_metadata.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/category/edit_options.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/category/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_categories/index.html
@@ -1605,7 +1598,6 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_contact/contacts/modal.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_contact/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_content/article/edit.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_content/article/edit_metadata.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_content/article/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_content/articles/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_content/articles/index.html
@@ -1627,20 +1619,13 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/default_ftp.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/com_languages/language/edit.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_languages/language/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/languages/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_languages/languages/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/com_media/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/com_media/media/default_navigation.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_media/media/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/item/edit.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_menus/item/edit_modules.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/item/edit_options.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/item/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/items/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_menus/items/default_batch.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/items/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/menu/edit.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_menus/menu/index.html
@@ -1651,16 +1636,12 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_messages/messages/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/module/edit.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_modules/module/edit_assignment.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/module/edit_options.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/module/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/com_modules/module/modal.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/modules/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/modules/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/positions/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_modules/positions/modal.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_modules/select/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/com_modules/select/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_newsfeeds/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/com_newsfeeds/newsfeed/edit.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_newsfeeds/newsfeed/edit_metadata.php
@@ -1706,12 +1687,6 @@
 %%WWWDIR%%/administrator/templates/hathor/html/com_weblinks/weblinks/default.php
 %%WWWDIR%%/administrator/templates/hathor/html/com_weblinks/weblinks/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/mod_latest/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/mod_latest/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/mod_popular/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/mod_popular/index.html
-%%WWWDIR%%/administrator/templates/hathor/html/mod_status/default.php
-%%WWWDIR%%/administrator/templates/hathor/html/mod_status/index.html
 %%WWWDIR%%/administrator/templates/hathor/html/modules.php
 %%WWWDIR%%/administrator/templates/hathor/html/pagination.php
 %%WWWDIR%%/administrator/templates/hathor/images/admin/blank.png
@@ -1894,6 +1869,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-newsfeeds-cat.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-newsfeeds.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-newuser.png
+%%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-nopreview.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-notdefault.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-notice.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-plugin.png
@@ -1962,8 +1938,8 @@
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-links.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-lock.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-menu.png
-%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-messanging.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-messaging.png
+%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-messanging.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-module.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-move.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-new-privatemessage.png
@@ -2018,6 +1994,7 @@
 %%WWWDIR%%/administrator/templates/system/index.html
 %%WWWDIR%%/administrator/templates/system/index.php
 %%WWWDIR%%/cache/index.html
+%%WWWDIR%%/cli/index.html
 %%WWWDIR%%/components/com_banners/banners.php
 %%WWWDIR%%/components/com_banners/controller.php
 %%WWWDIR%%/components/com_banners/helpers/banner.php
@@ -2227,6 +2204,7 @@
 %%WWWDIR%%/components/com_search/views/search/tmpl/default_results.php
 %%WWWDIR%%/components/com_search/views/search/tmpl/index.html
 %%WWWDIR%%/components/com_search/views/search/view.html.php
+%%WWWDIR%%/components/com_search/views/search/view.opensearch.php
 %%WWWDIR%%/components/com_users/controller.php
 %%WWWDIR%%/components/com_users/controllers/index.html
 %%WWWDIR%%/components/com_users/controllers/profile.php
@@ -2250,6 +2228,7 @@
 %%WWWDIR%%/components/com_users/models/forms/reset_complete.xml
 %%WWWDIR%%/components/com_users/models/forms/reset_confirm.xml
 %%WWWDIR%%/components/com_users/models/forms/reset_request.xml
+%%WWWDIR%%/components/com_users/models/forms/sitelang.xml
 %%WWWDIR%%/components/com_users/models/index.html
 %%WWWDIR%%/components/com_users/models/login.php
 %%WWWDIR%%/components/com_users/models/profile.php
@@ -2402,6 +2381,7 @@
 %%WWWDIR%%/includes/menu.php
 %%WWWDIR%%/includes/pathway.php
 %%WWWDIR%%/includes/router.php
+%%WWWDIR%%/includes/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/installation/CHANGELOG
 %%WWWDIR%%/installation/COPYRIGHT
@@ -2462,9 +2442,6 @@
 %%WWWDIR%%/installation/language/el-GR/el-GR.ini
 %%WWWDIR%%/installation/language/el-GR/el-GR.xml
 %%WWWDIR%%/installation/language/el-GR/index.html
-%%WWWDIR%%/installation/language/eo-XX/eo-XX.ini
-%%WWWDIR%%/installation/language/eo-XX/eo-XX.xml
-%%WWWDIR%%/installation/language/eo-XX/index.html
 %%WWWDIR%%/installation/language/en-AU/en-AU.ini
 %%WWWDIR%%/installation/language/en-AU/en-AU.xml
 %%WWWDIR%%/installation/language/en-AU/index.html
@@ -2480,6 +2457,9 @@
 %%WWWDIR%%/installation/language/et-EE/et-EE.ini
 %%WWWDIR%%/installation/language/et-EE/et-EE.xml
 %%WWWDIR%%/installation/language/et-EE/index.html
+%%WWWDIR%%/installation/language/eu-ES/eu-ES.ini
+%%WWWDIR%%/installation/language/eu-ES/eu-ES.xml
+%%WWWDIR%%/installation/language/eu-ES/index.html
 %%WWWDIR%%/installation/language/fa-IR/fa-IR.ini
 %%WWWDIR%%/installation/language/fa-IR/fa-IR.xml
 %%WWWDIR%%/installation/language/fa-IR/index.html
@@ -2489,6 +2469,9 @@
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.ini
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.xml
 %%WWWDIR%%/installation/language/fr-FR/index.html
+%%WWWDIR%%/installation/language/gd-GB/gd-GB.ini
+%%WWWDIR%%/installation/language/gd-GB/gd-GB.xml
+%%WWWDIR%%/installation/language/gd-GB/index.html
 %%WWWDIR%%/installation/language/gl-ES/gl-ES.ini
 %%WWWDIR%%/installation/language/gl-ES/gl-ES.xml
 %%WWWDIR%%/installation/language/gl-ES/index.html
@@ -2500,16 +2483,11 @@
 %%WWWDIR%%/installation/language/he-IL/index.html
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.ini
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.xml
+%%WWWDIR%%/installation/language/hr-HR/index.html
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.ini
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.xml
 %%WWWDIR%%/installation/language/hu-HU/index.html
-%%WWWDIR%%/installation/language/id-ID/id-ID.ini
-%%WWWDIR%%/installation/language/id-ID/id-ID.xml
-%%WWWDIR%%/installation/language/id-ID/index.html
 %%WWWDIR%%/installation/language/index.html
-%%WWWDIR%%/installation/language/is-IS/index.html
-%%WWWDIR%%/installation/language/is-IS/is-IS.ini
-%%WWWDIR%%/installation/language/is-IS/is-IS.xml
 %%WWWDIR%%/installation/language/it-IT/index.html
 %%WWWDIR%%/installation/language/it-IT/it-IT.ini
 %%WWWDIR%%/installation/language/it-IT/it-IT.xml
@@ -2534,12 +2512,6 @@
 %%WWWDIR%%/installation/language/mk-MK/index.html
 %%WWWDIR%%/installation/language/mk-MK/mk-MK.ini
 %%WWWDIR%%/installation/language/mk-MK/mk-MK.xml
-%%WWWDIR%%/installation/language/ml-IN/index.html
-%%WWWDIR%%/installation/language/ml-IN/ml-IN.ini
-%%WWWDIR%%/installation/language/ml-IN/ml-IN.xml
-%%WWWDIR%%/installation/language/mn-MN/index.html
-%%WWWDIR%%/installation/language/mn-MN/mn-MN.ini
-%%WWWDIR%%/installation/language/mn-MN/mn-MN.xml
 %%WWWDIR%%/installation/language/nb-NO/index.html
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.ini
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.xml
@@ -2567,9 +2539,6 @@
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
-%%WWWDIR%%/installation/language/sq-AL/index.html
-%%WWWDIR%%/installation/language/sq-AL/sq-AL.ini
-%%WWWDIR%%/installation/language/sq-AL/sq-AL.xml
 %%WWWDIR%%/installation/language/sr-RS/index.html
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.ini
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.xml
@@ -2594,9 +2563,6 @@
 %%WWWDIR%%/installation/language/uk-UA/index.html
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.ini
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.xml
-%%WWWDIR%%/installation/language/vi-VN/index.html
-%%WWWDIR%%/installation/language/vi-VN/vi-VN.ini
-%%WWWDIR%%/installation/language/vi-VN/vi-VN.xml
 %%WWWDIR%%/installation/language/zh-CN/index.html
 %%WWWDIR%%/installation/language/zh-CN/zh-CN.ini
 %%WWWDIR%%/installation/language/zh-CN/zh-CN.xml
@@ -2609,6 +2575,7 @@
 %%WWWDIR%%/installation/models/database.php
 %%WWWDIR%%/installation/models/fields/index.html
 %%WWWDIR%%/installation/models/fields/language.php
+%%WWWDIR%%/installation/models/fields/prefix.php
 %%WWWDIR%%/installation/models/fields/sample.php
 %%WWWDIR%%/installation/models/filesystem.php
 %%WWWDIR%%/installation/models/forms/database.xml
@@ -2618,6 +2585,8 @@
 %%WWWDIR%%/installation/models/forms/site.xml
 %%WWWDIR%%/installation/models/index.html
 %%WWWDIR%%/installation/models/migration.php
+%%WWWDIR%%/installation/models/rules/index.html
+%%WWWDIR%%/installation/models/rules/prefix.php
 %%WWWDIR%%/installation/models/setup.php
 %%WWWDIR%%/installation/sql/index.html
 %%WWWDIR%%/installation/sql/migration/index.html
@@ -2630,7 +2599,10 @@
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta15.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta2.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16ga.sql
+%%WWWDIR%%/installation/sql/mysql/joomla_update_170to171.sql
+%%WWWDIR%%/installation/sql/mysql/joomla_update_17ga.sql
 %%WWWDIR%%/installation/sql/mysql/sample_data.sql
+%%WWWDIR%%/installation/template/body.php
 %%WWWDIR%%/installation/template/css/ie7.css
 %%WWWDIR%%/installation/template/css/index.html
 %%WWWDIR%%/installation/template/css/template.css
@@ -2639,8 +2611,6 @@
 %%WWWDIR%%/installation/template/images/j_arrow.png
 %%WWWDIR%%/installation/template/images/j_arrow_down.png
 %%WWWDIR%%/installation/template/images/j_arrow_left.png
-%%WWWDIR%%/installation/template/images/j_border.png
-%%WWWDIR%%/installation/template/images/j_bottom.png
 %%WWWDIR%%/installation/template/images/j_button1_admin.png
 %%WWWDIR%%/installation/template/images/j_button1_collate.png
 %%WWWDIR%%/installation/template/images/j_button1_left.png
@@ -2649,28 +2619,11 @@
 %%WWWDIR%%/installation/template/images/j_button1_refresh.png
 %%WWWDIR%%/installation/template/images/j_button1_right.png
 %%WWWDIR%%/installation/template/images/j_button1_site.png
-%%WWWDIR%%/installation/template/images/j_corner_bl.png
-%%WWWDIR%%/installation/template/images/j_corner_br.png
-%%WWWDIR%%/installation/template/images/j_crn_bl_dark.png
-%%WWWDIR%%/installation/template/images/j_crn_bl_light.png
-%%WWWDIR%%/installation/template/images/j_crn_bl_med.png
-%%WWWDIR%%/installation/template/images/j_crn_br_dark.png
-%%WWWDIR%%/installation/template/images/j_crn_br_light.png
-%%WWWDIR%%/installation/template/images/j_crn_br_med.png
-%%WWWDIR%%/installation/template/images/j_crn_tl_dark.png
-%%WWWDIR%%/installation/template/images/j_crn_tl_light.png
-%%WWWDIR%%/installation/template/images/j_crn_tl_med.png
-%%WWWDIR%%/installation/template/images/j_crn_tr_dark.png
-%%WWWDIR%%/installation/template/images/j_crn_tr_light.png
-%%WWWDIR%%/installation/template/images/j_crn_tr_med.png
 %%WWWDIR%%/installation/template/images/j_divider.png
-%%WWWDIR%%/installation/template/images/j_header_left.png
-%%WWWDIR%%/installation/template/images/j_header_left_rtl.png
 %%WWWDIR%%/installation/template/images/j_header_middle.png
-%%WWWDIR%%/installation/template/images/j_header_right.png
-%%WWWDIR%%/installation/template/images/j_header_right_rtl.png
 %%WWWDIR%%/installation/template/images/j_joomla_box.png
 %%WWWDIR%%/installation/template/images/logo.png
+%%WWWDIR%%/installation/template/images/spinner.gif
 %%WWWDIR%%/installation/template/index.html
 %%WWWDIR%%/installation/template/index.php
 %%WWWDIR%%/installation/template/js/index.html
@@ -2722,6 +2675,10 @@
 %%WWWDIR%%/language/en-GB/en-GB.files_joomla.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.ini
 %%WWWDIR%%/language/en-GB/en-GB.lib_joomla.ini
+%%WWWDIR%%/language/en-GB/en-GB.lib_joomla.sys.ini
+%%WWWDIR%%/language/en-GB/en-GB.lib_phpmailer.sys.ini
+%%WWWDIR%%/language/en-GB/en-GB.lib_phputf8.sys.ini
+%%WWWDIR%%/language/en-GB/en-GB.lib_simplepie.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.localise.php
 %%WWWDIR%%/language/en-GB/en-GB.mod_articles_archive.ini
 %%WWWDIR%%/language/en-GB/en-GB.mod_articles_archive.sys.ini
@@ -2769,6 +2726,7 @@
 %%WWWDIR%%/language/en-GB/en-GB.mod_whosonline.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.mod_wrapper.ini
 %%WWWDIR%%/language/en-GB/en-GB.mod_wrapper.sys.ini
+%%WWWDIR%%/language/en-GB/en-GB.pkg_joomla.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.tpl_atomic.ini
 %%WWWDIR%%/language/en-GB/en-GB.tpl_atomic.sys.ini
 %%WWWDIR%%/language/en-GB/en-GB.tpl_beez5.ini
@@ -2778,14 +2736,19 @@
 %%WWWDIR%%/language/en-GB/en-GB.xml
 %%WWWDIR%%/language/en-GB/index.html
 %%WWWDIR%%/language/index.html
+%%WWWDIR%%/language/overrides/en-GB.override.ini
 %%WWWDIR%%/language/overrides/index.html
+%%WWWDIR%%/libraries/import.php
 %%WWWDIR%%/libraries/index.html
 %%WWWDIR%%/libraries/joomla/access/access.php
 %%WWWDIR%%/libraries/joomla/access/index.html
 %%WWWDIR%%/libraries/joomla/access/rule.php
 %%WWWDIR%%/libraries/joomla/access/rules.php
 %%WWWDIR%%/libraries/joomla/application/application.php
+%%WWWDIR%%/libraries/joomla/application/applicationexception.php
 %%WWWDIR%%/libraries/joomla/application/categories.php
+%%WWWDIR%%/libraries/joomla/application/cli/daemon.php
+%%WWWDIR%%/libraries/joomla/application/cli.php
 %%WWWDIR%%/libraries/joomla/application/component/controller.php
 %%WWWDIR%%/libraries/joomla/application/component/controlleradmin.php
 %%WWWDIR%%/libraries/joomla/application/component/controllerform.php
@@ -2799,6 +2762,11 @@
 %%WWWDIR%%/libraries/joomla/application/component/view.php
 %%WWWDIR%%/libraries/joomla/application/helper.php
 %%WWWDIR%%/libraries/joomla/application/index.html
+%%WWWDIR%%/libraries/joomla/application/input/cli.php
+%%WWWDIR%%/libraries/joomla/application/input/cookie.php
+%%WWWDIR%%/libraries/joomla/application/input/files.php
+%%WWWDIR%%/libraries/joomla/application/input/index.html
+%%WWWDIR%%/libraries/joomla/application/input.php
 %%WWWDIR%%/libraries/joomla/application/menu.php
 %%WWWDIR%%/libraries/joomla/application/module/helper.php
 %%WWWDIR%%/libraries/joomla/application/module/index.html
@@ -2833,13 +2801,24 @@
 %%WWWDIR%%/libraries/joomla/cache/storage.php
 %%WWWDIR%%/libraries/joomla/client/ftp.php
 %%WWWDIR%%/libraries/joomla/client/helper.php
+%%WWWDIR%%/libraries/joomla/client/http.php
 %%WWWDIR%%/libraries/joomla/client/index.html
 %%WWWDIR%%/libraries/joomla/client/ldap.php
-%%WWWDIR%%/libraries/joomla/config.php
 %%WWWDIR%%/libraries/joomla/database/database/index.html
 %%WWWDIR%%/libraries/joomla/database/database/mysql.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqlexporter.php
 %%WWWDIR%%/libraries/joomla/database/database/mysqli.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqliexporter.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqliimporter.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqlimporter.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqliquery.php
+%%WWWDIR%%/libraries/joomla/database/database/mysqlquery.php
+%%WWWDIR%%/libraries/joomla/database/database/sqlazure.php
+%%WWWDIR%%/libraries/joomla/database/database/sqlazurequery.php
+%%WWWDIR%%/libraries/joomla/database/database/sqlsrv.php
+%%WWWDIR%%/libraries/joomla/database/database/sqlsrvquery.php
 %%WWWDIR%%/libraries/joomla/database/database.php
+%%WWWDIR%%/libraries/joomla/database/databaseexception.php
 %%WWWDIR%%/libraries/joomla/database/databasequery.php
 %%WWWDIR%%/libraries/joomla/database/index.html
 %%WWWDIR%%/libraries/joomla/database/table/asset.php
@@ -2877,6 +2856,8 @@
 %%WWWDIR%%/libraries/joomla/document/index.html
 %%WWWDIR%%/libraries/joomla/document/json/index.html
 %%WWWDIR%%/libraries/joomla/document/json/json.php
+%%WWWDIR%%/libraries/joomla/document/opensearch/index.html
+%%WWWDIR%%/libraries/joomla/document/opensearch/opensearch.php
 %%WWWDIR%%/libraries/joomla/document/raw/index.html
 %%WWWDIR%%/libraries/joomla/document/raw/raw.php
 %%WWWDIR%%/libraries/joomla/document/renderer.php
@@ -2965,10 +2946,14 @@
 %%WWWDIR%%/libraries/joomla/form/rules/email.php
 %%WWWDIR%%/libraries/joomla/form/rules/equals.php
 %%WWWDIR%%/libraries/joomla/form/rules/index.html
+%%WWWDIR%%/libraries/joomla/form/rules/options.php
 %%WWWDIR%%/libraries/joomla/form/rules/rules.php
+%%WWWDIR%%/libraries/joomla/form/rules/tel.php
+%%WWWDIR%%/libraries/joomla/form/rules/url.php
 %%WWWDIR%%/libraries/joomla/form/rules/username.php
 %%WWWDIR%%/libraries/joomla/html/editor.php
 %%WWWDIR%%/libraries/joomla/html/html/access.php
+%%WWWDIR%%/libraries/joomla/html/html/batch.php
 %%WWWDIR%%/libraries/joomla/html/html/behavior.php
 %%WWWDIR%%/libraries/joomla/html/html/category.php
 %%WWWDIR%%/libraries/joomla/html/html/content.php
@@ -2987,6 +2972,7 @@
 %%WWWDIR%%/libraries/joomla/html/html/sliders.php
 %%WWWDIR%%/libraries/joomla/html/html/string.php
 %%WWWDIR%%/libraries/joomla/html/html/tabs.php
+%%WWWDIR%%/libraries/joomla/html/html/tel.php
 %%WWWDIR%%/libraries/joomla/html/html.php
 %%WWWDIR%%/libraries/joomla/html/index.html
 %%WWWDIR%%/libraries/joomla/html/pagination.php
@@ -3030,7 +3016,6 @@
 %%WWWDIR%%/libraries/joomla/html/toolbar/button.php
 %%WWWDIR%%/libraries/joomla/html/toolbar/index.html
 %%WWWDIR%%/libraries/joomla/html/toolbar.php
-%%WWWDIR%%/libraries/joomla/import.php
 %%WWWDIR%%/libraries/joomla/index.html
 %%WWWDIR%%/libraries/joomla/installer/adapters/component.php
 %%WWWDIR%%/libraries/joomla/installer/adapters/file.php
@@ -3052,6 +3037,16 @@
 %%WWWDIR%%/libraries/joomla/language/index.html
 %%WWWDIR%%/libraries/joomla/language/language.php
 %%WWWDIR%%/libraries/joomla/language/latin_transliterate.php
+%%WWWDIR%%/libraries/joomla/log/log.php
+%%WWWDIR%%/libraries/joomla/log/logentry.php
+%%WWWDIR%%/libraries/joomla/log/logexception.php
+%%WWWDIR%%/libraries/joomla/log/logger.php
+%%WWWDIR%%/libraries/joomla/log/loggers/database.php
+%%WWWDIR%%/libraries/joomla/log/loggers/echo.php
+%%WWWDIR%%/libraries/joomla/log/loggers/formattedtext.php
+%%WWWDIR%%/libraries/joomla/log/loggers/messagequeue.php
+%%WWWDIR%%/libraries/joomla/log/loggers/syslog.php
+%%WWWDIR%%/libraries/joomla/log/loggers/w3c.php
 %%WWWDIR%%/libraries/joomla/mail/helper.php
 %%WWWDIR%%/libraries/joomla/mail/index.html
 %%WWWDIR%%/libraries/joomla/mail/mail.php
@@ -3099,7 +3094,7 @@
 %%WWWDIR%%/libraries/joomla/utilities/string.php
 %%WWWDIR%%/libraries/joomla/utilities/utility.php
 %%WWWDIR%%/libraries/joomla/utilities/xmlelement.php
-%%WWWDIR%%/libraries/joomla/version.php
+%%WWWDIR%%/libraries/joomlacms/index.html
 %%WWWDIR%%/libraries/loader.php
 %%WWWDIR%%/libraries/phpmailer/LICENSE
 %%WWWDIR%%/libraries/phpmailer/index.html
@@ -3137,6 +3132,7 @@
 %%WWWDIR%%/libraries/phputf8/utils/specials.php
 %%WWWDIR%%/libraries/phputf8/utils/unicode.php
 %%WWWDIR%%/libraries/phputf8/utils/validation.php
+%%WWWDIR%%/libraries/platform.php
 %%WWWDIR%%/libraries/simplepie/LICENSE.txt
 %%WWWDIR%%/libraries/simplepie/README.txt
 %%WWWDIR%%/libraries/simplepie/idn/LICENCE
@@ -3157,16 +3153,16 @@
 %%WWWDIR%%/media/contacts/index.html
 %%WWWDIR%%/media/editors/codemirror/css/codemirror.css
 %%WWWDIR%%/media/editors/codemirror/css/csscolors.css
-%%WWWDIR%%/media/editors/codemirror/css/docs.css
 %%WWWDIR%%/media/editors/codemirror/css/index.html
 %%WWWDIR%%/media/editors/codemirror/css/jscolors.css
+%%WWWDIR%%/media/editors/codemirror/css/phpcolors.css
 %%WWWDIR%%/media/editors/codemirror/css/sparqlcolors.css
 %%WWWDIR%%/media/editors/codemirror/css/xmlcolors.css
 %%WWWDIR%%/media/editors/codemirror/index.html
 %%WWWDIR%%/media/editors/codemirror/js/basefiles-uncompressed.js
 %%WWWDIR%%/media/editors/codemirror/js/basefiles.js
-%%WWWDIR%%/media/editors/codemirror/js/codemirror.js
 %%WWWDIR%%/media/editors/codemirror/js/codemirror-uncompressed.js
+%%WWWDIR%%/media/editors/codemirror/js/codemirror.js
 %%WWWDIR%%/media/editors/codemirror/js/editor.js
 %%WWWDIR%%/media/editors/codemirror/js/highlight.js
 %%WWWDIR%%/media/editors/codemirror/js/index.html
@@ -3175,12 +3171,15 @@
 %%WWWDIR%%/media/editors/codemirror/js/parsedummy.js
 %%WWWDIR%%/media/editors/codemirror/js/parsehtmlmixed.js
 %%WWWDIR%%/media/editors/codemirror/js/parsejavascript.js
+%%WWWDIR%%/media/editors/codemirror/js/parsephp.js
+%%WWWDIR%%/media/editors/codemirror/js/parsephphtmlmixed.js
 %%WWWDIR%%/media/editors/codemirror/js/parsesparql.js
 %%WWWDIR%%/media/editors/codemirror/js/parsexml.js
 %%WWWDIR%%/media/editors/codemirror/js/select.js
 %%WWWDIR%%/media/editors/codemirror/js/stringstream.js
 %%WWWDIR%%/media/editors/codemirror/js/tokenize.js
 %%WWWDIR%%/media/editors/codemirror/js/tokenizejavascript.js
+%%WWWDIR%%/media/editors/codemirror/js/tokenizephp.js
 %%WWWDIR%%/media/editors/codemirror/js/undo.js
 %%WWWDIR%%/media/editors/codemirror/js/util.js
 %%WWWDIR%%/media/editors/index.html
@@ -3225,6 +3224,8 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/index.html
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin.js
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/index.html
@@ -3267,17 +3268,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/dialog.htm
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin_src.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/img/example.gif
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/img/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/js/dialog.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/js/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
@@ -3317,7 +3307,8 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css/content.css
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin.js
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
@@ -3337,19 +3328,15 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/moxieplayer.swf
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/content.css
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/index.html
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
@@ -3469,8 +3456,17 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/flash.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/iframe.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/index.html
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/pagebreak.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/quicktime.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/realmedia.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/shockwave.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/trans.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/video.gif
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/windowsmedia.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/js/about.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/js/anchor.js
@@ -3484,6 +3480,7 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/shortcuts.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/content.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
@@ -3495,6 +3492,10 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/content.css
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/index.html
+%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/ui.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
@@ -3525,8 +3526,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/utils/editable_selects.js
@@ -3622,6 +3621,7 @@
 %%WWWDIR%%/media/mod_languages/images/af.gif
 %%WWWDIR%%/media/mod_languages/images/ar.gif
 %%WWWDIR%%/media/mod_languages/images/az.gif
+%%WWWDIR%%/media/mod_languages/images/be.gif
 %%WWWDIR%%/media/mod_languages/images/bg.gif
 %%WWWDIR%%/media/mod_languages/images/bn.gif
 %%WWWDIR%%/media/mod_languages/images/br.gif
@@ -3639,6 +3639,7 @@
 %%WWWDIR%%/media/mod_languages/images/fa.gif
 %%WWWDIR%%/media/mod_languages/images/fi.gif
 %%WWWDIR%%/media/mod_languages/images/fr.gif
+%%WWWDIR%%/media/mod_languages/images/gd.gif
 %%WWWDIR%%/media/mod_languages/images/he.gif
 %%WWWDIR%%/media/mod_languages/images/hi.gif
 %%WWWDIR%%/media/mod_languages/images/hr.gif
@@ -3654,6 +3655,7 @@
 %%WWWDIR%%/media/mod_languages/images/ku.gif
 %%WWWDIR%%/media/mod_languages/images/lt.gif
 %%WWWDIR%%/media/mod_languages/images/lv.gif
+%%WWWDIR%%/media/mod_languages/images/mk.gif
 %%WWWDIR%%/media/mod_languages/images/mn.gif
 %%WWWDIR%%/media/mod_languages/images/nl.gif
 %%WWWDIR%%/media/mod_languages/images/no.gif
@@ -3911,9 +3913,6 @@
 %%WWWDIR%%/modules/mod_wrapper/mod_wrapper.xml
 %%WWWDIR%%/modules/mod_wrapper/tmpl/default.php
 %%WWWDIR%%/modules/mod_wrapper/tmpl/index.html
-%%WWWDIR%%/plugins/authentication/example/example.php
-%%WWWDIR%%/plugins/authentication/example/example.xml
-%%WWWDIR%%/plugins/authentication/example/index.html
 %%WWWDIR%%/plugins/authentication/gmail/gmail.php
 %%WWWDIR%%/plugins/authentication/gmail/gmail.xml
 %%WWWDIR%%/plugins/authentication/gmail/index.html
@@ -3927,13 +3926,6 @@
 %%WWWDIR%%/plugins/content/emailcloak/emailcloak.php
 %%WWWDIR%%/plugins/content/emailcloak/emailcloak.xml
 %%WWWDIR%%/plugins/content/emailcloak/index.html
-%%WWWDIR%%/plugins/content/example/example.php
-%%WWWDIR%%/plugins/content/example/example.xml
-%%WWWDIR%%/plugins/content/example/index.html
-%%WWWDIR%%/plugins/content/example/language/en-GB/en-GB.plg_content_example.ini
-%%WWWDIR%%/plugins/content/example/language/en-GB/en-GB.plg_content_example.sys.ini
-%%WWWDIR%%/plugins/content/example/language/en-GB/index.html
-%%WWWDIR%%/plugins/content/example/language/index.html
 %%WWWDIR%%/plugins/content/geshi/geshi/geshi/css.php
 %%WWWDIR%%/plugins/content/geshi/geshi/geshi/diff.php
 %%WWWDIR%%/plugins/content/geshi/geshi/geshi/html4strict.php
@@ -3989,9 +3981,6 @@
 %%WWWDIR%%/plugins/editors-xtd/readmore/index.html
 %%WWWDIR%%/plugins/editors-xtd/readmore/readmore.php
 %%WWWDIR%%/plugins/editors-xtd/readmore/readmore.xml
-%%WWWDIR%%/plugins/extension/example/example.php
-%%WWWDIR%%/plugins/extension/example/example.xml
-%%WWWDIR%%/plugins/extension/example/index.html
 %%WWWDIR%%/plugins/extension/index.html
 %%WWWDIR%%/plugins/extension/joomla/index.html
 %%WWWDIR%%/plugins/extension/joomla/joomla.php
@@ -4044,9 +4033,6 @@
 %%WWWDIR%%/plugins/user/contactcreator/contactcreator.php
 %%WWWDIR%%/plugins/user/contactcreator/contactcreator.xml
 %%WWWDIR%%/plugins/user/contactcreator/index.html
-%%WWWDIR%%/plugins/user/example/example.php
-%%WWWDIR%%/plugins/user/example/example.xml
-%%WWWDIR%%/plugins/user/example/index.html
 %%WWWDIR%%/plugins/user/index.html
 %%WWWDIR%%/plugins/user/joomla/index.html
 %%WWWDIR%%/plugins/user/joomla/joomla.php
@@ -4108,7 +4094,7 @@
 %%WWWDIR%%/templates/atomic/css/blueprint/src/LICENSE.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/README.txt
 %%WWWDIR%%/templates/atomic/css/blueprint/src/TUTORIAL.txt
-%%WWWDIR%%/templates/atomic/css/blueprint/src/blueprintcss-0-9-1-cheatsheet-3-5-3-gjms.pdf
+%%WWWDIR%%/templates/atomic/css/blueprint/src/blueprintcss-1-0-cheatsheet-4-2-gjms.pdf
 %%WWWDIR%%/templates/atomic/css/blueprint/src/forms.css
 %%WWWDIR%%/templates/atomic/css/blueprint/src/grid.css
 %%WWWDIR%%/templates/atomic/css/blueprint/src/grid.png
@@ -4290,8 +4276,8 @@
 %%WWWDIR%%/templates/beez_20/images/nature/arrow1.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow1_rtl.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow2.gif
-%%WWWDIR%%/templates/beez_20/images/nature/arrow2_rtl.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow2_grey.png
+%%WWWDIR%%/templates/beez_20/images/nature/arrow2_rtl.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow_nav.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow_small.png
 %%WWWDIR%%/templates/beez_20/images/nature/arrow_small_rtl.png
@@ -4369,6 +4355,7 @@
 %%WWWDIR%%/templates/system/component.php
 %%WWWDIR%%/templates/system/css/editor.css
 %%WWWDIR%%/templates/system/css/error.css
+%%WWWDIR%%/templates/system/css/error_rtl.css
 %%WWWDIR%%/templates/system/css/general.css
 %%WWWDIR%%/templates/system/css/index.html
 %%WWWDIR%%/templates/system/css/offline.css
@@ -4383,20 +4370,24 @@
 %%WWWDIR%%/templates/system/images/j_button2_blank.png
 %%WWWDIR%%/templates/system/images/j_button2_image.png
 %%WWWDIR%%/templates/system/images/j_button2_left.png
-%%WWWDIR%%/templates/system/images/j_button2_right.png
 %%WWWDIR%%/templates/system/images/j_button2_pagebreak.png
 %%WWWDIR%%/templates/system/images/j_button2_readmore.png
+%%WWWDIR%%/templates/system/images/j_button2_right.png
 %%WWWDIR%%/templates/system/images/selector-arrow.png
 %%WWWDIR%%/templates/system/index.html
 %%WWWDIR%%/templates/system/index.php
 %%WWWDIR%%/templates/system/offline.php
 %%WWWDIR%%/tmp/index.html
+%%WWWDIR%%/web.config.txt
 @dirrm %%WWWDIR%%/administrator/cache
 @dirrm %%WWWDIR%%/administrator/components/com_admin/controllers
 @dirrm %%WWWDIR%%/administrator/components/com_admin/helpers/html
 @dirrm %%WWWDIR%%/administrator/components/com_admin/helpers
 @dirrm %%WWWDIR%%/administrator/components/com_admin/models/forms
 @dirrm %%WWWDIR%%/administrator/components/com_admin/models
+@dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql
+@dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates
+@dirrm %%WWWDIR%%/administrator/components/com_admin/sql
 @dirrm %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_admin/views/help
 @dirrm %%WWWDIR%%/administrator/components/com_admin/views/profile/tmpl
@@ -4410,6 +4401,7 @@
 @dirrm %%WWWDIR%%/administrator/components/com_banners/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_banners/models/forms
 @dirrm %%WWWDIR%%/administrator/components/com_banners/models
+@dirrm %%WWWDIR%%/administrator/components/com_banners/sql
 @dirrm %%WWWDIR%%/administrator/components/com_banners/tables
 @dirrm %%WWWDIR%%/administrator/components/com_banners/views/banner/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_banners/views/banner
@@ -4467,6 +4459,7 @@
 @dirrm %%WWWDIR%%/administrator/components/com_contact/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_contact/models/forms
 @dirrm %%WWWDIR%%/administrator/components/com_contact/models
+@dirrm %%WWWDIR%%/administrator/components/com_contact/sql
 @dirrm %%WWWDIR%%/administrator/components/com_contact/tables
 @dirrm %%WWWDIR%%/administrator/components/com_contact/views/contact/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_contact/views/contact
@@ -4525,6 +4518,8 @@
 @dirrm %%WWWDIR%%/administrator/components/com_languages/views/language
 @dirrm %%WWWDIR%%/administrator/components/com_languages/views/languages/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_languages/views/languages
+@dirrm %%WWWDIR%%/administrator/components/com_languages/views/multilangstatus/tmpl
+@dirrm %%WWWDIR%%/administrator/components/com_languages/views/multilangstatus
 @dirrm %%WWWDIR%%/administrator/components/com_languages/views
 @dirrm %%WWWDIR%%/administrator/components/com_languages
 @dirrm %%WWWDIR%%/administrator/components/com_login/models
@@ -4547,6 +4542,7 @@
 @dirrm %%WWWDIR%%/administrator/components/com_media/views
 @dirrm %%WWWDIR%%/administrator/components/com_media
 @dirrm %%WWWDIR%%/administrator/components/com_menus/controllers
+@dirrm %%WWWDIR%%/administrator/components/com_menus/helpers/html
 @dirrm %%WWWDIR%%/administrator/components/com_menus/helpers
 @dirrm %%WWWDIR%%/administrator/components/com_menus/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_menus/models/forms
@@ -4602,6 +4598,7 @@
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/models/forms
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/models
+@dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/sql
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/tables
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/views/newsfeed/tmpl
 @dirrm %%WWWDIR%%/administrator/components/com_newsfeeds/views/newsfeed
@@ -4685,7 +4682,6 @@
 @dirrm %%WWWDIR%%/administrator/components/com_users/views
 @dirrm %%WWWDIR%%/administrator/components/com_users
 @dirrm %%WWWDIR%%/administrator/components/com_weblinks/controllers
-@dirrm %%WWWDIR%%/administrator/components/com_weblinks/helpers/html
 @dirrm %%WWWDIR%%/administrator/components/com_weblinks/helpers
 @dirrm %%WWWDIR%%/administrator/components/com_weblinks/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_weblinks/models/forms
@@ -4722,8 +4718,10 @@
 @dirrm %%WWWDIR%%/administrator/modules/mod_login
 @dirrm %%WWWDIR%%/administrator/modules/mod_menu/tmpl
 @dirrm %%WWWDIR%%/administrator/modules/mod_menu
-@dirrm %%WWWDIR%%/administrator/modules/mod_online/tmpl
-@dirrm %%WWWDIR%%/administrator/modules/mod_online
+@dirrm %%WWWDIR%%/administrator/modules/mod_multilangstatus/language/en-GB
+@dirrm %%WWWDIR%%/administrator/modules/mod_multilangstatus/language
+@dirrm %%WWWDIR%%/administrator/modules/mod_multilangstatus/tmpl
+@dirrm %%WWWDIR%%/administrator/modules/mod_multilangstatus
 @dirrm %%WWWDIR%%/administrator/modules/mod_popular/tmpl
 @dirrm %%WWWDIR%%/administrator/modules/mod_popular
 @dirrm %%WWWDIR%%/administrator/modules/mod_quickicon/tmpl
@@ -4736,8 +4734,6 @@
 @dirrm %%WWWDIR%%/administrator/modules/mod_title
 @dirrm %%WWWDIR%%/administrator/modules/mod_toolbar/tmpl
 @dirrm %%WWWDIR%%/administrator/modules/mod_toolbar
-@dirrm %%WWWDIR%%/administrator/modules/mod_unread/tmpl
-@dirrm %%WWWDIR%%/administrator/modules/mod_unread
 @dirrm %%WWWDIR%%/administrator/modules
 @dirrm %%WWWDIR%%/administrator/templates/bluestork/css
 @dirrm %%WWWDIR%%/administrator/templates/bluestork/html
@@ -4780,11 +4776,8 @@
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_installer/update
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_installer
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_languages/installed
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_languages/language
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_languages/languages
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_languages
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_media/media
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_media
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_menus/item
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_menus/items
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_menus/menu
@@ -4795,7 +4788,6 @@
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_modules/module
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_modules/modules
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_modules/positions
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_modules/select
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_modules
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_newsfeeds/newsfeed
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_newsfeeds/newsfeeds
@@ -4819,9 +4811,6 @@
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_weblinks/weblink
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_weblinks/weblinks
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html/com_weblinks
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/mod_latest
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/mod_popular
-@dirrm %%WWWDIR%%/administrator/templates/hathor/html/mod_status
 @dirrm %%WWWDIR%%/administrator/templates/hathor/html
 @dirrm %%WWWDIR%%/administrator/templates/hathor/images/admin
 @dirrm %%WWWDIR%%/administrator/templates/hathor/images/header
@@ -4840,6 +4829,7 @@
 @dirrm %%WWWDIR%%/administrator/templates
 @dirrm %%WWWDIR%%/administrator
 @dirrm %%WWWDIR%%/cache
+@dirrm %%WWWDIR%%/cli
 @dirrm %%WWWDIR%%/components/com_banners/helpers
 @dirrm %%WWWDIR%%/components/com_banners/models
 @dirrm %%WWWDIR%%/components/com_banners
@@ -4961,22 +4951,21 @@
 @dirrm %%WWWDIR%%/installation/language/da-DK
 @dirrm %%WWWDIR%%/installation/language/de-DE
 @dirrm %%WWWDIR%%/installation/language/el-GR
-@dirrm %%WWWDIR%%/installation/language/eo-XX
 @dirrm %%WWWDIR%%/installation/language/en-AU
 @dirrm %%WWWDIR%%/installation/language/en-GB
 @dirrm %%WWWDIR%%/installation/language/en-US
 @dirrm %%WWWDIR%%/installation/language/es-ES
 @dirrm %%WWWDIR%%/installation/language/et-EE
+@dirrm %%WWWDIR%%/installation/language/eu-ES
 @dirrm %%WWWDIR%%/installation/language/fa-IR
 @dirrm %%WWWDIR%%/installation/language/fi-FI
 @dirrm %%WWWDIR%%/installation/language/fr-FR
+@dirrm %%WWWDIR%%/installation/language/gd-GB
 @dirrm %%WWWDIR%%/installation/language/gl-ES
 @dirrm %%WWWDIR%%/installation/language/gu-IN
 @dirrm %%WWWDIR%%/installation/language/he-IL
 @dirrm %%WWWDIR%%/installation/language/hr-HR
 @dirrm %%WWWDIR%%/installation/language/hu-HU
-@dirrm %%WWWDIR%%/installation/language/id-ID
-@dirrm %%WWWDIR%%/installation/language/is-IS
 @dirrm %%WWWDIR%%/installation/language/it-IT
 @dirrm %%WWWDIR%%/installation/language/ja-JP
 @dirrm %%WWWDIR%%/installation/language/ka-GE
@@ -4984,8 +4973,6 @@
 @dirrm %%WWWDIR%%/installation/language/lo-LA
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lv-LV
-@dirrm %%WWWDIR%%/installation/language/ml-IN
-@dirrm %%WWWDIR%%/installation/language/mn-MN
 @dirrm %%WWWDIR%%/installation/language/mk-MK
 @dirrm %%WWWDIR%%/installation/language/nb-NO
 @dirrm %%WWWDIR%%/installation/language/nl-NL
@@ -4996,7 +4983,6 @@
 @dirrm %%WWWDIR%%/installation/language/ro-RO
 @dirrm %%WWWDIR%%/installation/language/ru-RU
 @dirrm %%WWWDIR%%/installation/language/sk-SK
-@dirrm %%WWWDIR%%/installation/language/sq-AL
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-YU
 @dirrm %%WWWDIR%%/installation/language/sv-SE
@@ -5005,12 +4991,12 @@
 @dirrm %%WWWDIR%%/installation/language/th-TH
 @dirrm %%WWWDIR%%/installation/language/tr-TR
 @dirrm %%WWWDIR%%/installation/language/uk-UA
-@dirrm %%WWWDIR%%/installation/language/vi-VN
 @dirrm %%WWWDIR%%/installation/language/zh-CN
 @dirrm %%WWWDIR%%/installation/language/zh-TW
 @dirrm %%WWWDIR%%/installation/language
 @dirrm %%WWWDIR%%/installation/models/fields
 @dirrm %%WWWDIR%%/installation/models/forms
+@dirrm %%WWWDIR%%/installation/models/rules
 @dirrm %%WWWDIR%%/installation/models
 @dirrm %%WWWDIR%%/installation/sql/migration
 @dirrm %%WWWDIR%%/installation/sql/mysql
@@ -5041,7 +5027,9 @@
 @dirrm %%WWWDIR%%/language/overrides
 @dirrm %%WWWDIR%%/language
 @dirrm %%WWWDIR%%/libraries/joomla/access
+@dirrm %%WWWDIR%%/libraries/joomla/application/cli
 @dirrm %%WWWDIR%%/libraries/joomla/application/component
+@dirrm %%WWWDIR%%/libraries/joomla/application/input
 @dirrm %%WWWDIR%%/libraries/joomla/application/module
 @dirrm %%WWWDIR%%/libraries/joomla/application
 @dirrm %%WWWDIR%%/libraries/joomla/base
@@ -5059,6 +5047,7 @@
 @dirrm %%WWWDIR%%/libraries/joomla/document/html/renderer
 @dirrm %%WWWDIR%%/libraries/joomla/document/html
 @dirrm %%WWWDIR%%/libraries/joomla/document/json
+@dirrm %%WWWDIR%%/libraries/joomla/document/opensearch
 @dirrm %%WWWDIR%%/libraries/joomla/document/raw
 @dirrm %%WWWDIR%%/libraries/joomla/document/xml
 @dirrm %%WWWDIR%%/libraries/joomla/document
@@ -5082,6 +5071,8 @@
 @dirrm %%WWWDIR%%/libraries/joomla/installer/adapters
 @dirrm %%WWWDIR%%/libraries/joomla/installer
 @dirrm %%WWWDIR%%/libraries/joomla/language
+@dirrm %%WWWDIR%%/libraries/joomla/log/loggers
+@dirrm %%WWWDIR%%/libraries/joomla/log
 @dirrm %%WWWDIR%%/libraries/joomla/mail
 @dirrm %%WWWDIR%%/libraries/joomla/plugin
 @dirrm %%WWWDIR%%/libraries/joomla/registry/format
@@ -5093,6 +5084,7 @@
 @dirrm %%WWWDIR%%/libraries/joomla/user
 @dirrm %%WWWDIR%%/libraries/joomla/utilities
 @dirrm %%WWWDIR%%/libraries/joomla
+@dirrm %%WWWDIR%%/libraries/joomlacms
 @dirrm %%WWWDIR%%/libraries/phpmailer/language
 @dirrm %%WWWDIR%%/libraries/phpmailer
 @dirrm %%WWWDIR%%/libraries/phputf8/mbstring
@@ -5123,6 +5115,7 @@
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist
+@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave
@@ -5133,10 +5126,6 @@
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/js
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/img
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/js
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example/langs
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/example
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/css
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/js
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/langs
@@ -5149,6 +5138,7 @@
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer
+@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/img
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/js
@@ -5156,8 +5146,6 @@
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/css
-@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/img
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/js
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs
@@ -5198,6 +5186,7 @@
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7
 @dirrm %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/skins
@@ -5281,15 +5270,11 @@
 @dirrm %%WWWDIR%%/modules/mod_wrapper/tmpl
 @dirrm %%WWWDIR%%/modules/mod_wrapper
 @dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/plugins/authentication/example
 @dirrm %%WWWDIR%%/plugins/authentication/gmail
 @dirrm %%WWWDIR%%/plugins/authentication/joomla
 @dirrm %%WWWDIR%%/plugins/authentication/ldap
 @dirrm %%WWWDIR%%/plugins/authentication
 @dirrm %%WWWDIR%%/plugins/content/emailcloak
-@dirrm %%WWWDIR%%/plugins/content/example/language/en-GB
-@dirrm %%WWWDIR%%/plugins/content/example/language
-@dirrm %%WWWDIR%%/plugins/content/example
 @dirrm %%WWWDIR%%/plugins/content/geshi/geshi/geshi
 @dirrm %%WWWDIR%%/plugins/content/geshi/geshi
 @dirrm %%WWWDIR%%/plugins/content/geshi
@@ -5308,7 +5293,6 @@
 @dirrm %%WWWDIR%%/plugins/editors-xtd/pagebreak
 @dirrm %%WWWDIR%%/plugins/editors-xtd/readmore
 @dirrm %%WWWDIR%%/plugins/editors-xtd
-@dirrm %%WWWDIR%%/plugins/extension/example
 @dirrm %%WWWDIR%%/plugins/extension/joomla
 @dirrm %%WWWDIR%%/plugins/extension
 @dirrm %%WWWDIR%%/plugins/search/categories
@@ -5328,7 +5312,6 @@
 @dirrm %%WWWDIR%%/plugins/system/sef
 @dirrm %%WWWDIR%%/plugins/system
 @dirrm %%WWWDIR%%/plugins/user/contactcreator
-@dirrm %%WWWDIR%%/plugins/user/example
 @dirrm %%WWWDIR%%/plugins/user/joomla
 @dirrm %%WWWDIR%%/plugins/user/profile/profiles
 @dirrm %%WWWDIR%%/plugins/user/profile
