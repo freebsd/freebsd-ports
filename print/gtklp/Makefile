@@ -17,6 +17,8 @@ COMMENT=	A gtk interface to cups
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
