@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ding-libs
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
