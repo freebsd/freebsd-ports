@@ -1,0 +1,5 @@
+ocaml-mysql is a package for OCaml that provides access to MySQL
+databases. It consists of low level functions implemented in C and a
+module MySQL intended for application development.
+
+WWW: http://ocaml-mysql.forge.ocamlcore.org/
