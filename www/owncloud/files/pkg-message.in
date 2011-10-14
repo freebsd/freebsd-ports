@@ -1,0 +1,21 @@
+
+***********************************************************************
+*                         POST INSTALL CONFIGURATION                  *
+***********************************************************************
+
+Please note that everything has been installed in %%WWWDIR%%.
+
+Read %%WWWDIR%%/README.
+
+You will probably want to add an alias to your httpd.conf file, something
+like this:
+
+    	Alias /owncloud %%WWWDIR%%
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%>
+	    AllowOverride All
+	    Order Allow,Deny
+	    Allow from all
+	</Directory>
+
+And restart Apache.
