@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pool/main/t/ttf-indic-fonts
 PKGNAMESUFFIX=	-fonts
 DISTNAME=	${PORTNAME:C|(.*)-(.*)|\2-\1|}${PKGNAMESUFFIX}_${PORTVERSION}
 
-MAINTAINER=	jacula@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of truetype Indic fonts
 
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
