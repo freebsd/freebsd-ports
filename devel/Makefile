@@ -908,7 +908,6 @@
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
-    SUBDIR += libsoup22
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
     SUBDIR += libstroke

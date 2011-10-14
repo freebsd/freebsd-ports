@@ -39,7 +39,6 @@
     SUBDIR += arora
     SUBDIR += asp2php
     SUBDIR += asql
-    SUBDIR += asterisk-gui
     SUBDIR += asterisk-stat
     SUBDIR += aswedit
     SUBDIR += aswiki
@@ -248,7 +247,6 @@
     SUBDIR += geolizer
     SUBDIR += geronimo
     SUBDIR += getleft
-    SUBDIR += gforge
     SUBDIR += gist
     SUBDIR += glpi
     SUBDIR += gnome-user-share
@@ -378,7 +376,6 @@
     SUBDIR += links1
     SUBDIR += linux-f10-flashplugin10
     SUBDIR += linux-firefox
-    SUBDIR += linux-flashplugin7
     SUBDIR += linux-flashplugin9
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-mplayer-plugin
@@ -601,7 +598,6 @@
     SUBDIR += openx
     SUBDIR += openxmldir
     SUBDIR += opera
-    SUBDIR += opera-devel
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
@@ -1438,7 +1434,6 @@
     SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += pligg
-    SUBDIR += plone3
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki
@@ -1682,7 +1677,6 @@
     SUBDIR += seamonkey2-i18n
     SUBDIR += selenium
     SUBDIR += serendipity
-    SUBDIR += serendipity-devel
     SUBDIR += serf
     SUBDIR += servlet-api
     SUBDIR += session2
@@ -2054,7 +2048,6 @@
     SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
-    SUBDIR += ziproxy
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-FileSystemSite

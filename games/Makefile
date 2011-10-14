@@ -726,7 +726,6 @@
     SUBDIR += quake2-source
     SUBDIR += quake2-xatrix
     SUBDIR += quake2-zaero
-    SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quake2max
     SUBDIR += quake3

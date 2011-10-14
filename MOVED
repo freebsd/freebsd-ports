@@ -2775,3 +2775,40 @@ security/snort_inline||2011-10-09|Does not build properly, no longer supported u
 databases/ruby-pg|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
 databases/rubygem-postgres|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
 databases/ruby-postgres|databases/rubygem-pg|2011-10-10|Replaced by rubygem-pg
+archivers/pecl-phar||2011-10-14|Vulnerable since 2011-01-13
+comms/libsyncml||2011-10-14|Depends on devel/libsoup22, which is FORBIDDEN
+databases/mysql323-server||2011-10-14|Vulnerable since 2006-10-29
+databases/mysql323-client||2011-10-14|Vulnerable since 2006-10-29
+databases/mysql323-scripts||2011-10-14|Vulnerable since 2006-10-29
+databases/mysql40-server||2011-10-14|Vulnerable since 2006-10-29
+databases/mysql40-client||2011-10-14|Vulnerable since 2006-10-29
+databases/mysql40-scripts||2011-10-14|Vulnerable since 2006-10-29
+databases/p5-DBD-mysql40||2011-10-14|Depends on databases/mysql40-server, which is FORBIDDEN
+deskutils/buoh||2011-10-14|Depends on devel/libsoup22, which is FORBIDDEN
+deskutils/libopensync-plugin-syncml||2011-10-14|Depends on comms/libsyncml, which is DEPRECATED
+devel/libsoup22||2011-10-14|Vulnerable since 2011-07-28
+dns/bind9-sdb-ldap||2011-10-14|Vulnerable since 2011-06-04
+dns/bind9-sdb-postgresql||2011-10-14|Vulnerable since 2011-06-04
+ftp/wgetpro||2011-10-14|Vulnerable since 2004-12-14
+games/quake2forge||2011-10-14|Vulnerable since 2005-01-21
+graphics/linux-tiff||2011-10-14|Vulnerable since 2004-10-13
+japanese/mutt||2011-10-14|Vulnerable since 2007-07-29
+japanese/asterisk14-sounds||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+net/asterisk14||2011-10-14|Vulnerable since 2011-06-25
+net/isc-dhcp31-client||2011-10-14|Vulnerable since 2011-04-10
+net/isc-dhcp31-server||2011-10-14|Vulnerable since 2011-04-10
+net/isc-dhcp31-relay||2011-10-14|Vulnerable since 2011-04-10
+net/asterisk-app-ldap||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+net/asterisk-app-notify||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+net/asterisk-oh323||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN, does not compile on sparc64
+net/asterisk14-addons||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+net/astfax||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+net-mgmt/nagios2||2011-10-14|Vulnerable since 2009-06-30
+www/gforge||2011-10-14|Vulnerable since 2005-08-09
+www/linux-flashplugin7||2011-10-14|Vulnerable since at least 2008-05-30
+www/opera-devel||2011-10-14|Vulnerable since 2010-06-25, does not fetch
+www/plone3||2011-10-14|Vulnerable and unsupported upstream
+www/serendipity-devel||2011-10-14|Vulnerable since 2008-04-25
+www/ziproxy||2011-10-14|Vulnerable since 2010-06-15
+www/asterisk-gui||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
+x11-toolkits/linux-pango||2011-10-14|Vulnerable since 2009-05-13

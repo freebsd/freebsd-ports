@@ -20,7 +20,6 @@
     SUBDIR += another-htmllint
     SUBDIR += anthy
     SUBDIR += asterisk-sounds
-    SUBDIR += asterisk14-sounds
     SUBDIR += asterisk16-sounds
     SUBDIR += aterm
     SUBDIR += awffull
@@ -192,7 +191,6 @@
     SUBDIR += mozc-tool
     SUBDIR += mtools
     SUBDIR += multiskkserv
-    SUBDIR += mutt
     SUBDIR += mutt-devel
     SUBDIR += mypaedia-fpw
     SUBDIR += mypaedia-fpw-package

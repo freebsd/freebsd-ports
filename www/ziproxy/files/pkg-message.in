@@ -1,2 +1,0 @@
-By default ziproxy is configured to accept connections on localhost only.
-Edit %%PREFIX%%/etc/ziproxy/ziproxy.conf to allow remote access.

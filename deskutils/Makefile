@@ -18,7 +18,6 @@
     SUBDIR += blogtk
     SUBDIR += bmp-docklet
     SUBDIR += bookreader
-    SUBDIR += buoh
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
     SUBDIR += cal
@@ -163,7 +162,6 @@
     SUBDIR += libopensync-plugin-synce
     SUBDIR += libopensync-plugin-synce-devel
     SUBDIR += libopensync-plugin-synce-legacy
-    SUBDIR += libopensync-plugin-syncml
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += lightning
     SUBDIR += lightning-thunderbird

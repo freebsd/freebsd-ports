@@ -126,7 +126,6 @@
     SUBDIR += pear-PHP_Archiv
     SUBDIR += pecl-bz2
     SUBDIR += pecl-lzf
-    SUBDIR += pecl-phar
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
     SUBDIR += pecl-zip
