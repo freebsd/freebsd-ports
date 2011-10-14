@@ -14,6 +14,7 @@
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += charis
+    SUBDIR += charis-compact
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += cyberbit-ttfonts
