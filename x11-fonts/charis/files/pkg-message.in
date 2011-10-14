@@ -1,7 +1,7 @@
 To use these fonts, add the following line to the "Files" section of
 xorg.conf:
 
-	FontPath "%%FONTROOTDIR%%/"
+	FontPath "%%DIR%%/"
 
 Users of older versions of X may additionally have to make sure that
 the freetype module is loaded.  Check /var/log/Xorg.0.log for error
