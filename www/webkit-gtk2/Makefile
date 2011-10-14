@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	webkit
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -28,7 +27,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 USE_GETTEXT=	yes
 WANT_GSTREAMER=	yes
 MAKE_JOBS_SAFE=	yes
-USE_XORG=	xt
+USE_XORG=	xt xrender
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -42,8 +41,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-icon-database \
 		--with-gtk=2.0 \
-		--enable-svg \
-		--enable-svg-fonts \
 		--enable-introspection
 MAKEFILE=	GNUmakefile
 GLIB_SCHEMAS=	org.webkitgtk-1.0.gschema.xml
