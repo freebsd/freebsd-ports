@@ -106,8 +106,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	55
 # MySQL client version currently supported.
-MYSQL323_LIBVER=	10
-MYSQL40_LIBVER=		12
 MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
@@ -149,7 +147,7 @@ _MYSQL_SERVER=	databases/mysql${MYSQL_VER}-server
 .endif
 
 .if (${USE_MYSQL} == "embedded")
-IGNORE_WITH_MYSQL=	323 40 41
+IGNORE_WITH_MYSQL=	41
 .endif
 
 # And now we are checking if we can use it

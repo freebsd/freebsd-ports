@@ -1,3 +1,0 @@
-bin/ast_fax
-%%DATADIR%%/ast_fax.call
-@dirrm %%DATADIR%%

@@ -1,6 +1,0 @@
-The SyncML plugin is a plugin that allows OpenSync to be synchronized against 
-SyncML capable devices. The plugin supports the protocol version 1.0, 1.1 and
-1.2. Available transports are http and obex. Bluetooth and HTTP-OBEX protocols
-are supported.
-
-WWW: http://www.opensync.org/wiki/syncml-guide

@@ -1,8 +1,0 @@
-share/opensync/defaults/syncml-http-server
-share/opensync/defaults/syncml-obex-client
-lib/opensync/plugins/syncml_plugin.la
-lib/opensync/plugins/syncml_plugin.so
-@dirrmtry lib/opensync/plugins
-@dirrmtry lib/opensync
-@dirrmtry share/opensync/defaults
-@dirrmtry share/opensync

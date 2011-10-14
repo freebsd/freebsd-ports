@@ -1,5 +1,0 @@
-Libsyncml is a implementation of the SyncML protocol.
-Its purpose is PIM data synchronization with mobile
-devices over HTTP or OBEX/Bluetooth channels.
-
-WWW: http://libsyncml.opensync.org/

@@ -8,8 +8,6 @@
     SUBDIR += ares
     SUBDIR += autotrust
     SUBDIR += bind-tools
-    SUBDIR += bind9-sdb-ldap
-    SUBDIR += bind9-sdb-postgresql
     SUBDIR += bind96
     SUBDIR += bind97
     SUBDIR += bind97-sdb

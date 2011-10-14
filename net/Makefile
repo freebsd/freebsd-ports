@@ -28,15 +28,9 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
-    SUBDIR += asterisk-app-ldap
-    SUBDIR += asterisk-app-notify
-    SUBDIR += asterisk-oh323
     SUBDIR += asterisk10
-    SUBDIR += asterisk14
-    SUBDIR += asterisk14-addons
     SUBDIR += asterisk16
     SUBDIR += asterisk16-addons
-    SUBDIR += astfax
     SUBDIR += atmsupport
     SUBDIR += avahi
     SUBDIR += avahi-app
@@ -256,9 +250,6 @@
     SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
     SUBDIR += isc-dhcp3-devel
-    SUBDIR += isc-dhcp31-client
-    SUBDIR += isc-dhcp31-relay
-    SUBDIR += isc-dhcp31-server
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server

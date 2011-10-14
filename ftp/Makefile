@@ -112,7 +112,6 @@
     SUBDIR += waiho
     SUBDIR += weex
     SUBDIR += wget
-    SUBDIR += wgetpro
     SUBDIR += wmget
     SUBDIR += wput
     SUBDIR += wu-ftpd+ipv6

@@ -222,12 +222,6 @@
     SUBDIR += mysql-xql
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql323-client
-    SUBDIR += mysql323-scripts
-    SUBDIR += mysql323-server
-    SUBDIR += mysql40-client
-    SUBDIR += mysql40-scripts
-    SUBDIR += mysql40-server
     SUBDIR += mysql41-client
     SUBDIR += mysql41-scripts
     SUBDIR += mysql41-server
@@ -334,7 +328,6 @@
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBD-cego
     SUBDIR += p5-DBD-mysql
-    SUBDIR += p5-DBD-mysql40
     SUBDIR += p5-DBD-mysql41
     SUBDIR += p5-DBD-mysql50
     SUBDIR += p5-DBD-mysql51
