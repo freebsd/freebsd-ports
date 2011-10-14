@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bug5
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	chinese converters
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
@@ -18,16 +18,12 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	bsdconv.6:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	a604e2f
+GITVERSION=	0c68779
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
 
+MAKE_ARGS=	PREFIX=${PREFIX}
+
 PLIST_FILES=	bin/bug5
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bug5 ${PREFIX}/bin/
 
 .include <bsd.port.mk>
