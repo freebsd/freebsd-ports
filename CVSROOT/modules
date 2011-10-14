@@ -6748,6 +6748,7 @@ joomla                          ports/www/joomla
 joomla15                        ports/www/joomla15
 josm                            ports/astro/josm
 jove                            ports/editors/jove
+joytran                         ports/emulators/joytran
 jp2a                            ports/graphics/jp2a
 jpatch                          ports/graphics/jpatch
 jpcap                           ports/net/jpcap
@@ -8735,6 +8736,7 @@ logmon                          ports/sysutils/logmon
 logo                            ports/lang/logo
 logrotate                       ports/sysutils/logrotate
 logserial                       ports/sysutils/logserial
+logstalgia                      ports/sysutils/logstalgia
 logsurfer+                      ports/misc/logsurfer+
 logtool                         ports/sysutils/logtool
 logtools                        ports/www/logtools
@@ -22475,10 +22477,13 @@ py-ydbf                         ports/devel/py-ydbf
 py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
 py-yum-metadata-parser          ports/devel/py-yum-metadata-parser
+py-zLOG                         ports/devel/py-zLOG
+py-zc.buildout                  ports/devel/py-zc.buildout
 py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
 py-zfs                          ports/sysutils/py-zfs
+py-zlog                         ports/devel/py-zLOG
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
 py-zope.datetime                ports/devel/py-zope.datetime
@@ -22488,6 +22493,7 @@ py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.interface               ports/devel/py-zope.interface
+py-zope.location                ports/devel/py-zope.location
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
 py-zope.testing                 ports/devel/py-zope.testing
