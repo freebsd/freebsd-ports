@@ -1,0 +1,20 @@
+bin/carton
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/carton/.packlist
+%%SITE_PERL%%/Carton.pm
+%%SITE_PERL%%/Carton.pod
+%%SITE_PERL%%/Carton/CLI.pm
+%%SITE_PERL%%/Carton/Doc/Check.pod
+%%SITE_PERL%%/Carton/Doc/Exec.pod
+%%SITE_PERL%%/Carton/Doc/FAQ.pod
+%%SITE_PERL%%/Carton/Doc/Install.pod
+%%SITE_PERL%%/Carton/Doc/List.pod
+%%SITE_PERL%%/Carton/Doc/Show.pod
+%%SITE_PERL%%/Carton/Doc/Tree.pod
+%%SITE_PERL%%/Carton/Doc/Uninstall.pod
+%%SITE_PERL%%/Carton/Doc/Version.pod
+%%SITE_PERL%%/Carton/Error.pm
+%%SITE_PERL%%/Carton/Tree.pm
+%%SITE_PERL%%/Carton/Util.pm
+@dirrm %%SITE_PERL%%/Carton/Doc
+@dirrm %%SITE_PERL%%/Carton
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/carton
