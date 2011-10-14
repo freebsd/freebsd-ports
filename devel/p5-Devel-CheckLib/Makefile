@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Devel-CheckLib
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl5 module to check that a library is available
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-CaptureOutput>=1.08:${PORTSDIR}/devel/p5-IO-CaptureOutput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
