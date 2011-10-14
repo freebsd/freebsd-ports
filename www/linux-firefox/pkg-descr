@@ -10,8 +10,6 @@ offers many advanced features:
  o Improved Security
 
 This is a pre-compiled Linux/i386 version, able to run plugins from that
-platform.  This port is compatible with the Flash plugin from
-ports/www/linux-flashplugin7/ and with the Java plugin from
-ports/java/linux-blackdown-jdk14/.
+platform.
 
 WWW: http://www.mozilla.com/firefox/
