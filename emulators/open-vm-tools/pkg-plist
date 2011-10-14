@@ -48,9 +48,9 @@ share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
-share/open-vm-tools/messages/toolboxcmd_de.vmsg
-share/open-vm-tools/messages/toolboxcmd_ja.vmsg
-share/open-vm-tools/messages/toolboxcmd_zh_CN.vmsg
+share/open-vm-tools/messages/de/toolbox.vmsg
+share/open-vm-tools/messages/ja/toolbox.vmsg
+share/open-vm-tools/messages/zh_CN/toolbox.vmsg
 share/vmware-tools/statechange.subr
 share/vmware-tools/scripts/vmware/network
 @exec kldxref %D/lib/vmware-tools/modules/drivers 2>/dev/null || true
@@ -62,6 +62,9 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
 @dirrmtry etc/vmware-tools
+@dirrmtry share/open-vm-tools/messages/de
+@dirrmtry share/open-vm-tools/messages/ja
+@dirrmtry share/open-vm-tools/messages/zh_CN
 @dirrmtry share/open-vm-tools/messages
 @dirrmtry share/open-vm-tools/scripts/vmware
 @dirrmtry share/open-vm-tools/scripts
