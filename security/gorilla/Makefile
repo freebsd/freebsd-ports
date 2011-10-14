@@ -9,7 +9,8 @@ PORTNAME=	gorilla
 PORTVERSION=	1.5.3.4
 DISTVERSIONSUFFIX=	7c3e819
 CATEGORIES=	security
-MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
+MASTER_SITES=	LOCAL/crees/gorilla				\
+		http://www.bayofrum.net/dist/${PORTNAME}/
 DISTNAME=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
 
 MAINTAINER=	crees@FreeBSD.org
