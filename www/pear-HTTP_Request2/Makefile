@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Request2
-PORTVERSION=	0.6.0
+DISTVERSION=	2.0.0RC2
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -19,24 +19,7 @@ OPTIONS=	CURL "PHP CURL extension support" off \
 		FILEINFO "PHP FILEINFO extension support" off \
 		ZLIB "PECL ZLIB support" off
 
-CATEGORY=	HTTP
-FILES=		Request2.php \
-		Request2/Exception.php Request2/Adapter.php \
-		Request2/MultipartBody.php Request2/Response.php \
-		Request2/Adapter/Curl.php \
-		Request2/Adapter/Mock.php \
-		Request2/Adapter/Socket.php \
-		Request2/Observer/Log.php
-TESTS=		AllTests.php ObserverTest.php Request2Test.php \
-		Request2/AllTests.php \
-		Request2/MultipartBodyTest.php \
-		Request2/ResponseTest.php \
-		Request2/Adapter/AllTests.php \
-		Request2/Adapter/MockTest.php \
-		_files/bug_15305 _files/response_cookies\
-		_files/response_gzip_broken _files/empty.gif \
-		_files/response_deflate _files/response_headers \
-		_files/plaintext.txt _files/response_gzip
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
