@@ -85,10 +85,6 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if defined(WITH_BDB)
 LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
 PLIST_SUB+=	BDB_SPOOL=
@@ -136,6 +132,14 @@ post-patch:
 	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
+.if ${OSVERSION} > 900007
+	@test \! -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
+	    (cd ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
+	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
+	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
+	    (cd ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 && \
+	     patch -p0 < ${FILESDIR}/qtcsh-config.h.diff)
+.endif
 	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
 	    (${CP} -r ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 \
 		${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
