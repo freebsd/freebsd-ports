@@ -21,6 +21,7 @@
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
     SUBDIR += doulos
+    SUBDIR += doulos-compact
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
     SUBDIR += encodings
