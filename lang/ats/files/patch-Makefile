@@ -1,0 +1,72 @@
+--- Makefile.orig	2011-10-06 17:27:15.000000000 +0800
++++ Makefile	2011-10-07 02:01:05.000000000 +0800
+@@ -92,7 +92,7 @@
+ 	cd $(abs_top_srcdir)
+ 	[ -d $(DESTDIR)/$(bindir) ] || $(MKDIR_P) $(DESTDIR)/$(bindir)
+ 	$(MKDIR_P) $(DESTDIR)$(ATSNEWHOME)/bin
+-	find ccomp contrib doc libats libc prelude -type d \
++	find ccomp libats libc prelude -type d \
+ 	  -exec $(MKDIR_P) $(DESTDIR)$(ATSNEWHOME)/\{} \; \
+ 	  -print
+ 
+@@ -100,7 +100,7 @@
+ #
+ # recursively install all files in the list except .svn control files.
+ #
+-	for d in ccomp/runtime contrib doc libats libc prelude; do \
++	for d in ccomp/runtime libats libc prelude; do \
+ 	  cd $(abs_top_srcdir) && \
+ 	  $(INSTALL) -d $(DESTDIR)$(ATSNEWHOME)/"$$d" && \
+ 	  find "$$d" -name .svn -prune -o -type f \
+@@ -140,6 +140,7 @@
+ 	done
+ 
+ install:: install_files
++	find $(DESTDIR)$(ATSNEWHOME) -depth -type d -empty -delete
+ 
+ ######
+ 
+@@ -152,8 +153,7 @@
+   bin/atslex \
+   ccomp/runtime/GCATS/gc.o \
+   ccomp/runtime/GCATS/gc_mt.o \
+-  atsopt1_gc \
+-  contrib
++  atsopt1_gc
+ 	@echo "ATS/Anairiats has been built up successfully!"
+ 	@echo "The value of ATSHOME for this build is \"$(ATSHOME)\"."
+ 	@echo "The value of ATSHOMERELOC for this build is \"$(ATSHOMERELOC)\"."
+@@ -214,23 +214,23 @@
+ 
+ .libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
+ libfiles: .libfiles_local
+-	$(ATSLIB) $(ATS_PROOFCHECK) -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_lex
+-	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_smlbas
+ 
+ lib32files: .libfiles_local
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_lex
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_smlbas
+ 
+ lib64files: .libfiles_local
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_lex
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_smlbas
+ 
+ .libfiles_mt_local: .libfiles_mt ; $(CC) -E -P -x c -o $@ $<
+ libfiles_mt: .libfiles_mt_local
+-	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 --libats_mt
++	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 $(CFLAGS) --libats_mt
+ 
+ ###### a lexer for ATS ######
+ 
