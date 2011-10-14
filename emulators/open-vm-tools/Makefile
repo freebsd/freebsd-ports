@@ -7,10 +7,9 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		4
 CATEGORIES=		emulators kld
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${RELEASE_DATE}
-DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
+DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 
 MAINTAINER=		mbr@FreeBSD.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
@@ -18,10 +17,10 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-RELEASE_DATE=		2010.10.18
-BUILD_VER=		313025
+RELEASE_VER=		8.6.0
+BUILD_VER=		425873
 
-WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
+WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 
@@ -43,14 +42,12 @@ CONFIGURE_ARGS+=	--disable-unity
 .endif
 LIB_DEPENDS+=		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 CONFIGURE_ARGS+=	--with-x
-CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
 			xtst
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
-BROKEN=			Does not compile with X11 support
 .endif
 
 .if !defined(WITHOUT_FUSE)
