@@ -13,6 +13,8 @@ MASTER_SITES=	http://hyperelliptic.org/nacl/
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	High speed cryptography library
 
+BROKEN=		does not install
+
 ALL_TARGET=	do
 USE_BZIP2=	YES
 MAKE_JOBS_UNSAFE=	YES
