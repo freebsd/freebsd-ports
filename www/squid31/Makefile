@@ -51,7 +51,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -82,10 +81,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=	squid-3.1-10373.patch squid-3.1-10374.patch \
-		squid-3.1-10375.patch squid-3.1-10376.patch \
-		squid-3.1-10377.patch squid-3.1-10378.patch \
-		squid-3.1-10379.patch
+PATCHFILES=	#empty
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -95,7 +91,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	15
+SQUID_STABLE_VER=	16
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
