@@ -254,6 +254,7 @@
     SUBDIR += mywwwatcher
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += namazu2
+    SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += openark-kit
