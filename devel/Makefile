@@ -64,6 +64,7 @@
     SUBDIR += astyle
     SUBDIR += atlas
     SUBDIR += atlas-devel
+    SUBDIR += ats-contrib-testing
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf-archive
