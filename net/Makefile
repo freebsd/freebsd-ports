@@ -249,7 +249,6 @@
     SUBDIR += ipw-firmware
     SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
-    SUBDIR += isc-dhcp3-devel
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server
