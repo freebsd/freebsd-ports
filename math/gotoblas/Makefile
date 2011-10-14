@@ -40,6 +40,12 @@ PLIST_FILES=	${GOTOFILES:S|^|lib/|}
 SUB_FILES=	pkg-message
 SUB_LIST=	MAXTHREADS=${MAXTHREADS}
 
+.if defined(PACKAGE_BUILDING)
+DYNAMIC_ARCH_DEFAULT=	on
+.else
+DYNAMIC_ARCH_DEFAULT=	off
+.endif
+
 OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
 							${DYNAMIC_ARCH_DEFAULT} \
 		INTERFACE64	"Use 8 byte integers on 64-bit architectures" off \
@@ -48,18 +54,16 @@ OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING)
-DYNAMIC_ARCH_DEFAULT=	on
-.else
-DYNAMIC_ARCH_DEFAULT=	off
-.endif
-
 MAXTHREADS?=	8
 
 .if ${ARCH:M*64} == ""
 GOTOFLAGS+=	BINARY32=1
 .else
 GOTOFLAGS+=	BINARY64=1
+.endif
+
+.if ! ( defined(WITH_DYNAMIC_ARCH) && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
+MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
 .if defined(WITH_DYNAMIC_ARCH)
