@@ -47,6 +47,7 @@ CONFLICTS=	gnugrep-*
 .if !(${OSVERSION} >= 900012 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800505))
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/bin
 .endif
 
 .if defined(WITHOUT_NLS)
