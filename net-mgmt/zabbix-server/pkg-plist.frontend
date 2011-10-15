@@ -19,6 +19,7 @@
 %%WWWDIR%%/api/classes/class.chostgroup.php
 %%WWWDIR%%/api/classes/class.cimage.php
 %%WWWDIR%%/api/classes/class.citem.php
+%%WWWDIR%%/api/classes/class.citemkey.php
 %%WWWDIR%%/api/classes/class.cmaintenance.php
 %%WWWDIR%%/api/classes/class.cmap.php
 %%WWWDIR%%/api/classes/class.cmediatype.php

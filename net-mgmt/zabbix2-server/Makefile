@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTVERSION=	1.8.8
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -47,10 +46,10 @@ SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD} ZABBIX_REQUIRE=${ZABBIX_REQUIRE}
 MAKE_ARGS+=	ARCH=freebsd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${ZABBIX_BUILD} != "agent"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
@@ -140,9 +139,9 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
-	  | ${XARGS} ${REINPLACE_CMD} -e 's#/etc/zabbix#${ETCDIR}#g' \
-	  && ${FIND} ${WRKSRC} -type f -name '*.bak' -exec ${RM} -f {} +
+	  | ${XARGS} ${REINPLACE_CMD} -e 's#/etc/zabbix#${ETCDIR}#g'
 	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/misc/conf/${PORTNAME}_*.conf
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
 
 .if ${ZABBIX_BUILD} != "agent"
 .ifdef WITHOUT_FPING
