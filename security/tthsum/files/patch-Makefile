@@ -1,33 +1,24 @@
---- ./Makefile.orig	2009-12-29 22:24:48.000000000 +0100
-+++ ./Makefile	2010-10-04 18:30:51.000000000 +0200
-@@ -2,7 +2,7 @@
- # 
- # Makefile for GNU Make.
- 
--.PHONY: all clean dists install manual tthsum uninstall test runtest
-+.PHONY: all clean dists install manual tthsum uninstall
- 
- #ifeq ($(ARCH),)
- #  ARCH = $(shell uname -m)
-@@ -16,15 +16,13 @@
- 
- ifeq ($(DEBUG),)
-   CPPFLAGS += -DNDEBUG
--  CFLAGS += -march=native -O3 #-fno-stack-protector
--  LDFLAGS += -march=native -O3
- else
-   CPPFLAGS += -DDEBUG
-   CFLAGS += -g #-pg
-   LDFLAGS += -g #-pg
+--- ./Makefile.orig	2011-10-10 08:34:43.000000000 +0200
++++ ./Makefile	2011-10-15 10:22:58.000000000 +0200
+@@ -11,16 +11,6 @@
+   MAN = $(DESTDIR)/usr/local/man
  endif
  
--CC = gcc
-+CC ?= gcc
+-ifeq ($(DEBUG),)
+-  override CPPFLAGS += -DNDEBUG
+-  CFLAGS += -O3 #-fno-stack-protector #-march=native
+-  LDFLAGS += -O3 #-march=native
+-else
+-  override CPPFLAGS += -DDEBUG
+-  CFLAGS += -g #-pg
+-  LDFLAGS += -g #-pg
+-endif
+-
+ CC ?= gcc
  GZIP = gzip -9 -c
  RM = rm -rf
- 
-@@ -46,9 +44,9 @@
- TSTENTRY = $(BINS)/test.o
+@@ -45,9 +35,9 @@
+ override CPPFLAGS += $(shell cat $(BINS)/autoconf.cppflags)
  
  
 -all: tthsum manual test runtest
