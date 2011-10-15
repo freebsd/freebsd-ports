@@ -1,0 +1,7 @@
+=================================================
+You can decode MCE output from the FreeBSD kernel
+by using the following command:
+
+mcelog --no-dmi --ascii --file /path/to/log
+
+=================================================
