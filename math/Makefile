@@ -108,6 +108,7 @@
     SUBDIR += gexpr
     SUBDIR += ggobi
     SUBDIR += giacxcas
+    SUBDIR += givaro
     SUBDIR += glgraph
     SUBDIR += glpk
     SUBDIR += gmm++
