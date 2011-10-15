@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
