@@ -1,0 +1,84 @@
+share/locale/zh_TW/LC_MESSAGES/sssd.mo
+share/locale/uk/LC_MESSAGES/sssd.mo
+share/locale/sv/LC_MESSAGES/sssd.mo
+share/locale/ru/LC_MESSAGES/sssd.mo
+share/locale/pt/LC_MESSAGES/sssd.mo
+share/locale/pl/LC_MESSAGES/sssd.mo
+share/locale/nl/LC_MESSAGES/sssd.mo
+share/locale/ja/LC_MESSAGES/sssd.mo
+share/locale/it/LC_MESSAGES/sssd.mo
+share/locale/id/LC_MESSAGES/sssd.mo
+share/locale/fr/LC_MESSAGES/sssd.mo
+share/locale/es/LC_MESSAGES/sssd.mo
+share/locale/de/LC_MESSAGES/sssd.mo
+sbin/sssd
+sbin/sss_usermod
+sbin/sss_userdel
+sbin/sss_useradd
+sbin/sss_obfuscate
+sbin/sss_groupshow
+sbin/sss_groupmod
+sbin/sss_groupdel
+sbin/sss_groupadd
+sbin/sss_cache
+libexec/sssd/sssd_pam
+libexec/sssd/sssd_nss
+libexec/sssd/sssd_be
+libexec/sssd/proxy_child
+libexec/sssd/ldap_child
+libexec/sssd/krb5_child
+libdata/pkgconfig/ipa_hbac.pc
+lib/sssd/libsss_simple.so
+lib/sssd/libsss_simple.la
+lib/sssd/libsss_proxy.so
+lib/sssd/libsss_proxy.la
+lib/sssd/libsss_ldap.so
+lib/sssd/libsss_ldap.la
+lib/sssd/libsss_krb5.so
+lib/sssd/libsss_krb5.la
+lib/sssd/libsss_ipa.so
+lib/sssd/libsss_ipa.la
+lib/pam_sss.so.5
+lib/pam_sss.so
+lib/pam_sss.la
+lib/nss_sss.so.2
+lib/nss_sss.so.1
+lib/nss_sss.so
+lib/nss_sss.la
+lib/libipa_hbac.so.0
+lib/libipa_hbac.so
+lib/libipa_hbac.la
+lib/ldb/memberof.so
+lib/%%PYTHON_VERSION%%/site-packages/sssd_upgrade_config.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sssd_upgrade_config.py
+lib/%%PYTHON_VERSION%%/site-packages/pysss.so
+lib/%%PYTHON_VERSION%%/site-packages/pysss.la
+lib/%%PYTHON_VERSION%%/site-packages/pyhbac.so
+lib/%%PYTHON_VERSION%%/site-packages/pyhbac.la
+lib/%%PYTHON_VERSION%%/site-packages/ipachangeconf.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ipachangeconf.py
+lib/%%PYTHON_VERSION%%/site-packages/SSSDConfig.pyc
+lib/%%PYTHON_VERSION%%/site-packages/SSSDConfig.py
+lib/%%PYTHON_VERSION%%/site-packages/SSSDConfig-1-py2.7.egg-info
+include/ipa_hbac.h
+etc/sssd/sssd.api.d/sssd-simple.conf
+etc/sssd/sssd.api.d/sssd-proxy.conf
+etc/sssd/sssd.api.d/sssd-local.conf
+etc/sssd/sssd.api.d/sssd-ldap.conf
+etc/sssd/sssd.api.d/sssd-krb5.conf
+etc/sssd/sssd.api.d/sssd-ipa.conf
+etc/sssd/sssd.api.conf
+etc/sssd/sssd.conf.sample
+@dirrmtry lib/pkgconfig
+@dirrmtry lib/ldb
+@dirrmtry etc/sssd/sssd.api.d
+@dirrmtry etc/sssd
+@dirrm share/sssd/introspect
+@dirrm share/sssd
+@dirrm libexec/sssd
+@dirrm lib/sssd
+@unexec if cmp -s %D/etc/sssd/sssd.conf.sample %D/etc/sssd/sssd.conf; then rm -f %D/etc/sssd/sssd.conf; fi
+@exec if [ ! -f %D/etc/sssd/sssd.conf ]; then cp -p %D/%F %B/sssd.conf; fi
+@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
+@unexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
+@unexec if [ -d /var/run/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/run/sss`` to remove any additional files."; fi
