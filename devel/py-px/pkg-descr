@@ -7,4 +7,4 @@ px uses p4lib.py, a Python interface to the Perforce client application.
 If you are a Python programmer and script Perforce you might find this
 module helpful. Currently, most common commands are supported.
 
-WWW: http://starship.python.net/~tmick/
+WWW: http://code.google.com/p/python-p4lib/

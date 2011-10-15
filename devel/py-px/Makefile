@@ -5,20 +5,37 @@
 # $FreeBSD$
 
 PORTNAME=	px
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://trentm.com/downloads/px/${PORTVERSION}/
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce p4 wrapper and Python Perforce interface
 
-BROKEN=	does not fetch
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+PROJECTHOST=	python-p4lib
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
+PORTDOCS=	BUGS.txt README.txt TODO.txt
+PLIST_FILES=	bin/px \
+		%%PYTHON_SITELIBDIR%%/p4lib.py \
+		%%PYTHON_SITELIBDIR%%/p4lib.pyc \
+		%%PYTHON_SITELIBDIR%%/p4lib.pyo
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
