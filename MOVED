@@ -2791,7 +2791,6 @@ dns/bind9-sdb-ldap||2011-10-14|Vulnerable since 2011-06-04
 dns/bind9-sdb-postgresql||2011-10-14|Vulnerable since 2011-06-04
 ftp/wgetpro||2011-10-14|Vulnerable since 2004-12-14
 games/quake2forge||2011-10-14|Vulnerable since 2005-01-21
-graphics/linux-tiff||2011-10-14|Vulnerable since 2004-10-13
 japanese/mutt||2011-10-14|Vulnerable since 2007-07-29
 japanese/asterisk14-sounds||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 net/asterisk14||2011-10-14|Vulnerable since 2011-06-25
