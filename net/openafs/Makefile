@@ -8,6 +8,7 @@
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -37,6 +38,7 @@ PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	afsd afsserver
+MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
