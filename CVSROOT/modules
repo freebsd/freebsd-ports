@@ -769,6 +769,9 @@ atp                             ports/news/atp
 atr3d                           ports/games/atr3d
 atris                           ports/games/atris
 atris-sounds                    ports/games/atris-sounds
+ats                             ports/lang/ats
+ats-contrib-parcomb             ports/textproc/ats-contrib-parcomb
+ats-contrib-testing             ports/devel/ats-contrib-testing
 atslog                          ports/comms/atslog
 attica                          ports/x11-toolkits/attica
 atunes                          ports/audio/atunes
@@ -10260,6 +10263,7 @@ ocaml-lacaml                    ports/devel/ocaml-lacaml
 ocaml-lwt                       ports/devel/ocaml-lwt
 ocaml-magic                     ports/devel/ocaml-magic
 ocaml-mode.el                   ports/lang/ocaml-mode.el
+ocaml-mysql                     ports/databases/ocaml-mysql
 ocaml-net                       ports/www/ocaml-net
 ocaml-nox11                     ports/lang/ocaml-nox11
 ocaml-ocamlgraph                ports/math/ocaml-ocamlgraph
@@ -10666,6 +10670,7 @@ outerspace                      ports/games/outerspace
 outguess                        ports/security/outguess
 ovs                             ports/mail/ovs
 ovt                             ports/science/ovt
+owncloud                        ports/www/owncloud
 p0f                             ports/net-mgmt/p0f
 p11-kit                         ports/security/p11-kit
 p2c                             ports/lang/p2c
@@ -15420,6 +15425,7 @@ p5-carp-clan                    ports/devel/p5-Carp-Clan
 p5-carp-clan-share              ports/devel/p5-Carp-Clan-Share
 p5-carp-datum                   ports/devel/p5-Carp-Datum
 p5-carp-repl                    ports/devel/p5-Carp-REPL
+p5-carton                       ports/devel/p5-carton
 p5-catalyst-action-renderview   ports/www/p5-Catalyst-Action-RenderView
 p5-catalyst-action-rest         ports/www/p5-Catalyst-Action-REST
 p5-catalyst-actionrole-acl      ports/www/p5-Catalyst-ActionRole-ACL
@@ -25640,6 +25646,7 @@ trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
 trac-announcer                  ports/www/trac-announcer
 trac-autocomplete               ports/www/trac-autocomplete
 trac-batchmodify                ports/www/trac-batchmodify
+trac-bitten                     ports/devel/trac-bitten
 trac-bzr                        ports/www/trac-bzr
 trac-calendar                   ports/www/trac-calendar
 trac-ccselector                 ports/www/trac-ccselector
