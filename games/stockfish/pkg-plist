@@ -3,4 +3,4 @@ bin/stockfish
 %%DOCSDIR%%/Readme.txt
 %%DOCSDIR%%/polyglot.ini
 @dirrm %%DOCSDIR%%
-@dirrm share/stockfish
+@dirrm %%DATADIR%%
