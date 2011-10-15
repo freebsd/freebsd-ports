@@ -1807,6 +1807,7 @@
     SUBDIR += p5-Hash-MoreUtils
     SUBDIR += p5-Hash-MultiKey
     SUBDIR += p5-Hash-MultiValue
+    SUBDIR += p5-Hash-NoRef
     SUBDIR += p5-Hash-Union
     SUBDIR += p5-Hash-Util-FieldHash-Compat
     SUBDIR += p5-Hash-WithDefaults

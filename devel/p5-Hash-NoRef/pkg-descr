@@ -1,0 +1,6 @@
+Hash::NoRef is a Perl module to create HASH that store values without increase
+the reference count (weak references). This can be used to store objects but
+without interfere in the DESTROY mechanism, since the reference in this HASH
+won't count.
+
+WWW: http://search.cpan.org/dist/Hash-NoRef/
