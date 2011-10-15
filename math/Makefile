@@ -475,6 +475,7 @@
     SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp
+    SUBDIR += pure-rational
     SUBDIR += py-apgl
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data

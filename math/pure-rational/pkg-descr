@@ -1,0 +1,4 @@
+pure-rational provides additional operations on the rational number type
+provided by the math.pure module in the standard library.
+
+WWW:	http://docs.pure-lang.googlecode.com/hg/pure-rational.html
