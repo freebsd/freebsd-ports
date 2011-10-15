@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MouseX-Foreign
-PORTVERSION=	0.004
-PORTREVISION=	1
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +25,8 @@ PERL_CONFIGURE=	yes
 MAN3=		MouseX::Foreign.3 \
 		MouseX::Foreign::Meta::Role::Class.3 \
 		MouseX::Foreign::Meta::Role::Method::Constructor.3 \
-		MouseX::Foreign::Meta::Role::Method::Destructor.3
+		MouseX::Foreign::Meta::Role::Method::Destructor.3 \
+		MouseX::NonMoose.3
 
 .include <bsd.port.pre.mk>
 
