@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	sysutils www
-MASTER_SITES=	SF/${PNAME}/LAM/${PORTVERSION}
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
 MAINTAINER=	basil@vpm.net.ua
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
-
-LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
@@ -26,10 +25,10 @@ USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 
-PNAME=		lam
+SHORTNAME=	lam
 PORTDOCS=	docs COPYING HISTORY README copyright
 LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html
-WWWDIR?=	${PREFIX}/www/${PNAME}
+WWWDIR?=	${PREFIX}/www/${SHORTNAME}
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>

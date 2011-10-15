@@ -1,5 +1,5 @@
   To use LDAP-account-manager, you have to install
-  and set up Samba 2.x or 3.x schemas.
+  and set up Samba 3.x schemas.
   Like this :
      include       %%PREFIX%%/etc/openldap/schema/core.schema
      include       %%PREFIX%%/etc/openldap/schema/cosine.schema
