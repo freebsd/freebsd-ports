@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	scalatest
-PORTVERSION=	1.5
+PORTVERSION=	1.6.1
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.scalatest.org/releases/
+MASTER_SITES=	http://www.artima.com/downloadScalaTest/ \
+		http://www.scalatest.org/releases/
 
 MAINTAINER=	mitsururike@gmail.com
 COMMENT=	A regression testing utility for use with the Scala Language
 
-RUN_DEPENDS=	scala>=2.8.1:${PORTSDIR}/lang/scala
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	scala>=2.9.0:${PORTSDIR}/lang/scala
 
 USE_ZIP=	yes
 USE_JAVA=	yes
