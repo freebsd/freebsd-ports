@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.223
+PORTVERSION=	1.240
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Glib SF/gtk2-perl/Glib/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -22,14 +22,8 @@ USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
