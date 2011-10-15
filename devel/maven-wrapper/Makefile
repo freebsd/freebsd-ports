@@ -7,6 +7,7 @@
 
 PORTNAME=	maven-wrapper
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -17,8 +18,6 @@ COMMENT=	Wrapper script for the various installations of Maven
 NO_BUILD=	yes
 SUB_FILES=	mvn.sh
 SUB_LIST=	CAT=${CAT} FIND=${FIND} TAIL=${TAIL}
-PLIST_FILES=	bin/mvn
-PLIST_DIRSTRY=	etc/maven-wrapper/instances.d etc/maven-wrapper
 
 do-fecth:
 	@${DO_NADA}

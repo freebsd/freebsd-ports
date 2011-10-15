@@ -1,0 +1,4 @@
+bin/mvn
+@exec mkdir -p %D/etc/maven-wrapper/instances.d
+@dirrmtry etc/maven-wrapper/instances.d
+@dirrmtry etc/maven-wrapper
