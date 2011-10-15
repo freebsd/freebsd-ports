@@ -19,16 +19,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/OptionGroup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/OptionContext.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Boolean.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Double.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Enum.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Flags.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/GType.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int64.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/String.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt64.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Unichar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParamSpec.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Signal.pod
