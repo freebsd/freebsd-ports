@@ -522,6 +522,7 @@
     SUBDIR += linux-png10
     SUBDIR += linux-sdl_image
     SUBDIR += linux-sdl_ttf
+    SUBDIR += linux-tiff
     SUBDIR += linux-ungif
     SUBDIR += linux_dri
     SUBDIR += linux_glide
