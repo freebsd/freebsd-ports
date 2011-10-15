@@ -9,7 +9,12 @@ PORTNAME=	mcelog
 DISTVERSION=	1.0pre2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.kernel.org/pub/linux/utils/cpu/mce/ \
-		http://147.52.159.12/mirrors/ftp.kernel.org/pub/linux/utils/cpu/mce/
+		http://147.52.159.12/mirrors/ftp.kernel.org/pub/linux/utils/cpu/mce/ \
+		http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/utils/cpu/mce/ \
+		http://mirror.be.gbxs.net/pub/linux/utils/cpu/mce/ \
+		http://ftp.eu.openbsd.org/pub/linux/utils/cpu/mce/ \
+		http://korg.cs.utah.edu/pub/linux/utils/cpu/mce/ \
+		http://ftp.oregonstate.edu/pub/linux/utils/cpu/mce/
 
 MAINTAINER=	freebsd@jdc.parodius.com
 COMMENT=	Collects and decodes Machine Check Exception data
