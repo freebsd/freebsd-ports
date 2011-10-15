@@ -7,7 +7,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.6.1
-CATEGORIES=	net
+CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
 MAINTAINER=	aweits@rit.edu
