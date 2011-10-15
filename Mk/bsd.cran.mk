@@ -7,7 +7,7 @@
 CRAN_Include_MAINTAINER=	wen@FreeBSD.org
 
 .if defined(USE_R_MOD)
-MASTER_CRAN_SITES+=	http://ftp.ctex.org/mirrors/CRAN/ \
+MASTER_CRAN_SITES+=	http://ftp.ctex.org/mirrors/CRAN/src/contrib/ \
 			http://cran.rakanu.com/src/contrib/ \
 			http://cran.ms.unimelb.edu.au/src/contrib/ \
 			http://mirror.its.dal.ca/cran/src/contrib/ \
