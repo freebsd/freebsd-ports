@@ -1,7 +1,7 @@
 
-=> When updating from an sks version < 1.1 be aware that the pgp key
-=> database files are not compatible: make a full dump of your data
-=> before updating and rebuild the database files afterwards.
+=> When updating from a previous sks version be aware that the PGP key
+=> database files are not compatible. You should run db_recover-5 on
+=> the PTree and KDB database directories before starting SKS.
 
 When installing for the first time, you will need to obtain a pgp
 key database dump from somewhere and build database files from this.
