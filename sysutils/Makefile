@@ -473,6 +473,7 @@
     SUBDIR += massadmin
     SUBDIR += mbmon
     SUBDIR += mcollective
+    SUBDIR += mcelog
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
