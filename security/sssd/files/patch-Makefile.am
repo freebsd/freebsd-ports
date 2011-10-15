@@ -1,0 +1,61 @@
+--- ./Makefile.am.orig	2011-08-29 11:39:05.000000000 -0400
++++ ./Makefile.am	2011-10-13 12:13:42.000000000 -0400
+@@ -33,7 +33,7 @@
+ systemdunitdir = @systemdunitdir@
+ logpath = @logpath@
+ pubconfpath = @pubconfpath@
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ AM_CFLAGS =
+ if WANT_AUX_INFO
+@@ -753,21 +753,22 @@
+ 
+ noinst_PROGRAMS = pam_test_client
+ pam_test_client_SOURCES = src/sss_client/pam_test_client.c
+-pam_test_client_LDFLAGS = -lpam -lpam_misc
++pam_test_client_LDFLAGS = -lpam
+ 
+ ####################
+ # Client Libraries #
+ ####################
+ 
+-nsslib_LTLIBRARIES = libnss_sss.la
+-libnss_sss_la_SOURCES = \
++nsslib_LTLIBRARIES = nss_sss.la
++nss_sss_la_SOURCES = \
+     src/sss_client/common.c \
++    src/sss_client/bsdnss.c \
+     src/sss_client/nss_passwd.c \
+     src/sss_client/nss_group.c \
+     src/sss_client/nss_netgroup.c \
+     src/sss_client/sss_cli.h \
+     src/sss_client/nss_compat.h
+-libnss_sss_la_LDFLAGS = \
++nss_sss_la_LDFLAGS = \
+     -module \
+     -version-info 2:0:0 \
+     -Wl,--version-script,$(srcdir)/src/sss_client/sss_nss.exports
+@@ -780,6 +781,7 @@
+     src/sss_client/sss_pam_macros.h
+ 
+ pam_sss_la_LDFLAGS = \
++    -lintl \
+     -lpam \
+     -module \
+     -avoid-version \
+@@ -1122,10 +1124,10 @@
+ 	mkdir -p $(DESTDIR)$(initdir)
+ endif
+ 
+-install-data-hook:
+-	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
+-       $(DESTDIR)/$(nsslibdir)/libnss_sss.so
+-	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2
++notnotnotnotnotnotnotnotnotnotnotnotnotnotnotnotnotinstall-data-hook:
++	rm $(DESTDIR)/$(nsslibdir)/nss_sss.so.2 \
++       $(DESTDIR)/$(nsslibdir)/nss_sss.so
++	mv $(DESTDIR)/$(nsslibdir)/nss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/nss_sss.so.2
+ 
+ uninstall-hook:
+ 	if [ -f $(abs_builddir)/src/config/.files ]; then \

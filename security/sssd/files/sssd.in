@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sssd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `sssd':
+#
+# sssd_enable="YES"
+#
+# See sssd(8) for sssd_flags
+#
+
+. /etc/rc.subr
+
+name="sssd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/$name"
+sssd_flags="-D"
+pidfile="/var/run/$name.pid"
+required_files="%%PREFIX%%/etc/$name/$name.conf"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${sssd_enable="NO"}
+
+run_rc_command "$1"

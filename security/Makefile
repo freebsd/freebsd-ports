@@ -823,6 +823,7 @@
     SUBDIR += sslscan
     SUBDIR += sslsniffer
     SUBDIR += sslwrap
+    SUBDIR += sssd
     SUBDIR += ssss
     SUBDIR += sst
     SUBDIR += starttls
