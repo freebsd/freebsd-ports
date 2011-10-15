@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sks
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
-USE_BDB=	46+
+USE_BDB=	5
 USE_PERL5_BUILD=yes
 
 USE_GMAKE=	yes
