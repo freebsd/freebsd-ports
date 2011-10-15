@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	16.13
+PORTVERSION=	17.0
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	health-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS=	GUI "Build FLTK-based GUI" off
 
@@ -28,16 +28,15 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	CREDITS README nut.html
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
 		%%DATADIR%%/NUT_DATA.txt %%DATADIR%%/WEIGHT.lib \
-		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr23.nut
+		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr24.nut
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUI)
 LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+MAKE_ENV+=	HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
 PLIST_FILES+=	bin/Nut
-.else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 .endif
 
 post-patch:
@@ -46,7 +45,10 @@ post-patch:
 		 s|^CC =|CC ?=| ; \
 		 s|^CXX =|CXX ?=| ; \
 		 s|^CFLAGS :=|CFLAGS +=| ; \
-		 s| -O | |'
+		 s| -O | | ; \
+		 s|^HAVE_FLTK =|#HAVE_FLTK =| ; \
+		 s|^FLTK_NUT =|#FLTK_NUT =| ; \
+		 s|ldstaticflags|ldflags|'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
