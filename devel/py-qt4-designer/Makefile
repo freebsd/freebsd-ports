@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-q
 		${PKGNAMEPREFIX}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml \
 		${PKGNAMEPREFIX}script>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-script
 
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
@@ -40,6 +41,7 @@ ARGS=		-b ${PREFIX}/bin\
 		-p ${PREFIX}/${QT_PLUGINDIR_REL}\
 		-q ${QMAKE}\
 		--confirm-license\
+		--no-designer-plugin\
 		--enable QtDesigner
 
 .include "../py-sip/files/bsd.pyqt.mk"

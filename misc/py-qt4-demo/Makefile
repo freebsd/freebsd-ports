@@ -15,6 +15,7 @@ DISTNAME=	${PYQT4_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 USE_PYTHON=	yes
 
 OPTIONS=	PYQT4	"Install any missing PyQt4 components" off

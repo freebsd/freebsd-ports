@@ -24,6 +24,7 @@
 %%SIP%%share/py-sip/QtGui/qcolumnview.sip
 %%SIP%%share/py-sip/QtGui/qcombobox.sip
 %%SIP%%share/py-sip/QtGui/qcommandlinkbutton.sip
+%%SIP%%share/py-sip/QtGui/qcommonstyle.sip
 %%SIP%%share/py-sip/QtGui/qcompleter.sip
 %%SIP%%share/py-sip/QtGui/qcursor.sip
 %%SIP%%share/py-sip/QtGui/qdatawidgetmapper.sip

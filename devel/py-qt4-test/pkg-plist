@@ -4,7 +4,6 @@
 %%SIP%%share/py-sip/QtTest/qtestkeyboard.sip
 %%SIP%%share/py-sip/QtTest/qtestmouse.sip
 %%SIP%%share/py-sip/QtTest/qtestsystem.sip
-%%SIP%%share/py-sip/QtTest/qtesttouch.sip
 %%API%%share/qt4/qsci/api/python/QtTest.api
 %%SIP%%@dirrm share/py-sip/QtTest
 @dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

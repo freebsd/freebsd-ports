@@ -41,6 +41,8 @@
 %%DOCSDIR%%/html/_static/plus.png
 %%DOCSDIR%%/html/_static/pygments.css
 %%DOCSDIR%%/html/_static/searchtools.js
+%%DOCSDIR%%/html/_static/sidebar.js
+%%DOCSDIR%%/html/_static/underscore.js
 %%DOCSDIR%%/html/assistant-manual.html
 %%DOCSDIR%%/html/buffer_interface.html
 %%DOCSDIR%%/html/build_system.html
@@ -434,7 +436,6 @@
 %%DOCSDIR%%/html/installation.html
 %%DOCSDIR%%/html/introduction.html
 %%DOCSDIR%%/html/keyword_arguments.html
-%%DOCSDIR%%/html/modindex.html
 %%DOCSDIR%%/html/modules.html
 %%DOCSDIR%%/html/new_style_signals_slots.html
 %%DOCSDIR%%/html/objects.inv
@@ -468,6 +469,7 @@
 %%DOCSDIR%%/html/phonon-volumeslider.html
 %%DOCSDIR%%/html/phonon.html
 %%DOCSDIR%%/html/pickle.html
+%%DOCSDIR%%/html/py-modindex.html
 %%DOCSDIR%%/html/python_shell.html
 %%DOCSDIR%%/html/python_v3.html
 %%DOCSDIR%%/html/qabstractanimation.html
@@ -541,6 +543,7 @@
 %%DOCSDIR%%/html/qcolumnview.html
 %%DOCSDIR%%/html/qcombobox.html
 %%DOCSDIR%%/html/qcommandlinkbutton.html
+%%DOCSDIR%%/html/qcommonstyle.html
 %%DOCSDIR%%/html/qcompleter.html
 %%DOCSDIR%%/html/qconicalgradient.html
 %%DOCSDIR%%/html/qcontextmenuevent.html
@@ -1108,7 +1111,6 @@
 %%DOCSDIR%%/html/qtdeclarative.html
 %%DOCSDIR%%/html/qtdesigner.html
 %%DOCSDIR%%/html/qtemporaryfile.html
-%%DOCSDIR%%/html/qtest-qtoucheventsequence.html
 %%DOCSDIR%%/html/qtest.html
 %%DOCSDIR%%/html/qtextblock-iterator.html
 %%DOCSDIR%%/html/qtextblock.html

@@ -18,6 +18,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtDesigner plugin
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer
 
+BUILD_WRKSRC=	${WRKSRC}/designer
+INSTALL_WRKSRC=	${WRKSRC}/designer
+
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
