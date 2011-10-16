@@ -7,14 +7,16 @@
 
 PORTNAME=	pysvn
 PORTVERSION=	1.7.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
-LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion16
+
+CONFLICTS_BUILD=subversion-1.7.[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

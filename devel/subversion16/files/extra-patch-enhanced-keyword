@@ -1,0 +1,336 @@
+diff -ruN subversion/include/svn_subst.h subversion/include/svn_subst.h
+--- subversion/include/svn_subst.h	2009-01-26 14:30:42.000000000 +0300
++++ subversion/include/svn_subst.h	2009-04-03 21:49:30.541875000 +0400
+@@ -122,16 +122,31 @@
+  * Set @a *kw to a new keywords hash filled with the appropriate contents
+  * given a @a keywords_string (the contents of the svn:keywords
+  * property for the file in question), the revision @a rev, the @a url,
+- * the @a date the file was committed on, and the @a author of the last
+- * commit.  Any of these can be @c NULL to indicate that the information is
+- * not present, or @c 0 for @a date.
++ * the url of the root of the @a repos, the @a date the file was committed
++ * on, and the @a author of the last commit.  Any of these can be @c NULL
++ * to indicate that the information is not present, or @c 0 for @a date.
+  *
+  * Hash keys are of type <tt>const char *</tt>.
+  * Hash values are of type <tt>svn_string_t *</tt>.
+  *
+  * All memory is allocated out of @a pool.
+  *
+- * @since New in 1.3.
++ * @since New in 1.6
++ */
++svn_error_t *
++svn_subst_build_keywords3(apr_hash_t **kw,
++                          const char *keywords_string,
++                          const char *rev,
++                          const char *url,
++                          const char *repos,
++                          apr_time_t date,
++                          const char *author,
++                          apr_pool_t *pool);
++
++/** Similar to svn_subst_build_keywords3() except that it does not
++ * supply the repository location.
++ *
++ * @deprecated Provided for backward compatibility with the 1.3 API.
+  */
+ svn_error_t *
+ svn_subst_build_keywords2(apr_hash_t **kw,
+diff -ruN subversion/libsvn_client/cat.c subversion/libsvn_client/cat.c
+--- subversion/libsvn_client/cat.c	2009-02-13 23:37:02.000000000 +0300
++++ subversion/libsvn_client/cat.c	2009-04-03 21:49:30.557500000 +0400
+@@ -127,10 +127,10 @@
+           author = entry->cmt_author;
+         }
+ 
+-      SVN_ERR(svn_subst_build_keywords2
++      SVN_ERR(svn_subst_build_keywords3
+               (&kw, keywords->data,
+                apr_psprintf(pool, fmt, entry->cmt_rev),
+-               entry->url, tm, author, pool));
++               entry->url, entry->repos, tm, author, pool));
+     }
+ 
+   /* Our API contract says that OUTPUT will not be closed. The two paths
+@@ -160,6 +160,7 @@
+   svn_string_t *keywords;
+   apr_hash_t *props;
+   const char *url;
++  const char *repos_root_url;
+   svn_stream_t *output = out;
+ 
+   /* ### Inconsistent default revision logic in this command. */
+@@ -198,6 +199,8 @@
+                                            &url, path_or_url, NULL,
+                                            peg_revision,
+                                            revision, ctx, pool));
++  /* Find the repos root URL */
++  SVN_ERR(svn_ra_get_repos_root2(ra_session, &repos_root_url, pool));
+ 
+   /* Make sure the object isn't a directory. */
+   SVN_ERR(svn_ra_check_path(ra_session, "", rev, &url_kind, pool));
+@@ -242,10 +245,11 @@
+           if (cmt_date)
+             SVN_ERR(svn_time_from_cstring(&when, cmt_date->data, pool));
+ 
+-          SVN_ERR(svn_subst_build_keywords2
++          SVN_ERR(svn_subst_build_keywords3
+                   (&kw, keywords->data,
+                    cmt_rev->data,
+                    url,
++                   repos_root_url,
+                    when,
+                    cmt_author ? cmt_author->data : NULL,
+                    pool));
+diff -ruN subversion/libsvn_client/commit.c subversion/libsvn_client/commit.c
+--- subversion/libsvn_client/commit.c	2009-02-13 18:32:52.000000000 +0300
++++ subversion/libsvn_client/commit.c	2009-04-03 21:49:30.557500000 +0400
+@@ -118,9 +118,9 @@
+     }
+ 
+   if (keywords_val)
+-    SVN_ERR(svn_subst_build_keywords2(&keywords, keywords_val->data,
++    SVN_ERR(svn_subst_build_keywords3(&keywords, keywords_val->data,
+                                       APR_STRINGIFY(SVN_INVALID_REVNUM),
+-                                      "", 0, "", pool));
++                                      "", "", 0, "", pool));
+   else
+     keywords = NULL;
+ 
+diff -ruN subversion/libsvn_client/export.c subversion/libsvn_client/export.c
+--- subversion/libsvn_client/export.c	2009-01-26 14:30:42.000000000 +0300
++++ subversion/libsvn_client/export.c	2009-04-03 21:49:30.557500000 +0400
+@@ -197,10 +197,10 @@
+           author = entry->cmt_author;
+         }
+ 
+-      SVN_ERR(svn_subst_build_keywords2
++      SVN_ERR(svn_subst_build_keywords3
+               (&kw, keywords->data,
+                apr_psprintf(pool, fmt, entry->cmt_rev),
+-               entry->url, tm, author, pool));
++               entry->url, entry->repos, tm, author, pool));
+     }
+ 
+   /* For atomicity, we translate to a tmp file and then rename the tmp file
+@@ -509,6 +509,7 @@
+   /* Any keyword vals to be substituted */
+   const char *revision;
+   const char *url;
++  const char *repos;
+   const char *author;
+   apr_time_t date;
+ 
+@@ -625,6 +626,7 @@
+   fb->edit_baton = eb;
+   fb->path = full_path;
+   fb->url = full_url;
++  fb->repos = eb->root_url;
+   fb->pool = pool;
+ 
+   *baton = fb;
+@@ -790,8 +792,8 @@
+         }
+ 
+       if (fb->keywords_val)
+-        SVN_ERR(svn_subst_build_keywords2(&final_kw, fb->keywords_val->data,
+-                                          fb->revision, fb->url, fb->date,
++        SVN_ERR(svn_subst_build_keywords3(&final_kw, fb->keywords_val->data,
++                                          fb->revision, fb->url, fb->repos, fb->date,
+                                           fb->author, pool));
+ 
+       SVN_ERR(svn_subst_copy_and_translate3
+diff -ruN subversion/libsvn_subr/subst.c subversion/libsvn_subr/subst.c
+--- subversion/libsvn_subr/subst.c	2009-01-26 14:30:42.000000000 +0300
++++ subversion/libsvn_subr/subst.c	2009-04-03 21:50:34.276250000 +0400
+@@ -127,8 +127,11 @@
+  * %b basename of the URL of this file
+  * %d short format of date of this revision
+  * %D long format of date of this revision
++ * %P path relative to root of repos
+  * %r number of this revision
++ * %R root url of repository
+  * %u URL of this file
++ * %_ a space
+  * %% a literal %
+  *
+  * All memory is allocated out of @a pool.
+@@ -137,12 +140,14 @@
+ keyword_printf(const char *fmt,
+                const char *rev,
+                const char *url,
++               const char *repos,
+                apr_time_t date,
+                const char *author,
+                apr_pool_t *pool)
+ {
+   svn_stringbuf_t *value = svn_stringbuf_ncreate("", 0, pool);
+   const char *cur;
++  const char *relative;
+   int n;
+ 
+   for (;;)
+@@ -196,6 +201,23 @@
+             svn_stringbuf_appendcstr(value,
+                                      svn_time_to_human_cstring(date, pool));
+           break;
++        case 'P': /* relative path of this file */
++	  relative = url;
++          if (relative && repos)
++            {
++	      int len = strlen(repos);
++
++	      if (strncmp(repos, relative, len) == 0
++		  && relative[len] == '/')
++		relative += len + 1;
++	    }
++	  if (relative)
++            svn_stringbuf_appendcstr(value, relative);
++          break;
++        case 'R': /* root of repos */
++	  if (repos)
++	    svn_stringbuf_appendcstr(value, repos);
++	  break;
+         case 'r': /* number of this revision */
+           if (rev)
+             svn_stringbuf_appendcstr(value, rev);
+@@ -204,6 +226,9 @@
+           if (url)
+             svn_stringbuf_appendcstr(value, url);
+           break;
++        case '_': /* '%_' => a space */
++          svn_stringbuf_appendbytes(value, " ", 1);
++          break;
+         case '%': /* '%%' => a literal % */
+           svn_stringbuf_appendbytes(value, cur, 1);
+           break;
+@@ -239,8 +264,8 @@
+   apr_hash_t *kwhash;
+   const svn_string_t *val;
+ 
+-  SVN_ERR(svn_subst_build_keywords2(&kwhash, keywords_val, rev,
+-                                    url, date, author, pool));
++  SVN_ERR(svn_subst_build_keywords3(&kwhash, keywords_val, rev,
++                                    url, "", date, author, pool));
+ 
+   /* The behaviour of pre-1.3 svn_subst_build_keywords, which we are
+    * replicating here, is to write to a slot in the svn_subst_keywords_t
+@@ -279,6 +304,21 @@
+                           const char *author,
+                           apr_pool_t *pool)
+ {
++  SVN_ERR(svn_subst_build_keywords3(kw, keywords_val, rev,
++                                    url, "", date, author, pool));
++  return SVN_NO_ERROR;
++}
++
++svn_error_t *
++svn_subst_build_keywords3(apr_hash_t **kw,
++                          const char *keywords_val,
++                          const char *rev,
++                          const char *url,
++                          const char *repos,
++                          apr_time_t date,
++                          const char *author,
++                          apr_pool_t *pool)
++{
+   apr_array_header_t *keyword_tokens;
+   int i;
+   *kw = apr_hash_make(pool);
+@@ -289,6 +329,24 @@
+   for (i = 0; i < keyword_tokens->nelts; ++i)
+     {
+       const char *keyword = APR_ARRAY_IDX(keyword_tokens, i, const char *);
++      apr_array_header_t *keyword_tokens2;
++
++      keyword_tokens2 = svn_cstring_split(keyword, "=", TRUE /* chop */, pool);
++      if (keyword_tokens2->nelts == 2)
++        {
++          svn_string_t *custom_val;
++          const char *custom_expand;
++
++          keyword = APR_ARRAY_IDX(keyword_tokens2, 0, const char*);
++          custom_expand = APR_ARRAY_IDX(keyword_tokens2, 1, const char*);
++          if (! strcmp(custom_expand, "%H"))
++	    custom_expand = "%P %r %d %a";
++	  else if (! strcmp(custom_expand, "%I"))
++	    custom_expand = "%b %r %d %a";
++          custom_val = keyword_printf(custom_expand, rev, url, repos, date, author, pool);
++          apr_hash_set(*kw, keyword, APR_HASH_KEY_STRING, custom_val);
++          return SVN_NO_ERROR;
++        }
+ 
+       if ((! strcmp(keyword, SVN_KEYWORD_REVISION_LONG))
+           || (! strcmp(keyword, SVN_KEYWORD_REVISION_MEDIUM))
+@@ -296,7 +354,7 @@
+         {
+           svn_string_t *revision_val;
+ 
+-          revision_val = keyword_printf("%r", rev, url, date, author, pool);
++          revision_val = keyword_printf("%r", rev, url, repos, date, author, pool);
+           apr_hash_set(*kw, SVN_KEYWORD_REVISION_LONG,
+                        APR_HASH_KEY_STRING, revision_val);
+           apr_hash_set(*kw, SVN_KEYWORD_REVISION_MEDIUM,
+@@ -309,7 +367,7 @@
+         {
+           svn_string_t *date_val;
+ 
+-          date_val = keyword_printf("%D", rev, url, date, author, pool);
++          date_val = keyword_printf("%D", rev, url, repos, date, author, pool);
+           apr_hash_set(*kw, SVN_KEYWORD_DATE_LONG,
+                        APR_HASH_KEY_STRING, date_val);
+           apr_hash_set(*kw, SVN_KEYWORD_DATE_SHORT,
+@@ -320,7 +378,7 @@
+         {
+           svn_string_t *author_val;
+ 
+-          author_val = keyword_printf("%a", rev, url, date, author, pool);
++          author_val = keyword_printf("%a", rev, url, repos, date, author, pool);
+           apr_hash_set(*kw, SVN_KEYWORD_AUTHOR_LONG,
+                        APR_HASH_KEY_STRING, author_val);
+           apr_hash_set(*kw, SVN_KEYWORD_AUTHOR_SHORT,
+@@ -331,7 +389,7 @@
+         {
+           svn_string_t *url_val;
+ 
+-          url_val = keyword_printf("%u", rev, url, date, author, pool);
++          url_val = keyword_printf("%u", rev, url, repos, date, author, pool);
+           apr_hash_set(*kw, SVN_KEYWORD_URL_LONG,
+                        APR_HASH_KEY_STRING, url_val);
+           apr_hash_set(*kw, SVN_KEYWORD_URL_SHORT,
+@@ -341,7 +399,7 @@
+         {
+           svn_string_t *id_val;
+ 
+-          id_val = keyword_printf("%b %r %d %a", rev, url, date, author,
++          id_val = keyword_printf("%b %r %d %a", rev, url, repos, date, author,
+                                   pool);
+           apr_hash_set(*kw, SVN_KEYWORD_ID,
+                        APR_HASH_KEY_STRING, id_val);
+@@ -350,7 +408,7 @@
+         {
+           svn_string_t *header_val;
+ 
+-          header_val = keyword_printf("%u %r %d %a", rev, url, date, author,
++          header_val = keyword_printf("%u %r %d %a", rev, url, repos, date, author,
+                                       pool);
+           apr_hash_set(*kw, SVN_KEYWORD_HEADER,
+                        APR_HASH_KEY_STRING, header_val);
+diff -ruN subversion/libsvn_wc/translate.c subversion/libsvn_wc/translate.c
+--- subversion/libsvn_wc/translate.c	2009-02-16 09:25:05.000000000 +0300
++++ subversion/libsvn_wc/translate.c	2009-04-03 21:49:30.541875000 +0400
+@@ -284,11 +284,12 @@
+ 
+   SVN_ERR(svn_wc__entry_versioned(&entry, path, adm_access, FALSE, pool));
+ 
+-  SVN_ERR(svn_subst_build_keywords2(keywords,
++  SVN_ERR(svn_subst_build_keywords3(keywords,
+                                     list,
+                                     apr_psprintf(pool, "%ld",
+                                                  entry->cmt_rev),
+                                     entry->url,
++                                    entry->repos,
+                                     entry->cmt_date,
+                                     entry->cmt_author,
+                                     pool));

@@ -7,6 +7,7 @@
 
 PORTNAME=	svn
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +18,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to the libsvn library
 
-LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion16
+
+CONFLICTS_BUILD=subversion-1.7.[0-9]*
 
 LICENSE=	PHP301
 USE_PHP=	yes
