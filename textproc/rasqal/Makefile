@@ -7,25 +7,21 @@
 #
 
 PORTNAME=	rasqal
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.27
 CATEGORIES=	textproc
-MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
-		http://download.librdf.org/source/
+MASTER_SITES=	http://download.librdf.org/source/ \
+		SF/librdf/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
-LIB_DEPENDS=	raptor.3:${PORTSDIR}/textproc/raptor \
+LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack lthack pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-raptor=system
 
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
@@ -42,7 +38,7 @@ OPTIONS+=	GMP   "Use Gnu MP library for decimals" off
 # This guards against $user setting both GMP and MPFR, since we can't be
 # very verbose in explaining our options.
 .if defined(WITH_MPFR)
-CONFIGURE_ARGS+=	--with-decimal=mpfr
+CONFIGURE_ARGS+=	--with-decimal=mpfr --with-mpfr=${LOCALBASE}
 LIB_DEPENDS+=	mpfr.4:${PORTSDIR}/math/mpfr
 .elif defined(WITH_GMP)
 CONFIGURE_ARGS+=	--with-decimal=gmp
