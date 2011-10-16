@@ -45,7 +45,7 @@ you update your ports collection, before attempting any port upgrades.
   
   Binding ports could be build with Subversion 1.7.0 (Default)
   or with Subversion 1.6.x. To buiuld bindings with subversion 1.6.x
-  you should set variable USE_SUBVERSION to "16".
+  you should set variable WITH_SUBVERSION_VER to "16".
   
   There are several ways to upgrade, depends on what did you use
   before and what you want to get after upgrade.
@@ -81,10 +81,10 @@ you update your ports collection, before attempting any port upgrades.
   # cd /usr/ports/devel/subversion16 && make config
   <deselect first three options, described above, if you want it>
   # portupgrade -o devel/subversion16 devel/subversion
-  # portupgrade -m "USE_SUBVERSION=16" -r devel/subversion16
+  # portupgrade -m "WITH_SUBVERSION_VER=16" -r devel/subversion16
   or
   # portmaster -o devel/subversion16 devel/subversion
-  # portmaster -m "USE_SUBVERSION=16" -R -r subversion-1.6
+  # portmaster -m "WITH_SUBVERSION_VER=16" -R -r subversion-1.6
 
   (d) You use devel/subversion-freebsd and, maybe, some bindings.
       You want good old subversion 1.6.x, with FreeBSD patches.
@@ -93,10 +93,10 @@ you update your ports collection, before attempting any port upgrades.
   # cd /usr/ports/devel/subversion16 && make config
   <make sure, that first three options are selected>
   # portupgrade -o devel/subversion16 devel/subversion-freebsd
-  # portupgrade -m "USE_SUBVERSION=16" -r devel/subversion16
+  # portupgrade -m "WITH_SUBVERSION_VER=16" -r devel/subversion16
   or
   # portmaster -o devel/subversion16 devel/subversion-freebsd
-  # portmaster -m "USE_SUBVERSION=16" -R -r subversion-1.6
+  # portmaster -m "WITH_SUBVERSION_VER=16" -R -r subversion-1.6
 
 20111005:
   AFFECTS: users of lang/erlang

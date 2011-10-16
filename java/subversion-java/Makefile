@@ -11,7 +11,7 @@ CATEGORIES=	java
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Java bindings for Version control system
 
-.if defined(USE_SUBVERSION) && ${USE_SUBVERSION} == 16
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 16
 MASTERDIR=	${.CURDIR}/../../devel/subversion16
 .else
 MASTERDIR=	${.CURDIR}/../../devel/subversion

@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.7.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}:main \
 		http://svnbook.red-bean.com/en/1.6/:book
