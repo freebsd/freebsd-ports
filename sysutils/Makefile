@@ -694,6 +694,7 @@
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += quicksynergy
+    SUBDIR += qzeitgeist
     SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
@@ -993,6 +994,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yawho
+    SUBDIR += zeitgeist
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zfs-periodic
