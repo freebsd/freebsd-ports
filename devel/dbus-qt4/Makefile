@@ -17,7 +17,7 @@ COMMENT=	Qt4 bindings for the D-BUS messaging system
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -48,9 +48,14 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--no-gui \
+			--no-phonon
+
 pre-configure:
-	${REINPLACE_CMD} -e 's|qdbusviewer||g' ${BUILD_WRKSRC}/qdbus.pro
-	${REINPLACE_CMD} -e 's|SUBDIRS = qdbus|SUBDIRS = ../../src/${PORTNAME} qdbus|g' ${BUILD_WRKSRC}/qdbus.pro
+	${REINPLACE_CMD} -e 's|SUBDIRS = qdbus|SUBDIRS = ../../src/${PORTNAME} qdbus|g' \
+		${BUILD_WRKSRC}/qdbus.pro
 	${REINPLACE_CMD} -e 's|"/moc"|"/moc-qt4"|' \
 		${BUILD_WRKSRC}/qdbuscpp2xml/qdbuscpp2xml.cpp
 	${MKDIR} ${WRKSRC}/mkspecs
@@ -64,4 +69,4 @@ post-configure:
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtDBus.pc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,26 @@
+--- ../mkspecs/freebsd-g++/qmake.conf.old	2011-09-17 01:02:43.000000000 -0300
++++ ../mkspecs/freebsd-g++/qmake.conf	2011-09-17 00:23:09.000000000 -0300
+@@ -13,8 +13,8 @@
+ QMAKE_CXXFLAGS_THREAD	= $$QMAKE_CFLAGS_THREAD
+ 
+ # Addon software goes into /usr/local on the BSDs, by default we will look there
+-QMAKE_INCDIR		= /usr/local/include
+-QMAKE_LIBDIR		= /usr/local/lib
++QMAKE_INCDIR		= $$[QT_INSTALL_HEADERS] /usr/local/include
++QMAKE_LIBDIR		= $$[QT_INSTALL_LIBS] /usr/local/lib
+ QMAKE_INCDIR_X11	= /usr/X11R6/include
+ QMAKE_LIBDIR_X11	= /usr/X11R6/lib
+ QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]
+--- ../mkspecs/freebsd-g++40/qmake.conf.old	2011-09-17 01:03:00.000000000 -0300
++++ ../mkspecs/freebsd-g++40/qmake.conf	2011-09-17 00:23:41.000000000 -0300
+@@ -37,8 +37,8 @@
+ QMAKE_CXXFLAGS_THREAD	= $$QMAKE_CFLAGS_THREAD
+ 
+ # Addon software goes into /usr/local on the BSDs, by default we will look there
+-QMAKE_INCDIR		= /usr/local/include
+-QMAKE_LIBDIR		= /usr/local/lib
++QMAKE_INCDIR		= $$[QT_INSTALL_HEADERS] /usr/local/include
++QMAKE_LIBDIR		= $$[QT_INSTALL_LIBS] /usr/local/lib
+ QMAKE_INCDIR_X11	= /usr/X11R6/include
+ QMAKE_LIBDIR_X11	= /usr/X11R6/lib
+ QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]

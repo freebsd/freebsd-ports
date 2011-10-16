@@ -1249,6 +1249,41 @@ share/examples/qt4/examples/declarative/positioners/add.png
 share/examples/qt4/examples/declarative/positioners/del.png
 share/examples/qt4/examples/declarative/positioners/positioners.qml
 share/examples/qt4/examples/declarative/positioners/positioners.qmlproject
+share/examples/qt4/examples/declarative/shadereffects/main.cpp
+share/examples/qt4/examples/declarative/shadereffects/qml/Curtain.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/CurtainEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/DropShadow.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/DropShadowEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/Grayscale.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/GrayscaleEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/ImageMask.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/ImageMaskEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/RadialWave.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/RadialWaveEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/Water.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/WaterEffect.qml
+share/examples/qt4/examples/declarative/shadereffects/qml/images/Curtain.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/DropShadow.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/Grayscale.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/ImageMask.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/RadialWave.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/Water.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/back.png
+share/examples/qt4/examples/declarative/shadereffects/qml/images/bg.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/desaturate.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/drop_shadow.png
+share/examples/qt4/examples/declarative/shadereffects/qml/images/fabric.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/flower.png
+share/examples/qt4/examples/declarative/shadereffects/qml/images/image1.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/image2.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/qt-logo.png
+share/examples/qt4/examples/declarative/shadereffects/qml/images/shader_effects.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/sky.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/images/toolbar.png
+share/examples/qt4/examples/declarative/shadereffects/qml/images/wave.jpg
+share/examples/qt4/examples/declarative/shadereffects/qml/main.qml
+share/examples/qt4/examples/declarative/shadereffects/shadereffects
+share/examples/qt4/examples/declarative/shadereffects/shadereffects.pro
 share/examples/qt4/examples/declarative/sqllocalstorage/hello.qml
 share/examples/qt4/examples/declarative/sqllocalstorage/sqllocalstorage.qmlproject
 share/examples/qt4/examples/declarative/text/fonts/availableFonts.qml
@@ -1275,6 +1310,9 @@ share/examples/qt4/examples/declarative/touchinteraction/gestures/experimental-g
 share/examples/qt4/examples/declarative/touchinteraction/gestures/gestures.qmlproject
 share/examples/qt4/examples/declarative/touchinteraction/mousearea/mousearea-example.qml
 share/examples/qt4/examples/declarative/touchinteraction/mousearea/mousearea.qmlproject
+share/examples/qt4/examples/declarative/touchinteraction/pincharea/flickresize.qml
+share/examples/qt4/examples/declarative/touchinteraction/pincharea/pincharea.qmlproject
+share/examples/qt4/examples/declarative/touchinteraction/pincharea/qt-logo.jpg
 share/examples/qt4/examples/declarative/touchinteraction/touchinteraction.qmlproject
 share/examples/qt4/examples/declarative/toys/README
 share/examples/qt4/examples/declarative/toys/clocks/clocks.qml
@@ -3005,6 +3043,7 @@ share/examples/qt4/examples/tools/plugandpaint/plugandpaint.pro
 share/examples/qt4/examples/tools/plugandpaint/plugindialog.cpp
 share/examples/qt4/examples/tools/plugandpaint/plugindialog.h
 share/examples/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.a
+share/examples/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.prl
 share/examples/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so
 %%DEBUG%%share/examples/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so.debug
 share/examples/qt4/examples/tools/plugandpaintplugins/basictools/basictools.pro
@@ -3198,6 +3237,29 @@ share/examples/qt4/examples/tutorials/modelview/7_selections/mainwindow.h
 share/examples/qt4/examples/tutorials/modelview/7_selections/mv_selections
 %%DEBUG%%share/examples/qt4/examples/tutorials/modelview/7_selections/mv_selections.debug
 share/examples/qt4/examples/tutorials/modelview/modelview.pro
+share/examples/qt4/examples/tutorials/threads/clock/clock
+share/examples/qt4/examples/tutorials/threads/clock/clock.pro
+share/examples/qt4/examples/tutorials/threads/clock/clockthread.cpp
+share/examples/qt4/examples/tutorials/threads/clock/clockthread.h
+share/examples/qt4/examples/tutorials/threads/clock/main.cpp
+share/examples/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent
+share/examples/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent.cpp
+share/examples/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent.pro
+share/examples/qt4/examples/tutorials/threads/hellothread/hellothread
+share/examples/qt4/examples/tutorials/threads/hellothread/hellothread.cpp
+share/examples/qt4/examples/tutorials/threads/hellothread/hellothread.h
+share/examples/qt4/examples/tutorials/threads/hellothread/hellothread.pro
+share/examples/qt4/examples/tutorials/threads/hellothread/main.cpp
+share/examples/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool
+share/examples/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool.cpp
+share/examples/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool.pro
+share/examples/qt4/examples/tutorials/threads/movedobject/main.cpp
+share/examples/qt4/examples/tutorials/threads/movedobject/movedobject
+share/examples/qt4/examples/tutorials/threads/movedobject/movedobject.pro
+share/examples/qt4/examples/tutorials/threads/movedobject/thread.cpp
+share/examples/qt4/examples/tutorials/threads/movedobject/thread.h
+share/examples/qt4/examples/tutorials/threads/movedobject/workerobject.cpp
+share/examples/qt4/examples/tutorials/threads/movedobject/workerobject.h
 share/examples/qt4/examples/tutorials/tutorials.pro
 share/examples/qt4/examples/uitools/multipleinheritance/calculatorform.cpp
 share/examples/qt4/examples/uitools/multipleinheritance/calculatorform.h
@@ -3702,6 +3764,12 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/uitools/textfinder
 @dirrm share/examples/qt4/examples/uitools/multipleinheritance
 @dirrm share/examples/qt4/examples/uitools
+@dirrm share/examples/qt4/examples/tutorials/threads/movedobject
+@dirrm share/examples/qt4/examples/tutorials/threads/hellothreadpool
+@dirrm share/examples/qt4/examples/tutorials/threads/hellothread
+@dirrm share/examples/qt4/examples/tutorials/threads/helloconcurrent
+@dirrm share/examples/qt4/examples/tutorials/threads/clock
+@dirrm share/examples/qt4/examples/tutorials/threads
 @dirrm share/examples/qt4/examples/tutorials/modelview/7_selections
 @dirrm share/examples/qt4/examples/tutorials/modelview/6_treeview
 @dirrm share/examples/qt4/examples/tutorials/modelview/5_edit
@@ -3995,6 +4063,7 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/declarative/toys/clocks/content
 @dirrm share/examples/qt4/examples/declarative/toys/clocks
 @dirrm share/examples/qt4/examples/declarative/toys
+@dirrm share/examples/qt4/examples/declarative/touchinteraction/pincharea
 @dirrm share/examples/qt4/examples/declarative/touchinteraction/mousearea
 @dirrm share/examples/qt4/examples/declarative/touchinteraction/gestures
 @dirrm share/examples/qt4/examples/declarative/touchinteraction
@@ -4007,6 +4076,9 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/declarative/text/fonts
 @dirrm share/examples/qt4/examples/declarative/text
 @dirrm share/examples/qt4/examples/declarative/sqllocalstorage
+@dirrm share/examples/qt4/examples/declarative/shadereffects/qml/images
+@dirrm share/examples/qt4/examples/declarative/shadereffects/qml
+@dirrm share/examples/qt4/examples/declarative/shadereffects
 @dirrm share/examples/qt4/examples/declarative/positioners
 @dirrm share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample
 @dirrm share/examples/qt4/examples/declarative/plugins/com/nokia
