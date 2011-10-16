@@ -4,6 +4,6 @@ include/dbusmenu-qt/dbusmenuexporter.h
 include/dbusmenu-qt/dbusmenuimporter.h
 lib/libdbusmenu-qt.so
 lib/libdbusmenu-qt.so.2
-lib/libdbusmenu-qt.so.2.5.0
+lib/libdbusmenu-qt.so.2.6.0
 libdata/pkgconfig/dbusmenu-qt.pc
 @dirrm include/dbusmenu-qt

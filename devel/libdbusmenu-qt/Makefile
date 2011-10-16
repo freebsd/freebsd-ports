@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdbusmenu-qt
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -26,6 +26,18 @@ USE_LDCONFIG=	yes
 
 CMAKE_OUTSOURCE=	yes
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS=	DOCS "Install API documentation (requires Doxygen)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_DOCS)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+PORTDOCS=	*
+CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH="${DOCSDIR_REL}"
+.else
+CMAKE_ARGS+=	-DWITH_DOC:BOOL=OFF
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
