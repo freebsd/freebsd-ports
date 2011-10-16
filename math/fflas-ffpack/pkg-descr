@@ -1,0 +1,4 @@
+The FFLAS-FFPACK library provides dense linear algebra routines
+over word-size prime finite fields.
+
+WWW:	http://linalg.org/projects/fflas-ffpack
