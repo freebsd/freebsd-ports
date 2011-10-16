@@ -55,6 +55,11 @@ post-patch:
 	@${CP} ${WRKSRC}/../mkspecs/common/g++.conf ${WRKSRC}/../mkspecs/common/clang.conf
 	@${REINPLACE_CMD} -e 's|gcc|clang|g' -e 's|g++|clang++|g' \
 		${WRKSRC}/../mkspecs/common/clang.conf
+
+	# FIXME: This is ugly
+	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++/*.orig
+	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++40/*.orig
+
 .for c in clang llvm
 	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++ ${WRKSRC}/../mkspecs/freebsd-${c}
 	@${REINPLACE_CMD} -e 's|g++|${c}|g' \
@@ -81,10 +86,6 @@ do-configure:
 
 .if ${ARCH} == "alpha"
 CXXFLAGS+=	-mieee
-.endif
-
-.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
-CXXFLAGS+=	-fno-gcse
 .endif
 
 post-install:

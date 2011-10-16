@@ -44,7 +44,6 @@ CONFIGURE_ENV+=	CC="" CXX=""
 
 # Keep in sync with devel/qmake4/files/qconfig.cpp
 CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
-		-L${PREFIX}/${QT_LIBDIR_REL} \
 		-qt-gif -system-libjpeg -system-libpng \
 		-system-libmng -system-libtiff -system-zlib \
 		-opensource -confirm-license \
@@ -60,7 +59,9 @@ CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 		-translationdir ${PREFIX}/share/qt4/translations \
 		-sysconfdir ${PREFIX}/etc/xdg \
 		-examplesdir ${PREFIX}/share/examples/qt4/examples \
-		-demosdir ${PREFIX}/share/examples/qt4/demos
+		-demosdir ${PREFIX}/share/examples/qt4/demos \
+		-phonon \
+		-no-phonon-backend
 
 PLIST_SUB+=	SHLIB_VER=${QT4_VERSION:C/-.*//} \
 		SHLIB_SHVER=${QT4_VERSION:R}
@@ -145,9 +146,8 @@ QTCGFLIBS?=
 
 #
 # QT4 version
-# Don't forget to update ${PORTSDIR}/devel/qt4/files/patch-configure !
 #
-QT4_VERSION?=		4.7.3
+QT4_VERSION?=		4.7.4
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \

@@ -45,6 +45,8 @@ share/qt4/mkspecs/common/symbian/stl-off/new
 share/qt4/mkspecs/common/symbian/symbian-makefile.conf
 share/qt4/mkspecs/common/symbian/symbian-mmp.conf
 share/qt4/mkspecs/common/symbian/symbian.conf
+share/qt4/mkspecs/common/symbian/symbianincludes.h
+share/qt4/mkspecs/common/symbian/template.applite
 share/qt4/mkspecs/common/unix.conf
 share/qt4/mkspecs/common/wince/qmake.conf
 share/qt4/mkspecs/common/wince/qplatformdefs.h
@@ -113,6 +115,7 @@ share/qt4/mkspecs/features/symbian/moc.prf
 share/qt4/mkspecs/features/symbian/nested_exceptions.prf
 share/qt4/mkspecs/features/symbian/opengl.prf
 share/qt4/mkspecs/features/symbian/platform_paths.prf
+share/qt4/mkspecs/features/symbian/prepend_includepath.prf
 share/qt4/mkspecs/features/symbian/qt.prf
 share/qt4/mkspecs/features/symbian/qt_config.prf
 share/qt4/mkspecs/features/symbian/release.prf
@@ -120,6 +123,7 @@ share/qt4/mkspecs/features/symbian/run_on_phone.prf
 share/qt4/mkspecs/features/symbian/sis_targets.prf
 share/qt4/mkspecs/features/symbian/stl.prf
 share/qt4/mkspecs/features/symbian/stl_off.prf
+share/qt4/mkspecs/features/symbian/symbian_appbooster.prf
 share/qt4/mkspecs/features/symbian/symbian_building.prf
 share/qt4/mkspecs/features/symbian/thread.prf
 share/qt4/mkspecs/features/testcase.prf
@@ -332,6 +336,13 @@ share/qt4/mkspecs/solaris-g++/qmake.conf
 share/qt4/mkspecs/solaris-g++/qplatformdefs.h
 share/qt4/mkspecs/symbian-abld/qmake.conf
 share/qt4/mkspecs/symbian-abld/qplatformdefs.h
+share/qt4/mkspecs/symbian-armcc/features/default_post.prf
+share/qt4/mkspecs/symbian-armcc/qmake.conf
+share/qt4/mkspecs/symbian-armcc/qplatformdefs.h
+share/qt4/mkspecs/symbian-gcce/features/default_post.prf
+share/qt4/mkspecs/symbian-gcce/qmake.conf
+share/qt4/mkspecs/symbian-gcce/qplatformdefs.h
+share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_clean.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_emulator_deployment.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_extra_pre_targetdep.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_post_link.flm
@@ -339,12 +350,6 @@ share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_store_build.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qt.xml
 share/qt4/mkspecs/symbian-sbsv2/qmake.conf
 share/qt4/mkspecs/symbian-sbsv2/qplatformdefs.h
-share/qt4/mkspecs/symbian/linux-armcc/features/default_post.prf
-share/qt4/mkspecs/symbian/linux-armcc/qmake.conf
-share/qt4/mkspecs/symbian/linux-armcc/qplatformdefs.h
-share/qt4/mkspecs/symbian/linux-gcce/features/default_post.prf
-share/qt4/mkspecs/symbian/linux-gcce/qmake.conf
-share/qt4/mkspecs/symbian/linux-gcce/qplatformdefs.h
 share/qt4/mkspecs/tru64-cxx/qmake.conf
 share/qt4/mkspecs/tru64-cxx/qplatformdefs.h
 share/qt4/mkspecs/tru64-g++/qmake.conf
@@ -498,15 +503,14 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/unixware-cc
 @dirrm share/qt4/mkspecs/tru64-g++
 @dirrm share/qt4/mkspecs/tru64-cxx
-@dirrm share/qt4/mkspecs/symbian/linux-gcce/features
-@dirrm share/qt4/mkspecs/symbian/linux-gcce
-@dirrm share/qt4/mkspecs/symbian/linux-armcc/features
-@dirrm share/qt4/mkspecs/symbian/linux-armcc
 @dirrm share/qt4/mkspecs/symbian-sbsv2/flm/qt
 @dirrm share/qt4/mkspecs/symbian-sbsv2/flm
 @dirrm share/qt4/mkspecs/symbian-sbsv2
+@dirrm share/qt4/mkspecs/symbian-gcce/features
+@dirrm share/qt4/mkspecs/symbian-gcce
+@dirrm share/qt4/mkspecs/symbian-armcc/features
+@dirrm share/qt4/mkspecs/symbian-armcc
 @dirrm share/qt4/mkspecs/symbian-abld
-@dirrm share/qt4/mkspecs/symbian
 @dirrm share/qt4/mkspecs/solaris-g++-64
 @dirrm share/qt4/mkspecs/solaris-g++
 @dirrm share/qt4/mkspecs/solaris-cc-stlport

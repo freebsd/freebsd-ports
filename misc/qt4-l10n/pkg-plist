@@ -4,6 +4,7 @@ share/qt4/translations/assistant_de.qm
 share/qt4/translations/assistant_fr.qm
 share/qt4/translations/assistant_hu.qm
 share/qt4/translations/assistant_ja.qm
+share/qt4/translations/assistant_ko.qm
 share/qt4/translations/assistant_pl.qm
 share/qt4/translations/assistant_ru.qm
 share/qt4/translations/assistant_sl.qm
@@ -15,6 +16,7 @@ share/qt4/translations/designer_de.qm
 share/qt4/translations/designer_fr.qm
 share/qt4/translations/designer_hu.qm
 share/qt4/translations/designer_ja.qm
+share/qt4/translations/designer_ko.qm
 share/qt4/translations/designer_pl.qm
 share/qt4/translations/designer_ru.qm
 share/qt4/translations/designer_sl.qm
@@ -26,6 +28,7 @@ share/qt4/translations/linguist_de.qm
 share/qt4/translations/linguist_fr.qm
 share/qt4/translations/linguist_hu.qm
 share/qt4/translations/linguist_ja.qm
+share/qt4/translations/linguist_ko.qm
 share/qt4/translations/linguist_pl.qm
 share/qt4/translations/linguist_ru.qm
 share/qt4/translations/linguist_sl.qm
@@ -37,6 +40,7 @@ share/qt4/translations/qt_cs.qm
 share/qt4/translations/qt_da.qm
 share/qt4/translations/qt_de.qm
 share/qt4/translations/qt_es.qm
+share/qt4/translations/qt_fa.qm
 share/qt4/translations/qt_fr.qm
 share/qt4/translations/qt_gl.qm
 share/qt4/translations/qt_he.qm
@@ -44,8 +48,10 @@ share/qt4/translations/qt_help_cs.qm
 share/qt4/translations/qt_help_da.qm
 share/qt4/translations/qt_help_de.qm
 share/qt4/translations/qt_help_fr.qm
+share/qt4/translations/qt_help_gl.qm
 share/qt4/translations/qt_help_hu.qm
 share/qt4/translations/qt_help_ja.qm
+share/qt4/translations/qt_help_ko.qm
 share/qt4/translations/qt_help_pl.qm
 share/qt4/translations/qt_help_ru.qm
 share/qt4/translations/qt_help_sl.qm
@@ -54,6 +60,7 @@ share/qt4/translations/qt_help_zh_CN.qm
 share/qt4/translations/qt_help_zh_TW.qm
 share/qt4/translations/qt_hu.qm
 share/qt4/translations/qt_ja.qm
+share/qt4/translations/qt_ko.qm
 share/qt4/translations/qt_pl.qm
 share/qt4/translations/qt_pt.qm
 share/qt4/translations/qt_ru.qm
@@ -65,6 +72,7 @@ share/qt4/translations/qt_zh_CN.qm
 share/qt4/translations/qt_zh_TW.qm
 share/qt4/translations/qtconfig_hu.qm
 share/qt4/translations/qtconfig_ja.qm
+share/qt4/translations/qtconfig_ko.qm
 share/qt4/translations/qtconfig_pl.qm
 share/qt4/translations/qtconfig_ru.qm
 share/qt4/translations/qtconfig_sl.qm
@@ -73,6 +81,7 @@ share/qt4/translations/qtconfig_zh_CN.qm
 share/qt4/translations/qtconfig_zh_TW.qm
 share/qt4/translations/qvfb_hu.qm
 share/qt4/translations/qvfb_ja.qm
+share/qt4/translations/qvfb_ko.qm
 share/qt4/translations/qvfb_pl.qm
 share/qt4/translations/qvfb_ru.qm
 share/qt4/translations/qvfb_sl.qm
