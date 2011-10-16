@@ -1,0 +1,18 @@
+include/prison/AbstractBarcode
+include/prison/BarcodeItem
+include/prison/BarcodeWidget
+include/prison/DataMatrixBarcode
+include/prison/QRCodeBarcode
+include/prison/abstractbarcode.h
+include/prison/barcodeitem.h
+include/prison/barcodewidget.h
+include/prison/datamatrixbarcode.h
+include/prison/prison_export.h
+include/prison/qrcodebarcode.h
+lib/cmake/Prison/PrisonConfig.cmake
+lib/libprison.so
+lib/libprison.so.0
+lib/libprison.so.0.0.0
+@dirrm lib/cmake/Prison
+@dirrmtry lib/cmake
+@dirrm include/prison
