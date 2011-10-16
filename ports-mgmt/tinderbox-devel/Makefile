@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 DISTVERSION=	3.4${SNAP}
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -27,8 +28,8 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		EMAILS "Support for build failure/completion emails" On \
 		LSOF "For killMountProcesses() when using nullfs" On \
 		LOG_COMPRESS "Support bzip'ing the logs" On \
-		TMPFS "Enable TMPFS extra patch" On \
-		PARALLEL "Enable PARALLEL extra patch" On
+		PARALLEL "Enable PARALLEL extra patch" On \
+#		TMPFS "Enable TMPFS extra patch" Off
 
 NO_BUILD=	yes
 WANT_PERL=	yes
