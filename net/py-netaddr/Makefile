@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	net python
 MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/ \
 		CHEESESHOP
