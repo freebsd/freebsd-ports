@@ -7,7 +7,7 @@
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -52,7 +52,7 @@ PLIST_SUB+=	GIT="@comment "
 .endif
 
 .if !defined(WITHOUT_SVN)
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion-freebsd
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 CONFIGURE_ARGS+=--enable-subversion
 PLIST_SUB+=	SVN=""
 .else
