@@ -2,8 +2,8 @@
 etc/iked.conf.sample
 @exec [ -f %D/etc/iked.conf ] || cp %D/etc/iked.conf.sample %D/etc/iked.conf
 sbin/iked
-bin/ikea
-bin/ikec
+%%QTGUI%%bin/ikea
+%%QTGUI%%bin/ikec
 lib/libike.so
 lib/libike.so.2.1.7
 lib/libpfk.so
