@@ -17,7 +17,7 @@ COMMENT=	Shrew Soft IKE daemon and client tools
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_RC_SUBR=    iked
+USE_RC_SUBR=	iked
 USE_BISON=	build
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
@@ -25,16 +25,19 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+CMAKE_ARGS+=	-DETCDIR:PATH="${PREFIX}/etc" \
+		-DLIBDIR:PATH="${PREFIX}/lib" \
+		-DMANDIR:PATH="${PREFIX}/man"
+
 OPTIONS=	QTGUI		"Enable QT client front end applications" on \
 		NATT		"Enable NAT-Traversal (kernel-patch required)" off \
 		LDAP		"Enable LDAP XAuth daemon support" off \
 		DEBUG		"Enable Debug support" off
 
-MAN1=		ikea.1 ikec.1
+.include <bsd.port.options.mk>
+
 MAN5=		iked.conf.5
 MAN8=		iked.8
-
-.include <bsd.port.pre.mk>
 
 .ifdef(WITH_DEBUG)
 CMAKE_ARGS+=	-DDEBUG=YES
@@ -51,8 +54,14 @@ CMAKE_ARGS+=	-DNATT=YES
 
 .ifdef(WITH_QTGUI)
 CMAKE_ARGS+=	-DQTGUI=YES
-LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
+USE_QT_VER=	3
+MAN1=		ikea.1 ikec.1
+PLIST_SUB+=	QTGUI=""
+.else
+PLIST_SUB+=	QTGUI="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 .if defined(WITH_NATT)
@@ -73,6 +82,8 @@ post-patch:
 	@sleep 3
 . endif
 .endif
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/CMakeLists.txt
 
 post-build:
 # QT 3.3 UIC (User Interface Compiler) creates these, so remove them.

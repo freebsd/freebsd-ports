@@ -1,0 +1,23 @@
+--- ./CMakeLists.txt.orig	2011-02-23 17:46:26.964357643 +0300
++++ ./CMakeLists.txt	2011-02-23 17:56:25.405358356 +0300
+@@ -62,13 +62,13 @@
+ # Path Option Checks
+ #
+ 
+-if( NOT EXISTS ${CMAKE_INSTALL_PREFIX} )
+-
+-	set(
+-		CMAKE_INSTALL_PREFIX
+-		"/usr" )
+-
+-endif( NOT EXISTS ${CMAKE_INSTALL_PREFIX} )
++#if( NOT EXISTS ${CMAKE_INSTALL_PREFIX} )
++#
++#	set(
++#		CMAKE_INSTALL_PREFIX
++#		"/usr" )
++#
++#endif( NOT EXISTS ${CMAKE_INSTALL_PREFIX} )
+ 
+ message(
+ 	STATUS 
