@@ -6,31 +6,37 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/src/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Multimedia framework for KDE4
+COMMENT=	Multimedia framework for KDE 4
+
+LIB_DEPENDS=	qzeitgeist.0:${PORTSDIR}/sysutils/qzeitgeist
 
 CONFLICTS=	qt4-phonon-4*
 
 PHONON_BRANCH=	stable
+
+USE_KDE4=	kdehier kdeprefix automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus gui \
+		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	kdehier automoc4 kdeprefix
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui qtestlib \
-		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	PULSEAUDIO	"Support playback via PulseAudio" off
 #		DESIGNER	"Install Qt Designer plugin" off \
-#		ZEITGEIST	"Log playback activity via Zeitgeist" off
 
 .include <bsd.port.options.mk>
 
+# FIXME: Enable this option with Qt 4.8 (qt4-webkit does not depend on
+# phonon anymore).
 # qt4-designer depends on qt4-webkit, hence on phonon. Disable this
 # option to avoid a circular dependency.
 .undef WITH_DESIGNER
@@ -51,12 +57,6 @@ CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
-.ifdef(WITH_ZEITGEIST)
-CMAKE_ARGS+=	-DWITH_QtZeitgeist:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_QtZeitgeist:BOOL=OFF
-.endif
-
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
 .ifdef(WITH_QT_PHONON)
@@ -67,7 +67,13 @@ pre-configure:
 	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
 		-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
 		${PATCH_WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
+		${PATCH_WRKSRC}/${PORTNAME}/experimental/CMakeLists.txt
 
+# FIXME: We need to pass -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=1
+# to install the designer plugin and the Qt .pri file into the
+# system-wide Qt directory in the next release.
+# Reference: http://commits.kde.org/phonon/664035456f0c9dc85b65c893f431b82118c281c0
 post-install:
 	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/phonon
 	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/Phonon
