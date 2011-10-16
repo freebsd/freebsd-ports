@@ -1,0 +1,12 @@
+The Samba suite is a set of programs which run under the FreeBSD
+operating system. These programs deliver most of the important
+functionality of a Microsoft Lan Manager server. That is, they support
+remote access to FreeBSD filespace and FreeBSD printers from Lan Manager
+compatible clients. In practical terms, this means that such clients can
+connect to and use FreeBSD filespace as if it was a local disk drive, or
+FreeBSD printers as if they were local printers.
+
+Some of the most popular Lan Manager compatible clients include Lan
+Manager itself, Windows for Workgroups, OS/2 and Windows NT.
+
+WWW: http://www.samba.org/
