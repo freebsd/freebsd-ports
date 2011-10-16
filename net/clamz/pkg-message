@@ -1,0 +1,9 @@
+*************************************************************************
+For convenience, users may want to set a cookie using the link on
+http://code.google.com/p/clamz/. It is feasible to substitute the top
+level domain of the link provided there with the applicable amazon-TLD,
+such as http://www.amazon.com/<...> with http://www.amazon.de/<...>
+Not having the cookie set, users will fail to download Amazon .amz files
+to download albums and are presented with information on how to download
+amz-downloaders other than clamz.
+*************************************************************************
