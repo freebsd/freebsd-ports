@@ -12,7 +12,7 @@ MASTER_SITES=	${GNUSHOGI_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${GNUSHOGI_MASTER_SITE_SUBDIR}
 DISTNAME=	${GNUSHOGI_DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
 GNU_CONFIGURE=	yes
@@ -31,6 +31,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/gnushogi|/share/gnushogi|g' \
 		${WRKSRC}/gnushogi/Makefile.in
+	@${REINPLACE_CMD} -e '/HAVE_SETLINEBUF/s|ifdef|ifndef|' \
+		${WRKSRC}/gnushogi/gnushogi.h
 
 pre-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split gnushogi
@@ -47,7 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.gam ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ref ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rules ${DOCSDIR}
 .endif
 
