@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.7.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	git-core
@@ -193,7 +194,6 @@ CONFIGURE_ARGS=	--enable-pthreads=${PTHREAD_LIBS}
 
 OPTIONS=	GUI "Enable building of GUI tools" off \
 		SVN "Enable required dependencies for SVN tools" off \
-		SVN_FBSD "Use subversion-freebsd dependency (implies SVN)" off \
 		GITWEB "Install gitweb" off \
 		CONTRIB "Install contributed scripts" on \
 		P4 "Enable Perforce support" on \
@@ -277,13 +277,8 @@ MAKE_ARGS+=	NO_TCLTK=yes
 
 .ifdef (WITH_SVN) || defined (WITH_SVN_FBSD)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
-.ifdef (WITH_SVN_FBSD)
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion-freebsd \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion-freebsd
-.else
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion \
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
-.endif
 PLIST_SUB+=	SVN=""
 MAN1+=		git-svn.1
 .else
