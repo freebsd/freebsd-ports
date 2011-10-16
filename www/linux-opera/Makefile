@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -33,11 +32,12 @@ USE_LINUX_APPS=	aspell naslibs png xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GNOME=	desktopfileutils
 WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER=	11.50
-OPERA_BUILD=	1074
+OPERA_VER?=	11.51
+OPERA_BUILD?=	1087
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
@@ -61,10 +61,6 @@ IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
 IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
 .endif
 
-.if ${HAVE_GNOME:Mgtk20}!=""
-INSTALLS_ICONS=	yes
-.endif
-
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
@@ -74,13 +70,13 @@ post-extract:
 		${MV} ${WRKSRC}/$${_r} ${WRKSRC}/$${linux}; \
 	done; \
 	for _f in `find ${WRKSRC}/share/icons -type f | \
-		   sed -e 's|${WRKSRC}/||g'`; do \
+		   ${SED} -e 's|${WRKSRC}/||g'`; do \
 		linux=`${ECHO_CMD} $${_f} | \
 		       ${SED} -e 's|opera|${UNIQUENAME}|g'`; \
 		${MV} ${WRKSRC}/$${_f} ${WRKSRC}/$${linux}; \
 	done; \
 	for _l in `find ${WRKSRC}/share/icons -name opera-widget.png | \
-		   sed -e 's|/opera-widget\.png||g'`; do \
+		   ${SED} -e 's|/opera-widget\.png||g'`; do \
 		${RM} $${_l}/opera-widget.png; \
 		cd $${_l}; \
 		${LN} -s ../mimetypes/${UNIQUENAME}-widget.png \
