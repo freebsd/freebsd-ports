@@ -1148,6 +1148,7 @@
     SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
+    SUBDIR += raptor2
     SUBDIR += rarian
     SUBDIR += rasqal
     SUBDIR += rast

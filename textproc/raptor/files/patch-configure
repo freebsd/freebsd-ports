@@ -1,0 +1,19 @@
+--- configure.orig	2010-01-30 11:23:01.000000000 +1000
++++ configure	2011-08-08 00:14:06.216624213 +1100
+@@ -14556,7 +14556,7 @@
+ AM_BACKSLASH='\'
+ 
+ 
+-ac_config_files="$ac_config_files Makefile raptor.spec raptor.rdf data/Makefile docs/Makefile docs/version.xml examples/Makefile src/Makefile tests/Makefile tests/feeds/Makefile tests/grddl/Makefile tests/ntriples/Makefile tests/rdfa/Makefile tests/rdfxml/Makefile tests/turtle/Makefile tests/trig/Makefile utils/Makefile win32/Makefile librdfa/Makefile raptor.pc"
++ac_config_files="$ac_config_files Makefile raptor.spec raptor.rdf data/Makefile docs/Makefile docs/version.xml examples/Makefile src/Makefile tests/Makefile tests/feeds/Makefile tests/grddl/Makefile tests/ntriples/Makefile tests/rdfa/Makefile tests/rdfxml/Makefile tests/turtle/Makefile tests/trig/Makefile win32/Makefile librdfa/Makefile raptor.pc"
+ 
+ ac_config_files="$ac_config_files src/raptor-config"
+ 
+@@ -16020,7 +16020,6 @@
+     "tests/rdfxml/Makefile") CONFIG_FILES="$CONFIG_FILES tests/rdfxml/Makefile" ;;
+     "tests/turtle/Makefile") CONFIG_FILES="$CONFIG_FILES tests/turtle/Makefile" ;;
+     "tests/trig/Makefile") CONFIG_FILES="$CONFIG_FILES tests/trig/Makefile" ;;
+-    "utils/Makefile") CONFIG_FILES="$CONFIG_FILES utils/Makefile" ;;
+     "win32/Makefile") CONFIG_FILES="$CONFIG_FILES win32/Makefile" ;;
+     "librdfa/Makefile") CONFIG_FILES="$CONFIG_FILES librdfa/Makefile" ;;
+     "raptor.pc") CONFIG_FILES="$CONFIG_FILES raptor.pc" ;;

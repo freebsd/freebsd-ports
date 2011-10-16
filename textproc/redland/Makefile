@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.14
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
-LIB_DEPENDS=	raptor.3:${PORTSDIR}/textproc/raptor \
-		rasqal.2:${PORTSDIR}/textproc/rasqal
+LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
+		rasqal.3:${PORTSDIR}/textproc/rasqal
 
 USE_BDB=	yes
 WITH_BDB_HIGHEST=	yes
@@ -26,8 +26,6 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
 

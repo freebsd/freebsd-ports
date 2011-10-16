@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.10.1
+PORTVERSION=	1.0.13.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -22,7 +22,7 @@ OPTIONS=	PERL "Add Perl bindings" off \
 
 GNU_CONFIGURE=	yes
 
-IGNORE=		does not compatible with redland-1.0.12
+#IGNORE=		does not compatible with redland-1.0.12
 
 .include <bsd.port.options.mk>
 

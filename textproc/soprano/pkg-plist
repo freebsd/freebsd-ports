@@ -23,9 +23,6 @@ include/Soprano/Error/ParserError
 include/Soprano/FilterModel
 include/Soprano/Global
 include/Soprano/Graph
-include/Soprano/Index/CLuceneIndex
-include/Soprano/Index/IndexFilterModel
-include/Soprano/Index/QueryHit
 include/Soprano/Inference/InferenceModel
 include/Soprano/Inference/NodePattern
 include/Soprano/Inference/Rule
@@ -80,7 +77,6 @@ include/soprano/asyncquery.h
 include/soprano/asyncresult.h
 include/soprano/backend.h
 include/soprano/bindingset.h
-include/soprano/cluceneindex.h
 include/soprano/dbusclient.h
 include/soprano/dbusexportiterator.h
 include/soprano/dbusexportmodel.h
@@ -93,8 +89,6 @@ include/soprano/error.h
 include/soprano/filtermodel.h
 include/soprano/global.h
 include/soprano/graph.h
-include/soprano/indexfiltermodel.h
-include/soprano/indexqueryhit.h
 include/soprano/inferencemodel.h
 include/soprano/inferencerule.h
 include/soprano/inferenceruleparser.h
@@ -149,9 +143,6 @@ lib/libsoprano.so.4.3.0
 lib/libsopranoclient.so
 lib/libsopranoclient.so.1
 lib/libsopranoclient.so.1.2.0
-lib/libsopranoindex.so
-lib/libsopranoindex.so.1
-lib/libsopranoindex.so.1.1.0
 lib/libsopranoserver.so
 lib/libsopranoserver.so.1
 lib/libsopranoserver.so.1.2.0
@@ -198,7 +189,6 @@ share/dbus-1/interfaces/org.soprano.StatementIterator.xml
 @dirrm include/Soprano/Server
 @dirrm include/Soprano/Query
 @dirrm include/Soprano/Inference
-@dirrm include/Soprano/Index
 @dirrm include/Soprano/Error
 @dirrm include/Soprano/Client
 @dirrm include/Soprano

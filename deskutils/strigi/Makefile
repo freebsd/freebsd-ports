@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	strigi
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://rdieter.fedorapeople.org/strigi/
+#MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \
+#		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Desktop searching program
@@ -16,7 +17,8 @@ COMMENT=	Desktop searching program
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		clucene.0:${PORTSDIR}/textproc/clucene \
 		dbus-1:${PORTSDIR}/devel/dbus \
-		exiv2.10:${PORTSDIR}/graphics/exiv2
+		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui dbus moc_build uic_build qmake_build rcc_build

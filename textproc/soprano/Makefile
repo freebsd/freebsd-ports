@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	soprano
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 RDF framework
 
-LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
-		raptor.3:${PORTSDIR}/textproc/raptor \
+LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		iodbc.3:${PORTSDIR}/databases/libiodbc
 
@@ -26,6 +25,7 @@ QT_COMPONENTS=	corelib dbus qtestlib network \
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+CMAKE_ARGS+=	-DSOPRANO_DISABLE_CLUCENE_INDEX=yes
 
 .include <bsd.port.options.mk>
 
