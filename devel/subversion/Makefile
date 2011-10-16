@@ -209,6 +209,7 @@ pre-install:
 
 post-install:	${MKREPOS_TARGET}
 .if defined(WITH_MOD_DAV_SVN)
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
 #.if defined(WITH_MOD_DONTDOTHAT)
 #	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
