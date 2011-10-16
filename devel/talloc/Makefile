@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		talloc
-PORTVERSION=		2.0.5
+PORTVERSION=		2.0.7
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -25,9 +25,10 @@ USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
+CONFIGURE_LOG=		bin/config.log
 USE_GNOME=		pkgconfig
 
-LICENSE=		GPLv3
+LICENSE=		LGPL3
 MAKE_JOBS_SAFE=		yes
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
