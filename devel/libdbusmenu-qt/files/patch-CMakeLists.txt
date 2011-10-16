@@ -1,0 +1,19 @@
+--- CMakeLists.txt~     2011-09-01 14:05:32.000000000 -0300
++++ CMakeLists.txt      2011-09-01 14:08:06.000000000 -0300
+@@ -64,6 +64,8 @@
+ add_subdirectory(tools)
+ 
+ if(WITH_DOC)
++    set(DOC_INSTALL_DIR "share/doc/dbusmenu-qt" CACHE PATH "Directory where to install the documentation")
++
+     configure_file(Doxyfile.in ${CMAKE_BINARY_DIR}/Doxyfile @ONLY)
+ 
+     add_custom_target(doc ALL doxygen
+@@ -71,6 +73,6 @@
+         )
+ 
+     install(DIRECTORY ${CMAKE_BINARY_DIR}/html/
+-        DESTINATION share/doc/dbusmenu-qt
++        DESTINATION ${DOC_INSTALL_DIR}
+         )
+ endif(WITH_DOC)

@@ -31,19 +31,23 @@ include/grantlee/util.h
 include/grantlee/variable.h
 include/grantlee_core.h
 include/grantlee_templates.h
-lib/grantlee/0.1/GrantleeUse.cmake
-lib/grantlee/0.1/grantlee_defaultfilters.so
-lib/grantlee/0.1/grantlee_defaulttags.so
-lib/grantlee/0.1/grantlee_i18ntags.so
-lib/grantlee/0.1/grantlee_loadertags.so
-lib/grantlee/GrantleeConfig.cmake
-lib/grantlee/GrantleeConfigVersion.cmake
+lib/cmake/grantlee/GrantleeConfig.cmake
+lib/cmake/grantlee/GrantleeConfigVersion.cmake
+lib/cmake/grantlee/GrantleeTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/grantlee/GrantleeTargets.cmake
+lib/cmake/grantlee/GrantleeUse.cmake
+lib/grantlee/0.2/grantlee_defaultfilters.so
+lib/grantlee/0.2/grantlee_defaulttags.so
+lib/grantlee/0.2/grantlee_i18ntags.so
+lib/grantlee/0.2/grantlee_loadertags.so
 lib/libgrantlee_core.so
 lib/libgrantlee_core.so.0
-lib/libgrantlee_core.so.0.1.8
+lib/libgrantlee_core.so.0.2.0
 lib/libgrantlee_gui.so
 lib/libgrantlee_gui.so.0
-lib/libgrantlee_gui.so.0.1.8
-@dirrm lib/grantlee/0.1
+lib/libgrantlee_gui.so.0.2.0
+@dirrm lib/grantlee/0.2
 @dirrm lib/grantlee
+@dirrm lib/cmake/grantlee
+@dirrmtry lib/cmake
 @dirrm include/grantlee

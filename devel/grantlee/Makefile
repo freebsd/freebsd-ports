@@ -5,7 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	grantlee
-PORTVERSION=	0.1.8
+DISTVERSION=	0.2.0-rc1
+CATEGORIES=	net-im
+MASTER_SITES=	GOOGLE_CODE
+
 CATEGORIES=	devel
 MASTER_SITES=	http://www.loegria.net/${PORTNAME}/ \
 		http://downloads.${PORTNAME}.org/
@@ -20,8 +23,8 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network webkit sql phonon \
 		qmake_build moc_build rcc_build uic_build
-CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
+CMAKE_OUTSOURCE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	DOCS "Install API documentation" off
