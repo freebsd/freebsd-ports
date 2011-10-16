@@ -20,11 +20,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-s
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
 		${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
 
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build
 USE_XORG=	x11 xext
+
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 OPTIONS=	DEBUG	"Enable debugging in generated code" off \
 		TRACING	"Enable tracing in generated code" off

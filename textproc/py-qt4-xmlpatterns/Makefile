@@ -17,6 +17,7 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtXmlPatterns module
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${PKGNAMEPREFIX}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml
 
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
