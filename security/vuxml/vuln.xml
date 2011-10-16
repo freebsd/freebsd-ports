@@ -34,6 +34,89 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9bad5ab1-f3f6-11e0-8b5c-b482fe3f522d">
+    <topic>OpenTTD -- Multiple buffer overflows in validation of external data</topic>
+    <affects>
+      <package>
+        <name>openttd</name>
+        <range><ge>0.1.0</ge><lt>1.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OpenTTD Team reports:</p>
+        <blockquote cite="http://security.openttd.org/en/CVE-2011-3343">
+          <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow
+          local users to cause a denial of service (daemon crash) or
+          possibly gain privileges via (1) a crafted BMP file with RLE 
+          compression or (2) crafted dimensions in a BMP file.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3343</cvename>
+      <url>http://security.openttd.org/en/CVE-2011-3343</url>
+    </references>
+    <dates>
+      <discovery>2011-08-25</discovery>
+      <entry>2011-09-02</entry>
+    </dates>
+  </vuln>
+  <vuln vid="78c25ed7-f3f9-11e0-8b5c-b482fe3f522d">
+    <topic>OpenTTD -- Buffer overflows in savegame loading</topic>
+    <affects>
+      <package>
+        <name>openttd</name>
+        <range><ge>0.1.0</ge><lt>1.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OpenTTD Team reports:</p>
+        <blockquote cite="http://security.openttd.org/en/CVE-2011-3342">
+          <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow remote
+          attackers to cause a denial of service (daemon crash) or possibly
+          execute arbitrary code via vectors related to (1) NAME, (2) PLYR,
+          (3) CHTS, or (4) AIPL (aka AI config) chunk loading from a savegame.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3342</cvename>
+      <url>http://security.openttd.org/en/CVE-2011-3342</url>
+    </references>
+    <dates>
+      <discovery>2011-08-08</discovery>
+      <entry>2011-08-25</entry>
+    </dates>
+  </vuln>
+  <vuln vid="e77befb5-f3f9-11e0-8b5c-b482fe3f522d">
+    <topic>OpenTTD -- Denial of service via improperly validated commands</topic>
+    <affects>
+      <package>
+        <name>openttd</name>
+        <range><ge>0.3.5</ge><lt>1.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The OpenTTD Team reports:</p>
+        <blockquote cite="http://security.openttd.org/en/CVE-2011-3341">
+          <p>Multiple off-by-one errors in order_cmd.cpp in OpenTTD before
+          1.1.3 allow remote attackers to cause a denial of service (daemon crash)
+          or possibly execute arbitrary code via a crafted CMD_INSERT_ORDER command.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3341</cvename>
+      <url>http://security.openttd.org/en/CVE-2011-3341</url>
+    </references>
+    <dates>
+      <discovery>2011-08-25</discovery>
+      <entry>2011-08-26</entry>
+    </dates>
+  </vuln>
   <vuln vid="ab9be2c8-ef91-11e0-ad5a-00215c6a37bb">
     <topic>quagga -- multiple vulnerabilities</topic>
     <affects>
