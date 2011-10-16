@@ -26,4 +26,9 @@ USE_GNOME=	pkgconfig
 
 MAN1=		${PORTNAME}.1
 
+post-install:
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
+
 .include <bsd.port.mk>
