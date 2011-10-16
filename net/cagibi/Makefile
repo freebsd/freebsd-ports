@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cagibi
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/cagibi
@@ -20,14 +20,4 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib network xml dbus \
 		qmake_build moc_build rcc_build uic_build
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
-		${WRKSRC}/daemon/CMakeLists.txt
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
