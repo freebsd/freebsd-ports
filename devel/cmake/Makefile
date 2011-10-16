@@ -16,14 +16,14 @@ COMMENT=	A cross-platform Makefile generator
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--datadir=${DATADIR:S|^${PREFIX}||} \
-		--docdir=${DOCSDIR:S|^${PREFIX}||}
+		--datadir="/${DATADIR_REL}" \
+		--docdir="/${DOCSDIR_REL}"
 CONFIGURE_ENV=	MAKE=make
 
 MAKE_JOBS_SAFE=	yes
 
-.if !defined(WITH_DEBUG)
-INSTALL_TARGET=install/strip
+.if defined(STRIP) && ${STRIP} != ""
+INSTALL_TARGET=	install/strip
 .endif
 
 MAN1=		ccmake.1 \
