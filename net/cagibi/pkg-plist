@@ -1,3 +1,6 @@
 bin/cagibid
-libdata/pkgconfig/cagibi.pc
-share/dbus-1/services/org.kde.Cagibi.service
+etc/cagibid.conf
+etc/dbus-1/system.d/org.kde.Cagibi.conf
+share/dbus-1/interfaces/org.kde.Cagibi.Control.xml
+share/dbus-1/interfaces/org.kde.Cagibi.DeviceList.xml
+share/dbus-1/system-services/org.kde.Cagibi.service

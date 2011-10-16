@@ -1,5 +1,5 @@
---- ./hupnp/src/hupnp_core/socket/hmulticast_socket.cpp.orig	2010-12-29 14:08:26.000000000 +1000
-+++ ./hupnp/src/hupnp_core/socket/hmulticast_socket.cpp	2010-12-29 14:10:00.000000000 +1000
+--- ./hupnp/src/socket/hmulticast_socket.cpp.orig	2011-03-28 00:42:32.000000000 +1100
++++ ./hupnp/src/socket/hmulticast_socket.cpp	2011-08-08 11:59:59.868629425 +1100
 @@ -27,6 +27,8 @@
  #include <ws2tcpip.h>
  #else
