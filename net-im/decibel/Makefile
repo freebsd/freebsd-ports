@@ -6,7 +6,7 @@
 
 PORTNAME=	decibel
 PORTVERSION=	0.5.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im
 MASTER_SITES=	http://decibel.kde.org/fileadmin/downloads/decibel/releases/
 
@@ -16,7 +16,7 @@ COMMENT=	Realtime communications framework
 LIB_DEPENDS=	QtTapioca.0:${PORTSDIR}/net-im/tapioca-qt
 
 USE_QT_VER=	4
-QT_COMPONENTS=	xml dbus qtestlib qmake_build moc_build uic_build rcc_build
+QT_COMPONENTS=	xml dbus gui qtestlib qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
