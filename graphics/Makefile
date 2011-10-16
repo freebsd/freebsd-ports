@@ -757,6 +757,7 @@
     SUBDIR += pqiv
     SUBDIR += preview
     SUBDIR += price
+    SUBDIR += prison
     SUBDIR += processing
     SUBDIR += proj
     SUBDIR += projectm-libvisual
