@@ -24993,7 +24993,7 @@ subtitleoffsetmodifier          ports/multimedia/subtitleoffsetmodifier
 subtitleripper                  ports/multimedia/subtitleripper
 subtools                        ports/multimedia/subtools
 subversion                      ports/devel/subversion
-subversion-freebsd              ports/devel/subversion-freebsd
+subversion16                    ports/devel/subversion16
 subversion-java                 ports/java/subversion-java
 subversive                      ports/devel/subversive
 subweb                          ports/security/subweb
