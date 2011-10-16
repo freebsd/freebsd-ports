@@ -193,6 +193,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-netinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-post.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/carp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
@@ -430,6 +439,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
