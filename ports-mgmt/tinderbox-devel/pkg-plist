@@ -1,5 +1,4 @@
 etc/rc.d/tinderbox
-tinderbox/scripts/Makefile
 tinderbox/scripts/README
 tinderbox/scripts/contrib/hooks/compress_wrkdir/README.txt
 tinderbox/scripts/contrib/hooks/compress_wrkdir/compress_wrkdir.sh
@@ -8,6 +7,8 @@ tinderbox/scripts/contrib/hooks/kse-fix/kse-fix.sh
 tinderbox/scripts/contrib/hooks/kse-fix/libmap.conf
 tinderbox/scripts/contrib/hooks/make-jobs-safe/README.txt
 tinderbox/scripts/contrib/hooks/make-jobs-safe/make-jobs-safe.sh
+tinderbox/scripts/contrib/hooks/mass-build-pgsql/mass-build-pgsql.sh
+tinderbox/scripts/contrib/hooks/mass-build-pgsql/README.txt
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me
 tinderbox/scripts/etc/rc.d/tinderd
@@ -49,14 +50,26 @@ tinderbox/scripts/sql/values.pfr
 tinderbox/scripts/tc
 tinderbox/scripts/tinderbox.ph.dist
 tinderbox/scripts/tinderd
-tinderbox/scripts/tools/genpat.pl
-tinderbox/scripts/upgrade/.keep_me
 tinderbox/scripts/upgrade/build_ports.map
 tinderbox/scripts/upgrade/build_ports_queue.map
 tinderbox/scripts/upgrade/builds.map
 tinderbox/scripts/upgrade/config.map
 tinderbox/scripts/upgrade/hooks.map
 tinderbox/scripts/upgrade/jails.map
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.4_to_3.2.5.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.0_to_3.1.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.0_to_3.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.1_to_3.2.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.1_to_3.2.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2_to_3.2.1.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2_to_3.2.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.1_to_3.2.2.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.1_to_3.2.2.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.2_to_3.2.3.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.2_to_3.2.3.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.3_to_3.2.4.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.3_to_3.2.4.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.4_to_3.2.5.sql
 tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/.cvsignore
@@ -141,13 +154,13 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%@dirrm tinderbox/scripts/webui/core
 %%WEBUI%%@dirrmtry tinderbox/scripts/webui
 @dirrm tinderbox/scripts/upgrade
-@dirrm tinderbox/scripts/tools
 @dirrm tinderbox/scripts/sql
 @dirrm tinderbox/scripts/lib/Tinderbox
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc/env
 @dirrm tinderbox/scripts/etc
+@dirrm tinderbox/scripts/contrib/hooks/mass-build-pgsql
 @dirrm tinderbox/scripts/contrib/hooks/make-jobs-safe
 @dirrm tinderbox/scripts/contrib/hooks/kse-fix
 @dirrm tinderbox/scripts/contrib/hooks/compress_wrkdir
