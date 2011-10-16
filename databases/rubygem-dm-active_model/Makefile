@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A dm plugin for active_model compliance and thus rails 3 compatibility
 
 RUN_DEPENDS=	rubygem-activemodel>=3.0.4:${PORTSDIR}/databases/rubygem-activemodel \

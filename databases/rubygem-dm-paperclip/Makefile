@@ -10,7 +10,7 @@ PORTVERSION=	2.4.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	File attachments as attributes for DataMapper
 
 RUN_DEPENDS=	rubygem-datamapper>=0:${PORTSDIR}/databases/rubygem-datamapper \

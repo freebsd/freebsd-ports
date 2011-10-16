@@ -10,7 +10,7 @@ DISTVERSION=	1.0.0.rc
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper backend for delayed_job
 
 RUN_DEPENDS=	rubygem-delayed_job>=2.1:${PORTSDIR}/devel/rubygem-delayed_job \
