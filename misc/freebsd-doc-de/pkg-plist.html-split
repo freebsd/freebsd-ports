@@ -225,6 +225,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/carp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
@@ -522,6 +523,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-options.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-wrkdir.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/moved-and-updating-files.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/own-port.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/pkg-deinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/pkg-files.html
@@ -586,4 +588,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5612.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5593.html

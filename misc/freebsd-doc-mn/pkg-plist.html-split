@@ -201,6 +201,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-plip.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-pxe-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
