@@ -5,43 +5,41 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.17
-PORTREVISION?=	2
+PORTVERSION=	1.7.0
+PORTREVISION?=	0
 CATEGORIES+=	devel
-MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/1.5/:book
+MASTER_SITES=	${MASTER_SITE_APACHE}:main \
+		http://svnbook.red-bean.com/en/1.6/:book
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
-DIST_SUBDIR=	subversion
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-
-# Patches required for use with the FreeBSD Project repository only
-.if defined(WITH_FREEBSD_SUBVERSION)
-PATCH_SITES=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	lev
-PATCHFILES+=		svn_hacks_1.4.diff
-.endif
+DIST_SUBDIR=	subversion17
+MASTER_SITE_SUBDIR=subversion/:main
 
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
 
-CONFIGURE_ARGS=	--with-ssl
+LICENSE=	ASL
+
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.6.[0-9]*
+
+LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+			expat:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=	--with-ssl \
+			--without-swig \
+			--with-sqlite=${LOCALBASE} \
+			--with-expat=/usr/local/include:/usr/local/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-# Bindings ports should use the same, as main port
-OPTIONSFILE= ${PORT_DBDIR}/${PORTNAME}/options
-# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
-OPTIONS=
+CONFLICTS_BUILD+=	${PORTNAME}-1.6.[0-9]*
+LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion
+OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
 .endif
 
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+=	--without-swig
-
-LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
-
+.include <bsd.port.options.mk>
+			
 # Default is "on"
 .if !defined(WITHOUT_NEON)
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
@@ -53,36 +51,36 @@ PLIST_SUB+=	NEON="@comment "
 
 .if defined(WITH_SASL)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
-PLIST_SUB+=		SASL=""
+CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
+PLIST_SUB+=	SASL=""
 .else
-CONFIGURE_ARGS+=	--without-sasl
-PLIST_SUB+=		SASL="@comment "
+CONFIGURE_ARGS+=--without-sasl
+PLIST_SUB+=	SASL="@comment "
 .endif
 
 # Default is "on"
 .if !defined(WITHOUT_BDB)
-USE_BDB=		42+
-PLIST_SUB+=		BDB=""
+USE_BDB=	42+
+PLIST_SUB+=	BDB=""
 .else
-CONFIGURE_ARGS+=	--without-berkeley-db
-PLIST_SUB+=		BDB="@comment "
+CONFIGURE_ARGS+=--without-berkeley-db
+PLIST_SUB+=	BDB="@comment "
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE=	yes
-CONFIGURE_ARGS+=	--with-apxs=${APXS}
+CONFIGURE_ARGS+=--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
 SVNGROUP?=	www
 SVNUSER?=	www
-.if defined(WITH_MOD_DONTDOTHAT)
-PLIST_SUB+=	MOD_DONTDOTHAT=""
-.else
+#.if defined(WITH_MOD_DONTDOTHAT)
+#PLIST_SUB+=	MOD_DONTDOTHAT=""
+#.else
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-.endif
+#.endif
 .else
-CONFIGURE_ARGS+=	--with-apxs=no
+CONFIGURE_ARGS+=--with-apxs=no
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
@@ -119,27 +117,22 @@ PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
 
 .if defined(WITH_SERF)
 LIB_DEPENDS+=	serf-0.0:${PORTSDIR}/www/serf
-CONFIGURE_ARGS+=	--with-serf=${LOCALBASE}
-PLIST_SUB+=		SERF=""
+CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
+PLIST_SUB+=	SERF=""
 .else
-PLIST_SUB+=		SERF="@comment "
+PLIST_SUB+=	SERF="@comment "
 .endif
 
 .if defined(SVN_BUILD_BINDINGS)
-.if defined(WITH_FREEBSD_SUBVERSION)
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion-freebsd
-.else
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
-.endif
-EXTRA_PATCHES+=	${PATCHDIR}/bindings-patch-subversion--bindings--swig--perl--native--Makefile.PL.in
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-PLIST_SUB+=		WITHOUT_GETTEXT=""
+USE_GETTEXT=	yes
+PLIST_SUB+=	WITHOUT_GETTEXT=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	WITHOUT_GETTEXT="@comment "
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -147,8 +140,7 @@ CFLAGS+=	-fpic -DPIC
 .endif
 
 .if defined(WITH_MAINTAINER_DEBUG)
-CONFIGURE_ARGS+=--enable-maintainer-mode \
-		--enable-debug
+CONFIGURE_ARGS+=--enable-maintainer-mode --enable-debug
 CFLAGS+=	-g
 .endif
 
@@ -177,10 +169,7 @@ CONFIGURE_ARGS+=--without-kwallet
 PLIST_SUB+=	KDE_KWALLET="@comment "
 .endif
 
-post-extract:
-	@${RM} -rf ${WRKSRC}/neon
-	@${RM} -rf ${WRKSRC}/apr
-	@${RM} -rf ${WRKSRC}/apr-util
+.include <bsd.port.pre.mk>
 
 post-patch:
 .if ${PREFIX} != "/usr"

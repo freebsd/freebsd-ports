@@ -7,17 +7,21 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS?=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+CONFLICTS_INSTALL=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
 
 USE_RC_SUBR=	svnserve
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 svnversion.1
+MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 \
+		svnversion.1
 MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
-OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
+OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
+		ENHANCED_KEYWORD	"Enhanced svn:keyword support" on \
+		FREEBSD_TEMPLATE	"FreeBSD Project log template" on \
+		MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		MOD_DONTDOTHAT	"mod_dontdothat for Apache 2.X" off \
 		NEON		"WebDAV/Delta-V repo access module (neon)" on \
 		SERF		"WebDAV/Delta-V repo access module (serf)" off \
@@ -32,7 +36,7 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		KDE_KWALLET	"Build with KDE KWallet auth support" off \
 		BOOK		"Install the Subversion Book" off
 
-.include "${.CURDIR}/../../devel/subversion/Makefile.common"
+.include "Makefile.common"
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
@@ -48,10 +52,21 @@ WITH_REPOSITORY_CREATION=	yes
 MKREPOS_TARGET=	_mkrepos
 .endif
 
+# Patches required for use with the FreeBSD Project repository only
+.if !defined(WITHOUT_P4_STYLE_MARKERS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
+.endif
+.if !defined(WITHOUT_ENHANCED_KEYWORD)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
+.endif
+.if !defined(WITHOUT_FREEBSD_TEMPLATE)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
+.endif
+
 .if defined(WITH_SVNSERVE_WRAPPER)
 PLIST_SUB+=	SVNSERVE_WRAPPER=""
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
-EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
 .else
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 SUB_LIST+=	SVNSERVE_BIN_EXT=""

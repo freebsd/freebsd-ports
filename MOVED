@@ -2813,3 +2813,4 @@ www/ziproxy||2011-10-14|Vulnerable since 2010-06-15
 www/asterisk-gui||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 databases/dbmetrix||2011-10-14|Depends on databases/mysql323-client, which is FORBIDDEN
 databases/xmysqladmin||2011-10-14|Depends on databases/mysql323-client, which is FORBIDDEN
+devel/subversion-freebsd||2011-10-16|Merged with devel/subversion

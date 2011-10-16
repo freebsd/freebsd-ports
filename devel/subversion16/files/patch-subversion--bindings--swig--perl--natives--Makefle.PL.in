@@ -1,5 +1,5 @@
---- subversion/bindings/swig/perl/native/Makefile.PL.in.orig	Sat Oct 15 00:45:33 2005
-+++ subversion/bindings/swig/perl/native/Makefile.PL.in	Wed Nov  2 21:58:44 2005
+--- subversion/bindings/swig/perl/native/Makefile.PL.in.orig	2010-11-24 23:42:16.000000000 +0300
++++ subversion/bindings/swig/perl/native/Makefile.PL.in	2011-09-19 12:52:25.000000000 +0400
 @@ -1,4 +1,5 @@
 -#!/usr/bin/perl
 +#!/usr/bin/perl -w
@@ -19,9 +19,12 @@
  my @modules = qw/client delta fs ra repos wc/;
  my @ldpaths = ("$swig_builddir/perl/libsvn_swig_perl/.libs",
                 map {"$svnlib_builddir/libsvn_$_/.libs"} (@modules, qw/diff subr
-@@ -45,8 +51,7 @@
+@@ -50,10 +56,9 @@
+                  " -I$svnlib_builddir",
+                  " -I$swig_srcdir -g"),
      OBJECT => q/$(O_FILES)/,
-     LIBS => [join(' ', $apr_ldflags,
+-    LIBS => [join(' ', $apr_ldflags,
++    LIBS => [join(' ', $ENV{'LDFLAGS'}, $apr_ldflags,
                    (map {$_ = abs_path($_); "-L$_"} @ldpaths),
 -                  @ldmodules, '-lsvn_swig_perl-1',
 -                  `$swig -perl -ldflags`)],
@@ -29,7 +32,7 @@
      test => { TESTS => "$swig_srcdir/perl/native/t/*.t" }
  );
  
-@@ -61,6 +66,7 @@
+@@ -68,6 +73,7 @@
                        "\$(INST_LIBDIR)/$_.pm") }
           map { perlish $_ }
           ('base', 'core', @modules)},

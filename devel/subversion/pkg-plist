@@ -3,6 +3,7 @@ bin/svn
 bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
+bin/svnrdump
 bin/svnserve
 bin/svnsync
 %%ASVN%%bin/asvn
@@ -14,6 +15,7 @@ include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
+include/subversion-1/svn_cache_config.h
 include/subversion-1/svn_checksum.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
@@ -124,8 +126,6 @@ lib/libsvn_wc-1.la
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COMMITTERS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch01dia1.png
@@ -142,6 +142,7 @@ lib/libsvn_wc-1.la
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia4.png
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia1.png
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia2.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/draft.png
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/note.png
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/tip.png
 %%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/warning.png
@@ -160,31 +161,55 @@ lib/libsvn_wc-1.la
 %%WITHOUT_GETTEXT%%share/locale/sv/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
-%%DATADIR%%/README
 %%DATADIR%%/backup/hot-backup.py
 %%DATADIR%%/bdb/erase-all-text-data.py
 %%DATADIR%%/bdb/skel.py
 %%DATADIR%%/bdb/svn-bdb-view.py
 %%DATADIR%%/bdb/svnfs.py
 %%DATADIR%%/bdb/whatis-rep.py
-%%DATADIR%%/buildbot/slaves/README
+%%DATADIR%%/buildbot/master/Feeder.py
+%%DATADIR%%/buildbot/master/master.cfg
+%%DATADIR%%/buildbot/master/private-sample.py
+%%DATADIR%%/buildbot/master/public_html/buildbot.css
+%%DATADIR%%/buildbot/master/public_html/index.html
+%%DATADIR%%/buildbot/master/public_html/robots.txt
+%%DATADIR%%/buildbot/master/SVNMailNotifier.py
+%%DATADIR%%/buildbot/slaves/bb-openbsd/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/bb-openbsd/svncheck-bindings.sh
+%%DATADIR%%/buildbot/slaves/bb-openbsd/svncheck.sh
+%%DATADIR%%/buildbot/slaves/bb-openbsd/svnclean.sh
+%%DATADIR%%/buildbot/slaves/centos/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/centos/svncheck-bindings.sh
+%%DATADIR%%/buildbot/slaves/centos/svncheck.sh
+%%DATADIR%%/buildbot/slaves/centos/svnclean.sh
+%%DATADIR%%/buildbot/slaves/centos/svnlog.sh
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/mount-ramdrive.c
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnbuild.sh
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svncheck.sh
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnclean.sh
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnlog.sh
 %%DATADIR%%/buildbot/slaves/i686-debian-sarge1/unmount-ramdrive.c
-%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnbuild.sh
-%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svncheck.sh
-%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnclean.sh
-%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnlog.sh
-%%DATADIR%%/buildbot/slaves/ubuntu-x64/mount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/README
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svncheck.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnclean.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnlog.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svncheck.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnclean.sh
+%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnlog.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svnbuild.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck-bindings.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svnclean.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svnlog.sh
-%%DATADIR%%/buildbot/slaves/ubuntu-x64/unmount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svn-config.cmd.template
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-bindings.cmd
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-build-bindings.cmd
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-build.cmd
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-cleanup.cmd
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-template.cmd
+%%DATADIR%%/buildbot/slaves/win32-SharpSvn/svntest-test.cmd
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/config.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/do_all.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnbuild.bat
@@ -202,15 +227,32 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/client-side/server-version.py
 %%DATADIR%%/client-side/showchange.pl
 %%DATADIR%%/client-side/svn-graph.pl
+%%DATADIR%%/client-side/svn-ssl-fingerprints.sh
+%%DATADIR%%/client-side/svn-viewspec.py
+%%DATADIR%%/client-side/svnmucc/.libs/svnmucc
+%%DATADIR%%/client-side/svnmucc/.libs/svnmucc.o
+%%DATADIR%%/client-side/svnmucc/svnmucc
 %%DATADIR%%/client-side/svnmucc/svnmucc-test.py
 %%DATADIR%%/client-side/svnmucc/svnmucc.c
+%%DATADIR%%/client-side/svnmucc/svnmucc.lo
+%%DATADIR%%/client-side/svnmucc/svnmucc.o
 %%DATADIR%%/client-side/wcfind
+%%DATADIR%%/dev/analyze-svnlogs.py
+%%DATADIR%%/dev/benchmarks/large_dirs/create_bigdir.sh
+%%DATADIR%%/dev/benchmarks/suite1/benchmark.py
+%%DATADIR%%/dev/benchmarks/suite1/cronjob
+%%DATADIR%%/dev/benchmarks/suite1/crontab.entry
+%%DATADIR%%/dev/benchmarks/suite1/run
+%%DATADIR%%/dev/benchmarks/suite1/run.bat
 %%DATADIR%%/dev/check-license.py
 %%DATADIR%%/dev/contribulyze.py
 %%DATADIR%%/dev/datecheck.py
 %%DATADIR%%/dev/find-bad-style.py
+%%DATADIR%%/dev/find-unmoved-deprecated.sh
 %%DATADIR%%/dev/gcov.patch
 %%DATADIR%%/dev/gen-javahl-errors.py
+%%DATADIR%%/dev/gen-py-errors.py
+%%DATADIR%%/dev/gen_junit_report.py
 %%DATADIR%%/dev/gnuify-changelog.pl
 %%DATADIR%%/dev/graph-dav-servers.py
 %%DATADIR%%/dev/iz/defect.dem
@@ -219,7 +261,9 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/iz/find-fix.py
 %%DATADIR%%/dev/iz/run-queries.sh
 %%DATADIR%%/dev/lock-check.py
+%%DATADIR%%/dev/log_revnum_change_asf.py
 %%DATADIR%%/dev/min-includes.sh
+%%DATADIR%%/dev/mklog.py
 %%DATADIR%%/dev/mlpatch.py
 %%DATADIR%%/dev/normalize-dump.py
 %%DATADIR%%/dev/po-merge.py
@@ -231,26 +275,63 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/svn-dev.vim
 %%DATADIR%%/dev/svn-entries.el
 %%DATADIR%%/dev/svn-merge-revs.py
+%%DATADIR%%/dev/svnqlite3-dump
+%%DATADIR%%/dev/svnraisetreeconflict/.libs/main.o
+%%DATADIR%%/dev/svnraisetreeconflict/.libs/svnraisetreeconflict
+%%DATADIR%%/dev/svnraisetreeconflict/main.c
+%%DATADIR%%/dev/svnraisetreeconflict/main.lo
+%%DATADIR%%/dev/svnraisetreeconflict/main.o
+%%DATADIR%%/dev/svnraisetreeconflict/svnraisetreeconflict
 %%DATADIR%%/dev/trails.py
+%%DATADIR%%/dev/unix-build/Makefile.svn
+%%DATADIR%%/dev/unix-build/README
 %%DATADIR%%/dev/verify-history.py
 %%DATADIR%%/dev/warn-ignored-err.sh
+%%DATADIR%%/dev/wc-format.py
+%%DATADIR%%/dev/wc-ng/bump-to-19.py
+%%DATADIR%%/dev/wc-ng/count-progress.py
+%%DATADIR%%/dev/wc-ng/gather-data.sh
+%%DATADIR%%/dev/wc-ng/graph-data.py
+%%DATADIR%%/dev/wc-ng/populate-pristine.py
 %%DATADIR%%/dev/which-error.py
+%%DATADIR%%/dev/windows-build/document-version.pl
+%%DATADIR%%/dev/windows-build/Makefile
+%%DATADIR%%/dev/windows-build/README
+%%DATADIR%%/diff/.libs/diff
+%%DATADIR%%/diff/.libs/diff.o
+%%DATADIR%%/diff/.libs/diff3
+%%DATADIR%%/diff/.libs/diff3.o
+%%DATADIR%%/diff/.libs/diff4
+%%DATADIR%%/diff/.libs/diff4.o
+%%DATADIR%%/diff/diff
 %%DATADIR%%/diff/diff.c
+%%DATADIR%%/diff/diff.lo
+%%DATADIR%%/diff/diff.o
+%%DATADIR%%/diff/diff3
 %%DATADIR%%/diff/diff3.c
+%%DATADIR%%/diff/diff3.lo
+%%DATADIR%%/diff/diff3.o
+%%DATADIR%%/diff/diff4
 %%DATADIR%%/diff/diff4.c
-%%DATADIR%%/dist/construct-rolling-environment.sh
+%%DATADIR%%/diff/diff4.lo
+%%DATADIR%%/diff/diff4.o
+%%DATADIR%%/dist/backport.pl
+%%DATADIR%%/dist/checksums.py
+%%DATADIR%%/dist/collect_sigs.py
 %%DATADIR%%/dist/dist.sh
 %%DATADIR%%/dist/download-release.sh
 %%DATADIR%%/dist/extract-for-examination.sh
-%%DATADIR%%/dist/gen_nightly_ann.py
 %%DATADIR%%/dist/getsigs.py
 %%DATADIR%%/dist/nightly.sh
-%%DATADIR%%/dist/post-to-tigris.py
-%%DATADIR%%/dist/roll.sh
-%%DATADIR%%/dist/sample-rc-warning-index.html
+%%DATADIR%%/dist/rat-excludes
+%%DATADIR%%/dist/release.py
+%%DATADIR%%/dist/templates/nightly-candidates.ezt
+%%DATADIR%%/dist/templates/rc-candidates.ezt
+%%DATADIR%%/dist/templates/rc-news.ezt
+%%DATADIR%%/dist/templates/rc-release-ann.ezt
+%%DATADIR%%/dist/templates/stable-candidates.ezt
+%%DATADIR%%/dist/templates/stable-release-ann.ezt
 %%DATADIR%%/dist/test.sh
-%%DATADIR%%/dist/write-announcement.py
-%%DATADIR%%/examples/SvnCLBrowse
 %%DATADIR%%/examples/blame.py
 %%DATADIR%%/examples/check-modified.py
 %%DATADIR%%/examples/dumpprops.py
@@ -262,6 +343,7 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/examples/minimal_client.c
 %%DATADIR%%/examples/putfile.py
 %%DATADIR%%/examples/revplist.py
+%%DATADIR%%/examples/SvnCLBrowse
 %%DATADIR%%/examples/svnlog2html.rb
 %%DATADIR%%/examples/svnlook.py
 %%DATADIR%%/examples/svnlook.rb
@@ -270,7 +352,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/examples/svnshell.py
 %%DATADIR%%/examples/svnshell.rb
 %%DATADIR%%/examples/testwrite.c
-%%DATADIR%%/hook-scripts/README
 %%DATADIR%%/hook-scripts/commit-access-control.cfg.example
 %%DATADIR%%/hook-scripts/commit-access-control.pl
 %%DATADIR%%/hook-scripts/commit-email.rb
@@ -285,14 +366,31 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/hook-scripts/svn2feed.py
 %%DATADIR%%/hook-scripts/svnperms.conf.example
 %%DATADIR%%/hook-scripts/svnperms.py
+%%DATADIR%%/hook-scripts/validate-extensions.py
 %%DATADIR%%/hook-scripts/verify-po.py
 %%DATADIR%%/po/l10n-report.py
 %%DATADIR%%/po/po-update.sh
+%%DATADIR%%/server-side/.libs/svn-populate-node-origins-index
+%%DATADIR%%/server-side/.libs/svn-populate-node-origins-index.o
+%%DATADIR%%/server-side/.libs/svn-rep-sharing-stats
+%%DATADIR%%/server-side/.libs/svn-rep-sharing-stats.o
+%%DATADIR%%/server-side/.libs/svnauthz-validate
+%%DATADIR%%/server-side/.libs/svnauthz-validate.o
 %%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
+%%DATADIR%%/server-side/svn-populate-node-origins-index
 %%DATADIR%%/server-side/svn-populate-node-origins-index.c
+%%DATADIR%%/server-side/svn-populate-node-origins-index.lo
+%%DATADIR%%/server-side/svn-populate-node-origins-index.o
+%%DATADIR%%/server-side/svn-rep-sharing-stats
+%%DATADIR%%/server-side/svn-rep-sharing-stats.c
+%%DATADIR%%/server-side/svn-rep-sharing-stats.lo
+%%DATADIR%%/server-side/svn-rep-sharing-stats.o
 %%DATADIR%%/server-side/svn_server_log_parse.py
+%%DATADIR%%/server-side/svnauthz-validate
 %%DATADIR%%/server-side/svnauthz-validate.c
+%%DATADIR%%/server-side/svnauthz-validate.lo
+%%DATADIR%%/server-side/svnauthz-validate.o
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
@@ -307,24 +405,42 @@ lib/libsvn_wc-1.la
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%/bdb
+@dirrm %%DATADIR%%/buildbot/master/public_html
+@dirrm %%DATADIR%%/buildbot/master
+@dirrm %%DATADIR%%/buildbot/slaves/bb-openbsd
+@dirrm %%DATADIR%%/buildbot/slaves/centos
 @dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
-@dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
+@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared
+@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf
 @dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
+@dirrm %%DATADIR%%/buildbot/slaves/win32-SharpSvn
 @dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
 @dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
 @dirrm %%DATADIR%%/buildbot/slaves
 @dirrm %%DATADIR%%/buildbot
+@dirrm %%DATADIR%%/client-side/svnmucc/.libs
 @dirrm %%DATADIR%%/client-side/svnmucc
 @dirrm %%DATADIR%%/client-side
+@dirrm %%DATADIR%%/dev/benchmarks/large_dirs
+@dirrm %%DATADIR%%/dev/benchmarks/suite1
+@dirrm %%DATADIR%%/dev/benchmarks
 @dirrm %%DATADIR%%/dev/iz
+@dirrm %%DATADIR%%/dev/svnraisetreeconflict/.libs
+@dirrm %%DATADIR%%/dev/svnraisetreeconflict
+@dirrm %%DATADIR%%/dev/unix-build
+@dirrm %%DATADIR%%/dev/wc-ng
+@dirrm %%DATADIR%%/dev/windows-build
 @dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/diff/.libs
 @dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/dist/templates
 @dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/hook-scripts/mailer/tests
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/server-side/.libs
 @dirrm %%DATADIR%%/server-side
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%

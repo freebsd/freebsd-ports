@@ -7,32 +7,36 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS?=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+CONFLICTS_INSTALL=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
 
 USE_RC_SUBR=	svnserve
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 svnversion.1
+MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnrdump.1 \
+		svnsync.1 svnversion.1
 MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
 
-TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
+TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
-OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
-		MOD_DONTDOTHAT	"mod_dontdothat for Apache 2.X" off \
-		NEON		"WebDAV/Delta-V repo access module (neon)" on \
-		SERF		"WebDAV/Delta-V repo access module (serf)" off \
-		SASL		"SASL2 authorization support" off \
-		BDB		"Berkeley DB (4 or 5) repository backend" on \
-		ASVN		"Build and install Archive SVN (asvn)" off \
+OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
+		ENHANCED_KEYWORD	"Enhanced svn:keyword support" on \
+		FREEBSD_TEMPLATE	"FreeBSD Project log template" on \
+		MOD_DAV_SVN		"mod_dav_svn module for Apache 2.X" off \
+		NEON			"WebDAV/Delta-V repo access module (neon)" on \
+		SERF			"WebDAV/Delta-V repo access module (serf)" off \
+		SASL			"SASL2 authorization support" off \
+		BDB			"Berkeley DB (4 or 5) repository backend" on \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
 		SVNAUTHZ_VALIDATE	"install svnauthz-validate" off \
-		STATIC		"Build static version (no shared libs)" off \
-		GNOME_KEYRING	"Build with GNOME Keyring auth support" off \
-		KDE_KWALLET	"Build with KDE KWallet auth support" off \
-		BOOK		"Install the Subversion Book" off
+		STATIC			"Build static version (no shared libs)" off \
+		GNOME_KEYRING		"Build with GNOME Keyring auth support" off \
+		KDE_KWALLET		"Build with KDE KWallet auth support" off \
+		BOOK			"Install the Subversion Book" off
+#		ASVN			"Build and install Archive SVN (asvn)" off \
+#		MOD_DONTDOTHAT		"mod_dontdothat for Apache 2.X" off \
 
-.include "${.CURDIR}/../../devel/subversion/Makefile.common"
+.include "Makefile.common"
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
@@ -48,10 +52,21 @@ WITH_REPOSITORY_CREATION=	yes
 MKREPOS_TARGET=	_mkrepos
 .endif
 
+# Patches required for use with the FreeBSD Project repository only
+.if !defined(WITHOUT_P4_STYLE_MARKERS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
+.endif
+.if !defined(WITHOUT_ENHANCED_KEYWORD)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
+.endif
+.if !defined(WITHOUT_FREEBSD_TEMPLATE)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
+.endif
+
 .if defined(WITH_SVNSERVE_WRAPPER)
 PLIST_SUB+=	SVNSERVE_WRAPPER=""
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
-EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
 .else
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
@@ -66,12 +81,12 @@ PLIST_SUB+=	BOOK=""
 PLIST_SUB+=	BOOK="@comment "
 .endif
 
-.if defined(WITH_ASVN)
-RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
-PLIST_SUB+=	ASVN=""
-.else
+#.if defined(WITH_ASVN)
+#RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
+#PLIST_SUB+=	ASVN=""
+#.else
 PLIST_SUB+=	ASVN="@comment "
-.endif
+#.endif
 
 SCRIPTS=
 
@@ -107,12 +122,12 @@ pre-everything::
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
 .endif
 	@${ECHO_MSG} ""
-.if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
-	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
+#.if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
+#	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
+#.else
+#	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
+#.endif
+#	@${ECHO_MSG} ""
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${ECHO_MSG} "svnserve wrapper enabled."
 	@${ECHO_MSG} ""
@@ -149,10 +164,10 @@ pre-everything::
 	@${ECHO_MSG} "Subversion Book will be installed."
 	@${ECHO_MSG} ""
 .endif
-.if defined(WITH_ASVN)
-	@${ECHO_MSG} "asvn will be installed"
-	@${ECHO_MSG} ""
-.endif
+#.if defined(WITH_ASVN)
+#	@${ECHO_MSG} "asvn will be installed"
+#	@${ECHO_MSG} ""
+#.endif
 .if defined(WITH_STATIC)
 	@${ECHO_MSG} "Static binaries will be built."
 .endif
@@ -174,10 +189,10 @@ pre-configure:
 .endif
 
 post-build:
-.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
-		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
-.endif
+#.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
+#	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+#		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
+#.endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
 	# place binary in ${WRKDIR}, else we install it twice
 	cd ${WRKSRC}/tools/server-side && \
@@ -195,11 +210,11 @@ pre-install:
 post-install:	${MKREPOS_TARGET}
 .if defined(WITH_MOD_DAV_SVN)
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-.if defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
-		${APXS} -i -n dontdothat mod_dontdothat.la
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-.endif
+#.if defined(WITH_MOD_DONTDOTHAT)
+#	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+#		${APXS} -i -n dontdothat mod_dontdothat.la
+#	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
+#.endif
 .endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
 	${INSTALL_PROGRAM} ${WRKSRC}/svnauthz-validate ${PREFIX}/bin

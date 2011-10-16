@@ -7,7 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	3.5.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -19,11 +19,13 @@ COMMENT=	IDE for a wide variety of programming tasks
 
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		dot:${PORTSDIR}/graphics/graphviz
-LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion16
 RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
 		extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		gmake:${PORTSDIR}/devel/gmake
+
+CONFLICTS_BUILD=subversion-1.7.[0-9]*
 
 .if defined(WITH_OPTIONAL_DEPENDS)
 

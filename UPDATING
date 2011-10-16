@@ -5,6 +5,99 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111016:
+  AFFECTS: users of devel/subversion, devel/subversion-freebsd,
+           devel/p5-subversion, devel/py-subversion,
+           devel/ruby-subversion and java/subversion-java and
+           all dependand ports.
+  AUTHOR: Lev Serebryakov <lev@FreeBSD.org>
+
+  Subversion was updated to version 1.7.0 and port was reworked.
+  
+  Now here is not "devel/subversion-freebsd" port. All FreeBSD-
+  specific patches are incorporated into main subversion port
+  as options, which are turned ON by default.
+  
+  These options are:
+  
+  P4_STYLE_MARKERS -- change conflict markers to P4 style, 
+                      established for FreeBSD projects.
+                      This is not mandattory for working with
+                      FreeBSD sources.
+
+  ENHANCED_KEYWORD -- Support for custom keywords, like
+                      $ FreeBSD $ in sources.
+                      This is MANDATORY for working with
+                      FreeBSD sources.
+
+  FREEBSD_TEMPLATE -- Standard FreeBSD commit template.
+                      It is RECOMMENDED for working with
+                      FreeBSD sources.
+                      
+  Also, subversion 1.7.0 changes working copy format,
+  and one working copy could not be shared between 
+  subversion 1.7.0 and 1.6.x. Please, think twice before
+  upgrade.
+  
+  Additional port "devel/subversion16" was created to
+  support subversion 1.6.x. Subversion 1.7.x and 1.6.x
+  could not be installed simultaneously!
+  
+  Binding ports could be build with Subversion 1.7.0 (Default)
+  or with Subversion 1.6.x. To buiuld bindings with subversion 1.6.x
+  you should set variable USE_SUBVERSION to "16".
+  
+  There are several ways to upgrade, depends on what did you use
+  before and what you want to get after upgrade.
+  
+  (a) You use devel/subversion without FreeBSD patches and, maybe,
+      some bindings. You want fresh'n'new subversion 1.7.0.
+      Please, run:
+
+  # cd /usr/ports/devel/subversion && make config
+  <deselect first three options, described above, if you want it>
+  # portupgrade -r devel/subversion
+  or
+  # portmaster -R -r subversion-1.6
+  
+  (b) You use devel/subversion-freebsd and, maybe, some
+      bindings. You want fresh'n'new subversion 1.7.0, again
+      with FreeBSD patches.
+      Please, run:
+
+  # cd /usr/ports/devel/subversion && make config
+  <make sure, that first three options are selected>
+  # portupgrade -o devel/subversion devel/subversion-freebsd
+  # portupgrade -r devel/subversion
+  or
+  # portmaster -o devel/subversion devel/subversion-freebsd
+  # portmaster -R -r subversion-1.7
+  
+  (c) You use devel/subversion without FreeBSD patches and, maybe,
+      some bindings. You want good old subversion 1.6.x, without
+      patches again.
+      Please, run:
+
+  # cd /usr/ports/devel/subversion16 && make config
+  <deselect first three options, described above, if you want it>
+  # portupgrade -o devel/subversion16 devel/subversion
+  # portupgrade -m "USE_SUBVERSION=16" -r devel/subversion16
+  or
+  # portmaster -o devel/subversion16 devel/subversion
+  # portmaster -m "USE_SUBVERSION=16" -R -r subversion-1.6
+
+  (d) You use devel/subversion-freebsd and, maybe, some bindings.
+      You want good old subversion 1.6.x, with FreeBSD patches.
+      Please, run:
+
+  # cd /usr/ports/devel/subversion16 && make config
+  <make sure, that first three options are selected>
+  # portupgrade -o devel/subversion16 devel/subversion-freebsd
+  # portupgrade -m "USE_SUBVERSION=16" -r devel/subversion16
+  or
+  # portmaster -o devel/subversion16 devel/subversion-freebsd
+  # portmaster -m "USE_SUBVERSION=16" -R -r subversion-1.6
+
 20111005:
   AFFECTS: users of lang/erlang
   AUTHOR: Jimmy Olgeni <olgeni@FreeBSD.org>

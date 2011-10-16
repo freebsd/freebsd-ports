@@ -1,35 +1,6 @@
---- configure.orig	2011-02-22 23:46:15.000000000 +0100
-+++ configure	2011-04-11 01:48:37.781008487 +0200
-@@ -21458,8 +21458,8 @@
-       fi
- 
-       if test "$withval" = "yes"; then
--        if test "$apu_db_version" != "4"; then
--          as_fn_error "APR-UTIL wasn't linked against Berkeley DB 4,
-+        if test "$apu_db_version" != "4" -a "$apu_db_version" != "5"; then
-+          as_fn_error "APR-UTIL wasn't linked against Berkeley DB 4 or 5,
-                         while the fs component is required.  Reinstall
-                         APR-UTIL with the appropiate options." "$LINENO" 5
-         fi
-@@ -21467,7 +21467,7 @@
-         status=required
- 
-       elif test "$apu_found" != "reconfig"; then
--        if test "$apu_db_version" != 4; then
-+        if test "$apu_db_version" != 4 -a "$apu_db_version" != "5"; then
-           as_fn_error "APR-UTIL was installed independently, it won't be
-                         possible to use the specified Berkeley DB: $withval" "$LINENO" 5
-         fi
-@@ -21513,7 +21513,7 @@
-                    whether apr-util is linked against Berkeley DB
-                    $db_version" >&2;}
-       status=try-link
--    elif test "$apu_db_version" != "4"; then
-+    elif test "$apu_db_version" != "4" -a "$apu_db_version" != "5"; then
-       status=skip
-     else
-       status=try-link
-@@ -22490,10 +22490,10 @@
+--- configure.orig	2011-08-26 19:03:02.000000000 +0400
++++ configure	2011-09-07 21:22:39.000000000 +0400
+@@ -19106,11 +19106,11 @@
                    SVN_KWALLET_INCLUDES="$DBUS_CPPFLAGS $qt_include_dirs -I$kde_dir/include"
                    qt_libs_other_options="`$PKG_CONFIG --libs-only-other QtCore QtDBus QtGui`"
                    SVN_KWALLET_LIBS="$DBUS_LIBS -lQtCore -lQtDBus -lQtGui -lkdecore -lkdeui $qt_libs_other_options"
@@ -37,20 +8,28 @@
 +                  CXXFLAGS="$SVN_KWALLET_INCLUDES $CXXFLAGS"
                    LIBS="$LIBS $SVN_KWALLET_LIBS"
                    qt_lib_dirs="`$PKG_CONFIG --libs-only-L QtCore QtDBus QtGui`"
--                  LDFLAGS="$old_LDFLAGS $qt_lib_dirs -L$kde_dir/lib`$kde4_config --libsuffix`"
-+                  LDFLAGS="$qt_lib_dirs -L$kde_dir/lib`$kde4_config --libsuffix` $old_LDFLAGS"
+                   kde_lib_suffix="`$KDE4_CONFIG --libsuffix`"
+-                  LDFLAGS="$old_LDFLAGS `
++                  LDFLAGS="`
+   input_flags="$qt_lib_dirs -L$kde_dir/lib$kde_lib_suffix"
+   output_flags=""
+   filtered_dirs="/lib /lib64 /usr/lib /usr/lib64"
+@@ -19129,7 +19129,7 @@
+   if test -n "$output_flags"; then
+     printf "%s" "${output_flags# }"
+   fi
+-`"
++` $old_LDFLAGS"
                    ac_ext=cpp
  ac_cpp='$CXXCPP $CPPFLAGS'
  ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -23801,7 +23801,10 @@
+@@ -20714,6 +20714,9 @@
  
- 
+ fi
  if test "$RUBY" != "none"; then
--  if "$RUBY" -r mkmf -e 'exit(have_func("rb_hash_foreach") ? 0 : 1)'; then
-+  if [ -z "$PTHREAD_LIBS" ]; then
-+    PTHREAD_LIBS=-pthread
-+  fi
-+  if "$RUBY" -r mkmf -e 'with_ldflags("'"$PTHREAD_LIBS"'") { exit(have_func("rb_hash_foreach") ? 0 : 1) }'; then
-     # Extract the first word of "rdoc", so it can be a program name with args.
- set dummy rdoc; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
++   if [ -z "$PTHREAD_LIBS" ]; then
++     PTHREAD_LIBS=-pthread
++   fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking rb_hash_foreach" >&5
+ $as_echo_n "checking rb_hash_foreach... " >&6; }
+   if "$RUBY" -r mkmf -e 'exit(have_func("rb_hash_foreach") ? 0 : 1)' >/dev/null; then
