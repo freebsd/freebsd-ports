@@ -19,6 +19,8 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+CONFLICTS_INSTALL=	wordpress-3.* ja-wordpress-ja-3.*
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	gd mysql pcre tokenizer xml zip

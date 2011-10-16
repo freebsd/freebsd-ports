@@ -14,6 +14,8 @@ MASTER_SITES=	http://wordpress.org/
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
+CONFLICTS_INSTALL=	de-wordpress-de-3.* ja-wordpress-ja-3.*
+
 NO_BUILD=	yes
 USE_PHP=	gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
