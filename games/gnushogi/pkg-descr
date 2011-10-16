@@ -9,3 +9,5 @@ which is located in a directory specified in the makefile.
 
 To invoke the program type:
 	gnushogi
+
+WWW: http://www.cs.caltech.edu/~mvanier/hacking/gnushogi/gnushogi.html
