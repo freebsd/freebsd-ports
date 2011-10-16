@@ -42,5 +42,5 @@ share/mime/packages/akonadi-mime.xml
 @dirrmtry include/akonadi
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@cwd %%QT_PREFIX%%
-%%QT_PLUGINDIR_REL%%/sqldrivers/libqsqlite3.so
+%%SQLITE%%@cwd %%QT_PREFIX%%
+%%SQLITE%%%%QT_PLUGINDIR_REL%%/sqldrivers/libqsqlite3.so
