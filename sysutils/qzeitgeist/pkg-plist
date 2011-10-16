@@ -1,0 +1,31 @@
+include/QtZeitgeist/DataModel/DataSource
+include/QtZeitgeist/DataModel/Event
+include/QtZeitgeist/DataModel/Subject
+include/QtZeitgeist/DataModel/TimeRange
+include/QtZeitgeist/DataModel/datasource.h
+include/QtZeitgeist/DataModel/event.h
+include/QtZeitgeist/DataModel/subject.h
+include/QtZeitgeist/DataModel/timerange.h
+include/QtZeitgeist/DataSourceRegistry
+include/QtZeitgeist/Interpretation
+include/QtZeitgeist/Log
+include/QtZeitgeist/Manifestation
+include/QtZeitgeist/Monitor
+include/QtZeitgeist/QtZeitgeist
+include/QtZeitgeist/datasourceregistry.h
+include/QtZeitgeist/interpretation.h
+include/QtZeitgeist/log.h
+include/QtZeitgeist/manifestation.h
+include/QtZeitgeist/monitor.h
+include/QtZeitgeist/qtzeitgeist.h
+lib/cmake/qzeitgeist/QZeitgeistConfig.cmake
+lib/cmake/qzeitgeist/QZeitgeistExport-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/qzeitgeist/QZeitgeistExport.cmake
+lib/libqzeitgeist.so
+lib/libqzeitgeist.so.0
+lib/libqzeitgeist.so.0.7
+libdata/pkgconfig/QtZeitgeist.pc
+@dirrm lib/cmake/qzeitgeist
+@dirrmtry lib/cmake
+@dirrm include/QtZeitgeist/DataModel
+@dirrm include/QtZeitgeist

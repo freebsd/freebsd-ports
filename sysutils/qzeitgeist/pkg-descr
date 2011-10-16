@@ -1,0 +1,11 @@
+Zeitgeist is a service which logs the users's activities and events
+(files opened, websites visites, conversations hold with other people,
+etc.) and makes relevant information available to other applications.
+It is able to establish relationships between items based on
+similarity and usage patterns.
+
+libQZeitgeist is a wrapper library around the Zeitgeist D-Bus API for
+Qt, and is brought to you by Collabora in cooperation with the
+Zeitgeist team and KDE.
+
+WWW: http://zeitgeist-project.com
