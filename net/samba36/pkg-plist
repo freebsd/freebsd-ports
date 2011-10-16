@@ -1,0 +1,246 @@
+bin/eventlogadm
+bin/findsmb
+bin/make_smbpasswd
+bin/net
+bin/nmblookup
+bin/ntlm_auth
+bin/pdbedit
+bin/profiles
+bin/rpcclient
+bin/sharesec
+bin/smbcacls
+bin/smbclient
+bin/smbcontrol
+bin/smbcquotas
+bin/smbget
+bin/smbpasswd
+bin/smbspool
+bin/smbstatus
+bin/smbta-util
+bin/smbtar
+bin/smbtree
+bin/testparm
+%%SMBTORTURE%%bin/smbtorture
+%%WINBIND%%bin/wbinfo
+include/wbclient.h
+sbin/smbd
+sbin/nmbd
+%%SWAT%%sbin/swat
+lib/libwbclient.so.0
+%%WINBIND%%sbin/winbindd
+%%WINBIND%%lib/nss_winbind.so.1
+%%WINBIND%%lib/nss_wins.so.1
+%%WINBIND%%lib/pam_winbind.so
+%%SMBPASS%%lib/pam_smbpass.so
+%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
+%%EXAMPLESDIR%%/LDAP/README
+%%EXAMPLESDIR%%/LDAP/convertSambaAccount
+%%EXAMPLESDIR%%/LDAP/get_next_oid
+%%EXAMPLESDIR%%/LDAP/ol-schema-migrate.pl
+%%EXAMPLESDIR%%/LDAP/samba-nds.schema
+%%EXAMPLESDIR%%/LDAP/samba-schema-FDS.ldif
+%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x
+%%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
+%%EXAMPLESDIR%%/LDAP/samba.ldif
+%%EXAMPLESDIR%%/LDAP/samba.schema
+%%EXAMPLESDIR%%/LDAP/samba.schema.at.IBM-DS
+%%EXAMPLESDIR%%/LDAP/samba.schema.oc.IBM-DS
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/VFS/Makefile.in
+%%EXAMPLESDIR%%/VFS/README
+%%EXAMPLESDIR%%/VFS/autogen.sh
+%%EXAMPLESDIR%%/VFS/config.guess
+%%EXAMPLESDIR%%/VFS/config.sub
+%%EXAMPLESDIR%%/VFS/configure.in
+%%EXAMPLESDIR%%/VFS/install-sh
+%%EXAMPLESDIR%%/VFS/shadow_copy_test.c
+%%EXAMPLESDIR%%/VFS/skel_opaque.c
+%%EXAMPLESDIR%%/VFS/skel_transparent.c
+%%EXAMPLESDIR%%/ad-bench/README
+%%EXAMPLESDIR%%/ad-bench/ad-bench.sh
+%%EXAMPLESDIR%%/ad-bench/settings.sh
+%%EXAMPLESDIR%%/ad-bench/test_utils.sh
+%%EXAMPLESDIR%%/ad-bench/time_group.sh
+%%EXAMPLESDIR%%/ad-bench/time_join.sh
+%%EXAMPLESDIR%%/ad-bench/time_kinit.sh
+%%EXAMPLESDIR%%/ad-bench/time_ldap.sh
+%%EXAMPLESDIR%%/ad-bench/time_user.sh
+%%EXAMPLESDIR%%/ad-bench/utils.sh
+%%EXAMPLESDIR%%/auth/Makefile
+%%EXAMPLESDIR%%/auth/auth_skel.c
+%%EXAMPLESDIR%%/auth/crackcheck/Makefile
+%%EXAMPLESDIR%%/auth/crackcheck/crackcheck.c
+%%EXAMPLESDIR%%/autofs/auto.smb
+%%EXAMPLESDIR%%/bind9-patches/0001-leave-the-question-section-in-update-responses.patch
+%%EXAMPLESDIR%%/bind9-patches/0002-prevent-a-valgrind-uninitialised-memory-warning.patch
+%%EXAMPLESDIR%%/bind9-patches/0003-don-t-compress-TSIG-names.patch
+%%EXAMPLESDIR%%/bind9-patches/0004-If-tkey-gssapi-initialisation-fails-then-heck-for-th.patch
+%%EXAMPLESDIR%%/bind9-patches/0005-windows-doesn-t-return-valid-GSSAPI-sequence-numbers.patch
+%%EXAMPLESDIR%%/bind9-patches/README
+%%EXAMPLESDIR%%/dce-dfs/README
+%%EXAMPLESDIR%%/dce-dfs/smb.conf
+%%EXAMPLESDIR%%/logon/genlogon/genlogon.pl
+%%EXAMPLESDIR%%/logon/mklogon/mklogon.conf
+%%EXAMPLESDIR%%/logon/mklogon/mklogon.pl
+%%EXAMPLESDIR%%/logon/ntlogon/README
+%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.conf
+%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.py
+%%EXAMPLESDIR%%/misc/adssearch.pl
+%%EXAMPLESDIR%%/misc/check_multiple_LDAP_entries.pl
+%%EXAMPLESDIR%%/misc/cldap.pl
+%%EXAMPLESDIR%%/misc/extra_smbstatus
+%%EXAMPLESDIR%%/misc/swat.pl
+%%EXAMPLESDIR%%/misc/wall.perl
+%%EXAMPLESDIR%%/nss/nss_winbind.c
+%%EXAMPLESDIR%%/nss/nss_winbind.h
+%%EXAMPLESDIR%%/nss/wbtest.c
+%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/README
+%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/kdc-pdc
+%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
+%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
+%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
+%%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
+%%EXAMPLESDIR%%/pcap2nbench/COPYING
+%%EXAMPLESDIR%%/pcap2nbench/Makefile
+%%EXAMPLESDIR%%/pcap2nbench/README
+%%EXAMPLESDIR%%/pcap2nbench/closerequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/closerequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ethernet.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ethernet.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ip.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ip.hpp
+%%EXAMPLESDIR%%/pcap2nbench/main.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.hpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxresponse.hpp
+%%EXAMPLESDIR%%/pcap2nbench/smb.cpp
+%%EXAMPLESDIR%%/pcap2nbench/smb.hpp
+%%EXAMPLESDIR%%/pcap2nbench/tcp.cpp
+%%EXAMPLESDIR%%/pcap2nbench/tcp.hpp
+%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.hpp
+%%EXAMPLESDIR%%/pdb/Makefile
+%%EXAMPLESDIR%%/pdb/README
+%%EXAMPLESDIR%%/pdb/test.c
+%%EXAMPLESDIR%%/perfcounter/Makefile
+%%EXAMPLESDIR%%/perfcounter/perf.h
+%%EXAMPLESDIR%%/perfcounter/perf_writer.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_cpu.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_disk.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_mem.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_process.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_util.c
+%%EXAMPLESDIR%%/perfcounter/perfcountd.init
+%%EXAMPLESDIR%%/printer-accounting/README
+%%EXAMPLESDIR%%/printer-accounting/acct-all
+%%EXAMPLESDIR%%/printer-accounting/acct-sum
+%%EXAMPLESDIR%%/printer-accounting/hp5-redir
+%%EXAMPLESDIR%%/printer-accounting/lp-acct
+%%EXAMPLESDIR%%/printer-accounting/printcap
+%%EXAMPLESDIR%%/printing/VampireDriversFunctions
+%%EXAMPLESDIR%%/printing/prtpub.c
+%%EXAMPLESDIR%%/printing/readme.prtpub
+%%EXAMPLESDIR%%/printing/smbprint
+%%EXAMPLESDIR%%/printing/smbprint.sysv
+%%EXAMPLESDIR%%/scripts/debugging/linux/backtrace
+%%EXAMPLESDIR%%/scripts/debugging/solaris/README
+%%EXAMPLESDIR%%/scripts/debugging/solaris/solaris-oops.sh
+%%EXAMPLESDIR%%/scripts/eventlog/parselog.pl
+%%EXAMPLESDIR%%/scripts/idmap/README
+%%EXAMPLESDIR%%/scripts/idmap/idmap_nis.sh
+%%EXAMPLESDIR%%/scripts/mount/mount.smbfs
+%%EXAMPLESDIR%%/scripts/printing/cups/smbaddprinter.pl
+%%EXAMPLESDIR%%/scripts/printing/cups/smbdelprinter.pl
+%%EXAMPLESDIR%%/scripts/shares/perl/modify_samba_config.pl
+%%EXAMPLESDIR%%/scripts/shares/python/SambaConfig.py
+%%EXAMPLESDIR%%/scripts/shares/python/SambaParm.py
+%%EXAMPLESDIR%%/scripts/shares/python/generate_parm_table.py
+%%EXAMPLESDIR%%/scripts/shares/python/modify_samba_config.py
+%%EXAMPLESDIR%%/scripts/shares/python/smbparm.py
+%%EXAMPLESDIR%%/scripts/users_and_groups/adduserstogroups.pl
+%%EXAMPLESDIR%%/scripts/users_and_groups/createdomobj.pl
+%%EXAMPLESDIR%%/scripts/wins_hook/README
+%%EXAMPLESDIR%%/scripts/wins_hook/dns_update
+%%EXAMPLESDIR%%/smb.conf.default
+%%EXAMPLESDIR%%/tridge/README
+%%EXAMPLESDIR%%/tridge/smb.conf
+%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
+%%EXAMPLESDIR%%/tridge/smb.conf.fjall
+%%EXAMPLESDIR%%/tridge/smb.conf.lapland
+%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
+%%EXAMPLESDIR%%/validchars/msdos70.out
+%%EXAMPLESDIR%%/validchars/nwdos70.out
+%%EXAMPLESDIR%%/validchars/readme
+%%EXAMPLESDIR%%/validchars/validchr.c
+%%EXAMPLESDIR%%/validchars/validchr.com
+@dirrm %%EXAMPLESDIR%%/validchars
+@dirrm %%EXAMPLESDIR%%/tridge
+@dirrm %%EXAMPLESDIR%%/scripts/wins_hook
+@dirrm %%EXAMPLESDIR%%/scripts/users_and_groups
+@dirrm %%EXAMPLESDIR%%/scripts/shares/python
+@dirrm %%EXAMPLESDIR%%/scripts/shares/perl
+@dirrm %%EXAMPLESDIR%%/scripts/shares
+@dirrm %%EXAMPLESDIR%%/scripts/printing/cups
+@dirrm %%EXAMPLESDIR%%/scripts/printing
+@dirrm %%EXAMPLESDIR%%/scripts/mount
+@dirrm %%EXAMPLESDIR%%/scripts/idmap
+@dirrm %%EXAMPLESDIR%%/scripts/eventlog
+@dirrm %%EXAMPLESDIR%%/scripts/debugging/solaris
+@dirrm %%EXAMPLESDIR%%/scripts/debugging/linux
+@dirrm %%EXAMPLESDIR%%/scripts/debugging
+@dirrm %%EXAMPLESDIR%%/scripts
+@dirrm %%EXAMPLESDIR%%/printing
+@dirrm %%EXAMPLESDIR%%/printer-accounting
+@dirrm %%EXAMPLESDIR%%/perfcounter
+@dirrm %%EXAMPLESDIR%%/pdb
+@dirrm %%EXAMPLESDIR%%/pcap2nbench
+@dirrm %%EXAMPLESDIR%%/pam_winbind
+%%SMBPASS%%@dirrm %%EXAMPLESDIR%%/pam_smbpass
+@dirrm %%EXAMPLESDIR%%/nss
+@dirrm %%EXAMPLESDIR%%/misc
+@dirrm %%EXAMPLESDIR%%/logon/ntlogon
+@dirrm %%EXAMPLESDIR%%/logon/mklogon
+@dirrm %%EXAMPLESDIR%%/logon/genlogon
+@dirrm %%EXAMPLESDIR%%/logon
+@dirrm %%EXAMPLESDIR%%/dce-dfs
+@dirrm %%EXAMPLESDIR%%/bind9-patches
+@dirrm %%EXAMPLESDIR%%/autofs
+@dirrm %%EXAMPLESDIR%%/auth/crackcheck
+@dirrm %%EXAMPLESDIR%%/auth
+@dirrm %%EXAMPLESDIR%%/ad-bench
+@dirrm %%EXAMPLESDIR%%/VFS
+@dirrm %%EXAMPLESDIR%%/LDAP
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS.txt
+%%PORTDOCS%%%%DOCSDIR%%/Manifest
+%%PORTDOCS%%%%DOCSDIR%%/PFIF.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/Roadmap
+%%PORTDOCS%%%%DOCSDIR%%/Samba3-ByExample.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Samba3-Developers-Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Samba3-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/history
+%%PORTDOCS%%%%DOCSDIR%%/registry/FolderRedir.adm
+%%PORTDOCS%%%%DOCSDIR%%/registry/NT4-Locking.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/NT4_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-2Kx-XPP-DeleteCachedProfiles.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-2Kx-XPP-ForceLocalProfile.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-NT-DeleteRoamingProfile.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win2000_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win7_Samba3DomainMember.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win95_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win98_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win9X-CacheHandling.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WinME_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WindowsTerminalServer.reg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/registry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
