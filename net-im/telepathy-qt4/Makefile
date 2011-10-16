@@ -6,6 +6,7 @@
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 USE_GNOME=	pkgconfig
 USE_PYTHON_BUILD=	2.5+
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus network xml qtestlib_build \
+QT_COMPONENTS=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes

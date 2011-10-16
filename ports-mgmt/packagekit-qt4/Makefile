@@ -6,7 +6,7 @@
 #   $MCom: ports/ports-mgmt/packagekit-qt4/Makefile,v 1.1 2010/01/08 02:16:38 kwm Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt4
 
 COMMENT=	Qt4 bindings to packagekit
