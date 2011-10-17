@@ -1,5 +1,5 @@
 --- configure.orig	2010-05-02 18:49:36.000000000 +0200
-+++ configure	2011-10-17 21:00:37.000000000 +0200
++++ configure	2011-10-17 21:10:05.000000000 +0200
 @@ -10559,7 +10559,7 @@
        hardcode_shlibpath_var=no
        ;;
@@ -8,6 +8,15 @@
 +    freebsd1.*)
        ld_shlibs=no
        ;;
+ 
+@@ -11434,7 +11434,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
  
 @@ -12678,6 +12678,7 @@
  JPEG_LIB_VERSION="`expr $JPEG_LIB_VERSION / 10`:2"
