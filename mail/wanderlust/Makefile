@@ -7,7 +7,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.14.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \

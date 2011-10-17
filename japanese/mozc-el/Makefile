@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc-el
 PORTVERSION=	1.1.773.102
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://mozc.googlecode.com/files/
 DISTNAME=	mozc-${PORTVERSION}

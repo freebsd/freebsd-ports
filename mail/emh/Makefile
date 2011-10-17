@@ -7,7 +7,7 @@
 
 PORTNAME=	emh
 PORTVERSION=	1.14.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ring.aist.go.jp/pub/elisp/semi/semi-1.14-for-flim-1.14/ \
 		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/semi/semi-1.14-for-flim-1.14/
