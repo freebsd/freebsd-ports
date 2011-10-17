@@ -52,6 +52,11 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 USE_SDL=	sdl
 .endif
+.if defined(WITH_OPEN_GAME_FILES)
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/data/opengfx/opengfx.obg:${PORTSDIR}/games/opengfx \
+		${LOCALBASE}/share/${PORTNAME}/gm/openmsx/openmsx.obm:${PORTSDIR}/games/openmsx \
+		${LOCALBASE}/share/${PORTNAME}/data/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
+.endif
 
 SUB_FILES=	pkg-message
 MAN6=		${PORTNAME}.6
@@ -77,12 +82,15 @@ pre-everything::
 .if !defined(WITH_DEDICATED_SERVER_ONLY)
 	@${ECHO_MSG} "Define WITH_DEDICATED_SERVER_ONLY to build CLI-based dedicated server"
 .endif
+.if !defined(WITH_OPEN_GAME_FILES)
+	@${ECHO_MSG} "Define WITH_OPEN_GAME_FILES to install with libre graphics, music, and sound"
+.endif
 
 post-patch:
 # Remove extra (vendor-provided) CFLAGS and LDFLAGS and make the port more
-# LOCALBASE safe (don't forget to update XXXX,YYYYd part when upgrading!)
-	@${REINPLACE_CMD} -e '1360,1361d ; s,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/config.lib
+# LOCALBASE safe
+	@${REINPLACE_CMD} -e '/-O2 -fomit-frame-pointer/d ; \
+		s,/usr/local,${LOCALBASE},' ${WRKSRC}/config.lib
 # Use custom liblzma.pc for when we use liblzma from base
 .if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
 	@${REINPLACE_CMD} -e \
