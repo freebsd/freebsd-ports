@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
 MAINTAINER=	ar@null.lv
 COMMENT=	A fast and lightweight GTK+ IDE
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gnomehack gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -26,7 +28,7 @@ OPTIONS=	VTE	"Enable Virtual Terminal Emulation support"	on \
 
 MAN1=		geany.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -51,12 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/geany.desktop ${PREFIX}/share/applications/
 	${INSTALL_MAN} ${WRKSRC}/doc/geany.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
