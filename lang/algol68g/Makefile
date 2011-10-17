@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 EXTRACT_SUFX=	.tgz
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--enable-compiler
 
 MAN1=		a68g.1
 PLIST_DIRS=	include/algol68g
-PLIST_FILES=	bin/a68g include/algol68g/a68g.h include/algol68g/a68g-config.h
+PLIST_FILES=	bin/a68g include/algol68g/a68g.h
 
 .include <bsd.port.options.mk>
 
