@@ -40,7 +40,13 @@ you update your ports collection, before attempting any port upgrades.
     /usr/local/kde4/share/dbus-1/*services
   # rm -r /var/tmp/kdecache-*
   # portmaster misc/kdehier4
+
+  If you have - or plan to install - net/kdenetwork4, also run:
+
   # portmaster -o net/linphone-base ortp
+
+  Finally:
+
   # portmaster -a
 
   Remember to check for missing ports, bearing in mind that x11/kdebase4*
