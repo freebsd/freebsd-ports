@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=.Final-dist
 CATEGORIES=	java devel
 MASTER_SITES=	SF/jboss/Netty%20Project/Netty%20${PORTVERSION}.Final/
 
-MAINTAINER=	michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Java NIO client server framework
 
 LICENSE=	ASL

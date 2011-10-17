@@ -9,7 +9,7 @@ PORTVERSION=	1.2.13
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Ruby bindings for libmemcached
 
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
