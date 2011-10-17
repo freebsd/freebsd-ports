@@ -1,6 +1,7 @@
 bin/choqok
 include/choqok/account.h
 include/choqok/accountmanager.h
+include/choqok/application.h
 include/choqok/choqok_export.h
 include/choqok/choqokappearancesettings.h
 include/choqok/choqokbehaviorsettings.h
@@ -54,10 +55,12 @@ lib/kde4/choqok_mobypicture.so
 lib/kde4/choqok_nowlistening.so
 lib/kde4/choqok_ocs.so
 lib/kde4/choqok_posterous.so
+lib/kde4/choqok_quickfilter.so
 lib/kde4/choqok_searchaction.so
 lib/kde4/choqok_three_ly.so
 lib/kde4/choqok_tighturl.so
 lib/kde4/choqok_tinyarro_ws.so
+lib/kde4/choqok_translator.so
 lib/kde4/choqok_twitgoo.so
 lib/kde4/choqok_twitpic.so
 lib/kde4/choqok_twitter.so
@@ -78,6 +81,7 @@ lib/kde4/kcm_choqok_nowlistening.so
 lib/kde4/kcm_choqok_pluginconfig.so
 lib/kde4/kcm_choqok_posterous.so
 lib/kde4/kcm_choqok_tinyarro_ws.so
+lib/kde4/kcm_choqok_translator.so
 lib/kde4/kcm_choqok_twitgoo.so
 lib/kde4/kcm_choqok_twitpic.so
 lib/kde4/kcm_choqok_untiny.so
@@ -85,23 +89,25 @@ lib/kde4/kcm_choqok_yourls.so
 lib/kde4/konqchoqokplugin.so
 lib/libchoqok.so
 lib/libchoqok.so.1
-lib/libchoqok.so.1.0.0
+lib/libchoqok.so.1.1.0
 lib/libtwitterapihelper.so
 lib/libtwitterapihelper.so.1
-lib/libtwitterapihelper.so.1.0.0
+lib/libtwitterapihelper.so.1.0.1
 share/applications/kde4/choqok.desktop
 share/apps/choqok/choqok.notifyrc
 share/apps/choqok/choqokui.rc
 share/apps/choqok/images/splash_screen.png
+share/apps/choqok/languagecodes
 share/apps/choqok_filter/filterui.rc
 share/apps/choqok_nowlistening/nowlisteningui.rc
+share/apps/choqok_quickfilter/quickfilterui.rc
 share/apps/choqok_searchaction/searchactionui.rc
 share/apps/cmake/modules/FindChoqok.cmake
 share/apps/cmake/modules/FindQtOAuth.cmake
 share/apps/khtml/kpartplugins/konqchoqok.desktop
 share/apps/khtml/kpartplugins/konqchoqok.rc
-share/apps/kwebkitpart/kpartplugins/konqchoqok.desktop
-share/apps/kwebkitpart/kpartplugins/konqchoqok.rc
+@comment share/apps/kwebkitpart/kpartplugins/konqchoqok.desktop
+@comment share/apps/kwebkitpart/kpartplugins/konqchoqok.rc
 share/config.kcfg/bit_ly_settings.kcfg
 share/config.kcfg/choqokappearancesettings.kcfg
 share/config.kcfg/choqokbehaviorsettings.kcfg
@@ -111,6 +117,7 @@ share/config.kcfg/mobypicturesettings.kcfg
 share/config.kcfg/nowlisteningsettings.kcfg
 share/config.kcfg/posteroussettings.kcfg
 share/config.kcfg/tinyarro_ws_settings.kcfg
+share/config.kcfg/translatorsettings.kcfg
 share/config.kcfg/twitgoosettings.kcfg
 share/config.kcfg/twitpicsettings.kcfg
 share/config.kcfg/untinysettings.kcfg
@@ -124,8 +131,10 @@ share/doc/HTML/en/choqok/common
 share/doc/HTML/en/choqok/index.cache.bz2
 share/doc/HTML/en/choqok/index.docbook
 share/icons/hicolor/128x128/apps/choqok.png
+share/icons/hicolor/128x128/apps/choqok_offline.png
 share/icons/hicolor/16x16/actions/retweet.png
 share/icons/hicolor/16x16/apps/choqok.png
+share/icons/hicolor/16x16/apps/choqok_offline.png
 share/icons/hicolor/16x16/apps/flickr_uploader.png
 share/icons/hicolor/16x16/apps/imageshack_uploader.png
 share/icons/hicolor/16x16/apps/laconica_microblog.png
@@ -136,6 +145,7 @@ share/icons/hicolor/16x16/apps/twitgoo_uploader.png
 share/icons/hicolor/16x16/apps/twitpic_uploader.png
 share/icons/hicolor/16x16/apps/twitter_microblog.png
 share/icons/hicolor/22x22/apps/choqok.png
+share/icons/hicolor/22x22/apps/choqok_offline.png
 share/icons/hicolor/22x22/apps/flickr_uploader.png
 share/icons/hicolor/22x22/apps/imageshack_uploader.png
 share/icons/hicolor/22x22/apps/laconica_microblog.png
@@ -146,6 +156,7 @@ share/icons/hicolor/22x22/apps/twitgoo_uploader.png
 share/icons/hicolor/22x22/apps/twitpic_uploader.png
 share/icons/hicolor/22x22/apps/twitter_microblog.png
 share/icons/hicolor/32x32/apps/choqok.png
+share/icons/hicolor/32x32/apps/choqok_offline.png
 share/icons/hicolor/32x32/apps/flickr_uploader.png
 share/icons/hicolor/32x32/apps/imageshack_uploader.png
 share/icons/hicolor/32x32/apps/laconica_microblog.png
@@ -156,6 +167,7 @@ share/icons/hicolor/32x32/apps/twitgoo_uploader.png
 share/icons/hicolor/32x32/apps/twitpic_uploader.png
 share/icons/hicolor/32x32/apps/twitter_microblog.png
 share/icons/hicolor/48x48/apps/choqok.png
+share/icons/hicolor/48x48/apps/choqok_offline.png
 share/icons/hicolor/48x48/apps/flickr_uploader.png
 share/icons/hicolor/48x48/apps/imageshack_uploader.png
 share/icons/hicolor/48x48/apps/laconica_microblog.png
@@ -165,6 +177,7 @@ share/icons/hicolor/48x48/apps/posterous_uploader.png
 share/icons/hicolor/48x48/apps/twitgoo_uploader.png
 share/icons/hicolor/48x48/apps/twitter_microblog.png
 share/icons/hicolor/64x64/apps/choqok.png
+share/icons/hicolor/64x64/apps/choqok_offline.png
 share/icons/hicolor/64x64/apps/flickr_uploader.png
 share/icons/hicolor/64x64/apps/imageshack_uploader.png
 share/icons/hicolor/64x64/apps/mobypicture_uploader.png
@@ -196,11 +209,14 @@ share/kde4/services/choqok_ocs.desktop
 share/kde4/services/choqok_pluginconfig.desktop
 share/kde4/services/choqok_posterous.desktop
 share/kde4/services/choqok_posterous_config.desktop
+share/kde4/services/choqok_quickfilter.desktop
 share/kde4/services/choqok_searchaction.desktop
 share/kde4/services/choqok_three_ly.desktop
 share/kde4/services/choqok_tighturl.desktop
 share/kde4/services/choqok_tinyarro_ws.desktop
 share/kde4/services/choqok_tinyarro_ws_config.desktop
+share/kde4/services/choqok_translator.desktop
+share/kde4/services/choqok_translator_config.desktop
 share/kde4/services/choqok_twitgoo.desktop
 share/kde4/services/choqok_twitgoo_config.desktop
 share/kde4/services/choqok_twitpic.desktop
@@ -256,9 +272,10 @@ share/locale/uk/LC_MESSAGES/choqok.mo
 share/locale/zh_CN/LC_MESSAGES/choqok.mo
 share/locale/zh_TW/LC_MESSAGES/choqok.mo
 @dirrm share/doc/HTML/en/choqok
-@dirrmtry share/apps/kwebkitpart/kpartplugins
-@dirrmtry share/apps/kwebkitpart
+@comment @dirrmtry share/apps/kwebkitpart/kpartplugins
+@comment @dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/choqok_searchaction
+@dirrm share/apps/choqok_quickfilter
 @dirrm share/apps/choqok_nowlistening
 @dirrm share/apps/choqok_filter
 @dirrm share/apps/choqok/images
