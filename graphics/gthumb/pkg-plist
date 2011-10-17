@@ -410,6 +410,49 @@ share/gnome/help/gthumb/es/thumbnails.page
 share/gnome/help/gthumb/es/thumbnail-pane.page
 share/gnome/help/gthumb/es/viewer.page
 share/gnome/help/gthumb/es/wallpaper.page
+share/gnome/help/gthumb/eu/attributes.page
+share/gnome/help/gthumb/eu/batch-change-date.page
+share/gnome/help/gthumb/eu/batch-convert-format.page
+share/gnome/help/gthumb/eu/batch-resize.page
+share/gnome/help/gthumb/eu/batch-rotate.page
+share/gnome/help/gthumb/eu/batch-scripts.page
+share/gnome/help/gthumb/eu/bookmarks.page
+share/gnome/help/gthumb/eu/browser.page
+share/gnome/help/gthumb/eu/edit-colors.page
+share/gnome/help/gthumb/eu/edit-redeye.page
+share/gnome/help/gthumb/eu/edit-resize-crop.page
+share/gnome/help/gthumb/eu/edit-rotate.page
+share/gnome/help/gthumb/eu/edit-save-undo-redo.page
+share/gnome/help/gthumb/eu/extensions.page
+share/gnome/help/gthumb/eu/figures/comment.png
+share/gnome/help/gthumb/eu/figures/general-filter.png
+share/gnome/help/gthumb/eu/figures/import-pref-auto-folder.png
+share/gnome/help/gthumb/eu/figures/import-pref-custom-format.png
+share/gnome/help/gthumb/eu/figures/import.png
+share/gnome/help/gthumb/eu/figures/main-win.png
+share/gnome/help/gthumb/eu/figures/nav-button.png
+share/gnome/help/gthumb/eu/figures/palette.png
+share/gnome/help/gthumb/eu/figures/preferences.png
+share/gnome/help/gthumb/eu/figures/specific-filter.png
+share/gnome/help/gthumb/eu/figures/thumbnail-pane.png
+share/gnome/help/gthumb/eu/filtering.page
+share/gnome/help/gthumb/eu/fullscreen.page
+share/gnome/help/gthumb/eu/gimp.page
+share/gnome/help/gthumb/eu/import.page
+share/gnome/help/gthumb/eu/index.page
+share/gnome/help/gthumb/eu/introduction.page
+share/gnome/help/gthumb/eu/legal.xml
+share/gnome/help/gthumb/eu/printing.page
+share/gnome/help/gthumb/eu/rename-series.page
+share/gnome/help/gthumb/eu/sharing-disc.page
+share/gnome/help/gthumb/eu/shortcuts.page
+share/gnome/help/gthumb/eu/slideshow.page
+share/gnome/help/gthumb/eu/sorting.page
+share/gnome/help/gthumb/eu/strftime.page
+share/gnome/help/gthumb/eu/thumbnail-pane.page
+share/gnome/help/gthumb/eu/thumbnails.page
+share/gnome/help/gthumb/eu/viewer.page
+share/gnome/help/gthumb/eu/wallpaper.page
 share/gnome/help/gthumb/fr/attributes.page
 share/gnome/help/gthumb/fr/batch-convert-format.page
 share/gnome/help/gthumb/fr/batch-change-date.page
@@ -882,6 +925,8 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/help/gthumb/oc
 @dirrm share/gnome/help/gthumb/fr/figures
 @dirrm share/gnome/help/gthumb/fr
+@dirrm share/gnome/help/gthumb/eu/figures
+@dirrm share/gnome/help/gthumb/eu
 @dirrm share/gnome/help/gthumb/es/figures
 @dirrm share/gnome/help/gthumb/es
 @dirrm share/gnome/help/gthumb/el/figures
