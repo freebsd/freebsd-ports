@@ -3388,6 +3388,7 @@ fetchyahoo                      ports/mail/fetchyahoo
 ffcall                          ports/devel/ffcall
 ffe                             ports/textproc/ffe
 ffff                            ports/graphics/ffff
+fflas-ffpack                    ports/math/fflas-ffpack
 ffmpeg                          ports/multimedia/ffmpeg
 ffmpeg-devel                    ports/multimedia/ffmpeg-devel
 ffmpeg2theora                   ports/multimedia/ffmpeg2theora
@@ -6508,6 +6509,7 @@ ja-wnn6-lib                     ports/japanese/Wnn6-lib
 ja-wnn7-lib                     ports/japanese/Wnn7-lib
 ja-wnn7egg                      ports/japanese/wnn7egg
 ja-wordnet-fpw                  ports/japanese/wordnet-fpw
+ja-wordpress                    ports/japanese/wordpress
 ja-wwasw-fpw                    ports/japanese/wwasw-fpw
 ja-xchat                        ports/japanese/xchat
 ja-xdtp                         ports/japanese/xdtp
@@ -24993,8 +24995,8 @@ subtitleoffsetmodifier          ports/multimedia/subtitleoffsetmodifier
 subtitleripper                  ports/multimedia/subtitleripper
 subtools                        ports/multimedia/subtools
 subversion                      ports/devel/subversion
-subversion16                    ports/devel/subversion16
 subversion-java                 ports/java/subversion-java
+subversion16                    ports/devel/subversion16
 subversive                      ports/devel/subversive
 subweb                          ports/security/subweb
 suck                            ports/news/suck
