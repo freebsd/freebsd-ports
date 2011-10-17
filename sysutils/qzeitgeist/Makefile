@@ -12,7 +12,7 @@ MASTER_SITES=	http://releases.zeitgeist-project.com/${PORTNAME}/
 DISTNAME=	QtZeitgeist-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	Qt 4 wrapper library around the Zeitgeist DBus API
+COMMENT=	Qt 4 wrapper library around the Zeitgeist D-Bus API
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
