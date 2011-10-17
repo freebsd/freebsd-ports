@@ -66,8 +66,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/database
 USE_PHP+=	mysql
 .endif
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER:S/323//}
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
 .if defined(WITH_CVSUP)

@@ -23,8 +23,6 @@ PLIST_FILES=	lib/libfireprofile.so.0 lib/libfireprofile.so
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes
-DEFAULT_MYSQL_VER=	323
-WANT_MYSQL_VER=	323
 
 post-install:
 		$(LN) ${PREFIX}/lib/libfireprofile.so ${PREFIX}/lib/libfireprofile.so.0

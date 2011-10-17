@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	A full-featured open-source newsletter manager
 
-IGNORE_WITH_MYSQL=	323
 USE_PHP=	session mysql imap xml pcre zlib
 NO_BUILD=	yes
 

@@ -42,7 +42,7 @@ USE_PHP+=	pdo_sqlite
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40 41
+IGNORE_WITH_MYSQL=	41
 USE_PHP+=	pdo_mysql
 .endif
 .if defined(WITH_PGSQL)

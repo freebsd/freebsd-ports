@@ -21,13 +21,6 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
-.if defined(WITH_MYSQL)
-# To quote the author:
-#  It is used by src/processor/telecom/... for a commercial project. The
-#  project itself is opensource but not documented.
-# Therefore no testing if it works is made in the FreeBSD port.
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.endif
 
 # Please don't remove the comments, as soon as autoconf/libtool get's
 # updated in the ports collection the comments may be removed.

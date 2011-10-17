@@ -17,7 +17,6 @@ COMMENT=	Set of user-defined functions for the MySQL server
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL_VER=	323
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \

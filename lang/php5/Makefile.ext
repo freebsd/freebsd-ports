@@ -512,7 +512,6 @@ CONFIGURE_ARGS+=--with-mysqli=mysqlnd
 CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323 40
 .	endif
 .endif
 

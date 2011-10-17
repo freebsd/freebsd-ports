@@ -33,7 +33,6 @@ OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 .else
-IGNORE_WITH_MYSQL=	323
 USE_MYSQL=	yes
 USE_PHP+=	mysql
 .endif

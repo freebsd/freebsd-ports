@@ -18,7 +18,6 @@ NO_BUILD=	yes
 USE_PHP=	mysql session mbstring pcre xml
 WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}3
 
