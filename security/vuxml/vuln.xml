@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e454ca2f-f88d-11e0-b566-00163e01a509">
+    <topic>PivotX -- Remote File Inclusion Vulnerability of TimThumb</topic>
+    <affects>
+      <package>
+        <name>pivotx</name>
+        <range><lt>2.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The PivotX team reports:</p>
+        <blockquote cite="http://blog.pivotx.net/page/security">
+          <p>TimThumb domain name security bypass and insecure cache
+          handling. PivotX before 2.3.0 includes a vulnerable version
+          of TimThumb.</p>
+        </blockquote>
+        <blockquote cite="http://blog.pivotx.net/2011-10-14/timthumb-update-for-older-pivotx-installs">
+          <p>If you are still running PivotX 2.2.6, you might be
+          vulnerable to a security exploit, that was patched
+          previously. Version 2.3.0 doesn't have this issue, but any
+          older version of PivotX might be vulnerable.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>45416</bid>
+      <url>https://secunia.com/advisories/45416/</url>
+    </references>
+    <dates>
+      <discovery>2011-08-03</discovery>
+      <entry>2011-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bad5ab1-f3f6-11e0-8b5c-b482fe3f522d">
     <topic>OpenTTD -- Multiple buffer overflows in validation of external data</topic>
     <affects>
