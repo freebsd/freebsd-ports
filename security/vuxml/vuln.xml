@@ -96,6 +96,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-09-02</entry>
     </dates>
   </vuln>
+
   <vuln vid="78c25ed7-f3f9-11e0-8b5c-b482fe3f522d">
     <topic>OpenTTD -- Buffer overflows in savegame loading</topic>
     <affects>
@@ -124,6 +125,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-08-25</entry>
     </dates>
   </vuln>
+
   <vuln vid="e77befb5-f3f9-11e0-8b5c-b482fe3f522d">
     <topic>OpenTTD -- Denial of service via improperly validated commands</topic>
     <affects>
@@ -151,6 +153,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-08-26</entry>
     </dates>
   </vuln>
+
   <vuln vid="ab9be2c8-ef91-11e0-ad5a-00215c6a37bb">
     <topic>quagga -- multiple vulnerabilities</topic>
     <affects>
@@ -629,6 +632,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-09-05</entry>
     </dates>
   </vuln>
+
   <vuln vid="e55f948f-d729-11e0-abd1-0017f22d6707">
     <topic>security/cfs -- buffer overflow</topic>
     <affects>
@@ -1481,6 +1485,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-07-25</entry>
     </dates>
   </vuln>
+
   <vuln vid="9a777c23-b310-11e0-832d-00215c6a37bb">
     <topic>rsync -- incremental recursion memory corruption vulnerability</topic>
     <affects>
@@ -1511,7 +1516,7 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
- <vuln vid="fd64188d-a71d-11e0-89b4-001ec9578670">
+  <vuln vid="fd64188d-a71d-11e0-89b4-001ec9578670">
    <topic>BIND -- Remote DoS against authoritative and recursive servers</topic>
    <affects>
      <package>
