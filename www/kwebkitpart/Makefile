@@ -5,25 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	kwebkitpart
-PORTVERSION=	0.9.6.b1
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	www kde
-MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
-DISTNAME=	127960-${PORTNAME}-0.9.6
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	avilla
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Web browser component for KDE based on QtWebKit
+COMMENT=	Web browser component for KDE SC based on QtWebKit
 
-USE_BZIP2=	yes
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	designer webkit \
+QT_COMPONENTS=	designer gui webkit \
 		moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.6
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:
 	${CAT} ${PKGMESSAGE}
