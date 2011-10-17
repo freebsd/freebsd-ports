@@ -3392,6 +3392,7 @@
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
+    SUBDIR += rubygem-hike
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
     SUBDIR += rubygem-i18n
