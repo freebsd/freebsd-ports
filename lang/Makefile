@@ -142,6 +142,7 @@
     SUBDIR += klogoturtle
     SUBDIR += klone
     SUBDIR += kroc
+    SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += ldc-devel
     SUBDIR += libhx

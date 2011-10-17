@@ -1,9 +1,9 @@
---- ./CMakeLists.txt.orig	2010-06-06 12:01:57.000000000 -0400
-+++ ./CMakeLists.txt	2010-06-06 12:02:08.000000000 -0400
+--- ./CMakeLists.txt.orig	2011-07-20 08:36:16.000000000 +1100
++++ ./CMakeLists.txt	2011-08-09 00:34:17.959934057 +1100
 @@ -81,7 +81,7 @@
  if (NOT KDEPIM_ONLY_KLEO)
    #FindAkonadi.cmake is only there for compatibility reasons, but we don't want to use that.
-   set(Akonadi_MIN_VERSION "1.4.81")
+   set(Akonadi_MIN_VERSION "1.5.52")
 -  find_package(Akonadi ${Akonadi_MIN_VERSION} QUIET NO_MODULE)
 +  find_package(Akonadi ${Akonadi_MIN_VERSION} QUIET)
    macro_log_feature(Akonadi_FOUND "Akonadi server libraries" "Access to PIM storage and services" "http://pim.kde.org/akonadi" TRUE "${Akonadi_MIN_VERSION}" "")

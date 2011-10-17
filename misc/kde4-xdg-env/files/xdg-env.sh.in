@@ -21,5 +21,3 @@ if [ %%KDE4_PREFIX%% != %%LOCALBASE%% ]; then
 fi
 
 export XDG_DATA_DIRS
-
-kbuildsycoca4

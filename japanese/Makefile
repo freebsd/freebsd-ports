@@ -143,6 +143,7 @@
     SUBDIR += kde4-l10n
     SUBDIR += kdrill
     SUBDIR += kinput2
+    SUBDIR += kiten
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += kon2-14dot

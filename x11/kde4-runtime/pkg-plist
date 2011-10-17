@@ -26,8 +26,11 @@ bin/kuiserver
 bin/kwalletd
 bin/kwriteconfig
 bin/nepomukbackup
+bin/nepomukcontroller
+bin/nepomukindexer
 bin/nepomukserver
 bin/nepomukservicestub
+bin/plasma-remote-helper
 bin/plasmapkg
 bin/solid-hardware
 env/nepomuk-env.sh
@@ -36,6 +39,13 @@ etc/xdg/menus/kde-information.menu
 include/knotify_export.h
 include/knotifyconfig.h
 include/knotifyplugin.h
+include/nepomuk/createresourcejob.h
+include/nepomuk/datamanagement.h
+include/nepomuk/describeresourcesjob.h
+include/nepomuk/nepomukdatamanagement_export.h
+include/nepomuk/resourcewatcher.h
+include/nepomuk/simpleresource.h
+include/nepomuk/simpleresourcegraph.h
 lib/attica_kde.so
 lib/kconf_update_bin/phonon_devicepreference_update
 lib/kconf_update_bin/phonon_deviceuids_update
@@ -52,7 +62,8 @@ lib/kde4/imports/org/kde/plasma/graphicslayouts/libgraphicslayoutsbindingsplugin
 lib/kde4/imports/org/kde/plasma/graphicslayouts/qmldir
 lib/kde4/imports/org/kde/plasma/graphicswidgets/libgraphicswidgetsbindingsplugin.so
 lib/kde4/imports/org/kde/plasma/graphicswidgets/qmldir
-lib/kde4/jpegrotatedthumbnail.so
+lib/kde4/imports/org/kde/qtextracomponents/libqtextracomponentsplugin.so
+lib/kde4/imports/org/kde/qtextracomponents/qmldir
 lib/kde4/jpegthumbnail.so
 lib/kde4/kcm_attica.so
 lib/kde4/kcm_cgi.so
@@ -127,7 +138,6 @@ lib/kde4/localdomainurifilter.so
 lib/kde4/nepomukbackupsync.so
 lib/kde4/nepomukfilewatch.so
 lib/kde4/nepomukqueryservice.so
-lib/kde4/nepomukremovablestorageservice.so
 lib/kde4/nepomukstorage.so
 lib/kde4/nepomukstrigiservice.so
 lib/kde4/plasma-kpart.so
@@ -156,14 +166,19 @@ lib/libmolletnetwork.so
 lib/libmolletnetwork.so.5
 lib/libmolletnetwork.so.5.0.1
 lib/libnepomukcommon.so
+lib/libnepomukdatamanagement.so
 lib/libnepomuksync.so
 lib/libnepomuksync.so.5
 lib/libnepomuksync.so.5.0.1
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
 share/applications/kde4/nepomukbackup.desktop
+share/applications/kde4/nepomukcontroller.desktop
 share/apps/cmake/modules/FindCLucene.cmake
 share/apps/cmake/modules/FindSLP.cmake
+share/apps/desktoptheme/appdashboard/metadata.desktop
+share/apps/desktoptheme/appdashboard/widgets/background.svgz
+share/apps/desktoptheme/appdashboard/widgets/newspaper-background.svgz
 share/apps/desktoptheme/default/colors
 share/apps/desktoptheme/default/dialogs/background.svgz
 share/apps/desktoptheme/default/dialogs/kickoff.svgz
@@ -192,6 +207,7 @@ share/apps/desktoptheme/default/translucent/widgets/extender-background.svgz
 share/apps/desktoptheme/default/translucent/widgets/panel-background.svgz
 share/apps/desktoptheme/default/translucent/widgets/tooltip.svgz
 share/apps/desktoptheme/default/widgets/action-overlays.svgz
+share/apps/desktoptheme/default/widgets/actionbutton.svgz
 share/apps/desktoptheme/default/widgets/analog_meter.svgz
 share/apps/desktoptheme/default/widgets/arrows.svgz
 share/apps/desktoptheme/default/widgets/background.svgz
@@ -211,8 +227,10 @@ share/apps/desktoptheme/default/widgets/frame.svgz
 share/apps/desktoptheme/default/widgets/glowbar.svgz
 share/apps/desktoptheme/default/widgets/identiconshapes.svgz
 share/apps/desktoptheme/default/widgets/identicontheme.svgz
+share/apps/desktoptheme/default/widgets/labeltexture.svgz
 share/apps/desktoptheme/default/widgets/line.svgz
 share/apps/desktoptheme/default/widgets/lineedit.svgz
+share/apps/desktoptheme/default/widgets/media-delegate.svgz
 share/apps/desktoptheme/default/widgets/monitor.svgz
 share/apps/desktoptheme/default/widgets/pager.svgz
 share/apps/desktoptheme/default/widgets/panel-background.svgz
@@ -240,6 +258,7 @@ share/apps/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
 share/apps/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
 share/apps/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
 share/apps/desktoptheme/oxygen/widgets/action-overlays.svgz
+share/apps/desktoptheme/oxygen/widgets/actionbutton.svgz
 share/apps/desktoptheme/oxygen/widgets/analog_meter.svgz
 share/apps/desktoptheme/oxygen/widgets/arrows.svgz
 share/apps/desktoptheme/oxygen/widgets/background.svgz
@@ -336,12 +355,15 @@ share/apps/ksmserver/windowmanagers/metacity.desktop
 share/apps/ksmserver/windowmanagers/openbox.desktop
 share/apps/kwalletd/kwalletd.notifyrc
 share/apps/libphonon/hardwaredatabase
+share/apps/nepomukfilewatch/nepomukfilewatch.notifyrc
 share/apps/nepomukstorage/nepomukstorage.notifyrc
 share/apps/nepomukstrigiservice/nepomukstrigiservice.notifyrc
 share/apps/phonon/phonon.notifyrc
 share/apps/remoteview/network.desktop
 share/apps/remoteview/smb-network.desktop
+share/autostart/nepomukcontroller.desktop
 share/autostart/nepomukserver.desktop
+share/config.kcfg/jpegcreatorsettings.kcfg
 share/config.kcfg/khelpcenter.kcfg
 share/config/emoticons.knsrc
 share/config/icons.knsrc
@@ -352,17 +374,17 @@ share/dbus-1/interfaces/org.kde.KTimeZoned.xml
 share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.khelpcenter.kcmhelpcenter.xml
 share/dbus-1/interfaces/org.kde.nepomuk.BackupSync.xml
+share/dbus-1/interfaces/org.kde.nepomuk.DataManagement.xml
 share/dbus-1/interfaces/org.kde.nepomuk.OntologyManager.xml
 share/dbus-1/interfaces/org.kde.nepomuk.Query.xml
 share/dbus-1/interfaces/org.kde.nepomuk.QueryService.xml
-share/dbus-1/interfaces/org.kde.nepomuk.RemovableStorage.xml
+share/dbus-1/interfaces/org.kde.nepomuk.ResourceWatcher.xml
+share/dbus-1/interfaces/org.kde.nepomuk.ResourceWatcherConnection.xml
 share/dbus-1/interfaces/org.kde.nepomuk.ServiceControl.xml
 share/dbus-1/interfaces/org.kde.nepomuk.ServiceManager.xml
 share/dbus-1/interfaces/org.kde.nepomuk.Storage.xml
 share/dbus-1/interfaces/org.kde.nepomuk.Strigi.xml
 share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.backupmanager.xml
-share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.identifier.xml
-share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.merger.xml
 share/dbus-1/interfaces/org.kde.nepomuk.services.nepomukbackupsync.syncmanager.xml
 share/dbus-1/interfaces/org.kde.network.kioslavenotifier.xml
 share/dbus-1/services/org.kde.knotify.service
@@ -676,7 +698,6 @@ share/kde4/services/htmlthumbnail.desktop
 share/kde4/services/icons.desktop
 share/kde4/services/imagethumbnail.desktop
 share/kde4/services/info.protocol
-share/kde4/services/jpegrotatedthumbnail.desktop
 share/kde4/services/jpegthumbnail.desktop
 share/kde4/services/kactivitymanagerd.desktop
 share/kde4/services/kcm_attica.desktop
@@ -1681,6 +1702,8 @@ share/mime/inode/vnd.kde.service.webdavs.xml
 share/mime/inode/vnd.kde.service.workstation.xml
 share/mime/inode/vnd.kde.service.xmpp-server.xml
 share/mime/packages/network.xml
+share/ontology/kde/kext.ontology
+share/ontology/kde/kext.trig
 share/ontology/kde/kuvo.ontology
 share/ontology/kde/kuvo.trig
 share/ontology/kde/nrio.ontology
@@ -2041,6 +2064,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/phonon
 @dirrm share/apps/nepomukstrigiservice
 @dirrm share/apps/nepomukstorage
+@dirrm share/apps/nepomukfilewatch
 @dirrm share/apps/libphonon
 @dirrm share/apps/kwalletd
 @dirrm share/apps/ksmserver/windowmanagers
@@ -2084,7 +2108,10 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/desktoptheme/default/opaque
 @dirrm share/apps/desktoptheme/default/icons
 @dirrm share/apps/desktoptheme/default/dialogs
+@dirrm share/apps/desktoptheme/appdashboard/widgets
+@dirrm share/apps/desktoptheme/appdashboard
 @dirrm lib/kde4/plugins/phonon_platform
+@dirrm lib/kde4/imports/org/kde/qtextracomponents
 @dirrm lib/kde4/imports/org/kde/plasma/graphicswidgets
 @dirrm lib/kde4/imports/org/kde/plasma/graphicslayouts
 @dirrm lib/kde4/imports/org/kde/plasma/core

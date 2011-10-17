@@ -74,6 +74,7 @@ share/locale/nn/LC_MESSAGES/domtreeviewer.mo
 share/locale/nn/LC_MESSAGES/dragonplayer.mo
 share/locale/nn/LC_MESSAGES/drkonqi.mo
 share/locale/nn/LC_MESSAGES/filetypes.mo
+share/locale/nn/LC_MESSAGES/freespacenotifier.mo
 share/locale/nn/LC_MESSAGES/fsview.mo
 share/locale/nn/LC_MESSAGES/granatier.mo
 share/locale/nn/LC_MESSAGES/gwenview.mo
@@ -92,6 +93,7 @@ share/locale/nn/LC_MESSAGES/kabc_net.mo
 share/locale/nn/LC_MESSAGES/kabcclient.mo
 share/locale/nn/LC_MESSAGES/kabcformat_binary.mo
 share/locale/nn/LC_MESSAGES/kaccess.mo
+share/locale/nn/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/nn/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/nn/LC_MESSAGES/kaddressbook.mo
 share/locale/nn/LC_MESSAGES/kaddressbookmigrator.mo
@@ -110,17 +112,19 @@ share/locale/nn/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nn/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nn/LC_MESSAGES/katefiletemplates.mo
 share/locale/nn/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/nn/LC_MESSAGES/kategdbplugin.mo
 share/locale/nn/LC_MESSAGES/katehelloworld.mo
-share/locale/nn/LC_MESSAGES/kateinsertcommand.mo
-share/locale/nn/LC_MESSAGES/katekjswrapper.mo
 share/locale/nn/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/nn/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/nn/LC_MESSAGES/kateopenheader.mo
 share/locale/nn/LC_MESSAGES/katepart4.mo
 share/locale/nn/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/nn/LC_MESSAGES/katesearch.mo
 share/locale/nn/LC_MESSAGES/katesnippets_tng.mo
+share/locale/nn/LC_MESSAGES/katesql.mo
 share/locale/nn/LC_MESSAGES/katesymbolviewer.mo
 share/locale/nn/LC_MESSAGES/katetabbarextension.mo
+share/locale/nn/LC_MESSAGES/katetabifyplugin.mo
 share/locale/nn/LC_MESSAGES/katetextfilter.mo
 share/locale/nn/LC_MESSAGES/katexmlcheck.mo
 share/locale/nn/LC_MESSAGES/katexmltools.mo
@@ -146,6 +150,8 @@ share/locale/nn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/nn/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/nn/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nn/LC_MESSAGES/kcm_emoticons.mo
+share/locale/nn/LC_MESSAGES/kcm_infobase.mo
+share/locale/nn/LC_MESSAGES/kcm_infosummary.mo
 share/locale/nn/LC_MESSAGES/kcm_krfb.mo
 share/locale/nn/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/nn/LC_MESSAGES/kcm_kwintabbox.mo
@@ -167,6 +173,7 @@ share/locale/nn/LC_MESSAGES/kcmcgi.mo
 share/locale/nn/LC_MESSAGES/kcmcolors.mo
 share/locale/nn/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/nn/LC_MESSAGES/kcmcrypto.mo
+share/locale/nn/LC_MESSAGES/kcmdevinfo.mo
 share/locale/nn/LC_MESSAGES/kcmfonts.mo
 share/locale/nn/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/nn/LC_MESSAGES/kcmicons.mo
@@ -224,6 +231,7 @@ share/locale/nn/LC_MESSAGES/kdialog.mo
 share/locale/nn/LC_MESSAGES/kdiamond.mo
 share/locale/nn/LC_MESSAGES/kdmconfig.mo
 share/locale/nn/LC_MESSAGES/kdmgreet.mo
+share/locale/nn/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/nn/LC_MESSAGES/keditbookmarks.mo
 share/locale/nn/LC_MESSAGES/kfile.mo
 share/locale/nn/LC_MESSAGES/kfile_avi.mo
@@ -377,6 +385,7 @@ share/locale/nn/LC_MESSAGES/ksaneplugin.mo
 share/locale/nn/LC_MESSAGES/kscd.mo
 share/locale/nn/LC_MESSAGES/kscreensaver.mo
 share/locale/nn/LC_MESSAGES/ksendemail.mo
+share/locale/nn/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nn/LC_MESSAGES/kshisen.mo
 share/locale/nn/LC_MESSAGES/kshorturifilter.mo
 share/locale/nn/LC_MESSAGES/ksirk.mo
@@ -402,7 +411,6 @@ share/locale/nn/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/nn/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/nn/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/nn/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/nn/LC_MESSAGES/kthememanager.mo
 share/locale/nn/LC_MESSAGES/ktimer.mo
 share/locale/nn/LC_MESSAGES/ktimetracker.mo
 share/locale/nn/LC_MESSAGES/ktouch.mo
@@ -423,7 +431,7 @@ share/locale/nn/LC_MESSAGES/kwin.mo
 share/locale/nn/LC_MESSAGES/kwin_art_clients.mo
 share/locale/nn/LC_MESSAGES/kwin_clients.mo
 share/locale/nn/LC_MESSAGES/kwin_effects.mo
-share/locale/nn/LC_MESSAGES/kwin_lib.mo
+share/locale/nn/LC_MESSAGES/kwinshutdown.mo
 share/locale/nn/LC_MESSAGES/kwinstartmenu.mo
 share/locale/nn/LC_MESSAGES/kwordquiz.mo
 share/locale/nn/LC_MESSAGES/kwrite.mo
@@ -439,6 +447,7 @@ share/locale/nn/LC_MESSAGES/libkcalutils.mo
 share/locale/nn/LC_MESSAGES/libkcddb.mo
 share/locale/nn/LC_MESSAGES/libkcompactdisc.mo
 share/locale/nn/LC_MESSAGES/libkdcraw.mo
+share/locale/nn/LC_MESSAGES/libkdecorations.mo
 share/locale/nn/LC_MESSAGES/libkdeedu.mo
 share/locale/nn/LC_MESSAGES/libkdegames.mo
 share/locale/nn/LC_MESSAGES/libkdepim.mo
@@ -489,6 +498,8 @@ share/locale/nn/LC_MESSAGES/mf_konqplugin.mo
 share/locale/nn/LC_MESSAGES/minitoolsplugin.mo
 share/locale/nn/LC_MESSAGES/mplayerthumbs.mo
 share/locale/nn/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/nn/LC_MESSAGES/nepomukbackup.mo
+share/locale/nn/LC_MESSAGES/nepomukcontroller.mo
 share/locale/nn/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/nn/LC_MESSAGES/nepomukserver.mo
 share/locale/nn/LC_MESSAGES/nepomukservicestub.mo
@@ -516,13 +527,14 @@ share/locale/nn/LC_MESSAGES/okular_tiff.mo
 share/locale/nn/LC_MESSAGES/okular_xps.mo
 share/locale/nn/LC_MESSAGES/palapeli.mo
 share/locale/nn/LC_MESSAGES/parley.mo
-share/locale/nn/LC_MESSAGES/phonon-xine.mo
 share/locale/nn/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nn/LC_MESSAGES/phonon_kde.mo
 share/locale/nn/LC_MESSAGES/phononserver.mo
 share/locale/nn/LC_MESSAGES/plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma-netbook.mo
 share/locale/nn/LC_MESSAGES/plasma-overlay.mo
+share/locale/nn/LC_MESSAGES/plasma-remote-helper.mo
+share/locale/nn/LC_MESSAGES/plasma-windowed.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_akonotes_note.mo
@@ -563,6 +575,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_news.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/nn/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -582,6 +595,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_searchbox.mo
+share/locale/nn/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -603,6 +617,7 @@ share/locale/nn/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/nn/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/nn/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/nn/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
+share/locale/nn/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -611,9 +626,11 @@ share/locale/nn/LC_MESSAGES/plasma_engine_network.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/nn/LC_MESSAGES/plasma_engine_share.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/nn/LC_MESSAGES/plasma_packagestructure_comic.mo
+share/locale/nn/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_browserhistory.mo
@@ -641,6 +658,8 @@ share/locale/nn/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/nn/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/nn/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/nn/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -661,6 +680,7 @@ share/locale/nn/LC_MESSAGES/processcore.mo
 share/locale/nn/LC_MESSAGES/processui.mo
 share/locale/nn/LC_MESSAGES/randrmonitor.mo
 share/locale/nn/LC_MESSAGES/rellinks.mo
+share/locale/nn/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/nn/LC_MESSAGES/rocs.mo
 share/locale/nn/LC_MESSAGES/searchbarplugin.mo
 share/locale/nn/LC_MESSAGES/solid-hardware.mo

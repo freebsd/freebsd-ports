@@ -29,6 +29,7 @@ bin/ksystraycmd
 bin/kwin
 bin/oxygen-demo
 bin/oxygen-settings
+bin/oxygen-shadow-demo
 bin/plasma-desktop
 bin/plasma-netbook
 bin/plasma-overlay
@@ -36,6 +37,7 @@ bin/plasma-windowed
 bin/plasmaengineexplorer
 bin/plasmawallpaperviewer
 bin/plasmoidviewer
+bin/remote-widgets-browser
 bin/solid-action-desktop-gen
 bin/startkde
 bin/startkde4
@@ -69,9 +71,9 @@ include/ksysguard/processes.h
 include/kwinconfig.h
 include/kwineffects.h
 include/kwinglobals.h
+include/kwinglplatform.h
 include/kwinglutils.h
 include/kwinglutils_funcs.h
-include/kwinshadereffect.h
 include/kwinxrenderutils.h
 include/kworkspace/kactivityconsumer.h
 include/kworkspace/kactivitycontroller.h
@@ -97,13 +99,12 @@ include/solid/control/ifaces/modemgsmussdinterface.h
 include/solid/control/ifaces/modeminterface.h
 include/solid/control/ifaces/modemlocationinterface.h
 include/solid/control/ifaces/modemmanager.h
+include/solid/control/ifaces/networkbtinterface.h
 include/solid/control/ifaces/networkcdmainterface.h
 include/solid/control/ifaces/networkgsminterface.h
 include/solid/control/ifaces/networkinterface.h
 include/solid/control/ifaces/networkmanager.h
 include/solid/control/ifaces/networkserialinterface.h
-include/solid/control/ifaces/remotecontrol.h
-include/solid/control/ifaces/remotecontrolmanager.h
 include/solid/control/ifaces/wirednetworkinterface.h
 include/solid/control/ifaces/wirelessaccesspoint.h
 include/solid/control/ifaces/wirelessnetworkinterface.h
@@ -118,6 +119,7 @@ include/solid/control/modeminterface.h
 include/solid/control/modemlocationinterface.h
 include/solid/control/modemmanager.h
 include/solid/control/modemmanagerinterface.h
+include/solid/control/networkbtinterface.h
 include/solid/control/networkcdmainterface.h
 include/solid/control/networkgsminterface.h
 include/solid/control/networking.h
@@ -125,9 +127,6 @@ include/solid/control/networkinterface.h
 include/solid/control/networkipv4config.h
 include/solid/control/networkmanager.h
 include/solid/control/networkserialinterface.h
-include/solid/control/remotecontrol.h
-include/solid/control/remotecontrolbutton.h
-include/solid/control/remotecontrolmanager.h
 include/solid/control/singletondefs.h
 include/solid/control/solid_control_export.h
 include/solid/control/wirednetworkinterface.h
@@ -167,6 +166,7 @@ lib/kde4/devinfo.so
 lib/kde4/fontthumbnail.so
 lib/kde4/icon_mode.so
 lib/kde4/ion_bbcukmet.so
+lib/kde4/ion_debianweather.so
 lib/kde4/ion_envcan.so
 lib/kde4/ion_noaa.so
 lib/kde4/ion_wettercom.so
@@ -230,6 +230,7 @@ lib/kde4/kgreet_classic.so
 lib/kde4/kgreet_generic.so
 lib/kde4/kgreet_winbind.so
 lib/kde4/kio_fonts.so
+lib/kde4/krunner_activities.so
 lib/kde4/krunner_bookmarksrunner.so
 lib/kde4/krunner_calculatorrunner.so
 lib/kde4/krunner_kill.so
@@ -275,7 +276,7 @@ lib/kde4/libexec/kwin_killer_helper
 lib/kde4/libexec/kwin_opengl_test
 lib/kde4/libexec/kwin_rules_dialog
 lib/kde4/libexec/test_kcm_xinerama
-lib/kde4/plasma-geolocation-gps.so
+%%GPS%%lib/kde4/plasma-geolocation-gps.so
 lib/kde4/plasma-geolocation-ip.so
 lib/kde4/plasma_animator_default.so
 lib/kde4/plasma_applet_activitybar.so
@@ -294,6 +295,7 @@ lib/kde4/plasma_applet_pager.so
 lib/kde4/plasma_applet_panelspacer_internal.so
 lib/kde4/plasma_applet_quicklaunch.so
 lib/kde4/plasma_applet_searchbox.so
+lib/kde4/plasma_applet_showActivityManager.so
 lib/kde4/plasma_applet_simplelauncher.so
 lib/kde4/plasma_applet_sm_cpu.so
 lib/kde4/plasma_applet_sm_hdd.so
@@ -372,7 +374,6 @@ lib/kde4/powerdevilhandlebuttoneventsaction_config.so
 lib/kde4/powerdevilrunscriptaction_config.so
 lib/kde4/powerdevilsuspendsessionaction_config.so
 lib/kde4/solid_fakenet.so
-lib/kde4/solid_lirc.so
 lib/kde4/solid_wicd.so
 lib/libkdecorations.so
 lib/libkdecorations.so.5
@@ -475,6 +476,7 @@ share/apps/cmake/modules/FindDBus.cmake
 share/apps/cmake/modules/FindGooglegadgets.cmake
 share/apps/cmake/modules/FindKephal.cmake
 share/apps/cmake/modules/FindLibXKlavier.cmake
+share/apps/cmake/modules/FindOpenGLES.cmake
 share/apps/cmake/modules/FindPAM.cmake
 share/apps/cmake/modules/FindSensors.cmake
 share/apps/cmake/modules/PkgConfigGetVar.cmake
@@ -486,12 +488,15 @@ share/apps/color-schemes/Oxygen.colors
 share/apps/color-schemes/OxygenCold.colors
 share/apps/color-schemes/Steel.colors
 share/apps/color-schemes/WontonSoup.colors
+share/apps/color-schemes/Zion.colors
+share/apps/color-schemes/ZionReversed.colors
 share/apps/desktoptheme/air-netbook/colors
 share/apps/desktoptheme/air-netbook/metadata.desktop
 share/apps/desktoptheme/air-netbook/widgets/background.svgz
 share/apps/desktoptheme/air-netbook/widgets/panel-background.svgz
 share/apps/desktoptheme/default/calendar/mini-calendar.svgz
 share/apps/desktoptheme/default/system-monitor/hdd_panel.svgz
+share/apps/desktoptheme/default/widgets/activities.svgz
 share/apps/desktoptheme/default/widgets/battery-oxygen.svgz
 share/apps/doc/kdm/README
 share/apps/doc/kdm/greeter.dtd
@@ -503,6 +508,7 @@ share/apps/kcminput/cursor_large_white.pcf.gz
 share/apps/kcminput/cursor_small_white.pcf.gz
 share/apps/kcminput/pics/mouse_lh.png
 share/apps/kcminput/pics/mouse_rh.png
+share/apps/kcmkeyboard/pics/epo.png
 share/apps/kcmkeys/kde3.kksrc
 share/apps/kcmkeys/kde4.kksrc
 share/apps/kcmkeys/mac4.kksrc
@@ -528,6 +534,7 @@ share/apps/kconf_update/kwin_focus2.sh
 share/apps/kconf_update/kwin_focus2.upd
 share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwin_on_off.upd
+share/apps/kconf_update/kwin_remove_effects.upd
 share/apps/kconf_update/kwin_update_tabbox_settings.upd
 share/apps/kconf_update/kwin_window_shortcuts.sh
 share/apps/kconf_update/kwin_window_shortcuts.upd
@@ -775,8 +782,12 @@ share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.xml
 share/apps/kwin/DefaultTabBoxLayouts.xml
 share/apps/kwin/aurorae.desktop
 share/apps/kwin/b2.desktop
+share/apps/kwin/blinking-startup-fragment.glsl
 share/apps/kwin/circle-edgy.png
 share/apps/kwin/circle.png
+share/apps/kwin/coverswitch-reflection.glsl
+share/apps/kwin/cube-cap.glsl
+share/apps/kwin/cube-reflection.glsl
 share/apps/kwin/cubecap.png
 share/apps/kwin/cylinder.frag
 share/apps/kwin/cylinder.vert
@@ -785,27 +796,19 @@ share/apps/kwin/default_rules/plasma_desktop_containment.kwinrules
 share/apps/kwin/explosion-end.png
 share/apps/kwin/explosion-start.png
 share/apps/kwin/explosion.frag
-share/apps/kwin/explosion.vert
 share/apps/kwin/invert.frag
-share/apps/kwin/invert.vert
 share/apps/kwin/kwin.notifyrc
 share/apps/kwin/laptop.desktop
 share/apps/kwin/lookingglass.frag
-share/apps/kwin/lookingglass.vert
 share/apps/kwin/oxygenclient.desktop
 share/apps/kwin/plastik.desktop
-share/apps/kwin/shadow-texture.png
-share/apps/kwin/sharpen.frag
-share/apps/kwin/sharpen.vert
-share/apps/kwin/snow.frag
-share/apps/kwin/snow.vert
-share/apps/kwin/snowflake.png
 share/apps/kwin/sphere.vert
 share/apps/kwin/tabstrip.desktop
 share/apps/kwin/trackmouse.png
 share/apps/kwrited/kwrited.notifyrc
 share/apps/plasma-desktop/init/00-defaultLayout.js
 share/apps/plasma-desktop/plasma-desktop.notifyrc
+share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
 share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
 share/apps/plasma-netbook/init/00-defaultLayout.js
 share/apps/plasma/dashboard/AppleClasses/AppleAnimator.js
@@ -817,8 +820,12 @@ share/apps/plasma/dashboard/AppleClasses/AppleSlider.js
 share/apps/plasma/dashboard/button/genericButton.js
 share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/metadata.desktop
+share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/contents/layout.js
+share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/metadata.desktop
+share/apps/plasma/layout-templates/org.kde.plasma-desktop.desktopIcons/contents/layout.js
+share/apps/plasma/layout-templates/org.kde.plasma-desktop.desktopIcons/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.findWidgets/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.findWidgets/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.photoActivity/contents/layout.js
@@ -840,8 +847,12 @@ share/apps/plasma/services/searchlaunch.operations
 share/apps/plasma/services/share.operations
 share/apps/plasma/services/statusnotifieritem.operations
 share/apps/plasma/services/tasks.operations
+share/apps/plasma/shareprovider/imgsusepasteorg/contents/code/main.js
+share/apps/plasma/shareprovider/imgsusepasteorg/metadata.desktop
 share/apps/plasma/shareprovider/imgur/contents/code/main.js
 share/apps/plasma/shareprovider/imgur/metadata.desktop
+share/apps/plasma/shareprovider/kde/contents/code/main.js
+share/apps/plasma/shareprovider/kde/metadata.desktop
 share/apps/plasma/shareprovider/pastebincom/contents/code/main.js
 share/apps/plasma/shareprovider/pastebincom/metadata.desktop
 share/apps/plasma/shareprovider/pasteopensuseorg/contents/code/main.js
@@ -900,6 +911,7 @@ share/config/ksysguard.knsrc
 share/config/plasma-overlayrc
 share/config/plasma-themes.knsrc
 share/config/wallpaper.knsrc
+share/config/xcursor.knsrc
 share/dbus-1/interfaces/org.freedesktop.ScreenSaver.xml
 share/dbus-1/interfaces/org.kde.KSMServerInterface.xml
 share/dbus-1/interfaces/org.kde.KWin.xml
@@ -1050,8 +1062,12 @@ share/doc/HTML/en/ksysguard/index.cache.bz2
 share/doc/HTML/en/ksysguard/index.docbook
 share/doc/HTML/en/plasma-desktop/add-widgets.png
 share/doc/HTML/en/plasma-desktop/common
+share/doc/HTML/en/plasma-desktop/desktop-settings.png
 share/doc/HTML/en/plasma-desktop/index.cache.bz2
 share/doc/HTML/en/plasma-desktop/index.docbook
+share/doc/HTML/en/plasma-desktop/panel-settings.png
+share/doc/HTML/en/plasma-desktop/system-tray-settings.png
+share/doc/HTML/en/plasma-desktop/system-tray-up-arrow.png
 share/doc/HTML/en/plasma-desktop/taskbar-settings.png
 share/doc/HTML/en/systemsettings/common
 share/doc/HTML/en/systemsettings/index.cache.bz2
@@ -1872,6 +1888,7 @@ share/kde4/services/fontthumbnail.desktop
 share/kde4/services/graphicalinfocategory.desktop
 share/kde4/services/interrupts.desktop
 share/kde4/services/ion-bbcukmet.desktop
+share/kde4/services/ion-debianweather.desktop
 share/kde4/services/ion-envcan.desktop
 share/kde4/services/ion-noaa.desktop
 share/kde4/services/ion-wettercom.desktop
@@ -1939,16 +1956,13 @@ share/kde4/services/kwin/magnifier_config.desktop
 share/kde4/services/kwin/minimizeanimation.desktop
 share/kde4/services/kwin/mousemark.desktop
 share/kde4/services/kwin/mousemark_config.desktop
+share/kde4/services/kwin/outline.desktop
 share/kde4/services/kwin/presentwindows.desktop
 share/kde4/services/kwin/presentwindows_config.desktop
 share/kde4/services/kwin/resize.desktop
 share/kde4/services/kwin/resize_config.desktop
 share/kde4/services/kwin/scalein.desktop
 share/kde4/services/kwin/screenshot.desktop
-share/kde4/services/kwin/shadow.desktop
-share/kde4/services/kwin/shadow_config.desktop
-share/kde4/services/kwin/sharpen.desktop
-share/kde4/services/kwin/sharpen_config.desktop
 share/kde4/services/kwin/sheet.desktop
 share/kde4/services/kwin/showfps.desktop
 share/kde4/services/kwin/showfps_config.desktop
@@ -1957,8 +1971,6 @@ share/kde4/services/kwin/slide.desktop
 share/kde4/services/kwin/slideback.desktop
 share/kde4/services/kwin/slidingpopups.desktop
 share/kde4/services/kwin/snaphelper.desktop
-share/kde4/services/kwin/snow.desktop
-share/kde4/services/kwin/snow_config.desktop
 share/kde4/services/kwin/startupfeedback.desktop
 share/kde4/services/kwin/taskbarthumbnail.desktop
 share/kde4/services/kwin/thumbnailaside.desktop
@@ -1999,6 +2011,7 @@ share/kde4/services/plasma-applet-icon.desktop
 share/kde4/services/plasma-applet-launcher.desktop
 share/kde4/services/plasma-applet-lockout.desktop
 share/kde4/services/plasma-applet-notifications.desktop
+share/kde4/services/plasma-applet-org.kde.showActivityManager.desktop
 share/kde4/services/plasma-applet-panelspacer-internal.desktop
 share/kde4/services/plasma-applet-quicklaunch.desktop
 share/kde4/services/plasma-applet-searchbox.desktop
@@ -2046,7 +2059,9 @@ share/kde4/services/plasma-dataengine-nowplaying.desktop
 share/kde4/services/plasma-dataengine-places.desktop
 share/kde4/services/plasma-dataengine-powermanagement.desktop
 share/kde4/services/plasma-dataengine-rss.desktop
+share/kde4/services/plasma-dataengine-share-addon-imgsusepasteorg.desktop
 share/kde4/services/plasma-dataengine-share-addon-imgur.desktop
+share/kde4/services/plasma-dataengine-share-addon-kde.desktop
 share/kde4/services/plasma-dataengine-share-addon-pastebincom.desktop
 share/kde4/services/plasma-dataengine-share-addon-pasteopensuseorg.desktop
 share/kde4/services/plasma-dataengine-share-addon-pasteubuntucom.desktop
@@ -2064,9 +2079,11 @@ share/kde4/services/plasma-engine-activities.desktop
 share/kde4/services/plasma-engine-akonadi.desktop
 share/kde4/services/plasma-engine-metadata.desktop
 share/kde4/services/plasma-engine-searchlaunch.desktop
-share/kde4/services/plasma-geolocation-gps.desktop
+%%GPS%%share/kde4/services/plasma-geolocation-gps.desktop
 share/kde4/services/plasma-geolocation-ip.desktop
+share/kde4/services/plasma-layout-org.kde.plasma-desktop.SaL.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-desktop.defaultPanel.desktop
+share/kde4/services/plasma-layout-org.kde.plasma-desktop.desktopIcons.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-desktop.findWidgets.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-desktop.photoActivity.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultPage.desktop
@@ -2076,6 +2093,7 @@ share/kde4/services/plasma-packagestructure-dashboard.desktop
 share/kde4/services/plasma-packagestructure-share.desktop
 share/kde4/services/plasma-packagestructure-web.desktop
 share/kde4/services/plasma-pager-default.desktop
+share/kde4/services/plasma-runner-activityrunner.desktop
 share/kde4/services/plasma-runner-bookmarks.desktop
 share/kde4/services/plasma-runner-calculator.desktop
 share/kde4/services/plasma-runner-kill.desktop
@@ -2157,7 +2175,6 @@ share/kde4/services/settings-workspace-behavior.desktop
 share/kde4/services/smbstatus.desktop
 share/kde4/services/solid-actions.desktop
 share/kde4/services/solidbackends/solid_fakenet.desktop
-share/kde4/services/solidbackends/solid_lirc.desktop
 share/kde4/services/solidbackends/solid_wicd.desktop
 share/kde4/services/standard_actions.desktop
 share/kde4/services/style.desktop
@@ -2175,7 +2192,6 @@ share/kde4/servicetypes/screensaver.desktop
 share/kde4/servicetypes/solid-device-type.desktop
 share/kde4/servicetypes/solidmodemmanager.desktop
 share/kde4/servicetypes/solidnetworkmanager.desktop
-share/kde4/servicetypes/solidremotecontrolmanager.desktop
 share/kde4/servicetypes/systemsettingscategory.desktop
 share/kde4/servicetypes/systemsettingsexternalapp.desktop
 share/kde4/servicetypes/systemsettingsview.desktop
@@ -2185,102 +2201,6 @@ share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy
 share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
 share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
 share/sounds/pop.wav
-share/wallpapers/Aghi/contents/images/1024x768.jpg
-share/wallpapers/Aghi/contents/images/1280x1024.jpg
-share/wallpapers/Aghi/contents/images/1280x800.jpg
-share/wallpapers/Aghi/contents/images/1440x900.jpg
-share/wallpapers/Aghi/contents/images/1600x1200.jpg
-share/wallpapers/Aghi/contents/images/1920x1080.jpg
-share/wallpapers/Aghi/contents/images/1920x1200.jpg
-share/wallpapers/Aghi/contents/images/800x600.jpg
-share/wallpapers/Aghi/contents/screenshot.jpg
-share/wallpapers/Aghi/metadata.desktop
-share/wallpapers/Air/contents/images/1280x1024.jpg
-share/wallpapers/Air/contents/images/1600x1200.jpg
-share/wallpapers/Air/contents/images/1920x1080.jpg
-share/wallpapers/Air/contents/images/1920x1200.jpg
-share/wallpapers/Air/contents/screenshot.png
-share/wallpapers/Air/metadata.desktop
-share/wallpapers/Autumn/contents/images/1280x1024.jpg
-share/wallpapers/Autumn/contents/images/1600x1200.jpg
-share/wallpapers/Autumn/contents/images/1920x1080.jpg
-share/wallpapers/Autumn/contents/images/1920x1200.jpg
-share/wallpapers/Autumn/contents/screenshot.png
-share/wallpapers/Autumn/metadata.desktop
-share/wallpapers/Blue_Wood/contents/images/1280x1024.jpg
-share/wallpapers/Blue_Wood/contents/images/1600x1200.jpg
-share/wallpapers/Blue_Wood/contents/images/1920x1080.jpg
-share/wallpapers/Blue_Wood/contents/images/1920x1200.jpg
-share/wallpapers/Blue_Wood/contents/screenshot.png
-share/wallpapers/Blue_Wood/metadata.desktop
-share/wallpapers/Evening/contents/images/1280x1024.jpg
-share/wallpapers/Evening/contents/images/1600x1200.jpg
-share/wallpapers/Evening/contents/images/1920x1080.jpg
-share/wallpapers/Evening/contents/images/1920x1200.jpg
-share/wallpapers/Evening/contents/screnshot.jpg
-share/wallpapers/Evening/metadata.desktop
-share/wallpapers/Fields_of_Peace/contents/images/1280x1024.JPG
-share/wallpapers/Fields_of_Peace/contents/images/1600x1200.JPG
-share/wallpapers/Fields_of_Peace/contents/images/1920x1200.JPG
-share/wallpapers/Fields_of_Peace/contents/screenshot.png
-share/wallpapers/Fields_of_Peace/metadata.desktop
-share/wallpapers/Finally_Summer_in_Germany/contents/images/1280x1024.jpg
-share/wallpapers/Finally_Summer_in_Germany/contents/images/1600x1200.jpg
-share/wallpapers/Finally_Summer_in_Germany/contents/images/1920x1200.jpg
-share/wallpapers/Finally_Summer_in_Germany/contents/screenshot.png
-share/wallpapers/Finally_Summer_in_Germany/metadata.desktop
-share/wallpapers/Fresh_Morning/contents/images/1280x1024.jpg
-share/wallpapers/Fresh_Morning/contents/images/1600x1200.jpg
-share/wallpapers/Fresh_Morning/contents/images/1920x1200.jpg
-share/wallpapers/Fresh_Morning/contents/screenshot.png
-share/wallpapers/Fresh_Morning/metadata.desktop
-share/wallpapers/Grass/contents/images/1280x1024.jpg
-share/wallpapers/Grass/contents/images/1600x1200.jpg
-share/wallpapers/Grass/contents/images/1920x1080.jpg
-share/wallpapers/Grass/contents/images/1920x1200.jpg
-share/wallpapers/Grass/contents/screenshot.png
-share/wallpapers/Grass/metadata.desktop
-share/wallpapers/Hanami/contents/images/1280x1024.jpg
-share/wallpapers/Hanami/contents/images/1600x1200.jpg
-share/wallpapers/Hanami/contents/images/1920x1080.jpg
-share/wallpapers/Hanami/contents/images/1920x1200.jpg
-share/wallpapers/Hanami/contents/screenshot.png
-share/wallpapers/Hanami/metadata.desktop
-share/wallpapers/Horos/contents/images/1280x1024.png
-share/wallpapers/Horos/contents/images/1600x1200.png
-share/wallpapers/Horos/contents/images/1920x1080.png
-share/wallpapers/Horos/contents/images/1920x1200.png
-share/wallpapers/Horos/contents/screenshot.png
-share/wallpapers/Horos/metadata.desktop
-share/wallpapers/Media_Life/contents/images/1280x1024.jpg
-share/wallpapers/Media_Life/contents/images/1280x800.jpg
-share/wallpapers/Media_Life/contents/images/1440x900.jpg
-share/wallpapers/Media_Life/contents/images/1480x925.jpg
-share/wallpapers/Media_Life/contents/images/1600x1200.jpg
-share/wallpapers/Media_Life/contents/images/1680x1050.jpg
-share/wallpapers/Media_Life/contents/images/1920x1200.jpg
-share/wallpapers/Media_Life/contents/screenshot.png
-share/wallpapers/Media_Life/metadata.desktop
-share/wallpapers/Plasmalicious/contents/images/1280x1024.jpg
-share/wallpapers/Plasmalicious/contents/images/1600x1200.jpg
-share/wallpapers/Plasmalicious/contents/images/1920x1200.jpg
-share/wallpapers/Plasmalicious/contents/screenshot.png
-share/wallpapers/Plasmalicious/metadata.desktop
-share/wallpapers/Quadros/contents/images/1024x768.jpg
-share/wallpapers/Quadros/contents/images/1280x1024.jpg
-share/wallpapers/Quadros/contents/images/1280x800.jpg
-share/wallpapers/Quadros/contents/images/1440x900.jpg
-share/wallpapers/Quadros/contents/images/1600x1200.jpg
-share/wallpapers/Quadros/contents/images/1920x1080.jpg
-share/wallpapers/Quadros/contents/images/1920x1200.jpg
-share/wallpapers/Quadros/contents/images/800x600.jpg
-share/wallpapers/Quadros/contents/screenshot.png
-share/wallpapers/Quadros/metadata.desktop
-share/wallpapers/Red_Leaf/contents/images/1280x1024.jpg
-share/wallpapers/Red_Leaf/contents/images/1600x1200.jpg
-share/wallpapers/Red_Leaf/contents/images/1920x1200.jpg
-share/wallpapers/Red_Leaf/contents/screenshot.png
-share/wallpapers/Red_Leaf/metadata.desktop
 share/wallpapers/stripes-freebsd-blue/contents/images/1024x768.jpg
 share/wallpapers/stripes-freebsd-blue/contents/images/1280x1024.jpg
 share/wallpapers/stripes-freebsd-blue/contents/images/1280x800.jpg
@@ -2309,51 +2229,6 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/wallpapers/stripes-freebsd-blue/contents/images
 @dirrm share/wallpapers/stripes-freebsd-blue/contents
 @dirrm share/wallpapers/stripes-freebsd-blue
-@dirrm share/wallpapers/Red_Leaf/contents/images
-@dirrm share/wallpapers/Red_Leaf/contents
-@dirrm share/wallpapers/Red_Leaf
-@dirrm share/wallpapers/Quadros/contents/images
-@dirrm share/wallpapers/Quadros/contents
-@dirrm share/wallpapers/Quadros
-@dirrm share/wallpapers/Plasmalicious/contents/images
-@dirrm share/wallpapers/Plasmalicious/contents
-@dirrm share/wallpapers/Plasmalicious
-@dirrmtry share/wallpapers/Media_Life/contents/images
-@dirrmtry share/wallpapers/Media_Life/contents
-@dirrmtry share/wallpapers/Media_Life
-@dirrmtry share/wallpapers/Horos/contents/images
-@dirrmtry share/wallpapers/Horos/contents
-@dirrmtry share/wallpapers/Horos
-@dirrmtry share/wallpapers/Hanami/contents/images
-@dirrmtry share/wallpapers/Hanami/contents
-@dirrmtry share/wallpapers/Hanami
-@dirrmtry share/wallpapers/Grass/contents/images
-@dirrmtry share/wallpapers/Grass/contents
-@dirrmtry share/wallpapers/Grass
-@dirrm share/wallpapers/Fresh_Morning/contents/images
-@dirrm share/wallpapers/Fresh_Morning/contents
-@dirrm share/wallpapers/Fresh_Morning
-@dirrm share/wallpapers/Finally_Summer_in_Germany/contents/images
-@dirrm share/wallpapers/Finally_Summer_in_Germany/contents
-@dirrm share/wallpapers/Finally_Summer_in_Germany
-@dirrm share/wallpapers/Fields_of_Peace/contents/images
-@dirrm share/wallpapers/Fields_of_Peace/contents
-@dirrm share/wallpapers/Fields_of_Peace
-@dirrm share/wallpapers/Evening/contents/images
-@dirrm share/wallpapers/Evening/contents
-@dirrm share/wallpapers/Evening
-@dirrmtry share/wallpapers/Blue_Wood/contents/images
-@dirrmtry share/wallpapers/Blue_Wood/contents
-@dirrmtry share/wallpapers/Blue_Wood
-@dirrmtry share/wallpapers/Autumn/contents/images
-@dirrmtry share/wallpapers/Autumn/contents
-@dirrmtry share/wallpapers/Autumn
-@dirrm share/wallpapers/Air/contents/images
-@dirrm share/wallpapers/Air/contents
-@dirrm share/wallpapers/Air
-@dirrm share/wallpapers/Aghi/contents/images
-@dirrm share/wallpapers/Aghi/contents
-@dirrm share/wallpapers/Aghi
 @dirrm share/kde4/services/solidbackends
 @dirrm share/kde4/services/kwin
 @dirrm share/icons/Oxygen_Zion_Big/cursors
@@ -2439,9 +2314,15 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/shareprovider/pastebincom/contents/code
 @dirrm share/apps/plasma/shareprovider/pastebincom/contents
 @dirrm share/apps/plasma/shareprovider/pastebincom
+@dirrm share/apps/plasma/shareprovider/kde/contents/code
+@dirrm share/apps/plasma/shareprovider/kde/contents
+@dirrm share/apps/plasma/shareprovider/kde
 @dirrm share/apps/plasma/shareprovider/imgur/contents/code
 @dirrm share/apps/plasma/shareprovider/imgur/contents
 @dirrm share/apps/plasma/shareprovider/imgur
+@dirrm share/apps/plasma/shareprovider/imgsusepasteorg/contents/code
+@dirrm share/apps/plasma/shareprovider/imgsusepasteorg/contents
+@dirrm share/apps/plasma/shareprovider/imgsusepasteorg
 @dirrmtry share/apps/plasma/shareprovider
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal
@@ -2453,8 +2334,12 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.photoActivity
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.findWidgets/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.findWidgets
+@dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.desktopIcons/contents
+@dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.desktopIcons
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel
+@dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/contents
+@dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL
 @dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper
 @dirrm share/apps/plasma/layout-templates
@@ -2531,6 +2416,8 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmsolidactions
 @dirrm share/apps/kcmkeys
+@dirrm share/apps/kcmkeyboard/pics
+@dirrm share/apps/kcmkeyboard
 @dirrm share/apps/kcminput/pics
 @dirrm share/apps/kcminput
 @dirrm share/apps/kaccess
@@ -2543,6 +2430,7 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/desktoptheme/air-netbook
 @dirrm lib/kde4/plugins/gui_platform
 @dirrm lib/cmake/KDE4Workspace
+@dirrmtry lib/cmake
 @dirrm include/taskmanager
 @dirrm include/systemsettingsview
 @dirrm include/solid/control/ifaces

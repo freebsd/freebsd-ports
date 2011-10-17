@@ -95,8 +95,6 @@ share/locale/ar/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ar/LC_MESSAGES/katefiletemplates.mo
 share/locale/ar/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/ar/LC_MESSAGES/katehelloworld.mo
-share/locale/ar/LC_MESSAGES/kateinsertcommand.mo
-share/locale/ar/LC_MESSAGES/katekjswrapper.mo
 share/locale/ar/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ar/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ar/LC_MESSAGES/kateopenheader.mo
@@ -343,6 +341,7 @@ share/locale/ar/LC_MESSAGES/krunner.mo
 share/locale/ar/LC_MESSAGES/ksaneplugin.mo
 share/locale/ar/LC_MESSAGES/kscd.mo
 share/locale/ar/LC_MESSAGES/kscreensaver.mo
+share/locale/ar/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ar/LC_MESSAGES/kshisen.mo
 share/locale/ar/LC_MESSAGES/kshorturifilter.mo
 share/locale/ar/LC_MESSAGES/ksirk.mo
@@ -365,7 +364,6 @@ share/locale/ar/LC_MESSAGES/ksystraycmd.mo
 share/locale/ar/LC_MESSAGES/kteatime.mo
 share/locale/ar/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/ar/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/ar/LC_MESSAGES/kthememanager.mo
 share/locale/ar/LC_MESSAGES/ktimer.mo
 share/locale/ar/LC_MESSAGES/ktimetracker.mo
 share/locale/ar/LC_MESSAGES/ktouch.mo
@@ -384,7 +382,6 @@ share/locale/ar/LC_MESSAGES/kwin.mo
 share/locale/ar/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ar/LC_MESSAGES/kwin_clients.mo
 share/locale/ar/LC_MESSAGES/kwin_effects.mo
-share/locale/ar/LC_MESSAGES/kwin_lib.mo
 share/locale/ar/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
 share/locale/ar/LC_MESSAGES/kwrite.mo
@@ -399,6 +396,7 @@ share/locale/ar/LC_MESSAGES/libkcal.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ar/LC_MESSAGES/libkdcraw.mo
+share/locale/ar/LC_MESSAGES/libkdecorations.mo
 share/locale/ar/LC_MESSAGES/libkdeedu.mo
 share/locale/ar/LC_MESSAGES/libkdegames.mo
 share/locale/ar/LC_MESSAGES/libkdepim.mo
@@ -466,7 +464,6 @@ share/locale/ar/LC_MESSAGES/okular_poppler.mo
 share/locale/ar/LC_MESSAGES/okular_tiff.mo
 share/locale/ar/LC_MESSAGES/okular_xps.mo
 share/locale/ar/LC_MESSAGES/parley.mo
-share/locale/ar/LC_MESSAGES/phonon-xine.mo
 share/locale/ar/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ar/LC_MESSAGES/phonon_kde.mo
 share/locale/ar/LC_MESSAGES/phononserver.mo

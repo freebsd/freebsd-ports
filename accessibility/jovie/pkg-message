@@ -1,11 +1,11 @@
 ======================================================================
 
-To enable Text-to-Speech System (KTTSD), you first need to start
+To enable text-to-speech system, you first need to start
 speech-dispatcher and Jovie (locally):
 
 $ speech-dispatcher
 $ jovie
 
-You may want to launch them via the KDE Autostart module.
+You may want to launch them via the KDE autostart module.
 
 ======================================================================

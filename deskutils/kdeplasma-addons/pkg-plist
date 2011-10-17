@@ -179,7 +179,7 @@ lib/kde4/plasma_potd_wcpotdprovider.so
 lib/kde4/plasma_runner_datetime.so
 lib/kde4/plasma_runner_events.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
-lib/kde4/plasma_wallpaper_marble.so
+%%MARBLE%%lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
@@ -211,6 +211,19 @@ share/apps/bball/bounce.ogg
 share/apps/bball/football.svgz
 share/apps/cmake/modules/FindLancelot-Datamodels.cmake
 share/apps/cmake/modules/FindLancelot.cmake
+share/apps/desktoptheme/Androbit/lancelot/action-list-view-headers.svgz
+share/apps/desktoptheme/Androbit/lancelot/category-triangle.svgz
+share/apps/desktoptheme/Androbit/lancelot/inner-background.svgz
+share/apps/desktoptheme/Androbit/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/Androbit/lancelot/lancelot-context.svgz
+share/apps/desktoptheme/Androbit/lancelot/passageway-view-buttons-extender.svgz
+share/apps/desktoptheme/Androbit/lancelot/passageway-view-buttons.svgz
+share/apps/desktoptheme/Androbit/lancelot/passageway-view-inactivebuttons.svgz
+share/apps/desktoptheme/Androbit/lancelot/passageway-view-spacer.svgz
+share/apps/desktoptheme/Androbit/lancelot/section-buttons.svgz
+share/apps/desktoptheme/Androbit/lancelot/system-buttons-extender.svgz
+share/apps/desktoptheme/Androbit/lancelot/system-buttons.svgz
+share/apps/desktoptheme/Androbit/lancelot/theme.config
 share/apps/desktoptheme/Aya/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/Aya/lancelot/category-triangle.svgz
 share/apps/desktoptheme/Aya/lancelot/inner-background.svgz
@@ -222,6 +235,32 @@ share/apps/desktoptheme/Aya/lancelot/section-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/theme.config
+share/apps/desktoptheme/Produkt/lancelot/action-list-view-headers.svgz
+share/apps/desktoptheme/Produkt/lancelot/category-triangle.svgz
+share/apps/desktoptheme/Produkt/lancelot/inner-background.svgz
+share/apps/desktoptheme/Produkt/lancelot/lancelot-context-extender.svgz
+share/apps/desktoptheme/Produkt/lancelot/lancelot-context.svgz
+share/apps/desktoptheme/Produkt/lancelot/passageway-view-buttons-extender.svgz
+share/apps/desktoptheme/Produkt/lancelot/passageway-view-buttons.svgz
+share/apps/desktoptheme/Produkt/lancelot/passageway-view-inactivebuttons.svgz
+share/apps/desktoptheme/Produkt/lancelot/passageway-view-spacer.svgz
+share/apps/desktoptheme/Produkt/lancelot/section-buttons.svgz
+share/apps/desktoptheme/Produkt/lancelot/system-buttons-extender.svgz
+share/apps/desktoptheme/Produkt/lancelot/system-buttons.svgz
+share/apps/desktoptheme/Produkt/lancelot/theme.config
+share/apps/desktoptheme/Tibanna/lancelot/action-list-view-drop-indicator.svgz
+share/apps/desktoptheme/Tibanna/lancelot/action-list-view-headers.svgz
+share/apps/desktoptheme/Tibanna/lancelot/category-triangle.svgz
+share/apps/desktoptheme/Tibanna/lancelot/extender-button-icon.svgz
+share/apps/desktoptheme/Tibanna/lancelot/inner-background.svgz
+share/apps/desktoptheme/Tibanna/lancelot/passageway-view-buttons-extender.svgz
+share/apps/desktoptheme/Tibanna/lancelot/passageway-view-buttons.svgz
+share/apps/desktoptheme/Tibanna/lancelot/passageway-view-inactivebuttons.svgz
+share/apps/desktoptheme/Tibanna/lancelot/passageway-view-spacer.svgz
+share/apps/desktoptheme/Tibanna/lancelot/section-buttons.svgz
+share/apps/desktoptheme/Tibanna/lancelot/system-buttons-extender.svgz
+share/apps/desktoptheme/Tibanna/lancelot/system-buttons.svgz
+share/apps/desktoptheme/Tibanna/lancelot/theme.config
 share/apps/desktoptheme/default/bubblemon/bubble.svg
 share/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
 share/apps/desktoptheme/default/lancelot/action-list-view-drop-indicator.svgz
@@ -249,6 +288,7 @@ share/apps/desktoptheme/default/widgets/eyes.svg
 share/apps/desktoptheme/default/widgets/luna.svgz
 share/apps/desktoptheme/default/widgets/microblog.svgz
 share/apps/desktoptheme/default/widgets/notes.svgz
+share/apps/desktoptheme/default/widgets/nowplaying/nocover.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
@@ -479,7 +519,7 @@ share/kde4/services/plasma-runner-techbase.desktop
 share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
-share/kde4/services/plasma-wallpaper-marble.desktop
+%%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
@@ -503,6 +543,7 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrmtry share/apps/desktoptheme/slim-glow
 @dirrm share/apps/desktoptheme/oxygen/lancelot
 @dirrmtry share/apps/desktoptheme/oxygen
+@dirrm share/apps/desktoptheme/default/widgets/nowplaying
 @dirrm share/apps/desktoptheme/default/weatherstation
 @dirrm share/apps/desktoptheme/default/weather
 @dirrm share/apps/desktoptheme/default/stylesheets
@@ -510,9 +551,15 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/desktoptheme/default/lancelot
 @dirrm share/apps/desktoptheme/default/fifteenPuzzle
 @dirrm share/apps/desktoptheme/default/bubblemon
+@dirrm share/apps/desktoptheme/Tibanna/lancelot
+@dirrmtry share/apps/desktoptheme/Tibanna
+@dirrm share/apps/desktoptheme/Produkt/lancelot
+@dirrmtry share/apps/desktoptheme/Produkt
 @dirrmtry share/apps/desktoptheme/Clean-Bend
 @dirrm share/apps/desktoptheme/Aya/lancelot
 @dirrmtry share/apps/desktoptheme/Aya
+@dirrm share/apps/desktoptheme/Androbit/lancelot
+@dirrmtry share/apps/desktoptheme/Androbit
 @dirrmtry share/apps/cmake/modules
 @dirrmtry share/apps/cmake
 @dirrm share/apps/bball

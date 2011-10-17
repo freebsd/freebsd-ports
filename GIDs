@@ -80,6 +80,7 @@ dovecot:*:143:
 dovenull:*:144:
 webcamd:*:145:
 ventrilo:*:146:
+kdm:*:147:
 rbldns:*:153:
 trircd:*:154:
 sfs:*:171:

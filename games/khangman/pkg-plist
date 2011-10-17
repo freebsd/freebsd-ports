@@ -1,0 +1,39 @@
+bin/khangman
+share/applications/kde4/khangman.desktop
+share/apps/khangman/fonts/Domestic_Manners.ttf
+share/apps/khangman/fonts/Dustismo_Roman.ttf
+share/apps/khangman/khangmanui.rc
+share/apps/khangman/pics/desert/khangman_desert.svg
+share/apps/khangman/pics/sea/khangman_sea.svg
+share/apps/khangman/pics/standardthemes.xml
+share/apps/khangman/sounds/EW_Dialogue_Appear.ogg
+share/apps/khangman/sounds/new_game.ogg
+share/config.kcfg/khangman.kcfg
+share/config/khangman.knsrc
+share/doc/HTML/en/khangman/application-exit.png
+share/doc/HTML/en/khangman/common
+share/doc/HTML/en/khangman/document-new.png
+share/doc/HTML/en/khangman/games-hint.png
+share/doc/HTML/en/khangman/getnewstuff.png
+share/doc/HTML/en/khangman/index.cache.bz2
+share/doc/HTML/en/khangman/index.docbook
+share/doc/HTML/en/khangman/khangman-desert.png
+share/doc/HTML/en/khangman/khangman-main.png
+share/doc/HTML/en/khangman/man-khangman.6.docbook
+share/doc/HTML/en/khangman/settings-general.png
+share/doc/HTML/en/khangman/settings-languages.png
+share/doc/HTML/en/khangman/settings-timers.png
+share/icons/hicolor/128x128/apps/khangman.png
+share/icons/hicolor/16x16/apps/khangman.png
+share/icons/hicolor/22x22/apps/khangman.png
+share/icons/hicolor/32x32/apps/khangman.png
+share/icons/hicolor/48x48/apps/khangman.png
+share/icons/hicolor/64x64/apps/khangman.png
+share/icons/hicolor/scalable/apps/khangman.svgz
+@dirrm share/doc/HTML/en/khangman
+@dirrm share/apps/khangman/sounds
+@dirrm share/apps/khangman/pics/sea
+@dirrm share/apps/khangman/pics/desert
+@dirrm share/apps/khangman/pics
+@dirrm share/apps/khangman/fonts
+@dirrm share/apps/khangman

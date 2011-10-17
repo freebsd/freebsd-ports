@@ -1,1 +1,1 @@
-MAN1=	kbookmarkmerger.1
+MAN1=	kbookmarkmerger.1 plasmaengineexplorer.1 plasmapkg.1 plasmoidviewer.1

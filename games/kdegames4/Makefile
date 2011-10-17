@@ -6,14 +6,13 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Games for the KDE integrated X11 desktop
+COMMENT=	Games for KDE 4
 
 LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 		qca.2:${PORTSDIR}/devel/qca \
@@ -22,24 +21,35 @@ LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_OPENAL=	al
-USE_PYTHON=	yes
-USE_TWISTED_RUN=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 pykde4 sharedmime
+USE_KDE4=	kdehier kdelibs kdeprefix sharedmime automoc4
 KDE4_BUILDENV=	yes
+USE_OPENAL=	al
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui svg iconengines multimedia pixeltool \
-		qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	dbus gui network opengl qt3support script svg xml \
+		moc_build qmake_build rcc_build uic_build
+USE_BZIP2=	yes
+CMAKE_ARGS+=	-DBUILD_kajongg:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
-CMAKE_ARGS+=	-DINSTALL_KAJONGG=TRUE
 
-OPTIONS=	FREEBSD "Install FreeBSD card deck" off
+OPTIONS=	FREEBSD "Install FreeBSD card deck" off \
+		KAJONGG "Install the classical Mah Jongg for four players" off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_FREEBSD)
 RUN_DEPENDS+=	kde4-freebsd-carddeck>=1.0:${PORTSDIR}/games/freebsd-carddeck-kde4
 .endif
+
+.if defined(WITH_KAJONGG)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kajongg:${PORTSDIR}/games/kajongg
+.endif
+
+post-patch:
+	# Prevent updating MIME during build.
+	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
+		${WRKSRC}/palapeli/mime/CMakeLists.txt
+
+post-install:
+	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
 .include <bsd.port.mk>

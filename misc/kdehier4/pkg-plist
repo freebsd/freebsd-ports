@@ -5,14 +5,16 @@
 %%MTREE%%etc/dbus-1/system-kde4.conf
 %%MTREE%%@dirrmtry etc/dbus-1
 %%MTREE%%@cwd %%KDE4_PREFIX%%
+%%MTREE%%etc/pam.d
+%%MTREE%%etc/rc.d
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
+%%MTREE%%share/dbus-1/services
+%%MTREE%%share/dbus-1/system-services
 %%MTREE%%share/polkit-1/actions
 %%MTREE%%@exec mkdir -p %D/bin
 %%MTREE%%@exec mkdir -p %D/etc
-%%MTREE%%@exec mkdir -p %D/etc/pam.d
-%%MTREE%%@exec mkdir -p %D/etc/rc.d
 %%MTREE%%@exec mkdir -p %D/include
 %%MTREE%%@exec mkdir -p %D/include/X11
 %%MTREE%%@exec mkdir -p %D/info
@@ -533,8 +535,6 @@
 @exec mkdir -p %D/share/config.kcfg
 @exec mkdir -p %D/share/dbus-1
 @exec mkdir -p %D/share/dbus-1/interfaces
-@exec mkdir -p %D/share/dbus-1/services
-@exec mkdir -p %D/share/dbus-1/system-services
 @exec mkdir -p %D/share/doc/HTML
 @exec mkdir -p %D/share/doc/HTML/bg
 @exec mkdir -p %D/share/doc/HTML/ca
@@ -1114,6 +1114,8 @@
 @exec mkdir -p %D/share/locale/sr@ijekavianlatin/LC_MESSAGES
 @exec mkdir -p %D/share/locale/sr@latin
 @exec mkdir -p %D/share/locale/sr@latin/LC_MESSAGES
+@exec mkdir -p %D/share/locale/ug
+@exec mkdir -p %D/share/locale/ug/LC_MESSAGES
 @exec mkdir -p %D/share/locale/uz@cyrillic
 @exec mkdir -p %D/share/locale/uz@cyrillic/LC_MESSAGES
 @exec mkdir -p %D/share/locale/xh
@@ -1140,6 +1142,8 @@
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
@@ -1719,8 +1723,6 @@
 @dirrmtry share/doc/HTML/ca
 @dirrmtry share/doc/HTML/bg
 @dirrmtry share/doc/HTML
-@dirrmtry share/dbus-1/system-services
-@dirrmtry share/dbus-1/services
 @dirrmtry share/dbus-1/interfaces
 @dirrmtry share/dbus-1
 @dirrmtry share/config.kcfg
@@ -2241,8 +2243,6 @@
 %%MTREE%%@dirrm info
 %%MTREE%%@dirrm include/X11
 %%MTREE%%@dirrm include
-%%MTREE%%@dirrm etc/rc.d
-%%MTREE%%@dirrm etc/pam.d
 %%MTREE%%@dirrm etc
 %%MTREE%%@dirrm bin
 %%MTREE%%@exec echo %D/lib > %%LOCALBASE%%/%%LDCONFIG_DIR%%/kdehier4

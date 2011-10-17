@@ -1204,7 +1204,6 @@ share/kde4/services/kresources/kabc/file.desktop
 share/kde4/services/kresources/kabc/ldapkio.desktop
 share/kde4/services/kresources/kabc/net.desktop
 share/kde4/services/kresources/kabc_manager.desktop
-share/kde4/services/kresources/kcal/local.desktop
 share/kde4/services/kresources/kcal/localdir.desktop
 share/kde4/services/kresources/kcal_manager.desktop
 share/kde4/services/ldap.protocol
@@ -1224,7 +1223,7 @@ share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/application/x-vnd.kde.contactgroup.xml
 share/mime/packages/kdepimlibs-mime.xml
 @dirrm share/kde4/services/akonadi/contact
-@dirrm share/kde4/services/akonadi
+@dirrmtry share/kde4/services/akonadi
 @dirrm share/doc/HTML/en/kioslave/smtp
 @dirrm share/doc/HTML/en/kioslave/sieve
 @dirrm share/doc/HTML/en/kioslave/pop3
@@ -1301,3 +1300,5 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/KDE/Akonadi/KCal
 @dirrm include/KDE/Akonadi/Contact
 @dirrm include/KDE/Akonadi
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

@@ -120,8 +120,6 @@ share/locale/tr/LC_MESSAGES/katefiletemplates.mo
 share/locale/tr/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/tr/LC_MESSAGES/kategdbplugin.mo
 share/locale/tr/LC_MESSAGES/katehelloworld.mo
-share/locale/tr/LC_MESSAGES/kateinsertcommand.mo
-share/locale/tr/LC_MESSAGES/katekjswrapper.mo
 share/locale/tr/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/tr/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/tr/LC_MESSAGES/kateopenheader.mo
@@ -397,6 +395,7 @@ share/locale/tr/LC_MESSAGES/ksaneplugin.mo
 share/locale/tr/LC_MESSAGES/kscd.mo
 share/locale/tr/LC_MESSAGES/kscreensaver.mo
 share/locale/tr/LC_MESSAGES/ksendemail.mo
+share/locale/tr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tr/LC_MESSAGES/kshisen.mo
 share/locale/tr/LC_MESSAGES/kshorturifilter.mo
 share/locale/tr/LC_MESSAGES/ksirk.mo
@@ -422,7 +421,6 @@ share/locale/tr/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/tr/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/tr/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/tr/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/tr/LC_MESSAGES/kthememanager.mo
 share/locale/tr/LC_MESSAGES/ktimer.mo
 share/locale/tr/LC_MESSAGES/ktimetracker.mo
 share/locale/tr/LC_MESSAGES/ktouch.mo
@@ -443,7 +441,7 @@ share/locale/tr/LC_MESSAGES/kwin.mo
 share/locale/tr/LC_MESSAGES/kwin_art_clients.mo
 share/locale/tr/LC_MESSAGES/kwin_clients.mo
 share/locale/tr/LC_MESSAGES/kwin_effects.mo
-share/locale/tr/LC_MESSAGES/kwin_lib.mo
+share/locale/tr/LC_MESSAGES/kwinshutdown.mo
 share/locale/tr/LC_MESSAGES/kwinstartmenu.mo
 share/locale/tr/LC_MESSAGES/kwordquiz.mo
 share/locale/tr/LC_MESSAGES/kwrite.mo
@@ -463,6 +461,7 @@ share/locale/tr/LC_MESSAGES/libkcalutils.mo
 share/locale/tr/LC_MESSAGES/libkcddb.mo
 share/locale/tr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/tr/LC_MESSAGES/libkdcraw.mo
+share/locale/tr/LC_MESSAGES/libkdecorations.mo
 share/locale/tr/LC_MESSAGES/libkdeedu.mo
 share/locale/tr/LC_MESSAGES/libkdegames.mo
 share/locale/tr/LC_MESSAGES/libkdepim.mo
@@ -548,7 +547,6 @@ share/locale/tr/LC_MESSAGES/okular_tiff.mo
 share/locale/tr/LC_MESSAGES/okular_xps.mo
 share/locale/tr/LC_MESSAGES/palapeli.mo
 share/locale/tr/LC_MESSAGES/parley.mo
-share/locale/tr/LC_MESSAGES/phonon-xine.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
 share/locale/tr/LC_MESSAGES/phononserver.mo
@@ -656,6 +654,7 @@ share/locale/tr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/tr/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/tr/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_browserhistory.mo

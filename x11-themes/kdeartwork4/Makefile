@@ -14,24 +14,26 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
 
+LIB_DEPENDS=	kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4
+
 BUILD_DEPENDS=	eigen>=2.0.b1:${PORTSDIR}/math/eigen2
 
-CONFLICTS=	kdebase-workspace-4.5.[0-5]
+CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.5.[0-5]
 
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui svg qt3support \
-		qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	gui opengl \
+		moc_build qmake_build rcc_build uic_build
+USE_XORG=	x11 xt
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	GNOME "Use Gnome screensavers" off \
-		KDEGRAPHICS "Rotate photos with exif data" off
+OPTIONS=	GNOME "Use Gnome screensavers" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GNOME)
 BUILD_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
@@ -39,12 +41,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${
 .else
 BUILD_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
-.endif
-
-.if defined(WITH_KDEGRAPHICS)
-LIB_DEPENDS+=	kexiv2:${PORTSDIR}/graphics/kdegraphics4
-.else
-CMAKE_ARGS+=	-DWITH_Kexiv2:bool=off
 .endif
 
 post-patch:
@@ -79,4 +75,4 @@ post-patch:
 	    ${PATCH_WRKSRC}/${item}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

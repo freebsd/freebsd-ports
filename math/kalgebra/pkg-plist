@@ -1,0 +1,40 @@
+%%READLINE%%bin/calgebra
+bin/kalgebra
+bin/kalgebramobile
+lib/kde4/plasma_applet_kalgebra.so
+lib/libanalitza.so
+lib/libanalitza.so.5
+lib/libanalitza.so.5.0.1
+lib/libanalitzagui.so
+lib/libanalitzagui.so.5
+lib/libanalitzagui.so.5.0.1
+share/applications/kde4/kalgebra.desktop
+share/applications/kde4/kalgebramobile.desktop
+share/apps/kalgebra/scripts/console/console.js
+share/apps/kalgebra/scripts/console/kalgebraconsole.desktop
+share/apps/kalgebra/scripts/plot2d/kalgebraplot2d.desktop
+share/apps/kalgebra/scripts/plot2d/plot2d.js
+share/apps/kalgebra/scripts/tables/kalgebratables.desktop
+share/apps/kalgebra/scripts/tables/tables.js
+share/apps/kalgebra/scripts/variables/kalgebravariables.desktop
+share/apps/kalgebra/scripts/variables/variables.js
+share/apps/katepart/syntax/kalgebra.xml
+share/doc/HTML/en/kalgebra/commands.docbook
+share/doc/HTML/en/kalgebra/common
+share/doc/HTML/en/kalgebra/index.cache.bz2
+share/doc/HTML/en/kalgebra/index.docbook
+share/doc/HTML/en/kalgebra/kalgebra-main-window.png
+share/icons/hicolor/128x128/apps/kalgebra.png
+share/icons/hicolor/16x16/apps/kalgebra.png
+share/icons/hicolor/32x32/apps/kalgebra.png
+share/icons/hicolor/48x48/apps/kalgebra.png
+share/icons/hicolor/64x64/apps/kalgebra.png
+share/kde4/services/kalgebraplasmoid.desktop
+share/kde4/servicetypes/kalgebrascript.desktop
+@dirrm share/doc/HTML/en/kalgebra
+@dirrm share/apps/kalgebra/scripts/variables
+@dirrm share/apps/kalgebra/scripts/tables
+@dirrm share/apps/kalgebra/scripts/plot2d
+@dirrm share/apps/kalgebra/scripts/console
+@dirrm share/apps/kalgebra/scripts
+@dirrm share/apps/kalgebra

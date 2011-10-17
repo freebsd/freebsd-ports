@@ -1,0 +1,36 @@
+bin/smokeapi
+bin/smokegen
+include/smoke.h
+include/smokegen/generator_export.h
+include/smokegen/generatorenvironment.h
+include/smokegen/generatorpreprocessor.h
+include/smokegen/generatorvisitor.h
+include/smokegen/name_compiler.h
+include/smokegen/options.h
+include/smokegen/type.h
+include/smokegen/type_compiler.h
+lib/cmake/smoke/SmokeConfig.cmake
+lib/cmake/smoke/SmokeVersionConfig.cmake
+lib/libcppparser.so
+lib/libsmokebase.so
+lib/libsmokebase.so.3
+lib/libsmokebase.so.3.0.0
+lib/smokegen/generator_dump.so
+lib/smokegen/generator_smoke.so
+share/smoke/cmake/FindLibraryWithDebug.cmake
+share/smoke/cmake/FindPhonon.cmake
+share/smoke/cmake/FindQImageBlitz.cmake
+share/smoke/cmake/FindQScintilla.cmake
+share/smoke/cmake/FindQwt5.cmake
+share/smoke/cmake/HandleImportedTargetsInCMakeRequiredLibraries.cmake
+share/smoke/cmake/MacroLogFeature.cmake
+share/smoke/cmake/MacroOptionalAddBindings.cmake
+share/smoke/cmake/MacroOptionalFindPackage.cmake
+share/smokegen/string.h
+@dirrmtry share/smokegen
+@dirrm share/smoke/cmake
+@dirrm share/smoke
+@dirrm lib/smokegen
+@dirrm lib/cmake/smoke
+@dirrmtry lib/cmake
+@dirrm include/smokegen

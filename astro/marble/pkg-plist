@@ -9,6 +9,7 @@ include/marble/AbstractFloatItem.h
 include/marble/AbstractMarbleGraphicsLayout.h
 include/marble/AbstractProjection.h
 include/marble/AbstractWorkerThread.h
+include/marble/BookmarkManager.h
 include/marble/ClipPainter.h
 include/marble/CurrentLocationWidget.h
 include/marble/DownloadRegionDialog.h
@@ -54,16 +55,17 @@ include/marble/LayerInterface.h
 include/marble/LegendWidget.h
 include/marble/MapThemeManager.h
 include/marble/MapViewWidget.h
+include/marble/MapWizard.h
 include/marble/MarbleAboutDialog.h
 include/marble/MarbleAbstractRunner.h
 include/marble/MarbleControlBox.h
-include/marble/MarbleDataFacade.h
 include/marble/MarbleDirs.h
 include/marble/MarbleGraphicsGridLayout.h
 include/marble/MarbleGraphicsItem.h
 include/marble/MarbleMap.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
+include/marble/MarbleRunnerManager.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MercatorProjection.h
@@ -99,16 +101,19 @@ lib/kde4/plasma_applet_worldclock.so
 lib/kde4/plugins/marble/AprsPlugin.so
 lib/kde4/plugins/marble/CompassFloatItem.so
 lib/kde4/plugins/marble/CrosshairsPlugin.so
+lib/kde4/plugins/marble/EarthquakePlugin.so
 lib/kde4/plugins/marble/GosmorePlugin.so
-lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
+%%GPS%%lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
 lib/kde4/plugins/marble/GraticulePlugin.so
 lib/kde4/plugins/marble/HostipPlugin.so
 lib/kde4/plugins/marble/LatLonPlugin.so
 lib/kde4/plugins/marble/LocalDatabasePlugin.so
+lib/kde4/plugins/marble/LocalOsmSearchPlugin.so
 lib/kde4/plugins/marble/MapScaleFloatItem.so
 lib/kde4/plugins/marble/MonavPlugin.so
 lib/kde4/plugins/marble/NavigationFloatItem.so
 lib/kde4/plugins/marble/NominatimPlugin.so
+lib/kde4/plugins/marble/OpenDesktopPlugin.so
 lib/kde4/plugins/marble/OpenRouteServicePlugin.so
 lib/kde4/plugins/marble/OverviewMap.so
 lib/kde4/plugins/marble/Photo.so
@@ -124,13 +129,16 @@ lib/kde4/plugins/marble/YoursPlugin.so
 lib/kde4/plugins/marble/org/kde/edu/marble/libMarbleDeclarativePlugin.so
 lib/kde4/plugins/marble/org/kde/edu/marble/qmldir
 lib/libmarblewidget.so
-lib/libmarblewidget.so.0.11.0
-lib/libmarblewidget.so.11
+lib/libmarblewidget.so.0.12.0
+lib/libmarblewidget.so.12
 share/applications/kde4/marble.desktop
 share/apps/cmake/modules/FindMarble.cmake
 share/apps/marble/data/LICENSE.txt
+share/apps/marble/data/audio/KDE-Sys-App-Positive.ogg
+share/apps/marble/data/audio/KDE-Sys-List-End.ogg
 share/apps/marble/data/bitmaps/airport.png
 share/apps/marble/data/bitmaps/annotation.png
+share/apps/marble/data/bitmaps/bookmark.png
 share/apps/marble/data/bitmaps/border_1.png
 share/apps/marble/data/bitmaps/border_2.png
 share/apps/marble/data/bitmaps/city_1_orange.png
@@ -161,6 +169,7 @@ share/apps/marble/data/bitmaps/cursor_tl.xpm
 share/apps/marble/data/bitmaps/cursor_tr.xpm
 share/apps/marble/data/bitmaps/default_location.png
 share/apps/marble/data/bitmaps/earth_apollo.jpg
+share/apps/marble/data/bitmaps/folder.png
 share/apps/marble/data/bitmaps/hand.png
 share/apps/marble/data/bitmaps/lake.png
 share/apps/marble/data/bitmaps/manned_landing.png
@@ -170,6 +179,51 @@ share/apps/marble/data/bitmaps/observatory.png
 share/apps/marble/data/bitmaps/ocean.png
 share/apps/marble/data/bitmaps/osm.png
 share/apps/marble/data/bitmaps/other.png
+share/apps/marble/data/bitmaps/poi/accommodation_camping.p.16.png
+share/apps/marble/data/bitmaps/poi/accommodation_hostel.p.16.png
+share/apps/marble/data/bitmaps/poi/accommodation_hotel2.p.16.png
+share/apps/marble/data/bitmaps/poi/accommodation_motel.p.16.png
+share/apps/marble/data/bitmaps/poi/accommodation_youth_hostel.p.16.png
+share/apps/marble/data/bitmaps/poi/amenity_library.p.16.png
+share/apps/marble/data/bitmaps/poi/education_college.p.16.png
+share/apps/marble/data/bitmaps/poi/education_school.p.16.png
+share/apps/marble/data/bitmaps/poi/education_university.p.16.png
+share/apps/marble/data/bitmaps/poi/food_bar.p.16.png
+share/apps/marble/data/bitmaps/poi/food_biergarten.p.16.png
+share/apps/marble/data/bitmaps/poi/food_cafe.p.16.png
+share/apps/marble/data/bitmaps/poi/food_fastfood2.p.16.png
+share/apps/marble/data/bitmaps/poi/food_pub.p.16.png
+share/apps/marble/data/bitmaps/poi/food_restaurant.p.16.png
+share/apps/marble/data/bitmaps/poi/health_doctors2.p.16.png
+share/apps/marble/data/bitmaps/poi/health_hospital.p.16.png
+share/apps/marble/data/bitmaps/poi/health_pharmacy.p.16.png
+share/apps/marble/data/bitmaps/poi/money_atm2.p.16.png
+share/apps/marble/data/bitmaps/poi/money_bank2.p.16.png
+share/apps/marble/data/bitmaps/poi/shopping_alcohol.p.16.png
+share/apps/marble/data/bitmaps/poi/shopping_hifi.p.16.png
+share/apps/marble/data/bitmaps/poi/shopping_supermarket.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_attraction.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_castle2.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_cinema.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_monument.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_museum.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_ruin.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_theatre.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_theme_park.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_view_point.p.16.png
+share/apps/marble/data/bitmaps/poi/tourist_zoo.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_aerodrome.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_airport_terminal.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_bus_station.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_bus_stop.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_car_share.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_fuel.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_parking.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_rental_bicycle.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_rental_car.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_taxi_rank.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_train_station.p.16.png
+share/apps/marble/data/bitmaps/poi/transport_tram_stop.p.16.png
 share/apps/marble/data/bitmaps/pole_1.png
 share/apps/marble/data/bitmaps/pole_2.png
 share/apps/marble/data/bitmaps/river.png
@@ -462,6 +516,7 @@ share/apps/marble/data/maps/earth/citylights/legend/lightterrain.png
 share/apps/marble/data/maps/earth/citylights/legend/water.png
 share/apps/marble/data/maps/earth/clouds/0/000000/000000_000000.jpg
 share/apps/marble/data/maps/earth/clouds/0/000000/000000_000001.jpg
+share/apps/marble/data/maps/earth/hillshading/0/0/0.png
 share/apps/marble/data/maps/earth/openstreetmap/0/0/0.png
 share/apps/marble/data/maps/earth/openstreetmap/legend.html
 share/apps/marble/data/maps/earth/openstreetmap/legend/airportapron.png
@@ -700,7 +755,6 @@ share/apps/marble/data/mwdbii/RIVER.PNT
 share/apps/marble/data/placemarks/baseplacemarks.cache
 share/apps/marble/data/placemarks/boundaryplacemarks.cache
 share/apps/marble/data/placemarks/cityplacemarks.cache
-share/apps/marble/data/placemarks/cityplacemarks_large_population.cache
 share/apps/marble/data/placemarks/elevplacemarks.cache
 share/apps/marble/data/placemarks/moonlandingsites.cache
 share/apps/marble/data/placemarks/moonterrain.cache
@@ -711,7 +765,6 @@ share/apps/marble/data/stars/stars.dat
 share/apps/marble/data/svg/application-x-marble-gray.png
 share/apps/marble/data/svg/application-x-marble.png
 share/apps/marble/data/svg/application-x-marble.svg
-share/apps/marble/data/svg/compass.svg
 share/apps/marble/data/svg/coordinate.svg
 share/apps/marble/data/svg/lunarmap.svg
 share/apps/marble/data/svg/marble-logo-32dpi.png
@@ -721,6 +774,7 @@ share/apps/marble/data/svg/marble-logo-inverted-72dpi.png
 share/apps/marble/data/svg/marble-logo.png
 share/apps/marble/data/svg/marble-logo.svg
 share/apps/marble/data/svg/sunshine.png
+share/apps/marble/data/svg/track_turtle.svg
 share/apps/marble/data/svg/wikipedia.svg
 share/apps/marble/data/svg/wikipedia_shadow.svg
 share/apps/marble/data/svg/worldmap.svg
@@ -752,8 +806,8 @@ share/apps/marble/data/weather/weather-storm-night.png
 share/apps/marble/data/weather/weather-storm.png
 share/apps/marble/data/weather/wind-arrows.svgz
 share/apps/marble/marble.knsrc
+share/apps/marble/marble_part.rc
 share/apps/marble/marbleui.rc
-share/apps/marble_part/marble_part.rc
 share/config.kcfg/marble.kcfg
 share/doc/HTML/en/marble/common
 share/doc/HTML/en/marble/configure-cacheproxy.png
@@ -787,7 +841,6 @@ share/icons/hicolor/64x64/apps/marble.png
 share/kde4/services/marble_part.desktop
 share/kde4/services/plasma-applet-kworldclock.desktop
 @dirrm share/doc/HTML/en/marble
-@dirrm share/apps/marble_part
 @dirrm share/apps/marble/data/weather
 @dirrm share/apps/marble/data/svg
 @dirrm share/apps/marble/data/stars
@@ -826,6 +879,9 @@ share/kde4/services/plasma-applet-kworldclock.desktop
 @dirrm share/apps/marble/data/maps/earth/openstreetmap/0/0
 @dirrm share/apps/marble/data/maps/earth/openstreetmap/0
 @dirrm share/apps/marble/data/maps/earth/openstreetmap
+@dirrm share/apps/marble/data/maps/earth/hillshading/0/0
+@dirrm share/apps/marble/data/maps/earth/hillshading/0
+@dirrm share/apps/marble/data/maps/earth/hillshading
 @dirrm share/apps/marble/data/maps/earth/clouds/0/000000
 @dirrm share/apps/marble/data/maps/earth/clouds/0
 @dirrm share/apps/marble/data/maps/earth/clouds
@@ -837,7 +893,9 @@ share/kde4/services/plasma-applet-kworldclock.desktop
 @dirrm share/apps/marble/data/maps
 @dirrm share/apps/marble/data/licenses
 @dirrm share/apps/marble/data/flags
+@dirrm share/apps/marble/data/bitmaps/poi
 @dirrm share/apps/marble/data/bitmaps
+@dirrm share/apps/marble/data/audio
 @dirrm share/apps/marble/data
 @dirrm share/apps/marble
 @dirrm lib/kde4/plugins/marble/org/kde/edu/marble

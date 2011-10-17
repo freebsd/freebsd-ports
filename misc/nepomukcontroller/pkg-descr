@@ -1,9 +1,0 @@
-Nepomukcontroller is a small systray applet that allows you to
-suspend and resume the Nepomuk file indexer.
-
-The systray was removed from KDE 4.6 to be ported to a stand-alone
-app which was not finished before the feature freeze. Thus, this
-applet will be merged back into kdebase for KDE 4.7. In the meantime
-you can use it from here.
-
-WWW:	http://kde-apps.org/content/show.php?content=137088

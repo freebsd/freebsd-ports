@@ -87,6 +87,7 @@ dovecot:*:143:143::0:0:Dovecot User:/var/empty:/usr/sbin/nologin
 dovenull:*:144:144::0:0:Dovecot login User:/var/empty:/usr/sbin/nologin
 webcamd:*:145:145::0:0:Webcamd user:/var/empty:/usr/sbin/nologin
 ventrilo:*:146:146::0:0:& server:/usr/local/ventrilo-server:/usr/sbin/nologin
+kdm:*:147:147::0:0:KDE Display Manager:/nonexistent:/usr/sbin/nologin
 rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 trircd:*:154:154::0:0:& user:/usr/local/etc/tr-ircd:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin

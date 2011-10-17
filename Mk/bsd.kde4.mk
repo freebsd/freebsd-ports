@@ -29,7 +29,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #
 # akonadi	- Akonadi PIM storage service
 # automoc4	- automoc4 tool
-# kdebase	- Basic KDE applications (Konqueror, Dolphin)
+# baseapps	- Basic KDE applications (Konqueror, Dolphin)
 # kdeexp	- experimental libraries (with non-stable ABI/API)
 # kdehier	- Provides common KDE directories
 # kdelibs	- The base set of KDE libraries
@@ -54,7 +54,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.6.5
+KDE4_VERSION=		4.7.2
 KDE4_BRANCH?=		stable
 KDEPIM4_VERSION=	4.4.11.1
 KDEPIM4_BRANCH?=	stable
@@ -82,7 +82,7 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 #
 # KDE4 modules
 #
-_USE_KDE4_ALL=	akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
+_USE_KDE4_ALL=	akonadi automoc4 baseapps kdebase kdehier kdelibs kdeprefix \
 		oxygen pimlibs pimruntime pykde4 pykdeuic4 runtime \
 		sharedmime workspace
 
@@ -90,7 +90,8 @@ akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
 automoc4_BUILD_DEPENDS=		${LOCALBASE}/bin/automoc4:${PORTSDIR}/devel/automoc4
 
-kdebase_LIB_DEPENDS=		konq.7:${PORTSDIR}/x11/kdebase4
+baseapps_LIB_DEPENDS=		konq.7:${PORTSDIR}/x11/kde4-baseapps
+kdebase_LIB_DEPENDS=		${baseapps_LIB_DEPENDS}
 
 kdehier_RUN_DEPENDS=		kdehier4>=1:${PORTSDIR}/misc/kdehier4
 
@@ -106,15 +107,15 @@ pimruntime_LIB_DEPENDS=		kdepim-copy.5:${PORTSDIR}/deskutils/kdepim4-runtime
 
 pykde4_RUN_DEPENDS=		${KDE4_PYTHON_SITELIBDIR}/PyKDE4/kdeui.so:${PORTSDIR}/devel/kdebindings4-python-pykde4
 
-pykdeuic4_RUN_DEPENDS=		${LOCALBASE}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
+pykdeuic4_RUN_DEPENDS=		${KDE4_PREFIX}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
 
-runtime_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
-runtime_RUN_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
+runtime_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kde4-runtime
+runtime_RUN_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kde4-runtime
 
 sharedmime_BUILD_DEPENDS=	kde4-shared-mime-info>=1:${PORTSDIR}/misc/kde4-shared-mime-info
 sharedmime_RUN_DEPENDS=		kde4-shared-mime-info>=1:${PORTSDIR}/misc/kde4-shared-mime-info
 
-workspace_LIB_DEPENDS=		kscreensaver.5:${PORTSDIR}/x11/kdebase4-workspace
+workspace_LIB_DEPENDS=		kscreensaver.5:${PORTSDIR}/x11/kde4-workspace
 
 
 PLIST_SUB+=	KDE4_PREFIX="${KDE4_PREFIX}"

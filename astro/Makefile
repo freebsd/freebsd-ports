@@ -32,6 +32,7 @@
     SUBDIR += gpxloggerd
     SUBDIR += jday
     SUBDIR += josm
+    SUBDIR += kstars
     SUBDIR += libgal
     SUBDIR += libnova
     SUBDIR += libroadnav

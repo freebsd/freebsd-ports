@@ -22,26 +22,21 @@ USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
-USE_XORG=	xtst
+QT_COMPONENTS=	dbus gui qmake_build moc_build rcc_build uic_build
+USE_XORG=	x11 xext xtst
 MAKE_JOBS_SAFE=	yes
+CMAKE_ARGS+=	-DBUILD_jovie=OFF
 
 MAN1=	kmag.1 \
 	kmousetool.1 \
 	kmouth.1
 
-CMAKE_ARGS+=	-DBUILD_jovie=OFF
-
-OPTIONS=	KTTS "Enable KTTS speech service" off
+OPTIONS=	JOVIE "Install Jovie text-to-speech system" on
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_KTTS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/ktts
+.ifndef(WITHOUT_JOVIE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/jovie
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's/speechd/$$$\{SPEECHD_LIBRARY}/g' \
-		${PATCH_WRKSRC}/kaccessible/CMakeLists.txt
 
 .include <bsd.port.mk>

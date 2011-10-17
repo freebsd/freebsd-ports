@@ -23,20 +23,19 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		swscale.1:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+
 .if !defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
-		qmake_build moc_build rcc_build uic_build
-USE_OPENLDAP=	yes
+QT_COMPONENTS=	dbus qt3support svg xml \
+		moc_build qmake_build rcc_build uic_build
+USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	ALSA "Build with ALSA compatibility library" off \
@@ -53,6 +52,7 @@ LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .if defined(WITH_PULSEAUDIO)
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+USE_GNOME=	glib20
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif

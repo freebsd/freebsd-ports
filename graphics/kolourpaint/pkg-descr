@@ -1,0 +1,14 @@
+KolourPaint is a free, easy-to-use paint program for KDE.
+
+It aims to be conceptually simple to understand; providing a level of
+functionality targeted towards the average user. It's designed for
+daily tasks like:
+* painting - drawing diagrams and "finger painting";
+* image manipulation - editing screenshots and photos, applying effects;
+* icon editing - drawing clipart and logos with transparency.
+
+It's not an unusable and monolithic program where simple tasks like
+drawing lines become nearly impossible. Nor is it so simple that it
+lacks essential features like undo/redo.
+
+WWW: http://www.kolourpaint.org

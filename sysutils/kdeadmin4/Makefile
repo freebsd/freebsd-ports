@@ -17,16 +17,14 @@ COMMENT=	KDE Admin applications
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-USE_OPENSSL=	yes
-QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
-		network porting_build qmake_build moc_build rcc_build \
-		uic_build uic3_build
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-#disable system-config-printer-kde, it comes with print/kdeadmin4-system-config-printer-kde
+# Disable system-config-printer-kde, it comes with
+# print/system-config-printer-kde.
 CMAKE_ARGS+=	-DBUILD_system-config-printer-kde:BOOL=Off
 
 OPTIONS=	PRINTER_CONFIG "Install printer configuration utility" off

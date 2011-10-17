@@ -44,12 +44,13 @@ share/locale/is/LC_MESSAGES/kalarm.mo
 share/locale/is/LC_MESSAGES/kalzium.mo
 share/locale/is/LC_MESSAGES/kapman.mo
 share/locale/is/LC_MESSAGES/kate.mo
+share/locale/is/LC_MESSAGES/kate_kttsd.mo
 share/locale/is/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/is/LC_MESSAGES/katefiletemplates.mo
 share/locale/is/LC_MESSAGES/katehelloworld.mo
-share/locale/is/LC_MESSAGES/katekjswrapper.mo
 share/locale/is/LC_MESSAGES/kateopenheader.mo
 share/locale/is/LC_MESSAGES/katepart4.mo
+share/locale/is/LC_MESSAGES/katesearch.mo
 share/locale/is/LC_MESSAGES/katesymbolviewer.mo
 share/locale/is/LC_MESSAGES/katetabbarextension.mo
 share/locale/is/LC_MESSAGES/katetextfilter.mo
@@ -290,6 +291,7 @@ share/locale/is/LC_MESSAGES/krunner.mo
 share/locale/is/LC_MESSAGES/ksaneplugin.mo
 share/locale/is/LC_MESSAGES/kscd.mo
 share/locale/is/LC_MESSAGES/kscreensaver.mo
+share/locale/is/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/is/LC_MESSAGES/kshisen.mo
 share/locale/is/LC_MESSAGES/kshorturifilter.mo
 share/locale/is/LC_MESSAGES/ksirk.mo
@@ -312,7 +314,6 @@ share/locale/is/LC_MESSAGES/ksystemlog.mo
 share/locale/is/LC_MESSAGES/ksystraycmd.mo
 share/locale/is/LC_MESSAGES/kteatime.mo
 share/locale/is/LC_MESSAGES/ktexteditor_plugins.mo
-share/locale/is/LC_MESSAGES/kthememanager.mo
 share/locale/is/LC_MESSAGES/ktimer.mo
 share/locale/is/LC_MESSAGES/ktimetracker.mo
 share/locale/is/LC_MESSAGES/ktouch.mo
@@ -332,7 +333,6 @@ share/locale/is/LC_MESSAGES/kwin.mo
 share/locale/is/LC_MESSAGES/kwin_art_clients.mo
 share/locale/is/LC_MESSAGES/kwin_clients.mo
 share/locale/is/LC_MESSAGES/kwin_effects.mo
-share/locale/is/LC_MESSAGES/kwin_lib.mo
 share/locale/is/LC_MESSAGES/kwinstartmenu.mo
 share/locale/is/LC_MESSAGES/kwrite.mo
 share/locale/is/LC_MESSAGES/kwriteconfig.mo
@@ -344,6 +344,7 @@ share/locale/is/LC_MESSAGES/libkcal.mo
 share/locale/is/LC_MESSAGES/libkcddb.mo
 share/locale/is/LC_MESSAGES/libkcompactdisc.mo
 share/locale/is/LC_MESSAGES/libkdcraw.mo
+share/locale/is/LC_MESSAGES/libkdecorations.mo
 share/locale/is/LC_MESSAGES/libkdeedu.mo
 share/locale/is/LC_MESSAGES/libkdegames.mo
 share/locale/is/LC_MESSAGES/libkdepim.mo
@@ -401,7 +402,6 @@ share/locale/is/LC_MESSAGES/okular_tiff.mo
 share/locale/is/LC_MESSAGES/okular_xps.mo
 share/locale/is/LC_MESSAGES/palapeli.mo
 share/locale/is/LC_MESSAGES/parley.mo
-share/locale/is/LC_MESSAGES/phonon-xine.mo
 share/locale/is/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/is/LC_MESSAGES/phonon_kde.mo
 share/locale/is/LC_MESSAGES/phononserver.mo

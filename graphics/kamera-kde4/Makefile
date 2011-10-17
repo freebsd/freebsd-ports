@@ -1,40 +1,31 @@
 # New ports collection makefile for:	kamera
-# Date created:				July 09 2004
-# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
+# Date created:				5 September 2011
+# Whom:					Alberto Villa <avilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	kamera
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
-PKGNAMEPREFIX=	kdegraphics-
-DISTNAME=	kdegraphics-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Digital camera support for KDE
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Digital camera manager for KDE 4
 
-LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
+LATEST_LINK=	${PORTNAME}-kde4
 
-CONFLICTS=	kdegraphics-3.1.* kdegraphics-3.2.[0-3]
+LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
+CONFLICTS=	kdegraphics-4.[0-6].*
 
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus qt3support qmake_build moc_build uic_build rcc_build
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/kdegraphics-${PORTVERSION}
+MAKE_JOBS_SAFE=	yes
 
-pre-configure:
-	${ECHO_CMD} ${PORTNAME} doc > ${WRKSRC}/inst-apps
-	${REINPLACE_CMD} \
-	's|^SUBDIRS =.*${PORTNAME}.*$$|SUBDIRS =\. ${PORTNAME}|g' \
-		${WRKSRC}/doc/Makefile.in
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

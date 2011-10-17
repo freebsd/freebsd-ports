@@ -24,6 +24,7 @@ lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
 lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
+lib/kde4/plasma_engine_mixer.so
 lib/kde4/videopreview.so
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
@@ -47,6 +48,7 @@ share/apps/juk/jukui-rtl.rc
 share/apps/juk/jukui.rc
 share/apps/juk/pics/playing.png
 share/apps/juk/pics/splash.png
+share/apps/juk/pics/theme.svg
 share/apps/juk/pics/yahoo_credit.png
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/kcmcddb-emailsettings.upd
@@ -80,6 +82,7 @@ share/apps/kscd/skin/Chrome.svg
 share/apps/kscd/skin/Obsidian-Coast.svg
 share/apps/kscd/skin/Steel.svg
 share/apps/kscd/skin/default.svg
+share/apps/plasma/services/mixer.operations
 share/apps/solid/actions/dragonplayer-opendvd.desktop
 share/apps/solid/actions/kscd-play-audiocd.desktop
 share/apps/solid/actions/solid_audiocd.desktop
@@ -94,10 +97,12 @@ share/config.kcfg/kscd.kcfg
 share/config.kcfg/libkcddb.kcfg
 share/config.kcfg/mplayerthumbs.kcfg
 share/config/dragonplayerrc
-share/dbus-1/interfaces/org.kde.KMix.xml
 share/dbus-1/interfaces/org.kde.juk.collection.xml
 share/dbus-1/interfaces/org.kde.juk.player.xml
 share/dbus-1/interfaces/org.kde.juk.search.xml
+share/dbus-1/interfaces/org.kde.kmix.control.xml
+share/dbus-1/interfaces/org.kde.kmix.mixer.xml
+share/dbus-1/interfaces/org.kde.kmix.mixset.xml
 share/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
 share/doc/HTML/en/dragonplayer/common
 share/doc/HTML/en/dragonplayer/index.cache.bz2
@@ -170,6 +175,7 @@ share/kde4/services/ffmpegthumbs.desktop
 share/kde4/services/kded/kmixd.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
+share/kde4/services/plasma-engine-mixer.desktop
 share/kde4/services/videopreview.desktop
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kioslave/audiocd

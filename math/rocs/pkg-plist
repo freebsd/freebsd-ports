@@ -1,0 +1,108 @@
+bin/rocs
+include/rocs/Data.h
+include/rocs/DataItem.h
+include/rocs/DataStructure.h
+include/rocs/Document.h
+include/rocs/DynamicPropertiesList.h
+include/rocs/FilePluginInterface.h
+include/rocs/GraphicsLayout.h
+include/rocs/KrossBackend.h
+include/rocs/PluginManager.h
+include/rocs/Pointer.h
+include/rocs/PointerItem.h
+include/rocs/QtScriptBackend.h
+include/rocs/Rocs_Typedefs.h
+include/rocs/ToolsPluginInterface.h
+include/rocs/rocslib_export.h
+lib/kde4/rocs_GraphStructure.so
+lib/kde4/rocs_ListStructure.so
+lib/kde4/rocs_assignvaluesplugin.so
+lib/kde4/rocs_generategraphplugin.so
+lib/kde4/rocs_plaintxt.so
+lib/kde4/rocs_transformedgesplugin.so
+lib/librocslib.so
+lib/librocslib.so.5
+lib/librocslib.so.5.0.1
+share/applications/kde4/rocs.desktop
+share/apps/rocs/examples/AdjustProjection.js
+share/apps/rocs/examples/NameAndNodes.js
+share/apps/rocs/examples/NamesValues.js
+share/apps/rocs/examples/arrangeNodes.js
+share/apps/rocs/examples/broadWalk.js
+share/apps/rocs/examples/coloring.js
+share/apps/rocs/iconpacks/default.svg
+share/apps/rocs/icons/hicolor/16x16/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsselect.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsselect.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsselect.png
+share/apps/rocs/rocsui.rc
+share/config.kcfg/rocs.kcfg
+share/config/rocs.knsrc
+share/doc/HTML/en/rocs/common
+share/doc/HTML/en/rocs/index.cache.bz2
+share/doc/HTML/en/rocs/index.docbook
+share/kde4/services/rocs_GraphStructure.desktop
+share/kde4/services/rocs_ListStructure.desktop
+share/kde4/services/rocs_assignvaluesplugin.desktop
+share/kde4/services/rocs_generategraphplugin.desktop
+share/kde4/services/rocs_plaintxtplugin.desktop
+share/kde4/services/rocs_transformedgesplugin.desktop
+share/kde4/servicetypes/RocsDataStructurePlugin.desktop
+share/kde4/servicetypes/RocsFilePlugin.desktop
+share/kde4/servicetypes/RocsToolsPlugin.desktop
+@dirrm share/doc/HTML/en/rocs
+@dirrm share/apps/rocs/icons/hicolor/64x64/actions
+@dirrm share/apps/rocs/icons/hicolor/64x64
+@dirrm share/apps/rocs/icons/hicolor/48x48/actions
+@dirrm share/apps/rocs/icons/hicolor/48x48
+@dirrm share/apps/rocs/icons/hicolor/32x32/actions
+@dirrm share/apps/rocs/icons/hicolor/32x32
+@dirrm share/apps/rocs/icons/hicolor/22x22/actions
+@dirrm share/apps/rocs/icons/hicolor/22x22
+@dirrm share/apps/rocs/icons/hicolor/16x16/actions
+@dirrm share/apps/rocs/icons/hicolor/16x16
+@dirrm share/apps/rocs/icons/hicolor
+@dirrm share/apps/rocs/icons
+@dirrm share/apps/rocs/iconpacks
+@dirrm share/apps/rocs/examples
+@dirrm share/apps/rocs
+@dirrm include/rocs

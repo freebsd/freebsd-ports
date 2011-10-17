@@ -16,13 +16,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 NO_BUILD=	yes
-# NO_INSTALL=	yes
 USE_KDE4=	kdeprefix
 
-KDE4_LANG_ALL=	ar bg ca ca@valencia cs da de el en_GB es et eu fi fr \
-		fy ga gl gu he hi hr hu ia id is it ja kk km kn ko lt lv \
-		mai ml nb nds nl nn pa pl pt pt_BR ro ru \
-		sk sl sr sv th tr uk wa zh_CN zh_TW
+KDE4_LANG_ALL=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fi \
+		fr ga gl he hr hu ia id is it ja kk km kn ko lt lv nb \
+		nds nl nn pa pl pt pt_BR ro ru sk sl sr sv th tr ug uk \
+		wa zh_CN zh_TW
 
 ar_PORT=	arabic/kde4-l10n
 ca@valencia_PORT=	misc/kde4-l10n-ca_valencia

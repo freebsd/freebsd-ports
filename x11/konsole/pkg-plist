@@ -1,0 +1,30 @@
+bin/konsole
+bin/konsoleprofile
+lib/kde4/libkonsolepart.so
+lib/libkdeinit4_konsole.so
+lib/libkonsoleprivate.so
+share/applications/kde4/konsole.desktop
+share/apps/konsole/BlackOnLightYellow.schema
+share/apps/konsole/BlackOnRandomLight.colorscheme
+share/apps/konsole/BlackOnWhite.schema
+share/apps/konsole/DarkPastels.colorscheme
+share/apps/konsole/GreenOnBlack.colorscheme
+share/apps/konsole/Linux.colorscheme
+share/apps/konsole/README.KeyTab
+share/apps/konsole/Shell.profile
+share/apps/konsole/WhiteOnBlack.schema
+share/apps/konsole/default.keytab
+share/apps/konsole/konsole.notifyrc
+share/apps/konsole/konsoleui.rc
+share/apps/konsole/linux.keytab
+share/apps/konsole/partui.rc
+share/apps/konsole/sessionui.rc
+share/apps/konsole/solaris.keytab
+share/doc/HTML/en/konsole/common
+share/doc/HTML/en/konsole/index.cache.bz2
+share/doc/HTML/en/konsole/index.docbook
+share/kde4/services/ServiceMenus/konsolehere.desktop
+share/kde4/services/konsolepart.desktop
+share/kde4/servicetypes/terminalemulator.desktop
+@dirrm share/doc/HTML/en/konsole
+@dirrm share/apps/konsole

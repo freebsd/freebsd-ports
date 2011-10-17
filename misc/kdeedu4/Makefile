@@ -6,64 +6,122 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Collection of entertaining, educational programs for KDE
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
-		eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
-		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
-		xplanet:${PORTSDIR}/astro/xplanet
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		nova:${PORTSDIR}/astro/libnova \
-		openbabel.3:${PORTSDIR}/science/openbabel \
-		cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		qalculate.5:${PORTSDIR}/math/libqalculate \
-		gsl.16:${PORTSDIR}/math/gsl \
-		spectre.1:${PORTSDIR}/print/libspectre
-RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
+COMMENT=	Set of entertaining, educational programs for KDE 4 (meta-port)
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=	yes
-USE_PYTHON=	yes
-MAKE_JOBS_SAFE=	yes
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
 
-MAN1=		kalzium.1 \
-		kbruch.1 \
-		kig.1 \
-		kmplot.1 \
-		ktouch.1
-MAN6=		khangman.6
-
-#fix checking boost_python
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
-		-DBOOST_PYTHON_INCLUDES="${LOCALBASE}/include;${PYTHON_INCLUDEDIR}" \
-		-DBOOST_PYTHON_LIBS="-L${LOCALBASE}/lib -lboost_python -l${PYTHON_VERSION}" \
-		-DBUILD_marble=OFF \
-		-DWITH_R:BOOL=OFF
-
-OPTIONS=	MARBLE "Install Marble - Virtual globe and world atlas" off
+OPTIONS=	BLINKEN "Memory enhancement game" on \
+		CANTOR "Frontend to mathematical software" on \
+		KALGEBRA "Graph calculator" on \
+		KALZIUM "Periodic table of elements" on \
+		KANAGRAM "Letter order game" on \
+		KBRUCH "Application to exercise fractions" on \
+		KGEOGRAPHY "Geography trainer" on \
+		KHANGMAN "Hangman game" on \
+		KIG "Interactive geometry application" on \
+		KITEN "Japanese reference/study tool" on \
+		KLETTRES "Alphabet learning tool" on \
+		KMPLOT "Mathematical function plotter" on \
+		KSTARS "Desktop planetarium" on \
+		KTOUCH "Touch typing tutor" on \
+		KTURTLE "Educational programming environment" on \
+		KWORDQUIZ "Flash card trainer" on \
+		MARBLE "Virtual globe and world atlas" on \
+		PARLEY "Vocabulary trainer" on \
+		ROCS "Graph teory IDE" on \
+		STEP "Interactive physics simulator" on
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MARBLE)
+.ifndef(WITHOUT_BLINKEN)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/blinken:${PORTSDIR}/games/blinken
+.endif
+
+.ifndef(WITHOUT_CANTOR)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/cantor:${PORTSDIR}/math/cantor
+.endif
+
+.ifndef(WITHOUT_KALGEBRA)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kalgebra:${PORTSDIR}/math/kalgebra
+.endif
+
+.ifndef(WITHOUT_KALZIUM)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kalzium:${PORTSDIR}/science/kalzium
+.endif
+
+.ifndef(WITHOUT_KANAGRAM)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kanagram:${PORTSDIR}/games/kanagram
+.endif
+
+.ifndef(WITHOUT_KBRUCH)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kbruch:${PORTSDIR}/math/kbruch
+.endif
+
+.ifndef(WITHOUT_KGEOGRAPHY)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kgeography:${PORTSDIR}/misc/kgeography
+.endif
+
+.ifndef(WITHOUT_KHANGMAN)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/khangman:${PORTSDIR}/games/khangman
+.endif
+
+.ifndef(WITHOUT_KIG)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kig:${PORTSDIR}/math/kig
+.endif
+
+.ifndef(WITHOUT_KITEN)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kiten:${PORTSDIR}/japanese/kiten
+.endif
+
+.ifndef(WITHOUT_KLETTRES)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/klettres:${PORTSDIR}/misc/klettres
+.endif
+
+.ifndef(WITHOUT_KMPLOT)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmplot:${PORTSDIR}/math/kmplot
+.endif
+
+.ifndef(WITHOUT_KSTARS)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kstars:${PORTSDIR}/astro/kstars
+.endif
+
+.ifndef(WITHOUT_KTOUCH)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktouch:${PORTSDIR}/misc/ktouch
+.endif
+
+.ifndef(WITHOUT_KTURTLE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kturtle:${PORTSDIR}/lang/kturtle
+.endif
+
+.ifndef(WITHOUT_KWORDQUIZ)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwordquiz:${PORTSDIR}/misc/kwordquiz
+.endif
+
+.ifndef(WITHOUT_MARBLE)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e '/macro_optional_find_package(Avogadro 1.0.0)/d' \
-		${WRKSRC}/kalzium/KalziumConfigureChecks.cmake
+.ifndef(WITHOUT_PARLEY)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/parley:${PORTSDIR}/misc/parley
+.endif
+
+.ifndef(WITHOUT_ROCS)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/rocs:${PORTSDIR}/math/rocs
+.endif
+
+.ifndef(WITHOUT_STEP)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/step:${PORTSDIR}/science/step
+.endif
+
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.mk>

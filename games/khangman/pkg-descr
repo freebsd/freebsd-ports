@@ -1,0 +1,10 @@
+KHangMan is a game based on the well-known hangman game. It is aimed
+at children aged six and over. The game has several categories of
+words to play with, for example: animals (animals words) and three
+difficulty categories: easy, medium and hard. A word is picked at
+random, the letters are hidden, and you must guess the word by trying
+one letter after another. Each time you guess a wrong letter, part of
+a picture of a hangman is drawn. You must guess the word before being
+hanged! You have 10 tries.
+
+WWW: http://edu.kde.org/khangman

@@ -1,0 +1,16 @@
+bin/xf86gammacfg
+lib/kde4/kcm_kgamma.so
+share/apps/kgamma/pics/background.png
+share/apps/kgamma/pics/cmyscale.png
+share/apps/kgamma/pics/darkgrey.png
+share/apps/kgamma/pics/greyscale.png
+share/apps/kgamma/pics/lightgrey.png
+share/apps/kgamma/pics/midgrey.png
+share/apps/kgamma/pics/rgbscale.png
+share/doc/HTML/en/kcontrol/kgamma/common
+share/doc/HTML/en/kcontrol/kgamma/index.cache.bz2
+share/doc/HTML/en/kcontrol/kgamma/index.docbook
+share/kde4/services/kgamma.desktop
+@dirrm share/doc/HTML/en/kcontrol/kgamma
+@dirrm share/apps/kgamma/pics
+@dirrm share/apps/kgamma

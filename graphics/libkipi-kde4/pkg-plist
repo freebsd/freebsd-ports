@@ -1,8 +1,8 @@
-include/libkipi/batchprogressdialog.h
+include/libkipi/exportinterface.h
+include/libkipi/extension.h
 include/libkipi/imagecollection.h
 include/libkipi/imagecollectionselector.h
 include/libkipi/imagecollectionshared.h
-include/libkipi/imagedialog.h
 include/libkipi/imageinfo.h
 include/libkipi/imageinfoshared.h
 include/libkipi/interface.h
@@ -11,63 +11,19 @@ include/libkipi/plugin.h
 include/libkipi/pluginloader.h
 include/libkipi/uploadwidget.h
 include/libkipi/version.h
-lib/libkipi.a
-lib/libkipi.la
 lib/libkipi.so
-lib/libkipi.so.2
-libdata/pkgconfig/libkipi.pc
+lib/libkipi.so.8
+lib/libkipi.so.8.0.0
+libdata/pkgconfig/libkipi-kde4.pc
+share/apps/kipi/data/kipi-icon.svg
+share/apps/kipi/data/kipi-logo.svg
 share/apps/kipi/data/kipi-plugins_logo.png
 share/icons/hicolor/128x128/apps/kipi.png
 share/icons/hicolor/16x16/apps/kipi.png
 share/icons/hicolor/22x22/apps/kipi.png
 share/icons/hicolor/32x32/apps/kipi.png
 share/icons/hicolor/48x48/apps/kipi.png
-share/locale/ar/LC_MESSAGES/libkipi.mo
-share/locale/br/LC_MESSAGES/libkipi.mo
-share/locale/ca/LC_MESSAGES/libkipi.mo
-share/locale/cs/LC_MESSAGES/libkipi.mo
-share/locale/cy/LC_MESSAGES/libkipi.mo
-share/locale/da/LC_MESSAGES/libkipi.mo
-share/locale/de/LC_MESSAGES/libkipi.mo
-share/locale/el/LC_MESSAGES/libkipi.mo
-share/locale/en_GB/LC_MESSAGES/libkipi.mo
-share/locale/es/LC_MESSAGES/libkipi.mo
-share/locale/et/LC_MESSAGES/libkipi.mo
-share/locale/fi/LC_MESSAGES/libkipi.mo
-share/locale/fr/LC_MESSAGES/libkipi.mo
-share/locale/ga/LC_MESSAGES/libkipi.mo
-share/locale/gl/LC_MESSAGES/libkipi.mo
-share/locale/is/LC_MESSAGES/libkipi.mo
-share/locale/it/LC_MESSAGES/libkipi.mo
-share/locale/ja/LC_MESSAGES/libkipi.mo
-share/locale/ka/LC_MESSAGES/libkipi.mo
-share/locale/lt/LC_MESSAGES/libkipi.mo
-share/locale/ms/LC_MESSAGES/libkipi.mo
-share/locale/mt/LC_MESSAGES/libkipi.mo
-share/locale/nb/LC_MESSAGES/libkipi.mo
-share/locale/nds/LC_MESSAGES/libkipi.mo
-share/locale/nl/LC_MESSAGES/libkipi.mo
-share/locale/pa/LC_MESSAGES/libkipi.mo
-share/locale/pl/LC_MESSAGES/libkipi.mo
-share/locale/pt/LC_MESSAGES/libkipi.mo
-share/locale/pt_BR/LC_MESSAGES/libkipi.mo
-share/locale/ru/LC_MESSAGES/libkipi.mo
-share/locale/rw/LC_MESSAGES/libkipi.mo
-share/locale/sk/LC_MESSAGES/libkipi.mo
-share/locale/sl/LC_MESSAGES/libkipi.mo
-share/locale/sr/LC_MESSAGES/libkipi.mo
-share/locale/sr@Latn/LC_MESSAGES/libkipi.mo
-share/locale/sv/LC_MESSAGES/libkipi.mo
-share/locale/ta/LC_MESSAGES/libkipi.mo
-share/locale/th/LC_MESSAGES/libkipi.mo
-share/locale/tr/LC_MESSAGES/libkipi.mo
-share/locale/uk/LC_MESSAGES/libkipi.mo
-share/locale/zh_CN/LC_MESSAGES/libkipi.mo
-share/servicetypes/kipiplugin.desktop
-@dirrmtry share/apps/kipi/data
-@dirrmtry share/apps/kipi
+share/kde4/servicetypes/kipiplugin.desktop
+@dirrm share/apps/kipi/data
+@dirrm share/apps/kipi
 @dirrm include/libkipi
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw

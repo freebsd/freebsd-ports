@@ -1,42 +1,36 @@
 # New ports collection makefile for:	kdebindings4-smoke
-# Date created:		2008-08-19
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
+# Date created:				1 September 2011
+# Whom:					Alberto Villa <avilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kdebindings
+PORTNAME=	kdebindings-smoke
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	SMOKE bindings for Qt/KDE
+COMMENT=	Meta port of SMOKE bindings for KDE
 
-LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2 \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		okularcore.1:${PORTSDIR}/graphics/kdegraphics4 \
-		kateinterfaces.5:${PORTSDIR}/devel/kdesdk4 \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
 
-BINDLANG=	smoke
+OPTIONS=	SMOKEKDE "KDE bindings (requires SMOKEQT)" on \
+		SMOKEQT "Qt bindings" on
 
-QT_COMPONENTS=	declarative help multimedia qt3support
-USE_KDE4=	pimlibs
-CMAKE_ARGS=	-DDISABLE_Attica:BOOL=TRUE
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+.include <bsd.port.options.mk>
 
-BUILD_WRKSRC=	${WRKSRC}/${BINDLANG}
+.if !defined(WITHOUT_SMOKEKDE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/libsmokekdecore.so:${PORTSDIR}/devel/kdebindings4-smoke-smokekde
+.endif
 
-.include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
+.if !defined(WITHOUT_SMOKEQT) || !defined(WITHOUT_SMOKEKDE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/libsmokeqtcore.so:${PORTSDIR}/devel/kdebindings4-smoke-smokeqt
+.endif
 
-pre-configure:
-	@cd ${WRKSRC}/generator && ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS}
-
-pre-build:
-	@cd ${WRKSRC}/generator && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS}
-
-pre-install:
-	@cd ${WRKSRC}/generator && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.mk>

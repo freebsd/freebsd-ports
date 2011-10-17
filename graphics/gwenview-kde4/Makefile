@@ -1,32 +1,34 @@
 # New ports collection makefile for:	gwenview
-# Date created:		22 Jun 2002
-# Whom:			Stefan Jahn <stefan.jahn@nemesis-sektor.de>
+# Date created:				5 September 2011
+# Whom:					Alberto Villa <avilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gwenview
-PORTVERSION=	1.4.2
-PORTREVISION=	9
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	graphics kde
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An image viewer and browser for the KDE environment
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Image viewer and browser for KDE 4
 
-LIB_DEPENDS=	kipi.2:${PORTSDIR}/graphics/libkipi \
-		exiv2.10:${PORTSDIR}/graphics/exiv2
+LATEST_LINK=	${PORTNAME}-kde4
 
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		soprano.4:${PORTSDIR}/textproc/soprano \
+		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		kipi.8:${PORTSDIR}/graphics/libkipi-kde4
+
+CONFLICTS=	kdegraphics-4.[0-6].*
+
+USE_KDE4=	kdehier kdelibs kdeprefix baseapps automoc4
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus qmake_build moc_build uic_build rcc_build
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool
-
-CONFIGURE_ARGS+=--enable-kipi
-
-MAN1=	gwenview.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

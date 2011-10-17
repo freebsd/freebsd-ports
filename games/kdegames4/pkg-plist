@@ -1,8 +1,6 @@
 bin/bomber
 bin/bovo
 bin/granatier
-bin/kajongg
-bin/kajonggserver
 bin/kapman
 bin/katomic
 bin/kbattleship
@@ -38,7 +36,6 @@ bin/ksudoku
 bin/ktron
 bin/ktuberling
 bin/kubrick
-bin/libpala-puzzlebuilder
 bin/lskat
 bin/palapeli
 include/KDE/KCardDialog
@@ -200,7 +197,6 @@ share/applications/kde4/KGoldrunner.desktop
 share/applications/kde4/bomber.desktop
 share/applications/kde4/bovo.desktop
 share/applications/kde4/granatier.desktop
-share/applications/kde4/kajongg.desktop
 share/applications/kde4/kapman.desktop
 share/applications/kde4/katomic.desktop
 share/applications/kde4/kbattleship.desktop
@@ -476,87 +472,6 @@ share/apps/granatier/themes/granatier_preview.png
 share/apps/granatier/themes/waterbomb.desktop
 share/apps/granatier/themes/waterbomb.svgz
 share/apps/granatier/themes/waterbomb_preview.png
-share/apps/kajongg/about.py
-share/apps/kajongg/about.pyc
-share/apps/kajongg/animation.py
-share/apps/kajongg/animation.pyc
-share/apps/kajongg/background.py
-share/apps/kajongg/background.pyc
-share/apps/kajongg/backgroundselector.py
-share/apps/kajongg/backgroundselector.pyc
-share/apps/kajongg/backgroundselector.ui
-share/apps/kajongg/board.py
-share/apps/kajongg/board.pyc
-share/apps/kajongg/client.py
-share/apps/kajongg/client.pyc
-share/apps/kajongg/common.py
-share/apps/kajongg/common.pyc
-share/apps/kajongg/config.py
-share/apps/kajongg/config.pyc
-share/apps/kajongg/deferredutil.py
-share/apps/kajongg/deferredutil.pyc
-share/apps/kajongg/differ.py
-share/apps/kajongg/differ.pyc
-share/apps/kajongg/game.py
-share/apps/kajongg/game.pyc
-share/apps/kajongg/games.py
-share/apps/kajongg/games.pyc
-share/apps/kajongg/genericdelegates.py
-share/apps/kajongg/genericdelegates.pyc
-share/apps/kajongg/guiutil.py
-share/apps/kajongg/guiutil.pyc
-share/apps/kajongg/handboard.py
-share/apps/kajongg/handboard.pyc
-share/apps/kajongg/humanclient.py
-share/apps/kajongg/humanclient.pyc
-share/apps/kajongg/kajongg.py
-share/apps/kajongg/kajonggserver.py
-share/apps/kajongg/kajonggui.rc
-share/apps/kajongg/meld.py
-share/apps/kajongg/meld.pyc
-share/apps/kajongg/message.py
-share/apps/kajongg/message.pyc
-share/apps/kajongg/modeltest.py
-share/apps/kajongg/modeltest.pyc
-share/apps/kajongg/move.py
-share/apps/kajongg/move.pyc
-share/apps/kajongg/playerlist.py
-share/apps/kajongg/playerlist.pyc
-share/apps/kajongg/playfield.py
-share/apps/kajongg/playfield.pyc
-share/apps/kajongg/predefined.py
-share/apps/kajongg/predefined.pyc
-share/apps/kajongg/qt4reactor.py
-share/apps/kajongg/qt4reactor.pyc
-share/apps/kajongg/query.py
-share/apps/kajongg/query.pyc
-share/apps/kajongg/rulesetselector.py
-share/apps/kajongg/rulesetselector.pyc
-share/apps/kajongg/scoring.py
-share/apps/kajongg/scoring.pyc
-share/apps/kajongg/scoringengine.py
-share/apps/kajongg/scoringengine.pyc
-share/apps/kajongg/server.py
-share/apps/kajongg/server.pyc
-share/apps/kajongg/sound.py
-share/apps/kajongg/sound.pyc
-share/apps/kajongg/statesaver.py
-share/apps/kajongg/statesaver.pyc
-share/apps/kajongg/tables.py
-share/apps/kajongg/tables.pyc
-share/apps/kajongg/tile.py
-share/apps/kajongg/tile.pyc
-share/apps/kajongg/tileset.py
-share/apps/kajongg/tileset.pyc
-share/apps/kajongg/tilesetselector.py
-share/apps/kajongg/tilesetselector.pyc
-share/apps/kajongg/tilesetselector.ui
-share/apps/kajongg/uiwall.py
-share/apps/kajongg/uiwall.pyc
-share/apps/kajongg/util.py
-share/apps/kajongg/util.pyc
-share/apps/kajongg/wall.py
-share/apps/kajongg/wall.pyc
 share/apps/kapman/defaultmaze.xml
 share/apps/kapman/kapmanui.rc
 share/apps/kapman/themes/invisible.desktop
@@ -692,16 +607,16 @@ share/apps/kgoldrunner/themes/black-on-white.desktop
 share/apps/kgoldrunner/themes/default.desktop
 share/apps/kgoldrunner/themes/default/actors.svg
 share/apps/kgoldrunner/themes/default/climb.wav
-share/apps/kgoldrunner/themes/default/completed.ogg
-share/apps/kgoldrunner/themes/default/death.ogg
-share/apps/kgoldrunner/themes/default/dig.ogg
-share/apps/kgoldrunner/themes/default/falling.ogg
-share/apps/kgoldrunner/themes/default/gameover.ogg
-share/apps/kgoldrunner/themes/default/gold.ogg
-share/apps/kgoldrunner/themes/default/ladder.ogg
+share/apps/kgoldrunner/themes/default/completed.wav
+share/apps/kgoldrunner/themes/default/death.wav
+share/apps/kgoldrunner/themes/default/dig.wav
+share/apps/kgoldrunner/themes/default/falling.wav
+share/apps/kgoldrunner/themes/default/gameover.wav
+share/apps/kgoldrunner/themes/default/gold.wav
+share/apps/kgoldrunner/themes/default/ladder.wav
 share/apps/kgoldrunner/themes/default/set.svg
 share/apps/kgoldrunner/themes/default/step.wav
-share/apps/kgoldrunner/themes/default/victory.ogg
+share/apps/kgoldrunner/themes/default/victory.wav
 share/apps/kgoldrunner/themes/egypt.desktop
 share/apps/kgoldrunner/themes/egypt/actors.svgz
 share/apps/kgoldrunner/themes/egypt/egypt_kgr.svgz
@@ -1366,8 +1281,6 @@ share/apps/palapeli/collection/european-honey-bee.desktop
 share/apps/palapeli/collection/european-honey-bee.jpg
 share/apps/palapeli/collection/panther-chameleon-female.desktop
 share/apps/palapeli/collection/panther-chameleon-female.jpg
-share/apps/palapeli/palapeli-collectionui.rc
-share/apps/palapeli/palapeli-puzzletableui.rc
 share/apps/palapeli/palapeli.kcfg
 share/apps/palapeli/palapeli.notifyrc
 share/apps/palapeli/palapeliui.rc
@@ -1433,19 +1346,6 @@ share/doc/HTML/en/granatier/config_theme.png
 share/doc/HTML/en/granatier/granatier.png
 share/doc/HTML/en/granatier/index.cache.bz2
 share/doc/HTML/en/granatier/index.docbook
-share/doc/HTML/en/kajongg/common
-share/doc/HTML/en/kajongg/config_background.png
-share/doc/HTML/en/kajongg/config_play.png
-share/doc/HTML/en/kajongg/config_tiles.png
-share/doc/HTML/en/kajongg/differ.png
-share/doc/HTML/en/kajongg/enterhand.png
-share/doc/HTML/en/kajongg/explain.png
-share/doc/HTML/en/kajongg/gamescreen.png
-share/doc/HTML/en/kajongg/index.cache.bz2
-share/doc/HTML/en/kajongg/index.docbook
-share/doc/HTML/en/kajongg/penalty.png
-share/doc/HTML/en/kajongg/ruleseteditor.png
-share/doc/HTML/en/kajongg/scoretable.png
 share/doc/HTML/en/kapman/common
 share/doc/HTML/en/kapman/config.png
 share/doc/HTML/en/kapman/index.cache.bz2
@@ -1918,11 +1818,9 @@ share/icons/hicolor/64x64/apps/lskat.png
 share/icons/hicolor/64x64/apps/palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
-share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/bomber.svgz
 share/icons/hicolor/scalable/apps/bovo.svgz
 share/icons/hicolor/scalable/apps/granatier.svgz
-share/icons/hicolor/scalable/apps/kajongg.svgz
 share/icons/hicolor/scalable/apps/kapman.svgz
 share/icons/hicolor/scalable/apps/kdiamond.svgz
 share/icons/hicolor/scalable/apps/killbots.svgz
@@ -2012,7 +1910,6 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/doc/HTML/en/kbattleship
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kapman
-@dirrm share/doc/HTML/en/kajongg
 @dirrm share/doc/HTML/en/granatier
 @dirrm share/doc/HTML/en/bovo
 @dirrm share/doc/HTML/en/bomber
@@ -2137,8 +2034,6 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/katomic
 @dirrm share/apps/kapman/themes
 @dirrm share/apps/kapman
-@dirrm share/apps/kajongg
-@dirrm share/apps/kajong
 @dirrm share/apps/granatier/themes
 @dirrm share/apps/granatier/sounds
 @dirrm share/apps/granatier/players

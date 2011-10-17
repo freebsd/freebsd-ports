@@ -1,7 +1,43 @@
-Gwenview is a simple image viewer which offers
-a folder tree window and a file list window for
-navigating easily through your image file
-heirarchy. It supports all image formats your
-KDE installation supports.
+Gwenview is an image viewer for KDE.
+
+IMAGE VIEWING
+Gwenview can load and save all image formats supported by KDE. It
+correctly displays images with alpha channel, using the traditionnal
+checker board as a background to reveal transparency. Gwenview lets
+you accurately control the way images are scaled: you can zoom in and
+out or automatically scale the image to fit the window. Zoom is locked
+so that you can easily compare images by going back and forth. When
+browsing JPEG images with EXIF information, Gwenview automatically
+rotates them according to the EXIF orientation tag. It can show image
+properties and image specific meta-information like Dolphin does. It
+knows about animated images like MNG or GIF and is also capable of
+displaying vector images in SVG format as well as playing videos.
+
+IMAGE MANIPULATIONS
+Gwenview does not try to replace your favorite image editor, so it
+only features simple image manipulations: rotation, mirroring,
+cropping, resizing and red eye reduction. When working with JPEG
+files, Gwenview performs lossless manipulations.
+
+BROWSING YOUR COLLECTIONS OF IMAGES
+Gwenview features the necessary file management operations: copy,
+move, delete, rename and drag 'n' drop images. It has full support for
+KIO slaves: you can browse FTP/Windows shares, go into tarballs or zip
+files.
+
+PRESENTING YOUR IMAGES
+The fullscreen with optional thumbnail bar and the simple built-in
+slide show allows you to present images the way you want them to show.
+
+THE INTERFACE
+Gwenview features a browse mode to get a quick overview of images in a
+folder and a view mode to go through one image at a time. The view
+mode can also display a thumbnail bar.
+
+KPARTS
+Gwenview can be used both as a standalone application and embedded in
+other KDE applications through the KPart system. For example, thanks
+to Gwenview image KPart, Konqueror can display images using Gwneview,
+letting you zoom in and out as well as rotate it.
 
 WWW: http://gwenview.sourceforge.net

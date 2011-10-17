@@ -1,30 +1,76 @@
-share/apps/katepart/syntax/logohighlightstyle.sl.xml
 share/apps/khangman/sl.txt
 share/apps/ktuberling/sounds/sl.soundtheme
-share/apps/ktuberling/sounds/sl/cigara.wav
-share/apps/ktuberling/sounds/sl/klobuk.wav
-share/apps/ktuberling/sounds/sl/kravata.wav
-share/apps/ktuberling/sounds/sl/krompircek.wav
-share/apps/ktuberling/sounds/sl/lasje.wav
-share/apps/ktuberling/sounds/sl/metuljcek.wav
-share/apps/ktuberling/sounds/sl/naocniki.wav
-share/apps/ktuberling/sounds/sl/nos.wav
-share/apps/ktuberling/sounds/sl/obrvi.wav
-share/apps/ktuberling/sounds/sl/oko.wav
-share/apps/ktuberling/sounds/sl/pingvin.wav
-share/apps/ktuberling/sounds/sl/rog.wav
-share/apps/ktuberling/sounds/sl/sal.wav
-share/apps/ktuberling/sounds/sl/soncna_ocala.wav
-share/apps/ktuberling/sounds/sl/uhan.wav
-share/apps/ktuberling/sounds/sl/uho.wav
-share/apps/ktuberling/sounds/sl/ura.wav
-share/apps/ktuberling/sounds/sl/usta.wav
-share/apps/ktuberling/sounds/sl/znacka.wav
-share/apps/kturtle/data/logokeywords.sl.xml
-share/apps/kturtle/examples/sl/curly.logo
-share/apps/kturtle/examples/sl/example1.logo
-share/apps/kturtle/examples/sl/square.logo
-share/apps/kturtle/examples/sl/triangle.logo
+share/apps/ktuberling/sounds/sl/ball.ogg
+share/apps/ktuberling/sounds/sl/bow.ogg
+share/apps/ktuberling/sounds/sl/coat.ogg
+share/apps/ktuberling/sounds/sl/ear.ogg
+share/apps/ktuberling/sounds/sl/earring.ogg
+share/apps/ktuberling/sounds/sl/egypt_arch.ogg
+share/apps/ktuberling/sounds/sl/egypt_birds.ogg
+share/apps/ktuberling/sounds/sl/egypt_boy.ogg
+share/apps/ktuberling/sounds/sl/egypt_bridge.ogg
+share/apps/ktuberling/sounds/sl/egypt_camel.ogg
+share/apps/ktuberling/sounds/sl/egypt_cart.ogg
+share/apps/ktuberling/sounds/sl/egypt_column.ogg
+share/apps/ktuberling/sounds/sl/egypt_donkey.ogg
+share/apps/ktuberling/sounds/sl/egypt_girl.ogg
+share/apps/ktuberling/sounds/sl/egypt_grass.ogg
+share/apps/ktuberling/sounds/sl/egypt_man.ogg
+share/apps/ktuberling/sounds/sl/egypt_oasis.ogg
+share/apps/ktuberling/sounds/sl/egypt_palmtree.ogg
+share/apps/ktuberling/sounds/sl/egypt_pyramid.ogg
+share/apps/ktuberling/sounds/sl/egypt_road.ogg
+share/apps/ktuberling/sounds/sl/egypt_sphynx.ogg
+share/apps/ktuberling/sounds/sl/egypt_well.ogg
+share/apps/ktuberling/sounds/sl/egypt_woman.ogg
+share/apps/ktuberling/sounds/sl/eye.ogg
+share/apps/ktuberling/sounds/sl/eyebrow.ogg
+share/apps/ktuberling/sounds/sl/flower.ogg
+share/apps/ktuberling/sounds/sl/hair.ogg
+share/apps/ktuberling/sounds/sl/hat.ogg
+share/apps/ktuberling/sounds/sl/moon_alien.ogg
+share/apps/ktuberling/sounds/sl/moon_astronaut.ogg
+share/apps/ktuberling/sounds/sl/moon_earth.ogg
+share/apps/ktuberling/sounds/sl/moon_fallingstar.ogg
+share/apps/ktuberling/sounds/sl/moon_hotel.ogg
+share/apps/ktuberling/sounds/sl/moon_monster.ogg
+share/apps/ktuberling/sounds/sl/moon_planet.ogg
+share/apps/ktuberling/sounds/sl/moon_radar.ogg
+share/apps/ktuberling/sounds/sl/moon_robot.ogg
+share/apps/ktuberling/sounds/sl/moon_rocket.ogg
+share/apps/ktuberling/sounds/sl/moon_satellite.ogg
+share/apps/ktuberling/sounds/sl/moon_sign.ogg
+share/apps/ktuberling/sounds/sl/moon_star.ogg
+share/apps/ktuberling/sounds/sl/moon_ufo.ogg
+share/apps/ktuberling/sounds/sl/moustache.ogg
+share/apps/ktuberling/sounds/sl/mouth.ogg
+share/apps/ktuberling/sounds/sl/nose.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_anchovy.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_bacon.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_broccolli.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_cheese.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_cucumber.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_mushroom.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_olive.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_onion.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_oregano.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_pepper.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_pepperoni.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_pineapple.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_salami.ogg
+share/apps/ktuberling/sounds/sl/pizzeria_tomato.ogg
+share/apps/ktuberling/sounds/sl/shoe.ogg
+share/apps/ktuberling/sounds/sl/shorts.ogg
+share/apps/ktuberling/sounds/sl/skirt.ogg
+share/apps/ktuberling/sounds/sl/spectacles.ogg
+share/apps/ktuberling/sounds/sl/stick.ogg
+share/apps/ktuberling/sounds/sl/sunglasses.ogg
+share/apps/ktuberling/sounds/sl/tie.ogg
+share/apps/ktuberling/sounds/sl/tv_bicycle.ogg
+share/apps/ktuberling/sounds/sl/tv_car.ogg
+share/apps/ktuberling/sounds/sl/tv_cyclist.ogg
+share/apps/ktuberling/sounds/sl/tv_train.ogg
+share/apps/ktuberling/sounds/sl/umbrella.ogg
 share/apps/kvtml/sl/animals.kvtml
 share/apps/kvtml/sl/clothing.kvtml
 share/apps/kvtml/sl/computers.kvtml
@@ -52,6 +98,7 @@ share/locale/sl/LC_MESSAGES/accountwizard_imap.mo
 share/locale/sl/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/sl/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/sl/LC_MESSAGES/accountwizard_pop3.mo
+share/locale/sl/LC_MESSAGES/adblock.mo
 share/locale/sl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_ical_resource.mo
@@ -118,19 +165,28 @@ share/locale/sl/LC_MESSAGES/kalgebra.mo
 share/locale/sl/LC_MESSAGES/kalzium.mo
 share/locale/sl/LC_MESSAGES/kanagram.mo
 share/locale/sl/LC_MESSAGES/kapman.mo
+share/locale/sl/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sl/LC_MESSAGES/kate.mo
+share/locale/sl/LC_MESSAGES/kate_kttsd.mo
+share/locale/sl/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/sl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katefiletemplates.mo
 share/locale/sl/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/sl/LC_MESSAGES/kategdbplugin.mo
 share/locale/sl/LC_MESSAGES/katehelloworld.mo
-share/locale/sl/LC_MESSAGES/kateinsertcommand.mo
-share/locale/sl/LC_MESSAGES/katekjswrapper.mo
+share/locale/sl/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/sl/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/sl/LC_MESSAGES/kateopenheader.mo
 share/locale/sl/LC_MESSAGES/katepart4.mo
+share/locale/sl/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/sl/LC_MESSAGES/katesearch.mo
+share/locale/sl/LC_MESSAGES/katesnippets_tng.mo
+share/locale/sl/LC_MESSAGES/katesql.mo
 share/locale/sl/LC_MESSAGES/katesymbolviewer.mo
 share/locale/sl/LC_MESSAGES/katetabbarextension.mo
+share/locale/sl/LC_MESSAGES/katetabifyplugin.mo
 share/locale/sl/LC_MESSAGES/katetextfilter.mo
 share/locale/sl/LC_MESSAGES/katexmlcheck.mo
 share/locale/sl/LC_MESSAGES/katexmltools.mo
@@ -380,6 +436,7 @@ share/locale/sl/LC_MESSAGES/ksaneplugin.mo
 share/locale/sl/LC_MESSAGES/kscd.mo
 share/locale/sl/LC_MESSAGES/kscreensaver.mo
 share/locale/sl/LC_MESSAGES/ksendemail.mo
+share/locale/sl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sl/LC_MESSAGES/kshisen.mo
 share/locale/sl/LC_MESSAGES/kshorturifilter.mo
 share/locale/sl/LC_MESSAGES/ksirk.mo
@@ -399,9 +456,10 @@ share/locale/sl/LC_MESSAGES/ksysguard.mo
 share/locale/sl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/sl/LC_MESSAGES/ksystraycmd.mo
 share/locale/sl/LC_MESSAGES/kteatime.mo
+share/locale/sl/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/sl/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/sl/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/sl/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/sl/LC_MESSAGES/kthememanager.mo
 share/locale/sl/LC_MESSAGES/ktimer.mo
 share/locale/sl/LC_MESSAGES/ktimetracker.mo
 share/locale/sl/LC_MESSAGES/ktouch.mo
@@ -421,7 +479,6 @@ share/locale/sl/LC_MESSAGES/kwin.mo
 share/locale/sl/LC_MESSAGES/kwin_art_clients.mo
 share/locale/sl/LC_MESSAGES/kwin_clients.mo
 share/locale/sl/LC_MESSAGES/kwin_effects.mo
-share/locale/sl/LC_MESSAGES/kwin_lib.mo
 share/locale/sl/LC_MESSAGES/kwinshutdown.mo
 share/locale/sl/LC_MESSAGES/kwinstartmenu.mo
 share/locale/sl/LC_MESSAGES/kwordquiz.mo
@@ -438,6 +495,7 @@ share/locale/sl/LC_MESSAGES/libkcal.mo
 share/locale/sl/LC_MESSAGES/libkcddb.mo
 share/locale/sl/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sl/LC_MESSAGES/libkdcraw.mo
+share/locale/sl/LC_MESSAGES/libkdecorations.mo
 share/locale/sl/LC_MESSAGES/libkdeedu.mo
 share/locale/sl/LC_MESSAGES/libkdegames.mo
 share/locale/sl/LC_MESSAGES/libkdepim.mo
@@ -488,6 +546,7 @@ share/locale/sl/LC_MESSAGES/minitoolsplugin.mo
 share/locale/sl/LC_MESSAGES/mplayerthumbs.mo
 share/locale/sl/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/sl/LC_MESSAGES/nepomukbackup.mo
+share/locale/sl/LC_MESSAGES/nepomukcontroller.mo
 share/locale/sl/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/sl/LC_MESSAGES/nepomukserver.mo
 share/locale/sl/LC_MESSAGES/nepomukservicestub.mo
@@ -507,13 +566,13 @@ share/locale/sl/LC_MESSAGES/okular_ooo.mo
 share/locale/sl/LC_MESSAGES/okular_poppler.mo
 share/locale/sl/LC_MESSAGES/okular_tiff.mo
 share/locale/sl/LC_MESSAGES/parley.mo
-share/locale/sl/LC_MESSAGES/phonon-xine.mo
 share/locale/sl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sl/LC_MESSAGES/phonon_kde.mo
 share/locale/sl/LC_MESSAGES/phononserver.mo
 share/locale/sl/LC_MESSAGES/plasma-desktop.mo
 share/locale/sl/LC_MESSAGES/plasma-netbook.mo
 share/locale/sl/LC_MESSAGES/plasma-overlay.mo
+share/locale/sl/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/sl/LC_MESSAGES/plasma-windowed.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -535,6 +594,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kdeobservatory.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kimpanel.mo
@@ -571,6 +631,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_searchbox.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -606,6 +667,7 @@ share/locale/sl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sl/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/sl/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_browserhistory.mo
@@ -658,6 +720,7 @@ share/locale/sl/LC_MESSAGES/processcore.mo
 share/locale/sl/LC_MESSAGES/processui.mo
 share/locale/sl/LC_MESSAGES/randrmonitor.mo
 share/locale/sl/LC_MESSAGES/rellinks.mo
+share/locale/sl/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/sl/LC_MESSAGES/rocs.mo
 share/locale/sl/LC_MESSAGES/searchbarplugin.mo
 share/locale/sl/LC_MESSAGES/solid-hardware.mo
@@ -681,10 +744,6 @@ share/locale/sl/entry.desktop
 @dirrm share/doc/HTML/sl/common
 @dirrm share/apps/kvtml/sl
 @dirrm share/apps/kvtml
-@dirrm share/apps/kturtle/examples/sl
-@dirrm share/apps/kturtle/examples
-@dirrm share/apps/kturtle/data
-@dirrm share/apps/kturtle
 @dirrm share/apps/ktuberling/sounds/sl
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling

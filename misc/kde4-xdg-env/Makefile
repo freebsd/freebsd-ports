@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdg
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	kde4-
@@ -26,7 +26,7 @@ NO_BUILD=	yes
 SUB_FILES=	xdg-env.sh
 
 PLIST_FILES=	env/xdg-env.sh
-PLIST_DIRS=	env
+PLIST_DIRSTRY=	env
 
 do-install:
 	${MKDIR} ${PREFIX}/env

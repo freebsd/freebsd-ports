@@ -74,13 +74,26 @@ share/apps/ktuberling/sounds/el/tv_train.ogg
 share/apps/ktuberling/sounds/el/tv_tree.ogg
 share/apps/ktuberling/sounds/el/umbrella.ogg
 share/apps/kvtml/el/animals.kvtml
+share/apps/kvtml/el/clothing.kvtml
+share/apps/kvtml/el/computers.kvtml
+share/apps/kvtml/el/currencies.kvtml
 share/apps/kvtml/el/easy.kvtml
+share/apps/kvtml/el/fruits.kvtml
 share/apps/kvtml/el/hard.kvtml
+share/apps/kvtml/el/inventions.kvtml
 share/apps/kvtml/el/medium.kvtml
+share/apps/kvtml/el/objects.kvtml
+share/apps/kvtml/el/people.kvtml
+share/apps/kvtml/el/transportation.kvtml
+share/apps/kvtml/el/worldcapitals.kvtml
 share/doc/HTML/el/common/fdl-translated.html
 share/doc/HTML/el/common/gpl-translated.html
 share/doc/HTML/el/common/kde-localised.css
 share/doc/HTML/el/common/lgpl-translated.html
+share/doc/HTML/el/kcharselect/common
+share/doc/HTML/el/kcharselect/index.cache.bz2
+share/doc/HTML/el/kcharselect/index.docbook
+share/doc/HTML/el/kcharselect/kcharselect.png
 share/doc/HTML/el/konqueror/basics.docbook
 share/doc/HTML/el/konqueror/bookmarks.docbook
 share/doc/HTML/el/konqueror/browser.docbook
@@ -93,12 +106,14 @@ share/doc/HTML/el/konqueror/dirtree.png
 share/doc/HTML/el/konqueror/dragdrop.png
 share/doc/HTML/el/konqueror/faq.docbook
 share/doc/HTML/el/konqueror/filemanager.docbook
+share/doc/HTML/el/konqueror/folders.png
 share/doc/HTML/el/konqueror/format-font-size-less.png
 share/doc/HTML/el/konqueror/format-font-size-more.png
 share/doc/HTML/el/konqueror/index.cache.bz2
 share/doc/HTML/el/konqueror/index.docbook
 share/doc/HTML/el/konqueror/introduction.docbook
 share/doc/HTML/el/konqueror/konqorg.png
+share/doc/HTML/el/konqueror/look.png
 share/doc/HTML/el/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/el/konqueror/parts.png
 share/doc/HTML/el/konqueror/path-complete.docbook
@@ -108,7 +123,21 @@ share/doc/HTML/el/konqueror/save-settings.docbook
 share/doc/HTML/el/konqueror/shortcut1.png
 share/doc/HTML/el/konqueror/shortcut2.png
 share/doc/HTML/el/konqueror/sidebar.docbook
+share/doc/HTML/el/konqueror/thumbnails.png
+share/doc/HTML/el/konqueror/view-extensions.docbook
 share/doc/HTML/el/konqueror/viewproperties-dialog.png
+share/doc/HTML/el/plasma-desktop/add-widgets.png
+share/doc/HTML/el/plasma-desktop/common
+share/doc/HTML/el/plasma-desktop/index.cache.bz2
+share/doc/HTML/el/plasma-desktop/index.docbook
+share/doc/HTML/el/plasma-desktop/taskbar-settings.png
+share/doc/HTML/el/printer-applet/common
+share/doc/HTML/el/printer-applet/index.cache.bz2
+share/doc/HTML/el/printer-applet/index.docbook
+share/doc/HTML/el/sweeper/common
+share/doc/HTML/el/sweeper/index.cache.bz2
+share/doc/HTML/el/sweeper/index.docbook
+share/doc/HTML/el/sweeper/sweeper.png
 share/locale/el/LC_MESSAGES/accountwizard.mo
 share/locale/el/LC_MESSAGES/accountwizard_ical.mo
 share/locale/el/LC_MESSAGES/accountwizard_imap.mo
@@ -210,13 +239,12 @@ share/locale/el/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katefiletemplates.mo
 share/locale/el/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/el/LC_MESSAGES/katehelloworld.mo
-share/locale/el/LC_MESSAGES/kateinsertcommand.mo
-share/locale/el/LC_MESSAGES/katekjswrapper.mo
 share/locale/el/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/el/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/el/LC_MESSAGES/kateopenheader.mo
 share/locale/el/LC_MESSAGES/katepart4.mo
 share/locale/el/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/el/LC_MESSAGES/katesql.mo
 share/locale/el/LC_MESSAGES/katesymbolviewer.mo
 share/locale/el/LC_MESSAGES/katetabbarextension.mo
 share/locale/el/LC_MESSAGES/katetextfilter.mo
@@ -478,6 +506,7 @@ share/locale/el/LC_MESSAGES/ksaneplugin.mo
 share/locale/el/LC_MESSAGES/kscd.mo
 share/locale/el/LC_MESSAGES/kscreensaver.mo
 share/locale/el/LC_MESSAGES/ksendemail.mo
+share/locale/el/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/el/LC_MESSAGES/kshisen.mo
 share/locale/el/LC_MESSAGES/kshorturifilter.mo
 share/locale/el/LC_MESSAGES/ksirk.mo
@@ -500,7 +529,6 @@ share/locale/el/LC_MESSAGES/ksystraycmd.mo
 share/locale/el/LC_MESSAGES/kteatime.mo
 share/locale/el/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/el/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/el/LC_MESSAGES/kthememanager.mo
 share/locale/el/LC_MESSAGES/ktimer.mo
 share/locale/el/LC_MESSAGES/ktimetracker.mo
 share/locale/el/LC_MESSAGES/ktouch.mo
@@ -521,7 +549,6 @@ share/locale/el/LC_MESSAGES/kwin.mo
 share/locale/el/LC_MESSAGES/kwin_art_clients.mo
 share/locale/el/LC_MESSAGES/kwin_clients.mo
 share/locale/el/LC_MESSAGES/kwin_effects.mo
-share/locale/el/LC_MESSAGES/kwin_lib.mo
 share/locale/el/LC_MESSAGES/kwinstartmenu.mo
 share/locale/el/LC_MESSAGES/kwordquiz.mo
 share/locale/el/LC_MESSAGES/kwrite.mo
@@ -536,6 +563,7 @@ share/locale/el/LC_MESSAGES/libkcal.mo
 share/locale/el/LC_MESSAGES/libkcddb.mo
 share/locale/el/LC_MESSAGES/libkcompactdisc.mo
 share/locale/el/LC_MESSAGES/libkdcraw.mo
+share/locale/el/LC_MESSAGES/libkdecorations.mo
 share/locale/el/LC_MESSAGES/libkdeedu.mo
 share/locale/el/LC_MESSAGES/libkdegames.mo
 share/locale/el/LC_MESSAGES/libkdepim.mo
@@ -586,6 +614,8 @@ share/locale/el/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/el/LC_MESSAGES/mf_konqplugin.mo
 share/locale/el/LC_MESSAGES/minitoolsplugin.mo
 share/locale/el/LC_MESSAGES/mplayerthumbs.mo
+share/locale/el/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/el/LC_MESSAGES/nepomukbackup.mo
 share/locale/el/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/el/LC_MESSAGES/nepomukserver.mo
 share/locale/el/LC_MESSAGES/nepomukservicestub.mo
@@ -613,9 +643,9 @@ share/locale/el/LC_MESSAGES/okular_tiff.mo
 share/locale/el/LC_MESSAGES/okular_xps.mo
 share/locale/el/LC_MESSAGES/palapeli.mo
 share/locale/el/LC_MESSAGES/parley.mo
-share/locale/el/LC_MESSAGES/phonon-xine.mo
 share/locale/el/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/el/LC_MESSAGES/phonon_kde.mo
+share/locale/el/LC_MESSAGES/phonon_vlc.mo
 share/locale/el/LC_MESSAGES/phononserver.mo
 share/locale/el/LC_MESSAGES/plasma-desktop.mo
 share/locale/el/LC_MESSAGES/plasma-netbook.mo
@@ -787,7 +817,11 @@ share/locale/el/LC_MESSAGES/validatorsplugin.mo
 share/locale/el/LC_MESSAGES/webarchiver.mo
 share/locale/el/LC_MESSAGES/xml_mimetypes.mo
 share/locale/el/entry.desktop
+@dirrm share/doc/HTML/el/sweeper
+@dirrm share/doc/HTML/el/printer-applet
+@dirrm share/doc/HTML/el/plasma-desktop
 @dirrm share/doc/HTML/el/konqueror
+@dirrm share/doc/HTML/el/kcharselect
 @dirrm share/doc/HTML/el/common
 @dirrm share/apps/kvtml/el
 @dirrm share/apps/kvtml

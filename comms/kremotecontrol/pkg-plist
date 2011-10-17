@@ -1,5 +1,4 @@
 bin/ark
-bin/filelight
 bin/kcalc
 bin/kcharselect
 bin/kdf
@@ -12,7 +11,6 @@ bin/kwikdisk
 bin/superkaramba
 bin/sweeper
 lib/kde4/arkpart.so
-lib/kde4/filelightpart.so
 lib/kde4/kcm_kdf.so
 lib/kde4/kcm_kwallet.so
 lib/kde4/kcm_remotecontrol.so
@@ -24,6 +22,7 @@ lib/kde4/kerfuffle_libarchive.so
 lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
+lib/kde4/kremotecontrol_lirc.so
 lib/kde4/libextracthere.so
 lib/kde4/plasma_engine_kremoteconrol.so
 lib/kde4/plasma_package_superkaramba.so
@@ -41,7 +40,6 @@ lib/libsuperkaramba.so.5.0.1
 share/applications/kde4/KCharSelect.desktop
 share/applications/kde4/KFloppy.desktop
 share/applications/kde4/ark.desktop
-share/applications/kde4/filelight.desktop
 share/applications/kde4/kcalc.desktop
 share/applications/kde4/kdf.desktop
 share/applications/kde4/kgpg.desktop
@@ -54,8 +52,6 @@ share/applications/kde4/superkaramba.desktop
 share/applications/kde4/sweeper.desktop
 share/apps/ark/ark_part.rc
 share/apps/ark/arkui.rc
-share/apps/filelight/filelightui.rc
-share/apps/filelightpart/filelightpartui.rc
 share/apps/kcalc/kcalcui.rc
 share/apps/kcalc/scienceconstants.xml
 share/apps/kcharselect/kcharselectui.rc
@@ -119,7 +115,6 @@ share/autostart/kgpg.desktop
 share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
 share/config.kcfg/kgpg.kcfg
-share/config/filelightrc
 share/config/superkaramba.knsrc
 share/dbus-1/interfaces/org.kde.kgpg.Key.xml
 share/dbus-1/interfaces/org.kde.superkaramba.xml
@@ -129,13 +124,6 @@ share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
 share/doc/HTML/en/ark/man-ark.1.docbook
-share/doc/HTML/en/filelight/common
-share/doc/HTML/en/filelight/config_appear.png
-share/doc/HTML/en/filelight/config_scan.png
-share/doc/HTML/en/filelight/index.cache.bz2
-share/doc/HTML/en/filelight/index.docbook
-share/doc/HTML/en/filelight/radial_map.png
-share/doc/HTML/en/filelight/radial_map_context_menu.png
 share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
@@ -211,7 +199,6 @@ share/icons/hicolor/128x128/apps/kwalletmanager2.png
 share/icons/hicolor/128x128/apps/kwikdisk.png
 share/icons/hicolor/128x128/apps/superkaramba.png
 share/icons/hicolor/128x128/devices/infrared-remote.png
-share/icons/hicolor/16x16/apps/filelight.png
 share/icons/hicolor/16x16/apps/kdf.png
 share/icons/hicolor/16x16/apps/kfloppy.png
 share/icons/hicolor/16x16/apps/kgpg.png
@@ -223,7 +210,6 @@ share/icons/hicolor/16x16/apps/superkaramba.png
 share/icons/hicolor/16x16/devices/infrared-remote.png
 share/icons/hicolor/22x22/actions/krcd_flash.png
 share/icons/hicolor/22x22/actions/krcd_off.png
-share/icons/hicolor/22x22/apps/filelight.png
 share/icons/hicolor/22x22/apps/kdf.png
 share/icons/hicolor/22x22/apps/kfloppy.png
 share/icons/hicolor/22x22/apps/kgpg.png
@@ -232,8 +218,6 @@ share/icons/hicolor/22x22/apps/kwalletmanager.png
 share/icons/hicolor/22x22/apps/kwikdisk.png
 share/icons/hicolor/22x22/apps/superkaramba.png
 share/icons/hicolor/22x22/devices/infrared-remote.png
-share/icons/hicolor/32x32/actions/view_filelight.png
-share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/32x32/apps/kdf.png
 share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/32x32/apps/kgpg.png
@@ -244,7 +228,6 @@ share/icons/hicolor/32x32/apps/kwikdisk.png
 share/icons/hicolor/32x32/apps/superkaramba.png
 share/icons/hicolor/32x32/devices/infrared-remote.png
 share/icons/hicolor/42x42/devices/infrared-remote.png
-share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kfloppy.png
 share/icons/hicolor/48x48/apps/kgpg.png
@@ -254,7 +237,6 @@ share/icons/hicolor/48x48/apps/kwalletmanager2.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/48x48/apps/superkaramba.png
 share/icons/hicolor/48x48/devices/infrared-remote.png
-share/icons/hicolor/64x64/apps/filelight.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kfloppy.png
 share/icons/hicolor/64x64/apps/kwalletmanager.png
@@ -278,7 +260,6 @@ share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
 share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
-share/kde4/services/filelightpart.desktop
 share/kde4/services/kcm_remotecontrol.desktop
 share/kde4/services/kcmdf.desktop
 share/kde4/services/kded/kremotecontroldaemon.desktop
@@ -290,12 +271,15 @@ share/kde4/services/kerfuffle_libarchive_readonly.desktop
 share/kde4/services/kerfuffle_libbz2.desktop
 share/kde4/services/kerfuffle_libgz.desktop
 share/kde4/services/kerfuffle_libxz.desktop
+share/kde4/services/kremotecontrolbackends/kremotecontrol_lirc.desktop
 share/kde4/services/kwalletconfig.desktop
 share/kde4/services/kwalletmanager_show.desktop
 share/kde4/services/plasma-engine-kremotecontrol.desktop
 share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
 share/kde4/servicetypes/kerfufflePlugin.desktop
+share/kde4/servicetypes/kremotecontrolmanager.desktop
+@dirrm share/kde4/services/kremotecontrolbackends
 @dirrmtry share/icons/oxygen/42x42/devices
 @dirrmtry share/icons/oxygen/42x42
 @dirrmtry share/icons/hicolor/8x8/devices
@@ -312,7 +296,6 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/doc/HTML/en/kcontrol/blockdevices
 @dirrm share/doc/HTML/en/kcharselect
 @dirrm share/doc/HTML/en/kcalc
-@dirrm share/doc/HTML/en/filelight
 @dirrm share/doc/HTML/en/ark
 @dirrm share/apps/sweeper
 @dirrm share/apps/superkaramba
@@ -344,6 +327,4 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/apps/kgpg
 @dirrm share/apps/kdf
 @dirrm share/apps/kcalc
-@dirrm share/apps/filelightpart
-@dirrm share/apps/filelight
 @dirrm share/apps/ark

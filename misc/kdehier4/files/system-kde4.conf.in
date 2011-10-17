@@ -3,6 +3,5 @@
 <busconfig>
 
   <includedir>%%KDE4_PREFIX%%/etc/dbus-1/system.d</includedir>
-  <servicedir>%%KDE4_PREFIX%%/share/dbus-1/system-services</servicedir>
 
 </busconfig>

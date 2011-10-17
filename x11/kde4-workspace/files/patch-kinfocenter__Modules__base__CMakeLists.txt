@@ -1,11 +1,10 @@
---- ./kinfocenter/Modules/base/CMakeLists.txt.orig	2008-04-18 11:21:39.000000000 +0400
-+++ ./kinfocenter/Modules/base/CMakeLists.txt	2009-09-04 00:32:17.000000000 +0400
-@@ -2,7 +2,7 @@
+--- ./kinfocenter/Modules/base/CMakeLists.txt.orig	2011-05-20 22:32:07.000000000 +0200
++++ ./kinfocenter/Modules/base/CMakeLists.txt	2011-08-09 20:48:13.345451554 +0200
+@@ -1,6 +1,6 @@
  # TODO: HAVE_LIBDEVINFO_H (for Solaris 7 and later)
  #   to be set if both -ldevinfo and libdevinfo.h exist
  
 -check_include_files(devinfo.h HAVE_DEVINFO_H)       # info_fbsd.cpp
 +check_include_files("sys/types.h;devinfo.h" HAVE_DEVINFO_H)       # info_fbsd.cpp
- check_include_files(fstab.h HAVE_FSTAB_H)           # info_linux.cpp
- check_include_files(linux/raw.h HAVE_LINUX_RAW_H)   # info_linux.cpp
- check_include_files(mntent.h HAVE_MNTENT_H)         # info_linux.cpp
+ 
+ configure_file (../base/config-infocenter.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-infocenter.h )

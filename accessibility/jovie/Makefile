@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ktts
+PORTNAME=	jovie
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	accessibility kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -14,31 +14,26 @@ DISTNAME=	kdeaccessibility-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE text-to-speech subsystem
+COMMENT=	KDE text-to-speech system
 
 LIB_DEPENDS=	speechd.5:${PORTSDIR}/accessibility/speech-dispatcher
 
+CONFLICTS=	ktts-4.[4-6].*
+
+DISTINFO_FILE=	${PORTSDIR}/accessibility/kdeaccessibility4/distinfo
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
-USE_LDCONFIG=	yes
-DISTINFO_FILE=	${PORTSDIR}/accessibility/kdeaccessibility4/distinfo
-MAKE_JOBS_SAFE=	yes
-
+QT_COMPONENTS=	xml qmake_build moc_build uic_build rcc_build
 CMAKE_ARGS+=	-DBUILD_kmousetool:BOOL=OFF
+MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/jovie
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|speechd|$$$\{SPEECHD_LIBRARY}|g' \
-		${PATCH_WRKSRC}/jovie/kcmkttsmgr/CMakeLists.txt \
-		${PATCH_WRKSRC}/jovie/jovie/CMakeLists.txt
-
 post-install:
-	cd ${WRKSRC}/doc/jovie && ${MAKE} install
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

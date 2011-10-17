@@ -5,30 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kdebindings
+PORTNAME=	pykdeuic4
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde python
-PKGNAMESUFFIX=	-pykdeuic4
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}kdebindings-
+DISTNAME=	pykde4-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	An enhanced version of pyuic4
 
-BINDLANG=	python
-BINDMODULE=	pykde4
-
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4 pykde4
 USE_PYTHON=	2.5+
-.include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
-#override USE_KDE4 from Makefile.kdebindings:
-USE_KDE4=	kdelibs automoc4 pykde4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
+USE_BZIP2=	yes
+DISTINFO_FILE=	${PORTSDIR}/devel/kdebindings4-python-pykde4/distinfo
+USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
-CMAKE_SOURCE_PATH=	${BUILD_WRKSRC}
-CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
-BUILD_WRKSRC=	${WRKSRC}/python/pykde4/tools
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
+WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/${SIPDIR_REL},g' \
-		-e 's,$${PYTHON_SITE_PACKAGES_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
-		${BUILD_WRKSRC}/pykdeuic4/CMakeLists.txt
+	${REINPLACE_CMD} -e 's,$${PYTHON_SITE_PACKAGES_INSTALL_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
