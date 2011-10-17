@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../git
 
 DESCR=		${.CURDIR}/pkg-descr
 
-WITH_SVN_FBSD=	yes
+WITH_SVN=	yes
 
 CONFLICTS?=	git-[0-9]*
 
