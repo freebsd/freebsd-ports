@@ -1,21 +1,3 @@
-bin/getindex
-bin/intersect
-bin/knit
-bin/nslshowddb
-bin/nslwhere
-bin/pesis
-bin/sgcount
-bin/sggrep
-bin/sgmlsb
-bin/sgmlseg
-bin/sgmltrans
-bin/sgrpg
-bin/sgsort
-bin/simple
-bin/simpleq
-bin/textonly
-bin/unknit
-bin/xmlnorm
 include/ltxml12/charset.h
 include/ltxml12/ctype16.h
 include/ltxml12/hsregexp.h
@@ -58,11 +40,6 @@ include/ltxml12/xmlconfig.h
 lib/libltapi12.a
 lib/libltstd12.a
 lib/ltxml12/Makefile.usr
-lib/ltxml12/intersect.ddb
-lib/ltxml12/intersect.dtd
-lib/ltxml12/sgrpg.ddb
-lib/ltxml12/sgrpg.dtd
-lib/ltxml12/sgrpg.dtd,xml
 @dirrm lib/ltxml12
 @dirrm include/ltxml12/sys
 @dirrm include/ltxml12

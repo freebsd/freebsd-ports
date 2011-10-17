@@ -6,43 +6,30 @@
 #
 
 PORTNAME=	ltxml
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.9
 CATEGORIES=	textproc
-MASTER_SITES=	#
+MASTER_SITES=	GENTOO/distfiles \
+		ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Toolkit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/COPYING
+
+OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/XML
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-zlib=/usr --enable-multi-byte
-
-MAN1=		ltxml.1 xmlnorm.1 pesis.1 sgcount.1 sggrep.1 sgmlsb.1 \
-		sgmlseg.1 sgmltoken.1 sgmltrans.1 sgrpg.1 textonly.1 \
-		unknit.1 sgsort.1 nslwhere.1 knit.1 nslshowddb.1 getindex.1
-MAN5=		ltxml-query.5
-
-PROGRAMS=	getindex intersect knit nslshowddb nslwhere pesis sgcount \
-		sggrep sgmlsb sgmlseg sgmltrans sgrpg sgsort simple simpleq \
-		textonly unknit xmlnorm
-
-OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
+CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${PREFIX}/lib/ltxml12
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-You have to download the distribution manually from \n\
-http://www.inf.ed.ac.uk/research/isdd/admin/package?download=74.\n\
-Download the file ${DISTNAME}${EXTRACT_SUFX}, and place it in\n\
-${DISTDIR}.\n
-.endif
-
-.ifdef WITH_OPTIMIZED_CFLAGS
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -O3
 .endif
 
@@ -50,13 +37,8 @@ CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fe
 CFLAGS+=	-fPIC
 .endif
 
-post-install:
-.for file in ${PROGRAMS:S/sgmlseg//}
-	${STRIP_CMD} ${PREFIX}/bin/${file}
-.endfor
-
 post-patch:
-	@${PERL} -pi -e 's|CFLAGS=.*$$|CFLAGS=\$$CFLAGS|g ; \
+	@${REINPLACE_CMD} -e 's|CFLAGS=.*$$|CFLAGS=\$$CFLAGS|g ; \
 		 s|CXXFLAGS=.*$$|CXXFLAGS=\$$CXXFLAGS|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
