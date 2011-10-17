@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -28,9 +27,10 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.0.90
-EMACS_REV=	105951
+EMACS_REV=	106087
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
