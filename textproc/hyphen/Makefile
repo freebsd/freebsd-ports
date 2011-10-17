@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hyphen
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/${PORTVERSION:R}/
 
