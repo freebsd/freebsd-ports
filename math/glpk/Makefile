@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.45
+PORTVERSION=	4.47
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-gmp --with-zlib
+CONFIGURE_ARGS+=	--with-gmp
 
 .include <bsd.port.pre.mk>
 
@@ -56,20 +56,19 @@ post-patch:
 	${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	dfeas.pdf glpk.pdf glpk_faq.txt gmpl.pdf gomory.pdf graphs.pdf \
-		keller.pdf miplib2.txt miplib3.txt netlib.txt prepro.pdf \
-		scaling.pdf updating.pdf
+DOCS1=	cnfsat.pdf glpk.pdf glpk_faq.txt gmpl.pdf graphs.pdf miplib2.txt \
+	miplib3.txt netlib.txt
+DOCS2=	dfeas.pdf gomory.pdf keller.pdf scaling.pdf updating.pdf
+PORTDOCS=	${DOCS1} ${DOCS2}
 
 post-install:
-	@${CP} ${WRKSRC}/doc/notes/*.pdf ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
-	for docfile in ${PORTDOCS} ; do \
-		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
-	done
+	@cd ${WRKSRC}/doc ; \
+	${INSTALL_DATA} ${DOCS1} ${DOCS2:S|^|notes/|} ${DOCSDIR}
 
 .endif
 
-regression-test: build
+check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
