@@ -22,11 +22,11 @@ bin/smbtree
 bin/testparm
 %%SMBTORTURE%%bin/smbtorture
 %%WINBIND%%bin/wbinfo
-include/wbclient.h
+%%WINBIND%%include/wbclient.h
 sbin/smbd
 sbin/nmbd
 %%SWAT%%sbin/swat
-lib/libwbclient.so.0
+%%WINBIND%%lib/libwbclient.so.0
 %%WINBIND%%sbin/winbindd
 %%WINBIND%%lib/nss_winbind.so.1
 %%WINBIND%%lib/nss_wins.so.1
