@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gthumb
-PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTVERSION=	2.12.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +16,7 @@ COMMENT=	An image viewer and browser for the GNOME 2 environment
 
 LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GETTEXT=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
