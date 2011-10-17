@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection/Introspection.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection/Introspection.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib
