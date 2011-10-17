@@ -61,7 +61,6 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 USE_MYSQL=	server
-IGNORE_WITH_MYSQL=	323 40
 
 .if !defined(WITHOUT_APE)
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac

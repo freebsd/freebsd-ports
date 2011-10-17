@@ -28,8 +28,6 @@ OPTIONS=	MYSQLSERVER     "Use MySQL-Server on localhost" OFF
 
 .include <bsd.port.pre.mk>
 
-IGNORE_WITH_MYSQL=	323 40
-
 CONFLICTS=	vtiger-4.*
 
 .if !defined(WITHOUT_MYSQLSERVER)

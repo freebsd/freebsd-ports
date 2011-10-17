@@ -68,7 +68,6 @@ RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 .ifdef WITH_MYSQL
 RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323
 .endif
 
 .ifdef WITH_PGSQL

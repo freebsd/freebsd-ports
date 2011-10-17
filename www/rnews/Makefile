@@ -24,7 +24,6 @@ OPTIONS=	GD		"Enable Graphic (GD) support"	ON \
 
 USE_PHP=	mysql mbstring pcre xml iconv
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40
 
 .if !defined(WITHOUT_GD)
 USE_PHP+=	gd

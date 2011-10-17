@@ -23,7 +23,6 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 USE_MYSQL=	server
-IGNORE_WITH_MYSQL=	323
 USE_PHP=	mysql pcre session
 USE_PYTHON=	yes
 

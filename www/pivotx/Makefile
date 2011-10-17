@@ -42,7 +42,6 @@ USE_PHP+=	dom
 .endif
 
 .if defined(WITH_MYSQL)
-IGNORE_WITH_MYSQL=323 40
 USE_MYSQL=	yes
 USE_PHP+=	mysql
 .endif

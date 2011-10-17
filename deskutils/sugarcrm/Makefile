@@ -15,7 +15,6 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
 FETCH_ARGS=	-pRr
-IGNORE_WITH_MYSQL=	323 40
 USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix
 USE_ZIP=	yes
 NO_BUILD=	yes

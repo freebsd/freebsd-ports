@@ -214,7 +214,6 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323 40
 
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
