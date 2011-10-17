@@ -10,7 +10,7 @@ PORTVERSION=	3.8a
 PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
-		http://www.centralmiss.com/~matt/distfiles/
+		http://distfiles.over-yonder.net/ctwm/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	An extension to twm, with support for multiple virtual screens, etc
