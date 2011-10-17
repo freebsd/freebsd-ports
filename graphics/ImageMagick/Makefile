@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.3-0
-PORTREVISION=	1
+DISTVERSION=	6.7.3-1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		http://image_magick.veidrodis.com/image_magick/ \
