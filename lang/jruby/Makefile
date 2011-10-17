@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}

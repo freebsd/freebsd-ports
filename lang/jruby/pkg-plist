@@ -21,7 +21,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-FreeBSD/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Linux/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Linux/libjruby-cext.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-OpenBSD/libjffi-1.0.so
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-OpenBSD/libjruby-cext.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Windows/jffi-1.0.dll
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Windows/jruby-cext.dll
@@ -47,7 +46,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-FreeBSD/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Linux/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Linux/libjruby-cext.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-OpenBSD/libjffi-1.0.so
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-OpenBSD/libjruby-cext.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Windows/jffi-1.0.dll
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/.document
@@ -74,6 +72,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/date/format.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/date2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/debug.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/delegate.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/digest.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/digest/sha2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl/import.rb
