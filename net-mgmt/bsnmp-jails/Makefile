@@ -24,4 +24,8 @@ PLIST_FILES=	lib/snmp_jails.so lib/snmp_jails.so.0 \
 		lib/snmp_jails.a lib/snmp_jails.la \
 		libexec/jail-measure
 
+post-patch:
+	${REINPLACE_CMD} -e 's|freebsd1|freebsd1.|' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>
