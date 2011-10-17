@@ -52,6 +52,10 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -a
 
+  Also, remove /usr/local/kde4/etc/rc.d from local_startup in rc.conf(5).
+  Failure to do this will cause all enabled scripts in /usr/local/etc/rc.d
+  to be started twice.
+
   Remember to check for missing ports, bearing in mind that x11/kdebase4*
   ports were replaced by x11/kde4-* ones, ktts was replaced by jovie, while
   konq-plugins-kde4 and nepomukcontroller were removed. Then:
