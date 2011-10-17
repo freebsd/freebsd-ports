@@ -1,6 +1,68 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/configuration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/configuration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/configuration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/constants.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/constants.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/constants.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/core.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/core.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/core.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/nsc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/nsc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/nsc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/multiplexserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/multiplexserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/multiplexserver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/threadpoolserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/threadpoolserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver/threadpoolserver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test/echoserver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadpool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/threadutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flame.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flame.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flame.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flameserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flameserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils/flameserver.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/make.bat
+%%PORTDOCS%%%%DOCSDIR%%/source/_static/flammable.png
 %%PORTDOCS%%%%DOCSDIR%%/source/_static/pyro-large.png
 %%PORTDOCS%%%%DOCSDIR%%/source/_static/pyro.png
 %%PORTDOCS%%%%DOCSDIR%%/source/_static/tf_pyrotaunt.png
@@ -11,6 +73,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/api/core.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/echoserver.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/errors.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/flame.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/main.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/naming.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/socketserver.rst
@@ -21,6 +84,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/source/config.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/errors.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/flame.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/intro.rst
@@ -93,6 +157,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/excep.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flame/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flame/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flame/stuff.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/futures/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/futures/futures.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gui_eventloop/gui_nothreads.py
@@ -178,6 +247,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itunes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gui_eventloop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/futures
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/flame
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
@@ -198,3 +269,9 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/socketserver
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
