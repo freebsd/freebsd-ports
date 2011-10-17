@@ -10,7 +10,7 @@ PORTVERSION=	1.30
 PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
-		http://www.centralmiss.com/~matt/distfiles/
+		http://distfiles.over-yonder.net/bgrot/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	A program to handle your X background to prevent boredom
