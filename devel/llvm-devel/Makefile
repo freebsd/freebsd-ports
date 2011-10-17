@@ -54,8 +54,7 @@ CONFIGURE_ARGS+=	--disable-docs
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
-		llvmgxx.1 opt.1 tblgen.1
+		llvm-prof.1 llvm-ranlib.1 opt.1 tblgen.1
 
 .include <bsd.port.pre.mk>
 
@@ -133,11 +132,8 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llvm* \
 			bin/macho-dump \
 			bin/opt \
-			bin/tblgen \
 			lib/LLVMHello.so \
 			lib/BugpointPasses.so \
-			lib/libCompilerDriver.a \
-			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \

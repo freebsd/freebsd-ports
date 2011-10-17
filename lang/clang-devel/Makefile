@@ -47,7 +47,8 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	LLVMIncDir=${LOCALBASE}/include \
+MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release+Asserts/bin/clang-tblgen \
+		LLVMIncDir=${LOCALBASE}/include \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
 
@@ -105,6 +106,9 @@ post-patch:
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	${MKDIR} ${WRKSRC}/Release+Asserts/lib
+	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/Release+Asserts/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/Release+Asserts/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
@@ -147,6 +151,8 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
 			bin/clang \
 			bin/clang++ \
+			bin/clang-tblgen \
+			bin/c-index-test \
 			bin/scan-build \
 			bin/scan-view \
 			lib/libclang*
