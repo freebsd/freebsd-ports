@@ -1,5 +1,4 @@
-Graph::Writer::GraphViz is a class for writing out a Graph object with 
-GraphViz module. All GraphViz formats should be supported without a 
-problem.
+Graph::Writer::GraphViz is a class for writing out a Graph object with GraphViz
+module. All GraphViz formats should be supported without a problem.
 
-WWW: http://search.cpan.org/dist/Graph-Writer-GraphViz
+WWW: http://search.cpan.org/dist/Graph-Writer-GraphViz/
