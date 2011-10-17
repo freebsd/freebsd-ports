@@ -5,11 +5,10 @@
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-foomatic/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
-PORTREVISION=	2
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-foomatic
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@burggraben.net
 COMMENT=	GutenPrint Foomatic Drivers
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

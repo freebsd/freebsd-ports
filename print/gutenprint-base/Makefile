@@ -7,13 +7,12 @@
 #
 
 PORTNAME?=	gutenprint
-PORTVERSION=	5.2.4
-PORTREVISION?=	2
+PORTVERSION=	5.2.7
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@burggraben.net
 COMMENT=	GutenPrint Printer Driver
 
 CONFLICTS=	gimp-print-[0-9]*
@@ -39,13 +38,9 @@ GUTENPRINTUI2_LIBS=`${PKG_CONFIG} --libs gutenprintui2`
 MAN1+=		escputil.1
 .endif
 
-.if defined(GUT_SLAVE) && (${GUT_SLAVE}=="gimp" || ${GUT_SLAVE}=="gimp-devel")
-.if ${GUT_SLAVE}=="gimp"
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
-.elif ${GUT_SLAVE}=="gimp-devel"
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app-devel
-.endif
-LIB_DEPENDS+=	gutenprint.2:${PORTSDIR}/print/gutenprint-base
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
+LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
+		gutenprint.2:${PORTSDIR}/print/gutenprint-base
 CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
@@ -54,7 +49,8 @@ CONFIGURE_ARGS+=--without-gimp2
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client \
+		cupsimage.2:${PORTSDIR}/print/cups-image
 RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \

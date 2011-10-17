@@ -58,6 +58,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inks/f360_ultrachrome.xml
 %%DATADIR%%/5.2/xml/escp2/inks/f360_ultrachrome_k3.xml
 %%DATADIR%%/5.2/xml/escp2/inks/f360_ultrachrome_k3v.xml
+%%DATADIR%%/5.2/xml/escp2/inks/f360_ultrachrome_k3v_2.xml
 %%DATADIR%%/5.2/xml/escp2/inks/nx100.xml
 %%DATADIR%%/5.2/xml/escp2/inks/photo_gen0.xml
 %%DATADIR%%/5.2/xml/escp2/inks/photo_gen1.xml
@@ -73,6 +74,9 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inks/pro_pigment.xml
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome.xml
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3.xml
+%%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k34.xml
+%%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3v.xml
+%%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3v4.xml
 %%DATADIR%%/5.2/xml/escp2/inks/standard.xml
 %%DATADIR%%/5.2/xml/escp2/inks/standard_gen0.xml
 %%DATADIR%%/5.2/xml/escp2/inks/ultrachrome.xml
@@ -81,10 +85,13 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inks/x80.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/artisan.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/b500.xml
+%%DATADIR%%/5.2/xml/escp2/inputslots/cd.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/cd_cutter_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/cd_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/cutter_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/default.xml
+%%DATADIR%%/5.2/xml/escp2/inputslots/pro3880.xml
+%%DATADIR%%/5.2/xml/escp2/inputslots/pro_cutter_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/pro_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/r1800.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/r2400.xml
@@ -121,11 +128,13 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/media/photo_pigment.xml
 %%DATADIR%%/5.2/xml/escp2/media/picturemate_4.xml
 %%DATADIR%%/5.2/xml/escp2/media/picturemate_6.xml
+%%DATADIR%%/5.2/xml/escp2/media/pro3880_ultrachrome_k3v.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_gen1.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_gen2.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_pigment.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome_k3.xml
+%%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome_k3v.xml
 %%DATADIR%%/5.2/xml/escp2/media/r800.xml
 %%DATADIR%%/5.2/xml/escp2/media/standard.xml
 %%DATADIR%%/5.2/xml/escp2/media/standard_gen0.xml
@@ -136,7 +145,23 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/model/model_0.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_1.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_10.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_100.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_101.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_102.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_103.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_104.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_105.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_106.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_107.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_108.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_109.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_11.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_110.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_111.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_112.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_113.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_114.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_115.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_12.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_13.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_14.xml
@@ -232,6 +257,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/model/model_96.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_97.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_98.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_99.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/p1_5.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/picturemate.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/standard.xml
@@ -282,6 +308,7 @@ share/locale/de/LC_MESSAGES/gutenprint.mo
 share/locale/el/LC_MESSAGES/gutenprint.mo
 share/locale/en_GB/LC_MESSAGES/gutenprint.mo
 share/locale/es/LC_MESSAGES/gutenprint.mo
+share/locale/fi/LC_MESSAGES/gutenprint.mo
 share/locale/fr/LC_MESSAGES/gutenprint.mo
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/it/LC_MESSAGES/gutenprint.mo
@@ -292,6 +319,7 @@ share/locale/pl/LC_MESSAGES/gutenprint.mo
 share/locale/pt/LC_MESSAGES/gutenprint.mo
 share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/sk/LC_MESSAGES/gutenprint.mo
+share/locale/sl/LC_MESSAGES/gutenprint.mo
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm %%DATADIR%%/samples

@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	gutenprint
-PORTVERSION=	5.2.4
-PORTREVISION=	2
+PORTVERSION=	5.2.7
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@burggraben.net
 COMMENT=	The "meta-port" for GutenPrint
 
 RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base
