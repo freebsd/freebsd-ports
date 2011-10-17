@@ -32,6 +32,12 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/environment.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/image.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/initialize.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna/native.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna/pure.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/template.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/uri.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/version.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/escape.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/lazy.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/piapro.rb
@@ -166,6 +172,8 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/miku
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue/test
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/proxy
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/libnotify
