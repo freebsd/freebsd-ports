@@ -22,6 +22,7 @@ DOCS=		HISTORY README doc/*
 
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		-e 's|freebsd1|freebsd1.|' \
 		${WRKSRC}/configure
 
 post-configure:
