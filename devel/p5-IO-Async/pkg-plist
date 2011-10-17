@@ -29,6 +29,9 @@
 %%SITE_PERL%%/IO/Async/Timer/Absolute.pm
 %%SITE_PERL%%/IO/Async/Timer/Countdown.pm
 %%SITE_PERL%%/IO/Async/Timer/Periodic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/Async/Timer
 @dirrmtry %%SITE_PERL%%/IO/Async/Protocol
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
