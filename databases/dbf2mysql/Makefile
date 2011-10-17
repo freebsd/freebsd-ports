@@ -7,13 +7,9 @@
 
 PORTNAME=	dbf2mysql
 PORTVERSION=	1.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.ntu.edu.tw/pub/MySQL/Downloads/Contrib/Old-Versions/ \
-		ftp://ftp.ip.pt/pub/mysql/Downloads/Contrib/Old-Versions/ \
-		ftp://ftp.chu.edu.tw/Mirrors/www.mysql.com/Downloads/Contrib/ \
-		ftp://ftp.ps.pl/dsk0/ftp.mysql.com/Downloads/Contrib/Old-Versions/ \
-		ftp://mir1.ovh.net/ftp.mysql.com/Downloads/Contrib/Old-Versions/
+MASTER_SITES=	MYSQL/Contrib/Old-Versions
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
@@ -21,12 +17,13 @@ COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
 USE_MYSQL=	yes
 
 PORTDOCS=	README
+PLIST_FILES=	bin/dbf2mysql bin/mysql2dbf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dbf2mysql ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/mysql2dbf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dbf2mysql ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mysql2dbf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	-${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
