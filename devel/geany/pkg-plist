@@ -45,25 +45,14 @@ lib/geany/splitwindow.la
 lib/geany/splitwindow.so
 libdata/pkgconfig/geany.pc
 share/applications/geany.desktop
-share/icons/hicolor/16x16/apps/classviewer-class.png
-share/icons/hicolor/16x16/apps/classviewer-macro.png
-share/icons/hicolor/16x16/apps/classviewer-member.png
-share/icons/hicolor/16x16/apps/classviewer-method.png
-share/icons/hicolor/16x16/apps/classviewer-namespace.png
-share/icons/hicolor/16x16/apps/classviewer-other.png
-share/icons/hicolor/16x16/apps/classviewer-struct.png
-share/icons/hicolor/16x16/apps/classviewer-var.png
-share/icons/hicolor/16x16/apps/geany.png
-share/icons/hicolor/48x48/apps/geany.png
-share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/images/build_menu_commands_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_in_files_dialog.png
@@ -75,19 +64,25 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_files.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen_misc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen_startup.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface_interface.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface_notebook.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface_toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_printing.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_various.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/replace_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%DATADIR%%/GPL-2
+%%DATADIR%%/c99.tags
+%%DATADIR%%/colorschemes/alt.conf
 %%DATADIR%%/filetype_extensions.conf
+%%DATADIR%%/filetypes.Cython.conf
 %%DATADIR%%/filetypes.Genie.conf
+%%DATADIR%%/filetypes.Scala.conf
 %%DATADIR%%/filetypes.abc
 %%DATADIR%%/filetypes.actionscript
 %%DATADIR%%/filetypes.ada
@@ -95,6 +90,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
 %%DATADIR%%/filetypes.cmake
+%%DATADIR%%/filetypes.cobol
 %%DATADIR%%/filetypes.common
 %%DATADIR%%/filetypes.conf
 %%DATADIR%%/filetypes.cpp
@@ -116,8 +112,8 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.java
 %%DATADIR%%/filetypes.javascript
 %%DATADIR%%/filetypes.latex
-%%DATADIR%%/filetypes.lua
 %%DATADIR%%/filetypes.lisp
+%%DATADIR%%/filetypes.lua
 %%DATADIR%%/filetypes.makefile
 %%DATADIR%%/filetypes.markdown
 %%DATADIR%%/filetypes.matlab
@@ -139,19 +135,14 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.vhdl
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/filetypes.yaml
-%%DATADIR%%/c99.tags
 %%DATADIR%%/html_entities.tags
 %%DATADIR%%/pascal.tags
 %%DATADIR%%/php.tags
 %%DATADIR%%/python.tags
 %%DATADIR%%/snippets.conf
-%%DATADIR%%/ui_toolbar.xml
-%%DATADIR%%/colorschemes/alt.conf
 %%DATADIR%%/templates/bsd
 %%DATADIR%%/templates/changelog
 %%DATADIR%%/templates/fileheader
-%%DATADIR%%/templates/function
-%%DATADIR%%/templates/gpl
 %%DATADIR%%/templates/files/file.html
 %%DATADIR%%/templates/files/file.php
 %%DATADIR%%/templates/files/file.rb
@@ -161,7 +152,22 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/templates/files/main.d
 %%DATADIR%%/templates/files/main.java
 %%DATADIR%%/templates/files/main.py
+%%DATADIR%%/templates/files/main.vala
 %%DATADIR%%/templates/files/program.pas
+%%DATADIR%%/templates/function
+%%DATADIR%%/templates/gpl
+%%DATADIR%%/ui_toolbar.xml
+share/icons/hicolor/16x16/apps/classviewer-class.png
+share/icons/hicolor/16x16/apps/classviewer-macro.png
+share/icons/hicolor/16x16/apps/classviewer-member.png
+share/icons/hicolor/16x16/apps/classviewer-method.png
+share/icons/hicolor/16x16/apps/classviewer-namespace.png
+share/icons/hicolor/16x16/apps/classviewer-other.png
+share/icons/hicolor/16x16/apps/classviewer-struct.png
+share/icons/hicolor/16x16/apps/classviewer-var.png
+share/icons/hicolor/16x16/apps/geany.png
+share/icons/hicolor/48x48/apps/geany.png
+share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/be/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/geany.mo
@@ -171,6 +177,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/el/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/es/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/geany.mo
@@ -195,7 +202,10 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/geany.mo
 %%NLS%%@dirrmtry share/locale/lb/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lb
-@dirrm lib/geany
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
 @dirrm %%DATADIR%%/templates/files
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/colorschemes
@@ -204,6 +214,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm lib/geany
 @dirrm include/geany/tagmanager
 @dirrm include/geany/scintilla
 @dirrm include/geany
