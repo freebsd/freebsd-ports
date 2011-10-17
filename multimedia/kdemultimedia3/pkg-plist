@@ -204,10 +204,10 @@ lib/kde3/noatun_winskin.so
 lib/kde3/noatunsimple.a
 lib/kde3/noatunsimple.la
 lib/kde3/noatunsimple.so
-lib/libarts_akode.a
-lib/libarts_akode.la
-lib/libarts_akode.so
-lib/libarts_akode.so.0
+%%AKODE%%lib/libarts_akode.a
+%%AKODE%%lib/libarts_akode.la
+%%AKODE%%lib/libarts_akode.so
+%%AKODE%%lib/libarts_akode.so.0
 lib/libarts_audiofile.a
 lib/libarts_audiofile.la
 lib/libarts_audiofile.so
