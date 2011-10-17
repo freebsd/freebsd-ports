@@ -15,6 +15,9 @@ you update your ports collection, before attempting any port upgrades.
 
   portmaster -o devel/p5-subversion p5-subversion-freebsd
 
+  Please also see the second entry below (20111016) if haven't upgraded
+  subversion yet.
+
 20111016:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
