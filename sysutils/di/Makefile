@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	4.29
+PORTVERSION=	4.30
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
@@ -25,6 +25,7 @@ MAKE_ENV+=	DI_NO_NLS=T
 .endif
 
 MAKE_ENV+=	prefix="${PREFIX}"
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
