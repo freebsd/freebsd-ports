@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a95092a6-f8f1-11e0-a7ea-00215c6a37bb">
+    <topic>asterisk -- remote crash vulnerability in SIP channel driver</topic>
+    <affects>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.7.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk</name>
+	<range><gt>10.0.0.*</gt><lt>10.0.0.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="http://downloads.asterisk.org/pub/security/AST-2011-012.html">
+	  <p>A remote authenticated user can cause a crash with a
+	    malformed request due to an unitialized variable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4063</cvename>
+    </references>
+    <dates>
+      <discovery>2011-10-17</discovery>
+      <entry>2011-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e454ca2f-f88d-11e0-b566-00163e01a509">
     <topic>PivotX -- Remote File Inclusion Vulnerability of TimThumb</topic>
     <affects>
