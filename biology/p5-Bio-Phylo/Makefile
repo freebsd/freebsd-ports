@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.40
+PORTVERSION=	0.43
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RVOSA
@@ -112,7 +112,9 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Treedrawer::Svg.3 \
 		Bio::Phylo::Treedrawer::Swf.3 \
 		Bio::Phylo::Unparsers::Abstract.3 \
+		Bio::Phylo::Unparsers::Cdao.3 \
 		Bio::Phylo::Unparsers::Fasta.3 \
+		Bio::Phylo::Unparsers::Hennig86.3 \
 		Bio::Phylo::Unparsers::Json.3 \
 		Bio::Phylo::Unparsers::Mrp.3 \
 		Bio::Phylo::Unparsers::Newick.3 \

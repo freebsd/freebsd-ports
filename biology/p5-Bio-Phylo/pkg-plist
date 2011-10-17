@@ -65,7 +65,9 @@
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Svg.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Swf.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Abstract.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Cdao.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Fasta.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Hennig86.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Json.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Mrp.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
