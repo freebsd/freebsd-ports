@@ -7,12 +7,14 @@
 
 PORTNAME=	klat4
 PORTVERSION=	0.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors
 MASTER_SITES=	http://klat.algebraic.ru/
 
 MAINTAINER=	laddassm@gmail.com
 COMMENT=	A LaTeX source editor for KDE4
+
+RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes

@@ -458,8 +458,6 @@ share/locale/zh_TW/LC_MESSAGES/skrooge.mo
 share/mime/application/x-skg.xml
 share/mime/application/x-skgc.xml
 share/mime/packages/x-skg.xml
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrm share/doc/HTML/en/skrooge
 @dirrm share/apps/skrooge_unit
 @dirrm share/apps/skrooge_tracker

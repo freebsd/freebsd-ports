@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -26,7 +26,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		kdcraw.9:${PORTSDIR}/graphics/kdegraphics4 \
+		kdcraw.20:${PORTSDIR}/graphics/libkdcraw-kde4 \
 		lcms2.2:${PORTSDIR}/graphics/lcms2 \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		png.6:${PORTSDIR}/graphics/png \
@@ -37,7 +37,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
-		dcmdata.3:${PORTSDIR}/devel/dcmtk
+		dcmdata.3:${PORTSDIR}/devel/dcmtk \
+		okularcore.1:${PORTSDIR}/graphics/okular
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
 
 CONFLICTS=	calligra-[0-9]*

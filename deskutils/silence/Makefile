@@ -7,12 +7,15 @@
 
 PORTNAME=	silence
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	124776-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	syncer@gmail.com
 COMMENT=	An information management tool
+
+RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 
 USE_CMAKE=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4

@@ -7,6 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -19,7 +20,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		lqr-1.3:${PORTSDIR}/graphics/liblqr-1 \
-		kipi.8:${PORTSDIR}/graphics/kdegraphics4
+		kipi.8:${PORTSDIR}/graphics/libkipi-kde4 \
+		kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4 \
+		kdcraw.20:${PORTSDIR}/graphics/libkdcraw-kde4
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -57,7 +60,7 @@ CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
 .endif
 
 #.if defined(WITH_MARBLE)
-#LIB_DEPENDS+=	marblewidget.11:${PORTSDIR}/astro/marble
+#LIB_DEPENDS+=	marblewidget.12:${PORTSDIR}/astro/marble
 #PLIST_SUB+=		MARBLE=""
 #.else
 CMAKE_ARGS+=	-DWITH_MarbleWidget:BOOL=OFF

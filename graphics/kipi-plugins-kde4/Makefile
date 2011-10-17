@@ -7,6 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -15,7 +16,10 @@ MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE4 kipi graphics plugins
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		kipi.8:${PORTSDIR}/graphics/kdegraphics4 \
+		kipi.8:${PORTSDIR}/graphics/libkipi-kde4 \
+		kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4 \
+		kdcraw.20:${PORTSDIR}/graphics/libkdcraw-kde4 \
+		ksane.0:${PORTSDIR}/graphics/libksane \
 		qjson.0:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
