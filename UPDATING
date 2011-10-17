@@ -5,7 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20111016
+20111016:
+  AFFECTS: users of devel/p5-subversion-freebsd
+  AUTHOR: wxs@FreeBSD.org
+
+  devel/p5-subversion-freebsd has been removed as it is no longer necessary.
+  If you have it installed please run the following to switch to
+  devel/p5-subversion:
+
+  portmaster -o devel/p5-subversion p5-subversion-freebsd
+
+20111016:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
 
