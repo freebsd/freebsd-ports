@@ -7,7 +7,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ MAINTAINER=	yeti@gwyddion.net
 COMMENT=	A gtk2 based SPM data visualization and analysis tool
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

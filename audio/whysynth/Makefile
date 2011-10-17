@@ -7,6 +7,7 @@
 
 PORTNAME=	whysynth
 PORTVERSION=	20100922
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/whysynth/
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack \
-		fftw3f.5:${PORTSDIR}/math/fftw3-float
+		fftw3f:${PORTSDIR}/math/fftw3-float
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

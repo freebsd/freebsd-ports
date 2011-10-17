@@ -7,6 +7,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -15,7 +16,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
 
 LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

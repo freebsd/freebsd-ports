@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -105,8 +105,8 @@ BROKEN=	Does not build with ancient binutils
 WITH_FFTW3=	yes
 .endif
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3		\
-		fftw3f.5:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3		\
+		fftw3f:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
 .endif
 

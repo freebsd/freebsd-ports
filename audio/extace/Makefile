@@ -7,14 +7,14 @@
 
 PORTNAME=	extace
 PORTVERSION=	1.9.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/eXtace/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Audio Visualization plugin for the X Window System
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 USE_GNOME=	esound gnomehack gnomehier gtk20
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -22,7 +22,7 @@ LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		Magick++.5:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
 OPTIONS=	BASH "Install programmable completions for Bash" off

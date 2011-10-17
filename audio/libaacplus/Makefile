@@ -7,6 +7,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://tipok.org.ua/downloads/media/aac+/libaacplus/:site1\
 		http://217.20.164.161/~tipok/aacplus/:site1\

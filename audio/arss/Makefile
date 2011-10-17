@@ -7,6 +7,7 @@
 
 PORTNAME=	arss
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Additive Image Synthesizer (convert audio to images, images to audio)
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/src
 

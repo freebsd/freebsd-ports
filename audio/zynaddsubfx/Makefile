@@ -7,6 +7,7 @@
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A realtime software synthesizer
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
 

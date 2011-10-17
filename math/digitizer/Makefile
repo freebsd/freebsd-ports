@@ -7,7 +7,7 @@
 
 PORTNAME=	digitizer
 PORTVERSION=	4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math graphics
 MASTER_SITES=	SF/${PORTNAME}/Engauge%20Digitizer/${PORTNAME}-${PORTVERSION}
 DISTNAME=	digit-src-${PORTVERSION:S/./_/}
@@ -16,7 +16,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Engauge Digitizer - Digitizing software to convert graphs into numbers
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 WRKSRC=		${WRKDIR}/engauge
 

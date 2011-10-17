@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -35,7 +35,7 @@ LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		qhull.5:${PORTSDIR}/math/qhull5 \
 		qrupdate:${PORTSDIR}/math/qrupdate \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
-		glpk.30:${PORTSDIR}/math/glpk
+		glpk.32:${PORTSDIR}/math/glpk
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes

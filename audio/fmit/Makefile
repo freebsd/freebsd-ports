@@ -7,6 +7,7 @@
 
 PORTNAME=	fmit
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -18,7 +19,7 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 
 BROKEN=		does not configure
 

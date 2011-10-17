@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -36,7 +36,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		dcmdata.3:${PORTSDIR}/devel/dcmtk \
 		okularcore.1:${PORTSDIR}/graphics/okular
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30

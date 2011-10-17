@@ -7,7 +7,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	2.04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
@@ -21,7 +21,7 @@ COMMENT=	A powerful script-based vector graphics language
 LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 .endif
 .if defined(WITH_FFTW)
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \

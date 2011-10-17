@@ -7,7 +7,7 @@
 
 PORTNAME=	lmms
 PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -21,7 +21,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		fftw3f.5:${PORTSDIR}/math/fftw3-float
+		fftw3f:${PORTSDIR}/math/fftw3-float
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugins \
 		${LOCALBASE}/lib/ladspa/cmt.so:${PORTSDIR}/audio/cmt \

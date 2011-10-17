@@ -7,14 +7,14 @@
 
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	The Open Fingerprint Architecture Library
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		curl.6:${PORTSDIR}/ftp/curl
 

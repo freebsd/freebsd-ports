@@ -7,6 +7,7 @@
 
 PORTNAME=	aacplusenc
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://teknoraver.net/software/mp4tools/
 
@@ -25,8 +26,8 @@ PLIST_FILES=	bin/aacplusenc
 .if defined(WITHOUT_FFTW3)
 MAKE_ARGS+=	NOFFTW3=1
 .else
-LIB_DEPENDS+=	fftw3f.5:${PORTSDIR}/math/fftw3-float \
-		fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float \
+		fftw3:${PORTSDIR}/math/fftw3
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
