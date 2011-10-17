@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	choqok
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www kde
-MASTER_SITES=	http://choqok.gnufolks.org/pkgs/
+MASTER_SITES=	SF/${PORTNAME}/Choqok/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
@@ -16,17 +16,18 @@ COMMENT=	KDE micro-blogging client
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson \
-		qoauth.1:${PORTSDIR}/net/qoauth \
-		kwebkit.1:${PORTSDIR}/www/kwebkitpart
+		qoauth.1:${PORTSDIR}/net/qoauth
 
+#BUILD_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kwebkitpart.so:${PORTSDIR}/www/kwebkitpart
+#RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kwebkitpart.so:${PORTSDIR}/www/kwebkitpart
+
+USE_GETTEXT=	yes
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	gui imageformats_run network \
+		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_GETTEXT=	yes
-USE_KDE4=	kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network imageformats_run moc_build \
-		qmake_build rcc_build uic_build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

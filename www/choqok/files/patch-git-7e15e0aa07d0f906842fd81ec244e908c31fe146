@@ -1,0 +1,21 @@
+From: Mehrdad Momeny <mehrdad.momeny@gmail.com>
+Date: Fri, 08 Apr 2011 07:52:33 +0000
+Subject: BUG:270377 Choqok 1.1 always chrashes upon closing with a segmentation fault
+X-Git-Url: http://quickgit.kde.org/?p=choqok.git&amp;a=commitdiff&amp;h=7e15e0aa07d0f906842fd81ec244e908c31fe146
+---
+BUG:270377 Choqok 1.1 always chrashes upon closing with a segmentation fault
+---
+
+
+--- ./libchoqok/pluginmanager.cpp
++++ ./libchoqok/pluginmanager.cpp
+@@ -67,7 +67,7 @@ public:
+             Plugin *plugin = it.value();
+             loadedPlugins.remove(info);
+             plugin->disconnect(&instance, SLOT(slotPluginDestroyed(QObject*)));
+-            delete plugin;
++            plugin->deleteLater();;
+         }
+     }
+ 
+

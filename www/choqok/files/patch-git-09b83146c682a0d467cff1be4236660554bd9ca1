@@ -1,0 +1,33 @@
+From: Andrey Esin <gmlastik@gmail.com>
+Date: Thu, 07 Apr 2011 09:01:02 +0000
+Subject: Prevent crash, when noone message line enabled in account options.
+X-Git-Url: http://quickgit.kde.org/?p=choqok.git&amp;a=commitdiff&amp;h=09b83146c682a0d467cff1be4236660554bd9ca1
+---
+Prevent crash, when noone message line enabled in account options.
+---
+
+
+--- ./helperlibs/twitterapihelper/twitterapimicroblogwidget.cpp
++++ ./helperlibs/twitterapihelper/twitterapimicroblogwidget.cpp
+@@ -138,12 +138,14 @@ TwitterApiSearchTimelineWidget* TwitterA
+ 
+ void TwitterApiMicroBlogWidget::slotCurrentTimelineChanged(int index)
+ {
+-    Choqok::UI::TimelineWidget *stw =
+-            qobject_cast<Choqok::UI::TimelineWidget *>(timelinesTabWidget()->widget(index));
+-    if(stw->isClosable())
+-        d->btnCloseSearch->setEnabled(true);
+-    else
+-        d->btnCloseSearch->setEnabled(false);
++  if ( index > -1 ) {
++      Choqok::UI::TimelineWidget *stw =
++              qobject_cast<Choqok::UI::TimelineWidget *>(timelinesTabWidget()->widget(index));
++      if(stw->isClosable())
++          d->btnCloseSearch->setEnabled(true);
++      else
++          d->btnCloseSearch->setEnabled(false);
++  }
+ }
+ 
+ void TwitterApiMicroBlogWidget::slotCloseCurrentSearch()
+
