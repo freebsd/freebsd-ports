@@ -73,6 +73,7 @@
     SUBDIR += isaac-cfd
     SUBDIR += jmol
     SUBDIR += jstrack
+    SUBDIR += kalzium
     SUBDIR += kmovisto
     SUBDIR += kst
     SUBDIR += kst2
@@ -174,6 +175,7 @@
     SUBDIR += rubygem-ai4r
     SUBDIR += silo
     SUBDIR += simlib
+    SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
     SUBDIR += udunits

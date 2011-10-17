@@ -1,0 +1,32 @@
+bin/kanagram
+share/applications/kde4/kanagram.desktop
+share/apps/kanagram/images/kanagram.svg
+share/apps/kanagram/sounds/chalk.ogg
+share/apps/kanagram/sounds/right.ogg
+share/apps/kanagram/sounds/wrong.ogg
+share/config.kcfg/kanagram.kcfg
+share/config/kanagram.knsrc
+share/doc/HTML/en/kanagram/answer-highlight.png
+share/doc/HTML/en/kanagram/common
+share/doc/HTML/en/kanagram/general-settings.png
+share/doc/HTML/en/kanagram/helpstates.png
+share/doc/HTML/en/kanagram/index.cache.bz2
+share/doc/HTML/en/kanagram/index.docbook
+share/doc/HTML/en/kanagram/kanagram-hint.png
+share/doc/HTML/en/kanagram/kanagram.png
+share/doc/HTML/en/kanagram/newstuff-dialog.png
+share/doc/HTML/en/kanagram/newstuff-settings.png
+share/doc/HTML/en/kanagram/shortcuts-settings.png
+share/doc/HTML/en/kanagram/vocab-editor.png
+share/doc/HTML/en/kanagram/vocab-settings.png
+share/icons/hicolor/128x128/apps/kanagram.png
+share/icons/hicolor/16x16/apps/kanagram.png
+share/icons/hicolor/22x22/apps/kanagram.png
+share/icons/hicolor/32x32/apps/kanagram.png
+share/icons/hicolor/48x48/apps/kanagram.png
+share/icons/hicolor/64x64/apps/kanagram.png
+share/icons/hicolor/scalable/apps/kanagram.svgz
+@dirrm share/doc/HTML/en/kanagram
+@dirrm share/apps/kanagram/sounds
+@dirrm share/apps/kanagram/images
+@dirrm share/apps/kanagram

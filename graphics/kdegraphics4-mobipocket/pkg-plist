@@ -1,0 +1,7 @@
+lib/kde4/mobithumbnail.so
+lib/kde4/okularGenerator_mobi.so
+lib/strigi/strigila_mobi.so
+share/applications/kde4/okularApplication_mobi.desktop
+share/kde4/services/libokularGenerator_mobi.desktop
+share/kde4/services/mobithumbnail.desktop
+share/kde4/services/okularMobi.desktop

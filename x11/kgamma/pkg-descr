@@ -1,0 +1,5 @@
+KGamma is a KDE control center module for gamma calibration/correction
+of Xorg. With proper gamma settings, your display (websites, images,
+etc.) will look the same on your monitor as on other monitors.
+
+WWW: http://www.kde.org

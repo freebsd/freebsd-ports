@@ -1,9 +1,7 @@
-Filelight graphically represents a file system as a set of
-concentric segmented-rings, indicating where diskspace is
-being used. Segments expanding from the center represent
-files (including directories), with each segment's size 
-being proportional to the file's size and directories
-having child segments. 
+Filelight allows you to quickly understand exactly where your
+diskspace is being used by graphically representing your file system
+as a set of concentric segmented-rings. You can use it to locate
+hotspots of disk usage and then manipulate those areas using a file
+manager.
 
-Author: Max Howell <max.howell@methylblue.com>
-WWW: http://www.methylblue.com/filelight/
+WWW: http://utils.kde.org/projects/filelight

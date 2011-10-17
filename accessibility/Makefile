@@ -19,9 +19,9 @@
     SUBDIR += gnopernicus
     SUBDIR += gok
     SUBDIR += java-access-bridge
+    SUBDIR += jovie
     SUBDIR += kdeaccessibility
     SUBDIR += kdeaccessibility4
-    SUBDIR += ktts
     SUBDIR += linux-atk
     SUBDIR += linux-f10-atk
     SUBDIR += mousetweaks

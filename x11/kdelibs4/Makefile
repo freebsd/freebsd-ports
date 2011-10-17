@@ -16,34 +16,32 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
+LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		aspell:${PORTSDIR}/textproc/aspell \
-		jasper:${PORTSDIR}/graphics/jasper \
-		pcre:${PORTSDIR}/devel/pcre \
-		avahi-core:${PORTSDIR}/net/avahi-app \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		aspell.16:${PORTSDIR}/textproc/aspell \
+		jasper.4:${PORTSDIR}/graphics/jasper \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		avahi-core.7:${PORTSDIR}/net/avahi-app \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.6:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		idn:${PORTSDIR}/dns/libidn \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		qca.2:${PORTSDIR}/devel/qca \
 		HUpnp.1:${PORTSDIR}/net/hupnp \
 		attica.0:${PORTSDIR}/x11-toolkits/attica \
 		polkit-qt-core-1.1:${PORTSDIR}/sysutils/polkit-qt \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
-		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt \
-		grantlee_gui.0:${PORTSDIR}/devel/grantlee
+		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
-		showrgb:${PORTSDIR}/x11/rgb \
-		iceauth:${PORTSDIR}/x11/iceauth \
 		xauth:${PORTSDIR}/x11/xauth \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
@@ -52,25 +50,26 @@ CONFLICTS=	kdebase-runtime-4.5.[0-5]
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_KDE4=	kdeprefix kdehier automoc4 sharedmime oxygen
-KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_BISON=	build
-USE_OPENSSL=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
-		qtestlib script sql svg xml designer phonon \
-		assistant svg qdbusviewer makeqpf imageformats \
-		qmake_build moc_build rcc_build uic_build
-USE_GNOME=	libxml2 libxslt
-USE_XORG=	xscrnsaver
 USE_FAM=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	libxml2 libxslt
+USE_KDE4=	automoc4 kdehier kdeprefix oxygen sharedmime
+KDE4_BUILDENV=	yes
+USE_OPENSSL=	yes
+USE_PERL5=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus declarative designer gui imageformats_run \
+		network opengl phonon qdbusviewer_run qt3support \
+		qtestlib script sql svg webkit xml \
+		moc_build qmake_build rcc_build uic_build
+USE_XORG=	sm x11 xcursor xext xfixes xrender xtst
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
-		-DWITH_FAM:BOOL=On
-CMAKE_ARGS+=	-DHUPNP_INCLUDE_PATH:PATH="${LOCALBASE}/include"
+		-DWITH_FAM:BOOL=On \
+		-DHUPNP_INCLUDE_PATH:PATH="${LOCALBASE}/include" \
+		-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4"
 
 MAN1=	checkXML.1 \
 	kde4-config.1 \
@@ -99,7 +98,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
 .endif
 
 .if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h) || defined(WITH_LIBDNS)
-LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
+LIB_DEPENDS+=	avahi-qt4.1:${PORTSDIR}/net/avahi-qt4 \
 		dns_sd:${PORTSDIR}/net/avahi-libdns
 .else
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
@@ -115,7 +114,7 @@ post-patch:
 		${PATCH_WRKSRC}/kio/kssl/kopenssl.cpp \
 		${PATCH_WRKSRC}/kio/kio/ksambashare.cpp \
 		${PATCH_WRKSRC}/kjsembed/qtonly/FindQJSInternal.cmake
-#Fix rgb named colors database path.
+# Fix rgb named colors database path.
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/kdeui/colors/kcolordialog.cpp
 # Ports fails to locate pimlibs and workspace when PREFIX!=KDE4_PREFIX.
@@ -140,8 +139,9 @@ pre-configure:
 #	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
 #		-e 's|NAMES db|NAMES ${BDB_LIB_NAME} ${LOCALBASE}/lib|' \
 #		${PATCH_WRKSRC}/cmake/modules/FindBerkeleyDB.cmake
-# default KDEHOME dir
-	${REINPLACE_CMD} -e '/KDE_DEFAULT_HOME/s|.kde|.kde4|' \
+# When XSync (xext) is found, xscreensaver is just used as a fallback,
+# then we can disable it.
+	${REINPLACE_CMD} -e '/macro_bool_to_01/ s|^.*X11_Xscreensaver.*$$|set(HAVE_XSCREENSAVER 0)|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:

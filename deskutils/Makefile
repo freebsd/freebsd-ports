@@ -147,6 +147,7 @@
     SUBDIR += kooldock
     SUBDIR += krefty
     SUBDIR += krss
+    SUBDIR += kruler
     SUBDIR += ksmoothdock
     SUBDIR += ksshaskpass
     SUBDIR += ktagebuch

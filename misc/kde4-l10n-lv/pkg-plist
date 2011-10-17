@@ -1,8 +1,18 @@
+share/locale/lv/LC_MESSAGES/accountwizard.mo
+share/locale/lv/LC_MESSAGES/accountwizard_ical.mo
+share/locale/lv/LC_MESSAGES/accountwizard_imap.mo
+share/locale/lv/LC_MESSAGES/accountwizard_kolab.mo
+share/locale/lv/LC_MESSAGES/accountwizard_mailbox.mo
+share/locale/lv/LC_MESSAGES/accountwizard_maildir.mo
+share/locale/lv/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/lv/LC_MESSAGES/adblock.mo
+share/locale/lv/LC_MESSAGES/akonadi-filestore.mo
 share/locale/lv/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_contacts_resource.mo
+share/locale/lv/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/lv/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/lv/LC_MESSAGES/akonadi_kabc_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_knut_resource.mo
@@ -64,6 +74,7 @@ share/locale/lv/LC_MESSAGES/kabc_net.mo
 share/locale/lv/LC_MESSAGES/kabcclient.mo
 share/locale/lv/LC_MESSAGES/kabcformat_binary.mo
 share/locale/lv/LC_MESSAGES/kaccess.mo
+share/locale/lv/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/lv/LC_MESSAGES/kaddressbook.mo
 share/locale/lv/LC_MESSAGES/kalarm.mo
 share/locale/lv/LC_MESSAGES/kalgebra.mo
@@ -71,21 +82,27 @@ share/locale/lv/LC_MESSAGES/kalzium.mo
 share/locale/lv/LC_MESSAGES/kanagram.mo
 share/locale/lv/LC_MESSAGES/kapman.mo
 share/locale/lv/LC_MESSAGES/kapptemplate.mo
+share/locale/lv/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/lv/LC_MESSAGES/kate.mo
+share/locale/lv/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/lv/LC_MESSAGES/katebuild-plugin.mo
 share/locale/lv/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/lv/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/lv/LC_MESSAGES/katefiletemplates.mo
 share/locale/lv/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/lv/LC_MESSAGES/kategdbplugin.mo
 share/locale/lv/LC_MESSAGES/katehelloworld.mo
-share/locale/lv/LC_MESSAGES/kateinsertcommand.mo
-share/locale/lv/LC_MESSAGES/katekjswrapper.mo
 share/locale/lv/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/lv/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/lv/LC_MESSAGES/kateopenheader.mo
 share/locale/lv/LC_MESSAGES/katepart4.mo
 share/locale/lv/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/lv/LC_MESSAGES/katesearch.mo
+share/locale/lv/LC_MESSAGES/katesnippets_tng.mo
+share/locale/lv/LC_MESSAGES/katesql.mo
 share/locale/lv/LC_MESSAGES/katesymbolviewer.mo
 share/locale/lv/LC_MESSAGES/katetabbarextension.mo
+share/locale/lv/LC_MESSAGES/katetabifyplugin.mo
 share/locale/lv/LC_MESSAGES/katetextfilter.mo
 share/locale/lv/LC_MESSAGES/katexmlcheck.mo
 share/locale/lv/LC_MESSAGES/katexmltools.mo
@@ -109,6 +126,8 @@ share/locale/lv/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/lv/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/lv/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/lv/LC_MESSAGES/kcm_emoticons.mo
+share/locale/lv/LC_MESSAGES/kcm_infobase.mo
+share/locale/lv/LC_MESSAGES/kcm_infosummary.mo
 share/locale/lv/LC_MESSAGES/kcm_krfb.mo
 share/locale/lv/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/lv/LC_MESSAGES/kcm_kwintabbox.mo
@@ -130,6 +149,7 @@ share/locale/lv/LC_MESSAGES/kcmcgi.mo
 share/locale/lv/LC_MESSAGES/kcmcolors.mo
 share/locale/lv/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/lv/LC_MESSAGES/kcmcrypto.mo
+share/locale/lv/LC_MESSAGES/kcmdevinfo.mo
 share/locale/lv/LC_MESSAGES/kcmfonts.mo
 share/locale/lv/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/lv/LC_MESSAGES/kcmicons.mo
@@ -187,6 +207,7 @@ share/locale/lv/LC_MESSAGES/kdialog.mo
 share/locale/lv/LC_MESSAGES/kdiamond.mo
 share/locale/lv/LC_MESSAGES/kdmconfig.mo
 share/locale/lv/LC_MESSAGES/kdmgreet.mo
+share/locale/lv/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/lv/LC_MESSAGES/keditbookmarks.mo
 share/locale/lv/LC_MESSAGES/kfile.mo
 share/locale/lv/LC_MESSAGES/kfile_avi.mo
@@ -332,6 +353,7 @@ share/locale/lv/LC_MESSAGES/ksaneplugin.mo
 share/locale/lv/LC_MESSAGES/kscd.mo
 share/locale/lv/LC_MESSAGES/kscreensaver.mo
 share/locale/lv/LC_MESSAGES/ksendemail.mo
+share/locale/lv/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lv/LC_MESSAGES/kshisen.mo
 share/locale/lv/LC_MESSAGES/kshorturifilter.mo
 share/locale/lv/LC_MESSAGES/ksirk.mo
@@ -355,7 +377,6 @@ share/locale/lv/LC_MESSAGES/ksystraycmd.mo
 share/locale/lv/LC_MESSAGES/kteatime.mo
 share/locale/lv/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/lv/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/lv/LC_MESSAGES/kthememanager.mo
 share/locale/lv/LC_MESSAGES/ktimer.mo
 share/locale/lv/LC_MESSAGES/ktimetracker.mo
 share/locale/lv/LC_MESSAGES/ktouch.mo
@@ -376,7 +397,7 @@ share/locale/lv/LC_MESSAGES/kwin.mo
 share/locale/lv/LC_MESSAGES/kwin_art_clients.mo
 share/locale/lv/LC_MESSAGES/kwin_clients.mo
 share/locale/lv/LC_MESSAGES/kwin_effects.mo
-share/locale/lv/LC_MESSAGES/kwin_lib.mo
+share/locale/lv/LC_MESSAGES/kwinshutdown.mo
 share/locale/lv/LC_MESSAGES/kwinstartmenu.mo
 share/locale/lv/LC_MESSAGES/kwordquiz.mo
 share/locale/lv/LC_MESSAGES/kwrite.mo
@@ -391,6 +412,7 @@ share/locale/lv/LC_MESSAGES/libkcal.mo
 share/locale/lv/LC_MESSAGES/libkcddb.mo
 share/locale/lv/LC_MESSAGES/libkcompactdisc.mo
 share/locale/lv/LC_MESSAGES/libkdcraw.mo
+share/locale/lv/LC_MESSAGES/libkdecorations.mo
 share/locale/lv/LC_MESSAGES/libkdeedu.mo
 share/locale/lv/LC_MESSAGES/libkdegames.mo
 share/locale/lv/LC_MESSAGES/libkdepim.mo
@@ -438,6 +460,8 @@ share/locale/lv/LC_MESSAGES/mf_konqplugin.mo
 share/locale/lv/LC_MESSAGES/minitoolsplugin.mo
 share/locale/lv/LC_MESSAGES/mplayerthumbs.mo
 share/locale/lv/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/lv/LC_MESSAGES/nepomukbackup.mo
+share/locale/lv/LC_MESSAGES/nepomukcontroller.mo
 share/locale/lv/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/lv/LC_MESSAGES/nepomukserver.mo
 share/locale/lv/LC_MESSAGES/nepomukservicestub.mo
@@ -464,7 +488,6 @@ share/locale/lv/LC_MESSAGES/okular_tiff.mo
 share/locale/lv/LC_MESSAGES/okular_xps.mo
 share/locale/lv/LC_MESSAGES/palapeli.mo
 share/locale/lv/LC_MESSAGES/parley.mo
-share/locale/lv/LC_MESSAGES/phonon-xine.mo
 share/locale/lv/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/lv/LC_MESSAGES/phonon_kde.mo
 share/locale/lv/LC_MESSAGES/phononserver.mo
@@ -509,6 +532,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_news.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -549,6 +573,7 @@ share/locale/lv/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
+share/locale/lv/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -565,6 +590,7 @@ share/locale/lv/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/lv/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kill.mo
@@ -585,6 +611,8 @@ share/locale/lv/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/lv/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/lv/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/lv/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -598,6 +626,8 @@ share/locale/lv/LC_MESSAGES/plasmapkg.mo
 share/locale/lv/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/lv/LC_MESSAGES/plasmoidviewer.mo
 share/locale/lv/LC_MESSAGES/powerdevil.mo
+share/locale/lv/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/lv/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/lv/LC_MESSAGES/printer-applet.mo
 share/locale/lv/LC_MESSAGES/processcore.mo
 share/locale/lv/LC_MESSAGES/processui.mo

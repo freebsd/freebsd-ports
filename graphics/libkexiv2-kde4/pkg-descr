@@ -1,6 +1,5 @@
-libkexiv2 is a wrapper around Exiv2 library to manipulate pictures metadata.
+Libkexiv2 is a wrapper around Exiv2 library to manipulate pictures
+metadata as EXIF/IPTC and XMP. This library is used by kipi-plugins,
+digiKam and others kipi host programs.
 
-WWW: http://www.kipi-plugins.org/
-
-- Alex Dupre
-ale@FreeBSD.org
+WWW: http://www.digikam.org

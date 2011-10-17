@@ -55,8 +55,6 @@ share/config
 share/config.kcfg
 share/dbus-1
 share/dbus-1/interfaces
-share/dbus-1/services
-share/dbus-1/system-services
 share/doc/HTML
 share/doc/HTML/bg
 share/doc/HTML/ca
@@ -645,6 +643,8 @@ share/locale/sr@ijekavianlatin
 share/locale/sr@ijekavianlatin/LC_MESSAGES
 share/locale/sr@latin
 share/locale/sr@latin/LC_MESSAGES
+share/locale/ug
+share/locale/ug/LC_MESSAGES
 share/locale/uz@cyrillic
 share/locale/uz@cyrillic/LC_MESSAGES
 share/locale/xh

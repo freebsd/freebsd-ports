@@ -105,6 +105,9 @@ share/doc/HTML/hu/kioslave/ldap/index.docbook
 share/doc/HTML/hu/kioslave/mailto/common
 share/doc/HTML/hu/kioslave/mailto/index.cache.bz2
 share/doc/HTML/hu/kioslave/mailto/index.docbook
+share/doc/HTML/hu/kioslave/news/common
+share/doc/HTML/hu/kioslave/news/index.cache.bz2
+share/doc/HTML/hu/kioslave/news/index.docbook
 share/doc/HTML/hu/kioslave/nfs/common
 share/doc/HTML/hu/kioslave/nfs/index.cache.bz2
 share/doc/HTML/hu/kioslave/nfs/index.docbook
@@ -136,7 +139,6 @@ share/locale/hu/LC_MESSAGES/adblock.mo
 share/locale/hu/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_localbookmarks_resource.mo
-share/locale/hu/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/hu/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_next.mo
 share/locale/hu/LC_MESSAGES/akonadi_serializer_plugins.mo
@@ -165,6 +167,8 @@ share/locale/hu/LC_MESSAGES/domtreeviewer.mo
 share/locale/hu/LC_MESSAGES/dragonplayer.mo
 share/locale/hu/LC_MESSAGES/drkonqi.mo
 share/locale/hu/LC_MESSAGES/filetypes.mo
+share/locale/hu/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/hu/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/hu/LC_MESSAGES/freespacenotifier.mo
 share/locale/hu/LC_MESSAGES/fsview.mo
 share/locale/hu/LC_MESSAGES/granatier.mo
@@ -198,22 +202,25 @@ share/locale/hu/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/hu/LC_MESSAGES/kate.mo
 share/locale/hu/LC_MESSAGES/kate_kttsd.mo
+share/locale/hu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/hu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/hu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/hu/LC_MESSAGES/katefiletemplates.mo
 share/locale/hu/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/hu/LC_MESSAGES/kategdbplugin.mo
 share/locale/hu/LC_MESSAGES/katehelloworld.mo
-share/locale/hu/LC_MESSAGES/kateinsertcommand.mo
-share/locale/hu/LC_MESSAGES/katekjswrapper.mo
 share/locale/hu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/hu/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/hu/LC_MESSAGES/kateopenheader.mo
 share/locale/hu/LC_MESSAGES/katepart4.mo
 share/locale/hu/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/hu/LC_MESSAGES/katesearch.mo
 share/locale/hu/LC_MESSAGES/katesnippets_tng.mo
+share/locale/hu/LC_MESSAGES/katesql.mo
 share/locale/hu/LC_MESSAGES/katesymbolviewer.mo
 share/locale/hu/LC_MESSAGES/katetabbarextension.mo
+share/locale/hu/LC_MESSAGES/katetabifyplugin.mo
 share/locale/hu/LC_MESSAGES/katetextfilter.mo
 share/locale/hu/LC_MESSAGES/katexmlcheck.mo
 share/locale/hu/LC_MESSAGES/katexmltools.mo
@@ -466,6 +473,7 @@ share/locale/hu/LC_MESSAGES/ksaneplugin.mo
 share/locale/hu/LC_MESSAGES/kscd.mo
 share/locale/hu/LC_MESSAGES/kscreensaver.mo
 share/locale/hu/LC_MESSAGES/ksendemail.mo
+share/locale/hu/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hu/LC_MESSAGES/kshisen.mo
 share/locale/hu/LC_MESSAGES/kshorturifilter.mo
 share/locale/hu/LC_MESSAGES/ksirk.mo
@@ -487,9 +495,10 @@ share/locale/hu/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/hu/LC_MESSAGES/ksystemlog.mo
 share/locale/hu/LC_MESSAGES/ksystraycmd.mo
 share/locale/hu/LC_MESSAGES/kteatime.mo
+share/locale/hu/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/hu/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/hu/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/hu/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/hu/LC_MESSAGES/kthememanager.mo
 share/locale/hu/LC_MESSAGES/ktimer.mo
 share/locale/hu/LC_MESSAGES/ktimetracker.mo
 share/locale/hu/LC_MESSAGES/ktouch.mo
@@ -510,7 +519,7 @@ share/locale/hu/LC_MESSAGES/kwin.mo
 share/locale/hu/LC_MESSAGES/kwin_art_clients.mo
 share/locale/hu/LC_MESSAGES/kwin_clients.mo
 share/locale/hu/LC_MESSAGES/kwin_effects.mo
-share/locale/hu/LC_MESSAGES/kwin_lib.mo
+share/locale/hu/LC_MESSAGES/kwinshutdown.mo
 share/locale/hu/LC_MESSAGES/kwinstartmenu.mo
 share/locale/hu/LC_MESSAGES/kwordquiz.mo
 share/locale/hu/LC_MESSAGES/kwrite.mo
@@ -528,6 +537,7 @@ share/locale/hu/LC_MESSAGES/libkcalutils.mo
 share/locale/hu/LC_MESSAGES/libkcddb.mo
 share/locale/hu/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hu/LC_MESSAGES/libkdcraw.mo
+share/locale/hu/LC_MESSAGES/libkdecorations.mo
 share/locale/hu/LC_MESSAGES/libkdeedu.mo
 share/locale/hu/LC_MESSAGES/libkdegames.mo
 share/locale/hu/LC_MESSAGES/libkdepim.mo
@@ -556,6 +566,7 @@ share/locale/hu/LC_MESSAGES/libmailtransport.mo
 share/locale/hu/LC_MESSAGES/libmessagelist.mo
 share/locale/hu/LC_MESSAGES/libmessageviewer.mo
 share/locale/hu/LC_MESSAGES/liboktetacore.mo
+share/locale/hu/LC_MESSAGES/liboktetagui.mo
 share/locale/hu/LC_MESSAGES/liboktetakasten.mo
 share/locale/hu/LC_MESSAGES/libphonon.mo
 share/locale/hu/LC_MESSAGES/libplasma.mo
@@ -576,12 +587,14 @@ share/locale/hu/LC_MESSAGES/minitoolsplugin.mo
 share/locale/hu/LC_MESSAGES/mplayerthumbs.mo
 share/locale/hu/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/hu/LC_MESSAGES/nepomukbackup.mo
+share/locale/hu/LC_MESSAGES/nepomukcontroller.mo
 share/locale/hu/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/hu/LC_MESSAGES/nepomukserver.mo
 share/locale/hu/LC_MESSAGES/nepomukservicestub.mo
 share/locale/hu/LC_MESSAGES/nepomukstorage.mo
 share/locale/hu/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/hu/LC_MESSAGES/nsplugin.mo
+share/locale/hu/LC_MESSAGES/okteta-mobile.mo
 share/locale/hu/LC_MESSAGES/okteta.mo
 share/locale/hu/LC_MESSAGES/oktetapart.mo
 share/locale/hu/LC_MESSAGES/okular.mo
@@ -602,17 +615,18 @@ share/locale/hu/LC_MESSAGES/okular_tiff.mo
 share/locale/hu/LC_MESSAGES/okular_xps.mo
 share/locale/hu/LC_MESSAGES/palapeli.mo
 share/locale/hu/LC_MESSAGES/parley.mo
-share/locale/hu/LC_MESSAGES/phonon-xine.mo
 share/locale/hu/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hu/LC_MESSAGES/phonon_kde.mo
 share/locale/hu/LC_MESSAGES/phononserver.mo
 share/locale/hu/LC_MESSAGES/plasma-desktop.mo
 share/locale/hu/LC_MESSAGES/plasma-netbook.mo
 share/locale/hu/LC_MESSAGES/plasma-overlay.mo
+share/locale/hu/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/hu/LC_MESSAGES/plasma-windowed.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
+share/locale/hu/LC_MESSAGES/plasma_applet_akonotes_note.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_bookmarks.mo
@@ -641,6 +655,7 @@ share/locale/hu/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_kimpanel.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_knowledgebase.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_kolourpicker.mo
+share/locale/hu/LC_MESSAGES/plasma_applet_kpapplet.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_leavenote.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_life.mo
@@ -672,6 +687,7 @@ share/locale/hu/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_searchbox.mo
+share/locale/hu/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -708,6 +724,7 @@ share/locale/hu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/hu/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_browserhistory.mo
@@ -760,6 +777,7 @@ share/locale/hu/LC_MESSAGES/processcore.mo
 share/locale/hu/LC_MESSAGES/processui.mo
 share/locale/hu/LC_MESSAGES/randrmonitor.mo
 share/locale/hu/LC_MESSAGES/rellinks.mo
+share/locale/hu/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/hu/LC_MESSAGES/rocs.mo
 share/locale/hu/LC_MESSAGES/searchbarplugin.mo
 share/locale/hu/LC_MESSAGES/solid-hardware.mo
@@ -791,6 +809,7 @@ share/locale/hu/entry.desktop
 @dirrm share/doc/HTML/hu/kioslave/rlogin
 @dirrm share/doc/HTML/hu/kioslave/nntp
 @dirrm share/doc/HTML/hu/kioslave/nfs
+@dirrm share/doc/HTML/hu/kioslave/news
 @dirrm share/doc/HTML/hu/kioslave/mailto
 @dirrm share/doc/HTML/hu/kioslave/ldap
 @dirrm share/doc/HTML/hu/kioslave/ftp

@@ -1,2 +1,2 @@
-MAN1=	cheatmake.1 create_cvsignore.1 create_makefiles.1 cvscheck.1 cvslastchange.1 cvslastlog.1 cvsrevertlast.1 cxxmetric.1 demangle.1 extend_dmalloc.1 extractrc.1 fixincludes.1 kalzium.1 kbookmarkmerger.1 kdesu.1 kmouth.1 po2xml.1 pruneemptydirs.1 qtdoc.1 reportview.1 split2po.1 swappo.1 xml2pot.1 zonetab2pot.py.1
+MAN1=	adddebug.1 cheatmake.1 create_cvsignore.1 create_makefiles.1 cvscheck.1 cvslastchange.1 cvslastlog.1 cvsrevertlast.1 cxxmetric.1 demangle.1 extend_dmalloc.1 extractrc.1 fixincludes.1 kalzium.1 kbookmarkmerger.1 kdesu.1 kmouth.1 po2xml.1 pruneemptydirs.1 qtdoc.1 reportview.1 split2po.1 swappo.1 xml2pot.1 zonetab2pot.py.1
 MAN6=	amor.6

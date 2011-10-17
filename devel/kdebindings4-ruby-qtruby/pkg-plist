@@ -1,0 +1,56 @@
+bin/rbqtapi
+bin/rbrcc
+bin/rbuic4
+include/qtruby/marshall.h
+include/qtruby/marshall_basetypes.h
+include/qtruby/marshall_complex.h
+include/qtruby/marshall_macros.h
+include/qtruby/marshall_primitives.h
+include/qtruby/marshall_types.h
+include/qtruby/qtruby.h
+include/qtruby/smokeruby.h
+lib/cmake/qtruby4/QtRuby4Config.cmake
+lib/cmake/qtruby4/QtRuby4Export-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/qtruby4/QtRuby4Export.cmake
+lib/libqtruby4shared.so
+lib/libqtruby4shared.so.2
+lib/libqtruby4shared.so.2.0.0
+%%RUBY_SITELIBDIR%%/Qt.rb
+%%RUBY_SITELIBDIR%%/Qt/active_item_model.rb
+%%RUBY_SITELIBDIR%%/Qt/active_table_model.rb
+%%RUBY_SITELIBDIR%%/Qt/qtruby4.rb
+%%RUBY_SITELIBDIR%%/Qt3.rb
+%%RUBY_SITELIBDIR%%/Qt4.rb
+%%RUBY_SITEARCHLIBDIR%%/phonon.so
+%%RUBY_SITEARCHLIBDIR%%/qscintilla.so
+%%RUBY_SITEARCHLIBDIR%%/qtdeclarative.so
+%%RUBY_SITEARCHLIBDIR%%/qtruby4.so
+%%RUBY_SITEARCHLIBDIR%%/qtscript.so
+%%RUBY_SITEARCHLIBDIR%%/qttest.so
+%%RUBY_SITEARCHLIBDIR%%/qtuitools.so
+%%RUBY_SITEARCHLIBDIR%%/qtwebkit.so
+%%RUBY_SITEARCHLIBDIR%%/qwt.so
+%%RUBY_SITELIBDIR%%/phonon/phonon.rb
+%%RUBY_SITELIBDIR%%/qscintilla/qscintilla.rb
+%%RUBY_SITELIBDIR%%/qtdeclarative/qtdeclarative.rb
+%%RUBY_SITELIBDIR%%/qtscript/qtscript.rb
+%%RUBY_SITELIBDIR%%/qttest/qttest.rb
+%%RUBY_SITELIBDIR%%/qtuitools/qtuitools.rb
+%%RUBY_SITELIBDIR%%/qtwebkit/qtwebkit.rb
+%%RUBY_SITELIBDIR%%/qwt/qwt.rb
+@dirrm %%RUBY_SITELIBDIR%%/qwt
+@dirrm %%RUBY_SITELIBDIR%%/qtwebkit
+@dirrm %%RUBY_SITELIBDIR%%/qtuitools
+@dirrm %%RUBY_SITELIBDIR%%/qttest
+@dirrm %%RUBY_SITELIBDIR%%/qtscript
+@dirrm %%RUBY_SITELIBDIR%%/qtdeclarative
+@dirrm %%RUBY_SITELIBDIR%%/qscintilla
+@dirrm %%RUBY_SITELIBDIR%%/phonon
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/Qt
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
+@dirrm lib/cmake/qtruby4
+@dirrmtry lib/cmake
+@dirrm include/qtruby

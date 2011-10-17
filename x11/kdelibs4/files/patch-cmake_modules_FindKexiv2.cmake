@@ -1,16 +1,16 @@
---- ./cmake/modules/FindKexiv2.cmake.orig	2009-01-06 20:27:37.000000000 +0300
-+++ ./cmake/modules/FindKexiv2.cmake	2009-09-23 00:38:15.000000000 +0400
-@@ -47,60 +47,29 @@
+--- cmake/modules/FindKexiv2.cmake.orig	2011-05-20 22:24:53.000000000 +0200
++++ cmake/modules/FindKexiv2.cmake	2011-07-31 04:11:37.659261791 +0200
+@@ -62,59 +62,28 @@
  
        # use pkg-config to get the directories and then use these values
        # in the FIND_PATH() and FIND_LIBRARY() calls
--      INCLUDE(UsePkgConfig)
+-      include(UsePkgConfig)
 -    
 -      PKGCONFIG(libkexiv2 _KEXIV2IncDir _KEXIV2LinkDir _KEXIV2LinkFlags _KEXIV2Cflags)
 -    
 -      if(_KEXIV2LinkFlags)
 -        # query pkg-config asking for a libkexiv2 >= 0.2.0
--        EXEC_PROGRAM(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=0.2.0 libkexiv2 RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull )
+-        exec_program(${PKGCONFIG_EXECUTABLE} ARGS --atleast-version=0.2.0 libkexiv2 RETURN_VALUE _return_VALUE OUTPUT_VARIABLE _pkgconfigDevNull )
 -        if(_return_VALUE STREQUAL "0")
 -            message(STATUS "Found libkexiv2 release >= 0.2.0")
 -            set(KEXIV2_VERSION_GOOD_FOUND TRUE)
@@ -33,15 +33,15 @@
 -    if(KEXIV2_VERSION_GOOD_FOUND)
 -        set(KEXIV2_DEFINITIONS "${_KEXIV2Cflags}")
 -    
--        FIND_PATH(KEXIV2_INCLUDE_DIR libkexiv2/version.h
+-        find_path(KEXIV2_INCLUDE_DIR libkexiv2/version.h
 -        ${_KEXIV2IncDir}
 +    find_path(KEXIV2_INCLUDE_DIR NAMES libkexiv2/version.h
 +        HINTS
 +        ${PC_LIBKEXIV2_INCLUDEDIR}
 +        ${PC_LIBKEXIV2_INCLUDE_DIRS}
          )
--    
--        FIND_LIBRARY(KEXIV2_LIBRARIES NAMES kexiv2
+     
+-        find_library(KEXIV2_LIBRARIES NAMES kexiv2
 -        PATHS
 -        ${_KEXIV2LinkDir}
 +    find_library(KEXIV2_LIBRARY NAMES kexiv2
@@ -49,7 +49,7 @@
 +        ${PC_LIBKEXIV2_LIBDIR}
 +        ${PC_LIBKEXIV2_LIBRARY_DIRS}
          )
--    
+     
 -        if (KEXIV2_INCLUDE_DIR AND KEXIV2_LIBRARIES)
 -            set(KEXIV2_FOUND TRUE)
 -        endif (KEXIV2_INCLUDE_DIR AND KEXIV2_LIBRARIES)
@@ -68,15 +68,11 @@
 -              endif (NOT KEXIV2_LIBRARIES)
 -          endif (Kexiv2_FIND_REQUIRED)
 -      endif (KEXIV2_FOUND)
--    
-+
 +    include(FindPackageHandleStandardArgs)
 +    find_package_handle_standard_args(Kexiv2 DEFAULT_MSG KEXIV2_LIBRARY KEXIV2_INCLUDE_DIR)
-+
 +    if(KEXIV2_FOUND)
 +       set(KEXIV2_LIBRARIES ${KEXIV2_LIBRARY})
 +    endif(KEXIV2_FOUND)
-+
-     MARK_AS_ADVANCED(KEXIV2_INCLUDE_DIR KEXIV2_LIBRARIES)
+     
+     mark_as_advanced(KEXIV2_INCLUDE_DIR KEXIV2_LIBRARIES KEXIV2_DEFINITIONS)
  
-   endif(KEXIV2_LOCAL_FOUND)

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kdebase
+PORTNAME=	kde-baseapps
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -16,34 +16,39 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
+LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
+		tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 
-LATEST_LINK=	${PORTNAME}4
+CONFLICTS=	kdebase-4.[0-6].* konq-plugins-4.[0-6].*
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl dbus qt3support \
-		designer network svg qtestlib \
-		qmake_build moc_build rcc_build uic_build
-
 USE_GETTEXT=	yes
+USE_GNOME=	glib20
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus gui qt3support script \
+		moc_build qmake_build rcc_build uic_build
+USE_XORG=	x11 xt
 MAKE_JOBS_SAFE=	yes
 
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DWITH_RAW1394:BOOL=OFF \
-		-DWITH_PCIUTILS:BOOL=OFF
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 MAN1=		kbookmarkmerger.1 \
 		kfind.1
 
+OPTIONS=	KONSOLE "Install Konsole terminal emulator" on \
+		KWRITE "Install KWrite text editor" on
+
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.ifndef(WITHOUT_KONSOLE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
+.endif
+
+.ifndef(WITHOUT_KWRITE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwrite:${PORTSDIR}/editors/kate
 .endif
 
 .include <bsd.port.mk>

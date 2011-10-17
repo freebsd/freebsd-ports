@@ -1,0 +1,153 @@
+bin/okular
+include/okular/core/action.h
+include/okular/core/annotations.h
+include/okular/core/area.h
+include/okular/core/document.h
+include/okular/core/fileprinter.h
+include/okular/core/fontinfo.h
+include/okular/core/form.h
+include/okular/core/generator.h
+include/okular/core/global.h
+include/okular/core/okular_export.h
+include/okular/core/page.h
+include/okular/core/pagesize.h
+include/okular/core/pagetransition.h
+include/okular/core/sound.h
+include/okular/core/sourcereference.h
+include/okular/core/textdocumentgenerator.h
+include/okular/core/textpage.h
+include/okular/core/utils.h
+include/okular/core/version.h
+include/okular/interfaces/configinterface.h
+include/okular/interfaces/guiinterface.h
+include/okular/interfaces/printinterface.h
+lib/cmake/Okular/OkularConfig.cmake
+lib/cmake/Okular/OkularConfigVersion.cmake
+lib/kde4/kio_msits.so
+lib/kde4/okularGenerator_chmlib.so
+lib/kde4/okularGenerator_comicbook.so
+lib/kde4/okularGenerator_djvu.so
+lib/kde4/okularGenerator_dvi.so
+lib/kde4/okularGenerator_epub.so
+lib/kde4/okularGenerator_fax.so
+lib/kde4/okularGenerator_fb.so
+lib/kde4/okularGenerator_ghostview.so
+lib/kde4/okularGenerator_kimgio.so
+lib/kde4/okularGenerator_ooo.so
+lib/kde4/okularGenerator_poppler.so
+lib/kde4/okularGenerator_tiff.so
+lib/kde4/okularGenerator_xps.so
+lib/kde4/okularpart.so
+lib/libokularcore.so
+lib/libokularcore.so.1
+lib/libokularcore.so.1.7.0
+share/applications/kde4/okular.desktop
+share/applications/kde4/okularApplication_chm.desktop
+share/applications/kde4/okularApplication_comicbook.desktop
+share/applications/kde4/okularApplication_djvu.desktop
+share/applications/kde4/okularApplication_dvi.desktop
+share/applications/kde4/okularApplication_epub.desktop
+share/applications/kde4/okularApplication_fax.desktop
+share/applications/kde4/okularApplication_fb.desktop
+share/applications/kde4/okularApplication_ghostview.desktop
+share/applications/kde4/okularApplication_kimgio.desktop
+share/applications/kde4/okularApplication_ooo.desktop
+share/applications/kde4/okularApplication_pdf.desktop
+share/applications/kde4/okularApplication_tiff.desktop
+share/applications/kde4/okularApplication_xps.desktop
+share/apps/okular/icons/hicolor/16x16/apps/okular-gv.png
+share/apps/okular/icons/hicolor/32x32/apps/okular-gv.png
+share/apps/okular/part.rc
+share/apps/okular/pics/checkmark.png
+share/apps/okular/pics/circle.png
+share/apps/okular/pics/comment.png
+share/apps/okular/pics/cross.png
+share/apps/okular/pics/help.png
+share/apps/okular/pics/insert.png
+share/apps/okular/pics/key.png
+share/apps/okular/pics/newparagraph.png
+share/apps/okular/pics/note.png
+share/apps/okular/pics/paperclip.png
+share/apps/okular/pics/paragraph.png
+share/apps/okular/pics/pushpin.png
+share/apps/okular/pics/rightarrow.png
+share/apps/okular/pics/rightpointer.png
+share/apps/okular/pics/stamps.svg
+share/apps/okular/pics/star.png
+share/apps/okular/pics/tool-ellipse-okular.png
+share/apps/okular/pics/tool-highlighter-okular.png
+share/apps/okular/pics/tool-ink-okular.png
+share/apps/okular/pics/tool-line-okular.png
+share/apps/okular/pics/tool-note-inline-okular.png
+share/apps/okular/pics/tool-note-inline.png
+share/apps/okular/pics/tool-note-okular.png
+share/apps/okular/pics/tool-note.png
+share/apps/okular/pics/tool-polygon-okular.png
+share/apps/okular/pics/tool-stamp-okular.png
+share/apps/okular/pics/tool-underline-okular.png
+share/apps/okular/pics/uparrow.png
+share/apps/okular/pics/upleftarrow.png
+share/apps/okular/shell.rc
+share/apps/okular/tools.xml
+share/config.kcfg/gssettings.kcfg
+share/config.kcfg/okular.kcfg
+share/doc/HTML/en/okular/annotation-properties.png
+share/doc/HTML/en/okular/annotations.png
+share/doc/HTML/en/okular/common
+share/doc/HTML/en/okular/configure.png
+share/doc/HTML/en/okular/embedded-files-bar.png
+share/doc/HTML/en/okular/forms-bar.png
+share/doc/HTML/en/okular/index.cache.bz2
+share/doc/HTML/en/okular/index.docbook
+share/doc/HTML/en/okular/mainwindow.png
+share/doc/HTML/en/okular/presentation.png
+share/icons/hicolor/128x128/apps/okular.png
+share/icons/hicolor/16x16/apps/okular.png
+share/icons/hicolor/22x22/apps/okular.png
+share/icons/hicolor/32x32/apps/okular.png
+share/icons/hicolor/48x48/apps/okular.png
+share/icons/hicolor/64x64/apps/okular.png
+share/icons/hicolor/scalable/apps/okular.svgz
+share/kde4/services/libokularGenerator_chmlib.desktop
+share/kde4/services/libokularGenerator_comicbook.desktop
+share/kde4/services/libokularGenerator_djvu.desktop
+share/kde4/services/libokularGenerator_dvi.desktop
+share/kde4/services/libokularGenerator_epub.desktop
+share/kde4/services/libokularGenerator_fax.desktop
+share/kde4/services/libokularGenerator_fb.desktop
+share/kde4/services/libokularGenerator_ghostview.desktop
+share/kde4/services/libokularGenerator_kimgio.desktop
+share/kde4/services/libokularGenerator_ooo.desktop
+share/kde4/services/libokularGenerator_poppler.desktop
+share/kde4/services/libokularGenerator_tiff.desktop
+share/kde4/services/libokularGenerator_xps.desktop
+share/kde4/services/msits.protocol
+share/kde4/services/okularChm.desktop
+share/kde4/services/okularComicbook.desktop
+share/kde4/services/okularDjvu.desktop
+share/kde4/services/okularDvi.desktop
+share/kde4/services/okularEPub.desktop
+share/kde4/services/okularFax.desktop
+share/kde4/services/okularFb.desktop
+share/kde4/services/okularGhostview.desktop
+share/kde4/services/okularKimgio.desktop
+share/kde4/services/okularOoo.desktop
+share/kde4/services/okularPoppler.desktop
+share/kde4/services/okularTiff.desktop
+share/kde4/services/okularXps.desktop
+share/kde4/services/okular_part.desktop
+share/kde4/servicetypes/okularGenerator.desktop
+@dirrm share/doc/HTML/en/okular
+@dirrm share/apps/okular/pics
+@dirrm share/apps/okular/icons/hicolor/32x32/apps
+@dirrm share/apps/okular/icons/hicolor/32x32
+@dirrm share/apps/okular/icons/hicolor/16x16/apps
+@dirrm share/apps/okular/icons/hicolor/16x16
+@dirrm share/apps/okular/icons/hicolor
+@dirrm share/apps/okular/icons
+@dirrm share/apps/okular
+@dirrm lib/cmake/Okular
+@dirrmtry lib/cmake
+@dirrm include/okular/interfaces
+@dirrm include/okular/core
+@dirrm include/okular

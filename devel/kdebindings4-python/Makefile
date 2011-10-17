@@ -7,21 +7,21 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	devel kde
+CATEGORIES=	devel kde python
 MASTER_SITES=	# empty
-PKGNAMESUFFIX=	-python
-DISTFILES=	# none
-UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Meta port of Python bindings for KDE
+COMMENT=	Meta-port of Python bindings for KDE
 
 USE_KDE4=	kdeprefix
+USE_PYTHON=	yes
+PYTHON_NO_DEPENDS=	yes
 NO_BUILD=	yes
-# NO_INSTALL=	yes
 
-OPTIONS+=	KROSSPYTHON "Kross Python scripting library" on
-OPTIONS+=	PYKDE4 "Kde bindings" on
+OPTIONS=	KROSSPYTHON "Kross Python scripting library" on \
+		PYKDE4 "KDE bindings" on
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/krosspython.so:${PORTSDIR}/devel/kdebindin
 
 .if !defined(WITHOUT_PYKDE4)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so:${PORTSDIR}/devel/kdebindings4-python-pykde4 \
-		${LOCALBASE}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
+		${KDE4_PREFIX}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
 .endif
 
 do-install:

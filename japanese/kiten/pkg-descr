@@ -1,0 +1,20 @@
+Kiten is a Japanese reference/learning tool.
+
+FEATURES
+- Search with English keyword, Japanese reading, or a Kanji string on
+  a list of EDICT files.
+- Search with English keyword, Japanese reading, number of strokes,
+  grade number, or a Kanji on a list of KANJIDIC files.
+- Comes with all necessary files.
+- Very fast.
+- Limit searches to only common entries.
+- Nested searches of results possible.
+- Compact, small, fast interface.
+- Global KDE keybindings for searching highlighted strings.
+- Learning dialog. (One can even open up multiple ones and have them
+  sync between each other.)
+- Browse Kanji by grade.
+- Add Kanji to a list for later learning.
+- Browse list, and get quizzed on them.
+
+WWW: http://edu.kde.org/kiten

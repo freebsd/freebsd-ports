@@ -1,0 +1,7 @@
+======================================================================
+
+To enable KDE Display Manager (KDM), add kdm4_enable="YES" to
+/etc/rc.conf. To get full functionality you also need procfs(5)
+mounted.
+
+======================================================================

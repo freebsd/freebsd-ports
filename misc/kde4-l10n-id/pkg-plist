@@ -142,6 +142,7 @@ share/locale/id/LC_MESSAGES/kreadconfig.mo
 share/locale/id/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/id/LC_MESSAGES/krunner.mo
 share/locale/id/LC_MESSAGES/kscreensaver.mo
+share/locale/id/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/id/LC_MESSAGES/kshorturifilter.mo
 share/locale/id/LC_MESSAGES/ksmserver.mo
 share/locale/id/LC_MESSAGES/ksplashthemes.mo
@@ -151,7 +152,6 @@ share/locale/id/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/id/LC_MESSAGES/ksysguard.mo
 share/locale/id/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/id/LC_MESSAGES/ksystraycmd.mo
-share/locale/id/LC_MESSAGES/kthememanager.mo
 share/locale/id/LC_MESSAGES/ktimer.mo
 share/locale/id/LC_MESSAGES/ktraderclient.mo
 share/locale/id/LC_MESSAGES/kuiserver.mo
@@ -160,11 +160,11 @@ share/locale/id/LC_MESSAGES/kwalletd.mo
 share/locale/id/LC_MESSAGES/kwin.mo
 share/locale/id/LC_MESSAGES/kwin_clients.mo
 share/locale/id/LC_MESSAGES/kwin_effects.mo
-share/locale/id/LC_MESSAGES/kwin_lib.mo
 share/locale/id/LC_MESSAGES/kwinstartmenu.mo
 share/locale/id/LC_MESSAGES/kwrite.mo
 share/locale/id/LC_MESSAGES/kwriteconfig.mo
 share/locale/id/LC_MESSAGES/kxkb.mo
+share/locale/id/LC_MESSAGES/libkdecorations.mo
 share/locale/id/LC_MESSAGES/libkonq.mo
 share/locale/id/LC_MESSAGES/libkremotecontrol.mo
 share/locale/id/LC_MESSAGES/libkscreensaver.mo
@@ -181,7 +181,6 @@ share/locale/id/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/id/LC_MESSAGES/nsplugin.mo
 share/locale/id/LC_MESSAGES/okteta.mo
 share/locale/id/LC_MESSAGES/oktetapart.mo
-share/locale/id/LC_MESSAGES/phonon-xine.mo
 share/locale/id/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/id/LC_MESSAGES/phonon_kde.mo
 share/locale/id/LC_MESSAGES/phononserver.mo

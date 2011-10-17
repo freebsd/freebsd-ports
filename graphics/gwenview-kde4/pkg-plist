@@ -1,126 +1,45 @@
 bin/gwenview
-lib/kde3/gwenview.a
-lib/kde3/gwenview.la
-lib/kde3/gwenview.so
-lib/kde3/libgvdirpart.a
-lib/kde3/libgvdirpart.la
-lib/kde3/libgvdirpart.so
-lib/kde3/libgvimagepart.a
-lib/kde3/libgvimagepart.la
-lib/kde3/libgvimagepart.so
-lib/libgwenviewcore.a
-lib/libgwenviewcore.la
-lib/libgwenviewcore.so
-lib/libgwenviewcore.so.1
-lib/libkdeinit_gwenview.a
-lib/libkdeinit_gwenview.la
-lib/libkdeinit_gwenview.so
-share/applications/kde/gwenview.desktop
-share/apps/gvdirpart/gvdirpart.rc
-share/apps/gvimagepart/gvimagepart.rc
-share/apps/gvimagepart/gvimagepartpopup.rc
+bin/gwenview_importer
+lib/kde4/gvpart.so
+lib/libgwenviewlib.so
+lib/libgwenviewlib.so.5
+lib/libgwenviewlib.so.5.0.1
+share/applications/kde4/gwenview.desktop
+share/apps/gvpart/gvpart.rc
 share/apps/gwenview/cursors/zoom.png
+share/apps/gwenview/fullscreenthemes/blackglass/checked.png
+share/apps/gwenview/fullscreenthemes/blackglass/scroll-left.png
+share/apps/gwenview/fullscreenthemes/blackglass/scroll-right.png
+share/apps/gwenview/fullscreenthemes/blackglass/style.css
 share/apps/gwenview/gwenviewui.rc
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd2.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd3.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd4.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd5.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd6.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd7.png
-share/apps/gwenview/icons/hicolor/16x16/actions/dnd8.png
-share/apps/gwenview/icons/hicolor/16x16/actions/flip.png
-share/apps/gwenview/icons/hicolor/16x16/actions/mirror.png
-share/apps/gwenview/icons/hicolor/16x16/actions/rotate_left.png
-share/apps/gwenview/icons/hicolor/16x16/actions/rotate_right.png
-share/apps/gwenview/icons/hicolor/16x16/actions/slideshow_pause.png
-share/apps/gwenview/icons/hicolor/16x16/actions/slideshow_play.png
-share/apps/gwenview/icons/hicolor/22x22/actions/flip.png
-share/apps/gwenview/icons/hicolor/22x22/actions/mirror.png
-share/apps/gwenview/icons/hicolor/22x22/actions/rotate_left.png
-share/apps/gwenview/icons/hicolor/22x22/actions/rotate_right.png
-share/apps/gwenview/icons/hicolor/22x22/actions/slideshow_pause.png
-share/apps/gwenview/icons/hicolor/22x22/actions/slideshow_play.png
-share/apps/gwenview/icons/hicolor/32x32/actions/flip.png
-share/apps/gwenview/icons/hicolor/32x32/actions/mirror.png
-share/apps/gwenview/icons/hicolor/32x32/actions/rotate_left.png
-share/apps/gwenview/icons/hicolor/32x32/actions/rotate_right.png
-share/apps/gwenview/icons/hicolor/32x32/actions/slideshow_pause.png
-share/apps/gwenview/icons/hicolor/32x32/actions/slideshow_play.png
-share/apps/gwenview/icons/hicolor/48x48/actions/flip.png
-share/apps/gwenview/icons/hicolor/48x48/actions/mirror.png
-share/apps/gwenview/icons/hicolor/48x48/actions/rotate_left.png
-share/apps/gwenview/icons/hicolor/48x48/actions/rotate_right.png
-share/apps/gwenview/icons/hicolor/48x48/actions/slideshow_pause.png
-share/apps/gwenview/icons/hicolor/48x48/actions/slideshow_play.png
-share/apps/gwenview/icons/hicolor/scalable/actions/slideshow_pause.svgz
-share/apps/gwenview/icons/hicolor/scalable/actions/slideshow_play.svgz
-share/apps/gwenview/thumbnail/wait.png
-share/apps/gwenview/tools/gimp.desktop
-share/apps/gwenview/tools/kolourpaint.desktop
-share/apps/gwenview/tools/konqueror.desktop
-share/apps/gwenview/tools/tiledwallpaper.desktop
-share/apps/gwenview/tools/wallpaper.desktop
-share/apps/kconf_update/gwenview_1.4_osdformat.sh
-share/apps/kconf_update/gwenview_1.4_osdformat.upd
-share/apps/kconf_update/gwenview_thumbnail_size.sh
-share/apps/kconf_update/gwenview_thumbnail_size.upd
-share/apps/konqueror/servicemenus/konqgwenview.desktop
-share/config.kcfg/fileoperationconfig.kcfg
-share/config.kcfg/fileviewconfig.kcfg
-share/config.kcfg/fullscreenconfig.kcfg
-share/config.kcfg/gvdirpartconfig.kcfg
-share/config.kcfg/imageviewconfig.kcfg
-share/config.kcfg/miscconfig.kcfg
-share/config.kcfg/slideshowconfig.kcfg
+share/apps/solid/actions/gwenview_importer.desktop
+share/apps/solid/actions/gwenview_importer_camera.desktop
 share/doc/HTML/en/gwenview/browse_mode.png
 share/doc/HTML/en/gwenview/common
-share/doc/HTML/en/gwenview/dock_grip.png
-share/doc/HTML/en/gwenview/docked_windows.docbook
-share/doc/HTML/en/gwenview/external_tools.docbook
-share/doc/HTML/en/gwenview/external_tools_dialog.png
+share/doc/HTML/en/gwenview/fullscreen_mode.png
+share/doc/HTML/en/gwenview/importer.png
 share/doc/HTML/en/gwenview/index.cache.bz2
 share/doc/HTML/en/gwenview/index.docbook
-share/doc/HTML/en/gwenview/interface.docbook
-share/doc/HTML/en/gwenview/introduction.docbook
-share/doc/HTML/en/gwenview/keybindings.docbook
-share/doc/HTML/en/gwenview/mouse.docbook
 share/doc/HTML/en/gwenview/view_mode.png
-share/icons/crystalsvg/16x16/apps/gvdirpart.png
-share/icons/crystalsvg/22x22/apps/gvdirpart.png
-share/icons/crystalsvg/32x32/apps/gvdirpart.png
-share/icons/crystalsvg/scalable/apps/gvdirpart.svg
+share/icons/hicolor/128x128/actions/document-share.png
 share/icons/hicolor/128x128/apps/gwenview.png
-share/icons/hicolor/16x16/apps/gvdirpart.png
+share/icons/hicolor/16x16/actions/document-share.png
 share/icons/hicolor/16x16/apps/gwenview.png
-share/icons/hicolor/22x22/apps/gvdirpart.png
+share/icons/hicolor/22x22/actions/document-share.png
 share/icons/hicolor/22x22/apps/gwenview.png
-share/icons/hicolor/32x32/apps/gvdirpart.png
+share/icons/hicolor/32x32/actions/document-share.png
 share/icons/hicolor/32x32/apps/gwenview.png
+share/icons/hicolor/48x48/actions/document-share.png
 share/icons/hicolor/48x48/apps/gwenview.png
+share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
-share/icons/hicolor/scalable/apps/gvdirpart.svg
+share/icons/hicolor/scalable/actions/document-share.svgz
 share/icons/hicolor/scalable/apps/gwenview.svgz
-share/services/gvdirpart.desktop
-share/services/gvimagepart.desktop
+share/kde4/services/ServiceMenus/slideshow.desktop
+share/kde4/services/gvpart.desktop
 @dirrm share/doc/HTML/en/gwenview
-@dirrmtry share/apps/kconf_update
-@dirrm share/apps/gwenview/tools
-@dirrm share/apps/gwenview/thumbnail
-@dirrm share/apps/gwenview/icons/hicolor/scalable/actions
-@dirrm share/apps/gwenview/icons/hicolor/scalable
-@dirrm share/apps/gwenview/icons/hicolor/48x48/actions
-@dirrm share/apps/gwenview/icons/hicolor/48x48
-@dirrm share/apps/gwenview/icons/hicolor/32x32/actions
-@dirrm share/apps/gwenview/icons/hicolor/32x32
-@dirrm share/apps/gwenview/icons/hicolor/22x22/actions
-@dirrm share/apps/gwenview/icons/hicolor/22x22
-@dirrm share/apps/gwenview/icons/hicolor/16x16/actions
-@dirrm share/apps/gwenview/icons/hicolor/16x16
-@dirrm share/apps/gwenview/icons/hicolor
-@dirrm share/apps/gwenview/icons
+@dirrm share/apps/gwenview/fullscreenthemes/blackglass
+@dirrm share/apps/gwenview/fullscreenthemes
 @dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview
-@dirrm share/apps/gvimagepart
-@dirrm share/apps/gvdirpart
-@dirrmtry share/applications/kde
+@dirrm share/apps/gvpart

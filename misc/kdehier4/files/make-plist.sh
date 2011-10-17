@@ -15,9 +15,13 @@ echo "%%MTREE%%@cwd %%LOCALBASE%%
 %%MTREE%%@dirrmtry etc/dbus-1
 %%MTREE%%@cwd %%KDE4_PREFIX%%" >> ../pkg-plist
 
-echo "%%MTREE%%%%LDCONFIG_DIR%%
+echo "%%MTREE%%etc/pam.d
+%%MTREE%%etc/rc.d
+%%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
+%%MTREE%%share/dbus-1/services
+%%MTREE%%share/dbus-1/system-services
 %%MTREE%%share/polkit-1/actions" >> ../pkg-plist
 
 (

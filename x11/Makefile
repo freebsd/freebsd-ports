@@ -124,10 +124,10 @@
     SUBDIR += kde-lite
     SUBDIR += kde3
     SUBDIR += kde4
+    SUBDIR += kde4-baseapps
+    SUBDIR += kde4-runtime
+    SUBDIR += kde4-workspace
     SUBDIR += kdebase3
-    SUBDIR += kdebase4
-    SUBDIR += kdebase4-runtime
-    SUBDIR += kdebase4-workspace
     SUBDIR += kdelibs3
     SUBDIR += kdelibs3-nocups
     SUBDIR += kdelibs4
@@ -135,6 +135,8 @@
     SUBDIR += keyboardcast
     SUBDIR += keylaunch
     SUBDIR += keynav
+    SUBDIR += kgamma
+    SUBDIR += konsole
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11

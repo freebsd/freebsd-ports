@@ -55,6 +55,7 @@ share/doc/HTML/he/common/fdl-translated.html
 share/doc/HTML/he/common/gpl-translated.html
 share/doc/HTML/he/common/kde-localised.css
 share/doc/HTML/he/common/lgpl-translated.html
+share/locale/he/LC_MESSAGES/adblock.mo
 share/locale/he/LC_MESSAGES/akregator.mo
 share/locale/he/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/he/LC_MESSAGES/amor.mo
@@ -66,6 +67,7 @@ share/locale/he/LC_MESSAGES/audiorename_plugin.mo
 share/locale/he/LC_MESSAGES/autorefresh.mo
 share/locale/he/LC_MESSAGES/babelfish.mo
 share/locale/he/LC_MESSAGES/blinken.mo
+share/locale/he/LC_MESSAGES/bomber.mo
 share/locale/he/LC_MESSAGES/cervisia.mo
 share/locale/he/LC_MESSAGES/dirfilterplugin.mo
 share/locale/he/LC_MESSAGES/display.mo
@@ -94,6 +96,9 @@ share/locale/he/LC_MESSAGES/kalarm.mo
 share/locale/he/LC_MESSAGES/kalzium.mo
 share/locale/he/LC_MESSAGES/kanagram.mo
 share/locale/he/LC_MESSAGES/kate.mo
+share/locale/he/LC_MESSAGES/kateexternaltoolsplugin.mo
+share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo
+share/locale/he/LC_MESSAGES/katefiletemplates.mo
 share/locale/he/LC_MESSAGES/katehelloworld.mo
 share/locale/he/LC_MESSAGES/kateopenheader.mo
 share/locale/he/LC_MESSAGES/katepart4.mo
@@ -310,6 +315,7 @@ share/locale/he/LC_MESSAGES/kruler.mo
 share/locale/he/LC_MESSAGES/krunner.mo
 share/locale/he/LC_MESSAGES/kscd.mo
 share/locale/he/LC_MESSAGES/kscreensaver.mo
+share/locale/he/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/he/LC_MESSAGES/kshisen.mo
 share/locale/he/LC_MESSAGES/kshorturifilter.mo
 share/locale/he/LC_MESSAGES/ksmserver.mo
@@ -326,7 +332,6 @@ share/locale/he/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/he/LC_MESSAGES/ksystraycmd.mo
 share/locale/he/LC_MESSAGES/kteatime.mo
 share/locale/he/LC_MESSAGES/ktexteditor_plugins.mo
-share/locale/he/LC_MESSAGES/kthememanager.mo
 share/locale/he/LC_MESSAGES/ktimer.mo
 share/locale/he/LC_MESSAGES/ktimetracker.mo
 share/locale/he/LC_MESSAGES/ktouch.mo
@@ -341,7 +346,7 @@ share/locale/he/LC_MESSAGES/kwin.mo
 share/locale/he/LC_MESSAGES/kwin_art_clients.mo
 share/locale/he/LC_MESSAGES/kwin_clients.mo
 share/locale/he/LC_MESSAGES/kwin_effects.mo
-share/locale/he/LC_MESSAGES/kwin_lib.mo
+share/locale/he/LC_MESSAGES/kwinshutdown.mo
 share/locale/he/LC_MESSAGES/kwinstartmenu.mo
 share/locale/he/LC_MESSAGES/kwrite.mo
 share/locale/he/LC_MESSAGES/kwriteconfig.mo
@@ -351,6 +356,7 @@ share/locale/he/LC_MESSAGES/lancelot.mo
 share/locale/he/LC_MESSAGES/libkcal.mo
 share/locale/he/LC_MESSAGES/libkcddb.mo
 share/locale/he/LC_MESSAGES/libkcompactdisc.mo
+share/locale/he/LC_MESSAGES/libkdecorations.mo
 share/locale/he/LC_MESSAGES/libkdeedu.mo
 share/locale/he/LC_MESSAGES/libkdegames.mo
 share/locale/he/LC_MESSAGES/libkdepim.mo
@@ -439,6 +445,7 @@ share/locale/he/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/he/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/he/LC_MESSAGES/plasma_applet_windowlist.mo
 share/locale/he/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
+share/locale/he/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/he/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/he/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/he/LC_MESSAGES/plasma_engine_rss.mo

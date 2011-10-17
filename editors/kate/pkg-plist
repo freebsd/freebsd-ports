@@ -1,0 +1,433 @@
+bin/kate
+bin/ktesnippets_editor
+bin/kwrite
+include/kate/application.h
+include/kate/documentmanager.h
+include/kate/mainwindow.h
+include/kate/plugin.h
+include/kate/pluginconfigpageinterface.h
+include/kate/pluginmanager.h
+include/kate_export.h
+include/ktexteditor_codesnippets_core/completionmodel.h
+include/ktexteditor_codesnippets_core/ktexteditor_codesnippets_core_export.h
+include/ktexteditor_codesnippets_core/repository.h
+lib/kde4/kate_kttsd.so
+lib/kde4/katebacktracebrowserplugin.so
+lib/kde4/katebuildplugin.so
+lib/kde4/katectagsplugin.so
+lib/kde4/kateexternaltoolsplugin.so
+lib/kde4/katefilebrowserplugin.so
+lib/kde4/katefiletemplates.so
+lib/kde4/katefiletreeplugin.so
+lib/kde4/katefindinfilesplugin.so
+lib/kde4/kategdbplugin.so
+lib/kde4/katekonsoleplugin.so
+lib/kde4/katemailfilesplugin.so
+lib/kde4/kateopenheaderplugin.so
+lib/kde4/katepart.so
+lib/kde4/katequickdocumentswitcherplugin.so
+lib/kde4/katesearchplugin.so
+lib/kde4/katesnippets_tngplugin.so
+lib/kde4/katesqlplugin.so
+lib/kde4/katesymbolviewerplugin.so
+lib/kde4/katetabbarextensionplugin.so
+lib/kde4/katetabifyplugin.so
+lib/kde4/katetextfilterplugin.so
+lib/kde4/katexmlcheckplugin.so
+lib/kde4/katexmltoolsplugin.so
+lib/kde4/ktexteditor_autobrace.so
+lib/kde4/ktexteditor_exporter.so
+lib/kde4/ktexteditor_hlselection.so
+lib/kde4/ktexteditor_iconinserter.so
+lib/kde4/ktexteditor_insanehtml_le.so
+lib/kde4/ktexteditor_insertfile.so
+lib/kde4/ktexteditor_kdatatool.so
+lib/kde4/ktexteditor_python-encoding.so
+lib/kde4/plasma_applet_katesession.so
+lib/libkateinterfaces.so
+lib/libkateinterfaces.so.5
+lib/libkateinterfaces.so.5.0.1
+lib/libkatepartinterfaces.so
+lib/libkatepartinterfaces.so.5
+lib/libkatepartinterfaces.so.5.0.1
+lib/libkdeinit4_kate.so
+lib/libkdeinit4_kwrite.so
+lib/libktexteditor_codesnippets_core.so
+lib/libktexteditor_codesnippets_core.so.0
+lib/libktexteditor_codesnippets_core.so.0.0.1
+share/applications/kde4/kate.desktop
+share/applications/kde4/ktesnippets_editor.desktop
+share/applications/kde4/kwrite.desktop
+share/apps/kate/externaltools
+share/apps/kate/icons/oxygen/16x16/actions/null.png
+share/apps/kate/icons/oxygen/16x16/actions/sql-field-pk.png
+share/apps/kate/icons/oxygen/16x16/actions/sql-field-red.png
+share/apps/kate/icons/oxygen/16x16/actions/sql-field.png
+share/apps/kate/icons/oxygen/16x16/actions/sql-table.png
+share/apps/kate/icons/oxygen/16x16/actions/sql-view.png
+share/apps/kate/kateui.rc
+share/apps/kate/plugins/filetree/ui.rc
+share/apps/kate/plugins/findinfiles/ui.rc
+share/apps/kate/plugins/kate_kttsd/ui.rc
+share/apps/kate/plugins/katebuild/ui.rc
+share/apps/kate/plugins/katectags/ui.rc
+share/apps/kate/plugins/kateexternaltools/ui.rc
+share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cppgpl.hh.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.cpp.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.hh.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/docbookchapter.xml.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/html.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/language.xml.katetemplate
+share/apps/kate/plugins/katefiletemplates/ui.rc
+share/apps/kate/plugins/kategdb/ui.rc
+share/apps/kate/plugins/katekonsole/ui.rc
+share/apps/kate/plugins/katemailfiles/ui.rc
+share/apps/kate/plugins/kateopenheader/ui.rc
+share/apps/kate/plugins/katequickdocumentswitcher/ui.rc
+share/apps/kate/plugins/katesearch/ui.rc
+share/apps/kate/plugins/katesnippets_tng/ui.rc
+share/apps/kate/plugins/katesql/ui.rc
+share/apps/kate/plugins/katesymbolviewer/ui.rc
+share/apps/kate/plugins/katetabbarextension/ui.rc
+share/apps/kate/plugins/katetabify/ui.rc
+share/apps/kate/plugins/katetextfilter/ui.rc
+share/apps/kate/plugins/katexmlcheck/ui.rc
+share/apps/kate/plugins/katexmltools/ui.rc
+share/apps/kate/tips
+share/apps/katepart/api/05_cursor.js
+share/apps/katepart/api/10_range.js
+share/apps/katepart/katepartsimpleui.rc
+share/apps/katepart/katepartui.rc
+share/apps/katepart/script/cstyle.js
+share/apps/katepart/script/haskell.js
+share/apps/katepart/script/lilypond.js
+share/apps/katepart/script/lisp.js
+share/apps/katepart/script/lua.js
+share/apps/katepart/script/python.js
+share/apps/katepart/script/ruby.js
+share/apps/katepart/script/utils.js
+share/apps/katepart/script/xml.js
+share/apps/katepart/syntax/abap.xml
+share/apps/katepart/syntax/abc.xml
+share/apps/katepart/syntax/actionscript.xml
+share/apps/katepart/syntax/ada.xml
+share/apps/katepart/syntax/ahdl.xml
+share/apps/katepart/syntax/alert.xml
+share/apps/katepart/syntax/alert_indent.xml
+share/apps/katepart/syntax/ample.xml
+share/apps/katepart/syntax/ansic89.xml
+share/apps/katepart/syntax/ansys.xml
+share/apps/katepart/syntax/apache.xml
+share/apps/katepart/syntax/asm-avr.xml
+share/apps/katepart/syntax/asm-dsp56k.xml
+share/apps/katepart/syntax/asm-m68k.xml
+share/apps/katepart/syntax/asm6502.xml
+share/apps/katepart/syntax/asn1.xml
+share/apps/katepart/syntax/asp.xml
+share/apps/katepart/syntax/asterisk.xml
+share/apps/katepart/syntax/awk.xml
+share/apps/katepart/syntax/bash.xml
+share/apps/katepart/syntax/bibtex.xml
+share/apps/katepart/syntax/bmethod.xml
+share/apps/katepart/syntax/boo.xml
+share/apps/katepart/syntax/c.xml
+share/apps/katepart/syntax/cg.xml
+share/apps/katepart/syntax/cgis.xml
+share/apps/katepart/syntax/changelog.xml
+share/apps/katepart/syntax/cisco.xml
+share/apps/katepart/syntax/clipper.xml
+share/apps/katepart/syntax/cmake.xml
+share/apps/katepart/syntax/coffee.xml
+share/apps/katepart/syntax/coldfusion.xml
+share/apps/katepart/syntax/commonlisp.xml
+share/apps/katepart/syntax/component-pascal.xml
+share/apps/katepart/syntax/cpp.xml
+share/apps/katepart/syntax/cs.xml
+share/apps/katepart/syntax/css-php.xml
+share/apps/katepart/syntax/css.xml
+share/apps/katepart/syntax/cue.xml
+share/apps/katepart/syntax/d.xml
+share/apps/katepart/syntax/debianchangelog.xml
+share/apps/katepart/syntax/debiancontrol.xml
+share/apps/katepart/syntax/desktop.xml
+share/apps/katepart/syntax/diff.xml
+share/apps/katepart/syntax/djangotemplate.xml
+share/apps/katepart/syntax/doxygen.xml
+share/apps/katepart/syntax/doxygenlua.xml
+share/apps/katepart/syntax/dtd.xml
+share/apps/katepart/syntax/e.xml
+share/apps/katepart/syntax/eiffel.xml
+share/apps/katepart/syntax/email.xml
+share/apps/katepart/syntax/erlang.xml
+share/apps/katepart/syntax/euphoria.xml
+share/apps/katepart/syntax/ferite.xml
+share/apps/katepart/syntax/fgl-4gl.xml
+share/apps/katepart/syntax/fgl-per.xml
+share/apps/katepart/syntax/fortran.xml
+share/apps/katepart/syntax/freebasic.xml
+share/apps/katepart/syntax/fsharp.xml
+share/apps/katepart/syntax/fstab.xml
+share/apps/katepart/syntax/gap.xml
+share/apps/katepart/syntax/gdb.xml
+share/apps/katepart/syntax/gdl.xml
+share/apps/katepart/syntax/gettext.xml
+share/apps/katepart/syntax/glsl.xml
+share/apps/katepart/syntax/gnuassembler.xml
+share/apps/katepart/syntax/go.xml
+share/apps/katepart/syntax/grammar.xml
+share/apps/katepart/syntax/haskell.xml
+share/apps/katepart/syntax/haxe.xml
+share/apps/katepart/syntax/html-php.xml
+share/apps/katepart/syntax/html.xml
+share/apps/katepart/syntax/idconsole.xml
+share/apps/katepart/syntax/idl.xml
+share/apps/katepart/syntax/ilerpg.xml
+share/apps/katepart/syntax/inform.xml
+share/apps/katepart/syntax/ini.xml
+share/apps/katepart/syntax/java.xml
+share/apps/katepart/syntax/javadoc.xml
+share/apps/katepart/syntax/javascript-php.xml
+share/apps/katepart/syntax/javascript.xml
+share/apps/katepart/syntax/json.xml
+share/apps/katepart/syntax/jsp.xml
+share/apps/katepart/syntax/katetemplate.xml
+share/apps/katepart/syntax/kbasic.xml
+share/apps/katepart/syntax/language.dtd
+share/apps/katepart/syntax/latex.xml
+share/apps/katepart/syntax/ldif.xml
+share/apps/katepart/syntax/lex.xml
+share/apps/katepart/syntax/lilypond.xml
+share/apps/katepart/syntax/literate-haskell.xml
+share/apps/katepart/syntax/logtalk.xml
+share/apps/katepart/syntax/lpc.xml
+share/apps/katepart/syntax/lsl.xml
+share/apps/katepart/syntax/lua.xml
+share/apps/katepart/syntax/m3u.xml
+share/apps/katepart/syntax/mab.xml
+share/apps/katepart/syntax/makefile.xml
+share/apps/katepart/syntax/mandoc.xml
+share/apps/katepart/syntax/mason.xml
+share/apps/katepart/syntax/matlab.xml
+share/apps/katepart/syntax/maxima.xml
+share/apps/katepart/syntax/mediawiki.xml
+share/apps/katepart/syntax/mergetagtext.xml
+share/apps/katepart/syntax/metafont.xml
+share/apps/katepart/syntax/mips.xml
+share/apps/katepart/syntax/modelica.xml
+share/apps/katepart/syntax/modula-2.xml
+share/apps/katepart/syntax/monobasic.xml
+share/apps/katepart/syntax/mup.xml
+share/apps/katepart/syntax/nasm.xml
+share/apps/katepart/syntax/nemerle.xml
+share/apps/katepart/syntax/noweb.xml
+share/apps/katepart/syntax/objectivec.xml
+share/apps/katepart/syntax/objectivecpp.xml
+share/apps/katepart/syntax/ocaml.xml
+share/apps/katepart/syntax/octave.xml
+share/apps/katepart/syntax/oors.xml
+share/apps/katepart/syntax/opal.xml
+share/apps/katepart/syntax/pango.xml
+share/apps/katepart/syntax/pascal.xml
+share/apps/katepart/syntax/perl.xml
+share/apps/katepart/syntax/pgn.xml
+share/apps/katepart/syntax/php.xml
+share/apps/katepart/syntax/picsrc.xml
+share/apps/katepart/syntax/pike.xml
+share/apps/katepart/syntax/postscript.xml
+share/apps/katepart/syntax/povray.xml
+share/apps/katepart/syntax/progress.xml
+share/apps/katepart/syntax/prolog.xml
+share/apps/katepart/syntax/purebasic.xml
+share/apps/katepart/syntax/python.xml
+share/apps/katepart/syntax/qml.xml
+share/apps/katepart/syntax/r.xml
+share/apps/katepart/syntax/rapidq.xml
+share/apps/katepart/syntax/rexx.xml
+share/apps/katepart/syntax/rhtml.xml
+share/apps/katepart/syntax/rib.xml
+share/apps/katepart/syntax/roff.xml
+share/apps/katepart/syntax/rpmspec.xml
+share/apps/katepart/syntax/rsiidl.xml
+share/apps/katepart/syntax/ruby.xml
+share/apps/katepart/syntax/sather.xml
+share/apps/katepart/syntax/scala.xml
+share/apps/katepart/syntax/scheme.xml
+share/apps/katepart/syntax/sci.xml
+share/apps/katepart/syntax/sed.xml
+share/apps/katepart/syntax/sgml.xml
+share/apps/katepart/syntax/sieve.xml
+share/apps/katepart/syntax/sisu.xml
+share/apps/katepart/syntax/sml.xml
+share/apps/katepart/syntax/spice.xml
+share/apps/katepart/syntax/sql-mysql.xml
+share/apps/katepart/syntax/sql-postgresql.xml
+share/apps/katepart/syntax/sql.xml
+share/apps/katepart/syntax/stata.xml
+share/apps/katepart/syntax/syntax.template
+share/apps/katepart/syntax/systemc.xml
+share/apps/katepart/syntax/tcl.xml
+share/apps/katepart/syntax/texinfo.xml
+share/apps/katepart/syntax/tibasic.xml
+share/apps/katepart/syntax/txt2tags.xml
+share/apps/katepart/syntax/uscript.xml
+share/apps/katepart/syntax/velocity.xml
+share/apps/katepart/syntax/verilog.xml
+share/apps/katepart/syntax/vhdl.xml
+share/apps/katepart/syntax/vrml.xml
+share/apps/katepart/syntax/winehq.xml
+share/apps/katepart/syntax/wml.xml
+share/apps/katepart/syntax/xharbour.xml
+share/apps/katepart/syntax/xml.xml
+share/apps/katepart/syntax/xmldebug.xml
+share/apps/katepart/syntax/xorg.xml
+share/apps/katepart/syntax/xslt.xml
+share/apps/katepart/syntax/xul.xml
+share/apps/katepart/syntax/yacas.xml
+share/apps/katepart/syntax/yacc.xml
+share/apps/katepart/syntax/yaml.xml
+share/apps/katepart/syntax/zonnon.xml
+share/apps/katexmltools/html4-loose.dtd.xml
+share/apps/katexmltools/html4-strict.dtd.xml
+share/apps/katexmltools/kcfg.dtd.xml
+share/apps/katexmltools/kde-docbook.dtd.xml
+share/apps/katexmltools/kpartgui.dtd.xml
+share/apps/katexmltools/language.dtd.xml
+share/apps/katexmltools/simplify_dtd.xsl
+share/apps/katexmltools/testcases.xml
+share/apps/katexmltools/xhtml1-frameset.dtd.xml
+share/apps/katexmltools/xhtml1-strict.dtd.xml
+share/apps/katexmltools/xhtml1-transitional.dtd.xml
+share/apps/katexmltools/xslt-1.0.dtd.xml
+share/apps/kconf_update/kate-2.4.upd
+share/apps/ktexteditor_exporter/ktexteditor_exporterui.rc
+share/apps/ktexteditor_iconinserter/ktexteditor_iconinserterui.rc
+share/apps/ktexteditor_insanehtml_le/insanehtml_le_ui.rc
+share/apps/ktexteditor_insanehtml_le/xhtml.cfg
+share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
+share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
+share/apps/ktexteditor_snippets/data/testsnippets.xml
+share/apps/ktexteditor_snippets/data/testsnippetscpp.xml
+share/apps/kwrite/kwriteui.rc
+share/config/katefiletemplates.knsrc
+share/config/katemoderc
+share/config/katepartpluginsrc
+share/config/katerc
+share/config/ktexteditor_codesnippets_core.knsrc
+share/doc/HTML/en/kate/advanced.docbook
+share/doc/HTML/en/kate/comma-to.png
+share/doc/HTML/en/kate/common
+share/doc/HTML/en/kate/configdialog01.png
+share/doc/HTML/en/kate/configuring.docbook
+share/doc/HTML/en/kate/fundamentals.docbook
+share/doc/HTML/en/kate/highlighted.png
+share/doc/HTML/en/kate/highlighting.docbook
+share/doc/HTML/en/kate/index.cache.bz2
+share/doc/HTML/en/kate/index.docbook
+share/doc/HTML/en/kate/kate.png
+share/doc/HTML/en/kate/man-kate.1.docbook
+share/doc/HTML/en/kate/mdi.docbook
+share/doc/HTML/en/kate/menus.docbook
+share/doc/HTML/en/kate/part.docbook
+share/doc/HTML/en/kate/plugins.docbook
+share/doc/HTML/en/kate/regular-expressions.docbook
+share/doc/HTML/en/kate/unhighlighted.png
+share/doc/HTML/en/kate/vi.docbook
+share/doc/HTML/en/kwrite/common
+share/doc/HTML/en/kwrite/index.cache.bz2
+share/doc/HTML/en/kwrite/index.docbook
+share/icons/hicolor/128x128/apps/kate.png
+share/icons/hicolor/16x16/apps/kate.png
+share/icons/hicolor/22x22/apps/kate.png
+share/icons/hicolor/32x32/apps/kate.png
+share/icons/hicolor/48x48/apps/kate.png
+share/icons/hicolor/64x64/apps/kate.png
+share/icons/hicolor/scalable/apps/kate.svgz
+share/icons/hicolor/scalable/apps/ktexteditorautobrace.svgz
+share/icons/oxygen/16x16/actions/debug.png
+share/icons/oxygen/16x16/actions/repoadd.png
+share/icons/oxygen/16x16/actions/repomanage.png
+share/icons/oxygen/16x16/actions/snippetadd.png
+share/icons/oxygen/16x16/actions/snippetedit.png
+share/kde4/services/kate_kttsd.desktop
+share/kde4/services/katebacktracebrowserplugin.desktop
+share/kde4/services/katebuildplugin.desktop
+share/kde4/services/katectagsplugin.desktop
+share/kde4/services/kateexternaltoolsplugin.desktop
+share/kde4/services/katefilebrowserplugin.desktop
+share/kde4/services/katefiletemplates.desktop
+share/kde4/services/katefiletreeplugin.desktop
+share/kde4/services/katefindinfilesplugin.desktop
+share/kde4/services/kategdbplugin.desktop
+share/kde4/services/katekonsoleplugin.desktop
+share/kde4/services/katemailfilesplugin.desktop
+share/kde4/services/kateopenheader.desktop
+share/kde4/services/katepart.desktop
+share/kde4/services/katequickdocumentswitcher.desktop
+share/kde4/services/katesearch.desktop
+share/kde4/services/katesnippets_tngplugin.desktop
+share/kde4/services/katesql.desktop
+share/kde4/services/katesymbolviewer.desktop
+share/kde4/services/katetabbarextension.desktop
+share/kde4/services/katetabifyplugin.desktop
+share/kde4/services/katetextfilter.desktop
+share/kde4/services/katexmlcheck.desktop
+share/kde4/services/katexmltools.desktop
+share/kde4/services/ktexteditor_autobrace.desktop
+share/kde4/services/ktexteditor_autobrace_config.desktop
+share/kde4/services/ktexteditor_exporter.desktop
+share/kde4/services/ktexteditor_hlselection.desktop
+share/kde4/services/ktexteditor_iconinserter.desktop
+share/kde4/services/ktexteditor_insanehtml_le.desktop
+share/kde4/services/ktexteditor_insertfile.desktop
+share/kde4/services/ktexteditor_kdatatool.desktop
+share/kde4/services/ktexteditor_python-encoding.desktop
+share/kde4/services/plasma-applet-katesession.desktop
+share/kde4/servicetypes/kateplugin.desktop
+share/mime/application/x-ktesnippets.xml
+share/mime/packages/ktesnippets.xml
+@dirrm share/doc/HTML/en/kwrite
+@dirrm share/doc/HTML/en/kate
+@dirrm share/apps/kwrite
+@dirrm share/apps/ktexteditor_snippets/data
+@dirrm share/apps/ktexteditor_snippets
+@dirrm share/apps/ktexteditor_kdatatool
+@dirrm share/apps/ktexteditor_insertfile
+@dirrm share/apps/ktexteditor_insanehtml_le
+@dirrm share/apps/ktexteditor_iconinserter
+@dirrm share/apps/ktexteditor_exporter
+@dirrmtry share/apps/katexmltools
+@dirrmtry share/apps/katepart/script
+@dirrmtry share/apps/katepart/api
+@dirrm share/apps/kate/plugins/katexmltools
+@dirrm share/apps/kate/plugins/katexmlcheck
+@dirrm share/apps/kate/plugins/katetextfilter
+@dirrm share/apps/kate/plugins/katetabify
+@dirrm share/apps/kate/plugins/katetabbarextension
+@dirrm share/apps/kate/plugins/katesymbolviewer
+@dirrm share/apps/kate/plugins/katesql
+@dirrm share/apps/kate/plugins/katesnippets_tng
+@dirrm share/apps/kate/plugins/katesearch
+@dirrm share/apps/kate/plugins/katequickdocumentswitcher
+@dirrm share/apps/kate/plugins/kateopenheader
+@dirrm share/apps/kate/plugins/katemailfiles
+@dirrm share/apps/kate/plugins/katekonsole
+@dirrm share/apps/kate/plugins/kategdb
+@dirrm share/apps/kate/plugins/katefiletemplates/templates
+@dirrm share/apps/kate/plugins/katefiletemplates
+@dirrm share/apps/kate/plugins/kateexternaltools
+@dirrm share/apps/kate/plugins/katectags
+@dirrm share/apps/kate/plugins/katebuild
+@dirrm share/apps/kate/plugins/kate_kttsd
+@dirrm share/apps/kate/plugins/findinfiles
+@dirrm share/apps/kate/plugins/filetree
+@dirrmtry share/apps/kate/plugins
+@dirrm share/apps/kate/icons/oxygen/16x16/actions
+@dirrm share/apps/kate/icons/oxygen/16x16
+@dirrm share/apps/kate/icons/oxygen
+@dirrm share/apps/kate/icons
+@dirrmtry share/apps/kate
+@dirrm include/ktexteditor_codesnippets_core
+@dirrmtry include/kate
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

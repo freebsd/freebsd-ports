@@ -80,6 +80,7 @@
     SUBDIR += joe2
     SUBDIR += jove
     SUBDIR += jupp
+    SUBDIR += kate
     SUBDIR += kate-plugins
     SUBDIR += kile
     SUBDIR += kile-kde4

@@ -73,6 +73,7 @@
     SUBDIR += bitefusion
     SUBDIR += blackjack
     SUBDIR += blackshadeselite
+    SUBDIR += blinken
     SUBDIR += blinkensisters
     SUBDIR += blobby
     SUBDIR += bloboats
@@ -399,7 +400,9 @@
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kaid
+    SUBDIR += kajongg
     SUBDIR += kamikaze
+    SUBDIR += kanagram
     SUBDIR += kanatest
     SUBDIR += kardsgt
     SUBDIR += kartofel
@@ -409,6 +412,7 @@
     SUBDIR += kdegames4
     SUBDIR += kevedit
     SUBDIR += kfreerings
+    SUBDIR += khangman
     SUBDIR += kiki
     SUBDIR += kimboot
     SUBDIR += klavaro

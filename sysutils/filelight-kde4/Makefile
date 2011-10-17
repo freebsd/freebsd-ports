@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	filelight
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
-DISTNAME=	99561-${PORTNAME}-${PORTVERSION}rc3
-EXTRACT_SUFX=	.tgz
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}rc3
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+DISTNAME=	kdeutils-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
-MAINTAINER=	rnejdl@ringofsaturn.com
-COMMENT=	Represent a file system as a set of concentric segmented-rings
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Map of concentric segmented-rings representing your file system
 
-LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
-USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+LATEST_LINK=	${PORTNAME}-kde4
+
+CONFLICTS=	kdeutils-4.6.*
+
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_BZIP2=	yes
+DISTINFO_FILE=	${PORTSDIR}/misc/kdeutils4/distinfo
 MAKE_JOBS_SAFE=	yes
-USE_CMAKE=	yes
-USE_LDCONFG=	yes
-LATEST_LINK=	filelight-kde4
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 .include <bsd.port.mk>

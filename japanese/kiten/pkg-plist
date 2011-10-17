@@ -1,0 +1,39 @@
+bin/kiten
+bin/kitengen
+bin/kitenradselect
+include/libkiten/dictionarymanager.h
+include/libkiten/dictionarypreferencedialog.h
+include/libkiten/dictquery.h
+include/libkiten/entry.h
+include/libkiten/entrylist.h
+include/libkiten/historyptrlist.h
+include/libkiten/kromajiedit.h
+include/libkiten/libkitenexport.h
+lib/libkiten.so
+lib/libkiten.so.5
+lib/libkiten.so.5.0.1
+share/applications/kde4/kiten.desktop
+share/apps/kiten/edict
+share/apps/kiten/kanjidic
+share/apps/kiten/kitenui.rc
+share/apps/kiten/radkfile
+share/apps/kiten/romkana.cnv
+share/apps/kiten/vconj
+share/apps/kitenradselect/radselectui.rc
+share/config.kcfg/kiten.kcfg
+share/doc/HTML/en/kiten/common
+share/doc/HTML/en/kiten/index.cache.bz2
+share/doc/HTML/en/kiten/index.docbook
+share/doc/HTML/en/kiten/kiten1.png
+share/doc/HTML/en/kiten/kiten2.png
+share/icons/hicolor/128x128/apps/kiten.png
+share/icons/hicolor/16x16/apps/kiten.png
+share/icons/hicolor/22x22/apps/kiten.png
+share/icons/hicolor/32x32/apps/kiten.png
+share/icons/hicolor/48x48/apps/kiten.png
+share/icons/hicolor/64x64/apps/kiten.png
+share/icons/hicolor/scalable/apps/kiten.svgz
+@dirrm share/doc/HTML/en/kiten
+@dirrm share/apps/kitenradselect
+@dirrm share/apps/kiten
+@dirrm include/libkiten

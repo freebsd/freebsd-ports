@@ -1,0 +1,11 @@
+KSnapshot is a KDE snapshot tool with many features.
+
+FEATURES
+- Save in multiple formats.
+- Take new shapshot.
+- Open with... possibility to open snapshot in external editor..
+- Copy to clipboard.
+- Several capture modes, including selected region or single window.
+- Snapshot delay.
+
+WWW: http://www.kde.org/applications/graphics/ksnapshot

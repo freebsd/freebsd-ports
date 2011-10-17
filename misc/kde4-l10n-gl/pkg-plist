@@ -84,9 +84,21 @@ share/apps/kvtml/gl/roupa.kvtml
 share/apps/kvtml/gl/transporte.kvtml
 share/apps/kvtml/gl/verduras.kvtml
 share/apps/kvtml/gl/xente.kvtml
+share/doc/HTML/gl/akregator/common
+share/doc/HTML/gl/akregator/index.cache.bz2
+share/doc/HTML/gl/akregator/index.docbook
 share/doc/HTML/gl/blinken/common
 share/doc/HTML/gl/blinken/index.cache.bz2
 share/doc/HTML/gl/blinken/index.docbook
+share/doc/HTML/gl/bomber/common
+share/doc/HTML/gl/bomber/index.cache.bz2
+share/doc/HTML/gl/bomber/index.docbook
+share/doc/HTML/gl/bovo/common
+share/doc/HTML/gl/bovo/index.cache.bz2
+share/doc/HTML/gl/bovo/index.docbook
+share/doc/HTML/gl/cantor/common
+share/doc/HTML/gl/cantor/index.cache.bz2
+share/doc/HTML/gl/cantor/index.docbook
 share/doc/HTML/gl/common/fdl-translated.html
 share/doc/HTML/gl/common/gpl-translated.html
 share/doc/HTML/gl/common/kde-localised.css
@@ -98,6 +110,10 @@ share/doc/HTML/gl/gwenview/interface.docbook
 share/doc/HTML/gl/gwenview/introduction.docbook
 share/doc/HTML/gl/gwenview/keybindings.docbook
 share/doc/HTML/gl/gwenview/mouse.docbook
+share/doc/HTML/gl/kalgebra/commands.docbook
+share/doc/HTML/gl/kalgebra/common
+share/doc/HTML/gl/kalgebra/index.cache.bz2
+share/doc/HTML/gl/kalgebra/index.docbook
 share/doc/HTML/gl/kalzium/common
 share/doc/HTML/gl/kalzium/index.cache.bz2
 share/doc/HTML/gl/kalzium/index.docbook
@@ -121,6 +137,10 @@ share/doc/HTML/gl/kcontrol/keyboard/index.docbook
 share/doc/HTML/gl/kgeography/common
 share/doc/HTML/gl/kgeography/index.cache.bz2
 share/doc/HTML/gl/kgeography/index.docbook
+share/doc/HTML/gl/khangman/common
+share/doc/HTML/gl/khangman/index.cache.bz2
+share/doc/HTML/gl/khangman/index.docbook
+share/doc/HTML/gl/khangman/man-khangman.6.docbook
 share/doc/HTML/gl/kioslave/cgi/common
 share/doc/HTML/gl/kioslave/cgi/index.cache.bz2
 share/doc/HTML/gl/kioslave/cgi/index.docbook
@@ -154,6 +174,9 @@ share/doc/HTML/gl/kioslave/mailto/index.docbook
 share/doc/HTML/gl/kioslave/man/common
 share/doc/HTML/gl/kioslave/man/index.cache.bz2
 share/doc/HTML/gl/kioslave/man/index.docbook
+share/doc/HTML/gl/kioslave/news/common
+share/doc/HTML/gl/kioslave/news/index.cache.bz2
+share/doc/HTML/gl/kioslave/news/index.docbook
 share/doc/HTML/gl/kioslave/nfs/common
 share/doc/HTML/gl/kioslave/nfs/index.cache.bz2
 share/doc/HTML/gl/kioslave/nfs/index.docbook
@@ -181,9 +204,23 @@ share/doc/HTML/gl/kioslave/telnet/index.docbook
 share/doc/HTML/gl/kioslave/thumbnail/common
 share/doc/HTML/gl/kioslave/thumbnail/index.cache.bz2
 share/doc/HTML/gl/kioslave/thumbnail/index.docbook
+share/doc/HTML/gl/kiten/common
+share/doc/HTML/gl/kiten/index.cache.bz2
+share/doc/HTML/gl/kiten/index.docbook
 share/doc/HTML/gl/klettres/common
 share/doc/HTML/gl/klettres/index.cache.bz2
 share/doc/HTML/gl/klettres/index.docbook
+share/doc/HTML/gl/kmail/common
+share/doc/HTML/gl/kmail/configure.docbook
+share/doc/HTML/gl/kmail/credits-and-licenses.docbook
+share/doc/HTML/gl/kmail/faq.docbook
+share/doc/HTML/gl/kmail/getting-started.docbook
+share/doc/HTML/gl/kmail/importing.docbook
+share/doc/HTML/gl/kmail/index.cache.bz2
+share/doc/HTML/gl/kmail/index.docbook
+share/doc/HTML/gl/kmail/intro.docbook
+share/doc/HTML/gl/kmail/menus.docbook
+share/doc/HTML/gl/kmail/using-kmail.docbook
 share/doc/HTML/gl/kolourpaint/common
 share/doc/HTML/gl/kolourpaint/index.cache.bz2
 share/doc/HTML/gl/kolourpaint/index.docbook
@@ -271,6 +308,9 @@ share/doc/HTML/gl/lokalize/index.docbook
 share/doc/HTML/gl/okular/common
 share/doc/HTML/gl/okular/index.cache.bz2
 share/doc/HTML/gl/okular/index.docbook
+share/doc/HTML/gl/parley/common
+share/doc/HTML/gl/parley/index.cache.bz2
+share/doc/HTML/gl/parley/index.docbook
 share/doc/HTML/gl/plasma-desktop/common
 share/doc/HTML/gl/plasma-desktop/index.cache.bz2
 share/doc/HTML/gl/plasma-desktop/index.docbook
@@ -306,6 +346,9 @@ share/locale/gl/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_kalarm_dir_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_kalarm_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_kalarm_resource_common.mo
 share/locale/gl/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_kolabproxy_resource.mo
@@ -392,8 +435,6 @@ share/locale/gl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/gl/LC_MESSAGES/katefiletemplates.mo
 share/locale/gl/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/gl/LC_MESSAGES/katehelloworld.mo
-share/locale/gl/LC_MESSAGES/kateinsertcommand.mo
-share/locale/gl/LC_MESSAGES/katekjswrapper.mo
 share/locale/gl/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/gl/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/gl/LC_MESSAGES/kateopenheader.mo
@@ -659,6 +700,7 @@ share/locale/gl/LC_MESSAGES/ksaneplugin.mo
 share/locale/gl/LC_MESSAGES/kscd.mo
 share/locale/gl/LC_MESSAGES/kscreensaver.mo
 share/locale/gl/LC_MESSAGES/ksendemail.mo
+share/locale/gl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/gl/LC_MESSAGES/kshisen.mo
 share/locale/gl/LC_MESSAGES/kshorturifilter.mo
 share/locale/gl/LC_MESSAGES/ksirk.mo
@@ -683,7 +725,6 @@ share/locale/gl/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/gl/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/gl/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/gl/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/gl/LC_MESSAGES/kthememanager.mo
 share/locale/gl/LC_MESSAGES/ktimer.mo
 share/locale/gl/LC_MESSAGES/ktimetracker.mo
 share/locale/gl/LC_MESSAGES/ktouch.mo
@@ -704,7 +745,6 @@ share/locale/gl/LC_MESSAGES/kwin.mo
 share/locale/gl/LC_MESSAGES/kwin_art_clients.mo
 share/locale/gl/LC_MESSAGES/kwin_clients.mo
 share/locale/gl/LC_MESSAGES/kwin_effects.mo
-share/locale/gl/LC_MESSAGES/kwin_lib.mo
 share/locale/gl/LC_MESSAGES/kwinstartmenu.mo
 share/locale/gl/LC_MESSAGES/kwordquiz.mo
 share/locale/gl/LC_MESSAGES/kwrite.mo
@@ -712,15 +752,19 @@ share/locale/gl/LC_MESSAGES/kwriteconfig.mo
 share/locale/gl/LC_MESSAGES/kxkb.mo
 share/locale/gl/LC_MESSAGES/kxsconfig.mo
 share/locale/gl/LC_MESSAGES/lancelot.mo
+share/locale/gl/LC_MESSAGES/libakonadi-calendar.mo
+share/locale/gl/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/gl/LC_MESSAGES/libakonadi.mo
 share/locale/gl/LC_MESSAGES/libeventviews.mo
 share/locale/gl/LC_MESSAGES/libincidenceeditors.mo
 share/locale/gl/LC_MESSAGES/libkasten.mo
 share/locale/gl/LC_MESSAGES/libkblog.mo
 share/locale/gl/LC_MESSAGES/libkcal.mo
+share/locale/gl/LC_MESSAGES/libkcalutils.mo
 share/locale/gl/LC_MESSAGES/libkcddb.mo
 share/locale/gl/LC_MESSAGES/libkcompactdisc.mo
 share/locale/gl/LC_MESSAGES/libkdcraw.mo
+share/locale/gl/LC_MESSAGES/libkdecorations.mo
 share/locale/gl/LC_MESSAGES/libkdeedu.mo
 share/locale/gl/LC_MESSAGES/libkdegames.mo
 share/locale/gl/LC_MESSAGES/libkdepim.mo
@@ -772,6 +816,7 @@ share/locale/gl/LC_MESSAGES/mf_konqplugin.mo
 share/locale/gl/LC_MESSAGES/minitoolsplugin.mo
 share/locale/gl/LC_MESSAGES/mplayerthumbs.mo
 share/locale/gl/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/gl/LC_MESSAGES/nepomukbackup.mo
 share/locale/gl/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/gl/LC_MESSAGES/nepomukserver.mo
 share/locale/gl/LC_MESSAGES/nepomukservicestub.mo
@@ -799,13 +844,13 @@ share/locale/gl/LC_MESSAGES/okular_tiff.mo
 share/locale/gl/LC_MESSAGES/okular_xps.mo
 share/locale/gl/LC_MESSAGES/palapeli.mo
 share/locale/gl/LC_MESSAGES/parley.mo
-share/locale/gl/LC_MESSAGES/phonon-xine.mo
 share/locale/gl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/gl/LC_MESSAGES/phonon_kde.mo
 share/locale/gl/LC_MESSAGES/phononserver.mo
 share/locale/gl/LC_MESSAGES/plasma-desktop.mo
 share/locale/gl/LC_MESSAGES/plasma-netbook.mo
 share/locale/gl/LC_MESSAGES/plasma-overlay.mo
+share/locale/gl/LC_MESSAGES/plasma-windowed.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
@@ -847,6 +892,7 @@ share/locale/gl/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_news.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -885,6 +931,7 @@ share/locale/gl/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/gl/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/gl/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/gl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -893,6 +940,7 @@ share/locale/gl/LC_MESSAGES/plasma_engine_network.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_share.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gl/LC_MESSAGES/plasma_packagestructure_comic.mo
@@ -921,8 +969,11 @@ share/locale/gl/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/gl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/gl/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/gl/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/gl/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/gl/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/gl/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/gl/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -972,6 +1023,7 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/step
 @dirrm share/doc/HTML/gl/sonnet
 @dirrm share/doc/HTML/gl/plasma-desktop
+@dirrm share/doc/HTML/gl/parley
 @dirrm share/doc/HTML/gl/okular
 @dirrm share/doc/HTML/gl/lokalize
 @dirrm share/doc/HTML/gl/kwordquiz
@@ -980,7 +1032,9 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/ksnapshot
 @dirrm share/doc/HTML/gl/kruler
 @dirrm share/doc/HTML/gl/kolourpaint
+@dirrm share/doc/HTML/gl/kmail
 @dirrm share/doc/HTML/gl/klettres
+@dirrm share/doc/HTML/gl/kiten
 @dirrm share/doc/HTML/gl/kioslave/thumbnail
 @dirrm share/doc/HTML/gl/kioslave/telnet
 @dirrm share/doc/HTML/gl/kioslave/tar
@@ -990,6 +1044,7 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/kioslave/rlogin
 @dirrm share/doc/HTML/gl/kioslave/nntp
 @dirrm share/doc/HTML/gl/kioslave/nfs
+@dirrm share/doc/HTML/gl/kioslave/news
 @dirrm share/doc/HTML/gl/kioslave/man
 @dirrm share/doc/HTML/gl/kioslave/mailto
 @dirrm share/doc/HTML/gl/kioslave/ldap
@@ -1002,6 +1057,7 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/kioslave/data
 @dirrm share/doc/HTML/gl/kioslave/cgi
 @dirrm share/doc/HTML/gl/kioslave
+@dirrm share/doc/HTML/gl/khangman
 @dirrm share/doc/HTML/gl/kgeography
 @dirrm share/doc/HTML/gl/kcontrol/keyboard
 @dirrm share/doc/HTML/gl/kcontrol/kamera
@@ -1010,9 +1066,14 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/kbruch
 @dirrm share/doc/HTML/gl/kanagram
 @dirrm share/doc/HTML/gl/kalzium
+@dirrm share/doc/HTML/gl/kalgebra
 @dirrm share/doc/HTML/gl/gwenview
 @dirrm share/doc/HTML/gl/common
+@dirrm share/doc/HTML/gl/cantor
+@dirrm share/doc/HTML/gl/bovo
+@dirrm share/doc/HTML/gl/bomber
 @dirrm share/doc/HTML/gl/blinken
+@dirrm share/doc/HTML/gl/akregator
 @dirrm share/apps/kvtml/gl
 @dirrm share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/gl

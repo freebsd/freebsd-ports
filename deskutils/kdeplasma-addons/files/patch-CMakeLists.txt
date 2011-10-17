@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2009-04-06 07:00:39.000000000 +1100
-+++ ./CMakeLists.txt	2009-06-26 11:00:58.000000000 +1100
-@@ -26,16 +26,20 @@
+--- ./CMakeLists.txt.orig	2011-05-21 07:37:49.000000000 +1100
++++ ./CMakeLists.txt	2011-08-15 14:56:28.177306481 +1100
+@@ -36,17 +36,21 @@
  endif (DEPEND_PACKAGE_Marble)
  macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" FALSE "" "RECOMMENDED: Marble is used to provide a desktop globe wallpaper for Plasma.")
  
@@ -9,8 +9,9 @@
 -endif (NEPOMUK_FOUND)
 -
  add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 -include_directories (${KDE4_INCLUDES}
-+INCLUDE_DIRECTORIES (${QT_QTGUI_INCLUDE_DIR}
++include_directories (${QT_QTGUI_INCLUDE_DIR}
 +                     ${QT_QTCORE_INCLUDE_DIR}
 +                     ${QT_QTXML_INCLUDE_DIR}
 +                     ${PHONON_INCLUDE_DIR}

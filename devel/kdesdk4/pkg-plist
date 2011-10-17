@@ -32,7 +32,6 @@ bin/fixuifiles
 bin/hotshot2calltree
 bin/includemocs
 bin/kapptemplate
-bin/kate
 bin/kcachegrind
 bin/kde-systemsettings-tree.py
 bin/kde_generate_export_header
@@ -40,13 +39,11 @@ bin/kdedoc
 bin/kdekillall
 bin/kdelnk2desktop.py
 bin/kdemangen.pl
-bin/kdesrc-build
 bin/kio_svn_helper
 bin/kompare
 bin/kpartloader
 bin/krazy-licensecheck
 bin/kstartperf
-bin/ktesnippets_editor
 bin/kuiviewer
 bin/lokalize
 bin/makeobj
@@ -283,6 +280,8 @@ include/kasten/bytetabletool.h
 include/kasten/bytetabletoolfactory.h
 include/kasten/bytetabletoolview.h
 include/kasten/bytetabletoolviewfactory.h
+include/kasten/charsetconversiontoolfactory.h
+include/kasten/charsetconversiontoolviewfactory.h
 include/kasten/checksumtool.h
 include/kasten/checksumtoolfactory.h
 include/kasten/checksumtoolview.h
@@ -395,18 +394,8 @@ include/kasten/widgetsdockable.h
 include/kasten/zoomable.h
 include/kasten/zoombarcontroller.h
 include/kasten/zoomcontroller.h
-include/kate/application.h
-include/kate/documentmanager.h
-include/kate/mainwindow.h
-include/kate/plugin.h
-include/kate/pluginconfigpageinterface.h
-include/kate/pluginmanager.h
-include/kate_export.h
 include/kompare/kompareinterface.h
 include/kprofilemethod.h
-include/ktexteditor_codesnippets_core/completionmodel.h
-include/ktexteditor_codesnippets_core/ktexteditor_codesnippets_core_export.h
-include/ktexteditor_codesnippets_core/repository.h
 include/okteta/abstractbytearraycolumnrenderer.h
 include/okteta/abstractbytearraymodel.h
 include/okteta/abstractbytearrayview.h
@@ -458,28 +447,6 @@ lib/kde4/cervisiapart.so
 lib/kde4/fileviewgitplugin.so
 lib/kde4/fileviewsvnplugin.so
 lib/kde4/kabcformat_kdeaccounts.so
-lib/kde4/kate_kttsd.so
-lib/kde4/katebacktracebrowserplugin.so
-lib/kde4/katebuildplugin.so
-lib/kde4/katectagsplugin.so
-lib/kde4/kateexternaltoolsplugin.so
-lib/kde4/katefilebrowserplugin.so
-lib/kde4/katefiletemplates.so
-lib/kde4/katefiletreeplugin.so
-lib/kde4/katefindinfilesplugin.so
-lib/kde4/kategdbplugin.so
-lib/kde4/katekonsoleplugin.so
-lib/kde4/katemailfilesplugin.so
-lib/kde4/kateopenheaderplugin.so
-lib/kde4/katequickdocumentswitcherplugin.so
-lib/kde4/katesnippets_tngplugin.so
-lib/kde4/katesqlplugin.so
-lib/kde4/katesymbolviewerplugin.so
-lib/kde4/katetabbarextensionplugin.so
-lib/kde4/katetabifyplugin.so
-lib/kde4/katetextfilterplugin.so
-lib/kde4/katexmlcheckplugin.so
-lib/kde4/katexmltoolsplugin.so
 lib/kde4/kded_ksvnd.so
 lib/kde4/kio_perldoc.so
 lib/kde4/kio_svn.so
@@ -489,7 +456,6 @@ lib/kde4/libkbytearrayedit.so
 lib/kde4/libkomparenavtreepart.so
 lib/kde4/libkomparepart.so
 lib/kde4/oktetapart.so
-lib/kde4/plasma_applet_katesession.so
 lib/kde4/plugins/designer/oktetadesignerplugin.so
 lib/kde4/quithumbnail.so
 lib/libkastencontrollers.so
@@ -501,13 +467,9 @@ lib/libkastencore.so.5.0.1
 lib/libkastengui.so
 lib/libkastengui.so.5
 lib/libkastengui.so.5.0.1
-lib/libkateinterfaces.so
-lib/libkateinterfaces.so.5
-lib/libkateinterfaces.so.5.0.1
 lib/libkdeinit4_cervisia.so
 lib/libkdeinit4_cvsaskpass.so
 lib/libkdeinit4_cvsservice.so
-lib/libkdeinit4_kate.so
 lib/libkomparedialogpages.so
 lib/libkomparedialogpages.so.5
 lib/libkomparedialogpages.so.5.0.1
@@ -517,9 +479,6 @@ lib/libkomparediff2.so.5.0.1
 lib/libkompareinterface.so
 lib/libkompareinterface.so.5
 lib/libkompareinterface.so.5.0.1
-lib/libktexteditor_codesnippets_core.so
-lib/libktexteditor_codesnippets_core.so.0
-lib/libktexteditor_codesnippets_core.so.0.0.1
 lib/liboktetacore.so
 lib/liboktetacore.so.5
 lib/liboktetacore.so.5.0.1
@@ -540,11 +499,8 @@ lib/strigi/strigila_po.so
 lib/strigi/strigita_ts.so
 share/applications/kde4/cervisia.desktop
 share/applications/kde4/kapptemplate.desktop
-share/applications/kde4/kate.desktop
 share/applications/kde4/kcachegrind.desktop
-share/applications/kde4/kdesrc-build.desktop
 share/applications/kde4/kompare.desktop
-share/applications/kde4/ktesnippets_editor.desktop
 share/applications/kde4/kuiviewer.desktop
 share/applications/kde4/lokalize.desktop
 share/applications/kde4/okteta.desktop
@@ -553,56 +509,6 @@ share/apps/cervisia/cervisia.notifyrc
 share/apps/cervisia/cervisiashellui.rc
 share/apps/cervisiapart/cervisiaui.rc
 share/apps/kabc/formats/kdeaccountsplugin.desktop
-share/apps/kate/externaltools
-share/apps/kate/icons/oxygen/16x16/actions/null.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field-pk.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field-red.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-table.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-view.png
-share/apps/kate/kateui.rc
-share/apps/kate/plugins/filetree/ui.rc
-share/apps/kate/plugins/findinfiles/ui.rc
-share/apps/kate/plugins/kate_kttsd/ui.rc
-share/apps/kate/plugins/katebuild/ui.rc
-share/apps/kate/plugins/katectags/ui.rc
-share/apps/kate/plugins/kateexternaltools/ui.rc
-share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/cppgpl.hh.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.cpp.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.hh.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/docbookchapter.xml.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/html.katetemplate
-share/apps/kate/plugins/katefiletemplates/templates/language.xml.katetemplate
-share/apps/kate/plugins/katefiletemplates/ui.rc
-share/apps/kate/plugins/kategdb/ui.rc
-share/apps/kate/plugins/katekonsole/ui.rc
-share/apps/kate/plugins/katemailfiles/ui.rc
-share/apps/kate/plugins/kateopenheader/ui.rc
-share/apps/kate/plugins/katequickdocumentswitcher/ui.rc
-share/apps/kate/plugins/katesnippets_tng/ui.rc
-share/apps/kate/plugins/katesql/ui.rc
-share/apps/kate/plugins/katesymbolviewer/ui.rc
-share/apps/kate/plugins/katetabbarextension/ui.rc
-share/apps/kate/plugins/katetabify/ui.rc
-share/apps/kate/plugins/katetextfilter/ui.rc
-share/apps/kate/plugins/katexmlcheck/ui.rc
-share/apps/kate/plugins/katexmltools/ui.rc
-share/apps/kate/tips
-share/apps/katepart/syntax/katetemplate.xml
-share/apps/katepart/syntax/kdesrc-buildrc.xml
-share/apps/katexmltools/html4-loose.dtd.xml
-share/apps/katexmltools/html4-strict.dtd.xml
-share/apps/katexmltools/kcfg.dtd.xml
-share/apps/katexmltools/kde-docbook.dtd.xml
-share/apps/katexmltools/kpartgui.dtd.xml
-share/apps/katexmltools/language.dtd.xml
-share/apps/katexmltools/simplify_dtd.xsl
-share/apps/katexmltools/testcases.xml
-share/apps/katexmltools/xhtml1-frameset.dtd.xml
-share/apps/katexmltools/xhtml1-strict.dtd.xml
-share/apps/katexmltools/xhtml1-transitional.dtd.xml
-share/apps/katexmltools/xslt-1.0.dtd.xml
 share/apps/kcachegrind/icons/hicolor/16x16/actions/move.png
 share/apps/kcachegrind/icons/hicolor/16x16/actions/percent.png
 share/apps/kcachegrind/icons/hicolor/22x22/actions/hidetemplates.png
@@ -615,7 +521,6 @@ share/apps/kconf_update/cervisia-change_repos_list.pl
 share/apps/kconf_update/cervisia-normalize_cvsroot.pl
 share/apps/kconf_update/cervisia.upd
 share/apps/kconf_update/change_colors.pl
-share/apps/kconf_update/kate-2.4.upd
 share/apps/kdevappwizard/template_previews/akonadi-resources.png
 share/apps/kdevappwizard/template_previews/akonadi-serializer.png
 share/apps/kdevappwizard/template_previews/default.png
@@ -647,11 +552,10 @@ share/apps/kio_perldoc/pod2html.pl
 share/apps/kompare/komparepartui.rc
 share/apps/kompare/kompareui.rc
 share/apps/kpartloader/kpartloaderui.rc
-share/apps/ktexteditor_snippets/data/testsnippets.xml
-share/apps/ktexteditor_snippets/data/testsnippetscpp.xml
 share/apps/kuiviewer/kuiviewerui.rc
 share/apps/kuiviewerpart/kuiviewer_part.rc
 share/apps/lokalize/editorui.rc
+share/apps/lokalize/lokalize.notifyrc
 share/apps/lokalize/lokalizemainwindowui.rc
 share/apps/lokalize/projectmanagerui.rc
 share/apps/lokalize/scripts/find-gui-text.sh
@@ -694,6 +598,23 @@ share/apps/umbrello/headings/heading.py
 share/apps/umbrello/headings/heading.rb
 share/apps/umbrello/headings/heading.sql
 share/apps/umbrello/headings/heading.xsd
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_activity.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_class.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_collaboration.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_component.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_deployment.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_sequence.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_state.png
+share/apps/umbrello/icons/hicolor/16x16/actions/umbrello_diagram_usecase.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_activity.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_class.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_collaboration.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_component.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_deployment.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_entityrelationship.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_sequence.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_state.png
+share/apps/umbrello/icons/hicolor/22x22/actions/umbrello_diagram_usecase.png
 share/apps/umbrello/pics/CVglobal_meth.png
 share/apps/umbrello/pics/CVglobal_var.png
 share/apps/umbrello/pics/CVimplementation_meth.png
@@ -812,7 +733,6 @@ share/apps/umbrello/pics/exception.png
 share/apps/umbrello/pics/final_activity.png
 share/apps/umbrello/pics/foreignkey_constraint.png
 share/apps/umbrello/pics/generalisation.png
-share/apps/umbrello/pics/hi64-app-umbrello.png
 share/apps/umbrello/pics/initial_state.png
 share/apps/umbrello/pics/interface.png
 share/apps/umbrello/pics/join.png
@@ -851,9 +771,6 @@ share/config.kcfg/fileviewsvnpluginsettings.kcfg
 share/config.kcfg/kapptemplate.kcfg
 share/config.kcfg/lokalize.kcfg
 share/config.kcfg/structviewpreferences.kcfg
-share/config/katefiletemplates.knsrc
-share/config/katerc
-share/config/ktexteditor_codesnippets_core.knsrc
 share/config/okteta-structures.knsrc
 share/dbus-1/interfaces/org.kde.cervisia.cvsjob.xml
 share/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
@@ -889,29 +806,9 @@ share/doc/HTML/en/kapptemplate/pykde4.png
 share/doc/HTML/en/kapptemplate/pyqt4app.png
 share/doc/HTML/en/kapptemplate/second-page.png
 share/doc/HTML/en/kapptemplate/third-page.png
-share/doc/HTML/en/kate/advanced.docbook
-share/doc/HTML/en/kate/common
-share/doc/HTML/en/kate/configdialog01.png
-share/doc/HTML/en/kate/configuring.docbook
-share/doc/HTML/en/kate/fundamentals.docbook
-share/doc/HTML/en/kate/highlighted.png
-share/doc/HTML/en/kate/highlighting.docbook
-share/doc/HTML/en/kate/index.cache.bz2
-share/doc/HTML/en/kate/index.docbook
-share/doc/HTML/en/kate/kate.png
-share/doc/HTML/en/kate/man-kate.1.docbook
-share/doc/HTML/en/kate/mdi.docbook
-share/doc/HTML/en/kate/menus.docbook
-share/doc/HTML/en/kate/part.docbook
-share/doc/HTML/en/kate/plugins.docbook
-share/doc/HTML/en/kate/regular-expressions.docbook
-share/doc/HTML/en/kate/unhighlighted.png
 share/doc/HTML/en/kcachegrind/common
 share/doc/HTML/en/kcachegrind/index.cache.bz2
 share/doc/HTML/en/kcachegrind/index.docbook
-share/doc/HTML/en/kdesrc-build/common
-share/doc/HTML/en/kdesrc-build/index.cache.bz2
-share/doc/HTML/en/kdesrc-build/index.docbook
 share/doc/HTML/en/kompare/common
 share/doc/HTML/en/kompare/dock.png
 share/doc/HTML/en/kompare/index.cache.bz2
@@ -966,8 +863,13 @@ share/doc/HTML/en/umbrello/umbrello-ui.png
 share/doc/HTML/en/umbrello/uml_basics.docbook
 share/doc/HTML/en/umbrello/use-case-diagram.png
 share/doc/HTML/en/umbrello/working_with_umbrello.docbook
+share/icons/hicolor/128x128/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/128x128/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/128x128/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/128x128/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/128x128/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/128x128/actions/vcs-switch-svn-kiosvn.png
 share/icons/hicolor/128x128/apps/kapptemplate.png
-share/icons/hicolor/128x128/apps/kate.png
 share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/128x128/apps/lokalize.png
 share/icons/hicolor/128x128/apps/umbrello.png
@@ -989,9 +891,20 @@ share/icons/hicolor/16x16/actions/prevtemplate.png
 share/icons/hicolor/16x16/actions/prevuntranslated.png
 share/icons/hicolor/16x16/actions/search2msgstr.png
 share/icons/hicolor/16x16/actions/transsearch.png
+share/icons/hicolor/16x16/actions/vcs-add-cvs-cervisia.png
+share/icons/hicolor/16x16/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-commit-cvs-cervisia.png
+share/icons/hicolor/16x16/actions/vcs-diff-cvs-cervisia.png
+share/icons/hicolor/16x16/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-remove-cvs-cervisia.png
+share/icons/hicolor/16x16/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-status-cvs-cervisia.png
+share/icons/hicolor/16x16/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-switch-svn-kiosvn.png
+share/icons/hicolor/16x16/actions/vcs-update-cvs-cervisia.png
 share/icons/hicolor/16x16/apps/cervisia.png
 share/icons/hicolor/16x16/apps/kapptemplate.png
-share/icons/hicolor/16x16/apps/kate.png
 share/icons/hicolor/16x16/apps/kompare.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/okteta.png
@@ -1016,9 +929,20 @@ share/icons/hicolor/22x22/actions/prevtemplate.png
 share/icons/hicolor/22x22/actions/prevuntranslated.png
 share/icons/hicolor/22x22/actions/search2msgstr.png
 share/icons/hicolor/22x22/actions/transsearch.png
+share/icons/hicolor/22x22/actions/vcs-add-cvs-cervisia.png
+share/icons/hicolor/22x22/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-commit-cvs-cervisia.png
+share/icons/hicolor/22x22/actions/vcs-diff-cvs-cervisia.png
+share/icons/hicolor/22x22/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-remove-cvs-cervisia.png
+share/icons/hicolor/22x22/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-status-cvs-cervisia.png
+share/icons/hicolor/22x22/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-switch-svn-kiosvn.png
+share/icons/hicolor/22x22/actions/vcs-update-cvs-cervisia.png
 share/icons/hicolor/22x22/apps/cervisia.png
 share/icons/hicolor/22x22/apps/kapptemplate.png
-share/icons/hicolor/22x22/apps/kate.png
 share/icons/hicolor/22x22/apps/kompare.png
 share/icons/hicolor/22x22/apps/umbrello.png
 share/icons/hicolor/32x32/actions/approved.png
@@ -1041,9 +965,20 @@ share/icons/hicolor/32x32/actions/prevtemplate.png
 share/icons/hicolor/32x32/actions/prevuntranslated.png
 share/icons/hicolor/32x32/actions/search2msgstr.png
 share/icons/hicolor/32x32/actions/transsearch.png
+share/icons/hicolor/32x32/actions/vcs-add-cvs-cervisia.png
+share/icons/hicolor/32x32/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-commit-cvs-cervisia.png
+share/icons/hicolor/32x32/actions/vcs-diff-cvs-cervisia.png
+share/icons/hicolor/32x32/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-remove-cvs-cervisia.png
+share/icons/hicolor/32x32/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-status-cvs-cervisia.png
+share/icons/hicolor/32x32/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-switch-svn-kiosvn.png
+share/icons/hicolor/32x32/actions/vcs-update-cvs-cervisia.png
 share/icons/hicolor/32x32/apps/cervisia.png
 share/icons/hicolor/32x32/apps/kapptemplate.png
-share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/32x32/apps/kcachegrind.png
 share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/32x32/apps/kuiviewer.png
@@ -1052,20 +987,47 @@ share/icons/hicolor/32x32/apps/okteta.png
 share/icons/hicolor/32x32/apps/umbrello.png
 share/icons/hicolor/32x32/mimetypes/application-x-uml.png
 share/icons/hicolor/48x48/actions/approved.png
+share/icons/hicolor/48x48/actions/vcs-add-cvs-cervisia.png
+share/icons/hicolor/48x48/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-commit-cvs-cervisia.png
+share/icons/hicolor/48x48/actions/vcs-diff-cvs-cervisia.png
+share/icons/hicolor/48x48/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-remove-cvs-cervisia.png
+share/icons/hicolor/48x48/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-status-cvs-cervisia.png
+share/icons/hicolor/48x48/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-switch-svn-kiosvn.png
+share/icons/hicolor/48x48/actions/vcs-update-cvs-cervisia.png
 share/icons/hicolor/48x48/apps/cervisia.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
-share/icons/hicolor/48x48/apps/kate.png
 share/icons/hicolor/48x48/apps/kcachegrind.png
 share/icons/hicolor/48x48/apps/kompare.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/okteta.png
 share/icons/hicolor/48x48/apps/umbrello.png
+share/icons/hicolor/64x64/actions/vcs-add-svn-kiosvn.png
+share/icons/hicolor/64x64/actions/vcs-branch-svn-kiosvn.png
+share/icons/hicolor/64x64/actions/vcs-merge-svn-kiosvn.png
+share/icons/hicolor/64x64/actions/vcs-remove-svn-kiosvn.png
+share/icons/hicolor/64x64/actions/vcs-status-svn-kiosvn.png
+share/icons/hicolor/64x64/actions/vcs-switch-svn-kiosvn.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
-share/icons/hicolor/64x64/apps/kate.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/64x64/apps/umbrello.png
 share/icons/hicolor/scalable/actions/approved.svgz
-share/icons/hicolor/scalable/apps/kate.svgz
+share/icons/hicolor/scalable/actions/vcs-add-cvs-cervisia.svgz
+share/icons/hicolor/scalable/actions/vcs-add-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-branch-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-commit-cvs-cervisia.svgz
+share/icons/hicolor/scalable/actions/vcs-diff-cvs-cervisia.svgz
+share/icons/hicolor/scalable/actions/vcs-merge-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-remove-cvs-cervisia.svgz
+share/icons/hicolor/scalable/actions/vcs-remove-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-status-cvs-cervisia.svgz
+share/icons/hicolor/scalable/actions/vcs-status-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-switch-svn-kiosvn.svgz
+share/icons/hicolor/scalable/actions/vcs-update-cvs-cervisia.svgz
 share/icons/hicolor/scalable/apps/kompare.svgz
 share/icons/hicolor/scalable/apps/lokalize.svgz
 share/icons/hicolor/scalable/apps/umbrello.svgz
@@ -1107,102 +1069,6 @@ share/icons/locolor/32x32/actions/prevtemplate.png
 share/icons/locolor/32x32/actions/prevuntranslated.png
 share/icons/locolor/32x32/actions/search2msgstr.png
 share/icons/locolor/32x32/actions/transsearch.png
-share/icons/oxygen/128x128/actions/svn_add.png
-share/icons/oxygen/128x128/actions/svn_branch.png
-share/icons/oxygen/128x128/actions/svn_merge.png
-share/icons/oxygen/128x128/actions/svn_remove.png
-share/icons/oxygen/128x128/actions/svn_status.png
-share/icons/oxygen/128x128/actions/svn_switch.png
-share/icons/oxygen/16x16/actions/debug.png
-share/icons/oxygen/16x16/actions/interrupt.png
-share/icons/oxygen/16x16/actions/kill.png
-share/icons/oxygen/16x16/actions/repoadd.png
-share/icons/oxygen/16x16/actions/repomanage.png
-share/icons/oxygen/16x16/actions/snippetadd.png
-share/icons/oxygen/16x16/actions/snippetedit.png
-share/icons/oxygen/16x16/actions/svn_add.png
-share/icons/oxygen/16x16/actions/svn_branch.png
-share/icons/oxygen/16x16/actions/svn_merge.png
-share/icons/oxygen/16x16/actions/svn_remove.png
-share/icons/oxygen/16x16/actions/svn_status.png
-share/icons/oxygen/16x16/actions/svn_switch.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_activity.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_class.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_collaboration.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_component.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_deployment.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_sequence.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_state.png
-share/icons/oxygen/16x16/actions/umbrello_diagram_usecase.png
-share/icons/oxygen/16x16/actions/vcs_add.png
-share/icons/oxygen/16x16/actions/vcs_commit.png
-share/icons/oxygen/16x16/actions/vcs_diff.png
-share/icons/oxygen/16x16/actions/vcs_remove.png
-share/icons/oxygen/16x16/actions/vcs_status.png
-share/icons/oxygen/16x16/actions/vcs_update.png
-share/icons/oxygen/22x22/actions/svn_add.png
-share/icons/oxygen/22x22/actions/svn_branch.png
-share/icons/oxygen/22x22/actions/svn_merge.png
-share/icons/oxygen/22x22/actions/svn_remove.png
-share/icons/oxygen/22x22/actions/svn_status.png
-share/icons/oxygen/22x22/actions/svn_switch.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_activity.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_class.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_collaboration.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_component.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_deployment.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_entityrelationship.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_sequence.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_state.png
-share/icons/oxygen/22x22/actions/umbrello_diagram_usecase.png
-share/icons/oxygen/22x22/actions/vcs_add.png
-share/icons/oxygen/22x22/actions/vcs_commit.png
-share/icons/oxygen/22x22/actions/vcs_diff.png
-share/icons/oxygen/22x22/actions/vcs_remove.png
-share/icons/oxygen/22x22/actions/vcs_status.png
-share/icons/oxygen/22x22/actions/vcs_update.png
-share/icons/oxygen/32x32/actions/svn_add.png
-share/icons/oxygen/32x32/actions/svn_branch.png
-share/icons/oxygen/32x32/actions/svn_merge.png
-share/icons/oxygen/32x32/actions/svn_remove.png
-share/icons/oxygen/32x32/actions/svn_status.png
-share/icons/oxygen/32x32/actions/svn_switch.png
-share/icons/oxygen/32x32/actions/vcs_add.png
-share/icons/oxygen/32x32/actions/vcs_commit.png
-share/icons/oxygen/32x32/actions/vcs_diff.png
-share/icons/oxygen/32x32/actions/vcs_remove.png
-share/icons/oxygen/32x32/actions/vcs_status.png
-share/icons/oxygen/32x32/actions/vcs_update.png
-share/icons/oxygen/48x48/actions/svn_add.png
-share/icons/oxygen/48x48/actions/svn_branch.png
-share/icons/oxygen/48x48/actions/svn_merge.png
-share/icons/oxygen/48x48/actions/svn_remove.png
-share/icons/oxygen/48x48/actions/svn_status.png
-share/icons/oxygen/48x48/actions/svn_switch.png
-share/icons/oxygen/48x48/actions/vcs_add.png
-share/icons/oxygen/48x48/actions/vcs_commit.png
-share/icons/oxygen/48x48/actions/vcs_diff.png
-share/icons/oxygen/48x48/actions/vcs_remove.png
-share/icons/oxygen/48x48/actions/vcs_status.png
-share/icons/oxygen/48x48/actions/vcs_update.png
-share/icons/oxygen/64x64/actions/svn_add.png
-share/icons/oxygen/64x64/actions/svn_branch.png
-share/icons/oxygen/64x64/actions/svn_merge.png
-share/icons/oxygen/64x64/actions/svn_remove.png
-share/icons/oxygen/64x64/actions/svn_status.png
-share/icons/oxygen/64x64/actions/svn_switch.png
-share/icons/oxygen/scalable/actions/svn_add.svgz
-share/icons/oxygen/scalable/actions/svn_branch.svgz
-share/icons/oxygen/scalable/actions/svn_merge.svgz
-share/icons/oxygen/scalable/actions/svn_remove.svgz
-share/icons/oxygen/scalable/actions/svn_status.svgz
-share/icons/oxygen/scalable/actions/svn_switch.svgz
-share/icons/oxygen/scalable/actions/vcs_add.svgz
-share/icons/oxygen/scalable/actions/vcs_commit.svgz
-share/icons/oxygen/scalable/actions/vcs_diff.svgz
-share/icons/oxygen/scalable/actions/vcs_remove.svgz
-share/icons/oxygen/scalable/actions/vcs_status.svgz
-share/icons/oxygen/scalable/actions/vcs_update.svgz
 share/kde4/services/ServiceMenus/subversion.desktop
 share/kde4/services/ServiceMenus/subversion_toplevel.desktop
 share/kde4/services/cervisiapart.desktop
@@ -1210,28 +1076,6 @@ share/kde4/services/cvsservice.desktop
 share/kde4/services/designerthumbnail.desktop
 share/kde4/services/fileviewgitplugin.desktop
 share/kde4/services/fileviewsvnplugin.desktop
-share/kde4/services/kate_kttsd.desktop
-share/kde4/services/katebacktracebrowserplugin.desktop
-share/kde4/services/katebuildplugin.desktop
-share/kde4/services/katectagsplugin.desktop
-share/kde4/services/kateexternaltoolsplugin.desktop
-share/kde4/services/katefilebrowserplugin.desktop
-share/kde4/services/katefiletemplates.desktop
-share/kde4/services/katefiletreeplugin.desktop
-share/kde4/services/katefindinfilesplugin.desktop
-share/kde4/services/kategdbplugin.desktop
-share/kde4/services/katekonsoleplugin.desktop
-share/kde4/services/katemailfilesplugin.desktop
-share/kde4/services/kateopenheader.desktop
-share/kde4/services/katequickdocumentswitcher.desktop
-share/kde4/services/katesnippets_tngplugin.desktop
-share/kde4/services/katesql.desktop
-share/kde4/services/katesymbolviewer.desktop
-share/kde4/services/katetabbarextension.desktop
-share/kde4/services/katetabifyplugin.desktop
-share/kde4/services/katetextfilter.desktop
-share/kde4/services/katexmlcheck.desktop
-share/kde4/services/katexmltools.desktop
 share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/kded/ksvnd.desktop
 share/kde4/services/komparenavtreepart.desktop
@@ -1239,20 +1083,16 @@ share/kde4/services/komparepart.desktop
 share/kde4/services/kuiviewer_part.desktop
 share/kde4/services/oktetapart.desktop
 share/kde4/services/perldoc.protocol
-share/kde4/services/plasma-applet-katesession.desktop
 share/kde4/services/svn+file.protocol
 share/kde4/services/svn+http.protocol
 share/kde4/services/svn+https.protocol
 share/kde4/services/svn+ssh.protocol
 share/kde4/services/svn.protocol
-share/kde4/servicetypes/kateplugin.desktop
 share/kde4/servicetypes/komparenavigationpart.desktop
 share/kde4/servicetypes/kompareviewpart.desktop
 share/mime/application/base64.xml
 share/mime/application/btoa.xml
-share/mime/application/x-ktesnippets.xml
 share/mime/application/x-vnd.kde.okteta.structure.xml
-share/mime/packages/ktesnippets.xml
 share/mime/packages/okteta.xml
 share/mime/text/x-ascii85.xml
 share/mime/text/x-base32.xml
@@ -1272,12 +1112,16 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/doc/HTML/en/okteta
 @dirrm share/doc/HTML/en/lokalize
 @dirrm share/doc/HTML/en/kompare
-@dirrm share/doc/HTML/en/kdesrc-build
 @dirrm share/doc/HTML/en/kcachegrind
-@dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kapptemplate
 @dirrm share/doc/HTML/en/cervisia
 @dirrm share/apps/umbrello/pics
+@dirrm share/apps/umbrello/icons/hicolor/22x22/actions
+@dirrm share/apps/umbrello/icons/hicolor/22x22
+@dirrm share/apps/umbrello/icons/hicolor/16x16/actions
+@dirrm share/apps/umbrello/icons/hicolor/16x16
+@dirrm share/apps/umbrello/icons/hicolor
+@dirrm share/apps/umbrello/icons
 @dirrm share/apps/umbrello/headings
 @dirrm share/apps/umbrello
 @dirrm share/apps/oktetapart
@@ -1291,8 +1135,6 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrmtry share/apps/lokalize
 @dirrm share/apps/kuiviewerpart
 @dirrm share/apps/kuiviewer
-@dirrm share/apps/ktexteditor_snippets/data
-@dirrm share/apps/ktexteditor_snippets
 @dirrm share/apps/kpartloader
 @dirrm share/apps/kompare
 @dirrm share/apps/kio_perldoc
@@ -1308,40 +1150,12 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/apps/kcachegrind/icons/hicolor
 @dirrm share/apps/kcachegrind/icons
 @dirrm share/apps/kcachegrind
-@dirrm share/apps/katexmltools
-@dirrm share/apps/kate/plugins/katexmltools
-@dirrm share/apps/kate/plugins/katexmlcheck
-@dirrm share/apps/kate/plugins/katetextfilter
-@dirrm share/apps/kate/plugins/katetabify
-@dirrm share/apps/kate/plugins/katetabbarextension
-@dirrm share/apps/kate/plugins/katesymbolviewer
-@dirrm share/apps/kate/plugins/katesql
-@dirrm share/apps/kate/plugins/katesnippets_tng
-@dirrm share/apps/kate/plugins/katequickdocumentswitcher
-@dirrm share/apps/kate/plugins/kateopenheader
-@dirrm share/apps/kate/plugins/katemailfiles
-@dirrm share/apps/kate/plugins/katekonsole
-@dirrm share/apps/kate/plugins/kategdb
-@dirrm share/apps/kate/plugins/katefiletemplates/templates
-@dirrm share/apps/kate/plugins/katefiletemplates
-@dirrm share/apps/kate/plugins/kateexternaltools
-@dirrm share/apps/kate/plugins/katectags
-@dirrm share/apps/kate/plugins/katebuild
-@dirrm share/apps/kate/plugins/kate_kttsd
-@dirrm share/apps/kate/plugins/findinfiles
-@dirrm share/apps/kate/plugins/filetree
-@dirrmtry share/apps/kate/plugins
-@dirrm share/apps/kate/icons/oxygen/16x16/actions
-@dirrm share/apps/kate/icons/oxygen/16x16
-@dirrm share/apps/kate/icons/oxygen
-@dirrm share/apps/kate/icons
-@dirrmtry share/apps/kate
 @dirrm share/apps/cervisiapart
 @dirrm share/apps/cervisia
 @dirrmtry include/okteta
-@dirrm include/ktexteditor_codesnippets_core
 @dirrm include/kompare
-@dirrmtry include/kate
 @dirrmtry include/kasten
 @dirrmtry include/KDE/Okteta
 @dirrmtry include/KDE/Kasten
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

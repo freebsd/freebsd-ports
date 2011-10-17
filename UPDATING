@@ -5,6 +5,48 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111016
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC has been updated to 4.7.2. A number of files were moved between
+  packages and several ports were split, thus manual intervention into
+  update procedure is required:
+
+  # pkg_delete -f raptor-1\* kdelibs-4\* kdebase-\*4\* \
+    kdeaccessibility-4\* kdeedu-4\* kdegames-4\* kdegraphics-4\* \
+    kdesdk-4\* kdeutils-4\* konq-plugins-4\* ktts\* nepomukcontroller\* \
+    ruby\*-kdebindings\* kdebindings-smoke\*
+  # pkg_delete -f kdehier4\*
+  # mv /usr/local/kde4/etc/pam.d/* \
+    /usr/local/etc/pam.d/
+  # mv /usr/local/kde4/etc/rc.d/* \
+    /usr/local/etc/rc.d/
+  # mv /usr/local/kde4/share/dbus-1/services/* \
+    /usr/local/share/dbus-1/services/
+  # mv /usr/local/kde4/share/dbus-1/system-services/* \
+    /usr/local/share/dbus-1/system-services/
+  # rmdir /usr/local/kde4/etc/pam.d /usr/local/kde4/etc/rc.d \
+    /usr/local/kde4/share/dbus-1/*services
+  # rm -r /var/tmp/kdecache-*
+  # portmaster misc/kdehier4
+  # portmaster -o net/linphone-base ortp
+  # portmaster -a
+
+  Remember to check for missing ports, bearing in mind that x11/kdebase4*
+  ports were replaced by x11/kde4-* ones, ktts was replaced by jovie, while
+  konq-plugins-kde4 and nepomukcontroller were removed. Then:
+
+  # portmaster --check-depends
+
+  You're also encouraged to run `pkg_cutleaves` or similar to check for
+  orphaned ports.
+
+  Please, note that `pkg_add -r kde4` will not install Plasma scriptengines
+  and printer utilities by default anymore, and `pkg_add -r kdegames4` will
+  not install Kajongg. This was made to avoid depending by default on
+  kdebindings.
+
 20111016:
   AFFECTS: users of devel/subversion, devel/subversion-freebsd,
            devel/p5-subversion, devel/py-subversion,

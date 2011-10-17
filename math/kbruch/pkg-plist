@@ -1,0 +1,45 @@
+bin/kbruch
+share/applications/kde4/kbruch.desktop
+share/apps/kbruch/AppMenuWidgetui.rc
+share/apps/kbruch/FractionRingWidgetui.rc
+share/apps/kbruch/kbruchui.rc
+share/apps/kbruch/pics/exercise_arithmetics.png
+share/apps/kbruch/pics/exercise_compare.png
+share/apps/kbruch/pics/exercise_conversion.png
+share/apps/kbruch/pics/exercise_factorization.png
+share/apps/kbruch/pics/exercise_mixed.png
+share/apps/kbruch/pics/exercise_percentage.png
+share/apps/kbruch/pics/icon_back_arrow.png
+share/apps/kbruch/pics/icon_freestyle.png
+share/apps/kbruch/pics/icon_freestyle_1.png
+share/apps/kbruch/pics/icon_learning.png
+share/apps/kbruch/pics/icon_learning_1.png
+share/apps/kbruch/pics/icon_test_case.png
+share/apps/kbruch/pics/icon_test_case_1.png
+share/config.kcfg/kbruch.kcfg
+share/doc/HTML/en/kbruch/checked.png
+share/doc/HTML/en/kbruch/common
+share/doc/HTML/en/kbruch/compare.png
+share/doc/HTML/en/kbruch/convert.png
+share/doc/HTML/en/kbruch/factorize.png
+share/doc/HTML/en/kbruch/gui_main.png
+share/doc/HTML/en/kbruch/gui_mode.png
+share/doc/HTML/en/kbruch/index.cache.bz2
+share/doc/HTML/en/kbruch/index.docbook
+share/doc/HTML/en/kbruch/learning.png
+share/doc/HTML/en/kbruch/man-kbruch.1.docbook
+share/doc/HTML/en/kbruch/mixed.png
+share/doc/HTML/en/kbruch/percentage.png
+share/doc/HTML/en/kbruch/reduced.png
+share/doc/HTML/en/kbruch/settings.png
+share/doc/HTML/en/kbruch/statistics.png
+share/icons/hicolor/128x128/apps/kbruch.png
+share/icons/hicolor/16x16/apps/kbruch.png
+share/icons/hicolor/22x22/apps/kbruch.png
+share/icons/hicolor/32x32/apps/kbruch.png
+share/icons/hicolor/48x48/apps/kbruch.png
+share/icons/hicolor/64x64/apps/kbruch.png
+share/icons/hicolor/scalable/apps/kbruch.svgz
+@dirrm share/doc/HTML/en/kbruch
+@dirrm share/apps/kbruch/pics
+@dirrm share/apps/kbruch

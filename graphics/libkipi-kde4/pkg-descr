@@ -1,8 +1,5 @@
 Kipi (KDE Image Plugin Interface) is an effort to develop a common
-plugin structure for Digikam, KimDaBa, Showimg, and GwenView. Its
+plugin structure for Digikam, GwenView and othe KDE parts. Its
 aim is to be able to share image plugins among graphic applications. 
 
-WWW: http://extragear.kde.org/apps/kipi/
-
-- Alex Dupre
-ale@FreeBSD.org
+WWW: http://www.digikam.org/

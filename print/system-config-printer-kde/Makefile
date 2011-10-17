@@ -19,14 +19,15 @@ COMMENT=	KDE4 frontend for system-config-printer
 RUN_DEPENDS=	system-config-printer:${PORTSDIR}/print/system-config-printer \
 		${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups
 
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_KDE4=	kdeprefix pimlibs automoc4 pykde4 pykdeuic4
+USE_KDE4=	kdehier kdelibs kdeprefix pykde4 pykdeuic4 automoc4
+USE_PYTHON=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
-USE_PYTHON=	2.5+
 DISTINFO_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
-CMAKE_ARGS+=	-DINSTALL_SYSTEM_CONFIG_PRINTER:BOOL=On
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DINSTALL_SYSTEM_CONFIG_PRINTER:BOOL=ON \
+		-DBUILD_kuser:BOOL=OFF # Avoid checking for kdepimlibs.
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

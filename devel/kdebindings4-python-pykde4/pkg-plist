@@ -10,6 +10,7 @@ lib/kde4/kpythonpluginfactory.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/kio.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/knewstuff.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/kparts.so
+%%PYTHON_SITELIBDIR%%/PyKDE4/kterminal.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/ktexteditor.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/kutils.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/nepomuk.so
@@ -44,6 +45,7 @@ lib/kde4/kpythonpluginfactory.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kioExamples/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kpartsExamples/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kpartsExamples/katepart.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kpartsExamples/konsolepart.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kutilsExamples/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/polkitqtExamples/PkExampleUi.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/polkitqtExamples/README
@@ -334,8 +336,10 @@ share/py-sip/PyKDE4/kdeui/kconfigdialogmanager.sip
 share/py-sip/PyKDE4/kdeui/kconfigskeleton.sip
 share/py-sip/PyKDE4/kdeui/kcrash.sip
 share/py-sip/PyKDE4/kdeui/kcursor.sip
+share/py-sip/PyKDE4/kdeui/kdatecombobox.sip
 share/py-sip/PyKDE4/kdeui/kdatepicker.sip
 share/py-sip/PyKDE4/kdeui/kdatetable.sip
+share/py-sip/PyKDE4/kdeui/kdatetimeedit.sip
 share/py-sip/PyKDE4/kdeui/kdatetimewidget.sip
 share/py-sip/PyKDE4/kdeui/kdatewidget.sip
 share/py-sip/PyKDE4/kdeui/kdeprintdialog.sip
@@ -359,6 +363,7 @@ share/py-sip/PyKDE4/kdeui/kfontcombobox.sip
 share/py-sip/PyKDE4/kdeui/kfontdialog.sip
 share/py-sip/PyKDE4/kdeui/kfontrequester.sip
 share/py-sip/PyKDE4/kdeui/kfontsizeaction.sip
+share/py-sip/PyKDE4/kdeui/kfontutils.sip
 share/py-sip/PyKDE4/kdeui/kgesture.sip
 share/py-sip/PyKDE4/kdeui/kglobalaccel.sip
 share/py-sip/PyKDE4/kdeui/kglobalsettings.sip
@@ -390,6 +395,7 @@ share/py-sip/PyKDE4/kdeui/kmenu.sip
 share/py-sip/PyKDE4/kdeui/kmenubar.sip
 share/py-sip/PyKDE4/kdeui/kmessagebox.sip
 share/py-sip/PyKDE4/kdeui/kmessageboxmessagehandler.sip
+share/py-sip/PyKDE4/kdeui/kmessagewidget.sip
 share/py-sip/PyKDE4/kdeui/kmodelindexproxymapper.sip
 share/py-sip/PyKDE4/kdeui/kmodifierkeyinfo.sip
 share/py-sip/PyKDE4/kdeui/kmultitabbar.sip
@@ -403,7 +409,6 @@ share/py-sip/PyKDE4/kdeui/kpagemodel.sip
 share/py-sip/PyKDE4/kdeui/kpageview.sip
 share/py-sip/PyKDE4/kdeui/kpagewidget.sip
 share/py-sip/PyKDE4/kdeui/kpagewidgetmodel.sip
-share/py-sip/PyKDE4/kdeui/kpalette.sip
 share/py-sip/PyKDE4/kdeui/kpassivepopup.sip
 share/py-sip/PyKDE4/kdeui/kpassivepopupmessagehandler.sip
 share/py-sip/PyKDE4/kdeui/kpassworddialog.sip
@@ -458,7 +463,7 @@ share/py-sip/PyKDE4/kdeui/ktabbar.sip
 share/py-sip/PyKDE4/kdeui/ktabwidget.sip
 share/py-sip/PyKDE4/kdeui/ktextbrowser.sip
 share/py-sip/PyKDE4/kdeui/ktextedit.sip
-share/py-sip/PyKDE4/kdeui/ktimezone.sip
+share/py-sip/PyKDE4/kdeui/ktimecombobox.sip
 share/py-sip/PyKDE4/kdeui/ktimezonewidget.sip
 share/py-sip/PyKDE4/kdeui/ktip.sip
 share/py-sip/PyKDE4/kdeui/ktitlewidget.sip
@@ -556,6 +561,7 @@ share/py-sip/PyKDE4/kio/global.sip
 share/py-sip/PyKDE4/kio/job.sip
 share/py-sip/PyKDE4/kio/jobclasses.sip
 share/py-sip/PyKDE4/kio/jobuidelegate.sip
+share/py-sip/PyKDE4/kio/kabstractfileitemactionplugin.sip
 share/py-sip/PyKDE4/kio/kabstractfilemodule.sip
 share/py-sip/PyKDE4/kio/kabstractfilewidget.sip
 share/py-sip/PyKDE4/kio/kacl.sip
@@ -580,7 +586,6 @@ share/py-sip/PyKDE4/kio/kdesktopfileactions.sip
 share/py-sip/PyKDE4/kio/kdevicelistmodel.sip
 share/py-sip/PyKDE4/kio/kdirlister.sip
 share/py-sip/PyKDE4/kio/kdirmodel.sip
-share/py-sip/PyKDE4/kio/kdirnotify.sip
 share/py-sip/PyKDE4/kio/kdiroperator.sip
 share/py-sip/PyKDE4/kio/kdirselectdialog.sip
 share/py-sip/PyKDE4/kio/kdirsortfilterproxymodel.sip
@@ -622,10 +627,12 @@ share/py-sip/PyKDE4/kio/kopenwithdialog.sip
 share/py-sip/PyKDE4/kio/kpreviewwidgetbase.sip
 share/py-sip/PyKDE4/kio/kpropertiesdialog.sip
 share/py-sip/PyKDE4/kio/kprotocolmanager.sip
+share/py-sip/PyKDE4/kio/krecentdirs.sip
 share/py-sip/PyKDE4/kio/krecentdocument.sip
 share/py-sip/PyKDE4/kio/kremoteencoding.sip
 share/py-sip/PyKDE4/kio/krun.sip
 share/py-sip/PyKDE4/kio/ksambashare.sip
+share/py-sip/PyKDE4/kio/ksambasharedata.sip
 share/py-sip/PyKDE4/kio/kscan.sip
 share/py-sip/PyKDE4/kio/kservicegroup.sip
 share/py-sip/PyKDE4/kio/kshellcompletion.sip
@@ -721,6 +728,19 @@ share/py-sip/PyKDE4/kparts/sipkpartspart6.cpp
 share/py-sip/PyKDE4/kparts/sipkpartspart7.cpp
 share/py-sip/PyKDE4/kparts/statusbarextension.sip
 share/py-sip/PyKDE4/kparts/textextension.sip
+share/py-sip/PyKDE4/kterminal/kterminal.sip
+share/py-sip/PyKDE4/kterminal/kterminalmod.sip
+share/py-sip/PyKDE4/kterminal/sipAPIkterminal.h
+share/py-sip/PyKDE4/kterminal/sipkterminalpart0.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart1.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart2.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart3.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart4.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart5.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart6.cpp
+share/py-sip/PyKDE4/kterminal/sipkterminalpart7.cpp
+share/py-sip/PyKDE4/kterminal/terminal_interface.sip
+share/py-sip/PyKDE4/kterminal/terminal_interface_v2.sip
 share/py-sip/PyKDE4/ktexteditor/attribute.sip
 share/py-sip/PyKDE4/ktexteditor/codecompletioninterface.sip
 share/py-sip/PyKDE4/ktexteditor/codecompletionmodel.sip
@@ -857,6 +877,7 @@ share/py-sip/PyKDE4/phonon/mediacontroller.sip
 share/py-sip/PyKDE4/phonon/medianode.sip
 share/py-sip/PyKDE4/phonon/mediaobject.sip
 share/py-sip/PyKDE4/phonon/mediasource.sip
+share/py-sip/PyKDE4/phonon/mrl.sip
 share/py-sip/PyKDE4/phonon/objectdescription.sip
 share/py-sip/PyKDE4/phonon/objectdescriptionmodel.sip
 share/py-sip/PyKDE4/phonon/packet.sip
@@ -1002,6 +1023,7 @@ share/py-sip/PyKDE4/solid/genericinterface.sip
 share/py-sip/PyKDE4/solid/internetgateway.sip
 share/py-sip/PyKDE4/solid/networking.sip
 share/py-sip/PyKDE4/solid/networkinterface.sip
+share/py-sip/PyKDE4/solid/networkshare.sip
 share/py-sip/PyKDE4/solid/opticaldisc.sip
 share/py-sip/PyKDE4/solid/opticaldrive.sip
 share/py-sip/PyKDE4/solid/portablemediaplayer.sip
@@ -1103,6 +1125,7 @@ share/py-sip/PyKDE4/soprano/xsd.sip
 @dirrm share/py-sip/PyKDE4/nepomuk
 @dirrm share/py-sip/PyKDE4/kutils
 @dirrm share/py-sip/PyKDE4/ktexteditor
+@dirrm share/py-sip/PyKDE4/kterminal
 @dirrm share/py-sip/PyKDE4/kparts
 @dirrm share/py-sip/PyKDE4/knewstuff
 @dirrm share/py-sip/PyKDE4/kio

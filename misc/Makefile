@@ -263,6 +263,7 @@
     SUBDIR += kde3-i18n-zu
     SUBDIR += kde4-l10n
     SUBDIR += kde4-l10n-bg
+    SUBDIR += kde4-l10n-bs
     SUBDIR += kde4-l10n-ca
     SUBDIR += kde4-l10n-ca_valencia
     SUBDIR += kde4-l10n-cs
@@ -307,6 +308,7 @@
     SUBDIR += kde4-l10n-tg
     SUBDIR += kde4-l10n-th
     SUBDIR += kde4-l10n-tr
+    SUBDIR += kde4-l10n-ug
     SUBDIR += kde4-l10n-wa
     SUBDIR += kde4-shared-mime-info
     SUBDIR += kde4-xdg-env
@@ -319,19 +321,23 @@
     SUBDIR += kdeutils4
     SUBDIR += kenny
     SUBDIR += kfile-plugins
+    SUBDIR += kgeography
     SUBDIR += kicker-applets
+    SUBDIR += klettres
     SUBDIR += knewsticker-scripts
     SUBDIR += konq-plugins
-    SUBDIR += konq-plugins-kde4
     SUBDIR += krecipes
     SUBDIR += krecipes-kde4
     SUBDIR += ksig
+    SUBDIR += ktouch
     SUBDIR += kwatch
+    SUBDIR += kwordquiz
     SUBDIR += latex-mk
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
     SUBDIR += libhome
+    SUBDIR += libkdeedu
     SUBDIR += libmcal
     SUBDIR += libmetalink
     SUBDIR += libpri
@@ -363,7 +369,6 @@
     SUBDIR += mtx
     SUBDIR += nagios-base-logos
     SUBDIR += najitool
-    SUBDIR += nepomukcontroller
     SUBDIR += newer
     SUBDIR += nsf
     SUBDIR += numchar
@@ -423,6 +428,7 @@
     SUBDIR += p5-Tie-DxHash
     SUBDIR += p5-Zen-Koans
     SUBDIR += pantry
+    SUBDIR += parley
     SUBDIR += pastebinit
     SUBDIR += patchutils
     SUBDIR += pauker

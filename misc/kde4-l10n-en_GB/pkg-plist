@@ -78,8 +78,12 @@ share/doc/HTML/en_GB/common/gpl-translated.html
 share/doc/HTML/en_GB/common/kde-localised.css
 share/doc/HTML/en_GB/common/lgpl-translated.html
 share/doc/HTML/en_GB/kalarm/common
+share/doc/HTML/en_GB/kalarm/editwindow-simple.png
+share/doc/HTML/en_GB/kalarm/editwindow.png
 share/doc/HTML/en_GB/kalarm/index.cache.bz2
 share/doc/HTML/en_GB/kalarm/index.docbook
+share/doc/HTML/en_GB/kalarm/mainwindow-calendars.png
+share/doc/HTML/en_GB/kalarm/mainwindow.png
 share/doc/HTML/en_GB/khelpcenter/glossary/common
 share/doc/HTML/en_GB/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/glossary/index.docbook
@@ -102,6 +106,9 @@ share/doc/HTML/en_GB/kioslave/ldap/index.docbook
 share/doc/HTML/en_GB/kioslave/mailto/common
 share/doc/HTML/en_GB/kioslave/mailto/index.cache.bz2
 share/doc/HTML/en_GB/kioslave/mailto/index.docbook
+share/doc/HTML/en_GB/kioslave/news/common
+share/doc/HTML/en_GB/kioslave/news/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/news/index.docbook
 share/doc/HTML/en_GB/kioslave/nfs/common
 share/doc/HTML/en_GB/kioslave/nfs/index.cache.bz2
 share/doc/HTML/en_GB/kioslave/nfs/index.docbook
@@ -255,8 +262,6 @@ share/locale/en_GB/LC_MESSAGES/katefiletemplates.mo
 share/locale/en_GB/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/en_GB/LC_MESSAGES/kategdbplugin.mo
 share/locale/en_GB/LC_MESSAGES/katehelloworld.mo
-share/locale/en_GB/LC_MESSAGES/kateinsertcommand.mo
-share/locale/en_GB/LC_MESSAGES/katekjswrapper.mo
 share/locale/en_GB/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/en_GB/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/en_GB/LC_MESSAGES/kateopenheader.mo
@@ -533,6 +538,7 @@ share/locale/en_GB/LC_MESSAGES/ksaneplugin.mo
 share/locale/en_GB/LC_MESSAGES/kscd.mo
 share/locale/en_GB/LC_MESSAGES/kscreensaver.mo
 share/locale/en_GB/LC_MESSAGES/ksendemail.mo
+share/locale/en_GB/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/en_GB/LC_MESSAGES/kshisen.mo
 share/locale/en_GB/LC_MESSAGES/kshorturifilter.mo
 share/locale/en_GB/LC_MESSAGES/ksirk.mo
@@ -558,7 +564,6 @@ share/locale/en_GB/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
-share/locale/en_GB/LC_MESSAGES/kthememanager.mo
 share/locale/en_GB/LC_MESSAGES/ktimer.mo
 share/locale/en_GB/LC_MESSAGES/ktimetracker.mo
 share/locale/en_GB/LC_MESSAGES/ktouch.mo
@@ -579,7 +584,6 @@ share/locale/en_GB/LC_MESSAGES/kwin.mo
 share/locale/en_GB/LC_MESSAGES/kwin_art_clients.mo
 share/locale/en_GB/LC_MESSAGES/kwin_clients.mo
 share/locale/en_GB/LC_MESSAGES/kwin_effects.mo
-share/locale/en_GB/LC_MESSAGES/kwin_lib.mo
 share/locale/en_GB/LC_MESSAGES/kwinstartmenu.mo
 share/locale/en_GB/LC_MESSAGES/kwordquiz.mo
 share/locale/en_GB/LC_MESSAGES/kwrite.mo
@@ -599,6 +603,7 @@ share/locale/en_GB/LC_MESSAGES/libkcalutils.mo
 share/locale/en_GB/LC_MESSAGES/libkcddb.mo
 share/locale/en_GB/LC_MESSAGES/libkcompactdisc.mo
 share/locale/en_GB/LC_MESSAGES/libkdcraw.mo
+share/locale/en_GB/LC_MESSAGES/libkdecorations.mo
 share/locale/en_GB/LC_MESSAGES/libkdeedu.mo
 share/locale/en_GB/LC_MESSAGES/libkdegames.mo
 share/locale/en_GB/LC_MESSAGES/libkdepim.mo
@@ -684,7 +689,6 @@ share/locale/en_GB/LC_MESSAGES/okular_tiff.mo
 share/locale/en_GB/LC_MESSAGES/okular_xps.mo
 share/locale/en_GB/LC_MESSAGES/palapeli.mo
 share/locale/en_GB/LC_MESSAGES/parley.mo
-share/locale/en_GB/LC_MESSAGES/phonon-xine.mo
 share/locale/en_GB/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/en_GB/LC_MESSAGES/phonon_kde.mo
 share/locale/en_GB/LC_MESSAGES/phononserver.mo
@@ -878,6 +882,7 @@ share/locale/en_GB/entry.desktop
 @dirrm share/doc/HTML/en_GB/kioslave/rlogin
 @dirrm share/doc/HTML/en_GB/kioslave/nntp
 @dirrm share/doc/HTML/en_GB/kioslave/nfs
+@dirrm share/doc/HTML/en_GB/kioslave/news
 @dirrm share/doc/HTML/en_GB/kioslave/mailto
 @dirrm share/doc/HTML/en_GB/kioslave/ldap
 @dirrm share/doc/HTML/en_GB/kioslave/ftp

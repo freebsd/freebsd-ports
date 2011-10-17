@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kdebase-runtime
+PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -17,26 +17,37 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		slp.1:${PORTSDIR}/net/openslp \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
 		ssh.4:${PORTSDIR}/security/libssh \
-		attica.0:${PORTSDIR}/x11-toolkits/attica
-#explicitly depend on libssh to avoid interference with ssh.4 from compat7x
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
+		attica.0:${PORTSDIR}/x11-toolkits/attica \
+		searchclient.0:${PORTSDIR}/deskutils/strigi \
+		soprano.4:${PORTSDIR}/textproc/soprano \
+		qzeitgeist.0:${PORTSDIR}/sysutils/qzeitgeist
 
-CONFLICTS=	kdebase-workspace-4.5.[0-5]
+# Explicitly depend on libssh to avoid interference with ssh.4 from
+# compat7x.
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
-USE_GMAKE=	yes
+RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+
+CONFLICTS=	kdebase-runtime-4.[0-6].* kdebase-workspace-4.5.[0-5] nepomukcontroller-0.2
+
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl dbus phonon \
-		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus declarative designer gui phonon qt3support \
+		script svg webkit xml \
+		moc_build qmake_build rcc_build uic_build
+USE_XORG=	x11 xcursor
+USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesu.1
@@ -44,29 +55,37 @@ MAN8=		nepomukserver.8 nepomukservicestub.8
 
 SUB_FILES=	nepomuk-env.sh
 
-OPTIONS=	SPEAKER "Speaker setup GUI" off \
-		VIRTUOSO "Install Virtuoso server (required for Nepomuk)" off
+OPTIONS=	NEPOMUK "Nepomuk semantic desktop (installs Virtuoso)" off \
+		SPEAKER "Speaker setup GUI (requires PulseAudio)" off \
+		ZEITGEIST "Event logging via Zeitgeist" off
 
-# Explicitly disable alsa, see for details:
+# Explicitly disable ALSA, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
 CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+.if defined(WITH_NEPOMUK)
+RUN_DEPENDS+=	virtuoso-t:${PORTSDIR}/databases/virtuoso
 .endif
 
 .if defined(WITH_SPEAKER)
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio \
 		canberra.0:${PORTSDIR}/audio/libcanberra
+USE_GNOME=	glib20
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
-.if defined(WITH_VIRTUOSO)
-RUN_DEPENDS+=	${LOCALBASE}/bin/virtuoso-t:${PORTSDIR}/databases/virtuoso
+.if defined(WITH_ZEITGEIST)
+RUN_DEPENDS+=	zeitgeist-daemon:${PORTSDIR}/sysutils/zeitgeist
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 post-patch:
@@ -81,4 +100,4 @@ post-install:
 	${MKDIR} ${PREFIX}/env
 	${INSTALL_SCRIPT} ${WRKDIR}/nepomuk-env.sh ${PREFIX}/env
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

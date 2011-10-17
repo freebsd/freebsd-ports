@@ -2814,3 +2814,9 @@ www/asterisk-gui||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 databases/dbmetrix||2011-10-14|Depends on databases/mysql323-client, which is FORBIDDEN
 databases/xmysqladmin||2011-10-14|Depends on databases/mysql323-client, which is FORBIDDEN
 devel/subversion-freebsd||2011-10-16|Merged with devel/subversion
+accessibility/ktts|accessibility/jovie|2011-10-16|Renamed upstream
+misc/konq-plugins-kde4||2011-10-16|Merged with x11/kde4-baseapps
+misc/nepomukcontroller||2011-10-16|Merged with x11/kde4-runtime
+x11/kdebase4|x11/kde4-baseapps|2011-10-16|Renamed upstream
+x11/kdebase4-runtime|x11/kde4-runtime|2011-10-16|Renamed upstream
+x11/kdebase4-workspace|x11/kde4-workspace|2011-10-16|Renamed upstream

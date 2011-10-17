@@ -14,5 +14,7 @@ COMMENT=	Hindi messages and documentation for KDE4
 
 KDE4_L10N=	hi
 
+IGNORE=		is not included in KDE SC ${KDE4_VERSION}
+
 .include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

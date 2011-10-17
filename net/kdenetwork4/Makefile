@@ -14,7 +14,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Network applications
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		idn.17:${PORTSDIR}/dns/libidn \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
@@ -22,36 +21,50 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		otr.4:${PORTSDIR}/security/libotr \
 		vncserver.0:${PORTSDIR}/net/libvncserver \
 		msn.0:${PORTSDIR}/net-im/libmsn \
-		gadu:${PORTSDIR}/polish/libgadu \
-		gmp.10:${PORTSDIR}/math/gmp \
-		ortp.5:${PORTSDIR}/net/ortp \
-		telepathy-qt4.1:${PORTSDIR}/net-im/telepathy-qt4 \
-		meanwhile.1:${PORTSDIR}/net-im/meanwhile \
+		gadu.3:${PORTSDIR}/polish/libgadu \
+		ortp.8:${PORTSDIR}/net/linphone-base \
+		mediastreamer.0:${PORTSDIR}/net/linphone-base \
 		speex.1:${PORTSDIR}/audio/speex \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		meanwhile.1:${PORTSDIR}/net-im/meanwhile \
 		v4l2.0:${PORTSDIR}/multimedia/libv4l \
-		ktorrent.3:${PORTSDIR}/net-p2p/libktorrent
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
+		ktorrent.3:${PORTSDIR}/net-p2p/libktorrent \
+		jasper.4:${PORTSDIR}/graphics/jasper \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		gif.5:${PORTSDIR}/graphics/giflib \
+		soprano.4:${PORTSDIR}/textproc/soprano \
+		mms.0:${PORTSDIR}/net/libmms \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		searchclient.0:${PORTSDIR}/deskutils/strigi
+
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+
+RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 kdebase workspace
+USE_GNOME=	glib20 libxml2 libxslt
+USE_KDE4=	automoc4 baseapps kdehier kdelibs kdeprefix pimlibs workspace
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-USE_SQLITE=	yes
-QT_COMPONENTS=	corelib opengl dbus qt3support gui network xml porting_build \
-		qmake_build moc_build rcc_build uic_build uic3_build
 USE_OPENSSL=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus gui network qt3support sql xml \
+		moc_build qmake_build rcc_build uic_build uic3_build
+USE_SQLITE=	yes
+USE_XORG=	x11 xdamage xext xscrnsaver xtst
+USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
-# Explicitly disable alsa, see for details:
-# http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
-#CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
+# Explicitly disable ALSA, as it's not used (Jabber Jingle support is
+# not built).
+CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 
-# Route mozilla plugin by standard path
+# Route Mozilla plugin by standard path.
 CMAKE_ARGS+=	-DMOZPLUGIN_INSTALL_DIR=${PREFIX}/lib/browser_plugins
 
-# Fix build with fresh multimedia/v4l_compat installed
+# Fix build with fresh multimedia/v4l_compat installed.
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1
 
 OPTIONS=	XMMS "Enable XMMS Kopete nowlistening plugin" off

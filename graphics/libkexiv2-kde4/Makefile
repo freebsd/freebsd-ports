@@ -1,29 +1,37 @@
 # New ports collection makefile for:	libkexiv2
-# Date created:			14 March 2007
-# Whom:				Alex Dupre <ale@FreeBSD.org>
+# Date created:				9 August 2011
+# Whom:					Alberto Villa <avilla@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	libkexiv2
-PORTVERSION=	0.1.9
-PORTREVISION=	6
-CATEGORIES=	graphics devel
-MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	graphics kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
 
-MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A wrapper library to manipulate pictures metadata
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Exiv2 library interface for KDE
 
 LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2
 
-USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GNOME=	gnomehack pkgconfig
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
+LATEST_LINK=	${PORTNAME}-kde4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+CONFLICTS=	kdegraphics-4.[0-6].*
+
+USE_BZIP2=	yes
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	dbus gui xml \
+		moc_build qmake_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_INSTALL_DIR}/libdata/' \
+		-e 's/${PORTNAME}.pc\([^.]\)/${PORTNAME}-kde4.pc\1/g' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

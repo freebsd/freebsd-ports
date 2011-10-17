@@ -1,3 +1,4 @@
-Kamera is an IO slave and a KControl panel module which allows you to access
-folders and images within any digital camera supported by the upcoming gPhoto2
-libraries. 
+This is a digital camera IO slave for KDE 4 which uses gPhoto2 to
+allow access to your camera pictures with the URL camera:/.
+
+WWW: http://www.kde.org

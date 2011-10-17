@@ -47,6 +47,7 @@
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool
+    SUBDIR += cantor
     SUBDIR += ccmath
     SUBDIR += cgal
     SUBDIR += chaco
@@ -162,7 +163,11 @@
     SUBDIR += jtransforms
     SUBDIR += jts
     SUBDIR += k3dsurf
+    SUBDIR += kalgebra
     SUBDIR += kash3
+    SUBDIR += kbruch
+    SUBDIR += kig
+    SUBDIR += kmplot
     SUBDIR += koctave
     SUBDIR += kseg
     SUBDIR += labplot
@@ -521,6 +526,7 @@
     SUBDIR += rkward
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
+    SUBDIR += rocs
     SUBDIR += ros-geometry
     SUBDIR += rpcalc
     SUBDIR += rpy

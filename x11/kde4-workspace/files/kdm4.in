@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # PROVIDE: kdm4
 # REQUIRE: LOGIN cleanvar moused syscons dbus hald
 #

@@ -16,11 +16,13 @@ COMMENT=	Collection of entertaining programs for KDE
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+USE_KDE4=	kdehier kdelibs kdeprefix workspace automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	dbus gui qt3support \
+		qmake_build moc_build rcc_build uic_build
+USE_XORG=	x11
+USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN6=	amor.6

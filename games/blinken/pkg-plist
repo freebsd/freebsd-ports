@@ -1,0 +1,33 @@
+bin/blinken
+share/applications/kde4/blinken.desktop
+share/apps/blinken/README.packagers
+share/apps/blinken/fonts/steve.ttf
+share/apps/blinken/images/blinken.svg
+share/apps/blinken/sounds/1.wav
+share/apps/blinken/sounds/2.wav
+share/apps/blinken/sounds/3.wav
+share/apps/blinken/sounds/4.wav
+share/apps/blinken/sounds/lose.wav
+share/config.kcfg/blinken.kcfg
+share/doc/HTML/en/blinken/blinken1.png
+share/doc/HTML/en/blinken/blinken2.png
+share/doc/HTML/en/blinken/blinken_accesskeys.png
+share/doc/HTML/en/blinken/blinken_helpbutton.png
+share/doc/HTML/en/blinken/blinken_highscoresbutton.png
+share/doc/HTML/en/blinken/blinken_nickprompt.png
+share/doc/HTML/en/blinken/blinken_quitbutton.png
+share/doc/HTML/en/blinken/common
+share/doc/HTML/en/blinken/index.cache.bz2
+share/doc/HTML/en/blinken/index.docbook
+share/icons/hicolor/128x128/apps/blinken.png
+share/icons/hicolor/16x16/apps/blinken.png
+share/icons/hicolor/22x22/apps/blinken.png
+share/icons/hicolor/32x32/apps/blinken.png
+share/icons/hicolor/48x48/apps/blinken.png
+share/icons/hicolor/64x64/apps/blinken.png
+share/icons/hicolor/scalable/apps/blinken.svgz
+@dirrm share/doc/HTML/en/blinken
+@dirrm share/apps/blinken/sounds
+@dirrm share/apps/blinken/images
+@dirrm share/apps/blinken/fonts
+@dirrm share/apps/blinken

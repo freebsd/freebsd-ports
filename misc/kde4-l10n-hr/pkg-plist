@@ -43,6 +43,7 @@ share/locale/hr/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/hr/LC_MESSAGES/kabc_net.mo
 share/locale/hr/LC_MESSAGES/kabcformat_binary.mo
 share/locale/hr/LC_MESSAGES/kaccess.mo
+share/locale/hr/LC_MESSAGES/kaccessibleapp.mo
 share/locale/hr/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/hr/LC_MESSAGES/kaddressbook.mo
 share/locale/hr/LC_MESSAGES/kalarm.mo
@@ -53,8 +54,6 @@ share/locale/hr/LC_MESSAGES/kapman.mo
 share/locale/hr/LC_MESSAGES/kate.mo
 share/locale/hr/LC_MESSAGES/katefiletemplates.mo
 share/locale/hr/LC_MESSAGES/katehelloworld.mo
-share/locale/hr/LC_MESSAGES/kateinsertcommand.mo
-share/locale/hr/LC_MESSAGES/katekjswrapper.mo
 share/locale/hr/LC_MESSAGES/kateopenheader.mo
 share/locale/hr/LC_MESSAGES/katepart4.mo
 share/locale/hr/LC_MESSAGES/katesymbolviewer.mo
@@ -298,6 +297,7 @@ share/locale/hr/LC_MESSAGES/krunner.mo
 share/locale/hr/LC_MESSAGES/ksaneplugin.mo
 share/locale/hr/LC_MESSAGES/kscd.mo
 share/locale/hr/LC_MESSAGES/kscreensaver.mo
+share/locale/hr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hr/LC_MESSAGES/kshisen.mo
 share/locale/hr/LC_MESSAGES/kshorturifilter.mo
 share/locale/hr/LC_MESSAGES/ksirk.mo
@@ -320,7 +320,6 @@ share/locale/hr/LC_MESSAGES/ksystemlog.mo
 share/locale/hr/LC_MESSAGES/ksystraycmd.mo
 share/locale/hr/LC_MESSAGES/kteatime.mo
 share/locale/hr/LC_MESSAGES/ktexteditor_plugins.mo
-share/locale/hr/LC_MESSAGES/kthememanager.mo
 share/locale/hr/LC_MESSAGES/ktimer.mo
 share/locale/hr/LC_MESSAGES/ktimetracker.mo
 share/locale/hr/LC_MESSAGES/ktouch.mo
@@ -339,7 +338,6 @@ share/locale/hr/LC_MESSAGES/kwin.mo
 share/locale/hr/LC_MESSAGES/kwin_art_clients.mo
 share/locale/hr/LC_MESSAGES/kwin_clients.mo
 share/locale/hr/LC_MESSAGES/kwin_effects.mo
-share/locale/hr/LC_MESSAGES/kwin_lib.mo
 share/locale/hr/LC_MESSAGES/kwinstartmenu.mo
 share/locale/hr/LC_MESSAGES/kwordquiz.mo
 share/locale/hr/LC_MESSAGES/kwrite.mo
@@ -353,6 +351,7 @@ share/locale/hr/LC_MESSAGES/libkcalutils.mo
 share/locale/hr/LC_MESSAGES/libkcddb.mo
 share/locale/hr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hr/LC_MESSAGES/libkdcraw.mo
+share/locale/hr/LC_MESSAGES/libkdecorations.mo
 share/locale/hr/LC_MESSAGES/libkdeedu.mo
 share/locale/hr/LC_MESSAGES/libkdegames.mo
 share/locale/hr/LC_MESSAGES/libkdepim.mo
@@ -413,7 +412,6 @@ share/locale/hr/LC_MESSAGES/okular_tiff.mo
 share/locale/hr/LC_MESSAGES/okular_xps.mo
 share/locale/hr/LC_MESSAGES/palapeli.mo
 share/locale/hr/LC_MESSAGES/parley.mo
-share/locale/hr/LC_MESSAGES/phonon-xine.mo
 share/locale/hr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hr/LC_MESSAGES/phonon_kde.mo
 share/locale/hr/LC_MESSAGES/phononserver.mo
@@ -440,6 +438,7 @@ share/locale/hr/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/hr/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_kalzium.mo

@@ -7,6 +7,7 @@ bin/kded4
 bin/kdeinit4
 bin/kdeinit4_shutdown
 bin/kdeinit4_wrapper
+bin/kfilemetadatareader
 bin/kjs
 bin/kjscmd
 bin/kross
@@ -301,9 +302,11 @@ include/KDE/KDEsuClient
 include/KDE/KDataTool
 include/KDE/KDataToolAction
 include/KDE/KDataToolInfo
+include/KDE/KDateComboBox
 include/KDE/KDatePicker
 include/KDE/KDateTable
 include/KDE/KDateTime
+include/KDE/KDateTimeEdit
 include/KDE/KDateTimeWidget
 include/KDE/KDateValidator
 include/KDE/KDateWidget
@@ -342,6 +345,7 @@ include/KDE/KFileItemActions
 include/KDE/KFileItemDelegate
 include/KDE/KFileItemList
 include/KDE/KFileItemListProperties
+include/KDE/KFileMetaDataWidget
 include/KDE/KFileMetaInfo
 include/KDE/KFileMetaInfoGroup
 include/KDE/KFileMetaInfoItem
@@ -365,6 +369,7 @@ include/KDE/KFontComboBox
 include/KDE/KFontDialog
 include/KDE/KFontRequester
 include/KDE/KFontSizeAction
+include/KDE/KFontUtils
 include/KDE/KGenericFactory
 include/KDE/KGenericFactoryBase
 include/KDE/KGlobal
@@ -400,6 +405,7 @@ include/KDE/KIO/FileCopyJob
 include/KDE/KIO/FileJob
 include/KDE/KIO/ForwardingSlaveBase
 include/KDE/KIO/Job
+include/KDE/KIO/JobClasses
 include/KDE/KIO/JobUiDelegate
 include/KDE/KIO/ListJob
 include/KDE/KIO/MetaData
@@ -466,6 +472,7 @@ include/KDE/KMessage
 include/KDE/KMessageBox
 include/KDE/KMessageBoxMessageHandler
 include/KDE/KMessageHandler
+include/KDE/KMessageWidget
 include/KDE/KMimeType
 include/KDE/KMimeTypeChooser
 include/KDE/KMimeTypeChooserDialog
@@ -514,6 +521,7 @@ include/KDE/KNetwork/KSocketDeviceFactory
 include/KDE/KNetwork/KSocksSocketDevice
 include/KDE/KNetwork/KStreamSocket
 include/KDE/KNetwork/KUnixSocketAddress
+include/KDE/KNewFileMenu
 include/KDE/KNotification
 include/KDE/KNotificationRestrictions
 include/KDE/KNotifyConfigWidget
@@ -590,6 +598,7 @@ include/KDE/KPtyProcess
 include/KDE/KPushButton
 include/KDE/KRandom
 include/KDE/KRandomSequence
+include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
 include/KDE/KRemoteEncoding
@@ -601,6 +610,7 @@ include/KDE/KRichTextWidget
 include/KDE/KRuler
 include/KDE/KRun
 include/KDE/KSambaShare
+include/KDE/KSambaShareData
 include/KDE/KSaveFile
 include/KDE/KScanDialog
 include/KDE/KSelectAction
@@ -625,6 +635,7 @@ include/KDE/KSharedPtr
 include/KDE/KShell
 include/KDE/KShellCompletion
 include/KDE/KShortcut
+include/KDE/KShortcutWidget
 include/KDE/KShortcutsDialog
 include/KDE/KShortcutsEditor
 include/KDE/KSocks
@@ -699,6 +710,7 @@ include/KDE/KTextEditor/TemplateInterface2
 include/KDE/KTextEditor/TextHintInterface
 include/KDE/KTextEditor/VariableInterface
 include/KDE/KTextEditor/View
+include/KDE/KTimeComboBox
 include/KDE/KTimeZone
 include/KDE/KTimeZoneData
 include/KDE/KTimeZoneSource
@@ -837,6 +849,7 @@ include/KDE/Nepomuk/Variant
 include/KDE/Nepomuk/Vocabulary/NCAL
 include/KDE/Nepomuk/Vocabulary/NCO
 include/KDE/Nepomuk/Vocabulary/NDO
+include/KDE/Nepomuk/Vocabulary/NEXIF
 include/KDE/Nepomuk/Vocabulary/NFO
 include/KDE/Nepomuk/Vocabulary/NIE
 include/KDE/Nepomuk/Vocabulary/NMM
@@ -941,6 +954,7 @@ include/KDE/Solid/DeviceNotifier
 include/KDE/Solid/DvbInterface
 include/KDE/Solid/GenericInterface
 include/KDE/Solid/NetworkInterface
+include/KDE/Solid/NetworkShare
 include/KDE/Solid/Networking
 include/KDE/Solid/OpticalDisc
 include/KDE/Solid/OpticalDrive
@@ -1087,11 +1101,15 @@ include/kactioncollection.h
 include/kactionmenu.h
 include/kactionselector.h
 include/kactivelabel.h
+include/kactivityconsumer.h
+include/kactivitycontroller.h
+include/kactivityinfo.h
 include/kallocator.h
 include/kanimatedbutton.h
 include/kapplication.h
 include/kar.h
 include/karchive.h
+include/karchive_export.h
 include/karrowbutton.h
 include/kascii.h
 include/kassistantdialog.h
@@ -1163,9 +1181,11 @@ include/kcrash.h
 include/kcurrencycode.h
 include/kcursor.h
 include/kdatatool.h
+include/kdatecombobox.h
 include/kdatepicker.h
 include/kdatetable.h
 include/kdatetime.h
+include/kdatetimeedit.h
 include/kdatetimewidget.h
 include/kdatewidget.h
 include/kdbusservicestarter.h
@@ -1174,6 +1194,8 @@ include/kde_file.h
 include/kde_terminal_interface.h
 include/kde_terminal_interface_v2.h
 include/kdebug.h
+include/kdeclarative.h
+include/kdeclarative_export.h
 include/kdecore_export.h
 include/kdedmodule.h
 include/kdefakes.h
@@ -1254,6 +1276,7 @@ include/kfontcombobox.h
 include/kfontdialog.h
 include/kfontrequester.h
 include/kfontsizeaction.h
+include/kfontutils.h
 include/kgenericfactory.h
 include/kgenericfactory.tcc
 include/kgesture.h
@@ -1372,6 +1395,7 @@ include/kmenubar.h
 include/kmessage.h
 include/kmessagebox.h
 include/kmessageboxmessagehandler.h
+include/kmessagewidget.h
 include/kmimetype.h
 include/kmimetypechooser.h
 include/kmimetyperesolver.h
@@ -1501,6 +1525,7 @@ include/kross/ui/view.h
 include/kruler.h
 include/krun.h
 include/ksambashare.h
+include/ksambasharedata.h
 include/ksavefile.h
 include/kscan.h
 include/kselectaction.h
@@ -1606,6 +1631,7 @@ include/ktexteditor/templateinterface2.h
 include/ktexteditor/texthintinterface.h
 include/ktexteditor/variableinterface.h
 include/ktexteditor/view.h
+include/ktimecombobox.h
 include/ktimezone.h
 include/ktimezonewidget.h
 include/ktip.h
@@ -1843,6 +1869,7 @@ include/solid/genericinterface.h
 include/solid/internetgateway.h
 include/solid/networking.h
 include/solid/networkinterface.h
+include/solid/networkshare.h
 include/solid/opticaldisc.h
 include/solid/opticaldrive.h
 include/solid/portablemediaplayer.h
@@ -1882,7 +1909,6 @@ lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
 lib/kde4/emoticonstheme_xmpp.so
-lib/kde4/katepart.so
 lib/kde4/kcm_ssl.so
 lib/kde4/kded_kcookiejar.so
 lib/kde4/kded_kssld.so
@@ -1905,14 +1931,6 @@ lib/kde4/krossqts.so
 lib/kde4/kspell_aspell.so
 lib/kde4/kspell_enchant.so
 lib/kde4/kspell_hspell.so
-lib/kde4/ktexteditor_autobrace.so
-lib/kde4/ktexteditor_exporter.so
-lib/kde4/ktexteditor_hlselection.so
-lib/kde4/ktexteditor_iconinserter.so
-lib/kde4/ktexteditor_insanehtml_le.so
-lib/kde4/ktexteditor_insertfile.so
-lib/kde4/ktexteditor_kdatatool.so
-lib/kde4/ktexteditor_python-encoding.so
 lib/kde4/ktranscript.so
 lib/kde4/libexec/filesharelist
 lib/kde4/libexec/fileshareset
@@ -1954,15 +1972,18 @@ lib/kde4/plugins/script/libkrossqtsplugin.so
 lib/kde4/plugins/script/libkrossqtsplugin.so.5
 lib/kde4/plugins/script/libkrossqtsplugin.so.5.0.1
 lib/kde4/spellcheckplugin.so
-lib/libkatepartinterfaces.so
-lib/libkatepartinterfaces.so.5
-lib/libkatepartinterfaces.so.5.0.1
+lib/libkactivities.so
+lib/libkactivities.so.7
+lib/libkactivities.so.7.0.1
 lib/libkcmutils.so
 lib/libkcmutils.so.5
 lib/libkcmutils.so.5.0.1
 lib/libkde3support.so
 lib/libkde3support.so.5
 lib/libkde3support.so.5.0.1
+lib/libkdeclarative.so
+lib/libkdeclarative.so.7
+lib/libkdeclarative.so.7.0.1
 lib/libkdecore.so
 lib/libkdecore.so.7
 lib/libkdecore.so.7.0.1
@@ -2235,192 +2256,6 @@ share/apps/cmake/modules/kde4automoc.files.in
 share/apps/cmake/modules/kde4init_dummy.cpp.in
 share/apps/cmake/modules/kde4init_win32lib_dummy.cpp.in
 share/apps/cmake/modules/kde4uic.cmake
-share/apps/katepart/api/05_cursor.js
-share/apps/katepart/api/10_range.js
-share/apps/katepart/katepartsimpleui.rc
-share/apps/katepart/katepartui.rc
-share/apps/katepart/script/cstyle.js
-share/apps/katepart/script/haskell.js
-share/apps/katepart/script/lilypond.js
-share/apps/katepart/script/lisp.js
-share/apps/katepart/script/lua.js
-share/apps/katepart/script/python.js
-share/apps/katepart/script/ruby.js
-share/apps/katepart/script/utils.js
-share/apps/katepart/script/xml.js
-share/apps/katepart/syntax/abap.xml
-share/apps/katepart/syntax/abc.xml
-share/apps/katepart/syntax/actionscript.xml
-share/apps/katepart/syntax/ada.xml
-share/apps/katepart/syntax/ahdl.xml
-share/apps/katepart/syntax/alert.xml
-share/apps/katepart/syntax/alert_indent.xml
-share/apps/katepart/syntax/ample.xml
-share/apps/katepart/syntax/ansic89.xml
-share/apps/katepart/syntax/ansys.xml
-share/apps/katepart/syntax/apache.xml
-share/apps/katepart/syntax/asm-avr.xml
-share/apps/katepart/syntax/asm-dsp56k.xml
-share/apps/katepart/syntax/asm-m68k.xml
-share/apps/katepart/syntax/asm6502.xml
-share/apps/katepart/syntax/asn1.xml
-share/apps/katepart/syntax/asp.xml
-share/apps/katepart/syntax/asterisk.xml
-share/apps/katepart/syntax/awk.xml
-share/apps/katepart/syntax/bash.xml
-share/apps/katepart/syntax/bibtex.xml
-share/apps/katepart/syntax/bmethod.xml
-share/apps/katepart/syntax/boo.xml
-share/apps/katepart/syntax/c.xml
-share/apps/katepart/syntax/cg.xml
-share/apps/katepart/syntax/cgis.xml
-share/apps/katepart/syntax/changelog.xml
-share/apps/katepart/syntax/cisco.xml
-share/apps/katepart/syntax/clipper.xml
-share/apps/katepart/syntax/cmake.xml
-share/apps/katepart/syntax/coldfusion.xml
-share/apps/katepart/syntax/commonlisp.xml
-share/apps/katepart/syntax/component-pascal.xml
-share/apps/katepart/syntax/cpp.xml
-share/apps/katepart/syntax/cs.xml
-share/apps/katepart/syntax/css-php.xml
-share/apps/katepart/syntax/css.xml
-share/apps/katepart/syntax/cue.xml
-share/apps/katepart/syntax/d.xml
-share/apps/katepart/syntax/debianchangelog.xml
-share/apps/katepart/syntax/debiancontrol.xml
-share/apps/katepart/syntax/desktop.xml
-share/apps/katepart/syntax/diff.xml
-share/apps/katepart/syntax/djangotemplate.xml
-share/apps/katepart/syntax/doxygen.xml
-share/apps/katepart/syntax/doxygenlua.xml
-share/apps/katepart/syntax/dtd.xml
-share/apps/katepart/syntax/e.xml
-share/apps/katepart/syntax/eiffel.xml
-share/apps/katepart/syntax/email.xml
-share/apps/katepart/syntax/erlang.xml
-share/apps/katepart/syntax/euphoria.xml
-share/apps/katepart/syntax/ferite.xml
-share/apps/katepart/syntax/fgl-4gl.xml
-share/apps/katepart/syntax/fgl-per.xml
-share/apps/katepart/syntax/fortran.xml
-share/apps/katepart/syntax/freebasic.xml
-share/apps/katepart/syntax/fstab.xml
-share/apps/katepart/syntax/gap.xml
-share/apps/katepart/syntax/gdb.xml
-share/apps/katepart/syntax/gdl.xml
-share/apps/katepart/syntax/gettext.xml
-share/apps/katepart/syntax/glsl.xml
-share/apps/katepart/syntax/gnuassembler.xml
-share/apps/katepart/syntax/go.xml
-share/apps/katepart/syntax/grammar.xml
-share/apps/katepart/syntax/haskell.xml
-share/apps/katepart/syntax/haxe.xml
-share/apps/katepart/syntax/html-php.xml
-share/apps/katepart/syntax/html.xml
-share/apps/katepart/syntax/idconsole.xml
-share/apps/katepart/syntax/idl.xml
-share/apps/katepart/syntax/ilerpg.xml
-share/apps/katepart/syntax/inform.xml
-share/apps/katepart/syntax/ini.xml
-share/apps/katepart/syntax/java.xml
-share/apps/katepart/syntax/javadoc.xml
-share/apps/katepart/syntax/javascript-php.xml
-share/apps/katepart/syntax/javascript.xml
-share/apps/katepart/syntax/json.xml
-share/apps/katepart/syntax/jsp.xml
-share/apps/katepart/syntax/kbasic.xml
-share/apps/katepart/syntax/language.dtd
-share/apps/katepart/syntax/latex.xml
-share/apps/katepart/syntax/ldif.xml
-share/apps/katepart/syntax/lex.xml
-share/apps/katepart/syntax/lilypond.xml
-share/apps/katepart/syntax/literate-haskell.xml
-share/apps/katepart/syntax/logtalk.xml
-share/apps/katepart/syntax/lpc.xml
-share/apps/katepart/syntax/lsl.xml
-share/apps/katepart/syntax/lua.xml
-share/apps/katepart/syntax/m3u.xml
-share/apps/katepart/syntax/mab.xml
-share/apps/katepart/syntax/makefile.xml
-share/apps/katepart/syntax/mandoc.xml
-share/apps/katepart/syntax/mason.xml
-share/apps/katepart/syntax/matlab.xml
-share/apps/katepart/syntax/maxima.xml
-share/apps/katepart/syntax/mediawiki.xml
-share/apps/katepart/syntax/mergetagtext.xml
-share/apps/katepart/syntax/mips.xml
-share/apps/katepart/syntax/modelica.xml
-share/apps/katepart/syntax/modula-2.xml
-share/apps/katepart/syntax/monobasic.xml
-share/apps/katepart/syntax/mup.xml
-share/apps/katepart/syntax/nasm.xml
-share/apps/katepart/syntax/nemerle.xml
-share/apps/katepart/syntax/noweb.xml
-share/apps/katepart/syntax/objectivec.xml
-share/apps/katepart/syntax/objectivecpp.xml
-share/apps/katepart/syntax/ocaml.xml
-share/apps/katepart/syntax/octave.xml
-share/apps/katepart/syntax/opal.xml
-share/apps/katepart/syntax/pango.xml
-share/apps/katepart/syntax/pascal.xml
-share/apps/katepart/syntax/perl.xml
-share/apps/katepart/syntax/pgn.xml
-share/apps/katepart/syntax/php.xml
-share/apps/katepart/syntax/picsrc.xml
-share/apps/katepart/syntax/pike.xml
-share/apps/katepart/syntax/postscript.xml
-share/apps/katepart/syntax/povray.xml
-share/apps/katepart/syntax/progress.xml
-share/apps/katepart/syntax/prolog.xml
-share/apps/katepart/syntax/purebasic.xml
-share/apps/katepart/syntax/python.xml
-share/apps/katepart/syntax/qml.xml
-share/apps/katepart/syntax/r.xml
-share/apps/katepart/syntax/rapidq.xml
-share/apps/katepart/syntax/rexx.xml
-share/apps/katepart/syntax/rhtml.xml
-share/apps/katepart/syntax/rib.xml
-share/apps/katepart/syntax/roff.xml
-share/apps/katepart/syntax/rpmspec.xml
-share/apps/katepart/syntax/rsiidl.xml
-share/apps/katepart/syntax/ruby.xml
-share/apps/katepart/syntax/sather.xml
-share/apps/katepart/syntax/scala.xml
-share/apps/katepart/syntax/scheme.xml
-share/apps/katepart/syntax/sci.xml
-share/apps/katepart/syntax/sgml.xml
-share/apps/katepart/syntax/sieve.xml
-share/apps/katepart/syntax/sisu.xml
-share/apps/katepart/syntax/sml.xml
-share/apps/katepart/syntax/spice.xml
-share/apps/katepart/syntax/sql-mysql.xml
-share/apps/katepart/syntax/sql-postgresql.xml
-share/apps/katepart/syntax/sql.xml
-share/apps/katepart/syntax/stata.xml
-share/apps/katepart/syntax/syntax.template
-share/apps/katepart/syntax/systemc.xml
-share/apps/katepart/syntax/tcl.xml
-share/apps/katepart/syntax/texinfo.xml
-share/apps/katepart/syntax/tibasic.xml
-share/apps/katepart/syntax/txt2tags.xml
-share/apps/katepart/syntax/uscript.xml
-share/apps/katepart/syntax/velocity.xml
-share/apps/katepart/syntax/verilog.xml
-share/apps/katepart/syntax/vhdl.xml
-share/apps/katepart/syntax/vrml.xml
-share/apps/katepart/syntax/winehq.xml
-share/apps/katepart/syntax/wml.xml
-share/apps/katepart/syntax/xharbour.xml
-share/apps/katepart/syntax/xml.xml
-share/apps/katepart/syntax/xmldebug.xml
-share/apps/katepart/syntax/xorg.xml
-share/apps/katepart/syntax/xslt.xml
-share/apps/katepart/syntax/xul.xml
-share/apps/katepart/syntax/yacas.xml
-share/apps/katepart/syntax/yacc.xml
-share/apps/katepart/syntax/yaml.xml
-share/apps/katepart/syntax/zonnon.xml
 share/apps/kauth/dbus_policy.stub
 share/apps/kauth/dbus_service.stub
 share/apps/kcharselect/kcharselect-data
@@ -3331,7 +3166,6 @@ share/apps/ksgmltools2/customization/xsl/et.xml
 share/apps/ksgmltools2/customization/xsl/fr.xml
 share/apps/ksgmltools2/customization/xsl/gl.xml
 share/apps/ksgmltools2/customization/xsl/it.xml
-share/apps/ksgmltools2/customization/xsl/kde-custom-l10n.xml
 share/apps/ksgmltools2/customization/xsl/lt.xml
 share/apps/ksgmltools2/customization/xsl/nds.xml
 share/apps/ksgmltools2/customization/xsl/nl.xml
@@ -3402,12 +3236,6 @@ share/apps/ksgmltools2/customization/zh-TW/lang.entities
 share/apps/ksgmltools2/customization/zh-TW/strings.entities
 share/apps/ksgmltools2/customization/zh-TW/user.entities
 share/apps/kssl/ca-bundle.crt
-share/apps/ktexteditor_exporter/ktexteditor_exporterui.rc
-share/apps/ktexteditor_iconinserter/ktexteditor_iconinserterui.rc
-share/apps/ktexteditor_insanehtml_le/insanehtml_le_ui.rc
-share/apps/ktexteditor_insanehtml_le/xhtml.cfg
-share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
-share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
 share/apps/plasma/services/dataengineservice.operations
 share/apps/plasma/services/plasmoidservice.operations
 share/apps/plasma/services/storage.operations
@@ -3418,8 +3246,6 @@ share/config/colors/Oxygen.colors
 share/config/colors/Rainbow.colors
 share/config/colors/Royal.colors
 share/config/colors/Web.colors
-share/config/katemoderc
-share/config/katepartpluginsrc
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/khtmlrc
@@ -3534,7 +3360,6 @@ share/icons/hicolor/32x32/actions/presence_unknown.png
 share/icons/hicolor/48x48/actions/presence_away.png
 share/icons/hicolor/48x48/actions/presence_offline.png
 share/icons/hicolor/48x48/actions/presence_online.png
-share/icons/hicolor/scalable/apps/ktexteditorautobrace.svgz
 share/kde4/services/data.protocol
 share/kde4/services/emoticonstheme_adium.desktop
 share/kde4/services/emoticonstheme_kde.desktop
@@ -3547,7 +3372,6 @@ share/kde4/services/help.protocol
 share/kde4/services/http.protocol
 share/kde4/services/http_cache_cleaner.desktop
 share/kde4/services/https.protocol
-share/kde4/services/katepart.desktop
 share/kde4/services/kcm_ssl.desktop
 share/kde4/services/kded/kcookiejar.desktop
 share/kde4/services/kded/kssld.desktop
@@ -3561,20 +3385,12 @@ share/kde4/services/kmultipart.desktop
 share/kde4/services/kspell_aspell.desktop
 share/kde4/services/kspell_enchant.desktop
 share/kde4/services/kspell_hspell.desktop
-share/kde4/services/ktexteditor_autobrace.desktop
-share/kde4/services/ktexteditor_autobrace_config.desktop
-share/kde4/services/ktexteditor_exporter.desktop
-share/kde4/services/ktexteditor_hlselection.desktop
-share/kde4/services/ktexteditor_iconinserter.desktop
-share/kde4/services/ktexteditor_insanehtml_le.desktop
-share/kde4/services/ktexteditor_insertfile.desktop
-share/kde4/services/ktexteditor_kdatatool.desktop
-share/kde4/services/ktexteditor_python-encoding.desktop
 share/kde4/services/metainfo.protocol
 share/kde4/services/mms.protocol
 share/kde4/services/mmst.protocol
 share/kde4/services/mmsu.protocol
 share/kde4/services/plasma-applet-extenderapplet.desktop
+share/kde4/services/plasma.protocol
 share/kde4/services/pnm.protocol
 share/kde4/services/qimageioplugins/bmp.desktop
 share/kde4/services/qimageioplugins/dds.desktop
@@ -3596,6 +3412,8 @@ share/kde4/services/qimageioplugins/ppm.desktop
 share/kde4/services/qimageioplugins/psd.desktop
 share/kde4/services/qimageioplugins/ras.desktop
 share/kde4/services/qimageioplugins/rgb.desktop
+share/kde4/services/qimageioplugins/svg+xml-compressed.desktop
+share/kde4/services/qimageioplugins/svg+xml.desktop
 share/kde4/services/qimageioplugins/tga.desktop
 share/kde4/services/qimageioplugins/tiff.desktop
 share/kde4/services/qimageioplugins/xbm.desktop
@@ -3709,7 +3527,6 @@ share/mime/application/x-vnd.kde.kugar.mixed.xml
 share/mime/application/x-vnd.kde.plan.work.xml
 share/mime/application/x-vnd.kde.plan.xml
 share/mime/application/x-webarchive.xml
-share/mime/application/x-win-lnk.xml
 share/mime/application/xsd.xml
 share/mime/audio/aac.xml
 share/mime/audio/x-pn-realaudio-plugin.xml
@@ -3748,11 +3565,6 @@ share/mime/video/x-ms-wmp.xml
 @dirrm share/config/ui
 @dirrm share/config/colors
 @dirrm share/apps/proxyscout
-@dirrm share/apps/ktexteditor_kdatatool
-@dirrm share/apps/ktexteditor_insertfile
-@dirrm share/apps/ktexteditor_insanehtml_le
-@dirrm share/apps/ktexteditor_iconinserter
-@dirrm share/apps/ktexteditor_exporter
 @dirrm share/apps/kssl
 @dirrm share/apps/ksgmltools2/customization/zh-TW/entities
 @dirrm share/apps/ksgmltools2/customization/zh-TW
@@ -3863,8 +3675,6 @@ share/mime/video/x-ms-wmp.xml
 @dirrm share/apps/kdeui/about
 @dirrm share/apps/kdeui
 @dirrm share/apps/kauth
-@dirrmtry share/apps/katepart/script
-@dirrmtry share/apps/katepart/api
 @dirrm share/apps/LICENSES
 @dirrm lib/kde4/plugins/script
 @dirrm lib/kde4/plugins/kauth/helper

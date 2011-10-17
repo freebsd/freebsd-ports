@@ -1,0 +1,15 @@
+Kajongg - the classical Mah Jongg for four players. If you are looking
+for the Mah Jongg solitaire please use the application KMahjongg.
+
+Kajongg can be used in two different ways. Scoring a manual game where
+you play as always and use Kajongg for the computation of scores and
+for bookkeeping. Or you can use Kajongg to play against any
+combination of other human players or computer players.
+
+Kajongg comes with a ruleset for classical Chinese as played in
+Germany. You can change the ruleset at your will and also define whole
+new rulesets. The rules for a game are saved in the database, so every
+game could be played with different rules. Changing a ruleset does not
+affect existing games.
+
+WWW: http://www.kde.org/applications/games/kajongg
