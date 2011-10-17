@@ -1211,6 +1211,7 @@
     SUBDIR += ruby-xslt
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-coderay
+    SUBDIR += rubygem-compass
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-ferret
