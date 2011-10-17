@@ -872,6 +872,7 @@
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-captcha
+    SUBDIR += rubygem-chunky_png
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-ezprint

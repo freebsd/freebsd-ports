@@ -1,0 +1,6 @@
+ChunkyPNG is a pure Ruby library to read and write PNG images
+and access textual metadata.
+
+It has no dependency on RMagick, or any other library for that matter.
+
+WWW: https://github.com/wvanbergen/chunky_png/wiki
