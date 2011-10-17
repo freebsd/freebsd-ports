@@ -1,0 +1,5 @@
+Glib::Object::Introspection uses the gobject-introspection and libffi projects
+to dynamically create Perl bindings for a wide variety of libraries. Examples
+include gtk+, webkit, libsoup and many more.
+
+WWW: http://search.cpan.org/dist/Glib-Object-Introspection/
