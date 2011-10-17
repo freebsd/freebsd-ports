@@ -5,11 +5,10 @@
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-ijs/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
-PORTREVISION=	2
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-ijs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@burggraben.net
 COMMENT=	GutenPrint Ghostscript Drivers
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

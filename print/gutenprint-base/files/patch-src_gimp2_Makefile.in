@@ -1,13 +1,13 @@
---- src/gimp2/Makefile.in.orig	2008-02-29 09:47:54.000000000 -0500
-+++ src/gimp2/Makefile.in	2008-02-29 09:48:44.000000000 -0500
-@@ -291,8 +291,8 @@
+--- src/gimp2/Makefile.in.orig	2011-10-15 12:53:29.000000000 +0200
++++ src/gimp2/Makefile.in	2011-10-15 12:54:02.000000000 +0200
+@@ -306,8 +306,8 @@
  	print_gimp.h
  
  print_SOURCES = $(COMMON_PRINT_SOURCES) print-print.c
 -print_LDADD = $(GIMP2_LIBS) $(GUTENPRINTUI2_LIBS)
 -print_DEPENDENCIES = $(GUTENPRINTUI2_LIBS) $(GUTENPRINT_LIBS)
 +print_LDADD = $(GIMP2_LIBS) %%GUTENPRINTUI2_LIBS%%
-+print_DEPENDENCIES = 
++print_DEPENDENCIES =
  gutenprint_SOURCES = $(COMMON_PRINT_SOURCES) print-gutenprint.c
  gutenprint_LDADD = $(print_LDADD)
  gutenprint_DEPENDENCIES = $(print_DEPENDENCIES)
