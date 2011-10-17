@@ -1,8 +1,17 @@
---- configure.orig	2009-06-14 18:25:26.000000000 +0200
-+++ configure	2009-06-30 13:10:03.000000000 +0200
-@@ -14754,6 +14754,7 @@
- JPEG_LIB_VERSION="`expr $JPEG_LIB_VERSION / 10`:`expr $JPEG_LIB_VERSION % 10`"
- { $as_echo "$as_me:$LINENO: result: $JPEG_LIB_VERSION" >&5
+--- configure.orig	2010-05-02 18:49:36.000000000 +0200
++++ configure	2011-10-17 21:00:37.000000000 +0200
+@@ -10559,7 +10559,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -12678,6 +12678,7 @@
+ JPEG_LIB_VERSION="`expr $JPEG_LIB_VERSION / 10`:2"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $JPEG_LIB_VERSION" >&5
  $as_echo "$JPEG_LIB_VERSION" >&6; }
 +JPEG_LIB_VERSION="11"
  
