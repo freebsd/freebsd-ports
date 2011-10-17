@@ -7,7 +7,7 @@
 
 PORTNAME=	libsamplerate
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool

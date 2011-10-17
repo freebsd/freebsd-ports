@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	5.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	astropulse-svn-868

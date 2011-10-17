@@ -7,6 +7,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	4.5.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -48,9 +49,9 @@ IGNORE=		cannot build with MPICH and OpenMPI support. Run 'make config' again an
 .if !defined(WITHOUT_FFTW3)
 CONFIGURE_ARGS+=	--with-fft=fftw3
 . if defined(WITH_FLOAT)
-LIB_DEPENDS+=	fftw3f.5:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
 . else
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 . endif
 .else
 . if defined(WITH_FFTW2)

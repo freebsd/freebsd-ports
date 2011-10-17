@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
+PORTREVISION=	1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -146,7 +147,7 @@ ALL_TARGET=	all doc
 .if defined(WITHOUT_FFTW)
 CONFIGURE_ARGS+=	--without-fftw
 .else
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
 .if defined(WITHOUT_PVM)

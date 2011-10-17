@@ -8,7 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.8.11.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--with-colors=double --with-coords=double
 .if defined(WITHOUT_FFTW3)
 CONFIGURE_ARGS+=	--without-fftw3
 .else
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
 .if defined(WITHOUT_IMAGEMAGICK)

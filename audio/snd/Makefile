@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	12.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+=	--with-esd
 .endif
 
 .if !defined(WITHOUT_FFTW3)
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif

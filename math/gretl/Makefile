@@ -8,14 +8,14 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics and Time-series Library
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

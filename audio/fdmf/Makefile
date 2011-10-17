@@ -7,7 +7,7 @@
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/ CENKES
 
@@ -16,7 +16,7 @@ COMMENT=	Find similar music by perceptual hashing
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		plot.4:${PORTSDIR}/graphics/plotutils \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \

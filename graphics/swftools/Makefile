@@ -8,7 +8,7 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/
@@ -19,7 +19,7 @@ COMMENT=	SWF manipulation and generation utilities
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 

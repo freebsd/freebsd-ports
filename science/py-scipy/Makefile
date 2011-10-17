@@ -7,7 +7,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Scientific tools for Python
 
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options

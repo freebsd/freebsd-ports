@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.59
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -88,7 +89,7 @@ CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=ON
 .endif
 
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=OFF

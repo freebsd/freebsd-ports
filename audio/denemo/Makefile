@@ -7,7 +7,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
 		fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		jack.0:${PORTSDIR}/audio/jack \
 		guile.21:${PORTSDIR}/lang/guile \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 
 OPTIONS+=	LILYPOND "Install LilyPond (Printing)" off

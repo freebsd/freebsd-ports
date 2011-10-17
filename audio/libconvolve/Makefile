@@ -7,7 +7,7 @@
 
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ COMMENT=	Simple C library for partitioned convolution
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	fftw3f.5:${PORTSDIR}/math/fftw3-float \
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 

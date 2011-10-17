@@ -7,7 +7,7 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.4.2.58240
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod \
 		mad.2:${PORTSDIR}/audio/libmad \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		fftw3f.5:${PORTSDIR}/math/fftw3-float
+		fftw3f:${PORTSDIR}/math/fftw3-float
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

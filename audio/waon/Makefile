@@ -7,14 +7,14 @@
 
 PORTNAME=	waon
 PORTVERSION=	0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	kichiki@users.sourceforge.net
 COMMENT=	A Wave-to-Notes transcriber and some utility tools
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		ao.4:${PORTSDIR}/audio/libao \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate

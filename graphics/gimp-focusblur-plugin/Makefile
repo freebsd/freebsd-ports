@@ -7,6 +7,7 @@
 
 PORTNAME=	focusblur
 PORTVERSION=	3.2.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-
@@ -15,7 +16,7 @@ PKGNAMESUFFIX=	-plugin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp realistic focus blur plugin
 
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
 LICENSE=	GPLv2

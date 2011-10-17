@@ -7,7 +7,7 @@
 
 PORTNAME=	LabPlot
 PORTVERSION=	1.6.0.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	math kde
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
 		gsl.16:${PORTSDIR}/math/gsl \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		qwtplot3d.0:${PORTSDIR}/math/qwtplot3d \
 		origin.0:${PORTSDIR}/math/liborigin
 

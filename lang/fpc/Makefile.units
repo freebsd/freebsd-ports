@@ -68,7 +68,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
 
 .if ${PKGNAMESUFFIX} == "-fftw"
 .	if defined(WITH_FFTW)
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 .	endif
 .endif
 
