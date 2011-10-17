@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	transmissionrpc
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	cvs-src@yandex.ru
-COMMENT=	A python module communicates with Transmission through json-rpc
+COMMENT=	A Python module that communicates with Transmission through JSON-RPC
 
 LICENSE=	MIT
 
 USE_PYTHON=	2.6+
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
