@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -18,13 +18,13 @@ COMMENT=	Perl modules that implement asynchronous filehandle IO
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Async-MergePoint>=0:${PORTSDIR}/devel/p5-Async-MergePoint \
+BUILD_DEPENDS=	p5-Async-MergePoint>=0:${PORTSDIR}/devel/p5-Async-MergePoint \
 		p5-CPS>=0:${PORTSDIR}/devel/p5-CPS \
 		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap \
 		p5-Socket-GetAddrInfo>=0.18:${PORTSDIR}/net/p5-Socket-GetAddrInfo
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		IO::Async.3 \
 		IO::Async::ChildManager.3 \
