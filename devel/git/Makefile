@@ -275,7 +275,7 @@ PLIST_SUB+=	GUI="@comment "
 MAKE_ARGS+=	NO_TCLTK=yes
 .endif
 
-.ifdef (WITH_SVN) || defined (WITH_SVN_FBSD)
+.ifdef (WITH_SVN)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion \
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
@@ -363,7 +363,7 @@ post-patch:
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 .endif
-.ifndef (WITH_SVN) && !defined (WITH_SVN_FBSD)
+.ifndef (WITH_SVN)
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 .endif
 .ifndef (WITH_GITWEB)
