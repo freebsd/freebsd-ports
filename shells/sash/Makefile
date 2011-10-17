@@ -8,8 +8,7 @@
 PORTNAME=	sash
 PORTVERSION=	3.7
 CATEGORIES=	shells
-MASTER_SITES=	http://members.canb.auug.org.au/
-MASTER_SITE_SUBDIR=	~dbell/programs
+MASTER_SITES=	http://members.tip.net.au/~dbell/programs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Stand-Alone shell combining many common utilities
