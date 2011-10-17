@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.in.orig
 +++ configure.in
-@@ -1129,39 +1129,10 @@
+@@ -1167,39 +1167,10 @@
    AC_CHECK_LIB(ossaudio, _oss_ioctl, LIBSOUND=-lossaudio, LIBSOUND=)
    AC_SUBST(LIBSOUND)
  
@@ -44,3 +44,21 @@ $FreeBSD$
       case "$opsys" in
         dnl defined __FreeBSD__ || defined __NetBSD__ || defined __linux__
         gnu-linux|freebsd|netbsd)
+@@ -1216,7 +1187,7 @@
+   linux/version.h sys/systeminfo.h \
+   stdio_ext.h fcntl.h coff.h pty.h sys/mman.h \
+   sys/vlimit.h sys/resource.h locale.h sys/_mbstate_t.h \
+-  sys/utsname.h pwd.h utmp.h dirent.h util.h)
++  sys/utsname.h pwd.h utmp.h dirent.h util.h libutil.h)
+
+ AC_MSG_CHECKING(if personality LINUX32 can be set)
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/personality.h>]], [[personality (PER_LINUX32)]])],
+@@ -1369,7 +1340,7 @@ dnl check for GNU Make if we have GCC an
+ if test "$GCC" = yes && test "$ac_enable_autodepend" = yes; then
+    AC_MSG_CHECKING([whether we are using GNU Make])
+    HAVE_GNU_MAKE=no
+-   testval=`make --version 2>/dev/null | grep 'GNU Make'`
++   testval=`${MAKE:-make} --version 2>/dev/null | grep 'GNU Make'`
+    if test "x$testval" != x; then
+       HAVE_GNU_MAKE=yes
+    else
