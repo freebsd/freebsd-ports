@@ -7,6 +7,7 @@
 
 PORTNAME=	skanlite
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/sanewidget/Skanlite/
 DIST_SUBDIR=	KDE/extragear
@@ -14,7 +15,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application for KDE
 
-LIB_DEPENDS=	ksane.0:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	ksane.0:${PORTSDIR}/graphics/libksane
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4

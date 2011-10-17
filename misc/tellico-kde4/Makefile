@@ -7,18 +7,20 @@
 
 PORTNAME=	tellico
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection manager for KDE
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		yaz:${PORTSDIR}/net/yaz \
-		exempi:${PORTSDIR}/textproc/exempi \
-		kcddb:${PORTSDIR}/multimedia/kdemultimedia4 \
-		ksane:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
+		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
+		yaz.4:${PORTSDIR}/net/yaz \
+		exempi.3:${PORTSDIR}/textproc/exempi \
+		kcddb.5:${PORTSDIR}/multimedia/kdemultimedia4 \
+		ksane.0:${PORTSDIR}/graphics/libksane \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	skrooge
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	http://skrooge.org/files/
 

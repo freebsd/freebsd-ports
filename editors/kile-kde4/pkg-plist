@@ -1627,8 +1627,6 @@ share/mime/packages/kile.xml
 share/mime/text/x-kilepr.xml
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrm share/doc/kile
 @dirrm share/doc/HTML/uk/kile
 @dirrm share/doc/HTML/sv/kile

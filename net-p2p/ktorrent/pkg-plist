@@ -274,8 +274,6 @@ share/locale/ug/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrm share/doc/HTML/en/ktorrent

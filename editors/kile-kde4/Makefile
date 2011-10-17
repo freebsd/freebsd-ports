@@ -7,6 +7,7 @@
 
 PORTNAME=	kile
 DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${DISTVERSION}
 
@@ -14,7 +15,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		identify:${PORTSDIR}/graphics/ImageMagick
+		identify:${PORTSDIR}/graphics/ImageMagick \
+		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes

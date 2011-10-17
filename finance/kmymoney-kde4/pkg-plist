@@ -1130,8 +1130,6 @@ share/locale/zh_CN/LC_MESSAGES/kmymoney.mo
 share/locale/zh_TW/LC_MESSAGES/kmymoney.mo
 share/mime/application/x-kmymoney.xml
 share/mime/packages/x-kmymoney.xml
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps

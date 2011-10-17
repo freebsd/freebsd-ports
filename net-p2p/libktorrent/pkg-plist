@@ -225,8 +225,6 @@ share/locale/ug/LC_MESSAGES/libktorrent.mo
 share/locale/uk/LC_MESSAGES/libktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/libktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/libktorrent.mo
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrm include/libktorrent/utp

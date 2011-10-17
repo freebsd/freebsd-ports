@@ -6,7 +6,7 @@
 
 PORTNAME=	kphotoalbum
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/extragear
@@ -18,7 +18,7 @@ COMMENT=	Image viewer and organizer for KDE
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
-		kipi.8:${PORTSDIR}/graphics/kdegraphics4
+		kipi.8:${PORTSDIR}/graphics/libkipi-kde4
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
