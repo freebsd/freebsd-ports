@@ -3371,6 +3371,7 @@
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-eventmachine
+    SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fast-stemmer
