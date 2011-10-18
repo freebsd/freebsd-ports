@@ -12,8 +12,6 @@ libdata/pkgconfig/libafrodite-0.12.pc
 %%DOCSDIR%%/vtg/NEWS
 %%DOCSDIR%%/vtg/README
 share/vala/vapi/afrodite-0.12.vapi
-@dirrmtry share/vala/vapi
-@dirrmtry share/vala
 @dirrm %%DOCSDIR%%/vtg
 @dirrm %%DOCSDIR%%
 @dirrm include/afrodite-0.12
