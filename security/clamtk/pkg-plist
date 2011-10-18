@@ -10,7 +10,6 @@ bin/clamtk
 share/applications/clamtk.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ar/LC_MESSAGES/clamtk.mo
 share/locale/ast/LC_MESSAGES/clamtk.mo
@@ -31,6 +30,7 @@ share/locale/gl/LC_MESSAGES/clamtk.mo
 share/locale/he/LC_MESSAGES/clamtk.mo
 share/locale/hr/LC_MESSAGES/clamtk.mo
 share/locale/hu/LC_MESSAGES/clamtk.mo
+share/locale/id/LC_MESSAGES/clamtk.mo
 share/locale/it/LC_MESSAGES/clamtk.mo
 share/locale/ja/LC_MESSAGES/clamtk.mo
 share/locale/ko/LC_MESSAGES/clamtk.mo
