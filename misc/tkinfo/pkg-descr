@@ -15,3 +15,5 @@ a set of info files from TeX source that use the GNU texinfo style (the
 one that uses "@" everywhere).  Similarly, the latexinfo package (like
 texinfo, but with latex commands and syntax) provides emacs scripts for
 producing info files.
+
+WWW: http://math-www.uni-paderborn.de/~axel/tkinfo/
