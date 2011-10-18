@@ -14,12 +14,13 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based manual browser
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
-		glimpse:${PORTSDIR}/textproc/glimpse
+RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
+		rman:${PORTSDIR}/textproc/rman
 
+USE_TK=		yes
 USE_GMAKE=	yes
-MAKE_ARGS=	WISH="${PREFIX}/bin/wish8.4" \
+USE_DOS2UNIX=	yes
+MAKE_ARGS=	WISH="${WISH}" \
 		texinfodir="${PREFIX}/${INFO_PATH}" \
 		gzgrep="\"/usr/bin/zgrep -E\"" \
 		mastermen="\"/usr/share/man ${PREFIX}/man ${LOCALBASE}/man\"" \
@@ -28,7 +29,7 @@ MAKE_ARGS=	WISH="${PREFIX}/bin/wish8.4" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s;/usr/local/bin/wish;${PREFIX}/bin/wish8.4;" \
+	@${REINPLACE_CMD} -e 's|/usr/local/bin/wish|${WISH}|' \
 		${WRKSRC}/contrib/tkmanclient
 
 do-install:
