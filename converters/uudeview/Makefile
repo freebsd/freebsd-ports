@@ -13,11 +13,19 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-tcl
+MAKE_JOBS_SAFE=	yes
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		uudeview.1 uuenview.1
+PORTDOCS=	HISTORY porting.notes
+PLIST_FILES=	bin/uudeview bin/uuenview
 
 .include <bsd.port.pre.mk>
 
@@ -29,8 +37,6 @@ CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/bin/inews
 # inn by default
 CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/news/lib/inews
 .endif
-
-MAN1=		uudeview.1 uuenview.1
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/uudeview
