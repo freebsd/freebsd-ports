@@ -1,32 +1,32 @@
 bin/roap
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.py
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.py
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.py
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.py
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roaplib
-%%PORTDOCS%%share/doc/roap/README
-%%PORTDOCS%%share/doc/roap/README.ja
-%%PORTDOCS%%share/doc/roap/USAGE
-%%PORTDOCS%%share/doc/roap/USAGE.ja
-%%PORTDOCS%%@dirrm share/doc/roap
-%%PORTDOCS%%share/examples/roap/a2h.py
-%%PORTDOCS%%share/examples/roap/a2h.xml
-%%PORTDOCS%%share/examples/roap/cat.xml
-%%PORTDOCS%%share/examples/roap/deflist.py
-%%PORTDOCS%%share/examples/roap/header.py
-%%PORTDOCS%%share/examples/roap/list.py
-%%PORTDOCS%%share/examples/roap/paragraph.py
-%%PORTDOCS%%share/examples/roap/preformat.py
-%%PORTDOCS%%share/examples/roap/title.py
-%%PORTDOCS%%@dirrm share/examples/roap
+%%PYTHON_SITELIBDIR%%/roaplib/__init__.py
+%%PYTHON_SITELIBDIR%%/roaplib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/roaplib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/roaplib/datasource.py
+%%PYTHON_SITELIBDIR%%/roaplib/datasource.pyc
+%%PYTHON_SITELIBDIR%%/roaplib/datasource.pyo
+%%PYTHON_SITELIBDIR%%/roaplib/generate.py
+%%PYTHON_SITELIBDIR%%/roaplib/generate.pyc
+%%PYTHON_SITELIBDIR%%/roaplib/generate.pyo
+%%PYTHON_SITELIBDIR%%/roaplib/matchobject.py
+%%PYTHON_SITELIBDIR%%/roaplib/matchobject.pyc
+%%PYTHON_SITELIBDIR%%/roaplib/matchobject.pyo
+%%PYTHON_SITELIBDIR%%/roaplib/roapxml.py
+%%PYTHON_SITELIBDIR%%/roaplib/roapxml.pyc
+%%PYTHON_SITELIBDIR%%/roaplib/roapxml.pyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/USAGE.ja
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/a2h.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/a2h.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cat.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deflist.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/paragraph.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/preformat.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/title.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/roaplib

@@ -15,21 +15,26 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Region Oriented Ascii Processor
 
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Region_Oriented_Ascii_Processor
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-DOCS=	README README.ja USAGE USAGE.ja
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/roap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${CP} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in README README.ja USAGE USAGE.ja
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.xml ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
