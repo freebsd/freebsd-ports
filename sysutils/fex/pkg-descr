@@ -1,0 +1,8 @@
+fex works like cut or awk in its field navigation, but allows
+you to specify token-based fields in a much more concise, flexible,
+and readable way.
+
+Due to the simplicity of fex's language, it can enable you to replace
+many common invocations of cut and awk with a single invocation of fex.
+
+WWW: http://semicomplete.com/projects/fex/
