@@ -247,6 +247,7 @@ bin/pilprint.py
 %%PYTHON_SITELIBDIR%%/PIL/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PIL/__init__.pyo
 %%PYTHON_SITELIBDIR%%/PIL/_imaging.so
+%%PYTHON_SITELIBDIR%%/PIL/_imagingcms.so
 %%PYTHON_SITELIBDIR%%/PIL/_imagingft.so
 %%PYTHON_SITELIBDIR%%/PIL/_imagingmath.so
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/PIL/_imagingtk.so
