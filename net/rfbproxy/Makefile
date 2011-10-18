@@ -7,14 +7,16 @@
 #
 
 PORTNAME=	rfbproxy
-PORTVERSION=	0.6.6
+PORTVERSION=	1.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pphillips@experts-exchange.com
 COMMENT=	A simple tool for recording VNC sessions
 
 GNU_CONFIGURE=	yes
+
+USE_BZIP2=	yes
 
 MAN1=		rfbproxy.1
 PLIST_FILES=	bin/rfbproxy
