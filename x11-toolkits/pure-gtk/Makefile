@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-gtk
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
