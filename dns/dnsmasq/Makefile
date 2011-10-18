@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.58
+PORTVERSION=	2.59
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -43,7 +43,7 @@ CFLAGS+=	-DNO_IPV6
 .endif
 
 .if !defined(WITHOUT_NLS)
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
@@ -59,7 +59,7 @@ LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 CFLAGS+=	-DHAVE_DBUS
 .endif
 
