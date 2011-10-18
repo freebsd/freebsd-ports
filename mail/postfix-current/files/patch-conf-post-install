@@ -1,0 +1,21 @@
+--- conf/post-install.orig	2011-10-11 20:39:19.000000000 -0400
++++ conf/post-install	2011-10-11 20:41:58.000000000 -0400
+@@ -790,18 +790,6 @@
+ EOF
+     }
+ 
+-    # Postfix 2.9.
+-    # Safety net for incompatible changes in IPv6 defaults.  This
+-    # requires that the default is "inet_protocols = ipv4" when
+-    # IPv6 support is not compiled in. See util/sys_defs.h.
+-
+-    test "`$POSTCONF -dh inet_protocols`" = "ipv4" ||
+-	test -n "`$POSTCONF -c $config_directory -nh inet_protocols`" || {
+-	echo COMPATIBILITY: editing main.cf, setting inet_protocols=ipv4.
+-	echo Specify inet_protocols explicitly if you want to enable IPv6.
+-	echo In a future release IPv6 will be enabled by default.
+-	$POSTCONF -c $config_directory inet_protocols=ipv4 || exit 1
+-    }
+ }
+ 
+ # A reminder if this is the first time Postfix is being installed.
