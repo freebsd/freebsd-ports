@@ -125,7 +125,7 @@
 +      rm -f $MODULE.junk
 +   endif
 +   set echo
-+   %%FC%% -c $OPT -malign-double -fautomatic \
++   %%FC%% -c %%FFLAGS%% $OPT -malign-double -fautomatic \
 +           -Wno-globals -fno-globals $MODULE.f
 +   unset echo
 +   breaksw
@@ -152,7 +152,7 @@
 +      rm -f $MODULE.junk
 +   endif
 +   set echo
-+   %%FC%% -c $OPT -std=legacy $MODULE.f
++   %%FC%% -c $OPT %%FFLAGS%% -std=legacy $MODULE.f
 +   unset echo
 +   breaksw
 +#
@@ -266,7 +266,7 @@
 +         rm -f $MODULE.junk
 +      endif
 +      set echo
-+      %%FC%% -c -fdefault-integer-8 $OPT -std=legacy $MODULE.f
++      %%FC%% -c %%FFLAGS%% -fdefault-integer-8 $OPT -std=legacy $MODULE.f
 +      unset echo
 +      breaksw
 +
@@ -275,7 +275,7 @@
 +      if ($MODULE == delocl) set OPT='-O0'
 +      if ($MODULE == zheev)  set OPT='-O0'
 +      set echo
-+      %%FC%% -c -i8 $OPT -auto -assume byterecl -w95 -cm $MODULE.f
++      %%FC%% -c -i8 %%FFLAGS%% $OPT -auto -assume byterecl -w95 -cm $MODULE.f
 +      unset echo
 +      breaksw
 +#

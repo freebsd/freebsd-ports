@@ -22,7 +22,7 @@
 +#FreeBSD settings
 +if ($TARGET == freebsd-i386) then
 +   set LDR=%%FC%%
-+   set LDOPTS=''
++   set LDOPTS='%%LDFLAGS%%'
 +   set LIBRARIES=''
 +   set BLAS="-L%%LOCALBASE%%/lib %%BLAS%% %%LIBSVM%% %%LIBG2C%%"
 +   set VECTOR=' '
@@ -30,7 +30,7 @@
 +endif
 +if ($TARGET == freebsd-amd64) then
 +   set LDR=%%FC%%
-+   set LDOPTS=''
++   set LDOPTS='%%LDFLAGS%%'
 +   set LIBRARIES=''
 +   set BLAS="-L%%LOCALBASE%%/lib %%BLAS%%"
 +   set VECTOR=' '
