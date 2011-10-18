@@ -5,5 +5,3 @@ It offers support for a large subset of SQL92, multiple tables, indices,
 transactions and triggers.
 
 WWW: http://pysqlite.org
-
-Marcus Alves Grando <mnag@FreeBSD.org>
