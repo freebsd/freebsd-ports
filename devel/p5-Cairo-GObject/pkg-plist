@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/GObject.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/GObject.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cairo
