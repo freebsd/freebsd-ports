@@ -208,6 +208,8 @@ share/rep/lisp/rep/util/ispell.jl
 share/rep/lisp/rep/util/ispell.jlc
 share/rep/lisp/rep/util/memoize.jl
 share/rep/lisp/rep/util/memoize.jlc
+share/rep/lisp/rep/util/misc.jl
+share/rep/lisp/rep/util/misc.jlc
 share/rep/lisp/rep/util/repl.jl
 share/rep/lisp/rep/util/repl.jlc
 share/rep/lisp/rep/util/time.jl
