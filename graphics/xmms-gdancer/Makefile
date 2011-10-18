@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-gdancer
 PORTVERSION=	0.4.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.travisemslander.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
@@ -17,20 +17,17 @@ COMMENT=	XMMS Visualization plugin, displays dancing figures
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Visualization/gdancer.so
-USE_GNOME=	gtk12 gdkpixbuf
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-pixbuf
+PLIST_FILES=	lib/xmms/Visualization/gdancer.so
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
-post-install:
-	-${RM} ${PREFIX}/lib/xmms/Visualization/gdancer.la
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/gdancer.so ${PREFIX}/lib/xmms/Visualization
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
