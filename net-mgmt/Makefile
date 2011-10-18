@@ -297,5 +297,6 @@
     SUBDIR += zabbix-proxy
     SUBDIR += zabbix-server
     SUBDIR += zenoss
+    SUBDIR += zenpack-dellmon
 
 .include <bsd.port.subdir.mk>

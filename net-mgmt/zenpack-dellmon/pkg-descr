@@ -1,0 +1,18 @@
+This ZenPack provides additional monitoring options for Dell machines with
+additional zCollectorPlugins:
+* community.snmp.DellCPUMap
+* community.snmp.DellDeviceMap
+* community.snmp.DellExpansionCardMap
+* community.snmp.DellFanMap
+* community.snmp.DellHardDiskMap
+* community.snmp.DellLogicalDiskMap
+* community.snmp.DellMemoryModuleMap
+* community.snmp.DellNicMap
+* community.snmp.DellPowerSupplyMap
+* community.snmp.DellTemperatureSensorMap
+Reports:
+* /Device Reports/Dell PowerEdge Reports/DRAC Controllers
+* /Device Reports/Dell PowerEdge Reports/Storage Controllers
+* /Device Reports/Dell PowerEdge Reports/Hard Disks
+
+WWW: http://community.zenoss.org/docs/DOC-3410

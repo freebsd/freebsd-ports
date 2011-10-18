@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" = "DEINSTALL" ]; then
+   echo "To de-activate this Zenpack, run the following command as the zenoss user:
+
+%%ZENHOME%%/bin/zenpack --remove %%ZPACKPREFIX%%%%PORTNAME%%
+
+IMPORTANT: De-activating a Zenpack will also remove all its associated data"
+
+fi
