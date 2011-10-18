@@ -16,6 +16,8 @@ MASTER_SITES=	http://mgarland.org/files/dist/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlimKit Surface Modeling Tools
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gfx.0:${PORTSDIR}/graphics/libgfx \
@@ -24,18 +26,18 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit
 BUILD_WRKSRC=		${WRKSRC}/mixkit/src
 
+USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GL=		glu
-USE_LDCONFIG=	yes
+MAKE_ENV=	FLTKCONFIG="${LOCALBASE}/bin/fltk-config"
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 ALL_TARGET=	# none
-
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_BOOL
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive -fPIC ${CPPFLAGS}
-MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
-MAKE_ENV+=	FLTKCONFIG="${LOCALBASE}/bin/fltk-config"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_BOOL
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/libgfx/
