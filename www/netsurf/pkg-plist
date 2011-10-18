@@ -1,32 +1,94 @@
 bin/netsurf
-libexec/netsurf
-%%PORTDOCS%%%%DOCSDIR%%/00-overview
-%%PORTDOCS%%%%DOCSDIR%%/01-content
-%%PORTDOCS%%%%DOCSDIR%%/02-layout
-%%PORTDOCS%%%%DOCSDIR%%/03-css
-%%PORTDOCS%%%%DOCSDIR%%/04-errors
-%%PORTDOCS%%%%DOCSDIR%%/05-memory
-%%PORTDOCS%%%%DOCSDIR%%/06-frames
-%%PORTDOCS%%%%DOCSDIR%%/BUILDING-GTK
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
-%%PORTDOCS%%%%DOCSDIR%%/ReadMe
-%%PORTDOCS%%%%DOCSDIR%%/TODO-CSS
-%%PORTDOCS%%%%DOCSDIR%%/TODO-HTML
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/C
+%%DATADIR%%/SearchEngines
 %%DATADIR%%/adblock.css
+%%DATADIR%%/arrow_down_8x32.png
+%%DATADIR%%/blankpage
 %%DATADIR%%/ca-bundle.txt
+%%DATADIR%%/cookies.glade
+%%DATADIR%%/de/Messages
 %%DATADIR%%/default.css
-%%DATADIR%%/docs/about.html
-%%DATADIR%%/docs/intro_en.html
-%%DATADIR%%/docs/libcurl
-%%DATADIR%%/docs/libmng
-%%DATADIR%%/docs/libxml2
-%%DATADIR%%/docs/openssl
-%%DATADIR%%/messages
-%%DATADIR%%/netsurf-logo.png
+%%DATADIR%%/default.ico
+%%DATADIR%%/downloads.glade
+%%DATADIR%%/en/Messages
+%%DATADIR%%/en/credits.html
+%%DATADIR%%/en/licence.html
+%%DATADIR%%/favicon.png
+%%DATADIR%%/fr/Messages
+%%DATADIR%%/gtkdefault.css
+%%DATADIR%%/history.glade
+%%DATADIR%%/hotlist.glade
+%%DATADIR%%/icons/content.png
+%%DATADIR%%/icons/directory.png
+%%DATADIR%%/icons/search.png
+%%DATADIR%%/internal.css
+%%DATADIR%%/it/Messages
+%%DATADIR%%/languages
+%%DATADIR%%/license
+%%DATADIR%%/login.glade
+%%DATADIR%%/netsurf-16x16.xpm
 %%DATADIR%%/netsurf.glade
+%%DATADIR%%/netsurf.png
 %%DATADIR%%/netsurf.xpm
-%%DATADIR%%/throbber.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/docs
+%%DATADIR%%/nl/Messages
+%%DATADIR%%/options.glade
+%%DATADIR%%/password.glade
+%%DATADIR%%/quirks.css
+%%DATADIR%%/source.glade
+%%DATADIR%%/ssl.glade
+%%DATADIR%%/themelist
+%%DATADIR%%/themes/Alpha.png
+%%DATADIR%%/themes/gtk+/back.png
+%%DATADIR%%/themes/gtk+/closetab.png
+%%DATADIR%%/themes/gtk+/closewindow.png
+%%DATADIR%%/themes/gtk+/copy.png
+%%DATADIR%%/themes/gtk+/cut.png
+%%DATADIR%%/themes/gtk+/delete.png
+%%DATADIR%%/themes/gtk+/forward.png
+%%DATADIR%%/themes/gtk+/fullscreen.png
+%%DATADIR%%/themes/gtk+/helpabout.png
+%%DATADIR%%/themes/gtk+/helpcontents.png
+%%DATADIR%%/themes/gtk+/history.png
+%%DATADIR%%/themes/gtk+/home.png
+%%DATADIR%%/themes/gtk+/info
+%%DATADIR%%/themes/gtk+/newtab.png
+%%DATADIR%%/themes/gtk+/newwindow.png
+%%DATADIR%%/themes/gtk+/openfile.png
+%%DATADIR%%/themes/gtk+/paste.png
+%%DATADIR%%/themes/gtk+/preferences.png
+%%DATADIR%%/themes/gtk+/print.png
+%%DATADIR%%/themes/gtk+/printpreview.png
+%%DATADIR%%/themes/gtk+/quit.png
+%%DATADIR%%/themes/gtk+/reload.png
+%%DATADIR%%/themes/gtk+/savepage.png
+%%DATADIR%%/themes/gtk+/selectall.png
+%%DATADIR%%/themes/gtk+/stop.png
+%%DATADIR%%/themes/gtk+/viewsource.png
+%%DATADIR%%/themes/gtk+/zoomminus.png
+%%DATADIR%%/themes/gtk+/zoomnormal.png
+%%DATADIR%%/themes/gtk+/zoomplus.png
+%%DATADIR%%/throbber/throbber0.png
+%%DATADIR%%/throbber/throbber1.png
+%%DATADIR%%/throbber/throbber2.png
+%%DATADIR%%/throbber/throbber3.png
+%%DATADIR%%/throbber/throbber4.png
+%%DATADIR%%/throbber/throbber5.png
+%%DATADIR%%/throbber/throbber6.png
+%%DATADIR%%/throbber/throbber7.png
+%%DATADIR%%/throbber/throbber8.png
+%%DATADIR%%/toolbar.glade
+%%DATADIR%%/toolbarIndices
+%%DATADIR%%/warning.glade
+@dirrm %%DATADIR%%/throbber
+@dirrm %%DATADIR%%/themes/gtk+
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/nl
+@dirrm %%DATADIR%%/it
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%/en
+@dirrm %%DATADIR%%/de
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
