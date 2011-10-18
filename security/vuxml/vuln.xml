@@ -64,7 +64,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-4029</cvename>
     </references>
     <dates>
-      <discovery>2011-18-FIXME</discovery>
+      <discovery>2011-10-18</discovery>
       <entry>2011-10-18</entry>
     </dates>
   </vuln>
