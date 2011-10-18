@@ -1,6 +1,7 @@
 bin/docdiff
 etc/docdiff.conf.example
 %%RUBY_SITELIBDIR%%/docdiff/charstring.rb
+%%RUBY_SITELIBDIR%%/docdiff/diff.rb
 %%RUBY_SITELIBDIR%%/docdiff/diff/contours.rb
 %%RUBY_SITELIBDIR%%/docdiff/diff/editscript.rb
 %%RUBY_SITELIBDIR%%/docdiff/diff/rcsdiff.rb
@@ -8,7 +9,6 @@ etc/docdiff.conf.example
 %%RUBY_SITELIBDIR%%/docdiff/diff/speculative.rb
 %%RUBY_SITELIBDIR%%/docdiff/diff/subsequence.rb
 %%RUBY_SITELIBDIR%%/docdiff/diff/unidiff.rb
-%%RUBY_SITELIBDIR%%/docdiff/diff.rb
 %%RUBY_SITELIBDIR%%/docdiff/difference.rb
 %%RUBY_SITELIBDIR%%/docdiff/document.rb
 %%RUBY_SITELIBDIR%%/docdiff/encoding/en_ascii.rb
@@ -16,6 +16,6 @@ etc/docdiff.conf.example
 %%RUBY_SITELIBDIR%%/docdiff/encoding/ja_sjis.rb
 %%RUBY_SITELIBDIR%%/docdiff/encoding/ja_utf8.rb
 %%RUBY_SITELIBDIR%%/docdiff/view.rb
-@dirrm %%RUBY_SITELIBDIR%%/docdiff/diff
 @dirrm %%RUBY_SITELIBDIR%%/docdiff/encoding
+@dirrm %%RUBY_SITELIBDIR%%/docdiff/diff
 @dirrm %%RUBY_SITELIBDIR%%/docdiff
