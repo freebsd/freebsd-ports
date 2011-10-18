@@ -1,4 +1,0 @@
-bin/planets
-%%PORTDOCS%%%%DOCSDIR%%/KEYBINDINGS.txt
-%%PORTDOCS%%%%DOCSDIR%%/getting_started.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
