@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8441957c-f9b4-11e0-a78a-bcaec565249c">
+    <topic>Xorg server -- two vulnerabilities in X server lock handling code</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.7.7_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthieu Herrb reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg-announce/2011-October/001744.html">
+	  <p>It is possible to deduce if a file exists or not by exploiting the
+             way that Xorg creates its lock files. This is caused by the fact 
+             that the X server is behaving differently if the lock file already
+             exists as a symbolic link pointing to an existing or non-existing
+             file.</p>
+          <p>It is possible for a non-root user to set the permissions for all
+             users on any file or directory to 444, giving unwanted read access
+             or causing denies of service (by removing execute permission). 
+             This is caused by a race between creating the lock file and
+             setting its access modes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4028</cvename>
+      <cvename>CVE-2011-4029</cvename>
+    </references>
+    <dates>
+      <discovery>2011-18-FIXME</discovery>
+      <entry>2011-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a95092a6-f8f1-11e0-a7ea-00215c6a37bb">
     <topic>asterisk -- remote crash vulnerability in SIP channel driver</topic>
     <affects>
