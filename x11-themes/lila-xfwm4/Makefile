@@ -12,7 +12,7 @@ MASTER_SITES=	SF/lila-theme/lila-xfwm/${PORTVERSION}
 DISTNAME=	lila-xfwm-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 Lila window decoration theme for xfwm4
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm

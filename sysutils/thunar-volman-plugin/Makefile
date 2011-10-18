@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A Device manager plugin.
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
