@@ -7,6 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.20
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
