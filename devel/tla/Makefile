@@ -9,10 +9,8 @@ PORTNAME=	tla
 PORTVERSION=	1.3.5
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://regexps.srparish.net/src/${PORTNAME}/ \
-		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
-MASTER_SITE_SUBDIR=	gnu-arch
+MASTER_SITES=	GNU/gnu-arch \
+		http://www.atai.org/gnuarch/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
