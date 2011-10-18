@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.13.6
-PORTREVISION=	1
+PORTVERSION=	0.13.7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
@@ -41,11 +43,12 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-
-MAN1=		dvdcpy.1 avibox.1
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		dvdcpy.1 avibox.1
 
 .include <bsd.port.pre.mk>
 
@@ -131,7 +134,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e '/local/s|^CFLAGS=|#CFLAGS=|g ; \
 		 /local/s|^CPPFLAGS=|#CPPFLAGS=|g ; \
-		 /local/s|^LDFLAGS=|#LDFLAGS=|g' ${WRKSRC}/configure
+		 /local/s|^LDFLAGS=|#LDFLAGS=|g ; \
+		 s|libpng zlib|libpng|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c
