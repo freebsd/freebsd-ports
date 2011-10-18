@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Log/Minimal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Minimal/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Minimal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrmtry %%SITE_PERL%%/Log
