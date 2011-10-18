@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce4 power manager
 
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
