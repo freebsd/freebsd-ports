@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sidh@rtha.info
 COMMENT=	IMAP synchronization copy or migration tool
 
 BUILD_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
