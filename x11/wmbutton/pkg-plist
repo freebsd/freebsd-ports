@@ -1,5 +1,0 @@
-bin/wmbutton
-%%EXAMPLESDIR%%/dot.wmbutton
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
