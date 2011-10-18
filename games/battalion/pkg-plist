@@ -1,45 +1,37 @@
 bin/battalion
-share/battalion/battalion.sho
-share/battalion/DATA/road.data
-share/battalion/DATA/tank.data
-share/battalion/DATA/tree.data
-share/battalion/MUSIC/1.au
-share/battalion/MUSIC/2.au
-share/battalion/MUSIC/3.au
-share/battalion/MUSIC/4.au
-share/battalion/MUSIC/5.au
-share/battalion/MUSIC/d1.au
-share/battalion/MUSIC/d2.au
-share/battalion/MUSIC/d3.au
-share/battalion/MUSIC/d4.au
-share/battalion/MUSIC/d5.au
-share/battalion/SOUNDS/beam.au
-share/battalion/SOUNDS/boom.au
-share/battalion/SOUNDS/crash.au
-share/battalion/SOUNDS/monsterbeam.au
-share/battalion/SOUNDS/rocket.au
-share/battalion/SOUNDS/slag.au
-share/battalion/SOUNDS/tank.au
-share/battalion/SOUNDS/tech.au
-share/battalion/TEXTURES/road.tex
-share/battalion/TEXTURES/screenleft.tex
-share/battalion/TEXTURES/screenright.tex
-share/battalion/TEXTURES/treewood.tex
-%%PORTDOCS%%share/doc/battalion/README
-%%PORTDOCS%%share/doc/battalion/bathelp01.gif
-%%PORTDOCS%%share/doc/battalion/bathelp02.gif
-%%PORTDOCS%%share/doc/battalion/bathelp03.gif
-%%PORTDOCS%%share/doc/battalion/bathelp04.gif
-%%PORTDOCS%%share/doc/battalion/bathelp05.gif
-%%PORTDOCS%%share/doc/battalion/bathelp06.gif
-%%PORTDOCS%%share/doc/battalion/bathelp07.gif
-%%PORTDOCS%%share/doc/battalion/bathelp08.gif
-%%PORTDOCS%%share/doc/battalion/bathelp09.gif
-%%PORTDOCS%%share/doc/battalion/bathelp10.gif
-%%PORTDOCS%%share/doc/battalion/bathelp11.gif
-@dirrm share/battalion/DATA
-@dirrm share/battalion/MUSIC
-@dirrm share/battalion/SOUNDS
-@dirrm share/battalion/TEXTURES
-@dirrm share/battalion
-%%PORTDOCS%%@dirrm share/doc/battalion
+%%DATADIR%%/battalion.sho
+%%DATADIR%%/DATA/road.data
+%%DATADIR%%/DATA/tank.data
+%%DATADIR%%/DATA/tree.data
+%%DATADIR%%/MUSIC/1.au
+%%DATADIR%%/MUSIC/2.au
+%%DATADIR%%/SOUNDS/beam.au
+%%DATADIR%%/SOUNDS/boom.au
+%%DATADIR%%/SOUNDS/crash.au
+%%DATADIR%%/SOUNDS/monsterbeam.au
+%%DATADIR%%/SOUNDS/rocket.au
+%%DATADIR%%/SOUNDS/slag.au
+%%DATADIR%%/SOUNDS/tank.au
+%%DATADIR%%/SOUNDS/tech.au
+%%DATADIR%%/TEXTURES/road.tex
+%%DATADIR%%/TEXTURES/screenleft.tex
+%%DATADIR%%/TEXTURES/screenright.tex
+%%DATADIR%%/TEXTURES/treewood.tex
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bathelp01.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp02.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp03.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp04.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp05.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp06.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp07.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp08.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp09.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp10.gif
+%%PORTDOCS%%%%DOCSDIR%%/bathelp11.gif
+@dirrm %%DATADIR%%/MUSIC
+@dirrm %%DATADIR%%/SOUNDS
+@dirrm %%DATADIR%%/TEXTURES
+@dirrm %%DATADIR%%/DATA
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
