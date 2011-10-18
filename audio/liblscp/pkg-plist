@@ -1,12 +1,12 @@
-include/lscp/version.h
-include/lscp/thread.h
-include/lscp/socket.h
 include/lscp/client.h
 include/lscp/device.h
 include/lscp/event.h
-@dirrm include/lscp
-lib/liblscp.so.6
-lib/liblscp.so
-lib/liblscp.la
+include/lscp/socket.h
+include/lscp/thread.h
+include/lscp/version.h
 lib/liblscp.a
+lib/liblscp.la
+lib/liblscp.so
+lib/liblscp.so.6
 libdata/pkgconfig/lscp.pc
+@dirrm include/lscp
