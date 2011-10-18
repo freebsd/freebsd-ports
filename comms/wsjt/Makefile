@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
+BROKEN=		does not build
+
 ALL_TARGET=	build
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
