@@ -15,6 +15,8 @@ MAINTAINER=	domi@saargate.de
 COMMENT=	Graphical query tool for PostgreSQL and/or MySQL
 
 .if defined(PACKAGE_BUILDING) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
+BROKEN=		Needs modification to work with newer MySQL
+EXPIRATION_DATE=	2011-11-30
 WITH_MYSQL=	yes
 .endif
 
