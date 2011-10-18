@@ -21,4 +21,4 @@ A multi-channel MPEG file should decode OK on any MPEG decoder. If
 the decoder doesn't recognize the multi-channel extensions, then
 you'll just get a stereo file containing a down mix of the 5 channels.
 
-WWW: http://www.planckenergy.com/
+WWW: http://mctoolame.sourceforge.net/
