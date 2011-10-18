@@ -1,6 +1,6 @@
---- /dev/null	2011-03-21 20:44:00.000000000 +0200
-+++ base/process_util_freebsd.cc	2011-03-21 20:47:32.701912810 +0200
-@@ -0,0 +1,314 @@
+--- /dev/null	2011-10-02 18:27:33.000000000 +0300
++++ base/process_util_freebsd.cc	2011-10-02 18:26:22.000000000 +0300
+@@ -0,0 +1,320 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -314,4 +314,10 @@
 +  NOTIMPLEMENTED();
 +  return;
 +}
++
++bool AdjustOOMScore(ProcessId process, int score) {
++  NOTIMPLEMENTED();
++  return false;
 +}
++
++} // namespace base
