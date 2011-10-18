@@ -5,22 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	swt-devel
-DISTVERSION=	3.6M5
-PORTREVISION=	2
+PORTNAME=	swt
+DISTVERSION=	3.6.2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	S-${DISTVERSION}-201001291300
+MASTER_SITE_SUBDIR=	R-${DISTVERSION}-201102101200
+PKGNAMESUFFIX=	-devel
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 
+LICENSE=	EPL
+
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
-SWT_VERSION=	3631
-OUTPUT_JAR=	swt-devel.jar
+SWT_VERSION=	3659
+OUTPUT_JAR=	${PORTNAME}${PKGNAMESUFFIX}.jar
 
 USE_ZIP=	yes
 USE_GL=		yes
@@ -42,7 +44,7 @@ NO_WRKSUBDIR=	yes
 
 OPTIONS=	CAIRO "Cairo Support" on \
 		GNOMEVFS "Gnome VFS Support" on \
-		BROWSER "Gecko Browser Support" on
+		MOZILLA "Gecko Browser Support" off
 
 .include <bsd.port.pre.mk>
 
@@ -58,8 +60,8 @@ PLIST_FILES+=	lib/libswt-gnome-gtk-%%BUILD%%.so
 MAKE_GNOME=	make_gnome
 .endif
 
-.if defined(WITH_BROWSER)
-USE_GECKO=	libxul
+.if defined(WITH_MOZILLA)
+USE_MOZILLA=	libxul
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
 .endif
