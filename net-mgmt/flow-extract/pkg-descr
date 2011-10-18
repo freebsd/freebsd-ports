@@ -1,6 +1,3 @@
-A copy of this package can be found at: 
-WWW: http://security.uchicago.edu/tools/net-forensics/
-
 This package is a port of TAMU's extract program from NetLogger to look
 at flow data instead of netlogger data. Blame Larry for it's faults, not
 TAMU. Blame me for the FreeBSD port, not Larry :-)
@@ -13,3 +10,5 @@ first, then look at this program.
 
 In order for this to compile you will need flowtools from Mark
 Fullmer's (net-mgmt/flow-tools port).
+
+WWW: http://answers.uchicago.edu/page.php?id=19876
