@@ -205,6 +205,8 @@
 %%WWWDIR%%/core/Updates/1.5-b4.php
 %%WWWDIR%%/core/Updates/1.5-b5.php
 %%WWWDIR%%/core/Updates/1.5-rc6.php
+%%WWWDIR%%/core/Updates/1.6-b1.php
+%%WWWDIR%%/core/Updates/1.6-rc1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -248,6 +250,7 @@
 %%WWWDIR%%/lang/es.php
 %%WWWDIR%%/lang/et.php
 %%WWWDIR%%/lang/eu.php
+%%WWWDIR%%/lang/fa.php
 %%WWWDIR%%/lang/fi.php
 %%WWWDIR%%/lang/fr.php
 %%WWWDIR%%/lang/gl.php
@@ -878,8 +881,6 @@
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.categoryAxisRenderer.js
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.pieRenderer.js
 %%WWWDIR%%/libs/jquery/LICENSE-sizzle.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-bgiframe.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-blockui.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-history.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-jquery.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-jqueryui.txt
@@ -893,7 +894,6 @@
 %%WWWDIR%%/libs/jquery/jquery.scrollTo.js
 %%WWWDIR%%/libs/jquery/jquery.tooltip.js
 %%WWWDIR%%/libs/jquery/jquery.truncate.js
-%%WWWDIR%%/libs/jquery/superfish_modified.js
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
@@ -911,6 +911,10 @@
 %%WWWDIR%%/libs/jquery/themes/base/jquery-ui.css
 %%WWWDIR%%/libs/jsmin/jsmin.php
 %%WWWDIR%%/libs/sparkline/CHANGES
+%%WWWDIR%%/libs/pChart.1.27d/Fonts/tahoma.ttf
+%%WWWDIR%%/libs/pChart.1.27d/pChart/pCache.php
+%%WWWDIR%%/libs/pChart.1.27d/pChart/pChart.php
+%%WWWDIR%%/libs/pChart.1.27d/pChart/pData.php
 %%WWWDIR%%/libs/sparkline/DESIGN
 %%WWWDIR%%/libs/sparkline/LICENSE-BSD.txt
 %%WWWDIR%%/libs/sparkline/README
@@ -964,6 +968,7 @@
 %%WWWDIR%%/misc/How to install Piwik.html
 %%WWWDIR%%/misc/api_internal_call.php
 %%WWWDIR%%/misc/api_rest_call.php
+%%WWWDIR%%/misc/cron/archive.php
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
@@ -974,8 +979,11 @@
 %%WWWDIR%%/misc/iframeWidget.htm
 %%WWWDIR%%/misc/iframeWidget_localhost.php
 %%WWWDIR%%/misc/phpdoc-config.ini
+%%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
 %%WWWDIR%%/misc/stress.sh
+%%WWWDIR%%/misc/svn-props-to-set-new-files.svnprops
 %%WWWDIR%%/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
+%%WWWDIR%%/misc/test_generateLotsVisitsWebsites.php
 %%WWWDIR%%/misc/tracker_simpleImageTracker.php
 %%WWWDIR%%/misc/widget_example_lastvisits.html
 %%WWWDIR%%/piwik.js
@@ -1122,6 +1130,12 @@
 %%WWWDIR%%/plugins/Goals/templates/single_goal.tpl
 %%WWWDIR%%/plugins/Goals/templates/table_by_dimension.tpl
 %%WWWDIR%%/plugins/Goals/templates/title_and_evolution_graph.tpl
+%%WWWDIR%%/plugins/ImageGraph/API.php
+%%WWWDIR%%/plugins/ImageGraph/Controller.php
+%%WWWDIR%%/plugins/ImageGraph/ImageGraphObject.php
+%%WWWDIR%%/plugins/ImageGraph/ImageGraph.php
+%%WWWDIR%%/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
+%%WWWDIR%%/plugins/ImageGraph/templates/index.tpl
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
 %%WWWDIR%%/plugins/Installation/FormFirstWebsiteSetup.php
@@ -1234,6 +1248,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/bg.setooz.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/bing.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/blekko.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/busca.orange.es.png
@@ -1251,7 +1266,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.dir.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.wedoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/friendfeed.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/froogle.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/gais.cs.ccu.edu.tw.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/geona.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/go.mail.ru.png
@@ -1286,6 +1300,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ricerca.virgilio.it.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/rpmfind.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/s1.metacrawler.de.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/scour.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.1und1.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.aol.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.babylon.com.png
@@ -1330,6 +1345,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/szukaj.wp.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/technorati.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/translate.google.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/video.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/web.canoe.ca.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/web.volny.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/websearch.cs.com.png
@@ -1401,10 +1417,12 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.teoma.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.tixuma.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.toile.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.toolbarhome.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trouvez.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trovarapido.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trusted--search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.twingly.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.url.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.vinden.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.vindex.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.walhello.info.png
@@ -1765,7 +1783,6 @@
 %%WWWDIR%%/plugins/UserSettings/functions.php
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AM.gif
-%%WWWDIR%%/plugins/UserSettings/images/browsers/AN.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AR.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AV.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AW.gif
@@ -1809,6 +1826,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/PX.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/TI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/UNK.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WP.gif
@@ -1957,6 +1975,7 @@
 %%WWWDIR%%/themes/default/images/loading-blue.gif
 %%WWWDIR%%/themes/default/images/logo-header.png
 %%WWWDIR%%/themes/default/images/logo.png
+%%WWWDIR%%/themes/default/images/minimise.png
 %%WWWDIR%%/themes/default/images/maximise.png
 %%WWWDIR%%/themes/default/images/minus.png
 %%WWWDIR%%/themes/default/images/ok.png
@@ -2054,6 +2073,8 @@
 @dirrm %%WWWDIR%%/plugins/LanguagesManager
 @dirrm %%WWWDIR%%/plugins/Installation/templates
 @dirrm %%WWWDIR%%/plugins/Installation
+@dirrm %%WWWDIR%%/plugins/ImageGraph/templates
+@dirrm %%WWWDIR%%/plugins/ImageGraph
 @dirrm %%WWWDIR%%/plugins/Goals/templates
 @dirrm %%WWWDIR%%/plugins/Goals
 @dirrm %%WWWDIR%%/plugins/Feedback/templates
@@ -2090,6 +2111,7 @@
 @dirrm %%WWWDIR%%/plugins/API/css
 @dirrm %%WWWDIR%%/plugins/API
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
 @dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/libs/upgradephp
@@ -2100,6 +2122,9 @@
 @dirrm %%WWWDIR%%/libs/swfobject
 @dirrm %%WWWDIR%%/libs/sparkline/lib
 @dirrm %%WWWDIR%%/libs/sparkline
+@dirrm %%WWWDIR%%/libs/pChart.1.27d/pChart
+@dirrm %%WWWDIR%%/libs/pChart.1.27d/Fonts
+@dirrm %%WWWDIR%%/libs/pChart.1.27d
 @dirrm %%WWWDIR%%/libs/jsmin
 @dirrm %%WWWDIR%%/libs/jquery/themes/base/images
 @dirrm %%WWWDIR%%/libs/jquery/themes/base
