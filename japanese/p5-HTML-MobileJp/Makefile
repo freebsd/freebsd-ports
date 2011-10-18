@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	HTML-MobileJp
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Generate mobile-jp html tags
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
