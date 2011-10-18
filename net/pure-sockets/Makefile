@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	pure-sockets
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure language interface to the Berkeley socket functions
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900014
 BUILD_DEPENDS+=	clang>=2.8:${PORTSDIR}/lang/clang
+.endif
 LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure
 
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,8 +31,6 @@ MAKE_ARGS+=	prefix=${PREFIX} CPPFLAGS+=-I${LOCALBASE}/include \
 		LDFLAGS+=-L${LOCALBASE}/lib CFLAGS="${CFLAGS}"
 
 PORTEXAMPLES=	*
-
-.include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
