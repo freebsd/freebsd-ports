@@ -2,12 +2,6 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/__init__.py
 %%PYTHON_SITELIBDIR%%/zim/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zim/__init__.pyo
-%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.py
-%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/zim/_lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.py
-%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.pyc
-%%PYTHON_SITELIBDIR%%/zim/_lib/xdot.pyo
 %%PYTHON_SITELIBDIR%%/zim/_version.py
 %%PYTHON_SITELIBDIR%%/zim/_version.pyc
 %%PYTHON_SITELIBDIR%%/zim/_version.pyo
@@ -101,6 +95,15 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/history.py
 %%PYTHON_SITELIBDIR%%/zim/history.pyc
 %%PYTHON_SITELIBDIR%%/zim/history.pyo
+%%PYTHON_SITELIBDIR%%/zim/inc/__init__.py
+%%PYTHON_SITELIBDIR%%/zim/inc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zim/inc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/inc/arithmetic.py
+%%PYTHON_SITELIBDIR%%/zim/inc/arithmetic.pyc
+%%PYTHON_SITELIBDIR%%/zim/inc/arithmetic.pyo
+%%PYTHON_SITELIBDIR%%/zim/inc/xdot.py
+%%PYTHON_SITELIBDIR%%/zim/inc/xdot.pyc
+%%PYTHON_SITELIBDIR%%/zim/inc/xdot.pyo
 %%PYTHON_SITELIBDIR%%/zim/index.py
 %%PYTHON_SITELIBDIR%%/zim/index.pyc
 %%PYTHON_SITELIBDIR%%/zim/index.pyo
@@ -113,6 +116,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/arithmetic.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/arithmetic.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/arithmetic.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyo
@@ -226,7 +232,6 @@ share/locale/es/LC_MESSAGES/zim.mo
 share/locale/et/LC_MESSAGES/zim.mo
 share/locale/fr/LC_MESSAGES/zim.mo
 share/locale/he/LC_MESSAGES/zim.mo
-share/locale/hr/LC_MESSAGES/zim.mo
 share/locale/hu/LC_MESSAGES/zim.mo
 share/locale/it/LC_MESSAGES/zim.mo
 share/locale/ja/LC_MESSAGES/zim.mo
@@ -279,6 +284,7 @@ share/zim/manual/Help/Tags.txt
 share/zim/manual/Help/Templates.txt
 share/zim/manual/Help/Wiki_Syntax.txt
 share/zim/manual/Plugins.txt
+share/zim/manual/Plugins/Arithmetic.txt
 share/zim/manual/Plugins/Calendar.txt
 share/zim/manual/Plugins/Diagram_Editor.txt
 share/zim/manual/Plugins/Diagram_Editor/diagram.png
@@ -330,6 +336,7 @@ share/zim/templates/_GNU_R_Plot.r
 share/zim/templates/_gnuplot.gnu
 share/zim/templates/_quicknote.txt
 share/zim/templates/html/Default.html
+share/zim/templates/html/Default_with_index.html
 share/zim/templates/html/Presentation.html
 share/zim/templates/html/Print.html
 share/zim/templates/html/SlideShow_(S5).html
@@ -365,7 +372,7 @@ share/zim/zim.png
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/linkmap
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/zim/inc
 @dirrm %%PYTHON_SITELIBDIR%%/zim/gui
 @dirrm %%PYTHON_SITELIBDIR%%/zim/formats
-@dirrm %%PYTHON_SITELIBDIR%%/zim/_lib
 @dirrm %%PYTHON_SITELIBDIR%%/zim
