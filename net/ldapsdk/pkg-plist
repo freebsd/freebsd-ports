@@ -1,21 +1,40 @@
-include/mozlber.h
-include/mozldap.h
+mozilla/directory/bin/libldap60.so
+mozilla/directory/bin/libldif60.so
+mozilla/directory/bin/libprldap60.so
 mozilla/directory/etc/ldapfilter.conf
-mozilla/directory/etc/ldapsearchprefs.conf
 mozilla/directory/etc/ldapfriendly
+mozilla/directory/etc/ldapsearchprefs.conf
 mozilla/directory/etc/ldaptemplates.conf
+mozilla/directory/lib/libiutil60.a
+mozilla/directory/lib/liblber60.a
+mozilla/directory/lib/libldap60.a
+mozilla/directory/lib/libldap60.so
+mozilla/directory/lib/libldif60.a
+mozilla/directory/lib/libldif60.so
+mozilla/directory/lib/libprldap60.so
+mozilla/directory/public/ldap/disptmpl.h
+mozilla/directory/public/ldap/iutil.h
+mozilla/directory/public/ldap/lber.h
+mozilla/directory/public/ldap/ldap-deprecated.h
+mozilla/directory/public/ldap/ldap-extension.h
+mozilla/directory/public/ldap/ldap-platform.h
+mozilla/directory/public/ldap/ldap-standard.h
+mozilla/directory/public/ldap/ldap-to-be-deprecated.h
+mozilla/directory/public/ldap/ldap.h
+mozilla/directory/public/ldap/ldap_ssl.h
+mozilla/directory/public/ldap/ldappr.h
+mozilla/directory/public/ldap/ldif.h
+mozilla/directory/public/ldap/srchpref.h
+mozilla/directory/public/ldap-private/lber-int.h
+mozilla/directory/public/ldap-private/ldap-int.h
+mozilla/directory/public/ldap-private/ldaplog.h
+mozilla/directory/public/ldap-private/ldaprot.h
+mozilla/directory/public/ldap-private/portable.h
+@dirrm mozilla/directory/public/ldap-private
+@dirrm mozilla/directory/public/ldap
+@dirrm mozilla/directory/public
+@dirrm mozilla/directory/lib
 @dirrm mozilla/directory/etc
-mozilla/directory/include/disptmpl.h
-mozilla/directory/include/mozlber.h
-mozilla/directory/include/mozldap.h
-mozilla/directory/include/srchpref.h
-@dirrm mozilla/directory/include
-@dirrmtry mozilla/directory/lib
+@dirrm mozilla/directory/bin
 @dirrm mozilla/directory
 @dirrm mozilla
-lib/libmozlber.so.1
-lib/libmozlber.so
-lib/libmozldap.so.1
-lib/libmozldap.so
-lib/libmozlber.a
-lib/libmozldap.a
