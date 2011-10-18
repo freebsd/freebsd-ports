@@ -5,18 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=		sl2tps
-PORTVERSION=		0.4
-CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	archie
+PORTNAME=	sl2tps
+PORTVERSION=	0.4.2
+CATEGORIES=	net
+MASTER_SITES=	SF/libpdel/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple L2TP server based on libpdel(3) and netgraph(4)
 
-LIB_DEPENDS=		pdel.0:${PORTSDIR}/devel/libpdel
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-MAN1=			sl2tps.1
-MANCOMPRESSED=		maybe
+LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
+
+MANCOMPRESSED=	maybe
+MAN1=		sl2tps.1
+PLIST_FILES=	bin/sl2tps %%ETCDIR%%/config.xml.sample
+PLIST_DIRS=	%%ETCDIR%%
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$${PREFIX}/include|$${LOCALBASE}/include|g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g ; \
+		 /-g/s|^CFLAGS|#CFLAGS|g ; \
+		 s|$${PREFIX}/lib|$${LOCALBASE}/lib|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
