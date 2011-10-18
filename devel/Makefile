@@ -1283,6 +1283,7 @@
     SUBDIR += p5-Cache-Memcached-Tie
     SUBDIR += p5-Cache-Mmap
     SUBDIR += p5-Cache-Simple-TimedExpiry
+    SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Capture-Tiny
     SUBDIR += p5-Carp-Always
