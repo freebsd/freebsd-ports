@@ -8,16 +8,18 @@
 PORTNAME=	ffproxy
 PORTVERSION=	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/
+MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/ \
+		http://www.sourcefiles.org/System/Daemons/Proxy/ \
+		http://www.nevm.de/${PORTNAME}/ \
+		http://faith.eu.org/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
 
-BROKEN=	does not fetch
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
+MAKE_JOBS_SAFE=	yes
 
 MAN5=	${PORTNAME}.conf.5
 MAN7=	${PORTNAME}.quick.7
