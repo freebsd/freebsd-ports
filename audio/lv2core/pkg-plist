@@ -1,7 +1,7 @@
 bin/lv2config
 include/lv2.h
-lib/lv2/lv2core.lv2/lv2.ttl
 lib/lv2/lv2core.lv2/lv2.h
+lib/lv2/lv2core.lv2/lv2.ttl
 lib/lv2/lv2core.lv2/manifest.ttl
 libdata/pkgconfig/lv2core.pc
 @dirrm lib/lv2/lv2core.lv2
