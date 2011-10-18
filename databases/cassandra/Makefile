@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -20,14 +20,23 @@ LICENSE=	ASL
 
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+REINPLACE_ARGS=	-i ''
 USE_JAVA=	yes
 USE_RC_SUBR=	cassandra
-REINPLACE_ARGS=	-i ''
 
-CONFIGS=	access.properties cassandra-topology.properties cassandra.yaml \
-		log4j-server.properties log4j-tools.properties passwd.properties
-SCRIPTS=	cassandra cassandra-cli json2sstable nodetool sstable2json \
-		sstablekeys sstableloader
+CONFIGS=	access.properties \
+		cassandra-topology.properties \
+		cassandra.yaml \
+		log4j-server.properties \
+		log4j-tools.properties \
+		passwd.properties
+SCRIPTS=	cassandra \
+		cassandra-cli \
+		json2sstable \
+		nodetool \
+		sstable2json \
+		sstablekeys \
+		sstableloader
 
 post-extract:
 	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server
@@ -35,9 +44,12 @@ post-extract:
 	@${MV} ${WRKSRC}/conf/${i} ${WRKSRC}/conf/${i}.sample
 .endfor
 
-do-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' ${WRKSRC}/bin/cassandra-cli ${WRKSRC}/bin/nodetool
-	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' ${WRKSRC}/bin/cassandra.in.sh
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' \
+		${WRKSRC}/bin/cassandra-cli \
+		${WRKSRC}/bin/nodetool
+	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
+		${WRKSRC}/bin/cassandra.in.sh
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -47,6 +59,6 @@ do-install:
 	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
