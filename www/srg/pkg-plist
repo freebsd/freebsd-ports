@@ -1,0 +1,14 @@
+bin/srg
+%%ETCDIR%%/filtered_sites
+%%ETCDIR%%/ip2user
+%%ETCDIR%%/srg.conf
+%%DATADIR%%/footer.php
+%%DATADIR%%/header.php
+%%DATADIR%%/srg.js
+%%DATADIR%%/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.daily
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.monthly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.weekly
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
+@dirrm %%ETCDIR%%
