@@ -9,19 +9,23 @@
 PORTNAME=	planets
 PORTVERSION=	0.1.13
 CATEGORIES=	astro
-MASTER_SITES=	http://planets.homedns.org/dist/ \
-		http://sheepkiller.nerim.net/ports/${PORTNAME}/
+MASTER_SITES=	GENTOO/distfiles \
+		http://planets.homedns.org/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An orbital simulator
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 
-MAN1=	planets.1
+MAN1=		planets.1
+PORTDOCS=	KEYBINDINGS.txt getting_started.html
+PLIST_FILES=	bin/planets
 
 .if defined(WITHOUT_X11)
 BROKEN=		Does not build without X11 support
@@ -32,8 +36,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/planets.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in KEYBINDINGS.txt getting_started.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
