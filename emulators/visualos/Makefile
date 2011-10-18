@@ -12,11 +12,15 @@ CATEGORIES=	emulators gnome
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A visual simulator of an operating system to help understand how OSes work
+COMMENT=	Visual simulator of an operating system to help understand an OSes
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
