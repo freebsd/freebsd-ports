@@ -7,30 +7,34 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.1/
+MASTER_SITES=	GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
 
-USE_AUTOTOOLS=	libtool
+LICENSE=	LGPL21
+
 USE_GNOME=	gnomehack pkgconfig
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-Wall -g||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-release $(LT_RELEASE)||' ${WRKSRC}/src/Makefile.in
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIR/s|=.*|= src|' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples  -cf - . | \
-		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.for ex in README argdouble caseinsensitive context duplicates errorhandler \
+	fallback libpool maketest.sh modules noinline simple
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${ex} ${EXAMPLESDIR})
+.endfor
 .endif
 
 .include <bsd.port.mk>

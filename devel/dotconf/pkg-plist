@@ -1,83 +1,67 @@
-@comment $FreeBSD$
-bin/dotconf-config
 include/dotconf.h
-include/libpool.h
 lib/libdotconf.a
 lib/libdotconf.la
 lib/libdotconf.so
 lib/libdotconf.so.0
 libdata/pkgconfig/dotconf.pc
-lib/libpool.a
-share/aclocal/dotconf.m4
-%%PORTDOCS%%%%DOCSDIR%%/dotconf-api.txt
-%%PORTDOCS%%%%DOCSDIR%%/dotconf-features.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/argdouble.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/example_argdouble.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/argdouble.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/example_caseinsensitive.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/context.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/context.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/example_context.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/errorhandler.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/errorhandler.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/example_errorhandler.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/include.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/module.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/my_module.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/sample.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/example_modules.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/included.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/linecat.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/example_simple.dsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/duplicate.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/first_module.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/sample.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/second_module.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/fallback.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/fallback.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/noinline.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/context/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/modules/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/noinline.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/output
-%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/testoutput
-%%PORTDOCS%%%%EXAMPLESDIR%%/maketest.sh
-%%PORTDOCS%%@dirrm share/doc/dotconf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/argdouble
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/context
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/errorhandler
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noinline
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fallback
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/modules
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/duplicates
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/caseinsensitive
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%DOCSDIR%%/dotconf-api.txt
+%%DOCSDIR%%/dotconf-features.txt
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/argdouble/Makefile
+%%EXAMPLESDIR%%/argdouble/argdouble.c
+%%EXAMPLESDIR%%/argdouble/argdouble.conf
+%%EXAMPLESDIR%%/argdouble/output
+%%EXAMPLESDIR%%/caseinsensitive/Makefile
+%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.c
+%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.conf
+%%EXAMPLESDIR%%/caseinsensitive/output
+%%EXAMPLESDIR%%/context/Makefile
+%%EXAMPLESDIR%%/context/context.c
+%%EXAMPLESDIR%%/context/context.conf
+%%EXAMPLESDIR%%/context/output
+%%EXAMPLESDIR%%/duplicates/Makefile
+%%EXAMPLESDIR%%/duplicates/duplicate.c
+%%EXAMPLESDIR%%/duplicates/first_module.c
+%%EXAMPLESDIR%%/duplicates/output
+%%EXAMPLESDIR%%/duplicates/sample.conf
+%%EXAMPLESDIR%%/duplicates/second_module.c
+%%EXAMPLESDIR%%/errorhandler/Makefile
+%%EXAMPLESDIR%%/errorhandler/errorhandler.c
+%%EXAMPLESDIR%%/errorhandler/errorhandler.conf
+%%EXAMPLESDIR%%/errorhandler/output
+%%EXAMPLESDIR%%/fallback/Makefile
+%%EXAMPLESDIR%%/fallback/fallback.c
+%%EXAMPLESDIR%%/fallback/fallback.conf
+%%EXAMPLESDIR%%/fallback/output
+%%EXAMPLESDIR%%/libpool/Makefile
+%%EXAMPLESDIR%%/libpool/libpool.h
+%%EXAMPLESDIR%%/libpool/pool.c
+%%EXAMPLESDIR%%/maketest.sh
+%%EXAMPLESDIR%%/modules/Makefile
+%%EXAMPLESDIR%%/modules/include.conf
+%%EXAMPLESDIR%%/modules/module.c
+%%EXAMPLESDIR%%/modules/my_module.c
+%%EXAMPLESDIR%%/modules/output
+%%EXAMPLESDIR%%/modules/sample.conf
+%%EXAMPLESDIR%%/noinline/Makefile
+%%EXAMPLESDIR%%/noinline/noinline.c
+%%EXAMPLESDIR%%/noinline/noinline.conf
+%%EXAMPLESDIR%%/noinline/output
+%%EXAMPLESDIR%%/simple/Makefile
+%%EXAMPLESDIR%%/simple/included.conf
+%%EXAMPLESDIR%%/simple/linecat.conf
+%%EXAMPLESDIR%%/simple/output
+%%EXAMPLESDIR%%/simple/simple.c
+%%EXAMPLESDIR%%/simple/simple.conf
+@dirrm %%EXAMPLESDIR%%/argdouble
+@dirrm %%EXAMPLESDIR%%/caseinsensitive
+@dirrm %%EXAMPLESDIR%%/context
+@dirrm %%EXAMPLESDIR%%/duplicates
+@dirrm %%EXAMPLESDIR%%/errorhandler
+@dirrm %%EXAMPLESDIR%%/fallback
+@dirrm %%EXAMPLESDIR%%/libpool
+@dirrm %%EXAMPLESDIR%%/modules
+@dirrm %%EXAMPLESDIR%%/noinline
+@dirrm %%EXAMPLESDIR%%/simple
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
