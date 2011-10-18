@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	facedetect
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xarg.org/download/
+MASTER_SITES=	https://github.com/infusion/PHP-Facedetect/tarball/${GITVERSION}/
 PKGNAMEPREFIX=	php-
+DISTNAME=	infusion-PHP-Facedetect-${GITVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Face detection extension for PHP using OpenCV library
@@ -19,14 +19,15 @@ LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 
 LICENSE=	PHP30
 
+GITVERSION=	75a1d8f
+FETCH_ARGS=	-pRr
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_ARGS+=	--with-facedetect
 
