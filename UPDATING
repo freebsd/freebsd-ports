@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111018:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: Sahil Tandon <sahil@FreeBSD.org>
+
+  The default inet_protocols value is now "all" instead of "ipv4",
+  meaning use both IPv4 and IPv6.  As a compatibility workaround
+  for sites without global IPv6 connectivity, please append
+  "inet_protocols = ipv4" to your main.cf if that parameter is not
+  already set.
+
+  The default smtp_address_preference value is now "any" instead
+  of "ipv6", meaning choose randomly between IPv6 and IPv4. With
+  this the Postfix SMTP client will have more success delivering
+  mail to sites that have problematic IPv6 configurations.
+
 20111016:
   AFFECTS: users of devel/p5-subversion-freebsd
   AUTHOR: wxs@FreeBSD.org
