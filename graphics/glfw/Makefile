@@ -23,14 +23,6 @@ INSTALL_TARGET=	x11-install
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-PLIST_FILES=	include/GL/glfw.h \
-		lib/libglfw.a \
-		lib/libglfw.so \
-		lib/libglfw.so.0 \
-		libdata/pkgconfig/libglfw.pc
-
 post-extract:
 	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 

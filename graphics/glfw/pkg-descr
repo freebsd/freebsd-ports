@@ -3,4 +3,4 @@ development. In short, it is a library that constitutes a powerful API
 for handling operating system specific tasks, such as opening an OpenGL
 window, reading keyboard and mouse input, creating threads, and much more.
 
-WWW: http://www.glfw..org/
+WWW: http://www.glfw.org/
