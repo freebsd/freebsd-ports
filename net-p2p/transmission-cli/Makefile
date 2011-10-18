@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.33
+PORTVERSION=	2.41
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
+MASTER_SITES=	http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
 MAINTAINER?=	crees@FreeBSD.org

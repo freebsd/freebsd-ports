@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	crees@FreeBSD.org
