@@ -394,6 +394,7 @@
     SUBDIR += p5-DBIx-Skinny-Mixin-DBHResolver
     SUBDIR += p5-DBIx-Skinny-Pager
     SUBDIR += p5-DBIx-Skinny-Schema-Loader
+    SUBDIR += p5-DBIx-Sunny
     SUBDIR += p5-DBIx-TableHash
     SUBDIR += p5-DBIx-TransactionManager
     SUBDIR += p5-DBIx-Tree
