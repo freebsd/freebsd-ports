@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
-DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lisp configurable window manager
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
@@ -30,13 +31,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MANCOMPRESSED=	yes
 MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
 INFO=		sawfish
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \
