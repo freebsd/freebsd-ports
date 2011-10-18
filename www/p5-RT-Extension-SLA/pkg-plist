@@ -8,8 +8,10 @@ man/auto/RT/Extension/SLA/.packlist
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition/SLA_RequireDefault.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition/SLA_RequireDueSet.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition/SLA_RequireStartsSet.pm
+%%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA/Test.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Queue_SLA.pm
+@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action
