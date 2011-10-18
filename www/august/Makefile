@@ -11,36 +11,35 @@ PORTNAME=	august
 PORTVERSION=	0.63b
 PORTREVISION=	5
 CATEGORIES=	www editors
-MASTER_SITES=	http://www.bostream.nu/johanb/august/
+MASTER_SITES=	http://fossies.org/unix/www/old/ \
+		http://www.sourcefiles.org/Editors/HTML/ \
+		http://www.erjobe.info/mainwiki/pmwiki/uploads/Main/August/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor for the experienced Web author
 
-RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint \
-		identify:${PORTSDIR}/graphics/ImageMagick \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick \
+		weblint:${PORTSDIR}/www/weblint
 
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/pkg-plist
 
-do-patch:
-	${MV} ${WRKSRC}/august ${WRKSRC}/august.orig
-	${SED} -e "s:/usr/bin/wish:${PREFIX}/bin/wish8.4:g" \
-		< ${WRKSRC}/august.orig > ${WRKSRC}/august
+USE_TK_WRAPPER=	yes
 
-pre-install:
-	${ECHO_CMD} bin/august > ${PLIST}
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} share/doc/august/specchars.txt >> ${PLIST}
-	${ECHO_CMD} @dirrm share/doc/august >> ${PLIST}
-.endif
+PORTDOCS=	specchars.txt
+PLIST_FILES=	bin/august
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/august
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/august ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/august
-	${INSTALL_DATA} ${WRKSRC}/specchars.txt ${PREFIX}/share/doc/august
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/specchars.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
