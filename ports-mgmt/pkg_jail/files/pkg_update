@@ -2285,6 +2285,7 @@ full-update-jail)
 		/bin/sh "${0}" cvsup
 		;;
 	esac
+	/bin/sh "${0}" clean-distfiles
 	/bin/sh "${0}" clean-packages
 	rm -f "${logdir}/"err,*
 	/bin/sh "${0}" make-packages
