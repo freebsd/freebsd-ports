@@ -1,6 +1,5 @@
 bin/vtcl
 lib/vtcl/ChangeLog
-lib/vtcl/LICENSE
 lib/vtcl/README
 lib/vtcl/images/anchor.gif
 lib/vtcl/images/anchor_c.ppm
@@ -374,79 +373,79 @@ lib/vtcl/vtcl.tcl
 %%PORTDOCS%%%%DOCSDIR%%/progressbar.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/about.ttd
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/bitmapbutton_test.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/bitmapbutton_compound.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/combo.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/draw.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/ex1_cmpd.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/grid.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/free.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/line.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/oval.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/rect.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/megawidget.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/simple.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tclet-combo.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tclet-draw.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tclet-grid.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tclet-simple.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tclets.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/test_megawidget.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/button.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/canvas.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/check_and_radio.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/compound_container.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/compound_container_2.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/entry.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/frame.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/horizontal_panedwindow.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/label.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/labelframe.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/listbox.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/menubutton.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/message.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/modal.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/ok.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/scales.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/scrollbar.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/simple_topevel.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/simple_topevel_menubar.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/spinbox.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/text.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/unmanaged_frame.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/vertical_panedwindow.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_compound.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_project.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_test.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/readme.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/test.mk
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_project.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_test.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/readme.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_compound.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_project.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_test.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/visual-text.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo/visual-text.ttd
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/User_Compound.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/hierarchy.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/notebook.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/notebook_recurse.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/panedwindow.tcl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample/sampleBLT.tcl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/core
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/tutorial
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/images
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/about.ttd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/bitmapbutton_test.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/bitmapbutton_compound.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/combo.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/draw.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/ex1_cmpd.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/grid.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/images/free.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/images/line.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/images/oval.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/images/rect.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/megawidget.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/simple.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tclet-combo.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tclet-draw.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tclet-grid.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tclet-simple.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tclets.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/test_megawidget.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/button.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/canvas.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/check_and_radio.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/compound_container.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/compound_container_2.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/entry.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/frame.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/horizontal_panedwindow.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/label.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/labelframe.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/listbox.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/menubutton.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/message.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/modal.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/ok.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/scales.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/scrollbar.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/simple_topevel.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/simple_topevel_menubar.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/spinbox.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/text.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/unmanaged_frame.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/core/vertical_panedwindow.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_compound.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_project.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_test.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/test.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_project.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_test.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_compound.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_project.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer/listviewer_test.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/visual-text.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/visual-text.ttd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/User_Compound.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/hierarchy.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/notebook.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/notebook_recurse.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/panedwindow.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample/sampleBLT.tcl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/listviewer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/megawidgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial/core
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/tutorial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/vtcl/lib/ttd
 @dirrm lib/vtcl/lib/bwidget/lang
