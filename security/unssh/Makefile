@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unssh
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
@@ -17,14 +17,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/unssh
-
-PATCH_LIST=	extra-patch-unssh.sh
-EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
-
-pre-patch:
-.for patch in ${PATCH_LIST}
-	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${patch}.in > ${WRKDIR}/${patch}
-.endfor
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/bin
