@@ -7,6 +7,7 @@
 
 PORTNAME=	bitten
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	devel www python
 MASTER_SITES=	http://ftp.edgewall.com/pub/bitten/ \
 		LOCAL/glarkin

@@ -1,4 +1,6 @@
 bin/bitten-slave
+%%ETCDIR%%/bitten-slave.conf
+%%ETCDIR%%/bitten-slave.sample
 %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/dependency_links.txt
@@ -136,4 +138,5 @@ bin/bitten-slave
 @dirrm %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/bitten
 @dirrm %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%EGG_NAME%%-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
+@dirrmtry %%ETCDIR%%
 @unexec %%ECHO_MSG%% "===> If you will *NOT* use this package anymore, please remove the bitten-slave user and group manually."
