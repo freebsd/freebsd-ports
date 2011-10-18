@@ -1,17 +1,17 @@
 # New ports collection makefile for:	pefs-kmod
 # Date created:				26 January 2011
-# Whom:					Gleb Kurtsou <gk@freebsd.org>
+# Whom:					Gleb Kurtsou <gleb@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2011-09-01
+DISTVERSION=	2011-10-18
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://cloud.github.com/downloads/glk/${PORTNAME}/
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	gk@freebsd.org
+MAINTAINER=	gleb@freebsd.org
 COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD
