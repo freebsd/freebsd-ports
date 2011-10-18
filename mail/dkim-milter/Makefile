@@ -21,6 +21,9 @@ MASTER_SITES=	SF/${PORTNAME}/DKIM%20Milter/${PORTVERSION}
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys Identified Mail (DKIM) milter
 
+DEPRECATED=	switch to mail/opendkim instead
+EXPIRATION_DATE=	2011-11-15
+
 USE_RC_SUBR=	milter-dkim.sh
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
