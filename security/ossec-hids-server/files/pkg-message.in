@@ -1,20 +1,21 @@
-After installation, you need to edit the ossec.conf file to reflect the correct settings
-for your environment.  All the files related to %%PORTNAME%% have been installed in
-%%PREFIX%%/%%PORTNAME%% and its subdirectories.
+After installation, you need to edit the ossec.conf file to reflect
+the correct settings for your environment.  All the files related
+to %%PORTNAME%% have been installed in %%PREFIX%%/%%PORTNAME%% and
+its subdirectories.
 
 For information on proper configuration, see http://www.ossec.net/.
 
-To enable the startup script, add ossechids_enable="YES" to /etc/rc.conf.
-To enable database output, execute:
+To enable the startup script, add ossechids_enable="YES" to
+/etc/rc.conf.  To enable database output, execute:
 
 %%PREFIX%%/%%PORTNAME%%/bin/ossec-control enable database
 
-Then check this tutorial:
+Then check this documentation:
 
-http://www.ossec.net/wiki/index.php/Know_How:DatabaseOutput
+http://www.ossec.net/doc/manual/output/database-output.html
 
-When you deinstall this port after starting the daemons once, many directories that are
-created by the daemons will remain.  To fully remove the port you need to delete those
-directories manually.
-To further enhance the security on your system, you may also enable some checks
-in PAM for a fast reaction against intrusions.
+When you deinstall this port after starting the daemons once, many
+directories that are created by the daemons will remain.  To fully
+remove the port you need to delete those directories manually.  To
+further enhance the security on your system, you may also enable
+some checks in PAM for a fast reaction against intrusions.

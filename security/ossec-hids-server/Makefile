@@ -7,20 +7,20 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT?=	A security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	MYSQL "Enable MySQL support" off \
-		PGSQL "Enable PostgreSQL support" off \
-		BDB "Enable with Berkeley DB" off
+		PGSQL "Enable PostgreSQL support" off
 .endif
 
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -39,11 +39,6 @@ USE_MYSQL=	yes
 .if defined(WITH_PGSQL)
 WITH_DB=	yes
 USE_PGSQL=	yes
-.endif
-
-.if defined(WITH_BDB)
-WITH_DB=	yes
-USE_BDB=	yes
 .endif
 .endif
 
@@ -106,7 +101,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}

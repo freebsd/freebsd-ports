@@ -1,6 +1,6 @@
---- src/InstallServer.sh	2008-08-22 20:42:09.000000000 +0000
-+++ src/InstallServer.sh	2008-09-28 22:10:45.000000000 +0000
-@@ -174,7 +174,7 @@
+--- ./src/InstallServer.sh.orig	2011-07-11 15:36:58.000000000 -0400
++++ ./src/InstallServer.sh	2011-10-18 15:26:57.000000000 -0400
+@@ -188,7 +188,7 @@
      fi    
  fi
      
@@ -9,7 +9,7 @@
  
  # If the local_rules is saved, moved it back
  ls ${DIR}/rules/saved_local_rules.xml.$$ > /dev/null 2>&1
-@@ -284,12 +284,12 @@
+@@ -307,12 +307,12 @@
  
  ls ../etc/ossec.mc > /dev/null 2>&1
  if [ $? = 0 ]; then
