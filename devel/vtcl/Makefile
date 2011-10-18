@@ -7,28 +7,33 @@
 
 PORTNAME=	vtcl
 PORTVERSION=	1.6.1a1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.6.1.a1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Application Development Environment For the TCL/TK language
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+LICENSE=	GPLv2
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	${PREFIX}
 NO_BUILD=	yes
 
+USE_TK=		yes
 USE_DOS2UNIX=	configure
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	${PREFIX}
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|wish8.5|${WISH:T}| ; \
+		 s|/usr/local/bin|${LOCALBASE}/bin|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -i "" -e \
+		's|require -exact Tk|require Tk|' ${WRKSRC}/lib/tkcon.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/vtcl
-.for data in ChangeLog LICENSE README vtcl.tcl
+.for data in ChangeLog README vtcl.tcl
 	${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/lib/vtcl
 .endfor
 	@${MKDIR} ${PREFIX}/lib/vtcl/images
@@ -38,16 +43,16 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/vtcl/images/edit
 	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${PREFIX}/lib/vtcl/images/edit
 	@${MKDIR} ${PREFIX}/lib/vtcl/lib
-	${CP} -r ${WRKSRC}/lib/* ${PREFIX}/lib/vtcl/lib
-
-post-install:
+	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${PREFIX}/lib/vtcl/lib)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/sample
-	${CP} -r ${WRKSRC}/sample/* ${EXAMPLESDIR}/sample
-		@${MKDIR} ${EXAMPLESDIR}/demo
-	${CP} -r ${WRKSRC}/demo/* ${EXAMPLESDIR}/demo
+	@(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/sample)
+	@${MKDIR} ${EXAMPLESDIR}/demo
+	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/demo)
 .endif
 
 .include <bsd.port.mk>
