@@ -7,30 +7,32 @@
 
 PORTNAME=	xplot
 PORTVERSION=	0.90.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics net
 MASTER_SITES=	http://www.xplot.org/xplot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 plotting package
 
+USE_XORG=	x11
+USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 
-#XPLOT_DEMOS=	demo.0 demo.1 demo.2 demo.3 demo.4 demo.5 demo.6 demo.7
-
-USE_XORG=	x11
 MAN1=		tcpdump2xplot.1 xplot.1
+PORTDOCS=	README README.tcp_plots
+PLIST_FILES=	bin/tcpdump2xplot bin/tcpdump2xplot.pl bin/xplot
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/INSTALL/s|2xplot$$|2xplot.pl|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tcpdump2xplot.pl ${PREFIX}/bin
+	${LN} -sf tcpdump2xplot.pl ${PREFIX}/bin/tcpdump2xplot
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xplot
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xplot
-	${INSTALL_DATA} ${WRKSRC}/README.tcp_plots ${PREFIX}/share/doc/xplot
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
-#	${MKDIR} ${PREFIX}/share/examples/xplot
-#.for i in ${XPLOT_DEMOS}
-#	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/xplot
-#.endfor
 
 .include <bsd.port.mk>
