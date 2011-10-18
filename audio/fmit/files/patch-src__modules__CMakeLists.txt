@@ -4,7 +4,7 @@
  INCLUDE_DIRECTORIES(
      ../../libs
      ${CMAKE_CURRENT_BINARY_DIR}
-+    ${OPENGL_INCLUDE_DIR}
++    ${GLUT_INCLUDE_DIR}
  )
  
  ADD_LIBRARY(fmit_modules STATIC ${fmit_MODULE_SRCS_MOC} ${fmit_MODULE_SRCS})
