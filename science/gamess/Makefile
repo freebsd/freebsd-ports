@@ -100,6 +100,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+%%ARCH%%+freebsd-i386+g' ${WRKSRC}/lked
 .endif
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; \
+			      s+%%LDFLAGS%%+${LDFLAGS}+g ; \
 			      s+%%LOCALBASE%%+${LOCALBASE}+g ; \
 			      s+%%LIBSVM%%+${LIBSVM}+g ; \
 			      s+%%LIBG2C%%+${LIBG2C}+g ; \
