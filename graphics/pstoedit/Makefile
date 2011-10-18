@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.50
-PORTREVISION=	6
+PORTVERSION=	3.60
 CATEGORIES=	graphics print
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
@@ -25,14 +26,13 @@ USE_GNOME=	gnomehack pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		pstoedit.1
+MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-DHAVE_LIBGD
-CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		pstoedit.1
 
 .include <bsd.port.options.mk>
 
@@ -81,6 +81,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
