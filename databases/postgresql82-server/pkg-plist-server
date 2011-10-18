@@ -155,6 +155,7 @@ share/postgresql/timezone/Africa/Freetown
 share/postgresql/timezone/Africa/Gaborone
 share/postgresql/timezone/Africa/Harare
 share/postgresql/timezone/Africa/Johannesburg
+share/postgresql/timezone/Africa/Juba
 share/postgresql/timezone/Africa/Kampala
 share/postgresql/timezone/Africa/Khartoum
 share/postgresql/timezone/Africa/Kigali
@@ -269,10 +270,12 @@ share/postgresql/timezone/America/Juneau
 share/postgresql/timezone/America/Kentucky/Louisville
 share/postgresql/timezone/America/Kentucky/Monticello
 share/postgresql/timezone/America/Knox_IN
+share/postgresql/timezone/America/Kralendijk
 share/postgresql/timezone/America/La_Paz
 share/postgresql/timezone/America/Lima
 share/postgresql/timezone/America/Los_Angeles
 share/postgresql/timezone/America/Louisville
+share/postgresql/timezone/America/Lower_Princes
 share/postgresql/timezone/America/Maceio
 share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
@@ -743,19 +746,7 @@ share/postgresql/timezonesets/Pacific.txt
 @dirrm share/postgresql/timezone/US
 @dirrm share/postgresql/timezone
 @dirrm share/postgresql/timezonesets
-@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
-@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
-@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist
-@unexec [ -f ~pgsql/dot.cshrc.dist ] && rm ~pgsql/dot.cshrc.dist
-share/postgresql/dot.profile.dist
-share/postgresql/dot.cshrc.dist
-@exec [ -f %D/share/postgresql/dot.profile.dist ] && cp %D/share/postgresql/dot.profile.dist ~pgsql/.
-@exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
-@exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
-@exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry pgsql

@@ -682,6 +682,3 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump-9.1.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pgscripts-9.1.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql-9.1.mo
-@dirrm share/doc/postgresql/html
-@dirrm share/doc/postgresql
-

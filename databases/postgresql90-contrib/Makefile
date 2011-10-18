@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	postgresql
-PKGNAMESUFFIX=	-contrib
+PORTREVISION=	0
 CATEGORIES=	databases
-PORTREVISION=	1
+PKGNAMESUFFIX=	-contrib
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
+
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt xml2.5:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
 
 USE_PGSQL=	yes
 DEFAULT_PGSQL_VER=90
@@ -23,8 +26,7 @@ BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
-CONFIGURE_ARGS+=--with-libxslt --with-libxml
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt xml2.5:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-ossp-uuid
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
 post-install:

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql84-server/files/502.pgsql.in,v 1.1 2011-04-18 23:34:27 girgen Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/postgresql84-server/files/502.pgsql.in,v 1.2 2011-10-18 09:03:32 girgen Exp $
 #
 # Maintenance shell script to vacuum and backup database
 # Put this in /usr/local/etc/periodic/daily, and it will be run 
@@ -19,10 +19,12 @@
 # daily_pgsql_backup_enable="foo bar db1 db2" # only do backup of a limited selection of databases
 # daily_pgsql_vacuum_enable="YES" # do vacuum
 
-daily_pgsql_vacuum_args="-z"
-daily_pgsql_pgdump_args="-b -F c"
+daily_pgsql_user=%%PG_USER%%
+daily_pgsql_vacuum_args="-U ${daily_pgsql_user} -qaz"
+daily_pgsql_pgdump_args="-U ${daily_pgsql_user} -bF c"
+daily_pgsql_pgdumpall_globals_args="-U ${daily_pgsql_user}"
 # backupdir is relative to ~pgsql home directory unless it begins with a slash:
-daily_pgsql_backupdir="~%%PG_USER%%/backups"
+daily_pgsql_backupdir="~${daily_pgsql_user}/backups"
 daily_pgsql_savedays="7"
 
 # If there is a global system configuration file, suck it in.
@@ -44,7 +46,7 @@ pgsql_backup() {
 	# but this might not be where you want the backups...
 	if [ ! -d ${backupdir} ] ; then 
 	    echo Creating ${backupdir}
-	    mkdir -m 700 ${backupdir}; chown %%PG_USER%% ${backupdir}
+	    mkdir -m 700 ${backupdir}; chown ${daily_pgsql_user} ${backupdir}
 	fi
 
 	echo
@@ -55,13 +57,14 @@ pgsql_backup() {
 	rc=$?
 	now=`date "+%Y-%m-%dT%H:%M:%S"`
 	file=${daily_pgsql_backupdir}/pgglobals_${now}
-	su -l %%PG_USER%% -c "umask 077; pg_dumpall -g -U %%PG_USER%% | gzip -9 > ${file}.gz"
+	su -l ${daily_pgsql_user} -c \
+		"umask 077; pg_dumpall -g ${daily_pgsql_pgdumpall_globals_args} | gzip -9 > ${file}.gz"
 
 	db=$1
 	while shift; do
 	    echo -n " $db"
 	    file=${backupdir}/pgdump_${db}_${now}
-	    su -l %%PG_USER%% -c "umask 077; pg_dump ${daily_pgsql_pgdump_args} -U %%PG_USER%% -f ${file} ${db}"
+	    su -l ${daily_pgsql_user} -c "umask 077; pg_dump ${daily_pgsql_pgdump_args} -f ${file} ${db}"
 	    [ $? -gt 0 ] && rc=3
 		db=$1
 	done
@@ -99,7 +102,7 @@ case "$daily_pgsql_vacuum_enable" in
 
 	echo
 	echo "PostgreSQL vacuum"
-	su -l %%PG_USER%% -c "vacuumdb -a -q -U %%PG_USER%% ${daily_pgsql_vacuum_args}"
+	su -l ${daily_pgsql_user} -c "vacuumdb ${daily_pgsql_vacuum_args}"
 	if [ $? -gt 0 ]
 	then
 	    echo

@@ -6,12 +6,11 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.21
+DISTVERSION?=	8.2.22
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
 PKGNAMESUFFIX?=	-server
-DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
@@ -21,7 +20,7 @@ CONFLICTS?=	${PORTNAME}-client-[79].* \
 		${PORTNAME}-client-8.[0-13-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.[0-13-9]*
 
-WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
+WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
 UNIQUENAME?=	${PORTNAME}82
@@ -36,13 +35,17 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
+PG_USER?=	pgsql
+PG_GROUP?=	${PG_USER}
+PG_UID?=	70
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 INCLUDES+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
-		--with-includes=${PREFIX}/lib \
+		--with-includes=${PREFIX}/include \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
-CONFIGURE_ENV+=	INCLUDES=${INCLUDES} \
+CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -57,13 +60,24 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
-SUB_FILES+=	dot.cshrc dot.profile
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+USERS?=		${PG_USER}
+.if (${USERS} != "pgsql")
+UID_FILES+=	${WRKDIR}/pguid
+GID_FILES+=	${WRKDIR}/pggid
+.endif
+GROUPS?=	${PG_GROUP}
+SUB_FILES+=	502.pgsql
 .endif
 
 .if !defined(SLAVE_ONLY)
 OPTIONS=	NLS "Use internationalized messages" on
+.endif
+
+.if !defined(CLIENT_ONLY)
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 # Cannot check this with standard OPTION due to a catch-22.
@@ -94,7 +108,11 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
+.endif # !SLAVE_ONLY
+ 
+.include <bsd.port.pre.mk>
 
+.if !defined(SLAVE_ONLY)
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 # USE_AUTOTOOLS=	autoconf
 # CONFIGURE_ARGS+=--with-icu
@@ -216,7 +234,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${PKGINSTALL} ${PORTNAME} BACKUPWARNING
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
@@ -239,17 +257,25 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
-.endif
-
-.if defined(SERVER_ONLY)
-pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
+SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
+SUB_LIST=	PG_GROUP=$(PG_GROUP) \
+		PG_USER=$(PG_USER) \
+		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=$(PG_USER)
+PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
+.  endif
 .endif
 
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
+
+.  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
+pre-install:
+	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
+	@${SED} -n s,pgsql,${PG_GROUP},gp ${PORTSDIR}/GIDs > ${WRKDIR}/pggid
+.  endif
 
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \
@@ -257,17 +283,9 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
-	@ ${MKDIR} ${PREFIX}/share/postgresql
-.    for i in profile cshrc
-	${INSTALL_DATA} ${WRKDIR}/dot.$i ${PREFIX}/share/postgresql/dot.$i.dist; \
-	${INSTALL_DATA} -o pgsql -g pgsql ${WRKDIR}/dot.$i ~pgsql/dot.$i.dist ; \
-	if [ ! -f ~pgsql/.$i ]; then \
-		${CP} -p ~pgsql/dot.$i.dist ~pgsql/.$i; \
-	fi
-.    endfor
-	@ ${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
+	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
-	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
+	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
@@ -282,7 +300,7 @@ do-install:
 	fi
 .endif # !NO_BUILD
 
-.if defined(SERVER_ONLY) && defined(WITH_TESTS)
+.if defined(SERVER_ONLY)
 check:
 	@if [ `id -u` != 0 ] ; then \
 	  ${ECHO} "Running postgresql regressions tests" ;\

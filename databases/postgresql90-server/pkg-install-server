@@ -1,10 +1,11 @@
 #! /bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql92-server/files/Attic/pkg-install-server.in,v 1.2 2011-06-11 23:14:30 girgen Exp $
+# $FreeBSD$
 
 PATH=/bin:/usr/bin:/usr/sbin
 
-backupwarning() { echo "
+backupwarning() {
+cat <<EOF
 
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
@@ -15,12 +16,12 @@ backupwarning() { echo "
 
   Press ctrl-C *now* if you need to pg_dump.
   ===========================================
-"
+EOF
 	sleep 5
 }
 
 case $2 in
-BACKUPWARNING)
+PRE-INSTALL)
 	backupwarning
 	;;
 esac

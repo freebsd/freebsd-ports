@@ -81,6 +81,12 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_resetxlog-8.4.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/plpgsql-8.4.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/postgres-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/initdb-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_controldata-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_ctl-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_resetxlog-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/plpgsql-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/postgres-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-8.4.mo
@@ -145,6 +151,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Africa/Gaborone
 %%TZDATA%%share/postgresql/timezone/Africa/Harare
 %%TZDATA%%share/postgresql/timezone/Africa/Johannesburg
+%%TZDATA%%share/postgresql/timezone/Africa/Juba
 %%TZDATA%%share/postgresql/timezone/Africa/Kampala
 %%TZDATA%%share/postgresql/timezone/Africa/Khartoum
 %%TZDATA%%share/postgresql/timezone/Africa/Kigali
@@ -259,10 +266,12 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Louisville
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Monticello
 %%TZDATA%%share/postgresql/timezone/America/Knox_IN
+%%TZDATA%%share/postgresql/timezone/America/Kralendijk
 %%TZDATA%%share/postgresql/timezone/America/La_Paz
 %%TZDATA%%share/postgresql/timezone/America/Lima
 %%TZDATA%%share/postgresql/timezone/America/Los_Angeles
 %%TZDATA%%share/postgresql/timezone/America/Louisville
+%%TZDATA%%share/postgresql/timezone/America/Lower_Princes
 %%TZDATA%%share/postgresql/timezone/America/Maceio
 %%TZDATA%%share/postgresql/timezone/America/Managua
 %%TZDATA%%share/postgresql/timezone/America/Manaus
@@ -753,9 +762,7 @@ share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry share/postgresql/tsearch_data
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry %%PG_USER%%
