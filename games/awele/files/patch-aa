@@ -11,10 +11,10 @@
  XCOMM libs, includes
  XCOMM TK_LIB AND TK_INCLUDE stand for tk and tcl
 -    TK_LIB		= -L/usr/local/lib -ltk -ltcl
-+    TK_LIB		= -L@@LOCALBASE@@/lib -ltk84 -ltcl84
++    TK_LIB		= -L%%LOCALBASE%%/lib -ltk%%TK_VER%% -ltcl%%TCL_VER%%
  XCOMM    TK_LIB		= -L/usr/local/lib -ltk4.0 -ltcl7.4
 -    TK_INCLUDE 		= -I/usr/local/include
-+    TK_INCLUDE 		= -I@@LOCALBASE@@/include/tcl8.4 -I@@LOCALBASE@@/include/tk8.4
++    TK_INCLUDE 		= -I%%TK_INCLUDEDIR%% -I%%TCL_INCLUDEDIR%%
      DEFINES = $(TK_INCLUDE) 
      LOCAL_LIBRARIES = $(TK_LIB) -lX11 -lm
  XCOMM ANSI-C compiler
