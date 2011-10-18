@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-Inliner
-PORTVERSION=	3362
+PORTVERSION=	3385
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-HTML-Query>=0.07:${PORTSDIR}/www/p5-HTML-Query \
-		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTML-Tree>=4.2:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
