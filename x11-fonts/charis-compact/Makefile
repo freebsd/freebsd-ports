@@ -7,9 +7,14 @@
 
 PORTNAME=	CharisSILCompact
 PORTVERSION=	4.110
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/ttw/fonts2go.cgi?family=CharisSIL&pkg=Compact&ver=${PORTVERSION}&filename=/ \
-		LOCAL/bf
+#unfortunately, the SIL server embeds timestamps in the distfile, so we use a static local copy
+.if defined(MAINTAINER_MODE)
+MASTER_SITES=	http://scripts.sil.org/ttw/fonts2go.cgi?family=CharisSIL&pkg=Compact&ver=${PORTVERSION}&filename=/
+.else
+MASTER_SITES=	LOCAL/bf
+.endif
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 
 MAINTAINER=	bf@FreeBSD.org
