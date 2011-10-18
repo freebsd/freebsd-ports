@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.15
+DISTVERSION?=	8.3.16
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -35,13 +35,14 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-PGUSER=		pgsql
-PGGROUP=	pgsql
+PG_USER?=	pgsql
+PG_GROUP?=	${PG_USER}
+PG_UID?=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 INCLUDES+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
-		--with-includes=${PREFIX}/lib \
+		--with-includes=${PREFIX}/include \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
@@ -60,7 +61,14 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+USERS?=		${PG_USER}
+.if (${USERS} != "pgsql")
+UID_FILES+=	${WRKDIR}/pguid
+GID_FILES+=	${WRKDIR}/pggid
+.endif
+GROUPS?=	${PG_GROUP}
+SUB_FILES+=	502.pgsql
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -82,8 +90,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
@@ -100,7 +106,11 @@ OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
+.endif # !SLAVE_ONLY
 
+.include <bsd.port.pre.mk>
+
+.if !defined(SLAVE_ONLY)
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
@@ -112,7 +122,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 
 PATCH_DIST_STRIP=-p1
 
-.  if  defined(WITH_PAM)
+.  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
@@ -248,7 +258,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${PKGINSTALL} ${PORTNAME} BACKUPWARNING
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
@@ -271,12 +281,13 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
-.endif
-
-.if defined(SERVER_ONLY)
-pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} PGUSER=${PGUSER} PGGROUP=${PGGROUP} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
+SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
+SUB_LIST=	PG_GROUP=$(PG_GROUP) \
+		PG_USER=$(PG_USER) \
+		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=$(PG_USER)
+.  endif
 .endif
 
 .if !defined(NO_BUILD)
@@ -288,6 +299,12 @@ post-patch:
 		${WRKSRC}/configure.in
 .  endif
 
+.  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
+pre-install:
+	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
+	@${SED} -n s,pgsql,${PG_GROUP},gp ${PORTSDIR}/GIDs > ${WRKDIR}/pggid
+.  endif
+
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \
 	    cd ${WRKSRC}/$${dir} && \
@@ -296,7 +313,7 @@ do-install:
 .  if defined(SERVER_ONLY)
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
-	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
+	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)

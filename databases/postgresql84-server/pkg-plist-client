@@ -598,6 +598,12 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts-8.4.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/psql-8.4.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_config-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpg-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpglib6-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/libpq5-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_config-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_dump-8.4.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pgscripts-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpg-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-8.4.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/libpq5-8.4.mo

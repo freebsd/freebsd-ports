@@ -92,6 +92,7 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/pl/LC_MESSAGES/plpgsql-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/postgres-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-9.1.mo
@@ -768,4 +769,3 @@ share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry %%PG_USER%%

@@ -187,6 +187,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Africa/Niamey
 %%TZDATA%%share/postgresql/timezone/Africa/Nouakchott
 %%TZDATA%%share/postgresql/timezone/Africa/Ouagadougou
+%%TZDATA%%share/postgresql/timezone/Africa/Juba
 %%TZDATA%%share/postgresql/timezone/Africa/Porto-Novo
 %%TZDATA%%share/postgresql/timezone/Africa/Sao_Tome
 %%TZDATA%%share/postgresql/timezone/Africa/Timbuktu
@@ -280,10 +281,12 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Louisville
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Monticello
 %%TZDATA%%share/postgresql/timezone/America/Knox_IN
+%%TZDATA%%share/postgresql/timezone/America/Kralendijk
 %%TZDATA%%share/postgresql/timezone/America/La_Paz
 %%TZDATA%%share/postgresql/timezone/America/Lima
 %%TZDATA%%share/postgresql/timezone/America/Los_Angeles
 %%TZDATA%%share/postgresql/timezone/America/Louisville
+%%TZDATA%%share/postgresql/timezone/America/Lower_Princes
 %%TZDATA%%share/postgresql/timezone/America/Maceio
 %%TZDATA%%share/postgresql/timezone/America/Managua
 %%TZDATA%%share/postgresql/timezone/America/Manaus
@@ -774,9 +777,7 @@ share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry share/postgresql/tsearch_data
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry pgsql

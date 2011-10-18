@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
+DISTVERSION?=	9.1.1
 DISTVERSION?=	9.1.0
-PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -27,6 +27,7 @@ DIST_SUBDIR=	postgresql
 UNIQUENAME?=	${PORTNAME}91
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
+PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -61,7 +62,7 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 USERS?=		${PG_USER}
 .if (${USERS} != "pgsql")
 UID_FILES+=	${WRKDIR}/pguid
@@ -190,7 +191,7 @@ LDFLAGS+=	-lgssapi
 
 .  if defined(WITH_MIT_KRB5)
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
-BROKEN=		You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB
+BROKEN=		You must remove /usr/bin/krb5-config and /usr/lib/libkrb5.so* (from system heimdal), and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB
 .    endif
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
@@ -306,7 +307,7 @@ MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_COLLATION.7 ALTER_CONVERSION.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in ${PORTNAME} BACKUPWARNING
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
@@ -330,11 +331,10 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
 SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
-SUB_LIST=	PG_GROUP=${PG_GROUP} \
-		PG_USER=${PG_USER} \
-		PG_UID=${PG_UID}
-PLIST_SUB+=	PG_USER=${PG_USER}
-PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
+SUB_LIST=	PG_GROUP=$(PG_GROUP) \
+		PG_USER=$(PG_USER) \
+		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=$(PG_USER)
 .  endif
 .endif
 

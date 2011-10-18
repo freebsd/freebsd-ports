@@ -1,4 +1,4 @@
-SHA256 (postgresql/postgresql-8.4.8.tar.bz2) = 3e90ef2a86a9f4831e21ff4a574fbfb8e1b8c097af637c93ec43c64c684a0938
-SIZE (postgresql/postgresql-8.4.8.tar.bz2) = 14136376
+SHA256 (postgresql/postgresql-8.4.9.tar.bz2) = 1d58cb8d0cb8ae8f61042b2d5aa54135a2d2a0f324d06593870e1242b0e8c38a
+SIZE (postgresql/postgresql-8.4.9.tar.bz2) = 14275979
 SHA256 (postgresql/pg-840-icu-2009-09-15.diff.gz) = c09d3b59340a3bb6ea754e985739d4fbb47f730d1e48a357c5585825034fc72e
 SIZE (postgresql/pg-840-icu-2009-09-15.diff.gz) = 4321

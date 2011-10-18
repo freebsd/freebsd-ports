@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.8
-PORTREVISION?=	1
+DISTVERSION?=	8.4.9
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -27,6 +27,7 @@ DIST_SUBDIR=	postgresql
 UNIQUENAME?=	${PORTNAME}84
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
+PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -36,7 +37,7 @@ GNU_CONFIGURE=	YES
 .endif
 
 PG_USER?=	pgsql
-PG_GROUP?=	pgsql
+PG_GROUP?=	${PG_USER}
 PG_UID?=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -60,7 +61,7 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 SUB_FILES+=	502.pgsql
 .endif
 
@@ -264,7 +265,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in ${PORTNAME} BACKUPWARNING
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
@@ -286,21 +287,13 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
-
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
-SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
+SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
 SUB_LIST=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)
 PLIST_SUB+=	PG_USER=$(PG_USER)
-PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
-
-.endif
-
-.if defined(SERVER_ONLY)
-pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
@@ -310,6 +303,12 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
 		${WRKSRC}/configure.in
+.  endif
+
+.  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
+pre-install:
+	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
+	@${SED} -n s,pgsql,${PG_GROUP},gp ${PORTSDIR}/GIDs > ${WRKDIR}/pggid
 .  endif
 
 do-install:
