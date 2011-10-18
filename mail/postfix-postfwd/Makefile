@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfwd
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
