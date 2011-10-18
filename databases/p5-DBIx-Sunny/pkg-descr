@@ -1,0 +1,4 @@
+DBIx::Sunny is a simple DBI wrapper. It provides better usability for you.
+This module based on Amon2::DBI. DBIx::Sunny supports only SQLite and MySQL.
+
+WWW: http://search.cpan.org/dist/DBIx-Sunny/

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBIx/Sunny.pm
+%%SITE_PERL%%/DBIx/Sunny/Schema.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Sunny/.packlist
+@dirrm %%SITE_PERL%%/DBIx/Sunny
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Sunny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
