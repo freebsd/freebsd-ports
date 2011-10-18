@@ -6,23 +6,15 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	0.2.24
+PORTVERSION=	1.0.12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	NetXMS - network monitoring system
+COMMENT=	Network monitoring system
 
-BROKEN=	does not compile with gcc 4.2 && Does not fetch
-
-NO_PACKAGE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USE_ICONV=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 OPTIONS=	SERVER "Install NetXMS server & agent" off \
 		CLIENT "Install NetXMS client" on \
@@ -32,6 +24,20 @@ OPTIONS=	SERVER "Install NetXMS server & agent" off \
 		PGSQL "Enable PostgreSQL support" off \
 		SQLITE "Enable SQLITE support" off \
 		ODBC "Enable ODBC support" off
+
+NO_PACKAGE=	yes
+
+USE_PERL5=	yes
+USE_OPENSSL=	yes
+USE_ICONV=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 NETXMS_OWN=	netxms
 NETXMS_GRP=	netxms
@@ -140,37 +146,30 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	                ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .if defined(WITH_SERVER)
-	@if [ ! -f ${PREFIX}/etc/netxmsd.conf-dist ]; then \
-	        ${CP} -p ${WRKSRC}/contrib/netxmsd.conf-dist ${PREFIX}/etc/netxmsd.conf-dist ; \
-	fi
+.if !exists(${PREFIX}/etc/netxmsd.conf-dist)
+	${INSTALL_DATA} ${WRKSRC}/contrib/netxmsd.conf-dist ${PREFIX}/etc
+	${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/netxmsd.conf-dist
+.endif
 .endif
 .if defined(WITH_SERVER) || !defined(WITHOUT_AGENT)
-	@if [ ! -f ${PREFIX}/etc/nxagentd.conf-dist ]; then \
-	        ${CP} -p ${WRKSRC}/contrib/nxagentd.conf-dist ${PREFIX}/etc/nxagentd.conf-dist ; \
-	fi
+.if !exists(${PREFIX}/etc/nxagentd.conf-dist)
+	${INSTALL_DATA} ${WRKSRC}/contrib/nxagentd.conf-dist ${PREFIX}/etc
+	${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/nxagentd.conf-dist
+.endif
 .endif
 .if defined(WITH_NXHTTPD)
-	@if [ ! -f ${PREFIX}/etc/nxhttpd.conf-dist ]; then \
-	        ${CP} -p ${WRKSRC}/contrib/nxhttpd.conf-dist ${PREFIX}/etc/nxhttpd.conf-dist ; \
-	fi
+.if !exists(${PREFIX}/etc/nxhttpd.conf-dist)
+	${INSTALL_DATA} ${WRKSRC}/contrib/nxhttpd.conf-dist ${PREFIX}/etc
+	${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/nxhttpd.conf-dist
+.endif
 .endif
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-	                ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-.if defined(WITH_SERVER)
-			${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/netxmsd.conf-dist
-			${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/nxagentd.conf-dist
-.endif
-.if defined(WITH_AGENT)
-			${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/nxagentd.conf-dist
-.endif
-.if defined(WITH_NXHTTPD)
-			${CHOWN} ${NETXMS_OWN}:${NETXMS_GRP} ${PREFIX}/etc/nxhttpd.conf-dist
-.endif
+		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 post-deinstall:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-	                ${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
+		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>

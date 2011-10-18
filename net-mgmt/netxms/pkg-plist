@@ -7,12 +7,12 @@
 %%CLIENT%%bin/nxcmd
 %%NXCPTEST%%bin/nxcptest
 %%SERVER%%bin/nxdbmgr
+%%SERVER%%bin/nxencpasswd
 %%CLIENT%%bin/nxevent
 %%SERVER%%bin/nxget
 %%NXHTTPD%%bin/nxhttpd
 %%SERVER%%bin/nxmibc
 %%CLIENT%%bin/nxpush
-%%CLIENT%%bin/nxreport
 %%SERVER%%bin/nxscript
 %%CLIENT%%bin/nxsms
 %%SERVER%%bin/nxsnmpget
@@ -26,6 +26,9 @@
 lib/libnetxms.la
 lib/libnetxms.so
 lib/libnetxms.so.0
+lib/libnxsqlite.la
+lib/libnxsqlite.so
+lib/libnxsqlite.so.0
 %%SERVER%%lib/libnsm_ecs.la
 %%SERVER%%lib/libnsm_ecs.so
 %%SERVER%%lib/libnsm_ecs.so.0
@@ -148,6 +151,8 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/images/zone.ico
 %%SERVER%%%%DATADIR%%/images/zone.png
 %%SERVER%%%%DATADIR%%/mibs/ARCADA-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/ASTERISK-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/BAY-STACK-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/BGP4-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/BN-IF-EXTENSIONS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/BRIDGE-MIB.txt
@@ -169,8 +174,10 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/COSINE-GLOBAL-REG.txt
 %%SERVER%%%%DATADIR%%/mibs/COSINE-InVision-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/COSINE-ORION-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/DIGIUM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DS1-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DS3-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/EMBEDDED-NGX-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/ENTITY-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/FIBRE-CHANNEL-FE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/HOST-RESOURCES-MIB.txt
@@ -205,13 +212,15 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/NETSCREEN-VPN-MON-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETSCREEN-VR-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETSCREEN-VSYS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/NetWare-Server-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/NETWORK-APPLIANCE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NOKIA-IPSO-REGISTRATION-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NOKIA-IPSO-SYSTEM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OPTIMUX-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OSPF-MIB.txt
-%%SERVER%%%%DATADIR%%/PIM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/P-BRIDGE-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/PIM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PerfHist-TC-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PowerNet-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/Printer-MIB.txt
@@ -224,6 +233,7 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/RMON-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/RMON2-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/RS-232-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/S5-AGENT-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/S5-CHASSIS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/S5-CHASSIS-TRAP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/S5-ETH-MULTISEG-TOPOLOGY-MIB.txt
@@ -261,6 +271,7 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/UPS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/USEC-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/V2ADMIN-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/VRRP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/WF-COM.txt
 %%SERVER%%%%DATADIR%%/mibs/WWW-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/netxms.mib
@@ -344,10 +355,15 @@ lib/libnetxms.so.0
 %%NXHTTPD%%%%DATADIR%%/nxhttpd/xmlextras.js
 %%NXHTTPD%%%%DATADIR%%/nxhttpd/xtree.js
 %%SERVER%%%%DATADIR%%/sql/dbinit_mssql.sql
+%%SERVER%%%%DATADIR%%/sql/dbschema_mssql.sql
 %%SERVER%%%%DATADIR%%/sql/dbinit_mysql.sql
+%%SERVER%%%%DATADIR%%/sql/dbschema_mysql.sql
 %%SERVER%%%%DATADIR%%/sql/dbinit_oracle.sql
+%%SERVER%%%%DATADIR%%/sql/dbschema_oracle.sql
 %%SERVER%%%%DATADIR%%/sql/dbinit_pgsql.sql
+%%SERVER%%%%DATADIR%%/sql/dbschema_pgsql.sql
 %%SERVER%%%%DATADIR%%/sql/dbinit_sqlite.sql
+%%SERVER%%%%DATADIR%%/sql/dbschema_sqlite.sql
 %%SERVER%%@dirrmtry %%DATADIR%%/sql
 %%NXHTTPD%%@dirrmtry %%DATADIR%%/nxhttpd/images/status
 %%NXHTTPD%%@dirrmtry %%DATADIR%%/nxhttpd/images/objects
