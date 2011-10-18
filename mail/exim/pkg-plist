@@ -32,8 +32,6 @@ sbin/exiwhat
 %%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
 %%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/filter.txt
-%%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
-%%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
 %%PORTDOCS%%%%DOCSDIR%%/spec.txt
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3

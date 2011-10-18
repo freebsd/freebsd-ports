@@ -5,3 +5,16 @@ IMPORTANT NOTE:
 Please read %%DOCSDIR%%/POST-INSTALL-NOTES for important
 information regarding your Exim installation.
 
+
+How to restore pre-4.77 behaviour of match_* expansions
+=======================================================
+
+Just two steps to do it:
+
+ 1. first, read README.UPDATING and in most cases you will
+    realize that pre-4.77 behaviour is not what you want;
+
+ 2. if you're still here, turn on port's knob LISTMATCH_RHS
+    and carefully review your configuration for untrusted
+    right-hand sides in match_* operations.
+
