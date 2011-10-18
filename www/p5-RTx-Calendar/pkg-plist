@@ -17,6 +17,7 @@
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarEvent
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements/Tabs/Default
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
+%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs/Privileged
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Header/Head
 man/auto/RTx/Calendar/.packlist
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/lib/RTx
@@ -35,6 +36,7 @@ man/auto/RTx/Calendar/.packlist
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Header
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar
