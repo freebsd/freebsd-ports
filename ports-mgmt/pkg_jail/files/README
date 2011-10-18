@@ -56,9 +56,10 @@
 #	pkg_update full-update-jail
 #		do full update cycle
 #		1) "cvsup" to update the ports tree
-#		2) "clean-packages" to keep only good packages
-#		3) remove all old error logs
-#		4) "make-packages" to rebuild missing packages
+#		2) "clean-distfiles" to keep only current distfiles
+#		3) "clean-packages" to keep only good packages
+#		4) remove all old error logs
+#		5) "make-packages" to rebuild missing packages
 #
 #	pkg_update full-update-jail retry
 #		Skip "cvsup" and procced as above.

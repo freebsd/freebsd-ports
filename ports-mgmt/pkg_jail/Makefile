@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_jail
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty

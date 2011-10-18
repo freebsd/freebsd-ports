@@ -114,6 +114,7 @@ pkg_jail_create_devfs()
 		pkg_jail_create_dev_rules
 		mount -t devfs dev ${jail_devdir}
 		devfs -m ${jail_devdir} ruleset ${pkg_jail_rule}
+		devfs -m ${jail_devdir} rule applyset
 	fi
 	if test ! -L "${jail_devdir}/console"
 	then
