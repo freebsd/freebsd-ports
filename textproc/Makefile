@@ -173,6 +173,7 @@
     SUBDIR += exslt
     SUBDIR += ezxml
     SUBDIR += fa-aspell
+    SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
     SUBDIR += filepp
