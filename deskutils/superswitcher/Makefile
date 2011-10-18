@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	superswitcher
-PORTVERSION=	0.3
-PORTREVISION=	5
+PORTVERSION=	0.6
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/browserbookapp/${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alt-Tab replacement
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
-RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+LICENSE=	GPLv2
 
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+
+USE_GNOME=	gconf2 libwnck
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libwnck pango
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-extract:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -f
+PLIST_FILES=	bin/superswitcher \
+		share/dbus-1/services/superswitcher.SuperSwitcher.service
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/x11//g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e \
+		's/x11//g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/_DISABLE_DEPRECATED/d' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
