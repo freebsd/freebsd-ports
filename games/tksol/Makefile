@@ -9,24 +9,25 @@ PORTNAME=	tksol
 PORTVERSION=	1.8.4
 PORTREVISION=	1
 CATEGORIES=	games tk
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/solitaires
+MASTER_SITES=	SUNSITE/games/solitaires
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of the card game solitaire
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 NO_BUILD=	yes
+
+USE_TK_WRAPPER=	yes
 
 MAN6=		tksol.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|exec wish|exec ${PREFIX}/bin/wish8.4|g ; \
-		 s|/usr/local/lib/tksol|${DATADIR}|g' ${WRKSRC}/tksol
+	@${REINPLACE_CMD} -e \
+		's|^#/bin/sh|#!/bin/sh| ; \
+		 s|/usr/local/lib/tksol|${DATADIR}|' ${WRKSRC}/tksol
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tksol ${PREFIX}/bin
