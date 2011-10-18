@@ -7,7 +7,7 @@
 # Based on the OpenBSD port by:		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 PORTNAME=		mspdebug
-PORTVERSION=		0.16
+PORTVERSION=		0.17
 CATEGORIES=		devel
 MASTER_SITES=		SF/${PORTNAME}
 

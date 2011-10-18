@@ -10,8 +10,8 @@
  PREFIX ?= /usr/local
  LDFLAGS ?= -s
 @@ -38,8 +38,14 @@
- 	PORTS_CFLAGS = `pkg-config --cflags libelf libusb`
- 	PORTS_LDFLAGS = `pkg-config --libs libelf libusb` -ltermcap
+ 	PORTS_CFLAGS = `pkg-config --cflags libusb`
+ 	PORTS_LDFLAGS = `pkg-config --libs libusb` -ltermcap
    else
 +    ifeq ($(UNAME),FreeBSD) # FreeBSD Ports stuff
 +# This is only needed prior to FreeBSD 8.x to find libusb
