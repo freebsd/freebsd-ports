@@ -1,9 +1,9 @@
 bin/splay-tk
-lib/splay-tk/dirs.xbm
-lib/splay-tk/files.xbm
-lib/splay-tk/pause.xbm
-lib/splay-tk/play.xbm
-lib/splay-tk/quit.xbm
-lib/splay-tk/splay-tk.gif
-lib/splay-tk/stop.xbm
-@dirrm lib/splay-tk
+%%DATADIR%%/dirs.xbm
+%%DATADIR%%/files.xbm
+%%DATADIR%%/pause.xbm
+%%DATADIR%%/play.xbm
+%%DATADIR%%/quit.xbm
+%%DATADIR%%/stop.xbm
+%%DATADIR%%/splay-tk.gif
+@dirrm %%DATADIR%%
