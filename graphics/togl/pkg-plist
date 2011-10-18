@@ -1,28 +1,31 @@
-%%TOGL_INSTDIR%%/libTogl1.7.so
-%%TOGL_INSTDIR%%/libtogl.so.1
-lib/libtogl.so.1
 lib/libtogl.so
-%%TOGL_INSTDIR%%/togl.h
-%%TOGL_INSTDIR%%/togl_ws.h
-%%TOGL_INSTDIR%%/pkgIndex.tcl
-@dirrm %%TOGL_INSTDIR%%
+lib/libtogl.so.1
+lib/tk8.5/Togl-1.7/togl.h
+lib/tk8.5/Togl-1.7/togl_ws.h
+lib/tk8.5/Togl-1.7/libTogl1.7.so
+lib/tk8.5/Togl-1.7/pkgIndex.tcl
+lib/tk8.5/Togl-1.7/libtogl.so.1
+%%PORTDOCS%%%%DOCSDIR%%/Togl.html
 %%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/ben.rgb
+%%EXAMPLESDIR%%/double.c
+%%EXAMPLESDIR%%/double.tcl
+%%EXAMPLESDIR%%/gears.c
+%%EXAMPLESDIR%%/gears.tcl
+%%EXAMPLESDIR%%/image.c
+%%EXAMPLESDIR%%/image.h
+%%EXAMPLESDIR%%/index.c
+%%EXAMPLESDIR%%/index.tcl
+%%EXAMPLESDIR%%/overlay.c
+%%EXAMPLESDIR%%/overlay.tcl
+%%EXAMPLESDIR%%/stereo.c
+%%EXAMPLESDIR%%/stereo.tcl
+%%EXAMPLESDIR%%/texture.c
+%%EXAMPLESDIR%%/texture.tcl
 %%EXAMPLESDIR%%/togl.c
 %%EXAMPLESDIR%%/togl.h
-%%EXAMPLESDIR%%/image.h
-%%EXAMPLESDIR%%/image.c
-%%EXAMPLESDIR%%/ben.rgb
 %%EXAMPLESDIR%%/tree2.rgba
-%%EXAMPLESDIR%%/double.tcl
-%%EXAMPLESDIR%%/double.c
-%%EXAMPLESDIR%%/gears.tcl
-%%EXAMPLESDIR%%/gears.c
-%%EXAMPLESDIR%%/index.tcl
-%%EXAMPLESDIR%%/index.c
-%%EXAMPLESDIR%%/overlay.tcl
-%%EXAMPLESDIR%%/overlay.c
-%%EXAMPLESDIR%%/stereo.tcl
-%%EXAMPLESDIR%%/stereo.c
-%%EXAMPLESDIR%%/texture.tcl
-%%EXAMPLESDIR%%/texture.c
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/tk8.5/Togl-1.7
+@dirrmtry lib/tk8.5
