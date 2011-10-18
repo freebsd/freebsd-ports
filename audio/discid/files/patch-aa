@@ -1,9 +1,0 @@
---- discid.c.orig	Sat Apr 14 19:55:24 2001
-+++ discid.c	Mon May 27 18:33:37 2002
-@@ -92,5 +92,5 @@
- }
- 
--void main(void) {
-+int main(void) {
-     unsigned long discid;
-     int tracks, i;
