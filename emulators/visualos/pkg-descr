@@ -6,4 +6,4 @@ properties (memory usage, processing bursts, IO accesses) and VisualOS will
 dynamically show different graphical representations of each subsystem. It is
 also possible to select the algorithm to be used in each case.
 
-WWW: http://visualos.sourceforge.net/
+WWW: http://sourceforge.net/projects/visualos/
