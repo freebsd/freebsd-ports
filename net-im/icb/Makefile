@@ -8,7 +8,7 @@
 
 PORTNAME=	icb
 PORTVERSION=	5.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im tcl
 MASTER_SITES=	http://www.obfuscation.org/icb/
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
@@ -16,18 +16,26 @@ DISTNAME=	c${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet CB - a mostly-defunct chat client
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-
+USE_TK_BUILD=	yes
+USE_TK=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
+CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
+
+PORTEXAMPLES=	bartender confuse echofunctions sample.icbrc
+PLIST_FILES=	bin/icb %%DATADIR%%/icbserverdb
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/icb
-	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/share/icb
-.for f in bartender confuse echofunctions sample.icbrc
-	${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${PREFIX}/share/icb
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${DATADIR}
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${EXAMPLESDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>
