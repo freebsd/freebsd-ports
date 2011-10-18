@@ -17,34 +17,35 @@
 %%DATADIR%%/web/images/buttons/torrent_buttons.png
 %%DATADIR%%/web/images/favicon.ico
 %%DATADIR%%/web/images/favicon.png
+%%DATADIR%%/web/images/graphics/blue-turtle.png
 %%DATADIR%%/web/images/graphics/chrome.png
 %%DATADIR%%/web/images/graphics/filter_bar.png
 %%DATADIR%%/web/images/graphics/filter_icon.png
 %%DATADIR%%/web/images/graphics/iphone_chrome.png
 %%DATADIR%%/web/images/graphics/lock_icon.png
 %%DATADIR%%/web/images/graphics/logo.png
-%%DATADIR%%/web/images/graphics/transfer_arrows.png
-%%DATADIR%%/web/images/graphics/wait20.gif
 %%DATADIR%%/web/images/progress/progress.png
 %%DATADIR%%/web/images/webclip-icon.png
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/javascript/common.js
 %%DATADIR%%/web/javascript/dialog.js
+%%DATADIR%%/web/javascript/file-row.js
 %%DATADIR%%/web/javascript/formatter.js
+%%DATADIR%%/web/javascript/inspector.js
 %%DATADIR%%/web/javascript/jquery/jquery.contextmenu.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.form.js
 %%DATADIR%%/web/javascript/jquery/jquery.form.min.js
-%%DATADIR%%/web/javascript/jquery/jquery.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.transmenu.min.js
-%%DATADIR%%/web/javascript/jquery/json.min.js
-%%DATADIR%%/web/javascript/menu.js
+%%DATADIR%%/web/javascript/jquery/json2.min.js
+%%DATADIR%%/web/javascript/prefs-dialog.js
+%%DATADIR%%/web/javascript/remote.js
+%%DATADIR%%/web/javascript/torrent-row.js
 %%DATADIR%%/web/javascript/torrent.js
 %%DATADIR%%/web/javascript/transmission.js
-%%DATADIR%%/web/javascript/transmission.remote.js
 %%DATADIR%%/web/stylesheets/common.css
-%%DATADIR%%/web/stylesheets/ie6.css
 %%DATADIR%%/web/stylesheets/ie7.css
-%%DATADIR%%/web/stylesheets/iphone.css
+%%DATADIR%%/web/stylesheets/ieAll.css
+%%DATADIR%%/web/stylesheets/mobile.css
 @dirrm %%DATADIR%%/web/stylesheets
 @dirrm %%DATADIR%%/web/javascript/jquery
 @dirrm %%DATADIR%%/web/javascript
