@@ -7,25 +7,23 @@
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI tool for NetFlow data visualisation
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
+RUN_DEPENDS=	${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
 		${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \
 		${SITE_PERL}/${PERL_ARCH}/Cflow.pm:${PORTSDIR}/net-mgmt/p5-Cflow
 
-NO_MTREE=	yes
 NO_BUILD=	yes
+
+USE_TK=		yes
 USE_PERL5=	yes
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
