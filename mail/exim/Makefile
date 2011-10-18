@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
-.include "Makefile.options"
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
@@ -41,7 +41,8 @@ MAKE_JOBS_UNSAFE=	yes
 .error "You forgot to define FETCH_ALL to create the sane distinfo"
 .endif
 
-.include <bsd.port.pre.mk>
+.include "options"
+.include <bsd.port.options.mk>
 
 .if defined(WITH_SA_EXIM)
 .if defined(WITH_KAS)
@@ -77,7 +78,7 @@ PLIST_SUB+=	SO_1024=""
 PLIST_SUB+=	SO_1024="@comment "
 .endif
 
-EXIM_VERSION=	4.76
+EXIM_VERSION=	4.77
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 
@@ -110,8 +111,7 @@ NO_INSTALL_MANPAGES=	yes
 PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
-		experimental-spec.txt filter.txt pcrepattern.txt \
-		pcretest.txt spec.txt
+		experimental-spec.txt filter.txt spec.txt
 
 PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
 
@@ -165,6 +165,10 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # You should not need to fiddle with anything below this point.
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+
+.if defined(WITH_LISTMATCH_RHS)
+SEDLIST+=	-e 's,^\# (EXPAND_LISTMATCH_RHS=),\1,'
+.endif
 
 .if defined(WITH_DCC)
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DCC=),\1,'
@@ -619,4 +623,15 @@ post-install:
 
 .endif
 
-.include <bsd.port.post.mk>
+show-variables-list:
+	@${SH} -c 'set -- ${OPTIONS:C/".*"//g}; \
+	while [ -n "$$1" ]; do \
+		opt="$$1"; shift; \
+		status="$$1"; shift; \
+		case "X$$status" in \
+		X[Oo][Nn]) echo "WITH_$$opt"=yes; ;; \
+		X[Oo][Ff][Ff]) echo "WITHOUT_$$opt"=yes; ;; \
+		esac; \
+	done'
+
+.include <bsd.port.mk>

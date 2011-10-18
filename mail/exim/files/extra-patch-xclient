@@ -1,22 +1,21 @@
-
---- src/globals.c.orig	2007-12-10 18:59:58.297661332 +0300
-+++ src/globals.c	2007-12-10 19:00:22.299029091 +0300
-@@ -621,6 +621,7 @@
+--- src/globals.c.orig	2011-10-10 09:18:13.000000000 +0400
++++ src/globals.c	2011-10-16 02:33:45.000000000 +0400
+@@ -633,6 +633,7 @@
  BOOL    helo_verified          = FALSE;
  BOOL    helo_verify_failed     = FALSE;
  uschar *helo_verify_hosts      = NULL;
 +uschar *xclient_allow_hosts    = NULL;
- uschar *hex_digits             = US"0123456789abcdef";
+ const uschar *hex_digits       = CUS"0123456789abcdef";
  uschar *hold_domains           = NULL;
  BOOL    host_checking          = FALSE;
---- src/globals.h.orig	2007-12-10 19:11:45.337953260 +0300
-+++ src/globals.h	2007-12-10 19:12:42.341201691 +0300
-@@ -367,6 +367,7 @@
+--- src/globals.h.orig	2011-10-10 09:18:13.000000000 +0400
++++ src/globals.h	2011-10-16 02:34:09.000000000 +0400
+@@ -398,6 +398,7 @@
  extern BOOL    helo_verified;          /* True if HELO verified */
  extern BOOL    helo_verify_failed;     /* True if attempt failed */
  extern uschar *helo_verify_hosts;      /* Hard check HELO argument for these */
 +extern uschar *xclient_allow_hosts;    /* Allow XCLIENT command for specified hosts */
- extern uschar *hex_digits;             /* Used in several places */
+ extern const uschar *hex_digits;             /* Used in several places */
  extern uschar *hold_domains;           /* Hold up deliveries to these */
  extern BOOL    host_find_failed_syntax;/* DNS syntax check failure */
 --- src/macros.h.orig	2007-08-30 18:31:06.000000000 +0400
