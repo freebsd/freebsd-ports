@@ -1,9 +1,10 @@
 bin/apvlv
 etc/apvlvrc
-%%DOCSDIR%%/apvlvrc.example
-%%DOCSDIR%%/reg.png
-%%DOCSDIR%%/dir.png
-%%DOCSDIR%%/pdf.png
 %%DOCSDIR%%/Startup.pdf
 %%DOCSDIR%%/Startup.tex
+%%DOCSDIR%%/apvlvrc.example
+%%DOCSDIR%%/icons/dir.png
+%%DOCSDIR%%/icons/pdf.png
+%%DOCSDIR%%/icons/reg.png
+@dirrm %%DOCSDIR%%/icons
 @dirrm %%DOCSDIR%%
