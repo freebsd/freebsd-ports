@@ -1,0 +1,7 @@
+List::Gen provides higher order functions, list comprehensions, generators,
+iterators, and other utility functions for working with lists. walk lists with
+any step size you want, create lazy ranges and arrays with a map like syntax
+that generate values on demand. there are several other hopefully useful
+functions, and all functions from List::Util are available.
+
+WWW: http://search.cpan.org/dist/List-Gen/

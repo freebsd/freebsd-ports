@@ -1901,6 +1901,7 @@
     SUBDIR += p5-Lingua-JA-Fold
     SUBDIR += p5-List-AllUtils
     SUBDIR += p5-List-Cycle
+    SUBDIR += p5-List-Gen
     SUBDIR += p5-List-Group
     SUBDIR += p5-List-Permutor
     SUBDIR += p5-List-PowerSet
