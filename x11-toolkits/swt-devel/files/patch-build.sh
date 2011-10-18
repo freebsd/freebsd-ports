@@ -1,6 +1,6 @@
---- build.sh.orig	2009-10-30 17:04:40.000000000 -0500
-+++ build.sh	2009-12-01 11:28:40.000000000 -0600
-@@ -44,6 +44,9 @@
+--- build.sh.orig	2011-02-10 17:29:10.000000000 +0000
++++ build.sh	2011-10-01 22:32:40.000000000 +0000
+@@ -54,6 +54,9 @@
  	"FreeBSD")
  		SWT_OS=freebsd
  		MAKEFILE=make_freebsd.mak
@@ -10,12 +10,12 @@
  		;;
  	*)
  		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
-@@ -75,10 +78,10 @@
+@@ -92,10 +95,10 @@
  esac
- 
+ echo "Model is ${MODEL}"
  # For 64-bit CPUs, we have a switch
--if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' ]; then
-+if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'amd64' ]; then
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparc64'  -o ${MODEL} = 's390x' ]; then
++if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparc64'  -o ${MODEL} = 's390x' -o ${MODEL} = 'amd64' ]; then
  	SWT_PTR_CFLAGS=-DJNI64
  	if [ -d /lib64 ]; then
 -		XLIB64=-L/usr/X11R6/lib64
@@ -23,15 +23,15 @@
  		export XLIB64
  	fi
  	if [ ${MODEL} = 'ppc64' ]; then
-@@ -89,6 +92,7 @@
- 	export SWT_PTR_CFLAGS
+@@ -131,6 +134,7 @@
+ 	export SWT_LFLAGS SWT_PTR_CFLAGS
  fi
  
 +if [ x${MAKE_GNOME} = "xmake_gnome" ]; then
- if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
+ if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES"  -a 	 ${MODEL} != "sparc64" 	]; then
  	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
  	MAKE_GNOME=make_gnome
-@@ -96,7 +100,9 @@
+@@ -138,7 +142,9 @@
  	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
  	echo "    *** SWT Program support for GNOME will not be compiled."
  fi
@@ -41,13 +41,13 @@
  if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
  	echo "Cairo found, compiling SWT support for the cairo graphics library."
  	MAKE_CAIRO=make_cairo
-@@ -104,30 +110,17 @@
+@@ -146,30 +152,17 @@
  	echo "Cairo not found:"
  	echo "    *** Advanced graphics support using cairo will not be compiled."
  fi
 +fi
  
--if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
+-if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" -a ${MODEL} != 'sparc64' ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 -		MOZILLA_INCLUDES=`pkg-config --cflags mozilla-xpcom`
 -		MOZILLA_LIBS=`pkg-config --libs mozilla-xpcom`
@@ -81,4 +81,4 @@
 +	echo "    *** Mozilla embedding support will not be compiled."
  fi
  
- # Find AWT if available
+ if [ x`pkg-config --exists webkit-1.0 && echo YES` = "xYES" ]; then
