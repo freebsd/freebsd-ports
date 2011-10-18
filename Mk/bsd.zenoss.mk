@@ -45,7 +45,8 @@ PYSETUP=		./setup.py
 MAKE_ENV+=		ZENHOME=${ZENHOME} \
 				INSTANCE_HOME=${ZENHOME} \
 				PYTHONPATH=${ZENHOME}/lib/python \
-				PATH=${ZENHOME}/bin:${PATH}
+				PATH=${ZENHOME}/bin:${PATH} \
+				PYTHONDONTWRITEBYTECODE=yes
 
 .if !defined(UID)
 UID!=		/usr/bin/id -u
