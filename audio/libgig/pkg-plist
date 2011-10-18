@@ -1,12 +1,12 @@
-bin/rifftree
 bin/dlsdump
 bin/gigdump
 bin/gigextract
-include/RIFF.h
+bin/rifftree
 include/DLS.h
+include/RIFF.h
 include/gig.h
-lib/libgig.so.10
-lib/libgig.so
-lib/libgig.la
 lib/libgig.a
+lib/libgig.la
+lib/libgig.so
+lib/libgig.so.10
 libdata/pkgconfig/gig.pc
