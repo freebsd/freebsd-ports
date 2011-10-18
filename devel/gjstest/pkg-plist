@@ -1,0 +1,36 @@
+bin/gjstest
+%%DATADIR%%/internal/js/browser/browser.css
+%%DATADIR%%/internal/js/browser/html_builder.js
+%%DATADIR%%/internal/js/browser/run_tests.js
+%%DATADIR%%/internal/js/call_expectation.js
+%%DATADIR%%/internal/js/error_utils.js
+%%DATADIR%%/internal/js/expect_that.js
+%%DATADIR%%/internal/js/mock_function.js
+%%DATADIR%%/internal/js/mock_instance.js
+%%DATADIR%%/internal/js/namespace.js
+%%DATADIR%%/internal/js/run_test.js
+%%DATADIR%%/internal/js/stack_frame.js
+%%DATADIR%%/internal/js/stack_utils.js
+%%DATADIR%%/internal/js/test_environment.js
+%%DATADIR%%/internal/js/use_global_namespace.js
+%%DATADIR%%/public/actions.js
+%%DATADIR%%/public/assertions.js
+%%DATADIR%%/public/logging.js
+%%DATADIR%%/public/matcher_types.js
+%%DATADIR%%/public/matchers/array_matchers.js
+%%DATADIR%%/public/matchers/boolean_matchers.js
+%%DATADIR%%/public/matchers/combining_matchers.js
+%%DATADIR%%/public/matchers/equality_matchers.js
+%%DATADIR%%/public/matchers/function_matchers.js
+%%DATADIR%%/public/matchers/missing_arg_matchers.js
+%%DATADIR%%/public/matchers/number_matchers.js
+%%DATADIR%%/public/matchers/string_matchers.js
+%%DATADIR%%/public/mocking.js
+%%DATADIR%%/public/register.js
+%%DATADIR%%/public/stringify.js
+@dirrm %%DATADIR%%/public/matchers
+@dirrm %%DATADIR%%/public
+@dirrm %%DATADIR%%/internal/js/browser
+@dirrm %%DATADIR%%/internal/js
+@dirrm %%DATADIR%%/internal
+@dirrm %%DATADIR%%

@@ -1,0 +1,21 @@
+Google JS Test is a fast javascript unit testing framework that runs on the V8
+engine, without needing to launch a full browser.
+
+Features include:
+- Extremely fast test startup and execution time, without having to run a
+  browser.
+- Clean, readable output in the case of both passing and failing tests.
+- A browser-based test driver that can simply be refreshed whenever JS is
+  changed.
+- Style and semantics that resemble Google Test for C++.
+- A built-in mocking framework that requires minimal boilerplate code (e.g. no
+  $tearDown or $verifyAll) with style and semantics based on the Google C++
+  Mocking Framework.
+
+The trade-off is that since tests are run in V8 without a browser, there is no
+DOM available. You can still use Google JS Test for tests of DOM-manipulating
+code however; see "Is it for me?" [1] for more details.
+
+[1] http://code.google.com/p/google-js-test/wiki/IsItForMe
+
+WWW: http://code.google.com/p/google-js-test/

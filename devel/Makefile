@@ -480,6 +480,7 @@
     SUBDIR += gitg
     SUBDIR += gitolite
     SUBDIR += gittrac
+    SUBDIR += gjstest
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
