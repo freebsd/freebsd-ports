@@ -2,7 +2,7 @@
 etc/modules.conf
 etc/scl.conf
 @exec test -f %D/etc/syslog-ng.conf || cp -p %D/etc/syslog-ng.conf.sample %D/etc/syslog-ng.conf
-@unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.sample; then rm -f %D/etc/syslog-ng.conf; fi
+@unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.dist; then rm -f %D/etc/syslog-ng.conf; fi
 etc/syslog-ng.conf.dist
 etc/syslog-ng.conf.sample
 bin/loggen
