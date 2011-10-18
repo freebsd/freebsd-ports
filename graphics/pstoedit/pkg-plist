@@ -42,6 +42,25 @@ share/aclocal/pstoedit.m4
 %%PORTDOCS%%%%DOCSDIR%%/changelog.htm
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/pstoedit.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cliptst2.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/closepathtest.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colrtest.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eofill.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eschertr.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/figtext.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/illusion.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_1.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_2.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_3.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/largetextspace.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/letters.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneimg.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathtest.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textmat.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twopages.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/woglim.ps
+%%DATADIR%%/drvhpgl.pencolors
 %%DATADIR%%/examplefigmap.fmp
 %%DATADIR%%/latex2e.fmp
 %%DATADIR%%/mpost.fmp
@@ -52,5 +71,6 @@ share/aclocal/pstoedit.m4
 @dirrm %%DATADIR%%/swffonts
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/pstoedit
 @dirrm include/pstoedit
