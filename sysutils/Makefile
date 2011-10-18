@@ -220,6 +220,7 @@
     SUBDIR += fcron
     SUBDIR += fdupes
     SUBDIR += fetchlog
+    SUBDIR += fex
     SUBDIR += ffs2recov
     SUBDIR += file
     SUBDIR += filedupe
