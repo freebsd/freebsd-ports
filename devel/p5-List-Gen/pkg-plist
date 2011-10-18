@@ -1,0 +1,15 @@
+%%SITE_PERL%%/List/Gen.pm
+%%SITE_PERL%%/List/Gen/Benchmark.pm
+%%SITE_PERL%%/List/Gen/Cookbook.pm
+%%SITE_PERL%%/List/Gen/Haskell.pm
+%%SITE_PERL%%/List/Gen/Lazy.pm
+%%SITE_PERL%%/List/Gen/Lazy/Builtins.pm
+%%SITE_PERL%%/List/Gen/Lazy/Ops.pm
+%%SITE_PERL%%/List/Gen/Perl6.pm
+%%SITE_PERL%%/List/Generator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Gen/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Gen
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
+@dirrm %%SITE_PERL%%/List/Gen/Lazy
+@dirrm %%SITE_PERL%%/List/Gen
+@dirrmtry %%SITE_PERL%%/List
