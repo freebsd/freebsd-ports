@@ -5,27 +5,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=		splaytk
-PORTVERSION=		2.0
-PORTREVISION=	1
-CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/players
+PORTNAME=	splaytk
+PORTVERSION=	2.0
+PORTREVISION=	2
+CATEGORIES=	audio
+MASTER_SITES=	SUNSITE/apps/sound/players
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tk based interface for splay
 
-RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay \
-		wish8.2:${PORTSDIR}/x11-toolkits/tk82
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/splay-tk-2.0
+RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/splay-tk-${PORTVERSION}
+
+USE_TK_WRAPPER=	yes
+
+DATADIR=	${PREFIX}/share/splay-tk
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/splay-tk.tcl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/splay-tk.tcl ${PREFIX}/bin/splay-tk
-	@${MKDIR} ${PREFIX}/lib/splay-tk
-	@${INSTALL_DATA} ${WRKSRC}/*.xbm ${PREFIX}/lib/splay-tk
-	@${INSTALL_DATA} ${WRKSRC}/splay-tk.gif ${PREFIX}/lib/splay-tk
+	${INSTALL_SCRIPT} ${WRKSRC}/splay-tk.tcl ${PREFIX}/bin/splay-tk
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.xbm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/splay-tk.gif ${DATADIR}
 
 .include <bsd.port.mk>

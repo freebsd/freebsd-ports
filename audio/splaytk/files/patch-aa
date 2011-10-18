@@ -5,9 +5,9 @@
 --- 1,9 ----
 + #!/bin/sh
 + # start up wish \
-+ exec wish8.2 "$0" "$@"
++ exec wish "$0" "$@"
 + 
-+ set libdir /usr/local/lib/splay-tk
++ set libdir %%DATADIR%%
 + set images ${libdir}
   #####################################################################
   # SPlaY-Tk v2.0p1, (C) Andrew Hobgood                               #
