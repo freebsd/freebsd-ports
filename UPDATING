@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111019:
+  AFFECTS: users of mail/thunderbird or www/seamonkey with lightning 
+           plugin installed.
+  AUTHOR: gecko@FreeBSD.org
+
+  To get an up to date version of lightning you should use the new
+  LIGHTNING option in mail/thunderbird or www/seamonkey. This option
+  is not enabled by default so you have to run "make config" prior
+  to the build. The old deskutils/lightning-thunderbird and 
+  deskutils/lightning ports should no longer be used and will be
+  removed very soon.
+
+  Like other XPIs ports, lightning now registers itself as a global
+  extension and doesn't create the XPI to be installed manually.
+  Upgrading users should remove lightning from their profile before
+  installing Thunderbird or SeaMonkey the first time with the new
+  LIGHTNING option enabled.
+
 20111018:
   AFFECTS: users of mail/postfix-current
   AUTHOR: Sahil Tandon <sahil@FreeBSD.org>
