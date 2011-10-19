@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freecol
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.3
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -30,7 +30,7 @@ PLIST_FILES=	bin/freecol
 PORTDATA=	*
 PORTDOCS=	*
 
-DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" false
+DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" "false"
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
