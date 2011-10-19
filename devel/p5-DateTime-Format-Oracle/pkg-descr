@@ -1,0 +1,17 @@
+DateTime::Format::Oracle may be used to convert Oracle date and timestamp values
+into DateTime objects. It also can take a DateTime object and produce a date
+string matching the NLS_DATE_FORMAT.
+
+Oracle has flexible date formatting via its NLS_DATE_FORMAT session variable.
+Date values will be returned from Oracle according to the current value of that
+variable. Date values going into Oracle must also match the current setting of
+NLS_DATE_FORMAT.
+
+Timestamp values will match either the NLS_TIMESTAMP_FORMAT or
+NLS_TIMESTAMP_TZ_FORMAT session variables.
+
+This module keeps track of these Oracle session variable values by examining
+environment variables of the same name. Each time one of Oracle's formatting
+session variables is updated, the %ENV hash must also be updated.
+
+WWW: http://search.cpan.org/dist/DateTime-Format-Oracle/
