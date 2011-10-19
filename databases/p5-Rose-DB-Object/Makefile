@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB-Object
-PORTVERSION=	0.7950
+PORTVERSION=	0.7960
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -28,8 +28,6 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-
-.include <bsd.port.options.mk>
 
 MAN3=	Rose::DB::Object.3 \
 	Rose::DB::Object::Cached.3 \
