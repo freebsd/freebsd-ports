@@ -279,6 +279,7 @@
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
+    SUBDIR += horde4-ansel
     SUBDIR += horde4-base
     SUBDIR += horde4-wicked
     SUBDIR += hotcrp
