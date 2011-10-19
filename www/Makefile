@@ -1676,8 +1676,6 @@
     SUBDIR += script4rss
     SUBDIR += seamonkey
     SUBDIR += seamonkey-i18n
-    SUBDIR += seamonkey2
-    SUBDIR += seamonkey2-i18n
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serf

@@ -192,7 +192,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 24+ 20+ 24 20
+#                         Available values: yes 24+ 24
 #                         NOTE:
 #                         default value 24 is used in case of USE_SEAMONKEY=yes
 #
@@ -296,12 +296,11 @@ _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
 _SEAMONKEY_DEFAULT_VERSION=	24
-_SEAMONKEY_VERSIONS=		24 20
-_SEAMONKEY_RANGE_VERSIONS=	24+ 20+
+_SEAMONKEY_VERSIONS=		24
+_SEAMONKEY_RANGE_VERSIONS=	24+
 
 # For specifying [24, 20, ..]+
-_SEAMONKEY_24P=	24 ${_SEAMONKEY_20P}
-_SEAMONKEY_20P=	20
+_SEAMONKEY_24P=	24
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -311,8 +310,6 @@ USE_SEAMONKEY=	${_SEAMONKEY_DEFAULT_VERSION}
 # Setting/finding SeaMonkey version we want.
 .if exists(${LOCALBASE}/bin/seamonkey)
 _SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
-.elif exists(${LOCALBASE}/bin/seamonkey2)
-_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey2 --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed SeaMonkey version matches the wanted one
@@ -346,7 +343,6 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-${USE_SEAMONKEY:C
 
 # Dependence lines for different SeaMonkey versions
 24_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
-20_DEPENDS=		${LOCALBASE}/lib/seamonkey2/seamonkey:${PORTSDIR}/www/seamonkey2
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
