@@ -683,6 +683,7 @@
     SUBDIR += pxytest
     SUBDIR += py-PF
     SUBDIR += py-RestrictedPython
+    SUBDIR += py-arm
     SUBDIR += py-bcrypt
     SUBDIR += py-cerealizer
     SUBDIR += py-clamav
