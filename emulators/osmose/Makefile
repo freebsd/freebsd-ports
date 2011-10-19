@@ -6,42 +6,40 @@
 #
 
 PORTNAME=	osmose
-PORTVERSION=	0.6.30
-PORTREVISION=	3
+PORTVERSION=	0.9.96
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
-DISTNAME=	${PORTNAME}-final-src
+MASTER_SITES=	http://bcz.asterope.fr/osmose/
+DISTNAME=	Osmose-${PORTVERSION:S/./-/g}-QT
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sega Master System emulator
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
-USE_DOS2UNIX=	yes
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+
 USE_ZIP=	yes
-USE_GMAKE=	yes
-USE_SDL=	sdl
-NO_WRKSUBDIR=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui opengl moc_build qmake_build uic_build
+QMAKEFLAGS+=	TARGET=release
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
-
-PLIST_FILES=	bin/osmose
-PORTDOCS=	readme.txt
+PORTDOCS=	Readme.txt TODO.txt
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=yes
-.endif
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>

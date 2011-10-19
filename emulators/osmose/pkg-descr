@@ -1,12 +1,9 @@
 Osmose is another Sega Master System emulator. The emulator is released as
 open source project, under GPL license.
 
-The emulator relies on SDL library, zlib, and uses Alessandro Scotti z80 cpu
+The emulator relies on Qt library, zlib, and uses Alessandro Scotti z80 cpu
 core. Alessandro, is the author of the nice multi machine emulator 'Tickle'.
 Rom decompression relies on Zlib and Gilles Vollant unzip package. Scale2x
 video Filter is based on Andrea Mazzoleni's algorithm.
 
-WWW: http://bcz.emu-france.com/
-
-- Alejandro Pulver
-alejandro@varnet.biz
+WWW: http://bcz.asterope.fr/osmose.htm
