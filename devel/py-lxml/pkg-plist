@@ -26,6 +26,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/etree.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/etree.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/etree.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/etree_defs.h
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/etreepublic.pxd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/ElementSoup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/ElementSoup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/ElementSoup.pyo
@@ -90,6 +92,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/sax.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/sax.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/sax.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/tree.pxd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/usedoctest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/usedoctest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/usedoctest.pyo
@@ -368,6 +371,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.soupparser-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.usedoctest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.usedoctest-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.include-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.include-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron.Schematron-class.html
@@ -511,6 +516,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.html5parser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.soupparser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.usedoctest-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.include-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.isoschematron-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.objectify-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.pyclasslookup-module.html
@@ -551,7 +557,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.iterparse-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.3.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.3.1.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/cssselect.html
@@ -567,13 +573,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/objectify.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/parsing.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/performance.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/proxies.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/pubkey.asc
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/resolvers.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/sax.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/sitemap.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/tagpython-big.png
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/tagpython.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/validation.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/xpathxslt.html
@@ -606,7 +611,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ep2008/proxies.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/lxml-ep2008.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/lxml-ep2008.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/s5/rst2s5.py
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/tagpython.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default/bodybg.gif
@@ -627,14 +631,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/valgrind.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/validation.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/xpathxslt.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ep2008
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/licenses
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/html/api
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui/default
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ep2008
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/rng
