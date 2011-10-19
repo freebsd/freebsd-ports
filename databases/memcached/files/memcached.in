@@ -34,7 +34,7 @@ if [ -n "$2" ]; then
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
 	else
-		echo "$0: extra argument ignored"
+		echo "%%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%%: extra argument ignored"
 	fi
 else
 	if [ -n "${memcached_profiles}" -a -n "$1" ]; then
@@ -60,7 +60,7 @@ else
 				;;
 			esac
 			echo "===> memcached profile: ${profile}"
-			if $0 $1 ${profile} ; then
+			if %%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
 				success="${profile} ${success:-}"
 			else
 				failed="${profile} (${retcode}) ${failed:-}"

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.7
-PORTREVISION=	2
+PORTVERSION=	1.4.9
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -21,11 +20,11 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 CONFLICTS=	memcached-1.2*
 
 USE_RC_SUBR=	memcached
+SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix=
 
-OPTIONS=	REPCACHED	"Enable data replication feature"	off \
-		SASL		"Enable SASL support"			off
+OPTIONS=	SASL		"Enable SASL support"			off
 
 MAN1=		memcached.1
 
@@ -40,14 +39,6 @@ PORTDOCS=	protocol.txt readme.txt
 
 .if ${OSVERSION} >= 800000
 CFLAGS+=	-fstack-protector
-.endif
-
-.if defined(WITH_REPCACHED)
-# WWW: http://repcached.lab.klab.org/
-PATCH_SITES+=		http://mdounin.ru/files/
-PATCH_DIST_STRIP+=	-p1
-PATCHFILES+=		repcached-2.3.1-${PORTVERSION}.patch.gz
-CONFIGURE_ARGS+=	--enable-replication
 .endif
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)

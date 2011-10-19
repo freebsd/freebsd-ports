@@ -1,4 +1,2 @@
-SHA256 (memcached-1.4.7.tar.gz) = 925837a4cf440e3cb451e338413ed9ad1429fd0d80ba4d903955f5fed8da7be6
-SIZE (memcached-1.4.7.tar.gz) = 307741
-SHA256 (repcached-2.3.1-1.4.7.patch.gz) = bcf4fa79eff5a8174669601a317718b4479650c3e9098da582d97ed6c3d3957c
-SIZE (repcached-2.3.1-1.4.7.patch.gz) = 19123
+SHA256 (memcached-1.4.9.tar.gz) = 854a5fa6dfde478d1bb440498e378bd073f303d51bb82c611001eecdec9b4a79
+SIZE (memcached-1.4.9.tar.gz) = 311591
