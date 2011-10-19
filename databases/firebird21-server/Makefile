@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	2.1.3
-PORTREVISION?=	1
+PORTVERSION=	2.1.4
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Release/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.18185-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.18393-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -176,7 +176,10 @@ do-install:
 	${INSTALL_FB} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb ${LOCALSTATEDIR}/help
 
 	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl
-	${INSTALL_FB} -m 0444 ${WRKSRC}/gen/firebird/misc/fbintl.conf ${LIBEXECDIR}/intl/
+.if !exists(${CONFDIR}/fbintl.conf)
+	${INSTALL_FB} -m 0444 ${WRKSRC}/gen/firebird/misc/fbintl.conf ${CONFDIR}
+.endif
+	${INSTALL_FB} -m 0444 ${WRKSRC}/gen/firebird/misc/fbintl.conf ${CONFDIR}/fbintl.conf.sample
 .else
 # defined CLIENT_ONLY
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
