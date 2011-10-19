@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.8.10.1
+PORTVERSION=	2.8.12.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
@@ -16,14 +16,15 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
+DIST_SUBDIR=	python
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 USE_GETTEXT=	yes
 

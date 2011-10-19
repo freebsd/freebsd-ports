@@ -185,15 +185,72 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/peakmeter.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/peakmeter.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/peakmeter.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_constants.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_constants.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_constants.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_handlers.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_handlers.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persist_handlers.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persistencemanager.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persistencemanager.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist/persistencemanager.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/piectrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/piectrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/piectrl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pybusyinfo.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pybusyinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pybusyinfo.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pycollapsiblepane.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pycollapsiblepane.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pycollapsiblepane.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pygauge.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pygauge.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pygauge.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pyprogress.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pyprogress.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/pyprogress.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_aui.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_aui.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_aui.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_default.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_default.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_default.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_internal.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_internal.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_internal.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_msw.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_msw.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/art_msw.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/bar.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/bar.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/bar.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/buttonbar.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/buttonbar.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/buttonbar.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/control.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/control.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/control.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/gallery.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/gallery.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/gallery.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/page.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/page.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/page.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/panel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/panel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/panel.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/toolbar.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/toolbar.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon/toolbar.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/rulerctrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/rulerctrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/rulerctrl.pyo
@@ -212,6 +269,12 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/toasterbox.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/toasterbox.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/toasterbox.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ultimatelistctrl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ultimatelistctrl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ultimatelistctrl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/zoombar.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/zoombar.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/zoombar.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.pyo
@@ -429,6 +492,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/intctrl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/itemspicker.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/itemspicker.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/itemspicker.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/langlistctrl.pyo
@@ -483,6 +549,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins/treemixin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/msgpanel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/msgpanel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/msgpanel.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/multisash.pyo
@@ -540,9 +609,156 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/printout.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/printout.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/printout.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/autosetuppubsubv1.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/autosetuppubsubv1.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/autosetuppubsubv1.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/listenerimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/listenerimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/listenerimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publisher.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publisher.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publisher.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publishermixin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publishermixin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/publishermixin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicargspecimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicargspecimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicargspecimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicmgrimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicmgrimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1/topicmgrimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/callables.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/callables.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/callables.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/datamsg.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/datamsg.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/datamsg.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/listenerimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/listenerimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/listenerimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publisher.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publisher.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publisher.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publishermixin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publishermixin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/publishermixin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicargspecimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicargspecimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicargspecimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicmgrimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicmgrimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs/topicmgrimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listener.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listener.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listener.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listenerbase.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listenerbase.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/listenerbase.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr_old.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr_old.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/notificationmgr_old.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/policies.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/policies.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/policies.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/publisherbase.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/publisherbase.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/publisherbase.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicargspec.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicargspec.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicargspec.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicdefnprovider.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicdefnprovider.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicdefnprovider.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicexc.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicexc.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicexc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicmgr.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicmgr.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicmgr.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicobj.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicobj.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicobj.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topictreetraverser.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topictreetraverser.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topictreetraverser.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicutils.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicutils.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/topicutils.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/treeconfig.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/treeconfig.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/treeconfig.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/validatedefnargs.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/validatedefnargs.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/validatedefnargs.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/weakmethod.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/weakmethod.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/weakmethod.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pub.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pub.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pub.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/pub.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/pub.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/pub.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/utils.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/pub.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/pub.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/pub.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/utils.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsubconf.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsubconf.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsubconf.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setuparg1.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setuparg1.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setuparg1.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupkwargs.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupkwargs.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupkwargs.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv1.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv1.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv1.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv2.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv2.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/setupv2.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/exchandling.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/exchandling.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/exchandling.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/globalsettings.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/globalsettings.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/globalsettings.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/misc.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/misc.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/misc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/notification.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/notification.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/notification.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreeprinter.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreeprinter.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreeprinter.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreevisitor.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreevisitor.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils/topictreevisitor.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pydocview.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pydocview.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pydocview.pyo
@@ -633,6 +849,13 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyShell.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyShell.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyShell.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlices.ico
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlices.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlices.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlices.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlicesShell.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlicesShell.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PySlicesShell.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyWrap.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyWrap.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/PyWrap.pyo
@@ -646,6 +869,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crust.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crust.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crust.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crustslices.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crustslices.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/crustslices.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/dispatcher.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/dispatcher.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/dispatcher.pyo
@@ -673,12 +899,24 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/introspect.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/introspect.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/magic.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/magic.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/magic.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/parse.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/parse.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/parse.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/path.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/path.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/path.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/pseudo.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/pseudo.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/pseudo.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/shell.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/shell.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/shell.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/sliceshell.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/sliceshell.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/sliceshell.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py/version.pyo
@@ -691,7 +929,6 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/AUTHORS
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/CHANGELOG
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/COPYING
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/Editra
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/Editra.pyw
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/FAQ
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/INSTALL
@@ -714,6 +951,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/en_US/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/es_ES/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/fr_FR/LC_MESSAGES/Editra.mo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/gl_ES/LC_MESSAGES/Editra.mo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hr_HR/LC_MESSAGES/Editra.mo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hu_HU/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/it_IT/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ja_JP/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/lv_LV/LC_MESSAGES/Editra.mo
@@ -722,6 +962,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pl_PL/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pt_BR/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ru_RU/LC_MESSAGES/Editra.mo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sk_SK/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sl_SI/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sr_RS/LC_MESSAGES/Editra.mo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sv_SE/LC_MESSAGES/Editra.mo
@@ -732,6 +973,8 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/Editra.icns
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra.ico
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra.png
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra256.png
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra64.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra_doc.icns
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra_doc.ico
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/editra_doc.png
@@ -740,6 +983,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/AUTHORS
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/COPYING
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/about.png
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/add.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/advanced.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/attribute.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/backward.png
@@ -784,6 +1028,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/readonly.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/redo.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/refresh.png
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/remove.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/rtf_gen.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/save.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu/saveas.png
@@ -825,18 +1070,18 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/toolbar/theme.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/toolbar/undo.png
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/toolbar/web.png
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-0.8-py2.4.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-0.8-py2.5.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-0.8-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.4-py2.4.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.4-py2.5.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.4-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.2-py2.4.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.2-py2.5.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.2-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.7-py2.4.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.7-py2.5.egg
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.7-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/CodeBrowser-1.3-py2.7.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.6-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.6-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/FileBrowser-1.6-py2.7.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.11-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.11-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/Launch-1.11-py2.7.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.8-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.8-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins/PyShell-0.8-py2.7.egg
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/setup.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/setup.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/setup.pyo
@@ -873,6 +1118,63 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/doctools.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/doctools.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/doctools.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_threads.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_threads.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_threads.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_trash.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_trash.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_trash.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_winrecycle.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_winrecycle.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/_winrecycle.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/backupmgr.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/backupmgr.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/backupmgr.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/calllock.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/calllock.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/calllock.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/clipboard.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/clipboard.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/clipboard.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/cmenumgr.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/cmenumgr.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/cmenumgr.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/e_weblib.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/e_weblib.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/e_weblib.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/efilehist.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/efilehist.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/efilehist.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fchecker.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fchecker.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fchecker.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileimpl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileimpl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileimpl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileutil.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileutil.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/fileutil.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/histcache.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/histcache.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/histcache.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/logfile.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/logfile.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/logfile.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/miscutil.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/miscutil.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/miscutil.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/osutil.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/osutil.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/osutil.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/searcheng.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/searcheng.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/searcheng.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/txtutil.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/txtutil.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib/txtutil.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/__init__.pyo
@@ -888,18 +1190,33 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ctrlbox.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ctrlbox.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ctrlbox.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecbasewin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecbasewin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecbasewin.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/eclutil.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/eclutil.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/eclutil.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecpickers.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecpickers.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/ecpickers.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistctrl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistctrl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistctrl.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistmix.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistmix.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/elistmix.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/encdlg.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/encdlg.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/encdlg.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/errdlg.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/errdlg.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/errdlg.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filemgrdlg.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filemgrdlg.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filemgrdlg.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filterdlg.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filterdlg.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/filterdlg.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/finddlg.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/finddlg.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib/finddlg.pyo
@@ -930,6 +1247,15 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basestc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basestc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basestc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basewin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basewin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_basewin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_book.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_book.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_book.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_bookmark.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_bookmark.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_bookmark.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_cmdbar.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_cmdbar.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_cmdbar.pyo
@@ -960,6 +1286,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_main.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_main.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_main.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_marker.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_marker.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_marker.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_mdlg.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_mdlg.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_mdlg.pyo
@@ -978,12 +1307,12 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_print.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_print.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_print.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_script.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_script.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_script.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_search.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_search.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_search.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_shelf.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_shelf.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_shelf.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_statbar.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_statbar.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_statbar.pyo
@@ -999,12 +1328,21 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_theme.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_theme.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_theme.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_thread.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_thread.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_thread.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_toolbar.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_toolbar.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_toolbar.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_txt.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_txt.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_txt.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_vim.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_vim.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_vim.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_xml.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_xml.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ed_xml.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/edimage.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/edimage.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/edimage.pyo
@@ -1012,9 +1350,48 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_constants.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_constants.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_constants.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_switcherdialog.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_switcherdialog.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_switcherdialog.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_utilities.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_utilities.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/aui_utilities.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibar.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibar.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibar.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibook.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibook.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/auibook.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/dockart.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/dockart.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/dockart.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/framemanager.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/framemanager.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/framemanager.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabart.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabart.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabart.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabmdi.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabmdi.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui/tabmdi.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/decorlib.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/decorlib.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/decorlib.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/_util.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/_util.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/_util.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/fields.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml/fields.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/embeddedimage.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/embeddedimage.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/embeddedimage.pyo
@@ -1033,6 +1410,201 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pubsub.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pubsub.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pubsub.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/cmdline.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/cmdline.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/cmdline.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/console.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/console.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/console.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filter.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filter.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filter.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatter.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatter.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatter.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/_mapping.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/_mapping.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/_mapping.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/bbcode.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/bbcode.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/bbcode.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/html.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/html.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/html.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/img.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/img.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/img.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/latex.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/latex.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/latex.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/other.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/other.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/other.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/rtf.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/rtf.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/rtf.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/svg.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/svg.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/svg.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal256.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal256.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters/terminal256.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexer.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexer.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexer.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_asybuiltins.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_asybuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_asybuiltins.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_clbuiltins.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_clbuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_clbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_luabuiltins.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_luabuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_luabuiltins.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_mapping.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_mapping.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_mapping.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_phpbuiltins.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_phpbuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_phpbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_vimbuiltins.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_vimbuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/_vimbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/agile.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/agile.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/agile.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/asm.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/asm.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/asm.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/compiled.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/compiled.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/compiled.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/dotnet.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/dotnet.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/dotnet.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/functional.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/functional.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/functional.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/hdl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/hdl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/hdl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/math.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/math.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/math.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/other.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/other.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/other.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/parsers.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/parsers.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/parsers.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/special.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/special.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/special.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/templates.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/templates.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/templates.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/text.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/text.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/text.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/web.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/web.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers/web.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/plugin.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/plugin.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/plugin.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/scanner.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/scanner.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/scanner.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/style.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/style.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/style.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/autumn.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/autumn.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/autumn.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/borland.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/borland.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/borland.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/bw.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/bw.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/bw.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/colorful.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/colorful.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/colorful.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/default.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/default.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/default.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/emacs.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/emacs.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/emacs.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/friendly.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/friendly.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/friendly.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/fruity.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/fruity.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/fruity.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/manni.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/manni.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/manni.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/monokai.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/monokai.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/monokai.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/murphy.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/murphy.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/murphy.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/native.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/native.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/native.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/pastie.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/pastie.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/pastie.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/perldoc.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/perldoc.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/perldoc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/tango.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/tango.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/tango.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/trac.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/trac.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/trac.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vim.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vim.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vim.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vs.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vs.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles/vs.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/token.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/token.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/token.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/unistring.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/unistring.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/unistring.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/util.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/util.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/util.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcprint.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcprint.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcprint.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcspellcheck.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcspellcheck.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/stcspellcheck.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/vertedit.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/vertedit.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/vertedit.pyo
@@ -1067,174 +1639,216 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/actionscript.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/actionscript.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/actionscript.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ada.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ada.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ada.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/apache.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/apache.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/apache.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm68k.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm68k.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/asm68k.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/batch.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/batch.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/batch.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/boo.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/boo.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/boo.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/caml.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/caml.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/caml.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/cpp.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/cpp.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/cpp.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/css.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/css.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/css.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/d.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/d.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/d.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/diff.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/diff.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/diff.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/django.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/django.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/django.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/dot.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/dot.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/dot.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/editra_ss.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/editra_ss.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/editra_ss.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/edje.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/edje.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/edje.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/eiffel.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/eiffel.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/eiffel.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/erlang.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/erlang.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/erlang.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ferite.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ferite.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ferite.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/flagship.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/flagship.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/flagship.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/fortran.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/fortran.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/fortran.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/groovy.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/groovy.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/groovy.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/gui4cli.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/gui4cli.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/gui4cli.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haskell.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haskell.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haskell.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haxe.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haxe.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/haxe.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/html.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/html.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/html.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/inno.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/inno.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/inno.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/issuelist.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/issuelist.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/issuelist.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/java.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/java.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/java.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/javascript.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/javascript.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/javascript.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/kix.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/kix.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/kix.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/latex.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/latex.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/latex.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lisp.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lisp.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lisp.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lout.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lout.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lout.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lua.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lua.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/lua.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/make.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/make.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/make.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mako.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mako.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mako.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/masm.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/masm.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/masm.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/matlab.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/matlab.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/matlab.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mssql.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mssql.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/mssql.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nasm.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nasm.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nasm.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nsis.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nsis.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/nsis.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pascal.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pascal.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pascal.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/perl.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/perl.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/perl.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/php.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/php.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/php.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pike.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pike.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/pike.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/postscript.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/postscript.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/postscript.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/progress.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/progress.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/progress.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/props.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/props.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/props.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/python.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/python.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/python.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ruby.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ruby.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/ruby.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/s.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/s.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/s.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sh.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sh.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sh.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/smalltalk.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/smalltalk.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/smalltalk.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sql.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sql.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/sql.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/squirrel.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/squirrel.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/squirrel.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_actionscript.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_actionscript.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_actionscript.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ada.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ada.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ada.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_apache.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_apache.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_apache.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm68k.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm68k.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_asm68k.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_batch.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_batch.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_batch.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_boo.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_boo.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_boo.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_caml.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_caml.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_caml.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cobra.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cobra.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cobra.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cpp.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cpp.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_cpp.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_css.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_css.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_css.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_d.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_d.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_d.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_diff.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_diff.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_diff.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_django.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_django.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_django.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_dot.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_dot.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_dot.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_editra_ss.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_editra_ss.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_editra_ss.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_edje.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_edje.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_edje.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_eiffel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_eiffel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_eiffel.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_erlang.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_erlang.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_erlang.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ferite.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ferite.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ferite.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_flagship.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_flagship.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_flagship.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_forth.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_forth.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_forth.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_fortran.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_fortran.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_fortran.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_groovy.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_groovy.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_groovy.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_gui4cli.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_gui4cli.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_gui4cli.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haskell.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haskell.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haskell.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haxe.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haxe.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_haxe.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_html.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_html.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_html.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_inno.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_inno.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_inno.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_issuelist.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_issuelist.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_issuelist.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_java.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_java.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_java.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_javascript.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_javascript.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_javascript.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_kix.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_kix.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_kix.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_latex.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_latex.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_latex.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lisp.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lisp.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lisp.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lout.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lout.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lout.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lua.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lua.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_lua.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_make.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_make.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_make.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mako.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mako.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mako.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_masm.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_masm.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_masm.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_matlab.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_matlab.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_matlab.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mssql.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mssql.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_mssql.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nasm.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nasm.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nasm.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nonmem.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nonmem.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nonmem.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nsis.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nsis.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_nsis.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ooc.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ooc.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ooc.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pascal.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pascal.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pascal.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_perl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_perl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_perl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_php.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_php.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_php.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pike.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pike.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_pike.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_postscript.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_postscript.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_postscript.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_progress.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_progress.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_progress.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_props.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_props.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_props.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_python.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_python.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_python.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ruby.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ruby.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_ruby.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_s.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_s.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_s.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sh.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sh.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sh.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_smalltalk.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_smalltalk.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_smalltalk.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sql.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sql.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_sql.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_squirrel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_squirrel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_squirrel.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_stata.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_stata.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_stata.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_tcl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_tcl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_tcl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vbscript.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vbscript.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vbscript.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_verilog.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_verilog.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_verilog.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vhdl.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vhdl.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_vhdl.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_visualbasic.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_visualbasic.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_visualbasic.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xml.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xml.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xml.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xtext.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xtext.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_xtext.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_yaml.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_yaml.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/_yaml.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syndata.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syndata.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syndata.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synextreg.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synextreg.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synextreg.pyo
@@ -1244,27 +1858,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syntax.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syntax.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/syntax.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/tcl.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/tcl.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/tcl.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vbscript.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vbscript.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vbscript.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/verilog.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/verilog.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/verilog.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vhdl.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vhdl.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/vhdl.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/visualbasic.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/visualbasic.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/visualbasic.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/xml.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/xml.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/xml.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/yaml.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/yaml.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/yaml.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synxml.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synxml.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax/synxml.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/updater.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/updater.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/updater.pyo
@@ -1284,6 +1880,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/styles/default.ess
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/styles/midnight.ess
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/68k_assembly.68k
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/Xtext.xtext
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/actionscript.as
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/ada.adb
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/apache_conf.conf
@@ -1293,6 +1890,8 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/c.c
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/caml.ml
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/cascading_style_sheet.css
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/cilk.cilk
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/cobra.cobra
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/coldfusion.cfm
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/cpp.cpp
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/csharp.cs
@@ -1301,12 +1900,14 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/django.django
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/dos_batch_script.bat
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/dot.dot
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/dsp56k_assembly.56k
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/editra_style_sheet.ess
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/edje.edc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/eiffel.e
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/erlang.erl
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/ferite.fe
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/flagship.prg
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/forth.4th
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/fortran_77.for
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/fortran_95.f95
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/groovy.groovy
@@ -1331,9 +1932,11 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/microsoft_sql.sql
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/netwide_assembler.nasm
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/newlisp.lsp
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/nonmem_control_stream.ctl
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/nullsoft_installer_script.nsi
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/objective_c.mm
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/octave.oct
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/ooc.ooc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/pascal.pas
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/perl.pl
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/php.php
@@ -1351,6 +1954,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/smalltalk.st
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/sql.sql
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/squirrel.nut
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/stata.do
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/svg.svg
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/system_verilog.sv
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax/tcl_tk.tcl
@@ -1542,7 +2146,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython-2.8.10.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython-2.8.12.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyo
@@ -1825,97 +2429,122 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/aui
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourchooser
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/masked
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/ogl
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/docs
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ca_ES@valencia/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ca_ES@valencia
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/cs_CZ/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/cs_CZ
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/da_DK/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/da_DK
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/de_DE/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/de_DE
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/en_US/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/en_US
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/es_ES/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/es_ES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/fr_FR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/fr_FR
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/it_IT/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/it_IT
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ja_JP/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ja_JP
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/lv_LV/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/lv_LV
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nl_NL/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nl_NL
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nn_NO/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nn_NO
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pl_PL/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pl_PL
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ru_RU/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ru_RU
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sl_SI/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sl_SI
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sr_RS/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sr_RS
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sv_SE/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sv_SE
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/tr_TR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/tr_TR
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/uk_UA/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/uk_UA
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Default
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/mime
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/other
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/toolbar
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/autocomp
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/styles
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/XRCed/misc
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/tools
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/mixins
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/editor
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/colourchooser
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/XRCed/plugins/bitmaps
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/XRCed/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/XRCed/misc
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/XRCed
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests/syntax
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/styles
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/syntax
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/styles
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/lexers
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/formatters
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments/filters
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/pygments
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/dexml
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern/aui
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/extern
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/eclib
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/ebmlib
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src/autocomp
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/src
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/other
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/mime
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango/menu
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Tango
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme/Default
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps/theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/pixmaps
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/uk_UA/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/uk_UA
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/tr_TR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/tr_TR
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sv_SE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sv_SE
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sr_RS/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sr_RS
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sl_SI/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sl_SI
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sk_SK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/sk_SK
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ru_RU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ru_RU
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pl_PL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/pl_PL
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nn_NO/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nn_NO
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nl_NL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/nl_NL
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/lv_LV/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/lv_LV
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ja_JP/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ja_JP
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/it_IT/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/it_IT
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hu_HU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hu_HU
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hr_HR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/hr_HR
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/gl_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/gl_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/fr_FR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/fr_FR
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/es_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/en_US/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/en_US
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/de_DE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/de_DE
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/da_DK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/da_DK
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/cs_CZ/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/cs_CZ
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ca_ES@valencia/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale/ca_ES@valencia
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools/Editra
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/tools
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/py
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub2
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/pubsub1
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/kwargs
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core/arg1
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/pubsub
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/ogl
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/mixins
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/masked
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas/Utilities
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourchooser
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/art
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/ribbon
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/persist
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw/aui
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/agw
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/colourchooser
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/editor
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/mixins
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/tools
-@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%
 @exec echo %%WX_PYTHON_DIR%% >> %D/%%PYTHON_SITELIBDIR%%/wx.pth 2>/dev/null || true
 @exec chmod 0444 %D/%%PYTHON_SITELIBDIR%%/wx.pth 2>/dev/null || true
