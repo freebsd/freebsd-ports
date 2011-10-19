@@ -48,6 +48,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/bencode.pyc
 %%PYTHON_SITELIBDIR%%/xpra/client.py
 %%PYTHON_SITELIBDIR%%/xpra/client.pyc
+%%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.py
+%%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.pyc
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.py
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keys.py
@@ -58,6 +60,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/platform/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.pyc
 %%PYTHON_SITELIBDIR%%/xpra/protocol.py
 %%PYTHON_SITELIBDIR%%/xpra/protocol.pyc
 %%PYTHON_SITELIBDIR%%/xpra/proxy.py
