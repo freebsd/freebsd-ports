@@ -1,0 +1,22 @@
+include/objc/Availability.h
+include/objc/Object.h
+include/objc/Protocol.h
+include/objc/blocks_runtime.h
+include/objc/capabilities.h
+include/objc/developer.h
+include/objc/encoding.h
+include/objc/hooks.h
+include/objc/objc-api.h
+include/objc/objc-arc.h
+include/objc/objc-auto.h
+include/objc/objc.h
+include/objc/runtime.h
+include/objc/runtime-deprecated.h
+include/objc/slot.h
+%%WITH_TOYDISPATCH%%include/objc/toydispatch.h
+lib/libobjc.a
+lib/libobjc.so
+lib/libobjc.so.%%SHLIB%%
+lib/libobjcxx.so
+lib/libobjcxx.so.%%SHLIB%%
+@dirrm include/objc

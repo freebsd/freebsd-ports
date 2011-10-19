@@ -147,6 +147,7 @@
     SUBDIR += ldc-devel
     SUBDIR += libhx
     SUBDIR += libjit
+    SUBDIR += libobjc2
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_3.4.0
     SUBDIR += libstdc++_stldoc_4.2.2

@@ -1,0 +1,58 @@
+--- Makefile.orig	2011-07-10 19:20:10.000000000 +0200
++++ Makefile	2011-10-19 19:41:37.000000000 +0200
+@@ -5,7 +5,7 @@
+ MAJOR_VERSION = 1
+ MINOR_VERSION = 5
+ SUBMINOR_VERSION = 0
+-VERSION = $(MAJOR_VERSION).$(MINOR_VERSION).$(SUBMINOR_VERSION)
++VERSION = $(SHLIB_VERSION)
+ 
+ CFLAGS += -std=gnu99 -fPIC
+ CXXFLAGS += -fPIC
+@@ -50,25 +50,29 @@
+ 	selector_table.o\
+ 	sendmsg2.o\
+ 	statics_loader.o\
+-	toydispatch.o
++
++
++.if !defined(WITHOUT_TOYDISPATCH)
++OBJECTS+= toydispatch.o
++.endif
+ 
+ all: libobjc.a libobjcxx.so.$(VERSION)
+ 
+ libobjcxx.so.$(VERSION): libobjc.so.$(VERSION) $(OBJCXX_OBJECTS)
+ 	@echo Linking shared Objective-C++ runtime library...
+-	@$(CXX) -Wl,-shared -o $@ $(OBJCXX_OBJECTS) -lobjc
++	$(LD) -shared -o $@ $(OBJCXX_OBJECTS) -lobjc
+ 
+ libobjc.so.$(VERSION): $(OBJECTS)
+ 	@echo Linking shared Objective-C runtime library...
+-	@ld -shared -o $@ $(OBJECTS)
++	$(LD) -shared -o $@ $(OBJECTS)
+ 
+ libobjc.a: $(OBJECTS)
+ 	@echo Linking static Objective-C runtime library...
+-	@ld -r -s -o $@ $(OBJECTS)
++	$(LD) -r -s -o $@ $(OBJECTS)
+ 
+ .cc.o:
+ 	@echo Compiling `basename $<`...
+-	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+ 
+ .c.o:
+ 	@echo Compiling `basename $<`...
+@@ -86,11 +90,7 @@
+ 	@install -m 444 libobjc.a $(LIB_DIR)
+ 	@echo Creating symbolic links...
+ 	@ln -sf $(LIB_DIR)/libobjc.so.$(VERSION) $(LIB_DIR)/libobjc.so
+-	@ln -sf $(LIB_DIR)/libobjc.so.$(VERSION) $(LIB_DIR)/libobjc.so.$(MAJOR_VERSION)
+-	@ln -sf $(LIB_DIR)/libobjc.so.$(VERSION) $(LIB_DIR)/libobjc.so.$(MAJOR_VERSION).$(MINOR_VERSION)
+ 	@ln -sf $(LIB_DIR)/libobjcxx.so.$(VERSION) $(LIB_DIR)/libobjcxx.so
+-	@ln -sf $(LIB_DIR)/libobjcxx.so.$(VERSION) $(LIB_DIR)/libobjcxx.so.$(MAJOR_VERSION)
+-	@ln -sf $(LIB_DIR)/libobjcxx.so.$(VERSION) $(LIB_DIR)/libobjcxx.so.$(MAJOR_VERSION).$(MINOR_VERSION)
+ 	@echo Installing headers...
+ 	@install -d $(HEADER_DIR)/objc
+ 	@install -m 444 objc/*.h $(HEADER_DIR)/objc
