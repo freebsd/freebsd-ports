@@ -8,6 +8,8 @@ bin/pyalacarte
 bin/pyalamode
 bin/pycrust
 bin/pyshell
+bin/pyslices
+bin/pysliceshell
 bin/pywrap
 bin/pywxrc
 bin/xrced
@@ -424,6 +426,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/IntCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/IntCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/IntCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ItemsPicker.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ItemsPicker.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ItemsPicker.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Joystick.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Joystick.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Joystick.pyo
@@ -795,21 +800,36 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MacLargeDemo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MacLargeDemo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MacLargeDemo.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PersistentControls.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PersistentControls.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PersistentControls.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyBusyInfo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyBusyInfo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyBusyInfo.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyGauge.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyGauge.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyGauge.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RibbonBar.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RibbonBar.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RibbonBar.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.pyo
@@ -828,9 +848,41 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListIconDemo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListIconDemo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListIconDemo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListListDemo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListListDemo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateListListDemo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateReportDemo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateReportDemo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateReportDemo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateVirtualDemo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateVirtualDemo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/UltimateVirtualDemo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ZoomBar.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ZoomBar.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ZoomBar.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Explorer96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Explorer96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Folder96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Folder96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Monitor96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Monitor96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Music96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Music96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Photo96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Photo96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Search96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Search96Flip40.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Wizard96.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/Wizard96Flip40.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/advancedsplash.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquabutton.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquachecked.ico
@@ -895,6 +947,8 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/rewinddisabled.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/round.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/save.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/separator.gif
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/separatorflip.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smfuel.ico
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smpi.ico
 %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smtemp.ico
@@ -1235,28 +1289,27 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxversion.py
 %%PYTHON_SITELIBDIR%%/wxversion.pyc
 %%PYTHON_SITELIBDIR%%/wxversion.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/snippets
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/snippets
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo
 @dirrmtry %%PYTHON_SITELIBDIR%%/wxPython
-@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm include/wx-%%WX_VERSION%%/wx/wxPython/i_files
 @dirrm include/wx-%%WX_VERSION%%/wx/wxPython
 @dirrmtry include/wx-%%WX_VERSION%%/wx
