@@ -2822,3 +2822,4 @@ x11/kdebase4-runtime|x11/kde4-runtime|2011-10-16|Renamed upstream
 x11/kdebase4-workspace|x11/kde4-workspace|2011-10-16|Renamed upstream
 deskutils/lightning|www/seamonkey|2011-10-19|Superseded by LIGHTNING option in SeaMonkey
 deskutils/lightning-thunderbird|mail/thunderbird|2011-10-19|Superseded by LIGHTNING option in Thunderbird
+mail/enigmail-seamonkey2|mail/enigmail-seamonkey|2011-10-19|Depends on outdated and vulnerable SeaMonkey 2.0
