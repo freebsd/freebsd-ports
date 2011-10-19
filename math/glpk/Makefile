@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A GNU Linear Programming Kit
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
