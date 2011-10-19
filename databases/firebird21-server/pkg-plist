@@ -10,13 +10,15 @@ bin/gfix
 bin/gsec
 bin/nbackup
 libexec/firebird/intl/fbintl
-libexec/firebird/intl/fbintl.conf
 libexec/firebird/udf/fbudf.so
 libexec/firebird/udf/fbudf.sql
 libexec/firebird/udf/ib_udf.so
 libexec/firebird/udf/ib_udf2.sql
 @unexec (cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample && rm -f %D/%%CONFDIR%%/aliases.conf) || true
 %%CONFDIR%%/aliases.conf.sample
+@exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
+@unexec (cmp -s %D/%%CONFDIR%%/fbintl.conf %D/%%CONFDIR%%/fbintl.conf.sample && rm -f %D/%%CONFDIR%%/fbintl.conf) || true
+%%CONFDIR%%/fbintl.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
 @dirrmtry %%CONFDIR%%
 @dirrm libexec/firebird/intl
