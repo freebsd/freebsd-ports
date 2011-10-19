@@ -1,4 +1,4 @@
-SHA256 (octave-forge/symbolic-1.0.9.tar.gz) = eee6ef61ca92d9033c9aeffaf5383adbeb623de039085fea22f9d02c7e718fb0
-SIZE (octave-forge/symbolic-1.0.9.tar.gz) = 82695
+SHA256 (octave-forge/symbolic-1.1.0.tar.gz) = 663c295eeed824b183d8d43e4c8836837ef76522f7393d4cd95c12878a59ece6
+SIZE (octave-forge/symbolic-1.1.0.tar.gz) = 28596
 SHA256 (octave-forge/octave-symbolic.patch) = 18fb57e9e3767ea76711c8f3bec1a108fe5ffdf2c1204a77fe3de47646f19fa1
 SIZE (octave-forge/octave-symbolic.patch) = 1116
