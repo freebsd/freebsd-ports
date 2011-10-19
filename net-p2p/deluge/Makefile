@@ -86,8 +86,11 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 		xdg-utils>=1.0.2:${PORTSDIR}/devel/xdg-utils
 
+PLIST_SUB+=	PYGTK=""
 USE_GNOME+=	desktopfileutils librsvg2 pygtk2
 INSTALLS_ICONS=	yes
+.else
+PLIST_SUB+=	PYGTK="@comment "
 .endif
 
 post-patch:
@@ -114,11 +117,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/icons/hicolor/${size}x${size}/apps/deluge.png \
 		${PREFIX}/share/icons/hicolor/${size}x${size}/apps
 .endfor
-	if [ ! -d ${PREFIX}/share/applications ]; then \
-		${MKDIR} ${PREFIX}/share/applications ; \
-	fi
-	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
-	${PREFIX}/share/applications
 	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
 	${MKDIR} ${PREFIX}/share/pixmaps ; \
 	fi
@@ -127,6 +125,11 @@ post-install:
 		${PREFIX}/share/pixmaps
 .endfor
 .if !defined(WITHOUT_PYGTK)
+	if [ ! -d ${PREFIX}/share/applications ]; then \
+		${MKDIR} ${PREFIX}/share/applications ; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
+		${PREFIX}/share/applications
 	@-update-desktop-database
 .endif
 .if !defined(NOPORTDOCS)
