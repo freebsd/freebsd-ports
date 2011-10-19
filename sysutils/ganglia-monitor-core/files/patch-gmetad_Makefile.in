@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gmetad/Makefile.in.orig
++++ gmetad/Makefile.in
+@@ -539,8 +539,6 @@
+ 	$(FIXCONFIG) gmetad.conf.in
+ 
+ install-data-hook:	gmetad.conf
+-	mkdir -p $(DESTDIR)$(sysconfdir) && \
+-	  $(INSTALL_DATA) gmetad.conf $(DESTDIR)$(sysconfdir)/gmetad.conf
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

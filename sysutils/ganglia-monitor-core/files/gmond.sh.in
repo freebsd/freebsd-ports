@@ -5,21 +5,23 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
+bname=`basename $0`
 
 . /etc/rc.subr
 
-name=gmond
+name=`echo "${bname}" | tr ".-" "__"`
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
+command="%%PREFIX%%/sbin/gmond"
 
 load_rc_config ganglia
 
-load_rc_config $name
+load_rc_config $bname
 
-gmond_enable=${gmond_enable-NO}
-gmond_conf=${gmond_conf-%%PREFIX%%/etc/gmond.conf}
+eval "${name}_enable=\${${name}_enable-NO}"
+eval "conffile=\${${name}_conf-%%PREFIX%%/etc/${bname}.conf}"
 
-command_args="-c ${gmond_conf}"
-required_files=${gmond_conf}
+pidfile="/var/run/${bname}.pid"
+command_args="-c ${conffile} -p ${pidfile}"
+required_files=${conffile}
 
 run_rc_command $*
