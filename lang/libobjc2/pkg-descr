@@ -1,0 +1,8 @@
+Replacement for the GNU Objective-C runtime supporting the features
+of Objective-C 2 for use with GNUstep and other Objective-C programs.
+This runtime is based on the Etoile Objective-C Runtime, an earlier
+research prototype, and includes support for non-fragile instance
+variables, type-dependent dispatch, and object planes. It is fully
+compatible with the FSF's GCC Objective-C ABI and also implements
+a new ABI that is supported by Clang and is required for some of
+the newer features.
