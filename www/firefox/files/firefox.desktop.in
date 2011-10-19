@@ -188,4 +188,4 @@ StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Application;Network;
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;

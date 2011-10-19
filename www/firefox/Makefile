@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	7.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -135,6 +136,13 @@ post-configure:
 		>> ${BUILD_WRKSRC}/.mozconfig
 	(cd ${WRKSRC} && ${GMAKE} distclean)
 .endif
+
+post-build:
+	${RM} ${WRKSRC}/dist/bin/${PORTNAME}
+	${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/dist/bin/${PORTNAME}
+	${ECHO_CMD} "cd ${PREFIX}/lib/firefox && ./run-mozilla.sh ./firefox-bin" \
+		>> ${WRKSRC}/dist/bin/${PORTNAME}
+	${CHMOD} 755 ${WRKSRC}/dist/bin/${PORTNAME}
 
 port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
