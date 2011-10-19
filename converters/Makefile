@@ -62,6 +62,7 @@
     SUBDIR += p5-Convert-Binary-C
     SUBDIR += p5-Convert-IBM390
     SUBDIR += p5-Convert-Morse
+    SUBDIR += p5-Convert-NLS_DATE_FORMAT
     SUBDIR += p5-Convert-PEM
     SUBDIR += p5-Convert-Recode
     SUBDIR += p5-Convert-TNEF

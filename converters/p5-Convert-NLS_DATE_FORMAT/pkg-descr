@@ -1,0 +1,4 @@
+Convert::NLS_DATE_FORMAT is a Perl module to convert Oracle's NLS_DATE_FORMAT
+string into a strptime format string, or the reverse.
+
+WWW: http://search.cpan.org/dist/Convert-NLS_DATE_FORMAT/

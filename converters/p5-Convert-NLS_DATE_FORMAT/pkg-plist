@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Convert/NLS_DATE_FORMAT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/NLS_DATE_FORMAT/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/NLS_DATE_FORMAT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrmtry %%SITE_PERL%%/Convert
