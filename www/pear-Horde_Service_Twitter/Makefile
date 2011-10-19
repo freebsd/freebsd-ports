@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Twitter
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
