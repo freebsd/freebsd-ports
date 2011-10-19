@@ -1,0 +1,11 @@
+--- configure.orig	2011-04-19 11:36:37.000000000 -0400
++++ configure	2011-10-18 13:48:27.000000000 -0400
+@@ -1762,6 +1762,8 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 1764 "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
++#include <netinet/in.h>
+ #include <$ac_hdr>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
