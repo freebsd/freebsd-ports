@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	quick-locale-switcher
-PORTVERSION=	1.7.5.2
-DISTVERSIONSUFFIX=	-tb+fx+sm
+PORTVERSION=	1.7.5.5
+DISTVERSIONSUFFIX=	-fx+sm+tb
 CATEGORIES=	www
-# XXX temporary master site
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Quickly change and apply a different locale from the tools menu
