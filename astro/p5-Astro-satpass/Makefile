@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.043
+PORTVERSION=	0.044
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -57,4 +57,10 @@ RUN_DEPENDS+=	p5-Geo-WebService-Elevation-USGS>=0:${PORTSDIR}/science/p5-Geo-Web
 RUN_DEPENDS+=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
