@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
 
 CONFLICTS=	pear-PHPUnit-[23]*
+NO_LATEST_LINK=	yes
 
 PEAR_CHANNEL=	phpunit
 PEAR_AUTOINSTALL=	yes
