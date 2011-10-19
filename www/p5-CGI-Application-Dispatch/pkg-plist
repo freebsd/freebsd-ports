@@ -1,5 +1,6 @@
-%%SITE_PERL%%/CGI/Application/Dispatch/Regexp.pm
 %%SITE_PERL%%/CGI/Application/Dispatch.pm
+%%SITE_PERL%%/CGI/Application/Dispatch/PSGI.pm
+%%SITE_PERL%%/CGI/Application/Dispatch/Regexp.pm
 @dirrmtry %%SITE_PERL%%/CGI/Application/Dispatch
 @dirrmtry %%SITE_PERL%%/CGI/Application
 @dirrmtry %%SITE_PERL%%/CGI
