@@ -1,6 +1,9 @@
 bin/linuxdcpp
+share/applications/linuxdcpp.desktop
+@dirrmtry share/applications
 %%DATADIR%%/glade/downloadqueue.glade
 %%DATADIR%%/glade/favoritehubs.glade
+%%DATADIR%%/glade/favoriteusers.glade
 %%DATADIR%%/glade/finishedtransfers.glade
 %%DATADIR%%/glade/hash.glade
 %%DATADIR%%/glade/hub.glade
@@ -10,28 +13,118 @@ bin/linuxdcpp
 %%DATADIR%%/glade/search.glade
 %%DATADIR%%/glade/settingsdialog.glade
 %%DATADIR%%/glade/sharebrowser.glade
-%%DATADIR%%/pixmaps/FinishedDL.png
-%%DATADIR%%/pixmaps/FinishedUL.png
-%%DATADIR%%/pixmaps/connect.png
-%%DATADIR%%/pixmaps/dc++-fw-op.png
-%%DATADIR%%/pixmaps/dc++-fw.png
-%%DATADIR%%/pixmaps/dc++-op.png
-%%DATADIR%%/pixmaps/dc++.png
-%%DATADIR%%/pixmaps/download.png
-%%DATADIR%%/pixmaps/favhubs.png
-%%DATADIR%%/pixmaps/hash.png
-%%DATADIR%%/pixmaps/linuxdcpp-icon.png
-%%DATADIR%%/pixmaps/linuxdcpp.png
-%%DATADIR%%/pixmaps/normal-fw-op.png
-%%DATADIR%%/pixmaps/normal-fw.png
-%%DATADIR%%/pixmaps/normal-op.png
-%%DATADIR%%/pixmaps/normal.png
-%%DATADIR%%/pixmaps/publichubs.png
-%%DATADIR%%/pixmaps/queue.png
-%%DATADIR%%/pixmaps/quit.png
-%%DATADIR%%/pixmaps/search.png
-%%DATADIR%%/pixmaps/settings.png
-%%DATADIR%%/pixmaps/upload.png
-@dirrm %%DATADIR%%/pixmaps
+%%DATADIR%%/glade/transfers.glade
 @dirrm %%DATADIR%%/glade
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-fw-op.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-fw.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-op.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-download.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal-fw-op.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal-fw.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal-op.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal.png
+%%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-upload.png
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-favorite-hubs.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-favorite-users.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-finished-downloads.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-finished-uploads.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-hash.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-preferences.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-public-hubs.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-queue.png
+%%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-search.png
+@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-favorite-hubs.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-favorite-users.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-finished-downloads.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-finished-uploads.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-hash.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-preferences.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-public-hubs.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-queue.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-search.svg
+@dirrm %%DATADIR%%/icons/hicolor/scalable/categories
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-fw-op.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-fw.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-op.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-download.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal-fw-op.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal-fw.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal-op.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal.svg
+%%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-upload.svg
+@dirrm %%DATADIR%%/icons/hicolor/scalable/status
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+share/icons/hicolor/16x16/apps/linuxdcpp.png
+share/icons/hicolor/20x20/apps/linuxdcpp.png
+share/icons/hicolor/24x24/apps/linuxdcpp.png
+share/icons/hicolor/48x48/apps/linuxdcpp.png
+share/icons/hicolor/96x96/apps/linuxdcpp.png
+@dirrmtry share/icons/hicolor/20x20/apps
+@dirrmtry share/icons/hicolor/20x20
+share/icons/hicolor/scalable/apps/linuxdcpp.svg
+share/locale/ar/LC_MESSAGES/libdcpp.mo
+share/locale/bg/LC_MESSAGES/libdcpp.mo
+share/locale/bs/LC_MESSAGES/libdcpp.mo
+share/locale/ca/LC_MESSAGES/libdcpp.mo
+share/locale/cs/LC_MESSAGES/libdcpp.mo
+share/locale/cs/LC_MESSAGES/linuxdcpp.mo
+share/locale/da/LC_MESSAGES/libdcpp.mo
+share/locale/de/LC_MESSAGES/libdcpp.mo
+share/locale/de/LC_MESSAGES/linuxdcpp.mo
+share/locale/el/LC_MESSAGES/libdcpp.mo
+share/locale/en_CA/LC_MESSAGES/libdcpp.mo
+share/locale/en_GB/LC_MESSAGES/libdcpp.mo
+share/locale/es/LC_MESSAGES/libdcpp.mo
+share/locale/et/LC_MESSAGES/libdcpp.mo
+share/locale/et/LC_MESSAGES/linuxdcpp.mo
+share/locale/fi/LC_MESSAGES/libdcpp.mo
+share/locale/fr/LC_MESSAGES/libdcpp.mo
+share/locale/gl/LC_MESSAGES/libdcpp.mo
+share/locale/he/LC_MESSAGES/libdcpp.mo
+share/locale/hr/LC_MESSAGES/libdcpp.mo
+share/locale/hu/LC_MESSAGES/libdcpp.mo
+share/locale/id/LC_MESSAGES/libdcpp.mo
+share/locale/is/LC_MESSAGES/libdcpp.mo
+share/locale/it/LC_MESSAGES/libdcpp.mo
+share/locale/it/LC_MESSAGES/linuxdcpp.mo
+share/locale/ja/LC_MESSAGES/libdcpp.mo
+share/locale/km/LC_MESSAGES/libdcpp.mo
+share/locale/ko/LC_MESSAGES/libdcpp.mo
+share/locale/lt/LC_MESSAGES/libdcpp.mo
+share/locale/lt/LC_MESSAGES/linuxdcpp.mo
+share/locale/lv/LC_MESSAGES/libdcpp.mo
+share/locale/mk/LC_MESSAGES/libdcpp.mo
+share/locale/ml/LC_MESSAGES/libdcpp.mo
+share/locale/ms/LC_MESSAGES/libdcpp.mo
+share/locale/nb/LC_MESSAGES/libdcpp.mo
+share/locale/nl/LC_MESSAGES/libdcpp.mo
+share/locale/pl/LC_MESSAGES/libdcpp.mo
+share/locale/pl/LC_MESSAGES/linuxdcpp.mo
+share/locale/pt/LC_MESSAGES/libdcpp.mo
+share/locale/pt/LC_MESSAGES/linuxdcpp.mo
+share/locale/pt_BR/LC_MESSAGES/libdcpp.mo
+share/locale/ro/LC_MESSAGES/libdcpp.mo
+share/locale/ro/LC_MESSAGES/linuxdcpp.mo
+share/locale/ru/LC_MESSAGES/libdcpp.mo
+share/locale/ru/LC_MESSAGES/linuxdcpp.mo
+share/locale/sk/LC_MESSAGES/libdcpp.mo
+share/locale/sl/LC_MESSAGES/libdcpp.mo
+share/locale/sq/LC_MESSAGES/libdcpp.mo
+share/locale/sr/LC_MESSAGES/libdcpp.mo
+share/locale/sv/LC_MESSAGES/libdcpp.mo
+share/locale/sv/LC_MESSAGES/linuxdcpp.mo
+share/locale/tr/LC_MESSAGES/libdcpp.mo
+share/locale/uk/LC_MESSAGES/libdcpp.mo
+share/locale/zh_CN/LC_MESSAGES/libdcpp.mo
+share/locale/zh_TW/LC_MESSAGES/libdcpp.mo
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
