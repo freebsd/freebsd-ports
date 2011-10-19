@@ -41,6 +41,10 @@ PORTDOCS=	protocol.txt readme.txt
 CFLAGS+=	-fstack-protector
 .endif
 
+.if defined(WITH_REPCACHED)
+IGNORE=		Repcached support removed
+.endif
+
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
