@@ -1394,7 +1394,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyo
-share/applications/deluge.desktop
+%%PYGTK%%share/applications/deluge.desktop
 share/icons/hicolor/128x128/apps/deluge.png
 share/icons/hicolor/16x16/apps/deluge.png
 share/icons/hicolor/192x192/apps/deluge.png
@@ -1410,7 +1410,6 @@ share/icons/hicolor/96x96/apps/deluge.png
 share/icons/hicolor/scalable/apps/deluge.svg
 share/pixmaps/deluge.png
 share/pixmaps/deluge.xpm
-@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/96x96/apps
