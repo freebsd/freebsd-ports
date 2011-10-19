@@ -241,9 +241,11 @@ share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 @dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
+@dirrmtry share/gir-1.0
 @dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/
 @dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%
 @dirrm lib/gdk-pixbuf-2.0
+@dirrmtry lib/girepository-1.0
 @dirrm include/gdk-pixbuf-2.0/gdk-pixbuf
 @dirrm include/gdk-pixbuf-2.0/gdk-pixbuf-xlib
 @dirrm include/gdk-pixbuf-2.0
