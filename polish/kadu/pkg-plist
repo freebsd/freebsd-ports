@@ -592,6 +592,7 @@ lib/kadu/plugins/libimagelink.so
 lib/kadu/plugins/libjabber_protocol.so
 lib/kadu/plugins/liblast_seen.so
 lib/kadu/plugins/libmediaplayer.so
+lib/kadu/plugins/libmpd_mediaplayer.so
 lib/kadu/plugins/libmprisplayer_mediaplayer.so
 lib/kadu/plugins/libpcspeaker.so
 lib/kadu/plugins/libphonon_sound.so
@@ -650,6 +651,7 @@ share/cmake/Modules/FindKadu.cmake
 %%DATADIR%%/plugins/jabber_protocol.desc
 %%DATADIR%%/plugins/last_seen.desc
 %%DATADIR%%/plugins/mediaplayer.desc
+%%DATADIR%%/plugins/mpd_mediaplayer.desc
 %%DATADIR%%/plugins/mprisplayer_mediaplayer.desc
 %%DATADIR%%/plugins/pcspeaker.desc
 %%DATADIR%%/plugins/phonon_sound.desc
@@ -688,6 +690,7 @@ share/cmake/Modules/FindKadu.cmake
 %%DATADIR%%/plugins/configuration/image-link.ui
 %%DATADIR%%/plugins/configuration/jabber_protocol.ui
 %%DATADIR%%/plugins/configuration/mediaplayer.ui
+%%DATADIR%%/plugins/configuration/mpd_config.ui
 %%DATADIR%%/plugins/configuration/mprisplayer_mediaplayer.ui
 %%DATADIR%%/plugins/configuration/qt4-docking-notify.ui
 %%DATADIR%%/plugins/configuration/screenshot.ui
