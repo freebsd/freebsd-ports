@@ -164,8 +164,6 @@
     SUBDIR += libopensync-plugin-synce-devel
     SUBDIR += libopensync-plugin-synce-legacy
     SUBDIR += libopensync-plugin-vformat-devel
-    SUBDIR += lightning
-    SUBDIR += lightning-thunderbird
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += ljit
