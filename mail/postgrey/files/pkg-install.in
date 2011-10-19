@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.1 2007-06-27 21:13:24 beech Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.2 2011-10-19 17:51:15 crees Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
 
@@ -14,23 +14,6 @@ PRE-INSTALL)
        -z "%%UID%%" -o -z "%%GID%%" ]; then
     echo "ERROR: A required pragma was empty"
     exit 1
-  fi
-
-  # Create group if required
-  if pw group show "%%GROUP%%" >/dev/null 2>&1; then
-    echo "---> Using existing group \"%%GROUP%%\""
-  else
-    echo "---> Adding group \"%%GROUP%%\" (%%GID%%)"
-    /usr/sbin/pw groupadd %%GROUP%% -g %%GID%% || exit 1
-  fi
-
-  # Create user if required
-  if pw user show "%%USER%%" >/dev/null 2>&1; then
-    echo "---> Using existing user \"%%USER%%\""
-  else
-    echo "---> Adding user \"%%USER%%\" (%%UID%%)"
-    pw useradd "%%USER%%" -u "%%UID%%" -g "%%GROUP%%" -h - \
-      -d "%%POSTGREYDIR%%" -s "/sbin/nologin" -c "Postgrey Owner" || exit 1
   fi
 
   # Create home directory if required
