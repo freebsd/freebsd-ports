@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kadu
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://download.kadu.im/stable/:kadu \
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		gadu.3:${PORTSDIR}/polish/libgadu \
 		idn.17:${PORTSDIR}/dns/libidn \
+		mpdclient.2:${PORTSDIR}/audio/libmpdclient \
 		qca.2:${PORTSDIR}/devel/qca \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
