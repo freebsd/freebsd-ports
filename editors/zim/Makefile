@@ -7,6 +7,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -61,5 +62,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
+
+post-install:
+	-@update-desktop-database
 
 .include <bsd.port.post.mk>

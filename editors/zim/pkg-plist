@@ -251,118 +251,118 @@ share/mime/application/x-zim-notebook.xml
 share/mime/packages/zim.xml
 share/mime/text/x-zim-wiki.xml
 share/pixmaps/zim.png
-share/zim/applications/firefox.desktop
-share/zim/applications/open.desktop
-share/zim/applications/thunderbird.desktop
-share/zim/applications/xdg-email.desktop
-share/zim/applications/xdg-open.desktop
-share/zim/dates.list
-share/zim/globe.svg
-share/zim/globe_banner.svg
-share/zim/globe_banner_small.png
-share/zim/manual/About.txt
-share/zim/manual/Bugs.txt
-share/zim/manual/FAQ.txt
-share/zim/manual/Help.txt
-share/zim/manual/Help/Auto_Formatting.txt
-share/zim/manual/Help/Check_Boxes.txt
-share/zim/manual/Help/Config_Files.txt
-share/zim/manual/Help/Custom_Tools.txt
-share/zim/manual/Help/Export.txt
-share/zim/manual/Help/Export/HTML.txt
-share/zim/manual/Help/Export/LaTeX.txt
-share/zim/manual/Help/Importing_external_files.txt
-share/zim/manual/Help/Key_Bindings.txt
-share/zim/manual/Help/Links.txt
-share/zim/manual/Help/Menu_Items.txt
-share/zim/manual/Help/Notebooks.txt
-share/zim/manual/Help/Pages.txt
-share/zim/manual/Help/Preferences.txt
-share/zim/manual/Help/Properties.txt
-share/zim/manual/Help/Searching.txt
-share/zim/manual/Help/Tags.txt
-share/zim/manual/Help/Templates.txt
-share/zim/manual/Help/Wiki_Syntax.txt
-share/zim/manual/Plugins.txt
-share/zim/manual/Plugins/Arithmetic.txt
-share/zim/manual/Plugins/Calendar.txt
-share/zim/manual/Plugins/Diagram_Editor.txt
-share/zim/manual/Plugins/Diagram_Editor/diagram.png
-share/zim/manual/Plugins/Equation_Editor.txt
-share/zim/manual/Plugins/Equation_Editor/equation_01.png
-share/zim/manual/Plugins/GNU_R_Plot_Editor.txt
-share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.png
-share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.r
-share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.png
-share/zim/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.r
-share/zim/manual/Plugins/Gnuplot_Editor.txt
-share/zim/manual/Plugins/Gnuplot_Editor/gnuplot.gnu
-share/zim/manual/Plugins/Gnuplot_Editor/gnuplot.png
-share/zim/manual/Plugins/Inline_Calculator.txt
-share/zim/manual/Plugins/Insert_Screenshot.txt
-share/zim/manual/Plugins/Insert_Symbol.txt
-share/zim/manual/Plugins/Link_Map.txt
-share/zim/manual/Plugins/Quick_Note.txt
-share/zim/manual/Plugins/Spell_Checker.txt
-share/zim/manual/Plugins/Tags.txt
-share/zim/manual/Plugins/Task_List.txt
-share/zim/manual/Plugins/Tray_Icon.txt
-share/zim/manual/Plugins/Version_Control.txt
-share/zim/manual/Start.txt
-share/zim/manual/Usage.txt
-share/zim/manual/Usage/Daily_Journal.txt
-share/zim/manual/Usage/GTD_flowchart.png
-share/zim/manual/Usage/GTD_flowchart.svg
-share/zim/manual/Usage/Getting_Started.txt
-share/zim/manual/Usage/Getting_Things_Done.txt
-share/zim/manual/notebook.zim
-share/zim/menubar-maemo4.xml
-share/zim/menubar-maemo5.xml
-share/zim/menubar.xml
-share/zim/pixmaps/attachment.png
-share/zim/pixmaps/calendar.png
-share/zim/pixmaps/checked-box.png
-share/zim/pixmaps/favicon.ico
-share/zim/pixmaps/link.png
-share/zim/pixmaps/linkmap.png
-share/zim/pixmaps/linkmap.svg
-share/zim/pixmaps/task-list.png
-share/zim/pixmaps/unchecked-box.png
-share/zim/pixmaps/xchecked-box.png
-share/zim/style.conf
-share/zim/symbols.list
-share/zim/templates/_Equation.tex
-share/zim/templates/_GNU_R_Plot.r
-share/zim/templates/_gnuplot.gnu
-share/zim/templates/_quicknote.txt
-share/zim/templates/html/Default.html
-share/zim/templates/html/Default_with_index.html
-share/zim/templates/html/Presentation.html
-share/zim/templates/html/Print.html
-share/zim/templates/html/SlideShow_(S5).html
-share/zim/templates/latex/Article.tex
-share/zim/templates/latex/Part.tex
-share/zim/templates/latex/Report.tex
-share/zim/templates/wiki/Calendar.txt
-share/zim/templates/wiki/Default.txt
-share/zim/urls.list
-share/zim/zim.png
-@dirrm share/zim/templates/wiki
-@dirrm share/zim/templates/latex
-@dirrm share/zim/templates/html
-@dirrm share/zim/templates
-@dirrm share/zim/pixmaps
-@dirrm share/zim/manual/Usage
-@dirrm share/zim/manual/Plugins/Gnuplot_Editor
-@dirrm share/zim/manual/Plugins/GNU_R_Plot_Editor
-@dirrm share/zim/manual/Plugins/Equation_Editor
-@dirrm share/zim/manual/Plugins/Diagram_Editor
-@dirrm share/zim/manual/Plugins
-@dirrm share/zim/manual/Help/Export
-@dirrm share/zim/manual/Help
-@dirrm share/zim/manual
-@dirrm share/zim/applications
-@dirrm share/zim
+%%DATADIR%%/applications/firefox.desktop
+%%DATADIR%%/applications/open.desktop
+%%DATADIR%%/applications/thunderbird.desktop
+%%DATADIR%%/applications/xdg-email.desktop
+%%DATADIR%%/applications/xdg-open.desktop
+%%DATADIR%%/dates.list
+%%DATADIR%%/globe.svg
+%%DATADIR%%/globe_banner.svg
+%%DATADIR%%/globe_banner_small.png
+%%DATADIR%%/manual/About.txt
+%%DATADIR%%/manual/Bugs.txt
+%%DATADIR%%/manual/FAQ.txt
+%%DATADIR%%/manual/Help.txt
+%%DATADIR%%/manual/Help/Auto_Formatting.txt
+%%DATADIR%%/manual/Help/Check_Boxes.txt
+%%DATADIR%%/manual/Help/Config_Files.txt
+%%DATADIR%%/manual/Help/Custom_Tools.txt
+%%DATADIR%%/manual/Help/Export.txt
+%%DATADIR%%/manual/Help/Export/HTML.txt
+%%DATADIR%%/manual/Help/Export/LaTeX.txt
+%%DATADIR%%/manual/Help/Importing_external_files.txt
+%%DATADIR%%/manual/Help/Key_Bindings.txt
+%%DATADIR%%/manual/Help/Links.txt
+%%DATADIR%%/manual/Help/Menu_Items.txt
+%%DATADIR%%/manual/Help/Notebooks.txt
+%%DATADIR%%/manual/Help/Pages.txt
+%%DATADIR%%/manual/Help/Preferences.txt
+%%DATADIR%%/manual/Help/Properties.txt
+%%DATADIR%%/manual/Help/Searching.txt
+%%DATADIR%%/manual/Help/Tags.txt
+%%DATADIR%%/manual/Help/Templates.txt
+%%DATADIR%%/manual/Help/Wiki_Syntax.txt
+%%DATADIR%%/manual/Plugins.txt
+%%DATADIR%%/manual/Plugins/Arithmetic.txt
+%%DATADIR%%/manual/Plugins/Calendar.txt
+%%DATADIR%%/manual/Plugins/Diagram_Editor.txt
+%%DATADIR%%/manual/Plugins/Diagram_Editor/diagram.png
+%%DATADIR%%/manual/Plugins/Equation_Editor.txt
+%%DATADIR%%/manual/Plugins/Equation_Editor/equation_01.png
+%%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor.txt
+%%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.png
+%%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot.r
+%%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.png
+%%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor/gnu_r_plot001.r
+%%DATADIR%%/manual/Plugins/Gnuplot_Editor.txt
+%%DATADIR%%/manual/Plugins/Gnuplot_Editor/gnuplot.gnu
+%%DATADIR%%/manual/Plugins/Gnuplot_Editor/gnuplot.png
+%%DATADIR%%/manual/Plugins/Inline_Calculator.txt
+%%DATADIR%%/manual/Plugins/Insert_Screenshot.txt
+%%DATADIR%%/manual/Plugins/Insert_Symbol.txt
+%%DATADIR%%/manual/Plugins/Link_Map.txt
+%%DATADIR%%/manual/Plugins/Quick_Note.txt
+%%DATADIR%%/manual/Plugins/Spell_Checker.txt
+%%DATADIR%%/manual/Plugins/Tags.txt
+%%DATADIR%%/manual/Plugins/Task_List.txt
+%%DATADIR%%/manual/Plugins/Tray_Icon.txt
+%%DATADIR%%/manual/Plugins/Version_Control.txt
+%%DATADIR%%/manual/Start.txt
+%%DATADIR%%/manual/Usage.txt
+%%DATADIR%%/manual/Usage/Daily_Journal.txt
+%%DATADIR%%/manual/Usage/GTD_flowchart.png
+%%DATADIR%%/manual/Usage/GTD_flowchart.svg
+%%DATADIR%%/manual/Usage/Getting_Started.txt
+%%DATADIR%%/manual/Usage/Getting_Things_Done.txt
+%%DATADIR%%/manual/notebook.zim
+%%DATADIR%%/menubar-maemo4.xml
+%%DATADIR%%/menubar-maemo5.xml
+%%DATADIR%%/menubar.xml
+%%DATADIR%%/pixmaps/attachment.png
+%%DATADIR%%/pixmaps/calendar.png
+%%DATADIR%%/pixmaps/checked-box.png
+%%DATADIR%%/pixmaps/favicon.ico
+%%DATADIR%%/pixmaps/link.png
+%%DATADIR%%/pixmaps/linkmap.png
+%%DATADIR%%/pixmaps/linkmap.svg
+%%DATADIR%%/pixmaps/task-list.png
+%%DATADIR%%/pixmaps/unchecked-box.png
+%%DATADIR%%/pixmaps/xchecked-box.png
+%%DATADIR%%/style.conf
+%%DATADIR%%/symbols.list
+%%DATADIR%%/templates/_Equation.tex
+%%DATADIR%%/templates/_GNU_R_Plot.r
+%%DATADIR%%/templates/_gnuplot.gnu
+%%DATADIR%%/templates/_quicknote.txt
+%%DATADIR%%/templates/html/Default.html
+%%DATADIR%%/templates/html/Default_with_index.html
+%%DATADIR%%/templates/html/Presentation.html
+%%DATADIR%%/templates/html/Print.html
+%%DATADIR%%/templates/html/SlideShow_(S5).html
+%%DATADIR%%/templates/latex/Article.tex
+%%DATADIR%%/templates/latex/Part.tex
+%%DATADIR%%/templates/latex/Report.tex
+%%DATADIR%%/templates/wiki/Calendar.txt
+%%DATADIR%%/templates/wiki/Default.txt
+%%DATADIR%%/urls.list
+%%DATADIR%%/zim.png
+@dirrm %%DATADIR%%/templates/wiki
+@dirrm %%DATADIR%%/templates/latex
+@dirrm %%DATADIR%%/templates/html
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/manual/Usage
+@dirrm %%DATADIR%%/manual/Plugins/Gnuplot_Editor
+@dirrm %%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor
+@dirrm %%DATADIR%%/manual/Plugins/Equation_Editor
+@dirrm %%DATADIR%%/manual/Plugins/Diagram_Editor
+@dirrm %%DATADIR%%/manual/Plugins
+@dirrm %%DATADIR%%/manual/Help/Export
+@dirrm %%DATADIR%%/manual/Help
+@dirrm %%DATADIR%%/manual
+@dirrm %%DATADIR%%/applications
+@dirrm %%DATADIR%%
 @dirrmtry share/mime/text
 @dirrmtry share/mime/packages
 @dirrmtry share/mime/application
@@ -376,3 +376,7 @@ share/zim/zim.png
 @dirrm %%PYTHON_SITELIBDIR%%/zim/gui
 @dirrm %%PYTHON_SITELIBDIR%%/zim/formats
 @dirrm %%PYTHON_SITELIBDIR%%/zim
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
