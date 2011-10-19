@@ -4,5 +4,5 @@
  #!/bin/sh
  
 -java -Xmx256M -jar FreeCol.jar $1 $2 $3 $4 $5 $6 $7 $8 $9
-+java -Xmx256M -cp %%DATADIR%%/jars/commons-cli-1.1.jar:%%DATADIR%%/jars/cortado-fc-1.0.jar:%%DATADIR%%/jars/jogg-0.0.7.jar:%%DATADIR%%/jars/jorbis-0.0.15.jar:%%DATADIR%%/jars/jsr173_1.0_api.jar:%%DATADIR%%/jars/tritonus_share.jar:%%DATADIR%%/jars/vorbisspi1.0.3.jar:%%DATADIR%%/jars/wstx-lgpl-4.0pr1.jar \
++java -Xmx512M -cp %%DATADIR%%/jars/commons-cli-1.1.jar:%%DATADIR%%/jars/cortado-fc-1.0.jar:%%DATADIR%%/jars/jogg-0.0.7.jar:%%DATADIR%%/jars/jorbis-0.0.15.jar:%%DATADIR%%/jars/jsr173_1.0_api.jar:%%DATADIR%%/jars/tritonus_share.jar:%%DATADIR%%/jars/vorbisspi1.0.3.jar:%%DATADIR%%/jars/wstx-lgpl-4.0pr1.jar \
 +	-jar %%DATADIR%%/FreeCol.jar --freecol-data %%DATADIR%%/data $1 $2 $3 $4 $5 $6 $7 $8 $9
