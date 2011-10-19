@@ -72,11 +72,11 @@ tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.3_to_3.2.4.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.4_to_3.2.5.sql
 tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
-%%WEBUI%%tinderbox/scripts/webui/.cvsignore
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
 %%WEBUI%%tinderbox/scripts/webui/core/Config.php
+%%WEBUI%%tinderbox/scripts/webui/core/Hooks.php
 %%WEBUI%%tinderbox/scripts/webui/core/Jail.php
 %%WEBUI%%tinderbox/scripts/webui/core/LogfilePattern.php
 %%WEBUI%%tinderbox/scripts/webui/core/Port.php

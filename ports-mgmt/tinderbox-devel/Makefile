@@ -7,6 +7,7 @@
 PORTNAME=	tinderbox
 DISTVERSION=	3.4${SNAP}
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
