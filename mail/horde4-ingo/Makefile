@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	mail www pear
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	horde
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde email filter rules manager
