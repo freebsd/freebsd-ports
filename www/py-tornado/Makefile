@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://github.com/downloads/facebook/tornado/
@@ -20,7 +19,7 @@ LICENSE=	ASL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	easy_install
 
 FETCH_ARGS=	-pRr
