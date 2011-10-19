@@ -2820,3 +2820,5 @@ misc/nepomukcontroller||2011-10-16|Merged with x11/kde4-runtime
 x11/kdebase4|x11/kde4-baseapps|2011-10-16|Renamed upstream
 x11/kdebase4-runtime|x11/kde4-runtime|2011-10-16|Renamed upstream
 x11/kdebase4-workspace|x11/kde4-workspace|2011-10-16|Renamed upstream
+deskutils/lightning|www/seamonkey|2011-10-19|Superseded by LIGHTNING option in SeaMonkey
+deskutils/lightning-thunderbird|mail/thunderbird|2011-10-19|Superseded by LIGHTNING option in Thunderbird
