@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	octave-forge-symbolic
-PORTVERSION=	1.0.9
-PORTREVISION=	6
+PORTVERSION=	1.1.0
 CATEGORIES=	math
-
-PATCH_SITES=	http://www.baycom.org/~tom/octave/
-PATCHFILES=	octave-symbolic.patch
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-GNU_CONFIGURE=	yes
-
 LIB_DEPENDS+=	ginac:${PORTSDIR}/math/GiNaC
+
+WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
 .include <bsd.port.post.mk>
