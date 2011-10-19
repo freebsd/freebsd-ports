@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://launchpadlibrarian.net/21888715/
+MASTER_SITES=	http://launchpadlibrarian.net/69733951/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A port of the DC++ direct connect client to POSIX-like systems
+
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
