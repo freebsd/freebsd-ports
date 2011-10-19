@@ -8,10 +8,10 @@ PORTNAME=	x2goclient
 DISTVERSION=	3.01-5
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/x2goclient/
+MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/pre-git/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The x2go perl client
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
