@@ -15,7 +15,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl script to load directories into a Subversion repository
 
 RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
+		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
 USE_BZIP2=	yes
 USE_PERL5=	5.8.0+
@@ -30,7 +30,7 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-SVN_PORTDIR=		${PORTSDIR}/devel/subversion
+SVN_PORTDIR=		${PORTSDIR}/devel/subversion16
 SVN_PORTVERSION!=	cd ${SVN_PORTDIR} && ${MAKE} -V PORTVERSION
 
 do-extract:
