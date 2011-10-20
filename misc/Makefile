@@ -403,6 +403,7 @@
     SUBDIR += p5-Geo-Cache
     SUBDIR += p5-Geo-Coder-Bing
     SUBDIR += p5-Geo-Coder-Google
+    SUBDIR += p5-Geo-Coder-Googlev3
     SUBDIR += p5-Geo-Coder-Multiple
     SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Postcodes-DK
