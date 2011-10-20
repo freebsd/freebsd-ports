@@ -1,3 +1,5 @@
+bin/gem64
+bin/grass64
 %%GRASS_INST_DIR%%/AUTHORS
 %%GRASS_INST_DIR%%/CHANGES
 %%GRASS_INST_DIR%%/COPYING
@@ -5,15 +7,6 @@
 %%GRASS_INST_DIR%%/REQUIREMENTS.html
 %%GRASS_INST_DIR%%/bin/d.ask
 %%GRASS_INST_DIR%%/bin/d.barscale
-%%GRASS_INST_DIR%%/bin/db.columns
-%%GRASS_INST_DIR%%/bin/db.connect
-%%GRASS_INST_DIR%%/bin/db.copy
-%%GRASS_INST_DIR%%/bin/db.describe
-%%GRASS_INST_DIR%%/bin/db.drivers
-%%GRASS_INST_DIR%%/bin/db.execute
-%%GRASS_INST_DIR%%/bin/db.login
-%%GRASS_INST_DIR%%/bin/db.select
-%%GRASS_INST_DIR%%/bin/db.tables
 %%GRASS_INST_DIR%%/bin/d.colorlist
 %%GRASS_INST_DIR%%/bin/d.colors
 %%GRASS_INST_DIR%%/bin/d.colortable
@@ -53,6 +46,15 @@
 %%GRASS_INST_DIR%%/bin/d.what.vect
 %%GRASS_INST_DIR%%/bin/d.where
 %%GRASS_INST_DIR%%/bin/d.zoom
+%%GRASS_INST_DIR%%/bin/db.columns
+%%GRASS_INST_DIR%%/bin/db.connect
+%%GRASS_INST_DIR%%/bin/db.copy
+%%GRASS_INST_DIR%%/bin/db.describe
+%%GRASS_INST_DIR%%/bin/db.drivers
+%%GRASS_INST_DIR%%/bin/db.execute
+%%GRASS_INST_DIR%%/bin/db.login
+%%GRASS_INST_DIR%%/bin/db.select
+%%GRASS_INST_DIR%%/bin/db.tables
 %%GRASS_INST_DIR%%/bin/g.access
 %%GRASS_INST_DIR%%/bin/g.ask
 %%GRASS_INST_DIR%%/bin/g.copy
@@ -92,6 +94,7 @@
 %%GRASS_INST_DIR%%/bin/i.maxlik
 %%GRASS_INST_DIR%%/bin/i.ortho.photo
 %%GRASS_INST_DIR%%/bin/i.pca
+%%GRASS_INST_DIR%%/bin/i.photo.rectify
 %%GRASS_INST_DIR%%/bin/i.points
 %%GRASS_INST_DIR%%/bin/i.rectify
 %%GRASS_INST_DIR%%/bin/i.rgb.his
@@ -103,22 +106,6 @@
 %%GRASS_INST_DIR%%/bin/nviz
 %%GRASS_INST_DIR%%/bin/nviz_cmd
 %%GRASS_INST_DIR%%/bin/ps.map
-%%GRASS_INST_DIR%%/bin/r3.cross.rast
-%%GRASS_INST_DIR%%/bin/r3.gwflow
-%%GRASS_INST_DIR%%/bin/r3.in.ascii
-%%GRASS_INST_DIR%%/bin/r3.info
-%%GRASS_INST_DIR%%/bin/r3.in.v5d
-%%GRASS_INST_DIR%%/bin/r3.mapcalc
-%%GRASS_INST_DIR%%/bin/r3.mask
-%%GRASS_INST_DIR%%/bin/r3.mkdspf
-%%GRASS_INST_DIR%%/bin/r3.null
-%%GRASS_INST_DIR%%/bin/r3.out.ascii
-%%GRASS_INST_DIR%%/bin/r3.out.v5d
-%%GRASS_INST_DIR%%/bin/r3.out.vtk
-%%GRASS_INST_DIR%%/bin/r3.stats
-%%GRASS_INST_DIR%%/bin/r3.timestamp
-%%GRASS_INST_DIR%%/bin/r3.to.rast
-%%GRASS_INST_DIR%%/bin/r3.univar
 %%GRASS_INST_DIR%%/bin/r.average
 %%GRASS_INST_DIR%%/bin/r.basins.fill
 %%GRASS_INST_DIR%%/bin/r.bilinear
@@ -130,6 +117,7 @@
 %%GRASS_INST_DIR%%/bin/r.clump
 %%GRASS_INST_DIR%%/bin/r.coin
 %%GRASS_INST_DIR%%/bin/r.colors
+%%GRASS_INST_DIR%%/bin/r.colors.out
 %%GRASS_INST_DIR%%/bin/r.composite
 %%GRASS_INST_DIR%%/bin/r.compress
 %%GRASS_INST_DIR%%/bin/r.contour
@@ -151,12 +139,12 @@
 %%GRASS_INST_DIR%%/bin/r.in.arc
 %%GRASS_INST_DIR%%/bin/r.in.ascii
 %%GRASS_INST_DIR%%/bin/r.in.bin
-%%GRASS_INST_DIR%%/bin/r.info
 %%GRASS_INST_DIR%%/bin/r.in.gdal
 %%GRASS_INST_DIR%%/bin/r.in.gridatb
 %%GRASS_INST_DIR%%/bin/r.in.mat
 %%GRASS_INST_DIR%%/bin/r.in.poly
 %%GRASS_INST_DIR%%/bin/r.in.xyz
+%%GRASS_INST_DIR%%/bin/r.info
 %%GRASS_INST_DIR%%/bin/r.kappa
 %%GRASS_INST_DIR%%/bin/r.lake
 %%GRASS_INST_DIR%%/bin/r.le.patch
@@ -173,6 +161,8 @@
 %%GRASS_INST_DIR%%/bin/r.li.padsd
 %%GRASS_INST_DIR%%/bin/r.li.patchdensity
 %%GRASS_INST_DIR%%/bin/r.li.patchnum
+%%GRASS_INST_DIR%%/bin/r.li.pielou
+%%GRASS_INST_DIR%%/bin/r.li.renyi
 %%GRASS_INST_DIR%%/bin/r.li.richness
 %%GRASS_INST_DIR%%/bin/r.li.shannon
 %%GRASS_INST_DIR%%/bin/r.li.shape
@@ -213,9 +203,9 @@
 %%GRASS_INST_DIR%%/bin/r.region
 %%GRASS_INST_DIR%%/bin/r.report
 %%GRASS_INST_DIR%%/bin/r.resamp.interp
-%%GRASS_INST_DIR%%/bin/r.resample
 %%GRASS_INST_DIR%%/bin/r.resamp.rst
 %%GRASS_INST_DIR%%/bin/r.resamp.stats
+%%GRASS_INST_DIR%%/bin/r.resample
 %%GRASS_INST_DIR%%/bin/r.rescale
 %%GRASS_INST_DIR%%/bin/r.rescale.eq
 %%GRASS_INST_DIR%%/bin/r.ros
@@ -244,11 +234,11 @@
 %%GRASS_INST_DIR%%/bin/r.texture
 %%GRASS_INST_DIR%%/bin/r.thin
 %%GRASS_INST_DIR%%/bin/r.timestamp
-%%GRASS_INST_DIR%%/bin/r.topidx
-%%GRASS_INST_DIR%%/bin/r.topmodel
 %%GRASS_INST_DIR%%/bin/r.to.rast3
 %%GRASS_INST_DIR%%/bin/r.to.rast3elev
 %%GRASS_INST_DIR%%/bin/r.to.vect
+%%GRASS_INST_DIR%%/bin/r.topidx
+%%GRASS_INST_DIR%%/bin/r.topmodel
 %%GRASS_INST_DIR%%/bin/r.transect
 %%GRASS_INST_DIR%%/bin/r.univar
 %%GRASS_INST_DIR%%/bin/r.volume
@@ -257,6 +247,22 @@
 %%GRASS_INST_DIR%%/bin/r.watershed
 %%GRASS_INST_DIR%%/bin/r.what
 %%GRASS_INST_DIR%%/bin/r.what.color
+%%GRASS_INST_DIR%%/bin/r3.cross.rast
+%%GRASS_INST_DIR%%/bin/r3.gwflow
+%%GRASS_INST_DIR%%/bin/r3.in.ascii
+%%GRASS_INST_DIR%%/bin/r3.in.v5d
+%%GRASS_INST_DIR%%/bin/r3.info
+%%GRASS_INST_DIR%%/bin/r3.mapcalc
+%%GRASS_INST_DIR%%/bin/r3.mask
+%%GRASS_INST_DIR%%/bin/r3.mkdspf
+%%GRASS_INST_DIR%%/bin/r3.null
+%%GRASS_INST_DIR%%/bin/r3.out.ascii
+%%GRASS_INST_DIR%%/bin/r3.out.v5d
+%%GRASS_INST_DIR%%/bin/r3.out.vtk
+%%GRASS_INST_DIR%%/bin/r3.stats
+%%GRASS_INST_DIR%%/bin/r3.timestamp
+%%GRASS_INST_DIR%%/bin/r3.to.rast
+%%GRASS_INST_DIR%%/bin/r3.univar
 %%GRASS_INST_DIR%%/bin/v.buffer
 %%GRASS_INST_DIR%%/bin/v.build
 %%GRASS_INST_DIR%%/bin/v.build.polylines
@@ -279,10 +285,10 @@
 %%GRASS_INST_DIR%%/bin/v.in.ascii
 %%GRASS_INST_DIR%%/bin/v.in.db
 %%GRASS_INST_DIR%%/bin/v.in.dxf
-%%GRASS_INST_DIR%%/bin/v.info
 %%GRASS_INST_DIR%%/bin/v.in.ogr
 %%GRASS_INST_DIR%%/bin/v.in.region
 %%GRASS_INST_DIR%%/bin/v.in.sites
+%%GRASS_INST_DIR%%/bin/v.info
 %%GRASS_INST_DIR%%/bin/v.kcv
 %%GRASS_INST_DIR%%/bin/v.kernel
 %%GRASS_INST_DIR%%/bin/v.label
@@ -306,11 +312,11 @@
 %%GRASS_INST_DIR%%/bin/v.normal
 %%GRASS_INST_DIR%%/bin/v.out.ascii
 %%GRASS_INST_DIR%%/bin/v.out.dxf
-%%GRASS_INST_DIR%%/bin/v.outlier
 %%GRASS_INST_DIR%%/bin/v.out.ogr
 %%GRASS_INST_DIR%%/bin/v.out.pov
 %%GRASS_INST_DIR%%/bin/v.out.svg
 %%GRASS_INST_DIR%%/bin/v.out.vtk
+%%GRASS_INST_DIR%%/bin/v.outlier
 %%GRASS_INST_DIR%%/bin/v.overlay
 %%GRASS_INST_DIR%%/bin/v.parallel
 %%GRASS_INST_DIR%%/bin/v.patch
@@ -345,8 +351,8 @@
 %%GRASS_INST_DIR%%/bwidget/README.grass
 %%GRASS_INST_DIR%%/bwidget/arrow.tcl
 %%GRASS_INST_DIR%%/bwidget/bitmap.tcl
-%%GRASS_INST_DIR%%/bwidget/buttonbox.tcl
 %%GRASS_INST_DIR%%/bwidget/button.tcl
+%%GRASS_INST_DIR%%/bwidget/buttonbox.tcl
 %%GRASS_INST_DIR%%/bwidget/color.tcl
 %%GRASS_INST_DIR%%/bwidget/combobox.tcl
 %%GRASS_INST_DIR%%/bwidget/dialog.tcl
@@ -369,8 +375,8 @@
 %%GRASS_INST_DIR%%/bwidget/images/minus.xbm
 %%GRASS_INST_DIR%%/bwidget/images/new.gif
 %%GRASS_INST_DIR%%/bwidget/images/opcopy.xbm
-%%GRASS_INST_DIR%%/bwidget/images/openfold.gif
 %%GRASS_INST_DIR%%/bwidget/images/open.gif
+%%GRASS_INST_DIR%%/bwidget/images/openfold.gif
 %%GRASS_INST_DIR%%/bwidget/images/oplink.xbm
 %%GRASS_INST_DIR%%/bwidget/images/opmove.xbm
 %%GRASS_INST_DIR%%/bwidget/images/overstrike.gif
@@ -385,9 +391,9 @@
 %%GRASS_INST_DIR%%/bwidget/images/undo.gif
 %%GRASS_INST_DIR%%/bwidget/images/warning.gif
 %%GRASS_INST_DIR%%/bwidget/init.tcl
+%%GRASS_INST_DIR%%/bwidget/label.tcl
 %%GRASS_INST_DIR%%/bwidget/labelentry.tcl
 %%GRASS_INST_DIR%%/bwidget/labelframe.tcl
-%%GRASS_INST_DIR%%/bwidget/label.tcl
 %%GRASS_INST_DIR%%/bwidget/lang/de.rc
 %%GRASS_INST_DIR%%/bwidget/lang/en.rc
 %%GRASS_INST_DIR%%/bwidget/lang/es.rc
@@ -412,9 +418,8 @@
 %%GRASS_INST_DIR%%/bwidget/utils.tcl
 %%GRASS_INST_DIR%%/bwidget/widget.tcl
 %%GRASS_INST_DIR%%/bwidget/xpm2image.tcl
-@dirrm %%GRASS_INST_DIR%%/bwidget/images
-@dirrm %%GRASS_INST_DIR%%/bwidget/lang
-@dirrm %%GRASS_INST_DIR%%/bwidget
+%%GRASS_INST_DIR%%/contributors.csv
+%%GRASS_INST_DIR%%/contributors_extra.csv
 %%GRASS_INST_DIR%%/docs/html/aspect.png
 %%GRASS_INST_DIR%%/docs/html/circle_1.png
 %%GRASS_INST_DIR%%/docs/html/circle_2.png
@@ -422,27 +427,11 @@
 %%GRASS_INST_DIR%%/docs/html/circle_4.png
 %%GRASS_INST_DIR%%/docs/html/circle_5.png
 %%GRASS_INST_DIR%%/docs/html/d.ask.html
-%%GRASS_INST_DIR%%/docs/html/databaseintro.html
 %%GRASS_INST_DIR%%/docs/html/d.barscale.html
-%%GRASS_INST_DIR%%/docs/html/db.columns.html
-%%GRASS_INST_DIR%%/docs/html/db.connect.html
-%%GRASS_INST_DIR%%/docs/html/db.copy.html
-%%GRASS_INST_DIR%%/docs/html/db.describe.html
-%%GRASS_INST_DIR%%/docs/html/db.drivers.html
-%%GRASS_INST_DIR%%/docs/html/db.dropcol.html
-%%GRASS_INST_DIR%%/docs/html/db.droptable.html
-%%GRASS_INST_DIR%%/docs/html/db.execute.html
-%%GRASS_INST_DIR%%/docs/html/db.in.ogr.html
-%%GRASS_INST_DIR%%/docs/html/db.login.html
-%%GRASS_INST_DIR%%/docs/html/db.out.ogr.html
-%%GRASS_INST_DIR%%/docs/html/db.select.html
-%%GRASS_INST_DIR%%/docs/html/db.tables.html
-%%GRASS_INST_DIR%%/docs/html/db.test.html
 %%GRASS_INST_DIR%%/docs/html/d.colorlist.html
 %%GRASS_INST_DIR%%/docs/html/d.colors.html
 %%GRASS_INST_DIR%%/docs/html/d.colortable.html
 %%GRASS_INST_DIR%%/docs/html/d.correlate.html
-%%GRASS_INST_DIR%%/docs/html/dem.png
 %%GRASS_INST_DIR%%/docs/html/d.erase.html
 %%GRASS_INST_DIR%%/docs/html/d.extend.html
 %%GRASS_INST_DIR%%/docs/html/d.extract.html
@@ -455,14 +444,13 @@
 %%GRASS_INST_DIR%%/docs/html/d.his.html
 %%GRASS_INST_DIR%%/docs/html/d.histogram.html
 %%GRASS_INST_DIR%%/docs/html/d.info.html
-%%GRASS_INST_DIR%%/docs/html/displaydrivers.html
 %%GRASS_INST_DIR%%/docs/html/d.labels.html
 %%GRASS_INST_DIR%%/docs/html/d.legend.html
 %%GRASS_INST_DIR%%/docs/html/d.linegraph.html
+%%GRASS_INST_DIR%%/docs/html/d.m.html
 %%GRASS_INST_DIR%%/docs/html/d.mapgraph.html
 %%GRASS_INST_DIR%%/docs/html/d.measure.html
 %%GRASS_INST_DIR%%/docs/html/d.menu.html
-%%GRASS_INST_DIR%%/docs/html/d.m.html
 %%GRASS_INST_DIR%%/docs/html/d.mon.html
 %%GRASS_INST_DIR%%/docs/html/d.monsize.html
 %%GRASS_INST_DIR%%/docs/html/d.mvmon.html
@@ -472,7 +460,6 @@
 %%GRASS_INST_DIR%%/docs/html/d.out.png.html
 %%GRASS_INST_DIR%%/docs/html/d.paint.labels.html
 %%GRASS_INST_DIR%%/docs/html/d.path.html
-%%GRASS_INST_DIR%%/docs/html/d_polar_aspect.png
 %%GRASS_INST_DIR%%/docs/html/d.polar.html
 %%GRASS_INST_DIR%%/docs/html/d.profile.html
 %%GRASS_INST_DIR%%/docs/html/d.rast.arrow.html
@@ -493,14 +480,32 @@
 %%GRASS_INST_DIR%%/docs/html/d.text.html
 %%GRASS_INST_DIR%%/docs/html/d.thematic.area.html
 %%GRASS_INST_DIR%%/docs/html/d.title.html
-%%GRASS_INST_DIR%%/docs/html/d.vect.chart_example.jpg
 %%GRASS_INST_DIR%%/docs/html/d.vect.chart.html
+%%GRASS_INST_DIR%%/docs/html/d.vect.chart_example.jpg
 %%GRASS_INST_DIR%%/docs/html/d.vect.html
 %%GRASS_INST_DIR%%/docs/html/d.vect.thematic.html
 %%GRASS_INST_DIR%%/docs/html/d.what.rast.html
 %%GRASS_INST_DIR%%/docs/html/d.what.vect.html
 %%GRASS_INST_DIR%%/docs/html/d.where.html
 %%GRASS_INST_DIR%%/docs/html/d.zoom.html
+%%GRASS_INST_DIR%%/docs/html/d_polar_aspect.png
+%%GRASS_INST_DIR%%/docs/html/databaseintro.html
+%%GRASS_INST_DIR%%/docs/html/db.columns.html
+%%GRASS_INST_DIR%%/docs/html/db.connect.html
+%%GRASS_INST_DIR%%/docs/html/db.copy.html
+%%GRASS_INST_DIR%%/docs/html/db.describe.html
+%%GRASS_INST_DIR%%/docs/html/db.drivers.html
+%%GRASS_INST_DIR%%/docs/html/db.dropcol.html
+%%GRASS_INST_DIR%%/docs/html/db.droptable.html
+%%GRASS_INST_DIR%%/docs/html/db.execute.html
+%%GRASS_INST_DIR%%/docs/html/db.in.ogr.html
+%%GRASS_INST_DIR%%/docs/html/db.login.html
+%%GRASS_INST_DIR%%/docs/html/db.out.ogr.html
+%%GRASS_INST_DIR%%/docs/html/db.select.html
+%%GRASS_INST_DIR%%/docs/html/db.tables.html
+%%GRASS_INST_DIR%%/docs/html/db.test.html
+%%GRASS_INST_DIR%%/docs/html/dem.png
+%%GRASS_INST_DIR%%/docs/html/displaydrivers.html
 %%GRASS_INST_DIR%%/docs/html/g.access.html
 %%GRASS_INST_DIR%%/docs/html/g.ask.html
 %%GRASS_INST_DIR%%/docs/html/g.copy.html
@@ -511,45 +516,17 @@
 %%GRASS_INST_DIR%%/docs/html/g.findfile.html
 %%GRASS_INST_DIR%%/docs/html/g.gisenv.html
 %%GRASS_INST_DIR%%/docs/html/g.gui.html
-%%GRASS_INST_DIR%%/docs/html/gis.m.html
 %%GRASS_INST_DIR%%/docs/html/g.list.html
-%%GRASS_INST_DIR%%/docs/html/gm_animate1.png
-%%GRASS_INST_DIR%%/docs/html/gm_animate.html
-%%GRASS_INST_DIR%%/docs/html/gm_animate2.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_animatetool.png
 %%GRASS_INST_DIR%%/docs/html/g.manual.html
 %%GRASS_INST_DIR%%/docs/html/g.mapset.html
 %%GRASS_INST_DIR%%/docs/html/g.mapsets.html
 %%GRASS_INST_DIR%%/docs/html/g.message.html
-%%GRASS_INST_DIR%%/docs/html/gm_gcpmgr.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_georectdisp.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_georect.html
-%%GRASS_INST_DIR%%/docs/html/gm_georectstart.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_gismgr.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_gismgrtools.png
-%%GRASS_INST_DIR%%/docs/html/gm_gronsole.png
 %%GRASS_INST_DIR%%/docs/html/g.mkfontcap.html
 %%GRASS_INST_DIR%%/docs/html/g.mlist.html
-%%GRASS_INST_DIR%%/docs/html/gm_mapdisp.jpg
-%%GRASS_INST_DIR%%/docs/html/gm_mapdisptools.png
-%%GRASS_INST_DIR%%/docs/html/gm_profile1.png
-%%GRASS_INST_DIR%%/docs/html/gm_profile3.png
-%%GRASS_INST_DIR%%/docs/html/gm_profile.html
-%%GRASS_INST_DIR%%/docs/html/gm_profile2.jpg
 %%GRASS_INST_DIR%%/docs/html/g.mremove.html
 %%GRASS_INST_DIR%%/docs/html/g.parser.html
 %%GRASS_INST_DIR%%/docs/html/g.pnmcomp.html
 %%GRASS_INST_DIR%%/docs/html/g.proj.html
-%%GRASS_INST_DIR%%/docs/html/grass6.html
-%%GRASS_INST_DIR%%/docs/html/grass-dbf.html
-%%GRASS_INST_DIR%%/docs/html/grass_logo.txt
-%%GRASS_INST_DIR%%/docs/html/grass-ogr.html
-%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
-%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
-%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mesql.html
-%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
-%%SQLITE%%%%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
-%%GRASS_INST_DIR%%/docs/html/grass_start.png
 %%GRASS_INST_DIR%%/docs/html/g.region.html
 %%GRASS_INST_DIR%%/docs/html/g.remove.html
 %%GRASS_INST_DIR%%/docs/html/g.rename.html
@@ -557,6 +534,34 @@
 %%GRASS_INST_DIR%%/docs/html/g.tempfile.html
 %%GRASS_INST_DIR%%/docs/html/g.transform.html
 %%GRASS_INST_DIR%%/docs/html/g.version.html
+%%GRASS_INST_DIR%%/docs/html/gis.m.html
+%%GRASS_INST_DIR%%/docs/html/gm_animate.html
+%%GRASS_INST_DIR%%/docs/html/gm_animate1.png
+%%GRASS_INST_DIR%%/docs/html/gm_animate2.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_animatetool.png
+%%GRASS_INST_DIR%%/docs/html/gm_gcpmgr.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_georect.html
+%%GRASS_INST_DIR%%/docs/html/gm_georectdisp.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_georectstart.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_gismgr.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_gismgrtools.png
+%%GRASS_INST_DIR%%/docs/html/gm_gronsole.png
+%%GRASS_INST_DIR%%/docs/html/gm_mapdisp.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_mapdisptools.png
+%%GRASS_INST_DIR%%/docs/html/gm_profile.html
+%%GRASS_INST_DIR%%/docs/html/gm_profile1.png
+%%GRASS_INST_DIR%%/docs/html/gm_profile2.jpg
+%%GRASS_INST_DIR%%/docs/html/gm_profile3.png
+%%GRASS_INST_DIR%%/docs/html/grass-dbf.html
+%%GRASS_INST_DIR%%/docs/html/grass-ogr.html
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mesql.html
+%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
+%%SQLITE%%%%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
+%%GRASS_INST_DIR%%/docs/html/grass6.html
+%%GRASS_INST_DIR%%/docs/html/grass_logo.txt
+%%GRASS_INST_DIR%%/docs/html/grass_start.png
 %%GRASS_INST_DIR%%/docs/html/help_loc_struct.png
 %%GRASS_INST_DIR%%/docs/html/helptext.html
 %%GRASS_INST_DIR%%/docs/html/htmlmapdriver.html
@@ -565,76 +570,37 @@
 %%GRASS_INST_DIR%%/docs/html/i.cca.html
 %%GRASS_INST_DIR%%/docs/html/i.class.html
 %%GRASS_INST_DIR%%/docs/html/i.cluster.html
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/attributes-display.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/cats-copy.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/cats-display.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/centroid-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/erase.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/font.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-delete.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-remove.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-rms.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-save.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/georectify.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/info.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-aspect-arrow-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-cell-cats-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-command-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-grid-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-group-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-his-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-label-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-open.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-analyze.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster3d-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-histogram.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-profile.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-redraw.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-remove.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-rgb-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-shaded-relief-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-chart-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-thematic-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/legend-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-delete.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-edit.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-move.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-split.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/map-export.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/measure-length.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/monitor-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/open.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/options.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/overlay-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/pan.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/point-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/pointer.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/polygon-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/print.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/quit.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/redraw.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/reload.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/save.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/scalebar-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/settings.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/show.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/table.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/text-add.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/tools.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/undo.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-create.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-delete.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-move.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-in.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-last.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-more.png
-%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-out.png
+%%GRASS_INST_DIR%%/docs/html/i.fft.html
+%%GRASS_INST_DIR%%/docs/html/i.find.html
+%%GRASS_INST_DIR%%/docs/html/i.fusion.brovey.html
+%%GRASS_INST_DIR%%/docs/html/i.gensig.html
+%%GRASS_INST_DIR%%/docs/html/i.gensigset.html
+%%GRASS_INST_DIR%%/docs/html/i.group.html
+%%GRASS_INST_DIR%%/docs/html/i.his.rgb.html
+%%GRASS_INST_DIR%%/docs/html/i.ifft.html
+%%GRASS_INST_DIR%%/docs/html/i.image.mosaic.html
+%%GRASS_INST_DIR%%/docs/html/i.in.spotvgt.html
+%%GRASS_INST_DIR%%/docs/html/i.landsat.rgb.html
+%%GRASS_INST_DIR%%/docs/html/i.maxlik.html
+%%GRASS_INST_DIR%%/docs/html/i.oif.html
+%%GRASS_INST_DIR%%/docs/html/i.ortho.photo.html
+%%GRASS_INST_DIR%%/docs/html/i.pca.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.2image.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.2target.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.camera.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.elev.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.init.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.rectify.html
+%%GRASS_INST_DIR%%/docs/html/i.photo.target.html
+%%GRASS_INST_DIR%%/docs/html/i.points.html
+%%GRASS_INST_DIR%%/docs/html/i.rectify.html
+%%GRASS_INST_DIR%%/docs/html/i.rgb.his.html
+%%GRASS_INST_DIR%%/docs/html/i.smap.html
+%%GRASS_INST_DIR%%/docs/html/i.spectral.html
+%%GRASS_INST_DIR%%/docs/html/i.target.html
+%%GRASS_INST_DIR%%/docs/html/i.tasscap.html
+%%GRASS_INST_DIR%%/docs/html/i.vpoints.html
+%%GRASS_INST_DIR%%/docs/html/i.zc.html
 %%GRASS_INST_DIR%%/docs/html/icons/grass/channel-blue.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/channel-green.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/channel-his.gif
@@ -685,9 +651,9 @@
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-pan.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-play.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-pointer.gif
+%%GRASS_INST_DIR%%/docs/html/icons/grass/gui-profile.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-profiledefine.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-profiledraw.gif
-%%GRASS_INST_DIR%%/docs/html/icons/grass/gui-profile.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-profileopt.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-query.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-rabbit.gif
@@ -713,7 +679,6 @@
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-zoom_out.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/gui-zoom_region.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.barscale.gif
-%%GRASS_INST_DIR%%/docs/html/icons/grass/module-db.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.chart.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.frame.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.geodesic.gif
@@ -733,10 +698,11 @@
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.thematic.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.vect.chart.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-d.vect.thematic.gif
+%%GRASS_INST_DIR%%/docs/html/icons/grass/module-db.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-g.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-nviz.gif
-%%GRASS_INST_DIR%%/docs/html/icons/grass/module-r3.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-r.gif
+%%GRASS_INST_DIR%%/docs/html/icons/grass/module-r3.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-v.digit.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-v.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/module-xganim.gif
@@ -751,8 +717,8 @@
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/add.vertex.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/box.xbm
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/copy.cats.gif
-%%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/cross45.xbm
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/cross.xbm
+%%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/cross45.xbm
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/delete.line.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/display.attributes.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/display.cats.gif
@@ -775,10 +741,106 @@
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/zoom.pan.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/zoom.region.gif
 %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit/zoom.window.gif
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-fringe.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-light.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-raster.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-vector.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-view.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/3d-volume.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/attributes-display.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/cats-copy.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/cats-display.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/centroid-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/check.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/data-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/erase.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/execute.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/font.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-delete.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-remove.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-rms.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/gcp-save.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/georectify.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/help.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/image-export.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/info.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-aspect-arrow-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-cell-cats-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-command-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-grid-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-group-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-his-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-import.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-label-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-more.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-open.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-analyze.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-histogram.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-more.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster-profile.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-raster3d-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-redraw.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-remove.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-rgb-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-shaded-relief-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-chart-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-more.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/layer-vector-thematic-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/legend-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-delete.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-edit.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-move.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/line-split.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/map-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/map-export.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/measure-length.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/modeler-main.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/modeler-variables.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/module-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/monitor-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/move.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/open.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/options.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/overlay-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/pan.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/point-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/pointer.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/polygon-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/print.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/python-export.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/quit.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/redo.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/redraw.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/relation-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/reload.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/save.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/scalebar-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/settings.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/shortest-distance.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/show.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/table.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/text-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/tools.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/undo.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-delete.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/vertex-move.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-extent.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-in.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-last.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-more.png
+%%GRASS_INST_DIR%%/docs/html/icons/grass2/zoom-out.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/application.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/application_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/application_delete.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/application_lightning.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/application.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/application_view_columns.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/application_view_icons.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/arrow_inout.png
@@ -791,21 +853,21 @@
 %%GRASS_INST_DIR%%/docs/html/icons/silk/bullet_delete.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/bullet_go.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_bar.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line_delete.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line_edit.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line_link.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/chart_line.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/chart_organisation_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/chart_organisation.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/chart_organisation_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/cog_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/color_swatch.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/cross.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/cursor.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/door_in.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/error.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/folder_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/folder.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/folder_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/font.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/grid.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/his.png
@@ -814,30 +876,30 @@
 %%GRASS_INST_DIR%%/docs/html/icons/silk/images.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/information.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/layout_content.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/map.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/map_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/map_edit.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/map_go.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/map_magnify_menu.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/map_magnify.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/map.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/map_magnify_menu.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/overlays.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/page_green.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/page_save.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/page_white.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/page_white_get.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/page_white_lightning.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/page_white_picture.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/page_white.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/picture_empty.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/picture_save.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/plugin_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/plugin.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/plugin_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/printer.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/rgb.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/shape_handles.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/shape_square_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/sum.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/table_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/table.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/table_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/tag_blue_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/tag_green.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/textfield_add.png
@@ -845,58 +907,34 @@
 %%GRASS_INST_DIR%%/docs/html/icons/silk/vector_add.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/vector_delete.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/wand.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/zoom.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/zoom_back.png
+%%GRASS_INST_DIR%%/docs/html/icons/silk/zoom_extent.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/zoom_in.png
 %%GRASS_INST_DIR%%/docs/html/icons/silk/zoom_out.png
-%%GRASS_INST_DIR%%/docs/html/icons/silk/zoom.png
-%%GRASS_INST_DIR%%/docs/html/i.fft.html
-%%GRASS_INST_DIR%%/docs/html/i.find.html
-%%GRASS_INST_DIR%%/docs/html/i.fusion.brovey.html
-%%GRASS_INST_DIR%%/docs/html/i.gensig.html
-%%GRASS_INST_DIR%%/docs/html/i.gensigset.html
-%%GRASS_INST_DIR%%/docs/html/i.group.html
-%%GRASS_INST_DIR%%/docs/html/i.his.rgb.html
-%%GRASS_INST_DIR%%/docs/html/i.ifft.html
-%%GRASS_INST_DIR%%/docs/html/i.image.mosaic.html
-%%GRASS_INST_DIR%%/docs/html/i.in.spotvgt.html
-%%GRASS_INST_DIR%%/docs/html/i.landsat.rgb.html
 %%GRASS_INST_DIR%%/docs/html/imageryintro.html
-%%GRASS_INST_DIR%%/docs/html/i.maxlik.html
-%%GRASS_INST_DIR%%/docs/html/i.oif.html
-%%GRASS_INST_DIR%%/docs/html/i.ortho.photo.html
-%%GRASS_INST_DIR%%/docs/html/i.pca.html
-%%GRASS_INST_DIR%%/docs/html/i.points.html
-%%GRASS_INST_DIR%%/docs/html/i.rectify.html
-%%GRASS_INST_DIR%%/docs/html/i.rgb.his.html
-%%GRASS_INST_DIR%%/docs/html/i.smap.html
-%%GRASS_INST_DIR%%/docs/html/i.spectral.html
-%%GRASS_INST_DIR%%/docs/html/i.target.html
-%%GRASS_INST_DIR%%/docs/html/i.tasscap.html
-%%GRASS_INST_DIR%%/docs/html/i.vpoints.html
-%%GRASS_INST_DIR%%/docs/html/i.zc.html
 %%GRASS_INST_DIR%%/docs/html/landsat_cluster.png
 %%GRASS_INST_DIR%%/docs/html/lrs.html
 %%GRASS_INST_DIR%%/docs/html/m.cogo.html
+%%GRASS_INST_DIR%%/docs/html/m.proj.html
 %%GRASS_INST_DIR%%/docs/html/mkftcap.html
 %%GRASS_INST_DIR%%/docs/html/modcats.html
 %%GRASS_INST_DIR%%/docs/html/modcolr.html
 %%GRASS_INST_DIR%%/docs/html/modhead.html
 %%GRASS_INST_DIR%%/docs/html/modhist.html
-%%GRASS_INST_DIR%%/docs/html/m.proj.html
+%%GRASS_INST_DIR%%/docs/html/nviz.html
 %%GRASS_INST_DIR%%/docs/html/nviz/bugs_todo.html
-%%GRASS_INST_DIR%%/docs/html/nviz_cmd.html
 %%GRASS_INST_DIR%%/docs/html/nviz/gmsmodviz.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/grass_logo.png
-%%GRASS_INST_DIR%%/docs/html/nviz.html
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/9j.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/9j_i.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/cplane.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/cplane_i.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/cut1.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/cut1_i.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/img/nv/inter1b.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/inter1.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/inter1_i.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/img/nv/inter1b.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/lmodel.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/lmodel_i.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/mask1.gif
@@ -916,28 +954,28 @@
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/trcut3.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/img/nv/trcut3_i.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/index.html
+%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim1.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim2.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim3.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim4.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim5.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/anim.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/color.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/cut.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/file_menu2.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/file_menu.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/file_menu2.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/image_dump.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/keyanim.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/keyexample.png
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/labels.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/light.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/main.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/mkdspf_complete.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/mkdspf.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/mkdspf_complete.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/mkdspf_range.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/position.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/scale_diff.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/scale.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/scale_diff.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/sites.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/surf.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/vect.gif
@@ -946,14 +984,14 @@
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel/whats_options.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/AddField.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/FBrowse.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/FSTool.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/FSToolBrowse.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/FSToolExample.gif
-%%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/FSTool.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/SimpLoop.gif
 %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work/script_pulldown.gif
+%%GRASS_INST_DIR%%/docs/html/nviz/nviz_3dsetting.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_credit.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_desc.html
-%%GRASS_INST_DIR%%/docs/html/nviz/nviz_3dsetting.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_hints.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_image.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_panel_anim.html
@@ -980,23 +1018,14 @@
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_startup.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_state.html
 %%GRASS_INST_DIR%%/docs/html/nviz/nviz_toc.html
-%%GRASS_INST_DIR%%/docs/html/pcurv.png
-%%GRASS_INST_DIR%%/docs/html/photo.2image.html
-%%GRASS_INST_DIR%%/docs/html/photo.2target.html
-%%GRASS_INST_DIR%%/docs/html/photo.camera.html
-%%GRASS_INST_DIR%%/docs/html/photo.camera.png
-%%GRASS_INST_DIR%%/docs/html/photo.elev.html
-%%GRASS_INST_DIR%%/docs/html/photo.init.html
-%%GRASS_INST_DIR%%/docs/html/photo.rectify.html
-%%GRASS_INST_DIR%%/docs/html/photo.target.html
-%%GRASS_INST_DIR%%/docs/html/pngdriver.html
+%%GRASS_INST_DIR%%/docs/html/nviz_cmd.html
 %%GRASS_INST_DIR%%/docs/html/p.out.vrml.html
+%%GRASS_INST_DIR%%/docs/html/pcurv.png
+%%GRASS_INST_DIR%%/docs/html/photo.camera.png
+%%GRASS_INST_DIR%%/docs/html/pngdriver.html
 %%GRASS_INST_DIR%%/docs/html/projectionintro.html
-%%GRASS_INST_DIR%%/docs/html/psdriver.html
 %%GRASS_INST_DIR%%/docs/html/ps.map.html
-%%GRASS_INST_DIR%%/docs/html/r3.mapcalc.html
-%%GRASS_INST_DIR%%/docs/html/raster3dintro.html
-%%GRASS_INST_DIR%%/docs/html/rasterintro.html
+%%GRASS_INST_DIR%%/docs/html/psdriver.html
 %%GRASS_INST_DIR%%/docs/html/r.average.html
 %%GRASS_INST_DIR%%/docs/html/r.basins.fill.html
 %%GRASS_INST_DIR%%/docs/html/r.bilinear.html
@@ -1010,16 +1039,14 @@
 %%GRASS_INST_DIR%%/docs/html/r.clump.html
 %%GRASS_INST_DIR%%/docs/html/r.coin.html
 %%GRASS_INST_DIR%%/docs/html/r.colors.html
+%%GRASS_INST_DIR%%/docs/html/r.colors.out.html
 %%GRASS_INST_DIR%%/docs/html/r.colors.stddev.html
 %%GRASS_INST_DIR%%/docs/html/r.composite.html
 %%GRASS_INST_DIR%%/docs/html/r.compress.html
 %%GRASS_INST_DIR%%/docs/html/r.contour.html
 %%GRASS_INST_DIR%%/docs/html/r.cost.html
-%%GRASS_INST_DIR%%/docs/html/rcost_knightsmove.png
 %%GRASS_INST_DIR%%/docs/html/r.covar.html
 %%GRASS_INST_DIR%%/docs/html/r.cross.html
-%%GRASS_INST_DIR%%/docs/html/r3.cross.rast.html
-%%GRASS_INST_DIR%%/docs/html/r3.cross.rast.png
 %%GRASS_INST_DIR%%/docs/html/r.describe.html
 %%GRASS_INST_DIR%%/docs/html/r.digit.html
 %%GRASS_INST_DIR%%/docs/html/r.distance.html
@@ -1028,62 +1055,43 @@
 %%GRASS_INST_DIR%%/docs/html/r.fill.dir.html
 %%GRASS_INST_DIR%%/docs/html/r.fillnulls.html
 %%GRASS_INST_DIR%%/docs/html/r.flow.html
-%%GRASS_INST_DIR%%/docs/html/rgb_brovey.jpg
-%%GRASS_INST_DIR%%/docs/html/rgb_originals.jpg
 %%GRASS_INST_DIR%%/docs/html/r.grow.distance.html
 %%GRASS_INST_DIR%%/docs/html/r.grow.html
-%%GRASS_INST_DIR%%/docs/html/r_gwflow_concept.png
-%%GRASS_INST_DIR%%/docs/html/r3.gwflow.html
 %%GRASS_INST_DIR%%/docs/html/r.gwflow.html
 %%GRASS_INST_DIR%%/docs/html/r.his.html
 %%GRASS_INST_DIR%%/docs/html/r.horizon.html
 %%GRASS_INST_DIR%%/docs/html/r.in.arc.html
 %%GRASS_INST_DIR%%/docs/html/r.in.ascii.html
-%%GRASS_INST_DIR%%/docs/html/r3.in.ascii.html
 %%GRASS_INST_DIR%%/docs/html/r.in.aster.html
 %%GRASS_INST_DIR%%/docs/html/r.in.bin.html
-%%GRASS_INST_DIR%%/docs/html/r.info.html
-%%GRASS_INST_DIR%%/docs/html/r3.info.html
 %%GRASS_INST_DIR%%/docs/html/r.in.gdal.html
 %%GRASS_INST_DIR%%/docs/html/r.in.gridatb.html
 %%GRASS_INST_DIR%%/docs/html/r.in.mat.html
 %%GRASS_INST_DIR%%/docs/html/r.in.poly.html
 %%GRASS_INST_DIR%%/docs/html/r.in.srtm.html
-%%GRASS_INST_DIR%%/docs/html/r3.in.v5d.html
 %%GRASS_INST_DIR%%/docs/html/r.in.wms.html
 %%GRASS_INST_DIR%%/docs/html/r.in.xyz.html
+%%GRASS_INST_DIR%%/docs/html/r.info.html
 %%GRASS_INST_DIR%%/docs/html/r.kappa.html
 %%GRASS_INST_DIR%%/docs/html/r.lake.html
 %%GRASS_INST_DIR%%/docs/html/r.le.patch.html
 %%GRASS_INST_DIR%%/docs/html/r.le.pixel.html
 %%GRASS_INST_DIR%%/docs/html/r.le.setup.html
 %%GRASS_INST_DIR%%/docs/html/r.le.trace.html
-%%GRASS_INST_DIR%%/docs/html/r.univar.html
-%%GRASS_INST_DIR%%/docs/html/rliDominance_formula.png
-%%GRASS_INST_DIR%%/docs/html/rliEdgeDensity_formula1.png
-%%GRASS_INST_DIR%%/docs/html/rliEdgeDensity_formula2.png
-%%GRASS_INST_DIR%%/docs/html/rliRichness_formula.png
-%%GRASS_INST_DIR%%/docs/html/rliShannon_formula.png
-%%GRASS_INST_DIR%%/docs/html/rliSimpson_formula.png
-%%GRASS_INST_DIR%%/docs/html/rlicwed_formula.png
 %%GRASS_INST_DIR%%/docs/html/r.li.cwed.html
 %%GRASS_INST_DIR%%/docs/html/r.li.daemon.html
 %%GRASS_INST_DIR%%/docs/html/r.li.dominance.html
 %%GRASS_INST_DIR%%/docs/html/r.li.edgedensity.html
 %%GRASS_INST_DIR%%/docs/html/r.li.html
-%%GRASS_INST_DIR%%/docs/html/rlimpa_formula.png
 %%GRASS_INST_DIR%%/docs/html/r.li.mpa.html
-%%GRASS_INST_DIR%%/docs/html/rlimps_formula.png
 %%GRASS_INST_DIR%%/docs/html/r.li.mps.html
-%%GRASS_INST_DIR%%/docs/html/rlipadcv_formula1.png
-%%GRASS_INST_DIR%%/docs/html/rlipadcv_formula2.png
 %%GRASS_INST_DIR%%/docs/html/r.li.padcv.html
-%%GRASS_INST_DIR%%/docs/html/rlipadrange_formula.png
 %%GRASS_INST_DIR%%/docs/html/r.li.padrange.html
-%%GRASS_INST_DIR%%/docs/html/rlipadsd_formula.png
 %%GRASS_INST_DIR%%/docs/html/r.li.padsd.html
 %%GRASS_INST_DIR%%/docs/html/r.li.patchdensity.html
 %%GRASS_INST_DIR%%/docs/html/r.li.patchnum.html
+%%GRASS_INST_DIR%%/docs/html/r.li.pielou.html
+%%GRASS_INST_DIR%%/docs/html/r.li.renyi.html
 %%GRASS_INST_DIR%%/docs/html/r.li.richness.html
 %%GRASS_INST_DIR%%/docs/html/r.li.setup.html
 %%GRASS_INST_DIR%%/docs/html/r.li.shannon.html
@@ -1092,20 +1100,15 @@
 %%GRASS_INST_DIR%%/docs/html/r.los.html
 %%GRASS_INST_DIR%%/docs/html/r.mapcalc.html
 %%GRASS_INST_DIR%%/docs/html/r.mapcalculator.html
-%%GRASS_INST_DIR%%/docs/html/r3.mapcalculator.html
 %%GRASS_INST_DIR%%/docs/html/r.mask.html
-%%GRASS_INST_DIR%%/docs/html/r3.mask.html
 %%GRASS_INST_DIR%%/docs/html/r.median.html
 %%GRASS_INST_DIR%%/docs/html/r.mfilter.fp.html
 %%GRASS_INST_DIR%%/docs/html/r.mfilter.html
-%%GRASS_INST_DIR%%/docs/html/r3.mkdspf.html
 %%GRASS_INST_DIR%%/docs/html/r.mode.html
 %%GRASS_INST_DIR%%/docs/html/r.neighbors.html
 %%GRASS_INST_DIR%%/docs/html/r.null.html
-%%GRASS_INST_DIR%%/docs/html/r3.null.html
 %%GRASS_INST_DIR%%/docs/html/r.out.arc.html
 %%GRASS_INST_DIR%%/docs/html/r.out.ascii.html
-%%GRASS_INST_DIR%%/docs/html/r3.out.ascii.html
 %%GRASS_INST_DIR%%/docs/html/r.out.bin.html
 %%GRASS_INST_DIR%%/docs/html/r.out.gdal.html
 %%GRASS_INST_DIR%%/docs/html/r.out.gdal.sh.html
@@ -1114,16 +1117,13 @@
 %%GRASS_INST_DIR%%/docs/html/r.out.mpeg.html
 %%GRASS_INST_DIR%%/docs/html/r.out.png.html
 %%GRASS_INST_DIR%%/docs/html/r.out.pov.html
-%%GRASS_INST_DIR%%/docs/html/r.out.ppm3.html
 %%GRASS_INST_DIR%%/docs/html/r.out.ppm.html
+%%GRASS_INST_DIR%%/docs/html/r.out.ppm3.html
 %%GRASS_INST_DIR%%/docs/html/r.out.tiff.html
-%%GRASS_INST_DIR%%/docs/html/r3.out.v5d.html
 %%GRASS_INST_DIR%%/docs/html/r.out.vrml.html
-%%GRASS_INST_DIR%%/docs/html/r3.out.vtk.html
 %%GRASS_INST_DIR%%/docs/html/r.out.vtk.html
 %%GRASS_INST_DIR%%/docs/html/r.out.xyz.html
 %%GRASS_INST_DIR%%/docs/html/r.param.scale.html
-%%GRASS_INST_DIR%%/docs/html/r_param_scale_morph.jpg
 %%GRASS_INST_DIR%%/docs/html/r.patch.html
 %%GRASS_INST_DIR%%/docs/html/r.plane.html
 %%GRASS_INST_DIR%%/docs/html/r.profile.html
@@ -1140,9 +1140,9 @@
 %%GRASS_INST_DIR%%/docs/html/r.regression.line.html
 %%GRASS_INST_DIR%%/docs/html/r.report.html
 %%GRASS_INST_DIR%%/docs/html/r.resamp.interp.html
-%%GRASS_INST_DIR%%/docs/html/r.resample.html
 %%GRASS_INST_DIR%%/docs/html/r.resamp.rst.html
 %%GRASS_INST_DIR%%/docs/html/r.resamp.stats.html
+%%GRASS_INST_DIR%%/docs/html/r.resample.html
 %%GRASS_INST_DIR%%/docs/html/r.rescale.eq.html
 %%GRASS_INST_DIR%%/docs/html/r.rescale.html
 %%GRASS_INST_DIR%%/docs/html/r.ros.html
@@ -1150,12 +1150,10 @@
 %%GRASS_INST_DIR%%/docs/html/r.shaded.relief.html
 %%GRASS_INST_DIR%%/docs/html/r.sim.sediment.html
 %%GRASS_INST_DIR%%/docs/html/r.sim.water.html
-%%GRASS_INST_DIR%%/docs/html/r_sim_water.png
 %%GRASS_INST_DIR%%/docs/html/r.slope.aspect.html
 %%GRASS_INST_DIR%%/docs/html/r.spread.html
 %%GRASS_INST_DIR%%/docs/html/r.spreadpath.html
 %%GRASS_INST_DIR%%/docs/html/r.statistics.html
-%%GRASS_INST_DIR%%/docs/html/r3.stats.html
 %%GRASS_INST_DIR%%/docs/html/r.stats.html
 %%GRASS_INST_DIR%%/docs/html/r.sum.html
 %%GRASS_INST_DIR%%/docs/html/r.sun.html
@@ -1165,31 +1163,24 @@
 %%GRASS_INST_DIR%%/docs/html/r.surf.area.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.contour.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.fractal.html
-%%GRASS_INST_DIR%%/docs/html/r_surf_gauss_hist.png
 %%GRASS_INST_DIR%%/docs/html/r.surf.gauss.html
-%%GRASS_INST_DIR%%/docs/html/r.surf.idw2.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.idw.html
-%%GRASS_INST_DIR%%/docs/html/r_surf_random_hist.png
+%%GRASS_INST_DIR%%/docs/html/r.surf.idw2.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.random.html
-%%GRASS_INST_DIR%%/docs/html/rterraflow_dir2.png
-%%GRASS_INST_DIR%%/docs/html/rterraflow_dir3.png
 %%GRASS_INST_DIR%%/docs/html/r.terraflow.html
 %%GRASS_INST_DIR%%/docs/html/r.texture.html
 %%GRASS_INST_DIR%%/docs/html/r.thin.html
 %%GRASS_INST_DIR%%/docs/html/r.tileset.html
 %%GRASS_INST_DIR%%/docs/html/r.timestamp.html
-%%GRASS_INST_DIR%%/docs/html/r3.timestamp.html
-%%GRASS_INST_DIR%%/docs/html/r.topidx.html
-%%GRASS_INST_DIR%%/docs/html/r.topmodel.html
-%%GRASS_INST_DIR%%/docs/html/r.to.rast3elev.html
-%%GRASS_INST_DIR%%/docs/html/r.to.rast3elev.png
 %%GRASS_INST_DIR%%/docs/html/r.to.rast3.html
 %%GRASS_INST_DIR%%/docs/html/r.to.rast3.png
-%%GRASS_INST_DIR%%/docs/html/r3.to.rast.html
-%%GRASS_INST_DIR%%/docs/html/r3.to.rast.png
+%%GRASS_INST_DIR%%/docs/html/r.to.rast3elev.html
+%%GRASS_INST_DIR%%/docs/html/r.to.rast3elev.png
 %%GRASS_INST_DIR%%/docs/html/r.to.vect.html
+%%GRASS_INST_DIR%%/docs/html/r.topidx.html
+%%GRASS_INST_DIR%%/docs/html/r.topmodel.html
 %%GRASS_INST_DIR%%/docs/html/r.transect.html
-%%GRASS_INST_DIR%%/docs/html/r3.univar.html
+%%GRASS_INST_DIR%%/docs/html/r.univar.html
 %%GRASS_INST_DIR%%/docs/html/r.univar.sh.html
 %%GRASS_INST_DIR%%/docs/html/r.volume.html
 %%GRASS_INST_DIR%%/docs/html/r.walk.html
@@ -1199,6 +1190,50 @@
 %%GRASS_INST_DIR%%/docs/html/r.watershed.seg.html
 %%GRASS_INST_DIR%%/docs/html/r.what.color.html
 %%GRASS_INST_DIR%%/docs/html/r.what.html
+%%GRASS_INST_DIR%%/docs/html/r3.cross.rast.html
+%%GRASS_INST_DIR%%/docs/html/r3.cross.rast.png
+%%GRASS_INST_DIR%%/docs/html/r3.gwflow.html
+%%GRASS_INST_DIR%%/docs/html/r3.in.ascii.html
+%%GRASS_INST_DIR%%/docs/html/r3.in.v5d.html
+%%GRASS_INST_DIR%%/docs/html/r3.info.html
+%%GRASS_INST_DIR%%/docs/html/r3.mapcalc.html
+%%GRASS_INST_DIR%%/docs/html/r3.mapcalculator.html
+%%GRASS_INST_DIR%%/docs/html/r3.mask.html
+%%GRASS_INST_DIR%%/docs/html/r3.mkdspf.html
+%%GRASS_INST_DIR%%/docs/html/r3.null.html
+%%GRASS_INST_DIR%%/docs/html/r3.out.ascii.html
+%%GRASS_INST_DIR%%/docs/html/r3.out.v5d.html
+%%GRASS_INST_DIR%%/docs/html/r3.out.vtk.html
+%%GRASS_INST_DIR%%/docs/html/r3.stats.html
+%%GRASS_INST_DIR%%/docs/html/r3.timestamp.html
+%%GRASS_INST_DIR%%/docs/html/r3.to.rast.html
+%%GRASS_INST_DIR%%/docs/html/r3.to.rast.png
+%%GRASS_INST_DIR%%/docs/html/r3.univar.html
+%%GRASS_INST_DIR%%/docs/html/r_gwflow_concept.png
+%%GRASS_INST_DIR%%/docs/html/r_param_scale_morph.jpg
+%%GRASS_INST_DIR%%/docs/html/r_sim_water.png
+%%GRASS_INST_DIR%%/docs/html/r_surf_gauss_hist.png
+%%GRASS_INST_DIR%%/docs/html/r_surf_random_hist.png
+%%GRASS_INST_DIR%%/docs/html/raster3dintro.html
+%%GRASS_INST_DIR%%/docs/html/rasterintro.html
+%%GRASS_INST_DIR%%/docs/html/rcost_knightsmove.png
+%%GRASS_INST_DIR%%/docs/html/rgb_brovey.jpg
+%%GRASS_INST_DIR%%/docs/html/rgb_originals.jpg
+%%GRASS_INST_DIR%%/docs/html/rliDominance_formula.png
+%%GRASS_INST_DIR%%/docs/html/rliEdgeDensity_formula1.png
+%%GRASS_INST_DIR%%/docs/html/rliEdgeDensity_formula2.png
+%%GRASS_INST_DIR%%/docs/html/rliRichness_formula.png
+%%GRASS_INST_DIR%%/docs/html/rliShannon_formula.png
+%%GRASS_INST_DIR%%/docs/html/rliSimpson_formula.png
+%%GRASS_INST_DIR%%/docs/html/rlicwed_formula.png
+%%GRASS_INST_DIR%%/docs/html/rlimpa_formula.png
+%%GRASS_INST_DIR%%/docs/html/rlimps_formula.png
+%%GRASS_INST_DIR%%/docs/html/rlipadcv_formula1.png
+%%GRASS_INST_DIR%%/docs/html/rlipadcv_formula2.png
+%%GRASS_INST_DIR%%/docs/html/rlipadrange_formula.png
+%%GRASS_INST_DIR%%/docs/html/rlipadsd_formula.png
+%%GRASS_INST_DIR%%/docs/html/rterraflow_dir2.png
+%%GRASS_INST_DIR%%/docs/html/rterraflow_dir3.png
 %%GRASS_INST_DIR%%/docs/html/sampleAreas.jpg
 %%GRASS_INST_DIR%%/docs/html/slope.png
 %%GRASS_INST_DIR%%/docs/html/sql.html
@@ -1207,7 +1242,6 @@
 %%GRASS_INST_DIR%%/docs/html/tasscap3.jpg
 %%GRASS_INST_DIR%%/docs/html/tasscap4.jpg
 %%GRASS_INST_DIR%%/docs/html/tcurv.png
-%%GRASS_INST_DIR%%/docs/html/variables.html
 %%GRASS_INST_DIR%%/docs/html/v.buffer.html
 %%GRASS_INST_DIR%%/docs/html/v.build.all.html
 %%GRASS_INST_DIR%%/docs/html/v.build.html
@@ -1216,7 +1250,6 @@
 %%GRASS_INST_DIR%%/docs/html/v.centroids.html
 %%GRASS_INST_DIR%%/docs/html/v.class.html
 %%GRASS_INST_DIR%%/docs/html/v.clean.html
-%%GRASS_INST_DIR%%/docs/html/v_clean_rmsa.png
 %%GRASS_INST_DIR%%/docs/html/v.colors.html
 %%GRASS_INST_DIR%%/docs/html/v.convert.all.html
 %%GRASS_INST_DIR%%/docs/html/v.convert.html
@@ -1232,39 +1265,36 @@
 %%GRASS_INST_DIR%%/docs/html/v.db.univar.html
 %%GRASS_INST_DIR%%/docs/html/v.db.update.html
 %%GRASS_INST_DIR%%/docs/html/v.delaunay.html
-%%GRASS_INST_DIR%%/docs/html/v_delaunay_spearfish60_archsites.png
 %%GRASS_INST_DIR%%/docs/html/v.digit.html
 %%GRASS_INST_DIR%%/docs/html/v.dissolve.html
 %%GRASS_INST_DIR%%/docs/html/v.distance.html
 %%GRASS_INST_DIR%%/docs/html/v.drape.html
-%%GRASS_INST_DIR%%/docs/html/vectorintro.html
 %%GRASS_INST_DIR%%/docs/html/v.edit.html
 %%GRASS_INST_DIR%%/docs/html/v.external.html
 %%GRASS_INST_DIR%%/docs/html/v.extract.html
 %%GRASS_INST_DIR%%/docs/html/v.extrude.html
 %%GRASS_INST_DIR%%/docs/html/v.generalize.html
 %%GRASS_INST_DIR%%/docs/html/v.hull.html
-%%GRASS_INST_DIR%%/docs/html/v_hull.png
 %%GRASS_INST_DIR%%/docs/html/v.in.ascii.html
 %%GRASS_INST_DIR%%/docs/html/v.in.db.html
 %%GRASS_INST_DIR%%/docs/html/v.in.dxf.html
 %%GRASS_INST_DIR%%/docs/html/v.in.e00.html
-%%GRASS_INST_DIR%%/docs/html/v.info.html
 %%GRASS_INST_DIR%%/docs/html/v.in.garmin.html
 %%GRASS_INST_DIR%%/docs/html/v.in.geonames.html
 %%GRASS_INST_DIR%%/docs/html/v.in.gns.html
 %%GRASS_INST_DIR%%/docs/html/v.in.gpsbabel.html
+%%GRASS_INST_DIR%%/docs/html/v.in.lines.html
 %%GRASS_INST_DIR%%/docs/html/v.in.mapgen.html
 %%GRASS_INST_DIR%%/docs/html/v.in.ogr.html
 %%GRASS_INST_DIR%%/docs/html/v.in.region.html
 %%GRASS_INST_DIR%%/docs/html/v.in.sites.all.html
 %%GRASS_INST_DIR%%/docs/html/v.in.sites.html
 %%GRASS_INST_DIR%%/docs/html/v.in.wfs.html
+%%GRASS_INST_DIR%%/docs/html/v.info.html
 %%GRASS_INST_DIR%%/docs/html/v.kcv.html
 %%GRASS_INST_DIR%%/docs/html/v.kernel.html
 %%GRASS_INST_DIR%%/docs/html/v.label.html
 %%GRASS_INST_DIR%%/docs/html/v.label.sa.html
-%%GRASS_INST_DIR%%/docs/html/v_label_sa.jpg
 %%GRASS_INST_DIR%%/docs/html/v.lidar.correction.html
 %%GRASS_INST_DIR%%/docs/html/v.lidar.edgedetection.html
 %%GRASS_INST_DIR%%/docs/html/v.lidar.growing.html
@@ -1275,26 +1305,21 @@
 %%GRASS_INST_DIR%%/docs/html/v.mkgrid.html
 %%GRASS_INST_DIR%%/docs/html/v.neighbors.html
 %%GRASS_INST_DIR%%/docs/html/v.net.alloc.html
-%%GRASS_INST_DIR%%/docs/html/v_net_alloc.png
 %%GRASS_INST_DIR%%/docs/html/v.net.html
 %%GRASS_INST_DIR%%/docs/html/v.net.iso.html
-%%GRASS_INST_DIR%%/docs/html/vnetiso.png
 %%GRASS_INST_DIR%%/docs/html/v.net.path.html
-%%GRASS_INST_DIR%%/docs/html/vnetpath.png
 %%GRASS_INST_DIR%%/docs/html/v.net.salesman.html
-%%GRASS_INST_DIR%%/docs/html/vnetsalesman.png
 %%GRASS_INST_DIR%%/docs/html/v.net.steiner.html
-%%GRASS_INST_DIR%%/docs/html/vnetsteiner.png
 %%GRASS_INST_DIR%%/docs/html/v.net.visibility.html
 %%GRASS_INST_DIR%%/docs/html/v.normal.html
 %%GRASS_INST_DIR%%/docs/html/v.out.ascii.html
 %%GRASS_INST_DIR%%/docs/html/v.out.dxf.html
 %%GRASS_INST_DIR%%/docs/html/v.out.gpsbabel.html
-%%GRASS_INST_DIR%%/docs/html/v.outlier.html
 %%GRASS_INST_DIR%%/docs/html/v.out.ogr.html
 %%GRASS_INST_DIR%%/docs/html/v.out.pov.html
 %%GRASS_INST_DIR%%/docs/html/v.out.svg.html
 %%GRASS_INST_DIR%%/docs/html/v.out.vtk.html
+%%GRASS_INST_DIR%%/docs/html/v.outlier.html
 %%GRASS_INST_DIR%%/docs/html/v.overlay.html
 %%GRASS_INST_DIR%%/docs/html/v.parallel.html
 %%GRASS_INST_DIR%%/docs/html/v.patch.html
@@ -1313,8 +1338,8 @@
 %%GRASS_INST_DIR%%/docs/html/v.surf.bspline.html
 %%GRASS_INST_DIR%%/docs/html/v.surf.idw.html
 %%GRASS_INST_DIR%%/docs/html/v.surf.rst.html
-%%GRASS_INST_DIR%%/docs/html/v.to.db.html
 %%GRASS_INST_DIR%%/docs/html/v.to.3d.html
+%%GRASS_INST_DIR%%/docs/html/v.to.db.html
 %%GRASS_INST_DIR%%/docs/html/v.to.points.html
 %%GRASS_INST_DIR%%/docs/html/v.to.rast.html
 %%GRASS_INST_DIR%%/docs/html/v.to.rast3.html
@@ -1323,18 +1348,33 @@
 %%GRASS_INST_DIR%%/docs/html/v.univar.html
 %%GRASS_INST_DIR%%/docs/html/v.univar.sh.html
 %%GRASS_INST_DIR%%/docs/html/v.vol.rst.html
-%%GRASS_INST_DIR%%/docs/html/v_voronoi_delaunay.png
 %%GRASS_INST_DIR%%/docs/html/v.voronoi.html
 %%GRASS_INST_DIR%%/docs/html/v.what.html
 %%GRASS_INST_DIR%%/docs/html/v.what.rast.html
 %%GRASS_INST_DIR%%/docs/html/v.what.vect.html
+%%GRASS_INST_DIR%%/docs/html/v_clean_rmsa.png
+%%GRASS_INST_DIR%%/docs/html/v_hull.png
+%%GRASS_INST_DIR%%/docs/html/v_label_sa.jpg
+%%GRASS_INST_DIR%%/docs/html/v_net_alloc.png
+%%GRASS_INST_DIR%%/docs/html/v_overlay_area_lines.png
+%%GRASS_INST_DIR%%/docs/html/v_voronoi_delaunay.png
+%%GRASS_INST_DIR%%/docs/html/variables.html
+%%GRASS_INST_DIR%%/docs/html/vectorintro.html
+%%GRASS_INST_DIR%%/docs/html/vnetiso.png
+%%GRASS_INST_DIR%%/docs/html/vnetpath.png
+%%GRASS_INST_DIR%%/docs/html/vnetsalesman.png
+%%GRASS_INST_DIR%%/docs/html/vnetsteiner.png
 %%GRASS_INST_DIR%%/docs/html/wxGUI.Attribute_Table_Manager.html
+%%GRASS_INST_DIR%%/docs/html/wxGUI.GCP_Manager.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.Icons.html
+%%GRASS_INST_DIR%%/docs/html/wxGUI.Modeler.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.Nviz.html
-%%GRASS_INST_DIR%%/docs/html/wxGUI.Vector_Digitizing_Tool.html
+%%GRASS_INST_DIR%%/docs/html/wxGUI.Vector_Digitizer.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.html
+%%GRASS_INST_DIR%%/docs/html/wxGUI_GCP_Manager.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_layer_manager.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_map_display.jpg
+%%GRASS_INST_DIR%%/docs/html/wxGUI_nviz_toolbar.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_nviz_tools_surface.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_nviz_tools_vector.jpg
 %%GRASS_INST_DIR%%/docs/html/wxGUI_nviz_tools_view.jpg
@@ -1346,6 +1386,7 @@
 %%GRASS_INST_DIR%%/driver/PS
 %%GRASS_INST_DIR%%/driver/XDRIVER
 %%GRASS_INST_DIR%%/driver/db/dbf
+%%ODBC%%%%GRASS_INST_DIR%%/driver/db/odbc
 %%GRASS_INST_DIR%%/driver/db/ogr
 %%PGSQL%%%%GRASS_INST_DIR%%/driver/db/pg
 %%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
@@ -1356,6 +1397,7 @@
 %%GRASS_INST_DIR%%/etc/VERSIONNUMBER
 %%GRASS_INST_DIR%%/etc/bmif_to_cell
 %%GRASS_INST_DIR%%/etc/clean_temp
+%%GRASS_INST_DIR%%/etc/colors.desc
 %%GRASS_INST_DIR%%/etc/colors/aspect
 %%GRASS_INST_DIR%%/etc/colors/aspectcolr
 %%GRASS_INST_DIR%%/etc/colors/bcyr
@@ -1365,7 +1407,6 @@
 %%GRASS_INST_DIR%%/etc/colors/celsius
 %%GRASS_INST_DIR%%/etc/colors/corine
 %%GRASS_INST_DIR%%/etc/colors/curvature
-%%GRASS_INST_DIR%%/etc/colors.desc
 %%GRASS_INST_DIR%%/etc/colors/differences
 %%GRASS_INST_DIR%%/etc/colors/elevation
 %%GRASS_INST_DIR%%/etc/colors/etopo2
@@ -1391,8 +1432,11 @@
 %%GRASS_INST_DIR%%/etc/colors/terrain
 %%GRASS_INST_DIR%%/etc/colors/wave
 %%GRASS_INST_DIR%%/etc/current_time_s_ms
+%%GRASS_INST_DIR%%/etc/d.polar/ps_defs.eps
+%%GRASS_INST_DIR%%/etc/d.rast.edit.tcl
 %%GRASS_INST_DIR%%/etc/datum.table
 %%GRASS_INST_DIR%%/etc/datumtransform.table
+%%GRASS_INST_DIR%%/etc/db.test/test1
 %%GRASS_INST_DIR%%/etc/dm/barscale.gif
 %%GRASS_INST_DIR%%/etc/dm/barscale.tcl
 %%GRASS_INST_DIR%%/etc/dm/chart.gif
@@ -1402,11 +1446,11 @@
 %%GRASS_INST_DIR%%/etc/dm/columns.gif
 %%GRASS_INST_DIR%%/etc/dm/copy.gif
 %%GRASS_INST_DIR%%/etc/dm/cut.gif
+%%GRASS_INST_DIR%%/etc/dm/d.m.tcl
 %%GRASS_INST_DIR%%/etc/dm/dig.gif
 %%GRASS_INST_DIR%%/etc/dm/display.all.gif
 %%GRASS_INST_DIR%%/etc/dm/display.gif
 %%GRASS_INST_DIR%%/etc/dm/display.region.gif
-%%GRASS_INST_DIR%%/etc/dm/d.m.tcl
 %%GRASS_INST_DIR%%/etc/dm/dtext.gif
 %%GRASS_INST_DIR%%/etc/dm/dtext.tcl
 %%GRASS_INST_DIR%%/etc/dm/erase.gif
@@ -1415,8 +1459,8 @@
 %%GRASS_INST_DIR%%/etc/dm/frames.tcl
 %%GRASS_INST_DIR%%/etc/dm/fttext.gif
 %%GRASS_INST_DIR%%/etc/dm/fttext.tcl
-%%GRASS_INST_DIR%%/etc/dm/grassabout.tcl
 %%GRASS_INST_DIR%%/etc/dm/grass.gif
+%%GRASS_INST_DIR%%/etc/dm/grassabout.tcl
 %%GRASS_INST_DIR%%/etc/dm/grid.gif
 %%GRASS_INST_DIR%%/etc/dm/gridline.tcl
 %%GRASS_INST_DIR%%/etc/dm/group.gif
@@ -1464,9 +1508,6 @@
 %%GRASS_INST_DIR%%/etc/dm/xganim.gif
 %%GRASS_INST_DIR%%/etc/dm/zoom.back.gif
 %%GRASS_INST_DIR%%/etc/dm/zoom.gif
-%%GRASS_INST_DIR%%/etc/d.polar/ps_defs.eps
-%%GRASS_INST_DIR%%/etc/d.rast.edit.tcl
-%%GRASS_INST_DIR%%/etc/db.test/test1
 %%GRASS_INST_DIR%%/etc/echo
 %%GRASS_INST_DIR%%/etc/element_list
 %%GRASS_INST_DIR%%/etc/ellipse.table
@@ -1480,6 +1521,7 @@
 %%GRASS_INST_DIR%%/etc/frame.dumper
 %%GRASS_INST_DIR%%/etc/frame.list
 %%GRASS_INST_DIR%%/etc/frame.select
+%%GRASS_INST_DIR%%/etc/g.mapsets.tcl
 %%GRASS_INST_DIR%%/etc/gem/skeleton/README
 %%GRASS_INST_DIR%%/etc/gem/skeleton/authors
 %%GRASS_INST_DIR%%/etc/gem/skeleton/bugs
@@ -1499,7 +1541,6 @@
 %%GRASS_INST_DIR%%/etc/gem/skeleton/version
 %%GRASS_INST_DIR%%/etc/gis_set.tcl
 %%GRASS_INST_DIR%%/etc/gm/animate.tcl
-%%GRASS_INST_DIR%%/etc/g.mapsets.tcl
 %%GRASS_INST_DIR%%/etc/gm/barscale.tcl
 %%GRASS_INST_DIR%%/etc/gm/chart.tcl
 %%GRASS_INST_DIR%%/etc/gm/cmd.tcl
@@ -1509,9 +1550,9 @@
 %%GRASS_INST_DIR%%/etc/gm/frames.tcl
 %%GRASS_INST_DIR%%/etc/gm/georect.tcl
 %%GRASS_INST_DIR%%/etc/gm/georecttool.tcl
+%%GRASS_INST_DIR%%/etc/gm/gm.tcl
 %%GRASS_INST_DIR%%/etc/gm/gmlib.tcl
 %%GRASS_INST_DIR%%/etc/gm/gmmenu.tcl
-%%GRASS_INST_DIR%%/etc/gm/gm.tcl
 %%GRASS_INST_DIR%%/etc/gm/gmtool1.tcl
 %%GRASS_INST_DIR%%/etc/gm/gmtool2.tcl
 %%GRASS_INST_DIR%%/etc/gm/gmtree.tcl
@@ -1539,19 +1580,18 @@
 %%GRASS_INST_DIR%%/etc/gm/tksys.tcl
 %%GRASS_INST_DIR%%/etc/gm/vector.tcl
 %%GRASS_INST_DIR%%/etc/grass-interface.dtd
-%%GRASS_INST_DIR%%/etc/grass_intro
 %%GRASS_INST_DIR%%/etc/grass-run.sh
-%%GRASS_INST_DIR%%/etc/grass_write_ascii.style
 %%GRASS_INST_DIR%%/etc/grass-xterm-wrapper
+%%GRASS_INST_DIR%%/etc/grass_intro
+%%GRASS_INST_DIR%%/etc/grass_write_ascii.style
 %%GRASS_INST_DIR%%/etc/grocat
-%%GRASS_INST_DIR%%/etc/gtcltk/gronsole.tcl
 %%GRASS_INST_DIR%%/etc/gtcltk/gmsg.tcl
+%%GRASS_INST_DIR%%/etc/gtcltk/gronsole.tcl
 %%GRASS_INST_DIR%%/etc/gtcltk/options.tcl
 %%GRASS_INST_DIR%%/etc/gtcltk/select.tcl
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/attributes-display.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/cats-copy.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/cats-display.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/centroid-create.png
+%%GRASS_INST_DIR%%/etc/gui.tcl
+%%GRASS_INST_DIR%%/etc/gui/icons/grass-48x48.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass.ico
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-blue.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-green.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-his.gif
@@ -1560,37 +1600,25 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-red.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-rgb.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/channel-saturation.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/create.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/db-columns.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/db-values.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass_dialog.ico
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/drawmode-explore.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/drawmode-strict.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/edit-color.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/edit-copy.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/edit-cut.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass/element-cell.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-3d.view.gif
+%%GRASS_INST_DIR%%/etc/gui/icons/grass/element-cell.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-grid3.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-group.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-icons.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-labels.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-vector.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/element-windows.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/erase.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass_error.ico
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/file-new.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/file-open.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/file-print.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/file-save.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/font.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-create.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-delete.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-remove.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-rms.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-save.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/georectify.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-cmd.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-display.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-erase.gif
@@ -1614,9 +1642,9 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-pan.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-play.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-pointer.gif
+%%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-profile.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-profiledefine.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-profiledraw.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-profile.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-profileopt.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-query.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-rabbit.gif
@@ -1641,39 +1669,7 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-zoom_map.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-zoom_out.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/gui-zoom_region.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass.ico
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/info.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-aspect-arrow-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-cell-cats-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-command-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-grid-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-group-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-his-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-label-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-open.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-analyze.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster3d-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-histogram.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-profile.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-redraw.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-remove.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-rgb-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-shaded-relief-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-chart-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-thematic-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/legend-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-create.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-delete.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-edit.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-move.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-split.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/map-export.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass_map.ico
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/measure-length.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.barscale.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass/module-db.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.chart.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.frame.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.geodesic.gif
@@ -1693,6 +1689,7 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.thematic.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.vect.chart.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-d.vect.thematic.gif
+%%GRASS_INST_DIR%%/etc/gui/icons/grass/module-db.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-g.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-nviz.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-r.gif
@@ -1700,24 +1697,6 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-v.digit.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-v.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/module-xganim.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/monitor-create.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass_nviz.ico
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/open.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/options.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/overlay-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/pan.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/point-create.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/pointer.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/polygon-create.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/print.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/quit.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/redraw.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/reload.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/save.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/scalebar-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/settings.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/show.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass_sql.ico
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-error.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-failure.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-gism.gif
@@ -1726,10 +1705,6 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-running.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-success.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/status-warning.gif
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/table.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/text-add.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/tools.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass2/undo.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/add.vertex.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/box.xbm
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/copy.cats.gif
@@ -1757,18 +1732,111 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/zoom.pan.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/zoom.region.gif
 %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit/zoom.window.gif
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-fringe.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-light.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-raster.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-vector.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-view.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/3d-volume.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/attributes-display.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/cats-copy.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/cats-display.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/centroid-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/check.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/data-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/erase.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/execute.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/font.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-delete.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-remove.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-rms.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/gcp-save.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/georectify.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/help.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/image-export.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/info.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-aspect-arrow-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-cell-cats-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-command-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-grid-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-group-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-his-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-import.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-label-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-more.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-open.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-analyze.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-histogram.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-more.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster-profile.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-raster3d-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-redraw.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-remove.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-rgb-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-shaded-relief-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-chart-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-more.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/layer-vector-thematic-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/legend-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-delete.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-edit.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-move.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/line-split.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/map-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/map-export.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/measure-length.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/modeler-main.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/modeler-variables.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/module-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/monitor-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/move.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/open.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/options.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/overlay-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/pan.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/point-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/pointer.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/polygon-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/print.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/python-export.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/quit.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/redo.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/redraw.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/relation-create.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/reload.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/save.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/scalebar-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/settings.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/shortest-distance.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/show.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/table.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/text-add.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/tools.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/undo.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/vertex-create.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/vertex-delete.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/vertex-move.png
-%%GRASS_INST_DIR%%/etc/gui/icons/grass-48x48.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass2/zoom-extent.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/zoom-in.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/zoom-last.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/zoom-more.png
 %%GRASS_INST_DIR%%/etc/gui/icons/grass2/zoom-out.png
+%%GRASS_INST_DIR%%/etc/gui/icons/grass_dialog.ico
+%%GRASS_INST_DIR%%/etc/gui/icons/grass_error.ico
+%%GRASS_INST_DIR%%/etc/gui/icons/grass_map.ico
+%%GRASS_INST_DIR%%/etc/gui/icons/grass_nviz.ico
+%%GRASS_INST_DIR%%/etc/gui/icons/grass_sql.ico
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/application.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/application_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/application_delete.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/application_lightning.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/application.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/application_view_columns.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/application_view_icons.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/arrow_inout.png
@@ -1781,21 +1849,21 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/bullet_delete.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/bullet_go.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_bar.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line_delete.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line_edit.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line_link.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_line.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_organisation_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_organisation.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/chart_organisation_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/cog_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/color_swatch.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/cursor.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/cross.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/cursor.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/door_in.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/error.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/folder_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/folder.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/folder_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/font.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/grid.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/his.png
@@ -1804,30 +1872,30 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/images.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/information.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/layout_content.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/map.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/map_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/map_edit.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/map_go.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/map_magnify_menu.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/map_magnify.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/map.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/map_magnify_menu.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/overlays.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/page_green.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/page_save.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/page_white.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/page_white_get.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/page_white_lightning.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/page_white_picture.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/page_white.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/picture_empty.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/picture_save.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/plugin_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/plugin.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/plugin_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/printer.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/rgb.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/shape_handles.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/shape_square_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/sum.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/table_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/table.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/table_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/tag_blue_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/tag_green.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/textfield_add.png
@@ -1835,14 +1903,14 @@
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/vector_add.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/vector_delete.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/wand.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom_back.png
+%%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom_extent.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom_in.png
 %%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom_out.png
-%%GRASS_INST_DIR%%/etc/gui/icons/silk/zoom.png
 %%GRASS_INST_DIR%%/etc/gui/images/gintro.gif
 %%GRASS_INST_DIR%%/etc/gui/scripts/d.colors.sh
 %%GRASS_INST_DIR%%/etc/gui/scripts/d.path.sh
-%%GRASS_INST_DIR%%/etc/gui/scripts/d.rast3d
 %%GRASS_INST_DIR%%/etc/gui/scripts/g.change.gui.py
 %%GRASS_INST_DIR%%/etc/gui/scripts/g.change.gui.sh
 %%GRASS_INST_DIR%%/etc/gui/scripts/r.colors.rules
@@ -1853,11 +1921,16 @@
 %%GRASS_INST_DIR%%/etc/gui/scripts/r.support.sh
 %%GRASS_INST_DIR%%/etc/gui/scripts/v.type_wrapper.py
 %%GRASS_INST_DIR%%/etc/gui/scripts/v.type_wrapper.sh
-%%GRASS_INST_DIR%%/etc/gui.tcl
 %%GRASS_INST_DIR%%/etc/i.ask
 %%GRASS_INST_DIR%%/etc/i.find
 %%GRASS_INST_DIR%%/etc/i.oif/i.oifcalc
 %%GRASS_INST_DIR%%/etc/i.oif/m.cutmatrix
+%%GRASS_INST_DIR%%/etc/i.photo.2image
+%%GRASS_INST_DIR%%/etc/i.photo.2target
+%%GRASS_INST_DIR%%/etc/i.photo.camera
+%%GRASS_INST_DIR%%/etc/i.photo.elev
+%%GRASS_INST_DIR%%/etc/i.photo.init
+%%GRASS_INST_DIR%%/etc/i.photo.target
 %%GRASS_INST_DIR%%/etc/license
 %%GRASS_INST_DIR%%/etc/lister/cell
 %%GRASS_INST_DIR%%/etc/lister/vector
@@ -1866,7 +1939,6 @@
 %%GRASS_INST_DIR%%/etc/modcolr
 %%GRASS_INST_DIR%%/etc/modhead
 %%GRASS_INST_DIR%%/etc/modhist
-%%GRASS_INST_DIR%%/etc/monitorcap
 %%GRASS_INST_DIR%%/etc/mon.list
 %%GRASS_INST_DIR%%/etc/mon.release
 %%GRASS_INST_DIR%%/etc/mon.select
@@ -1874,6 +1946,7 @@
 %%GRASS_INST_DIR%%/etc/mon.status
 %%GRASS_INST_DIR%%/etc/mon.stop
 %%GRASS_INST_DIR%%/etc/mon.which
+%%GRASS_INST_DIR%%/etc/monitorcap
 %%GRASS_INST_DIR%%/etc/msgs/am.msg
 %%GRASS_INST_DIR%%/etc/msgs/ar.msg
 %%GRASS_INST_DIR%%/etc/msgs/cs.msg
@@ -1889,8 +1962,8 @@
 %%GRASS_INST_DIR%%/etc/msgs/lv.msg
 %%GRASS_INST_DIR%%/etc/msgs/mr.msg
 %%GRASS_INST_DIR%%/etc/msgs/pl.msg
-%%GRASS_INST_DIR%%/etc/msgs/pt_br.msg
 %%GRASS_INST_DIR%%/etc/msgs/pt.msg
+%%GRASS_INST_DIR%%/etc/msgs/pt_br.msg
 %%GRASS_INST_DIR%%/etc/msgs/ru.msg
 %%GRASS_INST_DIR%%/etc/msgs/sl.msg
 %%GRASS_INST_DIR%%/etc/msgs/th.msg
@@ -1903,10 +1976,10 @@
 %%GRASS_INST_DIR%%/etc/nad/WI
 %%GRASS_INST_DIR%%/etc/nad/WO
 %%GRASS_INST_DIR%%/etc/nad/alaska
-%%GRASS_INST_DIR%%/etc/nad/ntv1_can.dat
-%%GRASS_INST_DIR%%/etc/nad/nzgd2kgrid0005.gsb
 %%GRASS_INST_DIR%%/etc/nad/conus
 %%GRASS_INST_DIR%%/etc/nad/hawaii
+%%GRASS_INST_DIR%%/etc/nad/ntv1_can.dat
+%%GRASS_INST_DIR%%/etc/nad/nzgd2kgrid0005.gsb
 %%GRASS_INST_DIR%%/etc/nad/prvi
 %%GRASS_INST_DIR%%/etc/nad/stgeorge
 %%GRASS_INST_DIR%%/etc/nad/stlrnc
@@ -1916,8 +1989,8 @@
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/a_ud.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_c.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_cr.gif
-%%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_lc.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_l.gif
+%%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_lc.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_lr.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/b_r.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough/vuota.gif
@@ -1929,14 +2002,16 @@
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/trash
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/trash.gif
 %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/up
+%%GRASS_INST_DIR%%/etc/nviz2.2/msgs/de.msg
+%%GRASS_INST_DIR%%/etc/nviz2.2/msgs/ja.msg
 %%GRASS_INST_DIR%%/etc/nviz2.2/nviz
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/ACS_utils.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/assoc.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/attIsosurfPopup.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/attPopup.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/colorPopup.tcl
-%%GRASS_INST_DIR%%/etc/nviz2.2/scripts/configIndex
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/config.tcl
+%%GRASS_INST_DIR%%/etc/nviz2.2/scripts/configIndex
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/cutplane_channels.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/extra_bindings.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/fileBrowser.tcl
@@ -1944,9 +2019,9 @@
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/flythrough.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/mapBrowser.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/multimapBrowser.tcl
+%%GRASS_INST_DIR%%/etc/nviz2.2/scripts/nviz2.2_script
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/nviz_init.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/nviz_params
-%%GRASS_INST_DIR%%/etc/nviz2.2/scripts/nviz2.2_script
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/panelIndex
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/panel_animation.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/panel_arrow.tcl
@@ -2004,43 +2079,38 @@
 %%GRASS_INST_DIR%%/etc/paint/patterns/cross_diag5.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/cross_normal.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/cross_normal5.eps
-%%GRASS_INST_DIR%%/etc/paint/patterns/diag_down_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/diag_down.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/diag_down6.eps
-%%GRASS_INST_DIR%%/etc/paint/patterns/diag_up_dash.eps
+%%GRASS_INST_DIR%%/etc/paint/patterns/diag_down_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/diag_up.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/diag_up6.eps
-%%GRASS_INST_DIR%%/etc/paint/patterns/horiz_line_dash.eps
-%%GRASS_INST_DIR%%/etc/paint/patterns/horiz_line6.eps
+%%GRASS_INST_DIR%%/etc/paint/patterns/diag_up_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/horiz_line.eps
+%%GRASS_INST_DIR%%/etc/paint/patterns/horiz_line6.eps
+%%GRASS_INST_DIR%%/etc/paint/patterns/horiz_line_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/horiz_zigzag.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/polka_dot.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/railroad_down.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/railroad_up.eps
-%%GRASS_INST_DIR%%/etc/paint/patterns/vert_line_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/vert_line.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/vert_line6.eps
+%%GRASS_INST_DIR%%/etc/paint/patterns/vert_line_dash.eps
 %%GRASS_INST_DIR%%/etc/paint/patterns/vert_zigzag.eps
 %%GRASS_INST_DIR%%/etc/paint/prolog.ps
-%%GRASS_INST_DIR%%/etc/photo.camera
-%%GRASS_INST_DIR%%/etc/photo.elev
-%%GRASS_INST_DIR%%/etc/photo.2image
-%%GRASS_INST_DIR%%/etc/photo.init
-%%GRASS_INST_DIR%%/etc/photo.rectify
-%%GRASS_INST_DIR%%/etc/photo.2target
-%%GRASS_INST_DIR%%/etc/photo.target
 %%GRASS_INST_DIR%%/etc/poly_to_bmif
 %%GRASS_INST_DIR%%/etc/proj-desc.table
-%%GRASS_INST_DIR%%/etc/projections
 %%GRASS_INST_DIR%%/etc/proj-parms.table
 %%GRASS_INST_DIR%%/etc/proj-units.table
+%%GRASS_INST_DIR%%/etc/projections
 %%GRASS_INST_DIR%%/etc/prompt.sh
 %%GRASS_INST_DIR%%/etc/psdriver.ps
 %%GRASS_INST_DIR%%/etc/python/grass/__init__.py
+%%GRASS_INST_DIR%%/etc/python/grass/script/__init__.py
+%%GRASS_INST_DIR%%/etc/python/grass/script/array.py
 %%GRASS_INST_DIR%%/etc/python/grass/script/core.py
 %%GRASS_INST_DIR%%/etc/python/grass/script/db.py
-%%GRASS_INST_DIR%%/etc/python/grass/script/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/script/raster.py
+%%GRASS_INST_DIR%%/etc/python/grass/script/setup.py
 %%GRASS_INST_DIR%%/etc/python/grass/script/vector.py
 %%GRASS_INST_DIR%%/etc/r.in.wms/r.in.gdalwarp
 %%GRASS_INST_DIR%%/etc/r.in.wms/wms.download
@@ -2055,9 +2125,9 @@
 %%GRASS_INST_DIR%%/etc/r.li.setup/sample_area_vector.sh
 %%GRASS_INST_DIR%%/etc/r.li.setup/square_mouse_selection.sh
 %%GRASS_INST_DIR%%/etc/r.li.setup/square_query
-%%GRASS_INST_DIR%%/etc/run
 %%GRASS_INST_DIR%%/etc/r.watershed.ram
 %%GRASS_INST_DIR%%/etc/r.watershed.seg
+%%GRASS_INST_DIR%%/etc/run
 %%GRASS_INST_DIR%%/etc/set_data
 %%GRASS_INST_DIR%%/etc/state27
 %%GRASS_INST_DIR%%/etc/state83
@@ -2077,6 +2147,7 @@
 %%GRASS_INST_DIR%%/etc/symbol/basic/x
 %%GRASS_INST_DIR%%/etc/symbol/demo/muchomurka
 %%GRASS_INST_DIR%%/etc/symbol/demo/smrk
+%%GRASS_INST_DIR%%/etc/symbol/extra/4pt_star
 %%GRASS_INST_DIR%%/etc/symbol/extra/adcp
 %%GRASS_INST_DIR%%/etc/symbol/extra/airport
 %%GRASS_INST_DIR%%/etc/symbol/extra/alpha_flag
@@ -2096,7 +2167,6 @@
 %%GRASS_INST_DIR%%/etc/symbol/extra/offbox_sw
 %%GRASS_INST_DIR%%/etc/symbol/extra/pentagon
 %%GRASS_INST_DIR%%/etc/symbol/extra/ping
-%%GRASS_INST_DIR%%/etc/symbol/extra/4pt_star
 %%GRASS_INST_DIR%%/etc/symbol/extra/ring
 %%GRASS_INST_DIR%%/etc/symbol/extra/target
 %%GRASS_INST_DIR%%/etc/symbol/geology/strike_box
@@ -2111,63 +2181,131 @@
 %%GRASS_INST_DIR%%/etc/welcome
 %%GRASS_INST_DIR%%/etc/wxpython/README
 %%GRASS_INST_DIR%%/etc/wxpython/compat/__init__.py
+%%GRASS_INST_DIR%%/etc/wxpython/compat/__init__.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/compat/subprocess.py
+%%GRASS_INST_DIR%%/etc/wxpython/compat/subprocess.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gis_set.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/colorrules.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/debug.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/disp_print.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcmd.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gdialogs.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/georect.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/globalvar.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/goutput.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/grassenv.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gselect.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/histogram.py
+%%GRASS_INST_DIR%%/etc/wxpython/gis_set.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/__init__.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/__init__.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/colorrules.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/colorrules.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm_base.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm_base.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm_dialogs.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/dbm_dialogs.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/debug.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/debug.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/disp_print.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/disp_print.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcmd.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcmd.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcpmanager.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcpmanager.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcpmapdisp.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gcpmapdisp.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gdialogs.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gdialogs.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/ghelp.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/ghelp.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/globalvar.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/globalvar.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gmodeler.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gmodeler.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/goutput.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/goutput.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gselect.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/gselect.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/histogram.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/histogram.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/layertree.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/layertree.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/location_wizard.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/location_wizard.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp_command.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp_command.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp_window.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mapdisp_window.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mcalc_builder.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/mcalc_builder.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menu.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menu.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menudata.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menudata.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menuform.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_mapdisp.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/menuform.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_mapdisp.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_mapdisp.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_preferences.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_preferences.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_tools.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/nviz_tools.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/ogc_services.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/ogc_services.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/preferences.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/preferences.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/profile.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/profile.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/prompt.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/prompt.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/render.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/rules.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/render.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/sqlbuilder.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/sqlbuilder.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/states.txt
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/toolbars.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/toolbox.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/track.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/toolbars.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/units.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/units.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/utils.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/utils.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/vclean.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/vclean.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/vdigit.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/vdigit.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/gui_modules/workspace.py
-%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/wxgui_utils.py
-%%GRASS_INST_DIR%%/etc/wxpython/icons/grass_icons.py
-%%GRASS_INST_DIR%%/etc/wxpython/icons/grass2_icons.py
-%%GRASS_INST_DIR%%/etc/wxpython/icons/icon.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/workspace.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/wxnviz.py
+%%GRASS_INST_DIR%%/etc/wxpython/gui_modules/wxnviz.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/icons/__init__.py
+%%GRASS_INST_DIR%%/etc/wxpython/icons/__init__.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/icons/grass2_icons.py
+%%GRASS_INST_DIR%%/etc/wxpython/icons/grass2_icons.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/icons/grass_icons.py
+%%GRASS_INST_DIR%%/etc/wxpython/icons/grass_icons.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/icons/icon.py
+%%GRASS_INST_DIR%%/etc/wxpython/icons/icon.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/icons/silk_icons.py
+%%GRASS_INST_DIR%%/etc/wxpython/icons/silk_icons.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/images/__init__.py
+%%GRASS_INST_DIR%%/etc/wxpython/images/__init__.pyc
 %%GRASS_INST_DIR%%/etc/wxpython/images/grass_form.png
 %%GRASS_INST_DIR%%/etc/wxpython/images/grass_splash.png
 %%GRASS_INST_DIR%%/etc/wxpython/images/grass_splash.xcf
-%%GRASS_INST_DIR%%/etc/wxpython/images/__init__.py
 %%GRASS_INST_DIR%%/etc/wxpython/images/loc_wizard.png
 %%GRASS_INST_DIR%%/etc/wxpython/images/loc_wizard_qgis.png
 %%GRASS_INST_DIR%%/etc/wxpython/images/qgis_world.png
+%%GRASS_INST_DIR%%/etc/wxpython/images/small_down_arrow.png
+%%GRASS_INST_DIR%%/etc/wxpython/images/small_up_arrow.png
+%%GRASS_INST_DIR%%/etc/wxpython/scripts/d.rast3d
 %%GRASS_INST_DIR%%/etc/wxpython/scripts/p.cmd
 %%GRASS_INST_DIR%%/etc/wxpython/scripts/p.db
 %%GRASS_INST_DIR%%/etc/wxpython/scripts/p.mon
 %%GRASS_INST_DIR%%/etc/wxpython/scripts/p.rast
 %%GRASS_INST_DIR%%/etc/wxpython/scripts/p.vect
-%%GRASS_INST_DIR%%/etc/wxpython/scripts/wxgui
+%%GRASS_INST_DIR%%/etc/wxpython/scripts/vkrige
 %%GRASS_INST_DIR%%/etc/wxpython/wxgui.py
+%%GRASS_INST_DIR%%/etc/wxpython/wxgui.pyc
+%%GRASS_INST_DIR%%/etc/wxpython/xml/grass-gxm.dtd
 %%GRASS_INST_DIR%%/etc/wxpython/xml/grass-gxw.dtd
 %%GRASS_INST_DIR%%/etc/wxpython/xml/menudata.xml
+%%GRASS_INST_DIR%%/etc/wxpython/xml/menudata_modeler.xml
 %%GRASS_INST_DIR%%/fonts/cyrilc.hmp
 %%GRASS_INST_DIR%%/fonts/fonts.table
 %%GRASS_INST_DIR%%/fonts/gothgbt.hmp
@@ -2192,6 +2330,7 @@
 %%GRASS_INST_DIR%%/fonts/scriptc.hmp
 %%GRASS_INST_DIR%%/fonts/scripts.hmp
 %%GRASS_INST_DIR%%/include/Make/Dir.make
+%%GRASS_INST_DIR%%/include/Make/Docs.make
 %%GRASS_INST_DIR%%/include/Make/Doxygen.make
 %%GRASS_INST_DIR%%/include/Make/Grass.make
 %%GRASS_INST_DIR%%/include/Make/Html.make
@@ -2211,12 +2350,12 @@
 %%GRASS_INST_DIR%%/include/grass/N_heatflow.h
 %%GRASS_INST_DIR%%/include/grass/N_pde.h
 %%GRASS_INST_DIR%%/include/grass/N_solute_transport.h
-%%GRASS_INST_DIR%%/include/grass/Paintlib.h
 %%GRASS_INST_DIR%%/include/grass/P_datetime.h
-%%GRASS_INST_DIR%%/include/grass/PolimiFunct.h
 %%GRASS_INST_DIR%%/include/grass/P_site.h
-%%GRASS_INST_DIR%%/include/grass/Vect.h
+%%GRASS_INST_DIR%%/include/grass/Paintlib.h
+%%GRASS_INST_DIR%%/include/grass/PolimiFunct.h
 %%GRASS_INST_DIR%%/include/grass/V_.h
+%%GRASS_INST_DIR%%/include/grass/Vect.h
 %%GRASS_INST_DIR%%/include/grass/arraystats.h
 %%GRASS_INST_DIR%%/include/grass/bdlg_bm.h
 %%GRASS_INST_DIR%%/include/grass/bitmap.h
@@ -2231,11 +2370,11 @@
 %%GRASS_INST_DIR%%/include/grass/datetime.h
 %%GRASS_INST_DIR%%/include/grass/dbmi.h
 %%GRASS_INST_DIR%%/include/grass/devlib.h
+%%GRASS_INST_DIR%%/include/grass/dgl.h
 %%GRASS_INST_DIR%%/include/grass/dgl/avl.h
 %%GRASS_INST_DIR%%/include/grass/dgl/graph.h
 %%GRASS_INST_DIR%%/include/grass/dgl/graph_v1.h
 %%GRASS_INST_DIR%%/include/grass/dgl/graph_v2.h
-%%GRASS_INST_DIR%%/include/grass/dgl.h
 %%GRASS_INST_DIR%%/include/grass/dgl/heap.h
 %%GRASS_INST_DIR%%/include/grass/dgl/helpers.h
 %%GRASS_INST_DIR%%/include/grass/dgl/tavl.h
@@ -2243,14 +2382,14 @@
 %%GRASS_INST_DIR%%/include/grass/dgl/type.h
 %%GRASS_INST_DIR%%/include/grass/dig_atts.h
 %%GRASS_INST_DIR%%/include/grass/display.h
-%%GRASS_INST_DIR%%/include/grass/dlg_bm.h
 %%GRASS_INST_DIR%%/include/grass/dlg.h
+%%GRASS_INST_DIR%%/include/grass/dlg_bm.h
 %%GRASS_INST_DIR%%/include/grass/edit.h
 %%GRASS_INST_DIR%%/include/grass/form.h
 %%GRASS_INST_DIR%%/include/grass/freetypecap.h
 %%GRASS_INST_DIR%%/include/grass/geom.h
-%%GRASS_INST_DIR%%/include/grass/gisdefs.h
 %%GRASS_INST_DIR%%/include/grass/gis.h
+%%GRASS_INST_DIR%%/include/grass/gisdefs.h
 %%GRASS_INST_DIR%%/include/grass/glocale.h
 %%GRASS_INST_DIR%%/include/grass/gmath.h
 %%GRASS_INST_DIR%%/include/grass/gprojects.h
@@ -2259,20 +2398,20 @@
 %%GRASS_INST_DIR%%/include/grass/gsurf.h
 %%GRASS_INST_DIR%%/include/grass/help.h
 %%GRASS_INST_DIR%%/include/grass/ibtree.h
-%%GRASS_INST_DIR%%/include/grass/icon_bm.h
 %%GRASS_INST_DIR%%/include/grass/icon.h
+%%GRASS_INST_DIR%%/include/grass/icon_bm.h
 %%GRASS_INST_DIR%%/include/grass/imagedefs.h
 %%GRASS_INST_DIR%%/include/grass/imagery.h
 %%GRASS_INST_DIR%%/include/grass/interpf.h
-%%GRASS_INST_DIR%%/include/grass/iostream/ami_config.h
 %%GRASS_INST_DIR%%/include/grass/iostream/ami.h
+%%GRASS_INST_DIR%%/include/grass/iostream/ami_config.h
 %%GRASS_INST_DIR%%/include/grass/iostream/ami_sort.h
 %%GRASS_INST_DIR%%/include/grass/iostream/ami_sort_impl.h
 %%GRASS_INST_DIR%%/include/grass/iostream/ami_stream.h
 %%GRASS_INST_DIR%%/include/grass/iostream/embuffer.h
+%%GRASS_INST_DIR%%/include/grass/iostream/empq.h
 %%GRASS_INST_DIR%%/include/grass/iostream/empq_adaptive.h
 %%GRASS_INST_DIR%%/include/grass/iostream/empq_adaptive_impl.h
-%%GRASS_INST_DIR%%/include/grass/iostream/empq.h
 %%GRASS_INST_DIR%%/include/grass/iostream/empq_impl.h
 %%GRASS_INST_DIR%%/include/grass/iostream/imbuffer.h
 %%GRASS_INST_DIR%%/include/grass/iostream/mem_stream.h
@@ -2282,13 +2421,13 @@
 %%GRASS_INST_DIR%%/include/grass/iostream/pqheap.h
 %%GRASS_INST_DIR%%/include/grass/iostream/queue.h
 %%GRASS_INST_DIR%%/include/grass/iostream/quicksort.h
-%%GRASS_INST_DIR%%/include/grass/iostream/replacementHeapBlock.h
 %%GRASS_INST_DIR%%/include/grass/iostream/replacementHeap.h
+%%GRASS_INST_DIR%%/include/grass/iostream/replacementHeapBlock.h
 %%GRASS_INST_DIR%%/include/grass/iostream/rtimer.h
 %%GRASS_INST_DIR%%/include/grass/keyframe.h
 %%GRASS_INST_DIR%%/include/grass/kftypes.h
-%%GRASS_INST_DIR%%/include/grass/label_bm.h
 %%GRASS_INST_DIR%%/include/grass/la.h
+%%GRASS_INST_DIR%%/include/grass/label_bm.h
 %%GRASS_INST_DIR%%/include/grass/lapack.h
 %%GRASS_INST_DIR%%/include/grass/libtrans.h
 %%GRASS_INST_DIR%%/include/grass/linkm.h
@@ -2305,8 +2444,8 @@
 %%GRASS_INST_DIR%%/include/grass/readsites.h
 %%GRASS_INST_DIR%%/include/grass/region_bm.h
 %%GRASS_INST_DIR%%/include/grass/rowio.h
-%%GRASS_INST_DIR%%/include/grass/rtree/card.h
 %%GRASS_INST_DIR%%/include/grass/rtree.h
+%%GRASS_INST_DIR%%/include/grass/rtree/card.h
 %%GRASS_INST_DIR%%/include/grass/rtree/index.h
 %%GRASS_INST_DIR%%/include/grass/rtree/split_q.h
 %%GRASS_INST_DIR%%/include/grass/search.h
@@ -2325,114 +2464,114 @@
 %%GRASS_INST_DIR%%/include/grass/vbuildlib.h
 %%GRASS_INST_DIR%%/include/grass/vect/dig_defines.h
 %%GRASS_INST_DIR%%/include/grass/vect/dig_externs.h
-%%GRASS_INST_DIR%%/include/grass/vect/digit.h
 %%GRASS_INST_DIR%%/include/grass/vect/dig_macros.h
 %%GRASS_INST_DIR%%/include/grass/vect/dig_structs.h
+%%GRASS_INST_DIR%%/include/grass/vect/digit.h
 %%GRASS_INST_DIR%%/include/grass/vedit.h
 %%GRASS_INST_DIR%%/include/grass/version.h
 %%GRASS_INST_DIR%%/include/grass/waterglobs.h
 %%GRASS_INST_DIR%%/include/grass/winname.h
+%%GRASS_INST_DIR%%/lib/libgrass_I.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_I.so
-%%GRASS_INST_DIR%%/lib/libgrass_dgl.so
-%%GRASS_INST_DIR%%/lib/libgrass_dig2.so
-%%GRASS_INST_DIR%%/lib/libgrass_g3d.so
-%%GRASS_INST_DIR%%/lib/libgrass_lrs.so
-%%GRASS_INST_DIR%%/lib/libgrass_rli.so
-%%GRASS_INST_DIR%%/lib/libgrass_sim.so
-%%GRASS_INST_DIR%%/lib/libgrass_I.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_Iortho.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_Iortho.so
-%%GRASS_INST_DIR%%/lib/libgrass_Iortho.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_arraystats.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_arraystats.so
-%%GRASS_INST_DIR%%/lib/libgrass_arraystats.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_bitmap.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_bitmap.so
-%%GRASS_INST_DIR%%/lib/libgrass_bitmap.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_btree.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_btree.so
-%%GRASS_INST_DIR%%/lib/libgrass_btree.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_cdhc.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_cdhc.so
-%%GRASS_INST_DIR%%/lib/libgrass_cdhc.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_cluster.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_cluster.so
-%%GRASS_INST_DIR%%/lib/libgrass_cluster.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_dspf.so
+%%GRASS_INST_DIR%%/lib/libgrass_datetime.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_datetime.so
-%%GRASS_INST_DIR%%/lib/libgrass_datetime.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dbmibase.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_dbmibase.so
-%%GRASS_INST_DIR%%/lib/libgrass_dbmibase.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dbmiclient.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_dbmiclient.so
-%%GRASS_INST_DIR%%/lib/libgrass_dbmiclient.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dbmidriver.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_dbmidriver.so
-%%GRASS_INST_DIR%%/lib/libgrass_dbmidriver.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dbstubs.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_dbstubs.so
-%%GRASS_INST_DIR%%/lib/libgrass_dbstubs.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_dgl.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_dig2.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dgl.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_dgl.so
+%%GRASS_INST_DIR%%/lib/libgrass_dig2.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_dig2.so
+%%GRASS_INST_DIR%%/lib/libgrass_display.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_display.so
-%%GRASS_INST_DIR%%/lib/libgrass_display.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_driver.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_driver.so
-%%GRASS_INST_DIR%%/lib/libgrass_driver.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_dspf.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_dspf.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_dspf.so
+%%GRASS_INST_DIR%%/lib/libgrass_edit.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_edit.so
-%%GRASS_INST_DIR%%/lib/libgrass_edit.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_form.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_form.so
-%%GRASS_INST_DIR%%/lib/libgrass_form.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_g3d.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_g3d.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_g3d.so
+%%GRASS_INST_DIR%%/lib/libgrass_gis.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_gis.so
-%%GRASS_INST_DIR%%/lib/libgrass_gis.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_gmath.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_gmath.so
-%%GRASS_INST_DIR%%/lib/libgrass_gmath.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_gpde.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_gpde.so
-%%GRASS_INST_DIR%%/lib/libgrass_gpde.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_gproj.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_gproj.so
-%%GRASS_INST_DIR%%/lib/libgrass_gproj.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_interpfl.so
+%%GRASS_INST_DIR%%/lib/libgrass_interpdata.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_interpdata.so
-%%GRASS_INST_DIR%%/lib/libgrass_interpdata.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_interpfl.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_interpfl.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_interpfl.so
 %%GRASS_INST_DIR%%/lib/libgrass_iostream.a
 %%GRASS_INST_DIR%%/lib/libgrass_ismap.a
+%%GRASS_INST_DIR%%/lib/libgrass_lidar.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_lidar.so
+%%GRASS_INST_DIR%%/lib/libgrass_linkm.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_linkm.so
-%%GRASS_INST_DIR%%/lib/libgrass_lidar.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_linkm.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_lrs.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_lrs.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_lrs.so
 %%GRASS_INST_DIR%%/lib/libgrass_manage.a
+%%GRASS_INST_DIR%%/lib/libgrass_nviz.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_nviz.so
-%%GRASS_INST_DIR%%/lib/libgrass_nviz.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_ogsf.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_ogsf.so
-%%GRASS_INST_DIR%%/lib/libgrass_ogsf.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_pngdriver.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_pngdriver.so
-%%GRASS_INST_DIR%%/lib/libgrass_pngdriver.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_psdriver.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_psdriver.so
-%%GRASS_INST_DIR%%/lib/libgrass_psdriver.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_qtree.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_qtree.so
-%%GRASS_INST_DIR%%/lib/libgrass_qtree.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_raster.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_raster.so
-%%GRASS_INST_DIR%%/lib/libgrass_raster.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_rli.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_rli.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_rli.so
+%%GRASS_INST_DIR%%/lib/libgrass_rowio.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_rowio.so
-%%GRASS_INST_DIR%%/lib/libgrass_rowio.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_rtree.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_rtree.so
-%%GRASS_INST_DIR%%/lib/libgrass_rtree.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_segment.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_segment.so
-%%GRASS_INST_DIR%%/lib/libgrass_segment.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_shape.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_shape.so
-%%GRASS_INST_DIR%%/lib/libgrass_shape.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_sim.6.4.1.so
+%%GRASS_INST_DIR%%/lib/libgrass_sim.so
+%%GRASS_INST_DIR%%/lib/libgrass_sites.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_sites.so
-%%GRASS_INST_DIR%%/lib/libgrass_sim.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_sites.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_sqlp.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_sqlp.so
-%%GRASS_INST_DIR%%/lib/libgrass_sqlp.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_stats.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_stats.so
-%%GRASS_INST_DIR%%/lib/libgrass_stats.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_symb.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_symb.so
-%%GRASS_INST_DIR%%/lib/libgrass_symb.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_trans.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_trans.so
-%%GRASS_INST_DIR%%/lib/libgrass_trans.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_vask.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_vask.so
+%%GRASS_INST_DIR%%/lib/libgrass_vect.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_vect.so
-%%GRASS_INST_DIR%%/lib/libgrass_vask.6.4.0.so
+%%GRASS_INST_DIR%%/lib/libgrass_vedit.6.4.1.so
 %%GRASS_INST_DIR%%/lib/libgrass_vedit.so
-%%GRASS_INST_DIR%%/lib/libgrass_vect.6.4.0.so
-%%GRASS_INST_DIR%%/lib/libgrass_vedit.6.4.0.so
 %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES/grasslibs.mo
@@ -2493,22 +2632,7 @@
 %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES/grasswxpy.mo
 %%GRASS_INST_DIR%%/man/man1/d.ask.1
-%%GRASS_INST_DIR%%/man/man1/databaseintro.1
 %%GRASS_INST_DIR%%/man/man1/d.barscale.1
-%%GRASS_INST_DIR%%/man/man1/db.columns.1
-%%GRASS_INST_DIR%%/man/man1/db.connect.1
-%%GRASS_INST_DIR%%/man/man1/db.copy.1
-%%GRASS_INST_DIR%%/man/man1/db.describe.1
-%%GRASS_INST_DIR%%/man/man1/db.drivers.1
-%%GRASS_INST_DIR%%/man/man1/db.dropcol.1
-%%GRASS_INST_DIR%%/man/man1/db.droptable.1
-%%GRASS_INST_DIR%%/man/man1/db.execute.1
-%%GRASS_INST_DIR%%/man/man1/db.in.ogr.1
-%%GRASS_INST_DIR%%/man/man1/db.login.1
-%%GRASS_INST_DIR%%/man/man1/db.out.ogr.1
-%%GRASS_INST_DIR%%/man/man1/db.select.1
-%%GRASS_INST_DIR%%/man/man1/db.tables.1
-%%GRASS_INST_DIR%%/man/man1/db.test.1
 %%GRASS_INST_DIR%%/man/man1/d.colorlist.1
 %%GRASS_INST_DIR%%/man/man1/d.colors.1
 %%GRASS_INST_DIR%%/man/man1/d.colortable.1
@@ -2525,7 +2649,6 @@
 %%GRASS_INST_DIR%%/man/man1/d.his.1
 %%GRASS_INST_DIR%%/man/man1/d.histogram.1
 %%GRASS_INST_DIR%%/man/man1/d.info.1
-%%GRASS_INST_DIR%%/man/man1/displaydrivers.1
 %%GRASS_INST_DIR%%/man/man1/d.labels.1
 %%GRASS_INST_DIR%%/man/man1/d.legend.1
 %%GRASS_INST_DIR%%/man/man1/d.linegraph.1
@@ -2569,6 +2692,22 @@
 %%GRASS_INST_DIR%%/man/man1/d.what.vect.1
 %%GRASS_INST_DIR%%/man/man1/d.where.1
 %%GRASS_INST_DIR%%/man/man1/d.zoom.1
+%%GRASS_INST_DIR%%/man/man1/databaseintro.1
+%%GRASS_INST_DIR%%/man/man1/db.columns.1
+%%GRASS_INST_DIR%%/man/man1/db.connect.1
+%%GRASS_INST_DIR%%/man/man1/db.copy.1
+%%GRASS_INST_DIR%%/man/man1/db.describe.1
+%%GRASS_INST_DIR%%/man/man1/db.drivers.1
+%%GRASS_INST_DIR%%/man/man1/db.dropcol.1
+%%GRASS_INST_DIR%%/man/man1/db.droptable.1
+%%GRASS_INST_DIR%%/man/man1/db.execute.1
+%%GRASS_INST_DIR%%/man/man1/db.in.ogr.1
+%%GRASS_INST_DIR%%/man/man1/db.login.1
+%%GRASS_INST_DIR%%/man/man1/db.out.ogr.1
+%%GRASS_INST_DIR%%/man/man1/db.select.1
+%%GRASS_INST_DIR%%/man/man1/db.tables.1
+%%GRASS_INST_DIR%%/man/man1/db.test.1
+%%GRASS_INST_DIR%%/man/man1/displaydrivers.1
 %%GRASS_INST_DIR%%/man/man1/g.access.1
 %%GRASS_INST_DIR%%/man/man1/g.ask.1
 %%GRASS_INST_DIR%%/man/man1/g.copy.1
@@ -2579,24 +2718,17 @@
 %%GRASS_INST_DIR%%/man/man1/g.findfile.1
 %%GRASS_INST_DIR%%/man/man1/g.gisenv.1
 %%GRASS_INST_DIR%%/man/man1/g.gui.1
-%%GRASS_INST_DIR%%/man/man1/gis.m.1
 %%GRASS_INST_DIR%%/man/man1/g.list.1
-%%GRASS_INST_DIR%%/man/man1/gm_animate.1
 %%GRASS_INST_DIR%%/man/man1/g.manual.1
 %%GRASS_INST_DIR%%/man/man1/g.mapset.1
 %%GRASS_INST_DIR%%/man/man1/g.mapsets.1
 %%GRASS_INST_DIR%%/man/man1/g.message.1
-%%GRASS_INST_DIR%%/man/man1/gm_georect.1
 %%GRASS_INST_DIR%%/man/man1/g.mkfontcap.1
 %%GRASS_INST_DIR%%/man/man1/g.mlist.1
-%%GRASS_INST_DIR%%/man/man1/gm_profile.1
 %%GRASS_INST_DIR%%/man/man1/g.mremove.1
 %%GRASS_INST_DIR%%/man/man1/g.parser.1
 %%GRASS_INST_DIR%%/man/man1/g.pnmcomp.1
 %%GRASS_INST_DIR%%/man/man1/g.proj.1
-%%GRASS_INST_DIR%%/man/man1/grass6.1
-%%GRASS_INST_DIR%%/man/man1/grass-dbf.1
-%%GRASS_INST_DIR%%/man/man1/grass-ogr.1
 %%GRASS_INST_DIR%%/man/man1/g.region.1
 %%GRASS_INST_DIR%%/man/man1/g.remove.1
 %%GRASS_INST_DIR%%/man/man1/g.rename.1
@@ -2604,6 +2736,13 @@
 %%GRASS_INST_DIR%%/man/man1/g.tempfile.1
 %%GRASS_INST_DIR%%/man/man1/g.transform.1
 %%GRASS_INST_DIR%%/man/man1/g.version.1
+%%GRASS_INST_DIR%%/man/man1/gis.m.1
+%%GRASS_INST_DIR%%/man/man1/gm_animate.1
+%%GRASS_INST_DIR%%/man/man1/gm_georect.1
+%%GRASS_INST_DIR%%/man/man1/gm_profile.1
+%%GRASS_INST_DIR%%/man/man1/grass-dbf.1
+%%GRASS_INST_DIR%%/man/man1/grass-ogr.1
+%%GRASS_INST_DIR%%/man/man1/grass6.1
 %%PGSQL%%%%GRASS_INST_DIR%%/man/man1/grass-pg.1
 %%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mysql.1
 %%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mesql.1
@@ -2627,11 +2766,17 @@
 %%GRASS_INST_DIR%%/man/man1/i.image.mosaic.1
 %%GRASS_INST_DIR%%/man/man1/i.in.spotvgt.1
 %%GRASS_INST_DIR%%/man/man1/i.landsat.rgb.1
-%%GRASS_INST_DIR%%/man/man1/imageryintro.1
 %%GRASS_INST_DIR%%/man/man1/i.maxlik.1
 %%GRASS_INST_DIR%%/man/man1/i.oif.1
 %%GRASS_INST_DIR%%/man/man1/i.ortho.photo.1
 %%GRASS_INST_DIR%%/man/man1/i.pca.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.2image.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.2target.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.camera.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.elev.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.init.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.rectify.1
+%%GRASS_INST_DIR%%/man/man1/i.photo.target.1
 %%GRASS_INST_DIR%%/man/man1/i.points.1
 %%GRASS_INST_DIR%%/man/man1/i.rectify.1
 %%GRASS_INST_DIR%%/man/man1/i.rgb.his.1
@@ -2641,30 +2786,22 @@
 %%GRASS_INST_DIR%%/man/man1/i.tasscap.1
 %%GRASS_INST_DIR%%/man/man1/i.vpoints.1
 %%GRASS_INST_DIR%%/man/man1/i.zc.1
+%%GRASS_INST_DIR%%/man/man1/imageryintro.1
 %%GRASS_INST_DIR%%/man/man1/lrs.1
 %%GRASS_INST_DIR%%/man/man1/m.cogo.1
+%%GRASS_INST_DIR%%/man/man1/m.proj.1
 %%GRASS_INST_DIR%%/man/man1/mkftcap.1
 %%GRASS_INST_DIR%%/man/man1/modcats.1
 %%GRASS_INST_DIR%%/man/man1/modcolr.1
 %%GRASS_INST_DIR%%/man/man1/modhead.1
 %%GRASS_INST_DIR%%/man/man1/modhist.1
-%%GRASS_INST_DIR%%/man/man1/m.proj.1
 %%GRASS_INST_DIR%%/man/man1/nviz.1
 %%GRASS_INST_DIR%%/man/man1/nviz_cmd.1
-%%GRASS_INST_DIR%%/man/man1/photo.camera.1
-%%GRASS_INST_DIR%%/man/man1/photo.elev.1
-%%GRASS_INST_DIR%%/man/man1/photo.2image.1
-%%GRASS_INST_DIR%%/man/man1/photo.init.1
-%%GRASS_INST_DIR%%/man/man1/photo.rectify.1
-%%GRASS_INST_DIR%%/man/man1/photo.target.1
-%%GRASS_INST_DIR%%/man/man1/photo.2target.1
-%%GRASS_INST_DIR%%/man/man1/pngdriver.1
 %%GRASS_INST_DIR%%/man/man1/p.out.vrml.1
+%%GRASS_INST_DIR%%/man/man1/pngdriver.1
 %%GRASS_INST_DIR%%/man/man1/projectionintro.1
-%%GRASS_INST_DIR%%/man/man1/psdriver.1
 %%GRASS_INST_DIR%%/man/man1/ps.map.1
-%%GRASS_INST_DIR%%/man/man1/raster3dintro.1
-%%GRASS_INST_DIR%%/man/man1/rasterintro.1
+%%GRASS_INST_DIR%%/man/man1/psdriver.1
 %%GRASS_INST_DIR%%/man/man1/r.average.1
 %%GRASS_INST_DIR%%/man/man1/r.basins.fill.1
 %%GRASS_INST_DIR%%/man/man1/r.bilinear.1
@@ -2678,6 +2815,7 @@
 %%GRASS_INST_DIR%%/man/man1/r.clump.1
 %%GRASS_INST_DIR%%/man/man1/r.coin.1
 %%GRASS_INST_DIR%%/man/man1/r.colors.1
+%%GRASS_INST_DIR%%/man/man1/r.colors.out.1
 %%GRASS_INST_DIR%%/man/man1/r.colors.stddev.1
 %%GRASS_INST_DIR%%/man/man1/r.composite.1
 %%GRASS_INST_DIR%%/man/man1/r.compress.1
@@ -2685,7 +2823,6 @@
 %%GRASS_INST_DIR%%/man/man1/r.cost.1
 %%GRASS_INST_DIR%%/man/man1/r.covar.1
 %%GRASS_INST_DIR%%/man/man1/r.cross.1
-%%GRASS_INST_DIR%%/man/man1/r3.cross.rast.1
 %%GRASS_INST_DIR%%/man/man1/r.describe.1
 %%GRASS_INST_DIR%%/man/man1/r.digit.1
 %%GRASS_INST_DIR%%/man/man1/r.distance.1
@@ -2697,24 +2834,20 @@
 %%GRASS_INST_DIR%%/man/man1/r.grow.1
 %%GRASS_INST_DIR%%/man/man1/r.grow.distance.1
 %%GRASS_INST_DIR%%/man/man1/r.gwflow.1
-%%GRASS_INST_DIR%%/man/man1/r3.gwflow.1
 %%GRASS_INST_DIR%%/man/man1/r.his.1
 %%GRASS_INST_DIR%%/man/man1/r.horizon.1
 %%GRASS_INST_DIR%%/man/man1/r.in.arc.1
 %%GRASS_INST_DIR%%/man/man1/r.in.ascii.1
-%%GRASS_INST_DIR%%/man/man1/r3.in.ascii.1
 %%GRASS_INST_DIR%%/man/man1/r.in.aster.1
 %%GRASS_INST_DIR%%/man/man1/r.in.bin.1
-%%GRASS_INST_DIR%%/man/man1/r.info.1
-%%GRASS_INST_DIR%%/man/man1/r3.info.1
 %%GRASS_INST_DIR%%/man/man1/r.in.gdal.1
 %%GRASS_INST_DIR%%/man/man1/r.in.gridatb.1
 %%GRASS_INST_DIR%%/man/man1/r.in.mat.1
 %%GRASS_INST_DIR%%/man/man1/r.in.poly.1
 %%GRASS_INST_DIR%%/man/man1/r.in.srtm.1
-%%GRASS_INST_DIR%%/man/man1/r3.in.v5d.1
 %%GRASS_INST_DIR%%/man/man1/r.in.wms.1
 %%GRASS_INST_DIR%%/man/man1/r.in.xyz.1
+%%GRASS_INST_DIR%%/man/man1/r.info.1
 %%GRASS_INST_DIR%%/man/man1/r.kappa.1
 %%GRASS_INST_DIR%%/man/man1/r.lake.1
 %%GRASS_INST_DIR%%/man/man1/r.le.patch.1
@@ -2733,6 +2866,8 @@
 %%GRASS_INST_DIR%%/man/man1/r.li.padsd.1
 %%GRASS_INST_DIR%%/man/man1/r.li.patchdensity.1
 %%GRASS_INST_DIR%%/man/man1/r.li.patchnum.1
+%%GRASS_INST_DIR%%/man/man1/r.li.pielou.1
+%%GRASS_INST_DIR%%/man/man1/r.li.renyi.1
 %%GRASS_INST_DIR%%/man/man1/r.li.richness.1
 %%GRASS_INST_DIR%%/man/man1/r.li.setup.1
 %%GRASS_INST_DIR%%/man/man1/r.li.shannon.1
@@ -2740,22 +2875,16 @@
 %%GRASS_INST_DIR%%/man/man1/r.li.simpson.1
 %%GRASS_INST_DIR%%/man/man1/r.los.1
 %%GRASS_INST_DIR%%/man/man1/r.mapcalc.1
-%%GRASS_INST_DIR%%/man/man1/r3.mapcalc.1
 %%GRASS_INST_DIR%%/man/man1/r.mapcalculator.1
-%%GRASS_INST_DIR%%/man/man1/r3.mapcalculator.1
 %%GRASS_INST_DIR%%/man/man1/r.mask.1
-%%GRASS_INST_DIR%%/man/man1/r3.mask.1
 %%GRASS_INST_DIR%%/man/man1/r.median.1
 %%GRASS_INST_DIR%%/man/man1/r.mfilter.1
 %%GRASS_INST_DIR%%/man/man1/r.mfilter.fp.1
-%%GRASS_INST_DIR%%/man/man1/r3.mkdspf.1
 %%GRASS_INST_DIR%%/man/man1/r.mode.1
 %%GRASS_INST_DIR%%/man/man1/r.neighbors.1
 %%GRASS_INST_DIR%%/man/man1/r.null.1
-%%GRASS_INST_DIR%%/man/man1/r3.null.1
 %%GRASS_INST_DIR%%/man/man1/r.out.arc.1
 %%GRASS_INST_DIR%%/man/man1/r.out.ascii.1
-%%GRASS_INST_DIR%%/man/man1/r3.out.ascii.1
 %%GRASS_INST_DIR%%/man/man1/r.out.bin.1
 %%GRASS_INST_DIR%%/man/man1/r.out.gdal.1
 %%GRASS_INST_DIR%%/man/man1/r.out.gdal.sh.1
@@ -2767,9 +2896,7 @@
 %%GRASS_INST_DIR%%/man/man1/r.out.ppm.1
 %%GRASS_INST_DIR%%/man/man1/r.out.ppm3.1
 %%GRASS_INST_DIR%%/man/man1/r.out.tiff.1
-%%GRASS_INST_DIR%%/man/man1/r3.out.v5d.1
 %%GRASS_INST_DIR%%/man/man1/r.out.vrml.1
-%%GRASS_INST_DIR%%/man/man1/r3.out.vtk.1
 %%GRASS_INST_DIR%%/man/man1/r.out.vtk.1
 %%GRASS_INST_DIR%%/man/man1/r.out.xyz.1
 %%GRASS_INST_DIR%%/man/man1/r.param.scale.1
@@ -2789,9 +2916,9 @@
 %%GRASS_INST_DIR%%/man/man1/r.regression.line.1
 %%GRASS_INST_DIR%%/man/man1/r.report.1
 %%GRASS_INST_DIR%%/man/man1/r.resamp.interp.1
-%%GRASS_INST_DIR%%/man/man1/r.resample.1
 %%GRASS_INST_DIR%%/man/man1/r.resamp.rst.1
 %%GRASS_INST_DIR%%/man/man1/r.resamp.stats.1
+%%GRASS_INST_DIR%%/man/man1/r.resample.1
 %%GRASS_INST_DIR%%/man/man1/r.rescale.1
 %%GRASS_INST_DIR%%/man/man1/r.rescale.eq.1
 %%GRASS_INST_DIR%%/man/man1/r.ros.1
@@ -2804,7 +2931,6 @@
 %%GRASS_INST_DIR%%/man/man1/r.spreadpath.1
 %%GRASS_INST_DIR%%/man/man1/r.statistics.1
 %%GRASS_INST_DIR%%/man/man1/r.stats.1
-%%GRASS_INST_DIR%%/man/man1/r3.stats.1
 %%GRASS_INST_DIR%%/man/man1/r.sum.1
 %%GRASS_INST_DIR%%/man/man1/r.sun.1
 %%GRASS_INST_DIR%%/man/man1/r.sunmask.1
@@ -2822,16 +2948,13 @@
 %%GRASS_INST_DIR%%/man/man1/r.thin.1
 %%GRASS_INST_DIR%%/man/man1/r.tileset.1
 %%GRASS_INST_DIR%%/man/man1/r.timestamp.1
-%%GRASS_INST_DIR%%/man/man1/r3.timestamp.1
-%%GRASS_INST_DIR%%/man/man1/r.topidx.1
-%%GRASS_INST_DIR%%/man/man1/r.topmodel.1
-%%GRASS_INST_DIR%%/man/man1/r3.to.rast.1
 %%GRASS_INST_DIR%%/man/man1/r.to.rast3.1
 %%GRASS_INST_DIR%%/man/man1/r.to.rast3elev.1
 %%GRASS_INST_DIR%%/man/man1/r.to.vect.1
+%%GRASS_INST_DIR%%/man/man1/r.topidx.1
+%%GRASS_INST_DIR%%/man/man1/r.topmodel.1
 %%GRASS_INST_DIR%%/man/man1/r.transect.1
 %%GRASS_INST_DIR%%/man/man1/r.univar.1
-%%GRASS_INST_DIR%%/man/man1/r3.univar.1
 %%GRASS_INST_DIR%%/man/man1/r.univar.sh.1
 %%GRASS_INST_DIR%%/man/man1/r.volume.1
 %%GRASS_INST_DIR%%/man/man1/r.walk.1
@@ -2841,8 +2964,26 @@
 %%GRASS_INST_DIR%%/man/man1/r.watershed.seg.1
 %%GRASS_INST_DIR%%/man/man1/r.what.1
 %%GRASS_INST_DIR%%/man/man1/r.what.color.1
+%%GRASS_INST_DIR%%/man/man1/r3.cross.rast.1
+%%GRASS_INST_DIR%%/man/man1/r3.gwflow.1
+%%GRASS_INST_DIR%%/man/man1/r3.in.ascii.1
+%%GRASS_INST_DIR%%/man/man1/r3.in.v5d.1
+%%GRASS_INST_DIR%%/man/man1/r3.info.1
+%%GRASS_INST_DIR%%/man/man1/r3.mapcalc.1
+%%GRASS_INST_DIR%%/man/man1/r3.mapcalculator.1
+%%GRASS_INST_DIR%%/man/man1/r3.mask.1
+%%GRASS_INST_DIR%%/man/man1/r3.mkdspf.1
+%%GRASS_INST_DIR%%/man/man1/r3.null.1
+%%GRASS_INST_DIR%%/man/man1/r3.out.ascii.1
+%%GRASS_INST_DIR%%/man/man1/r3.out.v5d.1
+%%GRASS_INST_DIR%%/man/man1/r3.out.vtk.1
+%%GRASS_INST_DIR%%/man/man1/r3.stats.1
+%%GRASS_INST_DIR%%/man/man1/r3.timestamp.1
+%%GRASS_INST_DIR%%/man/man1/r3.to.rast.1
+%%GRASS_INST_DIR%%/man/man1/r3.univar.1
+%%GRASS_INST_DIR%%/man/man1/raster3dintro.1
+%%GRASS_INST_DIR%%/man/man1/rasterintro.1
 %%GRASS_INST_DIR%%/man/man1/sql.1
-%%GRASS_INST_DIR%%/man/man1/variables.1
 %%GRASS_INST_DIR%%/man/man1/v.buffer.1
 %%GRASS_INST_DIR%%/man/man1/v.build.1
 %%GRASS_INST_DIR%%/man/man1/v.build.all.1
@@ -2870,7 +3011,6 @@
 %%GRASS_INST_DIR%%/man/man1/v.dissolve.1
 %%GRASS_INST_DIR%%/man/man1/v.distance.1
 %%GRASS_INST_DIR%%/man/man1/v.drape.1
-%%GRASS_INST_DIR%%/man/man1/vectorintro.1
 %%GRASS_INST_DIR%%/man/man1/v.edit.1
 %%GRASS_INST_DIR%%/man/man1/v.external.1
 %%GRASS_INST_DIR%%/man/man1/v.extract.1
@@ -2881,17 +3021,18 @@
 %%GRASS_INST_DIR%%/man/man1/v.in.db.1
 %%GRASS_INST_DIR%%/man/man1/v.in.dxf.1
 %%GRASS_INST_DIR%%/man/man1/v.in.e00.1
-%%GRASS_INST_DIR%%/man/man1/v.info.1
 %%GRASS_INST_DIR%%/man/man1/v.in.garmin.1
 %%GRASS_INST_DIR%%/man/man1/v.in.geonames.1
 %%GRASS_INST_DIR%%/man/man1/v.in.gns.1
 %%GRASS_INST_DIR%%/man/man1/v.in.gpsbabel.1
+%%GRASS_INST_DIR%%/man/man1/v.in.lines.1
 %%GRASS_INST_DIR%%/man/man1/v.in.mapgen.1
 %%GRASS_INST_DIR%%/man/man1/v.in.ogr.1
 %%GRASS_INST_DIR%%/man/man1/v.in.region.1
 %%GRASS_INST_DIR%%/man/man1/v.in.sites.1
 %%GRASS_INST_DIR%%/man/man1/v.in.sites.all.1
 %%GRASS_INST_DIR%%/man/man1/v.in.wfs.1
+%%GRASS_INST_DIR%%/man/man1/v.info.1
 %%GRASS_INST_DIR%%/man/man1/v.kcv.1
 %%GRASS_INST_DIR%%/man/man1/v.kernel.1
 %%GRASS_INST_DIR%%/man/man1/v.label.1
@@ -2916,11 +3057,11 @@
 %%GRASS_INST_DIR%%/man/man1/v.out.ascii.1
 %%GRASS_INST_DIR%%/man/man1/v.out.dxf.1
 %%GRASS_INST_DIR%%/man/man1/v.out.gpsbabel.1
-%%GRASS_INST_DIR%%/man/man1/v.outlier.1
 %%GRASS_INST_DIR%%/man/man1/v.out.ogr.1
 %%GRASS_INST_DIR%%/man/man1/v.out.pov.1
 %%GRASS_INST_DIR%%/man/man1/v.out.svg.1
 %%GRASS_INST_DIR%%/man/man1/v.out.vtk.1
+%%GRASS_INST_DIR%%/man/man1/v.outlier.1
 %%GRASS_INST_DIR%%/man/man1/v.overlay.1
 %%GRASS_INST_DIR%%/man/man1/v.parallel.1
 %%GRASS_INST_DIR%%/man/man1/v.patch.1
@@ -2953,17 +3094,16 @@
 %%GRASS_INST_DIR%%/man/man1/v.what.1
 %%GRASS_INST_DIR%%/man/man1/v.what.rast.1
 %%GRASS_INST_DIR%%/man/man1/v.what.vect.1
+%%GRASS_INST_DIR%%/man/man1/variables.1
+%%GRASS_INST_DIR%%/man/man1/vectorintro.1
 %%GRASS_INST_DIR%%/man/man1/wxGUI.1
 %%GRASS_INST_DIR%%/man/man1/wxGUI.Attribute_Table_Manager.1
+%%GRASS_INST_DIR%%/man/man1/wxGUI.GCP_Manager.1
 %%GRASS_INST_DIR%%/man/man1/wxGUI.Icons.1
+%%GRASS_INST_DIR%%/man/man1/wxGUI.Modeler.1
 %%GRASS_INST_DIR%%/man/man1/wxGUI.Nviz.1
-%%GRASS_INST_DIR%%/man/man1/wxGUI.Vector_Digitizing_Tool.1
+%%GRASS_INST_DIR%%/man/man1/wxGUI.Vector_Digitizer.1
 %%GRASS_INST_DIR%%/man/man1/xdriver.1
-%%GRASS_INST_DIR%%/scripts/db.dropcol
-%%GRASS_INST_DIR%%/scripts/db.droptable
-%%GRASS_INST_DIR%%/scripts/db.in.ogr
-%%GRASS_INST_DIR%%/scripts/db.out.ogr
-%%GRASS_INST_DIR%%/scripts/db.test
 %%GRASS_INST_DIR%%/scripts/d.correlate
 %%GRASS_INST_DIR%%/scripts/d.font.freetype
 %%GRASS_INST_DIR%%/scripts/d.m
@@ -2984,9 +3124,14 @@
 %%GRASS_INST_DIR%%/scripts/d.split.frame
 %%GRASS_INST_DIR%%/scripts/d.text.freetype
 %%GRASS_INST_DIR%%/scripts/d.vect.thematic
+%%GRASS_INST_DIR%%/scripts/db.dropcol
+%%GRASS_INST_DIR%%/scripts/db.droptable
+%%GRASS_INST_DIR%%/scripts/db.in.ogr
+%%GRASS_INST_DIR%%/scripts/db.out.ogr
+%%GRASS_INST_DIR%%/scripts/db.test
 %%GRASS_INST_DIR%%/scripts/g.extension
-%%GRASS_INST_DIR%%/scripts/gis.m
 %%GRASS_INST_DIR%%/scripts/g.manual
+%%GRASS_INST_DIR%%/scripts/gis.m
 %%GRASS_INST_DIR%%/scripts/i.fusion.brovey
 %%GRASS_INST_DIR%%/scripts/i.image.mosaic
 %%GRASS_INST_DIR%%/scripts/i.in.spotvgt
@@ -2994,8 +3139,8 @@
 %%GRASS_INST_DIR%%/scripts/i.oif
 %%GRASS_INST_DIR%%/scripts/i.spectral
 %%GRASS_INST_DIR%%/scripts/i.tasscap
-%%GRASS_INST_DIR%%/scripts/mkftcap
 %%GRASS_INST_DIR%%/scripts/m.proj
+%%GRASS_INST_DIR%%/scripts/mkftcap
 %%GRASS_INST_DIR%%/scripts/p.out.vrml
 %%GRASS_INST_DIR%%/scripts/r.blend
 %%GRASS_INST_DIR%%/scripts/r.cats
@@ -3006,7 +3151,6 @@
 %%GRASS_INST_DIR%%/scripts/r.in.wms
 %%GRASS_INST_DIR%%/scripts/r.li.setup
 %%GRASS_INST_DIR%%/scripts/r.mapcalculator
-%%GRASS_INST_DIR%%/scripts/r3.mapcalculator
 %%GRASS_INST_DIR%%/scripts/r.mask
 %%GRASS_INST_DIR%%/scripts/r.out.gdal.sh
 %%GRASS_INST_DIR%%/scripts/r.out.xyz
@@ -3016,6 +3160,7 @@
 %%GRASS_INST_DIR%%/scripts/r.shaded.relief
 %%GRASS_INST_DIR%%/scripts/r.tileset
 %%GRASS_INST_DIR%%/scripts/r.univar.sh
+%%GRASS_INST_DIR%%/scripts/r3.mapcalculator
 %%GRASS_INST_DIR%%/scripts/v.build.all
 %%GRASS_INST_DIR%%/scripts/v.centroids
 %%GRASS_INST_DIR%%/scripts/v.colors
@@ -3035,6 +3180,7 @@
 %%GRASS_INST_DIR%%/scripts/v.in.geonames
 %%GRASS_INST_DIR%%/scripts/v.in.gns
 %%GRASS_INST_DIR%%/scripts/v.in.gpsbabel
+%%GRASS_INST_DIR%%/scripts/v.in.lines
 %%GRASS_INST_DIR%%/scripts/v.in.mapgen
 %%GRASS_INST_DIR%%/scripts/v.in.sites.all
 %%GRASS_INST_DIR%%/scripts/v.in.wfs
@@ -3044,73 +3190,67 @@
 %%GRASS_INST_DIR%%/scripts/v.univar.sh
 %%GRASS_INST_DIR%%/scripts/v.what.vect
 %%GRASS_INST_DIR%%/tools/mkhtml.sh
-bin/gem64
-bin/grass64
-@dirrm %%GRASS_INST_DIR%%/bin
-@dirrm %%GRASS_INST_DIR%%/fonts
-@dirrm %%GRASS_INST_DIR%%/include/grass/dgl
-@dirrm %%GRASS_INST_DIR%%/include/grass/iostream
-@dirrm %%GRASS_INST_DIR%%/include/grass/rtree
+%%GRASS_INST_DIR%%/translators.csv
+@dirrm %%GRASS_INST_DIR%%/tools
+@dirrm %%GRASS_INST_DIR%%/scripts
+@dirrm %%GRASS_INST_DIR%%/man/man1
+@dirrm %%GRASS_INST_DIR%%/man
+@dirrm %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/zh
+@dirrm %%GRASS_INST_DIR%%/locale/vi/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/vi
+@dirrm %%GRASS_INST_DIR%%/locale/tr/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/tr
+@dirrm %%GRASS_INST_DIR%%/locale/th/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/th
+@dirrm %%GRASS_INST_DIR%%/locale/sl/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/sl
+@dirrm %%GRASS_INST_DIR%%/locale/ru/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/ru
+@dirrm %%GRASS_INST_DIR%%/locale/pt_br/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/pt_br
+@dirrm %%GRASS_INST_DIR%%/locale/pt/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/pt
+@dirrm %%GRASS_INST_DIR%%/locale/pl/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/pl
+@dirrm %%GRASS_INST_DIR%%/locale/mr/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/mr
+@dirrm %%GRASS_INST_DIR%%/locale/ml/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/ml
+@dirrm %%GRASS_INST_DIR%%/locale/lv/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/lv
+@dirrm %%GRASS_INST_DIR%%/locale/ko/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/ko
+@dirrm %%GRASS_INST_DIR%%/locale/ja/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/ja
+@dirrm %%GRASS_INST_DIR%%/locale/it/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/it
+@dirrm %%GRASS_INST_DIR%%/locale/id/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/id
+@dirrm %%GRASS_INST_DIR%%/locale/hi/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/hi
+@dirrm %%GRASS_INST_DIR%%/locale/fr/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/fr
+@dirrm %%GRASS_INST_DIR%%/locale/es/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/es
+@dirrm %%GRASS_INST_DIR%%/locale/el/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/el
+@dirrm %%GRASS_INST_DIR%%/locale/de/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/de
+@dirrm %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/cs
+@dirrm %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/ar
+@dirrm %%GRASS_INST_DIR%%/locale
+@dirrm %%GRASS_INST_DIR%%/lib
 @dirrm %%GRASS_INST_DIR%%/include/grass/vect
+@dirrm %%GRASS_INST_DIR%%/include/grass/rtree
+@dirrm %%GRASS_INST_DIR%%/include/grass/iostream
+@dirrm %%GRASS_INST_DIR%%/include/grass/dgl
 @dirrm %%GRASS_INST_DIR%%/include/grass
 @dirrm %%GRASS_INST_DIR%%/include/Make
 @dirrm %%GRASS_INST_DIR%%/include
-@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit
-@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass
-@dirrm %%GRASS_INST_DIR%%/docs/html/icons/silk
-@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass2
-@dirrm %%GRASS_INST_DIR%%/docs/html/icons
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/img/nv
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/img
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg
-@dirrm %%GRASS_INST_DIR%%/docs/html/nviz
-@dirrm %%GRASS_INST_DIR%%/docs/html
-@dirrm %%GRASS_INST_DIR%%/docs
-@dirrm %%GRASS_INST_DIR%%/driver/db
-@dirrm %%GRASS_INST_DIR%%/driver
-@dirrm %%GRASS_INST_DIR%%/etc/colors
-@dirrm %%GRASS_INST_DIR%%/etc/gtcltk
-@dirrm %%GRASS_INST_DIR%%/etc/form
-@dirrm %%GRASS_INST_DIR%%/etc/nad
-@dirrm %%GRASS_INST_DIR%%/etc/db.test
-@dirrm %%GRASS_INST_DIR%%/etc/dm/script
-@dirrm %%GRASS_INST_DIR%%/etc/dm
-@dirrm %%GRASS_INST_DIR%%/etc/gem/skeleton
-@dirrm %%GRASS_INST_DIR%%/etc/gem
-@dirrm %%GRASS_INST_DIR%%/etc/msgs
-@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough
-@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps
-@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/scripts
-@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2
-@dirrm %%GRASS_INST_DIR%%/etc/r.li.setup
-@dirrm %%GRASS_INST_DIR%%/etc/d.polar
-@dirrm %%GRASS_INST_DIR%%/etc/paint/decorations
-@dirrm %%GRASS_INST_DIR%%/etc/paint/patterns
-@dirrm %%GRASS_INST_DIR%%/etc/paint
-@dirrm %%GRASS_INST_DIR%%/etc/gm
-@dirrm %%GRASS_INST_DIR%%/etc/lister
-@dirrm %%GRASS_INST_DIR%%/etc/python/grass/script
-@dirrm %%GRASS_INST_DIR%%/etc/python/grass
-@dirrm %%GRASS_INST_DIR%%/etc/python
-@dirrm %%GRASS_INST_DIR%%/etc/gui/scripts
-@dirrm %%GRASS_INST_DIR%%/etc/gui/images
-@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass2
-@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/silk
-@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit
-@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass
-@dirrm %%GRASS_INST_DIR%%/etc/gui/icons
-@dirrm %%GRASS_INST_DIR%%/etc/gui
-@dirrm %%GRASS_INST_DIR%%/etc/ogr_csv
-@dirrm %%GRASS_INST_DIR%%/etc/v.digit
-@dirrm %%GRASS_INST_DIR%%/etc/r.in.wms
-@dirrm %%GRASS_INST_DIR%%/etc/i.oif
-@dirrm %%GRASS_INST_DIR%%/etc/symbol/geology
-@dirrm %%GRASS_INST_DIR%%/etc/symbol/extra
-@dirrm %%GRASS_INST_DIR%%/etc/symbol/basic
-@dirrm %%GRASS_INST_DIR%%/etc/symbol/demo
-@dirrm %%GRASS_INST_DIR%%/etc/symbol
+@dirrm %%GRASS_INST_DIR%%/fonts
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython/xml
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython/scripts
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython/images
@@ -3119,57 +3259,66 @@ bin/grass64
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython/gui_modules
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython/compat
 @dirrm %%GRASS_INST_DIR%%/etc/wxpython
+@dirrm %%GRASS_INST_DIR%%/etc/v.digit
+@dirrm %%GRASS_INST_DIR%%/etc/symbol/geology
+@dirrm %%GRASS_INST_DIR%%/etc/symbol/extra
+@dirrm %%GRASS_INST_DIR%%/etc/symbol/demo
+@dirrm %%GRASS_INST_DIR%%/etc/symbol/basic
+@dirrm %%GRASS_INST_DIR%%/etc/symbol
+@dirrm %%GRASS_INST_DIR%%/etc/r.li.setup
+@dirrm %%GRASS_INST_DIR%%/etc/r.in.wms
+@dirrm %%GRASS_INST_DIR%%/etc/python/grass/script
+@dirrm %%GRASS_INST_DIR%%/etc/python/grass
+@dirrm %%GRASS_INST_DIR%%/etc/python
+@dirrm %%GRASS_INST_DIR%%/etc/paint/patterns
+@dirrm %%GRASS_INST_DIR%%/etc/paint/decorations
+@dirrm %%GRASS_INST_DIR%%/etc/paint
+@dirrm %%GRASS_INST_DIR%%/etc/ogr_csv
+@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/scripts
+@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/msgs
+@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps/flythrough
+@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2/bitmaps
+@dirrm %%GRASS_INST_DIR%%/etc/nviz2.2
+@dirrm %%GRASS_INST_DIR%%/etc/nad
+@dirrm %%GRASS_INST_DIR%%/etc/msgs
+@dirrm %%GRASS_INST_DIR%%/etc/lister
+@dirrm %%GRASS_INST_DIR%%/etc/i.oif
+@dirrm %%GRASS_INST_DIR%%/etc/gui/scripts
+@dirrm %%GRASS_INST_DIR%%/etc/gui/images
+@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/silk
+@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass2
+@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass/vdigit
+@dirrm %%GRASS_INST_DIR%%/etc/gui/icons/grass
+@dirrm %%GRASS_INST_DIR%%/etc/gui/icons
+@dirrm %%GRASS_INST_DIR%%/etc/gui
+@dirrm %%GRASS_INST_DIR%%/etc/gtcltk
+@dirrm %%GRASS_INST_DIR%%/etc/gm
+@dirrm %%GRASS_INST_DIR%%/etc/gem/skeleton
+@dirrm %%GRASS_INST_DIR%%/etc/gem
+@dirrm %%GRASS_INST_DIR%%/etc/form
+@dirrm %%GRASS_INST_DIR%%/etc/dm/script
+@dirrm %%GRASS_INST_DIR%%/etc/dm
+@dirrm %%GRASS_INST_DIR%%/etc/db.test
+@dirrm %%GRASS_INST_DIR%%/etc/d.polar
+@dirrm %%GRASS_INST_DIR%%/etc/colors
 @dirrm %%GRASS_INST_DIR%%/etc
-@dirrm %%GRASS_INST_DIR%%/lib
-@dirrm %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/ar
-@dirrm %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/cs
-@dirrm %%GRASS_INST_DIR%%/locale/de/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/de
-@dirrm %%GRASS_INST_DIR%%/locale/el/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/el
-@dirrm %%GRASS_INST_DIR%%/locale/es/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/es
-@dirrm %%GRASS_INST_DIR%%/locale/fr/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/fr
-@dirrm %%GRASS_INST_DIR%%/locale/hi/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/hi
-@dirrm %%GRASS_INST_DIR%%/locale/id/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/id
-@dirrm %%GRASS_INST_DIR%%/locale/it/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/it
-@dirrm %%GRASS_INST_DIR%%/locale/ja/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/ja
-@dirrm %%GRASS_INST_DIR%%/locale/ko/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/ko
-@dirrm %%GRASS_INST_DIR%%/locale/lv/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/lv
-@dirrm %%GRASS_INST_DIR%%/locale/mr/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/mr
-@dirrm %%GRASS_INST_DIR%%/locale/ml/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/ml
-@dirrm %%GRASS_INST_DIR%%/locale/pl/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/pl
-@dirrm %%GRASS_INST_DIR%%/locale/pt/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/pt
-@dirrm %%GRASS_INST_DIR%%/locale/pt_br/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/pt_br
-@dirrm %%GRASS_INST_DIR%%/locale/ru/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/ru
-@dirrm %%GRASS_INST_DIR%%/locale/sl/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/sl
-@dirrm %%GRASS_INST_DIR%%/locale/th/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/th
-@dirrm %%GRASS_INST_DIR%%/locale/tr/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/tr
-@dirrm %%GRASS_INST_DIR%%/locale/vi/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/vi
-@dirrm %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES
-@dirrm %%GRASS_INST_DIR%%/locale/zh
-@dirrm %%GRASS_INST_DIR%%/locale
-@dirrm %%GRASS_INST_DIR%%/man/man1
-@dirrm %%GRASS_INST_DIR%%/man
-@dirrm %%GRASS_INST_DIR%%/scripts
-@dirrm %%GRASS_INST_DIR%%/tools
+@dirrm %%GRASS_INST_DIR%%/driver/db
+@dirrm %%GRASS_INST_DIR%%/driver
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/work
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg/panel
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/nvimg
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/img/nv
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz/img
+@dirrm %%GRASS_INST_DIR%%/docs/html/nviz
+@dirrm %%GRASS_INST_DIR%%/docs/html/icons/silk
+@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass2
+@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass/vdigit
+@dirrm %%GRASS_INST_DIR%%/docs/html/icons/grass
+@dirrm %%GRASS_INST_DIR%%/docs/html/icons
+@dirrm %%GRASS_INST_DIR%%/docs/html
+@dirrm %%GRASS_INST_DIR%%/docs
+@dirrm %%GRASS_INST_DIR%%/bwidget/lang
+@dirrm %%GRASS_INST_DIR%%/bwidget/images
+@dirrm %%GRASS_INST_DIR%%/bwidget
+@dirrm %%GRASS_INST_DIR%%/bin
 @dirrm %%GRASS_INST_DIR%%

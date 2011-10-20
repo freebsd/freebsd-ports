@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	6.4.0
-PORTREVISION=	4
+PORTVERSION=	6.4.1
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.itc.it/grass64/source/ \
@@ -22,7 +21,6 @@ MASTER_SITES=	http://grass.itc.it/grass64/source/ \
 		ftp://ftp.planetmirror.com/pub/grass/grass64/source/\
 		http://gulus.usherbrooke.ca/pub/appl/grass/grass64/source/\
 		http://ludique.u-bourgogne.fr/grass/grass64/source/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}RC5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
@@ -38,7 +36,7 @@ RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		fftw3:${PORTSDIR}/math/fftw3 \
+		fftw3.5:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
@@ -90,6 +88,10 @@ BASH_SCRIPTS=	i.spectral r.tileset
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
+.endif
+
+.if ${OSVERSION} < 800000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vector-v.info-main.c
 .endif
 
 .if !defined (GRASS_INST_DIR)
