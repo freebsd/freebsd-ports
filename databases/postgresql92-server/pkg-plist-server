@@ -769,3 +769,4 @@ share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
+@dirrmtry %%PG_USER%%

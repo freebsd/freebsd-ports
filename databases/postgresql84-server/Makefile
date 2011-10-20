@@ -263,6 +263,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		savepoint.7 values.7 with.7
 .endif
 
+PLIST_SUB+=	PG_USER=$(PG_USER)
 SUB_LIST+=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)

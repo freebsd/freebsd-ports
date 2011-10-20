@@ -91,8 +91,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
@@ -233,6 +231,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		savepoint.7 values.7
 .endif
 
+PLIST_SUB+=	PG_USER=$(PG_USER)
 SUB_LIST+=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)
