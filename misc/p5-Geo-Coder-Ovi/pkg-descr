@@ -1,0 +1,4 @@
+Geo::Coder::Ovi provides an interface to the geocoding service of the Ovi Maps
+API.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Ovi/
