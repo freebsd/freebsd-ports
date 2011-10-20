@@ -401,6 +401,7 @@
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Cache
+    SUBDIR += p5-Geo-Coder-Bing
     SUBDIR += p5-Geo-Coder-Google
     SUBDIR += p5-Geo-Coder-Multiple
     SUBDIR += p5-Geo-Postcodes
