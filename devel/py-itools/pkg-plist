@@ -23,6 +23,7 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.5
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.6
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.7
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.8
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
@@ -149,6 +150,12 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/git/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/git/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/git/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/git/_git.py
+%%PYTHON_SITELIBDIR%%/itools/git/_git.pyc
+%%PYTHON_SITELIBDIR%%/itools/git/_git.pyo
+%%PYTHON_SITELIBDIR%%/itools/git/_libgit.py
+%%PYTHON_SITELIBDIR%%/itools/git/_libgit.pyc
+%%PYTHON_SITELIBDIR%%/itools/git/_libgit.pyo
 %%PYTHON_SITELIBDIR%%/itools/git/git.py
 %%PYTHON_SITELIBDIR%%/itools/git/git.pyc
 %%PYTHON_SITELIBDIR%%/itools/git/git.pyo
@@ -380,16 +387,6 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/relaxng/relaxng.py
 %%PYTHON_SITELIBDIR%%/itools/relaxng/relaxng.pyc
 %%PYTHON_SITELIBDIR%%/itools/relaxng/relaxng.pyo
-%%PYTHON_SITELIBDIR%%/itools/rest/README.txt
-%%PYTHON_SITELIBDIR%%/itools/rest/__init__.py
-%%PYTHON_SITELIBDIR%%/itools/rest/__init__.pyc
-%%PYTHON_SITELIBDIR%%/itools/rest/__init__.pyo
-%%PYTHON_SITELIBDIR%%/itools/rest/parser.py
-%%PYTHON_SITELIBDIR%%/itools/rest/parser.pyc
-%%PYTHON_SITELIBDIR%%/itools/rest/parser.pyo
-%%PYTHON_SITELIBDIR%%/itools/rest/rest.py
-%%PYTHON_SITELIBDIR%%/itools/rest/rest.pyc
-%%PYTHON_SITELIBDIR%%/itools/rest/rest.pyo
 %%PYTHON_SITELIBDIR%%/itools/rss/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/rss/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/rss/__init__.pyo
@@ -537,7 +534,6 @@ bin/idb-inspect.py
 @dirrm %%PYTHON_SITELIBDIR%%/itools/pkg
 @dirrm %%PYTHON_SITELIBDIR%%/itools/python
 @dirrm %%PYTHON_SITELIBDIR%%/itools/relaxng
-@dirrm %%PYTHON_SITELIBDIR%%/itools/rest
 @dirrm %%PYTHON_SITELIBDIR%%/itools/rss
 @dirrm %%PYTHON_SITELIBDIR%%/itools/srx
 @dirrm %%PYTHON_SITELIBDIR%%/itools/stl
