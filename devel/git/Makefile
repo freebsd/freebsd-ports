@@ -275,9 +275,13 @@ PLIST_SUB+=	GUI="@comment "
 MAKE_ARGS+=	NO_TCLTK=yes
 .endif
 
+# While this port does not explicity honor WITH_SUBVERSION_VER knob it does
+# depend upon devel/p5-subversion, which does honor that knob. If you want
+# to have git use devel/subversion16 it will be brought in through
+# devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
+# devel/subversion will be brought in.
 .ifdef (WITH_SVN)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion \
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
 PLIST_SUB+=	SVN=""
 MAN1+=		git-svn.1
