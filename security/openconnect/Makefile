@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	3.11
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		CRITICAL
@@ -17,40 +17,28 @@ COMMENT=	A client for Cisco\'s AnyConnect SSL VPN
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_SAFE=	yes
 USE_OPENSSL=	yes
-OPENSSL=	${OPENSSLBASE}
+USE_OPENSSL_PORT=	yes # Requires modern OpenSSL version
 
 MAN8=		openconnect.8
-PORTDOCS=	README.*
 
-.include <bsd.port.options.mk>
+OPTIONS=	PROXY "Enable automatic proxy configuratio via libproxy"   off
 
-OPTIONS=	GUI      "Enable the OpenConnect configuration GUI"   off
+.include <bsd.port.pre.mk>
 
-.if defined(WITH_GUI)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
-LIB_DEPENDS+=	gconf-2.4:${PORTSDIR}/devel/gconf2
-PLIST_SUB+=	WITH_GUI=""
-.else
-PLIST_SUB+=	WITH_GUI="@comment "
+.if defined(WITH_PROXY)
+LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
 .endif
-
-do-install:
-	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/openconnect \
-	${PREFIX}/bin/openconnect
-.if defined(WITH_GUI)
-	${INSTALL_PROGRAM} ${WRKSRC}/nm-openconnect-auth-dialog \
-	${PREFIX}/libexec
-.endif
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.DTLS ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.SecurID ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/openconnect.html ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/TODO ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

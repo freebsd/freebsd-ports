@@ -6,4 +6,4 @@ transmitted via an HTTPS connection.  This means that any packet
 loss on your link will result in a significant detriment to the
 speed of your VPN connection.
 
-More information is included in README.DTLS.
+More information is included in openconnect.html.
