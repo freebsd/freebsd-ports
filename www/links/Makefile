@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	links
-DISTVERSION=	2.3pre2
+DISTVERSION=	2.3
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -95,6 +95,7 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/links-2.2-ipv6-2.diff ${WRKDIR}
 	@${REINPLACE_CMD} -E -e 's!void (lookup_fn|end_real_lookup)!static &!' \
 		-e 's!^(\+\+\+|---) (a|b)/!\1 !' ${WRKDIR}/links-2.2-ipv6-2.diff
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/extra-ipv6.diff
 .endif
 
 post-patch:
