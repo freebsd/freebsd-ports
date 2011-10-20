@@ -16,8 +16,6 @@ COMMENT=	A small and fast window manager for X11R6
 
 LICENSE=	MIT
 
-BROKEN=		does not compile
-
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -39,6 +37,10 @@ INSTALL_TARGET=	-C util install		# XXX dirty hack :(
 MAN1+=		blackbox.1
 PORTDOCS+=	AUTHORS COMPLIANCE ChangeLog README RELNOTES TODO
 .endif
+
+post-patch:
+# Fix the build with libX11 > 1.40
+	@${REINPLACE_CMD} -e 's/_XUTIL_H_/_X11&/' ${WRKSRC}/lib/Util.hh
 
 post-install:
 .if defined(WITH_TOOLS_ONLY)
