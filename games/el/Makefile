@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	180
-PORTREVISION=	6
+PORTVERSION=	192
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
@@ -29,8 +28,8 @@ USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
 
-ALL_TARGET=	el.x86
-MAKEFILE=	Makefile.linux
+ALL_TARGET=	el.bin
+MAKEFILE=	Makefile.bsd
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
@@ -42,15 +41,15 @@ BROKEN=		Does not compile on sparc64
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/el
 	@${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/el
-	@${ECHO} "exec ${DATADIR}/el.x86" >> ${WRKDIR}/el
+	@${ECHO} "exec ${DATADIR}/el.bin" >> ${WRKDIR}/el
 
 	@${ECHO} "bin/el" > ${PLIST}
-	@${ECHO} "%%DATADIR%%/el.x86" >> ${PLIST}
+	@${ECHO} "%%DATADIR%%/el.bin" >> ${PLIST}
 	@${ECHO} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/el ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/el.x86 ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/el.bin ${DATADIR}
 
 .include <bsd.port.post.mk>
