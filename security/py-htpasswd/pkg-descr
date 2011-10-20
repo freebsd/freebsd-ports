@@ -1,0 +1,6 @@
+Replacement for htpasswd.
+
+This port will install htpasswd.py that can be found in trac trac contrib
+directory.
+
+WWW: http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py
