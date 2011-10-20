@@ -46,7 +46,7 @@ BROKEN=		does not compile on 7.X
 .endif
 
 .if defined(WITH_GRASS)
-CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE
+CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.1
 RUN_DEPENDS+=	${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
 .else
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=FALSE
