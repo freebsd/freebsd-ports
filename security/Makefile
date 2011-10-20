@@ -25,6 +25,7 @@
     SUBDIR += apache-xml-security-c
     SUBDIR += apg
     SUBDIR += arirang
+    SUBDIR += arm
     SUBDIR += arpCounterattack
     SUBDIR += authforce
     SUBDIR += autossh

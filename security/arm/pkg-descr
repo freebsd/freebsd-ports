@@ -1,0 +1,12 @@
+The anonymizing relay monitor (arm) is a terminal status monitor for Tor,
+intended for command-line aficionados, ssh connections, and anyone with a tty
+terminal. This works much like top does for system usage, providing real time
+statistics for:
+
+  * bandwidth, cpu, and memory usage
+  * relay's current configuration
+  * logged events
+  * connection details (ip, hostname, fingerprint, and consensus data)
+  * ... etc
+
+WWW: http://www.atagar.com/arm/
