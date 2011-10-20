@@ -12,7 +12,7 @@ MASTER_SITES=	https://archive.torproject.org/arm/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A terminal status monitor for Tor
 
 LICENSE=	GPLv3
