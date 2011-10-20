@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
