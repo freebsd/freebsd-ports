@@ -1,0 +1,4 @@
+Geo::Coder::Multimap provides an interface to the geocoding functionality of the
+Multimap Open API.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Multimap/
