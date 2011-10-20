@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2011.751
+PORTVERSION=	2011.752
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://offload2.icculus.org:9090/alienarena/Files/ \
 		http://offload1.icculus.org:9090/alienarena/Files/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
-DISTNAME=	${PORTNAME}-7_51-linux20110311
+DISTNAME=	${PORTNAME}-7_52-linux20110929
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.51/
+CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.52/
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=--with-xf86vm \
@@ -36,7 +36,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} --exclude "data1" -xf -
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-7.51/source
+WRKSRC=		${WRKDIR}/${PORTNAME}-7.52/source
 
 SUB_FILES=	pkg-message
 

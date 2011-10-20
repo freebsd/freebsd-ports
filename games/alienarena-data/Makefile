@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2011.751
+PORTVERSION=	2011.752
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -16,15 +16,15 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://offload1.icculus.org:9090/alienarena/Files/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}-7_51-linux20110311
+DISTNAME=	${PORTNAME}-7_52-linux20110929
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (data)
 
 NO_BUILD=	yes
-NO_PACKAGE=	Package will be 270MB, set FORCE_PACKAGE if you want it
+NO_PACKAGE=	Package will be 370MB, set FORCE_PACKAGE if you want it
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}-7.51
+WRKSRC=		${WRKDIR}/${PORTNAME}-7.52
 
 .include <bsd.port.pre.mk>
 
