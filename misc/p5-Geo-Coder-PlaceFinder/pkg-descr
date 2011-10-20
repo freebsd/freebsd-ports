@@ -1,0 +1,4 @@
+Geo::Coder::PlaceFinder provides an interface to the Yahoo PlaceFinder geocoding
+service.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-PlaceFinder/

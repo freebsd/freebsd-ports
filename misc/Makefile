@@ -410,6 +410,7 @@
     SUBDIR += p5-Geo-Coder-Navteq
     SUBDIR += p5-Geo-Coder-OSM
     SUBDIR += p5-Geo-Coder-Ovi
+    SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Postcodes-DK
     SUBDIR += p5-Geo-Postcodes-NO
