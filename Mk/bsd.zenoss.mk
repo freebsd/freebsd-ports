@@ -22,6 +22,7 @@ PKGNAMEPREFIX:=	zenpack-${ZPACKGROUP}-
 IGNORE=			will not work with undefined ZPACKGROUP (ex: core,community,etc)
 .endif
 ZENHOME=		${LOCALBASE}/zenoss
+ZENHOME_REL=		${ZENHOME:S,${LOCALBASE}/,,}
 ZPACKHOME=		${LOCALBASE}/zenoss/ZenPack
 ZPACKPREFIX?=	ZenPacks.zenoss.
 ZPACK?=	${ZPACKPREFIX}${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg
