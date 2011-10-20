@@ -2309,7 +2309,6 @@ desktop-data-model              ports/net/desktop-data-model
 desktop-file-utils              ports/devel/desktop-file-utils
 desktop-installer               ports/sysutils/desktop-installer
 desktopbsd-tools                ports/sysutils/desktopbsd-tools
-deskutils_lightning             ports/deskutils/lightning
 desmume                         ports/emulators/desmume
 despoof                         ports/net/despoof
 destroy                         ports/security/destroy
@@ -2325,7 +2324,6 @@ devede                          ports/multimedia/devede
 devel_atlas                     ports/devel/atlas
 devel_atlas-devel               ports/devel/atlas-devel
 devel_gps                       ports/devel/gps
-devel_lightning                 ports/devel/lightning
 devel_ninja                     ports/devel/ninja
 devel_rvm                       ports/devel/rvm
 devhelp                         ports/devel/devhelp
@@ -3021,7 +3019,6 @@ enfle                           ports/graphics/enfle
 engine_pkcs11                   ports/security/engine_pkcs11
 enigmail                        ports/mail/enigmail
 enigmail-seamonkey              ports/mail/enigmail-seamonkey
-enigmail-seamonkey2             ports/mail/enigmail-seamonkey2
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
 enigmail-thunderbird3           ports/mail/enigmail-thunderbird3
 enlightenment                   ports/x11-wm/enlightenment
@@ -3387,7 +3384,7 @@ fetchconfig                     ports/net-mgmt/fetchconfig
 fetchlog                        ports/sysutils/fetchlog
 fetchmail                       ports/mail/fetchmail
 fetchyahoo                      ports/mail/fetchyahoo
-fex                             ports/sysutils/fex
+fex                             ports/textproc/fex
 ffcall                          ports/devel/ffcall
 ffe                             ports/textproc/ffe
 ffff                            ports/graphics/ffff
@@ -5385,6 +5382,7 @@ horde-turba                     ports/mail/horde-turba
 horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
+horde4-ansel                    ports/www/horde4-ansel
 horde4-base                     ports/www/horde4-base
 horde4-content                  ports/devel/horde4-content
 horde4-gollem                   ports/ftp/horde4-gollem
@@ -8086,6 +8084,7 @@ libntlm                         ports/security/libntlm
 libnxml                         ports/textproc/libnxml
 libnxt                          ports/devel/libnxt
 liboauth                        ports/net/liboauth
+libobjc2                        ports/lang/libobjc2
 libocas                         ports/math/libocas
 libodbc++                       ports/databases/libodbc++
 libofa                          ports/audio/libofa
@@ -8416,7 +8415,7 @@ licq-qt-gui                     ports/net-im/licq-qt-gui
 lifelines                       ports/misc/lifelines
 liferea                         ports/net/liferea
 lifetype                        ports/www/lifetype
-lightning-thunderbird           ports/deskutils/lightning-thunderbird
+lightning                       ports/devel/lightning
 lightspark-devel                ports/graphics/lightspark-devel
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
@@ -11552,6 +11551,7 @@ p5-Convert-Binary-C             ports/converters/p5-Convert-Binary-C
 p5-Convert-Color                ports/graphics/p5-Convert-Color
 p5-Convert-IBM390               ports/converters/p5-Convert-IBM390
 p5-Convert-Morse                ports/converters/p5-Convert-Morse
+p5-Convert-NLS_DATE_FORMAT      ports/converters/p5-Convert-NLS_DATE_FORMAT
 p5-Convert-PEM                  ports/converters/p5-Convert-PEM
 p5-Convert-Recode               ports/converters/p5-Convert-Recode
 p5-Convert-TNEF                 ports/converters/p5-Convert-TNEF
@@ -11919,6 +11919,7 @@ p5-DateTime-Format-ISO8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-DateTime-Format-Mail         ports/devel/p5-DateTime-Format-Mail
 p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
 p5-DateTime-Format-Natural      ports/devel/p5-DateTime-Format-Natural
+p5-DateTime-Format-Oracle       ports/devel/p5-DateTime-Format-Oracle
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-RFC3339      ports/devel/p5-DateTime-Format-RFC3339
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
@@ -15882,6 +15883,7 @@ p5-convert-binhex               ports/converters/p5-Convert-BinHex
 p5-convert-color                ports/graphics/p5-Convert-Color
 p5-convert-ibm390               ports/converters/p5-Convert-IBM390
 p5-convert-morse                ports/converters/p5-Convert-Morse
+p5-convert-nls_date_format      ports/converters/p5-Convert-NLS_DATE_FORMAT
 p5-convert-pem                  ports/converters/p5-Convert-PEM
 p5-convert-recode               ports/converters/p5-Convert-Recode
 p5-convert-tnef                 ports/converters/p5-Convert-TNEF
@@ -16176,6 +16178,7 @@ p5-datetime-format-iso8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-datetime-format-mail         ports/devel/p5-DateTime-Format-Mail
 p5-datetime-format-mysql        ports/devel/p5-DateTime-Format-MySQL
 p5-datetime-format-natural      ports/devel/p5-DateTime-Format-Natural
+p5-datetime-format-oracle       ports/devel/p5-DateTime-Format-Oracle
 p5-datetime-format-pg           ports/devel/p5-DateTime-Format-Pg
 p5-datetime-format-rfc3339      ports/devel/p5-DateTime-Format-RFC3339
 p5-datetime-format-roman        ports/devel/p5-DateTime-Format-Roman
@@ -24316,8 +24319,6 @@ seahorse-plugins                ports/security/seahorse-plugins
 seam-carving-gui                ports/graphics/seam-carving-gui
 seamonkey                       ports/www/seamonkey
 seamonkey-i18n                  ports/www/seamonkey-i18n
-seamonkey2                      ports/www/seamonkey2
-seamonkey2-i18n                 ports/www/seamonkey2-i18n
 searchandrescue                 ports/games/searchandrescue
 searchandrescue-data            ports/games/searchandrescue-data
 searchmonkey                    ports/sysutils/searchmonkey
