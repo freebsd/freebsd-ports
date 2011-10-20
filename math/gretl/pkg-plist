@@ -188,10 +188,13 @@ lib/gretl-gtk2/urcdist.so
 lib/gretl-gtk2/vif.a
 lib/gretl-gtk2/vif.la
 lib/gretl-gtk2/vif.so
+%%GUI%%lib/gretl-gtk2/xlsx_import.a
+%%GUI%%lib/gretl-gtk2/xlsx_import.la
+%%GUI%%lib/gretl-gtk2/xlsx_import.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.la
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.0
+lib/libgretl-1.0.so.1
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
@@ -372,6 +375,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/fonts/VeraMono.ttf
 %%DATADIR%%/functions/criteria.gfn
 %%DATADIR%%/functions/gretlfunc.dtd
+%%DATADIR%%/functions/packages.xml
 %%DATADIR%%/genrcli.hlp
 %%DATADIR%%/genrcli.hlp.it
 %%DATADIR%%/genrcli.hlp.pt
