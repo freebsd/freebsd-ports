@@ -28,8 +28,10 @@ bin/qtiplot
 %%NLS%%%%DATADIR%%/translations/qtiplot_cn.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_cz.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_de.qm
+%%NLS%%%%DATADIR%%/translations/qtiplot_el.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_es.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_fr.qm
+%%NLS%%%%DATADIR%%/translations/qtiplot_it.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ja.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_pt.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ro.qm
@@ -37,4 +39,4 @@ bin/qtiplot
 %%NLS%%%%DATADIR%%/translations/qtiplot_sv.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/fitPlugins
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%

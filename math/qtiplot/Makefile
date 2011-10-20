@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.8.6
+DISTVERSION=	0.9.8.8
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -81,7 +81,7 @@ post-patch:
 		${WRKSRC}/build.conf
 .endif
 	@${REINPLACE_CMD} -e \
-		's|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
+		's|/usr/local/qtiplot/fitPlugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/core/ApplicationWindow.cpp
 	@${REINPLACE_CMD} -e \
 		's|target.path=.*|target.path=${DATADIR}/fitPlugins|g' \
@@ -91,7 +91,7 @@ post-patch:
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e \
 		"/^CONFIG.*release/s|release|debug|" \
-		${WRKSRC}/${PORTNAME}/qtiplot.pro
+		${WRKSRC}/build.conf
 .endif
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e \
