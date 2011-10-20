@@ -1610,6 +1610,7 @@
     SUBDIR += p5-Devel-Events-Objects
     SUBDIR += p5-Devel-Gladiator
     SUBDIR += p5-Devel-GlobalDestruction
+    SUBDIR += p5-Devel-KYTProf
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakGuard-Object
