@@ -6,13 +6,20 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebHistoryItem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/NetworkRequest.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebSettings.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Download.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebDatabase.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/SecurityOrigin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/NetworkResponse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/GeolocationPolicyDecision.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebResource.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebDataSource.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/webkit.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/webkit-autogen.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebSettings.pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2
