@@ -1,2 +1,9 @@
 bin/openconnect
-%%WITH_GUI%%libexec/nm-openconnect-auth-dialog
+include/openconnect.h
+lib/libopenconnect.la
+lib/libopenconnect.so
+lib/libopenconnect.so.1
+libdata/pkgconfig/openconnect.pc
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/openconnect.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
