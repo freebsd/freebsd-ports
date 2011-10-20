@@ -19,6 +19,8 @@ COMMENT=	The Parma Polyhedra Library
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+PWL_DOC_PREFIX=	share/doc/pwl
+
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool
@@ -47,5 +49,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||g' \
 		${WRKSRC}/doc/Makefile.in ${WRKSRC}/Watchdog/doc/Makefile.in
 .endif
+
+PLIST_SUB+=	PWL_DOC_PREFIX=${PWL_DOC_PREFIX}
 
 .include <bsd.port.mk>
