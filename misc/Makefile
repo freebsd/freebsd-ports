@@ -407,6 +407,7 @@
     SUBDIR += p5-Geo-Coder-Mapquest
     SUBDIR += p5-Geo-Coder-Multimap
     SUBDIR += p5-Geo-Coder-Multiple
+    SUBDIR += p5-Geo-Coder-Navteq
     SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Postcodes-DK
     SUBDIR += p5-Geo-Postcodes-NO

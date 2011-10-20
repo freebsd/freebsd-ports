@@ -1,0 +1,4 @@
+Geo::Coder::Navteq provides an interface to the geocoding functionality of the
+Navteq MapTP AJAX API.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Navteq/
