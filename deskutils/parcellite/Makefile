@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	parcellite
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	joey@mingrone.org
+MAINTAINER=	jrm@ftfl.ca
 COMMENT=	A lightweight GTK+ clipboard manager
 
 GNU_CONFIGURE=	yes
