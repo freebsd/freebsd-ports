@@ -1,5 +1,5 @@
---- ./qtiplot/qtiplot.pro.orig	2011-02-14 14:21:47.000000000 +0300
-+++ ./qtiplot/qtiplot.pro	2011-03-19 00:32:55.867883769 +0300
+--- ./qtiplot/qtiplot.pro.orig	2011-10-15 23:30:36.976081538 +0000
++++ ./qtiplot/qtiplot.pro	2011-10-15 23:31:17.153088752 +0000
 @@ -45,14 +45,14 @@
  	INSTALLS        += documentation
  	unix:INSTALLS        += man
@@ -10,32 +10,34 @@
  
  	unix: target.path = $$INSTALLBASE/bin
  	unix: translations.path = $$INSTALLBASE/share/qtiplot/translations
- 	unix: manual.path = $$INSTALLBASE/share/doc/qtiplot/manual
+-	unix: manual.path = $$INSTALLBASE/share/doc/qtiplot/manual
++	unix: manual.path = $$INSTALLBASE/share/qtiplot/manual
  	unix: documentation.path = $$INSTALLBASE/share/doc/qtiplot
 -	unix: man.path = $$INSTALLBASE/share/man/man1/
 +	unix: man.path = $$INSTALLBASE/man/man1/
  
  	win32: target.path = $$INSTALLBASE
  	win32: translations.path = $$INSTALLBASE/translations
-@@ -94,16 +94,7 @@
- 				  translations/qtiplot_ja.ts \
- 				  translations/qtiplot_sv.ts
+@@ -101,17 +101,7 @@
+ 		  translations/qtiplot_ja.ts \
+ 		  translations/qtiplot_sv.ts
  
 -translations.files += translations/qtiplot_cn.qm \
--					translations/qtiplot_cz.qm \
--					translations/qtiplot_de.qm \
--					translations/qtiplot_es.qm \
--					translations/qtiplot_fr.qm \
--					translations/qtiplot_pt.qm \
--					translations/qtiplot_ro.qm \
--					translations/qtiplot_ru.qm \
--					translations/qtiplot_ja.qm \
--					translations/qtiplot_sv.qm
+-		translations/qtiplot_cz.qm \
+-		translations/qtiplot_de.qm \
+-		translations/qtiplot_es.qm \
+-		translations/qtiplot_el.qm \
+-		translations/qtiplot_fr.qm \
+-		translations/qtiplot_pt.qm \
+-		translations/qtiplot_ro.qm \
+-		translations/qtiplot_ru.qm \
+-		translations/qtiplot_ja.qm \
+-		translations/qtiplot_sv.qm
 +translations.files += $$replace(TRANSLATIONS,".ts",".qm")
  
  isEmpty(LUPDATE): LUPDATE = lupdate
  #system($$LUPDATE -verbose qtiplot.pro)
-@@ -112,11 +103,7 @@
+@@ -120,11 +110,7 @@
  
  ###################### DOCUMENTATION ########################################
  
@@ -47,7 +49,7 @@
  
  unix: man.files += ../qtiplot.1
  
-@@ -151,18 +138,19 @@
+@@ -159,18 +145,19 @@
    				    qtiUtil.py \
    				    qti_wordlist.txt \
  
