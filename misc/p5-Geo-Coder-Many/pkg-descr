@@ -1,0 +1,9 @@
+Geo::Coder::Many provides a single interface to different remote (ie HTTP based)
+geocoding modules
+
+Amongst other things, Geo::Coder::Many adds geocoder precision information,
+alternative scheduling methods (weighted random, and ordered list), timeouts for
+geocoders which are failing, and optional callbacks for result filtering and
+picking.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Many/

@@ -404,6 +404,7 @@
     SUBDIR += p5-Geo-Coder-Bing
     SUBDIR += p5-Geo-Coder-Google
     SUBDIR += p5-Geo-Coder-Googlev3
+    SUBDIR += p5-Geo-Coder-Many
     SUBDIR += p5-Geo-Coder-Mapquest
     SUBDIR += p5-Geo-Coder-Multimap
     SUBDIR += p5-Geo-Coder-Multiple
