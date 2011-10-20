@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp-save-for-web
-PORTVERSION=	0.29.0
-PORTREVISION=	2
+PORTVERSION=	0.29.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 
