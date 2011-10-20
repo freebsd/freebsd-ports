@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.5
-PORTREVISION=	2
+PORTVERSION=	1.9.6
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -25,7 +24,8 @@ USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 
 ALL_TARGET=	# empty
-CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake --without-gnome
+CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake \
+			--without-gnome
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}"
@@ -34,6 +34,7 @@ MAN1=		gretl.1
 OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \
 		GUI "Build the graphical user interface and plugins" on \
 		NLS "Build with Natural Language Support" on \
+		OPENMP "Use multithreading via OpenMP" on \
 		ODBC "Build with unixODBC database support" off \
 		R "Build with libR support" off
 
@@ -79,6 +80,10 @@ CONFIGURE_ARGS+=	--without-odbc
 PLIST_SUB+=		ODBC="@comment "
 .endif
 
+.if defined(WITH_OPENMP)
+CONFIGURE_ARGS+=	--enable-openmp
+.endif
+
 .if defined(WITH_R)
 CONFIGURE_ARGS+=	--with-libR
 LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
@@ -86,13 +91,17 @@ LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
 CONFIGURE_ARGS+=	--without-libR
 .endif
 
-.if ${MACHINE_CPU:Msse2}
+.if !empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=	--enable-sse2=yes
 .else
 CONFIGURE_ARGS+=	--enable-sse2=no
 .endif
 
 post-patch:
+	@${SED} -i '.orig' -E -e '/#include[[:blank:]]+<sys\/socket\.h>/\
+		{x; s/.*/#include <netinet\/in.h>/; H; x;}' \
+		${WRKSRC}/configure \
+		${WRKSRC}/plugin/mailer.c
 	@${REINPLACE_CMD} -e 's|set term png|set term dumb|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOMAIN| CEPHES_DOMAIN|g' \
