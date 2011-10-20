@@ -3,10 +3,13 @@ using rainbow tables.  This is a new variant of Hellman's original trade-off,
 with better performance.  It recovers 99.9% of alphanumeric passwords in
 seconds.  Features:
 
-  - Runs on Windows, Linux, FreeBSD, and Mac OS X (x86)
+  - Runs on Windows, GNU/Linux, FreeBSD, Mac OS X, etc.
   - Cracks LM and NTLM hashes
   - Free tables available for alphanumeric LM hashes
-  - Loads hashes from local SAM, remote SAM
+  - Brute-force module for simple passwords
+  - Audit mode and CSV export
+  - Real-time graphs to analyze passwords (optional)
+  - Loads hashes from local and remote SAM
   - Loads hashes from encrypted SAM recovered from a Windows partition,
     Vista included
 
