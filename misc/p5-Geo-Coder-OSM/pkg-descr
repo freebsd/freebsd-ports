@@ -1,0 +1,4 @@
+Geo::Coder::OSM provides an interface to the OpenStreet Nominatim geocoding
+service.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-OSM/
