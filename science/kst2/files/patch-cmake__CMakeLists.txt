@@ -1,6 +1,15 @@
---- ./cmake/CMakeLists.txt.orig	2011-03-28 23:24:54.000000000 +0400
-+++ ./cmake/CMakeLists.txt	2011-03-30 22:24:15.779356501 +0400
-@@ -96,17 +96,6 @@
+--- ./cmake/CMakeLists.txt.orig	2011-09-12 15:34:28.000000000 +0000
++++ ./cmake/CMakeLists.txt	2011-10-15 00:37:11.813906096 +0000
+@@ -37,7 +37,7 @@
+ 	set(kst_version ${kst_version_string})
+ else()
+ 	set(kst_version_minor 0)
+-	set(kst_version_patch x)
++	set(kst_version_patch 4)
+ 	set(kst_version ${kst_version_major}.${kst_version_minor}.${kst_version_patch})
+ endif()
+ 
+@@ -101,17 +101,6 @@
  
  # React on options
  
@@ -18,7 +27,7 @@
  
  if(kst_install_prefix)
  	set(CMAKE_INSTALL_PREFIX ${kst_install_prefix} CACHE PATH "User's choice for install prefix" FORCE)
-@@ -130,7 +119,7 @@
+@@ -135,7 +124,7 @@
  endif()
  
  #path to install the .desktop files
@@ -27,7 +36,7 @@
  
  
  
-@@ -177,7 +166,9 @@
+@@ -182,7 +171,9 @@
  
  configure_file(${kst_dir}/cmake/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
  
@@ -38,7 +47,7 @@
  
  message(STATUS "Build summary----------------------------------")
  message(STATUS)
-@@ -203,7 +194,6 @@
+@@ -208,7 +199,6 @@
  endif()
  
  if (NOT APPLE)
