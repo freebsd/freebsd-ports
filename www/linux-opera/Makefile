@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
@@ -36,8 +36,8 @@ INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER?=	11.51
-OPERA_BUILD?=	1087
+OPERA_VER?=	11.52
+OPERA_BUILD?=	1100
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
