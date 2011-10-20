@@ -12,10 +12,16 @@ MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/ \
 		CENKES
 PKGNAMESUFFIX=	-conrad
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	code@apotheon.net
 COMMENT=	Access X selection from command line
 
-CONFLICTS=	xsel-[0-9]*
+LICENSE=	xsel-conrad
+LICENSE_GROUPS=	COPYFREE
+LICENSE_NAME=	xsel-conrad license
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
+CONFLICTS_INSTALL=	xsel-[0-9]*
 USE_XORG=	x11 xext xt xproto ice sm
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11
