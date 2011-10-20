@@ -195,6 +195,9 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/te/te.lng
 %%DATADIR%%/locale/th/th.lng
 %%DATADIR%%/locale/tl/tl.lng
+%%DATADIR%%/locale/tr/bookmarks.adr
+%%DATADIR%%/locale/tr/search.ini
+%%DATADIR%%/locale/tr/standard_speeddial.ini
 %%DATADIR%%/locale/tr/tr.lng
 %%DATADIR%%/locale/uk/bookmarks.adr
 %%DATADIR%%/locale/uk/search.ini
