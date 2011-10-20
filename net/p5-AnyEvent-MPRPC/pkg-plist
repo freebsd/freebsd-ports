@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/MPRPC/.packlist
+%%SITE_PERL%%/AnyEvent/MPRPC.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Client.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/CondVar.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Constant.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Server.pm
+%%SITE_PERL%%/AnyEvent/MessagePack.pm
+@dirrm %%SITE_PERL%%/AnyEvent/MPRPC
+@dirrmtry %%SITE_PERL%%/AnyEvent
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/MPRPC
