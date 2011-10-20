@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="411ecb79-f9bc-11e0-a7e6-6c626dd55a41">
+    <topic>piwik -- unknown critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><gt>1.1</gt><lt>1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/46461/">
+	  <p>Multiple vulnerabilities with an unknown impact have been reported
+	  in Piwik. The vulnerabilities are caused due to unspecified errors. No
+	  further information is currently available.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/46461/</url>
+      <url>http://piwik.org/blog/2011/10/piwik-1-6/</url>
+    </references>
+    <dates>
+      <discovery>2011-10-18</discovery>
+      <entry>2011-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8441957c-f9b4-11e0-a78a-bcaec565249c">
     <topic>Xorg server -- two vulnerabilities in X server lock handling code</topic>
     <affects>
