@@ -1,0 +1,9 @@
+Use Geo::Coder::Googlev3 just like Geo::Coder::Google. Note that no apikey is
+used in Google's v3 API, and the returned data structure differs.
+
+Please check also [1] for more information about Google's Geocoding API and
+especially usage limits.
+
+[1] http://code.google.com/intl/en/apis/maps/documentation/geocoding/
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Googlev3/
