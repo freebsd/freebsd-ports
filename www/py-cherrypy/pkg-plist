@@ -43,9 +43,9 @@ bin/cherryd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpserver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpserver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpserver.pyo
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.py
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.pyc
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cpthreadinglocal.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cptools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cptools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/_cptools.pyo
@@ -87,9 +87,12 @@ bin/cherryd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/encoding.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/encoding.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/encoding.pyo
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.py
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.pyc
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/gctools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/gctools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/gctools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/http.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/httpauth.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/httpauth.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/httpauth.pyo
@@ -111,9 +114,9 @@ bin/cherryd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/static.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/static.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/static.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpc.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpcutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpcutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/lib/xmlrpcutil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/process/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/process/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/process/__init__.pyo
@@ -150,7 +153,6 @@ bin/cherryd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/checkerdemo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/checkerdemo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/checkerdemo.pyo
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/fastcgi.conf
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/helper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/helper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/helper.pyo
@@ -169,7 +171,6 @@ bin/cherryd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/modwsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/modwsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/modwsgi.pyo
-%%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/native-server.ini
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/sessiondemo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/sessiondemo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/test/sessiondemo.pyo
@@ -291,6 +292,9 @@ bin/cherryd
 %%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/ssl_pyopenssl.py
 %%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/ssl_pyopenssl.pyc
 %%PY2%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/ssl_pyopenssl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/wsgiserver%%PYMAJORVER%%.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/wsgiserver%%PYMAJORVER%%.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cherrypy/wsgiserver/wsgiserver%%PYMAJORVER%%.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/__init__.pyc
