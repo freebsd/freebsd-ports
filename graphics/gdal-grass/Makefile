@@ -7,11 +7,9 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.gdal.org/dl/ \
-		ftp://ftp.remotesensing.org/gdal/ \
-		http://gdal.maptools.org/dl/
+MASTER_SITES=	http://download.osgeo.org/gdal/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	GDAL drivers for GRASS raster and vector files
@@ -20,7 +18,7 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 RUN_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 
-GRASS_INST_DIR=	grass-6.4.0
+GRASS_INST_DIR=	grass-6.4.1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
