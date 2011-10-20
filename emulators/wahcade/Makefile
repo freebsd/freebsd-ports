@@ -17,6 +17,8 @@ COMMENT=	A frontend for almost any emulator (MameWAH clone)
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
+BROKEN=		does not build
+
 USE_PYTHON=	2.5+
 WANT_GSTREAMER=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
