@@ -1,0 +1,24 @@
+%%SITE_PERL%%/Geo/Coder/Many.pm
+%%SITE_PERL%%/Geo/Coder/Many/Bing.pm
+%%SITE_PERL%%/Geo/Coder/Many/Generic.pm
+%%SITE_PERL%%/Geo/Coder/Many/Google.pm
+%%SITE_PERL%%/Geo/Coder/Many/Googlev3.pm
+%%SITE_PERL%%/Geo/Coder/Many/Mapquest.pm
+%%SITE_PERL%%/Geo/Coder/Many/OSM.pm
+%%SITE_PERL%%/Geo/Coder/Many/Ovi.pm
+%%SITE_PERL%%/Geo/Coder/Many/PlaceFinder.pm
+%%SITE_PERL%%/Geo/Coder/Many/Response.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler/OrderedList.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler/Selective.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler/WRR.pm
+%%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler/WeightedRandom.pm
+%%SITE_PERL%%/Geo/Coder/Many/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
+@dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler
+@dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler
+@dirrm %%SITE_PERL%%/Geo/Coder/Many
+@dirrmtry %%SITE_PERL%%/Geo/Coder
