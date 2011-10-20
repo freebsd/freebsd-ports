@@ -750,3 +750,4 @@ share/postgresql/timezonesets/Pacific.txt
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
+@dirrmtry %%PG_USER%%
