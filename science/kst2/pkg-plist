@@ -53,80 +53,39 @@ lib/kst2/plugins/libkst2_fits_sinusoid_weighted.so
 lib/libkst2app.a
 lib/libkst2core.so
 lib/libkst2core.so.2
-lib/libkst2core.so.2.0.3
+lib/libkst2core.so.2.0.4
 lib/libkst2math.so
 lib/libkst2math.so.2
-lib/libkst2math.so.2.0.3
+lib/libkst2math.so.2.0.4
 lib/libkst2widgets.so
 lib/libkst2widgets.so.2
-lib/libkst2widgets.so.2.0.3
+lib/libkst2widgets.so.2.0.4
 share/applications/kst2.desktop
-share/apps/kst2/kstui.rc
-share/mime/application/x-kst.desktop
-share/pixmaps/kst2.png
-share/services/kst2/kstdata_ascii.desktop
-%%FITS%%share/services/kst2/kstdata_fitsimage.desktop
-%%NETCDF%%share/services/kst2/kstdata_netcdf.desktop
-share/services/kst2/kstdata_qimagesource.desktop
-share/services/kst2/kstdata_sampledatasource.desktop
-share/services/kst2/kstplugin_akima.desktop
-share/services/kst2/kstplugin_akimaperiodic.desktop
-share/services/kst2/kstplugin_autocorrelation.desktop
-share/services/kst2/kstplugin_bin.desktop
-share/services/kst2/kstplugin_chop.desktop
-share/services/kst2/kstplugin_convolve.desktop
-share/services/kst2/kstplugin_crosscorrelation.desktop
-share/services/kst2/kstplugin_crossspectrum.desktop
-share/services/kst2/kstplugin_csplineperiodic.desktop
-share/services/kst2/kstplugin_cumulativesum.desktop
-share/services/kst2/kstplugin_deconvolve.desktop
-share/services/kst2/kstplugin_differentiation.desktop
-share/services/kst2/kstplugin_effectivebandwidth.desktop
-share/services/kst2/kstplugin_filter_butterworth_bandpass.desktop
-share/services/kst2/kstplugin_filter_butterworth_bandstop.desktop
-share/services/kst2/kstplugin_filter_butterworth_highpass.desktop
-share/services/kst2/kstplugin_filter_butterworth_lowpass.desktop
-share/services/kst2/kstplugin_filter_despike.desktop
-share/services/kst2/kstplugin_fits_exponential_unweighted.desktop
-share/services/kst2/kstplugin_fits_exponential_weighted.desktop
-share/services/kst2/kstplugin_fits_gaussian_unweighted.desktop
-share/services/kst2/kstplugin_fits_gaussian_weighted.desktop
-share/services/kst2/kstplugin_fits_gradient_unweighted.desktop
-share/services/kst2/kstplugin_fits_gradient_weighted.desktop
-share/services/kst2/kstplugin_fits_kneefrequency.desktop
-share/services/kst2/kstplugin_fits_linear_unweighted.desktop
-share/services/kst2/kstplugin_fits_linear_weighted.desktop
-share/services/kst2/kstplugin_fits_lorentzian_unweighted.desktop
-share/services/kst2/kstplugin_fits_lorentzian_weighted.desktop
-share/services/kst2/kstplugin_fits_polynomial_unweighted.desktop
-share/services/kst2/kstplugin_fits_polynomial_weighted.desktop
-share/services/kst2/kstplugin_fits_sinusoid_unweighted.desktop
-share/services/kst2/kstplugin_fits_sinusoid_weighted.desktop
-share/services/kst2/kstplugin_genericfilter.desktop
-share/services/kst2/kstplugin_linear.desktop
-share/services/kst2/kstplugin_linefit.desktop
-share/services/kst2/kstplugin_lockin.desktop
-share/services/kst2/kstplugin_noiseaddition.desktop
-share/services/kst2/kstplugin_periodogram.desktop
-share/services/kst2/kstplugin_phase.desktop
-share/services/kst2/kstplugin_polynomial.desktop
-share/services/kst2/kstplugin_shift.desktop
-share/services/kst2/kstplugin_statistics.desktop
-share/services/kst2/kstplugin_syncbin.desktop
-share/servicetypes/kst2/kstbasicplugin.desktop
-share/servicetypes/kst2/kstdataobjectplugin.desktop
-share/servicetypes/kst2/kstdatasourceplugin.desktop
-share/servicetypes/kst2/kstextension.desktop
-share/servicetypes/kst2/kstfilter.desktop
-share/servicetypes/kst2/kstplugin.desktop
-@dirrm share/servicetypes/kst2
-@dirrmtry share/servicetypes
-@dirrm share/services/kst2
-@dirrmtry share/services
-@dirrm share/apps/kst2
-@dirrmtry share/apps
+share/icons/hicolor/128x128/apps/application-x-kst.png
+share/icons/hicolor/128x128/apps/kst.png
+share/icons/hicolor/32x32/apps/application-x-kst.png
+share/icons/hicolor/32x32/apps/kst.png
+share/icons/hicolor/48x48/apps/application-x-kst.png
+share/icons/hicolor/48x48/apps/kst.png
+share/icons/hicolor/64x64/apps/application-x-kst.png
+share/icons/hicolor/64x64/apps/kst.png
+share/icons/hicolor/scalable/apps/application-x-kst.svg
+share/icons/hicolor/scalable/apps/kst.svg
+share/mimelnk/application/x-kst2.desktop
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm lib/kst2/plugins
 @dirrm lib/kst2
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

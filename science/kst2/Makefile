@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.4
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
@@ -14,7 +13,6 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 LATEST_LINK=	kst2
 
@@ -50,10 +48,8 @@ PLIST_SUB+=	NETCDF="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/^Icon=/s,kst,${PREFIX}/share/pixmaps/kst2.png,' \
-		${WRKSRC}/src/kst/*kst.desktop
-	${REINPLACE_CMD} -e '/^Exec=kst2/s,-caption "%c" %i %m,%f,' \
-		${WRKSRC}/src/kst/kst.desktop
+	${REINPLACE_CMD} -e '/^Exec=kst2/s,\(kst2\).*,\1 %f,' \
+		${WRKSRC}/src/kst/kst2.desktop
 
 pre-configure:
 .if !defined(WITH_FITS)
@@ -64,10 +60,5 @@ pre-configure:
 	${REINPLACE_CMD} -e '/find_package(Netcdf)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
 .endif
-
-post-install:
-	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/images/kst.png ${PREFIX}/share/pixmaps/kst2.png
-	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
