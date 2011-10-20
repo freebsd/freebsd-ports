@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-DISTVERSION=	1.1b2
+DISTVERSION=	1.2b2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -18,7 +18,7 @@ COMMENT=	WSGI request and response Python object
 
 PYDISTUTILS_PKGNAME=	WebOb
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 
 USE_ZIP=	yes
