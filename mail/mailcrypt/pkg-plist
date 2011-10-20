@@ -8,6 +8,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp5.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp5.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp6.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp6.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-remail.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-remail.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-setversion.el

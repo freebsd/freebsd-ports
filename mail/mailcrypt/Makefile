@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	mailcrypt
-PORTVERSION=	3.5.8
-PORTREVISION=	6
+PORTVERSION=	3.5.9
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs/PGP interface
 
-USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+USE_AUTOTOOLS=	autoconf
+USE_EMACS=	yes
+USE_GMAKE=	yes
+
 INFO=		mailcrypt
 
 .include <bsd.port.mk>
