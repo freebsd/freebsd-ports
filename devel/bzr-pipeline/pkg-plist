@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/real_init.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/real_init.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/real_init.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.pyo
