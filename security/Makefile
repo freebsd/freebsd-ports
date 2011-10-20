@@ -693,6 +693,7 @@
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
+    SUBDIR += py-htpasswd
     SUBDIR += py-kerberos
     SUBDIR += py-keyring
     SUBDIR += py-m2crypto
