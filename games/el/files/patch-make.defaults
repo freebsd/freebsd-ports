@@ -1,0 +1,19 @@
+--- make.defaults.orig	2011-10-20 11:41:47.000000000 -0500
++++ make.defaults	2011-10-20 11:42:04.000000000 -0500
+@@ -65,8 +65,6 @@
+ 
+ 
+ 
+-PLATFORM=-march=i686
+-XDIR=-L/usr/X11R6/lib
+ CWARN=-Wall -Wdeclaration-after-statement
+ # -Wno-pointer-sign -Wno-sign-compare -Werror
+ CXXWARN=-Wall 
+@@ -82,7 +80,3 @@
+ #EXTRA_INCLUDES=-IC:\\Programme\\Dev-Cpp\\Include
+ #EXTRA_LIBS=-lz
+ #EXTRA_STATICLIBS=libs/zlib.a
+-
+-CC=gcc
+-CXX=g++
+-LINK=gcc
