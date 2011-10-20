@@ -24,8 +24,8 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${PREFIX}/lib/opera/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera
 
-OPERA_VER?=	11.51
-OPERA_BUILD?=	1087
+OPERA_VER?=	11.52
+OPERA_BUILD?=	1100
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
 
 USE_XZ=		yes
