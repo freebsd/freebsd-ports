@@ -298,5 +298,6 @@
     SUBDIR += zabbix-server
     SUBDIR += zenoss
     SUBDIR += zenpack-dellmon
+    SUBDIR += zenpack-deviceadvdetail
 
 .include <bsd.port.subdir.mk>
