@@ -1,0 +1,16 @@
+This ZenPack is currently used by the HP ProLiant Monitor, Dell Monitor and ODBC
+Datasource (and many others) to display additional hardware details and could be
+used by other ZenPacks as well. Examples of details include:
+
+* dynamic deviceHardwareDetail tab (additional sections can be added
+  or removed by any ZenPack)
+* dynamic deviceOsDetail tab
+* dynamic deviceSoftwareDetail tab
+* Number of CPU Cores
+* Memory Modules section
+* Logical Drives sections
+* status indication for all hardware components
+* It also make changes deviceOSDetail tab to show only monitored
+  Network Interfaces
+
+WWW: http://community.zenoss.org/docs/DOC-3452
