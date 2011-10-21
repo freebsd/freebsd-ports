@@ -5,8 +5,8 @@
 # Register the package $1 in the port registry and optionally add a
 # non-standard channel.
 
-PREFIX=${PKG_PREFIX:=%%PREFIX%%}
-PEAR=${PREFIX}/bin/pear
+PREFIX=${PKG_PREFIX:=%%LOCALBASE%%}
+PEAR=%%LOCALBASE%%/bin/pear
 PKGREGDIR=${PREFIX}/share/pear/packages/$1
 CHANNEL=%%CHANNEL%%
 
