@@ -640,6 +640,7 @@ arirang                         ports/security/arirang
 arista                          ports/multimedia/arista
 arj                             ports/archivers/arj
 arkpandora                      ports/x11-fonts/arkpandora
+arm                             ports/security/arm
 arm-elf-binutils                ports/devel/arm-elf-binutils
 arm-rtems-binutils              ports/devel/arm-rtems-binutils
 arm-rtems-gcc                   ports/devel/arm-rtems-gcc
@@ -10780,6 +10781,7 @@ p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-I3                  ports/devel/p5-AnyEvent-I3
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
+p5-AnyEvent-MPRPC               ports/net/p5-AnyEvent-MPRPC
 p5-AnyEvent-Mojo                ports/www/p5-AnyEvent-Mojo
 p5-AnyEvent-Redis               ports/databases/p5-AnyEvent-Redis
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
@@ -11968,6 +11970,7 @@ p5-Devel-Events                 ports/devel/p5-Devel-Events
 p5-Devel-Events-Objects         ports/devel/p5-Devel-Events-Objects
 p5-Devel-Gladiator              ports/devel/p5-Devel-Gladiator
 p5-Devel-GlobalDestruction      ports/devel/p5-Devel-GlobalDestruction
+p5-Devel-KYTProf                ports/devel/p5-Devel-KYTProf
 p5-Devel-Leak                   ports/devel/p5-Devel-Leak
 p5-Devel-Leak-Object            ports/devel/p5-Devel-Leak-Object
 p5-Devel-LeakGuard-Object       ports/devel/p5-Devel-LeakGuard-Object
@@ -12344,8 +12347,18 @@ p5-Genezzo                      ports/databases/p5-Genezzo
 p5-Geo-BUFR                     ports/science/p5-Geo-BUFR
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
+p5-Geo-Coder-Bing               ports/misc/p5-Geo-Coder-Bing
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
+p5-Geo-Coder-Googlev3           ports/misc/p5-Geo-Coder-Googlev3
+p5-Geo-Coder-Many               ports/misc/p5-Geo-Coder-Many
+p5-Geo-Coder-Mapquest           ports/misc/p5-Geo-Coder-Mapquest
+p5-Geo-Coder-Multimap           ports/misc/p5-Geo-Coder-Multimap
 p5-Geo-Coder-Multiple           ports/misc/p5-Geo-Coder-Multiple
+p5-Geo-Coder-Navteq             ports/misc/p5-Geo-Coder-Navteq
+p5-Geo-Coder-OSM                ports/misc/p5-Geo-Coder-OSM
+p5-Geo-Coder-Ovi                ports/misc/p5-Geo-Coder-Ovi
+p5-Geo-Coder-PlaceFinder        ports/misc/p5-Geo-Coder-PlaceFinder
+p5-Geo-Coder-TomTom             ports/misc/p5-Geo-Coder-TomTom
 p5-Geo-Coordinates-Converter    ports/science/p5-Geo-Coordinates-Converter
 p5-Geo-Coordinates-Converter-iArea  ports/science/p5-Geo-Coordinates-Converter-iArea
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
@@ -15121,6 +15134,7 @@ p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-i3                  ports/devel/p5-AnyEvent-I3
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-mojo                ports/www/p5-AnyEvent-Mojo
+p5-anyevent-mprpc               ports/net/p5-AnyEvent-MPRPC
 p5-anyevent-redis               ports/databases/p5-AnyEvent-Redis
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
@@ -16325,6 +16339,7 @@ p5-devel-events                 ports/devel/p5-Devel-Events
 p5-devel-events-objects         ports/devel/p5-Devel-Events-Objects
 p5-devel-gladiator              ports/devel/p5-Devel-Gladiator
 p5-devel-globaldestruction      ports/devel/p5-Devel-GlobalDestruction
+p5-devel-kytprof                ports/devel/p5-Devel-KYTProf
 p5-devel-leak                   ports/devel/p5-Devel-Leak
 p5-devel-leak-object            ports/devel/p5-Devel-Leak-Object
 p5-devel-leakguard-object       ports/devel/p5-Devel-LeakGuard-Object
@@ -16706,8 +16721,18 @@ p5-genezzo                      ports/databases/p5-Genezzo
 p5-geo-bufr                     ports/science/p5-Geo-BUFR
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
+p5-geo-coder-bing               ports/misc/p5-Geo-Coder-Bing
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
+p5-geo-coder-googlev3           ports/misc/p5-Geo-Coder-Googlev3
+p5-geo-coder-many               ports/misc/p5-Geo-Coder-Many
+p5-geo-coder-mapquest           ports/misc/p5-Geo-Coder-Mapquest
+p5-geo-coder-multimap           ports/misc/p5-Geo-Coder-Multimap
 p5-geo-coder-multiple           ports/misc/p5-Geo-Coder-Multiple
+p5-geo-coder-navteq             ports/misc/p5-Geo-Coder-Navteq
+p5-geo-coder-osm                ports/misc/p5-Geo-Coder-OSM
+p5-geo-coder-ovi                ports/misc/p5-Geo-Coder-Ovi
+p5-geo-coder-placefinder        ports/misc/p5-Geo-Coder-PlaceFinder
+p5-geo-coder-tomtom             ports/misc/p5-Geo-Coder-TomTom
 p5-geo-coordinates-converter    ports/science/p5-Geo-Coordinates-Converter
 p5-geo-coordinates-converter-iarea  ports/science/p5-Geo-Coordinates-Converter-iArea
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
@@ -21930,6 +21955,7 @@ py-hcluster                     ports/science/py-hcluster
 py-html2text                    ports/textproc/py-html2text
 py-html5lib                     ports/www/py-html5lib
 py-htmlgen                      ports/www/py-HTMLgen
+py-htpasswd                     ports/security/py-htpasswd
 py-htsql                        ports/databases/py-htsql
 py-httplib2                     ports/www/py-httplib2
 py-hyperestraier                ports/textproc/py-hyperestraier
