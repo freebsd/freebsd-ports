@@ -1,7 +1,5 @@
-%%BIN_CORELIST%%bin/corelist
-bin/p5corelist
 %%SITE_PERL%%/Module/CoreList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module
