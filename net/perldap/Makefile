@@ -20,6 +20,8 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDAPSDKDIR=${PREFIX} LDAPV3ON=yes LDAPSDKSSL=no
 MAKE_ENV=	${CONFIGURE_ENV}
 
+BROKEN=		BROKEN after net/ldapsdk update
+
 MAN3=	Mozilla::LDAP::Conn.3 \
 	Mozilla::LDAP::LDIF.3 \
 	Mozilla::LDAP::Utils.3 \
