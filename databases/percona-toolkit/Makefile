@@ -7,7 +7,7 @@
 
 PORTNAME=	percona-toolkit
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/
 
@@ -16,7 +16,8 @@ COMMENT=	Collection of essential command-line utilities for MySQL
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		p5-DBD-mysql>=3:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI
+		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \
+		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
 
 PERL_CONFIGURE=	yes
 
