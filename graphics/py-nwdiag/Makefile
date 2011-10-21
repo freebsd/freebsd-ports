@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nwdiag
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.4:${PORTSDIR}/devel/py-funcparserlib \
-		${PKGNAMEPREFIX}blockdiag>=0.9.3:${PORTSDIR}/graphics/py-blockdiag
+		${PKGNAMEPREFIX}blockdiag>=0.9.5:${PORTSDIR}/graphics/py-blockdiag
 
 USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=	easy_install
