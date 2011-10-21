@@ -7,6 +7,7 @@
 
 PORTNAME=	pwsafe
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://nsd.dyndns.org/pwsafe/releases/
 
@@ -17,6 +18,7 @@ OPTIONS=	SETUID "Install setuid pwsafe binary" off
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XORG=	ice sm x11 xmu
 
 MAN1=		pwsafe.1
 PLIST_FILES=	bin/pwsafe
