@@ -1,10 +1,13 @@
---- ssh.c.orig	Sat Sep  2 02:32:40 2006
-+++ ssh.c	Sat Sep 30 10:38:05 2006
-@@ -639,6 +640,23 @@
+$FreeBSD$
+
+Make the same change to use the canonical hostname as the base FreeBSD ssh.
+
+--- ssh.c.orig	2010-08-16 09:59:31.000000000 -0600
++++ ssh.c	2010-08-25 17:55:01.000000000 -0600
+@@ -699,6 +699,23 @@
+ 		    "h", host, (char *)NULL);
+ 	}
  
- 	if (options.hostname != NULL)
- 		host = options.hostname;
-+
 +	/* Find canonic host name. */
 +	if (strchr(host, '.') == 0) {
 +		struct addrinfo hints;
@@ -21,6 +24,7 @@
 +			freeaddrinfo(ai);
 +		}
 +	}
++
+ 	if (options.local_command != NULL) {
+ 		char thishost[NI_MAXHOST];
  
- 	/* force lowercase for hostkey matching */
- 	if (options.host_key_alias != NULL) {

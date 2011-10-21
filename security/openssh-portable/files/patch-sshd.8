@@ -1,15 +1,15 @@
---- sshd.8.orig	Tue Aug 29 22:07:01 2006
-+++ sshd.8	Sat Sep 30 20:05:16 2006
-@@ -65,7 +65,7 @@
+--- sshd.8.orig	2010-08-04 21:03:13.000000000 -0600
++++ sshd.8	2010-09-14 16:14:14.000000000 -0600
+@@ -70,7 +70,7 @@
  .Nm
  listens for connections from clients.
  It is normally started at boot from
 -.Pa /etc/rc .
-+.Pa %%PREFIX%%/etc/rc.d/%%RC_SCRIPT_NAME%% .
++.Pa /usr/local/etc/rc.d/openssh .
  It forks a new
  daemon for each incoming connection.
  The forked daemons handle
-@@ -342,8 +342,9 @@
+@@ -384,8 +384,9 @@
  If the login is on a tty, records login time.
  .It
  Checks
@@ -21,7 +21,7 @@
  (unless root).
  .It
  Changes to run with normal user privileges.
-@@ -365,7 +366,8 @@
+@@ -407,7 +408,8 @@
  exists, runs it; else if
  .Pa /etc/ssh/sshrc
  exists, runs

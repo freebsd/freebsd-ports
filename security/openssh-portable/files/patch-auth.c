@@ -1,6 +1,6 @@
---- auth.c.orig	Wed Sep  6 21:36:43 2006
-+++ auth.c	Sat Sep 30 10:38:04 2006
-@@ -500,7 +501,7 @@
+--- auth.c.orig	2010-08-12 11:33:01.000000000 -0600
++++ auth.c	2010-09-14 16:14:12.000000000 -0600
+@@ -594,7 +594,7 @@
  	if (!allowed_user(pw))
  		return (NULL);
  #ifdef HAVE_LOGIN_CAP

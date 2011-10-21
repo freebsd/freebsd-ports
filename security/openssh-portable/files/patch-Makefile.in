@@ -1,17 +1,8 @@
---- Makefile.in.orig	2008-11-04 23:20:46.000000000 -0600
-+++ Makefile.in	2010-01-14 01:43:29.188757752 -0600
-@@ -62,7 +62,7 @@
- 
- TARGETS=ssh$(EXEEXT) sshd$(EXEEXT) ssh-add$(EXEEXT) ssh-keygen$(EXEEXT) ssh-keyscan${EXEEXT} ssh-keysign${EXEEXT} ssh-agent$(EXEEXT) scp$(EXEEXT) ssh-rand-helper${EXEEXT} sftp-server$(EXEEXT) sftp$(EXEEXT)
- 
--LIBSSH_OBJS=acss.o authfd.o authfile.o bufaux.o bufbn.o buffer.o \
-+LIBSSH_OBJS=acss.o authfd.o authfile.o bufaux.o bufbn.o buffer.o version.o \
- 	canohost.o channels.o cipher.o cipher-acss.o cipher-aes.o \
- 	cipher-bf1.o cipher-ctr.o cipher-3des1.o cleanup.o \
- 	compat.o compress.o crc32.o deattack.o fatal.o hostfile.o \
-@@ -232,7 +232,7 @@
+--- Makefile.in.orig	2010-05-12 00:51:39.000000000 -0600
++++ Makefile.in	2010-09-14 16:14:12.000000000 -0600
+@@ -238,7 +238,7 @@
+ 	$(AUTORECONF)
  	-rm -rf autom4te.cache
- 	(cd scard && $(MAKE) -f Makefile.in distprep)
  
 -install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files install-sysconf host-key check-config
 +install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files install-sysconf

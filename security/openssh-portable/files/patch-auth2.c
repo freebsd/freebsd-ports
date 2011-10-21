@@ -1,6 +1,6 @@
---- auth2.c.orig	2008-04-07 22:16:43.000000000 -0300
-+++ auth2.c	2008-04-07 22:20:03.000000000 -0300
-@@ -41,6 +41,7 @@
+--- auth2.c.orig	2009-06-22 00:11:07.000000000 -0600
++++ auth2.c	2010-09-14 16:14:12.000000000 -0600
+@@ -46,6 +46,7 @@
  #include "key.h"
  #include "hostfile.h"
  #include "auth.h"
@@ -8,7 +8,7 @@
  #include "dispatch.h"
  #include "pathnames.h"
  #include "buffer.h"
-@@ -146,6 +147,13 @@
+@@ -217,6 +218,13 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -22,7 +22,7 @@
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -194,6 +202,27 @@
+@@ -261,6 +269,27 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
@@ -49,4 +49,4 @@
 +
  	/* reset state */
  	auth2_challenge_stop(authctxt);
- 
+ #ifdef JPAKE

@@ -1,5 +1,5 @@
---- ssh_config.orig	2009-02-20 19:45:02.000000000 -0600
-+++ ssh_config	2010-01-13 23:11:29.169549026 -0600
+--- ssh_config.orig	2010-01-12 01:40:27.000000000 -0700
++++ ssh_config	2010-09-14 16:14:13.000000000 -0600
 @@ -27,7 +27,7 @@
  #   GSSAPIAuthentication no
  #   GSSAPIDelegateCredentials no
@@ -9,8 +9,3 @@
  #   AddressFamily any
  #   ConnectTimeout 0
  #   StrictHostKeyChecking ask
-@@ -44,3 +44,4 @@
- #   TunnelDevice any:any
- #   PermitLocalCommand no
- #   VisualHostKey no
-+#   VersionAddendum FreeBSD-%%ADDENDUM%%

@@ -21,9 +21,9 @@ etc/ssh/sshd_config-dist
 %%NOTBASE%%%%X509%%@dirrmtry etc/ssh/ca
 %%NOTBASE%%@dirrmtry etc/ssh
 sbin/sshd
-share/Ssh.bin
 libexec/sftp-server
 libexec/ssh-keysign
+libexec/ssh-pkcs11-helper
 @exec if [ ! -d %%EMPTYDIR%% ]; then mkdir -p %%EMPTYDIR%% ; fi
 %%ERASEEMPTY%%@dirrm empty
 @exec if ! pw groupshow sshd 2>/dev/null; then pw groupadd sshd -g 22; fi
