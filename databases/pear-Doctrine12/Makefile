@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Doctrine
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	databases pear
-MASTER_SITES=	http://pear.phpdoctrine.org/get/ \
+MASTER_SITES=	http://www.doctrine-project.org/downloads/ \
 		LOCAL/glarkin
 PORTSCOUT=	limit:^1\.2\.
 
@@ -21,14 +21,12 @@ OPTIONS=	DBLIB "Install PHP DBO driver for DBLIB" Off \
 		PGSQL "Install PHP DBO driver for PostgreSQL" Off \
 		SQLITE "Install PHP DBO driver for SQLite" Off
 
-CATEGORY=	${PORTNAME}
 CHANNEL=	pear.doctrine-project.org
 MANUAL_PACKAGE_BUILD=	attempts to contact ${CHANNEL} during installation
 
-SUB_FILES=	pear-deinstall pear-install
-SUB_LIST+=	CHANNEL=${CHANNEL}
+SUB_FILES=	pear-install
+SUB_LIST+=	CHANNEL=${CHANNEL} LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pear-install
-PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 LATEST_LINK=	pear-Doctrine12
 
 LICENSE=	GPLv2
