@@ -9,9 +9,9 @@ bin/nwdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.pyo
