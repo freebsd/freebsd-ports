@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magento
-PORTVERSION=	1.4.1.1
+PORTVERSION=	1.6.1.0
 CATEGORIES=	www finance
 MASTER_SITES=	LOCAL/wen
 
