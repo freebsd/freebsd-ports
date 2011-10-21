@@ -15,7 +15,7 @@ MASTER_SITES=   http://www.firestuff.org/projects/ \
 DISTNAME=	fireprofile
 EXTRACT_SUFX=   -0.1.2.tar.gz
 
-MAINTAINER=     dean@odyssey.apana.org.au
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Library to help profiling where programs are using MySQL
 
 BROKEN=		Needs modification to work with newer MySQL
