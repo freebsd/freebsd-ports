@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.0
-PORTREVISION?=		1
+PORTVERSION=		3.6.1
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -365,11 +365,9 @@ post-patch:
 .if !defined(SAMBA_SUBPORT)
 # Samba server only
 MAN1=		findsmb.1 \
-		ldbadd.1 ldbdel.1 ldbedit.1 ldbmodify.1 ldbrename.1 ldbsearch.1 \
 		log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 rpcclient.1 \
 		sharesec.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
-MAN3=		ldb.3
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
