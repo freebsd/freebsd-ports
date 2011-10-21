@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.1.1
+PORTVERSION=	2.9.1.2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	wfreeman@sourcefire.com
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
 LICENSE=	GPLv2
@@ -39,7 +39,9 @@ OPTIONS=	IPV6 "Enable IPv6 support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off \
 		LRGPCAP "Enable pcaps larger than 2GB" off \
-		SNORTSAM "Unofficial Snortsam Patch" off
+		SNORTSAM "Unofficial Snortsam Patch" off \
+		SRCFIRE "Enable sourcefire build option" off \
+		DBGSNORT "Enable debugging symbols+core dumps" off
 
 .include <bsd.port.options.mk>
 
@@ -73,9 +75,9 @@ LIBNET_LIBS=	-L${LOCALBASE}/lib/libnet11 -lnet
 LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
 LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 
+CFLAGS+=	-fstack-protector
 CONFIGURE_ARGS=	--enable-dynamicplugin --enable-build-dynamic-examples \
 		--enable-reload --enable-reload-error-restart \
-		--disable-corefiles \
 		--with-dnet-includes=${LIBNET_INCDIR} \
 		--with-dnet-libraries=${LIBNET_LIBDIR}
 
@@ -122,6 +124,17 @@ PLIST_SUB+=		PRELUDE="@comment "
 
 .if defined(WITH_LRGPCAP)
 CONFIGURE_ARGS+=	--enable-large-pcap
+.endif
+
+.if defined(WITH_DBGSNORT)
+CONFIGURE_ARGS+=	--enable-corefiles --enable-debug
+MAKE_ENV+=		DONTSTRIP="yes"
+.else
+CONFIGURE_ARGS+=	--disable-corefiles
+.endif
+
+.if defined(WITH_SRCFIRE)
+CONFIGURE_ARGS+=	--enable-sourcefire
 .endif
 
 .if defined(WITH_PERFPROFILE)
