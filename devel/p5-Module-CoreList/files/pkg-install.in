@@ -1,9 +1,0 @@
-#!/bin/sh
-
-case $2 in
-POST-INSTALL)
-	if ! test -f %%PREFIX%%/bin/corelist; then
-		echo "===> Reinstalling missing %%PREFIX%%/bin/corelist"
-		cp -p %%PREFIX%%/bin/p5corelist %%PREFIX%%/bin/corelist
-	fi
-esac
