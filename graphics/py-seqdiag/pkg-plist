@@ -9,9 +9,9 @@ bin/seqdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramDraw.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramDraw.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramDraw.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrix.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrix.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/DiagramMetrics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/__init__.pyo
