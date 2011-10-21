@@ -126,6 +126,7 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_set_useragent.3 ne_get_server_hostport.3 \
 	ne_set_useragent.3 ne_set_persist.3 \
 	ne_set_useragent.3 ne_set_read_timeout.3 \
+	ne_set_useragent.3 ne_set_connect_timeout.3 \
 	ne_sock_init.3 ne_sock_exit.3 \
 	ne_ssl_cert_cmp.3 ne_ssl_cert_free.3 \
 	ne_ssl_cert_identity.3 ne_ssl_cert_issuer.3 \
