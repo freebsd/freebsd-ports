@@ -7,7 +7,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.9.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Tix8.4.3:${PORTSDIR}/x11-toolkits/tix \
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_TK=		84
+USE_TK=		85
 USE_TK_BUILD=	84
 USE_GL=		yes
 USE_XORG=	xmu xi
