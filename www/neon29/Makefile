@@ -7,7 +7,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[6|8]-[0-9]*
 
-OPTIONS=	EXPAT "Build with exapt-based XML parser" on \
+OPTIONS=	EXPAT "Build with expat-based XML parser" on \
 		XML "Build with libxml-based XML parser" off \
 		OPENSSL "Build with SSL support" on \
 		NLS "Build with NLS support" on \
@@ -77,16 +77,14 @@ MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
 	ne_buffer_append.3 ne_buffer_clear.3 ne_buffer_create.3 \
 	ne_buffer_destroy.3 ne_get_error.3 ne_get_response_header.3 \
-	ne_get_status.3 ne_i18n_init.3 ne_iaddr_make.3 ne_iaddr_parse.3 \
-	ne_iaddr_raw.3 ne_iaddr_reverse.3 ne_has_support.3 \
+	ne_get_status.3 ne_i18n_init.3 ne_iaddr_make.3 ne_has_support.3 \
 	ne_malloc.3 ne_request_create.3 ne_session_create.3 \
-	ne_set_request_body_buffer.3 ne_get_request_flag.3 \
-	ne_get_session_flag.3 ne_set_request_flag.3 ne_set_session_flag.3 \
+	ne_set_request_body_buffer.3 ne_set_request_flag.3 ne_set_session_flag.3 \
 	ne_set_server_auth.3 ne_set_useragent.3 ne_shave.3 ne_sock_init.3 \
 	ne_ssl_cert_cmp.3 ne_ssl_cert_identity.3 ne_ssl_cert_read.3 \
 	ne_ssl_clicert_read.3 ne_ssl_readable_dname.3 ne_ssl_set_verify.3 \
 	ne_ssl_trust_cert.3 ne_status.3 ne_token.3 ne_version_match.3 \
-	ne_xml_create.3 neon.3 ne_set_connect_timeout.3
+	ne_xml_create.3 neon.3
 MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_addr_resolve.3 ne_addr_destroy.3 \
 	ne_addr_resolve.3 ne_addr_error.3 \
@@ -105,6 +103,9 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_iaddr_make.3 ne_iaddr_free.3 \
 	ne_iaddr_make.3 ne_iaddr_print.3 \
 	ne_iaddr_make.3 ne_iaddr_typeof.3 \
+	ne_iaddr_make.3 ne_iaddr_parse.3 \
+	ne_iaddr_make.3 ne_iaddr_raw.3 \
+	ne_iaddr_make.3 ne_iaddr_reverse.3 \
 	ne_malloc.3 ne_calloc.3 \
 	ne_malloc.3 ne_oom_callback.3 \
 	ne_malloc.3 ne_realloc.3 \
@@ -117,6 +118,8 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_session_create.3 ne_session_proxy.3 \
 	ne_set_request_body_buffer.3 ne_set_request_body_fd.3 \
 	ne_set_request_body_buffer.3 ne_set_request_body_fd64.3 \
+	ne_set_session_flag.3 ne_get_session_flag.3 \
+	ne_set_request_flag.3 ne_get_request_flag.3 \
 	ne_set_server_auth.3 ne_forget_auth.3 \
 	ne_set_server_auth.3 ne_set_proxy_auth.3 \
 	ne_set_useragent.3 ne_get_scheme.3 \
