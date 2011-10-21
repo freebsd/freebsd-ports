@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/llgal/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line online gallery generator
 
 BUILD_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
