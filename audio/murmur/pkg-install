@@ -10,7 +10,7 @@ case $2 in
 	PRE-INSTALL)
 
 		mkdir -m 750 ${LOGDIR} ${DBDIR} ${RUNDIR} 2> /dev/null
-		chown -R ${USER}:${GROUP} ${LOGDIR} ${DBDIR} ${RUNDIR}
+		chown -R murmur:murmur ${LOGDIR} ${DBDIR} ${RUNDIR}
 
 		;;
 esac
