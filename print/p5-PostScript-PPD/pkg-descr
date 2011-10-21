@@ -1,0 +1,8 @@
+PostScript::PPD reads and parses PostScript Printer Definition files, called
+PPDs.
+
+PPDs contain key/value tuples that describe the printer, its capabilities and
+the printing options available. The printing options are classified as User
+Interface (UI) options, which are grouped into groups.
+
+WWW: http://search.cpan.org/dist/PostScript-PPD/
