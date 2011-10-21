@@ -1,21 +1,18 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Lite/.packlist
-%%SITE_PERL%%/FormValidator/Lite/Constraint/File.pm
-%%SITE_PERL%%/FormValidator/Lite/Constraint/Japanese.pm
+%%SITE_PERL%%/FormValidator/Lite.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/Date.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Default.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Email.pm
-%%SITE_PERL%%/FormValidator/Lite/Constraint/URL.pm
-%%SITE_PERL%%/FormValidator/Lite/Constraint/Date.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/File.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/Japanese.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Time.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/URL.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/en.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/ja.pm
+%%SITE_PERL%%/FormValidator/Lite/Upload.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/CGI.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/HTTPEngine.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/PlackRequest.pm
-%%SITE_PERL%%/FormValidator/Lite/Constraint.pm
-%%SITE_PERL%%/FormValidator/Lite/Upload.pm
-%%SITE_PERL%%/FormValidator/Lite.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator
 @dirrm %%SITE_PERL%%/FormValidator/Lite/Upload
 @dirrm %%SITE_PERL%%/FormValidator/Lite/Messages
 @dirrm %%SITE_PERL%%/FormValidator/Lite/Constraint
