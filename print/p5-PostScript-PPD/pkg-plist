@@ -1,0 +1,5 @@
+%%SITE_PERL%%/PostScript/PPD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/PPD/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/PPD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
+@dirrmtry %%SITE_PERL%%/PostScript

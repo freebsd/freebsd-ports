@@ -202,6 +202,7 @@
     SUBDIR += p5-PDF-Template
     SUBDIR += p5-PDFLib
     SUBDIR += p5-PostScript
+    SUBDIR += p5-PostScript-PPD
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
