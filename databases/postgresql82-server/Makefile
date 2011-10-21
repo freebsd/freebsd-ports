@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.2.22
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -81,16 +81,6 @@ MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
-# Cannot check this with standard OPTION due to a catch-22.
-# USE_OPENSSL must precede bsd.port.pre.mk, but then we don't know
-# what OPTIONS are set.
-#
-# If you *don't* want SSL, set WITHOUT_SSL=YES when making
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
-.endif
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
@@ -107,11 +97,17 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
+OPTIONS+=	SSL "Build with OpenSSL support" on
 .endif # !SLAVE_ONLY
  
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(SLAVE_ONLY)
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl
+.endif
+
+#.if !defined(SLAVE_ONLY)
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 # USE_AUTOTOOLS=	autoconf
 # CONFIGURE_ARGS+=--with-icu
@@ -119,7 +115,11 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 # PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 # PATCHFILES+=	pg-814-icu-xx-2006-09-25.diff.gz:icu
 # .  endif
+#.endif # !SLAVE_ONLY
 
+.include <bsd.port.pre.mk>
+
+.if !defined(SLAVE_ONLY)
 PATCH_DIST_STRIP=-p1
 
 .  if defined(WITH_PAM)
