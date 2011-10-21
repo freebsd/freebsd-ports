@@ -56,26 +56,29 @@ PLIST_SUB+=		PLUGINS="@comment "
 post-patch:
 	@${MKDIR} ${WRKSRC}/tests/occurrence
 	@${REINPLACE_CMD} -e 's|@make |@${GMAKE} |' \
-	${WRKSRC}/src/aorai/Makefile.in
+			${WRKSRC}/src/aorai/Makefile.in
 	@${GREP} -le 'make ' -r ${WRKSRC}/tests | ${XARGS} ${REINPLACE_CMD} \
-	-e 's|make |${GMAKE} |'
+		-e 's|make |${GMAKE} |'
 	@${REINPLACE_CMD} \
-	-e 's|$$(CP)|${INSTALL_DATA}|' \
-	-e 's|add_prefix|addprefix|' \
-	${WRKSRC}/share/Makefile.plugin
+		-e 's|$$(CP)|${INSTALL_DATA}|' \
+		-e 's|add_prefix|addprefix|' \
+			${WRKSRC}/share/Makefile.plugin
 	@${REINPLACE_CMD} \
-	-e '\|$$(CP) $$(TARGETS|s|$$(CP)|${INSTALL_DATA}|' \
-	-e '\|$$(CP) frama-c|s|$$(CP)|${INSTALL_SCRIPT}|' \
-	${WRKSRC}/share/Makefile.dynamic
+		-e '\|$$(CP) $$(TARGETS|s|$$(CP)|${INSTALL_DATA}|' \
+		-e '\|$$(CP) frama-c|s|$$(CP)|${INSTALL_SCRIPT}|' \
+			${WRKSRC}/share/Makefile.dynamic
 	@${REINPLACE_CMD} -e '\|^# Installation|,\|^# File headers|{ \
-	\|$$(CP).*bin|s|$$(CP)|${INSTALL_SCRIPT}|; \
-	\|$$(CP) -R doc/manuals $$(FRAMAC_DATADIR)| \
-	s||${MKDIR} $$(FRAMAC_DATADIR)/manuals ; \
-	${INSTALL_DATA} doc/manuals/* $$(FRAMAC_DATADIR)/manuals|; \
-	\|$$(CP).*man|s|$$(CP)\( -R\)*|${INSTALL_MAN}|; \
-	\|$$(CP).*share|s|$$(CP)\( -R\)*|${INSTALL_DATA}|; \
-	s|$$(CP)|${INSTALL_DATA}|; }' \
-	${WRKSRC}/Makefile
+		\|$$(CP).*bin|s|$$(CP)|${INSTALL_SCRIPT}|; \
+		\|$$(CP) -R doc/manuals $$(FRAMAC_DATADIR)| \
+		s||${MKDIR} $$(FRAMAC_DATADIR)/manuals ; \
+		${INSTALL_DATA} doc/manuals/* $$(FRAMAC_DATADIR)/manuals|; \
+		\|$$(CP).*man|s|$$(CP)\( -R\)*|${INSTALL_MAN}|; \
+		\|$$(CP).*share|s|$$(CP)\( -R\)*|${INSTALL_DATA}|; \
+		s|$$(CP)|${INSTALL_DATA}|; }' \
+			${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '\|case $$OCAMLGRAPH_VERSION in| \
+		{N; s|1\.7|1.[78]*|;}' \
+			${WRKSRC}/configure
 
 .if defined(WITH_GUI)
 pre-configure:
