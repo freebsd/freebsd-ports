@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.013
+PORTVERSION=	0.014
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,16 +19,11 @@ OPTIONS=	HTTPS	"https support" on
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Tiny.3
-PLIST_FILES=	%%SITE_PERL%%/HTTP/Tiny.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP \
-		%%SITE_PERL%%/HTTP
 
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_HTTPS)
-RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .include <bsd.port.mk>

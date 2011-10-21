@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTTP/Tiny.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP
