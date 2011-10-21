@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A game of musical skill and fast fingers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
@@ -25,8 +25,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-nump
 USE_PYTHON=	yes
 USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
-
-BROKEN=		does not build
 
 DATADIR=	share/${PORTNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude 'data'
