@@ -1,0 +1,413 @@
+bin/opera-next
+bin/opera-next-widget-manager
+bin/uninstall-opera-next
+lib/opera-next/gstreamer/plugins/libgstoperamatroska.so
+lib/opera-next/gstreamer/plugins/libgstoperavp8.so
+lib/opera-next/liboperagtk2.so
+lib/opera-next/liboperakde4.so
+lib/opera-next/opera-next
+lib/opera-next/operaplugincleaner
+lib/opera-next/operapluginwrapper
+lib/opera-next/operapluginwrapper.freebsd
+lib/opera-next/plugins/README
+%%DOCSDIR%%/LGPL-2
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README.gstreamer
+share/applications/opera-next-browser.desktop
+share/applications/opera-next-widget-installer.desktop
+share/applications/opera-next-widget-manager.desktop
+share/icons/hicolor/128x128/apps/opera-next-browser.png
+share/icons/hicolor/128x128/apps/opera-next-widget-manager.png
+share/icons/hicolor/128x128/apps/opera-next-widget.png
+share/icons/hicolor/128x128/mimetypes/opera-next-extension.png
+share/icons/hicolor/128x128/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/128x128/mimetypes/opera-next-widget.png
+share/icons/hicolor/16x16/apps/opera-next-browser.png
+share/icons/hicolor/16x16/apps/opera-next-widget-manager.png
+share/icons/hicolor/16x16/apps/opera-next-widget.png
+share/icons/hicolor/16x16/mimetypes/opera-next-extension.png
+share/icons/hicolor/16x16/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/16x16/mimetypes/opera-next-widget.png
+share/icons/hicolor/22x22/apps/opera-next-browser.png
+share/icons/hicolor/22x22/apps/opera-next-widget-manager.png
+share/icons/hicolor/22x22/apps/opera-next-widget.png
+share/icons/hicolor/22x22/mimetypes/opera-next-extension.png
+share/icons/hicolor/22x22/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/22x22/mimetypes/opera-next-widget.png
+share/icons/hicolor/24x24/apps/opera-next-browser.png
+share/icons/hicolor/24x24/apps/opera-next-widget-manager.png
+share/icons/hicolor/24x24/apps/opera-next-widget.png
+share/icons/hicolor/24x24/mimetypes/opera-next-extension.png
+share/icons/hicolor/24x24/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/24x24/mimetypes/opera-next-widget.png
+share/icons/hicolor/32x32/apps/opera-next-browser.png
+share/icons/hicolor/32x32/apps/opera-next-widget-manager.png
+share/icons/hicolor/32x32/apps/opera-next-widget.png
+share/icons/hicolor/32x32/mimetypes/opera-next-extension.png
+share/icons/hicolor/32x32/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/32x32/mimetypes/opera-next-widget.png
+share/icons/hicolor/48x48/apps/opera-next-browser.png
+share/icons/hicolor/48x48/apps/opera-next-widget-manager.png
+share/icons/hicolor/48x48/apps/opera-next-widget.png
+share/icons/hicolor/48x48/mimetypes/opera-next-extension.png
+share/icons/hicolor/48x48/mimetypes/opera-next-unite-application.png
+share/icons/hicolor/48x48/mimetypes/opera-next-widget.png
+share/icons/hicolor/scalable/apps/opera-next-browser.svg
+share/icons/hicolor/scalable/apps/opera-next-widget-manager.svg
+share/icons/hicolor/scalable/apps/opera-next-widget.svg
+share/icons/hicolor/scalable/mimetypes/opera-next-extension.svg
+share/icons/hicolor/scalable/mimetypes/opera-next-unite-application.svg
+share/icons/hicolor/scalable/mimetypes/opera-next-widget.svg
+share/mime/application/x-opera-uniteapplication.xml
+share/mime/application/x-opera-extension.xml
+share/mime/application/x-opera-widgets.xml
+share/mime/packages/opera-next-extension.xml
+share/mime/packages/opera-next-unite-application.xml
+share/mime/packages/opera-next-widget.xml
+%%DATADIR%%/defaults/bookmarks.adr
+%%DATADIR%%/defaults/feedreaders.ini
+%%DATADIR%%/defaults/filehandler.ini
+%%DATADIR%%/defaults/license.txt
+%%DATADIR%%/defaults/mailproviders.xml
+%%DATADIR%%/defaults/plugin-ignore.ini
+%%DATADIR%%/defaults/pluginpath.ini
+%%DATADIR%%/defaults/public_domains.dat
+%%DATADIR%%/defaults/search.ini
+%%DATADIR%%/defaults/standard_speeddial.ini
+%%DATADIR%%/defaults/standard_trusted_repositories.ini
+%%DATADIR%%/defaults/tips_metadata.ini
+%%DATADIR%%/defaults/webmailproviders.ini
+%%DATADIR%%/defaults/xmlentities.ini
+%%DATADIR%%/encoding.bin
+%%DATADIR%%/extra/missingplugin.svg
+%%DATADIR%%/extra/missingpluginhover.svg
+%%DATADIR%%/extra/svg-mo.dat
+%%DATADIR%%/extra/svg-mobd.dat
+%%DATADIR%%/extra/svg-sa.dat
+%%DATADIR%%/extra/svg-sabd.dat
+%%DATADIR%%/extra/svg-se.dat
+%%DATADIR%%/extra/svg-sebd.dat
+%%DATADIR%%/extra/unix-opengl.blocklist.json
+%%DATADIR%%/files.sig
+%%DATADIR%%/files_old.sig
+%%DATADIR%%/html40_entities.dtd
+%%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/af/af.lng
+%%DATADIR%%/locale/az/az.lng
+%%DATADIR%%/locale/be/be.lng
+%%DATADIR%%/locale/be/bookmarks.adr
+%%DATADIR%%/locale/be/search.ini
+%%DATADIR%%/locale/be/standard_speeddial.ini
+%%DATADIR%%/locale/bg/bg.lng
+%%DATADIR%%/locale/bg/bookmarks.adr
+%%DATADIR%%/locale/bg/search.ini
+%%DATADIR%%/locale/bg/standard_speeddial.ini
+%%DATADIR%%/locale/bn/bn.lng
+%%DATADIR%%/locale/cs/bookmarks.adr
+%%DATADIR%%/locale/cs/cs.lng
+%%DATADIR%%/locale/cs/search.ini
+%%DATADIR%%/locale/cs/standard_speeddial.ini
+%%DATADIR%%/locale/da/da.lng
+%%DATADIR%%/locale/de/bookmarks.adr
+%%DATADIR%%/locale/de/de.lng
+%%DATADIR%%/locale/de/search.ini
+%%DATADIR%%/locale/de/standard_speeddial.ini
+%%DATADIR%%/locale/el/el.lng
+%%DATADIR%%/locale/en-GB/bookmarks.adr
+%%DATADIR%%/locale/en-GB/en-GB.lng
+%%DATADIR%%/locale/en-GB/search.ini
+%%DATADIR%%/locale/en-GB/standard_speeddial.ini
+%%DATADIR%%/locale/en/bookmarks.adr
+%%DATADIR%%/locale/en/en.lng
+%%DATADIR%%/locale/en/en.zip
+%%DATADIR%%/locale/en/license.txt
+%%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/en/standard_speeddial.ini
+%%DATADIR%%/locale/es-ES/bookmarks.adr
+%%DATADIR%%/locale/es-ES/es-ES.lng
+%%DATADIR%%/locale/es-ES/search.ini
+%%DATADIR%%/locale/es-ES/standard_speeddial.ini
+%%DATADIR%%/locale/es-LA/es-LA.lng
+%%DATADIR%%/locale/et/et.lng
+%%DATADIR%%/locale/fi/fi.lng
+%%DATADIR%%/locale/fr-CA/fr-CA.lng
+%%DATADIR%%/locale/fr/bookmarks.adr
+%%DATADIR%%/locale/fr/fr.lng
+%%DATADIR%%/locale/fr/search.ini
+%%DATADIR%%/locale/fr/standard_speeddial.ini
+%%DATADIR%%/locale/fy/fy.lng
+%%DATADIR%%/locale/gd/gd.lng
+%%DATADIR%%/locale/hi/hi.lng
+%%DATADIR%%/locale/hr/hr.lng
+%%DATADIR%%/locale/hu/bookmarks.adr
+%%DATADIR%%/locale/hu/hu.lng
+%%DATADIR%%/locale/hu/search.ini
+%%DATADIR%%/locale/hu/standard_speeddial.ini
+%%DATADIR%%/locale/id/bookmarks.adr
+%%DATADIR%%/locale/id/id.lng
+%%DATADIR%%/locale/id/search.ini
+%%DATADIR%%/locale/id/standard_speeddial.ini
+%%DATADIR%%/locale/it/bookmarks.adr
+%%DATADIR%%/locale/it/it.lng
+%%DATADIR%%/locale/it/search.ini
+%%DATADIR%%/locale/it/standard_speeddial.ini
+%%DATADIR%%/locale/ja/bookmarks.adr
+%%DATADIR%%/locale/ja/ja.lng
+%%DATADIR%%/locale/ja/search.ini
+%%DATADIR%%/locale/ja/standard_speeddial.ini
+%%DATADIR%%/locale/ka/ka.lng
+%%DATADIR%%/locale/ko/ko.lng
+%%DATADIR%%/locale/lt/lt.lng
+%%DATADIR%%/locale/me/me.lng
+%%DATADIR%%/locale/mk/mk.lng
+%%DATADIR%%/locale/ms/ms.lng
+%%DATADIR%%/locale/nb/bookmarks.adr
+%%DATADIR%%/locale/nb/nb.lng
+%%DATADIR%%/locale/nb/search.ini
+%%DATADIR%%/locale/nb/standard_speeddial.ini
+%%DATADIR%%/locale/nl/nl.lng
+%%DATADIR%%/locale/nn/nn.lng
+%%DATADIR%%/locale/pa/pa.lng
+%%DATADIR%%/locale/pl/bookmarks.adr
+%%DATADIR%%/locale/pl/pl.lng
+%%DATADIR%%/locale/pl/search.ini
+%%DATADIR%%/locale/pl/standard_speeddial.ini
+%%DATADIR%%/locale/pt-BR/bookmarks.adr
+%%DATADIR%%/locale/pt-BR/pt-BR.lng
+%%DATADIR%%/locale/pt-BR/search.ini
+%%DATADIR%%/locale/pt-BR/standard_speeddial.ini
+%%DATADIR%%/locale/pt/pt.lng
+%%DATADIR%%/locale/ro/bookmarks.adr
+%%DATADIR%%/locale/ro/ro.lng
+%%DATADIR%%/locale/ro/search.ini
+%%DATADIR%%/locale/ro/standard_speeddial.ini
+%%DATADIR%%/locale/ru/bookmarks.adr
+%%DATADIR%%/locale/ru/ru.lng
+%%DATADIR%%/locale/ru/search.ini
+%%DATADIR%%/locale/ru/standard_speeddial.ini
+%%DATADIR%%/locale/sk/bookmarks.adr
+%%DATADIR%%/locale/sk/search.ini
+%%DATADIR%%/locale/sk/sk.lng
+%%DATADIR%%/locale/sk/standard_speeddial.ini
+%%DATADIR%%/locale/sr/bookmarks.adr
+%%DATADIR%%/locale/sr/search.ini
+%%DATADIR%%/locale/sr/sr.lng
+%%DATADIR%%/locale/sr/standard_speeddial.ini
+%%DATADIR%%/locale/sv/sv.lng
+%%DATADIR%%/locale/sw/sw.lng
+%%DATADIR%%/locale/ta/ta.lng
+%%DATADIR%%/locale/te/te.lng
+%%DATADIR%%/locale/th/th.lng
+%%DATADIR%%/locale/tl/tl.lng
+%%DATADIR%%/locale/tr/tr.lng
+%%DATADIR%%/locale/uk/bookmarks.adr
+%%DATADIR%%/locale/uk/search.ini
+%%DATADIR%%/locale/uk/standard_speeddial.ini
+%%DATADIR%%/locale/uk/uk.lng
+%%DATADIR%%/locale/uz/uz.lng
+%%DATADIR%%/locale/vi/vi.lng
+%%DATADIR%%/locale/zh-cn/bookmarks.adr
+%%DATADIR%%/locale/zh-cn/browser.js
+%%DATADIR%%/locale/zh-cn/search.ini
+%%DATADIR%%/locale/zh-cn/standard_speeddial.ini
+%%DATADIR%%/locale/zh-cn/turbosettings.xml
+%%DATADIR%%/locale/zh-cn/zh-cn.lng
+%%DATADIR%%/locale/zh-tw/browser.js
+%%DATADIR%%/locale/zh-tw/turbosettings.xml
+%%DATADIR%%/locale/zh-tw/zh-tw.lng
+%%DATADIR%%/locale/zu/zu.lng
+%%DATADIR%%/mathml.dtd
+%%DATADIR%%/package-id.ini
+%%DATADIR%%/pubsuffix.xml
+%%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/skin/unix_skin.zip
+%%DATADIR%%/styles/about.css
+%%DATADIR%%/styles/cache.css
+%%DATADIR%%/styles/certinfo.css
+%%DATADIR%%/styles/config.css
+%%DATADIR%%/styles/contentblock.css
+%%DATADIR%%/styles/debug.css
+%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/error.css
+%%DATADIR%%/styles/gpu.css
+%%DATADIR%%/styles/history.css
+%%DATADIR%%/styles/im.css
+%%DATADIR%%/styles/image.css
+%%DATADIR%%/styles/images/Opera_256x256.png
+%%DATADIR%%/styles/images/arrow.png
+%%DATADIR%%/styles/images/bar.png
+%%DATADIR%%/styles/images/bkgd-rev.png
+%%DATADIR%%/styles/images/bkgd.png
+%%DATADIR%%/styles/images/bullet.png
+%%DATADIR%%/styles/images/center.png
+%%DATADIR%%/styles/images/container.png
+%%DATADIR%%/styles/images/customize.gif
+%%DATADIR%%/styles/images/darkBox.png
+%%DATADIR%%/styles/images/defaultFavicon.png
+%%DATADIR%%/styles/images/error.png
+%%DATADIR%%/styles/images/file.png
+%%DATADIR%%/styles/images/flag.png
+%%DATADIR%%/styles/images/folder.png
+%%DATADIR%%/styles/images/hanger.png
+%%DATADIR%%/styles/images/opera-icon-red.png
+%%DATADIR%%/styles/images/opera.png
+%%DATADIR%%/styles/images/page-bot.png
+%%DATADIR%%/styles/images/red_center.png
+%%DATADIR%%/styles/images/red_left.png
+%%DATADIR%%/styles/images/red_right.png
+%%DATADIR%%/styles/images/root.png
+%%DATADIR%%/styles/images/search.png
+%%DATADIR%%/styles/images/section.png
+%%DATADIR%%/styles/images/smartGroup.png
+%%DATADIR%%/styles/images/tooltiptail.png
+%%DATADIR%%/styles/images/top.png
+%%DATADIR%%/styles/images/warning.png
+%%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/m2_welcome_message.mbs
+%%DATADIR%%/styles/mail.css
+%%DATADIR%%/styles/mathml.css
+%%DATADIR%%/styles/media.css
+%%DATADIR%%/styles/message.css
+%%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/opera.css
+%%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/private.css
+%%DATADIR%%/styles/search.css
+%%DATADIR%%/styles/unstyledxml.css
+%%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/user/altdebugger.css
+%%DATADIR%%/styles/user/classid.css
+%%DATADIR%%/styles/user/contrastbw.css
+%%DATADIR%%/styles/user/contrastwb.css
+%%DATADIR%%/styles/user/disablebreaks.css
+%%DATADIR%%/styles/user/disablefloats.css
+%%DATADIR%%/styles/user/disableforms.css
+%%DATADIR%%/styles/user/disablepositioning.css
+%%DATADIR%%/styles/user/disabletables.css
+%%DATADIR%%/styles/user/outline.css
+%%DATADIR%%/styles/user/structureblock.css
+%%DATADIR%%/styles/user/structureinline.css
+%%DATADIR%%/styles/user/structuretables.css
+%%DATADIR%%/styles/user/tablelayout.css
+%%DATADIR%%/styles/user/toc.css
+%%DATADIR%%/styles/warning.css
+%%DATADIR%%/styles/webfeeds.html
+%%DATADIR%%/styles/webstorage.css
+%%DATADIR%%/styles/wml.css
+%%DATADIR%%/ui/dialog.ini
+%%DATADIR%%/ui/dialogs.yaml
+%%DATADIR%%/ui/fastforward.ini
+%%DATADIR%%/ui/standard_keyboard.ini
+%%DATADIR%%/ui/standard_keyboard_compat.ini
+%%DATADIR%%/ui/standard_menu.ini
+%%DATADIR%%/ui/standard_mouse.ini
+%%DATADIR%%/ui/standard_toolbar.ini
+%%DATADIR%%/ui/unix_keyboard.ini
+%%DATADIR%%/ui/widgets.yaml
+%%DATADIR%%/unite/fileSharing.ua
+%%DATADIR%%/unite/fridge.ua
+%%DATADIR%%/unite/home.ua
+%%DATADIR%%/unite/mediaPlayer.ua
+%%DATADIR%%/unite/messenger.ua
+%%DATADIR%%/unite/photoSharing.ua
+%%DATADIR%%/unite/webserver.ua
+@dirrm %%DATADIR%%/unite
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles/images
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/locale/zu
+@dirrm %%DATADIR%%/locale/zh-tw
+@dirrm %%DATADIR%%/locale/zh-cn
+@dirrm %%DATADIR%%/locale/vi
+@dirrm %%DATADIR%%/locale/uz
+@dirrm %%DATADIR%%/locale/uk
+@dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/tl
+@dirrm %%DATADIR%%/locale/th
+@dirrm %%DATADIR%%/locale/te
+@dirrm %%DATADIR%%/locale/ta
+@dirrm %%DATADIR%%/locale/sw
+@dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/sr
+@dirrm %%DATADIR%%/locale/sk
+@dirrm %%DATADIR%%/locale/ru
+@dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/pt-BR
+@dirrm %%DATADIR%%/locale/pt
+@dirrm %%DATADIR%%/locale/pl
+@dirrm %%DATADIR%%/locale/pa
+@dirrm %%DATADIR%%/locale/nn
+@dirrm %%DATADIR%%/locale/nl
+@dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/ms
+@dirrm %%DATADIR%%/locale/mk
+@dirrm %%DATADIR%%/locale/me
+@dirrm %%DATADIR%%/locale/lt
+@dirrm %%DATADIR%%/locale/ko
+@dirrm %%DATADIR%%/locale/ka
+@dirrm %%DATADIR%%/locale/ja
+@dirrm %%DATADIR%%/locale/it
+@dirrm %%DATADIR%%/locale/id
+@dirrm %%DATADIR%%/locale/hu
+@dirrm %%DATADIR%%/locale/hr
+@dirrm %%DATADIR%%/locale/hi
+@dirrm %%DATADIR%%/locale/gd
+@dirrm %%DATADIR%%/locale/fy
+@dirrm %%DATADIR%%/locale/fr-CA
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/fi
+@dirrm %%DATADIR%%/locale/et
+@dirrm %%DATADIR%%/locale/es-LA
+@dirrm %%DATADIR%%/locale/es-ES
+@dirrm %%DATADIR%%/locale/en-GB
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale/el
+@dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/da
+@dirrm %%DATADIR%%/locale/cs
+@dirrm %%DATADIR%%/locale/bn
+@dirrm %%DATADIR%%/locale/bg
+@dirrm %%DATADIR%%/locale/be
+@dirrm %%DATADIR%%/locale/az
+@dirrm %%DATADIR%%/locale/af
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%/defaults
+@dirrm %%DATADIR%%
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/mimetypes
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/mimetypes
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm lib/opera-next/plugins
+@dirrm lib/opera-next/gstreamer/plugins
+@dirrm lib/opera-next/gstreamer
+@dirrm lib/opera-next
+@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime || /usr/bin/true
