@@ -10,7 +10,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort
 
-MAINTAINER=	wfreeman@sourcefire.com
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 2.9+
 
 LICENSE=	GPLv2
