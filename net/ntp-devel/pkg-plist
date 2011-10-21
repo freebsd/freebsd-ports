@@ -101,6 +101,7 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/hints/todo
 %%PORTDOCS%%%%DOCSDIR%%/hints/vxworks.html
 %%PORTDOCS%%%%DOCSDIR%%/hints/winnt.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
 %%PORTDOCS%%%%DOCSDIR%%/huffpuff.html
 %%PORTDOCS%%%%DOCSDIR%%/icons/home.gif

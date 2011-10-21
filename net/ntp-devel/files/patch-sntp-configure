@@ -1,0 +1,11 @@
+--- sntp/configure.orig	2011-10-20 13:52:03.855932784 -0700
++++ sntp/configure	2011-10-20 16:09:10.154292211 -0700
+@@ -24094,7 +24094,7 @@
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: Using the installed libevent" >&5
+ $as_echo "$as_me: Using the installed libevent" >&6;}
+ 	    CPPFLAGS_LIBEVENT=`$PKG_CONFIG --cflags-only-I libevent`
+-	    LDADD_LIBEVENT=`$PKG_CONFIG --libs libevent | sed 's:-levent::'`
++	    LDADD_LIBEVENT=`$PKG_CONFIG --libs libevent`
+ 	    case "$LIBISC_PTHREADS_NOTHREADS" in
+ 	     pthreads)
+ 		LDADD_LIBEVENT="$LDADD_LIBEVENT -levent_pthreads"
