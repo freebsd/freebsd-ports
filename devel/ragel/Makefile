@@ -28,6 +28,11 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/[:.]c/!s/compare/this->&/' \
+		${WRKSRC}/aapl/avlcommon.h \
+		${WRKSRC}/aapl/bstcommon.h \
+		${WRKSRC}/aapl/bubblesort.h \
+		${WRKSRC}/aapl/mergesort.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${PREFIX}/bin
