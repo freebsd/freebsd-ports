@@ -9,11 +9,10 @@ PORTNAME=	geramik
 PORTVERSION=	0.27
 PORTREVISION=	6
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/ \
-		http://distfiles.towardex.com/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 DISTNAME=	3952-Geramik-${PORTVERSION}
 
-MAINTAINER=	haesu@TowardEX.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Keramik KDE styled theme for GTK
 
 DEPRECATED=	Depends on x11-toolkits/qtpixmap, which is DEPRECATED
