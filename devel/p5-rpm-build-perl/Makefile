@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpm-build-perl
-PORTVERSION=	0.74
+PORTVERSION=	0.76
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ATOURBIN
@@ -19,5 +19,8 @@ PERL_CONFIGURE=	yes
 
 MAN1=		perl.prov.1 perl.req.1
 MAN3=		B::Clobbers.3 B::PerlReq.3 B::Walker.3 PerlReq::Utils.3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| perl.clean||' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
