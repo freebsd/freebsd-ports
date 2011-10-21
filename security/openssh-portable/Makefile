@@ -6,36 +6,22 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	5.2p1
-PORTREVISION=	4
+DISTVERSION=	5.8p2
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
-.if defined(OPENSSH_SNAPSHOT)
-MASTER_SITES=	http://www.mindrot.org/openssh_snap/
-.else
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenSSH/portable
-.endif
-PKGNAMESUFFIX=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
-DISTNAME=	# empty
+PKGNAMESUFFIX=	-portable
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-.if defined(OPENSSH_SNAPSHOT)
-PORTREVISION!=		date -v-1d +%Y%m%d
-NO_CHECKSUM=		yes
-DISTNAME+=		${PORTNAME}-SNAP-${PORTREVISION}
-.else
-DISTNAME+=		${PORTNAME}-${DISTVERSION}
-.endif
-
-WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
 MAN5=	moduli.5 ssh_config.5 sshd_config.5
-MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
+MAN8=	sftp-server.8 sshd.8 ssh-keysign.8 ssh-pkcs11-helper.8
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
@@ -47,8 +33,6 @@ PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \
 			ssh_host_rsa_key ssh_host_rsa_key.pub ssh_host_dsa_key \
 			ssh_host_dsa_key.pub
 ETCOLD=			${PREFIX}/etc
-PORTABLE_SUFFIX=	-portable
-SSH_VERSION=		${DISTVERSION}
 
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
@@ -56,26 +40,29 @@ MAKE_ENV+=	SUDO="${SUDO}"
 OPTIONS=	PAM		"Enable pam(3) support"				on \
 		TCP_WRAPPERS	"Enable tcp_wrappers support"			on \
 		LIBEDIT		"Enable readline support to sftp(1)"		on \
-		KERBEROS	"Enable kerberos (autodetection)"		on \
 		SUID_SSH	"Enable suid SSH (Recommended off)"		off \
 		BSM		"Enable OpenBSM Auditing"			off \
-		GSSAPI		"Enable GSSAPI support (req: KERBEROS)"		off \
+		KERBEROS	"Enable kerberos (autodetection)"		off \
 		KERB_GSSAPI	"Enable Kerberos/GSSAPI patch (req: GSSAPI)"	off \
 		OPENSSH_CHROOT	"Enable CHROOT support"				off \
 		HPN		"Enable HPN-SSH patch"				off \
 		LPK		"Enable LDAP Public Key (LPK) patch"		off \
 		X509		"Enable x509 certificate patch"			off \
-		FILECONTROL	"Enable file control patch"			off \
+		FILECONTROL	"Enable file control patch (broken)"		off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"			off
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
-BROKEN=		does not build
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
 .endif
 
-.if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
-BROKEN=		X509 patch incompatible with HPN and LPK patches
+.if ${OSVERSION} >= 900007
+CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
+.endif
+
+.if defined(WITH_X509) && defined(WITH_HPN)
+BROKEN=		X509 patches and HPN patches do not apply cleanly together
 .endif
 
 .if defined(WITH_X509) && defined(WITH_KERB_GSSAPI)
@@ -106,33 +93,17 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 CONFIGURE_ARGS+=	--with-audit=bsm
 .endif
 
-.if !defined(WITHOUT_KERBEROS)
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
-.if defined(WITH_KERB_GSSAPI)
-PATCH_DIST_STRIP=	-p0
-PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=		openssh-5.2p1-gsskex-all-20090726.patch
-.endif
-PORTABLE_SUFFIX=	# empty
-GSSAPI_SUFFIX=		-gssapi
-CONFLICTS+=		openssh-portable-*-[0-9]*
-CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
-.if defined(HEIMDAL_HOME) && defined(KRB5_HOME) && ${HEIMDAL_HOME} == ${LOCALBASE}
-LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
-.elif defined(KRB5_HOME) && defined(LOCALBASE) && ${KRB5_HOME} == ${LOCALBASE}
+.if defined(WITH_KERBEROS)
+CONFIGURE_ARGS+=	--with-kerberos5
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
+.if defined(WITH_KERB_GSSAPI)
+PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
+PATCHFILES+=		openssh-5.7p1-gsskex-all-20110125.patch
+PATCH_DIST_STRIP=
 .endif
 .if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=		# empty
-.endif
-.else
-CONFLICTS+=		openssh-gssapi-*-[0-9]*
-CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
-.if exists(/usr/include/krb5.h)
-CONFIGURE_ARGS+=	--with-kerberos5
-EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
-.endif
 .endif
 .endif
 
@@ -145,59 +116,49 @@ CFLAGS+=		-DCHROOT
 .endif
 
 .if defined(WITH_HPN)
-EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn13v6.diff
-SSH_VERSION:=	${SSH_VERSION}-hpn13v6
+PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
+PATCHFILES+=		${PORTNAME}-5.8p1-hpn13v11.diff.gz
+PATCH_DIST_STRIP=
 .endif
 
-# See http://dev.inversepath.com/trac/openssh-lpk
+# See http://code.google.com/p/openssh-lpk/wiki/Main
+# and svn repo described here:
+# http://code.google.com/p/openssh-lpk/source/checkout
 .if defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10.patch
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.8p2.patch
 USE_OPENLDAP=		yes
-CPPFLAGS+=		-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY
-CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
-			--with-cppflags='-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY'
-.endif
-
-# resolve some patches incompatibility between LPK and HPN patches
-
-.if defined(WITH_HPN) && defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/lpk+hpn-servconf.c.patch
-.elif defined(WITH_HPN) && !defined(WITH_LPK)
-EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn13v6-servconf.c.diff
-.elif defined(WITH_LPK) && !defined(WITH_HPN)
-EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10-servconf.c.patch
-.endif
-
-.if defined(WITH_LPK) && ${ARCH} == "amd64"
-EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-5.1_p1-lpk-64bit.patch
+CPPFLAGS+=		-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-ldap=yes \
+			--with-libs='-lldap' \
+			--with-ldflags='-L${LOCALBASE}/lib' \
+			--with-cppflags='${CPPFLAGS}'
 .endif
 
 # See http://www.roumenpetrov.info/openssh/
 .if defined(WITH_X509)
+PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-7.0/
+PATCHFILES+=		${PORTNAME}-5.8p1+x509-7.0.diff.gz
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.2/
-PATCHFILES+=		openssh-5.2p1+x509-6.2.diff.gz
 PLIST_SUB+=		X509=""
 .else
-EXTRA_PATCHES+=		${FILESDIR}/VersionAddendum-ssh.1.patch \
-			${FILESDIR}/VersionAddendum-ssh_config.5.patch \
-			${FILESDIR}/VersionAddendum-sshd_config.5.patch
 PLIST_SUB+=		X509="@comment "
 .endif
 
 # See http://sftpfilecontrol.sourceforge.net/
 .if defined(WITH_FILECONTROL)
+# Latest sftpfilecontrol patch is against 5.4p1 which does not apply
+# cleanly against 5.8p2, but it's close.
+BROKEN=			latest upstream sftp file control public key patch is not up to date for OpenSSH 5.8p2
 EXTRA_PATCHES+=		${FILESDIR}/openssh-${DISTVERSION}.sftpfilecontrol-v1.3.patch
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
-BASE_SUFFIX=		-overwrite-base
 CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
-USE_RC_SUBR=	yes
+USE_RC_SUBR=		yes
 SUB_FILES+=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
@@ -224,21 +185,22 @@ CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 
 RC_SCRIPT_NAME=		openssh
 
-post-extract:
-.if defined(OPENSSH_SNAPSHOT)
-	@# rc.d script have same name of openssh snapshot dir
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${DISTVERSION}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-.for f in ssh_config ssh_config.5 sshd_config sshd_config.5
-	@${REINPLACE_CMD} -e 's|%%ADDENDUM%%|${PKGNAME}|' ${WRKSRC}/${f}
-.endfor
-	@${REINPLACE_CMD} -e 's|%%SSH_VERSION%%|${SSH_VERSION}|' \
-		-e 's|%%ADDENDUM%%|${PKGNAME}|' ${WRKSRC}/version.h
+	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
+		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
+	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
+		${WRKSRC}/version.h
+	@${ECHO_CMD} '#define SSH_VERSION	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
+		${WRKSRC}/version.h
+	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
+		${WRKSRC}/version.h
+.if defined(WITH_HPN)
+	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
+		${WRKSRC}/version.h
+.endif
 
 pre-su-install:
 	@${MKDIR} ${EMPTYDIR}

@@ -1,6 +1,6 @@
---- ssh-agent.c.orig	Fri Sep  1 02:38:37 2006
-+++ ssh-agent.c	Sat Sep 30 18:30:32 2006
-@@ -1036,6 +1036,7 @@
+--- ssh-agent.c.orig	2010-04-15 23:56:22.000000000 -0600
++++ ssh-agent.c	2010-09-14 16:14:13.000000000 -0600
+@@ -1086,6 +1086,7 @@
  	/* drop */
  	setegid(getgid());
  	setgid(getgid());

@@ -1,15 +1,6 @@
---- sshd_config.orig	2008-07-02 07:35:43.000000000 -0500
-+++ sshd_config	2010-01-13 23:11:29.173548767 -0600
-@@ -10,6 +10,8 @@
- # possible, but leave them commented.  Uncommented options change a
- # default value.
- 
-+#VersionAddendum FreeBSD-%%ADDENDUM%%
-+
- #Port 22
- #AddressFamily any
- #ListenAddress 0.0.0.0
-@@ -38,7 +40,7 @@
+--- sshd_config.orig	2009-10-11 04:51:09.000000000 -0600
++++ sshd_config	2010-09-14 16:14:13.000000000 -0600
+@@ -36,7 +36,7 @@
  # Authentication:
  
  #LoginGraceTime 2m
@@ -18,7 +9,7 @@
  #StrictModes yes
  #MaxAuthTries 6
  #MaxSessions 10
-@@ -57,11 +59,11 @@
+@@ -55,11 +55,11 @@
  # Don't read the user's ~/.rhosts and ~/.shosts files
  #IgnoreRhosts yes
  
@@ -33,7 +24,7 @@
  #ChallengeResponseAuthentication yes
  
  # Kerberos options
-@@ -74,7 +76,7 @@
+@@ -72,7 +72,7 @@
  #GSSAPIAuthentication no
  #GSSAPICleanupCredentials yes
  
@@ -42,7 +33,7 @@
  # and session processing. If this is enabled, PAM authentication will 
  # be allowed through the ChallengeResponseAuthentication and
  # PasswordAuthentication.  Depending on your PAM configuration,
-@@ -83,12 +85,12 @@
+@@ -81,12 +81,12 @@
  # If you just want the PAM account and session checks to run without
  # PAM authentication, then enable this but set PasswordAuthentication
  # and ChallengeResponseAuthentication to 'no'.

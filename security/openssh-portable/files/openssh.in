@@ -37,7 +37,8 @@ openssh_keygen()
 {
 	if [ ! -f %%ETCSSH%%/ssh_host_key -o \
 		! -f %%ETCSSH%%/ssh_host_dsa_key -o \
-		! -f %%ETCSSH%%/ssh_host_rsa_key ]; then
+		! -f %%ETCSSH%%/ssh_host_rsa_key -o \
+		! -f %%ETCSSH%%/ssh_host_ecdsa_key ]; then
 
 		umask 022
 
@@ -73,6 +74,14 @@ openssh_keygen()
 				-f %%ETCSSH%%/ssh_host_rsa_key -N ''
 		fi
 
+		if [ -f %%ETCSSH%%/ssh_host_ecdsa_key ]; then
+			echo "You already have a Elliptic Curve DSA host key" \
+				"in %%ETCSSH%%/ssh_host_ecdsa_key"
+			echo "Skipping protocol version 2 Elliptic Curve DSA Key Generation"
+		else
+			%%PREFIX%%/bin/ssh-keygen -t dsa \
+				-f %%ETCSSH%%/ssh_host_ecdsa_key -N ''
+		fi
 	fi
 }
 

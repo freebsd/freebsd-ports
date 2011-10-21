@@ -1,6 +1,6 @@
---- auth1.c.orig	Fri Sep  1 02:38:36 2006
-+++ auth1.c	Sat Sep 30 18:47:57 2006
-@@ -39,6 +39,7 @@
+--- auth1.c.orig	2010-06-25 18:01:33.000000000 -0600
++++ auth1.c	2010-09-14 16:14:12.000000000 -0600
+@@ -40,6 +40,7 @@
  #endif
  #include "monitor_wrap.h"
  #include "buffer.h"
@@ -8,7 +8,7 @@
  
  /* import */
  extern ServerOptions options;
-@@ -238,6 +239,13 @@
+@@ -239,6 +240,13 @@
  	char info[1024];
  	int prev = 0, type = 0;
  	const struct AuthMethod1 *meth;
@@ -22,11 +22,10 @@
  
  	debug("Attempting authentication for %s%.100s.",
  	    authctxt->valid ? "" : "invalid user ", authctxt->user);
-@@ -288,6 +296,26 @@
- 			    "type %d", type);
+@@ -292,6 +300,26 @@
  			goto skip;
  		}
-+
+ 
 +#ifdef HAVE_LOGIN_CAP
 +		if (authctxt->pw != NULL) {
 +			lc = login_getpwclass(authctxt->pw);
@@ -46,6 +45,7 @@
 +			lc = NULL;
 +		}
 +#endif  /* HAVE_LOGIN_CAP */
- 
++
  		if (!*(meth->enabled)) {
  			verbose("%s authentication disabled.", meth->name);
+ 			goto skip;
