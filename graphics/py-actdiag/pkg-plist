@@ -9,9 +9,9 @@ bin/actdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrix.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrix.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.pyo
