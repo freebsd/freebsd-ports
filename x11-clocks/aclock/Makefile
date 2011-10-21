@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	aclock
-PORTVERSION=	0.3
+PORTVERSION=	0.4.0
 CATEGORIES=	x11-clocks gnustep
-MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/aclock/
-DISTNAME=	aclock-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
+DISTNAME=	AClock-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Analog Clock for GNUstep
