@@ -26,8 +26,9 @@ bin/testparm
 sbin/smbd
 sbin/nmbd
 %%SWAT%%sbin/swat
-%%WINBIND%%lib/libwbclient.so.0
 %%WINBIND%%sbin/winbindd
+%%WINBIND%%lib/libwbclient.so
+%%WINBIND%%lib/libwbclient.so.0
 %%WINBIND%%lib/nss_winbind.so.1
 %%WINBIND%%lib/nss_wins.so.1
 %%WINBIND%%lib/pam_winbind.so

@@ -216,13 +216,6 @@ share/swat/help/manpages/idmap_rid.8.html
 share/swat/help/manpages/idmap_tdb.8.html
 share/swat/help/manpages/idmap_tdb2.8.html
 share/swat/help/manpages/index.html
-share/swat/help/manpages/ldb.3.html
-share/swat/help/manpages/ldbadd.1.html
-share/swat/help/manpages/ldbdel.1.html
-share/swat/help/manpages/ldbedit.1.html
-share/swat/help/manpages/ldbmodify.1.html
-share/swat/help/manpages/ldbrename.1.html
-share/swat/help/manpages/ldbsearch.1.html
 share/swat/help/manpages/lmhosts.5.html
 share/swat/help/manpages/log2pcap.1.html
 share/swat/help/manpages/net.8.html
@@ -258,6 +251,7 @@ share/swat/help/manpages/tdbtool.8.html
 share/swat/help/manpages/testparm.1.html
 share/swat/help/manpages/vfs_acl_tdb.8.html
 share/swat/help/manpages/vfs_acl_xattr.8.html
+share/swat/help/manpages/vfs_aio_fork.8.html
 share/swat/help/manpages/vfs_audit.8.html
 share/swat/help/manpages/vfs_cacheprime.8.html
 share/swat/help/manpages/vfs_cap.8.html
