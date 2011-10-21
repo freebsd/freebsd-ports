@@ -19,6 +19,10 @@ OPTIONS=	EXAMPLEC	"Install C example programs"	on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800014
+BROKEN=	does not build
+.endif
+
 .if defined(WITH_EXAMPLEC)
 PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt
 PLIST_DIRS=	%%EXAMPLESDIR%%
