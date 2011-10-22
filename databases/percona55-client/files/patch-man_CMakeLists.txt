@@ -1,11 +1,13 @@
---- man/CMakeLists.txt.orig	2010-12-23 15:06:27.000000000 +0100
-+++ man/CMakeLists.txt	2010-12-23 15:07:05.000000000 +0100
-@@ -15,8 +15,6 @@
+--- man/CMakeLists.txt.orig	2011-10-22 14:08:32.000000000 +0200
++++ man/CMakeLists.txt	2011-10-22 14:22:42.000000000 +0200
+@@ -15,10 +15,6 @@
  
  # Copy man pages
  FILE(GLOB MAN1_FILES *.1)
 -FILE(GLOB MAN1_EXCLUDE make_win_bin_dist.1)
+-FILE(GLOB MAN1_NDB ndb*.1)
 -FILE(GLOB MAN8_FILES *.8)
+-FILE(GLOB MAN8_NDB ndb*.8)
  IF(MAN1_FILES)
    IF(MAN1_EXCLUDE)
      LIST(REMOVE_ITEM MAN1_FILES ${MAN1_EXCLUDE})
