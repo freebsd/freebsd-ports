@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
