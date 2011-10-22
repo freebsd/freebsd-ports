@@ -5,6 +5,7 @@ bin/gen-cam-menu
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
+%%DOCSDIR%%/examples/buttons
 %%DOCSDIR%%/examples/keys
 %%DOCSDIR%%/examples/themes
 %%DATADIR%%/fonts/black.style

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.14.2
+PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
@@ -27,6 +27,7 @@ MAN1=		feh.1 feh-cam.1 gen-cam-menu.1
 
 CFLAGS+=	-I${LOCALBASE}/include -std=c99
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} 's#share/man#man#' ${WRKSRC}/config.mk
