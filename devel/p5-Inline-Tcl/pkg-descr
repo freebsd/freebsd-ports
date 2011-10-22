@@ -9,6 +9,3 @@ the first time you run your Tcl code. The namespace is cached, and
 subsequent calls use the cached version.
 
 WWW: http://search.cpan.org/dist/Inline-Tcl/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

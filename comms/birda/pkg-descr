@@ -6,6 +6,3 @@ as well as several utilities to exchange data with PDAs.
 These programs were written by Tommy Bohlin <tommy@gatespace.com>.
 The port is more or less directly copied from Lennart Augustsson's
 <lennart@augustsson.net> NetBSD port.
-
-Brandon S. Allbery KF8NH
-allbery@ece.cmu.edu

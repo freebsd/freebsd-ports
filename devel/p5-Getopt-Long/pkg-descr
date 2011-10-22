@@ -8,6 +8,3 @@ instead of single letters, and are introduced with a double dash `--'.
 
 Optionally, Getopt::Long can support the traditional bundling of
 single-letter command line options.
-
--Anton
-<tobez@FreeBSD.org>

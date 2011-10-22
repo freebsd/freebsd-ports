@@ -2,5 +2,3 @@ Perl5 module that allows creation of pseudo-tty's
 as well as manipulation.
 
 WWW: http://search.cpan.org/dist/IO-Tty/
-
---Will <andrews@technologist.com>

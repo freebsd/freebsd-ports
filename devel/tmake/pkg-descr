@@ -5,6 +5,3 @@ compiler. tmake automates and streamlines this process and lets you
 spend your valuable time on writing code, not makefiles.
 
 WWW: http://tmake.sourceforge.net/
-
-- Roland
-jesse@cs.uni-magdeburg.de

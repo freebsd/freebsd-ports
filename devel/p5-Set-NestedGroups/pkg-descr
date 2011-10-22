@@ -4,6 +4,3 @@ control lists (ACLs) would be one example of nested groups.
 For example, if Joe is a Manager, and Managers have access to payroll,
 you can create an ACL which implements these rules, then ask the ACL if
 Joe has access to payroll.
-
--Anton
-<tobez@FreeBSD.org>

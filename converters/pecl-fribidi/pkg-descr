@@ -2,6 +2,3 @@ A PHP frontend to the FriBidi library: an implementation of the unicode
 Bidi algorithm, provides means for handling right-to-left text.
 
 WWW: http://pecl.php.net/package/fribidi/
-
-- Alex Dupre
-ale@FreeBSD.org

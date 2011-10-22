@@ -3,6 +3,3 @@ overridable methods, but with the added attraction of sort of working
 dispatch to the parent class's method.
 
 WWW: http://search.cpan.org/dist/Class-Inner/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

@@ -4,6 +4,3 @@ a form of flow control, preventing a large group of tasks from
 exhausting some sort of resource.
 
 WWW: http://search.cpan.org/dist/POE-Component-JobQueue/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

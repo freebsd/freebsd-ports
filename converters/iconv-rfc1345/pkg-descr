@@ -3,6 +3,3 @@ ICONV is the library for conversion between various charsets.
 There are 108 charset tables in this port: those for most charsets
 presented in RFC1345 but not included into the iconv and iconv-extra
 packages.
-
-	Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
-	September 2000.

@@ -8,6 +8,3 @@ It is very easy and fast way to persist your data.
 JDBM2 also have minimal hardware requirements and is highly embeddable.
 
 WWW: http://code.google.com/p/jdbm2/
-
-- Alex Dupre
-ale@FreeBSD.org

@@ -5,6 +5,3 @@ catch both assertion failures and code errors that cause segmentation
 faults or other signals.
 
 WWW: http://check.sourceforge.net
-
-- Mike
-mikeh@FreeBSD.org

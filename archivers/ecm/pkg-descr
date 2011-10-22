@@ -5,6 +5,3 @@ The space saved depends on the number of sectors with unnecessary EDC/ECC data
 in them, which will depend on the specific type of CD.
 
 WWW: http://www.neillcorlett.com/ecm/
-
-- ehaupt
-ehaupt@critical.ch

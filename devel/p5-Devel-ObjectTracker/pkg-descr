@@ -16,6 +16,3 @@ the currently existing objects on demand.  These details contain
 date/time, session, call stack, etc. when the object was created.
 
 WWW: http://search.cpan.org/dist/Devel-ObjectTracker/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

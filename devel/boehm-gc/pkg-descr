@@ -12,7 +12,6 @@ GC or leak detection) without change.  C++ programs must include a header
 to use garbage collection, though leak detection should work without
 such source code modifications.  See the man page and header files.
 
--- Mike McGaughey <mmcg@cs.monash.edu.au>
 ps: garbage collection is addictive.
 
 WWW: http://www.hpl.hp.com/personal/Hans_Boehm/gc/

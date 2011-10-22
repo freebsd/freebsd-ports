@@ -9,6 +9,4 @@ E.g. the following command will build binutils for rtems on sparc:
 If you encounter any problems building/using/installing this port, please
 make me know. It would help to improve this port in feature.
 
--- Stanislav Sedov <stas@FreeBSD.org>
-
 WWW: http://sources.redhat.com/binutils/

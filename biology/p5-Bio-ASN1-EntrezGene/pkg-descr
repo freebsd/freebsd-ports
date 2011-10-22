@@ -7,6 +7,3 @@ The parser will report error & line number if input data does not conform to the
 NCBI Entrez Gene genome annotation file format.
 
 WWW: http://search.cpan.org/dist/Bio-ASN1-EntrezGene/
-
-- Mauricio
-mauricio@arareko.net

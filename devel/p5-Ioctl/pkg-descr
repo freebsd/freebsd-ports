@@ -2,5 +2,3 @@ The Perl Ioctl module provides an easily extensible way of getting
 the value of the C ioctl constants.
 
 Author: Ken <kjahds@kjahds.com>
-
---will

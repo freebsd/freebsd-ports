@@ -30,6 +30,3 @@ optionally export SEEK_*, and LOCK_EX|UN|SH, though. (I don't remember why,
 though, on the latter.)
 
 Any comments, complaints, or bug patches would be greatly appreciated.
-
---
-Kenneth Albanowski (kjahds@kjahds.com, CIS: 70705,126)

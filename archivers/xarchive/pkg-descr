@@ -6,7 +6,3 @@ formats, so adding support for new archive types can be easily done by writing
 a wrapper.
 
 WWW: http://xarchive.sourceforge.net
-
-- Mark
-mark@mkproductions.org
-http://www.mkproductions.org

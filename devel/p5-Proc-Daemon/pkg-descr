@@ -2,5 +2,3 @@ Proc::Daemon provides a method for a Perl script to run as a Unix
 daemon process.
 
 Author: Earl Hood <earlhood@usa.net>
-
---will

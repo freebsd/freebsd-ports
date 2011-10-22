@@ -6,6 +6,3 @@ sometimes you may wonder exactly which part of your program loads which module.
 Devel::TraceUse can analyze a program to see which part used which module.
 
 WWW: http://search.cpan.org/dist/Devel-TraceUse
-
-- Mauricio
-mauricio@arareko.net

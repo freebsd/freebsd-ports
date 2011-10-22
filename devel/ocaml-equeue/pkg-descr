@@ -19,6 +19,3 @@ It is possible to let Equeue cooperate with the event queue implementation of
 Tcl.  Now, also the Shell library is included in the Equeue distribution. 
 
 WWW: http://www.ocaml-programming.de/programming/equeue.html
-
-- David
-  <david.julien@gmail.com>

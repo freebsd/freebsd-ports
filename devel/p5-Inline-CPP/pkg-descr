@@ -3,6 +3,3 @@ The Inline::CPP module allows you to put C++ source code directly
 C++, and you can use them as if they were written in Perl.
 
 WWW: http://search.cpan.org/dist/Inline-CPP/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

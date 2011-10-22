@@ -4,5 +4,3 @@ uncompressed data.  The compressed data format used by the library
 is the lzip format.
 
 WWW: http://www.nongnu.org/lzip/lzlib.html
-
-Albert Vernon <f3cun3c02@sneakemail.com>

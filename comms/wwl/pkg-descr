@@ -1,5 +1,2 @@
 Given two Maidenhead locators, calculates distance (qrb) and azimuth.
 Or if called as locator, gives the lat/long of a Maidenhead locator.
-
-- Diane Bruce, VA3DB
-db@db.net

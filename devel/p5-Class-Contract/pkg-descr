@@ -6,6 +6,3 @@ object and class level.  Pre-conditions, post-conditions, and class
 invariants are also fully supported.
 
 WWW: http://search.cpan.org/dist/Class-Contract/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

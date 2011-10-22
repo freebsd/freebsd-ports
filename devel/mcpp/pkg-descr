@@ -12,5 +12,3 @@ mcpp, this package installs a program named 'mcpp' which links shared
 library of libmcpp and behaves independent from GCC.
 
 WWW: http://mcpp.sourceforge.net/
-
-- Kiyoshi Matsui <kmatsui@t3.rim.or.jp>

@@ -5,6 +5,3 @@ and operating system. With mkZiplib you can compress/decompress data and
 work with .gz and .zip files from within Tcl. 
 
 WWW: http://mkextensions.sourceforge.net
-
-- Martin Matuska
-mm@FreeBSD.org

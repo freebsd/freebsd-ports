@@ -8,6 +8,3 @@ decide what modules will be used by it instead of hard-coding their
 names.
 
 WWW: http://search.cpan.org/dist/Class-Loader/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

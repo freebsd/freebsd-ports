@@ -5,6 +5,3 @@ by generating the appropriate SQL request.
 Text-Query-SQL is derived from the Text-Query module.
 
 WWW: http://search.cpan.org/dist/Text-Query-SQL/
-
--Anton
-<tobez@FreeBSD.org>

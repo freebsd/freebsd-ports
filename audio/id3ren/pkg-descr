@@ -4,6 +4,3 @@ album, year, and a comment.  The secondary function of id3 Renamer is
 a tagger, which can create, modify, or remove ID3 tags.
 
 WWW: http://cbothamy.free.fr/projects/id3ren/
-
---
-Ported by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>

@@ -7,5 +7,3 @@ necessarily need to be setuid root (the only requirement being that
 the user be able to access the tts device).
 
 WWW: http://yasr.sourceforge.net/
-
-Ported by David K. Gerry <David.K.Gerry@GMail.com>

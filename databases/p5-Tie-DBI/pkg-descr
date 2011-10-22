@@ -1,5 +1,3 @@
 Tie::DBI is a perl module implementing Tie hash to a DBI handle.
 
 Author: LDS (Lincoln D. Stein <lstein@genome.wi.mit.edu>)
-
---clive

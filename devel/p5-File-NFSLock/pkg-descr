@@ -11,6 +11,3 @@ File::NFSLock was written to be light, generic, and fast.
 
 Authors: Paul T Seamons (paul@seamons.com), Rob B Brown (bbb@cpan.org)
 WWW: http://search.cpan.org/dist/File-NFSLock/
-
--Anton
-<tobez@FreeBSD.org>

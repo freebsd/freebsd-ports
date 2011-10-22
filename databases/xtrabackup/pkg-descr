@@ -4,6 +4,3 @@ Plugin and Barracuda format is supported as of release 0.9.5rc) and also can
 handle MyISAM tables.
 
 WWW: http://www.percona.com/docs/wiki/percona-xtrabackup:start
-
-- Alex Samourov
-samm@os2.kiev.ua

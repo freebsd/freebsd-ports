@@ -5,6 +5,3 @@ determine database metadata and construct a GraphViz graph from the
 table and field information.
 
 WWW: http://search.cpan.org/dist/GraphViz-DBI/
-
--Anton
-<tobez@FreeBSD.org>

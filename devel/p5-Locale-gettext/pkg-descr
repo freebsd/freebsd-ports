@@ -1,6 +1,3 @@
 This module permits from perl to the gettext() family of functions
 for retrieving message strings from databases constructed to
 internationalize software.
-
---Dima.
-dima@Chg.RU

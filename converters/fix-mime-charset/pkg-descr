@@ -4,6 +4,3 @@ filter in mailing lists where users often set the charset of their messages
 incorrectly. It processes messages fast and accurately, ignoring 
 attachments, and correctly interprets transfer-encodings. None but the 
 Content-Type header is changed.
-
-- Nosov Artem
-chip-set@mail.ru
