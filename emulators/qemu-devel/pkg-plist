@@ -1,5 +1,5 @@
 bin/qemu
-bin/qemu-ga
+%%GA%%bin/qemu-ga
 bin/qemu-img
 bin/qemu-io
 bin/qemu-nbd
