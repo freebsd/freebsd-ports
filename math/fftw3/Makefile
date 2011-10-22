@@ -41,7 +41,7 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
 OPTIONS=	G77_WRAPPERS "Alter Fortran wrappers for use with g77" off \
-		OPENMP "Build OpenMP variant of multithreaded libraries" off \
+		OPENMP "Build OpenMP multithreaded libraries" off \
 		OPTIMIZED_CFLAGS "Enable optimized CFLAGS" on
 
 .include <bsd.port.pre.mk>
