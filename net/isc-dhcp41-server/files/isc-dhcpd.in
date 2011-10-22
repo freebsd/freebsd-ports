@@ -296,15 +296,6 @@ check_chroot ()
 				err 1 "${name}_rootdir must be set" \
 				      "if ${name}_chroot_enable is enabled"
 			fi
-			if test `uname -r | cut -c 1` -le 6; then
-				if checkyesno ${name}_devfs_enable &&
-				   ! ( type mount_devfs ) > /dev/null 2>&1;
-				then
-					warn "${name}_devfs_enable disabled" \
-					     "-- not available"
-					eval "${name}_devfs_enable=NO"
-				fi
-			fi
 		else
 			eval "${name}_devfs_enable=NO"
 		fi
