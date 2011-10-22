@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validation-Class
-PORTVERSION=	1.112570
+PORTVERSION=	1.112870
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWNCORP
@@ -17,6 +17,7 @@ COMMENT=	Perl extension for centralized input validation for any application
 
 RUN_DEPENDS=	\
 	p5-Array-Unique>0:${PORTSDIR}/devel/p5-Array-Unique \
+	p5-Hash-Flatten>0:${PORTSDIR}/devel/p5-Hash-Flatten \
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
