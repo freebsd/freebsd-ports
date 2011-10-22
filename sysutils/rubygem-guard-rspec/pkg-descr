@@ -1,0 +1,3 @@
+Guard::RSpec automatically run your specs (much like autotest).
+
+WWW: http://github.com/guard/guard-rspec
