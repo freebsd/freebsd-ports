@@ -16,6 +16,9 @@ COMMENT=	hgtk script from TortoiseHG
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_SITELIBDIR}/iniparse/ini.py:${PORTSDIR}/devel/py-iniparse
 
+DEPRECATED=	does not work with current devel/mercurial, use tortoisehg2
+EXPIRATION_DATE=2011-11-22
+
 OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
 
 CONFLICTS=	tortoisehg-2*
