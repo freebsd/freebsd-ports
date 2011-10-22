@@ -50,6 +50,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Template-Plugin-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-Template-Plugin-HTML-SuperForm
 
+IS_INTERACTIVE=	Asks about installation paths
+
 PERL_MODBUILD=	yes
 
 WWWDIR=		${PREFIX}/www/${PORTNAME:L}

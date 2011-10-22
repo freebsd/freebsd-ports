@@ -26,6 +26,8 @@ RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General 
 		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-HTTP-Server-Simple>0.27:${PORTSDIR}/www/p5-HTTP-Server-Simple
 
+IS_INTERACTIVE=	Asks about installing optional components
+
 PERL_MODBUILD=	yes
 
 MAN1=		bigtop.1 \
