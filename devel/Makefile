@@ -446,7 +446,6 @@
     SUBDIR += gaul
     SUBDIR += gazpacho
     SUBDIR += gccmakedep
-    SUBDIR += gccxml
     SUBDIR += gconf
     SUBDIR += gconf2
     SUBDIR += gconf2-reference
