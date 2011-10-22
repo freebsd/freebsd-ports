@@ -7,10 +7,10 @@ lib/libfftw3%%FFTW3_SUFX%%.a
 lib/libfftw3%%FFTW3_SUFX%%.la
 lib/libfftw3%%FFTW3_SUFX%%.so
 lib/libfftw3%%FFTW3_SUFX%%.so.6
-lib/libfftw3%%FFTW3_SUFX%%_omp.a
-lib/libfftw3%%FFTW3_SUFX%%_omp.la
-lib/libfftw3%%FFTW3_SUFX%%_omp.so
-lib/libfftw3%%FFTW3_SUFX%%_omp.so.6
+%%OPENMP%%lib/libfftw3%%FFTW3_SUFX%%_omp.a
+%%OPENMP%%lib/libfftw3%%FFTW3_SUFX%%_omp.la
+%%OPENMP%%lib/libfftw3%%FFTW3_SUFX%%_omp.so
+%%OPENMP%%lib/libfftw3%%FFTW3_SUFX%%_omp.so.6
 lib/libfftw3%%FFTW3_SUFX%%_threads.a
 lib/libfftw3%%FFTW3_SUFX%%_threads.la
 lib/libfftw3%%FFTW3_SUFX%%_threads.so

@@ -7,6 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.3
+PORTREVISION?=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -25,8 +26,7 @@ USE_GNOME=	gnomehack pkgconfig
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS =	--enable-openmp --enable-shared --enable-threads \
-			--disable-fortran
+CONFIGURE_ARGS =	--enable-shared --enable-threads --disable-fortran
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -41,9 +41,18 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
 OPTIONS=	G77_WRAPPERS "Alter Fortran wrappers for use with g77" off \
+		OPENMP "Build OpenMP variant of multithreaded libraries" off \
 		OPTIMIZED_CFLAGS "Enable optimized CFLAGS" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENMP)
+CONFIGURE_ARGS+=	--enable-openmp
+PLIST_SUB+=	OPENMP=""
+.else
+CONFIGURE_ARGS+=	--disable-openmp
+PLIST_SUB+=	OPENMP="@comment "
+.endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
@@ -96,24 +105,29 @@ PLIST_SUB+=	DEF="@comment "
 PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/etc/fftw|${PREFIX}/etc/fftw|' \
+	@${REINPLACE_CMD} -e 's|/etc/fftw|${PREFIX}/etc/fftw|' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/api/import-system-wisdom.c \
 		${WRKSRC}/doc/fftw3* \
 		${WRKSRC}/tools/*
-	@${FIND} ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
+	@${REINPLACE_CMD} \
+	-e '/libfftw3@PREC_SUFFIX@_threads\.la:/{N; \
+	s/$$(LIBS)/$$(PTHREAD_LIBS) &/;}' \
+		${WRKSRC}/threads/Makefile.in
 .if ${FFTW3_FLAVOR} != "default"
-	@${REINPLACE_CMD} -E -e \
-		'/(DIST_COMMON|bin_SCRIPTS|BUILT_SOURCES|EXTRA_DIST) =/,\
-		/[^\]$$/s/[^[:blank:]]*fftw-wisdom-to-conf[^[:blank:]]*//' \
-			${WRKSRC}/tools/Makefile.in
+	@${REINPLACE_CMD} -E \
+	-e '/(DIST_COMMON|bin_SCRIPTS|BUILT_SOURCES|EXTRA_DIST) =/,\
+	/[^\]$$/s/[^[:blank:]]*fftw-wisdom-to-conf[^[:blank:]]*//' \
+		${WRKSRC}/tools/Makefile.in
 .  if ${FFTW3_FLAVOR} == "long" && ${OSVERSION} < 800000
-	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@LIBS@|-L${LOCALBASE}/lib -lml &|'
+	@${REINPLACE_CMD} -e 's|-lm |-L${LOCALBASE}/lib -lml &|' \
+		${WRKSRC}/configure
 .  endif
 .endif
+
+post-patch-script:
+	@${FIND} ${WRKSRC} -type f \( -name \*.bak -or -name \*.orig \) \
+	-exec ${RM} -f {} \;
 
 post-configure:
 #After issuing --disable-fortran in order to avoid using a Fortran compiler
