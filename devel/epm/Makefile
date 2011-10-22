@@ -21,7 +21,13 @@ MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
+
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
