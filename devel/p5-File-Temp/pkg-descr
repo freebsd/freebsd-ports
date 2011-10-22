@@ -5,5 +5,3 @@ sure the sticky bit is set on world writeable temp directories).
 
 Author: Tim Jenness <t.jenness@jach.hawaii.edu>
 WWW: http://search.cpan.org/dist/File-Temp/
-
--- Johann Visagie <johann@egenetics.com>

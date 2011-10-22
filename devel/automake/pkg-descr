@@ -10,5 +10,3 @@ contents of 'configure.in'. It is useful as an extensible, maintainable
 mechanism for augmenting autoconf.
 
 WWW: http://www.gnu.org/software/automake/
-
--- AlanE <alane@freebsd.org>

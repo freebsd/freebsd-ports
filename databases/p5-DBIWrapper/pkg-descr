@@ -10,6 +10,3 @@ if found to be available, the AutoCommit flag is turned
 off so that transactions will be used.
 
 WWW: http://dbiwrapper.sourceforge.net/
-
-- Pete
-petef@databits.net

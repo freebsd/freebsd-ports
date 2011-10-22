@@ -8,5 +8,3 @@ File::Spec -- in essence, Mac::FileSpec::Unixish is a cheap hack to get
 around using File::Spec.
 
 Author: Sean M. Burke <sburke@cpan.org>
-
---will

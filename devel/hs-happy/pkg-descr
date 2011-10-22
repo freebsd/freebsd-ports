@@ -14,5 +14,3 @@ Haskell parser that uses Happy, which will shortly be part of the
 library collection distributed with GHC.
 
 WWW: http://www.haskell.org/happy/
-
--- Simon Marlow <simonmar@microsoft.com>

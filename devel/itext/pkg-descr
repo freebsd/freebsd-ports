@@ -7,6 +7,3 @@ Servlets: The look and feel of HTML is browser dependent; with iText and PDF
 you can control exactly how your servlet's output will look.
 
 WWW: http://www.lowagie.com/iText/
-
-- Alex Dupre
-ale@FreeBSD.org

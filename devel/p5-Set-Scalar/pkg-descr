@@ -2,6 +2,3 @@ This package implements the basic set operations for Perl
 scalars/references.
 
 WWW: http://search.cpan.org/dist/Set-Scalar/
-
--Anton
-<tobez@FreeBSD.org>

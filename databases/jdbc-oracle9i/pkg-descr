@@ -2,5 +2,3 @@ This is a port of the JDBC driver which is used to access Oracle 9i
 databases using a database-independant API in Java for use with JDK 1.4.
 
 WWW: http://www.oracle.com/technology/tech/java/sqlj_jdbc/index.html
-
-patrick@freebsd.org

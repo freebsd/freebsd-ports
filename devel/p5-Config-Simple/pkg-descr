@@ -8,6 +8,3 @@ file syntax to parse them accordingly. Library supports parsing,
 updating and creating configuration files.
 
 WWW: http://search.cpan.org/dist/Config-Simple/
-
-- Manuel Rodrigo Rabade Garcia
-mig@mig-29.net

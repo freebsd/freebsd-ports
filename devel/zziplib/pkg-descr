@@ -4,6 +4,3 @@ transparently access files being either real files or zipped files
 with the same file path argument.
 
 WWW: http://zziplib.sourceforge.net/
-
-- Alex Dupre
-ale@FreeBSD.org

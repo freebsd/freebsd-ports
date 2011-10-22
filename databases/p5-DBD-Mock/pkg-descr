@@ -4,6 +4,3 @@ It's entirely self-contained so that you can extract the single library file
 tests even though you don't have information about a database.
 
 WWW: http://search.cpan.org/dist/DBD-Mock/
-
-- Espen Tagestad
-espen@tagestad.no

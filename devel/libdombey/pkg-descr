@@ -10,7 +10,3 @@ It drops connections over which it receives POST requests encoded as
 multipart/form-data.
 
 WWW: http://www.mammothcheese.ca/libdombey.html
-
---
-James Bailie <jimmy@mammothcheese.ca>
-http://www.mammothcheese.ca

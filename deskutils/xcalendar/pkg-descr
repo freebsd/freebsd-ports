@@ -8,5 +8,3 @@ assumed to be current.
 Note: This program is internationalized but only
 app-defaults files for English (C) and Japanese (ja_JP.eucJP) are included.
 Let's add another locales!
-
-					MITA Yoshio <mita@jp.FreeBSD.org>

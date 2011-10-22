@@ -2,6 +2,3 @@ This component allows for interactive peeking into a running POE
 application.
 
 WWW: http://search.cpan.org/dist/POE-Component-DebugShell/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

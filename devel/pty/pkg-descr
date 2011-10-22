@@ -12,6 +12,3 @@ using pty, you must manually kill it.  When pty starts it prints out its
 pid.
 
 WWW: http://www.mammothcheese.ca/munger.html
-
---
-James Bailie <jimmy@mammothcheese.ca>

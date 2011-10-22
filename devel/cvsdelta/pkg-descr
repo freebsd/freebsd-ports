@@ -7,7 +7,3 @@ files, both system-wide and locally.
 Requires ruby.
 
 WWW:		http://cvsdelta.sourceforge.net/
-AUTHOR:		Jeff Pace <jpace@incava.org>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org

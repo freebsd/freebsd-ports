@@ -5,6 +5,3 @@ of charsets (tables and shared modules).
 33 charsets are supported in this port: most Unicode encodings,
 all charsets for which locale exist in FreeBSD, few IBM-DOS ones.
 Other charsets are provided as standalone ports.
-
-	Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
-	November 2000.

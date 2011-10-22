@@ -12,6 +12,3 @@ Also included is a GGI-based wave renderer (draw_wave.q) and a simple
 graphical audio player application (audio_player.q).
 
 WWW: http://q-lang.sourceforge.net/
-
-- Albert Graef
-ag@muwiinfa.geschichte.uni-mainz.de

@@ -6,6 +6,3 @@ value to every program that monitors those keys. GConf is used by
 GNOME 2.x.
 
 WWW: http://search.cpan.org/dist/Gnome2-GConf/
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org

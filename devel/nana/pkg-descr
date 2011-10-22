@@ -19,5 +19,3 @@ using GDB. In particular it provides:
 		  with optional time stamping.
 	o Support for the quantifiers of predicate calculus (forall, exists).
 	o Support for before and after state saving and checking (x, x').
-
-Phil Maker <pjm@gnu.org>

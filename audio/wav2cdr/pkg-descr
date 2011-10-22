@@ -5,6 +5,3 @@ It is rather rudimentary, the wav file must have the same sampling parameters
 as CD audio. Runs on big and little endian machines.
 
 WWW: http://www.ibiblio.org/pub/Linux/apps/sound/convert/
-
-- ehaupt
-ehaupt@critical.ch

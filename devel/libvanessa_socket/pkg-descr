@@ -4,5 +4,3 @@ listen on sockets for clients as a server and to pipe information between
 sockets.
 
 WWW: http://www.vergenet.net/linux/vanessa/
-
--- K. Konstantinidis <kkonstan@daemon.gr>

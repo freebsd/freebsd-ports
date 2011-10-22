@@ -4,6 +4,3 @@ A meta archive uses a simple binary file format to store both meta and user
 data together in a single file. A mar file may be suitable in situations where
 a full-scale database is not. Both the mar library and the accompanying utility
 are written in C with the intention of porting to many platforms.
-
-- ehaupt
-ehaupt@critical.ch

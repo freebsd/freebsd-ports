@@ -8,6 +8,3 @@ inherit from Class::WhiteHole.  All unhandled methods will produce
 normal Perl error messages.
 
 WWW: http://search.cpan.org/dist/Class-WhiteHole/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

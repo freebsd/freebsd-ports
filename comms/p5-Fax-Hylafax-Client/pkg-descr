@@ -4,6 +4,3 @@ protocol and thus does not require any HylaFAX software component to be
 installed on the client machine.
 
 WWW: http://search.cpan.org/dist/Fax-Hylafax-Client/
-
-- Tony Shadwick, OSS Solutions
-tshadwick@oss-solutions.com

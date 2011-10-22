@@ -1,6 +1,3 @@
 Convert::Recode is a front end to the GNU recode program.  It will
 build a perl tr/// function based on the mapping tables that recode
 knows about.
-
-Dmitry Sivachenko,
-dima@Chg.RU

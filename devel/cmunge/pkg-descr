@@ -13,6 +13,3 @@ leaving it syntactically and semantically unchanged. It does this by:
 It accepts ANSI and K & R C as its input language.
 
 WWW: http://www.vcpc.univie.ac.at/~jhm/cmunge/
-
-- Frerich Raabe
-frerich.raabe@gmx.de

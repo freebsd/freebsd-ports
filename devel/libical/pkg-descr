@@ -4,6 +4,3 @@ parses iCal components and provides a C API for manipulating the
 component properties, parameters, and subcomponents.
 
 WWW: http://freeassociation.sourceforge.net/
-
-/Joe Kelsey
-joe@zircon.seattle.wa.us

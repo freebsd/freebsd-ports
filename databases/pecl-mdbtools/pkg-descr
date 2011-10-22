@@ -3,6 +3,3 @@ Access and its underlying JetEngine. It is based on libmdb from the mdbtools
 package.
 
 WWW: http://pecl.php.net/package/mdbtools
-
-- Ditesh Shashikant Gathani
-ditesh@gathani.org

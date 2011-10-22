@@ -9,6 +9,3 @@ The general idea is that a PSF file contains a zlib-compressed program which,
 if executed on the real console, would simply play the music.
 
 WWW: http://projects.raphnet.net/#sexypsf
-
-- ehaupt
-ehaupt@critical.ch

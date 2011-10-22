@@ -42,5 +42,3 @@ where:
 	-S		sector size of destination device
 	-w		generate/run only WRITE requests
 	file		path to the data file instead of default 'raidtest.data'
-
--- Pawel Jakub Dawidek <pjd@FreeBSD.org>

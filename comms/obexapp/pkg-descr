@@ -1,5 +1,3 @@
 An obex application to transfer objects (address book items, images, movies,
 anything the target can handle) to mobile devices via IrDA, Bluetooth and other
 protocol via the OBEX format.
-
-- Guido Falsi <mad@madpilot.net>

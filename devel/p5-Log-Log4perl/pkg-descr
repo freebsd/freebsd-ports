@@ -3,6 +3,3 @@ behaviour of your system from the outside. It implements the widely
 popular (Java-based) Log4j logging package in pure Perl.
 
 WWW: http://log4perl.sourceforge.net
-
--Lars Thegler
-<lars@thegler.dk>

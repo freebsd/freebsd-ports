@@ -3,6 +3,3 @@ All common archive types are supported. RPM and ISO are handled without
 rpm or isodump executables.
 
 WWW: http://xarchiver.sourceforge.net/
-
-- Andreev Maxim
-andreevmaxim@gmail.com

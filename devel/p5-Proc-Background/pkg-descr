@@ -4,5 +4,3 @@ on, retrieve exit values, and see if background processes still exist.
 
 Author: Blair Zajac <blair@akamai.com>
 WWW: http://search.cpan.org/dist/Proc-Background/
-
---will

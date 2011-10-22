@@ -4,7 +4,3 @@ performing queries, fetching ACE objects, and updating databases.
 
 Author:	Lincoln D. Stein <lstein@cshl.org>
 WWW:    http://stein.cshl.org/AcePerl/
-
-Port maintained by the FreeBSD bio-porters mailing list.
-
--- FreeBSD bio-porters <bio@freebsd.net>

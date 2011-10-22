@@ -2,5 +2,3 @@ Tie::IxHash is a perl module implementing ordered in-memory associative arrays.
 
 Author: Sarathy <gsar@umich.edu>
 WWW:	http://search.cpan.org/dist/Tie-IxHash/
-
---will

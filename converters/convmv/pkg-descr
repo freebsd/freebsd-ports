@@ -11,6 +11,3 @@ files are UTF-8 encoded and will skip them by default. To turn this smartness
 off use the --nosmart switch.
 
 WWW: http://j3e.de/linux/convmv/man/
-
-- Kuang-che Wu
-  kcwu@csie.org
