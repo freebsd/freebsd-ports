@@ -1,0 +1,23 @@
+--- Makefile.orig	2011-09-19 13:28:35.000000000 +0200
++++ Makefile	2011-10-22 15:07:25.000000000 +0200
+@@ -177,9 +177,9 @@
+ 	done
+ 
+ _install_autostart:
+-	@$(INSTALL) -d $(DESTDIR)/etc/xdg/autostart/
++	@$(INSTALL) -d $(DESTDIR)$(PREFIX)/etc/xdg/autostart/
+ 	@$(INSTALL) unix_root/etc/xdg/autostart/neubot-on-gui-login.desktop \
+-	 $(DESTDIR)/etc/xdg/autostart
++	 $(DESTDIR)$(PREFIX)/etc/xdg/autostart
+ 
+ #
+ # After the install we need to edit the following files to
+@@ -194,7 +194,7 @@
+ NEEDEDIT += $(DESTDIR)$(MENUDIR)/neubot-status-icon.desktop
+ NEEDEDIT += $(DESTDIR)$(MENUDIR)/neubot-web-ui.desktop
+ NEEDEDIT += $(DESTDIR)$(MENUDIR)/neubot.desktop
+-NEEDEDIT += $(DESTDIR)/etc/xdg/autostart/neubot-on-gui-login.desktop
++NEEDEDIT += $(DESTDIR)$(PREFIX)/etc/xdg/autostart/neubot-on-gui-login.desktop
+ NEEDEDIT += $(DESTDIR)$(DATADIR)/neubot/gui/infobox_gtk.py
+ 
+ _install_edit:

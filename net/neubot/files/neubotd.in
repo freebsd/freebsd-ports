@@ -1,0 +1,47 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: neubotd
+# REQUIRE: NETWORKING DAEMON
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `neubotd':
+#
+#neubotd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="neubotd"
+rcvar=`set_rcvar`
+
+# read settings, set default values
+load_rc_config "${name}"
+: ${neubotd_enable="NO"}
+
+required_files="%%PREFIX%%/bin/neubot"
+pidfile="/var/run/${name}.pid"
+long_name="neubot daemon."
+neubotd_log="/var/log/${name}.log"
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+neubotd_start() {
+	[ -x %%PYTHON_CMD%% ] || (echo "%%PYTHON_CMD%% not found"; exit 1)
+	[ -f $pidfile ] && (echo "$name already running?"; exit 2)
+	echo "Starting $long_name"
+	%%PYTHON_CMD%% %%PREFIX%%/bin/neubot start > $neubotd_log && \
+	echo $$ > $pidfile
+}
+
+neubotd_stop() {
+	[ -f $pidfile ] || (echo "$name not running?"; exit 1)
+	echo "Stopping $long_name"
+	%%PYTHON_CMD%% %%PREFIX%%/bin/neubot stop > $neubotd_log && \
+	rm -f $pidfile
+}
+
+run_rc_command "$1"

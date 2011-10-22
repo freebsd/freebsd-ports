@@ -413,6 +413,7 @@
     SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += netwib
+    SUBDIR += neubot
     SUBDIR += nfsshell
     SUBDIR += ng_car
     SUBDIR += ng_daphne
