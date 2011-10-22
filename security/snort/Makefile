@@ -41,7 +41,7 @@ OPTIONS=	IPV6 "Enable IPv6 support" on \
 		PRELUDE "Enable Prelude NIDS integration" off \
 		LRGPCAP "Enable pcaps larger than 2GB" off \
 		SNORTSAM "Unofficial Snortsam Patch" off \
-		SRCFIRE "Enable sourcefire build option" off \
+		SOURCEFIRE "Enable Sourcefire specific build options" off \
 		DBGSNORT "Enable debugging symbols+core dumps" off
 
 .include <bsd.port.options.mk>
@@ -134,7 +134,7 @@ MAKE_ENV+=		DONTSTRIP="yes"
 CONFIGURE_ARGS+=	--disable-corefiles
 .endif
 
-.if defined(WITH_SRCFIRE)
+.if defined(WITH_SOURCEFIRE)
 CONFIGURE_ARGS+=	--enable-sourcefire
 .endif
 
