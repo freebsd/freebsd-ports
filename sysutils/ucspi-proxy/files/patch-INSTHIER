@@ -1,8 +1,0 @@
---- INSTHIER    Sun Oct  9 16:58:22 2005
-+++ INSTHIER    Sun Oct  9 16:58:30 2005
-@@ -1,4 +1,5 @@
- >bin
-+c:::755::ucspi-proxy
- c:::755::ucspi-proxy-http-xlate
- c:::755::ucspi-proxy-imap
- c:::755::ucspi-proxy-log

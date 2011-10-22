@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phamm
-PORTVERSION=	0.4.11
-PORTREVISION=	3
+PORTVERSION=	0.5.18
 CATEGORIES=	net www
 MASTER_SITES=	http://open.rhx.it/phamm/
 
@@ -17,6 +16,8 @@ COMMENT=	Front-end written in PHP to manage virtual service
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session
 
+USE_GETTEXT=	yes
+
 PHAMMDIR?=	www/${PORTNAME}
 SCHEMADIR=	${WRKSRC}/schema
 
@@ -24,8 +25,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PHAMMDIR=${PHAMMDIR} PKGNAME=${PKGNAME}
 PLIST_SUB=	PHAMMDIR=${PHAMMDIR}
 
-PORTDOCS=	AUTHORS CHANGELOG INSTALL README README.plugins \
-		DOCS.LICENSE IMAGES.LICENSE LICENSE THANKS
+PORTDOCS=	CHANGELOG INSTALL README LICENSE THANKS
 
 .include <bsd.port.pre.mk>
 
@@ -35,12 +35,6 @@ do-install:
 	@${CP} -Rv ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@${CP} -Rv ${SCHEMADIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/index.php ${PREFIX}/${PHAMMDIR}
-	@${INSTALL_DATA} ${WRKSRC}/en_GB.php ${PREFIX}/${PHAMMDIR}
-	@${INSTALL_DATA} ${WRKSRC}/config.inc.php.template \
-		${PREFIX}/${PHAMMDIR}/config.inc.php.sample
-	@[ -f ${PREFIX}/${PHAMMDIR}/config.inc.php ] || \
-		${INSTALL_DATA} ${WRKSRC}/config.inc.php.template \
-		${PREFIX}/${PHAMMDIR}/config.inc.php
 	@for d in `${FIND}  ${WRKSRC} -type d -depth 1 | ${SORT} -r | \
 	${EGREP} -v '(examples|cfg|schema|debian|server)'` ; do \
 		${CP} -Rv $$d ${PREFIX}/${PHAMMDIR}; \
