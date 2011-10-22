@@ -771,6 +771,7 @@
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
+    SUBDIR += rubygem-guard
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
