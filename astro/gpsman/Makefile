@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.4.1
+PORTVERSION=	6.4.2
 CATEGORIES=	astro tk geography
-MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/
-MASTER_SITE_SUBDIR=	science/cartography
+MASTER_SITES=	SF/${PORTNAME}/distrib
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
@@ -62,7 +61,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gpsman/html/info
 	${INSTALL_DATA} ${WRKSRC}/manual/html/info/*.gif ${PREFIX}/share/doc/gpsman/html/info
 	${INSTALL_DATA} ${WRKSRC}/manual/html/info/*.txt ${PREFIX}/share/doc/gpsman/html/info
-	${RM} ${PREFIX}/share/doc/gpsman/html/info/GPL.txt
 	${INSTALL_DATA} ${WRKSRC}/manual/html/info/*.ps ${PREFIX}/share/doc/gpsman/html/info
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message
 .endif

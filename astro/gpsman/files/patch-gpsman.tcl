@@ -1,3 +1,5 @@
+$FreeBSD$
+
 diff -ruN gpsman.tcl gpsman.tcl
 --- gpsman.tcl	Tue May  9 02:37:24 2006
 +++ gpsman.tcl	Wed May 10 17:56:02 2006
@@ -9,7 +11,7 @@ diff -ruN gpsman.tcl gpsman.tcl
  
  #
  #  gpsman --- GPS Manager: a manager for GPS receiver data
-@@ -216,7 +216,7 @@
+@@ -247,7 +247,7 @@
  }
  
   # path to directory containing program files
