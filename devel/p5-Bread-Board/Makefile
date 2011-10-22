@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bread-Board
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STEVAN
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A solderless way to wire up your application components
-
-OPTIONS=	GRAPHVIZ "Using Graphviz to visualize a Bread::Board system" off
 
 BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone \
@@ -28,6 +26,8 @@ RUN_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+
+OPTIONS=	GRAPHVIZ "Using Graphviz to visualize a Bread::Board system" off
 
 PERL_CONFIGURE=	yes
 
