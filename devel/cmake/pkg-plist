@@ -2,8 +2,12 @@ bin/ccmake
 bin/cmake
 bin/cpack
 bin/ctest
+share/aclocal/cmake.m4
 %%DATADIR%%/Modules/.NoDartCoverage
 %%DATADIR%%/Modules/AddFileDependencies.cmake
+%%DATADIR%%/Modules/AutomocInfo.cmake.in
+%%DATADIR%%/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+%%DATADIR%%/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 %%DATADIR%%/Modules/BundleUtilities.cmake
 %%DATADIR%%/Modules/CMake.cmake
 %%DATADIR%%/Modules/CMakeASM-ATTInformation.cmake
@@ -42,11 +46,13 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeDetermineSystem.cmake
 %%DATADIR%%/Modules/CMakeDetermineVSServicePack.cmake
 %%DATADIR%%/Modules/CMakeExportBuildSettings.cmake
+%%DATADIR%%/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake
 %%DATADIR%%/Modules/CMakeFindBinUtils.cmake
 %%DATADIR%%/Modules/CMakeFindCodeBlocks.cmake
 %%DATADIR%%/Modules/CMakeFindEclipseCDT4.cmake
 %%DATADIR%%/Modules/CMakeFindFrameworks.cmake
 %%DATADIR%%/Modules/CMakeFindKDevelop3.cmake
+%%DATADIR%%/Modules/CMakeFindPackageMode.cmake
 %%DATADIR%%/Modules/CMakeFindWMake.cmake
 %%DATADIR%%/Modules/CMakeFindXCode.cmake
 %%DATADIR%%/Modules/CMakeForceCompiler.cmake
@@ -66,6 +72,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeParseImplicitLinkInfo.cmake
 %%DATADIR%%/Modules/CMakePlatformId.h.in
 %%DATADIR%%/Modules/CMakePrintSystemInformation.cmake
+%%DATADIR%%/Modules/CMakePushCheckState.cmake
 %%DATADIR%%/Modules/CMakeRCCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeRCInformation.cmake
 %%DATADIR%%/Modules/CMakeSystem.cmake.in
@@ -83,8 +90,10 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeTestJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestNMakeCLVersion.c
 %%DATADIR%%/Modules/CMakeTestRCCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestWatcomVersion.c
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
 %%DATADIR%%/Modules/CMakeVS10FindMake.cmake
+%%DATADIR%%/Modules/CMakeVS11FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS6BackwardCompatibility.cmake
 %%DATADIR%%/Modules/CMakeVS6FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS71FindMake.cmake
@@ -106,7 +115,10 @@ bin/ctest
 %%DATADIR%%/Modules/CPack.background.png.in
 %%DATADIR%%/Modules/CPack.cmake
 %%DATADIR%%/Modules/CPack.distribution.dist.in
+%%DATADIR%%/Modules/CPackBundle.cmake
+%%DATADIR%%/Modules/CPackComponent.cmake
 %%DATADIR%%/Modules/CPackDeb.cmake
+%%DATADIR%%/Modules/CPackNSIS.cmake
 %%DATADIR%%/Modules/CPackRPM.cmake
 %%DATADIR%%/Modules/CPackZIP.cmake
 %%DATADIR%%/Modules/CTest.cmake
@@ -118,6 +130,7 @@ bin/ctest
 %%DATADIR%%/Modules/CheckCXXCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckCXXSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckCXXSourceRuns.cmake
+%%DATADIR%%/Modules/CheckCXXSymbolExists.cmake
 %%DATADIR%%/Modules/CheckForPthreads.c
 %%DATADIR%%/Modules/CheckFortranFunctionExists.cmake
 %%DATADIR%%/Modules/CheckFunctionExists.c
@@ -129,6 +142,8 @@ bin/ctest
 %%DATADIR%%/Modules/CheckIncludeFiles.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.lists.in
+%%DATADIR%%/Modules/CheckPrototypeDefinition.c.in
+%%DATADIR%%/Modules/CheckPrototypeDefinition.cmake
 %%DATADIR%%/Modules/CheckSizeOf.cmake
 %%DATADIR%%/Modules/CheckStructHasMember.cmake
 %%DATADIR%%/Modules/CheckSymbolExists.cmake
@@ -137,19 +152,23 @@ bin/ctest
 %%DATADIR%%/Modules/CheckTypeSizeMap.cmake.in
 %%DATADIR%%/Modules/CheckVariableExists.c
 %%DATADIR%%/Modules/CheckVariableExists.cmake
+%%DATADIR%%/Modules/Compiler/Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Cray-C.cmake
 %%DATADIR%%/Modules/Compiler/Cray-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Cray-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/G95-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/GNU-ASM.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX.cmake
 %%DATADIR%%/Modules/Compiler/GNU-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/GNU.cmake
+%%DATADIR%%/Modules/Compiler/HP-ASM.cmake
 %%DATADIR%%/Modules/Compiler/HP-C.cmake
 %%DATADIR%%/Modules/Compiler/HP-CXX.cmake
 %%DATADIR%%/Modules/Compiler/HP-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/Intel-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Intel-C.cmake
 %%DATADIR%%/Modules/Compiler/Intel-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Intel-Fortran.cmake
@@ -168,15 +187,18 @@ bin/ctest
 %%DATADIR%%/Modules/Compiler/SCO-C.cmake
 %%DATADIR%%/Modules/Compiler/SCO-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SCO.cmake
+%%DATADIR%%/Modules/Compiler/SunPro-ASM.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-C.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/XL-ASM.cmake
 %%DATADIR%%/Modules/Compiler/XL-C.cmake
 %%DATADIR%%/Modules/Compiler/XL-CXX.cmake
 %%DATADIR%%/Modules/Compiler/XL-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/XL.cmake
 %%DATADIR%%/Modules/Dart.cmake
 %%DATADIR%%/Modules/DartConfiguration.tcl.in
 %%DATADIR%%/Modules/Documentation.cmake
@@ -187,6 +209,7 @@ bin/ctest
 %%DATADIR%%/Modules/FindALSA.cmake
 %%DATADIR%%/Modules/FindASPELL.cmake
 %%DATADIR%%/Modules/FindAVIFile.cmake
+%%DATADIR%%/Modules/FindArmadillo.cmake
 %%DATADIR%%/Modules/FindBISON.cmake
 %%DATADIR%%/Modules/FindBLAS.cmake
 %%DATADIR%%/Modules/FindBZip2.cmake
@@ -338,9 +361,14 @@ bin/ctest
 %%DATADIR%%/Modules/FortranCInterface/mymodule_.c
 %%DATADIR%%/Modules/FortranCInterface/mysub.f
 %%DATADIR%%/Modules/FortranCInterface/symbol.c.in
+%%DATADIR%%/Modules/GNUInstallDirs.cmake
+%%DATADIR%%/Modules/GenerateExportHeader.cmake
 %%DATADIR%%/Modules/GetPrerequisites.cmake
 %%DATADIR%%/Modules/ITKCompatibility.cmake
 %%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
+%%DATADIR%%/Modules/IntelVSImplicitPath/CMakeLists.txt
+%%DATADIR%%/Modules/IntelVSImplicitPath/detect.cmake
+%%DATADIR%%/Modules/IntelVSImplicitPath/hello.f
 %%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
 %%DATADIR%%/Modules/MacOSXFrameworkInfo.plist.in
@@ -353,9 +381,12 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/AIX-GNU.cmake
 %%DATADIR%%/Modules/Platform/AIX-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/AIX-VisualAge-CXX.cmake
+%%DATADIR%%/Modules/Platform/AIX-VisualAge-Fortran.cmake
+%%DATADIR%%/Modules/Platform/AIX-XL-ASM.cmake
 %%DATADIR%%/Modules/Platform/AIX-XL-C.cmake
 %%DATADIR%%/Modules/Platform/AIX-XL-CXX.cmake
 %%DATADIR%%/Modules/Platform/AIX-XL-Fortran.cmake
+%%DATADIR%%/Modules/Platform/AIX-XL.cmake
 %%DATADIR%%/Modules/Platform/AIX.cmake
 %%DATADIR%%/Modules/Platform/BSDOS.cmake
 %%DATADIR%%/Modules/Platform/BeOS.cmake
@@ -382,6 +413,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/CYGWIN-windres.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN.cmake
 %%DATADIR%%/Modules/Platform/Catamount.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-Fortran.cmake
@@ -407,10 +439,16 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-HP-ASM.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-HP-C.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-HP-CXX.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-HP-Fortran.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-HP.cmake
 %%DATADIR%%/Modules/Platform/HP-UX.cmake
 %%DATADIR%%/Modules/Platform/Haiku.cmake
 %%DATADIR%%/Modules/Platform/IRIX.cmake
 %%DATADIR%%/Modules/Platform/IRIX64.cmake
+%%DATADIR%%/Modules/Platform/Linux-Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-C.cmake
@@ -466,6 +504,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU.cmake
+%%DATADIR%%/Modules/Platform/Windows-Intel-ASM.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-Fortran.cmake
@@ -484,6 +523,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/gas.cmake
 %%DATADIR%%/Modules/Platform/kFreeBSD.cmake
 %%DATADIR%%/Modules/Platform/syllable.cmake
+%%DATADIR%%/Modules/ProcessorCount.cmake
 %%DATADIR%%/Modules/Qt4ConfigDependentSettings.cmake
 %%DATADIR%%/Modules/Qt4Macros.cmake
 %%DATADIR%%/Modules/RepositoryInfo.txt.in
@@ -505,6 +545,9 @@ bin/ctest
 %%DATADIR%%/Modules/TestForSTDNamespace.cmake
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
 %%DATADIR%%/Modules/UseEcos.cmake
+%%DATADIR%%/Modules/UseJava.cmake
+%%DATADIR%%/Modules/UseJavaClassFilelist.cmake
+%%DATADIR%%/Modules/UseJavaSymlinks.cmake
 %%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/UseQt4.cmake
 %%DATADIR%%/Modules/UseSWIG.cmake
@@ -514,7 +557,9 @@ bin/ctest
 %%DATADIR%%/Modules/Use_wxWindows.cmake
 %%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/VTKCompatibility.cmake
+%%DATADIR%%/Modules/WriteBasicConfigVersionFile.cmake
 %%DATADIR%%/Modules/ecos_clean.cmake
+%%DATADIR%%/Modules/exportheader.cmake.in
 %%DATADIR%%/Modules/kde3init_dummy.cpp.in
 %%DATADIR%%/Modules/kde3uic.cmake
 %%DATADIR%%/Modules/readme.txt
@@ -561,6 +606,7 @@ bin/ctest
 %%DOCSDIR%%/cmcompress/Copyright.txt
 %%DOCSDIR%%/cmcurl/COPYING
 %%DOCSDIR%%/cmexpat/COPYING
+%%DOCSDIR%%/cmlibarchive/COPYING
 %%DOCSDIR%%/cmsys/Copyright.txt
 %%DOCSDIR%%/cmzlib/Copyright.txt
 %%DOCSDIR%%/cpack.docbook
@@ -571,6 +617,7 @@ bin/ctest
 %%DOCSDIR%%/ctest.txt
 @dirrm %%DOCSDIR%%/cmzlib
 @dirrm %%DOCSDIR%%/cmsys
+@dirrm %%DOCSDIR%%/cmlibarchive
 @dirrm %%DOCSDIR%%/cmexpat
 @dirrm %%DOCSDIR%%/cmcurl
 @dirrm %%DOCSDIR%%/cmcompress
@@ -578,6 +625,7 @@ bin/ctest
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/Templates
 @dirrm %%DATADIR%%/Modules/Platform
+@dirrm %%DATADIR%%/Modules/IntelVSImplicitPath
 @dirrm %%DATADIR%%/Modules/FortranCInterface/Verify
 @dirrm %%DATADIR%%/Modules/FortranCInterface
 @dirrm %%DATADIR%%/Modules/FindCUDA

@@ -4,8 +4,8 @@
        # 2. OpenJDK 1.6
        # 3. GCJ 1.5
        # 4. Kaffe 1.4.2
--      IF(var MATCHES "java version \"[0-9]+\\.[0-9]+\\.[0-9_]+[oem-]*\".*")
-+      IF(var MATCHES "[java|openjdk] version \"[0-9]+\\.[0-9]+\\.[0-9_]+[oem-]*\".*")
+-      IF(var MATCHES "java version \"[0-9]+\\.[0-9]+\\.[0-9_.]+[oem-]*\".*")
++      IF(var MATCHES "[java|openjdk] version \"[0-9]+\\.[0-9]+\\.[0-9_.]+[oem-]*\".*")
          # This is most likely Sun / OpenJDK, or maybe GCJ-java compat layer
-         STRING( REGEX REPLACE ".* version \"([0-9]+\\.[0-9]+\\.[0-9_]+)[oem-]*\".*"
+         STRING( REGEX REPLACE ".* version \"([0-9]+\\.[0-9]+\\.[0-9_.]+)[oem-]*\".*"
                  "\\1" Java_VERSION_STRING "${var}" )
