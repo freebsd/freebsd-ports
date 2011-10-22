@@ -1,0 +1,8 @@
+YARD - Yay! A Ruby Documentation Tool
+
+YARD is a documentation generation tool for the Ruby programming language. It
+enables the user to generate consistent, usable documentation that can be
+exported to a number of formats very easily, and also supports extending for
+custom Ruby constructs such as custom class level definitions.
+
+WWW: http://yardoc.org/
