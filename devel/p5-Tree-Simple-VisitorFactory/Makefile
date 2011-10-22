@@ -18,6 +18,8 @@ COMMENT=	A set of visitor objects for traversing Tree::Simple hierarchies
 BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+
 MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
 		Tree::Simple::Visitor::FindByPath.3 \
 		Tree::Simple::Visitor::GetAllDescendents.3 \
