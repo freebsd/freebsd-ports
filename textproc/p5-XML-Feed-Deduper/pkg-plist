@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Feed/Deduper/.packlist
 %%SITE_PERL%%/XML/Feed/Deduper/Role.pm
 %%SITE_PERL%%/XML/Feed/Deduper/DB_File.pm
 %%SITE_PERL%%/XML/Feed/Deduper.pm
