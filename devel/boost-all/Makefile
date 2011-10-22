@@ -16,7 +16,6 @@ COMMENT?=	The "meta-port" for boost libraries
 OPTIONS=	JAM "Boost.Jam - Build tool from the boost.org" on \
 		LIBRARIES "Free portable C++ libraries" on \
 		PYTHON "Boost.Python - interfacing Python and C++" off \
-		PYSTE "Boost.Pyste - Boost.Python code generator" off \
 		DOCS "Documentation & examples" on
 
 NO_BUILD=	yes
@@ -34,10 +33,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
 
 .if !defined(WITHOUT_PYTHON)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-.endif
-
-.if !defined(WITHOUT_PYSTE)
-RUN_DEPENDS+=	${LOCALBASE}/bin/pyste.py:${PORTSDIR}/devel/boost-pyste
 .endif
 
 .if !defined(WITHOUT_DOCS)
