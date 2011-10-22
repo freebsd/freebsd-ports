@@ -414,6 +414,8 @@ bin/gpsman
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_71.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_72.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_73.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_74.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_75.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
@@ -421,6 +423,7 @@ bin/gpsman
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/info/WPs.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/info/coords.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/info/gpl-3_0.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/info/l_realtime.doc.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/info/lowrance.doc.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/info/sample.txt
