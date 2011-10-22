@@ -222,4 +222,5 @@ zenoss:*:949:
 conquest:*:950:
 openerpd:*:951:
 bitten-slave:*:952:
+_neubot:*:953:
 nobody:*:65534:

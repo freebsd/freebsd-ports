@@ -225,4 +225,5 @@ dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
 zenoss:*:949:949::0:0:& user:/usr/local/zenoss:/bin/sh
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/sbin/nologin
+_neubot:*:953:953::0:0:neubot daemon:/nonexistent:/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
