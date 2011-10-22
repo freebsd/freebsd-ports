@@ -36,7 +36,7 @@ RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3.6:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
