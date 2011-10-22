@@ -1,0 +1,251 @@
+bin/nagios-plugin-neubot
+bin/neubot
+bin/neubotw
+bin/start-neubot-daemon
+etc/xdg/autostart/neubot-on-gui-login.desktop
+share/applications/neubot-status-icon.desktop
+share/applications/neubot-web-ui.desktop
+share/applications/neubot.desktop
+share/icons/hicolor/scalable/apps/neubot.svg
+%%DATADIR%%/__init__.py
+%%DATADIR%%/__init__.pyc
+%%DATADIR%%/agent.py
+%%DATADIR%%/agent.pyc
+%%DATADIR%%/api/__init__.py
+%%DATADIR%%/api/__init__.pyc
+%%DATADIR%%/api/client.py
+%%DATADIR%%/api/client.pyc
+%%DATADIR%%/api/server.py
+%%DATADIR%%/api/server.pyc
+%%DATADIR%%/arcfour.py
+%%DATADIR%%/arcfour.pyc
+%%DATADIR%%/bittorrent/__init__.py
+%%DATADIR%%/bittorrent/__init__.pyc
+%%DATADIR%%/bittorrent/bitfield.py
+%%DATADIR%%/bittorrent/bitfield.pyc
+%%DATADIR%%/bittorrent/client.py
+%%DATADIR%%/bittorrent/client.pyc
+%%DATADIR%%/bittorrent/config.py
+%%DATADIR%%/bittorrent/config.pyc
+%%DATADIR%%/bittorrent/estimate.py
+%%DATADIR%%/bittorrent/estimate.pyc
+%%DATADIR%%/bittorrent/negotiate.py
+%%DATADIR%%/bittorrent/negotiate.pyc
+%%DATADIR%%/bittorrent/peer.py
+%%DATADIR%%/bittorrent/peer.pyc
+%%DATADIR%%/bittorrent/sched.py
+%%DATADIR%%/bittorrent/sched.pyc
+%%DATADIR%%/bittorrent/server.py
+%%DATADIR%%/bittorrent/server.pyc
+%%DATADIR%%/bittorrent/stream.py
+%%DATADIR%%/bittorrent/stream.pyc
+%%DATADIR%%/blocks.py
+%%DATADIR%%/blocks.pyc
+%%DATADIR%%/compat.py
+%%DATADIR%%/compat.pyc
+%%DATADIR%%/config.py
+%%DATADIR%%/config.pyc
+%%DATADIR%%/database/__init__.py
+%%DATADIR%%/database/__init__.pyc
+%%DATADIR%%/database/_table_utils.py
+%%DATADIR%%/database/_table_utils.pyc
+%%DATADIR%%/database/main.py
+%%DATADIR%%/database/main.pyc
+%%DATADIR%%/database/migrate.py
+%%DATADIR%%/database/migrate.pyc
+%%DATADIR%%/database/table_bittorrent.py
+%%DATADIR%%/database/table_bittorrent.pyc
+%%DATADIR%%/database/table_config.py
+%%DATADIR%%/database/table_config.pyc
+%%DATADIR%%/database/table_geoloc.py
+%%DATADIR%%/database/table_geoloc.pyc
+%%DATADIR%%/database/table_log.py
+%%DATADIR%%/database/table_log.pyc
+%%DATADIR%%/database/table_speedtest.py
+%%DATADIR%%/database/table_speedtest.pyc
+%%DATADIR%%/database/tool_buckets.py
+%%DATADIR%%/database/tool_buckets.pyc
+%%DATADIR%%/database/tool_collate.py
+%%DATADIR%%/database/tool_collate.pyc
+%%DATADIR%%/database/tool_goodset.py
+%%DATADIR%%/database/tool_goodset.pyc
+%%DATADIR%%/database/tool_privacy.py
+%%DATADIR%%/database/tool_privacy.pyc
+%%DATADIR%%/database/tool_slice.py
+%%DATADIR%%/database/tool_slice.pyc
+%%DATADIR%%/database/tool_users.py
+%%DATADIR%%/database/tool_users.pyc
+%%DATADIR%%/debug/__init__.py
+%%DATADIR%%/debug/__init__.pyc
+%%DATADIR%%/debug/objgraph.py
+%%DATADIR%%/debug/objgraph.pyc
+%%DATADIR%%/gui/__init__.py
+%%DATADIR%%/gui/__init__.pyc
+%%DATADIR%%/gui/infobox.py
+%%DATADIR%%/gui/infobox.pyc
+%%DATADIR%%/gui/infobox_gtk.py
+%%DATADIR%%/gui/infobox_gtk.pyc
+%%DATADIR%%/gui/infobox_tk.py
+%%DATADIR%%/gui/infobox_tk.pyc
+%%DATADIR%%/http/__init__.py
+%%DATADIR%%/http/__init__.pyc
+%%DATADIR%%/http/client.py
+%%DATADIR%%/http/client.pyc
+%%DATADIR%%/http/message.py
+%%DATADIR%%/http/message.pyc
+%%DATADIR%%/http/server.py
+%%DATADIR%%/http/server.pyc
+%%DATADIR%%/http/ssi.py
+%%DATADIR%%/http/ssi.pyc
+%%DATADIR%%/http/stream.py
+%%DATADIR%%/http/stream.pyc
+%%DATADIR%%/http/utils.py
+%%DATADIR%%/http/utils.pyc
+%%DATADIR%%/libversion.py
+%%DATADIR%%/libversion.pyc
+%%DATADIR%%/log.py
+%%DATADIR%%/log.pyc
+%%DATADIR%%/main/__init__.py
+%%DATADIR%%/main/__init__.pyc
+%%DATADIR%%/main/browser.py
+%%DATADIR%%/main/browser.pyc
+%%DATADIR%%/main/common.py
+%%DATADIR%%/main/common.pyc
+%%DATADIR%%/main/module.py
+%%DATADIR%%/main/module.pyc
+%%DATADIR%%/marshal.py
+%%DATADIR%%/marshal.pyc
+%%DATADIR%%/negotiate.py
+%%DATADIR%%/negotiate.pyc
+%%DATADIR%%/net/CA.py
+%%DATADIR%%/net/CA.pyc
+%%DATADIR%%/net/__init__.py
+%%DATADIR%%/net/__init__.pyc
+%%DATADIR%%/net/dns.py
+%%DATADIR%%/net/dns.pyc
+%%DATADIR%%/net/measurer.py
+%%DATADIR%%/net/measurer.pyc
+%%DATADIR%%/net/poller.py
+%%DATADIR%%/net/poller.pyc
+%%DATADIR%%/net/stream.py
+%%DATADIR%%/net/stream.pyc
+%%DATADIR%%/notify.py
+%%DATADIR%%/notify.pyc
+%%DATADIR%%/on_gui_login.py
+%%DATADIR%%/on_gui_login.pyc
+%%DATADIR%%/privacy.py
+%%DATADIR%%/privacy.pyc
+%%DATADIR%%/rendezvous/__init__.py
+%%DATADIR%%/rendezvous/__init__.pyc
+%%DATADIR%%/rendezvous/client.py
+%%DATADIR%%/rendezvous/client.pyc
+%%DATADIR%%/rendezvous/compat.py
+%%DATADIR%%/rendezvous/compat.pyc
+%%DATADIR%%/rendezvous/geoip_wrapper.py
+%%DATADIR%%/rendezvous/geoip_wrapper.pyc
+%%DATADIR%%/rendezvous/server.py
+%%DATADIR%%/rendezvous/server.pyc
+%%DATADIR%%/rootdir.py
+%%DATADIR%%/rootdir.pyc
+%%DATADIR%%/server.py
+%%DATADIR%%/server.pyc
+%%DATADIR%%/show_database.py
+%%DATADIR%%/show_database.pyc
+%%DATADIR%%/simplejson/__init__.py
+%%DATADIR%%/simplejson/__init__.pyc
+%%DATADIR%%/simplejson/decoder.py
+%%DATADIR%%/simplejson/decoder.pyc
+%%DATADIR%%/simplejson/encoder.py
+%%DATADIR%%/simplejson/encoder.pyc
+%%DATADIR%%/simplejson/ordered_dict.py
+%%DATADIR%%/simplejson/ordered_dict.pyc
+%%DATADIR%%/simplejson/scanner.py
+%%DATADIR%%/simplejson/scanner.pyc
+%%DATADIR%%/speedtest/__init__.py
+%%DATADIR%%/speedtest/__init__.pyc
+%%DATADIR%%/speedtest/client.py
+%%DATADIR%%/speedtest/client.pyc
+%%DATADIR%%/speedtest/compat.py
+%%DATADIR%%/speedtest/compat.pyc
+%%DATADIR%%/speedtest/negotiate.py
+%%DATADIR%%/speedtest/negotiate.pyc
+%%DATADIR%%/speedtest/server.py
+%%DATADIR%%/speedtest/server.pyc
+%%DATADIR%%/speedtest/session.py
+%%DATADIR%%/speedtest/session.pyc
+%%DATADIR%%/state.py
+%%DATADIR%%/state.pyc
+%%DATADIR%%/statusicon.py
+%%DATADIR%%/statusicon.pyc
+%%DATADIR%%/system/__init__.py
+%%DATADIR%%/system/__init__.pyc
+%%DATADIR%%/system/_proc_win32.py
+%%DATADIR%%/system/_proc_win32.pyc
+%%DATADIR%%/system/linux.py
+%%DATADIR%%/system/linux.pyc
+%%DATADIR%%/system/unix.py
+%%DATADIR%%/system/unix.pyc
+%%DATADIR%%/system/win32.py
+%%DATADIR%%/system/win32.pyc
+%%DATADIR%%/utils.py
+%%DATADIR%%/utils.pyc
+%%DATADIR%%/www/bittorrent.html
+%%DATADIR%%/www/css/jquery.jqplot.css
+%%DATADIR%%/www/css/style.css
+%%DATADIR%%/www/favicon.ico
+%%DATADIR%%/www/footer.html
+%%DATADIR%%/www/header.html
+%%DATADIR%%/www/img/header-web.png
+%%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/bittorrent.js
+%%DATADIR%%/www/js/contrib.js
+%%DATADIR%%/www/js/excanvas.min.js
+%%DATADIR%%/www/js/i18n.js
+%%DATADIR%%/www/js/index.js
+%%DATADIR%%/www/js/jqplot.canvasAxisTickRenderer.min.js
+%%DATADIR%%/www/js/jqplot.canvasTextRenderer.min.js
+%%DATADIR%%/www/js/jqplot.categoryAxisRenderer.min.js
+%%DATADIR%%/www/js/jqplot.cursor.min.js
+%%DATADIR%%/www/js/jqplot.dateAxisRenderer.min.js
+%%DATADIR%%/www/js/jqplot.highlighter.min.js
+%%DATADIR%%/www/js/jquery-ui.min.js
+%%DATADIR%%/www/js/jquery.jqplot.min.js
+%%DATADIR%%/www/js/jquery.min.js
+%%DATADIR%%/www/js/jquery.qtip.min.js
+%%DATADIR%%/www/js/log.js
+%%DATADIR%%/www/js/privacy.js
+%%DATADIR%%/www/js/settings.js
+%%DATADIR%%/www/js/speedtest.js
+%%DATADIR%%/www/js/state.js
+%%DATADIR%%/www/js/utils.js
+%%DATADIR%%/www/lang/en.js
+%%DATADIR%%/www/lang/it.js
+%%DATADIR%%/www/log.html
+%%DATADIR%%/www/privacy.html
+%%DATADIR%%/www/settings.html
+%%DATADIR%%/www/speedtest.html
+@dirrm %%DATADIR%%/www/lang
+@dirrm %%DATADIR%%/www/js
+@dirrm %%DATADIR%%/www/img
+@dirrm %%DATADIR%%/www/css
+@dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/system
+@dirrm %%DATADIR%%/speedtest
+@dirrm %%DATADIR%%/simplejson
+@dirrm %%DATADIR%%/rendezvous
+@dirrm %%DATADIR%%/net
+@dirrm %%DATADIR%%/main
+@dirrm %%DATADIR%%/http
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/debug
+@dirrm %%DATADIR%%/database
+@dirrm %%DATADIR%%/bittorrent
+@dirrm %%DATADIR%%/api
+@dirrm %%DATADIR%%
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons

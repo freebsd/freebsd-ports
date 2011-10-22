@@ -1,0 +1,9 @@
+
+==============================================================================
+Please read the file %%DOCSDIR%%/PRIVACY before using this
+program.
+
+To start the daemon, add the following line to /etc/rc.conf:
+neubotd_enable="YES"
+==============================================================================
+
