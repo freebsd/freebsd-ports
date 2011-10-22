@@ -374,6 +374,8 @@ include/wine/windows/mimeole.idl
 include/wine/windows/minmax.h
 include/wine/windows/mlang.h
 include/wine/windows/mlang.idl
+include/wine/windows/mmc.h
+include/wine/windows/mmc.idl
 include/wine/windows/mmddk.h
 include/wine/windows/mmdeviceapi.h
 include/wine/windows/mmdeviceapi.idl
@@ -1023,6 +1025,7 @@ lib/wine/fakedlls/mciseq.dll
 lib/wine/fakedlls/mciwave.dll
 lib/wine/fakedlls/midimap.dll
 lib/wine/fakedlls/mlang.dll
+lib/wine/fakedlls/mmcndmgr.dll
 lib/wine/fakedlls/mmdevapi.dll
 lib/wine/fakedlls/mmdevldr.vxd
 lib/wine/fakedlls/mmsystem.dll16
@@ -1523,6 +1526,7 @@ lib/wine/mciseq.dll.so
 lib/wine/mciwave.dll.so
 lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
+lib/wine/mmcndmgr.dll.so
 lib/wine/mmdevapi.dll.so
 lib/wine/mmdevldr.vxd.so
 lib/wine/mmsystem.dll16.so
