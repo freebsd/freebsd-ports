@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-geometry
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
