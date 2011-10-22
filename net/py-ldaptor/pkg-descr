@@ -1,0 +1,12 @@
+Ldaptor is a pure-Python library that implements:
+
+    * LDAP client logic
+    * separately-accessible LDAP and BER protocol message generation/parsing
+    * ASCII-format LDAP filter generation and parsing
+    * LDIF format data generation
+    * Samba password changing logic
+
+Also included is a web-based user interface to search and edit information in
+an LDAP directory and a set of LDAP utilities for use from the command line.
+
+WWW: http://github.com/antong/ldaptor
