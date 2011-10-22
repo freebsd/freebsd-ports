@@ -10625,6 +10625,7 @@ openxmldir                      ports/www/openxmldir
 openyahtzee                     ports/games/openyahtzee
 openzz                          ports/devel/openzz
 opera                           ports/www/opera
+opera-devel                     ports/www/opera-devel
 opera-linuxplugins              ports/www/opera-linuxplugins
 ophcrack                        ports/security/ophcrack
 opieprint                       ports/security/opieprint
@@ -13883,6 +13884,7 @@ p5-Pod-XML                      ports/textproc/p5-Pod-XML
 p5-Pod-Xhtml                    ports/textproc/p5-Pod-Xhtml
 p5-PodToHTML                    ports/www/p5-PodToHTML
 p5-PostScript                   ports/print/p5-PostScript
+p5-PostScript-PPD               ports/print/p5-PostScript-PPD
 p5-PostScript-Simple            ports/print/p5-PostScript-Simple
 p5-PostgreSQL-PLPerl-Call       ports/databases/p5-PostgreSQL-PLPerl-Call
 p5-PostgreSQL-PLPerl-Trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
@@ -18298,6 +18300,7 @@ p5-postgresql-plperl            ports/databases/p5-postgresql-plperl
 p5-postgresql-plperl-call       ports/databases/p5-PostgreSQL-PLPerl-Call
 p5-postgresql-plperl-trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
 p5-postscript                   ports/print/p5-PostScript
+p5-postscript-ppd               ports/print/p5-PostScript-PPD
 p5-postscript-simple            ports/print/p5-PostScript-Simple
 p5-pperl                        ports/devel/p5-PPerl
 p5-ppi                          ports/textproc/p5-PPI
