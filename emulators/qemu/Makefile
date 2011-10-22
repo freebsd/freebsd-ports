@@ -93,9 +93,13 @@ CONFIGURE_ARGS+=	--disable-kqemu
 .endif
 
 .if defined(NOPORTDOCS)
-MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
+MAKE_ARGS+=	NOPORTDOCS=1
 .else
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.endif
+
+.if !defined(STRIP) || ${STRIP} == ""
+CONFIGURE_ARGS+=--disable-strip
 .endif
 
 .if ${ARCH} == "amd64"
