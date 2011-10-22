@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-Coder-Google
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Google Maps Geocoding API
 
-RUN_DEPENDS=	p5-YAML-Syck>=0.1:${PORTSDIR}/textproc/p5-YAML-Syck \
+BUILD_DEPENDS=	p5-JSON>=2.27:${PORTSDIR}/converters/p5-JSON \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.5:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Geo::Coder::Google.3
-
-# The coordinates can be updated by anyone. It might change again in the future.
-post-patch:
-	@${REINPLACE_CMD} -e 's/-122.397323/-122.397711/' ${WRKSRC}/t/01_live.t
+MAN3=		Geo::Coder::Google.3 \
+		Geo::Coder::Google::V2.3 \
+		Geo::Coder::Google::V3.3
 
 .include <bsd.port.mk>

@@ -1,7 +1,10 @@
 %%SITE_PERL%%/Geo/Coder/Google.pm
+%%SITE_PERL%%/Geo/Coder/Google/V2.pm
+%%SITE_PERL%%/Geo/Coder/Google/V3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Google/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Google
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrm %%SITE_PERL%%/Geo/Coder/Google
 @dirrmtry %%SITE_PERL%%/Geo/Coder
 @dirrmtry %%SITE_PERL%%/Geo
