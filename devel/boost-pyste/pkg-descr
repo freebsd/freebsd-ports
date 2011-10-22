@@ -1,7 +1,0 @@
-Pyste is a Boost.Python code generator. The user specifies the classes
-and functions to be exported using a simple interface file, which
-following the Boost.Python's philosophy, is simple Python code. Pyste
-then uses GCCXML to parse all the headers and extract the necessary
-information to automatically generate C++ code.
-
-WWW:  http://www.boost.org/

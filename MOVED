@@ -2825,3 +2825,4 @@ mail/enigmail-seamonkey2|mail/enigmail-seamonkey|2011-10-19|Depends on outdated 
 www/seamonkey2-i18n|www/seamonkey-i18n|2011-10-19|Depends on outdated and vulnerable SeaMonkey 2.0
 www/seamonkey2|www/seamonkey|2011-10-19|Upstream support dropped and multiple vulnerabilities
 security/py-arm||2011-10-20|Renamed to security/arm
+devel/boost-pyste||2011-10-22|Has expired: Still requires GCC 3.4 (strictly) and gccxml which is deprecated (and has been broken for a while)

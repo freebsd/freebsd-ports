@@ -117,7 +117,6 @@
     SUBDIR += boost-docs
     SUBDIR += boost-jam
     SUBDIR += boost-libs
-    SUBDIR += boost-pyste
     SUBDIR += boost-python-libs
     SUBDIR += boost_build
     SUBDIR += bouml
