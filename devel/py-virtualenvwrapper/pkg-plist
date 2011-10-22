@@ -15,6 +15,9 @@ bin/virtualenvwrapper.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyo
@@ -26,6 +29,7 @@ bin/virtualenvwrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/scripts.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/tips.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/basic.css
@@ -46,6 +50,7 @@ bin/virtualenvwrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/en/index.html
 %%PORTDOCS%%%%DOCSDIR%%/en/install.html
 %%PORTDOCS%%%%DOCSDIR%%/en/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/en/projects.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripts.html
 %%PORTDOCS%%%%DOCSDIR%%/en/search.html
 %%PORTDOCS%%%%DOCSDIR%%/en/searchindex.js
