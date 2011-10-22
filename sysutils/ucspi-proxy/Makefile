@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ucspi-proxy
-PORTVERSION=	0.97
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 
