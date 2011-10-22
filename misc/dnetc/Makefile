@@ -10,8 +10,8 @@ PORTVERSION=	${VERSION}
 PORTREVISION=	$(REVISION}
 PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
-		http://http.distributed.net/pub/dcti/%SUBDIR%/
+MASTER_SITES=	http://http.distributed.net/pub/dcti/%SUBDIR%/ \
+		ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
 # This is architecture dependent
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
@@ -49,64 +49,53 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-REVISION=	1
-VERSION=	2.9108.517
 .if ${OSVERSION} >= 800107
-REVISION=	0
 VERSION=	2.9107.516
+REVISION=	0
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
-.elif ${OSVERSION} >= 700055
+.else
+VERSION=	2.9108.517
+REVISION=	1
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
-.else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 
 .elif ${ARCH} == amd64
+VERSION=	2.9110.519
 REVISION=	0
 .if ${OSVERSION} >= 800107
-VERSION=	2.9107.515
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
-.elif ${OSVERSION} >= 700055
-VERSION=	2.9106.513b
+.else
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E:S/b$//}-freebsd7-${ARCH}
-.else
-VERSION=	2.9106.513
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH}
 .endif
 
 .elif ${ARCH} == sparc64
-REVISION=	1
-VERSION=	2.9103.509
 .if ${OSVERSION} >= 800107
-VERSION=	2.9108.517
+VERSION=	2.9109.518
+REVISION=	0
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
-.elif ${OSVERSION} >= 700055
+.else
+VERSION=	2.9103.509
+REVISION=	1
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH}-elf
-.else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH}
 .endif
 
 .elif ${ARCH} == powerpc
 .if ${OSVERSION} >= 800107
 VERSION=	2.9109.518
+REVISION=	0
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 .else
-BROKEN=		works on FreeBSD 8+ only
-.endif
-
-.else
-REVISION=	0
+BROKEN=		works on FreeBSD 8+ only in powerpc
 VERSION=	0
+REVISION=	0
+.endif
 .endif
 
 do-configure:
