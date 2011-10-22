@@ -1,3 +1,4 @@
+%%SITE_PERL%%/MouseX/Types/Moose.pm
 %%SITE_PERL%%/MouseX/Types/TypeDecorator.pm
 %%SITE_PERL%%/MouseX/Types/Mouse.pm
 %%SITE_PERL%%/MouseX/Types.pm

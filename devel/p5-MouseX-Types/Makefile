@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MouseX-Types
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -16,12 +16,14 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to organize your Mouse types in libraries
 
 RUN_DEPENDS=	\
-	p5-Mouse>=0.15:${PORTSDIR}/devel/p5-Mouse
+	p5-Any-Moose>=0.15:${PORTSDIR}/devel/p5-Any-Moose \
+	p5-Mouse>=0.77:${PORTSDIR}/devel/p5-Mouse
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		MouseX::Types.3 \
+		MouseX::Types::Moose.3 \
 		MouseX::Types::Mouse.3
 
 .include <bsd.port.mk>
