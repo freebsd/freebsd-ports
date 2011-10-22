@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -98,6 +98,5 @@ PYEASYINSTALL_OSARCH=
 easyinstall-setopt:
 	${DO_NADA}
 .endif
-
 
 .include <bsd.port.post.mk>
