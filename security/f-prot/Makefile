@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	6.2.1
+PORTVERSION=	6.5.1.5927
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
-DISTNAME=	fp-FreeBSD-i386-ws-${PORTVERSION}
+DISTNAME=	fp-FreeBSD-x86_32-ws-${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus for BSD Workstations
@@ -25,7 +25,7 @@ MAN1=		fpscan.1
 MAN5=		f-prot.conf.5
 MAN8=		fpupdate.8
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 do-install:
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
