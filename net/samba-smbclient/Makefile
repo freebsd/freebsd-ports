@@ -13,7 +13,7 @@ COMMENT=		Samba "ftp-like" client
 
 CONFLICTS=		ja-samba-[23].* samba-[2-4].*
 
-SAMBA_PORT=		samba34
+SAMBA_PORT=		samba36
 SAMBA_SUBPORT=		yes
 
 SAMBA_CONFIG=		smb-client.conf
@@ -29,7 +29,7 @@ MAN1=			smbclient.1
 PLIST_SUB+=		SAMBA_CONFDIR="${SAMBA_CONFDIR:S,^${PREFIX}/,,}" \
 			SAMBA_CONFIG="${SAMBA_CONFIG}"
 
-ALL_TARGET=		libtdb bin/smbclient
+ALL_TARGET=		bin/smbclient
 
 do-install:
 	-@${MKDIR} ${SAMBA_CONFDIR}
