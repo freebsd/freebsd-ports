@@ -482,8 +482,6 @@ tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for
 tonicpoint-*		graphics/tonicpoint-viewer	Free for non-profit
 tuc-*			converters/tuc		Author does not allow
 						CD-ROM distribution
-tutorial.zip		java/java-tutorial	This software is under license
-						and export control
 ue*dev.zip		editors/uemacs		Resale allowed for media cost
 						only
 uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without
