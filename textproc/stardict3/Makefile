@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	stardict
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
@@ -29,8 +28,13 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
+CONFIGURE_WRKSRC=	${WRKSRC}/dict
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 
-OPTIONS=	GNOME "GNOME support" Off
+PROJECTHOST=	stardict-3
+
+OPTIONS=	GNOME "GNOME support" On
 
 CONFLICTS_RUN=	stardict-2.[0-9]*
 
@@ -46,19 +50,25 @@ USE_AUTOTOOLS=	autoconf
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
 PLIST_SUB=	GNOME="@comment "
+MAKE_ARGS+=     AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
 .endif
 
 MAN1=		stardict.1
 
 post-patch:
 .if defined(WITHOUT_GNOME)
-	${REINPLACE_CMD} -e '/DATADIRNAME=lib/s,lib,share,' ${WRKSRC}/m4/intltool.m4
-	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e '/DATADIRNAME=lib/s,lib,share,' ${WRKSRC}/dict/m4/intltool.m4
+	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
+	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' \
+		-e '/^help\/Makefile/d' ${WRKSRC}/dict/configure.ac
 .endif
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
-		-e 's,firefox,xdg-open,' \
-		${WRKSRC}/src/conf.cpp
+		${WRKSRC}/dict/src/conf.cpp
+
+pre-configure:
+	cd ${WRKSRC}/lib && \
+	${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} && \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
