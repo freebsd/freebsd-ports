@@ -7,20 +7,24 @@
 
 PORTNAME=	lapacke
 PORTVERSION=	1.0.0.009
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
-		http://netlib.org/lapack/
+MASTER_SITES=	NL
+MASTER_SITE_SUBDIR=	lapack
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Standard C language APIs for LAPACK
 
-#LICENSE=	BSD
+LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
+MAKE_JOBS_SAFE=	yes
+
+OPTIONS=	PROFILE "Build a profiling library" Off
 
 .include <bsd.port.pre.mk>
 
@@ -28,46 +32,57 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if exists(${LOCALBASE}/lib/libgoto2p.so)
 WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+.elif exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "reference"
-LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == "gotoblas"
-LIB_DEPENDS=	goto2:${PORTSDIR}/math/gotoblas
-BLAS=		-lpthread -lgoto2p
-LAPACK=		-lpthread -lgoto2p
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+LIB_DEPENDS+=	goto2p.1:${PORTSDIR}/math/gotoblas
+BLAS=		-lgoto2p
+LAPACK=		-lgoto2p
 WITHOUT_LAPACK_LATEST=	yes
 .elif ${WITH_BLAS} == "atlas"
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-BLAS=		-lpthread -lptf77blas -lptcblas -latlas_r
-LAPACK=		-lpthread -lalapack_r
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas
+LAPACK=		-lalapack
 .endif
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lgfortran -lgcc_s
-LDADD?=		-lgfortran -lgcc_s
-MAKE_ENV=	LDADD="${LDADD}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 .if defined(WITHOUT_LAPACK_LATEST)
 MAKE_ENV+=	WITHOUT_LAPACK_LATEST=yes
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README \
-		LICENSE
+PORTDOCS=	README
 .endif
 PLIST_FILES=	include/lapacke.h \
 		include/lapacke_utils.h \
 		lib/liblapacke.a \
 		lib/liblapacke.so \
 		lib/liblapacke.so.1
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+
+.if defined(WITH_PROFILE)
+.if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
+IGNORE =	you have defined WITH_PROFILE, but have also defined\
+WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
+.elif !exists(/usr/lib/libc_p.a)
+IGNORE	=	you have chosen WITH_PROFILE, but have not installed the\
+base system profiling libraries
+.endif
 PLIST_FILES+=	lib/liblapacke_p.a
+.else
+MAKE_ENV+=	NO_PROFILE=
 .endif
 
 post-patch:
