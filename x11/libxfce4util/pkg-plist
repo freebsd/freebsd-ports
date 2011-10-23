@@ -22,32 +22,32 @@ lib/libxfce4util.so
 lib/libxfce4util.so.5
 libdata/pkgconfig/libxfce4util-1.0.pc
 sbin/xfce4-kiosk-query
-share/gtk-doc/html/libxfce4util/home.png
-share/gtk-doc/html/libxfce4util/index.html
-share/gtk-doc/html/libxfce4util/index.sgml
-share/gtk-doc/html/libxfce4util/left.png
-share/gtk-doc/html/libxfce4util/libxfce4util-Desktop-entries.html
-share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
-share/gtk-doc/html/libxfce4util/libxfce4util-POSIX-Signal-Handling.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Resource-Config-File-Support.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Resource-lookup-functions.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Software-Licenses.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Version-Information.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Generics.html
-share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Kiosk-functions.html
-share/gtk-doc/html/libxfce4util/libxfce4util-core.html
-share/gtk-doc/html/libxfce4util/libxfce4util-datatypes.html
-share/gtk-doc/html/libxfce4util/libxfce4util-fundamentals.html
-share/gtk-doc/html/libxfce4util/libxfce4util-utilities.html
-share/gtk-doc/html/libxfce4util/libxfce4util.devhelp
-share/gtk-doc/html/libxfce4util/libxfce4util.devhelp2
-share/gtk-doc/html/libxfce4util/reference.html
-share/gtk-doc/html/libxfce4util/right.png
-share/gtk-doc/html/libxfce4util/style.css
-share/gtk-doc/html/libxfce4util/up.png
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/home.png
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/index.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/index.sgml
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/left.png
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Desktop-entries.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-POSIX-Signal-Handling.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Resource-Config-File-Support.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Resource-lookup-functions.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Software-Licenses.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Version-Information.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Generics.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Kiosk-functions.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-core.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-datatypes.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-fundamentals.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-utilities.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util.devhelp
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util.devhelp2
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/reference.html
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/right.png
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/style.css
+%%APIDOCS%%share/gtk-doc/html/libxfce4util/up.png
 %%NLS%%share/locale/am/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4util.mo
@@ -114,8 +114,8 @@ share/gtk-doc/html/libxfce4util/up.png
 %%NLS%%@dirrmtry share/locale/dz
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm share/gtk-doc/html/libxfce4util
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
+%%APIDOCS%%@dirrm share/gtk-doc/html/libxfce4util
+%%APIDOCS%%@dirrmtry share/gtk-doc/html
+%%APIDOCS%%@dirrmtry share/gtk-doc
 @dirrm include/xfce4/libxfce4util
 @dirrmtry include/xfce4
