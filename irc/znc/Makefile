@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.098
+PORTVERSION=	0.202
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An advanced IRC bouncer
+
+LICENSE=	GPLv2
 
 FETCH_ARGS?=	-Fpr
 GNU_CONFIGURE=	yes
@@ -20,7 +22,7 @@ USE_GNOME=	gnomehack pkgconfig
 WANT_PERL=	yes
 
 OPTIONS=	DEBUG		"Enable debugging" off \
-		IPV6		"Enable IPv6 support" off \
+		IPV6		"Enable IPv6 support" on \
 		CARES		"Use c-ares resolver library" off \
 		OPENSSL		"Enable OpenSSL support" on \
 		EXTRA		"Build extra modules" off \
@@ -28,7 +30,7 @@ OPTIONS=	DEBUG		"Enable debugging" off \
 		TCL		"Enable TCL module support" off \
 		TCLALLOWALL	"Allow non-admin users to load TCL module" off \
 		PYTHON		"Enable Python module support" off \
-		SASL		"Enable SASL module support" off
+		SASL		"Enable SASL module support (requires EXTRA)" off
 
 .include <bsd.port.options.mk>
 
@@ -76,7 +78,7 @@ PLIST_SUB+=		TCL="@comment "
 
 .if defined(WITH_TCLALLOWALL)
 .if defined(WITHOUT_TCL)
-IGNORE=			tcl allow all support requires TCL. Please re-rerun 'make config' and enable TCL
+IGNORE=			tcl allow all support requires TCL. Please re-run 'make config' and enable TCL
 .endif
 CXXFLAGS+=		-DMOD_MODTCL_ALLOW_EVERYONE
 .endif
@@ -85,13 +87,16 @@ CXXFLAGS+=		-DMOD_MODTCL_ALLOW_EVERYONE
 USE_PYTHON=	3.1
 USE_PERL5_BUILD=	yes
 PLIST_SUB+=	PYTHON=""
-CONFIGURE_ARGS+=	--enable-python=${PYTHON_VERSION}-config
+CONFIGURE_ARGS+=	--enable-python=python-${PYTHON_VER}
 BUILD_DEPENDS+=	swig>=1.3.40:${PORTSDIR}/devel/swig13
 .else
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_SASL)
+.if defined(WITHOUT_EXTRA)
+IGNORE=			sasl module requires EXTRA. Please re-run 'make config' and enable EXTRA
+.endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 LDFLAGS+=		-L${LOCALBASE}/lib
