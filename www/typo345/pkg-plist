@@ -798,6 +798,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swfupload/swfupload.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swfupload/swfupload.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swiftmailer/LICENSE
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swiftmailer/LICENSE.TYPO3v4-Exception
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swiftmailer/README
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swiftmailer/VERSION
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swiftmailer/classes/Swift.php
