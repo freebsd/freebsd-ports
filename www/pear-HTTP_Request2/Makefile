@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	HTTP_Request2
-DISTVERSION=	2.0.0RC2
+PORTVERSION=	2.0.0
+PORTEPOCH=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR classes providing an easy way to perform HTTP requests
 
 BUILD_DEPENDS=	${PEARDIR}/Net/URL2.php:${PORTSDIR}/net/pear-Net_URL2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Net/URL2.php:${PORTSDIR}/net/pear-Net_URL2
 
 OPTIONS=	CURL "PHP CURL extension support" off \
 		FILEINFO "PHP FILEINFO extension support" off \
