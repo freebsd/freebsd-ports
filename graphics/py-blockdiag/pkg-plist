@@ -187,6 +187,7 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_shape.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_shape_background.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_shape_namespace.diag
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_style_dasharray.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_styles.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/node_width_and_height.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/outer_node_follows_node_in_group.diag
