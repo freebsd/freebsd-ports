@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.12.6
+PORTVERSION=	1.12.7
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,25 +17,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	yes
 IGNORE_WITH_PHP=	4
-
-FILES=		Log/composite.php Log/console.php Log/daemon.php \
-		Log/display.php Log/error_log.php Log/file.php \
-		Log/firebug.php Log/mail.php Log/mcal.php Log/mdb2.php \
-		Log/null.php Log/observer.php Log/sql.php Log/sqlite.php \
-		Log/syslog.php Log/win.php Log.php
-DOCS=		guide.txt
-EXAMPLES=	composite.php console.php display.php error_log.php \
-		file.php firebug.php mail.php null.php observer_mail.php \
-		pear_error_handler.php php_error_handler.php sql.php \
-		sqlite.php syslog.php win.php
-TESTS=		backtrace.phpt composite.phpt console.phpt \
-		display.phpt error_log.phpt format.phpt \
-		extract-zend2.0.phpt extract-zend2.2.phpt \
-		factory.phpt file.phpt firebug.phpt levels.phpt null.phpt \
-		priority.phpt singleton.phpt sqlite.phpt sql_ident.phpt
-SQLS=		log.sql
-
-_SQLSDIR=	misc
+PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
