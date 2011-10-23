@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	0.11
+PORTVERSION=	0.11.3
 CATEGORIES=	security pear
-MASTER_SITES=	LOCAL/chinsan/PECL/
+MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to the libssh2 library
