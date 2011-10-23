@@ -29,4 +29,16 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS=	QUVI "Enable flash media stream URL support"  off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_QUVI)
+LIB_DEPENDS+=	quvi.7:${PORTSDIR}/multimedia/libquvi
+CONFIGURE_ARGS+=--enable-enable-quvi
+.else
+CONFIGURE_ARGS+=--enable-enable-quvi=no
+.endif
+
 .include <bsd.port.mk>
+
