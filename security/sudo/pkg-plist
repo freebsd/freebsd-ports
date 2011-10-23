@@ -30,10 +30,15 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%NLS%%share/locale/da/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
