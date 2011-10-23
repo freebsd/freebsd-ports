@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jslib
-PORTVERSION=	0.1.370
+PORTVERSION=	0.1.371
 CATEGORIES=	www
 MASTER_SITES=	http://lapo.it/freebsd/
 DISTNAME=	jslib_${PORTVERSION}_lite
@@ -21,7 +21,7 @@ XPI_FILES=	application.ini chrome/jslib.jar chrome/jsliblive/contents.rdf chrome
 XPI_DIRS=	chrome/jsliblive chrome components defaults/preferences defaults
 
 post-patch:
-		${REINPLACE_CMD} -Ee 's/>2[.]0[.][*]</>2.3.*</' ${WRKSRC}/install.rdf
+		${REINPLACE_CMD} -Ee '/Suite/,/Flock/s/>2[.]0[.][*]</>2.4.*</' ${WRKSRC}/install.rdf
 		${RM} -f ${WRKSRC}/install.rdf.bak
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
