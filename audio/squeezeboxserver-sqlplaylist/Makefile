@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlplaylist
 PORTVERSION=	2.5.3359
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.isaksson.info/download/do/downloadapplication?name=slimserver-sqlplaylist&filename=/
 PKGNAMEPREFIX=	squeezeboxserver-
