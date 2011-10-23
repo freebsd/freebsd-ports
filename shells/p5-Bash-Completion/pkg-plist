@@ -1,0 +1,16 @@
+bin/bash-complete
+bin/setup-bash-complete
+%%SITE_PERL%%/App/BashComplete.pm
+%%SITE_PERL%%/Bash/Completion.pm
+%%SITE_PERL%%/Bash/Completion/Plugin.pm
+%%SITE_PERL%%/Bash/Completion/Plugins/BashComplete.pm
+%%SITE_PERL%%/Bash/Completion/Plugins/Perldoc.pm
+%%SITE_PERL%%/Bash/Completion/Request.pm
+%%SITE_PERL%%/Bash/Completion/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash/Completion/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash/Completion
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash
+@dirrm %%SITE_PERL%%/Bash/Completion/Plugins
+@dirrm %%SITE_PERL%%/Bash/Completion
+@dirrmtry %%SITE_PERL%%/Bash
+@dirrmtry %%SITE_PERL%%/App

@@ -1,0 +1,21 @@
+bash completion should just work when you install new commands. Bash::Completion
+is a system to use and write bash completion rules.
+
+For end-users, you just need to add this line to your .bashrc or .bash_profile:
+
+    setup-bash-complete
+
+This will load all the installed Bash::Completion plugins, make sure they should
+be activated and generate the proper bash code to setup bash completion for
+them.
+
+If you later install a new command line tool, and it has a
+Bash::Completion::Plugin -based plugin, all your new shells will have bash
+completion rules for it. You can also force immediate setup by running the same
+command:
+
+    setup-bash-complete
+
+To write a new Bash::Completion plugin, see Bash::Completion::Plugin.
+
+WWW: http://search.cpan.org/dist/Bash-Completion/
