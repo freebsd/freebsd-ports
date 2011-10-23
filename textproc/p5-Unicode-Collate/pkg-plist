@@ -44,11 +44,16 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ln.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/lt.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/lv.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/mk.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ml.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/mr.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/mt.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/nb.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/nn.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/nso.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/om.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/or.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/pa.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/pl.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ro.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ru.pl
