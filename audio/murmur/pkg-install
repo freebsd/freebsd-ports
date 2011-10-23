@@ -7,7 +7,7 @@ RUNDIR=/var/run/murmur
 DBDIR=/var/db/murmur
 
 case $2 in
-	PRE-INSTALL)
+	POST-INSTALL)
 
 		mkdir -m 750 ${LOGDIR} ${DBDIR} ${RUNDIR} 2> /dev/null
 		chown -R murmur:murmur ${LOGDIR} ${DBDIR} ${RUNDIR}
