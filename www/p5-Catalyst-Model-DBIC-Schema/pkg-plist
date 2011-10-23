@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Catalyst/Model/DBIC/Schema/Types.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Caching.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Replicated.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/PerRequestSchema.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/SchemaProxy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC/Schema/.packlist
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema
