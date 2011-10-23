@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d21a287-fce0-11e0-a828-00235a5f2c9a">
+    <topic>kdelibs4, rekonq -- input validation failure</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+        <range><ge>4.0.*</ge><lt>4.7.2</lt></range>
+      </package>
+      <package>
+        <name>rekonq</name>
+        <range><lt>0.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20111003-1.txt">
+	  <p>The default rendering type for a QLabel is QLabel::AutoText, which
+	  uses heuristics to determine whether to render the given content as
+	  plain text or rich text. KSSL and Rekonq did not properly force its
+	  QLabels to use QLabel::PlainText. As a result, if given a certificate
+	  containing rich text in its fields, they would render the rich
+	  text. Specifically, a certificate containing a common name (CN) that
+	  has a table element will cause the second line of the table to be
+	  displayed. This can allow spoofing of the certificate's common
+	  name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kde.org/info/security/advisory-20111003-1.txt</url>
+      <url>http://www.nth-dimension.org.uk/pub/NDSA20111003.txt.asc</url>
+      <cvename>CVE-2011-3365</cvename>
+      <cvename>CVE-2011-3366</cvename>
+    </references>
+    <dates>
+      <discovery>2011-10-03</discovery>
+      <entry>2011-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="411ecb79-f9bc-11e0-a7e6-6c626dd55a41">
     <topic>piwik -- unknown critical vulnerabilities</topic>
     <affects>
