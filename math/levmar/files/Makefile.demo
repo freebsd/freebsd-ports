@@ -3,7 +3,7 @@ CFLAGS= %%CFLAGS%%
 LDFLAGS= %%LDFLAGS%%
 LAPACK= %%LAPACK%%
 BLAS= %%BLAS%%
-LIBS= -llevmar $(LAPACK) $(BLAS) -lm -lgcc_s -lgfortran
+LIBS= -llevmar $(LAPACK) $(BLAS) -lm
 
 DEMOBJS= lmdemo.o
 DEMOSRCS= lmdemo.c

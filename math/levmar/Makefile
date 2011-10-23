@@ -7,7 +7,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
@@ -16,9 +16,11 @@ MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	A GPL-licensed library implementing the Levenberg-Marquardt algorithm
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	PROFILE "Build a profiling library" Off
 
@@ -26,32 +28,30 @@ OPTIONS=	PROFILE "Build a profiling library" Off
 
 .if exists(${LOCALBASE}/lib/libgoto2p.so)
 WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+.elif exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "reference"
-LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == "gotoblas"
-LIB_DEPENDS=	goto2p.1:${PORTSDIR}/math/gotoblas
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+LIB_DEPENDS+=	goto2p.1:${PORTSDIR}/math/gotoblas
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == "atlas"
-LIB_DEPENDS=	atlas_r.2:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas -lptcblas -latlas_r
-LAPACK=		-lalapack_r
-.endif
-
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-SRCCONF=	${NONEXISTENT}
-MAKE_ENV=	LDADD="${LAPACK} ${BLAS}" \
-		SRCCONF="${SRCCONF}"
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas
+LAPACK=		-lalapack
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README.txt

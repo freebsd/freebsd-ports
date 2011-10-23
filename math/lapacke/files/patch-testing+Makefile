@@ -1,0 +1,16 @@
+--- ./testing/Makefile.orig	2010-10-01 17:17:25.000000000 +0900
++++ ./testing/Makefile	2011-09-30 19:38:00.000000000 +0900
+@@ -35,9 +35,9 @@
+ include ../make.inc
+ 
+ all:
+-	cd utils && $(MAKE)
+-	cd interface && $(MAKE)
++	cd ${.CURDIR}/utils && $(MAKE)
++	cd ${.CURDIR}/interface && $(MAKE)
+ 
+ clean:
+-	cd utils && $(MAKE) clean
+-	cd interface && $(MAKE) clean
++	cd ${.CURDIR}/utils && $(MAKE) clean
++	cd ${.CURDIR}/interface && $(MAKE) clean

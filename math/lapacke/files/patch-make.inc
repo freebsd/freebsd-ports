@@ -18,7 +18,7 @@
 -LAPACKE = lapacke.a
 -LIBS = ../../../lapack-3.2.1/lapack.a ../../../lapack-3.2.1/blas.a -lm
 +LAPACKE = ./lib/liblapacke.a
-+LIBS = %%BLAS%% %%LAPACK%%
++LIBS = %%LAPACK%% %%BLAS%%
  #
  #  The archiver and the flag(s) to use when building archive (library)
  #  If your system has no ranlib, set RANLIB = echo.
