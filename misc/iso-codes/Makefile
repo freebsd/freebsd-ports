@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.25
+PORTVERSION=	3.29
 CATEGORIES=	misc
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
+MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes

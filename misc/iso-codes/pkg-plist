@@ -195,6 +195,7 @@ share/locale/lt/LC_MESSAGES/iso_639_3.mo
 share/locale/lv/LC_MESSAGES/iso_15924.mo
 share/locale/lv/LC_MESSAGES/iso_3166.mo
 share/locale/lv/LC_MESSAGES/iso_3166_2.mo
+share/locale/lv/LC_MESSAGES/iso_4217.mo
 share/locale/lv/LC_MESSAGES/iso_639.mo
 share/locale/lv/LC_MESSAGES/iso_639_3.mo
 share/locale/mi/LC_MESSAGES/iso_3166.mo
@@ -286,6 +287,7 @@ share/locale/rw/LC_MESSAGES/iso_3166.mo
 share/locale/rw/LC_MESSAGES/iso_4217.mo
 share/locale/rw/LC_MESSAGES/iso_639.mo
 share/locale/rw/LC_MESSAGES/iso_639_3.mo
+share/locale/si/LC_MESSAGES/iso_3166.mo
 share/locale/sk/LC_MESSAGES/iso_15924.mo
 share/locale/sk/LC_MESSAGES/iso_3166.mo
 share/locale/sk/LC_MESSAGES/iso_3166_2.mo
@@ -347,6 +349,7 @@ share/locale/tr/LC_MESSAGES/iso_639_3.mo
 share/locale/tt/LC_MESSAGES/iso_3166.mo
 share/locale/tt/LC_MESSAGES/iso_639.mo
 share/locale/tt/LC_MESSAGES/iso_639_3.mo
+share/locale/ug/LC_MESSAGES/iso_3166.mo
 share/locale/uk/LC_MESSAGES/iso_15924.mo
 share/locale/uk/LC_MESSAGES/iso_3166.mo
 share/locale/uk/LC_MESSAGES/iso_3166_2.mo
@@ -412,6 +415,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ve
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/tl/LC_MESSAGES
@@ -432,6 +437,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/so
 @dirrmtry share/locale/sid/LC_MESSAGES
 @dirrmtry share/locale/sid
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/sa/LC_MESSAGES
 @dirrmtry share/locale/sa
 @dirrmtry share/locale/rw/LC_MESSAGES
