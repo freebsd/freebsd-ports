@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sqlplaylist
-PORTVERSION=	2.5.3224
+PORTVERSION=	2.5.3359
 CATEGORIES=	audio
-MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-sqlplaylist&filename=/
+MASTER_SITES=	http://erland.isaksson.info/download/do/downloadapplication?name=slimserver-sqlplaylist&filename=/
 PKGNAMEPREFIX=	squeezeboxserver-
 DISTNAME=	SQLPlayList-${PORTVERSION:S/b/beta/}
 DIST_SUBDIR=	squeezeboxserver
