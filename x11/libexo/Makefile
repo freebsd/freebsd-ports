@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
 DISTNAME=	exo-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application library for the Xfce environment
 
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI

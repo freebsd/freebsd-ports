@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 volume mixer module for xfce4-panel
 
 BUILD_DEPENDS+=	gstreamer-plugins-good>=0.10.22:${PORTSDIR}/multimedia/gstreamer-plugins-good

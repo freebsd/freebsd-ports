@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The "meta-port" for the XFce 4 desktop environment
 
 OPTIONS=	ICONS		"Install a full icon theme"		on  \

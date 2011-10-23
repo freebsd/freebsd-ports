@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	src/xfce/libxfcegui4/${PORTVERSION:R}
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
 
 USE_AUTOTOOLS=	libtool

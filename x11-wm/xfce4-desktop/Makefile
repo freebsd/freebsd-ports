@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 desktop background manager and root menu
 
 DOCSDIR=	${PREFIX}/share/doc/xfdesktop

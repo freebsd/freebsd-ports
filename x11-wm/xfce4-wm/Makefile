@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 window manager
 
 CONFIGURE_ARGS=	--enable-xinerama

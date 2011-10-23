@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 PKGNAMEPREFIX=	xfce4-
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
