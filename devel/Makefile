@@ -3452,6 +3452,7 @@
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rash
+    SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-require_all
