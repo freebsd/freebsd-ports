@@ -12352,12 +12352,12 @@ Note:  Please add new entries to the beginning of this file.
     <topic>KDE -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>kdebase4-runtime</name>
-	<range><lt>4.3.1_2</lt></range>
+	<name>kdebase-runtime</name>
+	<range><ge>4.0.*</ge><lt>4.3.1_2</lt></range>
       </package>
       <package>
-        <name>kdelibs4</name>
-	<range><lt>4.3.1_5</lt></range>
+        <name>kdelibs</name>
+	<range><ge>4.0.*</ge><lt>4.3.1_5</lt></range>
       </package>
     </affects>
     <description>
@@ -27231,11 +27231,11 @@ Note:  Please add new entries to the beginning of this file.
     <topic>konquerer -- address bar spoofing</topic>
     <affects>
       <package>
-	<name>kdebase3</name>
+	<name>kdebase</name>
 	<range><lt>3.5.7_3</lt></range>
       </package>
       <package>
-	<name>kdelibs3</name>
+	<name>kdelibs</name>
 	<range><lt>3.5.7_2</lt></range>
       </package>
     </affects>
