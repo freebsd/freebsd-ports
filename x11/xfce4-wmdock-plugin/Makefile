@@ -10,7 +10,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.ibh.de/~ellguth/develop/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	WMdock plugin for XFCE
 
 USE_BZIP2=	yes

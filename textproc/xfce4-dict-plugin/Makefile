@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce Plugin for searching for the translation or explanation of a word
 
 BROKEN=		does not configure
