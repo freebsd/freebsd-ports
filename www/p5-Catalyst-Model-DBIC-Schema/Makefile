@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Model-DBIC-Schema
-PORTVERSION=	0.55
+PORTVERSION=	0.57
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBIx::Class::Schema Model Class
 
 RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Devel>=1.0:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-Catalyst-Runtime>=5.80005:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-CatalystX-Component-Traits>=0.14:${PORTSDIR}/www/p5-CatalystX-Component-Traits \
@@ -40,6 +41,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Catalyst::Helper::Model::DBIC::Schema.3 \
 		Catalyst::Model::DBIC::Schema.3 \
 		Catalyst::TraitFor::Model::DBIC::Schema::Caching.3 \
+		Catalyst::TraitFor::Model::DBIC::Schema::PerRequestSchema.3 \
 		Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3 \
 		Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3
 
