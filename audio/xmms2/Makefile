@@ -63,10 +63,6 @@ OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING)
-BROKEN=		fails to build on pointyhat: runaway process
-.endif
-
 .if defined(XMMS2_SLAVE)
 EXCLUDE+=	--without-xmms2d
 
