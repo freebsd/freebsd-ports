@@ -5,5 +5,4 @@ or .zip without having to worry how it does so, or use different
 interfaces for each type by using either perl modules, or command line 
 tools on your system.
 
-WWW: http://search.cpan.org/dist/Archive-Extract
-Author: Jos Boumans <kane@cpan.org>
+WWW: http://search.cpan.org/dist/Archive-Extract/
