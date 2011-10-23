@@ -1181,7 +1181,6 @@ boost-all                       ports/devel/boost-all
 boost-docs                      ports/devel/boost-docs
 boost-jam                       ports/devel/boost-jam
 boost-libs                      ports/devel/boost-libs
-boost-pyste                     ports/devel/boost-pyste
 boost-python-libs               ports/devel/boost-python-libs
 boost_build                     ports/devel/boost_build
 bopm                            ports/irc/bopm
@@ -4141,7 +4140,6 @@ gcc45                           ports/lang/gcc45
 gcc46                           ports/lang/gcc46
 gcc47                           ports/lang/gcc47
 gccmakedep                      ports/devel/gccmakedep
-gccxml                          ports/devel/gccxml
 gcdmaster                       ports/sysutils/gcdmaster
 gcfilms                         ports/multimedia/gcfilms
 gchemutils                      ports/science/gchemutils
@@ -10042,6 +10040,7 @@ netwalker-ircc                  ports/irc/netwalker-ircc
 netwib                          ports/net/netwib
 netwox                          ports/net-mgmt/netwox
 netxms                          ports/net-mgmt/netxms
+neubot                          ports/net/neubot
 neverball                       ports/games/neverball
 newer                           ports/misc/newer
 newfile                         ports/devel/newfile
@@ -22010,6 +22009,7 @@ py-kombu                        ports/net/py-kombu
 py-kqueue                       ports/devel/py-kqueue
 py-kyotocabinet                 ports/databases/py-kyotocabinet
 py-ldap2                        ports/net/py-ldap2
+py-ldaptor                      ports/net/py-ldaptor
 py-levenshtein                  ports/devel/py-levenshtein
 py-libcloud                     ports/net/py-libcloud
 py-libdnet                      ports/net/py-libdnet
@@ -23829,6 +23829,8 @@ rubygem-god                     ports/sysutils/rubygem-god
 rubygem-graphviz                ports/graphics/rubygem-graphviz
 rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
+rubygem-guard                   ports/sysutils/rubygem-guard
+rubygem-guard-rspec             ports/sysutils/rubygem-guard-rspec
 rubygem-haml                    ports/www/rubygem-haml
 rubygem-hashie                  ports/devel/rubygem-hashie
 rubygem-heredoc_unindent        ports/textproc/rubygem-heredoc_unindent
@@ -24105,6 +24107,7 @@ rubygem-xslt                    ports/textproc/rubygem-xslt
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yajl-ruby               ports/devel/rubygem-yajl-ruby
 rubygem-yapra                   ports/www/rubygem-yapra
+rubygem-yard                    ports/textproc/rubygem-yard
 rubygem-yui-compressor          ports/devel/rubygem-yui-compressor
 rubygem-zentest                 ports/devel/rubygem-zentest
 rubygem-zoom                    ports/devel/rubygem-zoom
@@ -27848,6 +27851,7 @@ zenity                          ports/x11/zenity
 zenmap                          ports/security/zenmap
 zenoss                          ports/net-mgmt/zenoss
 zenpack-dellmon                 ports/net-mgmt/zenpack-dellmon
+zenpack-deviceadvdetail         ports/net-mgmt/zenpack-deviceadvdetail
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
 zephyr                          ports/net-im/zephyr
