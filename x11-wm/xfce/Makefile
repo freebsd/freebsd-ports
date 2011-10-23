@@ -11,7 +11,7 @@ PORTREVISION=	12
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3%20%28old%29/${PORTVERSION}
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile

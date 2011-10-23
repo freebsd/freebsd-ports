@@ -12,7 +12,7 @@ CATEGORIES=	misc xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Find application in the system supporting Desktop entry format
 
 GNU_CONFIGURE=	yes

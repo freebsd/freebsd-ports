@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=xfce/4.6.1/src
 DISTNAME=	xfprint-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 graphical frontend for printing
 
 GNU_CONFIGURE=	yes

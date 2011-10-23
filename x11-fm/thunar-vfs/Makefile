@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The virtual filesystem for Thunar
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \

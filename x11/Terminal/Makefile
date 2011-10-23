@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME:L}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
 USE_AUTOTOOLS=	libtool

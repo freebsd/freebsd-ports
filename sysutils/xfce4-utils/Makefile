@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
 DISTNAME=	xfce-utils-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 essential utilities and scripts
 
 CONFLICTS=	xfce4-utils-4.6*

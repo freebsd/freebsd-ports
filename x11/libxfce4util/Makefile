@@ -11,7 +11,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 library with non-graphical helper functions
 
 USE_AUTOTOOLS=	libtool

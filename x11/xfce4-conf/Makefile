@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	XFce 4 configuration mananger
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
