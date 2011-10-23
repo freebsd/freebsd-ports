@@ -5,7 +5,7 @@
 .if !defined(_POSTMKINCLUDED) && !defined(Xfce_Pre_Include)
 
 Xfce_Pre_Include=		bsd.xfce.mk
-Xfce_Include_MAINTAINER=	oliver@FreeBSD.org
+Xfce_Include_MAINTAINER=	xfce@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Xfce
@@ -19,11 +19,11 @@ MASTER_SITE_SUBDIR?=		xfce/4.8/src
 
 configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-garcon_BUILD_DEPENDS=		garcon>=0.1.7:${PORTSDIR}/sysutils/garcon
-garcon_RUN_DEPENDS=		garcon>=0.1.7:${PORTSDIR}/sysutils/garcon
+garcon_BUILD_DEPENDS=		garcon>=0.1.9:${PORTSDIR}/sysutils/garcon
+garcon_RUN_DEPENDS=		garcon>=0.1.9:${PORTSDIR}/sysutils/garcon
 
-libexo_BUILD_DEPENDS=		libexo>=0.6.0:${PORTSDIR}/x11/libexo
-libexo_RUN_DEPENDS=		libexo>=0.6.0:${PORTSDIR}/x11/libexo
+libexo_BUILD_DEPENDS=		libexo>=0.6.2:${PORTSDIR}/x11/libexo
+libexo_RUN_DEPENDS=		libexo>=0.6.2:${PORTSDIR}/x11/libexo
 
 libgui_BUILD_DEPENDS=		libxfce4gui>=4.8.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 libgui_RUN_DEPENDS=		libxfce4gui>=4.8.1:${PORTSDIR}/x11-toolkits/libxfce4gui
@@ -31,14 +31,14 @@ libgui_RUN_DEPENDS=		libxfce4gui>=4.8.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 libmenu_BUILD_DEPENDS=		libxfce4menu>=4.8.0:${PORTSDIR}/x11/libxfce4menu
 libmenu_RUN_DEPENDS=		libxfce4menu>=4.8.0:${PORTSDIR}/x11/libxfce4menu
 
-libutil_BUILD_DEPENDS=		libxfce4util>=4.8.1:${PORTSDIR}/x11/libxfce4util
-libutil_RUN_DEPENDS=		libxfce4util>=4.8.1:${PORTSDIR}/x11/libxfce4util
+libutil_BUILD_DEPENDS=		libxfce4util>=4.8.2:${PORTSDIR}/x11/libxfce4util
+libutil_RUN_DEPENDS=		libxfce4util>=4.8.2:${PORTSDIR}/x11/libxfce4util
 
-panel_BUILD_DEPENDS=		xfce4-panel>=4.8.3:${PORTSDIR}/x11-wm/xfce4-panel
-panel_RUN_DEPENDS=		xfce4-panel>=4.8.3:${PORTSDIR}/x11-wm/xfce4-panel
+panel_BUILD_DEPENDS=		xfce4-panel>=4.8.5:${PORTSDIR}/x11-wm/xfce4-panel
+panel_RUN_DEPENDS=		xfce4-panel>=4.8.5:${PORTSDIR}/x11-wm/xfce4-panel
 
-thunar_BUILD_DEPENDS=		Thunar>=1.2.1:${PORTSDIR}/x11-fm/thunar
-thunar_RUN_DEPENDS=		Thunar>=1.2.1:${PORTSDIR}/x11-fm/thunar
+thunar_BUILD_DEPENDS=		Thunar>=1.2.2:${PORTSDIR}/x11-fm/thunar
+thunar_RUN_DEPENDS=		Thunar>=1.2.2:${PORTSDIR}/x11-fm/thunar
 
 thunarvfs_BUILD_DEPENDS=	thunar-vfs>=1.2.0:${PORTSDIR}/x11-fm/thunar-vfs
 thunarvfs_RUN_DEPENDS=		thunar-vfs>=1.2.0:${PORTSDIR}/x11-fm/thunar-vfs
