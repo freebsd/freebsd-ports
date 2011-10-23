@@ -1221,6 +1221,7 @@
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
+    SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-kwalify
     SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
