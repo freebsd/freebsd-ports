@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	archivemail
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Archive or delete mail older than N days
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 
-DOCS=		CHANGELOG FAQ NEWS README TODO archivemail.sgml
+DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all
 
 do-install:
