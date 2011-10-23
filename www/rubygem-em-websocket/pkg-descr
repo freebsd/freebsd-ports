@@ -1,0 +1,3 @@
+rubygem-em-websocket is an EventMachine based WebSocket server.
+
+WWW: http://github.com/igrigorik/em-websocket
