@@ -18,8 +18,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.1:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed \
-		p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
 RUN_DEPENDS=	p5-Any-Moose>=0.1:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
 
@@ -27,4 +26,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		XML::Feed::Deduper.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
