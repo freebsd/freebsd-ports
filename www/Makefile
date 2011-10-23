@@ -1615,6 +1615,7 @@
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
+    SUBDIR += rubygem-em-websocket
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-faraday
