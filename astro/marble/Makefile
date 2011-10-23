@@ -24,7 +24,7 @@ QT_COMPONENTS=	dbus declarative gui network \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	GPS "Support for GPS position provider" on
 
