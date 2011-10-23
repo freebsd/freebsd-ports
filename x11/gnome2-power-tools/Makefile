@@ -31,8 +31,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/epiphany-extensions/adblock-patterns:${PORTSDIR}
 		evolution-gconf-filter-exchange:${PORTSDIR}/devel/evolution-gconf-tools \
 		${LOCALBASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
 		eiciel:${PORTSDIR}/sysutils/eiciel \
-		gtk-send-pr:${PORTSDIR}/sysutils/gtk-send-pr \
-		thefish:${PORTSDIR}/sysutils/thefish
+		gtk-send-pr:${PORTSDIR}/sysutils/gtk-send-pr 
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes
