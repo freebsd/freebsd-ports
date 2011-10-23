@@ -149,7 +149,6 @@
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/UDDI
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/SOAP/Transport
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/SOAP
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/Plugins
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs/SOAP/Transport
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs/SOAP
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs
