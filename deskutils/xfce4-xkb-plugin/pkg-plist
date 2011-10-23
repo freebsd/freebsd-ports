@@ -17,14 +17,19 @@ share/locale/hu/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/kk/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/sq/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ug/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-xkb-plugin.mo
@@ -37,12 +42,12 @@ share/xfce4/xkb/flags/am.svg
 share/xfce4/xkb/flags/ar.svg
 share/xfce4/xkb/flags/at.svg
 share/xfce4/xkb/flags/az.svg
+share/xfce4/xkb/flags/ba.svg
 share/xfce4/xkb/flags/be.svg
 share/xfce4/xkb/flags/ben.svg
 share/xfce4/xkb/flags/bg.svg
 share/xfce4/xkb/flags/bh.svg
 share/xfce4/xkb/flags/br.svg
-share/xfce4/xkb/flags/bs.svg
 share/xfce4/xkb/flags/by.svg
 share/xfce4/xkb/flags/ca.svg
 share/xfce4/xkb/flags/ch.svg
@@ -115,12 +120,19 @@ share/xfce4/xkb/flags/uy.svg
 share/xfce4/xkb/flags/uz.svg
 share/xfce4/xkb/flags/vn.svg
 share/xfce4/xkb/flags/ye.svg
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
 @dirrm share/xfce4/xkb/flags
 @dirrm share/xfce4/xkb
+@dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
-@dirrmtry lib/xfce4/panel-plugins
-@dirrmtry lib/xfce4
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
