@@ -1,0 +1,11 @@
+--- src/gui/curses/gui-curses-term.c.orig	2011-08-18 04:25:40.510233646 +0100
++++ src/gui/curses/gui-curses-term.c	2011-08-18 04:25:55.436405801 +0100
+@@ -26,7 +26,7 @@
+ #endif
+ 
+ #ifdef HAVE_NCURSESW_CURSES_H
+-#include <ncursesw/term.h>
++#include <term.h>
+ #else
+ #include <term.h>
+ #endif
