@@ -83,7 +83,6 @@
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
-    SUBDIR += java-tutorial
     SUBDIR += java3d
     SUBDIR += javahelp
     SUBDIR += javamail
