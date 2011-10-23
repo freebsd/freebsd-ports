@@ -94,11 +94,11 @@ include/cutter/gdkcutter-pixbuf.h
 include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf-assertions-helper.h
 include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf-assertions.h
 include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf.h
-include/cutter/soupcutter.h
-include/cutter/soupcutter/soupcut-assertions-helper.h
-include/cutter/soupcutter/soupcut-assertions.h
-include/cutter/soupcutter/soupcut-client.h
-include/cutter/soupcutter/soupcut-server.h
+%%SOUP%%include/cutter/soupcutter.h
+%%SOUP%%include/cutter/soupcutter/soupcut-assertions-helper.h
+%%SOUP%%include/cutter/soupcutter/soupcut-assertions.h
+%%SOUP%%include/cutter/soupcutter/soupcut-client.h
+%%SOUP%%include/cutter/soupcutter/soupcut-server.h
 lib/cutter/module/factory/report/pdf_factory.la
 lib/cutter/module/factory/report/pdf_factory.so
 lib/cutter/module/factory/report/xml_factory.la
@@ -193,7 +193,6 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/cutter-Types-for-GLib-support.html
 %%DOCSDIR%%/cutter-Types.html
 %%DOCSDIR%%/cutter-Version-Information.html
-%%DOCSDIR%%/cutter.devhelp
 %%DOCSDIR%%/cutter.devhelp2
 %%DOCSDIR%%/cutter.html
 %%DOCSDIR%%/dark-circle.png
@@ -272,22 +271,17 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/cppcut-macros.xml
 %%DOCSDIR%%/ja/cppcutter.xml
 %%DOCSDIR%%/ja/cut-assertions.xml
-%%DOCSDIR%%/ja/cut-colorize-differ.xml
 %%DOCSDIR%%/ja/cut-config.xml
 %%DOCSDIR%%/ja/cut-console-diff-writer.xml
 %%DOCSDIR%%/ja/cut-console.xml
-%%DOCSDIR%%/ja/cut-diff-writer.xml
 %%DOCSDIR%%/ja/cut-diff.html
-%%DOCSDIR%%/ja/cut-differ.xml
 %%DOCSDIR%%/ja/cut-experimental.xml
 %%DOCSDIR%%/ja/cut-features.xml
 %%DOCSDIR%%/ja/cut-helper.xml
 %%DOCSDIR%%/ja/cut-multi-process.xml
-%%DOCSDIR%%/ja/cut-readable-differ.xml
 %%DOCSDIR%%/ja/cut-string-diff-writer.xml
 %%DOCSDIR%%/ja/cut-test-utils.xml
 %%DOCSDIR%%/ja/cut-types.xml
-%%DOCSDIR%%/ja/cut-unified-differ.xml
 %%DOCSDIR%%/ja/cut-version.xml
 %%DOCSDIR%%/ja/cutter-Assertion-Utilities-for-GEnum-and-GFlags.html
 %%DOCSDIR%%/ja/cutter-Assertion-Utilities-for-GError.html
@@ -319,7 +313,6 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/cutter-Types-for-GLib-support.html
 %%DOCSDIR%%/ja/cutter-Types.html
 %%DOCSDIR%%/ja/cutter-Version-Information.html
-%%DOCSDIR%%/ja/cutter.devhelp
 %%DOCSDIR%%/ja/cutter.devhelp2
 %%DOCSDIR%%/ja/cutter.html
 %%DOCSDIR%%/ja/cutter.xml
@@ -330,7 +323,6 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/gcut-assertions.xml
 %%DOCSDIR%%/ja/gcut-data-helper.xml
 %%DOCSDIR%%/ja/gcut-data.xml
-%%DOCSDIR%%/ja/gcut-dynamic-data.xml
 %%DOCSDIR%%/ja/gcut-egg.xml
 %%DOCSDIR%%/ja/gcut-enum.xml
 %%DOCSDIR%%/ja/gcut-error.xml
@@ -450,7 +442,7 @@ share/aclocal/cutter.m4
 @dirrm lib/cutter/module/factory
 @dirrm lib/cutter/module
 @dirrm lib/cutter
-@dirrm include/cutter/soupcutter
+%%SOUP%%@dirrm include/cutter/soupcutter
 @dirrm include/cutter/gdkcutter-pixbuf
 @dirrm include/cutter/gcutter
 @dirrm include/cutter/cutter
