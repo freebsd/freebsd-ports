@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/pamsshagentauth/${PORTNAME}/v${PORTVERSION}/
 
