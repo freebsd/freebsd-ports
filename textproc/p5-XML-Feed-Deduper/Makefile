@@ -20,7 +20,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Any-Moose>=0.1:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed \
 		p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.1:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
 
 PERL_MODBUILD=	yes
 
