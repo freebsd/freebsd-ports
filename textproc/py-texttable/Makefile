@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	texttable
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://jefke.free.fr/stuff/python/texttable/
+MASTER_SITES=	http://foutaise.org/code/texttable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
