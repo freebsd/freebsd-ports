@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	trackstat
-PORTVERSION=	2.10.3031
+PORTVERSION=	2.11.3435
 CATEGORIES=	audio
-MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-trackstat&filename=/
+MASTER_SITES=	http://erland.isaksson.info/download/do/downloadapplication?name=slimserver-trackstat&filename=/
 PKGNAMEPREFIX=	squeezeboxserver-
 DISTNAME=	TrackStat-${PORTVERSION:S/b/beta/}
 DIST_SUBDIR=	squeezeboxserver
