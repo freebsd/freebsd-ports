@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
 
+LICENSE=	GPLv3
+
+CONFLICTS=	weechat-devel-0.*
+
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_NCURSES=	yes
+WITH_NCURSES_BASE=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
-OPTIONS=	RUBY		"Ruby scripting support."	Off	\
-		PYTHON		"Python scripting support."	Off	\
-		PERL		"Perl scripting support."	Off	\
-		TCL		"TCL scripting support."	Off	\
-		LUA		"Lua scripting support."	Off	\
-		CHARSET		"Charset support."		On	\
-		DEBUG		"Debugging."			Off	\
-		BACKTRACE	"Backtraces."			Off	\
-		ASPELL		"Spell checking."		Off	\
-		GNUTLS		"GNU TLS."			Off	\
-		NLS		"NLS support."			On	\
-		DOCUMENTATION	"Build documentation."		Off
+OPTIONS=	RUBY		"Ruby scripting support"	Off	\
+		PYTHON		"Python scripting support"	Off	\
+		PERL		"Perl scripting support"	Off	\
+		TCL		"TCL scripting support"		Off	\
+		LUA		"Lua scripting support"		Off	\
+		CHARSET		"Charset support"		On	\
+		DEBUG		"Debugging"			Off	\
+		BACKTRACE	"Backtraces"			Off	\
+		ASPELL		"Spell checking"		Off	\
+		GNUTLS		"GNU TLS"			Off	\
+		NLS		"NLS support"			On	\
+		DOCUMENTATION	"Build documentation"		Off
 
 .include <bsd.port.options.mk>
 
