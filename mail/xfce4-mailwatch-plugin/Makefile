@@ -13,7 +13,7 @@ MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
 		http://freebsd.unixfreunde.de/sources/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A mailwatch plugin for xfce
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \

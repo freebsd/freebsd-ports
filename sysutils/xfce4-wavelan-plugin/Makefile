@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

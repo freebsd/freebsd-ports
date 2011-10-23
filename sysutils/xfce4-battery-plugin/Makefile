@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for XFce4
 
 ONLY_FOR_ARCHS=	i386 amd64

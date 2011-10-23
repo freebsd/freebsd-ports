@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/thunar-plugins//${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A Media Tags Plugin
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib

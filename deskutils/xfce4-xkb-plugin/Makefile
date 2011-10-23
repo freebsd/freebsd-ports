@@ -11,7 +11,7 @@ CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for XFce4
 
 LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier

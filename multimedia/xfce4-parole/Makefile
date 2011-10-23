@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=/src/apps/parole/0.2
 DIST_SUBDIR=	xfce4
 DISTNAME=	parole-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on the gstreamer engine
 
 DATADIR=	${PREFIX}/share/${PORTNAME:S/xfce4-//}
