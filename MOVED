@@ -2828,3 +2828,4 @@ security/py-arm||2011-10-20|Renamed to security/arm
 devel/boost-pyste||2011-10-22|Has expired: Still requires GCC 3.4 (strictly) and gccxml which is deprecated (and has been broken for a while)
 devel/gccxml||2011-10-22|Has expired: Unmaintained upstream, still requires GCC 3.4 (strictly), just used by boost-pyste which is of archeological interest only itself
 java/java-tutorial||2011-10-23|Has expired: disappeared from vendor a long time ago
+lang/smarteiffel||2011-10-23|Has expired: Dead upstream, broken on amd64 with gcc>4
