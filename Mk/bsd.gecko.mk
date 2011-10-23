@@ -659,11 +659,12 @@ MOZ_MK_OPTIONS+=	XP_UNIX=1		\
 			PERL=${PERL}
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
+MOZ_OPTIONS+=	--enable-optimize=${WITH_OPTIMIZE}
 CFLAGS:=	${CFLAGS} -O2 -fno-strict-aliasing ${EXTRA_CFLAGS}
 WITH_OPTIMIZE?=	-O2
 .else
+MOZ_OPTIONS+=	--disable-optimize
 CFLAGS:=	${CFLAGS} ${EXTRA_CFLAGS}
-WITH_OPTIMIZE?=
 .endif
 
 .if defined(WITH_SMB)
@@ -683,8 +684,7 @@ MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 MOZ_OPTIONS+=	--enable-debug
 WITH_LOGGING=	yes
 .else
-MOZ_OPTIONS+=	--disable-debug				\
-		--enable-optimize=${WITH_OPTIMIZE}
+MOZ_OPTIONS+=	--disable-debug
 .endif
 
 .if defined(WITH_JAVA) && defined(_WITH_JAVA)
