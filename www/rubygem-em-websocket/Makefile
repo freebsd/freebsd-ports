@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	em-websocket
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.4
 CATEGORIES=	www ruby
 MASTER_SITES=	RG
 
