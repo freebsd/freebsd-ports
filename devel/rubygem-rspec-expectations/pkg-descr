@@ -1,3 +1,4 @@
-Rspec-expectations adds should and should_not to every object and includes RSpec::Matchers, a library of standard matchers.
+Rspec-expectations adds should and should_not to every object and includes
+RSpec::Matchers, a library of standard matchers.
 
 WWW:	https://github.com/rspec/rspec-expectations
