@@ -2,6 +2,3 @@ Butterfly is an MSN connection manager that handles presence, personal
 messages, and conversations. Previously known as "Telepathy-MSN".
 
 WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

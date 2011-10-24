@@ -2,6 +2,3 @@ The Text::FIGlet module creates a banner using the FIGlet program.
 It has the ability to select various fonts, options, and paths.
 
 WWW: http://search.cpan.org/dist/Text-FIGlet/
-
-- Daniel B. Hemmerich
-dan@spot.org

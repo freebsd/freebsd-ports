@@ -3,6 +3,3 @@ Written in PHP and supports, PHP3, PHP4, TTF (or no ttf), and GD versions 1.2 -
 latest version. Includes Pie, Bar, Line, Area, Point and combination plots.
 
 WWW: http://www.phplot.com
-
-- K.Shiomi
-yukinopo@livedoor.com

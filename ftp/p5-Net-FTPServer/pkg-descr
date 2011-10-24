@@ -19,6 +19,3 @@ Major features of Net::FTPServer include:
    * Set TCP parameters.
 
 WWW: http://search.cpan.org/dist/Net-FTPServer/
-
-- Pete
-petef@FreeBSD.org

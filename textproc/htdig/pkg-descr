@@ -9,6 +9,3 @@ ht://Dig can span many web servers as long as they all understand
 the HTTP 1.0 protocol. 
 
 WWW: http://www.htdig.org/
-
-- Doug Barton
-dougb@FreeBSD.org

@@ -16,6 +16,3 @@ by providing a wrapper around the formats and the classes implementing
 those formats (XML::RSS and XML::Atom::Feed). 
 
 WWW: http://search.cpan.org/dist/XML-Feed/
-
-- Cheng-Lung Sung
-clsung at dragon2.net 

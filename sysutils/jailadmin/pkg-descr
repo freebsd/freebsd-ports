@@ -8,5 +8,3 @@ It is designed to provide more flexible functionality than FreeBSD's own
 rc.d/jail script, and should provide a complete superset of features.
 
 WWW: http://subwiki.honeypot.net/cgi-bin/view/Freebsd/JailAdmin
-- Kirk Strauser
-kirk@strauser.com

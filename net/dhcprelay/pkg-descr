@@ -23,5 +23,6 @@ Why not the ISC DHCP Relay Agent?
   which VPN back to the central network), the answers are not picked
   up by the RA.
 
-WWW: http://www.mavetju.org/networking/
 Author: Edwin Groothuis <edwin@mavetju.org>
+
+WWW: http://www.mavetju.org/networking/

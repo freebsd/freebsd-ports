@@ -24,8 +24,6 @@ thousands separators in numbers ("20,000 Leagues Under The Sea" or "20.000
 lieues sous les mers"), consider stripping them before feeding them to nsort or
 ncmp.
 
-WWW: http://search.cpan.org/dist/Sort-Naturally/
 Author: Sean M. Burke <sburke@cpan.org>
 
-- Aaron Dalton
-aaron@daltons.ca
+WWW: http://search.cpan.org/dist/Sort-Naturally/

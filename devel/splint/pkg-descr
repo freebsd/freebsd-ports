@@ -5,5 +5,3 @@ adding annotations to programs, Splint can perform stronger checking
 than can be done by any standard lint.
 
 WWW: http://www.splint.org/
-
-- Raymond Medeiros <rrm@subterrain.net>

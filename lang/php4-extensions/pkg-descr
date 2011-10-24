@@ -4,6 +4,3 @@ Defaults to:
 ctype, mysql, overload, pcre, posix, session, tokenizer, xml and zlib.
 
 WWW: http://www.php.net/
-
-- Alex Dupre
-ale@FreeBSD.org

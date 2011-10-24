@@ -15,7 +15,7 @@ delay 15s -- top
 
 It allows for short, long, and customized messages for the display of 
 the time remaining. 
-- author: Tom Rothamel <tom@onegeek.org>
 - example of output : delay -v until 4 pm tomorrow
 		      Time Remaining: 1 days, 07:51:39.
-- ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
+
+Author: Tom Rothamel <tom@onegeek.org>

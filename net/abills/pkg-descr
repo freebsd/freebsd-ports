@@ -2,6 +2,3 @@ ABILLS (Asmodeus BILLing System) is free billing for dialup and vpn users.
 Written completely in PERL it uses MySQL and FreeRadius for authentication.
 
 WWW: http://abills.sourceforge.net/
-
-- Michael Lednev
-liettneff@bk.ru

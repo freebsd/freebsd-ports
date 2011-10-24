@@ -6,5 +6,4 @@ Pelican is a simple weblog generator, written in Python.
 - Easy to interface with DVCSes and web hooks.
 - Completely static output, so easy to host anywhere !
 
-
 WWW:	http://docs.notmyidea.org/alexis/pelican/

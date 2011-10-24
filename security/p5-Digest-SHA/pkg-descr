@@ -4,6 +4,3 @@ SHA-1, SHA-224, SHA-256, SHA-384, and SHA-512 message digests. The
 module can handle all types of input, including partial-byte data.
 
 WWW: http://search.cpan.org/dist/Digest-SHA/
-
-- Travis Campbell
-hcoyote@ghostar.org

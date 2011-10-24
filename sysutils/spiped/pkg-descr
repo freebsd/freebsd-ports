@@ -6,6 +6,3 @@ different system). This is similar to 'ssh -L' functionality, but does not
 use SSH and requires a pre-shared symmetric key. 
 
 WWW: http://www.tarsnap.com/spiped.html
-
-- Colin Percival
-cperciva@tarsnap.com

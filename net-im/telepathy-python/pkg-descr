@@ -3,6 +3,3 @@ connection managers, and proxy classes for use in clients. It's used in
 at least Cohoba and Butterfly (an MSN connection manager).
 
 WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

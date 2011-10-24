@@ -6,5 +6,3 @@ involves the number of memory cells the program has overwritten, the
 number of other programs it has crashed and whether/when it crashed.
 
 WWW: http://corewars.sourceforge.net/
-
-- jim <jim@FreeBSD.org>

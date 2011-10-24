@@ -6,6 +6,3 @@ a URI to be).  It employs a series of heuristics too:
   - Avoid picking up URL-like things such as Perl module names.
 
 WWW: http://search.cpan.org/dist/URI-Find/
-
-- Pete
-petef@databits.net

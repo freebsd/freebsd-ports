@@ -2,5 +2,3 @@ GNU watch runs a command repeatedly, displaying  its  output  (the  first
 screenfull). This allows you to watch the program output change over time.
 
 WWW: http://procps.sourceforge.net/
-
-- ehaupt ehaupt@critical.ch

@@ -6,6 +6,3 @@ as a means for retrieving DNS records, or even generating
 them on the fly.
 
 WWW: http://search.cpan.org/dist/Net-DNS-Resolver-Programmable/
-
-- Koen Martens
-gmc@sonologic.nl

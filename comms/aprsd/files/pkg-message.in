@@ -5,5 +5,3 @@ logs are kept in /var/log/aprsd
 
 To enable aprsd you need to add: aprsd_enable="YES" to /etc/rc.conf
 to run aprsd as UID aprsd   add: aprsd_root="NO" to /etc/rc.conf
-
-- 73 Diane VA3DB

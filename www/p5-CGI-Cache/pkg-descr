@@ -3,6 +3,3 @@ CGI scripts so that subsequent visits to such scripts will not cost
 as much time.
 
 WWW: http://search.cpan.org/dist/CGI-Cache/
-
-- Pete
-petef@databits.net

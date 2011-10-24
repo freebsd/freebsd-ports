@@ -1,7 +1,6 @@
 asp2php is a program that converts ASP scripts to PHP.
 It require PHP4 code to work properly.
 
-WWW: http://asp2php.naken.cc/
 Author: Michael Kohn <naken@i1.net>
 
-- Will <andrews@technologist.com>
+WWW: http://asp2php.naken.cc/

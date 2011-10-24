@@ -1,6 +1,3 @@
 Portconf is a simple framework to set ports options in an
 universal way. Knobs set to specific ports are honoured
 by portmaster, portupgrade, portmanager and 'make install'.
-
-- Alex Dupre
-ale@FreeBSD.org

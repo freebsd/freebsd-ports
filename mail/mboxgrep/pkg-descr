@@ -15,5 +15,3 @@ folders
 Perl-complatible regular expressions (if linked with the PCRE library)
 
 WWW: http://mboxgrep.sourceforge.net/
-
-- Anders Nordby <anders@fix.no>

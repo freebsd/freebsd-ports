@@ -19,4 +19,3 @@ after installation:
    pkg_info -D zh-CJK-\* | less
 
 WWW: http://cjk.ffii.org/
-Jing-Tang Keith Jang <keith@FreeBSD.org>

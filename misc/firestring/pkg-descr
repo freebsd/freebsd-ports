@@ -14,6 +14,3 @@ This library uses long long, which is part of the C99 standard
 this in order for FireString to work.
 
 WWW: http://www.firestuff.org/
-
-- Dean
-dean@odyssey.apana.org.au

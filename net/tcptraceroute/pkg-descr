@@ -16,5 +16,3 @@ UDP  or ICMP  ECHO packets,  tcptraceroute is  able to  bypass the  most
 common firewall filters.
 
 WWW: http://michael.toren.net/code/tcptraceroute/
-
-- Simon 'corecode' Schubert

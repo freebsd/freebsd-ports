@@ -7,8 +7,4 @@
     nML parser + nML type-checker +
         nML-to-OCaml translator + the OCaml compiler.
 
-- For more information of the nML, please visit
-  WWW: http://ropas.snu.ac.kr/n
-
-
-Jaeho Shin <netj@sparcs.kaist.ac.kr>
+WWW: http://ropas.snu.ac.kr/n

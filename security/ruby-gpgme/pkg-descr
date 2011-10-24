@@ -10,5 +10,6 @@ Ruby-GPGME is a ruby interface to GnuPG Made Easy (GPGME).
 - The high-level API provides a convenient class-based interface to
   frequently used GPGME functions.
 
-WWW:	http://ruby-gpgme.rubyforge.org/
 Author:	Daiki Ueno
+
+WWW: http://ruby-gpgme.rubyforge.org/

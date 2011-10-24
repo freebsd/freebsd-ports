@@ -7,8 +7,4 @@ without running X.
 	ColdSync is extensible through the use of conduits, which
 allow it to share information with other applications.
 
-	For more information, see
 WWW: http://www.coldsync.org/
-
-- Andrew Arensburger
-arensb@ooblick.com

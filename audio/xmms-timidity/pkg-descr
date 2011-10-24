@@ -1,4 +1,2 @@
 xmms-timidity is another simple plugin that handles .mid files by running the
 locally installed copy of Timidity, and piping the output back to XMMS.
-
-- Timothy Beyer <beyert@cs.ucr.edu>

@@ -6,6 +6,3 @@ Passwords must be kept in a gnupg crypted file. The structure of the file is
 predefined, but very easy to edit and maintain.
 
 WWW: http://gtkpasman.sourceforge.net/
-
-- Philippe Rocques
-phil@teaser.fr

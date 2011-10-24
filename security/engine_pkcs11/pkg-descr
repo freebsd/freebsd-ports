@@ -5,6 +5,3 @@ Engine_pkcs11 is meant to be used with smart cards and software
 for using smart cards in PKCS#11 format, such as OpenSC.
 
 WWW:	http://www.opensc-project.org/engine_pkcs11/
-
-- Alex Dupre
-ale@FreeBSD.org

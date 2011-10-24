@@ -17,8 +17,6 @@ variants and comments. While dealing with simple braced comments is
 straightforward, parsing nested comments can give you more than a 
 headache.
 
-WWW: http://search.cpan.org/dist/Chess-PGN-Parse/
 Author: Giuseppe Maxia <gmax@cpan.org>
 
-- Aaron Dalton
-aaron@daltons.ca
+WWW: http://search.cpan.org/dist/Chess-PGN-Parse/

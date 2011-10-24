@@ -9,5 +9,3 @@ X-Forwarded-For is easily spoofed. Because of this you can configure which
 proxies you trust or don't trust.
 
 WWW: http://www.warhound.org/mod_extract_forwarded/
-
-- Anders Nordby <anders@fix.no>

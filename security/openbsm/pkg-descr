@@ -8,6 +8,3 @@ FreeBSD operating systems, such as Mach task interfaces, sendfile(), and
 Linux system calls present in the FreeBSD Linux emulation layer.
 
 WWW: http://www.trustedbsd.org/openbsm.html
-
-- Florent Thoumie
-flz@FreeBSD.org

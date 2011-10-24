@@ -1,6 +1,3 @@
 Hash::Merge merges two arbitrarily deep hashes into a single hash.
 
 WWW: http://search.cpan.org/dist/Hash-Merge/
-
-- snowchyld
-<p5-hash-merge-bsd-port@snowchyld.org>

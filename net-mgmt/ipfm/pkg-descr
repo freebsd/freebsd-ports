@@ -4,6 +4,3 @@ specified hosts use on their Internet link.
 It is written using libpcap, so it ought to be portable.
 
 WWW: http://robert.cheramy.net/ipfm/
-
-- Alex Dupre
-sysadmin@alexdupre.com

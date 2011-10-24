@@ -12,9 +12,3 @@ DotLRN (.LRN) is built upon openACS core, but includes extra modules and
 configurations. DotLRN has its own tarball and port (openacs-dotlrn).
 
 WWW: http://openacs.org 
-
-- Aldert
-aldert@nooitgedagt.net
-
-- Martin Matuska
-mm@FreeBSD.org

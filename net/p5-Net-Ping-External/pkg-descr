@@ -7,6 +7,3 @@ superuser on your system, this module will probably provide more
 accurate results than Net::Ping will.
 
 WWW: http://search.cpan.org/dist/Net-Ping-External/
-
-- Douglas Thrift
-douglas@douglasthrift.net

@@ -19,6 +19,3 @@ This package contains an emacs major mode for editing SGML and XML DTDs.
    stored in minibuffer history to minimise retyping in new declarations.
 
 WWW: http://www.mulberrytech.com/tdtd/
-
-- Leo Kim
-leo@florida.sarang.net

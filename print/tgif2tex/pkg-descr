@@ -9,6 +9,3 @@ Please execute the following commands for example.
 (2) tgif2tex example.obj
 (3) latex example.tex
 (4) xdvi example.tex
-
-- S. Taoka
-taoka@FreeBSD.org

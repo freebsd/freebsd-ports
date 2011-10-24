@@ -10,6 +10,3 @@ The Mail::SPF source package includes the following additional tools:
   * spfd:      A daemon for services that perform SPF checks frequently.
 
 WWW:	http://www.openspf.org/
-
-- Koen Martens
-gmc@sonologic.nl

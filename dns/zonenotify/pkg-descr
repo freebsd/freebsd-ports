@@ -2,6 +2,3 @@ zonenotify is useful to send a NS_NOTIFY packet to BIND slave server. When you
 update a zone in your djbdns DNS you must notify the slaves about your change.
 
 WWW: http://www.morettoni.net/zonenotify.en.html
-
-- ehaupt
-ehaupt@critical.ch

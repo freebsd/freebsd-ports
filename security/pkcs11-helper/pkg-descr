@@ -14,6 +14,3 @@ application need to access existing objects in order to
 perform signature and decryption.
 
 WWW:	http://www.opensc-project.org/pkcs11-helper/
-
-- Alex Dupre
-ale@FreeBSD.org

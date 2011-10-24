@@ -2,5 +2,3 @@ This module allows Apache to authenticate a location against an
 entry, or entries, in an LDAP database.  
 
 WWW: http://www.rudedog.org/auth_ldap/
-
-- Nik Clayton <nik@FreeBSD.org>

@@ -6,5 +6,3 @@ accessible to users behind an HTTP-only proxy. In addition, it will
 usually work right out of the box with no configuration.
 
 WWW: http://wonko.com/notftp/
-
-- Ryan Grove <ryan@wonko.com>

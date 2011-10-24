@@ -7,6 +7,3 @@ swisswatch*customization:                 -color
 #endif
 
 and exec `xrdb $HOME/.Xdefaults'.
-
-- Yoshiro MIHIRA
-(sanpei@sanpei.org)

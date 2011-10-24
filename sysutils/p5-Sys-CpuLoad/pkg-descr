@@ -2,6 +2,3 @@ This Perl5 module retrieves the 1 minute, 5 minute, and 15
 minute load average of a machine.
 
 WWW: http://search.cpan.org/dist/Sys-CpuLoad/
-
-- Lars Thegler
-lars@thegler.dk

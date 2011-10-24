@@ -1,6 +1,3 @@
 LIBBT is a C library implementing the core BitTorrent protocol.
 
 WWW: http://libbt.sourceforge.net/
-
-- Florent Thoumie
-flz@xbsd.org

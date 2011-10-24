@@ -3,6 +3,3 @@ sure that your shell script is the only version of itself running on your
 system. There are many other creative ways to use this program.
 
 WWW:	https://www.isc.org/software/inn
-
-- Doug Barton
-dougb@FreeBSD.org

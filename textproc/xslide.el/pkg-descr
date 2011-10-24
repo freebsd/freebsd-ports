@@ -15,6 +15,3 @@ Emacs major mode for editing XSL stylesheets.
  - Automatic completion of end-tags;
  - Automatic indenting of elements with user-definable indentation step; and
  - Comprehensive abbreviations table to further ease typing.
-
-- Leo Kim
-leo@florida.sarang.net

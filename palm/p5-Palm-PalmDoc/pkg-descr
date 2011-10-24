@@ -2,6 +2,3 @@ Perl extension for PalmDoc format. This module can format ASCII
 text into a PalmDoc PDB file
 
 WWW: http://search.cpan.org/dist/Palm-PalmDoc/
-
-- Simon Dick
-simond@irrelevant.org

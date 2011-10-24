@@ -9,6 +9,3 @@ networked computer.  The healthd deamon's network connection is protected
 by libwrap and /etc/hosts.allow.
 
 WWW: http://healthd.thehousleys.net/
-
-- Jim
-jim@thehousleys.net

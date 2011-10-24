@@ -7,6 +7,3 @@ It supports configuring multiple LDAP sources, and storing your UID for each
 source so you don't have to type them each time. 
 
 WWW: http://reductivelabs.com/cgi-bin/ldapsh.cgi/wiki
-
-- Florent Thoumie
-flz@xbsd.org

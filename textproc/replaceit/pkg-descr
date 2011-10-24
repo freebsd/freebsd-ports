@@ -3,7 +3,6 @@ the combination of sed/awk/grep/head/tail and other such shell
 utilities, as well as being quicker in startup (at least) than an
 equivilant Perl solution.
 
-WWW: http://pldaniels.com/replaceit/
 Author: Paul L Daniels <pldaniels@pldaniels.com>
 
-- Patrick Li <pat@FreeBSD.org>
+WWW: http://pldaniels.com/replaceit/

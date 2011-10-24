@@ -12,6 +12,3 @@ The SNMP operations currently supported are "get", "get-next", "get-bulk"
 and "set", as well as trap generation and reception.
 
 WWW: http://www.switch.ch/misc/leinen/snmp/perl/
-
-- Pete
-petef@databits.net

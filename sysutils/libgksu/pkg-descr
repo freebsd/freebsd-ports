@@ -3,6 +3,3 @@ and sudo in programs that need to execute tasks as other user. It provides X
 authentication facilities for running programs in a X session.
 
 WWW: http://www.gnu.org/non-gnu/gksu/
-
-- Jesse van den Kieboom
-troplosti@orcaweb.cjb.net

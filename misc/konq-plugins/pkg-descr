@@ -5,9 +5,10 @@ Additional plugins and features for Konqueror:
 - Recovery of previously opened pages from browser crashes (webbrowser mode)
 - Filter display by filetype (filemanager mode)
 - DOM tree display of webpages (webbrowser mode)
-- FSView - Graphical representation of files/directories for easier relative size
-  assessment (filemanager mode)
-- Image format conversion via context menu (requires python, ImageMagick) (filemanager mode)
+- FSView - Graphical representation of files/directories for easier relative
+  size assessment (filemanager mode)
+- Image format conversion via context menu (requires python, ImageMagick)
+  (filemanager mode)
 - Quick menu access to khtml engine settings (webbrowser mode)
 - HTML image gallery creation (filemanager mode)
 - 'Kuick' copy/move context menu (filemanager mode)

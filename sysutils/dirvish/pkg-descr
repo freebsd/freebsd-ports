@@ -4,6 +4,3 @@ host to host copy and uses hard links to provide multiple snapshots of the
 data without duplicating identical files.
 
 WWW: http://www.dirvish.org/
-
-- Loren M. Lang
-lorenl@alzatex.com

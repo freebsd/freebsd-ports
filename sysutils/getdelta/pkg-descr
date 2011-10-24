@@ -2,6 +2,3 @@ This is port of Gentoo getdelta.sh.
 Getdelta uses Deltup to reduce bandwidth load while upgrading ports distfiles.
 
 WWW: http://linux01.gwdg.de/~nlissne/
-
-- Anton Statutov
-astatutov@gmail.com

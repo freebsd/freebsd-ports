@@ -4,8 +4,6 @@ operating systems. It's based on the implementation found on
 FreeBSD 2.2.[56]-RELEASE.
 
 `apache_md5_crypt()' provides a function compatible with
-Apache's `.htpasswd' files. This was contributed by Bryan Hart
-<bryan@eai.com>.
+Apache's `.htpasswd' files.
 
-- Erwin Lansing
-<erwin@FreeBSD.org>
+This was contributed by Bryan Hart <bryan@eai.com>.

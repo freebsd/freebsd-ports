@@ -4,6 +4,3 @@ This module applies the Porter Stemming Algorithm to its parameters,
 returning the stemmed words.
 
 WWW: http://search.cpan.org/dist/Lingua-Stem-Fr/
-
-- Cheng-Lung Sung
-clsung at dragon2.net

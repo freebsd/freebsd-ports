@@ -1,5 +1,2 @@
 A simple, transparent analog clock for X11 without window decorations. The
 author was inspired by an early Xerox Lisp machine clock.
-
-- ehaupt
-ehaupt@critical.ch

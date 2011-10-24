@@ -14,6 +14,3 @@ security of DNS messages, performing name-to-address and address-to-name
 translations, and utilizing /etc/resolv.conf for resolver configuration. 
 
 WWW: https://www.isc.org/software/libbind
-
-- Doug Barton
-dougb@FreeBSD.org

@@ -2,6 +2,3 @@ Net::SAP currently provides basic functionality for receiving and parsing
 SAP (RFC2974) multicast packets.
 
 WWW:	http://search.cpan.org/dist/Net-SAP/
-
-- Cheng-Lung Sung
-clsung at dragon2.net

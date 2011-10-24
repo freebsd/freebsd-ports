@@ -2,6 +2,3 @@ Rejik is a squid redirector used for blocking unwanted content basing
 on URLs and Perl Compatible Regular Expressions (http://www.pcre.org/).
 
 WWW: http://www.rejik.ru/
-
-- Elisey Savateev
-b3k@mail.ru

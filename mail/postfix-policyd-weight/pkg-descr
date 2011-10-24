@@ -3,6 +3,3 @@ It uses HELO, MAIL FROM and the MTA IP address for scoring their
 correctness. It also uses definable DNSBLs and RHSBLs in a scored fashion.
 
 WWW: http://www.policyd-weight.org
-
-- Robert Felber
-robtone@ek-muc.de

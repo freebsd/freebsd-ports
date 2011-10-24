@@ -16,6 +16,3 @@ Ocamlnet consists of a number of libraries:
     * smtp and pop are two further client implementations
 
 WWW: http://sourceforge.net/projects/ocamlnet
-
-- Manfred  Lotz
-  <manfred.lotz@yahoo.de>

@@ -7,7 +7,3 @@ limitations that annoyed me. I also converted the build-mechanism to
 GNU autoconf.
 
 The result is xtet42-2.21.
-
-Please report bugs to : Steinar Hamre <steinarh@pvv.ntnu.no>
-
-- ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)

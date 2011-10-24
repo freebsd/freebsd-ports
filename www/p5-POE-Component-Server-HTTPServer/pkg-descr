@@ -4,6 +4,3 @@ handlers for URIs not found, basic authentication, and
 parameter parsing.
 
 WWW: http://search.cpan.org/dist/POE-Component-Server-HTTPServer/
-
-- Zach Thompson 
-lin-chi@lastamericanempire.com

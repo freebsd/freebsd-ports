@@ -7,6 +7,3 @@ Nocc has low requirements on browser, it uses JavaScript as less as
 possible, nearly no frames and even works with Lynx without cookies.
 
 WWW: http://nocc.sourceforge.net/
-
-- Alex Dupre
-ale@FreeBSD.org

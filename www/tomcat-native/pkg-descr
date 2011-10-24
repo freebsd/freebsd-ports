@@ -9,6 +9,3 @@ These features allows making Tomcat a general purposewebserver, will
 enable much better integration with other native web technologies, and
 overall make Java much more viable as a full fledged webserver platform
 rather than simply a backend focused technology.
-
-- Alex Dupre
-ale@FreeBSD.org

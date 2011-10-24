@@ -3,6 +3,3 @@ CGI::Application-derived applications that use HTML::Template for their
 templating mechanism.
 
 WWW: http://search.cpan.org/dist/CGI-Application-Plugin-HTDot/
-
-- Espen Tagestad
-espen@tagestad.no

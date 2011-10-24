@@ -4,5 +4,3 @@ authentication method your PAM subsystem has specific support installed &
 configured for.
 
 WWW: http://pam.sourceforge.net/mod_auth_pam/
-
-- Anders Nordby <anders@fix.no>

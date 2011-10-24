@@ -14,6 +14,3 @@ Major goal of this library is simplicity and speed. While there're many
 modules for template processing, this module has near raw Perl-code
 (i.e., "s|xxx|xxx|ge") speed, while providing simple-to-use objective
 interface.
-
-- Anton
-<tobez@FreeBSD.org>

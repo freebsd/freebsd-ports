@@ -6,6 +6,3 @@ regular expression engine is similar to Perl's. think of it as a marriage of
 tcpflow, tcpkill, and ngrep.
 
 WWW: http://www.monkey.org/~jose/software/flowgrep/
-
-- Corey Smith
-corsmith@gmail.com

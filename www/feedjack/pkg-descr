@@ -2,6 +2,3 @@ Feedjack is a feed aggregator writen in Python using the Django
 web development framework.
 
 WWW: http://tabo.aurealsys.com/software/feedjack/
-
-- Florent Thoumie
-flz@FreeBSD.org

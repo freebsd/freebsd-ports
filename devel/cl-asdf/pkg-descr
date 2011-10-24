@@ -5,5 +5,3 @@ modern CL features like pathname support etc., and uses CLOS for
 extensibility.
 
 WWW: http://www.cliki.net/asdf
-
-- Henrik Motakef

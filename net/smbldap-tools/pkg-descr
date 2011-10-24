@@ -7,6 +7,3 @@ a Windows NT 4.0 PDC Server to a Samba-LDAP PDC Server (Killer?;-):
 smbldap-populate, smbldap-migrate-groups, smbldap-migrate-accounts.
 
 WWW: https://gna.org/projects/smbldap-tools/
-
-- Florent Thoumie
-flz@xbsd.org

@@ -9,6 +9,3 @@ For portability, care has been taken to make minimal use of templates,
 no RTTI, no C++ namespaces and minimal use of #ifdefs.
 
 WWW: http://xml.apache.org/xerces-c/index.html
-
-- Alex Kiesel
-kiesel@schlund.de

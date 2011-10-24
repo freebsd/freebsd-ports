@@ -7,9 +7,6 @@ includes sample modules to parse the databases created by the built-in
 applications (Address, Datebook, Mail, Memo, ToDo).
 
 	These modules were written to support ColdSync, a Palm
-synchronization tool for Unix. See details at
+synchronization tool for Unix.
 
 WWW: http://www.coldsync.org/
-
-- Andrew Arensburger
-arensb@ooblick.com

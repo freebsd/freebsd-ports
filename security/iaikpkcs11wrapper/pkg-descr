@@ -8,6 +8,3 @@ example, a Java application can use it to integrate a HSM or a smart
 card to create digital signatures, to decrypt data or to unwrap keys.
 
 WWW: http://jce.iaik.tugraz.at/sic/products/core_crypto_toolkits/pkcs_11_wrapper
-
-- Alex Dupre
-ale@FreeBSD.org

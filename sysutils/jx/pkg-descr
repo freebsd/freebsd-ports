@@ -7,6 +7,3 @@ rc.conf name of jail. If no command for jail is given - run default
 No additional software or tools like "jailer" are needed.
 
 WWW: http://legh.ru/jx/
-
-- Dmitry Shulgachik
-legh@legh.ru

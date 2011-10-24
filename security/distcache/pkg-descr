@@ -4,6 +4,3 @@ Also includes a self-contained network abstraction library (libnal), and the
 sslswamp SSL/TLS benchmark/test utility.
 
 WWW: http://distcache.sourceforge.net/
-
-- Marcel Prisi
-marcel.prisi@virtua.ch

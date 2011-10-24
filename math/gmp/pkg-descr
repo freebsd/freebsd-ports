@@ -17,6 +17,3 @@ operations, since GMP in many cases has asymptotically faster
 algorithms. 
 
 WWW: http://gmplib.org/
-
-- Alex Dupre
-ale@FreeBSD.org

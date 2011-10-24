@@ -12,6 +12,3 @@ The package uses various storage containers (regular files, DB, MDB, MDB2) to
 handle counter logs.
 
 WWW: http://pear.php.net/package/HTTP_FloodControl/
-
-- Ditesh Shashikant Gathani
-ditesh@gathani.org

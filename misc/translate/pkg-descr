@@ -3,6 +3,3 @@ and translates it to a selected language using the altavista
 babelfish service.
 
 Requires perl.
-
-- Michael L. Hostbaek
-mich@FreeBSD.org

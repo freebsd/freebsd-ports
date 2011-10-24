@@ -5,6 +5,3 @@ accounting service for its workstations.  The package includes an
 authentication and accounting server and administrator tools. 
 
 WWW: http://www.gnu.org/software/radius/
-
-- Sergey Poznyakoff
-gray@farlep.net

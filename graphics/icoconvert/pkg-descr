@@ -3,6 +3,3 @@ This can be done in batches, and properly supports transparencies as well as
 non 32x32 icon sizes. It also supports 24 bit icons.
 
 WWW: http://www.mox.net/
-
-- Florent Thoumie
-flz@xbsd.org

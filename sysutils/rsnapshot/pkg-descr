@@ -7,6 +7,3 @@ It is written entirely in perl with no module dependencies, and has been
 tested with versions 5.004 through 5.8.1.
 
 WWW:	http://www.rsnapshot.org
-
-- Ralf van Dooren
-r.vdooren@snow.nl

@@ -12,6 +12,3 @@ The libtranslate distribution includes a powerful command line
 interface (see the translate(1) manual page).
 
 WWW: http://www.nongnu.org/libtranslate/
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org

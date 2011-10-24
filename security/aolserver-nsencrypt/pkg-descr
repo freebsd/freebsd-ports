@@ -2,6 +2,3 @@ This module Uses OpenSSL to encrypt using the
 AES, Blowfish, Cast5, IDEA and DES cyphers.
 
 WWW: http://www.aolserver.com/
-
-- Martin Matuska
-mm@FreeBSD.org

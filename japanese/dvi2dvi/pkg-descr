@@ -1,6 +1,3 @@
 The program dvi2dvi is a DVI to DVI transformer. It can transform from
 a dvi file created by ASCII Japanese TeX/pTeX into a NTT JTeX type of dvi file,
 as well as the opposite transform of that.
-
-- Makoto WATANABE
-watanabe@zlab.phys.nagoya-u.ac.jp

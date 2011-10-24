@@ -1,6 +1,3 @@
 Watchfolder watches specified folders for incoming files and processes them
 with programs assigned to those folders. Afterwards, the files are removed
 from the inbound directory.
-
-- ehaupt
-ehaupt@critical.ch

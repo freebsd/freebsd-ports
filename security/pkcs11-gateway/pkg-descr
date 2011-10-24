@@ -4,6 +4,3 @@ It consists of a FreeBSD Cryptoki wrapper library that serializes and forwards
 PKCS#11 function calls to a Linux server program that dlopen() and use the
 real module. The communication between the two components is via a UNIX socket.
 pkcs11-gateway is based on the rpc-layer of Gnome Keyring.
-
-- Alex Dupre
-ale@FreeBSD.org

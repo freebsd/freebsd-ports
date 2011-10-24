@@ -6,5 +6,3 @@ Port is based on original fxload(8) program available from Linux Hotplug
 Project. Libusb support has been provided to correctly work on FreeBSD.
 
 WWW:	http://FreeBSD.czest.pl/~wkoszek/fxload/
-
-- Wojciech A. Koszek <wkoszek@FreeBSD.org>

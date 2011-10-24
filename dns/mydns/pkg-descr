@@ -10,6 +10,3 @@ resource records who desire the ability to perform real-time dynamic
 updates on their DNS data via MySQL.
 
 WWW: http://mydns.bboy.net/
-
-- Alex Dupre
-ale@FreeBSD.org

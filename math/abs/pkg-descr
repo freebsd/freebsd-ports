@@ -2,7 +2,4 @@ Abs is a free spreadsheet with graphical user interface.
 It has a programming language with the same 
 syntax as Microsoft Visual Basic. 
 
-Author : Andre.Bertin@ping.be
-
-Ported to FreeBSD by:
-- Gianmarco Giovannelli (gmarco@giovannelli.it)
+Author: Andre.Bertin@ping.be

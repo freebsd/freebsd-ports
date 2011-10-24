@@ -14,6 +14,3 @@ Some of the new features of BIND 9.7.x are:
 	- Improved PKCS#11 support
 
 WWW: https://www.isc.org/software/bind
-
-- Doug Barton
-dougb@FreeBSD.org

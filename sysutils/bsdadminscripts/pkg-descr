@@ -5,6 +5,3 @@ variables for make jobs (like portconf, but with more possibilities).
 And scripts to check for broken packages and missing libraries.
 
 WWW: http://sourceforge.net/projects/bsdadminscripts/
-
-- Kamikaze
-kamikaze@bsdforen.de

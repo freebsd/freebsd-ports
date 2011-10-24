@@ -10,6 +10,3 @@ Originally developed for the Sophos Antivirus, this port is patched to
 work in conjunction with the ClamAV daemon.
 
 WWW:	http://www.pureftpd.org/project/qmail-antivirus
-
-- Alex Dupre
-ale@FreeBSD.org

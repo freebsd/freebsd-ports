@@ -4,5 +4,3 @@ serves the same purpose as Apache's ProxyPassReverse directive does for
 HTTP headers, and is an essential component of a reverse proxy.
 
 WWW: http://apache.webthing.com/mod_proxy_html/
-
-- David Lay <dsl@bitwizards.com.au>

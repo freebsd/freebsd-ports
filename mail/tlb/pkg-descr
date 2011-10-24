@@ -2,5 +2,3 @@ TLB, aka The List Batcher, is a general purpose mailing list delivery engine.
 Its function is to take a list of addresses, split it up according to various
 criteria, and send the chunks via local programs or SMTP to any number of
 hosts for delivery.
-
-- Anders Nordby <anders@fix.no>

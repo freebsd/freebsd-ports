@@ -3,8 +3,6 @@ checks them  for changes. It is very useful for detecting  problems and
 malicious users in networks  with routers that don't support static 
 ARP tables.  
 
-WWW:	http://www.raccoon.kiev.ua/projects/remarp/
-AUTHOR:	melnik <melnik@raccoon.kiev.ua>
-	
-- Michael L. Hostbaek
-   mich@FreeBSD.org
+Author:	melnik <melnik@raccoon.kiev.ua>
+
+WWW: http://www.raccoon.kiev.ua/projects/remarp/
