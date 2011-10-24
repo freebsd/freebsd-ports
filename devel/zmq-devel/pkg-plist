@@ -3,5 +3,5 @@ include/zmq_utils.h
 lib/libzmq.a
 lib/libzmq.la
 lib/libzmq.so
-lib/libzmq.so.1
+lib/libzmq.so.2
 libdata/pkgconfig/libzmq.pc
