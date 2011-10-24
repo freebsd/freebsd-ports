@@ -43,8 +43,7 @@ BUILD_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-More>=0.52:${PORTSDIR}/devel/p5-Test-More \
-		p5-Test-Warn>=0.1:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0.1:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
