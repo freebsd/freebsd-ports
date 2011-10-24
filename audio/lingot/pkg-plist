@@ -1,0 +1,55 @@
+bin/lingot
+lib/locale/ca/LC_MESSAGES/lingot.mo
+lib/locale/cs/LC_MESSAGES/lingot.mo
+lib/locale/de/LC_MESSAGES/lingot.mo
+lib/locale/es/LC_MESSAGES/lingot.mo
+lib/locale/fr/LC_MESSAGES/lingot.mo
+lib/locale/gl/LC_MESSAGES/lingot.mo
+lib/locale/it/LC_MESSAGES/lingot.mo
+lib/locale/pt_BR/LC_MESSAGES/lingot.mo
+lib/locale/sv/LC_MESSAGES/lingot.mo
+lib/locale/zh_CN/LC_MESSAGES/lingot.mo
+share/applications/lingot.desktop
+share/doc/lingot/AUTHORS
+share/doc/lingot/COPYING
+share/doc/lingot/ChangeLog
+share/doc/lingot/INSTALL
+share/doc/lingot/MAINTAINERS
+share/doc/lingot/NEWS
+share/doc/lingot/README
+share/doc/lingot/THANKS
+share/doc/lingot/TODO
+share/doc/lingot/intltool-extract.in
+share/doc/lingot/intltool-merge.in
+share/doc/lingot/intltool-update.in
+share/doc/lingot/lingot-background.xpm
+share/doc/lingot/lingot-logo.xpm
+share/lingot/glade/lingot-config-dialog.glade
+share/lingot/glade/lingot-mainframe.glade
+share/pixmaps/lingot/lingot-icon.svg
+@dirrm share/pixmaps/lingot
+@dirrm share/lingot/glade
+@dirrm share/lingot
+@dirrm share/doc/lingot
+@dirrmtry share/applications
+@dirrm lib/locale/zh_CN/LC_MESSAGES
+@dirrm lib/locale/zh_CN
+@dirrm lib/locale/sv/LC_MESSAGES
+@dirrm lib/locale/sv
+@dirrm lib/locale/pt_BR/LC_MESSAGES
+@dirrm lib/locale/pt_BR
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/it
+@dirrm lib/locale/gl/LC_MESSAGES
+@dirrm lib/locale/gl
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/de
+@dirrm lib/locale/cs/LC_MESSAGES
+@dirrm lib/locale/cs
+@dirrm lib/locale/ca/LC_MESSAGES
+@dirrm lib/locale/ca
+@dirrm lib/locale

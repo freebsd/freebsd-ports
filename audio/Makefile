@@ -396,6 +396,7 @@
     SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
+    SUBDIR += lingot
     SUBDIR += linux-alsa-lib
     SUBDIR += linux-arts
     SUBDIR += linux-esound
