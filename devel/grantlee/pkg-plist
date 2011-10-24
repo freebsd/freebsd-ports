@@ -33,6 +33,7 @@ include/grantlee_core.h
 include/grantlee_templates.h
 lib/cmake/grantlee/GrantleeConfig.cmake
 lib/cmake/grantlee/GrantleeConfigVersion.cmake
+lib/cmake/grantlee/GrantleeParseArguments.cmake
 lib/cmake/grantlee/GrantleeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/grantlee/GrantleeTargets.cmake
 lib/cmake/grantlee/GrantleeUse.cmake
