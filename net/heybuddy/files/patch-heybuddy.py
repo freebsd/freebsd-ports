@@ -1,6 +1,6 @@
---- ./heybuddy.py.orig	2011-10-15 07:34:58.000000000 -0400
-+++ ./heybuddy.py	2011-10-15 07:38:40.000000000 -0400
-@@ -21,9 +21,7 @@
+--- ./heybuddy.py.orig	2011-06-20 01:07:45.000000000 -0400
++++ ./heybuddy.py	2011-10-24 07:19:38.000000000 -0400
+@@ -21,9 +21,9 @@
  import sys, os
  import gettext
  import webbrowser
@@ -8,10 +8,12 @@
 -	os.path.dirname( os.path.realpath(__file__) ),
 -	'locales')
 +locale_dir = '%%PREFIX%%/share/locale'
++
++sys.path.append('%%DATADIR%%')
  
  gettext.bindtextdomain('heybuddy', locale_dir)
  gettext.textdomain('heybuddy')
-@@ -107,7 +105,7 @@
+@@ -107,7 +107,7 @@
  		self.last_get_statuses = 0
  		#what are the assets?
  		asset_dir = 'assets'
