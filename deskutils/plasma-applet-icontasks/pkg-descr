@@ -1,0 +1,6 @@
+This is a modified version of the KDE SC taskbar and taskmanager
+library. The main change is to preserve the position of tasks and
+launchers, e.g., when a launcher is activated, the resultant task item
+appears in the same place in the taskbar as the launcher did.
+
+WWW: http://kde-apps.org/content/show.php/Icon+Tasks?content=144808
