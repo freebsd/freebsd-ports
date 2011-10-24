@@ -5,7 +5,6 @@ program does the parsing with help from shell- scripts. This means
 that it's easy to change the functionality of the program and you
 can edit this without touching the source-code.
 
-WWW: http://jags.sourceforge.net
 Author: Daniel Sundberg <dansun-8@student.luth.se>
 
-- Patrick Li <pat@FreeBSD.org>
+WWW: http://jags.sourceforge.net

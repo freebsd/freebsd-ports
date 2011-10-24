@@ -6,6 +6,3 @@ functionality, (ie. decodes standard uuencoded files, as well as Base64
 drop-in replacement in all circumstances.
 
 WWW: http://yydecode.sf.net/
-
-- Mikolaj Rydzewski
-miki@ceti.pl

@@ -5,5 +5,3 @@ typical use cases. Generated parsers are C++ objects. Hapy is
 public domain software.
 
 WWW: http://hapy.sourceforge.net
-
-- Alex Rousskov

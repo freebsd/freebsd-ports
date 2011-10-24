@@ -13,8 +13,6 @@ OpenType fonts. It include:
 
 By the Debian source ttf-indic-fonts.
 
-WWW:	http://packages.debian.org/unstable/x11/ttf-indic-fonts
-
 Note: The port x11-fonts/fonts-indic is a collection of Indic font by the
 Lohit project and installs a font subset of this port, the Lohit family;
 but, although the origin of fonts is the same, the Lohit project, that
@@ -22,3 +20,5 @@ distfile is maintained by Gentoo people, and have different revisions.
 You can install merely also that port and, if, for any reasons, you want
 to use a particular font set, you have to change the loading priority in
 your configuration files.
+
+WWW:	http://packages.debian.org/unstable/x11/ttf-indic-fonts

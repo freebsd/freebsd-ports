@@ -3,7 +3,4 @@ Net::CIDR::Lite - Perl extension for merging IPv4 or IPv6 CIDR addresses
 Faster alternative to Net::CIDR when merging a large number of CIDR address
 ranges. Works for IPv4 and IPv6 addresses.
 
-- Michael Haro
-mharo@FreeBSD.org
-
 WWW: http://search.cpan.org/dist/Net-CIDR-Lite/

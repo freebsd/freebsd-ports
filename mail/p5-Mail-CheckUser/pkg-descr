@@ -10,6 +10,3 @@ It makes several checks:
       simulates sending an email. It can detect bad mailboxes in many cases.
 
 WWW: http://search.cpan.org/dist/Mail-CheckUser/
-
-- Attila Nagy
-bra@fsn.hu

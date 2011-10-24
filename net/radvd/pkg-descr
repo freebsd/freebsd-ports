@@ -3,5 +3,3 @@ as specified in RFC 2461. Support for Mobile IPv6 as well as 6to4
 is included.
 
 WWW: http://www.litech.org/radvd/
-
-- Patrick Li <pat@FreeBSD.org>

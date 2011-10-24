@@ -8,6 +8,3 @@ Mathopd does not allocate any memory, once it has started up, and
 does not fork any processes (except for CGI scripts of course.)
 
 WWW: http://www.mathopd.org/
-
-- Anton
-tobez@FreeBSD.org

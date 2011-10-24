@@ -8,5 +8,3 @@ specification, but creates and updates backup CD images in the style
 of the Plan 9 dump file system.  The dump is file-based rather than
 block-based: if a file's contents have not changed since the last
 backup, only its directory entry will be rewritten.
-
-- William Josephson and Russ Cox

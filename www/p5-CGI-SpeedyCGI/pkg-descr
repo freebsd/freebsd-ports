@@ -7,6 +7,3 @@ this interpreter is used to handle new requests instead of starting a
 new perl interpreter for each execution.
 
 WWW: http://daemoninc.com/SpeedyCGI/
-
-- Lars Thegler
-lars@thegler.dk

@@ -8,6 +8,3 @@ both the inline PGP format, and the PGP/MIME format (RFC 3156), which can
 be used to encrypt attachments.
 
 WWW: http://enigmail.mozdev.org/
-
-- Alex Dupre
-ale@FreeBSD.org

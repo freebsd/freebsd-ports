@@ -8,6 +8,3 @@ OpenCT also has a primitive mechanism to export smart card
 readers to remote machines via tcp/ip.
 
 WWW:	http://www.opensc-project.org/openct/
-
-- Alex Dupre
-ale@FreeBSD.org

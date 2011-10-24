@@ -10,6 +10,3 @@ UDFLib is a Java-based implementation for creating UDF filesystem
 images for DVDs according to ISO 13346, also known as ECMA-167.
 
 WWW: http://sabre-library.sourceforge.net/
-
-- Alex Dupre
-ale@FreeBSD.org

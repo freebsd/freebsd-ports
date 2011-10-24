@@ -4,6 +4,3 @@ envelope sender, Mail::SPF::Query determines the legitimacy
 of an SMTP client IP.
 
 WWW:	http://spf.pobox.com
-
-- Michael Haro
-mharo@FreeBSD.org

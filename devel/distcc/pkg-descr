@@ -19,5 +19,3 @@ to inspect the load on the cluster, and how it is distributed among the
 various distcc nodes.
 
 WWW: http://distcc.org
-
-- Frerich Raabe frerich.raabe@gmx.de

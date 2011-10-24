@@ -8,6 +8,3 @@ Backuped with fsbackup.pl files can be recovered by script fsrestore.sh,
 backuped with sysbackup.sh system packeges can be reinstalled by sysrestore.sh.
 
 WWW: http://www.opennet.ru/dev/fsbackup/index_eng.shtml
-
-- Samm
-samm@os2.kiev.ua

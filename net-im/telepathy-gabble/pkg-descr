@@ -4,6 +4,3 @@ calls. Install this package to use Telepathy instant messaging clients
 with Jabber/XMPP servers, including Google Talk.
 
 WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

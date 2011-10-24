@@ -8,6 +8,3 @@ semantics.  It copies the good ideas from the ANSI/IEEE-754 standard for
 double-precision floating-point arithmetic (53-bit mantissa).
 
 WWW: http://www.mpfr.org/
-
-- Alex Dupre
-ale@FreeBSD.org

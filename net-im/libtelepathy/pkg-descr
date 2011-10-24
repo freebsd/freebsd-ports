@@ -5,6 +5,3 @@ simple interface for client applications, allowing them to quickly
 benefit from Telepathy's functionality.
 
 WWW: http://telepathy.freedesktop.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

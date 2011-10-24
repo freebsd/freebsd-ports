@@ -20,5 +20,3 @@ you use the full cantonical path for the qmail and ezmlm binaries.
 
 Documentation is in pod format. Please run perldoc Mail::Ezmlm after you have
 installed it.
-
-- Guy Antony Halse <guy-ezmlm@rucus.ru.ac.za>

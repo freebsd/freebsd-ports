@@ -5,6 +5,3 @@ It has the same function as rblsmtpd, but the messages are checked at local
 delivery time.
 
 WWW: http://www.morettoni.net/qmail-rblchk.en.html
-
-- ehaupt
-ehaupt@critical.ch

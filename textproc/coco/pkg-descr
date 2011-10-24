@@ -9,6 +9,3 @@ handles, to Postscript by using bdf files.
 coco and m2ps are one of commands in Mule2.3.
 But this port just install coco and m2ps,
 not all of Mule2.3.
-
-- Teruaki Ata
-PFA03027@nifty.ne.jp

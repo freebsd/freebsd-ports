@@ -6,5 +6,3 @@ Pardiff detects the width of the terminal on which it is running and adjusts
 its output accordingly.
 
 WWW: http://pardiff.sourceforge.net/
-
-- Anders Nordby <anders@fix.no>

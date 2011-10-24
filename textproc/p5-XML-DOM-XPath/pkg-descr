@@ -4,6 +4,3 @@ This is often much easier than relying only on getElementsByTagName.
 It lets you use all of the XML::DOM methods.
 
 WWW: http://search.cpan.org/dist/XML-DOM-XPath/
-
-- Mauricio
-mauricio@arareko.net

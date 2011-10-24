@@ -5,6 +5,3 @@ The output is similar to how a diff-generated patch might appear in Vim or Emacs
 with the appropriate syntax highlighting options enabled.
 
 WWW: http://colordiff.sourceforge.net/
-
-- ehaupt
-ehaupt@critical.ch

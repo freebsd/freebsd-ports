@@ -2,6 +2,3 @@ waccess is a "quickie" way to do simple web access log file analysis.
 It is not a replacement for a serious log analysis tool, but it's
 handy if you just want to know simple things, like how many times
 a particular file has been accessed, and by whom.
-
-- tim
-tundra@tundraware.com

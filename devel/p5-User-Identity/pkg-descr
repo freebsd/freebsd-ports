@@ -2,6 +2,3 @@ User::Identity is a Perl module for abstracting information about a
 physical person.
 
 WWW: http://search.cpan.org/dist/User-Identity/
-
-- Max Campos
-mcampos@bpsw.biz

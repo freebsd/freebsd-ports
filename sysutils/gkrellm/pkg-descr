@@ -41,6 +41,3 @@ GKrellM Features
 	* Commands can be configured to run when monitor labels are clicked.
 	* GKrellM is plugin capable so special interest monitors can be created.
 	* Many themes are available.
-
-
-- Hajimu UMEMOTO <ume@FreeBSD.org>

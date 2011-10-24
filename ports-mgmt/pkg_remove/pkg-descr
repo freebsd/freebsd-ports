@@ -13,6 +13,3 @@ For example:
 	Remove all japanese packages.
 # pkg_remove ALL
 	Remove all packages.
-
-- SADA Kenji
-sada@FreeBSD.org

@@ -3,7 +3,4 @@ Text-Affixes
 This module is used in Natural Language Processing tools 
 that require Prefixe or Suffix examination of text.
 
-WWW:	http://search.cpan.org/dist/Text-Affixes/
-
-- Cheng-Lung Sung
-clsung@FreeBSD.org
+WWW: http://search.cpan.org/dist/Text-Affixes/

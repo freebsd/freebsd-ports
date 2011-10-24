@@ -10,6 +10,3 @@ The HttpMime module extends mime4j library with some HTTP specific
 functionality and integrates it with the HttpComponents framework.
 
 WWW: http://hc.apache.org/httpcomponents-client/
-
-- Alex Dupre
-ale@FreeBSD.org

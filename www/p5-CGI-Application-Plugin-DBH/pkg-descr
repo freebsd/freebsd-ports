@@ -4,6 +4,3 @@ from being made if the dbh method is not called during the request. In other
 words, the database connection is not created until it is actually needed.
 
 WWW: http://search.cpan.org/dist/CGI-Application-Plugin-DBH/
-
-- Espen Tagestad
-espen@tagestad.no

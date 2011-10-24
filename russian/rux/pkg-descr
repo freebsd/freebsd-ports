@@ -13,6 +13,3 @@ by default. There are -o koi8-r, -e, -t.
 The expectancy value of the presence of every Cyrillic characters in the
 some text were taken from the dump of Russian translation of the `FreeBSD
 Handbook'.
-
-- Vyacheslav Anikin (ansl)
-anikinsl@gmail.com

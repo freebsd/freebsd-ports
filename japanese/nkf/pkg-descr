@@ -7,5 +7,3 @@ kanji code.  It currently recognizes 7-bit JIS, MS-kanji (shifted-JIS),
 EUC, and UTF-8.  So users needn't the input kanji code specification.
 
 WWW:	http://sourceforge.jp/projects/nkf/
-
-- Max

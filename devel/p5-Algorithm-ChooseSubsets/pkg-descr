@@ -7,6 +7,3 @@ will return the next such list in lexicographic order (where the alphabet
 is the original list).
 
 WWW: http://search.cpan.org/dist/Algorithm-ChooseSubsets/
-
-- Brian Duggan
-bduggan@matatu.org

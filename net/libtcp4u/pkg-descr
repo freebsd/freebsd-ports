@@ -4,6 +4,3 @@ level protocols (HTTP, SMTP).
 Conctains tcp4u, http4u, tn4u, udp4u.
 
 WWW: http://membres.tripod.fr/phjounin/
-
-- otis
-otis@freebsd.sk

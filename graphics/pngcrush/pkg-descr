@@ -8,6 +8,3 @@ chunks or add gAMA and sRGB chunks.
 pngcrush does not require external X/png libraries.
 
 WWW: http://pmt.sourceforge.net/pngcrush/
-
-- Chris D. Faulhaber
- <jedgar@FreeBSD.org>

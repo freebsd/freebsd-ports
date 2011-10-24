@@ -2,6 +2,3 @@ XStream is a simple library to serialize Java objects
 to XML and back again.
 
 WWW: http://xstream.codehaus.org/
-
-- Alex Dupre
-ale@FreeBSD.org

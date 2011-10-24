@@ -1,6 +1,3 @@
 Tcl-wrapper installs a shell wrapper for the "tclsh" command that
 comes with different versions of Tcl. Users can define in a configuration file
 which version of the Tcl shell should be called.
-
-- Martin Matuska
-mm@FreeBSD.org

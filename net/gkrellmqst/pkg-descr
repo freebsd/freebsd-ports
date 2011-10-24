@@ -4,7 +4,6 @@ depends upon qstat's support for that particular game. This plugin
 uses qstat to query a game server and displays the current map name
 and number of players
 
-WWW: http://tadpol.org/projects/GKrellM_qst.html
 Author: Michael Tilstra <tadpol@tadpol.org>
 
-- Patrick Li <pat@FreeBSD.org>
+WWW: http://tadpol.org/projects/GKrellM_qst.html

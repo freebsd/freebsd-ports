@@ -5,5 +5,3 @@ designed for use on backends, which serve reverse proxied HTTP
 requests.
 
 WWW: http://sysoev.ru/mod_realip/
-
-- Gleb Smirnoff <glebius@FreeBSD.org>

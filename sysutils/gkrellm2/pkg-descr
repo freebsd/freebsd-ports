@@ -4,8 +4,6 @@ With a single process, GKrellM manages multiple stacked monitors and supports
 applying themes to match the monitors appearance to your window manager,
 Gtk, or any other theme.
 
-Author:	Bill Wilson
-Email:  bill@gkrellm.net
-WWW:    http://gkrellm.net
+Author:	Bill Wilson bill@gkrellm.net
 
-- Hajimu UMEMOTO <ume@FreeBSD.org>
+WWW:    http://gkrellm.net

@@ -6,6 +6,3 @@ simply type
 and it will display all descriptions of the gcc* ports.
 There are options to display the port's postinstall message or
 Makefile too. A manpage is included.
-
-- Martin Kammerhofer
-   mkamm@gmx.net

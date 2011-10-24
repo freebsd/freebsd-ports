@@ -5,6 +5,3 @@ The implementation includes a simple UDP-to-TCP converting server,
 which may be used to replicate NetFlow data to multiple clients.
 
 WWW: http://ehnt.sourceforge.net/
-
-- Dmitry Morozovsky
-marck@rinet.ru

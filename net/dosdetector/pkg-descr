@@ -5,6 +5,3 @@ It's configurable via a rule set; when an IP exceeds the score limit,
 DoSDetector prints a warning.
 
 WWW: http://dark-zone.eu/resources/unix/dosdetector/
-
-- msciciel
-msciciel@dark-zone.eu

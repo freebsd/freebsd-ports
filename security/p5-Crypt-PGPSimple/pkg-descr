@@ -4,6 +4,3 @@ for the encyption.  Tested with PGP 2.6.2 and PGP 6.5.8 on UNIX and
 Windows.
 
 WWW: http://search.cpan.org/dist/Crypt-PGPSimple/
-
-- Matjaz Prelog
-  <rachek@si.freebsd.org>

@@ -5,6 +5,3 @@ It is inspired by xdiff (Motif-based) and xxdiff (Qt-based), whose choice of
 GUI toolkit has hampered their portability to many of the systems I work with.
 
 WWW: http://www.easysw.com/~mike/fldiff/
-
-- ehaupt
-ehaupt@critical.ch

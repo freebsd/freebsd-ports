@@ -3,6 +3,3 @@ information about the current client request (cookies, headers, uri
 info) available as params within XSLT stylesheets.
 
 WWW: http://search.cpan.org/dist/Apache-AxKit-Plugin-AddXSLParams-Request/
-
-- Hansjoerg
-hansjoerg.pehofer@uibk.ac.at

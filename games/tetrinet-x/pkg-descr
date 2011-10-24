@@ -13,7 +13,4 @@ are the ones that do most of the work, with the server just passing suitable
 packets between each client, and of course adding some of it's own.
 
 Author: Brendan Grieve (brg@cheerful.com)
-Homepage: ftp://ftp.dementia.nu/tetrinet/servers/tetrix
-Distfiles: tetrinet-x.1.13.16.tgz (89 kb)
-
-- ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
+WWW: ftp://ftp.dementia.nu/tetrinet/servers/tetrix

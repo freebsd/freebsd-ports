@@ -18,7 +18,4 @@ The above schedule specifies that for the interval of 65 to 128
 days there should be (at least) one retained file (unless constraints
 and options override this setting).
 
-
 WWW: http://www.spinellis.gr/sw/unix/fileprune/
-
-- Diomidis Spinellis dds@aueb.gr

@@ -2,5 +2,4 @@ The Math::TrulyRandom module provides an ability to generate truly random
 numbers from within Perl programs. The source of the randomness is from
 interrupt timing discrepancies.
 
-- Anders Nordby <anders@FreeBSD.org>
 WWW: http://search.cpan.org/dist/Math-TrulyRandom/

@@ -7,6 +7,3 @@ are checked to make sure at least one SMTP server is accepting
 connections.
 
 WWW: http://search.cpan.org/dist/Mail-Verify/
-
-- Pete
-petef@databits.net

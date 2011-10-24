@@ -2,7 +2,6 @@ gdvrecv is a set of tools for FreeBSD 5 to receives audio and video data from a
 digital camcorder via an IEEE 1394 (widely known as FireWire) link and stores
 them into an DV file.
 
-WWW: http://gdvrecv.sourceforge.net/
-developed by Henri Michelon
+Developed by Henri Michelon
 
-- Henri Michelon <hmichelon at e-cml.org>
+WWW: http://gdvrecv.sourceforge.net/

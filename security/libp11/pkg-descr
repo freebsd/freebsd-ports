@@ -3,6 +3,3 @@ on top of PKCS#11 API to make using PKCS#11
 implementations easier.
 
 WWW:	http://www.opensc-project.org/libp11/
-
-- Alex Dupre
-ale@FreeBSD.org

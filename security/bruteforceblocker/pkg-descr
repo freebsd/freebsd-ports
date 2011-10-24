@@ -9,5 +9,3 @@ traffic to the that box from given IP (This also depends on
 configuration done in pf.conf).
 
 WWW: http://danger.rulez.sk/projects/bruteforceblocker/
-
-- Daniel Gerzo <danger@FreeBSD.org>

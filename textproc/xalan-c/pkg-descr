@@ -2,8 +2,4 @@ Xalan-C++ is an implementation of XSL Transformations (XSLT) and
 XML Path Language (XPath).
 It works hand in hand with the XML parser Xerces-C++ version 2.
 
-For mor information please visit the homepage:
 WWW: http://xml.apache.org/xalan-c/index.html
-
-- Bjoern A. Zeeb
-bzeeb+freebsdports@zabbadoz.net

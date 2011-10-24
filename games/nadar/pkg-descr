@@ -17,6 +17,3 @@ If playing speed is very slow, Run nadar as below with size option.
   client-machine> nadar -s [Server's hostname] -p [Player's name] -size 30
 
 See nadars(1) and nadar(1) for more details.
-
-- Sakai Hiroaki
-hsakai@m8.ffn.ne.jp

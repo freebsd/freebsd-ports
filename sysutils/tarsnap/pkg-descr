@@ -7,6 +7,3 @@ using locally-held keys in order to guarantee that nobody without access
 to the key file (including the author) can read or modify archives.
 
 WWW: http://www.tarsnap.com/
-
-- Colin Percival
-cperciva@tarsnap.com

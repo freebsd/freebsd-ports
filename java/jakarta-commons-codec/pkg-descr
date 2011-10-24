@@ -2,6 +2,3 @@ Commons Codec provides implementations of common encoders and decoders
 such as Base64, Hex, various phonetic encodings, and URLs.
 
 WWW: http://jakarta.apache.org/commons/codec/
-
-- Alex Dupre
-ale@FreeBSD.org

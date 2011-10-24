@@ -2,7 +2,6 @@ Knocker is a simple and easy to use TCP (no UDP yet) security port
 scanner which is able to analyze hosts and all of the different
 services started on them. (Console version)
 
-WWW: http://knocker.sourceforge.net/
 Author: Gabriele Giorgetti <g.gabriele@europe.com>
 
-- Patrick Li <pat@FreeBSD.org>
+WWW: http://knocker.sourceforge.net/

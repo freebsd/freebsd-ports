@@ -1,6 +1,3 @@
 The params extension provides userspace equivalent of zend_parse_parameters()
 
 WWW: http://pecl.php.net/package/params/
-
-- Ditesh Shashikant Gathani
-ditesh@gathani.org

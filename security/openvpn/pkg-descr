@@ -5,6 +5,3 @@ can use SSL or a pre-shared secret to authenticate peers, and in SSL mode, one
 server can handle many clients.
 
 WWW: http://openvpn.net/index.php/open-source.html
-
-- Matthias Andree
-mandree@FreeBSD.org

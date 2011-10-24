@@ -5,6 +5,3 @@ Features for SQL" spatial predicate functions and spatial operators,
 as well as specific JTS topology functions such as IsValid().
 
 WWW: http://geos.refractions.net
-
-- Leonardo Martins
-lmartins@nepe.eee.ufg.br

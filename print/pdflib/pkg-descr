@@ -10,6 +10,3 @@ from complete, PDFlib already offers many useful functions for
 creating text, graphics, images and hypertext elements in PDF files.
 
 WWW: http://www.pdflib.de/
-
-- Alex Dupre
-ale@FreeBSD.org

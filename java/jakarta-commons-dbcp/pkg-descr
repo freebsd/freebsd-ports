@@ -21,6 +21,3 @@ The DBCP Component
    provide the underlying object pool mechanisms that it utilizes.
 
 WWW: http://commons.apache.org/dbcp/
-
-- Alex Dupre
-ale@FreeBSD.org

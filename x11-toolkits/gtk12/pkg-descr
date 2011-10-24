@@ -13,7 +13,4 @@ will be a label. However, the child widget can also be a pixmap, image
 or any combination possible the programmer desires. This flexibility is
 adhered to throughout the library.
 
-- Vanilla
-vanilla@FreeBSD.org
-
 WWW: http://www.gtk.org/

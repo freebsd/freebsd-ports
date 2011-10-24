@@ -6,6 +6,3 @@ retrieve the validation results (true|false) as well as the errors and warnings
 for a a style sheet.
 
 WWW: http://pear.php.net/package/Services_W3C_CSSValidator/
-
-- Ditesh Shashikant Gathani
-ditesh@gathani.org

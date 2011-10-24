@@ -4,5 +4,3 @@ The syntax is as follows:
 
 	use NKF;
 	$output = nkf ($flags, $input)
-
-- Max

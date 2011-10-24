@@ -12,6 +12,3 @@ OpenSC implements the PKCS#15 standard and aims to be
 compatible with every software that does so, too.
 
 WWW:	http://www.opensc-project.org/opensc/
-
-- Alex Dupre
-ale@FreeBSD.org

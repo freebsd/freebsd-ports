@@ -3,6 +3,3 @@ the gstreamer framework and the swfdec library.  It should currently play Flash
 4 files, and Flash 5 support is under development.
 
 WWW: http://www.schleef.org/swfdec/
-
-- Eric Anholt
-anholt@FreeBSD.org

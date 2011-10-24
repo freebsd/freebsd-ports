@@ -2,6 +2,3 @@ An AOLserver socket driver module which implements SSL/TLS encryption on
 incomming sockets, and also adds an https client API.
 
 WWW: http://www.aolserver.com/
-
-- Martin Matuska
-mm@FreeBSD.org

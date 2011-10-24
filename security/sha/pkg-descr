@@ -5,6 +5,3 @@ respectively, hashes of 160, 256, 384, or 512 bits. sha can be
 used in scripts to do, for example, file integrity checking.
 
 WWW: http://www.saddi.com/software/sha/
-
-- Allan Saddi
-  allan@saddi.com

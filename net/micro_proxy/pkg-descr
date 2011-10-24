@@ -6,6 +6,3 @@ It implements all the basic features of an HTTP/HTTPS proxy, including IPv6
 forwarding, in only 320 lines of code.
 
 WWW: http://www.acme.com/software/micro_proxy/
-
-- ehaupt
-ehaupt@critical.ch

@@ -2,6 +2,3 @@ An SGML System conforming to International Standard ISO 8879:
     sgmls    - a validating SGML parser
     sgmlsasp - translate output of sgmls using ASP replacement files
     rast     - translate output of sgmls to RAST format
-
-- Eugene Furs
-justas@mbank.lv

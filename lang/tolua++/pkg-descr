@@ -14,6 +14,3 @@ from Lua. Using Lua API and tag method facilities, tolua maps C/C++
 constants, external variables, functions, classes, and methods to Lua. 
 
 WWW: http://www.codenix.com/~tolua/
-
-- Aaron Dalton
-aaron@FreeBSD.org

@@ -9,6 +9,3 @@ most recent output is displayed. This is useful for status monitoring where the
 command itself does not have a repeatable or curses interface. 
 
 WWW: http://vii.sourceforge.net/
-
-- ehaupt
-ehaupt@critical.ch

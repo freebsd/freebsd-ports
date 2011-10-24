@@ -5,5 +5,3 @@ have single-command deployment. It even allows you to roll a bad version
 out of production and revert back to the previous release.
 
 WWW: https://github.com/capistrano/capistrano
-
-- Roderick van Domburg

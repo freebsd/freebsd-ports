@@ -4,6 +4,3 @@ The program answers connection attempts in such a way that the machine
 at the other end gets "stuck", sometimes for a very long time. 
 
 WWW: http://www.hackbusters.net
-
-- Nick
-nick@rogness.net

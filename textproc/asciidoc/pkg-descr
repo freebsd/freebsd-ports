@@ -5,6 +5,3 @@ markups using the asciidoc(1) command.
 This port currently does not install the VIM syntax highlighting mode.
 
 WWW: http://www.methods.co.nz/asciidoc/
-
-- Eric Anholt
-anholt@FreeBSD.org

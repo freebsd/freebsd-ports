@@ -3,6 +3,3 @@ uploads, as well as cookies in a very simple manner; you need not concern
 yourself with the actual details behind the decoding process.
 
 WWW: http://search.cpan.org/dist/CGI-Lite/
-
-- Lars Thegler
-lars@thegler.dk

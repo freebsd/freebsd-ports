@@ -1,7 +1,6 @@
 PgWorksheet is a simple GUI frontend to PostgreSQL for executing 
 SQL queries and psql commands without using the psql command line tool.
 
-WWW: http://pgworksheet.projects.postgresql.org/
-developed by Henri Michelon
+Developed by Henri Michelon.
 
-- Henri Michelon <hmichelon at e-cml.org>
+WWW: http://pgworksheet.projects.postgresql.org/

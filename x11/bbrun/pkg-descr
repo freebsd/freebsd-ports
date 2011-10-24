@@ -2,5 +2,3 @@ bbrun is a Run box for the Blackbox windowmanager. It provides
 a simple interface with which you can launch programs. It is
 designed to be a part of the Slit. bbrun will maintain a history
 file in $HOME/.bbrun_history
-
-- Adam Weinberger <adamw@FreeBSD.org>

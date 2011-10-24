@@ -6,5 +6,3 @@ packet and Ethernet frame transmission. It is intended to complement
 the functionality provided by pcap(3).
 
 WWW: http://libdnet.sourceforge.net/
-
-- Dominic <dominic_marks@btinternet.com>

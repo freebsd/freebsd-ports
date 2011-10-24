@@ -4,6 +4,3 @@ Defaults to:
 ctype, dom, iconv, pcre, posix, session, simplexml, sqlite, tokenizer and xml.
 
 WWW: http://www.php.net/
-
-- Alex Dupre
-ale@FreeBSD.org

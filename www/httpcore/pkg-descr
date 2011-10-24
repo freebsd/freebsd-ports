@@ -15,6 +15,3 @@ less important than the ability to handle thousands of simultaneous HTTP
 connections in a resource efficient manner.
 
 WWW: http://hc.apache.org/httpcomponents-core/
-
-- Alex Dupre
-ale@FreeBSD.org

@@ -5,6 +5,3 @@ and printer status information.
 
 Although rprint can be used interactively, too, it is normally be
 invoked by an lpd input filter program.
-
-- Konrad Heuer
-kheuer@gwdu60.gwdg.de

@@ -5,6 +5,3 @@ cross-platform portability, loading data, playing samples and drawing your
 textures. So this library fills the same hole that things like GLUT do.
 
 WWW:	http://allegrogl.sourceforge.net/
-
-- Igor Pokrovsky
-tiamat@comset.net

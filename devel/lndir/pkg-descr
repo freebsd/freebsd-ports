@@ -2,5 +2,3 @@ The lndir program makes a shadow copy of a directory tree, except that the
 shadow is populated with symbolic links pointing at the real files in the
 original directory tree. This is usually useful for maintaining source code
 for different machine architectures.
-
-- Carlos Santos

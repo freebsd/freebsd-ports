@@ -7,6 +7,3 @@ format. FTGL uses the Freetype (www.freetype.org) font library to open and
 most efficient for OpenGL rendering.
 
 WWW:	http://ftgl.wiki.sourceforge.net/
-
-- Igor Pokrovsky
-tiamat@comset.net

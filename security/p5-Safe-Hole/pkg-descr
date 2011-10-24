@@ -8,7 +8,4 @@ the package name, such as class methods.
 	Through Safe::Hole, we can execute outside defined subroutines
 in the original main compartment from the Safe compartment.
 
-- Seth
-sethk@meowfishies.com
-
 WWW: http://search.cpan.org/dist/Safe-Hole/

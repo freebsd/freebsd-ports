@@ -3,5 +3,4 @@ Unlike nkf, qkc can handle multiple files at a time. Qkc also has
 functionality to change end-of-line characters, ie, from CR+LF to LF,
 or to CR, and vice versa.
 
-- Max
 WWW: http://hp.vector.co.jp/authors/VA000501/

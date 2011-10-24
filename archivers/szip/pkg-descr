@@ -3,6 +3,3 @@ sort transform. This transformation is related to the Burrows-Wheeler
 transformation used in block sorting compression methods.  The
 difference is a fast, deterministic behaviour in time at some
 compression loss.
-
-- Igor Pokrovsky
-tiamat@comset.net
