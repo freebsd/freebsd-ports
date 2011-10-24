@@ -1,8 +1,8 @@
---- ./CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
-+++ ./CMakeLists.txt	2011-03-09 15:49:15.000000000 +0200
-@@ -316,16 +316,14 @@
-     if (MINGW)
-         set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--enable-auto-import")
+--- CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ CMakeLists.txt	2011-10-03 10:40:18.000000000 +0300
+@@ -370,16 +370,14 @@
+     else (MINGW)
+         set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
      endif (MINGW)
 -    if (NOT APPLE)
 -        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--as-needed")
@@ -20,9 +20,9 @@
     ${eiskaltdcpp_SOURCE_DIR}
     ${GMP_INCLUDE_DIR}
     )
-@@ -395,7 +393,9 @@
- add_subdirectory (dht)
- endif (DHT)
+@@ -451,7 +449,9 @@
+   add_subdirectory (dht)
+ endif (WITH_DHT)
  
 -add_subdirectory (dcpp)
 +if (BUILD_LIB)
@@ -31,19 +31,3 @@
  
  if (USE_QT)
    add_subdirectory (eiskaltdcpp-qt)
-@@ -443,11 +443,11 @@
-       LOCALE_LIST "${LANGUAGES}"
-       COPYRIGHT_HOLDER "EiskaltDC++ team"
-       SOURCES "${DCPP_SRCS};${DCPP_HDRS}"
--      PO_DIR "${dcpp_SOURCE_DIR}/po"
--      POT_BUILD_DIR "${dcpp_SOURCE_DIR}/po"
-+      PO_DIR "${PROJECT_SOURCE_DIR}/po"
-+      POT_BUILD_DIR "${PROJECT_SOURCE_DIR}/po"
-       #PO_PREFIX    ""
--      PO_BUILD_DIR "${dcpp_SOURCE_DIR}/po"
--      MO_BUILD_DIR "${dcpp_BINARY_DIR}/locale"
-+      PO_BUILD_DIR "${PROJECT_SOURCE_DIR}/po"
-+      MO_BUILD_DIR "${PROJECT_BINARY_DIR}/locale"
-       MO_INSTALL_DIR "/${LOCALE_DIR}"
-       CREATE_POT_TARGET ${create_pot}
-       CREATE_PO_TARGET ${create_po}

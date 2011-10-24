@@ -1,16 +1,16 @@
---- ./eiskaltdcpp-gtk/CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
-+++ ./eiskaltdcpp-gtk/CMakeLists.txt	2011-03-10 16:22:20.000000000 +0200
+--- ./eiskaltdcpp-gtk/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ ./eiskaltdcpp-gtk/CMakeLists.txt	2011-10-10 11:10:30.000000000 +0300
 @@ -12,7 +12,7 @@
  set (GTK_SRCS @gtk_srcs@ PARENT_SCOPE)
  set (GTK_HDRS @gtk_hdrs@ PARENT_SCOPE)
- set (GTK_GLADE @gtk_glade@ PARENT_SCOPE)
+ set (GTK_UI   @gtk_ui@   PARENT_SCOPE)
 -set (GTHREAD "-lgthread-2.0")
 +find_library (GTHREAD "gthread-2.0")
  
- include_directories (
-         ${GTK2_INCLUDE_DIRS}
-@@ -37,6 +37,10 @@
-   set_property(SOURCE ${PROJECT_SOURCE_DIR}/src/mainwindow.cc ${PROJECT_SOURCE_DIR}/src/hub.cc PROPERTY COMPILE_DEFINITIONS LUA_SCRIPT)
+ if (USE_GTK)
+     set(GTK_INCLUDE_DIRS ${GTK2_INCLUDE_DIRS})
+@@ -44,6 +44,10 @@
+   list (APPEND LIBS ${LUA_LIBRARIES})
  endif (LUA_SCRIPT)
  
 +if (USE_MINIUPNP OR FREE_SPACE_BAR_C)
@@ -20,7 +20,7 @@
  add_executable (eiskaltdcpp-gtk MACOSX_BUNDLE WIN32
                  ${gtk_srcs}
                  )
-@@ -71,10 +75,19 @@
+@@ -90,10 +94,19 @@
    add_definitions(-DCLIENT_RES_DIR="${CLIENT_DATA_DIR}/gtk/resources")
  endif (APPLE)
  
@@ -42,7 +42,7 @@
  endif (APPLE)
  
  if (UNIX)
-@@ -113,6 +126,6 @@
+@@ -131,6 +144,6 @@
  else (APPLE)
    if (UNIX)
      install (FILES eiskaltdcpp-gtk.desktop DESTINATION ${SHARE_DIR}/applications)

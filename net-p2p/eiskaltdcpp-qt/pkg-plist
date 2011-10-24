@@ -138,6 +138,75 @@ share/eiskaltdcpp/qt/icons/appl/faenza/view-close.png
 share/eiskaltdcpp/qt/icons/appl/faenza/view-filter.png
 share/eiskaltdcpp/qt/icons/appl/faenza/zoom-in.png
 share/eiskaltdcpp/qt/icons/appl/faenza/zoom-out.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/adls.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/application-exit.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/application-x-archive.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/application-x-executable.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/audio-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/ball_green.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/bookmark-new.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/chat.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/configure.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/console.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/default.qrc
+share/eiskaltdcpp/qt/icons/appl/monochrome/dialog-close.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/document-edit.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/download.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/edit-clear-locationbar-rtl.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/edit-clear.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/edit-copy.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/edit-delete.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/edit-find.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/eraser.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/face-smile.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/fav.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/favadd.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/favrem.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/favserver.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/favusers.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/find.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/folder-blue.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/freespace.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/go-down-search.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/go-down.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/go-up-search.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/go-up.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/gui.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/hashing.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/hubmsg.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/icon_appl.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/icon_appl_big.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/icon_msg.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/im-user-away.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/image-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/list-add.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/log_file.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/message.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/network-connect.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/network-disconnect.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/openlist.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/own_filelist.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/plugin.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/pmmsg.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/qt-logo.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/reconnect.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/refrlist.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/reload.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/server.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/slow.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/slow_off.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/spam.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/spy.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/status.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/text-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/transfer.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/unknown.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/users.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/video-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/view-close.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/view-filter.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/zoom-in.png
+share/eiskaltdcpp/qt/icons/appl/monochrome/zoom-out.png
 share/eiskaltdcpp/qt/icons/user/valknut/usericons.png
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.png
 %%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.sh
@@ -171,6 +240,7 @@ share/eiskaltdcpp/qt/resources/default.rcc
 share/eiskaltdcpp/qt/ts/be.qm
 share/eiskaltdcpp/qt/ts/bg.qm
 share/eiskaltdcpp/qt/ts/cs.qm
+share/eiskaltdcpp/qt/ts/de.qm
 share/eiskaltdcpp/qt/ts/en.qm
 share/eiskaltdcpp/qt/ts/es.qm
 share/eiskaltdcpp/qt/ts/fr.qm
@@ -191,6 +261,7 @@ share/eiskaltdcpp/qt/ts/uk.qm
 %%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts
 @dirrm share/eiskaltdcpp/qt/icons/appl/default
 @dirrm share/eiskaltdcpp/qt/icons/appl/faenza
+@dirrm share/eiskaltdcpp/qt/icons/appl/monochrome
 @dirrm share/eiskaltdcpp/qt/icons/appl
 @dirrm share/eiskaltdcpp/qt/icons/user/default
 @dirrm share/eiskaltdcpp/qt/icons/user/valknut

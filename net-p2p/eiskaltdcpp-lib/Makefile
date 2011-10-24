@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp-lib
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -20,8 +20,8 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs
 
 PROJECTHOST=	eiskaltdc
 
-USE_XZ=	yes
-USE_GCC=	4.2+
+USE_XZ=		yes
+USE_GCC=	4.4+
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
@@ -29,7 +29,9 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	LUA	"Lua scripting support"	off \
-		PCRE	"PCRE support in ADL Search" off
+		PCRE	"PCRE support in ADL Search" off \
+		IDN	"IDN support" on \
+		DHT	"DHT support" on
 
 .include <bsd.port.options.mk>
 
@@ -38,6 +40,7 @@ CMAKE_ARGS+=	-DUSE_QT:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_GTK:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
+CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON
 
 .if defined(WITH_LUA) && !defined(WITHOUT_LUA)
 USE_LUA=	5.1
@@ -54,8 +57,23 @@ CMAKE_ARGS+=	-DPERL_REGEX:BOOL=ON
 CMAKE_ARGS+=	-DPERL_REGEX:BOOL=OFF
 .endif
 
+.if defined(WITH_IDN) && !defined(WITHOUT_IDN)
+LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+CMAKE_ARGS+=	-DUSE_IDNA:BOOL=ON
+.else
+CMAKE_ARGS+=	-DUSE_IDNA:BOOL=OFF
+.endif
+
+.if defined(WITH_DHT) && !defined(WITHOUT_DHT)
+CMAKE_ARGS+=	-DWITH_DHT:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_DHT:BOOL=OFF
+.endif
+
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 700024
 USE_OPENSSL_PORT=yes
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

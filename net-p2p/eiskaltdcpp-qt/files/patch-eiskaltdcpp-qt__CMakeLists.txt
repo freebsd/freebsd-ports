@@ -1,8 +1,8 @@
---- ./eiskaltdcpp-qt/CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
-+++ ./eiskaltdcpp-qt/CMakeLists.txt	2011-03-09 15:49:15.000000000 +0200
-@@ -356,6 +356,10 @@
-    set_property(SOURCE ${PROJECT_SOURCE_DIR}/src/main.cpp PROPERTY COMPILE_DEFINITIONS FORCE_XDG )
- endif (FORCE_XDG)
+--- eiskaltdcpp-qt/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ eiskaltdcpp-qt/CMakeLists.txt	2011-10-03 11:20:59.000000000 +0300
+@@ -359,6 +359,10 @@
+     set_property(SOURCE ${PROJECT_SOURCE_DIR}/src/main.cpp PROPERTY COMPILE_DEFINITIONS ENABLE_STACKTRACE)
+ endif (ENABLE_STACKTRACE)
  
 +if (USE_MINIUPNP OR FREE_SPACE_BAR_C)
 +	list(APPEND LIBS extra)
@@ -11,7 +11,7 @@
  if (APPLE)
    set (MACOSICON "${PROJECT_SOURCE_DIR}/../icons/icon_128x128.icns")
    set (MACOSICONINBUNDLE "icon_128x128.icns")
-@@ -393,10 +397,19 @@
+@@ -396,10 +400,19 @@
    add_definitions(-DCLIENT_RES_DIR="${CLIENT_DATA_DIR}/qt/resources")
  endif (APPLE)
  
@@ -33,12 +33,12 @@
  endif (APPLE)
  
  if (APPLE)
-@@ -464,7 +477,7 @@
+@@ -469,7 +482,7 @@
  else (APPLE)
    install (FILES ${PROJECT_BINARY_DIR}/default.rcc DESTINATION ${CLIENT_DATA_DIR}/qt/resources)
-   if (UNIX)
+   if (UNIX AND NOT HAIKU)
 -    install (FILES ${PROJECT_BINARY_DIR}/eiskaltdcpp-qt.1.gz DESTINATION ${SHARE_DIR}/man/man1)
 +    install (FILES ${PROJECT_BINARY_DIR}/eiskaltdcpp-qt.1.gz DESTINATION man/man1)
      install (FILES eiskaltdcpp-qt.desktop DESTINATION ${SHARE_DIR}/applications)
-   endif (UNIX)
+   endif (UNIX AND NOT HAIKU)
  endif (APPLE)
