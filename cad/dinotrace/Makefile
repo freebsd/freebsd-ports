@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical signal trace waveform viewer
 
 OPTIONS=	EMACS "Install Emacs supplimentary files" on

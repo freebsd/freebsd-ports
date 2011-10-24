@@ -13,7 +13,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml-Java library interface
 
 USE_OCAML=	yes

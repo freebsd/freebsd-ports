@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lava lamp of currently running processes
 
 GNU_CONFIGURE=	yes

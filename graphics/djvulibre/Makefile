@@ -10,7 +10,7 @@ PORTVERSION=	3.5.24
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DjVu viewers and browser plugin
 
 LICENSE=	GPLv2

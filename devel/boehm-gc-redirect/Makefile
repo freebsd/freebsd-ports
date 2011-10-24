@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 PKGNAMESUFFIX=	-${GC_VARIANT}
 DISTNAME=	gc-${PORTVERSION:S/.a/alpha/}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 RUN_DEPENDS=	${PREFIX}/include/gc/gc.h:${PORTSDIR}/devel/boehm-gc

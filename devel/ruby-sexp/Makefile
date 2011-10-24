@@ -13,7 +13,7 @@ MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ruby library to work with s-expressions
 
 RUN_DEPENDS=	rubygem-rparsec>0:${PORTSDIR}/devel/rubygem-rparsec

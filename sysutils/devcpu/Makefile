@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module that provides access to i386 MSRs and cpuid info
 
 RUN_DEPENDS=	${STAMPFILE}:${PORTSDIR}/sysutils/devcpu-data

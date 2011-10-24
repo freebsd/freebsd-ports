@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyberelk.net/tim/data/libieee1284/stable/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IEEE1284 communications library
 
 USE_BZIP2=	yes

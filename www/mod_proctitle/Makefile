@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request
 
 MAKE_JOBS_SAFE=  yes

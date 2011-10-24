@@ -10,7 +10,7 @@ PORTVERSION=	210
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
 USE_AUTOTOOLS=	aclocal autoconf

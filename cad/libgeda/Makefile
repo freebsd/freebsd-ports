@@ -13,7 +13,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 		http://geda.seul.org/release/v1.4/${PORTVERSION}/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile

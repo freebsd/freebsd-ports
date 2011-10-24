@@ -12,7 +12,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/181/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Autoconf module for ocaml
 
 NO_BUILD=	yes

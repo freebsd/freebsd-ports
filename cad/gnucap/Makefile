@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.gnucap.org/devel/archive/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Circuit Analysis Package
 
 USE_GMAKE=	yes

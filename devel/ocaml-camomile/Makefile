@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive Unicode library for objective caml language
 
 USE_BZIP2=	yes

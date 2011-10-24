@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-bruteforce PAM module
 
 USE_BZIP2=	yes

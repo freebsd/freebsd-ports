@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-${PORTREVISION}
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 .endif
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 CONFLICTS=	valgrind-snapshot-[0-9]*

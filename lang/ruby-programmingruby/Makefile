@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The source of the Programming Ruby ("pick-axe") book in XML and HTML
 
 USE_RUBY=	yes

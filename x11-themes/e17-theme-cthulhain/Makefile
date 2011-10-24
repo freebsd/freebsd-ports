@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cthulhain theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

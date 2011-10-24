@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	devel java
 MASTER_SITES=	http://opensolaris.org/os/project/opengrok/files/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference egine
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags

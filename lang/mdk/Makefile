@@ -13,7 +13,7 @@ CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU:S/%SUBDIR%/${PORTNAME}\/v${PORTVERSION}/} \
 		SF
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.filesystems.org/pub/fistgen/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language for describing stackable filesystems
 
 GNU_CONFIGURE=	yes

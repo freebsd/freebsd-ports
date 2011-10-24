@@ -13,7 +13,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symmetric cryptographic algorithms package for OCaml
 
 LICENSE=	MIT

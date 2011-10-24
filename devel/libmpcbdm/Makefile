@@ -13,7 +13,7 @@ MASTER_SITES=	SF/libmpc8xx/libmpc8xx/${PORTVERSION} \
 
 DISTNAME=	mpc8xx-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone library to control various mpc8xx boards
 
 WRKSRC=		${WRKDIR}/libmpc8xx

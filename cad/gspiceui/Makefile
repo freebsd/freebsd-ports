@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for gnucap/ng-spice circuit simulators
 
 RUN_DEPENDS=	gwave:${PORTSDIR}/cad/gwave

@@ -13,7 +13,7 @@ MASTER_SITES=   http://cristal.inria.fr/caml_examples/
 PKGNAMESUFFIX=	-examples
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example programs for the Objective Caml
 
 NO_BUILD=	yes

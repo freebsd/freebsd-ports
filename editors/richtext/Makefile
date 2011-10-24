@@ -13,7 +13,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/editors/X
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple RTF editor
 
 BUILD_DEPENDS=	objc:${PORTSDIR}/lang/objc

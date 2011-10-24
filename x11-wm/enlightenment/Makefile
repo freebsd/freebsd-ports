@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \
 		http://files.roorback.net/e17/2010-12-03/base/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo

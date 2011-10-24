@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 GNU_CONFIGURE=	yes

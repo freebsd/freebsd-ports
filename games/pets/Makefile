@@ -12,7 +12,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Funny pets to follow your mouse pointer
 
 WRKSRC=		${WRKDIR}/pet-${PORTVERSION}

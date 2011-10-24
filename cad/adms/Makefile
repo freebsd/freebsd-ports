@@ -12,7 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	SF/mot-${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A model generator for SPICE simulators
 
 USE_GMAKE=	yes

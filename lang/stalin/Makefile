@@ -12,7 +12,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	stalin-freebsd-${PORTVERSION}_1
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An aggressive optimizing Scheme compiler
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc

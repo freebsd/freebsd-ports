@@ -12,7 +12,7 @@ CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment Data Handling Library
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg

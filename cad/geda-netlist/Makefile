@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}g${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's netlister
 
 LIB_DEPENDS=	geda.33:${PORTSDIR}/cad/libgeda

@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
 		http://www.ljudmila.org/~jaromil/muse/releases/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \

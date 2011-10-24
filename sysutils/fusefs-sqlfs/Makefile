@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	libsqlfs
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs

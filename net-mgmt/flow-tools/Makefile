@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
 
 CONFLICTS=	flow-tools-ng-[0-9]*

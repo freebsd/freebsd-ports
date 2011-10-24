@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://almy.us/files/
 DISTNAME=	tecoclinux${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful and compact editor with nongraphical user interface
 
 MAKEFILE=	makefile

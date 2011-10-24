@@ -14,7 +14,7 @@ DISTNAME=	ruby-doc-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for the Ruby language standard library
 
 USE_RUBY=	yes

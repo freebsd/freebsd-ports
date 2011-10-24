@@ -10,7 +10,7 @@ PORTVERSION=	20110829
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
 
 LICENSE=	MIT

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	netdump-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat server part of netdump/netconsole package for linux
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \

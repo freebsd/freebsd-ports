@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}310-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml library for working with S-expressions
 
 BUILD_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeconv

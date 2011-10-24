@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://users.telenet.be/stes/
 DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
 BOOTVERSION=	3.2.11

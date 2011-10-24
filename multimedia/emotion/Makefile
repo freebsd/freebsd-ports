@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video playback wrapper library for Enlightenment
 
 LICENSE=	BSD

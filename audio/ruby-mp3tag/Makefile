@@ -12,7 +12,7 @@ MASTER_SITES=	http://users.cybercity.dk/~dsl8950/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module to manipulate ID3v1.1 tags in MP3 files
 
 USE_RUBY=	yes

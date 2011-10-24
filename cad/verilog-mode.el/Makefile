@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.veripool.org/ftp/
 DISTNAME=	verilog-mode-${PORTVERSION}.el
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Verilog language
 
 NO_BUILD=	yes

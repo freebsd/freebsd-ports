@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 PATCH_SITES=	ftp://ftp.rtems.org/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gdb port for cross-target development
 
 #

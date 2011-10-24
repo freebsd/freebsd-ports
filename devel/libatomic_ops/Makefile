@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc-${PORTVERSION:S/.a/alpha/}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atomic operations access library
 
 USE_AUTOTOOLS=	aclocal autoconf automake

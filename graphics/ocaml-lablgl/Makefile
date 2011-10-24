@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
 WRKSRC=		${WRKDIR}/lablGL-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

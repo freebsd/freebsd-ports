@@ -12,7 +12,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.rscheme.org/rs/b/${PORTVERSION}/32/
 DISTNAME=	rs-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ELFIO-sources/ELFIO-${PORTVERSION}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool

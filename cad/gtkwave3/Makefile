@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
 CONFLICTS=	gtkwave-[0-9]*

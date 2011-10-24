@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://bj.spline.de/cc65/
 DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
 USE_SUBMAKE=	yes

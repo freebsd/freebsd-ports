@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.newlisp.org/downloads/
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LISP like scripting language
 
 HAS_CONFIGURE=	yes
