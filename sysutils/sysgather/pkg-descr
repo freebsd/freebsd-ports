@@ -1,5 +1,5 @@
 sysgather is a simple command-line utility for keeping configuration files
 under version control.
 
-WWW:		http://devel.ringlet.net/sysutils/sysgather/
-Author:		Peter Pentchev <roam@ringlet.net>
+Author: Peter Pentchev <roam@ringlet.net>
+WWW: http://devel.ringlet.net/sysutils/sysgather/

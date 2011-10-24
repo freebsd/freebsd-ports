@@ -20,5 +20,5 @@ this cache with the load_cache() function. So far, the module looks in the
 current working directory for a file named mac_oui.db to find the cache. I 
 need to come up with a way to let the user set that location.
 
-WWW: http://search.cpan.org/dist/Net-MAC-Vendor
 Author: brian d foy <bdfoy@cpan.org>
+WWW: http://search.cpan.org/dist/Net-MAC-Vendor

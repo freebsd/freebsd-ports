@@ -1,6 +1,3 @@
 YAWriter implements Yet Another XML::Handler::Writer.
 
 WWW: http://search.cpan.org/dist/XML-Handler-YAWriter/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

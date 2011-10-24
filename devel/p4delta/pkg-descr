@@ -7,8 +7,5 @@ Perforce.
 
 Requires ruby.
 
-WWW:		http://p4delta.sourceforge.net/
-AUTHOR:		Jeff Pace <jpace@incava.org>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+Author: Jeff Pace <jpace@incava.org>
+WWW: http://p4delta.sourceforge.net/

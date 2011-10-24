@@ -1,5 +1,5 @@
 pslist is a simple command-line utility for viewing and sending signals
 to a whole process tree.
 
-WWW:		http://devel.ringlet.net/sysutils/pslist/
-Author:		Peter Pentchev <roam@ringlet.net>
+Author: Peter Pentchev <roam@ringlet.net>
+WWW: http://devel.ringlet.net/sysutils/pslist/

@@ -6,5 +6,5 @@ It can read plain-text-files with ranges (123.123.123.123-234.234.234.234),
 CIDR-style networks (192.168.0.0/24) single addresses (242.242.242.242) or 
 with hostnames (one.two.com). It can also read p2b files.
 
-WWW: http://expiretable.fnord.se/
 Author: jameskamlyn@gmail.com
+WWW: http://expiretable.fnord.se/

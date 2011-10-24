@@ -38,5 +38,5 @@ If this doesn't work for you, simply supply a filename manually. Note that
 filename generation does not work in mod_perl, so you'll need to supply a 
 filename manually.
 
-WWW: http://search.cpan.org/dist/Config-Fast/
 Author: Nathan Wiger <nate@wiger.org>
+WWW: http://search.cpan.org/dist/Config-Fast/

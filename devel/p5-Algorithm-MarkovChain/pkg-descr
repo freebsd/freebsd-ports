@@ -2,5 +2,5 @@ Algorithm::MarkovChain implements a class capable of creating a Markov
 chain, and then generating output based on it.  For more information
 consult the Algorithm::MarkovChain(3) man page.
 
-WWW:	http://search.cpan.org/dist/Algorithm-MarkovChain/
 Author: Richard Clamp <richardc@unixbeard.net>
+WWW:	http://search.cpan.org/dist/Algorithm-MarkovChain/

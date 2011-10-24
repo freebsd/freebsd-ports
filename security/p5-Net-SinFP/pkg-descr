@@ -12,5 +12,5 @@ operating system. That is, it only requires one open TCP port, sends
 only fully standard TCP packets, and limits the number of tests to 2
 or 3 (with only 1 test giving the OS reliably in most cases).
 
-WWW: http://search.cpan.org/dist/Net-SinFP/
 Author: GomoR <netpkt@gomor.org>
+WWW: http://search.cpan.org/dist/Net-SinFP/

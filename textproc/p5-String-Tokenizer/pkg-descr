@@ -14,5 +14,5 @@ tokenization with lexical analysis. A tokenizer mearly splits its input
 into specific chunks, a lexical analyzer classifies those chunks. 
 Sometimes these two steps are combined, but not here.
 
-WWW: http://search.cpan.org/dist/String-Tokenizer/
 Author: stevan little <stevan@iinteractive.com>
+WWW: http://search.cpan.org/dist/String-Tokenizer/

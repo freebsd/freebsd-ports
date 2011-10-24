@@ -4,5 +4,4 @@ file, but instead of taking the real files SQLInclude fetches and includes data
 from MySQL databases.
 
 Author: Marcin Orlowski <carlos@amiga.com.pl>
-
 WWW: http://wfmh.org.pl/carlos/

@@ -1,5 +1,6 @@
 curlpp is a C++ wrapper for libcurl.
 
 Author:		Jean-Philippe Barrette-LaPierre <jpbarrette@gmail.com>
+
 WWW:		http://www.curlpp.org/
 		http://code.google.com/p/curlpp/

@@ -4,6 +4,5 @@ To use it, you should create WWW::Google::PageRank object
 and use its method get(), to query page rank of URL.
 It uses LWP::UserAgent for making request to Google.
 
-
 Author:	Yuri Karaban <tech@askold.net>
 WWW:	http://search.cpan.org/dist/WWW-Google-PageRank/

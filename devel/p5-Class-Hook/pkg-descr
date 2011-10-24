@@ -10,8 +10,5 @@ subroutine to be called after the call. Your subs will receive all the
 information that Foo->amethod will receive, so you can trace everything
 between your code and Foo.
 
-WWW: http://search.cpan.org/dist/Class-Hook/
 Author: Pierre Denis <pierre@itrelease.net>
-
-~brian skrab
- brian@quynh-and-brian.org
+WWW: http://search.cpan.org/dist/Class-Hook/

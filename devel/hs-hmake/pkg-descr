@@ -15,6 +15,3 @@ installation process automatically detects which Haskell compilers you
 have, and sets up hmake to use any of them. 
 
 WWW: http://www.haskell.org/hmake/
-
--- 
-mwest@uct.ac.za

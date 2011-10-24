@@ -3,5 +3,5 @@ Musepack file, as well as tag information contained in the Musepack
 file's APE tags. See Audio::APETags for more information about the
 tags.
 
-WWW: http://search.cpan.org/dist/Audio-Musepack/
 Author: Dan Sully <daniel@cpan.org>
+WWW: http://search.cpan.org/dist/Audio-Musepack/

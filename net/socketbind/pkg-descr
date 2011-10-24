@@ -8,4 +8,4 @@ variable to desired IP address to bind.
 Here is the wrapper to run any command binded to some IP address:
 env LD_PRELOAD=/usr/local/lib/libsocketbind.so.1 BINDTO=$MY_IP_ADDRESS $*
 
-Author can be reached at "nm at web dot am" address.
+Author: nm at web dot am

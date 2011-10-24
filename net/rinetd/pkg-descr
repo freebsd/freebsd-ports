@@ -8,5 +8,3 @@ firewall. rinetd does not redirect FTP, because FTP requires more than one
 socket. 
 
 rinetd also supports basic allow/deny access control and logging.
-
--- Alex Perel <veers@disturbed.net>

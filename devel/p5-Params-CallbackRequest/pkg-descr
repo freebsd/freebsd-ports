@@ -6,5 +6,5 @@ from a form, to affect the contents of the request parameters before they're
 passed to the templating system for processing, and even to redirect or abort
 the request before the templating system handles it.
 
-WWW: http://search.cpan.org/dist/Params-CallbackRequest/
 Author: David Wheeler <david@kineticode.com>
+WWW: http://search.cpan.org/dist/Params-CallbackRequest/

@@ -3,5 +3,5 @@ File::Fetch is a generic file fetching mechanism.
 It allows you to fetch any file pointed to by a ftp, http, file, or rsync 
 uri by a number of different means.
 
-WWW: http://search.cpan.org/dist/File-Fetch
 Author: Jos Boumans <kane@cpan.org>
+WWW: http://search.cpan.org/dist/File-Fetch

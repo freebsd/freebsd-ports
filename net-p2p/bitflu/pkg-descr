@@ -11,5 +11,5 @@ maybe even OSX.
 * Non-Threading/(almost)Non-Forking design: All connections are handled
   in non-blocking state using a dynamic select loop
 
-WWW: http://bitflu.workaround.ch/
 Author: Adrian Ulrich <adrian@blinkenlights.ch>
+WWW: http://bitflu.workaround.ch/

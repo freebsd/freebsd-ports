@@ -4,6 +4,3 @@ case that the whole zone file was succesfully parsed.
 
 Author: Luis Mun~oz <lem@cantv.net>
 WWW: http://search.cpan.org/dist/Net-DNS-ZoneFile/
-
--Anton
-<tobez@FreeBSD.org>

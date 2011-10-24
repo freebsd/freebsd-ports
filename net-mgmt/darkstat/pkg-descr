@@ -3,7 +3,5 @@ and smaller than ntop, it uses libpcap to capture network traffic and serves up
 Web page reports of statistics such as data transferred by host, port, and
 protocol. It also has a neat bandwidth usage graph.
 
-WWW:	http://dmr.ath.cx/net/darkstat/
 Author:	Emil Mikulic <emil@cs.rmit.edu.au>
-
--- Anders Nordby <anders@FreeBSD.org>
+WWW:	http://dmr.ath.cx/net/darkstat/

@@ -16,5 +16,5 @@ with alpha (64 bit RGBA) and interlacing.  Ancillary "chunks" such
 as gamma, color profile, and text fields are ignored, although they
 are checked at a minimum for correct CRC.
 
-WWW: http://www.muonics.com/FreeStuff/TkPNG/
 Author: Michael Kirkham <mikek@muonics.com>
+WWW: http://www.muonics.com/FreeStuff/TkPNG/

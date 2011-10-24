@@ -12,6 +12,5 @@ Ruby-acl provides Access Control List checks.
 	  # forbidden
 	end
 
-
 Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
 WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=acl

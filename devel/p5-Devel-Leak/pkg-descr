@@ -12,6 +12,3 @@ NoteSV.  It re-walks the perl-internals and calls sv_dump() for any
 of the number of "things" now allocated.
 
 WWW: http://search.cpan.org/dist/Devel-Leak/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

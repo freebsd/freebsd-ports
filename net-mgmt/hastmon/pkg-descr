@@ -4,5 +4,5 @@ cluster and each machine is one cluster node. hastmon is designed for
 clusters that work in Primary-Secondary configuration, which means
 that only one of the cluster nodes can be active at any given time.
 
-WWW: http://hastmon.googlecode.com/
 Author: Mikolaj Golub <to.my.trociny@gmail.com>
+WWW: http://hastmon.googlecode.com/

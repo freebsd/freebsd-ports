@@ -11,5 +11,5 @@ It is possible that feature versions will include methods to compact
 whitespace and other parts of the CSS itself, but this functionality is 
 not supported at the current time.
 
-WWW: http://search.cpan.org/dist/CSS-Squish
 Author: Thomas Sibley <trs@bestpractical.com>
+WWW: http://search.cpan.org/dist/CSS-Squish

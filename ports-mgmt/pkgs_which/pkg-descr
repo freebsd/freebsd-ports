@@ -3,5 +3,3 @@ files and/or directories, which ports/packages have installed fiels
 here.  It does not require a database and is useful to determine which
 ports need to be upgraded after, for instance, a script language
 interpreter has been updated and needs the site-packages reinstalled.
-
--- Matthias Andree

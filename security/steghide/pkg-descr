@@ -7,5 +7,5 @@ in bmp, wav and au files, blowfish encryption, MD5 hashing of passphrases to
 blowfish keys and pseudo-random distribution of hidden bits ("stego bits") in
 the container data.
 
-WWW: 	http://steghide.sourceforge.net/
 Author:	Stefan Hetzl <shetzl@teleweb.at>
+WWW: 	http://steghide.sourceforge.net/

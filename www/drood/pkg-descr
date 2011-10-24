@@ -5,7 +5,3 @@ and SCGI, gzipped content-encoding for static resources, and will service
 both IPv4 and IPv6 connections.
 
 WWW: http://www.mammothcheese.ca/
-
---
-James Bailie <jimmy@mammothcheese.ca>
-http://www.mammothcheese.ca

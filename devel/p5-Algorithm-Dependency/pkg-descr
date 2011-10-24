@@ -7,9 +7,5 @@ the CPAN installer, or debian apt-get, they are useful in other
 situations. This module intentionally uses implementation-neutral words, 
 to avoid confusion.
 
-WWW: http://search.cpan.org/dist/Algorithm-Dependency/
 Author: Adam Kennedy <cpan@ali.as>
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org
+WWW: http://search.cpan.org/dist/Algorithm-Dependency/

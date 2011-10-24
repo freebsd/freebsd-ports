@@ -2,6 +2,3 @@ XML::SAX::Simple is a very simple version of XML::Simple but for
 SAX. It can be used as a complete drop-in replacement for XML::Simple.
 
 WWW: http://search.cpan.org/dist/XML-SAX-Simple/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

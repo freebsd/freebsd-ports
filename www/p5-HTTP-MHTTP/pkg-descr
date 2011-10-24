@@ -12,6 +12,3 @@ A way faster http access library that uses C extension based on mhttp to
 do the calls.
 
 WWW: http://search.cpan.org/dist/HTTP-MHTTP/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

@@ -2,5 +2,5 @@ This is a Mail::Audit plugin which provides easy access to files attached
 to mail messages. Besides Mail::Audit, it requires the MIME::Entity 
 module.
 
-WWW: http://search.cpan.org/dist/Mail-Audit-Attach
 Author: Christian Renz <crenz@web42.com>
+WWW: http://search.cpan.org/dist/Mail-Audit-Attach

@@ -14,7 +14,3 @@ Use 'perldoc MasonX::Request::WithApacheSession' for information on how to
 use the module. 
 
 MasonX::Request::WithApacheSession was written by Dave Rolsky.
-
-
--- Nick Hilliard
-nick@foobar.org

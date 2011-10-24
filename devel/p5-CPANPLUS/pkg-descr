@@ -2,5 +2,5 @@ The "CPANPLUS" library is an API to the "CPAN" mirrors and a
 collection of interactive shells, command line programs, daemons, etc,
 that use this API.
 
-WWW: http://search.cpan.org/dist/CPANPLUS/
 Author: Jos Boumans <kane@cpan.org>
+WWW: http://search.cpan.org/dist/CPANPLUS/

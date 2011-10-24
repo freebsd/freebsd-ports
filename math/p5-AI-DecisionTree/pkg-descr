@@ -6,6 +6,5 @@ A decision tree like this one can be learned from training data, and
 then applied to previously unseen data to obtain results that are consistent 
 with the training data.
 
-WWW:	http://search.cpan.org/dist/AI-DecisionTree/
-
 Author:	Ken Williams <ken@mathforum.org>
+WWW:	http://search.cpan.org/dist/AI-DecisionTree/

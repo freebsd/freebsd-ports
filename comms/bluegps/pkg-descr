@@ -2,5 +2,5 @@ BlueGPS is a simple (freebsd native) command line tool to download
 datalogs from the Royaltek RBT-3000 bluetooth GPS receiver over a
 bluetooth link.
 
-WWW: http://www.harbaum.org/till/bluegps/
 Author: Till Harbaum <Till@Harbaum.org>
+WWW: http://www.harbaum.org/till/bluegps/

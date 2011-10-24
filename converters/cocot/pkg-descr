@@ -4,5 +4,5 @@ converting characters from one encoding to another.
 e.g.
 	$ cocot -p euc-jp -t utf-8 screen -xRR wb
 
-WWW:	http://vmi.jp/software/cygwin/cocot.html
 Author:	IWAMURO Motonori <vmi[at]nifty[dot]com>
+WWW:	http://vmi.jp/software/cygwin/cocot.html

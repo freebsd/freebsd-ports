@@ -15,5 +15,5 @@ has following features:
 * Metalink version 3.0 support (HTTP/FTP/BitTorrent)
 * Limiting download/upload speed
 
-WWW: http://aria2.sourceforge.net/
 Author: Tatsuhiro Tsujikawa <tujikawa at users dot sourceforge dot net>
+WWW: http://aria2.sourceforge.net/

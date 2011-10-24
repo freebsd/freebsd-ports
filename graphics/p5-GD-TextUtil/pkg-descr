@@ -13,7 +13,3 @@ GD::Text::Wrap
     Wrap a long string between a right and left margin, starting at a
     certain y coordinate. Layout the text flush left, flush right,
     center, or justified.
-
-
---dima
-dima@Chg.RU

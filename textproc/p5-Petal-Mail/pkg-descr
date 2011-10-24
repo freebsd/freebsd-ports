@@ -5,5 +5,5 @@ has to follow a certain syntax which is defined in this documentation.
 Since Petal::Mail's is a subclass of Petal, its API is the same. Which 
 means you need to read about Petal before you can use Petal::Mail.
 
-WWW: http://search.cpan.org/dist/Petal-Mail
 Author: Jean-Michel Hiver
+WWW: http://search.cpan.org/dist/Petal-Mail

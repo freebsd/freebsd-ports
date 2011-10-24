@@ -14,7 +14,6 @@ Main advantages over other tar implementations:
 				  old tar, gnu tar, ansi tar, star.
 	fully ansi compatible	- star is fully ANSI/Posix 1003.1 compatible.
 
-WWW: http://cdrecord.berlios.de/old/private/star.html
-
+Please mail bugs and suggestions to:
 Author: Joerg Schilling <js@cs.tu-berlin.de>
-Please mail bugs and suggestions to him.
+WWW: http://cdrecord.berlios.de/old/private/star.html

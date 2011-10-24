@@ -4,5 +4,5 @@ database handle, adding methods that support ad-hoc SQL generation and
 query execution in a single call. Dynamic subclassing based on database
 server type enables cross-platform portability.
 
-WWW: http://search.cpan.org/dist/DBIx-SQLEngine/
 Author: Matthew Simon Cavalletto
+WWW: http://search.cpan.org/dist/DBIx-SQLEngine/

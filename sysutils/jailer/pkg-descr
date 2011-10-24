@@ -13,6 +13,3 @@ inside that jail.  The signals are:
   -TERM	Shutdown the jail and exit the jailer
 
 WWW: http://memberwebs.com/nielsen/freebsd/jails/jailer/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

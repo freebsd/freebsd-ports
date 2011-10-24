@@ -6,7 +6,5 @@ Since CD-ROM books themseves are stands on the ISO 9660 format,
 you can mount the discs by the same way as other ISO 9660 discs.
 
 You can get more information from ja-eblook.info.
-You can also get information from their website.
-WWW: http://openlab.ring.gr.jp/lookup/eblook/
 
---- Porting by shige <shige@FreeBSD.org>
+WWW: http://openlab.ring.gr.jp/lookup/eblook/

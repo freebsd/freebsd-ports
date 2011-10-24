@@ -3,5 +3,5 @@ and SCP (Secure Copy) connections. Nearly all connection-parameters
 are adjusted by one mouseclick (compression, port-forwarding, etc.).
 It also manages the SSH-agent.
 
-WWW: http://secpanel.net/
 Author: Steffen Leich <steffen.leich _at_ gmail.com>
+WWW: http://secpanel.net/

@@ -18,5 +18,5 @@ context name does not match the start context name, then it is ignored.
 The module does not even check if the configuration contexts have valid 
 names.
 
-WWW: http://search.cpan.org/dist/Apache-ConfigParser
 Author: Blair Zajac <blair@orcaware.com>.
+WWW: http://search.cpan.org/dist/Apache-ConfigParser

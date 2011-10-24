@@ -3,6 +3,3 @@ document before sending it to a PerlSAX handler that prints it (like
 XML::Handler::Composer.)
 
 WWW: http://search.cpan.org/dist/XML-Filter-Reindent/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

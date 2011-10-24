@@ -6,5 +6,3 @@ supports APC Back-UPS Pro(TM) series.  The UPSd works as UPS driver,
 sensing line-failures, shutting down the system cleanly, and finally 
 shutting down the UPS itself.  This UPSd provides only the "dumb mode",
 and the advanced features are not supported.
-
- - Yoshifumi Watanabe

@@ -2,5 +2,5 @@ NewsFeed is an RSS/RDF/Atom reader and aggregator for UNIX-like
 operating systems. It is written in Python and uses Mark Pilgrim's
 Universal Feed Parser for downloading and parsing feeds.
 
-WWW: http://home.arcor.de/mdoege/newsfeed/
 Author: Martin C. Doege <mdoege@compuserve.com>
+WWW: http://home.arcor.de/mdoege/newsfeed/

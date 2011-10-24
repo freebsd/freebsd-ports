@@ -5,6 +5,3 @@ displayed in ASCII.
 
 tcpshow's output is simular to Sun Solaris's snoop(1M) command for
 network packet capture and inspection.
-
--- David
-   (obrien@NUXI.com)

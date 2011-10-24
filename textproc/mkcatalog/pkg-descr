@@ -42,6 +42,3 @@ usage: mkcatalog [-pq] install|deinstall dtd-subdirectory [catalog-filename]
                 from ${PREFIX}/share/sgml/docbook/catalog.
             2. Delete `CATALOG "docbook/catalog"'
                 from ${PREFIX}/share/sgml/catalog.
-
----
-shige@FreeBSD.org

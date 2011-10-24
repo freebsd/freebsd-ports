@@ -5,7 +5,6 @@ them.
 xmine is freely redistributable.  It's mostly Xlib-based, but it
 requires Motif libraries for the menus.
 
-Author: Paul Falstad (pf@z-code.com)
 ===
 
 This version of xmine is based on Paul Falstad's version 1.0.3, as
@@ -15,6 +14,4 @@ without OSF/Motif.
 Since the game itself has some 3D look, linking against the famous
 Xaw3d library is highly recommended.
 
----
-enjoy,
-	Joerg Wunsch <joerg@FreeBSD.org>
+Author: Paul Falstad (pf@z-code.com)

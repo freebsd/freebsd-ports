@@ -14,8 +14,8 @@ as wu-ftpd xferlog and squid proxy logs, which can be either in
 standard text format or gzip compressed.
 
 Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix 
-Author:        Bradford L. Barrett 
 
 LICENSE: GPL2 or later
 
+Author: Bradford L. Barrett 
 WWW: http://www.mrunix.net/webalizer/

@@ -3,6 +3,3 @@ events.  It is useful in the case where you have a SAX1 parser but want
 to use a SAX2 handler or filter of some sort.
 
 WWW: http://search.cpan.org/dist/XML-Filter-SAX1toSAX2/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

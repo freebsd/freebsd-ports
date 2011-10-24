@@ -2,5 +2,5 @@ Parse::Win32Registry is a module for parsing Windows Registry files,
 allowing you to read the keys and values of a registry file without
 going through the Windows API.
 
-WWW: http://search.cpan.org/dist/Parse-Win32Registry/
 Author: James Macfarlane <jmacfarla@cpan.org>
+WWW: http://search.cpan.org/dist/Parse-Win32Registry/

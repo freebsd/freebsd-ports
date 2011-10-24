@@ -3,5 +3,3 @@ key/language/values triplets.  Using the Accept-Language: field sent by
 HTTP clients, they can pick the best fit language for that specific client.
 Apache::Language's usage is transparent
 and should prove to be quite convenient (and hopefully, efficient).
-
---will

@@ -10,6 +10,3 @@ XML Namespaces spec at http://www.w3.org/TR/REC-xml-names:
 NCNameChar, NCName, QName, Prefix and LocalPart.
 
 WWW: http://search.cpan.org/dist/XML-RegExp/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

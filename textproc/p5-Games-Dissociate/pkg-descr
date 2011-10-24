@@ -3,5 +3,5 @@ Dissociated Press algorithm, well known to Emacs users as "meta-x
 dissociate". The algorithm here is by no means a straight port of Emacs's 
 dissociate.el, but is instead merely inspired by it.
 
-WWW: http://search.cpan.org/dist/Games-Dissociate
 Author: Avi Finkel <avi@finkel.org>
+WWW: http://search.cpan.org/dist/Games-Dissociate

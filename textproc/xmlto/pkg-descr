@@ -8,5 +8,7 @@ htmlhelp, javahelp, man, pdf, ps, txt, xhtml, xhtml-nochunks.
 Currently the only XSL-T processor supported is xsltproc (textproc/libxslt).
 For DVI, PDF and PostScript output, PassiveTeX (print/passivetex) is required.
 
-Authors: Tim Waugh <tim@cyberelk.net>, Ondrej Vasik <ovasik@redhat.com>
-WWW:	 http://fedorahosted.org/xmlto/
+Author:	Tim Waugh <tim@cyberelk.net>
+	Ondrej Vasik <ovasik@redhat.com>
+
+WWW: http://fedorahosted.org/xmlto/

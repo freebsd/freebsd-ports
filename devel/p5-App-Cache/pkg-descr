@@ -14,5 +14,5 @@ directory. For example, the Parse::BACKPAN::Packages cache is actually
 stored underneath "~/.parse_backpan_packages/cache/". This is so that 
 permissions are not a problem - it is a per-user, per-application cache.
  
-WWW: http://search.cpan.org/dist/App-Cache/
 Author: Leon Brocard <acme@astray.com>
+WWW: http://search.cpan.org/dist/App-Cache/

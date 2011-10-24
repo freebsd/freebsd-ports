@@ -3,8 +3,5 @@ from or writes data to in-core strings.  It is essentially a simplification
 of parts of the IO-stringy collection of modules.  As such, IO::String is a
 replacement for IO::Scalar.
 
-WWW: http://search.cpan.org/dist/IO-String/
-
 Author:	Gisle Aas <gisle@aas.no>
-
--- Johann Visagie <johann@egenetics.com>
+WWW: http://search.cpan.org/dist/IO-String/

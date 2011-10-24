@@ -4,5 +4,5 @@ I originally submitted this as a kernel module, but after
 seeing George Reid's plasma-kmod port I realised that was
 a better way to do it.
 
-WWW: http://www.witchspace.com/kix.html
 Author: Jonathan Belson <jon@witchspace.com>
+WWW: http://www.witchspace.com/kix.html

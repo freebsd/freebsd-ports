@@ -3,5 +3,4 @@ Currently this module only exists to complement
 POE::Component::Server::FTP.
 
 Author: L.M.Orchard <deus_x@pobox.com>, David Davis <xantus@cpan.org>
-
 WWW: http://search.cpan.org/dist/Filesys-Virtual/

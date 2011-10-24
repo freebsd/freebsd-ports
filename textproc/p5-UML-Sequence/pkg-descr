@@ -18,7 +18,5 @@ Then do this:
 
     genericseq.pl UML::Sequence::SimpleSeq inputfile | seq2svg.pl > output.svg
 
-
-WWW: http://search.cpan.org/dist/UML-Sequence/
-
 Author: Phil Crow <philcrow2000@yahoo.com>
+WWW: http://search.cpan.org/dist/UML-Sequence/

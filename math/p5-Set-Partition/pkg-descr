@@ -8,5 +8,5 @@ according to the given partitioning. All possible arrangements are
 returned, and the object returns undef when the entire combination space 
 has been exhausted.
 
-WWW: http://search.cpan.org/dist/Set-Partition
 Author: David Landgren (http://www.landgren.net/perl/)
+WWW: http://search.cpan.org/dist/Set-Partition

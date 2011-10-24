@@ -3,7 +3,5 @@ appropriate compilers and linkers in a cross-platform manner. It was motivated
 by the Module::Build project, but may be useful for other purposes as well.
 However, it is not intended as a general cross-platform interface to all your C
 building needs. That would have been a much more ambitious goal!
-WWW:	http://search.cpan.org/dist/ExtUtils-CBuilder/
 
--- 
-mat
+WWW:	http://search.cpan.org/dist/ExtUtils-CBuilder/

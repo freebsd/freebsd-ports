@@ -2,5 +2,3 @@ pchar finds bandwidth, delay, average queue and loss rate of hops between
 source and destination.
 
 WWW: http://www.kitchenlab.org/www/bmah/Software/pchar/
--- 
-David E. O'Brien         <obrien@cs.ucdavis.edu>

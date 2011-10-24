@@ -7,6 +7,3 @@ crypto functions are performed (see the OpenCA::OpenSSL module for
 this).
 
 WWW: http://search.cpan.org/dist/OpenCA-PKCS7/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

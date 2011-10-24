@@ -10,6 +10,3 @@ elements are in a namespace http://www.locus.cz/XML/DifferenceMarkup
 (the diff will fail on input trees which already use that namespace).
 
 WWW: http://search.cpan.org/dist/XML-DifferenceMarkup/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

@@ -3,6 +3,7 @@ formats by applying a chain of filters. For instance, you might apply a
 filter which will cause URIs in text to be presented as links if the text 
 is exported as HTML.
 
+Author:	Simon Cozens
+	Tony Bowden <bug-Text-Decorator@rt.cpan.org>
+
 WWW: http://search.cpan.org/dist/Text-Decorator
-Authors: Simon Cozens
-         Tony Bowden <bug-Text-Decorator@rt.cpan.org>

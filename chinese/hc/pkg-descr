@@ -5,5 +5,3 @@ GB (GuoBiao) refers to the standard implementation of "GB2312-80" of
 Mainland China, in which the two bytes representing a GB code have their
 most significant bit set to 1.  BIG-5 refers to the Big Five standard
 published in 1984 by Taiwan's Institute for Information Industry.
-
--- David O'Brien

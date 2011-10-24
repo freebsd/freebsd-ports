@@ -21,11 +21,10 @@ Note by maintainer:
 	attach to a DAV server. See the use of the NormalizeUsername
 	directive.
 
-Authors:
-- Taisuke Yamada  <tai@iij.ad.jp>
-- Kunio Miyamoto  <wakatono@todo.gr.jp>
-- Akira YOSHIYAMA <yosshy@debian.or.jp>
-- Kazuhiko Iwama  <iwama@ymc.ne.jp>
-- IWAMURO Motonori <iwa@mmp.fujitsu.co.jp>
+Author:	Taisuke Yamada  <tai@iij.ad.jp>
+	Kunio Miyamoto  <wakatono@todo.gr.jp>
+	Akira YOSHIYAMA <yosshy@debian.or.jp>
+	Kazuhiko Iwama  <iwama@ymc.ne.jp>
+	IWAMURO Motonori <iwa@mmp.fujitsu.co.jp>
 
 WWW: http://webdav.todo.gr.jp/

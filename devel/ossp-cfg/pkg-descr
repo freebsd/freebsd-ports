@@ -5,5 +5,3 @@ sequence. This means the configuration syntax has a recursive structure and
 this way allows to create configurations with arbitrarily nested sections. 
 
 WWW: http://www.ossp.org/pkg/lib/cfg/
-
--- AlanE@FreeBSD.org

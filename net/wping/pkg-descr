@@ -3,8 +3,5 @@ user-defined list of hosts and produces a Web page that contains a current
 ping graph and a historic ping graph over a specified time period. Ping 
 response times are averaged in order to give a smooth reading.
 
+Author:	<richard@x-router.com>
 WWW:	http://www.x-router.com/
-AUTHOR:	<richard@x-router.com>
-
-	- Michael L. Hostbaek
-	<mich@FreeBSD.org>

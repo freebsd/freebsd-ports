@@ -10,6 +10,5 @@ What it does:
 What it doesn't do (yet):
 - Doesn't limit number of concurrent connections
 
-AUTHOR:		<dizzy@roedu.net>
-
-WWW:		http://ahriman.bucharest.roedu.net/unix2tcp/
+Author: <dizzy@roedu.net>
+WWW: http://ahriman.bucharest.roedu.net/unix2tcp/

@@ -8,6 +8,5 @@ altered form the first time they are run. The result is cached into
 Perl has native support for ".pmc" files. It always checks for them,
 before loading a ".pm" file.
 
-
 Author:	Ingy  <ingy@cpan.org>
 WWW:	http://search.cpan.org/dist/Module-Compile/

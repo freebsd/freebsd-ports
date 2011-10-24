@@ -1,5 +1,3 @@
 tftp-hpa is portable, BSD derived tftp server.  It supports advanced
 options such as blksize, blksize2, tsize, timeout, and utimeout.
 It also supported rulebased security options.
-
--- Brooks Davis <brooks@FreeBSD.org>

@@ -14,5 +14,5 @@ The grammar.l file requires the same syntax as flex(1); that is, the
 actions are written in C . See the flex(1) documentation to learn the 
 syntax, or fetch the sample t/grammar.l file inside this package.
 
-WWW: http://search.cpan.org/dist/Parse-Flex
 Author: Ioannis Tambouras <ioannis@earthlink.net>
+WWW: http://search.cpan.org/dist/Parse-Flex

@@ -4,5 +4,5 @@ as plain text files into TAP files.
 TAP files can be used in most ZX Spectrum emulators and can be concatenated
 together using cat(1).
 
-WWW: http://www.worldofspectrum.org/utilities.html
 Author: Martijn van der Heide
+WWW: http://www.worldofspectrum.org/utilities.html

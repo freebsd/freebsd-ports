@@ -2,5 +2,5 @@ Package::Constants lists all the constants defined in a certain package.
 This can be useful for, among others, setting up an auto-generated 
 @EXPORT/@EXPORT_OK for a Constants.pm file.
 
-WWW: http://search.cpan.org/dist/Package-Constants
 Author: Jos Boumans <kane@cpan.org>
+WWW: http://search.cpan.org/dist/Package-Constants

@@ -8,5 +8,5 @@ expiration date representation provided by different servers (almost
 all gTLD registrars and some ccTLD registrars are covered). 
 Now obtaining of domain creation date is also supported.
 
-WWW: http://search.cpan.org/dist/Net-Domain-ExpireDate/
 Author: Walery Studennikov
+WWW: http://search.cpan.org/dist/Net-Domain-ExpireDate/

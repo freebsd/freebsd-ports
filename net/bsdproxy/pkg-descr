@@ -9,5 +9,5 @@ bsdproxy has been used to proxy HTTP, HTTPS, telnet, and mysql without
 any problems.  It should be able to serve as a transparent proxy for 
 anything over a TCP/IP connection.
 
-WWW:		http://daveb.net/bsdproxy/
 Author:		Dave Bailey <dave@daveb.net>
+WWW:		http://daveb.net/bsdproxy/

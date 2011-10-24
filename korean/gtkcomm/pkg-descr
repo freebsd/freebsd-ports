@@ -4,6 +4,4 @@ gtkcomm
 gtkcomm is a controlling tool for serial interface(RS-232C or such).
 It is for hardware control using serial ports.
 
---
-Ports by CHOI Junho <cjh@kr.freebsd.org>
 WWW: http://kldp.net/projects/gtkcomm/

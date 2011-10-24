@@ -1,8 +1,5 @@
 Hackbot is a host exploration tool and bannergrabber. It scans numerous 
 services and vulnerabilities.
 
+Author:	Marco van Berkum <m.v.berkum@obit.nl>
 WWW:	http://ws.obit.nl/
-AUTHOR:	Marco van Berkum <m.v.berkum@obit.nl>
-
-	- Michael L. Hostbaek
-   	mich@FreeBSD.org

@@ -1,5 +1,5 @@
 This modules is a re-implementation of Algorithm::Dependency using only 
 objects instead of object ids, making use of Set::Object for book-keeping.
 
-WWW: http://search.cpan.org/dist/Algorithm-Dependency-Objects
 Author: Yuval Kogman & Stevan Little
+WWW: http://search.cpan.org/dist/Algorithm-Dependency-Objects

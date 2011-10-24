@@ -2,6 +2,6 @@ GNUstepWrapper provides an easy way to create GNUstep app-wrappers of
 non-GNUstep applications. It is the most useful in conjunction with
 Enrico Sersale's GWorkspace environment.
 
-Author: Raffael Herzog
-
 LICENSE: GPL2 or later
+
+Author: Raffael Herzog

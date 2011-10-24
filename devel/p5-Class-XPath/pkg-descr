@@ -8,5 +8,5 @@ time I expect the subset of XPath supported to grow. See the SYNTAX
 documentation in the module POD for details on the current level of
 support.
 
-WWW: http://search.cpan.org/dist/Class-XPath/
 Author: Sam Tregar <sam@tregar.com>
+WWW: http://search.cpan.org/dist/Class-XPath/

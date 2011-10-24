@@ -34,5 +34,5 @@ time because it has to regenerate the complete Math::Symbolic parser the
 first time you use this module in your code. The run time performance 
 penalty should be low, however.
 
-WWW: http://search.cpan.org/dist/Math-SymbolicX-ParserExtensionFactory
 Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
+WWW: http://search.cpan.org/dist/Math-SymbolicX-ParserExtensionFactory

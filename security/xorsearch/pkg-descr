@@ -15,5 +15,5 @@ If the search string is found, XORSearch will print it until the 0
 which ever comes first. 50 is the default value, it can be changed
 with option -l. Unprintable characters are replaced by a dot.
 
-WWW: http://blog.didierstevens.com/programs/xorsearch/
 Author: Didier Stevens
+WWW: http://blog.didierstevens.com/programs/xorsearch/

@@ -5,5 +5,4 @@ uses qstat to query a game server and displays the current map name
 and number of players
 
 Author: Michael Tilstra <tadpol@tadpol.org>
-
 WWW: http://tadpol.org/projects/GKrellM_qst.html

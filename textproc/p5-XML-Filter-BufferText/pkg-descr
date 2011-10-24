@@ -5,6 +5,3 @@ filter does the trivial but oft-repeated task of putting all characters
 into a single event.
 
 WWW: http://search.cpan.org/dist/XML-Filter-BufferText/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

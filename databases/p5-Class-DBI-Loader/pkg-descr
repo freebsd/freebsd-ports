@@ -12,5 +12,5 @@ class names are defined by table names and namespace option.
 
 Class::DBI::Loader supports MySQL, Postgres and SQLite. 
 
-WWW: http://search.cpan.org/dist/Class-DBI-Loader/
 Author: Daisuke Maki <dmaki@cpan.org>
+WWW: http://search.cpan.org/dist/Class-DBI-Loader/

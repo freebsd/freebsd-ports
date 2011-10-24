@@ -1,8 +1,5 @@
 vcp copies files and directories in a curses interface,
 and behaves much like cp.
 
-WWW:		http://members.iinet.net.au/~lynx/vcp
-AUTHOR:		Daniel Bryan <so1o@bsdmail.com>
-
-       - Michael L. Hostbaek
-       mich@FreeBSD.org
+Author: Daniel Bryan <so1o@bsdmail.com>
+WWW: http://members.iinet.net.au/~lynx/vcp

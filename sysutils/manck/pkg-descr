@@ -7,7 +7,6 @@ DESCRIPTION
      Manck check manual pages. Currently supported section FILES, NAME, SEE
      ALSO, and SYNOPSIS.
 ...
-AUTHOR
-     Wolfram Schneider <wosch@cs.tu-berlin.de>
-
  FreeBSD                         July 25, 1995                               2
+
+Author: Wolfram Schneider <wosch@cs.tu-berlin.de>

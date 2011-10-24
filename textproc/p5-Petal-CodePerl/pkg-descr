@@ -16,5 +16,5 @@ a bit slow to load the module but this won't matter much unless you have
 turned off caching. It won't matter at all for something like Apache's 
 mod_perl.
 
-WWW: http://search.cpan.org/dist/Petal-CodePerl
 Author: Fergal Daly <fergal@esatclear.ie>
+WWW: http://search.cpan.org/dist/Petal-CodePerl

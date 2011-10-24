@@ -12,5 +12,5 @@ More than one client can connect to the served pseudo-terminal, either
 using tm as a client or telnet for TCP. You can choose if they are
 only allowed to read, or they can also contribute on input.
 
-WWW: http://vicerveza.homeunix.net/~viric/soft/tm/
 Author: Lluis Batlle i Rossell <viric_at_vicerveza_dot_homeunix_dot_net>
+WWW: http://vicerveza.homeunix.net/~viric/soft/tm/

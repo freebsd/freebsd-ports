@@ -7,6 +7,5 @@ Version 0.11:
 - Fixed uninitialized value warnings
 - Create SourceForge project
 
-WWW: http://fh-unget.sourceforge.net/
-
 Author: David Coppit <david@coppit.org>
+WWW: http://fh-unget.sourceforge.net/

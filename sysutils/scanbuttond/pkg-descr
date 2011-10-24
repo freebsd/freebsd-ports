@@ -7,6 +7,5 @@ the button number as an argument.
 
 The supported scanner backends currently are: epson, niash, plustek, snapscan
 
-
 Author:	Bernhard Stiftner <root84@users.sourceforge.net>
 WWW:	http://scanbuttond.sourceforge.net/

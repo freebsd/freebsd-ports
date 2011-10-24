@@ -4,5 +4,5 @@ like a physical stopwatch. It can also be used as a countdown timer.
 Stopwatch has millisecond accuracy and no artificial limit on hours.
 Stopwatch runs on UNIX, Windows, and MacOS.
 
-WWW: http://expect.nist.gov/stopwatch/
 Author: Don Libes <libes@nist.gov>
+WWW: http://expect.nist.gov/stopwatch/

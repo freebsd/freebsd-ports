@@ -2,5 +2,4 @@ This is an Apache module that rejects and logs chunked requests before
 (eventually vulnerable) chunking routines can read them.
 
 Author: Cris Bailiff <c.bailiff+blowchunks@devsecure.com>
-
 WWW: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2002-0392

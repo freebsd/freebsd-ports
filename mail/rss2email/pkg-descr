@@ -1,5 +1,5 @@
 rss2email is a simple Python script that lets you subscribe to a
 list of XML newsfeeds and get new items sent to you by email.
 
-WWW: http://rss2email.infogami.com/
 Author: Aaron Swartz <me@aaronsw.com>
+WWW: http://rss2email.infogami.com/

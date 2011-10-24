@@ -3,5 +3,5 @@ files are best supported. pxlib provides a very simple api to read the
 header and the data records of Paradox files. I also provides functions
 to convert the data into the hosts data format (little or big endian).
 
-WWW: http://pxlib.sourceforge.net
 Author: Uwe Steinmann <uwe@steinmann.cx>
+WWW: http://pxlib.sourceforge.net

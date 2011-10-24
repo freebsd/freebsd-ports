@@ -4,5 +4,3 @@ with Crypt::Twofish 1.0, but its use in new code is strongly
 discouraged.
 
 WWW: http://search.cpan.org/dist/Crypt-Twofish/
-
---will

@@ -4,6 +4,3 @@ PerlSAX event producer (like XML::Parser::PerlSAX) and the output
 streams are PerlSAX handlers or filters.
 
 WWW: http://search.cpan.org/dist/XML-Filter-SAXT/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

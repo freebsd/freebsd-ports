@@ -10,5 +10,5 @@ Spoon.pm inherits from Spiffy.pm.
 Spoon is not an application in and of itself. (As compared to Kwiki) You
     need to build your own applications from it.
 
-WWW: http://search.cpan.org/dist/Spoon/
 Author:	Brian Ingerson <INGY at cpan.org>
+WWW: http://search.cpan.org/dist/Spoon/

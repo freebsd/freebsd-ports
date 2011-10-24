@@ -6,5 +6,5 @@ for its command-line arguments.  Tokens are separated by whitespace,
 and can be delimited by single or double quotes.  The module also
 respects backslash escapes.
 
-WWW: http://search.cpan.org/dist/Text-Shellwords/
 Author: Lincoln Stein <lstein@cshl.org>.
+WWW: http://search.cpan.org/dist/Text-Shellwords/

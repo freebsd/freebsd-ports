@@ -15,5 +15,5 @@ persists in the $lp object between setter() and getter().
         sub setter { my $x = "some value" }
         sub getter { print my $x, "\n" }
 
-WWW: http://search.cpan.org/dist/Lexical-Persistence
 Author: Rocco Caputo <rcaputo@cpan.org>
+WWW: http://search.cpan.org/dist/Lexical-Persistence

@@ -3,5 +3,5 @@ any INSERTs, UPDATEs and DELETEs on a specific table into another table.
 The second part of tablelog is able to restore the state of the original
 table or of a specific row for any time in the past.
 
-WWW: http://tablelog.projects.postgresql.org/
 Author: Andreas Scherbaum <ads-pgfoundry @nospam@ wars-nicht.de>
+WWW: http://tablelog.projects.postgresql.org/

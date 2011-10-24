@@ -12,6 +12,5 @@ print out your network in many ways (see documentation).  There
 is also a graphical output function that will return the network
 in an encapsulated postscript, SVG, or text form.
 
-WWW:	http://search.cpan.org/dist/Algorithm-Networksort/
-
 Author:	John M. Gamble <jgamble@ripco.com>
+WWW:	http://search.cpan.org/dist/Algorithm-Networksort/

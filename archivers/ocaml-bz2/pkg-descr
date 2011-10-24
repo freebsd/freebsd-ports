@@ -10,4 +10,5 @@ bzip2 compression algorithm.
 
 Author:	Olivier Andreu <oandrieu@gmail.com> and
         Stefano Zacchiroli <zack@upsilon.cc>
+
 WWW:	http://camlbz2.forge.ocamlcore.org

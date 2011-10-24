@@ -12,6 +12,3 @@ shell scripts and other software. When viewing the output of external software,
 MultiTail can mimic the functionality of tools like 'watch' and such.
 
 WWW: http://www.vanheusden.com/multitail/
-
--- Oliver Braun
-<obraun@FreeBSD.org>

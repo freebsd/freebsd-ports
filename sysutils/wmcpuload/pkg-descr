@@ -1,5 +1,5 @@
 This is a port of wmcpuload, which displays the current cpu-load in a
 simulated lcd-display, which supports background lighting.
 
-WWW: http://seiichisato.jp/dockapps/#wmcpuload
 Author: Seiichi SATO <me@seiichisato.jp>
+WWW: http://seiichisato.jp/dockapps/#wmcpuload

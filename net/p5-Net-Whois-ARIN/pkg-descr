@@ -3,5 +3,5 @@ takes care of connecting to an ARIN whois server, sending your whois
 requests, and parsing the whois output. The whois records are returned as 
 lists of Net::Whois::ARIN::* instances.
 
-WWW: http://search.cpan.org/dist/Net-Whois-ARIN/
 Author: Todd Caine <todd.caine at gmail.com>
+WWW: http://search.cpan.org/dist/Net-Whois-ARIN/

@@ -10,6 +10,3 @@ openvanilla-modules installs the input method modules for OpenVanilla.
 The SCIM OpenVanilla loader does not currently support output filters.
 
 WWW: http://openvanilla.org/
-
--- Leland Wang
-llwang@infor.org

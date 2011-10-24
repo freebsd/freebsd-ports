@@ -5,8 +5,5 @@ This is a tool for specifying types, functions, and constants to
 import into a Scheme interpreter, and for generating code (in C) to
 interface these to the Guile and RScheme interpreters in particular.
 
-Author
-======
- Christopher Lee (chrislee@ri.cmu.edu)
-
+Author: Christopher Lee (chrislee@ri.cmu.edu)
 WWW: http://www.gnucash.org/

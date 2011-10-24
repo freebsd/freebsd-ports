@@ -5,6 +5,3 @@ allows importing of Dilbert strips from disk or alternate URLs, and
 has a random strip interface to return strips from the database.
 
 WWW: http://search.cpan.org/dist/WWW-Dilbert/
-
--- Cheng-Lung Sung
-clsung at dragon2.net

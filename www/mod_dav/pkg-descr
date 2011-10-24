@@ -6,16 +6,8 @@ mod_dav is made by Greg Stein.
 
 It is an Open Source module, provided under an Apache-style license.
 
-
 mod_dav requires that Apache 1.3.6 or later be already installed
 on your system. If this is not the case please select your
 preferred Apache configuration from the ports distribution.
 
-
-More information about mod_dav can be found on the web site.
-
 WWW: http://www.webdav.org/mod_dav/
-
---
-Patrick Bihan-Faou
-www.mindstep.com

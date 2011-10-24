@@ -4,5 +4,5 @@ code in many programming languages.
 cloc contains code from David Wheeler's SLOCCount and Damian Conway and
 Abigail's Perl module Regexp::Common. 
 
-WWW: http://cloc.sourceforge.net/
 Author: Al Danial <al.danial@gmail.com>
+WWW: http://cloc.sourceforge.net/

@@ -10,6 +10,3 @@ memory and speed are at a premium, such as mod_perl.
 It has full support for proxy requests and authenticated requests.
 
 WWW: http://search.cpan.org/dist/HTTP-GHTTP/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

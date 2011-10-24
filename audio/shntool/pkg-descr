@@ -6,5 +6,5 @@ format module to handle that particular file type.
 Apart from wav shntool supports many formats through helper programs.
 Please see the manpage for more info.
 
-WWW: http://www.etree.org/shnutils/shntool/
 Author: Jason Jordan <shnutils at freeshell dot org>
+WWW: http://www.etree.org/shnutils/shntool/

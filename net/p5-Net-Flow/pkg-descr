@@ -8,5 +8,5 @@ and Flow Concentrator by using the combination of both function. And also,
 you can make the flexible Collector which can receive any Templates
 by using the Storable perl module.
 
-AUTHOR:	Atsushi Kobayashi <akoba@nttv6.net>
+Author:	Atsushi Kobayashi <akoba@nttv6.net>
 WWW:	http://search.cpan.org/dist/Net-Flow/

@@ -5,7 +5,3 @@ If the league members are (Inf, 1 .. 2n-1), then in round i, i can be
 paired with Inf, and a can meet b, where a+b = 2i (mod 2n-1).
 
 WWW: http://search.cpan.org/dist/Games-Tournament-RoundRobin/
-
--- 
-Aaron Dalton
-aaron@FreeBSD.org

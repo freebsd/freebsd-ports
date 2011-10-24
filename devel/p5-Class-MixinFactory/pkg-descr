@@ -5,5 +5,5 @@ A factory is provided to generate the mixed classes with multiple
 inheritance. A NEXT method allows method redispatch up the inheritance 
 chain.
 
-WWW: http://search.cpan.org/dist/Class-MixinFactory
 Author: Matthew Simon Cavalletto
+WWW: http://search.cpan.org/dist/Class-MixinFactory

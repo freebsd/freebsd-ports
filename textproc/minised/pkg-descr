@@ -12,5 +12,5 @@ Along a lot fixes and cleanups, further speedups, and some missing features
 and POSIX conformance, we also added a test-suite to the package, so
 regressions are quickly and easily uncovered.
 
-WWW: http://www.exactcode.de/oss/minised/
 Author: ExactCode <info@exactcode.de>
+WWW: http://www.exactcode.de/oss/minised/
