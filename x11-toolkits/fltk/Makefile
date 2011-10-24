@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	1.1.10
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/${PORTVERSION}
@@ -19,7 +18,6 @@ COMMENT=	Cross-platform C++ graphical user interface toolkit
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xft
 USE_GL=		gl glu
@@ -28,7 +26,7 @@ CONFIGURE_ARGS+=--enable-threads \
 		--enable-shared \
 		--enable-xft
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${WRKSRC}/src -L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

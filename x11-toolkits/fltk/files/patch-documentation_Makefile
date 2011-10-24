@@ -1,24 +1,25 @@
---- documentation/Makefile.orig	2007-02-06 19:35:28.000000000 +0000
-+++ documentation/Makefile	2010-04-29 08:51:10.000000000 +0000
-@@ -230,18 +230,15 @@
- 
+--- documentation/Makefile.orig	2011-08-27 01:33:42.000000000 +0000
++++ documentation/Makefile	2011-08-27 01:39:59.000000000 +0000
+@@ -80,6 +80,7 @@
  depend:
  
--install: $(MANPAGES)
+ install: $(MANPAGES)
 +docinstall:
- 	echo "Installing documentation files in $(DESTDIR)$(docdir)..."
+ 	echo "Installing documentation files in $(DESTDIR)$(docdir) ..."
  	-$(INSTALL_DIR) $(DESTDIR)$(docdir)
- 	for file in $(HTMLFILES) $(IMAGEFILES) index.html; do \
- 		$(INSTALL_DATA) $$file $(DESTDIR)$(docdir); \
- 	done
+ 	if test -f html/index.html ; then \
+@@ -91,12 +92,9 @@
+ 	  echo "Installing fltk.pdf in $(DESTDIR)$(docdir) ..."; \
+ 	  $(INSTALL_DATA) fltk.pdf $(DESTDIR)$(docdir); \
+ 	fi
 +
 +install: $(MANPAGES)
- 	echo "Installing man pages in $(DESTDIR)$(mandir)..."
+ 	echo "Installing man pages in $(DESTDIR)$(mandir) ..."
 -	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat1
--	$(INSTALL_MAN) fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
--	$(INSTALL_MAN) fltk-config.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk-config.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
 -	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat3
--	$(INSTALL_MAN) fltk.$(CAT3EXT) $(DESTDIR)$(mandir)/cat3
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk.$(CAT3EXT) $(DESTDIR)$(mandir)/cat3
  	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/man1
- 	$(INSTALL_MAN) fluid.man $(DESTDIR)$(mandir)/man1/fluid.1
- 	$(INSTALL_MAN) fltk-config.man $(DESTDIR)$(mandir)/man1/fltk-config.1
+ 	$(INSTALL_MAN) $(SRC_DOCDIR)/fluid.man $(DESTDIR)$(mandir)/man1/fluid.1
+ 	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk-config.man $(DESTDIR)$(mandir)/man1/fltk-config.1
