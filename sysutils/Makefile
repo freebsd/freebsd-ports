@@ -945,6 +945,7 @@
     SUBDIR += weedit
     SUBDIR += whatpix
     SUBDIR += whowatch
+    SUBDIR += wiimms
     SUBDIR += wmapm
     SUBDIR += wmapmload
     SUBDIR += wmbattery
