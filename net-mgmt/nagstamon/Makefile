@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagstamon
-PORTVERSION=	0.9.7.1
+PORTVERSION=	0.9.8
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION} \
 		CRITICAL/.
@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Nagios status monitor for your desktop
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools
@@ -22,8 +24,6 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2 librsvg2
-
-LICENSE=	GPLv2
 
 MAN1=		nagstamon.1
 
