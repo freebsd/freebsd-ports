@@ -19,7 +19,7 @@ bin/mpegtranscode
 bin/mplex
 bin/multiblend.flt
 bin/pgmtoy4m
-%%PNG:%%bin/png2yuv
+%%GTK2:%%%%PNG:%%bin/png2yuv
 bin/pnmtoy4m
 bin/ppmtoy4m
 bin/transist.flt
