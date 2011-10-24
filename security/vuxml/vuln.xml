@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="edf47177-fe3f-11e0-a207-0014a5e3cda6">
+    <topic>phpLDAPadmin -- Remote PHP code injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpldapadmin</name>
+	<range><ge>1.2.0</ge><lt>1.2.1.1_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>EgiX (n0b0d13s at gmail dot com) reports:</p>
+	<blockquote cite="http://packetstormsecurity.org/files/106120/phpldapadmin-inject.txt">
+	  <p>The $sortby parameter passed to 'masort' function in file
+	    lib/functions.php isn't properly sanitized before being used in
+	    a call to create_function() at line 1080. This can be exploited
+	    to inject and execute arbitrary PHP code. The only possible attack
+	    vector is when handling the 'query_engine' command, in which input
+	    passed through $_REQUEST['orderby'] is passed as $sortby parameter
+	    to 'masort' function.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://packetstormsecurity.org/files/106120/phpldapadmin-inject.txt</url>
+      <url>http://sourceforge.net/tracker/?func=detail&amp;aid=3417184&amp;group_id=61828&amp;atid=498546</url>
+    </references>
+    <dates>
+      <discovery>2011-10-23</discovery>
+      <entry>2011-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d21a287-fce0-11e0-a828-00235a5f2c9a">
     <topic>kdelibs4, rekonq -- input validation failure</topic>
     <affects>
