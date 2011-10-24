@@ -1,6 +1,7 @@
 This is a DBI-for-Ruby.  It is designed to behave like the DBI you
 know from Perl.
 
-Authors:	Rainer Perl <rainer.perl@sprytech.com>,
-		Michael Neumann <neumann@s-direktnet.de>
+Author:	Rainer Perl <rainer.perl@sprytech.com>,
+	Michael Neumann <neumann@s-direktnet.de>
+
 WWW:	http://ruby-dbi.sourceforge.net/

@@ -4,5 +4,5 @@ smap sends off various SIP requests awaiting responses from SIP
 enabled DSL router, proxies and user agents. It could be considered
 a mashup of nmap and sipsak ;)
 
-WWW: http://www.wormulon.net/
 Author: Hendrik Scholz <hscholz@raisdorf.net>
+WWW: http://www.wormulon.net/

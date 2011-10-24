@@ -19,5 +19,3 @@ networks and hosts. A subset of the stuff you can do using hping:
 	- TCP/IP stack auditing.
 
 WWW: http://www.hping.org/
-
--- Nicolas Jombart <ecu@ipv42.net>

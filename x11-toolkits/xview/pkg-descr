@@ -12,11 +12,11 @@ the XView libraries and applications.
 This package contains the libraries, headers and support files
 necessary to build XView applications.
 
-WWW:	http://en.wikipedia.org/wiki/XView
-
 Source Notes
 ------------
 This version of the XView source corresponds to that provided with
 OpenWindows Version 3.2 from SunSoft Inc.  Libraries generated with this
 source should be interchangeable with those from the OpenWindows Version 3.2
 release.
+
+WWW:	http://en.wikipedia.org/wiki/XView

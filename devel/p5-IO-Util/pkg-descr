@@ -3,5 +3,5 @@ IO::Util - A selection of general-utility IO function
 This is a micro-weight module that exports just a couple of 
 functions of general utility in IO operations.
 
-WWW: http://search.cpan.org/dist/IO-Util/
 Author:	Domizio Demichelis
+WWW: http://search.cpan.org/dist/IO-Util/

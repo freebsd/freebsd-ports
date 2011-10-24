@@ -17,5 +17,3 @@ In order to use this tool you need:
 To use commitlog2cvsweb you have to track (at least) the
 cvsroot-common and cvsroot-src part of the FreeBSD CVS repository with
 cvsup. This requires about 32 megabytes disk space for the commit logs.
---
-Martin Kammerhofer <mkamm@gmx.net>

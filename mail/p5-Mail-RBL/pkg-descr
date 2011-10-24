@@ -13,5 +13,5 @@ The methods available are described below:
     addresses is in the list, the host will be considered in the list as
     a whole.
 
-AUTHOR: Luis E. Munoz <lem@cantv.net>
+Author: Luis E. Munoz <lem@cantv.net>
 WWW: http://search.cpan.org/dist/Mail-RBL/

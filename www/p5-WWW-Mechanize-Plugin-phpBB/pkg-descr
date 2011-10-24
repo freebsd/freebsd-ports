@@ -1,11 +1,11 @@
-WWW::Mechanize::Plugin::phpBB is a screen scraper for phpBB driven forum 
-sites. It can log into the phpBB web interface, pull forum and topics 
-names and perform administrative tasks like deleting posts.
+  WWW::Mechanize::Plugin::phpBB is a screen scraper for phpBB driven forum 
+  sites. It can log into the phpBB web interface, pull forum and topics 
+  names and perform administrative tasks like deleting posts.
 
-FUNCTIONALITY IS CURRENTLY LIMITED, READ ON WHAT'S AVAILABLE SO FAR.
+  FUNCTIONALITY IS CURRENTLY LIMITED, READ ON WHAT'S AVAILABLE SO FAR.
 
-WWW::Mechanize::Plugin::phpBB is implemented as a plugin to 
-WWW::Mechanize, using Joe McMahon's WWW::Mechanize::Pluggable framework.
+  WWW::Mechanize::Plugin::phpBB is implemented as a plugin to 
+  WWW::Mechanize, using Joe McMahon's WWW::Mechanize::Pluggable framework.
 
-WWW: http://search.cpan.org/dist/WWW-Mechanize-Plugin-phpBB/
 Author: Mike Schilli <m@perlmeister.com>
+WWW: http://search.cpan.org/dist/WWW-Mechanize-Plugin-phpBB/

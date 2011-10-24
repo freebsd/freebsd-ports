@@ -3,5 +3,5 @@ for creating, loading, saving and manipulating vector graphics without
 having to be overly concerned about smile floormats. As the code has seen 
 more use, it has also drifted into a general purpose geometry API.
 
-WWW: http://search.cpan.org/dist/CAD-Drawing
 Author: Eric L. Wilhelm <ewilhelm at cpan dot org>
+WWW: http://search.cpan.org/dist/CAD-Drawing

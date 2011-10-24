@@ -2,7 +2,5 @@ TkMOO is a Tk-based M** interface. It has support for triggers,
 gags, scripts, etc. It is a graphical alternative to using tintin++,
 tinyfugue, kmud, and others.
 
-WWW: http://www.awns.com/tkMOO-light/
 Author: Andrew Wilson <Andrew.Wilson@cm.cf.ac.uk>
-
--Adam <adam-ports@blacktabby.org>
+WWW: http://www.awns.com/tkMOO-light/

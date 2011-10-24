@@ -15,5 +15,5 @@ time on AMD Athlon XP 1800+ (the fastest mode encodes at 28.1x real-time
 and decodes at 24.7x real-time). Self-extracting (sfx) archives can also be
 created with a small overhead of just 54 KB.
 
-WWW: http://www.losslessaudio.org/
 Author: Florin Ghido <FlorinGhido@yahoo.com>
+WWW: http://www.losslessaudio.org/

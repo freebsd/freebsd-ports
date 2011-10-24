@@ -1,7 +1,5 @@
 Title:		CPM
 
-Author:		Helge Skrivervik, now (1994) helge@mellvik.no
-
 Description:
 
 Cpm lets UNIX users read and write standard cp/m 8" floppy disks and
@@ -18,3 +16,5 @@ Ported & maintained by: J"org Wunsch <joerg@FreeBSD.org>, 1994
 Frequently asked question:
 
 No, FreeBSD's floppy-disk driver does not (yet) understand FM diskettes.
+
+Author: Helge Skrivervik, now (1994) helge@mellvik.no

@@ -17,5 +17,5 @@ temporarily down or overloaded. I recommend that you recheck "broken"
 links a couple times over a long period (like a day or two) before you 
 decide they are really broken.
 
-WWW: http://search.cpan.org/dist/HTTP-SimpleLinkChecker
 Author: brian d foy <bdfoy@cpan.org>
+WWW: http://search.cpan.org/dist/HTTP-SimpleLinkChecker

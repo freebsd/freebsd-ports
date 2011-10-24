@@ -14,5 +14,3 @@ The C library can nevertheless be used stand-alone, without Perl.
 
 Author: Steffen Beyer <sb@engelschall.com>
 WWW: http://search.cpan.org/dist/Bit-Vector/
-
---will

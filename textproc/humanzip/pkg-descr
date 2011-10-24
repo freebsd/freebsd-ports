@@ -9,5 +9,5 @@ print size of documents.  Humanzip does not explictly try to reduce the
 size of the file as measured in bytes, although this usually happens 
 incidentally.
 
-WWW: http://savannah.nongnu.org/projects/humanzip/
 Author: Matthew Strait
+WWW: http://savannah.nongnu.org/projects/humanzip/

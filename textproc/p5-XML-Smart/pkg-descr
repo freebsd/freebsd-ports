@@ -13,6 +13,5 @@ of the data in the <?xml?> header.
 You can use XML::Smart with XML::Parser, or with the 2 standart parsers of
 XML::Smart:
 
-WWW: http://search.cpan.org/dist/XML-Smart/
-
 Author: Graciliano M. P. <gm@virtuasites.com.br>
+WWW: http://search.cpan.org/dist/XML-Smart/

@@ -3,6 +3,3 @@ driver.  A stylesheet passed to the constructor is applied to a document
 passed in as the parse_uri method argument.
 
 WWW: http://search.cpan.org/dist/XML-SAXDriver-Sablotron/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

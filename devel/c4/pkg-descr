@@ -10,5 +10,5 @@ provides a control file that is placed at the top of each client to
 set environment variables, such as P4PORT and P4CLIENT.  A man page is
 included.
 
-WWW:	http://www.perforce.com/perforce/loadsupp.html
 Author:	Neil Russell <caret@c-side.com>
+WWW:	http://www.perforce.com/perforce/loadsupp.html

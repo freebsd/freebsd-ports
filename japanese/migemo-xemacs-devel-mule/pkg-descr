@@ -6,6 +6,3 @@ To use Migemo, you must set following elisp to your own .emacs file.
 (load-library "migemo")
 
 WWW: http://migemo.namazu.org/
-
---
-MANTANI Nobutaka <nobutaka@nobutaka.com>

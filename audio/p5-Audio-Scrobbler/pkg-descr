@@ -1,5 +1,5 @@
 The Audio-Scrobbler module provides a Perl and command-line interface
 to Last.fm's AudioScrobbler - http://www.audioscrobbler.com/.
 
-WWW:		http://devel.ringlet.net/audio/Audio-Scrobbler/
 Author:		Peter Pentchev <roam@ringlet.net>
+WWW:		http://devel.ringlet.net/audio/Audio-Scrobbler/

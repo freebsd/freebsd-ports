@@ -9,8 +9,4 @@ Improved features among others and bugfixes: Microsoft CHAP support.
 To enable MSCHAP you need to optain a key from Microsoft, see the FAQ
 section in the users guide. Therefore this isn't enabled by default.
 
-Details are described at:
 WWW: http://www.cisco.com/warp/public/480/tacplus.shtml
-
--- Taras
-tasic@lucky.net

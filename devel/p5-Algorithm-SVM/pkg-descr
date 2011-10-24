@@ -3,6 +3,5 @@ Support Vector Machines provide a method for creating classification
 functions from a set of labeled training data, from which predictions 
 can be made for subsequent data sets.
 
-WWW:	http://search.cpan.org/dist/Algorithm-SVM/
-
 Author:	Cory Spencer <cspencer@sfu.ca>
+WWW:	http://search.cpan.org/dist/Algorithm-SVM/

@@ -4,5 +4,5 @@ system that supports multicasting), you will be able to receive incoming
 multicast transmissions and generate your own outgoing multicast
 packets.
 
-WWW: http://search.cpan.org/dist/IO-Socket-Multicast/
 Author: Lincoln Stein <lstein@cshl.org>
+WWW: http://search.cpan.org/dist/IO-Socket-Multicast/

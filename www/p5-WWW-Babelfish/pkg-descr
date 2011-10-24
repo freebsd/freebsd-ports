@@ -1,7 +1,5 @@
-WWW::Babelfish is a perl interface to obtain translations of text from
-babelfish.altavista.digital.com.
+  WWW::Babelfish is a perl interface to obtain translations of text from
+  babelfish.altavista.digital.com.
 
 Author: Daniel J. Urist <durist@world.std.com>
 WWW: http://search.cpan.org/dist/WWW-Babelfish/
-
---will

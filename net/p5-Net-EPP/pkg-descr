@@ -13,5 +13,5 @@ connections and send and receive responses over this connection.
 Net::EPP::Client also provides some time-saving features, such as being 
 able to provide request and response frames as Net::EPP::Frame objects.
 
-WWW: http://search.cpan.org/dist/Net-EPP-Client/
 Author: Gavin Brown <epp@centralnic.com>
+WWW: http://search.cpan.org/dist/Net-EPP-Client/

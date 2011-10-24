@@ -24,5 +24,5 @@ programs. Main features of LIBSVM include
   * Automatic model selection which can generate contour of cross valiation
     accuracy.
 
-WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 Author: Chih-Chung Chang and Chih-Jen Lin <cjlin@csie.ntu.edu.tw>
+WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/

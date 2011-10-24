@@ -1,6 +1,5 @@
 MIME::Charset provides informations about character sets used for MIME
 messages on Internet.
 
-
 Author: <hatuka@nezumi.nu>
 WWW: http://search.cpan.org/dist/MIME-Charset/

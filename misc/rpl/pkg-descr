@@ -3,8 +3,5 @@ strings in multiple text files. It can scan directories recursively and
 replace strings in all files found. The search can be limited to files 
 with certain filename suffixes (e.g. '.html', '.c', etc.).
 
+Author:		Joe Laffey <software@laffeycomputer.com>
 WWW:		http://www.laffeycomputer.com/rpl.html
-AUTHOR:		Joe Laffey <software@laffeycomputer.com>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org

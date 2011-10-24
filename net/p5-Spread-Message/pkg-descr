@@ -8,5 +8,5 @@ try to provide a much higher level wrapper. By providing:
     - Handling of incoming messages is supported via callbacks or
     via direct polling for input. Its your choice :-)
 
-WWW: http://search.cpan.org/dist/Spread-Message
 Author: Mark Pfeiffer
+WWW: http://search.cpan.org/dist/Spread-Message

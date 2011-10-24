@@ -25,5 +25,4 @@ lieues sous les mers"), consider stripping them before feeding them to nsort or
 ncmp.
 
 Author: Sean M. Burke <sburke@cpan.org>
-
 WWW: http://search.cpan.org/dist/Sort-Naturally/

@@ -16,7 +16,3 @@ o t1unmac (formerly unpost) translates a Type 1 font in Mac format (either
 o t1mac translates PFA or PFB format font files into Mac format.
 
 WWW: http://www.lcdf.org/~eddietwo/type/
-
---
-Mike Meyer
-mwm@mired.org

@@ -2,5 +2,4 @@ The GenMon plugin cyclically spawns the indicated script/program,
 captures its output and displays it as a string into the panel.
 
 Author: Roger Seguin <roger_seguin@msn.com>
-
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin

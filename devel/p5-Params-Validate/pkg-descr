@@ -6,6 +6,7 @@ also capable of determining that a parameter is of a specific type,
 that it is an object of a certain class hierarchy, that it possesses
 certain methods, or applying validation callbacks to arguments.
 
+Author: Dave Rolsky, <autarch@urth.org>
+        Ilya Martynov <ilya@martynov.org>
+
 WWW: http://search.cpan.org/dist/Params-Validate/
-Authors: Dave Rolsky, <autarch@urth.org>
-         Ilya Martynov <ilya@martynov.org>

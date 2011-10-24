@@ -4,8 +4,5 @@ colors, and will update the overview in real time, while using very low
 resources. Users can launch a specified mailreader by selecting a folder 
 and pressing enter.
 
-AUTHOR:	C.S. Larsen <csl@sublevel3.org>
+Author:	C.S. Larsen <csl@sublevel3.org>
 WWW:	http://gubby.sourceforge.net
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org

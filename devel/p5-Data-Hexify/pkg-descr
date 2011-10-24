@@ -1,5 +1,5 @@
 Hexify formats arbitrary (possible binary) data into a format suitable for hex
 dumps in the style of xd or hexl.
 
-WWW: http://search.cpan.org/dist/Data-Hexify/
 Author: Johan Vromans <jvromans@squirrel.nl>
+WWW: http://search.cpan.org/dist/Data-Hexify/

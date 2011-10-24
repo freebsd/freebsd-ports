@@ -7,5 +7,5 @@ or not to pipe a filehandle's output to a program specified in $ENV{PAGER}.
 Subclasses are only required to support filehandle output methods and close,
 namely
 
-WWW: http://search.cpan.org/dist/IO-Pager/
 Author:	Jerrad Pierce
+WWW: http://search.cpan.org/dist/IO-Pager/

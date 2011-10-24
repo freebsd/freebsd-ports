@@ -5,6 +5,5 @@ required vs allowed distinctions, optional name lexical checking,
 multiple retrieval, and error reporting. Works well as a complement to
 Class::NamedParms.
 
-WWW:	http://search.cpan.org/dist/Class-ParmList/
-
 Author: Benjamin Franz
+WWW:	http://search.cpan.org/dist/Class-ParmList/

@@ -6,5 +6,3 @@ IPv6), type abstraction, I/O timeouts, I/O stream buffering and convenience
 I/O functions.
 
 WWW: http://www.ossp.org/pkg/lib/sa/
-
--- AlanE@FreeBSD.org

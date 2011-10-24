@@ -3,5 +3,4 @@ GKrellM top plugin
 Plugin that displays top three processes. Requires /proc to be mounted.
 
 Author: Adi Zaimi <zaimi@pegasus.rutgers.edu>
-
 WWW: http://psychology.rutgers.edu/~zaimi/software.html

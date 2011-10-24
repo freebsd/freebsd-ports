@@ -3,6 +3,5 @@ Mail::Graph - visualize mails via graphs (spams, bug reports etc)
 In the directory samples/ is a short example. For a real-life example
 please visit <http://bloodgate.com/spams/>.
 
-WWW: http://search.cpan.org/dist/Mail-Graph/
-
 Author: TELS <tels@cpan.org>
+WWW: http://search.cpan.org/dist/Mail-Graph/

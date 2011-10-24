@@ -5,8 +5,6 @@ resulting from the mesh formulation is solved using a generalized minimal
 residual algorithm with a fast multipole algorithm to efficiently compute the
 iterates.
 
-WWW:	http://www.rle.mit.edu/cpg/research_codes.htm
-
 --------------------- Superconductivity Support -------------------------
 
 This version of fasthenry has been modified to support superconducting
@@ -14,3 +12,5 @@ segments and ground planes by Stephen R. Whiteley of Whitleley Research Inc.
 The analysis used is based on the London equations and the two-fluid
 model.  Both reactive and lossy components of the superconductor complex
 conductivity are employed in obtaining the impedance matrix.
+
+WWW: http://www.rle.mit.edu/cpg/research_codes.htm

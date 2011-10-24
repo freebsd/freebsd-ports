@@ -13,6 +13,6 @@ Redcode assembly files (.rc). The last ones can be loaded into exhaust, the
 others have to be parsed, for example with pMARS.
 
 NOTE: this documentation is only useful for developers.
-Author: M Joonas Pihlaja
 
+Author: M Joonas Pihlaja
 WWW: http://www.cs.helsinki.fi/u/jpihlaja/exhaust/exhaust.html

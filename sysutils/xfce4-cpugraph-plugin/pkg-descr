@@ -3,5 +3,4 @@ display modes (LED, gradient, fire, etc...) to show the current CPU load
 of the system. The colors and the size of the plugin are customizable.
 
 Author: Alexander Nordfelth <alex.nordfelth@telia.com>
-
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-cpugraph-plugin

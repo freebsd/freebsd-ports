@@ -6,6 +6,5 @@ hash entries between the files using a randomization algorithm.
 Has the effect of allowing DB_File hashes to grow to the full size 
 of the partition. Requires 'Digest::SHA1' and 'DB_File' to be installed.
 
-WWW:	http://search.cpan.org/dist/Tie-DB_File-SplitHash/
-
 Author: Benjamin Franz
+WWW:	http://search.cpan.org/dist/Tie-DB_File-SplitHash/

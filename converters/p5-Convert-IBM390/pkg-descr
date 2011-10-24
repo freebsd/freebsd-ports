@@ -9,5 +9,5 @@ asc2eb, eb2asc, eb2ascp:  ASCII/EBCDIC conversion
 packeb, unpackeb:  pack/unpack and convert an EBCDIC record
 hexdump:  dump memory in an MVS-like format
 
-WWW: http://search.cpan.org/dist/Convert-IBM390
 Author: Geoffrey Rommel <GROMMEL@cpan.org>
+WWW: http://search.cpan.org/dist/Convert-IBM390

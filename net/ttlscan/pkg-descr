@@ -5,8 +5,5 @@ packets to another host (behind a firewall). By reading header files
 like the TTL, window size and IPID you might be able to see the OS 
 running on the host behind the firewall.
 
+Author:	Hendrik Scholz <hendrik@scholz.net>
 WWW:	http://www.raisdorf.net/projects/ttlscan
-AUTHOR:	Hendrik Scholz <hendrik@scholz.net>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org

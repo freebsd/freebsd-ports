@@ -5,6 +5,5 @@ either an object or tied interface. Keys and data are both
 allowed to be references and objects as well as scalars. Requires 
 'Digest::SHA1' to be installed.
 
-WWW:	http://search.cpan.org/dist/Tie-FileLRUCache/
-
 Author: Benjamin Franz
+WWW:	http://search.cpan.org/dist/Tie-FileLRUCache/

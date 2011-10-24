@@ -4,7 +4,3 @@ and other resources. Forrest uses these to render the XML source content
 into a website via command-line, robot, or a dynamic web application.
 
 WWW: http://forrest.apache.org/
-
---
-Nicola Vitale
-nivit@FreeBSD.org

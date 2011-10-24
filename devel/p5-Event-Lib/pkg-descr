@@ -2,5 +2,5 @@ Event-Lib is a Perl wrapper around libevent(3)
 (http://www.monkey.org/~provos/libevent/).
 It makes the handling of asynchronous events more comfortable.
 
-WWW: http://search.cpan.org/dist/Event-Lib/
 Author: Tassilo von Parseval <tassilo.von.parseval at rwth-aachen dot de>
+WWW: http://search.cpan.org/dist/Event-Lib/

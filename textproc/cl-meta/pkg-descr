@@ -2,5 +2,3 @@ META is builder for recursive descent parsers implemented as a domain
 specific language on top of Common Lisp.
 
 WWW: http://home.pipeline.com/~hbaker1/Prag-Parse.html
-
--- Henrik Motakef

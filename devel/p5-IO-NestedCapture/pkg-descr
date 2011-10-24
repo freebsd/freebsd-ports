@@ -4,5 +4,5 @@ want (or even set it to use another file handle). For STDOUT and STDERR
 you may review the full output of these or prior to capture set a file
 handle that will receive all the data during the capture.
 
-WWW:	http://search.cpan.org/dist/IO-NestedCapture/
 Author: Andrew Sterling Hanenkamp <hanenkamp@cpan.org>
+WWW:	http://search.cpan.org/dist/IO-NestedCapture/

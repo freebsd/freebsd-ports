@@ -3,6 +3,5 @@ Template-Magic is a "magic" interface between programming and design. It makes
 returned by your subroutines - inside a static template file. Usually no need 
 to assign values to the object.
 
-WWW: http://search.cpan.org/dist/Template-Magic/
-
 Author: Domizio Demichelis <dd@4pro.net>
+WWW: http://search.cpan.org/dist/Template-Magic/

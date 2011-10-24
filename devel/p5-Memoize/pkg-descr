@@ -6,6 +6,3 @@ function compute the value all over again.
 
 Author: Mark-Jason Dominus <mjd-perl-memoize+@plover.com>
 WWW: http://search.cpan.org/dist/Memoize/
-
--Anton
-<tobez@FreeBSD.org>

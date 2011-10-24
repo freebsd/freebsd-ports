@@ -2,6 +2,3 @@ Apache::NNTPGateway - a NNTP interface for mod_perl enabled Apache web
 server.
 
 WWW: http://search.cpan.org/dist/Apache-NNTPGateway/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

@@ -13,5 +13,5 @@ startup, so it persists across sessions. So long as the underlying program
 supports Unicode, redet allows UTF-8 Unicode in both test data and regular
 expressions
 
-WWW: http://www.billposer.org/Software/redet.html
 Author: Bill Poser <billposer@alum.mit.edu>
+WWW: http://www.billposer.org/Software/redet.html

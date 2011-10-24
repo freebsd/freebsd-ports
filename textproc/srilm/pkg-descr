@@ -14,6 +14,5 @@ SRILM consists of the following components:
 	data, tagging or segmenting text, etc.
     * A collection of miscellaneous scripts facilitating minor related tasks.
 
-WWW:	http://www.speech.sri.com/projects/srilm/
-
 Author:	stolcke@speech.sri.com
+WWW:	http://www.speech.sri.com/projects/srilm/

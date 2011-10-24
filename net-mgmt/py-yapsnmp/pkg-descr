@@ -12,5 +12,5 @@ level python module removing all the complexity out of dealing with SNMP.
 * Offers a very high level interface, allowing easy SNMP integration into
   your code.
 
-WWW:	http://yapsnmp.sourceforge.net/
 Author:	Yves Perrenoud
+WWW:	http://yapsnmp.sourceforge.net/

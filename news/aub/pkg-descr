@@ -21,5 +21,3 @@ run:   ``aub -M | more'' for the long form documentation, or
        ``aub -m | more'' for the short form.
 
 WWW: http://yukidoke.org/~mako/projects/aub/
-
--- David (obrien@NUXI.com)

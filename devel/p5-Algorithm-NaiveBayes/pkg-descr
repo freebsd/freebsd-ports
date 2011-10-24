@@ -7,6 +7,5 @@ A paper by Fabrizio Sebastiani provides a really good introduction to
 text categorization: 
 http://faure.iei.pi.cnr.it/~fabrizio/Publications/ACMCS02.pdf
 
-WWW:	http://search.cpan.org/dist/Algorithm-NaiveBayes/
-
 Author:	Ken Williams <ken@mathforum.org>
+WWW:	http://search.cpan.org/dist/Algorithm-NaiveBayes/

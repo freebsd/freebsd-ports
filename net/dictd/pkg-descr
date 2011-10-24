@@ -6,6 +6,3 @@ protocol definition as we gain more experience with large dictionary
 database servers. By default, the DICT protocol uses TCP port 2628. 
 
 WWW: http://www.dict.org/
-
--- Ying-Chieh Liao
-   ijliao@FreeBSD.org

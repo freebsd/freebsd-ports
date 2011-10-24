@@ -4,6 +4,3 @@ but quite often, all you need is `nslookup $host`. This module provides
 that functionality.
 
 WWW: http://search.cpan.org/dist/Net-Nslookup/
-
--- darren chamberlain
-<darren@cpan.org>

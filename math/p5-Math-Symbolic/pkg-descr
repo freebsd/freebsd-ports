@@ -7,5 +7,5 @@ using the builtin parser to generate trees from expressions such as '2 *
 x^5'. You may use the Math::Symbolic->parse_from_string() class method for 
 this.
 
-WWW: http://search.cpan.org/dist/Math-Symbolic
 Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
+WWW: http://search.cpan.org/dist/Math-Symbolic

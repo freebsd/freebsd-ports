@@ -1,8 +1,6 @@
 gpctool - a graphical user interface and development
 environment for the gpc generic polygon clipper library.
 
-Author:    Alan Murta (email: gpc@cs.man.ac.uk)
-
 Copyright: (C) 1997-1999, Advanced Interfaces Group,
 	University of Manchester.
 
@@ -16,4 +14,5 @@ Copyright: (C) 1997-1999, Advanced Interfaces Group,
 	of any commercial product without the express consent of the
 	author.
 
-WWW:	http://www.cs.man.ac.uk/~toby/alan/software/
+Author: Alan Murta (email: gpc@cs.man.ac.uk)
+WWW: http://www.cs.man.ac.uk/~toby/alan/software/

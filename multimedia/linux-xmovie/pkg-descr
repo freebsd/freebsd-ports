@@ -31,7 +31,3 @@ options		_KPOSIX_VERSION=199309L
     add below line into your /etc/fstab file.
 
 linproc		/compat/linux/proc	linprocfs	rw	0	0
-
----
-Yoshiro MIHIRA
-(sanpei@FreeBSD.org)

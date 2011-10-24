@@ -1,5 +1,4 @@
 py-pylibacl -- Manipulate the POSIX.1e Access Control Lists with python
 
-
 Author:	Iustin Pop, <iusty@k1024.org>
 WWW:	http://pylibacl.sourceforge.net/

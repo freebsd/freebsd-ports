@@ -14,5 +14,5 @@ portmanager x11/gnome2	-f rebuilds gnome2 and dependencies
 3) -sl showleaves and -slid  delete leaves
 	now no longer list build dependencies
 
-WWW: http://portmanager.sourceforge.net/
 Author: Michael C. Shultz <ringworm01@gmail.com>
+WWW: http://portmanager.sourceforge.net/

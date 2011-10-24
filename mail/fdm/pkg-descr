@@ -3,5 +3,5 @@ delivery programs such as fetchmail and procmail. It can currently
 fetch using POP3, POP3S, IMAP or from stdin, and deliver to a pipe,
 file, maildir, mbox or SMTP server, based on regexps.
 
-WWW: http://fdm.sourceforge.net/
 Author: Nicholas Marriott <nicm@users.sourceforge.net>
+WWW: http://fdm.sourceforge.net/

@@ -9,8 +9,9 @@ I have rewritten the network code for use with Bill Paul's wi(4)
 driver as it appears in FreeBSD 5.0-CURRENT and 4.4-STABLE. Support
 for other cards will not be integrated into this GPLed version.
 
-Authors: Bruce M Simpson, Carsten Schuermann, Dan Piponi, Dave Clark
-WWW:	http://www.schuermann.org/~dockapps/
+Author:	Bruce M Simpson
+	Carsten Schuermann
+	Dan Piponi
+	Dave Clark
 
-Bruce
-bms@spc.org
+WWW:	http://www.schuermann.org/~dockapps/

@@ -6,6 +6,5 @@ maps C/C++ constants, external variables, functions, namespace,
 classes, and methods to Lua. It also provides facilities to create
 Lua modules.
 
-WWW: http://www.tecgraf.puc-rio.br/~celes/tolua/
-
 Author: Waldemar Celes <celes@tecgraf.puc-rio.br>
+WWW: http://www.tecgraf.puc-rio.br/~celes/tolua/

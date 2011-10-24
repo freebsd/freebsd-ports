@@ -8,5 +8,3 @@ set. Also appends a copy of message body with HTML removed (IMG and
 A tags remain unaffected).
 
 WWW: http://hyvatti.iki.fi/~jaakko/spam/
-
--- lioux@FreeBSD.org

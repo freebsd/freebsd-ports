@@ -4,5 +4,5 @@ a friendly environment. GPSMan supports communication and real-time
 logging with both Garmin and Lowrance receivers and accepts real-time
 logging information in NMEA from any GPS receiver.
 
-AUTHOR: Miguel Filgueiras
+Author: Miguel Filgueiras
 WWW:	http://www.ncc.up.pt/gpsman/

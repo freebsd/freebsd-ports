@@ -12,5 +12,3 @@ though Crypt::ECB is more flexible.  For example you can change the key
 or the cipher without having to create a new crypt object.
 
 WWW:  http://search.cpan.org/dist/Crypt-ECB/
-
---will

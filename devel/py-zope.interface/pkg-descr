@@ -2,5 +2,3 @@ This is a separate distribution of the zope.interface package used in Zope 3,
 along with the packages it depends on.
 
 WWW: http://pypi.python.org/pypi/zope.interface
-
--- Neal Nelson <neal@nelson.name>

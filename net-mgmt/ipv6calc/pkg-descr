@@ -4,5 +4,5 @@ Intention:
 * This utility can be used by the IPv6 enabled initscripts for
   better duplicate address detection on setup of IPv6 addresses.
 
-WWW: http://www.deepspace6.net/projects/ipv6calc.html
 Author: Peter Bieringer <pb (at) bieringer.de>
+WWW: http://www.deepspace6.net/projects/ipv6calc.html

@@ -5,5 +5,3 @@ Syntax.
 
 To use this, you need GNU Emacs version 21.x, preferably 21.3. GNU
 Emacs version 20 will not work properly, nor will XEmacs.
-
--- port by Fritz Heinrichmeyer <fritz.heinrichmeyer@fernuni-hagen.de>

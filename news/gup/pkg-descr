@@ -1,6 +1,3 @@
 Gup, the Group Update Program is a Unix mail-server that lets a remote
 site change their newsgroups subscription without requiring the
 intervention of the news administrator at the feed site.
-
--- Denis Shaposhnikov
-wizard@vlink.ru

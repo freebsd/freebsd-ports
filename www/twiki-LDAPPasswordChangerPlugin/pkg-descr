@@ -3,5 +3,4 @@ The users willing to change his/her password must be authenticated already.
 This plugin makes no sense for the Guest user.
 
 Author: Luis Campos De Carvalho
-
 WWW: http://twiki.org/cgi-bin/view/Plugins/LDAPPasswordChangerPlugin

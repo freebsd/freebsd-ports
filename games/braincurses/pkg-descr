@@ -1,7 +1,4 @@
 BrainCurses is a clone of the Mastermind game implemented in ncurses.
 
-WWW:		http://freshmeat.net/projects/braincurses/                        
-AUTHOR:		Brian Derr <bderr@myrealbox.com>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+Author: Brian Derr <bderr@myrealbox.com>
+WWW: http://freshmeat.net/projects/braincurses/

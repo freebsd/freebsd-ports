@@ -9,5 +9,3 @@ of URIs (from most-specific to least-specific) and sets the URI to the
 most specific match.
 
 Author: Robert C W Jenks <rjenks@cvsroot.org>
-
---will

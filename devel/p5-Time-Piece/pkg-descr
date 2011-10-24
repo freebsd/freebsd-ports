@@ -7,7 +7,7 @@ The module actually implements most of an interface described by Larry
 Wall on the perl5-porters mailing list here:
 http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2000-01/msg00241.html
 
-Authors: Matt Sergeant <matt@sergeant.org>, Jarkko Hietaniemi <jhi@iki.fi>
-WWW: http://search.cpan.org/dist/Time-Piece/
+Author:	Matt Sergeant <matt@sergeant.org>
+	Jarkko Hietaniemi <jhi@iki.fi>
 
--- Anton
+WWW: http://search.cpan.org/dist/Time-Piece/

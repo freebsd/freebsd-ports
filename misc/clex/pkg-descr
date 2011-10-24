@@ -7,8 +7,5 @@ to be executed by the shell (there are no built-in commands).
 CLEX is easily configurable and all its features are
 explained in the on-line help.
 
-WWW: 		http://www.clex.sk/
-AUTHOR:		Vlado Potisk <clex@clex.sk>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+Author: Vlado Potisk <clex@clex.sk>
+WWW: http://www.clex.sk/

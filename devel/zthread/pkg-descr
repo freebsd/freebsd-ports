@@ -14,5 +14,3 @@ ZThread implementations are provided for POSIX and Win32 platforms.
 
 Author: Eric Crahen <crahen@cse.buffalo.edu>
 WWW: http://zthread.sourceforge.net/
-
--- Johann Visagie <wjv@FreeBSD.org>

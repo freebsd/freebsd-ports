@@ -13,6 +13,4 @@ Fontconfig does the following:
     * be used in concert with the X Render Extension and FreeType to implement 
       high quality, anti-aliased and subpixel rendered text on a display.
 
--- keithp
-
 WWW: http://fontconfig.org/

@@ -4,5 +4,5 @@ not listed in 'ethers' file, it will send ARP reply with configured
 fake address. This will prevent not permitted host to work properly in
 local ethernet segment.
 
-Author SeaD <sead at deep.perm.ru>
+Author: SeaD <sead at deep.perm.ru>
 WWW: http://ipguard.deep.perm.ru/

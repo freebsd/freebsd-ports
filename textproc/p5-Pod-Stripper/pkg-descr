@@ -3,6 +3,3 @@ stripping out the pod, and dumping the rest (presumably code) to
 wherever you point it to (like you do with Pod::Parser).
 
 WWW: http://search.cpan.org/dist/Pod-Stripper/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

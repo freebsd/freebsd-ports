@@ -4,8 +4,6 @@ Visualizing the results of molecular orbital calculations
  3) density:  contour plot or 3D view for electron density and MO coefficient
 Everything what you want about MO calculation can be seen.
 
-WWW: http://www.cmbi.kun.nl/~schaft/molden/molden.html
-
 By the distribution policy of the author;
  * Only the latest version is supplied.
  * Users must get the `distfiles' from the original site.
@@ -13,5 +11,4 @@ By the distribution policy of the author;
  * Using a not-so-latest version is prohibited, because 
    the author may only respond about the latest version.
 
---
-rmiya
+WWW: http://www.cmbi.kun.nl/~schaft/molden/molden.html

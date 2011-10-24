@@ -2,8 +2,5 @@ TCPSG is just a simple TCP port forwarder designed to distribute a service
 like a virtual server. It can be used to protect servers using the port 
 forwarder to receive requests.
 
-AUTHOR:		Juan Fajardo <jfajardo@unillanos.edu.co>
-WWW:		http://tcpsg.sourceforge.net/
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+Author: Juan Fajardo <jfajardo@unillanos.edu.co>
+WWW: http://tcpsg.sourceforge.net/

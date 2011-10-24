@@ -12,6 +12,3 @@ tries to keep the application stable. As well a programmer has not to
 bother about some of XML::LibXML/XML::LibXSLT transformation pitfalls.
 
 WWW: http://search.cpan.org/dist/CGI-XMLApplication/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

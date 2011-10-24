@@ -24,6 +24,7 @@ get a complete list by looking at the variable:
 For details on how the plugins are installed, see the "Advanced Petal" 
 section of the Petal documentation.
 
-WWW: http://search.cpan.org/dist/Petal-Utils
 Author:	William McKee <william@knowmad.com>
 	Steve Purkis <spurkis@cpan.org>
+
+WWW: http://search.cpan.org/dist/Petal-Utils

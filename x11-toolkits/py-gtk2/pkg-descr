@@ -2,10 +2,9 @@ Excerpt from the README:
 
  PyGTK
  =====
- Author: James Henstridge <james@daa.com.au>
 
  This archive contains modules that allow you to use gtk in Python
  programs.  At present, it is a fairly complete set of bindings.
 
+Author: James Henstridge <james@daa.com.au>
 WWW: http://www.pygtk.org/
--- Jacques Vidrine <nectar@FreeBSD.ORG>

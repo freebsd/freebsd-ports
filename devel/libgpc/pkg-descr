@@ -1,8 +1,6 @@
 An algorithm for calculating the difference, intersection,
 exclusive-or or union of arbitrary polygon sets.
 
-Author:    Alan Murta (email: gpc@cs.man.ac.uk)
-
 Copyright: (C) 1997-2004, Advanced Interfaces Group,
 	University of Manchester.
 
@@ -15,6 +13,8 @@ Copyright: (C) 1997-2004, Advanced Interfaces Group,
 	You may not use this software, in whole or in part, in support
 	of any commercial product without the express consent of the
 	author.
+
+Author: Alan Murta (email: gpc@cs.man.ac.uk)
 
 WWW:	http://www.cs.man.ac.uk/~toby/alan/software/
 

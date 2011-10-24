@@ -17,5 +17,5 @@ for testing dependencies and packing lists. It's also useful for
 testing ports on various releases of FreeBSD, since you can run
 FreeBSD 6.X world as a jail on FreeBSD 7.X/8.X host.
 
-WWW: http://tinderbox.marcuscom.com/
 Author: Joe Marcus Clarke.
+WWW: http://tinderbox.marcuscom.com/

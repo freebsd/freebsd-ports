@@ -2,5 +2,5 @@ The libdwarf library is the base for the dwarfdump utility
 by the same author.  It implements routines to access the
 DWARF debugging information found in ELF object files.
 
-WWW:		http://reality.sgiweb.org/davea/dwarf.html
 Author:		David Anderson of SGI
+WWW:		http://reality.sgiweb.org/davea/dwarf.html

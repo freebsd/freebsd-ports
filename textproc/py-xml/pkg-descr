@@ -17,7 +17,5 @@ xml.dom.implementation), and includes an XPath 1.0 processor for minidom
 (xml.xpath). Experimental XSLT 1.0 support for minidom can be added if the
 port is installed with WITH_XSLT defined (e.g. "make install WITH_XSLT=yes").
 
-  WWW:      http://pyxml.sourceforge.net/
-  See also: http://www.python.org/sigs/xml-sig/
-
--- Mike J. Brown <mike@skew.org> (current port maintainer)
+WWW: http://pyxml.sourceforge.net/
+     http://www.python.org/sigs/xml-sig/

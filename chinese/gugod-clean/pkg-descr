@@ -8,5 +8,4 @@ Add the following to your .Xdefaults / .Xresources
 rxvt.font: -gugod-clean-medium-r-normal--16-160-75-75-c-80-iso8859-1
 rxvt.mfont: -kc-fixed-medium-r-normal--16-160-72-72-c-160-big5-0
 
-
 Author: Kang-min Liu <gugod@gugod.org>

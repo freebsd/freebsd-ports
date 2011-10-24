@@ -1,5 +1,5 @@
 mp3plot prints out a plot of the bitrate distribution of a VBR MP3 file
 (it will also do it for CBR files although it isn't very meaningful).
 
-WWW: http://p.outlyer.net/mp3plot/
 Author: Toni Corvera < outlyer at gmail dot com >
+WWW: http://p.outlyer.net/mp3plot/

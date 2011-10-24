@@ -16,5 +16,5 @@ other than readability and simplicity of the code.
 My intent here is to make common assertions easy so that we as programmers 
 have no excuse to not use them.
 
-WWW: http://search.cpan.org/dist/Carp-Assert-More
 Author: Andy Lester
+WWW: http://search.cpan.org/dist/Carp-Assert-More

@@ -5,5 +5,5 @@ replacement for MP3::Info.
 Note that this module does not allow you to update the information
 in MPEG-4 files.
 
-WWW: http://search.cpan.org/dist/MP4-Info/
 Author: Jonathan Harris <jhar@cpan.org>
+WWW: http://search.cpan.org/dist/MP4-Info/

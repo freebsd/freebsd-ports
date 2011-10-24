@@ -25,5 +25,5 @@ issue a command by calling a method, and the command will block until the
 appropriate response is returned. The method will then return the parsed 
 results from the given command.
 
-WWW: http://search.cpan.org/dist/Mail-IMAPTalk
 Author: Rob Mueller <cpan@robm.fastmail.fm>
+WWW: http://search.cpan.org/dist/Mail-IMAPTalk

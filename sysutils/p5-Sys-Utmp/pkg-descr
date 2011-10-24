@@ -4,7 +4,3 @@ to use the getutent() function from the systems C libraries it will
 attempt to provide its own if they are missing.
 
 WWW: http://search.cpan.org/dist/Sys-Utmp/
-
---
-Alexander Zhuravlev 
-zaa@zaa.pp.ru

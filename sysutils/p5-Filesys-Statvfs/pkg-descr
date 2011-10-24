@@ -12,5 +12,5 @@ man page.
 The module assumes that if you have statvfs(), fstatvfs() will also be 
 available.
 
-WWW: http://search.cpan.org/dist/Filesys-Statvfs/
 Author: Ian Guthrie <IGuthrie@aol.com>
+WWW: http://search.cpan.org/dist/Filesys-Statvfs/

@@ -5,5 +5,5 @@ external modules as loaded, so they are not attempted to be loaded by
 perl, this module offers you a very simple way to mark modules as loaded 
 and/or unloaded.
 
-WWW: http://search.cpan.org/dist/Module-Loaded
 Author: Jos Boumans <kane@cpan.org>
+WWW: http://search.cpan.org/dist/Module-Loaded

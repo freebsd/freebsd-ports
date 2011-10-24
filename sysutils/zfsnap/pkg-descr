@@ -7,6 +7,3 @@ names are in form: Timestamp--TTL where timestamp is date and time of
 snapshot creation and TTL is Time To Live in human readable form.
 
 WWW: https://github.com/graudeejs/zfSnap/
-
--- Aldis Berjoza
-<graudeejs@gmail.com>

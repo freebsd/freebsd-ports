@@ -10,5 +10,3 @@ declarations.  It builds a hash, associating the values to their names.
 The names can then be retrieved as necessary.
 
 WWW: http://search.cpan.org/dist/Devel-Constants/
-
--- Anton

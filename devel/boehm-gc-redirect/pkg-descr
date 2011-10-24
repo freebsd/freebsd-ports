@@ -14,7 +14,6 @@ such source code modifications.  See the man page and header files.
 
 This package only brings Boehm-GC libraries with malloc redirection.
 
--- Mike McGaughey <mmcg@cs.monash.edu.au>
 ps: garbage collection is addictive.
 
 WWW: http://www.hpl.hp.com/personal/Hans_Boehm/gc/

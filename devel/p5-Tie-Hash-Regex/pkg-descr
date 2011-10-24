@@ -11,5 +11,5 @@ into the hash like this:
 exists and delete also do regex matching. In the case of delete all values 
 matching your regex key will be deleted from the hash.
 
-WWW: http://search.cpan.org/dist/Tie-Hash-Regex
 Author: Dave Cross <dave@dave.org.uk>
+WWW: http://search.cpan.org/dist/Tie-Hash-Regex

@@ -6,5 +6,3 @@ expansion, plus optionally one or more post-operations on the expanded value
 (${name:op:op...}).
 
 WWW: http://www.ossp.org/pkg/lib/var/
-
--- AlanE@FreeBSD.org

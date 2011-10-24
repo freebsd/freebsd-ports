@@ -1,4 +1,4 @@
 This slave port adds Python interface to LIBSVM.
 
-WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 Author: Chih-Chung Chang and Chih-Jen Lin <cjlin@csie.ntu.edu.tw>
+WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/

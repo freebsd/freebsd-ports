@@ -5,10 +5,8 @@ extensive manual which you can print or read on-line.
 
 -- the Emacs Calc home page
 
-WWW: http://www.synaptics.com/people/daveg
-
 Add
   (load "calc-autoload")
 to your .emacs file to define autoloads.
 
-Maintainer: Andrew Bernard (andrewb@cs.cmu.edu)
+WWW: http://www.synaptics.com/people/daveg

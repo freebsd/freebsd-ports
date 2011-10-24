@@ -3,9 +3,9 @@ object-oriented programming.  It has many features to process text
 files and to do system management tasks.  This package contains the
 Ruby users guide in HTML format.
 
-WWW:	http://www.ruby-lang.org/
-Authors:
-	Yukihiro Matsumoto <matz@netlab.co.jp> (Japanese version)
+Author: Yukihiro Matsumoto <matz@netlab.co.jp> (Japanese version)
 	GOTO Kentaro <gotoken@notwork.org> (Initial translation)
 	Julian Fondren (ditto)
 	Mark Slagell <slagell@cs.iastate.edu> (Retranslation)
+
+WWW:	http://www.ruby-lang.org/

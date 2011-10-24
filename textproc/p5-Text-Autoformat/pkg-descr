@@ -11,6 +11,3 @@ for the built-in Perl format() mechanism.
 
 Author: Damian Conway <damian@conway.org>
 WWW: http://search.cpan.org/dist/Text-Autoformat/
-
--Anton
-<tobez@FreeBSD.org>

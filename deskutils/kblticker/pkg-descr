@@ -2,5 +2,5 @@ This small application sits in the KDE system tray and patiently checks
 a BlogLines account for updates in specified periods, notifying the 
 user of new entries as they appear. Features bells and whistles!
 
+Author:		Konstantin Grusha <zoi@project7.ru>
 WWW:		http://sourceforge.net/projects/kblticker
-AUTHOR:		Konstantin Grusha <zoi@project7.ru>

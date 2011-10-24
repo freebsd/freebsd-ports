@@ -1,4 +1,4 @@
 IO::KQueue - perl interface to the BSD kqueue system call.
 
-WWW: http://search.cpan.org/dist/IO-KQueue/
 Author: Matt Sergeant <matt@sergeant.org>
+WWW: http://search.cpan.org/dist/IO-KQueue/

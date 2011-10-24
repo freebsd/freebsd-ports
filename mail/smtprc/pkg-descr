@@ -3,8 +3,5 @@ It supports scanning of IP blocks, and can print the results to a Web
 page. It is intended for Systems Administrators to check IP blocks 
 under their control
 
-WWW:		http://smtprc.sourceforge.net
-AUTHOR:		Spencer Hardy <diceman@dircon.co.uk>
-
-       - Michael L. Hostbaek
-       mich@FreeBSD.org
+Author: Spencer Hardy <diceman@dircon.co.uk>
+WWW: http://smtprc.sourceforge.net

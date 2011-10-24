@@ -17,5 +17,5 @@ use the interfaces of the individual classes in the framework.
 A simple sample script that reads a training corpus, trains a categorizer, 
 and tests the categorizer on a test corpus, is distributed as eg/demo.pl .
 
-WWW: http://search.cpan.org/dist/AI-Categorizer
 Author: Ken Williams <ken@mathforum.org>
+WWW: http://search.cpan.org/dist/AI-Categorizer

@@ -9,6 +9,5 @@ measures you are interested in. When all results have been collected, you
 can get a report on accuracy, precision, recall, F1, and so on, with both
 macro-averaging and micro-averaging over categories.
 
-WWW: http://search.cpan.org/dist/Statistics-Contingency/
-
 Author:	Ken Williams <kenw@ee.usyd.edu.au>
+WWW: http://search.cpan.org/dist/Statistics-Contingency/

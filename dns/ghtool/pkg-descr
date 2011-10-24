@@ -5,7 +5,5 @@ To quote from the SourceForge project description:
    DNS->IP mapping, including aliases, directly, rather than digging for
    mappings in DNS, which may or may not be relevant.
 
-WWW:		http://www.sourceforge.net/projects/gh-tool/
-Author:		Ally Kendall <aminorex@users.sourceforge.net>
-
-Maintainer:	Peter Pentchev <roam@orbitel.bg>
+Author: Ally Kendall <aminorex@users.sourceforge.net>
+WWW: http://www.sourceforge.net/projects/gh-tool/

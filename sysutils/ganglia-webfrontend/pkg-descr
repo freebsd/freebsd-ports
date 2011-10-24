@@ -8,5 +8,3 @@ The ganglia web frontend provides access to the data collected by the
 monitoring core.
 
 WWW: http://ganglia.sourceforge.net/
-
--- Brooks Davis <brooks@FreeBSD.org>

@@ -1,5 +1,5 @@
 RSSTail is more or less an rss reader: it monitors an rss-feed and if
 it detects a new entry it'll emit only that new entry.
 
-WWW: http://www.vanheusden.com/rsstail/
 Author: Folkert van Heusden <folkert@vanheusden.com>
+WWW: http://www.vanheusden.com/rsstail/

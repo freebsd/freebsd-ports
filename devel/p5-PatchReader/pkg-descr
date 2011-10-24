@@ -5,5 +5,4 @@ up the patch root according to CVS, and output the patch as raw unified or
 through a template processor (used in some places to output a patch as HTML).
 
 Author:	John Keiser <john@johnkeiser.com>
-
 WWW:	http://search.cpan.org/dist/PatchReader/

@@ -13,5 +13,5 @@ having an inverse function, which takes codepoints to named entities.
 
 Based on: HTML::Entities by Koichi Taniguchi <taniguchi@livedoor.jp>
 
-WWW: http://search.cpan.org/dist/MathML-Entities
 Author: Jacques Distler <distler@golem.ph.utexas.edu>
+WWW: http://search.cpan.org/dist/MathML-Entities

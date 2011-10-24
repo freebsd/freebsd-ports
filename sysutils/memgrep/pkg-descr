@@ -2,5 +2,5 @@ memgrep is an utility to search/replace/dump memory from running processes
 and core files. 
 It also provides an API to write you own tools.
 
+Author: hick.org community
 WWW: http://www.hick.org/code.html
-Authors : hick.org community

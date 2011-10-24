@@ -2,5 +2,5 @@ Net::TiVo provides an object-oriented interface to TiVo's REST interface.  This
 makes it possible to query your TiVo for information about recorded content,
 such as a show's download URL, and space consumed.
 
-WWW: http://search.cpan.org/dist/Net-TiVo/
 Author: Christopher Boumenot <boumenot@gmail.com>
+WWW: http://search.cpan.org/dist/Net-TiVo/

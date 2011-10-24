@@ -5,5 +5,5 @@ with certain special functions that create constants as Number::WithError
 objects. (Math::Symbolic::Variable objects have been able to contain 
 objects since the very beginning.)
 
-WWW: http://search.cpan.org/dist/Math-SymbolicX-Error
 Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
+WWW: http://search.cpan.org/dist/Math-SymbolicX-Error

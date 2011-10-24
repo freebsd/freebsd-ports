@@ -4,6 +4,3 @@ MOP is functionally comparable to TFTP.
 
 Included in this package are the `mopd' daemon itself, plus the debugging
 utilities `mopchk', `mopprobe', and `moptrace'.
-
--- David, November 1999
-   (obrien@cs.ucdavis.edu)

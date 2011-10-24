@@ -6,5 +6,3 @@ name or supplied header).  Mp is very useful for making archive listings of
 programs.
 
 Includes mp.el an Emacs interface to mp.
-
--- David	(obrien@cs.ucdavis.edu)

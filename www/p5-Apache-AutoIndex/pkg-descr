@@ -4,5 +4,3 @@ with Apache.  It can currently live right on top of those modules, although
 it would be better to recompile httpd without these modules.
 
 Author: Philippe M. Chiasson <gozer@ectoplasm.dyndns.com>
-
---will

@@ -1,5 +1,5 @@
 A command-line (console) application to summarize information from Apache
 logs, including hit counts, requests, referrers, and user activity.
 
+Author:	Jeff Pace <jpace@incava.org>
 WWW:	http://www.incava.org/projects/apercu/
-AUTHOR:	Jeff Pace <jpace@incava.org>

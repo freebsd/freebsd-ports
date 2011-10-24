@@ -23,5 +23,5 @@ The connection is automatically broken (by sending the specified
 disconnect command to the target) when the Expect::Simple object is 
 destroyed.
 
-WWW: http://search.cpan.org/dist/Expect-Simple
 Author: Diab Jerius <djerius@cpan.org>
+WWW: http://search.cpan.org/dist/Expect-Simple

@@ -5,7 +5,8 @@ multiple inheritance and collections.  It does so in an orthogonal fashion,
 that is, it doesn't require your classes to implement support functions nor
 inherit from a utility class.
 
-WWW: http://search.cpan.org/dist/Tangram/
 Author: Jean-Louis Leroy <jll@soundobjectlogic.com>
         Sam Vilain <sam@vilain.net>
         Andres Kievsky <ank@cpan.org>
+
+WWW: http://search.cpan.org/dist/Tangram/

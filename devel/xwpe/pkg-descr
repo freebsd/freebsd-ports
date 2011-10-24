@@ -16,5 +16,3 @@ and help files.  The German language version will be installed if
 "GERMAN_LANG" is set during ``make install'' of the port.
 
 WWW: http://www.identicalsoftware.com/xwpe/
-
--- David	(obrien@FreeBSD.org)

@@ -4,5 +4,5 @@ module.
 
 Currently only LOGIN and PLAIN methods are supported.
 
-WWW: http://search.cpan.org/dist/Net-Server-Mail-ESMTP-AUTH/
 Author: Sylvain Cresto <scresto [_at_] gmail.com>
+WWW: http://search.cpan.org/dist/Net-Server-Mail-ESMTP-AUTH/

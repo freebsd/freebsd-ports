@@ -3,6 +3,3 @@ HTML, based on the rules in the XSLT specification, including things
 like empty and non-closing tags, and boolean attributes.
 
 WWW: http://search.cpan.org/dist/XML-Handler-HTMLWriter/
-
--- Matt Sergeant
-matt@sergeant.org

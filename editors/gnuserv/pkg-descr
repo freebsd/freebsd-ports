@@ -3,5 +3,3 @@ external programs to make use of Emacs' editing capabilities.  It is
 like GNU Emacs' emacsserver/server.el, but has many more features.
 
 WWW: http://meltin.net/hacks/emacs/
-
--- ported by Ilya Martynov <ilya@martynov.org>

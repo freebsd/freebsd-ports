@@ -5,6 +5,7 @@ unlimited hash levels without significant slow-down. Written from the ground-up
 in pure perl -- this is NOT a wrapper around a C-based DBM.  Out-of-the-box
 compatibility with Unix, Mac OS X and Windows.
 
+Author:	Joseph Huckaby <jhuckaby@cpan.org>
+	Rob Kinyon <rkinyon@cpan.org>
+
 WWW: http://search.cpan.org/dist/DBM-Deep/
-Authors: Joseph Huckaby <jhuckaby@cpan.org>
-         Rob Kinyon <rkinyon@cpan.org>

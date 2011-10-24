@@ -13,6 +13,4 @@ Usage:
 
 	print "Hurry up!\n" if !whois('microsoft.com');
 
--- Alex Kapranoff <kappa@freebsd.org.ua>
-
 WWW: http://search.cpan.org/dist/Net-Whois-Raw/

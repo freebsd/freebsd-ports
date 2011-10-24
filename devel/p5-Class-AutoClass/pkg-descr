@@ -5,6 +5,7 @@ Class::AutoClass => similar to Class::MakeMethods, provides support for:
   - object initialization is handled correctly (in top-down order), even
 	in the presence of multiple inheritance
 
+Author: Christopher Cavnor <ccavnor@systemsbiology.net>
+        Nat Goodman <natg@shore.net>
+
 WWW: http://search.cpan.org/dist/autoclass
-Authors: Christopher Cavnor <ccavnor@systemsbiology.net>
-         Nat Goodman <natg@shore.net>
