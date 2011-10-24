@@ -24,7 +24,8 @@ SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix=
 
-OPTIONS=	SASL		"Enable SASL support"			off
+OPTIONS=	REPCACHED	"Enable data replication feature"	off \
+		SASL		"Enable SASL support"			off
 
 MAN1=		memcached.1
 
@@ -42,7 +43,11 @@ CFLAGS+=	-fstack-protector
 .endif
 
 .if defined(WITH_REPCACHED)
-IGNORE=		Repcached support removed
+# WWW: http://repcached.lab.klab.org/
+PATCH_SITES+=		http://mdounin.ru/files/
+PATCH_DIST_STRIP+=	-p1
+PATCHFILES+=		repcached-2.3.1-${PORTVERSION}.patch.gz
+CONFIGURE_ARGS+=	--enable-replication
 .endif
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
