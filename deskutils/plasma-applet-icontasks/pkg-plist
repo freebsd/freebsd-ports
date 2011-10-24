@@ -1,0 +1,21 @@
+lib/kde4/plasma_applet_icontasks.so
+lib/libicontaskmanager.so
+lib/libicontaskmanager.so.5
+lib/libicontaskmanager.so.5.0.1
+share/apps/desktoptheme/default/icontasks/badge.svgz
+share/apps/desktoptheme/default/icontasks/dropindicators.svgz
+share/apps/desktoptheme/default/icontasks/indicators.svgz
+share/apps/desktoptheme/default/icontasks/launcherseparator.svgz
+share/apps/desktoptheme/default/icontasks/progress.svgz
+share/apps/plasma-icontasks/mediabuttonsrc
+share/config/taskmanagerrc
+share/kde4/services/plasma-applet-icontasks.desktop
+share/locale/es/LC_MESSAGES/icontasks.mo
+share/locale/fr/LC_MESSAGES/icontasks.mo
+share/locale/it/LC_MESSAGES/icontasks.mo
+share/locale/pl/LC_MESSAGES/icontasks.mo
+share/locale/pt_BR/LC_MESSAGES/icontasks.mo
+share/locale/ru/LC_MESSAGES/icontasks.mo
+share/locale/zh_CN/LC_MESSAGES/icontasks.mo
+@dirrm share/apps/plasma-icontasks
+@dirrm share/apps/desktoptheme/default/icontasks
