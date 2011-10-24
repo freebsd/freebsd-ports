@@ -1,0 +1,20 @@
+bin/wdf
+bin/wdf-cat
+bin/wdf-dump
+bin/wit
+bin/wwt
+%%DATADIR%%/load-titles.sh
+%%DATADIR%%/system-menu.txt
+%%DATADIR%%/titles-de.txt
+%%DATADIR%%/titles-es.txt
+%%DATADIR%%/titles-fr.txt
+%%DATADIR%%/titles-it.txt
+%%DATADIR%%/titles-ja.txt
+%%DATADIR%%/titles-ko.txt
+%%DATADIR%%/titles-nl.txt
+%%DATADIR%%/titles-pt.txt
+%%DATADIR%%/titles-ru.txt
+%%DATADIR%%/titles-zhcn.txt
+%%DATADIR%%/titles-zhtw.txt
+%%DATADIR%%/titles.txt
+@dirrm %%DATADIR%%
