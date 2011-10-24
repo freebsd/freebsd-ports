@@ -1,21 +1,5 @@
 bin/eiskaltdcpp-gtk
 share/applications/eiskaltdcpp-gtk.desktop
-share/eiskaltdcpp/gtk/glade/adlsearch.glade
-share/eiskaltdcpp/gtk/glade/cmddebug.glade
-share/eiskaltdcpp/gtk/glade/downloadqueue.glade
-share/eiskaltdcpp/gtk/glade/favoritehubs.glade
-share/eiskaltdcpp/gtk/glade/favoriteusers.glade
-share/eiskaltdcpp/gtk/glade/finishedtransfers.glade
-share/eiskaltdcpp/gtk/glade/hash.glade
-share/eiskaltdcpp/gtk/glade/hub.glade
-share/eiskaltdcpp/gtk/glade/mainwindow.glade
-share/eiskaltdcpp/gtk/glade/privatemessage.glade
-share/eiskaltdcpp/gtk/glade/publichubs.glade
-share/eiskaltdcpp/gtk/glade/search.glade
-share/eiskaltdcpp/gtk/glade/searchspy.glade
-share/eiskaltdcpp/gtk/glade/settingsdialog.glade
-share/eiskaltdcpp/gtk/glade/sharebrowser.glade
-share/eiskaltdcpp/gtk/glade/transfers.glade
 share/eiskaltdcpp/gtk/icons/hicolor/128x128/apps/eiskaltdcpp.png
 share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-fw-op.png
 share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-fw.png
@@ -103,7 +87,35 @@ share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/zoom1.png
 share/eiskaltdcpp/gtk/themes/humanity.theme
 share/eiskaltdcpp/gtk/themes/linuxdcpp.theme
 share/eiskaltdcpp/gtk/themes/mankthemedark.theme
-@dirrm share/eiskaltdcpp/gtk/glade
+share/eiskaltdcpp/gtk/ui/adlsearch.ui
+share/eiskaltdcpp/gtk/ui/cmddebug.ui
+share/eiskaltdcpp/gtk/ui/downloadqueue.ui
+share/eiskaltdcpp/gtk/ui/favoritehubs.ui
+share/eiskaltdcpp/gtk/ui/favoriteusers.ui
+share/eiskaltdcpp/gtk/ui/finishedtransfers.ui
+share/eiskaltdcpp/gtk/ui/hash.ui
+share/eiskaltdcpp/gtk/ui/hub.ui
+share/eiskaltdcpp/gtk/ui/mainwindow.ui
+share/eiskaltdcpp/gtk/ui/privatemessage.ui
+share/eiskaltdcpp/gtk/ui/publichubs.ui
+share/eiskaltdcpp/gtk/ui/search.ui
+share/eiskaltdcpp/gtk/ui/searchspy.ui
+share/eiskaltdcpp/gtk/ui/settingsdialog.ui
+share/eiskaltdcpp/gtk/ui/sharebrowser.ui
+share/eiskaltdcpp/gtk/ui/transfers.ui
+share/locale/be/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/bg/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/cs/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/de/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/en/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/es/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/fr/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/hu/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/pl/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/ru/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/sk/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/sr/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/uk/LC_MESSAGES/eiskaltdcpp-gtk.mo
 @dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16/status
 @dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16
 @dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/emotes
@@ -123,5 +135,6 @@ share/eiskaltdcpp/gtk/themes/mankthemedark.theme
 @dirrm share/eiskaltdcpp/gtk/themes/hicolor/16x16
 @dirrm share/eiskaltdcpp/gtk/themes/hicolor
 @dirrm share/eiskaltdcpp/gtk/themes
+@dirrm share/eiskaltdcpp/gtk/ui
 @dirrm share/eiskaltdcpp/gtk
 @dirrmtry share/applications

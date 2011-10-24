@@ -1,6 +1,6 @@
---- ./dcpp/CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
-+++ ./dcpp/CMakeLists.txt	2011-03-09 19:22:26.000000000 +0200
-@@ -30,8 +30,6 @@
+--- dcpp/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ dcpp/CMakeLists.txt	2011-10-03 10:14:13.000000000 +0300
+@@ -34,8 +34,6 @@
    set (APPLE_LIBS "iconv")
  endif (APPLE)
  
@@ -8,19 +8,19 @@
 -
  add_library (dcpp ${LINK} ${dcpp_srcs})
  
- if (USE_DHT)
-@@ -71,8 +69,8 @@
+ if (WITH_DHT)
+@@ -76,8 +74,8 @@
  endif (WIN32)
  
- target_link_libraries (dcpp ${PTHREADS} ${BZIP2_LIBRARIES} ${ZLIB_LIBRARIES}
--${OPENSSL_LIBRARIES} ${GETTEXT_LIBRARIES} ${ICONV_LIBRARIES} ${WIN32_LIBS} ${APPLE_LIBS} ${LUA_LIBRARIES} ${UPNP} ${PCRE} ${DHT_LIB})
+ target_link_libraries (dcpp ${DHT_LIB} ${PTHREADS} ${BZIP2_LIBRARIES} ${ZLIB_LIBRARIES}
+-${OPENSSL_LIBRARIES} ${GETTEXT_LIBRARIES} ${ICONV_LIBRARIES} ${WIN32_LIBS} ${APPLE_LIBS} ${LUA_LIBRARIES} ${UPNP} ${PCRE} ${IDNA_LIBRARIES})
 -set_target_properties(dcpp PROPERTIES VERSION ${SOVERSION} OUTPUT_NAME "eiskaltdcpp")
-+${OPENSSL_LIBRARIES} ${GETTEXT_LIBRARIES} ${ICONV_LIBRARIES} ${WIN32_LIBS} ${APPLE_LIBS} ${LUA_LIBRARIES} ${UPNP} ${PCRE} ${DHT_LIB} extra)
++${OPENSSL_LIBRARIES} ${GETTEXT_LIBRARIES} ${ICONV_LIBRARIES} ${WIN32_LIBS} ${APPLE_LIBS} ${LUA_LIBRARIES} ${UPNP} ${PCRE} ${IDNA_LIBRARIES} extra)
 +set_target_properties(dcpp PROPERTIES SOVERSION 2 VERSION ${SOVERSION} OUTPUT_NAME "eiskaltdcpp")
  
  if (APPLE)
    set (LIBDIR1 .)
-@@ -81,6 +79,6 @@
+@@ -86,6 +84,6 @@
  
  if (LINK STREQUAL SHARED)
  install (TARGETS dcpp

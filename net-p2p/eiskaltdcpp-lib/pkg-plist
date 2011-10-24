@@ -3,8 +3,6 @@ include/eiskaltdcpp/dcpp/AdcCommand.h
 include/eiskaltdcpp/dcpp/AdcHub.h
 include/eiskaltdcpp/dcpp/Atomic.h
 include/eiskaltdcpp/dcpp/BZUtils.h
-include/eiskaltdcpp/dcpp/BitInputStream.h
-include/eiskaltdcpp/dcpp/BitOutputStream.h
 include/eiskaltdcpp/dcpp/BloomFilter.h
 include/eiskaltdcpp/dcpp/BufferedSocket.h
 include/eiskaltdcpp/dcpp/BufferedSocketListener.h
@@ -61,6 +59,7 @@ include/eiskaltdcpp/dcpp/SSLSocket.h
 include/eiskaltdcpp/dcpp/ScriptManager.h
 include/eiskaltdcpp/dcpp/SearchManager.h
 include/eiskaltdcpp/dcpp/SearchManagerListener.h
+include/eiskaltdcpp/dcpp/SearchQueue.h
 include/eiskaltdcpp/dcpp/SearchResult.h
 include/eiskaltdcpp/dcpp/Segment.h
 include/eiskaltdcpp/dcpp/Semaphore.h
@@ -96,9 +95,15 @@ include/eiskaltdcpp/dcpp/WindowInfo.h
 include/eiskaltdcpp/dcpp/WindowManager.h
 include/eiskaltdcpp/dcpp/WindowManagerListener.h
 include/eiskaltdcpp/dcpp/ZUtils.h
+include/eiskaltdcpp/dcpp/compiler.h
+include/eiskaltdcpp/dcpp/debug.h
+include/eiskaltdcpp/dcpp/format.h
 include/eiskaltdcpp/dcpp/forward.h
+include/eiskaltdcpp/dcpp/noexcept.h
 include/eiskaltdcpp/dcpp/stdinc.h
+include/eiskaltdcpp/dcpp/typedefs.h
 include/eiskaltdcpp/dcpp/version.h
+include/eiskaltdcpp/dcpp/w.h
 @dirrm include/eiskaltdcpp/dcpp
 @dirrm include/eiskaltdcpp
 lib/libeiskaltdcpp.so.2.2
@@ -107,6 +112,7 @@ lib/libeiskaltdcpp.so
 share/locale/be/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/bg/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/cs/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/de/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/en/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/es/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/fr/LC_MESSAGES/libeiskaltdcpp.mo

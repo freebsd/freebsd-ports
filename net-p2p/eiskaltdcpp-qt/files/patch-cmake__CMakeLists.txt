@@ -1,0 +1,85 @@
+--- ./cmake/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ ./cmake/CMakeLists.txt	2011-10-10 11:10:30.000000000 +0300
+@@ -37,12 +37,14 @@
+ 
+ endmacro(GET_RELATIVE_SOURCES)
+ 
++if (BUILD_LIB)
+ get_absolute_sources(abs_dcpp_sources "${DCPP_SRCS};${DCPP_HDRS}")
+ get_relative_sources(rel_dcpp_sources "${dcpp_SOURCE_DIR}/po" "${abs_dcpp_sources}")
+ file(MAKE_DIRECTORY "${dcpp_BINARY_DIR}/po")
+ set(dcpp_files_from "${dcpp_BINARY_DIR}/po/libeiskaltdcpp_srcs.txt")
+ string(REGEX REPLACE ";" "\n" dcpp_contents "${rel_dcpp_sources}")
+ file(WRITE "${dcpp_files_from}" "${dcpp_contents}")
++endif (BUILD_LIB)
+ 
+ if (USE_GTK)
+ get_absolute_sources(abs_gtk_cpp_sources "${GTK_SRCS};${GTK_HDRS}")
+@@ -163,6 +165,7 @@
+ 			# if the po file doesn't exist. The case where a po file used to
+ 			# exist and no longer exists should never occur
+ 
++			if (BUILD_LIB)
+ 			if(NOT EXISTS ${dcpp_SOURCE_DIR}/po/${LANG}.po)
+ 				add_custom_command(
+ 					OUTPUT ${dcpp_SOURCE_DIR}/po/${LANG}.po
+@@ -194,6 +197,7 @@
+ 				WORKING_DIRECTORY ${dcpp_SOURCE_DIR}/po
+ 				COMMENT "pot-update [dcpp-${LANG}]: Updated po file."
+ 			)
++			endif (BUILD_LIB)
+ 
+ 			if (USE_GTK)
+ 			if(NOT EXISTS ${eiskaltdcpp-gtk_SOURCE_DIR}/po/${LANG}.po)
+@@ -231,15 +235,19 @@
+ 			SET(pot-update-SRC ${pot-update-SRC} ${eiskaltdcpp-gtk_SOURCE_DIR}/po/${LANG}.po.dummy )
+ 			endif (USE_GTK)
+ 
++			if (BUILD_LIB)
+ 			SET(pot-update-SRC ${pot-update-SRC} ${dcpp_SOURCE_DIR}/po/${LANG}.po.dummy)
++			endif (BUILD_LIB)
+ 		endforeach(LANG ${LANGUAGES})
+ 
+ 		# Add to target list
++		if (BUILD_LIB)
+ 		SET(pot-update-SRC
+ 			${pot-update-SRC}
+ 			${dcpp_SOURCE_DIR}/po/libeiskaltdcpp.pot # should depend on languages
+ 
+ 		)
++		endif (BUILD_LIB)
+ 		if (USE_GTK)
+ 		SET(pot-update-SRC
+ 			${pot-update-SRC}
+@@ -329,6 +337,7 @@
+ 
+ 	foreach(LANG ${LANGUAGES})
+ 
++		if (BUILD_LIB)
+ 			add_custom_command(
+ 				OUTPUT ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES
+ 				COMMAND ${CMAKE_COMMAND} -E make_directory
+@@ -346,6 +355,7 @@
+ 				WORKING_DIRECTORY ${dcpp_SOURCE_DIR}/po
+ 				COMMENT "mo-update [dcpp-${LANG}]: Creating mo file."
+ 			)
++			endif (BUILD_LIB)
+ 			if (USE_GTK)
+ 			add_custom_command(
+ 				OUTPUT ${eiskaltdcpp-gtk_BINARY_DIR}/locale/${LANG}/LC_MESSAGES
+@@ -377,6 +387,7 @@
+ 			)
+ 			endif (USE_GTK)
+ 
++			if (BUILD_LIB)
+ 			install(FILES
+ 			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
+ 					DESTINATION ${LOCALE_DIR}/${LANG}/LC_MESSAGES)
+@@ -387,6 +398,7 @@
+ 			set(mo-update-LANG-SRC ${mo-update-LANG-SRC}
+ 			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
+ 			)
++			endif (BUILD_LIB)
+ 
+ 		if(UPDATE_PO)
+ 			add_custom_target(mo-update-${LANG}

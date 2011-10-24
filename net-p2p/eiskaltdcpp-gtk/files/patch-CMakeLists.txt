@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2011-03-08 19:47:12.000000000 +0200
-+++ ./CMakeLists.txt	2011-03-10 16:22:20.000000000 +0200
-@@ -184,14 +184,14 @@
+--- ./CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ ./CMakeLists.txt	2011-10-10 11:16:46.000000000 +0300
+@@ -212,14 +212,14 @@
  
      if (USE_LIBGNOME2)
          message (STATUS "Building with LibGnome2 support")
@@ -17,9 +17,9 @@
      else (USE_LIBNOTIFY)
          message (STATUS "Building without libnotify support")
      endif (USE_LIBNOTIFY)
-@@ -316,16 +316,14 @@
-     if (MINGW)
-         set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--enable-auto-import")
+@@ -370,16 +370,14 @@
+     else (MINGW)
+         set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
      endif (MINGW)
 -    if (NOT APPLE)
 -        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--as-needed")
@@ -37,9 +37,9 @@
     ${eiskaltdcpp_SOURCE_DIR}
     ${GMP_INCLUDE_DIR}
     )
-@@ -395,7 +393,9 @@
- add_subdirectory (dht)
- endif (DHT)
+@@ -451,7 +449,9 @@
+   add_subdirectory (dht)
+ endif (WITH_DHT)
  
 -add_subdirectory (dcpp)
 +if (BUILD_LIB)
@@ -48,19 +48,18 @@
  
  if (USE_QT)
    add_subdirectory (eiskaltdcpp-qt)
-@@ -443,11 +443,11 @@
-       LOCALE_LIST "${LANGUAGES}"
-       COPYRIGHT_HOLDER "EiskaltDC++ team"
-       SOURCES "${DCPP_SRCS};${DCPP_HDRS}"
--      PO_DIR "${dcpp_SOURCE_DIR}/po"
--      POT_BUILD_DIR "${dcpp_SOURCE_DIR}/po"
-+      PO_DIR "${PROJECT_SOURCE_DIR}/po"
-+      POT_BUILD_DIR "${PROJECT_SOURCE_DIR}/po"
-       #PO_PREFIX    ""
--      PO_BUILD_DIR "${dcpp_SOURCE_DIR}/po"
--      MO_BUILD_DIR "${dcpp_BINARY_DIR}/locale"
-+      PO_BUILD_DIR "${PROJECT_SOURCE_DIR}/po"
-+      MO_BUILD_DIR "${PROJECT_BINARY_DIR}/locale"
-       MO_INSTALL_DIR "/${LOCALE_DIR}"
-       CREATE_POT_TARGET ${create_pot}
-       CREATE_PO_TARGET ${create_po}
+@@ -482,7 +482,7 @@
+     add_subdirectory(cmake)
+ endif(GETTEXT_FOUND)
+ 
+-if (USE_QT OR USE_GTK)
++if (INSTALL_DATA AND (USE_QT OR USE_GTK))
+ 
+     if (WITH_EXAMPLES)
+         install (DIRECTORY examples/ DESTINATION ${CLIENT_DATA_DIR}/examples
+@@ -524,4 +524,4 @@
+     install (FILES icons/icon_128x128.png DESTINATION ${SHARE_DIR}/pixmaps/ RENAME eiskaltdcpp.png)
+   endif (NOT HAIKU)
+ endif (APPLE)
+-endif (USE_QT OR USE_GTK)
++endif (INSTALL_DATA AND (USE_QT OR USE_GTK))
