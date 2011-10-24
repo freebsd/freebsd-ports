@@ -2,6 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/SpiderMonkey.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/SpiderMonkey.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JavaScript
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JavaScript
