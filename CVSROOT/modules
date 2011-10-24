@@ -6620,7 +6620,6 @@ java-cup                        ports/java/java-cup
 java-findbugs                   ports/devel/java-findbugs
 java-getopt                     ports/java/java-getopt
 java-mybatis                    ports/databases/java-mybatis
-java-tutorial                   ports/java/java-tutorial
 java-util-concurrent            ports/devel/java-util-concurrent
 java2html                       ports/textproc/java2html
 java3d                          ports/java/java3d
@@ -10872,6 +10871,7 @@ p5-AppConfig                    ports/devel/p5-AppConfig
 p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
 p5-Archive-Any                  ports/archivers/p5-Archive-Any
 p5-Archive-Extract              ports/archivers/p5-Archive-Extract
+p5-Archive-Extract-Libarchive   ports/archivers/p5-Archive-Extract-Libarchive
 p5-Archive-Rar                  ports/archivers/p5-Archive-Rar
 p5-Archive-SimpleExtractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-Archive-Tar                  ports/archivers/p5-Archive-Tar
@@ -11006,6 +11006,7 @@ p5-BSON                         ports/databases/p5-BSON
 p5-BZ-Client                    ports/devel/p5-BZ-Client
 p5-Badger                       ports/devel/p5-Badger
 p5-Baseball-Sabermetrics        ports/games/p5-Baseball-Sabermetrics
+p5-Bash-Completion              ports/shells/p5-Bash-Completion
 p5-Beanstalk-Client             ports/net/p5-Beanstalk-Client
 p5-Benchmark-Forking            ports/benchmarks/p5-Benchmark-Forking
 p5-Benchmark-Stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
@@ -15225,6 +15226,7 @@ p5-appconfig                    ports/devel/p5-AppConfig
 p5-appconfig-std                ports/devel/p5-AppConfig-Std
 p5-archive-any                  ports/archivers/p5-Archive-Any
 p5-archive-extract              ports/archivers/p5-Archive-Extract
+p5-archive-extract-libarchive   ports/archivers/p5-Archive-Extract-Libarchive
 p5-archive-rar                  ports/archivers/p5-Archive-Rar
 p5-archive-simpleextractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-archive-tar                  ports/archivers/p5-Archive-Tar
@@ -15346,6 +15348,7 @@ p5-b-utils                      ports/devel/p5-B-Utils
 p5-badger                       ports/devel/p5-Badger
 p5-base                         ports/devel/p5-base
 p5-baseball-sabermetrics        ports/games/p5-Baseball-Sabermetrics
+p5-bash-completion              ports/shells/p5-Bash-Completion
 p5-bbs-client                   ports/net/p5-BBS-Client
 p5-bbs-userinfo                 ports/net/p5-BBS-UserInfo
 p5-bbs-userinfo-maple3          ports/net/p5-BBS-UserInfo-Maple3
@@ -23789,6 +23792,7 @@ rubygem-dragonfly               ports/graphics/rubygem-dragonfly
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-edavis10-object_daddy   ports/devel/rubygem-edavis10-object_daddy
 rubygem-elif                    ports/devel/rubygem-elif
+rubygem-em-websocket            ports/www/rubygem-em-websocket
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
@@ -23830,6 +23834,7 @@ rubygem-graphviz                ports/graphics/rubygem-graphviz
 rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-guard                   ports/sysutils/rubygem-guard
+rubygem-guard-livereload        ports/sysutils/rubygem-guard-livereload
 rubygem-guard-rspec             ports/sysutils/rubygem-guard-rspec
 rubygem-haml                    ports/www/rubygem-haml
 rubygem-hashie                  ports/devel/rubygem-hashie
@@ -23855,6 +23860,7 @@ rubygem-inline                  ports/devel/rubygem-inline
 rubygem-innate                  ports/www/rubygem-innate
 rubygem-io-like                 ports/devel/rubygem-io-like
 rubygem-ipaddress               ports/net/rubygem-ipaddress
+rubygem-itextomml               ports/textproc/rubygem-itextomml
 rubygem-jammit                  ports/devel/rubygem-jammit
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
@@ -23977,6 +23983,7 @@ rubygem-ramaze                  ports/www/rubygem-ramaze
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
 rubygem-rash                    ports/devel/rubygem-rash
+rubygem-rb-inotify              ports/devel/rubygem-rb-inotify
 rubygem-rbase                   ports/databases/rubygem-rbase
 rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
@@ -24656,7 +24663,6 @@ smail                           ports/mail/smail
 smake                           ports/devel/smake
 smalltalk                       ports/lang/smalltalk
 smap                            ports/security/smap
-smarteiffel                     ports/lang/smarteiffel
 smartirc4net                    ports/irc/smartirc4net
 smartmontools                   ports/sysutils/smartmontools
 smarty                          ports/www/smarty
