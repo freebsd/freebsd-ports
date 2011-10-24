@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zork.org/software/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
 
 USE_AUTOTOOLS=	libtool

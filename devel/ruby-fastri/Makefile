@@ -12,7 +12,7 @@ MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast RDoc documentation browser for ruby
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
 		http://www.littlecms.com/
 PKGNAMESUFFIX=	-python
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System (python bindings)
 
 LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 TGTARCH=	x86_64
 TGTABI=		pc-mingw32

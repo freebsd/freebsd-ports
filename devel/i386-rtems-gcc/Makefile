@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 TGTARCH=	i386
 TGTABI=		rtems

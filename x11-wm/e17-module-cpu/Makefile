@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An e17 module which allows users to monitor cpu load
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

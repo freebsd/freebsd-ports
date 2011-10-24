@@ -13,7 +13,7 @@ CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
 		http://mbsd.msk.ru/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

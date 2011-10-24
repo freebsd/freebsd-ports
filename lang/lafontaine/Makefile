@@ -13,7 +13,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.nongnu.org/lafontaine/archives/
 DISTNAME=	${PORTNAME}_0.4-1
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical logo interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4

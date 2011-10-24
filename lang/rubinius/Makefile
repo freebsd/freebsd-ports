@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LLVMDIST}:llvm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
 HAS_CONFIGURE=	yes

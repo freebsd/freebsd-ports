@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/cuetools/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for working with cue files and toc files
 
 USE_GMAKE=	yes

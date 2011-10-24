@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for setting the title of terminal emulator windows
 
 WRKSRC=		${WRKDIR}/settitle

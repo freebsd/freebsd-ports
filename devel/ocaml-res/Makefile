@@ -14,7 +14,7 @@ MASTER_SITES=	http://hg.ocaml.info/release/res/archive/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	release-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically Resizing Contiguous Memory for OCaml
 
 USE_BZIP2=	yes

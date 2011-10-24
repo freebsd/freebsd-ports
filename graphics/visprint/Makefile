@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tastyrabbit.net/visprint/download/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates fractal fingerprint images based on any data
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

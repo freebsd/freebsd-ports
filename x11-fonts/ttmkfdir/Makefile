@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-fonts x11
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create fonts.scale file for use with TrueType font server
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

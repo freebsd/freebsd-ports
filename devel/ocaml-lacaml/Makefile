@@ -14,7 +14,7 @@ MASTER_SITES=	http://hg.ocaml.info/release/lacaml/archive/
 DISTNAME=	release-${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \

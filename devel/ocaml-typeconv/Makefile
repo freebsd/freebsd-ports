@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type conversion routines for OCaml
 
 USE_GMAKE=	yes

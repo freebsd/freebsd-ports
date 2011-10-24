@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	Darkness_by_saturn_vk
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Darkness theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

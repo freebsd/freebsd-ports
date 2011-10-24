@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
 
 MAKE_ENV+=	PTHREAD_FLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}" \

@@ -11,7 +11,7 @@ CATEGORIES=	lang devel
 MASTER_SITES=	http://www.sgi.com/tech/stl/
 DISTNAME=	STL_doc
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The STL reference manual by SGI
 
 NO_BUILD=	yes

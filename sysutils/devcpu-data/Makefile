@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMEPREFIX=	devcpu-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel and AMD CPUs microcode updates
 
 USE_BZIP2=	yes

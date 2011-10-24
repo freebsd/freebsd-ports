@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://gallium.inria.fr/${PORTNAME}/ \
 		http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Active-DVI viewer
 
 BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \

@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook program with mutt mail client support
 
 GNU_CONFIGURE=	yes

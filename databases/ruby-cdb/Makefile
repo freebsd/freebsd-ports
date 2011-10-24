@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to D. J. Bernstein's cdb (constant database) library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${CDB_PORTDIR}:build

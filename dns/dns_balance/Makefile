@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	DNS-Balance-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dynamic load-balancing DNS server
 
 USE_RUBY=	yes

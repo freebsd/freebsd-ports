@@ -13,7 +13,7 @@ CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment/imlib2-src/${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The next generation graphics library for Enlightenment
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.4.2
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([[:digit:]])$/-\1/}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An C++ networking library and application framework
 
 GNU_CONFIGURE=	yes

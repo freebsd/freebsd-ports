@@ -12,7 +12,7 @@ CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
 LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua

@@ -17,7 +17,7 @@ DISTNAME=	electric-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated VLSI design system
 
 USE_JAVA=	yes

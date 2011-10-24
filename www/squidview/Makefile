@@ -10,7 +10,7 @@ PORTVERSION=	0.73
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor squid statistics in realtime
 
 GNU_CONFIGURE=	yes

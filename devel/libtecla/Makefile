@@ -11,7 +11,7 @@ PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive command line editing facilities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

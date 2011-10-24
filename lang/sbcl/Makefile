@@ -20,7 +20,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 #MASTER_SITE_SUBDIR=	sbcl/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
 # More platforms are supported, but on Linux.

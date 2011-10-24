@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to create, verify and manipulate passwords
 
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib

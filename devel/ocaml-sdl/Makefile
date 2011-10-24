@@ -14,7 +14,7 @@ MASTER_SITES=	SF/ocaml${PORTNAME}/OCamlSDL/ocaml${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocamlsdl-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml interface to the SDL
 
 BUILD_DEPENDS=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl

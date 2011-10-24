@@ -13,7 +13,7 @@ MASTER_SITES=	http://ocaml-extlib.googlecode.com/files/
 MASTER_SITE_SUBDIR=	ocaml-lib
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete - yet small - standard library for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

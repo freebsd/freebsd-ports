@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end for various audio players
 
 USE_GETTEXT=	yes

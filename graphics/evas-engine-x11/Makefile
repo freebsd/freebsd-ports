@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${DISTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (X11 engine)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

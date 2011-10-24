@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	ocaml-
 PKGNAMESUFFIX=	-examples
 DISTNAME=	examples-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example programs for Camomile library
 
 WRKSRC=		${WRKDIR}/examples

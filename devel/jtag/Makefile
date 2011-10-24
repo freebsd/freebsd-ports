@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/openwince/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to work with JTAG-aware boards
 
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
 
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack lthack

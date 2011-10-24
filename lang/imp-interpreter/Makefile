@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monadic interpreter of a simple imperative language
 
 USE_BZIP2=	yes

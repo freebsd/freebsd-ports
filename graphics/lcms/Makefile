@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
 		http://www.littlecms.com/
 
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack lthack

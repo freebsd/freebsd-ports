@@ -14,7 +14,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for gEDA
 
 RUN_DEPENDS=	${DATADIR}/sym:${PORTSDIR}/cad/geda-symbols \

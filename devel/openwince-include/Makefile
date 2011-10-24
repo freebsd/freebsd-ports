@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/openwince/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	openwince-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of the useful include files for embedded developers
 
 USE_BZIP2=	yes

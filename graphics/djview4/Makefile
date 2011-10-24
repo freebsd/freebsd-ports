@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
 LIB_DEPENDS=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11

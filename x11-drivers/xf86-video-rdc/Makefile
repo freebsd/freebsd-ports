@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.SpringDaemons.com/stas/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.Org RDC display driver
 
 #USE_GL=		gl

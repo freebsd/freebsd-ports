@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and manipulate raw images from digital cameras
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

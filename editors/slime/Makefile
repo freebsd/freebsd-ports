@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 
 USE_BZIP2=	yes

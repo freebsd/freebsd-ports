@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (edb engine)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

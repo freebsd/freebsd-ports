@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful RAW image processing application
 
 LICENSE=	GPLv3

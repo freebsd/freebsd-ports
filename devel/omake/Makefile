@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://omake.metaprl.org/downloads/
 DISTNAME=	omake-0.9.8.5-3
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible build system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

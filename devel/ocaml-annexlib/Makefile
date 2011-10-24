@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://raevnos.pennmush.org/code/extlib/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml subroutines collection
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre

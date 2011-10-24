@@ -14,7 +14,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to manipulate ZIP/GZIP/JAR archives
 
 #USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (meta-port)
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	http://geda.seul.org/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \

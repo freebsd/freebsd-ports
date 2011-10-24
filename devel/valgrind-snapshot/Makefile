@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMESUFFIX=	-snapshot
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 CONFLICTS=	valgrind-[0-9]*

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-locale-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure ruby library which provides basic APIs for localization
 
 CONFLICTS=	${PKGNAMEPREFIX}locale-[0-9]*

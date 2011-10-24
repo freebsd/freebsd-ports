@@ -12,7 +12,7 @@ CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EFL DBUS connectivity library
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus

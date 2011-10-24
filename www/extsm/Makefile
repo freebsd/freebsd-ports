@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	SF/rxsm/rxsm/${PORTVERSION}
 DISTNAME=	xsm-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Site Manager (XSM)
 
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven2

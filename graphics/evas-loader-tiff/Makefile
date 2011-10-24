@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${DISTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (TIFF loader)
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \

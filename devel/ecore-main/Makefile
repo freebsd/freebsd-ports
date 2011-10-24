@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (main library)
 
 LICENSE=	BSD

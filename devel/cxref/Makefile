@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
 MASTER_SITE_SUBDIR=	devel/lang/c
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C program cross-referencing & documentation tool
 
 USE_GMAKE=	yes

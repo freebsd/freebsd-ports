@@ -13,7 +13,7 @@ MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/ \
 		http://codemonkey.org.uk/projects/x86info/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
 LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci

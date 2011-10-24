@@ -11,7 +11,7 @@ PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Genetic Algorithm library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

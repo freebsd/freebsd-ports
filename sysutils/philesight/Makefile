@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://zevv.nl/play/code/philesight/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows a graphics representation of the filesystem usage
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo \

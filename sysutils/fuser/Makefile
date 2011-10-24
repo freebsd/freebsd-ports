@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX fuser utility for FreeBSD
 
 USE_BZIP2=	yes

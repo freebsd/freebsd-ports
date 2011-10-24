@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.tangogps.org/downloads/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehencive GPS mapping application
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \

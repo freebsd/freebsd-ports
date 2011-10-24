@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daimi.au.dk/~mailund/dprog/download/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for specifying dynamic programming algorithms
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

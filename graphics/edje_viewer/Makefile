@@ -11,7 +11,7 @@ PORTVERSION=	20110129
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple viewer for .edj files
 
 DIST_SUBDIR=	e17
