@@ -1657,6 +1657,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Freetown
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Gaborone
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Harare
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Johannesburg
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Juba
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Kampala
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Khartoum
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Africa/Kigali
@@ -1861,8 +1862,9 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Dubai
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Dushanbe
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Gaza
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Harbin
-diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Hong_Kong
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Hebron
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Ho_Chi_Minh
+diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Hong_Kong
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Hovd
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Irkutsk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Jakarta

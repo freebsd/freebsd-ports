@@ -181,6 +181,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Freetown
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Gaborone
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Harare
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Johannesburg
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Juba
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Kampala
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Khartoum
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Kigali
@@ -385,8 +386,9 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dubai
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dushanbe
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Gaza
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Harbin
-diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hong_Kong
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hebron
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Ho_Chi_Minh
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hong_Kong
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hovd
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Irkutsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Jakarta
