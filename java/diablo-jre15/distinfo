@@ -2,5 +2,5 @@ SHA256 (diablo-latte-freebsd6-amd64-1.5.0_07-b01.tar.bz2) = e242f4f8ee2973cf1dda
 SIZE (diablo-latte-freebsd6-amd64-1.5.0_07-b01.tar.bz2) = 20580050
 SHA256 (diablo-latte-freebsd6-i386-1.5.0_07-b01.tar.bz2) = 4585f35124416de052c8be10f0f48536053ab5c33dc3b7d728bf6e84d9b42c14
 SIZE (diablo-latte-freebsd6-i386-1.5.0_07-b01.tar.bz2) = 23104037
-SHA256 (tzupdater-1_3_40-2011h.zip) = 5d768948b500d5151f32a5be479fe9466151f0b114c2db0210b7a27e2c96084d
-SIZE (tzupdater-1_3_40-2011h.zip) = 251050
+SHA256 (tzupdater-1_3_42-2011k.zip) = 11b4221c8ff0dae1a401dc1d9f25b30f02a9e43810a60455406fdbd780e97249
+SIZE (tzupdater-1_3_42-2011k.zip) = 467016
