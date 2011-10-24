@@ -8,7 +8,7 @@ share/pixmaps/qlandkartegt.png
 %%DATADIR%%/translations/qlandkartegt_fr.qm
 %%DATADIR%%/translations/qlandkartegt_it_IT.qm
 %%DATADIR%%/translations/qlandkartegt_nl_NL.qm
-%%DATADIR%%/translations/qlandkartegt_ru_RU.qm
+%%DATADIR%%/translations/qlandkartegt_ru.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
