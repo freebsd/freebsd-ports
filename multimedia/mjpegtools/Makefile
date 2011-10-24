@@ -74,6 +74,7 @@ _HAVE_GTK=	true
 .if defined(WITHOUT_SDL)
 CONFIGURE_ENV+=	ac_cv_path_SDL_CONFIG=no
 PLIST_SUB+=	SDL:="@comment "
+CONFIGURE_ARGS+=	--without-libsdl
 .else
 USE_SDL+=	gfx sdl
 PLIST_SUB+=	SDL:=""
