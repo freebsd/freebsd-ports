@@ -854,7 +854,6 @@
     SUBDIR += syslinux
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng-devel
-    SUBDIR += syslog-ng1
     SUBDIR += syslog-ng2
     SUBDIR += syslogger
     SUBDIR += system-tools-backends
