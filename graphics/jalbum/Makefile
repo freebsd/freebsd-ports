@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	9.0.2
+PORTVERSION=	10.1.2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	jAlbum${PORTVERSION}
@@ -23,9 +23,6 @@ NO_BUILD=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-# Only works with native bsdjava (breaks with linux and diablo versions)
-JAVA_OS=	native
-JAVA_VENDOR=	bsdjava
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
