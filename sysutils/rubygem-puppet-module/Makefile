@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet-module
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
