@@ -14,6 +14,7 @@ share/texmaker/COPYING
 share/texmaker/README_DIC_fr_FR.txt
 share/texmaker/README_de_DE_frami.txt
 share/texmaker/README_es_ES.txt
+share/texmaker/README_hu_HU.txt
 share/texmaker/de_DE.aff
 share/texmaker/de_DE.dic
 share/texmaker/doc1.png
@@ -45,6 +46,8 @@ share/texmaker/es_ES.aff
 share/texmaker/es_ES.dic
 share/texmaker/fr_FR.aff
 share/texmaker/fr_FR.dic
+share/texmaker/hu_HU.aff
+share/texmaker/hu_HU.dic
 share/texmaker/it_IT.aff
 share/texmaker/it_IT.dic
 share/texmaker/it_IT_README.txt
@@ -54,7 +57,10 @@ share/texmaker/nl_NL.dic
 share/texmaker/qt_cs.qm
 share/texmaker/qt_de.qm
 share/texmaker/qt_es.qm
+share/texmaker/qt_fa.qm
 share/texmaker/qt_fr.qm
+share/texmaker/qt_nl.qm
+share/texmaker/qt_pl.qm
 share/texmaker/qt_pt.qm
 share/texmaker/qt_ru.qm
 share/texmaker/qt_zh_CN.qm
@@ -66,8 +72,10 @@ share/texmaker/texmaker_es.qm
 share/texmaker/texmaker_fa.qm
 share/texmaker/texmaker_fr.qm
 share/texmaker/texmaker_gl.qm
+share/texmaker/texmaker_hu.qm
 share/texmaker/texmaker_it.qm
 share/texmaker/texmaker_nl.qm
+share/texmaker/texmaker_pl.qm
 share/texmaker/texmaker_pt_BR.qm
 share/texmaker/texmaker_ru.qm
 share/texmaker/texmaker_zh_CN.qm
