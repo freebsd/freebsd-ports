@@ -92,7 +92,7 @@ lib/ocaml/caml/mlvalues.h
 lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
 lib/ocaml/caml/socketaddr.h
-lib/ocaml/caml/threads.h
+%%THREADS%%lib/ocaml/caml/threads.h
 lib/ocaml/caml/unixsupport.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
@@ -266,7 +266,7 @@ lib/ocaml/complex.cmx
 lib/ocaml/complex.ml
 lib/ocaml/complex.mli
 %%PROF%%lib/ocaml/complex.p.cmx
-lib/ocaml/condition.mli
+%%THREADS%%lib/ocaml/condition.mli
 lib/ocaml/dbm.a
 lib/ocaml/dbm.cma
 lib/ocaml/dbm.cmi
@@ -285,7 +285,7 @@ lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.cma
 lib/ocaml/dynlink.cmi
 lib/ocaml/dynlink.mli
-lib/ocaml/event.mli
+%%THREADS%%lib/ocaml/event.mli
 lib/ocaml/expunge
 lib/ocaml/extract_crc
 lib/ocaml/filename.cmi
@@ -632,9 +632,9 @@ lib/ocaml/int_misc.cmx
 %%TK%%lib/ocaml/labltk/tkcompiler
 %%TK%%lib/ocaml/labltk/tkthread.cmi
 %%TK%%lib/ocaml/labltk/tkthread.cmo
-%%TK%%lib/ocaml/labltk/tkthread.cmx
+%%THREADS%%%%TK%%lib/ocaml/labltk/tkthread.cmx
 %%TK%%lib/ocaml/labltk/tkthread.mli
-%%TK%%lib/ocaml/labltk/tkthread.o
+%%THREADS%%%%TK%%lib/ocaml/labltk/tkthread.o
 %%TK%%lib/ocaml/labltk/tkvars.cmi
 %%TK%%lib/ocaml/labltk/tkvars.cmx
 %%TK%%lib/ocaml/labltk/tkvars.mli
@@ -673,8 +673,8 @@ lib/ocaml/libcamlstr.a
 %%X11%%lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
-lib/ocaml/libthreads.a
-lib/ocaml/libthreadsnat.a
+%%THREADS%%lib/ocaml/libthreads.a
+%%THREADS%%lib/ocaml/libthreadsnat.a
 lib/ocaml/libunix.a
 lib/ocaml/list.cmi
 lib/ocaml/list.cmx
@@ -701,7 +701,7 @@ lib/ocaml/moreLabels.cmx
 lib/ocaml/moreLabels.ml
 lib/ocaml/moreLabels.mli
 %%PROF%%lib/ocaml/moreLabels.p.cmx
-lib/ocaml/mutex.mli
+%%THREADS%%lib/ocaml/mutex.mli
 lib/ocaml/nat.cmi
 lib/ocaml/nat.cmx
 lib/ocaml/nat.mli
@@ -898,7 +898,7 @@ lib/ocaml/stublibs/dllbigarray.so
 lib/ocaml/stublibs/dllcamlstr.so
 lib/ocaml/stublibs/dllmldbm.so
 lib/ocaml/stublibs/dllnums.so
-lib/ocaml/stublibs/dllthreads.so
+%%THREADS%%lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so
 lib/ocaml/stublibs/dllvmthreads.so
 lib/ocaml/sys.cmi
@@ -906,21 +906,21 @@ lib/ocaml/sys.cmx
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
 %%PROF%%lib/ocaml/sys.p.cmx
-lib/ocaml/thread.mli
-lib/ocaml/threadUnix.mli
-lib/ocaml/threads/condition.cmi
-lib/ocaml/threads/condition.cmx
-lib/ocaml/threads/event.cmi
-lib/ocaml/threads/event.cmx
-lib/ocaml/threads/mutex.cmi
-lib/ocaml/threads/mutex.cmx
-lib/ocaml/threads/thread.cmi
-lib/ocaml/threads/thread.cmx
-lib/ocaml/threads/threadUnix.cmi
-lib/ocaml/threads/threadUnix.cmx
-lib/ocaml/threads/threads.a
-lib/ocaml/threads/threads.cma
-lib/ocaml/threads/threads.cmxa
+%%THREADS%%lib/ocaml/thread.mli
+%%THREADS%%lib/ocaml/threadUnix.mli
+%%THREADS%%lib/ocaml/threads/condition.cmi
+%%THREADS%%lib/ocaml/threads/condition.cmx
+%%THREADS%%lib/ocaml/threads/event.cmi
+%%THREADS%%lib/ocaml/threads/event.cmx
+%%THREADS%%lib/ocaml/threads/mutex.cmi
+%%THREADS%%lib/ocaml/threads/mutex.cmx
+%%THREADS%%lib/ocaml/threads/thread.cmi
+%%THREADS%%lib/ocaml/threads/thread.cmx
+%%THREADS%%lib/ocaml/threads/threadUnix.cmi
+%%THREADS%%lib/ocaml/threads/threadUnix.cmx
+%%THREADS%%lib/ocaml/threads/threads.a
+%%THREADS%%lib/ocaml/threads/threads.cma
+%%THREADS%%lib/ocaml/threads/threads.cmxa
 lib/ocaml/topdirs.cmi
 lib/ocaml/toplevellib.cma
 lib/ocaml/toploop.cmi
@@ -988,10 +988,10 @@ lib/ocaml/weak.mli
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_labltk
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk/images
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk
-%%TK%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%EXAMPLESDIR%%
 @dirrm lib/ocaml/vmthreads
-@dirrm lib/ocaml/threads
-@dirrm lib/ocaml/stublibs
+%%THREADS%%@dirrm lib/ocaml/threads
+@dirrmtry lib/ocaml/stublibs
 @dirrm lib/ocaml/ocamldoc/custom
 @dirrm lib/ocaml/ocamldoc
 @dirrm lib/ocaml/ocamlbuild

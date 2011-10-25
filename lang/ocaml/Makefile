@@ -54,11 +54,13 @@ MANN!=	${CAT} ${FILESDIR}/mann
 MLINKS!=${CAT} ${FILESDIR}/manlinks
 
 .if !defined(WITHOUT_THREADS)
+PLIST_SUB+=	THREADS=""
 DEPENDS_ARGS+=	WITH_THREADS=yes
 CONFIGURE_ARGS+=-with-pthread
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD=		${PTHREAD_LIBS}
 .else
+PLIST_SUB+=	THREADS="@comment "
 THR_CPP=	#empty
 THR_LD=		#empty
 CONFIGURE_ARGS+=-no-pthread
@@ -164,6 +166,6 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/compiler-lib" >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} "@dirrm lib/ocaml" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir "%D/lib/ocaml" 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
