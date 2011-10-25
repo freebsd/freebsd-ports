@@ -5826,13 +5826,54 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>14.0.835.202</lt></range>
+	<range><lt>15.0.874.102</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 15.0.874.102:<br/>
+	    [86758] High CVE-2011-2845: URL bar spoof in history handling.
+	      Credit to Jordi Chancel.<br/>
+	    [88949] Medium CVE-2011-3875: URL bar spoof with drag+drop of URLs.
+	      Credit to Jordi Chancel.<br/>
+	    [90217] Low CVE-2011-3876: Avoid stripping whitespace at the end of
+	      download filenames. Credit to Marc Novak.<br/>
+	    [91218] Low CVE-2011-3877: XSS in appcache internals page. Credit
+	      to Google Chrome Security Team (Tom Sepez) plus independent
+	      discovery by Juho Nurminen.<br/>
+	    [94487] Medium CVE-2011-3878: Race condition in worker process
+	      initialization. Credit to miaubiz.<br/>
+	    [95374] Low CVE-2011-3879: Avoid redirect to chrome scheme URIs.
+	      Credit to Masato Kinugawa.<br/>
+	    [95992] Low CVE-2011-3880: Don't permit  as a HTTP header delimiter.
+	      Credit to Vladimir Vorontsov, ONsec company.<br/>
+	    [96047] [96885] [98053] [99512] [99750] High CVE-2011-3881:
+	      Cross-origin policy violations. Credit to Sergey Glazunov.<br/>
+	    [96292] High CVE-2011-3882: Use-after-free in media buffer handling.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [96902] High CVE-2011-3883: Use-after-free in counter handling.
+	      Credit to miaubiz.<br/>
+	    [97148] High CVE-2011-3884: Timing issues in DOM traversal. Credit
+	      to Brian Ryner of the Chromium development community.<br/>
+	    [97599] [98064] [98556] [99294] [99880] [100059] High CVE-2011-3885:
+	      Stale style bugs leading to use-after-free. Credit to
+	      miaubiz.<br/>
+	    [98773] [99167] High CVE-2011-3886: Out of bounds writes in v8.
+	      Credit to Christian Holler.<br/>
+	    [98407] Medium CVE-2011-3887: Cookie theft with javascript URIs.
+	      Credit to Sergey Glazunov.<br/>
+	    [99138] High CVE-2011-3888: Use-after-free with plug-in and editing.
+	      Credit to miaubiz.<br/>
+	    [99211] High CVE-2011-3889: Heap overflow in Web Audio. Credit to
+	      miaubiz.<br/>
+	    [99553] High CVE-2011-3890: Use-after-free in video source handling.
+	      Credit to Ami Fischman of the Chromium development community.<br/>
+	    [100332] High CVE-2011-3891: Exposure of internal v8 functions.
+	      Credit to Steven Keuchel of the Chromium development community
+	      plus independent discovery by Daniel Divricean.</p>
+
 	  <p>Fixed in 14.0.835.202:<br/>
 	    [93788] High CVE-2011-2876: Use-after-free in text line box
 	      handling. Credit to miaubiz.<br/>
@@ -6518,6 +6559,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2842</cvename>
       <cvename>CVE-2011-2843</cvename>
       <cvename>CVE-2011-2844</cvename>
+      <cvename>CVE-2011-2845</cvename>
       <cvename>CVE-2011-2846</cvename>
       <cvename>CVE-2011-2847</cvename>
       <cvename>CVE-2011-2848</cvename>
@@ -6546,11 +6588,29 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2881</cvename>
       <cvename>CVE-2011-3234</cvename>
       <cvename>CVE-2011-3873</cvename>
+      <cvename>CVE-2011-3873</cvename>
+      <cvename>CVE-2011-3875</cvename>
+      <cvename>CVE-2011-3876</cvename>
+      <cvename>CVE-2011-3877</cvename>
+      <cvename>CVE-2011-3878</cvename>
+      <cvename>CVE-2011-3879</cvename>
+      <cvename>CVE-2011-3880</cvename>
+      <cvename>CVE-2011-3881</cvename>
+      <cvename>CVE-2011-3882</cvename>
+      <cvename>CVE-2011-3883</cvename>
+      <cvename>CVE-2011-3884</cvename>
+      <cvename>CVE-2011-3885</cvename>
+      <cvename>CVE-2011-3886</cvename>
+      <cvename>CVE-2011-3887</cvename>
+      <cvename>CVE-2011-3888</cvename>
+      <cvename>CVE-2011-3889</cvename>
+      <cvename>CVE-2011-3890</cvename>
+      <cvename>CVE-2011-3891</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-10-04</modified>
+      <modified>2011-10-25</modified>
     </dates>
   </vuln>
 
