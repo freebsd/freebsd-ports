@@ -1,0 +1,30 @@
+bin/compiler_test.in
+bin/compiler_test.pl
+bin/crash_compilers.pl
+bin/launchn.pl
+bin/csmith
+include/csmith-2.0.0/windows/stdint.h
+include/csmith-2.0.0/csmith.h
+include/csmith-2.0.0/csmith_minimal.h
+include/csmith-2.0.0/custom_limits.h
+include/csmith-2.0.0/custom_stdint_x86.h
+include/csmith-2.0.0/platform_avr.h
+include/csmith-2.0.0/platform_generic.h
+include/csmith-2.0.0/platform_msp430.h
+include/csmith-2.0.0/random_inc.h
+include/csmith-2.0.0/safe_abbrev.h
+include/csmith-2.0.0/safe_math.m4
+include/csmith-2.0.0/safe_math_macros.m4
+include/csmith-2.0.0/safe_math_macros_notmp.m4
+include/csmith-2.0.0/stdint_avr.h
+include/csmith-2.0.0/stdint_ia32.h
+include/csmith-2.0.0/stdint_ia64.h
+include/csmith-2.0.0/stdint_msp430.h
+include/csmith-2.0.0/volatile_runtime.c
+include/csmith-2.0.0/volatile_runtime.h
+lib/libcsmith.a
+%%DOCSDIR%%/probabilities.txt
+
+@dirrm %%DOCSDIR%%
+@dirrm include/csmith-2.0.0/windows
+@dirrm include/csmith-2.0.0

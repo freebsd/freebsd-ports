@@ -1,0 +1,11 @@
+--- ./src/Makefile.am.orig	2011-04-12 21:39:51.000000000 -0400
++++ ./src/Makefile.am	2011-10-25 14:24:30.000000000 -0400
+@@ -191,7 +191,7 @@
+ 	csmith.vcproj \
+ 	csmith.vcxproj
+ 
+-SVN_FLAG = -DSVN_VERSION=\"`svnversion -n .`\"
++SVN_FLAG = -DSVN_VERSION=\"`exported`\"
+ 
+ ## ENE: The idea of stuffing the target CPU name (a string) into a CPP symbol
+ ## is kind of awful.  What we should do instead is use the name to modify the

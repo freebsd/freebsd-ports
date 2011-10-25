@@ -235,6 +235,7 @@
     SUBDIR += crossvc
     SUBDIR += cscope
     SUBDIR += cscout
+    SUBDIR += csmith
     SUBDIR += csoap
     SUBDIR += cssc
     SUBDIR += cstringbuffer
