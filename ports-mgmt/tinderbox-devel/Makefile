@@ -6,7 +6,6 @@
 
 PORTNAME=	tinderbox
 DISTVERSION=	3.4${SNAP}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
@@ -36,7 +35,7 @@ NO_BUILD=	yes
 WANT_PERL=	yes
 SUB_FILES=	pkg-message
 
-SNAP=		.r2
+SNAP=		.r3
 #SNAP=		-20110101 # 22:28:07 UTC
 
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
