@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/mac_resolv/make-manuf.orig
++++ plugins/mac_resolv/make-manuf
+@@ -27,7 +27,7 @@
+ $outfile  = "manuf";
+ $inheader = 1;
+ $ieee_url = "http://standards.ieee.org/regauth/oui/oui_public.txt";
+-$cb_url   = "http://www.cavebear.com/CaveBear/Ethernet/Ethernet.txt";
++$cb_url   = "http://www.cavebear.com/archive/cavebear/Ethernet/Ethernet.txt";
+ %oui_list = ();
+ $hp       = "[0-9a-fA-F]{2}";
+ $oui_re   = "$hp:$hp:$hp";
