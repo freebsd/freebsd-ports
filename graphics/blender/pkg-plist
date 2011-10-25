@@ -17,7 +17,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/Boltfactory.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/__init__.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/createMesh.py
-%%DATADIR%%/scripts/addons/add_mesh_BoltFactory/original_script_add_mesh_bolt.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/preset_utils.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets/M10.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets/M12.py
@@ -31,6 +30,9 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_extra_objects.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_gears.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_gemstones.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_polysphere.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_pyramid.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_supertoroid.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_twisted_torus.py
 %%DATADIR%%/scripts/addons/add_mesh_ant_landscape.py
 %%DATADIR%%/scripts/addons/add_mesh_pipe_joint.py
@@ -104,11 +106,16 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/mesh_bsurfaces.py
 %%DATADIR%%/scripts/addons/mesh_looptools.py
 %%DATADIR%%/scripts/addons/mesh_relax.py
+%%DATADIR%%/scripts/addons/mocap/__init__.py
+%%DATADIR%%/scripts/addons/mocap/mocap_constraints.py
+%%DATADIR%%/scripts/addons/mocap/mocap_tools.py
+%%DATADIR%%/scripts/addons/mocap/retarget.py
 %%DATADIR%%/scripts/addons/modules/add_utils.py
 %%DATADIR%%/scripts/addons/modules/constants_utils.py
 %%DATADIR%%/scripts/addons/modules/cursor_utils.py
-%%DATADIR%%/scripts/addons/modules/curve_utils.py
 %%DATADIR%%/scripts/addons/modules/geometry_utils.py
+%%DATADIR%%/scripts/addons/modules/misc_utils.py
+%%DATADIR%%/scripts/addons/modules/ui_utils.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/__init__.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/ui.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/util.py
@@ -178,6 +185,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/space_view3d_math_vis/draw.py
 %%DATADIR%%/scripts/addons/space_view3d_math_vis/utils.py
 %%DATADIR%%/scripts/addons/space_view3d_panel_measure.py
+%%DATADIR%%/scripts/addons/space_view3d_screencast_keys.py
 %%DATADIR%%/scripts/addons/space_view3d_spacebar_menu.py
 %%DATADIR%%/scripts/addons/system_blend_info.py
 %%DATADIR%%/scripts/addons/system_demo_mode/__init__.py
@@ -193,8 +201,10 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/modules/bpy/path.py
 %%DATADIR%%/scripts/modules/bpy/utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/__init__.py
+%%DATADIR%%/scripts/modules/bpy_extras/anim_utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/image_utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/io_utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/keyconfig_utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/mesh_utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/object_utils.py
 %%DATADIR%%/scripts/modules/bpy_extras/view3d_utils.py
@@ -263,10 +273,10 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/presets/sunsky/mountain.py
 %%DATADIR%%/scripts/startup/bl_operators/__init__.py
 %%DATADIR%%/scripts/startup/bl_operators/add_mesh_torus.py
-%%DATADIR%%/scripts/startup/bl_operators/animsys_update.py
+%%DATADIR%%/scripts/startup/bl_operators/anim.py
+%%DATADIR%%/scripts/startup/bl_operators/console.py
 %%DATADIR%%/scripts/startup/bl_operators/image.py
 %%DATADIR%%/scripts/startup/bl_operators/mesh.py
-%%DATADIR%%/scripts/startup/bl_operators/nla.py
 %%DATADIR%%/scripts/startup/bl_operators/object.py
 %%DATADIR%%/scripts/startup/bl_operators/object_align.py
 %%DATADIR%%/scripts/startup/bl_operators/object_quick_effects.py
@@ -278,6 +288,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/startup/bl_operators/uvcalc_lightmap.py
 %%DATADIR%%/scripts/startup/bl_operators/uvcalc_smart_project.py
 %%DATADIR%%/scripts/startup/bl_operators/vertexpaint_dirt.py
+%%DATADIR%%/scripts/startup/bl_operators/view3d.py
 %%DATADIR%%/scripts/startup/bl_operators/wm.py
 %%DATADIR%%/scripts/startup/bl_ui/__init__.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_animviz.py
@@ -291,6 +302,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/startup/bl_ui/properties_data_mesh.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_data_metaball.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_data_modifier.py
+%%DATADIR%%/scripts/startup/bl_ui/properties_data_speaker.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_game.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_material.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_object.py
@@ -328,6 +340,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/templates/background_job.py
 %%DATADIR%%/scripts/templates/batch_export.py
 %%DATADIR%%/scripts/templates/builtin_keyingset.py
+%%DATADIR%%/scripts/templates/driver_functions.py
 %%DATADIR%%/scripts/templates/gamelogic.py
 %%DATADIR%%/scripts/templates/gamelogic_basic.py
 %%DATADIR%%/scripts/templates/gamelogic_module.py
@@ -398,6 +411,7 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/netrender
 @dirrm %%DATADIR%%/scripts/addons/modules/extensions_framework
 @dirrm %%DATADIR%%/scripts/addons/modules
+@dirrm %%DATADIR%%/scripts/addons/mocap
 @dirrm %%DATADIR%%/scripts/addons/mesh_inset
 @dirrm %%DATADIR%%/scripts/addons/light_field_tools
 @dirrm %%DATADIR%%/scripts/addons/io_shape_mdd
