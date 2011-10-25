@@ -21132,6 +21132,7 @@ plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
 plasma-applet-fancytasks        ports/deskutils/plasma-applet-fancytasks
 plasma-applet-ftpmonitor        ports/ftp/plasma-applet-ftpmonitor
 plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
+plasma-applet-icontasks         ports/deskutils/plasma-applet-icontasks
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
 plasma-applet-serverstatuswidget  ports/deskutils/plasma-applet-serverstatuswidget
@@ -25236,7 +25237,6 @@ sysinfo                         ports/sysutils/sysinfo
 syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng-devel                 ports/sysutils/syslog-ng-devel
-syslog-ng1                      ports/sysutils/syslog-ng1
 syslog-ng2                      ports/sysutils/syslog-ng2
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
@@ -26631,6 +26631,7 @@ wide-dhcp                       ports/net-mgmt/wide-dhcp
 widelands                       ports/games/widelands
 widentd                         ports/net/widentd
 wifimgr                         ports/net-mgmt/wifimgr
+wiimms                          ports/sysutils/wiimms
 wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
 wildmidi                        ports/audio/wildmidi
