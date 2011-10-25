@@ -5,45 +5,48 @@
 # $FreeBSD$
 
 PORTNAME=	xgate
-PORTVERSION=	3.5pl3
-PORTREVISION=	3
+PORTVERSION=	3.7pl6
 CATEGORIES=	japanese mail www java
-MASTER_SITES=	http://www.orangesoft.co.jp/xGate/download/
+MASTER_SITES=	http://www.orangesoft.co.jp/index.php/download_file/-/192/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	xGate
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
 
-RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/tomcat41
-
-BROKEN=		fails to fetch
+RUN_DEPENDS=	${APP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
+SHAREOWN=	www
+SHAREGRP=	www
 
 PLIST_SUB=	T=${APP_HOME:S|^${LOCALBASE}/||} \
 		WWWUID=${WWWUID} WWWGID=${WWWGID}
 
-PORTDOCS=	AdminGuide_V3.5.pdf		\
-		BasicPkgInstallGuide_V3.5.pdf	\
-		ConfigSetupGuide_V3.5.pdf	\
-		LDAPSchema_V3.2.xls		\
-		PCUserGuide_V3.5.pdf		\
-		ReleaseNote_V3.5.pdf		\
-		ReleaseNote_V3.5PL1.pdf		\
-		ReleaseNote_V3.5PL2.pdf		\
-		ReleaseNote_V3.5PL3.pdf		\
-		UserGuide_V3.5.pdf		\
-		xGate32to35migration.pdf
+PORTDOCS=	AdminGuide.pdf \
+		BasicPkgInstallGuide.pdf \
+		ConfigSetupGuide.pdf \
+		LDAPSchema_V35_37.xls \
+		PCUserGuide.pdf \
+		ReleaseNote_V3.5.2.pdf \
+		ReleaseNote_V3.5.2PL1.pdf \
+		ReleaseNote_V3.5.2PL2.pdf \
+		ReleaseNote_V3.5.2PL3_3.7.pdf \
+		ReleaseNote_V3.5.2PL4_3.7PL1.pdf \
+		ReleaseNote_V3.5.2PL5_3.7PL2.pdf \
+		ReleaseNote_V3.5.2PL6_3.7PL3.pdf \
+		ReleaseNote_V3.5.2PL7_3.7PL4.pdf \
+		ReleaseNote_V3.5.2PL8_3.7PL5.pdf \
+		ReleaseNote_V3.5.2PL9_3.7PL6.pdf \
+		UserGuide.pdf
 
 RESTRICTED=	Commercial license
 
 .include <bsd.port.pre.mk>
 
-APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat41 -VAPP_HOME
+APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
 
 CNFLSTS=	account/admin.ndt	\
 		account/license.dat	\
@@ -60,14 +63,13 @@ CNFLSTS=	account/admin.ndt	\
 		conf/group.map		\
 		conf/ldap.map		\
 		conf/log.conf		\
-		conf/notify.conf	\
 		conf/terminal.dat	\
 		conf/user.data		\
 		conf/xgate.conf
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/xgate
-	@cd ${WRKSRC}/xgate && ${JAR} xf ../xgate.war
+	@cd ${WRKSRC}/xgate && ${TAR} xf ../xgate.war
 .for conf in ${CNFLSTS}
 	@cd ${WRKSRC}/xgate/WEB-INF && ${MV} ${conf} ${conf}-dist
 .endfor
@@ -77,8 +79,8 @@ post-patch:
 
 do-install:
 	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} /var/log/xgate
-	@cd ${WRKSRC} && ${FIND} xgate | \
-		${CPIO} -pdm -L -R ${WWWOWN}:${WWWGRP} ${APP_HOME}/webapps/
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${APP_HOME}/webapps/${PORTNAME}
+	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_SHARE} \* ${APP_HOME}/webapps/${PORTNAME}
 .for conf in ${CNFLSTS}
 	@cd ${APP_HOME}/webapps/xgate/WEB-INF && \
 		[ ! -f ${conf} ] && ${CP} -p ${conf}-dist ${conf} || ${TRUE}
