@@ -94,7 +94,7 @@
 -        '<(tcmalloc_dir)/src/base/spinlock_posix-inl.h',
 -        '<(tcmalloc_dir)/src/base/spinlock_win32-inl.h',
 -        '<(tcmalloc_dir)/src/base/stl_allocator.h',
--        '<(tcmalloc_dir)/src/base/src/synchronization_profiling.h',
+-        '<(tcmalloc_dir)/src/base/synchronization_profiling.h',
 -        '<(tcmalloc_dir)/src/base/sysinfo.cc',
 -        '<(tcmalloc_dir)/src/base/sysinfo.h',
 -        '<(tcmalloc_dir)/src/base/thread_annotations.h',

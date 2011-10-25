@@ -1,8 +1,8 @@
---- build/common.gypi.orig	2011-09-14 11:01:28.000000000 +0300
-+++ build/common.gypi	2011-09-29 23:13:08.000000000 +0300
-@@ -303,6 +303,10 @@
-     'enable_register_protocol_handler%': '<(enable_register_protocol_handler)',
-     'enable_smooth_scrolling%': '<(enable_smooth_scrolling)',
+--- build/common.gypi.orig	2011-10-07 08:32:09.000000000 +0000
++++ build/common.gypi	2011-10-10 19:06:38.844749713 +0000
+@@ -331,6 +331,10 @@
+     # Whether to build for Wayland display server
+     'use_wayland%': 0,
  
 +    'os_ver%': 0,
 +    'prefix_dir%': '/usr',
@@ -11,7 +11,7 @@
      # The release channel that this build targets. This is used to restrict
      # channel-specific build options, like which installer packages to create.
      # The default is 'all', which does no channel-specific filtering.
-@@ -516,7 +520,7 @@
+@@ -551,7 +555,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -20,8 +20,8 @@
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -956,7 +960,7 @@
-               ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
+@@ -1042,7 +1046,7 @@
+               ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
              ],
            }],
 -          ['OS!="linux"', {
@@ -29,7 +29,7 @@
              'sources/': [
                ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
                ['exclude', '(^|/)linux/'],
-@@ -1536,6 +1540,20 @@
+@@ -1613,6 +1617,21 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],
@@ -44,6 +44,7 @@
 +          ['gcc_version == 42', {
 +            'cflags!': [
 +              '-fno-signed-zeros',
++              '-Wno-unused-result',
 +            ],
 +          }],
 +        ],

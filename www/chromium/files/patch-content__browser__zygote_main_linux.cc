@@ -1,15 +1,6 @@
---- content/browser/zygote_main_linux.cc.orig	2011-09-14 11:01:10.000000000 +0300
-+++ content/browser/zygote_main_linux.cc	2011-10-02 15:28:48.000000000 +0300
-@@ -57,7 +57,7 @@
- #endif
- 
- #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
--    !defined(__clang__)
-+    !defined(__clang__) && !defined(OS_FREEBSD)
- // The seccomp sandbox is enabled on all ia32 and x86-64 processor as long as
- // we aren't using SELinux or clang.
- #define SECCOMP_SANDBOX
-@@ -720,11 +720,16 @@
+--- content/browser/zygote_main_linux.cc.orig	2011-10-07 11:31:44.000000000 +0300
++++ content/browser/zygote_main_linux.cc	2011-10-08 22:11:46.609222627 +0300
+@@ -727,11 +727,16 @@
      // dumpable.
      const CommandLine& command_line = *CommandLine::ForCurrentProcess();
      if (!command_line.HasSwitch(switches::kAllowSandboxDebugging)) {
@@ -24,5 +15,5 @@
 +      return false;
 +#endif
      }
-   } else if (CommandLine::ForCurrentProcess()->HasSwitch(
-         switches::kEnableSeccompSandbox)) {
+ #if defined(SECCOMP_SANDBOX)
+   } else if (SeccompSandboxEnabled()) {
