@@ -8,3 +8,4 @@ bin/whisper-fetch.py
 bin/whisper-update.py
 bin/whisper-resize.py
 bin/whisper-create.py
+bin/whisper-set-aggregation-method.py
