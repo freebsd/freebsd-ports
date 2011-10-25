@@ -1,0 +1,11 @@
+--- zone.tab.orig	2011-10-26 08:33:04.000000000 +1100
++++ zone.tab	2011-10-26 08:33:14.000000000 +1100
+@@ -257,7 +257,7 @@
+ LY	+3254+01311	Africa/Tripoli
+ MA	+3339-00735	Africa/Casablanca
+ MC	+4342+00723	Europe/Monaco
+-MD	+4700+02850	Europe/Chisinau
++MD	+4700+02850	Europe/Chisinau	most locations
+ MD	+4651+02938	Europe/Tiraspol	Pridnestrovie
+ ME	+4226+01916	Europe/Podgorica
+ MF	+1804-06305	America/Marigot
