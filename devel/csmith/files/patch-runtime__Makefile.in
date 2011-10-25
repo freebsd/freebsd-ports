@@ -1,0 +1,11 @@
+--- ./runtime/Makefile.in.orig	2011-04-12 21:39:51.000000000 -0400
++++ ./runtime/Makefile.in	2011-10-25 14:17:34.000000000 -0400
+@@ -204,7 +204,7 @@
+ libcsmith_a_SOURCES = \
+ 	volatile_runtime.c
+ 
+-SVN_FLAG = -DSVN_VERSION=\"`svnversion -n .`\"
++SVN_FLAG = -DSVN_VERSION=\"`exported`\"
+ libcsmith_a_CPPFLAGS = \
+ 	-DTARGET_CPU_$(target_cpu)=1 \
+ 	$(SVN_FLAG)

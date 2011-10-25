@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	2011-04-12 21:39:51.000000000 -0400
++++ ./src/Makefile.in	2011-10-25 14:24:30.000000000 -0400
+@@ -384,7 +384,7 @@
+ 	csmith.vcproj \
+ 	csmith.vcxproj
+ 
+-SVN_FLAG = -DSVN_VERSION=\"`svnversion -n .`\"
++SVN_FLAG = -DSVN_VERSION=\"`exported`\"
+ csmith_CPPFLAGS = \
+ 	-DTARGET_CPU_$(target_cpu)=1 \
+ 	$(SVN_FLAG) \
