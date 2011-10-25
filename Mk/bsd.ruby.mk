@@ -133,7 +133,6 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 #
 
 RUBY_DEFAULT_VER?=	1.8
-RAKE_VER=	0.9.2
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
