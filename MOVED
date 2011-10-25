@@ -2831,3 +2831,4 @@ java/java-tutorial||2011-10-23|Has expired: disappeared from vendor a long time 
 lang/smarteiffel||2011-10-23|Has expired: Dead upstream, broken on amd64 with gcc>4
 sysutils/syslog-ng1||2011-10-24|Has expired: Suggested by syslog-ng upline, no longer supported
 www/tomcat41||2011-10-24|No more upstream support
+graphics/gnash-devel||2011-10-24|Outdated, use graphics/gnash instead
