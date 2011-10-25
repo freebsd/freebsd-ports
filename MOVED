@@ -2832,3 +2832,4 @@ lang/smarteiffel||2011-10-23|Has expired: Dead upstream, broken on amd64 with gc
 sysutils/syslog-ng1||2011-10-24|Has expired: Suggested by syslog-ng upline, no longer supported
 www/tomcat41||2011-10-24|No more upstream support
 graphics/gnash-devel||2011-10-24|Outdated, use graphics/gnash instead
+net-p2p/transmisson-remote-gui||2011-10-25|Renamed to net-p2p/transmission-remote-gui
