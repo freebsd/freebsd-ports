@@ -70,8 +70,10 @@ tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.2_to_3.2.3.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.3_to_3.2.4.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.3_to_3.2.4.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.4_to_3.2.5.sql
-tinderbox/scripts/upgrade/order.lst
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.2.5_to_3.2.6.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.2.5_to_3.2.6.sql
 tinderbox/scripts/upgrade/user_permissions.map
+tinderbox/scripts/upgrade/order.lst
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
