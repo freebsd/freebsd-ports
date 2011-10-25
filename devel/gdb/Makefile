@@ -13,7 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
