@@ -1,5 +1,5 @@
---- /dev/null	2011-06-28 22:00:00.000000000 +0300
-+++ base/files/file_path_watcher_freebsd.cc	2011-06-28 22:03:34.898806831 +0300
+--- /dev/null	2011-10-09 00:44:00.000000000 +0300
++++ base/files/file_path_watcher_freebsd.cc	2011-10-09 00:49:08.473941731 +0300
 @@ -0,0 +1,473 @@
 +// Copyright (c) 2011 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -410,7 +410,7 @@
 +  target_ = path;
 +
 +  MessageLoop::current()->AddDestructionObserver(this);
-+  io_message_loop_ = base::MessageLoopProxy::CreateForCurrentThread();
++  io_message_loop_ = base::MessageLoopProxy::current();
 +
 +  kqueue_ = kqueue();
 +  if (kqueue_ == -1) {

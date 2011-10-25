@@ -1,24 +1,24 @@
---- third_party/libvpx/libvpx.gyp.orig	2011-08-30 12:19:17.000000000 +0300
-+++ third_party/libvpx/libvpx.gyp	2011-09-08 02:22:17.000000000 +0300
-@@ -4,7 +4,7 @@
- {
-   'variables': {
+--- third_party/libvpx/libvpx.gyp.orig	2011-10-09 00:08:25.368469771 +0300
++++ third_party/libvpx/libvpx.gyp	2011-10-10 21:41:31.622025374 +0300
+@@ -77,7 +77,7 @@
+       'source/libvpx/vpx_scale/generic/yv12extend.c',
+     ],
      'conditions': [
 -      ['OS=="mac" or OS=="linux"', {
 +      ['OS=="mac" or OS=="linux" or OS=="freebsd"', {
          'asm_obj_extension': 'o',
        }],
        ['OS=="win"', {
-@@ -13,7 +13,7 @@
+@@ -86,7 +86,7 @@
      ],
    },
    'conditions': [
--    [ '(OS=="linux" or OS=="mac" or OS=="win") and target_arch!="arm" and target_arch!="arm-neon"', {
-+    [ '(OS=="linux" or OS=="freebsd" or OS=="mac" or OS=="win") and target_arch!="arm" and target_arch!="arm-neon"', {
+-    [ '(OS=="linux" or OS=="mac" or OS=="win") and target_arch!="arm"', {
++    [ '(OS=="linux" or OS=="freebsd" or OS=="mac" or OS=="win") and target_arch!="arm"', {
        'targets': [
          {
            # This libvpx target contains both encoder and decoder.
-@@ -25,7 +25,7 @@
+@@ -98,7 +98,7 @@
                '<(SHARED_INTERMEDIATE_DIR)/third_party/libvpx',
              'yasm_path': '<(PRODUCT_DIR)/yasm',
              'conditions': [
@@ -27,7 +27,7 @@
                  'yasm_flags': [
                    '-felf32',
                    '-m', 'x86',
-@@ -33,7 +33,7 @@
+@@ -106,7 +106,7 @@
                    '-I', 'source/libvpx',
                  ],
                }],
@@ -36,7 +36,7 @@
                  'yasm_flags': [
                    '-felf64',
                    '-m', 'amd64',
-@@ -265,6 +265,11 @@
+@@ -482,6 +482,11 @@
              'libvpx_path': 'lib/linux/arm',
            },
          }],

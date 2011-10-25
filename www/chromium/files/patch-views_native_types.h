@@ -1,5 +1,5 @@
---- views/native_types.h.orig	2011-09-10 16:05:08.000000000 +0300
-+++ views/native_types.h	2011-09-10 16:05:37.000000000 +0300
+--- views/native_types.h.orig	2011-10-07 11:32:08.000000000 +0300
++++ views/native_types.h	2011-10-08 22:57:20.811082782 +0300
 @@ -8,7 +8,7 @@
  
  #include "ui/gfx/native_widget_types.h"
@@ -9,12 +9,12 @@
  typedef union _GdkEvent GdkEvent;
  #endif
  #if defined(USE_X11)
-@@ -32,7 +32,7 @@
- #if defined(OS_WIN)
+@@ -44,7 +44,7 @@
+ typedef aura::Event* NativeEvent;
+ #elif defined(OS_WIN)
  typedef MSG NativeEvent;
- #endif
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_FREEBSD)
- typedef GdkEvent* NativeEvent;
- #endif
- #if defined(USE_X11)
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_FREEBSD)
+ 
+ #if defined(USE_WAYLAND)
+ typedef ui::WaylandEvent* NativeEvent;

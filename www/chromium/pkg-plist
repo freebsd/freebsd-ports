@@ -2,7 +2,6 @@ bin/chrome
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome.pak
-%%DATADIR%%/ffmpegsumo_nolink
 %%DATADIR%%/libffmpegsumo.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
@@ -211,6 +210,9 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/warningOrangeDot.png
 %%DATADIR%%/resources/inspector/Images/warningsErrors.png
 %%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
+%%DATADIR%%/resources/inspector/dataGrid.css
+%%DATADIR%%/resources/inspector/inspectorCommon.css
+%%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/xdg-settings
