@@ -1,11 +1,11 @@
-# New ports collection makefile for:	transmisson-remote-gui
+# New ports collection makefile for:	transmission-remote-gui
 # Date created:		2009-05-20
 # Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	transmisson-remote-gui
+PORTNAME=	transmission-remote-gui
 PORTVERSION=	3.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
