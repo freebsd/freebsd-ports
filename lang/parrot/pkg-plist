@@ -13,11 +13,6 @@ include/parrot/%%PARROT_VER%%/imcc/api.h
 include/parrot/%%PARROT_VER%%/imcc/embed.h
 include/parrot/%%PARROT_VER%%/imcc/yyscanner.h
 include/parrot/%%PARROT_VER%%/parrot/api.h
-include/parrot/%%PARROT_VER%%/parrot/atomic.h
-include/parrot/%%PARROT_VER%%/parrot/atomic/fallback.h
-include/parrot/%%PARROT_VER%%/parrot/atomic/gcc_pcc.h
-include/parrot/%%PARROT_VER%%/parrot/atomic/gcc_x86.h
-include/parrot/%%PARROT_VER%%/parrot/atomic/sparc.h
 include/parrot/%%PARROT_VER%%/parrot/caches.h
 include/parrot/%%PARROT_VER%%/parrot/call.h
 include/parrot/%%PARROT_VER%%/parrot/cclass.h
@@ -71,6 +66,7 @@ include/parrot/%%PARROT_VER%%/parrot/pobj.h
 include/parrot/%%PARROT_VER%%/parrot/pointer_array.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_api.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_profiling.h
+include/parrot/%%PARROT_VER%%/parrot/runcore_subprof.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_trace.h
 include/parrot/%%PARROT_VER%%/parrot/scheduler.h
 include/parrot/%%PARROT_VER%%/parrot/scheduler_private.h
@@ -78,10 +74,6 @@ include/parrot/%%PARROT_VER%%/parrot/settings.h
 include/parrot/%%PARROT_VER%%/parrot/string.h
 include/parrot/%%PARROT_VER%%/parrot/string_funcs.h
 include/parrot/%%PARROT_VER%%/parrot/sub.h
-include/parrot/%%PARROT_VER%%/parrot/thr_none.h
-include/parrot/%%PARROT_VER%%/parrot/thr_pthread.h
-include/parrot/%%PARROT_VER%%/parrot/thr_windows.h
-include/parrot/%%PARROT_VER%%/parrot/thread.h
 include/parrot/%%PARROT_VER%%/parrot/vtable.h
 include/parrot/%%PARROT_VER%%/parrot/vtables.h
 include/parrot/%%PARROT_VER%%/parrot/warnings.h
@@ -151,7 +143,6 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_packfilesegment.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfileview.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotinterpreter.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotlibrary.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_parrotthread.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pmcproxy.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pointer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_ptr.h
@@ -175,7 +166,6 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_stringiterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_structview.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_sub.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_task.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_threadinterpreter.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_timer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_undef.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_unmanagedstruct.h
@@ -622,7 +612,6 @@ src/parrot/%%PARROT_VER%%/pmc/packfilesegment.dump
 src/parrot/%%PARROT_VER%%/pmc/packfileview.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotinterpreter.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotlibrary.dump
-src/parrot/%%PARROT_VER%%/pmc/parrotthread.dump
 src/parrot/%%PARROT_VER%%/pmc/pmcproxy.dump
 src/parrot/%%PARROT_VER%%/pmc/pointer.dump
 src/parrot/%%PARROT_VER%%/pmc/ptr.dump
@@ -646,7 +635,6 @@ src/parrot/%%PARROT_VER%%/pmc/stringiterator.dump
 src/parrot/%%PARROT_VER%%/pmc/structview.dump
 src/parrot/%%PARROT_VER%%/pmc/sub.dump
 src/parrot/%%PARROT_VER%%/pmc/task.dump
-src/parrot/%%PARROT_VER%%/pmc/threadinterpreter.dump
 src/parrot/%%PARROT_VER%%/pmc/timer.dump
 src/parrot/%%PARROT_VER%%/pmc/undef.dump
 src/parrot/%%PARROT_VER%%/pmc/unmanagedstruct.dump
@@ -732,7 +720,6 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrmtry lib/parrot
 @dirrm include/parrot/%%PARROT_VER%%/pmc
 @dirrm include/parrot/%%PARROT_VER%%/parrot/oplib
-@dirrm include/parrot/%%PARROT_VER%%/parrot/atomic
 @dirrm include/parrot/%%PARROT_VER%%/parrot
 @dirrm include/parrot/%%PARROT_VER%%/imcc
 @dirrm include/parrot/%%PARROT_VER%%
