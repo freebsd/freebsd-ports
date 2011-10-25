@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	whisper
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpad.net/graphite/1.0/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/graphite/0.9/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
