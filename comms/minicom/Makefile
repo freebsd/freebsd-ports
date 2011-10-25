@@ -14,9 +14,13 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/3487/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
-RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+OPTIONS=	LRZSZ	"Install X/Y/ZMODEM protocol handlers"	on
 
-USE_ICONV=	yes
+.include <bsd.port.options.mk>
+
+.if defined(WITH_LRZSZ)
+RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -26,6 +30,7 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
