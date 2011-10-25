@@ -10,6 +10,7 @@ include/git2/odb.h
 include/git2/signature.h
 include/git2/commit.h
 include/git2/index.h
+include/git2/indexer.h
 include/git2/odb_backend.h
 include/git2/repository.h
 include/git2/status.h
@@ -25,7 +26,10 @@ include/git2/common.h
 include/git2/zlib.h
 include/git2/errors.h
 include/git2/blob.h
-lib/libgit2.so.0.14.0
+include/git2/inttypes.h
+include/git2/stdint.h
+lib/libgit2.so.0.15.0
 lib/libgit2.so.0
 lib/libgit2.so
+libdata/pkgconfig/libgit2.pc
 @dirrm include/git2
