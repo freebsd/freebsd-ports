@@ -2830,3 +2830,4 @@ devel/gccxml||2011-10-22|Has expired: Unmaintained upstream, still requires GCC 
 java/java-tutorial||2011-10-23|Has expired: disappeared from vendor a long time ago
 lang/smarteiffel||2011-10-23|Has expired: Dead upstream, broken on amd64 with gcc>4
 sysutils/syslog-ng1||2011-10-24|Has expired: Suggested by syslog-ng upline, no longer supported
+www/tomcat41||2011-10-24|No more upstream support
