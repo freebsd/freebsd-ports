@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2011-08-04 22:57:55.866970694 +0100
-+++ doc/Makefile.in	2011-08-04 22:58:55.250588677 +0100
-@@ -254,9 +254,6 @@
+--- doc/Makefile.in.orig	2011-09-17 00:29:32.041186370 +0100
++++ doc/Makefile.in	2011-09-17 00:30:18.168226616 +0100
+@@ -210,9 +210,6 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = man example-config
@@ -10,11 +10,11 @@
  
  @BUILD_DOCS_TRUE@sieve_doc_DATA = $(docfiles)
  EXTRA_DIST = \
-@@ -305,7 +302,6 @@
+@@ -260,7 +257,6 @@
  	-rm -rf .libs _libs
  install-sieve_docDATA: $(sieve_doc_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(sieve_docdir)" || $(MKDIR_P) "$(DESTDIR)$(sieve_docdir)"
- 	@list='$(sieve_doc_DATA)'; test -n "$(sieve_docdir)" || list=; \
- 	for p in $$list; do \
+ 	@list='$(sieve_doc_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
