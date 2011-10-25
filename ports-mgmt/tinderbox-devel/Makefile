@@ -30,7 +30,7 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		LSOF "For killMountProcesses() when using nullfs" On \
 		LOG_COMPRESS "Support bzip'ing the logs" On \
 		PARALLEL "Enable PARALLEL extra patch" On \
-#		TMPFS "Enable TMPFS extra patch" Off
+		TMPFS "Enable TMPFS extra patch" Off
 
 NO_BUILD=	yes
 WANT_PERL=	yes
