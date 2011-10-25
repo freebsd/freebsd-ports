@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darkplaces
-PORTVERSION=	20071120
-PORTREVISION=	5
+PORTVERSION=	20110628
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -35,7 +34,7 @@ PORTDOCS=	darkplaces.txt
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED) && !defined(WITH_SDL)
 IGNORE=		needs at least one of CLIENT, DEDICATED and SDL options
@@ -53,6 +52,8 @@ ALL_TARGET+=	cl-release
 EXE_TARGETS+=	${PORTNAME}-glx
 PLIST_SUB+=	CLIENT=""
 PLIST_FILES+=	bin/${PORTNAME}-glx
+DESKTOP_ENTRIES+="Darkplaces GLX Client" "" "" "darkplaces-glx" \
+		"Game;ActionGame;" "false"
 .endif
 
 .if defined(WITH_DEDICATED)
@@ -66,6 +67,8 @@ USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
 PLIST_FILES+=	bin/${PORTNAME}-sdl
+DESKTOP_ENTRIES+="Darkplaces SDL Client" "" "" "darkplaces-sdl" \
+		"Game;ActionGame;" "false"
 .endif
 
 post-extract:
@@ -84,4 +87,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
