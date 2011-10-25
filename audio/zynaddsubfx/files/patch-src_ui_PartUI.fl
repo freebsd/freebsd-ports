@@ -1,0 +1,11 @@
+--- UI/PartUI.fl.orig	2011-10-25 22:20:30.000000000 +0200
++++ UI/PartUI.fl	2011-10-25 22:22:19.000000000 +0200
+@@ -85,7 +85,7 @@
+ 
+ class PartUI_ {} {
+   Function {showparameters(int kititem,int engine)} {return_type virtual
+-  } {}
++  } {code{;}}
+ } 
+ 
+ class PartKitItem {: {public Fl_Group}

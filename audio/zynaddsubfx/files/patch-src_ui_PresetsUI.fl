@@ -1,0 +1,14 @@
+--- UI/PresetsUI.fl.orig	2010-06-27 20:26:52.000000000 +0200
++++ UI/PresetsUI.fl	2011-10-25 22:33:16.000000000 +0200
+@@ -18,9 +18,9 @@
+ 
+ class PresetsUI_ {} {
+   Function {refresh()} {open return_type {virtual void}
+-  } {}
++  } {code{;}}
+   Function {~PresetsUI_()} {open return_type virtual
+-  } {}
++  } {code{;}}
+ } 
+ 
+ class PresetsUI {} {
