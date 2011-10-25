@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libass
-PORTVERSION=	0.9.13
+PORTVERSION=	0.10.0
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -18,7 +18,8 @@ LICENSE=	ISCL
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		enca.5:${PORTSDIR}/converters/enca \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		fribidi.3:${PORTSDIR}/converters/fribidi
 
 USE_GNOME=	pkgconfig gnomehack
 USE_XZ=	yes
