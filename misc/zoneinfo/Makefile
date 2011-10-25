@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2011l
+DISTVERSION=	2011m
 CATEGORIES=	misc
-MASTER_SITES=	ftp://munnari.oz.au/pub/
+MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
+		ftp://munnari.oz.au/pub/
 DISTNAME=	tzdata${DISTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
