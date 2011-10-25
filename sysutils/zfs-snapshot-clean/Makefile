@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	zfs-snapshot-clean
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.github.com/ \
+MASTER_SITES=	http://cloud.github.com/downloads/knu/${PORTNAME}/ \
 		ftp://ftp.iDaemons.org/pub/distfiles/
-DISTNAME=	knu-${PORTNAME}-v${PORTVERSION}-0-g${FILEHASH}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A tool to sieve ZFS snapshots as per given spec a la 'pdumpfs-clean'
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/knu-${PORTNAME}-${FILEHASH}
 PLIST_FILES=	sbin/${PORTNAME}
-
-FILEHASH=	10b2b34
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
