@@ -1,0 +1,11 @@
+--- UI/BankUI.fl.orig	2011-10-25 22:20:12.000000000 +0200
++++ UI/BankUI.fl	2011-10-25 22:21:27.000000000 +0200
+@@ -32,7 +32,7 @@
+ 
+ class BankProcess_ {} {
+   Function {process()} {open return_type {virtual void}
+-  } {}
++  } {code{;}}
+   decl {Bank *bank;} {public
+   }
+ } 
