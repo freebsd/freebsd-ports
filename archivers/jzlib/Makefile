@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jzlib
-PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
@@ -17,7 +16,7 @@ COMMENT=	A re-implementation of zlib in pure Java
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-JAR_FILE=	${WRKSRC}/${PORTNAME}.jar
+JAR_FILE=	${WRKSRC}/src/main/java/${PORTNAME}.jar
 
 DOC_FILES=	\
 		ChangeLog \
@@ -30,6 +29,8 @@ EXAMPLE_FILES=	\
 		test_deflate_inflate.java \
 		test_dict_deflate_inflate.java \
 		test_flush_sync.java \
+		test_gzip_deflate_inflate.java \
+		test_gzip_inflate.java \
 		test_large_deflate_inflate.java \
 		test_stream_deflate_inflate.java
 
@@ -43,10 +44,10 @@ PLIST_DIRS+=	\
 		%%EXAMPLESDIR%%
 
 do-build:
-	@cd ${BUILD_WRKSRC} && ${FIND} com -name "*.java" | \
+	@cd ${WRKSRC}/src/main/java && ${FIND} com -name "*.java" | \
 		${XARGS} -n 10 -x \
-		${JAVAC} -classpath ${BUILD_WRKSRC}
-	@cd ${BUILD_WRKSRC} && ${FIND} com -name "*class" | \
+		${JAVAC} -classpath ${WRKSRC}/src/main/java
+	@cd ${WRKSRC}/src/main/java && ${FIND} com -name "*class" | \
 		${XARGS} \
 		${JAR} -cf ${PORTNAME}.jar
 
