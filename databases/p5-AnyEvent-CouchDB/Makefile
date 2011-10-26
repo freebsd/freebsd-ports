@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AnyEvent-CouchDB
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,5 +32,4 @@ MAN3=		AnyEvent::CouchDB.3 \
 		AnyEvent::CouchDB::Exceptions.3 \
 		AnyEvent::CouchDB::Stream.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
