@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	flpsed
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	WYSIWYG Postscript pseudo-editor
+COMMENT=	WYSIWYG Postscript annotator
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
-RUN_DEPENDS+=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
+LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT=yes
@@ -26,8 +24,8 @@ MAN1=		flpsed.1
 PORTDOCS=	README
 
 post-configure:
-	@${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		"s|-lpthread|${PTHREAD_LIBS}|g"
+	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} \
+	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${PREFIX}/bin
