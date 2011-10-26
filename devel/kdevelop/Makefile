@@ -25,6 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		gmake:${PORTSDIR}/devel/gmake
 
+BROKEN=		conflicting dependencies
+
 CONFLICTS_BUILD=subversion-1.7.[0-9]*
 
 .if defined(WITH_OPTIONAL_DEPENDS)
