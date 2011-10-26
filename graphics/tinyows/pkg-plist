@@ -1,0 +1,79 @@
+%%DATADIR%%/schema/LICENSE
+%%DATADIR%%/schema/filter/1.0.0/expr.xsd
+%%DATADIR%%/schema/filter/1.0.0/filter.xsd
+%%DATADIR%%/schema/filter/1.0.0/filterCapabilities.xsd
+%%DATADIR%%/schema/filter/1.1.0/expr.xsd
+%%DATADIR%%/schema/filter/1.1.0/filter.xsd
+%%DATADIR%%/schema/filter/1.1.0/filterCapabilities.xsd
+%%DATADIR%%/schema/filter/1.1.0/sort.xsd
+%%DATADIR%%/schema/gml/2.1.2/feature.xsd
+%%DATADIR%%/schema/gml/2.1.2/geometry.xsd
+%%DATADIR%%/schema/gml/2.1.2/xlinks.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/basicTypes.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/coordinateOperations.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/coordinateReferenceSystems.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/coordinateSystems.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/coverage.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/dataQuality.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/datums.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/defaultStyle.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/dictionary.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/direction.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/dynamicFeature.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/feature.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/geometryAggregates.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/geometryBasic0d1d.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/geometryBasic2d.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/geometryComplexes.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/geometryPrimitives.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/gml.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/gmlBase.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/grids.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/measures.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/observation.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/referenceSystems.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/temporal.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/temporalReferenceSystems.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/temporalTopology.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/topology.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/units.xsd
+%%DATADIR%%/schema/gml/3.1.1/base/valueObjects.xsd
+%%DATADIR%%/schema/gml/3.1.1/smil/smil20-language.xsd
+%%DATADIR%%/schema/gml/3.1.1/smil/smil20.xsd
+%%DATADIR%%/schema/gml/3.1.1/smil/xml-mod.xsd
+%%DATADIR%%/schema/gml/3.1.1/xlink/xlinks.xsd
+%%DATADIR%%/schema/ows/1.0.0/ows19115subset.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsAll.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsCommon.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsDataIdentification.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsExceptionReport.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsGetCapabilities.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsOperationsMetadata.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsServiceIdentification.xsd
+%%DATADIR%%/schema/ows/1.0.0/owsServiceProvider.xsd
+%%DATADIR%%/schema/wfs/1.0.0/WFS-basic.xsd
+%%DATADIR%%/schema/wfs/1.0.0/WFS-capabilities.xsd
+%%DATADIR%%/schema/wfs/1.0.0/WFS-transaction.xsd
+%%DATADIR%%/schema/wfs/1.1.0/wfs.xsd
+%%DATADIR%%/schema/xlink/1.0.0/xlinks.xsd
+%%WWWDIR%%/cgi-bin/tinyows
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%
+@dirrm %%DATADIR%%/schema/xlink/1.0.0
+@dirrm %%DATADIR%%/schema/xlink
+@dirrm %%DATADIR%%/schema/wfs/1.1.0
+@dirrm %%DATADIR%%/schema/wfs/1.0.0
+@dirrm %%DATADIR%%/schema/wfs
+@dirrm %%DATADIR%%/schema/ows/1.0.0
+@dirrm %%DATADIR%%/schema/ows
+@dirrm %%DATADIR%%/schema/gml/3.1.1/xlink
+@dirrm %%DATADIR%%/schema/gml/3.1.1/smil
+@dirrm %%DATADIR%%/schema/gml/3.1.1/base
+@dirrm %%DATADIR%%/schema/gml/3.1.1
+@dirrm %%DATADIR%%/schema/gml/2.1.2
+@dirrm %%DATADIR%%/schema/gml
+@dirrm %%DATADIR%%/schema/filter/1.1.0
+@dirrm %%DATADIR%%/schema/filter/1.0.0
+@dirrm %%DATADIR%%/schema/filter
+@dirrm %%DATADIR%%/schema
+@dirrm %%DATADIR%%
