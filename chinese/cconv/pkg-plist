@@ -1,6 +1,5 @@
 bin/cconv
 include/cconv.h
-include/unicode.h
 lib/libcconv.a
 lib/libcconv.la
 lib/libcconv.so
