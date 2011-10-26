@@ -100,10 +100,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base__base.gypi-freebsd
 
 .if defined(WITH_CODECS)
 GYP_DEFINES+=	ffmpeg_branding=Chrome
-GYP_DEFINES+=	use_proprietary_codecs=1
+GYP_DEFINES+=	proprietary_codecs=1
 .else
 GYP_DEFINES+=	ffmpeg_branding=Chromium
-GYP_DEFINES+=	use_proprietary_codecs=0
+GYP_DEFINES+=	proprietary_codecs=0
 .endif
 
 .if defined(WITH_GCONF)
