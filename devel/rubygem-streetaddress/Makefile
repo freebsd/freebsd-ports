@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	StreetAddress
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
