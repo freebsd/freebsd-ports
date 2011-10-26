@@ -87,6 +87,7 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|special file|5| ; \
 		 s|file formats|5|'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		-e '/-dumpversion/{ s/==/=/; s/gcc/$$CC/; }' \
 		${WRKSRC}/configure
 
 post-install:
