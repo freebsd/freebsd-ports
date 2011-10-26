@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	spatialindex
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/libspatialindex/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -16,5 +16,9 @@ USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

@@ -36,6 +36,7 @@ lib/libspatialindex_c.a
 lib/libspatialindex_c.la
 lib/libspatialindex_c.so
 lib/libspatialindex_c.so.1
+libdata/pkgconfig/libspatialindex.pc
 @dirrm include/spatialindex/capi
 @dirrm include/spatialindex/tools
 @dirrm include/spatialindex
