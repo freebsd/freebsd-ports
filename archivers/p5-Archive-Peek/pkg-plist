@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Archive/Peek/Zip.pm
+%%SITE_PERL%%/Archive/Peek/Tar.pm
+%%SITE_PERL%%/Archive/Peek.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Peek/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Peek
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
+@dirrmtry %%SITE_PERL%%/Archive/Peek
+@dirrmtry %%SITE_PERL%%/Archive
