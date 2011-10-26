@@ -18,6 +18,8 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 
 CONFLICTS?=		ldb-1.*
 
+BROKEN=			does not compile
+
 SAMBA_PORTNAME=		samba4
 SAMBA_VERSION=		4.0.0.a11
 SAMBA_DISTNAME=		${SAMBA_PORTNAME:S|4$||}-${SAMBA_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
