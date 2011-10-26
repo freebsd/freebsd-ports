@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="395e0faa-ffa7-11e0-8ac4-6c626dd55a41">
+    <topic>phpmyfaq -- Remote PHP Code Injection Vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>2.6.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyFAQ project reports:</p>
+	<blockquote cite="http://www.phpmyfaq.de/advisory_2011-10-25.php">
+	  <p>The phpMyFAQ Team has learned of a serious security issue that has
+	     been discovered in our bundled ImageManager library we use in
+	     phpMyFAQ 2.6 and 2.7. The bundled ImageManager library allows
+	     injection of arbitrary PHP code via POST requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyfaq.de/advisory_2011-10-25.php</url>
+      <url>http://forum.phpmyfaq.de/viewtopic.php?f=3&amp;t=13402</url>
+    </references>
+    <dates>
+      <discovery>2011-10-25</discovery>
+      <entry>2011-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="edf47177-fe3f-11e0-a207-0014a5e3cda6">
     <topic>phpLDAPadmin -- Remote PHP code injection vulnerability</topic>
     <affects>
