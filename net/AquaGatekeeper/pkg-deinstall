@@ -8,7 +8,7 @@ ask() {
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${BATCH}" -a -z "${PACKAGE_BUILDING}" ]; then
 	read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
