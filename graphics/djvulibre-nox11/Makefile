@@ -12,7 +12,7 @@ CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 PKGNAMESUFFIX=	-nox11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2

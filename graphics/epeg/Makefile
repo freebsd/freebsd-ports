@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An immensely fast JPEG thumbnailing library
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
