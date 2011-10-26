@@ -1,6 +1,6 @@
---- src/plld.c.orig	2009-04-30 17:13:29.527991549 -0400
-+++ src/plld.c	2009-04-30 19:37:05.199263456 -0400
-@@ -114,6 +114,9 @@
+--- src/swipl-ld.c.orig	2011-08-19 18:31:28.000000000 +0400
++++ src/swipl-ld.c	2011-10-08 21:00:16.000000000 +0400
+@@ -110,6 +110,9 @@
  #include <errno.h>
  #include <string.h>
  #include <signal.h>
@@ -10,7 +10,7 @@
  
  #ifndef TRUE
  #define TRUE 1
-@@ -143,8 +146,9 @@
+@@ -139,8 +142,9 @@
  #define oserror xoserror
  #undef strdup
  #define strdup plld_strdup
