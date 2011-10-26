@@ -1,11 +1,11 @@
 *******************************************************************
 
  Please read INSTALL file. It can be found at:
-		
+
   %%WWWDIR%%/INSTALL.php
 
 If you've just upgraded an existing installation, please read:
 
-http://docs.joomla.org/Category:Version_1.5.22_FAQ
+http://docs.joomla.org/Category:Version_%%PORTVERSION%%_FAQ
 
 *******************************************************************

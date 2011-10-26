@@ -1276,6 +1276,8 @@
 %%WWWDIR%%/components/com_mailto/assets/close-x.png
 %%WWWDIR%%/components/com_mailto/assets/index.html
 %%WWWDIR%%/components/com_mailto/controller.php
+%%WWWDIR%%/components/com_mailto/helpers/index.html
+%%WWWDIR%%/components/com_mailto/helpers/mailto.php
 %%WWWDIR%%/components/com_mailto/index.html
 %%WWWDIR%%/components/com_mailto/mailto.php
 %%WWWDIR%%/components/com_mailto/mailto.xml
@@ -1851,6 +1853,9 @@
 %%WWWDIR%%/installation/language/ja-JP/index.html
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.ini
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.xml
+%%WWWDIR%%/installation/language/ka-GE/index.html
+%%WWWDIR%%/installation/language/ka-GE/ka-GE.ini
+%%WWWDIR%%/installation/language/ka-GE/ka-GE.xml
 %%WWWDIR%%/installation/language/km-KH/index.html
 %%WWWDIR%%/installation/language/km-KH/km-KH.ini
 %%WWWDIR%%/installation/language/km-KH/km-KH.xml
@@ -4664,6 +4669,7 @@
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lo-LA
 @dirrm %%WWWDIR%%/installation/language/km-KH
+@dirrm %%WWWDIR%%/installation/language/ka-GE
 @dirrm %%WWWDIR%%/installation/language/ja-JP
 @dirrm %%WWWDIR%%/installation/language/it-IT
 @dirrm %%WWWDIR%%/installation/language/is-IS
@@ -4783,6 +4789,7 @@
 @dirrm %%WWWDIR%%/components/com_mailto/views/mailto/tmpl
 @dirrm %%WWWDIR%%/components/com_mailto/views/mailto
 @dirrm %%WWWDIR%%/components/com_mailto/views
+@dirrm %%WWWDIR%%/components/com_mailto/helpers
 @dirrm %%WWWDIR%%/components/com_mailto/assets
 @dirrm %%WWWDIR%%/components/com_mailto
 @dirrm %%WWWDIR%%/components/com_content/views/section/tmpl

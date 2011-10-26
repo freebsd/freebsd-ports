@@ -5,14 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	joomla15
-PORTVERSION=	1.5.22
+PORTVERSION=	1.5.24
 CATEGORIES=	www
-MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/13105/57238/ \
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/15898/68912/ \
 		http://linux3.dti.supsi.ch/downloads/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	robi@nunnisoft.ch
 COMMENT=	A dynamic web content management system (CMS)
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.php
 
 FETCH_CMD=	fetch -Rr
 USE_BZIP2=	yes
@@ -22,6 +25,7 @@ USE_PHP=	mysql pcre xml zlib session gd pdf
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+SUB_LIST+=	PORTVERSION="${PORTVERSION}"
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
