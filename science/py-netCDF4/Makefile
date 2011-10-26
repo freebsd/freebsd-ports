@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netCDF4
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	science python
 MASTER_SITES=	http://netcdf4-python.googlecode.com/files/ \
 		CHEESESHOP
@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Interface to the NetCDF Library(versions 3 and 4)
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18 \
 		netcdf.7:${PORTSDIR}/science/netcdf4
 
