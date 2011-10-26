@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTVERSION=	2.0.7
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,11 +18,12 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--enable-gio
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig _glib20
 USE_LDCONFIG=	yes
 
 MAN1=		ffmpegthumbnailer.1
