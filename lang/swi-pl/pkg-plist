@@ -1,14 +1,13 @@
-bin/pl
-bin/plld
-bin/plrc
-bin/xpce
+bin/swipl
+bin/swipl-ld
+bin/swipl-rc
 bin/xpce-client
 lib/%%DISTNAME%%/Makefile
-lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
-lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
-lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/swipl
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/swipl-ld
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/swipl-rc
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/xpce
-lib/%%DISTNAME%%/bin/swipl
+lib/%%DISTNAME%%/bin/swipl.home
 lib/%%DISTNAME%%/boot/apply.pl
 lib/%%DISTNAME%%/boot/attvar.pl
 lib/%%DISTNAME%%/boot/autoload.pl
@@ -159,11 +158,13 @@ lib/%%DISTNAME%%/doc/Manual/mt-xpce.html
 lib/%%DISTNAME%%/doc/Manual/mtoplevel.html
 lib/%%DISTNAME%%/doc/Manual/mtunbound.html
 lib/%%DISTNAME%%/doc/Manual/navigator.html
+lib/%%DISTNAME%%/doc/Manual/nb_set.html
 lib/%%DISTNAME%%/doc/Manual/nbset.html
 lib/%%DISTNAME%%/doc/Manual/next.gif
 lib/%%DISTNAME%%/doc/Manual/operators.html
 lib/%%DISTNAME%%/doc/Manual/opsummary.html
 lib/%%DISTNAME%%/doc/Manual/option.html
+lib/%%DISTNAME%%/doc/Manual/optparse.html
 lib/%%DISTNAME%%/doc/Manual/ordsets.html
 lib/%%DISTNAME%%/doc/Manual/overrule.html
 lib/%%DISTNAME%%/doc/Manual/overview.html
@@ -179,6 +180,7 @@ lib/%%DISTNAME%%/doc/Manual/prev.gif
 lib/%%DISTNAME%%/doc/Manual/profile.html
 lib/%%DISTNAME%%/doc/Manual/profnode.gif
 lib/%%DISTNAME%%/doc/Manual/projectfiles.html
+lib/%%DISTNAME%%/doc/Manual/prolog_xref.html
 lib/%%DISTNAME%%/doc/Manual/prologxref.html
 lib/%%DISTNAME%%/doc/Manual/protocol.html
 lib/%%DISTNAME%%/doc/Manual/qsaveforeign.html
@@ -194,8 +196,8 @@ lib/%%DISTNAME%%/doc/Manual/resmodules.html
 lib/%%DISTNAME%%/doc/Manual/runenv.html
 lib/%%DISTNAME%%/doc/Manual/runtime.html
 lib/%%DISTNAME%%/doc/Manual/sec-5.11.html
+lib/%%DISTNAME%%/doc/Manual/sec-E.4.html
 lib/%%DISTNAME%%/doc/Manual/sicstus-chr.html
-lib/%%DISTNAME%%/doc/Manual/summary.html
 lib/%%DISTNAME%%/doc/Manual/signal.html
 lib/%%DISTNAME%%/doc/Manual/simplex.html
 lib/%%DISTNAME%%/doc/Manual/softlicense.html
@@ -204,6 +206,7 @@ lib/%%DISTNAME%%/doc/Manual/statistics.html
 lib/%%DISTNAME%%/doc/Manual/status.html
 lib/%%DISTNAME%%/doc/Manual/streamstat.html
 lib/%%DISTNAME%%/doc/Manual/strings.html
+lib/%%DISTNAME%%/doc/Manual/summary.html
 lib/%%DISTNAME%%/doc/Manual/swiorother.html
 lib/%%DISTNAME%%/doc/Manual/swiprolog.html
 lib/%%DISTNAME%%/doc/Manual/syntax.html
@@ -236,7 +239,9 @@ lib/%%DISTNAME%%/doc/Manual/xref.html
 lib/%%DISTNAME%%/doc/Manual/xrefchatdep.gif
 lib/%%DISTNAME%%/doc/Manual/xrefchatfile.gif
 lib/%%DISTNAME%%/doc/Manual/yellow_pages.gif
+lib/%%DISTNAME%%/doc/packages/R.html
 lib/%%DISTNAME%%/doc/packages/clib.html
+lib/%%DISTNAME%%/doc/packages/examples/R/r_demo.pl
 lib/%%DISTNAME%%/doc/packages/examples/chr/bool.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/chrdif.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/chrfreeze.chr
@@ -250,13 +255,31 @@ lib/%%DISTNAME%%/doc/packages/examples/chr/primes.chr
 lib/%%DISTNAME%%/doc/packages/examples/http/calc.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_body.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_client.pl
+lib/%%DISTNAME%%/doc/packages/examples/http/demo_files.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_inetd
+lib/%%DISTNAME%%/doc/packages/examples/http/demo_openid.pl
+lib/%%DISTNAME%%/doc/packages/examples/http/demo_pwp.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_threads.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_xpce.pl
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/context.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/index.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp1.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp2.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp3.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp4.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp5.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp6.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp7.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwp8.pwp
+lib/%%DISTNAME%%/doc/packages/examples/http/pwp/pwpdb.pl
 lib/%%DISTNAME%%/doc/packages/examples/pldoc/README
 lib/%%DISTNAME%%/doc/packages/examples/pldoc/man_server.pl
 lib/%%DISTNAME%%/doc/packages/examples/plunit/read.pl
 lib/%%DISTNAME%%/doc/packages/examples/plunit/simple.pl
+lib/%%DISTNAME%%/doc/packages/examples/protobufs/Makefile
+lib/%%DISTNAME%%/doc/packages/examples/protobufs/foo.cpp
+lib/%%DISTNAME%%/doc/packages/examples/protobufs/pb-vector.proto
+lib/%%DISTNAME%%/doc/packages/examples/protobufs/vector_demo.pl
 lib/%%DISTNAME%%/doc/packages/examples/ssl/client.pl
 lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/Makefile
 lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/README
@@ -283,6 +306,7 @@ lib/%%DISTNAME%%/doc/packages/odbc.html
 lib/%%DISTNAME%%/doc/packages/pl2cpp.html
 lib/%%DISTNAME%%/doc/packages/pldoc.html
 lib/%%DISTNAME%%/doc/packages/plunit.html
+lib/%%DISTNAME%%/doc/packages/protobufs.html
 lib/%%DISTNAME%%/doc/packages/rdf2pl.html
 lib/%%DISTNAME%%/doc/packages/semweb.html
 lib/%%DISTNAME%%/doc/packages/sgml.html
@@ -296,31 +320,36 @@ lib/%%DISTNAME%%/dotfiles/edit
 lib/%%DISTNAME%%/include/SWI-Prolog.h
 lib/%%DISTNAME%%/include/SWI-Stream.h
 lib/%%DISTNAME%%/include/SWI-cpp.h
+lib/%%DISTNAME%%/include/sicstus/sicstus.h
 lib/%%DISTNAME%%/include/stub.c
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/cgi.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/crypt.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/double_metaphone.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/files.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/http_stream.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/isub.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/json.so
-lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libpl.a
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.a
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/mime.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/odbc4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/porter_stem.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/process.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/protobufs.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/random.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/rdf_db.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/readutil.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/rlimit.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/sgml2pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/sha4pl.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/snowball.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/socket.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/ssl4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/streaminfo.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/table.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/time.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/turtle.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/uid.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/unix.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/uri.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/zlib4pl.so
@@ -332,12 +361,16 @@ lib/%%DISTNAME%%/library/DTD/HTMLspec.ent
 lib/%%DISTNAME%%/library/DTD/HTMLsym.ent
 lib/%%DISTNAME%%/library/INDEX.pl
 lib/%%DISTNAME%%/library/MANUAL
+lib/%%DISTNAME%%/library/R.pl
 lib/%%DISTNAME%%/library/aggregate.pl
 lib/%%DISTNAME%%/library/am_match.pl
+lib/%%DISTNAME%%/library/ansi_term.pl
 lib/%%DISTNAME%%/library/apply.pl
 lib/%%DISTNAME%%/library/apply_macros.pl
+lib/%%DISTNAME%%/library/arithmetic.pl
 lib/%%DISTNAME%%/library/assoc.pl
 lib/%%DISTNAME%%/library/backcomp.pl
+lib/%%DISTNAME%%/library/base32.pl
 lib/%%DISTNAME%%/library/base64.pl
 lib/%%DISTNAME%%/library/bim.pl
 lib/%%DISTNAME%%/library/broadcast.pl
@@ -395,6 +428,7 @@ lib/%%DISTNAME%%/library/clp/clpr/itf_r.pl
 lib/%%DISTNAME%%/library/clp/clpr/nf_r.pl
 lib/%%DISTNAME%%/library/clp/clpr/store_r.pl
 lib/%%DISTNAME%%/library/clp/simplex.pl
+lib/%%DISTNAME%%/library/coinduction.pl
 lib/%%DISTNAME%%/library/crypt.pl
 lib/%%DISTNAME%%/library/csv.pl
 lib/%%DISTNAME%%/library/ctypes.pl
@@ -402,9 +436,33 @@ lib/%%DISTNAME%%/library/date.pl
 lib/%%DISTNAME%%/library/debug.pl
 lib/%%DISTNAME%%/library/dialect.pl
 lib/%%DISTNAME%%/library/dialect/ciao.pl
+lib/%%DISTNAME%%/library/dialect/ciao/aggregates.pl
+lib/%%DISTNAME%%/library/dialect/ciao/assertions.pl
+lib/%%DISTNAME%%/library/dialect/ciao/classic.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/hiord_rt.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/internals.pl
+lib/%%DISTNAME%%/library/dialect/ciao/format.pl
+lib/%%DISTNAME%%/library/dialect/ciao/iso_misc.pl
+lib/%%DISTNAME%%/library/dialect/ciao/isomodes.pl
+lib/%%DISTNAME%%/library/dialect/ciao/lists.pl
+lib/%%DISTNAME%%/library/dialect/ciao/read.pl
+lib/%%DISTNAME%%/library/dialect/ciao/regtypes.pl
+lib/%%DISTNAME%%/library/dialect/ciao/sockets.pl
+lib/%%DISTNAME%%/library/dialect/ciao/strings.pl
+lib/%%DISTNAME%%/library/dialect/ciao/system.pl
+lib/%%DISTNAME%%/library/dialect/ciao/terms.pl
+lib/%%DISTNAME%%/library/dialect/ciao/write.pl
 lib/%%DISTNAME%%/library/dialect/commons.pl
 lib/%%DISTNAME%%/library/dialect/hprolog.pl
 lib/%%DISTNAME%%/library/dialect/iso/iso_predicates.pl
+lib/%%DISTNAME%%/library/dialect/sicstus.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/arrays.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/block.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/lists.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/sockets.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/swipl-lfr.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/system.pl
+lib/%%DISTNAME%%/library/dialect/sicstus/timeout.pl
 lib/%%DISTNAME%%/library/dialect/yap.pl
 lib/%%DISTNAME%%/library/dialect/yap/README.TXT
 lib/%%DISTNAME%%/library/dif.pl
@@ -416,6 +474,7 @@ lib/%%DISTNAME%%/library/edit.pl
 lib/%%DISTNAME%%/library/emacs_interface.pl
 lib/%%DISTNAME%%/library/error.pl
 lib/%%DISTNAME%%/library/explain.pl
+lib/%%DISTNAME%%/library/fastrw.pl
 lib/%%DISTNAME%%/library/files.pl
 lib/%%DISTNAME%%/library/filesex.pl
 lib/%%DISTNAME%%/library/gensym.pl
@@ -423,36 +482,55 @@ lib/%%DISTNAME%%/library/heaps.pl
 lib/%%DISTNAME%%/library/help.pl
 lib/%%DISTNAME%%/library/helpidx.pl
 lib/%%DISTNAME%%/library/hotfix.pl
+lib/%%DISTNAME%%/library/http/INDEX.pl
 lib/%%DISTNAME%%/library/http/README
 lib/%%DISTNAME%%/library/http/dcg_basics.pl
 lib/%%DISTNAME%%/library/http/html_head.pl
 lib/%%DISTNAME%%/library/http/html_write.pl
 lib/%%DISTNAME%%/library/http/http_authenticate.pl
 lib/%%DISTNAME%%/library/http/http_client.pl
+lib/%%DISTNAME%%/library/http/http_cookie.pl
+lib/%%DISTNAME%%/library/http/http_dirindex.pl
 lib/%%DISTNAME%%/library/http/http_dispatch.pl
 lib/%%DISTNAME%%/library/http/http_error.pl
 lib/%%DISTNAME%%/library/http/http_exception.pl
 lib/%%DISTNAME%%/library/http/http_header.pl
 lib/%%DISTNAME%%/library/http/http_hook.pl
+lib/%%DISTNAME%%/library/http/http_host.pl
 lib/%%DISTNAME%%/library/http/http_json.pl
 lib/%%DISTNAME%%/library/http/http_log.pl
 lib/%%DISTNAME%%/library/http/http_mime_plugin.pl
 lib/%%DISTNAME%%/library/http/http_open.pl
+lib/%%DISTNAME%%/library/http/http_openid.pl
 lib/%%DISTNAME%%/library/http/http_parameters.pl
 lib/%%DISTNAME%%/library/http/http_path.pl
+lib/%%DISTNAME%%/library/http/http_pwp.pl
+lib/%%DISTNAME%%/library/http/http_server_files.pl
 lib/%%DISTNAME%%/library/http/http_session.pl
 lib/%%DISTNAME%%/library/http/http_sgml_plugin.pl
 lib/%%DISTNAME%%/library/http/http_ssl_plugin.pl
 lib/%%DISTNAME%%/library/http/http_stream.pl
 lib/%%DISTNAME%%/library/http/http_wrapper.pl
 lib/%%DISTNAME%%/library/http/inetd_httpd.pl
+lib/%%DISTNAME%%/library/http/js_write.pl
 lib/%%DISTNAME%%/library/http/json.pl
 lib/%%DISTNAME%%/library/http/json_convert.pl
 lib/%%DISTNAME%%/library/http/mimepack.pl
 lib/%%DISTNAME%%/library/http/mimetype.pl
 lib/%%DISTNAME%%/library/http/thread_httpd.pl
+lib/%%DISTNAME%%/library/http/web/css/dirindex.css
+lib/%%DISTNAME%%/library/http/web/css/openid.css
+lib/%%DISTNAME%%/library/http/web/icons/back.png
+lib/%%DISTNAME%%/library/http/web/icons/c.png
+lib/%%DISTNAME%%/library/http/web/icons/compressed.png
+lib/%%DISTNAME%%/library/http/web/icons/folder.png
+lib/%%DISTNAME%%/library/http/web/icons/generic.png
+lib/%%DISTNAME%%/library/http/web/icons/layout.png
+lib/%%DISTNAME%%/library/http/web/icons/openid-logo-square.png
+lib/%%DISTNAME%%/library/http/web/icons/openid-logo-tiny.png
 lib/%%DISTNAME%%/library/http/xpce_httpd.pl
 lib/%%DISTNAME%%/library/iso_639.pl
+lib/%%DISTNAME%%/library/isub.pl
 lib/%%DISTNAME%%/library/listing.pl
 lib/%%DISTNAME%%/library/lists.pl
 lib/%%DISTNAME%%/library/main.pl
@@ -465,9 +543,11 @@ lib/%%DISTNAME%%/library/occurs.pl
 lib/%%DISTNAME%%/library/odbc.pl
 lib/%%DISTNAME%%/library/operators.pl
 lib/%%DISTNAME%%/library/option.pl
+lib/%%DISTNAME%%/library/optparse.pl
 lib/%%DISTNAME%%/library/ordsets.pl
 lib/%%DISTNAME%%/library/oset.pl
 lib/%%DISTNAME%%/library/pairs.pl
+lib/%%DISTNAME%%/library/persistency.pl
 lib/%%DISTNAME%%/library/pio.pl
 lib/%%DISTNAME%%/library/pldoc.pl
 lib/%%DISTNAME%%/library/pldoc/doc_access.pl
@@ -485,26 +565,34 @@ lib/%%DISTNAME%%/library/pldoc/doc_util.pl
 lib/%%DISTNAME%%/library/pldoc/doc_wiki.pl
 lib/%%DISTNAME%%/library/pldoc/edit.gif
 lib/%%DISTNAME%%/library/pldoc/favicon.ico
+lib/%%DISTNAME%%/library/pldoc/h1-bg.png
+lib/%%DISTNAME%%/library/pldoc/h2-bg.png
 lib/%%DISTNAME%%/library/pldoc/hooks.pl
+lib/%%DISTNAME%%/library/pldoc/multi-bg.png
 lib/%%DISTNAME%%/library/pldoc/pldoc.css
 lib/%%DISTNAME%%/library/pldoc/pldoc.js
 lib/%%DISTNAME%%/library/pldoc/pldoc.sty
 lib/%%DISTNAME%%/library/pldoc/pllisting.css
+lib/%%DISTNAME%%/library/pldoc/priv-bg.png
+lib/%%DISTNAME%%/library/pldoc/private.png
+lib/%%DISTNAME%%/library/pldoc/pub-bg.png
+lib/%%DISTNAME%%/library/pldoc/public.png
 lib/%%DISTNAME%%/library/pldoc/reload.gif
-lib/%%DISTNAME%%/library/pldoc/source.gif
+lib/%%DISTNAME%%/library/pldoc/source.png
 lib/%%DISTNAME%%/library/pldoc/up.gif
-lib/%%DISTNAME%%/library/pldoc/zoomin.gif
-lib/%%DISTNAME%%/library/pldoc/zoomout.gif
 lib/%%DISTNAME%%/library/plunit.pl
 lib/%%DISTNAME%%/library/porter_stem.pl
 lib/%%DISTNAME%%/library/portray_text.pl
 lib/%%DISTNAME%%/library/process.pl
 lib/%%DISTNAME%%/library/prolog_clause.pl
+lib/%%DISTNAME%%/library/prolog_history.pl
 lib/%%DISTNAME%%/library/prolog_server.pl
 lib/%%DISTNAME%%/library/prolog_source.pl
 lib/%%DISTNAME%%/library/prolog_stack.pl
 lib/%%DISTNAME%%/library/prolog_xref.pl
+lib/%%DISTNAME%%/library/protobufs.pl
 lib/%%DISTNAME%%/library/pure_input.pl
+lib/%%DISTNAME%%/library/pwp.pl
 lib/%%DISTNAME%%/library/qpforeign.pl
 lib/%%DISTNAME%%/library/qsave.pl
 lib/%%DISTNAME%%/library/quintus.pl
@@ -520,6 +608,7 @@ lib/%%DISTNAME%%/library/readutil.pl
 lib/%%DISTNAME%%/library/record.pl
 lib/%%DISTNAME%%/library/rewrite.pl
 lib/%%DISTNAME%%/library/rlimit.pl
+lib/%%DISTNAME%%/library/semweb/INDEX.pl
 lib/%%DISTNAME%%/library/semweb/README
 lib/%%DISTNAME%%/library/semweb/dc.rdfs
 lib/%%DISTNAME%%/library/semweb/eor.rdfs
@@ -529,6 +618,8 @@ lib/%%DISTNAME%%/library/semweb/rdf_compare.pl
 lib/%%DISTNAME%%/library/semweb/rdf_db.pl
 lib/%%DISTNAME%%/library/semweb/rdf_edit.pl
 lib/%%DISTNAME%%/library/semweb/rdf_http_plugin.pl
+lib/%%DISTNAME%%/library/semweb/rdf_library.pl
+lib/%%DISTNAME%%/library/semweb/rdf_library.ttl
 lib/%%DISTNAME%%/library/semweb/rdf_litindex.pl
 lib/%%DISTNAME%%/library/semweb/rdf_persistency.pl
 lib/%%DISTNAME%%/library/semweb/rdf_portray.pl
@@ -537,6 +628,7 @@ lib/%%DISTNAME%%/library/semweb/rdf_turtle_write.pl
 lib/%%DISTNAME%%/library/semweb/rdf_zlib_plugin.pl
 lib/%%DISTNAME%%/library/semweb/rdfs.pl
 lib/%%DISTNAME%%/library/semweb/rdfs.rdfs
+lib/%%DISTNAME%%/library/semweb/sparql_client.pl
 lib/%%DISTNAME%%/library/semweb/turtle_base.pl
 lib/%%DISTNAME%%/library/settings.pl
 lib/%%DISTNAME%%/library/sgml.pl
@@ -544,6 +636,7 @@ lib/%%DISTNAME%%/library/sgml_write.pl
 lib/%%DISTNAME%%/library/sha.pl
 lib/%%DISTNAME%%/library/shell.pl
 lib/%%DISTNAME%%/library/shlib.pl
+lib/%%DISTNAME%%/library/snowball.pl
 lib/%%DISTNAME%%/library/socket.pl
 lib/%%DISTNAME%%/library/sort.pl
 lib/%%DISTNAME%%/library/ssl.pl
@@ -562,6 +655,7 @@ lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/time.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/ugraphs.pl
+lib/%%DISTNAME%%/library/uid.pl
 lib/%%DISTNAME%%/library/unicode/blocks.pl
 lib/%%DISTNAME%%/library/unicode/unicode_data.pl
 lib/%%DISTNAME%%/library/unix.pl
@@ -574,16 +668,14 @@ lib/%%DISTNAME%%/library/www_browser.pl
 lib/%%DISTNAME%%/library/xpath.pl
 lib/%%DISTNAME%%/library/xsdp_types.pl
 lib/%%DISTNAME%%/library/zlib.pl
-lib/%%DISTNAME%%/pl.rc
-lib/%%DISTNAME%%/swipl
+lib/%%DISTNAME%%/swipl.home
+lib/%%DISTNAME%%/swipl.rc
 lib/%%DISTNAME%%/xpce
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/COPYING
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/CXX/demo
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/ChangeLog
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/Defaults
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/Defaults.user
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/README
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/README.CXX
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/appl-help/customise.hlp
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/appl-help/dialog.hlp
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/appl-help/emacs.hlp
@@ -979,172 +1071,6 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/transcript.bm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/trash.bm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/typing.bm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/web.bm
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/And.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Application.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Arc.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Area.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Arrow.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Assign.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Attribute.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Behaviour.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/BinaryCondition.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/BinaryExpression.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Binding.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Bitmap.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Block.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Bool.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Box.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Browser.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Button.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/C.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/CPointer.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Call.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Chain.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ChainTable.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/CharArray.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Circle.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Class.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ClassStub.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ClickGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Code.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/CodeVector.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Colour.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ColourMap.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ConnectGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Connection.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Constant.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Constraint.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Create.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Cursor.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Date.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/DelegateVariable.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Device.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Dialog.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/DialogGroup.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/DialogItem.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Dict.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/DictItem.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Directory.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Display.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/DisplayManager.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Divide.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Editor.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Elevation.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Ellipse.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Equal.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Equation.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Error.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Event.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/EventNode.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/EventTree.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Figure.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/File.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Font.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Format.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Fragment.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Frame.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Function.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Gesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/GetMethod.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Graphical.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Greater.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/GreaterEqual.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Handle.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Handler.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/HandlerGroup.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/HashTable.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Host.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Hyper.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Identity.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/If.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Image.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Joint.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/KeyBinding.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Label.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Less.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/LessEqual.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Line.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Link.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ListBrowser.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Menu.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/MenuBar.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/MenuItem.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Message.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Method.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Minus.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Modifier.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/MoveGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/MoveOutlineGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Name.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/NameObject.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Nameref.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Node.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/NonEqual.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Not.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Number.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Obtain.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Operator.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Or.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Parser.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Path.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Pce.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Pen.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Picture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Pixmap.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Plus.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Point.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Pointer.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Popup.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/PopupGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Process.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Progn.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ProgramObject.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/QuoteFunction.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Real.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Recogniser.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Regex.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Region.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Relation.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ResizeGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ResizeOutlineGesture.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Resource.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/ScrollBar.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/SendMethod.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Sheet.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Size.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Slider.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Socket.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/SourceLocation.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Spatial.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Stream.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/String.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Style.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/SyntaxTable.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Tab.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TabStack.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Table.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Text.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TextBuffer.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TextCursor.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TextImage.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TextItem.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/TextMargin.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Tile.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Timer.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Times.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Tokeniser.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Tree.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Tuple.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Type.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Var.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Vector.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/View.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Visual.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Vmi.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/When.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/While.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/Window.h
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce/WindowDecorator.h
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/lib/%%ARCH%%-%%OS%%/pl2xpce.so
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/faq/faq.html
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/index.obj
@@ -1346,10 +1272,9 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference/predicates.doc
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference/tools.doc
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference/topics.doc
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl/Makefile
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl/pl.rc
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl/swipl.rc
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl/xpce.rc
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_autoload.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_boot.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_editor.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_error.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_expand.pl
@@ -1360,10 +1285,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_keybinding.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_pl.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_portray.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_principal.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_quintus.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_realise.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_require.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot/pce_sp.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib/README
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib/contrib.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib/rubik/README
@@ -1485,6 +1407,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/html_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/java_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/language_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/latex_mode.pl
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/logtalk_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/man_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/outline_mode.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs/prolog_colour.pl
@@ -1505,6 +1428,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/english/pce_messages.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/file_item.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/find_file.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/find_file_dialog.pl
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/getpass.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/gradient.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/gui_tracer.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/help_message.pl
@@ -1557,14 +1481,13 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce.qlf
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_arm.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_arrow_item.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_c++_headers.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_class_index.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_colour_item.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_config.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_configeditor.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_cxx_headers.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_debug.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_demo.pl
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_dispatch.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_drag_and_drop.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_drag_and_drop_dict_item.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/pce_edit.pl
@@ -1630,6 +1553,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/splash_screen.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/stayup_popup.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi/pce_debug_monitor.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi/pce_profile.pl
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi/swi_console.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi/thread_monitor.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi_compatibility.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi_edit.pl
@@ -1646,6 +1570,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/break.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/browse.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/browse_xref.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/clause.pl
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/emacs_debug_modes.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/exceptions.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/gui.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/16x16/butterfly.xpm
@@ -1707,6 +1632,7 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/retry.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/send.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/skip.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/spy.xpm
+lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/stack.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/stop.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/undefined.xpm
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/undefpred.xpm
@@ -1731,90 +1657,91 @@ lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref/common.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref/mkcommon.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref/quintus.pl
 lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref/sicstus.pl
-lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/src/itf/main.cxx
-lib/%%DISTNAME%%/xpce.rc
-libdata/pkgconfig/pl.pc
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/CXX
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/appl-help
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bin/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bin
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/16x16
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/32x32
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/patterns
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include/pce
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/include
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/lib/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/lib
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/faq
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference/class
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib/rubik
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/demo
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/compatibility
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/dialog/bitmaps
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/dialog
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/doc/icons
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/doc
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/draw
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/english
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/http
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/man
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/math
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/plot
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi
+libdata/pkgconfig/swipl.pc
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons/16x16
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace/icons
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/trace
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/xref
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/swi
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/plot
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/math
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/man
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/http
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/english
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/emacs
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/draw
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/doc/icons
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/doc
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/dialog/bitmaps
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/dialog
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib/compatibility
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/lib
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/demo
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib/rubik
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/contrib
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog/boot
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/prolog
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/src/itf
-@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/src
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/pl
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference/class
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/reference
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man/faq
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/man
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/lib/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/lib
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/patterns
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/32x32
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps/16x16
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bitmaps
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bin/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/bin
+@dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%/appl-help
 @dirrm lib/%%DISTNAME%%/xpce-%%XPCE_VER%%
-@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/bin
-@dirrm lib/%%DISTNAME%%/boot
-@dirrm lib/%%DISTNAME%%/demo
-@dirrm lib/%%DISTNAME%%/doc/Manual
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/chr
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/http
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/pldoc
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/plunit
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/client
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA/newcerts
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA/private
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/server
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc
-@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl
-@dirrm lib/%%DISTNAME%%/doc/packages/examples
-@dirrm lib/%%DISTNAME%%/doc/packages
-@dirrm lib/%%DISTNAME%%/doc
-@dirrm lib/%%DISTNAME%%/dotfiles
-@dirrm lib/%%DISTNAME%%/include
+@dirrm lib/%%DISTNAME%%/library/unicode
+@dirrm lib/%%DISTNAME%%/library/semweb
+@dirrm lib/%%DISTNAME%%/library/pldoc
+@dirrm lib/%%DISTNAME%%/library/http/web/icons
+@dirrm lib/%%DISTNAME%%/library/http/web/css
+@dirrm lib/%%DISTNAME%%/library/http/web
+@dirrm lib/%%DISTNAME%%/library/http
+@dirrm lib/%%DISTNAME%%/library/dialect/yap
+@dirrm lib/%%DISTNAME%%/library/dialect/sicstus
+@dirrm lib/%%DISTNAME%%/library/dialect/iso
+@dirrm lib/%%DISTNAME%%/library/dialect/ciao/engine
+@dirrm lib/%%DISTNAME%%/library/dialect/ciao
+@dirrm lib/%%DISTNAME%%/library/dialect
+@dirrm lib/%%DISTNAME%%/library/clp/clpr
+@dirrm lib/%%DISTNAME%%/library/clp/clpqr
+@dirrm lib/%%DISTNAME%%/library/clp/clpq
+@dirrm lib/%%DISTNAME%%/library/clp
+@dirrm lib/%%DISTNAME%%/library/chr
+@dirrm lib/%%DISTNAME%%/library/DTD
+@dirrm lib/%%DISTNAME%%/library
 @dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/lib
-@dirrm lib/%%DISTNAME%%/library/DTD
-@dirrm lib/%%DISTNAME%%/library/chr
-@dirrm lib/%%DISTNAME%%/library/ciao
-@dirrm lib/%%DISTNAME%%/library/clp/clpq
-@dirrm lib/%%DISTNAME%%/library/clp/clpqr
-@dirrm lib/%%DISTNAME%%/library/clp/clpr
-@dirrm lib/%%DISTNAME%%/library/clp
-@dirrm lib/%%DISTNAME%%/library/commons
-@dirrm lib/%%DISTNAME%%/library/dialect/iso
-@dirrm lib/%%DISTNAME%%/library/dialect/yap
-@dirrm lib/%%DISTNAME%%/library/dialect
-@dirrm lib/%%DISTNAME%%/library/http
-@dirrm lib/%%DISTNAME%%/library/pldoc
-@dirrm lib/%%DISTNAME%%/library/semweb
-@dirrm lib/%%DISTNAME%%/library/unicode
-@dirrm lib/%%DISTNAME%%/library
+@dirrm lib/%%DISTNAME%%/include/sicstus
+@dirrm lib/%%DISTNAME%%/include
+@dirrm lib/%%DISTNAME%%/dotfiles
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/server
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA/private
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA/newcerts
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/demoCA
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc/client
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl/etc
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/ssl
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/protobufs
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/plunit
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/pldoc
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/http/pwp
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/http
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/chr
+@dirrm lib/%%DISTNAME%%/doc/packages/examples/R
+@dirrm lib/%%DISTNAME%%/doc/packages/examples
+@dirrm lib/%%DISTNAME%%/doc/packages
+@dirrm lib/%%DISTNAME%%/doc/Manual
+@dirrm lib/%%DISTNAME%%/doc
+@dirrm lib/%%DISTNAME%%/demo
+@dirrm lib/%%DISTNAME%%/boot
+@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%
 @dirrmtry lib/pkgconfig

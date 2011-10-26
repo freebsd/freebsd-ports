@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	5.8.3
-PORTREVISION=	1
+PORTVERSION=	5.10.5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
@@ -18,22 +17,19 @@ COMMENT=	Edinburgh-style Prolog compiler
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		readline:${PORTSDIR}/devel/readline
 
-BROKEN=		does not compile
-
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 LIB_DEPENDS+=	Xt:${PORTSDIR}/x11-toolkits/libXt \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		Xpm:${PORTSDIR}/x11/libXpm
 LIB_DEPENDS+=	Xft:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	slffea-[0-9]* TenDRA-[0-9]*
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 XPCE_VER=	6.6.66
 
-MAN1=		pl.1 plrc.1 plld.1 xpce-client.1 xpce.1
+MAN1=		swipl.1 swipl-rc.1 swipl-ld.1 xpce-client.1
 MANCOMPRESSED=	no
 
 NOPRECIOUSMAKEVARS=	yes
@@ -44,7 +40,7 @@ CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
 CONFIGURE_TARGET=	${ARCH}-${OPSYS:L}
 CONFIGURE_ARGS=	--with-world --without-jpl
 
-PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
+PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L}
 PLIST_SUB+=	XPCE_VER=${XPCE_VER}
 
 .include <bsd.port.pre.mk>
@@ -53,6 +49,10 @@ PLIST_SUB+=	XPCE_VER=${XPCE_VER}
 PLIST_SUB+=	BITS=32
 .else
 PLIST_SUB+=	BITS=64
+.endif
+
+.if (${ARCH} == "amd64")
+ARCH=		x86_64
 .endif
 
 .if (${ARCH} == "alpha")
@@ -68,14 +68,16 @@ post-patch:
 		${WRKSRC}/packages/xpce/src/Makefile.in
 
 post-configure:
-	${REINPLACE_CMD} -e '/MALLOC_H/s/^#define \(HAVE_.*MALLOC_H\).*/\/\* #undef \1 \*\//g' \
+	@${REINPLACE_CMD} -e '/MALLOC_H/s/^#define \(HAVE_.*MALLOC_H\).*/\/\* #undef \1 \*\//g' \
+		${WRKSRC}/src/config.h
+	@${REINPLACE_CMD} -e '/EXECINFO_H/s/^#define \(HAVE_.*EXECINFO_H\).*/\/\* #undef \1 \*\//g' \
 		${WRKSRC}/src/config.h
 
 post-install:
-.for f in pl plld plrc
-	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
+.for f in swipl swipl-ld swipl-rc
+	@${STRIP_CMD} ${PREFIX}/lib/${SWIPLDIR}/bin/${ARCH}-${OPSYS:L}/$f
 .endfor
 # swi-pl creates this empty directory
-	${RMDIR} ${PREFIX}/lib/${DISTNAME}/man
+	${RMDIR} ${PREFIX}/lib/${SWIPLDIR}/man
 
 .include <bsd.port.post.mk>

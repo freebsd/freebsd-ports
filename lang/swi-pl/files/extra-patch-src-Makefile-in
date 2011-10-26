@@ -1,10 +1,10 @@
---- src/Makefile.in.orig	Wed Jan 18 15:40:30 2006
-+++ src/Makefile.in	Wed Jan 18 15:40:46 2006
-@@ -325,7 +325,6 @@
+--- src/Makefile.in.orig	2011-08-19 18:31:28.000000000 +0400
++++ src/Makefile.in	2011-10-08 22:20:17.000000000 +0400
+@@ -399,7 +399,6 @@
  
- iruntime::
- 		$(INSTALL_DATA) $(RUNTIME) $(DESTDIR)$(PLBASE)/lib/$(ARCH)
--		$(RANLIB) $(DESTDIR)$(PLBASE)/lib/$(ARCH)/$(PLLIB)
+ iruntime:	idirs
+ 		$(INSTALL_DATA) $(RUNTIME) $(DESTDIR)$(PLBASE)/lib/$(PLARCH)
+-		$(RANLIB) $(DESTDIR)$(PLBASE)/lib/$(PLARCH)/$(PLLIB)
  ifeq ($(SOEXT),dylib)
  		if [ -f $(RUNTIMEDIR)/$(SHARED) ]; then \
- 		  $(INSTALL_DATA) $(RUNTIMEDIR)/$(SHARED) $(DESTDIR)$(PLBASE)/lib/$(ARCH) ; \
+ 		  $(INSTALL_DATA) $(RUNTIMEDIR)/$(SHARED) $(DESTDIR)$(PLBASE)/lib/$(PLARCH) ; \
