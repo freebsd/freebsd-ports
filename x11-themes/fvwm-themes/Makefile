@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm-themes
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,8 +17,8 @@ MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	Themes for the Fvwm2 window manager
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		fvwm2:${PORTSDIR}/x11-wm/fvwm2-devel
-RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2-devel
+		fvwm2:${PORTSDIR}/x11-wm/fvwm2
+RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
