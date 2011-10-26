@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Computing subnets in large scale networks
 
+DEPRECATED=	Disappeared from CPAN
+EXPIRATION_DATE=	2011-11-26
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Subnets.3
