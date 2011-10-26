@@ -2,19 +2,13 @@
 %%SITE_PERL%%/Net/NBsocket.pm
 %%SITE_PERL%%/auto/Net/NBsocket/_accept.al
 %%SITE_PERL%%/auto/Net/NBsocket/_connect.al
-%%SITE_PERL%%/auto/Net/NBsocket/accept_Blk.al
-%%SITE_PERL%%/auto/Net/NBsocket/accept_NB.al
 %%SITE_PERL%%/auto/Net/NBsocket/autosplit.ix
 %%SITE_PERL%%/auto/Net/NBsocket/bind2pp.al
-%%SITE_PERL%%/auto/Net/NBsocket/connectBlk.al
-%%SITE_PERL%%/auto/Net/NBsocket/connect_NB.al
 %%SITE_PERL%%/auto/Net/NBsocket/dyn_bind.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_Listen.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_UDP.al
-%%SITE_PERL%%/auto/Net/NBsocket/open_listenNB.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_udpNB.al
 %%SITE_PERL%%/auto/Net/NBsocket/set_NB.al
-%%SITE_PERL%%/auto/Net/NBsocket/set_so_linger.al
 @dirrmtry %%SITE_PERL%%/auto/Net/NBsocket
 @dirrmtry %%SITE_PERL%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net
