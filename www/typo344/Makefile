@@ -15,6 +15,9 @@ COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Support will end in the near future, see http://typo3.org/download/packages/ for details
+EXPIRATION_DATE=2012-04-30
+
 NO_LATEST_LINK=	yes
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
