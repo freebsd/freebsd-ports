@@ -92,6 +92,10 @@ MLINKS=	sendmail.1 mailq.1 \
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
+.if ${ARCH} == "amd64"
+BROKEN=		fails during installation
+.endif
+
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
