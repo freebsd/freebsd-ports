@@ -2915,6 +2915,7 @@ eigen2                          ports/math/eigen2
 eights                          ports/games/eights
 eina                            ports/devel/eina
 einstein                        ports/games/einstein
+eiskaltdcpp-cli                 ports/net-p2p/eiskaltdcpp-cli
 eiskaltdcpp-daemon              ports/net-p2p/eiskaltdcpp-daemon
 eiskaltdcpp-data                ports/net-p2p/eiskaltdcpp-data
 eiskaltdcpp-gtk                 ports/net-p2p/eiskaltdcpp-gtk
@@ -4514,7 +4515,6 @@ gnake                           ports/games/gnake
 gnarr                           ports/games/gnarr
 gnarwl                          ports/mail/gnarwl
 gnash                           ports/graphics/gnash
-gnash-devel                     ports/graphics/gnash-devel
 gnat                            ports/lang/gnat
 gnat-aux                        ports/lang/gnat-aux
 gnatdroid-armv5                 ports/lang/gnatdroid-armv5
@@ -8432,6 +8432,7 @@ lineak-defaultplugin            ports/sysutils/lineak-defaultplugin
 lineak-kdeplugins               ports/sysutils/lineak-kdeplugins
 lineak-xosdplugin               ports/sysutils/lineak-xosdplugin
 lineakd                         ports/sysutils/lineakd
+lingot                          ports/audio/lingot
 lingoteach                      ports/misc/lingoteach
 link-grammar                    ports/textproc/link-grammar
 link-monitor-applet             ports/net/link-monitor-applet
@@ -25683,7 +25684,6 @@ tomboy-plugin-reminder          ports/deskutils/tomboy-plugin-reminder
 tomboy-plugin-todo              ports/deskutils/tomboy-plugin-todo
 tomboy-plugin-wordcount         ports/deskutils/tomboy-plugin-wordcount
 tomcat-native                   ports/www/tomcat-native
-tomcat41                        ports/www/tomcat41
 tomcat55                        ports/www/tomcat55
 tomcat6                         ports/www/tomcat6
 tomcat7                         ports/www/tomcat7
@@ -25824,8 +25824,8 @@ transmission-cli                ports/net-p2p/transmission-cli
 transmission-daemon             ports/net-p2p/transmission-daemon
 transmission-gtk2               ports/net-p2p/transmission-gtk2
 transmission-qt4                ports/net-p2p/transmission-qt4
+transmission-remote-gui         ports/net-p2p/transmission-remote-gui
 transmission-web                ports/www/transmission-web
-transmisson-remote-gui          ports/net-p2p/transmisson-remote-gui
 transproxy                      ports/www/transproxy
 transset-df                     ports/x11-wm/transset-df
 trapproto                       ports/x11/trapproto
