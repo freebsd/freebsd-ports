@@ -1,0 +1,13 @@
+This is a simple but fast pure Perl module for determining whether a given IP
+address is in a given set of IP subnets. It's iterative, and it doesn't use any
+fancy tries, but because it uses simple bitwise operations on strings it's still
+very fast.
+
+All documented functions are exported by default.
+
+Subnets have to be given in "address/mask" or "address/length" (CIDR) format.
+The Socket and Socket6 modules are used to normalise addresses, which means that
+any of the address formats supported by inet_aton and inet_pton can be used with
+Net::Subnet.
+
+WWW: http://search.cpan.org/dist/Net-Subnet/
