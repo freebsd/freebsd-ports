@@ -9,7 +9,7 @@
 -    # Then INDEX if INDEX-5 does not exist or system is not FreeBSD 5.x
 -    [[ "${OSTYPE%.*}" == freebsd5 && -f $indexfile ]] ||
 -        indexfile=$portsdir/INDEX
-+	indexfile="$(portsdir)INDEX-${OSTYPE:7:1}"
++	indexfile="${portsdir}INDEX-${OSTYPE:7:1}"
  
      [[ "$prev" == -l || "$prev" == -L || "$prev" == -o ]] && return 0
  
