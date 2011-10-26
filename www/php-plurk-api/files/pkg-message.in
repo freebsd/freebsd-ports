@@ -1,3 +1,4 @@
+Plurk API 1.0
 
 **********************************************
 Plurk API provides a standard way of accessing 
@@ -23,13 +24,10 @@ of what you are making.
 php-plurk-api is a Plurk API Client implementation with PHP.  
 
 	the API Official Website:
-	http://www.plurk.com/API
+	http://www.plurk.com/API/1.0/
  
 	Code Repository:
 	https://code.google.com/p/php-plurk-api/
-
-	php-plurk-api online documents:
-	http://plurk.lab3.tw/docs/
 
 **********************************************
 
