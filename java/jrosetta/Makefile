@@ -6,28 +6,39 @@
 #
 
 PORTNAME=	jrosetta
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.predatorlabs.net/dl/
-EXTRACT_SUFX=	-gpl.zip
+MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTVERSION}/ \
+		http://www.predatorlabs.net/dl/
+EXTRACT_SUFX=	-sources.jar
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	API for building a graphical console in Swing
+
+BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-USE_ANT=	yes
 
-ALL_TARGET=	make
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-gpl
-
-PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-API.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 		%%JAVAJARDIR%%/jrosetta-engine.jar
 
+OUTPUT=		${WRKDIR}/m2/com/artenum/jrosetta
+
+post-patch:
+	${MKDIR} ${WRKDIR}/m2
+	${CP} ${FILESDIR}/settings.xml ${WRKDIR}
+	${REINPLACE_CMD} -e "s|WORK|${WRKDIR}|" ${WRKDIR}/settings.xml
+
+do-build:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/mvn -gs "${WRKDIR}/settings.xml" clean install)
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/dist/jrosetta-API.jar ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/dist/jrosetta-engine.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${OUTPUT}/jrosetta-api/${PORTVERSION}/jrosetta-api-${PORTVERSION}.jar \
+		${JAVAJARDIR}/jrosetta-api.jar
+	${INSTALL_DATA} ${OUTPUT}/jrosetta-engine/${PORTVERSION}/jrosetta-engine-${PORTVERSION}.jar \
+		${JAVAJARDIR}/jrosetta-engine.jar
 
 .include <bsd.port.mk>
