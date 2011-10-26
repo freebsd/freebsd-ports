@@ -13,11 +13,8 @@ MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
-
-DEPRECATED=	Depends on textproc/htmlize.el, which is DEPRECATED
-EXPIRATION_DATE=	2011-10-31
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
