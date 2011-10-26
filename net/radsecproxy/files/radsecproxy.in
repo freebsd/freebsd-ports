@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: radsecproxy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# radsecproxy_enable (bool): Set to NO by default.
+#               Set it to YES to enable radsecproxy.
+
+. /etc/rc.subr
+
+name="radsecproxy"
+rcvar=`set_rcvar`
+
+: ${radsecproxy_enable:="NO"}
+: ${radsecproxy_user:="nobody"}
+: ${radsecproxy_group:="nobody"}
+: ${radsecproxy_pidfile:="/var/run/radsecproxy/radsecproxy.pid"}
+
+user=${radsecproxy_user}
+group=${radsecproxy_group}
+pidfile=${radsecproxy_pidfile}
+required_files=%%PREFIX%%/etc/radsecproxy.conf
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-c %%PREFIX%%/etc/radsecproxy.conf -i ${pidfile}"
+
+start_precmd="radsecproxy_prestart"
+stop_postcmd="radsecproxy_poststop"
+
+radsecproxy_prestart() 
+{
+	mkdir -p $(dirname $pidfile)
+	chown ${user}:${group} $(dirname $pidfile)
+}
+
+radsecproxy_poststop() 
+{
+	rm -f ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"

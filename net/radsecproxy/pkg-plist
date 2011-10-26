@@ -1,0 +1,3 @@
+bin/catgconf
+sbin/radsecproxy
+etc/radsecproxy.conf-example
