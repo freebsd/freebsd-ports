@@ -19,7 +19,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
 		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class
 RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class
-TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/devel/p5-Test-Perl-Critic
+
+TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic
 
 PERL_CONFIGURE=	yes
 
