@@ -8,7 +8,7 @@
 PORTNAME=	tardy
 PORTVERSION=	1.24
 CATEGORIES=	archivers
-MASTER_SITES=	SF/${PORTNAME}/files/${PORTVERSION}/ CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways
