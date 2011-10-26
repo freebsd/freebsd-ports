@@ -23,6 +23,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bigloo --prefix=${PREFIX} --docdir=${DOCSDIR}
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+BROKEN=		broken after lang/bigloo update
+
 .SILENT:
 
 post-extract:
