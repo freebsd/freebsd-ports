@@ -641,6 +641,7 @@
     SUBDIR += p5-Net-Server
     SUBDIR += p5-Net-Server-Coro
     SUBDIR += p5-Net-Services
+    SUBDIR += p5-Net-Subnet
     SUBDIR += p5-Net-Subnets
     SUBDIR += p5-Net-TCLink
     SUBDIR += p5-Net-TcpDumpLog
