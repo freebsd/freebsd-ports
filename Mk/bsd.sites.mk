@@ -902,7 +902,6 @@ MASTER_SITE_OSSP+= \
 .if !defined(IGNORE_MASTER_SITE_PACKETSTORM)
 MASTER_SITE_PACKETSTORM+= \
 	http://dl.packetstormsecurity.net/%SUBDIR%/ \
-	http://packetstorm.austin2600.net/%SUBDIR%/ \
 	http://packetstorm.codar.com.br/%SUBDIR%/ \
 	http://packetstorm.crazydog.pt/%SUBDIR%/ \
 	http://packetstorm.igor.onlinedirect.bg/%SUBDIR%/ \
