@@ -64,4 +64,7 @@ else
 	command_args="$command_args --cert-fd=3 3< ${shellinaboxd_certfile}"
 fi
 
+# avoid unnecessary su(1) initiated by rc.subr
+unset shellinaboxd_user shellinaboxd_group
+
 run_rc_command "$1"

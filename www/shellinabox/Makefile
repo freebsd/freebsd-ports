@@ -7,12 +7,15 @@
 
 PORTNAME=	shellinabox
 PORTVERSION=	2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	Publish command line shell through AJAX interface
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	ENABLE_CORES	"Patch shellinaboxd to enable core dumps." off
 
@@ -21,9 +24,6 @@ CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} \
 		--mandir=${MANPREFIX}/man
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	shellinaboxd
 USERS?=		shellinabox
