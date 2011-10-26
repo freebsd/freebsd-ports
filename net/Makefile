@@ -910,6 +910,7 @@
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
+    SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
     SUBDIR += rdesktop
