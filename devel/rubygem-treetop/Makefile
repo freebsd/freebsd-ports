@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treetop
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
