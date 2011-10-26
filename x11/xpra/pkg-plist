@@ -62,6 +62,10 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/platform/gui.pyc
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.py
 %%PYTHON_SITELIBDIR%%/xpra/platform/client_extras_base.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/clipboard_base.pyc
+%%PYTHON_SITELIBDIR%%/xpra/platform/default_clipboard.py
+%%PYTHON_SITELIBDIR%%/xpra/platform/default_clipboard.pyc
 %%PYTHON_SITELIBDIR%%/xpra/protocol.py
 %%PYTHON_SITELIBDIR%%/xpra/protocol.pyc
 %%PYTHON_SITELIBDIR%%/xpra/proxy.py
