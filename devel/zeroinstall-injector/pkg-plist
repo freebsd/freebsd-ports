@@ -1,21 +1,18 @@
 bin/0alias
 bin/0desktop
+bin/0install
 bin/0launch
 bin/0store
 bin/0store-secure-add
 etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/0launch-gui
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/README
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/ZeroInstall-GUI.xml
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/browser.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/browser.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/browser.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/bugs.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/bugs.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/bugs.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/compile.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/compile.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/compile.pyo
@@ -49,13 +46,49 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/utils.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/zero-install.glade
+%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/zero-install.ui
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/alias.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/alias.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/alias.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/__init__.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/add_feed.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/add_feed.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/add_feed.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/config.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/config.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/config.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/digest.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/digest.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/digest.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/download.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/download.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/download.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/import.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/import.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/import.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list_feeds.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list_feeds.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/list_feeds.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/remove_feed.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/remove_feed.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/remove_feed.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/run.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/run.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/run.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/select.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/select.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/select.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/update.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/update.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/cmd/update.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/__init__.pyo
@@ -65,14 +98,14 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/applistbox.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/applistbox.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/applistbox.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/cache.glade
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/cache.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/cache.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/cache.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/desktop.glade
+%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/cache.ui
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/desktop.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/desktop.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/desktop.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/desktop.ui
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/gtkutils.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/gtkutils.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/gtkutils.pyo
@@ -82,9 +115,6 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/icon.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/icon.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/icon.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/treetips.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui/trust_box.pyo
@@ -97,24 +127,33 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_download_child.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_download_child.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_download_child.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_runenv.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_runenv.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/_runenv.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/arch.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/arch.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/arch.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/autopolicy.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/autopolicy.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/autopolicy.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/config.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/config.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/config.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/distro.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/distro.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/distro.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/driver.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/driver.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/driver.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.pyo
@@ -133,6 +172,9 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/namespaces.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/namespaces.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/namespaces.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/packagekit.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/packagekit.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/packagekit.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/policy.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/policy.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/policy.pyo
@@ -142,9 +184,15 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/reader.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/reader.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/reader.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/requirements.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/requirements.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/requirements.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/run.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/run.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/run.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/sat.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/sat.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/sat.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.pyo
@@ -185,18 +233,22 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 share/applications/zeroinstall-add.desktop
 share/applications/zeroinstall-manage.desktop
 share/desktop-directories/zeroinstall.directory
-share/pixmaps/zeroinstall-zero2desktop.png
+share/icons/hicolor/128x128/apps/zeroinstall.png
+share/icons/hicolor/24x24/apps/zeroinstall.png
+share/icons/hicolor/48x48/apps/zeroinstall.png
+share/icons/hicolor/scalable/apps/zeroinstall.svg
+share/locale/de/LC_MESSAGES/zero-install.mo
+share/locale/es/LC_MESSAGES/zero-install.mo
 share/locale/sv/LC_MESSAGES/zero-install.mo
-@dirrm share/desktop-directories
+@dirrmtry share/desktop-directories
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/support
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/injector
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/cmd
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry lib/python2.5
 @dirrmtry etc/xdg/menus/applications-merged
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
