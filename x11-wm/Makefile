@@ -101,7 +101,6 @@
     SUBDIR += fvwm
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
-    SUBDIR += fvwm2-devel
     SUBDIR += fvwm2-i18n
     SUBDIR += fvwm95
     SUBDIR += fvwm95-i18n
