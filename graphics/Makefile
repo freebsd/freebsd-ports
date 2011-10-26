@@ -949,6 +949,7 @@
     SUBDIR += tifmerge
     SUBDIR += timeless
     SUBDIR += tintfu
+    SUBDIR += tinyows
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += tonicpoint-viewer
