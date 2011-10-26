@@ -7,12 +7,11 @@
 
 PORTNAME=	beansdb
 PORTVERSION=	0.5.3
-PORTREVISION=	0
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	qingfeng@douban.com
-COMMENT=	Yet anonther distributed key-value storage system from Douban Inc
+COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_LIBS}
