@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,17 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+# GraphViz not required for portindex to run or generate GraphViz
+# format output: this is only needed to render the output on the same
+# machine.
+OPTIONS=	GRAPHVIZ "Add GraphViz run-time dependency" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GRAPHVIZ) && !defined(WITHOUT_GRAPHVIZ)
+RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
+.endif
 
 USE_XZ=	yes
 PERL_CONFIGURE=	yes
