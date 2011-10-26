@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	XFce4 systemload plugin with multiple CPU display modes
+COMMENT=	Xfce4 systemload plugin with multiple CPU display modes
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

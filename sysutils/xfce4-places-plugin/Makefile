@@ -16,7 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A file browser launcher for XFce4 panel plugin
 
-BROKEN=		Does not work with xfce 4.8
+BROKEN=		Does not work with Xfce 4.8
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

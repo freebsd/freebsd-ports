@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 weather module for xfce4-panel
+COMMENT=	Xfce 4 weather module for xfce4-panel
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

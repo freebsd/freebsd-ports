@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 file manager
+COMMENT=	Xfce 4 file manager
 
 LIB_DEPENDS=	tumbler-1.0:${PORTSDIR}/deskutils/xfce4-tumbler
 

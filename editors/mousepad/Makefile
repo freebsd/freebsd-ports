@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Simple xfce editor
+COMMENT=	Simple Xfce editor
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

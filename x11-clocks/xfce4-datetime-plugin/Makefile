@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A datetime plugin for xfce
+COMMENT=	A datetime plugin for Xfce
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

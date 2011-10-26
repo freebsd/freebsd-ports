@@ -1,4 +1,4 @@
-XFce 4 clipboard module for xfce4-panel.  This plugin is a clipboard history
+Xfce 4 clipboard module for xfce4-panel.  This plugin is a clipboard history
 for the panel. It now includes a "Clear clipboard" option, and a drag-and-drop
 paste feature contributed by Andre Lerche.
 

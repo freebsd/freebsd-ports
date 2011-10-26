@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 panel module
+COMMENT=	Xfce 4 panel module
 
 LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 		cairo.2:${PORTSDIR}/graphics/cairo \

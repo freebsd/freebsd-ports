@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 essential utilities and scripts
+COMMENT=	Xfce 4 essential utilities and scripts
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

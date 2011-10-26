@@ -18,7 +18,7 @@ COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
-BROKEN=		Does not work with xfce 4.8
+BROKEN=		Does not work with Xfce 4.8
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

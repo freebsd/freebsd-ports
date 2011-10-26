@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A calendar application to manage your time with XFce 4
+COMMENT=	A calendar application to manage your time with Xfce 4
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

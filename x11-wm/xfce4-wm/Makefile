@@ -14,7 +14,7 @@ DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 window manager
+COMMENT=	Xfce 4 window manager
 
 CONFIGURE_ARGS=	--enable-xinerama
 GNU_CONFIGURE=	yes
