@@ -7,14 +7,14 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Easy, eye-candy, light and powerful virtual wm for X
 
-RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2-devel \
+RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2 \
 		bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
