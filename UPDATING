@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111025:
+  AFFECTS: users of print/flpsed or www/dillo2
+  AUTHOR: bf@FreeBSD.org
+
+  The new versions of flpsed and dillo have switched from
+  x11-toolkits/fltk2 to the new fltk 1.3.0 from x11-toolkits/fltk.
+  Users who have customizations specific to fltk2 may need to consult
+  the fltk 1.3 documents in order to adjust their local settings. For
+  dillo, some commonly-used key bindings have changed, and new
+  configuration options are available: consult dillorc.dist and
+  keysrc.dist for details.
+
 20111019:
   AFFECTS: users of mail/thunderbird or www/seamonkey with lightning 
            plugin installed.

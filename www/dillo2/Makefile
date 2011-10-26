@@ -5,20 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	2.2.1
+PORTVERSION=	3.0.1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A fast, small graphical Web browser built upon fltk2
+COMMENT=	A fast, small graphical Web browser built upon fltk
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
-RUN_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2 \
-		wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
