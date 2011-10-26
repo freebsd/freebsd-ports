@@ -344,6 +344,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Stockholm.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tallinn.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tirane.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Tiraspol.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Uzhgorod.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vaduz.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vienna.pm
