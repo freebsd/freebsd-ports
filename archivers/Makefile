@@ -91,6 +91,7 @@
     SUBDIR += p5-Archive-Any
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Extract-Libarchive
+    SUBDIR += p5-Archive-Peek
     SUBDIR += p5-Archive-Rar
     SUBDIR += p5-Archive-SimpleExtractor
     SUBDIR += p5-Archive-Tar
