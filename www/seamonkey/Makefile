@@ -84,11 +84,12 @@ LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 
 .if defined(WITHOUT_MAILNEWS)
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
+BROKEN=		Does not build
 .else
 # mail and news desired, but not LDAP
 .if defined(WITHOUT_LDAP)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bridge-bridge.mk
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
-BROKEN=		Does not build
 .else
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
