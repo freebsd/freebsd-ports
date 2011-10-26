@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	httparty
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Library that Makes HTTP Fun Again
 
-RUN_DEPENDS=	rubygem-crack>=0.1.8:${PORTSDIR}/devel/rubygem-crack
+RUN_DEPENDS=	rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json \
+		rubygem-multi_xml>=0:${PORTSDIR}/textproc/rubygem-multi_xml
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
