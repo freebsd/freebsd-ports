@@ -11,6 +11,7 @@
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp.pm.tt
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/MyApp/Controller/Root.pm.tt
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/myapp.conf.tt
+%%SITE_PERL%%/auto/share/dist/Catalyst-Devel/myapp.psgi.tt
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/favicon.ico.bin
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_built.png.bin
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/root/static/images/btn_120x50_built_shadow.png.bin
