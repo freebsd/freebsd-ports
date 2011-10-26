@@ -15,7 +15,7 @@ DISTNAME=	xfprint-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 graphical frontend for printing
+COMMENT=	Xfce 4 graphical frontend for printing
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes

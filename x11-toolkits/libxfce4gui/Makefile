@@ -14,7 +14,7 @@ DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
+COMMENT=	Xfce 4 widget library required by Xfce4 and Xfwm4
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A task manager for XFCE
+COMMENT=	A task manager for Xfce
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck

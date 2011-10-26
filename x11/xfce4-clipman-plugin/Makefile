@@ -14,14 +14,12 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 clipboard module for xfce4-panel
+COMMENT=	Xfce 4 clipboard module for xfce4-panel
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	UNIQUE	"Enable Unique (single instance) support" on
-
-#BROKEN=		Does not work with xfce 4.8
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

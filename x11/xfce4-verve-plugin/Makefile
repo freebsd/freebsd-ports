@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	xfce4-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A command line plugin for xfce4
+COMMENT=	A command line plugin for Xfce4
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 

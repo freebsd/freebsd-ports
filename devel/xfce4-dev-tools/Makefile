@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 development tools
+COMMENT=	Xfce 4 development tools
 
 RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools
 

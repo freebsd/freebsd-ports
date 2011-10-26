@@ -13,7 +13,7 @@ DISTNAME=	xfconf-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 configuration mananger
+COMMENT=	Xfce 4 configuration mananger
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 

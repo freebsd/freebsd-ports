@@ -15,7 +15,7 @@ DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 desktop background manager and root menu
+COMMENT=	Xfce 4 desktop background manager and root menu
 
 DOCSDIR=	${PREFIX}/share/doc/xfdesktop
 

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Quicklauncher plugin for xfce
+COMMENT=	Quicklauncher plugin for Xfce
 
 BROKEN=		does not configure
 

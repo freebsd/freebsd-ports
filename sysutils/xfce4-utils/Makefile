@@ -14,7 +14,7 @@ DISTNAME=	xfce-utils-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 essential utilities and scripts
+COMMENT=	Xfce 4 essential utilities and scripts
 
 CONFLICTS=	xfce4-utils-4.6*
 

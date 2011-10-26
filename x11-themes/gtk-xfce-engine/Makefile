@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	An XFCE engine for GTK 2.0
+COMMENT=	An Xfce engine for GTK 2.0
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

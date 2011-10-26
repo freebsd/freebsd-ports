@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=/src/panel-plugins//${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 media remote plugin for xfce4-panel
+COMMENT=	Xfce 4 media remote plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-media>=0.9.2:${PORTSDIR}/multimedia/xfce4-media
 
-BROKEN=		Does not work with xfce 4.8
+BROKEN=		Does not work with Xfce 4.8
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

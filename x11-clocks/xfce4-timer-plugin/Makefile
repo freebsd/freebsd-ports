@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A timer plugin for xfce
+COMMENT=	A timer plugin for Xfce
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

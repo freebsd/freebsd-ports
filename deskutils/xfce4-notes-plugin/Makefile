@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Sticky notes panel plugin for XFce4
+COMMENT=	Sticky notes panel plugin for Xfce4
 
 LIB_DEPENDS=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 

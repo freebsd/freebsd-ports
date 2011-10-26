@@ -13,7 +13,7 @@ DISTNAME=	libxfce4ui-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	XFce 4 library for a freedesktop.org compliant menu implementation
+COMMENT=	Xfce 4 library for a freedesktop.org compliant menu implementation
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
