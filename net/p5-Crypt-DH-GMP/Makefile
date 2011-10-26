@@ -18,6 +18,8 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib \
 		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/Makefile.PL
 
