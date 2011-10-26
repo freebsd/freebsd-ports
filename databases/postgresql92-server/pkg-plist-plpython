@@ -1,5 +1,5 @@
 %%DOCSDIR%%/README-plpython
-lib/postgresql/plpython2.so
+lib/postgresql/plpython%%PYTHON_MAJOR_VER%%.so
 %%DATADIR%%/extension/plpythonu.control
 %%DATADIR%%/extension/plpythonu--1.0.sql
 %%DATADIR%%/extension/plpythonu--unpackaged--1.0.sql

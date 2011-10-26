@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--with-python
 BUILD_DIRS=	src/pl/plpython
 SLAVE_ONLY=	yes
 
-POSTGRESQL_PORT=databases/postgresql${PGSQL_VER}-server
+POSTGRESQL_PORT=	databases/postgresql${PGSQL_VER}-server
+PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_VER:R}
 
 .include "${MASTERDIR}/Makefile"
