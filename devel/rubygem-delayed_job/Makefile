@@ -10,7 +10,7 @@ PORTVERSION=	2.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A gem for asynchronously executing longer tasks in the background
 
 RUN_DEPENDS=	rubygem-activesupport>=3.0:${PORTSDIR}/devel/rubygem-activesupport \

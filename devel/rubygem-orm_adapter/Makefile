@@ -9,7 +9,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a single point of entry for using basic features of ruby ORMs
 
 USE_RUBY=	yes

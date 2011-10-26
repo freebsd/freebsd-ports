@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	little-plugger-${PORTVERSION}
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mechanism to parse ruby little-plugger files
 
 USE_RUBY=	yes

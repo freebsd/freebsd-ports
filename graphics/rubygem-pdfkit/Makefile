@@ -9,7 +9,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Uses wkhtmltopdf to create PDFs using HTML
 
 RUN_DEPENDS=	wkhtmltopdf:${PORTSDIR}/converters/wkhtmltopdf

@@ -9,7 +9,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Scans a directory at a set interval and lists files
 
 USE_RUBY=	yes

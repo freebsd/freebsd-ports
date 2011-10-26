@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	${GEM_NAME}
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A cross platform API for managing child processes
 
 RUN_DEPENDS=	rubygem-open4>=0.4.0:${PORTSDIR}/devel/rubygem-open4 \

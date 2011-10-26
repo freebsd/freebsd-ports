@@ -9,7 +9,7 @@ PORTVERSION=		1.4.2
 CATEGORIES=		devel rubygems
 MASTER_SITES=		RG
 
-MAINTAINER=		zi@FreeBSD.org
+MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Forms made easy
 
 RUN_DEPENDS=		rubygem-activemodel>=3.0:${PORTSDIR}/databases/rubygem-activemodel \

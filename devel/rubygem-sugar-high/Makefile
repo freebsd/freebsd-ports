@@ -9,7 +9,7 @@ PORTVERSION=	0.2.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	More Ruby sugar
 
 RUN_DEPENDS=	rubygem-mocha>=0.9.8:${PORTSDIR}/devel/rubygem-mocha \
