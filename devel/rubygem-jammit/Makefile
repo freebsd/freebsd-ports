@@ -9,7 +9,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An industrial strength asset packaging library for Rails
 
 RUN_DEPENDS=	devel/rubygem-yui-compressor>=0.9.3:${PORTSDIR}/devel/rubygem-yui-compressor

@@ -9,7 +9,7 @@ PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mechanism to parse ruby loquacious files
 
 USE_RUBY=	yes

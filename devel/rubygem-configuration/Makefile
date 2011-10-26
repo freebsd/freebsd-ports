@@ -9,7 +9,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mechanism to parse ruby configuration files
 
 USE_RUBY=	yes
