@@ -3505,6 +3505,7 @@
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
+    SUBDIR += rubygem-turn
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-uuid
