@@ -3362,6 +3362,7 @@
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
+    SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
     SUBDIR += rubygem-columnize
