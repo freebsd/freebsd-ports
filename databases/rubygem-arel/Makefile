@@ -4,10 +4,8 @@
 #
 # $FreeBSD$
 
-# XXX: activerecord 3.0.9+ ~> 2.0.10 of arel
-
 PORTNAME=	arel
-PORTVERSION=	2.0.10
+PORTVERSION=	2.2.1
 PORTEPOCH=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG

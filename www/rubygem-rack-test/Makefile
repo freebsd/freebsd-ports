@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rack-test
-PORTVERSION=	0.5.7
+PORTVERSION=	0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

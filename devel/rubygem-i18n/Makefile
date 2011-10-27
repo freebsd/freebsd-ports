@@ -4,9 +4,8 @@
 #
 # $FreeBSD$
 
-# XXX: activemodel from rails 3.0.6+ requires ~> 0.50
 PORTNAME=	i18n
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 PORTEPOCH=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG

@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	json_pure
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures in Ruby
 
+RUN_DEPENDS=	rubygem-spruz>=0.1.0:${PORTSDIR}/devel/rubygem-spruz
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/edit_json.rb bin/prettify_json.rb
 
 .include <bsd.port.pre.mk>
 
