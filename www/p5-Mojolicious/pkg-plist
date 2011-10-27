@@ -19,13 +19,13 @@
 %%SITE_PERL%%/Mojo/DOM/CSS.pm
 %%SITE_PERL%%/Mojo/DOM/HTML.pm
 %%SITE_PERL%%/Mojo/Date.pm
+%%SITE_PERL%%/Mojo/EventEmitter.pm
 %%SITE_PERL%%/Mojo/Exception.pm
 %%SITE_PERL%%/Mojo/Headers.pm
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
 %%SITE_PERL%%/Mojo/IOLoop.pm
 %%SITE_PERL%%/Mojo/IOLoop/Client.pm
-%%SITE_PERL%%/Mojo/IOLoop/EventEmitter.pm
 %%SITE_PERL%%/Mojo/IOLoop/Resolver.pm
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
