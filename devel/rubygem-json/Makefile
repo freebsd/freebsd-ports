@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	json
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +16,6 @@ COMMENT=	Parse JSON texts and generate them from ruby data structures
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/edit_json.rb bin/prettify_json.rb
 
 .include <bsd.port.pre.mk>
 

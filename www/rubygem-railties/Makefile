@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	3.0.10
+PORTVERSION=	3.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,8 @@ COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
 
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-thor>=0.14.4:${PORTSDIR}/devel/rubygem-thor \
+		rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor \
+		rubygem-rack-ssl>=1.3.2:${PORTSDIR}/www/rubygem-rack-ssl \
 		rubygem-rdoc>=3.4:${PORTSDIR}/devel/rubygem-rdoc
 
 USE_RUBY=	yes

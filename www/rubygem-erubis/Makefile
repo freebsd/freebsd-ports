@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	erubis
-PORTVERSION=	2.6.6
+PORTVERSION=	2.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

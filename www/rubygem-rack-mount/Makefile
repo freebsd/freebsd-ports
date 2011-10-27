@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rack-mount
-PORTVERSION=	0.6.14
+PORTVERSION=	0.8.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
