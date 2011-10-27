@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dm-do-adapter
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataObjects Adapter for DataMapper
 
-RUN_DEPENDS=	rubygem-data_objects>=0.10.2:${PORTSDIR}/databases/rubygem-data_objects \
+RUN_DEPENDS=	rubygem-data_objects>=0.10.6:${PORTSDIR}/databases/rubygem-data_objects \
 		rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
 
 USE_RUBY=	yes
