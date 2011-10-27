@@ -14,6 +14,9 @@ MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A Japanese word splitter for searching text in Zope Products
 
+DEPRECATED=	Plone4 has newer and better splitter mechanism than ejSplitter
+EXPIRATION_DATE=2011-11-27
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
