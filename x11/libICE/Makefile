@@ -15,5 +15,6 @@ COMMENT=	Inter Client Exchange library for X11
 
 XORG_CAT=	lib
 USE_XORG=	xproto:both xtrans
+WITH_FBSD10_FIX=	yes
 
 .include <bsd.port.mk>
