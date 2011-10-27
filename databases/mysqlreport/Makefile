@@ -6,7 +6,7 @@
 
 PORTNAME=	mysqlreport
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
 EXTRACT_SUFX=	.tgz
@@ -14,9 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Mysqlreport makes a friendly report of important MySQL status values
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 USE_PERL5=	yes
 NO_BUILD=	yes
