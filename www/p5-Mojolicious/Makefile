@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.99
+PORTVERSION=	2.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LICENSE=	ART20
 
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-PERL_CONFIGURE=	5.10.0+
+PERL_CONFIGURE=	5.10.1+
 
 MAN1=		hypnotoad.1 \
 		mojo.1 \
@@ -43,13 +43,13 @@ MAN3=		Mojo.3 \
 		Mojo::DOM::CSS.3 \
 		Mojo::DOM::HTML.3 \
 		Mojo::Date.3 \
+		Mojo::EventEmitter.3 \
 		Mojo::Exception.3 \
 		Mojo::Headers.3 \
 		Mojo::HelloWorld.3 \
 		Mojo::Home.3 \
 		Mojo::IOLoop.3 \
 		Mojo::IOLoop::Client.3 \
-		Mojo::IOLoop::EventEmitter.3 \
 		Mojo::IOLoop::Resolver.3 \
 		Mojo::IOLoop::Server.3 \
 		Mojo::IOLoop::Stream.3 \
