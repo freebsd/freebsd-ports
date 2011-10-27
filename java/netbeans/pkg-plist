@@ -451,7 +451,6 @@ netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-colle
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-core-stack.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-core-ui.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-cpu.xml
-netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-db-derby.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-db-h2.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-dtrace.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-extras.xml
@@ -477,7 +476,6 @@ netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-tools
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-util.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight-visualizers.xml
 netbeans-%%PORTVERSION%%/dlight/config/Modules/org-netbeans-modules-dlight.xml
-netbeans-%%PORTVERSION%%/dlight/modules/ext/derby-10.2.2.0.jar
 netbeans-%%PORTVERSION%%/dlight/modules/ext/h2-1.0.79.jar
 netbeans-%%PORTVERSION%%/dlight/modules/locale/org-netbeans-modules-dlight-annotationsupport_ja.jar
 netbeans-%%PORTVERSION%%/dlight/modules/locale/org-netbeans-modules-dlight-annotationsupport_pt_BR.jar
@@ -617,7 +615,6 @@ netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-collector-st
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-core-stack.jar
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-core-ui.jar
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-cpu.jar
-netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-db-derby.jar
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-db-h2.jar
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-dtrace.jar
 netbeans-%%PORTVERSION%%/dlight/modules/org-netbeans-modules-dlight-extras.jar
@@ -655,7 +652,6 @@ netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-coll
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-core-stack.xml
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-core-ui.xml
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-cpu.xml
-netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-db-derby.xml
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-db-h2.xml
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-dtrace.xml
 netbeans-%%PORTVERSION%%/dlight/update_tracking/org-netbeans-modules-dlight-extras.xml
@@ -834,11 +830,11 @@ netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-1_2/commons-digester.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-1_2/commons-logging.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-1_2/jsf-api.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-1_2/jsf-impl.jar
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0/LICENSE-APACHE.txt
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0/LICENSE.TXT
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0/THIRDPARTYLICENSEREADME.txt
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0/jsf-api.jar
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0/jsf-impl.jar
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1/LICENSE-APACHE.txt
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1/LICENSE.TXT
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1/THIRDPARTYLICENSEREADME.txt
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1/jsf-api.jar
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1/jsf-impl.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsp-parser-ext.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsr88javax.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/jstl.jar
@@ -1634,6 +1630,7 @@ netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-javaee-b
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-javawebstart.xml
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-junit.xml
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-languages-ini.xml
+netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-maven-coverage.xml
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-maven-grammar.xml
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-maven-graph.xml
 netbeans-%%PORTVERSION%%/ergonomics/config/Modules/org-netbeans-modules-maven-kit.xml
@@ -2257,7 +2254,7 @@ netbeans-%%PORTVERSION%%/ide/modules/ext/jaxb/jaxb-xjc.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/jaxb/jaxb1-impl.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/jing.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/js.jar
-netbeans-%%PORTVERSION%%/ide/modules/ext/jsch-0.1.43.jar
+netbeans-%%PORTVERSION%%/ide/modules/ext/jsch-0.1.44.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/jvyamlb-0.2.3.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/jzlib-1.0.7.jar
 netbeans-%%PORTVERSION%%/ide/modules/ext/libpam4j-1.1.jar
@@ -3519,6 +3516,7 @@ netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-javawebstart.x
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-jellytools-java.xml
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-jellytools.xml
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-junit.xml
+netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-maven-coverage.xml
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-maven-embedder.xml
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-maven-grammar.xml
 netbeans-%%PORTVERSION%%/java/config/Modules/org-netbeans-modules-maven-graph.xml
@@ -3634,8 +3632,8 @@ netbeans-%%PORTVERSION%%/java/modules/ext/jaxws22/stax-ex.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/jaxws22/streambuffer.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/jaxws22/woodstox.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/maven/fallback_pom.xml
-netbeans-%%PORTVERSION%%/java/modules/ext/maven/indexer-artifact-4.0.0.jar
-netbeans-%%PORTVERSION%%/java/modules/ext/maven/indexer-core-4.0.0.MINDEXER-12+MINDEXER-13.jar
+netbeans-%%PORTVERSION%%/java/modules/ext/maven/indexer-artifact-4.1.0.jar
+netbeans-%%PORTVERSION%%/java/modules/ext/maven/indexer-core-4.1.0.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/maven/jdom-1.0.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/maven/maven-dependency-tree-1.2.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/maven/rootpackage/default-report.xml
@@ -3941,6 +3939,10 @@ netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-kenai-maven_ja
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-kenai-maven_pt_BR.jar
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-kenai-maven_ru.jar
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-kenai-maven_zh_CN.jar
+netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-coverage_ja.jar
+netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-coverage_pt_BR.jar
+netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-coverage_ru.jar
+netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-coverage_zh_CN.jar
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-embedder_ja.jar
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-embedder_pt_BR.jar
 netbeans-%%PORTVERSION%%/java/modules/locale/org-netbeans-modules-maven-embedder_ru.jar
@@ -4107,6 +4109,7 @@ netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-javawebstart.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-jellytools-java.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-jellytools.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-junit.jar
+netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-maven-coverage.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-maven-embedder.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-maven-grammar.jar
 netbeans-%%PORTVERSION%%/java/modules/org-netbeans-modules-maven-graph.jar
@@ -4201,6 +4204,7 @@ netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-javawebstart.
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-jellytools-java.xml
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-jellytools.xml
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-junit.xml
+netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-maven-coverage.xml
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-maven-embedder.xml
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-maven-grammar.xml
 netbeans-%%PORTVERSION%%/java/update_tracking/org-netbeans-modules-maven-graph.xml
@@ -5564,6 +5568,11 @@ netbeans-%%PORTVERSION%%/nb/docs/images/up-left.png
 netbeans-%%PORTVERSION%%/nb/docs/images/up-right.png
 netbeans-%%PORTVERSION%%/nb/docs/netbeans.css
 netbeans-%%PORTVERSION%%/nb/modules/ext/locale/updater_nb.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-ui_nb.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-ui_nb_ja.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-ui_nb_pt_BR.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-ui_nb_ru.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-ui_nb_zh_CN.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core-windows_nb.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core_nb.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-core_nb_ja.jar
@@ -5595,6 +5604,11 @@ netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-ide-branding_ja.
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-ide-branding_pt_BR.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-ide-branding_ru.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-ide-branding_zh_CN.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-options-api_nb.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-options-api_nb_ja.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-options-api_nb_pt_BR.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-options-api_nb_ru.jar
+netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-options-api_nb_zh_CN.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-registration_ja.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-registration_pt_BR.jar
 netbeans-%%PORTVERSION%%/nb/modules/locale/org-netbeans-modules-registration_ru.jar
@@ -7065,7 +7079,7 @@ netbeans-%%PORTVERSION%%/websvccommon/update_tracking/org-netbeans-modules-websv
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/primefaces
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/metro
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/locale
-@dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_0
+@dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-2_1
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/jsf-1_2
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext/javaee6-endorsed
 @dirrm netbeans-%%PORTVERSION%%/enterprise/modules/ext
