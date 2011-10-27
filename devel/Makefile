@@ -3349,6 +3349,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-allison
     SUBDIR += rubygem-analogger
+    SUBDIR += rubygem-ansi
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-atoulme-antwrap
