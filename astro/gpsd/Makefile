@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -14,7 +14,8 @@ MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		chrpath:${PORTSDIR}/devel/chrpath
 
 USE_GNOME=	pkgconfig
 USE_SCONS=	yes
@@ -25,7 +26,7 @@ PYDISTUTILS_EGGINFO=	gps-${PORTVERSION}.egg-info
 MAKE_JOBS_SAFE=	yes
 
 SCONS_BUILDENV=	${SCONS_ENV}
-SCONS_ARGS=	prefix="${PREFIX}" mandir="/man" pkgconfigdir="/libdata/pkgconfig"
+SCONS_ARGS=	prefix="${PREFIX}" mandir="/man" pkgconfig="/libdata/pkgconfig"
 
 MAN1=	cgps.1 gegps.1 gps.1 gpscat.1 gpsctl.1 gpsdecode.1 \
 	gpsfake.1  gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 \
@@ -272,10 +273,12 @@ SCONS_ARGS+=	profiling=yes
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
 # with these files when module is imported from root user
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/gps -name "*.py" -exec \
+	@${FIND} ${PYTHON_SITELIBDIR:C/^${LOCALBASE}/${PREFIX}/}/gps \
+		-name "*.py" -exec \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py {} \;
 	@${SETENV} PYTHONOPTIMIZE=yes \
-		${FIND} ${PYTHON_SITELIBDIR}/gps -name "*.py" -exec \
+		${FIND} ${PYTHON_SITELIBDIR:C/^${LOCALBASE}/${PREFIX}/}/gps \
+		-name "*.py" -exec \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py {} \;
 
 .include <bsd.port.mk>
