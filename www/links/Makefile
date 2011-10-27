@@ -8,6 +8,7 @@
 PORTNAME=	links
 DISTVERSION=	2.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
 
@@ -59,9 +60,9 @@ CONFIGURE_ARGS+=	--without-directfb
 
 .if defined(WITH_IPV6)
 USE_AUTOTOOLS+=	autoconf
-MASTER_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} links-2.2-ipv6-2.diff:ipv6
-EXTRA_PATCHES+= ${WRKDIR}/links-2.2-ipv6-2.diff
+PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6
+PATCHFILES+=	links-2.3-ipv6.diff.gz:ipv6
+PATCH_DIST_STRIP=	-p1
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -88,15 +89,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-terminal.c.diff
 
 MAN1=		links.1
 PLIST_FILES+=	bin/links
-
-.ifdef(WITH_IPV6)
-post-extract:
-#adjust the ipv6 patch for links 2.3*
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/links-2.2-ipv6-2.diff ${WRKDIR}
-	@${REINPLACE_CMD} -E -e 's!void (lookup_fn|end_real_lookup)!static &!' \
-		-e 's!^(\+\+\+|---) (a|b)/!\1 !' ${WRKDIR}/links-2.2-ipv6-2.diff
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/extra-ipv6.diff
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/os_dep.h
