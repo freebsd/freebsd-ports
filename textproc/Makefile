@@ -1235,6 +1235,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
+    SUBDIR += rubygem-sass-rails
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
