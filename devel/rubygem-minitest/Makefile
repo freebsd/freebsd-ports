@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minitest
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
