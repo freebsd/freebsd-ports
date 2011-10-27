@@ -1,0 +1,20 @@
+diff --git a/driver_ubx.c b/driver_ubx.c
+index 757f126..51c4a09 100644
+--- driver_ubx.c
++++ driver_ubx.c
+@@ -227,14 +227,7 @@ ubx_msg_nav_svinfo(struct gps_device_t *session, unsigned char *buf,
+ 	/*@ +predboolothers */
+ 	j++;
+     }
+-    /* mark SBAS sats in use if SBAS was in use as of the last MID 27 */
+-    for (i = 0; i < j; i++) {
+-	int prn = session->gpsdata.PRN[i];
+-	if (DGPS_PRN(prn) \
+-		&& session->gpsdata.status == STATUS_DGPS_FIX \
+-		&& session->driver.sirf.dgps_source == SIRF_DGPS_SOURCE_SBAS)
+-	    session->gpsdata.used[session->gpsdata.satellites_used++] = prn;
+-    }
++
+     session->gpsdata.skyview_time = NAN;
+     session->gpsdata.satellites_visible = (int)st;
+     session->gpsdata.satellites_used = (int)nsv;
