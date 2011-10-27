@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rack-cache
-PORTVERSION=	0.5.3
+PORTVERSION=	1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
