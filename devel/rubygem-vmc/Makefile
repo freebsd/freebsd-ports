@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-terminal-table>=1.4.2:${PORTSDIR}/textproc/rubygem-terminal
 
 LICENSE=	MIT
 
+BROKEN=		Needs older rubygem-json
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
