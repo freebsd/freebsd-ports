@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dm-mysql-adapter
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL Adapter for DataMapper
 
-RUN_DEPENDS=	rubygem-do_mysql>=0.10.2:${PORTSDIR}/databases/rubygem-do_mysql \
+RUN_DEPENDS=	rubygem-do_mysql>=0.10.6:${PORTSDIR}/databases/rubygem-do_mysql \
 		rubygem-dm-do-adapter>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-do-adapter
 
 USE_RUBY=	yes
