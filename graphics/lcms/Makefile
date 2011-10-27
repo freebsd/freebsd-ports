@@ -13,7 +13,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
 		http://www.littlecms.com/
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
@@ -23,6 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 WRKSRC=		${WRKDIR}/lcms-1.19
 
 OPTIONS=	TIFFICC "Build color profile applier for tiff" off \
