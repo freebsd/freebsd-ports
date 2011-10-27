@@ -21,6 +21,7 @@ LICENSE_FILE?=   ${WRKSRC}/COPYING
 
 CONFLICTS=	libtool-fixed-[0-9]*
 
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

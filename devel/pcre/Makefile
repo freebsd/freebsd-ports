@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 OPTIONS=	JIT "Enable Just-In-Time compiling support" on
 
+WITH_FBSD10_FIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
