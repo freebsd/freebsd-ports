@@ -24,6 +24,7 @@ CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+WITH_FBSD10_FIX=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -194,14 +195,6 @@ post-patch:
 	    's/disabled_module_list =[^]]*/&, "nis"/' \
 		${PATCH_WRKSRC}/setup.py
 .endif
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
-		-e 's|freebsd2\*)|freebsd2\.\*)|' \
-		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
-		-e 's|freebsd\[\[123\]\]\*)|freebsd\[\[123\]\]\.\*)|' \
-		${PATCH_WRKSRC}/Modules/_ctypes/libffi/m4/libtool.m4 \
-		${PATCH_WRKSRC}/Modules/_ctypes/libffi/configure
 
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
