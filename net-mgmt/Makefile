@@ -299,5 +299,6 @@
     SUBDIR += zenoss
     SUBDIR += zenpack-dellmon
     SUBDIR += zenpack-deviceadvdetail
+    SUBDIR += zenpack-interfacegraphs
 
 .include <bsd.port.subdir.mk>
