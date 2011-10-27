@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcrypt-ruby
-PORTVERSION=	2.1.4
+PORTVERSION=	3.0.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
