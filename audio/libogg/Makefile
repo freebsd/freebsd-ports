@@ -14,6 +14,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
+WITH_FBSD10_FIX=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack

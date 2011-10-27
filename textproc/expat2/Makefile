@@ -14,6 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	XML 1.0 parser written in C
 
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 USE_LDCONFIG=	yes
