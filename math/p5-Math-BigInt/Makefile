@@ -22,10 +22,4 @@ MAN3=		Math::BigFloat.3 \
 		Math::BigInt::Calc.3 \
 		Math::BigInt::CalcEmu.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
