@@ -1,0 +1,3 @@
+Collection of Rack middleware to protect you against common, opportunistic attack.
+
+WWW:	http://rkh.github.com/rack-protection/
