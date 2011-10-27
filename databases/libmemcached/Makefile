@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.51
+PORTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
@@ -86,6 +86,8 @@ MAN3=		hashkit_clone.3 \
 		memcached_delete_by_key.3 \
 		memcached_destroy_sasl_auth_data.3 \
 		memcached_dump.3 \
+		memcached_exist.3 \
+		memcached_exist_by_key.3 \
 		memcached_fetch.3 \
 		memcached_flush_buffers.3 \
 		memcached_fetch_execute.3 \
@@ -100,17 +102,21 @@ MAN3=		hashkit_clone.3 \
 		memcached_get_user_data.3 \
 		memcached_increment.3 \
 		memcached_increment_with_initial.3 \
+		memcached_last_error_message.3 \
 		memcached_lib_version.3 \
 		memcached_mget.3 \
 		memcached_mget_by_key.3 \
 		memcached_mget_execute.3 \
 		memcached_mget_execute_by_key.3 \
+		memcached_pool.3 \
 		memcached_pool_behavior_get.3 \
 		memcached_pool_behavior_set.3 \
 		memcached_pool_create.3 \
 		memcached_pool_destroy.3 \
+		memcached_pool_fetch.3 \
 		memcached_pool_pop.3 \
 		memcached_pool_push.3 \
+		memcached_pool_release.3 \
 		memcached_pool_st.3 \
 		memcached_prepend.3 \
 		memcached_prepend_by_key.3 \
@@ -138,6 +144,8 @@ MAN3=		hashkit_clone.3 \
 		memcached_stat_get_value.3 \
 		memcached_stat_servername.3 \
 		memcached_strerror.3 \
+		memcached_touch.3 \
+		memcached_touch_by_key.3 \
 		memcached_verbosity.3 \
 		memcached_version.3
 .endif
