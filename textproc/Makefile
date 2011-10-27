@@ -437,6 +437,7 @@
     SUBDIR += ms-aspell
     SUBDIR += msort
     SUBDIR += mt-aspell
+    SUBDIR += multimarkdown
     SUBDIR += muse
     SUBDIR += mxml
     SUBDIR += mythes
