@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-OnlinePayment-AuthorizeNet
-PORTVERSION=	3.21
+PORTVERSION=	3.22
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Business::OnlinePayment::AuthorizeNet.3 \
 		Business::OnlinePayment::AuthorizeNet::AIM.3 \
+		Business::OnlinePayment::AuthorizeNet::AIM::ErrorCodes.3 \
 		Business::OnlinePayment::AuthorizeNet::ARB.3
 
 .include <bsd.port.mk>
