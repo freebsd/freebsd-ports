@@ -7,6 +7,7 @@
 
 PORTNAME=	iroffer
 PORTVERSION=	3.27
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -59,7 +60,7 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	-geoip
 .endif
 .if !defined(WITHOUT_UPNP)
-LIB_DEPENDS+=	miniupnpc.5:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
 CONFIGURE_ARGS+=	-upnp
 .endif
 .if !defined(WITHOUT_RUBY)
