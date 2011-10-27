@@ -15,6 +15,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures
 
+DEPRECATED=	No longer needed to support DM ports
+EXPIRATION_DATE=2011-11-27
+
 PORTSCOUT=	limit:^1.4
 NO_LATEST_LINK=	yes
 
