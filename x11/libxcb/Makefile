@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
@@ -51,8 +51,5 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
 .endif
-	@${ECHO_MSG} ''
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ''
 
 .include <bsd.port.mk>
