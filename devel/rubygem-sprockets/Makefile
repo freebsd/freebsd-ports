@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sprockets
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,10 +15,12 @@ COMMENT=	Ruby library that preprocesses and concatenates JavaScript files
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	rubygem-tilt>=1.3.3:${PORTSDIR}/devel/rubygem-tilt \
+		rubygem-hike>=1.2.1:${PORTSDIR}/devel/rubygem-hike \
+		rubygem-rack>=1.3.2:${PORTSDIR}/www/rubygem-rack
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-PLIST_FILES=	bin/sprocketize
 
 .include <bsd.port.mk>
