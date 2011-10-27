@@ -1,0 +1,18 @@
+When troubleshooting network issues, it can be very useful to have all the 
+interface graphs for a device on the same screen. This helps with spotting 
+trends, or tracing where traffic is flowing through a switch or router. The 
+only way to natively achieve this with Zenoss is to create a graph or 
+multi-graph report for every network device manually, which can be a chore 
+if you have more than a few network devices.
+ 
+This ZenPack provides a new link on the left side of a device detail view 
+called "Interface Graphs" - this view shows the graphs for all of the network 
+interfaces on the device in one place, allowing for fast spotting of issues 
+or traffic flows. Both the interface name and the description (if any) are 
+used to title the graphs to aid with identification.
+ 
+Note that with stacked switches, you can end up with a very large number of 
+graphs on the page, so tuning this slightly via the configuration properties 
+below could be a good idea in these situations.
+
+WWW: http://community.zenoss.org/docs/DOC-10226

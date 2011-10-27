@@ -1,0 +1,8 @@
+
+Before activation of this Zenpack, you will need to create a Sub-Folder named
+"Storage" under MIBs in the web-interface. (Advanced-> MIBs> Sub-Folder)
+
+To activate this Zenpack, run the following commands as the zenoss user:
+
+%%ZENHOME%%/bin/zenpack --install %%ZPACKHOME%%/%%ZPACK%%
+%%ZENHOME%%/bin/zopectl restart
