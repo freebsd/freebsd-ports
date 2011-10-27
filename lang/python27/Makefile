@@ -39,7 +39,8 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9
+PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9 \
+		plat-freebsd10
 
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -148,6 +149,8 @@ CONFIGURE_ARGS+=	--with-fpectl
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd10
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
@@ -191,6 +194,14 @@ post-patch:
 	    's/disabled_module_list =[^]]*/&, "nis"/' \
 		${PATCH_WRKSRC}/setup.py
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
+		-e 's|freebsd2\*)|freebsd2\.\*)|' \
+		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
+		-e 's|freebsd\[\[123\]\]\*)|freebsd\[\[123\]\]\.\*)|' \
+		${PATCH_WRKSRC}/Modules/_ctypes/libffi/m4/libtool.m4 \
+		${PATCH_WRKSRC}/Modules/_ctypes/libffi/configure
 
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
