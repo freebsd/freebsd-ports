@@ -901,6 +901,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  target has not been overwritten).  This message
 #				  will be passed through /usr/bin/fmt before
 #				  being shown to the user.
+# WITH_FBSD10_FIX		- Replace freebsd1*) and similar conditions
+#				  with freebsd1.*) in configure and libtool
+#				  scripts to fix build on FreeBSD 10 and above.
 #
 # For build and install:
 #
@@ -3657,6 +3660,21 @@ do-patch:
 	fi
 .endif
 
+.if !target(run-autotools-fixup)
+run-autotools-fixup:
+# Work around an issue where FreeBSD 10.0 is detected as FreeBSD 1.x.	 
+.if defined(WITH_FBSD10_FIX) && ${OSVERSION} >= 1000000
+	/bin/test -d ${WRKSRC} && find ${WRKSRC} -type f \( -name config.libpath -o \
+		-name config.rpath -o -name configure -o -name libtool.m4 \) \
+		-exec sed -i '' -e 's|freebsd1\*)|freebsd1.\*)|g' \
+		-e 's|freebsd\[12\]\*)|freebsd[12].*)|g' \
+		-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \
+		-e 's|freebsd\[\[12\]\]\*)|freebsd[[12]].*)|g' \
+		-e 's|freebsd\[\[123\]\]\*)|freebsd[[123]].*)|g' \
+		{} + || /usr/bin/true
+.endif
+.endif
+
 .if !target(configure-autotools)
 configure-autotools:
 	@${DO_NADA}
@@ -4264,7 +4282,7 @@ _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends patch-dos2unix pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	build-depends lib-depends configure-message \
+_CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
 				configure-autotools pre-configure pre-configure-script \
 				run-autotools do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
