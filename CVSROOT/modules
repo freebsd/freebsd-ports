@@ -1962,6 +1962,7 @@ cscope                          ports/devel/cscope
 cscout                          ports/devel/cscout
 csharp-mode.el                  ports/lang/csharp-mode.el
 csmash                          ports/games/csmash
+csmith                          ports/devel/csmith
 csoap                           ports/devel/csoap
 csocks                          ports/net/csocks
 csound                          ports/audio/csound
@@ -4004,7 +4005,6 @@ fvwm                            ports/x11-wm/fvwm
 fvwm-crystal                    ports/x11-wm/fvwm-crystal
 fvwm-themes                     ports/x11-themes/fvwm-themes
 fvwm2                           ports/x11-wm/fvwm2
-fvwm2-devel                     ports/x11-wm/fvwm2-devel
 fvwm2-i18n                      ports/x11-wm/fvwm2-i18n
 fvwm95                          ports/x11-wm/fvwm95
 fvwm95-i18n                     ports/x11-wm/fvwm95-i18n
@@ -10873,6 +10873,7 @@ p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
 p5-Archive-Any                  ports/archivers/p5-Archive-Any
 p5-Archive-Extract              ports/archivers/p5-Archive-Extract
 p5-Archive-Extract-Libarchive   ports/archivers/p5-Archive-Extract-Libarchive
+p5-Archive-Peek                 ports/archivers/p5-Archive-Peek
 p5-Archive-Rar                  ports/archivers/p5-Archive-Rar
 p5-Archive-SimpleExtractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-Archive-Tar                  ports/archivers/p5-Archive-Tar
@@ -13503,6 +13504,7 @@ p5-Net-Server-Mail-ESMTP-AUTH   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-Net-Services                 ports/net/p5-Net-Services
 p5-Net-SinFP                    ports/security/p5-Net-SinFP
 p5-Net-Stomp                    ports/net-im/p5-Net-Stomp
+p5-Net-Subnet                   ports/net/p5-Net-Subnet
 p5-Net-Subnets                  ports/net/p5-Net-Subnets
 p5-Net-TCLink                   ports/net/p5-Net-TCLink
 p5-Net-TcpDumpLog               ports/net/p5-Net-TcpDumpLog
@@ -15228,6 +15230,7 @@ p5-appconfig-std                ports/devel/p5-AppConfig-Std
 p5-archive-any                  ports/archivers/p5-Archive-Any
 p5-archive-extract              ports/archivers/p5-Archive-Extract
 p5-archive-extract-libarchive   ports/archivers/p5-Archive-Extract-Libarchive
+p5-archive-peek                 ports/archivers/p5-Archive-Peek
 p5-archive-rar                  ports/archivers/p5-Archive-Rar
 p5-archive-simpleextractor      ports/archivers/p5-Archive-SimpleExtractor
 p5-archive-tar                  ports/archivers/p5-Archive-Tar
@@ -17909,6 +17912,7 @@ p5-net-ssh-perl                 ports/net/p5-Net-SSH-Perl
 p5-net-ssh2                     ports/net/p5-Net-SSH2
 p5-net-ssleay                   ports/security/p5-Net-SSLeay
 p5-net-stomp                    ports/net-im/p5-Net-Stomp
+p5-net-subnet                   ports/net/p5-Net-Subnet
 p5-net-subnets                  ports/net/p5-Net-Subnets
 p5-net-tclink                   ports/net/p5-Net-TCLink
 p5-net-tcpdumplog               ports/net/p5-Net-TcpDumpLog
@@ -22476,6 +22480,7 @@ py-twistedwords                 ports/net-im/py-twistedWords
 py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
+py-ujson                        ports/devel/py-ujson
 py-unidecode                    ports/converters/py-unidecode
 py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
@@ -23035,6 +23040,7 @@ radiusniff                      ports/security/radiusniff
 radmind                         ports/sysutils/radmind
 radns                           ports/dns/radns
 radreport                       ports/net/radreport
+radsecproxy                     ports/net/radsecproxy
 radvd                           ports/net/radvd
 ragel                           ports/devel/ragel
 raggle                          ports/net/raggle
@@ -25574,6 +25580,7 @@ tinyldap                        ports/net/tinyldap
 tinymce                         ports/www/tinymce
 tinymce3                        ports/www/tinymce3
 tinymux                         ports/games/tinymux
+tinyows                         ports/graphics/tinyows
 tinyproxy                       ports/www/tinyproxy
 tinypy                          ports/lang/tinypy
 tinyq                           ports/devel/tinyq
