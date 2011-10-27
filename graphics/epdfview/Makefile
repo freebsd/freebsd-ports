@@ -38,7 +38,7 @@ MAN1=	epdfview.1
 
 .if defined(WITH_CUPS)
 CONFIGURE_ARGS+=--with-cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .else
 CONFIGURE_ARGS+=--without-cups
 .endif
