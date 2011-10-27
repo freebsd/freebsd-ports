@@ -2836,3 +2836,6 @@ net-p2p/transmisson-remote-gui||2011-10-25|Renamed to net-p2p/transmission-remot
 x11-wm/fvwm2-devel||2011-10-25|Has expired: No longer supported by fvwm.org
 devel/py-myghtyutils||2011-10-27|Has expired: Merged into Beaker; use www/py-beaker instead
 www/myghty||2011-10-27|Has expired: Upstream suggests textproc/py-mako instead
+astro/weatherget||2011-10-27|Has expired: Broken b/c of weather.com new licensing rules not agreed by author
+devel/py-reverse||2011-10-27|Has expired: Now part of pylint
+devel/py-vmaps||2011-10-27|Has expired: Author recommends using math/py-numpy instead

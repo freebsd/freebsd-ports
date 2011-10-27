@@ -3129,7 +3129,6 @@
     SUBDIR += py-repoze.who
     SUBDIR += py-repoze.who-testutil
     SUBDIR += py-resourcepackage
-    SUBDIR += py-reverse
     SUBDIR += py-rlcompleter2
     SUBDIR += py-rope
     SUBDIR += py-roxlib
@@ -3181,7 +3180,6 @@
     SUBDIR += py-venusian
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenvwrapper
-    SUBDIR += py-vmaps
     SUBDIR += py-waf
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgiutils

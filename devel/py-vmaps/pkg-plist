@@ -1,3 +1,0 @@
-lib/%%PYTHON_VERSION%%/site-packages/Vmaps.so
-%%PORTDOCS%%share/doc/vmaps/Vmaps.html
-%%PORTDOCS%%@dirrm share/doc/vmaps

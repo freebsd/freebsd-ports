@@ -103,7 +103,6 @@
     SUBDIR += viking
     SUBDIR += wcslib
     SUBDIR += weather
-    SUBDIR += weatherget
     SUBDIR += weatherspect
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
