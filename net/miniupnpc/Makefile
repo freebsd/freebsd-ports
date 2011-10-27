@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miniupnpc
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
