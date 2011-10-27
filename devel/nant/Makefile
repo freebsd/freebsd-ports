@@ -3,11 +3,10 @@
 # Whom:		Christopher Nehren <apeiron+ports@coitusmentis.info>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.14 2007/02/07 15:50:37 killfill Exp $
 #
 
 PORTNAME=	nant
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,30 +18,24 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 DATADIR=	${PREFIX}/share/NAnt
+DOCSDIR=	${PREFIX}/share/doc/NAnt
 INSTALL_TARGET=	install prefix=${PREFIX}
-MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
+MAKE_ENV=	MONO_PATH=${WRKSRC}/lib TARGET=mono-4.0
 MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e '/install.pkgconfigdir/ s|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
-	@${FIND} ${WRKSRC}/src  ${WRKSRC}/tests -name '*.build' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|warnaserror="true"|warnaserror="false"|g;'
+	@${REINPLACE_CMD} -e 's|MCS=mcs|MCS=dmcs|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '903,910 d' ${WRKSRC}/NAnt.build
+.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR})
-	@${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
-.endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples; ${FIND} . | ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${EXAMPLESDIR})
-	@${CHMOD} -R ugo-w,ugo+rX ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 .endif
 
-.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
