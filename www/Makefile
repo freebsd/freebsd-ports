@@ -560,7 +560,6 @@
     SUBDIR += multisort
     SUBDIR += mybb
     SUBDIR += myfaces
-    SUBDIR += myghty
     SUBDIR += mysar
     SUBDIR += mysqlphp2postgres
     SUBDIR += mythplugin-mythweb

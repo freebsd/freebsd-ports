@@ -2834,3 +2834,5 @@ www/tomcat41||2011-10-24|No more upstream support
 graphics/gnash-devel||2011-10-24|Outdated, use graphics/gnash instead
 net-p2p/transmisson-remote-gui||2011-10-25|Renamed to net-p2p/transmission-remote-gui
 x11-wm/fvwm2-devel||2011-10-25|Has expired: No longer supported by fvwm.org
+devel/py-myghtyutils||2011-10-27|Has expired: Merged into Beaker; use www/py-beaker instead
+www/myghty||2011-10-27|Has expired: Upstream suggests textproc/py-mako instead

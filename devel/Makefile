@@ -3062,7 +3062,6 @@
     SUBDIR += py-mwlib.ext
     SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
-    SUBDIR += py-myghtyutils
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-notifier
