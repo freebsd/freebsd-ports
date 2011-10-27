@@ -812,6 +812,7 @@
     SUBDIR += p5-Catalyst-Plugin-FormValidator
     SUBDIR += p5-Catalyst-Plugin-I18N
     SUBDIR += p5-Catalyst-Plugin-Log-Dispatch
+    SUBDIR += p5-Catalyst-Plugin-Log-Handler
     SUBDIR += p5-Catalyst-Plugin-LogWarnings
     SUBDIR += p5-Catalyst-Plugin-PageCache
     SUBDIR += p5-Catalyst-Plugin-Params-Nested
