@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gettext
+PORTNAME=	Locale-gettext
 PORTVERSION=	1.05
 PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=Locale
-PKGNAMEPREFIX=	p5-Locale-
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME:C/.*-//}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Message handling functions
