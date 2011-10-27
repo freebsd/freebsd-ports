@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A Zope hotfix Product to send mail in Japanese
 
+DEPRECATED=	Zope has changed MailHost specification and it is not sure jaMailHost works well
+EXPIRATION_DATE=2011-11-27
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 

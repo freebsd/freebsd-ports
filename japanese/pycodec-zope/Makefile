@@ -13,6 +13,9 @@ PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 
+DEPRECATED=	Handled in Python-2.4 and later
+EXPIRATION_DATE=2011-11-27
+
 USE_ZOPE=	yes
 
 .include "${MASTERDIR}/Makefile"

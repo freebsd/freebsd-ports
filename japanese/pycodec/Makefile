@@ -15,6 +15,9 @@ DISTNAME=	JapaneseCodecs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Unicode codecs for Japanese charsets
 
+DEPRECATED=	Handled in Python-2.4 upwards
+EXPIRATION_DATE=2011-11-27
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	JapaneseCodecs
