@@ -11,7 +11,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
@@ -21,6 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 
 OPTIONS=	TIFFICC "Build color profile applier for TIFF" off \
 		JPEGICC "Build color profile applier for JPEG" off
