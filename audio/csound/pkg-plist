@@ -52,6 +52,7 @@ lib/csound/plugins64/libambicode1.so
 lib/csound/plugins64/libampmidid.so
 lib/csound/plugins64/libbabo.so
 lib/csound/plugins64/libbarmodel.so
+lib/csound/plugins64/libchua.so
 lib/csound/plugins64/libcompress.so
 lib/csound/plugins64/libcontrol.so
 lib/csound/plugins64/libcrossfm.so
