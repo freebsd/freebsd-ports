@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.21
-PORTREVISION=	1
+PORTVERSION=	0.1.22
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -38,7 +37,8 @@ OPTIONS=	NLS "Enable Native Language Support" on \
 		FONTS "Enable fonts plugin thumbnailer" on \
 		JPEG "Enable JPEG and EXIF plugin thumbnailer" on \
 		FFMPEG "Enable FFMPEG plugin thumbnailer" off \
-		POPPLER "Enable PDF/PS plugin thumbnailer" on
+		POPPLER "Enable PDF/PS plugin thumbnailer" on \
+		GSTREAMER "Enable videos plugin thumbnailer" on
 
 .include <bsd.port.pre.mk>
 
@@ -102,6 +102,15 @@ PLIST_SUB+=	POPPLER=""
 .else
 CONFIGURE_ARGS+=--disable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER="@comment "
+.endif
+
+.if !defined(WITHOUT_GSTREAMER)
+USE_GSTREAMER=	yes
+CONFIGURE_ARGS+=--enable-gstreamer-thumbnailer
+PLIST_SUB+=	GSTREAMER=""
+.else
+CONFIGURE_ARGS+=--disable-gstreamer-thumbnailer
+PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .include <bsd.port.post.mk>

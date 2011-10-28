@@ -32,6 +32,9 @@ lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.a
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.la
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
+%%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.a
+%%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.la
+%%GSTREAMER%%lib/tumbler-1/plugins/tumbler-gst-thumbnailer.so
 %%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.a
 %%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.la
 %%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
@@ -43,10 +46,10 @@ libdata/pkgconfig/tumbler-1.pc
 share/dbus-1/services/org.xfce.Tumbler.Cache1.service
 share/dbus-1/services/org.xfce.Tumbler.Manager1.service
 share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
-%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerAbstractThumbnailer.html
-%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerCache.html
-%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerThumbnail.html
-%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerThumbnailerProvider.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-TumblerAbstractThumbnailer.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-TumblerCache.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-TumblerThumbnail.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-TumblerThumbnailerProvider.html
 %%APIDOCS%%share/gtk-doc/html/tumbler/api-index-full.html
 %%APIDOCS%%share/gtk-doc/html/tumbler/extension-api.html
 %%APIDOCS%%share/gtk-doc/html/tumbler/extension-tutorial.html
@@ -78,6 +81,7 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/de/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/el/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tumbler.mo
@@ -88,8 +92,10 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/it/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/tumbler.mo
@@ -97,7 +103,9 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/ro/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/si/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/te/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/tumbler.mo
@@ -105,6 +113,8 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tumbler.mo
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
