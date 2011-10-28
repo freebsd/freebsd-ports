@@ -1,0 +1,3 @@
+Data::Walk is for data what File::Find is for files. You can use it fo
+rolling your own serialization class, for displaying Perl data structures,
+for deep copying or comparing, for recursive deletion of data, or ...
