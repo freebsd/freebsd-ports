@@ -1,5 +1,5 @@
 --- Makefile.orig	2011-10-24 18:02:13.000000000 +0800
-+++ Makefile	2011-10-27 18:37:46.857260892 +0800
++++ Makefile	2011-10-28 19:12:16.103454748 +0800
 @@ -2,13 +2,13 @@
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file. See the AUTHORS file for names of contributors.
@@ -16,15 +16,18 @@
  # OPT = -g2              # (B) Debug mode, w/ full line-level debugging symbols
  # OPT = -O2 -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
  #-----------------------------------------------
-@@ -36,7 +36,7 @@
+@@ -36,9 +36,9 @@
  GOOGLE_PERFTOOLS_LDFLAGS=
  endif
  
 -CFLAGS = -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
 +CFLAGS += -c -fPIC -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
  
- LDFLAGS=$(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
+-LDFLAGS=$(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
++LDFLAGS += $(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
  
+ LIBOBJECTS = \
+ 	./db/builder.o \
 @@ -103,15 +103,19 @@
  BENCHMARKS = db_bench_sqlite3 db_bench_tree_db
  
