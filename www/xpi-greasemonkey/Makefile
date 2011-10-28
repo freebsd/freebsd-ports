@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	greasemonkey
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.12
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Add bits of DHTML to any web page to change its behavior
 
 XPI_ID=		{e4a8a97b-f2ed-450b-b12d-ee082ba24781}
