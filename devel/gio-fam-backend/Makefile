@@ -26,6 +26,7 @@ COMMENT=	FAM backend for GLib\'s GIO library
 USE_XZ=		yes
 BUILD_WRKSRC=	${WRKSRC}/gio/fam
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig _glib20
 USE_FAM=	yes
