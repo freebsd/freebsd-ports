@@ -1,0 +1,16 @@
+Data::Printer is meant to do one thing and one thing only: display Perl
+variables and objects on screen, properly formatted (to be inspected by a
+human).
+
+Here's what Data::Printer has to offer to Perl developers, out of the box:
+- Very sane defaults (I hope!)
+- Highly customizable (in case you disagree with me :)
+- Colored output by default
+- Human-friendly output, with array index and custom separators
+- Full object dumps including methods, inheritance and internals
+- Exposes extra information such as tainted data and weak references
+- Ability to easily create filters for objects and regular structures
+- Ability to load settings from a .dataprinter file so you don't have to write
+  anything other than "use DDP;" in your code!
+
+WWW: http://search.cpan.org/dist/Data-Printer/
