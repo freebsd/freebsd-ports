@@ -18,7 +18,7 @@ CONFLICTS=	libiodbc-[0-9]* virtuoso-*
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-WIHT_FBSD10_FIX=yes
+WITH_FBSD10_FIX=yes
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
