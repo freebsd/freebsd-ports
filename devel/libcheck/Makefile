@@ -15,6 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A unit test framework for C
 
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=	yes
 PLIST_SUB=	CHECK_VERSION=${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
