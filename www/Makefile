@@ -281,6 +281,7 @@
     SUBDIR += horde-wicked
     SUBDIR += horde4-ansel
     SUBDIR += horde4-base
+    SUBDIR += horde4-passwd
     SUBDIR += horde4-wicked
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
