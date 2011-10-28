@@ -14,6 +14,7 @@ COMMENT=	XKB file library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	x11 kbproto:both
 

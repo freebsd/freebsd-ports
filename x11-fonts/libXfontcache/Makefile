@@ -14,6 +14,7 @@ COMMENT=	The Xfontcache library
 
 XORG_CAT=	lib
 USE_XORG=	fontcacheproto:both x11 xext xextproto
+WITH_FBSD10_FIX=	yes
 
 MAN3=		FontCacheChangeCacheSettings.3 \
 		FontCacheQueryExtension.3 \

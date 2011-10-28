@@ -16,6 +16,7 @@ COMMENT=	X11 Extension library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xextproto:both xau
 CONFIGURE_ARGS+=--disable-specs --without-xmlto
