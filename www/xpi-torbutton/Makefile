@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	torbutton
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.torproject.org/dist/torbutton/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Quickly toggle use of the Tor network
 
 XPI_NUM=	2275

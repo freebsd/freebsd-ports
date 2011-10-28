@@ -270,7 +270,6 @@
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome.manifest.jar
 %%XPI_XPIDIR%%/chrome.manifest.nojar
-%%XPI_XPIDIR%%/components/certDialogsOverride.js
 %%XPI_XPIDIR%%/components/cookie-jar-selector.js
 %%XPI_XPIDIR%%/components/crash-observer.js
 %%XPI_XPIDIR%%/components/cssblocker.js
@@ -280,7 +279,6 @@
 %%XPI_XPIDIR%%/components/nsSessionStore3.js
 %%XPI_XPIDIR%%/components/tbSessionStore.js
 %%XPI_XPIDIR%%/components/tor-protocol.js
-%%XPI_XPIDIR%%/components/torRefSpoofer.js
 %%XPI_XPIDIR%%/components/torbutton-logger.js
 %%XPI_XPIDIR%%/components/tors-protocol.js
 %%XPI_XPIDIR%%/components/window-mapper.js
