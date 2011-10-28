@@ -138,6 +138,7 @@
     SUBDIR += bullet
     SUBDIR += bunny
     SUBDIR += byaccj
+    SUBDIR += bzapi
     SUBDIR += bzr-builder
     SUBDIR += bzr-colo
     SUBDIR += bzr-explorer
