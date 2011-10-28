@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	resurrectpages
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Resurrects pages from big page caches/mirrors
 
 XPI_DISTNAME=	resurrect_pages
 XPI_NUM=	2570
 XPI_ID=		{0c8fbd76-bdeb-4c52-9b24-d587ce7b9dc3}
-XPI_FILES=	LICENSE chrome/resurrect.jar chrome.manifest defaults/preferences/resurrect.js \
-		install.rdf
-XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
