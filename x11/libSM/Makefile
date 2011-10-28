@@ -17,6 +17,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	ice xproto:both xtrans
 

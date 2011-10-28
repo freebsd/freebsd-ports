@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Foreign Function Interface
 
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
