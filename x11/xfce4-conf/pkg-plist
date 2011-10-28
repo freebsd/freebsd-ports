@@ -11,24 +11,24 @@ lib/libxfconf-0.so.2
 lib/xfce4/xfconf/xfconfd
 libdata/pkgconfig/libxfconf-0.pc
 share/dbus-1/services/org.xfce.Xfconf.service
-share/gtk-doc/html/xfconf/ch01.html
-share/gtk-doc/html/xfconf/ch02.html
-share/gtk-doc/html/xfconf/ch03.html
-share/gtk-doc/html/xfconf/home.png
-share/gtk-doc/html/xfconf/index.html
-share/gtk-doc/html/xfconf/index.sgml
-share/gtk-doc/html/xfconf/left.png
-share/gtk-doc/html/xfconf/right.png
-share/gtk-doc/html/xfconf/style.css
-share/gtk-doc/html/xfconf/up.png
-share/gtk-doc/html/xfconf/xfconf-xfconf-backend.html
-share/gtk-doc/html/xfconf/xfconf-xfconf-binding.html
-share/gtk-doc/html/xfconf/xfconf-xfconf-channel.html
-share/gtk-doc/html/xfconf/xfconf-xfconf-errors.html
-share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
-share/gtk-doc/html/xfconf/xfconf-xfconf.html
-share/gtk-doc/html/xfconf/xfconf.devhelp
-share/gtk-doc/html/xfconf/xfconf.devhelp2
+%%APIDOCS%%share/gtk-doc/html/xfconf/ch01.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/ch02.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/ch03.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/home.png
+%%APIDOCS%%share/gtk-doc/html/xfconf/index.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/index.sgml
+%%APIDOCS%%share/gtk-doc/html/xfconf/left.png
+%%APIDOCS%%share/gtk-doc/html/xfconf/right.png
+%%APIDOCS%%share/gtk-doc/html/xfconf/style.css
+%%APIDOCS%%share/gtk-doc/html/xfconf/up.png
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf-backend.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf-binding.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf-channel.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf-errors.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf-xfconf.html
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf.devhelp
+%%APIDOCS%%share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%share/locale/ar/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfconf.mo
@@ -36,10 +36,10 @@ share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%share/locale/cs/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfconf.mo
-%%NLS%%share/locale/el/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfconf.mo
@@ -68,6 +68,20 @@ share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfconf.mo
+%%PERLBIND%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/Files.pm
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.h
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl-autogen.h
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.typemap
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf.pm
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf
+%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf
+%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
@@ -80,12 +94,11 @@ share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm share/gtk-doc/html/xfconf
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry share/dbus-1
+%%APIDOCS%%@dirrm share/gtk-doc/html/xfconf
+%%APIDOCS%%@dirrmtry share/gtk-doc/html
+%%APIDOCS%%@dirrmtry share/gtk-doc
 @dirrm lib/xfce4/xfconf
-@dirrm lib/xfce4
+@dirrmtry lib/xfce4
 @dirrm include/xfce4/xfconf-0/xfconf
 @dirrm include/xfce4/xfconf-0
 @dirrmtry include/xfce4

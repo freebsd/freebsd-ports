@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -26,16 +27,21 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
 
-CONFIGURE_ARGS=	--enable-gtk-doc-html=no \
-		--disable-debug
-
-OPTIONS=	GTKDOC	"install the library documentation"	off \
+OPTIONS=	APIDOCS	"Install api documentation"	off \
 		PERL	"Install Perl bindings"			off \
 		NLS	"Enable Native Language Support"	on
 
 MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_APIDOCS)
+CONFIGURE_ARGS+=--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
+.else
+CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
+PLIST_SUB+=	APIDOCS=""
+.endif
 
 .if defined(WITH_PERL)
 MAN3=		Xfce4::Xfconf.3
@@ -48,13 +54,6 @@ PLIST_SUB+=	PERLBIND=""
 .else
 CONFIGURE_ARGS+=--disable-perl-bindings
 PLIST_SUB+=	PERLBIND="@comment "
-.endif
-
-.if defined(WITH_GTKDOC)
-BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+=--enable-gtk-doc
-.else
-CONFIGURE_ARGS+=--disable-gtk-doc
 .endif
 
 .if !defined(WITHOUT_NLS)
