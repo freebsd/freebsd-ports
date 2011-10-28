@@ -17,6 +17,7 @@ COMMENT=	Provides an API to execute callback functions on certain events
 
 LICENSE=	BSD
 
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
