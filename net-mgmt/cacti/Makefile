@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.7g${PATCHLEVEL}
+PORTVERSION=	0.8.7h${PATCHLEVEL}
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
 DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=
-PATCHLEVEL=
-
+#PATCHFILES=
 PATCH_DIST_STRIP=	-p1
+#PATCHLEVEL=
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
