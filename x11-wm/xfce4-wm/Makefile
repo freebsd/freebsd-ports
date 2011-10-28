@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
@@ -16,15 +16,24 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 window manager
 
-CONFIGURE_ARGS=	--enable-xinerama
+DOCSDIR=	${PREFIX}/share/doc/xfwm4
+
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
+
+CONFIGURE_ARGS=	--enable-xsync \
+		--enable-render \
+		--enable-randr \
+		--disable-kde-systray
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libutil libgui panel xfconf
+USE_XFCE=	configenv libmenu libutil xfconf
+USE_XORG=	x11 sm xext xrandr xrender
 
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
 		STARTUP 	"Enable startup notification support"			on \
@@ -52,5 +61,8 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-src__events.c
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(#define ShapeInput 2\);|\1|' \
 		${WRKSRC}/src/frame.c
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

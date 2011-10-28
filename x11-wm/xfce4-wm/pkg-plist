@@ -6,46 +6,41 @@ lib/xfce4/xfwm4/helper-dialog
 share/applications/xfce-wm-settings.desktop
 share/applications/xfce-wmtweaks-settings.desktop
 share/applications/xfce-workspaces-settings.desktop
-share/doc/xfwm4/html/C/images/Makefile.am
-share/doc/xfwm4/html/C/images/compose_shortcut.png
-share/doc/xfwm4/html/C/images/decoration_style.png
-share/doc/xfwm4/html/C/images/focus.png
-share/doc/xfwm4/html/C/images/keyboard_shortcuts.png
-share/doc/xfwm4/html/C/images/misc_wm_prefs.png
-share/doc/xfwm4/html/C/images/titlebar.png
-share/doc/xfwm4/html/C/images/workspace_margins.png
-share/doc/xfwm4/html/C/images/xfwm_workspaces.png
-share/doc/xfwm4/html/C/index.html
-share/doc/xfwm4/html/da/images
-share/doc/xfwm4/html/da/index.html
-share/doc/xfwm4/html/el/images
-share/doc/xfwm4/html/el/index.html
-share/doc/xfwm4/html/fr/images/Makefile.am
-share/doc/xfwm4/html/fr/images/compose_shortcut.png
-share/doc/xfwm4/html/fr/images/decoration_style.png
-share/doc/xfwm4/html/fr/images/focus.png
-share/doc/xfwm4/html/fr/images/keyboard_shortcuts.png
-share/doc/xfwm4/html/fr/images/misc_wm_prefs.png
-share/doc/xfwm4/html/fr/images/titlebar.png
-share/doc/xfwm4/html/fr/images/workspace_margins.png
-share/doc/xfwm4/html/fr/images/xfwm_workspaces.png
-share/doc/xfwm4/html/gl/images
-share/doc/xfwm4/html/gl/index.html
-share/doc/xfwm4/html/it/images/Makefile.am
-share/doc/xfwm4/html/it/images/compose_shortcut.png
-share/doc/xfwm4/html/it/images/decoration_style.png
-share/doc/xfwm4/html/it/images/focus.png
-share/doc/xfwm4/html/it/images/keyboard_shortcuts.png
-share/doc/xfwm4/html/it/images/misc_wm_prefs.png
-share/doc/xfwm4/html/it/images/titlebar.png
-share/doc/xfwm4/html/it/images/workspace_margins.png
-share/doc/xfwm4/html/it/images/xfwm_workspaces.png
-share/doc/xfwm4/html/it/index.html
-share/doc/xfwm4/html/sv/images
-share/doc/xfwm4/html/sv/index.html
-share/doc/xfwm4/html/ug/images
-share/doc/xfwm4/html/ug/index.html
-share/doc/xfwm4/html/xfwm4.css
+%%DOCSDIR%%/html/C/images/compose_shortcut.png
+%%DOCSDIR%%/html/C/images/decoration_style.png
+%%DOCSDIR%%/html/C/images/focus.png
+%%DOCSDIR%%/html/C/images/keyboard_shortcuts.png
+%%DOCSDIR%%/html/C/images/misc_wm_prefs.png
+%%DOCSDIR%%/html/C/images/titlebar.png
+%%DOCSDIR%%/html/C/images/workspace_margins.png
+%%DOCSDIR%%/html/C/images/xfwm_workspaces.png
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/da/images
+%%DOCSDIR%%/html/da/index.html
+%%DOCSDIR%%/html/el/images
+%%DOCSDIR%%/html/el/index.html
+%%DOCSDIR%%/html/gl/images
+%%DOCSDIR%%/html/gl/index.html
+%%DOCSDIR%%/html/it/images/compose_shortcut.png
+%%DOCSDIR%%/html/it/images/decoration_style.png
+%%DOCSDIR%%/html/it/images/focus.png
+%%DOCSDIR%%/html/it/images/keyboard_shortcuts.png
+%%DOCSDIR%%/html/it/images/misc_wm_prefs.png
+%%DOCSDIR%%/html/it/images/titlebar.png
+%%DOCSDIR%%/html/it/images/workspace_margins.png
+%%DOCSDIR%%/html/it/images/xfwm_workspaces.png
+%%DOCSDIR%%/html/it/index.html
+%%DOCSDIR%%/html/ru/images
+%%DOCSDIR%%/html/ru/index.html
+%%DOCSDIR%%/html/sv/images
+%%DOCSDIR%%/html/sv/index.html
+%%DOCSDIR%%/html/tr/images
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/ug/images
+%%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/zh_CN/images
+%%DOCSDIR%%/html/zh_CN/index.html
+%%DOCSDIR%%/html/xfwm4.css
 share/icons/hicolor/48x48/apps/wmtweaks.png
 share/icons/hicolor/48x48/apps/xfce4-workspaces.png
 share/icons/hicolor/48x48/apps/xfwm4.png
@@ -105,6 +100,7 @@ share/locale/sk/LC_MESSAGES/xfwm4.mo
 share/locale/sq/LC_MESSAGES/xfwm4.mo
 share/locale/sv/LC_MESSAGES/xfwm4.mo
 share/locale/ta/LC_MESSAGES/xfwm4.mo
+share/locale/te/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
 share/locale/ug/LC_MESSAGES/xfwm4.mo
 share/locale/uk/LC_MESSAGES/xfwm4.mo
@@ -1496,13 +1492,15 @@ share/xfwm4/defaults
 @dirrm share/themes/Default
 @dirrm share/themes/Daloa/xfwm4
 @dirrm share/themes/Daloa
-@dirrm share/themes
+@dirrmtry share/themes
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -1515,19 +1513,21 @@ share/xfwm4/defaults
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrm share/doc/xfwm4/html/ug
-@dirrm share/doc/xfwm4/html/sv
-@dirrm share/doc/xfwm4/html/it/images
-@dirrm share/doc/xfwm4/html/it
-@dirrm share/doc/xfwm4/html/gl
-@dirrm share/doc/xfwm4/html/el
-@dirrm share/doc/xfwm4/html/fr/images
-@dirrm share/doc/xfwm4/html/fr
-@dirrm share/doc/xfwm4/html/da
-@dirrm share/doc/xfwm4/html/C/images
-@dirrm share/doc/xfwm4/html/C
-@dirrm share/doc/xfwm4/html
-@dirrm share/doc/xfwm4
-@dirrmtry share/applications
+@dirrm %%DOCSDIR%%/html/zh_CN
+@dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
+@dirrm %%DOCSDIR%%/html/sv
+@dirrm %%DOCSDIR%%/html/ru
+@dirrm %%DOCSDIR%%/html/it/images
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/el
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/C/images
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrm lib/xfce4/xfwm4
-@dirrm lib/xfce4
+@dirrmtry lib/xfce4
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
