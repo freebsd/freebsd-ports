@@ -171,7 +171,7 @@ assp:*:587:587::0:0:ASSP Anti-Spam Proxy:/var/db/assp:/usr/sbin/nologin
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
 _tss:*:601:601:daemon:0:0:TrouSerS user:/var/empty:/usr/sbin/nologin
 _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
-freeswitch:*:610:610::0:0:Freeswitch user:/nonexistant:/usr/sbin/nologin
+freeswitch:*:610:610::0:0:Freeswitch user:/nonexistent:/usr/sbin/nologin
 _pla:*:636:80::0:0:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
 monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/bash
 aox:*:666:666::0:0:Archiveopteryx user:/nonexistent:/usr/sbin/nologin
