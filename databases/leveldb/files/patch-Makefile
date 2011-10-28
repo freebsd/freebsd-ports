@@ -1,0 +1,60 @@
+--- Makefile.orig	2011-10-24 18:02:13.000000000 +0800
++++ Makefile	2011-10-27 18:37:46.857260892 +0800
+@@ -2,13 +2,13 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file. See the AUTHORS file for names of contributors.
+ 
+-CC = g++
++CC ?= g++
+ 
+ #-----------------------------------------------
+ # Uncomment exactly one of the lines labelled (A), (B), and (C) below
+ # to switch between compilation modes.
+ 
+-OPT = -O2 -DNDEBUG       # (A) Production use (optimized mode)
++OPT ?= -O2 -DNDEBUG       # (A) Production use (optimized mode)
+ # OPT = -g2              # (B) Debug mode, w/ full line-level debugging symbols
+ # OPT = -O2 -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
+ #-----------------------------------------------
+@@ -36,7 +36,7 @@
+ GOOGLE_PERFTOOLS_LDFLAGS=
+ endif
+ 
+-CFLAGS = -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
++CFLAGS += -c -fPIC -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
+ 
+ LDFLAGS=$(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
+ 
+@@ -103,15 +103,19 @@
+ BENCHMARKS = db_bench_sqlite3 db_bench_tree_db
+ 
+ LIBRARY = libleveldb.a
++SHARED_LIBRARY = libleveldb.so
++SHARED_LIBRARY_VER = 0
+ MEMENVLIBRARY = libmemenv.a
+ 
+-all: $(LIBRARY)
++SHARED_LIBOBJECTS = $(LIBOBJECTS:.o=.so)
++
++all: $(LIBRARY) $(SHARED_LIBRARY)
+ 
+ check: $(PROGRAMS) $(TESTS)
+ 	for t in $(TESTS); do echo "***** Running $$t"; ./$$t || exit 1; done
+ 
+ clean:
+-	-rm -f $(PROGRAMS) $(BENCHMARKS) $(LIBRARY) $(MEMENVLIBRARY) */*.o */*/*.o ios-x86/*/*.o ios-arm/*/*.o
++	-rm -f $(PROGRAMS) $(BENCHMARKS) $(LIBRARY) $(SHARED_LIBRARY) $(MEMENVLIBRARY) */*.o */*/*.o ios-x86/*/*.o ios-arm/*/*.o
+ 	-rm -rf ios-x86/* ios-arm/*
+ 	-rm build_config.mk
+ 
+@@ -119,6 +123,10 @@
+ 	rm -f $@
+ 	$(AR) -rs $@ $(LIBOBJECTS)
+ 
++$(SHARED_LIBRARY): $(LIBOBJECTS)
++	rm -f $@
++	$(CC) -shared -Wl,-soname,$@.$(SHARED_LIBRARY_VER) -o $@.$(SHARED_LIBRARY_VER) $(LDFLAGS) $(LIBOBJECTS)
++
+ db_bench: db/db_bench.o $(LIBOBJECTS) $(TESTUTIL)
+ 	$(CC) $(LDFLAGS) db/db_bench.o $(LIBOBJECTS) $(TESTUTIL) -o $@
+ 
