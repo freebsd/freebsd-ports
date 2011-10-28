@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	2009-03-31 07:21:12.000000000 +0100
-+++ doc/Makefile.in	2009-09-18 14:08:54.000000000 +0100
-@@ -17,7 +17,7 @@
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
+--- doc/Makefile.in.orig	2011-10-20 08:19:36.000000000 +0200
++++ doc/Makefile.in	2011-10-28 09:57:03.000000000 +0200
+@@ -16,7 +16,7 @@
+ @SET_MAKE@
+ 
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/@PACKAGE@
- pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = ..
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
