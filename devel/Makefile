@@ -3449,7 +3449,6 @@
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-ptreloaded
-    SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt

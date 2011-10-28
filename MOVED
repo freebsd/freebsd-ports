@@ -2839,3 +2839,4 @@ www/myghty||2011-10-27|Has expired: Upstream suggests textproc/py-mako instead
 astro/weatherget||2011-10-27|Has expired: Broken b/c of weather.com new licensing rules not agreed by author
 devel/py-reverse||2011-10-27|Has expired: Now part of pylint
 devel/py-vmaps||2011-10-27|Has expired: Author recommends using math/py-numpy instead
+devel/rubygem-rack-protection||2011-10-28|Removed
