@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -14,20 +14,14 @@ COMMENT=	An SQL Builder, Object Interface to Database Tables
 
 BUILD_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
 		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-CATEGORY=	DB
-FILES=		DataObject.php DataObject/Cast.php DataObject/Generator.php \
-		DataObject/createTables.php DataObject/Error.php
-EXAMPLES=	example.ini
-_EXAMPLESDIR=	docs
+RUN_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
+		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_MDB2 "PEAR::MDB2 support" off \
 		PEAR_VALIDATE "PEAR::Validate support" off
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/DataObject.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
