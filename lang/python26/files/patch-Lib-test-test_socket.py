@@ -5,7 +5,7 @@
          # protocol, at least for modern Linuxes.
          if sys.platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                            'freebsd7', 'freebsd8', 'darwin'):
-+                            'freebsd7', 'freebsd8', 'freebsd9', 'darwin'):
++                            'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'darwin'):
              # avoid the 'echo' service on this platform, as there is an
              # assumption breaking non-standard port/protocol entry
              services = ('daytime', 'qotd', 'domain')

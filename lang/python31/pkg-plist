@@ -899,6 +899,8 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/plat-freebsd8/regen
 %%PYTHON_LIBDIR%%/plat-freebsd9/IN.py
 %%PYTHON_LIBDIR%%/plat-freebsd9/regen
+%%PYTHON_LIBDIR%%/plat-freebsd10/IN.py
+%%PYTHON_LIBDIR%%/plat-freebsd10/regen
 %%PYTHON_LIBDIR%%/platform.py
 %%PYTHON_LIBDIR%%/plistlib.py
 %%PYTHON_LIBDIR%%/poplib.py
@@ -2215,6 +2217,7 @@ libdata/pkgconfig/python-3.1.pc
 @dirrm %%PYTHON_LIBDIR%%/sqlite3
 @dirrm %%PYTHON_LIBDIR%%/site-packages
 @dirrm %%PYTHON_LIBDIR%%/pydoc_data
+@dirrm %%PYTHON_LIBDIR%%/plat-freebsd10
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd9
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd8
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd7

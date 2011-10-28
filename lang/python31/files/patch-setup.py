@@ -64,7 +64,7 @@
              libraries = []
  
 -        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
-+        elif platform in ('freebsd6', 'freebsd7', 'freebsd8', 'freebsd9'):
++        elif platform in ('freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
@@ -74,7 +74,7 @@
          # Platform-specific libraries
 -        if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8'):
-+        if platform in ('linux2', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9'):
++        if platform in ('linux2', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
