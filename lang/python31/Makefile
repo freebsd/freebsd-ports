@@ -24,6 +24,7 @@ CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -40,7 +41,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
-		plat-freebsd7 plat-freebsd8 plat-freebsd9
+		plat-freebsd7 plat-freebsd8 plat-freebsd9 \
+		plat-freebsd10
 
 BIN_SCRIPTS=	2to3 idle3 pydoc3
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -109,6 +111,8 @@ CONFIGURE_ARGS+=	--with-fpectl
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd10
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \

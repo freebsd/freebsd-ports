@@ -673,6 +673,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/plat-freebsd8/regen
 %%PYTHON_LIBDIR%%/plat-freebsd9/IN.py
 %%PYTHON_LIBDIR%%/plat-freebsd9/regen
+%%PYTHON_LIBDIR%%/plat-freebsd10/IN.py
+%%PYTHON_LIBDIR%%/plat-freebsd10/regen
 %%PYTHON_LIBDIR%%/platform.py
 %%PYTHON_LIBDIR%%/popen2.py
 %%PYTHON_LIBDIR%%/poplib.py
@@ -1688,6 +1690,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
 @dirrm %%PYTHON_LIBDIR%%/site-packages
+@dirrm %%PYTHON_LIBDIR%%/plat-freebsd10
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd9
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd8
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd7

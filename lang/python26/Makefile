@@ -23,6 +23,7 @@ CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
@@ -39,7 +40,8 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9
+PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9 \
+		plat-freebsd10
 
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -144,6 +146,8 @@ CONFIGURE_ARGS+=	--with-fpectl
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd10
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
