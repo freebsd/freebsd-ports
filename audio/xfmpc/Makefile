@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfmpc
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -23,9 +23,12 @@ USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libutil panel
+USE_GNOME=	gtk20 intltool intlhack pkgconfig desktopfileutils
+USE_XFCE=	configenv libmenu libutil
 
 MAN1=	xfmpc.1
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
