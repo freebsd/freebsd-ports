@@ -62,6 +62,13 @@ share/applications/xfrun4.desktop
 %%DOCSDIR%%/html/ja/index.html
 %%DOCSDIR%%/html/ja/xfce-user-guide.html
 %%DOCSDIR%%/html/ja/xfce-utils.html
+%%DOCSDIR%%/html/ru/BSD.html
+%%DOCSDIR%%/html/ru/GPL.html
+%%DOCSDIR%%/html/ru/LGPL.html
+%%DOCSDIR%%/html/ru/images
+%%DOCSDIR%%/html/ru/index.html
+%%DOCSDIR%%/html/ru/xfce-user-guide.html
+%%DOCSDIR%%/html/ru/xfce-utils.html
 %%DOCSDIR%%/html/sv/BSD.html
 %%DOCSDIR%%/html/sv/GPL.html
 %%DOCSDIR%%/html/sv/LGPL.html
@@ -189,6 +196,7 @@ share/xsessions/xfce.desktop
 @dirrm %%DOCSDIR%%/html/ug
 @dirrm %%DOCSDIR%%/html/tr
 @dirrm %%DOCSDIR%%/html/sv
+@dirrm %%DOCSDIR%%/html/ru
 @dirrm %%DOCSDIR%%/html/ja
 @dirrm %%DOCSDIR%%/html/it
 @dirrm %%DOCSDIR%%/html/gl
