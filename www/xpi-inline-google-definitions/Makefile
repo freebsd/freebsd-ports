@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	inline-google-definitions
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Shows Google Definitions for the selected word
 
 XPI_DISTNAME=	inline_google_definitions
