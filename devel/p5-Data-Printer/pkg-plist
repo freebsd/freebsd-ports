@@ -1,0 +1,12 @@
+%%SITE_PERL%%/DDP.pm
+%%SITE_PERL%%/Data/Printer.pm
+%%SITE_PERL%%/Data/Printer/Filter.pm
+%%SITE_PERL%%/Data/Printer/Filter/DB.pm
+%%SITE_PERL%%/Data/Printer/Filter/DateTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Printer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Printer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/Data/Printer/Filter
+@dirrm %%SITE_PERL%%/Data/Printer
+@dirrmtry %%SITE_PERL%%/Data
