@@ -47,9 +47,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The phpMyFAQ project reports:</p>
 	<blockquote cite="http://www.phpmyfaq.de/advisory_2011-10-25.php">
 	  <p>The phpMyFAQ Team has learned of a serious security issue that has
-	     been discovered in our bundled ImageManager library we use in
-	     phpMyFAQ 2.6 and 2.7. The bundled ImageManager library allows
-	     injection of arbitrary PHP code via POST requests.</p>
+	    been discovered in our bundled ImageManager library we use in
+	    phpMyFAQ 2.6 and 2.7. The bundled ImageManager library allows
+	    injection of arbitrary PHP code via POST requests.</p>
 	</blockquote>
       </body>
     </description>
@@ -112,14 +112,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>KDE Security Advisory reports:</p>
 	<blockquote cite="http://www.kde.org/info/security/advisory-20111003-1.txt">
 	  <p>The default rendering type for a QLabel is QLabel::AutoText, which
-	  uses heuristics to determine whether to render the given content as
-	  plain text or rich text. KSSL and Rekonq did not properly force its
-	  QLabels to use QLabel::PlainText. As a result, if given a certificate
-	  containing rich text in its fields, they would render the rich
-	  text. Specifically, a certificate containing a common name (CN) that
-	  has a table element will cause the second line of the table to be
-	  displayed. This can allow spoofing of the certificate's common
-	  name.</p>
+	    uses heuristics to determine whether to render the given content as
+	    plain text or rich text. KSSL and Rekonq did not properly force its
+	    QLabels to use QLabel::PlainText. As a result, if given a certificate
+	    containing rich text in its fields, they would render the rich
+	    text. Specifically, a certificate containing a common name (CN) that
+	    has a table element will cause the second line of the table to be
+	    displayed. This can allow spoofing of the certificate's common
+	    name.</p>
 	</blockquote>
       </body>
     </description>
@@ -148,8 +148,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/46461/">
 	  <p>Multiple vulnerabilities with an unknown impact have been reported
-	  in Piwik. The vulnerabilities are caused due to unspecified errors. No
-	  further information is currently available.</p>
+	    in Piwik. The vulnerabilities are caused due to unspecified errors. No
+	    further information is currently available.</p>
 	</blockquote>
       </body>
     </description>
@@ -176,15 +176,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Matthieu Herrb reports:</p>
 	<blockquote cite="http://lists.freedesktop.org/archives/xorg-announce/2011-October/001744.html">
 	  <p>It is possible to deduce if a file exists or not by exploiting the
-             way that Xorg creates its lock files. This is caused by the fact 
-             that the X server is behaving differently if the lock file already
-             exists as a symbolic link pointing to an existing or non-existing
-             file.</p>
+	    way that Xorg creates its lock files. This is caused by the fact
+	    that the X server is behaving differently if the lock file already
+	    exists as a symbolic link pointing to an existing or non-existing
+	    file.</p>
           <p>It is possible for a non-root user to set the permissions for all
-             users on any file or directory to 444, giving unwanted read access
-             or causing denies of service (by removing execute permission). 
-             This is caused by a race between creating the lock file and
-             setting its access modes.</p>
+	    users on any file or directory to 444, giving unwanted read access
+	    or causing denies of service (by removing execute permission).
+	    This is caused by a race between creating the lock file and
+	    setting its access modes.</p>
 	</blockquote>
       </body>
     </description>
@@ -241,14 +241,14 @@ Note:  Please add new entries to the beginning of this file.
         <p>The PivotX team reports:</p>
         <blockquote cite="http://blog.pivotx.net/page/security">
           <p>TimThumb domain name security bypass and insecure cache
-          handling. PivotX before 2.3.0 includes a vulnerable version
-          of TimThumb.</p>
+	    handling. PivotX before 2.3.0 includes a vulnerable version
+	    of TimThumb.</p>
         </blockquote>
         <blockquote cite="http://blog.pivotx.net/2011-10-14/timthumb-update-for-older-pivotx-installs">
           <p>If you are still running PivotX 2.2.6, you might be
-          vulnerable to a security exploit, that was patched
-          previously. Version 2.3.0 doesn't have this issue, but any
-          older version of PivotX might be vulnerable.</p>
+	    vulnerable to a security exploit, that was patched
+	    previously. Version 2.3.0 doesn't have this issue, but any
+	    older version of PivotX might be vulnerable.</p>
         </blockquote>
       </body>
     </description>
@@ -275,9 +275,9 @@ Note:  Please add new entries to the beginning of this file.
         <p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3343">
           <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow
-          local users to cause a denial of service (daemon crash) or
-          possibly gain privileges via (1) a crafted BMP file with RLE 
-          compression or (2) crafted dimensions in a BMP file.</p>
+	    local users to cause a denial of service (daemon crash) or
+	    possibly gain privileges via (1) a crafted BMP file with RLE
+	    compression or (2) crafted dimensions in a BMP file.</p>
         </blockquote>
       </body>
     </description>
@@ -304,9 +304,9 @@ Note:  Please add new entries to the beginning of this file.
         <p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3342">
           <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow remote
-          attackers to cause a denial of service (daemon crash) or possibly
-          execute arbitrary code via vectors related to (1) NAME, (2) PLYR,
-          (3) CHTS, or (4) AIPL (aka AI config) chunk loading from a savegame.</p>
+	    attackers to cause a denial of service (daemon crash) or possibly
+	    execute arbitrary code via vectors related to (1) NAME, (2) PLYR,
+	    (3) CHTS, or (4) AIPL (aka AI config) chunk loading from a savegame.</p>
         </blockquote>
       </body>
     </description>
