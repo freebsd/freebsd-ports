@@ -42,9 +42,9 @@ PLIST_FILES=	bin/rails
 OPTIONS= \
 	FCGI 			"FastCGI backend" 			Off \
 	MONGREL			"Mongrel backend"			Off \
-	MONGRELCLUSTER	"Mongrel Cluster backend"	Off \
+	MONGRELCLUSTER		"Mongrel Cluster backend"		Off \
 	PASSENGER		"Passenger backend"			Off \
-	MEMCACHE_CLIENT "MemCache-Client support" 	Off
+	MEMCACHE_CLIENT		"MemCache-Client support" 		Off
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
@@ -69,4 +69,10 @@ RUN_DEPENDS+=	rubygem-mongrel_cluster>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_clu
 RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+RUN_DEPENDS+=	rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn
+.endif
+
+.include <bsd.port.post.mk>
