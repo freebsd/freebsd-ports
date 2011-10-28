@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f08e2c15-ffc9-11e0-b0f3-bcaec565249c">
+    <topic>cacti -- Multiple vulnabilites</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.7h</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cacti Group reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_7h.php">
+	  <p>SQL injection issue with user login, and cross-site scripting
+             issues.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.cacti.net/release_notes_0_8_7h.php</url>
+    </references>
+    <dates>
+      <discovery>2011-09-26</discovery>
+      <entry>2011-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="395e0faa-ffa7-11e0-8ac4-6c626dd55a41">
     <topic>phpmyfaq -- Remote PHP Code Injection Vulnerability</topic>
     <affects>
