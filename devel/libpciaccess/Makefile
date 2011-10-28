@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
 CONFIGURE_ARGS+=	--with-pciids-path=${LOCALBASE}/share/pciids
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	lib
 
 .include <bsd.port.mk>
