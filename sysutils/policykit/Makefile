@@ -22,6 +22,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 USERS=		polkit
 GROUPS=		polkit
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack glib20 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
