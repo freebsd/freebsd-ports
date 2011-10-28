@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gollem
-DISTVERSION=	2.0.0RC2
+PORTVERSION=	2.0.0
 CATEGORIES=	ftp www pear
 PKGNAMEPREFIX=	horde-
 
