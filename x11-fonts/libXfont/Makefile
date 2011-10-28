@@ -15,6 +15,7 @@ COMMENT=	X font libary
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xproto:both xtrans fontsproto:both fontenc
 
