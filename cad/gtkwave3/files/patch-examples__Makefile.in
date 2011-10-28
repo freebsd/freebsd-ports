@@ -1,17 +1,17 @@
---- examples/Makefile.in.orig	2010-12-31 08:31:25.861321395 -0500
-+++ examples/Makefile.in	2010-12-31 08:32:32.709703831 -0500
-@@ -17,7 +17,7 @@
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
+--- examples/Makefile.in.orig	2011-10-20 08:19:36.000000000 +0200
++++ examples/Makefile.in	2011-10-28 09:59:56.000000000 +0200
+@@ -16,7 +16,7 @@
+ @SET_MAKE@
+ 
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)
- pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = ..
-@@ -170,7 +170,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+@@ -194,7 +194,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  dist_examples_DATA = des.sav des.tcl des.v des.vzt transaction.fst transaction.sav transaction.c
 -examplesdir = $(pkgdatadir)/examples
 +examplesdir = $(pkgdatadir)/examples/@PACKAGE@
