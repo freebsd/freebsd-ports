@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.3.1
+PORTVERSION?=	1.3.3
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
@@ -30,7 +30,7 @@ GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is an abstract port: use one of the slave ports
 .endif
 
-.if ${PORTVERSION} == "1.0.1" || ${PORTVERSION} == "1.1.2"
+.if ${PORTVERSION} == "1.1.2"
 GECKO_TARGET=	configure
 .else
 GECKO_TARGET=	build
