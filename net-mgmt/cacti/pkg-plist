@@ -12,8 +12,10 @@
 %%CACTIDIR%%/cli/add_graphs.php
 %%CACTIDIR%%/cli/add_perms.php
 %%CACTIDIR%%/cli/add_tree.php
+%%CACTIDIR%%/cli/analyze_database.php
 %%CACTIDIR%%/cli/convert_innodb.php
 %%CACTIDIR%%/cli/copy_user.php
+%%CACTIDIR%%/cli/data_template_associate_rra.php
 %%CACTIDIR%%/cli/host_update_template.php
 %%CACTIDIR%%/cli/import_template.php
 %%CACTIDIR%%/cli/poller_data_sources_reapply_names.php
@@ -302,6 +304,7 @@
 %%CACTIDIR%%/install/0_8_7d_to_0_8_7e.php
 %%CACTIDIR%%/install/0_8_7e_to_0_8_7f.php
 %%CACTIDIR%%/install/0_8_7f_to_0_8_7g.php
+%%CACTIDIR%%/install/0_8_7g_to_0_8_7h.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
