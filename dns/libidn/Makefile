@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
 
+WITH_FBSD10_FIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

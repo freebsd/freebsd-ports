@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-static
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
+WITH_FBSD10_FIX=yes
 
 INFO=		ksba
 

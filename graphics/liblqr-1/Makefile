@@ -15,6 +15,7 @@ MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An easy to use C/C++ seam carving library
 
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

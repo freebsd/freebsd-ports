@@ -17,6 +17,7 @@ COMMENT=	Google WebP image format conversion tool
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
+WITH_FBSD10_FIX=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig

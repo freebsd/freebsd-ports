@@ -16,6 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for creating trees of CORBA IDL files
 
+WITH_FBSD10_FIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
