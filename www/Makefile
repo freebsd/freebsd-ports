@@ -1643,6 +1643,7 @@
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-mount
+    SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
