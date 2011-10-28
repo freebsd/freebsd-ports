@@ -7,22 +7,25 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	1.2.20111024
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A fast and lightweight key/value database library by Google
 
-OPTIONS=	PERFTOOLS	"Build with Google perftools" on \
+OPTIONS=	PERFTOOLS	"Build with Google perftools" off \
 		SNAPPY		"Build with snappy" on
 
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PERFTOOLS)
+.if defined(WITH_PERFTOOLS)
 LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
 .endif
 
@@ -32,11 +35,11 @@ LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/build_detect_platform
-.if defined(WITHOUT_PERFTOOLS)
-	@${REINPLACE_CMD} -e '/^LDFLAGS=/ s| $$(GOOGLE_PERFTOOLS_LDFLAGS)||' ${WRKSRC}/Makefile
+.if !defined(WITH_PERFTOOLS)
+	@${REINPLACE_CMD} -e '/^GOOGLE_PERFTOOLS_LDFLAGS=/ s|=.*|=|' ${WRKSRC}/Makefile
 .endif
 .if defined(WITHOUT_SNAPPY)
-	@${REINPLACE_CMD} -e '/^LDFLAGS=/ s| $$(SNAPPY_LDFLAGS)||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^SNAPPY_LDFLAGS=/ s|=.*|=|' ${WRKSRC}/Makefile
 .endif
 
 do-install:
