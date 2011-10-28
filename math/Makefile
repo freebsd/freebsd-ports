@@ -507,6 +507,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pymc
+    SUBDIR += py-roman
     SUBDIR += py-scientific
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
