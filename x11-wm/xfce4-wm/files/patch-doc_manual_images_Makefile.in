@@ -1,0 +1,18 @@
+--- doc/manual/images/Makefile.in.orig	2011-09-23 19:17:31.000000000 +0200
++++ doc/manual/images/Makefile.in	2011-09-23 19:18:01.000000000 +0200
+@@ -319,7 +319,6 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+-	fr \
+ 	it
+ 
+ imagesdir = $(docdir)/html/C/images
+@@ -328,7 +327,6 @@
+ 	workspace_margins.png \
+ 	titlebar.png \
+ 	misc_wm_prefs.png \
+-	Makefile.am \
+ 	keyboard_shortcuts.png \
+ 	focus.png \
+ 	decoration_style.png \
