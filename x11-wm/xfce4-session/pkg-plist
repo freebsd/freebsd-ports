@@ -34,7 +34,9 @@ share/applications/xfce4-session-logout.desktop
 %%DOCSDIR%%/html/C/index.html
 %%DOCSDIR%%/html/da/images
 %%DOCSDIR%%/html/da/index.html
-%%DOCSDIR%%/html/el/images
+%%DOCSDIR%%/html/el/images/xfsm-advanced.png
+%%DOCSDIR%%/html/el/images/xfsm-general.png
+%%DOCSDIR%%/html/el/images/xfsm-splash.png
 %%DOCSDIR%%/html/el/index.html
 %%DOCSDIR%%/html/gl/images
 %%DOCSDIR%%/html/gl/index.html
@@ -46,8 +48,12 @@ share/applications/xfce4-session-logout.desktop
 %%DOCSDIR%%/html/ru/index.html
 %%DOCSDIR%%/html/sv/images
 %%DOCSDIR%%/html/sv/index.html
+%%DOCSDIR%%/html/tr/images
+%%DOCSDIR%%/html/tr/index.html
 %%DOCSDIR%%/html/ug/images
 %%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/zh_CN/images
+%%DOCSDIR%%/html/zh_CN/index.html
 %%DOCSDIR%%/html/xfce4-session.css
 share/icons/hicolor/128x128/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
@@ -115,6 +121,7 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/te/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-session.mo
@@ -128,7 +135,8 @@ share/themes/Default/balou/themerc
 share/xfce4/panel-plugins/xfsm-logout-plugin.desktop
 share/xfce4/tips/tips
 @dirrm share/xfce4/tips
-@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
 @dirrm share/themes/Default/balou
 @dirrmtry share/themes/Default
@@ -139,6 +147,8 @@ share/xfce4/tips/tips
 %%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
@@ -151,12 +161,15 @@ share/xfce4/tips/tips
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+@dirrm %%DOCSDIR%%/html/zh_CN
 @dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
 @dirrm %%DOCSDIR%%/html/sv
 @dirrm %%DOCSDIR%%/html/ru
 @dirrm %%DOCSDIR%%/html/ja
 @dirrm %%DOCSDIR%%/html/it
 @dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/el/images
 @dirrm %%DOCSDIR%%/html/el
 @dirrm %%DOCSDIR%%/html/da
 @dirrm %%DOCSDIR%%/html/C/images
@@ -165,8 +178,7 @@ share/xfce4/tips/tips
 @dirrm %%DOCSDIR%%
 @dirrm lib/xfce4/session/splash-engines
 @dirrm lib/xfce4/session
-@dirrmtry lib/xfce4/panel/plugins
-@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4
 @dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
 @dirrm include/xfce4/xfce4-session-%%VERSION%%

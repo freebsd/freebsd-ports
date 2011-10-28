@@ -108,6 +108,7 @@ share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
 %%NLS%%share/locale/sq/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/te/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfdesktop.mo
@@ -141,6 +142,8 @@ share/xfce4/backdrops/xfce4logo.png
 %%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
