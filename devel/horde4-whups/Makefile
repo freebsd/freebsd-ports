@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whups
-DISTVERSION=	2.0.0RC2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 
