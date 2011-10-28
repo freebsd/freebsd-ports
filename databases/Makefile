@@ -142,6 +142,7 @@
     SUBDIR += kumofs
     SUBDIR += kyotocabinet
     SUBDIR += ldb
+    SUBDIR += leveldb
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle

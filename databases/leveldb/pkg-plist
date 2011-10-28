@@ -1,0 +1,18 @@
+include/leveldb/c.h
+include/leveldb/cache.h
+include/leveldb/comparator.h
+include/leveldb/db.h
+include/leveldb/env.h
+include/leveldb/iterator.h
+include/leveldb/options.h
+include/leveldb/slice.h
+include/leveldb/status.h
+include/leveldb/table.h
+include/leveldb/table_builder.h
+include/leveldb/write_batch.h
+lib/libleveldb.a
+lib/libleveldb.so
+lib/libleveldb.so.0
+%%DATADIR%%/build_config.mk
+@dirrm %%DATADIR%%
+@dirrm include/leveldb
