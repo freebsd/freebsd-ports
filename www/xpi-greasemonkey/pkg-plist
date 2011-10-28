@@ -10,12 +10,42 @@
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/modules/GM_notification.js
 %%XPI_XPIDIR%%/modules/addons4.js
+%%XPI_XPIDIR%%/modules/constants.js
+%%XPI_XPIDIR%%/modules/prefmanager.js
+%%XPI_XPIDIR%%/modules/runScript.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
-%%XPI_XPIDIR%%/modules/utils.js
+%%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
+%%XPI_XPIDIR%%/modules/util/emptyEl.js
+%%XPI_XPIDIR%%/modules/util/getBinaryContents.js
+%%XPI_XPIDIR%%/modules/util/getBrowserWindow.js
+%%XPI_XPIDIR%%/modules/util/getContents.js
+%%XPI_XPIDIR%%/modules/util/getEditor.js
+%%XPI_XPIDIR%%/modules/util/getEnabled.js
+%%XPI_XPIDIR%%/modules/util/getService.js
+%%XPI_XPIDIR%%/modules/util/getTempFile.js
+%%XPI_XPIDIR%%/modules/util/getUriFromFile.js
+%%XPI_XPIDIR%%/modules/util/hitch.js
+%%XPI_XPIDIR%%/modules/util/installUri.js
+%%XPI_XPIDIR%%/modules/util/isGreasemonkeyable.js
+%%XPI_XPIDIR%%/modules/util/logError.js
+%%XPI_XPIDIR%%/modules/util/memoize.js
+%%XPI_XPIDIR%%/modules/util/newUserScript.js
+%%XPI_XPIDIR%%/modules/util/openInEditor.js
+%%XPI_XPIDIR%%/modules/util/scriptDir.js
+%%XPI_XPIDIR%%/modules/util/scriptMatchesUrlAndRuns.js
+%%XPI_XPIDIR%%/modules/util/setEnabled.js
+%%XPI_XPIDIR%%/modules/util/sha1.js
+%%XPI_XPIDIR%%/modules/util/timeout.js
+%%XPI_XPIDIR%%/modules/util/uriFromUrl.js
+%%XPI_XPIDIR%%/modules/util/windowId.js
+%%XPI_XPIDIR%%/modules/util/windowIdForEvent.js
+%%XPI_XPIDIR%%/modules/util/writeToFile.js
+%%XPI_XPIDIR%%/modules/util.js
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
 @dirrm %%XPI_XPIDIR%%/modules/third-party
+@dirrm %%XPI_XPIDIR%%/modules/util
 @dirrm %%XPI_XPIDIR%%/modules
