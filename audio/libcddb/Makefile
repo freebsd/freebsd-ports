@@ -15,6 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library to access data on a CDDB server
 
+WITH_FBSD10_FIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
