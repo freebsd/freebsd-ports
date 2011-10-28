@@ -19,22 +19,27 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-freeswitch_enable=${freeswitch_enable:-"NO"}
-freeswitch_user=${freeswitch_user:-"freeswitch"}
-freeswitch_group=${freeswitch_group:-"freeswitch"}
-freeswitch_flags=${freeswitch_flags:-"-nc -waste"}
+: ${freeswitch_enable="NO"}
+: ${freeswitch_user="freeswitch"}
+: ${freeswitch_group="freeswitch"}
+: ${freeswitch_flags="-nc -waste"}
 
 command=%%PREFIX%%/bin/freeswitch
 command_args="-u ${freeswitch_user} -g ${freeswitch_group}"
 
 pidfile=${freeswitch_pidfile:-"/var/run/freeswitch/freeswitch.pid"}
 
-stop_precmd="freeswitch_stop"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
 
 freeswitch_stop () {
         echo "Stopping FreeSWITCH."
         %%PREFIX%%/bin/freeswitch -stop
 	wait_for_pids `cat $pidfile`
+}
+
+freeswitch_prestart () {
+	install -d -o ${freeswitch_user} -m755 /var/run/${name}
 }
 
 run_rc_command "$1"

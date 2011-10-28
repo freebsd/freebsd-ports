@@ -5,5 +5,5 @@
  	$(mkinstalldirs) $(DESTDIR)$(PREFIX)
  	$(mkinstalldirs) $(DESTDIR)@confdir@
 -	@[ -f "$(DESTDIR)@confdir@/freetdm.conf" ] || ( cp conf/*.conf $(DESTDIR)@confdir@)
-+	@for i in conf/*.conf; do cp $$i $$i.sample; done; cp -f conf/*.conf.sample $(DESTDIR)@confdir@
++	@for i in conf/*.conf; do cp -p $$i $$i.sample; done; cp -f -p conf/*.conf.sample $(DESTDIR)@confdir@
  	@echo FreeTDM Installed
