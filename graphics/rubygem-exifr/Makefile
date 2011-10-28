@@ -9,7 +9,7 @@ PORTVERSION=	0.10.9
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A pure-ruby EXIF reader
 
 USE_RUBY=	yes
