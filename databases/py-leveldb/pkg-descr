@@ -1,0 +1,7 @@
+py-leveldb is a thread-safe Python bindings for LevelDB. It has all features
+from the LevelDB API, except for:
+- Arbitrary key comparison
+- Snapshots
+- All iteration except for single-step forward
+
+WWW: http://code.google.com/p/py-leveldb/
