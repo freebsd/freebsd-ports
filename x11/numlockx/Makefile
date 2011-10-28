@@ -9,7 +9,8 @@
 PORTNAME=	numlockx
 PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/
+MASTER_SITES=	http://home.kde.org/~seli/numlockx/ \
+		CRITICAL
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Turns on numlock in X
