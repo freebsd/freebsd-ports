@@ -17,6 +17,8 @@ LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure \
 		cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS+=	${LOCALBASE}/lib/pure/ffi.pure:${PORTSDIR}/devel/pure-ffi
 
+BROKEN=		does not fetch: size mismatch
+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GCC=	4.2+
