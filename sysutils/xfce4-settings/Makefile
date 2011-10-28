@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.8.2
-PORTREVISION=	2
+PORTVERSION=	4.8.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -22,10 +21,9 @@ OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 		XCURSOR		"Enable cursor themes support"		on \
 		XRANDR		"Enable Xrandr support"			on \
 		NOTIFY		"Enable notification support"		on \
-		NLS		"Enable Native Language Support"	on
+		NLS		"Enable Native Language Support"	on \
+		SOUND		"Enable sound control"	off
 
-CONFIGURE_ARGS=	--disable-sound-settings \
-		--disable-debug
 CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -76,6 +74,13 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_SOUND)
+LIB_DEPENDS+=	canberra.0:${PORTSDIR}/audio/libcanberra
+CONFIGURE_ARGS+=--enable-sound-settings
+.else
+CONFIGURE_ARGS+=--disable-sound-settings
 .endif
 
 post-patch:
