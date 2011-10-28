@@ -690,6 +690,7 @@
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
+    SUBDIR += py-sqlite3dbm
     SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
