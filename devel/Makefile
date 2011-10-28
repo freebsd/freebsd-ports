@@ -1506,6 +1506,7 @@
     SUBDIR += p5-Data-Validator
     SUBDIR += p5-Data-Visitor
     SUBDIR += p5-Data-Visitor-Encode
+    SUBDIR += p5-Data-Walk
     SUBDIR += p5-Date-Business
     SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-Calc-Iterator
