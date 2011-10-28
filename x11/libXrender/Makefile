@@ -14,6 +14,7 @@ COMMENT=	X Render extension library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	x11 renderproto:both xproto:both
 

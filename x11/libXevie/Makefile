@@ -14,6 +14,7 @@ COMMENT=	The Xevie library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	evieproto x11 xext xextproto xproto:both
 

@@ -16,6 +16,7 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xextproto xext xf86vidmodeproto:both
+WITH_FBSD10_FIX=	yes
 
 MAN3=		XF86VM.3 \
 		XF86VidModeLockModeSwitch.3 \

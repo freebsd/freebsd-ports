@@ -15,6 +15,7 @@ COMMENT=	X Video Extension library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto videoproto:both xproto:both
 

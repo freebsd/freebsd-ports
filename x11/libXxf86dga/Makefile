@@ -14,6 +14,7 @@ COMMENT=	X DGA Extension
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xextproto xext xf86dgaproto:both
 

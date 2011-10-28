@@ -13,6 +13,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The xkbui library
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	lib
 USE_XORG=	x11 xt xkbfile kbproto:both
 
