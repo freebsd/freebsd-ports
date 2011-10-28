@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	4.8.2
+PORTVERSION=	4.8.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
@@ -16,13 +16,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 essential utilities and scripts
 
-CONFLICTS=	xfce4-utils-4.6*
-
 BUILD_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/4//}
 
-CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX}
+CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX} \
+	--with-vendor-info=FreeBSD
 CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 
 USE_AUTOTOOLS=	libtool
@@ -32,7 +31,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack desktopfileutils pkgconfig
-USE_XFCE=	configenv libgui libmenu libutil xfconf
+USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
