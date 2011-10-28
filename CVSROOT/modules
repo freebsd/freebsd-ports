@@ -9769,7 +9769,6 @@ mydns                           ports/dns/mydns
 mydns-ng                        ports/dns/mydns-ng
 mydumper                        ports/databases/mydumper
 myfaces                         ports/www/myfaces
-myghty                          ports/www/myghty
 myitcrm                         ports/deskutils/myitcrm
 mylibrary                       ports/databases/mylibrary
 mymoon                          ports/astro/mymoon
@@ -20738,6 +20737,7 @@ php4-zlib                       ports/archivers/php4-zlib
 php5                            ports/lang/php5
 php5-bcmath                     ports/math/php5-bcmath
 php5-blitz                      ports/devel/php5-blitz
+php5-blitz-devel                ports/devel/php5-blitz-devel
 php5-bsdconv                    ports/converters/php5-bsdconv
 php5-bz2                        ports/archivers/php5-bz2
 php5-calendar                   ports/misc/php5-calendar
@@ -22090,7 +22090,6 @@ py-mwlib.ext                    ports/devel/py-mwlib.ext
 py-mwlib.rl                     ports/devel/py-mwlib.rl
 py-mx-base                      ports/lang/py-mx-base
 py-mx-experimental              ports/devel/py-mx-experimental
-py-myghtyutils                  ports/devel/py-myghtyutils
 py-mysqldb                      ports/databases/py-MySQLdb
 py-mysqldb-devel                ports/databases/py-MySQLdb-devel
 py-nagiosplugin                 ports/sysutils/py-nagiosplugin
@@ -22311,7 +22310,6 @@ py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-restrictedpython             ports/security/py-RestrictedPython
 py-reverend                     ports/textproc/py-reverend
-py-reverse                      ports/devel/py-reverse
 py-riak                         ports/databases/py-riak
 py-rijndael                     ports/security/py-rijndael
 py-rlcompleter2                 ports/devel/py-rlcompleter2
@@ -22495,7 +22493,6 @@ py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
 py-visual                       ports/graphics/py-visual
-py-vmaps                        ports/devel/py-vmaps
 py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
@@ -23719,6 +23716,7 @@ rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-amqp-utils              ports/net/rubygem-amqp-utils
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
+rubygem-ansi                    ports/devel/rubygem-ansi
 rubygem-app_config              ports/devel/rubygem-app_config
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-archive-zip             ports/archivers/rubygem-archive-zip
@@ -23747,6 +23745,7 @@ rubygem-classifier              ports/devel/rubygem-classifier
 rubygem-clio                    ports/devel/rubygem-clio
 rubygem-cloudfiles              ports/devel/rubygem-cloudfiles
 rubygem-coderay                 ports/textproc/rubygem-coderay
+rubygem-coffee-rails            ports/devel/rubygem-coffee-rails
 rubygem-coffee-script           ports/devel/rubygem-coffee-script
 rubygem-coffee-script-source    ports/devel/rubygem-coffee-script-source
 rubygem-color                   ports/print/rubygem-color
@@ -23977,6 +23976,7 @@ rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-rack-cache              ports/www/rubygem-rack-cache
 rubygem-rack-mount              ports/www/rubygem-rack-mount
+rubygem-rack-protection         ports/devel/rubygem-rack-protection
 rubygem-rack-ssl                ports/www/rubygem-rack-ssl
 rubygem-rack-test               ports/www/rubygem-rack-test
 rubygem-railroad                ports/graphics/rubygem-railroad
@@ -24041,6 +24041,7 @@ rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
 rubygem-sanitize                ports/textproc/rubygem-sanitize
 rubygem-sass                    ports/textproc/rubygem-sass
+rubygem-sass-rails              ports/textproc/rubygem-sass-rails
 rubygem-sax-machine             ports/textproc/rubygem-sax-machine
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
@@ -24097,6 +24098,7 @@ rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
 rubygem-treetop                 ports/devel/rubygem-treetop
 rubygem-trollop                 ports/devel/rubygem-trollop
 rubygem-turing                  ports/graphics/rubygem-turing
+rubygem-turn                    ports/devel/rubygem-turn
 rubygem-tweetstream             ports/net/rubygem-tweetstream
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter-stream          ports/net/rubygem-twitter-stream
@@ -26564,7 +26566,6 @@ wdiag                           ports/net-mgmt/wdiag
 wdiff                           ports/textproc/wdiff
 wdm                             ports/x11/wdm
 weather                         ports/astro/weather
-weatherget                      ports/astro/weatherget
 weathermap                      ports/net-mgmt/weathermap
 weatherspect                    ports/astro/weatherspect
 web-traceroute                  ports/www/web-traceroute
@@ -27866,6 +27867,7 @@ zenmap                          ports/security/zenmap
 zenoss                          ports/net-mgmt/zenoss
 zenpack-dellmon                 ports/net-mgmt/zenpack-dellmon
 zenpack-deviceadvdetail         ports/net-mgmt/zenpack-deviceadvdetail
+zenpack-interfacegraphs         ports/net-mgmt/zenpack-interfacegraphs
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
 zephyr                          ports/net-im/zephyr
