@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 
 GNU_CONFIGURE=	yes
 
