@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	ipsc
-PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://archive.debian.org/debian/pool/main/i/ipsc/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
 
-WRKSRC=		${WRKDIR}/ipsc/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 ALL_TARGET=	ipsc
 PLIST_FILES=	bin/ipsc
