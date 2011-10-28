@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsstail
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.vanheusden.com/rsstail/ CENKES
 EXTRACT_SUFX=	.tgz
