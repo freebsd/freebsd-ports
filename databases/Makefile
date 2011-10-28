@@ -664,6 +664,7 @@
     SUBDIR += py-gdbm
     SUBDIR += py-htsql
     SUBDIR += py-kyotocabinet
+    SUBDIR += py-leveldb
     SUBDIR += py-memcached
     SUBDIR += py-migrate
     SUBDIR += py-mssql
