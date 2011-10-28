@@ -1,24 +1,24 @@
---- configure.orig	2011-08-27 00:17:47.000000000 -0400
-+++ configure	2011-08-30 05:20:28.000000000 -0400
-@@ -2516,7 +2516,7 @@
+--- configure.orig	2011-10-26 20:22:26.000000000 -0400
++++ configure	2011-10-27 23:49:02.000000000 -0400
+@@ -3268,7 +3268,7 @@
  # Check whether --enable-linker-hardening was given.
- if test "${enable_linker_hardening+set}" = set; then
+ if test "${enable_linker_hardening+set}" = set; then :
    enableval=$enable_linker_hardening; if test x$enableval = xyes; then
 -    LDFLAGS="$LDFLAGS -z relro -z now"
 +    LDFLAGS="$LDFLAGS -Wl,-z,relro -Wl,-z,now"
  fi
  fi
  
-@@ -6503,7 +6503,7 @@
+@@ -5984,7 +5984,7 @@
  ac_res=$ac_cv_search_clock_gettime
- if test "$ac_res" != no; then
+ if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
 -  have_rt=yes
 +#  have_rt=yes
  fi
  
      if test "$have_rt" = yes; then
-@@ -6512,6 +6512,7 @@
+@@ -5993,6 +5993,7 @@
  fi
  
  
@@ -26,7 +26,7 @@
  trylibeventdir=""
  
  # Check whether --with-libevent-dir was given.
-@@ -6922,6 +6923,7 @@
+@@ -6319,6 +6320,7 @@
  LIBS="$tor_saved_LIBS"
  LDFLAGS="$tor_saved_LDFLAGS"
  CPPFLAGS="$tor_saved_CPPFLAGS"
@@ -34,15 +34,15 @@
  
  
  
-@@ -7293,6 +7295,7 @@
+@@ -6381,6 +6383,7 @@
  fi
  
  
 +if false ; then
  if test "$enable_static_libevent" = "yes"; then
     if test "$tor_cv_library_libevent_dir" = "(system)"; then
-      { { echo "$as_me:$LINENO: error: \"You must specify an explicit --with-libevent-dir=x option when using --enable-static-libevent\"" >&5
-@@ -7304,6 +7307,7 @@
+      as_fn_error $? "\"You must specify an explicit --with-libevent-dir=x option when using --enable-static-libevent\"" "$LINENO" 5
+@@ -6390,6 +6393,7 @@
  else
       TOR_LIBEVENT_LIBS="-levent"
  fi
