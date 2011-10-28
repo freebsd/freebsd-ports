@@ -1,15 +1,15 @@
-# Ports collection makefile for: freeswitch pizza demo
-# Date created: september , 2009
-# Whom: Richard Neese <r.neese@gmail.com>
+# Ports collection makefile for:	freeswitch-pizza
+# Date created:				September 2009
+# Whom:					Richard Neese <r.neese@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	freeswitch-pizza
-PORTVERSION=	201044
+PORTVERSION=	1.0.7
+PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
-		ftp://ftp2.secure-computing.net/pub/freeswitch/ \
+MASTER_SITES=	http://dl.dropbox.com/u/152504/ \
 		http://files.freeswitch.org/:2
 DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 		pizza_gram.tar.gz:2 \

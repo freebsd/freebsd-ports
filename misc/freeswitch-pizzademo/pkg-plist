@@ -87,7 +87,6 @@ share/freeswitch/sounds/en/us/callie/pizza/8000/spinach.wav
 @dirrmtry etc/freeswitch/scripts/javascript
 @dirrm share/freeswitch/sounds/en/us/callie/pizza/8000
 @dirrm share/freeswitch/sounds/en/us/callie/pizza
-@exec mkdir etc/freeswitch/scripts/javascript
-@exec chown -R freeswitch:freeswitch etc/freeswitch/scripts
-@exec chown -R freeswitch:freeswitch share/freeswitch/sounds/en/us/callie/pizza/8000/spinach.wav
-
+@exec mkdir -p %D/etc/freeswitch/scripts/javascript
+@exec chown -R freeswitch:freeswitch %D/etc/freeswitch/scripts
+@exec chown -R freeswitch:freeswitch %D/share/freeswitch/sounds/en/us/callie/pizza
