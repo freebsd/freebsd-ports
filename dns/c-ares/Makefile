@@ -23,6 +23,7 @@ OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" ON \
 CONFLICTS=	ares-1.*
 
 MAKE_JOBS_UNSAFE=	yes
+WITH_FBSD10_FIX=	yes
 
 .include <bsd.port.pre.mk>
 
