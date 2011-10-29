@@ -32,6 +32,11 @@ LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
+		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib

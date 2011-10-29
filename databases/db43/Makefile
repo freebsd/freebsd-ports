@@ -41,6 +41,8 @@ pre-patch:
 	${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g; s,/usr/bin/objformat \|\| echo aout,/usr/bin/objformat || echo elf,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${CHMOD} u+w ${WRKSRC}/../dist/configure
 
 post-configure:

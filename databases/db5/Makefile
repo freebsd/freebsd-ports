@@ -84,6 +84,11 @@ CONFIGURE_ARGS+=	--enable-debug --enable-umrw
 post-patch:
 	${REINPLACE_CMD} -e '/^DOCLIST/{s/csharp//;}' ${WRKSRC}/../dist/Makefile.in
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
+		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-install:
 .for i in libdb libdb_cxx libdb_stl ${libdb_sql} ${libdb_java}
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
