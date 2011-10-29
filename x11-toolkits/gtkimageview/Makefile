@@ -15,6 +15,7 @@ MASTER_SITES=	LOCAL/kwm
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Simple image viewer widget
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_GNOME=	gtk20
