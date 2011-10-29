@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeswitch-scripts
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.7.1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://dl.dropbox.com/u/152504/
