@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
 LDFLAGS+=	${PTHREAD_LIBS}
 
