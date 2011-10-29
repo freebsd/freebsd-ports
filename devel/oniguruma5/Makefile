@@ -15,6 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
+WITH_FBSD10_FIX=yes
 CONFLICTS=	oniguruma-2.*
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

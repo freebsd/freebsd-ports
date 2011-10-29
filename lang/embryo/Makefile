@@ -15,6 +15,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C like scripting language used in Enlightenment
 
+WITH_FBSD10_FIX=yes
 LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes

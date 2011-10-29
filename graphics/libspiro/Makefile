@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library to convert clothoid splines into bezier splines
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

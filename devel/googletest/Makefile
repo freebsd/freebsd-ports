@@ -14,6 +14,7 @@ DISTNAME=	gtest-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A framework for writing C++ tests on a variety of platforms
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
