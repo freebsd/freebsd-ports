@@ -102,6 +102,11 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 DEBUG_FLAGS=	-g -O1
 .endif
 
+# Check for forced -O0 (or no -O)
+.if ${CFLAGS:M-O0} == "-O0" || (${CFLAGS:M-O} == "" && ${CFLAGS:M-O[1-9]} == "")
+IGNORE=		only builds with -O1 or higher, check CFLAGS
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
