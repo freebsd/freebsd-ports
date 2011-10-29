@@ -18,6 +18,7 @@ FETCH_ARGS?= 	-pRr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
 
@@ -28,7 +29,7 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
 			 -e '/^LDFLAGS *=/ s/$$/ $${LTLIBSASL2}/' \
-			${WRKSRC}/Makefile.in
+			${WRKSRC}/Makefile.in ${WRKSRC}/support/include.am
 .if defined(NO_INSTALL_MANPAGES)
 	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
 .endif
