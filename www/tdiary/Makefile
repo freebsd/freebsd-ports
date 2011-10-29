@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKDIR}/doc/COPYING
 
 RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
 		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize \
-		rd2:${PORTSDIR}/textproc/ruby-rdtool
+		rubygem-json_pure>=1.6.1:${PORTSDIR}/devel/rubygem-json_pure
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -28,6 +28,7 @@ RUBY_REQUIRE=	Ruby >= 185
 
 RUBY_SHEBANG_FILES=	index.fcgi \
 			index.rb \
+			update.fcgi \
 			update.rb \
 			misc/convert2.rb \
 			misc/migrate.rb \
@@ -50,7 +51,7 @@ WWWDIR=		${PREFIX}/www/${UNIQUENAME}
 
 TDIARY_SCRIPT=	${UNIQUENAME}-inst.rb
 
-#TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
+#TDIARY_LANG	ja:Japanese en:English
 .if !defined(TDIARY_LANG) || ( defined(TDIARY_LANG) && ${TDIARY_LANG} != ja )
 TDIARY_LANG=	en
 .endif
@@ -87,10 +88,13 @@ post-extract:
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.22
+	@${RM} -r ${WRKSRC}/vendor/json_pure-1.6.1
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
 	@cd ${WRKSRC} && ${MV} doc ${WRKDIR}
+
+post-patch:
+	${RUBY} -i -pe "sub %r|((\s*)require 'json')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/tdiary.rb
 
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
