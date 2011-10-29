@@ -33,6 +33,7 @@ USE_PERL5_BUILD=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 MAN1=	cd-drive.1 cd-info.1 iso-read.1 iso-info.1 cd-read.1
+WITH_FBSD10_FIX=yes
 
 INFO=		libcdio
 
