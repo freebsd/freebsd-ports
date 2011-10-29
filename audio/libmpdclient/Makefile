@@ -18,5 +18,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=yes
 
 .include <bsd.port.mk>

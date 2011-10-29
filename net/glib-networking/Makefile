@@ -25,6 +25,7 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 intltool
