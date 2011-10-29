@@ -13,6 +13,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library and tools to read, create, and modify mp4 files
 
+WITH_FBSD10_FIX=yes
 CONFLICTS=	mpeg4ip-libmp4v2-[0-9.]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
