@@ -10,7 +10,4 @@
 %%PYTHON_SITELIBDIR%%/redis/exceptions.py
 %%PYTHON_SITELIBDIR%%/redis/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/redis/exceptions.pyo
-%%PYTHON_SITELIBDIR%%/redis/types.py
-%%PYTHON_SITELIBDIR%%/redis/types.pyc
-%%PYTHON_SITELIBDIR%%/redis/types.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/redis

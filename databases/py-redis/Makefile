@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 CATEGORIES=	databases python
 MASTER_SITES=	http://cloud.github.com/downloads/andymccurdy/redis-py/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
