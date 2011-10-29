@@ -1,4 +1,5 @@
 bin/pgadmin3
+bin/png2c
 %%DATADIR%%/branding/branding.ini
 %%DATADIR%%/docs/cs_CZ/appendices.html
 %%DATADIR%%/docs/cs_CZ/backup.html
@@ -155,12 +156,18 @@ bin/pgadmin3
 %%DATADIR%%/docs/en_US/hints/encoding-unicode.html
 %%DATADIR%%/docs/en_US/hints/fki.html
 %%DATADIR%%/docs/en_US/hints/instrumentation.html
+%%DATADIR%%/docs/en_US/hints/instrumentation91_with.html
+%%DATADIR%%/docs/en_US/hints/instrumentation91_without.html
 %%DATADIR%%/docs/en_US/hints/multiple.html
 %%DATADIR%%/docs/en_US/hints/object-editing.html
 %%DATADIR%%/docs/en_US/hints/pk.html
 %%DATADIR%%/docs/en_US/hints/saving-passwords.html
+%%DATADIR%%/docs/en_US/hints/vacuum-full.html
 %%DATADIR%%/docs/en_US/hints/vacuum.html
 %%DATADIR%%/docs/en_US/hints/view-without-pk.html
+%%DATADIR%%/docs/en_US/images/backup-2.png
+%%DATADIR%%/docs/en_US/images/backup-3.png
+%%DATADIR%%/docs/en_US/images/backup-4.png
 %%DATADIR%%/docs/en_US/images/backup.png
 %%DATADIR%%/docs/en_US/images/connect.png
 %%DATADIR%%/docs/en_US/images/debugger.png
@@ -178,11 +185,13 @@ bin/pgadmin3
 %%DATADIR%%/docs/en_US/images/manage-macros.png
 %%DATADIR%%/docs/en_US/images/no-hba.png
 %%DATADIR%%/docs/en_US/images/not-running.png
-%%DATADIR%%/docs/en_US/images/options-display.png
+%%DATADIR%%/docs/en_US/images/options-browser.png
+%%DATADIR%%/docs/en_US/images/options-colours.png
 %%DATADIR%%/docs/en_US/images/options-general.png
 %%DATADIR%%/docs/en_US/images/options-logging.png
-%%DATADIR%%/docs/en_US/images/options-pref.png
-%%DATADIR%%/docs/en_US/images/options-query.png
+%%DATADIR%%/docs/en_US/images/options-preferences.png
+%%DATADIR%%/docs/en_US/images/options-querytool.png
+%%DATADIR%%/docs/en_US/images/options-querytoolfiles.png
 %%DATADIR%%/docs/en_US/images/password.png
 %%DATADIR%%/docs/en_US/images/pgagent-jobdetails.png
 %%DATADIR%%/docs/en_US/images/pgagent-jobproperties.png
@@ -198,7 +207,9 @@ bin/pgadmin3
 %%DATADIR%%/docs/en_US/images/query.png
 %%DATADIR%%/docs/en_US/images/reporttool-html.png
 %%DATADIR%%/docs/en_US/images/reporttool-xml.png
-%%DATADIR%%/docs/en_US/images/restore-content.png
+%%DATADIR%%/docs/en_US/images/restore-2.png
+%%DATADIR%%/docs/en_US/images/restore-3.png
+%%DATADIR%%/docs/en_US/images/restore-4.png
 %%DATADIR%%/docs/en_US/images/restore.png
 %%DATADIR%%/docs/en_US/images/server.png
 %%DATADIR%%/docs/en_US/images/slony-create.png
@@ -226,6 +237,8 @@ bin/pgadmin3
 %%DATADIR%%/docs/en_US/options-tab3.html
 %%DATADIR%%/docs/en_US/options-tab4.html
 %%DATADIR%%/docs/en_US/options-tab5.html
+%%DATADIR%%/docs/en_US/options-tab6.html
+%%DATADIR%%/docs/en_US/options-tab7.html
 %%DATADIR%%/docs/en_US/options.html
 %%DATADIR%%/docs/en_US/password.html
 %%DATADIR%%/docs/en_US/pgadmin3.css
@@ -305,10 +318,16 @@ bin/pgadmin3
 %%DATADIR%%/docs/fr_FR/hints/encoding-unicode.html
 %%DATADIR%%/docs/fr_FR/hints/fki.html
 %%DATADIR%%/docs/fr_FR/hints/instrumentation.html
+%%DATADIR%%/docs/fr_FR/hints/instrumentation91_with.html
+%%DATADIR%%/docs/fr_FR/hints/instrumentation91_without.html
 %%DATADIR%%/docs/fr_FR/hints/multiple.html
 %%DATADIR%%/docs/fr_FR/hints/pk.html
+%%DATADIR%%/docs/fr_FR/hints/vacuum-full.html
 %%DATADIR%%/docs/fr_FR/hints/vacuum.html
 %%DATADIR%%/docs/fr_FR/hints/view-without-pk.html
+%%DATADIR%%/docs/fr_FR/images/backup-2.png
+%%DATADIR%%/docs/fr_FR/images/backup-3.png
+%%DATADIR%%/docs/fr_FR/images/backup-4.png
 %%DATADIR%%/docs/fr_FR/images/backup.png
 %%DATADIR%%/docs/fr_FR/images/connect.png
 %%DATADIR%%/docs/fr_FR/images/debugger.png
@@ -326,11 +345,16 @@ bin/pgadmin3
 %%DATADIR%%/docs/fr_FR/images/manage-macros.png
 %%DATADIR%%/docs/fr_FR/images/no-hba.png
 %%DATADIR%%/docs/fr_FR/images/not-running.png
+%%DATADIR%%/docs/fr_FR/images/options-browser.png
+%%DATADIR%%/docs/fr_FR/images/options-colours.png
 %%DATADIR%%/docs/fr_FR/images/options-display.png
 %%DATADIR%%/docs/fr_FR/images/options-general.png
 %%DATADIR%%/docs/fr_FR/images/options-logging.png
 %%DATADIR%%/docs/fr_FR/images/options-pref.png
+%%DATADIR%%/docs/fr_FR/images/options-preferences.png
 %%DATADIR%%/docs/fr_FR/images/options-query.png
+%%DATADIR%%/docs/fr_FR/images/options-querytool.png
+%%DATADIR%%/docs/fr_FR/images/options-querytoolfiles.png
 %%DATADIR%%/docs/fr_FR/images/password.png
 %%DATADIR%%/docs/fr_FR/images/pgagent-jobdetails.png
 %%DATADIR%%/docs/fr_FR/images/pgagent-jobproperties.png
@@ -346,6 +370,9 @@ bin/pgadmin3
 %%DATADIR%%/docs/fr_FR/images/query.png
 %%DATADIR%%/docs/fr_FR/images/reporttool-html.png
 %%DATADIR%%/docs/fr_FR/images/reporttool-xml.png
+%%DATADIR%%/docs/fr_FR/images/restore-2.png
+%%DATADIR%%/docs/fr_FR/images/restore-3.png
+%%DATADIR%%/docs/fr_FR/images/restore-4.png
 %%DATADIR%%/docs/fr_FR/images/restore-content.png
 %%DATADIR%%/docs/fr_FR/images/restore.png
 %%DATADIR%%/docs/fr_FR/images/server.png
@@ -374,6 +401,8 @@ bin/pgadmin3
 %%DATADIR%%/docs/fr_FR/options-tab3.html
 %%DATADIR%%/docs/fr_FR/options-tab4.html
 %%DATADIR%%/docs/fr_FR/options-tab5.html
+%%DATADIR%%/docs/fr_FR/options-tab6.html
+%%DATADIR%%/docs/fr_FR/options-tab7.html
 %%DATADIR%%/docs/fr_FR/options.html
 %%DATADIR%%/docs/fr_FR/password.html
 %%DATADIR%%/docs/fr_FR/pgadmin3.css
@@ -441,28 +470,22 @@ bin/pgadmin3
 %%DATADIR%%/docs/zh_TW/hints/saving-passwords.html
 %%DATADIR%%/docs/zh_TW/hints/vacuum.html
 %%DATADIR%%/docs/zh_TW/hints/view-without-pk.html
-%%DATADIR%%/i18n/af_ZA/pgadmin3.mo
-%%DATADIR%%/i18n/af_ZA/wxstd.mo
-%%DATADIR%%/i18n/ca_ES/pgadmin3.mo
-%%DATADIR%%/i18n/ca_ES/wxstd.mo
 %%DATADIR%%/i18n/cs_CZ/pgadmin3.mo
 %%DATADIR%%/i18n/cs_CZ/wxstd.mo
 %%DATADIR%%/i18n/de_DE/pgadmin3.mo
 %%DATADIR%%/i18n/de_DE/wxstd.mo
-%%DATADIR%%/i18n/es_ES/pgadmin3.mo
-%%DATADIR%%/i18n/es_ES/wxstd.mo
+%%DATADIR%%/i18n/fa_IR/pgadmin3.mo
+%%DATADIR%%/i18n/fa_IR/wxstd.mo
 %%DATADIR%%/i18n/fr_FR/pgadmin3.mo
 %%DATADIR%%/i18n/fr_FR/wxstd.mo
-%%DATADIR%%/i18n/it_IT/pgadmin3.mo
-%%DATADIR%%/i18n/it_IT/wxstd.mo
 %%DATADIR%%/i18n/ja_JP/pgadmin3.mo
 %%DATADIR%%/i18n/ja_JP/wxstd.mo
+%%DATADIR%%/i18n/lv_LV/pgadmin3.mo
+%%DATADIR%%/i18n/lv_LV/wxstd.mo
 %%DATADIR%%/i18n/pg_settings.csv
 %%DATADIR%%/i18n/pgadmin3.lng
 %%DATADIR%%/i18n/pl_PL/pgadmin3.mo
 %%DATADIR%%/i18n/pl_PL/wxstd.mo
-%%DATADIR%%/i18n/pt_PT/pgadmin3.mo
-%%DATADIR%%/i18n/pt_PT/wxstd.mo
 %%DATADIR%%/i18n/ru_RU/pgadmin3.mo
 %%DATADIR%%/i18n/ru_RU/wxstd.mo
 %%DATADIR%%/i18n/sr_RS/pgadmin3.mo
@@ -470,24 +493,19 @@ bin/pgadmin3
 %%DATADIR%%/i18n/wxstd.mo
 %%DATADIR%%/i18n/zh_CN/pgadmin3.mo
 %%DATADIR%%/i18n/zh_CN/wxstd.mo
-%%DATADIR%%/i18n/zh_TW/pgadmin3.mo
-%%DATADIR%%/i18n/zh_TW/wxstd.mo
-%%DATADIR%%/plugins.ini
+%%DATADIR%%/plugins.d/plugins.ini
 %%DATADIR%%/settings.ini
-@dirrm %%DATADIR%%/i18n/zh_TW
+@dirrm %%DATADIR%%/plugins.d
 @dirrm %%DATADIR%%/i18n/zh_CN
 @dirrm %%DATADIR%%/i18n/sr_RS
 @dirrm %%DATADIR%%/i18n/ru_RU
-@dirrm %%DATADIR%%/i18n/pt_PT
 @dirrm %%DATADIR%%/i18n/pl_PL
+@dirrm %%DATADIR%%/i18n/lv_LV
 @dirrm %%DATADIR%%/i18n/ja_JP
-@dirrm %%DATADIR%%/i18n/it_IT
 @dirrm %%DATADIR%%/i18n/fr_FR
-@dirrm %%DATADIR%%/i18n/es_ES
+@dirrm %%DATADIR%%/i18n/fa_IR
 @dirrm %%DATADIR%%/i18n/de_DE
 @dirrm %%DATADIR%%/i18n/cs_CZ
-@dirrm %%DATADIR%%/i18n/ca_ES
-@dirrm %%DATADIR%%/i18n/af_ZA
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/docs/zh_TW/hints
 @dirrm %%DATADIR%%/docs/zh_TW
