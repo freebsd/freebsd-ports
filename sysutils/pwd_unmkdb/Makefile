@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwd_unmkdb
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/ \
 		http://distfiles.over-yonder.net/pwd_unmkdb/
