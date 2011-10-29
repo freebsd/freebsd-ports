@@ -17,6 +17,7 @@ COMMENT=	Suite of tools used to connect and sync your Palm handled
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig
