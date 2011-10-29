@@ -1,4 +1,5 @@
-Index: interface/scsi_interface.c
+--- interface/scsi_interface.c.orig	2001-03-23 17:15:46.000000000 -0800
++++ interface/scsi_interface.c	2011-10-17 21:33:00.000000000 -0700
 @@ -3,6 +3,8 @@
   * Original interface.c Copyright (C) 1994-1997 
   *            Eissfeldt heiko@colossus.escape.de
@@ -8,7 +9,7 @@ Index: interface/scsi_interface.c
   * 
   * Generic SCSI interface specific code.
   *
-@@ -23,6 +25,7 @@ static void tweak_SG_buffer(cdrom_drive 
+@@ -23,6 +25,7 @@
    int table,reserved;
    char buffer[256];
  
@@ -16,7 +17,7 @@ Index: interface/scsi_interface.c
    /* maximum transfer size? */
    if(ioctl(d->cdda_fd,SG_GET_RESERVED_SIZE,&reserved)){
      /* Up, guess not. */
-@@ -59,8 +62,17 @@ static void tweak_SG_buffer(cdrom_drive 
+@@ -59,8 +62,17 @@
      cdmessage(d,"\tCouldn't disable command queue!  Continuing anyway...\n");
    }
  
@@ -34,7 +35,7 @@ Index: interface/scsi_interface.c
  static void reset_scsi(cdrom_drive *d){
    int arg;
    d->enable_cdda(d,0);
-@@ -74,6 +86,30 @@ static void reset_scsi(cdrom_drive *d){
+@@ -74,6 +86,30 @@
    d->enable_cdda(d,1);
  }
  
@@ -65,7 +66,7 @@ Index: interface/scsi_interface.c
  static void clear_garbage(cdrom_drive *d){
    fd_set fdset;
    struct timeval tv;
-@@ -104,8 +140,10 @@ static void clear_garbage(cdrom_drive *d
+@@ -104,8 +140,10 @@
      flag=1;
    }
  }
@@ -76,7 +77,7 @@ Index: interface/scsi_interface.c
  static int handle_scsi_cmd(cdrom_drive *d,
  			   unsigned int cmd_len, 
  			   unsigned int in_size, 
-@@ -284,6 +322,84 @@ static int handle_scsi_cmd(cdrom_drive *
+@@ -284,6 +322,95 @@
    return(0);
  }
  
@@ -88,6 +89,7 @@ Index: interface/scsi_interface.c
 +			   unsigned char bytefill,
 +			   int bytecheck) {
 +	int result;
++	int error_code, sense_key, asc, ascq;
 +	
 +	bzero(&d->ccb->csio, sizeof(d->ccb->csio));
 +
@@ -124,8 +126,17 @@ Index: interface/scsi_interface.c
 +		return TR_EREAD;
 +	}
 +
-+	if (d->ccb->csio.sense_data.error_code & SSD_ERRCODE) {
-+		switch (d->ccb->csio.sense_data.flags & SSD_KEY) {
++	scsi_extract_sense(&d->ccb->csio.sense_data, &error_code, &sense_key,
++			   &asc, &ascq);
++
++	switch (error_code) {
++	case SSD_CURRENT_ERROR:
++	case SSD_DEFERRED_ERROR:
++#if (CAM_VERSION > 0x15)
++	case SSD_DESC_CURRENT_ERROR:
++	case SSD_DESC_DEFERRED_ERROR:
++#endif
++		switch (sense_key) {
 +		case SSD_KEY_NO_SENSE:
 +			errno = EIO;
 +			return TR_UNKNOWN;
@@ -136,8 +147,7 @@ Index: interface/scsi_interface.c
 +			return TR_BUSY;
 +		case SSD_KEY_MEDIUM_ERROR:
 +			errno = EIO;
-+			if (d->ccb->csio.sense_data.add_sense_code == 0x0c &&
-+			    d->ccb->csio.sense_data.add_sense_code_qual == 0x09)
++			if ((asc == 0x0c) && (ascq == 0x09))
 +				return TR_STREAMING;
 +			else
 +				return TR_MEDIUM;
@@ -151,6 +161,8 @@ Index: interface/scsi_interface.c
 +			errno = EIO;
 +			return TR_UNKNOWN;
 +		}
++	default:
++		break;
 +	}
 +
 +	return 0;
@@ -161,12 +173,14 @@ Index: interface/scsi_interface.c
  /* Group 1 (10b) command */
  
  static int mode_sense_atapi(cdrom_drive *d,int size,int page){ 
-@@ -833,30 +949,33 @@ static long scsi_read_map (cdrom_drive *
+@@ -833,30 +960,37 @@
    while(1) {
      if((err=map(d,(p?buffer:NULL),begin,sectors))){
        if(d->report_all){
 +#ifdef Linux
  	struct sg_header *sg_hd=(struct sg_header *)d->sg;
++#elif defined(__FreeBSD__)
++	int error_code, sense_key, asc, ascq;
 +#endif
  	char b[256];
  
@@ -174,15 +188,17 @@ Index: interface/scsi_interface.c
  		begin,sectors,retry_count);
 +	fputs(b, stderr);
  	cdmessage(d,b);
++#if defined(__FreeBSD__)
++	scsi_extract_sense(&d->ccb->csio.sense_data, &error_code, &sense_key,
++			   &asc, &ascq);
++#endif
  	sprintf(b,"                 Sense key: %x ASC: %x ASCQ: %x\n",
 +#ifdef Linux
  		(int)(sg_hd->sense_buffer[2]&0xf),
  		(int)(sg_hd->sense_buffer[12]),
  		(int)(sg_hd->sense_buffer[13]));
 +#elif defined(__FreeBSD__)
-+		d->ccb->csio.sense_data.flags & SSD_KEY,
-+		d->ccb->csio.sense_data.add_sense_code,
-+		d->ccb->csio.sense_data.add_sense_code_qual);
++		sense_key, asc, ascq);
 +#endif
 +	fputs(b, stderr);
  	cdmessage(d,b);
@@ -204,7 +220,7 @@ Index: interface/scsi_interface.c
        }
  
        if(!d->error_retry)return(-7);
-@@ -1307,6 +1426,7 @@ static void check_fua_bit(cdrom_drive *d
+@@ -1307,6 +1441,7 @@
    return;
  }
  
@@ -212,7 +228,7 @@ Index: interface/scsi_interface.c
  static int check_atapi(cdrom_drive *d){
    int atapiret=-1;
    int fd = d->cdda_fd; /* this is the correct fd (not ioctl_fd), as the 
-@@ -1333,6 +1453,53 @@ static int check_atapi(cdrom_drive *d){
+@@ -1333,6 +1468,53 @@
    }
  }  
  
@@ -266,7 +282,7 @@ Index: interface/scsi_interface.c
  static int check_mmc(cdrom_drive *d){
    char *b;
    cdmessage(d,"\nChecking for MMC style command set...\n");
-@@ -1379,6 +1546,7 @@ static void check_exceptions(cdrom_drive
+@@ -1379,6 +1561,7 @@
    }
  }
  
@@ -274,7 +290,7 @@ Index: interface/scsi_interface.c
  /* request vendor brand and model */
  unsigned char *scsi_inquiry(cdrom_drive *d){
    memcpy(d->sg_buffer,(char[]){ 0x12,0,0,0,56,0},6);
-@@ -1389,6 +1557,7 @@ unsigned char *scsi_inquiry(cdrom_drive 
+@@ -1389,6 +1572,7 @@
    }
    return (d->sg_buffer);
  }
@@ -282,7 +298,7 @@ Index: interface/scsi_interface.c
  
  
  int scsi_init_drive(cdrom_drive *d){
-@@ -1458,8 +1627,12 @@ int scsi_init_drive(cdrom_drive *d){
+@@ -1458,8 +1642,12 @@
    check_fua_bit(d);
  
    d->error_retry=1;
