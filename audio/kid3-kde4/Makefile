@@ -7,16 +7,16 @@
 
 PORTNAME=	kid3
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
@@ -77,5 +77,8 @@ CMAKE_ARGS+=	-DWITH_TUNEPIMP=OFF
 CMAKE_ARGS+=	-DWITH_TUNEPIMP=ON
 LIB_DEPENDS+=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
