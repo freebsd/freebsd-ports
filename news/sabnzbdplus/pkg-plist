@@ -59,6 +59,7 @@ bin/SABnzbd.py
 %%PORTDOCS%%%%DOCSDIR%%/License-Python.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-configobj.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-feedparser.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-gntp.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-json.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-kronos.txt
 %%PORTDOCS%%%%DOCSDIR%%/License-listquote.txt
@@ -108,6 +109,8 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/process/win32.py
 %%DATADIR%%/cherrypy/process/wspbus.py
 %%DATADIR%%/cherrypy/wsgiserver/__init__.py
+%%DATADIR%%/gntp/__init__.py
+%%DATADIR%%/gntp/notifier.py
 %%DATADIR%%/interfaces/Classic/README.TXT
 %%DATADIR%%/interfaces/Classic/templates/config.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_cat.tmpl
@@ -371,6 +374,7 @@ bin/SABnzbd.py
 %%DATADIR%%/util/__init__.py
 %%DATADIR%%/util/apireg.py
 %%DATADIR%%/util/mailslot.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/util
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/po/nsis
@@ -442,8 +446,8 @@ bin/SABnzbd.py
 @dirrm %%DATADIR%%/cherrypy/process
 @dirrm %%DATADIR%%/cherrypy/lib
 @dirrm %%DATADIR%%/cherrypy
+@dirrm %%DATADIR%%/gntp
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry sabnzbd
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
