@@ -57,4 +57,7 @@ USE_GNOME=	glib20
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
