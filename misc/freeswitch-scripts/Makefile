@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freeswitch-scripts
-PORTVERSION=	201044
+PORTVERSION=	1.0.7
+PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
-		ftp://ftp2.secure-computing.net/pub/freeswitch/
+MASTER_SITES=	http://dl.dropbox.com/u/152504/
 DISTNAME=	${BASE_PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	${BASE_PORTNAME}
 
@@ -19,6 +19,8 @@ COMMENT=	FreeSwitch Scripts
 NO_BUILD=	yes
 BASE_PORTNAME=	freeswitch
 SUB_FILES=	pkg-install
+
+RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
 
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
