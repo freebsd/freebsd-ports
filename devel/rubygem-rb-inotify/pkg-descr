@@ -1,3 +1,4 @@
 rubygem-rb-inotify is a ruby wrapper for libinotify, using ffi.
 
-WWW: http://github.com/nex3/rb-inotify
+WWW: https://github.com/nex3/rb-inotify
+WWW: https://rubygems.org/gems/rb-inotify
