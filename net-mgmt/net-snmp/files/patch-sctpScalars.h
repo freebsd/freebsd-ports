@@ -5,7 +5,7 @@
  #if defined( linux )
  config_require(sctp-mib/sctpScalars_linux)
 -#elif defined( freebsd8 ) || defined ( freebsd7 )
-+#elif defined( freebsd9 ) || defined( freebsd8 ) || defined ( freebsd7 )
++#elif defined( freebsd10 ) || defined( freebsd9 ) || defined( freebsd8 ) || defined ( freebsd7 )
  config_require(sctp-mib/sctpScalars_freebsd)	 
  #else
  /*

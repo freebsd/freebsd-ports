@@ -5,7 +5,7 @@
  config_require(sctp-mib/sctpTables_linux)
  config_require(util_funcs/get_pid_from_inode)
 -#elif defined( freebsd7 ) || defined( freebsd8 )
-+#elif defined( freebsd7 ) || defined( freebsd8 ) || defined( freebsd9 )
++#elif defined( freebsd7 ) || defined( freebsd8 ) || defined( freebsd9 ) || defined( freebsd10 )
  config_require(sctp-mib/sctpTables_freebsd)
  #else
  config_error(SCTP-MIB is not available in tihs environment)

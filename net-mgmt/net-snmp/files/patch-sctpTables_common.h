@@ -5,7 +5,7 @@
  #define SCTP_TABLES_COMMON_H
  
 -#if defined(freebsd8) || defined(freebsd7)
-+#if defined(freebsd9) || defined(freebsd8) || defined(freebsd7)
++#if defined(freebsd10) || defined(freebsd9) || defined(freebsd8) || defined(freebsd7)
  #define netsnmp_table_registration_info_free SNMP_FREE
  #endif
  
