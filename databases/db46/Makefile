@@ -55,6 +55,11 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=	*
 .endif
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
+		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
