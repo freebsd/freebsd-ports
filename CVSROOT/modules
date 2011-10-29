@@ -7636,6 +7636,7 @@ lep                             ports/security/lep
 leptonica                       ports/graphics/leptonica
 lesspipe                        ports/misc/lesspipe
 lesstif                         ports/x11-toolkits/lesstif
+leveldb                         ports/databases/leveldb
 levmar                          ports/math/levmar
 lexi                            ports/devel/lexi
 lexter                          ports/games/lexter
@@ -9694,6 +9695,7 @@ multi-aterm                     ports/x11/multi-aterm
 multi-gnome-terminal            ports/x11/multi-gnome-terminal
 multican                        ports/graphics/multican
 multiget                        ports/ftp/multiget
+multimarkdown                   ports/textproc/multimarkdown
 multisort                       ports/www/multisort
 multisuck                       ports/news/multisuck
 multisync                       ports/deskutils/multisync
@@ -9784,6 +9786,7 @@ mysql-navigator                 ports/databases/mysql-navigator
 mysql-proxy                     ports/databases/mysql-proxy
 mysql-q4m                       ports/databases/mysql-q4m
 mysql-udf                       ports/databases/mysql-udf
+mysql-udf-preg                  ports/databases/mysql-udf-preg
 mysql-workbench51               ports/databases/mysql-workbench51
 mysql-workbench52               ports/databases/mysql-workbench52
 mysql-xql                       ports/databases/mysql-xql
@@ -11276,6 +11279,7 @@ p5-Catalyst-Plugin-FormBuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-Catalyst-Plugin-FormValidator  ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-I18N         ports/www/p5-Catalyst-Plugin-I18N
 p5-Catalyst-Plugin-Log-Dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
+p5-Catalyst-Plugin-Log-Handler  ports/www/p5-Catalyst-Plugin-Log-Handler
 p5-Catalyst-Plugin-LogWarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
 p5-Catalyst-Plugin-PageCache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Params-Nested  ports/www/p5-Catalyst-Plugin-Params-Nested
@@ -11828,6 +11832,7 @@ p5-Data-Path                    ports/devel/p5-Data-Path
 p5-Data-Peek                    ports/devel/p5-Data-Peek
 p5-Data-Phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-Data-Phrasebook-Loader-YAML  ports/textproc/p5-Data-Phrasebook-Loader-YAML
+p5-Data-Printer                 ports/devel/p5-Data-Printer
 p5-Data-Properties              ports/devel/p5-Data-Properties
 p5-Data-Random                  ports/devel/p5-Data-Random
 p5-Data-Range-Compare           ports/devel/p5-Data-Range-Compare
@@ -14613,6 +14618,7 @@ p5-Tie-Hash-Sorted              ports/devel/p5-Tie-Hash-Sorted
 p5-Tie-Hash-TwoWay              ports/devel/p5-Tie-Hash-TwoWay
 p5-Tie-IxHash                   ports/devel/p5-Tie-IxHash
 p5-Tie-LLHash                   ports/devel/p5-Tie-LLHash
+p5-Tie-LevelDB                  ports/databases/p5-Tie-LevelDB
 p5-Tie-NetAddr-IP               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-Tie-RefHash                  ports/devel/p5-Tie-RefHash
 p5-Tie-RefHash-Weak             ports/devel/p5-Tie-RefHash-Weak
@@ -15542,6 +15548,7 @@ p5-catalyst-plugin-formbuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-catalyst-plugin-formvalidator  ports/www/p5-Catalyst-Plugin-FormValidator
 p5-catalyst-plugin-i18n         ports/www/p5-Catalyst-Plugin-I18N
 p5-catalyst-plugin-log-dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
+p5-catalyst-plugin-log-handler  ports/www/p5-Catalyst-Plugin-Log-Handler
 p5-catalyst-plugin-logwarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
 p5-catalyst-plugin-pagecache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-catalyst-plugin-params-nested  ports/www/p5-Catalyst-Plugin-Params-Nested
@@ -16104,6 +16111,7 @@ p5-data-path                    ports/devel/p5-Data-Path
 p5-data-peek                    ports/devel/p5-Data-Peek
 p5-data-phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-data-phrasebook-loader-yaml  ports/textproc/p5-Data-Phrasebook-Loader-YAML
+p5-data-printer                 ports/devel/p5-Data-Printer
 p5-data-properties              ports/devel/p5-Data-Properties
 p5-data-random                  ports/devel/p5-Data-Random
 p5-data-range-compare           ports/devel/p5-Data-Range-Compare
@@ -19057,6 +19065,7 @@ p5-tie-hash-sorted              ports/devel/p5-Tie-Hash-Sorted
 p5-tie-hash-twoway              ports/devel/p5-Tie-Hash-TwoWay
 p5-tie-ical                     ports/devel/p5-Tie-iCal
 p5-tie-ixhash                   ports/devel/p5-Tie-IxHash
+p5-tie-leveldb                  ports/databases/p5-Tie-LevelDB
 p5-tie-llhash                   ports/devel/p5-Tie-LLHash
 p5-tie-netaddr-ip               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-tie-refhash                  ports/devel/p5-Tie-RefHash
@@ -22019,6 +22028,7 @@ py-kqueue                       ports/devel/py-kqueue
 py-kyotocabinet                 ports/databases/py-kyotocabinet
 py-ldap2                        ports/net/py-ldap2
 py-ldaptor                      ports/net/py-ldaptor
+py-leveldb                      ports/databases/py-leveldb
 py-levenshtein                  ports/devel/py-levenshtein
 py-libcloud                     ports/net/py-libcloud
 py-libdnet                      ports/net/py-libdnet
@@ -22191,6 +22201,7 @@ py-prolog                       ports/lang/py-prolog
 py-protobuf                     ports/devel/py-protobuf
 py-protocols                    ports/devel/py-protocols
 py-protocols-devel              ports/devel/py-protocols-devel
+py-pss                          ports/textproc/py-pss
 py-psutil                       ports/sysutils/py-psutil
 py-psyco                        ports/devel/py-psyco
 py-psycopg                      ports/databases/py-psycopg
@@ -22314,6 +22325,7 @@ py-riak                         ports/databases/py-riak
 py-rijndael                     ports/security/py-rijndael
 py-rlcompleter2                 ports/devel/py-rlcompleter2
 py-ro                           ports/astro/py-RO
+py-roman                        ports/math/py-roman
 py-room                         ports/editors/py-room
 py-rope                         ports/devel/py-rope
 py-routes                       ports/www/py-routes
@@ -22380,6 +22392,7 @@ py-sqlalchemy                   ports/databases/py-sqlalchemy
 py-sqlalchemy06                 ports/databases/py-sqlalchemy06
 py-sqlcc                        ports/devel/py-sqlcc
 py-sqlite3                      ports/databases/py-sqlite3
+py-sqlite3dbm                   ports/databases/py-sqlite3dbm
 py-sqlkit                       ports/databases/py-sqlkit
 py-sqlobject                    ports/databases/py-sqlobject
 py-sqlparse                     ports/databases/py-sqlparse
@@ -23497,6 +23510,7 @@ ruby-bdb                        ports/databases/ruby-bdb
 ruby-bdb1                       ports/databases/ruby-bdb1
 ruby-bio                        ports/biology/ruby-bio
 ruby-borges                     ports/www/ruby-borges
+ruby-bsdconv                    ports/converters/ruby-bsdconv
 ruby-bsearch                    ports/devel/ruby-bsearch
 ruby-byaccr                     ports/devel/ruby-byaccr
 ruby-bz2                        ports/archivers/ruby-bz2
@@ -23976,7 +23990,7 @@ rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-rack-cache              ports/www/rubygem-rack-cache
 rubygem-rack-mount              ports/www/rubygem-rack-mount
-rubygem-rack-protection         ports/devel/rubygem-rack-protection
+rubygem-rack-protection         ports/www/rubygem-rack-protection
 rubygem-rack-ssl                ports/www/rubygem-rack-ssl
 rubygem-rack-test               ports/www/rubygem-rack-test
 rubygem-railroad                ports/graphics/rubygem-railroad
@@ -24093,6 +24107,7 @@ rubygem-thin                    ports/www/rubygem-thin
 rubygem-thor                    ports/devel/rubygem-thor
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tilt                    ports/devel/rubygem-tilt
+rubygem-tins                    ports/devel/rubygem-tins
 rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
 rubygem-treetop                 ports/devel/rubygem-treetop
@@ -25547,6 +25562,7 @@ tijmp                           ports/devel/tijmp
 tikiwiki                        ports/www/tikiwiki
 tilda                           ports/x11/tilda
 tile                            ports/x11-toolkits/tile
+tilecache                       ports/graphics/tilecache
 tilem                           ports/emulators/tilem
 tileworld                       ports/games/tileworld
 tilp2                           ports/comms/tilp2
