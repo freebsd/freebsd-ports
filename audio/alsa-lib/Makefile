@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/lib/ \
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library
+
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -19,6 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	musicbrainz-1.*
 
+WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes

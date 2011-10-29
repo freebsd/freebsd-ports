@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.jedrea.com/chmlib/
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-io64 --disable-pread --exec-prefix=${PREFIX} --disable-static --enable-examples
