@@ -19,6 +19,7 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+WITH_FBSD10_FIX=yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
