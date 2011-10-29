@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.4
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
