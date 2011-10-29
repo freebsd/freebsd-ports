@@ -16,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GStreamer backend for Phonon
 
+# Required in order to avoid conflicts with multimedia/phonon's OPTIONS.
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+
 CONFLICTS=	qt4-phonon-gst-4*
 
 PHONON_BRANCH=	stable
@@ -43,11 +46,24 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 IGNORE=		conflicts with Qt 4 Phonon. Please, deinstall qt4-phonon-gst and unset WITH_QT_PHONON to continue
 .endif
 
+OPTIONS=	PLUGINS "Install GStreamer plugins" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PLUGINS)
+RUN_DEPENDS+=	gstreamer-plugins-all>=0:${PORTSDIR}/multimedia/gstreamer-plugins-all
+.else
+SUB_FILES=	pkg-message
+.endif
+
 pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so \
 		${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
+.if !defined(WITH_PLUGINS)
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
