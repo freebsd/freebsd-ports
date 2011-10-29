@@ -30,6 +30,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libxml2 pkgconfig
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation
 
