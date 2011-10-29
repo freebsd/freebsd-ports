@@ -29,7 +29,7 @@ def usage
   STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
   STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: %%WWWDIR%%\n"
   STDERR.print "    --tdiarydocdir=<docdir>   Specify tDiary document directory default: %%DOCSDIR%%\n"
-  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: %%TDIARY_LANG%%\n"
+  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja') default: %%TDIARY_LANG%%\n"
   STDERR.print "    --suexec                  Use suExec for CGI execution\n"
   STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
   STDERR.print "    --quiet                   Do not display any information\n"
@@ -101,8 +101,6 @@ class TdiaryInstall
       @lang = 'en'
     when 'ja'
       @lang = 'ja'
-    when 'zh'
-      @lang = 'zh'
     else
       raise "Unknown Language : #{value}"
     end
