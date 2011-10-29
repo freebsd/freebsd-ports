@@ -16,6 +16,7 @@ COMMENT=	Wrapper around the LSCP network protocol
 
 LICENSE=	LGPL21
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

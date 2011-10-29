@@ -17,6 +17,7 @@ COMMENT=	Library to create and read several streaming archive formats
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack libxml2
+WITH_FBSD10_FIX=yes
 
 PLIST_FILES=	bin/bsdcpio \
 		bin/bsdtar \
