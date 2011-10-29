@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdg-user-dirs
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 
