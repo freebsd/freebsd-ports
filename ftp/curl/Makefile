@@ -53,6 +53,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-pop3 --enable-smtp --enable-imap --enable-rtsp \
 		--disable-threaded-resolver --disable-werror
