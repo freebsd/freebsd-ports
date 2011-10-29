@@ -3452,6 +3452,7 @@
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
+    SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rake
