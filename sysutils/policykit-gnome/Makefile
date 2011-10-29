@@ -18,6 +18,7 @@ COMMENT=	GNOME frontend to the PolicKit framework
 
 LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
