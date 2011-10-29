@@ -26,6 +26,7 @@ USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack pkgconfig gdkpixbu
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
+WITH_FBSD10_FIX=yes
 
 OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		NLS		"Enable Native Language Support"		on  \

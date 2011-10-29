@@ -20,6 +20,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnomeprefix intlhack gconf2
 USE_GMAKE=	yes
