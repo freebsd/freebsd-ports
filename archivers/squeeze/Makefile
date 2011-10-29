@@ -23,6 +23,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
+WITH_FBSD10_FIX=yes
 USE_XFCE=	configenv panel thunar thunarvfs
 USE_XORG=	x11
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
