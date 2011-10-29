@@ -1,0 +1,9 @@
+Monitor::Simple allows simple monitoring of applications and services of your IT
+infrastructure. There are many such tools, some of them very complex and
+sophisticated. For example, one widely used is Nagios (http://www.nagios.org/).
+The Monitor::Simple does not aim, as its name indicates, for all features
+provided by those tools. It allows, however, to check whether your applications
+and services are running correctly. Its simple command-line interface can be
+used in cron jobs and reports can be viewed as a single HTML or text page.
+
+WWW: http://search.cpan.org/dist/Monitor-Simple/
