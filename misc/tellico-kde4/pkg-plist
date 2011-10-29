@@ -8,6 +8,7 @@ share/apps/tellico/MARC21slimUtils.xsl
 share/apps/tellico/UNIMARC2MODS3.xsl
 share/apps/tellico/amazon2tellico.xsl
 share/apps/tellico/arxiv2tellico.xsl
+share/apps/tellico/biblioshare2tellico.xsl
 share/apps/tellico/bibtex-translation.xml
 share/apps/tellico/bluray-logo.png
 share/apps/tellico/cassette-logo.png
@@ -35,6 +36,7 @@ share/apps/tellico/entry-templates/Fancy.xsl
 share/apps/tellico/entry-templates/Video.xsl
 share/apps/tellico/gcstar2tellico.xsl
 share/apps/tellico/giantbomb2tellico.xsl
+share/apps/tellico/goodreads2tellico.xsl
 share/apps/tellico/griffith2tellico.py
 share/apps/tellico/hddvd-logo.png
 share/apps/tellico/isbndb2tellico.xsl
@@ -57,6 +59,7 @@ share/apps/tellico/pics/deliciouslibrary.png
 share/apps/tellico/pics/file.png
 share/apps/tellico/pics/game.png
 share/apps/tellico/pics/gcstar.png
+share/apps/tellico/pics/goodreads.png
 share/apps/tellico/pics/griffith.png
 share/apps/tellico/pics/nocover_album.png
 share/apps/tellico/pics/nocover_bibtex.png
@@ -174,6 +177,17 @@ share/doc/HTML/es/tellico/importing-exporting.docbook
 share/doc/HTML/es/tellico/index.cache.bz2
 share/doc/HTML/es/tellico/index.docbook
 share/doc/HTML/es/tellico/menus.docbook
+share/doc/HTML/et/tellico/advanced.docbook
+share/doc/HTML/et/tellico/common
+share/doc/HTML/et/tellico/configuration.docbook
+share/doc/HTML/et/tellico/details.docbook
+share/doc/HTML/et/tellico/faqs.docbook
+share/doc/HTML/et/tellico/fundamentals.docbook
+share/doc/HTML/et/tellico/hacking.docbook
+share/doc/HTML/et/tellico/importing-exporting.docbook
+share/doc/HTML/et/tellico/index.cache.bz2
+share/doc/HTML/et/tellico/index.docbook
+share/doc/HTML/et/tellico/menus.docbook
 share/doc/HTML/fr/tellico/advanced.docbook
 share/doc/HTML/fr/tellico/common
 share/doc/HTML/fr/tellico/configuration.docbook
@@ -185,6 +199,17 @@ share/doc/HTML/fr/tellico/importing-exporting.docbook
 share/doc/HTML/fr/tellico/index.cache.bz2
 share/doc/HTML/fr/tellico/index.docbook
 share/doc/HTML/fr/tellico/menus.docbook
+share/doc/HTML/nl/tellico/advanced.docbook
+share/doc/HTML/nl/tellico/common
+share/doc/HTML/nl/tellico/configuration.docbook
+share/doc/HTML/nl/tellico/details.docbook
+share/doc/HTML/nl/tellico/faqs.docbook
+share/doc/HTML/nl/tellico/fundamentals.docbook
+share/doc/HTML/nl/tellico/hacking.docbook
+share/doc/HTML/nl/tellico/importing-exporting.docbook
+share/doc/HTML/nl/tellico/index.cache.bz2
+share/doc/HTML/nl/tellico/index.docbook
+share/doc/HTML/nl/tellico/menus.docbook
 share/doc/HTML/pt/tellico/advanced.docbook
 share/doc/HTML/pt/tellico/common
 share/doc/HTML/pt/tellico/configuration.docbook
@@ -242,6 +267,7 @@ share/icons/hicolor/48x48/mimetypes/application-x-tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/application-x-tellico.png
 share/locale/bg/LC_MESSAGES/tellico.mo
+share/locale/bs/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo
 share/locale/ca@valencia/LC_MESSAGES/tellico.mo
 share/locale/cs/LC_MESSAGES/tellico.mo
@@ -275,6 +301,7 @@ share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sk/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/locale/tr/LC_MESSAGES/tellico.mo
+share/locale/ug/LC_MESSAGES/tellico.mo
 share/locale/uk/LC_MESSAGES/tellico.mo
 share/locale/zh_CN/LC_MESSAGES/tellico.mo
 share/locale/zh_TW/LC_MESSAGES/tellico.mo
@@ -288,7 +315,9 @@ share/mimelnk/application/x-tellico.desktop
 @dirrm share/doc/HTML/sv/tellico
 @dirrm share/doc/HTML/pt_BR/tellico
 @dirrm share/doc/HTML/pt/tellico
+@dirrm share/doc/HTML/nl/tellico
 @dirrm share/doc/HTML/fr/tellico
+@dirrm share/doc/HTML/et/tellico
 @dirrm share/doc/HTML/es/tellico
 @dirrm share/doc/HTML/en/tellico
 @dirrm share/apps/tellico/report-templates
