@@ -16,9 +16,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}-client-[78]* \
+CONFLICTS?=	${PORTNAME}-client-8* \
 		${PORTNAME}-client-9.[02-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-[78]* \
+		${PORTNAME}${PKGNAMESUFFIX}-8* \
 		${PORTNAME}${PKGNAMESUFFIX}-9.[02-9]
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
@@ -178,7 +178,7 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install-strip
 .  endif
 
-.if (${OSVERSION} >= 700000) && !defined(WITHOUT_GSSAPI)
+.if !defined(WITHOUT_GSSAPI)
 CONFIGURE_ARGS+=--with-gssapi
 .if !defined(WITH_MIT_KRB5) && !defined(WITH_HEIMDAL_KRB5)
 # Kerberos libraries will pull the proper GSSAPI library
