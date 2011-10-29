@@ -15,6 +15,7 @@ COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
