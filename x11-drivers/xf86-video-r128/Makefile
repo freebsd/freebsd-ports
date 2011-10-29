@@ -14,7 +14,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org r128 display driver
 
 USE_GL=		gl
-
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	glproto videoproto xextproto xf86driproto xf86miscproto xineramaproto
 MAN4=		r128.4x

@@ -12,6 +12,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org voodoo display driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xf86dgaproto xextproto
 MAN4=		voodoo.4x

@@ -13,7 +13,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org ati display driver
 
 USE_GL=		gl
-
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
 MAN4=		ati.4x radeon.4x

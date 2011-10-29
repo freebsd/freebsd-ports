@@ -14,6 +14,7 @@ COMMENT=	X Pixmap library
 
 LICENSE=	MIT
 
+WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xext xextproto xt
 

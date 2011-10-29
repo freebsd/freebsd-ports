@@ -17,6 +17,7 @@ CONFLICTS=	xf86-video-sis-intel-[0-9]*
 
 USE_GL=		gl
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xf86dgaproto xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
 MAN4=		sis.4x

@@ -15,6 +15,7 @@ COMMENT=	DMX extension library
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto dmxproto:both
 
+WITH_FBSD10_FIX=yes
 MAN3=		DMX.3 \
 		DMXAddInput.3 \
 		DMXAddScreen.3 \
