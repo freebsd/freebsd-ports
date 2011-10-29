@@ -37,6 +37,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/SearchElement.pm
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
+%%SITE_PERL%%/Config/Model/Tester.pm
 %%SITE_PERL%%/Config/Model/TreeSearcher.pm
 %%SITE_PERL%%/Config/Model/Value.pm
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
