@@ -13,6 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	gslin@gslin.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
