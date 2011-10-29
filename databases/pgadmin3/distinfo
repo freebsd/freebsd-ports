@@ -1,2 +1,2 @@
-SHA256 (pgadmin3-1.12.0.tar.gz) = 59824bcb4bae5311b69e932dc46e6f831c228951fbd5ddcb2adb92330b95a85e
-SIZE (pgadmin3-1.12.0.tar.gz) = 13258032
+SHA256 (postgresql/pgadmin3-1.14.0.tar.gz) = 396c2b0394496f23ea51c095b619eecc8c33473f0f483b795bfeb391e56cafd2
+SIZE (postgresql/pgadmin3-1.14.0.tar.gz) = 15041312
