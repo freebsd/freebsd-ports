@@ -2840,3 +2840,4 @@ astro/weatherget||2011-10-27|Has expired: Broken b/c of weather.com new licensin
 devel/py-reverse||2011-10-27|Has expired: Now part of pylint
 devel/py-vmaps||2011-10-27|Has expired: Author recommends using math/py-numpy instead
 devel/rubygem-rack-protection||2011-10-28|Removed
+graphics/tumbler|deskutils/xfce4-tumbler|2011-10-29|Duplicate
