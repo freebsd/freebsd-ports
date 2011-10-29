@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	6
+PORTREVISION?=	6
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -24,8 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
-		emacs-nox11-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 EMACS_VER=	23.3
 GNU_CONFIGURE=	yes
@@ -53,6 +52,8 @@ INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar tramp url vip viper widget woman
 
+.if !defined(EMACS_NO_X11_SLAVE)
+CONFLICTS+=	emacs-nox11-[0-9]*
 OPTIONS=	CANNA	"Canna support"			OFF \
 		DBUS	"DBus support"			ON \
 		GCONF	"GConf support"			ON \
@@ -74,6 +75,7 @@ OPTIONS=	CANNA	"Canna support"			OFF \
 		XFT	"Freetype fonts support"	ON \
 		XIM	"X Input Method support"	ON \
 		XPM	"XPM images support"		ON
+.endif
 
 .include <bsd.port.options.mk>
 
