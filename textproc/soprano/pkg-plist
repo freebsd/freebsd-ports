@@ -155,7 +155,6 @@ lib/soprano/libsoprano_redlandbackend.so
 lib/soprano/libsoprano_virtuosobackend.so
 libdata/pkgconfig/soprano.pc
 libdata/pkgconfig/sopranoclient.pc
-libdata/pkgconfig/sopranoindex.pc
 libdata/pkgconfig/sopranoserver.pc
 share/cmake/Modules/SopranoAddOntology.cmake
 share/dbus-1/interfaces/org.soprano.Model.xml
