@@ -18,7 +18,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q}
+MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q} CC="${CC}"
 
 PORTDOCS=	README USAGE
 MAN1=		ttfm.sh.1
