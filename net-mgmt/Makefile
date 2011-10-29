@@ -297,6 +297,7 @@
     SUBDIR += zabbix-proxy
     SUBDIR += zabbix-server
     SUBDIR += zenoss
+    SUBDIR += zenpack-apachemonitor
     SUBDIR += zenpack-dellmon
     SUBDIR += zenpack-deviceadvdetail
     SUBDIR += zenpack-devicesearch
