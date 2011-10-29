@@ -1212,6 +1212,7 @@
     SUBDIR += ruby-xmlscan
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
+    SUBDIR += rubygem-albino
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-coderay
     SUBDIR += rubygem-compass
