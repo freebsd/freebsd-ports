@@ -10,7 +10,7 @@
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.py
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyc
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyo
-%%PYTHON_SITELIBDIR%%/firebirdsql/tests.py
-%%PYTHON_SITELIBDIR%%/firebirdsql/tests.pyc
-%%PYTHON_SITELIBDIR%%/firebirdsql/tests.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/services.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/services.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/services.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/firebirdsql
