@@ -17,6 +17,7 @@ COMMENT=	API for executing callback functions on events or timeouts
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/event2
