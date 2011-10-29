@@ -19,6 +19,7 @@ COMMENT?=	Minimalistic plugin API for video effects
 
 .if !defined(BUILDING_FREI0R_METAPORT)
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_SAFE=	yes
 
@@ -105,6 +106,10 @@ do-install:
 		${PREFIX}/lib/frei0r-1/${FILE}.so
 . endfor
 .endif #!defined(FREI0R_PLUGINS)
+
+pre-build:
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
 .include <bsd.port.post.mk>
 
