@@ -16,6 +16,7 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+WITH_FBSD10_FIX=yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

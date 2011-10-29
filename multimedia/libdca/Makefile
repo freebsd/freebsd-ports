@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSIO
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gnomehack
