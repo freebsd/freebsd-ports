@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-cxx
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=	yes
 
 INFO=		gmp
 
