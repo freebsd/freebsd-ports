@@ -32,6 +32,8 @@ pre-patch:
 
 pre-configure:
 	${CHMOD} u+w ${WRKSRC}/../dist/configure
+	${REINPLACE_CMD} -e 's|freebsd1\*|freebsd1\.\*|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .for i in libdb libdb_cxx
