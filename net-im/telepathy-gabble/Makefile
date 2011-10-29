@@ -28,6 +28,8 @@ LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
+CONFIGURE_ARGS=	--disable-Werror
 LDFLAGS+=	${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20
