@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	SVN-Notify
-PORTVERSION=	2.82
+PORTVERSION=	2.83
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Subversion activity notification
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \
 		p5-Text-Trac>=0.10:${PORTSDIR}/textproc/p5-Text-Trac \
