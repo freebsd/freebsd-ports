@@ -1,0 +1,33 @@
+bin/smonitor
+%%SITE_PERL%%/Monitor/Simple.pm
+%%SITE_PERL%%/Monitor/Simple/Config.pm
+%%SITE_PERL%%/Monitor/Simple/Log.pm
+%%SITE_PERL%%/Monitor/Simple/Notifier.pm
+%%SITE_PERL%%/Monitor/Simple/Output.pm
+%%SITE_PERL%%/Monitor/Simple/UserAgent.pm
+%%SITE_PERL%%/Monitor/Simple/Utils.pm
+%%SITE_PERL%%/Monitor/Simple/configs/bad-config.cfg
+%%SITE_PERL%%/Monitor/Simple/configs/erroneous-monitor-cfg.xml
+%%SITE_PERL%%/Monitor/Simple/configs/monitor-default.css
+%%SITE_PERL%%/Monitor/Simple/configs/monitor-simple-cfg.xml.template
+%%SITE_PERL%%/Monitor/Simple/configs/simple-example-cfg.xml
+%%SITE_PERL%%/Monitor/Simple/configs/simple-example-with-notificationcfg.xml
+%%SITE_PERL%%/Monitor/Simple/notifiers/copy-to-file
+%%SITE_PERL%%/Monitor/Simple/notifiers/send-email
+%%SITE_PERL%%/Monitor/Simple/notifiers/send-email-via-ssh
+%%SITE_PERL%%/Monitor/Simple/plugins/born-to-be-killed.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check-get.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check-post.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check-prg.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check-url.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check_mem.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/copy-message.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/get-date.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitor/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitor/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitor
+@dirrmtry %%SITE_PERL%%/Monitor/Simple/plugins
+@dirrmtry %%SITE_PERL%%/Monitor/Simple/notifiers
+@dirrmtry %%SITE_PERL%%/Monitor/Simple/configs
+@dirrmtry %%SITE_PERL%%/Monitor/Simple
+@dirrmtry %%SITE_PERL%%/Monitor
