@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	1.0.4
+PORTVERSION=	2.0.2
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ COMMENT=	A Rails plugin for Japanese mobile-phones
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rails>=3.0.3:${PORTSDIR}/www/rubygem-rails
+RUN_DEPENDS=	rubygem-rails>=3.1.0:${PORTSDIR}/www/rubygem-rails
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
