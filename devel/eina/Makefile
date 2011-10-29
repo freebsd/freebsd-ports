@@ -14,6 +14,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment API for data types
 
+WITH_FBSD10_FIX=yes
 LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes

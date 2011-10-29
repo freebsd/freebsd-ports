@@ -17,6 +17,7 @@ COMMENT=	Set of utilities that send SCSI commands to devices
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 
 MAN8=		scsi_readcap.8 scsi_ready.8 scsi_start.8 scsi_stop.8 \
 		sg3_utils.8 sg_format.8 sg_get_config.8 sg_get_lba_status.8 \
