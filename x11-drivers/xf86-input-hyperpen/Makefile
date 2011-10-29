@@ -13,6 +13,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org hyperpen input driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 
 .include <bsd.port.mk>

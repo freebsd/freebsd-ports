@@ -15,6 +15,7 @@ COMMENT=	X.Org tdfx display driver
 
 USE_GL=		gl
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xf86driproto videoproto xextproto glproto
 MAN4=		tdfx.4x

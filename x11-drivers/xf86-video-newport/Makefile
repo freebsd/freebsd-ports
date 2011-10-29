@@ -13,6 +13,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org newport display driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto
 MAN4=		newport.4x

@@ -13,6 +13,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 CONFIGURE_ARGS=	--with-hal-callouts-dir=${PREFIX}/libexec/hal/scripts
 USE_GMAKE=	yes

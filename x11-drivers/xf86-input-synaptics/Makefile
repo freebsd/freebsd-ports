@@ -15,6 +15,7 @@ COMMENT=	X.Org synaptics input driver
 
 CONFLICTS=	synaptics-[0-9]*
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack
 USE_XORG=	x11
 XORG_CAT=	driver

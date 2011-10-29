@@ -16,6 +16,7 @@ COMMENT=	X.Org openChrome display driver
 
 USE_GL=		gl
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto xf86driproto xextproto xvmc glproto
 MAN4=		openchrome.4x

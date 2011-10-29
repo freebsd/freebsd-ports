@@ -13,6 +13,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vesa display driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xextproto
 MAN4=		vesa.4x

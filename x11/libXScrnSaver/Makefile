@@ -15,6 +15,7 @@ COMMENT=	The XScrnSaver library
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto scrnsaverproto:both
 
+WITH_FBSD10_FIX=	yes
 MAN3=		Xss.3 \
 		XScreenSaverAllocInfo.3 \
 		XScreenSaverGetRegistered.3 \

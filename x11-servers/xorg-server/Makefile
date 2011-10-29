@@ -17,11 +17,11 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
-
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
 
 XORG_CAT=	xserver
 
+WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \

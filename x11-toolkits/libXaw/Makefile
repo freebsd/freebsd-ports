@@ -13,6 +13,7 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Athena Widgets library
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	lib
 USE_XORG=	printproto:both x11 xau xext xextproto xmu xp xpm xproto:both xt
 USE_GMAKE=	yes

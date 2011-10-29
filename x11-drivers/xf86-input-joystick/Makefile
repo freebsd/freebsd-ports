@@ -14,7 +14,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org joystick input driver
 
 XORG_CAT=	driver
-
+WITH_FBSD10_FIX=yes
 MAN4=		joystick.4x
 
 post-patch:

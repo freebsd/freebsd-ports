@@ -12,6 +12,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org tseng display driver
 
+WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto
 MAN4=		tseng.4x
