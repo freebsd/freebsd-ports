@@ -35,7 +35,6 @@ MAN3+=	Net::Amazon::Request::Sort.3
 MAN3+=	Net::Amazon::Request::TextStream.3
 MAN3+=	Net::Amazon::Request::Title.3
 MAN3+=	Net::Amazon::Request::UPC.3
-MAN3+=	Net::Amazon::Request::Wishlist.3
 MAN3+=	Net::Amazon::Response.3
 MAN3+=	Net::Amazon::Result::Seller.3
 MAN3+=	Net::Amazon::Result::Seller::Listing.3

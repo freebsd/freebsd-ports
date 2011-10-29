@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Framework for accessing amazon.com via SOAP and XML/HTTP
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
