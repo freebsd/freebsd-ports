@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	IO-Compress-Lzop
-PORTVERSION=	2.037
+PORTVERSION=	2.039
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Write lzop files/buffers
+COMMENT=	Write lzop files / buffers
 
 BUILD_DEPENDS=	p5-Compress-LZO>=0:${PORTSDIR}/archivers/p5-Compress-LZO \
-		p5-IO-Compress>=2.037:${PORTSDIR}/archivers/p5-IO-Compress
+		p5-IO-Compress>=2.039:${PORTSDIR}/archivers/p5-IO-Compress
 RUN_DEPENDS=	p5-Compress-LZO>=0:${PORTSDIR}/archivers/p5-Compress-LZO \
-		p5-IO-Compress>=2.037:${PORTSDIR}/archivers/p5-IO-Compress
+		p5-IO-Compress>=2.039:${PORTSDIR}/archivers/p5-IO-Compress
 
 PERL_CONFIGURE=	yes
 
