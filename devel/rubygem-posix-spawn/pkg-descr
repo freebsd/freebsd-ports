@@ -1,0 +1,3 @@
+A Ruby wrapper which uses posix_spawnp(2) for faster process spawning
+
+WWW:	https://github.com/rtomayko/posix-spawn
