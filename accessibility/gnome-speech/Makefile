@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libbonobo
 GNU_CONFIGURE=  yes
+WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
