@@ -28,6 +28,7 @@ DOCBOOK_VERSION=4.2
 
 CONFLICTS=	scrollkeeper-[0-9]*
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack libxslt

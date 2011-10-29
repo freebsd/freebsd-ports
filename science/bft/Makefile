@@ -17,6 +17,7 @@ COMMENT=	Code_Saturne Base Functions and Types library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

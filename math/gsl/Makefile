@@ -25,6 +25,7 @@ LICENSE=	GPLv3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
+WITH_FBSD10_FIX=yes
 
 MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
 MAN3=		gsl.3

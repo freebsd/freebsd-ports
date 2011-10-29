@@ -15,6 +15,7 @@ COMMENT=	GObject collection library
 
 BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspection
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GMAKE=	yes

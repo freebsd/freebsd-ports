@@ -19,5 +19,6 @@ COMMENT=	Client library and basic utilities for RADIUS AAA
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+WITH_FBSD10_FIX=yes
 
 .include <bsd.port.mk>

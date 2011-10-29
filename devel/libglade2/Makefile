@@ -18,6 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)

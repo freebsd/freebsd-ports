@@ -14,6 +14,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/petdance/tidyp/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A library and program to validate and fix HTML
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

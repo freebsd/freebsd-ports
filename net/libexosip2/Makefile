@@ -16,6 +16,7 @@ COMMENT=	GPL library that extends the capability of the oSIP library
 
 LIB_DEPENDS=	osip2:${PORTSDIR}/net/libosip
 
+WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-tools --disable-debug --disable-trace
 USE_LDCONFIG=	yes
