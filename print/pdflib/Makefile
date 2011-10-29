@@ -16,6 +16,7 @@ COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	many odd restrictions on usage and distribution
 
+WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

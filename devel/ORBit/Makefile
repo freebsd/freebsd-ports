@@ -15,6 +15,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	High-performance CORBA ORB with support for the C language
 
+WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib12

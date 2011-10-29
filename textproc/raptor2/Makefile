@@ -19,6 +19,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \

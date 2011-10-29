@@ -17,6 +17,7 @@ COMMENT=	ID3 tags library (part of MAD project)
 
 LICENSE=	GPLv2
 
+WITH_FBSD10_FIX=yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
