@@ -18,6 +18,7 @@ LICENSE_COMB=	dual
 
 CONFIGURE_ARGS=	--disable-nls --with-readline --with-ui
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
@@ -32,5 +33,9 @@ MAN4_HU=	hunspell.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
+
+pre-build:
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WKRSRC}/configure ${WRKSRC}/config.h.in	
 
 .include <bsd.port.mk>

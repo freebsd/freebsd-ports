@@ -18,6 +18,7 @@ COMMENT=	A C library for writing XML 1.0/1.1 files or streams
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

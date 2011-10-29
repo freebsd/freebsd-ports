@@ -15,6 +15,7 @@ COMMENT=	The Chewing intelligent phonetic input method library
 
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 
