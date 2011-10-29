@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icontasks
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -17,6 +17,7 @@ COMMENT=	Modified version of KDE SC taskbar applet and taskmanager library
 
 LIB_DEPENDS=	dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt
 
+USE_GETTEXT=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus moc_build qmake_build rcc_build uic_build
