@@ -43,7 +43,16 @@ CPPFLAGS+=	-DGNUSTEP
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
-BROKEN=		does not compile on 9.X
+V:=	42
+_GCC_BUILD_DEPENDS:=	gcc${V}
+_GCC_PORT_DEPENDS:=	gcc${V}
+CC:=			gcc${V}
+CXX:=			g++${V}
+CPP:=			cpp${V}
+LDFLAGS+=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+LDFLAGS+=	-L${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 .endif
 
 .if (${ARCH} == i386) || (${ARCH} == i486)
