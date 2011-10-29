@@ -25,17 +25,17 @@
  libobjcxx.so.$(VERSION): libobjc.so.$(VERSION) $(OBJCXX_OBJECTS)
  	@echo Linking shared Objective-C++ runtime library...
 -	@$(CXX) -Wl,-shared -o $@ $(OBJCXX_OBJECTS) -lobjc
-+	$(LD) -shared -o $@ $(OBJCXX_OBJECTS) -lobjc
++	$(LD) $(LDFLAGS) -shared -o $@ $(OBJCXX_OBJECTS) -lobjc
  
  libobjc.so.$(VERSION): $(OBJECTS)
  	@echo Linking shared Objective-C runtime library...
 -	@ld -shared -o $@ $(OBJECTS)
-+	$(LD) -shared -o $@ $(OBJECTS)
++	$(LD) $(LDFLAGS) -shared -o $@ $(OBJECTS)
  
  libobjc.a: $(OBJECTS)
  	@echo Linking static Objective-C runtime library...
 -	@ld -r -s -o $@ $(OBJECTS)
-+	$(LD) -r -s -o $@ $(OBJECTS)
++	$(LD) $(LDFLAGS) -r -s -o $@ $(OBJECTS)
  
  .cc.o:
  	@echo Compiling `basename $<`...
