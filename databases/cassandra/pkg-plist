@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/cassandra-cli
 bin/nodetool
+bin/sstableloader
+bin/repaircluster
 %%DATADIR%%/CHANGES.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
@@ -14,6 +16,7 @@ bin/nodetool
 %%DATADIR%%/bin/sstable2json
 %%DATADIR%%/bin/sstablekeys
 %%DATADIR%%/bin/sstableloader
+%%DATADIR%%/bin/repaircluster
 %%DATADIR%%/conf/README.txt
 %%DATADIR%%/conf/access.properties.sample
 %%DATADIR%%/conf/cassandra-env.sh
@@ -1554,6 +1557,7 @@ bin/nodetool
 %%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
+%%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
 %%DATADIR%%/lib/antlr-3.2.jar
 %%DATADIR%%/lib/apache-cassandra-0.8.7.jar
 %%DATADIR%%/lib/apache-cassandra-thrift-0.8.7.jar

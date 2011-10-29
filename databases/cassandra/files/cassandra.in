@@ -37,7 +37,7 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 cassandra_enable=${cassandra_enable:-"NO"}
-cassandra_vmargs=${cassandra_vmargs:-"-XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:+CMSIncrementalDutyCycle=10"}
+cassandra_vmargs=${cassandra_vmargs:-"-ea -javaagent:%%DATADIR%%/lib/jamm-0.2.2.jar -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:+CMSIncrementalDutyCycle=10"}
 cassandra_memory=${cassandra_memory:-"1000m"}
 cassandra_newgen=${cassandra_newgen:-"300m"}
 command=%%DATADIR%%/bin/cassandra
