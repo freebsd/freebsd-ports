@@ -17,6 +17,7 @@ COMMENT=	Open source implementation of the OBEX protocol
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack
 MAKE_JOBS_SAFE=	yes
 

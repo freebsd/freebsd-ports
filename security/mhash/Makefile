@@ -17,6 +17,7 @@ COMMENT=	An easy-to-use library for strong hashes such as MD5 and SHA1
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 CONFIGURE_ARGS+=	--enable-static --with-gnu-ld
 
 MAN3=		mhash.3

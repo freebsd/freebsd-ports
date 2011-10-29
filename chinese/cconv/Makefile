@@ -15,6 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified-Traditional Chinese conversion tool
 
 GNU_CONFIGURE=	yes
+WITH_FBSD10_FIX=yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
