@@ -304,6 +304,7 @@
     SUBDIR += zenpack-devicesearch
     SUBDIR += zenpack-graphportlet
     SUBDIR += zenpack-interfacegraphs
+    SUBDIR += zenpack-libvirt
     SUBDIR += zenpack-macreport
 
 .include <bsd.port.subdir.mk>
