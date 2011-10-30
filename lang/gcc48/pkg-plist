@@ -3,11 +3,17 @@ bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+bin/%%GNU_HOST%%-gcc-ar%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-nm%%SUFFIX%%
+bin/%%GNU_HOST%%-gcc-ranlib%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
+bin/gcc-ar%%SUFFIX%%
+bin/gcc-nm%%SUFFIX%%
+bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
