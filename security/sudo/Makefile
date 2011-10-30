@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.3p1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
