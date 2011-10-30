@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby_parser
-PORTVERSION=	2.0.6
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
