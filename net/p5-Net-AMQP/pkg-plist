@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Net/AMQP.pm
+%%SITE_PERL%%/Net/AMQP/Common.pm
+%%SITE_PERL%%/Net/AMQP/Frame.pm
+%%SITE_PERL%%/Net/AMQP/Frame/Body.pm
+%%SITE_PERL%%/Net/AMQP/Frame/Header.pm
+%%SITE_PERL%%/Net/AMQP/Frame/Heartbeat.pm
+%%SITE_PERL%%/Net/AMQP/Frame/Method.pm
+%%SITE_PERL%%/Net/AMQP/Frame/OOBBody.pm
+%%SITE_PERL%%/Net/AMQP/Frame/OOBHeader.pm
+%%SITE_PERL%%/Net/AMQP/Frame/OOBMethod.pm
+%%SITE_PERL%%/Net/AMQP/Frame/Trace.pm
+%%SITE_PERL%%/Net/AMQP/Protocol.pm
+%%SITE_PERL%%/Net/AMQP/Protocol/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/AMQP/.packlist
+@dirrmtry %%SITE_PERL%%/Net/AMQP/Protocol
+@dirrmtry %%SITE_PERL%%/Net/AMQP/Frame
+@dirrmtry %%SITE_PERL%%/Net/AMQP
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/AMQP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

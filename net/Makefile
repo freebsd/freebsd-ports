@@ -515,6 +515,7 @@
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Jifty-Plugin-Authentication-Ldap
     SUBDIR += p5-Net
+    SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-ARP
     SUBDIR += p5-Net-Address-Ethernet
     SUBDIR += p5-Net-Address-IPv4-Local
