@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Extract-Libarchive
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
