@@ -160,12 +160,13 @@ _GCC_MIN2:=	true
 _GCC_FOUND:=	${_GCCVERSION_${v}_V}
 .  endif
 . endfor
-.endif
-.if defined(_GCC_FOUND)
+
+. if defined(_GCC_FOUND)
 _USE_GCC:=	${_GCC_FOUND}
-.elif ${_USE_GCC} < ${GCC_DEFAULT_VERSION}
+. elif ${_USE_GCC} < ${GCC_DEFAULT_VERSION}
 _USE_GCC:=	${GCC_DEFAULT_VERSION}
-.endif
+. endif
+.endif # defined(_GCC_ORLATER)
 
 .endif # defined(USE_GCC)
 
