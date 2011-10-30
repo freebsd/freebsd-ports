@@ -1309,6 +1309,7 @@ bxpkg                           ports/ports-mgmt/bxpkg
 byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
 byobu                           ports/sysutils/byobu
+bzapi                           ports/devel/bzapi
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-builder                     ports/devel/bzr-builder
@@ -5391,6 +5392,7 @@ horde4-ingo                     ports/mail/horde4-ingo
 horde4-kronolith                ports/deskutils/horde4-kronolith
 horde4-mnemo                    ports/deskutils/horde4-mnemo
 horde4-nag                      ports/deskutils/horde4-nag
+horde4-passwd                   ports/www/horde4-passwd
 horde4-timeobjects              ports/devel/horde4-timeobjects
 horde4-turba                    ports/mail/horde4-turba
 horde4-webmail                  ports/mail/horde4-webmail
@@ -11871,6 +11873,7 @@ p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
 p5-Data-Validator               ports/devel/p5-Data-Validator
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
 p5-Data-Visitor-Encode          ports/devel/p5-Data-Visitor-Encode
+p5-Data-Walk                    ports/devel/p5-Data-Walk
 p5-Date-Business                ports/devel/p5-Date-Business
 p5-Date-Calc                    ports/devel/p5-Date-Calc
 p5-Date-Calc-Iterator           ports/devel/p5-Date-Calc-Iterator
@@ -13202,6 +13205,7 @@ p5-Mojolicious-Plugin-Database  ports/www/p5-Mojolicious-Plugin-Database
 p5-Mojolicious-Plugin-Mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
+p5-Monitor-Simple               ports/sysutils/p5-Monitor-Simple
 p5-Moo                          ports/devel/p5-Moo
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
@@ -14129,6 +14133,7 @@ p5-Sledge-Plugin-SessionAutoCleanup  ports/www/p5-Sledge-Plugin-SessionAutoClean
 p5-Sledge-Plugin-XSLT           ports/www/p5-Sledge-Plugin-XSLT
 p5-Sledge-SessionManager-CookieStore  ports/www/p5-Sledge-SessionManager-CookieStore
 p5-Sledge-Template-Expr         ports/www/p5-Sledge-Template-Expr
+p5-Slurp                        ports/devel/p5-Slurp
 p5-Smart-Comments               ports/devel/p5-Smart-Comments
 p5-Snort-Rule                   ports/security/p5-Snort-Rule
 p5-Socket-Class                 ports/net/p5-Socket-Class
@@ -16150,6 +16155,7 @@ p5-data-validate-uri            ports/www/p5-Data-Validate-URI
 p5-data-validator               ports/devel/p5-Data-Validator
 p5-data-visitor                 ports/devel/p5-Data-Visitor
 p5-data-visitor-encode          ports/devel/p5-Data-Visitor-Encode
+p5-data-walk                    ports/devel/p5-Data-Walk
 p5-date-business                ports/devel/p5-Date-Business
 p5-date-calc                    ports/devel/p5-Date-Calc
 p5-date-calc-iterator           ports/devel/p5-Date-Calc-Iterator
@@ -17604,6 +17610,7 @@ p5-mojolicious-plugin-mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-mongodb                      ports/databases/p5-MongoDB
+p5-monitor-simple               ports/sysutils/p5-Monitor-Simple
 p5-moo                          ports/devel/p5-Moo
 p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
@@ -18499,6 +18506,7 @@ p5-sledge-plugin-sessionautocleanup  ports/www/p5-Sledge-Plugin-SessionAutoClean
 p5-sledge-plugin-xslt           ports/www/p5-Sledge-Plugin-XSLT
 p5-sledge-sessionmanager-cookiestore  ports/www/p5-Sledge-SessionManager-CookieStore
 p5-sledge-template-expr         ports/www/p5-Sledge-Template-Expr
+p5-slurp                        ports/devel/p5-Slurp
 p5-smart-comments               ports/devel/p5-Smart-Comments
 p5-sms-send                     ports/comms/p5-SMS-Send
 p5-sms-send-devicegsm           ports/comms/p5-SMS-Send-DeviceGsm
@@ -23721,6 +23729,7 @@ rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
 rubygem-ai4r                    ports/science/rubygem-ai4r
+rubygem-albino                  ports/textproc/rubygem-albino
 rubygem-allison                 ports/devel/rubygem-allison
 rubygem-amalgalite              ports/databases/rubygem-amalgalite
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
@@ -23890,6 +23899,7 @@ rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json146                 ports/devel/rubygem-json146
 rubygem-json_pure               ports/devel/rubygem-json_pure
+rubygem-kramdown                ports/textproc/rubygem-kramdown
 rubygem-kwalify                 ports/textproc/rubygem-kwalify
 rubygem-larch                   ports/mail/rubygem-larch
 rubygem-launchy                 ports/devel/rubygem-launchy
@@ -23954,6 +23964,7 @@ rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-nokogiri                ports/textproc/rubygem-nokogiri
 rubygem-notify                  ports/devel/rubygem-notify
 rubygem-oauth                   ports/net/rubygem-oauth
+rubygem-oauth2                  ports/net/rubygem-oauth2
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-ogginfo                 ports/audio/rubygem-ogginfo
 rubygem-ohai                    ports/sysutils/rubygem-ohai
@@ -23975,6 +23986,7 @@ rubygem-platform                ports/devel/rubygem-platform
 rubygem-polyglot                ports/devel/rubygem-polyglot
 rubygem-pony                    ports/mail/rubygem-pony
 rubygem-popen4                  ports/devel/rubygem-popen4
+rubygem-posix-spawn             ports/devel/rubygem-posix-spawn
 rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-prawn-core              ports/print/rubygem-prawn-core
 rubygem-prawn-flexible-table    ports/print/rubygem-prawn-flexible-table
@@ -25933,7 +25945,6 @@ tuc                             ports/converters/tuc
 tucan                           ports/net/tucan
 tulip                           ports/graphics/tulip
 tumble                          ports/graphics/tumble
-tumbler                         ports/graphics/tumbler
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
@@ -27881,8 +27892,10 @@ zendoptimizer                   ports/devel/ZendOptimizer
 zenity                          ports/x11/zenity
 zenmap                          ports/security/zenmap
 zenoss                          ports/net-mgmt/zenoss
+zenpack-apachemonitor           ports/net-mgmt/zenpack-apachemonitor
 zenpack-dellmon                 ports/net-mgmt/zenpack-dellmon
 zenpack-deviceadvdetail         ports/net-mgmt/zenpack-deviceadvdetail
+zenpack-devicesearch            ports/net-mgmt/zenpack-devicesearch
 zenpack-interfacegraphs         ports/net-mgmt/zenpack-interfacegraphs
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
