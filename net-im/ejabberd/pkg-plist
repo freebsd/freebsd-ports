@@ -4,6 +4,7 @@
 @unexec if cmp -s %D/%%ETCDIR%%/%%PORTNAME%%.defaults.example %D/%%ETCDIR%%/%%PORTNAME%%.defaults; then rm -f %D/%%ETCDIR%%/%%PORTNAME%%.defaults; fi
 @unexec if cmp -s %D/%%ETCDIR%%/%%PORTNAME%%.inetrc.example %D/%%ETCDIR%%/%%PORTNAME%%.inetrc; then rm -f %D/%%ETCDIR%%/%%PORTNAME%%.inetrc; fi
 @exec [ ! -f %D/%%ETCDIR%%/%%PORTNAME%%.inetrc ] && cp %D/%%ETCDIR%%/%%PORTNAME%%.inetrc.example %D/%%ETCDIR%%/%%PORTNAME%%.inetrc
+%%PAM%%etc/pam.d/%%PORTNAME%%
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
@@ -14,6 +15,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_anonymous.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_digest.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_plain.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_scram.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/dynamic_compile.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.app
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.beam
@@ -43,6 +45,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_local.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_logger_h.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_loglevel.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_node_groups.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_piefxis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_rdbms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_receiver.beam
@@ -61,18 +65,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_update.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_zlib.beam
-%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc.beam
-%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc_sup.beam
-%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/odbc_queries.beam
-%%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam.beam
-%%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
-%%PAM%%etc/pam.d/%%PORTNAME%%
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter_yecc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_pool.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_utils.beam
+%%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/extauth.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_iq_handler.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_mod.beam
@@ -147,6 +146,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_dag.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_tree.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_tree_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_virtual.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/odbc_queries.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_fsm.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_mnesia.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pg2_backport.beam
@@ -155,6 +155,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_index.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/scram.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shaper.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep.beam
@@ -184,6 +185,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/%%PORTNAME%%_http.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/%%PORTNAME%%_web_admin.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/http_bind.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/captcha.sh
+%%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/%%PORTNAME%%_zlib_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/expat_erl.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/iconv_erl.so
@@ -220,7 +222,6 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/dev.html
 %%PORTDOCS%%%%DOCSDIR%%/discorus.png
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
-%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/msrl-dit-deep.png
 %%PORTDOCS%%%%DOCSDIR%%/msrl-dit-flat.png
@@ -250,6 +251,7 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.6.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.7.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.8.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.9.txt
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
