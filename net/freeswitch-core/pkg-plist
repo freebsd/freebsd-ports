@@ -312,6 +312,8 @@ lib/freeswitch/mod/mod_esf.so
 %%WITH_MODMULTICAST%%lib/freeswitch/mod/mod_event_multicast.so
 lib/freeswitch/mod/mod_event_socket.la
 lib/freeswitch/mod/mod_event_socket.so
+%%WITH_MODEVENTZMQ%%lib/freeswitch/mod/mod_event_zmq.la
+%%WITH_MODEVENTZMQ%%lib/freeswitch/mod/mod_event_zmq.so
 lib/freeswitch/mod/mod_expr.la
 lib/freeswitch/mod/mod_expr.so
 lib/freeswitch/mod/mod_fifo.la
