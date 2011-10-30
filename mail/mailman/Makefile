@@ -100,7 +100,7 @@ MAIL_GID?=	mail
 defined(WITH_COURIER)
 IGNORE=	can only have one MTA selected to integrate with
 .endif
-MAIL_GID?=	mailman
+MAIL_GID?=	nobody
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
