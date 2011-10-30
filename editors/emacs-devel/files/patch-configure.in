@@ -53,12 +53,3 @@ $FreeBSD$
 
  AC_MSG_CHECKING(if personality LINUX32 can be set)
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/personality.h>]], [[personality (PER_LINUX32)]])],
-@@ -1369,7 +1340,7 @@ dnl check for GNU Make if we have GCC an
- if test "$GCC" = yes && test "$ac_enable_autodepend" = yes; then
-    AC_MSG_CHECKING([whether we are using GNU Make])
-    HAVE_GNU_MAKE=no
--   testval=`make --version 2>/dev/null | grep 'GNU Make'`
-+   testval=`${MAKE:-make} --version 2>/dev/null | grep 'GNU Make'`
-    if test "x$testval" != x; then
-       HAVE_GNU_MAKE=yes
-    else
