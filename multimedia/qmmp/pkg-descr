@@ -1,18 +1,24 @@
 This program is an audio-player, written with help of Qt library.
-Its user interface is similar to winamp or xmms.
-
-features:
-	Last.fm scrobbler, D-Bus, Spectrum Analyzer, sample rate conversion,
-	streaming (MP3, Vorbis via IceCast/ShoutCast), projectm visualization,
-	device detection, MPRIS, global hotkey, video playback using Mplayer,
-	Bauer Stereophonic-to-Binaural DSP, projectM audio visulaliser,
-	lyrics (from LyricWiki.orig), and all skins for winamp and/or xmms
-input plugins:
-	MPEG1 layer 1/2/3, Ogg Vorbis, native FLAC, Musepack, WavePack,
-	ModPlug, WMA (and other formats provided by FFmpeg library), PCM WAVE,
-	AAC, CD audio and CUE (including flac, WavPack embeded cue)
-output plugins:
-	PulseAudio, OSS and Jack
-
-WWW: http://qmmp.ylsoftware.com/
-or http://code.google.com/p/qmmp/
+Supported formats:
+	MPEG1 layer 2/3, Ogg Vorbis, Native FLAC, Ogg FLAC, Musepack, WavePack,
+	tracker modules (mod, s3m, it, xm, etc.), ADTS AAC, CD Audio, MIDI,
+	WMA-Monkey's Audio (and other formats provided by FFmpeg library),
+	PCM Wave (and other formats provided by libsndfile library), and
+	chiptune formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
+DSP effects:
+	Bauer Stereophonic-to-Binaural effect, sample rate conversion,
+    LADSPA effects, extra stereo effect, and crossfade effect
+Visual effects:
+	Spectrum Analyzer, and projectM audio visulaliser
+Output system support:
+	PulseAudio, OSS, OSS4, jack, and ALSA
+Other features:
+	10-band equalizer, Last.fm/Libre.fm scrobbler, MMS support, global hotkey,
+	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast), CDDB support,
+	removable device detection (via HAL or UDisks), MPRIS, cover art support,
+	multiple playlists, ReplayGain support, CUE sheet support,
+	embedded CUE support (for FLAC and WavPack), MPRIS (1.0 and 2.0),
+	automatic charset detection for cue files and ShoutCast metadata,
+	video playback via Mplayer, lyrics (using lyrics.wikia.com), and
+	skinned UI (supports all skins for XMMS and Winamp 2.x)
+WWW: http://qmmp.ylsoftware.com/ or http://code.google.com/p/qmmp/
