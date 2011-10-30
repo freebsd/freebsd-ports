@@ -480,6 +480,7 @@
     SUBDIR += p5-AnyEvent-RabbitMQ
     SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-AnyEvent-Twitter-Stream
+    SUBDIR += p5-AnyMQ-AMQP
     SUBDIR += p5-Apache2-SOAP
     SUBDIR += p5-BBS-Client
     SUBDIR += p5-BBS-UserInfo

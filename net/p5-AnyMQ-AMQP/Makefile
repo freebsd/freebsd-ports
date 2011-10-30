@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-AnyMQ-AMQP
+# Date created:		2011-10-29
+# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	AnyMQ-AMQP
+PORTVERSION=	0.30
+CATEGORIES=	net devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:CLKAO
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	AMQP binding for AnyMQ
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-AnyMQ>=0:${PORTSDIR}/devel/p5-AnyMQ \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-AnyEvent-RabbitMQ>=0:${PORTSDIR}/net/p5-AnyEvent-RabbitMQ \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+
+TEST_DEPENDS=	${RUN_DEPENDS}
+PERL_CONFIGURE=	yes
+
+MAN3=		AnyMQ::AMQP.3
+
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+.endif
+
+.include <bsd.port.mk>
