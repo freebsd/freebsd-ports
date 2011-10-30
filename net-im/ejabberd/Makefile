@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.1.8
-PORTREVISION=	2
+PORTVERSION=	2.1.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
@@ -39,9 +41,6 @@ SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} \
 		USERS=${USERS} GROUPS=${GROUPS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
 .include <bsd.port.pre.mk>
 
