@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Geo-Coder-Google
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Maps Geocoding API
 
 BUILD_DEPENDS=	p5-JSON>=2.27:${PORTSDIR}/converters/p5-JSON \
