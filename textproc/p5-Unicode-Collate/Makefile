@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-Collate
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	textproc converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
