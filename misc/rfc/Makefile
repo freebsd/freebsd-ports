@@ -7,7 +7,7 @@
 
 PORTNAME=	rfc
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 
@@ -27,6 +27,7 @@ do-configure:
 		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap| ; \
 		s|400k|1024k| ; \
 		s|http://ftp.isi.edu/in-notes|http://www.ietf.org/rfc| ; \
+		s|http://www.iana|ftp://ftp.iana| ; \
 		s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
 do-install:
