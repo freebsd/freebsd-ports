@@ -116,6 +116,7 @@
     SUBDIR += ruby-irc
     SUBDIR += ruby-rica
     SUBDIR += ruby-rice
+    SUBDIR += rubygem-cinch
     SUBDIR += rubygem-net-irc
     SUBDIR += scrollz
     SUBDIR += sic
