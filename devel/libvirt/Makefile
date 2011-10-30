@@ -7,6 +7,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
