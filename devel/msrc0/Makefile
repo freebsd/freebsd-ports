@@ -9,15 +9,13 @@ PORTNAME=	msrc0
 PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
-		ftp://archive.progeny.com/pundits/
+		http://www.komquats.com/distfiles/ \
+		http://people.freebsd.org/~cy/distfiles/
+
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
-
-# Depended on by comms/conserver devel/mkcmd
-DEPRECATED=     Upstream disapeared and distfile is not available
-EXPIRATION_DATE=        2011-10-31
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/makeme
