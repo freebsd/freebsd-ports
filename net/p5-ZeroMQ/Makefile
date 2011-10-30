@@ -1,0 +1,44 @@
+# New ports collection makefile for:	ZeroMQ
+# Date created:		2011-10-26
+# Whom:			Andrej Zverev <az@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ZeroMQ
+PORTVERSION=	0.17
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:DMAKI
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	az@FreeBSD.org
+COMMENT=	A ZeroMQ2 wrapper for Perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+BUILD_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
+
+PERL_CONFIGURE=	yes
+
+MAN3=	\
+	ZeroMQ::Raw.3 \
+	ZeroMQ::Socket.3 \
+	ZeroMQ::Context.3 \
+	ZeroMQ.3 \
+	ZeroMQ::Constants.3 \
+	ZeroMQ::Poller.3 \
+	ZeroMQ::Message.3
+
+post-patch:
+	@${PERL} -pi -e "s/lib => 'zmq',//" ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.mk>

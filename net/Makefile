@@ -742,6 +742,7 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
     SUBDIR += p5-ZConf-Bookmarks
+    SUBDIR += p5-ZeroMQ
     SUBDIR += p5-perl-ldap
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
