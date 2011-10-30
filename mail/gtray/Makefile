@@ -17,6 +17,9 @@ COMMENT=	Tray applet that checks your GMail account status
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtktrayicon.so:${PORTSDIR}/x11/ruby-gtktrayicon \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 
+DEPRECATED=	Upcoming ruby-gnome update removes dependencies
+EXPIRATION_DATE=2011-11-30
+
 USE_RUBY=	yes
 USE_GNOME=	gtk20
 NO_BUILD=	yes
