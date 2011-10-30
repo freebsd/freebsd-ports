@@ -1,0 +1,31 @@
+$FreeBSD$
+
+From bugs.freebsd.org/154809
+
+Porttools will now include PORTREVISION and PORTEPOCH in PRs sent
+
+--- cmd_submit.in.old	2011-02-15 12:55:54.000000000 -0800
++++ cmd_submit.in	2011-02-15 12:59:51.000000000 -0800
+@@ -146,6 +146,7 @@
+ # Collect information about the port
+ PORTNAME="`make -V PKGNAMEPREFIX``make -V PORTNAME``make -V PKGNAMESUFFIX`"
+ PORTVERSION="`make -V PORTVERSION`"
++PORTREVISION="`make -V PORTREVISION`"
+ PKGNAME="`make -V PKGNAME`"
+ CATEGORY="`make -V CATEGORIES | sed -E 's/^([^ ]+).*$/\1/'`"
+ MAINTAINER="`make -V MAINTAINER`"
+@@ -194,8 +195,14 @@
+ 		# Override some parameters if submitting an update to a newer
+ 		# version of an existing port
+ 		CLASS="update"
++        if [ "${PORTREVISION}" = "0" ]
++        then
+ 		SUFFIX="update to ${PORTVERSION}"
+ 		DESCRIPTION="- Update to ${PORTVERSION}"
++        else
++            SUFFIX="update to ${PORTVERSION}_${PORTREVISION}"
++            DESCRIPTION="- Update to ${PORTVERSION}_${PORTREVISION}"
++        fi
+ 	fi
+ 	
+ 	# Check to see if maintainership was requested
