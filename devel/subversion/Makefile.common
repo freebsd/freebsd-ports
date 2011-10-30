@@ -15,6 +15,7 @@ DIST_SUBDIR=	subversion17
 MASTER_SITE_SUBDIR=subversion/:main
 
 MAKE_JOBS_SAFE=	yes
+WITH_FBSD10_FIX=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
