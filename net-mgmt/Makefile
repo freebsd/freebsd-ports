@@ -300,6 +300,7 @@
     SUBDIR += zenpack-apachemonitor
     SUBDIR += zenpack-checkping
     SUBDIR += zenpack-dellmon
+    SUBDIR += zenpack-dellmonitor
     SUBDIR += zenpack-deviceadvdetail
     SUBDIR += zenpack-devicesearch
     SUBDIR += zenpack-graphportlet
