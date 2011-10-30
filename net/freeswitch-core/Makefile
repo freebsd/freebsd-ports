@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	freeswitch-core
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.7.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://dl.dropbox.com/u/152504/ \
 		http://files.freeswitch.org/downloads/libs/:2 \
-		http://download.zeromq.org/historic/:3
+		http://download.zeromq.org/:3
 DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 		opus-0.9.0.tar.gz:2 \
 		celt-0.10.0.tar.gz:2 \
-		flite-1.3.99-latest.tar.gz:2 \
+		flite-1.5.1-current.tar.bz2:2 \
 		json-c-0.9.tar.gz:2 \
 		lame-3.98.4.tar.gz:2 \
 		libmemcached-0.32.tar.gz:2 \
@@ -23,9 +23,10 @@ DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 		mpg123-1.13.2.tar.gz:2 \
 		openldap-2.4.11.tar.gz:2 \
 		pocketsphinx-0.7.tar.gz:2 \
-		soundtouch-1.5.0.tar.gz:2 \
+		soundtouch-1.6.0.tar.gz:2 \
 		sphinxbase-0.7.tar.gz:2 \
-		communicator_semi_6000_20080321.tar.gz:2
+		communicator_semi_6000_20080321.tar.gz:2 \
+		zeromq-2.1.10.tar.gz:3
 DIST_SUBDIR=	${BASE_PORTNAME}
 EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 
@@ -95,7 +96,7 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODEASYROUTE	"Enable mod_easyroute(routing tool)" on \
 		MODERLANGEVENT  "Enable mod_erlang_event (Call Center Dist)" off \
 		MODLCR		"Enable mod_lcr (least cost routing)" on \
-		MODSOUNDTOUCH	"Enable mod_soundtouch(Audio Effects)" off \
+		MODSOUNDTOUCH	"Enable mod_soundtouch(Audio Effects)" on \
 		MODRSS		"Enable mod_rss (rss feed reader)" on \
 		MODSNOM		"Enable mod_snom (snom control)" on \
 		MODAVMD		"Enable mod_avmd (Adavced v-mail detection)" on \
@@ -141,15 +142,13 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODDPASTERISK	"Enable mod_dialplan_asterisk(* dialplan)" off \
 		MODBLACKLIST	"Enable mod_blacklist(Black list numbers)" on \
 		MODHTTPCACHE	"Enable mod_http_cache(new)" on \
+		MODEVENTZMQ     "Enable mod_event_zmq(build issues)(new)" on \
 		SAMPLECONFIGS	"Enable Sample Configurations" on
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
-. if defined(WITH_MODSOUNDTOUCH)
-IGNORE=		MODSOUNDTOUCH is broken on amd64, run make config and deselect
-. endif
 .endif
 
 .for i in MODFLITE MODPOCKETSPHINX MODCIDLOOKUP MODDPDIRECTORY MODEASYROUTE MODLCR MODSOUNDTOUCH MODRSS \
@@ -157,7 +156,7 @@ IGNORE=		MODSOUNDTOUCH is broken on amd64, run make config and deselect
 	MODSAYDE MODSAYEN MODSAYES MODSAYFR MODSAYHE MODSAYHU MODSAYIT MODSAYNL MODSAYRU MODSAYTH MODSAYZH \
 	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPASTREAM MODSHELLSTREAM 	MODSILK MODUNIMRCP \
 	MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS MODCALLCENTER MODCODEC2 MODFSK MODOPUS \
-	MODDPASTERISK MODRTMP SAMPLECONFIGS MODBLACKLIST MODHTTPCACHE
+	MODDPASTERISK MODRTMP SAMPLECONFIGS MODBLACKLIST MODHTTPCACHE MODEVENTZMQ
 .if !defined(WITH_${i})
 PLIST_SUB+=	WITH_${i}="@comment "
 .else
@@ -252,6 +251,7 @@ BROKEN=	Requires lrintl, which is not present on FreeBSD 7
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/${DIST_SUBDIR}/|g' ${WRKSRC}/build/getlib.sh.in
+	@${REINPLACE_CMD} -e 's|2.1.9|2.1.10|g' ${WRKSRC}/src/mod/event_handlers/mod_event_zmq/Makefile
 .if !defined(WITH_SAMPLECONFIGS)
 	@${REINPLACE_CMD} -e 's|$$(MAKE) samples-conf|##$$(MAKE) samples-conf|g' ${WRKSRC}/Makefile.am
 .endif
@@ -324,6 +324,9 @@ post-configure:
 .endif
 .if !defined(WITH_MODDPASTERISK)
 	@${REINPLACE_CMD} -e 's|dialplans/mod_dialplan_asterisk|#dialplans/mod_dialplan_asterisk|g' ${WRKSRC}/modules.conf
+.endif
+.if defined(WITH_MODEVENTZMQ)
+	@${REINPLACE_CMD} -e 's|#event_handlers/mod_event_zmq|event_handlers/mod_event_zmq|g' ${WRKSRC}/modules.conf
 .endif
 
 pre-install:
