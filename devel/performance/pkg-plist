@@ -1,5 +1,7 @@
 GNUstep/Local/Library/Documentation/Performance/GSCache.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSCache.html
+GNUstep/Local/Library/Documentation/Performance/GSFIFO.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSFIFO.html
 GNUstep/Local/Library/Documentation/Performance/GSIOThreadPool.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSIOThreadPool.html
 GNUstep/Local/Library/Documentation/Performance/GSLinkedList.gsdoc
@@ -16,6 +18,7 @@ GNUstep/Local/Library/Documentation/Performance/GSTicker.html
 GNUstep/Local/Library/Documentation/Performance/Performance.igsdoc
 GNUstep/Local/Library/Documentation/Performance/dependencies
 GNUstep/Local/Library/Headers/Performance/GSCache.h
+GNUstep/Local/Library/Headers/Performance/GSFIFO.h
 GNUstep/Local/Library/Headers/Performance/GSIOThreadPool.h
 GNUstep/Local/Library/Headers/Performance/GSLinkedList.h
 GNUstep/Local/Library/Headers/Performance/GSSkipMutableArray.h
@@ -24,6 +27,6 @@ GNUstep/Local/Library/Headers/Performance/GSThroughput.h
 GNUstep/Local/Library/Headers/Performance/GSTicker.h
 GNUstep/Local/Library/Libraries/libPerformance.so
 GNUstep/Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%
-GNUstep/Local/Library/Libraries/libPerformance.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%.0
 @dirrm GNUstep/Local/Library/Headers/Performance
 @dirrm GNUstep/Local/Library/Documentation/Performance
