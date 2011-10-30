@@ -301,6 +301,7 @@
     SUBDIR += zenpack-dellmon
     SUBDIR += zenpack-deviceadvdetail
     SUBDIR += zenpack-devicesearch
+    SUBDIR += zenpack-graphportlet
     SUBDIR += zenpack-interfacegraphs
     SUBDIR += zenpack-macreport
 
