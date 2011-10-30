@@ -27,7 +27,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.0.90
-EMACS_REV=	106087
+EMACS_REV=	106240
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
