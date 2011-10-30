@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	staticmatic
-PORTVERSION=	0.10.8
+PORTVERSION=	0.11.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,8 @@ COMMENT=	Manage static websites using Haml and Sass
 
 RUN_DEPENDS=	rubygem-haml>=2.0.0:${PORTSDIR}/www/rubygem-haml \
 		rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel \
-		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
+		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-compass>=0.10.0:${PORTSDIR}/textproc/rubygem-compass
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
