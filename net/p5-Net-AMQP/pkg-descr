@@ -1,0 +1,9 @@
+This module implements the frame (de)serialization and representation
+of the Advanced Message Queue Protocol (http://www.amqp.org/).
+
+It is to be used in conjunction with client or server software that
+does the actual TCP/IP communication. While it's being written with
+AMQP version 0-8 in mind, as the spec is defined by an external xml
+file, support for 0-9, 0-9-1 and eventually 0-10 is hoped for.
+
+WWW:	http://search.cpan.org/dist/Net-AMQP/
