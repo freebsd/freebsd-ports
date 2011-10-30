@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	3.3.6
-PORTREVISION=	1
+PORTVERSION=	3.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
 PKGNAMEPREFIX=	ro-
