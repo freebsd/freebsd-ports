@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbrainy
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
