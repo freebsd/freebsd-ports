@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
