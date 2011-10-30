@@ -1,0 +1,16 @@
+AnyEvent::RabbitMQ is an AMQP(Advanced Message Queuing Protocol) client
+library, that is intended to allow you to interact with AMQP-compliant
+message brokers/servers such as RabbitMQ in an asynchronous fashion.
+
+You can use AnyEvent::RabbitMQ to -
+
+  * Declare and delete exchanges
+  * Declare, delete, bind and unbind queues
+  * Set QoS
+  * Publish, consume, get, ack, recover and reject messages
+  * Select, commit and rollback transactions
+
+AnyEvnet::RabbitMQ is known to work with RabbitMQ versions 2.5.1 and
+version 0-8 of the AMQP specification.
+
+WWW: http://search.cpan.org/dist/AnyEvent-RabbitMQ/
