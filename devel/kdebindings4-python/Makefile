@@ -30,8 +30,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/krosspython.so:${PORTSDIR}/devel/kdebindin
 .endif
 
 .if !defined(WITHOUT_PYKDE4)
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so:${PORTSDIR}/devel/kdebindings4-python-pykde4 \
-		${KDE4_PREFIX}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
+USE_KDE4+=	pykde4 pykdeuic4
 .endif
 
 do-install:
