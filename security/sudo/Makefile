@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.3p1
+PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
@@ -36,6 +37,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://sunsite.icm.edu.pl/packages/sudo/ \
 		ftp://mirror.cdmon.com/pub/sudo/ \
 		ftp://ftp.twaren.net/Unix/Security/Sudo/
+DISTFILES=	sudo-${PORTVERSION}p1${EXTRACT_SUFX}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -43,6 +45,7 @@ COMMENT=	Allow others to run commands as root
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 WITH_FBSD10_FIX=yes
+WRKSRC=	${WRKDIR}/${DISTFILES:S/${EXTRACT_SUFX}//}
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \
