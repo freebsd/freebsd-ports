@@ -12,13 +12,16 @@ CATEGORIES=	mail textproc
 MASTER_SITES=	http://www.glenbarber.us/ports/mail/${PORTNAME}/
 DISTFILES=	${PORTNAME}.${PORTVERSION} ${PORTNAME}_junkmail.cf
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
 		${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset
+
+DEPRECATED=	No upstream development since 2007
+EXPIRATION_DATE=	2011-12-01
 
 NO_BUILD=	yes
 
