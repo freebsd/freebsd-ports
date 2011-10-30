@@ -298,6 +298,7 @@
     SUBDIR += zabbix-server
     SUBDIR += zenoss
     SUBDIR += zenpack-apachemonitor
+    SUBDIR += zenpack-checkping
     SUBDIR += zenpack-dellmon
     SUBDIR += zenpack-deviceadvdetail
     SUBDIR += zenpack-devicesearch
