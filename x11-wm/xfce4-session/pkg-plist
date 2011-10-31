@@ -179,6 +179,7 @@ share/xfce4/tips/tips
 @dirrm lib/xfce4/session/splash-engines
 @dirrm lib/xfce4/session
 @dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
 @dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
 @dirrm include/xfce4/xfce4-session-%%VERSION%%
