@@ -140,6 +140,7 @@ ldap:*:389:
 tiarra:*:398:
 uhub:*:411:
 drweb:*:426:
+quasselcore:*:442:
 callweaver:*:444:
 courier:*:465:
 _bbstored:*:505:
