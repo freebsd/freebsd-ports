@@ -8,6 +8,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 		${MASTER_SITE_LOCAL} \
@@ -37,7 +38,8 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+BUILD_DEPENDS=	${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
+		xrdb:${PORTSDIR}/x11/xrdb
 
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
@@ -55,7 +57,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 
 CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.[0-6].*
 
-SUB_FILES=	kdm layout.js
+SUB_FILES=	kdm pkg-message
 USE_RC_SUBR=	kdm4
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -92,7 +94,8 @@ OPTIONS=	GPS "Support for GPS geolocation dataengine" on \
 		PHONON_GSTREAMER "GStreamer backend for Phonon (recommended)" on \
 		PHONON_VLC "VLC backend for Phonon" off \
 		PLASMA_PYTHON "Support for plasmoids written in Python" off \
-		PLASMA_RUBY "Support for plasmoids written in Ruby" off
+		PLASMA_RUBY "Support for plasmoids written in Ruby" off \
+		WALLPAPERS "Official KDE wallpapers" on
 
 .include <bsd.port.options.mk>
 
@@ -106,7 +109,8 @@ PLIST_SUB+=	GPS="@comment "
 .endif
 
 .if !defined(WITHOUT_PHONON_GSTREAMER)
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so:${PORTSDIR}/multimedia/phonon-gstreamer
+USE_GSTREAMER+=	core
+QT_COMPONENTS+=	phonon-gst_run
 .endif
 
 .if defined(WITH_PHONON_VLC)
@@ -119,6 +123,10 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_import
 
 .if defined(WITH_PLASMA_RUBY)
 RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:${PORTSDIR}/x11/plasma-scriptengine-ruby
+.endif
+
+.if !defined(WITHOUT_WALLPAPERS)
+RUN_DEPENDS+=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers
 .endif
 
 .include <bsd.port.pre.mk>
@@ -156,11 +164,13 @@ post-install:
 	${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config
 	${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
 	${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
-	${INSTALL_DATA} ${FILESDIR}/metadata.desktop ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper
-	${INSTALL_DATA} ${WRKDIR}/layout.js ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
+	${INSTALL_DATA} ${FILESDIR}/05-freebsdWallpaper.js ${PREFIX}/share/apps/plasma-desktop/init
 	cd ${WRKDIR}/stripes-freebsd-1.0 && \
 		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers
-	${CAT} ${PKGMESSAGE}
+.if defined(WITHOUT_PHONON_GSTREAMER)
+	@${CAT} ${FILESDIR}/pkg-message-phonon-gstreamer >> ${PKGMESSAGE}
+.endif
+	@${HEAD} -1 ${PKGMESSAGE} >> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
