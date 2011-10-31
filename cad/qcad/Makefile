@@ -39,7 +39,7 @@ post-patch:
 		${WRKSRC}/scripts/build_qcad.sh
 
 do-build:
-	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh notrans
+	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh
 
 pre-install:
 	@${ECHO_CMD} bin/qcad > ${PLIST}
