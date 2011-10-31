@@ -19,6 +19,8 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cflags`
 LDFLAGS+=	`fltk-config --ldflags`
