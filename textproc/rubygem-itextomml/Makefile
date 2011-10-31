@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	itextomml
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
