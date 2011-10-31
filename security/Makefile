@@ -572,6 +572,7 @@
     SUBDIR += pam_jail
     SUBDIR += pam_kde
     SUBDIR += pam_krb5
+    SUBDIR += pam_krb5-rh
     SUBDIR += pam_ldap
     SUBDIR += pam_mkhomedir
     SUBDIR += pam_p11
