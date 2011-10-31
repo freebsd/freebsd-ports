@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90005
+PORTVERSION=	5.90006
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 
-RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
+BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
-		p5-Class-Load>=0.08:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Class-Load>=0.12:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
@@ -48,7 +48,7 @@ RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.13:${PORTSDIR}/devel/p5-namespace-clean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message
 
