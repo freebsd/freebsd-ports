@@ -21,8 +21,7 @@ WRKSRC=		${WRKDIR}/msf3
 SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 		msfopcode msfpayload msfpescan msfweb
 
-OPTIONS=	MSFGUI "Build GUI scripts" off \
-		SVN "Use subversion" off \
+OPTIONS=	SVN "Use subversion" off \
 		SVN_FBSD "Use subversion-freebsd" off
 
 NO_BUILD=	yes
@@ -41,12 +40,6 @@ RUN_DEPENDS+=	rubygem-actionpack>0:${PORTSDIR}/www/rubygem-actionpack	\
 		rubygem-activerecord>0:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
-.endif
-
-.if defined(WITH_MSFGUI)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2
-SCRIPTS+=	msfgui
 .endif
 
 .if defined(WITH_SVN) || defined(WITH_SVN_FBSD)
