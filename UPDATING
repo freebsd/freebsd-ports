@@ -132,7 +132,7 @@ you update your ports collection, before attempting any port upgrades.
   
   P4_STYLE_MARKERS -- change conflict markers to P4 style, 
                       established for FreeBSD projects.
-                      This is not mandattory for working with
+                      This is not mandatory for working with
                       FreeBSD sources.
 
   ENHANCED_KEYWORD -- Support for custom keywords, like
@@ -147,7 +147,7 @@ you update your ports collection, before attempting any port upgrades.
   Also, subversion 1.7.0 changes the working copy format,
   and a working copy can not be shared between 
   subversion 1.7.0 and 1.6.x. Please, think twice before
-  upgradeing.
+  upgrading.
   
   Additional the port "devel/subversion16" was created to
   support subversion 1.6.x. Subversion 1.7.x and 1.6.x
@@ -283,7 +283,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The security/cyrus-sasl2 was updated to 2.1.25.  If the SASL option
   is enabled (disabled by default), net/openldap* must be recompiled
-  after upgarding cyrus-sasl2.
+  after upgrading cyrus-sasl2.
 
 20110921:
   AFFECTS: users of devel/maven2 and devel/maven3
@@ -299,7 +299,7 @@ you update your ports collection, before attempting any port upgrades.
 
   From version 3.0.2 on TV-Browser doesn't include any plugins any longer. You
   are supposed to download the plugins manually, this also means that you need
-  to download the apropriate channel sources plugin for your country. After
+  to download the appropriate channel sources plugin for your country. After
   installing it your prevously configured channels are visible again. To do so,
   select "Tools -> Install / Update Plugins..." and choose the plugins you need.
 
@@ -315,7 +315,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/asterisk-stat
   AUTHOR: flo@FreeBSD.org
 
-  asterisk-stat depends on asterisk16 now, you willl need to update asterisk
+  asterisk-stat depends on asterisk16 now, you will need to update asterisk
   and asterisk-addons to 1.6. Instructions on upgrading your configuration
   files are here:
 
