@@ -39,6 +39,6 @@ post-patch:
 
 pre-build:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
-		${WKRSRC}/configure ${WRKSRC}/config.h.in
+		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
