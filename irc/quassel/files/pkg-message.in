@@ -1,0 +1,17 @@
+=============================================================================
+To run quasselcore at system start-up, add quasselcore_enable="YES"
+to /etc/rc.conf.
+
+Quassel can use SSL connection between client and core parts. At first start
+quasselcore will ask you to enter some information that will be incorporated
+into generated SSL certificate. You can generate a new certificate by running
+the following command as root:
+
+# service quasselcore keygen
+or 
+# %%PREFIX%%/etc/rc.d/quasselcore keygen
+
+By default quasselcore listens on 4242 port at localhost.
+To change default behavior set quasselcore_args variable in /etc/rc.conf.
+See 'quasselcore --help' for available arguments.
+=============================================================================
