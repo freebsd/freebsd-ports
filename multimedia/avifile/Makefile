@@ -19,6 +19,8 @@ COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		does not compile
+
 USE_SUBMAKE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
