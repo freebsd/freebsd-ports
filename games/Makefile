@@ -643,6 +643,7 @@
     SUBDIR += pentix
     SUBDIR += pets
     SUBDIR += phalanx
+    SUBDIR += phlipple
     SUBDIR += phpua-bf
     SUBDIR += phpua-cod
     SUBDIR += phpua-engine
