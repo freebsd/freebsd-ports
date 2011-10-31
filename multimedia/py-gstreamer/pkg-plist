@@ -1,3 +1,7 @@
+include/gstreamer-%%VERSION%%/gst/pygst.h
+include/gstreamer-%%VERSION%%/gst/pygstexception.h
+include/gstreamer-%%VERSION%%/gst/pygstminiobject.h
+include/gstreamer-%%VERSION%%/gst/pygstvalue.h
 lib/gstreamer-%%VERSION%%/libgstpython.la
 lib/gstreamer-%%VERSION%%/libgstpython.so
 %%PYTHON_SITELIBDIR%%/gst-%%VERSION%%/gst/__init__.py
