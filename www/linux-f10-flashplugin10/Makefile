@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
 
-CONFLICTS=	linux-flashplugin-7* linux-flashplugin-9* linux-f8-flashplugin10-*
+CONFLICTS=	linux-flashplugin-7* linux-flashplugin-9* linux-f8-flashplugin10-* linux-f10-flashplugin11-*
 
 OPTIONS=	GNOME "include gnome support for .desktop file" Off
 
