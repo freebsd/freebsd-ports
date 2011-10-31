@@ -7,6 +7,7 @@
 
 PORTNAME=	kde4
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -28,7 +29,6 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDESDK "Software development kit" on \
 		KDETOYS "Miscellaneous small applications" on \
 		KDEUTILS "Set of generic utilities" on \
-		KDEWALLPAPERS "Official KDE wallpapers" on \
 		KDEWEBDEV "Web development environment" on
 
 USE_KDE4=	baseapps kdelibs kdeprefix oxygen pimlibs runtime workspace
@@ -90,10 +90,6 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kteatime:${PORTSDIR}/x11-clocks/kdetoys4
 
 .ifndef(WITHOUT_KDEUTILS)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/misc/kdeutils4
-.endif
-
-.ifndef(WITHOUT_KDEWALLPAPERS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/share/wallpapers/Plasmalicious/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers
 .endif
 
 .ifndef(WITHOUT_KDEWEBDEV)
