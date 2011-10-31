@@ -10,7 +10,7 @@ PORTVERSION=	2.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
-MAINTAINER=	raj@csub.edu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
 RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
