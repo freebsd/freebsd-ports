@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libvisio
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://dev-www.libreoffice.org/src/
+MASTER_SITES=	http://dev-www.libreoffice.org/src/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing the visio file format structure
