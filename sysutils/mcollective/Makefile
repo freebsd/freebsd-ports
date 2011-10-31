@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	raj@csub.edu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A modern scalable datacenter orchestration framework
 
 RUN_DEPENDS=	rubygem-stomp>=0:${PORTSDIR}/devel/rubygem-stomp
