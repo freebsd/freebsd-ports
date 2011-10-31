@@ -3113,6 +3113,7 @@
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-pyzmq
+    SUBDIR += py-qserve
     SUBDIR += py-qt4
     SUBDIR += py-qt4-assistant
     SUBDIR += py-qt4-core
