@@ -26,7 +26,6 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		paper.2:${PORTSDIR}/print/libpaper \
-		poppler-qt.3:${PORTSDIR}/graphics/poppler-qt \
 		wpd-0.8.8:${PORTSDIR}/textproc/libwpd08 \
 		wv2.4:${PORTSDIR}/textproc/wv2
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx

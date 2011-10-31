@@ -753,8 +753,7 @@
     SUBDIR += podofo
     SUBDIR += poppler
     SUBDIR += poppler-data
-    SUBDIR += poppler-gtk
-    SUBDIR += poppler-qt
+    SUBDIR += poppler-glib
     SUBDIR += poppler-qt4
     SUBDIR += poppler-utils
     SUBDIR += popplerkit

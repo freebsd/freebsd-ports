@@ -257,9 +257,6 @@ lib/kde3/kfile_jpeg.so
 lib/kde3/kfile_pcx.a
 lib/kde3/kfile_pcx.la
 lib/kde3/kfile_pcx.so
-lib/kde3/kfile_pdf.a
-lib/kde3/kfile_pdf.la
-lib/kde3/kfile_pdf.so
 lib/kde3/kfile_png.a
 lib/kde3/kfile_png.la
 lib/kde3/kfile_png.so
@@ -1181,7 +1178,6 @@ share/services/kfile_gif.desktop
 share/services/kfile_ico.desktop
 share/services/kfile_jpeg.desktop
 share/services/kfile_pcx.desktop
-share/services/kfile_pdf.desktop
 share/services/kfile_png.desktop
 share/services/kfile_pnm.desktop
 share/services/kfile_ps.desktop

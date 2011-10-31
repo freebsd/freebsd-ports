@@ -16,7 +16,6 @@ COMMENT=	Collection manager for KDE
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
 		yaz.4:${PORTSDIR}/net/yaz \
 		exempi:${PORTSDIR}/textproc/exempi
 

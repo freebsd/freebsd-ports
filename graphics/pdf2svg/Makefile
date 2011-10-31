@@ -6,14 +6,14 @@
 
 PORTNAME=	pdf2svg
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cityinthesky.co.uk/_media/opensource/
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Convert PDF to SVG
 
-LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-gtk \
+LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		cairo:${PORTSDIR}/graphics/cairo \
 		gtk:${PORTSDIR}/x11-toolkits/gtk20
 

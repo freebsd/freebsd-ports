@@ -7,7 +7,7 @@
 
 PORTNAME=	popplerkit
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 DISTNAME=	etoile-0.4.1

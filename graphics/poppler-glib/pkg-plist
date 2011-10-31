@@ -11,11 +11,11 @@ include/poppler/glib/poppler-media.h
 include/poppler/glib/poppler-movie.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
-lib/girepository-1.0/Poppler-0.16.typelib
+lib/girepository-1.0/Poppler-0.18.typelib
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
-lib/libpoppler-glib.so.6
+lib/libpoppler-glib.so.8
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/PopplerAnnot.html
 %%DOCSDIR%%/poppler/PopplerAttachment.html
@@ -44,7 +44,9 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/right.png
 %%DOCSDIR%%/poppler/style.css
 %%DOCSDIR%%/poppler/up.png
-share/gir-1.0/Poppler-0.16.gir
+share/gir-1.0/Poppler-0.18.gir
+@dirrmtry share/gir-1.0
+@dirrmtry lib/girepository-1.0
 @dirrmtry %%DOCSDIR%%/poppler
 @dirrmtry %%DOCSDIR%%
 @dirrm include/poppler/glib

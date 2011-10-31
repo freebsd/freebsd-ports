@@ -23,8 +23,7 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		paper.2:${PORTSDIR}/print/libpaper \
-		poppler-qt.3:${PORTSDIR}/graphics/poppler-qt
+		paper.2:${PORTSDIR}/print/libpaper
 
 CONFLICTS=	kolourpaint-[0-9]*
 
@@ -34,6 +33,7 @@ PREFIX=		${KDE_PREFIX}
 USE_GL=		glut
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--without-poppler
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GHOSTSCRIPT=yes

@@ -65,6 +65,7 @@ include/poppler/UnicodeDecompTables.h
 include/poppler/UnicodeMap.h
 include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
+include/poppler/ViewerPreferences.h
 include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
 include/poppler/cpp/poppler-document.h
@@ -93,6 +94,7 @@ include/poppler/goo/GooTimer.h
 include/poppler/goo/ImgWriter.h
 include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
+include/poppler/goo/TiffWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
 include/poppler/goo/gstrtod.h
@@ -128,7 +130,7 @@ lib/libpoppler-cpp.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.13
+lib/libpoppler.so.18
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

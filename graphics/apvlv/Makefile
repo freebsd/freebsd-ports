@@ -7,6 +7,7 @@
 
 PORTNAME=	apvlv
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/naihe2010/apvlv/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -16,8 +17,9 @@ COMMENT=	Apvlv is a PDF/DJVU Viewer and its behaviour like Vim
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 
+USE_GNOME=	gtk20
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.16.7
+PORTVERSION=	0.18.0
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -15,13 +15,13 @@ MASTER_SITES=	http://poppler.freedesktop.org/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libxml2 ltverhack
 USE_AUTOTOOLS=	libtool
@@ -29,8 +29,9 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
+		--disable-gtk-test \
 		--with-html-dir=${DOCSDIR}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if !defined(SLAVEPORT)
@@ -41,26 +42,17 @@ OPTIONS=	CAIRO "Enable cairo output backend" on \
 .include <bsd.port.options.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.13:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.18:${PORTSDIR}/graphics/poppler
 
-.if ${SLAVEPORT}=="gtk"
+.if ${SLAVEPORT}=="glib"
+BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=--enable-poppler-glib
-USE_GNOME+=	gtk20
+USE_GNOME+=	gnomehier glib20
 BUILD_WRKSRC=	${WRKSRC}/glib
 INSTALL_WRKSRC=	${WRKSRC}/glib
 .else
-CONFIGURE_ARGS+=--disable-poppler-glib \
-		--disable-gdk \
-		--disable-gtk-test
-.endif
-
-.if ${SLAVEPORT}=="qt"
-CONFIGURE_ARGS+=--enable-poppler-qt
-USE_QT_VER+=	3
-BUILD_WRKSRC=	${WRKSRC}/qt
-INSTALL_WRKSRC=	${WRKSRC}/qt
-.else
-CONFIGURE_ARGS+=--disable-poppler-qt
+CONFIGURE_ARGS+=--disable-poppler-glib
 .endif
 
 .if ${SLAVEPORT}=="qt4"
@@ -77,20 +69,21 @@ CONFIGURE_ARGS+=--disable-poppler-qt4
 .endif
 
 .if ${SLAVEPORT}=="utils"
+LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-utils
 CONFLICTS=	xpdf-[0-9]*
 BUILD_WRKSRC=	${WRKSRC}/utils
 INSTALL_WRKSRC=	${WRKSRC}/utils
-MAN1=		pdffonts.1 pdfimages.1 pdfinfo.1 \
-		pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
+MAN1=		pdffonts.1 pdfimages.1 pdfinfo.1 pdfseparate.1 pdftocairo.1 \
+		pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1 pdfunite.1
 .else
 CONFIGURE_ARGS+=--disable-utils
 .endif
 
 .else
-CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
-		--disable-poppler-qt4 --disable-utils --disable-gdk \
-		--disable-gtk-test
+CONFIGURE_ARGS+=--disable-poppler-glib \
+		--disable-poppler-qt4 \
+		--disable-utils
 
 .if defined(WITHOUT_CAIRO)
 CONFIGURE_ARGS+=--disable-cairo-output
@@ -109,12 +102,6 @@ LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .endif
 
 post-patch:
-.if defined(SLAVEPORT) && ${SLAVEPORT}=="qt"
-	@${REINPLACE_CMD} -e 's|/usr/local/qt/include|${LOCALBASE}/include|; \
-		s|$$QTDIR|${QT_PREFIX}|; \
-		s|/usr/local/qt/lib|${LOCALBASE}/lib|' \
-		${WRKSRC}/configure
-.endif
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt4"
 	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \
 		${WRKSRC}/configure
@@ -122,10 +109,8 @@ post-patch:
 
 post-install:
 .if defined(SLAVEPORT)
-.if ${SLAVEPORT}=="gtk"
+.if ${SLAVEPORT}=="glib"
 	${INSTALL_DATA} ${WRKSRC}/poppler-glib.pc ${PREFIX}/libdata/pkgconfig
-.elif ${SLAVEPORT}=="qt"
-	${INSTALL_DATA} ${WRKSRC}/poppler-qt.pc ${PREFIX}/libdata/pkgconfig
 .elif ${SLAVEPORT}=="qt4"
 	${INSTALL_DATA} ${WRKSRC}/poppler-qt4.pc ${PREFIX}/libdata/pkgconfig
 .endif

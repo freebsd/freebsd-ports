@@ -7,7 +7,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 LOVERSION=	${PORTVERSION}.2
 CATEGORIES=	editors
 MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
@@ -91,7 +91,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
 		mythes-1.2.0:${PORTSDIR}/textproc/mythes \
 		hyphen.2:${PORTSDIR}/textproc/hyphen \
-		poppler.13:${PORTSDIR}/graphics/poppler \
+		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		wps-0.2.2:${PORTSDIR}/textproc/libwps \

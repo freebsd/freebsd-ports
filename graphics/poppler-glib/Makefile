@@ -3,17 +3,17 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler-gtk/Makefile,v 1.20 2010/07/07 13:03:19 kwm Exp $
+#   $MCom$
 #
 
 PORTREVISION=	0
-PKGNAMESUFFIX=	-gtk
+PKGNAMESUFFIX=	-glib
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Gtk bindings to poppler
+COMMENT=	Glib bindings to poppler
 
 MASTERDIR=	${.CURDIR}/../../graphics/poppler
-SLAVEPORT=	gtk
+SLAVEPORT=	glib
 PLIST=	${.CURDIR}/pkg-plist
 
 pre-build:
