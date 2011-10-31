@@ -1,47 +1,19 @@
---- glib/Makefile.in.orig	2010-08-14 16:50:48.000000000 +0200
-+++ glib/Makefile.in	2010-08-14 16:50:48.000000000 +0200
-@@ -82,7 +82,6 @@
+--- glib/Makefile.in.orig	2011-10-03 23:55:25.000000000 +0200
++++ glib/Makefile.in	2011-10-03 23:56:20.000000000 +0200
+@@ -84,7 +84,6 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  libpoppler_glib_la_DEPENDENCIES =  \
 -	$(top_builddir)/poppler/libpoppler.la \
  	$(top_builddir)/poppler/libpoppler-cairo.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-@@ -105,8 +104,7 @@
- @BUILD_WITH_GDK_TRUE@	test-poppler-glib.$(OBJEXT)
- test_poppler_glib_OBJECTS = $(am_test_poppler_glib_OBJECTS)
- @BUILD_WITH_GDK_TRUE@test_poppler_glib_DEPENDENCIES =  \
--@BUILD_WITH_GDK_TRUE@	$(top_builddir)/poppler/libpoppler.la \
--@BUILD_WITH_GDK_TRUE@	libpoppler-glib.la $(am__DEPENDENCIES_1) \
-+@BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1) \
- @BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1) \
- @BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
-@@ -386,7 +384,7 @@
- top_srcdir = @top_srcdir@
- win32_libs = @win32_libs@
- AM_LDFLAGS = @auto_import_flags@
--SUBDIRS = . reference demo
-+SUBDIRS = . reference
- INCLUDES = \
- 	-DG_LOG_DOMAIN=\"Poppler\"		\
- 	-I$(top_srcdir)				\
-@@ -439,7 +437,7 @@
+ 	$(am__DEPENDENCIES_1)
+@@ -433,7 +432,7 @@ libpoppler_glib_la_SOURCES = \
  	poppler-private.h
  
  libpoppler_glib_la_LIBADD = \
 -	$(top_builddir)/poppler/libpoppler.la		\
-+	-lpoppler	\
++	-lpoppler		\
  	$(top_builddir)/poppler/libpoppler-cairo.la	\
  	$(POPPLER_GLIB_LIBS)				\
- 	$(GDK_LIBS)					\
-@@ -451,7 +449,7 @@
- @BUILD_WITH_GDK_TRUE@       test-poppler-glib.cc
- 
- @BUILD_WITH_GDK_TRUE@test_poppler_glib_LDADD = \
--@BUILD_WITH_GDK_TRUE@	$(top_builddir)/poppler/libpoppler.la	\
-+@BUILD_WITH_GDK_TRUE@	-lpoppler				\
- @BUILD_WITH_GDK_TRUE@	libpoppler-glib.la			\
- @BUILD_WITH_GDK_TRUE@	$(POPPLER_GLIB_LIBS)			\
- @BUILD_WITH_GDK_TRUE@	$(GDK_LIBS)				\
+ 	$(FREETYPE_LIBS)				\

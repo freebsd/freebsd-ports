@@ -7,14 +7,14 @@
 
 PORTNAME=	xournal
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	me@janh.de
 COMMENT=	A notetaking application that can annotate PDFs
 
-LIB_DEPENDS=	poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 
 LICENSE=	GPLv2
 

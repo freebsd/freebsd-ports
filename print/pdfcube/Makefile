@@ -15,8 +15,10 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An OpenGL presentation viewer on a spinning cube
 
 LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
-		poppler-glib:${PORTSDIR}/graphics/poppler-gtk \
+		poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		boost_program_options:${PORTSDIR}/devel/boost-libs
+
+BROKEN=		Doesn't build with poppler 0.18
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes

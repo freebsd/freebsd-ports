@@ -7,6 +7,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.22
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -96,7 +97,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_POPPLER)
-LIB_DEPENDS+=	poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER=""
 .else

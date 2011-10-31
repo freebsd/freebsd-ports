@@ -8,6 +8,7 @@
 
 PORTNAME=	texmaker
 PORTVERSION=	3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -15,7 +16,7 @@ MASTER_SITES=	http://www.xm1math.net/texmaker/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
-LIB_DEPENDS=	poppler.13:${PORTSDIR}/graphics/poppler \
+LIB_DEPENDS=	poppler.18:${PORTSDIR}/graphics/poppler \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \

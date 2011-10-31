@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--disable-mp
 .endif
 
 .if defined(WITH_POPPLER)
-LIB_DEPENDS+=		poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 PLIST_SUB+=		POPPLER=""
 .else
 CONFIGURE_ARGS+=	--without-poppler

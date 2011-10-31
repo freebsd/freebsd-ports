@@ -1,8 +1,10 @@
 bin/pdffonts
 bin/pdfimages
 bin/pdfinfo
-bin/pdftoabw
+bin/pdfseparate
+bin/pdftocairo
 bin/pdftohtml
 bin/pdftoppm
 bin/pdftops
 bin/pdftotext
+bin/pdfunite

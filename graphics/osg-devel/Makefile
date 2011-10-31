@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.9.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -195,7 +195,7 @@ PLIST_SUB+=	SVG="@comment "
 
 .if defined(WITH_PDF)
 FORCE_REQUIRE+=	Poppler-glib
-LIB_DEPENDS+=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 PLIST_SUB+=	PDF=""
 .else
 FORCE_IGNORE+=	Poppler-glib
