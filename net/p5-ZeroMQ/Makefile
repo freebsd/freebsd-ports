@@ -27,6 +27,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
+USE_GNOME=	pkgconfig
+
 PERL_CONFIGURE=	yes
 
 MAN3=	\
