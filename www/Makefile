@@ -1640,6 +1640,7 @@
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-multipart-post
+    SUBDIR += rubygem-net-http-persistent
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
