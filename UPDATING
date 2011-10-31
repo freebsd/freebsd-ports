@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111031:
+  AFFECTS: users of textproc/py-creole
+  AUTHOR: Stanislav Svirid <count@211.ru>
+
+  Some API is changed: replace 'parser_kwargs' and 'emitter_kwargs'
+  with separate arguments. More information on new API:
+  http://code.google.com/p/python-creole/wiki/API
+
 20111025:
   AFFECTS: users of print/flpsed or www/dillo2
   AUTHOR: bf@FreeBSD.org
