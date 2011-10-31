@@ -1,0 +1,7 @@
+The pam_krb5 module allows PAM-aware applications to authenticate
+users by performing an AS exchange with a Kerberos KDC.
+
+This module includes many configurable options and provides functionality
+and features that other pam_krb5 modules do not provide.
+
+WWW: https://fedorahosted.org/pam_krb5/
