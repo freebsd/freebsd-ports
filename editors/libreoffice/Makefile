@@ -395,7 +395,7 @@ post-install:
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 
-.for subdir in applications icons mime mime-info mimelnk
+.for subdir in applications icons mime mimelnk
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
 		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
