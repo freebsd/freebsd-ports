@@ -1671,6 +1671,7 @@
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-webmock
+    SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-yapra
     SUBDIR += runsomebrowser
     SUBDIR += sakai
