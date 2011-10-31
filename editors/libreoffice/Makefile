@@ -8,7 +8,6 @@
 PORTNAME=	libreoffice
 PORTVERSION=	3.4.3
 PORTREVISION=	2
-LOVERSION=	${PORTVERSION}.2
 CATEGORIES=	editors
 MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
@@ -37,49 +36,21 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
-CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
-
-LO_COMPONENTS=	artwork base calc components extensions \
-		extras filters help impress libs-core libs-extern \
-		libs-extern-sys libs-gui postprocess sdk testing \
-		ure writer translations
-
-USE_BZIP2=	yes
-#l10n
-INSTALL_TARGET= distro-pack-install
-
-DIST_SUBDIR=	libreoffice
-DISTFILES+=	${PORTNAME}-bootstrap-${LOVERSION}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/${PORTNAME}-bootstrap-${LOVERSION}
-
-LODESTDIR=	${WRKDIR}/loinstall
-
-.for components in ${LO_COMPONENTS}
-DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
-.endfor
-
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
-# for dynamic plist generation
-PLISTD?=	${WRKDIR}/plist_dirs
-PLISTF?=	${WRKDIR}/plist_files
-
-# not tested on other platforms and at leat plist will be wrong because of LOARCH not expendanded correctly
-ONLY_FOR_ARCH=	i386 amd64
-
-EXTRACT_ONLY:=	${DISTFILES}
-
-#additionnal components
-DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:GoOOSrc \
-		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:GoOOSrc \
-		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:GoOOSrc \
-		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:GoOOSrc \
-		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip:GoOOSrc \
-		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:GoOOSrc \
-		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:GoOOSrc \
-		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:OOoDTP
-
+# dmake can't be used from ports
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		gpatch:${PORTSDIR}/devel/patch \
+		unzip:${PORTSDIR}/archivers/unzip \
+		bash:${PORTSDIR}/shells/bash \
+		oo2po:${PORTSDIR}/textproc/translate-toolkit \
+		dmake:${PORTSDIR}/devel/dmake \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
+		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
+		vigra-config:${PORTSDIR}/graphics/vigra
 # rely on bsdtar ability to extract .gz and .bz2 archives
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -100,20 +71,46 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
 		cups.2:${PORTSDIR}/print/cups-client
 
+CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
 
-# dmake can't be used from ports
+LOVERSION=	${PORTVERSION}.2
+LO_COMPONENTS=	artwork base calc components extensions \
+		extras filters help impress libs-core libs-extern \
+		libs-extern-sys libs-gui postprocess sdk testing \
+		ure writer translations
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		gpatch:${PORTSDIR}/devel/patch \
-		unzip:${PORTSDIR}/archivers/unzip \
-		bash:${PORTSDIR}/shells/bash \
-		oo2po:${PORTSDIR}/textproc/translate-toolkit \
-		dmake:${PORTSDIR}/devel/dmake \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		vigra-config:${PORTSDIR}/graphics/vigra
+USE_BZIP2=	yes
+#l10n
+INSTALL_TARGET=	distro-pack-install
+
+DIST_SUBDIR=	libreoffice
+DISTFILES+=	${PORTNAME}-bootstrap-${LOVERSION}${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/${PORTNAME}-bootstrap-${LOVERSION}
+
+LODESTDIR=	${WRKDIR}/loinstall
+
+.for components in ${LO_COMPONENTS}
+DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
+.endfor
+
+# for dynamic plist generation
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
+
+# not tested on other platforms and at leat plist will be wrong because of LOARCH not expendanded correctly
+ONLY_FOR_ARCH=	i386 amd64
+
+EXTRACT_ONLY:=	${DISTFILES}
+
+#additionnal components
+DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:GoOOSrc \
+		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:GoOOSrc \
+		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:GoOOSrc \
+		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:GoOOSrc \
+		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip:GoOOSrc \
+		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:GoOOSrc \
+		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:GoOOSrc \
+		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:OOoDTP
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
@@ -240,7 +237,7 @@ CONFIGURE_ARGS+=	--disable-gstreamer
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-system-python
 .else
-CONFIGURE_ARGS+= --disable-python
+CONFIGURE_ARGS+=	--disable-python
 .endif
 
 .if defined(WITH_GTK) || defined(WITH_GNOME)
@@ -267,7 +264,7 @@ CONFIGURE_ARGS+=	--disable-kde4
 .endif
 
 .if defined(WITH_GNOME)
-USE_GNOME+=		gconf2  gnomevfs2
+USE_GNOME+=		gconf2 gnomevfs2
 CONFIGURE_ARGS+=	--enable-gconf --enable-gnome-vfs
 .else
 CONFIGURE_ARGS+=	--disable-gconf --disable-gnome-vfs
@@ -297,6 +294,7 @@ DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:GoOOSrc \
 
 # LibreOffice works only with Java 6 -- which may not be the default
 # if you specify the JAVA_VENDOR variable
+CATEGORIES+=	java
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
@@ -390,7 +388,7 @@ post-configure:
 post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
 	# It seems that the empty directories are necessary for libreoffice keep them for now
-	@find ${LODESTDIR}/${PREFIX}/lib -type d -empty -exec ${TOUCH} {}/.keep \;
+	@${FIND} ${LODESTDIR}/${PREFIX}/lib -type d -empty -exec ${TOUCH} {}/.keep \;
 
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
