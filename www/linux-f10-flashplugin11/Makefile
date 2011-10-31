@@ -1,19 +1,19 @@
-# New ports collection makefile for:	www/linux-f10-flashplugin10
-# Date created:				2009-06-26
-# Whom:					bsam
-# Based on:				www/linux-f8-flashplugin10 by nox@
+# New ports collection makefile for:	www/linux-f10-flashplugin11
+# Date created:				2011-10-31
+# Whom:					Naoki Tsurutani
+# Based on:                             www/linux-f10-flashplugin10
 #
 # $FreeBSD$
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.3r183.10
+PORTVERSION=	11.0r1.152
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		ftp://ftp.ipt.ru/pub/download/:suplib \
 		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-f10-
-DISTFILES=	install_flash_player_10_linux.tar.gz:plugin \
+DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
 		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
 
-CONFLICTS=	linux-flashplugin-7* linux-flashplugin-9* linux-f8-flashplugin10-*
+CONFLICTS=	linux-flashplugin-7* linux-flashplugin-9* linux-f8-flashplugin10* linux-f10-flashplugin10*
 
 OPTIONS=	GNOME "include gnome support for .desktop file" Off
 
