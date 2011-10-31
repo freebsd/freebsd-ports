@@ -227,6 +227,7 @@
 %%DATADIR%%/plugins/emailListener.jar
 %%DATADIR%%/plugins/fastpath.jar
 %%DATADIR%%/plugins/jingleNodes.jar
+%%DATADIR%%/plugins/kraken.jar
 %%DATADIR%%/plugins/loadStats.jar
 %%DATADIR%%/plugins/monitoring.jar
 %%DATADIR%%/plugins/motd.jar

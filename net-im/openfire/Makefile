@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
+MASTER_SITES=	http://download.igniterealtime.org/openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -19,6 +18,7 @@ COMMENT=	Enterprise instant messaging server
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper \
    		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j
 
+USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
