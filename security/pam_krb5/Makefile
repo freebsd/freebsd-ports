@@ -16,6 +16,8 @@ DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		A Pluggable Authentication Module for Kerberos 5
 
+CONFLICTS=		pam_krb5-rh-2.*
+
 MAN5=			pam_krb5.5
 
 USE_PERL5=		yes
@@ -32,7 +34,7 @@ LIB_DEPENDS=		krb5.3:${PORTSDIR}/security/krb5
 KRB5_DIR?=		${KRB5_HOME}
 .endif
 .else
-IGNORE=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
+IGNORE=			you must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .endif
 
 MANDIR=			${MANPREFIX}/man
