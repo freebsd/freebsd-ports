@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
-CMAKE_USE_PTHREAD=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MONO "Quassel standalone client" on \
@@ -57,9 +56,14 @@ PLIST_SUB+=	MONO="@comment "
 .endif
 
 .if !defined(WITHOUT_CORE)
-QT_COMPONENTS+=	network script sql
+QT_COMPONENTS+=	network script sql sql-sqlite3_run
 QUASSEL_CORE=	ON
 PLIST_SUB+=	CORE=""
+
+USE_RC_SUBR=	quasselcore
+USERS=		quasselcore
+GROUPS=		${USERS}
+SUB_FILES=	pkg-message
 .else
 QUASSEL_CORE=	OFF
 PLIST_SUB+=	CORE="@comment "
@@ -78,6 +82,11 @@ pre-configure:
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
 		${WRKSRC}/CMakeLists.txt
+.endif
+
+post-install:
+.if !defined(WITHOUT_CORE)
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
