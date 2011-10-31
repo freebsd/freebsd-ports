@@ -10787,6 +10787,7 @@ p5-AnyEvent-I3                  ports/devel/p5-AnyEvent-I3
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-MPRPC               ports/net/p5-AnyEvent-MPRPC
 p5-AnyEvent-Mojo                ports/www/p5-AnyEvent-Mojo
+p5-AnyEvent-RabbitMQ            ports/net/p5-AnyEvent-RabbitMQ
 p5-AnyEvent-Redis               ports/databases/p5-AnyEvent-Redis
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
@@ -10797,6 +10798,7 @@ p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-Twitter-Stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-AnyMQ                        ports/devel/p5-AnyMQ
+p5-AnyMQ-AMQP                   ports/net/p5-AnyMQ-AMQP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
@@ -13296,6 +13298,7 @@ p5-Nagios-Plugins-Memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-Net                          ports/net/p5-Net
 p5-Net-ACL                      ports/net-mgmt/p5-Net-ACL
 p5-Net-AIM                      ports/net-im/p5-Net-AIM
+p5-Net-AMQP                     ports/net/p5-Net-AMQP
 p5-Net-AOLIM                    ports/net-im/p5-Net-AOLIM
 p5-Net-ARP                      ports/net/p5-Net-ARP
 p5-Net-Abuse-Utils              ports/net-mgmt/p5-Net-Abuse-Utils
@@ -15074,6 +15077,7 @@ p5-ZConf-Weather                ports/astro/p5-ZConf-Weather
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
 p5-Zenoss                       ports/net-mgmt/p5-Zenoss
+p5-ZeroMQ                       ports/net/p5-ZeroMQ
 p5-accessors                    ports/devel/p5-accessors
 p5-aceperl                      ports/biology/p5-AcePerl
 p5-ack                          ports/textproc/p5-ack
@@ -15150,6 +15154,7 @@ p5-anyevent-i3                  ports/devel/p5-AnyEvent-I3
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-mojo                ports/www/p5-AnyEvent-Mojo
 p5-anyevent-mprpc               ports/net/p5-AnyEvent-MPRPC
+p5-anyevent-rabbitmq            ports/net/p5-AnyEvent-RabbitMQ
 p5-anyevent-redis               ports/databases/p5-AnyEvent-Redis
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
@@ -15160,6 +15165,7 @@ p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-twitter-stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-anymq                        ports/devel/p5-AnyMQ
+p5-anymq-amqp                   ports/net/p5-AnyMQ-AMQP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
 p5-apache-antispam              ports/www/p5-Apache-AntiSpam
@@ -17721,6 +17727,7 @@ p5-net-amazon-route53           ports/dns/p5-Net-Amazon-Route53
 p5-net-amazon-s3                ports/net/p5-Net-Amazon-S3
 p5-net-amazon-signature         ports/net/p5-Net-Amazon-Signature
 p5-net-amazon-thumbnail         ports/net/p5-Net-Amazon-Thumbnail
+p5-net-amqp                     ports/net/p5-Net-AMQP
 p5-net-analysis                 ports/net/p5-Net-Analysis
 p5-net-aolim                    ports/net-im/p5-Net-AOLIM
 p5-net-appliance-phrasebook     ports/net/p5-Net-Appliance-Phrasebook
@@ -19533,6 +19540,7 @@ p5-zconf-runner-gui-gtk         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-zconf-weather                ports/astro/p5-ZConf-Weather
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zenoss                       ports/net-mgmt/p5-Zenoss
+p5-zeromq                       ports/net/p5-ZeroMQ
 p5-zml                          ports/devel/p5-ZML
 p65                             ports/devel/p65
 p7zip                           ports/archivers/p7zip
@@ -23764,6 +23772,7 @@ rubygem-cgi_multipart_eof_fix   ports/www/rubygem-cgi_multipart_eof_fix
 rubygem-chef                    ports/sysutils/rubygem-chef
 rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-chunky_png              ports/graphics/rubygem-chunky_png
+rubygem-cinch                   ports/irc/rubygem-cinch
 rubygem-classifier              ports/devel/rubygem-classifier
 rubygem-clio                    ports/devel/rubygem-clio
 rubygem-cloudfiles              ports/devel/rubygem-cloudfiles
@@ -27893,10 +27902,15 @@ zenity                          ports/x11/zenity
 zenmap                          ports/security/zenmap
 zenoss                          ports/net-mgmt/zenoss
 zenpack-apachemonitor           ports/net-mgmt/zenpack-apachemonitor
+zenpack-checkping               ports/net-mgmt/zenpack-checkping
 zenpack-dellmon                 ports/net-mgmt/zenpack-dellmon
+zenpack-dellmonitor             ports/net-mgmt/zenpack-dellmonitor
 zenpack-deviceadvdetail         ports/net-mgmt/zenpack-deviceadvdetail
 zenpack-devicesearch            ports/net-mgmt/zenpack-devicesearch
+zenpack-graphportlet            ports/net-mgmt/zenpack-graphportlet
 zenpack-interfacegraphs         ports/net-mgmt/zenpack-interfacegraphs
+zenpack-libvirt                 ports/net-mgmt/zenpack-libvirt
+zenpack-macreport               ports/net-mgmt/zenpack-macreport
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
 zephyr                          ports/net-im/zephyr
