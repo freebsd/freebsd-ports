@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111101:
+  AFFECTS: users of graphics/poppler-gtk
+  AUTHOR: Koop Mast <kwm@FreeBSD.org>
+
+  Poppler was update to 0.18.0, and the gtk slave port was renamed to 
+  match the library it installes. Please run the following command to migrate.
+
+  # portmaster -o graphics/poppler-glib poppler-gtk-0.16.7
+
 20111031:
   AFFECTS: users of textproc/py-creole
   AUTHOR: Stanislav Svirid <count@211.ru>
