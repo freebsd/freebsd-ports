@@ -807,6 +807,7 @@ share/apps/kwin/tabstrip.desktop
 share/apps/kwin/trackmouse.png
 share/apps/kwrited/kwrited.notifyrc
 share/apps/plasma-desktop/init/00-defaultLayout.js
+share/apps/plasma-desktop/init/05-freebsdWallpaper.js
 share/apps/plasma-desktop/plasma-desktop.notifyrc
 share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
 share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
@@ -818,8 +819,6 @@ share/apps/plasma/dashboard/AppleClasses/AppleScrollArea.js
 share/apps/plasma/dashboard/AppleClasses/AppleScrollbar.js
 share/apps/plasma/dashboard/AppleClasses/AppleSlider.js
 share/apps/plasma/dashboard/button/genericButton.js
-share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents/layout.js
-share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/contents/layout.js
@@ -2340,8 +2339,6 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.SaL
-@dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
-@dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper
 @dirrm share/apps/plasma/layout-templates
 @dirrm share/apps/plasma/dashboard/button
 @dirrm share/apps/plasma/dashboard/AppleClasses
