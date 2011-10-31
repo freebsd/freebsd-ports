@@ -103,7 +103,8 @@ DEBUG_FLAGS=	-g -O1
 .endif
 
 # Check for forced -O0 (or no -O)
-.if ${CFLAGS:M-O0} == "-O0" || (${CFLAGS:M-O} == "" && ${CFLAGS:M-O[1-9]} == "")
+.if ${CFLAGS:M-O0} == "-O0" || (${CFLAGS:M-O} == "" && \
+	${CFLAGS:M-O[1-9a-z]*} == "")
 IGNORE=		only builds with -O1 or higher, check CFLAGS
 .endif
 
