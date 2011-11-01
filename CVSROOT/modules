@@ -19577,6 +19577,7 @@ pam_google_authenticator        ports/security/pam_google_authenticator
 pam_helper                      ports/security/pam_helper
 pam_jail                        ports/security/pam_jail
 pam_kde                         ports/security/pam_kde
+pam_krb5-rh                     ports/security/pam_krb5-rh
 pam_ldap                        ports/security/pam_ldap
 pam_mkhomedir                   ports/security/pam_mkhomedir
 pam_mount                       ports/sysutils/pam_mount
@@ -20666,6 +20667,7 @@ phc                             ports/lang/phc
 phd2fasta                       ports/biology/phd2fasta
 phex                            ports/net-p2p/phex
 philesight                      ports/sysutils/philesight
+phlipple                        ports/games/phlipple
 phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
 phonon                          ports/multimedia/phonon
@@ -21275,8 +21277,7 @@ poppassd                        ports/mail/poppassd
 popper                          ports/mail/popper
 poppler                         ports/graphics/poppler
 poppler-data                    ports/graphics/poppler-data
-poppler-gtk                     ports/graphics/poppler-gtk
-poppler-qt                      ports/graphics/poppler-qt
+poppler-glib                    ports/graphics/poppler-glib
 poppler-qt4                     ports/graphics/poppler-qt4
 poppler-utils                   ports/graphics/poppler-utils
 popplerkit                      ports/graphics/popplerkit
@@ -22292,6 +22293,7 @@ py-pyxmpp                       ports/net-im/py-pyxmpp
 py-pyzmq                        ports/devel/py-pyzmq
 py-qp                           ports/www/py-qp
 py-qpy                          ports/www/py-qpy
+py-qserve                       ports/devel/py-qserve
 py-qt                           ports/x11-toolkits/py-qt
 py-qt4                          ports/devel/py-qt4
 py-qt4-assistant                ports/devel/py-qt4-assistant
@@ -22333,6 +22335,7 @@ py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
 py-repoze.who                   ports/devel/py-repoze.who
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
 py-requests                     ports/www/py-requests
+py-requests-oauth-hook          ports/www/py-requests-oauth-hook
 py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-restrictedpython             ports/security/py-RestrictedPython
@@ -23959,6 +23962,8 @@ rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-ncursesw                ports/devel/rubygem-ncursesw
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-dns                 ports/dns/rubygem-net-dns
+rubygem-net-http-digest_auth    ports/www/rubygem-net-http-digest_auth
+rubygem-net-http-persistent     ports/www/rubygem-net-http-persistent
 rubygem-net-irc                 ports/irc/rubygem-net-irc
 rubygem-net-ldap                ports/net/rubygem-net-ldap
 rubygem-net-netrc               ports/net/rubygem-net-netrc
@@ -24153,6 +24158,7 @@ rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-warden                  ports/devel/rubygem-warden
 rubygem-webby                   ports/devel/rubygem-webby
 rubygem-webmock                 ports/www/rubygem-webmock
+rubygem-webrobots               ports/www/rubygem-webrobots
 rubygem-whois                   ports/net/rubygem-whois
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
