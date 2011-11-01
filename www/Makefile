@@ -377,6 +377,7 @@
     SUBDIR += links-hacked
     SUBDIR += links1
     SUBDIR += linux-f10-flashplugin10
+    SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-flashplugin9
     SUBDIR += linux-libgtkembedmoz
