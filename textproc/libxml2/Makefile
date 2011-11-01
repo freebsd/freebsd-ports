@@ -76,6 +76,10 @@ post-patch:
 		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' ${WRKSRC}/${f}
 .endfor
 
+pre-build:
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure ${WRKSRC}/config.h.in
+
 .include <bsd.port.mk>
 
 .endif
