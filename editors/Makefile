@@ -52,7 +52,6 @@
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += fxite
-    SUBDIR += gambas2-ide
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += gedit-plugins

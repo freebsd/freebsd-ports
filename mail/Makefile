@@ -157,7 +157,6 @@
     SUBDIR += firetray
     SUBDIR += freepops
     SUBDIR += ftrack
-    SUBDIR += gambas2-gb-net-smtp
     SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += getlive

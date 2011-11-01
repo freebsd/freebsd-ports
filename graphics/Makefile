@@ -221,10 +221,6 @@
     SUBDIR += fv
     SUBDIR += fyre
     SUBDIR += g2
-    SUBDIR += gambas2-gb-gtk-svg
-    SUBDIR += gambas2-gb-image
-    SUBDIR += gambas2-gb-opengl
-    SUBDIR += gambas2-gb-pdf
     SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gcolor2
