@@ -18,9 +18,6 @@
     SUBDIR += ctcs
     SUBDIR += ctorrent
     SUBDIR += dclib
-    SUBDIR += dctc
-    SUBDIR += dctc-gui
-    SUBDIR += dctc-gui-qt
     SUBDIR += deluge
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
@@ -90,8 +87,6 @@
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
-    SUBDIR += qbittorrent-28
-    SUBDIR += qbittorrent-28-nox11
     SUBDIR += qbittorrent-29
     SUBDIR += qbittorrent-29-nox11
     SUBDIR += qtella

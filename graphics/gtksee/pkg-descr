@@ -1,5 +1,0 @@
-A Image viewer based on X-Window system and GTK+. The main purpose
-is to port ACD See, which is a very popular image viewer in M$
-world, to Unix platform.
-
-WWW: http://gtksee.berlios.de/

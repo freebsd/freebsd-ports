@@ -644,13 +644,6 @@
     SUBDIR += pets
     SUBDIR += phalanx
     SUBDIR += phlipple
-    SUBDIR += phpua-bf
-    SUBDIR += phpua-cod
-    SUBDIR += phpua-engine
-    SUBDIR += phpua-hl
-    SUBDIR += phpua-q3
-    SUBDIR += phpua-ut
-    SUBDIR += phpua-ut2003
     SUBDIR += pinball
     SUBDIR += pinedit
     SUBDIR += pingus
@@ -906,7 +899,6 @@
     SUBDIR += umark
     SUBDIR += unnethack
     SUBDIR += untahris
-    SUBDIR += uox3
     SUBDIR += uqm
     SUBDIR += urbanterror-data
     SUBDIR += utserver

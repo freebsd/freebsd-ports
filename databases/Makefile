@@ -93,7 +93,6 @@
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
     SUBDIR += glom
-    SUBDIR += gnats
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += gnome-db
@@ -180,7 +179,6 @@
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
     SUBDIR += ludia
-    SUBDIR += maatkit
     SUBDIR += mantis
     SUBDIR += mariadb-client
     SUBDIR += mariadb-scripts
@@ -206,7 +204,6 @@
     SUBDIR += mysql++3
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-odbc
-    SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
     SUBDIR += mysql-proxy
     SUBDIR += mysql-q4m
@@ -233,7 +230,6 @@
     SUBDIR += mysqlcppapi
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
-    SUBDIR += mysqlman
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
     SUBDIR += mysqlsniffer

@@ -1,7 +1,0 @@
-You will want to add a user entry to your /etc/passwd file for the
-user-id that owns gnats-related databases on your server.
-Something of the form:
-   "gnats:*:61:61:GNATS database owner:${PREFIX}/share/gnats/gnats-db:"
-should do just fine (put it in your ftpusers file!).
-
-Don't forget to run ${PREFIX}/libexec/gnats/mkcat as gnats.
