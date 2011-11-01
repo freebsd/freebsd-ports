@@ -17,6 +17,7 @@ COMMENT=	API for building a graphical console in Swing
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
 
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_BUILD=	yes
