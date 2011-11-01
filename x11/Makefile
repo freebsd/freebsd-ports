@@ -61,7 +61,6 @@
     SUBDIR += evilvte
     SUBDIR += fbdesk
     SUBDIR += fbpanel
-    SUBDIR += fbsd-icons
     SUBDIR += fireflies
     SUBDIR += fixesproto
     SUBDIR += florence

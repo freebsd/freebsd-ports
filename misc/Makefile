@@ -418,8 +418,6 @@
     SUBDIR += p5-Geo-Postcodes-NO
     SUBDIR += p5-Geo-Weather
     SUBDIR += p5-Geography-Countries
-    SUBDIR += p5-Geography-NationalGrid
-    SUBDIR += p5-Geography-NationalGrid-TW
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX

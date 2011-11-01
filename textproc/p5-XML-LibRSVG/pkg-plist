@@ -1,7 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibRSVG.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibRSVG/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibRSVG/LibRSVG.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibRSVG/LibRSVG.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibRSVG
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

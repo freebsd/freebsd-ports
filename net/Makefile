@@ -885,7 +885,6 @@
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
     SUBDIR += py-suds
-    SUBDIR += py-timeoutsocket
     SUBDIR += py-tofu
     SUBDIR += py-twistedPair
     SUBDIR += py-twitter

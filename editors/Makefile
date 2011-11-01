@@ -31,7 +31,6 @@
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
-    SUBDIR += doxymacs
     SUBDIR += drjava
     SUBDIR += e3
     SUBDIR += e93

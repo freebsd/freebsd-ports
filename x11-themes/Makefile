@@ -38,7 +38,6 @@
     SUBDIR += etoile-wildmenus
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
-    SUBDIR += geramik
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-bluecurve-theme
     SUBDIR += gnome-icons

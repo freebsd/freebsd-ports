@@ -320,7 +320,6 @@
     SUBDIR += jalingo
     SUBDIR += jarnal
     SUBDIR += java2html
-    SUBDIR += javacc
     SUBDIR += jaxup
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
@@ -915,7 +914,6 @@
     SUBDIR += p5-XML-Handler-Trees
     SUBDIR += p5-XML-Handler-YAWriter
     SUBDIR += p5-XML-Hash-LX
-    SUBDIR += p5-XML-LibRSVG
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXML-Iterator
     SUBDIR += p5-XML-LibXML-SAX-ChunkParser
