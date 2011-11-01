@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Template
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
