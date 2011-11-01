@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	http://augeas.net/download/ruby/
 
-MAINTAINER=	raj@csub.edu
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for Augeas
 
 LIB_DEPENDS=	augeas.10:${PORTSDIR}/textproc/augeas
