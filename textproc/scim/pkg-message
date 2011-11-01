@@ -9,7 +9,6 @@ Language-specific IMEngines
 ---------------------------
 
  chinese/scim-array         Module for Array30
- chinese/scim-chewing       Chewing Chinese methods
  chinese/scim-fcitx         Module for fcitx
  chinese/scim-pinyin        Smart Pinyin method
  chinese/scim-tables        Table based input methods:

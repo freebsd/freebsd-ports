@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 sbin/cpupowerd
-%%CREATELOAD%%bin/createload.sh
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -34,7 +34,7 @@ USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-system-qwtplot3d=yes --enable-system-liborigin=yes \
-		--enable-ocaml=no --enable-fftw=no
+		--enable-ocaml=no --enable-fftw=no --enable-KexiDB=no
 
 MAN1=		LabPlot.1 labplot.1
 
@@ -96,13 +96,6 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 CONFIGURE_ARGS+=--enable-audiofile=yes
 .else
 CONFIGURE_ARGS+=--enable-audiofile=no
-.endif
-
-.if defined(WITH_KEXIDB)
-LIB_DEPENDS+=	kexidb.2:${PORTSDIR}/editors/koffice-kde3
-CONFIGURE_ARGS+=--enable-KexiDB=yes
-.else
-CONFIGURE_ARGS+=--enable-KexiDB=no
 .endif
 
 .if defined(WITH_QSA)

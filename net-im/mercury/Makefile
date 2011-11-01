@@ -56,16 +56,6 @@ PLIST_SUB+=	VID="" VIDJAR="${VIDJAR}"
 PLIST_SUB+=	VID="@comment " VIDJAR=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-WITHOUT_TRAY=	yes
-.endif
-
-.if !defined(WITHOUT_TRAY)
-LIB_DEPENDS+=	tray.0:${PORTSDIR}/x11-toolkits/jdic
-.endif
-
 post-extract:
 	${MKDIR} ${WRKDIR}/icons
 	cd ${WRKDIR}/icons &&	\
@@ -87,4 +77,4 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${VIDJAR} ${INSTDIR}/lib
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -10,7 +10,6 @@ following ports as needed:
   chinese/scim-tables	Table based input methods: Array30, CangJie, Cantonese,
                         Dayi, Erbi, EZ, Jyutping, Simplex, Wubi, Ziranma, ZhuYin
   chinese/scim-pinyin	Smart pinyin
-  chinese/scim-chewing	Chewing
 
  Korean:
   korean/scim-tables	Table based input methods: Hangul, Hanja

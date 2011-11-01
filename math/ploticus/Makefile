@@ -61,7 +61,6 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .if !defined(NO_INSTALL_MANPAGES)
-	# pl.1 conflicts with lang/TenDRA
 	${INSTALL_MAN} ${WRKSRC}/man/man1/pl.1 ${MANPREFIX}/man/man1/ploticus.1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/${MAN3} ${MANPREFIX}/man/man3
 .endif

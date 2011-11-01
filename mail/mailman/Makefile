@@ -23,7 +23,6 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		EXIM4 "for use with exim4" off \
 		POSTFIX "for use with postfix" off \
 		COURIER "for use with courier" off \
-		CHINESE "support for Chinese mailing lists" off \
 		HTDIG "htdig integration patches" off \
 		NAMAZU2 "make private archives searchable with namazu2" off
 
@@ -110,10 +109,6 @@ defined(WITH_POSTFIX)
 IGNORE=	can only have one MTA selected to integrate with
 .endif
 MAIL_GID?=	courier
-.endif
-
-.if defined(WITH_CHINESE)
-RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 .endif
 
 .if defined(WITH_HTDIG)
