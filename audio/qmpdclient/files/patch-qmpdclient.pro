@@ -1,5 +1,5 @@
---- qmpdclient.pro.orig	2011-02-04 14:22:08.000000000 +0300
-+++ qmpdclient.pro	2011-03-25 12:52:30.000000000 +0300
+--- qmpdclient.pro.orig	2011-06-08 13:16:26.000000000 +0400
++++ qmpdclient.pro	2011-09-21 14:18:07.000000000 +0400
 @@ -3,7 +3,7 @@
  
  # Most people need not muck about below here
@@ -11,7 +11,7 @@
  QMAKE_LFLAGS_RELEASE += -O2 -g0 -s
 @@ -212,16 +212,15 @@
          SOURCES += src/qmpdclient_x11.cpp
- 
+         LIBS += -lX11
          # Check for dbus support
 -        contains(QT_CONFIG, dbus) {
 +        contains(CONFIG, qdbus) {
