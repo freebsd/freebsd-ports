@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20111101:
+  AFFECTS: users of x11/kde4-workspace
+  AUTHOR: kde@FreeBSD.org
+
+  If your KDM fails with the message
+  'X server "/usr/bin/X" cannot be executed'
+  you need to delete its configuration file and restart it:
+
+  # rm /usr/local/kde4/share/config/kdm/kdmrc
+  # service kdm4 restart
+
+20111101:
   AFFECTS: users of graphics/poppler-gtk
   AUTHOR: Koop Mast <kwm@FreeBSD.org>
 
