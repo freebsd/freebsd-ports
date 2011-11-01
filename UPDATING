@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/poppler-gtk
   AUTHOR: Koop Mast <kwm@FreeBSD.org>
 
-  Poppler was update to 0.18.0, and the gtk slave port was renamed to 
+  Poppler was update to 0.18.0, and the gtk slave port was renamed to
   match the library it installes. Please run the following command to migrate.
 
   # portmaster -o graphics/poppler-glib poppler-gtk-0.16.7
@@ -35,14 +35,14 @@ you update your ports collection, before attempting any port upgrades.
   keysrc.dist for details.
 
 20111019:
-  AFFECTS: users of mail/thunderbird or www/seamonkey with lightning 
+  AFFECTS: users of mail/thunderbird or www/seamonkey with lightning
            plugin installed.
   AUTHOR: gecko@FreeBSD.org
 
   To get an up to date version of lightning you should use the new
   LIGHTNING option in mail/thunderbird or www/seamonkey. This option
   is not enabled by default so you have to run "make config" prior
-  to the build. The old deskutils/lightning-thunderbird and 
+  to the build. The old deskutils/lightning-thunderbird and
   deskutils/lightning ports should no longer be used and will be
   removed very soon.
 
@@ -140,14 +140,14 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: Lev Serebryakov <lev@FreeBSD.org>
 
   Subversion was updated to version 1.7.0 and port was reworked.
-  
+
   Now there is no "devel/subversion-freebsd" port. All FreeBSD-specific patches
   are incorporated into main subversion port as options, which are turned ON by
   default.
-  
+
   These options are:
-  
-  P4_STYLE_MARKERS -- change conflict markers to P4 style, 
+
+  P4_STYLE_MARKERS -- change conflict markers to P4 style,
                       established for FreeBSD projects.
                       This is not mandatory for working with
                       FreeBSD sources.
@@ -160,23 +160,23 @@ you update your ports collection, before attempting any port upgrades.
   FREEBSD_TEMPLATE -- Standard FreeBSD commit template.
                       It is RECOMMENDED for working with
                       FreeBSD sources.
-                      
+
   Also, subversion 1.7.0 changes the working copy format,
-  and a working copy can not be shared between 
+  and a working copy can not be shared between
   subversion 1.7.0 and 1.6.x. Please, think twice before
   upgrading.
-  
+
   Additional the port "devel/subversion16" was created to
   support subversion 1.6.x. Subversion 1.7.x and 1.6.x
   can not be installed simultaneously!
-  
+
   Binding ports can be built with Subversion 1.7.0 (Default)
   or with Subversion 1.6.x. To build bindings with subversion 1.6.x
   you should set variable WITH_SUBVERSION_VER to "16".
-  
+
   There are several ways to upgrade, depending on what you used
   before and what you want to get after upgrade.
-  
+
   (a) You use devel/subversion without FreeBSD patches and, maybe,
       some bindings. You want fresh'n'new subversion 1.7.0.
       Please, run:
@@ -186,7 +186,7 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -r devel/subversion
   or
   # portmaster -R -r subversion-1.6
-  
+
   (b) You use devel/subversion-freebsd and, maybe, some
       bindings. You want fresh'n'new subversion 1.7.0, again
       with FreeBSD patches.
@@ -199,9 +199,9 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portmaster -o devel/subversion devel/subversion-freebsd
   # portmaster -R -r subversion-1.7
-  
+
   (c) You use devel/subversion without FreeBSD patches and, maybe,
-      some bindings. You want good old subversion 1.6.x, again 
+      some bindings. You want good old subversion 1.6.x, again
       without again.
       Please, run:
 
@@ -276,7 +276,7 @@ you update your ports collection, before attempting any port upgrades.
 
   There are two workarounds:
 
-  1) Set UNAME_r=9.9-CURRENT in your environment 
+  1) Set UNAME_r=9.9-CURRENT in your environment
   2) Set REVISION="9.9" in  ${SRCDIR}/sys/conf/newvers.sh
 
 20110928:
@@ -350,8 +350,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/p5-SOAP-Lite
   AUTHOR: az@FreeBSD.org
 
-  SOAP::Transport::TCP is not a part of net/p5-SOAP-Lite 
-  distribution since version 0.714. If you need SOAP::Transport::TCP 
+  SOAP::Transport::TCP is not a part of net/p5-SOAP-Lite
+  distribution since version 0.714. If you need SOAP::Transport::TCP
   you should install net/p5-SOAP-Transport-TCP manually.
 
 20110901:
@@ -397,7 +397,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of print/cups-{base,client,image}
   AUTHOR: sahil@FreeBSD.org
 
-  During the update to 1.4.8, the GNUTLS option was changed from ON to 
+  During the update to 1.4.8, the GNUTLS option was changed from ON to
   OFF by default. Because old configuration options are saved, users
   should re-run 'make config' and explicitly deselect the GNUTLS option
   before upgrading.
