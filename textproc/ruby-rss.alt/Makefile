@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	.alt
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for handling RSS (alternative impl.)
 
 RUN_DEPENDS=	${LOCALBASE}/${SADIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
