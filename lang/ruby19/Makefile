@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
 DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
 
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
