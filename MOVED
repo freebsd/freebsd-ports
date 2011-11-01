@@ -2868,3 +2868,33 @@ x11-themes/geramik||2011-10-31|Depends on x11-toolkits/qtpixmap, which is DEPREC
 x11-toolkits/qtpixmap||2011-10-31|No more public distfiles
 x11-wm/fvwm95-i18n||2011-10-31|Depends on x11/fbsd-icons, which is DEPRECATED
 x11-wm/fvwm95||2011-10-31|Depends on x11/fbsd-icons, which is DEPRECATED
+x11-toolkits/gambas2-gb-qt||2011-10-31|Has been broken for over a year
+archivers/gambas2-gb-compress-bzlib2||2011-10-31|Has been broken for over a year
+archivers/gambas2-gb-compress-zlib||2011-10-31|Has been broken for over a year
+audio/gambas2-gb-sdl-sound||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-firebird||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-mysql||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-odbc||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-postgresql||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-sqlite2||2011-10-31|Has been broken for over a year
+databases/gambas2-gb-db-sqlite3||2011-10-31|Has been broken for over a year
+devel/gambas2-gb-corba||2011-10-31|Has been broken for over a year
+devel/gambas2-gb-pcre||2011-10-31|Has been broken for over a year
+devel/gambas2-gb-sdl||2011-10-31|Has been broken for over a year
+editors/gambas2-ide||2011-10-31|Has been broken for over a year
+ftp/gambas2-gb-net-curl||2011-10-31|Has been broken for over a year
+graphics/gambas2-gb-gtk-svg||2011-10-31|Has been broken for over a year
+graphics/gambas2-gb-image||2011-10-31|Has been broken for over a year
+graphics/gambas2-gb-opengl||2011-10-31|Has been broken for over a year
+graphics/gambas2-gb-pdf||2011-10-31|Has been broken for over a year
+lang/gambas2||2011-10-31|Has been broken for over a year
+lang/gambas2-base||2011-10-31|Has been broken for over a year
+lang/gambas2-components||2011-10-31|Has been broken for over a year
+lang/gambas2-examples||2011-10-31|Has been broken for over a year
+mail/gambas2-gb-net-smtp||2011-10-31|Has been broken for over a year
+net/gambas2-gb-net||2011-10-31|Has been broken for over a year
+security/gambas2-gb-crypt||2011-10-31|Has been broken for over a year
+textproc/gambas2-gb-xml||2011-10-31|Has been broken for over a year
+x11-toolkits/gambas2-gb-gtk||2011-10-31|Has been broken for over a year
+x11/gambas2-gb-desktop||2011-10-31|Has been broken for over a year
+x11/gambas2-gb-qt-kde||2011-10-31|Has been broken for over a year

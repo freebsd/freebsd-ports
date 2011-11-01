@@ -196,7 +196,6 @@
     SUBDIR += freeswitch-music
     SUBDIR += freeswitch-sounds
     SUBDIR += funktrackergold
-    SUBDIR += gambas2-gb-sdl-sound
     SUBDIR += gbemol
     SUBDIR += gbsplay
     SUBDIR += gdam

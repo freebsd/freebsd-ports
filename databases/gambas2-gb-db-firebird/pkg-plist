@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-lib/gambas2/gb.db.firebird.component
-lib/gambas2/gb.db.firebird.so.0
-lib/gambas2/gb.db.firebird.so
-lib/gambas2/gb.db.firebird.la
-@dirrmtry lib/gambas2

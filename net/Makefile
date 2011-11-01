@@ -158,7 +158,6 @@
     SUBDIR += fsplib
     SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
-    SUBDIR += gambas2-gb-net
     SUBDIR += gatekeeper
     SUBDIR += gateway6
     SUBDIR += get_iplayer

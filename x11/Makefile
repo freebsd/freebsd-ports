@@ -67,8 +67,6 @@
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
-    SUBDIR += gambas2-gb-desktop
-    SUBDIR += gambas2-gb-qt-kde
     SUBDIR += gcb
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
