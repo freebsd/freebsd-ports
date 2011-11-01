@@ -24,6 +24,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
+WITH_FBSD10_FIX=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
 CONFIGURE_ARGS+=	--without-conf --without-clucene --with-zlib --without-icu
