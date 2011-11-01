@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	GraphViz
-PORTVERSION=	2.04
-PORTREVISION=	3
+PORTVERSION=	2.08
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
+    		p5-File-Which>=0:${PORTSDIr}/sysutils/p5-File-Which
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		dot:${PORTSDIR}/graphics/graphviz
+
+TEST_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -33,5 +36,10 @@ MAN3=		Devel::GraphVizProf.3 \
 		GraphViz::Regex.3 \
 		GraphViz::Small.3 \
 		GraphViz::XML.3
+
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+.endif
 
 .include <bsd.port.mk>
