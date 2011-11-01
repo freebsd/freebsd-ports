@@ -18,7 +18,8 @@ DISTFILES=	un-fonts-core-${PORTVERSION}.tar.gz:core \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi
 
-IGNORE=		was splitted into korean/unfonts-core and korean/unfonts-extra
+# Depended on by korean/xpdf
+IGNORE=		Was divided into korean/unfonts-core and korean/unfonts-extra
 
 WRKSRC=		${WRKDIR}/un-fonts
 NO_BUILD=	yes
