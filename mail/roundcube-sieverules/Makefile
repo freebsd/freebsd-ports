@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sieverules
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
@@ -15,7 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	anes@anes.su
 COMMENT=	Roundcube webmail sieve plugin
 
-RUN_DEPENDS=	roundcube>=0.5.1:${PORTSDIR}/mail/roundcube
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	roundcube>=0.6:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
