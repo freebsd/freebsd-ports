@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 BROKEN=		does not build
+EXPIRATION_DATE=	2011-11-30
 
 USE_PYTHON=	2.5+
 WANT_GSTREAMER=	yes

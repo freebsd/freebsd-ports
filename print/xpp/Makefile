@@ -19,6 +19,7 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 BUILD_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 BROKEN=		does not compile
+EXPIRATION_DATE=	2011-11-30
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

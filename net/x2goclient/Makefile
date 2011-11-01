@@ -19,6 +19,7 @@ RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
 
 BROKEN=		does not compile
+EXPIRATION_DATE=	2011-11-30
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
