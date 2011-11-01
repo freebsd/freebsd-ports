@@ -11,6 +11,9 @@ bin/mw-watch
 bin/mw-zip
 bin/mw-serve-ctl
 bin/mw-version
+bin/nserve.py
+bin/nslave.py
+bin/postman.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -20,10 +23,19 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/nslave.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/nserve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/postman.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/argv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/argv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/argv.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/EasyTimeline.pl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_conf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_conf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_conf.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_expander.re
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_uscan.cc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/_uscan.py
@@ -40,6 +52,9 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/allnodes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/allnodes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/allnodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apipkg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apipkg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apipkg.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps/__init__.pyo
@@ -64,21 +79,6 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/jobs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/qserve.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcclient.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/rpcserver.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async/slave.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/authors.pyo
@@ -100,12 +100,6 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/conf.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/conf.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/conf.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbook44grammar.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbook44grammar.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbook44grammar.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbookwriter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbookwriter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/docbookwriter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/dummydb.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/dummydb.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/dummydb.pyo
@@ -121,15 +115,15 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/imgmap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/imgmap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/imgmap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/infobox_magic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/infobox_magic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/infobox_magic.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/l10n.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/l10n.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/l10n.pyo
@@ -160,12 +154,6 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/fetch.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/fetch.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/fetch.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/mwapi.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/mwapi.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/mwapi.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/pod.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/net/sapi.pyo
@@ -230,7 +218,6 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/sanitychecker.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/sanitychecker.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/sanitychecker.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/scripts.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.pyo
@@ -314,6 +301,9 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/treecleanerhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/treecleanerhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/treecleanerhelper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/trustedrevs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/trustedrevs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/trustedrevs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/uniq.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/uniq.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/uniq.pyo
@@ -335,6 +325,9 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/formatter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/formatter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/formatter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/fontswitcher.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/fontswitcher.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/fontswitcher.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/imageutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/imageutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/imageutils.pyo
@@ -344,6 +337,7 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/miscutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/miscutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/miscutils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/scripts.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/styleutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/styleutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer/styleutils.pyo
@@ -354,101 +348,7 @@ bin/mw-version
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xfail.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xfail.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xfail.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/build-cat.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/build-cat.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/build-cat.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/cache.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/urls.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/calstblx.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/dbcentx.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/dbgenent.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/dbhierx.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/dbnotnx.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/dbpoolx.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/docbookx.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amsa.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amsb.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amsc.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amsn.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amso.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-amsr.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-box.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-cyr1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-cyr2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-dia.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-grk1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-grk2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-grk3.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-grk4.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-lat1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-lat2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-num.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-pub.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent/iso-tech.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/htmltblx.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/mathml/1.1CR1/dbmathml.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamsa.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamsb.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamsc.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamsn.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamso.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isoamsr.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isobox.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isocyr1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isocyr2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isodia.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isogrk3.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isolat1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isolat2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isomfrk.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isomopf.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isomscr.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isonum.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isopub.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/isotech.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/mathml2-qname-1.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/mathml2.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/mmlalias.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd/mmlextra.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamsa.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamsb.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamsc.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamsn.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamso.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isoamsr.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isobox.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isocyr1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isocyr2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isodia.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isogrk3.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isolat1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isolat2.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isomfrk.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isomopf.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isomscr.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isonum.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isopub.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/isotech.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/mathml2-qname-1.mod
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/mathml2.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/mmlalias.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd/mmlextra.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1/DTD/xhtml-special.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1/DTD/xhtml-symbol.ent
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/apps
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/async
@@ -458,22 +358,5 @@ bin/mw-version
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/siteinfo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/writer
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3/ent
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/4.3
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/mathml/1.1CR1
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml/mathml
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook/xml
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org/docbook
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.oasis-open.org
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221/dtd
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001/REC-MathML2-20010221
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/2001
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2/dtd
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/MathML2
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1/DTD
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR/xhtml1
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org/TR
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/www.w3.org
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
