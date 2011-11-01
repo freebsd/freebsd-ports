@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Iterator
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
