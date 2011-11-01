@@ -26,12 +26,6 @@ PORTDOCS=	AUTHORS NEWS README TODO
 PLIST_FILES=	bin/devilspie \
 		share/locale/de/LC_MESSAGES/devilspie.mo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
 		${WRKSRC}/src/Makefile.in
@@ -42,4 +36,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

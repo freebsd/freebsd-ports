@@ -23,12 +23,6 @@ CFLAGS+=	-fno-strength-reduce
 MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} caca2tlf share/figlet/*tlf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS=/d;/ac_build_date=/s|=.*|="$$stamp"|'\
 		${WRKSRC}/configure
@@ -37,4 +31,4 @@ post-patch:
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tools/caca2tlf ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

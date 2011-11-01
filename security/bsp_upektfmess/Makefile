@@ -38,9 +38,6 @@ ONLY_FOR_ARCHS=	i386
 OPTIONS=	GUI "Install GUI" off
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 700000
-IGNORE=		needs at least FreeBSD 7.0-RELEASE
-.endif
 
 .if defined(WITH_GUI)
 TFMESSPATH=${WRKDIR}/${DISTNAME}

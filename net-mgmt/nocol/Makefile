@@ -29,10 +29,4 @@ NO_PACKAGE=	Hostname is needed.
 post-install:
 		@cd ${WRKSRC} && make root
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 601104 && ${OSVERSION} < 602101
-BROKEN=		Does not compile on some FreeBSD 6.x versions, please update to 6.2R or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

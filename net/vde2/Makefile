@@ -32,10 +32,6 @@ MAN8=		vde_tunctl.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		fails to build on 6.x
-.endif
-
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ENV+=	V=1
 .endif

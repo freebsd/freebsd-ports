@@ -71,10 +71,4 @@ do-install:
 	@(${INSTALL_DATA} ${WRKSRC}/tools/yukon.conf \
 	    ${PREFIX}/etc/yukon/conf.sample)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=		unsupported on FreeBSD versions prior to 7.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

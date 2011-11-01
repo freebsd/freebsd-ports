@@ -37,10 +37,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/applications|${LOCALBASE}/share/applications|g' \
 		${WRKSRC}/src/Makefile.am ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 700000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

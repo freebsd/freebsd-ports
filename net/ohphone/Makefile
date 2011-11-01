@@ -31,12 +31,6 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/openh323
 EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
-BROKEN=	does not link due to missing symbol in default thread library
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/ohphone ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ohphone.1 ${PREFIX}/man/man1
@@ -49,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/regtest ${EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/stresstest ${EXAMPLESDIR}/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
