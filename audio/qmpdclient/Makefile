@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmpdclient
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://dump.bitcheese.net/files/
 
@@ -21,25 +21,26 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
-		corelib gui network webkit xml xmlpatterns
+		corelib gui network xml xmlpatterns
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 QMAKE_ARGS=	${QMAKE_PRO}
 QMAKE_PRO=	${PORTNAME}.pro
 
-OPTIONS=	DBUS	"Enable D-BUS support"	off
+OPTIONS=	DBUS	"Enable D-BUS support"	off \
+		NLS	"Enable National Language Support" on
 
 DATADIR=	${PREFIX}/share/QMPDClient
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include  <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
 QT_COMPONENTS+=	linguist_build
+PLIST_SUB+=	NLS=""
 .endif
-
-# TRANSLATIONS=	cs_CZ de_DE es_ES fr_FR it_IT nl_NL nn_NO no_NO \
-# 		pt_BR ru_RU sv_SE tr_TR uk_UA zh_CN zh_TW
 
 .if defined(WITH_DBUS) && !defined(WITHOUT_DBUS)
 QT_COMPONENTS+=	dbus
