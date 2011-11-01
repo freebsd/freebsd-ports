@@ -885,6 +885,7 @@
     SUBDIR += py-spreadmodule
     SUBDIR += py-suds
     SUBDIR += py-tofu
+    SUBDIR += py-tweepy
     SUBDIR += py-twistedPair
     SUBDIR += py-twitter
     SUBDIR += py-txamqp
