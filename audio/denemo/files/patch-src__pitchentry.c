@@ -1,12 +1,11 @@
---- src/pitchentry.c.orig	2011-04-27 19:59:45.153923000 +0200
-+++ src/pitchentry.c	2011-05-07 11:02:38.000000000 +0200
-@@ -14,7 +14,9 @@
- #define  DEFAULT_HIGH (4500.0)
+--- src/pitchentry.c.orig	2011-09-28 05:03:47.000000000 +0200
++++ src/pitchentry.c	2011-10-01 17:18:39.976734953 +0200
+@@ -15,6 +15,9 @@
  #define  DEFAULT_LOW (60.0)
  #define DEFAULT_TIMER_RATE (50)
--
+ #define QUARTER_COMMA_MEAN_TONE "Quarter comma meantone"
 +#ifndef log2(x)
-+ #define log2(x)  (log(x)/log(2))
++#define log2(x) (log(x)/log(2))
 +#endif
  
  static GtkWidget *PR_window = NULL;/* a top level window for controlling pitch-recognition entry.
