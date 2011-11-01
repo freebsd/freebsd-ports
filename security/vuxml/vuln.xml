@@ -53,7 +53,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2011-3256</cvename>
       <url>http://sourceforge.net/projects/freetype/files/freetype2/2.4.7/README/view</url>
-      <url>https://bugzilla.redhat.com/attachment.cgi?id=528829&action=diff</url>
+      <url>https://bugzilla.redhat.com/attachment.cgi?id=528829&amp;action=diff</url>
     </references>
     <dates>
       <discovery>2011-10-12</discovery>
