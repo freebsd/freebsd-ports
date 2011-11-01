@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	dkimproxy
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
 COMMENT=	DKIM filter for Postfix
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM \
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-LICENSE=	GPLv2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
