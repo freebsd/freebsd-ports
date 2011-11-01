@@ -600,8 +600,8 @@ Note:  Please add new entries to the beginning of this file.
 	<name>py27-django</name>
 	<name>py30-django</name>
 	<name>py31-django</name>
-	<range><gt>1.3</gt><lt>1.3.1</lt></range>
-	<range><gt>1.2</gt><lt>1.2.7</lt></range>
+	<range><ge>1.3</ge><lt>1.3.1</lt></range>
+	<range><ge>1.2</ge><lt>1.2.7</lt></range>
       </package>
       <package>
 	<name>py23-django-devel</name>
@@ -716,6 +716,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-09-09</discovery>
       <entry>2011-09-13</entry>
+      <modified>2011-11-01</modified>
     </dates>
   </vuln>
 
