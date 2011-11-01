@@ -17,6 +17,11 @@ sbin/lprng_certs
 sbin/lprng_index_certs
 %%NLS%%share/locale/de/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/LPRng.mo
+%%DATADIR%%/lpd.perms.sample
+%%DATADIR%%/lprng.sh.sample
+%%DATADIR%%/lpd.conf.sample
+%%DATADIR%%/printcap.sample
+%%DATADIR%%/postinstall.sample
 %%PORTDOCS%%%%DOCSDIR%%/LISA98.ppt
 %%PORTDOCS%%%%DOCSDIR%%/LPRng-Reference.html
 %%PORTDOCS%%%%DOCSDIR%%/LPRng-Reference.pdf
