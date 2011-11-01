@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-    		p5-File-Which>=0:${PORTSDIr}/sysutils/p5-File-Which
+    		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
