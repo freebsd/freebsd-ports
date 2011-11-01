@@ -12,7 +12,7 @@ MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A library for multiple dispatch and pattern matching in Ruby
 
 USE_RUBY=	yes

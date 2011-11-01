@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../../devel/ruby-slang
 
 CATEGORIES=	japanese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	S-Lang-jp extension module for Ruby
 
 MAKE_JOBS_SAFE=  yes
