@@ -1,15 +1,6 @@
---- util/fluxbox-generate_menu.in.orig	2008-07-14 21:33:31.000000000 +0200
-+++ util/fluxbox-generate_menu.in	2008-11-30 16:58:28.000000000 +0100
-@@ -45,7 +45,7 @@
- 
- 
- WHOAMI=`whoami`
--[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
-+[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
- 
- # Check for Imlib2-support
- if @pkgprefix@fluxbox@pkgsuffix@ -info 2> /dev/null | grep -q "^IMLIB"; then
-@@ -79,7 +79,7 @@
+--- util/fluxbox-generate_menu.in.orig	2011-10-29 15:46:15.000000000 +0200
++++ util/fluxbox-generate_menu.in	2011-10-31 20:05:12.000000000 +0100
+@@ -68,7 +68,7 @@
      -d  Other path(s) to recursively search for *.desktop files
      -ds Wider search for *.desktop files (takes more time)
      -i  Other path(s) to search for icons
@@ -18,7 +9,7 @@
      -is Wider search for icons (worth the extra time)
      -in Skip icon search
  
-@@ -96,7 +96,7 @@
+@@ -85,7 +85,7 @@
    Only for packagers:
  
      -p  Prefix; default is @PREFIX@
@@ -27,8 +18,8 @@
      -q  KDE-prefix; idem dito
  
  
-@@ -123,13 +123,42 @@
- EOF
+@@ -145,13 +145,42 @@
+     esac
  }
  
 -find_it() {
@@ -50,7 +41,7 @@
 +            return 1
 +        fi
 +    }
- 
+
 -find_it_options() {
 -    [ -n "$1" ] && hash $1 2> /dev/null
 -}
@@ -73,10 +64,10 @@
 +        which $1 > /dev/null 2>&1
 +    }
 +fi
- 
+
  #echo "replaceWithinString: $1, $2, $3" >&2
  #echo ${1//$2/$3} # causes error in BSD even though not used
-@@ -181,7 +210,7 @@
+@@ -203,7 +232,7 @@
      if [ -f "${entry_icon}" ]; then
          : echo "File exists. To overwrite, type: convert \"$1\" \"$entry_icon\"" >&2
      else
@@ -85,7 +76,7 @@
              convert "$1" "$entry_icon"
              # echo convert "$1" , "$entry_icon" >> $ICONMAPPING
          else
-@@ -253,7 +282,7 @@
+@@ -275,7 +304,7 @@
      # echo -n "for $temp_icon"
      eval doSearchLoop $USER_ICONPATHS \
        "$FB_ICONDIR" \
@@ -94,7 +85,16 @@
        ${OTHER_ICONPATHS} \
  
  
-@@ -1236,16 +1265,16 @@
+@@ -558,7 +587,7 @@
+ 
+ 
+ WHOAMI=`whoami`
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
+ 
+ # Check for Imlib2-support
+ if @pkgprefix@fluxbox@pkgsuffix@ -info 2> /dev/null | grep -q "^IMLIB"; then
+@@ -1271,16 +1300,16 @@
  # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
  # your prefix is: @PREFIX@
  
@@ -115,7 +115,7 @@
  
  
  # --- Boolean variables.
-@@ -1317,29 +1346,21 @@
+@@ -1327,29 +1356,21 @@
          -g) GNOMEMENU=yes; shift;;
          -in) NO_ICON=yes; shift;;
          -is) OTHER_ICONPATHS="
@@ -157,7 +157,7 @@
              "
              # /usr/share/apps \
              shift;;
-@@ -1410,13 +1431,12 @@
+@@ -1420,13 +1441,12 @@
  # prefix
  PREFIX="${PREFIX:=@PREFIX@}"
  if [  -z "${PREFIX}" -o ! -d "${PREFIX}" ]; then
@@ -173,7 +173,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -1424,7 +1444,7 @@
+@@ -1434,7 +1454,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -182,7 +182,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1512,7 +1532,7 @@
+@@ -1522,7 +1542,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
@@ -191,7 +191,7 @@
          if find_it_options $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1557,9 +1577,10 @@
+@@ -1581,9 +1601,10 @@
  
  case "$DEFAULT_BROWSERNAME" in
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
@@ -204,7 +204,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1576,9 +1597,10 @@
+@@ -1600,9 +1621,10 @@
  
  append_submenu "${NETMENU}"
      append_submenu "${BROWSERMENU}"
