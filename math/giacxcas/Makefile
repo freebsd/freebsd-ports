@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	giacxcas
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp-fourier.ujf-grenoble.fr/linux/xcas/freebsd/ \
 		http://people.math.jussieu.fr/~han/xcas/sources/
-DISTFILES=	fltkdev.tgz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
+DISTFILES=	fltk-giac.tar.gz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	han@math.jussieu.fr
@@ -20,12 +19,12 @@ COMMENT=	Computer algebra system by Bernard Parisse
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		gettext:${PORTSDIR}/devel/gettext \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
-PATCH_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		pari:${PORTSDIR}/math/pari \
 		mpfr:${PORTSDIR}/math/mpfr \
 		gsl:${PORTSDIR}/math/gsl
+RUN_DEPENDS=	texmacs:${PORTSDIR}/editors/texmacs
 
 NO_CDROM=	The french documentation is for non commercial only use
 
@@ -34,20 +33,15 @@ USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xcursor xft xi
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${FLTKDEV-GIAC}/lib -L${COCOALIB-GIAC}/lib -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--disable-pari
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CXXFLAGS+=	-DSMARTPTR64 -D_I386_ -fPIC
-.endif
 
 WRKSRC=		${WRKDIR}/giac-${PORTVERSION}
-FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.x-r6916
+FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.0
 COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9937
 
 INFO=		giac_es giac_us
@@ -55,6 +49,8 @@ INFO=		giac_es giac_us
 post-patch:
 	${REINPLACE_CMD} -e 's|make |${GMAKE} |g' `${GREP} -Rl 'make ' ${COCOALIB-GIAC}`;
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' `${GREP} -Rl '/bin/bash' ${COCOALIB-GIAC}`;
+	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
+		${WRKSRC}/xcas.applications ${WRKSRC}/xcas.desktop
 
 pre-configure:
 	cd ${COCOALIB-GIAC} && \
@@ -64,4 +60,4 @@ pre-configure:
 	./configure --prefix=${FLTKDEV-GIAC} \
 	&& ${MAKE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
