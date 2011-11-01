@@ -25,8 +25,6 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
-BROKEN=		Does not work with RubyGems 1.8
-
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		RMAGIC "Enable Gantt charts support" on \
