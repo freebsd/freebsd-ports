@@ -24,7 +24,9 @@ include/giac/gausspol.h
 include/giac/gen.h
 include/giac/giac.h
 include/giac/giacPCH.h
+include/giac/giacintl.h
 include/giac/global.h
+include/giac/gmp_replacements.h
 include/giac/help.h
 include/giac/identificateur.h
 include/giac/ifactor.h
@@ -32,6 +34,7 @@ include/giac/index.h
 include/giac/intg.h
 include/giac/intgab.h
 include/giac/isom.h
+include/giac/lexer_tab_int.h
 include/giac/lin.h
 include/giac/maple.h
 include/giac/mathml.h
@@ -340,6 +343,7 @@ share/doc/giac/tortue/koch.cxx
 share/doc/giac/tortue/peano.cxx
 share/doc/giac/tortue/sapin.cxx
 share/giac/aide_cas
+share/giac/doc/README
 share/giac/doc/aide_cas
 share/giac/doc/dxcas/demarr1.xws
 share/giac/doc/dxcas/demarr10.xws
@@ -1176,7 +1180,6 @@ share/giac/doc/en/cascmd_en/contents_motif.gif
 share/giac/doc/en/cascmd_en/index.html
 share/giac/doc/en/cascmd_en/next_motif.gif
 share/giac/doc/en/cascmd_en/previous_motif.gif
-share/giac/doc/en/cascmd_local
 share/giac/doc/en/casinter.ps
 share/giac/doc/en/casinter/casinter.css
 share/giac/doc/en/casinter/casinter.png
@@ -1232,6 +1235,7 @@ share/giac/doc/fr/cascas/cascas012.html
 share/giac/doc/fr/cascas/cascas012.png
 share/giac/doc/fr/cascas/cascas013.html
 share/giac/doc/fr/cascas/cascas013.png
+share/giac/doc/fr/cascas/cascas014.html
 share/giac/doc/fr/cascas/cascas014.png
 share/giac/doc/fr/cascas/cascas015.png
 share/giac/doc/fr/cascas/cascas016.png
@@ -1248,6 +1252,12 @@ share/giac/doc/fr/cascas/cascas026.png
 share/giac/doc/fr/cascas/cascas027.png
 share/giac/doc/fr/cascas/cascas028.png
 share/giac/doc/fr/cascas/cascas029.png
+share/giac/doc/fr/cascas/cascas030.png
+share/giac/doc/fr/cascas/cascas031.png
+share/giac/doc/fr/cascas/cascas032.png
+share/giac/doc/fr/cascas/cascas033.png
+share/giac/doc/fr/cascas/cascas034.png
+share/giac/doc/fr/cascas/cascas035.png
 share/giac/doc/fr/cascas/contents_motif.gif
 share/giac/doc/fr/cascas/index.html
 share/giac/doc/fr/cascas/next_motif.gif
@@ -2223,6 +2233,15 @@ share/giac/doc/fr/cascmd_fr/cascmd_fr964.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr965.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr966.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr967.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr968.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr969.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr970.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr971.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr972.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr973.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr974.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr975.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr976.html
 share/giac/doc/fr/cascmd_fr/contents_motif.gif
 share/giac/doc/fr/cascmd_fr/index.html
 share/giac/doc/fr/cascmd_fr/next_motif.gif
@@ -2279,6 +2298,7 @@ share/giac/doc/fr/casexo/casexo024.html
 share/giac/doc/fr/casexo/casexo024.png
 share/giac/doc/fr/casexo/casexo025.html
 share/giac/doc/fr/casexo/casexo025.png
+share/giac/doc/fr/casexo/casexo026.html
 share/giac/doc/fr/casexo/casexo026.png
 share/giac/doc/fr/casexo/casexo027.png
 share/giac/doc/fr/casexo/casexo028.png
@@ -2479,6 +2499,7 @@ share/giac/doc/fr/casrouge/casrouge016.html
 share/giac/doc/fr/casrouge/casrouge016.png
 share/giac/doc/fr/casrouge/casrouge017.html
 share/giac/doc/fr/casrouge/casrouge017.png
+share/giac/doc/fr/casrouge/casrouge018.html
 share/giac/doc/fr/casrouge/casrouge018.png
 share/giac/doc/fr/casrouge/casrouge019.png
 share/giac/doc/fr/casrouge/casrouge020.png
@@ -2506,6 +2527,7 @@ share/giac/doc/fr/cassim/cassim006.html
 share/giac/doc/fr/cassim/cassim006.png
 share/giac/doc/fr/cassim/cassim007.html
 share/giac/doc/fr/cassim/cassim007.png
+share/giac/doc/fr/cassim/cassim008.html
 share/giac/doc/fr/cassim/cassim008.png
 share/giac/doc/fr/cassim/cassim009.png
 share/giac/doc/fr/cassim/contents_motif.gif
@@ -2625,7 +2647,7 @@ share/giac/doc/fr/tutoriel/tutoriel011.html
 share/giac/doc/fr/tutoriel/tutoriel012.html
 share/giac/doc/fr/xcasex
 share/giac/doc/fr/xcasmenu
-share/giac/doc/local
+share/giac/doc/index.html
 share/giac/doc/pari/Arithmetic_functions.html
 share/giac/doc/pari/Conversions_and_similar_elementary_functions_or_commands.html
 share/giac/doc/pari/Functions_related_to_elliptic_curves.html
