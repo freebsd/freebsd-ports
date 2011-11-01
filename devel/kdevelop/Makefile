@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
 		gmake:${PORTSDIR}/devel/gmake
 
 BROKEN=		conflicting dependencies
+EXPIRATION_DATE=	2011-11-30
 
 CONFLICTS_BUILD=subversion-1.7.[0-9]*
 

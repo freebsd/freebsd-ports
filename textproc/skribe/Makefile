@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-bigloo --prefix=${PREFIX} --docdir=${DOCSDIR}
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 BROKEN=		broken after lang/bigloo update
+EXPIRATION_DATE=	2011-11-30
 
 .SILENT:
 
