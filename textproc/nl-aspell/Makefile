@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Dutch dictionary
 
 DICT=	 	nl
