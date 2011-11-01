@@ -1698,7 +1698,6 @@
     SUBDIR += sitecopy
     SUBDIR += siteframe
     SUBDIR += skytemplate
-    SUBDIR += slash
     SUBDIR += smarty
     SUBDIR += smb2www
     SUBDIR += smb_auth

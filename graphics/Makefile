@@ -320,7 +320,6 @@
     SUBDIR += gtkam
     SUBDIR += gtkdps
     SUBDIR += gtkgraph
-    SUBDIR += gtksee
     SUBDIR += gts
     SUBDIR += guilib
     SUBDIR += gwenview
@@ -388,7 +387,6 @@
     SUBDIR += jumpgis-postgis
     SUBDIR += k3d
     SUBDIR += kalbum
-    SUBDIR += kallery
     SUBDIR += kamera
     SUBDIR += kamera-kde4
     SUBDIR += kbarcode

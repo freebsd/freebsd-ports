@@ -2898,3 +2898,24 @@ textproc/gambas2-gb-xml||2011-10-31|Has been broken for over a year
 x11-toolkits/gambas2-gb-gtk||2011-10-31|Has been broken for over a year
 x11/gambas2-gb-desktop||2011-10-31|Has been broken for over a year
 x11/gambas2-gb-qt-kde||2011-10-31|Has been broken for over a year
+games/phpua-ut2003||2011-11-01|Has expired: depends on phpua-engine
+games/phpua-engine||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
+games/phpua-hl||2011-11-01|Has expired: depends on phpua-engine
+games/phpua-ut||2011-11-01|Has expired: depends on phpua-engine
+games/phpua-cod||2011-11-01|Has expired: depends on phpua-engine
+games/uox3||2011-11-01|Has expired: No more public distfiles
+games/phpua-q3||2011-11-01|Has expired: depends on phpua-engine
+games/phpua-bf||2011-11-01|Has expired: depends on phpua-engine
+graphics/kallery||2011-11-01|Has expired: does not build; last release 20010511
+graphics/gtksee||2011-11-01|Has expired: depends on unfetchable port archivers/bzip; last release 2004
+mail/mailscanner-mrtg||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
+net-p2p/qbittorrent-28-nox11||2011-11-01|Has expired: Please migrate to net-p2p/qbittorrent-29
+net-p2p/qbittorrent-28||2011-11-01|Has expired: Please migrate to net-p2p/qbittorrent-29
+net-p2p/dctc-gui-qt||2011-11-01|Removed
+net-p2p/dctc-gui||2011-11-01|Removed
+net-p2p/dctc||2011-11-01|Has expired: No more public distfiles
+www/slash||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
+databases/maatkit||2011-11-01|Has expired: Upstream support dropped. Please consider using databases/percona-toolkit
+databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
+databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
+databases/gnats||2011-11-01|Has expired: Security issues
