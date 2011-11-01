@@ -20,12 +20,6 @@ USE_BZIP2=	yes
 
 MAN1=		sakura.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
 		 /"-O2"/d ; \
@@ -38,4 +32,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

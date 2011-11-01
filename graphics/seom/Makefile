@@ -59,8 +59,4 @@ do-fetch:
 .endif
 .endif # defined(BOOTSTRAP)
 
-.if ${OSVERSION} < 700000
-IGNORE=		unsupported on FreeBSD versions prior to 7.0
-.endif
-
 .include <bsd.port.post.mk>

@@ -32,10 +32,6 @@ OPTIONS=	DEBUG "Turn on debugging" off
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		Does not install
-.endif
-
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif

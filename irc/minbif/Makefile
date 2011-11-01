@@ -41,12 +41,6 @@ OPTIONS=	CACA "Buddy icon display using libcaca" On \
 
 SUB_LIST+=	USERS=${USERS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not link on 6.X
-.endif
-
 .include <bsd.port.options.mk>
 
 .if defined(WITH_CACA)
@@ -100,4 +94,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

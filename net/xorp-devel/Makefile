@@ -59,10 +59,6 @@ do-fetch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-IGNORE=		unsupported on FreeBSD versions prior to 7.0
-.endif
-
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp
 

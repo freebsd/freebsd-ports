@@ -45,10 +45,6 @@ MAN3=		pwstor.3 \
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on FreeBSD 6.x
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=        --enable-debug
 .endif

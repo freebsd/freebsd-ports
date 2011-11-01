@@ -28,10 +28,4 @@ ACLOCAL_ARGS=	-I macros -I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	ac_cv_c_inline=no
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
