@@ -279,7 +279,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <bid>45416</bid>
+      <bid>48963</bid>
       <url>https://secunia.com/advisories/45416/</url>
     </references>
     <dates>
@@ -836,7 +836,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <blockquote cite="http://www.mantisbt.org/blog/?p=142">
-          <p>Net.Edit0r from BlACK Hat Group reported an XSS issue in 
+          <p>Net.Edit0r from BlACK Hat Group reported an XSS issue in
             search.php. All MantisBT users (including anonymous users that
             are not logged in to public bug trackers) could be impacted by
             this vulnerability.</p>
@@ -1134,19 +1134,19 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>PHP development team reports:</p>
 	<blockquote cite="http://www.php.net/ChangeLog-5.php#5.3.7">
-          <p>Security Enhancements and Fixes in PHP 5.3.7:</p> 
-          <ul> 
+          <p>Security Enhancements and Fixes in PHP 5.3.7:</p>
+          <ul>
             <li>Updated crypt_blowfish to 1.2. (CVE-2011-2483)</li>
             <li>Fixed crash in error_log(). Reported by Mateusz Kocielski</li>
             <li>Fixed buffer overflow on overlog salt in crypt().</li>
             <li>Fixed bug #54939 (File path injection vulnerability
 	      in RFC1867 File upload filename). Reported by Krzysztof Kotowicz.
-	      (CVE-2011-2202)</li> 
+	      (CVE-2011-2202)</li>
             <li>Fixed stack buffer overflow in socket_connect().
-	      (CVE-2011-1938)</li> 
+	      (CVE-2011-1938)</li>
             <li>Fixed bug #54238 (use-after-free in substr_replace()).
-	      (CVE-2011-1148)</li> 
-          </ul> 
+	      (CVE-2011-1148)</li>
+          </ul>
 	</blockquote>
       </body>
     </description>
@@ -1379,7 +1379,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>ISC reports:</p>
 	<blockquote cite="http://www.isc.org/software/dhcp/advisories/cve-2011-2748">
 	  <p>A pair of defects cause the server to halt upon processing certain
-	    packets. The patch is to properly discard or process those packets. 
+	    packets. The patch is to properly discard or process those packets.
 	  </p>
 	</blockquote>
       </body>
@@ -1506,7 +1506,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=725760">
 	  <p>The compress/ LZW decompress implentation does notcorrectly handle
 	     compressed streams that contain code words that were not yet added
-	     to the decompression table. This may lead to arbitrary memory 
+	     to the decompression table. This may lead to arbitrary memory
 	     corruption. Successfull exploitation may possible lead to a local
 	     privilege escalation.</p>
 	</blockquote>
@@ -1535,8 +1535,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Vincent Danen reports:</p>
 	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-0226">
 	  <p>Due to an error within the t1_decoder_parse_charstrings() function
-	     (src/psaux/t1decode.c) and can be exploited to corrupt memory by 
-	     tricking a user into processing a specially-crafted postscript 
+	     (src/psaux/t1decode.c) and can be exploited to corrupt memory by
+	     tricking a user into processing a specially-crafted postscript
 	     type1 font in an application that uses the freetype library.</p>
 	</blockquote>
       </body>
@@ -1687,11 +1687,11 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OpenSAML developer reports:</p>
 	<blockquote cite="http://shibboleth.internet2.edu/secadv/secadv_20110725.txt">
-	  <p>The Shibboleth software relies on the OpenSAML libraries to perform 
-             verification of signed XML messages such as attribute queries or 
-             SAML assertions. Both the Java and C++ versions are vulnerable to a 
-             so-called "wrapping attack" that allows a remote, unauthenticated 
-             attacker to craft specially formed messages that can be successfully 
+	  <p>The Shibboleth software relies on the OpenSAML libraries to perform
+             verification of signed XML messages such as attribute queries or
+             SAML assertions. Both the Java and C++ versions are vulnerable to a
+             so-called "wrapping attack" that allows a remote, unauthenticated
+             attacker to craft specially formed messages that can be successfully
              verified, but contain arbitrary content.</p>
 	</blockquote>
       </body>
@@ -1784,9 +1784,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ISC reports:</p>
 	<blockquote cite="https://www.isc.org/software/bind/advisories/cve-2011-2465">
-	  <p>Two defects were discovered in ISC's BIND 9.8 code. These defects only affect BIND 9.8 
-	    servers which have recursion enabled and which use a specific feature of the software 
-	    known as Response Policy Zones (RPZ) and where the RPZ zone contains a specific 
+	  <p>Two defects were discovered in ISC's BIND 9.8 code. These defects only affect BIND 9.8
+	    servers which have recursion enabled and which use a specific feature of the software
+	    known as Response Policy Zones (RPZ) and where the RPZ zone contains a specific
 	    rule/action pattern.</p>
 	</blockquote>
       </body>
@@ -1917,11 +1917,11 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>It's reported in CVE advisory that:</p>
         <blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1753">
-          <p>expat_erl.c in ejabberd before 2.1.7 and 3.x before 
-            3.0.0-alpha-3, and exmpp before 0.9.7, does not properly detect 
-            recursion during entity expansion, which allows remote attackers 
-            to cause a denial of service (memory and CPU consumption) via a 
-            crafted XML document containing a large number of nested entity 
+          <p>expat_erl.c in ejabberd before 2.1.7 and 3.x before
+            3.0.0-alpha-3, and exmpp before 0.9.7, does not properly detect
+            recursion during entity expansion, which allows remote attackers
+            to cause a denial of service (memory and CPU consumption) via a
+            crafted XML document containing a large number of nested entity
             references, a similar issue to CVE-2003-1564.</p>
         </blockquote>
       </body>
@@ -2394,7 +2394,7 @@ Note:  Please add new entries to the beginning of this file.
 	    mitigated by disabling on-screen error display at admin /
 	    settings / error-reporting. This is the recommended setting for
 	    production sites.</p>
-	  <p>When using re-colorable themes, color inputs are not sanitized. 
+	  <p>When using re-colorable themes, color inputs are not sanitized.
 	    Malicious color values can be used to insert arbitrary CSS and
 	    script code. Successful exploitation requires the "Administer
 	    themes" permission.</p>
@@ -3397,7 +3397,7 @@ Note:  Please add new entries to the beginning of this file.
 	    remotely triggered by malformed AS-Pathlimit or Extended-Community
 	    attributes. These issues have been assigned CVE-2010-1674 and
 	    CVE-2010-1675. Support for AS-Pathlimit has been removed with this
-	    release. 
+	    release.
 	  </p>
 	</blockquote>
       </body>
