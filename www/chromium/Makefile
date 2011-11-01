@@ -25,9 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
-		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat \
-		nss>=3.12:${PORTSDIR}/security/nss
-# minimal version of nss, LIB_DEPENDS does not enforce this
+		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		cairo.2:${PORTSDIR}/graphics/cairo \
@@ -80,8 +78,8 @@ GYP_DEFINES+=	use_cups=1 \
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
 		PULSE	"Enable Pulse Audio support"			off \
-		CLANG	"Compile Chromium with clang"			off \
-		GCC45	"Compile Chromium with gcc 4.5+"		off \
+		CLANG	"Build Chromium with Clang"			off \
+		GCC45	"Build Chromium with GCC 4.5+"			off \
 		DEBUG	"Compile with debug symbols and verbose output"	off
 
 .include <bsd.port.options.mk>
