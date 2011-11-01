@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -101,7 +101,7 @@ GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
 		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
-		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
+		${JAVALIBDIR}/jrosetta-api.jar:${PORTSDIR}/java/jrosetta \
 		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
 		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
 		fop:${PORTSDIR}/textproc/fop \
@@ -218,6 +218,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$jardir/batik-all.jar|${LOCALBASE}/share/java/batik/lib/batik-all.jar|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|jrosetta-API.jar|jrosetta-api.jar|' \
+		${WRKSRC}/configure
 	@${MKDIR} ${WRKSRC}/thirdparty
 	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
 	@# Run fixes
