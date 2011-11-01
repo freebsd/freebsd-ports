@@ -34,8 +34,8 @@ CONFIG_FILE=	${LOCALBASE}/etc/kde-meta.conf
 ## The list of all modules that make up KDE, excluding the base modules
 ## arts, kdebase and kdelibs
 
-ALL_MODULES=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEVELOP KDEEDU\
-		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KOFFICE KDEPIM\
+ALL_MODULES=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEEDU\
+		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KDEPIM\
 		KDESDK KDETOYS KDEUTILS KDEWEBDEV
 
 ## Forwards parts of the environment to scripts/configure.kde3
@@ -114,9 +114,6 @@ RUN_DEPENDS+=	kjumpingcube:${PORTSDIR}/games/kdegames3
 .if !defined(WITHOUT_KDEUTILS)
 RUN_DEPENDS+=	kdessh:${PORTSDIR}/misc/kdeutils3
 .endif
-.if !defined(WITHOUT_KOFFICE)
-RUN_DEPENDS+=	kword:${PORTSDIR}/editors/koffice-kde3
-.endif
 .if !defined(WITHOUT_KDENETWORK)
 RUN_DEPENDS+=	kget:${PORTSDIR}/net/kdenetwork3
 .endif
@@ -131,9 +128,6 @@ RUN_DEPENDS+=	korganizer:${PORTSDIR}/deskutils/kdepim3
 .endif
 .if !defined(WITHOUT_KDESDK)
 RUN_DEPENDS+=	cervisia:${PORTSDIR}/devel/kdesdk3
-.endif
-.if !defined(WITHOUT_KDEVELOP)
-RUN_DEPENDS+=	kdevelop:${PORTSDIR}/devel/kdevelop
 .endif
 .if !defined(WITHOUT_KDEEDU)
 RUN_DEPENDS+=	khangman:${PORTSDIR}/misc/kdeedu3
