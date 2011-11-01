@@ -29,7 +29,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 USE_CSTD=	gnu89
 USE_PERL5=	yes
