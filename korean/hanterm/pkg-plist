@@ -1,5 +1,0 @@
-bin/hanterm
-lib/X11/app-defaults/Hanterm
-%%PORTDOCS%%share/doc/hanterm/ChangeLog
-%%PORTDOCS%%share/doc/hanterm/hanterm.html
-%%PORTDOCS%%@dirrm share/doc/hanterm

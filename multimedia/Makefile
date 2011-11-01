@@ -65,7 +65,6 @@
     SUBDIR += fpc-dts
     SUBDIR += fpc-matroska
     SUBDIR += freevo
-    SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gcap
@@ -220,7 +219,6 @@
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
-    SUBDIR += mplex
     SUBDIR += msdl
     SUBDIR += mxflib
     SUBDIR += mythplugin-mythvideo

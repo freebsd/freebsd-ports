@@ -469,7 +469,6 @@
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
     SUBDIR += mp3burn
-    SUBDIR += mp3butler
     SUBDIR += mp3c
     SUBDIR += mp3check
     SUBDIR += mp3ck
@@ -553,7 +552,6 @@
     SUBDIR += p5-MPEG-ID3v2Tag
     SUBDIR += p5-Music-Audioscrobbler-MPD
     SUBDIR += p5-Music-Audioscrobbler-Submit
-    SUBDIR += p5-MusicBrainz-Client
     SUBDIR += p5-MusicBrainz-DiscID
     SUBDIR += p5-MusicBrainz-Queries
     SUBDIR += p5-Net-DAAP-Client

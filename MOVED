@@ -2842,3 +2842,29 @@ devel/py-vmaps||2011-10-27|Has expired: Author recommends using math/py-numpy in
 devel/rubygem-rack-protection||2011-10-28|Removed
 graphics/tumbler|deskutils/xfce4-tumbler|2011-10-29|Duplicate
 graphics/poppler-gtk|graphics/poppler-glib|2011-10-31|Move to match library name
+audio/mp3butler||2011-10-31|Depends on audio/p5-MusicBrainz-Client which is DEPRECATED
+audio/p5-MusicBrainz-Client||2011-10-31|Disappeared from CPAN
+editors/doxymacs||2011-10-31|Depends on www/w3-4, which is DEPRECATED
+graphics/libart||2011-10-31|Does not fetch, no more public distfiles
+java/jboss4||2011-10-31|Does not build with new ant
+korean/hanterm||2011-10-31|Depends on korean/johabfonts, which is DEPRECATED, fails to build with new utmpx
+korean/johabfonts||2011-10-31|No more public distfiles, installs into /
+korean/hlatex-psfonts-uhc-extra||2011-10-31|Depends on korean/hlatex, which is DEPRECATED
+korean/texinfo||2011-10-31|Depends on korean/hlatex, which is DEPRECATED
+korean/hlatex||2011-10-31|No more public distfiles
+mail/jboss-mailservices||2011-10-31|Depends on java/jboss4, which is DEPRECATED
+misc/p5-Geography-NationalGrid-TW||2011-10-31|Depends on misc/p5-Geography-NationalGrid, which is DEPRECATED
+misc/p5-Geography-NationalGrid||2011-10-31|Disappeared from CPAN
+multimedia/fxtv||2011-10-31|Depends on multimedia/mplex, which is DEPRECATED
+multimedia/mplex||2011-10-31|Upstream disapeared and distfile is not available
+net/py-timeoutsocket||2011-10-31|Upstream disapear and distfile is no more available
+textproc/p5-XML-LibRSVG||2011-10-31|Unmaintained and not used anymore
+textproc/javacc||2011-10-31|No more public distfiles
+www/w3-4/Makefile||2011-10-31|Upstream disapeared and distfile is not available
+www/commonist||2011-10-31|Depends on textproc/javacc, which is DEPRECATED
+www/newsfeed||2011-10-31|Depends on net/py-timeoutsocket, which is DEPRECATED
+x11/fbsd-icons||2011-10-31|Upstream disapear and distfile is no more available
+x11-themes/geramik||2011-10-31|Depends on x11-toolkits/qtpixmap, which is DEPRECATED
+x11-toolkits/qtpixmap||2011-10-31|No more public distfiles
+x11-wm/fvwm95-i18n||2011-10-31|Depends on x11/fbsd-icons, which is DEPRECATED
+x11-wm/fvwm95||2011-10-31|Depends on x11/fbsd-icons, which is DEPRECATED

@@ -232,7 +232,6 @@
     SUBDIR += qt33
     SUBDIR += qt4-gui
     SUBDIR += qt4pas
-    SUBDIR += qtpixmap
     SUBDIR += qwt4
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin

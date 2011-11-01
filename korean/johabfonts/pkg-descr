@@ -1,7 +1,0 @@
-Hangul X11 fonts(Johab)
------------------------
-
-It is Korean fonts for X11, used in hanterm, hanemacs, mozilla, etc.
-Its encoding is not standard(-johab*), so it cannot be used in i18n-ed 
-program of X11. But Mozilla(open source netscape web browser) can use 
-these fonts for displaying.

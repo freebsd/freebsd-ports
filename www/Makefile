@@ -110,7 +110,6 @@
     SUBDIR += codeigniter
     SUBDIR += codeigniter17
     SUBDIR += comclear
-    SUBDIR += commonist
     SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += crawl
@@ -574,7 +573,6 @@
     SUBDIR += netstiff
     SUBDIR += netsurf
     SUBDIR += newsbeuter
-    SUBDIR += newsfeed
     SUBDIR += nginx
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
@@ -1886,7 +1884,6 @@
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += vtiger-customerportal
-    SUBDIR += w3-4
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += w3m-m17n

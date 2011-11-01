@@ -90,7 +90,6 @@
     SUBDIR += jaxen
     SUBDIR += jbootstrap
     SUBDIR += jboss2
-    SUBDIR += jboss4
     SUBDIR += jboss5
     SUBDIR += jc
     SUBDIR += jcalendar

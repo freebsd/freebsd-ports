@@ -16,18 +16,14 @@
     SUBDIR += gimp-help
     SUBDIR += gtkcomm
     SUBDIR += h2ps
-    SUBDIR += hanterm
     SUBDIR += hanterm-xf86
     SUBDIR += hanyangfonts
     SUBDIR += hcode
-    SUBDIR += hlatex
-    SUBDIR += hlatex-psfonts-uhc-extra
     SUBDIR += hmconv
     SUBDIR += hpscat
     SUBDIR += hunspell
     SUBDIR += ibus-hangul
     SUBDIR += imhangul
-    SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
@@ -47,7 +43,6 @@
     SUBDIR += scim-hangul
     SUBDIR += scim-tables
     SUBDIR += stardict2-dict-kr
-    SUBDIR += texinfo
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += unfonts-ttf

@@ -440,7 +440,6 @@
     SUBDIR += libGLU
     SUBDIR += libGLw
     SUBDIR += libafterimage
-    SUBDIR += libart
     SUBDIR += libart_lgpl
     SUBDIR += libaux
     SUBDIR += libboard

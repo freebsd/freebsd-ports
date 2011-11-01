@@ -1,9 +1,0 @@
-Hanterm
--------
-
-Hanterm is a hack of xterm for managing Korean language. We can input/output
-Korean language characters in hanterm, not using i18n facility of X11.
-It supports 2/3 type hangul keyboards, ksc5601/ksx1001 type X11 hangul
-fonts and Johab fonts, originally used in Hanterm early version.
-
-WWW: http://www.hanterm.org/
