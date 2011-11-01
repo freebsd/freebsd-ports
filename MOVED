@@ -2919,3 +2919,4 @@ databases/maatkit||2011-11-01|Has expired: Upstream support dropped. Please cons
 databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/gnats||2011-11-01|Has expired: Security issues
+graphics/poppler-qt3||2011-11-01|Poppler Upstream removed support for qt3
