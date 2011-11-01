@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54075e39-04ac-11e1-a94e-bcaec565249c">
+    <topic>freetype -- Some type 1 fonts handling vulnerabilities </topic>
+    <affects>
+      <package>
+	<name>freetype</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeType project reports:</p>
+	<blockquote cite="http://sourceforge.net/projects/freetype/files/freetype2/2.4.7/README/view">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3256</cvename>
+      <url>http://sourceforge.net/projects/freetype/files/freetype2/2.4.7/README/view</url>
+      <url>https://bugzilla.redhat.com/attachment.cgi?id=528829&action=diff</url>
+    </references>
+    <dates>
+      <discovery>2011-10-12</discovery>
+      <entry>2011-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f08e2c15-ffc9-11e0-b0f3-bcaec565249c">
     <topic>cacti -- Multiple vulnabilites</topic>
     <affects>
