@@ -14,6 +14,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bonobo configuration moniker
 
+DEPRECATED=	No more supported upstream, not depend on anymore.
+EXPIRATION_DATE=	2011-11-30
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gconf

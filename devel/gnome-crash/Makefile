@@ -14,6 +14,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small coredump analysis tool for GNOME
 
+DEPRECATED=	No more supported upstream, not depend on anymore.
+EXPIRATION_DATE=	2011-11-30
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade gnomeprint
 GNU_CONFIGURE=	yes
