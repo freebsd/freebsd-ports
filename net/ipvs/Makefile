@@ -15,6 +15,9 @@ DISTNAME=	ipvs-${PORTVERSION}_${PORTREVISION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD port of Linux Virtual Server
 
+DEPRECATED=	Designed for FreeBSD 5.x, which is no longer supported
+EXPIRATION_DATE=	2011-11-30
+
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SRCDIR?=	/usr/src
 

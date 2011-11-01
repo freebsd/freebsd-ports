@@ -17,6 +17,9 @@ DIST_SUBDIR=	KDE/koffice
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Office Suite for KDE3
 
+BROKEN=		Does not compile
+EXPIRATION_DATE=	2011-11-30
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
@@ -29,8 +32,6 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		wpd-0.8.8:${PORTSDIR}/textproc/libwpd08 \
 		wv2.4:${PORTSDIR}/textproc/wv2
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
-
-BROKEN=		does not compile
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

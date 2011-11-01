@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-FreeBSD-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A monitoring daemon for ipvs clusters
 
+DEPRECATED=	Depends on net/ipvs, which is scheduled for deletion
+EXPIRATION_DATE=	2011-11-30
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	${LOCALBASE}/lib/libipvs.a:${PORTSDIR}/net/ipvs
 
