@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	djview
-PORTVERSION=	4.7
-PORTREVISION=	0
+PORTVERSION=	4.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 
