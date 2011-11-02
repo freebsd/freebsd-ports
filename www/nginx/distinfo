@@ -72,5 +72,7 @@ SHA256 (ngx_supervisord-1.4.tar.gz) = 0954a4efb1b955692acf523e169221146d6aa93ad1
 SIZE (ngx_supervisord-1.4.tar.gz) = 19351
 SHA256 (nginx_udplog_module-1.0.0.tar.gz) = e0c0bfa524c3a675ad6c08b916d08e57ef45f9818cb8a0d848c2c83785c6e659
 SIZE (nginx_udplog_module-1.0.0.tar.gz) = 6284
+SHA256 (gabor-nginx-x-rid-header-0daa3cc.tar.gz) = 136239b8f9ab2fbefb2aabc6897d3f12cc8063ce817901f9b8a624e12fbc6035
+SIZE (gabor-nginx-x-rid-header-0daa3cc.tar.gz) = 2714
 SHA256 (agentzh-xss-nginx-module-v0.03rc3-0-g8618dd3.tar.gz) = 53d24316489344beac53bff46f30433ef483123db397e7db27459cd6131eaa39
 SIZE (agentzh-xss-nginx-module-v0.03rc3-0-g8618dd3.tar.gz) = 10016
