@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.04
-PORTREVISION=	1
+PORTVERSION=	2.06
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -18,9 +17,10 @@ LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 
-MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::IPv6.3 \
-	SNMP::Info::Layer3::Altiga.3 \
-	SNMP::Info::Layer3::Arista.3 SNMP::Info::Bridge.3 \
+MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
+	SNMP::Info::IPv6.3 SNMP::Info::Layer2::HPVC.3 \
+	SNMP::Info::Layer3::Altiga.3 SNMP::Info::Layer3::Arista.3 \
+	SNMP::Info::Layer3::Aruba.3 SNMP::Info::Bridge.3 \
 	SNMP::Info::Layer3::CiscoFWSM.3 SNMP::Info::Layer3::Pf.3 \
 	SNMP::Info::CDP.3 SNMP::Info::CiscoImage.3 SNMP::Info::CiscoQOS.3 \
 	SNMP::Info::CiscoRTT.3 SNMP::Info::CiscoStack.3 \
@@ -30,7 +30,7 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::IPv6.3 \
 	SNMP::Info::Layer1::Allied.3 SNMP::Info::Layer1::Asante.3 \
 	SNMP::Info::Layer1::Bayhub.3 SNMP::Info::Layer1::S3000.3 \
 	SNMP::Info::Layer2.3 SNMP::Info::Layer2::Aironet.3 \
-	SNMP::Info::Layer2::Allied.3 SNMP::Info::Layer2::Aruba.3 \
+	SNMP::Info::Layer2::Allied.3 \
 	SNMP::Info::Layer2::Bay.3 SNMP::Info::Layer2::Baystack.3 \
 	SNMP::Info::Layer2::C1900.3 SNMP::Info::Layer2::C2900.3 \
 	SNMP::Info::Layer2::Catalyst.3 SNMP::Info::Layer2::Centillion.3 \
@@ -45,7 +45,8 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::IPv6.3 \
 	SNMP::Info::Layer3::Cisco.3 SNMP::Info::Layer3::Contivity.3 \
 	SNMP::Info::Layer3::Extreme.3 SNMP::Info::Layer3::Foundry.3 \
 	SNMP::Info::Layer3::N1600.3 SNMP::Info::Layer3::Passport.3 \
-	SNMP::Info::MAU.3 SNMP::Info::NortelStack.3 SNMP::Info::RapidCity.3 \
+	SNMP::Info::MAU.3 SNMP::Info::Layer3::Mikrotik.3 \
+	SNMP::Info::NortelStack.3 SNMP::Info::RapidCity.3 \
 	SNMP::Info::SONMP.3 SNMP::Info::Layer3::Juniper.3 \
 	SNMP::Info::CiscoConfig.3 SNMP::Info::CiscoPortSecurity.3 \
 	SNMP::Info::CiscoPower.3 SNMP::Info::IEEE802dot11.3 SNMP::Info::LLDP.3 \
@@ -53,8 +54,8 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::IPv6.3 \
 	SNMP::Info::Layer2::Netgear.3 SNMP::Info::Layer3::Dell.3 \
 	SNMP::Info::Layer3::Enterasys.3 SNMP::Info::Layer3::Microsoft.3 \
 	SNMP::Info::Layer3::NetSNMP.3 SNMP::Info::Layer3::Netscreen.3\
-	SNMP::Info::Layer3::Sun.3 SNMP::Info::PowerEthernet.3 \
-	SNMP::Info::Layer3::HP9300.3 SNMP::Info::Layer3::AlcatelLucent.3 \
-	SNMP::Info::Layer3::Timetra.3
+	SNMP::Info::Layer3::Sun.3 SNMP::Info::Layer3::PacketFront.3 \
+	SNMP::Info::PowerEthernet.3 SNMP::Info::Layer3::HP9300.3 \
+	SNMP::Info::Layer3::AlcatelLucent.3 SNMP::Info::Layer3::Timetra.3
 
 .include <bsd.port.mk>
