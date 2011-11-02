@@ -15,8 +15,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
 
 ALL_TARGET=	lib
-CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
-		--with-etcdir=${PREFIX}/etc
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
