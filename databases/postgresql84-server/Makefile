@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -62,6 +62,12 @@ SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+USERS=		${PG_USER}
+. if ${USERS} != "pgsql"
+UID_FILES+=     ${WRKDIR}/pguid
+GID_FILES+=     ${WRKDIR}/pggid
+. endif
+GROUPS=		${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
