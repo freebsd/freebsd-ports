@@ -1,7 +1,0 @@
-share/sgml/tei/lite/teilite.dtd
-share/sgml/tei/lite/teilite.tag
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
-share/sgml/tei/lite/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
-@dirrm share/sgml/tei/lite
-@dirrmtry share/sgml/tei

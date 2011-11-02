@@ -184,7 +184,6 @@
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += grsync
-    SUBDIR += gsambad
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gssdp
@@ -275,7 +274,6 @@
     SUBDIR += kiax
     SUBDIR += kio-upnp-ms
     SUBDIR += kissd
-    SUBDIR += kmuddy
     SUBDIR += knemo
     SUBDIR += knemo-kde4
     SUBDIR += kojoney
@@ -318,7 +316,6 @@
     SUBDIR += libopennet
     SUBDIR += liboping
     SUBDIR += libosip
-    SUBDIR += libosip2
     SUBDIR += libpcap
     SUBDIR += libpcapnav
     SUBDIR += libproxy
@@ -398,7 +395,6 @@
     SUBDIR += net-http
     SUBDIR += net6
     SUBDIR += netatalk
-    SUBDIR += netboot
     SUBDIR += netcat
     SUBDIR += netclasses
     SUBDIR += netdude
@@ -420,8 +416,6 @@
     SUBDIR += ngrep-lib
     SUBDIR += nifmon
     SUBDIR += nload
-    SUBDIR += nocatauth-gateway
-    SUBDIR += nocatauth-server
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph

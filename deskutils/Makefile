@@ -75,7 +75,6 @@
     SUBDIR += gdesklets
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-starterbar
-    SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += gimmie
     SUBDIR += gkrellm-reminder2
@@ -173,7 +172,6 @@
     SUBDIR += mencal
     SUBDIR += menumaker
     SUBDIR += metabar
-    SUBDIR += mhc
     SUBDIR += moregroupware
     SUBDIR += mrundlg
     SUBDIR += msynctool
@@ -196,7 +194,6 @@
     SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += org-mode.el
-    SUBDIR += org-mode.el6
     SUBDIR += osmo
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo

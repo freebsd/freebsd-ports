@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-export J2SE_PREEMPTCLOSE=1
-export JAVA_VERSION="%%JAVA_VERSION%%"
-
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" -jar FrostWire.jar "$@"

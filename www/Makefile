@@ -553,7 +553,6 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monast
-    SUBDIR += monkey
     SUBDIR += moodle
     SUBDIR += moodle2
     SUBDIR += moonshine
@@ -648,7 +647,6 @@
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-Apache-Reload
     SUBDIR += p5-Apache-SSI
-    SUBDIR += p5-Apache-Scoreboard
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-Apache-Session-PHP
     SUBDIR += p5-Apache-Session-SQLite3
@@ -674,7 +672,6 @@
     SUBDIR += p5-AxKit-XSP-Sendmail
     SUBDIR += p5-AxKit-XSP-Util
     SUBDIR += p5-AxKit-XSP-WebUtils
-    SUBDIR += p5-B-LexInfo
     SUBDIR += p5-Bigtop
     SUBDIR += p5-Blog-Spam
     SUBDIR += p5-Bundle-Slash
@@ -1428,8 +1425,6 @@
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
-    SUBDIR += phpwiki
-    SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
     SUBDIR += pivotx
     SUBDIR += piwigo
@@ -1700,13 +1695,11 @@
     SUBDIR += siteframe
     SUBDIR += skytemplate
     SUBDIR += smarty
-    SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += snownews
     SUBDIR += spawn-fcgi
     SUBDIR += speedtest-mini
-    SUBDIR += spip
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid

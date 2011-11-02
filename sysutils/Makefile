@@ -126,7 +126,6 @@
     SUBDIR += cotty
     SUBDIR += cpdup
     SUBDIR += cpu
-    SUBDIR += cpuburn
     SUBDIR += cpulimit
     SUBDIR += cpupowerd
     SUBDIR += cramfs
@@ -948,7 +947,6 @@
     SUBDIR += wiimms
     SUBDIR += wmapm
     SUBDIR += wmapmload
-    SUBDIR += wmbattery
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
     SUBDIR += wmcpuload

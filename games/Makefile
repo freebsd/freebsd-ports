@@ -84,7 +84,6 @@
     SUBDIR += bloodfrontier
     SUBDIR += blue
     SUBDIR += bogged
-    SUBDIR += bomb
     SUBDIR += bomberclone
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
@@ -442,7 +441,6 @@
     SUBDIR += legesmotus
     SUBDIR += lexter
     SUBDIR += lgeneral
-    SUBDIR += lgeneral-data
     SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
     SUBDIR += libfov
@@ -463,7 +461,6 @@
     SUBDIR += linux-enemyterritory-etpro
     SUBDIR += linux-enemyterritory-etpub
     SUBDIR += linux-enemyterritory-fortress
-    SUBDIR += linux-enemyterritory-jaymod
     SUBDIR += linux-enemyterritory-omni-bot
     SUBDIR += linux-enemyterritory-omni-bot-0660
     SUBDIR += linux-enemyterritory-shrub
@@ -915,7 +912,6 @@
     SUBDIR += vitetris
     SUBDIR += volleyball
     SUBDIR += vor
-    SUBDIR += vultures-claw
     SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
@@ -1018,7 +1014,6 @@
     SUBDIR += xpanex
     SUBDIR += xpat2
     SUBDIR += xpenguins
-    SUBDIR += xphotohunter
     SUBDIR += xpilot
     SUBDIR += xpilot-ng-client
     SUBDIR += xpilot-ng-server

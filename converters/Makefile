@@ -128,7 +128,6 @@
     SUBDIR += php52-recode
     SUBDIR += psiconv
     SUBDIR += py-bsdconv
-    SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv
     SUBDIR += py-iconvcodec
     SUBDIR += py-pisa

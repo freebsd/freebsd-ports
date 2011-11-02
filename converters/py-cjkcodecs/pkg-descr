@@ -1,8 +1,0 @@
-The cjkcodecs is a unified unicode codec for Chinese, Japanese
-and Korean encodings. And, supports the following features:
-
- * PEP293 Error Callbacks (for Python 2.3 only)
- * Reentrant-safe encoder and decoder
- * Stateful/context-aware StreamReader and StreamWriter
-
-WWW: http://cjkpython.berlios.de/#CJKCodecs

@@ -319,7 +319,6 @@
     SUBDIR += openct
     SUBDIR += openfwtk
     SUBDIR += openpgpsdk
-    SUBDIR += opensaml
     SUBDIR += opensaml2
     SUBDIR += opensc
     SUBDIR += openscep

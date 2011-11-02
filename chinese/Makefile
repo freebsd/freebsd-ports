@@ -110,7 +110,6 @@
     SUBDIR += qterm
     SUBDIR += reciteword
     SUBDIR += scim-array
-    SUBDIR += scim-chewing
     SUBDIR += scim-fcitx
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables

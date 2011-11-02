@@ -295,7 +295,6 @@ jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow
 						distribution with fee
 jta-*.zip		java/jta		See the license
 astah-community-*.zip	devel/astah-community	License restrictions
-kaffe-*			java/kaffe		Restrictive copyright
 komodo-*		editors/komodo-edit	Distribution not permitted
 KASH3-*			math/kash3		Not for commercial distribution
 						or use
@@ -424,8 +423,6 @@ sharefonts-*		x11-fonts/sharefonts	Shareware.  Cannot be
 						authorization
 shorten-*		audio/shorten		May not be sold.  May not be
 						distributed if modified
-shoutcast-*		audio/shoutcast		No redistribution allowed
-shoutcast-*		audio/linux-shoutcast	No redistribution allowed
 sid-milter-*		mail/sid-milter		May incorporate intellectual
 						property, possible patent issues
 ski-*.i386.rpm		emulators/ski		Restrictive license

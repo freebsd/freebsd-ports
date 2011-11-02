@@ -12,11 +12,9 @@
     SUBDIR += baekmukfonts-ttf
     SUBDIR += engdic
     SUBDIR += eterm
-    SUBDIR += gdick
     SUBDIR += gimp-help
     SUBDIR += gtkcomm
     SUBDIR += h2ps
-    SUBDIR += hanterm-xf86
     SUBDIR += hanyangfonts
     SUBDIR += hcode
     SUBDIR += hmconv
@@ -42,7 +40,6 @@
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul
     SUBDIR += scim-tables
-    SUBDIR += stardict2-dict-kr
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += unfonts-ttf

@@ -98,7 +98,6 @@
     SUBDIR += ipv6gen
     SUBDIR += irrtoolset
     SUBDIR += isic
-    SUBDIR += jffnms
     SUBDIR += jnettop
     SUBDIR += kismet
     SUBDIR += lanmap

@@ -427,7 +427,6 @@
     SUBDIR += linux-neroaaccodec
     SUBDIR += linux-openal
     SUBDIR += linux-sdl_mixer
-    SUBDIR += linux-shoutcast
     SUBDIR += linuxsampler
     SUBDIR += liquidsoap
     SUBDIR += listener
@@ -666,7 +665,6 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
-    SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer

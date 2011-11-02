@@ -155,7 +155,6 @@
     SUBDIR += firemime
     SUBDIR += firepay
     SUBDIR += firetray
-    SUBDIR += freepops
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gensig
@@ -208,7 +207,6 @@
     SUBDIR += isbg
     SUBDIR += isoqlog
     SUBDIR += isync
-    SUBDIR += itraxp
     SUBDIR += james
     SUBDIR += jamlib
     SUBDIR += jmba

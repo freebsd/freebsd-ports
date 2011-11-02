@@ -1096,7 +1096,6 @@
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
     SUBDIR += py-html2text
-    SUBDIR += py-hyperestraier
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-jaxml
     SUBDIR += py-libtre
@@ -1332,15 +1331,11 @@
     SUBDIR += ta-aspell
     SUBDIR += tclExpat
     SUBDIR += tdhkit
-    SUBDIR += tdtd.el
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
     SUBDIR += tei-guidelines-p3
-    SUBDIR += tei-guidelines-p4
-    SUBDIR += tei-lite
     SUBDIR += tei-p3
-    SUBDIR += tei-p4
     SUBDIR += tet-aspell
     SUBDIR += tex2im
     SUBDIR += texi2db

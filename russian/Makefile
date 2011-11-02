@@ -10,7 +10,6 @@
     SUBDIR += aspell
     SUBDIR += bugzilla-ru
     SUBDIR += bugzilla3-ru
-    SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += eric4
     SUBDIR += fortune-bashorgru
