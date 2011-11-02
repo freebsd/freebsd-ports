@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.6.6
-PORTREVISION?=	1
+PORTVERSION=	4.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
@@ -37,10 +36,6 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 700000
-BROKEN=	does not build on 6.x
-.endif
-
 .if ${ARCH} == "i386"
 CPPFLAGS+=-march=i686
 .endif
