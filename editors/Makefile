@@ -194,7 +194,6 @@
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-room
-    SUBDIR += richtext
     SUBDIR += rospell
     SUBDIR += rox-edit
     SUBDIR += scite

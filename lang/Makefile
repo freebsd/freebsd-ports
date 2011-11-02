@@ -6,7 +6,6 @@
     SUBDIR += Gofer
     SUBDIR += STk
     SUBDIR += Sather
-    SUBDIR += TenDRA
     SUBDIR += abcl
     SUBDIR += afnix
     SUBDIR += algol68g
@@ -210,7 +209,6 @@
     SUBDIR += p5-F77
     SUBDIR += p5-Interpolation
     SUBDIR += p5-JSAN
-    SUBDIR += p5-JavaScript
     SUBDIR += p5-JavaScript-SpiderMonkey
     SUBDIR += p5-JavaScript-Squish
     SUBDIR += p5-JavaScript-Value-Escape

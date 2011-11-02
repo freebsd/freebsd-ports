@@ -1,7 +1,0 @@
-Cyrillic transcoder for network protocols.
-
-It allows transcode text-based tcp protocols from/to
-following cyrillic text coding standards: CP866 (DOS),
-Macintosh, ISO, KOI8 (UNIX), CP1251 (Windows).
-
-WWW: http://www.lexa.ru/programs/cyrproxy.html

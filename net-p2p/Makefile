@@ -5,7 +5,6 @@
 
     SUBDIR += amule
     SUBDIR += amule-devel
-    SUBDIR += azureus
     SUBDIR += azureus2
     SUBDIR += bitcoin
     SUBDIR += bitflu
@@ -29,7 +28,6 @@
     SUBDIR += eiskaltdcpp-qt
     SUBDIR += fidelio
     SUBDIR += frost
-    SUBDIR += frostwire
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
     SUBDIR += gnunet

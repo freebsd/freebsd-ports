@@ -96,7 +96,6 @@
     SUBDIR += jcckit
     SUBDIR += jcommon
     SUBDIR += jdbcpool
-    SUBDIR += jde
     SUBDIR += jdk15
     SUBDIR += jdk15-doc
     SUBDIR += jdk16
@@ -119,7 +118,6 @@
     SUBDIR += jtiger
     SUBDIR += jump
     SUBDIR += junit
-    SUBDIR += kaffe
     SUBDIR += langspec
     SUBDIR += linux-sun-jdk15
     SUBDIR += linux-sun-jdk16

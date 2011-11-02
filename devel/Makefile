@@ -363,7 +363,6 @@
     SUBDIR += epydoc
     SUBDIR += eric4
     SUBDIR += eris
-    SUBDIR += erlang-thrift
     SUBDIR += esdl
     SUBDIR += esvn
     SUBDIR += etl

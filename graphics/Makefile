@@ -261,7 +261,6 @@
     SUBDIR += gimp-resynthesizer
     SUBDIR += gimp-save-for-web
     SUBDIR += gimpfx-foundry
-    SUBDIR += gimpshop
     SUBDIR += giram
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
@@ -498,7 +497,6 @@
     SUBDIR += libwpg
     SUBDIR += libwpg01
     SUBDIR += libx3dtk
-    SUBDIR += lightspark-devel
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-ac3d
@@ -777,7 +775,6 @@
     SUBDIR += py-amanith
     SUBDIR += py-blockdiag
     SUBDIR += py-cairo
-    SUBDIR += py-cgkit
     SUBDIR += py-chart
     SUBDIR += py-clutter
     SUBDIR += py-clutter-gtk
@@ -1004,7 +1001,6 @@
     SUBDIR += xmms-jess
     SUBDIR += xmms-nebulus
     SUBDIR += xmms-paranormal
-    SUBDIR += xmms-plazma
     SUBDIR += xmms-scivi
     SUBDIR += xmms-vumeter
     SUBDIR += xmms-waterfall

@@ -2920,3 +2920,66 @@ databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2
 databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/gnats||2011-11-01|Has expired: Security issues
 graphics/poppler-qt3||2011-11-01|Poppler Upstream removed support for qt3
+audio/shoutcast||2011-11-01|Unfetchable; website rearranged
+audio/linux-shoutcast||2011-11-01|Unfetchable; website rearranged
+chinese/scim-chewing||2011-11-01|Does not configure
+converters/py-cjkcodecs||2011-11-01|Integrated into every python version in the tree
+databases/kpogre||2011-11-01|Does not compile
+deskutils/mhc||2011-11-01|Does not fetch
+deskutils/org-mode.el6||2011-11-01|Does not fetch
+deskutils/gemcal||2011-11-01|Does not fetch
+devel/erlang-thrift||2011-11-01|Does not build
+dns/domtools||2011-11-01|Does not fetch
+editors/richtext||2011-11-01|Does not compile
+games/vultures-claw||2011-11-01|Does not fetch
+games/bomb||2011-11-01|Does not fetch
+games/lgeneral-data||2011-11-01|Bad plist
+games/linux-enemyterritory-jaymod||2011-11-01|Does not fetch
+games/xphotohunter||2011-11-01|Does not fetch
+graphics/gimpshop||2011-11-01|Fails to patch
+graphics/lightspark-devel||2011-11-01|Does not compile
+graphics/xmms-plazma||2011-11-01|Does not fetch
+graphics/py-cgkit||2011-11-01|Does not fetch, does not compile on ia64, powerpc, or sparc64
+japanese/rxvt||2011-11-01|Does not fetch, fails to build with new utmpx
+japanese/epic4||2011-11-01|Some distfiles do not fetch
+java/jde||2011-11-01|Does not fetch
+java/kaffe||2011-11-01|Does not fetch
+korean/gdick||2011-11-01|HTMLs from the Yahoo! Korea Dictionary cannot be parsed, other runtime problems
+korean/hanterm-xf86||2011-11-01|Does not compile
+korean/stardict2-dict-kr||2011-11-01|Does not fetch
+lang/p5-JavaScript||2011-11-01|Does not fetch
+lang/TenDRA||2011-11-01|Website disappeared; last release 2006, Does not compile on recent FreeBSD-9
+mail/freepops||2011-11-01|Does not build
+mail/itraxp||2011-11-01|Does not build
+misc/tellico||2011-11-01|Leaves file behind on deinstall
+net/gsambad||2011-11-01|Does not fetch
+net/nocatauth-gateway||2011-11-01|Uses a UID registered to another port
+net/nocatauth-server||2011-11-01|Uses a UID registered to another port
+net/libosip2||2011-11-01|Does not fetch
+net/kmuddy||2011-11-01|Does not fetch
+net/netboot||2011-11-01|Does not build
+net-mgmt/jffnms||2011-11-01|Does not fetch
+net-p2p/frostwire||2011-11-01|Does not fetch
+net-p2p/azureus||2011-11-01|Does not fetch
+news/cleanscore||2011-11-01|Does not fetch
+news/nntpswitch||2011-11-01|Does not fetch
+news/p5-NewsLib||2011-11-01|Does not fetch
+russian/cyrproxy||2011-11-01|Does not fetch
+science/gerris||2011-11-01|Does not fetch
+security/opensaml||2011-11-01|Does not fetch
+sysutils/wmbattery||2011-11-01|Does not fetch
+sysutils/cpuburn||2011-11-01|No more public distfiles
+textproc/tei-guidelines-p4||2011-11-01|Does not fetch 
+textproc/tei-p4||2011-11-01|Does not fetch
+textproc/py-hyperestraier||2011-11-01|Does not fetch
+textproc/tdtd.el||2011-11-01|Does not fetch
+textproc/tei-lite||2011-11-01|Does not fetch
+www/phpwiki13||2011-11-01|Does not fetch
+www/p5-Apache-Scoreboard||2011-11-01|depends on mod_perl
+www/p5-B-LexInfo||2011-11-01|Broken due the new mod_perl2 API
+www/phpwiki||2011-11-01|Does not fetch
+www/smb2www||2011-11-01|Apache13 is deprecated, migrate to 2.2.x+ now
+www/spip||2011-11-01|Checksum is changing daily
+www/monkey||2011-11-01|Does not fetch
+x11-toolkits/jdic||2011-11-01|Does not fetch
+x11-toolkits/py-kde||2011-11-01|Does not compile

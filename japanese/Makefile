@@ -59,7 +59,6 @@
     SUBDIR += elisa8x8
     SUBDIR += elvis
     SUBDIR += emacs-emcws
-    SUBDIR += epic4
     SUBDIR += epwutil
     SUBDIR += esecanna
     SUBDIR += esecanna-module-vje25
@@ -288,7 +287,6 @@
     SUBDIR += rubygem-jpmobile
     SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rubygem-jpmobile-terminfo
-    SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += scim-anthy
     SUBDIR += scim-canna

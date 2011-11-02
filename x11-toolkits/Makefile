@@ -91,7 +91,6 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
-    SUBDIR += jdic
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu
@@ -204,7 +203,6 @@
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
     SUBDIR += py-gui
-    SUBDIR += py-kde
     SUBDIR += py-kiwi
     SUBDIR += py-pyqwt
     SUBDIR += py-qt
