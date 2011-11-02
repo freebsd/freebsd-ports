@@ -1398,6 +1398,7 @@
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-tidy
+    SUBDIR += pecl-yaf
     SUBDIR += pelican
     SUBDIR += perlbal
     SUBDIR += pglogd
@@ -1406,7 +1407,6 @@
     SUBDIR += php-plurk-api
     SUBDIR += php-screw
     SUBDIR += php-templates
-    SUBDIR += php-yaf
     SUBDIR += php4-session
     SUBDIR += php5-session
     SUBDIR += php5-tidy
