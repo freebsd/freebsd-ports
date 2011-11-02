@@ -52,9 +52,9 @@ share/applications/xfce4-session-logout.desktop
 %%DOCSDIR%%/html/tr/index.html
 %%DOCSDIR%%/html/ug/images
 %%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/xfce4-session.css
 %%DOCSDIR%%/html/zh_CN/images
 %%DOCSDIR%%/html/zh_CN/index.html
-%%DOCSDIR%%/html/xfce4-session.css
 share/icons/hicolor/128x128/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
@@ -134,9 +134,8 @@ share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
 share/xfce4/panel-plugins/xfsm-logout-plugin.desktop
 share/xfce4/tips/tips
-@dirrm share/xfce4/tips
-@dirrmtry share/xfce4/panel/plugins
-@dirrmtry share/xfce4/panel
+@dirrmtry share/xfce4/tips
+@dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
 @dirrm share/themes/Default/balou
 @dirrmtry share/themes/Default
@@ -176,9 +175,10 @@ share/xfce4/tips/tips
 @dirrm %%DOCSDIR%%/html/C
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrm lib/xfce4/session/splash-engines
 @dirrm lib/xfce4/session
-@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
 @dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
