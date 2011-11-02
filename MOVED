@@ -2983,3 +2983,9 @@ www/spip||2011-11-01|Checksum is changing daily
 www/monkey||2011-11-01|Does not fetch
 x11-toolkits/jdic||2011-11-01|Does not fetch
 x11-toolkits/py-kde||2011-11-01|Does not compile
+sysutils/rsyslog3||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog3-dbi||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog3-gssapi||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog3-mysql||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog3-pgsql||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog3-relp||2011-11-02|Has expired: unsupported upstream
