@@ -8,6 +8,7 @@ share/apps/kdenlive/blacklisted_effects.txt
 share/apps/kdenlive/blacklisted_transitions.txt
 share/apps/kdenlive/effects/audiobalance.xml
 share/apps/kdenlive/effects/audiopan.xml
+share/apps/kdenlive/effects/audiowave.xml
 share/apps/kdenlive/effects/automask.xml
 share/apps/kdenlive/effects/boxblur.xml
 share/apps/kdenlive/effects/brightness.xml
@@ -16,6 +17,7 @@ share/apps/kdenlive/effects/charcoal.xml
 share/apps/kdenlive/effects/chroma.xml
 share/apps/kdenlive/effects/chroma_hold.xml
 share/apps/kdenlive/effects/crop.xml
+share/apps/kdenlive/effects/dust.xml
 share/apps/kdenlive/effects/fade_from_black.xml
 share/apps/kdenlive/effects/fade_to_black.xml
 share/apps/kdenlive/effects/fadein.xml
@@ -25,50 +27,74 @@ share/apps/kdenlive/effects/frei0r_alpha0ps.xml
 share/apps/kdenlive/effects/frei0r_alphagrad.xml
 share/apps/kdenlive/effects/frei0r_alphaspot.xml
 share/apps/kdenlive/effects/frei0r_balanc0r.xml
+share/apps/kdenlive/effects/frei0r_baltan.xml
+share/apps/kdenlive/effects/frei0r_bezier_curves.xml
 share/apps/kdenlive/effects/frei0r_brightness.xml
 share/apps/kdenlive/effects/frei0r_c0rners.xml
+share/apps/kdenlive/effects/frei0r_cartoon.xml
+share/apps/kdenlive/effects/frei0r_cluster.xml
 share/apps/kdenlive/effects/frei0r_coloradj_rgb.xml
 share/apps/kdenlive/effects/frei0r_colordistance.xml
 share/apps/kdenlive/effects/frei0r_contrast0r.xml
 share/apps/kdenlive/effects/frei0r_curves.xml
+share/apps/kdenlive/effects/frei0r_d90stairsteppingfix.xml
 share/apps/kdenlive/effects/frei0r_defish0r.xml
+share/apps/kdenlive/effects/frei0r_delay0r.xml
+share/apps/kdenlive/effects/frei0r_delaygrab.xml
 share/apps/kdenlive/effects/frei0r_distort0r.xml
+share/apps/kdenlive/effects/frei0r_edgeglow.xml
+share/apps/kdenlive/effects/frei0r_equaliz0r.xml
+share/apps/kdenlive/effects/frei0r_facebl0r.xml
+share/apps/kdenlive/effects/frei0r_facedetect.xml
+share/apps/kdenlive/effects/frei0r_flippo.xml
 share/apps/kdenlive/effects/frei0r_glow.xml
+share/apps/kdenlive/effects/frei0r_hqdn3d.xml
 share/apps/kdenlive/effects/frei0r_hueshift0r.xml
 share/apps/kdenlive/effects/frei0r_lenscorrection.xml
+share/apps/kdenlive/effects/frei0r_letterb0xed.xml
 share/apps/kdenlive/effects/frei0r_levels.xml
+share/apps/kdenlive/effects/frei0r_lightgraffiti.xml
+share/apps/kdenlive/effects/frei0r_luminance.xml
+share/apps/kdenlive/effects/frei0r_mask0mate.xml
+share/apps/kdenlive/effects/frei0r_nervous.xml
+share/apps/kdenlive/effects/frei0r_nosync0r.xml
 share/apps/kdenlive/effects/frei0r_pixeliz0r.xml
 share/apps/kdenlive/effects/frei0r_pr0be.xml
 share/apps/kdenlive/effects/frei0r_pr0file.xml
+share/apps/kdenlive/effects/frei0r_primaries.xml
+share/apps/kdenlive/effects/frei0r_rgbparade.xml
 share/apps/kdenlive/effects/frei0r_saturat0r.xml
 share/apps/kdenlive/effects/frei0r_scale0tilt.xml
+share/apps/kdenlive/effects/frei0r_scanline0r.xml
 share/apps/kdenlive/effects/frei0r_select0r.xml
+share/apps/kdenlive/effects/frei0r_sharpness.xml
+share/apps/kdenlive/effects/frei0r_sobel.xml
 share/apps/kdenlive/effects/frei0r_sopsat.xml
 share/apps/kdenlive/effects/frei0r_squareblur.xml
+share/apps/kdenlive/effects/frei0r_tehroxx0r.xml
 share/apps/kdenlive/effects/frei0r_three_point_balance.xml
+share/apps/kdenlive/effects/frei0r_threelay0r.xml
 share/apps/kdenlive/effects/frei0r_threshold0r.xml
 share/apps/kdenlive/effects/frei0r_tint0r.xml
+share/apps/kdenlive/effects/frei0r_twolay0r.xml
+share/apps/kdenlive/effects/frei0r_vectorscope.xml
 share/apps/kdenlive/effects/frei0r_vertigo.xml
+share/apps/kdenlive/effects/frei0r_vignette.xml
 share/apps/kdenlive/effects/gain.xml
 share/apps/kdenlive/effects/gamma.xml
+share/apps/kdenlive/effects/grain.xml
 share/apps/kdenlive/effects/greyscale.xml
 share/apps/kdenlive/effects/invert.xml
-share/apps/kdenlive/effects/ladspa_declipper.xml
-share/apps/kdenlive/effects/ladspa_equalizer.xml
-share/apps/kdenlive/effects/ladspa_limiter.xml
-share/apps/kdenlive/effects/ladspa_phaser.xml
-share/apps/kdenlive/effects/ladspa_pitch.xml
-share/apps/kdenlive/effects/ladspa_pitch_scale.xml
-share/apps/kdenlive/effects/ladspa_rate_scale.xml
-share/apps/kdenlive/effects/ladspa_reverb.xml
-share/apps/kdenlive/effects/ladspa_room_reverb.xml
-share/apps/kdenlive/effects/ladspa_vinyl.xml
 share/apps/kdenlive/effects/mirror.xml
 share/apps/kdenlive/effects/mute.xml
 share/apps/kdenlive/effects/normalise.xml
 share/apps/kdenlive/effects/obscure.xml
+share/apps/kdenlive/effects/oldfilm.xml
 share/apps/kdenlive/effects/pan_zoom.xml
 share/apps/kdenlive/effects/rotation.xml
+share/apps/kdenlive/effects/rotation_keyframable.xml
+share/apps/kdenlive/effects/rotoscoping.xml
+share/apps/kdenlive/effects/scratchlines.xml
 share/apps/kdenlive/effects/sepia.xml
 share/apps/kdenlive/effects/sox_band.xml
 share/apps/kdenlive/effects/sox_bass.xml
@@ -79,10 +105,19 @@ share/apps/kdenlive/effects/sox_phaser.xml
 share/apps/kdenlive/effects/sox_stretch.xml
 share/apps/kdenlive/effects/speed.xml
 share/apps/kdenlive/effects/swapchannels.xml
+share/apps/kdenlive/effects/tcolor.xml
 share/apps/kdenlive/effects/threshold.xml
+share/apps/kdenlive/effects/update/frei0r.balanc0r.js
+share/apps/kdenlive/effects/update/frei0r.cartoon.js
+share/apps/kdenlive/effects/update/frei0r.curves.js
+share/apps/kdenlive/effects/update/frei0r.levels.js
+share/apps/kdenlive/effects/update/frei0r.lightgraffiti.js
+share/apps/kdenlive/effects/update/frei0r.sopsat.js
+share/apps/kdenlive/effects/update/frei0r.vertigo.js
 share/apps/kdenlive/effects/vignette.xml
 share/apps/kdenlive/effects/volume.xml
 share/apps/kdenlive/effects/wave.xml
+share/apps/kdenlive/encodingprofiles.rc
 share/apps/kdenlive/export/profiles.xml
 share/apps/kdenlive/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-add-clip.png
@@ -258,6 +293,41 @@ share/config/kdenlive_titles.knsrc
 share/config/kdenlive_wipes.knsrc
 share/config/kdenliveeffectscategory.rc
 share/config/kdenlivetranscodingrc
+share/doc/HTML/da/kdenlive/common
+share/doc/HTML/da/kdenlive/index.cache.bz2
+share/doc/HTML/da/kdenlive/index.docbook
+share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Last-Clip.png
+share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Transition.png
+share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-EffectStack.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Add-Clips.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Add-Effect.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Effect-Flag.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Fadeout.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Folder-Structure.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Keyframes.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Mainwindow.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-New-Project.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Overlap-Clips.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Renderer.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Rendering.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Resize-Marker.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Save-Project.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-Timeline-Clips.png
+share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
+share/doc/HTML/en/kdenlive/common
+share/doc/HTML/en/kdenlive/index.cache.bz2
+share/doc/HTML/en/kdenlive/index.docbook
+share/doc/HTML/fr/kdenlive/common
+share/doc/HTML/fr/kdenlive/index.cache.bz2
+share/doc/HTML/fr/kdenlive/index.docbook
+share/doc/HTML/nl/kdenlive/common
+share/doc/HTML/nl/kdenlive/index.cache.bz2
+share/doc/HTML/nl/kdenlive/index.docbook
+share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Add-Clips_uk.png
+share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-New-Project_uk.png
+share/doc/HTML/uk/kdenlive/common
+share/doc/HTML/uk/kdenlive/index.cache.bz2
+share/doc/HTML/uk/kdenlive/index.docbook
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
 share/icons/hicolor/32x32/apps/kdenlive.png
 share/icons/hicolor/32x32/mimetypes/application-x-kdenlivetitle.png
@@ -296,10 +366,17 @@ share/locale/sl/LC_MESSAGES/kdenlive.mo
 share/locale/tr/LC_MESSAGES/kdenlive.mo
 share/locale/uk/LC_MESSAGES/kdenlive.mo
 share/locale/zh/LC_MESSAGES/kdenlive.mo
+share/locale/zh_CN/LC_MESSAGES/kdenlive.mo
+share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/mime/packages/kdenlive.xml
 share/mime/packages/westley.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
+@dirrm share/doc/HTML/uk/kdenlive
+@dirrm share/doc/HTML/nl/kdenlive
+@dirrm share/doc/HTML/fr/kdenlive
+@dirrm share/doc/HTML/en/kdenlive
+@dirrm share/doc/HTML/da/kdenlive
 @dirrm share/apps/kdenlive/titles
 @dirrm share/apps/kdenlive/lumas
 @dirrm share/apps/kdenlive/icons/oxygen/scalable/actions
@@ -334,6 +411,7 @@ share/mime/packages/westley.xml
 @dirrm share/apps/kdenlive/icons/hicolor
 @dirrm share/apps/kdenlive/icons
 @dirrm share/apps/kdenlive/export
+@dirrm share/apps/kdenlive/effects/update
 @dirrm share/apps/kdenlive/effects
 @dirrm share/apps/kdenlive
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
