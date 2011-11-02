@@ -32,7 +32,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
+#WITH_FBSD10_FIX=yes
 CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
@@ -75,10 +75,13 @@ post-patch:
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
 		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' ${WRKSRC}/${f}
 .endfor
-
-pre-build:
-	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
-		${WRKSRC}/configure ${WRKSRC}/config.h.in
+# manual patch because WITH_FBSD10_FIX break the python bindings
+	${FIND} ${WRKSRC} -type f -name configure \
+		-exec ${SH} -c " \
+		mtime=\$$(date -r \$$(stat -f '%m' \$$0) '+%Y%m%d%H%M.%S'); \
+		${SED} -i '.batman' -e 's|freebsd1\*)|freebsd1.\*)|g' \
+		-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \$$0; \
+		touch -mt \$$mtime \$$0" {} \; || /usr/bin/true
 
 .include <bsd.port.mk>
 
