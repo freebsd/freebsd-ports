@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 # Changed to apache13 exclusive, else apache13 ports
 # are broken if apache22 is set as default

@@ -15,7 +15,7 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 MAKE_JOBS_SAFE=  yes
 

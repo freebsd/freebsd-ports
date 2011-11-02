@@ -17,7 +17,7 @@ COMMENT=	Watches HTTP transactions under mod_perl, looking at the headers
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 PERL_CONFIGURE=	yes
 

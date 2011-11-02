@@ -15,7 +15,7 @@ MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 MAKE_JOBS_SAFE=  yes
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 PORTSCOUT=	limit:^0
 

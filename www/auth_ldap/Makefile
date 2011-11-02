@@ -17,7 +17,7 @@ COMMENT=	Apache module to authenticate against an LDAP directory
 MAKE_JOBS_SAFE=  yes
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 USE_OPENLDAP=	yes
 USE_APACHE=	13

@@ -17,7 +17,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides DAV capabilities
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 MAKE_JOBS_SAFE=  yes
 

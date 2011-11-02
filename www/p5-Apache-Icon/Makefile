@@ -17,7 +17,7 @@ COMMENT=	A perl module that provides an interface for looking up icon images
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 PERL_CONFIGURE=	yes
 

@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Date-Manip>0:${PORTSDIR}/devel/p5-Date-Manip \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

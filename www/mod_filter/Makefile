@@ -15,7 +15,7 @@ MAINTAINER=		apache@FreeBSD.org
 COMMENT=	Filter output from other modules inside of Apache
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 MAKE_JOBS_SAFE=  yes
 
