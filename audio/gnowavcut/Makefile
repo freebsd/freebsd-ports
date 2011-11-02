@@ -11,8 +11,11 @@ PORTREVISION=	9
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gnowavcut.good-day.net/src/
 
-MAINTAINER=	spcoltri@omcl.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME/GTK+ based RIFF PCM Wave file splitter
+
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-12-01
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
