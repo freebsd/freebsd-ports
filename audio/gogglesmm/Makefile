@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -82,6 +82,9 @@ USE_GETTEXT=	yes
 .if defined(WITHOUT_NEWREMOTE)
 CONFIGURE_ARGS+=--without-new-remote
 .endif
+
+post-patch:
+	@${ECHO_CMD} ${SUBPORT}
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/applications

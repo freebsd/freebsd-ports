@@ -12,6 +12,7 @@ share/icons/hicolor/scalable/apps/gogglesmm.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gogglesmm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gogglesmm.mo
 @dirrmtry share/applications
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
