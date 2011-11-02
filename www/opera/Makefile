@@ -33,7 +33,6 @@ MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 USE_XZ=		yes
 USE_XORG=	x11 xext sm ice xft xrender
 USE_GNOME=	desktopfileutils
-INSTALLS_ICONS=	yes
 
 MAN1=		opera.1 opera-widget-manager.1
 MANCOMPRESSED=	yes
@@ -57,6 +56,7 @@ USE_GSTREAMER+=	vorbis ogg theora vp8 good
 
 .if defined(WITH_GTK)
 USE_GNOME+=	gtk20
+INSTALLS_ICONS=	yes
 .endif
 
 .if defined(WITH_KDE4)
