@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	django-livesettings
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.9
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Configure settings via Django admin interface rather than by editing settings.py
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
