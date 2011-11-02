@@ -2047,6 +2047,7 @@
     SUBDIR += p5-MooseX-LazyRequire
     SUBDIR += p5-MooseX-Lists
     SUBDIR += p5-MooseX-Log-Log4perl
+    SUBDIR += p5-MooseX-MarkAsMethods
     SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
     SUBDIR += p5-MooseX-MetaDescription
     SUBDIR += p5-MooseX-Method-Signatures
