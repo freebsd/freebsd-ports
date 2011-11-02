@@ -15,6 +15,8 @@ COMMENT=	A Python script to managing merges in a Subversion repository
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 
+BROKEN=		does not install
+
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
