@@ -721,12 +721,6 @@
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
-    SUBDIR += rsyslog3
-    SUBDIR += rsyslog3-dbi
-    SUBDIR += rsyslog3-gssapi
-    SUBDIR += rsyslog3-mysql
-    SUBDIR += rsyslog3-pgsql
-    SUBDIR += rsyslog3-relp
     SUBDIR += rsyslog4
     SUBDIR += rsyslog4-dbi
     SUBDIR += rsyslog4-devel
