@@ -22,7 +22,7 @@ COMMENT=	Provides access control based on Referer HTTP header for Apache
 MAKE_JOBS_SAFE=  yes
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 USE_APACHE=	13
 AP_FAST_BUILD=	YES

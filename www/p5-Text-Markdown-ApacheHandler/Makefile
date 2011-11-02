@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Constants.pm:${PORTSDIR}/www/mod_p
 		${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 PERL_CONFIGURE=	yes
 

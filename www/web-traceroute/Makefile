@@ -17,7 +17,7 @@ MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	WWW Traceroute CGI script written in C
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-11-01
+EXPIRATION_DATE=	2012-01-01
 
 PLIST_FILES=	www/cgi-bin/trace
 USE_APACHE=	13
