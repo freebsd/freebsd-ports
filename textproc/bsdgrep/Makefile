@@ -48,6 +48,7 @@ CONFLICTS=	gnugrep-*
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+BROKEN=		overwrites files installed by dependency
 .endif
 
 .if defined(WITHOUT_NLS)
