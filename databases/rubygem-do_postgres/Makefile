@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver for PostgreSQL
 
-RUN_DEPENDS=	rubygem-data_objects>=0.10.6:${PORTSDIR}/databases/rubygem-data_objects
+RUN_DEPENDS=	rubygem-data_objects>=0.10.7:${PORTSDIR}/databases/rubygem-data_objects
 
 USE_PGSQL=	yes
 

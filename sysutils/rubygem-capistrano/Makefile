@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
-RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.0.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
+RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.1.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
   	rubygem-net-sftp>=2.0.0:${PORTSDIR}/security/rubygem-net-sftp \
 	rubygem-net-scp>=1.0.0:${PORTSDIR}/security/rubygem-net-scp \
 	rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \

@@ -13,8 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Ruby wrapper for UglifyJS JavaScript compressor
 
-RUN_DEPENDS=	rubygem-execjs>=1.2.4:${PORTSDIR}/devel/rubygem-execjs \
-		rubygem-multi_json>=1.0.3:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-execjs>=0.3.0:${PORTSDIR}/devel/rubygem-execjs \
+		rubygem-multi_json>=1.0.2:${PORTSDIR}/devel/rubygem-multi_json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

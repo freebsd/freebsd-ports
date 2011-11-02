@@ -18,8 +18,8 @@ RUN_DEPENDS=	rubygem-classifier>=1.3.1:${PORTSDIR}/devel/rubygem-classifier \
 		rubygem-maruku>=0.5.9:${PORTSDIR}/www/rubygem-maruku \
 		rubygem-directory_watcher>=1.1.1:${PORTSDIR}/devel/rubygem-directory_watcher \
 		rubygem-open4>=0.9.6:${PORTSDIR}/devel/rubygem-open4 \
-		rubygem-albino>=0:${PORTSDIR}/textproc/rubygem-albino \
-		rubygem-kramdown>=0:${PORTSDIR}/textproc/rubygem-kramdown
+		rubygem-albino>=1.3.2:${PORTSDIR}/textproc/rubygem-albino \
+		rubygem-kramdown>=0.13.2:${PORTSDIR}/textproc/rubygem-kramdown
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

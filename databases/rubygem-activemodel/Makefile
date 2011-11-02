@@ -15,7 +15,7 @@ COMMENT=	A toolkit for building modeling frameworks
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-bcrypt-ruby>=3.0.0:${PORTSDIR}/security/rubygem-bcrypt-ruby \
-		rubygem-i18n>=0.6.0:${PORTSDIR}/devel/rubygem-i18n
+		rubygem-i18n>=0.6:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=   yes
 USE_RUBYGEMS=   yes

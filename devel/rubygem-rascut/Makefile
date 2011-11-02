@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Ruby ActionSCript UTility
 
 RUN_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
-		rubygem-json_pure>=1.5.1:${PORTSDIR}/devel/rubygem-json_pure \
+		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure \
 		rackup:${PORTSDIR}/www/rubygem-rack \
 		fcsh:${PORTSDIR}/devel/flex-sdk
 

@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flexible authentication solution for Rails with Warden
 
-RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0.1:${PORTSDIR}/security/rubygem-bcrypt-ruby \
+RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0:${PORTSDIR}/security/rubygem-bcrypt-ruby \
 		rubygem-warden>=1.0.3:${PORTSDIR}/devel/rubygem-warden \
 		rubygem-orm_adapter>=0.0.3:${PORTSDIR}/devel/rubygem-orm_adapter
 

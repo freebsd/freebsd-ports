@@ -13,8 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rspec-expectations adds should and should_not to every object
 
-BUILD_DEPENDS=	rubygem-diff-lcs>=0:${PORTSDIR}/textproc/rubygem-diff-lcs
-RUN_DEPENDS=	rubygem-diff-lcs>=0:${PORTSDIR}/textproc/rubygem-diff-lcs
+BUILD_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs
+RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs
 
 USE_RUBY=	yes
 USE_RAKE=	yes

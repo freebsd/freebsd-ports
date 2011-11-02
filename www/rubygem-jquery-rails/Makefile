@@ -12,8 +12,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a rails generator for jquery
 
-RUN_DEPENDS+=	rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
-		rubygem-thor>=0.14.4:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS+=	rubygem-railties>=3.0:${PORTSDIR}/www/rubygem-railties \
+		rubygem-thor>=0.14:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby-based DSL for text parsing and interpretation
 
-RUN_DEPENDS=	rubygem-polyglot>=0.3.1:${PORTSDIR}/devel/rubygem-polyglot
+RUN_DEPENDS=	rubygem-polyglot>=0:${PORTSDIR}/devel/rubygem-polyglot
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

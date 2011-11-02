@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-authentication>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-authentication \
-		rubygem-json>=1.4.6:${PORTSDIR}/devel/rubygem-json146 \
+		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json146 \
 		rubygem-uuidtools>=0:${PORTSDIR}/devel/rubygem-uuidtools \
 		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-moneta>=0:${PORTSDIR}/devel/rubygem-moneta \

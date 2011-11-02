@@ -13,8 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
 
-BUILD_DEPENDS=	rubygem-json>=1.6.1:${PORTSDIR}/devel/rubygem-json
-RUN_DEPENDS=	rubygem-json>=1.6.1:${PORTSDIR}/devel/rubygem-json
+BUILD_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
