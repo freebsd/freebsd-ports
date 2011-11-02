@@ -1,19 +1,7 @@
 ---------------------------------------------------
-If you update your configuration from 8.11.x you need to install an
-additional config file: /etc/mail/submit.cf, you can generate it
-by calling the target 'submit.cf', submit.mc will be installed too.
-%%PORTSDIR%%/mail/sendmail$ make submit.cf
 
 you should add in /etc/make.conf:
 SENDMAIL_CF_DIR=	%%PREFIX%%/share/sendmail/cf
-
-To activate only the delivery from the local submission queue see:
-%%PREFIX%%/etc/rc.d/sm-client.sh.sample
-and if you use FreeBSD-RELEASE < 4.6 set your flags in /etc/rc.conf:
-sendmail_flags="-L sm-msp-queue -Ac -q1m"
-
-To activate all sendmail processes see:
-%%PREFIX%%/etc/rc.d/sendmail.sh.sample
 
 To deliver all local mail to your mailhub, edit the last line of submit.mc:
 FEATURE(`msp','[mailhub.do.main]`)dnl
