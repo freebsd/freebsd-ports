@@ -29,7 +29,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Dancer::Plugin::Redis.3
 
 post-patch:
-	@${REINPLACE_CMD} -i'' -e \
+	@${REINPLACE_CMD} -i '' -e \
 		's/_check_connection($$handle->{dbh})/$$handle->{dbh}->ping/' \
 		${WRKSRC}/lib/Dancer/Plugin/Redis.pm
 
