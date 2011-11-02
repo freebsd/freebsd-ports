@@ -9,5 +9,6 @@ lib/libsox.a
 lib/libsox.la
 lib/libsox.so
 lib/libsox.so.1
+@exec mkdir -p %D/lib/sox
 @dirrm lib/sox
 libdata/pkgconfig/sox.pc

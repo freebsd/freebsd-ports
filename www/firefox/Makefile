@@ -139,6 +139,7 @@ post-configure:
 
 port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
+	${ECHO_CMD} "@exec mkdir -p %D/include/firefox/nss" >> ${PLISTD}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
 

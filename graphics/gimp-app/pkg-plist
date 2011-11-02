@@ -2135,4 +2135,5 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm etc/gimp/2.2
 @dirrm etc/gimp
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec mkdir -p %D/share/gimp/fonts
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
