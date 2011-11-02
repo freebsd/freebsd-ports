@@ -50,12 +50,12 @@ include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 include/mlt/framework/mlt_version.h
 lib/libmlt++.so
-lib/libmlt++.so.0.6.2
+lib/libmlt++.so.0.7.6
 lib/libmlt++.so.3
 lib/libmlt.so
-lib/libmlt.so.0.6.2
-lib/libmlt.so.3
-%%AVFORMAT%%lib/mlt/libmltavformat.so
+lib/libmlt.so.0.7.6
+lib/libmlt.so.4
+%%FFMPEG%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
 lib/mlt/libmltdgraft.so
@@ -63,29 +63,64 @@ lib/mlt/libmltdgraft.so
 lib/mlt/libmlteffectv.so
 %%FREI0R%%lib/mlt/libmltfrei0r.so
 %%GTK2%%lib/mlt/libmltgtk2.so
-%%JACKRACK%%lib/mlt/libmltjackrack.so
+%%JACK%%lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
 %%KINO%%lib/mlt/libmltkino.so
-lib/mlt/libmltmelt.so
+lib/mlt/libmltlinsys.so
 lib/mlt/libmltmotion_est.so
 lib/mlt/libmltnormalize.so
 lib/mlt/libmltoldfilm.so
 lib/mlt/libmltplus.so
-%%QIMAGE%%lib/mlt/libmltqimage.so
+%%QT4%%lib/mlt/libmltqimage.so
 %%RESAMPLE%%lib/mlt/libmltresample.so
+lib/mlt/libmltrotoscoping.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
 %%SWFDEC%%lib/mlt/libmltswfdec.so
+lib/mlt/libmltvideostab.so
 lib/mlt/libmltvmfx.so
 %%VORBIS%%lib/mlt/libmltvorbis.so
 lib/mlt/libmltxine.so
 lib/mlt/libmltxml.so
 libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
-%%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml
+%%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
+%%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
 %%DATADIR%%/core/data_fx.properties
+%%DATADIR%%/core/filter_audiowave.yml
+%%DATADIR%%/core/filter_brightness.yml
+%%DATADIR%%/core/filter_channelcopy.yml
+%%DATADIR%%/core/filter_crop.yml
+%%DATADIR%%/core/filter_data_show.yml
+%%DATADIR%%/core/filter_gamma.yml
+%%DATADIR%%/core/filter_greyscale.yml
+%%DATADIR%%/core/filter_luma.yml
+%%DATADIR%%/core/filter_mirror.yml
+%%DATADIR%%/core/filter_mono.yml
+%%DATADIR%%/core/filter_obscure.yml
+%%DATADIR%%/core/filter_region.yml
+%%DATADIR%%/core/filter_rescale.yml
+%%DATADIR%%/core/filter_resize.yml
+%%DATADIR%%/core/filter_transition.yml
+%%DATADIR%%/core/filter_watermark.yml
 %%DATADIR%%/core/loader.dict
 %%DATADIR%%/core/loader.ini
+%%DATADIR%%/core/producer_colour.yml
+%%DATADIR%%/core/producer_consumer.yml
+%%DATADIR%%/core/producer_hold.yml
+%%DATADIR%%/core/producer_loader.yml
+%%DATADIR%%/core/producer_melt.yml
+%%DATADIR%%/core/producer_melt_file.yml
+%%DATADIR%%/core/producer_noise.yml
+%%DATADIR%%/core/transition_composite.yml
+%%DATADIR%%/core/transition_luma.yml
+%%DATADIR%%/core/transition_mix.yml
+%%DATADIR%%/core/transition_region.yml
+%%DATADIR%%/decklink/consumer_decklink.yml
+%%DATADIR%%/decklink/producer_decklink.yml
+%%DV%%%%DATADIR%%/dv/consumer_libdv.yml
+%%DV%%%%DATADIR%%/dv/producer_libdv.yml
+%%DATADIR%%/effectv/filter_burningtv.yml
 %%DATADIR%%/feeds/NTSC/data_fx.properties
 %%DATADIR%%/feeds/NTSC/etv.properties
 %%DATADIR%%/feeds/NTSC/obscure.properties
@@ -95,6 +130,21 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/feeds/PAL/example.properties
 %%DATADIR%%/feeds/PAL/obscure.properties
 %%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
+%%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt
+%%GTK2%%%%DATADIR%%/gtk2/consumer_gtk2_preview.yml
+%%GTK2%%%%DATADIR%%/gtk2/filter_dynamictext.yml
+%%GTK2%%%%DATADIR%%/gtk2/filter_rescale.yml
+%%GTK2%%%%DATADIR%%/gtk2/producer_pango.yml
+%%GTK2%%%%DATADIR%%/gtk2/producer_pixbuf.yml
+%%JACK%%%%DATADIR%%/jackrack/blacklist.txt
+%%JACK%%%%DATADIR%%/jackrack/consumer_jack.yml
+%%JACK%%%%DATADIR%%/jackrack/filter_jackrack.yml
+%%JACK%%%%DATADIR%%/jackrack/filter_ladspa.yml
+%%DATADIR%%/kdenlive/filter_boxblur.yml
+%%DATADIR%%/kdenlive/filter_freeze.yml
+%%DATADIR%%/kdenlive/filter_wave.yml
+%%DATADIR%%/kdenlive/producer_framebuffer.yml
+%%DATADIR%%/linsys/consumer_sdi.yml
 %%DATADIR%%/lumas/NTSC/luma01.pgm
 %%DATADIR%%/lumas/NTSC/luma02.pgm
 %%DATADIR%%/lumas/NTSC/luma03.pgm
@@ -140,6 +190,11 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/lumas/PAL/luma21.pgm
 %%DATADIR%%/lumas/PAL/luma22.pgm
 %%DATADIR%%/metaschema.yaml
+%%DATADIR%%/motion_est/filter_autotrack_rectangle.yml
+%%DATADIR%%/motion_est/filter_motion_est.yml
+%%DATADIR%%/motion_est/filter_vismv.yml
+%%DATADIR%%/motion_est/producer_slowmotion.yml
+%%DATADIR%%/normalize/filter_volume.yml
 %%DATADIR%%/oldfilm/dust1.svg
 %%DATADIR%%/oldfilm/dust2.svg
 %%DATADIR%%/oldfilm/dust3.svg
@@ -157,6 +212,52 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/oldfilm/oldfilm.svg
 %%DATADIR%%/oldfilm/tcolor.svg
 %%DATADIR%%/oldfilm/vignette.svg
+%%DATADIR%%/plus/filter_affine.yml
+%%DATADIR%%/plus/filter_charcoal.yml
+%%DATADIR%%/plus/filter_invert.yml
+%%DATADIR%%/plus/filter_sepia.yml
+%%DATADIR%%/plus/transition_affine.yml
+%%DATADIR%%/presets/consumer/avformat/Sony-PSP
+%%DATADIR%%/presets/consumer/avformat/XDCAM-HD422
+%%DATADIR%%/presets/consumer/avformat/atsc_1080i_50/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_2398/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_24/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_25/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_2997/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_30/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_50/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_5994/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_1080p_60/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_720p_2398/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_720p_50/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_720p_5994/DNxHD
+%%DATADIR%%/presets/consumer/avformat/atsc_720p_60/DNxHD
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc/D10
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc/DV
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc/DVCPRO50
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc/DVD
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide/D10
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide/DV
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide/DVCPRO50
+%%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide/DVD
+%%DATADIR%%/presets/consumer/avformat/dv_pal/D10
+%%DATADIR%%/presets/consumer/avformat/dv_pal/DV
+%%DATADIR%%/presets/consumer/avformat/dv_pal/DVCPRO50
+%%DATADIR%%/presets/consumer/avformat/dv_pal/DVD
+%%DATADIR%%/presets/consumer/avformat/dv_pal_wide/D10
+%%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DV
+%%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DVCPRO50
+%%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DVD
+%%DATADIR%%/presets/consumer/avformat/webm
+%%DATADIR%%/presets/consumer/avformat/x264-medium
+%%DATADIR%%/presets/consumer/avformat/x264-medium-baseline
+%%DATADIR%%/presets/consumer/avformat/x264-medium-main
+%%DATADIR%%/presets/consumer/avformat/x264-medium-pass1
+%%DATADIR%%/presets/filter/brightness/from_black
+%%DATADIR%%/presets/filter/brightness/to_black
+%%DATADIR%%/presets/filter/volume/fade_in
+%%DATADIR%%/presets/filter/volume/fade_out
 %%DATADIR%%/profiles/atsc_1080i_50
 %%DATADIR%%/profiles/atsc_1080i_5994
 %%DATADIR%%/profiles/atsc_1080i_60
@@ -165,6 +266,9 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/profiles/atsc_1080p_25
 %%DATADIR%%/profiles/atsc_1080p_2997
 %%DATADIR%%/profiles/atsc_1080p_30
+%%DATADIR%%/profiles/atsc_1080p_50
+%%DATADIR%%/profiles/atsc_1080p_5994
+%%DATADIR%%/profiles/atsc_1080p_60
 %%DATADIR%%/profiles/atsc_720p_2398
 %%DATADIR%%/profiles/atsc_720p_24
 %%DATADIR%%/profiles/atsc_720p_25
@@ -209,19 +313,85 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/profiles/svcd_pal_wide
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
+%%QT4%%%%DATADIR%%/qimage/producer_kdenlivetitle.yml
+%%QT4%%%%DATADIR%%/qimage/producer_qimage.yml
+%%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
+%%DATADIR%%/rotoscoping/filter_rotoscoping.yml
+%%DATADIR%%/sdl/consumer_sdl.yml
+%%DATADIR%%/sdl/consumer_sdl_audio.yml
+%%DATADIR%%/sdl/consumer_sdl_preview.yml
+%%DATADIR%%/sdl/consumer_sdl_still.yml
+%%DATADIR%%/sdl/producer_sdl_image.yml
+%%SOX%%%%DATADIR%%/sox/filter_sox.yml
+%%SOX%%%%DATADIR%%/sox/filter_sox_effect.yml
+%%SWFDEC%%%%DATADIR%%/swfdec/producer_swfdec.yml
+%%DATADIR%%/videostab/filter_videostab.yml
+%%DATADIR%%/videostab/filter_videostab2.yml
+%%DATADIR%%/vmfx/filter_chroma.yml
+%%DATADIR%%/vmfx/filter_chroma_hold.yml
+%%DATADIR%%/vmfx/filter_mono.yml
+%%DATADIR%%/vmfx/filter_shape.yml
+%%DATADIR%%/vmfx/producer_pgm.yml
+%%VORBIS%%%%DATADIR%%/vorbis/producer_vorbis.yml
+%%DATADIR%%/xml/consumer_xml.yml
 %%DATADIR%%/xml/mlt-xml.dtd
+%%DATADIR%%/xml/producer_xml-string.yml
+%%DATADIR%%/xml/producer_xml.yml
 @dirrm %%DATADIR%%/xml
+%%VORBIS%%@dirrm %%DATADIR%%/vorbis
+@dirrm %%DATADIR%%/vmfx
+@dirrm %%DATADIR%%/videostab
+%%SWFDEC%%@dirrm %%DATADIR%%/swfdec
+%%SOX%%@dirrm %%DATADIR%%/sox
+@dirrm %%DATADIR%%/sdl
+@dirrm %%DATADIR%%/rotoscoping
+%%RESAMPLE%%@dirrm %%DATADIR%%/resample
+%%QT4%%@dirrm %%DATADIR%%/qimage
 @dirrm %%DATADIR%%/profiles
+@dirrm %%DATADIR%%/presets/filter/volume
+@dirrm %%DATADIR%%/presets/filter/brightness
+@dirrm %%DATADIR%%/presets/filter
+@dirrm %%DATADIR%%/presets/consumer/avformat/dv_pal_wide
+@dirrm %%DATADIR%%/presets/consumer/avformat/dv_pal
+@dirrm %%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide
+@dirrm %%DATADIR%%/presets/consumer/avformat/dv_ntsc
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_720p_60
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_720p_5994
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_720p_50
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_720p_2398
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_60
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_5994
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_50
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_30
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_2997
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_25
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_24
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080p_2398
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994
+@dirrm %%DATADIR%%/presets/consumer/avformat/atsc_1080i_50
+@dirrm %%DATADIR%%/presets/consumer/avformat
+@dirrm %%DATADIR%%/presets/consumer
+@dirrm %%DATADIR%%/presets
+@dirrm %%DATADIR%%/plus
 @dirrm %%DATADIR%%/oldfilm
+@dirrm %%DATADIR%%/normalize
+@dirrm %%DATADIR%%/motion_est
 @dirrm %%DATADIR%%/lumas/PAL
 @dirrm %%DATADIR%%/lumas/NTSC
 @dirrm %%DATADIR%%/lumas
+@dirrm %%DATADIR%%/linsys
+@dirrm %%DATADIR%%/kdenlive
+%%JACK%%@dirrm %%DATADIR%%/jackrack
+%%GTK2%%@dirrm %%DATADIR%%/gtk2
 %%FREI0R%%@dirrm %%DATADIR%%/frei0r
 @dirrm %%DATADIR%%/feeds/PAL
 @dirrm %%DATADIR%%/feeds/NTSC
 @dirrm %%DATADIR%%/feeds
+@dirrm %%DATADIR%%/effectv
+%%DV%%@dirrm %%DATADIR%%/dv
+@dirrm %%DATADIR%%/decklink
 @dirrm %%DATADIR%%/core
-%%AVFORMAT%%@dirrm %%DATADIR%%/avformat
+%%FFMPEG%%@dirrm %%DATADIR%%/avformat
 @dirrm %%DATADIR%%
 @dirrm lib/mlt
 @dirrm include/mlt/framework

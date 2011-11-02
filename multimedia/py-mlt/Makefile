@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mlt
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +18,12 @@ COMMENT=	Python bindings for the MLT multimedia framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
+LIB_DEPENDS=	mlt.4:${PORTSDIR}/multimedia/mlt
+
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	mlt.3:${PORTSDIR}/multimedia/mlt
 
 USE_PYTHON=	yes
+DISTINFO_FILE=	${.CURDIR}/../mlt/distinfo
 
 PORTEXAMPLES=	python
 
