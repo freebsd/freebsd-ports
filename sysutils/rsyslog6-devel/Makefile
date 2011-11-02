@@ -92,10 +92,6 @@ post-install:
 
 .ifdef MNAME
 
-.if ${MNAME} == "gssapi" && ${OSVERSION} < 700000
-IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
-.endif
-
 .if ${MNAME} == "snmp" && ${ARCH} == "i386" && ${OSVERSION} >= 800000
 BROKEN=		Does not link on i386: can't find symbol snmp_timeout in libnetsnmp
 .endif
