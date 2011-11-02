@@ -13,9 +13,9 @@ MASTER_SITES=	RG
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Provides an open-source CSS authoring framework
 
-RUN_DEPENDS=	rubygem-sass>=3.1.8:${PORTSDIR}/textproc/rubygem-sass \
+RUN_DEPENDS=	rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass \
 		rubygem-fssm>=0.2.7:${PORTSDIR}/sysutils/rubygem-fssm \
-		rubygem-chunky_png>=1.2.5:${PORTSDIR}/graphics/rubygem-chunky_png
+		rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

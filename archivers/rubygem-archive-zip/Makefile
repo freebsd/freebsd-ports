@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Provides interface to working with ZIP archives
 
-RUN_DEPENDS=	rubygem-io-like>=0.1.0:${PORTSDIR}/devel/rubygem-io-like
+RUN_DEPENDS=	rubygem-io-like>=0.3.0:${PORTSDIR}/devel/rubygem-io-like
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

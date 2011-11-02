@@ -14,9 +14,9 @@ COMMENT=	Command line utilies for interacting with AMQP compliant queues
 
 RUN_DEPENDS=	rubygem-amqp>=0.7.1:${PORTSDIR}/net/rubygem-amqp \
 		rubygem-clio>=0.3.0:${PORTSDIR}/devel/rubygem-clio \
-		rubygem-facets>=2.9.1:${PORTSDIR}/devel/rubygem-facets \
+		rubygem-facets>=2.9:${PORTSDIR}/devel/rubygem-facets \
 		rubygem-heredoc_unindent>=1.1.2:${PORTSDIR}/textproc/rubygem-heredoc_unindent \
-		rubygem-json>=1.5.3:${PORTSDIR}/devel/rubygem-json \
+		rubygem-json>=1.5:${PORTSDIR}/devel/rubygem-json \
 		rubygem-msgpack>=0.4.5:${PORTSDIR}/devel/rubygem-msgpack \
 		rubygem-trollop>=1.16.2:${PORTSDIR}/devel/rubygem-trollop
 

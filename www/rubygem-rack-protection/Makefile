@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Collection of Rack middleware to protect against opportunistic attack
 
-RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

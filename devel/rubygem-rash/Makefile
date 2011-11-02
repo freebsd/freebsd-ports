@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Simple extension to Hashie::Mash for rubyified keys
 
-RUN_DEPENDS=	rubygem-hashie>=1.0.0:${PORTSDIR}/devel/rubygem-hashie
+RUN_DEPENDS=	rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
