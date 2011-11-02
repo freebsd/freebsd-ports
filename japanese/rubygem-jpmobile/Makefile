@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
