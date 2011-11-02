@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Model-DBIC-Schema
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Moose>=1.12:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-MarkAsMethods>=0.13:${PORTSDIR}/devel/p5-MooseX-MarkAsMethods \
 		p5-MooseX-NonMoose>=0.16:${PORTSDIR}/devel/p5-MooseX-NonMoose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
@@ -51,7 +52,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501200
-TEST_DEPENDS=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
