@@ -2989,3 +2989,12 @@ sysutils/rsyslog3-gssapi||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-mysql||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-pgsql||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-relp||2011-11-02|Has expired: unsupported upstream
+sysutils/rsyslog4-devel||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-dbi||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-gnutls||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-gssapi||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-mysql||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-pgsql||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-relp||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-rfc3195||2011-11-02|is now stable see sysutils/rsyslog4
+sysutils/rsyslog4-devel-snmp||2011-11-02|is now stable see sysutils/rsyslog4

@@ -723,15 +723,6 @@
     SUBDIR += rsyncmanager
     SUBDIR += rsyslog4
     SUBDIR += rsyslog4-dbi
-    SUBDIR += rsyslog4-devel
-    SUBDIR += rsyslog4-devel-dbi
-    SUBDIR += rsyslog4-devel-gnutls
-    SUBDIR += rsyslog4-devel-gssapi
-    SUBDIR += rsyslog4-devel-mysql
-    SUBDIR += rsyslog4-devel-pgsql
-    SUBDIR += rsyslog4-devel-relp
-    SUBDIR += rsyslog4-devel-rfc3195
-    SUBDIR += rsyslog4-devel-snmp
     SUBDIR += rsyslog4-gnutls
     SUBDIR += rsyslog4-gssapi
     SUBDIR += rsyslog4-mysql
