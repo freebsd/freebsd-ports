@@ -1,0 +1,12 @@
+MooseX::MarkAsMethods allows one to easily mark certain functions as Moose
+methods. This will allow other packages such as namespace::autoclean to operate
+without blowing away your overloads. After using MooseX::MarkAsMethods your
+overloads will be recognized by Class::MOP as being methods, and class extension
+as well as composition from roles with overloads will "just work".
+
+By default we check for overloads, and mark those functions as methods.
+
+If 'autoclean => 1' is passed to import on use'ing this module, we will invoke
+namespace::autoclean to clear out non-methods.
+
+WWW: http://search.cpan.org/dist/MooseX-MarkAsMethods/
