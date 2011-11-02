@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_JIT)
+.if !defined(WITHOUT_JIT) && ${ARCH} != "sparc64"
 CONFIGURE_ARGS+=	--enable-jit
 .else
 CONFIGURE_ARGS+=	--disable-jit
