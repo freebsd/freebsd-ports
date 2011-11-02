@@ -83,6 +83,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
 		SYSLOG_SUPPORT		"3rd party syslog support" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off \
+		XRID_HEADER_MODULE	"3rd party x-rid header module" off \
 		XSS_MODULE		"3rd party xss module" off
 
 WANT_GNOME=	yes
@@ -531,6 +532,14 @@ MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
 DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
+.endif
+
+.if defined(WITH_XRID_HEADER_MODULE)
+GIT_XRID_MODULE_VERSION=        0daa3cc
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/gabor/nginx-x-rid-header/tarball/master/:xrid
+DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_MODULE_VERSION}.tar.gz:xrid
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_MODULE_VERSION}
 .endif
 
 .if defined(WITH_XSS_MODULE)
