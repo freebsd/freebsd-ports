@@ -72,7 +72,7 @@ bin/gshuf
 bin/gsleep
 bin/gsort
 bin/gsplit
-bin/gstat
+bin/gnustat
 bin/gstdbuf
 bin/gstty
 bin/gsum

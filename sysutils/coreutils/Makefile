@@ -18,7 +18,10 @@ CONFLICTS=	id-utils-[0-9]* linux-gid-[0-9]*
 
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+# A rather nasty hack to stop gnustat from conflicting with base gstat
+# bugs.freebsd.org/160060
+CONFIGURE_ARGS=	--program-prefix=g	\
+		--program-transform-name=s/stat/nustat/
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 
@@ -41,7 +44,7 @@ MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
 	gmv.1 gnice.1 gnl.1 gnohup.1 god.1 gpaste.1 gpathchk.1 gpinky.1 \
 	gpr.1 gprintenv.1 gprintf.1 gptx.1 gpwd.1 greadlink.1 grm.1 \
 	grmdir.1 gruncon.1 gseq.1 gsha1sum.1 gshred.1 gsleep.1 gsort.1 \
-	gsplit.1 gstdbuf.1 gstat.1 gstty.1 gsum.1 gsync.1 gtac.1 \
+	gsplit.1 gstdbuf.1 gnustat.1 gstty.1 gsum.1 gsync.1 gtac.1 \
 	gtail.1 gtee.1 gtest.1 gtimeout.1 gtouch.1 gtr.1 gtrue.1 gtruncate.1 \
 	gtsort.1 gtty.1 guname.1 gunexpand.1 guniq.1 gunlink.1 guptime.1 \
 	gusers.1 gvdir.1 gwc.1 gwho.1 gwhoami.1 gyes.1 gbase64.1 gsha224sum.1 \
@@ -73,7 +76,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
 
 post-patch:
 .if !defined(WITH_SUID)
-	@${REINPLACE_CMD} -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s/u+s/u+w/g" ${WRKSRC}/src/Makefile.in
 .endif
 
 post-build:
