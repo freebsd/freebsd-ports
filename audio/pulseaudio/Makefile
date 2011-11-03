@@ -12,9 +12,9 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
+MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
@@ -38,12 +38,17 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
-		LIBS="-lm -lintl"
+		LIBS="-lm -lintl" \
+		ac_cv_header_linux_input_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-database=gdbm \
+		--without-caps \
+		--disable-alsa \
+		--disable-udev \
+		--disable-gtk2 \
 		--disable-lirc # untested
 
 USERS=		pulse
@@ -62,19 +67,6 @@ MAN1=		esdcompat.1 pabrowse.1 pacat.1 pacmd.1 pactl.1 padsp.1 \
 MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 
 .include <bsd.port.pre.mk>
-
-#.if ${ARCH} == "sparc64"
-#BROKEN=		Does not compile on sparc64
-#.endif
-
-.if ( ${OSVERSION} > 800000 && ${OSVERSION} < 800080 ) || \
-    ${OSVERSION} < 702000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_daemon_main.c \
-		${FILESDIR}/extra-patch-src_daemon_start-pulseaudio-x11.in \
-		${FILESDIR}/extra-patch-src_pulse_context.c
-.endif
-
-CONFIGURE_ARGS+=	--without-caps
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
@@ -108,13 +100,14 @@ CONFIGURE_ARGS+=--disable-gconf
 PLIST_SUB+=	GCONF="@comment "
 .endif
 
+.if ((${OSVERSION} >= 800000) && (${OSVERSION} < 802504)) || \
+	((${OSVERSION} >= 900000) && (${OSVERSION} < 900037))
+EXTRA_PATCHES+=	${FILESDIR}/extra-src_modules_oss_module-oss.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/daemon/default.pa.in
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's|-Wl,-no-undefined||' \
-	    	${WRKSRC}/src/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
