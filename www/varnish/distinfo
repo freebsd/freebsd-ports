@@ -1,4 +1,2 @@
-SHA256 (varnish-3.0.1.tar.gz) = 385807737777a392520c5334bb114f9fc0e5f8dbf5cc48b420baf5b0478eb279
-SIZE (varnish-3.0.1.tar.gz) = 2123838
-SHA256 (patch-varnishncsa-3.0.0.diff) = d0794683e9fb11693384a6aca50f7b9a68c8b3276ae0d70b4fd93674fcd899d3
-SIZE (patch-varnishncsa-3.0.0.diff) = 487
+SHA256 (varnish-3.0.2.tar.gz) = 973f60625e9690e0989e1bbc73c37ea53fc6291b8f7b03d617b76f8084a4a243
+SIZE (varnish-3.0.2.tar.gz) = 1977852

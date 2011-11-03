@@ -9,6 +9,7 @@ bin/varnishtest
 bin/varnishtop
 etc/varnish/default.vcl
 include/varnish/acct_fields.h
+include/varnish/body_status.h
 include/varnish/cache.h
 include/varnish/common.h
 include/varnish/heritage.h
