@@ -20,6 +20,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+LATEST_LINK=	linux-f10-flashplugin11
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	openssl curl cyrus-sasl2 libssh2 nspr nss openldap gtk2
