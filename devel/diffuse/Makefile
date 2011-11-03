@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffuse
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -30,7 +30,7 @@ OPTIONS=	MENU	"Install a desktop menu entry"	on \
 .include <bsd.port.options.mk>
 
 .ifndef (NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING ChangeLog README README_ru
+PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog_ru README README_ru
 .endif
 
 .ifndef (NOPORTDATA)
