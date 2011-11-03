@@ -1,11 +1,13 @@
---- third_party/protobuf/src/google/protobuf/stubs/common.h.orig
-+++ third_party/protobuf/src/google/protobuf/stubs/common.h
-@@ -47,6 +47,8 @@
+--- third_party/protobuf/src/google/protobuf/stubs/common.h.orig	2011-10-31 14:25:22.000000000 +0000
++++ third_party/protobuf/src/google/protobuf/stubs/common.h	2011-10-31 17:54:21.000000000 +0000
+@@ -47,6 +47,10 @@
  #elif !defined(_MSC_VER)
  #include <stdint.h>
  #endif
++#if defined(__FreeBSD__)
 +#undef major
 +#undef minor
++#endif
  
- #if defined(_WIN32) && defined(GetMessage)
- // Allow GetMessage to be used as a valid method name in protobuf classes.
+ #if defined(_MSC_VER) && defined(_CPPUNWIND)
+   #define PROTOBUF_USE_EXCEPTIONS
