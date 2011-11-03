@@ -18,8 +18,6 @@ COMMENT=	The "meta-port" for the collection of several GTK+ theme engines
 
 RUN_DEPENDS=	${THEMESBASE}/libgnomelook.so:${PORTSDIR}/x11-themes/gnome-look \
 		${THEMESBASE}/libpixmap.so:${PORTSDIR}/x11-themes/gtk-engines \
-		${THEMESBASE}/libqnx.so:${PORTSDIR}/x11-themes/gtk-qn-x11-theme \
-		${THEMESBASE}/libzenith.so:${PORTSDIR}/x11-themes/gtk-zenith-theme \
 		${THEMESBASE}/libthinice.so:${PORTSDIR}/x11-themes/thinice
 
 THEMESBASE=	${LOCALBASE}/lib/gtk/themes/engines
