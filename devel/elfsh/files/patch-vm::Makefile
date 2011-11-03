@@ -1,5 +1,5 @@
---- vm/Makefile	Thu Aug 21 04:23:17 2003
-+++ vm/Makefile.patch	Thu Sep 25 00:26:25 2003
+--- vm/Makefile.orig	2003-08-21 09:23:17.000000000 +0800
++++ vm/Makefile	2011-10-03 16:34:23.000000000 +0800
 @@ -19,8 +19,8 @@
  #LDASMOPT		= -lasm
  
@@ -11,7 +11,12 @@
  
  
  # End of configurable Makefile
-@@ -40,7 +40,7 @@
+@@ -36,11 +36,11 @@ SRC			= grammar.c disasm.c dyn.c hdr.c m
+ OBJ			= $(SRC:.c=.o)
+ SRC_DYN			= elfsh_etdyn.c
+ OBJ_DYN			= $(SRC_DYN:.c=.o)
+-CC			= gcc
++CC			?= gcc
  RM			= rm -f
  NAME			= elfsh
  

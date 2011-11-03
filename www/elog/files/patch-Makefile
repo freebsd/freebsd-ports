@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jul  9 16:26:32 2006
-+++ Makefile	Tue Jul 11 20:03:40 2006
-@@ -16,10 +16,11 @@
+--- Makefile.orig	2006-07-11 16:25:55.000000000 +0800
++++ Makefile	2011-10-04 10:04:32.000000000 +0800
+@@ -16,10 +16,11 @@ ifndef MANDIR
  MANDIR     = $(ROOT)$(PREFIX)/man
  endif
  
@@ -14,7 +14,25 @@
  
  #############################################################
  
-@@ -80,8 +81,9 @@
+@@ -27,7 +28,7 @@ RCDIR      = $(ROOT)/etc/rc.d/init.d
+ # Add "-DHAVE_CRYPT" and "-lcrypt" to use crypt() function.
+ CFLAGS += -O3 -funroll-loops -fomit-frame-pointer -W -Wall
+ 
+-CC = gcc
++CC ?= gcc
+ IFLAGS = -kr -nut -i3 -l110
+ EXECS = elog elogd elconv
+ MXMLDIR = ../mxml
+@@ -58,7 +59,7 @@ BINGROUP = admin
+ endif
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+-CC = gcc
++CC ?= gcc
+ BINOWNER = root
+ BINGROUP = wheel
+ endif
+@@ -80,8 +81,9 @@ mxml.o: $(MXMLDIR)/mxml.c $(MXMLDIR)/mxm
  strlcpy.o: $(MXMLDIR)/strlcpy.c $(MXMLDIR)/strlcpy.h
  	$(CC) $(CFLAGS) -c -o strlcpy.o $(MXMLDIR)/strlcpy.c
  
@@ -25,7 +43,7 @@
  
  debug: src/elogd.c regex.o mxml.o strlcpy.o
  	$(CC) -g -I$(MXMLDIR) -o elogd src/elogd.c regex.o mxml.o strlcpy.o $(LIBS)
-@@ -106,7 +108,6 @@
+@@ -113,7 +115,6 @@ update: $(EXECS)
  install: $(EXECS)
  	@$(INSTALL) -m 0755 -d $(DESTDIR) $(SDESTDIR) $(MANDIR)/man1/ $(MANDIR)/man8/
  	@$(INSTALL) -m 0755 -d $(ELOGDIR)/scripts/ $(ELOGDIR)/resources/ $(ELOGDIR)/themes/default/icons 
@@ -33,7 +51,7 @@
  	@$(INSTALL) -v -m 0755 -o ${BINOWNER} -g ${BINGROUP} elog elconv $(DESTDIR)
  	@$(INSTALL) -v -m 0755 -o ${BINOWNER} -g ${BINGROUP} elogd $(SDESTDIR)
  	@$(INSTALL) -v -m 0644 man/elog.1 man/elconv.1 $(MANDIR)/man1/
-@@ -121,23 +122,20 @@
+@@ -128,23 +129,20 @@ install: $(EXECS)
  	@$(INSTALL) -m 0644 themes/default/icons/* $(ELOGDIR)/themes/default/icons/
  	@for file in `find themes/default -type f | grep -v .svn` ; \
            do \

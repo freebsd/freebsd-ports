@@ -1,7 +1,11 @@
---- libelfsh/Makefile	Wed Aug 13 16:31:55 2003
-+++ libelfsh/Makefile.patch	Sat Aug 16 01:48:30 2003
-@@ -8,7 +8,7 @@
- CC			= gcc
+--- libelfsh/Makefile.orig	2003-08-21 09:11:03.000000000 +0800
++++ libelfsh/Makefile	2011-10-03 16:33:33.000000000 +0800
+@@ -5,10 +5,10 @@
+ ## Last update Tue Jun  3 09:30:50 2003 mayhem
+ ##
+ 
+-CC			= gcc
++CC			?= gcc
  RM			= rm -f 
  AR			= ar rc
 -CFLAGS			= -rdynamic -Iinclude -Wall -fPIC -g3 -O2 -DELFSH_INTERN
