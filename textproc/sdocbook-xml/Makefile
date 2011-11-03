@@ -37,7 +37,7 @@ FILES=		sdbcent.mod sdbhier.mod sdbpool.mod sdocbook-custom.dtd \
 
 do-extract:
 	${MKDIR} ${WRKDIR}; \
-	(cd ${WRKDIR} && unzip -oq ${DISTDIR}/${DISTFILES})
+	(cd ${WRKDIR} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES})
 
 post-patch:
 	${SED} -e 's#@@DTDDIR@@#${SDOCBOOKDIR}#' < ${FILESDIR}/catalog.xml > ${WRKSRC}/catalog.xml

@@ -66,7 +66,7 @@ post-extract:
 	${CP} ${_DISTDIR}/nxt-python-1.1.2.zip ${WRKSRC}/nxt_python/build
 	# already extract and mark as such because we have to patch it
 	(cd ${WRKSRC}/nxt_python/build ; \
-	 ${LOCALBASE}/bin/unzip -q nxt-python-1.1.2.zip ; \
+	 ${UNZIP_CMD} -q nxt-python-1.1.2.zip ; \
 	 ${TOUCH} nxt-python-1.1.2/unpacked)
 	# remove nxt_rviz_plugin, it is unbuildable right now
 	# and keeping it here breaks rospack
