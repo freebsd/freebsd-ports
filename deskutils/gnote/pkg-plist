@@ -33,7 +33,6 @@ lib/gnote/addins/%%VERSION%%/underline.so
 %%APPLET%%libexec/gnote-applet
 share/applications/gnote.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -57,6 +56,44 @@ share/gnome/help/gnote/C/figures/note-template.png
 share/gnome/help/gnote/C/figures/notebook-icon.png
 share/gnome/help/gnote/C/gnote.xml
 share/gnome/help/gnote/C/legal.xml
+share/gnome/help/gnote/cs/figures/add-notebook-search.png
+share/gnome/help/gnote/cs/figures/add-to-notebook.png
+share/gnome/help/gnote/cs/figures/delete-notebook.png
+share/gnome/help/gnote/cs/figures/gnote-main-menu.png
+share/gnome/help/gnote/cs/figures/gnote-new-note.png
+share/gnome/help/gnote/cs/figures/gnote-panel.png
+share/gnome/help/gnote/cs/figures/gnote-pindown.png
+share/gnome/help/gnote/cs/figures/gnote-pinup.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-add-ins.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-editing.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-hotkeys.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-synchronization.png
+share/gnome/help/gnote/cs/figures/gnote-tools.png
+share/gnome/help/gnote/cs/figures/move-notes-search.png
+share/gnome/help/gnote/cs/figures/new-notebook.png
+share/gnome/help/gnote/cs/figures/note-template.png
+share/gnome/help/gnote/cs/figures/notebook-icon.png
+share/gnome/help/gnote/cs/gnote.xml
+share/gnome/help/gnote/cs/legal.xml
+share/gnome/help/gnote/da/figures/add-notebook-search.png
+share/gnome/help/gnote/da/figures/add-to-notebook.png
+share/gnome/help/gnote/da/figures/delete-notebook.png
+share/gnome/help/gnote/da/figures/gnote-main-menu.png
+share/gnome/help/gnote/da/figures/gnote-new-note.png
+share/gnome/help/gnote/da/figures/gnote-panel.png
+share/gnome/help/gnote/da/figures/gnote-pindown.png
+share/gnome/help/gnote/da/figures/gnote-pinup.png
+share/gnome/help/gnote/da/figures/gnote-preferences-add-ins.png
+share/gnome/help/gnote/da/figures/gnote-preferences-editing.png
+share/gnome/help/gnote/da/figures/gnote-preferences-hotkeys.png
+share/gnome/help/gnote/da/figures/gnote-preferences-synchronization.png
+share/gnome/help/gnote/da/figures/gnote-tools.png
+share/gnome/help/gnote/da/figures/move-notes-search.png
+share/gnome/help/gnote/da/figures/new-notebook.png
+share/gnome/help/gnote/da/figures/note-template.png
+share/gnome/help/gnote/da/figures/notebook-icon.png
+share/gnome/help/gnote/da/gnote.xml
+share/gnome/help/gnote/da/legal.xml
 share/gnome/help/gnote/de/figures/add-notebook-search.png
 share/gnome/help/gnote/de/figures/add-to-notebook.png
 share/gnome/help/gnote/de/figures/delete-notebook.png
@@ -245,6 +282,7 @@ share/locale/ja/LC_MESSAGES/gnote.mo
 share/locale/kn/LC_MESSAGES/gnote.mo
 share/locale/ko/LC_MESSAGES/gnote.mo
 share/locale/lt/LC_MESSAGES/gnote.mo
+share/locale/lv/LC_MESSAGES/gnote.mo
 share/locale/ml/LC_MESSAGES/gnote.mo
 share/locale/mr/LC_MESSAGES/gnote.mo
 share/locale/nb/LC_MESSAGES/gnote.mo
@@ -260,9 +298,12 @@ share/locale/sv/LC_MESSAGES/gnote.mo
 share/locale/ta/LC_MESSAGES/gnote.mo
 share/locale/te/LC_MESSAGES/gnote.mo
 share/locale/th/LC_MESSAGES/gnote.mo
+share/locale/tr/LC_MESSAGES/gnote.mo
 share/locale/uk/LC_MESSAGES/gnote.mo
 share/locale/zh_CN/LC_MESSAGES/gnote.mo
 share/omf/gnote/gnote-C.omf
+share/omf/gnote/gnote-cs.omf
+share/omf/gnote/gnote-da.omf
 share/omf/gnote/gnote-de.omf
 share/omf/gnote/gnote-el.omf
 share/omf/gnote/gnote-es.omf
@@ -271,6 +312,16 @@ share/omf/gnote/gnote-sl.omf
 share/omf/gnote/gnote-sv.omf
 share/omf/gnote/gnote-zh_CN.omf
 @dirrm share/omf/gnote
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
@@ -303,6 +354,10 @@ share/omf/gnote/gnote-zh_CN.omf
 @dirrm share/gnome/help/gnote/el
 @dirrm share/gnome/help/gnote/de/figures
 @dirrm share/gnome/help/gnote/de
+@dirrm share/gnome/help/gnote/da/figures
+@dirrm share/gnome/help/gnote/da
+@dirrm share/gnome/help/gnote/cs/figures
+@dirrm share/gnome/help/gnote/cs
 @dirrm share/gnome/help/gnote/C/figures
 @dirrm share/gnome/help/gnote/C
 @dirrm share/gnome/help/gnote
@@ -311,13 +366,3 @@ share/omf/gnote/gnote-zh_CN.omf
 @dirrmtry lib/gnote/addins/%%VERSION%%
 @dirrmtry lib/gnote/addins
 @dirrmtry lib/gnote
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
