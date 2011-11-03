@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.5.10
+PORTVERSION=	3.7.3
 PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
+MASTER_SITES=	LOCAL/vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Google\'s open source JavaScript engine
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-GITVERSION=	0-g4cf15c7
+USE_XZ=		yes
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION:S/^0-g//}
 USE_SCONS=	yes
 USE_LDCONFIG=	yes
 OPTIONS=	DEBUG "Build in debug mode" Off \
