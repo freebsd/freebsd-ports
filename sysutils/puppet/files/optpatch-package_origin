@@ -1,7 +1,5 @@
-diff --git lib/puppet/provider/package/freebsd.rb lib/puppet/provider/package/freebsd.rb
-index e10a20b..7f50e10 100755
---- lib/puppet/provider/package/freebsd.rb
-+++ lib/puppet/provider/package/freebsd.rb
+--- lib/puppet/provider/package/freebsd.rb.orig	Thu Nov  3 10:58:56 2011
++++ lib/puppet/provider/package/freebsd.rb	Thu Nov  3 10:59:02 2011
 @@ -1,37 +1,165 @@
 -Puppet::Type.type(:package).provide :freebsd, :parent => :openbsd do
 -  desc "The specific form of package management on FreeBSD.  This is an
@@ -18,22 +16,22 @@ index e10a20b..7f50e10 100755
 -    :pkgdelete => "/usr/sbin/pkg_delete"
 +Puppet::Type.type(:package).provide :freebsd, :parent => Puppet::Provider::Package do
 +  include Puppet::Util::Execution
-+
+ 
 +  desc "The specific form of package management on FreeBSD. Resource names must be
 +  specified as the port origin: <port_category>/<port_name>."
 +
 +  commands :pkginfo    => "/usr/sbin/pkg_info",
 +           :pkgadd     => "/usr/sbin/pkg_add",
 +           :pkgdelete  => "/usr/sbin/pkg_delete"
- 
++
    confine :operatingsystem => :freebsd
 +  defaultfor :operatingsystem => :freebsd
-+
-+  @@lock = Mutex.new
-+  @@ports_index = nil
  
 -  def self.listcmd
 -    command(:pkginfo)
++  @@lock = Mutex.new
++  @@ports_index = nil
++
 +  # fix bug in URI::FTP merge method that tries to set typecode
 +  # even when other is a string.
 +  class URI::FTP
@@ -54,7 +52,11 @@ index e10a20b..7f50e10 100755
 +      :pkg_version => pkg_string.split("-")[-1],
 +    }
 +  end
-+
+ 
+-    if @resource[:source] =~ /\/$/
+-      if @resource[:source] =~ /^(ftp|https?):/
+-        Puppet::Util::Execution::withenv :PACKAGESITE => @resource[:source] do
+-          pkgadd "-r", @resource[:name]
 +  def self.unparse_pkg_info(pkg_info)
 +    [:pkg_name, :pkg_version].map { |key| pkg_info[key] }.join("-")
 +  end
@@ -70,11 +72,7 @@ index e10a20b..7f50e10 100755
 +    end
 +    origin
 +  end
- 
--    if @resource[:source] =~ /\/$/
--      if @resource[:source] =~ /^(ftp|https?):/
--        Puppet::Util::Execution::withenv :PACKAGESITE => @resource[:source] do
--          pkgadd "-r", @resource[:name]
++
 +  def self.instances
 +    packages = []
 +    output = pkginfo "-aoQ"
@@ -190,7 +188,7 @@ index e10a20b..7f50e10 100755
    end
  
    def query
-@@ -44,7 +172,7 @@ Puppet::Type.type(:package).provide :freebsd, :parent => :openbsd do
+@@ -44,6 +172,7 @@
    end
  
    def uninstall
@@ -199,4 +197,3 @@ index e10a20b..7f50e10 100755
 +    output.split("\n").each { |pkg_name| pkgdelete([pkg_name]) }
    end
  end
--
