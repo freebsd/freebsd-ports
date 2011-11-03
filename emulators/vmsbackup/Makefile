@@ -26,7 +26,7 @@ MANCOMPRESSED=	no
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	unzip ${DISTDIR}/${DISTNAME} -d ${WRKSRC}
+	${UNZIP_CMD} ${DISTDIR}/${DISTNAME} -d ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#gets(ans);#fgets(ans, 80, stdin);#' ${WRKSRC}/vmsbackup.c

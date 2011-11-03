@@ -43,7 +43,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 post-extract:
 .if !defined(WITHOUT_WAD)
-	@${LOCALBASE}/bin/unzip -qo ${DISTDIR}/hexen.zip \
+	@${UNZIP_CMD} -qo ${DISTDIR}/hexen.zip \
 		-d ${WRKSRC}
 .endif
 

@@ -43,7 +43,7 @@ post-extract:
 	${RM} ${WRKSRC}/models/*
 	@cd ${WRKSRC}/models && \
 		${RM} -f * && \
-		unzip -qj ${DISTDIR}/shotgun-debugger-1.0.mac-ppc.zip \
+		${UNZIP_CMD} -qj ${DISTDIR}/shotgun-debugger-1.0.mac-ppc.zip \
 			'sdb-1.0-macosx/models/*.md2b'
 .endif
 

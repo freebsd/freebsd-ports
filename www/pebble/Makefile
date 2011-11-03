@@ -42,7 +42,7 @@ PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war
 PEBBLE_CONTEXT=	WEB-INF/applicationContext-pebble.xml
 
 do-patch:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/unzip -o pebble.war "${PEBBLE_CONTEXT}"
+	cd ${WRKSRC} && ${UNZIP_CMD} -o pebble.war "${PEBBLE_CONTEXT}"
 	${SED} -i.bak 's,/WEB-INF/pebble\.properties,file:${PEBBLE_PROPERTIES},' "${WRKSRC}/${PEBBLE_CONTEXT}"
 	cd ${WRKSRC} && ${LOCALBASE}/bin/zip -u pebble.war ${PEBBLE_CONTEXT}
 
