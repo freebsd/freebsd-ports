@@ -11,7 +11,7 @@ CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	RG
 DISTNAME=	rubysdl-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
 
 RUN_DEPENDS=	rubygem-opengl>=0.60.1:${PORTSDIR}/graphics/rubygem-opengl

@@ -10,7 +10,7 @@ PORTVERSION=	3.1.10
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sass is an extension of CSS3
 
 USE_RUBY=		yes

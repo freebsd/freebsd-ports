@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Large scale deploys using BitTorrent
 
 USE_RUBY=	yes
