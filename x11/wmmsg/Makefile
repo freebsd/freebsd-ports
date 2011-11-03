@@ -11,8 +11,11 @@ PORTREVISION=	10
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 
-MAINTAINER=	t.kempka@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
+
+DEPRECATED=	No more public distfiles
+EXIPRATION_DATE=	2011-12-03
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
