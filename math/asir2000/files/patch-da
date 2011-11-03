@@ -1,9 +1,0 @@
---- include/ca.h.orig	Tue Aug  2 16:16:42 2005
-+++ include/ca.h	Fri Nov 10 01:35:17 2006
-@@ -2607,3 +2607,6 @@
- void bcopy(const void *,void *,int);
- char *index(char *,int);
- #endif
-+
-+/* pari-2.2.16-beta change rename 'prec' -> 'precreal' [ from paripriv.h ] */
-+#define prec precreal

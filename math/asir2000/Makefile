@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20070806
-PORTREVISION=	5
+PORTVERSION=	20110810
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -18,20 +17,18 @@ EXTRACT_ONLY=	${ASIR_SRC}
 MAINTAINER=	saito@asir.org
 COMMENT=	The system Risa/Asir is a general computer algebra system
 
-BROKEN=		Only builds with now-nonexistant automake15
-
 LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
 
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
-#XXX	USE_AUTOTOOLS=	automake autoconf
-CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
+USE_AUTOTOOLS=	aclocal automake autoconf
+CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari --with-gc7
 ASIR_SRC_VERSION=	${PORTVERSION}
-ASIR_DOC_VERSION=	20070718
-GC_VERSION=	6.8
+ASIR_DOC_VERSION=	20110808
+GC_VERSION=	7.1
 ASIR_SRC=	asir-${ASIR_SRC_VERSION}${EXTRACT_SUFX}
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}${EXTRACT_SUFX}
-GC_SRC=		gc${GC_VERSION}${EXTRACT_SUFX}
+GC_SRC=		gc-${GC_VERSION}${EXTRACT_SUFX}
 MAN1=		asir.1
 WRKSRC=		${WRKDIR}/asir2000
 
@@ -41,6 +38,7 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 		sturm sym weight xm
 
 PORTDOCS=	*
+PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +63,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_asir
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_plot
 	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_launch
+	@${LN} -fs ${DATADIR} ${PREFIX}/lib/asir
 	@${INSTALL_MAN} ${WRKDIR}/asirdoc/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
