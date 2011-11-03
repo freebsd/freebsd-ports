@@ -249,6 +249,11 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa \
 BROKEN=	Requires lrintl, which is not present on FreeBSD 7
 .endif
 
+post-extract:
+.for file in ${DISTFILES:M*\:[23]:C/\:[23]//}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${file} ${WRKSRC}/libs/
+.endfor
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/${DIST_SUBDIR}/|g' ${WRKSRC}/build/getlib.sh.in
 	@${REINPLACE_CMD} -e 's|2.1.9|2.1.10|g' ${WRKSRC}/src/mod/event_handlers/mod_event_zmq/Makefile
