@@ -16,6 +16,9 @@ DISTNAME=	qnx11__-1.2.x
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	The QN-X11 GTK theme engine
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-12-03
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk12

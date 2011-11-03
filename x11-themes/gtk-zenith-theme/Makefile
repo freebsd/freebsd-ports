@@ -16,6 +16,9 @@ DISTNAME=	zenith-1.2
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	The Zenith GTK theme engine
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-12-03
+
 WRKSRC=		${WRKDIR}/zenith-1.0
 
 USE_GNOME=	gtk12
