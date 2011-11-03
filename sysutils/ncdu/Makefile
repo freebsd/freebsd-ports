@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ncdu
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/ 
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 GNU_CONFIGURE=	yes
