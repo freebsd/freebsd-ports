@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
