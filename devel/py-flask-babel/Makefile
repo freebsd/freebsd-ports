@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Flask-Babel
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	Adds i18n/l10n support to Flask applications
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.6:${PORTSDIR}/www/py-flask \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8:${PORTSDIR}/www/py-flask \
 	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel \
 	${PYTHON_PKGNAMEPREFIX}pytz>=2011:${PORTSDIR}/devel/py-pytz \
 	${PYTHON_PKGNAMEPREFIX}speaklater>=1.2:${PORTSDIR}/devel/py-speaklater
