@@ -3,8 +3,50 @@ bin/xfce4-clipman-settings
 bin/xfce4-popup-clipman
 etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
 etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
-libexec/xfce4/panel-plugins/xfce4-clipman-plugin
-share/applications/xfce4-clipman-plugin.desktop
+lib/xfce4/panel/plugins/libclipman.la
+lib/xfce4/panel/plugins/libclipman.so
+share/applications/xfce4-clipman.desktop
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/C/media/clipman-action-dialog.png
+%%DOCSDIR%%/html/C/media/clipman-menu.png
+%%DOCSDIR%%/html/C/media/clipman-settings-actions.png
+%%DOCSDIR%%/html/C/media/clipman-settings-general.png
+%%DOCSDIR%%/html/C/media/clipman-settings-tweaks.png
+%%DOCSDIR%%/html/ca/index.html
+%%DOCSDIR%%/html/ca/media
+%%DOCSDIR%%/html/da/index.html
+%%DOCSDIR%%/html/da/media
+%%DOCSDIR%%/html/el/index.html
+%%DOCSDIR%%/html/el/media
+%%DOCSDIR%%/html/fr/index.html
+%%DOCSDIR%%/html/fr/media/clipman-action-dialog.png
+%%DOCSDIR%%/html/fr/media/clipman-menu.png
+%%DOCSDIR%%/html/fr/media/clipman-settings-actions.png
+%%DOCSDIR%%/html/fr/media/clipman-settings-general.png
+%%DOCSDIR%%/html/fr/media/clipman-settings-tweaks.png
+%%DOCSDIR%%/html/gl/index.html
+%%DOCSDIR%%/html/gl/media
+%%DOCSDIR%%/html/index.css
+%%DOCSDIR%%/html/it/index.html
+%%DOCSDIR%%/html/it/media
+%%DOCSDIR%%/html/ja/index.html
+%%DOCSDIR%%/html/ja/media/clipman-action-dialog.png
+%%DOCSDIR%%/html/ja/media/clipman-menu.png
+%%DOCSDIR%%/html/ja/media/clipman-settings-actions.png
+%%DOCSDIR%%/html/ja/media/clipman-settings-general.png
+%%DOCSDIR%%/html/ja/media/clipman-settings-tweaks.png
+%%DOCSDIR%%/html/pt/index.html
+%%DOCSDIR%%/html/pt/media
+%%DOCSDIR%%/html/ru/index.html
+%%DOCSDIR%%/html/ru/media
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/tr/media
+%%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/ug/media
+%%DOCSDIR%%/html/uk/index.html
+%%DOCSDIR%%/html/uk/media
+%%DOCSDIR%%/html/zh_CN/index.html
+%%DOCSDIR%%/html/zh_CN/media
 share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
@@ -12,6 +54,7 @@ share/icons/hicolor/32x32/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-clipman-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -23,10 +66,12 @@ share/locale/eu/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/kk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -38,73 +83,47 @@ share/locale/sk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ug/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
-share/xfce4/doc/C/images/clipman-action-dialog.png
-share/xfce4/doc/C/images/clipman-menu.png
-share/xfce4/doc/C/images/clipman-settings-actions.png
-share/xfce4/doc/C/images/clipman-settings-general.png
-share/xfce4/doc/C/xfce4-clipman-plugin.html
-share/xfce4/doc/da/images/clipman-action-dialog.png
-share/xfce4/doc/da/images/clipman-menu.png
-share/xfce4/doc/da/images/clipman-settings-actions.png
-share/xfce4/doc/da/images/clipman-settings-general.png
-share/xfce4/doc/da/xfce4-clipman-plugin.html
-share/xfce4/doc/fr/images/clipman-action-dialog.png
-share/xfce4/doc/fr/images/clipman-menu.png
-share/xfce4/doc/fr/images/clipman-settings-actions.png
-share/xfce4/doc/fr/images/clipman-settings-general.png
-share/xfce4/doc/fr/xfce4-clipman-plugin.html
-share/xfce4/doc/gl/images/clipman-action-dialog.png
-share/xfce4/doc/gl/images/clipman-menu.png
-share/xfce4/doc/gl/images/clipman-settings-actions.png
-share/xfce4/doc/gl/images/clipman-settings-general.png
-share/xfce4/doc/gl/xfce4-clipman-plugin.html
-share/xfce4/doc/it/images/clipman-action-dialog.png
-share/xfce4/doc/it/images/clipman-menu.png
-share/xfce4/doc/it/images/clipman-settings-actions.png
-share/xfce4/doc/it/images/clipman-settings-general.png
-share/xfce4/doc/it/xfce4-clipman-plugin.html
-share/xfce4/doc/ja/images/clipman-action-dialog.png
-share/xfce4/doc/ja/images/clipman-menu.png
-share/xfce4/doc/ja/images/clipman-settings-actions.png
-share/xfce4/doc/ja/images/clipman-settings-general.png
-share/xfce4/doc/ja/xfce4-clipman-plugin.html
-share/xfce4/doc/zh_CN/images/clipman-action-dialog.png
-share/xfce4/doc/zh_CN/images/clipman-menu.png
-share/xfce4/doc/zh_CN/images/clipman-settings-actions.png
-share/xfce4/doc/zh_CN/images/clipman-settings-general.png
-share/xfce4/doc/zh_CN/xfce4-clipman-plugin.html
-share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
+share/xfce4/panel/plugins/xfce4-clipman-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4/doc/zh_CN/images
-@dirrmtry share/xfce4/doc/zh_CN
-@dirrmtry share/xfce4/doc/ja/images
-@dirrmtry share/xfce4/doc/ja
-@dirrmtry share/xfce4/doc/it/images
-@dirrmtry share/xfce4/doc/it
-@dirrmtry share/xfce4/doc/gl/images
-@dirrmtry share/xfce4/doc/gl
-@dirrmtry share/xfce4/doc/fr/images
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc/da/images
-@dirrmtry share/xfce4/doc/da
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/applications
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrm %%DOCSDIR%%/html/zh_CN
+@dirrm %%DOCSDIR%%/html/uk
+@dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
+@dirrm %%DOCSDIR%%/html/ru
+@dirrm %%DOCSDIR%%/html/pt
+@dirrm %%DOCSDIR%%/html/ja/media
+@dirrm %%DOCSDIR%%/html/ja
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/fr/media
+@dirrm %%DOCSDIR%%/html/fr
+@dirrm %%DOCSDIR%%/html/el
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/ca
+@dirrm %%DOCSDIR%%/html/C/media
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4/panel
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
