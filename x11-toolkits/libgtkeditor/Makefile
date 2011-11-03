@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A source code editor widget for GTK+
 
+DEPRECATED=	No more supported upstream, not depend on anymore.
+EXPIRATION_DATE=	2011-12-03
+
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_AUTOTOOLS=	automake:env autoconf:env libtool

@@ -14,6 +14,9 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The program to use to have to remember all the options to find(1)
 
+DEPRECATED=	No more public distfiles, no more upstream
+EXPIRATION_DATE=	2011-12-03
+
 BUILD_DEPENDS=	appres:${PORTSDIR}/x11/appres \
 		xterm:${PORTSDIR}/x11/xterm
 
