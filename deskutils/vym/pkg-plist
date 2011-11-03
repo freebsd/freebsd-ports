@@ -1,10 +1,10 @@
 bin/vym
 %%PORTDOCS%%%%DOCSDIR%%/vym.pdf
+%%DATADIR%%/demos/frames.vym
 %%DATADIR%%/demos/lifeforms.vym
 %%DATADIR%%/demos/math.vym
 %%DATADIR%%/demos/time-management.vym
 %%DATADIR%%/demos/vym-contribute.vym
-%%DATADIR%%/demos/vym-projectplan.vym
 %%DATADIR%%/exports/orange-blue.conf
 %%DATADIR%%/exports/template-orange-blue/META-INF/manifest.xml
 %%DATADIR%%/exports/template-orange-blue/Pictures/1000000000000040000000400142E835.png
@@ -48,7 +48,9 @@ bin/vym
 %%DATADIR%%/flags/flag-url-bugzilla-novell-closed.png
 %%DATADIR%%/flags/flag-url-bugzilla-novell.png
 %%DATADIR%%/flags/flag-url.png
+%%DATADIR%%/flags/flag-urlnew.png
 %%DATADIR%%/flags/flag-vymlink.png
+%%DATADIR%%/flags/flag-vymlinknew.png
 %%DATADIR%%/flags/flag-wip.png
 %%DATADIR%%/flags/freemind/attach.png
 %%DATADIR%%/flags/freemind/back.png
@@ -118,6 +120,8 @@ bin/vym
 %%DATADIR%%/icons/newbranch.png
 %%DATADIR%%/icons/newmapcenter.png
 %%DATADIR%%/icons/redo.png
+%%DATADIR%%/icons/selectnext.png
+%%DATADIR%%/icons/selectprevious.png
 %%DATADIR%%/icons/text_block.png
 %%DATADIR%%/icons/text_bold.png
 %%DATADIR%%/icons/text_center.png
@@ -164,11 +168,13 @@ bin/vym
 %%DATADIR%%/macros/macro-7.vys
 %%DATADIR%%/macros/macro-8.vys
 %%DATADIR%%/macros/macro-9.vys
+%%DATADIR%%/scripts/bugger
 %%DATADIR%%/styles/kdebookmarks2vym.xsl
 %%DATADIR%%/styles/vym.css
 %%DATADIR%%/styles/vym2kdebookmarks.xsl
 %%DATADIR%%/styles/vym2taskjuggler.xsl
 @dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/macros
 %%NLS%%@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/icons
