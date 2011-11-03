@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.calodox.scene.org/demoniac/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for exploring and animating graphics effects
 
+DEPRECATED=	No more upstream, no more public distfiles
+EXPIRATION_DATE=	2011-12-03
+
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_GL=		yes

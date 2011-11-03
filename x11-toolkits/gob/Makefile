@@ -14,6 +14,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A preprocessor for making GTK+ objects with inline C
 
+DEPRECATED=	No more supported upstream, not depend on anymore.
+EXPIRATION_DATE=	2011-12-03
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
