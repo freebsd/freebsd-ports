@@ -7,6 +7,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.0.r${REVDATE}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -26,7 +27,7 @@ LIB_DEPENDS=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 
 REVDATE=	20110912
 
-USE_GNOME=	pkgconfig gnomelibs
+USE_GNOME=	pkgconfig
 USE_SDL=	sdl
 USE_OPENAL=	yes
 USE_XORG=	ice xext x11 xrandr
