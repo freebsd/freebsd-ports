@@ -1,5 +1,5 @@
---- Makefile.am.orig	Mon Aug  6 16:59:49 2007
-+++ Makefile.am	Mon Aug  6 17:07:45 2007
+--- Makefile.am.orig	2009-03-04 18:15:36.000000000 +0900
++++ Makefile.am	2011-08-08 15:35:03.000000000 +0900
 @@ -9,7 +9,8 @@
  
  SUBDIRS  = asm builtin engine fft include io lib parse ${PLOTDIR}
@@ -9,17 +9,8 @@
 +asirdir       = ${bindir}
  asir_PROGRAMS = asir
  asir_SOURCES  = parse/main.c
- asir_LDADD    = libasir.a libasir-gc.a
-@@ -17,7 +18,7 @@
- 
- GC            = gc6.8
- GC_TAR_GZ     = ${GC}.tar.gz
--GC_PATCH      = gc6.5-risa.diff
-+GC_PATCH      = gc6.8-risa.diff
- GC_DISTDIR    = @GC_DISTDIR@
- GC_MASTER_SITE=ftp://ftp.math.kobe-u.ac.jp/pub/OpenXM/misc/
- OX_FETCH      = ${bindir}/oxfetch.sh
-@@ -104,33 +105,33 @@
+ asir_LDADD    = libasir.a @ASIR_GCLIB@
+@@ -90,33 +91,34 @@
  	${INSTALL_DATA} libasir-gc.a ${DESTDIR}${libdir}/libasir-gc.a
  
  install-openxm: asir${EXEEXT} install-libasir install-libasir-gc
@@ -38,6 +29,7 @@
 -	${LN_S} asir${EXEEXT} ox_plot${EXEEXT})
 -	(cd ${top_srcdir}/include; ${MAKE} install)
 -	(cd ${top_srcdir}/parse; ${MAKE} install)
++	${INSTALL_PROGRAM} ${asir_PROGRAMS} /usr/local/bin
 +#	-mkdir -p ${DESTDIR}${bindir}
 +#	${INSTALL_PROGRAM} asir /usr/local/bin
 +#	-mkdir -p ${DESTDIR}${asirdir}

@@ -1,7 +1,7 @@
---- lib/Makefile.am.orig	Fri May  2 02:30:42 2003
-+++ lib/Makefile.am	Tue Jan 27 14:57:47 2004
+--- lib/Makefile.am.orig	2011-08-08 14:38:10.000000000 +0900
++++ lib/Makefile.am	2011-08-08 14:38:35.000000000 +0900
 @@ -1,6 +1,6 @@
- ## $OpenXM: OpenXM_contrib2/asir2000/lib/Makefile.am,v 1.10 2003/12/12 08:03:12 noro Exp $
+ ## $OpenXM: OpenXM_contrib2/asir2000/lib/Makefile.am,v 1.12 2009/02/22 16:51:36 ohara Exp $
  
 -asirdir = ${libdir}/asir
 +asirdir = ${datadir}/asir
