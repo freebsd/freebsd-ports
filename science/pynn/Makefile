@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pynn
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulator-independent language for building neuronal network models
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYNUMPY}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
