@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>freetype -- Some type 1 fonts handling vulnerabilities </topic>
     <affects>
       <package>
-	<name>freetype</name>
+	<name>freetype2</name>
 	<range><lt>2.4.7</lt></range>
       </package>
     </affects>
@@ -46,7 +46,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The FreeType project reports:</p>
 	<blockquote cite="http://sourceforge.net/projects/freetype/files/freetype2/2.4.7/README/view">
-	  <p>.</p>
+	  <p>A couple of vulnerabilities in handling Type 1 fonts.</p>
 	</blockquote>
       </body>
     </description>
