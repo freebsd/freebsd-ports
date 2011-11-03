@@ -7,30 +7,34 @@
 #
 
 PORTNAME=	ontv
-PORTVERSION=	2.4.0
-PORTREVISION=	11
+PORTVERSION=	3.2.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME Applet for monitoring current and upcoming TV programs
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte \
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tv_check:${PORTSDIR}/textproc/p5-xmltv
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras
+USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras pygtk2
 USE_GMAKE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5-2.7
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	ontv.schemas
 INSTALLS_ICONS=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/lib/python2.6|${PYTHON_LIBDIR}|' \
+		${WRKSRC}/bin/ontv
 
 .include <bsd.port.mk>
