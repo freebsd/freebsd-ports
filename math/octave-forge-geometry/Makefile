@@ -7,10 +7,13 @@
 
 PORTNAME=	octave-forge-geometry
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+
+RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
