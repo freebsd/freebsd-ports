@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Replacement for the rails deploy strategy which ships with Capistrano
 
 RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano

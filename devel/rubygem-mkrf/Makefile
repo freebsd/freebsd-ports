@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Replacement to mkmf generates Rakefiles to build C Extensions
 
 USE_RUBY=	yes

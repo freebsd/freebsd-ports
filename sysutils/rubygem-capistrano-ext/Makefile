@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Useful task libraries and methods for Capistrano
 
 RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano

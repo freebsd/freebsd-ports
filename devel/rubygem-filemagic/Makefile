@@ -11,7 +11,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to libmagic(3)
 
 GEM_NAME=	${DISTNAME}
