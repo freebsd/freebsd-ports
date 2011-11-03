@@ -646,6 +646,7 @@
     SUBDIR += spambnc
     SUBDIR += spamcup
     SUBDIR += spamd
+    SUBDIR += spamdb-curses
     SUBDIR += spamdyke
     SUBDIR += spamguard
     SUBDIR += spamilter
