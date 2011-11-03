@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
 
 DEPRECATED=	No more public distfiles
-EXIPRATION_DATE=	2011-12-03
+EXPIRATION_DATE=	2011-12-03
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
