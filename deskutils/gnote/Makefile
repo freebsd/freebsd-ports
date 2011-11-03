@@ -7,21 +7,26 @@
 #
 
 PORTNAME=	gnote
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A port of Tomboy to C++, note taking application
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		pcre.0:${PORTSDIR}/devel/pcre \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gconf2 intltool ltverhack gnomepanel
+USE_XZ=		yes
+USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
+		ltverhack gnomepanel
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gnote.schemas
@@ -32,7 +37,7 @@ CONFIGURE_ENV=	PANELAPPLET_SERVER_DIR="${PREFIX}/libdata/bonobo/servers"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-dbus
-DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
+DOCS=		AUTHORS ChangeLog NEWS README TODO
 MAN1=		gnote.1
 
 .if !defined(WITHOUT_APPLET)
@@ -46,12 +51,6 @@ PLIST_SUB+=	APPLET="@comment "
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include/boost|${LOCALBASE}/include/boost|g' \
 		${WRKSRC}/configure
@@ -64,4 +63,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
