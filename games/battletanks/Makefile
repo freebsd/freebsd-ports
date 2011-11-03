@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
@@ -29,31 +29,32 @@ USE_SDL=	image sdl
 USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR}
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CFLAGS="${CFLAGS} -fpermissive" CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
-		CPPPATH="${LOCALBASE}/include" \
-		LIBPATH="${LOCALBASE}/lib"
+		CPPPATH="${LOCALBASE}/include" LIBPATH="${LOCALBASE}/lib"
+
+MAN6=		${PORTNAME}.6
 
 PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 		donate.url homepage.url project_page.url video.txt
 
-DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "btanks" \
+DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "${PORTNAME}" \
 		"Application;Game;" false
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-SCONS_ARGS+=	gcc_visibility=false
-.endif
+pre-build:
+# Must regenerate `sl08.h' after we patch `sl08.py' (patching header itself
+# would have resulted in a larger diff and gratuitous difference with Debian)
+	@cd ${WRKSRC} && python engine/sl08/sl08.py > engine/sl08/sl08.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so \
 		${WRKSRC}/build/release/engine/libbtanks_engine.so \
 		${WRKSRC}/build/release/mrt/libmrt.so \
 		${WRKSRC}/build/release/sdlx/libsdlx.so ${PREFIX}/lib
+	${INSTALL_MAN} ${FILESDIR}/${MAN6} ${MANPREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
