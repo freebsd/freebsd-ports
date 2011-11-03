@@ -17,9 +17,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/clean.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/clean.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/clean.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/buildout.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/buildout.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/buildout.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/cleanup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/cleanup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/cleanup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/help.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/help.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/help.pyo
@@ -50,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/use.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/use.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/use.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/venv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/venv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/venv.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/version.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/version.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands/version.pyo
@@ -79,6 +85,11 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/log.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/log.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/log.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/common/patch-setup.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python24/patch-setup.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python25/patch-setup.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python30/patch-setup.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python32/patch-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python24/patch-Include-pyport.h
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python24/patch-Lib-cgi.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python24/patch-Lib-site.py.diff
@@ -116,55 +127,30 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python26/patch-Mac-Tools-Doc-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python26/patch-setup.py-db46.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python26/patch-setup_no_tkinter.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python27/patch-Modules-posixmodule.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_00_install_pythonbrew.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_00_install_pythonbrew.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_00_install_pythonbrew.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_01_update.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_01_update.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_01_update.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_02_help.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_02_help.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_02_help.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_03_version.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_03_version.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_03_version.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_04_install.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_04_install.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_04_install.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_05_switch.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_05_switch.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_05_switch.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_06_use.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_06_use.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_06_use.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_07_off.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_07_off.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_07_off.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_08_list.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_08_list.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_08_list.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_09_py.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_09_py.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_09_py.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_10_uninstall.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_10_uninstall.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_10_uninstall.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_11_clean.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_11_clean.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_11_clean.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_suite.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_suite.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_suite.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/etc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/installer
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/common
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python24
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python25
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python30
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python32
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python24
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python25
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python26
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python27
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew
