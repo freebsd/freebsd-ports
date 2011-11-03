@@ -1,0 +1,11 @@
+--- ./src/modules/linsys/Makefile.orig	2011-11-02 17:34:58.740000641 +0100
++++ ./src/modules/linsys/Makefile	2011-11-02 17:35:07.133393857 +0100
+@@ -12,7 +12,7 @@
+ 
+ ifdef WITH_JPEG
+ CFLAGS += -DWITH_JPEG
+-LDFLAGS += -ljpeg
++LDFLAGS += -ljpeg -L/usr/local/lib
+ endif
+ 
+ SRCS := $(OBJS:.o=.c)

@@ -29,8 +29,6 @@ USE_LDCONFIG=	yes
 
 # Required at least for frei0r detection.
 CFLAGS+=	-I${LOCALBASE}/include
-# Required at least by linsys module.
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64 (invokes i386 asm)
@@ -198,7 +196,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/modules/avformat/vdpau.c \
 		${WRKSRC}/src/modules/frei0r/factory.c \
-		${WRKSRC}/src/modules/jackrack/plugin_mgr.c
+		${WRKSRC}/src/modules/jackrack/plugin_mgr.c \
+		${WRKSRC}/src/modules/linsys/Makefile
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
