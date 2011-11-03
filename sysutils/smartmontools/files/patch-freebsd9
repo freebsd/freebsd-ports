@@ -1,0 +1,13 @@
+--- os_freebsd.cpp	2011/11/03 17:50:35	3466
++++ os_freebsd.cpp	2011/11/03 20:06:19	3468
+@@ -1058,8 +1058,8 @@
+   }
+ 
+   if (iop->sensep) {
+-    memcpy(iop->sensep,&(ccb->csio.sense_data),sizeof(struct scsi_sense_data));
+-    iop->resp_sense_len = sizeof(struct scsi_sense_data);
++    iop->resp_sense_len = ccb->csio.sense_len - ccb->csio.sense_resid;
++    memcpy(iop->sensep,&(ccb->csio.sense_data),iop->resp_sense_len);
+   }
+ 
+   iop->scsi_status = ccb->csio.scsi_status;
