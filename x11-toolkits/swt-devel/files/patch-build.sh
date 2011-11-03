@@ -1,5 +1,5 @@
---- build.sh.orig	2011-02-10 17:29:10.000000000 +0000
-+++ build.sh	2011-10-01 22:32:40.000000000 +0000
+--- build.sh.orig	2011-11-02 21:46:45.000000000 -0500
++++ build.sh	2011-11-02 21:46:57.000000000 -0500
 @@ -54,6 +54,9 @@
  	"FreeBSD")
  		SWT_OS=freebsd
@@ -41,12 +41,11 @@
  if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
  	echo "Cairo found, compiling SWT support for the cairo graphics library."
  	MAKE_CAIRO=make_cairo
-@@ -146,30 +152,17 @@
+@@ -146,40 +152,28 @@
  	echo "Cairo not found:"
  	echo "    *** Advanced graphics support using cairo will not be compiled."
  fi
-+fi
- 
+-
 -if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" -a ${MODEL} != 'sparc64' ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 -		MOZILLA_INCLUDES=`pkg-config --cflags mozilla-xpcom`
@@ -70,15 +69,33 @@
 -		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
 -		echo "    *** Mozilla embedding support will not be compiled."
 -	fi
+ fi
+ 
+-if [ x`pkg-config --exists webkit-1.0 && echo YES` = "xYES" ]; then
+-	echo "WebKit found, compiling webkit embedded browser support."
+-	MAKE_WEBKIT=make_webkit
 +if [ x${MAKE_MOZILLA} = "xmake_xulrunner" ]; then
 +	echo "Using libxul for gecko support"
 +	XULRUNNER_INCLUDES=`pkg-config --cflags libxul libxul-embedding`
 +	XULRUNNER_LIBS=`pkg-config --libs libxul libxul-embedding`
 +	export XULRUNNER_INCLUDES
 +	export XULRUNNER_LIBS
-+else
+ else
+-	echo "WebKit not found:"
+-	echo "    *** WebKit embedding support will not be compiled."
 +	echo "None of the following libraries were found:  XULRunner/XPCOM"
 +	echo "    *** Mozilla embedding support will not be compiled."
  fi
  
- if [ x`pkg-config --exists webkit-1.0 && echo YES` = "xYES" ]; then
++#if [ x`pkg-config --exists webkit-1.0 && echo YES` = "xYES" ]; then
++#	echo "WebKit found, compiling webkit embedded browser support."
++#	MAKE_WEBKIT=make_webkit
++#else
++#	echo "WebKit not found:"
++	echo "    *** WebKit embedding support will not be compiled, causes build to fail."
++	echo "    *** (temporary workaround until a better solution can be found)"
++#fi
++
+ # Find AWT if available
+ if [ -z "${AWT_LIB_PATH}" ]; then
+ 	if [ -f ${JAVA_HOME}/jre/lib/${AWT_ARCH}/libjawt.* ]; then
