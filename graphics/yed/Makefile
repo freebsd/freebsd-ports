@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yed
-PORTVERSION=	3.7.0.2
+PORTVERSION=	3.8
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -19,6 +19,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 RESTRICTED=	Restrictive license
+DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "" "false"
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
