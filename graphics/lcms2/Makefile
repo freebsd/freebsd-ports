@@ -27,14 +27,15 @@ OPTIONS=	TIFFICC "Build color profile applier for TIFF" off \
 		JPEGICC "Build color profile applier for JPEG" off
 
 UTILS=		transicc psicc linkicc
-MAN1=		${UTILS:S/$/.1/}
-PLIST_FILES=	${UTILS:S/^/bin\//}
+MAN1=		transicc.1 psicc.1 linkicc.1
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TIFFICC)
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 UTILS+=		tificc
+MAN1+=		tificc.1
+PLIST_FILES+=	bin/tificc
 .else
 CONFIGURE_ARGS=	--without-tiff
 .endif
@@ -42,6 +43,8 @@ CONFIGURE_ARGS=	--without-tiff
 .if defined(WITH_JPEGICC)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 UTILS+=		jpgicc
+MAN1+=		jpgicc.1
+PLIST_FILES+=	bin/jpgicc
 .else
 CONFIGURE_ARGS=	--without-jpeg
 .endif
