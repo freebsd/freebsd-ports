@@ -29,7 +29,7 @@ USE_SDL=	image sdl
 USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR}
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS} -fpermissive" CXXFLAGS="${CXXFLAGS}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -fpermissive" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		CPPPATH="${LOCALBASE}/include" LIBPATH="${LOCALBASE}/lib"
 
@@ -42,7 +42,7 @@ DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "${PORTNAME}" \
 		"Application;Game;" false
 
 pre-build:
-# Must regenerate `sl08.h' after we patch `sl08.py' (patching header itself
+# Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself
 # would have resulted in a larger diff and gratuitous difference with Debian)
 	@cd ${WRKSRC} && python engine/sl08/sl08.py > engine/sl08/sl08.h
 
