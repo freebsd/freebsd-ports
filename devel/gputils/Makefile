@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gputils
-PORTVERSION=	0.13.7
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tijl@coosemans.org
 COMMENT=	A set of utilities for Microchip PIC microcontrollers
 
 GNU_CONFIGURE=	yes
