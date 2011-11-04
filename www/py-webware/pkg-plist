@@ -1,22 +1,10 @@
 etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/AllTests.py
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/__init__.py
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/_accessDenied.py
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/_accessDenied.pyc
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/_viewError.py
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/_viewError.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/AdminPage.py
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/AdminPage.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/CGIWrapper.py
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/CGIWrapper.pyc
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.2.1.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.2.2.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.2.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-1.0.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/SampleAdmin.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/SampleError.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Docs/CGIWrapper.AdminPage.html
@@ -32,22 +20,22 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/AdminPage.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/CGIWrapper.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/Properties.html
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/__init__.html
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_accessDenied.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_admin.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_dumpCSV.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_dumpErrors.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_showConfig.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/__init__.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_accessDenied.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files/_viewError.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/AdminPage.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/CGIWrapper.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/Properties.html
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/__init__.html
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_accessDenied.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_admin.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_dumpCSV.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_dumpErrors.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_showConfig.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/__init__.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_accessDenied.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries/_viewError.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/UsersGuide.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/__init__.py
@@ -71,6 +59,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Examples/View.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Properties.py
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Properties.pyc
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/__init__.py
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/__init__.pyc
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/_accessDenied.py
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/_accessDenied.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_admin.py
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_admin.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_dumpCSV.py
@@ -79,8 +71,9 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_dumpErrors.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_showConfig.py
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/_showConfig.pyc
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/_viewError.py
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/_viewError.pyc
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/server.cgi
-%%WEBWARE_MASTER_DIR%%/COMKit/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Docs/COMKit.Properties.html
@@ -101,9 +94,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/COMKit/Properties.pyc
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.py
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.1.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/DocSupport/.checksrc.config
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.py
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.pyc
@@ -132,15 +122,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/Docs/DocIndex.css
 %%WEBWARE_MASTER_DIR%%/Docs/DocUtils.css
 %%WEBWARE_MASTER_DIR%%/Docs/Overview.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.2.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.3.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.4.1.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.4.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.5.1.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.5.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.6.1.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.6.html
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.8.1.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.9.1.html
@@ -148,6 +129,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.9.4.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.1.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.2.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/Docs/RelNotes.html
 %%WEBWARE_MASTER_DIR%%/Docs/ReleaseProcedures.html
 %%WEBWARE_MASTER_DIR%%/Docs/StyleGuidelines.html
@@ -156,10 +141,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/Docs/favicon.ico
 %%WEBWARE_MASTER_DIR%%/Docs/index.html
 %%WEBWARE_MASTER_DIR%%/KidKit/.checksrc.config
-%%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.1.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/KidKit/Docs/RelNotes-1.0.2.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Docs/KidKit.Properties.html
@@ -273,22 +258,23 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLGenerator.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLPythonGenerator.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLPythonGenerator.pyc
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLitePythonGenerator.py
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLitePythonGenerator.pyc
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLiteSQLGenerator.py
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Design/SQLiteSQLGenerator.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Design/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Design/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Intro.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/QuickStart.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.2.1.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.2.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.1.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.2.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/ClassList.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/FileList.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.AnyDateTimeAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.Attr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.BasicTypeAttr.html
@@ -313,7 +299,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.TimeAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.__init__.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs/MiddleKit.Core.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/__init__.html
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/FileList.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/AnyDateTimeAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/Attr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/BasicTypeAttr.html
@@ -336,7 +322,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/ObjRefAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/StringAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/TimeAttr.html
-%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/__init__.html
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files/__init__.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/AnyDateTimeAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/Attr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/BasicTypeAttr.html
@@ -359,6 +345,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/ObjRefAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/StringAttr.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/TimeAttr.html
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries/__init__.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/TODO.text
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/UsersGuide.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Command/main.py
@@ -394,10 +381,16 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Run/PostgreSQLObjectStore.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Run/SQLObjectStore.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Run/SQLObjectStore.pyc
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Run/SQLiteObjectStore.py
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Run/SQLiteObjectStore.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Run/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Run/__init__.pyc
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/ExecuteScript.py
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/ExecuteScript.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/FixPath.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/FixPath.pyc
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/LocalConfig.py
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/LocalConfig.pyc
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBackRef.mkmodel/Classes.csv
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBackRef.mkmodel/Samples.csv
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBackRef.mkmodel/Settings1.config
@@ -594,8 +587,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiddleKit/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/.checksrc.config
-%%WEBWARE_MASTER_DIR%%/MiscUtils/BasicDateTime.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/BasicDateTime.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/CSVJoiner.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/CSVJoiner.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/CSVParser.py
@@ -608,25 +599,25 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/DataTable.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/DateInterval.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/DateInterval.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/DateParser.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/DateParser.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/DictForArgs.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/DictForArgs.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.4.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.5.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.6.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.9.2.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0.2.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/ClassList.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.BasicDateTime.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.CSVJoiner.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.CSVParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.Configurable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.DBPool.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.DataTable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.DateInterval.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.DateParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.DictForArgs.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.Error.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.Funcs.html
@@ -639,16 +630,14 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.PropertiesObject.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.__init__.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.inspect.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs/MiscUtils.pydoc.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/FileList.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/BasicDateTime.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/CSVJoiner.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/CSVParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/Configurable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/DBPool.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/DataTable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/DateInterval.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/DateParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/DictForArgs.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/Error.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/Funcs.html
@@ -661,15 +650,13 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/Properties.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/PropertiesObject.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/__init__.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/inspect.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files/pydoc.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/BasicDateTime.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/CSVJoiner.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/CSVParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/Configurable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/DBPool.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/DataTable.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/DateInterval.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/DateParser.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/DictForArgs.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/Error.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/Funcs.html
@@ -682,13 +669,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/Properties.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/PropertiesObject.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/__init__.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/inspect.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries/pydoc.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/UsersGuide.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Error.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Error.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Funcs.py
@@ -717,14 +701,16 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/FixPath.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/Sample1.csv
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/Sample3.xls
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestCSVParser.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestCSVParser.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDBPool.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDBPool.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDataTable.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDataTable.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateInterval.pyc
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateParser.py
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDateParser.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDictForArgs.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestDictForArgs.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/TestError.py
@@ -739,23 +725,16 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/inspect.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/inspect.pyc
-%%WEBWARE_MASTER_DIR%%/MiscUtils/pydoc.py
-%%WEBWARE_MASTER_DIR%%/MiscUtils/pydoc.pyc
 %%WEBWARE_MASTER_DIR%%/PSP/.checksrc.config
 %%WEBWARE_MASTER_DIR%%/PSP/BraceConverter.py
 %%WEBWARE_MASTER_DIR%%/PSP/BraceConverter.pyc
 %%WEBWARE_MASTER_DIR%%/PSP/Context.py
 %%WEBWARE_MASTER_DIR%%/PSP/Context.pyc
-%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.3.html
-%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.4.html
-%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.6.html
-%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-1.0.2.html
+%%WEBWARE_MASTER_DIR%%/PSP/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Docs/PSP.BraceConverter.html
@@ -842,10 +821,16 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/PSP/ServletWriter.pyc
 %%WEBWARE_MASTER_DIR%%/PSP/StreamReader.py
 %%WEBWARE_MASTER_DIR%%/PSP/StreamReader.pyc
-%%WEBWARE_MASTER_DIR%%/PSP/Tests/CompileTest.py
-%%WEBWARE_MASTER_DIR%%/PSP/Tests/CompileTest.pyc
-%%WEBWARE_MASTER_DIR%%/PSP/Tests/PSPUtilsTest.py
-%%WEBWARE_MASTER_DIR%%/PSP/Tests/PSPUtilsTest.pyc
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/FixPath.py
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/FixPath.pyc
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestBraceConverter.py
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestBraceConverter.pyc
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestCompiler.py
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestCompiler.pyc
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestContext.py
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestContext.pyc
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestUtils.py
+%%WEBWARE_MASTER_DIR%%/PSP/Tests/TestUtils.pyc
 %%WEBWARE_MASTER_DIR%%/PSP/Tests/__init__.py
 %%WEBWARE_MASTER_DIR%%/PSP/Tests/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/PSP/__init__.py
@@ -854,10 +839,9 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/PSP/cl_psp.pyc
 %%WEBWARE_MASTER_DIR%%/Properties.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/QuickStart.html
-%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-0.1.1.html
-%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Docs/TaskKit.Properties.html
@@ -882,7 +866,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/__init__.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Properties.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/Properties.pyc
 %%WEBWARE_MASTER_DIR%%/TaskKit/Scheduler.py
@@ -900,8 +883,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/TaskKit/__init__.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/UserKit/.checksrc.config
-%%WEBWARE_MASTER_DIR%%/UserKit/Docs/RelNotes-0.2.html
-%%WEBWARE_MASTER_DIR%%/UserKit/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/UserKit/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/UserKit/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/ClassHierarchy.html
@@ -970,8 +951,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/UserKit/RoleUserManagerToMiddleKit.pyc
 %%WEBWARE_MASTER_DIR%%/UserKit/Tests/ExampleTest.py
 %%WEBWARE_MASTER_DIR%%/UserKit/Tests/ExampleTest.pyc
-%%WEBWARE_MASTER_DIR%%/UserKit/Tests/Test.py
-%%WEBWARE_MASTER_DIR%%/UserKit/Tests/Test.pyc
+%%WEBWARE_MASTER_DIR%%/UserKit/Tests/RoleTest.py
+%%WEBWARE_MASTER_DIR%%/UserKit/Tests/RoleTest.pyc
 %%WEBWARE_MASTER_DIR%%/UserKit/Tests/UserManagerTest.mkmodel/Classes.csv
 %%WEBWARE_MASTER_DIR%%/UserKit/Tests/UserManagerTest.mkmodel/Settings.config
 %%WEBWARE_MASTER_DIR%%/UserKit/Tests/UserManagerTest.mkmodel/Settings.config.default
@@ -1018,6 +999,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/OneShot.cgi
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/OneShotAdapter.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/OneShotAdapter.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/WSGIAdapter.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/WSGIAdapter.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/WebKit.cgi
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/__init__.pyc
@@ -1051,6 +1034,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.c
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.dll
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit.h
+%%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2/mod_webkit64.dll
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.c
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.def
 %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI/wk_isapi.dsp
@@ -1087,14 +1071,14 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/PlugIns.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/ServletCache.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/ServletCache.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Admin/__init__.py
-%%WEBWARE_MASTER_DIR%%/WebKit/Admin/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/Sleep.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/Sleep.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/ThreadControl.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/ThreadControl.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/View.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Admin/View.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/Admin/__init__.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Admin/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/AppServer
 %%WEBWARE_MASTER_DIR%%/WebKit/AppServer.bat
 %%WEBWARE_MASTER_DIR%%/WebKit/AppServer.py
@@ -1106,8 +1090,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/AutoReloadingAppServer.py
 %%WEBWARE_MASTER_DIR%%/WebKit/AutoReloadingAppServer.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Cache/_README
-%%WEBWARE_MASTER_DIR%%/WebKit/Common.py
-%%WEBWARE_MASTER_DIR%%/WebKit/Common.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/AppServer.config
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/AppServer.config.default
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/Application.config
@@ -1120,6 +1102,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/ModPythonAdapter.config.default
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/OneShotAdapter.config
 %%WEBWARE_MASTER_DIR%%/WebKit/Configs/OneShotAdapter.config.default
+%%WEBWARE_MASTER_DIR%%/WebKit/Configs/WSGIAdapter.config
+%%WEBWARE_MASTER_DIR%%/WebKit/Configs/WSGIAdapter.config.default
 %%WEBWARE_MASTER_DIR%%/WebKit/ConfigurableForServerSidePath.py
 %%WEBWARE_MASTER_DIR%%/WebKit/ConfigurableForServerSidePath.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Cookie.py
@@ -1137,15 +1121,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Future.txt
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/InstallGuide.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/InstallGuide.txt
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.2.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.3.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.4.1.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.4.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.5.1.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.5.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.6.1.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.6.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.7.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.8.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.1.html
@@ -1155,15 +1130,14 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-0.9.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.2.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleAdmin.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/SampleError.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.ASStreamOut.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.AppServer.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Application.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.AutoReloadingAppServer.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Common.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.ConfigurableForServerSidePath.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Cookie.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.DebugAppServer.html
@@ -1180,10 +1154,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Launch.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Message.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Monitor.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Object.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.OneShotAppServer.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Page.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.Page051.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.PickleRPCServlet.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.PidFile.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.PlugIn.html
@@ -1198,6 +1170,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SessionDynamicStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SessionFileStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SessionMemoryStore.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SessionShelveStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SessionStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.SidebarPage.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs/WebKit.ThreadedAppServer.html
@@ -1214,7 +1187,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/AppServerService.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Application.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/AutoReloadingAppServer.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Common.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/ConfigurableForServerSidePath.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Cookie.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/DebugAppServer.html
@@ -1231,10 +1203,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Launch.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Message.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Monitor.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Object.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/OneShotAppServer.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Page.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Page051.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/PickleRPCServlet.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/PidFile.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/PlugIn.html
@@ -1248,7 +1218,9 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/Session.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionDynamicStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionFileStore.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionMemcachedStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionMemoryStore.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionShelveStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SessionStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/SidebarPage.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files/ThreadedAppServer.html
@@ -1263,7 +1235,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/AppServerService.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Application.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/AutoReloadingAppServer.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Common.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/ConfigurableForServerSidePath.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Cookie.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/DebugAppServer.html
@@ -1280,10 +1251,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Launch.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Message.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Monitor.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Object.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/OneShotAppServer.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Page.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Page051.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/PickleRPCServlet.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/PidFile.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/PlugIn.html
@@ -1297,7 +1266,9 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/Session.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionDynamicStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionFileStore.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionMemcachedStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionMemoryStore.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionShelveStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SessionStore.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/SidebarPage.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries/ThreadedAppServer.html
@@ -1315,7 +1286,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/docutils.conf
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/WebKit/ErrorMsgs/_README
 %%WEBWARE_MASTER_DIR%%/WebKit/Examples/AjaxPage.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Examples/AjaxPage.pyc
@@ -1407,14 +1377,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Message.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Monitor.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Monitor.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Object.py
-%%WEBWARE_MASTER_DIR%%/WebKit/Object.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/OneShotAppServer.py
 %%WEBWARE_MASTER_DIR%%/WebKit/OneShotAppServer.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Page.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Page.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Page051.py
-%%WEBWARE_MASTER_DIR%%/WebKit/Page051.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/PickleRPCServlet.py
 %%WEBWARE_MASTER_DIR%%/WebKit/PickleRPCServlet.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/PidFile.py
@@ -1441,8 +1407,12 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionDynamicStore.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionFileStore.py
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionFileStore.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/SessionMemcachedStore.py
+%%WEBWARE_MASTER_DIR%%/WebKit/SessionMemcachedStore.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionMemoryStore.py
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionMemoryStore.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/SessionShelveStore.py
+%%WEBWARE_MASTER_DIR%%/WebKit/SessionShelveStore.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionStore.py
 %%WEBWARE_MASTER_DIR%%/WebKit/SessionStore.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Sessions/_README
@@ -1475,6 +1445,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Dir/index.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/EmbeddedServlet.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/EmbeddedServlet.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/Testing/FieldStorage.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Testing/FieldStorage.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Forward1.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Forward1.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Forward1Target.py
@@ -1568,24 +1540,28 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/FixPath.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/FixPath.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/README
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/SessionStoreTest.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/SessionStoreTest.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Test.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Test.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/CountVisits.rr
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ShowTime.rr
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ListBox.rr
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/memcache.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/memcache.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/Colors.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/CountVisits.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ListBox.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ShowTime.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/Welcome.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Docs.twill
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/WebKit.twill
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Admin.twill
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/MKBrowser.twill
-%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Testing.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Docs.twill
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/KidKit.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/MKBrowser.twill
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/PSP.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Testing.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/WebKit.twill
 %%WEBWARE_MASTER_DIR%%/WebKit/ThreadedAppServer.py
 %%WEBWARE_MASTER_DIR%%/WebKit/ThreadedAppServer.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Transaction.py
@@ -1603,15 +1579,15 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/error404.html
 %%WEBWARE_MASTER_DIR%%/WebKit/webkit
 %%WEBWARE_MASTER_DIR%%/WebUtils/.checksrc.config
-%%WEBWARE_MASTER_DIR%%/WebUtils/Cookie.py
-%%WEBWARE_MASTER_DIR%%/WebUtils/Cookie.pyc
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/RelNotes-0.7.html
+%%WEBWARE_MASTER_DIR%%/WebUtils/CGITraceback.py
+%%WEBWARE_MASTER_DIR%%/WebUtils/CGITraceback.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/RelNotes-0.8.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/RelNotes-0.9.2.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/RelNotes-1.1.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/ClassList.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.Cookie.html
+%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.CGITraceback.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.ExpansiveHTMLForException.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.FieldStorage.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.Funcs.html
@@ -1620,12 +1596,10 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.HTTPStatusCodes.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.Properties.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.WDGValidator.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.WebFuncs.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.__init__.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.cgitb.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs/WebUtils.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/FileList.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/Cookie.html
+%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/CGITraceback.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/ExpansiveHTMLForException.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/FieldStorage.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/Funcs.html
@@ -1634,10 +1608,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/HTTPStatusCodes.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/Properties.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/WDGValidator.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/WebFuncs.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/__init__.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files/cgitb.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/Cookie.html
+%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/CGITraceback.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/ExpansiveHTMLForException.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/FieldStorage.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/Funcs.html
@@ -1646,9 +1618,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/HTTPStatusCodes.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/Properties.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/WDGValidator.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/WebFuncs.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/__init__.html
-%%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries/cgitb.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/UsersGuide.html
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/__init__.pyc
@@ -1675,12 +1645,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebUtils/Tests/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/WDGValidator.py
 %%WEBWARE_MASTER_DIR%%/WebUtils/WDGValidator.pyc
-%%WEBWARE_MASTER_DIR%%/WebUtils/WebFuncs.py
-%%WEBWARE_MASTER_DIR%%/WebUtils/WebFuncs.pyc
 %%WEBWARE_MASTER_DIR%%/WebUtils/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebUtils/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/WebUtils/cgitb.py
-%%WEBWARE_MASTER_DIR%%/WebUtils/cgitb.pyc
 %%WEBWARE_MASTER_DIR%%/_COPYRIGHT_ET_AL
 %%WEBWARE_MASTER_DIR%%/_README
 %%WEBWARE_MASTER_DIR%%/__init__.py
@@ -1689,14 +1655,157 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/bin/ReleaseHelper.py
 %%WEBWARE_MASTER_DIR%%/bin/_README
 %%WEBWARE_MASTER_DIR%%/bin/checksrc.py
-%%WEBWARE_MASTER_DIR%%/bin/editfile.py
 %%WEBWARE_MASTER_DIR%%/bin/editfile.bat
+%%WEBWARE_MASTER_DIR%%/bin/editfile.py
 %%WEBWARE_MASTER_DIR%%/bin/printprof.py
 %%WEBWARE_MASTER_DIR%%/bin/pystats.py
 %%WEBWARE_MASTER_DIR%%/bin/setversion.py
 %%WEBWARE_MASTER_DIR%%/clean.py
 %%WEBWARE_MASTER_DIR%%/install.log
 %%WEBWARE_MASTER_DIR%%/install.py
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper/Examples
+@dirrm %%WEBWARE_MASTER_DIR%%/CGIWrapper
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit/Examples
+@dirrm %%WEBWARE_MASTER_DIR%%/COMKit
+@dirrm %%WEBWARE_MASTER_DIR%%/DocSupport
+@dirrm %%WEBWARE_MASTER_DIR%%/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit/Examples
+@dirrm %%WEBWARE_MASTER_DIR%%/KidKit
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Core
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Design
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Command
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Middle/Videos.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Middle
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Resources/Template.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Resources
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Run
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBackRef.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBasic.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKClone.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDateTime.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDefaultMinMax.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDelete.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDeleteMark.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDump.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKEnums.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKExcel.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKInheritance.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKInheritanceAbstract.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKList.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh1.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh2.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh3.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKMultipleStores.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKMultipleThreads.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKNone.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKObjRef.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKObjRefReuse.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKRefresh.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKString.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKTypeValueChecking.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/WebBrowser/Help
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit/WebBrowser
+@dirrm %%WEBWARE_MASTER_DIR%%/MiddleKit
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/MiscUtils
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Examples
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/PSP
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/TaskKit
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Tests/UserManagerTest.mkmodel
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/UserKit
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/CGIPlus
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/common
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkcgi
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Adapters
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Admin
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Cache
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Configs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/ErrorMsgs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Examples
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Logs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Sessions
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/StartScripts
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tasks
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Dir
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test1
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test2
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test3
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test4
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5join1
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5join2
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Testing
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/Configs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/TestContext
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/WebKit
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Docs
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils/Tests
+@dirrm %%WEBWARE_MASTER_DIR%%/WebUtils
+@dirrm %%WEBWARE_MASTER_DIR%%/bin
+@dirrm %%WEBWARE_MASTER_DIR%%
 www/webkit/AppServer
 www/webkit/Configs/AppServer.config
 www/webkit/Configs/Application.config
@@ -1704,159 +1813,17 @@ www/webkit/Configs/CGIAdapter.config
 www/webkit/Configs/FCGIAdapter.config
 www/webkit/Configs/ModPythonAdapter.config
 www/webkit/Configs/OneShotAdapter.config
+www/webkit/Configs/WSGIAdapter.config
 www/webkit/Launch.py
 www/webkit/MyContext/Main.py
 www/webkit/MyContext/__init__.py
 www/webkit/WebKit.cgi
 www/webkit/error404.html
 www/webkit/webkit
-@dirrmtry www/webkit/Sessions
-@dirrmtry www/webkit/MyContext
-@dirrmtry www/webkit/Logs
-@dirrmtry www/webkit/ErrorMsgs
-@dirrmtry www/webkit/Configs
-@dirrmtry www/webkit/Cache
-@dirrmtry www/webkit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/bin
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebUtils
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/TestContext
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/Configs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5join2
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5join1
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test4
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test3
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test2
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test1
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Dir
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tasks
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/StartScripts
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Sessions
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Logs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Examples
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/ErrorMsgs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Configs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Cache
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Admin
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkcgi
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/wkISAPI
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit2
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/mod_webkit1
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/common
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters/CGIPlus
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Adapters
-@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Tests/UserManagerTest.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/UserKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/TaskKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Examples
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/PSP
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiscUtils
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/WebBrowser/Help
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/WebBrowser
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKTypeValueChecking.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKString.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKRefresh.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKObjRefReuse.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKObjRef.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKNone.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKMultipleThreads.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKMultipleStores.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh3.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh2.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKModelInh1.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKList.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKInheritanceAbstract.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKInheritance.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKExcel.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKEnums.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDump.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDeleteMark.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDelete.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDefaultMinMax.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKDateTime.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKClone.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBasic.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests/MKBackRef.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Tests
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Run
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Resources/Template.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Resources
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Middle/Videos.mkmodel
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Middle
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos/Command
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Videos
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Design
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit/Core
-@dirrmtry %%WEBWARE_MASTER_DIR%%/MiddleKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Examples
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/KidKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/DocSupport
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Examples
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/COMKit
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Examples
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Summaries
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Files
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs
-@dirrmtry %%WEBWARE_MASTER_DIR%%/CGIWrapper
-@dirrmtry %%WEBWARE_MASTER_DIR%%
+@dirrm www/webkit/Cache
+@dirrm www/webkit/Configs
+@dirrm www/webkit/ErrorMsgs
+@dirrm www/webkit/Logs
+@dirrm www/webkit/MyContext
+@dirrm www/webkit/Sessions
+@dirrm www/webkit
