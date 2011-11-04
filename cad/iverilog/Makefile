@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	iverilog
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/
@@ -15,6 +15,8 @@ DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	niclas.zeising@gmail.com
 COMMENT=	A Verilog simulation and synthesis tool
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
