@@ -12,6 +12,7 @@
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
+    SUBDIR += acpi_call
     SUBDIR += adtool
     SUBDIR += afbinit
     SUBDIR += afflib
