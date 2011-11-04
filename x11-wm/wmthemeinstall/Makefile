@@ -11,8 +11,11 @@ PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jeremias.net/wmthemeinstall/download/
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	port@FreeBSD.org
 COMMENT=	A neat theme manager for WindowMaker
+
+DEPRECATED=	Abandonware: no more upstream, no more public distfiles
+EXPIRATION_DATE=	2011-12-04
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
