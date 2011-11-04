@@ -8,7 +8,7 @@ PORTNAME=	boinc-simap
 PORTVERSION=	${SIMAP_VERSION}.${HMMER_VERSION}
 PORTREVISION=	4
 CATEGORIES=	biology
-MASTER_SITES=	http://boinc.bio.wzw.tum.de/boincsimap/download/
+MASTER_SITES=	http://boincsimap.org/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}
 EXTRACT_SUFX=	#
 
