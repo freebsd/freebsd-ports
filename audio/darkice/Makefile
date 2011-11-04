@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	audio net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -36,9 +35,8 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAN1=		darkice.1
 MAN5=		darkice.cfg.5
-PLIST_FILES=	bin/darkice etc/darkice.cfg.dist
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-vorbis
@@ -83,6 +81,11 @@ CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} --with-samplerate-prefix=${L
 CONFIGURE_ARGS+=	--without-aacplus --without-samplerate
 .endif
 
+.if defined(WITHOUT_VORBIS) && defined(WITHOUT_LAME) && defined(WITHOUT_TWOLAME) && \
+	defined(WITHOUT_FAAC) && defined(WITHOUT_AACPLUS)
+IGNORE=at least one of VORBIS,LAME,TWOLAME,FAAC,AACPLUS options must be set
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g'\
 	 -e 's/sbr_main.h/libaacplus\/sbr_main.h/' ${WRKSRC}/configure
@@ -95,4 +98,9 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${MAN5PREFIX}/man/man5
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+post-install:
+	@if [ ! -f ${PREFIX}/etc/darkice.cfg ]; then \
+		${CP} -p ${PREFIX}/etc/darkice.cfg.dist ${PREFIX}/etc/darkice.cfg ; \
+	fi
+
+.include <bsd.port.mk>
