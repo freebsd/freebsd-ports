@@ -20,6 +20,8 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		pdf.8:${PORTSDIR}/print/pdflib
 
+BROKEN=		does not compile
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=	#

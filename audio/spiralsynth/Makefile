@@ -17,6 +17,8 @@ COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"

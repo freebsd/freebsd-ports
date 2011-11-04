@@ -23,6 +23,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes

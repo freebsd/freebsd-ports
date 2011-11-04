@@ -29,6 +29,8 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xpm
 
+BROKEN=		does not compile
+
 MAN1=		cinepaint.1 cinepainttool.1
 
 PLIST_SUB=	VER=${PORTVERSION}-1

@@ -17,6 +17,8 @@ COMMENT=	The Fast Light Window Manager
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
 
