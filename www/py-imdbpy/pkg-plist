@@ -50,6 +50,7 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.companies
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.currentRole
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.devel
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.http
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.info2xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.keywords
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/README.local
@@ -67,7 +68,7 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/TODO.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/applydiffs.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpy.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpy47.dtd
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpy48.dtd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpyPowered.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpyico.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc/imdbpyico.xpm
@@ -214,6 +215,7 @@ bin/search_person.py
 %%PORTDOCS%%%%DOCSDIR%%/README.companies
 %%PORTDOCS%%%%DOCSDIR%%/README.currentRole
 %%PORTDOCS%%%%DOCSDIR%%/README.devel
+%%PORTDOCS%%%%DOCSDIR%%/README.http
 %%PORTDOCS%%%%DOCSDIR%%/README.info2xml
 %%PORTDOCS%%%%DOCSDIR%%/README.keywords
 %%PORTDOCS%%%%DOCSDIR%%/README.local
@@ -233,7 +235,7 @@ bin/search_person.py
 %%PORTDOCS%%%%DOCSDIR%%/goodies/applydiffs.sh
 %%PORTDOCS%%%%DOCSDIR%%/goodies/reduce.sh
 %%PORTDOCS%%%%DOCSDIR%%/imdbpy.cfg
-%%PORTDOCS%%%%DOCSDIR%%/imdbpy47.dtd
+%%PORTDOCS%%%%DOCSDIR%%/imdbpy48.dtd
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyPowered.png
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico.png
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico.xpm
