@@ -1,3 +1,6 @@
+bin/linkicc
+bin/psicc
+bin/transicc
 include/lcms2.h
 include/lcms2_plugin.h
 lib/liblcms2.so
