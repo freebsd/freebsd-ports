@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker

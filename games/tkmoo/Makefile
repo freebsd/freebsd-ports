@@ -12,7 +12,7 @@ CATEGORIES=	games tk
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk-based M** client with scripting support
 
 USE_TK_RUN=	yes
