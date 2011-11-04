@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wbarconf
-PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTVERSION=	0.7.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ihku.biz/wbarconf/
 DISTNAME=	wbarconf-${PORTVERSION}
