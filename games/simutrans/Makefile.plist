@@ -121,6 +121,8 @@ pak/building.1930AirDepot.pak \
 pak/building.1headquarter.pak \
 pak/building.2headquarter.pak \
 pak/building.3headquarter.pak \
+pak/building.4headquarter.pak \
+pak/building.5headquarter.pak \
 pak/building.A1_ALTE_KIRCHE.pak \
 pak/building.A2_SCHLOSS1.pak \
 pak/building.A3_BURG1.pak \
@@ -188,7 +190,6 @@ pak/building.COM_12_04.pak \
 pak/building.CarDepot.pak \
 pak/building.CarStop.pak \
 pak/building.Car_StationBlg.pak \
-pak/building.CattlePorch.pak \
 pak/building.ChannelStop.pak \
 pak/building.Control_StationBlg.pak \
 pak/building.DenkDirk.pak \
@@ -244,6 +245,7 @@ pak/building.IND_02_02.pak \
 pak/building.IND_02_06.pak \
 pak/building.IND_02_09.pak \
 pak/building.IND_02_10.pak \
+pak/building.KingsbridgeMonastry.pak \
 pak/building.LargeShipStop.pak \
 pak/building.LeuchtturmShipStop.pak \
 pak/building.Lighthouse.pak \
@@ -386,7 +388,6 @@ pak/factory.Erzbergwerk.pak \
 pak/factory.Geokraftwerk.pak \
 pak/factory.Kohlegrube.pak \
 pak/factory.Kohlekraftwerk.pak \
-pak/factory.Marketplace.pak \
 pak/factory.Materialswholesale.pak \
 pak/factory.Moebelfabrik.pak \
 pak/factory.Moebelhaus.pak \
@@ -407,22 +408,7 @@ pak/factory.Stonequarry.pak \
 pak/factory.TANKE.pak \
 pak/factory.Turmkraftwerk.pak \
 pak/factory.Windkraftwerk.pak \
-pak/factory.bakery.pak \
-pak/factory.brewery.pak \
-pak/factory.cannery.pak \
-pak/factory.cow_farm.pak \
-pak/factory.dairy.pak \
-pak/factory.fish_pond.pak \
-pak/factory.fish_swarm.pak \
-pak/factory.food_processing_plant.pak \
-pak/factory.grain_farm.pak \
-pak/factory.grain_mill.pak \
-pak/factory.grain_windmill.pak \
-pak/factory.old_farm.pak \
-pak/factory.supermarket.pak \
 pak/factory.thermisches_Solarkraftwerk.pak \
-pak/field.cow_fields.pak \
-pak/field.wheat_fields.pak \
 pak/good.Autos.pak \
 pak/good.Bretter.pak \
 pak/good.Buecher.pak \
@@ -445,14 +431,6 @@ pak/good.PrintersInk.pak \
 pak/good.Sand.pak \
 pak/good.Stahl.pak \
 pak/good.Stone.pak \
-pak/good.beer.pak \
-pak/good.canned_food.pak \
-pak/good.fish.pak \
-pak/good.flour.pak \
-pak/good.food.pak \
-pak/good.grain.pak \
-pak/good.meat.pak \
-pak/good.milk.pak \
 pak/ground.Basement.pak \
 pak/ground.Borders.pak \
 pak/ground.ClimateTexture.pak \
@@ -504,6 +482,8 @@ pak/roadsign.Minimum80.pak \
 pak/roadsign.NoAirEntry.pak \
 pak/roadsign.NoEntry.pak \
 pak/roadsign.RailClose.pak \
+pak/roadsign.Railgate.pak \
+pak/roadsign.Roadgate.pak \
 pak/roadsign.Signals.pak \
 pak/roadsign.SignalsMonorail.pak \
 pak/roadsign.choose_point.pak \
@@ -583,6 +563,7 @@ pak/text/citylist_fr.txt \
 pak/text/citylist_hu.txt \
 pak/text/citylist_it.txt \
 pak/text/citylist_ja.txt \
+pak/text/citylist_lt.txt \
 pak/text/citylist_nl.txt \
 pak/text/citylist_pl.txt \
 pak/text/citylist_pt.txt \
@@ -740,9 +721,6 @@ pak/vehicle.Concept2Mail.pak \
 pak/vehicle.Concept2Pass.pak \
 pak/vehicle.Concept2Rear.pak \
 pak/vehicle.Concorde.pak \
-pak/vehicle.Cooling_Container.pak \
-pak/vehicle.Cooling_Truck.pak \
-pak/vehicle.Cooling_Waggon.pak \
 pak/vehicle.DC-3.pak \
 pak/vehicle.DaimlerStoll.pak \
 pak/vehicle.DoubleDecker.pak \
@@ -765,8 +743,6 @@ pak/vehicle.Erztransporter.pak \
 pak/vehicle.Erzwagen.pak \
 pak/vehicle.F7back.pak \
 pak/vehicle.FastFerry.pak \
-pak/vehicle.Fishing_Boat.pak \
-pak/vehicle.Fishing_Boat_DanMacK.pak \
 pak/vehicle.Flachwagen.pak \
 pak/vehicle.Fokker_F27.pak \
 pak/vehicle.FordZugmaschine.pak \
@@ -805,6 +781,9 @@ pak/vehicle.JNR_C11.pak \
 pak/vehicle.JR_9600.pak \
 pak/vehicle.JR_9600_tender.pak \
 pak/vehicle.Ju52.pak \
+pak/vehicle.JumboCruiser.pak \
+pak/vehicle.JumboCruiserBack1.pak \
+pak/vehicle.JumboCruiserBack2.pak \
 pak/vehicle.JumboJet.pak \
 pak/vehicle.Klappdeckelwagen.pak \
 pak/vehicle.Kohleanhaenger.pak \
@@ -822,8 +801,6 @@ pak/vehicle.Mack_Truck_01.pak \
 pak/vehicle.MailExpress.pak \
 pak/vehicle.Mailcontainerwagon.pak \
 pak/vehicle.Mailwagon.pak \
-pak/vehicle.Milk_Truck.pak \
-pak/vehicle.Milk_Waggon.pak \
 pak/vehicle.Moebelschiff.pak \
 pak/vehicle.Moebelwagen.pak \
 pak/vehicle.NS1000.pak \
@@ -926,6 +903,15 @@ skin/menu.WindowSkin.pak \
 text/be.tab \
 text/ca.tab \
 text/cn.tab \
+text/cn/airtools.txt \
+text/cn/color.txt \
+text/cn/convoi_filter.txt \
+text/cn/enlarge_map.txt \
+text/cn/labellist_filter.txt \
+text/cn/scenario.txt \
+text/cn/settings.txt \
+text/cn/sound.txt \
+text/cn/trafficlight_info.txt \
 text/cz.tab \
 text/cz/about.txt \
 text/cz/bridges.txt \
@@ -993,6 +979,7 @@ text/de/new_world.txt \
 text/de/options.txt \
 text/de/password.txt \
 text/de/players.txt \
+text/de/privatesign_info.txt \
 text/de/railtools.txt \
 text/de/roadtools.txt \
 text/de/save.txt \
@@ -1008,6 +995,7 @@ text/de/sound.txt \
 text/de/special.txt \
 text/de/station.txt \
 text/de/station_details.txt \
+text/de/trafficlight_info.txt \
 text/de/tramtools.txt \
 text/de/underground.txt \
 text/de/use.txt \
@@ -1080,6 +1068,7 @@ text/en/new_world.txt \
 text/en/options.txt \
 text/en/password.txt \
 text/en/players.txt \
+text/en/privatesign_info.txt \
 text/en/railtools.txt \
 text/en/removal_tool.txt \
 text/en/roadtools.txt \
@@ -1150,6 +1139,8 @@ text/et.tab \
 text/fi.tab \
 text/fi/new_world.txt \
 text/fr.tab \
+text/fr/airtools.txt \
+text/fr/baum_build.txt \
 text/fr/climates.txt \
 text/fr/color.txt \
 text/fr/convoi.txt \
@@ -1236,9 +1227,12 @@ text/it/airtools.txt \
 text/it/baum_build.txt \
 text/it/citylist_filter.txt \
 text/it/citywindow.txt \
+text/it/climates.txt \
 text/it/color.txt \
 text/it/convoi.txt \
 text/it/convoi_filter.txt \
+text/it/convoidetail.txt \
+text/it/convoiinfo.txt \
 text/it/depot.txt \
 text/it/display.txt \
 text/it/finances.txt \
@@ -1252,6 +1246,7 @@ text/it/new_world.txt \
 text/it/options.txt \
 text/it/players.txt \
 text/it/railtools.txt \
+text/it/removal_tool.txt \
 text/it/roadtools.txt \
 text/it/save.txt \
 text/it/scenario.txt \
@@ -1259,7 +1254,9 @@ text/it/schedule.txt \
 text/it/shiptools.txt \
 text/it/sound.txt \
 text/it/station.txt \
+text/it/station_details.txt \
 text/it/trafficlight_info.txt \
+text/it/window.txt \
 text/ja.tab \
 text/ja/citylist_filter.txt \
 text/ja/citywindow.txt \
@@ -1465,7 +1462,53 @@ text/sv/simutrans.txt \
 text/sv/underground.txt \
 text/tr.tab \
 text/tr/airtools.txt \
-text/zh.tab
+text/zh.tab \
+text/zh/color.txt \
+text/zh/convoi_filter.txt \
+text/zh/enlarge_map.txt \
+text/zh/labellist_filter.txt \
+text/zh/scenario.txt \
+text/zh/settings.txt \
+text/zh/sound.txt \
+text/zh/trafficlight_info.txt
 
-SIMUTRANS_DOCS= \
+.ifdef WITH_FOOD
+SIMUTRANS_DATA+= \
+pak/building.CattlePorch.pak \
+pak/factory.Marketplace.pak \
+pak/factory.bakery.pak \
+pak/factory.brewery.pak \
+pak/factory.cannery.pak \
+pak/factory.cow_farm.pak \
+pak/factory.dairy.pak \
+pak/factory.fish_pond.pak \
+pak/factory.fish_swarm.pak \
+pak/factory.food_processing_plant.pak \
+pak/factory.grain_farm.pak \
+pak/factory.grain_mill.pak \
+pak/factory.grain_windmill.pak \
+pak/factory.old_farm.pak \
+pak/factory.supermarket.pak \
+pak/field.cow_fields.pak \
+pak/field.wheat_fields.pak \
+pak/good.beer.pak \
+pak/good.canned_food.pak \
+pak/good.fish.pak \
+pak/good.flour.pak \
+pak/good.food.pak \
+pak/good.grain.pak \
+pak/good.meat.pak \
+pak/good.milk.pak \
+pak/vehicle.Cooling_Container.pak \
+pak/vehicle.Cooling_Truck.pak \
+pak/vehicle.Cooling_Waggon.pak \
+pak/vehicle.Fishing_Boat.pak \
+pak/vehicle.Fishing_Boat_DanMacK.pak \
+pak/vehicle.Milk_Truck.pak \
+pak/vehicle.Milk_Waggon.pak
+.endif
+
+.ifndef NOPORTDOCS
+SIMUTRANS_DATA+= \
 readme.txt
+.endif
