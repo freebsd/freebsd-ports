@@ -1,10 +1,15 @@
-LCMS is the Little Color Management System, a Color Matching Method
-(CMM) library which implements fast transforms between ICC profiles.
-It is released under LGPL with source code and meant to be portable.
+Little CMS intends to be a small-footprint color management engine, with
+special focus on accuracy and performance.  It uses the International Color
+Consortium standard (ICC), which is the modern standard when regarding to
+color management.  The ICC specification is widely used and is referred to
+in many International and other de-facto standards.  It was approved as an
+International Standard, ISO 15076-1, in 2005.
 
-Color management refers to techniques that ensure consistent color
-as images are transferred from scanners or cameras to monitors and
-printers.
+Since version 2.1, Little CMS fully implements ICC specification 4.2 plus
+all addendums; it fully supports all kind of V2 and V4 profiles, including
+abstract, devicelink, and named color profiles.
 
-Author:	Marti Maria
-WWW:	http://www.littlecms.com/
+Color management refers to techniques that ensure consistent colors while
+images are transferred from scanners or cameras to monitors and printers.
+
+WWW: http://www.littlecms.com/
