@@ -28,6 +28,9 @@ RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${SITE_PERL}/IPC/Shareable.pm:${PORTSDIR}/devel/p5-IPC-Shareable
 
+DEPRECATED=	No longer under development, since 2009.
+EXPIRATION_DATE=2011-11-16
+
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
