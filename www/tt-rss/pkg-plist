@@ -35,6 +35,7 @@
 %%WWWDIR%%/images/art-email.png
 %%WWWDIR%%/images/art-pub-note.png
 %%WWWDIR%%/images/art-set-unread.png
+%%WWWDIR%%/images/art-share.png
 %%WWWDIR%%/images/art-tweet.png
 %%WWWDIR%%/images/art-zoom.png
 %%WWWDIR%%/images/blank_icon.gif
@@ -1814,6 +1815,7 @@
 %%WWWDIR%%/schema/versions/mysql/83.sql
 %%WWWDIR%%/schema/versions/mysql/84.sql
 %%WWWDIR%%/schema/versions/mysql/85.sql
+%%WWWDIR%%/schema/versions/mysql/86.sql
 %%WWWDIR%%/schema/versions/mysql/9.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
@@ -1897,6 +1899,7 @@
 %%WWWDIR%%/schema/versions/pgsql/83.sql
 %%WWWDIR%%/schema/versions/pgsql/84.sql
 %%WWWDIR%%/schema/versions/pgsql/85.sql
+%%WWWDIR%%/schema/versions/pgsql/86.sql
 %%WWWDIR%%/schema/versions/pgsql/9.sql
 %%WWWDIR%%/sessions.php
 %%WWWDIR%%/templates/digest_template.txt
@@ -1938,8 +1941,6 @@
 %%WWWDIR%%/utils/stats.php
 %%WWWDIR%%/utils/update-schema-translations.sh
 %%WWWDIR%%/utils/update-translations.sh
-%%WWWDIR%%/utils/xml-export.php
-%%WWWDIR%%/utils/xml-import.php
 %%WWWDIR%%/version.php
 %%WWWDIR%%/viewfeed.js
 @exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
