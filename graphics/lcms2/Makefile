@@ -1,6 +1,6 @@
-# New ports collection makefile for:	lcms2
-# Date created:		12/04/2010
-# Whom:			stas
+# New ports collection makefile for:	Little CMS (v2)
+# Date created:				12/04/2010
+# Whom:					Stanislav Sedov <stas@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,13 +12,14 @@ MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Light Color Management System -- a color management library
+COMMENT=	Accurate, fast, and small-footprint color management engine
+
+LICENSE=	MIT
 
 USE_GNOME=	gnomehack lthack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 WITH_FBSD10_FIX=	yes
 
@@ -51,33 +52,29 @@ PLIST_SUB+=	JPEGICC="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^SUBDIRS =.*$$|SUBDIRS = src include|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|-O3||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|^SUBDIRS =.*$$|SUBDIRS = src include|' \
+		${WRKSRC}/Makefile.in
 
-#
-# Get rid of .la and static library files
-#
 post-configure:
+# Get rid of .la and static library files
 	@${REINPLACE_CMD} -E -e \
-	    '/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
+		'/Install the pseudo-library/,/staticlibs=/s,^,#,' \
+			${WRKSRC}/libtool
 
 post-build:
-.for DIR in ${UTILS}
-	@(cd ${WRKSRC}/utils/${DIR} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} Makefile all)
+.for dir in ${UTILS}
+	@cd ${WRKSRC}/utils/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} all
 .endfor
 
 post-install:
-.for DIR in ${UTILS}
-	@(cd ${WRKSRC}/utils/${DIR} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} Makefile install)
+.for dir in ${UTILS}
+	@cd ${WRKSRC}/utils/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} install
 .endfor
-	${INSTALL_MAN}  ${WRKSRC}/utils/linkicc/linkicc.1 ${MAN1PREFIX}/man/man1/
-	${INSTALL_MAN}  ${WRKSRC}/utils/psicc/psicc.1 ${MAN1PREFIX}/man/man1/
-	${INSTALL_MAN}  ${WRKSRC}/utils/transicc/transicc.1 ${MAN1PREFIX}/man/man1/
-
+	${INSTALL_MAN} ${WRKSRC}/utils/linkicc/linkicc.1 \
+		${WRKSRC}/utils/psicc/psicc.1 \
+		${WRKSRC}/utils/transicc/transicc.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
