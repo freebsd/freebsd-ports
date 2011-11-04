@@ -21,8 +21,8 @@ PLIST_FILES=	sbin/pkg_cleanup
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
+.if ${OSVERSION} >= 900000 && ${OSVERSION} < 900038
+IGNORE=		requires r223289 or higher to compile
 .endif
 
 do-extract:
