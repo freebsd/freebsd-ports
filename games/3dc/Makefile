@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 DISTNAME=	3Dc-${PORTVERSION}
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-Dimensional Chess for X Window System
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d

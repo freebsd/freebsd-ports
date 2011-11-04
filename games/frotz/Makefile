@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/frotz/ \
 		http://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/frotz/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom games interpreter
 
 MAKE_ARGS=	CC="${CC}" OPTS="${CFLAGS}" PREFIX="${PREFIX}" \

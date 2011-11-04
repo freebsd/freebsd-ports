@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for X11, much like the popular board game
 
 USE_IMAKE=	yes
