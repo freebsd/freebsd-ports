@@ -17,6 +17,8 @@ COMMENT=	Technical analysis program for financial instruments
 LIB_DEPENDS=	ptypes.21:${PORTSDIR}/devel/ptypes \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	Makefile.linux
 USE_XORG=	x11 xpm

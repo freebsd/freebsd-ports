@@ -17,6 +17,8 @@ COMMENT=	Flwrap is a companion utility for fldigi
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

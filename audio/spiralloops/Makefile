@@ -17,6 +17,8 @@ COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes

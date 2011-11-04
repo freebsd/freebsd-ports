@@ -16,6 +16,8 @@ COMMENT=	Physics-based 2D racing game
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 USE_SDL=	image sdl
 USE_GL=		gl glu
 USE_GMAKE=	yes

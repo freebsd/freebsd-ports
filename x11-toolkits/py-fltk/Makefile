@@ -18,6 +18,8 @@ COMMENT=	Python interface to FLTK window toolkit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN==	does not compile
+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_XORG=	x11
