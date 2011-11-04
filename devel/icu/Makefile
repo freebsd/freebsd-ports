@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.1.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/ICU4C/${PORTVERSION}/
+MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
+		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
 
@@ -27,12 +28,13 @@ USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
 
-CONFIGURE_SCRIPT=	runConfigureICU
-CONFIGURE_ARGS+=	${OPSYS} \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-data-packaging=library \
+			--disable-samples \
+			--enable-release \
 			--enable-shared \
-			--enable-static \
-			--enable-samples=no \
-			--mandir=${MANPREFIX}/man
+			--enable-static
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=		yes
@@ -52,8 +54,8 @@ MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gensprep.8
 
-ICUMAJOR=	${PORTVERSION:S/.//:R}
-ICUMINOR=	${PORTVERSION:S/.//:E}
+ICUMAJOR=	${PORTVERSION:S/.//:C,\..*,,g}
+ICUMINOR=	${PORTVERSION:C/[0-9]\.[0-9]\.//}
 .if ${ICUMINOR} == ""
 ICUMINOR=	0
 .endif
