@@ -20,7 +20,7 @@
 #			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.4
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -29,6 +29,7 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
