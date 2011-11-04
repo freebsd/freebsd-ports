@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	najitool
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -14,8 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that generates, converts, and filters files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:${PORTSDIR}/devel/libnaji
-
-MAKEFILE=	makefile
 
 DISTVERSIONSUFFIX=	.src
 
