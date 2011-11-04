@@ -9,7 +9,7 @@ PORTNAME=	dmake
 PORTVERSION=	4.12
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://ooo-dmake.googlecode.com/files/
+MASTER_SITES=	http://dmake.apache-extras.org.codespot.com/files/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Another hyper make utility
