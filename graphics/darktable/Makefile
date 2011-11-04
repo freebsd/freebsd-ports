@@ -32,6 +32,7 @@ MAN1=		${PORTNAME}.1
 OPTIONS=	GCONF	"Enable GConf backend"			off \
 		GPHOTO	"Enable camera support via libgphoto2"	on \
 		FLICKR	"Enable Flickr support via flickcurl"	off \
+		RAWSPEED "Compile with rawspeed backend"	on \
 		SLIDESHOW "Build OpenGL/SDL slideshow viewer"	off \
 		KWALLET	"Enable KWallet support (requires dbus-glib)" off \
 		GKEYRING "Enable GNOME Keyring support"		off \
@@ -66,6 +67,10 @@ LIB_DEPENDS+=	flickcurl.0:${PORTSDIR}/www/flickcurl
 PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 .else
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
+.endif
+
+.if !defined(WITH_RAWSPEED)
+CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
 .endif
 
 .if defined(WITH_SLIDESHOW)
@@ -111,6 +116,9 @@ post-patch:
 		${WRKSRC}/doc/CMakeLists.txt
 
 post-install:
+.if !defined(WITH_RAWSPEED)
+	@${REINPLACE_CMD} -e '/rawspeed/d' ${TMPPLIST}
+.endif
 .if !defined(WITH_NLS)
 	@${REINPLACE_CMD} -e '/LC_MESSAGES/d' ${TMPPLIST}
 .endif
