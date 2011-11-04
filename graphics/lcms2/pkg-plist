@@ -1,8 +1,3 @@
-%%JPEGICC%%bin/jpgicc
-bin/linkicc
-bin/psicc
-%%TIFFICC%%bin/tificc
-bin/transicc
 include/lcms2.h
 include/lcms2_plugin.h
 lib/liblcms2.so

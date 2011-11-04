@@ -27,28 +27,23 @@ OPTIONS=	TIFFICC "Build color profile applier for TIFF" off \
 		JPEGICC "Build color profile applier for JPEG" off
 
 UTILS=		transicc psicc linkicc
-MAN1=		transicc.1 psicc.1 linkicc.1
+MAN1=		${UTILS:S/$/.1/}
+PLIST_FILES=	${UTILS:S/^/bin\//}
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TIFFICC)
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-PLIST_SUB+=	TIFFICC=""
-MAN1+=		tificc.1
 UTILS+=		tificc
 .else
 CONFIGURE_ARGS=	--without-tiff
-PLIST_SUB+=	TIFFICC="@comment "
 .endif
 
 .if defined(WITH_JPEGICC)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-PLIST_SUB+=	JPEGICC=""
-MAN1+=		jpgicc.1
 UTILS+=		jpgicc
 .else
 CONFIGURE_ARGS=	--without-jpeg
-PLIST_SUB+=	JPEGICC="@comment "
 .endif
 
 post-patch:
@@ -80,7 +75,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 .endif
 
-test:
-	cd ${WRKSRC}/testbed && ${SETENV} ${MAKE_ENV} ${MAKE} check
+test:	build
+	@cd ${WRKSRC}/testbed && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
+regression-test:	test
 
 .include <bsd.port.post.mk>
