@@ -662,6 +662,7 @@
     SUBDIR += py-oops
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
+    SUBDIR += py-pickledb
     SUBDIR += py-postgresql
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
