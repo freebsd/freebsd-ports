@@ -1,13 +1,20 @@
---- configure.orig	2003-10-13 01:51:19.000000000 +0700
-+++ configure	2010-02-14 15:20:20.000000000 +0600
-@@ -2955,6 +2955,10 @@
-   *-*-freebsd3*) platform_name="FreeBSD";  os_version="3";;
-   *-*-freebsd4*) platform_name="FreeBSD";  os_version="4";;
-   *-*-freebsd5*) platform_name="FreeBSD";  os_version="5";;
-+  *-*-freebsd6*) platform_name="FreeBSD";  os_version="6";;
-+  *-*-freebsd7*) platform_name="FreeBSD";  os_version="7";;
-+  *-*-freebsd8*) platform_name="FreeBSD";  os_version="8";;
-+  *-*-freebsd9*) platform_name="FreeBSD";  os_version="9";;
+--- configure.orig	2003-10-12 20:51:19.000000000 +0200
++++ configure	2011-11-05 19:19:22.000000000 +0100
+@@ -2952,9 +2952,14 @@
+   *-*-irix*)     platform_name="IRIX";     os_version="6";;
+   *-*-aix*)      platform_name="AIX";      os_version="4";;
+   *-*-darwin*)   platform_name="Darwin";   os_version="1";;
+-  *-*-freebsd3*) platform_name="FreeBSD";  os_version="3";;
+-  *-*-freebsd4*) platform_name="FreeBSD";  os_version="4";;
+-  *-*-freebsd5*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd3.*) platform_name="FreeBSD";  os_version="3";;
++  *-*-freebsd4.*) platform_name="FreeBSD";  os_version="4";;
++  *-*-freebsd5.*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd6.*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd7.*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd8.*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd9.*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd10.*) platform_name="FreeBSD";  os_version="5";;
    *-*-sco*)      platform_name="OSR5";     os_version="5";;
  esac
  
