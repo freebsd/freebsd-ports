@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTVERSION=	1.3.13
+PORTREVISION=
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
@@ -16,11 +16,11 @@ DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	theis@gmx.at
 COMMENT=	A framework for developing PHP web applications
 
-GITVERSION=	0-g96a8d97
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-8236c7e
-
 LICENSE=	MIT
+
+GITVERSION=	0-g924fb6f
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-60df687
 
 PORTDOCS=	README
 
@@ -40,7 +40,6 @@ CAKE_CONF_FILES=	\
 		app/config/bootstrap.php \
 		app/config/core.php \
 		app/config/database.php \
-		app/config/inflections.php \
 		app/config/routes.php
 CAKE_CONSOLE=	cake/console/cake
 
@@ -145,6 +144,13 @@ post-patch:
 	@${RM} -f ${WRKSRC}/cake/console/cake.orig \
 		${WRKSRC}/app/config/core.php.orig
 
+# Rename config files so we don't overwrite those in an existing installation
+	@for i in ${CAKE_CONF_FILES}; do \
+		if [ -f ${WRKSRC}/$$i ]; then \
+			${MV} ${WRKSRC}/$$i ${WRKSRC}/$$i.default; \
+		fi \
+	done
+
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		".htaccess app cake index.php vendors" ${WWWDIR}
@@ -161,13 +167,6 @@ do-install:
 	@${FIND} ${WWWDIR} -type f -name empty -size 0 -exec ${RM} {} \;
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name empty -size 0 -exec ${RM} {} \;' >> ${TMPPLIST}
 
-	@for i in ${CAKE_CONF_FILES}; do \
-		if [ -f ${WRKSRC}/$$i.default -a ! -f ${WRKSRC}/$$i ]; then \
-			${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
-		elif [ -f ${WRKSRC}/$$i -a ! -f ${WRKSRC}/$$i.default ]; then \
-			${INSTALL_DATA} ${WRKSRC}/$$i ${WWWDIR}/$$i.default; \
-		fi \
-	done
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
@@ -183,6 +182,11 @@ do-install:
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
+	@for i in ${CAKE_CONF_FILES}; do \
+		if [ ! -f ${WWWDIR}/$$i -a -f ${WRKSRC}/$$i.default ]; then \
+			${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
+		fi \
+	done
 .if defined(WITH_AP)
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
