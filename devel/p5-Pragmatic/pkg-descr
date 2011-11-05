@@ -1,0 +1,11 @@
+Pragmatic implements a default import method for processing pragmata before
+passing the rest of the import to Exporter.
+
+Perl automatically calls the import method when processing a use statement for a
+module. Modules and use are documented in perlfunc and perlmod.
+
+(Do not confuse Pragmatic with pragmatic modules, such as less, strict and the
+like. They are standalone pragmata, and are not associated with any other
+module.)
+
+WWW: http://search.cpan.org/dist/Pragmatic/
