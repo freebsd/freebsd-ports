@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2011-07-15 00:42:31.000000000 +0800
++++ Makefile.am	2011-07-15 00:42:23.000000000 +0800
+@@ -1,4 +1,4 @@
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ nodist_pkgconfig_DATA = libenet.pc
+ 
+ enetincludedir=$(includedir)/enet

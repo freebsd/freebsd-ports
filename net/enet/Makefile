@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enet
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
@@ -15,6 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and robust communication library based on UDP
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake
+USE_LDCONFIG=	yes
+
 DOCS=		design.txt docs/FAQ.dox docs/design.dox docs/tutorial.dox
 
 post-install:
