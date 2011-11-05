@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
