@@ -19,5 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Pragmatic.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
