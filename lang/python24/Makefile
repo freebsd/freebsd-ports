@@ -7,7 +7,7 @@
 
 PORTNAME=	python24
 PORTVERSION=	2.4.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -56,9 +56,6 @@ PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
-
-# workaround for a bug in base curses.h.
-CFLAGS+=		-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
