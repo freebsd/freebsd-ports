@@ -1,0 +1,6 @@
+Perl6::Slurp implements the Perl 6 'slurp' built-in. slurp takes a filename, a
+filehandle, a typeglob reference, an IO::File object, or a scalar reference,
+and converts it to an input stream if necessary, and reads in the entire stream.
+If slurp fails to set up or read the stream, it throws an exception.
+
+WWW: http://search.cpan.org/dist/Perl6-Slurp/
