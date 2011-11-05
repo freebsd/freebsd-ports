@@ -410,9 +410,9 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%-%%PORTVERSION%%/english.xml
 %%DATADIR%%-%%PORTVERSION%%/francais.xml
 %%DATADIR%%-%%PORTVERSION%%/locale.xml
-%%DOCSDIR%%-%%PORTVERSION%%/LICENSE
-%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog
-%%DOCSDIR%%-%%PORTVERSION%%/NEWS.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/affine.png
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
