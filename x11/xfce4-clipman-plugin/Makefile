@@ -30,6 +30,8 @@ USE_XORG=	xtst
 
 INSTALLS_ICONS=	yes
 
+WITH_FBSD10_FIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_UNIQUE)
