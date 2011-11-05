@@ -43,6 +43,7 @@ pre-patch:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+	-e 's|freebsd2\*)|freebsd2.\*)|' -e 's|freebsd1\*)|freebsd1.\*)|' \
 		${WRKSRC}/DPS/ltconfig
 
 do-install:
