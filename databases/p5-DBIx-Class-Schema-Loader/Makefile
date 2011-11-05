@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07010
+PORTVERSION=	0.07011
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKITOVER
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
@@ -69,10 +72,11 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::Base.3 \
 	DBIx::Class::Schema::Loader::DBI.3 \
 	DBIx::Class::Schema::Loader::DBI::ADO.3 \
-	DBIx::Class::Schema::Loader::DBI::ADO::Microsoft_SQL_Server.3 \
 	DBIx::Class::Schema::Loader::DBI::ADO::MS_Jet.3 \
+	DBIx::Class::Schema::Loader::DBI::ADO::Microsoft_SQL_Server.3 \
 	DBIx::Class::Schema::Loader::DBI::Component::QuotedDefault.3 \
 	DBIx::Class::Schema::Loader::DBI::DB2.3 \
+	DBIx::Class::Schema::Loader::DBI::Firebird.3 \
 	DBIx::Class::Schema::Loader::DBI::Informix.3 \
 	DBIx::Class::Schema::Loader::DBI::InterBase.3 \
 	DBIx::Class::Schema::Loader::DBI::MSSQL.3 \
@@ -90,11 +94,18 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Schema::Loader::DBI::Writing.3 \
 	DBIx::Class::Schema::Loader::DBI::mysql.3 \
+	DBIx::Class::Schema::Loader::DBObject.3 \
+	DBIx::Class::Schema::Loader::DBObject::Informix.3 \
+	DBIx::Class::Schema::Loader::DBObject::Sybase.3 \
 	DBIx::Class::Schema::Loader::Manual::UpgradingFromV4.3 \
-	DBIx::Class::Schema::Loader::RelBuilder.3 \
 	DBIx::Class::Schema::Loader::Optional::Dependencies.3 \
+	DBIx::Class::Schema::Loader::RelBuilder.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3 \
-	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3
+	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3 \
+	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_07.3 \
+	DBIx::Class::Schema::Loader::Table.3 \
+	DBIx::Class::Schema::Loader::Table::Informix.3 \
+	DBIx::Class::Schema::Loader::Table::Sybase.3
 
 .include <bsd.port.mk>
