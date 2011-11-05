@@ -312,6 +312,7 @@ acidwarp                        ports/graphics/acidwarp
 aclgen                          ports/misc/aclgen
 aclock                          ports/x11-clocks/aclock
 acm                             ports/games/acm
+acpi_call                       ports/sysutils/acpi_call
 acpicatools                     ports/devel/acpicatools
 acrobatviewer                   ports/print/acrobatviewer
 acroread8                       ports/print/acroread8
@@ -21799,6 +21800,7 @@ py-flask-cache                  ports/www/py-flask-cache
 py-flask-sqlalchemy             ports/databases/py-flask-sqlalchemy
 py-flask-uploads                ports/www/py-flask-uploads
 py-flexget                      ports/www/py-flexget
+py-flexmock                     ports/devel/py-flexmock
 py-flowtools                    ports/net-mgmt/py-flowtools
 py-fltk                         ports/x11-toolkits/py-fltk
 py-flup                         ports/www/py-flup
@@ -27108,6 +27110,7 @@ xisp                            ports/net/xisp
 xist                            ports/www/xist
 xjewel                          ports/games/xjewel
 xjig                            ports/games/xjig
+xjobs                           ports/sysutils/xjobs
 xjump                           ports/games/xjump
 xjumpx                          ports/games/xjumpx
 xkbcomp                         ports/x11/xkbcomp
