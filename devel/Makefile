@@ -3499,6 +3499,7 @@
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-streetaddress
     SUBDIR += rubygem-stringex
+    SUBDIR += rubygem-subexec
     SUBDIR += rubygem-sugar-high
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-systemu
