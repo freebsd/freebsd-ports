@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.8
+PORTVERSION=	3.7.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-src-3070800
+DISTNAME=	sqlite-src-3070900
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
@@ -47,7 +47,8 @@ OPTIONS=	\
 		URI		"Enable use the URI filename"		off \
 		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
-		STAT2		"Help SQLite to chose a better query plan" off \
+		STAT3		"Help SQLite to chose a better query plan" off \
+		DIRECT_READ	"File is read directly from disk"	off \
 		MEMMAN		"Allows it to release unused memory"	off \
 		SECURE_DELETE	"Overwrite deleted information with zeros" on \
 		UNLOCK_NOTIFY	"Enable notification on unlocking"	on \
@@ -144,8 +145,12 @@ CFLAGS+=		-DSQLITE_USE_URI=1
 CFLAGS+=		-DSQLITE_SOUNDEX=1
 .endif
 
-.if defined(WITH_STAT2)
-CFLAGS+=		-DSQLITE_ENABLE_STAT2=1
+.if defined(WITH_STAT3)
+CFLAGS+=		-DSQLITE_ENABLE_STAT3=1
+.endif
+
+.if defined(WITH_DIRECT_READ)
+CFLAGS+=		-DSQLITE_DIRECT_OVERFLOW_READ=1
 .endif
 
 .if defined(WITH_FTS3)
