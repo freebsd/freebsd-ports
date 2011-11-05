@@ -915,6 +915,7 @@
     SUBDIR += p5-XML-Hash-LX
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXML-Iterator
+    SUBDIR += p5-XML-LibXML-PrettyPrint
     SUBDIR += p5-XML-LibXML-SAX-ChunkParser
     SUBDIR += p5-XML-LibXML-Simple
     SUBDIR += p5-XML-LibXSLT
