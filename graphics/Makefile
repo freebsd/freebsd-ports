@@ -800,6 +800,7 @@
     SUBDIR += py-openexr
     SUBDIR += py-opengl
     SUBDIR += py-paint
+    SUBDIR += py-png
     SUBDIR += py-poppler
     SUBDIR += py-pycha
     SUBDIR += py-pydot
