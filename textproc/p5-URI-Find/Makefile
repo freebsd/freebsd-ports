@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI-Find
-PORTVERSION=	20111020
+PORTVERSION=	20111103
 CATEGORIES=	textproc net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ MAN3=		URI::Find.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
