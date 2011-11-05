@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	grantlee
-DISTVERSION=	0.2.0-rc2
+DISTVERSION=	0.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.${PORTNAME}.org/ \
 		http://www.loegria.net/${PORTNAME}/
