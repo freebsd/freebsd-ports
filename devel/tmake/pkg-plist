@@ -12,15 +12,22 @@ bin/tmake
 %%DATADIR%%/bsdi-g++/lib.t
 %%DATADIR%%/bsdi-g++/subdirs.t
 %%DATADIR%%/bsdi-g++/tmake.conf
+%%DATADIR%%/cygwin-g++/app.t
+%%DATADIR%%/cygwin-g++/lib.t
+%%DATADIR%%/cygwin-g++/subdirs.t
+%%DATADIR%%/cygwin-g++/tmake.conf
 %%DATADIR%%/dgux-g++/app.t
 %%DATADIR%%/dgux-g++/lib.t
 %%DATADIR%%/dgux-g++/subdirs.t
 %%DATADIR%%/dgux-g++/tmake.conf
+%%DATADIR%%/dynix-g++/app.t
+%%DATADIR%%/dynix-g++/lib.t
+%%DATADIR%%/dynix-g++/subdirs.t
+%%DATADIR%%/dynix-g++/tmake.conf
 %%DATADIR%%/freebsd-g++/app.t
 %%DATADIR%%/freebsd-g++/lib.t
 %%DATADIR%%/freebsd-g++/subdirs.t
 %%DATADIR%%/freebsd-g++/tmake.conf
-%%DATADIR%%/freebsd-g++/tmake.conf.orig
 %%DATADIR%%/hpux-acc/app.t
 %%DATADIR%%/hpux-acc/lib.t
 %%DATADIR%%/hpux-acc/subdirs.t
@@ -69,10 +76,26 @@ bin/tmake
 %%DATADIR%%/linux-g++/lib.t
 %%DATADIR%%/linux-g++/subdirs.t
 %%DATADIR%%/linux-g++/tmake.conf
+%%DATADIR%%/linux-icc/app.t
+%%DATADIR%%/linux-icc/lib.t
+%%DATADIR%%/linux-icc/subdirs.t
+%%DATADIR%%/linux-icc/tmake.conf
 %%DATADIR%%/linux-kcc/app.t
 %%DATADIR%%/linux-kcc/lib.t
 %%DATADIR%%/linux-kcc/subdirs.t
 %%DATADIR%%/linux-kcc/tmake.conf
+%%DATADIR%%/linux-pgcc/app.t
+%%DATADIR%%/linux-pgcc/lib.t
+%%DATADIR%%/linux-pgcc/subdirs.t
+%%DATADIR%%/linux-pgcc/tmake.conf
+%%DATADIR%%/linux-xscale/app.t
+%%DATADIR%%/linux-xscale/lib.t
+%%DATADIR%%/linux-xscale/subdirs.t
+%%DATADIR%%/linux-xscale/tmake.conf
+%%DATADIR%%/macx-g++/app.t
+%%DATADIR%%/macx-g++/lib.t
+%%DATADIR%%/macx-g++/subdirs.t
+%%DATADIR%%/macx-g++/tmake.conf
 %%DATADIR%%/netbsd-g++/app.t
 %%DATADIR%%/netbsd-g++/lib.t
 %%DATADIR%%/netbsd-g++/subdirs.t
@@ -93,6 +116,22 @@ bin/tmake
 %%DATADIR%%/qnx-rtp-g++/lib.t
 %%DATADIR%%/qnx-rtp-g++/subdirs.t
 %%DATADIR%%/qnx-rtp-g++/tmake.conf
+%%DATADIR%%/qws/cygwin-arm-g++/app.t
+%%DATADIR%%/qws/cygwin-arm-g++/lib.t
+%%DATADIR%%/qws/cygwin-arm-g++/subdirs.t
+%%DATADIR%%/qws/cygwin-arm-g++/tmake.conf
+%%DATADIR%%/qws/cygwin-ipaq-g++/app.t
+%%DATADIR%%/qws/cygwin-ipaq-g++/lib.t
+%%DATADIR%%/qws/cygwin-ipaq-g++/subdirs.t
+%%DATADIR%%/qws/cygwin-ipaq-g++/tmake.conf
+%%DATADIR%%/qws/cygwin-sharp-g++/app.t
+%%DATADIR%%/qws/cygwin-sharp-g++/lib.t
+%%DATADIR%%/qws/cygwin-sharp-g++/subdirs.t
+%%DATADIR%%/qws/cygwin-sharp-g++/tmake.conf
+%%DATADIR%%/qws/freebsd-g++/app.t
+%%DATADIR%%/qws/freebsd-g++/lib.t
+%%DATADIR%%/qws/freebsd-g++/subdirs.t
+%%DATADIR%%/qws/freebsd-g++/tmake.conf
 %%DATADIR%%/qws/linux-arm-g++/app.t
 %%DATADIR%%/qws/linux-arm-g++/lib.t
 %%DATADIR%%/qws/linux-arm-g++/subdirs.t
@@ -105,18 +144,53 @@ bin/tmake
 %%DATADIR%%/qws/linux-generic-g++/lib.t
 %%DATADIR%%/qws/linux-generic-g++/subdirs.t
 %%DATADIR%%/qws/linux-generic-g++/tmake.conf
+%%DATADIR%%/qws/linux-innovator-g++/app.t
+%%DATADIR%%/qws/linux-innovator-g++/lib.t
+%%DATADIR%%/qws/linux-innovator-g++/subdirs.t
+%%DATADIR%%/qws/linux-innovator-g++/tmake.conf
 %%DATADIR%%/qws/linux-ipaq-g++/app.t
 %%DATADIR%%/qws/linux-ipaq-g++/lib.t
 %%DATADIR%%/qws/linux-ipaq-g++/subdirs.t
 %%DATADIR%%/qws/linux-ipaq-g++/tmake.conf
+%%DATADIR%%/qws/linux-koala-g++/app.t
+%%DATADIR%%/qws/linux-koala-g++/lib.t
+%%DATADIR%%/qws/linux-koala-g++/subdirs.t
+%%DATADIR%%/qws/linux-koala-g++/tmake.conf
 %%DATADIR%%/qws/linux-mips-g++/app.t
 %%DATADIR%%/qws/linux-mips-g++/lib.t
 %%DATADIR%%/qws/linux-mips-g++/subdirs.t
 %%DATADIR%%/qws/linux-mips-g++/tmake.conf
+%%DATADIR%%/qws/linux-sh3-g++/app.t
+%%DATADIR%%/qws/linux-sh3-g++/lib.t
+%%DATADIR%%/qws/linux-sh3-g++/subdirs.t
+%%DATADIR%%/qws/linux-sh3-g++/tmake.conf
+%%DATADIR%%/qws/linux-sharp-g++/app.t
+%%DATADIR%%/qws/linux-sharp-g++/lib.t
+%%DATADIR%%/qws/linux-sharp-g++/subdirs.t
+%%DATADIR%%/qws/linux-sharp-g++/tmake.conf
 %%DATADIR%%/qws/linux-x86-g++/app.t
 %%DATADIR%%/qws/linux-x86-g++/lib.t
 %%DATADIR%%/qws/linux-x86-g++/subdirs.t
 %%DATADIR%%/qws/linux-x86-g++/tmake.conf
+%%DATADIR%%/qws/qnx-rtp-g++/app.t
+%%DATADIR%%/qws/qnx-rtp-g++/lib.t
+%%DATADIR%%/qws/qnx-rtp-g++/subdirs.t
+%%DATADIR%%/qws/qnx-rtp-g++/tmake.conf
+%%DATADIR%%/qws/solaris-g++/app.t
+%%DATADIR%%/qws/solaris-g++/lib.t
+%%DATADIR%%/qws/solaris-g++/subdirs.t
+%%DATADIR%%/qws/solaris-g++/tmake.conf
+%%DATADIR%%/qws/win32-msvc/app.t
+%%DATADIR%%/qws/win32-msvc/generic.t
+%%DATADIR%%/qws/win32-msvc/lib.t
+%%DATADIR%%/qws/win32-msvc/subdirs.t
+%%DATADIR%%/qws/win32-msvc/tmake.conf
+%%DATADIR%%/qws/win32-msvc/vcapp.t
+%%DATADIR%%/qws/win32-msvc/vcgeneric.t
+%%DATADIR%%/qws/win32-msvc/vclib.t
+%%DATADIR%%/qws/win32-msvc/win32app.dsp
+%%DATADIR%%/qws/win32-msvc/win32dll.dsp
+%%DATADIR%%/qws/win32-msvc/win32lib.dsp
 %%DATADIR%%/reliant-cds/app.t
 %%DATADIR%%/reliant-cds/lib.t
 %%DATADIR%%/reliant-cds/subdirs.t
@@ -141,6 +215,10 @@ bin/tmake
 %%DATADIR%%/solaris-g++/lib.t
 %%DATADIR%%/solaris-g++/subdirs.t
 %%DATADIR%%/solaris-g++/tmake.conf
+%%DATADIR%%/solaris-kcc/app.t
+%%DATADIR%%/solaris-kcc/lib.t
+%%DATADIR%%/solaris-kcc/subdirs.t
+%%DATADIR%%/solaris-kcc/tmake.conf
 %%DATADIR%%/sunos-g++/app.t
 %%DATADIR%%/sunos-g++/lib.t
 %%DATADIR%%/sunos-g++/subdirs.t
@@ -153,7 +231,6 @@ bin/tmake
 %%DATADIR%%/unix/generic.t
 %%DATADIR%%/unix/lib.t
 %%DATADIR%%/unix/subdirs.t
-%%DATADIR%%/unix/generic.t.orig
 %%DATADIR%%/unixware-g++/app.t
 %%DATADIR%%/unixware-g++/lib.t
 %%DATADIR%%/unixware-g++/subdirs.t
@@ -202,54 +279,77 @@ bin/tmake
 %%DATADIR%%/win32-watcom/lib.t
 %%DATADIR%%/win32-watcom/subdirs.t
 %%DATADIR%%/win32-watcom/tmake.conf
+%%DATADIR%%/win32-xscale/app.t
+%%DATADIR%%/win32-xscale/lib.t
+%%DATADIR%%/win32-xscale/subdirs.t
+%%DATADIR%%/win32-xscale/tmake.conf
 %%DATADIR%%/win32/subdirs.t
-@dirrm %%DATADIR%%/aix-g++
-@dirrm %%DATADIR%%/aix-xlc
-@dirrm %%DATADIR%%/bsdi-g++
-@dirrm %%DATADIR%%/dgux-g++
-@dirrm %%DATADIR%%/freebsd-g++
-@dirrm %%DATADIR%%/hpux-acc
-@dirrm %%DATADIR%%/hpux-cc
-@dirrm %%DATADIR%%/hpux-g++
-@dirrm %%DATADIR%%/hpux-n64
-@dirrm %%DATADIR%%/hpux-o64
-@dirrm %%DATADIR%%/hurd-g++
-@dirrm %%DATADIR%%/irix-64
-@dirrm %%DATADIR%%/irix-g++
-@dirrm %%DATADIR%%/irix-n32
-@dirrm %%DATADIR%%/irix-o32
-@dirrm %%DATADIR%%/linux-cxx
-@dirrm %%DATADIR%%/linux-g++
-@dirrm %%DATADIR%%/linux-kcc
-@dirrm %%DATADIR%%/netbsd-g++
-@dirrm %%DATADIR%%/openbsd-g++
-@dirrm %%DATADIR%%/osf1-cxx
-@dirrm %%DATADIR%%/osf1-g++
-@dirrm %%DATADIR%%/qnx-rtp-g++
-@dirrm %%DATADIR%%/qws/linux-arm-g++
-@dirrm %%DATADIR%%/qws/linux-cassiopeia-g++
-@dirrm %%DATADIR%%/qws/linux-generic-g++
-@dirrm %%DATADIR%%/qws/linux-ipaq-g++
-@dirrm %%DATADIR%%/qws/linux-mips-g++
-@dirrm %%DATADIR%%/qws/linux-x86-g++
-@dirrm %%DATADIR%%/qws
-@dirrm %%DATADIR%%/reliant-cds
-@dirrm %%DATADIR%%/sco-g++
-@dirrm %%DATADIR%%/solaris-64
+@dirrm %%DATADIR%%/win32-xscale
+@dirrm %%DATADIR%%/win32-watcom
+@dirrm %%DATADIR%%/win32-visage
+@dirrm %%DATADIR%%/win32-symantec
+@dirrm %%DATADIR%%/win32-msvc
+@dirrm %%DATADIR%%/win32-g++
+@dirrm %%DATADIR%%/win32-borland
+@dirrm %%DATADIR%%/win32
+@dirrm %%DATADIR%%/unixware7-g++
+@dirrm %%DATADIR%%/unixware7-cc
+@dirrm %%DATADIR%%/unixware-g++
+@dirrm %%DATADIR%%/unix
+@dirrm %%DATADIR%%/ultrix-g++
+@dirrm %%DATADIR%%/sunos-g++
+@dirrm %%DATADIR%%/solaris-kcc
+@dirrm %%DATADIR%%/solaris-g++
 @dirrm %%DATADIR%%/solaris-cc-gcc
 @dirrm %%DATADIR%%/solaris-cc
-@dirrm %%DATADIR%%/solaris-g++
-@dirrm %%DATADIR%%/sunos-g++
-@dirrm %%DATADIR%%/ultrix-g++
-@dirrm %%DATADIR%%/unix
-@dirrm %%DATADIR%%/unixware-g++
-@dirrm %%DATADIR%%/unixware7-cc
-@dirrm %%DATADIR%%/unixware7-g++
-@dirrm %%DATADIR%%/win32-borland
-@dirrm %%DATADIR%%/win32-g++
-@dirrm %%DATADIR%%/win32-msvc
-@dirrm %%DATADIR%%/win32-symantec
-@dirrm %%DATADIR%%/win32-visage
-@dirrm %%DATADIR%%/win32-watcom
-@dirrm %%DATADIR%%/win32
+@dirrm %%DATADIR%%/solaris-64
+@dirrm %%DATADIR%%/sco-g++
+@dirrm %%DATADIR%%/reliant-cds
+@dirrm %%DATADIR%%/qws/win32-msvc
+@dirrm %%DATADIR%%/qws/solaris-g++
+@dirrm %%DATADIR%%/qws/qnx-rtp-g++
+@dirrm %%DATADIR%%/qws/linux-x86-g++
+@dirrm %%DATADIR%%/qws/linux-sharp-g++
+@dirrm %%DATADIR%%/qws/linux-sh3-g++
+@dirrm %%DATADIR%%/qws/linux-mips-g++
+@dirrm %%DATADIR%%/qws/linux-koala-g++
+@dirrm %%DATADIR%%/qws/linux-ipaq-g++
+@dirrm %%DATADIR%%/qws/linux-innovator-g++
+@dirrm %%DATADIR%%/qws/linux-generic-g++
+@dirrm %%DATADIR%%/qws/linux-cassiopeia-g++
+@dirrm %%DATADIR%%/qws/linux-arm-g++
+@dirrm %%DATADIR%%/qws/freebsd-g++
+@dirrm %%DATADIR%%/qws/cygwin-sharp-g++
+@dirrm %%DATADIR%%/qws/cygwin-ipaq-g++
+@dirrm %%DATADIR%%/qws/cygwin-arm-g++
+@dirrm %%DATADIR%%/qws
+@dirrm %%DATADIR%%/qnx-rtp-g++
+@dirrm %%DATADIR%%/osf1-g++
+@dirrm %%DATADIR%%/osf1-cxx
+@dirrm %%DATADIR%%/openbsd-g++
+@dirrm %%DATADIR%%/netbsd-g++
+@dirrm %%DATADIR%%/macx-g++
+@dirrm %%DATADIR%%/linux-xscale
+@dirrm %%DATADIR%%/linux-pgcc
+@dirrm %%DATADIR%%/linux-kcc
+@dirrm %%DATADIR%%/linux-icc
+@dirrm %%DATADIR%%/linux-g++
+@dirrm %%DATADIR%%/linux-cxx
+@dirrm %%DATADIR%%/irix-o32
+@dirrm %%DATADIR%%/irix-n32
+@dirrm %%DATADIR%%/irix-g++
+@dirrm %%DATADIR%%/irix-64
+@dirrm %%DATADIR%%/hurd-g++
+@dirrm %%DATADIR%%/hpux-o64
+@dirrm %%DATADIR%%/hpux-n64
+@dirrm %%DATADIR%%/hpux-g++
+@dirrm %%DATADIR%%/hpux-cc
+@dirrm %%DATADIR%%/hpux-acc
+@dirrm %%DATADIR%%/freebsd-g++
+@dirrm %%DATADIR%%/dynix-g++
+@dirrm %%DATADIR%%/dgux-g++
+@dirrm %%DATADIR%%/cygwin-g++
+@dirrm %%DATADIR%%/bsdi-g++
+@dirrm %%DATADIR%%/aix-xlc
+@dirrm %%DATADIR%%/aix-g++
 @dirrm %%DATADIR%%
