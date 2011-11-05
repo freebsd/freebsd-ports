@@ -7,6 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -70,6 +71,7 @@ IGNORE=	requires Ruby 1.9.1 or later
 .if !defined(RUBY_PROVIDED)
 IGNORE=	requires Ruby 1.8.5 or later
 .endif
+RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
 .if !defined(WITHOUT_TDIARY_NORA)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
