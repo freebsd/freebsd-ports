@@ -2207,6 +2207,7 @@
     SUBDIR += p5-Perl6-Junction
     SUBDIR += p5-Perl6-Rules
     SUBDIR += p5-Perl6-Say
+    SUBDIR += p5-Perl6-Slurp
     SUBDIR += p5-PerlIO-Layers
     SUBDIR += p5-PerlIO-Util
     SUBDIR += p5-PerlIO-eol
