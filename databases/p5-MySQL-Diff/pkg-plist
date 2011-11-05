@@ -1,9 +1,10 @@
-%%SITE_PERL%%/MySQL/Table.pm
-%%SITE_PERL%%/MySQL/Diff.pm
-%%SITE_PERL%%/MySQL/Utils.pm
-%%SITE_PERL%%/MySQL/Database.pm
 bin/mysqldiff
+%%SITE_PERL%%/MySQL/Diff.pm
+%%SITE_PERL%%/MySQL/Diff/Database.pm
+%%SITE_PERL%%/MySQL/Diff/Table.pm
+%%SITE_PERL%%/MySQL/Diff/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL
+@dirrm %%SITE_PERL%%/MySQL/Diff
 @dirrmtry %%SITE_PERL%%/MySQL
