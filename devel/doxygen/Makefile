@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.7.5.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -16,11 +15,11 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A documentation system for C, C++ and other languages
 
-BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 USE_BISON=	build
 USE_ICONV=	yes
@@ -32,6 +31,7 @@ QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
 MAKE_JOBS_UNSAFE=	yes
+REINPLACE_ARGS=	-i ''
 
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
 		--exclude '*/libmd5'	\
