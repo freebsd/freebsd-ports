@@ -3,10 +3,11 @@
 # Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	python25
 PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -62,9 +63,6 @@ PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
-
-# workaround for a bug in base curses.h.
-CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
