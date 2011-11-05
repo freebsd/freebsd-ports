@@ -8,6 +8,10 @@ include/enet/unix.h
 include/enet/utility.h
 include/enet/win32.h
 lib/libenet.a
+lib/libenet.la
+lib/libenet.so
+lib/libenet.so.1
+libdata/pkgconfig/libenet.pc
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.dox
 %%PORTDOCS%%%%DOCSDIR%%/design.dox
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
