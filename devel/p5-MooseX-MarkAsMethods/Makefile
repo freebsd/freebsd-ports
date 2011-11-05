@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-MarkAsMethods
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,10 @@ COMMENT=	Mark overload code symbols as methods
 
 BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.12:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.12:${PORTSDIR}/devel/p5-namespace-autoclean
 
 PERL_CONFIGURE=	yes
 
@@ -27,8 +27,8 @@ MAN3=		MooseX::MarkAsMethods.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501200
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
