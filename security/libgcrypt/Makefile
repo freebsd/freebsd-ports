@@ -38,6 +38,9 @@ CONFIGURE_ARGS+=	--disable-asm
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=  --disable-aesni-support
+#workaround for FreeBSD 10.0
+.elif (${OSVERSION} >= 1000000)
+CONFIGURE_ARGS+=  --disable-asm
 .endif
 .endif
 .if (${OSVERSION} < 700000)
