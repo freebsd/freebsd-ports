@@ -2589,6 +2589,7 @@
     SUBDIR += p5-Workflow
     SUBDIR += p5-XML-Compile-Tester
     SUBDIR += p5-XML-Pastor
+    SUBDIR += p5-XS-Object-Magic
     SUBDIR += p5-XSLoader
     SUBDIR += p5-YAML-AppConfig
     SUBDIR += p5-Yada-Yada-Yada

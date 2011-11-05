@@ -1,0 +1,17 @@
+This way of associating structs with Perl space objects is designed to supercede
+Perl's builtin T_PTROBJ with something that is designed to be:
+
+Extensible
+
+- The association of the pointer using sv_magicext can be done on any data type,
+  so you can associate C structs with any representation type.
+- This means that you can add pointers to any object (hand coded, Moose or
+  otherwise), while still having instance data in regular hashes.
+
+Opaque
+
+- The C pointer is neither visible nor modifiable from Perl space.
+- This prevents accidental corruption which could lead to segfaults using
+  T_PTROBJ (e.g. $$ptr_obj = 0).
+
+WWW: http://search.cpan.org/dist/XS-Object-Magic/
