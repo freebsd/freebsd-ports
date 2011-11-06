@@ -42,10 +42,6 @@
 #  USE_APACHE= -22      # specify [max] version, no [min] version
 #
 # Note:
-#  - Values can be specified with and without "." (dot) between major
-#    and minor version numbers. For example 22 is equal to 2.2
-#    Preferred is to define the value without "."
-#
 #  - If "+" is specified and no apache is installed, then
 #    ${DEFAULT_APACHE_VERSION} will be used.
 #
