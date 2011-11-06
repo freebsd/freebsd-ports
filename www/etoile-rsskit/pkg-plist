@@ -1,39 +1,39 @@
 GNUstep/Local/Library/Frameworks/RSSKit.framework/Headers
 GNUstep/Local/Library/Frameworks/RSSKit.framework/RSSKit
 GNUstep/Local/Library/Frameworks/RSSKit.framework/Resources
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Atom03Parser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Atom10Parser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AtomParser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DOMParser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DublinCore.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/FeedParser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NewRSSArticleListener.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSS10Parser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSS20Parser.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSArticle+Storage.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSArticle.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSArticleCreationListener.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSArticleProtocol.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSFactory.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSFeed+Fetching.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSFeed+Storage.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSFeed.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSFeedProtocol.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSKit.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RSSLinks.h
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/RSSKit
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/libRSSKit.so
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/libRSSKit.so.%%LIBVERSION%%
-GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/libRSSKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/Atom03Parser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/Atom10Parser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/AtomParser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/DOMParser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/DublinCore.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/FeedParser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/NewRSSArticleListener.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSS10Parser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSS20Parser.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSArticle+Storage.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSArticle.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSArticleCreationListener.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSArticleProtocol.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSFactory.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSFeed+Fetching.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSFeed+Storage.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSFeed.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSFeedProtocol.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSKit.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers/RSSLinks.h
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/RSSKit
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/libRSSKit.so
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/libRSSKit.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/libRSSKit.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/Current
 GNUstep/Local/Library/Frameworks/RSSKit.framework/libRSSKit.so
 GNUstep/Local/Library/Headers/RSSKit
 GNUstep/Local/Library/Libraries/libRSSKit.so
-GNUstep/Local/Library/Libraries/libRSSKit.so.%%MAJORLIBVERSION%%
-GNUstep/Local/Library/Libraries/libRSSKit.so.%%LIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libRSSKit.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libRSSKit.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%
 @dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions
 @dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework
