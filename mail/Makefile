@@ -11,6 +11,7 @@
     SUBDIR += alpine
     SUBDIR += altermime
     SUBDIR += althea
+    SUBDIR += amavis-logwatch
     SUBDIR += annoyance-filter
     SUBDIR += anomy-sanitizer
     SUBDIR += antivirus-milter

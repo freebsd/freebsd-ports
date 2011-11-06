@@ -1,0 +1,14 @@
+The amavis-logwatch(1) utility is an Amavisd-new log parser
+that produces summaries, details, and statistics regarding
+the operation of Amavisd-new (henceforth, simply called Amavis).
+
+A key feature of amavis-logwatch is its ability to produce
+a very wide range of reports with data grouped and sorted as
+much as possible to reduce noise and highlight patterns. Brief
+summary reports provide a quick overview of general Amavis
+operations and message delivery, calling out warnings that
+may require attention. Detailed reports provide easy to scan,
+hierarchically-arranged and organized information, with as
+much or little detail as desired.
+
+WWW: http://logreporters.sourceforge.net/
