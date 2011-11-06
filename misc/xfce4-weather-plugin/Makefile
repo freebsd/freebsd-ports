@@ -15,6 +15,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 weather module for xfce4-panel
 
+IGNORE=		free data feed service discontinued
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
