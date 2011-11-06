@@ -1,0 +1,14 @@
+%%WWWDIR%%/Changelog
+%%WWWDIR%%/README
+%%WWWDIR%%/localization/de_DE.inc
+%%WWWDIR%%/localization/en_US.inc
+%%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/localization/ru_RU.inc
+%%WWWDIR%%/skins/default/tb_label.css
+%%WWWDIR%%/skins/default/thunderbird_32.png
+%%WWWDIR%%/tb_label.js
+%%WWWDIR%%/thunderbird_labels.php
+@dirrm %%WWWDIR%%/skins/default
+@dirrm %%WWWDIR%%/skins
+@dirrm %%WWWDIR%%/localization
+@dirrmtry %%WWWDIR%%
