@@ -13,6 +13,11 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache 2.2.x module for use macros in config files
 
+LICENSE=	mod_macro
+LICENSE_NAME=	mod_macro license (apache with postcard request)
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22
