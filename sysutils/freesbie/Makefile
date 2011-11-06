@@ -7,6 +7,7 @@
 
 PORTNAME=	freesbie
 PORTVERSION=	2.0.20070710
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rrr.de/~riggs/freesbie/
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%/delphij/}
@@ -23,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2
 
 do-install:
 	@ ${MKDIR} ${DATADIR}
+	@ ${RM} ${WRKSRC}/scripts/iso.sh.orig
 	@ cd ${WRKSRC} && ${FIND} . -type f -print | tar -cf - -T - | \
 	tar -xf - -C ${DATADIR}
 
