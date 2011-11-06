@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net_SMS
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,13 +14,11 @@ COMMENT=	PEAR SMS functionality
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
+		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USE_PHP=	gettext
-
-CATEGORY=	Net
-FILES=		SMS.php SMS/clickatell_http.php SMS/generic_smtp.php \
-		SMS/sms2email_http.php SMS/vodafoneitaly_smtp.php SMS/win_http.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
