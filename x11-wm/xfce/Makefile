@@ -14,9 +14,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3%20%28old%29/${PORTVERSION}
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	CDE like desktop with GTK
 
+DEPRECATED=	abandoned upstream, use x11-wm/xfce4 instead
+EXPIRATION_DATE=2012-02-01
+
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_GCC=	4.2+
 USE_XORG=	x11 xpm
 USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
