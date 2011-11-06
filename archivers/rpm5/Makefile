@@ -146,11 +146,6 @@ post-configure:
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif
 	@echo "DOT_FONTPATH = ${LOCALBASE}/lib/X11/fonts/freefont-ttf" >> ${WRKSRC}/Doxyfile
-.if ${OSVERSION} < 700000
-# on FreeBSD 6.x, <sys/mount.h> first requires <sys/param.h> (for NGROUPS)
-	@${REINPLACE_CMD} -e "s:/\* #undef HAVE_SYS_MOUNT_H \*/:#define HAVE_SYS_MOUNT_H 1:" \
-		${WRKSRC}/config.h
-.endif
 
 .if !defined(NOPORTDOCS)
 post-build:
