@@ -4,5 +4,3 @@ SHA256 (gcc-g++-3.4.6.tar.bz2) = f186937402752d25317adf2832b0b1d316334e158ae3804
 SIZE (gcc-g++-3.4.6.tar.bz2) = 2511332
 SHA256 (gcc-g77-3.4.6.tar.bz2) = 4a8b841ce79c70abfb5c0f523b710d298fc80a6f1104dedece5617de21d6c762
 SIZE (gcc-g77-3.4.6.tar.bz2) = 908261
-SHA256 (gcc-objc-3.4.6.tar.bz2) = 053061f7d828f73e1c6a6b9d2a4eeba8d1d8f64bd0a77d2df40091a429de1f5d
-SIZE (gcc-objc-3.4.6.tar.bz2) = 215655
