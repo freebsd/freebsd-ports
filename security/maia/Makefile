@@ -94,7 +94,7 @@ USE_RC_SUBR+=	maiad
 # setting USE_ variables. C'est la vie.
 
 .if defined(WITH_APACHE)
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 .endif
 
 .if defined(WITH_WEBHOST)
