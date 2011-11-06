@@ -11,7 +11,6 @@ bin/gcc%%SUFFIX%%
 bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1obj
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
