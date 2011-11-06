@@ -8,7 +8,7 @@
 +prefix=@PREFIX@
 +exec_prefix=${prefix}
 +libdir=${exec_prefix}/lib
-+includedir=${prefix}/include
++includedir=${prefix}/include/libpng
  
  Name: libpng
  Description: Loads and saves PNG files
