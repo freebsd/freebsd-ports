@@ -1,0 +1,16 @@
+--- pdns/backends/bind/bindbackend2.cc.orig	2011-07-22 13:23:22.000000000 +0200
++++ pdns/backends/bind/bindbackend2.cc	2011-08-30 10:38:47.000000000 +0200
+@@ -620,5 +620,5 @@
+ 
+     sort(domains.begin(), domains.end()); // put stuff in inode order
+-
++    DNSSECKeeper dk;
+     for(vector<BindDomainInfo>::const_iterator i=domains.begin();
+         i!=domains.end();
+@@ -660,5 +660,5 @@
+         if(filenameChanged || !bbd->d_loaded || !bbd->current()) {
+           L<<Logger::Info<<d_logprefix<<" parsing '"<<i->name<<"' from file '"<<i->filename<<"'"<<endl;
+-          DNSSECKeeper dk;
++
+           NSEC3PARAMRecordContent ns3pr;
+           bool nsec3zone=dk.getNSEC3PARAM(i->name, &ns3pr);
