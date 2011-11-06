@@ -1,2 +1,6 @@
 SHA256 (jrosetta-1.0.4-sources.jar) = 23c1631769a8715110af1b8449d0e810f8161d9a609d69fb2fe8546903ebfd9b
 SIZE (jrosetta-1.0.4-sources.jar) = 94931
+SHA256 (jrosetta-api-1.0.4.jar) = 45703efaed9b4eb46830814ca5c5b19220021064a65ed225daa5b74a95c38044
+SIZE (jrosetta-api-1.0.4.jar) = 17189
+SHA256 (jrosetta-engine-1.0.4.jar) = 291e5c5fd8e7335e9ef8b241ae8ee0b3acd7936fc2fe83a632d12e66acd2380e
+SIZE (jrosetta-engine-1.0.4.jar) = 51630
