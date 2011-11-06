@@ -58,7 +58,7 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf.sample
 .if !exists(${PREFIX}/etc/aiccu.conf)
-	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf
+	${INSTALL_DATA} -m 0644 ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf
 .endif
 
 .include <bsd.port.post.mk>
