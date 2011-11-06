@@ -48,12 +48,7 @@ post-install:
 	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
 .endfor
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

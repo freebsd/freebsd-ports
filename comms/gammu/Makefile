@@ -54,9 +54,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 	@${REINPLACE_CMD} -i '' -e 's:/etc/bash_completion.d:${PREFIX}/etc/bash_completion.d:' \
 		${WRKSRC}/contrib/CMakeLists.txt
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
-.endif
 
 .if defined(WITH_BASH)
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash

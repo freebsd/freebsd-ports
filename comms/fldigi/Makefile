@@ -42,9 +42,7 @@ OPTIONS=	NATIVE_OPT	"Enable Native Optimizations"		off \
 		HAMLIB		"Support rig control via hamlib"	on \
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
 .endif

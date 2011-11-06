@@ -24,10 +24,4 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=	not supported on systems earlier than 7.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

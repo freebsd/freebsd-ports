@@ -43,10 +43,6 @@ CFLAGS+=	-DKERNELVER=${OSVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		not tested for earlier than 7.x, probably won't build
-.endif
-
 .if ${OSVERSION} < 800000
 # Simple check for 7.x kernel source (find usb.c)
 .if ! exists(${SRCPREFIX}/sys/dev/usb/usb.c)

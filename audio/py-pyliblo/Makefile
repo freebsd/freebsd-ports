@@ -37,10 +37,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/examples.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

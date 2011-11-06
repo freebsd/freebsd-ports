@@ -25,14 +25,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message xsim.sh
 USE_BDB=	40+
 
-.include <bsd.port.pre.mk>
-
 CFLAGS+=	-fPIC
-.if ${OSVERSION} < 700000
-MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_pic.a`
-.else
 MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_s.so`
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
@@ -50,4 +44,4 @@ post-install:
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

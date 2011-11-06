@@ -40,10 +40,6 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=>>Does not compile on FreeBSD 6.X
-.endif
-
 .if defined(WITH_NCURSES_BASE)
 # no need to use ncurses-config if we use ncurses from the base system
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true

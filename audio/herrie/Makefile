@@ -36,7 +36,7 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+.if ${OSVERSION} < 700033
 CONFIGURE_ARGS+=ncurses
 .endif
 
