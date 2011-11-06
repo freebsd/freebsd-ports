@@ -20,11 +20,4 @@ USE_AUTOTOOLS=	aclocal autoheader libtoolize automake autoconf libtool
 ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 700000
-	@${REINPLACE_CMD} '/^AM_CFLAGS =/s/-fvisibility=hidden//' ${WRKSRC}/libmpcdec/Makefile.am
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

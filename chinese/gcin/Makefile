@@ -43,10 +43,6 @@ LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 .if defined(WITH_ANTHY)
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
