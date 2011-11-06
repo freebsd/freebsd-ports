@@ -1418,6 +1418,7 @@
     SUBDIR += phpbb3
     SUBDIR += phpgedview
     SUBDIR += phpmp
+    SUBDIR += phpmustache
     SUBDIR += phpmyfaq
     SUBDIR += phprecipebook
     SUBDIR += phproxy
