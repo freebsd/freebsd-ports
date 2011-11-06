@@ -22,6 +22,8 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
+BROKEN=		does not package
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 USE_PYTHON=	2.6+
 USE_SCONS=	yes
