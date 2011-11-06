@@ -13705,6 +13705,7 @@ p5-Perl6-Form                   ports/devel/p5-Perl6-Form
 p5-Perl6-Junction               ports/devel/p5-Perl6-Junction
 p5-Perl6-Rules                  ports/devel/p5-Perl6-Rules
 p5-Perl6-Say                    ports/devel/p5-Perl6-Say
+p5-Perl6-Slurp                  ports/devel/p5-Perl6-Slurp
 p5-Perl6-Subs                   ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib                 ports/security/p5-PerlCryptLib
 p5-PerlFM                       ports/x11-fm/p5-PerlFM
@@ -13802,6 +13803,7 @@ p5-PostScript-PPD               ports/print/p5-PostScript-PPD
 p5-PostScript-Simple            ports/print/p5-PostScript-Simple
 p5-PostgreSQL-PLPerl-Call       ports/databases/p5-PostgreSQL-PLPerl-Call
 p5-PostgreSQL-PLPerl-Trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
+p5-Pragmatic                    ports/devel/p5-Pragmatic
 p5-Prima                        ports/x11-toolkits/p5-Prima
 p5-Probe-Perl                   ports/sysutils/p5-Probe-Perl
 p5-Proc-Background              ports/devel/p5-Proc-Background
@@ -14872,6 +14874,7 @@ p5-XML-Handler-YAWriter         ports/textproc/p5-XML-Handler-YAWriter
 p5-XML-Hash-LX                  ports/textproc/p5-XML-Hash-LX
 p5-XML-LibXML                   ports/textproc/p5-XML-LibXML
 p5-XML-LibXML-Iterator          ports/textproc/p5-XML-LibXML-Iterator
+p5-XML-LibXML-PrettyPrint       ports/textproc/p5-XML-LibXML-PrettyPrint
 p5-XML-LibXML-SAX-ChunkParser   ports/textproc/p5-XML-LibXML-SAX-ChunkParser
 p5-XML-LibXML-Simple            ports/textproc/p5-XML-LibXML-Simple
 p5-XML-LibXSLT                  ports/textproc/p5-XML-LibXSLT
@@ -14946,6 +14949,7 @@ p5-XML-XSLT                     ports/textproc/p5-XML-XSLT
 p5-XML-XUpdate-LibXML           ports/textproc/p5-XML-XUpdate-LibXML
 p5-XML-Xerces                   ports/textproc/p5-XML-Xerces
 p5-XPC                          ports/net/p5-XPC
+p5-XS-Object-Magic              ports/devel/p5-XS-Object-Magic
 p5-XSLoader                     ports/devel/p5-XSLoader
 p5-Xango                        ports/www/p5-Xango
 p5-Xmms                         ports/audio/p5-Xmms
@@ -18020,6 +18024,7 @@ p5-perl6-form                   ports/devel/p5-Perl6-Form
 p5-perl6-junction               ports/devel/p5-Perl6-Junction
 p5-perl6-rules                  ports/devel/p5-Perl6-Rules
 p5-perl6-say                    ports/devel/p5-Perl6-Say
+p5-perl6-slurp                  ports/devel/p5-Perl6-Slurp
 p5-perl6-subs                   ports/lang/p5-Perl6-Subs
 p5-perlanet                     ports/www/p5-Perlanet
 p5-perlbal-plugin-psgi          ports/www/p5-Perlbal-Plugin-PSGI
@@ -18232,6 +18237,7 @@ p5-ppix-editortools             ports/textproc/p5-PPIx-EditorTools
 p5-ppix-regexp                  ports/textproc/p5-PPIx-Regexp
 p5-ppix-utilities               ports/textproc/p5-PPIx-Utilities
 p5-pquery                       ports/www/p5-pQuery
+p5-pragmatic                    ports/devel/p5-Pragmatic
 p5-prefork                      ports/devel/p5-prefork
 p5-prima                        ports/x11-toolkits/p5-Prima
 p5-probe-perl                   ports/sysutils/p5-Probe-Perl
@@ -19330,6 +19336,7 @@ p5-xml-hash-lx                  ports/textproc/p5-XML-Hash-LX
 p5-xml-liberal                  ports/textproc/p5-XML-Liberal
 p5-xml-libxml                   ports/textproc/p5-XML-LibXML
 p5-xml-libxml-iterator          ports/textproc/p5-XML-LibXML-Iterator
+p5-xml-libxml-prettyprint       ports/textproc/p5-XML-LibXML-PrettyPrint
 p5-xml-libxml-sax-chunkparser   ports/textproc/p5-XML-LibXML-SAX-ChunkParser
 p5-xml-libxml-simple            ports/textproc/p5-XML-LibXML-Simple
 p5-xml-libxslt                  ports/textproc/p5-XML-LibXSLT
@@ -19406,6 +19413,7 @@ p5-xmltv                        ports/textproc/p5-xmltv
 p5-xmms                         ports/audio/p5-Xmms
 p5-xmms2                        ports/audio/p5-xmms2
 p5-xpc                          ports/net/p5-XPC
+p5-xs-object-magic              ports/devel/p5-XS-Object-Magic
 p5-xsloader                     ports/devel/p5-XSLoader
 p5-yada-yada-yada               ports/devel/p5-Yada-Yada-Yada
 p5-yahoo-bbauth                 ports/security/p5-Yahoo-BBAuth
@@ -22074,6 +22082,7 @@ py-pf                           ports/security/py-PF
 py-pg8000                       ports/databases/py-pg8000
 py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
+py-pickledb                     ports/databases/py-pickledb
 py-pika                         ports/devel/py-pika
 py-pip                          ports/devel/py-pip
 py-pisa                         ports/converters/py-pisa
@@ -22082,6 +22091,7 @@ py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
 py-pmw                          ports/x11-toolkits/py-Pmw
+py-png                          ports/graphics/py-png
 py-poker-eval                   ports/games/py-poker-eval
 py-polib                        ports/devel/py-polib
 py-poppler                      ports/graphics/py-poppler
@@ -23972,9 +23982,11 @@ rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stompserver             ports/net/rubygem-stompserver
+rubygem-storable                ports/devel/rubygem-storable
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-stringex                ports/devel/rubygem-stringex
+rubygem-subexec                 ports/devel/rubygem-subexec
 rubygem-sugar-high              ports/devel/rubygem-sugar-high
 rubygem-sundawg_country_codes   ports/devel/rubygem-sundawg_country_codes
 rubygem-syntax                  ports/textproc/rubygem-syntax
@@ -25935,6 +25947,7 @@ typo                            ports/www/typo
 typo3                           ports/www/typo3
 typo343                         ports/www/typo343
 typo344                         ports/www/typo344
+typo345                         ports/www/typo345
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 u-boot                          ports/devel/u-boot
