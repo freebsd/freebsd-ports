@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_URL2
-PORTVERSION=	0.3.1
+PORTVERSION=	2.0.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	joehorn@gmail.com
@@ -15,15 +15,9 @@ COMMENT=	PEAR Class for parsing and handling URL
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATEGORY=	Net
-FILES=		URL2.php
-EXAMPLES=	example.php
-TESTS=		6470.php
-_EXAMPLESDIR=	docs
-_TESTSDIR=	docs
-IGNORE_WITH_PHP=	4
+PEAR_AUTOINSTALL=yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
