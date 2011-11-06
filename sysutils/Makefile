@@ -963,7 +963,6 @@
     SUBDIR += xfce4-genmon-plugin
     SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-netload-plugin
-    SUBDIR += xfce4-places-plugin
     SUBDIR += xfce4-power-manager
     SUBDIR += xfce4-settings
     SUBDIR += xfce4-systemload-plugin
