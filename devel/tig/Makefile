@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tig
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Text-mode interface for git
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 MAN1=		tig.1
 MAN5=		tigrc.5
