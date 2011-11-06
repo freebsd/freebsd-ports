@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	MIME_Type
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for dealing with MIME types
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_SYSTEM_COMMAND "PEAR::System_Command support" off
 
-FILES=		MIME/Type.php MIME/Type/Parameter.php
-EXAMPLES=	example.php
-_EXAMPLESDIR=	docs/examples/
-TESTS=		TypeTest.php
+PEAR_AUTOINSTALL=yes
 
 .include <bsd.port.pre.mk>
 
