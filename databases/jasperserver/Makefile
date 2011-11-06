@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	jasperserver
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.1
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
 DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
-		jasperreports-server-${PORTVERSION}-maven-repository.zip:source1
+		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
 EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
 
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Open Source Java Reporting Library
 
-BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
-
-LICENSE_COMB=	multi
 LICENSE=	GPLv2 MIT ASL
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
 SRCDIR=		${WRKDIR}/jasperreports-server-cp-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
@@ -28,7 +28,7 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSMAVENARCH=	jasperreports-server-${PORTVERSION}-maven-repository.zip
+JSMAVENARCH=	jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
@@ -39,11 +39,11 @@ USE_ZIP=	yes
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
 DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$
 
-OPTIONS=	TOMCAT5 "Enable Tomcat 5.x support"	on \
-		TOMCAT6 "Enable Tomcat 6.x support"	off \
-		MYSQL   "Enable Mysql 5.x support"	on \
-		POSTGRESQL "Enable PostgreSQL 8.x support" off \
-		POSTGRESQL9 "Enable PostgreSQL 9.x support" off
+OPTIONS=	TOMCAT5 "Enable Tomcat 5.x support"	off \
+		TOMCAT6 "Enable Tomcat 6.x support"	on \
+		TOMCAT7 "Enable Tomcat 7.x support"	off \
+		MYSQL   "Enable Mysql 5.x support"	off \
+		POSTGRESQL "Enable PostgreSQL 9.x support" on
 
 REPLACE_FILES=	${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
@@ -51,6 +51,7 @@ REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 SUB_FILES=	pkg-message
 
 SUB_LIST=	DATABASE=${DATABASE} \
+		JSDB=${JSDB} \
 		JSHOME=${JSHOME} \
 		JSTIMEOUT=${JSTIMEOUT} \
 		PORTNAME=${PORTNAME} \
@@ -64,30 +65,24 @@ PLIST_SUB=	DATABASE=${DATABASE} \
 
 .include <bsd.port.options.mk>
 
+#use version <55,jasperserver quartz scheduler won't work properly (tested well with 51)
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-MYNAME?=	root
-MYPASS?=
+DBUSER?=	root
+DBPASS?=
 DATABASE=	mysql
-PLIST_SUB+=	JDBC="mysql-connector-java-5.1.10.jar"
+RUN_DEPENDS+=	${JAVAJARDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+PLIST_SUB+=	JDBC="mysql-connector-java.jar"
 .endif
 
-#use version 84, application is certified against this version
-#use version 90, application is reported to work against this version
+#use version 90, application is certified w/ pg90
 .if defined(WITH_POSTGRESQL)
-WANT_PGSQL_VER=	84
-JDBC=		postgresql-8.4-702.jdbc4.jar
-DISTFILES+=	postgresql-8.4-702.jdbc4.jar:source2
-.elif defined(WITH_POSTGRESQL9)
 WANT_PGSQL_VER=	90
-JDBC=	postgresql-9.0-801.jdbc4.jar
-DISTFILES+=	postgresql-9.0-801.jdbc4.jar:source2
-.endif
-
-.if ( defined(WITH_POSTGRESQL) || (WITH_POSTGRESQL9) )
+JDBC=	postgresql-9.0-802.jdbc4.jar
+DISTFILES+=	postgresql-9.0-802.jdbc4.jar:source2
 USE_PGSQL=	yes
-MYNAME?=	pgsql
-MYPASS?=	pgsql
+DBUSER?=	pgsql
+DBPASS?=	pgsql
 DATABASE=	postgresql
 PLIST_SUB+=	JDBC=${JDBC}
 MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
@@ -95,10 +90,9 @@ MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
 
 .if defined(WITH_TOMCAT5)
 APPHOME?=	${LOCALBASE}/tomcat5.5
-BUILD_DEPENDS+= ${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=   ${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 APPTYPE=	tomcat5
-JSHOME?=	${APPHOME}/webapps/${PORTNAME}
 PLIST_SUB+=	APP_VERSION="tomcat5.5"
 JDBCLOC=	common/lib
 .endif
@@ -108,8 +102,16 @@ APPHOME?=	${LOCALBASE}/apache-tomcat-6.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 APPTYPE=	tomcat6
-JSHOME?=	${APPHOME}/webapps/${PORTNAME}
 PLIST_SUB+=	APP_VERSION="apache-tomcat-6.0"
+JDBCLOC=	lib
+.endif
+
+.if defined(WITH_TOMCAT7)
+APPHOME?=	${LOCALBASE}/apache-tomcat-7.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+APPTYPE=	tomcat7
+PLIST_SUB+=	APP_VERSION="apache-tomcat-7.0"
 JDBCLOC=	lib
 .endif
 
@@ -118,8 +120,10 @@ DBHOST?=	localhost
 APP_PROPERTIES=	${SRCDIR}/${PORTNAME}/buildomatic/default_master.properties
 QTZ_PROPERTIES=	${SRCDIR}/${PORTNAME}/${PORTNAME}-war/target/${PORTNAME}/WEB-INF/js.quartz.properties
 
+JSDB?=	jasperserver
 JSPORT?=	8080
 JSEXTRA?=
+JSHOME?=	${APPHOME}/webapps/${PORTNAME}
 JSMAILHOST?=	localhost
 JSMAILUSER?=	admin
 JSMAILPASS?=	password
@@ -131,15 +135,15 @@ JSTIMEOUT?=	20
 check-sanity:
 .if ( defined(WITH_TOMCAT5) && defined(WITH_TOMCAT6) )
 IGNORE=	you can only define one application server
-.elif ( !defined(WITH_TOMCAT5) && !defined(WITH_TOMCAT6) )
+.elif ( defined(WITH_TOMCAT5) && defined(WITH_TOMCAT7) )
+IGNORE=	you can only define one application server
+.elif ( defined(WITH_TOMCAT6) && defined(WITH_TOMCAT7) )
+IGNORE=	you can only define one application server
+.elif ( !defined(APPHOME) )
 IGNORE=	choose at least one application server
 .elif ( defined(WITH_MYSQL) && defined(WITH_POSTGRESQL) )
 IGNORE=	you can only define one database
-.elif ( defined(WITH_MYSQL) && defined(WITH_POSTGRESQL9) )
-IGNORE=	you can only define one database
-.elif ( defined(WITH_POSTGRESQL) && defined(WITH_POSTGRESQL9) )
-IGNORE=	you can only define one database
-.elif ( !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_POSTGRESQL9) )
+.elif ( !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) )
 IGNORE=	choose at least one database
 .endif
 
@@ -178,17 +182,27 @@ pre-build:
 	@${ECHO} "appServerType = ${APPTYPE}" > ${APP_PROPERTIES}
 	@${ECHO} "appServerDir = ${APPHOME}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbType = ${DATABASE}" >> ${APP_PROPERTIES}
-	@${ECHO} "dbUsername = ${MYNAME}" >> ${APP_PROPERTIES}
-	@${ECHO} "dbPassword = ${MYPASS}" >> ${APP_PROPERTIES}
+	@${ECHO} "dbUsername = ${DBUSER}" >> ${APP_PROPERTIES}
+	@${ECHO} "dbPassword = ${DBPASS}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbHost = ${DBHOST}" >> ${APP_PROPERTIES}
+	@${ECHO} "js.dbName = ${JSDB}" >> ${APP_PROPERTIES}
 
 	@( if [ -f ${LOCALBASE}/bin/mvn ] ; then \
 		${ECHO} "maven = ${JAVASHAREDIR}/maven2/bin/mvn" >> ${APP_PROPERTIES} ; \
 		else ${FALSE}; \
 	fi )
+.if !defined(WITH_POSTGRESQL)
+	@${ECHO} "maven.jdbc.groupId = mysql" >> ${APP_PROPERTIES}
+	@${ECHO} "maven.jdbc.version = 5.1.17-bin" >> ${APP_PROPERTIES}
+	@${ECHO} "maven.jdbc.artifactId = mysql-connector-java" >> ${APP_PROPERTIES}
+.endif
 	@${ECHO} "js-path = ${JS}" >> ${APP_PROPERTIES}
 	@${ECHO} "js-pro-path = ${JS}" >> ${APP_PROPERTIES}
-	@${ECHO} "js-repo-path = ${JSREPO}">> ${APP_PROPERTIES}
+	@${ECHO} "repo-path = ${JSREPO}" >> ${APP_PROPERTIES}
+
+.if defined(WITH_MYSQL)
+	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${SRCDIR}/${PORTNAME}/buildomatic/conf_source/db/mysql/jdbc/mysql-connector-java-5.1.17-bin.jar
+.endif
 
 do-build:
 	@( cd ${WRKSRC} && ./js-ant clean-config )
@@ -197,7 +211,7 @@ do-build:
 	@( ${CP} ${WRKDIR}/web.xml ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml )
 	@( cd ${WRKSRC} && ./js-ant build-ce )
 
-.if !( defined(WITH_POSTGRESQL) || (WITH_POSTGRESQL9) )
+.if !defined(WITH_POSTGRESQL)
 	@${ECHO} "quartz.delegateClass=org.quartz.impl.jdbcjobstore.StdJDBCDelegate" > ${QTZ_PROPERTIES}
 .else
 	@${ECHO} "quartz.delegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate" > ${QTZ_PROPERTIES}
@@ -205,7 +219,7 @@ do-build:
 
 	@${ECHO} "quartz.tablePrefix=QRTZ_" >> ${QTZ_PROPERTIES}
 	@${ECHO} "quartz.extraSettings=${JSEXTRA}" >> ${QTZ_PROPERTIES}
-	@${ECHO} "report.scheduler.web.deployment.uri=http://localhost:${JSPORT}/${PORTNAME}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.web.deployment.uri=http://${DBHOST}:${JSPORT}/${JSDB}" >> ${QTZ_PROPERTIES}
 	@${ECHO} "report.scheduler.mail.sender.host=${JSMAILHOST}" >> ${QTZ_PROPERTIES}
 	@${ECHO} "report.scheduler.mail.sender.username=${JSMAILUSER}" >> ${QTZ_PROPERTIES}
 	@${ECHO} "report.scheduler.mail.sender.password=${JSMAILPASS}" >> ${QTZ_PROPERTIES}
@@ -221,13 +235,15 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/js-create.ddl ${JSHOME} )
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/quartz.ddl ${JSHOME} )
-	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-4.0.0-4.1.0-ce.sql ${JSHOME} )
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-4.1.0-4.2.1-ce.sql ${JSHOME} )
 	@${INSTALL} -m 440 ${QTZ_PROPERTIES} ${JSHOME}/WEB-INF/
 
 #removed shipped driver from vendor
-.if ( defined(WITH_TOMCAT6) || defined(WITH_TOMCAT5) && !defined(WITH_MYSQL) && defined(WITH_POSTGRESQL) || defined(WITH_POSTGRESQL9) )
+.if !defined(WITH_MYSQL)
 	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
 	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc3.jar
+.else
+	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${APPHOME}/${JDBCLOC}
 .endif
 
 post-install:
