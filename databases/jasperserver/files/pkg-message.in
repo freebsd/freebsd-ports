@@ -14,27 +14,35 @@ and
 
 Take necessary precautions before loading this sql into the %%PORTNAME%% database.
 
-To create the %%PORTNAME%% database, you may choose to run the following target against
+To create the %%JSDB%% database, you may choose to run the following target against
 %%SRCDIR%%/%%PORTNAME%%/buildomatic/js-ant
 
-./js-ant create-js-db (Creates the %%PORTNAME%% database)
+./js-ant create-js-db (Creates the %%JSDB%% database)
 
-If the %%PORTNAME%% database already exists, you may need to first drop the database:
-./js-ant drop-js-db (Drops the %%PORTNAME%% database)
+If the %%JSDB%% database already exists, you may need to first drop the database:
+./js-ant drop-js-db (Drops the %%JSDB%% database)
 
 Alternatively, you may choose to use the following method to create a suitable database:
- (mysql) mysql> create database jasperserver character set utf8;
- (postgresql) create database jasperserver;
+ (mysql) mysql> create database %%JSDB%% character set utf8;
+ (postgresql) create database %%JSDB%%;
 
 
 ==============  W A R N I N G   I M P O R T A N T   N O T E  =================
 
-If UPGRADING from 4.0.0 to 4.1.0:
-(taken from release notes of 4.1.0 from vendor)
+You can upgrade directly to 4.2.1 if your instance is one of the following:
+3.7.0
+3.7.1
+4.0.0
+4.1.0
 
-To upgrade from 4.0.0 to 4.1.0, refer to the recommended
-procedure described in the Installation Guide Chapter 8 
-"Upgrade from 4.0.0 to 4.1.0"
+Note that Jaspersoft did not release a 4.2.0 version of JasperReports Server
+Community Project. The version number progression goes from 4.1.0 to 4.2.1
+directly. The recommended upgrade procedures are fully described in the
+Installation Guide.
+
+There are no database changes between 4.1.0 and 4.2.1. So, the upgrade from
+4.1.0 to 4.2.1 is simpler than upgrading from earlier versions.
+
 ==============  W A R N I N G   I M P O R T A N T   N O T E  =================
 
 WWW: http://jasperforge.org/projects/jasperserver

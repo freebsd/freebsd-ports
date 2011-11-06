@@ -8,12 +8,19 @@ if [ "$2" = "PRE-INSTALL" ]; then
 cat << _EOF
 ==============  W A R N I N G   I M P O R T A N T   N O T E  =================
 
-If UPGRADING from 4.0.0 to 4.1.0:
-(taken from release notes of 4.1.0 from vendor)
+You can upgrade directly to 4.2.1 if your instance is one of the following:
+3.7.0
+3.7.1
+4.0.0
+4.1.0
 
-To upgrade from 4.0.0 to 4.1.0, refer to the recommended
-procedure described in the Installation Guide Chapter 8
-"Upgrade from 4.0.0 to 4.1.0"
+Note that Jaspersoft did not release a 4.2.0 version of JasperReports Server
+Community Project. The version number progression goes from 4.1.0 to 4.2.1
+directly. The recommended upgrade procedures are fully described in the
+Installation Guide.
+
+There are no database changes between 4.1.0, and 4.2.1. So, the upgrade from
+4.1.0 to 4.2.1 is simpler than upgrading from earlier versions.
 
 WWW: http://jasperforge.org/projects/jasperserver
 
