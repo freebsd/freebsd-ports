@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	devel
 MASTER_SITES=	http://bsdcrew.de/distfiles/
 
