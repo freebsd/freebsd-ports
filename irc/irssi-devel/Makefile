@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20110210
+PORTVERSION=	20111030
 CATEGORIES=	irc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://bsdcrew.de/distfiles/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
