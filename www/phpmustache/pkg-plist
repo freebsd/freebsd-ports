@@ -1,0 +1,136 @@
+%%DATADIR%%/Mustache.php
+%%PORTDOCS%%%%DOCSDIR%%/README.markdown
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/ChildContext.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/child_context.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/child_context.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments/Comments.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments/comments.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments/comments.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/complex/complex.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/complex/complex.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/complex/complex.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/delimiters/Delimiters.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/delimiters/delimiters.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/delimiters/delimiters.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_notation/DotNotation.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_notation/dot_notation.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_notation/dot_notation.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/double_section/DoubleSection.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/double_section/double_section.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/double_section/double_section.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/Escaped.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/escaped.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/escaped.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/GrandParentContext.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/grand_parent_context.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/grand_parent_context.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/implicit_iterator/ImplicitIterator.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/implicit_iterator/implicit_iterator.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/implicit_iterator/implicit_iterator.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_double_section/InvertedDoubleSection.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_double_section/inverted_double_section.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_double_section/inverted_double_section.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_section/InvertedSection.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_section/inverted_section.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inverted_section/inverted_section.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials/Partials.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials/partials.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials/partials.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials_with_view_class/PartialsWithViewClass.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials_with_view_class/partials_with_view_class.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partials_with_view_class/partials_with_view_class.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragma_unescaped/PragmaUnescaped.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragma_unescaped/pragma_unescaped.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragma_unescaped/pragma_unescaped.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragmas_in_partials/PragmasInPartials.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragmas_in_partials/pragmas_in_partials.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pragmas_in_partials/pragmas_in_partials.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/recursive_partials/RecursivePartials.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/recursive_partials/recursive_partials.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/recursive_partials/recursive_partials.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_iterator_objects/SectionIteratorObjects.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_iterator_objects/section_iterator_objects.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_iterator_objects/section_iterator_objects.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_magic_objects/SectionMagicObjects.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_magic_objects/section_magic_objects.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_magic_objects/section_magic_objects.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_objects/SectionObjects.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_objects/section_objects.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/section_objects/section_objects.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections/Sections.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections/sections.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections/sections.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections_nested/SectionsNested.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections_nested/sections_nested.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sections_nested/sections_nested.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Simple.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unescaped/Unescaped.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unescaped/unescaped.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unescaped/unescaped.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8/UTF8.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8/utf8.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8/utf8.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8_unescaped/UTF8Unescaped.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8_unescaped/utf8_unescaped.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8_unescaped/utf8_unescaped.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitespace/Whitespace.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitespace/whitespace.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitespace/whitespace.txt
+%%DATADIR%%/test/MustacheExceptionTest.php
+%%DATADIR%%/test/MustacheHigherOrderSectionsTest.php
+%%DATADIR%%/test/MustacheInjectionTest.php
+%%DATADIR%%/test/MustacheObjectSectionTest.php
+%%DATADIR%%/test/MustachePragmaTest.php
+%%DATADIR%%/test/MustachePragmaUnescapedTest.php
+%%DATADIR%%/test/MustacheSpecTest.php
+%%DATADIR%%/test/MustacheTest.php
+%%DATADIR%%/test/lib/yaml/LICENSE
+%%DATADIR%%/test/lib/yaml/README.markdown
+%%DATADIR%%/test/lib/yaml/doc/00-Introduction.markdown
+%%DATADIR%%/test/lib/yaml/doc/01-Usage.markdown
+%%DATADIR%%/test/lib/yaml/doc/02-YAML.markdown
+%%DATADIR%%/test/lib/yaml/doc/A-License.markdown
+%%DATADIR%%/test/lib/yaml/lib/sfYaml.php
+%%DATADIR%%/test/lib/yaml/lib/sfYamlDumper.php
+%%DATADIR%%/test/lib/yaml/lib/sfYamlInline.php
+%%DATADIR%%/test/lib/yaml/lib/sfYamlParser.php
+%%DATADIR%%/test/lib/yaml/package.xml
+%%DATADIR%%/test/phpunit.xml
+@dirrm %%DATADIR%%/test/lib/yaml/doc
+@dirrm %%DATADIR%%/test/lib/yaml/lib
+@dirrm %%DATADIR%%/test/lib/yaml
+@dirrm %%DATADIR%%/test/lib
+@dirrm %%DATADIR%%/test/spec
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/child_context
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/comments
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/complex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/delimiters
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot_notation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/double_section
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/escaped
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grand_parent_context
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/implicit_iterator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inverted_double_section
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inverted_section
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/partials
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/partials_with_view_class
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pragma_unescaped
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pragmas_in_partials
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/recursive_partials
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/section_iterator_objects
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/section_magic_objects
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/section_objects
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sections
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sections_nested
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/unescaped
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/utf8
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/utf8_unescaped
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/whitespace
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
