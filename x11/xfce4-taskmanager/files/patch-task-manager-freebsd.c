@@ -4,7 +4,7 @@
  #include <fcntl.h>
  #include <paths.h>
  #include <unistd.h>
-+#if defined(__FreeBSD_version) && __FreeBSD_version >= 900039
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 900030
 +#include <sys/vmmeter.h>
 +#endif
  
