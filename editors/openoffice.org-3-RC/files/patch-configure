@@ -1,0 +1,29 @@
+--- configure~	2011-06-07 15:29:01.000000000 +0900
++++ configure	2011-11-06 12:10:47.000000000 +0900
+@@ -30591,7 +30591,7 @@
+ echo "$as_me:$LINENO: checking whether to build own version of libjpeg" >&5
+ echo $ECHO_N "checking whether to build own version of libjpeg... $ECHO_C" >&6
+ 
+-if test "$SYSTEM_JPEG" == "YES"; then
++if test "$SYSTEM_JPEG" = "YES"; then
+ SYSTEM_LIBJPEG=YES
+ else
+ case "$_os" in
+@@ -30613,7 +30613,7 @@
+ esac
+ fi
+ 
+-if test "$SYSTEM_LIBJPEG" == "YES"; then
++if test "$SYSTEM_LIBJPEG" = "YES"; then
+    echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+ else
+@@ -30926,7 +30926,7 @@
+ if test "$SOLAR_JAVA" != "" && test "$with_junit" != "no"; then
+     echo "$as_me:$LINENO: checking for JUnit 4" >&5
+ echo $ECHO_N "checking for JUnit 4... $ECHO_C" >&6
+-    if test "$with_junit" == "yes"; then
++    if test "$with_junit" = "yes"; then
+         if test -e /usr/share/java/junit4.jar; then
+             OOO_JUNIT_JAR=/usr/share/java/junit4.jar
+         else
