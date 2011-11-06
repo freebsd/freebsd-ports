@@ -593,6 +593,7 @@
     SUBDIR += rmilter
     SUBDIR += roundcube
     SUBDIR += roundcube-air
+    SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
