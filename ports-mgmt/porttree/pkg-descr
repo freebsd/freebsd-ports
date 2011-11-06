@@ -1,0 +1,12 @@
+For a given port determine its dependences using any combination of the
+ - FETCH_DEPENDS
+ - EXTRACT_DEPENDS
+ - PATCH_DEPENDS
+ - LIB_DEPENDS
+ - BUILD_DEPENDS
+ - RUN_DEPENDS 
+
+and show them as a pseudo graphical tree.
+Use back references for cross-connections.
+
+WWW: http://code.google.com/p/porttree/

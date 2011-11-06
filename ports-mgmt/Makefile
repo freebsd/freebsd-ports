@@ -64,6 +64,7 @@
     SUBDIR += portshaker-config
     SUBDIR += portsopt
     SUBDIR += porttools
+    SUBDIR += porttree
     SUBDIR += portupdate-scan
     SUBDIR += portupgrade
     SUBDIR += portupgrade-devel
