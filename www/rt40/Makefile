@@ -76,7 +76,7 @@ USE_AUTOTOOLS=	autoconf
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AP_MODPERL) || defined(WITH_AP_MODFASTCGI)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 
 .if defined(WITH_AP_MODPERL)
