@@ -17,6 +17,8 @@ COMMENT=	Gearman C Server and Library
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
+BROKEN=		does not compile
+
 FETCH_ARGS=	-pRr
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
