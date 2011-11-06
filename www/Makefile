@@ -383,6 +383,7 @@
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-mplayer-plugin
     SUBDIR += linux-opera
+    SUBDIR += linux-opera-devel
     SUBDIR += linux-seamonkey
     SUBDIR += linuxpluginwrapper
     SUBDIR += lionwiki
