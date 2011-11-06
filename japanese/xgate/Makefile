@@ -46,6 +46,10 @@ RESTRICTED=	Commercial license
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not extract on FreeBSD 7.X
+.endif
+
 APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
 
 CNFLSTS=	account/admin.ndt	\
