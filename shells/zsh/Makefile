@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -17,6 +17,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src ${DISTNAME}-doc${EXTRACT_SUFX}:doc
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
+
+LICENSE=	ZSH
+LICENSE_NAME=   ZSH license
+LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_PERMS=  ${_LICENSE_PERMS_DEFAULT}
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -39,13 +44,9 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 #EXTRA_COMPLETION_FILES=	_sockstat
 #EXTRA_COMPLETION_DIR=	Completion/BSD/Command
 
-LICENSE=	ZSH
-LICENSE_NAME=   ZSH license
-LICENSE_PERMS=  ${_LICENSE_PERMS_DEFAULT}
-LICENSE_FILE=	${WRKSRC}/LICENCE
-
 OPTIONS=	ZSH_GDBM	"Enable GDBM support (GPL)" off \
-		ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
+		ZSH_MEM		"Enable zsh-mem options" off \
+		ZSH_SECURE_FREE	"Enable zsh-secure-free" on \
 		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
 		ZSH_MULTIBYTE	"Enable multibyte character support" on \
 		ZSH_PCRE	"Enable PCRE support" off \
@@ -83,7 +84,11 @@ PLIST_SUB+=		PCRE="@comment "
 .endif
 
 .if defined(WITH_ZSH_MEM)
-CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
+CONFIGURE_ARGS+=	--enable-zsh-mem
+.endif
+
+.if defined(WITH_ZSH_SECURE_FREE)
+CONFIGURE_ARGS+=	--enable-zsh-secure-free
 .endif
 
 .if defined(WITH_ZSH_MAILDIR)
@@ -97,6 +102,12 @@ PLIST_SUB+=		SHARED="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-dynamic
 PLIST_SUB+=		SHARED=""
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-zsh-debug
+.else
+CONFIGURE_ARGS+=	--disable-zsh-debug
 .endif
 
 .if defined(WITH_ZSH_MULTIBYTE)
