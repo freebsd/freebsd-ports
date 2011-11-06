@@ -698,6 +698,7 @@ lib/wine/actxprxy.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
+lib/wine/apphelp.dll.so
 lib/wine/appwiz.cpl.so
 lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
@@ -835,6 +836,7 @@ lib/wine/fakedlls/actxprxy.dll
 lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
+lib/wine/fakedlls/apphelp.dll
 lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
