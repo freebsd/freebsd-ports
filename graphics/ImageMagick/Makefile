@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.3-3
+DISTVERSION=	6.7.3-4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		http://image_magick.veidrodis.com/image_magick/ \
@@ -58,6 +58,7 @@ OPTIONS=\
 	IMAGEMAGICK_MODULES	"Modules support" on \
 	IMAGEMAGICK_OPENEXR	"OpenEXR support (needs threads)" off \
 	IMAGEMAGICK_OPENMP	"OpenMP for SMP (needs threads)" off \
+	IMAGEMAGICK_PANGO	"Pango support" off \
 	IMAGEMAGICK_PDF		"PDF format support" on \
 	IMAGEMAGICK_PERL	"Perl support" on \
 	IMAGEMAGICK_PNG		"PNG format support" on \
@@ -344,6 +345,13 @@ CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2.0" \
 			RSVG_LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--without-rsvg --without-xml
+.endif
+
+# Pango support
+.if defined(WITH_IMAGEMAGICK_PANGO)
+LIB_DEPENDS+=		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
+.else
+CONFIGURE_ARGS+=	--without-pango
 .endif
 
 # PDF (Adobe Portable Document Format) support
