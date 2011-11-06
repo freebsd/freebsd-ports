@@ -1,0 +1,16 @@
+Grr is a RSS Reader application
+
+Features 
+ Parsing RSS Feeds 
+ Fetching feeds from the web 
+ Showing headlines 
+ Showing the article's descriptions 
+ Categories for feeds 
+ Articles can be rated 
+ Simple HTML rendering on GNUstep 
+ Serializing obtained feed-information to hard-disk 
+ Managing (Adding, removing) feeds 
+ Parsing ATOM feeds.
+
+Author: Guenther Noack
+WWW: http://gap.nongnu.org/grr/index.html
