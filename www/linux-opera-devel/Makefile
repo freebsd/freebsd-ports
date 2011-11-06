@@ -1,4 +1,4 @@
-# New ports collection makefile for:		linux-opera
+# New ports collection makefile for:		linux-opera-devel
 # Date created:					December 6th 2000
 # Whom:						des
 #
@@ -8,21 +8,14 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/linux/${OPERA_VER:S/.//}/ \
-		http://mirrors.pmmf.hu/mirror/opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://ftp.task.gda.pl/pub/opera/linux/${OPERA_VER:S/.//}/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/${OPERA_VER:S/.//}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/${OPERA_VER:S/.//}/&,}
+MASTER_SITES=	http://snapshot.opera.com/unix/quack_${OPERA_VER}-${OPERA_BUILD}/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${OPERA_NEXT}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A blazingly fast, full-featured, standards-compliant browser
+COMMENT=	A blazingly fast, full-featured, standards-compliant browser (next version)
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
@@ -35,30 +28,32 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-OPERA_VER?=	11.52
-OPERA_BUILD?=	1100
-DATADIR=	${PREFIX}/share/${UNIQUENAME}
-DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
+OPERA_NEXT?=	${PORTNAME}-next
+OPERA_VER?=	12.00
+OPERA_BUILD?=	1116
+DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${OPERA_NEXT}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${OPERA_NEXT}
 
-MAN1=		linux-opera.1 linux-opera-widget-manager.1
+MAN1=		linux-opera-next.1 linux-opera-next-widget-manager.1
 
-RENAME=		opera opera-widget-manager lib/opera \
-		share/applications/opera-browser.desktop \
-		share/applications/opera-widget-installer.desktop \
-		share/applications/opera-widget-manager.desktop \
-		share/doc/opera share/opera man/man1/opera.1 \
-		man/man1/opera-widget-manager.1 \
-		share/mime/packages/opera-extension.xml \
-		share/mime/packages/opera-unite-application.xml \
-		share/mime/packages/opera-widget.xml
+RENAME=		opera-next opera-next-widget-manager lib/opera-next \
+		share/applications/opera-next-browser.desktop \
+		share/applications/opera-next-widget-installer.desktop \
+		share/applications/opera-next-widget-manager.desktop \
+		share/doc/opera-next share/opera-next man/man1/opera-next.1 \
+		man/man1/opera-next-widget-manager.1 \
+		share/mime/packages/opera-next-extension.xml \
+		share/mime/packages/opera-next-unite-application.xml \
+		share/mime/packages/opera-next-widget.xml
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION}<700055
-IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
+IGNORE=	You need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
 .elif ${OSVERSION}<800076 && ! defined (OVERRIDE_LINUX_NONBASE_PORTS)
-IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
+IGNORE=	You need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
 .endif
 
 post-extract:
@@ -66,63 +61,63 @@ post-extract:
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
 	@for _r in ${RENAME}; do \
 		linux=`${ECHO_CMD} $${_r} | \
-		       ${SED} -e 's|opera|${UNIQUENAME}|g'`; \
+		       ${SED} -e 's|opera-next|${PKGNAMEPREFIX}${OPERA_NEXT}|g'`; \
 		${MV} ${WRKSRC}/$${_r} ${WRKSRC}/$${linux}; \
 	done; \
 	for _f in `find ${WRKSRC}/share/icons -type f | \
 		   ${SED} -e 's|${WRKSRC}/||g'`; do \
 		linux=`${ECHO_CMD} $${_f} | \
-		       ${SED} -e 's|opera|${UNIQUENAME}|g'`; \
+		       ${SED} -e 's|opera-next|${PKGNAMEPREFIX}${OPERA_NEXT}|g'`; \
 		${MV} ${WRKSRC}/$${_f} ${WRKSRC}/$${linux}; \
 	done; \
 	for _l in `find ${WRKSRC}/share/icons -name opera-widget.png | \
 		   ${SED} -e 's|/opera-widget\.png||g'`; do \
 		${RM} $${_l}/opera-widget.png; \
 		cd $${_l}; \
-		${LN} -s ../mimetypes/${UNIQUENAME}-widget.png \
-			$${_l}/${UNIQUENAME}-widget.png; \
+		${LN} -s ../mimetypes/${PKGNAMEPREFIX}${OPERA_NEXT}-widget.png \
+			$${_l}/${PKGNAMEPREFIX}${OPERA_NEXT}-widget.png; \
 	done
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%LINUXBASE%%|${LINUXBASE}|g' \
-			${WRKSRC}/share/${UNIQUENAME}/defaults/pluginpath.ini
-	@${REINPLACE_CMD} -e '/man1/s|opera|${UNIQUENAME}|g ; \
+			${WRKSRC}/share/${PKGNAMEPREFIX}${OPERA_NEXT}/defaults/pluginpath.ini
+	@${REINPLACE_CMD} -e '/man1/s|opera|${PKGNAMEPREFIX}${PORTNAME}|g ; \
 		/man1/s|1.gz|1|g ; /man1/s|share/||g ; \
-		s|bin/opera|bin/${UNIQUENAME}|g ; \
+		s|bin/opera|bin/${PKGNAMEPREFIX}${PORTNAME}|g ; \
 		s|name=$$(uname -s)|name=Linux|g ; \
-		s|lib/opera|lib/${UNIQUENAME}|g ; \
-		s|applications/opera|applications/${UNIQUENAME}|g ; \
-		s|doc/opera|doc/${UNIQUENAME}|g ; \
-		/hicolor/s|/opera|/${UNIQUENAME}|g ; \
-		s|packages/opera|packages/${UNIQUENAME}|g ; \
-		s|share/opera|share/${UNIQUENAME}|g ; \
+		s|lib/opera|lib/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|applications/opera|applications/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|doc/opera|doc/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		/hicolor/s|/opera|/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|packages/opera|packages/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|share/opera|share/${PKGNAMEPREFIX}${PORTNAME}|g ; \
 		s|PREFIX=/usr/local|PREFIX=${PREFIX}|g ; \
-		/OPERA_PERSONALDIR/s|.opera|.${UNIQUENAME}|g ; \
-		s|opera)|${UNIQUENAME})|g ; \
-		s|opera-widget-manager)|${UNIQUENAME}-widget-manager)|g ; \
+		/OPERA_PERSONALDIR/s|.opera|.${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|opera-next)|${PKGNAMEPREFIX}${OPERA_NEXT})|g ; \
+		s|opera-next-widget-manager)|${PKGNAMEPREFIX}${OPERA_NEXT}-widget-manager)|g ; \
 		s|^.*rmdir.*mime/packages.*||g ; \
 		s|^.*GX - bin/uninstall-opera@.*||g ; \
 		s|[$$]tempdir/damaged|${WRKSRC}/damaged|g ; \
 		s|PREFIX/bin/uninstall-opera|PREFIX/bin/disabled-opera|g' \
 			${WRKSRC}/install
 	@${REINPLACE_CMD} -e '/^Name/s|$$| (Linux version)|g ; \
-		/Exec/s|opera|${UNIQUENAME}|g ; \
-		/Icon/s|opera|${UNIQUENAME}|g ; \
-		/StartupWMClass/s|opera|${UNIQUENAME}|g ; \
+		/Exec/s|opera|${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		/Icon/s|opera|${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		/StartupWMClass/s|opera|${PKGNAMEPREFIX}${OPERA_NEXT}|g ; \
 		s|TryExec=.*||g ; /^$$/d' \
 			${WRKSRC}/share/applications/*.desktop
-	@${REINPLACE_CMD} -e 's|lib/opera|lib/${UNIQUENAME}|g ; \
-		s|doc/opera|doc/${UNIQUENAME}|g ; \
-		s|share/opera|share/${UNIQUENAME}|g ; \
-		s|opera-widget-manager|${UNIQUENAME}-widget-manager|g ; \
-		s|opera (1)|${UNIQUENAME} (1)|g ; \
-		s|\.opera@@|\.${UNIQUENAME}@@|g ; \
-		s|B opera@@|B ${UNIQUENAME}@@|g ; \
-		/standards-compliant/s|opera|${UNIQUENAME}|g' \
+	@${REINPLACE_CMD} -e 's|lib/opera|lib/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|doc/opera|doc/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|share/opera|share/${PKGNAMEPREFIX}${PORTNAME}|g ; \
+		s|opera-widget-manager|${PKGNAMEPREFIX}${OPERA_NEXT}-widget-manager|g ; \
+		s|opera (1)|${PKGNAMEPREFIX}${OPERA_NEXT} (1)|g ; \
+		s|\.opera@@|\.${PKGNAMEPREFIX}${OPERA_NEXT}@@|g ; \
+		s|B opera@@|B ${PKGNAMEPREFIX}${OPERA_NEXT}@@|g ; \
+		/standards-compliant/s|opera|${PKGNAMEPREFIX}${OPERA_NEXT}|g' \
 			${WRKSRC}/man/man1/*.1
-	@${REINPLACE_CMD} -e '/<generic-icon/s|opera|${UNIQUENAME}|g' \
+	@${REINPLACE_CMD} -e '/<generic-icon/s|opera|${PKGNAMEPREFIX}${PORTNAME}|g' \
 			${WRKSRC}/share/mime/packages/*.xml
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
