@@ -4,5 +4,6 @@ It is similar to mod_chroot, but uses FreeBSD's specific system call -
 jail. Also mod_jail make it possible to change securelevel into jail
 prison.
 
+Original web site: http://igorpopov.newmail.ru/mod_jail/
+
 WWW: http://code.google.com/p/mod-jail/
-ORIG WWW: http://igorpopov.newmail.ru/mod_jail/
