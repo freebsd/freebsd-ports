@@ -8,8 +8,9 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
+MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 
@@ -57,15 +58,15 @@ CFLAGS+=	-g
 
 .if defined(WITH_EXPAT)
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+= --with-expat=yes
+CONFIGURE_ARGS+=	--with-expat=yes
 .else
-CONFIGURE_ARGS+= --without-expat
+CONFIGURE_ARGS+=	--without-expat
 .endif
 
 .if defined(WITH_PYTHON)
-CONFIGURE_ARGS+= --with-python=${PYTHON_CMD}
+CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else
-CONFIGURE_ARGS+= --without-python
+CONFIGURE_ARGS+=	--without-python
 .endif
 
 # XXX: add OSVERSION check after readline is removed from base
