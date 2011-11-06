@@ -27,12 +27,6 @@ PLIST_SUB=		VERSION="${PORTVERSION}"
 OPTIONS=		CFITSIO "Add cfitsio support (for tests only)" Off \
 				PGPLOT  "Add pgplot support (for tests only)" Off
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES=	${FILESDIR}/6-patch-configure
-.endif
-
 # The configure script unconditionally searches for the cftisio library
 # and uses it if found.
 
@@ -51,4 +45,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${LOCALBASE}/libdata#g' \
 		${WRKSRC}/GNUmakefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

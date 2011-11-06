@@ -92,9 +92,6 @@ PORTDOCS=	*
 .if ${OSVERSION} < 800502
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rpmio_rpmsq.c
 .endif
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib_fs.c
-.endif
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz

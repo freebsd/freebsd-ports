@@ -31,9 +31,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-	${CP} ${FILESDIR}/os-features-config.h ${WRKSRC}/util/
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 post-patch:
@@ -42,9 +41,5 @@ post-patch:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
 
 .include <bsd.port.post.mk>
