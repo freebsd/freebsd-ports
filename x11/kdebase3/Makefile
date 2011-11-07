@@ -43,6 +43,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
 CONFIGURE_ARGS+=--without-java			\
