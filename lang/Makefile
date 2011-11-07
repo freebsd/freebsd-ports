@@ -206,7 +206,7 @@
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
-    SUBDIR += p5-F77
+    SUBDIR += p5-ExtUtils-F77
     SUBDIR += p5-Interpolation
     SUBDIR += p5-JSAN
     SUBDIR += p5-JavaScript-SpiderMonkey
