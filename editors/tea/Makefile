@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	30.1.0
+DISTVERSION=	31.0.0
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
+		http://semiletov.ho.ua/${PORTNAME}-releases/
 
 MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A simple and powerful Qt4-based text editor
@@ -17,7 +18,7 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui script svg xml
+QT_COMPONENTS=	qmake_build moc_build rcc_build gui xml
 
 PLIST_FILES=	bin/${PORTNAME}
 
