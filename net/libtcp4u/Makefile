@@ -15,12 +15,18 @@ DISTNAME=	tcp4u331
 MAINTAINER=	otis@freebsd.sk
 COMMENT=	TCP interface library
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/tcp4u.331/src
 PATCH_WRKSRC=	${WRKDIR}/tcp4u.331
 
 USE_ZIP=	yes
 
-do-configure::
+PLIST_FILES=	include/udp4u.h include/tcp4u.h \
+		include/smtp4u.h include/http4u.h \
+		lib/libtcp4ux.a
+
+do-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/../Unix/Makefile
 	${CP} ${WRKSRC}/../Unix/Makefile ${WRKSRC}
 
