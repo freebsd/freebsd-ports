@@ -14,8 +14,11 @@ DISTNAME=	${PORTNAME}-prg-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	clip
 
-MAINTAINER=	dk.diklab@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object oriented, xBase and Clipper language compatible compiler
+
+DEPRECATED=	No develop anymore for long
+EXPIRATION_DATE=	2011-12-07
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget			\
