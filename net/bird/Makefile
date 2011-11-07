@@ -7,6 +7,7 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.3.4
+PORTREVESION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
