@@ -34,6 +34,30 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9dde9dac-08f4-11e1-af36-003067b2972c">
+    <topic>caml-light - insecure use of temporary files</topic>
+    <affects>
+      <package>
+	<name>caml-light</name>
+	<range><le>0.75</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>caml-light uses uses mktemp() insecurely, and also does
+	  unsafe things in /tmp during make install.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4119</cvename>
+    </references>
+    <dates>
+      <discovery>2011-11-02</discovery>
+      <entry>2011-11-06</entry>
+      <mlist msgid="20111106200911.GC13652@netbsd.org">http://seclists.org/oss-sec/2011/q4/249</mlist>
+    </dates>
+  </vuln>
+
   <vuln vid="54075e39-04ac-11e1-a94e-bcaec565249c">
     <topic>freetype -- Some type 1 fonts handling vulnerabilities </topic>
     <affects>
