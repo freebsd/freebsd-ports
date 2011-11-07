@@ -17,6 +17,8 @@ DISTFILES=	mame${PORTVERSION:S/.//}s.zip:mame \
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	The popular MESS (Multiple Emulator Super System)
 
+BROKEN=		does not compile
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_XORG=	xext xrender xinerama xi
