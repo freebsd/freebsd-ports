@@ -25,12 +25,6 @@ ALL_TARGET=	dist
 PLIST_FILES=	${JAVAJARDIR:C^${PREFIX}/^^}/${PORTNAME}.jar
 PORTDOCS=	"User Guide.pdf" api
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not install on 6.x
-.endif
-
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 
@@ -42,4 +36,4 @@ post-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

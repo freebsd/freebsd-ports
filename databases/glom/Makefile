@@ -45,12 +45,6 @@ INSTALLS_ICONS=	yes
 
 #OPTIONS=	SELF_HOSTING "Host the database locally" on
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.x
-.endif
-
 #.if defined(WITH_SELF_HOSTING)
 # Note: USE_PGSQL has already been set above.
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
@@ -66,4 +60,4 @@ post-patch:
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

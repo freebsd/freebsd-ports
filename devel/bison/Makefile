@@ -39,20 +39,11 @@ PLIST_SUB+=	NLS=""
 .error You have `USE_BISON' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
-.endif
-
-#
-# Requires texinfo 4.8 or above
-#
-.if ${OSVERSION} < 601000
-	@${REINPLACE_CMD} "/^@headitem/d" ${WRKSRC}/doc/bison.texinfo
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -62,4 +53,4 @@ post-install:
 		${EXAMPLESDIR}/calc++
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

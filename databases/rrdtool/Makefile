@@ -46,9 +46,6 @@ OPTIONS=	DEJAVU		"Use DejaVu fonts (requires X11)" off \
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure
-.endif
 
 .if defined(WITH_PYTHON_MODULE)
 USE_PYTHON=	yes

@@ -36,7 +36,7 @@ MAN1=		ace-gperf.1
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 601103 && ${OSVERSION} < 700000) || ${OSVERSION} >= 700015
+.if ${OSVERSION} >= 700015
 EXTRA_PATCHES+=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
 

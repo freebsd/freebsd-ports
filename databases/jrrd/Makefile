@@ -28,12 +28,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/jrrd.jar \
 		lib/libjrrd.la \
 		lib/libjrrd.so
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-
 pre-everything::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Installation settings:"
@@ -41,4 +35,4 @@ pre-everything::
 	@${ECHO_MSG}	"   Location of Java port:    ${JAVA_PORT}"
 	@${ECHO_MSG}	""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

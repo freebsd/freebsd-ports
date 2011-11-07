@@ -41,7 +41,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
+.if ${OSVERSION} > 700032
 CONFIGURE_ARGS+=	--with-ncursesw --enable-widec
 .else
 CONFIGURE_ARGS+=	--with-ncurses

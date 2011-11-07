@@ -69,10 +69,6 @@ PORTDOCS=	*
 MAN1=		sqlite3.1
 .endif
 
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=		${FILESDIR}/pthread_equal_stub
-.endif
-
 #		DEBUG	"Enable debugging & verbose explain"	off \
 # This options used only for debug and is not required during normal work
 # applications or its libraries.

@@ -26,10 +26,6 @@ MAN1=		dwarfdump.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-LIB_DEPENDS+=	elf.0:${PORTSDIR}/devel/libelf
-.endif
-
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
 .endif
