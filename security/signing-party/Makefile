@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.1.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
-
-PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	${PORTNAME}_${PORTVERSION}-1.diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
