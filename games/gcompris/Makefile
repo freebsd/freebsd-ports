@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris
-PORTVERSION=	9.6.1
-PORTREVISION=	1
+PORTVERSION=	11.09
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -34,20 +33,17 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6-2.7
 USE_SDL=	mixer
 USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
-CONFIGURE_ARGS=	--enable-gnet \
-		--enable-dbus
+CONFIGURE_ARGS=	--enable-gnet
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lm"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		gcompris.6
 INFO=		gcompris
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -73,4 +69,4 @@ post-configure:
 	fi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
