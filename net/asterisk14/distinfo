@@ -1,0 +1,4 @@
+SHA256 (asterisk-1.4.42.tar.gz) = 268af5ea802e15c4c93eff4e1113a8051b71315360d1279c27989c6cfc627fc7
+SIZE (asterisk-1.4.42.tar.gz) = 21714727
+SHA256 (asterisk-1.4.42-codec-negotiation-20111017.diff.gz) = 14f101e169f6767f24c972ba4fc501256776ecd117fcfc3ef19609b41ae03b26
+SIZE (asterisk-1.4.42-codec-negotiation-20111017.diff.gz) = 40596
