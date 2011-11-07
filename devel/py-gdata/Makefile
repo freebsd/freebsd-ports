@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.15
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	GData Python Client Library
 
-PROJECTHOST=	gdata-python-client
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
 LICENSE=	ASL
+
+PROJECTHOST=	gdata-python-client
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	yes
 
 # optional modules (see src/gdata/tlslite/utils/cryptomath.py)
 OPTIONS=	M2CRYPTO "Add cryptography and SSL toolkit for Python" off \
