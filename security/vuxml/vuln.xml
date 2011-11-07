@@ -50,11 +50,11 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2011-4119</cvename>
+      <mlist msgid="20111106200911.GC13652@netbsd.org">http://seclists.org/oss-sec/2011/q4/249</mlist>
     </references>
     <dates>
       <discovery>2011-11-02</discovery>
       <entry>2011-11-06</entry>
-      <mlist msgid="20111106200911.GC13652@netbsd.org">http://seclists.org/oss-sec/2011/q4/249</mlist>
     </dates>
   </vuln>
 
