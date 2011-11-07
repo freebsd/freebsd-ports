@@ -21,6 +21,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/es.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/es_trad.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/et.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/fa.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/fi.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/fi_phone.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/fil.pl
@@ -73,6 +74,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/to.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/tr.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/uk.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ur.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/vi.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/wae.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/wo.pl
