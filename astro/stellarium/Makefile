@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY:=	${DISTFILES}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A 3D photo-realistic sky renderer
+COMMENT=	A 3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
@@ -56,7 +56,7 @@ post-patch:
 		${WRKSRC}/doc/CMakeLists.txt
 # avoid picking up the wrong `fixx11h.h' (x11/kdelibs3 port installs one that
 # doesn't handle FontChange)
-	@${FIND} ${WRKSRC}/src ${WRKSRC}/plugins -type f -print0 | \
+	@${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
 	@cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
 
