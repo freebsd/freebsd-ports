@@ -172,6 +172,15 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/client.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/data.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/multidomain/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyo
@@ -187,12 +196,6 @@
 %%PYTHON_SITELIBDIR%%/gdata/auth.py
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyc
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyo
-%%PYTHON_SITELIBDIR%%/gdata/base/__init__.py
-%%PYTHON_SITELIBDIR%%/gdata/base/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gdata/base/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gdata/base/service.py
-%%PYTHON_SITELIBDIR%%/gdata/base/service.pyc
-%%PYTHON_SITELIBDIR%%/gdata/base/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyo
@@ -256,6 +259,15 @@
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.py
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/client.py
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/data.py
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contentforshopping/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/core.py
 %%PYTHON_SITELIBDIR%%/gdata/core.pyc
 %%PYTHON_SITELIBDIR%%/gdata/core.pyo
@@ -609,14 +621,15 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/dublincore
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/contentforshopping
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar_resource
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/books
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/base
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/organization
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/multidomain
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
@@ -638,11 +651,20 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/data_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/mgmt_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/adminsettings_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/emailsettings_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/migration_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/org_unit_sites.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth2_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/css/index.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/footer.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/header.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/images/google-small.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/js/index.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/login.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/provisioning_oauth_example/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authsub/secure_authsub.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseAttributesQueryExample.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseItemTypesQueryExample.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseQueryExample.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/dryRunInsert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExampleV1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/app/app.yaml
@@ -658,16 +680,19 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/oauth-appengine/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/oauth-appengine/oauth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calendarExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar_resource/calendar_resource_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codesearch/CodesearchExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/profiles_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/unshare_profiles.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/add_batch_products.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/add_product.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/ca_insert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/ca_list.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/list_products.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/resumable_upload_sample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_v3_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/samplerunner.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance/test_finance.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/2_legged_oauth.py
@@ -716,13 +741,17 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contentforshopping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/codesearch
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar_resource
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger/oauth-appengine/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger/oauth-appengine
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger/app
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/authsub
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps/provisioning_oauth_example/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps/provisioning_oauth_example/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps/provisioning_oauth_example/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps/provisioning_oauth_example
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/analytics
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
