@@ -1,4 +1,5 @@
 bin/nwdiag
+bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -39,12 +40,60 @@ bin/nwdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst/directives.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramDraw.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramDraw.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramDraw.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramMetrics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramMetrics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/DiagramMetrics.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/builder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/builder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/builder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/command.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/diagparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/diagparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/diagparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag_sphinxhelper.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils/rst
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils/rst
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
