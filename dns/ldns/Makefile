@@ -296,4 +296,4 @@ post-install:
 	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
