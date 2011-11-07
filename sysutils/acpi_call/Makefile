@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acpi_call
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://projects.ukrweb.net/files/ \
 		http://imax.in.ua/files/
