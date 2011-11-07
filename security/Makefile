@@ -521,6 +521,7 @@
     SUBDIR += p5-Mcrypt
     SUBDIR += p5-Module-Signature
     SUBDIR += p5-Net-Daemon-SSL
+    SUBDIR += p5-Net-OpenID-Common
     SUBDIR += p5-Net-OpenID-JanRain
     SUBDIR += p5-Net-OpenID-Server
     SUBDIR += p5-Net-Radius-Server
