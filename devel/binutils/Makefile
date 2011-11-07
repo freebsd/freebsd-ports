@@ -75,12 +75,6 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if ${OSVERSION} < 700000
-PLIST_SUB+=	POST7="@comment " PRE7=""
-.else
-PLIST_SUB+=	POST7="" PRE7="@comment "
-.endif
-
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
 .endif

@@ -24,12 +24,6 @@ USE_PERL5_RUN=	yes
 
 MAN1=	cscout.1 cswc.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
-.endif
-
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \
@@ -67,4 +61,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

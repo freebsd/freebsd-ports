@@ -82,10 +82,6 @@ pre-everything::
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-deprecated-declarations
 
-.if ${OSVERSION} < 700000
-IGNORE=	needs 7.X or higher
-.endif
-
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	--enable-debug
 .endif

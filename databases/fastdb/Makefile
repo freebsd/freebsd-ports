@@ -37,9 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${DOCSDIR}
 .endif
 
-post-patch:
-.if ${OSVERSION} < 601105
-	${REINPLACE_CMD} -e 's|^#define HAVE_GETHOSTBYNAME_R||' ${WRKSRC}/inc/config.h
-.endif
-
 .include <bsd.port.post.mk>

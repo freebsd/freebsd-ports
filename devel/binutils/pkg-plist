@@ -21,8 +21,7 @@ include/dis-asm.h
 include/symcat.h
 lib/libbfd.a
 lib/libbfd.la
-%%PRE7%%lib/elf/libiberty.a
-%%POST7%%lib/libiberty.a
+lib/libiberty.a
 lib/libopcodes.a
 lib/libopcodes.la
 %%NLS%%share/locale/da/LC_MESSAGES/bfd.mo
