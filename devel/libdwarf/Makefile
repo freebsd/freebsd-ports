@@ -16,12 +16,6 @@ COMMENT=	A library to analyze DWARF debugging information in ELF files
 
 INSTALL_CONFLICT=	bsdlibdwarf*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libelf.so.0:${PORTSDIR}/devel/libelf
-.endif
-
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/libdwarf
 
 GNU_CONFIGURE=	yes
@@ -41,4 +35,4 @@ do-install:
 			${INSTALL_DATA} ${WRKSRC}/$$f ${PREFIX}/share/doc/libdwarf ; \
 		done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

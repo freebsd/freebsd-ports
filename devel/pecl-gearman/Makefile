@@ -26,10 +26,4 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP=4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 700000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

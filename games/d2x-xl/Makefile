@@ -46,10 +46,6 @@ OPTIONS=	OPENGL "Use OpenGL for 3D graphics" on
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} <= 700000
-BROKEN=		does not compile
-.endif
-
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		gl glu
 CONFIGURE_ARGS+=--with-opengl

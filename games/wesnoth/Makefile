@@ -64,10 +64,6 @@ OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif

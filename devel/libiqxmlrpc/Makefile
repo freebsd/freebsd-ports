@@ -20,14 +20,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs\
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's,libxml++-1.0,libxml++-2.6,g' ${WRKSRC}/configure 
 	@${REINPLACE_CMD} 's,{libdir}/pkgconfig,{prefix}/libdata/pkgconfig,' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

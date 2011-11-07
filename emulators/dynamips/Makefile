@@ -42,7 +42,7 @@ DYNAMIPS_ARCH=	"amd64"
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-.if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
+.if ${OSVERSION} < 700021
 BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
 .endif
 

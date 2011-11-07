@@ -51,10 +51,6 @@ CXXFLAGS=	# empty
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=DEBUG2 -DTRACE_SYNC=true -DSYNCDEBUG=true
 .endif
 
-.if ${OSVERSION} < 700042
-BROKEN=		does not build in 6.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
 		${WRKSRC}/tools/unitsync/CMakeLists.txt

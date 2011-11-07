@@ -47,13 +47,7 @@ CONFIGURE_ARGS+=	--disable-terminal
 PLIST_SUB+=	VTE="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build
-.endif
-
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

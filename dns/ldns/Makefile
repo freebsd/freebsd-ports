@@ -39,8 +39,6 @@ PLIST_SUB+=	PYLDNS=""
 PLIST_SUB+=	PYLDNS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h
 
@@ -266,13 +264,8 @@ MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 \
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.if defined(WITH_ECDSA) && ${OSVERSION} > 700000
+.if defined(WITH_ECDSA)
 CONFIGURE_ARGS+=--enable-ecdsa
-.endif
-
-.if ${OSVERSION} < 700000
-NO_SHA2=	--disable-sha2
-CONFIGURE_ARGS+=${NO_SHA2}
 .endif
 
 post-configure:

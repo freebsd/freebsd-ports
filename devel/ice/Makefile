@@ -68,9 +68,5 @@ post-patch:
 		${WRKSRC}/cpp/src/ca/Makefile
 	${REINPLACE_CMD} '/LICENSE/s/prefix/install_slicedir/' \
 		${WRKSRC}/config/Make.common.rules
-.if ${OSVERSION} < 700000
-	${REINPLACE_CMD} 's|__APPLE__|__FreeBSD__|' \
-		${WRKSRC}/cpp/src/IceUtil/Cond.cpp
-.endif
 
 .include <bsd.port.post.mk>

@@ -24,10 +24,6 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042
-LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
 .endif

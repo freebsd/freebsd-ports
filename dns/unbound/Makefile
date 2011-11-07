@@ -59,17 +59,6 @@ WITH_OPENSSL_PORT=	yes
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
-.include <bsd.port.pre.mk>
-
-# OpenSSL on 6.x has no sha256 functions
-.if ${OSVERSION} < 700000
-CONFIGURE_ARGS+=	--disable-sha2
-.endif
-
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
-.endif
-
 .if defined(WITH_LIBEVENT)
 LIB_DEPENDS+=		event-1.4:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
@@ -94,4 +83,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
