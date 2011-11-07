@@ -1,0 +1,1085 @@
+commit a7f23f581f5e3efe92ec97dfca7d01c66f31ab04
+Author: Ondrej Zajicek <santiago@crfreenet.org>
+Date:   Mon Nov 7 00:31:23 2011 +0100
+
+    Implements protocol templates.
+    
+    Based on the patch from Alexander V. Chernikov.
+    Extended to support almost all protocols.
+    Uses 'protocol bgp NAME from TEMPLATE { ... }' syntax.
+
+diff --git a/conf/cf-lex.l b/conf/cf-lex.l
+index 02ba4b3..ddfe8c7 100644
+--- conf/cf-lex.l
++++ conf/cf-lex.l
+@@ -533,6 +533,8 @@ cf_symbol_class_name(struct symbol *sym)
+       return "routing table";
+     case SYM_IPA:
+       return "network address";
++    case SYM_TEMPLATE:
++      return "protocol template";
+     default:
+       return "unknown type";
+     }
+diff --git a/conf/conf.c b/conf/conf.c
+index 5bdeece..4b605b3 100644
+--- conf/conf.c
++++ conf/conf.c
+@@ -377,3 +377,18 @@ cfg_strdup(char *c)
+   memcpy(z, c, l);
+   return z;
+ }
++
++
++void
++cfg_copy_list(list *dest, list *src, unsigned node_size)
++{
++  node *dn, *sn;
++
++  init_list(dest);
++  WALK_LIST(sn, *src)
++  {
++    dn = cfg_alloc(node_size);
++    memcpy(dn, sn, node_size);
++    add_tail(dest, dn);
++  }
++}
+diff --git a/conf/conf.h b/conf/conf.h
+index 142c6ad..8753baf 100644
+--- conf/conf.h
++++ conf/conf.h
+@@ -84,6 +84,7 @@ extern linpool *cfg_mem;
+ #define cfg_allocu(size) lp_allocu(cfg_mem, size)
+ #define cfg_allocz(size) lp_allocz(cfg_mem, size)
+ char *cfg_strdup(char *c);
++void cfg_copy_list(list *dest, list *src, unsigned node_size);
+ 
+ /* Lexer */
+ 
+@@ -108,6 +109,7 @@ struct symbol {
+ #define SYM_FILTER 4
+ #define SYM_TABLE 5
+ #define SYM_IPA 6
++#define SYM_TEMPLATE 7
+ 
+ #define SYM_VARIABLE 0x100	/* 0x100-0x1ff are variable types */
+ 
+diff --git a/doc/bird.conf.example b/doc/bird.conf.example
+index 339898f..5e07ab5 100644
+--- doc/bird.conf.example
++++ doc/bird.conf.example
+@@ -202,3 +202,16 @@ protocol static {
+ #		reject;
+ #	};
+ #}
++# 
++# Template usage example
++#template bgp rr_client {
++#	disabled;
++#	local as 65000;
++#	multihop;
++#	rr client;
++#	rr cluster id 1.0.0.1;
++#}
++#
++#protocol bgp rr_abcd from rr_client {
++#	neighbor 10.1.4.7 as 65000;
++#}
+diff --git a/doc/bird.sgml b/doc/bird.sgml
+index d454629..7f53f02 100644
+--- doc/bird.sgml
++++ doc/bird.sgml
+@@ -296,10 +296,21 @@ protocol rip {
+ 	<tag>function <m/name/ (<m/parameters/) <m/local variables/ { <m/commands/ }</tag> Define a function. You can learn more
+ 	about functions in the following chapter.
+  
+-	<tag>protocol rip|ospf|bgp|... <m/[name]/ { <m>protocol options</m> }</tag> Define a protocol
+-	instance called <cf><m/name/</cf> (or with a name like "rip5" generated automatically if you don't specify any <cf><m/name/</cf>). You can learn more
+-	about configuring protocols in their own chapters. You can run more than one instance of
+-	most protocols (like RIP or BGP). By default, no instances are configured.
++	<tag>protocol rip|ospf|bgp|... [<m/name/ [from <m/name2/]] { <m>protocol options</m> }</tag>
++	Define a protocol instance called <cf><m/name/</cf> (or with a name like "rip5" generated
++	automatically if you don't specify any <cf><m/name/</cf>). You can learn more about
++	configuring protocols in their own chapters. When <cf>from <m/name2/</cf> expression is
++	used, initial protocol options are taken from protocol or template <cf><m/name2/</cf>
++	You can run more than one instance of most protocols (like RIP or BGP). By default, no
++	instances are configured.
++
++	<tag>template rip|bgp|... [<m/name/ [from <m/name2/]] { <m>protocol options</m> }</tag>
++	Define a protocol template instance called <cf><m/name/</cf> (or with a name like "bgp1"
++	generated automatically if you don't specify any <cf><m/name/</cf>). Protocol templates can
++	be used to group common options when many similarly configured protocol instances are to be
++	defined. Protocol instances (and other templates) can use templates by using <cf/from/
++	expression and the name of the template. At the moment templates (and <cf/from/ expression)
++	are not implemented for OSPF protocol.
+ 
+ 	<tag>define <m/constant/ = (<m/expression/)|<m/number/|<m/IP address/</tag>
+ 	Define a constant. You can use it later in every place you could use a simple integer or an IP address.
+diff --git a/nest/config.Y b/nest/config.Y
+index dd4a9e0..a6baf4e 100644
+--- nest/config.Y
++++ nest/config.Y
+@@ -26,7 +26,7 @@ static int password_id;
+ static inline void
+ reset_passwords(void)
+ {
+- this_p_list = NULL;
++  this_p_list = NULL;
+ }
+ 
+ static inline list *
+@@ -37,10 +37,11 @@ get_passwords(void)
+   return rv;
+ }
+ 
++#define DIRECT_CFG ((struct rt_dev_config *) this_proto)
+ 
+ CF_DECLS
+ 
+-CF_KEYWORDS(ROUTER, ID, PROTOCOL, PREFERENCE, DISABLED, DEBUG, ALL, OFF, DIRECT)
++CF_KEYWORDS(ROUTER, ID, PROTOCOL, TEMPLATE, PREFERENCE, DISABLED, DEBUG, ALL, OFF, DIRECT)
+ CF_KEYWORDS(INTERFACE, IMPORT, EXPORT, FILTER, NONE, TABLE, STATES, ROUTES, FILTERS)
+ CF_KEYWORDS(PASSWORD, FROM, PASSIVE, TO, ID, EVENTS, PACKETS, PROTOCOLS, INTERFACES)
+ CF_KEYWORDS(PRIMARY, STATS, COUNT, FOR, COMMANDS, PREEXPORT, GENERATE)
+@@ -58,7 +59,7 @@ CF_ENUM(T_ENUM_RTD, RTD_, ROUTER, DEVICE, BLACKHOLE, UNREACHABLE, PROHIBIT, MULT
+ %type <r> rtable
+ %type <s> optsym
+ %type <ra> r_args
+-%type <i> echo_mask echo_size debug_mask debug_list debug_flag mrtdump_mask mrtdump_list mrtdump_flag export_or_preexport
++%type <i> proto_start echo_mask echo_size debug_mask debug_list debug_flag mrtdump_mask mrtdump_list mrtdump_flag export_or_preexport
+ %type <ps> proto_patt proto_patt2
+ 
+ CF_GRAMMAR
+@@ -115,20 +116,30 @@ newtab: TABLE SYM {
+ 
+ CF_ADDTO(conf, proto)
+ 
+-proto_start: PROTOCOL
++proto_start:
++   PROTOCOL { $$ = SYM_PROTO; }
++ | TEMPLATE { $$ = SYM_TEMPLATE; }
+  ;
+ 
+ proto_name:
+    /* EMPTY */ {
+      struct symbol *s = cf_default_name(this_proto->protocol->template, &this_proto->protocol->name_counter);
+-     s->class = SYM_PROTO;
++     s->class = this_proto->class;
+      s->def = this_proto;
+      this_proto->name = s->name;
+      }
+  | SYM {
+-     cf_define_symbol($1, SYM_PROTO, this_proto);
++     cf_define_symbol($1, this_proto->class, this_proto);
+      this_proto->name = $1->name;
+    }
++ | SYM FROM SYM {
++     if (($3->class != SYM_TEMPLATE) && ($3->class != SYM_PROTO)) cf_error("Template or protocol name expected");
++
++     cf_define_symbol($1, this_proto->class, this_proto);
++     this_proto->name = $1->name;
++
++     proto_copy_config(this_proto, $3->def);
++   }
+  ;
+ 
+ proto_item:
+@@ -207,10 +218,9 @@ iface_patt_list:
+ CF_ADDTO(proto, dev_proto '}')
+ 
+ dev_proto_start: proto_start DIRECT {
+-     struct rt_dev_config *p = proto_config_new(&proto_device, sizeof(struct rt_dev_config));
+-     this_proto = &p->c;
+-     p->c.preference = DEF_PREF_DIRECT;
+-     init_list(&p->iface_list);
++     this_proto = proto_config_new(&proto_device, sizeof(struct rt_dev_config), $1);
++     this_proto->preference = DEF_PREF_DIRECT;
++     init_list(&DIRECT_CFG->iface_list);
+    }
+  ;
+ 
+@@ -222,9 +232,8 @@ dev_proto:
+ 
+ dev_iface_init:
+    /* EMPTY */ {
+-     struct rt_dev_config *p = (void *) this_proto;
+      this_ipatt = cfg_allocz(sizeof(struct iface_patt));
+-     add_tail(&p->iface_list, NODE this_ipatt);
++     add_tail(&DIRECT_CFG->iface_list, NODE this_ipatt);
+      init_list(&this_ipatt->ipn_list);
+    }
+  ;
+diff --git a/nest/proto.c b/nest/proto.c
+index 4a154d5..d55c348 100644
+--- nest/proto.c
++++ nest/proto.c
+@@ -175,6 +175,7 @@ proto_flush_hooks(struct proto *p)
+  * proto_config_new - create a new protocol configuration
+  * @pr: protocol the configuration will belong to
+  * @size: size of the structure including generic data
++ * @class: SYM_PROTO or SYM_TEMPLATE
+  *
+  * Whenever the configuration file says that a new instance
+  * of a routing protocol should be created, the parser calls
+@@ -183,16 +184,23 @@ proto_flush_hooks(struct proto *p)
+  * containing all the generic items followed by protocol-specific
+  * ones). Also, the configuration entry gets added to the list
+  * of protocol instances kept in the configuration.
++ *
++ * The function is also used to create protocol templates (when class
++ * SYM_TEMPLATE is specified), the only difference is that templates
++ * are not added to the list of protocol instances and therefore not
++ * initialized during protos_commit()).
+  */
+ void *
+-proto_config_new(struct protocol *pr, unsigned size)
++proto_config_new(struct protocol *pr, unsigned size, int class)
+ {
+   struct proto_config *c = cfg_allocz(size);
+ 
+-  add_tail(&new_config->protos, &c->n);
++  if (class == SYM_PROTO)
++    add_tail(&new_config->protos, &c->n);
+   c->global = new_config;
+   c->protocol = pr;
+   c->name = pr->name;
++  c->class = class;
+   c->out_filter = FILTER_REJECT;
+   c->table = c->global->master_rtc;
+   c->debug = new_config->proto_default_debug;
+@@ -201,6 +209,50 @@ proto_config_new(struct protocol *pr, unsigned size)
+ }
+ 
+ /**
++ * proto_copy_config - copy a protocol configuration
++ * @dest: destination protocol configuration
++ * @src: source protocol configuration
++ *
++ * Whenever a new instance of a routing protocol is created from the
++ * template, proto_copy_config() is called to copy a content of
++ * the source protocol configuration to the new protocol configuration.
++ * Name, class and a node in protos list of @dest are kept intact.
++ * copy_config() protocol hook is used to copy protocol-specific data.
++ */
++void
++proto_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  node old_node;
++  int old_class;
++  char *old_name;
++
++  if (dest->protocol != src->protocol)
++    cf_error("Can't copy configuration from a different protocol type");
++
++  if (dest->protocol->copy_config == NULL)
++    cf_error("Inheriting configuration for %s is not supported", src->protocol->name);
++
++  DBG("Copying configuration from %s to %s\n", src->name, dest->name);
++
++  /* 
++   * Copy struct proto_config here. Keep original node, class and name.
++   * protocol-specific config copy is handled by protocol copy_config() hook
++   */
++
++  old_node = dest->n;
++  old_class = dest->class;
++  old_name = dest->name;
++
++  memcpy(dest, src, sizeof(struct proto_config));
++
++  dest->n = old_node;
++  dest->class = old_class;
++  dest->name = old_name;
++
++  dest->protocol->copy_config(dest, src);
++}
++
++/**
+  * protos_preconfig - pre-configuration processing
+  * @c: new configuration
+  *
+@@ -230,7 +282,8 @@ protos_preconfig(struct config *c)
+  * @c: new configuration
+  *
+  * This function calls the postconfig() hooks of all protocol
+- * instances specified in configuration @c.
++ * instances specified in configuration @c. The hooks are not
++ * called for protocol templates.
+  */
+ void
+ protos_postconfig(struct config *c)
+@@ -366,14 +419,15 @@ protos_commit(struct config *new, struct config *old, int force_reconfig, int ty
+ {
+   struct proto_config *oc, *nc;
+   struct proto *p, *n;
++  struct symbol *sym;
+ 
+   DBG("protos_commit:\n");
+   if (old)
+     {
+       WALK_LIST(oc, old->protos)
+ 	{
+-	  struct proto *p = oc->proto;
+-	  struct symbol *sym = cf_find_symbol(oc->name);
++	  p = oc->proto;
++	  sym = cf_find_symbol(oc->name);
+ 	  if (sym && sym->class == SYM_PROTO && !new->shutdown)
+ 	    {
+ 	      /* Found match, let's check if we can smoothly switch to new configuration */
+diff --git a/nest/protocol.h b/nest/protocol.h
+index f95905a..a7518c2 100644
+--- nest/protocol.h
++++ nest/protocol.h
+@@ -53,6 +53,7 @@ struct protocol {
+   void (*get_route_info)(struct rte *, byte *buf, struct ea_list *attrs); /* Get route information (for `show route' command) */
+   int (*get_attr)(struct eattr *, byte *buf, int buflen);	/* ASCIIfy dynamic attribute (returns GA_*) */
+   void (*show_proto_info)(struct proto *);	/* Show protocol info (for `show protocols all' command) */
++  void (*copy_config)(struct proto_config *, struct proto_config *);	/* Copy config from given protocol instance */
+ };
+ 
+ void protos_build(void);
+@@ -85,12 +86,15 @@ struct proto_config {
+   struct proto *proto;			/* Instance we've created */
+   char *name;
+   char *dsc;
++  int class;				/* SYM_PROTO or SYM_TEMPLATE */
+   u32 debug, mrtdump;			/* Debugging bitfields, both use D_* constants */
+   unsigned preference, disabled;	/* Generic parameters */
+   u32 router_id;			/* Protocol specific router ID */
+   struct rtable_config *table;		/* Table we're attached to */
+   struct filter *in_filter, *out_filter; /* Attached filters */
+ 
++  /* Check proto_reconfigure() and proto_copy_config() after changing struct proto_config */
++
+   /* Protocol-specific data follow... */
+ };
+ 
+@@ -203,9 +207,14 @@ struct proto_spec {
+ 
+ 
+ void *proto_new(struct proto_config *, unsigned size);
+-void *proto_config_new(struct protocol *, unsigned size);
++void *proto_config_new(struct protocol *, unsigned size, int class);
++void proto_copy_config(struct proto_config *dest, struct proto_config *src);
+ void proto_request_feeding(struct proto *p);
+ 
++static inline void
++proto_copy_rest(struct proto_config *dest, struct proto_config *src, unsigned size)
++{ memcpy(dest + 1, src + 1, size - sizeof(struct proto_config)); }
++
+ void proto_cmd_show(struct proto *, unsigned int, int);
+ void proto_cmd_disable(struct proto *, unsigned int, int);
+ void proto_cmd_enable(struct proto *, unsigned int, int);
+diff --git a/nest/rt-dev.c b/nest/rt-dev.c
+index 239bd26..497ee80 100644
+--- nest/rt-dev.c
++++ nest/rt-dev.c
+@@ -92,9 +92,24 @@ dev_reconfigure(struct proto *p, struct proto_config *new)
+   return iface_patts_equal(&o->iface_list, &n->iface_list, NULL);
+ }
+ 
++static void
++dev_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  struct rt_dev_config *d = (struct rt_dev_config *) dest;
++  struct rt_dev_config *s = (struct rt_dev_config *) src;
++
++  /*
++   * We copy iface_list as ifaces can be shared by more direct protocols.
++   * Copy suffices to be is shallow, because new nodes can be added, but
++   * old nodes cannot be modified (although they contain internal lists).
++   */
++  cfg_copy_list(&d->iface_list, &s->iface_list, sizeof(struct iface_patt));
++}
++
+ struct protocol proto_device = {
+   name:		"Direct",
+   template:	"direct%d",
+   init:		dev_init,
+-  reconfigure:	dev_reconfigure
++  reconfigure:	dev_reconfigure,
++  copy_config:	dev_copy_config
+ };
+diff --git a/nest/rt-dev.h b/nest/rt-dev.h
+index 64f2cd9..c36d074 100644
+--- nest/rt-dev.h
++++ nest/rt-dev.h
+@@ -11,7 +11,7 @@
+ 
+ struct rt_dev_config {
+   struct proto_config c;
+-  list iface_list;
++  list iface_list;		/* list of struct iface_patt */
+ };
+ 
+ #endif
+diff --git a/proto/bgp/bgp.c b/proto/bgp/bgp.c
+index 4e4ca9f..675342d 100644
+--- proto/bgp/bgp.c
++++ proto/bgp/bgp.c
+@@ -919,6 +919,73 @@ bgp_init(struct proto_config *C)
+   return P;
+ }
+ 
++
++void
++bgp_check_config(struct bgp_config *c)
++{
++  int internal = (c->local_as == c->remote_as);
++
++  /* Do not check templates at all */
++  if (c->c.class == SYM_TEMPLATE)
++    return;
++
++  if (!c->local_as)
++    cf_error("Local AS number must be set");
++
++  if (!c->remote_as)
++    cf_error("Neighbor must be configured");
++
++  if (!(c->capabilities && c->enable_as4) && (c->remote_as > 0xFFFF))
++    cf_error("Neighbor AS number out of range (AS4 not available)");
++
++  if (!internal && c->rr_client)
++    cf_error("Only internal neighbor can be RR client");
++
++  if (internal && c->rs_client)
++    cf_error("Only external neighbor can be RS client");
++
++  if (c->multihop && (c->gw_mode == GW_DIRECT))
++    cf_error("Multihop BGP cannot use direct gateway mode");
++
++  /* Different default based on rs_client */
++  if (!c->missing_lladdr)
++    c->missing_lladdr = c->rs_client ? MLL_IGNORE : MLL_SELF;
++
++  /* Different default for gw_mode */
++  if (!c->gw_mode)
++    c->gw_mode = (c->multihop || internal) ? GW_RECURSIVE : GW_DIRECT;
++}
++
++static int
++bgp_reconfigure(struct proto *P, struct proto_config *C)
++{
++  struct bgp_config *new = (struct bgp_config *) C;
++  struct bgp_proto *p = (struct bgp_proto *) P;
++  struct bgp_config *old = p->cf;
++
++  int same = !memcmp(((byte *) old) + sizeof(struct proto_config),
++		     ((byte *) new) + sizeof(struct proto_config),
++		     // password item is last and must be checked separately
++		     OFFSETOF(struct bgp_config, password) - sizeof(struct proto_config))
++    && ((!old->password && !new->password)
++	|| (old->password && new->password && !strcmp(old->password, new->password)))
++    && (get_igp_table(old) == get_igp_table(new));
++
++  /* We should update our copy of configuration ptr as old configuration will be freed */
++  if (same)
++    p->cf = new;
++
++  return same;
++}
++
++static void
++bgp_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  /* Just a shallow copy */
++  proto_copy_rest(dest, src, sizeof(struct bgp_config));
++}
++
++
+ /**
+  * bgp_error - report a protocol error
+  * @c: connection
+@@ -983,38 +1050,6 @@ bgp_store_error(struct bgp_proto *p, struct bgp_conn *c, u8 class, u32 code)
+   p->last_error_code = code;
+ }
+ 
+-void
+-bgp_check(struct bgp_config *c)
+-{
+-  int internal = (c->local_as == c->remote_as);
+-
+-  if (!c->local_as)
+-    cf_error("Local AS number must be set");
+-
+-  if (!c->remote_as)
+-    cf_error("Neighbor must be configured");
+-
+-  if (!(c->capabilities && c->enable_as4) && (c->remote_as > 0xFFFF))
+-    cf_error("Neighbor AS number out of range (AS4 not available)");
+-
+-  if (!internal && c->rr_client)
+-    cf_error("Only internal neighbor can be RR client");
+-
+-  if (internal && c->rs_client)
+-    cf_error("Only external neighbor can be RS client");
+-
+-  if (c->multihop && (c->gw_mode == GW_DIRECT))
+-    cf_error("Multihop BGP cannot use direct gateway mode");
+-
+-  /* Different default based on rs_client */
+-  if (!c->missing_lladdr)
+-    c->missing_lladdr = c->rs_client ? MLL_IGNORE : MLL_SELF;
+-
+-  /* Different default for gw_mode */
+-  if (!c->gw_mode)
+-    c->gw_mode = (c->multihop || internal) ? GW_RECURSIVE : GW_DIRECT;
+-}
+-
+ static char *bgp_state_names[] = { "Idle", "Connect", "Active", "OpenSent", "OpenConfirm", "Established", "Close" };
+ static char *bgp_err_classes[] = { "", "Error: ", "Socket: ", "Received: ", "BGP Error: ", "Automatic shutdown: ", ""};
+ static char *bgp_misc_errors[] = { "", "Neighbor lost", "Invalid next hop", "Kernel MD5 auth failed", "No listening socket" };
+@@ -1124,28 +1159,6 @@ bgp_show_proto_info(struct proto *P)
+     }
+ }
+ 
+-static int
+-bgp_reconfigure(struct proto *P, struct proto_config *C)
+-{
+-  struct bgp_config *new = (struct bgp_config *) C;
+-  struct bgp_proto *p = (struct bgp_proto *) P;
+-  struct bgp_config *old = p->cf;
+-
+-  int same = !memcmp(((byte *) old) + sizeof(struct proto_config),
+-		     ((byte *) new) + sizeof(struct proto_config),
+-		     // password item is last and must be checked separately
+-		     OFFSETOF(struct bgp_config, password) - sizeof(struct proto_config))
+-    && ((!old->password && !new->password)
+-	|| (old->password && new->password && !strcmp(old->password, new->password)))
+-    && (get_igp_table(old) == get_igp_table(new));
+-
+-  /* We should update our copy of configuration ptr as old configuration will be freed */
+-  if (same)
+-    p->cf = new;
+-
+-  return same;
+-}
+-
+ struct protocol proto_bgp = {
+   name:			"BGP",
+   template:		"bgp%d",
+@@ -1155,6 +1168,7 @@ struct protocol proto_bgp = {
+   shutdown:		bgp_shutdown,
+   cleanup:		bgp_cleanup,
+   reconfigure:		bgp_reconfigure,
++  copy_config:		bgp_copy_config,
+   get_status:		bgp_get_status,
+   get_attr:		bgp_get_attr,
+   get_route_info:	bgp_get_route_info,
+diff --git a/proto/bgp/bgp.h b/proto/bgp/bgp.h
+index 16e8ea8..437ba33 100644
+--- proto/bgp/bgp.h
++++ proto/bgp/bgp.h
+@@ -141,7 +141,7 @@ extern struct linpool *bgp_linpool;
+ 
+ 
+ void bgp_start_timer(struct timer *t, int value);
+-void bgp_check(struct bgp_config *c);
++void bgp_check_config(struct bgp_config *c);
+ void bgp_error(struct bgp_conn *c, unsigned code, unsigned subcode, byte *data, int len);
+ void bgp_close_conn(struct bgp_conn *c);
+ void bgp_update_startup_delay(struct bgp_proto *p);
+diff --git a/proto/bgp/config.Y b/proto/bgp/config.Y
+index 19d757a..03c233d 100644
+--- proto/bgp/config.Y
++++ proto/bgp/config.Y
+@@ -29,10 +29,10 @@ CF_KEYWORDS(BGP, LOCAL, NEIGHBOR, AS, HOLD, TIME, CONNECT, RETRY,
+ 
+ CF_GRAMMAR
+ 
+-CF_ADDTO(proto, bgp_proto '}' { bgp_check(BGP_CFG); } )
++CF_ADDTO(proto, bgp_proto '}' { bgp_check_config(BGP_CFG); } )
+ 
+ bgp_proto_start: proto_start BGP {
+-     this_proto = proto_config_new(&proto_bgp, sizeof(struct bgp_config));
++     this_proto = proto_config_new(&proto_bgp, sizeof(struct bgp_config), $1);
+      this_proto->preference = DEF_PREF_BGP;
+      BGP_CFG->hold_time = 240;
+      BGP_CFG->connect_retry_time = 120;
+diff --git a/proto/ospf/config.Y b/proto/ospf/config.Y
+index ec7da8e..4ada41e 100644
+--- proto/ospf/config.Y
++++ proto/ospf/config.Y
+@@ -128,7 +128,7 @@ CF_GRAMMAR
+ CF_ADDTO(proto, ospf_proto '}' { ospf_proto_finish(); } )
+ 
+ ospf_proto_start: proto_start OSPF {
+-     this_proto = proto_config_new(&proto_ospf, sizeof(struct ospf_config));
++     this_proto = proto_config_new(&proto_ospf, sizeof(struct ospf_config), $1);
+      this_proto->preference = DEF_PREF_OSPF;
+      init_list(&OSPF_CFG->area_list);
+      init_list(&OSPF_CFG->vlink_list);
+diff --git a/proto/ospf/ospf.h b/proto/ospf/ospf.h
+index 2e99b0f..60a34fb 100644
+--- proto/ospf/ospf.h
++++ proto/ospf/ospf.h
+@@ -85,8 +85,8 @@ struct ospf_config
+   byte rfc1583;
+   byte abr;
+   int ecmp;
+-  list area_list;
+-  list vlink_list;
++  list area_list;		/* list of struct ospf_area_config */
++  list vlink_list;		/* list of struct ospf_iface_patt */
+ };
+ 
+ struct nbma_node
+diff --git a/proto/pipe/config.Y b/proto/pipe/config.Y
+index e1c981b..4478afe 100644
+--- proto/pipe/config.Y
++++ proto/pipe/config.Y
+@@ -23,7 +23,7 @@ CF_GRAMMAR
+ CF_ADDTO(proto, pipe_proto '}')
+ 
+ pipe_proto_start: proto_start PIPE {
+-     this_proto = proto_config_new(&proto_pipe, sizeof(struct pipe_config));
++     this_proto = proto_config_new(&proto_pipe, sizeof(struct pipe_config), $1);
+      this_proto->preference = DEF_PREF_PIPE;
+      PIPE_CFG->mode = PIPE_TRANSPARENT;
+   }
+diff --git a/proto/pipe/pipe.c b/proto/pipe/pipe.c
+index e557097..420c5a9 100644
+--- proto/pipe/pipe.c
++++ proto/pipe/pipe.c
+@@ -165,14 +165,6 @@ pipe_postconfig(struct proto_config *C)
+     cf_error("Primary table and peer table must be different");
+ }
+ 
+-static void
+-pipe_get_status(struct proto *P, byte *buf)
+-{
+-  struct pipe_proto *p = (struct pipe_proto *) P;
+-
+-  bsprintf(buf, "%c> %s", (p->mode == PIPE_OPAQUE) ? '-' : '=', p->peer->name);
+-}
+-
+ static int
+ pipe_reconfigure(struct proto *P, struct proto_config *new)
+ {
+@@ -186,6 +178,21 @@ pipe_reconfigure(struct proto *P, struct proto_config *new)
+   return 1;
+ }
+ 
++static void
++pipe_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  /* Just a shallow copy, not many items here */
++  proto_copy_rest(dest, src, sizeof(struct pipe_config));
++}
++
++static void
++pipe_get_status(struct proto *P, byte *buf)
++{
++  struct pipe_proto *p = (struct pipe_proto *) P;
++
++  bsprintf(buf, "%c> %s", (p->mode == PIPE_OPAQUE) ? '-' : '=', p->peer->name);
++}
++
+ 
+ struct protocol proto_pipe = {
+   name:		"Pipe",
+@@ -195,5 +202,6 @@ struct protocol proto_pipe = {
+   start:	pipe_start,
+   cleanup:	pipe_cleanup,
+   reconfigure:	pipe_reconfigure,
++  copy_config:  pipe_copy_config,
+   get_status:	pipe_get_status,
+ };
+diff --git a/proto/radv/radv.c b/proto/radv/radv.c
+index 01cb689..42d4bff 100644
+--- proto/radv/radv.c
++++ proto/radv/radv.c
+@@ -318,6 +318,19 @@ radv_reconfigure(struct proto *p, struct proto_config *c)
+   return 1;
+ }
+ 
++static void
++radv_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  struct radv_config *d = (struct radv_config *) dest;
++  struct radv_config *s = (struct radv_config *) src;
++
++  /* We clean up patt_list, ifaces are non-sharable */
++  init_list(&d->patt_list);
++
++  /* We copy pref_list, shallow copy suffices */
++  cfg_copy_list(&d->iface_list, &s->iface_list, sizeof(struct iface_patt));
++}
++
+ 
+ struct protocol proto_radv = {
+   .name =		"RAdv",
+@@ -325,5 +338,6 @@ struct protocol proto_radv = {
+   .init =		radv_init,
+   .start =		radv_start,
+   .shutdown =		radv_shutdown,
+-  .reconfigure =	radv_reconfigure
++  .reconfigure =	radv_reconfigure,
++  .copy_config =	radv_copy_config
+ };
+diff --git a/proto/radv/radv.h b/proto/radv/radv.h
+index fe121f2..12bfe42 100644
+--- proto/radv/radv.h
++++ proto/radv/radv.h
+@@ -46,14 +46,14 @@
+ struct radv_config
+ {
+   struct proto_config c;
+-  list patt_list;		/* List of iface configs */
+-  list pref_list;		/* Global list of prefix configs */
++  list patt_list;		/* List of iface configs (struct radv_iface_config) */
++  list pref_list;		/* Global list of prefix configs (struct radv_prefix_config) */
+ };
+ 
+ struct radv_iface_config
+ {
+   struct iface_patt i;
+-  list pref_list;		/* Local list of prefix configs */
++  list pref_list;		/* Local list of prefix configs (struct radv_prefix_config) */
+ 
+   u32 min_ra_int;		/* Standard options from RFC 4261 */
+   u32 max_ra_int;
+@@ -64,7 +64,7 @@ struct radv_iface_config
+   u32 link_mtu;
+   u32 reachable_time;
+   u32 retrans_timer;
+-  u32 current_hop_limit;               
++  u32 current_hop_limit;
+   u32 default_lifetime;
+ };
+ 
+diff --git a/proto/rip/config.Y b/proto/rip/config.Y
+index 2df0c5c..cd4f30e 100644
+--- proto/rip/config.Y
++++ proto/rip/config.Y
+@@ -37,7 +37,7 @@ CF_GRAMMAR
+ CF_ADDTO(proto, rip_cfg '}' { RIP_CFG->passwords = get_passwords(); } )
+ 
+ rip_cfg_start: proto_start RIP {
+-     this_proto = proto_config_new(&proto_rip, sizeof(struct rip_proto_config));
++     this_proto = proto_config_new(&proto_rip, sizeof(struct rip_proto_config), $1);
+      rip_init_config(RIP_CFG);
+    }
+  ;
+diff --git a/proto/rip/rip.c b/proto/rip/rip.c
+index 1266380..543aa30 100644
+--- proto/rip/rip.c
++++ proto/rip/rip.c
+@@ -1015,6 +1015,19 @@ rip_reconfigure(struct proto *p, struct proto_config *c)
+                  sizeof(struct rip_proto_config) - generic);
+ }
+ 
++static void
++rip_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  /* Shallow copy of everything */
++  proto_copy_rest(dest, src, sizeof(struct rip_proto_config));
++
++  /* We clean up iface_list, ifaces are non-sharable */
++  init_list(&((struct rip_proto_config *) dest)->iface_list);
++
++  /* Copy of passwords is OK, it just will be replaced in dest when used */
++}
++
++
+ struct protocol proto_rip = {
+   name: "RIP",
+   template: "rip%d",
+@@ -1026,4 +1039,5 @@ struct protocol proto_rip = {
+   dump: rip_dump,
+   start: rip_start,
+   reconfigure: rip_reconfigure,
++  copy_config: rip_copy_config
+ };
+diff --git a/proto/static/config.Y b/proto/static/config.Y
+index 77d2419..621fdf9 100644
+--- proto/static/config.Y
++++ proto/static/config.Y
+@@ -26,7 +26,7 @@ CF_GRAMMAR
+ CF_ADDTO(proto, static_proto '}')
+ 
+ static_proto_start: proto_start STATIC {
+-     this_proto = proto_config_new(&proto_static, sizeof(struct static_config));
++     this_proto = proto_config_new(&proto_static, sizeof(struct static_config), $1);
+      static_init_config((struct static_config *) this_proto);
+   }
+  ;
+diff --git a/proto/static/static.c b/proto/static/static.c
+index 2f33d81..e5b293c 100644
+--- proto/static/static.c
++++ proto/static/static.c
+@@ -470,6 +470,58 @@ static_reconfigure(struct proto *p, struct proto_config *new)
+   return 1;
+ }
+ 
++static void
++static_copy_routes(list *dlst, list *slst)
++{
++  struct static_route *dr, *sr;
++
++  init_list(dlst);
++  WALK_LIST(sr, *slst)
++    {
++      /* copy one route */
++      dr = cfg_alloc(sizeof(struct static_route));
++      memcpy(dr, sr, sizeof(struct static_route));
++
++      /* This fn is supposed to be called on fresh src routes, which have 'live'
++	 fields (like .chain, .neigh or .installed) zero, so no need to zero them */
++
++      /* We need to copy multipath chain, because there are backptrs in 'if_name' */
++      if (dr->dest == RTD_MULTIPATH)
++	{
++	  struct static_route *md, *ms, **mp_last;
++
++	  mp_last = &(dr->mp_next);
++	  for (ms = sr->mp_next; ms; ms = ms->mp_next)
++	    {
++	      md = cfg_alloc(sizeof(struct static_route));
++	      memcpy(md, ms, sizeof(struct static_route));
++	      md->if_name = (void *) dr; /* really */
++
++	      *mp_last = md;
++	      mp_last = &(md->mp_next);
++	    }
++	  *mp_last = NULL;
++	}
++
++      add_tail(dlst, (node *) dr);
++    }
++}
++
++static void
++static_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  struct static_config *d = (struct static_config *) dest;
++  struct static_config *s = (struct static_config *) src;
++
++  /* Shallow copy of everything */
++  proto_copy_rest(dest, src, sizeof(struct static_config));
++
++  /* Copy route lists */
++  static_copy_routes(&d->iface_routes, &s->iface_routes);
++  static_copy_routes(&d->other_routes, &s->other_routes);
++}
++
++
+ struct protocol proto_static = {
+   name:		"Static",
+   template:	"static%d",
+@@ -479,6 +531,7 @@ struct protocol proto_static = {
+   shutdown:	static_shutdown,
+   cleanup:	static_cleanup,
+   reconfigure:	static_reconfigure,
++  copy_config:	static_copy_config
+ };
+ 
+ static void
+diff --git a/sysdep/bsd/krt-iface.h b/sysdep/bsd/krt-iface.h
+index 7d96fe8..7f0d52b 100644
+--- sysdep/bsd/krt-iface.h
++++ sysdep/bsd/krt-iface.h
+@@ -12,6 +12,14 @@
+ /*
+  *  We don't have split iface/scan/set parts. See krt-sock.h.
+  */
++
++struct krt_if_params {
++};
++
++struct krt_if_status {
++};
++
+ static inline int kif_params_same(struct krt_if_params *old UNUSED, struct krt_if_params *new UNUSED) { return 1; }
++static inline void kif_copy_params(struct krt_if_params *dest UNUSED, struct krt_if_params *src UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/bsd/krt-scan.h b/sysdep/bsd/krt-scan.h
+index 284df5e..19cd930 100644
+--- sysdep/bsd/krt-scan.h
++++ sysdep/bsd/krt-scan.h
+@@ -17,5 +17,6 @@ struct krt_scan_status {
+ };
+ 
+ static inline int krt_scan_params_same(struct krt_scan_params *o UNUSED, struct krt_scan_params *n UNUSED) { return 1; }
++static inline void krt_scan_copy_params(struct krt_scan_params *d UNUSED, struct krt_scan_params *s UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/bsd/krt-sock.h b/sysdep/bsd/krt-sock.h
+index d2a7efb..aab639c 100644
+--- sysdep/bsd/krt-sock.h
++++ sysdep/bsd/krt-sock.h
+@@ -34,13 +34,9 @@ struct krt_set_params {
+ struct krt_set_status {
+ };
+ 
+-struct krt_if_params {
+-};
+-
+-struct krt_if_status {
+-};
+-
+ static inline int krt_set_params_same(struct krt_set_params *o UNUSED, struct krt_set_params *n UNUSED) { return 1; }
++static inline void krt_set_copy_params(struct krt_set_params *d UNUSED, struct krt_set_params *s UNUSED) { }
++
+ void krt_read_msg(struct proto *p, struct ks_msg *msg, int scan);
+ 
+ #endif
+diff --git a/sysdep/linux/netlink/krt-iface.h b/sysdep/linux/netlink/krt-iface.h
+index f44ca27..770c6e2 100644
+--- sysdep/linux/netlink/krt-iface.h
++++ sysdep/linux/netlink/krt-iface.h
+@@ -24,5 +24,6 @@ static inline void krt_if_shutdown(struct kif_proto *p UNUSED) { };
+ static inline void krt_if_io_init(void) { };
+ 
+ static inline int kif_params_same(struct krt_if_params *old UNUSED, struct krt_if_params *new UNUSED) { return 1; }
++static inline void kif_copy_params(struct krt_if_params *dest UNUSED, struct krt_if_params *src UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/linux/netlink/krt-scan.h b/sysdep/linux/netlink/krt-scan.h
+index 7885f07..9b5e075 100644
+--- sysdep/linux/netlink/krt-scan.h
++++ sysdep/linux/netlink/krt-scan.h
+@@ -30,4 +30,7 @@ static inline int krt_scan_params_same(struct krt_scan_params *o, struct krt_sca
+   return o->table_id == n->table_id;
+ }
+ 
++static inline void krt_scan_copy_params(struct krt_scan_params *d UNUSED, struct krt_scan_params *s UNUSED) { }
++/* table_id copied in krt_copy_config() */
++
+ #endif
+diff --git a/sysdep/linux/netlink/krt-set.h b/sysdep/linux/netlink/krt-set.h
+index 83d082d..4a08217 100644
+--- sysdep/linux/netlink/krt-set.h
++++ sysdep/linux/netlink/krt-set.h
+@@ -23,5 +23,6 @@ static inline void krt_set_construct(struct krt_config *c UNUSED) { };
+ static inline void krt_set_start(struct krt_proto *p UNUSED, int first UNUSED) { };
+ static inline void krt_set_shutdown(struct krt_proto *p UNUSED, int last UNUSED) { };
+ static inline int krt_set_params_same(struct krt_set_params *o UNUSED, struct krt_set_params *n UNUSED) { return 1; }
++static inline void krt_set_copy_params(struct krt_set_params *d UNUSED, struct krt_set_params *s UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/unix/krt-iface.h b/sysdep/unix/krt-iface.h
+index 48075d6..9e12bcc 100644
+--- sysdep/unix/krt-iface.h
++++ sysdep/unix/krt-iface.h
+@@ -17,6 +17,7 @@ struct krt_if_status {
+ 
+ extern int if_scan_sock;
+ 
+-static inline int kif_params_same(struct krt_if_params *old, struct krt_if_params *new) { return 1; }
++static inline int kif_params_same(struct krt_if_params *old UNUSED, struct krt_if_params *new UNUSED) { return 1; }
++static inline void kif_copy_params(struct krt_if_params *dest UNUSED, struct krt_if_params *src UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/unix/krt-set.h b/sysdep/unix/krt-set.h
+index 5d0b213..87cffcf 100644
+--- sysdep/unix/krt-set.h
++++ sysdep/unix/krt-set.h
+@@ -16,5 +16,6 @@ struct krt_set_status {
+ };
+ 
+ static inline int krt_set_params_same(struct krt_set_params *o UNUSED, struct krt_set_params *n UNUSED) { return 1; }
++static inline void krt_set_copy_params(struct krt_set_params *d UNUSED, struct krt_set_params *s UNUSED) { }
+ 
+ #endif
+diff --git a/sysdep/unix/krt.Y b/sysdep/unix/krt.Y
+index 0375a13..8608196 100644
+--- sysdep/unix/krt.Y
++++ sysdep/unix/krt.Y
+@@ -30,7 +30,7 @@ kern_proto_start: proto_start KERNEL {
+      if (cf_krt)
+        cf_error("Kernel protocol already defined");
+ #endif
+-     cf_krt = this_proto = proto_config_new(&proto_unix_kernel, sizeof(struct krt_config));
++     cf_krt = this_proto = proto_config_new(&proto_unix_kernel, sizeof(struct krt_config), $1);
+      this_proto->preference = DEF_PREF_INHERITED;
+      THIS_KRT->scan_time = 60;
+      THIS_KRT->learn = THIS_KRT->persist = 0;
+@@ -66,7 +66,7 @@ CF_ADDTO(proto, kif_proto '}')
+ kif_proto_start: proto_start DEVICE {
+      if (cf_kif)
+        cf_error("Kernel device protocol already defined");
+-     cf_kif = this_proto = proto_config_new(&proto_unix_iface, sizeof(struct kif_config));
++     cf_kif = this_proto = proto_config_new(&proto_unix_iface, sizeof(struct kif_config), $1);
+      this_proto->preference = DEF_PREF_DIRECT;
+      THIS_KIF->scan_time = 60;
+      init_list(&THIS_KIF->primary);
+diff --git a/sysdep/unix/krt.c b/sysdep/unix/krt.c
+index 7057070..e5a8ce1 100644
+--- sysdep/unix/krt.c
++++ sysdep/unix/krt.c
+@@ -216,6 +216,23 @@ kif_reconfigure(struct proto *p, struct proto_config *new)
+   return 1;
+ }
+ 
++static void
++kif_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  struct kif_config *d = (struct kif_config *) dest;
++  struct kif_config *s = (struct kif_config *) src;
++
++  /* Shallow copy of everything (just scan_time currently) */
++  proto_copy_rest(dest, src, sizeof(struct krt_config));
++
++  /* Copy primary addr list */
++  cfg_copy_list(&d->primary, &s->primary, sizeof(struct kif_primary_item));
++
++  /* Fix sysdep parts */
++  kif_copy_params(&d->iface, &s->iface);
++}
++
++
+ struct protocol proto_unix_iface = {
+   name:		"Device",
+   template:	"device%d",
+@@ -224,6 +241,7 @@ struct protocol proto_unix_iface = {
+   start:	kif_start,
+   shutdown:	kif_shutdown,
+   reconfigure:	kif_reconfigure,
++  copy_config:	kif_copy_config
+ };
+ 
+ /*
+@@ -908,6 +926,19 @@ krt_reconfigure(struct proto *p, struct proto_config *new)
+     ;
+ }
+ 
++static void
++krt_copy_config(struct proto_config *dest, struct proto_config *src)
++{
++  struct krt_config *d = (struct krt_config *) dest;
++  struct krt_config *s = (struct krt_config *) src;
++
++  /* Shallow copy of everything */
++  proto_copy_rest(dest, src, sizeof(struct krt_config));
++
++  /* Fix sysdep parts */
++  krt_set_copy_params(&d->set, &s->set);
++  krt_scan_copy_params(&d->scan, &s->scan);
++}
+ 
+ static int
+ krt_get_attr(eattr * a, byte * buf, int buflen UNUSED)
+@@ -936,6 +967,7 @@ struct protocol proto_unix_kernel = {
+   start:	krt_start,
+   shutdown:	krt_shutdown,
+   reconfigure:	krt_reconfigure,
++  copy_config:	krt_copy_config,
+   get_attr:	krt_get_attr,
+ #ifdef KRT_ALLOW_LEARN
+   dump:		krt_dump,
+diff --git a/sysdep/unix/krt.h b/sysdep/unix/krt.h
+index f83e6ee..7bb4fe7 100644
+--- sysdep/unix/krt.h
++++ sysdep/unix/krt.h
+@@ -100,7 +100,7 @@ struct kif_config {
+   struct proto_config c;
+   struct krt_if_params iface;
+   int scan_time;		/* How often we re-scan interfaces */
+-  list primary;			/* Preferences for primary addresses */
++  list primary;			/* Preferences for primary addresses (struct kif_primary_item) */
+ };
+ 
+ struct kif_proto {
