@@ -364,7 +364,7 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/params_system.hats
 %%ATS_LIBDIR%%/prelude/sortdef.sats
 @dirrm %%ATS_LIBDIR%%/bin
-@dirrm %%ATS_LIBDIR%%/ccomp/lib64
+@dirrm %%ATS_LIBDIR%%/ccomp/%%LIBDIR%%
 @dirrm %%ATS_LIBDIR%%/ccomp/runtime/GCATS
 @dirrm %%ATS_LIBDIR%%/ccomp/runtime
 @dirrm %%ATS_LIBDIR%%/ccomp
