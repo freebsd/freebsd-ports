@@ -7,6 +7,7 @@
 
 PORTNAME=	wbarconf
 PORTVERSION=	0.7.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ihku.biz/wbarconf/
 DISTNAME=	wbarconf-${PORTVERSION}
@@ -16,12 +17,13 @@ COMMENT=	Configuration GUI for wbar
 
 RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
 
-USE_GNOME=	pygtk2
+USE_GNOME=	pygobject pygtk2 gtk20
 USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README COPYING
+USE_GETTEXT=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
