@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.33
+PORTVERSION=		1.5.37
 CATEGORIES=		mail
 MASTER_SITES=		http://highsecure.ru/
 
