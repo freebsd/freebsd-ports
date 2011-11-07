@@ -1,14 +1,16 @@
-nss-pam-ldapd, a Name Service Switch (NSS) module and Pluggable Authentication 
-Module (PAM) that allows your LDAP server to provide user account, group, host 
-name, alias, netgroup, and basically any other information that you would 
-normally get from /etc flat files or NIS. It also alows you to do 
-authentication to an LDAP server. 
+nss-pam-ldapd, a Name Service Switch (NSS) module and
+Pluggable Authentication Module (PAM) that allows your
+LDAP server to provide user account, group, host name,
+alias, netgroup, and basically any other information that
+you would normally get from /etc flat files or NIS. It also
+allows you to do authentication to an LDAP server.
 
 Key differences from nss_ldap:
 * lighter NSS library
 * lighter PAM library
 * simpler internal semantics
-* clear separation between NSS, PAM and LDAP code (the server part could easily be implemented in another language)
+* clear separation between NSS, PAM and LDAP code (the server
+  part could easily be implemented in another language)
 * less connections to the LDAP server
 
 WWW: http://arthurdejong.org/nss-pam-ldapd/

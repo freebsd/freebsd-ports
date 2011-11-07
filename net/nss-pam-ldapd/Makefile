@@ -11,11 +11,12 @@ PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
-LICENSE=		LGPL21 LGPL3
-LICENSE_COMB=		dual
 
 MAINTAINER=		melifaro@ipfw.ru
 COMMENT=		Advanced fork of nss_ldap
+
+LICENSE=		LGPL21 LGPL3
+LICENSE_COMB=		dual
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
@@ -32,10 +33,6 @@ USERS=			nslcd
 GROUPS=			nslcd
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=			problems with nss/libc TLS
-.endif
 
 .if ${OSVERSION} < 800000
 EXTRA_PATCHES+=		${FILESDIR}/rtld_nss__nslcd.c
@@ -92,7 +89,6 @@ MAN8+=			nslcd.8
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/' ${WRKSRC}/nss/Makefile.in
-	#@${REINPLACE_CMD} -e '/^$$(ACLOCAL_M4/,+2d' ${WRKSRC}/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
