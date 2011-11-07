@@ -29,6 +29,7 @@
     SUBDIR += aslookup
     SUBDIR += asterisk
     SUBDIR += asterisk10
+    SUBDIR += asterisk14
     SUBDIR += asterisk16
     SUBDIR += asterisk16-addons
     SUBDIR += atmsupport

@@ -1,0 +1,25 @@
+--- agi/Makefile.orig	Sat Dec 16 23:14:34 2006
++++ agi/Makefile	Wed Mar 28 11:13:21 2007
+@@ -13,7 +13,9 @@
+ 
+ .PHONY: clean all uninstall
+ 
+-AGIS=agi-test.agi eagi-test eagi-sphinx-test jukebox.agi
++AGIS_BIN=eagi-test eagi-sphinx-test
++AGIS_SCR=agi-test.agi jukebox.agi
++AGIS=$(AGIS_SCR) $(AGIS_BIN)
+ 
+ ifeq ($(OSARCH),SunOS)
+   LIBS+=-lsocket -lnsl
+@@ -31,8 +33,9 @@ eagi-test: eagi-test.o strcompat.o
+ eagi-sphinx-test: eagi-sphinx-test.o
+ 
+ install: all
+-	mkdir -p $(DESTDIR)$(AGI_DIR)
+-	for x in $(AGIS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(AGI_DIR) ; done
++	$(MKDIR) -p $(DESTDIR)$(AGI_DIR)
++	for x in $(AGIS_BIN); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(AGI_DIR) ; done
++	for x in $(AGIS_SCR); do $(BSD_INSTALL_SCRIPT) $$x $(DESTDIR)$(AGI_DIR) ; done
+ 
+ uninstall:
+ 	for x in $(AGIS); do rm -f $(DESTDIR)$(AGI_DIR)/$$x ; done
