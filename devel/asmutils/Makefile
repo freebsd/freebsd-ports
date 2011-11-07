@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of UNIX utilities written in x86 assembly language
 
 LICENSE=	GPLv2
@@ -53,11 +53,11 @@ STRIP=	#
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin/asmutils ${PREFIX}/lib/asmutils
-.for B in ${BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${B} ${PREFIX}/bin/asmutils
+.for bin in ${BINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${bin} ${PREFIX}/bin/asmutils
 .endfor
-.for L in ${LIBS}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/${L} ${PREFIX}/lib/asmutils
+.for lib in ${LIBS}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/${lib} ${PREFIX}/lib/asmutils
 .endfor
 	(cd ${PREFIX}/bin/asmutils && \
 		${LN} -sf uname arch && \
