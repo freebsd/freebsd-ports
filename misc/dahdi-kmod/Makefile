@@ -7,7 +7,7 @@
 
 PORTNAME=	dahdi-kmod
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}\
 		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware

@@ -1,8 +1,29 @@
+Index: freebsd/include/dahdi/kernel.h
+===================================================================
+--- freebsd/include/dahdi/kernel.h	(revision 10321)
++++ freebsd/include/dahdi/kernel.h	(working copy)
+@@ -468,6 +468,7 @@
+ 	struct cdev *dev;	/*!< Device structure */
+ 	struct cdev *file;	/*!< File structure */
+ 	int file_flags;
++	struct dahdi_iface *iface;
+ #else
+ 	struct file *file;	/*!< File structure */
+ #endif
+@@ -1361,4 +1362,8 @@
+ 
+ void dahdi_poll_wait(struct file *file, struct pollinfo *sel, struct poll_table_struct *wait_table);
+ 
++int dahdi_net_chan_init(struct dahdi_chan *chan, int numbufs);
++void dahdi_net_chan_destroy(struct dahdi_chan *chan);
++void dahdi_net_chan_xmit(struct dahdi_chan *chan);
++
+ #endif /* _DAHDI_KERNEL_H */
 Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 ===================================================================
 --- freebsd/freebsd/dahdi/ng_dahdi_iface.c	(revision 0)
-+++ freebsd/freebsd/dahdi/ng_dahdi_iface.c	(revision 10326)
-@@ -0,0 +1,584 @@
++++ freebsd/freebsd/dahdi/ng_dahdi_iface.c	(revision 10329)
+@@ -0,0 +1,605 @@
 +/*-
 + * Copyright (c) 2011 The FreeBSD Foundation
 + * All rights reserved.
@@ -302,7 +323,7 @@ Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 +	    NG_NODE_NAME(node));
 +
 +	/* setup channel */
-+	if (dahdi_net_chan_init(chan)) {
++	if (dahdi_net_chan_init(chan, DAHDI_DEFAULT_NUM_BUFS * 8)) {
 +		printf("dahdi_iface(%s): Error: Failed to initialize channel\n",
 +		    NG_NODE_NAME(node));
 +		goto error;
@@ -360,9 +381,19 @@ Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 +dahdi_iface_rx(struct dahdi_chan *chan)
 +{
 +	struct dahdi_iface *iface;
++	int oldreadbuf;
 +
 +	if ((iface = chan->iface) == NULL)
 +		return;
++
++	/* switch buffers */
++	if ((oldreadbuf = chan->inreadbuf) >= 0) {
++		chan->inreadbuf = (chan->inreadbuf + 1) % chan->numbufs;
++		if (chan->inreadbuf == chan->outreadbuf)
++			chan->inreadbuf = -1;		/* no more buffers to receive to */
++		if (chan->outreadbuf < 0)
++			chan->outreadbuf = oldreadbuf;	/* new buffer to read from */
++	}
 +
 +	taskqueue_enqueue_fast(iface->rx_taskqueue, &iface->rx_task);
 +}
@@ -378,38 +409,49 @@ Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 +	struct dahdi_chan *chan = context;
 +	struct dahdi_iface *iface;
 +	unsigned long flags;
++	int oldreadbuf;
 +
 +	if ((iface = chan->iface) == NULL)
 +		return;
 +
-+	/*
-+	 * Our network receiver logic is MUCH different.
-+	 * We actually only use a single buffer
-+	 */
 +	spin_lock_irqsave(&chan->lock, flags);
-+	if (iface->upper != NULL && chan->readn[chan->inreadbuf] > 1) {
-+		struct mbuf *m;
++	while ((oldreadbuf = chan->outreadbuf) >= 0) {
++		struct mbuf *m = NULL;
 +
-+		/* Drop the FCS */
-+		chan->readn[chan->inreadbuf] -= 2;
++		/* read frame */
++		if (iface->upper != NULL && chan->readn[chan->outreadbuf] > 1) {
 +
-+		MGETHDR(m, M_NOWAIT, MT_DATA);
++			/* Drop the FCS */
++			chan->readn[chan->outreadbuf] -= 2;
++
++			MGETHDR(m, M_NOWAIT, MT_DATA);
++			if (m != NULL) {
++				if (chan->readn[chan->outreadbuf] >= MINCLSIZE) {
++					MCLGET(m, M_NOWAIT);
++				}
++
++				/* copy data */
++				m_append(m, chan->readn[chan->outreadbuf], chan->readbuf[chan->outreadbuf]);
++			}
++		}
++
++		/* switch buffers */
++		chan->readn[chan->outreadbuf] = 0;
++		chan->readidx[chan->outreadbuf] = 0;
++		chan->outreadbuf = (chan->outreadbuf + 1) % chan->numbufs;
++		if (chan->outreadbuf == chan->inreadbuf)
++			chan->outreadbuf = -1;		/* no more buffers to read from */
++		if (chan->inreadbuf < 0)
++			chan->inreadbuf = oldreadbuf;	/* new buffer to read to */
++
 +		if (m != NULL) {
 +			int error;
 +
-+			if (chan->readn[chan->inreadbuf] >= MINCLSIZE) {
-+				MCLGET(m, M_NOWAIT);
-+			}
-+
-+			/* copy data */
-+			m_append(m, chan->readn[chan->inreadbuf], chan->readbuf[chan->inreadbuf]);
++			spin_unlock_irqrestore(&chan->lock, flags);
 +			NG_SEND_DATA_ONLY(error, iface->upper, m);
++			spin_lock_irqsave(&chan->lock, flags);
 +		}
 +	}
-+
-+	/* We don't cycle through buffers, just reuse the same one */
-+	chan->readn[chan->inreadbuf] = 0;
-+	chan->readidx[chan->inreadbuf] = 0;
 +	spin_unlock_irqrestore(&chan->lock, flags);
 +}
 +
@@ -570,7 +612,7 @@ Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 +	}
 +	if (ss->inwritebuf < 0) {
 +		/* no space */
-+		retval = ENXIO;
++		retval = ENOBUFS;
 +		goto out;
 +	}
 +
@@ -591,7 +633,7 @@ Index: freebsd/freebsd/dahdi/ng_dahdi_iface.c
 Index: freebsd/freebsd/dahdi/ng_dahdi_iface.h
 ===================================================================
 --- freebsd/freebsd/dahdi/ng_dahdi_iface.h	(revision 0)
-+++ freebsd/freebsd/dahdi/ng_dahdi_iface.h	(revision 10325)
++++ freebsd/freebsd/dahdi/ng_dahdi_iface.h	(revision 10329)
 @@ -0,0 +1,61 @@
 +/*-
 + * Copyright (c) 2011 The FreeBSD Foundation
@@ -668,27 +710,6 @@ Index: freebsd/freebsd/dahdi/Makefile
  SRCS+=		device_if.h bus_if.h pci_if.h
  CLEANFILES=	version.h
  INCS=		user.h wctdm_user.h compat/types.h
-Index: freebsd/include/dahdi/kernel.h
-===================================================================
---- freebsd/include/dahdi/kernel.h	(revision 10321)
-+++ freebsd/include/dahdi/kernel.h	(working copy)
-@@ -468,6 +468,7 @@
- 	struct cdev *dev;	/*!< Device structure */
- 	struct cdev *file;	/*!< File structure */
- 	int file_flags;
-+	struct dahdi_iface *iface;
- #else
- 	struct file *file;	/*!< File structure */
- #endif
-@@ -1361,4 +1362,8 @@
- 
- void dahdi_poll_wait(struct file *file, struct pollinfo *sel, struct poll_table_struct *wait_table);
- 
-+int dahdi_net_chan_init(struct dahdi_chan *chan);
-+void dahdi_net_chan_destroy(struct dahdi_chan *chan);
-+void dahdi_net_chan_xmit(struct dahdi_chan *chan);
-+
- #endif /* _DAHDI_KERNEL_H */
 Index: freebsd/drivers/dahdi/dahdi-base.c
 ===================================================================
 --- freebsd/drivers/dahdi/dahdi-base.c	(revision 10321)
@@ -706,14 +727,14 @@ Index: freebsd/drivers/dahdi/dahdi-base.c
  }
  #endif
  
-+int dahdi_net_chan_init(struct dahdi_chan *ms)
++int dahdi_net_chan_init(struct dahdi_chan *ms, int numbufs)
 +{
 +	int res;
 +
 +	ms->txbufpolicy = DAHDI_POLICY_IMMEDIATE;
 +	ms->rxbufpolicy = DAHDI_POLICY_IMMEDIATE;
 +
-+	res = dahdi_reallocbufs(ms, DAHDI_DEFAULT_MTU_MRU, DAHDI_DEFAULT_NUM_BUFS);
++	res = dahdi_reallocbufs(ms, DAHDI_DEFAULT_MTU_MRU, numbufs);
 +	if (res)
 +		return res;
 +
