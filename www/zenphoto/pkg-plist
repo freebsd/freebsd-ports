@@ -1,20 +1,6 @@
 %%WWWDIR%%/albums/.keepme
 %%WWWDIR%%/cache/.keepme
 %%WWWDIR%%/cache_html/rss/.keepme
-%%WWWDIR%%/dev-tools/plugins/FilterDoc.php
-%%WWWDIR%%/dev-tools/plugins/PluginNews.php
-%%WWWDIR%%/dev-tools/plugins/createTSarticles.php
-%%WWWDIR%%/dev-tools/plugins/filterDoc/Codeblock1.txt
-%%WWWDIR%%/dev-tools/plugins/filterDoc/Codeblock2.txt
-%%WWWDIR%%/dev-tools/plugins/filterDoc/filter descriptions.txt
-%%WWWDIR%%/dev-tools/plugins/filterDoc/filter list.html
-%%WWWDIR%%/dev-tools/plugins/filterDoc/filter list_index.html
-%%WWWDIR%%/dev-tools/plugins/pseudomail.php
-%%WWWDIR%%/dev-tools/plugins/test_deprecated.php
-%%WWWDIR%%/dev-tools/plugins/zenphoto_package.php
-%%WWWDIR%%/dev-tools/plugins/zenphoto_package/zenphoto_package_generator.php
-%%WWWDIR%%/dev-tools/readme.txt
-%%WWWDIR%%/dev-tools/trouble.php
 %%WWWDIR%%/doc_files/zenpage_quick_reference.pdf
 %%WWWDIR%%/doc_files/zenphoto_database_quick_reference.pdf
 %%WWWDIR%%/doc_files/zenphoto_developer_quick_reference.pdf
@@ -1206,7 +1192,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/inc/config.base.php
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/inc/config.php
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/inc/config.tinymce.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/inc/data.php
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/inc/function.base.php
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/ajaxfilemanager.js
 %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/ajaxfilemanager_c.js
