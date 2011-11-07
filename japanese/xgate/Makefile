@@ -47,7 +47,7 @@ RESTRICTED=	Commercial license
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
-BROKEN=		does not extract on FreeBSD 7.X
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
@@ -73,7 +73,11 @@ CNFLSTS=	account/admin.ndt	\
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/xgate
-	@cd ${WRKSRC}/xgate && ${TAR} xf ../xgate.war
+.if ${OSVERSION} < 800000
+	@${UNZIP_CMD} ${WRKSRC}/xgate.war -d ${WRKSRC}/xgate
+.else
+	@${TAR} xvf ${WRKSRC}/xgate.war -C ${WRKSRC}/xgate
+.endif
 .for conf in ${CNFLSTS}
 	@cd ${WRKSRC}/xgate/WEB-INF && ${MV} ${conf} ${conf}-dist
 .endfor
