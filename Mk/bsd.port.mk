@@ -5312,7 +5312,7 @@ FETCH_LIST?=	for i in $$deps; do \
 .if !target(fetch-required)
 fetch-required: fetch
 .if defined(NO_DEPENDS)
-	@${ECHO_MSG} "===> NO_DEPENDS is set, not fetching any distfiles for ${PKG_NAME}"
+	@${ECHO_MSG} "===> NO_DEPENDS is set, not fetching any other distfiles for ${PKGNAME}"
 .else
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
 .for deptype in EXTRACT PATCH FETCH BUILD RUN
