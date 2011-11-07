@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.4.6
+PORTVERSION=	3.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		LOCAL/sunpoet
@@ -19,10 +19,10 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-extract:
-	@${TOUCH} \
-		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme \
-		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
+#post-extract:
+#	@${TOUCH} \
+#		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme \
+#		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
 
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
