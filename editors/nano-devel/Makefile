@@ -36,7 +36,7 @@ MAN5=		nanorc.5
 .include <bsd.port.pre.mk>
 
 # requires wide character curses
-.if (${OSVERSION} < 700033
+.if (${OSVERSION} < 700033)
 CONFIGURE_ARGS+=--disable-utf8
 .else
 CONFIGURE_ARGS+=--enable-utf8
