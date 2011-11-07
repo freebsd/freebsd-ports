@@ -16,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../miniupnpc
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+BROKEN=		does not package
 
 WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST=		${.CURDIR}/pkg-plist
