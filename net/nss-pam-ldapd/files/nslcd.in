@@ -21,7 +21,7 @@ rcvar=$(set_rcvar)
 start_postcmd="nslcd_poststart"
 
 nslcd_poststart () {
-       until $(/usr/local/sbin/nslcd -c); do
+       until $(%%PREFIX%%/sbin/${name} -c); do
                echo " Waiting for nslcd to start"
                sleep 1
        done
