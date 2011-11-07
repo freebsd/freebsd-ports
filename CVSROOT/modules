@@ -473,6 +473,7 @@ amarok                          ports/audio/amarok
 amarok-fs                       ports/audio/amarok-fs
 amarok-kde4                     ports/audio/amarok-kde4
 amaterus                        ports/x11-wm/amaterus
+amavis-logwatch                 ports/mail/amavis-logwatch
 amavis-stats                    ports/security/amavis-stats
 amavisd-milter                  ports/security/amavisd-milter
 amavisd-new                     ports/security/amavisd-new
@@ -3123,6 +3124,7 @@ etoile-etoilemenus              ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit     ports/deskutils/etoile-extendedworkspacekit
 etoile-fontmanager              ports/x11-fm/etoile-fontmanager
 etoile-foundation               ports/devel/etoile-foundation
+etoile-grr                      ports/www/etoile-grr
 etoile-hardware                 ports/deskutils/etoile-hardware
 etoile-iconkit                  ports/x11-themes/etoile-iconkit
 etoile-idle                     ports/x11/etoile-idle
@@ -8545,6 +8547,7 @@ linux-openal                    ports/audio/linux-openal
 linux-openmotif                 ports/x11-toolkits/linux-openmotif
 linux-openssl                   ports/security/linux-openssl
 linux-opera                     ports/www/linux-opera
+linux-opera-devel               ports/www/linux-opera-devel
 linux-oracle-instantclient-basic  ports/databases/linux-oracle-instantclient-basic
 linux-oracle-instantclient-sdk  ports/databases/linux-oracle-instantclient-sdk
 linux-oracle-instantclient-sqlplus  ports/databases/linux-oracle-instantclient-sqlplus
@@ -20832,6 +20835,7 @@ phpmailer                       ports/mail/phpmailer
 phpmailer2                      ports/mail/phpmailer2
 phpminiadmin                    ports/databases/phpminiadmin
 phpmp                           ports/www/phpmp
+phpmustache                     ports/www/phpmustache
 phpmyadmin                      ports/databases/phpmyadmin
 phpmyadmin211                   ports/databases/phpmyadmin211
 phpmyfaq                        ports/www/phpmyfaq
@@ -21258,6 +21262,7 @@ portshaker                      ports/ports-mgmt/portshaker
 portshaker-config               ports/ports-mgmt/portshaker-config
 portsopt                        ports/ports-mgmt/portsopt
 porttools                       ports/ports-mgmt/porttools
+porttree                        ports/ports-mgmt/porttree
 portupdate-scan                 ports/ports-mgmt/portupdate-scan
 portupgrade                     ports/ports-mgmt/portupgrade
 portupgrade-devel               ports/ports-mgmt/portupgrade-devel
@@ -23213,10 +23218,12 @@ rotorouter                      ports/net-mgmt/rotorouter
 rottdc                          ports/games/rottdc
 roundcube                       ports/mail/roundcube
 roundcube-air                   ports/mail/roundcube-air
+roundcube-contextmenu           ports/mail/roundcube-contextmenu
 roundcube-groupvice             ports/mail/roundcube-groupvice
 roundcube-mobilecube            ports/mail/roundcube-mobilecube
 roundcube-mvision2              ports/mail/roundcube-mvision2
 roundcube-sieverules            ports/mail/roundcube-sieverules
+roundcube-thunderbird_labels    ports/mail/roundcube-thunderbird_labels
 roundcube-umich                 ports/mail/roundcube-umich
 roundup                         ports/www/roundup
 routers2                        ports/net-mgmt/routers2
@@ -27027,7 +27034,6 @@ xfce4-notification-daemon       ports/deskutils/xfce4-notification-daemon
 xfce4-notifyd                   ports/deskutils/xfce4-notifyd
 xfce4-panel                     ports/x11-wm/xfce4-panel
 xfce4-parole                    ports/multimedia/xfce4-parole
-xfce4-places-plugin             ports/sysutils/xfce4-places-plugin
 xfce4-power-manager             ports/sysutils/xfce4-power-manager
 xfce4-print                     ports/print/xfce4-print
 xfce4-quicklauncher-plugin      ports/x11/xfce4-quicklauncher-plugin
