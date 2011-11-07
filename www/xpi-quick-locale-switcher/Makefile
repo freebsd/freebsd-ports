@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	quick-locale-switcher
-PORTVERSION=	1.7.5.5
-DISTVERSIONSUFFIX=	-fx+sm+tb
+PORTVERSION=	1.7.6
+DISTVERSIONSUFFIX=	-sm+tb+fx
 CATEGORIES=	www
 
 MAINTAINER=	gecko@FreeBSD.org
