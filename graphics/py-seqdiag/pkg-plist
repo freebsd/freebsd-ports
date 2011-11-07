@@ -30,12 +30,20 @@ bin/seqdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst/directives.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag_sphinxhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag_sphinxhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag_sphinxhelper.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_seqdiag.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_seqdiag.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_seqdiag.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils/rst
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/seqdiag
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
