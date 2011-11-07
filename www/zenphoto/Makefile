@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.1.4
+PORTVERSION=	1.4.1.5
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.zenphoto.org/files/
