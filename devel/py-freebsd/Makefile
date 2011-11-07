@@ -29,9 +29,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
-.endif
 # Multi-IPv4/v6/no-IP jails.
 .if ${OSVERSION} >= 800056 || \
     (${OSVERSION} < 800000 && ${OSVERSION} >= 701103)

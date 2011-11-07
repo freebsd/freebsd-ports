@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '45s,^.*$$,#include "py_curses.h",' \
 		${WRKSRC}/ncurses/${f}
 .endfor
-.if ${OSVERSION} > 700033 || (${OSVERSION} < 700000)
+.if ${OSVERSION} > 700033
 	@${REINPLACE_CMD} -e '/^extern int define_key(/d' \
 		${WRKSRC}/ncurses/_curses_wrap.c
 .endif

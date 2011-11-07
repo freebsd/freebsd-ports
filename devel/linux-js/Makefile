@@ -51,10 +51,8 @@ MAKE_ENV+=	WITHOUT_UHID=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/linux_js.4
-.if ${OSVERSION} >= 700000
 	@${REINPLACE_CMD} -e 's|FILEDESC_UNLOCK|FILEDESC_SUNLOCK|' ${WRKSRC}/linux_js.c
 	@${REINPLACE_CMD} -e 's|FILEDESC_LOCK|FILEDESC_SLOCK|' ${WRKSRC}/linux_js.c
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/include/linux

@@ -45,12 +45,4 @@ GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
 PLIST_SUB+=	THUMB="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(GSF_SLAVE)
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

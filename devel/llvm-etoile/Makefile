@@ -52,9 +52,7 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .include "Makefile.svn_rev"
 .endif
 
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		does not compile
-.elif ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 

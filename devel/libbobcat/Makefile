@@ -60,12 +60,6 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bobcat-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BUILD_DEPENDS+=	openssl>=0.9.8:${PORTSDIR}/security/openssl
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat2"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
@@ -96,4 +90,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ./build install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

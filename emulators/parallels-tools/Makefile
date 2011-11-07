@@ -22,10 +22,4 @@ KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE= is only supported on FreeBSD 7.x or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

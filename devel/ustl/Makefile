@@ -31,9 +31,8 @@ PLIST_FILES=	lib/libustl.so lib/libustl.so.1 lib/libustl.so.1.0.0
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
-.elif ${OSVERSION} >= 700000
-MANUAL_PACKAGE_BUILD=	yes
 .endif
+MANUAL_PACKAGE_BUILD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,/bin/sh," ${WRKSRC}/configure

@@ -16,12 +16,6 @@ COMMENT=	Adaptation layer to build linux drivers on FreeBSD
 WRKSRC=		${WRKDIR}/linux_compat
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602100
-IGNORE=		requires a recent USB stack, not present in ${OSVERSION}
-.endif
-
 # Here is where install most things except the .mk file
 MY_DST=	${DATADIR}/linux_compat
 MY_MK=	bsd.linux_kmod.mk
@@ -53,4 +47,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

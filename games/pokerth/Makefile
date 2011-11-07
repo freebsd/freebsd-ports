@@ -38,12 +38,6 @@ QMAKE_ARGS+=	-unix PREFIX=${PREFIX}
 PORTDOCS=	server_setup_howto.txt
 MAN1=		pokerth.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
@@ -65,4 +59,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

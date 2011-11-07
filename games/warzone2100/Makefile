@@ -50,12 +50,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700004
-BROKEN=		Does not build
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/_XOPEN_SOURCE/ d' ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|NSIG|32|g; s|SIGPOLL|SIGIO|g' \
@@ -83,4 +77,4 @@ post-patch:
 .else
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

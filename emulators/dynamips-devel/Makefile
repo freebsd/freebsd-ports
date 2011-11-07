@@ -51,7 +51,7 @@ DYNAMIPS_ARCH=	"nojit"
 .endif
 
 # It required libpcap version 0.9.4 or is higher.
-.if ${OSVERSION} < 602100 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700021)
+.if ${OSVERSION} < 700021
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 MAKE_ENV+=	PCAP_LIB=${LOCALBASE}/lib/libpcap.a
 #.warning Do not overlook, make libpcap with LIBPCAP_OVERWRITE_BASE parameter, for use with shared library.

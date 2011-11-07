@@ -44,10 +44,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4 ${PTHREAD_LIBS}
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		Does not compile on 6.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

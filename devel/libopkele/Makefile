@@ -35,9 +35,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 # This port needs OpenSSL 0.9.8b which is present in 7.0 and up
 USE_OPENSSL=	yes
-.if ${OSVERSION} < 700000
-WITH_OPENSSL_PORT=      yes
-.endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 # If we use the base OpenSSL either by default or

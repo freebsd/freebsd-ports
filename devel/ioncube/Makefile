@@ -28,8 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 # Detect OS Version
 .if ${OSVERSION} >= 800000
 VER=		8
-.endif
-.if (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
+.else
 VER=		7
 .endif
 

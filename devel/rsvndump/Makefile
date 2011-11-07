@@ -31,10 +31,6 @@ PLIST_FILES+=	bin/rsvndump
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700041
-LDFLAGS+=	${PTHREAD_LIBS}
-.endif
-
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
