@@ -58,6 +58,7 @@ USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--disable-ltdl-install	\
