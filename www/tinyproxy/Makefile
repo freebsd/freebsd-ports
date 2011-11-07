@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTVERSION=	1.8.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://banu.com/pub/tinyproxy/1.8/
@@ -15,10 +14,13 @@ MASTER_SITES=	https://banu.com/pub/tinyproxy/1.8/
 MAINTAINER=	marquis@roble.com
 COMMENT=	A small, efficient HTTP proxy server
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
-		xsltproc:${PORTSDIR}/textproc/libxslt\
-		xmllint:${PORTSDIR}/textproc/libxml2 \
-		${LOCALBASE}/share/xsl/docbook/lib/lib.xsl:${PORTSDIR}/textproc/docbook-xsl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+#BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
+#		xsltproc:${PORTSDIR}/textproc/libxslt\
+#		xmllint:${PORTSDIR}/textproc/libxml2 \
+#		${LOCALBASE}/share/xsl/docbook/lib/lib.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USE_RC_SUBR=	tinyproxy.sh
 GNU_CONFIGURE=	yes
@@ -26,7 +28,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name="" \
-		--disable-silent-rules
+		--disable-silent-rules \
+		--localstatedir=/var
 
 MAN8=		tinyproxy.8
 MAN5=		tinyproxy.conf.5
@@ -66,5 +69,9 @@ post-install:
 		${CP} -p ${PREFIX}/etc/tinyproxy.conf.sample \
 		${PREFIX}/etc/tinyproxy.conf ; \
 	fi
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${FILESDIR}/${MAN5} ${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${FILESDIR}/${MAN8} ${MAN1PREFIX}/man/man8
+.endif
 
 .include <bsd.port.post.mk>
