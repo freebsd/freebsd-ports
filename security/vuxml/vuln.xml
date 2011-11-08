@@ -34,6 +34,70 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6c8ad3e8-0a30-11e1-9580-4061862b8c22">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>4.0,1</gt><lt>8.0,1</lt></range>
+	<range><gt>3.6.*,1</gt><lt>3.6.24,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>1.9.2.24</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>8.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>8.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>4.0</gt><lt>8.0</lt></range>
+	<range><lt>3.1.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2011-46 loadSubScript unwraps XPCNativeWrapper scope parameter (1.9.2 branch)</p>
+	  <p>MFSA 2011-47 Potential XSS against sites using Shift-JIS</p>
+	  <p>MFSA 2011-48 Miscellaneous memory safety hazards (rv:8.0)</p>
+	  <p>MFSA 2011-49 Memory corruption while profiling using Firebug</p>
+	  <p>MFSA 2011-50 Cross-origin data theft using canvas and Windows D2D</p>
+	  <p>MFSA 2011-51 Cross-origin image theft on Mac with integrated Intel GPU</p>
+	  <p>MFSA 2011-52 Code execution via NoWaiverWrapper</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-3647</cvename>
+	<cvename>CVE-2011-3648</cvename>
+	<cvename>CVE-2011-3649</cvename>
+	<cvename>CVE-2011-3650</cvename>
+	<cvename>CVE-2011-3651</cvename>
+	<cvename>CVE-2011-3652</cvename>
+	<cvename>CVE-2011-3653</cvename>
+	<cvename>CVE-2011-3654</cvename>
+	<cvename>CVE-2011-3655</cvename>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-46.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-47.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-48.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-49.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-50.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-51.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-52.html</url>
+    </references>
+    <dates>
+      <discovery>2011-11-08</discovery>
+      <entry>2011-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9dde9dac-08f4-11e1-af36-003067b2972c">
     <topic>caml-light - insecure use of temporary files</topic>
     <affects>
