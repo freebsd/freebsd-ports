@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.9.3
+PORTVERSION=	2.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -27,6 +27,7 @@ PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-i
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
+		debugcmdserver.py \
 		debugshell.py \
 		dumprevlog \
 		hg-ssh \
@@ -37,8 +38,6 @@ CONTRIB_FILES=	bash_completion \
 		hgk \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
-		logo-droplets.svg \
-		memory.py \
 		mercurial.el \
 		mergetools.hgrc \
 		mq.el \
@@ -46,7 +45,6 @@ CONTRIB_FILES=	bash_completion \
 		pylintrc \
 		python-hook-examples.py \
 		sample.hgrc \
-		setup3k.py \
 		shrink-revlog.py \
 		simplemerge \
 		tcsh_completion \
@@ -54,8 +52,6 @@ CONTRIB_FILES=	bash_completion \
 		tmplrewrite.py \
 		undumprevlog \
 		zsh_completion \
-		hgsh/Makefile \
-		hgsh/hgsh.c \
 		vim/HGAnnotate.vim \
 		vim/hg-menu.vim \
 		vim/hgcommand.vim \
@@ -63,7 +59,7 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 
-DOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
+DOCS=	CONTRIBUTORS COPYING README
 
 MAN1=	hg.1
 MAN5=	hgignore.5 hgrc.5
@@ -81,7 +77,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
-		${INSTALL_MAN} ${WRKSRC}/$${f} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${f} ${DOCSDIR}; \
 	done
 .endif
 .if !defined(NOPORTDATA)
@@ -97,7 +93,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.cgi ${DATADIR}/www
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${DATADIR}/www
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${DATADIR}/www
-.endif
+
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
