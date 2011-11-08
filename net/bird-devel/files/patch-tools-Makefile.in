@@ -1,0 +1,15 @@
+--- tools/Makefile.in.orig	2009-08-16 22:42:37.000000000 +0200
++++ tools/Makefile.in	2009-09-16 22:22:07.000000000 +0200
+@@ -60,11 +60,7 @@
+ 	if test -n "@CLIENT@" ; then								\
+ 		$(INSTALL_PROGRAM) -s $(exedir)/birdc $(DESTDIR)/$(sbindir)/birdc@SUFFIX6@ ;				\
+ 	fi
+-	if ! test -f $(DESTDIR)/$(sysconfdir)/bird@SUFFIX6@.conf ; then						\
+-		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/$(sysconfdir)/bird@SUFFIX6@.conf ;	\
+-	else											\
+-		echo "Not overwriting old bird@SUFFIX@.conf" ;						\
+-	fi
++	$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/$(sysconfdir)/bird@SUFFIX6@.conf.example ;	\
+ 
+ install-docs:
+ 	$(INSTALL) -d $(DESTDIR)/$(docdir)
