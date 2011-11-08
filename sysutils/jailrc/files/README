@@ -1,0 +1,53 @@
+# Jailrc README
+# Martin Matuska <mm@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+Jailrc is an improved startup/shutdown script for FreeBSD jails.
+
+It contains the following changes to the original /etc/rc.d/jail script:
+
+- parameters support: you can specify parameters supported by jail(8)	
+- ZFS support: you can deletate ZFS datasets to jails
+- jails are not identified by a file in /var/spool/jail anymore
+- two new commands "create" and "remove" to manage persistent jails
+
+To start jails with the jailrc script instead of /etc/rc.d/jail, use
+instead of jail_enable="YES" the keyword jailrc_enable="YES".
+
+------------------------------------------------------------------
+Jailrc reads all settings supported by /etc/rc.d/jail
+(see /etc/defaults/rc.conf) and the following additional settings:
+
+jail_example_name=""		# Set to desired jail name
+				# defaults to the name in "jail_list"
+jail_example_persist=""		# Set to YES to create a persistent jail
+jail_example_params=""		# Space-separated list of additional
+				# user-supplied parameters for jail(8)
+jail_example_zfs=""	# Space-separated list of ZFS datasets to be
+			# managed from this jail. For proper operation,
+			# allow.mount=1 and enforce_statfs=1 (or 0)
+			# must be added to jail_example_params.
+			# The "jailed" property must be set to "on"
+			# on desired datasets before starting the jail.
+
+------------------------------------------------------------------
+Example rc.conf configuration with IPv4, IPv6 and a fixed jail ID:
+
+jail_enable="NO"
+jailrc_enable="YES"
+jail_list="test"
+jail_test_hostname="test.bb.cc"
+jail_test_rootdir="/jail/test"
+jail_test_ip="192.168.0.2,2001:db8:2:1::2"
+jail_test_devfs_enable="YES"
+jail_test_params="jid=8 enforce_statfs=1 allow.raw_sockets=1"
+
+------------------------------------------------------------------
+To enable the ZFS device (/dev/zfs) in jails, add the following lines
+to your devfs.rules configuration file:
+
+[devfsrules_jail_zfs=5]
+add include $devfsrules_jail
+add path zfs unhide

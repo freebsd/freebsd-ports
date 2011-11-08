@@ -378,6 +378,7 @@
     SUBDIR += jailctl
     SUBDIR += jailer
     SUBDIR += jailme
+    SUBDIR += jailrc
     SUBDIR += jailuser
     SUBDIR += jailutils
     SUBDIR += javaservicewrapper
