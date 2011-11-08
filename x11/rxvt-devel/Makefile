@@ -14,7 +14,7 @@ CATEGORIES+=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	akosela@andykosela.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_AUTOTOOLS=	libtool

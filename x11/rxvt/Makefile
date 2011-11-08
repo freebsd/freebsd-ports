@@ -13,7 +13,7 @@ PORTREVISION=	6
 CATEGORIES+=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	akosela@andykosela.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_XORG=	xpm
