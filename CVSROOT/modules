@@ -12052,6 +12052,7 @@ p5-ExtUtils-CChecker            ports/devel/p5-ExtUtils-CChecker
 p5-ExtUtils-Command             ports/devel/p5-ExtUtils-Command
 p5-ExtUtils-Constant            ports/devel/p5-ExtUtils-Constant
 p5-ExtUtils-Depends             ports/devel/p5-ExtUtils-Depends
+p5-ExtUtils-F77                 ports/lang/p5-ExtUtils-F77
 p5-ExtUtils-Install             ports/devel/p5-ExtUtils-Install
 p5-ExtUtils-LibBuilder          ports/devel/p5-ExtUtils-LibBuilder
 p5-ExtUtils-MakeMaker           ports/devel/p5-ExtUtils-MakeMaker
@@ -12061,7 +12062,6 @@ p5-ExtUtils-ParseXS             ports/devel/p5-ExtUtils-ParseXS
 p5-ExtUtils-PkgConfig           ports/devel/p5-ExtUtils-PkgConfig
 p5-ExtUtils-XSBuilder           ports/devel/p5-ExtUtils-XSBuilder
 p5-ExtUtils-XSpp                ports/devel/p5-ExtUtils-XSpp
-p5-F77                          ports/lang/p5-F77
 p5-FAQ-OMatic                   ports/www/p5-FAQ-OMatic
 p5-FCGI                         ports/www/p5-FCGI
 p5-FCGI-Async                   ports/www/p5-FCGI-Async
@@ -13358,6 +13358,7 @@ p5-Net-Nslookup                 ports/dns/p5-Net-Nslookup
 p5-Net-OAuth                    ports/net/p5-Net-OAuth
 p5-Net-OAuth-Simple             ports/net/p5-Net-OAuth-Simple
 p5-Net-OSCAR                    ports/net-im/p5-Net-OSCAR
+p5-Net-OpenID-Common            ports/security/p5-Net-OpenID-Common
 p5-Net-OpenID-Consumer          ports/net/p5-Net-OpenID-Consumer
 p5-Net-OpenID-JanRain           ports/security/p5-Net-OpenID-JanRain
 p5-Net-OpenID-Server            ports/security/p5-Net-OpenID-Server
@@ -16447,6 +16448,7 @@ p5-extutils-cchecker            ports/devel/p5-ExtUtils-CChecker
 p5-extutils-command             ports/devel/p5-ExtUtils-Command
 p5-extutils-constant            ports/devel/p5-ExtUtils-Constant
 p5-extutils-depends             ports/devel/p5-ExtUtils-Depends
+p5-extutils-f77                 ports/lang/p5-ExtUtils-F77
 p5-extutils-install             ports/devel/p5-ExtUtils-Install
 p5-extutils-libbuilder          ports/devel/p5-ExtUtils-LibBuilder
 p5-extutils-makemaker           ports/devel/p5-ExtUtils-MakeMaker
@@ -16456,7 +16458,6 @@ p5-extutils-parsexs             ports/devel/p5-ExtUtils-ParseXS
 p5-extutils-pkgconfig           ports/devel/p5-ExtUtils-PkgConfig
 p5-extutils-xsbuilder           ports/devel/p5-ExtUtils-XSBuilder
 p5-extutils-xspp                ports/devel/p5-ExtUtils-XSpp
-p5-f77                          ports/lang/p5-F77
 p5-facebook-graph               ports/www/p5-Facebook-Graph
 p5-faq-omatic                   ports/www/p5-FAQ-OMatic
 p5-fax-hylafax-client           ports/comms/p5-Fax-Hylafax-Client
@@ -17773,6 +17774,7 @@ p5-net-nis-listgroup            ports/net/p5-Net-NIS-Listgroup
 p5-net-nslookup                 ports/dns/p5-Net-Nslookup
 p5-net-oauth                    ports/net/p5-Net-OAuth
 p5-net-oauth-simple             ports/net/p5-Net-OAuth-Simple
+p5-net-openid-common            ports/security/p5-Net-OpenID-Common
 p5-net-openid-consumer          ports/net/p5-Net-OpenID-Consumer
 p5-net-openid-janrain           ports/security/p5-Net-OpenID-JanRain
 p5-net-openid-server            ports/security/p5-Net-OpenID-Server
@@ -23712,6 +23714,7 @@ rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-domainatrix             ports/www/rubygem-domainatrix
 rubygem-dragonfly               ports/graphics/rubygem-dragonfly
+rubygem-drydock                 ports/devel/rubygem-drydock
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-edavis10-object_daddy   ports/devel/rubygem-edavis10-object_daddy
 rubygem-elif                    ports/devel/rubygem-elif
