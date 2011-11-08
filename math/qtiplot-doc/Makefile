@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.8.8
+DISTVERSION=	0.9.8.9
 CATEGORIES=	math
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 PKGNAMESUFFIX=	-doc
@@ -29,6 +29,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${DATADIR}
+	${RM} -rf ${WRKSRC}/html/pics-it
 	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DATADIR}
 
 .include <bsd.port.mk>
