@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.4.2
-PORTREVISION=	4
+PORTVERSION=	3.4.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
