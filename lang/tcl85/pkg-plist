@@ -314,6 +314,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Gaborone
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Harare
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Johannesburg
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Juba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Kampala
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Khartoum
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Kigali
@@ -432,9 +433,11 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Kentucky/Louisville
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Kentucky/Monticello
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Knox_IN
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Kralendijk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/La_Paz
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Los_Angeles
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Louisville
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Lower_Princes
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Maceio
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Managua
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Manaus
@@ -545,6 +548,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Dushanbe
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Gaza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Harbin
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hebron
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ho_Chi_Minh
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hong_Kong
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hovd
