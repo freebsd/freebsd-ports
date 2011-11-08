@@ -103,6 +103,11 @@ post-patch: .SILENT
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
+# Catch up with FreeBSD SVN r225617
+.if ${OSVERSION} > 900043 && ${NVVERSION} < 1952200
+	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
+		${WRKSRC}/src/nvidia_linux.c
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
