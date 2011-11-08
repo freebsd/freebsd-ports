@@ -3211,6 +3211,7 @@
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.location
+    SUBDIR += py-zope.minmax
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.testing
     SUBDIR += pybaz
