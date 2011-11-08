@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	Super Nintendo/Super Famicom emulator
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	videoproto xv x11
