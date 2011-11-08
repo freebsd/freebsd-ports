@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darktable
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -102,12 +102,10 @@ CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 post-patch:
 # Do not install useless (to end-user) documentation files
 	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/doc/CMakeLists.txt
-# Respect CFLAGS for release builds; also disable -Werror for Unix since
-# unfortunately build fails with it for now
-	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; s,NOT APPLE,& AND NOT UNIX,' \
+# Respect CFLAGS for release builds; remove `-g' from common CFLAGS which
+# are used for release builds as well
+	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; /-msse2/s, -g,,' \
 		${WRKSRC}/src/CMakeLists.txt
-# Remove `-g' from common CFLAGS which are used for release builds as well
-	@${REINPLACE_CMD} -e '/-msse2/s, -g,,' ${WRKSRC}/src/CMakeLists.txt
 # Fix GConf schemas installation prefix
 	@${REINPLACE_CMD} -e 's,/etc/gconf/schemas,.&,' \
 		${WRKSRC}/data/CMakeLists.txt
