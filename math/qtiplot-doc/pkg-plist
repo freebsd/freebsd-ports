@@ -27,26 +27,6 @@
 %%DATADIR%%/equations/equation_x-m.png
 %%DATADIR%%/equations/equation_y-m.png
 %%DATADIR%%/equations/savitzky-golay.png
-%%DATADIR%%/examples/analysis.png
-%%DATADIR%%/examples/cc8027-1.png
-%%DATADIR%%/examples/contour.png
-%%DATADIR%%/examples/explorer.png
-%%DATADIR%%/examples/fit.png
-%%DATADIR%%/examples/journal3.png
-%%DATADIR%%/examples/journal4.png
-%%DATADIR%%/examples/latex_export.png
-%%DATADIR%%/examples/latex_plot.png
-%%DATADIR%%/examples/matrix.png
-%%DATADIR%%/examples/mfig009a.png
-%%DATADIR%%/examples/multi_peak_fit.png
-%%DATADIR%%/examples/plot3D.png
-%%DATADIR%%/examples/seashell.png
-%%DATADIR%%/examples/spectrogram.png
-%%DATADIR%%/examples/sympy.png
-%%DATADIR%%/examples/table.png
-%%DATADIR%%/examples/waterfall.png
-%%DATADIR%%/examples/zbc0230975130002.png
-%%DATADIR%%/examples/zbc0230975130005.png
 %%DATADIR%%/icons/addCol.png
 %%DATADIR%%/icons/add_inset_curve_layer.png
 %%DATADIR%%/icons/add_inset_layer.png
@@ -596,7 +576,6 @@
 @dirrm %%DATADIR%%/tutorial
 @dirrm %%DATADIR%%/pics
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/equations
 @dirrm %%DATADIR%%/common
 @dirrm %%DATADIR%%
