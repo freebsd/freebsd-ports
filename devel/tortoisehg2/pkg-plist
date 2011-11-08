@@ -117,6 +117,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lfprompt.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lfprompt.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lfprompt.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/license.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/license.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/license.pyo
@@ -355,6 +358,7 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/wconfig.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/wconfig.pyo
 share/applications/tortoisehg.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tortoisehg.mo
@@ -368,8 +372,10 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/he/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/id/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/it/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/jv/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tortoisehg.mo
@@ -386,6 +392,7 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tortoisehg.mo
 share/pixmaps/tortoisehg/icons/16x16/apps/reviewboard.png
+share/pixmaps/tortoisehg/icons/16x16/apps/kiln.png
 share/pixmaps/tortoisehg/icons/22x22/actions/window-close.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-incoming.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-outgoing.png
@@ -575,6 +582,8 @@ share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/jv
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/util
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg
