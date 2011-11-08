@@ -96,6 +96,39 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/keyword.py
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyc
 %%PYTHON_SITELIBDIR%%/hgext/keyword.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/__init__.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/basestore.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/basestore.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/basestore.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfcommands.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfcommands.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfcommands.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfutil.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfutil.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/lfutil.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/localstore.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/localstore.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/localstore.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/overrides.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/overrides.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/overrides.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/proto.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/proto.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/proto.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/remotestore.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/remotestore.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/remotestore.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/reposetup.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/uisetup.pyo
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/wirestore.py
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/wirestore.pyc
+%%PYTHON_SITELIBDIR%%/hgext/largefiles/wirestore.pyo
 %%PYTHON_SITELIBDIR%%/hgext/mq.py
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyc
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyo
@@ -490,6 +523,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/summary.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/tags.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.bisect
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.changelog
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
@@ -623,15 +657,9 @@ bin/hg
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/common.txt
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.html
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.html
-%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
-%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
 %%PORTDATA%%%%DATADIR%%/contrib/bash_completion
 %%PORTDATA%%%%DATADIR%%/contrib/convert-repo
+%%PORTDATA%%%%DATADIR%%/contrib/debugcmdserver.py
 %%PORTDATA%%%%DATADIR%%/contrib/debugshell.py
 %%PORTDATA%%%%DATADIR%%/contrib/dumprevlog
 %%PORTDATA%%%%DATADIR%%/contrib/hg-ssh
@@ -642,8 +670,6 @@ bin/hg
 %%PORTDATA%%%%DATADIR%%/contrib/hgk
 %%PORTDATA%%%%DATADIR%%/contrib/hgsh/Makefile
 %%PORTDATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
-%%PORTDATA%%%%DATADIR%%/contrib/logo-droplets.svg
-%%PORTDATA%%%%DATADIR%%/contrib/memory.py
 %%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
 %%PORTDATA%%%%DATADIR%%/contrib/mergetools.hgrc
 %%PORTDATA%%%%DATADIR%%/contrib/mq.el
@@ -651,7 +677,6 @@ bin/hg
 %%PORTDATA%%%%DATADIR%%/contrib/pylintrc
 %%PORTDATA%%%%DATADIR%%/contrib/python-hook-examples.py
 %%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
-%%PORTDATA%%%%DATADIR%%/contrib/setup3k.py
 %%PORTDATA%%%%DATADIR%%/contrib/shrink-revlog.py
 %%PORTDATA%%%%DATADIR%%/contrib/simplemerge
 %%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
@@ -716,6 +741,7 @@ bin/hg
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext/zeroconf
+@dirrm %%PYTHON_SITELIBDIR%%/hgext/largefiles
 @dirrm %%PYTHON_SITELIBDIR%%/hgext/highlight
 @dirrm %%PYTHON_SITELIBDIR%%/hgext/convert
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
