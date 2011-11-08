@@ -2936,6 +2936,7 @@
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
     SUBDIR += py-EnthoughtBase
+    SUBDIR += py-ExtensionClass
     SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
