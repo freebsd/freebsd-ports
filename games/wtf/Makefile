@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20080926
+PORTVERSION=	20111107
 CATEGORIES=	games
-MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	jadawin
+MASTER_SITES=	http://tuxaco.net/downloads/ \
+		http://download.goodking.org/downloads/ \
+		http://files.etoilebsd.net/goodking/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
