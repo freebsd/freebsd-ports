@@ -8,6 +8,7 @@
 
 PORTNAME=	designer
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -31,6 +32,11 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
+
+DESKTOP_ENTRIES="Qt Designer" "${COMMENT}" \
+		"${PREFIX}/share/pixmaps/designer-qt4.png" \
+		"${PREFIX}/bin/designer-qt4" "" false
+
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/opengl src/openvg \
 		src/s60installs src/s60main src/scripttools src/sql src/svg \
@@ -70,5 +76,9 @@ pre-install:
 		${BUILD_WRKSRC}/src/lib/Makefile \
 		${BUILD_WRKSRC}/src/uitools/Makefile \
 		${BUILD_WRKSRC}/src/components/lib/Makefile
+
+post-install:
+	${INSTALL_DATA} ${BUILD_WRKSRC}/src/designer/images/designer.png \
+		${PREFIX}/share/pixmaps/designer-qt4.png
 
 .include <bsd.port.mk>

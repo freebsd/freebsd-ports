@@ -1,2 +1,3 @@
 bin/assistant-qt4
 %%DEBUG%%bin/assistant-qt4.debug
+share/pixmaps/assistant-qt4.png
