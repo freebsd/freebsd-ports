@@ -106,9 +106,6 @@
 %%PYTHON_SITELIBDIR%%/rdflib/store.py
 %%PYTHON_SITELIBDIR%%/rdflib/store.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/store.pyo
-%%PYTHON_SITELIBDIR%%/rdflib/t.py
-%%PYTHON_SITELIBDIR%%/rdflib/t.pyc
-%%PYTHON_SITELIBDIR%%/rdflib/t.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/term.py
 %%PYTHON_SITELIBDIR%%/rdflib/term.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/term.pyo

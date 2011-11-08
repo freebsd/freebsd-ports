@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://www.rdflib.net/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
