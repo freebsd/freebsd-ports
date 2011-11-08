@@ -19,15 +19,6 @@
  endif
  ifeq (arm, $(TARGET_CPU))
  #CPPSRCS		+= only_on_arm.cpp
-@@ -739,7 +742,7 @@
- # to reliably get limit macros defined, we'd always have to define the
- # one below before including any header, but that's obscure and
- # fragile, so we do it here.
--DEFINES		+= -D__STDC_LIMIT_MACROS
-+DEFINES		+= -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS
- 
- INCLUDES	+= -I$(srcdir)
- 
 @@ -793,7 +796,7 @@
  endif # WINNT
  
