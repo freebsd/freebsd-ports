@@ -1,0 +1,12 @@
+Jailrc is an improved startup/shutdown script for FreeBSD jails.
+
+It contains the following changes to the original /etc/rc.d/jail script:
+
+- parameters support: you can specify any parameters supported by jail(8)
+- ZFS support: you can deletate ZFS datasets to jails
+- jails are not identified by a file in /var/spool/jail anymore
+- two new commands "create" and "remove" to manage persistent jails
+
+Please refer to the README file for more information.
+
+Martin Matuska <mm_at_FreeBSD_dot_org>
