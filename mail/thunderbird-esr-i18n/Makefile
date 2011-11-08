@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	7.0.1
+PORTVERSION=	8.0
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -23,7 +23,7 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 .endif
 
 NO_BUILD=	yes
-USE_THUNDERBIRD=	70
+USE_THUNDERBIRD=	80
 USE_XPI=	thunderbird linux-thunderbird
 
 THUNDERBIRD_I18N_ALL=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
