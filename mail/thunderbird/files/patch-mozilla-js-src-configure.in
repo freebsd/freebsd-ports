@@ -1,6 +1,6 @@
---- mozilla/js/src/configure.in.orig	2011-07-06 05:09:22.000000000 +0200
-+++ mozilla/js/src/configure.in	2011-07-06 22:19:17.584233430 +0200
-@@ -1473,7 +1473,7 @@
+--- mozilla/js/src/configure.in.orig	2011-09-28 14:41:24.000000000 +0200
++++ mozilla/js/src/configure.in	2011-10-01 16:02:43.000000000 +0200
+@@ -1533,7 +1533,7 @@
      CPU_ARCH=sparc
      ;;
  
@@ -9,7 +9,7 @@
      CPU_ARCH="$OS_TEST"
      ;;
  
-@@ -1495,7 +1495,7 @@
+@@ -1555,7 +1555,7 @@
  dnl ===============================================================
  INTEL_ARCHITECTURE=
  case "$OS_TEST" in
@@ -18,48 +18,24 @@
        INTEL_ARCHITECTURE=1
  esac
  
-@@ -2713,7 +2713,7 @@
+@@ -2743,6 +2743,16 @@
      AC_DEFINE(JS_CPU_X86)
      AC_DEFINE(JS_NUNBOX32)
      ;;
--x86_64*-*)
 +amd64*-*)
-     ENABLE_TRACEJIT=1
-     NANOJIT_ARCH=X64
-     ENABLE_METHODJIT=1
-@@ -2723,23 +2723,23 @@
-     AC_DEFINE(JS_CPU_X64)
-     AC_DEFINE(JS_PUNBOX64)
-     ;;
--arm*-*)
-+x86_64*-*)
-     ENABLE_TRACEJIT=1
--    NANOJIT_ARCH=ARM
++    ENABLE_TRACEJIT=1
 +    NANOJIT_ARCH=X64
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1
-     ENABLE_POLYIC=1
--    AC_DEFINE(JS_CPU_ARM)
--    AC_DEFINE(JS_NUNBOX32)
++    ENABLE_METHODJIT=1
++    ENABLE_MONOIC=1
++    ENABLE_POLYIC=1
 +    ENABLE_POLYIC_TYPED_ARRAY=1
 +    AC_DEFINE(JS_CPU_X64)
 +    AC_DEFINE(JS_PUNBOX64)
-     ;;
--sparc*-*)
-+arm*-*)
++    ;;
+ x86_64*-*)
      ENABLE_TRACEJIT=1
--    NANOJIT_ARCH=Sparc
-+    NANOJIT_ARCH=ARM
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1
-     ENABLE_POLYIC=1
--    ENABLE_POLYIC_TYPED_ARRAY=1
--    AC_DEFINE(JS_CPU_SPARC)
-+    AC_DEFINE(JS_CPU_ARM)
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
- esac
-@@ -2796,6 +2796,10 @@
+     NANOJIT_ARCH=X64
+@@ -2827,6 +2837,10 @@
  i?86-*)
      AC_DEFINE(AVMPLUS_IA32)
      ;;
