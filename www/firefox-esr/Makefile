@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	7.0.1
-PORTREVISION=	3
+DISTVERSION=	8.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -18,7 +17,8 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
-		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo
+		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
+		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4:${PORTSDIR}/devel/libevent
 
