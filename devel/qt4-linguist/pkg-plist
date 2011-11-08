@@ -6,6 +6,7 @@ bin/lrelease-qt4
 %%DEBUG%%bin/lrelease-qt4.debug
 bin/lupdate-qt4
 %%DEBUG%%bin/lupdate-qt4.debug
+share/pixmaps/linguist-qt4.png
 share/qt4/phrasebooks/danish.qph
 share/qt4/phrasebooks/dutch.qph
 share/qt4/phrasebooks/finnish.qph
