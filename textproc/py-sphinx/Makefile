@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sphinx
-PORTVERSION=	1.0.7
+PORTVERSION=	1.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +18,9 @@ COMMENT=	Python documentation generator
 
 LICENSE=	BSD
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=0.8:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.2:${PORTSDIR}/textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.3:${PORTSDIR}/devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.7:${PORTSDIR}/textproc/py-docutils
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
