@@ -2,6 +2,7 @@ bin/darktable
 bin/darktable-cltest
 bin/darktable-faster
 %%DATADIR%%/darktable.gtkrc
+%%DATADIR%%/gdb_commands
 %%DATADIR%%/kernels/atrous.cl
 %%DATADIR%%/kernels/basic.cl
 %%DATADIR%%/kernels/blendop.cl
@@ -14,6 +15,7 @@ bin/darktable-faster
 %%DATADIR%%/pixmaps/plugins/darkroom/anlfyeni.png
 %%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
 %%DATADIR%%/pixmaps/plugins/darkroom/basecurve.png
+%%DATADIR%%/pixmaps/plugins/darkroom/bilateral.png
 %%DATADIR%%/pixmaps/plugins/darkroom/bloom.png
 %%DATADIR%%/pixmaps/plugins/darkroom/borders.png
 %%DATADIR%%/pixmaps/plugins/darkroom/cacorrect.png
@@ -32,6 +34,7 @@ bin/darktable-faster
 %%DATADIR%%/pixmaps/plugins/darkroom/highlights.png
 %%DATADIR%%/pixmaps/plugins/darkroom/highpass.png
 %%DATADIR%%/pixmaps/plugins/darkroom/hotpixels.png
+%%DATADIR%%/pixmaps/plugins/darkroom/invert.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lens.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lowlight.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lowpass.png
@@ -46,7 +49,6 @@ bin/darktable-faster
 %%DATADIR%%/pixmaps/plugins/darkroom/soften.png
 %%DATADIR%%/pixmaps/plugins/darkroom/splittoning.png
 %%DATADIR%%/pixmaps/plugins/darkroom/spots.png
-%%DATADIR%%/pixmaps/plugins/darkroom/stuckpixels.png
 %%DATADIR%%/pixmaps/plugins/darkroom/temperature.png
 %%DATADIR%%/pixmaps/plugins/darkroom/template.png
 %%DATADIR%%/pixmaps/plugins/darkroom/tonecurve.png
