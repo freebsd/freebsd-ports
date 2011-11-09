@@ -530,6 +530,7 @@
     SUBDIR += pronto
     SUBDIR += proxsmtp
     SUBDIR += py-Products.MailHost
+    SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-apolicy
     SUBDIR += py-cyruslib
     SUBDIR += py-email
