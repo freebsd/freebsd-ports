@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,7 @@ OPTIONS=	GRAPHVIZ "Add GraphViz run-time dependency" off
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-USE_XZ=	yes
+USE_XZ=		yes
 PERL_CONFIGURE=	yes
 
 CACHE_DIR?=	/var/db/portindex
