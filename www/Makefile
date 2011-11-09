@@ -877,6 +877,7 @@
     SUBDIR += p5-Dancer-Plugin-DataFu
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-ValidationClass
+    SUBDIR += p5-Dancer-Template-Xslate
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-Emplacken
