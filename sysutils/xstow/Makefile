@@ -1,5 +1,3 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
 # New ports collection makefile for:	xstow
 # Date created:		2002-12-31
 # Whom:			Alan Eldridge <alane@geeksrus.net>
@@ -8,19 +6,30 @@
 #
 
 PORTNAME=	xstow
-PORTVERSION=	0.5.1
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Enhanced replacement for GNU stow written in C++
 
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		xstow.1
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+PLIST_FILES=	bin/merge-info bin/xstow bin/xstow-static bin/xstow-stow
+MAN1=		merge-info.1 xstow.1
 MAN5=		xstow.ini.5
+
+# This port always installs documentation, so we cannot respect NOPORTDOCS
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO xstow.html xstow.ini xstow.ini.html
+
+post-install:
+	(cd ${WRKSRC} && \
+	 ${INSTALL_MAN} AUTHORS COPYING ChangeLog NEWS README TODO ${DOCSDIR})
 
 .include <bsd.port.mk>
