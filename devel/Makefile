@@ -3180,6 +3180,7 @@
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-ujson
+    SUBDIR += py-unittest2
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
