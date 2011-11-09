@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTVERSION=	3.4.4
 CATEGORIES=	editors
 MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
