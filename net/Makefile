@@ -28,6 +28,7 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
+    SUBDIR += asterisk-oh323
     SUBDIR += asterisk10
     SUBDIR += asterisk14
     SUBDIR += asterisk14-addons
