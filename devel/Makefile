@@ -3219,6 +3219,7 @@
     SUBDIR += py-zope.location
     SUBDIR += py-zope.minmax
     SUBDIR += py-zope.schema
+    SUBDIR += py-zope.size
     SUBDIR += py-zope.testing
     SUBDIR += pybaz
     SUBDIR += pychecker
