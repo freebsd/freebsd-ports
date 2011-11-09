@@ -3058,6 +3058,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
     SUBDIR += py-magic
+    SUBDIR += py-manuel
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-minimongo
