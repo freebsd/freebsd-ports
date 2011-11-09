@@ -1,0 +1,11 @@
+Regexp::Compare implements a function comparing regular expressions: it returns
+true if all strings matched by the first regexp are also matched by the second.
+It's meant to be used for optimization of blacklists implemented by regular
+expressions (like, for example, http://www.communitywiki.org/cw/BannedContent).
+
+False return value does not imply that there's a string matched by the first
+regexp which isn't matched by the second - many regular expressions (i.e. those
+containing Perl code) are impossible to compare, and this module doesn't even
+implement all possible comparisons.
+
+WWW: http://search.cpan.org/dist/Regexp-Compare/
