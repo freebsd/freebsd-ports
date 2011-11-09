@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pbimaker
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/makeapbi/makeapbi/
 
@@ -14,12 +14,9 @@ MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A program to convert ports into PBI modules
 
 LICENSE=	BSD
+
 NO_COFIGURE=	yes
 
 WRKSRC=	${WRKDIR}/PBIMaker
-PLIST_FILES=	bin/pbimaker
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
