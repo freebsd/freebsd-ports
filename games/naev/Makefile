@@ -38,6 +38,8 @@ SUB_FILES=	pkg-message
 OPTIONS=	OPENAL 		"Use the OpenAL sound backend"	on \
 		SDL_MIXER	"Use the SDL_mixer sound backend"	on
 
+.include <bsd.port.options.mk>
+
 .if defined(WITH_OPENAL)
 USE_OPENAL=		yes
 CONFIGURE_ARGS+=	--with-openal=yes
