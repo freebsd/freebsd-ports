@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Vfs
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
