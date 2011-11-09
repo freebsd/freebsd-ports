@@ -718,6 +718,7 @@
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
+    SUBDIR += py-zope.password
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
