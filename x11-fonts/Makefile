@@ -141,6 +141,7 @@
     SUBDIR += tolkien-ttf
     SUBDIR += ttmkfdir
     SUBDIR += tv-fonts
+    SUBDIR += ubuntu-font
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += webfonts
