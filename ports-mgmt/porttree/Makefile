@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	porttree
-PORTVERSION=	0.2.r${SVN_REV}
+PORTVERSION=	0.3.r${SVN_REV}
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,7 +17,7 @@ LICENSE=	MIT
 
 MAN1=		porttree.1
 USE_BZIP2=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=1.5:${PORTSDIR}/math/py-networkx
 
@@ -26,7 +26,7 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
 SVNROOT?=	http://porttree.googlecode.com/svn/trunk/
-SVN_REV=	20
+SVN_REV=	52
 NO_BUILD=	yes
 NO_INSTALL=	yes
 PLIST_FILES=	bin/porttree
