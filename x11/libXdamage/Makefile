@@ -14,6 +14,5 @@ COMMENT=	X Damage extension library
 
 XORG_CAT=	lib
 USE_XORG=	x11 damageproto:both xfixes fixesproto xextproto xproto:both
-WITH_FBSD10_FIX=	yes
 
 .include <bsd.port.mk>

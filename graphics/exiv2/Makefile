@@ -16,7 +16,6 @@ COMMENT=	Exif and Iptc metadata manipulation library and tools
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

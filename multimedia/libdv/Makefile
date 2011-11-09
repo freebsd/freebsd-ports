@@ -19,7 +19,6 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ENV=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig

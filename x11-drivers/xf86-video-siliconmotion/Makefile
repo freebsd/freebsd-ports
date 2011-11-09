@@ -12,7 +12,6 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org siliconmotion display driver
 
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto
 MAN4=		siliconmotion.4x

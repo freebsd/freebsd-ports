@@ -1,6 +1,5 @@
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
-WITH_FBSD10_FIX=yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}

@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME:S/$/2/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
-WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes

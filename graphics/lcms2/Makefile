@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=	yes
 
 OPTIONS=	TIFFICC "Build color profile applier for TIFF" off \
 		JPEGICC "Build color profile applier for JPEG" off

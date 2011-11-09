@@ -17,7 +17,6 @@ COMMENT=	Framework for defining and tracking users
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit
 
-WITH_FBSD10_FIX=yes
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

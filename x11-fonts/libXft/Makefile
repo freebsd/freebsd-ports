@@ -16,7 +16,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xproto:both xrender
 

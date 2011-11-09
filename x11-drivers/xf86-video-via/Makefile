@@ -15,7 +15,6 @@ COMMENT=	X.Org via display driver
 
 IGNORE=		requires pciVideoPtr typedef
 
-WITH_FBSD10_FIX=yes
 USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto

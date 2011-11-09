@@ -23,7 +23,6 @@ LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess
 XORG_CAT=	driver
 USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 USE_AUTOTOOLS=	automake:env aclocal:env autoconf libtool
-WITH_FBSD10_FIX=yes
 
 CONFLICTS=	xf86-video-radeonhd-[0-9]*
 

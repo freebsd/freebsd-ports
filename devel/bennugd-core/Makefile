@@ -20,7 +20,6 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Segfaults on !i386

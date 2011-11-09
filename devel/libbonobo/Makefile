@@ -27,7 +27,6 @@ USE_BISON=	build
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack intlhack libxml2 orbit2 referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

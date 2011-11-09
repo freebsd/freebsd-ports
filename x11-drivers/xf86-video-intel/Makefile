@@ -15,7 +15,6 @@ COMMENT=	Driver for Intel integrated graphics chipsets
 
 CONFLICTS=	xf86-video-i810-[0-9]*
 
-WITH_FBSD10_FIX=yes
 ONLY_FOR_ARCHS=	amd64 i386
 USE_GL=		gl
 

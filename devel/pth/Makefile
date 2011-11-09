@@ -17,7 +17,6 @@ COMMENT=	GNU Portable Threads
 
 MAKE_JOBS_UNSAFE=	yes
 
-WITH_FBSD10_FIX=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-optimize \

@@ -13,7 +13,6 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Miscellaneous Utilities libraries
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xproto:both x11 xt xext
 

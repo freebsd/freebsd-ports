@@ -19,7 +19,6 @@ CONFIGURE_ARGS=	CC="${CC}" PATH="${PATH}" \
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 MAN1=		geoiplookup.1 geoipupdate.1 geoiplookup6.1
 

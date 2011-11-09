@@ -17,7 +17,6 @@ COMMENT=	A simple, customizable and portable online hand recognition system
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WITH_FBSD10_FIX=ye
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

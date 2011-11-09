@@ -14,7 +14,6 @@ COMMENT=	X.Org glint display driver
 
 USE_GL=		gl
 
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	xf86driproto videoproto xextproto xf86dgaproto glproto
 MAN4=		glint.4x

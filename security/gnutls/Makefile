@@ -21,7 +21,6 @@ LIB_DEPENDS=	nettle.4:${PORTSDIR}/security/nettle \
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
-WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig ltverhack gnomehack

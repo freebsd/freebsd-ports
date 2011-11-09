@@ -17,7 +17,6 @@ DISTNAME=	fftw-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
-WITH_FBSD10_FIX=	yes
 # current flavors: default, float, and long
 FFTW3_FLAVOR?=	default
 FFTW3_SUFX=

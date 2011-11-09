@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	# empty
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 

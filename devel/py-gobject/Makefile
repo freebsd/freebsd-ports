@@ -30,7 +30,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs
 

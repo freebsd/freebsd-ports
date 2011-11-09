@@ -27,7 +27,6 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-WITH_FBSD10_FIX=	yes
 
 .if defined(MASTERDIR)
 _SLAVE_PORT=	yes

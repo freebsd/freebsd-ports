@@ -15,7 +15,6 @@ DISTNAME=	gc-${PORTVERSION:S/.a/alpha/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

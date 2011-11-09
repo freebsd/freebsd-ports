@@ -28,7 +28,6 @@ USE_GNOME=	gnomehack libglade2 pygobject
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 CONFIGURE_ENV=	LIBS="-lintl" \
 		PYTHON="${PYTHON_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include

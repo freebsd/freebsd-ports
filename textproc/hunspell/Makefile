@@ -20,7 +20,6 @@ LICENSE_COMB=	dual
 CONFIGURE_ARGS=	--disable-nls --with-readline --with-ui \
 		--with-libiconv-prefix=${LOCALBASE}
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

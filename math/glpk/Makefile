@@ -21,7 +21,6 @@ LICENSE=	GPLv3
 OPTIONS=	IODBC	"Enable MathProg iodbc support" Off \
 		MYSQL	"Enable MathProg mysql support" Off
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

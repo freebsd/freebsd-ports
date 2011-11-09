@@ -17,7 +17,6 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	x11 randrproto:both xext xextproto xrender renderproto xproto:both
 
-WITH_FBSD10_FIX=	yes
 MAN3=		Xrandr.3 \
 		XRRConfigCurrentConfiguration.3 \
 		XRRConfigCurrentRate.3 \

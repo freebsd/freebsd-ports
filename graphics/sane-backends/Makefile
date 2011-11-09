@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-locking \
 		--enable-pthread
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	saned

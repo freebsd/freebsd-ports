@@ -19,7 +19,6 @@ CONFLICTS=	proj4-[0-9]*
 
 DATUM_GRID_FILES=	proj-datumgrid-1.5.zip
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

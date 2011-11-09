@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.pl01
 MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	Libburnia library to read/write optical discs
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

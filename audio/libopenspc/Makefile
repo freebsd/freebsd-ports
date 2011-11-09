@@ -16,7 +16,6 @@ COMMENT=	Library for playing SPC (SNES audio) files
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

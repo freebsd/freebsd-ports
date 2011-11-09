@@ -14,7 +14,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org mach64 display driver
 
 USE_GL=		gl
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	glproto videoproto xextproto xf86driproto xf86miscproto xineramaproto
 

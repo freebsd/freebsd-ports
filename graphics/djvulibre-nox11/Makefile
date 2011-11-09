@@ -20,7 +20,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-WITH_FBSD10_FIX=yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

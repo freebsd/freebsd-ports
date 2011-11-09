@@ -13,7 +13,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

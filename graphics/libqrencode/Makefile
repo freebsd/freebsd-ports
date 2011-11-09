@@ -18,7 +18,6 @@ COMMENT=	A C library for encoding data in a QR Code symbol
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

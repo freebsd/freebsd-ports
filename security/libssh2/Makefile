@@ -18,7 +18,6 @@ COMMENT=	A library implementing the SSH2 protocol
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WITH_FBSD10_FIX=yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes

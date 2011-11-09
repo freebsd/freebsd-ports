@@ -15,7 +15,6 @@ MAINTAINER?=	onatan@gmail.com
 COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 
 .if !defined(LIBDNET_SLAVE)

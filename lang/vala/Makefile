@@ -24,7 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_BISON=	build
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 MAN1?=		valac.1 valac-0.12.1
 

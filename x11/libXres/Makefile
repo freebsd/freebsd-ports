@@ -17,7 +17,6 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto resourceproto xproto:both
 
-WITH_FBSD10_FIX=	yes
 MAN3=		XRes.3 \
 		XResQueryClients.3 \
 		XResQueryClientPixmapBytes.3 \

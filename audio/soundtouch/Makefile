@@ -15,7 +15,6 @@ COMMENT=	An open-source audio processing library
 
 LICENSE=	LGPL21
 
-WITH_FBSD10_FIX=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes

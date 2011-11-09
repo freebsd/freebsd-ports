@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 FFMPEG_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic

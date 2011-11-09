@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	libtasn1
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-WITH_FBSD10_FIX=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
