@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+
 
+DEPRECATED=	no longer supported upstream, no more depend on
+EXPIRATION_DATE=	2011-12-09
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
