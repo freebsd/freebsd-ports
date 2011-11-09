@@ -6,32 +6,30 @@
 #
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.3.3
-PORTREVISION=	4
-LOVERSION=	${PORTVERSION}.1
+PORTVERSION=	3.3.4
 CATEGORIES=	editors
-MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
-		http://download.go-oo.org/3.3/ \
-		http://ftp.rediris.es/mirror/TDF/libreoffice/src/ \
-		http://mirrors.supportex.net/tdf/libreoffice/src/ \
-		http://mirror.netcologne.de/tdf/libreoffice/src/ \
-		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/src/ \
-		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/src/ \
-		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/src/ \
-		http://artfiles.org/documentfoundation.org/libreoffice/src/ \
-		http://mirror.galpon.org/tdf/libreoffice/src/ \
-		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/src/ \
-		http://tdf.panu.it/libreoffice/src/ \
-		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/src/ \
-		http://ftp.klid.dk/ftp/tdf/libreoffice/src/ \
-		http://gd.tuwien.ac.at/tdf/libreoffice/src/ \
-		http://archive.sunet.se/pub/Office/tdf/libreoffice/src/ \
-		http://ftp.astral.ro/mirrors/tdf/libreoffice/src/ \
-		http://ftp.roedu.net/mirrors/tdf/libreoffice/src/ \
-		http://ftp.unicamp.br/pub/tdf/libreoffice/src/ \
-		http://mirror.yongbok.net/tdf/libreoffice/src/ \
-		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/ \
-		http://download.go-oo.org/src/ \
+MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
+		http://mirrors.supportex.net/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://mirror.netcologne.de/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/src/${PORTVERSION}/ \
+		http://artfiles.org/documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
+		http://mirror.galpon.org/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://tdf.panu.it/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.klid.dk/ftp/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://gd.tuwien.ac.at/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://archive.sunet.se/pub/Office/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.astral.ro/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.roedu.net/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.unicamp.br/pub/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://mirror.yongbok.net/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
+		http://download.go-oo.org/src/:GoOOSrc \
+		http://download.go-oo.org/extern/:GoOOExtern \
 		http://hg.services.openoffice.org/binaries/:hgOOo \
 		http://www.numbertext.org/linux/:OOoDTP
 PKGNAMESUFFIX=	-legacy
@@ -39,8 +37,41 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
+LICENSE=	LGPL3 MPL
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip \
+		gcp:${PORTSDIR}/sysutils/coreutils \
+		gpatch:${PORTSDIR}/devel/patch \
+		bash:${PORTSDIR}/shells/bash \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
+		${LOCALBASE}/lib/libmdbsql.a:${PORTSDIR}/databases/mdbtools \
+		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
+		vigra-config:${PORTSDIR}/graphics/vigra
+# rely on bsdtar ability to extract .gz and .bz2 archives
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		icutu.48:${PORTSDIR}/devel/icu \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		curl.6:${PORTSDIR}/ftp/curl \
+		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
+		mythes-1.2.0:${PORTSDIR}/textproc/mythes \
+		hyphen.2:${PORTSDIR}/textproc/hyphen \
+		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
+		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
+		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
+		wps-0.2.2:${PORTSDIR}/textproc/libwps \
+		rdf.0:${PORTSDIR}/textproc/redland \
+		textcat.0:${PORTSDIR}/textproc/libtextcat \
+		lpsolve55:${PORTSDIR}/math/lp_solve
+
 CONFLICTS_INSTALL=	libreoffice-[0-9]*
 
+LOVERSION=	${PORTVERSION}.1
 LOFFICE_COMPONENTS=	artwork base bootstrap calc components extensions \
 			extras filters help impress l10n libs-core libs-extern \
 			libs-extern-sys libs-gui postprocess sdk testing \
@@ -56,9 +87,6 @@ LODESTDIR=	${WRKDIR}/loinstall
 DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}.tar.bz2
 .endfor
 
-LICENSE_COMB=	dual
-LICENSE=	LGPL3 MPL
-
 # for dynamic plist generation
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
@@ -72,7 +100,6 @@ EXTRACT_ONLY:=	${DISTFILES}
 DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz \
 		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz \
 		cf8a6967f7de535ae257fa411c98eb88-mdds_0.3.0.tar.bz2 \
-		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz \
 		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz \
 		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip \
 		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz \
@@ -82,33 +109,6 @@ DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz \
 # rely on bsdtar ability to extract .gz and .bz2 archives
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
-
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		icutu.48:${PORTSDIR}/devel/icu \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl.6:${PORTSDIR}/ftp/curl \
-		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
-		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
-		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
-		wps-0.2.2:${PORTSDIR}/textproc/libwps \
-		rdf.0:${PORTSDIR}/textproc/redland \
-		textcat.0:${PORTSDIR}/textproc/libtextcat \
-		lpsolve55:${PORTSDIR}/math/lp_solve
-
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
-		gcp:${PORTSDIR}/sysutils/coreutils \
-		gpatch:${PORTSDIR}/devel/patch \
-		bash:${PORTSDIR}/shells/bash \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
-		${LOCALBASE}/lib/libmdbsql.a:${PORTSDIR}/databases/mdbtools \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
@@ -169,6 +169,8 @@ CONFIGURE_ARGS+=	--without-download \
 			--with-system-poppler \
 			--with-system-redland \
 			--with-system-hunspell \
+			--with-system-mythes \
+			--with-system-altlinuxhyph \
 			--with-system-libtextcat \
 			--with-system-lpsolve \
 			--with-system-vigra \
@@ -186,7 +188,11 @@ CONFIGURE_ARGS+=	--without-download \
 			--disable-kde \
 			--without-stlport \
 			--disable-nss-module \
-			--without-system-mozilla
+			--without-system-mozilla \
+			--with-external-thes-dir=${LOCALBASE}/share/mythes \
+			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
+			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
+			--disable-zenity
 
 # extensions
 
@@ -270,6 +276,7 @@ DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:hgOOo \
 		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:hgOOo
 
 USE_JAVA=	1.4+
+CATEGORIES+=	java
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j \
