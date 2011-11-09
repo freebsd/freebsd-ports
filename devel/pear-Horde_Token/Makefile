@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Token
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
