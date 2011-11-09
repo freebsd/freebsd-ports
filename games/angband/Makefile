@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/3.3/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

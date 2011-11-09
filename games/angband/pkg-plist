@@ -84,10 +84,13 @@ share/angband/xtra/graf/16x16.png
 share/angband/xtra/graf/32x32.png
 share/angband/xtra/graf/8x16.png
 share/angband/xtra/graf/8x8.png
-share/angband/xtra/icon/att-16.png
-share/angband/xtra/icon/att-32.png
+share/angband/xtra/icon/angband-gtk.desktop
+share/angband/xtra/icon/angband-sdl.desktop
+share/angband/xtra/icon/angband-x11.desktop
 share/angband/xtra/icon/att-128.png
+share/angband/xtra/icon/att-16.png
 share/angband/xtra/icon/att-256.png
+share/angband/xtra/icon/att-32.png
 share/angband/xtra/icon/att-512.png
 share/angband/xtra/sound/breath.wav
 share/angband/xtra/sound/clunk.wav
