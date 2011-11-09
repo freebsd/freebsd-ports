@@ -3036,6 +3036,7 @@
     SUBDIR += py-ice
     SUBDIR += py-icu
     SUBDIR += py-iniparse
+    SUBDIR += py-initgroups
     SUBDIR += py-instant
     SUBDIR += py-interface
     SUBDIR += py-ipaddr
