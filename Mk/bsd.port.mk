@@ -901,9 +901,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  target has not been overwritten).  This message
 #				  will be passed through /usr/bin/fmt before
 #				  being shown to the user.
-# WITH_FBSD10_FIX		- Replace freebsd1*) and similar conditions
-#				  with freebsd1.*) in configure and libtool
-#				  scripts to fix build on FreeBSD 10 and above.
+#
+# WITHOUT_FBSD10_FIX		  Disable FreeBSD 10.0 autotools workaround.
 #
 # For build and install:
 #
@@ -3662,16 +3661,21 @@ do-patch:
 
 .if !target(run-autotools-fixup)
 run-autotools-fixup:
-# Work around an issue where FreeBSD 10.0 is detected as FreeBSD 1.x.	 
-.if defined(WITH_FBSD10_FIX) && ${OSVERSION} >= 1000000
-	/bin/test -d ${WRKSRC} && find ${WRKSRC} -type f \( -name config.libpath -o \
-		-name config.rpath -o -name configure -o -name libtool.m4 \) \
-		-exec sed -i '' -e 's|freebsd1\*)|freebsd1.\*)|g' \
-		-e 's|freebsd\[12\]\*)|freebsd[12].*)|g' \
-		-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \
-		-e 's|freebsd\[\[12\]\]\*)|freebsd[[12]].*)|g' \
-		-e 's|freebsd\[\[123\]\]\*)|freebsd[[123]].*)|g' \
-		{} + || /usr/bin/true
+# Work around an issue where FreeBSD 10.0 is detected as FreeBSD 1.x.
+.if ${OSVERSION} >= 1000000 && !defined(WITHOUT_FBSD10_FIX)
+	-@for f in `${FIND} ${WRKSRC} -type f \( -name config.libpath -o \
+		-name config.rpath -o -name configure -o -name libtool.m4 -o \
+		-name ltconfig -o -name libtool -o -name aclocal.m4 -o \
+		-name acinclude.m4 \)` ; do \
+			${SED} -i.fbsd10bak \
+				-e 's|freebsd1\*)|freebsd1.\*)|g' \
+				-e 's|freebsd\[12\]\*)|freebsd[12].*)|g' \
+				-e 's|freebsd\[123\]\*)|freebsd[123].*)|g' \
+				-e 's|freebsd\[\[12\]\]\*)|freebsd[[12]].*)|g' \
+				-e 's|freebsd\[\[123\]\]\*)|freebsd[[123]].*)|g' \
+					$${f} ; \
+			${TOUCH} ${TOUCH_FLAGS} -mr $${f}.fbsd10bak $${f} ; \
+		done
 .endif
 .endif
 
