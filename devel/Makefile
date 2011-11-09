@@ -3515,6 +3515,7 @@
     SUBDIR += rubygem-subexec
     SUBDIR += rubygem-sugar-high
     SUBDIR += rubygem-sundawg_country_codes
+    SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-test
