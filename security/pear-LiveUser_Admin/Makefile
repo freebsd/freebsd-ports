@@ -7,13 +7,14 @@
 
 PORTNAME=	LiveUser_Admin
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
-BUILD_DEPENDS=	${PEARDIR}/LiveUser/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
-RUN_DEPENDS=	${PEARDIR}/LiveUser/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
+BUILD_DEPENDS=	${PEARDIR}/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
+RUN_DEPENDS=	${PEARDIR}/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
 
 LATEST_LINK=	pear-LiveUser_Admin
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
