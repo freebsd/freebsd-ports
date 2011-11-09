@@ -2642,6 +2642,7 @@
     SUBDIR += p5-subversion
     SUBDIR += p5-threads
     SUBDIR += p5-threads-shared
+    SUBDIR += p5-true
     SUBDIR += p5-uni-perl
     SUBDIR += p5-version
     SUBDIR += p65

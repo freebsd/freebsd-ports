@@ -1,0 +1,22 @@
+Perl's require builtin (and its use wrapper) requires the files it loads to
+return a true value. This is usually accomplished by placing a single
+
+    1;
+
+statement at the end of included scripts or modules. It's not onerous to add but
+it's a speed bump on the Perl novice's road to enlightenment. In addition, it
+appears to be a non-sequitur to the uninitiated, leading some to attempt to
+mitigate its appearance with a comment:
+
+    1; # keep require happy
+or:
+    1; # Do not remove this line
+or even:
+    1; # Must end with this, because Perl is bogus.
+
+This module packages this "return true" behaviour so that it need not be written
+explicitly. It can be used directly, but it is intended to be invoked from the
+import method of a Modern::Perl-style module that enables modern Perl features
+and conveniences and cleans up legacy Perl warts.
+
+WWW: http://search.cpan.org/dist/true/
