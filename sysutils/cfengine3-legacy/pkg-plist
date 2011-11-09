@@ -29,6 +29,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_accumulated_time.cf
 %%DOCSDIR%%/examples/unit_acl.cf
 %%DOCSDIR%%/examples/unit_acl_generic.cf
+%%DOCSDIR%%/examples/unit_acl_ntfs.cf
 %%DOCSDIR%%/examples/unit_acl_secret.cf
 %%DOCSDIR%%/examples/unit_activedirectory_listusers.cf
 %%DOCSDIR%%/examples/unit_activedirectory_showuser.cf
@@ -45,12 +46,15 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_classes_global.cf
 %%DOCSDIR%%/examples/unit_classmatch.cf
 %%DOCSDIR%%/examples/unit_classvar_convergence.cf
+%%DOCSDIR%%/examples/unit_commands.cf
 %%DOCSDIR%%/examples/unit_compare.cf
 %%DOCSDIR%%/examples/unit_control_expand.cf
 %%DOCSDIR%%/examples/unit_controlclasses.cf
 %%DOCSDIR%%/examples/unit_copy.cf
 %%DOCSDIR%%/examples/unit_copy_classes.cf
+%%DOCSDIR%%/examples/unit_copy_copbl.cf
 %%DOCSDIR%%/examples/unit_copy_edit.cf
+%%DOCSDIR%%/examples/unit_copydir_copbl.cf
 %%DOCSDIR%%/examples/unit_copylinks.cf
 %%DOCSDIR%%/examples/unit_countclassesmatching.cf
 %%DOCSDIR%%/examples/unit_countlinesmatching.cf
@@ -59,6 +63,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_customize_by_named_list.cf
 %%DOCSDIR%%/examples/unit_definitions.cf
 %%DOCSDIR%%/examples/unit_deletelines.cf
+%%DOCSDIR%%/examples/unit_disable.cf
 %%DOCSDIR%%/examples/unit_disable_and_rotate_files.cf
 %%DOCSDIR%%/examples/unit_diskfree.cf
 %%DOCSDIR%%/examples/unit_dollar.cf
@@ -69,6 +74,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_edit_insert_lines.cf
 %%DOCSDIR%%/examples/unit_edit_insert_lines_silly.cf
 %%DOCSDIR%%/examples/unit_edit_passwd_file.cf
+%%DOCSDIR%%/examples/unit_edit_passwd_file_basic.cf
 %%DOCSDIR%%/examples/unit_edit_replace_string.cf
 %%DOCSDIR%%/examples/unit_edit_sectioned_file.cf
 %%DOCSDIR%%/examples/unit_edit_setvar.cf
@@ -99,6 +105,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_getgid.cf
 %%DOCSDIR%%/examples/unit_getindices.cf
 %%DOCSDIR%%/examples/unit_getindices_and_values.cf
+%%DOCSDIR%%/examples/unit_getmacaddress.cf
 %%DOCSDIR%%/examples/unit_getregistry.cf
 %%DOCSDIR%%/examples/unit_getuid.cf
 %%DOCSDIR%%/examples/unit_getusers.cf
@@ -118,6 +125,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_id.cf
 %%DOCSDIR%%/examples/unit_insert_users.cf
 %%DOCSDIR%%/examples/unit_intarray.cf
+%%DOCSDIR%%/examples/unit_inventory_cpu.cf
 %%DOCSDIR%%/examples/unit_iprange.cf
 %%DOCSDIR%%/examples/unit_irange.cf
 %%DOCSDIR%%/examples/unit_isdir.cf
@@ -136,6 +144,7 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_locate_files_and_compress.cf
 %%DOCSDIR%%/examples/unit_log_private.cf
 %%DOCSDIR%%/examples/unit_loops.cf
+%%DOCSDIR%%/examples/unit_lsdir.cf
 %%DOCSDIR%%/examples/unit_measure_log.cf
 %%DOCSDIR%%/examples/unit_measurements.cf
 %%DOCSDIR%%/examples/unit_menu.cf
@@ -170,7 +179,10 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_process_matching.cf
 %%DOCSDIR%%/examples/unit_process_matching2.cf
 %%DOCSDIR%%/examples/unit_process_matching3.cf
+%%DOCSDIR%%/examples/unit_process_restart.cf
+%%DOCSDIR%%/examples/unit_process_restart_basic.cf
 %%DOCSDIR%%/examples/unit_process_signalling.cf
+%%DOCSDIR%%/examples/unit_services_win.cf
 %%DOCSDIR%%/examples/unit_product.cf
 %%DOCSDIR%%/examples/unit_promises.cf
 %%DOCSDIR%%/examples/unit_readlist.cf
