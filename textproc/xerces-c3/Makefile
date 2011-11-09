@@ -17,7 +17,6 @@ COMMENT=	Validating XML parser from the Apache XML Project
 
 CONFLICTS=	xerces_c-[0-9]* xerces-c2-[0-9]*
 
-WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

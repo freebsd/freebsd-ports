@@ -26,7 +26,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pango
 CPPFLAGS+=	-I${LOCALBASE}/include

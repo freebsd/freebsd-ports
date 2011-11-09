@@ -19,7 +19,6 @@ LIB_DEPENDS=	eggdbus-1.0:${PORTSDIR}/devel/eggdbus \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
-WITH_FBSD10_FIX=	yes
 USE_GNOME=	gnomehack glib20 intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

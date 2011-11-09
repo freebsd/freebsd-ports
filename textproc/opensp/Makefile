@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade \

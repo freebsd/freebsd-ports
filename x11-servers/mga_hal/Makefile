@@ -17,7 +17,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Module for additional features with X.Org/XFree86 Matrox driver
 
 RESTRICTED=	Matrox drivers may not be distributed.
-WITH_FBSD10_FIX=yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -17,7 +17,6 @@ COMMENT=	A smartcard development library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

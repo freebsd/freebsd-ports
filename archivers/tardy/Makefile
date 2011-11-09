@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	explain.45:${PORTSDIR}/devel/libexplain
 
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 
 MAKE_JOBS_UNSAFE=	yes
 

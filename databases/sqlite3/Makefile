@@ -58,8 +58,6 @@ OPTIONS=	\
 
 .include <bsd.port.options.mk>
 
-WITH_FBSD10_FIX=	yes
-
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.la lib/libsqlite3.so \
 		lib/libsqlite3.so.8 libdata/pkgconfig/sqlite3.pc

@@ -17,7 +17,6 @@ COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \

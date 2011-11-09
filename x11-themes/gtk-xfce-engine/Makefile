@@ -15,7 +15,6 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	An Xfce engine for GTK 2.0
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20 pkgconfig

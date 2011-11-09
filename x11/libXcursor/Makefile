@@ -14,7 +14,6 @@ COMMENT=	X client-side cursor loading library
 
 LICENSE=	MIT
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	xrender x11 xfixes fixesproto xproto:both \
 		xextproto

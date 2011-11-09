@@ -18,7 +18,6 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,libmpd-1.0\/libmpd,libmpd,' \

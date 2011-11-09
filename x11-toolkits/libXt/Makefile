@@ -14,7 +14,6 @@ COMMENT=	X Toolkit library
 
 XORG_CAT=	lib
 USE_XORG=	x11 sm xproto:both kbproto
-WITH_FBSD10_FIX=	yes
 
 MAN3=	MenuPopdown.3 \
 	MenuPopup.3 \

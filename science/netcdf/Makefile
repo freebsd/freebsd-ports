@@ -19,7 +19,6 @@ COMMENT?=	Library for machine-independent, array-oriented data access
 CONFLICTS=	hdf-4.* netcdf-4.*
 PORTSCOUT=	limit:^3\.
 
-WITH_FBSD10_FIX=yes
 CONFIGURE_ARGS=	--enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes

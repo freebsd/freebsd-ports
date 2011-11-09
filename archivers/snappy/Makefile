@@ -17,7 +17,6 @@ COMMENT=	A fast compressor/decompressor library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 post-patch:
 .if defined(NOPORTDOCS)

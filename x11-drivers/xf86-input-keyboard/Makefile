@@ -12,7 +12,6 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org keyboard input driver
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	driver
 USE_XORG=	kbproto
 MAN4=		kbd.4x

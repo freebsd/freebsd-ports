@@ -17,7 +17,6 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	xproto x11 xextproto xext xf86miscproto:both
 
-WITH_FBSD10_FIX=yes
 MAN3=		XF86Misc.3 \
 		XF86MiscGetKbdSettings.3 \
 		XF86MiscGetMouseSettings.3 \

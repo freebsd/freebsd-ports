@@ -32,7 +32,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
-#WITH_FBSD10_FIX=yes
 CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \

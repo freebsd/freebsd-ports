@@ -15,7 +15,6 @@ COMMENT=	eGalax touch screen input driver for X.Org
 
 LICENSE=	BSD
 
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 MAN4=		egalax.4x
 

@@ -14,7 +14,6 @@ DISTNAME=	pa_stable_v${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
-WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsa	\

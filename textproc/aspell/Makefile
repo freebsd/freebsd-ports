@@ -33,7 +33,6 @@ USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-WITH_FBSD10_FIX=	yes
 
 SLAVEDIRS=		textproc/aspell-without-dicten
 

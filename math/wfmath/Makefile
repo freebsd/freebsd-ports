@@ -13,7 +13,6 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28math%20lib%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Worldforge math library
 
-WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE allows filesystem implementation in userspace
 
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GNOME=	pkgconfig

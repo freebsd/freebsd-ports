@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	anholt/driglide/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
-WITH_FBSD10_FIX=yes
 USE_XORG=	xxf86vm xxf86dga
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

@@ -21,7 +21,6 @@ USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtool
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=yes
 
 MAN1=		augparse.1 augtool.1
 MANCOMPRESSED=	no

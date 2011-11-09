@@ -19,7 +19,6 @@ USE_XZ=		yes:src
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
-WITH_FBSD10_FIX=	yes
 
 OPTIONS=	PNG "Enable png support" On	\
 		TESTS "Download and use test-images for post-build testing" Off

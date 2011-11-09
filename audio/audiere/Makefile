@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_WX=	yes

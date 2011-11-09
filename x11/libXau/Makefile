@@ -14,7 +14,6 @@ COMMENT=	Authentication Protocol library for X11
 
 XORG_CAT=	lib
 USE_XORG=	xproto:both
-WITH_FBSD10_FIX=	yes
 
 MAN3=		Xau.3 XauDisposeAuth.3 XauFileName.3 XauGetAuthByAddr.3 \
 		XauGetBestAuthByAddr.3 XauLockAuth.3 XauReadAuth.3 \

@@ -17,7 +17,6 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 CONFLICTS=	hdf-4.* hdf5-1.6.*
 NO_LATEST_LINK=	yes
 
-WITH_FBSD10_FIX=yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

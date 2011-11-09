@@ -18,7 +18,6 @@ OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 XORG_CAT=	driver
 USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 CONFIGURE_ARGS=	--enable-exa
-WITH_FBSD10_FIX=yes
 CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
 
 MAN4=	radeonhd.4x

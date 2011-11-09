@@ -14,6 +14,5 @@ COMMENT=	The fontenc Library
 
 XORG_CAT=	lib
 USE_XORG=	xproto
-WITH_FBSD10_FIX=	yes
 
 .include <bsd.port.mk>

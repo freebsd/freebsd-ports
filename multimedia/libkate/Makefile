@@ -19,7 +19,6 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg \
 		png.6:${PORTSDIR}/graphics/png
 
-WITH_FBSD10_FIX=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

@@ -12,7 +12,6 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org mouse input driver
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	driver
 MAN4=		mousedrv.4x
 

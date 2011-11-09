@@ -12,7 +12,6 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org i128 display driver
 
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto
 MAN4=		i128.4x

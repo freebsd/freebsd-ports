@@ -44,7 +44,6 @@ COMMENT=	Allow others to run commands as root
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \

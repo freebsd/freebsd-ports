@@ -12,7 +12,6 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org fbdev display driver
 
-WITH_FBSD10_FIX=yes
 XORG_CAT=	driver
 USE_XORG=	videoproto
 MAN4=		fbdev.4x

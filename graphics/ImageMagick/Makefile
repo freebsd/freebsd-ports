@@ -20,7 +20,6 @@ USE_XZ=		yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libltdl
-WITH_FBSD10_FIX=yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes

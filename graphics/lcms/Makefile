@@ -22,7 +22,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
-WITH_FBSD10_FIX=	yes
 WRKSRC=		${WRKDIR}/lcms-1.19
 
 OPTIONS=	TIFFICC "Build color profile applier for tiff" off \

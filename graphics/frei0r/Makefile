@@ -19,7 +19,6 @@ COMMENT?=	Minimalistic plugin API for video effects
 
 .if !defined(BUILDING_FREI0R_METAPORT)
 GNU_CONFIGURE=	yes
-WITH_FBSD10_FIX=yes
 USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_SAFE=	yes
 

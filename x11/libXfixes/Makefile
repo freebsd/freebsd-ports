@@ -14,7 +14,6 @@ COMMENT=	X Fixes extension library
 
 LICENSE=	MIT
 
-WITH_FBSD10_FIX=	yes
 XORG_CAT=	lib
 USE_XORG=	x11 fixesproto:both xproto:both xextproto
 

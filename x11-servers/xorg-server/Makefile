@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard
 
 XORG_CAT=	xserver
 
-WITH_FBSD10_FIX=yes
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \

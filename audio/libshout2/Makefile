@@ -20,7 +20,6 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
-WITH_FBSD10_FIX=yes
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
