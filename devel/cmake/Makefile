@@ -7,11 +7,14 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A cross-platform Makefile generator
+
+LICENSE=	BSD
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -50,5 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
 	   	${WRKSRC}/Modules/FindDCMTK.cmake
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/Docs/cmake-mode.el ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
