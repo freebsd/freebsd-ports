@@ -529,6 +529,7 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += proxsmtp
+    SUBDIR += py-Products.MailHost
     SUBDIR += py-apolicy
     SUBDIR += py-cyruslib
     SUBDIR += py-email

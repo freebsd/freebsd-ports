@@ -1,0 +1,51 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/MailHost.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/MailHost.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/MailHost.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/SendMailTag.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/SendMailTag.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/SendMailTag.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/dtml/addMailHost_form.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/dtml/manageMailHost.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/Mail-Host.stx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/Mail-Host_Add.stx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/Mail-Host_Edit.stx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/MailHost.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/MailHost.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help/MailHost.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/mailer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/mailer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/mailer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/testMailHost.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/testMailHost.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests/testMailHost.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/www/MailHost_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/www
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/help
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost/dtml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/MailHost
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
