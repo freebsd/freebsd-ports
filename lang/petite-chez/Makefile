@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	petite-chez
-PORTVERSION=	8.3
+PORTVERSION=	8.4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.scheme.com/download/ \
 		http://tx97.net/pub/distfiles/
@@ -70,7 +70,9 @@ post-extract:
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|C=gcc|C=${CC}|' \
+	@${REINPLACE_CMD} \
+		-e 's|C=gcc|C=${CC}|' \
+		-e 's|-L/usr/local/lib|-L/usr/lib -L${LOCALBASE}/lib|' \
 		${WRKSRC}/Mf-${CHEZ_MACHTYPE}
 
 .include <bsd.port.post.mk>
