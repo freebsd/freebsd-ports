@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Catalyst/Log/Log4perl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Log/Log4perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Log/Log4perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Log
-@dirrmtry %%SITE_PERL%%/Catalyst
