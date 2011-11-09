@@ -27,7 +27,6 @@ OPTIONS=	SPLASH "Show splash on startup" on \
 		NLS "Build with gettext support" on \
 		LIBMNG "Build with libmng support" on \
 		LIBWMF "Build with libwmf support" on \
-		LIBRSVG "Build with librsvg support" off \
 		LIBRSVG2 "Build with librsvg-2 support" on \
 		LIBEXIF "Build with libexif support" on \
 		MPLAYER "Build with Mplayer support" on \
@@ -75,15 +74,8 @@ CONFIGURE_ARGS+=	--without-libwmf
 PLIST_SUB+=	WITH_LIBWMF="@comment "
 .endif
 
-.if defined(WITH_LIBRSVG)
-LIB_DEPENDS+=	rsvg.1:${PORTSDIR}/graphics/librsvg
-.endif
-
-.if !defined(WITHOUT_LIBRSVG2) && !defined(WITH_LIBRSVG)
+.if !defined(WITHOUT_LIBRSVG2)
 LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
-.endif
-
-.if defined(WITH_LIBRSVG) || !defined(WITHOUT_LIBRSVG2)
 PLIST_SUB+=	WITH_LIBRSVG=""
 .else
 CONFIGURE_ARGS+=	--without-librsvg
