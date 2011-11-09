@@ -85,6 +85,8 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/miro.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpris.cfg
 %%DATADIR%%/cfg-data/Server-mode/cmus.cfg
+%%DATADIR%%/cfg-data/Server-mode/clementine.cfg
+%%DATADIR%%/cfg-data/Server-mode/deadbeef.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
@@ -404,6 +406,7 @@ bin/anyremote
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/icon-themes.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/iviewer.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/dbus.html
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/android-client.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
