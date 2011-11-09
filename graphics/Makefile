@@ -85,7 +85,6 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
-    SUBDIR += clutter-qt
     SUBDIR += comical
     SUBDIR += comix
     SUBDIR += commons-utilities
@@ -483,7 +482,6 @@
     SUBDIR += libqglviewer
     SUBDIR += libqrencode
     SUBDIR += libraw
-    SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libspiro
     SUBDIR += libsvg
@@ -677,7 +675,6 @@
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
     SUBDIR += p5-chart
-    SUBDIR += p5-clutter
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic

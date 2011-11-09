@@ -3001,3 +3001,7 @@ sysutils/rsyslog4-devel-snmp||2011-11-02|is now stable see sysutils/rsyslog4
 www/php-yaf|www/pecl-yaf|2011-11-02|This project has been moved to PECL
 sysutils/xfce4-places-plugin||2011-11-06|Removed, integrated in Xfce 4.8 panel
 lang/p5-F77|lang/p5-ExtUtils-F77|2011-11-07|Move to a better place via repocopy
+devel/soup||2011-11-09|Has expired: Unmaintain, use devel/libsoup
+graphics/clutter-qt||2011-11-09|Has expired: upstream distfile and doesn't build, and doesn't seem to be developed anymore
+graphics/p5-clutter||2011-11-09|Has expired: upstream distfile disappeard, and doesn't seem to be developed anymore
+graphics/librsvg||2011-11-09|Has expired: unmaintained and not used anymore

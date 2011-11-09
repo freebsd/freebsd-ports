@@ -3589,7 +3589,6 @@
     SUBDIR += sml_tk
     SUBDIR += smv
     SUBDIR += soapui
-    SUBDIR += soup
     SUBDIR += sourcenav
     SUBDIR += sparc-rtems-binutils
     SUBDIR += sparc-rtems-gcc
