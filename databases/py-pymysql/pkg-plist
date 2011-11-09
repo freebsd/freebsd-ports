@@ -43,6 +43,9 @@
 %%PYTHON_SITELIBDIR%%/pymysql/tests/base.py
 %%PYTHON_SITELIBDIR%%/pymysql/tests/base.pyc
 %%PYTHON_SITELIBDIR%%/pymysql/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/pymysql/tests/test_DictCursor.py
+%%PYTHON_SITELIBDIR%%/pymysql/tests/test_DictCursor.pyc
+%%PYTHON_SITELIBDIR%%/pymysql/tests/test_DictCursor.pyo
 %%PYTHON_SITELIBDIR%%/pymysql/tests/test_basic.py
 %%PYTHON_SITELIBDIR%%/pymysql/tests/test_basic.pyc
 %%PYTHON_SITELIBDIR%%/pymysql/tests/test_basic.pyo
