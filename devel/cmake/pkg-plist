@@ -3,6 +3,7 @@ bin/cmake
 bin/cpack
 bin/ctest
 share/aclocal/cmake.m4
+share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/.NoDartCoverage
 %%DATADIR%%/Modules/AddFileDependencies.cmake
 %%DATADIR%%/Modules/AutomocInfo.cmake.in
