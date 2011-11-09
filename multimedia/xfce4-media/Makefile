@@ -18,8 +18,6 @@ COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
-BROKEN=		Does not work with Xfce 4.8
-
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
@@ -61,5 +59,10 @@ CFLAGS+=	-I${LOCALBASE}/include
 post-patch:
 	@${REINPLACE_CMD} -e "s|xfmedia_remote_LDADD = |&@LIBXFCEGUI4_LIBS@|" \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|exo-0.3|exo-1|" ${WRKSRC}/configure
+.for file in mediamarks.c playlist.c settings-dialog.c xfmedia-playlist-queue.c
+	@${REINPLACE_CMD} -e "s|EXO_PANGO_ELLIPSIZE_END|PANGO_ELLIPSIZE_END|" \
+		${WRKSRC}/src/${file}
+.endfor
 
 .include <bsd.port.post.mk>
