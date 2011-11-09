@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
@@ -35,5 +35,10 @@ do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${DATADIR}/
 	@${TOUCH} ${DATADIR}/.do_not_delete
+
+post-install:
+	@${FIND} -ds ${DATADIR}/ ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${DATADIR:S,^${PREFIX},,}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
