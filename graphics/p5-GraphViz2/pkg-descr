@@ -1,0 +1,24 @@
+This module provides a Perl interface to the amazing Graphviz, an open source
+graph visualization tool from AT&T.
+
+It is called GraphViz2 so that pre-existing code using (the Perl module)
+GraphViz continues to work.
+
+To avoid confusion, when I use GraphViz2 (note the capital V), I'm referring to
+this Perl module, and when I use Graphviz (lower-case v) I'm referring to the
+underlying tool (which is in fact a set of programs).
+
+This version of GraphViz2 targets Graphviz 2.23.6+.
+
+GraphViz2 1.x is a complete re-write, by Ron Savage, of GraphViz 2.x, which was
+written by Leon Brocard. The point of the re-write is to provide access to all
+the latest options available to users of Graphviz.
+
+GraphViz2 1.x is not backwards compatible with GraphViz 2.x, despite the
+considerable similarity. It was not possible to maintain compatibility while
+extending support to all the latest features of Graphviz.
+
+To ensure GraphViz2 is a light-weight module, Hash::FieldHash has been used to
+provide getters and setters, rather than Moose.
+
+WWW: http://search.cpan.org/dist/GraphViz2/
