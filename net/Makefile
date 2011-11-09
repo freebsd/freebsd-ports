@@ -30,6 +30,7 @@
     SUBDIR += asterisk
     SUBDIR += asterisk10
     SUBDIR += asterisk14
+    SUBDIR += asterisk14-addons
     SUBDIR += asterisk16
     SUBDIR += asterisk16-addons
     SUBDIR += atmsupport
