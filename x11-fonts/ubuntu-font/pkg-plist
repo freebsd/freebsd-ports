@@ -1,0 +1,24 @@
+lib/X11/fonts/ubuntu-font/Ubuntu-B.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-BI.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-C.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-L.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-LI.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-M.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-MI.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-R.ttf
+lib/X11/fonts/ubuntu-font/Ubuntu-RI.ttf
+lib/X11/fonts/ubuntu-font/UbuntuMono-B.ttf
+lib/X11/fonts/ubuntu-font/UbuntuMono-BI.ttf
+lib/X11/fonts/ubuntu-font/UbuntuMono-R.ttf
+lib/X11/fonts/ubuntu-font/UbuntuMono-RI.ttf
+lib/X11/fonts/ubuntu-font/fonts.dir
+lib/X11/fonts/ubuntu-font/fonts.scale
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.txt
+%%PORTDOCS%%%%DOCSDIR%%/FONTLOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE-FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TRADEMARKS.txt
+%%PORTDOCS%%%%DOCSDIR%%/copyright.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/X11/fonts/ubuntu-font
