@@ -1,9 +1,11 @@
-@unexec if cmp -s %D/etc/postfix/dist-postgrey_whitelist_recipients %D/etc/postfix/postgrey_whitelist_recipients; then rm -f %D/etc/postfix/postgrey_whitelist_recipients; fi
-@unexec if cmp -s %D/etc/postfix/dist-postgrey_whitelist_clients %D/etc/postfix/postgrey_whitelist_clients; then rm -f %D/etc/postfix/postgrey_whitelist_clients; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dist-postgrey_whitelist_recipients %D/%%ETCDIR%%/postgrey_whitelist_recipients; then rm %D/%%ETCDIR%%/postgrey_whitelist_recipients; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dist-postgrey_whitelist_clients %D/%%ETCDIR%%/postgrey_whitelist_clients; then rm %D/%%ETCDIR%%/postgrey_whitelist_clients; fi
 sbin/postgrey
 sbin/policy-test
 sbin/postgreyreport
-etc/postfix/dist-postgrey_whitelist_recipients
-etc/postfix/dist-postgrey_whitelist_clients
-@dirrmtry etc/postfix
-@unexec rmdir /var/db/postgrey 2>/dev/null || true
+%%ETCDIR%%/dist-postgrey_whitelist_recipients
+@exec [ ! -f %B/postgrey_whitelist_recipients ] && cp %B/%f %B/postgrey_whitelist_recipients
+%%ETCDIR%%/dist-postgrey_whitelist_clients
+@exec [ ! -f %B/postgrey_whitelist_clients ] && cp %B/%f %B/postgrey_whitelist_clients
+@dirrmtry %%ETCDIR%%
+@unexec rmdir %%DBDIR%% 2>/dev/null || true
