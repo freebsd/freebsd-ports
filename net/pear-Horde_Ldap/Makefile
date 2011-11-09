@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Ldap
-DISTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org
