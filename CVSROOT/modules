@@ -722,6 +722,7 @@ astah-community                 ports/devel/astah-community
 asterisk                        ports/net/asterisk
 asterisk-stat                   ports/www/asterisk-stat
 asterisk10                      ports/net/asterisk10
+asterisk14                      ports/net/asterisk14
 asterisk16                      ports/net/asterisk16
 asterisk16-addons               ports/net/asterisk16-addons
 astime                          ports/x11-clocks/astime
@@ -1055,6 +1056,7 @@ biosfont                        ports/sysutils/biosfont
 biosfont-demos                  ports/misc/biosfont-demos
 bip                             ports/irc/bip
 bird                            ports/net/bird
+bird-devel                      ports/net/bird-devel
 bird6                           ports/net/bird6
 birda                           ports/comms/birda
 birthday                        ports/misc/birthday
@@ -6511,6 +6513,7 @@ jailctl                         ports/sysutils/jailctl
 jailer                          ports/sysutils/jailer
 jailkit                         ports/shells/jailkit
 jailme                          ports/sysutils/jailme
+jailrc                          ports/sysutils/jailrc
 jailuser                        ports/sysutils/jailuser
 jailutils                       ports/sysutils/jailutils
 jakarta-bcel                    ports/java/jakarta-bcel
@@ -21596,6 +21599,7 @@ py-DateTime                     ports/devel/py-DateTime
 py-DendroPy                     ports/science/py-DendroPy
 py-Elixir                       ports/databases/py-Elixir
 py-EnthoughtBase                ports/devel/py-EnthoughtBase
+py-ExtensionClass               ports/devel/py-ExtensionClass
 py-GeoIP                        ports/net/py-GeoIP
 py-GinGin                       ports/www/py-GinGin
 py-HTMLgen                      ports/www/py-HTMLgen
@@ -21792,6 +21796,7 @@ py-excelerator                  ports/textproc/py-excelerator
 py-exif                         ports/graphics/py-exif
 py-exiv2                        ports/graphics/py-exiv2
 py-extended_threading           ports/devel/py-extended_threading
+py-extensionclass               ports/devel/py-ExtensionClass
 py-extremes                     ports/devel/py-extremes
 py-eyed3                        ports/audio/py-eyed3
 py-ez_xml                       ports/devel/py-ez_xml
@@ -22510,6 +22515,7 @@ py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.interface               ports/devel/py-zope.interface
 py-zope.location                ports/devel/py-zope.location
+py-zope.minmax                  ports/devel/py-zope.minmax
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
 py-zope.testing                 ports/devel/py-zope.testing
