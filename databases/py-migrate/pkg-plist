@@ -184,7 +184,6 @@ bin/migrate-repository
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/manage.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/manage/default.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/manage/pylons.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/templates/repository/__init__.py
