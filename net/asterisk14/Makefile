@@ -12,7 +12,7 @@ MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 PKGNAMESUFFIX=	14
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	bamby@sippysoft.com
 COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
