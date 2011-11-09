@@ -7,8 +7,9 @@
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.70
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/ \
+MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -34,10 +35,6 @@ PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
 .include <bsd.cpu.mk>
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
 MAN1=		kccachetest.1 \
 		kcdirmgr.1 \
 		kcdirtest.1 \
@@ -56,15 +53,16 @@ MAN1=		kccachetest.1 \
 		kcutilmgr.1 \
 		kcutiltest.1
 
-check: build
-	cd ${WRKSRC}; ${MAKE} check
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/kyotocabinet.idl ${DATADIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "COPYING ChangeLog doc" ${DOCSDIR}/
+	${FIND} ${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
+	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
 .endif
 .if exists(${PKGMESSAGE})
 	@${CAT} ${PKGMESSAGE}
