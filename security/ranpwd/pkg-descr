@@ -6,4 +6,4 @@ upper- or lower-case alphanumeric characters or punctuation.  ranpwd can also
 generate passwords consisting of hexadecimal, decimal, octal or binary numbers,
 and format these as valid C constants for inclusion in source code.
 
-WWW: http://freshmeat.net/projects/ranpwd
+WWW: http://freecode.com/projects/ranpwd
