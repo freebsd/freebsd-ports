@@ -34,6 +34,80 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
+    <topic>libxml -- Integer overflow</topic>
+    <affects>
+      <package>
+	<name>libxml</name>
+	<range><le>1.8*</le></range>
+      </package>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.7.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Integer overflow in xpath.c, allows allows context-dependent attackers 
+	to cause a denial of service (crash) and possibly execute arbitrary code via 
+	a crafted XML file that triggers a heap-based buffer overflow when adding a 
+	new namespace node, related to handling of XPath expressions.</p>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-1944</cvename>
+    </references>
+    <dates>
+      <discovery>2011-09-02</discovery>
+      <entry>2011-11-10</entry>
+    </dates>
+  <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
+    <topic>libxml -- Multiple use-after-free vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxml</name>
+	<range><le>1.8*</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple use-after-free vulnerabilities in libxml 1.8.17 that allow 
+	context-dependent attackers to cause a denial of service (application 
+	crash) via crafted (1) Notation or (2) Enumeration attribute types in 
+	an XML file</p>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2009-2416</cvename>
+    </references>
+    <dates>
+      <discovery>2009-08-03</discovery>
+      <entry>2011-11-10</entry>
+    </dates>
+  </vuln>
+  <vuln vid="5a7d4110-0b7a-11e1-846b-00235409fd3e">
+    <topic>libxml -- Stack consumption vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxml</name>
+	<range><le>1.8*</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stack consumption vulnerability allows context-dependent attackers 
+	to cause a denial of service (application crash) via a large depth of 
+	element declarations in a DTD</p>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2009-2414</cvename>
+    </references>
+    <dates>
+      <discovery>2009-08-03</discovery>
+      <entry>2011-11-10</entry>
+    </dates>
+  </vuln>
   <vuln vid="bdec8dc2-0b3b-11e1-b722-001cc0476564">
     <topic>gnutls -- client session resumption vulnerability</topic>
     <affects>
