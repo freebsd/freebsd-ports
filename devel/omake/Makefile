@@ -35,6 +35,10 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not build on powerpc
+.endif
+
 post-patch:
 #
 # Dirty hack for PREFIX safety
