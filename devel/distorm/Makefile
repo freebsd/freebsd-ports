@@ -60,7 +60,7 @@ PLIST_FILES=	bin/disasm \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
