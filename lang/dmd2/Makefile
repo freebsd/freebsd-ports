@@ -39,6 +39,13 @@ LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-ac
 BROKEN=		does not compile
 .endif
 
+NOT_FOR_ARCHS=		powerpc
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: divide-by-zero error
+.endif
+
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	MODEL=64
 .else
