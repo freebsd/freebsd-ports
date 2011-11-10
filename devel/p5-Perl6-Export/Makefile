@@ -7,6 +7,7 @@
 
 PORTNAME=	Perl6-Export
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Implements the Perl 6 'is export(...)' trait
 
-BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
-MAN3=	Perl6::Export.3
+MAN3=		Perl6::Export.3
 
 .include <bsd.port.mk>
