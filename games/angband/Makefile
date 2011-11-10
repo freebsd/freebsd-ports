@@ -27,8 +27,6 @@ CONFIGURE_ARGS+=	--with-x=no
 CONFIGURE_ENV=	ac_cv_path_mkdir=mkdir
 CPP=		cc -E
 
-SUB_FILES=	pkg-message
-
 pre-fetch:
 .if !defined(WITHOUT_X11)
 	@${ECHO_MSG} "You could define WITHOUT_X11, if you don't want X support"
@@ -38,8 +36,5 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers ||; s|/games$$|/bin|' ${WRKSRC}/configure
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
