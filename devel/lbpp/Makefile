@@ -31,4 +31,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lbpp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/liblb/libLB.a ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: runaway process
+.endif
+
+.include <bsd.port.post.mk>
