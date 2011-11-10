@@ -1,18 +1,16 @@
-lib/X11/fonts/ubuntu-font/Ubuntu-B.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-BI.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-C.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-L.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-LI.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-M.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-MI.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-R.ttf
-lib/X11/fonts/ubuntu-font/Ubuntu-RI.ttf
-lib/X11/fonts/ubuntu-font/UbuntuMono-B.ttf
-lib/X11/fonts/ubuntu-font/UbuntuMono-BI.ttf
-lib/X11/fonts/ubuntu-font/UbuntuMono-R.ttf
-lib/X11/fonts/ubuntu-font/UbuntuMono-RI.ttf
-lib/X11/fonts/ubuntu-font/fonts.dir
-lib/X11/fonts/ubuntu-font/fonts.scale
+%%FONTSDIR%%/Ubuntu-B.ttf
+%%FONTSDIR%%/Ubuntu-BI.ttf
+%%FONTSDIR%%/Ubuntu-C.ttf
+%%FONTSDIR%%/Ubuntu-L.ttf
+%%FONTSDIR%%/Ubuntu-LI.ttf
+%%FONTSDIR%%/Ubuntu-M.ttf
+%%FONTSDIR%%/Ubuntu-MI.ttf
+%%FONTSDIR%%/Ubuntu-R.ttf
+%%FONTSDIR%%/Ubuntu-RI.ttf
+%%FONTSDIR%%/UbuntuMono-B.ttf
+%%FONTSDIR%%/UbuntuMono-BI.ttf
+%%FONTSDIR%%/UbuntuMono-R.ttf
+%%FONTSDIR%%/UbuntuMono-RI.ttf
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.txt
 %%PORTDOCS%%%%DOCSDIR%%/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE-FAQ.txt
@@ -21,4 +19,6 @@ lib/X11/fonts/ubuntu-font/fonts.scale
 %%PORTDOCS%%%%DOCSDIR%%/TRADEMARKS.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyright.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/X11/fonts/ubuntu-font
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
