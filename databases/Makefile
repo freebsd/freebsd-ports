@@ -779,6 +779,7 @@
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
+    SUBDIR += rubygem-redis
     SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
