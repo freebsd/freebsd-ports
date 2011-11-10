@@ -26,7 +26,7 @@ OPTIONS=	BDB "Use DB based spooler" on \
 LATEST_LINK=	sge62
 CONFLICTS=	sge-6.[013-9]* sge-5* sgeee-[0-9]* sge-0.*
 
-NOT_FOR_ARCHS=	alpha
+NOT_FOR_ARCHS=	powerpc
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
