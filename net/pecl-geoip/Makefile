@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoip
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
