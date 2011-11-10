@@ -35,6 +35,10 @@ PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
 .include <bsd.cpu.mk>
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
+
 MAN1=		kccachetest.1 \
 		kcdirmgr.1 \
 		kcdirtest.1 \

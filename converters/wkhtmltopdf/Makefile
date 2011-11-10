@@ -61,6 +61,10 @@ MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
 BROKEN=		Does not build below FreeBSD 7.x
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
+
 .if defined(WITH_BUNDLED_LIBS)
 CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
 .else
