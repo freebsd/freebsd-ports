@@ -11,7 +11,7 @@
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -76,7 +76,7 @@ USE_AUTOTOOLS=	autoconf
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AP_MODPERL) || defined(WITH_AP_MODFASTCGI)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .endif
 
 .if defined(WITH_AP_MODPERL)
@@ -260,6 +260,11 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/upgrade
+	(cd ${WRKSRC}/etc && \
+	    ${COPYTREE_SHARE} upgrade ${DOCSDIR} "! -name *\.in")
+.endif
 	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm ] || \
 		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
 	${CAT} ${PKGMESSAGE}

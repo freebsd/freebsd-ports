@@ -239,6 +239,100 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/hacking.pod
 %%PORTDOCS%%%%DOCSDIR%%/network-diagram.svg
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.15/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.17/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/acl.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/acl.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/acl.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/acl.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.11/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.5.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.10/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.15/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.19/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.81/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.81/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.82/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.85/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.86/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.87/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8-branded-queues-extension
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8-ical-extension
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.0/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.2/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.3/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.3/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.4/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.6/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.8/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.9/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.2/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.3/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.3/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.3/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.3/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.5/backcompat
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.5/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.5/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.5/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.5/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.6/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.6/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.6/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.6/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.7/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.7/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.7/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.7/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.7/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc2/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc7/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.1/acl.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.3/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_transactions_table.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/split-out-cf-categories
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-articles
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
 share/rt40/fonts/Droid.README
 share/rt40/fonts/DroidSans.ttf
@@ -1351,6 +1445,43 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrm share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.0rc7
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.0rc4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.0rc2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.8
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.7
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.6
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.9.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.9
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.8
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.6
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.8.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.87
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.86
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.85
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.82
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.81
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.19
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.15
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.10
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.7.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.5.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.3.11
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.3.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.1.17
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.1.15
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/3.1.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extending
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/customizing
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

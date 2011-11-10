@@ -12,10 +12,24 @@ To complete the installation of this port, please follow these steps:
 5. Configure RT per the instructions at
    http://www.bestpractical.com/rt/docs.html
 
-If you're upgrading RT then it worth to read UPGRADING document at this
-moment. Some extension you're using may have been integrated into 
-core. It's recommended to use new clean directory when you're
+If you're upgrading RT then it is worth reading the UPGRADING document
+at this point. Some extension you're using may have been integrated
+into core. It's recommended to use new clean directory when you're
 upgrading to new major release (for example from 3.8.x to 4.0.x).
+
+To upgrade your database schema, preserving ticket history:
+
+1. Backup your RT database.
+2. If upgrading to a new major release, create a new database named
+   rt4 with appropriate rights for the rt_user and reload your
+   database backup into it.
+3. Run:
+
+# /usr/local/sbin/rt-setup-database \
+     --datadir %%DOCSDIR%%/upgrade \
+     --action upgrade --prompt-for-dba-password 
+
+and answer the prompts.
 
 RT does not work with perl taint mode (-T) you must disable it.
 Note, some other ports like devel/bugzilla have you add this to your
