@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \

@@ -12,7 +12,7 @@ CATEGORIES=	multimedia deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GTK+ frontend to recordMyDesktop
 
 RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop

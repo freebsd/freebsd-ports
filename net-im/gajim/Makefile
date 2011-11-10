@@ -10,7 +10,7 @@ PORTVERSION=	0.14.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.14/
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LICENSE=	GPLv3

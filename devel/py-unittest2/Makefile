@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Unittest features for Python 2.7 backported to Python 2.3+
 
 LICENSE=	BSD

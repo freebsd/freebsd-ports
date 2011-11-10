@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 LICENSE=	GPLv3

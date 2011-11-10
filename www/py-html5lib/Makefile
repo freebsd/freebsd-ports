@@ -13,7 +13,7 @@ CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	A Python based HTML parser based on the HTML5 spec
 
 LICENSE=	MIT

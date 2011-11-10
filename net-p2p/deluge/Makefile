@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
 EXTRACT_SUFX=	.tar.lzma
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
 
 LICENSE=	GPLv3

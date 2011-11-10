@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Typing tutor trainer
 
 LICENSE=	MIT

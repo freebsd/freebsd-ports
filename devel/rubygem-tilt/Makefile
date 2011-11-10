@@ -9,7 +9,7 @@ PORTVERSION=	1.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Generic interface to multiple Ruby template engines
 
 LICENSE=	MIT

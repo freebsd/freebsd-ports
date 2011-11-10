@@ -13,7 +13,7 @@ MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysmb-${PORTVERSION}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	SMB/CIFS library written in Python
 
 USE_PYTHON=	yes
