@@ -50,12 +50,8 @@ PKGNAMESUFFIX=	-file
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 PIC=	--PIC
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
 .endif
 
 post-patch:
