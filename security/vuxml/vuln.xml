@@ -149,7 +149,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="54075e39-04ac-11e1-a94e-bcaec565249c">
-    <topic>freetype -- Some type 1 fonts handling vulnerabilities </topic>
+    <topic>freetype -- Some type 1 fonts handling vulnerabilities</topic>
     <affects>
       <package>
 	<name>freetype2</name>
@@ -188,7 +188,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Cacti Group reports:</p>
 	<blockquote cite="http://www.cacti.net/release_notes_0_8_7h.php">
 	  <p>SQL injection issue with user login, and cross-site scripting
-             issues.</p>
+            issues.</p>
 	</blockquote>
       </body>
     </description>
@@ -500,8 +500,8 @@ Note:  Please add new entries to the beginning of this file.
         <p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3341">
           <p>Multiple off-by-one errors in order_cmd.cpp in OpenTTD before
-          1.1.3 allow remote attackers to cause a denial of service (daemon crash)
-          or possibly execute arbitrary code via a crafted CMD_INSERT_ORDER command.</p>
+            1.1.3 allow remote attackers to cause a denial of service (daemon crash)
+            or possibly execute arbitrary code via a crafted CMD_INSERT_ORDER command.</p>
         </blockquote>
       </body>
     </description>
@@ -1164,7 +1164,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Apache HTTP server project reports:</p>
 	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192">
 	  <p>A denial of service vulnerability has been found in the way the
-	  multiple overlapping ranges are handled by Apache HTTPD server.</p>
+	    multiple overlapping ranges are handled by Apache HTTPD server.</p>
 	</blockquote>
       </body>
     </description>
