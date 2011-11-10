@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Config/Grammar.pm
+%%SITE_PERL%%/Config/Grammar/Document.pm
+%%SITE_PERL%%/Config/Grammar/Dynamic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Grammar/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Grammar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config/Grammar
+@dirrmtry %%SITE_PERL%%/Config
