@@ -71,7 +71,7 @@ if ($hostname =~ /^repoman\.freebsd\.org$/i) {
 	'other'		=> '.*'
 );
 
-#$FEATURE_FREEZE = 1;
+$FEATURE_FREEZE = 1;
 
 1; # Perl requires all modules to return true.  Don't delete!!!!
 #end
