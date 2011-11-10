@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
@@ -20,9 +20,9 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command line ftp client
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=	yes
 
