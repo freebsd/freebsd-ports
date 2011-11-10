@@ -1,32 +1,46 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.4 2011-11-09 09:15:33 mm Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.5 2011-11-10 06:45:45 mm Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
-DBDIR="%%DBDIR%%"
-USER="%%USER%%"
-GROUP="%%GROUP%%"
 
 case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting install script:"
+
+  if [ -z "%%POSTGREYDIR%%" -o \
+       -z "%%USER%%" -o -z "%%GROUP%%" -o \
+       -z "%%UID%%" -o -z "%%GID%%" ]; then
+    echo "ERROR: A required pragma was empty"
+    exit 1
+  fi
+
+  # Create home directory if required
+  if [ -d "%%POSTGREYDIR%%" ]; then
+    echo "---> Using existing Postgrey database directory (%%POSTGREYDIR%%)"
+    echo "     (There may be existing active postgrey databases - this installation"
+    echo "     will attempt to preserve them.)"
+  else
+    echo "---> Creating Postgrey database directory (%%POSTGREYDIR%%)"
+    (umask 002 && /bin/mkdir -p "%%POSTGREYDIR%%") || exit 1
+    /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%POSTGREYDIR%%" || exit 1
+    /bin/chmod g+s "%%POSTGREYDIR%%" || exit 1
+  fi
+  ;;
 
 POST-INSTALL)
   echo "---> Starting post-install script:"
 
-  # Create home directory if required
-  if [ -z ${DBDIR} ]; then
-    echo "---> Default database directory not specified"
-  elif [ -d ${DBDIR} ]; then
-    echo "---> Using existing Postgrey database directory (${DBDIR})"
-    echo "     (There may be existing active postgrey databases - this installation"
-    echo "     will attempt to preserve them.)"
-  elif [ -e ${DBDIR} ]; then
-    echo "---> The default Postgrey database directory (${DBDIR})"
-    echo "     exists but is not a directory - you have to create it yourself"
-  else
-    echo "---> Creating Postgrey database directory (${DBDIR})"
-    (umask 002 && mkdir -p ${DBDIR}) || exit 1
-    chown -R ${USER}:${GROUP} ${DBDIR} || exit 1
-    chmod g+s ${DBDIR} || exit 1
-  fi
+  for i in %%ETCFILES%%; do
+    if [ ! -f "%%PREFIX%%/etc/postfix/postgrey_${i}" ]; then
+	echo "---> Installing new config file %%PREFIX%%/etc/postfix/postgrey_${i}"
+	cp -p	%%PREFIX%%/etc/postfix/dist-postgrey_${i} \
+		%%PREFIX%%/etc/postfix/postgrey_${i}
+    else
+	echo "---> Keeping existing config file %%PREFIX%%/etc/postfix/postgrey_${i}"
+    fi
+  done
+  ;;
 
 esac

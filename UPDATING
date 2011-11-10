@@ -5,16 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20111109:
-  AFFECTS: users of mail/postgrey
-  AUTHOR: Darren Pilgrim <ports.maintainer@evilphi.com>
-
-  The default location of the whitelist files has changed from
-  PREFIX/etc/postfix to PREFIX/etc/postgrey (ETCDIR). If you have modified
-  the whitelists, you will need to either move them to the new location
-  or specify their location by adding --whitelist-clients and
-  --whitelist-recipients parameters to postgrey_options in /etc/rc.conf.
-
 20111101:
   AFFECTS: users of x11/kde4-workspace
   AUTHOR: kde@FreeBSD.org
