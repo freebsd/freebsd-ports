@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -16,7 +16,9 @@ COMMENT=	RabbitMQ is an implementation of AMQP
 
 BUILD_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
-		xmlto:${PORTSDIR}/textproc/xmlto
+		xmlto:${PORTSDIR}/textproc/xmlto \
+		unzip:${PORTSDIR}/archivers/unzip \
+		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
 		sudo:${PORTSDIR}/security/sudo
 
@@ -37,7 +39,7 @@ SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
 		RABBITMQ_UID=${RABBITMQ_UID} \
 		RABBITMQ_USER=${RABBITMQ_USER}
 
-MAN1=		rabbitmq-server.1 rabbitmqctl.1
+MAN1=		rabbitmq-server.1 rabbitmqctl.1 rabbitmq-plugins.1
 MAN5=		rabbitmq-env.conf.5
 MANCOMPRESSED=	yes
 
