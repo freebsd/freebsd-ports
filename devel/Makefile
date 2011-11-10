@@ -3371,6 +3371,7 @@
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-atoulme-antwrap
+    SUBDIR += rubygem-attic
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-builder
