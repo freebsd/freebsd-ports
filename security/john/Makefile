@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	john
-DISTVERSION=	1.7.8-jumbo-7
+DISTVERSION=	1.7.8-jumbo-8
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
