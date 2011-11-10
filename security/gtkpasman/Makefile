@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTVERSION}
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	A GTK+ passwords manager for system and network administrators
 
 RUN_DEPENDS+=	gpgv2:${PORTSDIR}/security/gnupg

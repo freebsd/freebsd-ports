@@ -10,7 +10,7 @@ PORTVERSION=	0.15.9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/grecipe-manager/0.15.8
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
 LICENSE=	GPLv2

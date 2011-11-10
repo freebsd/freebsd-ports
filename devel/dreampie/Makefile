@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://launchpadlibrarian.net/55587528/
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	DreamPie is a Python shell which is designed to be reliable and fun
 
 LICENSE=	GPLv3

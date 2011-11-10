@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	RTMP flash streaming server written in erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
