@@ -3417,6 +3417,7 @@
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-getopt-declare
     SUBDIR += rubygem-gettext
+    SUBDIR += rubygem-gibbler
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashie
