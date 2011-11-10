@@ -153,4 +153,10 @@ post-patch:
 pre-configure:
 	(cd ${WRKSRC} && ./bootstrap)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: dumps core
+.endif
+
+.include <bsd.port.post.mk>
