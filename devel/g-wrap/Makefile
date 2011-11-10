@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
-NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS=	ia64 powerpc
 
 CFLAGS+=		-fPIC
 CONFIGURE_ARGS=		--disable-Werror
