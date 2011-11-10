@@ -7,8 +7,6 @@
 #				Default: ${CONFIGURE_ENV}
 # CMAKE_ARGS		- Arguments passed to cmake
 #				Default: see below
-# CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when compiling/linking
-#				Default: not set
 # CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types).
 #				Projects may have their own build profiles.
 #				CMake supports the following types: Debug,
@@ -87,18 +85,6 @@ INSTALL_TARGET?=	install/strip
 .endif
 
 PLIST_SUB+=	CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:L}"
-
-#
-# Instruct cmake to compile/link with pthreads
-#
-.if defined(CMAKE_USE_PTHREAD)
-CFLAGS+=		${PTHREAD_CFLAGS}
-CXXFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_LIBS}
-
-CMAKE_ARGS+=	-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}" \
-				-DCMAKE_USE_PTHREADS:BOOL=ON
-.endif
 
 #
 # Force makefile verbosity if needed
