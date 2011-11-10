@@ -1,4 +1,4 @@
 SHA256 (perl/perl-5.14.1.tar.bz2) = 29b4a7e7c22d4a980ab9eb1ea486c5c4ee9ec533192a1ce8f3fe9ae32fb1f862
 SIZE (perl/perl-5.14.1.tar.bz2) = 13266293
-SHA256 (perl/BSDPAN-5.12.1_20100713.tar.bz2) = f700acc5ca29c6ef94460d23acffde77834e883cdb7cd043dbdb7c7d709a9392
-SIZE (perl/BSDPAN-5.12.1_20100713.tar.bz2) = 8430
+SHA256 (perl/BSDPAN-20111107.tar.bz2) = 2f03218a592dc65ebfdc3c6b9394d91dcf4c53aa5290a08458b837baad5a21f9
+SIZE (perl/BSDPAN-20111107.tar.bz2) = 8448
