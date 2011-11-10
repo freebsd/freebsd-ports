@@ -1,0 +1,4 @@
+rubygem-redis is a Ruby client library for the Redis key-value store.
+
+WWW: https://github.com/ezmobius/redis-rb
+WWW: https://rubygems.org/gems/redis
