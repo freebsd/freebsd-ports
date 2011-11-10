@@ -774,6 +774,7 @@
     SUBDIR += rubygem-do_mysql
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
+    SUBDIR += rubygem-familia
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
