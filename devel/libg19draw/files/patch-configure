@@ -1,0 +1,57 @@
+--- configure.orig	2010-04-11 05:19:11.000000000 +0200
++++ configure	2011-04-16 08:44:40.000000000 +0200
+@@ -20199,9 +20199,9 @@
+ fi
+ 
+ 
+-{ $as_echo "$as_me:$LINENO: checking for g19_update_lcd_bmp in -lg19" >&5
+-$as_echo_n "checking for g19_update_lcd_bmp in -lg19... " >&6; }
+-if test "${ac_cv_lib_g19_g19_update_lcd_bmp+set}" = set; then
++{ $as_echo "$as_me:$LINENO: checking for g19_update_lcd in -lg19" >&5
++$as_echo_n "checking for g19_update_lcd in -lg19... " >&6; }
++if test "${ac_cv_lib_g19_g19_update_lcd+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -20219,11 +20219,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char g19_update_lcd_bmp ();
++char g19_update_lcd ();
+ int
+ main ()
+ {
+-return g19_update_lcd_bmp ();
++return g19_update_lcd ();
+   ;
+   return 0;
+ }
+@@ -20249,12 +20249,12 @@
+ 	 test "$cross_compiling" = yes ||
+ 	 $as_test_x conftest$ac_exeext
+        }; then
+-  ac_cv_lib_g19_g19_update_lcd_bmp=yes
++  ac_cv_lib_g19_g19_update_lcd=yes
+ else
+   $as_echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_lib_g19_g19_update_lcd_bmp=no
++	ac_cv_lib_g19_g19_update_lcd=no
+ fi
+ 
+ rm -rf conftest.dSYM
+@@ -20262,9 +20262,9 @@
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_g19_g19_update_lcd_bmp" >&5
+-$as_echo "$ac_cv_lib_g19_g19_update_lcd_bmp" >&6; }
+-if test "x$ac_cv_lib_g19_g19_update_lcd_bmp" = x""yes; then
++{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_g19_g19_update_lcd" >&5
++$as_echo "$ac_cv_lib_g19_g19_update_lcd" >&6; }
++if test "x$ac_cv_lib_g19_g19_update_lcd" = x""yes; then
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBG19 1
+ _ACEOF
