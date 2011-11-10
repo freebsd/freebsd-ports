@@ -42,4 +42,10 @@ do-install:
 .endif
 	${PREFIX}/bin/hanzim -port-install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: signal 11
+.endif
+
+.include <bsd.port.post.mk>
