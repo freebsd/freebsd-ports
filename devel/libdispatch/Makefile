@@ -83,6 +83,14 @@ post-configure:
 IGNORE=	is not supported on this OS version
 .endif
 
+.if ${OSVERSION} > 900000
+.if ${ARCH} == "powerpc
+BROKEN=		Does not configure on powerpc-9
+.elif ${ARCH} == "sparc64
+BROKEN=		Does not link on sparc64-9
+.endif
+.endif
+
 .if !defined(WITHOUT_CLANG)
 . if ${OSVERSION} < 900024
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang-devel \
