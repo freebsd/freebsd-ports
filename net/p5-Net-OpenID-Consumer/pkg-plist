@@ -2,12 +2,7 @@
 %%SITE_PERL%%/Net/OpenID/Association.pm
 %%SITE_PERL%%/Net/OpenID/ClaimedIdentity.pm
 %%SITE_PERL%%/Net/OpenID/Consumer.pm
-%%SITE_PERL%%/Net/OpenID/IndirectMessage.pm
-%%SITE_PERL%%/Net/OpenID/URIFetch.pm
 %%SITE_PERL%%/Net/OpenID/VerifiedIdentity.pm
-%%SITE_PERL%%/Net/OpenID/Yadis.pm
-%%SITE_PERL%%/Net/OpenID/Yadis/Service.pm
-@dirrmtry %%SITE_PERL%%/Net/OpenID/Yadis
 @dirrmtry %%SITE_PERL%%/Net/OpenID
 @dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Consumer
