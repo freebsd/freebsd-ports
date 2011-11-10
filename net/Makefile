@@ -979,6 +979,7 @@
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
     SUBDIR += rubygem-twitter4r
+    SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-yadis
     SUBDIR += rude
