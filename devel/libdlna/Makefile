@@ -37,4 +37,10 @@ post-patch:
 		's#\(PKGCONFIG_DIR = \).*#\1${LOCALBASE}/libdata/pkgconfig#' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9: fails to link
+.endif
+
+.include <bsd.port.post.mk>
