@@ -35,6 +35,10 @@ LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+= --disable-sys-linalg
 .endif
 
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9: error in pthreads
+.endif
+
 post-install:
 	@${PREFIX}/bin/crux -b -q /dev/null
 
