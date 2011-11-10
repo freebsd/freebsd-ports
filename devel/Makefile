@@ -3373,6 +3373,7 @@
     SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-authlogic
+    SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
