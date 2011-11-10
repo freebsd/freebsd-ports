@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
 DISTNAME=	jabberd14-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPP/Jabber server daemon
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
@@ -25,8 +25,6 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
-
-BROKEN=		does not link
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -62,7 +60,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--libdir=${PREFIX}/lib/jabber
 
 CPPFLAGS+=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib -ltasn1
+LDFLAGS+=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib -ltasn1 -lgcrypt
 
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
