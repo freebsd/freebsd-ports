@@ -5,7 +5,7 @@
  LIBINTL = @LIBINTL@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
-+LIBS = @LIBS@ -lintl -lfltk
++LIBS = @LIBS@ -lintl -lfltk -lfltk_gl
  LN_S = @LN_S@
  LTLIBICONV = @LTLIBICONV@
  LTLIBINTL = @LTLIBINTL@
