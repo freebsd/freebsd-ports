@@ -31,9 +31,6 @@ WANT_SDL=	yes
 WANT_GNOME=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-# Broken on ia-64
-NOT_FOR_ARCHS=	ia64
-
 # Are we building MAME or MESS? (also set by slave ports)
 MAMEMESS?=	mame
 
@@ -111,6 +108,10 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 # Various options are processed here.
 #
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
 
 .if defined(WITH_ASM68K)
 ASM_COMMENT=

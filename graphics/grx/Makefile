@@ -90,8 +90,8 @@ CONFIGURE_ARGS+=--disable-zlib
 CONFIGURE_ARGS+=--enable-x86_64
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-patch:

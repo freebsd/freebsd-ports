@@ -139,8 +139,8 @@ install-user:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64 or sparc64: cleanname not found
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not install: cleanname not found
 .endif
 
 .include <bsd.port.post.mk>

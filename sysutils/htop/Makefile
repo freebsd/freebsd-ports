@@ -18,7 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 OPTIONS=	LSOF "Enable lsof support" On
 
-NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

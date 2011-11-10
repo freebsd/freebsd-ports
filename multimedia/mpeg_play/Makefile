@@ -24,8 +24,8 @@ PLIST_FILES=	bin/mpeg_play
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not compile on ia64 or powerpc: uses i386-specific code
 .endif
 
 pre-patch:

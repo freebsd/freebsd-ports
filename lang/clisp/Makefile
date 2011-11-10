@@ -68,8 +68,8 @@ CONFIGURE_ARGS+=--disable-mmap
 BROKEN=		Does not build on FreeBSD 6.x
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 MODULES=	BDB CLX_NEW CLX_MIT DBUS FASTCGI GDBM GTK2 PARI PCRE PGSQL \

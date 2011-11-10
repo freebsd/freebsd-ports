@@ -32,12 +32,8 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Runaway cc1plus process
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to compile: internal gcc error
 .endif
 
 .ifdef(WITH_GTK2)

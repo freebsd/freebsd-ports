@@ -44,7 +44,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: unrecognized C++ options
 .endif
 
