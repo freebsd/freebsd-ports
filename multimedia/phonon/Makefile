@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTVERSION=	4.5.1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/src/
@@ -25,7 +24,7 @@ USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui \
 		qmake_build moc_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
@@ -79,8 +78,8 @@ post-install:
 	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/Phonon
 	${LN} -sf ${PREFIX}/include/KDE/Phonon ${PREFIX}/include/phonon/Phonon
 .for lib in phonon phononexperimental
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.0 ${QT_LIBDIR}/lib${lib}.so
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.0 ${QT_LIBDIR}/lib${lib}.so.4
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.1 ${QT_LIBDIR}/lib${lib}.so
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.1 ${QT_LIBDIR}/lib${lib}.so.4
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
