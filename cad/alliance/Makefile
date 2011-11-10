@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-5.0-20090901
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A complete set of CAD tools and libraries for VLSI design
 
-NOT_FOR_ARCHS=	amd64 ia64 sparc64
+NOT_FOR_ARCHS=	amd64 ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	${PKGNAME} does not build on ${ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
