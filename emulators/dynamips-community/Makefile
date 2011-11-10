@@ -57,6 +57,7 @@ DYNAMIPS_ARCH=	"amd64"
 BROKEN=		Does not compile
 .elif ${ARCH} == "powerpc"
 DYNAMIPS_ARCH=	"ppc32"
+BROKEN=		Does not compile: uses i386 asm
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
