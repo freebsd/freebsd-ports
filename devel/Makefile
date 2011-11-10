@@ -822,6 +822,7 @@
     SUBDIR += libfreefare
     SUBDIR += libftdi
     SUBDIR += libg19
+    SUBDIR += libg19draw
     SUBDIR += libgalago
     SUBDIR += libgamepad
     SUBDIR += libgconf-java
