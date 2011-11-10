@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdec8dc2-0b3b-11e1-b722-001cc0476564">
+    <topic>gnutls -- client session resumption vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>2.12.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GnuTLS team reports:</p>
+	<blockquote cite="http://www.gnu.org/software/gnutls/security.html">
+	  <p>GNUTLS-SA-2011-2 Possible buffer overflow/Denial of service</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-4128</cvename>
+	<url>http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/5596</url>
+    </references>
+    <dates>
+      <discovery>2011-11-08</discovery>
+      <entry>2011-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c8ad3e8-0a30-11e1-9580-4061862b8c22">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
