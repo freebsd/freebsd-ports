@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.8.6
+PORTVERSION=	3.0.0a
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
