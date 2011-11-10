@@ -720,9 +720,11 @@ assp                            ports/mail/assp
 ast-aspell                      ports/textproc/ast-aspell
 astah-community                 ports/devel/astah-community
 asterisk                        ports/net/asterisk
+asterisk-oh323                  ports/net/asterisk-oh323
 asterisk-stat                   ports/www/asterisk-stat
 asterisk10                      ports/net/asterisk10
 asterisk14                      ports/net/asterisk14
+asterisk14-addons               ports/net/asterisk14-addons
 asterisk16                      ports/net/asterisk16
 asterisk16-addons               ports/net/asterisk16-addons
 astime                          ports/x11-clocks/astime
@@ -1726,7 +1728,6 @@ clutter                         ports/graphics/clutter
 clutter-box2d                   ports/graphics/clutter-box2d
 clutter-gst                     ports/multimedia/clutter-gst
 clutter-gtk                     ports/graphics/clutter-gtk
-clutter-qt                      ports/graphics/clutter-qt
 cm-super                        ports/print/cm-super
 cmake                           ports/devel/cmake
 cmake-gui                       ports/devel/cmake-gui
@@ -8119,7 +8120,6 @@ librfc822                       ports/mail/librfc822
 librmath                        ports/math/libRmath
 libroadnav                      ports/astro/libroadnav
 libroxml                        ports/textproc/libroxml
-librsvg                         ports/graphics/librsvg
 librsvg2                        ports/graphics/librsvg2
 librsync                        ports/net/librsync
 librtfcomp                      ports/archivers/librtfcomp
@@ -10391,7 +10391,6 @@ open                            ports/sysutils/open
 open-axiom                      ports/math/open-axiom
 open-beagle                     ports/devel/open-beagle
 open-cobol                      ports/lang/open-cobol
-open-cobol-devel                ports/lang/open-cobol-devel
 open-motif                      ports/x11-toolkits/open-motif
 open-vm-tools                   ports/emulators/open-vm-tools
 open-vm-tools-nox11             ports/emulators/open-vm-tools-nox11
@@ -11151,7 +11150,6 @@ p5-Catalyst-Engine-HTTP-Prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-Catalyst-Engine-PSGI         ports/www/p5-Catalyst-Engine-PSGI
 p5-Catalyst-Enzyme              ports/www/p5-Catalyst-Enzyme
 p5-Catalyst-Helper-Controller-Scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
-p5-Catalyst-Log-Log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-Catalyst-Manual              ports/www/p5-Catalyst-Manual
 p5-Catalyst-Model-Adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-Catalyst-Model-CDBI          ports/www/p5-Catalyst-Model-CDBI
@@ -11691,6 +11689,7 @@ p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
 p5-Dancer-Plugin-Redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-Dancer-Plugin-ValidationClass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
+p5-Dancer-Template-Xslate       ports/www/p5-Dancer-Template-Xslate
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
 p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
 p5-Data-ACL                     ports/devel/p5-Data-ACL
@@ -12347,6 +12346,7 @@ p5-GraphViz                     ports/graphics/p5-GraphViz
 p5-GraphViz-DBI                 ports/databases/p5-GraphViz-DBI
 p5-GraphViz-Data-Structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-GraphViz-Traverse            ports/graphics/p5-GraphViz-Traverse
+p5-GraphViz2                    ports/graphics/p5-GraphViz2
 p5-Graphics-Color               ports/graphics/p5-Graphics-Color
 p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
@@ -13874,6 +13874,7 @@ p5-Regexp-Common                ports/textproc/p5-Regexp-Common
 p5-Regexp-Common-Email-Address  ports/textproc/p5-Regexp-Common-Email-Address
 p5-Regexp-Common-net-CIDR       ports/textproc/p5-Regexp-Common-net-CIDR
 p5-Regexp-Common-profanity_us   ports/textproc/p5-Regexp-Common-profanity_us
+p5-Regexp-Compare               ports/devel/p5-Regexp-Compare
 p5-Regexp-Copy                  ports/textproc/p5-Regexp-Copy
 p5-Regexp-DefaultFlags          ports/textproc/p5-Regexp-DefaultFlags
 p5-Regexp-Grammars              ports/devel/p5-Regexp-Grammars
@@ -15426,7 +15427,6 @@ p5-catalyst-engine-http-prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-catalyst-engine-psgi         ports/www/p5-Catalyst-Engine-PSGI
 p5-catalyst-enzyme              ports/www/p5-Catalyst-Enzyme
 p5-catalyst-helper-controller-scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
-p5-catalyst-log-log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-catalyst-manual              ports/www/p5-Catalyst-Manual
 p5-catalyst-model-adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-catalyst-model-cdbi          ports/www/p5-Catalyst-Model-CDBI
@@ -15766,7 +15766,6 @@ p5-clone                        ports/devel/p5-Clone
 p5-clone-fast                   ports/devel/p5-Clone-Fast
 p5-clone-more                   ports/devel/p5-Clone-More
 p5-clone-pp                     ports/devel/p5-Clone-PP
-p5-clutter                      ports/graphics/p5-clutter
 p5-code-perl                    ports/devel/p5-Code-Perl
 p5-color-library                ports/graphics/p5-Color-Library
 p5-color-palette                ports/graphics/p5-Color-Palette
@@ -15976,6 +15975,7 @@ p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
 p5-dancer-plugin-redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-dancer-plugin-validationclass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
+p5-dancer-template-xslate       ports/www/p5-Dancer-Template-Xslate
 p5-danga-socket                 ports/devel/p5-Danga-Socket
 p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
 p5-data-acl                     ports/devel/p5-Data-ACL
@@ -16749,6 +16749,7 @@ p5-graphviz                     ports/graphics/p5-GraphViz
 p5-graphviz-data-structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-graphviz-dbi                 ports/databases/p5-GraphViz-DBI
 p5-graphviz-traverse            ports/graphics/p5-GraphViz-Traverse
+p5-graphviz2                    ports/graphics/p5-GraphViz2
 p5-gravatar-url                 ports/devel/p5-Gravatar-URL
 p5-growl-gntp                   ports/net/p5-Growl-GNTP
 p5-gssapi                       ports/security/p5-GSSAPI
@@ -18300,6 +18301,7 @@ p5-regexp-common                ports/textproc/p5-Regexp-Common
 p5-regexp-common-email-address  ports/textproc/p5-Regexp-Common-Email-Address
 p5-regexp-common-net-cidr       ports/textproc/p5-Regexp-Common-net-CIDR
 p5-regexp-common-profanity_us   ports/textproc/p5-Regexp-Common-profanity_us
+p5-regexp-compare               ports/devel/p5-Regexp-Compare
 p5-regexp-copy                  ports/textproc/p5-Regexp-Copy
 p5-regexp-defaultflags          ports/textproc/p5-Regexp-DefaultFlags
 p5-regexp-grammars              ports/devel/p5-Regexp-Grammars
@@ -19063,6 +19065,7 @@ p5-tree-simple                  ports/devel/p5-Tree-Simple
 p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-tree-suffix                  ports/textproc/p5-Tree-Suffix
+p5-true                         ports/devel/p5-true
 p5-try-tiny                     ports/lang/p5-Try-Tiny
 p5-trycatch                     ports/lang/p5-TryCatch
 p5-twiggy                       ports/www/p5-Twiggy
@@ -21613,6 +21616,8 @@ py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
 py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
 py-Pmw                          ports/x11-toolkits/py-Pmw
+py-Products.MailHost            ports/mail/py-Products.MailHost
+py-Products.SecureMailHost      ports/mail/py-Products.SecureMailHost
 py-PyGreSQL                     ports/databases/py-PyGreSQL
 py-PySQLite10                   ports/databases/py-PySQLite10
 py-PySQLite11                   ports/databases/py-PySQLite11
@@ -21629,6 +21634,7 @@ py-WebError                     ports/www/py-WebError
 py-WebFlash                     ports/www/py-WebFlash
 py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
+py-ZopeUndo                     ports/devel/py-ZopeUndo
 py-aafigure                     ports/graphics/py-aafigure
 py-actdiag                      ports/graphics/py-actdiag
 py-addons                       ports/devel/py-AddOns
@@ -21912,6 +21918,7 @@ py-imaging                      ports/graphics/py-imaging
 py-imdbpy                       ports/www/py-imdbpy
 py-impacket                     ports/net/py-impacket
 py-iniparse                     ports/devel/py-iniparse
+py-initgroups                   ports/devel/py-initgroups
 py-inlineegg                    ports/devel/py-InlineEgg
 py-instant                      ports/devel/py-instant
 py-interface                    ports/devel/py-interface
@@ -21976,6 +21983,7 @@ py-m2crypto                     ports/security/py-m2crypto
 py-mad                          ports/audio/py-mad
 py-magic                        ports/devel/py-magic
 py-mako                         ports/textproc/py-mako
+py-manuel                       ports/devel/py-manuel
 py-markdown                     ports/textproc/py-markdown
 py-markdown2                    ports/textproc/py-markdown2
 py-markupsafe                   ports/textproc/py-MarkupSafe
@@ -22118,6 +22126,8 @@ py-pqueue                       ports/devel/py-pqueue
 py-prewikka                     ports/www/py-prewikka
 py-prioritized_methods          ports/devel/py-prioritized_methods
 py-probstat                     ports/math/py-probstat
+py-products.mailhost            ports/mail/py-Products.MailHost
+py-products.securemailhost      ports/mail/py-Products.SecureMailHost
 py-progressbar                  ports/misc/py-progressbar
 py-prolog                       ports/lang/py-prolog
 py-protobuf                     ports/devel/py-protobuf
@@ -22417,6 +22427,7 @@ py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
 py-ujson                        ports/devel/py-ujson
 py-unidecode                    ports/converters/py-unidecode
+py-unittest2                    ports/devel/py-unittest2
 py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
 py-urlimport                    ports/devel/py-urlimport
@@ -22507,6 +22518,7 @@ py-zfs                          ports/sysutils/py-zfs
 py-zlog                         ports/devel/py-zLOG
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
+py-zope.copy                    ports/devel/py-zope.copy
 py-zope.datetime                ports/devel/py-zope.datetime
 py-zope.deprecation             ports/devel/py-zope.deprecation
 py-zope.event                   ports/devel/py-zope.event
@@ -22516,9 +22528,12 @@ py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.interface               ports/devel/py-zope.interface
 py-zope.location                ports/devel/py-zope.location
 py-zope.minmax                  ports/devel/py-zope.minmax
+py-zope.password                ports/security/py-zope.password
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
+py-zope.size                    ports/devel/py-zope.size
 py-zope.testing                 ports/devel/py-zope.testing
+py-zopeundo                     ports/devel/py-ZopeUndo
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
@@ -24013,6 +24028,7 @@ rubygem-sys-host                ports/sysutils/rubygem-sys-host
 rubygem-sys-proctable           ports/sysutils/rubygem-sys-proctable
 rubygem-sys-uname               ports/sysutils/rubygem-sys-uname
 rubygem-sys-uptime              ports/sysutils/rubygem-sys-uptime
+rubygem-sysinfo                 ports/devel/rubygem-sysinfo
 rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
@@ -24712,7 +24728,6 @@ soundkonverter                  ports/audio/soundkonverter
 soundmodem                      ports/comms/soundmodem
 soundtouch                      ports/audio/soundtouch
 soundtracker                    ports/audio/soundtracker
-soup                            ports/devel/soup
 source-highlight                ports/textproc/source-highlight
 sourcenav                       ports/devel/sourcenav
 sowing                          ports/textproc/sowing
@@ -25975,6 +25990,7 @@ uae                             ports/emulators/uae
 uarduno                         ports/comms/uarduno
 ubench                          ports/benchmarks/ubench
 ubh                             ports/news/ubh
+ubuntu-font                     ports/x11-fonts/ubuntu-font
 ubuntulooks                     ports/x11-themes/ubuntulooks
 ucarp                           ports/net/ucarp
 ucc                             ports/lang/ucc
