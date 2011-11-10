@@ -62,6 +62,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-11-10</entry>
     </dates>
   </vuln>
+
   <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
     <topic>libxml -- Multiple use-after-free vulnerabilities</topic>
     <affects>
@@ -86,6 +87,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-11-10</entry>
     </dates>
   </vuln>
+
   <vuln vid="5a7d4110-0b7a-11e1-846b-00235409fd3e">
     <topic>libxml -- Stack consumption vulnerability</topic>
     <affects>
