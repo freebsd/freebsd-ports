@@ -21,5 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Perl6::Slurp.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
