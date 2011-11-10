@@ -12,9 +12,7 @@
 #
 # postgrey_enable="YES"
 #
-# See perldoc postgrey or run `postgrey --help` to see options. You can change
-# the --dbdir path by setting postgrey_dbdir.  Specify additional options with
-# the postgrey_options variable.
+# See perldoc postgrey for flags
 #
 
 . /etc/rc.subr
@@ -23,6 +21,7 @@ name=postgrey
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/postgrey
+required_dirs=/var/db/postgrey
 extra_commands=reload
 
 stop_postcmd=stop_postcmd
@@ -36,14 +35,13 @@ stop_postcmd()
 
 load_rc_config $name
 
-postgrey_dbdir=${postgrey_dbdir:-"%%DBDIR%%"}
 postgrey_enable=${postgrey_enable:-"NO"}
-postgrey_options=${postgrey_options:-"--inet:10023"}
+postgrey_greylist_header=${postgrey_greylist_header:-"X-Greylist: delayed %t seconds by postgrey-%v at %h\; %d"}
 postgrey_pidfile=${postgrey_pidfile:-"/var/run/postgrey.pid"}
-postgrey_flags=${postgrey_flags:-"-d --pidfile=${postgrey_pidfile} \
-	--dbdir=${postgrey_dbdir} ${postgrey_options}"}
+postgrey_flags=${postgrey_flags:-"--pidfile=${postgrey_pidfile} \
+	--inet=10023 -d --user=%%USER%% --group=%%GROUP%% --dbdir=/var/db/postgrey \
+	--x-greylist-header=${postgrey_greylist_header}"}
 
 pidfile="${postgrey_pidfile}"
-required_dirs=${postgrey_dbdir}
 
 run_rc_command "$1"
