@@ -20,4 +20,10 @@ USE_BZIP2=	yes
 
 DATADIR=	${PREFIX}/share/chewing
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: signal 6
+.endif
+
+.include <bsd.port.post.mk>
