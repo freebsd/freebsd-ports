@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tardy
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	archivers
 MASTER_SITES=	CRITICAL
 
@@ -39,10 +39,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not link
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
