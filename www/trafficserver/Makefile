@@ -43,8 +43,8 @@ RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 BROKEN=		does not compile on 7.X/amd64
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-configure:

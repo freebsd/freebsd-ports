@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=	--disable-mmx --disable-sse
 .endif
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if ${OSVERSION} < 700000

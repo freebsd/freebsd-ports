@@ -24,8 +24,8 @@ MAN6=	bitmap.6 regexp.6
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		Does not compile on alpha or amd64
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>

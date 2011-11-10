@@ -37,8 +37,8 @@ do-install:
 
 PSFONTSMAP!=	${LOCALBASE}/bin/kpsewhich -format 'dvips config' config.ps 2>/dev/null || ${ECHO_CMD} "/dev/null"
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64 or sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .include <bsd.port.post.mk>

@@ -64,8 +64,8 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-.if ${ARCH} == "sparc64"
-IGNORE=		does not install: not yet supported on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+IGNORE=		does not install: not yet supported on this architecture
 .endif
 
 post-extract:

@@ -35,7 +35,7 @@ MAN3=		Sys::Filesystem::Mswin32.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 MANUAL_PACKAGE_BUILD=	accesses /etc/fstab during configure phase
 .endif
 
