@@ -46,4 +46,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: fails in assembler
+.endif
+
+.include <bsd.port.post.mk>
