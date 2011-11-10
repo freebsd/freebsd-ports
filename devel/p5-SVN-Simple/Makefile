@@ -25,4 +25,10 @@ MAN3=		SVN::Simple::Edit.3 SVN::Simple::Editor.3
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
+.include <bsd.port.post.mk>
