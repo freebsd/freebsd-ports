@@ -37,6 +37,7 @@
     SUBDIR += eterm
     SUBDIR += fcitx
     SUBDIR += fcitx-configtool
+    SUBDIR += fcitx-sunpinyin
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortune
