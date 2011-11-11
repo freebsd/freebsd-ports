@@ -43,4 +43,10 @@ PLIST_SUB+=	WITH_ASPELL=""
 PLIST_SUB+=	WITH_ASPELL="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
+.include <bsd.port.post.mk>
