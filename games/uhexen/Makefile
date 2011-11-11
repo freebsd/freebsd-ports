@@ -23,6 +23,10 @@ OPTIONS=	WAD	"Install demo-version WAD file"		on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 .if !defined(WITHOUT_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} hexen.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
