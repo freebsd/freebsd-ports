@@ -57,7 +57,18 @@ bin/tvbrowser
 %%DATADIR%%/imgs/tvbrowser32.png
 %%DATADIR%%/imgs/tvbrowser48.png
 %%DATADIR%%/linux.properties
-%%DATADIR%%/plugins/KNotifyPlugin.jar
+%%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/footer.jpg
+%%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/header.jpg
+%%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/icon
+%%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/persona.prop
+%%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c/footer.jpg
+%%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c/header.jpg
+%%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c/icon
+%%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c/persona.prop
+%%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3/footer.jpg
+%%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3/header.jpg
+%%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3/icon
+%%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3/persona.prop
 %%DATADIR%%/plugins/NewsPlugin.jar
 %%DATADIR%%/themepacks/themepack.zip
 %%DATADIR%%/tvbrowser.desktop
@@ -65,9 +76,13 @@ bin/tvbrowser
 %%DATADIR%%/tvbrowser.sh
 %%DATADIR%%/website.url
 %%DATADIR%%/wiki.url
-@dirrmtry %%DATADIR%%/themepacks
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/imgs
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/hyphen
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/themepacks
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3
+@dirrm %%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c
+@dirrm %%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42
+@dirrm %%DATADIR%%/personas
+@dirrm %%DATADIR%%/imgs
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/hyphen
+@dirrm %%DATADIR%%
