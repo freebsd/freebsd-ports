@@ -16,6 +16,10 @@ COMMENT=	Python-based build system
 
 LICENSE=	BSD
 
+DEPRECATED=	Port is outdated. Author discourages system-wide installation. \
+		Download it manually
+EXPIRATION_DATE=	2011-12-11
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
