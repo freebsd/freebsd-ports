@@ -22,4 +22,12 @@ GNU_CONFIGURE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abgx360 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900000
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
+.endif
+
+.include <bsd.port.post.mk>
