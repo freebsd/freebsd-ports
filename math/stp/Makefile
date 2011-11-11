@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	stp
-DISTVERSIONPREFIX=	ver-
-DISTVERSION=	0.1
-DISTVERSIONSUFFIX=	-11-18-2008
-PORTREVISION=	1
+PORTVERSION=	1407
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}-fast-prover/${PORTNAME}-fast-prover/${PORTNAME}-ver-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://people.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+DISTNAME=	stp-fast-prover-r${PORTVERSION}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	6yearold@gmail.com
 COMMENT=	A Decision Procedure for Bitvectors and Arrays
 
+LICENSE=	MIT
+
 USE_BISON=	build
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
+
+CONFIGURE_SCRIPT=	scripts/configure
+CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
+			--with-gcc=${CC} \
+			--with-g++=${CXX} \
+			--with-fpic
 
 PLIST_FILES=	bin/stp \
 		include/stp/c_interface.h \
@@ -27,14 +33,17 @@ PLIST_FILES=	bin/stp \
 		lib/libstp.a
 PLIST_DIRS=	include/stp
 
+post-patch:
+	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/src/main/versionString.stamp
+	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKSRC}/scripts/Makefile.common
+
 do-configure:
-	${ECHO_CMD} "PREFIX=${PREFIX}" > ${WRKSRC}/config.info
-	${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile
+	cd ${WRKSRC} && ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/stp ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/libstp.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/stp
-	${INSTALL_DATA} ${WRKSRC}/c_interface/*.h ${PREFIX}/include/stp
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if (${OSVERSION} < 802502)
+IGNORE=	stp needs log2(3)
+.endif
+
+.include <bsd.port.post.mk>
