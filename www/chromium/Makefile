@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	15.0.874.106
+DISTVERSION=	15.0.874.120
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -170,8 +170,11 @@ post-patch:
 		${WRKSRC}/base/base.gypi \
 		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
+		${WRKSRC}/third_party/WebKit/Source/WebCore/gyp/WebCore.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
-		${WRKSRC}/v8/tools/gyp/v8.gyp
+		${WRKSRC}/crypto/crypto.gyp \
+		${WRKSRC}/v8/tools/gyp/v8.gyp \
+		${WRKSRC}/v8/build/common.gypi
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
