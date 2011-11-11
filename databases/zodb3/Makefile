@@ -30,4 +30,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	ZODB3
+
 .include <bsd.port.mk>
