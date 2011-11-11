@@ -1,0 +1,4 @@
+Fcitx is a simple and fast Chinese XIM server. It comes with a script,
+fcitx-configtool, which looks for this configure tool and invokes it.
+
+WWW:	http://code.google.com/p/fcitx/
