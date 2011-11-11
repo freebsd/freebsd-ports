@@ -47,4 +47,8 @@ post-patch:
 USE_GCC=	4.2+
 .endif
 
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: uses i386-specific asm
+.endif
+
 .include <bsd.port.post.mk>
