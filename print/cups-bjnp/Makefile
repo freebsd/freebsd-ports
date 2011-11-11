@@ -21,4 +21,10 @@ CONFIGURE_ENV=	LIBS="-lcompat"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900000
+BROKEN=		Does not compile on FreeBSD 9
+.endif
+
+.include <bsd.port.post.mk>
