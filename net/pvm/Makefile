@@ -116,6 +116,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+NOT_FOR_ARCHS=	powerpc
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|$$(ARCHCFLAGS)|$$(ARCHCFLAGS) -fPIC|g' ${WRKSRC}/src/Makefile.aimk
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
