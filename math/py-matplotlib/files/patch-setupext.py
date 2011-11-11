@@ -1,16 +1,17 @@
---- setupext.py.orig	2010-07-07 09:41:55.000000000 +0800
-+++ setupext.py	2011-06-27 16:14:58.000000000 +0800
-@@ -68,6 +68,9 @@
+--- setupext.py.orig    2010-07-07 05:41:55.000000000 +0400
++++ setupext.py    2011-10-16 18:49:43.000000000 +0400
+@@ -68,6 +68,10 @@
      'freebsd4' : ['/usr/local', '/usr'],
      'freebsd5' : ['/usr/local', '/usr'],
      'freebsd6' : ['/usr/local', '/usr'],
 +    'freebsd7' : ['/usr/local', '/usr'],
 +    'freebsd8' : ['/usr/local', '/usr'],
 +    'freebsd9' : ['/usr/local', '/usr'],
++    'freebsd10': ['/usr/local', '/usr'],
      'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
      'gnukfreebsd5' : ['/usr/local', '/usr'],
      'gnukfreebsd6' : ['/usr/local', '/usr'],
-@@ -789,7 +792,7 @@
+@@ -789,7 +793,7 @@
          module.libraries.extend(wxlibs)
          return
  
@@ -19,7 +20,7 @@
  
  # Make sure you use the Tk version given by Tkinter.TkVersion
  # or else you'll build for a wrong version of the Tcl
-@@ -828,8 +831,12 @@
+@@ -828,8 +832,12 @@
                  gotit = False
  
      if gotit:
@@ -33,7 +34,7 @@
      else:
          print_status("Tkinter", "no")
      if explanation is not None:
-@@ -1092,9 +1099,9 @@
+@@ -1092,9 +1100,9 @@
  
          # Add final versions of directories and libraries to module lists
          tcl_lib, tcl_inc, tk_lib, tk_inc = result
