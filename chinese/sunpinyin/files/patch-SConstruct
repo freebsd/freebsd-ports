@@ -1,0 +1,28 @@
+--- SConstruct.orig	2011-02-17 21:39:52.000000000 -0600
++++ SConstruct	2011-11-10 03:04:39.833952104 -0600
+@@ -150,9 +150,13 @@ def CreateEnvironment():
+         tar = 'gtar'
+         make = 'gmake'
+ 
+-    return Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS=cflags,
+-                       TAR=tar, MAKE=make, WGET=wget,
+-                       CPPPATH=['.'] + allinc())
++    env = Environment(**ARGUMENTS)
++    env['ENV'] = os.environ
++    env['TAR'] = tar
++    env['MAKE'] = make
++    env['CPPPATH'] = ['.'] + allinc()
++
++    return env
+ 
+ def PassVariables(envvar, env):
+     for (x, y) in envvar:
+@@ -382,7 +386,7 @@ def DoInstall():
+                         (install_path, libname, libname_link))
+             ]
+ 
+-    lib_pkgconfig_target = env.Install(libdir+'/pkgconfig',
++    lib_pkgconfig_target = env.Install(env['PREFIX']+'/libdata/pkgconfig',
+                                        ['sunpinyin-2.0.pc'])
+     libdata_target = env.Install(libdatadir,
+                                  ['data/lm_sc.t3g',
