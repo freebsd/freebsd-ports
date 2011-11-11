@@ -2936,6 +2936,7 @@
     SUBDIR += pure-gen
     SUBDIR += pushmi
     SUBDIR += pwlib
+    SUBDIR += py-Acquisition
     SUBDIR += py-AddOns
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
