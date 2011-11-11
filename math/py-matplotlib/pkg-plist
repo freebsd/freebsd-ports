@@ -50,7 +50,6 @@
 %%GTKBACKEND%%%%PYTHON_SITELIBDIR%%/matplotlib/backends/_backend_gdk.so
 %%GTKAGGBACKEND%%%%PYTHON_SITELIBDIR%%/matplotlib/backends/_gtkagg.so
 %%TKAGGBACKEND%%%%PYTHON_SITELIBDIR%%/matplotlib/backends/_tkagg.so
-%%WXAGGBACKEND%%%%PYTHON_SITELIBDIR%%/matplotlib/backends/_wxagg.so
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_agg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_agg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_agg.pyo
