@@ -7,10 +7,10 @@
 
 PORTNAME=	gnumail
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/
-DISTNAME=	GNUMail-${PORTVERSION}pre3
+MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
+DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep mail client
@@ -25,7 +25,6 @@ USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	Addresses:${ADDRESSES_PORT}
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-WRKSRC=		${WRKDIR}/GNUMail
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 PANTOMIME_PORT?=	mail/pantomime

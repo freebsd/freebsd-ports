@@ -160,6 +160,53 @@ GNUstep/Local/Applications/GNUMail.app/Resources/trash_16.tiff
 GNUstep/Local/Applications/GNUMail.app/Resources/trash_20.tiff
 GNUstep/Local/Applications/GNUMail.app/Resources/up_15.tiff
 GNUstep/Local/Applications/GNUMail.app/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs/Account
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs/Resources/account.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs/Advanced
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs/Resources/advanced.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs/Colors
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs/Resources/colors.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Compose
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Filtering
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Filtering.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs/Fonts
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs/Resources/fonts.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Import.bundle/Import
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Import.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Import.bundle/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/MIME
+GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/Resources/mime.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Receiving
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs/Sending
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/3-pane_96x96.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/drawer_96x96.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/floating_96x96.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/viewing.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources/widescreen_96x96.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Viewing
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/stamp.make
 GNUstep/Local/Library/Frameworks/GNUMail.framework/GNUMail
 GNUstep/Local/Library/Frameworks/GNUMail.framework/Headers
 GNUstep/Local/Library/Frameworks/GNUMail.framework/Resources
@@ -170,82 +217,39 @@ GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/lib
 GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so.%%VERSION%%
 GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/Current
 GNUstep/Local/Library/Frameworks/GNUMail.framework/libGNUMail.so
-GNUstep/Local/Library/GNUMail/Account.prefs/Account
-GNUstep/Local/Library/GNUMail/Account.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Account.prefs/Resources/account.tiff
-GNUstep/Local/Library/GNUMail/Account.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Advanced.prefs/Advanced
-GNUstep/Local/Library/GNUMail/Advanced.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Advanced.prefs/Resources/advanced.tiff
-GNUstep/Local/Library/GNUMail/Advanced.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Colors.prefs/Colors
-GNUstep/Local/Library/GNUMail/Colors.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Colors.prefs/Resources/colors.tiff
-GNUstep/Local/Library/GNUMail/Colors.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Compose.prefs/Compose
-GNUstep/Local/Library/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
-GNUstep/Local/Library/GNUMail/Compose.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Filtering.prefs/Filtering
-GNUstep/Local/Library/GNUMail/Filtering.prefs/Resources/Filtering.tiff
-GNUstep/Local/Library/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Filtering.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Fonts.prefs/Fonts
-GNUstep/Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
-GNUstep/Local/Library/GNUMail/Fonts.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Import.bundle/Import
-GNUstep/Local/Library/GNUMail/Import.bundle/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Import.bundle/stamp.make
-GNUstep/Local/Library/GNUMail/MIME.prefs/MIME
-GNUstep/Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
-GNUstep/Local/Library/GNUMail/MIME.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Receiving.prefs/Receiving
-GNUstep/Local/Library/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
-GNUstep/Local/Library/GNUMail/Receiving.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
-GNUstep/Local/Library/GNUMail/Sending.prefs/Sending
-GNUstep/Local/Library/GNUMail/Sending.prefs/stamp.make
-GNUstep/Local/Library/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
-GNUstep/Local/Library/GNUMail/Viewing.prefs/Resources/viewing.tiff
-GNUstep/Local/Library/GNUMail/Viewing.prefs/Viewing
-GNUstep/Local/Library/GNUMail/Viewing.prefs/stamp.make
 GNUstep/Local/Library/Headers/GNUMail
 GNUstep/Local/Library/Libraries/libGNUMail.so
 GNUstep/Local/Library/Libraries/libGNUMail.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libGNUMail.so.%%VERSION%%
 GNUstep/Local/Tools/GNUMail
-@dirrm GNUstep/Local/Library/GNUMail/Viewing.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Viewing.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Sending.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Sending.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Receiving.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Receiving.prefs
-@dirrm GNUstep/Local/Library/GNUMail/MIME.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/MIME.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Import.bundle/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Import.bundle
-@dirrm GNUstep/Local/Library/GNUMail/Fonts.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Fonts.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Filtering.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Filtering.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Compose.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Compose.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Colors.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Colors.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Advanced.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Advanced.prefs
-@dirrm GNUstep/Local/Library/GNUMail/Account.prefs/Resources
-@dirrm GNUstep/Local/Library/GNUMail/Account.prefs
-@dirrm GNUstep/Local/Library/GNUMail
 @dirrm GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Resources
 @dirrm GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Headers
 @dirrm GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%
 @dirrm GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions
 @dirrm GNUstep/Local/Library/Frameworks/GNUMail.framework
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Viewing.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Sending.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Import.bundle/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Import.bundle
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Fonts.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Colors.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Advanced.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail/Account.prefs
+@dirrm GNUstep/Local/Library/ApplicationSupport/GNUMail
 @dirrm GNUstep/Local/Applications/GNUMail.app/Resources/Turkish.lproj
 @dirrm GNUstep/Local/Applications/GNUMail.app/Resources/Swedish.lproj
 @dirrm GNUstep/Local/Applications/GNUMail.app/Resources/Spanish.lproj
