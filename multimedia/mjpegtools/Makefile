@@ -57,6 +57,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .if ${ARCH} == "i386"
 CFLAGS=	-O0
 .endif
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9
+.endif
 
 .if !defined(WITHOUT_GTK2) && defined(WITHOUT_SDL)
 IGNORE=		GTK+2 player needs SDL
