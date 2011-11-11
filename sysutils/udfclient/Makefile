@@ -36,6 +36,10 @@ PLIST_FILES=	bin/udfdump \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900043
+BROKEN=		Does not compile on recent FreeBSD-9
+.endif
+
 .if defined(WITH_FUSE)
 UDFCLIENTFS_NAME=	udfclientfs
 UDFCLIENTFS_VERSION=	0.4
