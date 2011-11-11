@@ -1,14 +1,5 @@
 --- ./linux/setup.py.orig	2011-05-25 00:30:12.000000000 +0200
 +++ ./linux/setup.py	2011-05-25 17:53:57.000000000 +0200
-@@ -259,7 +259,7 @@
-     fi
- 
-     $GDB -ex 'set breakpoint pending on' \
--        -ex 'run' --args $PYTHON ./miro.real --sync "$@"
-+        -ex 'run' --args $PYTHON %%PREFIX%%/bin/miro.real --sync "$@"
- else
-     miro.real "$@"
- fi
 @@ -276,7 +276,7 @@
  xlib_ext = \
      Extension("miro.plat.xlibhelper",
