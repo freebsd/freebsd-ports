@@ -640,7 +640,6 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite10
     SUBDIR += py-PySQLite11
-    SUBDIR += py-axiom
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
