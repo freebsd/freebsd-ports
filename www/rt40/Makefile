@@ -11,7 +11,7 @@
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
