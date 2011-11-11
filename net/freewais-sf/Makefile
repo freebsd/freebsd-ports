@@ -31,6 +31,10 @@ MAN3=	ftw.3 regexp.3 scandir.3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: drops core
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/freebsd.sh ${WRKSRC}/hints
 
