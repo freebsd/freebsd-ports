@@ -57,4 +57,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/amiga/devs/AHI/uae.audio ${DATADIR}/amiga/devs/AHI/
 	${INSTALL_DATA} ${WRKSRC}/amiga/devs/AudioModes/UAE ${DATADIR}/amiga/devs/AudioModes/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
