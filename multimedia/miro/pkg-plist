@@ -399,6 +399,12 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/messages.py
 %%PYTHON_SITELIBDIR%%/miro/messages.pyc
 %%PYTHON_SITELIBDIR%%/miro/messages.pyo
+%%PYTHON_SITELIBDIR%%/miro/messagetools.pyc
+%%PYTHON_SITELIBDIR%%/miro/messagetools.pyo
+%%PYTHON_SITELIBDIR%%/miro/messagetools.py
+%%PYTHON_SITELIBDIR%%/miro/miro_helper.pyc
+%%PYTHON_SITELIBDIR%%/miro/miro_helper.pyo
+%%PYTHON_SITELIBDIR%%/miro/miro_helper.py
 %%PYTHON_SITELIBDIR%%/miro/models.py
 %%PYTHON_SITELIBDIR%%/miro/models.pyc
 %%PYTHON_SITELIBDIR%%/miro/models.pyo
@@ -508,6 +514,9 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/storedatabase.py
 %%PYTHON_SITELIBDIR%%/miro/storedatabase.pyc
 %%PYTHON_SITELIBDIR%%/miro/storedatabase.pyo
+%%PYTHON_SITELIBDIR%%/miro/subprocessmanager.pyo
+%%PYTHON_SITELIBDIR%%/miro/subprocessmanager.pyc
+%%PYTHON_SITELIBDIR%%/miro/subprocessmanager.py
 %%PYTHON_SITELIBDIR%%/miro/subscription.py
 %%PYTHON_SITELIBDIR%%/miro/subscription.pyc
 %%PYTHON_SITELIBDIR%%/miro/subscription.pyo
@@ -592,6 +601,9 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/test/strippertest.py
 %%PYTHON_SITELIBDIR%%/miro/test/strippertest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/strippertest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/subprocesstest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/subprocesstest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/subprocesstest.py
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.py
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.pyo
@@ -619,6 +631,9 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/util.py
 %%PYTHON_SITELIBDIR%%/miro/util.pyc
 %%PYTHON_SITELIBDIR%%/miro/util.pyo
+%%PYTHON_SITELIBDIR%%/miro/workerprocess.pyc
+%%PYTHON_SITELIBDIR%%/miro/workerprocess.pyo
+%%PYTHON_SITELIBDIR%%/miro/workerprocess.py
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.py
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyc
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyo
@@ -643,7 +658,6 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/metadataprogress.py
 %%PYTHON_SITELIBDIR%%/miro/sharing.py
 %%PYTHON_SITELIBDIR%%/miro/startfrontend.py
-%%PYTHON_SITELIBDIR%%/miro/libdaap
 %%PYTHON_SITELIBDIR%%/miro/libdaap/mdns.py
 %%PYTHON_SITELIBDIR%%/miro/libdaap/pybonjour.py
 %%PYTHON_SITELIBDIR%%/miro/libdaap/__init__.py
@@ -713,7 +727,6 @@ bin/miro-segmenter
 %%PYTHON_SITELIBDIR%%/miro/test/osxsparkletest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/httpauthtoolstest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/watchedfoldertest.pyo
-%%PYTHON_SITELIBDIR%%/miro/frontends/profilewidgets
 %%PYTHON_SITELIBDIR%%/miro/frontends/profilewidgets/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/profilewidgets/tests.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/profilewidgets/application.py
@@ -877,6 +890,7 @@ share/locale/hi/LC_MESSAGES/miro.mo
 share/locale/hr/LC_MESSAGES/miro.mo
 share/locale/hu/LC_MESSAGES/miro.mo
 share/locale/hy/LC_MESSAGES/miro.mo
+share/locale/ia/LC_MESSAGES/miro.mo
 share/locale/id/LC_MESSAGES/miro.mo
 share/locale/is/LC_MESSAGES/miro.mo
 share/locale/it/LC_MESSAGES/miro.mo
@@ -1482,7 +1496,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/usvideo.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_miroguide_com_miroguide_new.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_thisamericanlife_org_talpodcast.xml
-%%DATADIR%%/resources/testdata/feedparsertests/output
+%%DATADIR%%/resources/testdata/feedparsertests/feeds/feed_with_nul_bytes.xml
 %%DATADIR%%/resources/testdata/feedparsertests/output/ooze.rss.output
 %%DATADIR%%/resources/testdata/feedparsertests/output/http___feeds_feedburner_com_earth-touch_podcast_720p.xml.output
 %%DATADIR%%/resources/testdata/feedparsertests/output/http___feeds_thisamericanlife_org_talpodcast.xml.output
@@ -1490,8 +1504,10 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/feedparsertests/output/http___vodo_net_feeds_promoted.xml.output
 %%DATADIR%%/resources/testdata/feedparsertests/output/http___www_linktv_org_rss_hq_globalpulse.xml.output
 %%DATADIR%%/resources/testdata/feedparsertests/output/usvideo.xml.output
+%%DATADIR%%/resources/testdata/feedparsertests/output/feed_with_nul_bytes.xml.output
 %%DATADIR%%/resources/testdata/feedparsertests/output/http___feeds_miroguide_com_miroguide_new.xml.output
 %%DATADIR%%/resources/testdata/httpserver/auth-failed.txt
+%%DATADIR%%/resources/testdata/httpserver/test.txt.gz
 %%DATADIR%%/resources/testdata/metadata/mp3-0.mp3
 %%DATADIR%%/resources/testdata/metadata/mp3-1.mp3
 %%DATADIR%%/resources/testdata/metadata/mp4-0.mp4
@@ -1499,6 +1515,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/metadata/webm-0.webm
 %%DATADIR%%/resources/testdata/metadata/mp3-2.mp3
 %%DATADIR%%/resources/testdata/metadata/theora_with_ogg_extension.ogg
+%%DATADIR%%/resources/devices/mediaplayer.py
 %%DATADIR%%/resources/devices/generic_phone.py
 %%DATADIR%%/resources/devices/android.py
 %%DATADIR%%/resources/extensions/testharness.py
@@ -1586,7 +1603,6 @@ share/pixmaps/miro.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/shell
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/cli
-@dirrm %%PYTHON_SITELIBDIR%%/miro/frontends
 @dirrm %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private
 @dirrm %%PYTHON_SITELIBDIR%%/miro/dl_daemon
 @dirrm %%PYTHON_SITELIBDIR%%/miro/libdaap
