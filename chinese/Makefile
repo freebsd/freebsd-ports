@@ -39,6 +39,7 @@
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-googlepinyin
     SUBDIR += fcitx-sunpinyin
+    SUBDIR += fcitx-ui-light
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortune
