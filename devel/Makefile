@@ -2948,6 +2948,7 @@
     SUBDIR += py-Jinja2
     SUBDIR += py-Missing
     SUBDIR += py-PEAK-Rules
+    SUBDIR += py-Persistence
     SUBDIR += py-RPyC
     SUBDIR += py-SymbolType
     SUBDIR += py-ToscaWidgets
