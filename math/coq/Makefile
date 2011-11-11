@@ -45,6 +45,10 @@ PORTDOCS=	*
 MAN1=	coq-tex.1 coq_makefile.1 coqc.1 coqchk.1 coqdep.1 coqdoc.1 \
 	coqmktop.1 coqtop.1 coqtop.byte.1 coqtop.opt.1 coqwc.1 gallina.1
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
+
 .if defined(WITH_IDE) || exists(${LOCALBASE}/bin/lablgtk2)
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	${BUILD_DEPENDS}

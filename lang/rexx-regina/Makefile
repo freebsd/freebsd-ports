@@ -33,4 +33,10 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e "s|-xchar=unsigned||g" ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
+
+.include <bsd.port.post.mk>
