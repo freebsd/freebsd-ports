@@ -16,7 +16,7 @@
  fi
  
 -if [ -x /sbin/resolvconf ]; then # Optional tool on Debian, Ubuntu, Gentoo
-+# Optional tool on Debian, Ubuntu, Gentoo, FreeBSD 9.0-RELEASE has a different,
++# Optional tool on Debian, Ubuntu, Gentoo. FreeBSD 9.0-RELEASE has a different,
 +# incompatible /sbin/resolvconf implementation
 +if [ -x /sbin/resolvconf ] && [ "$OS" = "Linux" ]; then
  	MODIFYRESOLVCONF=modify_resolvconf_manager
