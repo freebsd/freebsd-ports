@@ -38,4 +38,10 @@ do-install:
 		${PREFIX}/share/ispell/ukrainian.dict
 	${INSTALL_SCRIPT} ${FILESDIR}/ispell-uk ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not install on powerpc-9
+.endif
+
+.include <bsd.port.post.mk>
