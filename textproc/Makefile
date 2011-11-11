@@ -1133,6 +1133,7 @@
     SUBDIR += py-xmltools
     SUBDIR += py-xmltv
     SUBDIR += py-zope.i18nmessageid
+    SUBDIR += py-zope.tal
     SUBDIR += py-zpt
     SUBDIR += py2html
     SUBDIR += pybook
