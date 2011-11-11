@@ -3216,6 +3216,7 @@
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zope.annotation
     SUBDIR += py-zope.broken
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
