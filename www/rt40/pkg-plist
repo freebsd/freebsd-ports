@@ -325,6 +325,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.1/acl.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.1/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.3/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.4/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1445,6 +1446,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrm share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.0rc7
