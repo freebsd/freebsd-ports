@@ -58,6 +58,10 @@ OPTIONS=	SQLITE "Support for Firefox cookies" Off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not install on powerpc-9
+.endif
+
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=	--with-sqlite3
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
