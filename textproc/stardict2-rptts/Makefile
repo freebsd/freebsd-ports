@@ -12,7 +12,7 @@ DISTNAME=	WyabdcRealPeopleTTS
 DIST_SUBDIR=	stardict
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real People TTS for StarDict
 
 NO_BUILD=	yes
