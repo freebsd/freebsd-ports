@@ -36,6 +36,10 @@ OPTIONS=	GNUTLS	"Build with GnuTLS support"	off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on powerpc-9
+.endif
+
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .else
