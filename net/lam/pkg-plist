@@ -89,9 +89,9 @@ include/mpi2cxx/win_inln.h
 include/mpicxx.h
 include/mpio.h
 include/mpiof.h
-%%I386%%lib/lam/liblam_totalview.la
-%%I386%%lib/lam/liblam_totalview.so
-%%I386%%lib/lam/liblam_totalview.so.0
+%%32BIT_ONLY%%lib/lam/liblam_totalview.la
+%%32BIT_ONLY%%lib/lam/liblam_totalview.so
+%%32BIT_ONLY%%lib/lam/liblam_totalview.so.0
 lib/liblam.a
 lib/liblam.la
 lib/liblammpi++.a
@@ -108,6 +108,6 @@ lib/libmpi.la
 %%DATADIR%%/doc/romio-users-guide.ps.gz
 %%DATADIR%%/mpi.share
 @dirrm include/mpi2cxx
-%%I386%%@dirrm lib/lam
+%%32BIT_ONLY%%@dirrm lib/lam
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
