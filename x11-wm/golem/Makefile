@@ -35,6 +35,9 @@ MAN1=		golem.1
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
 
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
