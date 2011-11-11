@@ -6,8 +6,16 @@
 ### ====================================================================== ###
 
 SERVIIO_HOME=%%JAVAJARDIR%%/serviio
+SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar"
 # Setup the classpath
-SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar:$SERVIIO_HOME/derby.jar:$SERVIIO_HOME/jcs.jar:$SERVIIO_HOME/concurrent.jar:$SERVIIO_HOME/freemarker.jar:$SERVIIO_HOME/httpcore.jar:$SERVIIO_HOME/jaudiotagger.jar:$SERVIIO_HOME/jul-to-slf4j.jar:$SERVIIO_HOME/jcl-over-slf4j.jar:$SERVIIO_HOME/log4j.jar:$SERVIIO_HOME/sanselan.jar:$SERVIIO_HOME/slf4j-api.jar:$SERVIIO_HOME/slf4j-log4j12.jar:$SERVIIO_HOME/org.restlet.jar:$SERVIIO_HOME/org.restlet.ext.xstream.jar:$SERVIIO_HOME/xstream.jar:%%ETCDIR%%"
+for j in derby jcs concurrent freemarker httpcore jaudiotagger	\
+    jul-to-slf4j jcl-over-slf4j log4j sanselan slf4j-api	\
+    slf4j-log4j12 org.restlet org.restlet.ext.xstream xstream	\
+    rome rome-modules jdom groovy-all winp org.restlet.ext.gson gson
+do
+	SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:$SERVIIO_HOME/$j.jar"
+done
+SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 
 # Setup Serviio specific properties
 JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
