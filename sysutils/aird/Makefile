@@ -17,16 +17,12 @@ USE_RC_SUBR=	${PORTNAME}
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
