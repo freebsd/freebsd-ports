@@ -1,0 +1,4 @@
+The Security framework provides a generic mechanism to implement security
+policies on Python objects.
+
+WWW: http://pypi.python.org/pypi/zope.security/

@@ -719,6 +719,7 @@
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-zope.password
+    SUBDIR += py-zope.security
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
