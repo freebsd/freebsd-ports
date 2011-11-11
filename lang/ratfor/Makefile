@@ -37,4 +37,10 @@ do-install:
 	cd ${PREFIX}/bin ; ${LN} -sf ratfor77 ratfor
 	${INSTALL_MAN} ${WRKSRC}/ratfor.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on powerpc-9
+.endif
+
+.include <bsd.port.post.mk>
