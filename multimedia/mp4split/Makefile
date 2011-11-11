@@ -26,4 +26,10 @@ RESTRICTED=	no-commercial-use
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9
+.endif
+
+.include <bsd.port.post.mk>
