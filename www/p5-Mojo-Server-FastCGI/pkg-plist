@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server/FastCGI/.packlist
+%%SITE_PERL%%/Mojo/Server/FastCGI.pm
+%%SITE_PERL%%/Mojolicious/Command/fastcgi.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server/FastCGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo
+@dirrmtry %%SITE_PERL%%/Mojolicious/Command
+@dirrmtry %%SITE_PERL%%/Mojo/Server
+@dirrmtry %%SITE_PERL%%/Mojo
