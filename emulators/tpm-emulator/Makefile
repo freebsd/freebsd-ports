@@ -57,4 +57,10 @@ add-plist-post:
 	@${ECHO_CMD} "@unexec ${RMDIR} var/run/tpm 2>/dev/null || true"			>> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/tpm"	>> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
