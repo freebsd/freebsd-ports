@@ -18,6 +18,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-Dbswap_32=bswap32 -Dbswap_16=bswap16
 
 PLIST_FILES=	include/kpass.h \
 		lib/libkpass.so \
