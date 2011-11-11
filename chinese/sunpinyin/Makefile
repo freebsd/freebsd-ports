@@ -7,6 +7,7 @@
 
 PORTNAME=	sunpinyin
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	chinese devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:1 \
 		http://open-gram.googlecode.com/files/:2

@@ -1,0 +1,29 @@
+diff -uNr src/ime-core/imi_options.cpp src/ime-core/imi_options.cpp
+--- src/ime-core/imi_options.cpp	2010-09-22 13:14:32.876000000 +0800
++++ src/ime-core/imi_options.cpp	2010-09-22 13:21:48.181000000 +0800
+@@ -73,8 +73,11 @@
+ 
+     if (!m_user_data_dir.size()) {
+         char path[256];
+-        const char *home = getenv ("HOME");
+-        snprintf (path, sizeof(path), "%s/%s", home, SUNPINYIN_USERDATA_DIR_PREFIX);
++        const char *home = getenv ("XDG_CONFIG_HOME");
++        if(home == NULL)
++            snprintf (path, sizeof(path), "%s/.config/%s", getenv("HOME"), SUNPINYIN_USERDATA_DIR_PREFIX);
++        else
++            snprintf (path, sizeof(path), "%s/%s", home, SUNPINYIN_USERDATA_DIR_PREFIX);
+         m_user_data_dir = path;
+     }
+ 
+diff -uNr src/ime-core/imi_options.h src/ime-core/imi_options.h
+--- src/ime-core/imi_options.h	2010-09-22 13:14:35.883000000 +0800
++++ src/ime-core/imi_options.h	2010-09-22 13:15:20.760000002 +0800
+@@ -50,7 +50,7 @@
+ #include "pinyin/shuangpin_seg.h"
+ 
+ #ifndef SUNPINYIN_USERDATA_DIR_PREFIX
+-#define SUNPINYIN_USERDATA_DIR_PREFIX ".sunpinyin"
++#define SUNPINYIN_USERDATA_DIR_PREFIX "sunpinyin"
+ #endif
+ 
+ struct CSimplifiedChinesePolicy : public IConfigurable
