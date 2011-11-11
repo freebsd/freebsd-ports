@@ -1,5 +1,5 @@
-SHA256 (fcitx/fcitx-4.0.0.tar.gz) = 750884e992f51d8557447dc02fe6ada9758392611fc3271849ed26eba33f2d1c
-SIZE (fcitx/fcitx-4.0.0.tar.gz) = 1357079
+SHA256 (fcitx/fcitx-4.1.2.tar.bz2) = cf61355fcd8457df9bac7c1f88dff6781eeba5f9466905c2d8d3b872133c99ae
+SIZE (fcitx/fcitx-4.1.2.tar.bz2) = 764998
 SHA256 (fcitx/pinyin.tar.gz) = bf8c581450f9fac0eab0498927d1d5e5c1cd465ed9937e4d9362ca9d67920fa4
 SIZE (fcitx/pinyin.tar.gz) = 1613447
 SHA256 (fcitx/table.tar.gz) = 6196053c724125e3ae3d8bd6b2f9172d0c83b65b0d410d3cde63b7a8d6ab87b7

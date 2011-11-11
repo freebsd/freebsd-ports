@@ -12,18 +12,7 @@ Additionally, for GTK/Qt programs, you must also set:
 	sh/bash:	export GTK_IM_MODULE=xim
 			export QT_IM_MODULE=xim
 
-Xterm users should also add ``XTerm.VT100.inputMethod:fcitx'' or similar
-line to their ~/.Xdefaults file.
-
-For the first time use, run the program with -c switch to create default
-configuration file (~/.config/fcitx/config).
-
-For users migrating from 3.x to 4.0, just copy existing configuration to
-the new location:
-
-	mv ~/.fcitx ~/.config/fcitx
-
-If there are any problems starting up, remove the old configuration file
-(optionally) and create a new one by running ``fcitx -c'' again.
+You can replace the `xim` above with `fcitx` if you built fcitx with
+the corresponding IM module.
 
 ************************************************************************
