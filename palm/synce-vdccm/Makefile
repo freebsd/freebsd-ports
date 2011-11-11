@@ -30,6 +30,10 @@ PLIST_FILES=	bin/triggerconnection bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 .if defined(WITH_DESKTOP)
 CONFIGURE_ARGS+=	--enable-desktop-integration=yes
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
