@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	darcsis@gmail.com
+MAINTAINER=	lichray@gmail.com
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LICENSE=	GPLv2
