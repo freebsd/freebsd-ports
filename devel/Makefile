@@ -3146,6 +3146,7 @@
     SUBDIR += py-repoze.what-pylons
     SUBDIR += py-repoze.who
     SUBDIR += py-repoze.who-testutil
+    SUBDIR += py-repoze.xmliter
     SUBDIR += py-resourcepackage
     SUBDIR += py-rlcompleter2
     SUBDIR += py-rope
