@@ -106,6 +106,7 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/index.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/ioutil_8c.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/ioutil_8h_source.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/jquery.js
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/libnjb_8h.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/libnjb_8h_source.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/mainpage_8h_source.html
