@@ -37,7 +37,7 @@ OPTIONS=	CLIENT		"Build client" on \
 MAKE_ENV+=	DEFAULT_BASEDIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-VM_ARCHS=	amd64 i386 powerpc
+VM_ARCHS=	amd64 i386
 
 .include <bsd.port.pre.mk>
 
