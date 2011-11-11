@@ -1,0 +1,9 @@
+--- doc/man/CMakeLists.txt~	2011-10-02 05:43:11.000000000 -0500
++++ doc/man/CMakeLists.txt	2011-11-09 05:30:55.468797225 -0600
+@@ -2,4 +2,4 @@ set(FCITX_MANS
+ fcitx.1 createPYMB.1 readPYBase.1 readPYMB.1 mb2org.1 scel2org.1 mb2txt.1 txt2mb.1 fcitx-remote.1
+ )
+ 
+-install(FILES ${FCITX_MANS} DESTINATION share/man/man1)
+\ No newline at end of file
++install(FILES ${FCITX_MANS} DESTINATION man/man1)

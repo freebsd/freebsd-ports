@@ -6,56 +6,75 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A simple and fast GBK Chinese XIM server
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-
 LICENSE=	GPLv2
 
-USE_GNOME=	pango intltool gnomehack
-USE_XORG=	xpm x11 xtst
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-OPTIONS=	XFT		"Use Xft for Freetype font support" on \
-		TRAY		"Enable system tray support"	    on \
-		DBUS		"Enable D-Bus for KIMPanel support" off \
-		RECORDING	"Enable recording of user input"    off \
-		DEBUG		"Build with debug information"	    off
+MAN1=	createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
+	readPYBase.1 readPYMB.1 scel2org.1 txt2mb.1
+
+USE_BZIP2=	yes
+USE_GNOME=	pango intltool gnomehack
+USE_GETTEXT=	yes
+USE_XORG=	x11 xext
+USE_LDCONFIG=	yes
+USE_CMAKE=	yes
+INSTALLS_ICONS=	yes
+
+OPTIONS=	GTK2		"Enable Gtk2 IM module" off \
+		GTK3		"Enable Gtk3 IM module" off \
+		QT4		"Enable Qt4 IM module" off \
+		DBUS		"Enable D-Bus for KIMPanel support" off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XFT)
-USE_XORG+=	xft
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
 .else
-CONFIGURE_ARGS+=	--disable-xft
+CMAKE_ARGS+=	-DENABLE_GTK2_IM_MODULE=OFF
 .endif
 
-.if defined(WITHOUT_TRAY)
-CONFIGURE_ARGS+=	--disable-tray
+.if defined(WITH_GTK3)
+USE_GNOME+=	gtk30
+CMAKE_ARGS+=	-DENABLE_GTK3_IM_MODULE=ON
+.endif
+
+.if defined(WITH_QT4)
+USE_QT=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui
+CMAKE_ARGS+=	-DENABLE_QT_IM_MODULE=ON
 .endif
 
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+PLIST_SUB+=	DBUS=""
 .else
-CONFIGURE_ARGS+=	--disable-dbus
-.endif
-
-.if defined(WITH_RECORDING)
-CONFIGURE_ARGS+=	--enable-recording
+CMAKE_ARGS+=	-DENABLE_DBUS=OFF
+PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+CMAKE_ARGS+=	-DENABLE_DEBUG=ON
+.endif
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/nodocs-doc_CMakeLists.txt
+.endif
+
+.if defined(NOPORTDATA)
+IGNORE=		code tables are required, undefine NOPORTDATA
 .endif
 
 post-patch:
@@ -63,15 +82,9 @@ post-patch:
 	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/data/table
 .if ${OSVERSION} < 800067
 # getline() is GNU extension which FreeBSD only recently adopted
-	@${REINPLACE_CMD} -E \
-		's:getline\(&(.+, )&(.+, .+\) != )-1:fgets(\1\2NULL:' \
-			${WRKSRC}/src/fcitx-config/fcitx-config.c \
-			${WRKSRC}/src/im/special/QuickPhrase.c \
-			${WRKSRC}/src/tools/tools.c
+EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \
+		${FILESDIR}/getline-src_lib_fcitx-utils_utils.h
 .endif
-
-pre-install:
-	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-install:
 	@${ECHO_CMD}
