@@ -32,7 +32,7 @@ MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-VM_ARCHS=	i386 powerpc
+VM_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 

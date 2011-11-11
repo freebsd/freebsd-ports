@@ -44,7 +44,7 @@ MAKE_ENV=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-VM_ARCHS=	amd64 i386 powerpc
+VM_ARCHS=	amd64 i386
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
