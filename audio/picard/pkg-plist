@@ -2,6 +2,12 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/acoustid.py
+%%PYTHON_SITELIBDIR%%/picard/acoustid.pyc
+%%PYTHON_SITELIBDIR%%/picard/acoustid.pyo
+%%PYTHON_SITELIBDIR%%/picard/acoustidmanager.py
+%%PYTHON_SITELIBDIR%%/picard/acoustidmanager.pyc
+%%PYTHON_SITELIBDIR%%/picard/acoustidmanager.pyo
 %%PYTHON_SITELIBDIR%%/picard/album.py
 %%PYTHON_SITELIBDIR%%/picard/album.pyc
 %%PYTHON_SITELIBDIR%%/picard/album.pyo
@@ -82,9 +88,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.py
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.pyc
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.pyo
-%%PYTHON_SITELIBDIR%%/picard/playlist.py
-%%PYTHON_SITELIBDIR%%/picard/playlist.pyc
-%%PYTHON_SITELIBDIR%%/picard/playlist.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugin.py
 %%PYTHON_SITELIBDIR%%/picard/plugin.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugin.pyo
@@ -115,6 +118,12 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/__init__.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/ui_options_lastfm.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/ui_options_lastfm.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus/ui_options_lastfm.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/no_release.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/no_release.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/no_release.pyo
@@ -202,6 +211,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/options/dialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/dialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/dialog.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/options/fingerprinting.py
+%%PYTHON_SITELIBDIR%%/picard/ui/options/fingerprinting.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/options/fingerprinting.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/options/folksonomy.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/folksonomy.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/folksonomy.pyo
@@ -280,6 +292,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_fingerprinting.py
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_fingerprinting.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_fingerprinting.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.pyo
@@ -453,6 +468,7 @@ share/locale/zh_CN/LC_MESSAGES/picard.mo
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain
+@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/picard/musicdns

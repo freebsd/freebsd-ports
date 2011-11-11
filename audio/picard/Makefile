@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	picard
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -34,7 +34,7 @@ USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|'picard.plugins',|'picard.plugins', 'picard.plugins.lastfm', 'picard.plugins.replaygain',|" \
+	@${REINPLACE_CMD} -e "s|'picard.plugins',|'picard.plugins', 'picard.plugins.lastfm', 'picard.plugins.lastfmplus', 'picard.plugins.replaygain',|" \
 		${WRKSRC}/setup.py
 	@${CP} -R ${WRKSRC}/contrib/plugins/ ${WRKSRC}/picard/plugins
 
