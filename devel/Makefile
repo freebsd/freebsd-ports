@@ -2950,6 +2950,7 @@
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
     SUBDIR += py-RPyC
+    SUBDIR += py-Record
     SUBDIR += py-SymbolType
     SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
