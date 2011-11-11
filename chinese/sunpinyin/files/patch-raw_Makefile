@@ -1,0 +1,21 @@
+--- raw/Makefile~	2011-02-17 21:39:52.000000000 -0600
++++ raw/Makefile	2011-11-10 01:52:50.258400612 -0600
+@@ -11,18 +11,12 @@ stamp-lm: lm_sc.t3g.arpa.tar.bz2
+ 	$(TAR) -jxf $^
+ 	touch $@
+ 
+-lm_sc.t3g.arpa.tar.bz2:
+-	$(WGET) $(LM_URL)/$@
+-
+ dict.utf8: stamp-dict
+ 
+ stamp-dict: dict.utf8.tar.bz2
+ 	$(TAR) -jxf $^
+ 	touch $@
+ 
+-dict.utf8.tar.bz2:
+-	$(WGET) $(LM_URL)/$@
+-
+ clean:
+ 	@rm -f stamp-dict stamp-lm lm_sc.t3g.arpa dict.utf8
+ 	@echo cleaned
