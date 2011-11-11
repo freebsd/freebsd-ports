@@ -10,7 +10,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
 USE_SDL=	mixer sdl

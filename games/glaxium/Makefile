@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An OpenGL based space-ship "shoot-em-up" game
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
