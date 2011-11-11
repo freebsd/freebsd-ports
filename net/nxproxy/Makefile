@@ -29,6 +29,10 @@ PLIST_FILES=	bin/nxproxy bin/setsid
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not link on powerpc-9
+.endif
+
 post-extract:
 	${LN} -sf ${WRKDIR}/nxcomp-${DISTVERSION:S/2/1/} ${WRKDIR}/nxcomp
 
