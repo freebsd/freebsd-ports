@@ -46,4 +46,10 @@ do-install:
 		${PREFIX}/share/locale/${lang}/flphoto_${lang}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
+
+.include <bsd.port.post.mk>

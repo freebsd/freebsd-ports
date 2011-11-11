@@ -31,6 +31,9 @@ MAKE_JOBS_SAFE=	yes
 .if ${OSVERSION} < 700000
 BROKEN=		Does not compile
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(CEGUI::uint)|(size_t)|' \
