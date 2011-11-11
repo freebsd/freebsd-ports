@@ -1,144 +1,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/app.js
-%%PORTDOCS%%%%DOCSDIR%%/app/Application.js
-%%PORTDOCS%%%%DOCSDIR%%/app/Favorites.js
-%%PORTDOCS%%%%DOCSDIR%%/app/History.js
-%%PORTDOCS%%%%DOCSDIR%%/app/LocalStore.js
-%%PORTDOCS%%%%DOCSDIR%%/app/Settings.js
-%%PORTDOCS%%%%DOCSDIR%%/app/Syntax.js
-%%PORTDOCS%%%%DOCSDIR%%/app/controller/Classes.js
-%%PORTDOCS%%%%DOCSDIR%%/app/controller/Search.js
-%%PORTDOCS%%%%DOCSDIR%%/app/model/Favorite.js
-%%PORTDOCS%%%%DOCSDIR%%/app/model/History.js
-%%PORTDOCS%%%%DOCSDIR%%/app/model/Setting.js
-%%PORTDOCS%%%%DOCSDIR%%/app/store/Favorites.js
-%%PORTDOCS%%%%DOCSDIR%%/app/store/History.js
-%%PORTDOCS%%%%DOCSDIR%%/app/store/Search.js
-%%PORTDOCS%%%%DOCSDIR%%/app/store/Settings.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/HoverMenu.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/HoverMenuButton.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/Viewport.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/cls/Container.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/cls/Header.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/cls/Overview.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/cls/TabPanel.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/cls/Toolbar.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/index/Container.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/search/Dropdown.js
-%%PORTDOCS%%%%DOCSDIR%%/app/view/tree/Tree.js
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.Component/Ext.Component.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.Container/Ext.Container.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.DataView/Ext.DataView.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.Editor/Ext.Editor.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.Img/Ext.Img.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.ProgressBar/Ext.ProgressBar.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Button/Ext.button.Button1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Button/Ext.button.Button2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Button/Ext.button.Button3.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Button/Ext.button.Button4.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Cycle/Ext.button.Cycle.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.button.Split/Ext.button.Split.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.Legend/Ext.chart.Legend.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.axis.Category/Ext.chart.axis.Category.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.axis.Numeric/Ext.chart.axis.Numeric.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Area/Ext.chart.series.Area.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Bar/Ext.chart.series.Bar.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Column/Ext.chart.series.Column.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Line/Ext.chart.series.Line.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Pie/Ext.chart.series.Pie.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Radar/Ext.chart.series.Radar.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.chart.series.Scatter/Ext.chart.series.Scatter.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.container.ButtonGroup/Ext.container.ButtonGroup.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.container.Viewport/Ext.container.Viewport.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.data.Model/20110126-model.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.draw.Component/Ext.draw.Component.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.BaseField/Ext.form.BaseField.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Checkbox/Ext.form.Checkbox.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.CheckboxGroup/Ext.form.CheckboxGroup.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.ComboBox/Ext.form.ComboBox.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Date/Ext.form.Date.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Display/Ext.form.Display.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.FieldContainer/Ext.form.FieldContainer1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.FieldContainer/Ext.form.FieldContainer2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.FieldSet/Ext.form.FieldSet.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.File/Ext.form.File.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.FormPanel/Ext.form.FormPanel.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.HtmlEditor/Ext.form.HtmlEditor1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.HtmlEditor/Ext.form.HtmlEditor2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Label/Ext.form.Label.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Number/Ext.form.Number1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Number/Ext.form.Number2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Radio/Ext.form.Radio.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.RadioGroup/Ext.form.RadioGroup.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Text/Ext.form.Text.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.TextArea/Ext.form.TextArea.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.Time/Ext.form.Time.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.field.Spinner/Ext.form.field.Spinner.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.form.field.Trigger/Ext.form.field.Trigger.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.Panel/Ext.grid.Panel1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.Panel/Ext.grid.Panel2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.Panel/Ext.grid.Panel3.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.Panel/Ext.grid.Panel4.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.Panel/Ext.grid.Panel5.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Action/Ext.grid.column.Action.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Boolean/Ext.grid.column.Boolean.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Column/Ext.grid.column.Column.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Date/Ext.grid.column.Date.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Number/Ext.grid.column.Number.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.column.Template/Ext.grid.column.Template.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.plugin.CellEditing/Ext.grid.plugin.CellEditing.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.grid.plugin.RowEditing/Ext.grid.plugin.RowEditing.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Absolute/Ext.layout.container.Absolute.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Accordion/Ext.layout.container.Accordion.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Anchor/Ext.layout.container.Anchor.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Auto/Ext.layout.container.Auto.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Border/Ext.layout.container.Border.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Card/Ext.layout.container.Card.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Column/Ext.layout.container.Column1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Column/Ext.layout.container.Column2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Fit/Ext.layout.container.Fit.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.HBox/Ext.layout.container.HBox.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.Table/Ext.layout.container.Table.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.layout.container.VBox/Ext.layout.container.VBox.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.CheckItem/Ext.menu.CheckItem.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.ColorPicker/Ext.menu.ColorPicker.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.DatePicker/Ext.menu.DatePicker.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.Item/Ext.menu.Item.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.Menu/Ext.menu.Menu.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.menu.Separator/Ext.menu.Separator.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.panel.Panel/panel.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.picker.Color/Ext.picker.Color.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.picker.Date/Ext.picker.Date.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.picker.Time/Ext.picker.Time.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.resizer.Resizer/Ext.resizer.Resizer.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.slider.Multi/Ext.slider.Multi.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.slider.Single/Ext.slider.Single.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.slider.Tip/Ext.slider.Tip1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.Panel/Ext.tab.Panel1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.Panel/Ext.tab.Panel2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.Panel/Ext.tab.TabPanel1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.Panel/Ext.tab.TabPanel2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.TabPanel/Ext.tab.TabPanel1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tab.TabPanel/Ext.tab.TabPanel2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tip.QuickTipManager/Ext.tip.QuickTipManager.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tip.ToolTip/Ext.tip.ToolTip1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tip.ToolTip/Ext.tip.ToolTip2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Fill/Ext.toolbar.Fill.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Paging/Ext.toolbar.Paging.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Separator/Ext.toolbar.Separator.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Spacer/Ext.toolbar.Spacer.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.TextItem/Ext.toolbar.TextItem.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Toolbar/Ext.toolbar.Toolbar1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Toolbar/Ext.toolbar.Toolbar2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Toolbar/Ext.toolbar.Toolbar3.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.toolbar.Toolbar/Ext.toolbar.Toolbar4.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tree.Panel/Ext.tree.Panel.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.tree.Panel/Ext.tree.Panel1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.window.MessageBox/messagebox1.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.window.MessageBox/messagebox2.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.window.MessageBox/messagebox3.png
-%%PORTDOCS%%%%DOCSDIR%%/doc-resources/Ext.window.Window/Ext.window.Window.png
+%%PORTDOCS%%%%DOCSDIR%%/build-js.html
+%%PORTDOCS%%%%DOCSDIR%%/data.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/examples.json
+%%PORTDOCS%%%%DOCSDIR%%/extIframe.html
+%%PORTDOCS%%%%DOCSDIR%%/extjs/bootstrap.js
+%%PORTDOCS%%%%DOCSDIR%%/extjs/builds/ext-core.js
+%%PORTDOCS%%%%DOCSDIR%%/extjs/ext-all-debug.js
 %%PORTDOCS%%%%DOCSDIR%%/extjs/ext-all.js
+%%PORTDOCS%%%%DOCSDIR%%/extjs/release-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/css/ext-all.css
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/boundlist/trigger-arrow.png
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/box/corners-blue.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/box/corners.gif
@@ -256,8 +127,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/dd/drop-no.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/dd/drop-yes.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/editor/tb-sprite.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-sides.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form/checkbox.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form/clear-trigger.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/form/date-trigger.gif
@@ -499,23 +372,92 @@
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-top-sides.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window/window-default-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window/window-default-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/blank.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/iepngfix.htc
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/welcome.css
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/welcome_ie6.css
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/_bg-blue.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/_welcome-bg-js4.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/bright-green.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/bright-green.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-blue-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-blue.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-blue-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-blue.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-grey-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-grey.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green-standard-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green-standard.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-grey-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-grey.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/nav-on.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-blue-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-blue.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-blue-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-blue.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-grey-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-grey.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green-standard-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green-standard.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-grey-over.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-grey.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/nav-on.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/facebook-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/hero-extjs4-alt.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/hero-extjs4.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more-dark.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more-ie.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/linkedin-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-screen-ie.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-screen-noglow.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-sencha-sm.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/rss-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/tumblr-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/twitter-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/vimeo-16.png
+%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/release-notes.css
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/guides/DOM/README.js
-%%PORTDOCS%%%%DOCSDIR%%/guides/accessibility/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/doubleClickHandler.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/firstControllerListener.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/firstView.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/folderStructure.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/loadedForm.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/panelView.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/postUpdatesToServer.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/saveHandler.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/updatedGridRecord.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/call-stack.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/class_system/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/class_system/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/component_hierarchy.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/container/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/container/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/floating_panel/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/floating_panel/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/lazy_instantiation/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/lazy_instantiation/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/managed_image/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/managed_image/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/lazy_render1.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/lazy_render2.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/template_pattern.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/components/viewport_container.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/data/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/data-package.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/associations_validations/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/associations_validations/data/posts/index.html
@@ -537,41 +479,184 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/data/users.json
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/data/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/data/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/model.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/direct/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/firebug-post-result.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-bare.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-full.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-tutorial.sql
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/reference-files.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/row-editor.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/creating-record.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/grid-full.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/row-editor.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/diagram.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_camaro_repair.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_drag_logic.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_drops_no_onDragDrop.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_inspection.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_story.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/drag_and_drop_working_with_invitation.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/drag_and_drop_working_without_invitation.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/step1.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Area.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Bar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Gauge.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Line.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Pie.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Radar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Scatter.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Ticks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/geekflicks.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/geekflicks_readonly.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/custom_error_message.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/layout/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/layout/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/model_binding/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/model_binding/data/get_user.json
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/model_binding/data/update_user.json
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/model_binding/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/simple_form/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/simple_form/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/submit/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/submit/data/add_user.json
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/submit/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/validation/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/validation/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/hbox.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/invalid_field.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/invalid_field_hover.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/forms/simple_form.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/loader-warning-viewport.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/README.js
-%%PORTDOCS%%%%DOCSDIR%%/guides/grid/image04.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/cell_editing.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/cell_editing/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/cell_editing/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/grouping/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/grouping/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/paging_toolbar/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/paging_toolbar/data/users.json
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/paging_toolbar/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/renderers/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/renderers/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/row_editing/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/row_editing/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/simple_grid/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/simple_grid/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/grouping.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/paging_toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/row_editing.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/grid/simple_grid.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guides.json
+%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/start.zip
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/README.js
-%%PORTDOCS%%%%DOCSDIR%%/guides/tasks_tutorial/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/auto_layout.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/column_layout.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/component_architecture.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/combobox.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/datepicker.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/onfailure.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/tooltip.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/balanced.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/base_layout.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/controllers.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/folderStructure1.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/models.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/stores.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/too-general.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/too-granular.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/apidocs-events.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/balanced.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/stores.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/code.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/theming/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/_README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/basecolor.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/btn.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo1.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo2.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo3.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/theming/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/theming/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/append-children.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/arrows.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/examples/simple_tree/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/examples/simple_tree/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/insert-children.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/nodeinterface.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/root-lines.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/tree/simple-tree.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/simple_tree.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/treegrid.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/ext4-class-system.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/logo-sencha-sm.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/working-with-charts.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.Editor/Ext.Editor.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.Img/Ext.Img.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.chart.Chart/Ext.chart.Chart1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.chart.Chart/Ext.chart.Chart2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.chart.Chart/Ext.chart.Chart3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.panel.Panel/panel.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.resizer.Resizer/Ext.resizer.Resizer.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.tip.ToolTip/Ext.tip.ToolTip1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.tip.ToolTip/Ext.tip.ToolTip2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Ext.toolbar.Paging/Ext.toolbar.Paging.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/output/Array.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Boolean.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Date.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.AbstractComponent.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.AbstractManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.AbstractPlugin.js
@@ -579,6 +664,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Ajax.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Array.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Base.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ButtonToggleManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Class.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ClassManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Component.js
@@ -588,9 +674,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.CompositeElement.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.CompositeElementLite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Date.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomHelper.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomQuery.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Editor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.Element.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ElementLoader.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.Error.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.EventManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.EventObject.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.FocusManager.js
@@ -600,12 +689,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Layer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.LoadMask.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Loader.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.MessageBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ModelManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Number.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Object.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.PluginManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ProgressBar.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Shadow.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ShadowPool.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.String.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.TaskManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Template.js
@@ -615,6 +706,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ZIndexManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.app.Application.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.app.Controller.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.app.EventBus.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.button.Button.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.button.Cycle.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.button.Split.js
@@ -626,12 +718,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.LegendItem.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Mask.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Navigation.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Shape.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Tip.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.TipSurface.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Abstract.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Axis.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Category.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Gauge.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Numeric.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Radial.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.axis.Time.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.series.Area.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.series.Bar.js
@@ -643,35 +738,42 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.series.Radar.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.series.Scatter.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.series.Series.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.theme.Base.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.theme.Theme.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.AbstractContainer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.ButtonGroup.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.Container.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.Viewport.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.core.DomHelper.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.core.Element.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.AbstractStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.ArrayStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Association.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Batch.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.BelongsToAssociation.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.BufferStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Connection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.DirectStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Errors.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Field.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.HasManyAssociation.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.IdGenerator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.JsonP.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.JsonPStore.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.JsonStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Model.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.NodeInterface.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.NodeStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Operation.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Request.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.ResultSet.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.SequentialIdGenerator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.SortTypes.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Store.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.StoreManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Tree.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.TreeStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Types.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.UuidGenerator.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.XmlStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Ajax.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Client.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Direct.js
@@ -695,6 +797,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DDProxy.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DDTarget.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDrop.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDropManager.ElementWrapper.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDropManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragSource.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragTracker.js
@@ -711,11 +814,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.PollingProvider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.Provider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingEvent.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingMethod.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingProvider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.Transaction.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Color.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.CompositeSprite.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Draw.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Sprite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Surface.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.engine.Svg.js
@@ -726,6 +831,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.flash.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Basic.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.CheckboxGroup.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.CheckboxManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.FieldAncestor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.FieldContainer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.FieldSet.js
@@ -733,6 +839,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Labelable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Panel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.RadioGroup.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.RadioManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.action.Action.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.action.DirectLoad.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.action.DirectSubmit.js
@@ -759,7 +866,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.field.VTypes.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.Anim.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.Animator.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.CubicBezier.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.Easing.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.Manager.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.PropertyHandler.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.Queue.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.CompositeElement.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.CompositeElementCSS.js
@@ -768,8 +879,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.ElementCSS.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.Sprite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.Target.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.CellEditor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.ColumnLayout.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Lockable.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.LockingView.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.PagingScroller.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Panel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.RowEditor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.RowNumberer.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Scroller.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.View.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Action.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Boolean.js
@@ -783,11 +901,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.feature.Grouping.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.feature.GroupingSummary.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.feature.RowBody.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.feature.RowWrap.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.feature.Summary.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.header.Container.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.header.DragZone.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.header.DropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.CellEditing.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.DragDrop.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.Editing.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.HeaderReorderer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.HeaderResizer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.plugin.RowEditing.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.property.Grid.js
@@ -797,6 +919,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.is.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.Layout.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.AbstractDock.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Auto.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Body.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.BoundList.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Button.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Component.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Dock.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Draw.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Editor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.FieldSet.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.ProgressBar.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Tab.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Tip.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Field.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.File.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.HtmlEditor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Slider.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Text.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.TextArea.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Trigger.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Absolute.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.AbstractCard.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.AbstractContainer.js
@@ -814,10 +956,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.HBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Table.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.VBox.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.boxOverflow.Menu.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.boxOverflow.None.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.boxOverflow.Scroller.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.CheckItem.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.ColorPicker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.DatePicker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Item.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.KeyNav.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Manager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Menu.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Separator.js
@@ -829,15 +975,22 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Tool.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Color.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Date.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Month.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Time.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.Handle.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.ResizeTracker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.Resizer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.Splitter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.SplitterTracker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.CellModel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.CheckboxModel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.DataViewModel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.Model.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.RowModel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.selection.TreeModel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.slider.Multi.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.slider.Single.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.slider.Thumb.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.slider.Tip.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.state.CookieProvider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.state.LocalStorageProvider.js
@@ -859,9 +1012,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.toolbar.Spacer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.toolbar.TextItem.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.toolbar.Toolbar.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.Column.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.Panel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.View.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.ViewDDPlugin.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.ViewDropZone.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.plugin.TreeViewDragDrop.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.AbstractMixedCollection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Animate.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.CSS.js
@@ -881,6 +1036,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Memento.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.MixedCollection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Observable.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Offset.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Point.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Region.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Sortable.js
@@ -890,49 +1046,70 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.AbstractView.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.BoundList.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.BoundListKeyNav.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.DragZone.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.DropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.Table.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.TableChunker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.View.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.window.MessageBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.window.Window.js
-%%PORTDOCS%%%%DOCSDIR%%/output/members.js
-%%PORTDOCS%%%%DOCSDIR%%/output/overviewData.js
-%%PORTDOCS%%%%DOCSDIR%%/output/tree.js
-%%PORTDOCS%%%%DOCSDIR%%/overviewData.json
-%%PORTDOCS%%%%DOCSDIR%%/prettify/prettify.css
-%%PORTDOCS%%%%DOCSDIR%%/prettify/prettify.js
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/docs-ext.css
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/reset.css
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/scrollbars.css
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/viewport.css
+%%PORTDOCS%%%%DOCSDIR%%/output/Function.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Number.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Object.js
+%%PORTDOCS%%%%DOCSDIR%%/output/RegExp.js
+%%PORTDOCS%%%%DOCSDIR%%/output/String.js
+%%PORTDOCS%%%%DOCSDIR%%/print-template.html
+%%PORTDOCS%%%%DOCSDIR%%/resources/css/app.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/css/ie.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/css/print.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/arrows.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/class-m.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/class-sm.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/component-m.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/configs.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/data-package.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/doc-m.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/down-arr.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/elbow-end.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/events.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/example-icons.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/expandcollapse.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/gettingstarted.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/guide-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/guides.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/headBG.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/header.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/header.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/hero-extjs4-alt.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/icons.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/ipad-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/ipad-p.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-p.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-small-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-small-p.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/link-arrow-next.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/link-green-standard-over.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/link-green-standard.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/loading-title.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/loading.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/logo-screen-noglow.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-collapsed.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-expanded.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-hover.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/methods.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/model.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/more.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/preview.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/print.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/properties.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/root-lines.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/search-box.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/singleton-m.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/tabs.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/version-tabs.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/welcome-bg-js4.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/x.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/x12.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/x122.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/prettify/prettify.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/prettify/prettify.js
 %%PORTDOCS%%%%DOCSDIR%%/source/Absolute.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Abstract.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractCard.html
@@ -962,6 +1139,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Area.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Array.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Array2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Array3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ArrayStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Association.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Auto.html
@@ -977,6 +1155,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/BelongsToAssociation.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Body.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Boolean.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Boolean2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Border.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BoundList.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BoundList2.html
@@ -1050,6 +1229,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Date2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date4.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Date5.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DatePicker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DelayedTask.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Direct.html
@@ -1124,6 +1304,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/FocusManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Format.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Function.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Function2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grid.html
@@ -1143,11 +1324,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/History.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HtmlEditor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HtmlEditor2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/IdGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Img.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Inflector.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Item.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Item2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/JSON.html
+%%PORTDOCS%%%%DOCSDIR%%/source/JSON3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Json.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Json2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonP.html
@@ -1198,9 +1380,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Number.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Number2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Number3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Number4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Numeric.html
 %%PORTDOCS%%%%DOCSDIR%%/source/OS.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Object.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Object2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Observable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Offset.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Operation.html
@@ -1233,6 +1417,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/RadioGroup.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RadioManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Reader.html
+%%PORTDOCS%%%%DOCSDIR%%/source/RegExp.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Region.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Registry.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RemotingEvent.html
@@ -1255,6 +1440,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Scroller2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Separator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Separator2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SequentialIdGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Series.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Server.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SessionStorage.html
@@ -1281,6 +1467,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Store2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/StoreManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/String.html
+%%PORTDOCS%%%%DOCSDIR%%/source/String2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Submit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Summary.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Support.html
@@ -1324,6 +1511,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Trigger.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Trigger2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Types.html
+%%PORTDOCS%%%%DOCSDIR%%/source/UuidGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/VBox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/VTypes.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Version.html
@@ -1345,6 +1533,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/XmlStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ZIndexManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/validations.html
+%%PORTDOCS%%%%DOCSDIR%%/template.html
+%%PORTDOCS%%%%DOCSDIR%%/touch-welcome.html
+%%PORTDOCS%%%%DOCSDIR%%/touchIframe.html
+%%PORTDOCS%%%%DOCSDIR%%/videos/videos.json
+%%PORTDOCS%%%%DOCSDIR%%/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app.jsb3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app/controller/Articles.js
@@ -1475,7 +1668,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/component-loader/data.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/spotlight-example.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/spotlight.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/associations.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/associations.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/customer.php
@@ -1619,6 +1811,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Tiger.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Tiger.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-data.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/Feed-Viewer.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/feed-proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/feed-viewer.html
@@ -1743,7 +1937,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/property.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/sampledata.json
@@ -1803,6 +1996,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/layouts/combination.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/layouts/custom.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/tree-data.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/EXTJSIV-2101.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/accordion.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/anchor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/anchor.js
@@ -1896,7 +2090,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qtips/qtips.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qtips/qtips.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qtips/qtips.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resizer/CroixDeFer.JPG
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resizer/CroixDeFer.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resizer/avus_gtr.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resizer/basic.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resizer/basic.html
@@ -2300,6 +2494,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TabReorderer.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TabScrollerMenu.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ToolbarDroppable.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/JsonSimlet.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimManager.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimXhr.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/Simlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/CenterLayout.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/CheckHeader.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/GroupTabPanel.css
@@ -2467,16 +2665,10 @@
 %%WWWDIR%%/build/build-custom.sh
 %%WWWDIR%%/build/build-ext-all-jsb3.js
 %%WWWDIR%%/build/build-manifest.js
-%%WWWDIR%%/build/build-tests.js
-%%WWWDIR%%/build/build-tests.sh
 %%WWWDIR%%/build/build.bat
 %%WWWDIR%%/build/build.sh
 %%WWWDIR%%/build/ignore.json
 %%WWWDIR%%/build/sdk.jsb3
-%%WWWDIR%%/build/tests/core.tpl
-%%WWWDIR%%/build/tests/ext4.tpl
-%%WWWDIR%%/build/tests/indexes.json
-%%WWWDIR%%/build/tests/platform.tpl
 %%WWWDIR%%/builds/ext-all-sandbox-debug.js
 %%WWWDIR%%/builds/ext-all-sandbox-dev.js
 %%WWWDIR%%/builds/ext-all-sandbox.js
@@ -2614,16 +2806,6 @@
 %%WWWDIR%%/locale/ext-lang-vn.js
 %%WWWDIR%%/locale/ext-lang-zh_CN.js
 %%WWWDIR%%/locale/ext-lang-zh_TW.js
-%%WWWDIR%%/overview/index.html
-%%WWWDIR%%/overview/resources/css/ext-guide.css
-%%WWWDIR%%/overview/resources/css/icons/external.png
-%%WWWDIR%%/overview/resources/css/ie.css
-%%WWWDIR%%/overview/resources/css/link-icons.css
-%%WWWDIR%%/overview/resources/css/print.css
-%%WWWDIR%%/overview/resources/css/screen.css
-%%WWWDIR%%/overview/resources/images/ext4-class-system.jpg
-%%WWWDIR%%/overview/resources/images/logo-sencha-sm.png
-%%WWWDIR%%/overview/resources/images/working-with-charts.gif
 %%WWWDIR%%/pkgs/classes.js
 %%WWWDIR%%/pkgs/dom.js
 %%WWWDIR%%/pkgs/extras.js
@@ -2650,6 +2832,7 @@
 %%WWWDIR%%/resources/sass/ext-standard-scoped.scss
 %%WWWDIR%%/resources/sass/ext-standard.scss
 %%WWWDIR%%/resources/themes/compass_init.rb
+%%WWWDIR%%/resources/themes/images/access/boundlist/trigger-arrow.png
 %%WWWDIR%%/resources/themes/images/access/box/corners-blue.gif
 %%WWWDIR%%/resources/themes/images/access/box/corners.gif
 %%WWWDIR%%/resources/themes/images/access/box/l-blue.gif
@@ -2864,6 +3047,7 @@
 %%WWWDIR%%/resources/themes/images/access/grid/page-prev.gif
 %%WWWDIR%%/resources/themes/images/access/grid/pick-button.gif
 %%WWWDIR%%/resources/themes/images/access/grid/property-cell-bg.gif
+%%WWWDIR%%/resources/themes/images/access/grid/refresh-disabled.gif
 %%WWWDIR%%/resources/themes/images/access/grid/refresh.gif
 %%WWWDIR%%/resources/themes/images/access/grid/row-check-sprite.gif
 %%WWWDIR%%/resources/themes/images/access/grid/row-expand-sprite.gif
@@ -2986,8 +3170,7 @@
 %%WWWDIR%%/resources/themes/images/access/spinner.gif
 %%WWWDIR%%/resources/themes/images/access/tab-bar/scroll-left.gif
 %%WWWDIR%%/resources/themes/images/access/tab-bar/scroll-right.gif
-%%WWWDIR%%/resources/themes/images/access/tab-bar/tab-bar-bg.gif
-%%WWWDIR%%/resources/themes/images/access/tab-bar/tab-bar-bg.png
+%%WWWDIR%%/resources/themes/images/access/tab-bar/tab-bar-default-bg.gif
 %%WWWDIR%%/resources/themes/images/access/tab/tab-bottom-active-corners.gif
 %%WWWDIR%%/resources/themes/images/access/tab/tab-bottom-active-sides.gif
 %%WWWDIR%%/resources/themes/images/access/tab/tab-bottom-corners.gif
@@ -3049,7 +3232,10 @@
 %%WWWDIR%%/resources/themes/images/access/tools/tool-sprites.gif
 %%WWWDIR%%/resources/themes/images/access/tools/tools-sprites-trans.gif
 %%WWWDIR%%/resources/themes/images/access/tree/arrows.gif
+%%WWWDIR%%/resources/themes/images/access/tree/drop-above.gif
 %%WWWDIR%%/resources/themes/images/access/tree/drop-add.gif
+%%WWWDIR%%/resources/themes/images/access/tree/drop-append.gif
+%%WWWDIR%%/resources/themes/images/access/tree/drop-below.gif
 %%WWWDIR%%/resources/themes/images/access/tree/drop-between.gif
 %%WWWDIR%%/resources/themes/images/access/tree/drop-no.gif
 %%WWWDIR%%/resources/themes/images/access/tree/drop-over.gif
@@ -3208,8 +3394,10 @@
 %%WWWDIR%%/resources/themes/images/default/dd/drop-no.gif
 %%WWWDIR%%/resources/themes/images/default/dd/drop-yes.gif
 %%WWWDIR%%/resources/themes/images/default/editor/tb-sprite.gif
+%%WWWDIR%%/resources/themes/images/default/form-invalid-tip/form-invalid-tip-corners.gif
 %%WWWDIR%%/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-corners.gif
 %%WWWDIR%%/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-sides.gif
+%%WWWDIR%%/resources/themes/images/default/form-invalid-tip/form-invalid-tip-sides.gif
 %%WWWDIR%%/resources/themes/images/default/form/checkbox.gif
 %%WWWDIR%%/resources/themes/images/default/form/clear-trigger.gif
 %%WWWDIR%%/resources/themes/images/default/form/date-trigger.gif
@@ -3834,6 +4022,7 @@
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/mixins/_color-by-background.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/mixins/_frame.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/mixins/_inner-border.scss
+%%WWWDIR%%/resources/themes/stylesheets/ext4/default/mixins/_reset-extras.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/mixins/_theme-background-image.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/util/_dragdrop.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/util/_focus.scss
@@ -3890,7 +4079,6 @@
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_file.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_htmleditor.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss
-%%WWWDIR%%/resources/themes/templates/resources/css/my-ext-theme.css
 %%WWWDIR%%/resources/themes/templates/resources/sass/config.rb
 %%WWWDIR%%/resources/themes/templates/resources/sass/my-ext-theme.scss
 %%WWWDIR%%/src/AbstractComponent.js
@@ -4022,9 +4210,19 @@
 %%WWWDIR%%/src/core/src/util/Format.js
 %%WWWDIR%%/src/core/src/util/TaskManager.js
 %%WWWDIR%%/src/core/src/version/Version.js
-%%WWWDIR%%/src/core/test/unit/build.sh
-%%WWWDIR%%/src/core/test/unit/foundation.html
+%%WWWDIR%%/src/core/test/unit/README.MD
+%%WWWDIR%%/src/core/test/unit/bootstrap.js
+%%WWWDIR%%/src/core/test/unit/build/build-data.js
+%%WWWDIR%%/src/core/test/unit/build/build.sh
+%%WWWDIR%%/src/core/test/unit/data.js
 %%WWWDIR%%/src/core/test/unit/index.html
+%%WWWDIR%%/src/core/test/unit/other_specs/dom.html
+%%WWWDIR%%/src/core/test/unit/other_specs/dom/extjs-api.js
+%%WWWDIR%%/src/core/test/unit/other_specs/dom/platform-api.js
+%%WWWDIR%%/src/core/test/unit/other_specs/dom/sanity.js
+%%WWWDIR%%/src/core/test/unit/other_specs/dom/touch-api-out.js
+%%WWWDIR%%/src/core/test/unit/other_specs/dom/touch-api.js
+%%WWWDIR%%/src/core/test/unit/other_specs/env/Environment.js
 %%WWWDIR%%/src/core/test/unit/resources/BlockLoader.js
 %%WWWDIR%%/src/core/test/unit/spec/Date.js
 %%WWWDIR%%/src/core/test/unit/spec/EventManager.js
@@ -4038,7 +4236,6 @@
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.static.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.traversal.js
-%%WWWDIR%%/src/core/test/unit/spec/env/Environment.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Array.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Error.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Function.js
@@ -4048,6 +4245,7 @@
 %%WWWDIR%%/src/core/test/unit/spec/misc/JSON.js
 %%WWWDIR%%/src/core/test/unit/spec/util/Format.js
 %%WWWDIR%%/src/core/test/unit/spec/version/Version.js
+%%WWWDIR%%/src/core/test/unit/specs.html
 %%WWWDIR%%/src/data/AbstractStore.js
 %%WWWDIR%%/src/data/ArrayStore.js
 %%WWWDIR%%/src/data/Association.js
@@ -4059,6 +4257,7 @@
 %%WWWDIR%%/src/data/Errors.js
 %%WWWDIR%%/src/data/Field.js
 %%WWWDIR%%/src/data/HasManyAssociation.js
+%%WWWDIR%%/src/data/IdGenerator.js
 %%WWWDIR%%/src/data/JsonP.js
 %%WWWDIR%%/src/data/JsonPStore.js
 %%WWWDIR%%/src/data/JsonStore.js
@@ -4068,12 +4267,14 @@
 %%WWWDIR%%/src/data/Operation.js
 %%WWWDIR%%/src/data/Request.js
 %%WWWDIR%%/src/data/ResultSet.js
+%%WWWDIR%%/src/data/SequentialIdGenerator.js
 %%WWWDIR%%/src/data/SortTypes.js
 %%WWWDIR%%/src/data/Store.js
 %%WWWDIR%%/src/data/StoreManager.js
 %%WWWDIR%%/src/data/Tree.js
 %%WWWDIR%%/src/data/TreeStore.js
 %%WWWDIR%%/src/data/Types.js
+%%WWWDIR%%/src/data/UuidGenerator.js
 %%WWWDIR%%/src/data/XmlStore.js
 %%WWWDIR%%/src/data/proxy/Ajax.js
 %%WWWDIR%%/src/data/proxy/Client.js
@@ -4449,11 +4650,14 @@
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/util
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/misc
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/lang
-@dirrm %%WWWDIR%%/src/core/test/unit/spec/env
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/dom
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/class
 @dirrm %%WWWDIR%%/src/core/test/unit/spec
 @dirrm %%WWWDIR%%/src/core/test/unit/resources
+@dirrm %%WWWDIR%%/src/core/test/unit/other_specs/env
+@dirrm %%WWWDIR%%/src/core/test/unit/other_specs/dom
+@dirrm %%WWWDIR%%/src/core/test/unit/other_specs
+@dirrm %%WWWDIR%%/src/core/test/unit/build
 @dirrm %%WWWDIR%%/src/core/test/unit
 @dirrm %%WWWDIR%%/src/core/test
 @dirrm %%WWWDIR%%/src/core/src/version
@@ -4480,7 +4684,6 @@
 @dirrm %%WWWDIR%%/src/app
 @dirrm %%WWWDIR%%/src
 @dirrm %%WWWDIR%%/resources/themes/templates/resources/sass
-@dirrm %%WWWDIR%%/resources/themes/templates/resources/css
 @dirrm %%WWWDIR%%/resources/themes/templates/resources
 @dirrm %%WWWDIR%%/resources/themes/templates
 @dirrm %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form
@@ -4584,6 +4787,7 @@
 @dirrm %%WWWDIR%%/resources/themes/images/access/btn-group
 @dirrm %%WWWDIR%%/resources/themes/images/access/btn
 @dirrm %%WWWDIR%%/resources/themes/images/access/box
+@dirrm %%WWWDIR%%/resources/themes/images/access/boundlist
 @dirrm %%WWWDIR%%/resources/themes/images/access
 @dirrm %%WWWDIR%%/resources/themes/images
 @dirrm %%WWWDIR%%/resources/themes
@@ -4591,11 +4795,6 @@
 @dirrm %%WWWDIR%%/resources/css
 @dirrm %%WWWDIR%%/resources
 @dirrm %%WWWDIR%%/pkgs
-@dirrm %%WWWDIR%%/overview/resources/images
-@dirrm %%WWWDIR%%/overview/resources/css/icons
-@dirrm %%WWWDIR%%/overview/resources/css
-@dirrm %%WWWDIR%%/overview/resources
-@dirrm %%WWWDIR%%/overview
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/jsbuilder/ycompressor
 @dirrm %%WWWDIR%%/jsbuilder/tests/parser
@@ -4630,7 +4829,6 @@
 @dirrm %%WWWDIR%%/jsbuilder/bin
 @dirrm %%WWWDIR%%/jsbuilder
 @dirrm %%WWWDIR%%/builds
-@dirrm %%WWWDIR%%/build/tests
 @dirrm %%WWWDIR%%/build/bin/windows
 @dirrm %%WWWDIR%%/build/bin/mac
 @dirrm %%WWWDIR%%/build/bin/linux
@@ -4667,6 +4865,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/css/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/ajax
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/DataView
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tree
@@ -4799,22 +4998,56 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/feed-viewer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/videos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources/prettify
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/prettify
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/output
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.toolbar.Paging
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.tip.ToolTip
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.resizer.Resizer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.panel.Panel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.chart.Chart
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.Img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.Editor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/upgrade
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree/examples/simple_tree
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/theming
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tasks_tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/localization
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/layouts_and_containers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/keyboard_nav
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/simple_grid
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/row_editing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/renderers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/paging_toolbar/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/paging_toolbar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/grouping
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples/cell_editing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/grid
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/getting_started
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/validation
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/submit/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/submit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/simple_form
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/model_binding/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/model_binding
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/layout
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/drawing_and_charting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/drag_and_drop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/data
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples/simple_store/data
@@ -4836,12 +5069,21 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples/associations_validations
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components/examples/managed_image
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components/examples/lazy_instantiation
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components/examples/floating_panel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components/examples/container
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/components
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/class_system
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/application_architecture
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/accessibility
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/DOM
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/icon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/button-bg/ie
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/button-bg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/window-header
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/window
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/util/splitter
@@ -4874,106 +5116,9 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/builds
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.window.Window
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.window.MessageBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.tree.Panel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.Toolbar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.TextItem
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.Spacer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.Separator
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.Paging
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.toolbar.Fill
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.tip.ToolTip
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.tip.QuickTipManager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.tab.TabPanel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.tab.Panel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.slider.Tip
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.slider.Single
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.slider.Multi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.resizer.Resizer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.picker.Time
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.picker.Date
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.picker.Color
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.panel.Panel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.Separator
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.Menu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.Item
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.DatePicker
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.ColorPicker
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.menu.CheckItem
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.VBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Table
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.HBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Fit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Column
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Card
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Border
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Auto
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Anchor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Accordion
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.layout.container.Absolute
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.plugin.RowEditing
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.plugin.CellEditing
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Template
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Number
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Date
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Column
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Boolean
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.column.Action
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.grid.Panel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.field.Trigger
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.field.Spinner
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Time
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.TextArea
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Text
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.RadioGroup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Radio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Number
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Label
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.HtmlEditor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.FormPanel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.File
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.FieldSet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.FieldContainer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Display
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Date
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.ComboBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.CheckboxGroup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.Checkbox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.form.BaseField
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.draw.Component
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.data.Model
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.container.Viewport
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.container.ButtonGroup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Scatter
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Radar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Pie
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Line
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Column
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Bar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.series.Area
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.axis.Numeric
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.axis.Category
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.chart.Legend
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.button.Split
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.button.Cycle
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.button.Button
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.ProgressBar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.Img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.Editor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.DataView
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.Container
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources/Ext.Component
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/view/tree
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/view/search
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/view/index
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/view/cls
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/view
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/store
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/model
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app/controller
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/app
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

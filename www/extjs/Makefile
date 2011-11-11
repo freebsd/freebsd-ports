@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	4.0.2a
+PORTVERSION=	4.0.7
 CATEGORIES=	www
-MASTER_SITES=	http://extjs.cachefly.net/ \
+MASTER_SITES=	http://cdn.sencha.io/ \
+		http://extjs.cachefly.net/ \
 		http://mirror.joehorn.idv.tw/extjs/
 DISTNAME=	ext-${PORTVERSION}-gpl
 
@@ -18,7 +19,7 @@ COMMENT=	A JavaScript platform for rapid development of cross-browser web apps
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-WRKSRC=		${WRKDIR}/ext-${PORTVERSION}
+WRKSRC=		${WRKDIR}/ext-${PORTVERSION}-gpl
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -29,7 +30,7 @@ OPTIONS=	DOC	"Install with documents" on \
 WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
 		 ext-all-debug.js ext-all-dev.js ext-all.js ext-debug.js \
 		 ext-dev.js ext.js index.html jsbuilder license.txt locale \
-		 overview pkgs release-notes.html resources src welcome"
+		 pkgs release-notes.html resources src welcome"
 
 .include <bsd.port.pre.mk>
 
