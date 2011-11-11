@@ -3521,6 +3521,7 @@
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
+    SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
     SUBDIR += rubygem-storable
