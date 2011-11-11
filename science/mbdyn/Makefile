@@ -34,6 +34,10 @@ OPTIONS=	MPI "Enable mpich-support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 USE_BLAS?=	reference
 
 . if ${USE_BLAS} == reference
