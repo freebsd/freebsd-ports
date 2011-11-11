@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/misc/pciids/Makefile,v 1.11 2008/03/23 06:57:57 marcus Exp $
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20111002
+PORTVERSION=	20111109
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
