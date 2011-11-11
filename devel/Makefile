@@ -2945,6 +2945,7 @@
     SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
+    SUBDIR += py-Missing
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-RPyC
     SUBDIR += py-SymbolType
