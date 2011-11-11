@@ -68,6 +68,7 @@
     SUBDIR += koffice-kde4-l10n-zh_TW
     SUBDIR += kon2
     SUBDIR += libchewing
+    SUBDIR += libgooglepinyin
     SUBDIR += libtabe
     SUBDIR += lunar
     SUBDIR += mingunittf
