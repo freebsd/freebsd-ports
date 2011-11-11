@@ -1,0 +1,36 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/msgfmt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test2.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test2.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test3.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test3.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test4.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test5.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_empty.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_empty.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_escape.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_unicode_bom.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_unicode_bom.po
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
