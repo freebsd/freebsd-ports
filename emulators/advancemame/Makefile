@@ -32,6 +32,9 @@ MAN1=		advdev.1 advj.1 advk.1 advm.1 advmame.1 advs.1
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
 
 .if defined(WITH_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
