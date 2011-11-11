@@ -66,6 +66,9 @@ PLIST_SUB+=	NLS="@comment "
 .if ${OSVERSION} < 800041
 BROKEN=	requires FreeBSD 8.0 or newer
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: uses i386-specific option
+.endif
 
 .if defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
