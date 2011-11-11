@@ -6100,13 +6100,32 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>15.0.874.102</lt></range>
+	<range><lt>15.0.874.120</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 15.0.874.120:<br/>
+	    [100465] High CVE-2011-3892: Double free in Theora decoder. Credit
+	      to Aki Helin of OUSPG.<br/>
+	    [100492] [100543] Medium CVE-2011-3893: Out of bounds reads in MKV
+	      and Vorbis media handlers. Credit to Aki Helin of OUSPG.<br/>
+	    [101172] High CVE-2011-3894: Memory corruption regression in VP8
+	      decoding. Credit to Andrew Scherkus of the Chromium development
+	      community.<br/>
+	    [101458] High CVE-2011-3895: Heap overflow in Vorbis decoder.
+	      Credit to Aki Helin of OUSPG.<br/>
+	    [101624] High CVE-2011-3896: Buffer overflow in shader variable
+	      mapping. Credit to Ken "strcpy" Russell of the Chromium 
+	      development community.<br/>
+	    [102242] High CVE-2011-3897: Use-after-free in editing. Credit to
+	      pa_kt reported through ZDI (ZDI-CAN-1416).<br/>
+	    [102461] Low CVE-2011-3898: Failure to ask for permission to run
+	      applets in JRE7. Credit to Google Chrome Security Team (Chris
+	      Evans).</p>
+
 	  <p>Fixed in 15.0.874.102:<br/>
 	    [86758] High CVE-2011-2845: URL bar spoof in history handling.
 	      Credit to Jordi Chancel.<br/>
@@ -6880,11 +6899,18 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-3889</cvename>
       <cvename>CVE-2011-3890</cvename>
       <cvename>CVE-2011-3891</cvename>
+      <cvename>CVE-2011-3892</cvename>
+      <cvename>CVE-2011-3893</cvename>
+      <cvename>CVE-2011-3894</cvename>
+      <cvename>CVE-2011-3895</cvename>
+      <cvename>CVE-2011-3896</cvename>
+      <cvename>CVE-2011-3897</cvename>
+      <cvename>CVE-2011-3898</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-10-25</modified>
+      <modified>2011-11-11</modified>
     </dates>
   </vuln>
 
