@@ -7789,6 +7789,8 @@ libfreefare                     ports/devel/libfreefare
 libfs                           ports/x11-fonts/libFS
 libftdi                         ports/devel/libftdi
 libfwbuilder-devel              ports/security/libfwbuilder-devel
+libg19                          ports/devel/libg19
+libg19draw                      ports/devel/libg19draw
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
 libgalago                       ports/devel/libgalago
@@ -11433,6 +11435,7 @@ p5-Config-AutoConf              ports/devel/p5-Config-AutoConf
 p5-Config-Fast                  ports/devel/p5-Config-Fast
 p5-Config-General               ports/devel/p5-Config-General
 p5-Config-GitLike               ports/devel/p5-Config-GitLike
+p5-Config-Grammar               ports/devel/p5-Config-Grammar
 p5-Config-INI                   ports/devel/p5-Config-INI
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
@@ -15789,6 +15792,7 @@ p5-config-autoconf              ports/devel/p5-Config-AutoConf
 p5-config-fast                  ports/devel/p5-Config-Fast
 p5-config-general               ports/devel/p5-Config-General
 p5-config-gitlike               ports/devel/p5-Config-GitLike
+p5-config-grammar               ports/devel/p5-Config-Grammar
 p5-config-ini                   ports/devel/p5-Config-INI
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
@@ -23661,9 +23665,11 @@ rubygem-archive-zip             ports/archivers/rubygem-archive-zip
 rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-atoulme-antwrap         ports/devel/rubygem-atoulme-antwrap
+rubygem-attic                   ports/devel/rubygem-attic
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
 rubygem-bcrypt-ruby             ports/security/rubygem-bcrypt-ruby
+rubygem-benelux                 ports/devel/rubygem-benelux
 rubygem-bigrecord               ports/databases/rubygem-bigrecord
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
@@ -23750,6 +23756,7 @@ rubygem-ezamar                  ports/textproc/rubygem-ezamar
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-ezprint                 ports/graphics/rubygem-ezprint
 rubygem-facets                  ports/devel/rubygem-facets
+rubygem-familia                 ports/databases/rubygem-familia
 rubygem-faraday                 ports/www/rubygem-faraday
 rubygem-faraday_middleware      ports/www/rubygem-faraday_middleware
 rubygem-fast-stemmer            ports/devel/rubygem-fast-stemmer
@@ -23775,6 +23782,7 @@ rubygem-georuby                 ports/devel/rubygem-georuby
 rubygem-getopt                  ports/devel/rubygem-getopt
 rubygem-getopt-declare          ports/devel/rubygem-getopt-declare
 rubygem-gettext                 ports/devel/rubygem-gettext
+rubygem-gibbler                 ports/devel/rubygem-gibbler
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
 rubygem-graphviz                ports/graphics/rubygem-graphviz
@@ -23916,6 +23924,7 @@ rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-prawn-svg               ports/print/rubygem-prawn-svg
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
+rubygem-public_suffix_service   ports/dns/rubygem-public_suffix_service
 rubygem-puppet-module           ports/sysutils/rubygem-puppet-module
 rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-rack                    ports/www/rubygem-rack
@@ -23943,6 +23952,7 @@ rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-rdoc                    ports/devel/rubygem-rdoc
 rubygem-redcloth                ports/www/rubygem-redcloth
+rubygem-redis                   ports/databases/rubygem-redis
 rubygem-require_all             ports/devel/rubygem-require_all
 rubygem-rest-client             ports/www/rubygem-rest-client
 rubygem-rfacebook               ports/www/rubygem-rfacebook
@@ -24057,6 +24067,7 @@ rubygem-typhoeus                ports/www/rubygem-typhoeus
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uglifier                ports/www/rubygem-uglifier
 rubygem-unicode                 ports/devel/rubygem-unicode
+rubygem-uri-redis               ports/net/rubygem-uri-redis
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
