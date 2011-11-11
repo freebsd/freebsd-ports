@@ -1,0 +1,4 @@
+fcitx-ui-light is a very light weight UI for Fcitx, only using Xpm
+and Xft, like go back to 3.6.x times.
+
+WWW:	http://code.google.com/p/fcitx/
