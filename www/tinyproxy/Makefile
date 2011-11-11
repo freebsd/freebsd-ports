@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 MAN8=		tinyproxy.8
 MAN5=		tinyproxy.conf.5
 
-OPTIONS=	REVERSE "Enable reverse proxy support" Off \
+OPTIONS=	XHEADER "Enable X-Tinyproxy header" Off \
+		REVERSE "Enable reverse proxy support" Off \
 		TRANSPARENT "Enable transparent proxy support" Off
 
 .include <bsd.port.pre.mk>
@@ -45,6 +46,10 @@ CONFIGURE_ARGS+=	--enable-reverse
 
 .if defined(WITH_TRANSPARENT)
 CONFIGURE_ARGS+=	--enable-transparent
+.endif
+
+.if defined(WITHOUT_XHEADER)
+CONFIGURE_ARGS+=	--disable-xtinyproxy
 .endif
 
 post-patch:
