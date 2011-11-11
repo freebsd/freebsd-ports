@@ -5,6 +5,9 @@ bin/virt-xml-validate
 @unexec if cmp -s %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; then rm -f %D/%%ETCDIR%%/libvirtd.conf; fi
 %%ETCDIR%%/libvirtd.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/libvirtd.conf ] ; then cp -p %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; then rm -f %D/%%ETCDIR%%/libvirt.conf; fi
+%%ETCDIR%%/libvirt.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/libvirt.conf ] ; then cp -p %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; fi
 %%ETCDIR%%/nwfilter/allow-arp.xml
 %%ETCDIR%%/nwfilter/allow-dhcp-server.xml
 %%ETCDIR%%/nwfilter/allow-dhcp.xml
@@ -123,6 +126,12 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/logging.html
 %%DOCSDIR%%%%PORTVERSION%%/html/madeWith.png
 %%DOCSDIR%%%%PORTVERSION%%/html/main.css
+%%DOCSDIR%%%%PORTVERSION%%/html/migration.html
+%%DOCSDIR%%%%PORTVERSION%%/html/migration-managed-direct.png
+%%DOCSDIR%%%%PORTVERSION%%/html/migration-managed-p2p.png
+%%DOCSDIR%%%%PORTVERSION%%/html/migration-native.png
+%%DOCSDIR%%%%PORTVERSION%%/html/migration-tunnel.png
+%%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html

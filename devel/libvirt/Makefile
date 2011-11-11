@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -61,5 +60,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libvirtd.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.am \
 		${WRKSRC}/daemon/Makefile.in
+
+	@${MV} ${WRKSRC}/src/libvirt.conf ${WRKSRC}/src/libvirt.conf.sample
+	@${REINPLACE_CMD} -e 's|conf_DATA = libvirt.conf|conf_DATA = libvirt.conf.sample|' \
+		${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>
