@@ -1,0 +1,4 @@
+fcitx-sunpinyin provides SunPinyin, a statistical language model based
+input method engine, as a back-end to the Fcitx IM server.
+
+WWW:	http://code.google.com/p/fcitx/

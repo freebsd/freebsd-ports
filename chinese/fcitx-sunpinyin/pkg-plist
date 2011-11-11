@@ -1,0 +1,13 @@
+lib/fcitx/fcitx-sunpinyin.so
+share/fcitx/addon/fcitx-sunpinyin.conf
+share/fcitx/configdesc/fcitx-sunpinyin.desc
+share/fcitx/skin/classic/sunpinyin.png
+share/fcitx/skin/dark/sunpinyin.png
+share/fcitx/skin/default/sunpinyin.png
+share/icons/hicolor/128x128/apps/fcitx-sunpinyin.png
+share/icons/hicolor/16x16/apps/fcitx-sunpinyin.png
+share/icons/hicolor/22x22/apps/fcitx-sunpinyin.png
+share/icons/hicolor/24x24/apps/fcitx-sunpinyin.png
+share/icons/hicolor/32x32/apps/fcitx-sunpinyin.png
+share/icons/hicolor/48x48/apps/fcitx-sunpinyin.png
+share/locale/zh_CN/LC_MESSAGES/fcitx-sunpinyin.mo

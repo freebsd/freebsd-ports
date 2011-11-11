@@ -1,0 +1,7 @@
+************************************************************************
+
+You probably need to remove the old configurations, i.e,
+	rm -fr $HOME/.config/fcitx
+before switching to the fcitx-sunpinyin back-end!
+
+************************************************************************

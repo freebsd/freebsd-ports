@@ -1,0 +1,11 @@
+--- CMakeLists.txt~	2011-09-29 01:58:59.000000000 -0500
++++ CMakeLists.txt	2011-11-10 23:22:41.804644040 -0600
+@@ -10,7 +10,7 @@ FIND_PACKAGE(Libintl REQUIRED)
+ FIND_PACKAGE(Gettext REQUIRED)
+ FIND_PACKAGE(Fcitx  4.1.2 REQUIRED)
+ 
+-PKG_CHECK_MODULES(SUNPINYIN REQUIRED "sunpinyin-2.0 >= 2.0.4" )
++PKG_CHECK_MODULES(SUNPINYIN REQUIRED "sunpinyin-2.0 >= 2.0.3" )
+ 
+ # uninstall target
+ configure_file(
