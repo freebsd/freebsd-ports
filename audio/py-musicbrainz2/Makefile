@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicbrainz2
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 		http://uk.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
