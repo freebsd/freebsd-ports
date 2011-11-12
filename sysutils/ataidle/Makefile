@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cran.org.uk/bruce/software/
+MASTER_SITES=	http://www.cran.org.uk/~brucec/software/
 
 MAINTAINER=	bruce@cran.org.uk
 COMMENT=	Utility to spin down ATA drives
