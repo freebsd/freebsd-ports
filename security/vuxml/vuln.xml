@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e8e1212-0ce5-11e1-849b-003067b2972c">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r183.10</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.0r1.153</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-28.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash Player
+	    11.0.1.152 and earlier versions for Windows, Macintosh, Linux and
+	    Solaris, and Adobe Flash Player 11.0.1.153 and earlier versions for
+	    Android.</p>
+	</blockquote>
+	<p>In addition a patch was released for users of flash10.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://www.adobe.com/support/security/bulletins/apsb11-28.html</url>
+      <cvename>CVE-2011-2445</cvename>
+      <cvename>CVE-2011-2450</cvename>
+      <cvename>CVE-2011-2451</cvename>
+      <cvename>CVE-2011-2452</cvename>
+      <cvename>CVE-2011-2453</cvename>
+      <cvename>CVE-2011-2454</cvename>
+      <cvename>CVE-2011-2455</cvename>
+      <cvename>CVE-2011-2456</cvename>
+      <cvename>CVE-2011-2457</cvename>
+      <cvename>CVE-2011-2458</cvename>
+      <cvename>CVE-2011-2459</cvename>
+      <cvename>CVE-2011-2458</cvename>
+    </references>
+    <dates>
+      <discovery>2011-11-10</discovery>
+      <entry>2011-11-11</entry>
+    </dates>
+  </vuln>
   <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
     <topic>libxml -- Integer overflow</topic>
     <affects>
