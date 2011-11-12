@@ -1,4 +1,5 @@
 bin/midori
+etc/xdg/midori/extensions/adblock/config
 etc/xdg/midori/search
 include/midori-%%VERSION%%/extensions/history-list.h
 lib/midori/libadblock.so
@@ -26,7 +27,6 @@ share/applications/midori-private.desktop
 %%DOCSDIR%%/README
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/api-index-full.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/ch01.html
-%%APIDOCS%%%%DOCSDIR%%/api/katze/html/deprecated-api-index.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/home.png
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/index.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/index.sgml
@@ -38,10 +38,12 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-arrayaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-auth.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-cookies.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-cookies-sqlite.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-net.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-separatoraction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-throbber.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-utils.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/left.png
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/right.png
@@ -53,7 +55,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.sgml
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/left.png
-%%APIDOCS%%%%DOCSDIR%%/api/midori/html/deprecated-api-index.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-GtkIconEntry.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriBrowser.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriExtension.html
@@ -71,6 +72,7 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-socket.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-sokoke.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/right.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/style.css
@@ -135,9 +137,10 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%DATADIR%%/res/autosuggestcontrol.css
 %%DATADIR%%/res/autosuggestcontrol.js
+%%DATADIR%%/res/close.png
 %%DATADIR%%/res/error.html
 %%DATADIR%%/res/logo-shade.png
-%%DATADIR%%/res/speeddial-head.html
+%%DATADIR%%/res/speeddial-head-%%PORTVERSION%%.html
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 @dirrmtry share/vala/vapi
@@ -159,6 +162,8 @@ share/vala/vapi/history-list.vapi
 @dirrm lib/midori
 @dirrm include/midori-%%VERSION%%/extensions
 @dirrm include/midori-%%VERSION%%
+@dirrm etc/xdg/midori/extensions/adblock
+@dirrm etc/xdg/midori/extensions
 @dirrm etc/xdg/midori
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
