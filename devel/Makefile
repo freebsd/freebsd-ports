@@ -3231,6 +3231,7 @@
     SUBDIR += py-zope.dottedname
     SUBDIR += py-zope.event
     SUBDIR += py-zope.exceptions
+    SUBDIR += py-zope.filerepresentation
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.location
