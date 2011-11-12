@@ -10,7 +10,7 @@ PORTVERSION=	2.0.8
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
-MAINTAINER=	geck@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
 
 LICENSE=	GPLv2
