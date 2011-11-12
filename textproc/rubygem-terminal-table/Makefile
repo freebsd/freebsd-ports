@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	terminal-table
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
