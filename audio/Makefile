@@ -190,6 +190,7 @@
     SUBDIR += fpc-oggvorbis
     SUBDIR += fpc-openal
     SUBDIR += fpc-sndfile
+    SUBDIR += fplib
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
