@@ -1,15 +1,15 @@
---- configure.in.orig	2011-02-19 16:17:22.000000000 +0100
-+++ configure.in	2011-02-19 21:29:50.000000000 +0100
+--- ./configure.in.orig	2011-11-09 20:52:28.000000000 +0100
++++ ./configure.in	2011-11-10 23:29:33.000000000 +0100
 @@ -4,6 +4,7 @@
- AC_INIT(lcdproc, 0.5.4, lcdproc@lists.omnipotent.net)
+ AC_INIT(lcdproc, 0.5.5, lcdproc@lists.omnipotent.net)
  AC_CONFIG_SRCDIR([clients/lcdproc/batt.c])
  AM_INIT_AUTOMAKE(1.7)
 +PKG_PROG_PKG_CONFIG()
- 
+
  AC_CONFIG_HEADERS(config.h)
- 
-@@ -248,26 +249,63 @@
- 
+
+@@ -249,26 +250,63 @@
+
  dnl ######################################################################
  dnl libusb support
 +dnl Stolen from the gnupg project and modified for LCDproc's need.
@@ -29,8 +29,14 @@
 +	AC_HELP_STRING([--with-libusb=DIR],
 +		[look for the libusb library in DIR]),
 +		[_do_libusb=$withval],[_do_libusb=yes])
-+AC_MSG_RESULT($_do_libusb) 
-+
++AC_MSG_RESULT($_do_libusb)
+
+-if test "$enable_libusb" = "yes"; then
+-	ifdef([PKG_CHECK_MODULES],
+-		[PKG_CHECK_MODULES(LIBUSB, libusb,
+-			[AC_DEFINE(HAVE_LIBUSB, [1], [Define to 1 if you have libusb])],
+-			[ enable_libusb=no ])],
+-		[AC_MSG_WARN([pkg-config not (fully) installed; drivers requiring libusb may not be built])])
 +if test "$_do_libusb" != "no" ; then
 +	if test -d "$withval" ; then
 +		CPPFLAGS="${CPPFLAGS} -I$withval/include"
@@ -39,13 +45,7 @@
 +	else
 +		AC_PATH_PROG([_usb_config],[libusb-config])
 +	fi
- 
--if test "$enable_libusb" = "yes"; then
--	ifdef([PKG_CHECK_MODULES],
--		[PKG_CHECK_MODULES(LIBUSB, libusb,
--			[AC_DEFINE(HAVE_LIBUSB, [1], [Define to 1 if you have libusb])],
--			[ enable_libusb=no ])],
--		[AC_MSG_WARN([pkg-config not (fully) installed; drivers requiring libusb may not be built])])
++
 +	_libusb_save_libs=$LIBS
 +	_libusb_save_cflags=$CFLAGS
 +
@@ -62,9 +62,9 @@
 +
 +	AC_MSG_CHECKING([whether libusb is present and sane])
 +
-+	AC_LINK_IFELSE(AC_LANG_PROGRAM([#include <usb.h>],[
++	AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <usb.h>],[
 +		usb_interrupt_write(NULL,0,NULL,0,0);
-+		]),enable_libusb=yes,enable_libusb=no)
++		])],enable_libusb=yes,enable_libusb=no)
 +
 +	AC_MSG_RESULT([$enable_libusb])
 +
@@ -85,6 +85,6 @@
 -AC_SUBST(LIBUSB_LIBS)
 -AC_SUBST(LIBUSB_CFLAGS)
 +
- 
+
  dnl ######################################################################
  dnl libftdi support

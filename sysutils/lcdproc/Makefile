@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	A client/server suite for LCD devices
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_AUTOTOOLS=	autoconf automake aclocal
 GNU_CONFIGURE=	yes
@@ -86,7 +86,7 @@ LCDPROC_DRIVERS+=IOWarrior \
 		shuttleVFD
 
 . if defined(WITH_LIBFTDI)
-LIB_DEPENDS+=		ftdi.18:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--enable-libftdi
 PLIST_SUB+=		FTDI=""
 LCDPROC_DRIVERS+=i2500vfd \
