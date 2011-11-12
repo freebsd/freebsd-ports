@@ -3218,6 +3218,7 @@
     SUBDIR += py-zconfig
     SUBDIR += py-zope.annotation
     SUBDIR += py-zope.broken
+    SUBDIR += py-zope.browser
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.contenttype
