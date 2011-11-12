@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	280.13
+PORTVERSION=	285.05.09
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-xconfig/
