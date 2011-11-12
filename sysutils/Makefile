@@ -259,6 +259,7 @@
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
+    SUBDIR += fusefs-ext4fuse
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fur
     SUBDIR += fusefs-fusexmp_fh
