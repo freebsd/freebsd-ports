@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	togglewordwrap
-PORTVERSION=	1.2
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-fx+tb
+PORTVERSION=	1.8
+DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Toggles word wrapping
 
 XPI_DISTNAME=	toggle_word_wrap
