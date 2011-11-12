@@ -13111,6 +13111,7 @@ p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Server              ports/sysutils/p5-MogileFS-Server
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
+p5-Mojo-Server-FastCGI          ports/www/p5-Mojo-Server-FastCGI
 p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mojolicious                  ports/www/p5-Mojolicious
 p5-Mojolicious-Plugin-Database  ports/www/p5-Mojolicious-Plugin-Database
@@ -17521,6 +17522,7 @@ p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-MogileFS-Server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
+p5-mojo-server-fastcgi          ports/www/p5-Mojo-Server-FastCGI
 p5-mojolicious                  ports/www/p5-Mojolicious
 p5-mojolicious-plugin-database  ports/www/p5-Mojolicious-Plugin-Database
 p5-mojolicious-plugin-mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
@@ -21598,6 +21600,7 @@ pxytest                         ports/security/pxytest
 pxz                             ports/archivers/pxz
 py-4suite                       ports/textproc/py-4suite
 py-4suite-xml                   ports/textproc/py-4suite-xml
+py-Acquisition                  ports/devel/py-Acquisition
 py-AddOns                       ports/devel/py-AddOns
 py-Breve                        ports/devel/py-Breve
 py-BytecodeAssembler            ports/devel/py-BytecodeAssembler
@@ -21615,10 +21618,12 @@ py-Jinja                        ports/devel/py-Jinja
 py-Jinja2                       ports/devel/py-Jinja2
 py-Lightbox                     ports/www/py-Lightbox
 py-MarkupSafe                   ports/textproc/py-MarkupSafe
+py-Missing                      ports/devel/py-Missing
 py-MySQLdb                      ports/databases/py-MySQLdb
 py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
 py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
+py-Persistence                  ports/devel/py-Persistence
 py-Pmw                          ports/x11-toolkits/py-Pmw
 py-Products.MailHost            ports/mail/py-Products.MailHost
 py-Products.SecureMailHost      ports/mail/py-Products.SecureMailHost
@@ -21628,6 +21633,7 @@ py-PySQLite11                   ports/databases/py-PySQLite11
 py-PyX                          ports/graphics/py-PyX
 py-RO                           ports/astro/py-RO
 py-RPyC                         ports/devel/py-RPyC
+py-Record                       ports/devel/py-Record
 py-RestrictedPython             ports/security/py-RestrictedPython
 py-SciParam                     ports/x11-toolkits/py-SciParam
 py-SymbolType                   ports/devel/py-SymbolType
@@ -21640,6 +21646,7 @@ py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
 py-ZopeUndo                     ports/devel/py-ZopeUndo
 py-aafigure                     ports/graphics/py-aafigure
+py-acquisition                  ports/devel/py-Acquisition
 py-actdiag                      ports/graphics/py-actdiag
 py-addons                       ports/devel/py-AddOns
 py-adns                         ports/dns/py-adns
@@ -21670,7 +21677,6 @@ py-asv                          ports/textproc/py-asv
 py-async                        ports/devel/py-async
 py-atspi                        ports/accessibility/py-atspi
 py-avahi                        ports/net/py-avahi
-py-axiom                        ports/databases/py-axiom
 py-babel                        ports/devel/py-babel
 py-basemap                      ports/math/py-basemap
 py-basemap-data                 ports/math/py-basemap-data
@@ -21862,6 +21868,7 @@ py-genshi-devel                 ports/textproc/py-genshi-devel
 py-geoip                        ports/net/py-GeoIP
 py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
+py-gettext                      ports/textproc/py-gettext
 py-gevent                       ports/devel/py-gevent
 py-gflags                       ports/devel/py-gflags
 py-gimp                         ports/graphics/py-gimp
@@ -22009,6 +22016,7 @@ py-milter                       ports/mail/py-milter
 py-ming                         ports/graphics/py-ming
 py-minimongo                    ports/devel/py-minimongo
 py-miniupnpc                    ports/net/py-miniupnpc
+py-missing                      ports/devel/py-Missing
 py-mlpy                         ports/science/py-mlpy
 py-mlt                          ports/multimedia/py-mlt
 py-mnemosyne                    ports/games/py-mnemosyne
@@ -22101,6 +22109,7 @@ py-peak-rules                   ports/devel/py-PEAK-Rules
 py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-periscope                    ports/multimedia/py-periscope
+py-persistence                  ports/devel/py-Persistence
 py-pexpect                      ports/misc/py-pexpect
 py-pf                           ports/security/py-PF
 py-pg8000                       ports/databases/py-pg8000
@@ -22242,6 +22251,7 @@ py-rabbyt                       ports/graphics/py-rabbyt
 py-radix                        ports/net/py-radix
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
+py-record                       ports/devel/py-Record
 py-redis                        ports/databases/py-redis
 py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
@@ -22253,6 +22263,7 @@ py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
 py-repoze.who                   ports/devel/py-repoze.who
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
+py-repoze.xmliter               ports/devel/py-repoze.xmliter
 py-requests                     ports/www/py-requests
 py-requests-oauth-hook          ports/www/py-requests-oauth-hook
 py-resourcepackage              ports/devel/py-resourcepackage
@@ -22520,8 +22531,11 @@ py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
 py-zfs                          ports/sysutils/py-zfs
 py-zlog                         ports/devel/py-zLOG
+py-zope.annotation              ports/devel/py-zope.annotation
+py-zope.broken                  ports/devel/py-zope.broken
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
+py-zope.contenttype             ports/devel/py-zope.contenttype
 py-zope.copy                    ports/devel/py-zope.copy
 py-zope.datetime                ports/devel/py-zope.datetime
 py-zope.deprecation             ports/devel/py-zope.deprecation
@@ -22535,7 +22549,9 @@ py-zope.minmax                  ports/devel/py-zope.minmax
 py-zope.password                ports/security/py-zope.password
 py-zope.proxy                   ports/net/py-zope.proxy
 py-zope.schema                  ports/devel/py-zope.schema
+py-zope.security                ports/security/py-zope.security
 py-zope.size                    ports/devel/py-zope.size
+py-zope.tal                     ports/textproc/py-zope.tal
 py-zope.testing                 ports/devel/py-zope.testing
 py-zopeundo                     ports/devel/py-ZopeUndo
 py-zpt                          ports/textproc/py-zpt
@@ -24020,6 +24036,7 @@ rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-sqlite3-ruby            ports/databases/rubygem-sqlite3-ruby
 rubygem-state_machine           ports/devel/rubygem-state_machine
 rubygem-staticmatic             ports/www/rubygem-staticmatic
+rubygem-stella                  ports/devel/rubygem-stella
 rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stompserver             ports/net/rubygem-stompserver
@@ -27873,6 +27890,10 @@ zh-docproj                      ports/chinese/docproj
 zh-enscript                     ports/chinese/enscript
 zh-eterm                        ports/chinese/eterm
 zh-fcitx                        ports/chinese/fcitx
+zh-fcitx-configtool             ports/chinese/fcitx-configtool
+zh-fcitx-googlepinyin           ports/chinese/fcitx-googlepinyin
+zh-fcitx-sunpinyin              ports/chinese/fcitx-sunpinyin
+zh-fcitx-ui-light               ports/chinese/fcitx-ui-light
 zh-fireflyttf                   ports/chinese/fireflyttf
 zh-font-std                     ports/chinese/font-std
 zh-fortune                      ports/chinese/fortune
@@ -27914,6 +27935,7 @@ zh-koffice-kde4-l10n-zh_cn      ports/chinese/koffice-kde4-l10n-zh_CN
 zh-koffice-kde4-l10n-zh_tw      ports/chinese/koffice-kde4-l10n-zh_TW
 zh-kon2                         ports/chinese/kon2
 zh-libchewing                   ports/chinese/libchewing
+zh-libgooglepinyin              ports/chinese/libgooglepinyin
 zh-libtabe                      ports/chinese/libtabe
 zh-lunar                        ports/chinese/lunar
 zh-mingunittf                   ports/chinese/mingunittf
@@ -27985,6 +28007,7 @@ zh-stardict-dict-zh_CN          ports/chinese/stardict-dict-zh_CN
 zh-stardict-dict-zh_TW          ports/chinese/stardict-dict-zh_TW
 zh-stardict-dict-zh_cn          ports/chinese/stardict-dict-zh_CN
 zh-stardict-dict-zh_tw          ports/chinese/stardict-dict-zh_TW
+zh-sunpinyin                    ports/chinese/sunpinyin
 zh-tcl83                        ports/chinese/tcl83
 zh-telnet                       ports/chinese/telnet
 zh-tin                          ports/chinese/tin
