@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	9.05
-PORTREVISION=	0
+PORTVERSION=	9.11
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms
 
-USE_BZIP2=	yes
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jasper
+LDFLAGS+=	-L${LOCALBASE}/lib -lm -ljasper -ljpeg -llcms
 
 MAN1=		dcraw.1
 PLIST_FILES=	bin/dcraw
 
 do-build:
-	cd "${BUILD_WRKSRC}/" && ${CC} -o dcraw ${CFLAGS} -I"${PREFIX}"/include \
-		dcraw.c -L"${PREFIX}"/lib -lm -ljpeg -llcms
+	cd ${WRKSRC}/ && ${CC} -o dcraw ${CFLAGS} dcraw.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} "${WRKSRC}"/${PORTNAME} "${PREFIX}"/bin/
-	${INSTALL_MAN} "${WRKSRC}"/${MAN1} "${PREFIX}"/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
 
 make-dist:
 	@${RM} -rf ${WRKDIR};${MKDIR} ${WRKDIR};cd ${WRKDIR};\
