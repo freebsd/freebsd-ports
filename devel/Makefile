@@ -3228,6 +3228,7 @@
     SUBDIR += py-zope.datetime
     SUBDIR += py-zope.deferredimport
     SUBDIR += py-zope.deprecation
+    SUBDIR += py-zope.dottedname
     SUBDIR += py-zope.event
     SUBDIR += py-zope.exceptions
     SUBDIR += py-zope.i18n
