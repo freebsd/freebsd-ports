@@ -682,6 +682,7 @@
     SUBDIR += pwman
     SUBDIR += pwman3
     SUBDIR += pxytest
+    SUBDIR += py-AccessControl
     SUBDIR += py-PF
     SUBDIR += py-RestrictedPython
     SUBDIR += py-bcrypt
