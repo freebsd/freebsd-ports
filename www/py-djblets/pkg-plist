@@ -19,6 +19,19 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/lesscss.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/lesscss.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters/lesscss.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates/compress/css.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates/compress/css_ie.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates/compress/js.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates/compress/js_ie.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/__init__.pyo
@@ -159,6 +172,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/context_processors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/contextmanagers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/dates.pyo
@@ -188,6 +204,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/rooturl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco/box.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco/errorbox.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js/jquery-ui.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js/jquery.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags/__init__.pyo
@@ -251,6 +269,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/webapi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates/deco
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/util
@@ -276,6 +295,10 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates/datagrid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/datagrid
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates/compress
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress/filters
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/compress
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/auth
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
