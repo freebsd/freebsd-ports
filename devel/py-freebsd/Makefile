@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd
 PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
@@ -18,7 +18,7 @@ DISTNAME=	py-freebsd-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py-freebsd
 
