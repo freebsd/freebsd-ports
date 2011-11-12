@@ -23,6 +23,6 @@ LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=4
+IGNORE_WITH_PHP=4 52
 
 .include <bsd.port.mk>
