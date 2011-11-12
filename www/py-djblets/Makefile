@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djblets
-PORTVERSION=	0.6.11
+PORTVERSION=	0.6.14
 CATEGORIES=	www python
 MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
