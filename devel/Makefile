@@ -3234,6 +3234,7 @@
     SUBDIR += py-zope.filerepresentation
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.interface
+    SUBDIR += py-zope.lifecycleevent
     SUBDIR += py-zope.location
     SUBDIR += py-zope.minmax
     SUBDIR += py-zope.publisher
