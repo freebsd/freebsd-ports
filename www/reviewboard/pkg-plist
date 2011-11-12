@@ -79,9 +79,6 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/migration.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/migration.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/migration.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/siteconfig.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/siteconfig.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/siteconfig.pyo
@@ -296,8 +293,8 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/expand.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/favicon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/favicon_notify.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/favicon_notify.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/favicon_updated.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/fish-trophy.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/gold_box_bottom_bg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/images/gold_box_top_bg.png
@@ -370,8 +367,8 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/csshover2.htc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/datastore.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/diffviewer.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/gears_init.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/iui.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/jquery-1.3.2.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/jquery-ui-1.6rc5.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/jquery.form.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/pngfix.htc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/js/repositoryform.js
@@ -812,9 +809,10 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/diffviewer/diff_file_fragment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/diffviewer/diff_fragment_error.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/diffviewer/view_diff.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/docview/page.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/feeds/reviews_description.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/feeds/reviews_title.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/jquery-ui.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js/jquery.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/email_base.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/email_diff_comment_fragment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications/new_user_email.html
@@ -895,8 +893,8 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/reviews
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/reports
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/feeds
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/docview
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/diffviewer
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/scmtools/repository
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/scmtools
