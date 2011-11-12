@@ -1,21 +1,12 @@
---- wscript.orig	2011-10-01 22:19:11.000000000 +0800
-+++ wscript	2011-10-01 22:21:13.000000000 +0800
-@@ -647,8 +647,7 @@
+--- wscript.orig	2011-11-12 06:56:27.000000000 +0800
++++ wscript	2011-11-12 22:12:23.000000000 +0800
+@@ -634,8 +634,7 @@
    #
    cmd = 'cp -r ' + sh_escape(srcdir)  + '/* ' + sh_escape(blddir)
    if not sys.platform.startswith('win32'):
--    cmd += ' && if [[ -z "$NODE_MAKE" ]]; then NODE_MAKE=make; fi; '
--    cmd += '$NODE_MAKE -C ' + sh_escape(blddir)
-+    cmd += ' && gmake -C ' + sh_escape(blddir)
+-    make = ('if [ -z "$NODE_MAKE" ]; then NODE_MAKE=make; fi; '
+-            '$NODE_MAKE -C ' + sh_escape(blddir))
++    make = 'gmake -C ' + sh_escape(blddir)
    else:
-     cmd += ' && make -C ' + sh_escape(blddir)
-   cmd += ' clean all'
-@@ -982,8 +981,6 @@
- 
-   # Only install the man page if it exists.
-   # Do 'make doc install' to build and install it.
--  if os.path.exists('doc/node.1'):
--    bld.install_files('${PREFIX}/share/man/man1/', 'doc/node.1')
- 
-   bld.install_files('${PREFIX}/bin/', 'tools/node-waf', chmod=0755)
-   bld.install_files('${LIBDIR}/node/wafadmin', 'tools/wafadmin/*.py')
+     make = 'make -C ' + sh_escape(blddir)
+   return '%s && (%s clean) && (%s all)' % (cmd, make, make)
