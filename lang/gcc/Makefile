@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.6.[2-9]*
+CONFLICTS=	gcc-4.6.[3-9]*
 
 # VERSIONSTRING relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
