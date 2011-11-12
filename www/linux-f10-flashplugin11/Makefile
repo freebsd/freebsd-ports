@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.0r1.152
+PORTVERSION=	11.1r102.55
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
+MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		ftp://ftp.ipt.ru/pub/download/:suplib \
 		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-f10-
@@ -20,7 +20,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
-LATEST_LINK=	linux-f10-flashplugin11
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}11
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
