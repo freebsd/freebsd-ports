@@ -3174,6 +3174,7 @@
     SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
     SUBDIR += py-tconfpy
+    SUBDIR += py-tempstorage
     SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-testtools
