@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-EPP
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -64,5 +64,8 @@ MAN3=	Net::EPP.3 \
 	Net::EPP::Frame::Command::Poll::Ack.3
 
 PERL_CONFIGURE=	yes
+
+post-patch:
+	    ${RM} ${WRKSRC}/lib/Net/EPP/Simple.pm.orig
 
 .include <bsd.port.mk>
