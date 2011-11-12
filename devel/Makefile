@@ -3231,6 +3231,7 @@
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.location
     SUBDIR += py-zope.minmax
+    SUBDIR += py-zope.publisher
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.size
     SUBDIR += py-zope.testing
