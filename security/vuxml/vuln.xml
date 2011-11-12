@@ -107,12 +107,13 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-11-11</entry>
     </dates>
   </vuln>
+
   <vuln vid="ce4b3af8-0b7c-11e1-846b-00235409fd3e">
     <topic>libxml -- Integer overflow</topic>
     <affects>
       <package>
 	<name>libxml</name>
-	<range><le>1.8*</le></range>
+	<range><lt>1.8.17_5</lt></range>
       </package>
       <package>
 	<name>libxml2</name>
@@ -121,10 +122,10 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Integer overflow in xpath.c, allows allows context-dependent attackers 
-	to cause a denial of service (crash) and possibly execute arbitrary code via 
-	a crafted XML file that triggers a heap-based buffer overflow when adding a 
-	new namespace node, related to handling of XPath expressions.</p>
+	<p>Integer overflow in xpath.c, allows allows context-dependent attackers
+	  to cause a denial of service (crash) and possibly execute arbitrary code via
+	  a crafted XML file that triggers a heap-based buffer overflow when adding a
+	  new namespace node, related to handling of XPath expressions.</p>
       </body>
     </description>
     <references>
@@ -133,6 +134,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-09-02</discovery>
       <entry>2011-11-10</entry>
+      <modified>2011-11-12</modified>
     </dates>
   </vuln>
 
@@ -141,15 +143,15 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libxml</name>
-	<range><le>1.8*</le></range>
+	<range><lt>1.8.17_5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Multiple use-after-free vulnerabilities in libxml 1.8.17 that allow 
-	context-dependent attackers to cause a denial of service (application 
-	crash) via crafted (1) Notation or (2) Enumeration attribute types in 
-	an XML file</p>
+	<p>Multiple use-after-free vulnerabilities in libxml 1.8.17 that allow
+	  context-dependent attackers to cause a denial of service (application
+	  crash) via crafted (1) Notation or (2) Enumeration attribute types in
+	  an XML file</p>
       </body>
     </description>
     <references>
@@ -158,6 +160,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-03</discovery>
       <entry>2011-11-10</entry>
+      <modified>2011-11-12</modified>
     </dates>
   </vuln>
 
@@ -166,14 +169,14 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libxml</name>
-	<range><le>1.8*</le></range>
+	<range><lt>1.8.17_5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Stack consumption vulnerability allows context-dependent attackers 
-	to cause a denial of service (application crash) via a large depth of 
-	element declarations in a DTD</p>
+	<p>Stack consumption vulnerability allows context-dependent attackers
+	  to cause a denial of service (application crash) via a large depth of
+	  element declarations in a DTD</p>
       </body>
     </description>
     <references>
@@ -182,8 +185,10 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-08-03</discovery>
       <entry>2011-11-10</entry>
+      <modified>2011-11-12</modified>
     </dates>
   </vuln>
+
   <vuln vid="bdec8dc2-0b3b-11e1-b722-001cc0476564">
     <topic>gnutls -- client session resumption vulnerability</topic>
     <affects>
