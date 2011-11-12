@@ -3212,6 +3212,7 @@
     SUBDIR += py-yapps2
     SUBDIR += py-ydbf
     SUBDIR += py-yum-metadata-parser
+    SUBDIR += py-zExceptions
     SUBDIR += py-zLOG
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
