@@ -1117,6 +1117,7 @@
     SUBDIR += p5-POEx-Role-PSGIServer
     SUBDIR += p5-PSGI
     SUBDIR += p5-ParallelUA
+    SUBDIR += p5-Parse-HTTP-UserAgent
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-Perlanet
     SUBDIR += p5-Perlbal-Plugin-PSGI

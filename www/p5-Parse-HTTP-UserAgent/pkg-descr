@@ -1,0 +1,17 @@
+Parse::HTTP::UserAgent implements a rules-based parser and tries to identify
+MSIE, FireFox, Opera, Safari & Chrome first. It then tries to identify Mozilla,
+Netscape, Robots and the rest will be tried with a generic parser. There is also
+a structure dumper, useful for debugging.
+
+User agent strings are a complete mess since there is no standard format for
+them. They can be in various formats and can include more or less information
+depending on the vendor's (or the user's) choice. Also, it is not dependable
+since it is some arbitrary identification string. Any user agent can fake
+another. So, why deal with such a useless mess? You may want to see the choice
+of your visitors and can get some reliable data (even if some are fake) and
+generate some nice charts out of them or just want to send an HttpOnly cookie if
+the user agent seems to support it (and send a normal one if this is not the
+case). However, browser sniffing for client-side coding is considered a bad
+habit.
+
+WWW: http://search.cpan.org/dist/Parse-HTTP-UserAgent/
