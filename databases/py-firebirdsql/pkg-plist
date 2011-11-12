@@ -13,4 +13,7 @@
 %%PYTHON_SITELIBDIR%%/firebirdsql/services.py
 %%PYTHON_SITELIBDIR%%/firebirdsql/services.pyc
 %%PYTHON_SITELIBDIR%%/firebirdsql/services.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/wireprotocol.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/wireprotocol.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/wireprotocol.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/firebirdsql
