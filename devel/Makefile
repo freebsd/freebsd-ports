@@ -3226,6 +3226,7 @@
     SUBDIR += py-zope.contenttype
     SUBDIR += py-zope.copy
     SUBDIR += py-zope.datetime
+    SUBDIR += py-zope.deferredimport
     SUBDIR += py-zope.deprecation
     SUBDIR += py-zope.event
     SUBDIR += py-zope.exceptions
