@@ -872,6 +872,7 @@
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-opengl
     SUBDIR += rubygem-pdfkit
+    SUBDIR += rubygem-png
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
