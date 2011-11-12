@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f6ee708-0d22-11e1-b5bd-14dae938ec40">
+    <topic>phpmyadmin -- Local file inclusion</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><gt>3.4</gt><lt>3.4.7.1</lt></range>
+	<range><lt>3.3.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Lieskovsky reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-17.php">
+	  <p>Importing a specially-crafted XML file which contains an XML
+	    entity injection permits to retrieve a local file (limited by the
+	    privileges of the user running the web server).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-17.php</url>
+      <cvename>CVE-2011-4107</cvename>
+    </references>
+    <dates>
+      <discovery>2011-11-10</discovery>
+      <entry>2011-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e8e1212-0ce5-11e1-849b-003067b2972c">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
