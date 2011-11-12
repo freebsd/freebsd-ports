@@ -33,6 +33,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Timer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/jit-amd64-unix.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/jit-x86-unix.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV/EV.so
