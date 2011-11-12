@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.5
+PORTVERSION=	2.0.8
+DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
-MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CENKES
-DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	geck@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
 
+LICENSE=	GPLv2
+
+USE_XPI=	*firefox*
+
 XPI_ID=		{cf15270e-cf08-4def-b4ea-6a5ac23f3bca}
+XPI_NUM=	2076
 XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
-
-xpi-post-extract:
-	@${RM} -rf ${WRKSRC}/temp
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
