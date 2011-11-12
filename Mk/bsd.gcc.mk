@@ -36,7 +36,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-GCCVERSIONS=	030402 040200 040400 040500 040600 040700
+GCCVERSIONS=	030402 040200 040400 040600 040700
 
 # The first field if the OSVERSION in which it appeared in the base.
 # The second field is the OSVERSION in which it disappeared from the base.
@@ -44,7 +44,6 @@ GCCVERSIONS=	030402 040200 040400 040500 040600 040700
 GCCVERSION_030402=	502126  700042 3.4
 GCCVERSION_040200=	700042 9999999 4.2
 GCCVERSION_040400=	     0       0 4.4
-GCCVERSION_040500=	     0       0 4.5
 GCCVERSION_040600=	     0       0 4.6
 GCCVERSION_040700=	     0       0 4.7
 
@@ -102,7 +101,12 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 .if defined(USE_GCC)
 
-# See if we can use a later version
+# GCC 4.5 got disconnected 2011-11-12, take care of any uses.
+.if ${USE_GCC} == "4.5+"
+USE_GCC=	4.6+
+.endif
+
+# See if we can use a later version or exclusively the one specified.
 _USE_GCC:=	${USE_GCC:S/+//}
 .if ${USE_GCC} != ${_USE_GCC}
 _GCC_ORLATER:=	true
