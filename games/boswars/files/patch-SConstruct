@@ -1,6 +1,6 @@
---- SConstruct.orig	2008-04-13 19:55:45.000000000 -0500
-+++ SConstruct	2008-04-13 19:56:57.000000000 -0500
-@@ -48,8 +48,10 @@
+--- SConstruct.orig	2011-11-11 23:38:26.000000000 +0100
++++ SConstruct	2011-11-11 23:38:53.000000000 +0100
+@@ -49,8 +49,10 @@
  
  
  opts = DefineOptions("build_options.py", ARGUMENTS)
@@ -11,9 +11,9 @@
 +env['CPPPATH'] = Split(env['CPPPATH'])
 +env['LIBPATH'] = Split(env['LIBPATH'])
  Help(opts.GenerateHelpText(env))
- mingw = env.Copy()
+ mingw = env.Clone()
  optionsChanged = True
-@@ -143,6 +145,10 @@
+@@ -144,6 +146,10 @@
        'LIBS': ['GL'], 
        'LIBPATH': ['/usr/lib', '/usr/X11R6/lib'],
        'CPPPATH': ['/usr/include']}
@@ -24,7 +24,7 @@
    opengl['cygwin'] = {
        'LIBS': ['opengl3']}
    opengl['darwin'] = {
-@@ -154,6 +160,8 @@
+@@ -155,6 +161,8 @@
    else:
       if sys.platform[:5] == 'linux':
          platform = 'linux'
@@ -33,10 +33,10 @@
       glconfig = opengl.get(platform, {})
    for key in glconfig:
        if key != 'LIBS':
-@@ -283,7 +291,6 @@
+@@ -265,7 +273,6 @@
  
  # define the different build environments (variants)
- release = env.Copy()
+ release = env.Clone()
 -release.Append(CCFLAGS = Split('-O2 -pipe -fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
  
  if mingw['extrapath']:
