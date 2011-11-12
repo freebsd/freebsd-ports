@@ -1,0 +1,7 @@
+LWPx::TimedHTTP performs an HTTP request exactly the same as LWP does normally
+except for the fact that it times each stage of the request and then inserts the
+results as header.
+
+It's useful for debugging where abouts in a connection slow downs are occuring.
+
+WWW: http://search.cpan.org/dist/LWPx-TimedHTTP/
