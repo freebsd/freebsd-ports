@@ -26,6 +26,7 @@ LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core	\
 		boost_thread.4:${PORTSDIR}/devel/boost-libs	\
 		execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		exif.12:${PORTSDIR}/graphics/libexif		\
+		exiv2.10:${PORTSDIR}/graphics/exiv2		\
 		gmime-2.4:${PORTSDIR}/mail/gmime24		\
 		tag.1:${PORTSDIR}/audio/taglib			\
 		curl.6:${PORTSDIR}/ftp/curl
