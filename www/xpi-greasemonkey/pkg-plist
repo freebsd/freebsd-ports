@@ -15,6 +15,7 @@
 %%XPI_XPIDIR%%/modules/runScript.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
+%%XPI_XPIDIR%%/modules/util/alert.js
 %%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
 %%XPI_XPIDIR%%/modules/util/emptyEl.js
 %%XPI_XPIDIR%%/modules/util/getBinaryContents.js
