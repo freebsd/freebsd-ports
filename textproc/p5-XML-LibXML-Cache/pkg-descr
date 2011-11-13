@@ -1,0 +1,9 @@
+XML::LibXML::Cache is a cache for XML::LibXML documents loaded from files. It is
+useful to speed up loading of XML files in persistent web applications.
+
+This module caches the document object after the first load and returns the
+cached version on subsequent loads. Documents are reloaded whenever the document
+file changes. Changes to other files referenced during parsing also cause a
+reload. This includes external DTDs, external entities or XIncludes.
+
+WWW: http://search.cpan.org/dist/XML-LibXML-Cache/

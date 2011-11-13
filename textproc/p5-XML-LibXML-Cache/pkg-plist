@@ -1,0 +1,11 @@
+%%SITE_PERL%%/XML/LibXML/Cache.pm
+%%SITE_PERL%%/XML/LibXML/Cache/Base.pm
+%%SITE_PERL%%/XML/LibXSLT/Cache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Cache/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/LibXSLT
+@dirrm %%SITE_PERL%%/XML/LibXML/Cache
+@dirrmtry %%SITE_PERL%%/XML/LibXML
+@dirrmtry %%SITE_PERL%%/XML
