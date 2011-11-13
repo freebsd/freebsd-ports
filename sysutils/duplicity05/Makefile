@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Untrusted backup using rsync algorithm
 
 DEPRECATED=	This version is out of date, and the 0.6.x branch is considered stable
-EXPIRATION=	2011-12-31
+EXPIRATION_DATE=	2011-12-31
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
