@@ -28,6 +28,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpsbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpsbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpsbackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/gdocsbackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/gdocsbackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/gdocsbackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyo
@@ -49,6 +52,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/u1backend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/u1backend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/u1backend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyo
@@ -140,11 +146,61 @@ bin/rdiffdir
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%share/locale/bg/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/de/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/el/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/es/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/he/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/id/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/io/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/it/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/duplicity.mo
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bg
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
 %%NLS%%@dirrmtry share/locale/io/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/io
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
