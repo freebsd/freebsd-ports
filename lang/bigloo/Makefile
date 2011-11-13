@@ -28,7 +28,7 @@ OPTIONS=	ALSA "Enable ALSA support" off \
 		OPENSSL "Enable OpenSSL support" on
 
 WANT_GSTREAMER=	yes
-USE_GCC=	4.5+
+USE_GCC=	4.6+
 USE_EMACS=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
