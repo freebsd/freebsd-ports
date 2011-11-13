@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	2011-03-11 17:49:14.000000000 +0100
-+++ src/Makefile.in	2011-04-05 21:27:27.000000000 +0200
-@@ -40,10 +40,6 @@
+--- src/Makefile.in.orig	2011-11-07 04:07:18.000000000 +0100
++++ src/Makefile.in	2011-11-13 11:42:41.000000000 +0100
+@@ -38,10 +38,6 @@
+ @BUILDASLIBRARY_FALSE@bin_PROGRAMS = gdl$(EXEEXT)
  subdir = src
- DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 -ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 -am__aclocal_m4_deps = $(top_srcdir)/configure.in
 -am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -11,7 +11,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -528,35 +524,6 @@
+@@ -541,35 +537,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .cpp .lo .o .obj
@@ -44,6 +44,7 @@
 -	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 -$(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 -	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
++
  $(am__aclocal_m4_deps):
- install-libLTLIBRARIES: $(lib_LTLIBRARIES)
- 	@$(NORMAL_INSTALL)
+ 
+ clean-noinstLTLIBRARIES:
