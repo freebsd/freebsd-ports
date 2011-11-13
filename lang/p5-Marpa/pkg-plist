@@ -1,0 +1,46 @@
+%%SITE_PERL%%/Marpa.pm
+%%SITE_PERL%%/Marpa/Advanced/Algorithm.pod
+%%SITE_PERL%%/Marpa/Advanced/Bibliography.pod
+%%SITE_PERL%%/Marpa/Advanced/Implementation.pod
+%%SITE_PERL%%/Marpa/Advanced/Models.pod
+%%SITE_PERL%%/Marpa/Callback.pm
+%%SITE_PERL%%/Marpa/Deprecated/Bocage.pod
+%%SITE_PERL%%/Marpa/Deprecated/Evaluator.pod
+%%SITE_PERL%%/Marpa/Deprecated/Implementation.pod
+%%SITE_PERL%%/Marpa/Display.pm
+%%SITE_PERL%%/Marpa/Evaluator.pm
+%%SITE_PERL%%/Marpa/Grammar.pm
+%%SITE_PERL%%/Marpa/Grammar.pod
+%%SITE_PERL%%/Marpa/Internal.pm
+%%SITE_PERL%%/Marpa/Internal/Carp_Not.pm
+%%SITE_PERL%%/Marpa/MDL.pm
+%%SITE_PERL%%/Marpa/MDL/Internal/Actions.pm
+%%SITE_PERL%%/Marpa/MDL/Symbol.pm
+%%SITE_PERL%%/Marpa/MDL/example/equation.pm
+%%SITE_PERL%%/Marpa/MDL/example/null_value.pm
+%%SITE_PERL%%/Marpa/MDLex.pm
+%%SITE_PERL%%/Marpa/MDLex/Internal/Quotes.pm
+%%SITE_PERL%%/Marpa/Marpa.pod
+%%SITE_PERL%%/Marpa/Offset.pm
+%%SITE_PERL%%/Marpa/Parse_Terms.pod
+%%SITE_PERL%%/Marpa/Perl.pm
+%%SITE_PERL%%/Marpa/Recce_Value.pm
+%%SITE_PERL%%/Marpa/Recognizer.pm
+%%SITE_PERL%%/Marpa/Recognizer.pod
+%%SITE_PERL%%/Marpa/Semantics.pod
+%%SITE_PERL%%/Marpa/Support.pod
+%%SITE_PERL%%/Marpa/Test.pm
+%%SITE_PERL%%/Marpa/Test/Util.pm
+%%SITE_PERL%%/Marpa/Tracing.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
+@dirrm %%SITE_PERL%%/Marpa/Test
+@dirrm %%SITE_PERL%%/Marpa/MDLex/Internal
+@dirrm %%SITE_PERL%%/Marpa/MDLex
+@dirrm %%SITE_PERL%%/Marpa/MDL/example
+@dirrm %%SITE_PERL%%/Marpa/MDL/Internal
+@dirrm %%SITE_PERL%%/Marpa/MDL
+@dirrm %%SITE_PERL%%/Marpa/Internal
+@dirrm %%SITE_PERL%%/Marpa/Deprecated
+@dirrm %%SITE_PERL%%/Marpa/Advanced
+@dirrmtry %%SITE_PERL%%/Marpa
