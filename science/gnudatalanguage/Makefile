@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.1
-PORTREVISION=	4
+DISTVERSION=	0.9.2
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -17,6 +16,8 @@ DISTNAME=	gdl-${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	GDL, a free IDL compatible incremental compiler
+
+LICENSE=	GPLv2
 
 #---------------------------------------------------------------------------
 # You may define these options:
@@ -31,10 +32,11 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 #---------------------------------------------------------------------------
 
 LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot	\
+		ps.4:${PORTSDIR}/print/pslib		\
 		gsl.16:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
-USE_GCC=	4.4+
+USE_GCC=	4.5+
 USE_WX=		2.8
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
