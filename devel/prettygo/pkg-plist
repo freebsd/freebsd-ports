@@ -1,0 +1,3 @@
+%%GO_LIBDIR%%/github.com/kr/pretty.go.a
+@dirrmtry %%GO_LIBDIR%%/github.com/kr
+@dirrmtry %%GO_LIBDIR%%/github.com

@@ -2906,6 +2906,7 @@
     SUBDIR += preps-gui
     SUBDIR += prepstools
     SUBDIR += present
+    SUBDIR += prettygo
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += projectmanager
