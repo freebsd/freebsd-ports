@@ -79,12 +79,12 @@ OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
 		PULSE	"Enable Pulse Audio support"			off \
 		CLANG	"Build Chromium with Clang"			off \
-		GCC45	"Build Chromium with GCC 4.5+"			off \
+		GCC46	"Build Chromium with GCC 4.6+"			off \
 		DEBUG	"Compile with debug symbols and verbose output"	off
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || defined(WITH_GCC45)
+.if ${OSVERSION} < 900033 || defined(WITH_GCC46)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -121,12 +121,12 @@ GYP_DEFINES+=	use_pulseaudio=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
-.if defined(WITH_GCC45) && defined(WITH_CLANG)
-IGNORE=	conflicting options (CLANG or GCC45)
+.if defined(WITH_GCC46) && defined(WITH_CLANG)
+IGNORE=	conflicting options (CLANG or GCC46)
 .endif
 
-.if defined(WITH_GCC45)
-USE_GCC?=	4.5+
+.if defined(WITH_GCC46)
+USE_GCC?=	4.6+
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .endif
 
