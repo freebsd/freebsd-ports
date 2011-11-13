@@ -214,6 +214,7 @@
     SUBDIR += p5-List-MoreUtils
     SUBDIR += p5-Marpa
     SUBDIR += p5-Marpa-PP
+    SUBDIR += p5-Marpa-XS
     SUBDIR += p5-Modern-Perl
     SUBDIR += p5-Parse-Perl
     SUBDIR += p5-Perl6-Subs
