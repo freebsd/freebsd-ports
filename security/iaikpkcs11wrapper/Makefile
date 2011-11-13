@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	iaikPkcs11Wrapper
-PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTVERSION=	1.2.18
 CATEGORIES=	security java devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PKCS\#11 Java wrapper
@@ -26,13 +25,14 @@ ALL_TARGET=	release
 PLIST_FILES=	lib/libpkcs11wrapper.so %%JAVAJARDIR%%/iaikPkcs11Wrapper.jar
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-WRKSRC=		${WRKDIR}/native/platforms/linux_x64
+WRKSRC=		${WRKDIR}/src/native/unix/linux-x86_64
 .else
-WRKSRC=		${WRKDIR}/native/platforms/linux
+WRKSRC=		${WRKDIR}/src/native/unix/linux-x86
 .endif
 
 do-install:
@@ -40,15 +40,20 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/release/libpkcs11wrapper.so ${PREFIX}/lib/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/iaikPkcs11Wrapper.jar..."
-	@${INSTALL_DATA} ${WRKDIR}/java/lib/iaikPkcs11Wrapper.jar ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKDIR}/bin/iaikPkcs11Wrapper.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/docs && ${FIND} * | \
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@cd ${WRKDIR}/java/docs && ${FIND} api-doc | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR}..."
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKDIR}/examples && ${FIND} * | \
+		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
