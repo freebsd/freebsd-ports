@@ -3,12 +3,15 @@
 # Whom:         Gerrit Beine <gerrit.beine@gmx.de>
 #
 # $FreeBSD$
+#
+# Please don't forget to bump the version in py-lucene if this changes!
 
 PORTNAME=	lucene
-PORTVERSION=	2.9.4
+PORTVERSION=	3.4.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java/$(PORTVERSION),}
 DISTNAME=	lucene-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A full-text search engine for Java
@@ -24,32 +27,26 @@ OPTIONS=	DOCS    "Install docs & examples" on \
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
+.include <bsd.port.options.mk>
+
 CONTRIBS=	analyzers \
-		ant \
 		benchmark \
-		collation	\
-		bdb	\
-		bdb-je	\
-		instantiated \
+		facet	\
+		grouping \
 		highlighter \
-		lucli \
+		icu \
+		instantiated \
+		join	\
 		memory \
 		misc \
 		queries \
 		queryparser	\
-		regex \
 		remote	\
 		smartcn \
-		snowball \
 		spatial \
 		spellchecker \
-		surround \
-		swing \
-		wikipedia \
-		wordnet \
+		stempel \
 		xml-query-parser
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_CONTRIB)
 .for f in ${CONTRIBS}
@@ -59,25 +56,31 @@ PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
 
 .if defined(WITHOUT_DOCS) || !defined(WITH_DOCS)
 NOPORTDOCS=	yes
+NOPORTEXAMPLES=	yes
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+PORTEXAMPLES=	*
 
-DEMODIR=	src/demo/org/apache/lucene/demo
+DEMODIR=	contrib/demo
 
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
 .if defined(WITH_CONTRIB)
-	${MV} ${WRKSRC}/contrib/analyzers/common/*.jar ${WRKSRC}/contrib/analyzers/
+post-extract:
+	${MV} ${WRKSRC}/contrib/analyzers/common/* ${WRKSRC}/contrib/analyzers/
 	${RMDIR} ${WRKSRC}/contrib/analyzers/common
 	${MV} ${WRKSRC}/contrib/analyzers/smartcn/ ${WRKSRC}/contrib/
-	${MV} ${WRKSRC}/contrib/db/bdb/ ${WRKSRC}/contrib/bdb
-	${MV} ${WRKSRC}/contrib/db/bdb-je/ ${WRKSRC}/contrib/bdb-je
-	${INSTALL_DATA} \
-	    ${CONTRIBS:C,^(.*)$,${WRKSRC}/contrib/\1/${PORTNAME}-\1-${PORTVERSION}.jar,} \
+	${MV} ${WRKSRC}/contrib/analyzers/stempel/ ${WRKSRC}/contrib/
+.endif
+
+do-install:
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar \
+		${JAVAJARDIR}
+.if defined(WITH_CONTRIB)
+. for f in ${CONTRIBS}
+	@${INSTALL_DATA} \
+	    ${WRKSRC}/contrib/${f}/${PORTNAME}-${f}-${PORTVERSION}.jar \
 	    ${JAVAJARDIR}
+. endfor
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -85,21 +88,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	@cd ${WRKSRC}/docs/ \
-	    && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	    && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/${DEMODIR} \
-	    && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
-	    && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	@(cd ${WRKSRC}/${DEMODIR} && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${FIND} -s ${WRKSRC}/${DEMODIR} -not -type d \
-	    | ${SED} -ne 's,^${WRKSRC}/${DEMODIR},${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${WRKSRC}/${DEMODIR} -type d \
-	    | ${SED} -ne 's,^${WRKSRC}/${DEMODIR},@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
