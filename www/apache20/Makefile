@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -29,7 +29,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 MAKE_JOBS_SAFE=	yes
 
 DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
-EXPIRATION_DATE=	2011-05-01
+EXPIRATION_DATE=	2012-02-01
 
 LATEST_LINK=	apache20
 
