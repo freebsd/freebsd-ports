@@ -1,0 +1,12 @@
+This module implements several resizing algorithms with a focus on low
+overhead, speed and minimal features. Algorithms available are:
+
+  GD's copyResampled (floating-point)
+  GD's copyResampled fixed-point (useful on embedded devices/NAS devices)
+  GraphicsMagick's assortment of resize filters (floating-point)
+  GraphicsMagick's Triangle filter in fixed-point
+
+Supported image formats include JPEG, GIF, PNG, and BMP for input, and
+JPEG and PNG for output.
+
+WWW: http://search.cpan.org/dist/Image-Size/
