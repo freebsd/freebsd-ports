@@ -1,0 +1,16 @@
+bin/html_fmt
+bin/html_score
+%%SITE_PERL%%/Marpa/HTML.pm
+%%SITE_PERL%%/Marpa/HTML.pod
+%%SITE_PERL%%/Marpa/HTML/Callback.pm
+%%SITE_PERL%%/Marpa/HTML/Offset.pm
+%%SITE_PERL%%/Marpa/HTML/Support.pod
+%%SITE_PERL%%/Marpa/HTML/Test.pm
+%%SITE_PERL%%/Marpa/HTML/Test/Util.pm
+%%SITE_PERL%%/Marpa/HTML/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/HTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
+@dirrm %%SITE_PERL%%/Marpa/HTML/Test
+@dirrm %%SITE_PERL%%/Marpa/HTML
+@dirrmtry %%SITE_PERL%%/Marpa

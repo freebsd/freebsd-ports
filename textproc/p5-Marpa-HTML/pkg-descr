@@ -1,0 +1,7 @@
+Marpa::HTML does "high-level" parsing of HTML. It allows handlers to be
+specified for elements, terminals and other components in the hierarchical
+structure of an HTML document. Marpa::HTML is an extremely liberal HTML parser.
+Marpa::HTML does not reject any documents, no mater how poorly they fit the HTML
+standards.
+
+WWW: http://search.cpan.org/dist/Marpa-HTML/
