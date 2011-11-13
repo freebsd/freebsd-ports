@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.17.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -79,9 +80,13 @@ PORTEXAMPLES=	*
 .if defined(WITH_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
+
 .if defined(WITH_SNMP)
 RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 post-patch:
 	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
