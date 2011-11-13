@@ -157,6 +157,12 @@ share/apps/rkward/analysis/wilcoxon/wilcoxon_test.xml
 share/apps/rkward/data.pluginmap
 share/apps/rkward/data/generate_random.js
 share/apps/rkward/data/generate_random.xml
+share/apps/rkward/data/limit_vector_length.js
+share/apps/rkward/data/limit_vector_length.rkh
+share/apps/rkward/data/limit_vector_length.xml
+share/apps/rkward/data/one_var_tabulation.js
+share/apps/rkward/data/one_var_tabulation.rkh
+share/apps/rkward/data/one_var_tabulation.xml
 share/apps/rkward/data/sort.js
 share/apps/rkward/data/sort.xml
 share/apps/rkward/data/sort2.xml
@@ -495,6 +501,8 @@ share/apps/rkward/rktoplevelwindowgui.rc
 share/apps/rkward/rkwardui.rc
 share/apps/rkward/simple_anova/code.js
 share/apps/rkward/simple_anova/description.xml
+share/apps/rkward/testing/run_code.js
+share/apps/rkward/testing/run_code.xml
 share/apps/rkward/testing/test1.js
 share/apps/rkward/testing/test1.xml
 share/apps/rkward/testing/test2.js
@@ -509,14 +517,15 @@ share/apps/rkward/x11device/export.xml
 share/apps/rkward/x11device/grid.js
 share/apps/rkward/x11device/grid.rkh
 share/apps/rkward/x11device/grid.xml
-share/config/rkward.knsrc
 %%PORTDOCS%%%%DOCSDIR%%/common
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
 %%PORTDOCS%%%%DOCSDIR%%/man-rkward.1.docbook
-%%PORTDOCS%%%%DOCSDIR%%/menu_hierarchy_example.png
-%%PORTDOCS%%%%DOCSDIR%%/t_test_plugin_example.png
-%%PORTDOCS%%%%DOCSDIR%%/writing_plugins_introduction.docbook
+%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/common
+%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/menu_hierarchy_example.png
+%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/t_test_plugin_example.png
 share/icons/hicolor/128x128/apps/rkward.png
 share/icons/hicolor/16x16/apps/rkward.png
 share/icons/hicolor/22x22/apps/rkward.png
@@ -535,7 +544,9 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 %%NLS%%share/locale/lt/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rkward.mo
+%%PORTDOCS%%@dirrm share/doc/HTML/en/rkwardplugins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrmtry share/doc/HTML/en
 %%PORTDOCS%%@dirrmtry share/doc/HTML

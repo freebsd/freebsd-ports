@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTVERSION=	0.5.7
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -15,11 +14,11 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
 		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
-
-LICENSE=	GPLv2
 
 CONFLICTS=	rkward-0.4.*
 
