@@ -11,8 +11,11 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.launchpad.net/duplicity/0.5-series/${PORTVERSION}/+download/
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Untrusted backup using rsync algorithm
+
+DEPRECATED=	This version is out of date, and the 0.6.x branch is considered stable
+EXPIRATION=	2011-12-31
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
@@ -39,8 +42,6 @@ DOCFILES=	CHANGELOG \
 		README \
 		tarfile-LICENSE
 
-.include <bsd.port.pre.mk>
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -49,4 +50,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
