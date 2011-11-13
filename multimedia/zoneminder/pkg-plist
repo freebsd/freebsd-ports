@@ -312,7 +312,7 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm %%WWWDIR_REL%%/data
 @dirrm %%WWWDIR_REL%%/cgi-bin
 @dirrm %%WWWDIR_REL%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/mach/auto/ZoneMinder
 @dirrmtry %%SITE_PERL%%/mach/auto
 @dirrmtry %%SITE_PERL%%/mach

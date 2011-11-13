@@ -432,8 +432,8 @@ share/java/classes/slf4j-log4j12.jar
 @dirrm %%DATADIR%%/plugins/admin/webapp
 @dirrm %%DATADIR%%/plugins/admin
 @dirrm share/examples/openfire
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/licenses
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 @dirrm share/doc/openfire
 @comment @dirrm %%ETCDIR%%/openfire
 @unexec rmdir %D/%%DATADIR%%/plugins 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%%/plugins must be removed manually"

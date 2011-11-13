@@ -48,8 +48,8 @@ bin/crossvc
 @dirrm %%DATADIR%%/Messages
 @dirrm %%DATADIR%%/Tools
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Translations/de
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Translations/it
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Translations/ru
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Translations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Translations/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Translations/it
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Translations/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Translations
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

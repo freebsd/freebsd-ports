@@ -907,6 +907,6 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/spline_2.png
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/spline_3.png
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/splines.png
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/MBS/images
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/MBS
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MBS/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MBS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
