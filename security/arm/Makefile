@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arm
-DISTVERSION=	1.4.4.0
+DISTVERSION=	1.4.4.1
 CATEGORIES=	security net python
 MASTER_SITES=	https://archive.torproject.org/arm/ \
 		http://www.c-s.li/ports/
@@ -17,20 +17,25 @@ COMMENT=	A terminal status monitor for Tor
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
-		tor:${PORTSDIR}/security/tor
-
 MAN1=		arm.1
 MANCOMPRESSED=	yes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=1.4.4
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 PORTDOCS=	armrc.sample
+
+OPTIONS=	TOR "Install tor locally" On
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TOR)
+RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof \
+		tor:${PORTSDIR}/security/tor
+.endif
 
 post-patch:
 .if defined(NOPORTDOCS)
@@ -49,4 +54,4 @@ post-patch:
  		${WRKSRC}/arm ${WRKSRC}/setup.py ${WRKSRC}/src/uninstall \
 		${WRKSRC}/src/gui/controller.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
