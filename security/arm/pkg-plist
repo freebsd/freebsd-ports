@@ -43,57 +43,6 @@ bin/arm
 %%PYTHON_SITELIBDIR%%/arm/TorCtl/example.py
 %%PYTHON_SITELIBDIR%%/arm/TorCtl/example.pyc
 %%PYTHON_SITELIBDIR%%/arm/TorCtl/example.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/__init__.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/__init__.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/__init__.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_file.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_file.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_file.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_grid.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_grid.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/ca_graph_grid.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/__init__.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/__init__.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/__init__.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/axis.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/axis.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/axis.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/taxis.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/taxis.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/taxis.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/xaxis.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/xaxis.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/xaxis.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/yaxis.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/yaxis.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/axis/yaxis.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/__init__.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/__init__.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/__init__.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/area.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/area.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/area.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/bar.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/bar.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/bar.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/dna.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/dna.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/dna.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/hbar.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/hbar.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/hbar.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/labels.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/labels.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/labels.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/line.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/line.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/line.pyo
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/series.py
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/series.pyc
-%%PYTHON_SITELIBDIR%%/arm/cagraph/series/series.pyo
 %%PYTHON_SITELIBDIR%%/arm/cli/__init__.py
 %%PYTHON_SITELIBDIR%%/arm/cli/__init__.pyc
 %%PYTHON_SITELIBDIR%%/arm/cli/__init__.pyo
@@ -264,9 +213,6 @@ bin/arm
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyc
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/arm/TorCtl
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cagraph/axis
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cagraph/series
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cagraph
 @dirrm %%PYTHON_SITELIBDIR%%/arm/cli/connections
 @dirrm %%PYTHON_SITELIBDIR%%/arm/cli/graphing
 @dirrm %%PYTHON_SITELIBDIR%%/arm/cli/menu
