@@ -944,4 +944,4 @@ sbin/maiad
 @dirrm %%WWWDIR%%/admin/scripts
 @dirrm %%WWWDIR%%/admin
 @dirrmtry %%WWWDIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

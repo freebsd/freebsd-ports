@@ -202,7 +202,7 @@ lib/hevea/xxdate.exe
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea001.gif
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/hevea/text
 @dirrm lib/hevea/mappings

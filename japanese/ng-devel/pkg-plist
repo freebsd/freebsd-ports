@@ -8,4 +8,4 @@ bin/ng
 %%PORTDOCS%%%%DOCSDIR%%/Ng.tut.euc-jp
 %%PORTDOCS%%%%DOCSDIR%%/README.Ng.euc-jp
 %%PORTDOCS%%%%DOCSDIR%%/README.SKG.euc-jp
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

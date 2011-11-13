@@ -324,4 +324,4 @@
 @dirrm %%PHPBBDIR%%
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

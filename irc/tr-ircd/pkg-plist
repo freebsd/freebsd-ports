@@ -406,7 +406,7 @@ lib/tr-ircd/tools/httpd.so
 %%PORTDOCS%%%%DOCSDIR%%/README.OPM
 %%PORTDOCS%%%%DOCSDIR%%/RELNOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/help/en_us
 @dirrm %%DATADIR%%/help/tr
 @dirrm %%DATADIR%%/help

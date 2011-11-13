@@ -558,12 +558,12 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch04s02.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch05.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/index.html
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/reference/html
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/reference
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/images
-%%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/tutorial/html
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/tutorial
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/reference/html
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/reference
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/images
+%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%
 %%PORTDOCS%%@dirrm share/devhelp/books/libsigc++-%%API_VERSION%%
 %%PORTDOCS%%@dirrmtry share/devhelp/books
 %%PORTDOCS%%@dirrmtry share/devhelp

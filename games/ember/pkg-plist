@@ -2508,7 +2508,7 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember
 @dirrm etc/ember
 @dirrmtry share/applications
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/worldforge
 @dirrmtry share/icons
 

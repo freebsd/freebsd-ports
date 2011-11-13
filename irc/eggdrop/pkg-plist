@@ -187,7 +187,7 @@ lib/eggdrop/wire.so
 @dirrm %%DATADIR%%/help/msg
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/settings
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/settings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/eggdrop

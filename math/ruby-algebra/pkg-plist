@@ -213,6 +213,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/todo.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/sample-algebraic-root01.rb.v.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/sample-algebraic-root01.rb.v.rd
-@dirrm %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%
-@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja
-@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

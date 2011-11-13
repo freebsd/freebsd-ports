@@ -119,12 +119,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/mapdocs/vashes.txt
 %%PORTDOCS%%%%DOCSDIR%%/mapdocs/waterfront.txt
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs/pics/replacement-ui
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs/pics/headers
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs/pics/items
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs/pics/weapons
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs/pics/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics/replacement-ui
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics/headers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics/items
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics/weapons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/mapdocs
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mapdocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
