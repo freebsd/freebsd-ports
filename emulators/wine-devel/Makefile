@@ -60,6 +60,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
+		DOSBOX	"Use DOSBox to run MS-DOS programs"		Off \
 		GNUTLS	"Use GnuTLS"					Off \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
@@ -76,6 +77,10 @@ CONFIGURE_ARGS+=	--without-cups
 .else
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+.endif
+
+.ifdef WITH_DOSBOX
+RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 .endif
 
 .ifdef WITH_GNUTLS
