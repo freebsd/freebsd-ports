@@ -3008,3 +3008,4 @@ graphics/librsvg||2011-11-09|Has expired: unmaintained and not used anymore
 www/p5-Catalyst-Log-Log4perl||2011-11-09|Has expired: Use Log::Log4perl::Catalyst (devel/p5-Log-Log4perl) instead.
 lang/open-cobol-devel||2011-11-09|Has expired: No activity since 2007
 databases/py-axiom||2011-11-11|Has expired: Distfile missing, runtime broken. Use databases/py-sqlobject instead
+sysutils/duplicity-devel||2011-11-12|Much older than current version, use sysutils/duplicity instead
