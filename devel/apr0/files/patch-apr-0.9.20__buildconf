@@ -1,5 +1,5 @@
---- ./apr-0.9.19/buildconf.orig	2006-09-20 16:04:09.000000000 +0000
-+++ ./apr-0.9.19/buildconf	2010-10-20 21:08:11.863623823 +0000
+--- ./apr-0.9.20/buildconf.orig	2006-09-20 16:04:09.000000000 +0000
++++ ./apr-0.9.20/buildconf	2010-10-20 21:08:11.863623823 +0000
 @@ -23,7 +23,7 @@
  #
  build/buildcheck.sh || exit 1
@@ -32,7 +32,7 @@
 +IFS=.; set $lt_version; IFS=' '
 +if test "$1" = "1"; then
 +  $libtoolize --copy --automake
-+  if [ -f libtool.m4 ]; then 
++  if [ -f libtool.m4 ]; then
 +    ltfile=`pwd`/libtool.m4
 +  else
 +   ltfindcmd="`sed -n \"/=[^\\\`]/p;/libtool_m4=/{s/.*=/echo /p;q;}\" \

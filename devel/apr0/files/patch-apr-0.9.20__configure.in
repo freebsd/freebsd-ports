@@ -1,12 +1,12 @@
---- ./apr-0.9.19/configure.in.orig	2008-06-20 17:32:47.000000000 +0000
-+++ ./apr-0.9.19/configure.in	2010-10-20 21:08:11.857624440 +0000
+--- ./apr-0.9.20/configure.in.orig	2008-06-20 17:32:47.000000000 +0000
++++ ./apr-0.9.20/configure.in	2010-10-20 21:08:11.857624440 +0000
 @@ -7,6 +7,7 @@
  AC_INIT(build/apr_common.m4)
  AC_CONFIG_HEADER(include/arch/unix/apr_private.h)
  AC_CONFIG_AUX_DIR(build)
 +AC_CONFIG_MACRO_DIR(build)
  
- dnl 
+ dnl
  dnl Include our own M4 macros along with those for libtool
 @@ -16,6 +17,11 @@
  sinclude(build/apr_threads.m4)
