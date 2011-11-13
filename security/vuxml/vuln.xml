@@ -68,17 +68,14 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><lt>10.3r183.10</lt></range>
-      </package>
-      <package>
-	<name>linux-f10-flashplugin</name>
-	<range><lt>11.0r1.153</lt></range>
+	<range><lt>10.3r183.11</lt></range>
+	<range><gt>11</gt><lt>11.1r102.55</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Adobe Product Security Incident Response Team reports:</p>
-	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-28.html">
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb11-28.html">
 	  <p>Critical vulnerabilities have been identified in Adobe Flash Player
 	    11.0.1.152 and earlier versions for Windows, Macintosh, Linux and
 	    Solaris, and Adobe Flash Player 11.0.1.153 and earlier versions for
@@ -100,7 +97,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2457</cvename>
       <cvename>CVE-2011-2458</cvename>
       <cvename>CVE-2011-2459</cvename>
-      <cvename>CVE-2011-2458</cvename>
+      <cvename>CVE-2011-2460</cvename>
     </references>
     <dates>
       <discovery>2011-11-10</discovery>
