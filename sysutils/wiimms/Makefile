@@ -7,6 +7,7 @@
 
 PORTNAME=	wiimms
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac
@@ -29,6 +30,8 @@ post-patch:
 		${WRKSRC}/*.sh \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/setup/*.sh \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/share/wit|/share/wiimms|g' \
 		${WRKSRC}/Makefile
 
 pre-configure:
