@@ -142,15 +142,11 @@ MAN3=		Gantry.3 \
 		Template::Plugin::GantryAuthCookie.3
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' -e 's,\$ENV{'GANTRY_TEMPLATE_PATH'},${WWWDIR},g' ${WRKSRC}/Build.PL
+	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' \
+		-e 's,\$ENV{'GANTRY_TEMPLATE_PATH'},${WWWDIR},g' \
+	    ${WRKSRC}/Build.PL
 
-pre-configure:
-	@${MKDIR} ${WWWDIR}
-
-post-build:
-	@${RMDIR} ${WWWDIR}
-
-pre-install:
+pre-su-install:
 	@${MKDIR} ${WWWDIR}
 
 .include <bsd.port.mk>
