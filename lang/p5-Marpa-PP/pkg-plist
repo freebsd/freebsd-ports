@@ -1,0 +1,27 @@
+%%SITE_PERL%%/Marpa/PP.pm
+%%SITE_PERL%%/Marpa/PP.pod
+%%SITE_PERL%%/Marpa/PP/Advanced/Bibliography.pod
+%%SITE_PERL%%/Marpa/PP/Advanced/Models.pod
+%%SITE_PERL%%/Marpa/PP/Callback.pm
+%%SITE_PERL%%/Marpa/PP/Debug.pod
+%%SITE_PERL%%/Marpa/PP/Grammar.pm
+%%SITE_PERL%%/Marpa/PP/Grammar.pod
+%%SITE_PERL%%/Marpa/PP/Installed.pm
+%%SITE_PERL%%/Marpa/PP/Internal.pm
+%%SITE_PERL%%/Marpa/PP/Recognizer.pm
+%%SITE_PERL%%/Marpa/PP/Recognizer.pod
+%%SITE_PERL%%/Marpa/PP/Rewrite.pod
+%%SITE_PERL%%/Marpa/PP/Semantics.pod
+%%SITE_PERL%%/Marpa/PP/Semantics/Infinite.pod
+%%SITE_PERL%%/Marpa/PP/Semantics/Null.pod
+%%SITE_PERL%%/Marpa/PP/Semantics/Order.pod
+%%SITE_PERL%%/Marpa/PP/Slot.pm
+%%SITE_PERL%%/Marpa/PP/Support.pod
+%%SITE_PERL%%/Marpa/PP/Tracing.pod
+%%SITE_PERL%%/Marpa/PP/Value.pm
+%%SITE_PERL%%/Marpa/PP/Version.pm
+%%SITE_PERL%%/Marpa/PP/Vocabulary.pod
+@dirrm %%SITE_PERL%%/Marpa/PP/Semantics
+@dirrm %%SITE_PERL%%/Marpa/PP/Advanced
+@dirrm %%SITE_PERL%%/Marpa/PP
+@dirrmtry %%SITE_PERL%%/Marpa
