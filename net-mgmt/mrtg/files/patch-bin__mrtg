@@ -1,0 +1,14 @@
+PR: ports/162224
+Fix: http://oss.oetiker.ch/mrtg-trac/changeset/349
+===================================================================
+--- ./bin/mrtg.orig	2011-02-18 15:34:27.000000000 +0100
++++ ./bin/mrtg	2011-11-13 19:11:44.000000000 +0100
+@@ -1748,7 +1748,7 @@
+         print HTML "
+ <!-- Begin $sample{$peri} -->
+ 		<div class=\"graph\">
+-			<h2>".&$LOC("$sample{$peri}").&$LOC(' Average\)')."</h2>
++			<h2>".&$LOC("$sample{$peri}").&$LOC(' Average)')."</h2>
+ 			<img src=\"$imagepath$router-$full{$peri}.${main::GRAPHFMT}\" title=\"$full{$peri}\" alt=\"$full{$peri}\" />
+ 			<table>
+ 				<tr>
