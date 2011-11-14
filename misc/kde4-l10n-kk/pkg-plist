@@ -53,6 +53,7 @@ share/locale/kk/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/kk/LC_MESSAGES/audiorename_plugin.mo
 share/locale/kk/LC_MESSAGES/autorefresh.mo
 share/locale/kk/LC_MESSAGES/babelfish.mo
+share/locale/kk/LC_MESSAGES/blinken.mo
 share/locale/kk/LC_MESSAGES/blogilo.mo
 share/locale/kk/LC_MESSAGES/calendarsupport.mo
 share/locale/kk/LC_MESSAGES/cervisia.mo
@@ -302,6 +303,7 @@ share/locale/kk/LC_MESSAGES/kjotsmigrator.mo
 share/locale/kk/LC_MESSAGES/kleopatra.mo
 share/locale/kk/LC_MESSAGES/klinkstatus.mo
 share/locale/kk/LC_MESSAGES/klipper.mo
+share/locale/kk/LC_MESSAGES/klock.mo
 share/locale/kk/LC_MESSAGES/kmag.mo
 share/locale/kk/LC_MESSAGES/kmail-migrator.mo
 share/locale/kk/LC_MESSAGES/kmail-mobile.mo

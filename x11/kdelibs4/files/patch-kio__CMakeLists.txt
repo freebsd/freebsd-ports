@@ -1,0 +1,49 @@
+--- ./kio/CMakeLists.txt.orig	2011-10-28 00:41:28.000000000 -0700
++++ ./kio/CMakeLists.txt	2011-11-03 01:06:07.267271376 -0700
+@@ -17,22 +17,6 @@
+    set(KIO_NO_SOPRANO TRUE)
+ endif(NOT SOPRANO_FOUND)
+ 
+-if(OPENSSL_FOUND)
+-   set(KSSL_HAVE_SSL 1)
+-   include_directories(${OPENSSL_INCLUDE_DIR})
+-endif(OPENSSL_FOUND)
+-
+-if(NOT KIO_NO_NEPOMUK)
+-    include_directories(
+-       ${SOPRANO_INCLUDE_DIR}
+-       ${CMAKE_SOURCE_DIR}/nepomuk/
+-       ${CMAKE_SOURCE_DIR}/nepomuk/core/
+-       ${CMAKE_SOURCE_DIR}/nepomuk/types/    
+-       ${CMAKE_SOURCE_DIR}/nepomuk/ui/
+-       ${CMAKE_SOURCE_DIR}/nepomuk/query/
+-    )
+-endif(NOT KIO_NO_NEPOMUK)
+-
+ # This applies to all subdirs; let's put kio's dependencies (and own dirs) here, once and for all
+ include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/bookmarks
+@@ -48,6 +32,23 @@
+    ${ZLIB_INCLUDE_DIR}
+ 
+    )
++
++if(OPENSSL_FOUND)
++   set(KSSL_HAVE_SSL 1)
++   include_directories(${OPENSSL_INCLUDE_DIR})
++endif(OPENSSL_FOUND)
++
++if(NOT KIO_NO_NEPOMUK)
++    include_directories(
++       ${SOPRANO_INCLUDE_DIR}
++       ${CMAKE_SOURCE_DIR}/nepomuk/
++       ${CMAKE_SOURCE_DIR}/nepomuk/core/
++       ${CMAKE_SOURCE_DIR}/nepomuk/types/
++       ${CMAKE_SOURCE_DIR}/nepomuk/ui/
++       ${CMAKE_SOURCE_DIR}/nepomuk/query/
++    )
++endif(NOT KIO_NO_NEPOMUK)
++
+ if (NOT KIO_NO_STRIGI)
+    include_directories(${STRIGI_INCLUDE_DIR})
+    set(KIO_EXTRA_LIBS ${KIO_EXTRA_LIBS} ${STRIGI_STREAMANALYZER_LIBRARY} ${STRIGI_STREAMS_LIBRARY})

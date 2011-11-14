@@ -157,6 +157,18 @@ share/doc/HTML/ca/PolicyKit-kde/howitworks.docbook
 share/doc/HTML/ca/PolicyKit-kde/index.cache.bz2
 share/doc/HTML/ca/PolicyKit-kde/index.docbook
 share/doc/HTML/ca/PolicyKit-kde/introduction.docbook
+share/doc/HTML/ca/akregator/add-feed.png
+share/doc/HTML/ca/akregator/add-feed2.png
+share/doc/HTML/ca/akregator/add-folder.png
+share/doc/HTML/ca/akregator/advanced-tab.png
+share/doc/HTML/ca/akregator/appearance-tab.png
+share/doc/HTML/ca/akregator/archive-tab.png
+share/doc/HTML/ca/akregator/browser-tab.png
+share/doc/HTML/ca/akregator/common
+share/doc/HTML/ca/akregator/general-tab.png
+share/doc/HTML/ca/akregator/index.cache.bz2
+share/doc/HTML/ca/akregator/index.docbook
+share/doc/HTML/ca/akregator/quick-filter.png
 share/doc/HTML/ca/amor/common
 share/doc/HTML/ca/amor/index.cache.bz2
 share/doc/HTML/ca/amor/index.docbook
@@ -237,9 +249,17 @@ share/doc/HTML/ca/kate/part.docbook
 share/doc/HTML/ca/kate/plugins.docbook
 share/doc/HTML/ca/kate/regular-expressions.docbook
 share/doc/HTML/ca/kate/vi.docbook
+share/doc/HTML/ca/katomic/common
+share/doc/HTML/ca/katomic/index.cache.bz2
+share/doc/HTML/ca/katomic/index.docbook
+share/doc/HTML/ca/kbruch/common
+share/doc/HTML/ca/kbruch/index.cache.bz2
+share/doc/HTML/ca/kbruch/index.docbook
+share/doc/HTML/ca/kbruch/man-kbruch.1.docbook
 share/doc/HTML/ca/kcharselect/common
 share/doc/HTML/ca/kcharselect/index.cache.bz2
 share/doc/HTML/ca/kcharselect/index.docbook
+share/doc/HTML/ca/kcharselect/kcharselect.png
 share/doc/HTML/ca/kcontrol/attica/common
 share/doc/HTML/ca/kcontrol/attica/index.cache.bz2
 share/doc/HTML/ca/kcontrol/attica/index.docbook
@@ -514,6 +534,14 @@ share/doc/HTML/ca/kgeography/zoom.png
 share/doc/HTML/ca/kget/common
 share/doc/HTML/ca/kget/index.cache.bz2
 share/doc/HTML/ca/kget/index.docbook
+share/doc/HTML/ca/kgpg/common
+share/doc/HTML/ca/kgpg/index.cache.bz2
+share/doc/HTML/ca/kgpg/index.docbook
+share/doc/HTML/ca/kgpg/keygen.png
+share/doc/HTML/ca/kgpg/keyprop.png
+share/doc/HTML/ca/kgpg/keyserver.png
+share/doc/HTML/ca/kgpg/options.png
+share/doc/HTML/ca/kgpg/select-secret-key.png
 share/doc/HTML/ca/khangman/common
 share/doc/HTML/ca/khangman/getnewstuff.png
 share/doc/HTML/ca/khangman/index.cache.bz2
@@ -652,6 +680,17 @@ share/doc/HTML/ca/kioslave/xz/index.docbook
 share/doc/HTML/ca/kleopatra/common
 share/doc/HTML/ca/kleopatra/index.cache.bz2
 share/doc/HTML/ca/kleopatra/index.docbook
+share/doc/HTML/ca/klettres/common
+share/doc/HTML/ca/klettres/index.cache.bz2
+share/doc/HTML/ca/klettres/index.docbook
+share/doc/HTML/ca/klettres/klettres-newstuff.png
+share/doc/HTML/ca/klettres/klettres-newstuff2.png
+share/doc/HTML/ca/klettres/klettres1.png
+share/doc/HTML/ca/klettres/klettres2.png
+share/doc/HTML/ca/klettres/klettres3.png
+share/doc/HTML/ca/klettres/klettres4.png
+share/doc/HTML/ca/klettres/klettres5.png
+share/doc/HTML/ca/klettres/klettres6.png
 share/doc/HTML/ca/klipper/common
 share/doc/HTML/ca/klipper/index.cache.bz2
 share/doc/HTML/ca/klipper/index.docbook
@@ -853,8 +892,12 @@ share/doc/HTML/ca/kteatime/common
 share/doc/HTML/ca/kteatime/index.cache.bz2
 share/doc/HTML/ca/kteatime/index.docbook
 share/doc/HTML/ca/ktimer/common
+share/doc/HTML/ca/ktimer/first.png
 share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
+share/doc/HTML/ca/ktimer/main.png
+share/doc/HTML/ca/ktimer/running.png
+share/doc/HTML/ca/ktimer/two.at.once.png
 share/doc/HTML/ca/ktouch/color_options.png
 share/doc/HTML/ca/ktouch/common
 share/doc/HTML/ca/ktouch/general_options.png
@@ -867,12 +910,24 @@ share/doc/HTML/ca/ktouch/man-ktouch.1.docbook
 share/doc/HTML/ca/ktouch/statistics_dialog.png
 share/doc/HTML/ca/ktouch/statistics_dialog_chart.png
 share/doc/HTML/ca/ktouch/training_options.png
+share/doc/HTML/ca/kturtle/common
+share/doc/HTML/ca/kturtle/getting-started.docbook
+share/doc/HTML/ca/kturtle/glossary.docbook
+share/doc/HTML/ca/kturtle/index.cache.bz2
+share/doc/HTML/ca/kturtle/index.docbook
+share/doc/HTML/ca/kturtle/mainwindow.png
+share/doc/HTML/ca/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/ca/kturtle/programming-reference.docbook
+share/doc/HTML/ca/kturtle/translator-guide.docbook
+share/doc/HTML/ca/kturtle/using-kturtle.docbook
 share/doc/HTML/ca/kuser/common
 share/doc/HTML/ca/kuser/index.cache.bz2
 share/doc/HTML/ca/kuser/index.docbook
 share/doc/HTML/ca/kwallet/common
+share/doc/HTML/ca/kwallet/first-open-request.png
 share/doc/HTML/ca/kwallet/index.cache.bz2
 share/doc/HTML/ca/kwallet/index.docbook
+share/doc/HTML/ca/kwallet/kwalletmanager.png
 share/doc/HTML/ca/kwatchgnupg/common
 share/doc/HTML/ca/kwatchgnupg/index.cache.bz2
 share/doc/HTML/ca/kwatchgnupg/index.docbook
@@ -1661,6 +1716,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kwatchgnupg
 @dirrm share/doc/HTML/ca/kwallet
 @dirrm share/doc/HTML/ca/kuser
+@dirrm share/doc/HTML/ca/kturtle
 @dirrm share/doc/HTML/ca/ktouch
 @dirrm share/doc/HTML/ca/ktimer
 @dirrm share/doc/HTML/ca/kteatime
@@ -1684,6 +1740,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kmail
 @dirrm share/doc/HTML/ca/kmag
 @dirrm share/doc/HTML/ca/klipper
+@dirrm share/doc/HTML/ca/klettres
 @dirrm share/doc/HTML/ca/kleopatra
 @dirrm share/doc/HTML/ca/kioslave/xz
 @dirrm share/doc/HTML/ca/kioslave/webdav
@@ -1727,6 +1784,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/ca/khelpcenter
 @dirrm share/doc/HTML/ca/khangman
+@dirrm share/doc/HTML/ca/kgpg
 @dirrm share/doc/HTML/ca/kget
 @dirrm share/doc/HTML/ca/kgeography
 @dirrm share/doc/HTML/ca/kfontview
@@ -1806,6 +1864,8 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kcontrol/attica
 @dirrm share/doc/HTML/ca/kcontrol
 @dirrm share/doc/HTML/ca/kcharselect
+@dirrm share/doc/HTML/ca/kbruch
+@dirrm share/doc/HTML/ca/katomic
 @dirrm share/doc/HTML/ca/kate
 @dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/kalzium
@@ -1815,6 +1875,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/cervisia
 @dirrm share/doc/HTML/ca/bomber
 @dirrm share/doc/HTML/ca/amor
+@dirrm share/doc/HTML/ca/akregator
 @dirrm share/doc/HTML/ca/PolicyKit-kde
 @dirrm share/apps/kvtml/ca
 @dirrm share/apps/kvtml

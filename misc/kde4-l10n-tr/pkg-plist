@@ -228,6 +228,7 @@ share/locale/tr/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/tr/LC_MESSAGES/kdelibs4.mo
 share/locale/tr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/tr/LC_MESSAGES/kdepasswd.mo
+share/locale/tr/LC_MESSAGES/kdepim-runtime-qml.mo
 share/locale/tr/LC_MESSAGES/kdepimwizards.mo
 share/locale/tr/LC_MESSAGES/kdeqt.mo
 share/locale/tr/LC_MESSAGES/kdesu.mo
@@ -518,6 +519,7 @@ share/locale/tr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/tr/LC_MESSAGES/nepomukbackup.mo
+share/locale/tr/LC_MESSAGES/nepomukcontroller.mo
 share/locale/tr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/tr/LC_MESSAGES/nepomukserver.mo
 share/locale/tr/LC_MESSAGES/nepomukservicestub.mo
@@ -553,6 +555,7 @@ share/locale/tr/LC_MESSAGES/phononserver.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-netbook.mo
 share/locale/tr/LC_MESSAGES/plasma-overlay.mo
+share/locale/tr/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/tr/LC_MESSAGES/plasma-windowed.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -618,6 +621,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_searchbox.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -707,6 +711,7 @@ share/locale/tr/LC_MESSAGES/processcore.mo
 share/locale/tr/LC_MESSAGES/processui.mo
 share/locale/tr/LC_MESSAGES/randrmonitor.mo
 share/locale/tr/LC_MESSAGES/rellinks.mo
+share/locale/tr/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/tr/LC_MESSAGES/rocs.mo
 share/locale/tr/LC_MESSAGES/searchbarplugin.mo
 share/locale/tr/LC_MESSAGES/solid-hardware.mo

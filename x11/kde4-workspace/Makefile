@@ -8,7 +8,6 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 		${MASTER_SITE_LOCAL} \
@@ -34,7 +33,7 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		ttf.4:${PORTSDIR}/print/freetype \
+		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
@@ -57,7 +56,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 
 CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.[0-6].*
 
-SUB_FILES=	kdm pkg-message
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	kdm4
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -95,6 +94,7 @@ OPTIONS=	GPS "Support for GPS geolocation dataengine" on \
 		PHONON_VLC "VLC backend for Phonon" off \
 		PLASMA_PYTHON "Support for plasmoids written in Python" off \
 		PLASMA_RUBY "Support for plasmoids written in Ruby" off \
+		UPOWER "Support for power management" on \
 		WALLPAPERS "Official KDE wallpapers" on
 
 .include <bsd.port.options.mk>
@@ -123,6 +123,10 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_import
 
 .if defined(WITH_PLASMA_RUBY)
 RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:${PORTSDIR}/x11/plasma-scriptengine-ruby
+.endif
+
+.if !defined(WITHOUT_UPOWER)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/upowerd:${PORTSDIR}/sysutils/upower
 .endif
 
 .if !defined(WITHOUT_WALLPAPERS)
@@ -160,10 +164,6 @@ pre-configure:
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
-	${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
-	${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config
-	${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
-	${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 	${INSTALL_DATA} ${FILESDIR}/05-freebsdWallpaper.js ${PREFIX}/share/apps/plasma-desktop/init
 	cd ${WRKDIR}/stripes-freebsd-1.0 && \
 		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers

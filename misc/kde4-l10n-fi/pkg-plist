@@ -89,6 +89,7 @@ share/locale/fi/LC_MESSAGES/dragonplayer.mo
 share/locale/fi/LC_MESSAGES/drkonqi.mo
 share/locale/fi/LC_MESSAGES/filelight.mo
 share/locale/fi/LC_MESSAGES/filetypes.mo
+share/locale/fi/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/fi/LC_MESSAGES/freespacenotifier.mo
 share/locale/fi/LC_MESSAGES/fsview.mo
 share/locale/fi/LC_MESSAGES/granatier.mo
@@ -118,6 +119,7 @@ share/locale/fi/LC_MESSAGES/kalgebra.mo
 share/locale/fi/LC_MESSAGES/kalzium.mo
 share/locale/fi/LC_MESSAGES/kanagram.mo
 share/locale/fi/LC_MESSAGES/kapman.mo
+share/locale/fi/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/fi/LC_MESSAGES/kate.mo
 share/locale/fi/LC_MESSAGES/kate_kttsd.mo
 share/locale/fi/LC_MESSAGES/katebacktracebrowserplugin.mo
@@ -126,6 +128,7 @@ share/locale/fi/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/fi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fi/LC_MESSAGES/katefiletemplates.mo
 share/locale/fi/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/fi/LC_MESSAGES/kategdbplugin.mo
 share/locale/fi/LC_MESSAGES/katehelloworld.mo
 share/locale/fi/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/fi/LC_MESSAGES/katemailfilesplugin.mo
@@ -134,6 +137,7 @@ share/locale/fi/LC_MESSAGES/katepart4.mo
 share/locale/fi/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/fi/LC_MESSAGES/katesearch.mo
 share/locale/fi/LC_MESSAGES/katesnippets_tng.mo
+share/locale/fi/LC_MESSAGES/katesql.mo
 share/locale/fi/LC_MESSAGES/katesymbolviewer.mo
 share/locale/fi/LC_MESSAGES/katetabbarextension.mo
 share/locale/fi/LC_MESSAGES/katetabifyplugin.mo
@@ -385,6 +389,7 @@ share/locale/fi/LC_MESSAGES/krandr.mo
 share/locale/fi/LC_MESSAGES/krdb.mo
 share/locale/fi/LC_MESSAGES/krdc.mo
 share/locale/fi/LC_MESSAGES/kreadconfig.mo
+share/locale/fi/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/fi/LC_MESSAGES/kres-migrator.mo
 share/locale/fi/LC_MESSAGES/kres_blog.mo
 share/locale/fi/LC_MESSAGES/kres_groupwise.mo
@@ -419,6 +424,7 @@ share/locale/fi/LC_MESSAGES/ksystemlog.mo
 share/locale/fi/LC_MESSAGES/ksystraycmd.mo
 share/locale/fi/LC_MESSAGES/kteatime.mo
 share/locale/fi/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/fi/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/fi/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/fi/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/fi/LC_MESSAGES/ktimer.mo
@@ -454,6 +460,7 @@ share/locale/fi/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/fi/LC_MESSAGES/libakonadi.mo
 share/locale/fi/LC_MESSAGES/libeventviews.mo
 share/locale/fi/LC_MESSAGES/libincidenceeditors.mo
+share/locale/fi/LC_MESSAGES/libkasten.mo
 share/locale/fi/LC_MESSAGES/libkblog.mo
 share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcalutils.mo
@@ -476,6 +483,7 @@ share/locale/fi/LC_MESSAGES/libkpgp.mo
 share/locale/fi/LC_MESSAGES/libkpimidentities.mo
 share/locale/fi/LC_MESSAGES/libkpimtextedit.mo
 share/locale/fi/LC_MESSAGES/libkpimutils.mo
+share/locale/fi/LC_MESSAGES/libkremotecontrol.mo
 share/locale/fi/LC_MESSAGES/libkresources.mo
 share/locale/fi/LC_MESSAGES/libksane.mo
 share/locale/fi/LC_MESSAGES/libkscreensaver.mo
@@ -492,6 +500,7 @@ share/locale/fi/LC_MESSAGES/libmessagecore.mo
 share/locale/fi/LC_MESSAGES/libmessagelist.mo
 share/locale/fi/LC_MESSAGES/libmessageviewer.mo
 share/locale/fi/LC_MESSAGES/liboktetacore.mo
+share/locale/fi/LC_MESSAGES/liboktetakasten.mo
 share/locale/fi/LC_MESSAGES/libphonon.mo
 share/locale/fi/LC_MESSAGES/libplasma.mo
 share/locale/fi/LC_MESSAGES/libplasma_groupingcontainment.mo

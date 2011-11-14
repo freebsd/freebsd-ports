@@ -22,7 +22,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 NO_BUILD=	yes
 
 OPTIONS=	KORUNDUM "KDE bindings (requires QTRUBY)" on \
-		KROSSRUBY "Kross Ruby scripting library (broken with Ruby 1.9)" on \
+		KROSSRUBY "Kross Ruby scripting library (broken with ruby19)" on \
 		QTRUBY "Qt bindings" on
 
 .include <bsd.port.options.mk>

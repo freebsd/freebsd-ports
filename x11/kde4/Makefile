@@ -5,15 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde4
+PORTNAME=	kde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The meta-port for KDE Software Compilation 4
+
+LATEST_LINK=	kde4
+
+USE_KDE4=	baseapps kdelibs kdeprefix oxygen pimlibs runtime workspace
+NO_BUILD=	yes
 
 OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDEADMIN "Administration utilities" on \
@@ -30,9 +34,6 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDETOYS "Miscellaneous small applications" on \
 		KDEUTILS "Set of generic utilities" on \
 		KDEWEBDEV "Web development environment" on
-
-USE_KDE4=	baseapps kdelibs kdeprefix oxygen pimlibs runtime workspace
-NO_BUILD=	yes
 
 .include <bsd.port.options.mk>
 

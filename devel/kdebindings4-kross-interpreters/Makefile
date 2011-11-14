@@ -22,7 +22,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 NO_BUILD=	yes
 
 OPTIONS=	KROSSPYTHON "Kross Python scripting library" on \
-		KROSSRUBY "Kross Ruby scripting library (broken with Ruby 1.9)" on
+		KROSSRUBY "Kross Ruby scripting library (broken with ruby19)" on
 
 .include <bsd.port.options.mk>
 

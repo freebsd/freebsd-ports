@@ -6,7 +6,6 @@ bin/kcheckrunning
 bin/kcminit
 bin/kcminit_startup
 bin/kdm
-bin/kdm-bin
 bin/kdmctl
 bin/kdostartupconfig4
 bin/kfontinst
@@ -266,8 +265,8 @@ lib/kde4/libexec/fontinst_x11
 lib/kde4/libexec/kcheckpass
 lib/kde4/libexec/kcmdatetimehelper
 lib/kde4/libexec/kcmkdmhelper
-lib/kde4/libexec/kdm-bin_config
-lib/kde4/libexec/kdm-bin_greet
+lib/kde4/libexec/kdm_config
+lib/kde4/libexec/kdm_greet
 lib/kde4/libexec/kfontprint
 lib/kde4/libexec/krootimage
 lib/kde4/libexec/kscreenlocker
