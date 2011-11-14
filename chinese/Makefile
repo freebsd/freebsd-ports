@@ -36,6 +36,7 @@
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fcitx
+    SUBDIR += fcitx-cloudpinyin
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-googlepinyin
     SUBDIR += fcitx-sunpinyin
