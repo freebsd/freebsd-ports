@@ -16,7 +16,7 @@ DISTNAME=	Nevow-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A web application templating system, based on the the Twisted Woven
+COMMENT=	A web application templating system, based on the Twisted Woven
 
 BROKEN=		does not build
 

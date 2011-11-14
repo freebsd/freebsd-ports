@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	jpilot-
 
 MAINTAINER=	sklauder@trimind.de
-COMMENT=	JPilot plugin to to download photos and videos
+COMMENT=	JPilot plugin to download photos and videos
 
 RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
