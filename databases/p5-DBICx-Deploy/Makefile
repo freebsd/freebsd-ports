@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:JROCKWAY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Perl 5 module to deploy a a DBIx::Class schema
+COMMENT=	Perl 5 module to deploy a DBIx::Class schema
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator \

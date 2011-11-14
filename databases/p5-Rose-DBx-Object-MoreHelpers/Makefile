@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Rose/KARMAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Perl 5 module to deploy a a DBIx::Class schema
+COMMENT=	Perl 5 module to deploy a DBIx::Class schema
 
 RUN_DEPENDS=	p5-Rose-DB-Object>=0.7730,1:${PORTSDIR}/databases/p5-Rose-DB-Object \
 		p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump
