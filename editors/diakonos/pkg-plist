@@ -21,6 +21,7 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/buffer/selection.rb
 %%RUBY_SITELIBDIR%%/diakonos/buffer/undo.rb
 %%RUBY_SITELIBDIR%%/diakonos/clipboard-klipper.rb
+%%RUBY_SITELIBDIR%%/diakonos/clipboard-klipper-dbus.rb
 %%RUBY_SITELIBDIR%%/diakonos/clipboard-xclip.rb
 %%RUBY_SITELIBDIR%%/diakonos/clipboard.rb
 %%RUBY_SITELIBDIR%%/diakonos/config.rb
@@ -75,7 +76,7 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/readline/functions.rb
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.rdoc
 %%PORTDOCS%%%%DOCSDIR%%/help/about-help.dhf
 %%PORTDOCS%%%%DOCSDIR%%/help/clipboard.dhf
 %%PORTDOCS%%%%DOCSDIR%%/help/close-file.dhf

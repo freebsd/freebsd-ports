@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diakonos
-PORTVERSION=	0.8.12
+PORTVERSION=	0.9.0
 CATEGORIES=	editors ruby
 MASTER_SITES=	http://diakonos.pist0s.ca/archives/
 
@@ -41,7 +41,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}/help
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/LICENCE ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.rdoc ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/help/*.dhf ${DOCSDIR}/help/
 .endif
 
