@@ -1,9 +1,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/backports.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/backports.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/backports.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.pyo
