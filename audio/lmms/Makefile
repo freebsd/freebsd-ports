@@ -39,7 +39,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui xml moc_build uic_build rcc_build \
 		qmake_build
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_CALF:BOOL=OFF \
 		-DWANT_CAPS:BOOL=OFF \

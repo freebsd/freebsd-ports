@@ -26,7 +26,6 @@ USE_BISON=	build
 USE_CMAKE=	yes
 USE_QT_VER=	4
 USE_SQLITE=	yes
-CMAKE_USE_PTHREAD=	yes
 QT_COMPONENTS=	gui svg xml network sql designer linguist_build \
 		qmake_build moc_build rcc_build uic_build
 

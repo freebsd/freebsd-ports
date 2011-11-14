@@ -18,7 +18,6 @@ MAINTAINER=	fk@fabiankeil.de
 COMMENT=	A graphical Tor controller based on Qt 4.x
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 INSTALLS_ICONS=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build network xml linguist_build

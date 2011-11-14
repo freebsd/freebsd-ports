@@ -27,10 +27,6 @@ OPTIONS=	DEBUG	"Enable Debugging"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-CMAKE_USE_PTHREAD=	yes
-.endif
-
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DENABLE_DEBUG=TRUE
 .endif

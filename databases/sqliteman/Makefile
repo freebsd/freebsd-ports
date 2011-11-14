@@ -16,7 +16,6 @@ COMMENT=	Admin's GUI tool for Sqlite3
 LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 USE_QT_VER=	4
 USE_SQLITE=	yes
 CMAKE_ENV+=	QMAKESPEC=${QMAKESPEC}

@@ -29,8 +29,4 @@ QT_COMPONENTS=	corelib gui imageformats linguist_build \
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION}<700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

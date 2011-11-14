@@ -21,7 +21,6 @@ COMMENT=	CD organizer for KDE
 USE_KDEBASE_VER=	3
 USE_SQLITE=	yes
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \

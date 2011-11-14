@@ -22,7 +22,6 @@ QT_COMPONENTS=	gui svg network moc_build uic_build rcc_build qmake_build linguis
 INSTALLS_ICONS=	yes
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 
 OPTIONS=	FONTFORGE "With FontForge editor" off
 

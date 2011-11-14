@@ -21,7 +21,6 @@ CONFLICTS=	msynctool-0.2*
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

@@ -18,6 +18,5 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 
 .include <bsd.port.mk>
