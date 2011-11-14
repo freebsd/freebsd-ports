@@ -54,13 +54,13 @@ lib/fcitx/fcitx-x11.so
 lib/fcitx/fcitx-xim.so
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
-lib/libfcitx-config.so.4.1
+lib/libfcitx-config.so.4.1.0
 lib/libfcitx-core.so
 lib/libfcitx-core.so.0
-lib/libfcitx-core.so.0.2
+lib/libfcitx-core.so.0.2.0
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
-lib/libfcitx-utils.so.0.1
+lib/libfcitx-utils.so.0.1.0
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc

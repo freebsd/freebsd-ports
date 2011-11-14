@@ -1,12 +1,10 @@
 --- src/lib/fcitx/CMakeLists.txt.orig	2011-10-02 05:43:11.000000000 -0500
-+++ src/lib/fcitx/CMakeLists.txt	2011-11-09 23:45:35.930811384 -0600
-@@ -31,8 +31,8 @@ link_directories(${DL_LIBRARY_DIRS} ${PT
- 
++++ src/lib/fcitx/CMakeLists.txt	2011-11-13 16:01:32.246665458 -0600
+@@ -32,7 +32,7 @@ link_directories(${DL_LIBRARY_DIRS} ${PT
  add_library(fcitx-core SHARED ${LIBFCITX_SOURCES})
  set_target_properties(fcitx-core
--                      PROPERTIES VERSION 0.2.0
+                       PROPERTIES VERSION 0.2.0
 -                      SOVERSION 0.2
-+                      PROPERTIES VERSION 0.2
 +                      SOVERSION 0
                        COMPILE_FLAGS "-fvisibility=hidden"
                        LINK_FLAGS "-Wl,--no-undefined"

@@ -1,9 +1,10 @@
---- ./src/lib/fcitx-utils/utils.c.orig	2011-10-02 05:43:11.000000000 -0500
-+++ ./src/lib/fcitx-utils/utils.c	2011-11-09 21:15:42.497306506 -0600
-@@ -249,4 +249,21 @@ char* fcitx_get_process_name()
+--- src/lib/fcitx-utils/utils.c.orig	2011-10-02 05:43:11.000000000 -0500
++++ src/lib/fcitx-utils/utils.c	2011-11-13 16:32:39.627873790 -0600
+@@ -249,4 +249,22 @@ char* fcitx_get_process_name()
  #endif
  }
  
++FCITX_EXPORT_API
 +ssize_t getline(char ** p, size_t * cap, FILE * fp) {
 +	ssize_t l;
 +	if (!*cap && (*p = malloc(128))) *cap = 128;
