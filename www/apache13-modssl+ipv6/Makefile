@@ -9,6 +9,7 @@ CATEGORIES=	www security ipv6
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with SSL/TLS and IPv6 functionality
 
+FORBIDDEN=	CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2012-01-01
 

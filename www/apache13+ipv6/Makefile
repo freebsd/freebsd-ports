@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.42
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 PKGNAMESUFFIX=	+ipv6
@@ -19,6 +20,7 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The extremely popular Apache http server. Very fast, very clean
 
+FORBIDDEN=	CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-11-01
 

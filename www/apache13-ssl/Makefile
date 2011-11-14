@@ -9,7 +9,7 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -21,6 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache secure webserver integrating OpenSSL
 
+FORBIDDEN=	CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-11-01
 
