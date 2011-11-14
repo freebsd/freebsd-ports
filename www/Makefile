@@ -1545,6 +1545,7 @@
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
+    SUBDIR += py-selenium
     SUBDIR += py-slimmer
     SUBDIR += py-surl
     SUBDIR += py-textile
