@@ -261,6 +261,7 @@ include/KDE/KCategoryDrawer
 include/KDE/KCharMacroExpander
 include/KDE/KCharSelect
 include/KDE/KCharsets
+include/KDE/KCheckableProxyModel
 include/KDE/KCmdLineArgs
 include/KDE/KCmdLineOptions
 include/KDE/KCodecs
@@ -759,6 +760,7 @@ include/KDE/KUrlRequesterDialog
 include/KDE/KUser
 include/KDE/KUserGroup
 include/KDE/KVBox
+include/KDE/KViewStateMaintainer
 include/KDE/KWallet/Wallet
 include/KDE/KWebPage
 include/KDE/KWebPluginFactory
@@ -2147,9 +2149,6 @@ share/apps/cmake/modules/FindHUpnp.cmake
 share/apps/cmake/modules/FindIOKit.cmake
 share/apps/cmake/modules/FindKDE4Internal.cmake
 share/apps/cmake/modules/FindKDE4Workspace.cmake
-share/apps/cmake/modules/FindKDEWIN32.cmake
-share/apps/cmake/modules/FindKDEWIN_Packager.cmake
-share/apps/cmake/modules/FindKDEWin.cmake
 share/apps/cmake/modules/FindKDevPlatform.cmake
 share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/cmake/modules/FindKdeMultimedia.cmake

@@ -21,7 +21,7 @@ NO_BUILD=	yes
 OPTIONS=	BLINKEN "Memory enhancement game" on \
 		CANTOR "Frontend to mathematical software" on \
 		KALGEBRA "Graph calculator" on \
-		KALZIUM "Periodic table of elements" on \
+		KALZIUM "Periodic table of elements (requires GCC 4.5+)" off \
 		KANAGRAM "Letter order game" on \
 		KBRUCH "Application to exercise fractions" on \
 		KGEOGRAPHY "Geography trainer" on \
