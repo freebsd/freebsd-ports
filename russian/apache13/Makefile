@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	${APACHE_VERSION}+${RA_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	russian www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	${PORTNAME}_${APACHE_VERSION}
@@ -19,6 +19,7 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
+FORBIDDEN=	multiple CVE entries, last is CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-11-01
 
@@ -26,12 +27,12 @@ USE_PERL5=	yes
 
 # New ports feature: conflicts
 CONFLICTS=	apache+ipv6-* \
-                apache+mod_ssl-* \
-                apache+mod_ssl+ipv6-* \
-                apache+mod_ssl+modsnmp-* \
-                apache+mod_ssl+mod_snmp+ipv6-* \
-                apache+mod_ssl+mod_accel-* \
-                apache+mod_ssl+mod_snmp+mod_accel-* \
+		apache+mod_ssl-* \
+		apache+mod_ssl+ipv6-* \
+		apache+mod_ssl+modsnmp-* \
+		apache+mod_ssl+mod_snmp+ipv6-* \
+		apache+mod_ssl+mod_accel-* \
+		apache+mod_ssl+mod_snmp+mod_accel-* \
 		apache-worker-* \
 		apache-perchild-* \
 		apache-[0-9]* \

@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_RA}+${VERSION_MODSSL}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	russian www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/} \
@@ -50,6 +50,7 @@ CONFLICTS=	apache+ipv6-* \
 		publicfile-* \
 		ru-apache-*
 
+FORBIDDEN=	multiple CVE entries, last is CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-11-01
 

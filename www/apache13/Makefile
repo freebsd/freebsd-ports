@@ -7,19 +7,20 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.42
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
+
+MAINTAINER=	apache@FreeBSD.org
+COMMENT=	The extremely popular Apache http server. Very fast, very clean
 
 #PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
 #PATCH_SITE_SUBDIR=	patches/apply_to_1.3.41/
 #PATCHFILES=
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
-MAINTAINER=	apache@FreeBSD.org
-COMMENT=	The extremely popular Apache http server. Very fast, very clean
-
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
@@ -28,6 +29,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
+FORBIDDEN=	CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2012-01-01
 
