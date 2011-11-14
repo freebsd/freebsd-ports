@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	UPnP IGD client lightweight library
 
 LICENSE=	BSD
