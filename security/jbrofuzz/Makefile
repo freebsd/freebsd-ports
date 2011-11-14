@@ -11,7 +11,7 @@ CATEGORIES=	security www java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-jar-21
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBroFuzz is a web application fuzzer
 
 USE_ZIP=	YES

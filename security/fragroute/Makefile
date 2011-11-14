@@ -13,7 +13,7 @@ MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet \
