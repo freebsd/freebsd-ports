@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7fb9e739-0e6d-11e1-87cd-00235a5f2c9a">
+    <topic>kdeutils4 -- Directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>kdeutils</name>
+        <range><ge>4.0.*</ge><lt>4.7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Tim Brown from Nth Dimention reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2011/Oct/351">
+          <p>I recently discovered that the Ark archiving tool is
+          vulnerable to directory traversal via malformed.  When
+          attempts are made to view files within the malformed Zip
+          file in Ark's default view, the wrong file may be displayed
+          due to incorrect construction of the temporary file name.
+          Whilst this does not allow the wrong file to be overwritten,
+          after closing the default view, Ark will then attempt to
+          delete the temporary file which could result in the deletion
+          of the incorrect file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2725</cvename>
+      <url>http://seclists.org/fulldisclosure/2011/Oct/351</url>
+    </references>
+    <dates>
+      <discovery>2011-10-19</discovery>
+      <entry>2011-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38560d79-0e42-11e1-902b-20cf30e32f6d">
     <topic>Apache APR -- DoS vulnerabilities</topic>
     <affects>
