@@ -7,8 +7,9 @@
 
 PORTNAME=	fcitx-sunpinyin
 PORTVERSION=	0.3.2
-CATEGORIES=	chinese x11
+CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	SunPinyin support for Fcitx

@@ -7,9 +7,9 @@
 
 PORTNAME=	fcitx-ui-light
 PORTVERSION=	0.1.2
-CATEGORIES=	chinese x11
+CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	An alternative light weight UI for Fcitx

@@ -9,7 +9,7 @@ PORTNAME=	fcitx-configtool
 PORTVERSION=	0.3.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fcitx IM configure tool

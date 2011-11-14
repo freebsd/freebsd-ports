@@ -7,8 +7,9 @@
 
 PORTNAME=	fcitx-googlepinyin
 PORTVERSION=	0.1.3
-CATEGORIES=	chinese x11
+CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A libgooglepinyin support for Fcitx
