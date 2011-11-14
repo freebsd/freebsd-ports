@@ -2954,6 +2954,7 @@
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
+    SUBDIR += py-Products.OFSP
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
