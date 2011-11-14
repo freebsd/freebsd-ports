@@ -589,5 +589,3 @@ libaacplus-*		audio/libaacplus	Unclear legal status
 dmd-*			lang/dmd		No redistribution of non
 						validated binaries
 madfufw-*		audio/madfufw		No redistribution of firmware files
-dgen-sdl-*		emulators/dgen-sdl	No commercial use, modifications
-						to MZ80 not distributable
