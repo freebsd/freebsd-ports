@@ -1,14 +1,22 @@
---- qmake.inc.in.orig	2010-01-26 15:58:20.000000000 -0800
-+++ qmake.inc.in	2010-05-02 23:23:06.953322354 -0700
-@@ -68,11 +68,7 @@
-         LIBS += $$LIBS_FWBUILDER @LIBS@
+--- qmake.inc.in.orig	2011-04-20 10:48:53.000000000 -0700
++++ qmake.inc.in	2011-05-08 13:57:57.471497111 -0700
+@@ -17,7 +17,6 @@
  
-         CONFIG += warn_on debug
--        QMAKE_CFLAGS_DEBUG += -Wno-unused-parameter
--        QMAKE_CFLAGS_RELEASE += -Wno-unused-parameter
--        QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter
--        QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter
-
-     }
- }
+ # CONFIG -= nostrip
+ # CONFIG += release
+-CONFIG += debug
  
+ unix {
+     PREFIX = @PREFIX@
+@@ -35,11 +34,6 @@
+     MOC_DIR = .moc
+     OBJECTS_DIR = .obj
+ 
+-    QMAKE_CFLAGS_DEBUG += -Wno-unused-parameter
+-    QMAKE_CFLAGS_RELEASE += -Wno-unused-parameter
+-    QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter
+-    QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter
+-
+     !macx {
+ 
+         exec_prefix = @EXEC_PREFIX@
