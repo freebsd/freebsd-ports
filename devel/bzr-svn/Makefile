@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-svn
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/78203770/ \
+MASTER_SITES=	https://launchpadlibrarian.net/83693133/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
