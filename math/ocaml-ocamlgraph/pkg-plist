@@ -13,6 +13,7 @@
 %%OCAMLGRAPHDIR%%/dot.mli
 %%OCAMLGRAPHDIR%%/dot_ast.mli
 %%OCAMLGRAPHDIR%%/dot_parser.mli
+%%OCAMLGRAPHDIR%%/fixpoint.mli
 %%OCAMLGRAPHDIR%%/flow.mli
 %%OCAMLGRAPHDIR%%/gmap.mli
 %%OCAMLGRAPHDIR%%/gml.mli
