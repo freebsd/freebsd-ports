@@ -3242,6 +3242,7 @@
     SUBDIR += py-zope.minmax
     SUBDIR += py-zope.publisher
     SUBDIR += py-zope.schema
+    SUBDIR += py-zope.sequencesort
     SUBDIR += py-zope.size
     SUBDIR += py-zope.testing
     SUBDIR += pybaz
