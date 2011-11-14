@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	2011.11.06
+PORTVERSION=	2011.11.13
 CATEGORIES=	german textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	Deutscher-Thesaurus-${PORTVERSION:C/\.//g}
