@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Accurate, fast, and small-footprint color management engine
 
 LICENSE=	MIT
