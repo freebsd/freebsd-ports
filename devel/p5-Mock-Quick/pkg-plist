@@ -3,22 +3,9 @@
 %%SITE_PERL%%/Mock/Quick/Method.pm
 %%SITE_PERL%%/Mock/Quick/Object.pm
 %%SITE_PERL%%/Mock/Quick/Object/Control.pm
-%%SITE_PERL%%/Mock/Quick/Presentation.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideA.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideB.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideC.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideD.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideE.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideF.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideG.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideH.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideI.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideJ.pod
-%%SITE_PERL%%/Mock/Quick/Presentation/slideK.pod
 %%SITE_PERL%%/Mock/Quick/Util.pm
 %%SITE_PERL%%/Object/Quick.pm
 @dirrmtry %%SITE_PERL%%/Object
-@dirrm %%SITE_PERL%%/Mock/Quick/Presentation
 @dirrm %%SITE_PERL%%/Mock/Quick/Object
 @dirrm %%SITE_PERL%%/Mock/Quick
 @dirrmtry %%SITE_PERL%%/Mock
