@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	opengrok
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	devel java
-MASTER_SITES=	http://opensolaris.org/os/project/opengrok/files/
+MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference egine
 
+LICENSE=	CDDL
+
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 SUB_FILES=	opengrok
 SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/,}" \
@@ -31,10 +33,10 @@ OPTIONS=	TOMCAT6		"Use Jakarta Tomcat 6"		on	\
 JARFILE=	${DATADIR}/opengrok.jar
 WARFILE=	source.war
 DOCS=		CHANGES.txt EXAMPLE.txt LICENSE.txt
-LIBFILES=	ant.jar bcel-5.1.jar jakarta-oro-2.0.8.jar \
-		jmxremote_optional.jar lucene-core-2.2.0.jar \
-		lucene-spellchecker-2.2.0.jar org.apache.commons.jrcs.diff.jar \
-		org.apache.commons.jrcs.rcs.jar servlet-api.jar \
+LIBFILES=	ant.jar bcel-5.2.jar jakarta-oro-2.0.8.jar \
+		jmxremote_optional.jar lucene-core-3.0.1.jar \
+		lucene-spellchecker-3.0.1.jar org.apache.commons.jrcs.diff.jar \
+		org.apache.commons.jrcs.rcs.jar org.apache.commons.jrcs.rcs.jar \
 		swing-layout-0.9.jar
 WEBAPP_DIRS=	#empty
 
@@ -63,14 +65,14 @@ do-install:
 	@${ECHO_CMD} "${DIR}/webapps/${WARFILE}" >> ${TMPPLIST}
 	${MKDIR} ${PREFIX}/${DIR}/webapps
 	@${ECHO_CMD} "@unexec rmdir %D/${DIR}/webapps 2>/dev/null || true" >> ${TMPPLIST}
-	${INSTALL_DATA} ${WRKSRC}/${WARFILE} ${PREFIX}/${DIR}/webapps
+	${INSTALL_DATA} ${WRKSRC}/lib/${WARFILE} ${PREFIX}/${DIR}/webapps
 .endfor
 	${MKDIR} ${DATADIR}/lib
-	${INSTALL_DATA} ${LIBFILES:S,^,${WRKSRC}/lib/,} ${DATADIR}/lib/
-	${INSTALL_DATA} ${WRKSRC}/opengrok.jar ${DATADIR}/
+	${INSTALL_DATA} ${LIBFILES:S,^,${WRKSRC}/lib/lib/,} ${DATADIR}/lib/
+	${INSTALL_DATA} ${WRKSRC}/lib/opengrok.jar ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/opengrok ${PREFIX}/bin
 
