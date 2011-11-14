@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 MAKE_JOBS_SAFE=	yes
 

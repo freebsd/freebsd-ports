@@ -20,7 +20,6 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-CMAKE_USE_PTHREAD=	yes
 QT_COMPONENTS=	gui xml sql phonon network linguist_build \
 		rcc_build qmake_build uic_build moc_build
 

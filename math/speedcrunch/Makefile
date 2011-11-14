@@ -18,7 +18,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui xml
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	src
-CMAKE_USE_PTHREAD=	yes
 
 MAKE_JOBS_SAFE=	yes
 

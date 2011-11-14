@@ -20,7 +20,6 @@ USE_ICONV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

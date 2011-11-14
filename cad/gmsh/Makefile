@@ -37,8 +37,7 @@ ALL_TARGET=	all
 MAN1=		gmsh.1
 
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES \
-    		-DCMAKE_VERBOSE_MAKEFILE:BOOL=YES \
-		-DCMAKE_USE_PTHREADS:BOOL=YES
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=YES
 
 .if !defined(WITHOUT_STATIC_LIB)
 ALL_TARGET+=	lib
@@ -121,8 +120,6 @@ CONFLICTS=	gmsh-occ-2.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-CMAKE_USE_PTHREAD=	yes
 
 pre-everything::
 	@${ECHO_MSG} ""

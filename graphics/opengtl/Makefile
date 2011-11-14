@@ -25,7 +25,6 @@ USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-CMAKE_USE_PTHREAD=	yes
 
 OPTIONS=	SHIVA	"Install filters and generators" on
 

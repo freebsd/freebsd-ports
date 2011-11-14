@@ -35,7 +35,6 @@ QT_COMPONENTS=	gui		\
 CXXFLAGS+=	-L${LOCALBASE}/lib
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 
 WRKSRC=		${WRKDIR}/jabber
 

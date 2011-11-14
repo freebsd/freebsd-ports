@@ -38,7 +38,6 @@ USE_GNOME=	desktopfileutils libartlgpl2 libxml2 pkgconfig
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

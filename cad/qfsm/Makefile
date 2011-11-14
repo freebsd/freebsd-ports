@@ -24,7 +24,6 @@ QT_COMPONENTS=	corelib gui qt3support svg xml \
 		uic_build uic3_build rcc_build
 USE_GNOME=	desktopfileutils
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 INSTALLS_ICONS=	yes
 
 .if !defined(WITH_DEBUG)

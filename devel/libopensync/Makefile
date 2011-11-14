@@ -23,7 +23,6 @@ CONFLICTS=	libopensync-0.22*
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-Wno-dev
-CMAKE_USE_PTHREAD=	yes
 USE_GNOME=	glib20 libxml2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

@@ -20,7 +20,6 @@ RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
 LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
 
 CMAKE_ARGS+=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc
-CMAKE_USE_PTHREAD=yes
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 USE_CMAKE=	yes
 USE_GETTEXT=	yes

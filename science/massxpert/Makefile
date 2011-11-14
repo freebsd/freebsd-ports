@@ -23,10 +23,4 @@ QT_COMPONENTS=	gui xml rcc_build qmake_build uic_build moc_build \
 MAN7=		massxpert-data.7
 MAN1=		massxpert.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-CMAKE_USE_PTHREAD=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

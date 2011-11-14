@@ -28,10 +28,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}
 

@@ -29,7 +29,6 @@ ONLY_FOR_ARCHS_REASON=	depends on wine which is only available for i386
 MAN1=		q4wine-cli.1 q4wine-helper.1 q4wine.1
 
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man/
 
 OPTIONS=	DBUS "Enable DBus notification support" on
