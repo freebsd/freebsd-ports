@@ -68,6 +68,7 @@ include/rudiments/private/dtd.h
 include/rudiments/private/dtdincludes.h
 include/rudiments/private/dynamiclib.h
 include/rudiments/private/dynamiclibincludes.h
+include/rudiments/private/environment.h
 include/rudiments/private/environmentincludes.h
 include/rudiments/private/file.h
 include/rudiments/private/filedescriptor.h
@@ -139,6 +140,8 @@ include/rudiments/private/serversocket.h
 include/rudiments/private/serversocketincludes.h
 include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
+include/rudiments/private/shadowentryincludes.h
+include/rudiments/private/shadowentry.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
 include/rudiments/private/shmfile.h
@@ -161,6 +164,7 @@ include/rudiments/private/unixsocketutil.h
 include/rudiments/private/unixsocketutilincludes.h
 include/rudiments/private/variablebuffer.h
 include/rudiments/private/variablebufferincludes.h
+include/rudiments/private/winsock.h
 include/rudiments/private/xmldom.h
 include/rudiments/private/xmldomincludes.h
 include/rudiments/private/xmldomnode.h
@@ -180,6 +184,7 @@ include/rudiments/serialportprofile.h
 include/rudiments/server.h
 include/rudiments/serversocket.h
 include/rudiments/serviceentry.h
+include/rudiments/shadowentry.h
 include/rudiments/sharedmemory.h
 include/rudiments/shmfile.h
 include/rudiments/signalclasses.h

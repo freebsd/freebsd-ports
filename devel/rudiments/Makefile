@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--with-ssl-libs=-L${OPENSSLLIB} \
 		--disable-pcre
 USE_LDCONFIG=	yes
+
+MAN1=		rudiments-config.1
 
 ROOTDIRS=	classes css programming programming/parts
 

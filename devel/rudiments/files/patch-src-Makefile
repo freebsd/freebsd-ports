@@ -1,11 +1,11 @@
---- src/Makefile.orig	Sat Jan 21 22:29:25 2006
-+++ src/Makefile	Wed May  3 18:04:50 2006
-@@ -330,7 +330,7 @@
- rebuild: clean all
+--- src/Makefile.orig	2011-07-29 12:54:42.000000000 +0200
++++ src/Makefile	2011-11-08 20:33:40.121527699 +0100
+@@ -341,7 +341,7 @@
+ 	$(RMTREE) .libs
  
  librudiments.la: $(SRCS) $(LOBJS)
--	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(INETATONLIB) $(DLLIB) -rpath $(libdir) -release $(RUDIMENTS_VERSION) -version-info $(SONAME_VERSION_INFO) -no-undefined
-+	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(INETATONLIB) $(DLLIB) -rpath $(libdir) -version-info $(SONAME_VERSION_INFO) -no-undefined
+-	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(INETATONLIB) $(NETAPI32LIB) $(DLLIB) -rpath $(libdir) -release $(RUDIMENTS_VERSION) -version-info $(SONAME_VERSION_INFO) -no-undefined
++	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) $(LDFLAGS) $(SOCKETLIBS) $(PTHREADLIB) $(SSLLIBS) $(PCRELIBS) $(NANOSLEEPLIB) $(CLOCKNANOSLEEPLIB) $(SHMOPENLIB) $(CRYPTLIB) $(INETATONLIB) $(NETAPI32LIB) $(DLLIB) -rpath $(libdir) -version-info $(SONAME_VERSION_INFO) -no-undefined
  
  install:
  	$(MKINSTALLDIRS) $(libdir)

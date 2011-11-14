@@ -1,35 +1,38 @@
---- Makefile.orig	2009-11-03 23:04:22.000000000 -0200
-+++ Makefile	2009-11-03 23:06:57.000000000 -0200
+--- Makefile.orig	2011-04-22 05:20:05.000000000 +0200
++++ Makefile	2011-11-09 06:21:19.309527011 +0100
 @@ -5,7 +5,7 @@
  PWD=$(shell pwd)
  
- .PHONY: all testprogs clean rebuild install-libs install-includes install-bin \
--	 install-doc install-pc install uninstall unconfig distclean slackware
-+	 install-pc install uninstall unconfig distclean slackware
+ .PHONY: all testprogs clean install-libs install-includes install-bin \
+-	 install-doc install-man install-pc install uninstall unconfig distclean
++	 install-man install-pc install uninstall unconfig distclean
  
  all:
  	cd src; $(MAKE) all
-@@ -30,20 +30,16 @@
+@@ -27,23 +27,19 @@
  install-bin:
  	cd bin; $(MAKE) install
  
 -install-doc:
 -	cd doc; $(MAKE) install
 -
+ install-man:
+ 	cd man; $(MAKE) install
+ 
  install-pc:
 -	$(MKINSTALLDIRS) $(libdir)/pkgconfig
 -	$(INSTALL) -m 0644 rudiments.pc $(libdir)/pkgconfig/rudiments.pc
 +	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
 +	$(INSTALL) -m 0644 rudiments.pc $(prefix)/libdata/pkgconfig/rudiments.pc
  
--install: install-libs install-includes install-bin install-doc install-pc
-+install: install-libs install-includes install-bin install-pc
+-install: install-libs install-includes install-bin install-doc install-man install-pc
++install: install-libs install-includes install-bin install-man install-pc
  
  uninstall:
  	cd src; $(MAKE) uninstall
  	cd include; $(MAKE) uninstall
  	cd bin; $(MAKE) uninstall
 -	cd doc; $(MAKE) uninstall
+ 	cd man; $(MAKE) uninstall
  	$(RM) $(libdir)/pkgconfig/rudiments.pc
  
- unconfig: clean
