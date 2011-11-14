@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	A tool to fingerprint web site components
 
 LICENSE=	GPLv2
