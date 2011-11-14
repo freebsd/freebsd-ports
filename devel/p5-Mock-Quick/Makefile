@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mock-Quick
-PORTVERSION=	1.101
+PORTVERSION=	1.102
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -25,18 +25,6 @@ MAN3=		Mock::Quick.3 Object::Quick.3 \
 		Mock::Quick::Method.3 \
 		Mock::Quick::Object.3 \
 		Mock::Quick::Object::Control.3 \
-		Mock::Quick::Presentation.3 \
-		Mock::Quick::Presentation::slideA.3 \
-		Mock::Quick::Presentation::slideB.3 \
-		Mock::Quick::Presentation::slideC.3 \
-		Mock::Quick::Presentation::slideD.3 \
-		Mock::Quick::Presentation::slideE.3 \
-		Mock::Quick::Presentation::slideF.3 \
-		Mock::Quick::Presentation::slideG.3 \
-		Mock::Quick::Presentation::slideH.3 \
-		Mock::Quick::Presentation::slideI.3 \
-		Mock::Quick::Presentation::slideJ.3 \
-		Mock::Quick::Presentation::slideK.3 \
 		Mock::Quick::Util.3
 
 .include <bsd.port.mk>
