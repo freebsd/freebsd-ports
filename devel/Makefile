@@ -2944,6 +2944,7 @@
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
+    SUBDIR += py-DocumentTemplate
     SUBDIR += py-EnthoughtBase
     SUBDIR += py-ExtensionClass
     SUBDIR += py-InlineEgg
