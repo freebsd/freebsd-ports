@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MetaCPAN/API.pm
+%%SITE_PERL%%/MetaCPAN/API/Author.pm
+%%SITE_PERL%%/MetaCPAN/API/Module.pm
+%%SITE_PERL%%/MetaCPAN/API/POD.pm
+%%SITE_PERL%%/MetaCPAN/API/Release.pm
+%%SITE_PERL%%/MetaCPAN/API/Source.pm
+@dirrmtry %%SITE_PERL%%/MetaCPAN/API
+@dirrmtry %%SITE_PERL%%/MetaCPAN
