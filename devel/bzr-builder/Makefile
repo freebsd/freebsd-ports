@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bzr-builder
-PORTVERSION=	0.6
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/56937826/ \
+MASTER_SITES=	http://launchpadlibrarian.net/84852974/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A bzr plugin to construct a bzr branch based on a "recipe"
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-
-LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
