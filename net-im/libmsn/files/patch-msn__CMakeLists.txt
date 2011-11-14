@@ -1,6 +1,16 @@
---- ./msn/CMakeLists.txt.orig	2008-11-18 18:17:55.000000000 +0300
-+++ ./msn/CMakeLists.txt	2008-12-28 22:24:22.000000000 +0300
-@@ -63,7 +63,7 @@
+--- ./msn/CMakeLists.txt	2010-01-05 10:07:08.000000000 -0200
++++ ./msn/CMakeLists.txt	2011-11-13 21:57:47.000000000 -0200
+@@ -40,7 +40,8 @@ set(msn_HEADERS
+     soap.h
+     p2p.h
+     msnobject.h
+-    libmsn_export.h)
++    libmsn_export.h
++    xmlParser.h)
+ 
+ set(siren_STAT_SRCS
+     libsiren/common.cpp
+@@ -63,7 +64,7 @@ set(siren_HEADERS
  )
  add_library(msn SHARED ${msn_STAT_SRCS} ${siren_STAT_SRCS})
  set_target_properties(msn PROPERTIES VERSION 0.3.0 
