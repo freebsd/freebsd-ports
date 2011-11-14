@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.11
-PORTREVISION=	2
+PORTVERSION=	2.12
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,9 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -49,11 +48,11 @@ PLIST_SUB+=	WVS="@comment "
 .endif
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-ALL_TARGET=	tide xttpd
+PKGNAMESUFFIX+=	-nox11
+ALL_TARGET+=	tide xttpd
 PLIST_SUB+=	X11="@comment "
 .else
-USE_XORG=	xpm xaw
+USE_XORG+=	xpm xaw
 MAN1+=		xtide.1
 PLIST_SUB+=	X11=""
 .endif
