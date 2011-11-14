@@ -2481,6 +2481,7 @@
     SUBDIR += p5-Test-TempDir
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Timer
+    SUBDIR += p5-Test-TinyMocker
     SUBDIR += p5-Test-Trap
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-UseAllModules
