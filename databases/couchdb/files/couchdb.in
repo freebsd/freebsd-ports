@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: couchdb
 # REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
@@ -16,12 +19,6 @@
 #
 # couchdb_respawn (int):	Set to none by default. If CouchDB crashes,
 # 				respawn after this many seconds.
-#
-
-couchdb_user="${couchdb_user:-"couchdb"}"
-couchdb_enablelogs="${couchdb_enablelogs:-"YES"}"
-couchdb_etcdir="${couchdb_etcdir:-"%%PREFIX%%/etc/couchdb"}"
-couchdb_respawn="${couchdb_respawn:-"0"}"
 
 . /etc/rc.subr
 
@@ -30,35 +27,38 @@ rcvar=${name}_enable
 
 load_rc_config $name
 
+: ${couchdb_enable="NO"}
+couchdb_user="${couchdb_user:-"couchdb"}"
+couchdb_enablelogs="${couchdb_enablelogs:-"YES"}"
+couchdb_etcdir="${couchdb_etcdir:-"%%PREFIX%%/etc/couchdb"}"
+couchdb_respawn="${couchdb_respawn:-"0"}"
+
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}/${name}.pid"
-etcdir="%%PREFIX%%/etc/${name}"
 
-if [ "$couchdb_respawn" -gt 0 ]
-    then
-        respawn="-r ${couchdb_respawn} "
-fi
+couchdb_prestart()
+{
+	install -o $couchdb_user /dev/null $pidfile
 
-if [ "$couchdb_enablelogs" = "YES" ]
-    then
-        logfile=/var/log/${name}/couch.log
-        errfile=/var/log/${name}/err.log
-    else
-        logfile=/dev/null
-        errfile=/dev/null
-fi
+	[ -n "$couchdb_flags" ] && return 0
 
-: ${couchdb_enable="NO"}
-: ${couchdb_flags="-b -a ${etcdir}/default.ini -a ${etcdir}/local.ini ${respawn}-o ${logfile} -e ${errfile} -p ${pidfile}"}
+	if [ $couchdb_respawn -gt 0 ]; then
+		respawn="-r ${couchdb_respawn}"
+	fi
 
-start_precmd=pid_touch
+	if checkyesno couchdb_enablelogs; then
+		logfile=/var/log/${name}/couch.log
+		errfile=/var/log/${name}/err.log
+	else
+		logfile=/dev/null
+		errfile=/dev/null
+	fi
+
+	couchdb_flags="-b -a ${couchdb_etcdir}/default.ini -a ${couchdb_etcdir}/local.ini ${respawn} -o ${logfile} -e ${errfile} -p ${pidfile}"
+}
+
+start_precmd=${name}_prestart
 stop_cmd="${command} -d"
 status_cmd="${command} -s"
-
-pid_touch ()
-{
-    touch $pidfile
-    chown $couchdb_user $pidfile
-}
 
 run_rc_command "$1"
