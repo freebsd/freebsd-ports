@@ -5,9 +5,8 @@
 if [ "$2" = "DEINSTALL" ]; then
    if [ ! -d $PKG_PREFIX/share/cassandra/conf ]; then exit 1; fi
    cd $PKG_PREFIX/share/cassandra/conf
-   for cfgfile in cassandra.yaml log4j-server.properties access.properties \
-		log4j-tools.properties passwd.properties \
-		cassandra-topology.properties; do 
+   for cfgfile in cassandra.yaml log4j-server.properties \
+		log4j-tools.properties cassandra-topology.properties; do 
        if cmp -s $cfgfile.sample $cfgfile; then
           rm $cfgfile
        fi

@@ -1,9 +1,0 @@
-#! /bin/sh
-set -e
-if test $# -eq 0; then
-	echo "$0 <any node in cluster>"
-	exit 1;
-fi	 
-for i in `nodetool -h $1 ring | cut -d ' ' -f 1 | grep -e '^[0-9]'`; do
-	nodetool -h $i repair
-done	

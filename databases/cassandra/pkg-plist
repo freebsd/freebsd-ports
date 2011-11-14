@@ -1,8 +1,7 @@
-@comment $FreeBSD$
 bin/cassandra-cli
 bin/nodetool
-bin/sstableloader
 bin/repaircluster
+bin/sstableloader
 %%DATADIR%%/CHANGES.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
@@ -13,19 +12,16 @@ bin/repaircluster
 %%DATADIR%%/bin/cassandra.in.sh
 %%DATADIR%%/bin/json2sstable
 %%DATADIR%%/bin/nodetool
+%%DATADIR%%/bin/repaircluster
 %%DATADIR%%/bin/sstable2json
 %%DATADIR%%/bin/sstablekeys
 %%DATADIR%%/bin/sstableloader
-%%DATADIR%%/bin/repaircluster
 %%DATADIR%%/conf/README.txt
-%%DATADIR%%/conf/access.properties.sample
 %%DATADIR%%/conf/cassandra-env.sh
 %%DATADIR%%/conf/cassandra-topology.properties.sample
 %%DATADIR%%/conf/cassandra.yaml.sample
 %%DATADIR%%/conf/log4j-server.properties.sample
 %%DATADIR%%/conf/log4j-tools.properties.sample
-%%DATADIR%%/conf/passwd.properties.sample
-%%DATADIR%%/conf/schema-sample.txt
 %%DATADIR%%/interface/cassandra.thrift
 %%DATADIR%%/javadoc/allclasses-frame.html
 %%DATADIR%%/javadoc/allclasses-noframe.html
@@ -41,9 +37,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/IAuthority.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/Permission.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/Resources.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/SimpleAuthenticator.PasswordMode.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/SimpleAuthenticator.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/SimpleAuthority.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/AllowAllAuthenticator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/AllowAllAuthority.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/AuthenticatedUser.html
@@ -51,9 +44,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/IAuthority.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/Permission.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/Resources.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/SimpleAuthenticator.PasswordMode.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/SimpleAuthenticator.html
-%%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use/SimpleAuthority.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-tree.html
@@ -122,8 +112,9 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/AIOExecutorService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/Context.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/CreationTimeAwareFuture.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/DebuggableScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/DebuggableThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/IExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/JMXConfigurableThreadPoolExecutor.html
@@ -131,11 +122,11 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/JMXEnabledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/JMXEnabledThreadPoolExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/NamedThreadFactory.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/RetryingScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/Stage.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/StageManager.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/AIOExecutorService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/Context.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/CreationTimeAwareFuture.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/DebuggableScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/DebuggableThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/IExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/JMXConfigurableThreadPoolExecutor.html
@@ -143,7 +134,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/JMXEnabledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/JMXEnabledThreadPoolExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/NamedThreadFactory.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/RetryingScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/Stage.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/StageManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/package-frame.html
@@ -163,6 +153,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/config/KSMetaData.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/ReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/RequestSchedulerOptions.html
+%%DATADIR%%/javadoc/org/apache/cassandra/config/Schema.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/SeedProviderDef.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/CFMetaData.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/ColumnDefinition.html
@@ -177,6 +168,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/KSMetaData.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/ReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/RequestSchedulerOptions.html
+%%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/Schema.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/SeedProviderDef.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/package-summary.html
@@ -224,20 +216,66 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/class-use/Term.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/class-use/UpdateStatement.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/class-use/WhereClause.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/AbstractJdbcType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/AbstractJdbcUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcAscii.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcBoolean.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcBytes.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcCounterColumn.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcDate.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcDecimal.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcDouble.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcFloat.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcInt32.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcInteger.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcLexicalUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcLong.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcTimeUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcUTF8.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/JdbcUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/MarshalException.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/TypesMap.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/AbstractJdbcType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/AbstractJdbcUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcAscii.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcBoolean.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcBytes.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcCounterColumn.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcDate.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcDecimal.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcDouble.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcFloat.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcInt32.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcInteger.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcLexicalUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcLong.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcTimeUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcUTF8.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/JdbcUUID.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/MarshalException.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use/TypesMap.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cql/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/BinaryMemtable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/BinaryVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/AbstractColumnContainer.DeletionInfo.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/AbstractColumnContainer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ArrayBackedSortedColumns.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/CollationController.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/Column.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyNotDefinedException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilySerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyStore.CacheType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyStore.ViewFragment.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyStore.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyStoreMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnFamilyType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnIndexer.RowHeader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnIndexer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ColumnSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/CounterColumn.html
@@ -256,21 +294,20 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/HintedHandOffManagerMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/IColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/IColumnContainer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/IFlushable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/IMutation.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ISortedColumns.Factory.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ISortedColumns.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/IndexScanCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/KeyspaceNotDefinedException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/Memtable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/MemtableAllocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RangeSliceCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RangeSliceReply.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ReadRepairVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ReadResponse.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/ReadVerbHandler.ReadContext.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/ReadVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/Row.RowSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/Row.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/RowIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RowIteratorFactory.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RowMutation.RowMutationSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RowMutation.html
@@ -280,8 +317,9 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/SliceFromReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/SuperColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/SystemTable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/Table.IndexBuilder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/Table.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/ThreadSafeSortedColumns.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/TreeMapBackedSortedColumns.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/TruncateResponse.TruncateResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/TruncateResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/TruncateVerbHandler.html
@@ -289,16 +327,20 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/UnserializableColumnFamilyException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/WriteResponse.WriteResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/WriteResponse.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/BinaryMemtable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/BinaryVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/AbstractColumnContainer.DeletionInfo.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/AbstractColumnContainer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ArrayBackedSortedColumns.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/CollationController.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Column.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyNotDefinedException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilySerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyStore.CacheType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyStore.ViewFragment.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyStore.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyStoreMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnFamilyType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnIndexer.RowHeader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnIndexer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ColumnSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/CounterColumn.html
@@ -317,21 +359,20 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/HintedHandOffManagerMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/IColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/IColumnContainer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/IFlushable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/IMutation.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ISortedColumns.Factory.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ISortedColumns.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/IndexScanCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/KeyspaceNotDefinedException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Memtable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/MemtableAllocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RangeSliceCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RangeSliceReply.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadRepairVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadResponse.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadVerbHandler.ReadContext.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Row.RowSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Row.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RowIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RowIteratorFactory.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RowMutation.RowMutationSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RowMutation.html
@@ -341,8 +382,9 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/SliceFromReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/SuperColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/SystemTable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Table.IndexBuilder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Table.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ThreadSafeSortedColumns.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TreeMapBackedSortedColumns.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TruncateResponse.TruncateResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TruncateResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TruncateVerbHandler.html
@@ -351,11 +393,13 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/WriteResponse.WriteResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/WriteResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/IColumnIterator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/ICountableColumnIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/IdentityQueryFilter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/SSTableNamesIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/SSTableSliceIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/SimpleAbstractColumnIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use/IColumnIterator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use/ICountableColumnIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use/IdentityQueryFilter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use/SSTableNamesIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use/SSTableSliceIterator.html
@@ -365,19 +409,17 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/AbstractCommitLogExecutorService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/BatchCommitLogExecutorServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/CommitLog.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/CommitLogMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/CommitLogSegment.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/ICommitLogExecutorService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/PeriodicCommitLogExecutorServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/ReplayPosition.ReplayPositionSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/ReplayPosition.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/AbstractCommitLogExecutorService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/BatchCommitLogExecutorServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/CommitLog.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/CommitLogMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/CommitLogSegment.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/ICommitLogExecutorService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/PeriodicCommitLogExecutorServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/ReplayPosition.ReplayPositionSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use/ReplayPosition.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/package-frame.html
@@ -385,25 +427,47 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/AbstractCompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/AbstractCompactionIterable.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/AbstractCompactionStrategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/AbstractCompactionTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionController.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionInfo.Holder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionInfo.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionIterator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionIterable.Reducer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionIterable.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionManager.CompactionExecutorStatsCollector.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionManagerMBean.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/CompactionTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/LazilyCompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/LeveledCompactionStrategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/LeveledCompactionTask.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/LeveledManifest.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/OperationType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/ParallelCompactionIterable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/PrecompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/SizeTieredCompactionStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/AbstractCompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/AbstractCompactionIterable.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/AbstractCompactionStrategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/AbstractCompactionTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionController.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionInfo.Holder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionInfo.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionIterator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionIterable.Reducer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionIterable.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionManager.CompactionExecutorStatsCollector.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionManagerMBean.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/CompactionTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/LazilyCompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/LeveledCompactionStrategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/LeveledCompactionTask.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/LeveledManifest.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/OperationType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/ParallelCompactionIterable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/PrecompactedRow.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use/SizeTieredCompactionStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/package-tree.html
@@ -436,20 +500,45 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/filter/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/filter/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/filter/package-use.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/PerColumnSecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/PerRowSecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/SecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/SecondaryIndexBuilder.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/SecondaryIndexManager.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/SecondaryIndexSearcher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/PerColumnSecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/PerRowSecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/SecondaryIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/SecondaryIndexBuilder.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/SecondaryIndexManager.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use/SecondaryIndexSearcher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/KeysIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/KeysSearcher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/class-use/KeysIndex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/class-use/KeysSearcher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/package-use.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/index/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractCommutativeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractCompositeType.ParsedComparator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractCompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractType.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractUUIDType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AsciiType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/BooleanType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/BytesType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/CompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/CounterColumnType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/DateType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/DecimalType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/DoubleType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/DynamicCompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/FloatType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/Int32Type.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/IntegerType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/LexicalUUIDType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/LocalByPartionerType.html
@@ -464,16 +553,17 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AbstractCompositeType.ParsedComparator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AbstractCompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AbstractType.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AbstractUUIDType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AsciiType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/BooleanType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/BytesType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/CompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/CounterColumnType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/DateType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/DecimalType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/DoubleType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/DynamicCompositeType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/FloatType.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/Int32Type.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/IntegerType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/LexicalUUIDType.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/LocalByPartionerType.html
@@ -493,8 +583,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/DropColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/DropKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/Migration.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/migration/RenameColumnFamily.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/migration/RenameKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/UpdateColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/UpdateKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/AddColumnFamily.html
@@ -502,8 +590,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/DropColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/DropKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/Migration.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/RenameColumnFamily.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/RenameKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/UpdateColumnFamily.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use/UpdateKeyspace.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/package-frame.html
@@ -514,6 +600,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/db/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/package-use.html
+%%DATADIR%%/javadoc/org/apache/cassandra/dht/AbstractBounds.AbstractBoundsSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/AbstractBounds.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/AbstractByteOrderedPartitioner.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/BigIntegerToken.html
@@ -533,6 +620,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/Token.TokenFactory.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/Token.TokenSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/Token.html
+%%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use/AbstractBounds.AbstractBoundsSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use/AbstractBounds.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use/AbstractByteOrderedPartitioner.html
 %%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use/BigIntegerToken.html
@@ -565,6 +653,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/GossipDigestAckVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/GossipDigestSynVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/Gossiper.html
+%%DATADIR%%/javadoc/org/apache/cassandra/gms/GossiperMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/IEndpointStateChangeSubscriber.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/IFailureDetectionEventListener.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/IFailureDetector.html
@@ -581,6 +670,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/GossipDigestAckVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/GossipDigestSynVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/Gossiper.html
+%%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/GossiperMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/IEndpointStateChangeSubscriber.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/IFailureDetectionEventListener.html
 %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use/IFailureDetector.html
@@ -608,18 +698,42 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/hadoop/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/hadoop/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/hadoop/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/DeletionService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/IColumnSerializer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/ICompactSerializer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/ICompactSerializer2.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/ICompactSerializer3.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/ISerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/IVersionedSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SerDeUtils.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/DeletionService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/IColumnSerializer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/ICompactSerializer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/ICompactSerializer2.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/ICompactSerializer3.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/ISerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/IVersionedSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SerDeUtils.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressedRandomAccessReader.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressedSequentialWriter.CompressedFileWriterMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressedSequentialWriter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressionMetadata.Chunk.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressionMetadata.Writer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressionMetadata.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CompressionParameters.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/CorruptedBlockException.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/DeflateCompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/ICompressor.WrappedArray.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/ICompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/SnappyCompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressedRandomAccessReader.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressedSequentialWriter.CompressedFileWriterMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressedSequentialWriter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressionMetadata.Chunk.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressionMetadata.Writer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressionMetadata.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CompressionParameters.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/CorruptedBlockException.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/DeflateCompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/ICompressor.WrappedArray.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/ICompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use/SnappyCompressor.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/compress/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/package-tree.html
@@ -627,6 +741,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/AbstractSSTableSimpleWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/BloomFilterTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Component.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Descriptor.TempState.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Descriptor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/IndexHelper.IndexInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/IndexHelper.html
@@ -637,23 +752,26 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableBoundedScanner.BoundedKeyScanningIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableBoundedScanner.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableDeletingReference.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableDeletingTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableIdentityIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableLoader.Client.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableLoader.LoaderFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableLoader.OutputHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableLoader.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableMetadata.Collector.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableMetadata.SSTableMetadataSerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableMetadata.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableReader.Operator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableScanner.KeyScanningIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableScanner.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableSimpleUnsortedWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableSimpleWriter.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableWriter.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/SSTableWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/AbstractSSTableSimpleWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/BloomFilterTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Component.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Descriptor.TempState.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Descriptor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/IndexHelper.IndexInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/IndexHelper.html
@@ -664,31 +782,35 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableBoundedScanner.BoundedKeyScanningIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableBoundedScanner.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableDeletingReference.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableDeletingTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableIdentityIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableLoader.Client.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableLoader.LoaderFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableLoader.OutputHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableLoader.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableMetadata.Collector.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableMetadata.SSTableMetadataSerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableMetadata.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableReader.Operator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableScanner.KeyScanningIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableScanner.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableSimpleUnsortedWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableSimpleWriter.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableWriter.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/SSTableWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/AbstractDataInput.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/util/BufferedRandomAccessFile.BufferedRandomAccessFileMark.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/util/BufferedRandomAccessFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/BufferedSegmentedFile.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/BufferedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/ColumnSortedMap.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/CompressedSegmentedFile.Builder.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/CompressedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/DataOutputBuffer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/FastByteArrayInputStream.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/FastByteArrayOutputStream.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/FileDataInput.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/FileMark.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/FileUtils.FileComparator.html
@@ -699,15 +821,21 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/MemoryOutputStream.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/MmappedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/OutputBuffer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/RandomAccessReader.BufferedRandomAccessFileMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/RandomAccessReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/SegmentedFile.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/SegmentedFile.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/SequentialWriter.BufferedFileWriterMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/SequentialWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/AbstractDataInput.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/BufferedRandomAccessFile.BufferedRandomAccessFileMark.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/BufferedRandomAccessFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/BufferedSegmentedFile.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/BufferedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/ColumnSortedMap.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/CompressedSegmentedFile.Builder.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/CompressedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/DataOutputBuffer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/FastByteArrayInputStream.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/FastByteArrayOutputStream.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/FileDataInput.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/FileMark.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/FileUtils.FileComparator.html
@@ -718,8 +846,12 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/MemoryOutputStream.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/MmappedSegmentedFile.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/OutputBuffer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/RandomAccessReader.BufferedRandomAccessFileMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/RandomAccessReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/SegmentedFile.Builder.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/SegmentedFile.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/SequentialWriter.BufferedFileWriterMark.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use/SequentialWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/package-tree.html
@@ -729,6 +861,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/AbstractReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitchMBean.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/Ec2MultiRegionSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/Ec2Snitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/EndpointSnitchInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/EndpointSnitchInfoMBean.html
@@ -749,6 +882,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/AbstractReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitchMBean.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/Ec2MultiRegionSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/Ec2Snitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/EndpointSnitchInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/EndpointSnitchInfoMBean.html
@@ -783,6 +917,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/net/MessagingService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/MessagingServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/OutboundTcpConnection.html
+%%DATADIR%%/javadoc/org/apache/cassandra/net/OutboundTcpConnectionPool.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/ProtocolHeader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/ResponseVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/CachingMessageProducer.html
@@ -800,6 +935,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/MessagingService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/MessagingServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/OutboundTcpConnection.html
+%%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/OutboundTcpConnectionPool.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/ProtocolHeader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use/ResponseVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/io/SerializerType.html
@@ -820,12 +956,26 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/net/sink/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/sink/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/net/sink/package-use.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/INotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/INotificationConsumer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/SSTableAddedNotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/SSTableListChangedNotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/class-use/INotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/class-use/INotificationConsumer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/class-use/SSTableAddedNotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/class-use/SSTableListChangedNotification.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/notifications/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/IRequestScheduler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/NoScheduler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/RoundRobinScheduler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/scheduler/WeightedQueueMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use/IRequestScheduler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use/NoScheduler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use/RoundRobinScheduler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use/WeightedQueueMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/package-tree.html
@@ -836,14 +986,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/security/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/security/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/security/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/SSLFileStreamTask.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/SSLIncomingStreamReader.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/class-use/SSLFileStreamTask.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/class-use/SSLIncomingStreamReader.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/package-frame.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/package-summary.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/package-tree.html
-%%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractCassandraDaemon.CleaningThreadPool.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractCassandraDaemon.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractRowResolver.html
@@ -867,6 +1009,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/service/IResponseResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/IWriteResponseHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/IndexScanVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/LoadBroadcaster.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/MigrationManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/RangeSliceResponseResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/RangeSliceVerbHandler.html
@@ -875,7 +1018,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/service/RowDigestResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/RowRepairResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/SocketSessionManagementService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/StorageLoadBalancer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/StorageProxy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/StorageProxyMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/StorageService.Verb.html
@@ -906,6 +1048,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/IResponseResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/IWriteResponseHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/IndexScanVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/LoadBroadcaster.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/MigrationManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/RangeSliceResponseResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/RangeSliceVerbHandler.html
@@ -914,7 +1057,6 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/RowDigestResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/RowRepairResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/SocketSessionManagementService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/StorageLoadBalancer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/StorageProxy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/StorageProxyMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/StorageService.Verb.html
@@ -939,6 +1081,9 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamOutSession.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamReplyVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamRequestVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamingRepairTask.StreamingRepairRequest.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamingRepairTask.StreamingRepairResponse.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamingRepairTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamingService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/StreamingServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/FileStreamTask.html
@@ -954,6 +1099,9 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamOutSession.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamReplyVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamRequestVerbHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamingRepairTask.StreamingRepairRequest.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamingRepairTask.StreamingRepairResponse.html
+%%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamingRepairTask.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamingService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use/StreamingServiceMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/streaming/package-frame.html
@@ -1151,6 +1299,8 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CounterColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CounterSuperColumn._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CounterSuperColumn.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/CqlMetadata._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/CqlMetadata.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CqlResult._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CqlResult.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CqlResultType.html
@@ -1163,6 +1313,8 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/CustomTThreadPoolServer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Deletion._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Deletion.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/EndpointDetails._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/EndpointDetails.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/IndexClause._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/IndexClause.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/IndexExpression._Fields.html
@@ -1195,6 +1347,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/TBinaryProtocol.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/TCustomNonblockingServerSocket.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/TCustomServerSocket.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/TCustomSocket.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/ThriftValidation.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/TimedOutException._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/TimedOutException.html
@@ -1393,6 +1546,8 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CounterColumn.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CounterSuperColumn._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CounterSuperColumn.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CqlMetadata._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CqlMetadata.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CqlResult._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CqlResult.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CqlResultType.html
@@ -1405,6 +1560,8 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/CustomTThreadPoolServer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Deletion._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Deletion.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/EndpointDetails._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/EndpointDetails.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/IndexClause._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/IndexClause.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/IndexExpression._Fields.html
@@ -1437,6 +1594,7 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TBinaryProtocol.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TCustomNonblockingServerSocket.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TCustomServerSocket.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TCustomSocket.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/ThriftValidation.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TimedOutException._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/TimedOutException.html
@@ -1467,9 +1625,12 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/AbstractStatsDeque.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/Allocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BloomFilter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/BloomFilterSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BoundedStatsDeque.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/ByteBufferUtil.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/BytesReadTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/CLibrary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/CloseableIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/DefaultDouble.html
@@ -1481,8 +1642,25 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/FBUtilities.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/Filter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/GuidGenerator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/HeapAllocator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/Hex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IMergeIterator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/Interval.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/IntervalNode.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/IntervalTree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/class-use/Interval.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/class-use/IntervalNode.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/class-use/IntervalTree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/package-frame.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/package-summary.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/package-tree.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/LatencyTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/LegacyBloomFilter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/LegacyBloomFilterSerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/MergeIterator.Candidate.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/MergeIterator.Reducer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/MergeIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/MerkleTree.MerkleTreeSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/MerkleTree.RowHash.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/MerkleTree.TreeRange.html
@@ -1494,19 +1672,24 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/NodeId.OneShotRenewer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/NodeId.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/Pair.html
-%%DATADIR%%/javadoc/org/apache/cassandra/utils/ReducingIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/ResourceWatcher.WatchedResource.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/ResourceWatcher.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/SimpleCondition.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/SkipNullRepresenter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/SlabAllocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/StatusLogger.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/Throttle.ThroughputFunction.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/Throttle.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/UUIDGen.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/WrappedRunnable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/XMLUtils.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/AbstractStatsDeque.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Allocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BloomFilter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BloomFilterSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BoundedStatsDeque.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/ByteBufferUtil.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BytesReadTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/CLibrary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/CloseableIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/DefaultDouble.html
@@ -1518,8 +1701,15 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/FBUtilities.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Filter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/GuidGenerator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/HeapAllocator.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Hex.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/IMergeIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/LatencyTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/LegacyBloomFilter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/LegacyBloomFilterSerializer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MergeIterator.Candidate.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MergeIterator.Reducer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MergeIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MerkleTree.MerkleTreeSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MerkleTree.RowHash.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/MerkleTree.TreeRange.html
@@ -1531,12 +1721,14 @@ bin/repaircluster
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/NodeId.OneShotRenewer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/NodeId.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Pair.html
-%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/ReducingIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/ResourceWatcher.WatchedResource.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/ResourceWatcher.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/SimpleCondition.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/SkipNullRepresenter.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/SlabAllocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/StatusLogger.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Throttle.ThroughputFunction.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Throttle.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/UUIDGen.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/WrappedRunnable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/XMLUtils.html
@@ -1557,23 +1749,29 @@ bin/repaircluster
 %%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
-%%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BigLongArray.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/BigLongArray.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/RetriedSliceFromReadCommand.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RetriedSliceFromReadCommand.html
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-0.8.7.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-0.8.7.jar
+%%DATADIR%%/lib/apache-cassandra-1.0.2.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.2.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.0.2.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
 %%DATADIR%%/lib/commons-codec-1.2.jar
-%%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
-%%DATADIR%%/lib/concurrentlinkedhashmap-lru-1.1.jar
+%%DATADIR%%/lib/compress-lzf-0.8.4.jar
+%%DATADIR%%/lib/concurrentlinkedhashmap-lru-1.2.jar
 %%DATADIR%%/lib/guava-r08.jar
 %%DATADIR%%/lib/high-scale-lib-1.1.2.jar
 %%DATADIR%%/lib/jackson-core-asl-1.4.0.jar
 %%DATADIR%%/lib/jackson-mapper-asl-1.4.0.jar
-%%DATADIR%%/lib/jamm-0.2.2.jar
+%%DATADIR%%/lib/jamm-0.2.5.jar
 %%DATADIR%%/lib/jline-0.9.94.jar
+%%JNA%%%%DATADIR%%/lib/jna.jar
+%%JNA%%%%DATADIR%%/lib/jna-platform.jar
 %%DATADIR%%/lib/json-simple-1.1.jar
 %%DATADIR%%/lib/libthrift-0.6.jar
 %%DATADIR%%/lib/licenses/antlr-3.1.3.txt
@@ -1582,7 +1780,8 @@ bin/repaircluster
 %%DATADIR%%/lib/licenses/commons-codec-1.2.txt
 %%DATADIR%%/lib/licenses/commons-collections-3.2.1.txt
 %%DATADIR%%/lib/licenses/commons-lang-2.4.txt
-%%DATADIR%%/lib/licenses/concurrentlinkedhashmap-lru-1.1.txt
+%%DATADIR%%/lib/licenses/compress-lzf-0.8.4.txt
+%%DATADIR%%/lib/licenses/concurrentlinkedhashmap-lru-1.2.txt
 %%DATADIR%%/lib/licenses/guava-r08.txt
 %%DATADIR%%/lib/licenses/high-scale-lib-1.1.2.txt
 %%DATADIR%%/lib/licenses/jackson-core-asl-1.4.0.txt
@@ -1598,87 +1797,100 @@ bin/repaircluster
 %%DATADIR%%/lib/licenses/slf4j-api-1.6.1.txt
 %%DATADIR%%/lib/licenses/slf4j-log4j12-1.6.1.txt
 %%DATADIR%%/lib/licenses/snakeyaml-1.6.txt
+%%DATADIR%%/lib/licenses/snappy-java-1.0.3.txt
 %%DATADIR%%/lib/log4j-1.2.16.jar
+%%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
 %%DATADIR%%/lib/servlet-api-2.5-20081211.jar
 %%DATADIR%%/lib/slf4j-api-1.6.1.jar
 %%DATADIR%%/lib/slf4j-log4j12-1.6.1.jar
 %%DATADIR%%/lib/snakeyaml-1.6.jar
-@dirrmtry %%DATADIR%%/lib/licenses
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/javadoc/resources
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/utils
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/tools
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/thrift
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/streaming
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/service
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/security/streaming/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/security/streaming
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/security/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/security
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/scheduler
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net/sink/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net/sink
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net/io/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net/io
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/net
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/locator
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io/util
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/io
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/hadoop/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/hadoop
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/gms
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/dht
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/migration
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/filter/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/filter
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/context/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/context
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/db
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cql/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cql
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/config
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/concurrent
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/client/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/client
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cli/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cli
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cache/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cache
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/auth
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra
-@dirrmtry %%DATADIR%%/javadoc/org/apache
-@dirrmtry %%DATADIR%%/javadoc/org
-@dirrmtry %%DATADIR%%/javadoc
-@dirrmtry %%DATADIR%%/interface
+%%DATADIR%%/lib/snappy-java-1.0.4.1.jar
+@dirrm %%DATADIR%%/lib/licenses
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/javadoc/resources
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils/IntervalTree
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/utils
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/tools
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/thrift
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/streaming/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/streaming
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/service
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/security/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/security
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/scheduler/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/scheduler
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/notifications/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/notifications
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net/sink/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net/sink
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net/io/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net/io
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/net
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/locator
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/util/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/util
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/compress/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/compress
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/io
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/hadoop/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/hadoop
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/gms/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/gms
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/dht/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/dht
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/migration/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/migration
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/marshal
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/index/keys
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/index/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/index
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/filter/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/filter
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/context/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/context
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/compaction
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/commitlog
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/db
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cql/jdbc
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cql/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cql
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/config
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/concurrent
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/client/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/client
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cli/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cli
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cache/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/cache
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra/auth
+@dirrm %%DATADIR%%/javadoc/org/apache/cassandra
+@dirrm %%DATADIR%%/javadoc/org/apache
+@dirrm %%DATADIR%%/javadoc/org
+@dirrm %%DATADIR%%/javadoc
+@dirrm %%DATADIR%%/interface
 @dirrmtry %%DATADIR%%/conf
-@dirrmtry %%DATADIR%%/bin
+@dirrm %%DATADIR%%/bin
 @dirrmtry %%DATADIR%%
