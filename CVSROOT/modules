@@ -2675,7 +2675,6 @@ dungeoncrawl                    ports/games/dungeoncrawl
 duo                             ports/security/duo
 dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
-duplicity-devel                 ports/sysutils/duplicity-devel
 duplicity05                     ports/sysutils/duplicity05
 duplo                           ports/devel/duplo
 duply                           ports/sysutils/duply
@@ -12670,6 +12669,7 @@ p5-Image-MetaData-GQview        ports/graphics/p5-Image-MetaData-GQview
 p5-Image-MetaData-JPEG          ports/graphics/p5-Image-MetaData-JPEG
 p5-Image-PBMlib                 ports/graphics/p5-Image-PBMlib
 p5-Image-Pngslimmer             ports/graphics/p5-Image-Pngslimmer
+p5-Image-Scale                  ports/graphics/p5-Image-Scale
 p5-Image-Size                   ports/graphics/p5-Image-Size
 p5-Image-Size-FillFullSelect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-Imager                       ports/graphics/p5-Imager
@@ -12951,6 +12951,10 @@ p5-Makefile-DOM                 ports/textproc/p5-Makefile-DOM
 p5-Makefile-Parser              ports/textproc/p5-Makefile-Parser
 p5-Markapl                      ports/textproc/p5-Markapl
 p5-Markup-Perl                  ports/www/p5-Markup-Perl
+p5-Marpa                        ports/lang/p5-Marpa
+p5-Marpa-HTML                   ports/textproc/p5-Marpa-HTML
+p5-Marpa-PP                     ports/lang/p5-Marpa-PP
+p5-Marpa-XS                     ports/lang/p5-Marpa-XS
 p5-MasonX-Interp-WithCallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Profiler              ports/www/p5-MasonX-Profiler
 p5-MasonX-Request-WithApacheSession  ports/www/p5-MasonX-Request-WithApacheSession
@@ -14889,6 +14893,7 @@ p5-XML-Handler-Trees            ports/textproc/p5-XML-Handler-Trees
 p5-XML-Handler-YAWriter         ports/textproc/p5-XML-Handler-YAWriter
 p5-XML-Hash-LX                  ports/textproc/p5-XML-Hash-LX
 p5-XML-LibXML                   ports/textproc/p5-XML-LibXML
+p5-XML-LibXML-Cache             ports/textproc/p5-XML-LibXML-Cache
 p5-XML-LibXML-Iterator          ports/textproc/p5-XML-LibXML-Iterator
 p5-XML-LibXML-PrettyPrint       ports/textproc/p5-XML-LibXML-PrettyPrint
 p5-XML-LibXML-SAX-ChunkParser   ports/textproc/p5-XML-LibXML-SAX-ChunkParser
@@ -17005,6 +17010,7 @@ p5-image-metadata-gqview        ports/graphics/p5-Image-MetaData-GQview
 p5-image-metadata-jpeg          ports/graphics/p5-Image-MetaData-JPEG
 p5-image-pbmlib                 ports/graphics/p5-Image-PBMlib
 p5-image-pngslimmer             ports/graphics/p5-Image-Pngslimmer
+p5-image-scale                  ports/graphics/p5-Image-Scale
 p5-image-size                   ports/graphics/p5-Image-Size
 p5-image-size-fillfullselect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-imager                       ports/graphics/p5-Imager
@@ -17342,6 +17348,10 @@ p5-marc-record                  ports/textproc/p5-MARC-Record
 p5-marc-xml                     ports/textproc/p5-MARC-XML
 p5-markapl                      ports/textproc/p5-Markapl
 p5-markup-perl                  ports/www/p5-Markup-Perl
+p5-marpa                        ports/lang/p5-Marpa
+p5-marpa-html                   ports/textproc/p5-Marpa-HTML
+p5-marpa-pp                     ports/lang/p5-Marpa-PP
+p5-marpa-xs                     ports/lang/p5-Marpa-XS
 p5-masonx-interp-withcallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-masonx-profiler              ports/www/p5-MasonX-Profiler
 p5-masonx-request-withapachesession  ports/www/p5-MasonX-Request-WithApacheSession
@@ -19358,6 +19368,7 @@ p5-xml-handler-yawriter         ports/textproc/p5-XML-Handler-YAWriter
 p5-xml-hash-lx                  ports/textproc/p5-XML-Hash-LX
 p5-xml-liberal                  ports/textproc/p5-XML-Liberal
 p5-xml-libxml                   ports/textproc/p5-XML-LibXML
+p5-xml-libxml-cache             ports/textproc/p5-XML-LibXML-Cache
 p5-xml-libxml-iterator          ports/textproc/p5-XML-LibXML-Iterator
 p5-xml-libxml-prettyprint       ports/textproc/p5-XML-LibXML-PrettyPrint
 p5-xml-libxml-sax-chunkparser   ports/textproc/p5-XML-LibXML-SAX-ChunkParser
@@ -21404,6 +21415,7 @@ preps-gui                       ports/devel/preps-gui
 prepstools                      ports/devel/prepstools
 present                         ports/devel/present
 prestashop                      ports/finance/prestashop
+prettygo                        ports/devel/prettygo
 preview                         ports/graphics/preview
 price                           ports/graphics/price
 primateplunge                   ports/games/primateplunge
