@@ -11,7 +11,7 @@ CATEGORIES=	security java
 MASTER_SITES=	SF/${PORTNAME}/DirBuster%20%28jar%20%2B%20lists%29/1.0-RC1/
 DISTNAME=	DirBuster-1.0-RC1
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirBuster allows file and directory brute forcing on web servers
 
 USE_ZIP=	YES

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	niels
 DISTNAME=	${PORTNAME}-${PORTREVISION}
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fingerprint the web applications used by a web site
 
 LICENSE=	LGPL3

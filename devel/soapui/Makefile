@@ -10,7 +10,7 @@ CATEGORIES=	devel java www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-bin
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web service, SOA and SOAP testing tool
 
 USE_ZIP=	YES

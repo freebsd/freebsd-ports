@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~niels/distfiles/
 MASTER_SITE_SUBDIR=	niels
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for analysing HTTP and HTTPS web application traffic
 
 USE_ZIP=	YES

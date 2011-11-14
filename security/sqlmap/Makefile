@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
 USE_PYTHON=	2.5+

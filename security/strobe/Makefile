@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.ussg.iu.edu/security/tools/unix/scanners/strobe/ \
 		http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/strobe/ \
 		http://ftp.surfnet.nl/security/coast/scanners/strobe/
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast scatter/gather TCP port scanner
 
 WRKSRC=		${WRKDIR}/strobe

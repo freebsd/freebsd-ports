@@ -11,7 +11,7 @@ CATEGORIES=	security java
 MASTER_SITES=	http://www.portswigger.net/suite/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	niels@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Burp Suite is an integrated platform for testing web applications
 
 USE_ZIP=	YES
