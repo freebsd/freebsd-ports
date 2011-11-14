@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	vuze
-PORTVERSION=	4.3.1.4
-PORTREVISION=	2
+PORTVERSION=	4.7.0.0
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
-#MASTER_SITES=	SF/azureus/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-MASTER_SITES=	SF/azureus/x_obsolete/${PORTNAME}-${PORTVERSION}
-DISTNAME=	Vuze_${PORTVERSION}_source
+MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
+DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
@@ -28,14 +26,14 @@ USE_ANT=	yes
 
 USE_ZIP=	yes
 
-USE_DOS2UNIX=	\
-org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
-org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
-org/gudy/azureus2/platform/PlatformManagerFactory.java \
-org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
-org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
-com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
-com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
+#USE_DOS2UNIX=	\
+#org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
+#org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
+#org/gudy/azureus2/platform/PlatformManagerFactory.java \
+#org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
+#org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
+#com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
+#com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
 USE_GECKO=	libxul
 
@@ -87,6 +85,7 @@ CLASSPATH:=${CLASSPATH}:${jar}
 .endfor
 
 post-patch:
+	${RM} -rf ${WRKSRC}/org/eclipse
 	@${SED} -E -e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
 # bash -> sh
