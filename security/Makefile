@@ -235,7 +235,6 @@
     SUBDIR += libbf
     SUBDIR += libecc
     SUBDIR += libfprint
-    SUBDIR += libfwbuilder-devel
     SUBDIR += libgcrypt
     SUBDIR += libgnome-keyring
     SUBDIR += libgnomesu
