@@ -2951,6 +2951,7 @@
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
     SUBDIR += py-Missing
+    SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
     SUBDIR += py-RPyC
