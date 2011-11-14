@@ -1,5 +1,5 @@
---- client/dhcpc.c.orig	Fri Jan  1 05:20:08 1999
-+++ client/dhcpc.c	Thu Jan 20 13:21:05 2000
+--- client/dhcpc.c.orig	1999-03-25 19:59:26.000000000 +0900
++++ client/dhcpc.c	2011-09-26 15:22:19.000000000 +0900
 @@ -88,6 +88,7 @@
  struct dhcp_reqspec reqspec;
  struct if_info intface;
@@ -305,15 +305,16 @@
    strcpy(ifinfo.name, argv[0]);
  
    /*
-@@ -1859,6 +1909,11 @@
+@@ -1859,9 +1909,10 @@
    reqspec.reqlist.list[reqspec.reqlist.len++] = SUBNET_MASK;
    reqspec.reqlist.list[reqspec.reqlist.len++] = ROUTER;
    reqspec.reqlist.list[reqspec.reqlist.len++] = BRDCAST_ADDR;
+-#ifdef DNS
+-  reqspec.reqlist.list[reqspec.reqlist.len++] = DNS_SERVER;
 +#ifdef __FreeBSD__
-+  reqspec.reqlist.list[reqspec.reqlist.len++] = DNS_DOMAIN;
+   reqspec.reqlist.list[reqspec.reqlist.len++] = DNS_DOMAIN;
 +  reqspec.reqlist.list[reqspec.reqlist.len++] = DNS_SERVER;
 +  reqspec.reqlist.list[reqspec.reqlist.len++] = HOSTNAME;
-+#endif
+ #endif
    
    n = dhcp_client(&ifinfo);
-   unlink(pid_filename);
