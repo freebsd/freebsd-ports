@@ -7,14 +7,17 @@ bin/fwb_pix
 bin/fwbedit
 bin/fwbuilder
 bin/fwb_procurve_acl
-bin/transfer_secuwall
 share/applications/fwbuilder.desktop
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/bridge_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/bridge_port
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/carp_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/ifconfig_interface
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/kernel_vars
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/pfsync_interface
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/shell_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/tools
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_addresses
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_bridge
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_carp
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_pfsync
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_vlans
@@ -27,13 +30,37 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/check_utilities
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_root
-share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/routing_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/carp_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/ifconfig_interface
 share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/installer_commands_root
 share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/rc_conf_bridge_port
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/rc_conf_carp_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/rc_conf_ifconfig_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/rc_conf_kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/rc_conf_pfsync_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/failover_commands_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/failover_commands_3_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/failover_interface_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/failover_interface_3_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/installer_commands_post_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/installer_commands_pre_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/ntp
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/regular_interface_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/regular_interface_3_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/snmp
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/ssh
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/vlan_parent_interface_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/vlan_parent_interface_3_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/vlan_subinterface_2
+share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os/vlan_subinterface_3_2
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_post_config
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_pre_config
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_reg_user
@@ -71,6 +98,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/run_time_address_tables
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/run_time_wrappers
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_iptables_restore
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_iptables_shell
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_single_rule
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/shell_functions
@@ -89,6 +117,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx/tools
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/installer_commands_root
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/tools
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/check_utilities
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/installer_commands_reg_user
@@ -97,6 +126,9 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/load_modules
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/activation
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/rc_conf_activation
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/rc_conf_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/rc_conf_top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/failover_commands_6
@@ -166,6 +198,11 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.0.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.2.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.3.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.1.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.2.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip02.html
@@ -178,8 +215,6 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip08.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip09.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip10.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/vlan_interfaces.png
-share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ja.qm
-share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ru.qm
 share/fwbuilder-%%BUILD_VERSION%%/objects_init.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/dd-wrt-jffs.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/dd-wrt-nvram.xml
@@ -210,9 +245,88 @@ share/fwbuilder-%%BUILD_VERSION%%/platform/procurve_acl.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/unknown.xml
 share/fwbuilder-%%BUILD_VERSION%%/resources.xml
 share/fwbuilder-%%BUILD_VERSION%%/templates.xml
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.5.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.4.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.3.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.2.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.1.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.0.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.14.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.13.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.12.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.11.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.10.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.9.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.8.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.7.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.6.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.5.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.4.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.3.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.2.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.1.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.10.0.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_1.0.0.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_1.0.1.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_1.0.2.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.0.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.1.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.2.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.3.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.4.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.5.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.6.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.7.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.8.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.9.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.10.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.11.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.12.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.0.99.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.0.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.1.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.2.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.3.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.4.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.5.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.6.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.7.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.8.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.9.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.10.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.11.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.12.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.13.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.14.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.15.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.16.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.17.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.18.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.19.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.99.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_3.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_4.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_5.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_6.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_7.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_8.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_9.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_10.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_11.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_12.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_13.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_14.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_15.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_16.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_17.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_18.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_19.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_20.xslt
+share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_21.xslt
+share/fwbuilder-%%BUILD_VERSION%%/fwbuilder.dtd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/platform
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/os
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/locale
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/migration
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/help/en_US
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/help
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft
@@ -229,6 +343,7 @@ share/fwbuilder-%%BUILD_VERSION%%/templates.xml
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ios
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs

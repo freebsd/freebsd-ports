@@ -6,30 +6,33 @@
 #
 
 PORTNAME=	fwbuilder
-DISTVERSION=	4.1.3
+DISTVERSION=	5.0.1
 PORTVERSION=	${DISTVERSION}
-BUILD=		3421
 CATEGORIES=	security
-.if defined(BUILD)
-MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.1/build-${BUILD}/
+BUILD=		3585
+.if defined(DEVEL)
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/
 PKGNAMESUFFIX=	-devel
 PORTVERSION=	${DISTVERSION}.b${BUILD}
 .else
 MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
+DISTVERSIONSUFFIX=	.${BUILD}
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-.if defined(BUILD)
-CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-[23].*
-LIB_DEPENDS=	fwbuilder.9:${PORTSDIR}/security/libfwbuilder-devel
+.if defined(DEVEL)
+CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-[23].* \
+		libfwbuilder-[23].* libfwbuilder-devel-[23].*
 .else
-CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-*
-LIB_DEPENDS=	fwbuilder.9:${PORTSDIR}/security/libfwbuilder
+CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-* \
+		libfwbuilder-[23].* libfwbuilder-devel-*
 .endif
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
+		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
-PLIST_SUB=	BUILD_VERSION=${DISTVERSION}
+PLIST_SUB=	BUILD_VERSION=${DISTVERSION}.${BUILD}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib \
 		gui \
@@ -47,12 +50,12 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268 aclocal:111 libtool:22
+USE_AUTOTOOLS=	autoconf aclocal libtool
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
@@ -73,8 +76,13 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 800107
 MAKE_ENV+=	CCACHE_DISABLE=yes
+.endif
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 post-install:
