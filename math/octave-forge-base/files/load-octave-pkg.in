@@ -120,10 +120,14 @@ while (my $p = <$install_prefix/*>) {
 
 %to_remove = ();
 $nr_to_remove = 0;
-foreach (keys %is_installed) {
-  if (defined($is_installed{$_}) && !defined($in_tarballs{$_})) {
-    $to_remove{$_} = $is_installed{$_};
-    $nr_to_remove++;
+foreach my $p (keys %is_installed) {
+  if (defined($is_installed{$p})) {
+    my $altp = $p; # so that 3.5.0 and 3.5 are the same package numbers
+    $altp =~ s/(\-\d+\.\d+)\.0(\.tar\.gz)$/$1$2/;
+    if (!defined($in_tarballs{$p}) && !defined($in_tarballs{$altp})) {
+      $to_remove{$p} = $is_installed{$p};
+      $nr_to_remove++;
+    }
   }
 }
 
@@ -178,26 +182,30 @@ while (my $p = <$install_prefix/*>) {
 # %is_tarballs by checking the dependencies.
 
 %to_install = ();
-foreach (keys %in_tarballs) {
-  if (defined($in_tarballs{$_}) && !defined($is_installed{$_})) {
-    my $tar = Archive::Tar->new("$tardir/$_",COMPRESS_GZIP);
-    die if !defined($tar);
-    my @list_of_files = grep /^.*\/DESCRIPTION$/, $tar->list_files();
-    die if $#list_of_files!=0;
-    my $descr = $tar->get_content($list_of_files[0]);
-    foreach my $l (split /\n/,$descr) {
-      if ($l=~s/Depends:\s*//) {
-        foreach my $ll (split ",",$l) {
-          $ll = lc($ll);
-          $ll =~ s/^\s+//;
-          $ll =~ s/\s.*//;
-          if ($ll ne "octave") {
-            $to_install{$_} .= (defined($to_install{$_})?"|":"").(defined($long_form{$ll})?$long_form{$ll}:$ll);
+foreach my $n (keys %in_tarballs) {
+  my $altn = $n; # so that 3.5 and 3.5.0 are the same package numbers
+  $altn =~ s/(\-\d+\.\d+)(\.tar\.gz)$/$1\.0$2/;
+  if (defined($in_tarballs{$n})) {
+    if (!defined($is_installed{$n}) && !defined($is_installed{$altn})) {
+      my $tar = Archive::Tar->new("$tardir/$n",COMPRESS_GZIP);
+      die if !defined($tar);
+      my @list_of_files = grep /^.*\/DESCRIPTION$/, $tar->list_files();
+      die if $#list_of_files!=0;
+      my $descr = $tar->get_content($list_of_files[0]);
+      foreach my $l (split /\n/,$descr) {
+        if ($l=~s/Depends:\s*//) {
+          foreach my $ll (split ",",$l) {
+            $ll = lc($ll);
+            $ll =~ s/^\s+//;
+            $ll =~ s/\s.*//;
+            if ($ll ne "octave") {
+              $to_install{$n} .= (defined($to_install{$n})?"|":"").(defined($long_form{$ll})?$long_form{$ll}:$ll);
+            }
           }
         }
       }
+      $to_install{$n} .= "";
     }
-    $to_install{$_} .= "";
   }
 }
 
