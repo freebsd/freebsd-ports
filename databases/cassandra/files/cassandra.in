@@ -37,16 +37,32 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 cassandra_enable=${cassandra_enable:-"NO"}
-cassandra_vmargs=${cassandra_vmargs:-"-ea -javaagent:%%DATADIR%%/lib/jamm-0.2.2.jar -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:+CMSIncrementalDutyCycle=10"}
+cassandra_vmargs=${cassandra_vmargs:-""}
 cassandra_memory=${cassandra_memory:-"1000m"}
 cassandra_newgen=${cassandra_newgen:-"300m"}
+
 command=%%DATADIR%%/bin/cassandra
 command_args="-p /var/run/cassandra.pid >/dev/null"
-procname="java"
+stop_precmd="${name}_prestop"
+
+procname="%%LOCALBASE%%/openjdk6/bin/java"
 pidfile=/var/run/cassandra.pid
 
 export MAX_HEAP_SIZE="$cassandra_memory"
 export HEAP_NEWSIZE="$cassandra_newgen"
 export PATH=$PATH:%%LOCALBASE%%/bin
+export CASSANDRA_HOME=%%DATADIR%%
+export JVM_OPTS=-javaagent:%%DATADIR%%/lib/jamm-0.2.5.jar
+export JVM_OVERRIDE_OPTS="$cassandra_vmargs"
+
+export JAVA_VENDOR=openjdk
+export JAVA_VERSION=1.6
+
+cassandra_prestop() {
+	$CASSANDRA_HOME/bin/nodetool -h localhost disablegossip
+	sleep 8
+	$CASSANDRA_HOME/bin/nodetool -h localhost disablethrift
+	$CASSANDRA_HOME/bin/nodetool -h localhost drain 
+}
 
 run_rc_command "$1"
