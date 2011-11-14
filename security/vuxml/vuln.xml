@@ -47,14 +47,14 @@ Note:  Please add new entries to the beginning of this file.
         <p>Tim Brown from Nth Dimention reports:</p>
 	<blockquote cite="http://seclists.org/fulldisclosure/2011/Oct/351">
           <p>I recently discovered that the Ark archiving tool is
-          vulnerable to directory traversal via malformed.  When
-          attempts are made to view files within the malformed Zip
-          file in Ark's default view, the wrong file may be displayed
-          due to incorrect construction of the temporary file name.
-          Whilst this does not allow the wrong file to be overwritten,
-          after closing the default view, Ark will then attempt to
-          delete the temporary file which could result in the deletion
-          of the incorrect file.</p>
+	    vulnerable to directory traversal via malformed.  When
+	    attempts are made to view files within the malformed Zip
+	    file in Ark's default view, the wrong file may be displayed
+	    due to incorrect construction of the temporary file name.
+	    Whilst this does not allow the wrong file to be overwritten,
+	    after closing the default view, Ark will then attempt to
+	    delete the temporary file which could result in the deletion
+	    of the incorrect file.</p>
 	</blockquote>
       </body>
     </description>
