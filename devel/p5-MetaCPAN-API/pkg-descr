@@ -1,0 +1,8 @@
+This is a hopefully-complete API-compliant interface to MetaCPAN
+(https://metacpan.org) with DWIM capabilities, to make your life easier.
+
+    * Provide 100% of the beta MetaCPAN API
+    * Be lightweight, to allow flexible usage
+    * DWIM (Do What I mean)
+
+WWW: http://metacpan.org/release/MetaCPAN-API/
