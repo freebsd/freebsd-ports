@@ -1,4 +1,2 @@
-SHA256 (dgen-sdl/dgen-sdl-1.23.tar.gz) = 44396b3b324433187cf7082d1059cd9f519f02accddd667e627a57ff8514d436
-SIZE (dgen-sdl/dgen-sdl-1.23.tar.gz) = 340556
-SHA256 (dgen-sdl/patches.tar.gz) = 457c9b3580c199a7873f87c3e7579325f3d5b0fd88d032e6e30419d983ea4cf3
-SIZE (dgen-sdl/patches.tar.gz) = 7778
+SHA256 (dgen-sdl-1.27.tar.gz) = 8c80d511d70dc5c7c0c7a430e64c349ba35133315e6e0bc5b32c94c9e07af8f6
+SIZE (dgen-sdl-1.27.tar.gz) = 432545
