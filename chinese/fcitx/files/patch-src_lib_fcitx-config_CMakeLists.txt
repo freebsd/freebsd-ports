@@ -1,12 +1,10 @@
 --- src/lib/fcitx-config/CMakeLists.txt.orig	2011-10-02 05:43:11.000000000 -0500
-+++ src/lib/fcitx-config/CMakeLists.txt	2011-11-09 23:47:47.999482381 -0600
-@@ -14,8 +14,8 @@ set(FCITX_CONFIG_HEADERS
- add_library(fcitx-config SHARED ${FCITX_CONFIG_SOURCES})
++++ src/lib/fcitx-config/CMakeLists.txt	2011-11-13 16:02:26.681232301 -0600
+@@ -15,7 +15,7 @@ add_library(fcitx-config SHARED ${FCITX_
  target_link_libraries(fcitx-config fcitx-utils)
  set_target_properties(fcitx-config
--                      PROPERTIES VERSION 4.1.0
+                       PROPERTIES VERSION 4.1.0
 -                      SOVERSION 4.1
-+                      PROPERTIES VERSION 4.1
 +                      SOVERSION 4
                        COMPILE_FLAGS "-fvisibility=hidden"
                        LINK_FLAGS "-Wl,--no-undefined"
