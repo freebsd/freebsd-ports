@@ -4,6 +4,11 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/about-back.png
 %%DATADIR%%/resources/about-front.png
 %%DATADIR%%/resources/area-back.jpg
+%%DATADIR%%/resources/bmd-icons/bombono-dvd_128px.png
+%%DATADIR%%/resources/bmd-icons/bombono-dvd_16px.png
+%%DATADIR%%/resources/bmd-icons/bombono-dvd_32px.png
+%%DATADIR%%/resources/bmd-icons/bombono-dvd_48px.png
+%%DATADIR%%/resources/bmd-icons/bombono-dvd_64px.png
 %%DATADIR%%/resources/button/001.ico
 %%DATADIR%%/resources/button/002.ico
 %%DATADIR%%/resources/button/003.ico
@@ -20,6 +25,9 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/16.png
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/28.png
 %%DATADIR%%/resources/copy-n-paste/codepages.lst
+%%DATADIR%%/resources/copy-n-paste/grid_xy.png
+%%DATADIR%%/resources/copy-n-paste/grid_xy_simple.png
+%%DATADIR%%/resources/copy-n-paste/ink_grid.png
 %%DATADIR%%/resources/copy-n-paste/lpetool_show_bbox.png
 %%DATADIR%%/resources/dvdmark.png
 %%DATADIR%%/resources/emblems/README
@@ -58,16 +66,35 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/emblems/video-x-generic.png
 %%DATADIR%%/resources/frames/cell/frame.png
 %%DATADIR%%/resources/frames/cell/vframe.png
+%%DATADIR%%/resources/frames/classic.old/frame.png
+%%DATADIR%%/resources/frames/classic.old/vframe.png
+%%DATADIR%%/resources/frames/classic/frame.png
+%%DATADIR%%/resources/frames/classic/vframe.png
+%%DATADIR%%/resources/frames/flourish/frame.png
+%%DATADIR%%/resources/frames/flourish/vframe.png
 %%DATADIR%%/resources/frames/gradient/frame.png
+%%DATADIR%%/resources/frames/gradient/highlight_border.png
 %%DATADIR%%/resources/frames/gradient/vframe.png
 %%DATADIR%%/resources/frames/make_menu.sh
 %%DATADIR%%/resources/frames/ogradient/frame.png
 %%DATADIR%%/resources/frames/ogradient/vframe.png
 %%DATADIR%%/resources/frames/oval/frame.png
 %%DATADIR%%/resources/frames/oval/vframe.png
+%%DATADIR%%/resources/frames/pop.blue/frame.png
+%%DATADIR%%/resources/frames/pop.blue/vframe.png
+%%DATADIR%%/resources/frames/pop.dark/frame.png
+%%DATADIR%%/resources/frames/pop.dark/vframe.png
+%%DATADIR%%/resources/frames/pop.mint/frame.png
+%%DATADIR%%/resources/frames/pop.mint/vframe.png
+%%DATADIR%%/resources/frames/pop.red/frame.png
+%%DATADIR%%/resources/frames/pop.red/vframe.png
+%%DATADIR%%/resources/frames/pop.yellow/frame.png
+%%DATADIR%%/resources/frames/pop.yellow/vframe.png
 %%DATADIR%%/resources/frames/rect/frame.png
+%%DATADIR%%/resources/frames/rect/highlight_border.png
 %%DATADIR%%/resources/frames/rect/vframe.png
 %%DATADIR%%/resources/frames/roundrect/frame.png
+%%DATADIR%%/resources/frames/roundrect/highlight_border.png
 %%DATADIR%%/resources/frames/roundrect/vframe.png
 %%DATADIR%%/resources/frames/samples/background.png
 %%DATADIR%%/resources/frames/shadow & white/frame.png
@@ -80,25 +107,127 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/frames/slide/frame.png
 %%DATADIR%%/resources/frames/slide/info
 %%DATADIR%%/resources/frames/slide/vframe.png
+%%DATADIR%%/resources/frames/small.yellow/frame.png
+%%DATADIR%%/resources/frames/small.yellow/vframe.png
+%%DATADIR%%/resources/frames/small.yellow2/frame.png
+%%DATADIR%%/resources/frames/small.yellow2/vframe.png
+%%DATADIR%%/resources/frames/soft.frame/frame.png
+%%DATADIR%%/resources/frames/soft.frame/vframe.png
 %%DATADIR%%/resources/frames/stonerect/frame.png
 %%DATADIR%%/resources/frames/stonerect/vframe.png
+%%DATADIR%%/resources/frames/timber/frame.png
+%%DATADIR%%/resources/frames/timber/vframe.png
+%%DATADIR%%/resources/frames/timber2/frame.png
+%%DATADIR%%/resources/frames/timber2/vframe.png
 %%DATADIR%%/resources/gtkrc
-%%DATADIR%%/resources/icons/bombono-dvd_128px.png
-%%DATADIR%%/resources/icons/bombono-dvd_16px.png
-%%DATADIR%%/resources/icons/bombono-dvd_32px.png
-%%DATADIR%%/resources/icons/bombono-dvd_48px.png
-%%DATADIR%%/resources/icons/bombono-dvd_64px.png
+%%DATADIR%%/resources/icons/arrow.green.left.png
+%%DATADIR%%/resources/icons/arrow.green.right.png
+%%DATADIR%%/resources/icons/arrow.maroon.left.png
+%%DATADIR%%/resources/icons/arrow.maroon.right.png
+%%DATADIR%%/resources/icons/arrow.olive.left.png
+%%DATADIR%%/resources/icons/arrow.olive.right.png
+%%DATADIR%%/resources/icons/arrow.purple.left.png
+%%DATADIR%%/resources/icons/arrow.purple.right.png
+%%DATADIR%%/resources/icons/check.green.png
+%%DATADIR%%/resources/icons/check.maroon.png
+%%DATADIR%%/resources/icons/check.olive.png
+%%DATADIR%%/resources/icons/check.purple.png
+%%DATADIR%%/resources/icons/designator.green.left.png
+%%DATADIR%%/resources/icons/designator.green.right.png
+%%DATADIR%%/resources/icons/designator.maroon.left.png
+%%DATADIR%%/resources/icons/go-down.svg
+%%DATADIR%%/resources/icons/designator.maroon.right.png
+%%DATADIR%%/resources/icons/designator.olive.left.png
+%%DATADIR%%/resources/icons/designator.olive.right.png
+%%DATADIR%%/resources/icons/designator.purple.left.png
+%%DATADIR%%/resources/icons/designator.purple.right.png
+%%DATADIR%%/resources/icons/dialog-ok-apply.png
+%%DATADIR%%/resources/icons/dialog-ok.png
+%%DATADIR%%/resources/icons/diamond.green.png
+%%DATADIR%%/resources/icons/diamond.maroon.png
+%%DATADIR%%/resources/icons/diamond.olive.png
+%%DATADIR%%/resources/icons/diamond.purple.png
+%%DATADIR%%/resources/icons/go-bottom.svg
+%%DATADIR%%/resources/icons/go-first.png
+%%DATADIR%%/resources/icons/go-first.svg
+%%DATADIR%%/resources/icons/go-last.png
+%%DATADIR%%/resources/icons/go-last.svg
+%%DATADIR%%/resources/icons/go-next.png
+%%DATADIR%%/resources/icons/go-next.svg
+%%DATADIR%%/resources/icons/go-previous.png
+%%DATADIR%%/resources/icons/go-previous.svg
+%%DATADIR%%/resources/icons/go-top.svg
+%%DATADIR%%/resources/icons/go-up.svg
+%%DATADIR%%/resources/icons/help-about.svg
+%%DATADIR%%/resources/icons/hexagon.green.png
+%%DATADIR%%/resources/icons/hexagon.maroon.png
+%%DATADIR%%/resources/icons/hexagon.olive.png
+%%DATADIR%%/resources/icons/hexagon.purple.png
+%%DATADIR%%/resources/icons/hexagram.green.png
+%%DATADIR%%/resources/icons/hexagram.maroon.png
+%%DATADIR%%/resources/icons/hexagram.olive.png
+%%DATADIR%%/resources/icons/hexagram.purple.png
+%%DATADIR%%/resources/icons/media-optical.png
+%%DATADIR%%/resources/icons/media-record.svg
+%%DATADIR%%/resources/icons/media-seek-backward.svg
+%%DATADIR%%/resources/icons/media-seek-forward.svg
+%%DATADIR%%/resources/icons/media-skip-backward.svg
+%%DATADIR%%/resources/icons/oval.green.png
+%%DATADIR%%/resources/icons/media-skip-forward.svg
+%%DATADIR%%/resources/icons/oval.maroon.png
+%%DATADIR%%/resources/icons/oval.olive.png
+%%DATADIR%%/resources/icons/oval.purple.png
+%%DATADIR%%/resources/icons/pentagon.green.png
+%%DATADIR%%/resources/icons/pentagon.maroon.png
+%%DATADIR%%/resources/icons/pentagon.olive.png
+%%DATADIR%%/resources/icons/pentagon.purple.png
+%%DATADIR%%/resources/icons/pentagram.green.png
+%%DATADIR%%/resources/icons/pentagram.maroon.png
+%%DATADIR%%/resources/icons/pentagram.olive.png
+%%DATADIR%%/resources/icons/pentagram.purple.png
+%%DATADIR%%/resources/icons/pointer.green.left.png
+%%DATADIR%%/resources/icons/pointer.green.right.png
+%%DATADIR%%/resources/icons/pointer.maroon.left.png
+%%DATADIR%%/resources/icons/pointer.maroon.right.png
+%%DATADIR%%/resources/icons/pointer.olive.left.png
+%%DATADIR%%/resources/icons/pointer.olive.right.png
+%%DATADIR%%/resources/icons/pointer.purple.left.png
+%%DATADIR%%/resources/icons/pointer.purple.right.png
+%%DATADIR%%/resources/icons/quotes.green.left.png
+%%DATADIR%%/resources/icons/quotes.green.right.png
+%%DATADIR%%/resources/icons/quotes.maroon.left.png
+%%DATADIR%%/resources/icons/quotes.maroon.right.png
+%%DATADIR%%/resources/icons/quotes.olive.left.png
+%%DATADIR%%/resources/icons/quotes.olive.right.png
+%%DATADIR%%/resources/icons/quotes.purple.left.png
+%%DATADIR%%/resources/icons/quotes.right.png
+%%DATADIR%%/resources/icons/round.green.png
+%%DATADIR%%/resources/icons/round.maroon.png
+%%DATADIR%%/resources/icons/round.olive.png
+%%DATADIR%%/resources/icons/round.purple.png
+%%DATADIR%%/resources/icons/square.green.png
+%%DATADIR%%/resources/icons/square.maroon.png
+%%DATADIR%%/resources/icons/square.olive.png
+%%DATADIR%%/resources/icons/square.purple.png
+%%DATADIR%%/resources/icons/start-here.png
+%%DATADIR%%/resources/ihslist.lst
 %%DATADIR%%/resources/scons_authoring/ADVD.py
 %%DATADIR%%/resources/scons_authoring/README
 %%DATADIR%%/resources/scons_authoring/README-ru
 %%DATADIR%%/resources/scons_authoring/SConsTwin.py
 %%DATADIR%%/resources/scons_authoring/SConstruct
 %%DATADIR%%/resources/scons_authoring/menu_SConscript
+%%DATADIR%%/resources/splash-bmd.png
 %%DATADIR%%/resources/tool-pointer.png
 %%DATADIR%%/resources/tool-text.png
-share/pixmaps/bombono-dvd.png
+share/icons/hicolor/16x16/apps/bombono-dvd.png
+share/icons/hicolor/32x32/apps/bombono-dvd.png
+share/icons/hicolor/48x48/apps/bombono-dvd.png
+share/icons/hicolor/64x64/apps/bombono-dvd.png
+share/icons/hicolor/128x128/apps/bombono-dvd.png
 share/locale/cs/LC_MESSAGES/bombono-dvd.mo
 share/locale/da/LC_MESSAGES/bombono-dvd.mo
+share/locale/de/LC_MESSAGES/bombono-dvd.mo
 share/locale/es/LC_MESSAGES/bombono-dvd.mo
 share/locale/fi/LC_MESSAGES/bombono-dvd.mo
 share/locale/fr/LC_MESSAGES/bombono-dvd.mo
@@ -108,10 +237,30 @@ share/locale/ru/LC_MESSAGES/bombono-dvd.mo
 share/locale/sv/LC_MESSAGES/bombono-dvd.mo
 share/locale/uk/LC_MESSAGES/bombono-dvd.mo
 share/locale/vi/LC_MESSAGES/bombono-dvd.mo
+share/locale/zh/LC_MESSAGES/bombono-dvd.mo
+share/mime/packages/bombono.xml
+share/pixmaps/bombono-dvd.png
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/scons_authoring
 @dirrm %%DATADIR%%/resources/icons
+@dirrm %%DATADIR%%/resources/frames/timber2
+@dirrm %%DATADIR%%/resources/frames/timber
 @dirrm %%DATADIR%%/resources/frames/stonerect
+@dirrm %%DATADIR%%/resources/frames/soft.frame
+@dirrm %%DATADIR%%/resources/frames/small.yellow2
+@dirrm %%DATADIR%%/resources/frames/small.yellow
 @dirrm %%DATADIR%%/resources/frames/slide
 @dirrm %%DATADIR%%/resources/frames/shadow2
 @dirrm %%DATADIR%%/resources/frames/shadow
@@ -119,9 +268,17 @@ share/locale/vi/LC_MESSAGES/bombono-dvd.mo
 @dirrm %%DATADIR%%/resources/frames/samples
 @dirrm %%DATADIR%%/resources/frames/roundrect
 @dirrm %%DATADIR%%/resources/frames/rect
+@dirrm %%DATADIR%%/resources/frames/pop.yellow
+@dirrm %%DATADIR%%/resources/frames/pop.red
+@dirrm %%DATADIR%%/resources/frames/pop.mint
+@dirrm %%DATADIR%%/resources/frames/pop.dark
+@dirrm %%DATADIR%%/resources/frames/pop.blue
 @dirrm %%DATADIR%%/resources/frames/oval
 @dirrm %%DATADIR%%/resources/frames/ogradient
 @dirrm %%DATADIR%%/resources/frames/gradient
+@dirrm %%DATADIR%%/resources/frames/flourish
+@dirrm %%DATADIR%%/resources/frames/classic
+@dirrm %%DATADIR%%/resources/frames/classic.old
 @dirrm %%DATADIR%%/resources/frames/cell
 @dirrm %%DATADIR%%/resources/frames
 @dirrm %%DATADIR%%/resources/emblems/tmp
@@ -129,5 +286,6 @@ share/locale/vi/LC_MESSAGES/bombono-dvd.mo
 @dirrm %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen
 @dirrm %%DATADIR%%/resources/copy-n-paste
 @dirrm %%DATADIR%%/resources/button
+@dirrm %%DATADIR%%/resources/bmd-icons
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
