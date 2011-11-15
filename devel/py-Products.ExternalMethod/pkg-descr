@@ -1,0 +1,4 @@
+This package provides support for external Python methods
+within a Zope 2 environment.
+
+WWW: http://pypi.python.org/pypi/Products.ExternalMethod
