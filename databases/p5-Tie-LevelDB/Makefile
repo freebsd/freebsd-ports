@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tie-LevelDB
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +24,9 @@ MAN3=		Tie::LevelDB.3
 post-patch:
 	@${REINPLACE_CMD} -e '/build_detect_platform/d' \
 		-e 's|build_config.mk|${LOCALBASE}/share/leveldb/&|' \
-		-e '/LIBS/ s|\[\(.*\)\]|["-L${LOCALBASE}/lib -lleveldb " . (\1)]|' \
 		-e '/OBJECT/ s|".*\(LevelDB\.o\).*"|"\1"|' \
+		-e '/INC/ s|-I|-I${LOCALBASE}/include &|' \
+		-e '/LIBS/ s|\[\(.*\)\]|["-L${LOCALBASE}/lib -lleveldb " . (\1)]|' \
 			${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
