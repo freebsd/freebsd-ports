@@ -25,6 +25,8 @@ MASTER_SITES?=	${MASTER_CRAN_SITES}
 .if defined(USE_R_MOD)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 RUN_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
+
+PKGNAMEPREFIX?=	R-cran-
 .endif
 
 R_MOD_DIR?=	lib/R/library/${PORTNAME}
