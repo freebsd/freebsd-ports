@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal7
-PORTVERSION=	7.7
+PORTVERSION=	7.9
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -14,6 +14,9 @@ DIST_SUBDIR=	drupal
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A database driven web content management system (CMS)
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_DRUPAL=	yes
 DRUPAL_PORT=	yes

@@ -444,6 +444,7 @@
 %%DRUPAL_BASE%%/modules/locale/locale.module
 %%DRUPAL_BASE%%/modules/locale/locale.test
 %%DRUPAL_BASE%%/modules/locale/tests/locale_test.info
+%%DRUPAL_BASE%%/modules/locale/tests/locale_test.js
 %%DRUPAL_BASE%%/modules/locale/tests/locale_test.module
 %%DRUPAL_BASE%%/modules/locale/tests/translations/test.xx.po
 %%DRUPAL_BASE%%/modules/menu/menu.admin.inc
@@ -457,7 +458,6 @@
 %%DRUPAL_BASE%%/modules/menu/menu.test
 %%DRUPAL_BASE%%/modules/node/content_types.inc
 %%DRUPAL_BASE%%/modules/node/content_types.js
-%%DRUPAL_BASE%%/modules/node/node-rtl.css
 %%DRUPAL_BASE%%/modules/node/node.admin.inc
 %%DRUPAL_BASE%%/modules/node/node.api.php
 %%DRUPAL_BASE%%/modules/node/node.css
@@ -492,8 +492,10 @@
 %%DRUPAL_BASE%%/modules/openid/tests/openid_test.module
 %%DRUPAL_BASE%%/modules/overlay/images/background.png
 %%DRUPAL_BASE%%/modules/overlay/images/close.png
+%%DRUPAL_BASE%%/modules/overlay/images/close-rtl.png
 %%DRUPAL_BASE%%/modules/overlay/overlay-child.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-child.js
+%%DRUPAL_BASE%%/modules/overlay/overlay-child-rtl.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-parent.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-parent.js
 %%DRUPAL_BASE%%/modules/overlay/overlay.api.php
@@ -713,6 +715,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.forum.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.locale.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.menu.database.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.translatable.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.upload.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-no-password-token.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-password-token.database.php
@@ -725,8 +728,11 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.poll.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.taxonomy.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.translatable.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.upload.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.user.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.module
@@ -971,13 +977,16 @@
 %%DRUPAL_BASE%%/themes/seven/images/fc-rtl.png
 %%DRUPAL_BASE%%/themes/seven/images/fc.png
 %%DRUPAL_BASE%%/themes/seven/images/list-item.png
+%%DRUPAL_BASE%%/themes/seven/images/list-item-rtl.png
 %%DRUPAL_BASE%%/themes/seven/images/task-check.png
 %%DRUPAL_BASE%%/themes/seven/images/task-item.png
+%%DRUPAL_BASE%%/themes/seven/images/task-item-rtl.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-222222-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-454545-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-800000-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-888888-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-ffffff-256x240.png
+%%DRUPAL_BASE%%/themes/seven/ie7.css
 %%DRUPAL_BASE%%/themes/seven/jquery.ui.theme.css
 %%DRUPAL_BASE%%/themes/seven/logo.png
 %%DRUPAL_BASE%%/themes/seven/maintenance-page.tpl.php
