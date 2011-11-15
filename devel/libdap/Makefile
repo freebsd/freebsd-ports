@@ -20,9 +20,11 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-zlib=/usr
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
