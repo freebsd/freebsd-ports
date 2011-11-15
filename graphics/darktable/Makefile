@@ -100,6 +100,11 @@ CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
 
 post-patch:
+# FreeBSD 7.X does not have dprintf()
+.if ${OSVERSION} < 800071
+	@${REINPLACE_CMD} -e '80s,APPLE,${OPSYS}, ; /va_start/s,&,,' \
+		${WRKSRC}/src/common/darktable.c
+.endif
 # Do not install useless (to end-user) documentation files
 	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/doc/CMakeLists.txt
 # Respect CFLAGS for release builds; remove `-g' from common CFLAGS which
