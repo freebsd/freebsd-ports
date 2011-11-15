@@ -3172,6 +3172,7 @@
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
     SUBDIR += py-sip
+    SUBDIR += py-six
     SUBDIR += py-smmap
     SUBDIR += py-spark
     SUBDIR += py-speaklater
