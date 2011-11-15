@@ -1,20 +1,16 @@
---- icmake/library.orig	2007-11-13 14:48:17.000000000 +0100
-+++ icmake/library	2009-03-06 10:26:55.000000000 +0100
-@@ -120,6 +120,7 @@
+--- icmake/library.orig	2011-06-24 21:19:38.000000000 +0200
++++ icmake/library	2011-11-14 20:54:40.000000000 +0100
+@@ -151,11 +151,13 @@
      int idx;
      string compiler;
      string file;
 +    string objDir;
  
-     compiler = COMPILER;
- 
-@@ -128,8 +129,9 @@
-     #endif
- 
-     compiler +=  " -c -o " + srcDir + "/o/" + (string)prefix;
-+    objDir = srcDir + "/o";
+     compiler = COMPILER + " -Wall --std=c++0x -c -o " + 
+                                 srcDir + "/o/" + (string)prefix;
  
 -    md(srcDir + "/o");
++    objDir = srcDir + "/o";
 +    md(objDir);
  
      for (idx = sizeof(cfiles); idx--; )

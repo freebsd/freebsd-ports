@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bisoncpp
-PORTVERSION=	2.9.1
+PORTVERSION=	2.09.03
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}
@@ -15,10 +15,11 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	LALR(1) parser generator that generates C++ classes
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=3.0:${PORTSDIR}/textproc/yodl \
-		libbobcat>=2.09:${PORTSDIR}/devel/libbobcat \
-		g++45:${PORTSDIR}/lang/gcc45
+		libbobcat>=2.18:${PORTSDIR}/devel/libbobcat
 
 .if !defined(NO_INSTALL_MANPAGES)
 MANCOMPRESSED=	yes
@@ -32,12 +33,14 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
+USE_GCC=	4.6
+
 post-patch:
 	@${REINPLACE_CMD} 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/bisonc++"|"/share/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/bisonc++"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/man/man1"|"/man/man1"| ; \
-		s|"g++-4.5"|"g++45"|' \
+		s|"g++"|"g++46"|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake|' \
 		${WRKSRC}/build \

@@ -1,5 +1,5 @@
---- icmake/install.orig	2009-07-07 16:12:30.000000000 +0200
-+++ icmake/install	2009-11-02 13:23:44.000000000 +0100
+--- icmake/install.orig	2010-03-08 20:11:17.000000000 +0100
++++ icmake/install	2011-11-15 14:32:41.000000000 +0100
 @@ -12,10 +12,6 @@
          printf("  installing the skeleton files\n");
          md(where + SKEL);
