@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	racket
-PORTVERSION=	5.1.3
-PORTREVISION=	1
+PORTVERSION=	5.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/racket/ \
