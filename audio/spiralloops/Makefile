@@ -17,8 +17,6 @@ COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		does not compile
-
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes
@@ -40,6 +38,10 @@ post-patch:
 		s:-lm:${PTHREAD_LIBS} -lm:g; \
 		s:/usr/X11R6:${LOCALBASE}:g" \
 		< ${WRKSRC}/Makefile.in.orig > ${WRKSRC}/Makefile.in
+
+	@${FIND} ${WRKSRC} -type f -name "*.C" -o -name "*.cpp" -o -name "*.h" | ${XARGS} \
+	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
+	   s|fl_file_chooser.H|Fl_File_Chooser.H|g'
 
 pre-install:
 	${ECHO_CMD} bin/SpiralLoops > ${PLIST}
