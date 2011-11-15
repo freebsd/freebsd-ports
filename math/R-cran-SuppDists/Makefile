@@ -12,7 +12,6 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_CRAN_SITES} \
 		http://r.research.att.com/benchmarks/:benchmark \
 		LOCAL/bf:benchmark
-PKGNAMEPREFIX=	R-cran-
 DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${BENCHMARK_SCRIPT}:benchmark
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
