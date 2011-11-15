@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	devise
-PORTVERSION=	1.4.9
+PORTVERSION=	1.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
