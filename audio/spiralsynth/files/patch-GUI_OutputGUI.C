@@ -1,8 +1,15 @@
-$FreeBSD$
-
---- GUI/OutputGUI.C.orig	Sun Nov 26 15:52:39 2000
-+++ GUI/OutputGUI.C	Mon Feb  9 12:10:10 2004
-@@ -26,8 +26,10 @@ OutputGUI::OutputGUI(Output *o)
+--- GUI/OutputGUI.C.orig	2000-11-26 16:52:39.000000000 +0100
++++ GUI/OutputGUI.C	2011-11-15 14:11:31.000000000 +0100
+@@ -18,7 +18,7 @@
+ 
+ #include "OutputGUI.h"
+ 
+-#include <FL/fl_file_chooser.h>
++#include <FL/Fl_File_Chooser.H>
+ 
+ OutputGUI::OutputGUI(Output *o)
+ {
+@@ -26,8 +26,10 @@
  	if (!m_out) cerr<<"WARNING: Output not correctly set up"<<endl;
  }
  		
