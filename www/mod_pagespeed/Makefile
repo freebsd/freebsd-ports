@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	20111031
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	swills
@@ -22,6 +23,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		flock:${PORTSDIR}/sysutils/flock
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		icutu.48:${PORTSDIR}/devel/icu \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_XZ=		yes
@@ -39,10 +41,12 @@ GYP_DEFINES+=	\
 		use_system_libjpeg=1 \
 		use_system_libpng=1 \
 		use_system_zlib=1 \
+		use_system_icu=1 \
 		system_include_path_httpd=${LOCALBASE}/include/apache22 \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
 		system_include_path_execinfo=${LOCALBASE}/include \
+		system_include_path_icu=${LOCALBASE}/include \
 		include_dirs=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
