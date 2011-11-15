@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdiscount
-PORTVERSION=	1.3.5
+PORTVERSION=	1.6.8
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
