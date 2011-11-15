@@ -2954,6 +2954,7 @@
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
+    SUBDIR += py-Products.BTreeFolder2
     SUBDIR += py-Products.OFSP
     SUBDIR += py-Products.ZCTextIndex
     SUBDIR += py-Products.ZCatalog
