@@ -29,8 +29,6 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xpm
 
-BROKEN=		does not compile
-
 MAN1=		cinepaint.1 cinepainttool.1
 
 PLIST_SUB=	VER=${PORTVERSION}-1
@@ -68,5 +66,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|static GDrawableType|static GImageType|' \
 		${WRKSRC}/plug-ins/psd/psd.c
+
+	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.cpp" -o -name "*.cxx" -o -name "*.h" | ${XARGS} \
+	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
+	   s|fl_file_chooser.H|Fl_File_Chooser.H|g; s|#include <Fl|#include <FL|g; s|<FL/gl.H>|<FL/gl.h>|'
 
 .include <bsd.port.post.mk>
