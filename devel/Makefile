@@ -3233,6 +3233,7 @@
     SUBDIR += py-zope.browsermenu
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
+    SUBDIR += py-zope.container
     SUBDIR += py-zope.contenttype
     SUBDIR += py-zope.copy
     SUBDIR += py-zope.datetime
