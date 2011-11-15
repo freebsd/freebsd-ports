@@ -17,8 +17,6 @@ COMMENT=	Technical analysis program for financial instruments
 LIB_DEPENDS=	ptypes.21:${PORTSDIR}/devel/ptypes \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		does not compile
-
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	Makefile.linux
 USE_XORG=	x11 xpm
@@ -38,6 +36,8 @@ post-patch:
 	    ${WRKSRC}/xtrader/src/Resource.h
 	${REINPLACE_CMD} -e 's|int(data)|(unsigned long)data|' \
 	    ${WRKSRC}/xtrader/src/gui/XTrader.h
+	${FIND} ${WRKSRC} -type f -name "*.cpp" -o -name "*.h" | ${XARGS} \
+	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; s|fl_file_chooser|Fl_File_Chooser|g'
 
 do-install:
 	@${MKDIR} ${DATADIR}
