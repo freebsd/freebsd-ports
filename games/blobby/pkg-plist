@@ -7,6 +7,7 @@ bin/blobby-server
 %%DATADIR%%/lang_de.xml
 %%DATADIR%%/lang_en.xml
 %%DATADIR%%/lang_fr.xml
+%%DATADIR%%/rules.lua
 %%DATADIR%%/scripts.zip
 %%DATADIR%%/server.xml
 %%DATADIR%%/sounds.zip
