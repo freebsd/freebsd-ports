@@ -6,8 +6,7 @@
 
 PORTNAME=	prolog
 PORTVERSION=	0.1
-PORTREVISION=	2
-PORTREVSION=	1
+PORTREVISION=	3
 CATEGORIES=	lang python
 MASTER_SITES=	SF/py${PORTNAME}/PyProlog/PyProlog-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +15,11 @@ DISTNAME=	PyProlog-${PORTVERSION}
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	A Python extension embedding SWI-Prolog
 
-BUILD_DEPENDS=	pl:${PORTSDIR}/lang/swi-pl
-RUN_DEPENDS=	pl:${PORTSDIR}/lang/swi-pl
+BUILD_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
+RUN_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyProlog
 
 .include <bsd.port.pre.mk>

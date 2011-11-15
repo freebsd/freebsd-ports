@@ -1,14 +1,14 @@
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.py
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.py
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.py
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyprolog/swiplmodule.so
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyprolog
+%%PYTHON_SITELIBDIR%%/pyprolog/Program.py
+%%PYTHON_SITELIBDIR%%/pyprolog/Program.pyc
+%%PYTHON_SITELIBDIR%%/pyprolog/Program.pyo
+%%PYTHON_SITELIBDIR%%/pyprolog/Term.py
+%%PYTHON_SITELIBDIR%%/pyprolog/Term.pyc
+%%PYTHON_SITELIBDIR%%/pyprolog/Term.pyo
+%%PYTHON_SITELIBDIR%%/pyprolog/__init__.py
+%%PYTHON_SITELIBDIR%%/pyprolog/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyprolog/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyprolog/string_source.py
+%%PYTHON_SITELIBDIR%%/pyprolog/string_source.pyc
+%%PYTHON_SITELIBDIR%%/pyprolog/string_source.pyo
+%%PYTHON_SITELIBDIR%%/pyprolog/swiplmodule.so
+@dirrm %%PYTHON_SITELIBDIR%%/pyprolog
