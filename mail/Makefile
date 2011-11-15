@@ -541,6 +541,7 @@
     SUBDIR += py-spf
     SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
+    SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
     SUBDIR += pysieved
     SUBDIR += pyzor
