@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope.schema
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,13 @@ COMMENT=	Zope Interface extension for defining data schemas
 
 LICENSE=	ZPL21
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:${PORTSDIR}/devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.event
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
+DIST_SUBDIR=	zope
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
