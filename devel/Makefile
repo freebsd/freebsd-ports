@@ -2956,6 +2956,7 @@
     SUBDIR += py-Persistence
     SUBDIR += py-Products.BTreeFolder2
     SUBDIR += py-Products.ExternalMethod
+    SUBDIR += py-Products.MIMETools
     SUBDIR += py-Products.OFSP
     SUBDIR += py-Products.ZCTextIndex
     SUBDIR += py-Products.ZCatalog
