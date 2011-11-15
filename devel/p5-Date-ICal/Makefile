@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date-ICal
-PORTVERSION=	1.72
+PORTVERSION=	2.678
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for ICalendar date objects
 
-BUILD_DEPENDS=	${SITE_PERL}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PORTSCOUT=	skipv:1.366
+BUILD_DEPENDS=	p5-Date-Leapyear>=1.03:${PORTSDIR}/devel/p5-Date-Leapyear
+RUN_DEPENDS=	p5-Date-Leapyear>=1.03:${PORTSDIR}/devel/p5-Date-Leapyear
 
 PERL_CONFIGURE=	yes
 
