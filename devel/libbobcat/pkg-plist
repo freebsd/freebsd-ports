@@ -1,12 +1,13 @@
 @comment $FreeBSD$
-bin/bobcatlcgen
 include/bobcat/a2x
 include/bobcat/align
 include/bobcat/arg
 include/bobcat/argconfig
 include/bobcat/autoptr
 include/bobcat/bigint
+include/bobcat/binops
 include/bobcat/cgi
+include/bobcat/cidr
 include/bobcat/clientsocket
 include/bobcat/cmdfinder
 include/bobcat/cmdfinderbase
@@ -37,6 +38,7 @@ include/bobcat/inetaddress
 include/bobcat/iostream
 include/bobcat/iostreambuf
 include/bobcat/irandstream
+include/bobcat/iuo
 include/bobcat/lc
 include/bobcat/level
 include/bobcat/localclientsocket
@@ -72,6 +74,7 @@ include/bobcat/serversocket
 include/bobcat/socketbase
 include/bobcat/stat
 include/bobcat/string
+include/bobcat/stringline
 include/bobcat/syslogbuf
 include/bobcat/syslogstream
 include/bobcat/table

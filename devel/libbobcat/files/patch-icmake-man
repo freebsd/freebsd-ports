@@ -1,5 +1,5 @@
---- icmake/man.orig	2010-02-15 09:46:25.000000000 +0100
-+++ icmake/man	2010-04-05 22:04:11.000000000 +0200
+--- icmake/man.orig	2011-05-25 13:00:10.000000000 +0200
++++ icmake/man	2011-11-14 20:36:27.000000000 +0100
 @@ -9,7 +9,10 @@
  
      special(0, 0);
@@ -12,18 +12,7 @@
  
      chdir("documentation/man");
  
-@@ -27,8 +30,10 @@
-     {
-         run("yodl2man  --no-warnings -o ../../tmp/man/man1/bobcatlcgen.1 "
-                                                             "bobcatlcgen.yo");
-+#ifdef MANHTML
-         run("yodl2html --no-warnings -o ../../tmp/manhtml/bobcatlcgen.1.html "
-                                                             "bobcatlcgen.yo");
-+#endif
-     }
- 
-     yo = makelist("*.yo") - (list)"bobcat.yo" -  (list)"bobcatlcgen.yo";
-@@ -43,8 +48,10 @@
+@@ -35,8 +38,10 @@
      
              run("yodl2man  --no-warnings -r 15000 -o ../../tmp/man/man3/" + 
                                                      base + ".3bobcat " + yodl);
@@ -34,7 +23,7 @@
          }
      }
  
-@@ -52,8 +59,10 @@
+@@ -44,8 +49,10 @@
      {
          run("yodl2man  --no-warnings  -r 15000 -o ../../tmp/man/man7/bobcat.7 "
                                                                  "bobcat.yo");
