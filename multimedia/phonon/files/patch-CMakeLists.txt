@@ -1,0 +1,30 @@
+commit 353bf15657c9a93138bce7431c5180b25efaede7
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Nov 14 19:14:02 2011 -0200
+
+    Fix if() clause the same way 13ec1718 does.
+    
+    QT_QTDESIGNER_FOUND should not be expanded, as if it is not found the if
+    clause will effectively become `if(AND PHONON_BUILD_DESIGNER_PLUGIN)`.
+    
+    This was fixed in master by commit 13ec1718, which for some reason has
+    never made its way to the 4.5 branch.
+    
+    CCMAIL: kde-multimedia@kde.org
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7fbb816..71cb14a 100644
+--- ./CMakeLists.txt
++++ ./CMakeLists.txt
+@@ -55,9 +55,9 @@ endif(QT_QTDBUS_FOUND)
+ set(BUILDSYSTEM_INSTALL_DIR ${SHARE_INSTALL_PREFIX}/phonon-buildsystem/)
+ 
+ add_subdirectory(cmake)
+-if(${QT_QTDESIGNER_FOUND} AND PHONON_BUILD_DESIGNER_PLUGIN)
++if(QT_QTDESIGNER_FOUND AND PHONON_BUILD_DESIGNER_PLUGIN)
+     add_subdirectory(designer)
+-endif(${QT_QTDESIGNER_FOUND} AND PHONON_BUILD_DESIGNER_PLUGIN)
++endif(QT_QTDESIGNER_FOUND AND PHONON_BUILD_DESIGNER_PLUGIN)
+ add_subdirectory(phonon)
+ add_subdirectory(includes)
+ if(PHONON_BUILD_DEMOS)
