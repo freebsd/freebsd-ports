@@ -1,0 +1,5 @@
+This package provides an implementation of browser resources.
+It also provides directives for defining those resources using
+ZCML.
+
+WWW: http://pypi.python.org/pypi/zope.browserresource
