@@ -2955,6 +2955,7 @@
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
     SUBDIR += py-Products.OFSP
+    SUBDIR += py-Products.ZCTextIndex
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
