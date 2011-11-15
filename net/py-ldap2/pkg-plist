@@ -84,6 +84,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/schema/tokenizer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/schema/tokenizer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/schema/tokenizer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/syncrepl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/syncrepl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/syncrepl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldapurl.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldapurl.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldapurl.pyo
