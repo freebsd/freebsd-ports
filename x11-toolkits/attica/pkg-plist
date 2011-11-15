@@ -1,4 +1,5 @@
 include/attica/accountbalance.h
+include/attica/achievement.h
 include/attica/activity.h
 include/attica/atticabasejob.h
 include/attica/atticaclient_export.h
@@ -10,12 +11,14 @@ include/attica/category.h
 include/attica/comment.h
 include/attica/commentparser.h
 include/attica/content.h
+include/attica/deletejob.h
 include/attica/distribution.h
 include/attica/distributionparser.h
 include/attica/downloaddescription.h
 include/attica/downloaditem.h
 include/attica/event.h
 include/attica/folder.h
+include/attica/forum.h
 include/attica/getjob.h
 include/attica/homepageentry.h
 include/attica/homepagetype.h
@@ -29,6 +32,7 @@ include/attica/message.h
 include/attica/metadata.h
 include/attica/person.h
 include/attica/platformdependent.h
+include/attica/platformdependent_v2.h
 include/attica/postjob.h
 include/attica/privatedata.h
 include/attica/project.h
@@ -36,10 +40,12 @@ include/attica/provider.h
 include/attica/providermanager.h
 include/attica/publisher.h
 include/attica/publisherfield.h
+include/attica/putjob.h
 include/attica/remoteaccount.h
+include/attica/topic.h
 include/attica/version.h
 lib/libattica.so
 lib/libattica.so.0
-lib/libattica.so.0.2.2
+lib/libattica.so.0.2.9
 libdata/pkgconfig/libattica.pc
 @dirrmtry include/attica
