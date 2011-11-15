@@ -3232,6 +3232,7 @@
     SUBDIR += py-zope.browser
     SUBDIR += py-zope.browsermenu
     SUBDIR += py-zope.browserpage
+    SUBDIR += py-zope.browserresource
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.container
