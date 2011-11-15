@@ -1,5 +1,5 @@
---- go-pear.orig	2010-08-05 23:26:55.000000000 +0200
-+++ go-pear	2010-08-13 15:05:29.753811744 +0200
+--- go-pear.orig	2011-11-06 20:54:16.000000000 +0100
++++ go-pear	2011-11-15 08:46:12.988647172 +0100
 @@ -116,7 +116,7 @@
  );
  
@@ -110,16 +110,21 @@
      }
      include_once 'PEAR.php';
      print "ok\n";
-@@ -750,7 +751,7 @@
- if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
-     $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
- } else {
+@@ -747,12 +748,7 @@
+ include_once "PEAR/Command.php";
+ include_once "PEAR/Registry.php";
+ 
+-if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
+-    $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
+-} else {
 -    $config = &PEAR_Config::singleton();
-+    $config = &PEAR_Config::singleton($prefix."/etc/pear.conf", '');
- }
+-}
+-
++$config = &PEAR_Config::singleton($prefix."/etc/pear.conf.sample", '');
  
- 
-@@ -821,7 +822,7 @@
+ $config->set('preferred_state', 'stable');
+ foreach ($config_vars as $var) {
+@@ -821,7 +817,7 @@
  
  
  // Base installation finished
@@ -128,7 +133,7 @@
  ini_restore("include_path");
  
  if (!WEBINSTALLER) {
-@@ -980,6 +981,7 @@
+@@ -980,6 +976,7 @@
  if (WINDOWS && !WEBINSTALLER) {
      win32CreateRegEnv();
  }
@@ -136,7 +141,7 @@
  // Set of functions following
  /**
   * Parse the given dirname
-@@ -1418,19 +1420,17 @@
+@@ -1418,19 +1415,17 @@
          }
      } else {
          if ($_prefix === null) {
@@ -161,7 +166,7 @@
          // check if the user has installed PHP with PHP or GNU layout
          if (@is_dir("$prefix/lib/php/.registry")) {
              $php_dir = '$prefix/lib/php';
-@@ -1442,6 +1442,7 @@
+@@ -1442,6 +1437,7 @@
          } elseif (@is_dir("$prefix/share/php/.registry")) {
              $php_dir = '$prefix/share/php';
          }
