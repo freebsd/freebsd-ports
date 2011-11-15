@@ -1,14 +1,11 @@
---- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ lang/afnix/files/patch-cnf_bin_afnix-setup	13 Nov 2011 18:39:34 -0000
-@@ -0,0 +1,11 @@
-+--- cnf/bin/afnix-setup~
-++++ cnf/bin/afnix-setup
-+@@ -310,7 +310,7 @@ do
-+     --altdir=*)    altdir="$argopt";;
-+     --sdkdir)      preopt=sdkdir;;
-+     --sdkdir=*)    sdkdir="$argopt";;
-+-    --compiler)    preopt=compiler;;
-++    --compiler)    preopt=ccname;;
-+     --compiler=*)  ccname="$argopt";;
-+     --proctype)    preopt=proctype;;
-+     --proctype=*)  proctype="$argopt";;
+--- cnf/bin/afnix-setup.orig
++++ cnf/bin/afnix-setup
+@@ -310,7 +310,7 @@ do
+     --altdir=*)    altdir="$argopt";;
+     --sdkdir)      preopt=sdkdir;;
+     --sdkdir=*)    sdkdir="$argopt";;
+-    --compiler)    preopt=compiler;;
++    --compiler)    preopt=ccname;;
+     --compiler=*)  ccname="$argopt";;
+     --proctype)    preopt=proctype;;
+     --proctype=*)  proctype="$argopt";;
