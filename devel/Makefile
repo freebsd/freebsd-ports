@@ -3250,6 +3250,7 @@
     SUBDIR += py-zope.sequencesort
     SUBDIR += py-zope.size
     SUBDIR += py-zope.testing
+    SUBDIR += py-zope.traversing
     SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount
