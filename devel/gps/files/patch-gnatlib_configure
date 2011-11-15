@@ -1,0 +1,22 @@
+--- gnatlib/configure.orig	2010-10-14 12:02:43.000000000 +0200
++++ gnatlib/configure	2011-10-11 03:07:02.000000000 +0200
+@@ -3501,6 +3501,9 @@
+           *-darwin* )
+              PYTHON_LIBS="-ldl -lm ${PYTHON_LIBS}"
+              ;;
++          *-freebsd* | *-dragonfly* | *-netbsd* | *-openbsd* )
++             PYTHON_LIBS="-lm -lutil ${PYTHON_LIBS}"
++             ;;
+           x86_64-*-* )
+              PYTHON_LIBS="-Wl,-export-dynamic -lm -ldl ${PYTHON_LIBS}"
+              ;;
+@@ -3509,9 +3512,6 @@
+              ;;
+           i[3456]86-*win32* | i[3456]86-*mingw32* | i[3456]86-*cygwin* )
+              ;;
+-          *-freebsd* )
+-             PYTHON_LIBS="-lm -lutil ${PYTHON_LIBS}"
+-             ;;
+       esac
+ 
+       if test -f ${PYTHON_DIR}/libpython${PYTHON_VERSION}.a ; then

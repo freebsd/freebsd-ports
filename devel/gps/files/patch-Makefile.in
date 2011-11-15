@@ -1,6 +1,39 @@
---- Makefile.in.orig	2010-12-04 07:21:32.000000000 +0100
-+++ Makefile.in	2010-12-14 17:31:51.000000000 +0100
-@@ -42,11 +42,6 @@
+--- Makefile.in.orig	2010-09-24 10:51:03.000000000 +0200
++++ Makefile.in	2011-10-11 17:59:53.000000000 +0200
+@@ -11,10 +11,12 @@
+ prefix          = @prefix@
+ bindir          = $(prefix)/bin
+ sharedir        = $(prefix)/share
++docdir          = $(prefix)/share/doc/gps
+ examplesdir     = $(prefix)/share/examples/gps
+ 
+ default:
+ 	$(MAKE) -C gps $@
++	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > share/plug-ins/gnat_switches.py
+ 
+ clean:
+ 	$(MAKE) -C gps $@
+@@ -24,12 +26,13 @@
+ 	(cd scripts; ./testsuites clean)
+ 
+ install-common:
+-	$(MKDIR) $(bindir)
+-	$(MKDIR) $(sharedir)
+-	$(MKDIR) $(examplesdir)
+-	$(MKDIR) $(sharedir)/gps
+-	$(MKDIR) $(sharedir)/gps/docgen2
+-	$(MKDIR) $(sharedir)/gps/aunit
++	$(MKDIR) $(DESTDIR)$(bindir)
++	$(MKDIR) $(DESTDIR)$(sharedir)
++	$(MKDIR) $(DESTDIR)$(docdir)
++	$(MKDIR) $(DESTDIR)$(examplesdir)
++	$(MKDIR) $(DESTDIR)$(sharedir)/gps
++	$(MKDIR) $(DESTDIR)$(sharedir)/gps/docgen2
++	$(MKDIR) $(DESTDIR)$(sharedir)/gps/aunit
+ ifeq ($(OS),Windows_NT)
+ # On Windows we distribute two versions of subversion.xml, one that
+ # supports Cygwin/Subversion and one for native Subversion.
+@@ -42,45 +45,40 @@
  		share/plug-ins/_subversion_ \
  		> share/plug-ins/subversion_native_windows.xml
  endif
@@ -11,4 +44,68 @@
 -	$(RMDIR) $(sharedir)/gps/templates
  # update runtime.xml before copying the plug-ins files.
  	(cd distrib; $(PERL) from_impunit.pl)
- 	(cd share; tar cf - plug-ins/*.xml) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - plug-ins/*.xml) | (cd $(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/*.xml) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
+ ifeq ($(OS),Windows_NT)
+ # Clean-up changes made above for Windows.
+ 	$(MV) share/plug-ins/_subversion_ share/plug-ins/subversion.xml
+ 	$(RM) share/plug-ins/subversion_native_windows.xml
+ endif
+-	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/plug-ins/gnat_switches.py
+-	(cd share; tar cf - plug-ins/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - plug-ins/gps_utils/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - plug-ins/spark/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - plug-ins/*.png) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - plug-ins/images/*.png) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - library/*.xml) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - library/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - library/pygps/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	$(RM) $(sharedir)/gps/plug-ins/emacs.xml
+-	(cd share; tar cf - icons/)  | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - templates/)  | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - *.*)  | (cd $(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/*.py*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/gps_utils/*.py*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/spark/*.py*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/*.png) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - plug-ins/images/*.png) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - library/*.xml) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - library/*.py*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - library/pygps/*.py*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	$(RM) $(DESTDIR)$(sharedir)/gps/plug-ins/emacs.xml
++	(cd share; tar cf - icons/) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - templates/) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
++	(cd share; tar cf - *.*) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
+ 	(cd docgen2/resources; tar cf - *.tmpl custom/*.css support/*.css support/*.js support/images/*.png) \
+-		| (cd $(sharedir)/gps/docgen2; tar xf -)
++		| (cd $(DESTDIR)$(sharedir)/gps/docgen2; tar xf -)
+ 	(cd aunit/templates; tar cf - *.tmpl) \
+-		| (cd $(sharedir)/gps/aunit; tar xf -)
+-	$(MAKE) -C docs install
+-	(cd examples; tar cf - --exclude .svn . ) | (cd $(examplesdir); tar xf -)
++		| (cd $(DESTDIR)$(sharedir)/gps/aunit; tar xf -)
++	${INSTALL} docs/gps-splash.png $(DESTDIR)$(sharedir)/gps
++	(cd docs; tar -cf - html/) | (cd $(DESTDIR)$(docdir); tar xf -)  
++	(cd examples; tar cf - --exclude .svn . ) | (cd $(DESTDIR)$(examplesdir); tar xf -)
+ 
+ install: install-common
+ ifeq ($(OS),Windows_NT)
+ 	$(INSTALL_PROGRAM) gps/obj/gps.exe $(bindir)
+ 	$(MAKE) -C common/expect install
+ else
+-	$(INSTALL_PROGRAM) gps/obj/gps $(bindir)
++	$(INSTALL_PROGRAM) gps/obj/gps $(DESTDIR)$(bindir)
+ endif
+ 
+ install-strip: install-common
+@@ -89,8 +87,8 @@
+ 	$(INSTALL_PROGRAM) distrib/gps_run.cmd $(bindir)
+ 	$(MAKE) -C common/expect install-strip
+ else
+-	$(INSTALL_PROGRAM) -s gps/obj/gps $(bindir)/gps_exe
+-	$(INSTALL_PROGRAM) distrib/.gps_wrapper $(bindir)/gps
++	$(INSTALL_PROGRAM) -s gps/obj/gps $(DESTDIR)$(bindir)/gps_exe
++	$(INSTALL_PROGRAM) distrib/.gps_wrapper $(DESTDIR)$(bindir)/gps
+ endif
+ 
+ test: force
