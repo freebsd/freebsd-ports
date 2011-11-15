@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of UNIX utilities written in x86 assembly language
+COMMENT=	A set of Unix utilities written in x86 assembly language
 
 LICENSE=	GPLv2
 
