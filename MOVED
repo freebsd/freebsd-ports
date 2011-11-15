@@ -3010,3 +3010,5 @@ lang/open-cobol-devel||2011-11-09|Has expired: No activity since 2007
 databases/py-axiom||2011-11-11|Has expired: Distfile missing, runtime broken. Use databases/py-sqlobject instead
 sysutils/duplicity-devel||2011-11-12|Much older than current version, use sysutils/duplicity instead
 security/libfwbuilder-devel||2011-11-14|libfwbuilder-devel merged into fwbuilder-devel
+russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
+russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
