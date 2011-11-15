@@ -21,4 +21,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Math::BigInt::FastCalc.3
 
+PORTSCOUT=	skipv:0.251
+
 .include <bsd.port.mk>

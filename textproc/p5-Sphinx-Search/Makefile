@@ -28,4 +28,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Sphinx::Search.3
 
+PORTSCOUT=	skipv:0.240.1
+
 .include <bsd.port.mk>
