@@ -3252,6 +3252,7 @@
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.sequencesort
     SUBDIR += py-zope.size
+    SUBDIR += py-zope.tales
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += pybaz
