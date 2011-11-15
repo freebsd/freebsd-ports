@@ -1,5 +1,5 @@
---- xtrader/Makefile.linux.orig	Thu Oct 21 18:21:08 2004
-+++ xtrader/Makefile.linux	Sat Apr 16 23:40:08 2005
+--- ./xtrader/Makefile.linux.orig	2004-10-22 00:21:08.000000000 +0200
++++ ./xtrader/Makefile.linux	2011-11-15 13:46:18.000000000 +0100
 @@ -1,12 +1,12 @@
 -COMP=			g++
 -IFLAGS=			-I../util -Isrc -I/usr/local/include -I/usr/include/ptypes
