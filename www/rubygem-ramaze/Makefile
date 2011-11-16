@@ -7,11 +7,11 @@
 # note, innate version is typically an exact requirement
 
 PORTNAME=	ramaze
-PORTVERSION=	2011.07.25
+PORTVERSION=	2011.10.23
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ramaze is a simple and modular web framework
 
 RUN_DEPENDS=	rubygem-innate>=2010.03:${PORTSDIR}/www/rubygem-innate
