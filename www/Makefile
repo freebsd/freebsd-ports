@@ -1657,6 +1657,7 @@
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-railties
+    SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-rest-client
