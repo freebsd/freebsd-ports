@@ -204,6 +204,7 @@ share/gtk-doc/html/milter-manager/ja/install.html
 share/gtk-doc/html/milter-manager/ja/introduction.html
 share/gtk-doc/html/milter-manager/ja/left.png
 share/gtk-doc/html/milter-manager/ja/libmilter-compatible.xml
+share/gtk-doc/html/milter-manager/ja/log-list.html
 share/gtk-doc/html/milter-manager/ja/manager.xml
 share/gtk-doc/html/milter-manager/ja/mfapi.xml
 share/gtk-doc/html/milter-manager/ja/mfdef.xml
@@ -248,7 +249,6 @@ share/gtk-doc/html/milter-manager/ja/milter-manager-process-launcher.xml
 share/gtk-doc/html/milter-manager/ja/milter-manager-reply-decoder.xml
 share/gtk-doc/html/milter-manager/ja/milter-manager-reply-encoder.xml
 share/gtk-doc/html/milter-manager/ja/milter-manager-reply-protocol.xml
-share/gtk-doc/html/milter-manager/ja/milter-manager.devhelp
 share/gtk-doc/html/milter-manager/ja/milter-manager.devhelp2
 share/gtk-doc/html/milter-manager/ja/milter-manager.html
 share/gtk-doc/html/milter-manager/ja/milter-manager.xml
@@ -297,11 +297,11 @@ share/gtk-doc/html/milter-manager/ja/upgrade-options-on-ubuntu.html
 share/gtk-doc/html/milter-manager/ja/upgrade.html
 share/gtk-doc/html/milter-manager/ja/users.html
 share/gtk-doc/html/milter-manager/left.png
+share/gtk-doc/html/milter-manager/log-list.html
 share/gtk-doc/html/milter-manager/milter-manager-admin-ja.png
 share/gtk-doc/html/milter-manager/milter-manager-admin.png
 share/gtk-doc/html/milter-manager/milter-manager-log-analyzer-graphs.png
 share/gtk-doc/html/milter-manager/milter-manager-log-analyzer.html
-share/gtk-doc/html/milter-manager/milter-manager.devhelp
 share/gtk-doc/html/milter-manager/milter-manager.devhelp2
 share/gtk-doc/html/milter-manager/milter-manager.html
 share/gtk-doc/html/milter-manager/milter-performance-check.html
