@@ -17,8 +17,6 @@ COMMENT=	A library containing extra widgets for FLTK
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		does not compile
-
 USE_GL=		gl
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
