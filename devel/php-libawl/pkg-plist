@@ -6,6 +6,7 @@
 %%LIBAWLDIR%%/inc/AWLUtilities.php.in
 %%LIBAWLDIR%%/inc/AuthPlugin.php
 %%LIBAWLDIR%%/inc/AuthPlugins.php
+%%LIBAWLDIR%%/inc/AwlCache.php
 %%LIBAWLDIR%%/inc/AwlDBDialect.php
 %%LIBAWLDIR%%/inc/AwlDatabase.php
 %%LIBAWLDIR%%/inc/AwlQuery.php
@@ -24,8 +25,8 @@
 %%LIBAWLDIR%%/inc/classBrowser.php
 %%LIBAWLDIR%%/inc/classEditor.php
 %%LIBAWLDIR%%/inc/iCalendar.php
+%%LIBAWLDIR%%/inc/vCalendar.php
 %%LIBAWLDIR%%/inc/vComponent.php
-%%LIBAWLDIR%%/inc/vEvent.php
 @dirrm %%LIBAWLDIR%%/inc
 @dirrm %%LIBAWLDIR%%/dba
 @dirrm %%LIBAWLDIR%%
