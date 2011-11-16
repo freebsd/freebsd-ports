@@ -16,7 +16,6 @@ bin/atspack
 %%ATS_LIBDIR%%/ccomp/%%LIBDIR%%/libats_smlbas.a
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/Makefile
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/README
-%%ATS_LIBDIR%%/ccomp/runtime/GCATS/X.sats
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/gc.o
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/gc_mt.o
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/gcats1.cats
@@ -50,6 +49,7 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/CATS/hashtable_chain.cats
 %%ATS_LIBDIR%%/libats/CATS/intinf.cats
 %%ATS_LIBDIR%%/libats/CATS/linbitvec.cats
+%%ATS_LIBDIR%%/libats/CATS/linordset_randbst.cats
 %%ATS_LIBDIR%%/libats/CATS/linqueue_arr.cats
 %%ATS_LIBDIR%%/libats/CATS/linqueue_lst.cats
 %%ATS_LIBDIR%%/libats/CATS/linstack_arr.cats
@@ -57,12 +57,14 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/CATS/regexp.cats
 %%ATS_LIBDIR%%/libats/CATS/slseg.cats
 %%ATS_LIBDIR%%/libats/CATS/vector.cats
+%%ATS_LIBDIR%%/libats/DATS/biarray.dats
 %%ATS_LIBDIR%%/libats/DATS/fmatrix.dats
 %%ATS_LIBDIR%%/libats/DATS/freelst.dats
 %%ATS_LIBDIR%%/libats/DATS/funarray_braun.dats
 %%ATS_LIBDIR%%/libats/DATS/fundeque_fingertree.dats
 %%ATS_LIBDIR%%/libats/DATS/funheap_braun.dats
 %%ATS_LIBDIR%%/libats/DATS/funmap_avltree.dats
+%%ATS_LIBDIR%%/libats/DATS/funmap_rbtree.dats
 %%ATS_LIBDIR%%/libats/DATS/funralist_nested.dats
 %%ATS_LIBDIR%%/libats/DATS/funset_avltree.dats
 %%ATS_LIBDIR%%/libats/DATS/funset_listord.dats
@@ -77,19 +79,24 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/DATS/iterint.dats
 %%ATS_LIBDIR%%/libats/DATS/linbitvec.dats
 %%ATS_LIBDIR%%/libats/DATS/linmap_avltree.dats
+%%ATS_LIBDIR%%/libats/DATS/linmap_rbtree.dats
+%%ATS_LIBDIR%%/libats/DATS/linordset_randbst.dats
 %%ATS_LIBDIR%%/libats/DATS/linqueue_arr.dats
 %%ATS_LIBDIR%%/libats/DATS/linqueue_lst.dats
+%%ATS_LIBDIR%%/libats/DATS/linset_avltree.dats
 %%ATS_LIBDIR%%/libats/DATS/linstack_arr.dats
 %%ATS_LIBDIR%%/libats/DATS/parworkshop.dats
 %%ATS_LIBDIR%%/libats/DATS/rarray.dats
 %%ATS_LIBDIR%%/libats/DATS/regexp.dats
 %%ATS_LIBDIR%%/libats/DATS/vector.dats
+%%ATS_LIBDIR%%/libats/SATS/biarray.sats
 %%ATS_LIBDIR%%/libats/SATS/fmatrix.sats
 %%ATS_LIBDIR%%/libats/SATS/freelst.sats
 %%ATS_LIBDIR%%/libats/SATS/funarray_braun.sats
 %%ATS_LIBDIR%%/libats/SATS/fundeque_fingertree.sats
 %%ATS_LIBDIR%%/libats/SATS/funheap_braun.sats
 %%ATS_LIBDIR%%/libats/SATS/funmap_avltree.sats
+%%ATS_LIBDIR%%/libats/SATS/funmap_rbtree.sats
 %%ATS_LIBDIR%%/libats/SATS/funralist_nested.sats
 %%ATS_LIBDIR%%/libats/SATS/funset_avltree.sats
 %%ATS_LIBDIR%%/libats/SATS/funset_listord.sats
@@ -107,8 +114,11 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/SATS/itreep.sats
 %%ATS_LIBDIR%%/libats/SATS/linbitvec.sats
 %%ATS_LIBDIR%%/libats/SATS/linmap_avltree.sats
+%%ATS_LIBDIR%%/libats/SATS/linmap_rbtree.sats
+%%ATS_LIBDIR%%/libats/SATS/linordset_randbst.sats
 %%ATS_LIBDIR%%/libats/SATS/linqueue_arr.sats
 %%ATS_LIBDIR%%/libats/SATS/linqueue_lst.sats
+%%ATS_LIBDIR%%/libats/SATS/linset_avltree.sats
 %%ATS_LIBDIR%%/libats/SATS/linstack_arr.sats
 %%ATS_LIBDIR%%/libats/SATS/optini.sats
 %%ATS_LIBDIR%%/libats/SATS/parworkshop.sats
@@ -234,6 +244,12 @@ bin/atspack
 %%ATS_LIBDIR%%/libc/SATS/utime.sats
 %%ATS_LIBDIR%%/libc/arpa/CATS/inet.cats
 %%ATS_LIBDIR%%/libc/arpa/SATS/inet.sats
+%%ATS_LIBDIR%%/libc/gdbm/CATS/datum.cats
+%%ATS_LIBDIR%%/libc/gdbm/CATS/gdbm.cats
+%%ATS_LIBDIR%%/libc/gdbm/CATS/ndbm.cats
+%%ATS_LIBDIR%%/libc/gdbm/SATS/datum.sats
+%%ATS_LIBDIR%%/libc/gdbm/SATS/gdbm.sats
+%%ATS_LIBDIR%%/libc/gdbm/SATS/ndbm.sats
 %%ATS_LIBDIR%%/libc/netinet/CATS/in.cats
 %%ATS_LIBDIR%%/libc/netinet/SATS/in.sats
 %%ATS_LIBDIR%%/libc/sys/CATS/poll.cats
@@ -293,7 +309,7 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/DATS/arith.dats
 %%ATS_LIBDIR%%/prelude/DATS/array.dats
 %%ATS_LIBDIR%%/prelude/DATS/array0.dats
-%%ATS_LIBDIR%%/prelude/DATS/array_v.dats
+%%ATS_LIBDIR%%/prelude/DATS/array_prf.dats
 %%ATS_LIBDIR%%/prelude/DATS/basics.dats
 %%ATS_LIBDIR%%/prelude/DATS/bool.dats
 %%ATS_LIBDIR%%/prelude/DATS/filebas.dats
@@ -306,6 +322,7 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/DATS/list_vt.dats
 %%ATS_LIBDIR%%/prelude/DATS/matrix.dats
 %%ATS_LIBDIR%%/prelude/DATS/matrix0.dats
+%%ATS_LIBDIR%%/prelude/DATS/memalign.dats
 %%ATS_LIBDIR%%/prelude/DATS/option.dats
 %%ATS_LIBDIR%%/prelude/DATS/option0.dats
 %%ATS_LIBDIR%%/prelude/DATS/option_vt.dats
@@ -317,7 +334,6 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/DATS/string.dats
 %%ATS_LIBDIR%%/prelude/DATS/syndef.dats
 %%ATS_LIBDIR%%/prelude/DATS/unsafe.dats
-%%ATS_LIBDIR%%/prelude/DATS/vsubrw.dats
 %%ATS_LIBDIR%%/prelude/HATS/lmacrodef.hats
 %%ATS_LIBDIR%%/prelude/HATS/number.hats
 %%ATS_LIBDIR%%/prelude/HATS/syndef.hats
@@ -340,6 +356,7 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/SATS/list_vt.sats
 %%ATS_LIBDIR%%/prelude/SATS/matrix.sats
 %%ATS_LIBDIR%%/prelude/SATS/matrix0.sats
+%%ATS_LIBDIR%%/prelude/SATS/memalign.sats
 %%ATS_LIBDIR%%/prelude/SATS/memory.sats
 %%ATS_LIBDIR%%/prelude/SATS/multiset.sats
 %%ATS_LIBDIR%%/prelude/SATS/number.sats
@@ -387,6 +404,9 @@ bin/atspack
 @dirrm %%ATS_LIBDIR%%/libc/arpa/CATS
 @dirrm %%ATS_LIBDIR%%/libc/arpa/SATS
 @dirrm %%ATS_LIBDIR%%/libc/arpa
+@dirrm %%ATS_LIBDIR%%/libc/gdbm/CATS
+@dirrm %%ATS_LIBDIR%%/libc/gdbm/SATS
+@dirrm %%ATS_LIBDIR%%/libc/gdbm
 @dirrm %%ATS_LIBDIR%%/libc/netinet/CATS
 @dirrm %%ATS_LIBDIR%%/libc/netinet/SATS
 @dirrm %%ATS_LIBDIR%%/libc/netinet

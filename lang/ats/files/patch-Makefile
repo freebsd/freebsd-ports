@@ -1,5 +1,5 @@
---- Makefile.orig	2011-10-06 17:27:15.000000000 +0800
-+++ Makefile	2011-10-07 02:01:05.000000000 +0800
+--- Makefile.orig	2011-11-11 09:41:38.000000000 +0800
++++ Makefile	2011-11-15 11:51:22.387400943 +0800
 @@ -92,7 +92,7 @@
  	cd $(abs_top_srcdir)
  	[ -d $(DESTDIR)/$(bindir) ] || $(MKDIR_P) $(DESTDIR)/$(bindir)
@@ -36,9 +36,12 @@
  	@echo "ATS/Anairiats has been built up successfully!"
  	@echo "The value of ATSHOME for this build is \"$(ATSHOME)\"."
  	@echo "The value of ATSHOMERELOC for this build is \"$(ATSHOMERELOC)\"."
-@@ -214,23 +214,23 @@
+@@ -212,25 +212,25 @@
  
- .libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
+ ATSLIB=$(ATSHOMEQ)/bin/atslib
+ 
+-.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
++.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $< ; sed -i '' -e '/linordset_randbst/d' $@
  libfiles: .libfiles_local
 -	$(ATSLIB) $(ATS_PROOFCHECK) -D_XOPEN_SOURCE -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_lex
