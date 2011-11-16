@@ -3482,6 +3482,7 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json146
     SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-linecache
     SUBDIR += rubygem-little_plugger
