@@ -9,7 +9,7 @@ PORTVERSION=	0.10.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A simple library to parse robots.txt files
 
 USE_RUBY=	yes
