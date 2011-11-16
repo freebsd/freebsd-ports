@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
 	http://www.codeigniter.org.tw/download_files/
@@ -40,6 +39,7 @@ CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
 		${CI_CONF_DIR}/foreign_chars.php \
 		${CI_CONF_DIR}/hooks.php \
 		${CI_CONF_DIR}/mimes.php \
+		${CI_CONF_DIR}/migration.php \
 		${CI_CONF_DIR}/profiler.php \
 		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
 		${CI_CONF_DIR}/user_agents.php
