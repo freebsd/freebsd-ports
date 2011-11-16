@@ -27,9 +27,14 @@ post-patch:
 		@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 			${REINPLACE_CMD} -e 's@__aligned@dice_aligned@g'
 
+		@${REINPLACE_CMD} -e 's/gcc/$$(CC)/' \
+			-e '/^CFLAGS/{s/=/+=/;s/-O2//;}' \
+			${WRKSRC}/suplib/Makefile \
+			${WRKSRC}/src/*/Makefile
+
 do-build:
-		cd ${WRKSRC}/suplib && ${MAKE} && ${MAKE} install
-		cd ${WRKSRC}/src && ${MAKE} && ${MAKE} install
+		cd ${WRKSRC}/suplib && ${MAKE} && ${MAKE_ENV} ${MAKE} install
+		cd ${WRKSRC}/src && ${MAKE} && ${MAKE_ENV} ${MAKE} install
 
 do-install:
 		@${RM} ${WRKSRC}/doc/loadabs.c.bak
