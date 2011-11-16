@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU/.packlist
+%%SITE_PERL%%/Memoize/ExpireLRU.pm
 %%SITE_PERL%%/auto/Memoize/ExpireLRU/DumpCache.al
 %%SITE_PERL%%/auto/Memoize/ExpireLRU/ShowStats.al
 %%SITE_PERL%%/auto/Memoize/ExpireLRU/autosplit.ix
-%%SITE_PERL%%/Memoize/ExpireLRU.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize
 @dirrm %%SITE_PERL%%/auto/Memoize/ExpireLRU
 @dirrmtry %%SITE_PERL%%/auto/Memoize
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU
+@dirrmtry %%SITE_PERL%%/Memoize
