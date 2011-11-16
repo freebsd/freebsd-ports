@@ -3256,6 +3256,7 @@
     SUBDIR += py-zope.minmax
     SUBDIR += py-zope.pagetemplate
     SUBDIR += py-zope.processlifetime
+    SUBDIR += py-zope.ptresource
     SUBDIR += py-zope.publisher
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.sequencesort
