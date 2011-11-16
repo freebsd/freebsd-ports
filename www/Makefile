@@ -1675,6 +1675,7 @@
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
+    SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-yapra
