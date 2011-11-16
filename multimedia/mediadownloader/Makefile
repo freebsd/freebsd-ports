@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	mediadownloader
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	multimedia www
-MASTER_SITES=	SF/googleimagedown/project/v${PORTVERSION}-2/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}-1-src
+MASTER_SITES=	SF/googleimagedown/project/${PORTVERSION}/
+DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Search, watch and download from Google Image and YouTube
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
 USE_GL=		gl glu
 USE_XORG=	xtst
 USE_QT_VER=	4
@@ -26,7 +25,7 @@ QT_COMPONENTS=	dbus gui network moc_build opengl phonon phonon-gst \
 QMAKEPRO=	${PORTNAME}.pro
 PLIST_FILES=	bin/${PORTNAME}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}-src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DESKTOP_ENTRIES="MediaDownloader" "${COMMENT}" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
