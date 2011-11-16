@@ -545,14 +545,14 @@ lib/asterisk/modules/cdr_manager.so
 %%WITH_MYSQL%%lib/asterisk/modules/cdr_mysql.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
-%%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite3_custom.so
+lib/asterisk/modules/cdr_sqlite3_custom.so
 lib/asterisk/modules/cdr_syslog.so
 lib/asterisk/modules/cel_custom.so
 lib/asterisk/modules/cel_manager.so
 %%WITH_ODBC%%lib/asterisk/modules/cel_odbc.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cel_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cel_radius.so
-%%WITH_SQLITE%%lib/asterisk/modules/cel_sqlite3_custom.so
+lib/asterisk/modules/cel_sqlite3_custom.so
 %%WITH_FREETDS%%lib/asterisk/modules/cel_tds.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
@@ -641,6 +641,7 @@ lib/asterisk/modules/res_smdi.so
 %%WITH_SNMP%%lib/asterisk/modules/res_snmp.so
 lib/asterisk/modules/res_speech.so
 sbin/astcanary
+sbin/astdb2bdb
 sbin/astdb2sqlite3
 sbin/asterisk
 sbin/astgenkey
