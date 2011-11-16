@@ -3261,6 +3261,7 @@
     SUBDIR += py-zope.publisher
     SUBDIR += py-zope.schema
     SUBDIR += py-zope.sequencesort
+    SUBDIR += py-zope.site
     SUBDIR += py-zope.size
     SUBDIR += py-zope.tales
     SUBDIR += py-zope.testing
