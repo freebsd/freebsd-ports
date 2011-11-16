@@ -7,7 +7,7 @@
 
 PORTNAME=	storable
 PORTVERSION=	0.8.9
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

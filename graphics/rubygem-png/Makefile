@@ -7,7 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.0
-CATEGORIES=	graphics ruby
+CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	net-http-persistent
 PORTVERSION=	2.3.2
-CATEGORIES=	www net ruby
+CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	guard-livereload
 PORTVERSION=	0.3.1
-CATEGORIES=	sysutils ruby
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

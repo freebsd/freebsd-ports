@@ -7,7 +7,7 @@
 
 PORTNAME=	guard
 PORTVERSION=	0.8.8
-CATEGORIES=	sysutils ruby
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

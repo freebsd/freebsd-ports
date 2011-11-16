@@ -7,7 +7,7 @@
 
 PORTNAME=	webrobots
 PORTVERSION=	0.0.12
-CATEGORIES=	www ruby
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	em-websocket
 PORTVERSION=	0.3.5
-CATEGORIES=	www ruby
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

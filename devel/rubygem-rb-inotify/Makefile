@@ -7,7 +7,7 @@
 
 PORTNAME=	rb-inotify
 PORTVERSION=	0.8.8
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	public_suffix_service
 PORTVERSION=	0.9.0
-CATEGORIES=	dns ruby
+CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

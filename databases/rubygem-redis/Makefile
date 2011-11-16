@@ -7,7 +7,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	2.2.2
-CATEGORIES=	databases ruby
+CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
