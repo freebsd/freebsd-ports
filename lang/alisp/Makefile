@@ -20,7 +20,12 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP}
 
-post-patch:
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e 's/cc/$$(CC)/' \
+		-e '/^CFLAGS/{s/=/+=/;s/-g//;s/-O//;}' \
+		-e '/strip alisp/d' \
+		-e '/install.*alisp /s/install/& ${STRIP}/' \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/alisp.h
 
 .include <bsd.port.mk>
