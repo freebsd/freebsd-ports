@@ -1,4 +1,2 @@
-SHA256 (krb5-appl-1.0.1-signed.tar) = 124322481e4f8e0b119b527071f2f707168060e17748cf34c8bf5af747c3e311
-SIZE (krb5-appl-1.0.1-signed.tar) = 645120
-SHA256 (2011-005-patch.txt) = a3f14859883cdeff846aaea2e35738a6580549d634986fdfc41d178e33135459
-SIZE (2011-005-patch.txt) = 2076
+SHA256 (krb5-appl-1.0.2-signed.tar) = ca82209ba11e37390a7b79b0eb27abac9526442d296d60b752a0a94969bbad7d
+SIZE (krb5-appl-1.0.2-signed.tar) = 634880
