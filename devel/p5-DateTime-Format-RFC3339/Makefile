@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	DateTime-Format-RFC3339
-PORTVERSION=	v1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Parse and format RFC3339 times
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/00//}
+BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
 PERL_CONFIGURE=	yes
 
