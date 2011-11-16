@@ -7,6 +7,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	1.44
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ \
 		LOCAL/glarkin
@@ -24,7 +25,7 @@ USE_ZIP=	yes
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-USE_GCC=	4.5+
+USE_GCC=	4.6+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gcc${CSUFF}
