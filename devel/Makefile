@@ -2960,6 +2960,7 @@
     SUBDIR += py-Products.MIMETools
     SUBDIR += py-Products.OFSP
     SUBDIR += py-Products.PythonScripts
+    SUBDIR += py-Products.StandardCacheManagers
     SUBDIR += py-Products.ZCTextIndex
     SUBDIR += py-Products.ZCatalog
     SUBDIR += py-RPyC
