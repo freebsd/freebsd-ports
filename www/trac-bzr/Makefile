@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bzr
-PORTVERSION=	20090604
-PORTREVISION=	3
+PORTVERSION=	20110228
 CATEGORIES=	www
 MASTER_SITES=	http://home.tiscali.cz/~cz210552/bsdports/tarballs/
 PKGNAMEPREFIX=	trac-
@@ -16,9 +15,10 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Bazaar-NG plugin for Trac
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac bzr:${PORTSDIR}/devel/bazaar-ng
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
@@ -30,7 +30,10 @@ PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 		PYTRAC_BZR_EGG=${PYTRAC_BZR_EGG}
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-PYTRAC_BZR_EGG=	TracBzr-0.2-py${PYTHON_VER}.egg
+PYTRAC_BZR_EGG=	TracBzr-0.4.2-py${PYTHON_VER}.egg
+
+post-patch:
+	${REINPLACE_CMD} -e 's|tag_date = 1||' ${WRKSRC}/setup.cfg
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

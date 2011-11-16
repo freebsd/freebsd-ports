@@ -1,5 +1,4 @@
-following lines must be added to your trac.ini and Trac must be
-restarted.
+The following lines must be added to your trac.ini and Trac must be restarted.
 
 [trac]
 repository_dir = /path/to/repository
