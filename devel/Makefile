@@ -3264,6 +3264,7 @@
     SUBDIR += py-zope.site
     SUBDIR += py-zope.size
     SUBDIR += py-zope.tales
+    SUBDIR += py-zope.testbrowser
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
