@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/s9
 
 MAN1=		s9.1
 MANCOMPRESSED=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,PREFIX=.*,PREFIX=${PREFIX}," ${WRKSRC}/Makefile
