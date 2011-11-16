@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-DISTVERSION=	10.0.0-beta2
+DISTVERSION=	10.0.0-rc1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -16,7 +16,8 @@ COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
@@ -202,13 +203,11 @@ LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
 
 .if !defined(WITH_SQLITE)
 PLIST_SUB+=	WITH_SQLITE="@comment "
-CONFIGURE_ARGS+=	--without-sqlite \
-			--with-sqlite3=no
+CONFIGURE_ARGS+=	--without-sqlite
 .else
 PLIST_SUB+=	WITH_SQLITE=""
 CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2 \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
 .if !defined(WITH_ILBC)
