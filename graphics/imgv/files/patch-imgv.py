@@ -1,9 +1,9 @@
---- imgv.py.orig	Wed Oct 18 06:01:50 2006
-+++ imgv.py	Sat Feb  3 11:39:31 2007
+--- imgv.py.orig	2011-11-15 17:17:23.000000000 +0100
++++ imgv.py	2011-11-15 17:18:21.000000000 +0100
 @@ -18,17 +18,17 @@
  import pygame.event, pygame.time
  from pygame.display import set_caption, set_mode, update
- from pygame.locals import  MOUSEMOTION, MOUSEBUTTONDOWN, Rect, KEYDOWN, KEYUP, RESIZABLE, VIDEORESIZE, MOUSEBUTTONUP, K_UP, K_DOWN, K_RIGHT, K_LEFT
+ from pygame.locals import MOUSEMOTION, MOUSEBUTTONDOWN, Rect, KEYDOWN, KEYUP, RESIZABLE, VIDEORESIZE, MOUSEBUTTONUP, K_UP, K_DOWN, K_RIGHT, K_LEFT
 -import gl
 -from load_timers import start_timer, check_timer
 -from img_screen import init_screen, get_center, my_update_screen, img_border, paint_screen

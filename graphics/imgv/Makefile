@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	imgv
-PORTVERSION=	3.1.5
-PORTREVISION=	3
+PORTVERSION=	3.1.6
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	A unique and feature rich Image Viewer
