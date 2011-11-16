@@ -7,7 +7,7 @@
 
 PORTNAME=	yard
 PORTVERSION=	0.7.3
-CATEGORIES=	textproc devel ruby
+CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	stella
 PORTVERSION=	2.1.2.004
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

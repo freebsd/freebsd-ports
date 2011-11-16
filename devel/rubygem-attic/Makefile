@@ -7,7 +7,7 @@
 
 PORTNAME=	attic
 PORTVERSION=	0.5.3
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

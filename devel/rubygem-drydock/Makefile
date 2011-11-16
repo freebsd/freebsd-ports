@@ -7,7 +7,7 @@
 
 PORTNAME=	drydock
 PORTVERSION=	0.6.9
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

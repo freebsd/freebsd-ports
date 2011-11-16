@@ -7,7 +7,7 @@
 
 PORTNAME=	benelux
 PORTVERSION=	0.6.1
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

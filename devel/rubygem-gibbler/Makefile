@@ -7,7 +7,7 @@
 
 PORTNAME=	gibbler
 PORTVERSION=	0.8.10
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

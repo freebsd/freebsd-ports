@@ -7,7 +7,7 @@
 
 PORTNAME=	guard-rspec
 PORTVERSION=	0.5.4
-CATEGORIES=	sysutils ruby
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

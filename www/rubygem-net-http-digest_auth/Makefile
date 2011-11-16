@@ -7,7 +7,7 @@
 
 PORTNAME=	net-http-digest_auth
 PORTVERSION=	1.1.1
-CATEGORIES=	www net ruby
+CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

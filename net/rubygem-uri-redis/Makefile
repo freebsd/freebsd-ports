@@ -7,7 +7,7 @@
 
 PORTNAME=	uri-redis
 PORTVERSION=	0.4.2
-CATEGORIES=	net ruby
+CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

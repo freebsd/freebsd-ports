@@ -7,7 +7,7 @@
 
 PORTNAME=	sysinfo
 PORTVERSION=	0.7.3
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

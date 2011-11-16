@@ -7,7 +7,7 @@
 
 PORTNAME=	familia
 PORTVERSION=	0.7.1
-CATEGORIES=	databases ruby
+CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

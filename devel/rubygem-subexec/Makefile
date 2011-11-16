@@ -7,7 +7,7 @@
 
 PORTNAME=	subexec
 PORTVERSION=	0.2.0
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	oauth2
 PORTVERSION=	0.5.1
-CATEGORIES=	net ruby
+CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
