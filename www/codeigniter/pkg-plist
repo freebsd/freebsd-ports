@@ -23,6 +23,9 @@
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php ]; then cp -p %D/%F %B/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been overwritten"; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php ]; then cp -p %D/%F %B/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been overwritten"; fi
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php ]; then cp -p %D/%F %B/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been overwritten"; fi
@@ -82,6 +85,11 @@
 %%WWWDIR%%/system/database/DB_forge.php
 %%WWWDIR%%/system/database/DB_result.php
 %%WWWDIR%%/system/database/DB_utility.php
+%%WWWDIR%%/system/database/drivers/cubrid/cubrid_driver.php
+%%WWWDIR%%/system/database/drivers/cubrid/cubrid_forge.php
+%%WWWDIR%%/system/database/drivers/cubrid/cubrid_result.php
+%%WWWDIR%%/system/database/drivers/cubrid/cubrid_utility.php
+%%WWWDIR%%/system/database/drivers/cubrid/index.html
 %%WWWDIR%%/system/database/drivers/index.html
 %%WWWDIR%%/system/database/drivers/mssql/index.html
 %%WWWDIR%%/system/database/drivers/mssql/mssql_driver.php
@@ -108,6 +116,7 @@
 %%WWWDIR%%/system/database/drivers/odbc/odbc_forge.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_result.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_utility.php
+%%WWWDIR%%/system/database/drivers/pdo/pdo_driver.php
 %%WWWDIR%%/system/database/drivers/postgre/index.html
 %%WWWDIR%%/system/database/drivers/postgre/postgre_driver.php
 %%WWWDIR%%/system/database/drivers/postgre/postgre_forge.php
@@ -156,6 +165,7 @@
 %%WWWDIR%%/system/language/english/ftp_lang.php
 %%WWWDIR%%/system/language/english/imglib_lang.php
 %%WWWDIR%%/system/language/english/index.html
+%%WWWDIR%%/system/language/english/migration_lang.php
 %%WWWDIR%%/system/language/english/number_lang.php
 %%WWWDIR%%/system/language/english/profiler_lang.php
 %%WWWDIR%%/system/language/english/unit_test_lang.php
@@ -176,6 +186,7 @@
 %%WWWDIR%%/system/libraries/Image_lib.php
 %%WWWDIR%%/system/libraries/Javascript.php
 %%WWWDIR%%/system/libraries/Log.php
+%%WWWDIR%%/system/libraries/Migration.php
 %%WWWDIR%%/system/libraries/Pagination.php
 %%WWWDIR%%/system/libraries/Parser.php
 %%WWWDIR%%/system/libraries/Profiler.php
@@ -203,11 +214,13 @@
 @dirrm %%WWWDIR%%/system/database/drivers/sqlsrv
 @dirrm %%WWWDIR%%/system/database/drivers/sqlite
 @dirrm %%WWWDIR%%/system/database/drivers/postgre
+@dirrm %%WWWDIR%%/system/database/drivers/pdo
 @dirrm %%WWWDIR%%/system/database/drivers/odbc
 @dirrm %%WWWDIR%%/system/database/drivers/oci8
 @dirrm %%WWWDIR%%/system/database/drivers/mysqli
 @dirrm %%WWWDIR%%/system/database/drivers/mysql
 @dirrm %%WWWDIR%%/system/database/drivers/mssql
+@dirrm %%WWWDIR%%/system/database/drivers/cubrid
 @dirrm %%WWWDIR%%/system/database/drivers
 @dirrm %%WWWDIR%%/system/database
 @dirrm %%WWWDIR%%/system/core
