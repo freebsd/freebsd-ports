@@ -756,6 +756,7 @@ post-patch:
 
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
 	&& !defined(BARRIER_BIG_CONCURRENCY_PATCH) \
