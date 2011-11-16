@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	innate
-PORTVERSION=	2011.04
+PORTVERSION=	2011.10
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Powerful web-framework wrapper for Rack
 
 RUN_DEPENDS=	rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
