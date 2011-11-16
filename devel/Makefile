@@ -3266,6 +3266,7 @@
     SUBDIR += py-zope.tales
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
+    SUBDIR += py-zope.viewlet
     SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount

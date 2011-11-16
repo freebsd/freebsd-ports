@@ -1,0 +1,4 @@
+Viewlets provide a generic framework for building pluggable
+user interfaces.
+
+WWW: http://pypi.python.org/pypi/zope.viewlet
