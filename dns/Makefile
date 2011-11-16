@@ -56,6 +56,7 @@
     SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += idnkit
+    SUBDIR += idnkit2
     SUBDIR += inadyn
     SUBDIR += ipcheck
     SUBDIR += ldapdns
