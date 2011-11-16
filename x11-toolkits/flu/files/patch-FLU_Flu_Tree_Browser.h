@@ -1,6 +1,17 @@
---- FLU/Flu_Tree_Browser.h.orig	2010-01-15 11:50:51.000000000 +0100
-+++ FLU/Flu_Tree_Browser.h	2010-01-15 11:55:24.000000000 +0100
-@@ -346,7 +346,7 @@
+--- FLU/Flu_Tree_Browser.h.orig	2004-11-05 18:03:20.000000000 +0100
++++ FLU/Flu_Tree_Browser.h	2011-11-16 10:36:16.000000000 +0100
+@@ -218,10 +218,6 @@
+   inline void color( Fl_Color c )
+     { _box->color( c ); }
+ 
+-  //! Set the background color of the browser. Default is FL_WHITE
+-  inline void color( unsigned c )
+-    { _box->color( (Fl_Color)c ); }
+-
+   //! Set the color, style, and width of the connector lines. Default is FL_DARK2, FL_DOT, 1
+   inline void connector_style( Fl_Color color, int style, int width = 1 )
+     { rdata.defLineColor = color; rdata.lineStyle = style; rdata.lineWidth = width; }
+@@ -346,7 +342,7 @@
      { return rdata.insertionMode; }
  
    //! \return whether the point \c (x,y) is inside the entry area (not on the scrollbars)
@@ -9,7 +20,7 @@
  
    //! Set the title of the Tree (also the label for the root entry)
    inline void label( const char *l )
-@@ -436,23 +436,23 @@
+@@ -436,23 +432,23 @@
  
    //! Remove the entry identified by path \b fullpath from the tree
    /*! \return the unique id of the removed entry, or \c 0 if no matching entry was found */
@@ -38,7 +49,18 @@
      { if( !n ) return 0; else return remove( n->id() ); }
  
    //! Override of Fl_Widget::resize
-@@ -1077,8 +1077,8 @@
+@@ -494,10 +490,6 @@
+   inline void selection_color( Fl_Color c )
+     { rdata.defSelectionColor = c; }
+ 
+-  //! Set the color to use when hilighting selected entries. Default is FL_SELECTION_COLOR
+-  inline void selection_color( unsigned c )
+-    { selection_color( (Fl_Color)c ); }
+-
+   //! Set how selection is affected when the mouse is dragged. This can be one of FLU_DRAG_IGNORE, FLU_DRAG_TO_SELECT, FLU_DRAG_TO_MOVE. Default is FLU_DRAG_TO_SELECT.
+   inline void selection_drag_mode( int m )
+     { rdata.selectionDragMode = m; }
+@@ -1077,8 +1069,8 @@
  
        //! Remove the entry identified by path \b fullpath from this node
        /*! \return the unique id of the removed entry, or \c 0 if no matching entry was found */
