@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0205
+PORTVERSION=	2.0400
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -19,6 +19,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	\
+	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
+	p5-Class-Load-XS>=0.01:${PORTSDIR}/devel/p5-Class-Load-XS \
 	p5-Data-OptList>=0.107:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 	p5-Eval-Closure>=0.04:${PORTSDIR}/devel/p5-Eval-Closure \
@@ -35,7 +37,9 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	\
+	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
+	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
 MAKE_JOBS_UNSAFE=	yes
@@ -183,6 +187,11 @@ post-extract:
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+
+.endif
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501001
