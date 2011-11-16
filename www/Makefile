@@ -1471,6 +1471,7 @@
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
     SUBDIR += py-django
+    SUBDIR += py-django-annoying
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appmedia
     SUBDIR += py-django-classy-tags
