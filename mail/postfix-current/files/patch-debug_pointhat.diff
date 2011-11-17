@@ -1,0 +1,58 @@
+--- src/util/inet_addr_local.c.orig	2011-11-17 19:04:23.142782923 +0000
++++ src/util/inet_addr_local.c	2011-11-17 19:17:50.594364384 +0000
+@@ -136,11 +136,11 @@
+ #ifdef HAS_IPV6
+ 	if (af == AF_INET6) {
+ 	    if (msg_verbose)
+-		msg_warn("%s: socket: %m", myname);
++		msg_warn("%s: socket:%s:%d: %m", myname, __FILE__, __LINE__);
+ 	    return (-1);
+ 	}
+ #endif
+-	msg_fatal("%s: socket: %m", myname);
++	msg_fatal("%s: socket:%s:%d: %m", myname, __FILE__, __LINE__);
+     }
+     return (sock);
+ }
+--- src/util/inet_listen.c.orig	2011-11-17 19:10:39.314027903 +0000
++++ src/util/inet_listen.c	2011-11-17 19:17:15.604064556 +0000
+@@ -138,7 +138,7 @@
+      * Create a listener socket.
+      */
+     if ((sock = socket(res->ai_family, res->ai_socktype, 0)) < 0)
+-	msg_fatal("socket: %m");
++	msg_fatal("socket:%s:%d: %m", __FILE__, __LINE__);
+ #ifdef HAS_IPV6
+ # if defined(IPV6_V6ONLY) && !defined(BROKEN_AI_PASSIVE_NULL_HOST)
+     if (res->ai_family == AF_INET6
+--- src/util/inet_proto.c.orig	2011-11-17 19:18:55.196583996 +0000
++++ src/util/inet_proto.c	2011-11-17 19:19:46.123043260 +0000
+@@ -208,7 +208,7 @@
+ 	} else if (errno == EAFNOSUPPORT) {
+ 	    msg_fatal("%s: IPv6 support is disabled: %m", context);
+ 	} else {
+-	    msg_fatal("socket: %m");
++	    msg_fatal("socket:%s:%d: %m", __FILE__, __LINE__);
+ 	}
+     case (INET_PROTO_MASK_IPV6 | INET_PROTO_MASK_IPV4):
+ 	if ((sock = socket(PF_INET6, SOCK_STREAM, 0)) >= 0) {
+@@ -224,7 +224,7 @@
+ 	    msg_warn("%s: configuring for IPv4 support only", context);
+ 	    /* FALLTHROUGH */
+ 	} else {
+-	    msg_fatal("socket: %m");
++	    msg_fatal("socket:%s:%d: %m", __FILE__, __LINE__);
+ 	}
+ #endif
+     case INET_PROTO_MASK_IPV4:
+--- src/util/unix_listen.c.orig	2011-11-17 19:19:58.468290942 +0000
++++ src/util/unix_listen.c	2011-11-17 19:20:17.264262807 +0000
+@@ -87,7 +87,7 @@
+      * trouble when this process is restarted after crash.
+      */
+     if ((sock = socket(AF_UNIX, SOCK_STREAM, 0)) < 0)
+-	msg_fatal("socket: %m");
++	msg_fatal("socket:%s:%d: %m", __FILE__, __LINE__);
+     if (unlink(addr) < 0 && errno != ENOENT)
+ 	msg_fatal("remove %s: %m", addr);
+     if (bind(sock, (struct sockaddr *) & sun, sizeof(sun)) < 0)
