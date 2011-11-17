@@ -16,8 +16,6 @@ COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
-BROKEN=		incomplete plist
-
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
@@ -28,6 +26,8 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_UNSAFE=	yes
 LATEST_LINK=	${PORTNAME}2
+
+MAN1=		krusader.1
 
 post-extract:
 	${MKDIR} ${WRKSRC}

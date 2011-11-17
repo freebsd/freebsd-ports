@@ -525,6 +525,11 @@ share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
 @dirrmtry share/locale/ug/LC_MESAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
 @dirrm share/doc/HTML/en/krusader
 @dirrm share/apps/krusader/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/krusader/icons/hicolor/64x64/devices
