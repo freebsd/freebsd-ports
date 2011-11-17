@@ -942,6 +942,7 @@
     SUBDIR += xarchon
     SUBDIR += xasteroids
     SUBDIR += xataxx
+    SUBDIR += xbat
     SUBDIR += xbattle
     SUBDIR += xbill
     SUBDIR += xbl
@@ -1036,6 +1037,7 @@
     SUBDIR += xsc
     SUBDIR += xscavenger
     SUBDIR += xscorch
+    SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
     SUBDIR += xskewb
