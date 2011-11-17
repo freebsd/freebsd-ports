@@ -18,8 +18,6 @@ COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		does not compile
-
 USE_XORG=	xext
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
@@ -43,6 +41,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|-I\.[[:space:]]+-I\$$\(srcdir\)[[:space:]]+||' \
 		${WRKSRC}/gui/Makefile.in
+	@${REINPLACE_CMD} -e 's|#include <FL/fl_file_chooser.H>|#include <FL/Fl_File_Chooser.H>|' \
+		${WRKSRC}/gui/MainWindow.cxx
 # disable data file installation since distfile does not do
 # The Right Thing(TM)
 	@${REINPLACE_CMD} -E -e \
