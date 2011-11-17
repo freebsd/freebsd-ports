@@ -5807,6 +5807,7 @@ identify                        ports/security/identify
 idesk                           ports/x11/idesk
 idnits                          ports/textproc/idnits
 idnkit                          ports/dns/idnkit
+idnkit2                         ports/dns/idnkit2
 idutils                         ports/devel/idutils
 iec16022                        ports/graphics/iec16022
 iet                             ports/net/iet
@@ -11367,6 +11368,7 @@ p5-Class-InsideOut              ports/devel/p5-Class-InsideOut
 p5-Class-Inspector              ports/devel/p5-Class-Inspector
 p5-Class-Interfaces             ports/devel/p5-Class-Interfaces
 p5-Class-Load                   ports/devel/p5-Class-Load
+p5-Class-Load-XS                ports/devel/p5-Class-Load-XS
 p5-Class-Loader                 ports/devel/p5-Class-Loader
 p5-Class-MOP                    ports/devel/p5-Class-MOP
 p5-Class-MakeMethods            ports/devel/p5-Class-MakeMethods
@@ -13425,6 +13427,7 @@ p5-Net-SSH                      ports/net/p5-Net-SSH
 p5-Net-SSH-Expect               ports/net/p5-Net-SSH-Expect
 p5-Net-SSH-Perl                 ports/net/p5-Net-SSH-Perl
 p5-Net-SSH2                     ports/net/p5-Net-SSH2
+p5-Net-SSL-ExpireDate           ports/security/p5-Net-SSL-ExpireDate
 p5-Net-SSLeay                   ports/security/p5-Net-SSLeay
 p5-Net-SenderBase               ports/mail/p5-Net-SenderBase
 p5-Net-Server                   ports/net/p5-Net-Server
@@ -15734,6 +15737,7 @@ p5-class-inspector              ports/devel/p5-Class-Inspector
 p5-class-interfaces             ports/devel/p5-Class-Interfaces
 p5-class-isa                    ports/devel/p5-Class-ISA
 p5-class-load                   ports/devel/p5-Class-Load
+p5-class-load-xs                ports/devel/p5-Class-Load-XS
 p5-class-loader                 ports/devel/p5-Class-Loader
 p5-class-makemethods            ports/devel/p5-Class-MakeMethods
 p5-class-measure                ports/devel/p5-Class-Measure
@@ -17862,6 +17866,7 @@ p5-net-ssh                      ports/net/p5-Net-SSH
 p5-net-ssh-expect               ports/net/p5-Net-SSH-Expect
 p5-net-ssh-perl                 ports/net/p5-Net-SSH-Perl
 p5-net-ssh2                     ports/net/p5-Net-SSH2
+p5-net-ssl-expiredate           ports/security/p5-Net-SSL-ExpireDate
 p5-net-ssleay                   ports/security/p5-Net-SSLeay
 p5-net-stomp                    ports/net-im/p5-Net-Stomp
 p5-net-subnet                   ports/net/p5-Net-Subnet
@@ -21654,7 +21659,9 @@ py-Products.ExternalMethod      ports/devel/py-Products.ExternalMethod
 py-Products.MIMETools           ports/devel/py-Products.MIMETools
 py-Products.MailHost            ports/mail/py-Products.MailHost
 py-Products.OFSP                ports/devel/py-Products.OFSP
+py-Products.PythonScripts       ports/devel/py-Products.PythonScripts
 py-Products.SecureMailHost      ports/mail/py-Products.SecureMailHost
+py-Products.StandardCacheManagers  ports/devel/py-Products.StandardCacheManagers
 py-Products.ZCTextIndex         ports/devel/py-Products.ZCTextIndex
 py-Products.ZCatalog            ports/devel/py-Products.ZCatalog
 py-PyGreSQL                     ports/databases/py-PyGreSQL
@@ -21795,6 +21802,7 @@ py-distorm                      ports/devel/py-distorm
 py-distribute                   ports/devel/py-distribute
 py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
+py-django-annoying              ports/www/py-django-annoying
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-appmedia              ports/www/py-django-appmedia
 py-django-classy-tags           ports/www/py-django-classy-tags
@@ -22177,7 +22185,9 @@ py-products.externalmethod      ports/devel/py-Products.ExternalMethod
 py-products.mailhost            ports/mail/py-Products.MailHost
 py-products.mimetools           ports/devel/py-Products.MIMETools
 py-products.ofsp                ports/devel/py-Products.OFSP
+py-products.pythonscripts       ports/devel/py-Products.PythonScripts
 py-products.securemailhost      ports/mail/py-Products.SecureMailHost
+py-products.standardcachemanagers  ports/devel/py-Products.StandardCacheManagers
 py-products.zcatalog            ports/devel/py-Products.ZCatalog
 py-products.zctextindex         ports/devel/py-Products.ZCTextIndex
 py-progressbar                  ports/misc/py-progressbar
@@ -22584,6 +22594,7 @@ py-zope.browserresource         ports/devel/py-zope.browserresource
 py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
 py-zope.container               ports/devel/py-zope.container
+py-zope.contentprovider         ports/devel/py-zope.contentprovider
 py-zope.contenttype             ports/devel/py-zope.contenttype
 py-zope.copy                    ports/devel/py-zope.copy
 py-zope.datetime                ports/devel/py-zope.datetime
@@ -22601,18 +22612,23 @@ py-zope.location                ports/devel/py-zope.location
 py-zope.minmax                  ports/devel/py-zope.minmax
 py-zope.pagetemplate            ports/devel/py-zope.pagetemplate
 py-zope.password                ports/security/py-zope.password
+py-zope.processlifetime         ports/devel/py-zope.processlifetime
 py-zope.proxy                   ports/net/py-zope.proxy
+py-zope.ptresource              ports/devel/py-zope.ptresource
 py-zope.publisher               ports/devel/py-zope.publisher
 py-zope.schema                  ports/devel/py-zope.schema
 py-zope.security                ports/security/py-zope.security
 py-zope.sendmail                ports/mail/py-zope.sendmail
 py-zope.sequencesort            ports/devel/py-zope.sequencesort
+py-zope.site                    ports/devel/py-zope.site
 py-zope.size                    ports/devel/py-zope.size
 py-zope.structuredtext          ports/textproc/py-zope.structuredtext
 py-zope.tal                     ports/textproc/py-zope.tal
 py-zope.tales                   ports/devel/py-zope.tales
+py-zope.testbrowser             ports/devel/py-zope.testbrowser
 py-zope.testing                 ports/devel/py-zope.testing
 py-zope.traversing              ports/devel/py-zope.traversing
+py-zope.viewlet                 ports/devel/py-zope.viewlet
 py-zopeundo                     ports/devel/py-ZopeUndo
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
@@ -23898,6 +23914,7 @@ rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json146                 ports/devel/rubygem-json146
 rubygem-json_pure               ports/devel/rubygem-json_pure
+rubygem-kgio                    ports/devel/rubygem-kgio
 rubygem-kramdown                ports/textproc/rubygem-kramdown
 rubygem-kwalify                 ports/textproc/rubygem-kwalify
 rubygem-larch                   ports/mail/rubygem-larch
@@ -24014,6 +24031,7 @@ rubygem-rails-app-installer     ports/www/rubygem-rails-app-installer
 rubygem-railsbench              ports/benchmarks/rubygem-railsbench
 rubygem-railsless-deploy        ports/devel/rubygem-railsless-deploy
 rubygem-railties                ports/www/rubygem-railties
+rubygem-raindrops               ports/www/rubygem-raindrops
 rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
 rubygem-ramaze                  ports/www/rubygem-ramaze
@@ -24143,6 +24161,7 @@ rubygem-typhoeus                ports/www/rubygem-typhoeus
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uglifier                ports/www/rubygem-uglifier
 rubygem-unicode                 ports/devel/rubygem-unicode
+rubygem-unicorn                 ports/www/rubygem-unicorn
 rubygem-uri-redis               ports/net/rubygem-uri-redis
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
