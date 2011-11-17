@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	1.1.5
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-toolkits python
 #MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${DISTNAME}
@@ -18,23 +18,20 @@ COMMENT=	Python interface to FLTK window toolkit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN==	does not compile
-
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_XORG=	x11
 
 PYDISTUTILS_PKGNAME=	pyFltk
-PYDISTUTILS_PKGVERSION=	1.1.5
 
 MAKE_ENV+=	FLTK_HOME=${LOCALBASE}/bin
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 XTRADOCS=	CHANGES README TODO
+CFLAGS+=	-DFL_LIBRARY
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|freebsd8', 'freebsd9|g" ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's|>mininum|>minimum|g;s|>maxinum|>maximum|g;s|int size_buffer|Py_ssize_t size_buffer|g' ${WRKSRC}/python/fltk_wrap.cpp
+	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|freebsd8', 'freebsd9', 'freebsd10|g" ${WRKSRC}/setup.py
 
 post-build:
 	${REINPLACE_CMD} -e "s|\.\./docs|${DOCSDIR}/html|g" ${WRKSRC}/fltk/test/help.py
