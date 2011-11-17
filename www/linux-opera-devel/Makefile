@@ -7,8 +7,9 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
-MASTER_SITES=	http://snapshot.opera.com/unix/quack_${OPERA_VER}-${OPERA_BUILD}/
+MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH}/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${OPERA_NEXT}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
@@ -32,7 +33,8 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 OPERA_NEXT?=	${PORTNAME}-next
 OPERA_VER?=	12.00
-OPERA_BUILD?=	1116
+OPERA_BUILD?=	1155
+MASTER_SITES_VER_PATH=	unix/hwa_${OPERA_VER}-${OPERA_BUILD}
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${OPERA_NEXT}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${OPERA_NEXT}
 
@@ -51,9 +53,9 @@ RENAME=		opera-next opera-next-widget-manager lib/opera-next \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION}<700055
-IGNORE=	You need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
+IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
 .elif ${OSVERSION}<800076 && ! defined (OVERRIDE_LINUX_NONBASE_PORTS)
-IGNORE=	You need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
+IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
 .endif
 
 post-extract:
