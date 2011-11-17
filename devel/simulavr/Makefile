@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		texi2dvi:${PORTSDIR}/print/texinfo \
 		latex:${PORTSDIR}/print/teTeX
 
+BROKEN=		fails to build
+
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
