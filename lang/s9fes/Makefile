@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.t3x.org/misc/
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A portable Scheme interpreter with a Unix interface
 
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" PREFIX=${PREFIX} LIBDIR=${DATADIR}
+LIBDIR=		${DATADIR}
+MAKE_ARGS=	${MAKE_ENV}
 WRKSRC=		${WRKDIR}/s9
 
 MAN1=		s9.1
