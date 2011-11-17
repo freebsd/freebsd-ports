@@ -20,8 +20,6 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		ungif:${PORTSDIR}/graphics/libungif \
 		png:${PORTSDIR}/graphics/png
 
-BROKEN=		does not compile
-
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
