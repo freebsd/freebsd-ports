@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Symbol/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Symbol/Util/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Symbol/Util
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Symbol
+@dirrm %%SITE_PERL%%/Symbol
