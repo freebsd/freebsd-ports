@@ -67,6 +67,7 @@ share/mime/packages/opera-next-widget.xml
 %%DATADIR%%/defaults/bookmarks.adr
 %%DATADIR%%/defaults/feedreaders.ini
 %%DATADIR%%/defaults/filehandler.ini
+%%DATADIR%%/defaults/handlers-ignore.ini
 %%DATADIR%%/defaults/license.txt
 %%DATADIR%%/defaults/mailproviders.xml
 %%DATADIR%%/defaults/plugin-ignore.ini
@@ -91,6 +92,7 @@ share/mime/packages/opera-next-widget.xml
 %%DATADIR%%/files.sig
 %%DATADIR%%/files_old.sig
 %%DATADIR%%/html40_entities.dtd
+%%DATADIR%%/html5_entity_init.dat
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/af/af.lng
 %%DATADIR%%/locale/az/az.lng
@@ -199,6 +201,9 @@ share/mime/packages/opera-next-widget.xml
 %%DATADIR%%/locale/te/te.lng
 %%DATADIR%%/locale/th/th.lng
 %%DATADIR%%/locale/tl/tl.lng
+%%DATADIR%%/locale/tr/bookmarks.adr
+%%DATADIR%%/locale/tr/search.ini
+%%DATADIR%%/locale/tr/standard_speeddial.ini
 %%DATADIR%%/locale/tr/tr.lng
 %%DATADIR%%/locale/uk/bookmarks.adr
 %%DATADIR%%/locale/uk/search.ini
@@ -207,18 +212,42 @@ share/mime/packages/opera-next-widget.xml
 %%DATADIR%%/locale/uz/uz.lng
 %%DATADIR%%/locale/vi/vi.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
-%%DATADIR%%/locale/zh-cn/browser.js
 %%DATADIR%%/locale/zh-cn/search.ini
 %%DATADIR%%/locale/zh-cn/standard_speeddial.ini
-%%DATADIR%%/locale/zh-cn/turbosettings.xml
 %%DATADIR%%/locale/zh-cn/zh-cn.lng
-%%DATADIR%%/locale/zh-tw/browser.js
-%%DATADIR%%/locale/zh-tw/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/zh-tw.lng
 %%DATADIR%%/locale/zu/zu.lng
 %%DATADIR%%/mathml.dtd
 %%DATADIR%%/package-id.ini
 %%DATADIR%%/pubsuffix.xml
+%%DATADIR%%/region/cis/en/bookmarks.adr
+%%DATADIR%%/region/cis/en/search.ini
+%%DATADIR%%/region/cis/en/standard_speeddial.ini
+%%DATADIR%%/region/cn/browser.js
+%%DATADIR%%/region/cn/en/bookmarks.adr
+%%DATADIR%%/region/cn/en/search.ini
+%%DATADIR%%/region/cn/en/standard_speeddial.ini
+%%DATADIR%%/region/cn/turbosettings.xml
+%%DATADIR%%/region/gb/en/bookmarks.adr
+%%DATADIR%%/region/gb/en/search.ini
+%%DATADIR%%/region/gb/en/standard_speeddial.ini
+%%DATADIR%%/region/hk/browser.js
+%%DATADIR%%/region/hk/turbosettings.xml
+%%DATADIR%%/region/id/bookmarks.adr
+%%DATADIR%%/region/id/search.ini
+%%DATADIR%%/region/id/standard_speeddial.ini
+%%DATADIR%%/region/in/bookmarks.adr
+%%DATADIR%%/region/in/search.ini
+%%DATADIR%%/region/in/standard_speeddial.ini
+%%DATADIR%%/region/region.ini
+%%DATADIR%%/region/tw/browser.js
+%%DATADIR%%/region/tw/turbosettings.xml
+%%DATADIR%%/region/ua/ru/bookmarks.adr
+%%DATADIR%%/region/ua/ru/search.ini
+%%DATADIR%%/region/ua/ru/standard_speeddial.ini
+%%DATADIR%%/region/us/en/bookmarks.adr
+%%DATADIR%%/region/us/en/search.ini
+%%DATADIR%%/region/us/en/standard_speeddial.ini
 %%DATADIR%%/skin/standard_skin.zip
 %%DATADIR%%/skin/unix_skin.zip
 %%DATADIR%%/styles/about.css
@@ -229,6 +258,7 @@ share/mime/packages/opera-next-widget.xml
 %%DATADIR%%/styles/debug.css
 %%DATADIR%%/styles/dir.css
 %%DATADIR%%/styles/error.css
+%%DATADIR%%/styles/feed.css
 %%DATADIR%%/styles/gpu.css
 %%DATADIR%%/styles/history.css
 %%DATADIR%%/styles/im.css
@@ -317,6 +347,21 @@ share/mime/packages/opera-next-widget.xml
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/region/us/en
+@dirrm %%DATADIR%%/region/us
+@dirrm %%DATADIR%%/region/ua/ru
+@dirrm %%DATADIR%%/region/ua
+@dirrm %%DATADIR%%/region/tw
+@dirrm %%DATADIR%%/region/in
+@dirrm %%DATADIR%%/region/id
+@dirrm %%DATADIR%%/region/hk
+@dirrm %%DATADIR%%/region/gb/en
+@dirrm %%DATADIR%%/region/gb
+@dirrm %%DATADIR%%/region/cn/en
+@dirrm %%DATADIR%%/region/cn
+@dirrm %%DATADIR%%/region/cis/en
+@dirrm %%DATADIR%%/region/cis
+@dirrm %%DATADIR%%/region
 @dirrm %%DATADIR%%/locale/zu
 @dirrm %%DATADIR%%/locale/zh-tw
 @dirrm %%DATADIR%%/locale/zh-cn
