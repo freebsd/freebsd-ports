@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-in replacement for Perl threads using fork()
 
-RUN_DEPENDS=	p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
-  p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
-  p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
-  p5-List-MoreUtils>=:${PORTSDIR}/lang/p5-List-MoreUtils \
-  p5-Sys-SigAction>=0.11:${PORTSDIR}/devel/p5-Sys-SigAction
+BUILD_DEPENDS=	p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
+		p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
+		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-List-MoreUtils>=:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Sys-SigAction>=0.11:${PORTSDIR}/devel/p5-Sys-SigAction
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
