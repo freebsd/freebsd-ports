@@ -1,14 +1,8 @@
 %%POPT%%bin/amqp-consume
+%%POPT%%bin/amqp-declare-queue
+%%POPT%%bin/amqp-delete-queue
 %%POPT%%bin/amqp-get
 %%POPT%%bin/amqp-publish
-bin/amqp_bind
-bin/amqp_consumer
-bin/amqp_exchange_declare
-bin/amqp_listen
-bin/amqp_listenq
-bin/amqp_producer
-bin/amqp_sendstring
-bin/amqp_unbind
 include/amqp.h
 include/amqp_framing.h
 lib/librabbitmq.a

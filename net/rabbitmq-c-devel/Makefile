@@ -7,14 +7,14 @@
 
 PORTNAME=	rabbitmq-c
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://hg.rabbitmq.com/rabbitmq-c/archive/:c \
 		http://hg.rabbitmq.com/rabbitmq-codegen/archive/:codegen
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-17b9fb0d63d3
-DISTFILES=	17b9fb0d63d3.tar.bz2:c \
-		fc46914f99b7.tar.bz2:codegen
+DISTNAME=	${PORTNAME}-cbeb2f3c3e6d
+DISTFILES=	cbeb2f3c3e6d.tar.bz2:c \
+		df43f2bfcf0e.tar.bz2:codegen
 DIST_SUBDIR=	rabbitmq
 
 MAINTAINER=	rabbitmq@geoffgarside.co.uk
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--without-popt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|rabbitmq-codegen|rabbitmq-codegen-fc46914f99b7|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|rabbitmq-codegen|rabbitmq-codegen-df43f2bfcf0e|g' ${WRKSRC}/configure.ac
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE})
