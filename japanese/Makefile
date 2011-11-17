@@ -42,6 +42,7 @@
     SUBDIR += ddskk
     SUBDIR += devil-fpw
     SUBDIR += dvi2dvi
+    SUBDIR += dvi2tty
     SUBDIR += dvipsk
     SUBDIR += e2ps
     SUBDIR += eb
