@@ -28,8 +28,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3 \
 		${LOCALBASE}/lib/libquicktime/lqt_lame.so:${PORTSDIR}/multimedia/libquicktime-lame
 RUN_DEPENDS=	${LOCALBASE}/lib/libquicktime/lqt_lame.so:${PORTSDIR}/multimedia/libquicktime-lame
 
-BROKEN=		does not compile
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
