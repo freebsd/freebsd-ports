@@ -7,12 +7,14 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A highly configurable, next generation framework window manager
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		convert:${PORTSDIR}/graphics/ImageMagick \
@@ -20,7 +22,8 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util \
-		xproto>=7.0.11:${PORTSDIR}/x11/xproto
+		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		ev.4:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -38,8 +41,6 @@ USE_EFL=	imlib2
 USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
-
-LICENSE=	GPLv2
 
 MAN1=	awesome.1 \
 	awesome-client.1 \
