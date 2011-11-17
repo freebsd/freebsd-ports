@@ -9,6 +9,7 @@ PORTNAME=	cpuburn
 DISTVERSION=	1_4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
+		http://atarininja.org/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	avg
 DISTNAME=	cpuburn_${DISTVERSION}
