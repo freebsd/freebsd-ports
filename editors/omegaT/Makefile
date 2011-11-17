@@ -6,6 +6,7 @@
 
 PORTNAME=	omegaT
 DISTVERSION=	2.3.0_02
+PORTREVISION=	1
 CATEGORIES=	editors java x11
 MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%20-%20Standard/OmegaT%202.3.0%20update%202/
 DISTNAME=	OmegaT_2.3.0_02_Source
@@ -19,12 +20,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-BROKEN=		does not build
-
 USE_ZIP=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VENDOR=openjdk
+JAVA_VERSION=	1.7+
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
