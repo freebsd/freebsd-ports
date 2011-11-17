@@ -21,6 +21,8 @@ COMMENT=	Collects and decodes Machine Check Exception data
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+
 PATCH_STRIP=	-p1
 
 USE_GMAKE=	yes
