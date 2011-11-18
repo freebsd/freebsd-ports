@@ -1,0 +1,30 @@
+bin/osdlyrics
+share/applications/osdlyrics.desktop
+share/icons/hicolor/16x16/animations/osdlyrics-loading.png
+share/icons/hicolor/64x64/apps/osdlyrics-trayicon.png
+share/icons/hicolor/64x64/apps/osdlyrics.png
+share/icons/hicolor/scalable/actions/osdlyrics-osd-next.svg
+share/icons/hicolor/scalable/actions/osdlyrics-osd-pause.svg
+share/icons/hicolor/scalable/actions/osdlyrics-osd-play.svg
+share/icons/hicolor/scalable/actions/osdlyrics-osd-prev.svg
+share/icons/hicolor/scalable/actions/osdlyrics-osd-stop.svg
+share/icons/hicolor/scalable/actions/osdlyrics-scroll-close.svg
+share/icons/hicolor/scalable/apps/osdlyrics-osd-bg.svg
+share/locale/de/LC_MESSAGES/osdlyrics.mo
+share/locale/es/LC_MESSAGES/osdlyrics.mo
+share/locale/fr/LC_MESSAGES/osdlyrics.mo
+share/locale/it/LC_MESSAGES/osdlyrics.mo
+share/locale/ms/LC_MESSAGES/osdlyrics.mo
+share/locale/pt_BR/LC_MESSAGES/osdlyrics.mo
+share/locale/ro/LC_MESSAGES/osdlyrics.mo
+share/locale/ru/LC_MESSAGES/osdlyrics.mo
+share/locale/tr/LC_MESSAGES/osdlyrics.mo
+share/locale/uk/LC_MESSAGES/osdlyrics.mo
+share/locale/zh_CN/LC_MESSAGES/osdlyrics.mo
+share/locale/zh_HK/LC_MESSAGES/osdlyrics.mo
+share/locale/zh_TW/LC_MESSAGES/osdlyrics.mo
+%%DATADIR%%/dialogs.glade
+%%DATADIR%%/icons/osdlyrics.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
