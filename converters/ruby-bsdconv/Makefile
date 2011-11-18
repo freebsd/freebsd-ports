@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	1.2
+PORTVERSION=	7.0
 CATEGORIES=	converters ruby
 MASTER_SITES=	https://github.com/buganini/ruby-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,12 +17,12 @@ COMMENT=	Ruby wrapper for bsdconv
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	bsdconv.6:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	bsdconv.7:${PORTSDIR}/converters/bsdconv
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-GITVERSION=	cc3a4f4
+GITVERSION=	e7d7a7e
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-ruby-${PORTNAME}-${GITVERSION}
 
