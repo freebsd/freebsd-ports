@@ -119,6 +119,7 @@
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
+    SUBDIR += deadbeef-mpris-plugin
     SUBDIR += decibel-audio-player
     SUBDIR += dekagen
     SUBDIR += denemo
