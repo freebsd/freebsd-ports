@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gigi
-PORTVERSION=	0.6.0.813
-PORTREVISION=	2
+PORTVERSION=	0.8.0.1048
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -20,11 +19,9 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-BROKEN=		does not compile
-
 USE_GCC=	4.4+
-USE_SCONS=	yes
-SCONS_ARGS=	prefix="" pkgconfigdir="" build_tutorials=0
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DBUILD_TUTORIALS:BOOL=OFF
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
@@ -48,24 +45,12 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 PLIST_SUB+=	OGRE=""
 GIGI_LIBS+=	GiGiOgre GiGiOgrePlugin_OIS
 .else
-SCONS_ARGS+=	build_ogre_driver=0 build_ogre_ois_plugin=0
+CMAKE_ARGS+=	-DBUILD_OGRE_DRIVER:BOOL=OFF -DBUILD_OGRE_OIS_PLUGIN:BOOL=OFF
 PLIST_SUB+=	OGRE="@comment "
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' -e 's|int_p_NULL|NULL|g' \
-		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/src/GIL/extension/io/png_dynamic_io.hpp \
-		${WRKSRC}/src/GIL/extension/io/png_io_private.hpp
-	@${REINPLACE_CMD} -e 's|Clr\.cpp|ClrConstants\.cpp|g' \
-		${WRKSRC}/src/SConscript
-
 post-build:
-	@${REINPLACE_CMD} -Ee 's,^(prefix|(lib|include)dir)=,&${PREFIX},' \
+	@${REINPLACE_CMD} -Ee 's,^prefix=.*,prefix=${PREFIX},' \
 		${WRKSRC}/*.pc
 
 do-install:
@@ -83,7 +68,7 @@ maint-gen-distfile:
 		${ECHO_CMD} "ERROR: the distfile already exists."; \
 		${FALSE}; \
 	fi
-	svn export https://${PORTNAME}.svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
+	svn export -r 1048 https://${PORTNAME}.svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -rf ${PORTNAME}
 
