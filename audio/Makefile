@@ -525,6 +525,7 @@
     SUBDIR += openspc
     SUBDIR += optimfrog
     SUBDIR += osalp
+    SUBDIR += osd-lyrics
     SUBDIR += osdmixer
     SUBDIR += oss
     SUBDIR += p5-Audio
