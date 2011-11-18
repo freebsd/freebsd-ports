@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	4.4
+PORTVERSION=	4.4.1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://schot.a-eskwadraat.nl/files/
