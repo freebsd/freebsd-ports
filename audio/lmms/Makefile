@@ -7,7 +7,7 @@
 
 PORTNAME=	lmms
 PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -17,7 +17,7 @@ COMMENT=	An all-in-one sequencer, drum machine, sampler and more
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
+		fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \

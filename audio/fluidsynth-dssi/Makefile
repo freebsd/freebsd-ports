@@ -7,7 +7,7 @@
 
 PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		lo.7:${PORTSDIR}/audio/liblo \
-		fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
+		fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
 		jack.0:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 

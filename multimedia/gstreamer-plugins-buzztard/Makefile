@@ -7,6 +7,7 @@
 
 PORTNAME=	buzztard
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20gstreamer%20extensions/${PORTVERSION}
 PKGNAMEPREFIX=	gstreamer-plugins-
@@ -15,7 +16,7 @@ DISTNAME=	gst-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Buzztard gstreamer plugins
 
-LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
 
 USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes

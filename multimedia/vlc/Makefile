@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.11
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -321,7 +321,7 @@ CONFIGURE_ARGS+=--enable-flac
 .endif
 
 .if defined(WITH_FLUID)
-LIB_DEPENDS+=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--enable-fluidsynth
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth

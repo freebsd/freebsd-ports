@@ -6,71 +6,95 @@
 #
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.5
 CATEGORIES=	audio
-MASTER_SITES=	SAVANNAH/fluid
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	JACK "Enable Jack audio support" On \
+		ALSA "Enable ALSA audio support" Off \
+		DBUS "Enable D-Bus support" Off \
 		LADSPA "Enable LADSPA audio support" Off \
+		LASH "Enable LASH audio support" Off \
 		PORTAUDIO "Enable PortAudio support" Off \
 		PULSEAUDIO "Enable PulseAudio support" Off \
 		SNDFILE "Enable Libsndfile support" Off
 
-USE_GNOME=	glib20 gnomehack pkgconfig
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--disable-alsa-support --disable-midishare \
-		--disable-coreaudio --disable-coremidi \
-		--disable-dart --disable-lash \
-		--disable-ladcca
+USE_BZIP2=	yes
+USE_GNOME=	glib20 pkgconfig
+USE_CMAKE=	yes
+CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
+		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
-MAN1=		fluidsynth.1
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
-CPPFLAGS+=	${PA2_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PA2_LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+MAN1=		fluidsynth.1
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
-CONFIGURE_ARGS+=	--disable-jack-support
+CMAKE_ARGS+=	-Denable-jack:BOOL=FALSE
+.endif
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CMAKE_ARGS+=	-Denable-alsa:BOOL=FALSE
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+.else
+CMAKE_ARGS+=	-Denable-dbus:BOOL=FALSE
 .endif
 
 .if defined(WITH_LADSPA)
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-CONFIGURE_ARGS+=	--enable-ladspa
+CMAKE_ARGS+=	-Denable-ladspa:BOOL=TRUE
+.endif
+
+.if defined(WITH_LASH)
+LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
+.else
+CMAKE_ARGS+=	-Denable-lash:BOOL=FALSE
 .endif
 
 .if defined(WITH_PORTAUDIO)
 BUILD_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
-PA2_CFLAGS=	`pkg-config --cflags-only-I portaudio-2.0`
-PA2_LIBS=	`pkg-config --libs-only-L portaudio-2.0`
-.else
-CONFIGURE_ARGS+=	--disable-portaudio-support
+CMAKE_ARGS+=	-Denable-portaudio:BOOL=TRUE
 .endif
 
 .if defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
-CONFIGURE_ARGS+=	--disable-pulse-support
+CMAKE_ARGS+=	-Denable-pulseaudio:BOOL=FALSE
 .endif
 
 .if defined(WITH_SNDFILE)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
-CONFIGURE_ARGS+=	--disable-libsndfile-support
+CMAKE_ARGS+=	-Denable-libsndfile:BOOL=FALSE
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O2 | |g ; \
-		 s|== "yes"|= "yes"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '197 s/,/ /' ${WRKSRC}/include/fluidsynth/synth.h
+	@${REINPLACE_CMD} -e \
+		'/Linux/s|^|#| ; \
+		 /_init_lib_suffix/s|"64"|""| ; \
+		 /CMAKE_C_FLAGS_RELEASE/s|-O2|| ; \
+		 s|enable_midishare|enable-midishare| ; \
+		 s|$${LIB_INSTALL_DIR}$${LIB_SUFFIX}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|share/man|man|' ${WRKSRC}/cmake_admin/DefaultDirs.cmake
 
 .include <bsd.port.post.mk>
