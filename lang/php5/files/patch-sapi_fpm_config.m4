@@ -1,6 +1,24 @@
---- sapi/fpm/config.m4.orig	2010-11-26 14:46:15.000000000 +0100
-+++ sapi/fpm/config.m4	2010-12-17 15:22:19.000000000 +0100
-@@ -394,7 +394,9 @@
+--- sapi/fpm/config.m4.orig	2011-06-26 17:48:11.000000000 +0200
++++ sapi/fpm/config.m4	2011-11-18 11:05:21.000000000 +0100
+@@ -312,7 +312,7 @@
+ 
+   AC_MSG_CHECKING([for TCP_INFO])
+ 
+-  AC_TRY_COMPILE([ #include <netinet/tcp.h> ], [struct tcp_info ti; int x = TCP_INFO;], [
++  AC_TRY_COMPILE([ #include <netinet/tcp.h> ], [struct tcp_info ti; ti.tcpi_sacked = 0; int x = TCP_INFO;], [
+     have_lq=tcp_info
+     AC_MSG_RESULT([yes])
+   ], [
+@@ -333,7 +333,7 @@
+       AC_MSG_RESULT([no])
+     ])
+ 
+-    if test "$have_lq" = "tcp_info"; then
++    if test "$have_lq" = "so_listenq"; then
+       AC_DEFINE([HAVE_LQ_SO_LISTENQ], 1, [do we have SO_LISTENQxxx?])
+     fi
+   fi
+@@ -423,7 +423,9 @@
    
    PHP_FPM_CFLAGS="-I$abs_srcdir/sapi/fpm"
   
@@ -11,7 +29,7 @@
    PHP_FPM_FILES="fpm/fastcgi.c \
      fpm/fpm.c \
      fpm/fpm_children.c \
-@@ -419,7 +421,8 @@
+@@ -449,7 +451,8 @@
      fpm/zlog.c \
    "
  
@@ -21,7 +39,7 @@
  
    case $host_alias in
        *aix*)
-@@ -429,11 +432,19 @@
+@@ -459,11 +462,19 @@
          BUILD_FPM="\$(CC) \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(EXTRA_LDFLAGS_PROGRAM) \$(LDFLAGS) \$(NATIVE_RPATHS) \$(PHP_GLOBAL_OBJS:.lo=.o) \$(PHP_SAPI_OBJS:.lo=.o) \$(PHP_FRAMEWORKS) \$(EXTRA_LIBS) \$(SAPI_EXTRA_LIBS) \$(ZEND_EXTRA_LIBS) -o \$(SAPI_FPM_PATH)"
        ;;
        *)
