@@ -1899,6 +1899,7 @@ cppi                            ports/devel/cppi
 cppunit                         ports/devel/cppunit
 cproto                          ports/devel/cproto
 cpu                             ports/sysutils/cpu
+cpuburn                         ports/sysutils/cpuburn
 cpuflags                        ports/devel/cpuflags
 cpuid                           ports/misc/cpuid
 cpulimit                        ports/sysutils/cpulimit
@@ -6125,6 +6126,7 @@ ja-dbskkd-cdb                   ports/japanese/dbskkd-cdb
 ja-ddskk                        ports/japanese/ddskk
 ja-devil-fpw                    ports/japanese/devil-fpw
 ja-dvi2dvi                      ports/japanese/dvi2dvi
+ja-dvi2tty                      ports/japanese/dvi2tty
 ja-dvipsk                       ports/japanese/dvipsk
 ja-e2ps                         ports/japanese/e2ps
 ja-eb                           ports/japanese/eb
@@ -6352,6 +6354,7 @@ ja-pejv-fpw                     ports/japanese/pejv-fpw
 ja-perl5                        ports/japanese/perl5
 ja-php5-mecab                   ports/japanese/php5-mecab
 ja-php_doc                      ports/japanese/php_doc
+ja-plain2                       ports/japanese/plain2
 ja-plan                         ports/japanese/plan
 ja-platex-japanese              ports/japanese/platex-japanese
 ja-platex-jsclasses             ports/japanese/platex-jsclasses
@@ -14174,6 +14177,7 @@ p5-Sub-WrapPackages             ports/devel/p5-Sub-WrapPackages
 p5-Subtitles                    ports/multimedia/p5-Subtitles
 p5-Sudo                         ports/security/p5-Sudo
 p5-Switch                       ports/lang/p5-Switch
+p5-Symbol-Util                  ports/devel/p5-Symbol-Util
 p5-Syntax-Highlight-Engine-Kate  ports/textproc/p5-Syntax-Highlight-Engine-Kate
 p5-Syntax-Highlight-HTML        ports/www/p5-Syntax-Highlight-HTML
 p5-Syntax-Highlight-Perl-Improved  ports/textproc/p5-Syntax-Highlight-Perl-Improved
@@ -18639,6 +18643,7 @@ p5-swf-builder                  ports/graphics/p5-SWF-Builder
 p5-swf-chart                    ports/www/p5-SWF-Chart
 p5-swf-file                     ports/graphics/p5-SWF-File
 p5-switch                       ports/lang/p5-Switch
+p5-symbol-util                  ports/devel/p5-Symbol-Util
 p5-syntax-highlight-engine-kate  ports/textproc/p5-Syntax-Highlight-Engine-Kate
 p5-syntax-highlight-html        ports/www/p5-Syntax-Highlight-HTML
 p5-syntax-highlight-perl-improved  ports/textproc/p5-Syntax-Highlight-Perl-Improved
@@ -20590,9 +20595,11 @@ pgpool                          ports/databases/pgpool
 pgpool-II                       ports/databases/pgpool-II
 pgpool-II-22                    ports/databases/pgpool-II-22
 pgpool-II-23                    ports/databases/pgpool-II-23
+pgpool-II-30                    ports/databases/pgpool-II-30
 pgpool-ii                       ports/databases/pgpool-II
 pgpool-ii-22                    ports/databases/pgpool-II-22
 pgpool-ii-23                    ports/databases/pgpool-II-23
+pgpool-ii-30                    ports/databases/pgpool-II-30
 pgpoolAdmin                     ports/databases/pgpoolAdmin
 pgpooladmin                     ports/databases/pgpoolAdmin
 pgpsendmail                     ports/mail/pgpsendmail
@@ -26894,6 +26901,7 @@ x-tile                          ports/deskutils/x-tile
 x026                            ports/deskutils/x026
 x11_blast                       ports/x11/blast
 x11_silo                        ports/x11/silo
+x11amp                          ports/audio/x11amp
 x11iraf                         ports/science/x11iraf
 x11perf                         ports/x11/x11perf
 x11vnc                          ports/net/x11vnc
@@ -26939,6 +26947,7 @@ xbacklight                      ports/x11/xbacklight
 xbae                            ports/x11-toolkits/xbae
 xballoon                        ports/x11/xballoon
 xbanner                         ports/x11/xbanner
+xbat                            ports/games/xbat
 xbatt                           ports/sysutils/xbatt
 xbattbar                        ports/sysutils/xbattbar
 xbattle                         ports/games/xbattle
@@ -27101,6 +27110,7 @@ xf86-video-i128                 ports/x11-drivers/xf86-video-i128
 xf86-video-i740                 ports/x11-drivers/xf86-video-i740
 xf86-video-imstt                ports/x11-drivers/xf86-video-imstt
 xf86-video-intel                ports/x11-drivers/xf86-video-intel
+xf86-video-intel29              ports/x11-drivers/xf86-video-intel29
 xf86-video-mach64               ports/x11-drivers/xf86-video-mach64
 xf86-video-mga                  ports/x11-drivers/xf86-video-mga
 xf86-video-neomagic             ports/x11-drivers/xf86-video-neomagic
@@ -27694,6 +27704,7 @@ xset                            ports/x11/xset
 xsetmode                        ports/x11/xsetmode
 xsetpointer                     ports/x11/xsetpointer
 xsetroot                        ports/x11/xsetroot
+xshisen                         ports/games/xshisen
 xshogi                          ports/games/xshogi
 xshttpd                         ports/www/xshttpd
 xshttpd-devel                   ports/www/xshttpd-devel
