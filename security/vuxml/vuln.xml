@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eef56761-11eb-11e1-bb94-001c140104d4">
+    <topic>hiawatha -- memory leak in PreventSQLi routine</topic>
+    <affects>
+      <package>
+        <name>hiawatha</name>
+        <range><ge>7.6</ge><lt>7.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hugo Leisink reports via private mail to maintainer:</p>
+	<blockquote>
+	  <p>The memory leak was introduced in version 7.6. It is in the routing
+	    that checks for SQL injections. So, if you have set PreventSQLi to
+	    'no', there is no problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hiawatha-webserver.org/changelog</url>
+    </references>
+    <dates>
+      <discovery>2011-11-18</discovery>
+      <entry>2011-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90cc1494-10ac-11e1-b3ec-0024e830109b">
     <topic> BIND -- Remote DOS</topic>
     <affects>
