@@ -27,7 +27,7 @@ COMMENT=	Enhanced Quake2 OpenGL only engine with Lazarus support
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
-USE_XORG=	xxf86dga 
+USE_XORG=	xxf86dga
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix
 

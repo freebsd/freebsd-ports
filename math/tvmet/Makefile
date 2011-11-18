@@ -35,7 +35,7 @@ CXXFLAGS+=	-DTVMET_OPTIMIZE
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|= -O |= |g' ${WRKSRC}/doc/Makefile.in 
+	@${REINPLACE_CMD} -e 's|= -O |= |g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

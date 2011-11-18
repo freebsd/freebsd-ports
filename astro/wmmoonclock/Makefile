@@ -16,7 +16,7 @@ COMMENT=	Displays the phase of the moon, plus orbital data
 
 # Distfile says it's a .tar.gz but is actually uncompressed
 EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=	
+EXTRACT_BEFORE_ARGS=
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm

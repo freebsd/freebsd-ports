@@ -17,7 +17,7 @@ COMMENT=	Interactive remote control shell for xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl 
+		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 
 PERL_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ''

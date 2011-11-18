@@ -20,7 +20,7 @@ MAN1=		scr2txt.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/scr2txt
 
-do-install:	
+do-install:
 	@cd ${WRKSRC}; ${MAKE} BINDIR=${LOCALBASE}/bin SHAREDIR=${LOCALBASE} install
 
 .include <bsd.port.mk>

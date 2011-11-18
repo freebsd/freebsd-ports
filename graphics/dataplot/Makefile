@@ -34,7 +34,7 @@ MAXOBV?=	400000	# Change if you need more observations/variable
 .if ((${ARCH}=="amd64") || (${ARCH}=="sparc64") || (${ARCH}=="ia64"))
 FFLAGS+= -DDD -DI32 -fdefault-real-8 -fdefault-double-8
 .else
-FFLAGS+= -DSD -DI32 -fdefault-real-8 -fdefault-double-8	
+FFLAGS+= -DSD -DI32 -fdefault-real-8 -fdefault-double-8
 .endif
 
 post-extract:

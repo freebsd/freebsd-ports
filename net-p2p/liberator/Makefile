@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/ofcp/ofcp-${PORTVERSION}
 DISTNAME=	ofcp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Command line client to FreeNet Network 
+COMMENT=	Command line client to FreeNet Network
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

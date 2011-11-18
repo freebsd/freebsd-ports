@@ -38,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} 's,^CFLAGS =,CFLAGS +=,' ${WRKSRC}/ImmModules/cce/Makefile.in \
 		${WRKSRC}/ImmModules/turbo/Makefile.in \
 		${WRKSRC}/src/server/Makefile.in \
-		${WRKSRC}/src/client/Makefile.in 
+		${WRKSRC}/src/client/Makefile.in
 	@${REINPLACE_CMD} -e 's#$$(prefix)$$(imdir)/{gb,gbk,big5}#$$(prefix)$$(imdir)/gb $$(prefix)$$(imdir)/gbk $$(prefix)$$(imdir)/big5#g' ${WRKSRC}/ImmModules/turbo/Makefile.in
 	@${REINPLACE_CMD} -e 's,-@PACKAGE_VERSION@,,g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's,/share/man,/man,g' ${WRKSRC}/configure

@@ -39,7 +39,7 @@ PLIST_SUB+=	WITH_PYTHON=""
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.if defined(WITH_TCL) 
+.if defined(WITH_TCL)
 CATEGORIES+=	tcl
 USE_TCL=	83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"

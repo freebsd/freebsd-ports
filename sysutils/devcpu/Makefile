@@ -31,7 +31,7 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}" BINDIR="${PREFIX}/bin"
 
 STAMPFILE=	${LOCALBASE}/share/${PORTNAME}/.do_not_delete
 
-OPTIONS=	EXTRACTOR "Install Award Bios microcode extracting utility" off 
+OPTIONS=	EXTRACTOR "Install Award Bios microcode extracting utility" off
 
 MAN4=		cpu.4
 MAN8=		cpu_microcode_tool.8

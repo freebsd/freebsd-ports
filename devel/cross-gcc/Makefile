@@ -243,7 +243,7 @@ post-install:
 #
 # Generate symlinks for binutils binaries to let gcc found them
 #
-.for F in ${LN_BINARIES}   
+.for F in ${LN_BINARIES}
 	@${LN} -sf ../../../../bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/libexec/gcc/${OURTARGET}/${PORTVERSION}/$F
 .endfor

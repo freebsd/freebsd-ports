@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unarj ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}
-.for i in ${PORTDOCS}	
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

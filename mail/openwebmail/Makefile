@@ -136,7 +136,7 @@ post-extract:
 
 post-patch:
 	### XXX: Hack, some of this should be LOCALBASE
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' 
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g'
 .if defined(DISABLE_SPEEDYCGI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WARNING:"

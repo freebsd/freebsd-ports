@@ -37,7 +37,7 @@ PLIST_DIRS=	%%DATADIR%%
 BINS=		dumpmap buildmap buildmap_osm buildplace buildus
 GUI_BINS=	gtkroadmap gtkroadgps
 SCRIPTS=	rdmcompare rdmdownload rdmgendcwmaps rdmgenmaps \
-		rdmgenshpmaps rdmgenstatemaps 
+		rdmgenshpmaps rdmgenstatemaps
 DATA=		drivers preferences roadmap.popup roadmap.screenobjects \
 		session sprites
 DOCS=		Bugs ChangeLog Coding Configuration Developer-Guide \

@@ -36,7 +36,7 @@ do-install: install-cnotice
 .for i in ${VTK_KITS}
 	@cd ${VTKSRCDIR}/${i}/Testing && \
 		${FIND} * -type d -exec ${MKDIR} ${TESTINGDIR}/${i}/{} \; && \
-		${FIND} * \! -type d -exec ${INSTALL_DATA} {} ${TESTINGDIR}/${i}/{} \; 
+		${FIND} * \! -type d -exec ${INSTALL_DATA} {} ${TESTINGDIR}/${i}/{} \;
 .endfor
 
 	@${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README.examples

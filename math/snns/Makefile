@@ -31,7 +31,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|mkdir $$(|${MKDIR} $$(|g'
 	@${FIND} ${WRKSRC}/xgui/sources -name "*.c" -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e 's|X11/Xaw/|X11/Xaw3d/|g' 
+		${REINPLACE_CMD} -e 's|X11/Xaw/|X11/Xaw3d/|g'
 
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/snns
 	@${ECHO_CMD} '' >> ${WRKDIR}/snns

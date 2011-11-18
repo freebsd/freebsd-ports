@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xmake	
+# New ports collection makefile for:	xmake
 # Date created:		28 March 1997
 # Whom:			dlowe
 #

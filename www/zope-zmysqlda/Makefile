@@ -10,7 +10,7 @@ PORTVERSION=	2.0.8
 PORTREVISION=	1
 CATEGORIES=	www databases zope
 MASTER_SITES=	http://www.zope.org/Members/adustman/Products/ZMySQLDA/${PORTVERSION}/ \
-		SF/mysql-python/${PORTNAME}/${PORTVERSION}		
+		SF/mysql-python/${PORTNAME}/${PORTVERSION}
 
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}

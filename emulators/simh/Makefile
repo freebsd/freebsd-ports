@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 
 BIN_FILES=	altair altairz80 gri h316 hp2100 i1401 i1620 i7094 ibm1130 \
 		id16 id32 lgp nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 \
-		s3 sds vax vax780 
+		s3 sds vax vax780
 
 PORTDOCS=	0readme_38.txt 0readme_ethernet.txt
 

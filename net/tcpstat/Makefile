@@ -16,7 +16,7 @@ COMMENT=	A program to report various network statistics
 GNU_CONFIGURE=	yes
 
 MAN1=		tcpstat.1 tcpprof.1
-DOCS=		AUTHORS ChangeLog LICENSE README doc/Tips_and_Tricks.txt 
+DOCS=		AUTHORS ChangeLog LICENSE README doc/Tips_and_Tricks.txt
 
 .if !defined(NOPORTDOCS)
 post-install:

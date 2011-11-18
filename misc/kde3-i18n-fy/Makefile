@@ -1,5 +1,5 @@
 # New ports collection makefile for:    kde3-i18n-fy
-# Date created:                         22 January 2005                             
+# Date created:                         22 January 2005
 # Whom:                                 Michael Nottebrock <lofi@freebsd.org>
 #
 # $FreeBSD$

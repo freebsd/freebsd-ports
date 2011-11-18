@@ -34,6 +34,6 @@ do-install:
 .for file in fr frftp frcolor.tcl
 	@${CHMOD} ${BINMODE} ${PREFIX}/lib/FileRunner/${file}
 .endfor
-	@${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin/fr	
+	@${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin/fr
 
 .include <bsd.port.mk>

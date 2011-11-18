@@ -10,7 +10,7 @@ PORTVERSION=	2.2.2
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.netrek.org/pub/netrek/mirrors/ftp.csua.berkeley.edu.old/netrek/ \
-		
+
 DISTNAME=	BRMH-2.2p2.freebsd.bin
 EXTRACT_SUFX=	.gz
 
