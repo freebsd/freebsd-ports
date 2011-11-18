@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0400
+PORTVERSION=	2.0401
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -187,11 +187,6 @@ post-extract:
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 
-.if defined(MAINTAINER_MODE)
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
-
-.endif
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501001
