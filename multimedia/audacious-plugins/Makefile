@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 
@@ -352,7 +352,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITH_AMIDI)
-LIB_DEPENDS+=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
 PLIST_SUB+=	AMIDIPLUGIN=""
 .else
