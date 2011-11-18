@@ -5,11 +5,10 @@ include/libunwind-%%ARCH%%.h
 include/libunwind.h
 include/unwind.h
 lib/libunwind-generic.a
-lib/libunwind-generic.so
 lib/libunwind-ptrace.a
 lib/libunwind-setjmp.so
 lib/libunwind-setjmp.so.0
 lib/libunwind-%%ARCH%%.so
-lib/libunwind-%%ARCH%%.so.7
+lib/libunwind-%%ARCH%%.so.8
 lib/libunwind.so
-lib/libunwind.so.7
+lib/libunwind.so.8
