@@ -1,5 +1,5 @@
 # ex:ts=8
-# Ports collection makefile for:	GDB 7.1
+# Ports collection makefile for:	GDB 7.3.x
 # Date created:				16 November 2010
 # Whom:					Steven Kreuzer <skreuzer@FreeBSD.org>
 #
@@ -42,7 +42,8 @@ ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		EXPAT "Enable XML parsing for metadata" off \
-		PYTHON "Enable Python support" off
+		PYTHON "Enable Python support" off \
+		THREAD "Enable Thread support" on
 
 .include <bsd.port.options.mk>
 
@@ -83,7 +84,9 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$/ [GDB v${PORTVERSION} for FreeBSD]/' \
 		${WRKSRC}/gdb/version.in
-	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb
+.if !defined(WITHOUT_THREAD)
+	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
