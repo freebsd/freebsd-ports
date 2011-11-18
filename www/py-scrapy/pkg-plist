@@ -1,142 +1,11 @@
 bin/scrapy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/AUTHORS
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/INSTALL
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/LICENSE
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/MANIFEST.in
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/README
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Scrapy.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Scrapy.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Scrapy.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Scrapy.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Scrapy.egg-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/runtests.bat
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/runtests.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/scrapy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/Makefile
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/README
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_ext/scrapydocs.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_ext/scrapydocs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_ext/scrapydocs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_static/scrapydoc.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_static/selectors-sample1.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/_templates/page.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/api-stability.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/conf.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/conf.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/conf.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/contributing.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/experimental/crawlspider-v2.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/experimental/djangoitems.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/experimental/index.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/faq.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/index.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/intro/install.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/intro/overview.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/intro/tutorial.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/_images/firebug1.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/_images/firebug2.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/_images/firebug3.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/_images/scrapy_architecture.odg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/_images/scrapy_architecture.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/architecture.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/commands.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/downloader-middleware.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/email.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/exceptions.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/exporters.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/extensions.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/feed-exports.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/firebug.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/firefox.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/images.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/item-pipeline.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/items.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/leaks.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/link-extractors.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/loaders.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/logging.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/request-response.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/scrapyd.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/selectors.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/settings.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/shell.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/signals.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/spider-middleware.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/spiders.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/stats.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/telnetconsole.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/ubuntu.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/docs/topics/webservice.rst
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/items.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/items.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/items.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/pipelines.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/pipelines.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/pipelines.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/google_directory.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/google_directory.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/googledir/spiders/google_directory.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/googledir/scrapy.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/items.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/items.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/items.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/pipelines.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/pipelines.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/pipelines.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/imdb_site.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/imdb_site.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/imdb/spiders/imdb_site.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/experimental/imdb/scrapy.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/items.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/items.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/items.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/pipelines.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/pipelines.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/pipelines.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/google_directory.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/google_directory.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/googledir/spiders/google_directory.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/examples/googledir/scrapy.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/coverage-report.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/makedeb.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/makedeb.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/makedeb.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy-ws.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy-ws.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy-ws.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy.1
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy.bat
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapy_bash_completion
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/scrapyd.tac
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/extras/setup_wininst.bmp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/scrapy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/__init__.pyo
@@ -1172,80 +1041,56 @@ bin/scrapy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapyd/website.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapyd/website.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapyd/website.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scripts/rpm-install.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/setup.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/setup.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/setup.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/setup.pyo
-@dirrm scripts
-@dirrm scrapyd/tests
-@dirrm scrapyd
-@dirrm scrapy/xlib/pydispatch
-@dirrm scrapy/xlib
-@dirrm scrapy/utils
-@dirrm scrapy/tests/test_utils_misc/test_walk_modules/mod
-@dirrm scrapy/tests/test_utils_misc/test_walk_modules
-@dirrm scrapy/tests/test_utils_misc
-@dirrm scrapy/tests/test_spidermanager/test_spiders
-@dirrm scrapy/tests/test_spidermanager
-@dirrm scrapy/tests/test_djangoitem
-@dirrm scrapy/tests/test_contrib_ibl
-@dirrm scrapy/tests/test_cmdline
-@dirrm scrapy/tests/sample_data/test_site
-@dirrm scrapy/tests/sample_data/link_extractor
-@dirrm scrapy/tests/sample_data/feeds
-@dirrm scrapy/tests/sample_data/compressed
-@dirrm scrapy/tests/sample_data
-@dirrm scrapy/tests
-@dirrm scrapy/templates/spiders
-@dirrm scrapy/templates/project/module/spiders
-@dirrm scrapy/templates/project/module
-@dirrm scrapy/templates/project
-@dirrm scrapy/templates
-@dirrm scrapy/settings
-@dirrm scrapy/selector
-@dirrm scrapy/http/response
-@dirrm scrapy/http/request
-@dirrm scrapy/http
-@dirrm scrapy/core/downloader/responsetypes
-@dirrm scrapy/core/downloader/handlers
-@dirrm scrapy/core/downloader
-@dirrm scrapy/core
-@dirrm scrapy/contrib_exp/downloadermiddleware
-@dirrm scrapy/contrib_exp/crawlspider
-@dirrm scrapy/contrib_exp
-@dirrm scrapy/contrib/webservice
-@dirrm scrapy/contrib/spiders
-@dirrm scrapy/contrib/spidermiddleware
-@dirrm scrapy/contrib/schedulermiddleware
-@dirrm scrapy/contrib/pipeline
-@dirrm scrapy/contrib/loader
-@dirrm scrapy/contrib/linkextractors
-@dirrm scrapy/contrib/ibl/extraction
-@dirrm scrapy/contrib/ibl
-@dirrm scrapy/contrib/exporter
-@dirrm scrapy/contrib/downloadermiddleware
-@dirrm scrapy/contrib
-@dirrm scrapy/commands
-@dirrm scrapy
-@dirrm extras
-@dirrm examples/googledir/googledir/spiders
-@dirrm examples/googledir/googledir
-@dirrm examples/googledir
-@dirrm examples/experimental/imdb/imdb/spiders
-@dirrm examples/experimental/imdb/imdb
-@dirrm examples/experimental/imdb
-@dirrm examples/experimental/googledir/googledir/spiders
-@dirrm examples/experimental/googledir/googledir
-@dirrm examples/experimental/googledir
-@dirrm examples/experimental
-@dirrm examples
-@dirrm docs/topics/_images
-@dirrm docs/topics
-@dirrm docs/intro
-@dirrm docs/experimental
-@dirrm docs/_templates
-@dirrm docs/_static
-@dirrm docs/_ext
-@dirrm docs
-@dirrm Scrapy.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapyd/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapyd
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/xlib/pydispatch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/xlib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_utils_misc/test_walk_modules/mod
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_utils_misc/test_walk_modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_utils_misc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_spidermanager/test_spiders
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_spidermanager
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_djangoitem
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_contrib_ibl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/test_cmdline
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/sample_data/test_site
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/sample_data/link_extractor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/sample_data/feeds
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/sample_data/compressed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests/sample_data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/templates/spiders
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/templates/project/module/spiders
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/templates/project/module
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/templates/project
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/settings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/selector
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/http/response
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/http/request
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/http
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/core/downloader/responsetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/core/downloader/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/core/downloader
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib_exp/downloadermiddleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib_exp/crawlspider
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib_exp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/webservice
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/spiders
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/spidermiddleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/schedulermiddleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/pipeline
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/loader
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/linkextractors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/ibl/extraction
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/ibl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/exporter
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib/downloadermiddleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scrapy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
