@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Alias
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,6 @@ LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Data::Alias.3
+MAN3=		Data::Alias.3
 
 .include <bsd.port.mk>
