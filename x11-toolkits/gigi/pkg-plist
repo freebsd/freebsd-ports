@@ -1,4 +1,6 @@
+include/GG/AdamDlg.h
 include/GG/AdamGlue.h
+include/GG/AdamParser.h
 include/GG/AlignmentFlags.h
 include/GG/Base.h
 include/GG/BrowseInfoWnd.h
@@ -14,13 +16,20 @@ include/GG/DynamicGraphic.h
 include/GG/Edit.h
 include/GG/Enum.h
 include/GG/EveGlue.h
+include/GG/EveLayout.h
+include/GG/EveParser.h
 include/GG/EventPump.h
 include/GG/Exception.h
+include/GG/Export.h
+include/GG/ExpressionParser.h
+include/GG/ExpressionWriter.h
 include/GG/Flags.h
 include/GG/Font.h
 include/GG/FontFwd.h
 include/GG/GUI.h
+include/GG/GroupBox.h
 include/GG/Layout.h
+include/GG/Lexer.h
 include/GG/ListBox.h
 include/GG/Menu.h
 include/GG/MultiEdit.h
@@ -52,6 +61,7 @@ include/GG/TabWnd.h
 include/GG/TextControl.h
 include/GG/Texture.h
 include/GG/Timer.h
+include/GG/Token.h
 include/GG/UnicodeCharsets.h
 include/GG/Wnd.h
 include/GG/WndEditor.h
