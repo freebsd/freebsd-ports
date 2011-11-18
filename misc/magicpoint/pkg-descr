@@ -6,7 +6,7 @@ possible.  Its presentation file (whose suffix is typically .mgp) is
 just text so that you can create presentation files quickly with your
 favorite editor (e.g. Emacs).
 
-For more information, see /usr/X11R6/share/doc/mgp/*.
-Sample files are located in /usr/X11R6/share/doc/mgp/sample.
+For more information, see /usr/local/share/doc/mgp/*.
+Sample files are located in /usr/local/share/doc/mgp/sample.
 It's a good idea to preview a sample file before installation.
 	% ./mgp tutorial.mgp
