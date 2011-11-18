@@ -42,7 +42,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-v4l --disable-v4l2 \
 		--disable-camelot --disable-alsamixer --disable-v4lconvert \
-		--without-doxygen --without-cpuflags 
+		--without-doxygen --without-cpuflags
 USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 

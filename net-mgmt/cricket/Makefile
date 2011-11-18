@@ -23,7 +23,7 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-SUB_FILES=	pkg-message 
+SUB_FILES=	pkg-message
 
 # UID and username comes from ports/UIDs.
 USERS=	cricket

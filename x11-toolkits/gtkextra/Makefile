@@ -10,7 +10,7 @@ PORTVERSION=	0.99.17
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
-		SF/scigraphica/scigraphica-0.x/0.8.0-source		
+		SF/scigraphica/scigraphica-0.x/0.8.0-source
 
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 

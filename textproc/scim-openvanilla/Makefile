@@ -29,7 +29,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	OV_MODULEDIR=${PREFIX}/lib/openvanilla/
-CPPFLAGS+=	-I${LOCALBASE}/include	
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.a	\
 		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.la	\

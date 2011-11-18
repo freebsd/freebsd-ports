@@ -34,7 +34,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@$(MKDIR) ${DOCSDIR}/BWman
 	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${DOCSDIR}/BWman
-. for FILE in CHANGES.txt ChangeLog README.txt 
+. for FILE in CHANGES.txt ChangeLog README.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 . endfor
 .endif

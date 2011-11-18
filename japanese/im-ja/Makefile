@@ -51,8 +51,8 @@ LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .endif
 
 .if defined(WITH_GNOMEPANEL)
-USE_GNOME+=	gnomepanel      
-PLIST_SUB+=	GNOMEPANEL=""   
+USE_GNOME+=	gnomepanel
+PLIST_SUB+=	GNOMEPANEL=""
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 PLIST_SUB+=	GNOMEPANEL="@comment "

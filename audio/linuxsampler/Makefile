@@ -52,7 +52,7 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .if defined(WITH_ALSA)
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
-CONFIGURE_ARGS+=--disable-alsa-driver	
+CONFIGURE_ARGS+=--disable-alsa-driver
 .endif
 
 .if defined(WITH_ARTS)

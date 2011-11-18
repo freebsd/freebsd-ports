@@ -60,7 +60,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/Ted/rtf2*.sh ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/tedPackage/Ted/Ted.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/tedPackage/Ted/rtf2*.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR} 
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/*.ps ${DATADIR}
 	@${MKDIR} ${AFMDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/afm/*.afm ${AFMDIR}

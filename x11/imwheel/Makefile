@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0.p12
 PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
-		SF/${PORTNAME}/${PORTNAME}-source/1.0.0pre12		
+		SF/${PORTNAME}/${PORTNAME}-source/1.0.0pre12
 
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p12/pre12/}
 

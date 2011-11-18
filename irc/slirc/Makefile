@@ -48,7 +48,7 @@ DOCS+=		BUGS \
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE}," ${WRKSRC}/Makefile ${WRKSRC}/scripts/init.sl
-	  
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/slirc

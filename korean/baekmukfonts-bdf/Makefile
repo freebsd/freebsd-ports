@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-bdf
 DISTNAME=	baekmuk-${PORTVERSION}
 DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
 		batang10.bdf.gz batang10b.bdf.gz \
-		gulim10.bdf.gz gulim10b.bdf.gz 
+		gulim10.bdf.gz gulim10b.bdf.gz
 EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org

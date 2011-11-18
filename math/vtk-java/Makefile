@@ -51,12 +51,12 @@ post-build:
 	${CP} ${VTKSRCDIR}/Wrapping/Java/vtk/vtkCanvas.java ${WRKSRC}/java/vtk
 	${CP} ${VTKSRCDIR}/Wrapping/Java/vtk/vtkPanel.java ${WRKSRC}/java/vtk
 	(cd ${WRKSRC}/java;${JAVAC} vtk/*.java)
-	(cd ${WRKSRC}/java;${JAR} cvf ${WRKSRC}/bin/${JARFILE} vtk/*.class) 
+	(cd ${WRKSRC}/java;${JAR} cvf ${WRKSRC}/bin/${JARFILE} vtk/*.class)
 .if defined(WITH_TESTING)
 .for i in AxesActor SimpleVTK TestVTKCanvas TestInternalFrames ImagePlaneWidget TestVTKCanvas
 	(cd ${VTKSRCDIR}/Wrapping/Java; \
 	${JAVAC} -classpath .:${WRKSRC}/bin/${JARFILE} \
-	-d ${WRKSRC}/Wrapping/Java/ ${i}.java) 
+	-d ${WRKSRC}/Wrapping/Java/ ${i}.java)
 .endfor
 .endif
 

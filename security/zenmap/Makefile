@@ -39,7 +39,7 @@ MLINKS=		zenmap.1 xnmap.1
 WITHOUT_PSYCO=	yes
 .endif
 
-.ifndef(WITHOUT_PSYCO) 
+.ifndef(WITHOUT_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 

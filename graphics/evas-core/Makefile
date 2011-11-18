@@ -43,10 +43,10 @@ CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
 .if !defined(WITHOUT_FRIBIDI)
-CONFIGURE_ARGS+=	--enable-fribidi 
+CONFIGURE_ARGS+=	--enable-fribidi
 LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
 .else
-CONFIGURE_ARGS+=	--disable-fribidi 
+CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
 .if !defined(WITHOUT_EET)
