@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Compress-Raw-Lzma
-PORTVERSION=	2.040
+PORTVERSION=	2.042
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -32,7 +32,7 @@ LZMA_DEPEND?=	xz
 .endif
 
 .if (${LZMA_DEPEND} == "xz") || (${LZMA_DEPEND} == "lzmalib")
-LIB_DEPENDS=	lzma:${PORTSDIR}/archivers/${LZMA_DEPEND}
+LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/${LZMA_DEPEND}
 .endif
 
 pre-build:
