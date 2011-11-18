@@ -11,32 +11,25 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	qingfeng@douban.com
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A high level scraping and web crawling framework
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.2.0:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.6:${PORTSDIR}/textproc/py-libxml2
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.2.0:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.6:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-BROKEN=		does not compile
+USE_PYTHON=	2.6-2.7
+USE_PYDISTUTILS=easy_install
 
-USE_PYTHON=	2.5-2.7
-USE_PYDISTUTILS=yes
-
-OPTIONS=	SSL	"Support HTTPS"			on \
-		JSON	"Support (de)serializing JSON"	on
+OPTIONS=	SSL	"Support HTTPS"			on
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SSL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
-.endif
-
-.if defined(WITH_JSON)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
 .endif
 
 .include <bsd.port.post.mk>
