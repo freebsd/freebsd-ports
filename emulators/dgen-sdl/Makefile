@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgen-sdl
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
@@ -20,9 +20,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-extra-opt
 
 PLIST_FILES=	bin/dgen \
-		bin/tobin
+		bin/dgen_tobin
 
-MAN1=		dgen.1 tobin.1
+MAN1=		dgen.1 dgen_tobin.1
 MAN5=		dgenrc.5
 
 .include <bsd.port.pre.mk>
