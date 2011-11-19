@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Lite
-PORTVERSION=	1.025
+PORTVERSION=	1.026
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,14 +17,13 @@ COMMENT=	Lightweight ORM for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Cache-Memcached>=1.27:${PORTSDIR}/databases/p5-Cache-Memcached \
+BUILD_DEPENDS=	p5-Cache-Memcached>=1.27:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
 		p5-Ima-DBI-Contextual>=0:${PORTSDIR}/databases/p5-Ima-DBI-Contextual \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0:${PORTSDIR}/databases/p5-SQL-Abstract-Limit
-
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
