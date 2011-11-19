@@ -158,7 +158,7 @@ ports-mgmt/newportsversioncheck||2008-05-27|Obsoleted by portscout
 net-p2p/dclibc||2008-05-30|Has expired: Abandoned, not used, website disappeared
 multimedia/xfce4-xmms-controller-plugin||2008-05-30|Has expired: Project is dead
 www/pear-HTTP_Session||2008-05-30|Has expired: Use www/pear-HTTP_Session2 instead
-security/bioapitool||2008-05-30|Has expired: All functionality of this tools has been merged with pam_bsdbioapi
+security/bioapitool||2008-05-30|Has expired: All functionality of these tools has been merged with pam_bsdbioapi
 japanese/motoya-ttfonts||2008-05-31|Removed because of extremely restrictive license
 devel/libffi-devel||2008-06-02|Has expired: Use devel/libffi instead
 www/mod_auth_pwcheck||2008-06-17|Depends on expired port, website disappeared
@@ -190,8 +190,8 @@ java/bsh|lang/bsh|2008-06-22|Moved to lang/bsh
 www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2
 security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer
 devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme
-devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official python modules naming scheme
-devel/subversion-ruby|devel/ruby-subversion|2008-06-30|Rename to reflect official ruby modules naming scheme
+devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official Python modules naming scheme
+devel/subversion-ruby|devel/ruby-subversion|2008-06-30|Rename to reflect official Ruby modules naming scheme
 misc/goblin|math/goblin|2008-06-30|Moved to a better category
 editors/openoffice.org-1.0||2008-07-02|Removed
 editors/openoffice.org-1.1||2008-07-02|Removed
@@ -220,21 +220,21 @@ chinese/php_doc-zh||2008-08-04|Manual in this language was removed
 hungarian/php_doc||2008-08-04|Manual in this language was removed
 mbone/rtpmon||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
 games/ssc||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
-mail/mutt-ng||2008-08-18|Has expired: Abandonware by upstream maintainers. Use mail/mutt-devel
-x11-wm/heliodor||2008-08-18|No longer supported - Use compiz
-x11-wm/beryl||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-core||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-manager||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-plugins||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-plugins-unsupported||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-settings||2008-08-18|Has expired: No longer supported - Use compiz
-x11-wm/beryl-settings-bindings||2008-08-18|Has expired: No longer supported - Use compiz
+mail/mutt-ng||2008-08-18|Has expired: Abandoned by upstream maintainers; use mail/mutt-devel
+x11-wm/heliodor||2008-08-18|No longer supported -- use compiz
+x11-wm/beryl||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-core||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-manager||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-plugins||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-plugins-unsupported||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-settings||2008-08-18|Has expired: No longer supported -- use compiz
+x11-wm/beryl-settings-bindings||2008-08-18|Has expired: No longer supported -- use compiz
 japanese/lyx|print/lyx|2008-08-18|No longer maintained and print/lyx now supports Unicode
 japanese/lyx-doc||2008-08-18|Obsolete
-games/blobandconquer||2008-08-20|Removed due to copyright problem
-games/blobwars||2008-08-20|Removed due to copyright problem
-games/randomshooter||2008-08-20|Removed due to copyright problem
-games/starfighter||2008-08-20|Removed due to copyright problem
+games/blobandconquer||2008-08-20|Removed due to copyright problems
+games/blobwars||2008-08-20|Removed due to copyright problems
+games/randomshooter||2008-08-20|Removed due to copyright problems
+games/starfighter||2008-08-20|Removed due to copyright problems
 devel/autoconf261|devel/autoconf262|2008-08-20|Migration to autoconf-2.62
 x11-themes/enlightenment-theme-BlueSteel||2008-08-20|Deprecated by x11-themes/e16-themes
 x11-themes/enlightenment-theme-BrushedMetal-Tigert||2008-08-20|Deprecated by x11-themes/e16-themes
@@ -258,7 +258,7 @@ devel/openthreads||2008-08-27|Now included in graphics/osg
 www/cherokee-devel||2008-08-27|Removed, use www/cherokee instead
 irc/tirc||2008-08-28|Has expired: Project is dead
 x11-toolkits/gtkdatabox2||2008-08-29|Removed, use x11-toolkits/gtkdatabox instead
-chinese/BBMan||2008-08-30|Removed, abandonware by upstream maintainer
+chinese/BBMan||2008-08-30|Removed, abandoned by upstream maintainer
 games/q3base||2008-09-01|Project gone, website defaced
 editors/ooo-build||2008-09-01|Has expired: Has been broken for more than 6 months
 mail/pine4|mail/alpine|2008-09-01|No further development for pine, alpine has more features and is config-compatible
@@ -403,14 +403,14 @@ emulators/mupen64plus-sound||2009-01-06|No supported anymore by mupen64plus team
 misc/heyu||2009-01-07|Has expired: no longer under development, use misc/heyu2
 sysutils/pkill||2009-01-07|Part of the base system since FreeBSD 5.3
 ports-mgmt/portsnap||2009-01-07|Part of the base system since FreeBSD 5.5
-lang/py-compiler||2009-01-08|Included in python since 2.2
+lang/py-compiler||2009-01-08|Included with Python since 2.2
 net/nvnet||2009-01-08|Part of the base system since FreeBSD 6.0
 security/openssl-beta|security/openssl|2009-01-09|Removed
 accessibility/gail|x11-toolkits/gtk20|2009-01-10|Now included with Gtk20
 accessibility/gail-reference|x11-toolkits/gtk20-reference|2009-01-10|Now included with Gtk20
 x11/fast-user-switch-applet|x11/gdm|2009-01-10|This is now part of GDM
 net-mgmt/bsnmpd||2009-01-10|Part of the base system since FreeBSD 6.0
-devel/cogito||2009-01-11|Broken and abandoned by upstream
+devel/cogito||2009-01-11|Broken and abandoned upstream
 net-mgmt/hobbit-client|net-mgmt/xymon-client|2009-01-11|Renamed
 net-mgmt/hobbit-server|net-mgmt/xymon-server|2009-01-11|Renamed
 science/gchempaint|science/gchemutils|2009-01-13|gchempaint was integrated into gchemutils
@@ -510,7 +510,7 @@ multimedia/libspiff|multimedia/libxspf|2009-03-08|Project renamed
 graphics/libgdgeda||2009-03-09|Has expired: is not required anymore
 japanese/ruby-tk||2009-03-09|Has expired: uses old Tk, not required with newer versions
 www/p5-Cookie-XS|www/p5-CGI-Cookie-XS|2009-03-09|Renamed
-databases/rubygem-rrdtool||2009-03-09|Has expired: port no longer maintained by upstream use rrdtools own ruby bindings instead
+databases/rubygem-rrdtool||2009-03-09|Has expired: port no longer maintained upstream; use rrdtools' own Ruby bindings instead
 graphics/crystalentitylayer-devel||2009-03-09|Has expired: Depends on broken, expired port
 graphics/crystalspace-devel||2009-03-09|Has expired: Has been broken for more than 6 months
 ftp/downloader||2009-03-09|Has expired: sources unavailable - website disappeared
@@ -519,9 +519,9 @@ mail/postfix1||2009-03-09|Has expired: Not supported anymore by vendor. Please c
 mail/postfix21||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
 mail/postfix22||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
 www/rubygem-actionwebservice||2009-03-09|Has expired: from rails 2.0 www/rubygem-rails use www/rubygem-activeresource instead
-x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
-x11-toolkits/inti-gl||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
-x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
+x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
+x11-toolkits/inti-gl||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
+x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
 misc/git|misc/gnuit|2009-03-14|Renamed
 lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
 sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was renamed
@@ -547,7 +547,7 @@ multimedia/mpegedit||2009-03-23|Has expired: unmaintained, does not work with cu
 mail/dkimap4||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 net-mgmt/oproute||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 x11/tkgoodstuff||2009-03-23|Has expired: tcl8.0 support is going to be dropped
-x11-toolkits/inti||2009-03-23|Has expired: not maintain by upstream for more than five years and no port depend on this
+x11-toolkits/inti||2009-03-23|Has expired: not maintained upstream for more than five years and no port depend on this
 mbone/nte||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 mbone/relate||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 mbone/wbd||2009-03-23|Has expired: tcl8.0 support is going to be dropped
@@ -1178,7 +1178,7 @@ www/peacock||2010-08-17|Has runtime errors, upstream development discontinued
 www/gtkhtml38||2010-08-17|Removed, because there are no more users of this library
 security/isolate||2010-08-17|Security vulnerability
 www/wordpress-mu|www/wordpress|2010-08-19|Multiuser support was incorporate in the upstream version
-archivers/py-tarfile||2010-08-21|Has expired: all development activity in this port has been merged into mainline python after 2.4
+archivers/py-tarfile||2010-08-21|Has expired: all development activity in this port has been merged into mainline Python after 2.4
 www/rssdler|www/py-rssdler|2010-08-21|Rename to consistency with other Python ports
 www/mod_webobjects||2010-08-23|Broken for 6+ months, unmaintained
 www/woadaptor||2010-08-23|Broken for 6+ months, unmaintained
@@ -1527,7 +1527,7 @@ audio/ecawave||2011-02-01|Has expired: has been broken for over one year
 mail/spamass-rules_du_jour||2011-02-01|Has expired: Use sa-update instead
 x11/accessx||2011-02-01|Has expired: Project abandoned, mastersite disappeared
 x11/kde3-apireference||2011-02-01|Has expired: outdated and obsolete
-misc/py-distutils||2011-02-02|Included in current python versions
+misc/py-distutils||2011-02-02|Included in current Python versions
 databases/qt-ibase-plugin||2011-02-04|Has expired: Port is broken on all supported versions of FreeBSD
 devel/ace+tao||2011-02-04|Has expired: Outdated and does not compile on any supported version of FreeBSD
 graphics/ray++||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD
@@ -1546,17 +1546,17 @@ databases/redis1||2011-02-24|Removed
 devel/pmake||2011-02-24|Has expired: does not build on any supported version of FreeBSD
 net-p2p/linux-agsatellite||2011-02-24|Has expired: the whole service went to cloud
 databases/redis2||2011-02-25|Removed, use databases/redis instead
-textproc/py-expat||2011-02-25|Removed, part of python since python25
-devel/py-ctypes||2011-02-25|Removed, part of python since python25
-security/py-hashlib||2011-02-25|Removed, part of python since python25
-www/py-hashlib||2011-02-25|Removed, part of python since python25
+textproc/py-expat||2011-02-25|Removed, part of Python since 2.5
+devel/py-ctypes||2011-02-25|Removed, part of Python since 2.5
+security/py-hashlib||2011-02-25|Removed, part of Python since 2.5
+www/py-hashlib||2011-02-25|Removed, part of Python since 2.5
 x11/gstreamer-plugins-vdpau|multimedia/gstreamer-plugins-vdpau|2011-02-25|Move to the multimedia category
 x11/gir-repository-babl|x11/babl|2011-02-25|Merged into babl
-net/gnet|net/gnet2|2011-02-27|It is no longer maintained as well as updated, try to use net/gnet2
-www/py-turbodjango||2011-02-27|Removed, part of python since python25
-www/py-turbosetup||2011-02-27|Removed, part of python since python25
-textproc/py-csv||2011-02-27|Removed, part of python since python25
-devel/py-uuid||2011-02-27|Removed, part of python since python25
+net/gnet|net/gnet2|2011-02-27|No longer maintained or updated, try to use net/gnet2
+www/py-turbodjango||2011-02-27|Removed, part of Python since 2.5
+www/py-turbosetup||2011-02-27|Removed, part of Python since 2.5
+textproc/py-csv||2011-02-27|Removed, part of Python since 2.5
+devel/py-uuid||2011-02-27|Removed, part of Python since 2.5
 graphics/libv3d||2011-02-28|Has expired: unmaintained and failed to build for months
 mbone/rat|audio/rat|2011-03-06|Changed category
 mbone/rat30|audio/rat30|2011-03-06|Changed category
@@ -1642,7 +1642,7 @@ lang/linux-f8-libg2c||2011-04-04|Has expired: End of Life since Jan 7, 2009
 lang/linux-f8-tcl84||2011-04-04|Has expired: End of Life since Jan 7, 2009
 multimedia/linux-f8-libtheora||2011-04-04|Has expired: End of Life since Jan 7, 2009
 net-p2p/dcd||2011-04-04|Has expired: No fetch sources and looks like project abandoned
-net/straw||2011-04-04|Has expired: abandoned upstream and does not work with python 2.6+
+net/straw||2011-04-04|Has expired: abandoned upstream and does not work with Python 2.6+
 security/linux-f8-libssh2||2011-04-04|Has expired: End of Life since Jan 7, 2009
 security/linux-f8-nss||2011-04-04|Has expired: End of Life since Jan 7, 2009
 security/linux-f8-openssl||2011-04-04|Has expired: End of Life since Jan 7, 2009
@@ -2180,7 +2180,7 @@ dns/bind94-geoip||2011-05-31|BIND 9.4.x is EOL
 german/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 japanese/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 net/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
-comms/gammu-python||2011-06-01|Has expired: since version 1.29.0 comms/gammu uses python by default
+comms/gammu-python||2011-06-01|Has expired: since version 1.29.0 comms/gammu uses Python by default
 java/gj||2011-06-01|Has expired: Upstream disappeared and distfile is no longer available
 net/ipv6socket_scrub||2011-06-01|Has expired: Upstream disappeared and distfile is no longer available
 graphics/lodju||2011-06-01|Has expired: depends on rep-gtk, which doesn't build anymore
@@ -2223,7 +2223,7 @@ www/mod_layout2||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 i
 www/mod_macro2||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 www/mod_traf_thief||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 www/mod_transform||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
-comms/ruby-termios|comms/rubygem-ruby-termios|2011-06-25|Development has moved, <=0.9.5 doesn't work with ruby 1.9.x
+comms/ruby-termios|comms/rubygem-ruby-termios|2011-06-25|Development has moved, <=0.9.5 doesn't work with Ruby 1.9.x
 java/jdk14||2011-06-28|Has expired: does not build on FreeBSD 7.x or newer
 mail/vpopmail-devel|mail/vpopmail|2011-06-28|Has expired: Obsolete version, install mail/vpopmail port
 audio/rat||2011-07-01|The mbone is no more
@@ -2237,13 +2237,13 @@ net/rqm||2011-07-01|The mbone is no more
 net/sdr||2011-07-01|The mbone is no more
 net/udpcast||2011-07-01|The mbone is no more
 net/wb||2011-07-01|The mbone is no more
-math/femlab||2011-07-02|Has expired: No more distfile, looks like abandonware
+math/femlab||2011-07-02|Has expired: No more distfiles, looks like abandonware
 japanese/wikicker||2011-07-02|Has expired: Looks like abandonware
-emulators/vmware3||2011-07-02|Has expired: No more distfiles available. emulators/virtualbox-ose can be used as a replacement
+emulators/vmware3||2011-07-02|Has expired: No more distfiles available; emulators/virtualbox-ose can be used as a replacement
 devel/libevocosm||2011-07-02|Has expired: Looks like abandonware
 devel/acovea||2011-07-02|Has expired: Looks like abandonware
 devel/acovea-gtk||2011-07-02|Has expired: Looks like abandonware
-sysutils/service-config||2011-07-02|Has expired: "mastersite disappeared"
+sysutils/service-config||2011-07-02|Has expired: mastersite disappeared
 print/lyx-devel||2011-07-03|print/lyx has been updated to a newer version, use it instead
 archivers/lzo||2011-07-07|Use archivers/lzo2 instead
 www/horde4-browser||2011-07-07|Removed
@@ -2286,7 +2286,7 @@ java/linux-sun-jdk14|java/linux-sun-jdk15|2011-07-21|Has expired: ancient versio
 dns/dhid||2011-07-28|Has expired: Unmaintained, distfile has changed with no explanation
 math/librandlib|math/randlib|2011-07-28|Move to a location that matches the name
 science/bblimage|science/pyvox|2011-07-28|Track the upstream name change
-net-im/gnome-jabber|net-im/empathy|2011-07-28|Has expired: No longer maintained by upstream since 2005, use net-im/empathy instead
+net-im/gnome-jabber|net-im/empathy|2011-07-28|Has expired: No longer maintained upstream since 2005; use net-im/empathy instead
 misc/logsurfer|misc/logsurfer+|2011-07-25|Renamed
 devel/gir-repository||2011-07-30|Removed
 devel/gir-repository-libnotify||2010-07-30|Removed
@@ -2406,7 +2406,7 @@ net/lyntin||2011-08-01|Has expired: No longer under active development
 net/py-rt||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 net/rwhoisd||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 net/traffic||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
-net-im/gnomeicu||2011-08-01|Has expired: No longer maintain by upstream, use net-im/empathy instead
+net-im/gnomeicu||2011-08-01|Has expired: No longer maintained upstream, use net-im/empathy instead
 net-mgmt/trafd||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 net-p2p/gkrellm-gift||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 news/bgrab||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
@@ -2508,7 +2508,7 @@ audio/coverhunter||2011-08-14|Has expired: required Amazon Developer Tokens are 
 databases/gauche-gdbm||2011-08-14|Has expired: has been broken for more than a year
 www/wiliki||2011-08-14|Removed: depends on expired gauche-gdbm
 mail/scmail||2011-08-14|Removed: depends on expired gauche-gdbm
-x11-themes/fluxbox-sid-pack||2011-08-14|Has expired: No longer maintained by upstream
+x11-themes/fluxbox-sid-pack||2011-08-14|Has expired: No longer maintained upstream
 japanese/ical||2011-08-15|Removed
 lang/ocamlduce||2011-08-16|Has expired: has been broken for over a year
 devel/cl-asdf-binary-locations||2011-08-16|Obsoleted by ASDF 2 capabilities
@@ -2725,7 +2725,7 @@ print/lyx14||2011-10-05|Has expired: last release in 2007, use print/lyx16 or pr
 multimedia/enjoympeg||2011-10-05|Has expired: Looks like abandonware, no more public distfiles
 devel/py-zopeevent|devel/py-zope.event|2011-10-08|Removed: please use devel/py-zope.event instead
 astro/gkrellsun||2011-10-08|Abandonware
-astro/xrmap||2011-10-08|No more distfiles
+astro/xrmap||2011-10-08|No more public distfiles
 audio/midimountain||2011-10-08|Abandonware
 audio/gkrellmss||2011-10-08|Abandonware
 audio/gnapster||2011-10-08|Abandonware
@@ -2756,7 +2756,7 @@ net/p5-Net-OpenDHT||2011-10-08|No more public distfiles
 net/mudix||2011-10-08|No more public distfiles
 net-im/newsbot||2011-10-08|No more public distfiles
 net-im/libicq2000||2011-10-08|Abandonware
-net-im/gossip||2011-10-08|No longer maintain by upstream, use net-im/empathy instead
+net-im/gossip||2011-10-08|No longer maintained upstream, use net-im/empathy instead
 net-im/ickle||2011-10-08|Abandonware
 net-mgmt/nipper||2011-10-08|BROKEN for more than 6 months, does not fetch
 net-p2p/mldonkey-serverspy||2011-10-08|No more public distfiles
@@ -2837,10 +2837,10 @@ x11-wm/fvwm2-devel||2011-10-25|Has expired: No longer supported by fvwm.org
 devel/py-myghtyutils||2011-10-27|Has expired: Merged into Beaker; use www/py-beaker instead
 www/myghty||2011-10-27|Has expired: Upstream suggests textproc/py-mako instead
 astro/weatherget||2011-10-27|Has expired: Broken b/c of weather.com new licensing rules not agreed by author
-devel/py-reverse||2011-10-27|Has expired: Now part of pylint
-devel/py-vmaps||2011-10-27|Has expired: Author recommends using math/py-numpy instead
+devel/py-reverse||2011-10-27|Has expired: now part of pylint
+devel/py-vmaps||2011-10-27|Has expired: author recommends using math/py-numpy instead
 devel/rubygem-rack-protection||2011-10-28|Removed
-graphics/tumbler|deskutils/xfce4-tumbler|2011-10-29|Duplicate
+graphics/tumbler|deskutils/xfce4-tumbler|2011-10-29|Duplicate ports merged
 graphics/poppler-gtk|graphics/poppler-glib|2011-10-31|Move to match library name
 audio/mp3butler||2011-10-31|Depends on audio/p5-MusicBrainz-Client which is DEPRECATED
 audio/p5-MusicBrainz-Client||2011-10-31|Disappeared from CPAN
@@ -2856,14 +2856,14 @@ mail/jboss-mailservices||2011-10-31|Depends on java/jboss4, which is DEPRECATED
 misc/p5-Geography-NationalGrid-TW||2011-10-31|Depends on misc/p5-Geography-NationalGrid, which is DEPRECATED
 misc/p5-Geography-NationalGrid||2011-10-31|Disappeared from CPAN
 multimedia/fxtv||2011-10-31|Depends on multimedia/mplex, which is DEPRECATED
-multimedia/mplex||2011-10-31|Upstream disapeared and distfile is not available
-net/py-timeoutsocket||2011-10-31|Upstream disapear and distfile is no more available
+multimedia/mplex||2011-10-31|Upstream disappeared and distfile is no longer available
+net/py-timeoutsocket||2011-10-31|Upstream disappeared and distfile is no longer available
 textproc/p5-XML-LibRSVG||2011-10-31|Unmaintained and not used anymore
 textproc/javacc||2011-10-31|No more public distfiles
-www/w3-4/Makefile||2011-10-31|Upstream disapeared and distfile is not available
+www/w3-4/Makefile||2011-10-31|Upstream disappeared and distfile is no longer available
 www/commonist||2011-10-31|Depends on textproc/javacc, which is DEPRECATED
 www/newsfeed||2011-10-31|Depends on net/py-timeoutsocket, which is DEPRECATED
-x11/fbsd-icons||2011-10-31|Upstream disapear and distfile is no more available
+x11/fbsd-icons||2011-10-31|Upstream disappeared and distfile is no longer available
 x11-themes/geramik||2011-10-31|Depends on x11-toolkits/qtpixmap, which is DEPRECATED
 x11-toolkits/qtpixmap||2011-10-31|No more public distfiles
 x11-wm/fvwm95-i18n||2011-10-31|Depends on x11/fbsd-icons, which is DEPRECATED
@@ -2903,27 +2903,27 @@ games/phpua-engine||2011-11-01|Has expired: apache13 is deprecated, migrate to 2
 games/phpua-hl||2011-11-01|Has expired: depends on phpua-engine
 games/phpua-ut||2011-11-01|Has expired: depends on phpua-engine
 games/phpua-cod||2011-11-01|Has expired: depends on phpua-engine
-games/uox3||2011-11-01|Has expired: No more public distfiles
+games/uox3||2011-11-01|Has expired: no more public distfiles
 games/phpua-q3||2011-11-01|Has expired: depends on phpua-engine
 games/phpua-bf||2011-11-01|Has expired: depends on phpua-engine
 graphics/kallery||2011-11-01|Has expired: does not build; last release 20010511
 graphics/gtksee||2011-11-01|Has expired: depends on unfetchable port archivers/bzip; last release 2004
 mail/mailscanner-mrtg||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
-net-p2p/qbittorrent-28-nox11||2011-11-01|Has expired: Please migrate to net-p2p/qbittorrent-29
-net-p2p/qbittorrent-28||2011-11-01|Has expired: Please migrate to net-p2p/qbittorrent-29
+net-p2p/qbittorrent-28-nox11||2011-11-01|Has expired: please migrate to net-p2p/qbittorrent-29
+net-p2p/qbittorrent-28||2011-11-01|Has expired: please migrate to net-p2p/qbittorrent-29
 net-p2p/dctc-gui-qt||2011-11-01|Removed
 net-p2p/dctc-gui||2011-11-01|Removed
 net-p2p/dctc||2011-11-01|Has expired: No more public distfiles
 www/slash||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
-databases/maatkit||2011-11-01|Has expired: Upstream support dropped. Please consider using databases/percona-toolkit
+databases/maatkit||2011-11-01|Has expired: upstream support dropped; please consider using databases/percona-toolkit
 databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
-databases/gnats||2011-11-01|Has expired: Security issues
-graphics/poppler-qt||2011-11-01|Poppler Upstream removed support for qt3
+databases/gnats||2011-11-01|Has expired: security issues
+graphics/poppler-qt||2011-11-01|Poppler upstream removed support for Qt3
 audio/shoutcast||2011-11-01|Unfetchable; website rearranged
 audio/linux-shoutcast||2011-11-01|Unfetchable; website rearranged
 chinese/scim-chewing||2011-11-01|Does not configure
-converters/py-cjkcodecs||2011-11-01|Integrated into every python version in the tree
+converters/py-cjkcodecs||2011-11-01|Integrated into every Python version in the tree
 databases/kpogre||2011-11-01|Does not compile
 deskutils/mhc||2011-11-01|Does not fetch
 deskutils/org-mode.el6||2011-11-01|Does not fetch
@@ -2948,10 +2948,10 @@ korean/gdick||2011-11-01|HTMLs from the Yahoo! Korea Dictionary cannot be parsed
 korean/hanterm-xf86||2011-11-01|Does not compile
 korean/stardict2-dict-kr||2011-11-01|Does not fetch
 lang/p5-JavaScript||2011-11-01|Does not fetch
-lang/TenDRA||2011-11-01|Website disappeared; last release 2006, Does not compile on recent FreeBSD-9
+lang/TenDRA||2011-11-01|Website disappeared; last release in 2006, does not compile on recent FreeBSD-9
 mail/freepops||2011-11-01|Does not build
 mail/itraxp||2011-11-01|Does not build
-misc/tellico||2011-11-01|Leaves file behind on deinstall
+misc/tellico||2011-11-01|Leaves files behind on deinstall
 net/gsambad||2011-11-01|Does not fetch
 net/nocatauth-gateway||2011-11-01|Uses a UID registered to another port
 net/nocatauth-server||2011-11-01|Uses a UID registered to another port
@@ -2968,13 +2968,13 @@ russian/cyrproxy||2011-11-01|Does not fetch
 science/gerris||2011-11-01|Does not fetch
 security/opensaml||2011-11-01|Does not fetch
 sysutils/wmbattery||2011-11-01|Does not fetch
-textproc/tei-guidelines-p4||2011-11-01|Does not fetch 
+textproc/tei-guidelines-p4||2011-11-01|Does not fetch
 textproc/tei-p4||2011-11-01|Does not fetch
 textproc/py-hyperestraier||2011-11-01|Does not fetch
 textproc/tdtd.el||2011-11-01|Does not fetch
 textproc/tei-lite||2011-11-01|Does not fetch
 www/phpwiki13||2011-11-01|Does not fetch
-www/p5-Apache-Scoreboard||2011-11-01|depends on mod_perl
+www/p5-Apache-Scoreboard||2011-11-01|Depends on mod_perl
 www/p5-B-LexInfo||2011-11-01|Broken due the new mod_perl2 API
 www/phpwiki||2011-11-01|Does not fetch
 www/smb2www||2011-11-01|Apache13 is deprecated, migrate to 2.2.x+ now
@@ -2988,25 +2988,25 @@ sysutils/rsyslog3-gssapi||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-mysql||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-pgsql||2011-11-02|Has expired: unsupported upstream
 sysutils/rsyslog3-relp||2011-11-02|Has expired: unsupported upstream
-sysutils/rsyslog4-devel||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-dbi||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-gnutls||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-gssapi||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-mysql||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-pgsql||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-relp||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-rfc3195||2011-11-02|is now stable see sysutils/rsyslog4
-sysutils/rsyslog4-devel-snmp||2011-11-02|is now stable see sysutils/rsyslog4
-www/php-yaf|www/pecl-yaf|2011-11-02|This project has been moved to PECL
+sysutils/rsyslog4-devel||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-dbi||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-gnutls||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-gssapi||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-mysql||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-pgsql||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-relp||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-rfc3195||2011-11-02|Is now stable; see sysutils/rsyslog4
+sysutils/rsyslog4-devel-snmp||2011-11-02|Is now stable; see sysutils/rsyslog4
+www/php-yaf|www/pecl-yaf|2011-11-02|The project has been moved to PECL
 sysutils/xfce4-places-plugin||2011-11-06|Removed, integrated in Xfce 4.8 panel
 lang/p5-F77|lang/p5-ExtUtils-F77|2011-11-07|Move to a better place via repocopy
-devel/soup||2011-11-09|Has expired: Unmaintain, use devel/libsoup
-graphics/clutter-qt||2011-11-09|Has expired: upstream distfile and doesn't build, and doesn't seem to be developed anymore
-graphics/p5-clutter||2011-11-09|Has expired: upstream distfile disappeard, and doesn't seem to be developed anymore
+devel/soup||2011-11-09|Has expired: Unmaintained, use devel/libsoup
+graphics/clutter-qt||2011-11-09|Has expired: upstream distfile disappeared, doesn't build, and doesn't seem to be developed anymore
+graphics/p5-clutter||2011-11-09|Has expired: upstream distfile disappeared, and doesn't seem to be developed anymore
 graphics/librsvg||2011-11-09|Has expired: unmaintained and not used anymore
 www/p5-Catalyst-Log-Log4perl||2011-11-09|Has expired: Use Log::Log4perl::Catalyst (devel/p5-Log-Log4perl) instead.
 lang/open-cobol-devel||2011-11-09|Has expired: No activity since 2007
-databases/py-axiom||2011-11-11|Has expired: Distfile missing, runtime broken. Use databases/py-sqlobject instead
+databases/py-axiom||2011-11-11|Has expired: Distfile is missing, runtime broken; use databases/py-sqlobject instead
 sysutils/duplicity-devel||2011-11-12|Much older than current version, use sysutils/duplicity instead
 security/libfwbuilder-devel||2011-11-14|libfwbuilder-devel merged into fwbuilder-devel
 russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
