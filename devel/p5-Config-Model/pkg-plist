@@ -40,12 +40,14 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Tester.pm
 %%SITE_PERL%%/Config/Model/TreeSearcher.pm
 %%SITE_PERL%%/Config/Model/Value.pm
+%%SITE_PERL%%/Config/Model/Value/LayeredInclude.pm
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/Warper.pm
 %%SITE_PERL%%/Config/Model/application.d/dpkg
 %%SITE_PERL%%/Config/Model/application.d/dpkg-control
 %%SITE_PERL%%/Config/Model/application.d/dpkg-copyright
+%%SITE_PERL%%/Config/Model/application.d/multistrap
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
@@ -117,6 +119,8 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/LCDd/ea65.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/g15.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/g15.pod
+%%SITE_PERL%%/Config/Model/models/LCDd/glcd.pl
+%%SITE_PERL%%/Config/Model/models/LCDd/glcd.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/glcdlib.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/glcdlib.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/glk.pl
@@ -183,14 +187,21 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/LCDd/tyan.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/ula200.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/ula200.pod
+%%SITE_PERL%%/Config/Model/models/LCDd/vlsys_m428.pl
+%%SITE_PERL%%/Config/Model/models/LCDd/vlsys_m428.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/xosd.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/xosd.pod
+%%SITE_PERL%%/Config/Model/models/Multistrap.pl
+%%SITE_PERL%%/Config/Model/models/Multistrap.pod
+%%SITE_PERL%%/Config/Model/models/Multistrap/Section.pl
+%%SITE_PERL%%/Config/Model/models/Multistrap/Section.pod
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pod
 %%SITE_PERL%%/Config/Model/system.d/fstab
 %%SITE_PERL%%/Config/Model/system.d/lcdproc
 %%SITE_PERL%%/Config/Model/system.d/popcon
 @dirrmtry %%SITE_PERL%%/Config/Model/system.d
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Multistrap
 @dirrmtry %%SITE_PERL%%/Config/Model/models/LCDd
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source
@@ -200,6 +211,7 @@ bin/config-edit
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/models
 @dirrmtry %%SITE_PERL%%/Config/Model/application.d
+@dirrmtry %%SITE_PERL%%/Config/Model/Value
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Cookbook
