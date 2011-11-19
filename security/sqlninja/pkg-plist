@@ -6,7 +6,7 @@ bin/sqlninja
 %%ETCDIR%%/scripts/dnstun.scr
 %%ETCDIR%%/scripts/nc.scr
 %%PORTDOCS%%%%DOCSDIR%%/sqlninja-howto.html
-%%PORTDOCS%%%%DOCSDIR%%/sqlninja.conf
+%%PORTDOCS%%%%DOCSDIR%%/sqlninja.conf.example
 @dirrm %%ETCDIR%%/scripts
 @dirrm %%ETCDIR%%/apps
 @dirrm %%ETCDIR%%
