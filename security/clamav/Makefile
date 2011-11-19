@@ -77,7 +77,7 @@ MAN5=		clamav-milter.conf.5 \
 MAN8=		clamd.8 \
 		clamav-milter.8
 
-CONFLICTS=	clamav-devel-[0-9]*
+CONFLICTS?=	clamav-devel-[0-9]* clamav-milter-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
@@ -192,7 +192,7 @@ CONFIGURE_ARGS+=--enable-experimental
 CFLAGS+=	-march=i486
 .endif
 
-.if ${OSVERSION} >= 700000
+.if defined(WITH_TESTS) && ${OSVERSION} >= 700000
 BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
 CONFIGURE_ARGS+=--enable-check
 .else
