@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Load-XS
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,8 @@ COMMENT=	XS implementation of parts of Class::Load
 
 BUILD_DEPENDS=	p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
 RUN_DEPENDS=	p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
+
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_MODBUILD=	yes
 
