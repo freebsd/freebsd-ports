@@ -10,20 +10,19 @@ DISTVERSION=	5.0.0
 PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
 BUILD=		3568
-DEVEL=		no
-.if defined(DEVEL) && ${DEVEL} == yes
-MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/build-${BUILD}/
-PKGNAMESUFFIX=	-devel
+# XXX in developement version of this port: PKGNAMESUFFIX=	-devel
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
+MASTER_SITES=   http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/current_build/
 PORTVERSION=	${DISTVERSION}.b${BUILD}
 .else
 MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
-DISTVERSIONSUFFIX=	.${BUILD}
 .endif
+DISTVERSIONSUFFIX=	.${BUILD}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-.if defined(DEVEL) && ${DEVEL} == yes
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 		libfwbuilder-[234].* libfwbuilder-devel-[234].*
 .else
