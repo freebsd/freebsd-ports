@@ -12,7 +12,7 @@ MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A package for parallel (mpi) unstructured graph partitioning
 
 OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off

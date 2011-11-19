@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
 
 LICENSE=	GPLv2
