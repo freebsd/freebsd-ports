@@ -23,6 +23,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 CONFLICTS=	llvm-devel-[23]* llvm-[23]*
+NOT_FOR_ARCHS=	sparc64
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -50,10 +51,6 @@ MAN1=		bugpoint.1 clang.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
 .endif
 
 .if ${OSVERSION} >= 900007
