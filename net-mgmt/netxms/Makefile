@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
