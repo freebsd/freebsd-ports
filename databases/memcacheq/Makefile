@@ -18,6 +18,7 @@ COMMENT=	Simple queue service over Memcache
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
+USE_CSTD=	gnu89
 CFLAGS+=	-I"${BDB_INCLUDE_DIR}"
 LDFLAGS+=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
 
