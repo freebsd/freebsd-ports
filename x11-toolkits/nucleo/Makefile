@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Nucleo
+# New ports collection makefile for:	The nucleo toolkit
 # Date created:				30 May 2007
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
@@ -13,6 +13,8 @@ MASTER_SITES=	http://insitu.lri.fr/metisse/download/nucleo/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Toolkit to explore video and human-computer interaction
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -83,7 +85,8 @@ PLIST_SUB+=	GD="@comment "
 
 post-patch:
 # Fix for libpng 1.4
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/nucleo/image/encoding/PNGenc.cxx
+	@${REINPLACE_CMD} -e \
+		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+			${WRKSRC}/nucleo/image/encoding/PNGenc.cxx
 
 .include <bsd.port.post.mk>
