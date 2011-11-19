@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ipa-system
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	Pluggable accounting system
+
+LICENSE=	BSD
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
