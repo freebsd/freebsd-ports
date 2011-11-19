@@ -1,5 +1,6 @@
 bin/wifimgr
 libexec/wifimgrsu
+%%DATADIR%%/icons/eye.png
 %%DATADIR%%/icons/freebsd-surf.png
 %%DATADIR%%/icons/on-off.png
 %%DATADIR%%/icons/padlock-open.png
@@ -24,6 +25,7 @@ share/icons/hicolor/32x32/apps/wifimgr.png
 share/icons/hicolor/48x48/apps/wifimgr.png
 share/icons/hicolor/64x64/apps/wifimgr.png
 share/icons/hicolor/scalable/apps/wifimgr.svg
+%%NLS%%share/locale/bg/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wifimgr.mo
