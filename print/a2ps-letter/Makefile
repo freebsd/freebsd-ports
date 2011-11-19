@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		ftp://ftp3.ru.freebsd.org/pub/unix/postscript/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMESUFFIX=	-${PAPERSIZE}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX=	-${PAPERSIZE:L}${PKGNAMESUFFIX2}
 .if defined(WITH_I18N) || make(makesum) || defined(FETCH_ALL)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}
 .endif
@@ -38,7 +38,7 @@ PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
 CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=${PREFIX}/share --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share --localstatedir=${PREFIX}/share
 
-.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
+.if ${PAPERSIZE:L} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
@@ -48,10 +48,10 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=${PREFIX}/share -
 	@${FALSE}
 .endif
 
-.if ${PAPERSIZE} == a4
+.if ${PAPERSIZE:L} == a4
 CONFLICTS?=	a2ps-letter-4.* a2ps-letterdj-4.*
 .else
-.if ${PAPERSIZE} == letter
+.if ${PAPERSIZE:L} == letter
 CONFLICTS?=	a2ps-a4-4.* a2ps-letterdj-4.*
 .else
 CONFLICTS?=	a2ps-a4-4.* a2ps-letter-4.*
