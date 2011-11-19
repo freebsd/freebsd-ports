@@ -132,6 +132,7 @@
     SUBDIR += edje
     SUBDIR += edje_viewer
     SUBDIR += electriceyes
+    SUBDIR += electrix
     SUBDIR += enblend
     SUBDIR += enfle
     SUBDIR += eog
