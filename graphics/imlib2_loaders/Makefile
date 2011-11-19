@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.4.4
-PORTREVISION=	0
+PORTVERSION=	1.4.5
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +18,7 @@ COMMENT=	Extra image loader plugins for Imlib 2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
-USE_EFL=	edb eet imlib2 libtool_hack
+USE_EFL=	imlib2 libtool_hack
 
 OPTIONS=	EDB	"Enable edb loader" on \
 		EET	"Enable eet loader" on \
