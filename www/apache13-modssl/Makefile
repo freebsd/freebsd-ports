@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -33,7 +33,6 @@ COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
 
-FORBIDDEN=	CVE-2011-3368, no patches against this issue
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2012-01-01
 
@@ -146,6 +145,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-shared=max \
 		--enable-module=ssl \
 		--enable-module=define \
+		--disable-module=proxy \
 		${SUEXEC_CONF}
 
 .if defined(APACHE_RELATIVE_RUNTIMEDIR)

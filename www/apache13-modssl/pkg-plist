@@ -87,7 +87,6 @@ include/apache/xml/xmlrole.h
 include/apache/xml/xmltok.h
 include/apache/xml/xmltok_impl.h
 libexec/apache/httpd.exp
-libexec/apache/libproxy.so
 libexec/apache/libssl.so
 libexec/apache/mod_access.so
 libexec/apache/mod_actions.so
