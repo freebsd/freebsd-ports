@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sass-rails
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
