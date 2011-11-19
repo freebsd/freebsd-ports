@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/dynare-2.4.1/at_download/file/
+MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/dynare-4.2.2.tar.gz/at_download/file
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs
 
-WRKSRC=                ${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
