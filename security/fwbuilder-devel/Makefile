@@ -9,26 +9,25 @@ PORTNAME=	fwbuilder
 DISTVERSION=	5.0.1
 PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
-BUILD=		3585
-DEVEL=		yes
-.if defined(DEVEL) && ${DEVEL} == yes
-MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/build-${BUILD}/
+BUILD=		3588
 PKGNAMESUFFIX=	-devel
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/current_build/
 PORTVERSION=	${DISTVERSION}.b${BUILD}
 .else
 MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
-DISTVERSIONSUFFIX=	.${BUILD}
 .endif
+DISTVERSIONSUFFIX=	.${BUILD}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-.if defined(DEVEL) && ${DEVEL} == yes
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 		libfwbuilder-[234].* libfwbuilder-devel-[234].*
 .else
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
-		libfwbuilder-[23].* libfwbuilder-devel-*
+		libfwbuilder-[234].* libfwbuilder-devel-*
 .endif
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
@@ -54,9 +53,9 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf aclocal libtool
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
