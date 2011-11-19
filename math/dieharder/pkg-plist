@@ -3,6 +3,11 @@ include/dieharder/Dtest.h
 include/dieharder/Vtest.h
 include/dieharder/Xtest.h
 include/dieharder/copyright.h
+include/dieharder/dab_bytedistrib.h
+include/dieharder/dab_dct.h
+include/dieharder/dab_filltree.h
+include/dieharder/dab_filltree2.h
+include/dieharder/dab_monobit2.h
 include/dieharder/diehard_2dsphere.h
 include/dieharder/diehard_3dsphere.h
 include/dieharder/diehard_birthdays.h
