@@ -7,7 +7,7 @@
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/
 
@@ -22,7 +22,7 @@ MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PAMBASE?=	etc
 
-USE_RC_SUBR=	radiusd-cistron
+USE_RC_SUBR=	radiusd-cistron radrelay-cistron
 MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
 MAN8=		radiusd.8 radrelay.8 radwatch.8
