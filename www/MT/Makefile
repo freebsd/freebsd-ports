@@ -16,9 +16,9 @@ COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
-RUN_DEPENDS+=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+RUN_DEPENDS+=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 
 OPTIONS=	APACHE			"USE_APACHE"		off \
 		MYSQL			"USE_MYSQL"		off \
@@ -27,14 +27,14 @@ OPTIONS=	APACHE			"USE_APACHE"		off \
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
-RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 .endif
 
 DATADIR=	www/data
@@ -42,10 +42,11 @@ CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
 DB_DIR?=	${BASEDIR}/var/db/mysql/blog
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 WITH_DEFAULTDB=	yes
 .endif
 
@@ -83,7 +84,7 @@ MT_UPGRADE_URL?=http://movabletype.org/documentation/upgrade/
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
 .endif
 .endif
 
@@ -113,12 +114,11 @@ do-install:
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt-config.cgi-original \
-	  alt-tmpl default_templates extlib import lib php plugins search_templates \
-	  themes tmpl tools ${PREFIX}/${CGIDIR}
+	  alt-tmpl default_templates extlib import lib php plugins \
+	  search_templates themes tmpl tools ${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${PREFIX}/${DATADIR}
-	@cd ${WRKSRC} && ${CP} -R mt-static \
-	  ${PREFIX}/${DATADIR}
+	@cd ${WRKSRC} && ${CP} -R mt-static ${PREFIX}/${DATADIR}
 .if defined(WITH_DEFAULTDB)
 	@${MKDIR} -m 755 ${DB_DIR}
 	@${CHOWN} -R www:www ${DB_DIR}
@@ -133,7 +133,8 @@ post-install:
 	@${CAT} ${WRKDIR}/MT.conf
 	@${ECHO_CMD} ""
 	@${MKDIR} ${PREFIX}/${APACHEETCDIR}/Includes
-	@${INSTALL_DATA} ${WRKDIR}/MT.conf ${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
+	@${INSTALL_DATA} ${WRKDIR}/MT.conf \
+	  ${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
 .else
 	@${ECHO_CMD} ""
 .endif
