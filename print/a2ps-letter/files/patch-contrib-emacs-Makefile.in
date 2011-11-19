@@ -1,21 +1,24 @@
---- contrib/emacs/Makefile.in.orig	Thu Feb 24 19:01:08 2000
-+++ contrib/emacs/Makefile.in	Fri Apr  4 20:41:55 2003
-@@ -159,7 +159,8 @@
+Index: contrib/emacs/Makefile.in
+--- Makefile.in.orig	2011-09-27 15:17:26.000000000 +0900
++++ Makefile.in	2011-09-27 15:18:10.000000000 +0900
+@@ -159,8 +159,9 @@
  
  install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(lispdir)
+-	@list='$(dist_lisp_LISP)'; for p in $$list; do \
 +	if test $(EMACS) != no; then \
-+	$(mkinstalldirs) $(DESTDIR)$(lispdir) \
- 	@list='$(dist_lisp_LISP)'; for p in $$list; do \
++	$(mkinstalldirs) $(DESTDIR)$(lispdir); \
++	list='$(dist_lisp_LISP)'; for p in $$list; do \
  	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$f"; \
 @@ -169,7 +170,8 @@
  	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
  	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
  	  else : ; fi; \
 -	done
-+	done \
++	done; \
 +	fi
  
  uninstall-dist_lispLISP:
