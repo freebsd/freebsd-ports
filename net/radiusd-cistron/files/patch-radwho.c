@@ -1,5 +1,5 @@
---- src/radwho.c.orig	2003-12-08 17:10:24.000000000 +0100
-+++ src/radwho.c	2010-01-27 07:51:39.000000000 +0100
+--- src/radwho.c.orig	2003-12-09 01:10:24.000000000 +0900
++++ src/radwho.c	2011-10-19 10:22:04.000000000 +0900
 @@ -20,6 +20,7 @@
  #include <errno.h>
  #include <sys/stat.h>
@@ -19,9 +19,9 @@
 -char *rfmt1r = "%s,%s,%s,%s%u,%s,%s,%s%s";
 +"Login            Name              What  TTY  When      From      Location";
 +char *ufmt1 = "%-16.16s %-17.17s %-5.5s %-4.4s %-9.9s %-9.9s %-.*s%s";
-+char *ufmt1r = "%s,%s,%s,%s,%s,%s,%u%s";
++char *ufmt1r = "%s,%s,%s,%s,%s,%s,%*s%s";
 +char *rfmt1 = "%-16.16s %-17.17s %-5.5s %s%-3d %-9.9s %-9.9s %-.*s%s";
-+char *rfmt1r = "%s,%s,%s,%s%u,%s,%s,%u%s";
++char *rfmt1r = "%s,%s,%s,%s%u,%s,%s,%*s%s";
 +#define FMT1_HOST_SIZE        13
  
  char *hdr2 = 
@@ -32,9 +32,9 @@
 -char *rfmt2r = "%s,%s%u,%s,%s,%s,%s%s";
 +"Login           Port    What   When          From       Location";
 +char *ufmt2 = "%-16.16s %-6.6d %-7.7s %-13.13s %-10.10s %-.*s%s";
-+char *ufmt2r = "%s,%u,%s,%s,%s,%u%s";
++char *ufmt2r = "%s,%u,%s,%s,%s,%*s%s";
 +char *rfmt2 = "%-16.16s %s%-5d  %-6.6s %-13.13s %-10.10s %-.*s%s";
-+char *rfmt2r = "%s,%s%u,%s,%s,%s,%u%s";
++char *rfmt2r = "%s,%s%u,%s,%s,%s,%*s%s";
 +#define FMT2_HOST_SIZE        19
  
  char *eol = "\n";
@@ -106,7 +106,7 @@
 +						ttyshort(utx->ut_line),
 +						dotime(utx->ut_tv.tv_sec),
 +						utx->ut_host,
-+						FMT1_HOST_SIZE + extra_width,
++						(rawoutput == 0 ? FMT1_HOST_SIZE + extra_width : 0),
 +						myname, eol);
 +				else
 +					printf((rawoutput==0? ufmt2:ufmt2r),
@@ -115,7 +115,7 @@
 +						"shell",
 +						dotime(utx->ut_tv.tv_sec),
 +						utx->ut_host,
-+						FMT2_HOST_SIZE + extra_width,
++						(rawoutput == 0 ? FMT2_HOST_SIZE + extra_width : 0),
 +						myname, eol);
 +			}
 +
@@ -153,7 +153,7 @@
  					dotime(ut.ut_time),
  #endif
  					ut.ut_host,
-+					FMT1_HOST_SIZE + extra_width,
++					(rawoutput == 0 ? FMT1_HOST_SIZE + extra_width : 0),
  					myname, eol);
  			    else
  				printf((rawoutput==0? ufmt2:ufmt2r),
@@ -166,7 +166,7 @@
  					dotime(ut.ut_time),
  #endif
  					ut.ut_host,
-+					FMT2_HOST_SIZE + extra_width,
++					(rawoutput == 0 ? FMT2_HOST_SIZE + extra_width : 0),
  					myname, eol);
  			}
  		}
@@ -180,7 +180,7 @@
  				portind, portno,
  				dotime(rt.time),
  				nasname(ntohl(rt.nas_address)),
-+				FMT1_HOST_SIZE + extra_width,
++				(rawoutput == 0 ? FMT1_HOST_SIZE + extra_width : 0),
  				hostname(rt.framed_address), eol);
  			else
  			    printf((rawoutput == 0? rfmt2: rfmt2r),
@@ -188,7 +188,7 @@
  				proto(rt.proto, rt.porttype),
  				dotime(rt.time),
  				nasname(ntohl(rt.nas_address)),
-+				FMT2_HOST_SIZE + extra_width,
++				(rawoutput == 0 ? FMT2_HOST_SIZE + extra_width : 0),
  				hostname(rt.framed_address), eol);
  		}
  	}
