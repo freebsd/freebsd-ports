@@ -1,4 +1,6 @@
 A proprietary software which allows groups of people to speak over
 the Internet.  This port contains the TeamSpeak 3 server part.
 
+No tsdns support available (yet). If you need it, extract & install yourself.
+
 WWW: http://www.teamspeak.com
