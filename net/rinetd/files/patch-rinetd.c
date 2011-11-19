@@ -8,3 +8,11 @@
  			initArrays();
  			readConfiguration();
  			RegisterPID();
+@@ -646,6 +646,7 @@
+ 			}
+ 		}
+ 	}
++	fclose(in);
+ 	/* Open the log file */
+ 	if (logFile) {
+ 		fclose(logFile);
