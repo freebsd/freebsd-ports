@@ -8,7 +8,7 @@
 PORTNAME=	megarc
 PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/files/support/rsa/beta/drivers/
+MASTER_SITES=	# not available
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -24,6 +24,23 @@ RESTRICTED=	Must be downloaded directly from the manufacturer
 
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+DISTFILE_INSTRUCTIONS=\n\
+The distribution file is not freely avaliable.\n\
+The binary is shipped on the Megaraid Universal Software Suite\n\
+CD which accompanies any boxed LSI Logic RAID storage adaptor.\n\
+\n\
+Copy ${DISTNAME}${EXTRACT_SUFX} to ${DISTDIR} and try again.\n\
+\n\
+For further instructions, see http://www.freebsdwiki.net/index.php/Megarc\n\n
+.endif
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
+.endif
 
 post-extract:
 	@cd ${WRKSRC} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} 'MegaRC 1.04.zip'
