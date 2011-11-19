@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	dieharder
-PORTVERSION=	3.31.0
-PORTREVISION=	1
+PORTVERSION=	3.31.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/
+MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A random number generator testsuite
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
@@ -26,8 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 MAN1=		dieharder.1
 MAN3=		libdieharder.3
-
-LICENSE=	GPLv2
 
 .include <bsd.port.pre.mk>
 
