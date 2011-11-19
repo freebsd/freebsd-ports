@@ -1,0 +1,11 @@
+Metisse is an experimental X desktop with neat OpenGL features.  It consists
+of a virtual X server called Xmetisse, a special version of FVWM, and a FVWM
+module FvwmCompositor.
+
+Metisse was designed with two goals in mind.  First, it should make it easy
+for HCI researchers to design and implement innovative window management
+techniques.  Second, it should conform to existing standards and be robust
+and efficient enough to be used on a daily basis, making a suitable platform
+for the evaluation of the proposed techniques.
+
+WWW: http://insitu.lri.fr/metisse/
