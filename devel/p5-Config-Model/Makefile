@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.260
+PORTVERSION=	1.262
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -36,7 +36,8 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 
 TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
-		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents
 
 PERL_MODBUILD=	yes
 
@@ -82,6 +83,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Tester.3 \
 		Config::Model::TreeSearcher.3 \
 		Config::Model::Value.3 \
+		Config::Model::Value::LayeredInclude.3 \
 		Config::Model::ValueComputer.3 \
 		Config::Model::WarpedNode.3 \
 		Config::Model::Warper.3 \
@@ -117,6 +119,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::LCDd::curses.3 \
 		Config::Model::models::LCDd::ea65.3 \
 		Config::Model::models::LCDd::g15.3 \
+		Config::Model::models::LCDd::glcd.3 \
 		Config::Model::models::LCDd::glcdlib.3 \
 		Config::Model::models::LCDd::glk.3 \
 		Config::Model::models::LCDd::hd44780.3 \
@@ -150,7 +153,10 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::LCDd::text.3 \
 		Config::Model::models::LCDd::tyan.3 \
 		Config::Model::models::LCDd::ula200.3 \
+		Config::Model::models::LCDd::vlsys_m428.3 \
 		Config::Model::models::LCDd::xosd.3 \
+		Config::Model::models::Multistrap.3 \
+		Config::Model::models::Multistrap::Section.3 \
 		Config::Model::models::PopCon.3
 
 .include <bsd.port.mk>
