@@ -1,12 +1,13 @@
 @stopdaemon teamspeak
+@comment basic files
 lib/teamspeak/server/libts3db_sqlite3.so
 lib/teamspeak/server/libts3db_mysql.so
 @dirrm lib/teamspeak/server
 @dirrmtry lib/teamspeak
 libexec/teamspeak_server
-libexec/teamspeak_tsdnsserver
 share/teamspeak/server/LICENSE
 share/teamspeak/server/CHANGELOG
+@comment sql files
 share/teamspeak/server/sql/ban_delete.sql
 share/teamspeak/server/sql/ban_insert.sql
 share/teamspeak/server/sql/ban_list.sql
@@ -65,11 +66,6 @@ share/teamspeak/server/sql/groups_get_by_serverid_type.sql
 share/teamspeak/server/sql/info_delete.sql
 share/teamspeak/server/sql/info_get_by_ident.sql
 share/teamspeak/server/sql/info_insert.sql
-share/teamspeak/server/sql/log_delete.sql
-share/teamspeak/server/sql/log_insert.sql
-share/teamspeak/server/sql/log_list.sql
-share/teamspeak/server/sql/log_list_comparator.sql
-share/teamspeak/server/sql/log_list_comparator_ordered.sql
 share/teamspeak/server/sql/message_delete.sql
 share/teamspeak/server/sql/message_get_by_clientid.sql
 share/teamspeak/server/sql/message_get_unread_by_clientid.sql
@@ -97,6 +93,7 @@ share/teamspeak/server/sql/server_get_byid.sql
 share/teamspeak/server/sql/server_get_byport.sql
 share/teamspeak/server/sql/server_insert.sql
 share/teamspeak/server/sql/server_list.sql
+share/teamspeak/server/sql/server_list_by_machine_id.sql
 share/teamspeak/server/sql/server_snapshot_delete.sql
 share/teamspeak/server/sql/server_snapshot_delete_failed.sql
 share/teamspeak/server/sql/server_update_autostart.sql
@@ -114,11 +111,13 @@ share/teamspeak/server/sql/update_15.sql
 share/teamspeak/server/sql/update_16.sql
 share/teamspeak/server/sql/update_17.sql
 share/teamspeak/server/sql/update_18.sql
+share/teamspeak/server/sql/update_19.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 @dirrm share/teamspeak/server/sql/create_mysql
 @dirrm share/teamspeak/server/sql/create_sqlite
 @dirrm share/teamspeak/server/sql
+@comment serverquerydocs files
 share/teamspeak/server/serverquerydocs/banadd.txt
 share/teamspeak/server/serverquerydocs/banclient.txt
 share/teamspeak/server/serverquerydocs/bandel.txt
@@ -246,6 +245,7 @@ share/teamspeak/server/serverquerydocs/use.txt
 share/teamspeak/server/serverquerydocs/version.txt
 share/teamspeak/server/serverquerydocs/whoami.txt
 @dirrm share/teamspeak/server/serverquerydocs
+@comment directories
 @dirrm share/teamspeak/server
 @dirrmtry share/teamspeak
 @dirrmtry etc/teamspeak
