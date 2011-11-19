@@ -2267,6 +2267,7 @@ de-vtiger                       ports/german/vtiger
 de-webalizer2                   ports/german/webalizer2
 de-wordpress                    ports/german/wordpress
 deadbeef                        ports/audio/deadbeef
+deadbeef-mpris-plugin           ports/audio/deadbeef-mpris-plugin
 deal                            ports/games/deal
 deb2targz                       ports/archivers/deb2targz
 debootstrap                     ports/sysutils/debootstrap
@@ -10577,6 +10578,7 @@ orville-write                   ports/misc/orville-write
 osalp                           ports/audio/osalp
 osbf-lua                        ports/mail/osbf-lua
 oscommerce                      ports/www/oscommerce
+osd-lyrics                      ports/audio/osd-lyrics
 osdclock                        ports/x11-clocks/osdclock
 osdmixer                        ports/audio/osdmixer
 osg                             ports/graphics/osg
@@ -13807,6 +13809,7 @@ p5-Pod-Elemental                ports/textproc/p5-Pod-Elemental
 p5-Pod-Escapes                  ports/textproc/p5-Pod-Escapes
 p5-Pod-Eventual                 ports/textproc/p5-Pod-Eventual
 p5-Pod-HtmlEasy                 ports/textproc/p5-Pod-HtmlEasy
+p5-Pod-Markdown                 ports/textproc/p5-Pod-Markdown
 p5-Pod-POM                      ports/textproc/p5-Pod-POM
 p5-Pod-POM-View-HTML-Filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-Pod-Parser                   ports/textproc/p5-Pod-Parser
@@ -18152,6 +18155,7 @@ p5-pod-elemental                ports/textproc/p5-Pod-Elemental
 p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
 p5-pod-eventual                 ports/textproc/p5-Pod-Eventual
 p5-pod-htmleasy                 ports/textproc/p5-Pod-HtmlEasy
+p5-pod-markdown                 ports/textproc/p5-Pod-Markdown
 p5-pod-parser                   ports/textproc/p5-Pod-Parser
 p5-pod-perldoc                  ports/textproc/p5-Pod-Perldoc
 p5-pod-pom                      ports/textproc/p5-Pod-POM
