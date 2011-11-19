@@ -22,7 +22,6 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GCC=	4.5+
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -69,6 +68,10 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		VFS_ZIP "ZIP support" on
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "amd64"
+USE_GCC=	4.5+
+.endif
 
 .if defined(WITHOUT_PULSE)
 CONFIGURE_ARGS+=	--disable-pulse
