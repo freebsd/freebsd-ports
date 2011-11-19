@@ -1,0 +1,371 @@
+bin/FvwmCommand
+bin/Xmetisse
+bin/Xwnc
+bin/facade-holder
+bin/fvwm-bug
+bin/fvwm-convert-2.4
+bin/fvwm-convert-2.6
+bin/fvwm-menu-desktop
+bin/fvwm-menu-directory
+bin/fvwm-menu-headlines
+bin/fvwm-menu-xlock
+bin/fvwm-perllib
+bin/fvwm-root
+bin/fvwmi
+bin/fvwmi-config
+bin/metisse-combo2radio
+bin/metisse-combo2radio-edit
+bin/metisse-demo-address-app
+bin/metisse-start-fvwm
+bin/metisse-xlib
+bin/opale-start-fvwmi
+include/libmetisse/auth.h
+include/libmetisse/proto.h
+@dirrm include/libmetisse
+%%PYTHON_SITELIBDIR%%/facade_setup.py
+%%PYTHON_SITELIBDIR%%/facade_setup.pyc
+%%PYTHON_SITELIBDIR%%/facade_setup.pyo
+lib/libmetisse.a
+lib/libmetisse.la
+lib/libmetisse.so
+lib/libmetisse.so.1
+libdata/pkgconfig/libmetisse.pc
+libexec/fvwm-insitu/2.5.20/FvwmAnimate
+libexec/fvwm-insitu/2.5.20/FvwmAudio
+libexec/fvwm-insitu/2.5.20/FvwmAuto
+libexec/fvwm-insitu/2.5.20/FvwmBacker
+libexec/fvwm-insitu/2.5.20/FvwmBanner
+libexec/fvwm-insitu/2.5.20/FvwmButtons
+libexec/fvwm-insitu/2.5.20/FvwmCascade
+libexec/fvwm-insitu/2.5.20/FvwmCommand.pm
+libexec/fvwm-insitu/2.5.20/FvwmCommand.sh
+libexec/fvwm-insitu/2.5.20/FvwmCommandS
+libexec/fvwm-insitu/2.5.20/FvwmCompositor
+%%GCONF%%libexec/fvwm-insitu/2.5.20/FvwmConfig
+libexec/fvwm-insitu/2.5.20/FvwmConsole
+libexec/fvwm-insitu/2.5.20/FvwmConsoleC
+libexec/fvwm-insitu/2.5.20/FvwmConsoleC.pl
+libexec/fvwm-insitu/2.5.20/FvwmCpp
+libexec/fvwm-insitu/2.5.20/FvwmDebug
+libexec/fvwm-insitu/2.5.20/FvwmDragWell
+libexec/fvwm-insitu/2.5.20/FvwmEvent
+libexec/fvwm-insitu/2.5.20/FvwmForm
+%%GCONF%%libexec/fvwm-insitu/2.5.20/FvwmGConf
+%%GTK%%libexec/fvwm-insitu/2.5.20/FvwmGtk
+libexec/fvwm-insitu/2.5.20/FvwmGtkDebug
+libexec/fvwm-insitu/2.5.20/FvwmIconBox
+libexec/fvwm-insitu/2.5.20/FvwmIconMan
+libexec/fvwm-insitu/2.5.20/FvwmIdent
+libexec/fvwm-insitu/2.5.20/FvwmM4
+libexec/fvwm-insitu/2.5.20/FvwmPager
+libexec/fvwm-insitu/2.5.20/FvwmPerl
+libexec/fvwm-insitu/2.5.20/FvwmProxy
+libexec/fvwm-insitu/2.5.20/FvwmRearrange
+libexec/fvwm-insitu/2.5.20/FvwmSave
+libexec/fvwm-insitu/2.5.20/FvwmSaveDesk
+libexec/fvwm-insitu/2.5.20/FvwmScript
+libexec/fvwm-insitu/2.5.20/FvwmScroll
+libexec/fvwm-insitu/2.5.20/FvwmTabs
+libexec/fvwm-insitu/2.5.20/FvwmTalk
+libexec/fvwm-insitu/2.5.20/FvwmTaskBar
+libexec/fvwm-insitu/2.5.20/FvwmTheme
+libexec/fvwm-insitu/2.5.20/FvwmTile
+libexec/fvwm-insitu/2.5.20/FvwmWharf
+libexec/fvwm-insitu/2.5.20/FvwmWinList
+libexec/fvwm-insitu/2.5.20/FvwmWindowMenu
+@dirrm libexec/fvwm-insitu/2.5.20
+@dirrm libexec/fvwm-insitu
+share/applications/fvwmi.desktop
+share/applications/mini-fvwmi.desktop
+share/applications/opale.desktop
+@dirrmtry share/applications
+%%DOCSDIR%%/docs/building.html
+%%DOCSDIR%%/docs/metisse-architecture.png
+%%DOCSDIR%%/docs/running.html
+%%DOCSDIR%%/docs/using.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/metisse.css
+%%DOCSDIR%%/no3d.png
+%%DOCSDIR%%/up.jpg
+@dirrm %%DOCSDIR%%/docs
+@dirrm %%DOCSDIR%%
+share/fvwm-insitu/ConfigFvwmBacker
+share/fvwm-insitu/ConfigFvwmButtons
+share/fvwm-insitu/ConfigFvwmDefaults
+share/fvwm-insitu/ConfigFvwmIconBox
+share/fvwm-insitu/ConfigFvwmIconMan
+share/fvwm-insitu/ConfigFvwmIdent
+share/fvwm-insitu/ConfigFvwmPager
+share/fvwm-insitu/ConfigFvwmProxyDefaults
+share/fvwm-insitu/ConfigFvwmScroll
+share/fvwm-insitu/ConfigFvwmSetup
+share/fvwm-insitu/ConfigFvwmTabs
+share/fvwm-insitu/ConfigFvwmTaskBar
+share/fvwm-insitu/ConfigFvwmWinList
+share/fvwm-insitu/FvwmForm-Capture
+share/fvwm-insitu/FvwmForm-Form
+share/fvwm-insitu/FvwmForm-QuitVerify
+share/fvwm-insitu/FvwmForm-Rlogin
+share/fvwm-insitu/FvwmForm-RootCursor
+share/fvwm-insitu/FvwmForm-Setup
+share/fvwm-insitu/FvwmForm-Talk
+share/fvwm-insitu/FvwmForm-TalkHelp
+share/fvwm-insitu/FvwmScript-BaseConfig
+share/fvwm-insitu/FvwmScript-BellSetup
+share/fvwm-insitu/FvwmScript-Buttons
+share/fvwm-insitu/FvwmScript-Colorset
+share/fvwm-insitu/FvwmScript-ComExample
+share/fvwm-insitu/FvwmScript-Date
+share/fvwm-insitu/FvwmScript-FileBrowser
+share/fvwm-insitu/FvwmScript-Find
+share/fvwm-insitu/FvwmScript-KeyboardSetup
+share/fvwm-insitu/FvwmScript-PointerSetup
+share/fvwm-insitu/FvwmScript-Quit
+share/fvwm-insitu/FvwmScript-ScreenDump
+share/fvwm-insitu/FvwmScript-ScreenSetup
+share/fvwm-insitu/FvwmScript-Setup95
+share/fvwm-insitu/FvwmScript-WidgetDemo
+share/fvwm-insitu/FvwmTabs-DefaultSetup
+share/fvwm-insitu/fvwm-script-ComExample.pl
+share/fvwm-insitu/fvwm-script-setup95.pl
+share/fvwm-insitu/mini-user-config
+share/fvwm-insitu/opale-common/config
+share/fvwm-insitu/opale-common/styles-mini-icons
+share/fvwm-insitu/opale-user-config
+share/fvwm-insitu/opale/backgrounds/sky-default.jpg
+share/fvwm-insitu/opale/icons/16x16/actions/restart.png
+share/fvwm-insitu/opale/icons/16x16/actions/system-lock-screen.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-close.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-delete.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-destroy.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-iconify.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-identify.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-lower.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-maximize.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-move.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-raise.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-resize.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-shade.png
+share/fvwm-insitu/opale/icons/16x16/actions/window-stick.png
+share/fvwm-insitu/opale/icons/16x16/apps/accessories-calculator.png
+share/fvwm-insitu/opale/icons/16x16/apps/accessories-text-editor.png
+share/fvwm-insitu/opale/icons/16x16/apps/amusement.png
+share/fvwm-insitu/opale/icons/16x16/apps/blender.png
+share/fvwm-insitu/opale/icons/16x16/apps/cd-player.png
+share/fvwm-insitu/opale/icons/16x16/apps/chat.png
+share/fvwm-insitu/opale/icons/16x16/apps/clock.png
+share/fvwm-insitu/opale/icons/16x16/apps/colors.png
+share/fvwm-insitu/opale/icons/16x16/apps/configuration.png
+share/fvwm-insitu/opale/icons/16x16/apps/development.png
+share/fvwm-insitu/opale/icons/16x16/apps/dia.png
+share/fvwm-insitu/opale/icons/16x16/apps/disk-cd.png
+share/fvwm-insitu/opale/icons/16x16/apps/disk-floppy.png
+share/fvwm-insitu/opale/icons/16x16/apps/disk.png
+share/fvwm-insitu/opale/icons/16x16/apps/drakconf.png
+share/fvwm-insitu/opale/icons/16x16/apps/file-manager.png
+share/fvwm-insitu/opale/icons/16x16/apps/file.png
+share/fvwm-insitu/opale/icons/16x16/apps/game-action.png
+share/fvwm-insitu/opale/icons/16x16/apps/game-board.png
+share/fvwm-insitu/opale/icons/16x16/apps/game-cards.png
+share/fvwm-insitu/opale/icons/16x16/apps/game-logic.png
+share/fvwm-insitu/opale/icons/16x16/apps/game.png
+share/fvwm-insitu/opale/icons/16x16/apps/ghostview.png
+share/fvwm-insitu/opale/icons/16x16/apps/gnu.png
+share/fvwm-insitu/opale/icons/16x16/apps/gqview.png
+share/fvwm-insitu/opale/icons/16x16/apps/gvim.png
+share/fvwm-insitu/opale/icons/16x16/apps/help.png
+share/fvwm-insitu/opale/icons/16x16/apps/image-viewer.png
+share/fvwm-insitu/opale/icons/16x16/apps/images-processor.png
+share/fvwm-insitu/opale/icons/16x16/apps/information.png
+share/fvwm-insitu/opale/icons/16x16/apps/licq.png
+share/fvwm-insitu/opale/icons/16x16/apps/lyx.png
+share/fvwm-insitu/opale/icons/16x16/apps/mail.png
+share/fvwm-insitu/opale/icons/16x16/apps/monitoring.png
+share/fvwm-insitu/opale/icons/16x16/apps/multimedia-volume-control.png
+share/fvwm-insitu/opale/icons/16x16/apps/multimedia.png
+share/fvwm-insitu/opale/icons/16x16/apps/music.png
+share/fvwm-insitu/opale/icons/16x16/apps/nedit.png
+share/fvwm-insitu/opale/icons/16x16/apps/netscape.png
+share/fvwm-insitu/opale/icons/16x16/apps/network.png
+share/fvwm-insitu/opale/icons/16x16/apps/news.png
+share/fvwm-insitu/opale/icons/16x16/apps/ooo_calc.png
+share/fvwm-insitu/opale/icons/16x16/apps/ooo_impress.png
+share/fvwm-insitu/opale/icons/16x16/apps/ooo_writer.png
+share/fvwm-insitu/opale/icons/16x16/apps/opale.png
+share/fvwm-insitu/opale/icons/16x16/apps/opera.png
+share/fvwm-insitu/opale/icons/16x16/apps/preferences-desktop-font.png
+share/fvwm-insitu/opale/icons/16x16/apps/preferences-desktop-keyboard.png
+share/fvwm-insitu/opale/icons/16x16/apps/psi.png
+share/fvwm-insitu/opale/icons/16x16/apps/science.png
+share/fvwm-insitu/opale/icons/16x16/apps/sound.png
+share/fvwm-insitu/opale/icons/16x16/apps/stylesheet.png
+share/fvwm-insitu/opale/icons/16x16/apps/system.png
+share/fvwm-insitu/opale/icons/16x16/apps/terminal-remote.png
+share/fvwm-insitu/opale/icons/16x16/apps/terminal-special.png
+share/fvwm-insitu/opale/icons/16x16/apps/themes.png
+share/fvwm-insitu/opale/icons/16x16/apps/todo.png
+share/fvwm-insitu/opale/icons/16x16/apps/unknown.png
+share/fvwm-insitu/opale/icons/16x16/apps/utilities-terminal.png
+share/fvwm-insitu/opale/icons/16x16/apps/utility.png
+share/fvwm-insitu/opale/icons/16x16/apps/video.png
+share/fvwm-insitu/opale/icons/16x16/apps/viewer.png
+share/fvwm-insitu/opale/icons/16x16/apps/windows.png
+share/fvwm-insitu/opale/icons/16x16/apps/word-processor.png
+share/fvwm-insitu/opale/icons/16x16/apps/wp.png
+share/fvwm-insitu/opale/icons/16x16/apps/www.png
+share/fvwm-insitu/opale/icons/16x16/apps/xeyes.png
+share/fvwm-insitu/opale/icons/16x16/apps/xfig.png
+share/fvwm-insitu/opale/icons/16x16/apps/xload.png
+share/fvwm-insitu/opale/icons/16x16/apps/xmms.png
+share/fvwm-insitu/opale/icons/16x16/apps/xosview.png
+share/fvwm-insitu/opale/icons/16x16/apps/xpdf.png
+share/fvwm-insitu/opale/icons/16x16/apps/xv.png
+share/fvwm-insitu/opale/icons/16x16/categories/applications-internet.png
+share/fvwm-insitu/opale/icons/16x16/categories/applications-office.png
+share/fvwm-insitu/opale/icons/16x16/categories/applications.png
+share/fvwm-insitu/opale/icons/16x16/devices/input-mouse.png
+share/fvwm-insitu/opale/icons/16x16/devices/printer.png
+share/fvwm-insitu/opale/icons/16x16/devices/scanner.png
+share/fvwm-insitu/opale/icons/16x16/devices/video-display.png
+share/fvwm-insitu/opale/icons/16x16/places/folder-open.png
+share/fvwm-insitu/opale/icons/16x16/places/folder.png
+share/fvwm-insitu/opale/icons/16x16/places/user-home.png
+share/fvwm-insitu/perllib/FVWM/Commands.pm
+share/fvwm-insitu/perllib/FVWM/Constants.pm
+share/fvwm-insitu/perllib/FVWM/Event.pm
+share/fvwm-insitu/perllib/FVWM/EventNames.pm
+share/fvwm-insitu/perllib/FVWM/Module.pm
+share/fvwm-insitu/perllib/FVWM/Module/Gtk.pm
+share/fvwm-insitu/perllib/FVWM/Module/Gtk2.pm
+share/fvwm-insitu/perllib/FVWM/Module/Terminal.pm
+share/fvwm-insitu/perllib/FVWM/Module/Tk.pm
+share/fvwm-insitu/perllib/FVWM/Module/Toolkit.pm
+share/fvwm-insitu/perllib/FVWM/Tracker.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/Colorsets.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/GlobalConfig.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/ModuleConfig.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/PageInfo.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/Scheduler.pm
+share/fvwm-insitu/perllib/FVWM/Tracker/WindowList.pm
+share/fvwm-insitu/perllib/General/FileSystem.pm
+share/fvwm-insitu/perllib/General/Parse.pm
+share/fvwm-insitu/system.fvwm2rc-sample-95
+@dirrm share/fvwm-insitu/perllib/General
+@dirrm share/fvwm-insitu/perllib/FVWM/Tracker
+@dirrm share/fvwm-insitu/perllib/FVWM/Module
+@dirrm share/fvwm-insitu/perllib/FVWM
+@dirrm share/fvwm-insitu/perllib
+@dirrm share/fvwm-insitu/opale/icons/16x16/places
+@dirrm share/fvwm-insitu/opale/icons/16x16/devices
+@dirrm share/fvwm-insitu/opale/icons/16x16/categories
+@dirrm share/fvwm-insitu/opale/icons/16x16/apps
+@dirrm share/fvwm-insitu/opale/icons/16x16/actions
+@dirrm share/fvwm-insitu/opale/icons/16x16
+@dirrm share/fvwm-insitu/opale/icons
+@dirrm share/fvwm-insitu/opale/backgrounds
+@dirrm share/fvwm-insitu/opale-common
+@dirrm share/fvwm-insitu/opale
+@dirrm share/fvwm-insitu
+share/locale/ar/LC_MESSAGES/FvwmScript.mo
+share/locale/ar/LC_MESSAGES/FvwmTaskBar.mo
+share/locale/ar/LC_MESSAGES/fvwm.mo
+share/locale/de/LC_MESSAGES/FvwmScript.mo
+share/locale/de/LC_MESSAGES/FvwmTaskBar.mo
+share/locale/de/LC_MESSAGES/fvwm.mo
+share/locale/fr/LC_MESSAGES/FvwmScript.mo
+share/locale/fr/LC_MESSAGES/FvwmTaskBar.mo
+share/locale/fr/LC_MESSAGES/fvwm.mo
+share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
+share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
+share/locale/sv_SE/LC_MESSAGES/fvwm.mo
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
+share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
+share/locale/zh_CN/LC_MESSAGES/fvwm.mo
+%%DATADIR%%/fvwm/FvwmScript-SaveFacade
+%%DATADIR%%/fvwm/applications
+%%DATADIR%%/fvwm/background
+%%DATADIR%%/fvwm/bindings
+%%DATADIR%%/fvwm/bindings-functions
+%%DATADIR%%/fvwm/colours/Ia_Ora_blue.theme
+%%DATADIR%%/fvwm/colours/Ia_Ora_free.theme
+%%DATADIR%%/fvwm/colours/Ia_Ora_gray.theme
+%%DATADIR%%/fvwm/colours/Ia_Ora_orange.theme
+%%DATADIR%%/fvwm/colours/Metisse.theme
+%%DATADIR%%/fvwm/colours/Metisse_Contrast.theme
+%%DATADIR%%/fvwm/colours/Opale.theme
+%%DATADIR%%/fvwm/config
+%%DATADIR%%/fvwm/config-files-list
+%%DATADIR%%/fvwm/demos
+%%DATADIR%%/fvwm/desks
+%%DATADIR%%/fvwm/fonts
+%%DATADIR%%/fvwm/images/backgrounds/sky-metisse.jpg
+%%DATADIR%%/fvwm/images/backgrounds/tabletop.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/close.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/maximize.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/minimize.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/not_sticky.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/sticky.png
+%%DATADIR%%/fvwm/images/buttons/Ia_Ora/unmaximize.png
+%%DATADIR%%/fvwm/images/buttons/redmond/close-activedown.png
+%%DATADIR%%/fvwm/images/buttons/redmond/close-activeup.png
+%%DATADIR%%/fvwm/images/buttons/redmond/close-inactive.png
+%%DATADIR%%/fvwm/images/buttons/redmond/iconify-activedown.png
+%%DATADIR%%/fvwm/images/buttons/redmond/iconify-activeup.png
+%%DATADIR%%/fvwm/images/buttons/redmond/iconify-inactive.png
+%%DATADIR%%/fvwm/images/buttons/redmond/maximize-activedown.png
+%%DATADIR%%/fvwm/images/buttons/redmond/maximize-activeup.png
+%%DATADIR%%/fvwm/images/buttons/redmond/maximize-inactive.png
+%%DATADIR%%/fvwm/images/buttons/redmond/unmaximize-activedown.png
+%%DATADIR%%/fvwm/images/buttons/redmond/unmaximize-activeup.png
+%%DATADIR%%/fvwm/images/buttons/redmond/unmaximize-inactive.png
+%%DATADIR%%/fvwm/images/cursors/fold_b.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_bl.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_br.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_l.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_r.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_t.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_tl.xpm
+%%DATADIR%%/fvwm/images/cursors/fold_tr.xpm
+%%DATADIR%%/fvwm/images/cursors/sb_bltr_double_arrow.xpm
+%%DATADIR%%/fvwm/menus
+%%DATADIR%%/fvwm/menustyle
+%%DATADIR%%/fvwm/metisserc
+%%DATADIR%%/fvwm/panels
+%%DATADIR%%/fvwm/scripting.pl
+%%DATADIR%%/fvwm/shading
+%%DATADIR%%/fvwm/stroke
+%%DATADIR%%/fvwm/styles
+%%DATADIR%%/fvwm/themes/Ia_Ora_blue.theme
+%%DATADIR%%/fvwm/themes/Ia_Ora_free.theme
+%%DATADIR%%/fvwm/themes/Ia_Ora_gray.theme
+%%DATADIR%%/fvwm/themes/Ia_Ora_orange.theme
+%%DATADIR%%/fvwm/themes/Metisse.theme
+%%DATADIR%%/fvwm/themes/Metisse_Constrast.theme
+%%DATADIR%%/fvwm/themes/Opale_Devel.theme
+%%DATADIR%%/fvwm/themes/Opale_Vectors.theme
+%%DATADIR%%/fvwm/themes/Redmond_Ia_Ora.theme
+%%DATADIR%%/fvwm/themes/Redmond_Opale.theme
+%%DATADIR%%/fvwm/window/Devel.theme
+%%DATADIR%%/fvwm/window/Ia_Ora.theme
+%%DATADIR%%/fvwm/window/Metisse.theme
+%%DATADIR%%/fvwm/window/Redmond.theme
+%%DATADIR%%/fvwm/window/Vectors.theme
+%%GCONF%%%%DATADIR%%/glade/FvwmConfig.glade
+%%DATADIR%%/shaders/blur-f.glsl
+%%DATADIR%%/shaders/shaders-files-list
+%%DATADIR%%/shaders/simple-anim-f.glsl
+@dirrm %%DATADIR%%/shaders
+%%GCONF%%@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/fvwm/window
+@dirrm %%DATADIR%%/fvwm/themes
+@dirrm %%DATADIR%%/fvwm/images/cursors
+@dirrm %%DATADIR%%/fvwm/images/buttons/redmond
+@dirrm %%DATADIR%%/fvwm/images/buttons/Ia_Ora
+@dirrm %%DATADIR%%/fvwm/images/buttons
+@dirrm %%DATADIR%%/fvwm/images/backgrounds
+@dirrm %%DATADIR%%/fvwm/images
+@dirrm %%DATADIR%%/fvwm/colours
+@dirrm %%DATADIR%%/fvwm
+@dirrm %%DATADIR%%
