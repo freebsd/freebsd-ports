@@ -10,7 +10,7 @@ DISTVERSION=	4.1-2
 PORTREVISION=	3
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
 
 CONFLICTS=	metis-[0-9]*
