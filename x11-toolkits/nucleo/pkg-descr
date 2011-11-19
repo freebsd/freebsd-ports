@@ -1,4 +1,11 @@
 Nucleo is a toolkit for exploring new uses of video and new human-computer
-interaction techniques.
+interaction techniques.  Most of it comes from a previous toolkit named
+videoSpace.
+
+Like videoSpace, nucleo is motivated by the desire to focus on the uses of
+video, rather than the technologies it requires.  In this perspective, the
+toolkit is not focused on performance or reliability issues, but rather on
+the ability to support rapid prototyping and incremental development of
+video applications.
 
 WWW: http://insitu.lri.fr/~roussel/projects/nucleo/
