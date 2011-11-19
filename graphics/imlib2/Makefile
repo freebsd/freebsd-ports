@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -35,12 +34,16 @@ OPTIONS=	JPEG	"Enable jpeg image support"	on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MMX) && (${ARCH} == "i386")
+.if ${ARCH} == "i386" && !empty(MACHINE_CPU:Mmmx)
 CONFIGURE_ARGS+=	--enable-mmx
+.else
+CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
-.if (${ARCH} == "amd64")
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-amd64
+.else
+CONFIGURE_ARGS+=	--disable-amd64
 .endif
 
 .if defined(WITHOUT_X11)
