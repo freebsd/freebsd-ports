@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-dump-honor-nodump \
 		--prefix=${PREFIX} \
 		--disable-glibtest \
-		--with-user=${USERS} --with-group=${GROUPS} \
+		--with-user=${USERS} --with-group=${AMANDA_GROUP} \
 		--with-bsdtcp-security --with-bsdudp-security \
 		--with-ssh-security
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
@@ -51,11 +51,11 @@ USERS=		${AMANDA_USER}
 .else
 USERS?=		amanda
 .endif
-.if defined(AMANDA_GROUP)
-GROUPS=		${AMANDA_GROUP}
-.else
-GROUPS?=	amanda
+.if !defined(AMANDA_GROUP)
+AMANDA_GROUP=	amanda
 .endif
+GROUPS?=	operator amanda
+
 AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists
 AMANDA_DATES?=		${PREFIX}/var/amanda/amandates
 PLIST_SUB=		SHLIBVER=${PORTVERSION} AMANDA_DATES=${AMANDA_DATES}
@@ -78,16 +78,6 @@ RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 
 SUB_FILES+=	pkg-install pkg-deinstall
 SUB_LIST+=	PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
-
-pre-everything::
-.if defined(AMANDA_TAPE)
-	@${ECHO} "Use of \$AMANDA_TAPE is deprecated.  Specify it in amanda.conf."
-	exit 1
-.endif
-.if defined(AMANDA_CONFIG)
-	@${ECHO} "Use of \$AMANDA_CONFIG is deprecated.  Specify it in amanda.conf."
-	exit 1
-.endif
 
 pre-fetch:
 	@${ECHO} ""
@@ -165,12 +155,6 @@ post-install:
 # amanda-client part
 .else
 
-pre-everything::
-.if defined(AMANDA_CONFIG)
-	@${ECHO} "Use of \$AMANDA_CONFIG is deprecated.  Specify it in amanda.conf."
-	exit 1
-.endif
-
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -215,9 +199,9 @@ MAN8=		amanda.8 \
 
 post-install:
 	${MKDIR} ${AMANDA_GNUTAR_LISTDIR}
-	${CHOWN} ${USERS}:${GROUPS} ${AMANDA_GNUTAR_LISTDIR}
+	${CHOWN} ${USERS}:${AMANDA_GROUP} ${AMANDA_GNUTAR_LISTDIR}
 	${TOUCH} ${AMANDA_DATES}
-	${CHOWN} ${USERS}:${GROUPS} ${AMANDA_DATES}
+	${CHOWN} ${USERS}:${AMANDA_GROUP} ${AMANDA_DATES}
 	${CAT} ${PKGMESSAGE}
 
 .endif
