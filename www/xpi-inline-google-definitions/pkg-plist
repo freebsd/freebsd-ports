@@ -2,7 +2,6 @@
 %%XPI_XPIDIR%%/content/browserOverlay.xul
 %%XPI_XPIDIR%%/content/dom-drag.js
 %%XPI_XPIDIR%%/content/inlinedefinitions.js
-%%XPI_XPIDIR%%/content/override.css
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.dtd
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.properties
