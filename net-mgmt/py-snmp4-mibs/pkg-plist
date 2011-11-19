@@ -1,2 +1,0 @@
-bin/rebuild-pysnmp-mibs
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
