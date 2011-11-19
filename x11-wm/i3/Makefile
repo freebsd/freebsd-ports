@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	i3
-DISTVERSION=	3.e-bf3
-PORTREVISION=	1
+DISTVERSION=	4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +15,10 @@ MASTER_SITE_SUBDIR=	dhn
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An improved dynamic tiling window manager
 
+BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex \
+		pcre>=0:${PORTSDIR}/devel/pcre
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
 		ev.4:${PORTSDIR}/devel/libev \
 		yajl.1:${PORTSDIR}/devel/yajl
@@ -30,15 +32,19 @@ USE_ICONV=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/i3 \
-		bin/i3-msg \
+		bin/i3-config-wizard \
 		bin/i3-input \
+		bin/i3-msg \
+		bin/i3-nagbar \
+		bin/i3bar \
 		etc/i3/config.sample \
 		etc/i3/welcome
+
 PLIST_DIRS=	etc/i3
 
-MAN1=	i3.1 \
-	i3-msg.1 \
-	i3-input.1
+MANUALS=	i3-config-wizard.1 i3-input.1 i3-migrate-config-to-v4.1 i3-msg.1 i3-nagbar.1 i3-wsbar.1 i3.1
+
+MAN1=	${MANUALS}
 
 .include <bsd.port.pre.mk>
 
@@ -57,17 +63,19 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3-input.1
 	@${REINPLACE_CMD} -e 's|.SILENT||g' ${WRKSRC}/common.mk
 	@${REINPLACE_CMD} -e 's|-Iinclude|-Iinclude -Isrc|g' ${WRKSRC}/common.mk
+	@${REINPLACE_CMD} -e 's|flex|${LOCALBASE}/bin/flex|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-msg/${PORTNAME}-msg ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-input/${PORTNAME}-input ${PREFIX}/bin/
+.for i in i3-config-wizard i3-input i3-msg i3-nagbar i3bar
+	${INSTALL_SCRIPT} ${WRKSRC}/$i/$i ${PREFIX}/bin/
+.endfor
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/welcome ${PREFIX}/etc/${PORTNAME}/welcome
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-msg.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-input.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/welcome ${PREFIX}/etc/${PORTNAME}/welcome
+.for i in ${MANUALS}
+	${INSTALL_MAN} ${WRKSRC}/man/${i} ${MANPREFIX}/man/man1/
+.endfor
 
 	@${ECHO_MSG} "======================================================================================"
 	@${ECHO_MSG} ""
