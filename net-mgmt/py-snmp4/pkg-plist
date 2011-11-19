@@ -8,6 +8,7 @@ bin/libsmi2pysnmp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smi/view.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/agent/cmdrsp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/agent/ntforg.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/manager/bulkgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/manager/getgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/manager/nextgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v1arch/manager/ntfrcv.py
