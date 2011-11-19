@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	GD
-PORTVERSION=	0.7.4
-PORTREVISION=	9
+PORTNAME=	gd
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.daifukuya.com/archive/kagemai/lib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DISTNAME=	ruby-GD-0.7.4
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -35,10 +34,6 @@ CONFIGURE_ARGS+=	--enable-gd2_0 \
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-BROKEN= does not work with ruby 1.9
-.endif
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
 .if exists(${LOCALBASE}/bin/gd2topng)
@@ -68,11 +63,7 @@ DOCS_JA=	readme.ja	\
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${LOCALBASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
-.if defined(WITH_GD1)
-	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd1"' ${WRKSRC}/extconf.rb
-.else
 	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd"' ${WRKSRC}/extconf.rb
-.endif
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
