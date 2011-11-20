@@ -1037,6 +1037,7 @@
     SUBDIR += xsc
     SUBDIR += xscavenger
     SUBDIR += xscorch
+    SUBDIR += xscrabble
     SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
