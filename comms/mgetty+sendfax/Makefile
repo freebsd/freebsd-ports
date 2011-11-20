@@ -70,10 +70,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 CFLAGS+=	-DAUTO_PPP
 .if defined(WITH_FIDO) && ${WITH_FIDO:L} != no
 CFLAGS+=	-DFIDO
