@@ -3,10 +3,10 @@ bin/xneur
 etc/xneur/xneurrc.sample
 @exec if [ ! -f %D/etc/xneur/xneurrc ] ; then cp -p %D/%F %B/xneurrc; fi
 @dirrmtry etc/xneur
-lib/xneur/libxneur.so.13
+lib/xneur/libxneur.so.15
 lib/xneur/libxneur.so
 lib/xneur/libxneur.la
-lib/xneur/libxnconfig.so.13
+lib/xneur/libxnconfig.so.15
 lib/xneur/libxnconfig.so
 lib/xneur/libxnconfig.la
 lib/xneur/xneur/libxntest.so.0
