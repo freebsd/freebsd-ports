@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glib-Object-Introspection
-PORTVERSION=	0.003
+PORTVERSION=	0.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Glib::Object::Introspection.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc -shared -g|& -fPIC|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|gcc -shared|${CC} -fPIC -shared|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
