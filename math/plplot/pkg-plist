@@ -33,11 +33,11 @@ lib/libcsironn.so
 lib/libcsironn.so.0
 lib/libcsironn.so.0.0.1
 lib/libplplotcxxd.so
-lib/libplplotcxxd.so.9
-lib/libplplotcxxd.so.9.3.0
+lib/libplplotcxxd.so.10
+lib/libplplotcxxd.so.10.0.0
 lib/libplplotd.so
-lib/libplplotd.so.10
-lib/libplplotd.so.10.0.0
+lib/libplplotd.so.11
+lib/libplplotd.so.11.0.0
 %%FORTRAN%%lib/libplplotf77cd.so
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1
@@ -70,9 +70,10 @@ libdata/pkgconfig/plplotd-c++.pc
 %%QT%%libdata/pkgconfig/plplotd-qt.pc
 %%TCLTK%%libdata/pkgconfig/plplotd-tcl.pc
 libdata/pkgconfig/plplotd.pc
+%%DOCSDIR%%/ABOUT
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING.LIB
-%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/ChangeLog.release
 %%DOCSDIR%%/Copyright
 %%DOCSDIR%%/FAQ
 %%DOCSDIR%%/NEWS
@@ -140,6 +141,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c++/x29.cc
 %%DATADIR%%/examples/c++/x30.cc
 %%DATADIR%%/examples/c++/x31.cc
+%%DATADIR%%/examples/c++/x33.cc
 %%DATADIR%%/examples/c/CMakeLists.txt
 %%DATADIR%%/examples/c/Makefile
 %%DATADIR%%/examples/c/README.cairo
@@ -180,6 +182,8 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c/x30c.c
 %%DATADIR%%/examples/c/x31c.c
 %%DATADIR%%/examples/c/x32c.c
+%%DATADIR%%/examples/c/x33c.c
+%%DATADIR%%/examples/c/x34c.c
 %%FORTRAN%%%%DATADIR%%/examples/cmake/modules/CMakeFortranInformation.cmake
 %%DATADIR%%/examples/cmake/modules/FindPkgConfig.cmake
 %%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Cygwin-GNU-Fortran.cmake
@@ -431,7 +435,6 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/test_c_interactive.sh
 %%DATADIR%%/examples/test_cxx.sh
 %%DATADIR%%/examples/test_diff.sh
-%%DATADIR%%/examples/test_octave_interactive.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f77.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f95.sh
 %%PYTHON%%%%DATADIR%%/examples/test_python.sh
