@@ -1640,6 +1640,7 @@ cl-uffi-sbcl                    ports/devel/cl-uffi-sbcl
 clamassassin                    ports/security/clamassassin
 clamav                          ports/security/clamav
 clamav-devel                    ports/security/clamav-devel
+clamav-milter                   ports/security/clamav-milter
 clamav-unofficial-sigs          ports/security/clamav-unofficial-sigs
 clamcour                        ports/security/clamcour
 clamd-stream-client             ports/security/clamd-stream-client
@@ -2934,6 +2935,7 @@ electric                        ports/cad/electric
 electric-ng                     ports/cad/electric-ng
 electriceyes                    ports/graphics/electriceyes
 electricfence                   ports/devel/ElectricFence
+electrix                        ports/graphics/electrix
 elementary                      ports/x11-toolkits/elementary
 elf                             ports/devel/elf
 elfio                           ports/devel/elfio
@@ -9103,6 +9105,7 @@ metasploit                      ports/security/metasploit
 metauml                         ports/textproc/metauml
 metis                           ports/math/metis
 metis-edf                       ports/math/metis-edf
+metisse                         ports/x11/metisse
 metromap                        ports/misc/metromap
 mew                             ports/mail/mew
 mew2                            ports/mail/mew2
