@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wine-gecko
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/wine/Wine%20Gecko/${DISTVERSION}
 DISTNAME=	wine_gecko-${DISTVERSION}-x86
@@ -16,14 +16,14 @@ EXTRACT_ONLY=
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Gecko Layout Engine for Wine (HTML support)
 
+LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
+LICENSE_COMB=	multi
+
 NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine
 PLIST_FILES=	%%DATADIR%%/gecko/wine_gecko-%%GECKO_VERSION%%-x86.msi
 PLIST_DIRSTRY=	%%DATADIR%%/gecko %%DATADIR%%
-
-LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
-LICENSE_COMB=	multi
 
 do-install:
 	@${MKDIR} ${DATADIR}/gecko
