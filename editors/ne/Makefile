@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
-BUILD_WRKSRC=	${WRKSRC}/src
-
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_WRKSRC=	${WRKSRC}/src
 
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
