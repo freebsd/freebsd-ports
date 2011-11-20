@@ -7,7 +7,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -51,7 +51,7 @@ BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 .endif
 
 .if defined(WITH_PLPLOT)
-LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot
+LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot
 .endif
 
 .if defined(WITH_GL)
