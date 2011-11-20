@@ -122,6 +122,9 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/mygpoclient/api_test.py
 %%PYTHON_SITELIBDIR%%/mygpoclient/api_test.pyc
 %%PYTHON_SITELIBDIR%%/mygpoclient/api_test.pyo
+%%PYTHON_SITELIBDIR%%/mygpoclient/feeds.py
+%%PYTHON_SITELIBDIR%%/mygpoclient/feeds.pyc
+%%PYTHON_SITELIBDIR%%/mygpoclient/feeds.pyo
 %%PYTHON_SITELIBDIR%%/mygpoclient/http.py
 %%PYTHON_SITELIBDIR%%/mygpoclient/http.pyc
 %%PYTHON_SITELIBDIR%%/mygpoclient/http.pyo

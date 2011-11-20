@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	multimedia
-MASTER_SITES=	BERLIOS \
+MASTER_SITES=	http://gpodder.org/src/ \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
 		CHEESESHOP:mygpoclient
-MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT \
-			source/m/mygpoclient/:mygpoclient
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+MASTER_SITE_SUBDIR=	source/m/mygpoclient/:mygpoclient
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
 MAINTAINER=	rm@FreeBSD.org
@@ -36,7 +35,7 @@ OPTIONS=	COVERART "Cover Art syncing support" off \
 		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
 		SHOWNOTES "HTML episode shownotes support" off
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6-2.7
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -46,14 +45,10 @@ INSTALLS_EGGINFO=	yes
 
 MAN1=		gpo.1 ${PORTNAME}.1 ${PORTNAME}-backup.1
 
-MGC_DISTNAME=	mygpoclient-1.5
+MGC_DISTNAME=	mygpoclient-1.6
 MGC_WRKSRC=	${WRKDIR}/${MGC_DISTNAME}/mygpoclient
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 260
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
-.endif
 
 .if defined(WITH_COVERART)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
