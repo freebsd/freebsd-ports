@@ -1,5 +1,5 @@
---- src/makefile.bsd.orig	Thu Apr 28 00:00:00 2005
-+++ src/makefile.bsd	Wed Aug  3 18:50:24 2005
+--- src/makefile.bsd.orig	2011-10-20 00:00:00.000000000 +0200
++++ src/makefile.bsd	2011-11-20 18:42:22.000000000 +0100
 @@ -20,7 +20,7 @@
  mandir	= $(prefix)/share/man
  rundir	= $(prefix)/share/mined
@@ -16,14 +16,14 @@
 -#ldocdir	= $(lprefix)/share/doc/mined
 +ldocdir	= $(lprefix)/share/doc/mined
  
- INSTALL = install
- #INSTALL = /bin/cp -p
-@@ -108,7 +108,7 @@
+ #INSTALL = install --mode=+r,u+w
+ INSTALL = install -m 644
+@@ -112,7 +112,7 @@
  # compiler selection and compiler-specific options
  # (source warnings, optimisation and debug)
  
 -CC=gcc
 +#CC=gcc
- include mkinclud.$(CC)
- 
+ # avoid problems with non-GNU make
+ include mkinclud.cc
  

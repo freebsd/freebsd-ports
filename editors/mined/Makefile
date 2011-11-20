@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2011.17
+PORTVERSION=	2011.19.2
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/usrshare/package_doc/LICENSE.GNU
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE.GPL
 
 .if defined(NOPORTDOCS)
 ALL_TARGET=	mined manual
@@ -29,7 +29,6 @@ MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
 MAKE_JOBS_UNSAFE=	yes
 
-NO_MANCOMPRESS=	yes
 MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1
 
 PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
@@ -56,7 +55,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${DOCSDIR}
 	cd ${WRKSRC}/usrshare/package_doc && ${INSTALL_DATA} * ${DOCSDIR}
-	@${RM} ${DOCSDIR}/CHANGES ${DOCSDIR}/LICENSE.GNU
+	@${RM} ${DOCSDIR}/CHANGES ${DOCSDIR}/LICENCE.GPL
 .endif
 #	@${RM} ${DATADIR}/bin/*.bat
 	@${RM} -rf ${DATADIR}/doc_user ${DATADIR}/package_doc
