@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -18,7 +18,7 @@ COMMENT=	Web Scraping Toolkit inspired by Scrapi
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+BUILD_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Selector-XPath>=0.03:${PORTSDIR}/www/p5-HTML-Selector-XPath \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-HTML-TreeBuilder-LibXML>=0.04:${PORTSDIR}/www/p5-HTML-TreeBuilder-LibXML \
@@ -29,6 +29,10 @@ RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-XML-XPathEngine>=0.08:${PORTSDIR}/textproc/p5-XML-XPathEngine \
 		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
 		p5-libwww>=5.827:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
