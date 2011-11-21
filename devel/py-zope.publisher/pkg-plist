@@ -67,6 +67,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/skinnable.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/skinnable.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/skinnable.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/testing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/__init__.pyo
@@ -136,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_skinnable.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_skinnable.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_skinnable.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_testing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_xmlrpc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_xmlrpc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/publisher/tests/test_xmlrpc.pyo
