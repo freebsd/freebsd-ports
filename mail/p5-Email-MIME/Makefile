@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.908
+PORTVERSION=	1.910
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,5 +27,8 @@ MAN3=		Email::MIME.3 \
 		Email::MIME::Creator.3 \
 		Email::MIME::Header.3 \
 		Email::MIME::Modifier.3
+
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
