@@ -3,9 +3,6 @@ bin/miniterm.py
 %%PYTHON_SITELIBDIR%%/serial/__init__.py
 %%PYTHON_SITELIBDIR%%/serial/__init__.pyc
 %%PYTHON_SITELIBDIR%%/serial/__init__.pyo
-%%PYTHON_SITELIBDIR%%/serial/loopback_connection.py
-%%PYTHON_SITELIBDIR%%/serial/loopback_connection.pyc
-%%PYTHON_SITELIBDIR%%/serial/loopback_connection.pyo
 %%PYTHON_SITELIBDIR%%/serial/rfc2217.py
 %%PYTHON_SITELIBDIR%%/serial/rfc2217.pyc
 %%PYTHON_SITELIBDIR%%/serial/rfc2217.pyo
@@ -27,19 +24,47 @@ bin/miniterm.py
 %%PYTHON_SITELIBDIR%%/serial/sermsdos.py
 %%PYTHON_SITELIBDIR%%/serial/sermsdos.pyc
 %%PYTHON_SITELIBDIR%%/serial/sermsdos.pyo
-%%PYTHON_SITELIBDIR%%/serial/socket_connection.py
-%%PYTHON_SITELIBDIR%%/serial/socket_connection.pyc
-%%PYTHON_SITELIBDIR%%/serial/socket_connection.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/serial/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports.py
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.py
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_windows.py
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_windows.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_windows.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/miniterm.py
+%%PYTHON_SITELIBDIR%%/serial/tools/miniterm.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/miniterm.pyo
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/__init__.py
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/__init__.pyc
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_hwgrep.py
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_hwgrep.pyc
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_hwgrep.pyo
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_loop.py
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_loop.pyc
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_loop.pyo
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_rfc2217.py
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_rfc2217.pyc
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_rfc2217.pyo
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_socket.py
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_socket.pyc
+%%PYTHON_SITELIBDIR%%/serial/urlhandler/protocol_socket.pyo
 %%PYTHON_SITELIBDIR%%/serial/win32.py
 %%PYTHON_SITELIBDIR%%/serial/win32.pyc
 %%PYTHON_SITELIBDIR%%/serial/win32.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/serial/urlhandler
+@dirrm %%PYTHON_SITELIBDIR%%/serial/tools
 @dirrm %%PYTHON_SITELIBDIR%%/serial
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhancedserial.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/miniterm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/port_publisher.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/port_publisher.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rfc2217_server.py
