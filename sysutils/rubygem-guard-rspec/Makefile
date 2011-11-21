@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guard-rspec
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
