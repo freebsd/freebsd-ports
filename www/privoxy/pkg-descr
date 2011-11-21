@@ -1,8 +1,7 @@
 Privoxy is a non-caching web proxy with advanced filtering capabilities for
-enhancing privacy, modifying web page data, managing HTTP cookies, controlling
-access, and removing ads, banners, pop-ups and other obnoxious Internet junk.
-Privoxy has a flexible configuration and can be customized to suit individual
-needs and tastes. Privoxy has application for both stand-alone systems and
-multi-user networks.
+enhancing privacy, modifying web page data and HTTP headers, controlling
+access, and removing ads and other obnoxious Internet junk. Privoxy has a
+flexible configuration and can be customized to suit individual needs and
+tastes. It may be used in both stand-alone systems and multi-user networks.
 
 WWW: http://www.privoxy.org/
