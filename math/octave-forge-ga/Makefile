@@ -13,6 +13,10 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${OCTAVE_PKGNAME}
+
 RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
 
 .include <bsd.port.pre.mk>
@@ -22,6 +26,6 @@ do-build:
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.post.mk>

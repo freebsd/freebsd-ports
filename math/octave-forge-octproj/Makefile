@@ -13,7 +13,11 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${OCTAVE_PKGNAME}
+
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 
@@ -24,6 +28,6 @@ post-patch:
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.post.mk>

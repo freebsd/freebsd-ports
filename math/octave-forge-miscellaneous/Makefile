@@ -13,7 +13,11 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${DISTNAME}
+
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
@@ -22,6 +26,6 @@ MAKE_ENV+=	MKOCTFILE=mkoctfile
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.post.mk>

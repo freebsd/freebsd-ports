@@ -13,14 +13,18 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${OCTAVE_PKGNAME}
+
 LIB_DEPENDS+=	ginac:${PORTSDIR}/math/GiNaC
 
-WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.post.mk>
