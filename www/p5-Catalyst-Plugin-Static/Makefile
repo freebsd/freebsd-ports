@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Static
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
+MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Serve static files with Catalyst
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=2.99:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-File-MimeInfo>=0.11:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Static.3
+
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
