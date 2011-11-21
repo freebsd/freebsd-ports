@@ -27527,6 +27527,7 @@ xournal                         ports/graphics/xournal
 xp                              ports/textproc/xp
 xpacman                         ports/games/xpacman
 xpad                            ports/deskutils/xpad
+xpad-current                    ports/deskutils/xpad-current
 xpaint                          ports/graphics/xpaint
 xpanex                          ports/games/xpanex
 xparam                          ports/devel/xparam
@@ -27700,6 +27701,7 @@ xsc                             ports/games/xsc
 xscavenger                      ports/games/xscavenger
 xscoop                          ports/x11-toolkits/xscoop
 xscorch                         ports/games/xscorch
+xscrabble                       ports/games/xscrabble
 xscreensaver                    ports/x11/xscreensaver
 xscreensaver-gnome              ports/x11/xscreensaver-gnome
 xscreensaver-gnome-hacks        ports/x11/xscreensaver-gnome-hacks
