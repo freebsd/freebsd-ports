@@ -11,6 +11,15 @@
         PCAP_ROOT=`cd ${PCAP_ROOT} && pwd`
         CORELIBS="${CORELIBS} -L$PCAP_ROOT -lpcap"
         INCS="${INCS} -I$PCAP_ROOT"
+@@ -1480,7 +1480,7 @@
+ 
+     dnl remove unecessary path
+     dnl line below workaround for OSX 10.6 (Snow Leopard)/10.7 (Lion)
+-    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386// | sed -e "s/-arch ppc// | sed -e "s/-arch x86_64//"`
++    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386//" | sed -e "s/-arch ppc//" | sed -e "s/-arch x86_64//"`
+     INCS="${INCS} ${PYTHON_INCS}"
+ 
+ OLD_CFLAGS=$CFLAGS
 @@ -1815,8 +1815,6 @@
  else
     if test -f "3rd_party/GeoLiteCity.dat.gz"; then

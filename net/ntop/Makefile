@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
@@ -43,8 +43,6 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-zlib-root=/usr \
 		--disable-snmp
-# we currently disable IPv6
-CONFIGURE_ARGS+=--disable-ipv6
 
 MAN8=		ntop.8
 
@@ -59,9 +57,9 @@ USE_RC_SUBR=	ntop.sh
 ##    WITH_PCAP_PORT:     Use libpcap from ports.
 ##    WITH_XMLDUMP:       Enable XML Dump support.
 ##
-OPTIONS=	LOCALE "Enable locale (i18n) support." Off \
-		PCAP_PORT "Use libpcap from ports." Off \
-		XMLDUMP "Enable XML Dump support." Off
+OPTIONS=	PCAP_PORT "Use libpcap from ports." Off \
+		XMLDUMP "Enable XML Dump support." Off \
+		JUMBO_FRAMES "Jumbo Frames. Experimental." Off
 
 .include <bsd.port.pre.mk>
 
@@ -72,18 +70,18 @@ CONFIGURE_ARGS+=	--with-pcap-root=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-pcap-root=/usr
 .endif
 
-.if defined(WITH_LOCALE) && !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-i18n \
-			--with-localedir=${LOCALBASE}/share/locale
-.endif
-
 .if defined(WITH_XMLDUMP)
 LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
 CPPFLAGS+=		-I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
 			-I${LOCALBASE}/include/libgdome \
 			-I${LOCALBASE}/include/glib-2.0
+.endif
+
+.if defined(WITH_JUMBO_FRAMES)
+CONFIGURE_ARGS+=	--enable-jumbo-frames
+# should set your mtu to 9000
+# see http://www.cyberciti.biz/faq/freebsd-jumbo-frames-networking-configration/
 .endif
 
 .if ${OSVERSION} < 700000
