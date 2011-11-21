@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -70,5 +70,8 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Util.3 \
 		Log::Log4perl::Util::Semaphore.3 \
 		Log::Log4perl::Util::TimeTracker.3
+
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
