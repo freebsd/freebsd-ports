@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biorythm
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	shhmsg.1:${PORTSDIR}/devel/libshhmsg \
 		shhopt.1:${PORTSDIR}/devel/libshhopt
 
 MAN6=		${PORTNAME}.6
-PORTDOCS=	CREDITS ChangeLog README
+PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CREDITS ChangeLog README
+.for file in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
