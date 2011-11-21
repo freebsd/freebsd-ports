@@ -51,15 +51,15 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
 		DOVECOT		"Dovecot 1.x SASL authentication method"		off \
 		DOVECOT2	"Dovecot 2.x SASL authentication method"		off \
-		SASLKRB5	"If your SASL req. Kerberos5 select this option"	${STATUS_SASLKRB5} \
-		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	${STATUS_SASLKRB5MIT} \
+		SASLKRB5	"If your SASL req. Kerberos5, select this"		${STATUS_SASLKRB5} \
+		SASLKMIT	"If your SASL req. MIT Kerberos5, select this"		${STATUS_SASLKRB5MIT} \
 		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
-		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	${STATUS_BDB} \
-		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	${STATUS_MySQL} \
-		PGSQL		"PostgreSQL maps (pick ver. with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
+		BDB		"Berkeley DB (uses WITH_BDB_VER)"			${STATUS_BDB} \
+		MYSQL		"MySQL maps (uses WITH_MYSQL_VER)"			${STATUS_MySQL} \
+		PGSQL		"PostgreSQL maps (uses DEFAULT_PGSQL_VER)"		${STATUS_PgSQL} \
 		SQLITE		"SQLite maps"						off \
-		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
-		LDAP_SASL	"Enable OpenLDAP client-to-server auth via SASL"	off \
+		OPENLDAP	"OpenLDAP maps (uses WITH_OPENLDAP_VER)"		${STATUS_OpenLDAP} \
+		LDAP_SASL	"Enable OpenLDAP client-to-server SASL auth"		off \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
 		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
