@@ -65,6 +65,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/amd64/x_ignore_nofocus.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/extension_connection.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/extension_connection.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/extension_connection.pyo
@@ -78,6 +79,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/webdriver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/webdriver.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/webdriver.xpi
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/x86/x_ignore_nofocus.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.pyo
@@ -110,14 +112,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/select.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/select.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/select.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/ui.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/ui.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/ui.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/wait.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/wait.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support/wait.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/support
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/remote
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/x64
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/win32
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/x86
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox/amd64
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/firefox
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/emulation
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/common
