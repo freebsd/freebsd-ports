@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
