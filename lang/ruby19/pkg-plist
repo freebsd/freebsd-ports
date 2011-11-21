@@ -13,7 +13,9 @@ bin/testrb%%RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
+libdata/pkgconfig/ruby-1.9.pc
 include/ruby-1.9/%%RUBY_ARCH%%/ruby/config.h
+include/ruby-1.9/ruby/backward/classext.h
 include/ruby-1.9/ruby/backward/rubyio.h
 include/ruby-1.9/ruby/backward/rubysig.h
 include/ruby-1.9/ruby/backward/st.h
@@ -30,6 +32,7 @@ include/ruby-1.9/ruby/re.h
 include/ruby-1.9/ruby/regex.h
 include/ruby-1.9/ruby/ruby.h
 include/ruby-1.9/ruby/st.h
+include/ruby-1.9/ruby/subst.h
 include/ruby-1.9/ruby/util.h
 include/ruby-1.9/ruby/version.h
 include/ruby-1.9/ruby/vm.h
@@ -43,10 +46,12 @@ include/ruby-1.9/ruby.h
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog-1.8.0
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog-1.9.3
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog-YARV
 %%PORTDOCS%%%%RUBY_DOCDIR%%/LEGAL
 %%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS-1.8.7
 %%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS-1.9.1
+%%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS-1.9.2
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.ja
@@ -76,10 +81,10 @@ include/ruby-1.9/ruby.h
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/stringio/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rubygems
 %%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/syslog.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/stringio
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rubygems
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ripper
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
@@ -252,6 +257,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/continuation.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/coverage.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/curses.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/date_core.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dbm.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/bubblebabble.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/md5.so
@@ -317,6 +323,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fcntl.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fiber.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fiddle.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/io/console.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/io/nonblock.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/io/wait.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/json/ext/generator.so
@@ -326,6 +333,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/nkf.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/objspace.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/openssl.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/pathname.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/psych.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/pty.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/racc/cparse.so
@@ -356,9 +364,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/cmath.rb
 %%RUBY_LIBDIR%%/complex.rb
 %%RUBY_LIBDIR%%/csv.rb
-%%RUBY_LIBDIR%%/date/delta/parser.rb
-%%RUBY_LIBDIR%%/date/delta/parser.ry
-%%RUBY_LIBDIR%%/date/delta.rb
 %%RUBY_LIBDIR%%/date/format.rb
 %%RUBY_LIBDIR%%/date.rb
 %%RUBY_LIBDIR%%/debug.rb
@@ -399,6 +404,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/forwardable.rb
 %%RUBY_LIBDIR%%/getoptlong.rb
 %%RUBY_LIBDIR%%/gserver.rb
+%%RUBY_LIBDIR%%/io/console/size.rb
 %%RUBY_LIBDIR%%/ipaddr.rb
 %%RUBY_LIBDIR%%/irb/cmd/chws.rb
 %%RUBY_LIBDIR%%/irb/cmd/fork.rb
@@ -442,19 +448,23 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
 %%RUBY_LIBDIR%%/irb/xmp.rb
 %%RUBY_LIBDIR%%/irb.rb
+%%RUBY_LIBDIR%%/json/add/complex.rb
 %%RUBY_LIBDIR%%/json/add/core.rb
-%%RUBY_LIBDIR%%/json/add/rails.rb
+%%RUBY_LIBDIR%%/json/add/rational.rb
 %%RUBY_LIBDIR%%/json/common.rb
-%%RUBY_LIBDIR%%/json/editor.rb
 %%RUBY_LIBDIR%%/json/ext.rb
 %%RUBY_LIBDIR%%/json/version.rb
 %%RUBY_LIBDIR%%/json.rb
 %%RUBY_LIBDIR%%/kconv.rb
 %%RUBY_LIBDIR%%/logger.rb
 %%RUBY_LIBDIR%%/mathn.rb
+%%RUBY_LIBDIR%%/matrix/eigenvalue_decomposition.rb
+%%RUBY_LIBDIR%%/matrix/lup_decomposition.rb
 %%RUBY_LIBDIR%%/matrix.rb
 %%RUBY_LIBDIR%%/minitest/autorun.rb
+%%RUBY_LIBDIR%%/minitest/benchmark.rb
 %%RUBY_LIBDIR%%/minitest/mock.rb
+%%RUBY_LIBDIR%%/minitest/pride.rb
 %%RUBY_LIBDIR%%/minitest/spec.rb
 %%RUBY_LIBDIR%%/minitest/unit.rb
 %%RUBY_LIBDIR%%/mkmf.rb
@@ -474,6 +484,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/openssl/bn.rb
 %%RUBY_LIBDIR%%/openssl/buffering.rb
 %%RUBY_LIBDIR%%/openssl/cipher.rb
+%%RUBY_LIBDIR%%/openssl/config.rb
 %%RUBY_LIBDIR%%/openssl/digest.rb
 %%RUBY_LIBDIR%%/openssl/ssl-internal.rb
 %%RUBY_LIBDIR%%/openssl/ssl.rb
@@ -498,7 +509,11 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/psych/core_ext.rb
 %%RUBY_LIBDIR%%/psych/deprecated.rb
 %%RUBY_LIBDIR%%/psych/handler.rb
+%%RUBY_LIBDIR%%/psych/json/ruby_events.rb
+%%RUBY_LIBDIR%%/psych/json/stream.rb
 %%RUBY_LIBDIR%%/psych/json/tree_builder.rb
+%%RUBY_LIBDIR%%/psych/json/yaml_events.rb
+%%RUBY_LIBDIR%%/psych/json.rb
 %%RUBY_LIBDIR%%/psych/nodes/alias.rb
 %%RUBY_LIBDIR%%/psych/nodes/document.rb
 %%RUBY_LIBDIR%%/psych/nodes/mapping.rb
@@ -511,7 +526,10 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/psych/parser.rb
 %%RUBY_LIBDIR%%/psych/scalar_scanner.rb
 %%RUBY_LIBDIR%%/psych/set.rb
+%%RUBY_LIBDIR%%/psych/stream.rb
+%%RUBY_LIBDIR%%/psych/streaming.rb
 %%RUBY_LIBDIR%%/psych/tree_builder.rb
+%%RUBY_LIBDIR%%/psych/visitors/depth_first.rb
 %%RUBY_LIBDIR%%/psych/visitors/emitter.rb
 %%RUBY_LIBDIR%%/psych/visitors/json_tree.rb
 %%RUBY_LIBDIR%%/psych/visitors/to_ruby.rb
@@ -522,6 +540,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/racc/parser.rb
 %%RUBY_LIBDIR%%/rational.rb
 %%RUBY_LIBDIR%%/rbconfig/datadir.rb
+%%RUBY_LIBDIR%%/rbconfig/obsolete.rb
 %%RUBY_LIBDIR%%/rdoc/alias.rb
 %%RUBY_LIBDIR%%/rdoc/anon_class.rb
 %%RUBY_LIBDIR%%/rdoc/any_method.rb
@@ -531,6 +550,9 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rdoc/code_objects.rb
 %%RUBY_LIBDIR%%/rdoc/constant.rb
 %%RUBY_LIBDIR%%/rdoc/context.rb
+%%RUBY_LIBDIR%%/rdoc/cross_reference.rb
+%%RUBY_LIBDIR%%/rdoc/encoding.rb
+%%RUBY_LIBDIR%%/rdoc/erbio.rb
 %%RUBY_LIBDIR%%/rdoc/generator/darkfish.rb
 %%RUBY_LIBDIR%%/rdoc/generator/markup.rb
 %%RUBY_LIBDIR%%/rdoc/generator/ri.rb
@@ -572,28 +594,31 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rdoc/markup/formatter.rb
 %%RUBY_LIBDIR%%/rdoc/markup/formatter_test_case.rb
 %%RUBY_LIBDIR%%/rdoc/markup/heading.rb
+%%RUBY_LIBDIR%%/rdoc/markup/indented_paragraph.rb
 %%RUBY_LIBDIR%%/rdoc/markup/inline.rb
 %%RUBY_LIBDIR%%/rdoc/markup/list.rb
 %%RUBY_LIBDIR%%/rdoc/markup/list_item.rb
 %%RUBY_LIBDIR%%/rdoc/markup/paragraph.rb
 %%RUBY_LIBDIR%%/rdoc/markup/parser.rb
-%%RUBY_LIBDIR%%/rdoc/markup/preprocess.rb
+%%RUBY_LIBDIR%%/rdoc/markup/pre_process.rb
 %%RUBY_LIBDIR%%/rdoc/markup/raw.rb
 %%RUBY_LIBDIR%%/rdoc/markup/rule.rb
+%%RUBY_LIBDIR%%/rdoc/markup/text_formatter_test_case.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_ansi.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_bs.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_html.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_html_crossref.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_rdoc.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_test.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_tt_only.rb
 %%RUBY_LIBDIR%%/rdoc/markup/verbatim.rb
 %%RUBY_LIBDIR%%/rdoc/markup.rb
 %%RUBY_LIBDIR%%/rdoc/meta_method.rb
+%%RUBY_LIBDIR%%/rdoc/method_attr.rb
 %%RUBY_LIBDIR%%/rdoc/normal_class.rb
 %%RUBY_LIBDIR%%/rdoc/normal_module.rb
 %%RUBY_LIBDIR%%/rdoc/options.rb
 %%RUBY_LIBDIR%%/rdoc/parser/c.rb
-%%RUBY_LIBDIR%%/rdoc/parser/perl.rb
 %%RUBY_LIBDIR%%/rdoc/parser/ruby.rb
 %%RUBY_LIBDIR%%/rdoc/parser/ruby_tools.rb
 %%RUBY_LIBDIR%%/rdoc/parser/simple.rb
@@ -607,11 +632,15 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rdoc/ri.rb
 %%RUBY_LIBDIR%%/rdoc/ruby_lex.rb
 %%RUBY_LIBDIR%%/rdoc/ruby_token.rb
+%%RUBY_LIBDIR%%/rdoc/rubygems_hook.rb
 %%RUBY_LIBDIR%%/rdoc/single_class.rb
+%%RUBY_LIBDIR%%/rdoc/stats/normal.rb
+%%RUBY_LIBDIR%%/rdoc/stats/quiet.rb
+%%RUBY_LIBDIR%%/rdoc/stats/verbose.rb
 %%RUBY_LIBDIR%%/rdoc/stats.rb
 %%RUBY_LIBDIR%%/rdoc/task.rb
 %%RUBY_LIBDIR%%/rdoc/text.rb
-%%RUBY_LIBDIR%%/rdoc/tokenstream.rb
+%%RUBY_LIBDIR%%/rdoc/token_stream.rb
 %%RUBY_LIBDIR%%/rdoc/top_level.rb
 %%RUBY_LIBDIR%%/rdoc.rb
 %%RUBY_LIBDIR%%/resolv-replace.rb
@@ -630,17 +659,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rexml/dtd/notationdecl.rb
 %%RUBY_LIBDIR%%/rexml/element.rb
 %%RUBY_LIBDIR%%/rexml/encoding.rb
-%%RUBY_LIBDIR%%/rexml/encodings/CP-1252.rb
-%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP.rb
-%%RUBY_LIBDIR%%/rexml/encodings/ICONV.rb
-%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1.rb
-%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-15.rb
-%%RUBY_LIBDIR%%/rexml/encodings/SHIFT-JIS.rb
-%%RUBY_LIBDIR%%/rexml/encodings/SHIFT_JIS.rb
-%%RUBY_LIBDIR%%/rexml/encodings/UNILE.rb
-%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII.rb
-%%RUBY_LIBDIR%%/rexml/encodings/UTF-16.rb
-%%RUBY_LIBDIR%%/rexml/encodings/UTF-8.rb
 %%RUBY_LIBDIR%%/rexml/entity.rb
 %%RUBY_LIBDIR%%/rexml/formatters/default.rb
 %%RUBY_LIBDIR%%/rexml/formatters/pretty.rb
@@ -717,6 +735,16 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rss/parser.rb
 %%RUBY_LIBDIR%%/rss/rexmlparser.rb
 %%RUBY_LIBDIR%%/rss/rss.rb
+%%RUBY_LIBDIR%%/rss/slash.rb
+%%RUBY_LIBDIR%%/rss/syndication.rb
+%%RUBY_LIBDIR%%/rss/taxonomy.rb
+%%RUBY_LIBDIR%%/rss/trackback.rb
+%%RUBY_LIBDIR%%/rss/utils.rb
+%%RUBY_LIBDIR%%/rss/xml-stylesheet.rb
+%%RUBY_LIBDIR%%/rss/xml.rb
+%%RUBY_LIBDIR%%/rss/xmlparser.rb
+%%RUBY_LIBDIR%%/rss/xmlscanner.rb
+%%RUBY_LIBDIR%%/rss.rb
 %%RUBY_LIBDIR%%/rubygems/builder.rb
 %%RUBY_LIBDIR%%/rubygems/command.rb
 %%RUBY_LIBDIR%%/rubygems/command_manager.rb
@@ -733,7 +761,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/commands/install_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/list_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/lock_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/mirror_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/outdated_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/pristine_command.rb
@@ -756,6 +783,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/dependency.rb
 %%RUBY_LIBDIR%%/rubygems/dependency_installer.rb
 %%RUBY_LIBDIR%%/rubygems/dependency_list.rb
+%%RUBY_LIBDIR%%/rubygems/deprecate.rb
 %%RUBY_LIBDIR%%/rubygems/doc_manager.rb
 %%RUBY_LIBDIR%%/rubygems/errors.rb
 %%RUBY_LIBDIR%%/rubygems/exceptions.rb
@@ -772,7 +800,9 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/indexer.rb
 %%RUBY_LIBDIR%%/rubygems/install_update_options.rb
 %%RUBY_LIBDIR%%/rubygems/installer.rb
+%%RUBY_LIBDIR%%/rubygems/installer_test_case.rb
 %%RUBY_LIBDIR%%/rubygems/local_remote_options.rb
+%%RUBY_LIBDIR%%/rubygems/mock_gem_ui.rb
 %%RUBY_LIBDIR%%/rubygems/old_format.rb
 %%RUBY_LIBDIR%%/rubygems/package/f_sync_dir.rb
 %%RUBY_LIBDIR%%/rubygems/package/tar_header.rb
@@ -780,9 +810,11 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/package/tar_output.rb
 %%RUBY_LIBDIR%%/rubygems/package/tar_reader/entry.rb
 %%RUBY_LIBDIR%%/rubygems/package/tar_reader.rb
+%%RUBY_LIBDIR%%/rubygems/package/tar_test_case.rb
 %%RUBY_LIBDIR%%/rubygems/package/tar_writer.rb
 %%RUBY_LIBDIR%%/rubygems/package.rb
 %%RUBY_LIBDIR%%/rubygems/package_task.rb
+%%RUBY_LIBDIR%%/rubygems/path_support.rb
 %%RUBY_LIBDIR%%/rubygems/platform.rb
 %%RUBY_LIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/require_paths_builder.rb
@@ -790,10 +822,9 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/security.rb
 %%RUBY_LIBDIR%%/rubygems/server.rb
 %%RUBY_LIBDIR%%/rubygems/source_index.rb
-%%RUBY_LIBDIR%%/rubygems/source_info_cache.rb
-%%RUBY_LIBDIR%%/rubygems/source_info_cache_entry.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/test_case.rb
 %%RUBY_LIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_LIBDIR%%/rubygems/text.rb
 %%RUBY_LIBDIR%%/rubygems/uninstaller.rb
@@ -802,16 +833,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/version.rb
 %%RUBY_LIBDIR%%/rubygems/version_option.rb
 %%RUBY_LIBDIR%%/rubygems.rb
-%%RUBY_LIBDIR%%/rss/slash.rb
-%%RUBY_LIBDIR%%/rss/syndication.rb
-%%RUBY_LIBDIR%%/rss/taxonomy.rb
-%%RUBY_LIBDIR%%/rss/trackback.rb
-%%RUBY_LIBDIR%%/rss/utils.rb
-%%RUBY_LIBDIR%%/rss/xml-stylesheet.rb
-%%RUBY_LIBDIR%%/rss/xml.rb
-%%RUBY_LIBDIR%%/rss/xmlparser.rb
-%%RUBY_LIBDIR%%/rss/xmlscanner.rb
-%%RUBY_LIBDIR%%/rss.rb
 %%RUBY_LIBDIR%%/scanf.rb
 %%RUBY_LIBDIR%%/securerandom.rb
 %%RUBY_LIBDIR%%/set.rb
@@ -844,6 +865,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/sync.rb
 %%RUBY_LIBDIR%%/tempfile.rb
 %%RUBY_LIBDIR%%/test/unit/assertions.rb
+%%RUBY_LIBDIR%%/test/unit/parallel.rb
 %%RUBY_LIBDIR%%/test/unit/testcase.rb
 %%RUBY_LIBDIR%%/test/unit.rb
 %%RUBY_LIBDIR%%/thread.rb
@@ -939,9 +961,9 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/rexml/parsers
 @dirrm %%RUBY_LIBDIR%%/rexml/light
 @dirrm %%RUBY_LIBDIR%%/rexml/formatters
-@dirrm %%RUBY_LIBDIR%%/rexml/encodings
 @dirrm %%RUBY_LIBDIR%%/rexml/dtd
 @dirrm %%RUBY_LIBDIR%%/rexml
+@dirrm %%RUBY_LIBDIR%%/rdoc/stats
 @dirrm %%RUBY_LIBDIR%%/rdoc/ri
 @dirrm %%RUBY_LIBDIR%%/rdoc/parser
 @dirrm %%RUBY_LIBDIR%%/rdoc/markup
@@ -961,6 +983,7 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/openssl
 @dirrm %%RUBY_LIBDIR%%/net
 @dirrm %%RUBY_LIBDIR%%/minitest
+@dirrm %%RUBY_LIBDIR%%/matrix
 @dirrm %%RUBY_LIBDIR%%/json/add
 @dirrm %%RUBY_LIBDIR%%/json
 @dirrm %%RUBY_LIBDIR%%/irb/lc/ja
@@ -968,11 +991,12 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/irb/ext
 @dirrm %%RUBY_LIBDIR%%/irb/cmd
 @dirrm %%RUBY_LIBDIR%%/irb
+@dirrm %%RUBY_LIBDIR%%/io/console
+@dirrm %%RUBY_LIBDIR%%/io
 @dirrm %%RUBY_LIBDIR%%/fiddle
 @dirrm %%RUBY_LIBDIR%%/drb
 @dirrm %%RUBY_LIBDIR%%/dl
 @dirrm %%RUBY_LIBDIR%%/digest
-@dirrm %%RUBY_LIBDIR%%/date/delta
 @dirrm %%RUBY_LIBDIR%%/date
 @dirrm %%RUBY_LIBDIR%%/cgi/session
 @dirrm %%RUBY_LIBDIR%%/cgi
@@ -989,12 +1013,12 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%
 @dirrm %%RUBY_LIBDIR%%/
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
-@dirrm %%RUBY_SITEARCHLIBDIR%%
-@dirrm %%RUBY_SITELIBDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
 %%RUBY_VENDORARCHLIBDIR%%/.keep_me
-@dirrm %%RUBY_VENDORARCHLIBDIR%%
-@dirrm %%RUBY_VENDORLIBDIR%%
-@dirrmtry lib/ruby/gems
+@dirrmtry %%RUBY_VENDORARCHLIBDIR%%
+@dirrmtry %%RUBY_VENDORLIBDIR%%
 @dirrmtry lib/ruby/vendor_ruby
+@dirrmtry lib/ruby/gems
 @dirrmtry lib/ruby

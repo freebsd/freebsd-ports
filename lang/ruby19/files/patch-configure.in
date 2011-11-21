@@ -1,6 +1,6 @@
---- configure.in.orig	2010-10-09 03:00:14.000000000 -0700
-+++ configure.in	2010-10-09 03:07:18.000000000 -0700
-@@ -959,11 +959,11 @@
+--- configure.in.orig	2011-10-09 06:17:20.000000000 -0700
++++ configure.in	2011-11-04 00:52:17.000000000 -0700
+@@ -1112,11 +1112,11 @@
  [superux*], [	ac_cv_func_setitimer=no
  		],
  [	LIBS="-lm $LIBS"])
@@ -17,7 +17,7 @@
  if test "${enable_win95}" = maybe; then
      AC_HAVE_LIBRARY(unicows, [enable_win95=yes], [enable_win95=no])
  fi
-@@ -1576,7 +1576,7 @@
+@@ -1808,7 +1808,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,7 +26,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -1590,6 +1590,7 @@
+@@ -1822,6 +1822,7 @@
  	[c],    [],
  	[root], [],
  	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
@@ -34,13 +34,3 @@
  	        [LIBS="-l$pthread_lib $LIBS"])
      else
  	AC_MSG_WARN("Don't know how to find pthread library on your system -- thread support disabled")
-@@ -1600,7 +1601,8 @@
- 	thr_stksegment pthread_stackseg_np pthread_getthrds_np)
-     if test x"$ac_cv_func_nanosleep" = xno; then
-        AC_CHECK_LIB(rt, nanosleep)
--       if test x"$ac_cv_lib_rt_nanosleep" = xyes; then
-+       AC_SEARCH_LIBS(nanosleep, rt)
-+       if test x"$ac_cv_search_nanosleep" != xno; then
-            AC_DEFINE(HAVE_NANOSLEEP)
-        fi
-     fi
