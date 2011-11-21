@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	IO-Prompt
-PORTVERSION=	0.99.4
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTVERSION=	0.99.7001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/(\..+)\./\1/}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Interactively prompt for user input
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-version>0:${PORTSDIR}/devel/p5-version \
+		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Want>0:${PORTSDIR}/devel/p5-Want
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	IO::Prompt.3
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
