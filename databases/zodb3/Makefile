@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zodb
-PORTVERSION=	3.10.3
-PORTREVISION=	4
+PORTVERSION=	3.10.5
 CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
@@ -16,15 +15,14 @@ DISTNAME=	ZODB3-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The Z - Object Database for python
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
-		${LOCALBASE}/bin/zdaemon:${PORTSDIR}/sysutils/py-zdaemon \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.testing>=3.7.1:${PORTSDIR}/devel/py-zope.testing \
+LICENSE=	ZPL21
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:${PORTSDIR}/devel/py-zconfig \
+		${PYTHON_PKGNAMEPREFIX}zdaemon>=0:${PORTSDIR}/sysutils/py-zdaemon \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}transaction>=1.1.0:${PORTSDIR}/devel/py-transaction \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:${PORTSDIR}/devel/py-zclockfile \
-		${PYTHON_PKGNAMEPREFIX}zope.event>=1.0.0:${PORTSDIR}/devel/py-zope.event \
-		${PYTHON_PKGNAMEPREFIX}zope.proxy>=3.4.2:${PORTSDIR}/net/py-zope.proxy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		${PYTHON_PKGNAMEPREFIX}zope.event>=1.0.0:${PORTSDIR}/devel/py-zope.event
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
