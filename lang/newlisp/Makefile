@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	10.2.8
+PORTVERSION=	10.3.3
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
-#MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,8 +23,8 @@ MAN1=	newlisp.1 newlispdoc.1
 
 REINPLACE_ARGS=	-i ""
 
-MODULES=	cgi crypto ftp infix odbc pop3 postscript smtp stat unix \
-		xmlrpc-client zlib
+MODULES=	canvas cgi crypto ftp getopts infix json macro odbc pop3 \
+		postscript smtp smtpx stat unix xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		MemoryManagement.html newLISP-${PORTVERSION}-Release.html \
@@ -35,10 +34,11 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 OPTIONS=	GMP	"Enable GMP math library support" off \
 		MYSQL5	"Build with mysql 5.0.x support" off \
 		MYSQL51	"Build with mysql 5.1.x support" off \
+		PGSQL	"Build with postgresql support" off \
 		SQLITE	"Build with sqlite support" off \
 		GUISERV "Install GUI server (in JAVA)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 CFLAGS+=	-DNEWLISP64
@@ -68,6 +68,14 @@ MODULES+=	mysql
 PLIST_SUB+=	MYSQL51=""
 .else
 PLIST_SUB+=	MYSQL51="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=yes
+MODULES+=	postgres
+PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
@@ -112,6 +120,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/libgmp.so,${LOCALBASE}/lib/libgmp.so," \
 		${WRKSRC}/modules/gmp.lsp
+	@${REINPLACE_CMD} -E -e \
+		"s,/usr/local/lib/libpq.so.5.1,${LOCALBASE}/lib/libpq.so.5," \
+		${WRKSRC}/modules/postgres.lsp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin/
@@ -122,6 +133,8 @@ do-install:
 			${WRKSRC}/util/newlisp.vim \
 			${WRKSRC}/util/link.lsp \
 			${WRKSRC}/util/httpd-conf.lsp \
+			${WRKSRC}/util/newlisp.jsf \
+			${WRKSRC}/util/nanorc \
 			${DATADIR}/util/
 
 	${MKDIR} ${DATADIR}/modules/
@@ -158,4 +171,4 @@ do-install:
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
