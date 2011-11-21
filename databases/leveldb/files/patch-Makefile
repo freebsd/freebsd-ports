@@ -1,6 +1,6 @@
---- Makefile.orig	2011-10-24 18:02:13.000000000 +0800
-+++ Makefile	2011-10-28 19:12:16.103454748 +0800
-@@ -2,13 +2,13 @@
+--- Makefile.orig	2011-11-21 14:58:22.000000000 +0800
++++ Makefile	2011-11-21 15:12:50.189222302 +0800
+@@ -2,7 +2,7 @@
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file. See the AUTHORS file for names of contributors.
  
@@ -9,26 +9,16 @@
  
  #-----------------------------------------------
  # Uncomment exactly one of the lines labelled (A), (B), and (C) below
- # to switch between compilation modes.
- 
--OPT = -O2 -DNDEBUG       # (A) Production use (optimized mode)
-+OPT ?= -O2 -DNDEBUG       # (A) Production use (optimized mode)
- # OPT = -g2              # (B) Debug mode, w/ full line-level debugging symbols
- # OPT = -O2 -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
- #-----------------------------------------------
-@@ -36,9 +36,9 @@
+@@ -36,7 +36,7 @@
  GOOGLE_PERFTOOLS_LDFLAGS=
  endif
  
 -CFLAGS = -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
-+CFLAGS += -c -fPIC -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
++CFLAGS += -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS) -fPIC
  
--LDFLAGS=$(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
-+LDFLAGS += $(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
+ LDFLAGS += $(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
  
- LIBOBJECTS = \
- 	./db/builder.o \
-@@ -103,15 +103,19 @@
+@@ -103,15 +103,18 @@
  BENCHMARKS = db_bench_sqlite3 db_bench_tree_db
  
  LIBRARY = libleveldb.a
@@ -38,7 +28,6 @@
  
 -all: $(LIBRARY)
 +SHARED_LIBOBJECTS = $(LIBOBJECTS:.o=.so)
-+
 +all: $(LIBRARY) $(SHARED_LIBRARY)
  
  check: $(PROGRAMS) $(TESTS)
@@ -50,7 +39,7 @@
  	-rm -rf ios-x86/* ios-arm/*
  	-rm build_config.mk
  
-@@ -119,6 +123,10 @@
+@@ -119,6 +122,10 @@
  	rm -f $@
  	$(AR) -rs $@ $(LIBOBJECTS)
  
