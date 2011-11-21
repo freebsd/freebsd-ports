@@ -77,6 +77,7 @@ lib/calibre/calibre/devices/kindle/driver.py
 lib/calibre/calibre/devices/kobo/__init__.py
 lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/driver.py
+lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/libusb.py
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/mime.py
@@ -96,6 +97,8 @@ lib/calibre/calibre/devices/prs500/prstypes.py
 lib/calibre/calibre/devices/prs505/__init__.py
 lib/calibre/calibre/devices/prs505/driver.py
 lib/calibre/calibre/devices/prs505/sony_cache.py
+lib/calibre/calibre/devices/prst1/__init__.py
+lib/calibre/calibre/devices/prst1/driver.py
 lib/calibre/calibre/devices/scanner.py
 lib/calibre/calibre/devices/sne/__init__.py
 lib/calibre/calibre/devices/sne/driver.py
@@ -179,6 +182,10 @@ lib/calibre/calibre/ebooks/conversion/plumber.py
 lib/calibre/calibre/ebooks/conversion/preprocess.py
 lib/calibre/calibre/ebooks/conversion/utils.py
 lib/calibre/calibre/ebooks/cssselect.py
+lib/calibre/calibre/ebooks/djvu/__init__.py
+lib/calibre/calibre/ebooks/djvu/djvubzzdec.py
+lib/calibre/calibre/ebooks/djvu/djvu.py
+lib/calibre/calibre/ebooks/djvu/input.py
 lib/calibre/calibre/ebooks/epub/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/container.py
@@ -546,6 +553,8 @@ lib/calibre/calibre/gui2/convert/comic_input.py
 lib/calibre/calibre/gui2/convert/comic_input_ui.py
 lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug_ui.py
+lib/calibre/calibre/gui2/convert/djvu_input_ui.py
+lib/calibre/calibre/gui2/convert/djvu_input.py
 lib/calibre/calibre/gui2/convert/epub_output.py
 lib/calibre/calibre/gui2/convert/epub_output_ui.py
 lib/calibre/calibre/gui2/convert/fb2_input.py
@@ -766,7 +775,9 @@ lib/calibre/calibre/gui2/store/basic_config.py
 lib/calibre/calibre/gui2/store/opensearch_store.py
 lib/calibre/calibre/gui2/store/web_store_dialog.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
+lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/beam_ebooks_de_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
@@ -1218,6 +1229,7 @@ share/calibre/images/cover_flow.png
 share/calibre/images/debug.png
 share/calibre/images/default_cover.png
 share/calibre/images/devices/bambook.png
+share/calibre/images/devices/boox.jpg
 share/calibre/images/devices/folder.png
 share/calibre/images/devices/ipad.png
 share/calibre/images/devices/italica.png
@@ -1548,6 +1560,7 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/ebooks/fb2
 @dirrm lib/calibre/calibre/ebooks/epub/fix
 @dirrm lib/calibre/calibre/ebooks/epub
+@dirrm lib/calibre/calibre/ebooks/djvu
 @dirrm lib/calibre/calibre/ebooks/conversion
 @dirrm lib/calibre/calibre/ebooks/compression
 @dirrm lib/calibre/calibre/ebooks/comic
@@ -1565,6 +1578,7 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/devices/prs505
 @dirrm lib/calibre/calibre/devices/prs500/cli
 @dirrm lib/calibre/calibre/devices/prs500
+@dirrm lib/calibre/calibre/devices/prst1
 @dirrm lib/calibre/calibre/devices/nuut2
 @dirrm lib/calibre/calibre/devices/nook
 @dirrm lib/calibre/calibre/devices/nokia
