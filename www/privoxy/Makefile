@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.17
+PORTVERSION=	3.0.18
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -32,20 +32,25 @@ CONFLICTS=	privoxy-devel-[0-9]*
 
 MAN1=		privoxy.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include/
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	ACCEPT_FILTER "Enable support for accf_http(9)" Off \
+		COMPRESSION "Allow compression of buffered content" Off \
 		DEBUG "Build with debugging symbols" Off \
-		EDITOR "Allow to enable the webbased action editor" On \
-		FORCE "Allows to optionally bypass blocks" On \
-		PRIVOXY_TOOLS "Install Privoxy-Log-Parser, uagen etc." Off \
+		EDITOR "Allow use of the web-based action editor" On \
+		FORCE "Allow blocks to be bypassed" On \
+		PRIVOXY_TOOLS "Install Privoxy-Log-Parser, uagen, etc." Off \
 		TOGGLE "Support for remote toggling" On
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ACCEPT_FILTER)
 CONFIGURE_ARGS+=	 --enable-accept-filter
+.endif
+
+.if defined(WITH_COMPRESSION)
+CONFIGURE_ARGS+=	 --enable-compression
 .endif
 
 .if defined(WITH_DEBUG)
