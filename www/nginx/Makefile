@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -694,13 +695,13 @@ do-install:
 .endif
 
 .if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
-	${MKDIR} ${SITE_PERL}/${PERL_ARCH}/auto/nginx
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
-		${SITE_PERL}/${PERL_ARCH}/auto/nginx
+		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.bs \
-		${SITE_PERL}/${PERL_ARCH}/auto/nginx
+		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
-		${SITE_PERL}/${PERL_ARCH}/
+		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
 .endif
 
 post-install:
