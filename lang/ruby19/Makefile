@@ -213,6 +213,14 @@ post-install:
 		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 #
+# Add generated CAPI files to pkg-plist
+#
+	@${FIND} -ds ${RUBY_DOCDIR}/capi/ ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${RUBY_DOCDIR}/capi -type d -mindepth 1 | \
+		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+#
 # Add generated doxygen files to pkg-plist
 #
 	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_SITERIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
@@ -232,6 +240,7 @@ plist::
 	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%-static.a" >> pkg-plist
 	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so" >> pkg-plist
 	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%" >> pkg-plist
+	@${ECHO_CMD} "libdata/pkgconfig/ruby-1.9.pc" >> pkg-plist
 
 #
 # Includes
