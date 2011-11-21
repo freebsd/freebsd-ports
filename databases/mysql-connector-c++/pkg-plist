@@ -1,0 +1,21 @@
+include/cppconn/build_config.h
+include/cppconn/config.h
+include/cppconn/connection.h
+include/cppconn/datatype.h
+include/cppconn/driver.h
+include/cppconn/exception.h
+include/cppconn/metadata.h
+include/cppconn/parameter_metadata.h
+include/cppconn/prepared_statement.h
+include/cppconn/resultset.h
+include/cppconn/resultset_metadata.h
+include/cppconn/statement.h
+include/cppconn/sqlstring.h
+include/cppconn/warning.h
+include/mysql_connection.h
+include/mysql_driver.h
+lib/libmysqlcppconn-static.a
+lib/libmysqlcppconn.so
+lib/libmysqlcppconn.so.5.%%PORTVERSION%%
+lib/libmysqlcppconn.so.5
+@dirrm include/cppconn

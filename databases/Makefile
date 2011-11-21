@@ -201,6 +201,7 @@
     SUBDIR += mylibrary
     SUBDIR += mysql++1
     SUBDIR += mysql++3
+    SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-navigator
