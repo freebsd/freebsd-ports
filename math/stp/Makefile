@@ -36,6 +36,10 @@ PLIST_DIRS=	include/stp
 post-patch:
 	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/src/main/versionString.stamp
 	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKSRC}/scripts/Makefile.common
+.if defined(WITH_DEBUG)
+	@${REINPLACE_CMD} -e 's/-DNDEBUG//; s/-O3/-O0/; s/-fomit-frame-pointer//' \
+		${WRKSRC}/scripts/Makefile.common
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
