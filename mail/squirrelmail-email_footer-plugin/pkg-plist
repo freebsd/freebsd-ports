@@ -1,12 +1,23 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin email_footer; fi
-%%SQUIRRELDIR%%/plugins/email_footer/COPYING
-%%SQUIRRELDIR%%/plugins/email_footer/INSTALL
-%%SQUIRRELDIR%%/plugins/email_footer/README
-%%SQUIRRELDIR%%/plugins/email_footer/config.sample.php
-%%SQUIRRELDIR%%/plugins/email_footer/functions.php
-%%SQUIRRELDIR%%/plugins/email_footer/index.php
-%%SQUIRRELDIR%%/plugins/email_footer/make_release.sh
-%%SQUIRRELDIR%%/plugins/email_footer/setup.php
-%%SQUIRRELDIR%%/plugins/email_footer/version
-@dirrm %%SQUIRRELDIR%%/plugins/email_footer/
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin email_footer; fi
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_default.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_example.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs/.htaccess
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs/COPYING
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs/INSTALL
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale/.htaccess
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale/%%SQUIRREL_PLUGIN_NAME%%.pot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale/getpot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/
+@dirrmtry %%SQUIRRELDIR%%/plugins
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
