@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope.testing
-PORTVERSION=	3.10.3
+PORTVERSION=	4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}zope.exceptions>=0:${PORTSDIR}/devel/py-zope.exceptions
 
 DIST_SUBDIR=	zope
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
