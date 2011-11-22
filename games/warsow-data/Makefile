@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.6
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.zcdn.org/dl/ \
-		http://www.derchris.eu/warsow/ \
-		http://www.derchris.eu/warsow/:mappack \
 		http://static.warsow.net/release/:mappack \
-		http://rewq.de/scratch/wsw05/:mappack \
-		http://weseo.de/downloads/:mappack
+		http://rewq.de/scratch/wsw05/:mappack
 PKGNAMEPREFIX=	warsow-
-DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION}_unified
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTNAME=	${PKGNAMEPREFIX:S/-//}_0.61_unified
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PKGNAMEPREFIX:S/-//}_0.62_update${EXTRACT_SUFX}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Warsow data files
 
 # Package size below is for default set of OPTIONS
-NO_PACKAGE=	Package will be 550MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 574MB, set FORCE_PACKAGE if you really want it
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX:S/-//}
 TXTDOCS=	bots_navigation.txt changelog.txt contact.txt \
@@ -52,8 +49,9 @@ PLIST_SUB+=	MAPPACK="@comment "
 do-install:
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} basewsw ${DATADIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} basewsw ${DATADIR}
 .if defined(WITH_MAPPACK)
-	cd ${WRKSRC} && ${COPYTREE_SHARE} previews ${DATADIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} previews ${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

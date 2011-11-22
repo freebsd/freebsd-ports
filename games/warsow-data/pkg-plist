@@ -43,8 +43,16 @@
 %%DATADIR%%/basewsw/configs/timer/ya2/3x.cfg
 %%DATADIR%%/basewsw/configs/timer/ya2/4x.cfg
 %%DATADIR%%/basewsw/configs/timer/ya2/5x.cfg
+%%DATADIR%%/basewsw/profiles/gfx_contrast.cfg
+%%DATADIR%%/basewsw/profiles/gfx_high+.cfg
+%%DATADIR%%/basewsw/profiles/gfx_high.cfg
+%%DATADIR%%/basewsw/profiles/gfx_low.cfg
+%%DATADIR%%/basewsw/profiles/gfx_medium.cfg
 %%DATADIR%%/basewsw/data0_06.pk3
+%%DATADIR%%/basewsw/data0_06_001.pk3
 %%DATADIR%%/basewsw/data0_06pure.pk3
+%%DATADIR%%/basewsw/data1_06.pk3
+%%DATADIR%%/basewsw/data1_06pure.pk3
 %%DATADIR%%/basewsw/dedicated_autoexec.cfg
 %%DATADIR%%/basewsw/editortextures.pk3
 %%DATADIR%%/basewsw/map_wamphi1.pk3
@@ -55,9 +63,11 @@
 %%DATADIR%%/basewsw/map_wbomb4.pk3
 %%DATADIR%%/basewsw/map_wbomb5.pk3
 %%DATADIR%%/basewsw/map_wca1.pk3
+%%DATADIR%%/basewsw/map_wca1_001.pk3
 %%DATADIR%%/basewsw/map_wca2.pk3
 %%DATADIR%%/basewsw/map_wca3.pk3
 %%DATADIR%%/basewsw/map_wctf1.pk3
+%%DATADIR%%/basewsw/map_wctf1_001.pk3
 %%DATADIR%%/basewsw/map_wctf2.pk3
 %%DATADIR%%/basewsw/map_wctf3.pk3
 %%DATADIR%%/basewsw/map_wctf4.pk3
@@ -76,17 +86,22 @@
 %%DATADIR%%/basewsw/map_wdm15.pk3
 %%DATADIR%%/basewsw/map_wdm18.pk3
 %%DATADIR%%/basewsw/map_wdm19.pk3
+%%DATADIR%%/basewsw/map_wdm19_001.pk3
 %%DATADIR%%/basewsw/map_wdm2.pk3
 %%DATADIR%%/basewsw/map_wdm20.pk3
 %%DATADIR%%/basewsw/map_wdm3.pk3
 %%DATADIR%%/basewsw/map_wdm4.pk3
 %%DATADIR%%/basewsw/map_wdm5.pk3
+%%DATADIR%%/basewsw/map_wdm5_001.pk3
 %%DATADIR%%/basewsw/map_wdm6.pk3
+%%DATADIR%%/basewsw/map_wdm6_001.pk3
 %%DATADIR%%/basewsw/map_wdm7.pk3
 %%DATADIR%%/basewsw/map_wdm8.pk3
 %%DATADIR%%/basewsw/map_wdm9.pk3
 %%DATADIR%%/basewsw/models_nate.pk3
 %%DATADIR%%/basewsw/modules_06.pk3
+%%DATADIR%%/basewsw/modules_06_001.pk3
+%%DATADIR%%/basewsw/modules_06_002.pk3
 %%DATADIR%%/basewsw/tex_36.pk3
 %%DATADIR%%/basewsw/tex_baxandall.pk3
 %%DATADIR%%/basewsw/tex_billboard.pk3
@@ -172,6 +187,7 @@
 %%MAPPACK%%%%DATADIR%%/previews/cwS1.jpg
 %%MAPPACK%%%%DATADIR%%/previews/cwS2.jpg
 %%MAPPACK%%@dirrm %%DATADIR%%/previews
+@dirrm %%DATADIR%%/basewsw/profiles
 @dirrm %%DATADIR%%/basewsw/configs/timer/ya2
 @dirrm %%DATADIR%%/basewsw/configs/timer/ya
 @dirrm %%DATADIR%%/basewsw/configs/timer/ra
