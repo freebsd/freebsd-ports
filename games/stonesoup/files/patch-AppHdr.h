@@ -1,6 +1,6 @@
---- ./AppHdr.h.orig	2011-04-26 15:08:47.000000000 +0200
-+++ ./AppHdr.h	2011-06-02 19:51:41.000000000 +0200
-@@ -135,7 +135,7 @@
+--- ./AppHdr.h.orig	2011-08-12 20:37:59.000000000 +0200
++++ ./AppHdr.h	2011-10-04 20:14:30.000000000 +0200
+@@ -125,7 +125,7 @@
      //
      // WARNING: Filenames passed to this command *are not validated in any way*.
      //

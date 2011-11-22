@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -14,35 +14,34 @@ DISTNAME=	stone_soup-${PORTVERSION}-nodeps
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
+
 USE_SQLITE=	yes
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_LUA=	5.1
 USE_PERL5_BUILD=	yes
-USE_NCURSES=	yes
+USE_GCC=	4.2+
 
 MAKE_JOBS_SAFE=	yes
 
-SAVEDIR?=	/var/games/${PORTNAME}
+SAVEDIR=	\~/.stonesoup
 WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
 
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
 OPTIONS=	SOUND		"Sound support"			off \
-		UNICODE		"Unicode glyphs (UTF-8)"	off \
-		WIZARD		"Wizard mode"			off
+		WIZARD		"Wizard mode"			off \
+		LUA_BINDINGS	"Bindings for LUA user scripts"	off
 
 MAKEFILE=	makefile
-MAKE_ARGS=	FREEBSD_PORT=yes
-MAKE_ARGS+=	prefix=${PREFIX} \
-		SAVEDIR=${SAVEDIR} \
+MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
+		SAVEDIR=${SAVEDIR} \
 		INSTALL_UGRP=root:games \
-		MCHMOD=2755 \
-		MCHMOD_SAVEDIR=775 \
-		MCHMOD_LOGS=664 \
 		NO_AUTOOPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
 		LUA_INCLUDE_DIR=${LOCALBASE}/include/lua51 \
@@ -52,6 +51,10 @@ MAKE_ARGS+=	prefix=${PREFIX} \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua51"
 
 .include <bsd.port.options.mk>
+
+.if ${CC} == "clang" || ${CXX} == "clang++"
+BROKEN=		requires gcc at this time
+.endif
 
 .if defined(VERBOSE)
 MAKE_ARGS+=	V=yes
@@ -71,6 +74,7 @@ LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image
 .else
+USE_NCURSES=	yes
 CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
 PLIST_SUB+=	SDL="@comment "
 .endif
@@ -79,14 +83,8 @@ PLIST_SUB+=	SDL="@comment "
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-# NO_LUA_BINDINGS is bit-rotten. Upstream thinks about fixing or removing it.
-#	
-# .if defined(WITHOUT_LUA_BINDINGS)
-# MAKE_ARGS+=	NO_LUA_BINDINGS=yes
-# .endif
-
-.if defined(WITH_UNICODE)
-MAKE_ARGS+=	USE_UNICODE=yes
+.if defined(WITHOUT_LUA_BINDINGS)
+MAKE_ARGS+=	NO_LUA_BINDINGS=yes
 .endif
 
 post-patch:
