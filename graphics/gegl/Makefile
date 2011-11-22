@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gegl
-PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTVERSION=	0.1.8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -44,11 +43,12 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
-GEGL_MINOR=	105
+GEGL_MINOR=	107
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 
-EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
-		geglbuffer-clock hello-world hello-world-video
+EXAMPLES=	2geglbuffer csugar float-lookup \
+		gegl-convert gegl-slicer geglbuffer-add-image \
+		geglbuffer-clock hello-world-video hello-world
 
 .include <bsd.port.options.mk>
 
