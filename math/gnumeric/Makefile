@@ -8,7 +8,7 @@
 # When updating, remember to update pkg-plist of gchemutils.
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.10.16
+PORTVERSION=	1.10.17
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,13 +16,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	goffice-0.8.8:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -48,7 +49,7 @@ GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 
 MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.16
+PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.17
 
 OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off
