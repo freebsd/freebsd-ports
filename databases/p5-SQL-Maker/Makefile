@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Maker
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -20,14 +20,13 @@ RUN_DEPENDS=	\
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	SQL::Maker.3 \
 	SQL::Maker::Condition.3 \
 	SQL::Maker::Plugin::InsertMulti.3 \
 	SQL::Maker::SQLType.3 \
 	SQL::Maker::Select.3 \
-	SQL::Maker::SelectSet.3 \
-	SQL::README.3
+	SQL::Maker::SelectSet.3
 
 .include <bsd.port.mk>
