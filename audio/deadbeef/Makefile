@@ -69,10 +69,6 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-USE_GCC=	4.5+
-.endif
-
 .if defined(WITHOUT_PULSE)
 CONFIGURE_ARGS+=	--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
@@ -340,5 +336,13 @@ PLIST_SUB+=	VFS_ZIP="@comment "
 PLIST_SUB+=	VFS_ZIP=""
 LIB_DEPENDS+=	zip.3:${PORTSDIR}/archivers/libzip
 .endif
+
+post-patch:
+# Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
+	@${REINPLACE_CMD} -e 's, -lsupc++,,' \
+		${WRKSRC}/plugins/adplug/Makefile.in \
+		${WRKSRC}/plugins/gme/Makefile.in \
+		${WRKSRC}/plugins/sid/Makefile.in \
+		${WRKSRC}/plugins/supereq/Makefile.in
 
 .include <bsd.port.mk>
