@@ -3009,3 +3009,4 @@ sysutils/duplicity-devel||2011-11-12|Much older than current version, use sysuti
 security/libfwbuilder-devel||2011-11-14|libfwbuilder-devel merged into fwbuilder-devel
 russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
 russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
+devel/tortoisehg1|devel/tortoisehg2|2011-11-22|Has expired: does not work with current devel/mercurial, use tortoisehg2

@@ -3722,7 +3722,6 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
-    SUBDIR += tortoisehg1
     SUBDIR += tortoisehg2
     SUBDIR += tpasm
     SUBDIR += trac-bitten
