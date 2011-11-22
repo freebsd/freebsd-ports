@@ -270,6 +270,12 @@ share/omf/gcrystal-%%VER%%/gcrystal-%%VER%%-C.omf
 share/omf/gspectrum-%%VER%%/gspectrum-%%VER%%-C.omf
 share/mimelnk/application/x-gchempaint.desktop
 share/mimelnk/application/x-gcrystal.desktop
+share/icons/hicolor/128x128/apps/gchem3d.png
+share/icons/hicolor/128x128/apps/gchemcalc.png
+share/icons/hicolor/128x128/apps/gchempaint.png
+share/icons/hicolor/128x128/apps/gchemtable.png
+share/icons/hicolor/128x128/apps/gcrystal.png
+share/icons/hicolor/128x128/apps/gspectrum.png
 share/icons/hicolor/128x128/mimetypes/application-x-gchempaint.png
 share/icons/hicolor/128x128/mimetypes/application-x-gcrystal.png
 share/icons/hicolor/32x32/apps/gchem3d.png
@@ -296,12 +302,6 @@ share/icons/hicolor/72x72/apps/gcrystal.png
 share/icons/hicolor/72x72/apps/gspectrum.png
 share/icons/hicolor/72x72/mimetypes/application-x-gchempaint.png
 share/icons/hicolor/72x72/mimetypes/application-x-gcrystal.png
-share/icons/hicolor/128x128/apps/gchem3d.png
-share/icons/hicolor/128x128/apps/gchemcalc.png
-share/icons/hicolor/128x128/apps/gchempaint.png
-share/icons/hicolor/128x128/apps/gchemtable.png
-share/icons/hicolor/128x128/apps/gcrystal.png
-share/icons/hicolor/128x128/apps/gspectrum.png
 share/locale/de/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/el/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/es/LC_MESSAGES/gchemutils-%%VER%%.mo
