@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -18,7 +18,7 @@ COMMENT=	Localized interface for SeaMonkey 2.4
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_SEAMONKEY=	24
+USE_SEAMONKEY=	25
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes
