@@ -7,20 +7,22 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.0
-DISTVERSION=	1.0.0e
-PORTREVISION=	6
+DISTVERSIONSUFFIX=	e
+PORTREVISION=	7
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${DISTNAME}2
+
+PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
+PATCHFILES=	dtls-manual-mtu-bug-1.0.0.patch \
+		dtls-ecc-key-bug-1.0.0.patch \
+		dtls-fragment-assert-bug-1.0.0.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
-
-PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
-PATCHFILES=	#
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
@@ -1117,13 +1119,13 @@ BROKEN=		Patches do not merge, please change options
 .endif
 # order of PATCHFILES is important
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=    abbreviated-renegotiation.patch
+PATCHFILES+=	abbreviated-renegotiation.patch
 .endif
 .if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	dtls-sctp-24.patch
 .endif
 .if defined(WITH_DTLS_HEARTBEAT) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=    dtls-heartbeats.patch
+PATCHFILES+=	dtls-heartbeats.patch
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
