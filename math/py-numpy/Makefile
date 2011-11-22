@@ -55,7 +55,7 @@ DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
-IGNORE=	atlas needs to be built with WITH_STATICLIB for numpy to function properly
+IGNORE=	atlas needs to be built with WITH_STATIC for numpy to function properly
 .endif
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \

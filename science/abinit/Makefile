@@ -45,13 +45,13 @@ USE_GHOSTSCRIPT_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	takes a tremendous amount of time to build on pointyhat nodes
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
+BLAS=		-lf77blas
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack

@@ -71,13 +71,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__libFN__CMakeLists.txt \
 		${FILESDIR}/extra-patch-libs__libFN__FNFun.cpp
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
+BLAS=		-lf77blas
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas	\
 		lapack.4:${PORTSDIR}/math/lapack

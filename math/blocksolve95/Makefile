@@ -25,7 +25,7 @@ RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
-		BLAS_LIB=${BLAS_LIB} LAPACK_LIB=${LAPACK_LIB}
+		BLAS_LIB="${BLAS_LIB}" LAPACK_LIB="${LAPACK_LIB}"
 
 MPIDIR=		${LOCALBASE}
 PETSC_ARCH=	freebsd
@@ -39,18 +39,18 @@ PORTDOCS=	manual.ps
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIB=	"-lf77blas -latlas -lm"
-LAPACK_LIB=	"-L${LOCALBASE}/lib -lalapack"
+BLAS_LIB=	-lf77blas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS_LIB=	"-lblas -lm"
-LAPACK_LIB=	"-L${LOCALBASE}/lib -llapack"
+BLAS_LIB=	-lblas
+LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 .endif
 
 do-install:

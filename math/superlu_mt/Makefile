@@ -25,24 +25,24 @@ USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_BLAS?=	reference
-
 .if exists(${LOCALBASE}/lib/libgoto2.so)
-USE_BLAS=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas_r.so)
-USE_BLAS=	atlas
+WITH_BLAS?=	gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas.so)
+WITH_BLAS?=	atlas
+.else
+WITH_BLAS?=	reference
 .endif
 
-.if ${USE_BLAS} == reference
+.if ${WITH_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS=	-lblas
-.elif ${USE_BLAS} == gotoblas
+.elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 BLAS=	-lgoto2p
 BROKEN=	Build stops while testing
-.elif ${USE_BLAS} == atlas
+.elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-BLAS=	-lptf77blas -lptcblas -latlas_r
+BLAS=	-lptf77blas
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"

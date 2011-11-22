@@ -79,16 +79,16 @@ NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)
 . if !defined(WITHOUT_LAPACK)
-.  if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.  if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .  endif
 .  if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas
 .  else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran
+LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas
 .  endif
 . endif
 .endif

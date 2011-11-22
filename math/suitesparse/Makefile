@@ -30,7 +30,7 @@ CONFLICTS=	umfpack-*
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+.elif exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
@@ -47,12 +47,12 @@ LAPACK=		-llapack
 .elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS =		-lgoto2p ${PTHREAD_LIBS}
-LAPACK =	-lgoto2p ${PTHREAD_LIBS}
+BLAS =		-lgoto2p
+LAPACK =	-lgoto2p
 .elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas -lptcblas -latlas_r ${PTHREAD_LIBS}
-LAPACK =	-lalapack_r ${PTHREAD_LIBS}
+BLAS=		-lptf77blas
+LAPACK =	-lalapack -lptcblas
 .endif
 
 .if ${ARCH} == "sparc64"

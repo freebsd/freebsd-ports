@@ -45,7 +45,7 @@ MAN1=		jags.1
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS=	--with-lapack=-lalapack --with-blas=-lf77blas
+CONFIGURE_ARGS=	--with-lapack="-lalapack -lcblas" --with-blas=-lf77blas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack

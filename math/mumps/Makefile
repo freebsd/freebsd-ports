@@ -35,7 +35,7 @@ SLAVEDIRS=	math/mumps-mpich
 
 USE_FORTRAN=	yes
 
-FORTRANLIBS=	-lgfortranbegin -lgfortran
+FORTRANLIBS=	-lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -51,12 +51,12 @@ PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lf77blas -latlas
+BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas

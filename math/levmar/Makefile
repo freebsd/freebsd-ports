@@ -49,8 +49,8 @@ LAPACK=		-lgoto2p
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas -lptcblas -latlas
-LAPACK=		-lalapack
+BLAS=		-lptf77blas
+LAPACK=		-lalapack -lptcblas
 .endif
 
 .if !defined(NOPORTDOCS)

@@ -52,7 +52,7 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lf77blas -latlas
+BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
