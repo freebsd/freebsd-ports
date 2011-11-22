@@ -16,6 +16,8 @@ COMMENT=	A MySQL database connector for C++
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
+
 USE_MYSQL=	51+
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
