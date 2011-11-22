@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4p
-PORTVERSION=	2010.2.374929
+PORTVERSION=	2011.1.370818
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/r${P4VERSION}/bin.${PLATFORM}/
@@ -19,7 +19,7 @@ COMMENT=	Perforce server
 
 RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
 
-ONLY_FOR_ARCHS=	amd64 i386 sparc64
+ONLY_FOR_ARCHS=	amd64 i386
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
 DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
