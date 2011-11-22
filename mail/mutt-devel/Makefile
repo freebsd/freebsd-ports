@@ -115,7 +115,7 @@
 # If you want to enable debugging capabilities define:
 #  WITH_MUTT_DEBUG
 #
-# If you do not want to install the manpages mbox.5 and mdf.8 (because that
+# If you do not want to install the manpages mbox.5 and mmdf.5 (because that
 # conflicts with other ports which installed these:
 #  WITHOUT_MUTT_MAILBOX_MANPAGES
 #
@@ -190,7 +190,7 @@ OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
 		MUTT_IMAP_HEADER_CACHE		"Enable imap header cache"	off \
 		MUTT_ISPELL			"Enable ispell support"		off \
 		MUTT_LOCALES_FIX		"Enable locales fix"		off \
-		MUTT_MAILBOX_MANPAGES		"Install mbox.5/mdf.8 manpages"	on  \
+		MUTT_MAILBOX_MANPAGES		"Install mbox.5/mmdf.5 manpages"	on  \
 		MUTT_MAILDIR_HEADER_CACHE	"Enable maildir header cache"	off \
 		MUTT_MAILDIR_MTIME_PATCH	"Enable Maildir mtime patch"	off \
 		MUTT_MBOX_HOOK_PATCH		"Enable enhanced mbox-hook"	off \
