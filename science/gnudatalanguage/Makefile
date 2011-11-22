@@ -7,6 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -31,7 +32,7 @@ LICENSE=	GPLv2
 #
 #---------------------------------------------------------------------------
 
-LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot	\
+LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		ps.4:${PORTSDIR}/print/pslib		\
 		gsl.16:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs
