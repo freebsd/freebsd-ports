@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Squatting-On-PSGI
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BEPPU
@@ -17,7 +17,7 @@ COMMENT=	Perl extension to run Squatting app on PSGI
 
 RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
-	p5-Squatting>0:${PORTSDIR}/www/p5-Squatting
+	p5-Squatting>=0.81:${PORTSDIR}/www/p5-Squatting
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
