@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
