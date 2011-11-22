@@ -40,6 +40,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.1
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--without-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
