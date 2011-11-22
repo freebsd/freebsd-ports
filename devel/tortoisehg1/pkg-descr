@@ -1,7 +1,0 @@
-TortoiseHg is a Windows shell extension and a series of
-applications for the Mercurial distributed revision control
-system. It also includes a Gnome/Nautilus extension and
-a CLI wrapper application so the TortoiseHg tools can be
-used on non-Windows platforms.
-
-WWW:	http://tortoisehg.bitbucket.org/
