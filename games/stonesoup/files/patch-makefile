@@ -1,5 +1,5 @@
---- ./makefile.orig	2011-04-26 15:08:48.000000000 +0200
-+++ ./makefile	2011-06-02 19:52:05.000000000 +0200
+--- ./makefile.orig	2011-08-12 20:37:59.000000000 +0200
++++ ./makefile	2011-10-04 20:14:30.000000000 +0200
 @@ -51,7 +51,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
@@ -20,10 +20,10 @@
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(CFLAGS)
- CFOTHERS_L := -fsigned-char
  CFWARN := -Wall
  CFWARN_L := -Wundef
-@@ -639,7 +639,7 @@
+ 
+@@ -664,7 +664,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -32,49 +32,12 @@
  endif
  ifdef PCH
  CFWARN_L += -Winvalid-pch
-@@ -872,10 +872,10 @@
+@@ -901,7 +901,7 @@
  
  GAME_DEPENDS  := $(DESTTILEFILES) $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS)
  SRC_PKG_BASE  := stone_soup
--SRC_VERSION   := $(shell git describe --tags --long $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION   := $(shell cat util/release_ver)
+-SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
++SRC_VERSION   := $(cat util/release_ver)
  
- # when making release builds, use just the bare tag
--SRC_VERSION_SHORT := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION_SHORT := $(shell cat util/release_ver)
- ifneq (,$(SRC_VERSION_SHORT))
-   ifeq (,$(findstring -,$(SRC_VERSION_SHORT)))
-     SRC_VERSION := $(SRC_VERSION_SHORT)
-@@ -1041,7 +1041,7 @@
- ifneq ($(savedir_fp),)
- 	mkdir -p $(savedir_fp)/saves
- 	mkdir -p $(savedir_fp)/morgue
--ifeq ($(USE_DGAMELAUNCH),)
-+#ifeq ($(USE_DGAMELAUNCH),)
- 	$(CHOWN) $(INSTALL_UGRP) $(prefix_fp)/$(bin_prefix)/$(GAME) || true
- 	$(CHMOD) $(MCHMOD) $(prefix_fp)/$(bin_prefix)/$(GAME) || true
- 	$(CHOWN) -R $(INSTALL_UGRP) $(datadir_fp) || true
-@@ -1049,7 +1049,7 @@
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp) || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/saves || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/morgue || true
--endif
-+#endif
- endif
- ifneq ($(shareddir_fp),)
- 	mkdir -p $(shareddir_fp)
-@@ -1060,12 +1060,12 @@
- 	touch $(shareddir_fp)/logfile
- 	touch $(shareddir_fp)/scores
- endif
--ifeq ($(USE_DGAMELAUNCH),)
-+#ifeq ($(USE_DGAMELAUNCH),)
- 	$(CHOWN) -R $(INSTALL_UGRP) $(shareddir_fp) || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(shareddir_fp) || true
- 	$(CHMOD) $(MCHMOD_LOGS) $(shareddir_fp)/logfile || true
- 	$(CHMOD) $(MCHMOD_LOGS) $(shareddir_fp)/scores || true
--endif
-+#endif
- endif
+ export SRC_VERSION
  
- clean: clean-rltiles
