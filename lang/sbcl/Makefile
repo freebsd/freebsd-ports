@@ -92,12 +92,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 BROKEN =	'thread was already on queue' crash with libthr after r216641
 .endif
 
-.ifndef(NOPORTDOCS)
-.if defined(WITH_PDF) || defined(WITH_PS)
+.if !defined(NOPORTDOCS) && (defined(WITH_PDF) || defined(WITH_PS))
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.if defined(WITH_PDF)
+.if !defined(NOPORTDOCS) && defined(WITH_PDF)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
 		texi2dvi:${PORTSDIR}/print/texinfo
 DOC_TARGETS+=	pdf
@@ -107,14 +106,13 @@ MANUALS+=	${MANUALS_SRC:S,$,.pdf,g}
 PLIST_SUB+=	PDF="@comment "
 .endif
 
-.if defined(WITH_PS)
+.if !defined(NOPORTDOCS) && defined(WITH_PS)
 BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvips
 DOC_TARGETS+=	ps
 PLIST_SUB+=	PS=""
 MANUALS+=	${MANUALS_SRC:S,$,.ps,g}
 .else
 PLIST_SUB+=	PS="@comment "
-.endif
 .endif
 
 .if ${ARCH} == "i386"
@@ -222,9 +220,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${SBCL_HOME}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${SBCL_HOME}/
 .for MOD in ${CONTRIB_MODULES}
@@ -235,6 +230,7 @@ do-install:
 	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${SBCL_HOME}/${MOD}/; fi)
 .endfor
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${MANUALS_SRC:S,^,${WRKSRC}/doc/manual/,g:S,$,.info,g} \
 	    ${INFODIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/internals/sbcl-internals.info \
