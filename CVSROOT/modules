@@ -9711,6 +9711,7 @@ myphpmoney                      ports/finance/myphpmoney
 mysar                           ports/www/mysar
 mysql++1                        ports/databases/mysql++1
 mysql++3                        ports/databases/mysql++3
+mysql-connector-c++             ports/databases/mysql-connector-c++
 mysql-connector-java            ports/databases/mysql-connector-java
 mysql-connector-odbc            ports/databases/mysql-connector-odbc
 mysql-navigator                 ports/databases/mysql-navigator
@@ -26465,6 +26466,7 @@ vips                            ports/graphics/vips
 virt-manager                    ports/deskutils/virt-manager
 virt-viewer                     ports/net-mgmt/virt-viewer
 virtinst                        ports/net-mgmt/virtinst
+virtio-kmod                     ports/emulators/virtio-kmod
 virtualbox-ose                  ports/emulators/virtualbox-ose
 virtualbox-ose-additions        ports/emulators/virtualbox-ose-additions
 virtualbox-ose-kmod             ports/emulators/virtualbox-ose-kmod
