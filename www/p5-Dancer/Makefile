@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3072
+PORTVERSION=	1.3080
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -52,6 +52,7 @@ MAN3=	Dancer.3 \
 	Dancer::FileUtils.3 \
 	Dancer::HTTP.3 \
 	Dancer::Handler::Debug.3 \
+	Dancer::Handler::PSGI.3 \
 	Dancer::Hook.3 \
 	Dancer::Hook::Properties.3 \
 	Dancer::Introduction.3 \
