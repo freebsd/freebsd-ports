@@ -22,28 +22,28 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
 
-USE_BLAS?=	reference
-
 .if exists(${LOCALBASE}/lib/libgoto2.so)
-USE_BLAS=     gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas_r.so)
-USE_BLAS=     atlas
+WITH_BLAS?=     gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas.so)
+WITH_BLAS?=     atlas
+.else
+WITH_BLAS?=	reference
 .endif
 
-. if ${USE_BLAS} == reference
+. if ${WITH_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
-.elif ${USE_BLAS} == gotoblas
+.elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
-.elif ${USE_BLAS} == atlas
+.elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=   atlas:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas -lptcblas -latlas_r
-LAPACK=		-lalapack_r
+BLAS=		-lptf77blas
+LAPACK=		-lalapack -lptcblas
 .endif
 
 USE_BZIP2=	yes

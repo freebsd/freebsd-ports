@@ -98,7 +98,7 @@ CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
-BLAS?=			-lf77blas -latlas
+BLAS?=			-lf77blas
 LAPACK?=		-lalapack -lcblas
 .else
 BLAS?=			no

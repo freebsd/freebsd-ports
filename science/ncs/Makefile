@@ -78,12 +78,12 @@ DOCS=		AUTHORS COMPATIBILITY Changelog TODO
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS) && !defined(WITHOUT_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIB=	-lcblas -lf77blas -latlas -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin -lgfortran
+BLAS_LIB=	-lf77blas
 .elif !defined(WITHOUT_BLAS)
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIB=	-lblas

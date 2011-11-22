@@ -40,9 +40,9 @@ GID_PTYPES=	${PREFIX}/${GIDDIR}/problemtypes
 
 .ifdef WITH_ATLAS
 .ifdef WITH_THREADS
-BLAS_LIBS=	-lptf77blas -latlas_r
+BLAS_LIBS=	-lptf77blas
 .else
-BLAS_LIBS=	-lf77blas -latlas
+BLAS_LIBS=	-lf77blas
 .endif
 .else	#BLAS
 BLAS_LIBS?=	-lblas

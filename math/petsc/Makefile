@@ -118,17 +118,17 @@ WITHOUT_SUPERLU=	yes
 PLIST_SUB+=		MPIUNI=""
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lm"
-CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
+LIBBLASLAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas
+CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIBBLASLAPACK=	"-L${LOCALBASE}/lib -llapack -lblas -lm"
-CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
+LIBBLASLAPACK=	-L${LOCALBASE}/lib -llapack -lblas
+CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .endif
 
 .if !defined(WITHOUT_SUPERLU) && !defined(WITHOUT_BLASLAPACK)

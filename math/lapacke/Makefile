@@ -54,8 +54,8 @@ WITHOUT_LAPACK_LATEST=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas -lptcblas -latlas
-LAPACK=		-lalapack
+BLAS=		-lptf77blas
+LAPACK=		-lalapack -lptcblas
 .endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib

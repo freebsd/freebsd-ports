@@ -38,18 +38,18 @@ OPTIONS=	MPI "Enable mpich-support" off \
 BROKEN=		Does not compile on powerpc
 .endif
 
-USE_BLAS?=	reference
+WITH_BLAS?=	reference
 
-. if ${USE_BLAS} == reference
+. if ${WITH_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-blas=blas
 LAPACK_LIBS=	-llapack
-.elif ${USE_BLAS} == gotoblas
+.elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
 CONFIGURE_ARGS+=	--with-blas=goto --with-goto=goto2
 LAPACK_LIBS=	-lgoto2
-.elif ${USE_BLAS} == atlas
+.elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-blas=atlas
 LAPACK_LIBS=	-lalapack

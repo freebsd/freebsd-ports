@@ -29,7 +29,7 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so)
+.if exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
@@ -37,7 +37,7 @@ WITH_BLAS?=	reference
 
 .if ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
+BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas

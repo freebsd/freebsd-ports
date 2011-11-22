@@ -24,13 +24,13 @@ USE_LDCONFIG=	yes
 .if defined(WITH_ICC)
 BUILD_DEPENDS+=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas -lcblas
-LAPACK=		-lalapack
+BLAS=		-lf77blas
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack

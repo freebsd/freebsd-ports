@@ -41,7 +41,7 @@ BROKEN=	ldexpf is missing See http://lists.freebsd.org/pipermail/freebsd-amd64/2
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
-IGNORE=		atlas needs to be built with WITH_STATICLIB for scipy to function properly
+IGNORE=		atlas needs to be built with WITH_STATIC for scipy to function properly
 .endif
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \

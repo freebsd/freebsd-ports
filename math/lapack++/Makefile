@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
@@ -42,15 +42,15 @@ USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
-BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack
+BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
 .else
 BLAS_LIB=	-L${LOCALBASE}/lib -lblas
 LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 .endif
 
-#BLAS_LIB=	-L${LOCALBASE}/lib -lptf77blas -latlas_r ${PTHREAD_LIBS}
-#LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack_r -lptcblas ${PTHREAD_LIBS}
+#BLAS_LIB=	-L${LOCALBASE}/lib -lptf77blas
+#LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lptcblas
 
 #lapack++ forces to use atlas when detected, so we should disable here.
 CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas --enable-static

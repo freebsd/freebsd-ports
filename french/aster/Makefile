@@ -83,7 +83,7 @@ PYTHON_VERSION=	2.6
 # Avoid renaming .f into .F
 #F90FLAGS=	-x f77-cpp-input ${FFLAGS}
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
@@ -212,7 +212,7 @@ tcl_dir=	${LOCALBASE}
 hdf_dir=	${LOCALBASE}
 .if defined(WITH_ATLAS)
 lib_blas=	ptf77blas
-lib_atlas=	atlas_r
+lib_atlas=	atlas
 .else
 lib_blas=	blas
 lib_atlas=	# empty

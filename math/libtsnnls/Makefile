@@ -23,11 +23,10 @@ OPTIONS=	GOTOBLAS "Use gotoblas (conflict with USE_ATLAS)" off \
 
 .include <bsd.port.options.mk>
 
-WITH_BLAS?=reference
+WITH_BLAS=reference
 .if defined(WITH_GOTOBLAS)
 WITH_BLAS=gotoblas
-.endif
-.if defined(WITH_ATLAS)
+.elif defined(WITH_ATLAS)
 WITH_BLAS=atlas
 .endif
 
@@ -48,8 +47,8 @@ BLAS=-lgoto2p
 LAPACK=-lgoto2p
 .elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=atlas:${PORTSDIR}/math/atlas
-BLAS=-lptf77blas -lptcblas -latlas_r
-LAPACK=-lalapack_r
+BLAS=-lptf77blas
+LAPACK=-lalapack -lptcblas
 .endif
 
 CONFIGURE_ARGS=	--with-blas="${BLAS}" --with-lapack="${LAPACK}"

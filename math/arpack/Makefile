@@ -79,7 +79,7 @@ WITH_BLAS?=	reference
 
 .if ${WITH_BLAS} == atlas
 LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
-BLAS?=			-lf77blas -latlas
+BLAS?=			-lf77blas
 .else
 LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
 BLAS?=			-lblas
