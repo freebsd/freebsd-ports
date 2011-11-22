@@ -852,6 +852,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/locale/bibletime_ui_zh_TW.qm
 %%DATADIR%%/pics/startuplogo.png
 %%DATADIR%%/pics/startuplogo_christmas.png
+%%DATADIR%%/pics/startuplogo_easter.jpg
 share/icons/bibletime.svg
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/pics
