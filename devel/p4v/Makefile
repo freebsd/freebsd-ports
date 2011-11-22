@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2008.2.200026
+PORTVERSION=	2010.1.276058
 CATEGORIES=	devel
-MASTER_SITES=	\
-	http://filehost.perforce.com/perforce/r08.2/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
+MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
+		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	perforce/${PORTNAME}-${PORTVERSION}/${ARCH}
+DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Visual client for Perforce SCM
 
 LIB_DEPENDS=	pthread.2:${PORTSDIR}/misc/compat6x
