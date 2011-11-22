@@ -7,14 +7,14 @@
 
 PORTNAME=	geglmm
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	C++ bindings for GEGL
 
-LIB_DEPENDS=	gegl-0.1.105:${PORTSDIR}/graphics/gegl \
+LIB_DEPENDS=	gegl-0.1.107:${PORTSDIR}/graphics/gegl \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
 GNU_CONFIGURE=	yes
