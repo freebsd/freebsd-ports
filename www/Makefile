@@ -1780,6 +1780,7 @@
     SUBDIR += trac-down
     SUBDIR += trac-downloads
     SUBDIR += trac-email2trac
+    SUBDIR += trac-email2trac-postfix
     SUBDIR += trac-estimator
     SUBDIR += trac-fivestarvote
     SUBDIR += trac-fullblog
