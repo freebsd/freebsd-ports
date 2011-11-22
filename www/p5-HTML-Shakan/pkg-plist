@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Shakan/.packlist
 %%SITE_PERL%%/HTML/Shakan.pm
 %%SITE_PERL%%/HTML/Shakan/Declare.pm
 %%SITE_PERL%%/HTML/Shakan/Doc.ja.pod
@@ -31,5 +30,3 @@
 @dirrm %%SITE_PERL%%/HTML/Shakan/Field
 @dirrm %%SITE_PERL%%/HTML/Shakan
 @dirrmtry %%SITE_PERL%%/HTML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Shakan
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
