@@ -766,6 +766,5 @@
     SUBDIR += xpi-dispmua
     SUBDIR += zabit
     SUBDIR += zmailer
-    SUBDIR += zms
 
 .include <bsd.port.subdir.mk>
