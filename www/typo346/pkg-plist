@@ -2149,6 +2149,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sapdb.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sqlanywhere.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sqlite.inc.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sqlite3.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sqlitepo.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sybase.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers/adodb-sybase_ase.inc.php
@@ -2177,6 +2178,8 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/lang/adodb-uk1251.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/lang/adodb_th.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/license.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/pear/Auth/Container/ADOdb.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/pear/readme.Auth.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/perf/perf-db2.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/perf/perf-informix.inc.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/perf/perf-mssql.inc.php
@@ -7902,9 +7905,9 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Language/locallang_csh_sysws_stage.xlf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Language/locallang_db.xlf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Language/locallang_mod.xlf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/module.html
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/nodoc.html
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/popup.html
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/Module.html
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/Nodoc.html
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Layouts/Popup.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Partials/legend.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Partials/navigation.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/workspaces/Resources/Private/Templates/Preview/Help.html
@@ -8795,6 +8798,9 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/xsl
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/session
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/perf
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/pear/Auth/Container
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/pear/Auth
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/pear
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/lang
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/drivers
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/adodb/adodb/datadict
