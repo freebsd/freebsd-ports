@@ -25780,7 +25780,6 @@ torrentzip                      ports/archivers/torrentzip
 torrus                          ports/net-mgmt/torrus
 torsmo                          ports/sysutils/torsmo
 torsocks                        ports/net/torsocks
-tortoisehg1                     ports/devel/tortoisehg1
 tortoisehg2                     ports/devel/tortoisehg2
 tosha                           ports/audio/tosha
 toshctl                         ports/sysutils/toshctl
@@ -25822,6 +25821,7 @@ trac-discussion                 ports/www/trac-discussion
 trac-down                       ports/www/trac-down
 trac-downloads                  ports/www/trac-downloads
 trac-email2trac                 ports/www/trac-email2trac
+trac-email2trac-postfix         ports/www/trac-email2trac-postfix
 trac-estimator                  ports/www/trac-estimator
 trac-fivestarvote               ports/www/trac-fivestarvote
 trac-fullblog                   ports/www/trac-fullblog
@@ -28147,7 +28147,6 @@ zkt                             ports/dns/zkt
 zmailer                         ports/mail/zmailer
 zmq                             ports/devel/zmq
 zmq-devel                       ports/devel/zmq-devel
-zms                             ports/mail/zms
 zmtx-zmrx                       ports/comms/zmtx-zmrx
 znavigator                      ports/www/znavigator
 znc                             ports/irc/znc
