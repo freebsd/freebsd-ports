@@ -24,7 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkg-config
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LEX=${LOCALBASE}/bin/flex"
 CONFIGURE_ARGS=	--disable-debug --disable-static
