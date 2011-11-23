@@ -1,0 +1,223 @@
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/calendarCreation.xul
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gcal.png
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-calendar-event-dialog.xul
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-event-dialog-reminder.xul
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-migration-overlay.xul
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-migration-wizard.xul
+%%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-migration.js
+%%XPI_XPIDIR%%/chrome/gdata-provider/skin/gdata-event-dialog-reminder.css
+%%XPI_XPIDIR%%/chrome/gdata-provider/skin/reminder-action-sms.png
+%%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-cs/locale/cs/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-cs/locale/cs/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-da/locale/da/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-da/locale/da/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-de/locale/de/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-de/locale/de/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-en-GB/locale/en-GB/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-en-GB/locale/en-GB/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-en-US/locale/en-US/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-en-US/locale/en-US/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-es-AR/locale/es-AR/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-es-AR/locale/es-AR/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-es-ES/locale/es-ES/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-es-ES/locale/es-ES/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-et/locale/et/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-et/locale/et/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-eu/locale/eu/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-eu/locale/eu/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-fi/locale/fi/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-fi/locale/fi/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-fr/locale/fr/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-fr/locale/fr/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-fy-NL/locale/fy-NL/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-fy-NL/locale/fy-NL/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE/locale/ga-IE/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE/locale/ga-IE/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-hu/locale/hu/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-hu/locale/hu/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-id/locale/id/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-id/locale/id/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-is/locale/is/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-is/locale/is/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-it/locale/it/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-it/locale/it/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-ja/locale/ja/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-ja/locale/ja/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-ja-JP-mac/locale/ja-JP-mac/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-ja-JP-mac/locale/ja-JP-mac/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-lt/locale/lt/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-lt/locale/lt/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-nb-NO/locale/nb-NO/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-nb-NO/locale/nb-NO/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-nl/locale/nl/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-nl/locale/nl/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-nn-NO/locale/nn-NO/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-nn-NO/locale/nn-NO/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-pa-IN/locale/pa-IN/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-pa-IN/locale/pa-IN/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-pl/locale/pl/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-pl/locale/pl/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-pt-PT/locale/pt-PT/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-pt-PT/locale/pt-PT/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-ru/locale/ru/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-ru/locale/ru/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-sl/locale/sl/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-sl/locale/sl/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-sr/locale/sr/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-sr/locale/sr/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN/gdata.properties
+%%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW/locale/zh-TW/gdata.dtd
+%%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW/locale/zh-TW/gdata.properties
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/calGoogleCalendarModule.js
+%%XPI_XPIDIR%%/components/calGoogleCalendarModule.manifest
+%%XPI_XPIDIR%%/components/gdata.xpt
+%%XPI_XPIDIR%%/components/interfaces.manifest
+%%XPI_XPIDIR%%/defaults/preferences/preferences.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/js/calGoogleCalendar.js
+%%XPI_XPIDIR%%/js/calGoogleRequest.js
+%%XPI_XPIDIR%%/js/calGoogleSession.js
+%%XPI_XPIDIR%%/js/calGoogleUtils.js
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider/content
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider/skin
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-cs/locale/cs
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-cs/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-cs
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-da/locale/da
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-da/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-da
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-de/locale/de
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-de/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-de
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-GB/locale/en-GB
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-GB/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-GB
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-US/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-US/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-en-US
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-AR/locale/es-AR
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-AR/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-AR
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-ES/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-ES/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-et/locale/et
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-et/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-et
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-eu/locale/eu
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-eu/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-eu
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fi/locale/fi
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fi/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fi
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fr/locale/fr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fr/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fy-NL/locale/fy-NL
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fy-NL/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-fy-NL
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE/locale/ga-IE
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hu/locale/hu
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hu/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hu
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-id/locale/id
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-id/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-id
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-is/locale/is
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-is/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-is
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-it/locale/it
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-it/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-it
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja-JP-mac/locale/ja-JP-mac
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja-JP-mac/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ja-JP-mac
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-lt/locale/lt
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-lt/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-lt
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nb-NO/locale/nb-NO
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nb-NO/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nb-NO
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nl/locale/nl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nl/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nn-NO/locale/nn-NO
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nn-NO/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-nn-NO
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pa-IN/locale/pa-IN
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pa-IN/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pa-IN
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pl/locale/pl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pl/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pt-PT/locale/pt-PT
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pt-PT/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-pt-PT
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ru/locale/ru
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ru/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ru
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sl/locale/sl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sl/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sl
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sr/locale/sr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sr/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW/locale
+@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/js
