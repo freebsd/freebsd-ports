@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Pair-Best
-PORTVERSION=	1.010
+PORTVERSION=	1.036
 CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to generate tournament pairings
 
-MAN3=	Algorithm::Pair::Best.3
+DEPRECATED=	Use games/p5-Algorithm-Pair-Best2 instead
 
 PERL_CONFIGURE=	yes
+
+MAN3=		Algorithm::Pair::Best.3
 
 .include <bsd.port.mk>
