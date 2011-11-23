@@ -93,7 +93,6 @@
     SUBDIR += demime
     SUBDIR += dk-milter
     SUBDIR += dkfilter
-    SUBDIR += dkim-milter
     SUBDIR += dkimproxy
     SUBDIR += dma
     SUBDIR += dovecot

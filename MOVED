@@ -3011,3 +3011,4 @@ russian/apache13||2011-11-15|Has expired: no active development and known securi
 russian/apache13||2011-11-15|Has expired: no active development and known security vulnerabilities
 devel/tortoisehg1|devel/tortoisehg2|2011-11-22|Has expired: does not work with current devel/mercurial, use tortoisehg2
 mail/zms||2011-11-22|Has expired: No longer under development, since 2009.
+mail/dkim-milter|mail/opendkim|2011-11-23|Has expired: switch to mail/opendkim instead
