@@ -18,7 +18,7 @@ MAN1=	nbfc.1
 PLIST_FILES=	bin/nbfc
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g;s|bison -y|yacc -|g' \
+	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g; s|bison -y|${YACC} -|g; s|gcc|${CC} ${CFLAGS}|g' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
