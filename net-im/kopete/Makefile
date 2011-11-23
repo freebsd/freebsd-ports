@@ -7,7 +7,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	0.12.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/3.5.10/src
@@ -21,7 +21,7 @@ COMMENT=	KDE multi-protocol instant messenger (IM)
 RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
 		ilbc:${PORTSDIR}/net/ilbc \
-		ortp:${PORTSDIR}/net/ortp
+		ortp.8:${PORTSDIR}/net/linphone-base
 
 CONFLICTS=	kvirc-[0-9]*
 
