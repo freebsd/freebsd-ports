@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	typhoeus
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
