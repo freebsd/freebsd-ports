@@ -267,6 +267,7 @@
     SUBDIR += fusefs-gstfs
     SUBDIR += fusefs-gunzip
     SUBDIR += fusefs-httpfs
+    SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-mhddfs
