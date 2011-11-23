@@ -31,6 +31,10 @@ RELEASEDIR=	${WRKSRC}/release
 AS_SDK_DIR=	${WRKSRC}/../libsrcs/angelscript/angelSVN/sdk
 WSWSUBDIR=	basewsw libs
 
+PLIST_FILES=	%%DATADIR%%/basewsw/game_${ARCH}.so \
+		%%DATADIR%%/libs/angelwrap_${ARCH}.so
+PLIST_DIRS=	%%DATADIR%%/libs
+
 OPTIONS=	CLIENT	"Build client executable"		on \
 		SERVER	"Build dedicated server executable"	on \
 		QF	"Build Qf sound module"			on \
@@ -50,18 +54,13 @@ USE_GL=		yes
 USE_SDL=	yes
 USE_XORG=	xinerama xxf86dga
 ALL_TARGET+=	cgame ui client
-WSWBIN+=	warsow
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
+PLIST_FILES+=	bin/warsow %%DATADIR%%/basewsw/cgame_${ARCH}.so \
+		%%DATADIR%%/basewsw/ui_${ARCH}.so
 .endif
 
 .if !defined(WITHOUT_SERVER)
 ALL_TARGET+=	ded
-WSWBIN+=	wsw_server
-PLIST_SUB+=	SERVER=""
-.else
-PLIST_SUB+=	SERVER="@comment "
+PLIST_FILES+=	bin/wsw_server
 .endif
 
 .if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL))
@@ -71,35 +70,24 @@ LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 .if !defined(WITHOUT_QF)
 USE_SDL=	yes
 ALL_TARGET+=	qf
-PLIST_SUB+=	QF=""
-.else
-PLIST_SUB+=	QF="@comment "
+PLIST_FILES+=	%%DATADIR%%/libs/snd_qf_${ARCH}.so
 .endif
 
 .if !defined(WITHOUT_OPENAL)
 USE_OPENAL=	al
 ALL_TARGET+=	openal
-PLIST_SUB+=	OPENAL=""
-.else
-PLIST_SUB+=	OPENAL="@comment "
+PLIST_FILES+=	%%DATADIR%%/libs/snd_openal_${ARCH}.so
 .endif
 
 .if !defined(WITHOUT_IRC)
 ALL_TARGET+=	irc
-PLIST_SUB+=	IRC=""
-.else
-PLIST_SUB+=	IRC="@comment "
+PLIST_FILES+=	%%DATADIR%%/libs/irc_${ARCH}.so
 .endif
 
 .if !defined(WITHOUT_TV_SRV)
 ALL_TARGET+=	tv_server
-WSWBIN+=	wswtv_server
-PLIST_SUB+=	TVSERVER=""
-.else
-PLIST_SUB+=	TVSERVER="@comment "
+PLIST_FILES+=	bin/wswtv_server
 .endif
-
-PLIST_SUB+=	ARCH=${ARCH}
 
 post-extract:
 	${CP} ${FILESDIR}/keysym2ucs.* ${WRKSRC}/unix
@@ -131,7 +119,7 @@ post-patch: .SILENT
 		s|(asDWORD)||' ${AS_SDK_DIR}/angelscript/source/as_thread.*
 
 do-install:
-.for b in ${WSWBIN}
+.for b in ${PLIST_FILES:Mbin/*:T}
 	${INSTALL_PROGRAM} ${RELEASEDIR}/${b}.${ARCH} ${PREFIX}/bin/${b}
 .endfor
 	cd ${RELEASEDIR} && ${COPYTREE_SHARE} "${WSWSUBDIR}" ${DATADIR}
