@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20111123:
+  AFFECTS: users of net-im/kopete or net-im/libjingle
+  AUTHOR: kde@FreeBSD.org
+
+  kopete and libjingle are now depending on a newer oRTP from
+  linphone-base. To correctly switch to the new port, you need to deinstall
+  ortp prior to the update:
+
+  # pkg_delete -f ortp-\*
+
+20111123:
   AFFECTS: users of databases/redis
   AUTHOR: osa@FreeBSD.org
 

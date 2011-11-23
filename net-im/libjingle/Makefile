@@ -7,6 +7,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
-		ortp.5:${PORTSDIR}/net/ortp \
+		ortp.8:${PORTSDIR}/net/linphone-base \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
