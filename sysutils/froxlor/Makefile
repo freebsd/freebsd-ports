@@ -7,6 +7,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.22
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -49,7 +50,7 @@ RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	dkim-milter:${PORTSDIR}/mail/dkim-milter
+RUN_DEPENDS+=	opendkim:${PORTSDIR}/mail/opendkim
 .endif
 
 .if !defined(WITHOUT_DOVECOT)
