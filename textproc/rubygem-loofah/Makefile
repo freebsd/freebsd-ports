@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	loofah
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
