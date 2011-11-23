@@ -7,7 +7,6 @@
 
 PORTNAME=	graid5
 PORTVERSION=	${MAINVERSION}.${VERSIONDATE}
-PORTREVISION=	1	
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/graid5/
 
@@ -18,8 +17,8 @@ USE_BZIP2=	yes
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-MAINVERSION=1.0
-VERSIONDATE=20101212.29
+MAINVERSION=1.1
+VERSIONDATE=20110927.40
 
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
@@ -28,9 +27,9 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MANCOMPRESSED=	yes
 MAN8=		${PORTNAME}.8
 
-.if !exists(${SRC_BASE}/sys/Makefile)
+.if !exists(/usr/src/sys/Makefile)
 IGNORE=	requires kernel source files
-.elif !exists(${SRC_BASE}/sbin/geom/Makefile)
+.elif !exists(/usr/src/sbin/geom/Makefile)
 IGNORE=	requires sbin source files
 .endif
 
