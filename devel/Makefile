@@ -3105,6 +3105,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
+    SUBDIR += py-ordereddict
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-pefile
