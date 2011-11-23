@@ -7,6 +7,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.3.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -54,6 +55,9 @@ pre-patch:
 .for patch in ${PATCH_LIST}
 	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${patch}.in > ${WRKDIR}/${patch}
 .endfor
+
+post-patch:
+	@${FIND} ${WRKSRC}/rulefiles -type f -name \*.orig -delete
 
 do-build:
 	@${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
