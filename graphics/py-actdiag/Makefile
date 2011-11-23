@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	actdiag
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
-		${PKGNAMEPREFIX}blockdiag>=1.0.1:${PORTSDIR}/graphics/py-blockdiag \
+		${PKGNAMEPREFIX}blockdiag>=1.1.0:${PORTSDIR}/graphics/py-blockdiag \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.4:${PORTSDIR}/devel/py-funcparserlib
 
 USE_PYTHON=	2.4-2.7
