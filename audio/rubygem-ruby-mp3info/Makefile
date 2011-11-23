@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby-mp3info
-PORTVERSION=	0.6.14
+PORTVERSION=	0.6.16
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
 
