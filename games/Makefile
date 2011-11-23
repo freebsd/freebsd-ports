@@ -616,6 +616,7 @@
     SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
     SUBDIR += p5-Algorithm-Pair-Best
+    SUBDIR += p5-Algorithm-Pair-Best2
     SUBDIR += p5-Algorithm-Pair-Swiss
     SUBDIR += p5-Baseball-Sabermetrics
     SUBDIR += p5-Games-Alak
