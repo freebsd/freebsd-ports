@@ -15,7 +15,6 @@
 %%SITE_PERL%%/Marpa/PP/Semantics/Infinite.pod
 %%SITE_PERL%%/Marpa/PP/Semantics/Null.pod
 %%SITE_PERL%%/Marpa/PP/Semantics/Order.pod
-%%SITE_PERL%%/Marpa/PP/Slot.pm
 %%SITE_PERL%%/Marpa/PP/Support.pod
 %%SITE_PERL%%/Marpa/PP/Tracing.pod
 %%SITE_PERL%%/Marpa/PP/Value.pm
