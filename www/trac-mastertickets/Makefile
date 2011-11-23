@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	mastertickets
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	www devel python
-MASTER_SITES=	http://dist.codelabs.ru/fbsd/ \
+MASTER_SITES=	http://mirrors.redv.com/pub/trac/ \
 		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
+DISTNAME=	coderanger-trac-${PORTNAME}-43a7537
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Support for ticket dependencies
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-WRKSRC=			${WRKDIR}/coderanger-trac-mastertickets-a72a4e2
+WRKSRC=			${WRKDIR}/${DISTNAME}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
