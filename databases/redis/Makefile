@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.2.15
+PORTVERSION=	2.4.3
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -20,13 +20,12 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS?=	redis-scripting-2.*
 
 USE_GMAKE=	yes
+MAKE_ENV=	"V=yo"
 USE_RC_SUBR=	redis.sh
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-PORTDOCS=	*
 
 USERS=	redis
 GROUPS=	redis
@@ -55,10 +54,6 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${PREFIX}/etc/redis.conf.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
 
 post-install:
 .for d in ${REDIS_LOGDIR} ${REDIS_RUNDIR} ${REDIS_DBDIR}
