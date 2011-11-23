@@ -5,5 +5,20 @@ offered by Amazon Web Services. Currently, this includes:
   * Simple Queue Service (SQS)
   * Elastic Compute Cloud (EC2)
   * Mechanical Turk
+  * SimpleDB
+  * CloudFront
+  * CloudWatch
+  * AutoScale
+  * Elastic Load Balancer (ELB)
+  * Virtual Private Cloud (VPC)
+  * Elastic Map Reduce (EMR)
+  * Relational Data Service (RDS)
+  * Simple Notification Server (SNS)
+  * Google Storage
+  * Identity and Access Management (IAM)
+  * Route53 DNS Service (route53)
+  * Simple Email Service (SES)
+  * Flexible Payment Service (FPS)
+  * CloudFormation
 
 WWW: http://code.google.com/p/boto
