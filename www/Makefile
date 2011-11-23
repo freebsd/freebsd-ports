@@ -1975,6 +1975,7 @@
     SUBDIR += xpi-foxmarks
     SUBDIR += xpi-foxyproxy
     SUBDIR += xpi-gbrain
+    SUBDIR += xpi-gdata_provider
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-google_shortcuts
