@@ -16,11 +16,14 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A "meta-port" to install PHP extensions
 
+USE_PHP=	yes
 DEFAULT_PHP_VER=4
 IGNORE_WITH_PHP=5
 USE_PHP_BUILD=	yes
 
 NO_BUILD=	yes
+
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 WITH_CTYPE=	yes
 WITH_MYSQL=	yes
@@ -94,14 +97,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		ZIP             "ZIP support" off \
 		ZLIB            "ZLIB support" on
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
-
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
 		DOMXML EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAP INTERBASE LDAP MBSTRING MCAL MCRYPT \
@@ -111,13 +106,13 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
 		SYBASE_CT SYSVMSG SYSVSEM SYSVSHM TOKENIZER \
 		WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
 
-SEL_OPTIONS=	yes
+.include <bsd.port.options.mk>
+
 .for opt in ${ALL_OPTIONS}
 .	if defined(WITH_${opt}) && !defined(WITHOUT_${opt})
-SEL_OPTIONS+=	${opt:L}
+USE_PHP+=	${opt:L}
 .	endif
 .endfor
-USE_PHP=	${SEL_OPTIONS}
 
 do-install: build
 	@${DO_NADA}
