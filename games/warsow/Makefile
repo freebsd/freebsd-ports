@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	warsow
-PORTVERSION=	0.6
+PORTVERSION=	0.6.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.zcdn.org/dl/ \
-		http://www.derchris.eu/warsow/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_sdk
+MASTER_SITES=	http://www.zcdn.org/dl/
+DISTNAME=	${PORTNAME}_${PORTVERSION:R}${PORTVERSION:E}_sdk
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A fast paced first person shooter game
+COMMENT=	A futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2
 
@@ -26,9 +25,10 @@ USE_GMAKE=	yes
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/source
-ALL_TARGET=	game
+ALL_TARGET=	game angelwrap
 RELEASEDIR=	${WRKSRC}/release
-WSWSUBDIR=	basewsw
+AS_SDK_DIR=	${WRKSRC}/../libsrcs/angelscript/angelSVN/sdk
+WSWSUBDIR=	basewsw libs
 
 OPTIONS=	CLIENT	"Build client executable"		on \
 		SERVER	"Build dedicated server executable"	on \
@@ -67,10 +67,6 @@ PLIST_SUB+=	SERVER="@comment "
 LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL) && defined(WITHOUT_IRC))
-WSWSUBDIR+=	libs
-.endif
-
 .if !defined(WITHOUT_QF)
 USE_SDL=	yes
 ALL_TARGET+=	qf
@@ -105,12 +101,12 @@ PLIST_SUB+=	TVSERVER="@comment "
 PLIST_SUB+=	ARCH=${ARCH}
 
 post-patch: .SILENT
-# Unmute build and link commands, respect CFLAGS
+# Unmute build and link commands, respect CFLAGS, fix hardcoded make(1)
 	${REINPLACE_CMD} -e 's|@$$(DO_CC|$$(DO_CC| ; /> Linking $$@/d ; \
-		s|-O2 -fno-strict-aliasing -ffast-math -funroll-loops ||' \
-			${WRKSRC}/Makefile
-# Search directory provided by warsow-data port instead of current.  Doing
-# so allows us not to install any wrapper scripts.
+		s|-O2 -fno-strict-aliasing -ffast-math -funroll-loops || ; \
+		s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
+# Search directory provided by warsow-data port instead of current (doing
+# so allows us not to install any wrapper scripts)
 	${REINPLACE_CMD} -e 's|path", "\.|path", "${DATADIR}|' \
 		${WRKSRC}/qcommon/files.c
 # Adjust architecture names, get rid of ``freebsd_'' prefix
@@ -124,6 +120,9 @@ post-patch: .SILENT
 		${WRKSRC}/qcommon/net.c
 	${REINPLACE_CMD} -e '19s|^|#include <stdint.h>|' \
 		${WRKSRC}/unix/unix_xpm.c
+# Fix AngelScript build on 64-bit arches
+	${REINPLACE_CMD} -e '/GetCurrentThreadId/!s|asDWORD|pthread_t| ; \
+		s|(asDWORD)||' ${AS_SDK_DIR}/angelscript/source/as_thread.*
 
 do-install:
 .for b in ${WSWBIN}
