@@ -16,6 +16,8 @@ COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
 
+BROKEN=		does not compile
+
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf libtool
