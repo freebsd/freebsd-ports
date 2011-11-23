@@ -73,6 +73,9 @@ bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/elements.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/plugins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/plugins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/plugins.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/tests/test_pep8.pyo
