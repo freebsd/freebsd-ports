@@ -4,7 +4,8 @@
 %%CLIENT%%%%DATADIR%%/basewsw/cgame_%%ARCH%%.so
 %%DATADIR%%/basewsw/game_%%ARCH%%.so
 %%CLIENT%%%%DATADIR%%/basewsw/ui_%%ARCH%%.so
+%%DATADIR%%/libs/angelwrap_%%ARCH%%.so
 %%IRC%%%%DATADIR%%/libs/irc_%%ARCH%%.so
 %%OPENAL%%%%DATADIR%%/libs/snd_openal_%%ARCH%%.so
 %%QF%%%%DATADIR%%/libs/snd_qf_%%ARCH%%.so
-%%IRC%%%%OPENAL%%%%QF%%@dirrm %%DATADIR%%/libs
+@dirrm %%DATADIR%%/libs
