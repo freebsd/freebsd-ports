@@ -38,3 +38,12 @@
  
  DO_CC_CLIENT=$(DO_CC) $(CFLAGS_CLIENT)
  DO_CC_DED=$(DO_CC) $(CFLAGS_DED)
+@@ -289,7 +278,7 @@
+ ifeq ($(OS),Darwin)
+ CFILES_CLIENT += $(wildcard mac/*.c)
+ else
+-CFILES_CLIENT += unix/unix_input.c unix/unix_glw.c unix/unix_qgl.c unix_xpm.c
++CFILES_CLIENT += unix/unix_input.c unix/unix_glw.c unix/unix_qgl.c unix/unix_xpm.c unix/keysym2ucs.c
+ endif
+ CFILES_CLIENT += unix/unix_fs.c unix/unix_lib.c unix/unix_net.c unix/unix_sys.c unix/unix_vid.c
+ endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.zcdn.org/dl/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}${PORTVERSION:E}_sdk
@@ -100,11 +101,16 @@ PLIST_SUB+=	TVSERVER="@comment "
 
 PLIST_SUB+=	ARCH=${ARCH}
 
+post-extract:
+	${CP} ${FILESDIR}/keysym2ucs.* ${WRKSRC}/unix
+
 post-patch: .SILENT
 # Unmute build and link commands, respect CFLAGS, fix hardcoded make(1)
 	${REINPLACE_CMD} -e 's|@$$(DO_CC|$$(DO_CC| ; /> Linking $$@/d ; \
 		s|-O2 -fno-strict-aliasing -ffast-math -funroll-loops || ; \
 		s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|-g ||' \
+		${AS_SDK_DIR}/angelscript/projects/gnuc/makefile
 # Search directory provided by warsow-data port instead of current (doing
 # so allows us not to install any wrapper scripts)
 	${REINPLACE_CMD} -e 's|path", "\.|path", "${DATADIR}|' \
