@@ -32,6 +32,9 @@ LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
 LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
 .endif
 
+NOT_FOR_ARCHS=		powerpc
+NOT_FOR_ARCHS_REASON=	not yet ported to this platform
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/build_detect_platform
 .if !defined(WITH_PERFTOOLS)
