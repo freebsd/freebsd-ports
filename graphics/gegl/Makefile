@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--disable-docs
 
 post-patch:
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '11,13d' ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e '10s|\\||; 11,13d' ${WRKSRC}/Makefile.am
 .endif
 	${REINPLACE_CMD} -e 's|-T||' ${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g' ${WRKSRC}/configure
