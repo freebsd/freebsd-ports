@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111123:
+  AFFECTS: users of databases/redis
+  AUTHOR: osa@FreeBSD.org
+
+  The redis configuration file, redis.conf, have been changed, some options
+  removed in newer versions (>=2.4).  In some cases, redis-server with
+  older configuration might does not run at startup.
+
+  If you run into startup problems, re-edit configuration file.
+
 20111101:
   AFFECTS: users of x11/kde4-workspace
   AUTHOR: kde@FreeBSD.org
