@@ -7,7 +7,7 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
@@ -43,12 +43,15 @@ USE_PGSQL=	yes
 .endif
 
 .if defined(CLIENT_ONLY)
+SUB_LIST+=	PRECMD=:
 PKGNAMESUFFIX=	-client
 CONFLICTS=	ossec-hids-server-[0-9]* ossec-hids-local-[0-9]*
 .elif defined(LOCAL_ONLY)
+SUB_LIST+=	PRECMD=ossechids_start_precmd
 PKGNAMESUFFIX=	-local
 CONFLICTS=	ossec-hids-client-[0-9]* ossec-hids-server-[0-9]*
 .else
+SUB_LIST+=	PRECMD=ossechids_start_precmd
 CONFLICTS=	ossec-hids-client-[0-9]* ossec-hids-local-[0-9]*
 .endif
 
