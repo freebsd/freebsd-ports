@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-MAGETAB
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,10 +22,11 @@ BUILD_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-MooseX-FollowPBP>=0.04:${PORTSDIR}/devel/p5-MooseX-FollowPBP \
 		p5-MooseX-Types>=0.10:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Params-Coerce>=0.14:${PORTSDIR}/devel/p5-Params-Coerce \
-		p5-Parse-RecDescent>=1.960:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Parse-RecDescent>=1.965.001:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Text-CSV_XS>=0.32:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
