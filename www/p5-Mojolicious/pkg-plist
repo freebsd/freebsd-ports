@@ -26,10 +26,9 @@
 %%SITE_PERL%%/Mojo/Home.pm
 %%SITE_PERL%%/Mojo/IOLoop.pm
 %%SITE_PERL%%/Mojo/IOLoop/Client.pm
-%%SITE_PERL%%/Mojo/IOLoop/Resolver.pm
+%%SITE_PERL%%/Mojo/IOLoop/Delay.pm
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
-%%SITE_PERL%%/Mojo/IOLoop/Trigger.pm
 %%SITE_PERL%%/Mojo/IOWatcher.pm
 %%SITE_PERL%%/Mojo/IOWatcher/EV.pm
 %%SITE_PERL%%/Mojo/JSON.pm
@@ -85,7 +84,6 @@
 %%SITE_PERL%%/Mojolicious/Guides/Routing.pod
 %%SITE_PERL%%/Mojolicious/Lite.pm
 %%SITE_PERL%%/Mojolicious/Plugin.pm
-%%SITE_PERL%%/Mojolicious/Plugin/CallbackCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Charset.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Config.pm
 %%SITE_PERL%%/Mojolicious/Plugin/DefaultHelpers.pm
