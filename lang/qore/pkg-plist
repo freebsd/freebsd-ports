@@ -74,3 +74,4 @@ include/qore/Qore.h
 include/qore/QoreEvents.h
 include/qore/QoreRWLock.h
 @dirrm include/qore
+@dirrmtry lib/pkgconfig
