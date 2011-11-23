@@ -1,0 +1,10 @@
+bin/oathtool
+include/liboath/oath.h
+lib/liboath.a
+lib/liboath.la
+lib/liboath.so
+lib/liboath.so.1
+lib/security/pam_oath.so
+libdata/pkgconfig/liboath.pc
+@dirrm include/liboath
+@dirrmtry lib/security

@@ -1,0 +1,14 @@
+The OATH Toolkit contains a shared library, command line tool
+and a PAM module that makes it possible to build one-time
+password authentication systems. Supported technologies include
+the event-based HOTP algorithm and the time-based TOTP algorithm.
+OATH is the Open AuTHentication organization which specify
+the algorithms.
+
+The components included in the package is:
+
+- liboath:  A shared and static C library for OATH handling.
+- oathtool: A command line tool for generating and validating OTPs.
+- pam_oath: A PAM module for pluggable login authentication for OATH.
+
+WWW:	http://www.nongnu.org/oath-toolkit/
