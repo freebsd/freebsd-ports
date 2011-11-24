@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucommon
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	commoncpp
@@ -17,6 +17,7 @@ COMMENT=	A very light-weight C++ design patternlibrary
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-D__BSD_VISIBLE
 LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 scrub-files.1 sockaddr.1 \
