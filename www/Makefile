@@ -2023,6 +2023,7 @@
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
+    SUBDIR += xpi-showip
     SUBDIR += xpi-speed-dial
     SUBDIR += xpi-splash
     SUBDIR += xpi-stumbleupon
