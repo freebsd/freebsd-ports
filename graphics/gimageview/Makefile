@@ -30,7 +30,8 @@ OPTIONS=	SPLASH "Show splash on startup" on \
 		LIBRSVG2 "Build with librsvg-2 support" on \
 		LIBEXIF "Build with libexif support" on \
 		MPLAYER "Build with Mplayer support" on \
-		LIBXINE "Build with Xine support" off
+		LIBXINE "Build with Xine support" off \
+		IMLIB "Build with imlib instead of gdk-pixbuf" off 
 
 USE_GNOME=	gtk20
 USE_XORG=	xinerama ice
@@ -51,10 +52,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mimlib}!=""
+.if defined(WITH_IMLIB)
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
-WITH_IMLIB=	yes
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
