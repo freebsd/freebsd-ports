@@ -36,7 +36,7 @@ USE_AUTOTOOLS=	automake autoconf libtool
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
-CONFLICTS=	tidy-20000804* tidy-devel-[0-9]*
+CONFLICTS=	tidy-devel-[0-9]*
 .endif
 
 DESCR=		${.CURDIR}/pkg-descr
