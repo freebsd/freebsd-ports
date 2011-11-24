@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Routes
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	www pear
 MASTER_SITES=	http://pear.horde.org/get/
 
