@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	upp
-PORTVERSION=	3211
-PORTREVISION=	1
+PORTVERSION=	4179
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
@@ -25,7 +26,6 @@ USE_GMAKE=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc
-LICENSE=	BSD
 MAKE_JOBS_SAFE=	yes
 
 MACRO_FLAGS=	-DflagGUI -DflagGCC -DflagSHARED -DflagPOSIX -DflagBSD -DflagFREEBSD
