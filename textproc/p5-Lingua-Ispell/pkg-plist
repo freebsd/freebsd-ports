@@ -1,5 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell/.packlist
 %%SITE_PERL%%/Lingua/Ispell.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrm %%SITE_PERL%%/Lingua
