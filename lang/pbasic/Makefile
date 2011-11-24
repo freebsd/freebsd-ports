@@ -22,6 +22,12 @@ MAKEFILE=	makefile
 MAN1=		pbasic.1
 PLIST_FILES=	bin/pbasic
 
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \
+		-e '/^CFLAGS/{s/=/+=/;s/-O//;}' \
+		${WRKSRC}/freebsd/makefile
+	${ECHO_CMD} '.PHONY: $$(SYSTEMS)' >>${WRKSRC}/makefile
+
 do-configure:
 	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
 			pdp11 cursor/cursor.dos cursor/cursor.ukc
