@@ -21,7 +21,7 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX \
-		tidy:${PORTSDIR}/www/tidy \
+		tidy:${PORTSDIR}/www/tidy-lib \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
 MAN1=		winefish.1
