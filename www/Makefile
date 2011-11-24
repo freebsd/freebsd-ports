@@ -2021,6 +2021,7 @@
     SUBDIR += xpi-savegenpage
     SUBDIR += xpi-scrapbook
     SUBDIR += xpi-searchstatus
+    SUBDIR += xpi-server_spy
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-showip
