@@ -8,12 +8,14 @@
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
 PORTREVISION=	6
-
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
+MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
+		http://www.egr.msu.edu/~mcdouga9/
 
 MAINTAINER=	mcdouga9@msu.edu
 COMMENT=	A GTK+ frontend for mkisofs and cdrecord
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
