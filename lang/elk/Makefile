@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	elk
-PORTVERSION=	3.99.7
-PORTREVISION=	4
+PORTVERSION=	3.99.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/elk/
 
@@ -39,7 +38,7 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -

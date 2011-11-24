@@ -94,87 +94,84 @@ lib/libelk.so.0
 %%DATADIR%%/xaw.scm
 %%DATADIR%%/xlib.scm
 %%DATADIR%%/xwidgets.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/c++/class.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/c++/constructor.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/drawing-area.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/list.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/main-window.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/menu-stuff.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/message-dialog.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/option-menu.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/popup-menu.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/pulldown-menu.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/radio-stuff.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/radio.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/scroll-bar.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/selection-box.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/motif/vcr.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/regexp/match.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/Y.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/acker.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/billiard.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/cc.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/cell.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/co.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/compile.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/cps.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/dynamic.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/fib.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/fix.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/flame.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/hanoi.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/kons.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/meissel.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/mondo.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/perm.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/prim.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/ramanujan.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/rungekutta.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/sqrt.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/unify.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/scheme/work.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/r4rstest.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/calc.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/copy.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/lock.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/ls.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/pipsiz.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/unix/timeout.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/accel.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/clickcount.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/dialog.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/grip.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/list.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/paned.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/panner.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/popup.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/porthole.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/pulldown.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/scrollbar.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/scrollbox.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/stripchart.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/text.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/tree.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaw/viewport.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/hello.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/lines.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/map-all.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/picture.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/poly.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/properties.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/track.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/useful.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/xlib/wm-delete.scm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/xlib
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/xaw
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/unix
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/scheme
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/regexp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/motif
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/c++
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/class.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/constructor.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/drawing-area.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/list.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/main-window.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/menu-stuff.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/message-dialog.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/option-menu.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/popup-menu.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/pulldown-menu.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/radio-stuff.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/radio.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/scroll-bar.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/selection-box.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif/vcr.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regexp/match.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/Y.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/acker.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/billiard.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/cc.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/cell.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/co.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/compile.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/cps.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/dynamic.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/fib.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/fix.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/flame.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/hanoi.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/kons.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/meissel.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/mondo.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/perm.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/prim.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/ramanujan.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/rungekutta.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/sqrt.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/unify.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scheme/work.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/calc.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/copy.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/lock.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/ls.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/pipsiz.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix/timeout.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/accel.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/clickcount.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/dialog.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/grip.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/list.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/paned.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/panner.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/popup.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/porthole.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/pulldown.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/scrollbar.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/scrollbox.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/stripchart.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/text.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/tree.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xaw/viewport.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/hello.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/lines.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/map-all.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/picture.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/poly.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/properties.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/track.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/useful.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/wm-delete.scm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xlib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xaw
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/unix
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scheme
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regexp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/motif
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/elk
 @dirrm include/elk/extensions
