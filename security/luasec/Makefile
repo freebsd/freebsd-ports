@@ -33,4 +33,11 @@ USE_OPENSSL=	yes
 USE_OPENSSL_PORT=yes
 .endif
 
+post-patch:	.SILENT
+	${REINPLACE_CMD} -Ee '/^CC/s/=/?=/' \
+		-e '/^LD/s/gcc/$$(CC)/' \
+		-e '/^(C|LD)FLAGS/s/=/+=/' \
+		-e '/^BSD/{s/-O[0-3]?//;}' \
+		${WRKSRC}/src/Makefile
+
 .include <bsd.port.mk>
