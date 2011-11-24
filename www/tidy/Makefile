@@ -5,15 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tidy
+PORTNAME=	tidy4
 PORTVERSION=	20000804
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
 EXTRACT_SUFX=	.tgz
-
-CONFLICTS=	tidy-devel-[0-9]* tidy-lib-[0-9]*
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
@@ -21,18 +19,21 @@ COMMENT=	Fixes and tidies up HTML files
 LICENSE=	BSD
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
-MAN1=		tidy.1
+MAN1=		tidy4.1
 ALL_TARGET=	tidy
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
 
+do-configure:
+	${REINPLACE_CMD} -e 's|tidy|tidy4|' ${WRKSRC}/man_page.txt
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tidy ${PREFIX}/bin/tidy
-	@${INSTALL_MAN}	${WRKSRC}/man_page.txt	${PREFIX}/man/man1/tidy.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/tidy ${PREFIX}/bin/tidy4
+	@${INSTALL_MAN}	${WRKSRC}/man_page.txt	${PREFIX}/man/man1/tidy4.1
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${PREFIX}/share/doc/tidy
+	@${MKDIR} ${DOCSDIR}
 .for docfile in ${DOCFILES}
-	@${INSTALL_MAN} ${WRKSRC}/${docfile} ${PREFIX}/share/doc/tidy
+	@${INSTALL_MAN} ${WRKSRC}/${docfile} ${DOCSDIR}/
 .endfor
 .endif
 
