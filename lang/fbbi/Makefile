@@ -20,6 +20,11 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \
+		-e '/^CFLAGS/{s/=/+=/;s/-g//;s/-O//;}' \
+		${WRKSRC}/Makefile
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/../bin/fbbi ${PREFIX}/bin
 
