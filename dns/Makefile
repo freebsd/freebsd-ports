@@ -127,6 +127,7 @@
     SUBDIR += py-adns
     SUBDIR += py-dns
     SUBDIR += py-dnspython
+    SUBDIR += py-idnkit2
     SUBDIR += py-namebench
     SUBDIR += py-twistedNames
     SUBDIR += radns
