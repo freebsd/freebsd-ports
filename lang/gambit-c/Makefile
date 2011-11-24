@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambit-c
-DISTVERSION=	v4_6_1
+DISTVERSION=	v4_6_2
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.6/source/
@@ -16,18 +16,26 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pmn@bakarika.net
 COMMENT=	Gambit programming system where the compiler generates portable C code
 
+LICENSE=	ASL
+
 MAN1=		gsi.1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS =	--enable-single-host --enable-gcc-opts
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --docdir=${PREFIX}/share/doc/gambit-c
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/gambit-c/ --includedir=${PREFIX}/include/gambit-c
-CONFIGURE_ARGS+=	--enable-interpreter-name=gsi-gambit  --enable-compiler-name=gsc-gambit
+CONFIGURE_ARGS =--enable-single-host --enable-gcc-opts
+CONFIGURE_ARGS+=--prefix=${PREFIX} --docdir=${PREFIX}/share/doc/gambit-c
+CONFIGURE_ARGS+=--libdir=${PREFIX}/lib/gambit-c/ --includedir=${PREFIX}/include/gambit-c
+CONFIGURE_ARGS+=--enable-interpreter-name=gsi-gambit  --enable-compiler-name=gsc-gambit
 
-INFO=	gambit-c
+INFO=		gambit-c
 
 MAKE_JOBS_SAFE=	yes
+
+USE_LDCONFIG=	${PREFIX}/lib/gambit-c
+
+PLIST_SUB+=	GSI_INC=include/gambit-c
+PLIST_SUB+=	GSI_DOC=share/doc/gambit-c
+PLIST_SUB+=	GSI_LIB=lib/gambit-c
 
 .include <bsd.port.pre.mk>
 
