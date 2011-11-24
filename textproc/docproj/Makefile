@@ -26,7 +26,7 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
 		scr2txt:${PORTSDIR}/textproc/scr2txt \
-		tidy:${PORTSDIR}/www/tidy \
+		tidy:${PORTSDIR}/www/tidy-lib \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		peps:${PORTSDIR}/graphics/peps \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
