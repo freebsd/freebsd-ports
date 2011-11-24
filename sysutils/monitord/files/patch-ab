@@ -1,5 +1,16 @@
---- monitord.c.orig	Fri Jan 17 03:39:44 2003
-+++ monitord.c	Thu Sep 23 17:23:02 2004
+--- monitord.c.orig	2003-01-16 21:39:44.000000000 +0000
++++ monitord.c	2011-11-24 23:12:13.468148722 +0000
+@@ -85,8 +85,8 @@
+ 			setsid ();
+ 			break;
+ 		}
+-		default: 
+-		exit(1);
++		default: // The parent exits
++		exit(0);
+ 	}
+ 
+ 	/* Read the configuration file, saving it in *file[] and return the number of lines
 @@ -454,13 +454,13 @@
  
  	struct timeval *tp;

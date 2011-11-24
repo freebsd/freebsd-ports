@@ -7,7 +7,7 @@
 
 PORTNAME=	monitord
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/ CENKES
 
