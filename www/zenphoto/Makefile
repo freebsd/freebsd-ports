@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.1.5
+PORTVERSION=	1.4.1.6
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.zenphoto.org/files/
@@ -28,8 +28,8 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 post-extract:
 	@${RM} ${WRKSRC}/doc_files/License.txt ${WRKSRC}/doc_files/README.html ${WRKSRC}/zp-core/Zenphoto.package
-.for i in albums cache cache_html/rss plugins/flag_thumbnail plugins/flvplayer plugins/gd_fonts plugins/imagick_fonts \
-	plugins/watermarks uploaded zp-core/zp-extensions/tiny_mce/plugins/ajaxfilemanager/jscripts/edit_area/plugins zp-data
+.for i in albums cache cache_html/rss plugins/flag_thumbnail plugins/flvplayer \
+	plugins/gd_fonts plugins/imagick_fonts plugins/watermarks uploaded zp-data
 	@${TOUCH} ${WRKSRC}/${i}/.keepme
 .endfor
 
