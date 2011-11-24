@@ -58,6 +58,7 @@ include/syslog-ng/persist-state.h
 include/syslog-ng/plugin.h
 include/syslog-ng/pragma-parser.h
 include/syslog-ng/rewrite-expr-parser.h
+include/syslog-ng/scratch-buffers.h
 include/syslog-ng/serialize.h
 include/syslog-ng/sgroup.h
 include/syslog-ng/stats.h
@@ -74,7 +75,7 @@ include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.3.1.so
+lib/libsyslog-ng-3.3.3.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
