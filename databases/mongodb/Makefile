@@ -43,11 +43,6 @@ PLIST_SUB+=	DEVEL=""
 PLIST_SUB+=	DEVEL="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|elif "freebsd7" == os.sys.platform|elif os.sys.platform.startswith("freebsd")|' \
-			  -e '/not GetOption("nostrip")/ s,linux,linux or freebsd,g' \
-		${WRKSRC}/SConstruct
-
 post-install:
 	@if [ ! -f ${PREFIX}/etc/mongodb.conf ]; then \
 		${TOUCH} ${PREFIX}/etc/mongodb.conf ; \
