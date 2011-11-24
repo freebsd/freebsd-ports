@@ -39,7 +39,7 @@ post-patch:
 	    ${WRKSRC}/../prg/chk_all.sd7
 
 do-configure:
-	(cd ${WRKSRC} && ${GMAKE} depend)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} depend)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/hi ${PREFIX}/bin
