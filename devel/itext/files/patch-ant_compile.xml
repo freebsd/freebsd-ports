@@ -1,6 +1,16 @@
---- ant/compile.xml.orig	2008-03-19 18:26:17.000000000 +0100
-+++ ant/compile.xml	2008-04-08 08:19:52.000000000 +0200
-@@ -85,6 +85,7 @@
+--- ant/compile.xml.orig	2009-06-08 02:50:15.000000000 +0200
++++ ant/compile.xml	2011-11-24 20:55:01.000000000 +0100
+@@ -92,11 +92,17 @@
+                 <include name="**/*.html"/>
+             </fileset>
+         </copy>
++        <copy todir="${itext.bin}/com/lowagie/text/error_messages/" overwrite="yes">
++            <fileset dir="${itext.src}/core/com/lowagie/text/error_messages/">
++                <include name="**/*.lng"/>
++            </fileset>
++        </copy>
+         <copy todir="${itext.bin}/com/lowagie/text/" overwrite="yes">
+             <fileset dir="${itext.src}/core/com/lowagie/text/">
                  <include name="**/*.txt"/>
              </fileset>
          </copy>
