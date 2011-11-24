@@ -3977,6 +3977,7 @@ fusefs-gphotofs                 ports/graphics/fusefs-gphotofs
 fusefs-gstfs                    ports/sysutils/fusefs-gstfs
 fusefs-gunzip                   ports/sysutils/fusefs-gunzip
 fusefs-httpfs                   ports/sysutils/fusefs-httpfs
+fusefs-ifuse                    ports/sysutils/fusefs-ifuse
 fusefs-kmod                     ports/sysutils/fusefs-kmod
 fusefs-libs                     ports/sysutils/fusefs-libs
 fusefs-mhddfs                   ports/sysutils/fusefs-mhddfs
@@ -10174,6 +10175,7 @@ o2sms                           ports/comms/o2sms
 o3read                          ports/converters/o3read
 oaf                             ports/devel/oaf
 oak                             ports/sysutils/oak
+oath-toolkit                    ports/security/oath-toolkit
 obby                            ports/devel/obby
 obconf                          ports/x11-wm/obconf
 obexapp                         ports/comms/obexapp
@@ -10680,6 +10682,7 @@ p5-Algorithm-NaiveBayes         ports/devel/p5-Algorithm-NaiveBayes
 p5-Algorithm-Networksort        ports/devel/p5-Algorithm-Networksort
 p5-Algorithm-Numerical-Shuffle  ports/devel/p5-Algorithm-Numerical-Shuffle
 p5-Algorithm-Pair-Best          ports/games/p5-Algorithm-Pair-Best
+p5-Algorithm-Pair-Best2         ports/games/p5-Algorithm-Pair-Best2
 p5-Algorithm-Pair-Swiss         ports/games/p5-Algorithm-Pair-Swiss
 p5-Algorithm-Permute            ports/devel/p5-Algorithm-Permute
 p5-Algorithm-RabinKarp          ports/textproc/p5-Algorithm-RabinKarp
@@ -15062,6 +15065,7 @@ p5-algorithm-naivebayes         ports/devel/p5-Algorithm-NaiveBayes
 p5-algorithm-networksort        ports/devel/p5-Algorithm-Networksort
 p5-algorithm-numerical-shuffle  ports/devel/p5-Algorithm-Numerical-Shuffle
 p5-algorithm-pair-best          ports/games/p5-Algorithm-Pair-Best
+p5-algorithm-pair-best2         ports/games/p5-Algorithm-Pair-Best2
 p5-algorithm-pair-swiss         ports/games/p5-Algorithm-Pair-Swiss
 p5-algorithm-permute            ports/devel/p5-Algorithm-Permute
 p5-algorithm-rabinkarp          ports/textproc/p5-Algorithm-RabinKarp
@@ -22145,6 +22149,7 @@ py-openssl                      ports/security/py-openssl
 py-openssl-proxy                ports/www/py-openssl-proxy
 py-optik                        ports/devel/py-optik
 py-orbit                        ports/devel/py-orbit
+py-ordereddict                  ports/devel/py-ordereddict
 py-osd                          ports/misc/py-osd
 py-otr                          ports/security/py-otr
 py-paida                        ports/science/py-paida
@@ -27571,6 +27576,7 @@ xpi-formfox                     ports/www/xpi-formfox
 xpi-foxmarks                    ports/www/xpi-foxmarks
 xpi-foxyproxy                   ports/www/xpi-foxyproxy
 xpi-gbrain                      ports/www/xpi-gbrain
+xpi-gdata_provider              ports/www/xpi-gdata_provider
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-google_shortcuts            ports/www/xpi-google_shortcuts
