@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programming text editor
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	NLS	"Native language support"	on \
 		GTK2	"Build with GTK2 support"	off \
 		QT4	"Build with QT4 support"	off \
 		PCRE	"Build with PCRE support"	on
-
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
 
 WANT_GNOME=	yes
 USE_ICONV=	yes
@@ -31,7 +31,7 @@ MAN1=		mp-5.1
 
 DATADIR=	${PREFIX}/share/mp-5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GTK2) && defined(WITH_QT4)
 IGNORE=	GTK2 and QT4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
@@ -56,7 +56,6 @@ USE_QT_VER+=	4
 QT_COMPONENTS=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	CPP="${CXX}" CCLINK="${CXX}"
-.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .else
 CONFIGURE_ARGS+=	--without-qt4
 .endif
@@ -73,7 +72,9 @@ post-patch:
 		 s|-lX11||g' ${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g' ${WRKSRC}/mpv_curses.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/mpdm/config.sh
-	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/mpsl/mpsl_d.c
+.for i in mpdm/mpdm.h mpdm/mpdm_s.c mpsl/mpsl_d.c
+	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/${i}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp-5 ${PREFIX}/bin
@@ -97,4 +98,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
