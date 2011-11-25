@@ -36,10 +36,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	ACCEPT_FILTER "Enable support for accf_http(9)" Off \
-		COMPRESSION "Allow compression of buffered content" Off \
+		COMPRESSION "Support compression of buffered content" Off \
 		DEBUG "Build with debugging symbols" Off \
-		EDITOR "Allow use of the web-based action editor" On \
-		FORCE "Allow blocks to be bypassed" On \
+		EDITOR "Support use of the web-based action editor" On \
+		FORCE "Support bypassing of blocks" On \
 		PRIVOXY_TOOLS "Install Privoxy-Log-Parser, uagen, etc." Off \
 		TOGGLE "Support for remote toggling" On
 
