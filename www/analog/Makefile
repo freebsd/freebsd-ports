@@ -11,60 +11,61 @@ PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
-		http://analog.planetmirror.com/ \
 		http://analog.gsp.com/ \
-		http://isr.ath.cx/analog/ \
-		http://analog.mirrors.ecodigit.com.br/ \
-		http://analog.org/loganalysis/ \
-		http://analog.techsell.ru/ \
+		http://fossies.org/unix/www/ \
 		ftp://ftp.polytechnic.edu.na/pub/analog/ \
-		http://analog.netsoc.ucd.ie/ \
 		http://analog.tzone.it/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extremely fast program for analysing WWW logfiles
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
-LIMGDIR?=	www/data/images
-IMGDIR=		${PREFIX}/${LIMGDIR}
-PLIST_SUB=	IMGDIR=${LIMGDIR}
+BUILD_WRKSRC=	${WRKSRC}/src
+
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_SAFE=	yes
+
+SUB_FILES=	pkg-message
 
 MAN1=		analog.1
-ALL_TARGET=	analog
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
+
+LIMGDIR?=	www/data/images
+IMGDIR=		${PREFIX}/${LIMGDIR}
+PLIST_SUB=	IMGDIR="${LIMGDIR}"
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/share/analog/lang
-	${MKDIR} ${IMGDIR}
-	${INSTALL_DATA} ${WRKSRC}/images/* ${IMGDIR}
-	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/share/analog/lang
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
-.if !exists(${PREFIX}/etc/analog.cfg)
-	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc
-.endif
+	${INSTALL_MAN} ${WRKSRC}/analog.man ${MANPREFIX}/man/man1/analog.1
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg-dist
+	@${MKDIR} ${DATADIR}/lang
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${DATADIR}/lang
+	@${MKDIR} ${IMGDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/* ${IMGDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${EXAMPLESDIR}
-	${MKDIR} ${EXAMPLESDIR}/css
+	@${MKDIR} ${EXAMPLESDIR}/css
 	${INSTALL_DATA} ${WRKSRC}/examples/css/Readme.txt ${EXAMPLESDIR}/css
 	${INSTALL_DATA} ${WRKSRC}/examples/css/default.css ${EXAMPLESDIR}/css
-	${MKDIR} ${EXAMPLESDIR}/css/jreeves
+	@${MKDIR} ${EXAMPLESDIR}/css/jreeves
 	${INSTALL_DATA} ${WRKSRC}/examples/css/jreeves/* ${EXAMPLESDIR}/css/jreeves
 .endif
-	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+.if !exists(${PREFIX}/etc/analog.cfg)
+	@cd ${PREFIX}/etc && ${CP} -f analog.cfg-dist analog.cfg
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
