@@ -8,9 +8,7 @@
 PORTNAME=	bchunk
 PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://he.fi/bchunk/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/disk-management
+MASTER_SITES=	http://he.fi/bchunk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts .bin/.cue files to .iso/audio
