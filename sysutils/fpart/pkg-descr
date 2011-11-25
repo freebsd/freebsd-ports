@@ -1,0 +1,8 @@
+Fpart is a tool that helps you sort files and divide them into bags
+("partitions"). It is developped in C and available under the BSD license.
+
+It splits a list of directories and files into a certain number of partitions,
+trying to produce partitions with the same size and number of files.  It can
+also produce partitions with a given number of files or a limited size.
+
+WWW: http://contribs.martymac.org
