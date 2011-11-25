@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/terminatorx/Makefile,v 1.6 2007/08/04 03:51:28 marcus Exp $
 
 PORTNAME=	terminatorx
-PORTVERSION=	3.83
+PORTVERSION=	3.84
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -14,19 +14,20 @@ DISTNAME=	terminatorX-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		lrdf.2:${PORTSDIR}/textproc/liblrdf \
-		jack.0:${PORTSDIR}/audio/jack
+		lrdf.2:${PORTSDIR}/textproc/liblrdf
 
-OPTIONS=	MPG123 "mpg123 support" on \
+OPTIONS=	ALSA "ALSA support" off \
+		JACK "JACK support" on \
+		MPG123 "mpg123 support" on \
 		SOX "sox (.au) support" on \
 		VORBIS "OGG Vorbis support" on \
 		MAD "MPEG Audio Decoder (libmad) support" on
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xi xxf86dga ice sm
@@ -34,10 +35,10 @@ USE_GNOME=	gnomehack gnomehier gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-CONFIGURE_ARGS=	--disable-alsa \
-		--disable-alsamidi \
+CONFIGURE_ARGS=	--disable-alsamidi \
 		--disable-scheduler
 INSTALLS_OMF=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		terminatorX.1
 
@@ -45,6 +46,18 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--disable-alsa
+.endif
+
+.if !defined(WITHOUT_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
 
 .if !defined(WITHOUT_MPG123)
 BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
