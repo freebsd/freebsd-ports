@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcwm
-PORTVERSION=	20110818
+PORTVERSION=	20111124
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://hack.org/mc/hacks/mcwm/
 
@@ -27,8 +27,6 @@ USE_BZIP2=	yes
 MAN1=		mcwm.1
 PLIST_FILES=	bin/mcwm
 PORTDOCS=	LICENSE README NEWS
-
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 pre-everything::
 		@${ECHO_MSG} "You can build mcwm with your own config.h using the MCWM_CONF knob:"
