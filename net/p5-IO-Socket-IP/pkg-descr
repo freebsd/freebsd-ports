@@ -1,0 +1,11 @@
+IO::Socket::IP provides a protocol-independent way to use IPv4 and IPv6 sockets,
+as a drop-in replacement for IO::Socket::INET. Most constructor arguments and
+methods are provided in a backward-compatible way. For a list of known
+differences, see the IO::Socket::INET INCOMPATIBILITES section below.
+
+It uses the getaddrinfo(3) function to convert hostnames and service names or
+port numbers into sets of possible addresses to connect to or listen on. This
+allows it to work for IPv6 where the system supports it, while still falling
+back to IPv4-only on systems which don't.
+
+WWW: http://search.cpan.org/dist/IO-Socket-IP/
