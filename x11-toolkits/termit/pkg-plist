@@ -8,6 +8,7 @@ share/applications/termit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/rc.lua.example
 share/locale/fr/LC_MESSAGES/termit.mo
 share/locale/hu/LC_MESSAGES/termit.mo
+share/locale/ja/LC_MESSAGES/termit.mo
 share/locale/ko/LC_MESSAGES/termit.mo
 share/locale/ru/LC_MESSAGES/termit.mo
 share/locale/zh_TW/LC_MESSAGES/termit.mo
