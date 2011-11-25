@@ -852,6 +852,7 @@
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
+    SUBDIR += libk8055
     SUBDIR += liblas
     SUBDIR += libleaftag
     SUBDIR += liblogging
