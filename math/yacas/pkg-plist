@@ -1,28 +1,5 @@
 bin/yacas
 bin/ytxt2tex
-%%DATADIR%%/array.rep/code.ys
-%%DATADIR%%/array.rep/code.ys.def
-%%DATADIR%%/assoc.rep/code.ys
-%%DATADIR%%/assoc.rep/code.ys.def
-%%DATADIR%%/base.rep/math.ys
-%%DATADIR%%/base.rep/math.ys.def
-%%DATADIR%%/c_form.rep/code.ys
-%%DATADIR%%/c_form.rep/code.ys.def
-%%DATADIR%%/complex.rep/code.ys
-%%DATADIR%%/complex.rep/code.ys.def
-%%DATADIR%%/complex.rep/om.ys
-%%DATADIR%%/constants.rep/code.ys
-%%DATADIR%%/constants.rep/code.ys.def
-%%DATADIR%%/constants.rep/om.ys
-%%DATADIR%%/controlflow.rep/code.ys
-%%DATADIR%%/controlflow.rep/code.ys.def
-%%DATADIR%%/corefunctions.ys
-%%DATADIR%%/debug.rep/code.ys
-%%DATADIR%%/debug.rep/code.ys.def
-%%DATADIR%%/deffunc.rep/code.ys
-%%DATADIR%%/deffunc.rep/code.ys.def
-%%DATADIR%%/deriv.rep/code.ys
-%%DATADIR%%/deriv.rep/code.ys.def
 %%PORTDOCS%%%%DOCSDIR%%/Algochapter1.html
 %%PORTDOCS%%%%DOCSDIR%%/Algochapter2.html
 %%PORTDOCS%%%%DOCSDIR%%/Algochapter3.html
@@ -112,7 +89,29 @@ bin/ytxt2tex
 %%PORTDOCS%%%%DOCSDIR%%/refprogchapters.html
 %%PORTDOCS%%%%DOCSDIR%%/refprogmanual.html
 %%PORTDOCS%%%%DOCSDIR%%/yacaslogo.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/array.rep/code.ys
+%%DATADIR%%/array.rep/code.ys.def
+%%DATADIR%%/assoc.rep/code.ys
+%%DATADIR%%/assoc.rep/code.ys.def
+%%DATADIR%%/base.rep/math.ys
+%%DATADIR%%/base.rep/math.ys.def
+%%DATADIR%%/c_form.rep/code.ys
+%%DATADIR%%/c_form.rep/code.ys.def
+%%DATADIR%%/complex.rep/code.ys
+%%DATADIR%%/complex.rep/code.ys.def
+%%DATADIR%%/complex.rep/om.ys
+%%DATADIR%%/constants.rep/code.ys
+%%DATADIR%%/constants.rep/code.ys.def
+%%DATADIR%%/constants.rep/om.ys
+%%DATADIR%%/controlflow.rep/code.ys
+%%DATADIR%%/controlflow.rep/code.ys.def
+%%DATADIR%%/corefunctions.ys
+%%DATADIR%%/debug.rep/code.ys
+%%DATADIR%%/debug.rep/code.ys.def
+%%DATADIR%%/deffunc.rep/code.ys
+%%DATADIR%%/deffunc.rep/code.ys.def
+%%DATADIR%%/deriv.rep/code.ys
+%%DATADIR%%/deriv.rep/code.ys.def
 %%DATADIR%%/documentation/hints
 %%DATADIR%%/documentation/yacaslogo.gif
 %%DATADIR%%/example.rep/code.ys
@@ -179,6 +178,7 @@ bin/ytxt2tex
 %%DATADIR%%/include/lispuserfunc.h
 %%DATADIR%%/include/log.h
 %%DATADIR%%/include/lzoconf.h
+%%DATADIR%%/include/lzodefs.h
 %%DATADIR%%/include/mathcommands.h
 %%DATADIR%%/include/mathenvironment.h
 %%DATADIR%%/include/mathuserfunc.h
@@ -359,61 +359,62 @@ bin/ytxt2tex
 %%DATADIR%%/univar.rep/sturm.ys
 %%DATADIR%%/univar.rep/sturm.ys.def
 %%DATADIR%%/yacasinit.ys
-@dirrm %%DATADIR%%/array.rep
-@dirrm %%DATADIR%%/assoc.rep
-@dirrm %%DATADIR%%/base.rep
-@dirrm %%DATADIR%%/c_form.rep
-@dirrm %%DATADIR%%/complex.rep
-@dirrm %%DATADIR%%/constants.rep
-@dirrm %%DATADIR%%/controlflow.rep
-@dirrm %%DATADIR%%/debug.rep
-@dirrm %%DATADIR%%/deffunc.rep
-@dirrm %%DATADIR%%/deriv.rep
-@dirrm %%DATADIR%%/documentation
-@dirrm %%DATADIR%%/example.rep
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/factors.rep
-@dirrm %%DATADIR%%/functional.rep
-@dirrm %%DATADIR%%/html.rep
+@dirrm %%DATADIR%%/univar.rep
+@dirrm %%DATADIR%%/trigsimp.rep
+@dirrm %%DATADIR%%/transforms.rep
+@dirrm %%DATADIR%%/texform.rep
+@dirrm %%DATADIR%%/testers.rep
+@dirrm %%DATADIR%%/tensor.rep
+@dirrm %%DATADIR%%/sums.rep
+@dirrm %%DATADIR%%/substitute.rep
+@dirrm %%DATADIR%%/stubs.rep
+@dirrm %%DATADIR%%/stdfuncs.rep
+@dirrm %%DATADIR%%/stats.rep
+@dirrm %%DATADIR%%/statistics.rep
+@dirrm %%DATADIR%%/specfunc.rep
+@dirrm %%DATADIR%%/solve.rep
+@dirrm %%DATADIR%%/simplify.rep
+@dirrm %%DATADIR%%/random.rep
+@dirrm %%DATADIR%%/radsimp.rep
+@dirrm %%DATADIR%%/rabinmiller.rep
+@dirrm %%DATADIR%%/pslq.rep
+@dirrm %%DATADIR%%/probability.rep
+@dirrm %%DATADIR%%/predicates.rep
+@dirrm %%DATADIR%%/plots.rep
+@dirrm %%DATADIR%%/patterns.rep
+@dirrm %%DATADIR%%/padic.rep
+@dirrm %%DATADIR%%/orthopoly.rep
+@dirrm %%DATADIR%%/openmath.rep
+@dirrm %%DATADIR%%/odesolver.rep
+@dirrm %%DATADIR%%/numbers.rep
+@dirrm %%DATADIR%%/newly.rep
+@dirrm %%DATADIR%%/multivar.rep
+@dirrm %%DATADIR%%/manmake
+@dirrm %%DATADIR%%/logic.rep
+@dirrm %%DATADIR%%/localrules.rep
+@dirrm %%DATADIR%%/lists.rep
+@dirrm %%DATADIR%%/linalg.rep
+@dirrm %%DATADIR%%/limit.rep
+@dirrm %%DATADIR%%/io.rep
+@dirrm %%DATADIR%%/integrate.rep
 @dirrm %%DATADIR%%/include/plat/linux32
 @dirrm %%DATADIR%%/include/plat
 @dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/integrate.rep
-@dirrm %%DATADIR%%/io.rep
-@dirrm %%DATADIR%%/limit.rep
-@dirrm %%DATADIR%%/linalg.rep
-@dirrm %%DATADIR%%/lists.rep
-@dirrm %%DATADIR%%/localrules.rep
-@dirrm %%DATADIR%%/logic.rep
-@dirrm %%DATADIR%%/manmake
-@dirrm %%DATADIR%%/multivar.rep
-@dirrm %%DATADIR%%/newly.rep
-@dirrm %%DATADIR%%/numbers.rep
-@dirrm %%DATADIR%%/odesolver.rep
-@dirrm %%DATADIR%%/openmath.rep
-@dirrm %%DATADIR%%/orthopoly.rep
-@dirrm %%DATADIR%%/padic.rep
-@dirrm %%DATADIR%%/patterns.rep
-@dirrm %%DATADIR%%/plots.rep
-@dirrm %%DATADIR%%/predicates.rep
-@dirrm %%DATADIR%%/probability.rep
-@dirrm %%DATADIR%%/pslq.rep
-@dirrm %%DATADIR%%/rabinmiller.rep
-@dirrm %%DATADIR%%/radsimp.rep
-@dirrm %%DATADIR%%/random.rep
-@dirrm %%DATADIR%%/simplify.rep
-@dirrm %%DATADIR%%/solve.rep
-@dirrm %%DATADIR%%/specfunc.rep
-@dirrm %%DATADIR%%/statistics.rep
-@dirrm %%DATADIR%%/stats.rep
-@dirrm %%DATADIR%%/stdfuncs.rep
-@dirrm %%DATADIR%%/stubs.rep
-@dirrm %%DATADIR%%/substitute.rep
-@dirrm %%DATADIR%%/sums.rep
-@dirrm %%DATADIR%%/tensor.rep
-@dirrm %%DATADIR%%/testers.rep
-@dirrm %%DATADIR%%/texform.rep
-@dirrm %%DATADIR%%/transforms.rep
-@dirrm %%DATADIR%%/trigsimp.rep
-@dirrm %%DATADIR%%/univar.rep
+@dirrm %%DATADIR%%/html.rep
+@dirrm %%DATADIR%%/functional.rep
+@dirrm %%DATADIR%%/factors.rep
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/example.rep
+@dirrm %%DATADIR%%/documentation
+@dirrm %%DATADIR%%/deriv.rep
+@dirrm %%DATADIR%%/deffunc.rep
+@dirrm %%DATADIR%%/debug.rep
+@dirrm %%DATADIR%%/controlflow.rep
+@dirrm %%DATADIR%%/constants.rep
+@dirrm %%DATADIR%%/complex.rep
+@dirrm %%DATADIR%%/c_form.rep
+@dirrm %%DATADIR%%/base.rep
+@dirrm %%DATADIR%%/assoc.rep
+@dirrm %%DATADIR%%/array.rep
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
