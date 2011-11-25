@@ -132,6 +132,7 @@
     SUBDIR += php4-bz2
     SUBDIR += php4-zlib
     SUBDIR += php5-bz2
+    SUBDIR += php5-phar
     SUBDIR += php5-zip
     SUBDIR += php5-zlib
     SUBDIR += php52-bz2
