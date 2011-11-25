@@ -13,7 +13,7 @@ MASTER_SITES=	http://code.call-cc.org/releases/${PORTVERSION}/
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	A Scheme-to-C compiler
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
@@ -37,6 +37,8 @@ MAKE_ARGS+=	HACKED_APPLY=
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} '/^%.so:/s|$$| lib$$(PROGRAM_PREFIX)chicken$$(PROGRAM_SUFFIX)$$(SO)|' \
+		${WRKSRC}/rules.make
 	@${REINPLACE_CMD} \
 		's|^DOCDIR = .*$$|DOCDIR = ${DOCSDIR}|' \
 		${WRKSRC}/defaults.make
