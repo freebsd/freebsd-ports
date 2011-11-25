@@ -8,13 +8,17 @@
 PORTNAME=	tcpxd
 PORTVERSION=	1.4
 CATEGORIES=	net net-mgmt
-MASTER_SITES=	http://quozl.us.netrek.org/tcpxd/ \
-		http://fresh.t-systems-sfr.com/unix/src/privat2/
+MASTER_SITES=	http://fossies.org/unix/privat/ \
+		http://www.sourcefiles.org/Networking/Tools/Proxy/ \
+		http://quozl.us.netrek.org/tcpxd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP relay
 
-HAS_CONFIGURE=	yes
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/tcpxd etc/tcpxd.conf
 
