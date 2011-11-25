@@ -7,18 +7,20 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.2.2
-PORTREVISION=	8
+PORTVERSION=	1.3.0
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
-USE_AUTOTOOLS=	libtool
-USE_PERL5_BUILD=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
