@@ -902,6 +902,7 @@
     SUBDIR += qoauth
     SUBDIR += qt4-network
     SUBDIR += quagga
+    SUBDIR += quagga-re
     SUBDIR += queso
     SUBDIR += quoted
     SUBDIR += rabbitmq

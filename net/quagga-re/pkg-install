@@ -1,0 +1,75 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+if [ -z "${SYSCONF_DIR}" ]; then
+    SYSCONF_DIR=${PKG_PREFIX}/etc/quagga
+fi
+
+if [ -z "${LOCALSTATE_DIR}" ]; then
+    LOCALSTATE_DIR=/var/run/quagga
+fi
+
+if [ -z "${ENABLE_USER}" ]; then
+    ENABLE_USER=quagga
+fi
+
+if [ -z "${ENABLE_GROUP}" ]; then
+    ENABLE_GROUP=quagga
+fi
+
+case $2 in
+    POST-INSTALL)
+	UID=101
+	GID=${UID}
+	if pw group show "${ENABLE_GROUP}" 2>/dev/null; then
+	    echo "You already have a group \"${ENABLE_GROUP}\", so I will use it."
+	else
+	    if pw groupadd ${ENABLE_GROUP} -g ${GID}; then
+		echo "Added group \"${ENABLE_GROUP}\"."
+	    else
+		echo "Adding group \"${ENABLE_GROUP}\" failed."
+		exit 1
+	    fi
+	fi
+	
+	if pw user show "${ENABLE_USER}" 2>/dev/null; then
+		echo "You already have a user \"${ENABLE_USER}\", so I will use it."
+		if pw usermod ${ENABLE_USER} -d ${SYSCONF_DIR}
+		then
+			echo "Changed home directory of \"${ENABLE_USER}\" to \"${SYSCONF_DIR}\""
+		else
+			echo "Changing home directory of \"${ENABLE_USER}\" to \"${SYSCONF_DIR}\" failed..."
+			exit 1
+		fi
+	else
+		if pw useradd ${ENABLE_USER} -u ${UID} -g ${ENABLE_GROUP} -h - \
+			-d ${SYSCONF_DIR} -s /sbin/nologin -c "Quagga Daemon"
+		then
+			echo "Added user \"${ENABLE_USER}\"."
+		else
+			echo "Adding user \"${ENABLE_USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	mkdir ${LOCALSTATE_DIR}
+	if [ ! -d ${LOCALSTATE_DIR} ]; then
+	    echo "Creating \"${LOCALSTATE_DIR}\" failed."
+	    exit 1
+	fi
+	
+	chown -R ${ENABLE_USER}:${ENABLE_GROUP} ${LOCALSTATE_DIR}
+
+	if [ ! -d ${SYSCONF_DIR} ]; then
+	    mkdir -p ${SYSCONF_DIR}
+	fi
+	
+	if [ ! -d ${SYSCONF_DIR} ]; then
+	    echo "Creating \"${SYSCONF_DIR}\" failed."
+	    exit 1
+	fi
+
+	chown -R ${ENABLE_USER}:${ENABLE_GROUP} ${SYSCONF_DIR}
+	;;
+esac
