@@ -239,6 +239,7 @@
     SUBDIR += fonteditfs
     SUBDIR += foremost
     SUBDIR += fortunelock
+    SUBDIR += fpart
     SUBDIR += fpc-syslog
     SUBDIR += fpc-users
     SUBDIR += fpc-utmp
