@@ -1,0 +1,7 @@
+%%SITE_PERL%%/IO/Socket/IP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/IP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO/Socket
+@dirrmtry %%SITE_PERL%%/IO

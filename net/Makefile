@@ -506,6 +506,7 @@
     SUBDIR += p5-Growl-GNTP
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-INET6
+    SUBDIR += p5-IO-Socket-IP
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-IO-Socket-Multicast6
     SUBDIR += p5-IP-Anonymous
