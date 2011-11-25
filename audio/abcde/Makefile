@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	abcde
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.2_1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
@@ -23,7 +25,7 @@ RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 NO_BUILD=	yes
 MAN1=		abcde.1 cddb-tool.1
 
-PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf
+PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf.sample
 
 OPTIONS=	CDDA2WAV "support cdda2wav to rip CD" Off \
 		DAGRAB	"support dagrab to rip IDE CD" Off \
@@ -35,8 +37,6 @@ OPTIONS=	CDDA2WAV "support cdda2wav to rip CD" Off \
 		NORMALIZE "enable normalize support" Off \
 		REPLAYGAIN "support (vorbis|mp3)gain" Off \
 		SPEEX	"enable Speex support" Off
-
-LICENSE=	GPLv2
 
 .include <bsd.port.options.mk>
 
@@ -91,13 +91,13 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cddb-tool ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/etc/abcde.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/abcde.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cddb-tool.1 ${PREFIX}/man/man1
 
 post-install:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please copy ${PREFIX}/etc/abcde.conf to ~/.abcde.conf"
+	@${ECHO_MSG} "Please copy ${PREFIX}/etc/abcde.conf.sample to ~/.abcde.conf"
 	@${ECHO_MSG} "and edit as necessary. Sane defaults have been set."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "NOTE: If you have been using ${PORTNAME}-2.1.4 or older,"
