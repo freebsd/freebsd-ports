@@ -19,6 +19,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
 
+LICENCE=	MIT
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -32,9 +34,10 @@ PATCHREV=	.2
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xloadimage.1 uufilter.1
 MLINKS=		xloadimage.1 xsetbg.1 \
@@ -46,10 +49,10 @@ post-patch:
 		${WRKSRC}/png.c
 	@${REINPLACE_CMD} -e 's|TIFFHeader|TIFFHeaderClassic|g' \
 		${WRKSRC}/tiff.c
-	@cd ${WRKSRC}; ${MV} xloadimage.man xloadimage.man.old; \
-		${SED} -e s:/etc/X11/Xloadimage:${PREFIX}/etc/xloadimagerc: \
-		       -e s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc: \
-		< xloadimage.man.old > xloadimage.man
+	@${REINPLACE_CMD} -e \
+		's:/etc/X11/Xloadimage:${PREFIX}/etc/xloadimagerc: ; \
+		 s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc:' \
+		${WRKSRC}/xloadimage.man
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xloadimage ${PREFIX}/bin
@@ -57,13 +60,11 @@ do-install:
 		${LN} -sf xloadimage xsetbg && \
 		${LN} -sf xloadimage xview
 	${INSTALL_PROGRAM} ${WRKSRC}/uufilter ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${PREFIX}/man/man1/xloadimage.1
-	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${PREFIX}/man/man1/uufilter.1
-	${MKDIR} ${PREFIX}/share/examples/xloadimage
-	${INSTALL_DATA} ${WRKSRC}/xloadimagerc \
-		${PREFIX}/share/examples/xloadimage/xloadimagerc
-
-post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${MANPREFIX}/man/man1/xloadimage.1
+	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${MANPREFIX}/man/man1/uufilter.1
+	${INSTALL_DATA} ${WRKSRC}/xloadimagerc ${PREFIX}/etc/xloadimagerc.sample
+.if !exists(${PREFIX}/etc/xloadimagerc)
+	@cd ${PREFIX}/etc && ${CP} -f xloadimagerc.sample xloadimagerc
+.endif
 
 .include <bsd.port.mk>
