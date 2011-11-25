@@ -10,7 +10,7 @@ PORTNAME=	orsa
 PORTVERSION=	0.7.0
 PORTREVISION=	21
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:U}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orbit Reconstruction, Simulation and Analysis
