@@ -1,16 +1,10 @@
-XMonad is a tiling window manager written in Haskell for X.
+xmonad is a tiling window manager for X. Windows are arranged
+automatically to tile the screen without gaps or overlap, maximising
+screen use. All features of the window manager are accessible from the
+keyboard: a mouse is strictly optional. xmonad is written and extensible
+in Haskell. Custom layout algorithms, and other extensions, may be
+written by the user in config files. Layouts are applied dynamically,
+and different layouts may be used on each workspace. Xinerama is fully
+supported, allowing windows to be tiled on several screens.
 
-Features :
-    * Very stable, fast, small and simple.
-    * Automatic window tiling and management
-    * First class keyboard support: a mouse is unnecessary
-    * Full support for tiling windows on multi-head displays
-    * Full support for floating windows
-    * XRandR support to rotate, add or remove monitors
-    * Per-workspace layout algorithms
-    * Per-screens custom status bars
-    * Easy, powerful customisation and reconfiguration
-    * Large extension library
-    * Extensive documentation and support for hacking
-
-WWW: http://www.xmonad.org/
+WWW:	http://xmonad.org/

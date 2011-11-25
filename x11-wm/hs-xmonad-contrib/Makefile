@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +14,7 @@ COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad
 
 LICENSE=	BSD
 
-USE_CABAL=	mtl xmonad>=0.9.1 X11>=1.5 utf8-string
+USE_CABAL=	mtl utf8-string X11>=1.5.0.0 xmonad>=0.10
 USE_XORG=	x11
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash

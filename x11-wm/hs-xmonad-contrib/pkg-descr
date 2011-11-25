@@ -5,9 +5,9 @@ see XMonad.Doc.
 
 In particular:
 
-* XMonad.Doc.Configuring, a guide to configuring xmonad.
-* XMonad.Doc.Extending, using the contributed extensions library.
-* XMonad.Doc.Developing, introduction to xmonad internals and
-  writing your own extensions.
+ * XMonad.Doc.Configuring, a guide to configuring xmonad.
+ * XMonad.Doc.Extending, using the contributed extensions library.
+ * XMonad.Doc.Developing, introduction to xmonad internals and
+   writing your own extensions.
 
-WWW: http://www.xmonad.org/
+WWW:	http://xmonad.org/
