@@ -4,6 +4,7 @@ bin/tstatd
 %%SITE_PERL%%/Tail/Stat/Plugin/apache.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/clamd.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/cvsupd.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/icecast.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/nginx.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/spamd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail/Stat/.packlist
