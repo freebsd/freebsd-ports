@@ -1,5 +1,5 @@
 Make sure that the "freetype" module is loaded. If it is not, add
-the following line to the "Modules" section of your X Windows
+the following line to the "Modules" section of your X server
 configuration file:
 
 	Load "freetype"
@@ -8,13 +8,13 @@ For each language "LANG" in:
 
  %%FONTS%%
 
-you'll have to add "%%FONTSDIR%%/LANG" to your X font path
-with the following line to the "Files" section of X Windows
-configuration file:
+you'll have to add "%%FONTSDIR%%/LANG" to your
+X font path with the following line to the "Files" section of
+X server configuration file:
 
 	FontPath "%%FONTSDIR%%/LANG"
 
-and restart the Xserver.
+and restart the X server.
 
 Font collection specific configure files are installed in:
 
