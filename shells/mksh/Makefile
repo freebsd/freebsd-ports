@@ -7,6 +7,7 @@
 
 PORTNAME=	mksh
 DISTVERSION=	R40c
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
@@ -18,8 +19,6 @@ COMMENT=	A MirBSD enhanced shell based on pdksh
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		mksh.1
-PLIST_FILES=	bin/mksh %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
-PLIST_DIRS=	%%PORTEXAMPLES%%%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
 
