@@ -1,0 +1,152 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/runtests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/precompiler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/runtests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/runtests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/precompiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/precompiler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/js.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/storage.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/css.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/finders.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/conf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/lxml.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/html5lib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/html5lib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/htmlparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/beautifulsoup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/htmlparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/beautifulsoup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/lxml.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/lxml.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/beautifulsoup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/html5lib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/htmlparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/compress.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/compress.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/compress.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/mtime_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/compress.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/compress.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/compress.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/mtime_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/mtime_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/js.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/conf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/finders.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/css.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/js.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/storage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/css.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/js.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/js_inline.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/css_inline.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/css_file.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor/js_file.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/finders.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/conf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/storage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/datauri.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/datauri.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/closure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/yui.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/cssmin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/cssmin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin/cssmin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/rjsmin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/rjsmin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin/rjsmin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/css_default.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/yui.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/csstidy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/datauri.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/closure.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/yui.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/css_default.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/csstidy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/closure.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/css_default.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/csstidy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/css.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/staticfiles.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/staticfiles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/stringformat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/decorators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/stringformat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/decorators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/staticfiles.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/decorators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/stringformat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/__init__.pyc
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/utils
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/tests
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templatetags
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates/compressor
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/templates
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/parser
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management/commands
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/management
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/jsmin
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters/cssmin
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor/filters
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/compressor
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

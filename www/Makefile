@@ -1492,6 +1492,7 @@
     SUBDIR += py-django-tagging
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django12
+    SUBDIR += py-django_compressor
     SUBDIR += py-djblets
     SUBDIR += py-dojango
     SUBDIR += py-dotcloud.cli
