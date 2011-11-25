@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	indic-ttf
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.12
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/t/ttf-indic-fonts
+MASTER_SITES=	DEBIAN/pool/main/t/ttf-indic-fonts
 PKGNAMESUFFIX=	-fonts
 DISTNAME=	${PORTNAME:C|(.*)-(.*)|\2-\1|}${PKGNAMESUFFIX}_${PORTVERSION}
 
@@ -131,8 +130,8 @@ install-fonts:
 	${MKDIR} ${FONTSDIR}/${f}
 	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/*.ttf ${FONTSDIR}/${f}
 	${INSTALL_DATA} ${WRKSRC}/debian/ttf-${f}${PKGNAMESUFFIX}.copyright ${FONTSDIR}/${f}
-	${MKFONTSCALE} ${FONTSDIR}/${f} 2>/dev/null || true
-	${MKFONTSDIR} ${FONTSDIR}/${f} 2>/dev/null || true
+	${MKFONTSCALE} ${FONTSDIR}/${f} 2>/dev/null || ${TRUE}
+	${MKFONTSDIR} ${FONTSDIR}/${f} 2>/dev/null || ${TRUE}
 .endfor
 
 install-conf:
