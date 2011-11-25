@@ -1,0 +1,5 @@
+Port for libk8055 to provide support for the Velleman K8055 USB
+Experiment Board. Package also include k8055 command line tool. Now
+you can use it with shells scripts/cron jobs.
+
+WWW: http://www.horizon9.org/~geroy/
