@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
