@@ -10,7 +10,7 @@ PORTVERSION=	2.5
 CATEGORIES=	devel tcl tk
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Tk console for Tcl
 
 NO_BUILD=	yes
