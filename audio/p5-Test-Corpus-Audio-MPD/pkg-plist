@@ -2,6 +2,7 @@
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist-album.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/album.ogg
+%%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/title-artist-album-genre.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/title.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/playlists/test.m3u
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/mpd.conf.template
