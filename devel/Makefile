@@ -2855,6 +2855,7 @@
     SUBDIR += php4-tokenizer
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
+    SUBDIR += php5-dav
     SUBDIR += php5-geshi
     SUBDIR += php5-gettext
     SUBDIR += php5-ice
