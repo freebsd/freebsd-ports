@@ -9,10 +9,13 @@ PORTNAME=	cuetools
 PORTVERSION=	1.3.1
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://download.berlios.de/cuetools/
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for working with cue files and toc files
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
