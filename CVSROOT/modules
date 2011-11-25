@@ -2448,7 +2448,6 @@ dk-acroread8                    ports/print/dk-acroread8
 dk-milter                       ports/mail/dk-milter
 dkfilter                        ports/mail/dkfilter
 dkftpbench                      ports/benchmarks/dkftpbench
-dkim-milter                     ports/mail/dkim-milter
 dkimproxy                       ports/mail/dkimproxy
 dklibs                          ports/devel/dklibs
 dkns                            ports/editors/dkns
@@ -4102,7 +4101,6 @@ gcc                             ports/lang/gcc
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
 gcc44                           ports/lang/gcc44
-gcc45                           ports/lang/gcc45
 gcc46                           ports/lang/gcc46
 gcc47                           ports/lang/gcc47
 gccmakedep                      ports/devel/gccmakedep
@@ -21063,6 +21061,7 @@ pkfonts400                      ports/print/pkfonts400
 pkfonts600                      ports/print/pkfonts600
 pkg-config                      ports/devel/pkg-config
 pkg-orphan                      ports/ports-mgmt/pkg-orphan
+pkg-plist                       ports/ports-mgmt/pkg-plist
 pkg_add_it                      ports/ports-mgmt/pkg_add_it
 pkg_cleanup                     ports/ports-mgmt/pkg_cleanup
 pkg_cutleaves                   ports/ports-mgmt/pkg_cutleaves
@@ -21983,6 +21982,7 @@ py-iconv                        ports/converters/py-iconv
 py-iconvcodec                   ports/converters/py-iconvcodec
 py-icu                          ports/devel/py-icu
 py-id3                          ports/audio/py-id3
+py-idnkit2                      ports/dns/py-idnkit2
 py-igraph                       ports/math/py-igraph
 py-imaging                      ports/graphics/py-imaging
 py-imdbpy                       ports/www/py-imdbpy
@@ -27623,8 +27623,10 @@ xpi-sameplace                   ports/www/xpi-sameplace
 xpi-savegenpage                 ports/www/xpi-savegenpage
 xpi-scrapbook                   ports/www/xpi-scrapbook
 xpi-searchstatus                ports/www/xpi-searchstatus
+xpi-server_spy                  ports/www/xpi-server_spy
 xpi-server_switcher             ports/www/xpi-server_switcher
 xpi-sessionmanager              ports/www/xpi-sessionmanager
+xpi-showip                      ports/www/xpi-showip
 xpi-speed-dial                  ports/www/xpi-speed-dial
 xpi-splash                      ports/www/xpi-splash
 xpi-stumbleupon                 ports/www/xpi-stumbleupon
