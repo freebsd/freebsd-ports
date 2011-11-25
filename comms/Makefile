@@ -91,6 +91,7 @@
     SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
     SUBDIR += p5-Fax-Hylafax-Client
+    SUBDIR += p5-Nexmo-SMS
     SUBDIR += p5-SMS-SMS77
     SUBDIR += p5-SMS-Send
     SUBDIR += p5-SMS-Send-DeviceGsm
