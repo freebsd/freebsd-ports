@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roxterm
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.2
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -36,8 +36,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-data-local||g' \
 		${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e 's/GtkBox/GtkVBox/g' \
-		${WRKSRC}/src/roxterm-config.ui
+.for file in src/Makefile.in
+	@${REINPLACE_CMD} -e '/roxterm-config.ui/s|-i |-i.orig |g' \
+		${WRKSRC}/${file}
+.endfor
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
