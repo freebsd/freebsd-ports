@@ -1199,6 +1199,7 @@
     SUBDIR += p5-AnyEvent-DBI-Abstract
     SUBDIR += p5-AnyEvent-DBus
     SUBDIR += p5-AnyEvent-Filesys-Notify
+    SUBDIR += p5-AnyEvent-Graphite
     SUBDIR += p5-AnyEvent-I3
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
@@ -3058,6 +3059,7 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
+    SUBDIR += py-include_server
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
