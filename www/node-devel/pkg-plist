@@ -1,5 +1,6 @@
 bin/node
 bin/node-waf
+bin/npm
 include/node/ares.h
 include/node/ares_version.h
 include/node/c-ares/ares.h
@@ -72,6 +73,401 @@ lib/node/wafadmin/__init__.py
 lib/node/wafadmin/ansiterm.py
 lib/node/wafadmin/pproc.py
 lib/node/wafadmin/py3kfixes.py
+lib/node_modules/npm/.gitmodules
+lib/node_modules/npm/.npmignore
+lib/node_modules/npm/AUTHORS
+lib/node_modules/npm/CHANGES
+lib/node_modules/npm/LICENSE
+lib/node_modules/npm/Makefile
+lib/node_modules/npm/README.md
+lib/node_modules/npm/bin/npm-cli.js
+lib/node_modules/npm/bin/npm-g.cmd
+lib/node_modules/npm/bin/npm-get-uid-gid.js
+lib/node_modules/npm/bin/npm.cmd
+lib/node_modules/npm/bin/npm_g.cmd
+lib/node_modules/npm/bin/read-package-json.js
+lib/node_modules/npm/cli.js
+lib/node_modules/npm/configure
+lib/node_modules/npm/doc/api/author.md
+lib/node_modules/npm/doc/api/bin.md
+lib/node_modules/npm/doc/api/bugs.md
+lib/node_modules/npm/doc/api/commands.md
+lib/node_modules/npm/doc/api/config.md
+lib/node_modules/npm/doc/api/deprecate.md
+lib/node_modules/npm/doc/api/docs.md
+lib/node_modules/npm/doc/api/edit.md
+lib/node_modules/npm/doc/api/explore.md
+lib/node_modules/npm/doc/api/find.md
+lib/node_modules/npm/doc/api/get.md
+lib/node_modules/npm/doc/api/help-search.md
+lib/node_modules/npm/doc/api/home.md
+lib/node_modules/npm/doc/api/init.md
+lib/node_modules/npm/doc/api/install.md
+lib/node_modules/npm/doc/api/link.md
+lib/node_modules/npm/doc/api/list.md
+lib/node_modules/npm/doc/api/ln.md
+lib/node_modules/npm/doc/api/load.md
+lib/node_modules/npm/doc/api/ls.md
+lib/node_modules/npm/doc/api/npm.md
+lib/node_modules/npm/doc/api/outdated.md
+lib/node_modules/npm/doc/api/owner.md
+lib/node_modules/npm/doc/api/pack.md
+lib/node_modules/npm/doc/api/prefix.md
+lib/node_modules/npm/doc/api/prune.md
+lib/node_modules/npm/doc/api/publish.md
+lib/node_modules/npm/doc/api/rebuild.md
+lib/node_modules/npm/doc/api/restart.md
+lib/node_modules/npm/doc/api/rm.md
+lib/node_modules/npm/doc/api/root.md
+lib/node_modules/npm/doc/api/run-script.md
+lib/node_modules/npm/doc/api/search.md
+lib/node_modules/npm/doc/api/set.md
+lib/node_modules/npm/doc/api/start.md
+lib/node_modules/npm/doc/api/stop.md
+lib/node_modules/npm/doc/api/submodule.md
+lib/node_modules/npm/doc/api/tag.md
+lib/node_modules/npm/doc/api/test.md
+lib/node_modules/npm/doc/api/uninstall.md
+lib/node_modules/npm/doc/api/unpublish.md
+lib/node_modules/npm/doc/api/update.md
+lib/node_modules/npm/doc/api/version.md
+lib/node_modules/npm/doc/api/view.md
+lib/node_modules/npm/doc/api/whoami.md
+lib/node_modules/npm/doc/cli/adduser.md
+lib/node_modules/npm/doc/cli/author.md
+lib/node_modules/npm/doc/cli/bin.md
+lib/node_modules/npm/doc/cli/bugs.md
+lib/node_modules/npm/doc/cli/build.md
+lib/node_modules/npm/doc/cli/bundle.md
+lib/node_modules/npm/doc/cli/cache.md
+lib/node_modules/npm/doc/cli/changelog.md
+lib/node_modules/npm/doc/cli/coding-style.md
+lib/node_modules/npm/doc/cli/completion.md
+lib/node_modules/npm/doc/cli/config.md
+lib/node_modules/npm/doc/cli/deprecate.md
+lib/node_modules/npm/doc/cli/developers.md
+lib/node_modules/npm/doc/cli/docs.md
+lib/node_modules/npm/doc/cli/edit.md
+lib/node_modules/npm/doc/cli/explore.md
+lib/node_modules/npm/doc/cli/faq.md
+lib/node_modules/npm/doc/cli/find.md
+lib/node_modules/npm/doc/cli/folders.md
+lib/node_modules/npm/doc/cli/get.md
+lib/node_modules/npm/doc/cli/global.md
+lib/node_modules/npm/doc/cli/help-search.md
+lib/node_modules/npm/doc/cli/help.md
+lib/node_modules/npm/doc/cli/home.md
+lib/node_modules/npm/doc/cli/init.md
+lib/node_modules/npm/doc/cli/install.md
+lib/node_modules/npm/doc/cli/json.md
+lib/node_modules/npm/doc/cli/link.md
+lib/node_modules/npm/doc/cli/list.md
+lib/node_modules/npm/doc/cli/ln.md
+lib/node_modules/npm/doc/cli/ls.md
+lib/node_modules/npm/doc/cli/npm.md
+lib/node_modules/npm/doc/cli/outdated.md
+lib/node_modules/npm/doc/cli/owner.md
+lib/node_modules/npm/doc/cli/pack.md
+lib/node_modules/npm/doc/cli/prefix.md
+lib/node_modules/npm/doc/cli/prune.md
+lib/node_modules/npm/doc/cli/publish.md
+lib/node_modules/npm/doc/cli/rebuild.md
+lib/node_modules/npm/doc/cli/registry.md
+lib/node_modules/npm/doc/cli/removing-npm.md
+lib/node_modules/npm/doc/cli/restart.md
+lib/node_modules/npm/doc/cli/rm.md
+lib/node_modules/npm/doc/cli/root.md
+lib/node_modules/npm/doc/cli/run-script.md
+lib/node_modules/npm/doc/cli/scripts.md
+lib/node_modules/npm/doc/cli/search.md
+lib/node_modules/npm/doc/cli/semver.md
+lib/node_modules/npm/doc/cli/set.md
+lib/node_modules/npm/doc/cli/star.md
+lib/node_modules/npm/doc/cli/start.md
+lib/node_modules/npm/doc/cli/stop.md
+lib/node_modules/npm/doc/cli/submodule.md
+lib/node_modules/npm/doc/cli/tag.md
+lib/node_modules/npm/doc/cli/test.md
+lib/node_modules/npm/doc/cli/uninstall.md
+lib/node_modules/npm/doc/cli/unpublish.md
+lib/node_modules/npm/doc/cli/update.md
+lib/node_modules/npm/doc/cli/version.md
+lib/node_modules/npm/doc/cli/view.md
+lib/node_modules/npm/doc/cli/whoami.md
+lib/node_modules/npm/html/api/GubbleBum-Blocky.ttf
+lib/node_modules/npm/html/api/style.css
+lib/node_modules/npm/html/doc/GubbleBum-Blocky.ttf
+lib/node_modules/npm/html/doc/style.css
+lib/node_modules/npm/html/docfoot.html
+lib/node_modules/npm/html/dochead.html
+lib/node_modules/npm/html/favicon.ico
+lib/node_modules/npm/html/index.html
+lib/node_modules/npm/html/n-64.png
+lib/node_modules/npm/html/n-large.png
+lib/node_modules/npm/html/npm-16.png
+lib/node_modules/npm/html/npm-256-square.png
+lib/node_modules/npm/html/npm-256w.png
+lib/node_modules/npm/html/npm-64-square.png
+lib/node_modules/npm/html/npm-fin.png
+lib/node_modules/npm/html/npm-large.png
+lib/node_modules/npm/html/npm.png
+lib/node_modules/npm/lib/adduser.js
+lib/node_modules/npm/lib/bin.js
+lib/node_modules/npm/lib/bugs.js
+lib/node_modules/npm/lib/build.js
+lib/node_modules/npm/lib/cache.js
+lib/node_modules/npm/lib/completion.js
+lib/node_modules/npm/lib/config.js
+lib/node_modules/npm/lib/deprecate.js
+lib/node_modules/npm/lib/docs.js
+lib/node_modules/npm/lib/edit.js
+lib/node_modules/npm/lib/explore.js
+lib/node_modules/npm/lib/faq.js
+lib/node_modules/npm/lib/get.js
+lib/node_modules/npm/lib/help-search.js
+lib/node_modules/npm/lib/help.js
+lib/node_modules/npm/lib/init.js
+lib/node_modules/npm/lib/install.js
+lib/node_modules/npm/lib/link.js
+lib/node_modules/npm/lib/ls.js
+lib/node_modules/npm/lib/npm.js
+lib/node_modules/npm/lib/outdated.js
+lib/node_modules/npm/lib/owner.js
+lib/node_modules/npm/lib/pack.js
+lib/node_modules/npm/lib/prefix.js
+lib/node_modules/npm/lib/prune.js
+lib/node_modules/npm/lib/publish.js
+lib/node_modules/npm/lib/rebuild.js
+lib/node_modules/npm/lib/restart.js
+lib/node_modules/npm/lib/root.js
+lib/node_modules/npm/lib/run-script.js
+lib/node_modules/npm/lib/search.js
+lib/node_modules/npm/lib/set.js
+lib/node_modules/npm/lib/star.js
+lib/node_modules/npm/lib/start.js
+lib/node_modules/npm/lib/stop.js
+lib/node_modules/npm/lib/submodule.js
+lib/node_modules/npm/lib/tag.js
+lib/node_modules/npm/lib/test.js
+lib/node_modules/npm/lib/unbuild.js
+lib/node_modules/npm/lib/uninstall.js
+lib/node_modules/npm/lib/unpublish.js
+lib/node_modules/npm/lib/update.js
+lib/node_modules/npm/lib/utils/cmd-shim.js
+lib/node_modules/npm/lib/utils/completion.sh
+lib/node_modules/npm/lib/utils/completion/file-completion.js
+lib/node_modules/npm/lib/utils/completion/installed-deep.js
+lib/node_modules/npm/lib/utils/completion/installed-shallow.js
+lib/node_modules/npm/lib/utils/completion/remote-packages.js
+lib/node_modules/npm/lib/utils/completion/users.js
+lib/node_modules/npm/lib/utils/config-defs.js
+lib/node_modules/npm/lib/utils/error-handler.js
+lib/node_modules/npm/lib/utils/excludes.js
+lib/node_modules/npm/lib/utils/exec.js
+lib/node_modules/npm/lib/utils/fetch.js
+lib/node_modules/npm/lib/utils/find-prefix.js
+lib/node_modules/npm/lib/utils/find.js
+lib/node_modules/npm/lib/utils/get-agent.js
+lib/node_modules/npm/lib/utils/get.js
+lib/node_modules/npm/lib/utils/ini.js
+lib/node_modules/npm/lib/utils/lifecycle.js
+lib/node_modules/npm/lib/utils/link.js
+lib/node_modules/npm/lib/utils/load-package-defaults.js
+lib/node_modules/npm/lib/utils/log.js
+lib/node_modules/npm/lib/utils/mkdir-p.js
+lib/node_modules/npm/lib/utils/npm-registry-client/adduser.js
+lib/node_modules/npm/lib/utils/npm-registry-client/get.js
+lib/node_modules/npm/lib/utils/npm-registry-client/index.js
+lib/node_modules/npm/lib/utils/npm-registry-client/publish.js
+lib/node_modules/npm/lib/utils/npm-registry-client/request.js
+lib/node_modules/npm/lib/utils/npm-registry-client/star.js
+lib/node_modules/npm/lib/utils/npm-registry-client/tag.js
+lib/node_modules/npm/lib/utils/npm-registry-client/unpublish.js
+lib/node_modules/npm/lib/utils/output.js
+lib/node_modules/npm/lib/utils/promise-chain.js
+lib/node_modules/npm/lib/utils/prompt.js
+lib/node_modules/npm/lib/utils/read-installed.js
+lib/node_modules/npm/lib/utils/read-json.js
+lib/node_modules/npm/lib/utils/relativize.js
+lib/node_modules/npm/lib/utils/set.js
+lib/node_modules/npm/lib/utils/sha.js
+lib/node_modules/npm/lib/utils/tar.js
+lib/node_modules/npm/lib/utils/uid-number.js
+lib/node_modules/npm/lib/version.js
+lib/node_modules/npm/lib/view.js
+lib/node_modules/npm/lib/whoami.js
+lib/node_modules/npm/lib/xmas.js
+lib/node_modules/npm/node_modules/abbrev/LICENSE
+lib/node_modules/npm/node_modules/abbrev/README.md
+lib/node_modules/npm/node_modules/abbrev/lib/abbrev.js
+lib/node_modules/npm/node_modules/abbrev/package.json
+lib/node_modules/npm/node_modules/block-stream/README.md
+lib/node_modules/npm/node_modules/block-stream/block-stream.js
+lib/node_modules/npm/node_modules/block-stream/package.json
+lib/node_modules/npm/node_modules/fast-list/README.md
+lib/node_modules/npm/node_modules/fast-list/bench.js
+lib/node_modules/npm/node_modules/fast-list/fast-list.js
+lib/node_modules/npm/node_modules/fast-list/package.json
+lib/node_modules/npm/node_modules/fstream/README.md
+lib/node_modules/npm/node_modules/fstream/fstream.js
+lib/node_modules/npm/node_modules/fstream/lib/abstract.js
+lib/node_modules/npm/node_modules/fstream/lib/collect.js
+lib/node_modules/npm/node_modules/fstream/lib/dir-reader.js
+lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js
+lib/node_modules/npm/node_modules/fstream/lib/file-reader.js
+lib/node_modules/npm/node_modules/fstream/lib/file-writer.js
+lib/node_modules/npm/node_modules/fstream/lib/get-type.js
+lib/node_modules/npm/node_modules/fstream/lib/link-reader.js
+lib/node_modules/npm/node_modules/fstream/lib/link-writer.js
+lib/node_modules/npm/node_modules/fstream/lib/proxy-reader.js
+lib/node_modules/npm/node_modules/fstream/lib/proxy-writer.js
+lib/node_modules/npm/node_modules/fstream/lib/reader.js
+lib/node_modules/npm/node_modules/fstream/lib/writer.js
+lib/node_modules/npm/node_modules/fstream/package.json
+lib/node_modules/npm/node_modules/graceful-fs/LICENSE
+lib/node_modules/npm/node_modules/graceful-fs/README.md
+lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js
+lib/node_modules/npm/node_modules/graceful-fs/package.json
+lib/node_modules/npm/node_modules/inherits/LICENSE
+lib/node_modules/npm/node_modules/inherits/README.md
+lib/node_modules/npm/node_modules/inherits/inherits-old.js
+lib/node_modules/npm/node_modules/inherits/inherits.js
+lib/node_modules/npm/node_modules/inherits/package.json
+lib/node_modules/npm/node_modules/ini/LICENSE
+lib/node_modules/npm/node_modules/ini/README.md
+lib/node_modules/npm/node_modules/ini/ini.js
+lib/node_modules/npm/node_modules/ini/package.json
+lib/node_modules/npm/node_modules/minimatch/.gitmodules
+lib/node_modules/npm/node_modules/minimatch/LICENSE
+lib/node_modules/npm/node_modules/minimatch/README.md
+lib/node_modules/npm/node_modules/minimatch/minimatch.js
+lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/LICENSE
+lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/README.md
+lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/lib/lru-cache.js
+lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/package.json
+lib/node_modules/npm/node_modules/minimatch/package.json
+lib/node_modules/npm/node_modules/mkdirp/LICENSE
+lib/node_modules/npm/node_modules/mkdirp/README.markdown
+lib/node_modules/npm/node_modules/mkdirp/index.js
+lib/node_modules/npm/node_modules/mkdirp/package.json
+lib/node_modules/npm/node_modules/node-uuid/LICENSE.md
+lib/node_modules/npm/node_modules/node-uuid/README.md
+lib/node_modules/npm/node_modules/node-uuid/benchmark/README.md
+lib/node_modules/npm/node_modules/node-uuid/benchmark/bench.gnu
+lib/node_modules/npm/node_modules/node-uuid/benchmark/bench.sh
+lib/node_modules/npm/node_modules/node-uuid/benchmark/benchmark-native.c
+lib/node_modules/npm/node_modules/node-uuid/benchmark/benchmark.js
+lib/node_modules/npm/node_modules/node-uuid/package.json
+lib/node_modules/npm/node_modules/node-uuid/uuid.js
+lib/node_modules/npm/node_modules/nopt/LICENSE
+lib/node_modules/npm/node_modules/nopt/README.md
+lib/node_modules/npm/node_modules/nopt/bin/nopt.js
+lib/node_modules/npm/node_modules/nopt/lib/nopt.js
+lib/node_modules/npm/node_modules/nopt/package.json
+lib/node_modules/npm/node_modules/proto-list/LICENSE
+lib/node_modules/npm/node_modules/proto-list/README.md
+lib/node_modules/npm/node_modules/proto-list/package.json
+lib/node_modules/npm/node_modules/proto-list/proto-list.js
+lib/node_modules/npm/node_modules/request/LICENSE
+lib/node_modules/npm/node_modules/request/README.md
+lib/node_modules/npm/node_modules/request/main.js
+lib/node_modules/npm/node_modules/request/mimetypes.js
+lib/node_modules/npm/node_modules/request/oauth.js
+lib/node_modules/npm/node_modules/request/package.json
+lib/node_modules/npm/node_modules/request/uuid.js
+lib/node_modules/npm/node_modules/request/vendor/cookie/index.js
+lib/node_modules/npm/node_modules/request/vendor/cookie/jar.js
+lib/node_modules/npm/node_modules/rimraf/AUTHORS
+lib/node_modules/npm/node_modules/rimraf/LICENSE
+lib/node_modules/npm/node_modules/rimraf/README.md
+lib/node_modules/npm/node_modules/rimraf/fiber.js
+lib/node_modules/npm/node_modules/rimraf/package.json
+lib/node_modules/npm/node_modules/rimraf/rimraf.js
+lib/node_modules/npm/node_modules/semver/LICENSE
+lib/node_modules/npm/node_modules/semver/README.md
+lib/node_modules/npm/node_modules/semver/bin/semver
+lib/node_modules/npm/node_modules/semver/package.json
+lib/node_modules/npm/node_modules/semver/semver.js
+lib/node_modules/npm/node_modules/slide/.npmignore
+lib/node_modules/npm/node_modules/slide/LICENSE
+lib/node_modules/npm/node_modules/slide/README.md
+lib/node_modules/npm/node_modules/slide/index.js
+lib/node_modules/npm/node_modules/slide/lib/async-map-ordered.js
+lib/node_modules/npm/node_modules/slide/lib/async-map.js
+lib/node_modules/npm/node_modules/slide/lib/bind-actor.js
+lib/node_modules/npm/node_modules/slide/lib/chain.js
+lib/node_modules/npm/node_modules/slide/lib/slide.js
+lib/node_modules/npm/node_modules/slide/package.json
+lib/node_modules/npm/node_modules/tar/README.md
+lib/node_modules/npm/node_modules/tar/lib/buffer-entry.js
+lib/node_modules/npm/node_modules/tar/lib/entry-writer.js
+lib/node_modules/npm/node_modules/tar/lib/entry.js
+lib/node_modules/npm/node_modules/tar/lib/extended-header-writer.js
+lib/node_modules/npm/node_modules/tar/lib/extended-header.js
+lib/node_modules/npm/node_modules/tar/lib/extract.js
+lib/node_modules/npm/node_modules/tar/lib/global-header-writer.js
+lib/node_modules/npm/node_modules/tar/lib/header.js
+lib/node_modules/npm/node_modules/tar/lib/pack.js
+lib/node_modules/npm/node_modules/tar/lib/parse.js
+lib/node_modules/npm/node_modules/tar/package.json
+lib/node_modules/npm/node_modules/tar/tar.js
+lib/node_modules/npm/node_modules/which/LICENSE
+lib/node_modules/npm/node_modules/which/README.md
+lib/node_modules/npm/node_modules/which/bin/which
+lib/node_modules/npm/node_modules/which/package.json
+lib/node_modules/npm/node_modules/which/which.js
+lib/node_modules/npm/package.json
+lib/node_modules/npm/scripts/clean-old.sh
+lib/node_modules/npm/scripts/doc-build.sh
+lib/node_modules/npm/scripts/index-build.js
+lib/node_modules/npm/scripts/install.sh
+@dirrm lib/node_modules/npm/scripts
+@dirrm lib/node_modules/npm/node_modules/which/bin
+@dirrm lib/node_modules/npm/node_modules/which
+@dirrm lib/node_modules/npm/node_modules/tar/lib
+@dirrm lib/node_modules/npm/node_modules/tar
+@dirrm lib/node_modules/npm/node_modules/slide/lib
+@dirrm lib/node_modules/npm/node_modules/slide
+@dirrm lib/node_modules/npm/node_modules/semver/bin
+@dirrm lib/node_modules/npm/node_modules/semver
+@dirrm lib/node_modules/npm/node_modules/rimraf
+@dirrm lib/node_modules/npm/node_modules/request/vendor/cookie
+@dirrm lib/node_modules/npm/node_modules/request/vendor
+@dirrm lib/node_modules/npm/node_modules/request
+@dirrm lib/node_modules/npm/node_modules/proto-list
+@dirrm lib/node_modules/npm/node_modules/nopt/lib
+@dirrm lib/node_modules/npm/node_modules/nopt/bin
+@dirrm lib/node_modules/npm/node_modules/nopt
+@dirrm lib/node_modules/npm/node_modules/node-uuid/benchmark
+@dirrm lib/node_modules/npm/node_modules/node-uuid
+@dirrm lib/node_modules/npm/node_modules/mkdirp
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/lib
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache
+@dirrm lib/node_modules/npm/node_modules/minimatch/node_modules
+@dirrm lib/node_modules/npm/node_modules/minimatch
+@dirrm lib/node_modules/npm/node_modules/ini
+@dirrm lib/node_modules/npm/node_modules/inherits
+@dirrm lib/node_modules/npm/node_modules/graceful-fs
+@dirrm lib/node_modules/npm/node_modules/fstream/lib
+@dirrm lib/node_modules/npm/node_modules/fstream
+@dirrm lib/node_modules/npm/node_modules/fast-list
+@dirrm lib/node_modules/npm/node_modules/block-stream
+@dirrm lib/node_modules/npm/node_modules/abbrev/lib
+@dirrm lib/node_modules/npm/node_modules/abbrev
+@dirrm lib/node_modules/npm/node_modules
+@dirrm lib/node_modules/npm/lib/utils/npm-registry-client
+@dirrm lib/node_modules/npm/lib/utils/completion
+@dirrm lib/node_modules/npm/lib/utils
+@dirrm lib/node_modules/npm/lib
+@dirrm lib/node_modules/npm/html/doc
+@dirrm lib/node_modules/npm/html/api
+@dirrm lib/node_modules/npm/html
+@dirrm lib/node_modules/npm/doc/cli
+@dirrm lib/node_modules/npm/doc/api
+@dirrm lib/node_modules/npm/doc
+@dirrm lib/node_modules/npm/bin
+@dirrm lib/node_modules/npm
+@dirrm lib/node_modules
 @dirrm lib/node/wafadmin/Tools
 @dirrm lib/node/wafadmin
 @dirrm lib/node
