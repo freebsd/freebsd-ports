@@ -22,6 +22,20 @@ bin/govet
 bin/goyacc
 bin/hgpatch
 bin/quietgcc
+go/lib/lib9.a
+go/lib/libbio.a
+go/lib/libmach.a
+go/lib/codereview/codereview.cfg
+go/lib/codereview/codereview.py
+go/lib/godoc/codewalk.html
+go/lib/godoc/codewalkdir.html
+go/lib/godoc/dirlist.html
+go/lib/godoc/error.html
+go/lib/godoc/godoc.html
+go/lib/godoc/package.html
+go/lib/godoc/package.txt
+go/lib/godoc/search.html
+go/lib/godoc/search.txt
 go/pkg/freebsd_%%ARCH%%/archive/tar.a
 go/pkg/freebsd_%%ARCH%%/archive/zip.a
 go/pkg/freebsd_%%ARCH%%/asn1.a
@@ -86,7 +100,6 @@ go/pkg/freebsd_%%ARCH%%/encoding/git85.a
 go/pkg/freebsd_%%ARCH%%/encoding/hex.a
 go/pkg/freebsd_%%ARCH%%/encoding/pem.a
 go/pkg/freebsd_%%ARCH%%/exec.a
-go/pkg/freebsd_%%ARCH%%/exp/datafmt.a
 go/pkg/freebsd_%%ARCH%%/exp/gui.a
 go/pkg/freebsd_%%ARCH%%/exp/gui/x11.a
 go/pkg/freebsd_%%ARCH%%/exp/norm.a
@@ -351,4 +364,7 @@ go/src/Make.pkg
 @dirrm go/pkg/freebsd_%%ARCH%%/archive
 @dirrm go/pkg/freebsd_%%ARCH%%
 @dirrm go/pkg
+@dirrm go/lib/godoc
+@dirrm go/lib/codereview
+@dirrm go/lib
 @dirrm go

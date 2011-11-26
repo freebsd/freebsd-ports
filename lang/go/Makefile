@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	go
-PORTVERSION=	20111005
+PORTVERSION=	20111017
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/jlaffaye
 
@@ -53,10 +53,12 @@ do-install:
 	${INSTALL} -d -m 0755 ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
-	${CP} ${WRKSRC}/bin/* ${PREFIX}/bin/
-	${INSTALL} -d -m 0755 ${PREFIX}/go/pkg
-	${CP} -R ${WRKSRC}/pkg/* ${PREFIX}/go/pkg/
-	${INSTALL} -d -m 0755 ${PREFIX}/go/src/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin/
+	${INSTALL} -d ${PREFIX}/go/pkg
+	(cd ${WRKSRC}/pkg/ && ${COPYTREE_SHARE} \* ${PREFIX}/go/pkg)
+	${INSTALL} -d ${PREFIX}/go/src/
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.* ${PREFIX}/go/src/
+	${INSTALL} -d ${PREFIX}/go/lib/
+	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} \* ${PREFIX}/go/lib)
 
 .include <bsd.port.post.mk>
