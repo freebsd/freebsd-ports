@@ -7,6 +7,7 @@
 
 PORTNAME=	prettygo
 PORTVERSION=	20110611
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://files.roorback.net/
 DISTNAME=	pretty.go-${PORTVERSION}
