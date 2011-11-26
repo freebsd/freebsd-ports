@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.7.0.20111105
+PORTVERSION=	4.7.0.20111119
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -90,8 +90,9 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
-INFO+=		gcc${SUFFIX}/libquadmath
+.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "alpha"
+INFO+=		gcc${SUFFIX}/libquadmath	\
+		gcc${SUFFIX}/libitm
 .endif
 
 .if ! defined(WITHOUT_JAVA)
