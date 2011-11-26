@@ -3658,6 +3658,7 @@ fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
 fox17                           ports/x11-toolkits/fox17
 foxtrotgps                      ports/astro/foxtrotgps
+fpart                           ports/sysutils/fpart
 fpc                             ports/lang/fpc
 fpc-a52                         ports/audio/fpc-a52
 fpc-aspell                      ports/textproc/fpc-aspell
@@ -7928,6 +7929,7 @@ libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
 libjpeg-turbo                   ports/graphics/libjpeg-turbo
+libk8055                        ports/devel/libk8055
 libkate                         ports/multimedia/libkate
 libkdcraw                       ports/graphics/libkdcraw
 libkdcraw-kde4                  ports/graphics/libkdcraw-kde4
@@ -10704,6 +10706,7 @@ p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
 p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-AnyEvent-DBus                ports/devel/p5-AnyEvent-DBus
 p5-AnyEvent-Filesys-Notify      ports/devel/p5-AnyEvent-Filesys-Notify
+p5-AnyEvent-Graphite            ports/devel/p5-AnyEvent-Graphite
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-I3                  ports/devel/p5-AnyEvent-I3
@@ -12622,6 +12625,7 @@ p5-IO-Null                      ports/devel/p5-IO-Null
 p5-IO-Pager                     ports/devel/p5-IO-Pager
 p5-IO-Prompt                    ports/devel/p5-IO-Prompt
 p5-IO-Socket-INET6              ports/net/p5-IO-Socket-INET6
+p5-IO-Socket-IP                 ports/net/p5-IO-Socket-IP
 p5-IO-Socket-Multicast          ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-Multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-IO-Socket-SSL                ports/security/p5-IO-Socket-SSL
@@ -13496,6 +13500,7 @@ p5-News-Article                 ports/news/p5-News-Article
 p5-News-Article-NoCeM           ports/news/p5-News-Article-NoCeM
 p5-News-Newsrc                  ports/news/p5-News-Newsrc
 p5-Newsletter                   ports/www/p5-Newsletter
+p5-Nexmo-SMS                    ports/comms/p5-Nexmo-SMS
 p5-Nginx-ReadBody               ports/www/p5-Nginx-ReadBody
 p5-Nmap-Parser                  ports/security/p5-Nmap-Parser
 p5-Nmap-Scanner                 ports/security/p5-Nmap-Scanner
@@ -15089,6 +15094,7 @@ p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
 p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-anyevent-dbus                ports/devel/p5-AnyEvent-DBus
 p5-anyevent-filesys-notify      ports/devel/p5-AnyEvent-Filesys-Notify
+p5-anyevent-graphite            ports/devel/p5-AnyEvent-Graphite
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-i3                  ports/devel/p5-AnyEvent-I3
@@ -17083,6 +17089,7 @@ p5-io-null                      ports/devel/p5-IO-Null
 p5-io-pager                     ports/devel/p5-IO-Pager
 p5-io-prompt                    ports/devel/p5-IO-Prompt
 p5-io-socket-inet6              ports/net/p5-IO-Socket-INET6
+p5-io-socket-ip                 ports/net/p5-IO-Socket-IP
 p5-io-socket-multicast          ports/net/p5-IO-Socket-Multicast
 p5-io-socket-multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-io-socket-ssl                ports/security/p5-IO-Socket-SSL
@@ -17929,6 +17936,7 @@ p5-news-article                 ports/news/p5-News-Article
 p5-news-article-nocem           ports/news/p5-News-Article-NoCeM
 p5-news-newsrc                  ports/news/p5-News-Newsrc
 p5-newsletter                   ports/www/p5-Newsletter
+p5-nexmo-sms                    ports/comms/p5-Nexmo-SMS
 p5-next                         ports/devel/p5-NEXT
 p5-nginx-readbody               ports/www/p5-Nginx-ReadBody
 p5-nmap-parser                  ports/security/p5-Nmap-Parser
@@ -20733,6 +20741,7 @@ php5-chartdirector              ports/graphics/php5-chartdirector
 php5-creole                     ports/databases/php5-creole
 php5-ctype                      ports/textproc/php5-ctype
 php5-curl                       ports/ftp/php5-curl
+php5-dav                        ports/devel/php5-dav
 php5-dba                        ports/databases/php5-dba
 php5-dom                        ports/textproc/php5-dom
 php5-exif                       ports/graphics/php5-exif
@@ -20768,6 +20777,7 @@ php5-pdo_odbc                   ports/databases/php5-pdo_odbc
 php5-pdo_pgsql                  ports/databases/php5-pdo_pgsql
 php5-pdo_sqlite                 ports/databases/php5-pdo_sqlite
 php5-pgsql                      ports/databases/php5-pgsql
+php5-phar                       ports/archivers/php5-phar
 php5-phing                      ports/devel/php5-phing
 php5-pinba                      ports/devel/php5-pinba
 php5-posix                      ports/sysutils/php5-posix
@@ -21841,6 +21851,7 @@ py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-django12                     ports/www/py-django12
+py-django_compressor            ports/www/py-django_compressor
 py-djblets                      ports/www/py-djblets
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
@@ -22954,6 +22965,7 @@ qtv                             ports/games/qtv
 qu-aspell                       ports/textproc/qu-aspell
 quackle                         ports/games/quackle
 quagga                          ports/net/quagga
+quagga-re                       ports/net/quagga-re
 quake-data                      ports/games/quake-data
 quake-dpmod                     ports/games/quake-dpmod
 quake-extras                    ports/games/quake-extras
