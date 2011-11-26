@@ -190,6 +190,45 @@ $FreeBSD$
  
  	</target>
  
+@@ -1126,8 +1129,7 @@
+ 
+ 		<!-- make a copy of the clean platform+CVS installation -->
+ 		<exec executable="cp" failonerror="true">
+-			<arg value="-rd" />
+-			<arg value="--no-target-directory" />
++			<arg value="-R" />
+ 			<arg value="${provisionDir}" />
+ 			<arg value="${platformAndCVSInstallation}" />
+ 		</exec>
+@@ -1143,16 +1145,14 @@
+ 			tofile="${jdtInstallation}"/>
+ 		<!-- make a second copy of the clean JDT installation -->
+ 		<exec executable="cp" failonerror="true">
+-			<arg value="-rd" />
+-			<arg value="--no-target-directory" />
++			<arg value="-R" />
+ 			<arg value="${jdtInstallation}" />
+ 			<arg value="${jdtInstallation}.orig" />
+ 		</exec>
+ 		
+ 		<!-- restore clean platform+CVS installation -->
+ 		<exec executable="cp" failonerror="true">
+-			<arg value="-rd" />
+-			<arg value="--no-target-directory" />
++			<arg value="-R" />
+ 			<arg value="${platformAndCVSInstallation}" />
+ 			<arg value="${provisionDir}" />
+ 		</exec>
+@@ -1169,8 +1169,7 @@
+ 		
+ 		<!-- restore clean platform+CVS installation -->
+ 		<exec executable="cp" failonerror="true">
+-			<arg value="-rd" />
+-			<arg value="--no-target-directory" />
++			<arg value="-R" />
+ 			<arg value="${platformAndCVSInstallation}" />
+ 			<arg value="${provisionDir}" />
+ 		</exec>
 --- eclipse-build-0.5.0.orig/pdebuild/eclipse-pdebuild.sh	2009-11-11 07:59:07.000000000 -0500
 +++ eclipse-build-0.5.0/pdebuild/eclipse-pdebuild.sh	2009-12-23 16:23:06.357147407 -0500
 @@ -230,7 +230,7 @@
