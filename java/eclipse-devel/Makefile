@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \
@@ -105,6 +105,8 @@ JUNIT4_SRCFILE=		junit-${JUNIT4_VERSION}.jar
 FBSD_SUPPORT_SRCFILE=	freebsd-support.patch
 ECLIPSE_GENERATED_BUILDSCRIPTS=	eclipse-build-generatedScripts.tar.bz2
 
+ALL_TARGET=	provision.cvs
+INSTALL_TARGET=	installSDKinDropins
 MAKE_ARGS=	-DbuildOs=freebsd -DbuildArch=${ARCH:C/amd64/x86_64/:C/i386/x86/} -Dprefix=${PREFIX} -Dlocalbase=${LOCALBASE} -Dlabel=${PORTVERSION}
 MAKE_ENV+=	GRE_HOME=${PREFIX}/lib/${GECKO} _JAVA_OPTIONS="-Xmx1024m" JAVA_VENDOR=${JAVA_VENDOR}
 
