@@ -16,6 +16,12 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/__init__.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/__init__.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_multi.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_multi.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_multi.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyo
@@ -64,6 +70,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/commandline.py
 %%PYTHON_SITELIBDIR%%/duplicity/commandline.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/commandline.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/compilec.py
+%%PYTHON_SITELIBDIR%%/duplicity/compilec.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/compilec.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/diffdir.py
 %%PYTHON_SITELIBDIR%%/duplicity/diffdir.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/diffdir.pyo
@@ -82,6 +91,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/file_naming.py
 %%PYTHON_SITELIBDIR%%/duplicity/file_naming.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/file_naming.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/filechunkio.py
+%%PYTHON_SITELIBDIR%%/duplicity/filechunkio.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/filechunkio.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/globals.py
 %%PYTHON_SITELIBDIR%%/duplicity/globals.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/globals.pyo
@@ -140,9 +152,10 @@ bin/rdiffdir
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/LOG-README
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/REPO-README
+%%PORTDOCS%%%%DOCSDIR%%/README-LOG
+%%PORTDOCS%%%%DOCSDIR%%/README-REPO
+%%PORTDOCS%%%%DOCSDIR%%/tarfile-CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%share/locale/bg/LC_MESSAGES/duplicity.mo
@@ -154,6 +167,7 @@ bin/rdiffdir
 %%NLS%%share/locale/es/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/he/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/id/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/io/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/it/LC_MESSAGES/duplicity.mo
@@ -164,6 +178,7 @@ bin/rdiffdir
 %%NLS%%share/locale/ru/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/duplicity.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/duplicity.mo
@@ -180,6 +195,8 @@ bin/rdiffdir
 %%NLS%%@dirrmtry share/locale/es
 %%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
 %%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id
 %%NLS%%@dirrmtry share/locale/io/LC_MESSAGES
@@ -198,6 +215,8 @@ bin/rdiffdir
 %%NLS%%@dirrmtry share/locale/ru
 %%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr
 %%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.16
+PORTVERSION=	0.6.17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
@@ -25,7 +25,7 @@ FETCH_ARGS=	-pRr
 
 CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_LDCONFIG=	yes
 
@@ -44,12 +44,13 @@ post-patch:
 
 MAN1=		duplicity.1 rdiffdir.1
 
-DOCFILES=	CHANGELOG \
-		COPYING \
-		REPO-README \
-		LOG-README \
+DOCFILES=	COPYING \
 		README \
-		tarfile-LICENSE
+		README-REPO \
+		README-LOG \
+		tarfile-LICENSE \
+		tarfile-CHANGES \
+		CHANGELOG
 
 post-install:
 .if !defined(NOPORTDOCS)
