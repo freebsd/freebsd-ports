@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	podofo
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
@@ -28,6 +27,12 @@ CMAKE_ARGS+=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
 		-DPODOFO_BUILD_STATIC:BOOL=FALSE
 
 .include <bsd.port.pre.mk>
+
+MAN1=		podofobox.1 podofoxmp.1 podofouncompress.1 podofomerge.1 \
+		podofoimgextract.1 podofoimg2pdf.1 podofotxtextract.1 \
+		podofoencrypt.1 podofocrop.1 podofopdfinfo.1 podofoimpose.1 \
+		podofoincrementalupdates.1 podofocountpages.1 podofopages.1 \
+		podofotxt2pdf.1
 
 .if !defined(WITHOUT_JPEG) || exists(${LOCALBASE}/lib/libjpeg.so)
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
