@@ -1,6 +1,6 @@
---- doc/Makefile.orig	2010-08-29 10:28:32.000000000 +0200
-+++ doc/Makefile	2010-08-30 20:52:58.000000000 +0200
-@@ -4,7 +4,7 @@
+--- doc/Makefile.orig	2011-11-23 11:05:17.000000000 +0100
++++ doc/Makefile	2011-11-23 11:07:53.000000000 +0100
+@@ -5,7 +5,7 @@
  
  DELFILES=xca*.html xca.1.gz
  
@@ -9,17 +9,18 @@
  include $(TOPDIR)/Rules.mak
  
  mandir=man
-@@ -14,8 +14,7 @@
- 
+@@ -16,9 +16,7 @@
  xca.html: xca.sgml
  	rm -f xca*.html
--	echo '<h1>No documentation generated</h1>' > $@
--	$(LINUXDOC) -B html $<
+ 	echo '<h1>No documentation generated</h1>' > $@
+-	test ! -f xca-doc.tgz || tar zxf xca-doc.tgz
+-	@$(PRINT) "  DOC    [$(BASENAME)] $@"
+-	$(LINUXDOC) -B html $< >/dev/null
 +	echo 'The documentation for XCA can be viewed online at: <a href="http://xca.sourceforge.net/">http://xca.sourceforge.net/</a>.' > $@
  
  install: xca.1.gz xca.html
  	install -m 755 -d $(destdir)$(docdir) \
-@@ -23,8 +22,4 @@
+@@ -26,8 +24,4 @@
  	install -m 644 xca*.html $(destdir)$(docdir)
  	install xca.1.gz $(destdir)$(prefix)/$(mandir)/man1
  

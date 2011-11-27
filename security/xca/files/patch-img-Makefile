@@ -1,11 +1,11 @@
---- img/Makefile.orig	2010-08-29 10:28:32.000000000 +0200
-+++ img/Makefile	2010-08-30 20:57:04.000000000 +0200
-@@ -15,7 +15,7 @@
- 	echo $(OBJS)
+--- img/Makefile.orig	2011-11-07 07:09:32.000000000 +0100
++++ img/Makefile	2011-11-23 11:15:40.000000000 +0100
+@@ -13,7 +13,7 @@
+ sinclude .depend
  
- install:
--	install -D -m 644 xca-32x32.xpm $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
-+	install -d -m 755 $(destdir)$(prefix)/share/pixmaps && install -m 644 xca-32x32.xpm $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
+ install: xca-32x32.xpm
+-	install -D -m 644 $^ $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
++	install -d -m 755 $(destdir)$(prefix)/share/pixmaps && install -m 644 $^ $(destdir)$(prefix)/share/pixmaps/xca-32x32.xpm
  
  imgres.cpp: imgres.rcc
- 	$(RCC) -o $@ $<
+ 	@$(PRINT) "  RCC    [$(BASENAME)] $@"
