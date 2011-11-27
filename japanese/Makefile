@@ -266,7 +266,6 @@
     SUBDIR += py-tegaki-gtk
     SUBDIR += py-zinnia
     SUBDIR += pycodec
-    SUBDIR += pycodec-zope
     SUBDIR += qkc
     SUBDIR += qt4-codecs-jp
     SUBDIR += quit
@@ -372,7 +371,5 @@
     SUBDIR += zinnia
     SUBDIR += zinnia-tomoe
     SUBDIR += zipcodes
-    SUBDIR += zope-ejsplitter
-    SUBDIR += zope-jamailhost
 
 .include <bsd.port.subdir.mk>
