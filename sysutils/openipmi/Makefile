@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	openipmi
-PORTVERSION=	2.0.18
-PORTREVISION=	5
+PORTVERSION=	2.0.19
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
 
 MAINTAINER=	alex.deiter@gmail.com
@@ -39,6 +38,7 @@ OPTIONS=	SSL	"IPMI 2.0 RMCP+ encryption and authentication"	On  \
 		PYTHON	"Python interface for OpenIPMI library"		Off \
 		TCL	"TCL interface for OpenIPMI library"		Off \
 		TKINTER	"GUI for OpenIPMI, written in Python"		Off \
+		TRACE	"Enable backtrace inspecting"			Off \
 		GDBM	"Local SDR caching on startup"			Off \
 		GLIB12	"Simply OS handler for glib 1.2"		Off \
 		GLIB20	"Simply OS handler for glib 2.0"		Off
@@ -114,6 +114,10 @@ PLIST_SUB+=		TCL=""
 .else
 CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=		TCL="@comment "
+.endif
+
+.if defined(WITH_TRACE)
+LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if defined(WITH_GDBM)
