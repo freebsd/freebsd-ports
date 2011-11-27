@@ -7,40 +7,48 @@
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
-		ftp://ftp.gnu.org/pub/gnu/cons/ \
+		ftp://ftp.gnu.org/pub/old-gnu/cons/ \
 		http://www.baldmt.com/cons/stable/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A test bed for `Cons' development
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 
-USE_PERL5=	yes
+WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test
 NO_BUILD=	yes
-CONS_TEST=	cons-${PORTVERSION}/test
-WRKSRC=		${WRKDIR}/${CONS_TEST}
-PLIST_SUB+=	CONS_VER=${PORTVERSION} CONS_TEST=${CONS_TEST}
+
+USE_PERL5=	yes
+PLIST_SUB=	CONS_VER="${PORTVERSION}" CONS_TEST="${CONS_TEST}"
+
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test
 
-MAN1=		cons-test.1
 MANCOMPRESSED=	yes
-DOCS=		CHANGES COPYING COPYRIGHT README TODO Tests.txt
+MAN1=		cons-test.1
+
+CONS_TEST=	cons-${PORTVERSION}/test
+DOCS=		CHANGES COPYRIGHT README TODO Tests.txt
 TESTS=		1..83,101..147
 TEST_LIBS=	Cmd.pm Cons.pm
+
+post-patch:
+	@${REINPLACE_CMD} -e 's:/usr/lib:${PREFIX}/lib:g' \
+		${WRKSRC}/cons-test
+
 do-install:
 #
 # Install the script
 #
-	${MKDIR} ${PREFIX}/bin
-	@${SED} -e 's:/usr/lib:${PREFIX}/lib:g' \
-		<${WRKSRC}/cons-test >${PREFIX}/bin/cons-test
-	@${CHMOD} a+x ${PREFIX}/bin/cons-test
-
+	${INSTALL_SCRIPT} ${WRKSRC}/cons-test \
+		${PREFIX}/bin
 #
 # Install the tests
 #
@@ -60,14 +68,14 @@ do-install:
 # Install the man pages
 #
 	${INSTALL_MAN} ${WRKSRC}/cons-test.1.gz \
-		${PREFIX}/man/man1/cons-test.1.gz
+		${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 #
 # Install the documentation
 #
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL} -c ${WRKSRC}/$f \
+	${INSTALL_DATA} ${WRKSRC}/${f} \
 		${DOCSDIR}
 .endfor
 .endif
