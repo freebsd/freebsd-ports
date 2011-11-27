@@ -14,20 +14,21 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The x2go perl client
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
 
-BROKEN=		does not compile
-EXPIRATION_DATE=	2011-11-30
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-PLIST_FILES=	bin/x2goclient
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S,-5,,}
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network svg qmake_build moc_build uic_build rcc_build
 USE_OPENLDAP=	yes
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/x2goclient
 
 post-patch:
 	cd ${WRKSRC}; ${REINPLACE_CMD} -e "s,Q_OS_LINUX,Q_OS_FREEBSD," \
@@ -38,7 +39,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,linux,freebsd," ${WRKSRC}/x2goclient.pro
 
 do-configure:
-	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE}
+	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/x2goclient ${PREFIX}/bin
