@@ -729,6 +729,7 @@
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
     SUBDIR += p5-Validate-Net
+    SUBDIR += p5-WebService-Dropbox
     SUBDIR += p5-What
     SUBDIR += p5-X500-DN
     SUBDIR += p5-XML-Compile-SOAP
