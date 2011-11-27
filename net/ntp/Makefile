@@ -29,14 +29,16 @@ MAN1=		sntp.1 \
 		ntpsnmpd.1 \
 		ntp-keygen.1 \
 
-OPTIONS=	NTPSNMPD "Build and install ntpsnmpd" OFF \
-		RAWDCF "Enable RAWDCF option" OFF \
-		SSL "Enable SSL" ON
+.include "Makefile.inc"
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RAWDCF)
-CONFIGURE_ARGS+=	--enable-RAWDCF
+.if defined(WITH_NTPSNMPD)
+PLIST_FILES+=		bin/ntpsnmpd
+BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+.else
+CONFIGURE_ARGS+=	--without-ntpsnmpd
 .endif
 
 .if !defined(WITH_SSL)
@@ -48,15 +50,12 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 PLIST_SUB+=		SSL=""
 .endif
-CONFIGURE_ARGS+=	--enable-ipv6
 
-.if defined(WITH_NTPSNMPD)
-PLIST_FILES+=		bin/ntpsnmpd
-BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-.else
-CONFIGURE_ARGS+=	--without-ntpsnmpd
+.for D in ${NTP_DRIVERS}
+.if defined(WITH_${D})
+CONFIGURE_ARGS+=	--enable-${D}
 .endif
+.endfor
 
 pre-configure:
 	@cd ${WRKSRC} && ./bootstrap
