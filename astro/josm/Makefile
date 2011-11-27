@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	4487
+PORTVERSION=	4550
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://mirror.amdmi3.ru/distfiles/:josm \
@@ -23,8 +23,10 @@ NO_WRKSUBDIR=	yes
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 
+JOSM_MEMORY_LIMIT?=1024
+
 SUB_FILES=	josm.sh
-SUB_LIST=	JARNAME=${DISTNAME}
+SUB_LIST=	JARNAME=${DISTNAME} JOSM_MEMORY_LIMIT=${JOSM_MEMORY_LIMIT}
 
 WEBKITIMG=	webkit-image
 WEBKITIMG_SRC=	${WEBKITIMG}.cpp
@@ -34,6 +36,10 @@ PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" off
 
 .include <bsd.port.options.mk>
+
+pre-everything::
+	@${ECHO_CMD} "You can change limit of memory available to josm by defining"
+	@${ECHO_CMD} "JOSM_MEMORY_LIMIT variable in /etc/make.conf. Default is 1024 (MB)."
 
 .if defined(WITH_WEBKIT_IMAGE)
 PLIST_FILES+=	bin/webkit-image
