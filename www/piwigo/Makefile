@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwigo
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 		SF/${PORTNAME}/Piwigo/${PORTVERSION}
