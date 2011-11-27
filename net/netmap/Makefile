@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	netmap
-PORTVERSION=	0.1.2b
-PORTREVISION=	5
+PORTVERSION=	0.1.3
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NetMap%200.1.2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NetMap%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make a graphical representation of the surounding network
@@ -18,6 +17,8 @@ COMMENT=	Make a graphical representation of the surounding network
 RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
 
 USE_GMAKE=	yes
+
+PLIST_FILES=	bin/makelist bin/netmap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/makelist/makelist ${PREFIX}/bin
