@@ -1,5 +1,0 @@
-bin/frotz
-%%PORTDOCS%%share/doc/frotz/BUGS
-%%PORTDOCS%%share/doc/frotz/HOW_TO_PLAY
-%%PORTDOCS%%share/doc/frotz/README
-%%PORTDOCS%%@dirrm share/doc/frotz
