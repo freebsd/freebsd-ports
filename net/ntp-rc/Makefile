@@ -52,6 +52,10 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 PLIST_SUB+=		SSL=""
 .endif
 
+.if !defined(DISABLE_IPV6)
+CONFIGURE_ARGS+=        --enable-ipv6
+.endif
+
 .for D in ${NTP_DRIVERS}
 .if defined(WITH_${D})
 CONFIGURE_ARGS+=	--enable-${D}
