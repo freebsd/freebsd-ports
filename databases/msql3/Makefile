@@ -17,10 +17,13 @@ CONFLICTS=	msql-2*
 USE_LDCONFIG=	YES
 USE_PERL5=	YES
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
 LATEST_LINK=	msql3
 
 # Not free for commercial use.
-RESTRICTED=	"restrictive copyright (no commercial use)"
+RESTRICTED=	restrictive copyright (no commercial use)
 
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
@@ -40,17 +43,14 @@ do-configure:
 		cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./setup
 		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/customize_scripts
 
-pre-install:
-		@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	    ${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
 .for f in msqladmin msqlimport msqlexport
-	    ${CHGRP} msql ${PREFIX}/bin/${f}
+	    ${CHGRP} ${GROUPS} ${PREFIX}/bin/${f}
 .endfor
-	    ${CHGRP} msql ${PREFIX}/sbin/msql3d
+	    ${CHGRP} ${GROUPS} ${PREFIX}/sbin/msql3d
 	    ${CHMOD} 751 ${PREFIX}/etc/msql3/
-	    ${CHOWN} -R msql:msql ${PREFIX}/etc/msql3/
+	    ${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/etc/msql3/
 	    ${MKDIR} ${PREFIX}/etc/rc.d
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql3.sh ]; then \
 			${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/msql3.sh startup file."; \
@@ -72,7 +72,17 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="- You must manually obtain ${DISTFILES} from 'http://www.hughes.com.au/download/' and place it in ${DISTDIR}.  The distribution requires registration prior to use"
+DISTFILE_INSTRUCTIONS=	\n\
+- You must manually obtain ${DISTFILES} from \n\
+http://www.Hughes.com.au/download/\n\
+and place it in ${DISTDIR}.\n\
+The distribution requires registration prior to use.\n\n
+.endif
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
 .endif
 
 .include <bsd.port.post.mk>
