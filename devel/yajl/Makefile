@@ -15,7 +15,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
 GITREF=		f4b2b1a
-DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-${GITREF}
+DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-g${GITREF}
 WRKSRC=		${WRKDIR}/lloyd-${PORTNAME}-${GITREF}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
