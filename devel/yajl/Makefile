@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	yajl
-PORTVERSION=	1.0.11
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/bapt \
 		http://files.etoilebsd.net/yajl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
-GITREF=		f4baae0
-DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-0-g${GITREF}
+GITREF=		f4b2b1a
+DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-${GITREF}
 WRKSRC=		${WRKDIR}/lloyd-${PORTNAME}-${GITREF}
 PLIST_SUB=	VERSION=${PORTVERSION}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +22,7 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
 		ev.4:${PORTSDIR}/devel/libev \
-		yajl.1:${PORTSDIR}/devel/yajl
+		yajl.2:${PORTSDIR}/devel/yajl
 
 USE_XORG=	x11
 USE_BISON=	build
