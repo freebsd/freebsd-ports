@@ -1,9 +1,0 @@
-bin/mpeg2encode
-bin/mpeg2decode
-%%DATADIR%%/mpeg2enc.doc
-%%DATADIR%%/MPEG-1.par
-%%DATADIR%%/NTSC.par
-%%DATADIR%%/PAL.par
-%%DATADIR%%/inter.mat
-%%DATADIR%%/intra.mat
-@dirrm %%DATADIR%%
