@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p234
+PORTVERSION=	4.2.7p236
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -23,9 +23,11 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
 USE_GNOME=	gnomehack
 
-.if defined(ENABLE_RAWDCF)
-CONFIGURE_ARGS+=	--enable-RAWDCF
-.endif
+MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8
+
+.include "Makefile.inc"
+
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--without-crypto
@@ -41,7 +43,21 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8
+.if defined(WITH_NTPSNMPD)
+PLIST_FILES+=		sbin/ntpsnmpd
+BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+.else
+CONFIGURE_ARGS+=	--without-ntpsnmpd
+.endif
+
+.for D in ${NTP_DRIVERS}
+.if defined(WITH_${D})
+CONFIGURE_ARGS+=	--enable-${D}
+.endif
+.endfor
+ 
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO}
@@ -49,8 +65,6 @@ pre-everything::
 	@${ECHO} sure that the net-mgmt/net-snmp port is installed before
 	@${ECHO} building and installing this port.
 	@${ECHO}
-
-.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/net-snmp-config)
 # NTP autodects net-snmp and if found builds and installs a binary that
