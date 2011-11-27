@@ -23,7 +23,7 @@ lib/x11amp/Output/libOSS.so
 lib/x11amp/Output/libesdout.la
 lib/x11amp/Output/libesdout.so
 %%DATADIR%%/wmx11amp.xpm
-@dirrm %%DATADIR%%/x11amp
+@dirrm %%DATADIR%%/
 @dirrm lib/x11amp/Output
 @dirrm lib/x11amp/Input
 @dirrm lib/x11amp/General
