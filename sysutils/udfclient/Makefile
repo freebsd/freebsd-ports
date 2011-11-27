@@ -7,6 +7,7 @@
 
 PORTNAME=	udfclient
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
 		${MASTER_SITE_NETBSD} \
@@ -34,11 +35,7 @@ PLIST_FILES=	bin/udfdump \
 		bin/cd_disect \
 		bin/mmc_format
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900043
-BROKEN=		Does not compile on recent FreeBSD-9
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_FUSE)
 UDFCLIENTFS_NAME=	udfclientfs
@@ -64,4 +61,4 @@ post-patch:
 	${CP} ${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.c ${WRKSRC}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
