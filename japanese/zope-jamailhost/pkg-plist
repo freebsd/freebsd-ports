@@ -1,6 +1,0 @@
-%%ZOPEPRODUCTDIR%%/jaMailHost/README.ja
-%%ZOPEPRODUCTDIR%%/jaMailHost/__init__.py
-%%ZOPEPRODUCTDIR%%/jaMailHost/__init__.pyc
-%%ZOPEPRODUCTDIR%%/jaMailHost/version.txt
-@dirrm %%ZOPEPRODUCTDIR%%/jaMailHost
-@dirrmtry %%ZOPEPRODUCTDIR%%
