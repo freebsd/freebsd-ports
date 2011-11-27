@@ -596,6 +596,7 @@ lib/R/library/rkward/Meta/Rd.rds
 lib/R/library/rkward/Meta/hsearch.rds
 lib/R/library/rkward/Meta/links.rds
 lib/R/library/rkward/Meta/package.rds
+lib/R/library/rkward/NAMESPACE
 lib/R/library/rkward/R/rkward
 lib/R/library/rkward/R/rkward.rdb
 lib/R/library/rkward/R/rkward.rdx

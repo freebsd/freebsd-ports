@@ -474,6 +474,7 @@ share/icons/locolor/32x32/apps/rkward.png
 @cwd %%LOCALBASE%%
 lib/R/library/rkward/DESCRIPTION
 lib/R/library/rkward/INDEX
+lib/R/library/rkward/NAMESPACE
 lib/R/library/rkward/Meta/Rd.rds
 lib/R/library/rkward/Meta/hsearch.rds
 lib/R/library/rkward/Meta/links.rds
@@ -492,7 +493,6 @@ lib/R/library/rkward/libs/rkward.so
 @dirrm lib/R/library/rkward/libs
 @dirrm lib/R/library/rkward/html
 @dirrm lib/R/library/rkward/help
-@dirrm lib/R/library/rkward/R-ex
 @dirrm lib/R/library/rkward/R
 @dirrm lib/R/library/rkward/Meta
 @dirrm lib/R/library/rkward
