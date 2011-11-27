@@ -1,7 +1,8 @@
-# $FreeBSD: /tmp/pcvs/ports/net/ntp-rc/Makefile.inc,v 1.1 2011-11-27 19:55:46 cy Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/ntp-rc/Makefile.inc,v 1.2 2011-11-27 20:04:08 cy Exp $
 
 OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
 		SSL		"Enable SSL" ON \
+		IPV6		"Enable IPv6" OFF \
   		BANCOMM		"Enable Datum/Bancomm bc635/VME interface" OFF \
   		GPSVME		"Enable TrueTime GPS receiver/VME interface" OFF \
   		ACTS		"Enable ACTS modem service" OFF \
