@@ -52,25 +52,28 @@
 %%WWWDIR%%/admin/include/functions_plugins.inc.php
 %%WWWDIR%%/admin/include/functions_upgrade.php
 %%WWWDIR%%/admin/include/functions_upload.inc.php
+%%WWWDIR%%/admin/include/image.class.php
 %%WWWDIR%%/admin/include/index.php
 %%WWWDIR%%/admin/include/languages.class.php
+%%WWWDIR%%/admin/include/mysqldump.php
 %%WWWDIR%%/admin/include/pclzip.lib.php
 %%WWWDIR%%/admin/include/photos_add_direct_prepare.inc.php
 %%WWWDIR%%/admin/include/photos_add_direct_process.inc.php
 %%WWWDIR%%/admin/include/plugins.class.php
 %%WWWDIR%%/admin/include/tabsheet.class.php
 %%WWWDIR%%/admin/include/themes.class.php
+%%WWWDIR%%/admin/include/updates.class.php
 %%WWWDIR%%/admin/include/uploadify/cancel.png
-%%WWWDIR%%/admin/include/uploadify/jquery.uploadify.v2.1.0.min.js
-%%WWWDIR%%/admin/include/uploadify/swfobject.js
+%%WWWDIR%%/admin/include/uploadify/jquery.uploadify.v3.0.0.min.js
 %%WWWDIR%%/admin/include/uploadify/uploadify.css
 %%WWWDIR%%/admin/include/uploadify/uploadify.php
 %%WWWDIR%%/admin/include/uploadify/uploadify.swf
+%%WWWDIR%%/admin/include/uploadify/uploadifyLang_en.js
 %%WWWDIR%%/admin/index.php
 %%WWWDIR%%/admin/intro.php
+%%WWWDIR%%/admin/languages.php
 %%WWWDIR%%/admin/languages_installed.php
 %%WWWDIR%%/admin/languages_new.php
-%%WWWDIR%%/admin/languages_update.php
 %%WWWDIR%%/admin/maintenance.php
 %%WWWDIR%%/admin/menubar.php
 %%WWWDIR%%/admin/notification_by_mail.php
@@ -82,9 +85,9 @@
 %%WWWDIR%%/admin/photos_add_settings.php
 %%WWWDIR%%/admin/picture_modify.php
 %%WWWDIR%%/admin/plugin.php
-%%WWWDIR%%/admin/plugins_list.php
+%%WWWDIR%%/admin/plugins.php
+%%WWWDIR%%/admin/plugins_installed.php
 %%WWWDIR%%/admin/plugins_new.php
-%%WWWDIR%%/admin/plugins_update.php
 %%WWWDIR%%/admin/popuphelp.php
 %%WWWDIR%%/admin/profile.php
 %%WWWDIR%%/admin/rating.php
@@ -95,6 +98,7 @@
 %%WWWDIR%%/admin/stats.php
 %%WWWDIR%%/admin/tags.php
 %%WWWDIR%%/admin/theme.php
+%%WWWDIR%%/admin/themes.php
 %%WWWDIR%%/admin/themes/clear/icon/cat_move.png
 %%WWWDIR%%/admin/themes/clear/icon/category_children.png
 %%WWWDIR%%/admin/themes/clear/icon/category_delete.png
@@ -178,6 +182,7 @@
 %%WWWDIR%%/admin/themes/default/icon/errors.png
 %%WWWDIR%%/admin/themes/default/icon/exit.png
 %%WWWDIR%%/admin/themes/default/icon/fcbkcomplete_close.gif
+%%WWWDIR%%/admin/themes/default/icon/help-min.png
 %%WWWDIR%%/admin/themes/default/icon/help.png
 %%WWWDIR%%/admin/themes/default/icon/home.png
 %%WWWDIR%%/admin/themes/default/icon/index.php
@@ -212,7 +217,10 @@
 %%WWWDIR%%/admin/themes/default/icon/virt_category.png
 %%WWWDIR%%/admin/themes/default/icon/warning.png
 %%WWWDIR%%/admin/themes/default/icon/warnings.png
+%%WWWDIR%%/admin/themes/default/images/ajax-loader-bar.gif
+%%WWWDIR%%/admin/themes/default/images/ajax-loader.gif
 %%WWWDIR%%/admin/themes/default/images/logo.png
+%%WWWDIR%%/admin/themes/default/images/pbar-ani.gif
 %%WWWDIR%%/admin/themes/default/index.php
 %%WWWDIR%%/admin/themes/default/local_head.tpl
 %%WWWDIR%%/admin/themes/default/print.css
@@ -247,7 +255,6 @@
 %%WWWDIR%%/admin/themes/default/template/intro.tpl
 %%WWWDIR%%/admin/themes/default/template/languages_installed.tpl
 %%WWWDIR%%/admin/themes/default/template/languages_new.tpl
-%%WWWDIR%%/admin/themes/default/template/languages_update.tpl
 %%WWWDIR%%/admin/themes/default/template/maintenance.tpl
 %%WWWDIR%%/admin/themes/default/template/menubar.tpl
 %%WWWDIR%%/admin/themes/default/template/navigation_bar.tpl
@@ -258,9 +265,8 @@
 %%WWWDIR%%/admin/themes/default/template/photos_add_ploader.tpl
 %%WWWDIR%%/admin/themes/default/template/photos_add_settings.tpl
 %%WWWDIR%%/admin/themes/default/template/picture_modify.tpl
-%%WWWDIR%%/admin/themes/default/template/plugins_list.tpl
+%%WWWDIR%%/admin/themes/default/template/plugins_installed.tpl
 %%WWWDIR%%/admin/themes/default/template/plugins_new.tpl
-%%WWWDIR%%/admin/themes/default/template/plugins_update.tpl
 %%WWWDIR%%/admin/themes/default/template/popuphelp.tpl
 %%WWWDIR%%/admin/themes/default/template/profile.tpl
 %%WWWDIR%%/admin/themes/default/template/profile_content.tpl
@@ -272,8 +278,9 @@
 %%WWWDIR%%/admin/themes/default/template/tags.tpl
 %%WWWDIR%%/admin/themes/default/template/themes_installed.tpl
 %%WWWDIR%%/admin/themes/default/template/themes_new.tpl
-%%WWWDIR%%/admin/themes/default/template/themes_update.tpl
 %%WWWDIR%%/admin/themes/default/template/thumbnail.tpl
+%%WWWDIR%%/admin/themes/default/template/updates_ext.tpl
+%%WWWDIR%%/admin/themes/default/template/updates_pwg.tpl
 %%WWWDIR%%/admin/themes/default/template/upgrade.tpl
 %%WWWDIR%%/admin/themes/default/template/user_list.tpl
 %%WWWDIR%%/admin/themes/default/template/user_perm.tpl
@@ -316,8 +323,10 @@
 %%WWWDIR%%/admin/themes/roma/themeconf.inc.php
 %%WWWDIR%%/admin/themes_installed.php
 %%WWWDIR%%/admin/themes_new.php
-%%WWWDIR%%/admin/themes_update.php
 %%WWWDIR%%/admin/thumbnail.php
+%%WWWDIR%%/admin/updates.php
+%%WWWDIR%%/admin/updates_ext.php
+%%WWWDIR%%/admin/updates_pwg.php
 %%WWWDIR%%/admin/user_list.php
 %%WWWDIR%%/admin/user_perm.php
 %%WWWDIR%%/category.php
@@ -464,6 +473,18 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
 %%WWWDIR%%/install/config.sql
+%%WWWDIR%%/install/db/100-database.php
+%%WWWDIR%%/install/db/101-database.php
+%%WWWDIR%%/install/db/102-database.php
+%%WWWDIR%%/install/db/103-database.php
+%%WWWDIR%%/install/db/104-database.php
+%%WWWDIR%%/install/db/105-database.php
+%%WWWDIR%%/install/db/106-database.php
+%%WWWDIR%%/install/db/107-database.php
+%%WWWDIR%%/install/db/108-database.php
+%%WWWDIR%%/install/db/109-database.php
+%%WWWDIR%%/install/db/110-database.php
+%%WWWDIR%%/install/db/111-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -501,6 +522,8 @@
 %%WWWDIR%%/install/db/95-database.php
 %%WWWDIR%%/install/db/96-database.php
 %%WWWDIR%%/install/db/97-database.php
+%%WWWDIR%%/install/db/98-database.php
+%%WWWDIR%%/install/db/99-database.php
 %%WWWDIR%%/install/db/index.php
 %%WWWDIR%%/install/hosting.php
 %%WWWDIR%%/install/index.php
@@ -520,11 +543,14 @@
 %%WWWDIR%%/install/upgrade_1.7.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
+%%WWWDIR%%/install/upgrade_2.2.0.php
 %%WWWDIR%%/language/af_ZA/about.html
+%%WWWDIR%%/language/af_ZA/admin.lang.php
 %%WWWDIR%%/language/af_ZA/af_ZA.jpg
 %%WWWDIR%%/language/af_ZA/common.lang.php
 %%WWWDIR%%/language/af_ZA/index.php
 %%WWWDIR%%/language/af_ZA/iso.txt
+%%WWWDIR%%/language/af_ZA/upgrade.lang.php
 %%WWWDIR%%/language/ar_SA/Translator.txt
 %%WWWDIR%%/language/ar_SA/about.html
 %%WWWDIR%%/language/ar_SA/admin.lang.php
@@ -638,10 +664,16 @@
 %%WWWDIR%%/language/de_DE/install.lang.php
 %%WWWDIR%%/language/de_DE/iso.txt
 %%WWWDIR%%/language/de_DE/upgrade.lang.php
+%%WWWDIR%%/language/dv_MV/common.lang.php
+%%WWWDIR%%/language/dv_MV/dv_MV.jpg
+%%WWWDIR%%/language/dv_MV/index.php
+%%WWWDIR%%/language/dv_MV/iso.txt
 %%WWWDIR%%/language/el_GR/about.html
+%%WWWDIR%%/language/el_GR/admin.lang.php
 %%WWWDIR%%/language/el_GR/common.lang.php
 %%WWWDIR%%/language/el_GR/el_GR.jpg
 %%WWWDIR%%/language/el_GR/index.php
+%%WWWDIR%%/language/el_GR/install.lang.php
 %%WWWDIR%%/language/el_GR/iso.txt
 %%WWWDIR%%/language/en_UK/about.html
 %%WWWDIR%%/language/en_UK/admin.lang.php
@@ -710,6 +742,9 @@
 %%WWWDIR%%/language/es_ES/install.lang.php
 %%WWWDIR%%/language/es_ES/iso.txt
 %%WWWDIR%%/language/es_ES/upgrade.lang.php
+%%WWWDIR%%/language/et_EE/common.lang.php
+%%WWWDIR%%/language/et_EE/et_EE.jpg
+%%WWWDIR%%/language/et_EE/iso.txt
 %%WWWDIR%%/language/fa_IR/about.html
 %%WWWDIR%%/language/fa_IR/admin.lang.php
 %%WWWDIR%%/language/fa_IR/common.lang.php
@@ -787,6 +822,7 @@
 %%WWWDIR%%/language/he_IL/help/help_add_photos.html
 %%WWWDIR%%/language/he_IL/install.lang.php
 %%WWWDIR%%/language/he_IL/iso.txt
+%%WWWDIR%%/language/he_IL/upgrade.lang.php
 %%WWWDIR%%/language/hr_HR/about.html
 %%WWWDIR%%/language/hr_HR/admin.lang.php
 %%WWWDIR%%/language/hr_HR/common.lang.php
@@ -941,6 +977,10 @@
 %%WWWDIR%%/language/ka_GE/iso.txt
 %%WWWDIR%%/language/ka_GE/ka_GE.jpg
 %%WWWDIR%%/language/ka_GE/upgrade.lang.php
+%%WWWDIR%%/language/ko_KR/common.lang.php
+%%WWWDIR%%/language/ko_KR/index.php
+%%WWWDIR%%/language/ko_KR/iso.txt
+%%WWWDIR%%/language/ko_KR/ko_KR.jpg
 %%WWWDIR%%/language/lv_LV/about.html
 %%WWWDIR%%/language/lv_LV/admin.lang.php
 %%WWWDIR%%/language/lv_LV/common.lang.php
@@ -1095,6 +1135,7 @@
 %%WWWDIR%%/language/pt_PT/pt_PT.jpg
 %%WWWDIR%%/language/pt_PT/upgrade.lang.php
 %%WWWDIR%%/language/ro_RO/about.html
+%%WWWDIR%%/language/ro_RO/admin.lang.php
 %%WWWDIR%%/language/ro_RO/common.lang.php
 %%WWWDIR%%/language/ro_RO/index.php
 %%WWWDIR%%/language/ro_RO/iso.txt
@@ -1157,6 +1198,7 @@
 %%WWWDIR%%/language/sk_SK/sk_SK.jpg
 %%WWWDIR%%/language/sk_SK/upgrade.lang.php
 %%WWWDIR%%/language/sl_SL/about.html
+%%WWWDIR%%/language/sl_SL/admin.lang.php
 %%WWWDIR%%/language/sl_SL/common.lang.php
 %%WWWDIR%%/language/sl_SL/iso.txt
 %%WWWDIR%%/language/sl_SL/sl_SL.jpg
@@ -1187,6 +1229,12 @@
 %%WWWDIR%%/language/sv_SE/iso.txt
 %%WWWDIR%%/language/sv_SE/sv_SE.jpg
 %%WWWDIR%%/language/sv_SE/upgrade.lang.php
+%%WWWDIR%%/language/th_TH/about.html
+%%WWWDIR%%/language/th_TH/admin.lang.php
+%%WWWDIR%%/language/th_TH/common.lang.php
+%%WWWDIR%%/language/th_TH/install.lang.php
+%%WWWDIR%%/language/th_TH/iso.txt
+%%WWWDIR%%/language/th_TH/th_TH.jpg
 %%WWWDIR%%/language/tr_TR/about.html
 %%WWWDIR%%/language/tr_TR/admin.lang.php
 %%WWWDIR%%/language/tr_TR/common.lang.php
@@ -1207,6 +1255,7 @@
 %%WWWDIR%%/language/tr_TR/tr_TR.jpg
 %%WWWDIR%%/language/tr_TR/upgrade.lang.php
 %%WWWDIR%%/language/uk_UA/about.html
+%%WWWDIR%%/language/uk_UA/admin.lang.php
 %%WWWDIR%%/language/uk_UA/common.lang.php
 %%WWWDIR%%/language/uk_UA/iso.txt
 %%WWWDIR%%/language/uk_UA/uk_UA.jpg
@@ -1752,19 +1801,45 @@
 %%WWWDIR%%/themes/default/icon/up.png
 %%WWWDIR%%/themes/default/icon/validate_s.png
 %%WWWDIR%%/themes/default/iconset.css
-%%WWWDIR%%/themes/default/images/colorbox-controls.png
-%%WWWDIR%%/themes/default/images/colorbox-loading.gif
+%%WWWDIR%%/themes/default/images/ajax-loader-small.gif
 %%WWWDIR%%/themes/default/images/index.php
+%%WWWDIR%%/themes/default/images/progressbar.gif
+%%WWWDIR%%/themes/default/images/progressbg_black.gif
+%%WWWDIR%%/themes/default/images/progressbg_green.gif
+%%WWWDIR%%/themes/default/images/progressbg_orange.gif
+%%WWWDIR%%/themes/default/images/progressbg_red.gif
+%%WWWDIR%%/themes/default/images/progressbg_yellow.gif
 %%WWWDIR%%/themes/default/index.php
 %%WWWDIR%%/themes/default/js/datepicker.js
 %%WWWDIR%%/themes/default/js/jquery.js
 %%WWWDIR%%/themes/default/js/jquery.min.js
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/colorbox.css
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/border.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/controls.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderBottomCenter.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderBottomLeft.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderBottomRight.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderMiddleLeft.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderMiddleRight.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderTopCenter.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderTopLeft.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6/borderTopRight.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/loading.gif
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/loading_background.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/overlay.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style1/index.html
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style2/colorbox.css
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images/controls.png
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images/controls.png.old
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images/loading.gif
+%%WWWDIR%%/themes/default/js/plugins/colorbox/style2/index.html
 %%WWWDIR%%/themes/default/js/plugins/jquery.ajaxmanager.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.autogrow-textarea.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.cluetip.js
-%%WWWDIR%%/themes/default/js/plugins/jquery.colorbox.css
 %%WWWDIR%%/themes/default/js/plugins/jquery.colorbox.min.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.jgrowl_minimized.js
+%%WWWDIR%%/themes/default/js/plugins/jquery.progressbar.js
+%%WWWDIR%%/themes/default/js/plugins/jquery.progressbar.min.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.sort.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.tipTip.minified.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.tokeninput.js
@@ -1826,6 +1901,7 @@
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-sv.js
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-ta.js
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-th.js
+%%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-tj.js
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-tr.js
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-uk.js
 %%WWWDIR%%/themes/default/js/ui/i18n/jquery.ui.datepicker-vi.js
@@ -2002,6 +2078,12 @@
 @dirrm %%WWWDIR%%/themes/default/js/ui/minified
 @dirrm %%WWWDIR%%/themes/default/js/ui/i18n
 @dirrm %%WWWDIR%%/themes/default/js/ui
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox
 @dirrm %%WWWDIR%%/themes/default/js/plugins
 @dirrm %%WWWDIR%%/themes/default/js
 @dirrm %%WWWDIR%%/themes/default/images
@@ -2153,6 +2235,7 @@
 @dirrm %%WWWDIR%%/language/uk_UA
 @dirrm %%WWWDIR%%/language/tr_TR/help
 @dirrm %%WWWDIR%%/language/tr_TR
+@dirrm %%WWWDIR%%/language/th_TH
 @dirrm %%WWWDIR%%/language/sv_SE/help
 @dirrm %%WWWDIR%%/language/sv_SE
 @dirrm %%WWWDIR%%/language/sr_RS
@@ -2177,6 +2260,7 @@
 @dirrm %%WWWDIR%%/language/mk_MK
 @dirrm %%WWWDIR%%/language/lv_LV/help
 @dirrm %%WWWDIR%%/language/lv_LV
+@dirrm %%WWWDIR%%/language/ko_KR
 @dirrm %%WWWDIR%%/language/ka_GE/help
 @dirrm %%WWWDIR%%/language/ka_GE
 @dirrm %%WWWDIR%%/language/ja_JP/help
@@ -2195,12 +2279,14 @@
 @dirrm %%WWWDIR%%/language/fr_CA/help
 @dirrm %%WWWDIR%%/language/fr_CA
 @dirrm %%WWWDIR%%/language/fa_IR
+@dirrm %%WWWDIR%%/language/et_EE
 @dirrm %%WWWDIR%%/language/es_ES/help
 @dirrm %%WWWDIR%%/language/es_ES
 @dirrm %%WWWDIR%%/language/es_AR
 @dirrm %%WWWDIR%%/language/en_UK/help
 @dirrm %%WWWDIR%%/language/en_UK
 @dirrm %%WWWDIR%%/language/el_GR
+@dirrm %%WWWDIR%%/language/dv_MV
 @dirrm %%WWWDIR%%/language/de_DE/help
 @dirrm %%WWWDIR%%/language/de_DE
 @dirrm %%WWWDIR%%/language/da_DK
