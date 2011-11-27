@@ -6,33 +6,37 @@
 #
 
 PORTNAME=	leo
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	editors python
-MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}%20final
-DISTNAME=	Leo-${PORTVERSION}-final
+MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
+DISTNAME=	Leo-${PORTVERSION}-final-a
 DIST_SUBDIR=	leo
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced outline editor for programmers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/Gato/__init__.py:${PORTSDIR}/math/py-gato \
-		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils \
-		${PYTHON_SITELIBDIR}/SilverCity/__init__.py:${PORTSDIR}/textproc/silvercity \
-		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-OPTIONS=	PYQT4 "Qt4 look and feel" off
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0:${PORTSDIR}/textproc/py-docutils \
+		silvercity>=0:${PORTSDIR}/textproc/silvercity \
+		${PYTHON_PKGNAMEPREFIX}Pmw>=0:${PORTSDIR}/x11-toolkits/py-Pmw \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+
+OPTIONS=	PYENCHANT "Enable PyEnchant support " off
+
+WRKSRC=		${WRKDIR}/Leo-${PORTVERSION}-final
 
 USE_ZIP=	yes
 USE_PYTHON=	2.6+
 
 LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PYQT4)
-RUN_DEPENDS+=	py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+.if defined(WITH_PYENCHANT)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
 .endif
 
 post-extract:
@@ -50,13 +54,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.GIF ${LEO_DIR}/Icons
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.gif ${LEO_DIR}/Icons
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.png ${LEO_DIR}/Icons
-	@${MKDIR} ${LEO_DIR}/extensions
-	${INSTALL_DATA} ${WRKSRC}/leo/extensions/*.py ${LEO_DIR}/extensions
-.for dir in config core external modes plugins scripts test www
+.for dir in config core external extensions modes plugins scripts test www
 	@(cd ${WRKSRC}/leo; ${COPYTREE_SHARE} ${dir} ${LEO_DIR})
 .endfor
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/leo; ${COPYTREE_SHARE} doc ${LEO_DIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
