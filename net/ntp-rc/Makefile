@@ -7,7 +7,7 @@
 
 PORTNAME=	ntp
 PORTVERSION?=	4.2.6p5.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
@@ -61,9 +61,6 @@ CONFIGURE_ARGS+=        --enable-ipv6
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
-
-pre-configure:
-	@cd ${WRKSRC} && ./bootstrap
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
