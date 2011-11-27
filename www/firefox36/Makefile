@@ -111,6 +111,7 @@ pre-configure:
 port-pre-install:
 #	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
+	${ECHO_CMD} "@exec mkdir -p %D/include/firefox3/nss" >> ${PLISTD}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
 
