@@ -21,14 +21,14 @@ your payment.
 FreeBSD-specific port notes
 ---------------------------
 
-The port of mSQL 1.x lived in it's own tree, /usr/local/Minerva.  At the
+The port of mSQL 1.x lived in its own tree, /usr/local/Minerva.  At the
 time, mSQL was a part of a larger project called Minerva, to which other
 tools would be added.  These other tools would also live in
 /usr/local/Minerva.
 
 As of the 2.x release of mSQL, the author of mSQL has put many of these
 tools into the base mSQL distribution, and so it is no longer feasible to
-have the program live in it's own directory.
+have the program live in its own directory.
 
 So, in keeping with the BSD directory tree structure, you will find the
 following changes between the "official" mSQL 2.x distribution and the
@@ -44,12 +44,9 @@ Documentation states:			Port uses:
 /usr/local/Hughes/msql.conf		/usr/local/etc/msql2/msql.conf
 /usr/local/Hughes/msql.acl		/usr/local/etc/msql2/msql.acl
 
-To start the daemon, run /usr/local/etc/rc.d/msql2.sh as root.  This will
+To start the daemon, run /usr/local/etc/rc.d/msql2 as root.  This will
 start the daemon as the 'msql' user to make sure that the access permissions
 are correct.  This script will be executed upon system startup.
 
 Remember that mSQL is not free for use.  Please see
 /usr/local/share/doc/msql/License for details.
-
---
-j.

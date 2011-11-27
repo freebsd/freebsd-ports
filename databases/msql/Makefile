@@ -17,9 +17,13 @@ CONFLICTS=	msql-3*
 
 USE_LDCONFIG=	YES
 USE_PERL5=	YES
+PKGMESSAGE=	${FILESDIR}/post-install-notes
+
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 
 # Not free for commercial use.
-RESTRICTED=	"restrictive copyright (no commercial use)"
+RESTRICTED=	restrictive copyright (no commercial use)
 
 CFLAGS+=	-DANSI_ARGS
 MAKE_ENV+=	WRKSRC=${WRKSRC}
@@ -41,8 +45,6 @@ do-configure:
 
 pre-install:
 		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/check_old_version
-	pwd
-		@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
@@ -62,14 +64,26 @@ post-install:
 			${INSTALL_SCRIPT} -m 751 ${FILESDIR}/msql2.sh \
 				${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
-.if !defined(BATCH)
-		@ /usr/bin/more -e ${FILESDIR}/post-install-notes
-.endif
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900000
+BROKEN=	Broken on FreeBSD 9+
+.endif
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=- You must manually obtain ${DISTFILES} from 'http://www.Hughes.com.au/download/' and place it in ${DISTDIR}.  The distribution requires registration prior to use
+DISTFILE_INSTRUCTIONS=	\n\
+- You must manually obtain ${DISTFILES} from \n\
+http://www.Hughes.com.au/download/\n\
+and place it in ${DISTDIR}.\n\
+The distribution requires registration prior to use.\n\n
+.endif
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
 .endif
 
 .include <bsd.port.post.mk>
