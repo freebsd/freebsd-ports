@@ -1,23 +1,15 @@
---- belgolib/files.c.orig	Sun Dec 15 14:54:27 2002
-+++ belgolib/files.c	Sun Dec 15 14:54:27 2002
-@@ -1,6 +1,7 @@
- #include <errno.h>
- #include <stdio.h>
- #include <assert.h>
-+#include <iostream>
- 
- #include "files.h"
- #include "debug.h"
-@@ -16,7 +17,7 @@
+--- belgolib/files.c.orig	2010-01-06 08:00:52.000000000 +0900
++++ belgolib/files.c	2011-11-23 22:22:36.000000000 +0900
+@@ -17,7 +17,7 @@
  
  Infile::Infile() : ifstream() { }
  
 -Infile::Infile(const string& file_name, int mode, bool fatal)
 +Infile::Infile(const string& file_name, ios::openmode mode, bool fatal)
-     : ifstream(file_name.c_str(), mode)
+     : ifstream(file_name.c_str(), (std::_Ios_Openmode)mode)
  {
  
-@@ -38,7 +39,7 @@
+@@ -39,7 +39,7 @@
  }
  
  

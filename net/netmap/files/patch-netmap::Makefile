@@ -1,10 +1,10 @@
---- netmap/Makefile.orig	Fri Jun  7 00:12:40 2002
-+++ netmap/Makefile	Fri Jun  7 00:12:56 2002
+--- netmap/Makefile.orig	2010-01-06 07:59:38.000000000 +0900
++++ netmap/Makefile	2011-11-23 22:27:31.000000000 +0900
 @@ -1,8 +1,7 @@
  CFILES   = misc.c hostclass.c netmap.c drawmap.c config.c args.c lookup.c
  OFILES   = $(CFILES:.c=.o)
  
--CFLAGS = -O -Wall  
+-CFLAGS = -O -Wall -Wno-deprecated
 -CC = g++
 +CC = ${CXX}
  

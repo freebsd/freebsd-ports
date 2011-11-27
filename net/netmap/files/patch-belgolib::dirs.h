@@ -8,12 +8,3 @@
  
  #ifndef __make_dep__
  #include <string>
-@@ -91,7 +92,7 @@
- {
-     list<T*> result=ld1;
- 
--    for(list<T*>::const_iterator i = ld2.begin(); i != ld2.end(); i++)
-+    for(typename list<T*>::const_iterator i = ld2.begin(); i != ld2.end(); i++)
- 	result.push_back(*i);
- 
-     return result;
