@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2011-11-20 12:06:58.920967434 +0100
++++ CMakeLists.txt	2011-11-20 12:07:10.055968111 +0100
+@@ -485,7 +485,7 @@
+ #
+ # Setup directories we will need
+ #
+-SET(MANDIR "share/man/")
++SET(MANDIR "man/")
+ 
+ # Create the config file. It'll be appended to as the subdirs run though
+ # then dependency information will be written to it at the end of the
