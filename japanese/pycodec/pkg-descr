@@ -1,6 +1,0 @@
-This package provides Unicode codecs that make Python aware of
-Japanese character encodings such as EUC-JP, Shift_JIS and
-ISO-2022-JP.  By using this package, Japanese characters can be
-treated as a character string instead of a byte sequence.
-
-WWW: http://www.python.jp/Zope/download/JapaneseCodecs

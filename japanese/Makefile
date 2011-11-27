@@ -265,7 +265,6 @@
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
     SUBDIR += py-zinnia
-    SUBDIR += pycodec
     SUBDIR += qkc
     SUBDIR += qt4-codecs-jp
     SUBDIR += quit
