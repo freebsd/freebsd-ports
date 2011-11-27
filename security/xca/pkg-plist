@@ -9,7 +9,9 @@ bin/xca
 %%DATADIR%%/oids.txt
 %%DATADIR%%/xca_de.qm
 %%DATADIR%%/xca_es.qm
+%%DATADIR%%/xca_fr.qm
 %%DATADIR%%/xca_ru.qm
+%%DATADIR%%/xca_tr.qm
 %%DOCSDIR%%/xca.html
 share/applications/xca.desktop
 share/mime/packages/xca.xml
