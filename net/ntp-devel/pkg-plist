@@ -4,7 +4,6 @@ sbin/ntpd
 sbin/ntpdate
 sbin/ntpdc
 sbin/ntpq
-%%NETSNMP%%sbin/ntpsnmpd
 sbin/ntptime
 sbin/ntptrace
 sbin/sntp
