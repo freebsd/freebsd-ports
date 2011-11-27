@@ -7,27 +7,54 @@
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/ \
-		http://ftp.uni-koeln.de/graph/ \
-		http://gd.tuwien.ac.at/graphics/libs/alsolibs/
-DISTFILES=	mpeg2vidcodec_v12.tar.gz
+MASTER_SITES=	http://fossies.org/unix/misc/old/ \
+		http://www.imagemagick.org/download/delegates/ \
+		http://gd.tuwien.ac.at/graphics/libs/alsolibs/ \
+		http://www.mpeg.org/pub_ftp/mpeg/mssg/
+DISTNAME=	mpeg2vidcodec_v12
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
-USE_XORG=	xext
+OPTIONS=	X11 "Support for X11" on
+
 WRKSRC=		${WRKDIR}/mpeg2
-DATADIR=	share/mpeg2
-CFLAGS+=-DVERIFY -DVERBOSE -DTRACE
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+DATADIR=	${PREFIX}/share/mpeg2
+
+CFLAGS+=	-DVERIFY -DVERBOSE -DTRACE
+
+PORTDOCS=	mpeg2enc.doc
+PLIST_FILES=	bin/mpeg2decode bin/mpeg2encode \
+		%%DATADIR%%/MPEG-1.par %%DATADIR%%/NTSC.par \
+		%%DATADIR%%/PAL.par %%DATADIR%%/inter.mat \
+		%%DATADIR%%/intra.mat
+PLIST_DIRS=	%%DATADIR%%
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_X11)
+USE_XORG=	xext
+MAKE_ARGS+=	USE_DISP="-DDISPLAY" \
+		USE_SHMEM="-DSH_MEM" \
+		LIBS="$$(pkg-config --libs xext)" \
+		INCLUDEDIR="$$(pkg-config --cflags xext)"
+.endif
 
 do-install:
 .for i in dec enc
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${PREFIX}/bin
 .endfor
-	${MKDIR} ${PREFIX}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${PREFIX}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/par/* ${PREFIX}/${DATADIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/par/* ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
