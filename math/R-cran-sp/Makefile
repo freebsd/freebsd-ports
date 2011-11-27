@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	sp
-PORTVERSION=	0.9.78
-PORTREVISION=	3
+DISTVERSION=	0.9-91
 CATEGORIES=	math
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R Classes and Methods for Spatial Data
 
-USE_R_MOD=  		yes
+USE_R_MOD=		yes
 R_MOD_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

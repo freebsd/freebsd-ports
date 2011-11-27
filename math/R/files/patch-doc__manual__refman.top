@@ -1,0 +1,33 @@
+--- doc/manual/refman.top.orig	2011-11-23 12:21:46.000000000 -0500
++++ doc/manual/refman.top	2011-11-23 12:22:31.000000000 -0500
+@@ -4,18 +4,18 @@
+ 
+ %% Set PDF 1.5 and compression, including object compression
+ %% Needed for MiKTeX -- most other distributions default to this
+-\ifx\pdfoutput\undefined
+-\else
+-  \ifx\pdfoutput\relax
+-  \else
+-    \ifnum\pdfoutput>0
+-      % PDF output
+-      \pdfminorversion=5
+-      \pdfcompresslevel=9
+-      \pdfobjcompresslevel=2
+-    \fi
+-  \fi
+-\fi
++%%\ifx\pdfoutput\undefined
++%%\else
++%%  \ifx\pdfoutput\relax
++%%  \else
++%%    \ifnum\pdfoutput>0
++%%      % PDF output
++%%      \pdfminorversion=5
++%%      \pdfcompresslevel=9
++%%      \pdfobjcompresslevel=2
++%%    \fi
++%%  \fi
++%%\fi
+ 
+ \makeatletter
+ \renewcommand\@pnumwidth{2.05em} % over 1000 pages

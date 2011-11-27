@@ -177,6 +177,8 @@ lib/R/library/Matrix/Copyrights
 lib/R/library/Matrix/DESCRIPTION
 lib/R/library/Matrix/Doxyfile
 lib/R/library/Matrix/INDEX
+lib/R/library/Matrix/test-tools-1.R
+lib/R/library/Matrix/test-tools-Matrix.R
 lib/R/library/Matrix/Meta/Rd.rds
 lib/R/library/Matrix/Meta/data.rds
 lib/R/library/Matrix/Meta/hsearch.rds
@@ -354,6 +356,8 @@ lib/R/library/cluster/help/paths.rds
 lib/R/library/cluster/html/00Index.html
 lib/R/library/cluster/html/R.css
 lib/R/library/cluster/libs/cluster.so
+%%NLS%%lib/R/library/cluster/po/de/LC_MESSAGES/R-cluster.mo
+%%NLS%%lib/R/library/cluster/po/en@quot/LC_MESSAGES/R-cluster.mo
 lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
 lib/R/library/codetools/Meta/Rd.rds
@@ -396,15 +400,15 @@ lib/R/library/compiler/html/R.css
 %%NLS%%lib/R/library/compiler/po/ja/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/pt_BR/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/ru/LC_MESSAGES/R-compiler.mo
-%%NLS%%lib/R/library/compiler/po/zh_CN/LC_MESSAGES/R-compiler.mo
 lib/R/library/datasets/DESCRIPTION
 lib/R/library/datasets/INDEX
+lib/R/library/datasets/NAMESPACE
 lib/R/library/datasets/Meta/Rd.rds
 lib/R/library/datasets/Meta/data.rds
 lib/R/library/datasets/Meta/hsearch.rds
 lib/R/library/datasets/Meta/links.rds
+lib/R/library/datasets/Meta/nsInfo.rds
 lib/R/library/datasets/Meta/package.rds
-lib/R/library/datasets/R/datasets
 lib/R/library/datasets/data/Rdata.rdb
 lib/R/library/datasets/data/Rdata.rds
 lib/R/library/datasets/data/Rdata.rdx
@@ -456,95 +460,95 @@ lib/R/library/grDevices/NAMESPACE
 lib/R/library/grDevices/R/grDevices
 lib/R/library/grDevices/R/grDevices.rdb
 lib/R/library/grDevices/R/grDevices.rdx
-lib/R/library/grDevices/afm/CM_boldx_10.afm
-lib/R/library/grDevices/afm/CM_boldx_italic_10.afm
-lib/R/library/grDevices/afm/CM_italic_10.afm
-lib/R/library/grDevices/afm/CM_regular_10.afm
-lib/R/library/grDevices/afm/CM_symbol_10.afm
-lib/R/library/grDevices/afm/Courier-BoldOblique.afm
-lib/R/library/grDevices/afm/Courier-Bold.afm
-lib/R/library/grDevices/afm/Courier-Oblique.afm
-lib/R/library/grDevices/afm/Courier.afm
-lib/R/library/grDevices/afm/Helvetica-BoldOblique.afm
-lib/R/library/grDevices/afm/Helvetica-Bold.afm
-lib/R/library/grDevices/afm/Helvetica-Oblique.afm
-lib/R/library/grDevices/afm/Helvetica.afm
+lib/R/library/grDevices/afm/CM_boldx_10.afm.gz
+lib/R/library/grDevices/afm/CM_boldx_italic_10.afm.gz
+lib/R/library/grDevices/afm/CM_italic_10.afm.gz
+lib/R/library/grDevices/afm/CM_regular_10.afm.gz
+lib/R/library/grDevices/afm/CM_symbol_10.afm.gz
+lib/R/library/grDevices/afm/Courier-BoldOblique.afm.gz
+lib/R/library/grDevices/afm/Courier-Bold.afm.gz
+lib/R/library/grDevices/afm/Courier-Oblique.afm.gz
+lib/R/library/grDevices/afm/Courier.afm.gz
+lib/R/library/grDevices/afm/Helvetica-BoldOblique.afm.gz
+lib/R/library/grDevices/afm/Helvetica-Bold.afm.gz
+lib/R/library/grDevices/afm/Helvetica-Oblique.afm.gz
+lib/R/library/grDevices/afm/Helvetica.afm.gz
 lib/R/library/grDevices/afm/MustRead.html
 lib/R/library/grDevices/afm/README
-lib/R/library/grDevices/afm/Symbol.afm
-lib/R/library/grDevices/afm/Times-BoldItalic.afm
-lib/R/library/grDevices/afm/Times-Bold.afm
-lib/R/library/grDevices/afm/Times-Italic.afm
-lib/R/library/grDevices/afm/Times-Roman.afm
-lib/R/library/grDevices/afm/ZapfDingbats.afm
-lib/R/library/grDevices/afm/a010013l.afm
-lib/R/library/grDevices/afm/a010015l.afm
-lib/R/library/grDevices/afm/a010033l.afm
-lib/R/library/grDevices/afm/a010035l.afm
-lib/R/library/grDevices/afm/agd_____.afm
-lib/R/library/grDevices/afm/agdo____.afm
-lib/R/library/grDevices/afm/agw_____.afm
-lib/R/library/grDevices/afm/agwo____.afm
-lib/R/library/grDevices/afm/b018012l.afm
-lib/R/library/grDevices/afm/b018015l.afm
-lib/R/library/grDevices/afm/b018032l.afm
-lib/R/library/grDevices/afm/b018035l.afm
-lib/R/library/grDevices/afm/bkd_____.afm
-lib/R/library/grDevices/afm/bkdi____.afm
-lib/R/library/grDevices/afm/bkl_____.afm
-lib/R/library/grDevices/afm/bkli____.afm
-lib/R/library/grDevices/afm/c059013l.afm
-lib/R/library/grDevices/afm/c059016l.afm
-lib/R/library/grDevices/afm/c059033l.afm
-lib/R/library/grDevices/afm/c059036l.afm
-lib/R/library/grDevices/afm/cmbxti10.afm
-lib/R/library/grDevices/afm/cmti10.afm
-lib/R/library/grDevices/afm/cob_____.afm
-lib/R/library/grDevices/afm/cobo____.afm
-lib/R/library/grDevices/afm/com_____.afm
-lib/R/library/grDevices/afm/coo_____.afm
-lib/R/library/grDevices/afm/hv______.afm
-lib/R/library/grDevices/afm/hvb_____.afm
-lib/R/library/grDevices/afm/hvbo____.afm
-lib/R/library/grDevices/afm/hvn_____.afm
-lib/R/library/grDevices/afm/hvnb____.afm
-lib/R/library/grDevices/afm/hvnbo___.afm
-lib/R/library/grDevices/afm/hvno____.afm
-lib/R/library/grDevices/afm/hvo_____.afm
-lib/R/library/grDevices/afm/n019003l.afm
-lib/R/library/grDevices/afm/n019004l.afm
-lib/R/library/grDevices/afm/n019023l.afm
-lib/R/library/grDevices/afm/n019024l.afm
-lib/R/library/grDevices/afm/n019043l.afm
-lib/R/library/grDevices/afm/n019044l.afm
-lib/R/library/grDevices/afm/n019063l.afm
-lib/R/library/grDevices/afm/n019064l.afm
-lib/R/library/grDevices/afm/n021003l.afm
-lib/R/library/grDevices/afm/n021004l.afm
-lib/R/library/grDevices/afm/n021023l.afm
-lib/R/library/grDevices/afm/n021024l.afm
-lib/R/library/grDevices/afm/n022003l.afm
-lib/R/library/grDevices/afm/n022004l.afm
-lib/R/library/grDevices/afm/n022023l.afm
-lib/R/library/grDevices/afm/n022024l.afm
-lib/R/library/grDevices/afm/ncb_____.afm
-lib/R/library/grDevices/afm/ncbi____.afm
-lib/R/library/grDevices/afm/nci_____.afm
-lib/R/library/grDevices/afm/ncr_____.afm
-lib/R/library/grDevices/afm/p052003l.afm
-lib/R/library/grDevices/afm/p052004l.afm
-lib/R/library/grDevices/afm/p052023l.afm
-lib/R/library/grDevices/afm/p052024l.afm
-lib/R/library/grDevices/afm/pob_____.afm
-lib/R/library/grDevices/afm/pobi____.afm
-lib/R/library/grDevices/afm/poi_____.afm
-lib/R/library/grDevices/afm/por_____.afm
-lib/R/library/grDevices/afm/s050000l.afm
-lib/R/library/grDevices/afm/sy______.afm
-lib/R/library/grDevices/afm/tib_____.afm
-lib/R/library/grDevices/afm/tibi____.afm
-lib/R/library/grDevices/afm/tii_____.afm
-lib/R/library/grDevices/afm/tir_____.afm
+lib/R/library/grDevices/afm/Symbol.afm.gz
+lib/R/library/grDevices/afm/Times-BoldItalic.afm.gz
+lib/R/library/grDevices/afm/Times-Bold.afm.gz
+lib/R/library/grDevices/afm/Times-Italic.afm.gz
+lib/R/library/grDevices/afm/Times-Roman.afm.gz
+lib/R/library/grDevices/afm/ZapfDingbats.afm.gz
+lib/R/library/grDevices/afm/a010013l.afm.gz
+lib/R/library/grDevices/afm/a010015l.afm.gz
+lib/R/library/grDevices/afm/a010033l.afm.gz
+lib/R/library/grDevices/afm/a010035l.afm.gz
+lib/R/library/grDevices/afm/agd_____.afm.gz
+lib/R/library/grDevices/afm/agdo____.afm.gz
+lib/R/library/grDevices/afm/agw_____.afm.gz
+lib/R/library/grDevices/afm/agwo____.afm.gz
+lib/R/library/grDevices/afm/b018012l.afm.gz
+lib/R/library/grDevices/afm/b018015l.afm.gz
+lib/R/library/grDevices/afm/b018032l.afm.gz
+lib/R/library/grDevices/afm/b018035l.afm.gz
+lib/R/library/grDevices/afm/bkd_____.afm.gz
+lib/R/library/grDevices/afm/bkdi____.afm.gz
+lib/R/library/grDevices/afm/bkl_____.afm.gz
+lib/R/library/grDevices/afm/bkli____.afm.gz
+lib/R/library/grDevices/afm/c059013l.afm.gz
+lib/R/library/grDevices/afm/c059016l.afm.gz
+lib/R/library/grDevices/afm/c059033l.afm.gz
+lib/R/library/grDevices/afm/c059036l.afm.gz
+lib/R/library/grDevices/afm/cmbxti10.afm.gz
+lib/R/library/grDevices/afm/cmti10.afm.gz
+lib/R/library/grDevices/afm/cob_____.afm.gz
+lib/R/library/grDevices/afm/cobo____.afm.gz
+lib/R/library/grDevices/afm/com_____.afm.gz
+lib/R/library/grDevices/afm/coo_____.afm.gz
+lib/R/library/grDevices/afm/hv______.afm.gz
+lib/R/library/grDevices/afm/hvb_____.afm.gz
+lib/R/library/grDevices/afm/hvbo____.afm.gz
+lib/R/library/grDevices/afm/hvn_____.afm.gz
+lib/R/library/grDevices/afm/hvnb____.afm.gz
+lib/R/library/grDevices/afm/hvnbo___.afm.gz
+lib/R/library/grDevices/afm/hvno____.afm.gz
+lib/R/library/grDevices/afm/hvo_____.afm.gz
+lib/R/library/grDevices/afm/n019003l.afm.gz
+lib/R/library/grDevices/afm/n019004l.afm.gz
+lib/R/library/grDevices/afm/n019023l.afm.gz
+lib/R/library/grDevices/afm/n019024l.afm.gz
+lib/R/library/grDevices/afm/n019043l.afm.gz
+lib/R/library/grDevices/afm/n019044l.afm.gz
+lib/R/library/grDevices/afm/n019063l.afm.gz
+lib/R/library/grDevices/afm/n019064l.afm.gz
+lib/R/library/grDevices/afm/n021003l.afm.gz
+lib/R/library/grDevices/afm/n021004l.afm.gz
+lib/R/library/grDevices/afm/n021023l.afm.gz
+lib/R/library/grDevices/afm/n021024l.afm.gz
+lib/R/library/grDevices/afm/n022003l.afm.gz
+lib/R/library/grDevices/afm/n022004l.afm.gz
+lib/R/library/grDevices/afm/n022023l.afm.gz
+lib/R/library/grDevices/afm/n022024l.afm.gz
+lib/R/library/grDevices/afm/ncb_____.afm.gz
+lib/R/library/grDevices/afm/ncbi____.afm.gz
+lib/R/library/grDevices/afm/nci_____.afm.gz
+lib/R/library/grDevices/afm/ncr_____.afm.gz
+lib/R/library/grDevices/afm/p052003l.afm.gz
+lib/R/library/grDevices/afm/p052004l.afm.gz
+lib/R/library/grDevices/afm/p052023l.afm.gz
+lib/R/library/grDevices/afm/p052024l.afm.gz
+lib/R/library/grDevices/afm/pob_____.afm.gz
+lib/R/library/grDevices/afm/pobi____.afm.gz
+lib/R/library/grDevices/afm/poi_____.afm.gz
+lib/R/library/grDevices/afm/por_____.afm.gz
+lib/R/library/grDevices/afm/s050000l.afm.gz
+lib/R/library/grDevices/afm/sy______.afm.gz
+lib/R/library/grDevices/afm/tib_____.afm.gz
+lib/R/library/grDevices/afm/tibi____.afm.gz
+lib/R/library/grDevices/afm/tii_____.afm.gz
+lib/R/library/grDevices/afm/tir_____.afm.gz
 lib/R/library/grDevices/enc/AdobeStd.enc
 lib/R/library/grDevices/enc/AdobeSym.enc
 lib/R/library/grDevices/enc/CP1250.enc
@@ -571,6 +575,8 @@ lib/R/library/grDevices/help/paths.rds
 lib/R/library/grDevices/html/00Index.html
 lib/R/library/grDevices/html/R.css
 lib/R/library/grDevices/icc/srgb
+lib/R/library/grDevices/icc/srgb.flate
+lib/R/library/grDevices/libs/cairo.so
 lib/R/library/grDevices/libs/grDevices.so
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/grDevices.mo
@@ -615,6 +621,13 @@ lib/R/library/graphics/help/aliases.rds
 lib/R/library/graphics/help/graphics.rdb
 lib/R/library/graphics/help/graphics.rdx
 lib/R/library/graphics/help/paths.rds
+lib/R/library/graphics/help/figures/mai.pdf
+lib/R/library/graphics/help/figures/mai.png
+lib/R/library/graphics/help/figures/oma.pdf
+lib/R/library/graphics/help/figures/oma.png
+lib/R/library/graphics/help/figures/pch.pdf
+lib/R/library/graphics/help/figures/pch.png
+lib/R/library/graphics/help/figures/pch.svg
 lib/R/library/graphics/html/00Index.html
 lib/R/library/graphics/html/R.css
 %%NLS%%lib/R/library/graphics/po/de/LC_MESSAGES/R-graphics.mo
@@ -640,45 +653,44 @@ lib/R/library/grid/R/grid.rdb
 lib/R/library/grid/R/grid.rdx
 lib/R/library/grid/doc/changes.txt
 lib/R/library/grid/doc/displaylist.R
-lib/R/library/grid/doc/displaylist.Snw
+lib/R/library/grid/doc/displaylist.Rnw
 lib/R/library/grid/doc/displaylist.pdf
 lib/R/library/grid/doc/frame.R
-lib/R/library/grid/doc/frame.Snw
+lib/R/library/grid/doc/frame.Rnw
 lib/R/library/grid/doc/frame.pdf
 lib/R/library/grid/doc/grid.R
-lib/R/library/grid/doc/grid.Snw
-lib/R/library/grid/doc/grid.bib
+lib/R/library/grid/doc/grid.Rnw
 lib/R/library/grid/doc/grid.pdf
 lib/R/library/grid/doc/grobs.R
-lib/R/library/grid/doc/grobs.Snw
+lib/R/library/grid/doc/grobs.Rnw
 lib/R/library/grid/doc/grobs.pdf
 lib/R/library/grid/doc/index.html
 lib/R/library/grid/doc/interactive.R
-lib/R/library/grid/doc/interactive.Snw
+lib/R/library/grid/doc/interactive.Rnw
 lib/R/library/grid/doc/interactive.pdf
 lib/R/library/grid/doc/locndimn.R
-lib/R/library/grid/doc/locndimn.Snw
+lib/R/library/grid/doc/locndimn.Rnw
 lib/R/library/grid/doc/locndimn.pdf
 lib/R/library/grid/doc/moveline.R
-lib/R/library/grid/doc/moveline.Snw
+lib/R/library/grid/doc/moveline.Rnw
 lib/R/library/grid/doc/moveline.pdf
 lib/R/library/grid/doc/nonfinite.R
-lib/R/library/grid/doc/nonfinite.Snw
+lib/R/library/grid/doc/nonfinite.Rnw
 lib/R/library/grid/doc/nonfinite.pdf
 lib/R/library/grid/doc/plotexample.R
-lib/R/library/grid/doc/plotexample.Snw
+lib/R/library/grid/doc/plotexample.Rnw
 lib/R/library/grid/doc/plotexample.pdf
 lib/R/library/grid/doc/rotated.R
-lib/R/library/grid/doc/rotated.Snw
+lib/R/library/grid/doc/rotated.Rnw
 lib/R/library/grid/doc/rotated.pdf
 lib/R/library/grid/doc/saveload.R
-lib/R/library/grid/doc/saveload.Snw
+lib/R/library/grid/doc/saveload.Rnw
 lib/R/library/grid/doc/saveload.pdf
 lib/R/library/grid/doc/sharing.R
-lib/R/library/grid/doc/sharing.Snw
+lib/R/library/grid/doc/sharing.Rnw
 lib/R/library/grid/doc/sharing.pdf
 lib/R/library/grid/doc/viewports.R
-lib/R/library/grid/doc/viewports.Snw
+lib/R/library/grid/doc/viewports.Rnw
 lib/R/library/grid/doc/viewports.pdf
 lib/R/library/grid/help/AnIndex
 lib/R/library/grid/help/aliases.rds
@@ -863,6 +875,38 @@ lib/R/library/nnet/libs/nnet.so
 %%NLS%%lib/R/library/nnet/po/de/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
+lib/R/library/parallel/DESCRIPTION
+lib/R/library/parallel/INDEX
+lib/R/library/parallel/Meta/Rd.rds
+lib/R/library/parallel/Meta/hsearch.rds
+lib/R/library/parallel/Meta/links.rds
+lib/R/library/parallel/Meta/nsInfo.rds
+lib/R/library/parallel/Meta/package.rds
+lib/R/library/parallel/Meta/vignette.rds
+lib/R/library/parallel/NAMESPACE
+lib/R/library/parallel/R/parallel
+lib/R/library/parallel/R/parallel.rdb
+lib/R/library/parallel/R/parallel.rdx
+lib/R/library/parallel/doc/index.html
+lib/R/library/parallel/doc/parallel.R
+lib/R/library/parallel/doc/parallel.Rnw
+lib/R/library/parallel/doc/parallel.pdf
+lib/R/library/parallel/help/AnIndex
+lib/R/library/parallel/help/aliases.rds
+lib/R/library/parallel/help/parallel.rdb
+lib/R/library/parallel/help/parallel.rdx
+lib/R/library/parallel/help/paths.rds
+lib/R/library/parallel/html/00Index.html
+lib/R/library/parallel/html/R.css
+lib/R/library/parallel/libs/parallel.so
+%%NLS%%lib/R/library/parallel/po/de/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/de/LC_MESSAGES/parallel.mo
+%%NLS%%lib/R/library/parallel/po/en@quot/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/en@quot/LC_MESSAGES/parallel.mo
+%%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/parallel.mo
+%%NLS%%lib/R/library/parallel/po/ru/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/ru/LC_MESSAGES/parallel.mo
 lib/R/library/rpart/DESCRIPTION
 lib/R/library/rpart/INDEX
 lib/R/library/rpart/Meta/Rd.rds
@@ -1052,7 +1096,6 @@ lib/R/library/stats/libs/stats.so
 %%NLS%%lib/R/library/stats/po/tr/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/stats.mo
-lib/R/library/survival/COPYING
 lib/R/library/survival/DESCRIPTION
 lib/R/library/survival/INDEX
 lib/R/library/survival/Meta/Rd.rds
@@ -1221,10 +1264,10 @@ lib/R/share/R/REMOVE.R
 lib/R/share/R/examples-footer.R
 lib/R/share/R/examples-header.R
 lib/R/share/R/nspackloader.R
-lib/R/share/R/packloader.R
 lib/R/share/R/tests-startup.R
 lib/R/share/encodings/Adobe-glyphlist
 lib/R/share/encodings/character-sets
+lib/R/share/java/README
 lib/R/share/java/getsp.class
 lib/R/share/licenses/AGPL-3
 lib/R/share/licenses/Artistic-1.0
@@ -1254,6 +1297,7 @@ lib/R/share/make/basepkg.mk
 lib/R/share/make/check.mk
 lib/R/share/make/clean.mk
 lib/R/share/make/config.mk
+lib/R/share/make/lazycomp.mk
 lib/R/share/make/shlib.mk
 lib/R/share/make/vars.mk
 lib/R/share/make/winshlib.mk
@@ -1271,27 +1315,21 @@ lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
 lib/R/share/texmf/tex/latex/upquote.sty
 %%LIBR%%libdata/pkgconfig/libR.pc
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
 %%DOCSDIR%%/manual/R-FAQ.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-admin.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-admin.pdf
 %%DOCSDIR%%/manual/R-admin.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-data.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-data.pdf
 %%DOCSDIR%%/manual/R-data.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-exts.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-exts.pdf
 %%DOCSDIR%%/manual/R-exts.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-intro.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-intro.pdf
 %%DOCSDIR%%/manual/R-intro.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-ints.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-ints.pdf
 %%DOCSDIR%%/manual/R-ints.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-lang.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-lang.pdf
 %%DOCSDIR%%/manual/R-lang.html
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/QQ.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/ecdf.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/fig11.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/fig12.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/hist.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/ice.eps
-%%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/refman.dvi
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/refman.pdf
 @dirrm lib/R/share/texmf/tex/latex
 @dirrm lib/R/share/texmf/tex
 @dirrm lib/R/share/texmf/bibtex/bst
@@ -1533,6 +1571,22 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/rpart/R
 @dirrm lib/R/library/rpart/Meta
 @dirrm lib/R/library/rpart
+%%NLS%%@dirrm lib/R/library/parallel/po/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/ru
+%%NLS%%@dirrm lib/R/library/parallel/po/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/fr
+%%NLS%%@dirrm lib/R/library/parallel/po/en@quot/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/en@quot
+%%NLS%%@dirrm lib/R/library/parallel/po/de/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/de
+%%NLS%%@dirrm lib/R/library/parallel/po
+@dirrm lib/R/library/parallel/libs
+@dirrm lib/R/library/parallel/html
+@dirrm lib/R/library/parallel/help
+@dirrm lib/R/library/parallel/doc
+@dirrm lib/R/library/parallel/R
+@dirrm lib/R/library/parallel/Meta
+@dirrm lib/R/library/parallel
 %%NLS%%@dirrm lib/R/library/nnet/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/nnet/po/fr
 %%NLS%%@dirrm lib/R/library/nnet/po/en@quot/LC_MESSAGES
@@ -1653,6 +1707,7 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/graphics/po/de
 %%NLS%%@dirrm lib/R/library/graphics/po
 @dirrm lib/R/library/graphics/html
+@dirrm lib/R/library/graphics/help/figures
 @dirrm lib/R/library/graphics/help
 @dirrm lib/R/library/graphics/demo
 @dirrm lib/R/library/graphics/R
@@ -1705,11 +1760,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/datasets/html
 @dirrm lib/R/library/datasets/help
 @dirrm lib/R/library/datasets/data
-@dirrm lib/R/library/datasets/R
 @dirrm lib/R/library/datasets/Meta
 @dirrm lib/R/library/datasets
-%%NLS%%@dirrm lib/R/library/compiler/po/zh_CN/LC_MESSAGES
-%%NLS%%@dirrm lib/R/library/compiler/po/zh_CN
 %%NLS%%@dirrm lib/R/library/compiler/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/compiler/po/ru
 %%NLS%%@dirrm lib/R/library/compiler/po/pt_BR/LC_MESSAGES
@@ -1733,6 +1785,11 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/codetools/R
 @dirrm lib/R/library/codetools/Meta
 @dirrm lib/R/library/codetools
+%%NLS%%@dirrm lib/R/library/cluster/po/de/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/cluster/po/de
+%%NLS%%@dirrm lib/R/library/cluster/po/en@quot/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/cluster/po/en@quot
+%%NLS%%@dirrm lib/R/library/cluster/po
 @dirrm lib/R/library/cluster/libs
 @dirrm lib/R/library/cluster/html
 @dirrm lib/R/library/cluster/help
@@ -1845,7 +1902,6 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/bin/exec
 @dirrm lib/R/bin
 @dirrmtry lib/R
-%%PORTDOCS%%%%DVI_MANUAL%%@dirrm %%DOCSDIR%%/manual/images
 @dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%

@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.13.2
+PORTVERSION=	2.14.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -47,7 +47,7 @@ CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
 OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
-		ICU		"Improve collation in multibyte locales with ICU" on \
+		ICU		"Use ICU for collation in multibyte locales" on \
 		NLS		"Build with NLS support" on \
 		PCRE_PORT	"Use PCRE port instead of bundled source" on \
 		THREADS		"Build a multithreaded R" on
@@ -55,13 +55,13 @@ OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
 OPTIONS+=	GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
 		JPEG		"Enable the jpeg() graphics device" on \
 		LETTER_PAPER	"Use US Letter paper" off \
-		LIBR		"Install libR, and a dynamically-linked, rather than a static R" on \
-		PANGOCAIRO	"Enable cairo and pango in the X11() graphics device" on \
+		LIBR		"Install libR and a dynamically-linked R" on \
+		PANGOCAIRO	"Enable cairo and pango in graphics devices" on \
 		PNG		"Enable the png() graphics device" on \
 		TCLTK		"Use Tcl/Tk (for the tcltk package)" on \
 		X11		"Enable the X11() graphics device" on \
-		DVI_MANUALS	"Install DVI manuals (requires TeX)" off \
-		INFO_MANUALS	"Install GNU info manuals" on
+		INFO_MANUALS	"Install GNU info manuals" on \
+		PDF_MANUALS	"Install PDF manuals (requires TeX)" off
 .endif # !LIBR_SLAVEPORT
 PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 			RBLAS_SOVERSION="${RBLAS_SOVERSION}" \
@@ -207,19 +207,25 @@ ALL_TARGET+=	info
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
-.if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo \
-			tex:${PORTSDIR}/print/teTeX-base
-ALL_TARGET+=		dvi
-INSTALL_TARGET+=	install-dvi
-PLIST_SUB+=		DVI_MANUAL=""
+.if defined(WITH_PDF_MANUALS) && !defined(NOPORTDOCS)
+BUILD_DEPENDS +=	pdftex:${PORTSDIR}/print/teTeX-base \
+			texi2dvi:${PORTSDIR}/print/texinfo
+ALL_TARGET+=		pdf
+INSTALL_TARGET+=	install-pdf
+PLIST_SUB+=		PDF_MANUAL=""
 .else
-PLIST_SUB+=		DVI_MANUAL="@comment "
+PLIST_SUB+=		PDF_MANUAL="@comment "
 .endif
 .endif # LIBR_SLAVEPORT
 .endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
+	@${REINPLACE_CMD} -e '\|R_RD4PDF|s|,inconsolata||' \
+		${WRKSRC}/configure \
+		${WRKSRC}/src/library/tools/R/Rd2dvi.R \
+		${WRKSRC}/src/library/utils/R/help.R
+	@${REINPLACE_CMD} -e '\|LIBS=|s|-lrt ||' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
 		${WRKSRC}/src/unix/Makefile.in
