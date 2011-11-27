@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- agrep.h.orig	Fri Jan 17 20:15:13 1992
-+++ agrep.h	Sun Jul 21 03:50:47 2002
+--- agrep.h.orig	1992-01-17 20:15:13.000000000 +0100
++++ agrep.h	2011-11-27 13:35:40.000000000 +0100
 @@ -1,10 +1,10 @@
  #include <stdio.h>
 +#include <stdlib.h>
@@ -16,3 +13,41 @@ $FreeBSD$
  #define CHAR	unsigned char
  #define MAXPAT 128
  #define MAXPATT 256
+@@ -52,3 +52,37 @@
+ #define NNLINE    239   /* special symbol for newline in begin of pattern*/
+                        /* matches '\n' and NNLINE */
+ 
++/* asearch.c */
++void asearch(CHAR old_D_pat[], int text, register unsigned D);
++
++/* asearch1.c */
++void asearch1(char old_D_pat[], int text, register unsigned D);
++
++/* bitap.c */
++void bitap(char old_D_pat[], char *Pattern, int fd, int M, int D);
++int fill_buf(int fd, unsigned char *buf, int record_size);
++
++/* checkfile.c */
++int check_file(char *fname);
++
++/* compat.c */
++void compat(void);
++
++/* main.c */
++void output (register CHAR *buffer, int i1, int i2, int j);
++void re1(int Text, int M, int D);
++void re(int Text, int M, int D);
++
++/* maskgen.c */
++int maskgen(unsigned char *Pattern, int D);
++
++/* mgrep.c */
++void prepf(int fp);
++void mgrep(int fp);
++
++/* preprocess.c */
++void preprocess(CHAR *D_pattern, CHAR *Pattern);
++
++/* sgrep.c */
++void sgrep(CHAR *pat, int m, int fd, int D);
++
