@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nostromo
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
