@@ -31,4 +31,10 @@ PERL_CONFIGURE=	yes
 BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
 .endif
 
+.if ${PERL_LEVEL} < 501400
+PLIST_SUB+=	OLD_PERL="" NEW_PERL="@comment "
+.else
+PLIST_SUB+=	OLD_PERL="@comment " NEW_PERL=""
+.endif
+
 .include <bsd.port.post.mk>
