@@ -1,5 +1,5 @@
---- bridge/bridge.mk.orig	2011-10-24 10:44:24.000000000 +0200
-+++ bridge/bridge.mk	2011-10-24 10:44:56.000000000 +0200
+--- bridge/bridge.mk.orig	2011-11-24 18:31:11.000000000 +0100
++++ bridge/bridge.mk	2011-11-24 18:31:23.000000000 +0100
 @@ -38,10 +38,10 @@
  
  APP_LIBXUL_DIRS += $(DEPTH)$(SUBDIR)/mozilla/xpfe/components/autocomplete
@@ -11,5 +11,5 @@
 -#endif
 +endif
  
- ifdef MOZ_MAIL_NEWS
- APP_LIBXUL_DIRS += \
+ #ifdef MOZ_MORK
+ APP_LIBXUL_DIRS += $(DEPTH)$(SUBDIR)/db/mork
