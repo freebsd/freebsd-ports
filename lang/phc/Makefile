@@ -16,5 +16,12 @@ COMMENT=	A compiler for the PHP language
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fgnu89-inline
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} 's/g++/$$CXX/' \
+		${WRKSRC}/phc_compile_plugin.in
+	${REINPLACE_CMD} 's/insert/this->&/' \
+		${WRKSRC}/include/phc/lib/List.h
 
 .include <bsd.port.mk>
