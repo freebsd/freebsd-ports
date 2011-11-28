@@ -114,6 +114,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_roundtrip.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_roundtrip.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_roundtrip.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_server.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_server.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_server.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyo
