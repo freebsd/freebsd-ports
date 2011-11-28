@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-41
-PORTREVISION=	1
+DISTVERSION=	0.5-43
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Spatial dependence: weighting schemes, statistics and models
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-sp>=0.9:${PORTSDIR}/math/R-cran-sp \
 		R-cran-maptools>=0.5.4:${PORTSDIR}/astro/R-cran-maptools \
