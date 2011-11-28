@@ -10,7 +10,6 @@ PORTVERSION=	1.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
-		http://cz.binaries.openttd.org/openttd/binaries/releases/${PORTVERSION}/ \
 		http://de.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -28,19 +27,31 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
 USE_GMAKE=	yes
 MAKE_ARGS=	VERBOSE=1		# We want to see what's going on
-INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
-DISTVERSIONSUFFIX=	-source
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS=	# Set to empty as OpenTTD treats it as an addition to CFLAGS
+
+SUB_FILES=	pkg-message
+MAN6=		${PORTNAME}.6
+
+PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt admin_network.txt \
+		elrail.svg elrail_tile.png elrail_track.png landscape.html \
+		landscape_externals.html landscape_grid.html multiplayer.txt \
+		obg_format.txt obm_format.txt obs_format.txt \
+		ottd-colourtext-palette.png tileh.png
+
+DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
+		"Game;Simulation;StrategyGame;" false
 
 .if defined(WITH_MIDI_PLAYER)
 CONFIGURE_ARGS+=	--with-midi=${WITH_MIDI_PLAYER}
 .endif
+
 .if defined(WITH_MIDI_PLAYER_ARGS)
 CONFIGURE_ARGS+=	--with-midi-arg=${WITH_MIDI_PLAYER_ARGS}
 .endif
+
 .if defined(WITH_DEDICATED_SERVER_ONLY)
 USE_GNOME=	pkgconfig			# Needed for liblzma support
 CONFIGURE_ARGS+=	--enable-dedicated
@@ -51,24 +62,14 @@ USE_RC_SUBR=	${PORTNAME}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 USE_SDL=	sdl
+INSTALLS_ICONS=	yes
 .endif
+
 .if defined(WITH_OPEN_GAME_FILES)
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/data/opengfx/opengfx.obg:${PORTSDIR}/games/opengfx \
 		${LOCALBASE}/share/${PORTNAME}/gm/openmsx/openmsx.obm:${PORTSDIR}/games/openmsx \
 		${LOCALBASE}/share/${PORTNAME}/data/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
 .endif
-
-SUB_FILES=	pkg-message
-MAN6=		${PORTNAME}.6
-
-DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
-		"Game;Simulation;StrategyGame;" false
-
-PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt admin_network.txt \
-		elrail.svg elrail_tile.png elrail_track.png landscape.html \
-		landscape_externals.html landscape_grid.html multiplayer.txt \
-		obg_format.txt obm_format.txt obs_format.txt \
-		ottd-colourtext-palette.png tileh.png
 
 .include <bsd.port.pre.mk>
 
@@ -111,17 +112,22 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${DATADIR}/scripts
 	${INSTALL_MAN} ${WRKSRC}/docs/${MAN6} ${MANPREFIX}/man/man6
 	${INSTALL_DATA} ${WRKSRC}/media/openttd.32.xpm ${PREFIX}/share/pixmaps
-.for n in 16 32 48 64 128 256
+.if !defined(WITH_DEDICATED_SERVER_ONLY)
+.  for n in 16 32 48 64 128 256
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/${n}x${n}/apps
 	${INSTALL_DATA} ${WRKSRC}/media/openttd.${n}.png \
 		${PREFIX}/share/icons/hicolor/${n}x${n}/apps/openttd.png
-.endfor
+.  endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}
 .endif
 
 post-install:
+.if defined(WITH_DEDICATED_SERVER_ONLY)
+	@${REINPLACE_CMD} -e '/icons/d' ${TMPPLIST}
+.endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
