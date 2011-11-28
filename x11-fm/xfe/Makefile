@@ -30,5 +30,7 @@ post-patch:
 		${WRKSRC}/src/XFileExplorer.cpp \
 		${WRKSRC}/src/help.h \
 		${WRKSRC}/src/xfedefs.h
+	@${REINPLACE_CMD} 's/unsigned FXchar/FXuchar/' \
+		${WRKSRC}/src/xfeutils.cpp
 
 .include <bsd.port.mk>
