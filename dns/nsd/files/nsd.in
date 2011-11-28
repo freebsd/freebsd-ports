@@ -4,6 +4,8 @@
 #
 # PROVIDE: nsd
 # REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable nsd:
 #
