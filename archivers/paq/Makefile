@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20110621
+PORTVERSION=	20111126
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	libzpaq.202a.zip wbpe110.zip zp.103.zip zpaq.205.zip zpipe.201.zip
+DISTFILES=	libzpaq400.zip wbpe110.zip zpaq401.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
-DISTFILES+=	bmp_j4.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip exe_j1.zip \
-		fast.cfg jpg_test2.zip max.cfg mid.cfg min.zip zpsfx.100.zip
+DISTFILES+=	bmp_j4a.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
+		calgarytest.zpaq exe_j1.zip fast.cfg jpg_test2.zip max.cfg \
+		mid.cfg min.zip zpsfx.100.zip
 .endif
 .if !defined(NOPORTDOCS) || make(makesum)
 DISTFILES+=	zpaq1.pdf
@@ -23,7 +24,10 @@ EXTRACT_ONLY=	${DISTFILES:M*.zip}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A family of archivers with extremely high compression ratios
 
-EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt zp -d ${WRKDIR}
+LICENSE=	GPLv3 MIT
+LICENSE_COMB=	multi
+
+EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
@@ -35,23 +39,24 @@ SUB_FILES=	pkg-message
 MAN1=	zpaq.1
 MAN3=	libzpaq.3
 
-LICENSE=	GPLv3 MIT
-LICENSE_COMB=	multi
+.include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
 
-ZPFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} \
-		-I${PREFIX}/include \$$1.cpp ${PREFIX}/lib/zpaq/zp.o \
-		${PREFIX}/lib/zpaq/libzpaq.o ${PTHREAD_LIBS} -o \$$1.exe\""
-ZPAQFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} -I${PREFIX}/include zpaqopt.cpp \
-		${PREFIX}/lib/zpaq/zpaq.o ${PREFIX}/lib/zpaq/libzpaq.o \
-		-o zpaqopt.exe\""
+.if !defined(WITHOUT_OPENMP) && empty(CXX:M*clang++*)
+PTHREAD_CFLAGS+=	-fopenmp
+.endif
+
+.if ${ARCH} == "amd64" || ( ${ARCH} == "i386" && !empty(MACHINE_CPU:Msse2) )
+ZPAQFLAGS=	-msse2
+.else
+ZPAQFLAGS=	-DNOJIT
+.endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	libzpaq.cpp libzpaqo.cpp readme_zp.txt wbpe.cpp zp.cpp \
-		zpaq.cpp zpaq1.pdf zpipe.cpp
+PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpipe.cpp
 .endif
 
 .if !defined(NOPORTDATA)
@@ -78,8 +83,10 @@ post-extract:
 
 .endif
 
-.if !defined(NOPORTDATA)
 post-patch:
+	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' \
+		${WRKSRC}/libzpaq.cpp
+.if !defined(NOPORTDATA)
 	@${REINPLACE_CMD} -e 's|c:\\res\\zpaq\\||' ${WRKSRC}/bwt[12].cfg \
 		${WRKSRC}/bwtrle[12].cfg
 
@@ -87,34 +94,26 @@ post-patch:
 
 do-build:
 .if !defined(NOPORTDATA)
-	@(cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lzppre; do \
-	${CXX} ${CXXFLAGS} $${prog}.cpp -o $${prog}; done; \
-	${CXX} ${CXXFLAGS} bwtrle.cpp divsufsort.c -o bwtrle; \
-	${CXX} ${CXXFLAGS} zpsfx.cpp libzpaq.cpp libzpaqo.cpp -o zpsfx)
+	@cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lzppre; do \
+	${CXX} ${CXXFLAGS} -o $${prog} $${prog}.cpp; done; \
+	${CXX} ${CXXFLAGS} -o bwtrle bwtrle.cpp divsufsort.c; \
+	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpsfx zpsfx.cpp libzpaq.cpp
 .endif
-	@(cd ${WRKSRC}; \
-	${CXX} ${CXXFLAGS} wbpe.cpp -o wbpe; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${ZPFLAGS} zp.cpp libzpaq.cpp \
-	divsufsort.c ${PTHREAD_LIBS} -o zp; \
-	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} zpaq.cpp libzpaq.cpp libzpaqo.cpp \
-	-o zpaq; \
-	${CXX} ${CXXFLAGS} zpipe.cpp libzpaq.cpp libzpaqo.cpp -o zpipe; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -c libzpaq.cpp; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -DNOOPT -c zp.cpp; \
-	${CXX} ${CXXFLAGS} -c zpaq.cpp; \
+	@cd ${WRKSRC}; \
+	${CXX} ${CXXFLAGS} -o wbpe wbpe.cpp; \
+	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${ZPAQFLAGS} \
+	 -o zpaq zpaq.cpp libzpaq.cpp divsufsort.c ${LDFLAGS} ${PTHREAD_LIBS}; \
+	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpipe zpipe.cpp libzpaq.cpp; \
 	for page in ${MAN1} ${MAN3}; \
-	do pod2man $${page}.pod > $${page}; done)
+	do pod2man $${page}.pod > $${page}; done
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin ${PREFIX}/include ${PREFIX}/lib/zpaq \
-	${MANPREFIX}/man/man1 ${MANPREFIX}/man/man3
-.for prog in wbpe zp zpaq zpipe
+	@${MKDIR} ${PREFIX}/bin ${PREFIX}/include ${MANPREFIX}/man/man1 \
+	${MANPREFIX}/man/man3
+.for prog in wbpe zpaq zpipe
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${PREFIX}/include
-.for obj in libzpaq.o zp.o zpaq.o
-	@${INSTALL_DATA} ${WRKSRC}/${obj} ${PREFIX}/lib/zpaq
-.endfor
 .for page in ${MAN1} ${MAN3}
 	@${INSTALL_MAN} ${WRKSRC}/${page} ${MANPREFIX}/man/man${page:E}
 .endfor
@@ -123,15 +122,18 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 .endfor
 	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${DATADIR}; \
-	${INSTALL_LIB} zpsfx ${DATADIR})
-	@(cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${DATADIR})
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${DATADIR}; \
+	${INSTALL_LIB} zpsfx ${DATADIR}
+	@cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:Nzpaq1.pdf} ${DOCSDIR})
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:Nzpaq1.pdf} ${DOCSDIR}
 	@${INSTALL_DATA} ${_DISTDIR}/zpaq1.pdf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+check regression-test test: build
+	${WRKSRC}/zpaq l ${_DISTDIR}/calgarytest.zpaq
+
+.include <bsd.port.post.mk>
