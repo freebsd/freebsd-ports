@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Identity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Identity/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Identity
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
