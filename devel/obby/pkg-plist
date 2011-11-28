@@ -1,6 +1,6 @@
 include/obby/buffer.hpp
-include/obby/client_buffer.hpp
 include/obby/chat.hpp
+include/obby/client_buffer.hpp
 include/obby/client_document_info.hpp
 include/obby/colour.hpp
 include/obby/command.hpp
@@ -28,6 +28,11 @@ include/obby/position.hpp
 include/obby/ptr_iterator.hpp
 include/obby/record.hpp
 include/obby/ring.hpp
+include/obby/serialise/attribute.hpp
+include/obby/serialise/error.hpp
+include/obby/serialise/object.hpp
+include/obby/serialise/parser.hpp
+include/obby/serialise/token.hpp
 include/obby/server_buffer.hpp
 include/obby/server_document_info.hpp
 include/obby/split_operation.hpp
@@ -35,26 +40,26 @@ include/obby/text.hpp
 include/obby/user.hpp
 include/obby/user_table.hpp
 include/obby/vector_time.hpp
-include/obby/serialise/attribute.hpp
-include/obby/serialise/error.hpp
-include/obby/serialise/object.hpp
-include/obby/serialise/parser.hpp
-include/obby/serialise/token.hpp
 lib/libobby-0.4.so
 lib/libobby-0.4.so.1
 lib/libobby.a
 lib/libobby.la
 lib/libobby.so
 libdata/pkgconfig/obby-0.4.pc
+%%NLS%%share/locale/ast/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/da/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/de/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/es/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/it/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/obby.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/obby.mo
-%%NLS%%@dirrm share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrm share/locale/oc
+%%NLS%%share/locale/uk/LC_MESSAGES/obby.mo
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
 @dirrm include/obby/serialise
 @dirrm include/obby
