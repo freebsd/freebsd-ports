@@ -1,4 +1,5 @@
 %%SITE_PERL%%/IO/Async.pm
+%%SITE_PERL%%/IO/Async/Channel.pm
 %%SITE_PERL%%/IO/Async/ChildManager.pm
 %%SITE_PERL%%/IO/Async/Connector.pm
 %%SITE_PERL%%/IO/Async/DetachedCode.pm
