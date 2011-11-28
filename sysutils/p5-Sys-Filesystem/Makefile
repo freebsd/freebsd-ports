@@ -16,7 +16,7 @@ MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl module to Retrieve list of filesystems and their properties
 
 RUN_DEPENDS=	p5-Params-Util>=1.0:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -33,10 +33,9 @@ MAN3=		Sys::Filesystem::Mswin32.3 \
 		Sys::Filesystem::Hpux.3 \
 		Sys::Filesystem::Netbsd.3
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ENV+=	PATH_FSTAB=${WRKDIR}/fstab.phony
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-MANUAL_PACKAGE_BUILD=	accesses /etc/fstab during configure phase
-.endif
+pre-configure:
+	@${TOUCH} ${WRKDIR}/fstab.phony
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
