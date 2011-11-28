@@ -7,6 +7,7 @@
 
 PORTNAME=	eiskaltdcpp-lib
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	A Direct Connect client shared library
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 PROJECTHOST=	eiskaltdc
 
@@ -75,5 +77,10 @@ CMAKE_ARGS+=	-DWITH_DHT:BOOL=OFF
 .if ${OSVERSION} < 700024
 USE_OPENSSL_PORT=yes
 .endif
+
+GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
+
+post-build:
+	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/dcpp/libeiskaltdcpp.so.2.2"
 
 .include <bsd.port.post.mk>

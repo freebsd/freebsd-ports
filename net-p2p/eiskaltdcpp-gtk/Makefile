@@ -7,6 +7,7 @@
 
 PORTNAME=	eiskaltdcpp-gtk
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -18,6 +19,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
 LIB_DEPENDS=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
@@ -72,5 +74,10 @@ CMAKE_ARGS+=	-DUSE_LIBNOTIFY:BOOL=OFF
 .if ${OSVERSION} < 700024
 USE_OPENSSL_PORT=yes
 .endif
+
+GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
+
+post-build:
+	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/${PORTNAME}/${PORTNAME}"
 
 .include <bsd.port.mk>
