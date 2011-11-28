@@ -7,7 +7,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -23,10 +23,10 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
 		ev.4:${PORTSDIR}/devel/libev \
 		yajl.2:${PORTSDIR}/devel/yajl
+RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 
-USE_XORG=	x11
+USE_XORG=	x11 xcursor
 USE_BISON=	build
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -38,6 +38,11 @@ PLIST_FILES=	bin/i3 \
 		bin/i3-msg \
 		bin/i3-nagbar \
 		bin/i3bar \
+		bin/i3-migrate-config-to-v4 \
+		bin/i3-sensible-editor \
+		bin/i3-sensible-pager \
+		bin/i3-sensible-terminal \
+		bin/i3-wsbar \
 		etc/i3/config.sample \
 		etc/i3/welcome
 
@@ -70,6 +75,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 .for i in i3-config-wizard i3-input i3-msg i3-nagbar i3bar
 	${INSTALL_SCRIPT} ${WRKSRC}/$i/$i ${PREFIX}/bin/
+.endfor
+.for i in i3-sensible-editor i3-sensible-pager i3-sensible-terminal i3-wsbar i3-migrate-config-to-v4
+	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/bin/
 .endfor
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
