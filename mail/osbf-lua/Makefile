@@ -30,4 +30,7 @@ PLIST_SUB+=		SPAMFILTER=""
 PLIST_SUB+=		SPAMFILTER="@comment "
 .endif
 
+post-patch:	.SILENT
+	${REINPLACE_CMD} '/^CC/s/=/?=/' ${WRKSRC}/config
+
 .include <bsd.port.post.mk>
