@@ -1,16 +1,23 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/InetBase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/UtilPP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/Util_IS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/_inet_ntop.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/_inet_pton.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/_packzeros.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/inet_any2n.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/inet_n2ad.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/inet_n2dx.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/inet_ntoa.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/ipv6_aton.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase/ipv6_ntoa.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/inet_any2n.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/inet_n2ad.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/inet_n2dx.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/ipv6_aton.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_128x10.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_128x2.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_bcd2bin.al
@@ -31,7 +38,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/ipanyto6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/ipv4to6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/ipv6to4.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/isIPv4.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/mask4to6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/maskanyto6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/notcontiguous.al
@@ -47,8 +53,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/coalesce.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/compactref.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/do_prefix.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/full.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/full6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/hostenum.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/mod_version.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/nprefix.al
@@ -57,8 +61,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/re6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/short.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/wildcard.al
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/InetBase
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP
