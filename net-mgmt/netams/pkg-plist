@@ -3,68 +3,69 @@ sbin/flowprobe
 sbin/ipfw2netflow
 sbin/ascii2netflow
 bin/netamsctl
-%%DATADIR%%/netams/ru-networks.txt.sample
-%%DATADIR%%/netams/ua-networks.txt.sample
-%%DATADIR%%/netams/netams.conf.sample
+etc/netams.conf.sample
+%%DATADIR%%/ru-networks.txt.sample
+%%DATADIR%%/ua-networks.txt.sample
 %%DATADIR%%/.netamsctl.rc
-%%DATADIR%%/apache22/Includes/netams-apache-freebsd.conf
-%%DATADIR%%/netams/mysql_rotate.pl
-%%DATADIR%%/netams/snmp2netams.pl
-%%DATADIR%%/netams/ua-networks-get.sh
-%%DATADIR%%/netams/tools/cardtool_schema-Pg.sql
-%%DATADIR%%/netams/tools/cardtool_schema.sql
-%%DATADIR%%/netams/tools/billing_users_table.sql
-%%DATADIR%%/netams/tools/oracle/netams.sh
-%%DATADIR%%/netams/tools/oracle/netams_drop.sql
-%%DATADIR%%/netams/tools/oracle/netams_tb.sql
-%%DATADIR%%/netams/tools/oracle/netams_tg.sql
-%%DATADIR%%/netams/tools/oracle/netams_ts.sql
-%%WWWDIR%%/cgi-bin/.htaccess
-%%WWWDIR%%/cgi-bin/config.cgi
-%%WWWDIR%%/cgi-bin/netams_api.pl
-%%WWWDIR%%/cgi-bin/russian.res
-%%WWWDIR%%/cgi-bin/netams_example.cgi
-%%WWWDIR%%/cgi-bin/usertool.cgi
-%%WWWDIR%%/cgi-bin/admintool.cgi
-%%WWWDIR%%/cgi-bin/login.cgi
-%%WWWDIR%%/cgi-bin/netams_graph.cgi
-%%WWWDIR%%/cgi-bin/activate.cgi
-%%WWWDIR%%/cgi-bin/activate.tmpl
-%%WWWDIR%%/cgi-bin/netams_html.cgi
-%%WWWDIR%%/cgi-bin/statistic.pl
-%%WWWDIR%%/cgi-bin/admin/.htaccess
-%%WWWDIR%%/cgi-bin/admin/index.cgi
-%%WWWDIR%%/cgi-bin/admin/policy.cgi
-%%WWWDIR%%/cgi-bin/admin/showusercard.cgi
-%%WWWDIR%%/cgi-bin/admin/user.cgi
-%%WWWDIR%%/cgi-bin/admin/access.cgi
-%%WWWDIR%%/cgi-bin/admin/login.cgi
-%%WWWDIR%%/cgi-bin/admin/quota.cgi
-%%WWWDIR%%/cgi-bin/admin/showusercard.tmpl
-%%WWWDIR%%/cgi-bin/admin/view.cgi
-%%WWWDIR%%/cgi-bin/admin/account.cgi
-%%WWWDIR%%/cgi-bin/admin/netams.cgi
-%%WWWDIR%%/cgi-bin/admin/radius.cgi
-%%WWWDIR%%/cgi-bin/admin/subplan.cgi
-%%WWWDIR%%/cgi-bin/admin/config.cgi
-%%WWWDIR%%/cgi-bin/admin/plan.cgi
-%%WWWDIR%%/cgi-bin/admin/russian.res
-%%WWWDIR%%/cgi-bin/admin/unit.cgi
-%%WWWDIR%%/cgi-bin/admin/cardtool.cgi
-%%WWWDIR%%/cgi-bin/admin/graph.cgi
-%%WWWDIR%%/cgi-bin/admin/monitor.cgi
-%%WWWDIR%%/cgi-bin/admin/rrdgraph.cgi
-%%WWWDIR%%/cgi-bin/admin/statistic.cgi
-%%WWWDIR%%/images/admintool-logo.gif
-%%WWWDIR%%/images/logo_sm.jpg
-%%WWWDIR%%/images/showtable-logo.gif
-%%WWWDIR%%/images/rrdgraph-logo.gif
-%%WWWDIR%%/index.html
-%%WWWDIR%%/netams.js
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/cgi-bin/admin
-@dirrm %%WWWDIR%%/cgi-bin
-@dirrm %%WWWDIR%%
-@dirrm %%DATADIR%%/netams/tools/oracle
-@dirrm %%DATADIR%%/netams/tools
-@dirrm %%DATADIR%%/netams
+%%DATADIR%%/netams-apache-freebsd.conf
+%%MYSQL%%%%DATADIR%%/mysql_rotate.pl
+%%DATADIR%%/snmp2netams.pl
+%%DATADIR%%/ua-networks-get.sh
+%%POSTGRESQL%%%%DATADIR%%/tools/cardtool_schema-Pg.sql
+%%POSTGRESQL%%%%DATADIR%%/tools/postgresql_schema.sql
+%%MYSQL%%%%DATADIR%%/tools/cardtool_schema.sql
+%%DATADIR%%/tools/billing_users_table.sql
+%%DATADIR%%/tools/oracle/netams.sh
+%%DATADIR%%/tools/oracle/netams_drop.sql
+%%DATADIR%%/tools/oracle/netams_tb.sql
+%%DATADIR%%/tools/oracle/netams_tg.sql
+%%DATADIR%%/tools/oracle/netams_ts.sql
+%%CGI%%%%WWWDIR%%/cgi-bin/.htaccess
+%%CGI%%%%WWWDIR%%/cgi-bin/config.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/netams_api.pl
+%%CGI%%%%WWWDIR%%/cgi-bin/russian.res
+%%CGI%%%%WWWDIR%%/cgi-bin/netams_example.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/usertool.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admintool.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/login.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/netams_graph.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/activate.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/activate.tmpl
+%%CGI%%%%WWWDIR%%/cgi-bin/netams_html.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/statistic.pl
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/.htaccess
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/index.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/policy.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/showusercard.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/user.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/access.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/login.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/quota.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/showusercard.tmpl
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/view.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/account.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/netams.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/radius.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/subplan.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/config.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/plan.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/russian.res
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/unit.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/cardtool.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/graph.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/monitor.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/rrdgraph.cgi
+%%CGI%%%%WWWDIR%%/cgi-bin/admin/statistic.cgi
+%%CGI%%%%WWWDIR%%/images/admintool-logo.gif
+%%CGI%%%%WWWDIR%%/images/logo_sm.jpg
+%%CGI%%%%WWWDIR%%/images/showtable-logo.gif
+%%CGI%%%%WWWDIR%%/images/rrdgraph-logo.gif
+%%CGI%%%%WWWDIR%%/index.html
+%%CGI%%%%WWWDIR%%/netams.js
+%%CGI%%@dirrm %%WWWDIR%%/images
+%%CGI%%@dirrm %%WWWDIR%%/cgi-bin/admin
+%%CGI%%@dirrm %%WWWDIR%%/cgi-bin
+%%CGI%%@dirrm %%WWWDIR%%
+@dirrm %%DATADIR%%/tools/oracle
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%

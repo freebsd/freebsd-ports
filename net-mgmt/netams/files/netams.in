@@ -28,7 +28,7 @@ command="%%PREFIX%%/libexec/netams"
 load_rc_config $name
 
 netams_enable=${netams_enable:-"NO"}
-netams_config=${netams_config:-"%%PREFIX%%/etc/netams/netams.conf"}
+netams_config=${netams_config:-"%%PREFIX%%/etc/netams.conf"}
 pidfile="${netams_pidfile:-/var/run/netams.pid}"
 
 required_files="$netams_config"
