@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -35,15 +35,13 @@ CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
 PERL_CONFIGURE=	yes
 USE_PERL5_RUN=	5.8.8+
 USE_LDCONFIG=	yes
+DBDIR?=		/var/db
+CONTACT_ADDRESS?=	The administrator of that system
+USERS?=		spamd
+GROUPS?=	spamd
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
-		LOCALSTATEDIR="/var/db/spamassassin"
-
-USERS=		spamd
-GROUPS=		spamd
-
-# You can override it if you like
-CONTACT_ADDRESS?=	The administrator of that system
+		LOCALSTATEDIR="${DBDIR}/spamassassin"
 
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		SPAMC "Build spamd/spamc (not for amavisd)" on \
@@ -280,7 +278,7 @@ post-build:
 .endif
 
 pre-su-install:
-	@USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
 .if !defined(WITHOUT_SSL)
@@ -305,7 +303,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v330.pre
