@@ -14,6 +14,10 @@ MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
 
+OPTIONS=	MYSQL	"Enable MySQL support"		off \
+		OPENSSL	"Enable OpenSSL support"	off \
+		PGSQL	"Enable PostgreSQL support"	off
+
 CONFLICTS=	flow-tools-ng-[0-9]*
 
 USE_PYTHON_RUN=	yes
@@ -44,6 +48,8 @@ FLOW_CAPTURE_GROUP=	flowtools
 FLOW_CAPTURE_UID=	174
 FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=--with-pgsql="${PREFIX}"
@@ -76,4 +82,4 @@ post-install:
 	@${SETENV} ${SCRIPTS_ENV} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
