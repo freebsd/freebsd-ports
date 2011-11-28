@@ -6,7 +6,7 @@ share/pixmaps/openttd.32.xpm
 @dirrm %%DATADIR%%/ai
 %%DATADIR%%/gm/no_music.obm
 %%DATADIR%%/gm/orig_win.obm
-@dirrm %%DATADIR%%/gm
+@dirrmtry %%DATADIR%%/gm
 %%DATADIR%%/data/openttd.grf
 %%DATADIR%%/data/opntitle.dat
 %%DATADIR%%/data/orig_dos.obg
@@ -15,7 +15,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/data/orig_win.obg
 %%DATADIR%%/data/orig_win.obs
 %%DATADIR%%/data/no_sound.obs
-@dirrm %%DATADIR%%/data
+@dirrmtry %%DATADIR%%/data
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/brazilian_portuguese.lng
@@ -75,7 +75,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/scripts/pre_server.scr.example
 %%DATADIR%%/scripts/readme.txt
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 share/icons/hicolor/16x16/apps/openttd.png
 share/icons/hicolor/32x32/apps/openttd.png
 share/icons/hicolor/48x48/apps/openttd.png
