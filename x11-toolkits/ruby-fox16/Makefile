@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.6.19
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fxruby
@@ -22,7 +22,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		fxscintilla.22:${PORTSDIR}/x11-toolkits/fxscintilla
+		fxscintilla.23:${PORTSDIR}/x11-toolkits/fxscintilla
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}16
 
@@ -33,16 +33,12 @@ NOHARM_ARGS=	--no-harm
 USE_XORG=	xcursor xproto x11 xextproto xext xrandr
 USE_GL=		yes
 
-.include <bsd.port.pre.mk>
-
 install-noharm:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install ${NOHARM_ARGS} ${RUBY_INSTALL_ARGS}
 
 post-configure:
-.if ${OSVERSION} >= 700000
 	@${REINPLACE_CMD} -e 's|CPPFLAGS = -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.6|CPPFLAGS = -ffriend-injection -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.6|' \
 	${WRKSRC}/ext/fox16/Makefile
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
