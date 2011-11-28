@@ -418,8 +418,8 @@
     SUBDIR += p5-Memcached-libmemcached
     SUBDIR += p5-Metadata
     SUBDIR += p5-MongoDB
+    SUBDIR += p5-MySQL-Diff
     SUBDIR += p5-Mysql
-    SUBDIR += p5-Mysql-Diff
     SUBDIR += p5-ORLite
     SUBDIR += p5-ORLite-Migrate
     SUBDIR += p5-Oryx
