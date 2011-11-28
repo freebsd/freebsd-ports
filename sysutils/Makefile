@@ -755,6 +755,7 @@
     SUBDIR += rsyslog6-devel-snmp
     SUBDIR += rtty
     SUBDIR += ruby-quota
+    SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
