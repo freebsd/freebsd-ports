@@ -25,6 +25,8 @@ RESTRICTED=	Must be downloaded directly from the manufacturer
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
+MANUAL_PACKAGE_BUILD=	distfile unavailable
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 DISTFILE_INSTRUCTIONS=\n\
 The distribution file is not freely avaliable.\n\
