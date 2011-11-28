@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Polish dictionary
 
 DICT=	 	pl

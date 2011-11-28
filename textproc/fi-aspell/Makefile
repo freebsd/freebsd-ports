@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Finnish dictionary
 
 DICT=	 	fi

@@ -10,7 +10,7 @@ DISTVERSION=	5-ro-3.3-2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Romanian dictionary
 
 DICT=	 	ro

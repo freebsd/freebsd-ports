@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	hungarian textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Hungarian dictionaries
 
 DICT=	 	hu

@@ -8,7 +8,7 @@
 PORTNAME=	es-ispell
 PORTVERSION=	1.10
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 
 ISPELL_ES=	yes
 

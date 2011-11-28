@@ -10,7 +10,7 @@ DISTVERSION=	6-pt_BR-20090702-0
 CATEGORIES=	portuguese textproc
 PKGNAMEPREFIX?=	pt_BR-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Brazilian Portuguese dictionary
 
 DICT=	 	pt_BR

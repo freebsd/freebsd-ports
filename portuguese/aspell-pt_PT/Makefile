@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	portuguese textproc
 PKGNAMEPREFIX?=	pt_PT-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Portuguese dictionary
 
 DICT=	 	pt_PT

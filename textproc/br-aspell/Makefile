@@ -10,7 +10,7 @@ DISTVERSION=	-br-0.50-2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Breton dictionary
 
 DICT=	 	br

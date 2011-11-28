@@ -10,7 +10,7 @@ DISTVERSION=	6-la-20020503-0
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Latin dictionary
 
 DICT=	 	la

@@ -10,7 +10,7 @@ DISTVERSION=	6-ca-2.1.5-1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Catalan dictionary
 
 DICT=	 	ca

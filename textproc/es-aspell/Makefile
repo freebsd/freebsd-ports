@@ -10,7 +10,7 @@ DISTVERSION=	6-es-1.11-2
 PORTEPOCH=	1
 CATEGORIES=	textproc spanish
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Spanish dictionary
 
 DICT=	 	es

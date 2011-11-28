@@ -10,7 +10,7 @@ DISTVERSION=	6-sk-2.01-2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Slovak dictionary
 
 DICT=	 	sk

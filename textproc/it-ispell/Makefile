@@ -8,7 +8,7 @@
 PORTNAME=	it-ispell
 PORTVERSION=	2.3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 
 ISPELL_IT=	yes
 
