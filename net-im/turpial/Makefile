@@ -1,4 +1,4 @@
-# New ports collection makefile for: py-turpial
+# New ports collection makefile for: turpial
 # Date created:		2011-02-19
 # Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
 #
@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	turpial
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.6
 CATEGORIES=	net-im python
 MASTER_SITES=	http://turpial.org.ve/files/sources/%SUBDIR%/
 MASTER_SITE_SUBDIR=	stable
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -34,7 +33,9 @@ REINPLACE_ARGS=	-i ""
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
-LOCALES_DIR=	ca de en es eu fr gl he it nn pt ru zh_CN zh_TW
+LOCALES_DIR=	ca ca_ES cs de en es es_ES es_VE eu fr gl he hu it nl nn \
+	pt pt_BR ru ru_RU sr uk_UA zh_CN zh_TW
+
 
 .include <bsd.port.pre.mk>
 
@@ -51,9 +52,6 @@ post-patch:
 		s|Linux|FreeBSD|g ; \
 		s|from turpial\.|from |g ; \
 		s|%%PREFIX%%|${PREFIX}|g'
-# Avoid to center on screen the window application
-	${REINPLACE_CMD} 's|gtk.WIN_POS_CENTER|gtk.WIN_POS_CENTER_ON_PARENT|' \
-		${WRKSRC}/turpial/ui/gtk/main.py
 
 do-build:
 	@cd ${WRKSRC} && \
