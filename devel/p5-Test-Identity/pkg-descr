@@ -1,0 +1,9 @@
+Test::Identity provides a single testing function, identical. It asserts that a
+given reference is as expected; that is, it either refers to the same object or
+is undef. It is similar to Test::More::is except that it uses refaddr, ensuring
+that it behaves correctly even if the references under test are objects that
+overload stringification or numification.
+
+It also provides better diagnostics if the test fails.
+
+WWW: http://search.cpan.org/dist/Test-Identity/
