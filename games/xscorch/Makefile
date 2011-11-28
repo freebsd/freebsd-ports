@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xscorch
-PORTVERSION=	0.2.0
-PORTREVISION=	5
+PORTVERSION=	0.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://chaos2.org/xscorch/ \
-		http://www.xscorch.org/releases/
+MASTER_SITES=	http://www.xscorch.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer tank shoot-em-up
@@ -21,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 USE_XORG=	xpm
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
