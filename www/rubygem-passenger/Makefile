@@ -10,7 +10,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
 
-MAINTAINER=	jatzen@gmail.com
+MAINTAINER=	osa@FreeBSD.ORG
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
 OPTIONS=	APACHEPORT	"Use apache22"			on  \
