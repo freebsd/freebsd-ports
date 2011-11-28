@@ -81,7 +81,7 @@ BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
-BROKEN=	ffmpeg support is currently broken
+#BROKEN=	ffmpeg support is currently broken
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else

@@ -41,8 +41,12 @@ include/gegl-0.1/operation/gegl-operation.h
 %%FFMPEG%%lib/gegl-0.1/ff-load.so
 %%JPEG%%lib/gegl-0.1/jpg-load.la
 %%JPEG%%lib/gegl-0.1/jpg-load.so
+%%JPEG%%lib/gegl-0.1/jpg-save.la
+%%JPEG%%lib/gegl-0.1/jpg-save.so
 %%OPENEXR%%lib/gegl-0.1/exr-load.la
 %%OPENEXR%%lib/gegl-0.1/exr-load.so
+%%OPENEXR%%lib/gegl-0.1/exr-save.la
+%%OPENEXR%%lib/gegl-0.1/exr-save.so
 %%OPENRAW%%lib/gegl-0.1/openraw.la
 %%OPENRAW%%lib/gegl-0.1/openraw.so
 %%PANGOCAIRO%%lib/gegl-0.1/text.la
@@ -53,8 +57,8 @@ include/gegl-0.1/operation/gegl-operation.h
 %%PNG%%lib/gegl-0.1/png-save.so
 %%RSVG%%lib/gegl-0.1/svg-load.la
 %%RSVG%%lib/gegl-0.1/svg-load.so
-%%SDL%%lib/gegl-0.1/display.la
-%%SDL%%lib/gegl-0.1/display.so
+%%SDL%%lib/gegl-0.1/sdl-display.la
+%%SDL%%lib/gegl-0.1/sdl-display.so
 %%V4L%%lib/gegl-0.1/v4l.la
 %%V4L%%lib/gegl-0.1/v4l.so
 lib/gegl-0.1/add.la
