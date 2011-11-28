@@ -25,6 +25,7 @@ lib/libnet6.a
 lib/libnet6.la
 lib/libnet6.so
 libdata/pkgconfig/net6-1.3.pc
+%%NLS%%share/locale/ast/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/de/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/es/LC_MESSAGES/net6.mo
@@ -41,4 +42,6 @@ libdata/pkgconfig/net6-1.3.pc
 %%NLS%%share/locale/sv/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/net6.mo
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
 @dirrm include/net6
