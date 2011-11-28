@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	obby
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.8
 CATEGORIES=	devel
-MASTER_SITES=	http://releases.0x539.de/obby/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://releases.0x539.de/obby/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for synced document buffers
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		net6:${PORTSDIR}/net/net6
 
-MAKE_JOBS_SAFE=	yes
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-howl
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(WITHOUT_NLS)
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,9 +32,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
