@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
@@ -175,6 +175,7 @@ MAN1=		deliver.1 \
 		doveadm-kick.1 \
 		doveadm-log.1 \
 		doveadm-mailbox.1 \
+		doveadm-move.1 \
 		doveadm-penalty.1 \
 		doveadm-purge.1 \
 		doveadm-pw.1 \

@@ -435,7 +435,7 @@ sbin/dovecot
 share/aclocal/dovecot.m4
 @dirrm libexec/dovecot
 @dirrm lib/dovecot/doveadm
-@dirrm lib/dovecot/auth
+@dirrmtry lib/dovecot/auth
 @dirrm lib/dovecot
 @dirrm include/dovecot
 @dirrmtry %%ETCDIR%%
