@@ -1,0 +1,20 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Domain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/DomainSnapshot.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Interface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/NWFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Network.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/NodeDevice.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Secret.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/StoragePool.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/StorageVol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt/Stream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/Virt.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/Virt.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

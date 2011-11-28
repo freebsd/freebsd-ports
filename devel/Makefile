@@ -2369,6 +2369,7 @@
     SUBDIR += p5-Sys-SigAction
     SUBDIR += p5-Sys-Syscall
     SUBDIR += p5-Sys-Trace
+    SUBDIR += p5-Sys-Virt
     SUBDIR += p5-System-Command
     SUBDIR += p5-System2
     SUBDIR += p5-TAP-Formatter-JUnit
