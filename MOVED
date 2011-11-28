@@ -3017,3 +3017,4 @@ japanese/pycodec-zope||2011-11-27|Has expired: Handled in Python-2.4 upwards
 japanese/zope-ejsplitter||2011-11-27|Has expired: Plone4 has newer and better splitter mechanism than ejSplitter
 japanese/zope-jamailhost||2011-11-27|Has expired: Zope has changed MailHost specification and it is not sure jaMailHost works well
 japanese/pycodec||2011-11-27|Has expired: Handled in Python-2.4 upwards
+net-im/py-turpial||2011-11-28|Renamed to net-im/turpial

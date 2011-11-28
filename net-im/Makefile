@@ -139,7 +139,6 @@
     SUBDIR += py-msnp
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
-    SUBDIR += py-turpial
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
@@ -177,6 +176,7 @@
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
+    SUBDIR += turpial
     SUBDIR += tmsnc
     SUBDIR += trix
     SUBDIR += ttytter

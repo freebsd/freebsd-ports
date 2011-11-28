@@ -5,17 +5,27 @@ share/applications/turpial.desktop
 %%DOCSDIR%%/README.rst
 %%DOCSDIR%%/TRANSLATORS
 share/locale/ca/LC_MESSAGES/turpial.mo
+share/locale/ca_ES/LC_MESSAGES/turpial.mo
+share/locale/cs/LC_MESSAGES/turpial.mo
 share/locale/de/LC_MESSAGES/turpial.mo
 share/locale/en/LC_MESSAGES/turpial.mo
 share/locale/es/LC_MESSAGES/turpial.mo
+share/locale/es_ES/LC_MESSAGES/turpial.mo
+share/locale/es_VE/LC_MESSAGES/turpial.mo
 share/locale/eu/LC_MESSAGES/turpial.mo
 share/locale/fr/LC_MESSAGES/turpial.mo
 share/locale/gl/LC_MESSAGES/turpial.mo
 share/locale/he/LC_MESSAGES/turpial.mo
+share/locale/hu/LC_MESSAGES/turpial.mo
 share/locale/it/LC_MESSAGES/turpial.mo
+share/locale/nl/LC_MESSAGES/turpial.mo
 share/locale/nn/LC_MESSAGES/turpial.mo
 share/locale/pt/LC_MESSAGES/turpial.mo
+share/locale/pt_BR/LC_MESSAGES/turpial.mo
 share/locale/ru/LC_MESSAGES/turpial.mo
+share/locale/ru_RU/LC_MESSAGES/turpial.mo
+share/locale/sr/LC_MESSAGES/turpial.mo
+share/locale/uk_UA/LC_MESSAGES/turpial.mo
 share/locale/zh_CN/LC_MESSAGES/turpial.mo
 share/locale/zh_TW/LC_MESSAGES/turpial.mo
 share/pixmaps/turpial.png
@@ -82,6 +92,9 @@ share/pixmaps/turpial.png
 %%DATADIR%%/api/services/shorturl/cligs.py
 %%DATADIR%%/api/services/shorturl/cligs.pyc
 %%DATADIR%%/api/services/shorturl/cligs.pyo
+%%DATADIR%%/api/services/shorturl/googl.py
+%%DATADIR%%/api/services/shorturl/googl.pyc
+%%DATADIR%%/api/services/shorturl/googl.pyo
 %%DATADIR%%/api/services/shorturl/isgd.py
 %%DATADIR%%/api/services/shorturl/isgd.pyc
 %%DATADIR%%/api/services/shorturl/isgd.pyo
@@ -112,6 +125,9 @@ share/pixmaps/turpial.png
 %%DATADIR%%/api/services/uploadpic/imgly.py
 %%DATADIR%%/api/services/uploadpic/imgly.pyc
 %%DATADIR%%/api/services/uploadpic/imgly.pyo
+%%DATADIR%%/api/services/uploadpic/imgur.py
+%%DATADIR%%/api/services/uploadpic/imgur.pyc
+%%DATADIR%%/api/services/uploadpic/imgur.pyo
 %%DATADIR%%/api/services/uploadpic/mobypicture.py
 %%DATADIR%%/api/services/uploadpic/mobypicture.pyc
 %%DATADIR%%/api/services/uploadpic/mobypicture.pyo
@@ -201,6 +217,7 @@ share/pixmaps/turpial.png
 %%DATADIR%%/data/sounds/mencion2.ogg
 %%DATADIR%%/data/sounds/mencion3.ogg
 %%DATADIR%%/data/sounds/turpial.ogg
+%%DATADIR%%/data/themes/default/columns.html
 %%DATADIR%%/data/themes/default/style.css
 %%DATADIR%%/data/themes/default/tweet.html
 %%DATADIR%%/data/themes/default/tweet_template.html
@@ -231,6 +248,9 @@ share/pixmaps/turpial.png
 %%DATADIR%%/ui/gtk/about.py
 %%DATADIR%%/ui/gtk/about.pyc
 %%DATADIR%%/ui/gtk/about.pyo
+%%DATADIR%%/ui/gtk/button.py
+%%DATADIR%%/ui/gtk/button.pyc
+%%DATADIR%%/ui/gtk/button.pyo
 %%DATADIR%%/ui/gtk/columns.py
 %%DATADIR%%/ui/gtk/columns.pyc
 %%DATADIR%%/ui/gtk/columns.pyo
@@ -264,6 +284,9 @@ share/pixmaps/turpial.png
 %%DATADIR%%/ui/gtk/menu.py
 %%DATADIR%%/ui/gtk/menu.pyc
 %%DATADIR%%/ui/gtk/menu.pyo
+%%DATADIR%%/ui/gtk/oauthwin.py
+%%DATADIR%%/ui/gtk/oauthwin.pyc
+%%DATADIR%%/ui/gtk/oauthwin.pyo
 %%DATADIR%%/ui/gtk/preferences.py
 %%DATADIR%%/ui/gtk/preferences.pyc
 %%DATADIR%%/ui/gtk/preferences.pyo
@@ -311,6 +334,14 @@ share/pixmaps/turpial.png
 @dirrm %%DATADIR%%/api/interfaces
 @dirrm %%DATADIR%%/api
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/es_VE/LC_MESSAGES
+@dirrmtry share/locale/es_VE
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
 @dirrm %%DOCSDIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
