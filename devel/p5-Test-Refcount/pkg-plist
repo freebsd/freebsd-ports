@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Refcount.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Refcount/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Refcount
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test

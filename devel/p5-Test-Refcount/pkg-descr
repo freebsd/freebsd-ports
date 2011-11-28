@@ -1,0 +1,16 @@
+The Perl garbage collector uses simple reference counting during the normal
+execution of a program. This means that cycles or unweakened references in other
+parts of code can keep an object around for longer than intended. To help avoid
+this problem, the reference count of a new object from its class constructor
+ought to be 1. This way, the caller can know the object will be properly
+DESTROYed when it drops all of its references to it.
+
+Test::Refcount provides two test functions to help ensure this property holds
+for an object class, so as to be polite to its callers.
+
+If the assertion fails; that is, if the actual reference count is different to
+what was expected, a trace of references to the object can be printed, if Marc
+Lehmann's Devel::FindRef module is installed. This may assist the developer in
+finding where the references are.
+
+WWW: http://search.cpan.org/dist/Test-Refcount/
