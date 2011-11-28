@@ -7,6 +7,7 @@
 
 PORTNAME=	eiskaltdcpp-daemon
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	EiskaltDC++ Direct Connect client daemon
 LICENSE=	GPLv3
 
 LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 PROJECTHOST=	eiskaltdc
 
@@ -62,5 +64,10 @@ CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=OFF
 .if ${OSVERSION} < 700024
 USE_OPENSSL_PORT=yes
 .endif
+
+GCC_LIBS=	"${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
+
+post-build:
+	${LOCALBASE}/bin/chrpath -r "${GCC_LIBS}" "${WRKSRC}/nasdc/${PORTNAME}"
 
 .include <bsd.port.post.mk>
