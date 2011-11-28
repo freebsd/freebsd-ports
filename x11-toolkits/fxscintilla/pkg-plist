@@ -7,6 +7,6 @@ include/fxscintilla/ScintillaWidget.h
 lib/libfxscintilla.a
 lib/libfxscintilla.la
 lib/libfxscintilla.so
-lib/libfxscintilla.so.22
+lib/libfxscintilla.so.23
 libdata/pkgconfig/fxscintilla.pc
 @dirrm include/fxscintilla
