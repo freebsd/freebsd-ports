@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bzr-git
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/76814124/ \
+MASTER_SITES=	https://launchpadlibrarian.net/84718667/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
