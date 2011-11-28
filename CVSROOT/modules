@@ -4016,6 +4016,7 @@ fxload                          ports/misc/fxload
 fxscintilla                     ports/x11-toolkits/fxscintilla
 fxsudoku                        ports/games/fxsudoku
 fxt                             ports/math/fxt
+fxtv                            ports/multimedia/fxtv
 fy-aspell                       ports/textproc/fy-aspell
 fyre                            ports/graphics/fyre
 g-cows                          ports/www/g-cows
@@ -6379,8 +6380,6 @@ ja-py-mecab                     ports/japanese/py-mecab
 ja-py-tegaki                    ports/japanese/py-tegaki
 ja-py-tegaki-gtk                ports/japanese/py-tegaki-gtk
 ja-py-zinnia                    ports/japanese/py-zinnia
-ja-pycodec                      ports/japanese/pycodec
-ja-pycodec-zope                 ports/japanese/pycodec-zope
 ja-qkc                          ports/japanese/qkc
 ja-qt4-codecs-jp                ports/japanese/qt4-codecs-jp
 ja-quit                         ports/japanese/quit
@@ -6491,8 +6490,6 @@ ja-zangband                     ports/japanese/zangband
 ja-zinnia                       ports/japanese/zinnia
 ja-zinnia-tomoe                 ports/japanese/zinnia-tomoe
 ja-zipcodes                     ports/japanese/zipcodes
-ja-zope-ejsplitter              ports/japanese/zope-ejsplitter
-ja-zope-jamailhost              ports/japanese/zope-jamailhost
 jabber                          ports/net-im/jabber
 jabber-pyaim                    ports/net-im/jabber-pyaim
 jabber-pyicq                    ports/net-im/jabber-pyicq
@@ -9558,6 +9555,7 @@ mplayer                         ports/multimedia/mplayer
 mplayer-fonts                   ports/multimedia/mplayer-fonts
 mplayer-skins                   ports/multimedia/mplayer-skins
 mplayerxp                       ports/multimedia/mplayerxp
+mplex                           ports/multimedia/mplex
 mpop                            ports/mail/mpop
 mpqc                            ports/science/mpqc
 mpqc-mpich                      ports/science/mpqc-mpich
@@ -14824,6 +14822,7 @@ p5-WebService-Basecamp          ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA               ports/www/p5-WebService-CIA
+p5-WebService-Dropbox           ports/net/p5-WebService-Dropbox
 p5-WebService-GData             ports/www/p5-WebService-GData
 p5-WebService-Google-Reader     ports/www/p5-WebService-Google-Reader
 p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
@@ -19222,6 +19221,7 @@ p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
 p5-webservice-bloglines         ports/www/p5-WebService-Bloglines
 p5-webservice-buzzurlapi        ports/www/p5-WebService-BuzzurlAPI
 p5-webservice-cia               ports/www/p5-WebService-CIA
+p5-webservice-dropbox           ports/net/p5-WebService-Dropbox
 p5-webservice-gdata             ports/www/p5-WebService-GData
 p5-webservice-google-reader     ports/www/p5-WebService-Google-Reader
 p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
