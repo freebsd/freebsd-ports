@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTVERSION=	3.0.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -88,15 +87,12 @@ post-install:
 		s!g++!${CXX}!g; \
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
-		43s!true!false!' \
+		46s!true!false!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
 .if !defined(WITH_DEBUG)
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
-	@${REINPLACE_CMD} \
-		'31s!^!#include <sys/errno.h>!g' \
-		${PREFIX}/${GEM_LIB_DIR}/ext/common/Logging.h
 .endif
 	@${REINPLACE_CMD} \
 		's!-lpthread!${PTHREAD_LIBS}!g' \
@@ -106,8 +102,8 @@ post-install:
 		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb
 	@${REINPLACE_CMD} \
 		's!-Iext/libev!!; \
-		263s!/usr/include/libev!${LOCALBASE}/include!; \
-		264s!-lev!-L${LOCALBASE}/lib -lev!' \
+		268s!/usr/include/libev!${LOCALBASE}/include!; \
+		269s!-lev!-L${LOCALBASE}/lib -lev!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
 
 .if !defined(WITHOUT_APACHEPORT)
