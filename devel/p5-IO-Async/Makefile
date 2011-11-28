@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -20,9 +20,14 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Async-MergePoint>=0:${PORTSDIR}/devel/p5-Async-MergePoint \
 		p5-CPS>=0:${PORTSDIR}/devel/p5-CPS \
-		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap \
-		p5-Socket-GetAddrInfo>=0.18:${PORTSDIR}/net/p5-Socket-GetAddrInfo
+		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
+		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
@@ -56,4 +61,11 @@ MAN3=		IO::Async.3 \
 		IO::Async::Timer::Countdown.3 \
 		IO::Async::Timer::Periodic.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Socket-GetAddrInfo>=0.18:${PORTSDIR}/net/p5-Socket-GetAddrInfo
+RUN_DEPENDS+=	p5-Socket-GetAddrInfo>=0.18:${PORTSDIR}/net/p5-Socket-GetAddrInfo
+.endif
+
+.include <bsd.port.post.mk>
