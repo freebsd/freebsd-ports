@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.9
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -55,6 +55,8 @@ OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
 		BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" Off \
 		CHECKING	"Enable internal runtime checks" Off \
 		NSEC3		"Enable NSEC3 support" On \
+		MINRESPSIZE	"Enable minimized response size" On \
+		NSEC3PREHASH	"Enable full NSEC3 prehashing" On \
 		MMAP		"Use mmap instead of malloc(experimental)" Off \
 		MAXIPS		"Raise max-ips from 8 to ${NSDMAX_IPS}" Off
 
@@ -90,6 +92,14 @@ CONFIGURE_ARGS+=	--disable-tsig
 
 .if defined(WITHOUT_NSEC3)
 CONFIGURE_ARGS+=	--disable-nsec3
+.endif
+
+.if defined(WITHOUT_MINRESPSIZE)
+CONFIGURE_ARGS+=	--disable-minimal-responses
+.endif
+
+.if defined(WITHOUT_NSEC3PREHASH)
+CONFIGURE_ARGS+=	--disable-disable-full-prehash
 .endif
 
 .if defined(WITHOUT_NSID)
