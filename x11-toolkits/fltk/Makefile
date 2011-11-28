@@ -35,6 +35,9 @@ MAN3=	fltk.3
 
 post-patch:
 	${REINPLACE_CMD} -e '30s/test //' ${WRKSRC}/Makefile
+	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
+	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \
+	${WRKSRC}/src/Fl_Preferences.cxx
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
