@@ -10,7 +10,7 @@ DISTVERSION=	6-hsb-0.02-0
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Upper Sorbian dictionary
 
 DICT=	 	hsb

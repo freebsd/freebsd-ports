@@ -10,7 +10,7 @@ DISTVERSION=	5-ga-4.5-0
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Irish (Gaelic) dictionary
 
 DICT=	 	ga

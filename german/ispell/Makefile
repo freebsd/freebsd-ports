@@ -9,7 +9,7 @@ PORTNAME=	ispell
 CATEGORIES=	german
 PKGNAMESUFFIX=	-20071211
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 
 USE_PERL5=	yes
 

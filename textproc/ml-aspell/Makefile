@@ -10,7 +10,7 @@ DISTVERSION=	6-ml-0.03-1
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Malayalam dictionary
 
 DICT=	 	ml

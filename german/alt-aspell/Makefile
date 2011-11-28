@@ -10,7 +10,7 @@ DISTVERSION=	6-de-20030222-1
 PORTREVISION=	1
 CATEGORIES=	german textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell German Old Spelling (Deutsch - Alter Spelling) dictionary
 
 DICT=	 	de

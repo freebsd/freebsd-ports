@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}.i386.rpm	# needed for slave ports / options
 EXTRACT_SUFX=	.i386.rpm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (linux version)
 
 CONFLICTS=	linux-f8-aspell-[0-9]* linux-f10-aspell-[0-9]*
