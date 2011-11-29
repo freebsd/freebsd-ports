@@ -12,7 +12,7 @@ MASTER_SITES=	http://fossies.org/unix/privat/ \
 		http://www.sourcefiles.org/Networking/Tools/Proxy/ \
 		http://quozl.us.netrek.org/tcpxd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	General purpose TCP/IP relay
 
 LICENSE=	GPLv2 # (or later)
