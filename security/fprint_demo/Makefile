@@ -10,7 +10,7 @@ PORTVERSION=	20080303
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/${PORTNAME:C/_/-/}
-DISTNAME=	${PORTNAME:C/_/-/}_${PORTVERSION}+git.orig
+DISTNAME=	${PORTNAME:C/_/-/}_${PORTVERSION}git.orig
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Demo and test application for libfprint

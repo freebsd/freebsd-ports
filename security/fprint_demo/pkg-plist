@@ -1,7 +1,21 @@
 bin/fprint_demo
 share/applications/fprint_demo.desktop
+@dirrmtry share/applications
 share/icons/hicolor/128x128/apps/fprint_demo.png
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 share/icons/hicolor/16x16/apps/fprint_demo.png
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 share/icons/hicolor/22x22/apps/fprint_demo.png
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
 share/icons/hicolor/48x48/apps/fprint_demo.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
 share/icons/hicolor/scalable/apps/fprint_demo.svg
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share
