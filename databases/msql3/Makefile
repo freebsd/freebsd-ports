@@ -24,6 +24,7 @@ LATEST_LINK=	msql3
 
 # Not free for commercial use.
 RESTRICTED=	restrictive copyright (no commercial use)
+MANUAL_PACKAGE_BUILD=	distfile unavailable on pointyhat
 
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
