@@ -1,0 +1,12 @@
+%%FONTSDIR%%/Anonymous Pro.ttf
+%%FONTSDIR%%/Anonymous Pro I.ttf
+%%FONTSDIR%%/Anonymous Pro B.ttf
+%%FONTSDIR%%/Anonymous Pro BI.ttf
+%%PORTDOCS%%%%DOCSDIR%%/FONTLOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
