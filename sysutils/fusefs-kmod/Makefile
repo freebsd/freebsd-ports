@@ -82,6 +82,8 @@ SUB_FILES+=	pkg-message
 post-patch:
 	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
 		${WRKSRC}/doc/Makefile
+	@${REINPLACE_CMD} -e 's|-I../inc|-I${SRC_BASE}/sys -I../inc|g' \
+		${WRKSRC}/mount_fusefs/Makefile
 
 post-configure:
 	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
