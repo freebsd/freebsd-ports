@@ -27,6 +27,9 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/MegaCli
 
+pre-fetch:
+	@${EXEC} fetch -o /dev/null http://www.lsi.com/magic.axd?x=e&file=http%3A//www.lsi.com/downloads/Public/MegaRAID%2520Common%2520Files/8.02.16_MegaCLI.zip
+
 .include <bsd.port.pre.mk>
 do-install:
 .if ${ARCH} == "i386"
