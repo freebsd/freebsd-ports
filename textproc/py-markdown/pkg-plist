@@ -1,17 +1,17 @@
 @comment $FreeBSD$
-bin/markdown
+bin/markdown_py
 %%PYTHON_SITELIBDIR%%/markdown/__init__.py
 %%PYTHON_SITELIBDIR%%/markdown/__init__.pyc
 %%PYTHON_SITELIBDIR%%/markdown/__init__.pyo
+%%PYTHON_SITELIBDIR%%/markdown/__main__.py
+%%PYTHON_SITELIBDIR%%/markdown/__main__.pyc
+%%PYTHON_SITELIBDIR%%/markdown/__main__.pyo
 %%PYTHON_SITELIBDIR%%/markdown/blockparser.py
 %%PYTHON_SITELIBDIR%%/markdown/blockparser.pyc
 %%PYTHON_SITELIBDIR%%/markdown/blockparser.pyo
 %%PYTHON_SITELIBDIR%%/markdown/blockprocessors.py
 %%PYTHON_SITELIBDIR%%/markdown/blockprocessors.pyc
 %%PYTHON_SITELIBDIR%%/markdown/blockprocessors.pyo
-%%PYTHON_SITELIBDIR%%/markdown/commandline.py
-%%PYTHON_SITELIBDIR%%/markdown/commandline.pyc
-%%PYTHON_SITELIBDIR%%/markdown/commandline.pyo
 %%PYTHON_SITELIBDIR%%/markdown/etree_loader.py
 %%PYTHON_SITELIBDIR%%/markdown/etree_loader.pyc
 %%PYTHON_SITELIBDIR%%/markdown/etree_loader.pyo
@@ -21,6 +21,9 @@ bin/markdown
 %%PYTHON_SITELIBDIR%%/markdown/extensions/abbr.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/abbr.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/abbr.pyo
+%%PYTHON_SITELIBDIR%%/markdown/extensions/attr_list.py
+%%PYTHON_SITELIBDIR%%/markdown/extensions/attr_list.pyc
+%%PYTHON_SITELIBDIR%%/markdown/extensions/attr_list.pyo
 %%PYTHON_SITELIBDIR%%/markdown/extensions/codehilite.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/codehilite.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/codehilite.pyo
@@ -42,12 +45,15 @@ bin/markdown
 %%PYTHON_SITELIBDIR%%/markdown/extensions/html_tidy.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/html_tidy.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/html_tidy.pyo
-%%PYTHON_SITELIBDIR%%/markdown/extensions/imagelinks.py
-%%PYTHON_SITELIBDIR%%/markdown/extensions/imagelinks.pyc
-%%PYTHON_SITELIBDIR%%/markdown/extensions/imagelinks.pyo
 %%PYTHON_SITELIBDIR%%/markdown/extensions/meta.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/meta.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/meta.pyo
+%%PYTHON_SITELIBDIR%%/markdown/extensions/nl2br.py
+%%PYTHON_SITELIBDIR%%/markdown/extensions/nl2br.pyc
+%%PYTHON_SITELIBDIR%%/markdown/extensions/nl2br.pyo
+%%PYTHON_SITELIBDIR%%/markdown/extensions/smart_strong.py
+%%PYTHON_SITELIBDIR%%/markdown/extensions/smart_strong.pyc
+%%PYTHON_SITELIBDIR%%/markdown/extensions/smart_strong.pyo
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.pyo
@@ -60,9 +66,6 @@ bin/markdown
 %%PYTHON_SITELIBDIR%%/markdown/extensions/wikilinks.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/wikilinks.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/wikilinks.pyo
-%%PYTHON_SITELIBDIR%%/markdown/html4.py
-%%PYTHON_SITELIBDIR%%/markdown/html4.pyc
-%%PYTHON_SITELIBDIR%%/markdown/html4.pyo
 %%PYTHON_SITELIBDIR%%/markdown/inlinepatterns.py
 %%PYTHON_SITELIBDIR%%/markdown/inlinepatterns.pyc
 %%PYTHON_SITELIBDIR%%/markdown/inlinepatterns.pyo
@@ -75,8 +78,14 @@ bin/markdown
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.py
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.pyc
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.pyo
+%%PYTHON_SITELIBDIR%%/markdown/searializers.py
+%%PYTHON_SITELIBDIR%%/markdown/searializers.pyc
+%%PYTHON_SITELIBDIR%%/markdown/searializers.pyo
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.py
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.pyc
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.pyo
+%%PYTHON_SITELIBDIR%%/markdown/util.py
+%%PYTHON_SITELIBDIR%%/markdown/util.pyc
+%%PYTHON_SITELIBDIR%%/markdown/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/markdown/extensions
 @dirrm %%PYTHON_SITELIBDIR%%/markdown
