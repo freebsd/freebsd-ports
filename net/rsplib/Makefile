@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsplib
-PORTVERSION=	2.7.10
+PORTVERSION=	2.7.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/ReliableServer/Downloads/
 
