@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpxd
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://fossies.org/unix/privat/ \
 		http://www.sourcefiles.org/Networking/Tools/Proxy/ \
@@ -20,10 +21,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	sbin/tcpxd etc/tcpxd.conf
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpxd ${PREFIX}/sbin
-	${INSTALL_DATA}  ${WRKSRC}/tcpxd.conf ${PREFIX}/etc/tcpxd.conf
+	@${INSTALL_PROGRAM} ${WRKSRC}/tcpxd ${PREFIX}/sbin
+	@${INSTALL_DATA} ${WRKSRC}/tcpxd.conf ${PREFIX}/etc/tcpxd.conf.dist
 
 .include <bsd.port.mk>
