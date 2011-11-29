@@ -16,6 +16,6 @@
 		Default %%PREFIX%%/etc/dovecot/dovecot.conf.
 
  To start multiple instances of dovecot set dovecot_config to
- a space seperated list of configuration files.
+ a space separated list of configuration files.
 
 ---------------------------------------------------------------------
