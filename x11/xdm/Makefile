@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdm
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -23,6 +23,19 @@ MAN1=		xdm.1
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
+
+OPTIONS=	XDMSHELL "Install xdmshell" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_XDMSHELL)
+CONFIGURE_ARGS+=--enable-xdmshell
+MAN1+=		xdmshell.1
+PLIST_SUB+=	XDMSHELL=""
+.else
+CONFIGURE_ARGS+=--disable-xdmshell
+PLIST_SUB+=	XDMSHELL="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|XDMCONFIGDIR/|${PREFIX}/lib/X11/xdm/|" \
