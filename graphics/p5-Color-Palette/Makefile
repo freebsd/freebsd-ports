@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Color-Palette
-PORTVERSION=	0.091400
-PORTREVISION=	1
+PORTVERSION=	0.100000
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Color
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
