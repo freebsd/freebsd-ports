@@ -22,6 +22,8 @@ COMMENT=	RabbitMQ C AMQP client library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
 
+BROKEN=		does not fetch
+
 CONFLICTS=	rabbitmq-c-[0-9]*
 
 USE_BZIP2=	YES
