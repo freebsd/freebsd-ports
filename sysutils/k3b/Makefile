@@ -55,6 +55,10 @@ showinfo:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900044
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 .if ${OSVERSION} > 700000
 PKGMESSAGE=	${PKGDIR}/pkg-message-7
 .endif
