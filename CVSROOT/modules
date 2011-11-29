@@ -13217,8 +13217,8 @@ p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-DiscID           ports/audio/p5-MusicBrainz-DiscID
 p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
+p5-MySQL-Diff                   ports/databases/p5-MySQL-Diff
 p5-Mysql                        ports/databases/p5-Mysql
-p5-Mysql-Diff                   ports/databases/p5-Mysql-Diff
 p5-NEXT                         ports/devel/p5-NEXT
 p5-NNML                         ports/news/p5-NNML
 p5-NNTPClient                   ports/news/p5-NNTPClient
@@ -14217,6 +14217,7 @@ p5-Sys-Syslog                   ports/sysutils/p5-Sys-Syslog
 p5-Sys-Trace                    ports/devel/p5-Sys-Trace
 p5-Sys-User-UIDhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-Sys-Utmp                     ports/sysutils/p5-Sys-Utmp
+p5-Sys-Virt                     ports/devel/p5-Sys-Virt
 p5-Sysadm-Install               ports/sysutils/p5-Sysadm-Install
 p5-SyslogScan                   ports/sysutils/p5-SyslogScan
 p5-System-Command               ports/devel/p5-System-Command
@@ -14337,6 +14338,7 @@ p5-Test-HTTP-Server-Simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness                 ports/devel/p5-Test-Harness
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
 p5-Test-HexString               ports/devel/p5-Test-HexString
+p5-Test-Identity                ports/devel/p5-Test-Identity
 p5-Test-InDistDir               ports/devel/p5-Test-InDistDir
 p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-Inter                   ports/devel/p5-Test-Inter
@@ -14374,6 +14376,7 @@ p5-Test-Pod-Coverage            ports/devel/p5-Test-Pod-Coverage
 p5-Test-Pod-Coverage-Permissive  ports/devel/p5-Test-Pod-Coverage-Permissive
 p5-Test-Portability-Files       ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults           ports/devel/p5-Test-RandomResults
+p5-Test-Refcount                ports/devel/p5-Test-Refcount
 p5-Test-Reporter                ports/devel/p5-Test-Reporter
 p5-Test-Reporter-Transport-Metabase  ports/devel/p5-Test-Reporter-Transport-Metabase
 p5-Test-Requires                ports/devel/p5-Test-Requires
@@ -17656,7 +17659,7 @@ p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-discid           ports/audio/p5-MusicBrainz-DiscID
 p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
 p5-mysql                        ports/databases/p5-Mysql
-p5-mysql-diff                   ports/databases/p5-Mysql-Diff
+p5-mysql-diff                   ports/databases/p5-MySQL-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-object                ports/net-mgmt/p5-Nagios-Object
 p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
@@ -18689,6 +18692,7 @@ p5-sys-syslog                   ports/sysutils/p5-Sys-Syslog
 p5-sys-trace                    ports/devel/p5-Sys-Trace
 p5-sys-user-uidhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-sys-utmp                     ports/sysutils/p5-Sys-Utmp
+p5-sys-virt                     ports/devel/p5-Sys-Virt
 p5-sysadm-install               ports/sysutils/p5-Sysadm-Install
 p5-syslogscan                   ports/sysutils/p5-SyslogScan
 p5-system-command               ports/devel/p5-System-Command
@@ -18808,6 +18812,7 @@ p5-test-hexstring               ports/devel/p5-Test-HexString
 p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
 p5-test-http                    ports/www/p5-Test-HTTP
 p5-test-http-server-simple      ports/www/p5-Test-HTTP-Server-Simple
+p5-test-identity                ports/devel/p5-Test-Identity
 p5-test-indistdir               ports/devel/p5-Test-InDistDir
 p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-inter                   ports/devel/p5-Test-Inter
@@ -18846,6 +18851,7 @@ p5-test-poe-server-tcp          ports/devel/p5-Test-POE-Server-TCP
 p5-test-portability-files       ports/devel/p5-Test-Portability-Files
 p5-test-postgresql              ports/databases/p5-Test-postgresql
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
+p5-test-refcount                ports/devel/p5-Test-Refcount
 p5-test-reporter                ports/devel/p5-Test-Reporter
 p5-test-reporter-transport-metabase  ports/devel/p5-Test-Reporter-Transport-Metabase
 p5-test-requires                ports/devel/p5-Test-Requires
@@ -22490,7 +22496,6 @@ py-turbojson                    ports/devel/py-turbojson
 py-turbojson11                  ports/devel/py-turbojson11
 py-turbokid                     ports/devel/py-turbokid
 py-turbomail                    ports/mail/py-turbomail
-py-turpial                      ports/net-im/py-turpial
 py-tvdb_api                     ports/www/py-tvdb_api
 py-tvgrab                       ports/textproc/py-tvgrab
 py-tvnamer                      ports/multimedia/py-tvnamer
@@ -23759,6 +23764,7 @@ ruby-xslt                       ports/textproc/ruby-xslt
 ruby-zip                        ports/archivers/ruby-zip
 ruby18                          ports/lang/ruby18
 ruby19                          ports/lang/ruby19
+rubygem-SyslogLogger            ports/sysutils/rubygem-SyslogLogger
 rubygem-abstract                ports/devel/rubygem-abstract
 rubygem-actionmailer            ports/mail/rubygem-actionmailer
 rubygem-actionpack              ports/www/rubygem-actionpack
@@ -24165,6 +24171,7 @@ rubygem-sys-proctable           ports/sysutils/rubygem-sys-proctable
 rubygem-sys-uname               ports/sysutils/rubygem-sys-uname
 rubygem-sys-uptime              ports/sysutils/rubygem-sys-uptime
 rubygem-sysinfo                 ports/devel/rubygem-sysinfo
+rubygem-sysloglogger            ports/sysutils/rubygem-SyslogLogger
 rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
@@ -26001,6 +26008,7 @@ tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
 tuning-primer                   ports/databases/tuning-primer
 tuntun                          ports/security/tuntun
+turpial                         ports/net-im/turpial
 tux-aqfh                        ports/games/tux-aqfh
 tuxcards                        ports/deskutils/tuxcards
 tuxguitar                       ports/audio/tuxguitar
