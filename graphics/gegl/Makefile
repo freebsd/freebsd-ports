@@ -10,7 +10,7 @@ PORTVERSION=	0.1.8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
