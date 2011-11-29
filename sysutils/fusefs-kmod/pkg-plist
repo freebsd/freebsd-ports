@@ -1,6 +1,6 @@
 sbin/mount_fusefs
 @exec ln -fs %D/%F /usr/sbin
-@unexec rm -f /usr/sbin/mount_fusefs 2>&1 >/dev/null || true
+@unexec rm -f /usr/sbin/mount_fusefs
 %%PORTDOCS%%%%DOCSDIR%%/kmod/doc.text
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Faq.html
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Implementation.html
