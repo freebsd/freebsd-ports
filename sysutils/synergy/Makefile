@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synergy
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.8
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -21,14 +21,19 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 
-post-patch:
-	@${ECHO_CMD} >> ${WRKSRC}/lib/base/LogOutputters.cpp
+PLIST_FILES=	bin/synergys bin/synergyc
+PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
+		synergy.conf.example-advanced
 
 do-install:
 .for f in synergys synergyc
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}.conf ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
