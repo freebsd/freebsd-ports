@@ -6,11 +6,11 @@
 
 PORTNAME=	pkg_trackinst
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
 USE_PYTHON=	2.5+
