@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smbftpd
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
@@ -24,6 +23,7 @@ HAS_CONFIGURE=	yes
 MAKE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
 
