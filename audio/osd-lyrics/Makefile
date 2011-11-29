@@ -35,6 +35,10 @@ OPTIONS=	MPD	"Enable MPD support"		off \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 .if defined(WITH_MPD)
 LIB_DEPENDS+=	mpd.3:${PORTSDIR}/audio/libmpd
 .else
