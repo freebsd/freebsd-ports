@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Nexmo/SMS/Response.pm
 %%SITE_PERL%%/Nexmo/SMS/Response/Message.pm
 %%SITE_PERL%%/Nexmo/SMS/TextMessage.pm
+%%SITE_PERL%%/Nexmo/SMS/UnicodeMessage.pm
 %%SITE_PERL%%/Nexmo/SMS/WAPPushMessage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nexmo/SMS/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nexmo/SMS
