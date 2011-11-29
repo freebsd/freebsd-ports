@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Web-Query
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	www
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
@@ -23,7 +24,12 @@ RUN_DEPENDS=	p5-HTML-Selector-XPath>=0.06:${PORTSDIR}/www/p5-HTML-Selector-XPath
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Web::Query.3 \
-		Web::README.3
+MAN3=		Web::Query.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
