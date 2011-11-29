@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-udf
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,8 +23,10 @@ MODULES=	colwidth confidence_higher confidence_lower correlation \
 		skewness slope stdnorm_density stdnorm_dist weightedavg
 
 .for MODULE in ${MODULES}
-PLIST_FILES+=	lib/mysql/udf_${MODULE}.so
+PLIST_FILES+=	lib/mysql/plugin/udf_${MODULE}.so
 .endfor
+
+PLIST_DIRS=	lib/mysql/plugin
 
 .include <bsd.port.pre.mk>
 
@@ -40,11 +42,12 @@ do-build:
 .endfor
 
 do-install:
+	${MKDIR} ${PREFIX}/lib/mysql/plugin
 .for MODULE in ${MODULES}
-	${INSTALL_PROGRAM} ${WRKSRC}/udf_${MODULE}.so ${PREFIX}/lib/mysql/udf_${MODULE}.so
+	${INSTALL_PROGRAM} ${WRKSRC}/udf_${MODULE}.so ${PREFIX}/lib/mysql/plugin/udf_${MODULE}.so
 .endfor
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
