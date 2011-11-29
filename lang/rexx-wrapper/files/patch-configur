@@ -1,0 +1,11 @@
+--- configur.orig	2003-06-30 09:39:59.000000000 +0200
++++ configur	2011-11-29 13:21:17.000000000 +0100
+@@ -1476,7 +1476,7 @@
+ 
+ 
+ 
+-CC_LIST="gcc cc c89 acc"
++CC_LIST="gcc clang cc c89 acc"
+ 
+ mh_sysv_incdir=""
+ mh_sysv_libdir=""

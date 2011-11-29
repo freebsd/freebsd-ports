@@ -23,10 +23,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina
 DATADIR=	${PREFIX}/share/rexx${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${CC} == "clang"
-BROKEN=		Does not configure with clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
