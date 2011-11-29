@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Nexmo-SMS
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RENEEB
@@ -29,6 +29,7 @@ MAN3=		Nexmo::SMS.3 \
 		Nexmo::SMS::Response.3 \
 		Nexmo::SMS::Response::Message.3 \
 		Nexmo::SMS::TextMessage.3 \
+		Nexmo::SMS::UnicodeMessage.3 \
 		Nexmo::SMS::WAPPushMessage.3
 
 .include <bsd.port.mk>
