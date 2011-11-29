@@ -7,7 +7,7 @@
 
 PORTNAME=	mysqltuner
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/downloads/me-vlad/MySQLTuner-perl/
 
@@ -17,7 +17,7 @@ COMMENT=	A Script Assist You with MySQL Configuration
 LICENSE=	GPLv3
 
 FETCH_ARGS=	-pRr
-USE_PERL=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}.pl
