@@ -7,6 +7,7 @@
 
 PORTNAME=	snortsam
 PORTVERSION=	2.70
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snortsam.net/files/snortsam/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
