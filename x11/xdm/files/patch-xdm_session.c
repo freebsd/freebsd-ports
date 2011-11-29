@@ -1,5 +1,5 @@
---- session.c.orig	Sun Jun  3 22:49:51 2007
-+++ session.c	Sun Jun  3 22:56:06 2007
+--- xdm/session.c.orig	Sun Jun  3 22:49:51 2007
++++ xdm/session.c	Sun Jun  3 22:56:06 2007
 @@ -543,6 +543,7 @@
      pid_t	pid;
  #ifdef HAS_SETUSERCONTEXT
