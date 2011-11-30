@@ -2,6 +2,7 @@
 %%T%%/.systemPrefs/.system.lock
 %%T%%/.systemPrefs/.systemRootModFile
 %%T%%/COPYRIGHT
+%%T%%/LICENSE
 %%T%%/README
 %%T%%/THIRDPARTYLICENSEREADME.txt
 %%T%%/Welcome.html
@@ -114,6 +115,8 @@
 %%T%%/lib/fontconfig.RedHat.3.properties.src
 %%T%%/lib/fontconfig.RedHat.4.bfc
 %%T%%/lib/fontconfig.RedHat.4.properties.src
+%%T%%/lib/fontconfig.RedHat.6.0.bfc
+%%T%%/lib/fontconfig.RedHat.6.0.properties.src
 %%T%%/lib/fontconfig.RedHat.bfc
 %%T%%/lib/fontconfig.RedHat.properties.src
 %%T%%/lib/fontconfig.SuSE.11.bfc
@@ -385,6 +388,7 @@
 %%T%%/lib/zi/America/Mazatlan
 %%T%%/lib/zi/America/Menominee
 %%T%%/lib/zi/America/Merida
+%%T%%/lib/zi/America/Metlakatla
 %%T%%/lib/zi/America/Mexico_City
 %%T%%/lib/zi/America/Miquelon
 %%T%%/lib/zi/America/Moncton
@@ -397,6 +401,7 @@
 %%T%%/lib/zi/America/Nipigon
 %%T%%/lib/zi/America/Nome
 %%T%%/lib/zi/America/Noronha
+%%T%%/lib/zi/America/North_Dakota/Beulah
 %%T%%/lib/zi/America/North_Dakota/Center
 %%T%%/lib/zi/America/North_Dakota/New_Salem
 %%T%%/lib/zi/America/Ojinaga
@@ -420,6 +425,7 @@
 %%T%%/lib/zi/America/Santo_Domingo
 %%T%%/lib/zi/America/Sao_Paulo
 %%T%%/lib/zi/America/Scoresbysund
+%%T%%/lib/zi/America/Sitka
 %%T%%/lib/zi/America/St_Johns
 %%T%%/lib/zi/America/St_Kitts
 %%T%%/lib/zi/America/St_Lucia
