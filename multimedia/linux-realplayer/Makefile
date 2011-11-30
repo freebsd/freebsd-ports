@@ -88,7 +88,7 @@ do-install:
 .for c in dnet ddnt
 	${INSTALL_DATA} ${WRKDIR}/usr/lib/codecs/$c.so.6.0	\
 		${RADIR}/codecs/
-	${LN} -s $c.so.6.0 ${RADIR}/codecs/$c.so
+	${LN} -sf $c.so.6.0 ${RADIR}/codecs/$c.so
 .endfor
 
 .if !defined(WITHOUT_NLS)
