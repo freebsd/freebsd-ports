@@ -1,5 +1,6 @@
-bin/ufraw
+bin/nikon-curve
 bin/ufraw-batch
+bin/ufraw-dcraw
 %%GIMP%%libexec/gimp/2.2/plug-ins/ufraw-gimp
 share/locale/ca/LC_MESSAGES/ufraw.mo
 share/locale/cs/LC_MESSAGES/ufraw.mo
