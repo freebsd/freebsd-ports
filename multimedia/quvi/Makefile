@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -16,9 +16,9 @@ COMMENT=	Command line tool for parsing flash media stream URLs
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	libquvi>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi
+BUILD_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	libquvi>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi
+RUN_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
