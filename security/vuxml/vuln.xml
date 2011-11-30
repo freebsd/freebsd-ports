@@ -30,6 +30,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   $FreeBSD$
 
+
+QUICK GUIDE TO ADDING A NEW ENTRY
+
+1. run `make newentry' to add a template to the top of the document
+2. fill in the template
+3. use `make validate' to verify syntax correctness (you might need to install
+   textproc/libxml2 for parser, and this port for catalogs)
+4. profit!
+
 Note:  Please add new entries to the beginning of this file.
 
 -->
