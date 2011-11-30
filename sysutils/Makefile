@@ -220,6 +220,7 @@
     SUBDIR += fconfig
     SUBDIR += fcron
     SUBDIR += fdupes
+    SUBDIR += feather
     SUBDIR += fetchlog
     SUBDIR += ffs2recov
     SUBDIR += file
