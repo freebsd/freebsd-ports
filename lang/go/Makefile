@@ -7,6 +7,7 @@
 
 PORTNAME=	go
 PORTVERSION=	20111017
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/jlaffaye
 
@@ -41,6 +42,7 @@ PLIST_SUB+=	ARCH=${GOARCH}		\
 do-build:
 	(cd ${WRKSRC}/src &&		\
 		GOROOT=${WRKSRC}	\
+		GOBIN=			\
 		GOARCH=${GOARCH}	\
 		GOOS=freebsd		\
 		bash make.bash)
@@ -58,6 +60,8 @@ do-install:
 	(cd ${WRKSRC}/pkg/ && ${COPYTREE_SHARE} \* ${PREFIX}/go/pkg)
 	${INSTALL} -d ${PREFIX}/go/src/
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.* ${PREFIX}/go/src/
+	${INSTALL} -d ${PREFIX}/go/src/pkg/
+	(cd ${WRKSRC}/src/pkg/ && ${COPYTREE_SHARE} \* ${PREFIX}/go/src/pkg)
 	${INSTALL} -d ${PREFIX}/go/lib/
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} \* ${PREFIX}/go/lib)
 
