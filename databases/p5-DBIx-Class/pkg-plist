@@ -78,6 +78,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Relationship/ProxyMethods.pm
 %%SITE_PERL%%/DBIx/Class/ResultClass/HashRefInflator.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet.pm
+%%SITE_PERL%%/DBIx/Class/ResultSet/Pager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetColumn.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
@@ -189,6 +190,7 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/SQLAHacks
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSourceProxy
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSource
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultClass
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Relationship
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK/Auto

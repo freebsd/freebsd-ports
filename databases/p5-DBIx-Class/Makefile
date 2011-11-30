@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08195
+PORTVERSION=	0.08196
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ABRAXXA
+MASTER_SITE_SUBDIR=	CPAN:ARODLAND
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-RUN_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0009:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Config-Any>=0.20:${PORTSDIR}/devel/p5-Config-Any \
@@ -32,18 +32,19 @@ RUN_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Acces
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-Variable-Magic>=0.44:${PORTSDIR}/devel/p5-Variable-Magic \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-DeepAbstractSearch \
 		p5-Class-Trigger>=0.12:${PORTSDIR}/devel/p5-Class-Trigger \
 		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
 		p5-DateTime>=0.55:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		p5-DateTime-Format-Pg>=0:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
 		p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Math-Base36>=0.07:${PORTSDIR}/math/p5-Math-Base36 \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
@@ -191,7 +192,10 @@ RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translato
 .if ${PERL_LEVEL} < 501001
 BUILD_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
-TEST_DEPENDS+=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
