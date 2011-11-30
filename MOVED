@@ -2856,7 +2856,7 @@ misc/p5-Geography-NationalGrid||2011-10-31|Disappeared from CPAN
 net/py-timeoutsocket||2011-10-31|Upstream disappeared and distfile is no longer available
 textproc/p5-XML-LibRSVG||2011-10-31|Unmaintained and not used anymore
 textproc/javacc||2011-10-31|No more public distfiles
-www/w3-4/Makefile||2011-10-31|Upstream disappeared and distfile is no longer available
+www/w3-4||2011-10-31|Upstream disappeared and distfile is no longer available
 www/commonist||2011-10-31|Depends on textproc/javacc, which is DEPRECATED
 www/newsfeed||2011-10-31|Depends on net/py-timeoutsocket, which is DEPRECATED
 x11/fbsd-icons||2011-10-31|Upstream disappeared and distfile is no longer available
