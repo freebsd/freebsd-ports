@@ -1,8 +1,7 @@
 @unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
+%%T%%/LICENSE
 %%T%%/README.html
-%%T%%/README_ja.html
-%%T%%/README_zh_CN.html
 %%T%%/THIRDPARTYLICENSEREADME.txt
 %%T%%/bin/ControlPanel
 %%T%%/bin/HtmlConverter
@@ -1875,8 +1874,6 @@
 %%T%%/demo/applets/WireFrame/models/knoxS.obj
 %%T%%/demo/jfc/CodePointIM/CodePointIM.jar
 %%T%%/demo/jfc/CodePointIM/README.html
-%%T%%/demo/jfc/CodePointIM/README_ja.html
-%%T%%/demo/jfc/CodePointIM/README_zh_CN.html
 %%T%%/demo/jfc/CodePointIM/src/CodePointIM.java
 %%T%%/demo/jfc/CodePointIM/src/CodePointInputMethod.java
 %%T%%/demo/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
@@ -2750,8 +2747,6 @@
 %%T%%/demo/plugin/applets/WireFrame/models/knoxS.obj
 %%T%%/demo/plugin/jfc/CodePointIM/CodePointIM.jar
 %%T%%/demo/plugin/jfc/CodePointIM/README.html
-%%T%%/demo/plugin/jfc/CodePointIM/README_ja.html
-%%T%%/demo/plugin/jfc/CodePointIM/README_zh_CN.html
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointIM.java
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointInputMethod.java
 %%T%%/demo/plugin/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
@@ -3214,6 +3209,7 @@
 %%T%%/jre/.systemPrefs/.system.lock
 %%T%%/jre/.systemPrefs/.systemRootModFile
 %%T%%/jre/COPYRIGHT
+%%T%%/jre/LICENSE
 %%T%%/jre/README
 %%T%%/jre/THIRDPARTYLICENSEREADME.txt
 %%T%%/jre/Welcome.html
@@ -3326,6 +3322,8 @@
 %%T%%/jre/lib/fontconfig.RedHat.3.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.4.bfc
 %%T%%/jre/lib/fontconfig.RedHat.4.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.6.0.bfc
+%%T%%/jre/lib/fontconfig.RedHat.6.0.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.bfc
 %%T%%/jre/lib/fontconfig.RedHat.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.11.bfc
@@ -3599,6 +3597,7 @@
 %%T%%/jre/lib/zi/America/Mazatlan
 %%T%%/jre/lib/zi/America/Menominee
 %%T%%/jre/lib/zi/America/Merida
+%%T%%/jre/lib/zi/America/Metlakatla
 %%T%%/jre/lib/zi/America/Mexico_City
 %%T%%/jre/lib/zi/America/Miquelon
 %%T%%/jre/lib/zi/America/Moncton
@@ -3611,6 +3610,7 @@
 %%T%%/jre/lib/zi/America/Nipigon
 %%T%%/jre/lib/zi/America/Nome
 %%T%%/jre/lib/zi/America/Noronha
+%%T%%/jre/lib/zi/America/North_Dakota/Beulah
 %%T%%/jre/lib/zi/America/North_Dakota/Center
 %%T%%/jre/lib/zi/America/North_Dakota/New_Salem
 %%T%%/jre/lib/zi/America/Ojinaga
@@ -3634,6 +3634,7 @@
 %%T%%/jre/lib/zi/America/Santo_Domingo
 %%T%%/jre/lib/zi/America/Sao_Paulo
 %%T%%/jre/lib/zi/America/Scoresbysund
+%%T%%/jre/lib/zi/America/Sitka
 %%T%%/jre/lib/zi/America/St_Johns
 %%T%%/jre/lib/zi/America/St_Kitts
 %%T%%/jre/lib/zi/America/St_Lucia
