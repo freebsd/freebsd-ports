@@ -17,13 +17,9 @@ COMMENT=	Perl module that provides an interface to the GMP library
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include LIBS="-L${LOCALBASE}/lib -lgmp"
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::GMP.3
-
-post-patch:
-	@${PERL} -pi -e "s!-lgmp!-L${LOCALBASE}/lib $$&!;" \
-		     -e "if (/'LIBS'/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \
-		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
