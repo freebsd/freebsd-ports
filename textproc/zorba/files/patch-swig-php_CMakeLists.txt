@@ -1,33 +1,33 @@
---- swig/php/CMakeLists.txt.orig	2010-07-14 15:23:16.000000000 +0200
-+++ swig/php/CMakeLists.txt	2011-08-19 13:55:46.000000000 +0200
+--- swig/php/CMakeLists.txt.orig	2011-09-10 17:56:13.000000000 +0200
++++ swig/php/CMakeLists.txt	2011-11-24 15:58:35.000000000 +0100
 @@ -12,6 +12,8 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
  
 +IF (WITH_PHP5)
 +
- INCLUDE(${CMAKE_MODULE_PATH}/FindPHP5.cmake)
- FIND_PACKAGE(PHP5)
- 
-@@ -36,13 +38,11 @@
+ IF (NOT PHP5_FOUND)
+   MESSAGE (STATUS "SWIG PHP: PHP5 binding not generated because library and include file not installed.")
+ ELSE (NOT PHP5_FOUND)
+@@ -40,13 +42,11 @@
  
    # The following fix was added because of the changes in CMake 2.8, which have the
    # result of naming the java binding library "liblibzorba_api.so" instead of "libzorba_api.so"
--  IF ( LINUX OR CYGWIN )
-+  IF ( LINUX OR CYGWIN OR FREEBSD)
-     SET_TARGET_PROPERTIES( ${SWIG_MODULE_zorba_api_REAL_NAME} PROPERTIES PREFIX "" )
--  ENDIF ( LINUX OR CYGWIN )
-+  ENDIF ( LINUX OR CYGWIN OR FREEBSD)
+-  IF (LINUX OR CYGWIN)
++  IF (LINUX OR CYGWIN OR FREEBSD)
+     SET_TARGET_PROPERTIES (${SWIG_MODULE_zorba_api_REAL_NAME} PROPERTIES PREFIX "")
+-  ENDIF (LINUX OR CYGWIN)
++  ENDIF (LINUX OR CYGWIN OR FREEBSD)
  
- 	IF (NOT WIN32 OR CYGWIN)
--    STRING(REPLACE ${CMAKE_INSTALL_PREFIX} "" PHP5_INSTALL_PATH ${PHP5_EXTENSION_DIR})
--    SET(PHP5_INSTALL_PATH ${CMAKE_INSTALL_PREFIX}${PHP5_INSTALL_PATH})
-     MESSAGE(STATUS "SWIG PHP: PHP module install path: " ${PHP5_INSTALL_PATH})
+   IF (NOT WIN32 OR CYGWIN)
+-    STRING (REPLACE ${CMAKE_INSTALL_PREFIX} "" PHP5_INSTALL_PATH ${PHP5_EXTENSION_DIR})
+-    SET (PHP5_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/share/php5")
+     MESSAGE (STATUS "SWIG PHP: PHP module install path: " ${PHP5_INSTALL_PATH})
  
-     INSTALL ( FILES ${CMAKE_CURRENT_BINARY_DIR}/zorba_api_wrapper.php
-@@ -74,3 +74,5 @@
+     INSTALL (
+@@ -88,3 +88,5 @@
    ### End PHP proxy generation
  
- ENDIF( NOT PHP5_FOUND )
+ ENDIF (NOT PHP5_FOUND)
 +
 +ENDIF (WITH_PHP5)

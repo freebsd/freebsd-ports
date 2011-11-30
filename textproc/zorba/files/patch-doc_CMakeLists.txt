@@ -1,21 +1,24 @@
---- doc/CMakeLists.txt.orig	2011-08-19 15:31:29.000000000 +0200
-+++ doc/CMakeLists.txt	2011-08-19 15:32:16.000000000 +0200
-@@ -37,9 +37,15 @@
+--- doc/CMakeLists.txt.orig	2011-09-15 09:49:09.000000000 +0200
++++ doc/CMakeLists.txt	2011-09-15 09:50:35.000000000 +0200
+@@ -39,10 +39,18 @@
+ ADD_SUBDIRECTORY(c)
  
-   IF(ZORBA_USE_SWIG AND BUILDING_SIMPLESTORE)
-     ADD_SUBDIRECTORY(java)
--    ADD_SUBDIRECTORY(python)
--    ADD_SUBDIRECTORY(ruby)
--    ADD_SUBDIRECTORY(php)
-+	 IF (WITH_PYTHON)
-+		 ADD_SUBDIRECTORY(python)
-+	 ENDIF (WITH_PYTHON)
-+	 IF (WITH_RUBY)
-+		 ADD_SUBDIRECTORY(ruby)
-+	 ENDIF (WITH_RUBY)
-+	 IF (WITH_PHP5)
-+		 ADD_SUBDIRECTORY(php)
-+	 ENDIF (WITH_PHP5)
-   ENDIF(ZORBA_USE_SWIG AND BUILDING_SIMPLESTORE)
+ IF (SWIG_FOUND)
+-  ADD_SUBDIRECTORY(java)
+-  ADD_SUBDIRECTORY(python)
+-  ADD_SUBDIRECTORY(ruby)
++  IF (WITH_JAVA)
++    ADD_SUBDIRECTORY(java)
++  ENDIF (WITH_JAVA)
++  IF (WITH_PYTHON)
++    ADD_SUBDIRECTORY(python)
++  ENDIF (WITH_PYTHON)
++  IF (WITH_RUBY)
++    ADD_SUBDIRECTORY(ruby)
++  ENDIF (WITH_RUBY)
++  IF (WITH_PHP)
+   ADD_SUBDIRECTORY(php)
++  ENDIF (WITH_PHP)
+ ENDIF (SWIG_FOUND)
  
-   # workaround: a dir is already needed for the install command.
+ # generate Doxygen code documentation

@@ -1,0 +1,36 @@
+--- doc/zorba/xqdoc/CMakeLists.txt.orig	2011-11-29 15:09:45.000000000 +0100
++++ doc/zorba/xqdoc/CMakeLists.txt	2011-11-29 15:10:06.000000000 +0100
+@@ -17,28 +17,28 @@
+ ELSE(NOT ZORBA_WITH_FILE_ACCESS)
+ 
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/images
+-        DESTINATION share/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites
++        DESTINATION share/doc/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites
+         COMPONENT "doc"
+         PATTERN "*.svn" EXCLUDE
+         )
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib
+-        DESTINATION share/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites
++        DESTINATION share/doc/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites
+         COMPONENT "doc"
+         PATTERN "*.svn" EXCLUDE
+         )
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/styles
+-        DESTINATION share/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites 
++        DESTINATION share/doc/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites 
+         COMPONENT "doc"
+         PATTERN "*.svn" EXCLUDE
+         )
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/templates
+-        DESTINATION share/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites  
++        DESTINATION share/doc/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/requisites  
+         COMPONENT "doc"
+         PATTERN "*.svn" EXCLUDE
+         )
+ INSTALL(FILES src/xqdoc-html.xq
+               src/xqdoc-xml.xq
+-        DESTINATION share/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/generator/ 
++        DESTINATION share/doc/zorba-${ZORBA_MAJOR_NUMBER}.${ZORBA_MINOR_NUMBER}.${ZORBA_PATCH_NUMBER}/xqdoc/generator/ 
+         COMPONENT "doc"
+         )
+ 
