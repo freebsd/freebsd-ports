@@ -1,12 +1,12 @@
---- src/Makefile.orig	2011-11-21 21:47:39.000000000 +0400
-+++ src/Makefile	2011-11-23 06:29:54.000000000 +0400
+--- src/Makefile.orig	2011-11-28 14:22:08.000000000 +0400
++++ src/Makefile	2011-11-30 16:33:17.000000000 +0400
 @@ -28,6 +28,9 @@
    CFLAGS?=-std=c99 -pedantic $(OPTIMIZATION) -Wall -W -D__EXTENSIONS__ -D_XPG6
    CCLINK?=-ldl -lnsl -lsocket -lm -lpthread
    DEBUG?=-g -ggdb
 +else ifeq ($(uname_S),FreeBSD)
 +  CFLAGS?= $(CFLAGS)
-+  CCLINK?= -pthread -lm
++  CCLINK?= -pthread -lm -L$(PREFIX)/lib -lexecinfo
  else
    CFLAGS?=-std=c99 -pedantic $(OPTIMIZATION) -Wall -W $(ARCH) $(PROF)
    CCLINK?=-lm -pthread
