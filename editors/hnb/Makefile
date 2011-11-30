@@ -21,6 +21,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		hnb.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		segfaults on 64bit systems
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/libcli/Makefile
@@ -35,4 +41,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
