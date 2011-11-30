@@ -132,11 +132,6 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${PREFIX}/etc/nsd/nsd.conf.sample
-
-.if exists(${PREFIX}/etc/nsd/nsd.conf)
-	@${ECHO_MSG} "Upgrading to new ixfr.db format if needed"
-	${PREFIX}/sbin/nsdc patch
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
