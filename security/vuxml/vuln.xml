@@ -39,6 +39,10 @@ QUICK GUIDE TO ADDING A NEW ENTRY
    textproc/libxml2 for parser, and this port for catalogs)
 4. profit!
 
+Extensive documentation of the format is available in Porter's Handbook at
+
+  http://www.freebsd.org/doc/en/books/porters-handbook/security-notify.html
+
 Note:  Please add new entries to the beginning of this file.
 
 -->
