@@ -1,5 +1,5 @@
---- swig/java/CMakeLists.txt.orig	2011-08-23 09:11:30.000000000 +0200
-+++ swig/java/CMakeLists.txt	2011-08-23 09:17:55.000000000 +0200
+--- swig/java/CMakeLists.txt.orig	2011-09-10 17:56:13.000000000 +0200
++++ swig/java/CMakeLists.txt	2011-11-28 17:03:53.000000000 +0100
 @@ -12,6 +12,8 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
@@ -7,9 +7,21 @@
 +IF (WITH_JAVA)
 +
  FIND_PACKAGE ( Java )
- include ( FindJNI )
+ INCLUDE ( ${CMAKE_SOURCE_DIR}/cmake_modules/FindJNI.cmake )
  
-@@ -62,8 +64,8 @@
+@@ -46,9 +48,9 @@
+ 
+   # The following fix was added because of the changes in CMake 2.8, which have the
+   # result of naming the java binding library "liblibzorba_api.so" instead of "libzorba_api.so"
+-  IF ( LINUX OR CYGWIN )
++  IF ( LINUX OR CYGWIN OR FREEBSD)
+     SET_TARGET_PROPERTIES( ${SWIG_MODULE_libzorba_api_REAL_NAME} PROPERTIES PREFIX "" )
+-  ENDIF ( LINUX OR CYGWIN )
++  ENDIF ( LINUX OR CYGWIN OR FREEBSD)
+ 
+   IF (${CMAKE_INSTALL_PREFIX} EQUAL "/usr/local")
+     SET (JAVA_SITEARCH_DIR "/usr/share/java")
+@@ -65,8 +67,8 @@
  		INSTALL(FILES ${JAVA_SWIG_FILES} DESTINATION ${JAVA_SITEARCH_DIR})
    ELSE ( APPLE )
  		IF(NOT WIN32)
@@ -18,9 +30,9 @@
 +        INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libzorba_api.so DESTINATION ${JAVA_LIBDIR})
 +		  INSTALL(FILES ${JAVA_SWIG_FILES} DESTINATION ${JAVA_LIBDIR})
  		ELSE(NOT WIN32)
-       INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libzorba_api.dll DESTINATION bin/java/org/zorbaxquery/api )
- 		  INSTALL(FILES ${JAVA_SWIG_FILES} DESTINATION bin/java/org/zorbaxquery/api )
-@@ -73,3 +75,5 @@
+       INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/zorba_api.dll DESTINATION bin/java/org/zorbaxquery/api/ 
+       COMPONENT "java_swig")
+@@ -78,3 +80,5 @@
  ELSE (JAVA_INCLUDE_PATH)
    MESSAGE ( STATUS "SWIG Java: not generating JAVA API because jni headers not found.")
  ENDIF (JAVA_INCLUDE_PATH)

@@ -1,6 +1,6 @@
---- test/rbkt/CMakeLists.txt.orig	2011-08-11 09:53:03.000000000 +0200
-+++ test/rbkt/CMakeLists.txt	2011-08-11 10:08:48.000000000 +0200
-@@ -68,7 +68,7 @@
+--- test/rbkt/CMakeLists.txt.orig	2011-09-10 17:56:08.000000000 +0200
++++ test/rbkt/CMakeLists.txt	2011-09-15 10:05:12.000000000 +0200
+@@ -71,7 +71,7 @@
        MESSAGE(STATUS "Did NOT find Boost SYSTEM component - not building multithreaded test driver")
        SET (ZORBATEST_TESTDRIVER_MT_AVAILABLE FALSE)
      ELSE (NOT Boost_SYSTEM_FOUND)
@@ -9,12 +9,3 @@
      ENDIF (NOT Boost_SYSTEM_FOUND)
      
    ENDIF (Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION GREATER 34)
-@@ -88,7 +88,7 @@
- 
-   ADD_EXECUTABLE(testdriver_mt ${TESTDRIVER_MT_SRCS})
-   TARGET_LINK_LIBRARIES(testdriver_mt zorba_simplestore
--    boost_filesystem-mt ${Boost_system_lib})
-+    ${Boost_system_lib})
-   IF (ZORBA_BUILD_STATIC_LIBRARY)
-     ADD_EXECUTABLE(testdriver_mt_static testdriver_mt.cpp)
-     SET_TARGET_PROPERTIES(testdriver_mt_static

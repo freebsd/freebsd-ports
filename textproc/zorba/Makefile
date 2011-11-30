@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zorba
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A general purpose C++ XQuery processor
@@ -35,6 +35,7 @@ CMAKE_OUTSOURCE=yes
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
+DATADIR=	${PREFIX}/share/${PKGNAME}
 
 .include <bsd.port.options.mk>
 
@@ -43,7 +44,7 @@ USE_PHP=	tokenizer
 USE_PHP_BUILD=	yes
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_PHP5:BOOL=true \
-   		-DPHP5_INSTALL_PATH:PATH=lib/php/${PHP_EXT_DIR}
+   		-DPHP5_INSTALL_PATH:FILEPATH="lib/php/${PHP_EXT_DIR}"
 PLIST_SUB+=	WITH_PHP="" \
 		PHP_EXTLIBDIR="lib/php/${PHP_EXT_DIR}"
 .else
@@ -55,8 +56,10 @@ PLIST_SUB+=	WITH_PHP="@comment "
 USE_PYTHON=	yes
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=true \
-   		-DPYTHON_SWIG_INSTALL_DIR=${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}
-PLIST_SUB+=	WITH_PYTHON=""
+		-DPYTHON_SWIG_INSTALL_DIR:FILEPATH=${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}
+PLIST_SUB+=	WITH_PYTHON="" \
+		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}
+
 .else
 CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=false
 PLIST_SUB+=	WITH_PYTHON="@comment "
@@ -94,5 +97,11 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	   ${WRKSRC}/cmake_modules/FindPHP5.cmake
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '481s|^|#|' ${WRKSRC}/CMakeLists.txt
+.endif
+
+pre-build:
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
