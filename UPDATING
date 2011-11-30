@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111130:
+  AFFECTS: users of dns/nsd
+  AUTHOR: zi@FreeBSD.org
+
+  The database format of nsd.db has changed as of version 3.2.9.
+  Before you run nsd, you must convert the existing database:
+
+  # nsdc rebuild
+
 20111123:
   AFFECTS: users of net-im/kopete or net-im/libjingle
   AUTHOR: kde@FreeBSD.org
