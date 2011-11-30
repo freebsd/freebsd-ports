@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -41,6 +40,9 @@ PLIST_SUB+=	NLS="@comment "
 USE_GETTEXT=		yes
 PLIST_SUB+=	NLS=""
 .endif
+
+post-configure:
+	@cd ${WRKSRC}/doc && ${TOUCH} Makefile*
 
 pre-install:
 	@${MKDIR} ${PREFIX}/${INFO_PATH}

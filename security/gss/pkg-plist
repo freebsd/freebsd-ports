@@ -9,6 +9,7 @@ lib/libgss.so.3
 libdata/pkgconfig/gss.pc
 share/locale/en@boldquot/LC_MESSAGES/gss.mo
 share/locale/en@quot/LC_MESSAGES/gss.mo
+share/locale/eo/LC_MESSAGES/gss.mo
 share/locale/fi/LC_MESSAGES/gss.mo
 share/locale/fr/LC_MESSAGES/gss.mo
 share/locale/it/LC_MESSAGES/gss.mo
