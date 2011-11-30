@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Reflex
-PORTVERSION=	0.090
+PORTVERSION=	0.092
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -19,7 +19,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-POE>=1.294:${PORTSDIR}/devel/p5-POE \
-		p5-Moose>=1.21:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2.0203:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Role-Parameterized>=0.23:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
 		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
@@ -47,6 +47,24 @@ MAN3=		Reflex.3 \
 		Reflex::Eg::Inheritance::Moose.3 \
 		Reflex::Eg::Inheritance::Plain.3 \
 		Reflex::Encoder::Line.3 \
+		Reflex::Event.3 \
+		Reflex::Event::Datagram.3 \
+		Reflex::Event::EOF.3 \
+		Reflex::Event::Error.3 \
+		Reflex::Event::FileHandle.3 \
+		Reflex::Event::Flushed.3 \
+		Reflex::Event::Interval.3 \
+		Reflex::Event::Octets.3 \
+		Reflex::Event::POE.3 \
+		Reflex::Event::Postback.3 \
+		Reflex::Event::SigChild.3 \
+		Reflex::Event::Signal.3 \
+		Reflex::Event::Socket.3 \
+		Reflex::Event::Time.3 \
+		Reflex::Event::Timeout.3 \
+		Reflex::Event::ValueChange.3 \
+		Reflex::Event::Wakeup.3 \
+		Reflex::Filehandle.3 \
 		Reflex::Interval.3 \
 		Reflex::PID.3 \
 		Reflex::POE::Event.3 \
@@ -76,7 +94,6 @@ MAN3=		Reflex.3 \
 		Reflex::Role::Wakeup.3 \
 		Reflex::Role::Writable.3 \
 		Reflex::Role::Writing.3 \
-		Reflex::Sender.3 \
 		Reflex::Signal.3 \
 		Reflex::Stream.3 \
 		Reflex::Timeout.3 \

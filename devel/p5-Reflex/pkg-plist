@@ -6,10 +6,11 @@
 %%SITE_PERL%%/Reflex/Collection.pm
 %%SITE_PERL%%/Reflex/Connector.pm
 %%SITE_PERL%%/Reflex/Eg.pm
+%%SITE_PERL%%/Reflex/Event.pm
+%%SITE_PERL%%/Reflex/Filehandle.pm
 %%SITE_PERL%%/Reflex/Interval.pm
 %%SITE_PERL%%/Reflex/PID.pm
 %%SITE_PERL%%/Reflex/Role.pm
-%%SITE_PERL%%/Reflex/Sender.pm
 %%SITE_PERL%%/Reflex/Signal.pm
 %%SITE_PERL%%/Reflex/Stream.pm
 %%SITE_PERL%%/Reflex/Timeout.pm
@@ -27,6 +28,22 @@
 %%SITE_PERL%%/Reflex/Encoder/Line.pm
 %%SITE_PERL%%/Reflex/Eg/Inheritance/Plain.pm
 %%SITE_PERL%%/Reflex/Eg/Inheritance/Moose.pm
+%%SITE_PERL%%/Reflex/Event/Wakeup.pm
+%%SITE_PERL%%/Reflex/Event/POE.pm
+%%SITE_PERL%%/Reflex/Event/EOF.pm
+%%SITE_PERL%%/Reflex/Event/FileHandle.pm
+%%SITE_PERL%%/Reflex/Event/Socket.pm
+%%SITE_PERL%%/Reflex/Event/Postback.pm
+%%SITE_PERL%%/Reflex/Event/Time.pm
+%%SITE_PERL%%/Reflex/Event/Flushed.pm
+%%SITE_PERL%%/Reflex/Event/Datagram.pm
+%%SITE_PERL%%/Reflex/Event/Signal.pm
+%%SITE_PERL%%/Reflex/Event/Interval.pm
+%%SITE_PERL%%/Reflex/Event/Error.pm
+%%SITE_PERL%%/Reflex/Event/ValueChange.pm
+%%SITE_PERL%%/Reflex/Event/Octets.pm
+%%SITE_PERL%%/Reflex/Event/Timeout.pm
+%%SITE_PERL%%/Reflex/Event/SigChild.pm
 %%SITE_PERL%%/Reflex/POE/Event.pm
 %%SITE_PERL%%/Reflex/POE/Postback.pm
 %%SITE_PERL%%/Reflex/POE/Session.pm
@@ -87,6 +104,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-16-timer-inheritance.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-17-inheritance-no-moose.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-18-synopsis-no-moose.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-19-net-ssh.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-20-mysql.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-30-promise-timer.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-31-promise-object.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-32-promise-tiny.pl
@@ -100,6 +119,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-40-proxy.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-41-signal-twice.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-42-reflex-in-poe.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-43-promise-and-session.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-50-timeout.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-51-wakeup.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-60-collection-promise.pl
@@ -162,6 +182,7 @@
 @dirrm %%SITE_PERL%%/Reflex/Role
 @dirrm %%SITE_PERL%%/Reflex/POE/Wheel
 @dirrm %%SITE_PERL%%/Reflex/POE
+@dirrm %%SITE_PERL%%/Reflex/Event
 @dirrm %%SITE_PERL%%/Reflex/Encoder
 @dirrm %%SITE_PERL%%/Reflex/Eg/Inheritance
 @dirrm %%SITE_PERL%%/Reflex/Eg
