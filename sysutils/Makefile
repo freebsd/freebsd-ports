@@ -193,6 +193,7 @@
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
+    SUBDIR += easypbi
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += empower

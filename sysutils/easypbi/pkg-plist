@@ -1,0 +1,4 @@
+bin/EasyPBI
+share/pbimaker/defaulticon.png
+@dirrmtry %%DATADIR%%
+@dirrmtry share/pbimaker
