@@ -461,6 +461,8 @@
 %%WWWDIR%%/templates/3rdParty/pla/htdocs/add_attr_form.php
 %%WWWDIR%%/templates/3rdParty/pla/config/config.php
 %%WWWDIR%%/templates/.htaccess
+%%WWWDIR%%/templates/lib/140_jquery-validationEngine-2.2.1.js
+%%WWWDIR%%/templates/lib/141_jquery-validationEngine-lang.php
 %%WWWDIR%%/style/type_user.css
 %%WWWDIR%%/style/type_smbDomain.css
 %%WWWDIR%%/style/type_netgroup.css
@@ -489,6 +491,7 @@
 %%WWWDIR%%/style/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/style/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/style/.htaccess
+%%WWWDIR%%/style/jquery-validationEngine.css
 %%WWWDIR%%/sess/.htaccess
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
@@ -575,6 +578,8 @@
 %%WWWDIR%%/lib/modules/asteriskExtension.inc
 %%WWWDIR%%/lib/modules/asteriskAccount.inc
 %%WWWDIR%%/lib/modules/account.inc
+%%WWWDIR%%/lib/modules/freeRadius.inc
+%%WWWDIR%%/lib/modules/authorizedServiceObject.inc
 %%WWWDIR%%/lib/modules.inc
 %%WWWDIR%%/lib/lists.inc
 %%WWWDIR%%/lib/ldap.inc
@@ -725,6 +730,8 @@
 %%WWWDIR%%/graphics/asterisk.png
 %%WWWDIR%%/graphics/add.png
 %%WWWDIR%%/graphics/.htaccess
+%%WWWDIR%%/graphics/services.png
+%%WWWDIR%%/graphics/freeRadius.png
 %%WWWDIR%%/config/selfService/default.user
 %%WWWDIR%%/config/selfService/.htaccess
 %%WWWDIR%%/config/profiles/default.user
