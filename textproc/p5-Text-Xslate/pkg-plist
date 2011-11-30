@@ -1,6 +1,7 @@
 bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge/Star.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Compiler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/HashWithDefault.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual.pod
@@ -34,5 +35,6 @@ bin/xslate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

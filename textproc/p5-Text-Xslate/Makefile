@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Xslate
-PORTVERSION=	1.5002
+PORTVERSION=	1.5007
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -34,6 +34,7 @@ PERL_CONFIGURE=	yes
 MAN1=	xslate.1
 MAN3=	Text::Xslate.3 \
 	Text::Xslate::Bridge.3 \
+	Text::Xslate::Bridge::Star.3 \
 	Text::Xslate::Compiler.3 \
 	Text::Xslate::HashWithDefault.3 \
 	Text::Xslate::Manual.3 \
