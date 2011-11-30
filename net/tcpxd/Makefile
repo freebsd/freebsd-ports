@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpxd
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://fossies.org/unix/privat/ \
 		http://www.sourcefiles.org/Networking/Tools/Proxy/ \
