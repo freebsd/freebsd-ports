@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	8.3.603
+PORTVERSION=	9.0.802
 DISTVERSIONSUFFIX=.src
-PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
@@ -22,7 +21,7 @@ DIST_SUBDIR=	postgresql
 USE_ANT=	yes
 USE_JAVA=	yes
 
-PKGMESSAGE=	${WRKDIR}/.pkg-message
+SUB_FILES=	pkg-message
 
 post-patch:
 	${REINPLACE_CMD} 's,/usr/local/pgsql/share/java,${JAVAJARDIR},' ${WRKSRC}/README
@@ -36,9 +35,6 @@ do-install:
 .endif
 
 post-install:
-	@ ${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
-	  -e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|g" \
-	  < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@ ${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
