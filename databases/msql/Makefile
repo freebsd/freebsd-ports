@@ -24,6 +24,7 @@ GROUPS=		${USERS}
 
 # Not free for commercial use.
 RESTRICTED=	restrictive copyright (no commercial use)
+MANUAL_PACKAGE_BUILD=	distfile unavailable on pointyhat
 
 CFLAGS+=	-DANSI_ARGS
 MAKE_ENV+=	WRKSRC=${WRKSRC}
