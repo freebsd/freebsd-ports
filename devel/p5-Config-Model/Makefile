@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.262
+PORTVERSION=	1.263
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -71,6 +71,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Instance.3 \
 		Config::Model::Iterator.3 \
 		Config::Model::ListId.3 \
+		Config::Model::Lister.3 \
 		Config::Model::Loader.3 \
 		Config::Model::Manual::ModelCreationAdvanced.3 \
 		Config::Model::Manual::ModelCreationIntroduction.3 \

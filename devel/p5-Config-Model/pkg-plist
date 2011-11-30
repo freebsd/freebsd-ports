@@ -28,6 +28,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Instance.pm
 %%SITE_PERL%%/Config/Model/Iterator.pm
 %%SITE_PERL%%/Config/Model/ListId.pm
+%%SITE_PERL%%/Config/Model/Lister.pm
 %%SITE_PERL%%/Config/Model/Loader.pm
 %%SITE_PERL%%/Config/Model/Manual/ModelCreationAdvanced.pod
 %%SITE_PERL%%/Config/Model/Manual/ModelCreationIntroduction.pod
