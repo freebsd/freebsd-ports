@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.7.5.1
-PORTREVISION=	1
+PORTVERSION=	0.7.8
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -15,17 +14,18 @@ MASTER_SITES=	SF/${PORTNAME}/0.7 \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lightweight command line video extraction tool
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \
 		curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		quvi.7:${PORTSDIR}/multimedia/libquvi
 
-MAN1=		cclive.1
-PLIST_FILES=	bin/cclive
-
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_XZ=		yes
 
-LICENSE=	GPLv3
+MAN1=		cclive.1
+PLIST_FILES=	bin/cclive
 
 .include <bsd.port.mk>
