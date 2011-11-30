@@ -17,7 +17,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/clipfish.lua
 %%DATADIR%%/lua/website/collegehumor.lua
 %%DATADIR%%/lua/website/dailymotion.lua
-%%NSFW%%%%DATADIR%%/lua/website/foundrymusic.lua
 %%DATADIR%%/lua/website/foxnews.lua
 %%DATADIR%%/lua/website/francetelevisions.lua
 %%DATADIR%%/lua/website/funnyhub.lua
@@ -31,6 +30,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/liveleak.lua
 %%DATADIR%%/lua/website/megavideo.lua
 %%DATADIR%%/lua/website/metacafe.lua
+%%DATADIR%%/lua/website/mgnetwork.lua
 %%DATADIR%%/lua/website/pluzz.lua
 %%DATADIR%%/lua/website/publicsenat.lua
 %%DATADIR%%/lua/website/quvi/bit.lua
