@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	SES
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://aws-catalog-download-files.s3.amazonaws.com/
+MASTER_SITES=	http://d36cz9buwru1tt.cloudfront.net/catalog/attachments/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Amazon${PORTNAME}-2011-03-03
+DISTNAME=	ses-tools-2011-10-31
 
-MAINTAINER=	stephon@pixnet.tw
+MAINTAINER=	stephon@gmail.com
 COMMENT=	Perl module of Amazon Simple Email Services
 
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
