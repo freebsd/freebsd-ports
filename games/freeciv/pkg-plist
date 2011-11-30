@@ -9,6 +9,7 @@ lib/libfreeciv.la
 lib/libfreeciv-srv.a
 lib/libfreeciv-srv.la
 share/applications/freeciv-server.desktop
+%%X11%%share/applications/freeciv-modpack.desktop
 %%X11%%share/applications/freeciv.desktop
 %%X11%%%%DATADIR%%/amplio2/ancientcities.png
 %%X11%%%%DATADIR%%/amplio2/ancientcities.spec
@@ -1781,6 +1782,7 @@ share/applications/freeciv-server.desktop
 %%X11%%%%DATADIR%%/misc/flags.spec
 %%X11%%%%DATADIR%%/misc/icons.spec
 %%X11%%%%DATADIR%%/misc/intro.png
+%%X11%%%%DATADIR%%/misc/mpicon.png
 %%X11%%%%DATADIR%%/misc/overlays.png
 %%X11%%%%DATADIR%%/misc/radar.png
 %%X11%%%%DATADIR%%/misc/overlays.spec
@@ -2423,6 +2425,11 @@ share/applications/freeciv-server.desktop
 %%X11%%share/icons/hicolor/32x32/apps/freeciv-client.png
 %%X11%%share/icons/hicolor/48x48/apps/freeciv-client.png
 %%X11%%share/icons/hicolor/64x64/apps/freeciv-client.png
+%%X11%%share/icons/hicolor/128x128/apps/freeciv-modpack.png
+%%X11%%share/icons/hicolor/16x16/apps/freeciv-modpack.png
+%%X11%%share/icons/hicolor/32x32/apps/freeciv-modpack.png
+%%X11%%share/icons/hicolor/48x48/apps/freeciv-modpack.png
+%%X11%%share/icons/hicolor/64x64/apps/freeciv-modpack.png
 share/icons/hicolor/128x128/apps/freeciv-server.png
 share/icons/hicolor/16x16/apps/freeciv-server.png
 share/icons/hicolor/32x32/apps/freeciv-server.png
