@@ -47,7 +47,8 @@ CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 		--enable-thread-safety
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		LDFLAGS_SL="${LDFLAGS_SL}" \
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -81,6 +82,7 @@ CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 .if !defined(SLAVE_ONLY)
+OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
@@ -89,7 +91,7 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 OPTIONS+=	XML "Build with XML data type (server)" on
 OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
-OPTIONS+=	GSSAPI "BUild with GSSAPI support" off
+OPTIONS+=	GSSAPI "Build with GSSAPI support" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
@@ -122,6 +124,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 
 .if !defined(SLAVE_ONLY)
 PATCH_DIST_STRIP=-p1
+
+.  if defined(WITH_DTRACE)
+CONFIGURE_ARGS+=--enable-dtrace
+LDFLAGS+=	-lelf
+.    if ${OSVERSION} < 900021
+IGNORE=	Need userland DTrace support found in FreeBSD 9.0
+.    endif
+.  endif
 
 .  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
@@ -176,6 +186,7 @@ CONFIGURE_ARGS+=--with-gssapi
 # it explicitely: ld --as-needed is used for compilation,
 # so configure's -lgssapi_krb5 won't go.
 LDFLAGS+=	-lgssapi
+LDFLAGS_SL+=	-lgssapi
 .endif
 .else
 CONFIGURE_ARGS+=--without-gssapi

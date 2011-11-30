@@ -47,7 +47,8 @@ CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 		--enable-thread-safety
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		LDFLAGS_SL="${LDFLAGS_SL}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -129,6 +130,9 @@ PATCH_DIST_STRIP=-p1
 .  if defined(WITH_DTRACE)
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
+.    if ${OSVERSION} < 900021
+IGNORE=	Need userland DTrace support found in FreeBSD 9.0
+.    endif
 .  endif
 
 .  if defined(WITH_PAM)
@@ -186,6 +190,7 @@ CONFIGURE_ARGS+=--with-gssapi
 # it explicitely: ld --as-needed is used for compilation,
 # so configure's -lgssapi_krb5 won't go.
 LDFLAGS+=	-lgssapi
+LDFLAGS_SL+=	-lgssapi
 .endif
 .else
 CONFIGURE_ARGS+=--without-gssapi
