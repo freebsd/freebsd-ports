@@ -5,10 +5,12 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/__init__.pyo
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/blinds.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/blur.blend
+%%PYTHON_SITELIBDIR%%/openshot/blender/blend/colors.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/defocus.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/fly_by_1.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/fly_by_two_titles.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/glare.blend
+%%PYTHON_SITELIBDIR%%/openshot/blender/blend/glass_slider.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/halo_zoom_out.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/lens_flare.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/magic_wand.blend
@@ -22,17 +24,21 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/zoom_clapboard.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blinds.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/blur.xml
+%%PYTHON_SITELIBDIR%%/openshot/blender/colors.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/defocus.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/fly_by_1.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/fly_by_two_titles.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/glare.xml
+%%PYTHON_SITELIBDIR%%/openshot/blender/glass_slider.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/halo_zoom_out.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/blinds.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/blur.png
+%%PYTHON_SITELIBDIR%%/openshot/blender/icons/colors.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/defocus.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/fly_by_1.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/fly_by_two_titles.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/glare.png
+%%PYTHON_SITELIBDIR%%/openshot/blender/icons/glass_slider.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/halo_zoom_out.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/lens_flare.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/magic_wand.png
@@ -55,6 +61,9 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/blur.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/blur.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/blur.pyo
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/colors.py
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/colors.pyc
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/colors.pyo
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/defocus.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/defocus.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/defocus.pyo
@@ -67,6 +76,9 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glare.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glare.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glare.pyo
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glass_slider.py
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glass_slider.pyc
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/glass_slider.pyo
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/halo_zoom_out.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/halo_zoom_out.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/halo_zoom_out.pyo
@@ -183,6 +195,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/classes/video.py
 %%PYTHON_SITELIBDIR%%/openshot/classes/video.pyc
 %%PYTHON_SITELIBDIR%%/openshot/classes/video.pyo
+%%PYTHON_SITELIBDIR%%/openshot/effects/balance.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/bass.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/blur.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/brightness.xml
@@ -190,11 +203,14 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/charcoal.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/chroma_hold.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/chroma_key.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/coloradj_RGB.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/colordistance.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/contrast.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/distort.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/echo.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/edgeglow.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/equaliz0r.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/flippo.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/freeze.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/gamma.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/glow.xml
@@ -207,16 +223,21 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/charcoal.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/chroma_hold.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/chroma_key.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/coloradj_RGB.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/colordistance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/contrast.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/distort.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/edgeglow.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/equalizor.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/flippo.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/freeze.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/gamma.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/glow.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/greyscale.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/hue.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/invert.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/letterbox.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/levels.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/mirror.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/nosync.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/old_dust.png
@@ -224,15 +245,19 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/old_grain.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/old_lines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/pixelate.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/primaries.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_blue.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_green.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_red.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/rgbparade.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/rotate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/saturate.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/scanlines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/sepia.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/sobel.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/tcolor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/threshold.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/tintor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/two_layer.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/white_balance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/audio.png
@@ -242,16 +267,21 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/charcoal.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/chroma_hold.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/chroma_key.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/coloradj_RGB.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/colordistance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/contrast.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/distort.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/edgeglow.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/equalizor.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/flippo.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/freeze.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/gamma.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/glow.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/greyscale.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/hue.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/invert.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/letterbox.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/levels.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/mirror.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/nosync.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/old_dust.png
@@ -259,18 +289,24 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/old_grain.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/old_lines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/pixelate.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/primaries.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_blue.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_green.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_red.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/rgbparade.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/rotate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/saturate.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/scanlines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/sepia.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/sobel.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/tcolor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/threshold.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/tintor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/two_layer.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/white_balance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/invert.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/letterbox.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/levels.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/mirror.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/nosync.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/old_dust.xml
@@ -279,15 +315,18 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/old_lines.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/phaser.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/pixelate.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/primaries.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/remove_blue.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/remove_green.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/remove_red.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/rotate.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/saturation.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/scanlines.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/sepia.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/sobel.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/tcolor.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/threshold.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/tintor.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/treble.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/two_layer.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/white_balance.xml
@@ -401,6 +440,8 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/locale/hr/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/hu/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/hu/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/hy/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/hy/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/id/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/id/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/is/LC_MESSAGES/OpenShot.mo
@@ -431,6 +472,8 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/locale/ne/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/nl/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/nl/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/nn/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/nn/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/oc/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/oc/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/pa/LC_MESSAGES/OpenShot.mo
@@ -461,8 +504,12 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/locale/th/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/tr/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/tr/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/ug/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/ug/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/uk/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/uk/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/uz/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/uz/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/vi/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/vi/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/zh_CN/LC_MESSAGES/OpenShot.mo
@@ -478,13 +525,20 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/openshot_render.pyc
 %%PYTHON_SITELIBDIR%%/openshot/openshot_render.pyo
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080i_50
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080i_5994
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080i_60
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_2398
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_24
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_25
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_2997
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_30
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_50
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_1080p_60
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_720p_2398
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_720p_24
 %%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_720p_30
+%%PYTHON_SITELIBDIR%%/openshot/profiles/atsc_720p_60
+%%PYTHON_SITELIBDIR%%/openshot/profiles/cif_15
 %%PYTHON_SITELIBDIR%%/openshot/profiles/cif_ntsc
 %%PYTHON_SITELIBDIR%%/openshot/profiles/cif_pal
 %%PYTHON_SITELIBDIR%%/openshot/profiles/cvd_ntsc
@@ -506,12 +560,15 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/profiles/hdv_720_50p
 %%PYTHON_SITELIBDIR%%/openshot/profiles/hdv_720_60p
 %%PYTHON_SITELIBDIR%%/openshot/profiles/mobile_360p
+%%PYTHON_SITELIBDIR%%/openshot/profiles/qcif_15
 %%PYTHON_SITELIBDIR%%/openshot/profiles/qcif_ntsc
 %%PYTHON_SITELIBDIR%%/openshot/profiles/qcif_pal
+%%PYTHON_SITELIBDIR%%/openshot/profiles/quarter_15
 %%PYTHON_SITELIBDIR%%/openshot/profiles/quarter_ntsc
 %%PYTHON_SITELIBDIR%%/openshot/profiles/quarter_ntsc_wide
 %%PYTHON_SITELIBDIR%%/openshot/profiles/quarter_pal
 %%PYTHON_SITELIBDIR%%/openshot/profiles/quarter_pal_wide
+%%PYTHON_SITELIBDIR%%/openshot/profiles/sdi_486i_5994
 %%PYTHON_SITELIBDIR%%/openshot/profiles/square_ntsc
 %%PYTHON_SITELIBDIR%%/openshot/profiles/square_ntsc_wide
 %%PYTHON_SITELIBDIR%%/openshot/profiles/square_pal
@@ -844,6 +901,63 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/themes/fresh/transition_up.png
 %%PYTHON_SITELIBDIR%%/openshot/themes/fresh/visible.png
 %%PYTHON_SITELIBDIR%%/openshot/themes/fresh/visible_transparent.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Clip_Left_Gold.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Clip_Middle_Gold.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Clip_Right_Gold.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Left.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Left_Hover.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Middle.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Middle_Hover.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Right.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Track_Right_Hover.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Transition_Left_Blue.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Transition_Middle_Blue.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/Transition_Right_Blue.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/effect.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/add_marker.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/arrow.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/media-eject.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/minus.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/move_all_line.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/next.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/next_marker.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/openshot.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/pause.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/pause_big.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/play.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/play_big.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/plus.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/previous.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/previous_marker.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/razor.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/razor_line.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/razor_line_with_razor.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/resize.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/seek_backwards.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/seek_forwards.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/snap.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/snapshot.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons/stop.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/marker.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/not_visible.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/not_visible_transparent.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/pause.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/play_head.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/position_line.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/ruler_left.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/ruler_middle.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/ruler_right.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/ruler_tick.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/speaker.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/speaker_mute.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/speaker_mute_transparent.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/speaker_transparent.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/theme.xml
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/transition_down.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/transition_mask.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/transition_up.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/visible.png
+%%PYTHON_SITELIBDIR%%/openshot/themes/fresher/visible_transparent.png
 %%PYTHON_SITELIBDIR%%/openshot/themes/simple/Clip_Left_Gold.png
 %%PYTHON_SITELIBDIR%%/openshot/themes/simple/Clip_Left_Green.png
 %%PYTHON_SITELIBDIR%%/openshot/themes/simple/Clip_Left_Pink.png
@@ -1039,10 +1153,13 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/transitions/blinds_in_to_out.pgm
 %%PYTHON_SITELIBDIR%%/openshot/transitions/blinds_in_to_out_big.pgm
 %%PYTHON_SITELIBDIR%%/openshot/transitions/blinds_sliding.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/bubbles.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/circle_in_to_out.svg
 %%PYTHON_SITELIBDIR%%/openshot/transitions/circle_out_to_in.svg
 %%PYTHON_SITELIBDIR%%/openshot/transitions/clock_left_to_right.pgm
 %%PYTHON_SITELIBDIR%%/openshot/transitions/clock_right_to_left.pgm
+%%PYTHON_SITELIBDIR%%/openshot/transitions/clouds.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/clouds_2.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/fractal_1.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/fractal_2.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/fractal_3.png
@@ -1058,53 +1175,106 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/transitions/hourglass_2.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/hourglass_3.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/hourglass_4.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/blinds_in_to_out.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/blinds_in_to_out_big.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/blinds_sliding.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/circle_in_to_out.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/circle_out_to_in.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/clock_left_to_right.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/clock_right_to_left.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_3.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_4.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_5.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_6.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_7.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/fractal_8.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hatched_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hatched_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hatched_3.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hourglass_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hourglass_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hourglass_3.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/hourglass_4.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/mountains.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/openshot_logo.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/puzzle_7_by_7.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/rectangle_in_to_out.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/rectangle_out_to_in.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/sand.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/sphere.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spiral_abstract_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spiral_abstract_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spiral_big.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spiral_medium.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spiral_small.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/spots.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/star_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/star_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/vertical_blinds_in_to_out.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/vertical_blinds_in_to_out_big.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_bottom_to_top.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_diagonal_1.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_diagonal_2.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_diagonal_3.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_diagonal_4.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_left_to_right.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_right_to_left.png
-%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/wipe_top_to_bottom.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/blinds_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/blinds_in_to_out_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/blinds_sliding.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/bubbles.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/circle_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/circle_out_to_in.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/clock_left_to_right.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/clock_right_to_left.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/clouds.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/clouds_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_5.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_6.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_7.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/fractal_8.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hatched_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hatched_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hatched_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hourglass_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hourglass_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hourglass_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/hourglass_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/mountains.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/openshot_logo.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/puzzle_7_by_7.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/rectangle_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/rectangle_out_to_in.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/sand.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/sphere.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spiral_abstract_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spiral_abstract_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spiral_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spiral_medium.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spiral_small.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/spots.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/star_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/star_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/vertical_blinds_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/vertical_blinds_in_to_out_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_bottom_to_top.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_diagonal_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_diagonal_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_diagonal_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_diagonal_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_left_to_right.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_right_to_left.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium/wipe_top_to_bottom.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/blinds_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/blinds_in_to_out_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/blinds_sliding.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/bubbles.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/circle_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/circle_out_to_in.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/clock_left_to_right.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/clock_right_to_left.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/clouds.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/clouds_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_5.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_6.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_7.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/fractal_8.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hatched_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hatched_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hatched_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hourglass_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hourglass_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hourglass_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/hourglass_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/mountains.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/openshot_logo.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/puzzle_7_by_7.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/rectangle_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/rectangle_out_to_in.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/sand.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/sphere.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spiral_abstract_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spiral_abstract_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spiral_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spiral_medium.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spiral_small.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/spots.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/star_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/star_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/vertical_blinds_in_to_out.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/vertical_blinds_in_to_out_big.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_bottom_to_top.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_diagonal_1.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_diagonal_2.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_diagonal_3.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_diagonal_4.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_left_to_right.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_right_to_left.png
+%%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small/wipe_top_to_bottom.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/mountains.png
 %%PYTHON_SITELIBDIR%%/openshot/transitions/openshot_logo.pgm
 %%PYTHON_SITELIBDIR%%/openshot/transitions/puzzle_7_by_7.png
@@ -1746,14 +1916,13 @@ share/gnome/help/openshot/figures/transitions_clock.png
 share/gnome/help/openshot/figures/transitions_properties.png
 share/gnome/help/openshot/figures/upload_to_web.png
 share/gnome/help/openshot/fr/openshot.xml
-share/gnome/help/openshot/gl/openshot.xml
-share/gnome/help/openshot/is/openshot.xml
+share/gnome/help/openshot/he/openshot.xml
 share/gnome/help/openshot/it/openshot.xml
 share/gnome/help/openshot/nb/openshot.xml
 share/gnome/help/openshot/nl/openshot.xml
+share/gnome/help/openshot/pl/openshot.xml
 share/gnome/help/openshot/pt/openshot.xml
 share/gnome/help/openshot/pt_BR/openshot.xml
-share/gnome/help/openshot/ru/openshot.xml
 share/gnome/help/openshot/sk/openshot.xml
 share/gnome/help/openshot/zh_TW/openshot.xml
 share/mime/packages/openshot.xml
@@ -1765,27 +1934,26 @@ share/omf/openshot/openshot-el.omf
 share/omf/openshot/openshot-en_GB.omf
 share/omf/openshot/openshot-es.omf
 share/omf/openshot/openshot-fr.omf
-share/omf/openshot/openshot-gl.omf
-share/omf/openshot/openshot-is.omf
+share/omf/openshot/openshot-he.omf
 share/omf/openshot/openshot-it.omf
 share/omf/openshot/openshot-nb.omf
 share/omf/openshot/openshot-nl.omf
+share/omf/openshot/openshot-pl.omf
 share/omf/openshot/openshot-pt.omf
 share/omf/openshot/openshot-pt_BR.omf
-share/omf/openshot/openshot-ru.omf
 share/omf/openshot/openshot-sk.omf
 share/omf/openshot/openshot-zh_TW.omf
 share/pixmaps/openshot.svg
+@dirrm share/omf/openshot
 @dirrm share/gnome/help/openshot/zh_TW
 @dirrm share/gnome/help/openshot/sk
-@dirrm share/gnome/help/openshot/ru
 @dirrm share/gnome/help/openshot/pt_BR
 @dirrm share/gnome/help/openshot/pt
+@dirrm share/gnome/help/openshot/pl
 @dirrm share/gnome/help/openshot/nl
 @dirrm share/gnome/help/openshot/nb
 @dirrm share/gnome/help/openshot/it
-@dirrm share/gnome/help/openshot/is
-@dirrm share/gnome/help/openshot/gl
+@dirrm share/gnome/help/openshot/he
 @dirrm share/gnome/help/openshot/fr
 @dirrm share/gnome/help/openshot/figures/transitions
 @dirrm share/gnome/help/openshot/figures/effects
@@ -1798,7 +1966,6 @@ share/pixmaps/openshot.svg
 @dirrm share/gnome/help/openshot/cs
 @dirrm share/gnome/help/openshot/C
 @dirrm share/gnome/help/openshot
-@dirrm share/omf/openshot
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/windows/ui/icons
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/windows/ui
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/windows
@@ -1820,6 +1987,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/uploads/vimeo
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/uploads/logos
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/uploads
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/transitions/icons/small
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/transitions/icons/medium
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/transitions/icons
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/transitions
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/titles/4_3
@@ -1829,6 +1998,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/tango
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/simple/icons
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/simple
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/fresher/icons
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/fresher
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/fresh/icons
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/fresh
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/themes/elementary/icons
@@ -1849,8 +2020,12 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/zh_CN
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/vi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/vi
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/uz/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/uz
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ug/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ug
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/tr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/tr
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/th/LC_MESSAGES
@@ -1881,6 +2056,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/pa
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/oc/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/oc
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/nn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/nn
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/nl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/nl
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ne/LC_MESSAGES
@@ -1911,6 +2088,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/is
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/id/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/id
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/hy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/hy
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/hu/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/hu
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/hr/LC_MESSAGES

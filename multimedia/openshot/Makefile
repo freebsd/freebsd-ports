@@ -7,13 +7,14 @@
 #
 
 PORTNAME=		openshot
-PORTVERSION=		1.3.0
-PORTREVISION=		2
+PORTVERSION=		1.4.0
 CATEGORIES=		multimedia
-MASTER_SITES=		http://launchpad.net/openshot/${PORTMAJORVERSION}/${PORTVERSION}/+download/
+MASTER_SITES=		http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
 MAINTAINER=		rodrigo@bebik.net
 COMMENT=		A non-linear video editor
+
+LICENSE=		GPLv3
 
 RUN_DEPENDS=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 			frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins \
@@ -25,8 +26,6 @@ RUN_DEPENDS=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 			scrollkeeper-install:${PORTSDIR}/textproc/rarian \
 			sox:${PORTSDIR}/audio/sox
 
-LICENSE=		GPLv3
-LICENSE_FILE=		${WRKSRC}/COPYING
 USE_GNOME=		pygtk2 desktopfileutils
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
@@ -37,7 +36,6 @@ MAN1=			${PORTNAME}.1 \
 			${PORTNAME}-render.1
 MANCOMPRESSED=		no
 FETCH_ARGS=		-pRr
-PORTMAJORVERSION=	1.3
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs/omf -name '*.omf' | ${XARGS} ${REINPLACE_CMD} -e \
