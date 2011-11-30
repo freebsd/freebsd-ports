@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b23
-PORTREVISION=	1
+PORTVERSION=	b24
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
-		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk6:jaxws \
+		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk6/:jaxws \
 		https://java.net/downloads/jax-ws/OpenJDK6/:jaf \
 		http://icedtea.classpath.org/builds/icedtea6/src/ \
 		http://icedtea.classpath.org/download/drops/:jaxp \
 		http://icedtea.classpath.org/download/drops/:jaxws \
 		http://icedtea.classpath.org/download/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
-		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
+		http://download.java.net/openjdk/jtreg/promoted/4.1/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${JAXPFILE}:jaxp \
@@ -30,6 +29,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
@@ -37,9 +38,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-LICENSE=	GPLv2
-
-OPENJDK_BUILDDATE=	05_jul_2011
+OPENJDK_BUILDDATE=	14_nov_2011
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -54,17 +53,17 @@ WRKSRC=		${WRKDIR}
 
 USE_GMAKE=	yes
 USE_MOTIF=	yes
-USE_XORG=	xtst xi xt x11
+USE_XORG=	x11 xext xi xt xtst
 MAKE_JOBS_UNSAFE=	yes
 
 JAXP_BUILD=	144_03
 JAXPFILE=	jaxp${JAXP_BUILD}.zip
-JAXWS_BUILD=	2_1_6-2011_06_08
+JAXWS_BUILD=	2_1_6-2011_06_13
 JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-JTREGVERSION=	b02
-JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_21_may_2010.zip
+JTREGVERSION=	b03
+JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_11_jul_2011.zip
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
