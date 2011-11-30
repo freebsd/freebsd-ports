@@ -1,0 +1,13 @@
+DateTime::Astro implements functions used in astronomical calendars:
+- Solar Longitude
+- Solar Terms
+- Lunar Longitude
+- New Moons
+... etc
+
+This module is best used in environments where a C compiler and the MPFR
+arbitrary precision math library is installed. It can fallback to using
+Math::BigInt, but that would pretty much render it useless because of its speed
+and loss of accuracy that may creep up while doing Perl to C struct conversions.
+
+WWW: http://search.cpan.org/dist/DateTime-Astro/
