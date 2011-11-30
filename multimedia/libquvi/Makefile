@@ -14,9 +14,9 @@ MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
 
-BUILD_DEPENDS=	libquvi-scripts>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi-scripts
+BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	libquvi-scripts>=${PORTVERSION}:${PORTSDIR}/multimedia/libquvi-scripts
+RUN_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
