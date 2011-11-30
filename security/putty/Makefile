@@ -45,7 +45,7 @@ MAKE_ARGS+=	GTK_CONFIG=:
 .if !defined(WITHOUT_GSSAPI)
 _COMPAT=		-DSTATIC_GSSAPI
 .if ${OSVERSION} >= 900000
-BROKEN=		FreeBSD 9's Kerberos misses MD2, use WITHOUT_GSSAPI=1
+LIB_DEPENDS=		krb5support.0:${PORTSDIR}/security/krb5
 .endif
 .else
 _COMPAT=		-DNO_GSSAPI
