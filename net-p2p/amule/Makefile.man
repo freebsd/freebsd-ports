@@ -1,25 +1,14 @@
-# TODO : Add fr here when pages are complete
-MANLANG=	"" de es eu fr hu it
-#MANCOMPRESSED=	no
+MANLANG=	"" de es fr hu it ru tr
 
 .if !defined(WITHOUT_NLS)
 . if !defined(WITHOUT_MONOLITHIC)
 MAN1+=		amule.1
 . endif
 . if !defined(WITHOUT_ALC)
-MAN1_EN+=	alc.1
-MAN1_DE+=	alc.1
-MAN1_ES+=	alc.1
-MAN1_EU+=	alc.1
-MAN1_HU+=	alc.1
+MAN1+=		alc.1
 . endif
 . if !defined(WITHOUT_ALCC)
-MAN1_EN+=	alcc.1
-MAN1_DE+=	alcc.1
-MAN1_ES+=	alcc.1
-MAN1_EU+=	alcc.1
-MAN1_FR+=	alcc.1
-MAN1_HU+=	alcc.1
+MAN1+=		alcc.1
 . endif
 . if !defined(WITHOUT_AMULECMD)
 MAN1+=		amulecmd.1
@@ -28,16 +17,10 @@ MAN1+=		amulecmd.1
 MAN1+=		amuled.1
 . endif
 . if !defined(WITHOUT_AMULEGUI)
-MAN1_EN+=	amulegui.1
-MAN1_DE+=	amulegui.1
-MAN1_IT+=	amulegui.1
+MAN1+=		amulegui.1
 . endif
 . if !defined(WITHOUT_CAS)
-MAN1_EN+=	cas.1
-MAN1_DE+=	cas.1
-MAN1_ES+=	cas.1
-MAN1_EU+=	cas.1
-MAN1_HU+=	cas.1
+MAN1+=		cas.1
 . endif
 . if !defined(WITHOUT_ED2K)
 MAN1+=		ed2k.1
@@ -46,18 +29,10 @@ MAN1+=		ed2k.1
 MAN1+=		amuleweb.1
 . endif
 . if !defined(WITHOUT_WXCAS)
-MAN1_EN+=	wxcas.1
-MAN1_DE+=	wxcas.1
-MAN1_ES+=	wxcas.1
-MAN1_EU+=	wxcas.1
-MAN1_HU+=	wxcas.1
+MAN1+=		wxcas.1
 . endif
 .endif # !WITHOUT_NLS
 
 .if !defined(WITHOUT_XAS)
-MAN1_EN+=	xas.1
-MAN1_DE+=	xas.1
-MAN1_ES+=	xas.1
-MAN1_EU+=	xas.1
-MAN1_HU+=	xas.1
+MAN1+=		xas.1
 .endif
