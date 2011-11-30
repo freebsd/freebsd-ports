@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.6.6b
+PORTVERSION=	1.6.7
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/1.6.6
+MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
