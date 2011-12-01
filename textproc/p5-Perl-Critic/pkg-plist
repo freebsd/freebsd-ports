@@ -69,7 +69,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
-%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireEncodingWithUTF8Layer.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
@@ -82,6 +81,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedClose.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedOpen.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedSyscalls.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireEncodingWithUTF8Layer.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitFormats.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitUnrestrictedNoCritic.pm
@@ -189,39 +189,41 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Utils/DataConversion.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/POD.pm
+%%SITE_PERL%%/Perl/Critic/Utils/POD/ParseInteriorSequence.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Perl.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
 %%SITE_PERL%%/Test/Perl/Critic/Policy.pm
-@dirrm %%SITE_PERL%%/Test/Perl/Critic
+@dirrmtry %%SITE_PERL%%/Test/Perl/Critic
 @dirrmtry %%SITE_PERL%%/Test/Perl
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/Perl/Critic/Utils
-@dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior
-@dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Variables
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Subroutines
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/References
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Objects
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Modules
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/InputOutput
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Documentation
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Fatal
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration
-@dirrm %%SITE_PERL%%/Perl/Critic/Exception
-@dirrm %%SITE_PERL%%/Perl/Critic
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Utils/POD
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Utils
+@dirrmtry %%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior
+@dirrmtry %%SITE_PERL%%/Perl/Critic/PolicyParameter
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Variables
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Subroutines
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/References
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Objects
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Modules
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/InputOutput
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Documentation
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Fatal
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration
+@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception
+@dirrmtry %%SITE_PERL%%/Perl/Critic
 @dirrmtry %%SITE_PERL%%/Perl

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.11.3
+PORTVERSION=	1.11.6
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ELLIOTJS
@@ -37,6 +37,7 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		perltidy:${PORTSDIR}/devel/perltidy
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_MODBUILD=	yes
 
@@ -231,6 +232,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Utils::DataConversion.3 \
 	Perl::Critic::Utils::McCabe.3 \
 	Perl::Critic::Utils::POD.3 \
+	Perl::Critic::Utils::POD::ParseInteriorSequence.3 \
 	Perl::Critic::Utils::PPI.3 \
 	Perl::Critic::Utils::Perl.3 \
 	Perl::Critic::Violation.3 \
