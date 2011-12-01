@@ -95,6 +95,7 @@
     SUBDIR += p5-SMS-SMS77
     SUBDIR += p5-SMS-Send
     SUBDIR += p5-SMS-Send-DeviceGsm
+    SUBDIR += p5-SMS-Send-NexmoUnicode
     SUBDIR += p5-SMS-Send-TW-HiAir
     SUBDIR += p5-SMS-Send-TW-PChome
     SUBDIR += p5-SMS-Send-TW-Qma
