@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.linta.de/distfiles/
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Web interface tools which adhere to the unix philosophy
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
 		dmenu:${PORTSDIR}/x11/dmenu \
@@ -23,13 +26,10 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
-GITDATE=	2011.10.01
-GITVERSION=	9576f59
+GITDATE=	2011.11.28
+GITVERSION=	e93bd72
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_JOBS_SAFE=	YES
 
