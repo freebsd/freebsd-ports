@@ -21,12 +21,13 @@ MAKEFILE=	makefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-PLIST_FILES=	include/glui.h lib/libglui.a
+PLIST_FILES=	include/glui.h lib/libglui.a lib/libglui.so
 PORTDOCS=	*
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glui.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/lib/libglui.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/lib/libglui.so ${PREFIX}/lib/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/glui_manual.pdf ${DOCSDIR}/
