@@ -1,9 +1,4 @@
-bin/nagios-plugin-neubot
 bin/neubot
-bin/neubot_gui
-bin/neubot_notify
-bin/neubotw
-bin/start-neubot-daemon
 etc/xdg/autostart/neubot.desktop
 share/applications/neubot.desktop
 share/icons/hicolor/scalable/apps/neubot.svg
@@ -27,8 +22,6 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/bittorrent/config.pyc
 %%DATADIR%%/bittorrent/estimate.py
 %%DATADIR%%/bittorrent/estimate.pyc
-%%DATADIR%%/bittorrent/negotiate.py
-%%DATADIR%%/bittorrent/negotiate.pyc
 %%DATADIR%%/bittorrent/peer.py
 %%DATADIR%%/bittorrent/peer.pyc
 %%DATADIR%%/bittorrent/sched.py
@@ -87,8 +80,14 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/main/module.pyc
 %%DATADIR%%/marshal.py
 %%DATADIR%%/marshal.pyc
-%%DATADIR%%/negotiate.py
-%%DATADIR%%/negotiate.pyc
+%%DATADIR%%/negotiate/__init__.py
+%%DATADIR%%/negotiate/__init__.pyc
+%%DATADIR%%/negotiate/server.py
+%%DATADIR%%/negotiate/server.pyc
+%%DATADIR%%/negotiate/server_bittorrent.py
+%%DATADIR%%/negotiate/server_bittorrent.pyc
+%%DATADIR%%/negotiate/server_speedtest.py
+%%DATADIR%%/negotiate/server_speedtest.pyc
 %%DATADIR%%/net/CA.py
 %%DATADIR%%/net/CA.pyc
 %%DATADIR%%/net/__init__.py
@@ -99,6 +98,10 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/net/poller.pyc
 %%DATADIR%%/net/stream.py
 %%DATADIR%%/net/stream.pyc
+%%DATADIR%%/notifier/__init__.py
+%%DATADIR%%/notifier/__init__.pyc
+%%DATADIR%%/notifier/unix.py
+%%DATADIR%%/notifier/unix.pyc
 %%DATADIR%%/notify.py
 %%DATADIR%%/notify.pyc
 %%DATADIR%%/privacy.py
@@ -131,14 +134,10 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/speedtest/__init__.pyc
 %%DATADIR%%/speedtest/client.py
 %%DATADIR%%/speedtest/client.pyc
-%%DATADIR%%/speedtest/compat.py
-%%DATADIR%%/speedtest/compat.pyc
-%%DATADIR%%/speedtest/negotiate.py
-%%DATADIR%%/speedtest/negotiate.pyc
 %%DATADIR%%/speedtest/server.py
 %%DATADIR%%/speedtest/server.pyc
-%%DATADIR%%/speedtest/session.py
-%%DATADIR%%/speedtest/session.pyc
+%%DATADIR%%/speedtest/wrapper.py
+%%DATADIR%%/speedtest/wrapper.pyc
 %%DATADIR%%/state.py
 %%DATADIR%%/state.pyc
 %%DATADIR%%/system/__init__.py
@@ -149,12 +148,18 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/system/unix.pyc
 %%DATADIR%%/system/win32.py
 %%DATADIR%%/system/win32.pyc
+%%DATADIR%%/updater/unix.py
+%%DATADIR%%/updater/unix.pyc
 %%DATADIR%%/utils/__init__.py
 %%DATADIR%%/utils/__init__.pyc
 %%DATADIR%%/utils/blocks.py
 %%DATADIR%%/utils/blocks.pyc
 %%DATADIR%%/utils/version.py
 %%DATADIR%%/utils/version.pyc
+%%DATADIR%%/viewer/__init__.py
+%%DATADIR%%/viewer/__init__.pyc
+%%DATADIR%%/viewer/unix.py
+%%DATADIR%%/viewer/unix.pyc
 %%DATADIR%%/www/bittorrent.html
 %%DATADIR%%/www/css/jquery.jqplot.css
 %%DATADIR%%/www/css/style.css
@@ -198,12 +203,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 @dirrm %%DATADIR%%/www/img
 @dirrm %%DATADIR%%/www/css
 @dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/viewer
 @dirrm %%DATADIR%%/utils
+@dirrm %%DATADIR%%/updater
 @dirrm %%DATADIR%%/system
 @dirrm %%DATADIR%%/speedtest
 @dirrm %%DATADIR%%/simplejson
 @dirrm %%DATADIR%%/rendezvous
+@dirrm %%DATADIR%%/notifier
 @dirrm %%DATADIR%%/net
+@dirrm %%DATADIR%%/negotiate
 @dirrm %%DATADIR%%/main
 @dirrm %%DATADIR%%/http
 @dirrm %%DATADIR%%/debug
