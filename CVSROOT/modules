@@ -513,6 +513,7 @@ ann                             ports/math/ann
 annelid                         ports/games/annelid
 annoyance-filter                ports/mail/annoyance-filter
 anomy-sanitizer                 ports/mail/anomy-sanitizer
+anonymous-pro                   ports/x11-fonts/anonymous-pro
 anope                           ports/irc/anope
 ansifilter                      ports/textproc/ansifilter
 ansiprint                       ports/print/ansiprint
@@ -2797,6 +2798,7 @@ easydiff                        ports/textproc/easydiff
 easygit                         ports/devel/easygit
 easygtk                         ports/x11-toolkits/easygtk
 easylatex                       ports/print/easylatex
+easypbi                         ports/sysutils/easypbi
 easypg                          ports/security/easypg
 easysoap                        ports/net/easysoap
 easysok                         ports/games/easysok
@@ -11819,6 +11821,7 @@ p5-Date-Roman                   ports/devel/p5-Date-Roman
 p5-Date-Simple                  ports/devel/p5-Date-Simple
 p5-DateConvert                  ports/devel/p5-DateConvert
 p5-DateTime                     ports/devel/p5-DateTime
+p5-DateTime-Astro               ports/devel/p5-DateTime-Astro
 p5-DateTime-Calendar-Chinese    ports/devel/p5-DateTime-Calendar-Chinese
 p5-DateTime-Calendar-Christian  ports/devel/p5-DateTime-Calendar-Christian
 p5-DateTime-Calendar-Discordian  ports/devel/p5-DateTime-Calendar-Discordian
@@ -16129,6 +16132,7 @@ p5-date-roman                   ports/devel/p5-Date-Roman
 p5-date-simple                  ports/devel/p5-Date-Simple
 p5-dateconvert                  ports/devel/p5-DateConvert
 p5-datetime                     ports/devel/p5-DateTime
+p5-datetime-astro               ports/devel/p5-DateTime-Astro
 p5-datetime-calendar-chinese    ports/devel/p5-DateTime-Calendar-Chinese
 p5-datetime-calendar-christian  ports/devel/p5-DateTime-Calendar-Christian
 p5-datetime-calendar-discordian  ports/devel/p5-DateTime-Calendar-Discordian
