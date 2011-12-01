@@ -1,7 +1,7 @@
 LIB=	mng
 LDADD=	-lm -L${LIBDIR} -lz -llcms -ljpeg
 
-NOPROFILE=	yes
+NO_PROFILE=	yes
 SHLIB_MAJOR?=	1
 SHLIB_MINOR?=	0
 
