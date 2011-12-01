@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grap
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
@@ -18,8 +18,9 @@ CONFIGURE_ARGS=--with-freebsd-ports
 
 MAN1=		grap.1
 
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-docs
+.if defined(NOPORTDOCS)
+post-install:
+	${RM} -rf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
