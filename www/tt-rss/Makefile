@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -77,6 +77,8 @@ do-configure:
 do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name LICENSE")
+	${RM} -rf ${WWWDIR}/debian
+	${TOUCH} ${WWWDIR}/icons/.empty
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
 	${CHMOD} ug+x ${WWWDIR}/utils/*.sh ${WWWDIR}/utils/*.pl
