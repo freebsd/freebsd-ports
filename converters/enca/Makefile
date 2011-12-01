@@ -39,5 +39,6 @@ post-patch::
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's#\ devel-docs##g' ${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e 's/$$(LN_S)/$$(LN_S) -f/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
