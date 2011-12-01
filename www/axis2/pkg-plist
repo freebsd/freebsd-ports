@@ -1,212 +1,215 @@
-%%WEBAPPS%%/axis2/META-INF/MANIFEST.MF
-%%WEBAPPS%%/axis2/WEB-INF/classes/META-INF/LICENSE
-%%WEBAPPS%%/axis2/WEB-INF/classes/META-INF/NOTICE
-%%WEBAPPS%%/axis2/WEB-INF/classes/commons-logging.properties
-%%WEBAPPS%%/axis2/WEB-INF/classes/log4j.properties
-%%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/transport/http/AxisAdminServlet.class
-%%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/webapp/AdminAgent.class
-%%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/webapp/AxisAdminServlet.class
-%%WEBAPPS%%/axis2/WEB-INF/conf/axis2.xml
-%%WEBAPPS%%/axis2/WEB-INF/lib/XmlSchema-1.4.7.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/XmlSchema-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/activation-1.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/activation-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/antlr-2-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/antlr-2.7.7.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-api-1.2.12.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-api-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-dom-1.2.12.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-dom-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-impl-1.2.12.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axiom-impl-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-adb-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-adb-codegen-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-clustering-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-codegen-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-corba-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-fastinfoset-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-java2wsdl-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-jaxbri-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-jaxws-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-jibx-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-json-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-kernel-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-metadata-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-mtompolicy-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-saaj-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-soapmonitor-servlet-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-spring-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-transport-http-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-transport-local-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/axis2-xmlbeans-1.6.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/bcel-5.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/bcel-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-cli-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-cli-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-codec-1.3.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-codec-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-fileupload-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-fileupload-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-httpclient-3.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-httpclient-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-io-1.4.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-io-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-logging-1.1.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/commons-logging-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-annotation-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-annotation_1.0_spec-1.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-jaxws-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-jaxws_2.2_spec-1.0.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-jta-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-saaj-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-saaj_1.3_spec-1.0.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-stax-api-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-stax-api_1.0_spec-1.0.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-ws-metadata-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/httpcore-4.0.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/httpcore-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jalopy-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-api-2.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-api-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-impl-2.1.7.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-impl-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-xjc-2.1.7.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxb-xjc-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxen-1.1.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxen-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxws-tools-2.1.3.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jaxws-tools-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jettison-1.0-RC2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jettison-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jibx-bind-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jibx-bind-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jibx-run-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jibx-run-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/jsr311-api-1.0.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/jsr311-api-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/juli-6.0.16.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/juli-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/log4j-1.2.15.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/log4j-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/mail-1.4.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/mail-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/mex-1.6.1-impl.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/neethi-3.0.1.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/neethi-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/regexp-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/regexp-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/tribes-6.0.16.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/tribes-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-api-1.0M9.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-api-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-impl-commons-1.0M9.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-impl-commons-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-impl-dom-1.0M9.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/woden-impl-dom-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/wsdl4j-1.6.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/wsdl4j-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/wstx-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/wstx-asl-3.2.9.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/xalan-2.7.0.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/xalan-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/xml-resolver-1.2.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/xml-resolver-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/lib/xmlbeans-2.3.0.jar
-%%WEBAPPS%%/axis2/WEB-INF/lib/xmlbeans-LICENSE.txt
-%%WEBAPPS%%/axis2/WEB-INF/modules/addressing-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/axis2-jaxws-mar-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/mex-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/modules.list
-%%WEBAPPS%%/axis2/WEB-INF/modules/mtompolicy-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/ping-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/scripting-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/modules/soapmonitor-1.6.1.mar
-%%WEBAPPS%%/axis2/WEB-INF/services/services.list
-%%WEBAPPS%%/axis2/WEB-INF/services/version-1.6.1.aar
-%%WEBAPPS%%/axis2/WEB-INF/web.xml
-%%WEBAPPS%%/axis2/axis2-web/ActivateService.jsp
-%%WEBAPPS%%/axis2/axis2-web/EngageToServiceGroup.jsp
-%%WEBAPPS%%/axis2/axis2-web/Error/AuthError.html
-%%WEBAPPS%%/axis2/axis2-web/Error/GenError.html
-%%WEBAPPS%%/axis2/axis2-web/Error/error404.jsp
-%%WEBAPPS%%/axis2/axis2-web/Error/error500.jsp
-%%WEBAPPS%%/axis2/axis2-web/HappyAxis.jsp
-%%WEBAPPS%%/axis2/axis2-web/InActivateService.jsp
-%%WEBAPPS%%/axis2/axis2-web/LeftFrame.jsp
-%%WEBAPPS%%/axis2/axis2-web/ListServiceGroup.jsp
-%%WEBAPPS%%/axis2/axis2-web/Login.jsp
-%%WEBAPPS%%/axis2/axis2-web/MainFrame.jsp
-%%WEBAPPS%%/axis2/axis2-web/SelectService.jsp
-%%WEBAPPS%%/axis2/axis2-web/ServiceParaEdit.jsp
-%%WEBAPPS%%/axis2/axis2-web/TopFrame.jsp
-%%WEBAPPS%%/axis2/axis2-web/ViewContexts.jsp
-%%WEBAPPS%%/axis2/axis2-web/ViewGlobalHandlers.jsp
-%%WEBAPPS%%/axis2/axis2-web/ViewServiceHandlers.jsp
-%%WEBAPPS%%/axis2/axis2-web/admin.jsp
-%%WEBAPPS%%/axis2/axis2-web/css/axis-style.css
-%%WEBAPPS%%/axis2/axis2-web/deleteService.jsp
-%%WEBAPPS%%/axis2/axis2-web/disengage.jsp
-%%WEBAPPS%%/axis2/axis2-web/engagingglobally.jsp
-%%WEBAPPS%%/axis2/axis2-web/engagingtoanoperation.jsp
-%%WEBAPPS%%/axis2/axis2-web/engagingtoaservice.jsp
-%%WEBAPPS%%/axis2/axis2-web/error.jsp
-%%WEBAPPS%%/axis2/axis2-web/errorModule.jsp
-%%WEBAPPS%%/axis2/axis2-web/globalModules.jsp
-%%WEBAPPS%%/axis2/axis2-web/images/asf-logo.gif
-%%WEBAPPS%%/axis2/axis2-web/images/axis.gif
-%%WEBAPPS%%/axis2/axis2-web/images/axis.jpg
-%%WEBAPPS%%/axis2/axis2-web/images/axis_l.jpg
-%%WEBAPPS%%/axis2/axis2-web/include/adminfooter.inc
-%%WEBAPPS%%/axis2/axis2-web/include/adminheader.inc
-%%WEBAPPS%%/axis2/axis2-web/include/adminheader.jsp
-%%WEBAPPS%%/axis2/axis2-web/include/footer.inc
-%%WEBAPPS%%/axis2/axis2-web/include/header.inc
-%%WEBAPPS%%/axis2/axis2-web/include/httpbase.jsp
-%%WEBAPPS%%/axis2/axis2-web/include/link-footer.inc
-%%WEBAPPS%%/axis2/axis2-web/include/link-footer.jsp
-%%WEBAPPS%%/axis2/axis2-web/index.jsp
-%%WEBAPPS%%/axis2/axis2-web/listFaultyService.jsp
-%%WEBAPPS%%/axis2/axis2-web/listGroupService.jsp
-%%WEBAPPS%%/axis2/axis2-web/listModules.jsp
-%%WEBAPPS%%/axis2/axis2-web/listService.jsp
-%%WEBAPPS%%/axis2/axis2-web/listServices.jsp
-%%WEBAPPS%%/axis2/axis2-web/listSingleService.jsp
-%%WEBAPPS%%/axis2/axis2-web/upload.jsp
-%%WEBAPPS%%/axis2/axis2-web/viewServiceContext.jsp
-%%WEBAPPS%%/axis2/axis2-web/viewServiceGroupContext.jsp
-%%WEBAPPS%%/axis2/axis2-web/viewphases.jsp
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$SOAPMonitorData.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$SOAPMonitorFilter.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$SOAPMonitorPage.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$SOAPMonitorTableModel.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$SOAPMonitorTextArea.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet$ServiceFilterPanel.class
-%%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet/SOAPMonitorApplet.class
-@dirrm %%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor/applet
-@dirrm %%WEBAPPS%%/axis2/org/apache/axis2/soapmonitor
-@dirrm %%WEBAPPS%%/axis2/org/apache/axis2
-@dirrm %%WEBAPPS%%/axis2/org/apache
-@dirrm %%WEBAPPS%%/axis2/org
-@dirrm %%WEBAPPS%%/axis2/axis2-web/include
-@dirrm %%WEBAPPS%%/axis2/axis2-web/images
-@dirrm %%WEBAPPS%%/axis2/axis2-web/css
-@dirrm %%WEBAPPS%%/axis2/axis2-web/Error
-@dirrm %%WEBAPPS%%/axis2/axis2-web
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/services
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/modules
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/lib
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/conf
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/webapp
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/transport/http
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2/transport
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org/apache/axis2
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org/apache
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/org
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes/META-INF
-@dirrm %%WEBAPPS%%/axis2/WEB-INF/classes
-@dirrm %%WEBAPPS%%/axis2/WEB-INF
-@dirrm %%WEBAPPS%%/axis2/META-INF
-@dirrm %%WEBAPPS%%/axis2
+@unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy; fi
+@unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml; fi
+@unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties; fi
+@unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties; fi
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/XmlSchema-1.4.7.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/XmlSchema-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/activation-1.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/activation-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/antlr-2-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/antlr-2.7.7.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.12.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.12.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.12.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-codegen-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-ant-plugin-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-clustering-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-codegen-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-corba-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-fastinfoset-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-java2wsdl-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-jaxbri-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-jaxws-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-jibx-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-json-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-kernel-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-metadata-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-mtompolicy-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-saaj-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-soapmonitor-servlet-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-spring-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-transport-http-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-transport-local-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-xmlbeans-1.6.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/bcel-5.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/bcel-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-cli-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-cli-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-codec-1.3.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-codec-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-fileupload-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-fileupload-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-httpclient-3.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-httpclient-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-io-1.4.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-io-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-logging-1.1.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/commons-logging-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/endorsed/geronimo-jaxws_2.2_spec-1.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/endorsed/geronimo-saaj_1.3_spec-1.0.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/endorsed/jaxb-api-2.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-annotation-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-annotation_1.0_spec-1.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-jaxws-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-jaxws_2.2_spec-1.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-jta-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-saaj-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-saaj_1.3_spec-1.0.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-stax-api-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-stax-api_1.0_spec-1.0.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-ws-metadata-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-1.5rc3.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-api-2.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-api-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-impl-2.1.7.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-impl-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-xjc-2.1.7.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxb-xjc-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxen-1.1.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxen-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxws-tools-2.1.3.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxws-tools-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jettison-1.0-RC2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jettison-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-bind-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-bind-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-run-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-run-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jsr311-api-1.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jsr311-api-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/juli-6.0.16.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/juli-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/log4j-1.2.15.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/log4j-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/mail-1.4.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/mail-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/mex-1.6.1-impl.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/neethi-3.0.1.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/neethi-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/regexp-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/regexp-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-6.0.16.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-api-1.0M9.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-api-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-impl-commons-1.0M9.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-impl-commons-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-impl-dom-1.0M9.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-impl-dom-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/wsdl4j-1.6.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/wsdl4j-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/wstx-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/wstx-asl-3.2.9.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xalan-2.7.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xalan-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xml-resolver-1.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xml-resolver-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-2.3.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%%
+@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy; fi
+%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%%
+@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml; fi
+%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%%
+@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties; fi
+%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%%
+@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties; fi
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/LICENSE
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/NOTICE
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/commons-logging.properties
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/log4j.properties
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport/http/AxisAdminServlet.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AdminAgent.class
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AxisAdminServlet.class
+%%APPHOME%%/webapps/axis2/WEB-INF/web.xml
+%%APPHOME%%/webapps/axis2/axis2-web/ActivateService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/EngageToServiceGroup.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/Error/AuthError.html
+%%APPHOME%%/webapps/axis2/axis2-web/Error/GenError.html
+%%APPHOME%%/webapps/axis2/axis2-web/Error/error404.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/Error/error500.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/HappyAxis.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/InActivateService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/LeftFrame.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/ListServiceGroup.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/Login.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/MainFrame.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/SelectService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/ServiceParaEdit.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/TopFrame.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/ViewContexts.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/ViewGlobalHandlers.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/ViewServiceHandlers.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/admin.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/css/axis-style.css
+%%APPHOME%%/webapps/axis2/axis2-web/deleteService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/disengage.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/engagingglobally.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/engagingtoanoperation.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/engagingtoaservice.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/error.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/errorModule.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/globalModules.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/images/asf-logo.gif
+%%APPHOME%%/webapps/axis2/axis2-web/images/axis.gif
+%%APPHOME%%/webapps/axis2/axis2-web/images/axis.jpg
+%%APPHOME%%/webapps/axis2/axis2-web/images/axis_l.jpg
+%%APPHOME%%/webapps/axis2/axis2-web/include/adminfooter.inc
+%%APPHOME%%/webapps/axis2/axis2-web/include/adminheader.inc
+%%APPHOME%%/webapps/axis2/axis2-web/include/adminheader.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/include/footer.inc
+%%APPHOME%%/webapps/axis2/axis2-web/include/header.inc
+%%APPHOME%%/webapps/axis2/axis2-web/include/httpbase.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/include/link-footer.inc
+%%APPHOME%%/webapps/axis2/axis2-web/include/link-footer.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/index.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listFaultyService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listGroupService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listModules.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listServices.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/listSingleService.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/upload.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/viewServiceContext.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/viewServiceGroupContext.jsp
+%%APPHOME%%/webapps/axis2/axis2-web/viewphases.jsp
+%%APPHOME%%/webapps/axis2/build.xml
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/addressing-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/mex-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/modules.list
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/mtompolicy-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/ping-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/scripting-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/soapmonitor-1.6.1.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/services/services.list
+%%APPHOME%%/webapps/axis2/WEB-INF/services/version.aar
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/services
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/modules
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/conf
+@dirrmtry %%APPHOME%%/webapps/axis2/axis2-web/include
+@dirrmtry %%APPHOME%%/webapps/axis2/axis2-web/images
+@dirrmtry %%APPHOME%%/webapps/axis2/axis2-web/css
+@dirrmtry %%APPHOME%%/webapps/axis2/axis2-web/Error
+@dirrmtry %%APPHOME%%/webapps/axis2/axis2-web
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport/http
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/org
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/classes
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/lib/endorsed
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF/lib
+@dirrmtry %%APPHOME%%/webapps/axis2/WEB-INF
+@dirrmtry %%APPHOME%%/webapps/axis2

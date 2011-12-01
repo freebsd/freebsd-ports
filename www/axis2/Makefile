@@ -4,12 +4,13 @@
 #
 # $FreeBSD$
 
-PORTNAME=		axis2
-PORTVERSION=		1.6.1
-CATEGORIES=		www java
-MASTER_SITES=		${MASTER_SITE_APACHE}
+PORTNAME=	axis2
+PORTVERSION=	1.6.1
+PORTREVISION=	1
+CATEGORIES=	www java
+MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
-DISTNAME=		${PORTNAME}-${PORTVERSION}-war
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
@@ -17,6 +18,8 @@ COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 LICENSE=	ASL
 
 USE_ZIP=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+NO_BUILD=	yes
 
 OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     on \
 			TOMCAT6 "Enable Tomcat 6.x support"     off \
@@ -28,28 +31,25 @@ OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     on \
 APPHOME=	${LOCALBASE}/tomcat5.5
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
-WEBAPPDIR=	${APPHOME}/webapps
 .endif
 
 .if defined(WITH_TOMCAT6)
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-WEBAPPDIR=	${APPHOME}/webapps
 .endif
 
 .if defined(WITH_TOMCAT7)
 APPHOME=	${LOCALBASE}/apache-tomcat-7.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-WEBAPPDIR=	${APPHOME}/webapps
 .endif
 
 .if ( defined(WITH_TOMCAT5) && defined(WITH_TOMCAT6) || defined(WITH_TOMCAT7) )
 IGNORE=	you can only define one application server
 .elif ( defined(WITH_TOMCAT6) && defined(WITH_TOMCAT7) )
 IGNORE=	you can only define one application server
-.elif !defined(WEBAPPDIR)
+.elif !defined(APPHOME)
 IGNORE=	you need at least one application server
 .endif
 
@@ -57,14 +57,33 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SHAREOWN=	www
 SHAREGRP=	www
-PLIST_SUB+=	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}/||}
+PLIST_SUB+=	APPHOME=${APPHOME:S|^${PREFIX}/||} \
+		CONF_EXT=${CONF_EXT}
+CONF_EXT=	sample
 
-do-build:
-	@${MKDIR} ${WRKSRC}
-	@(cd ${WRKSRC} && ${TAR} xf ${WRKDIR}/${PORTNAME}.war)
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
 
 do-install:
-	${MKDIR} ${WEBAPPDIR}/${PORTNAME}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME} )
+	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib && cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib)
+	( cd ${WRKSRC}/webapp && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME} )
+	( cd ${WRKSRC}/repository && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF )
+	@install -d -g ${SHAREGRP} -o ${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
+	@(cd ${WRKSRC};${FIND} conf -type f | ${SED} -e '/${CONF_EXT}/d') \
+		| while read a; do \
+			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.${CONF_EXT}; \
+			if [ ! -e "${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a" ]; then \
+				${ECHO_MSG} "	Installing local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a"; \
+				${INSTALL_DATA} ${WRKSRC}/$$a.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a; \
+			else \
+				${ECHO_MSG} "	Preserving local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a"; \
+			fi; \
+		done
+			${INSTALL_DATA} ${WRKSRC}/conf/*.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+.endif
 
 .include <bsd.port.mk>
