@@ -1,5 +1,5 @@
---- local/Makefile.in.orig	2011-07-27 08:56:11.000000000 -0300
-+++ local/Makefile.in	2011-07-27 08:56:22.000000000 -0300
+--- ./local/Makefile.in.orig	2011-11-24 11:55:41.000000000 -0500
++++ ./local/Makefile.in	2011-11-24 11:55:48.000000000 -0500
 @@ -16,7 +16,7 @@
  #
  SNMPCONFPATH=@SNMPCONFPATH@

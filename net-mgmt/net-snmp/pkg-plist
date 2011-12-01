@@ -186,6 +186,8 @@ include/net-snmp/system/mingw32.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
+include/net-snmp/system/openbsd4.h
+include/net-snmp/system/openbsd5.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
@@ -236,8 +238,6 @@ lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/default_store.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SNMP.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/NetSNMP.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/NetSNMP.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/autosplit.ix
@@ -308,6 +308,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c-data/generic-get-decl.m2i
 %%DATADIR%%/mib2c-data/generic-get-long.m2i
 %%DATADIR%%/mib2c-data/generic-get-oid.m2i
+%%DATADIR%%/mib2c-data/generic-get-U64.m2i
 %%DATADIR%%/mib2c-data/generic-header-bottom.m2i
 %%DATADIR%%/mib2c-data/generic-header-top.m2i
 %%DATADIR%%/mib2c-data/generic-source-includes.m2i
