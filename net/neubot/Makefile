@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neubot
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
@@ -26,6 +26,7 @@ USE_RC_SUBR=	neubotd
 INSTALLS_ICONS=	yes
 
 MAN1=		neubot.1
+MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS ChangeLog PRIVACY README TODO
 
 SUB_FILES=	pkg_message
