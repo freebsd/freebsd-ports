@@ -774,6 +774,7 @@
     SUBDIR += py-actdiag
     SUBDIR += py-amanith
     SUBDIR += py-blockdiag
+    SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-cairo
     SUBDIR += py-chart
     SUBDIR += py-clutter

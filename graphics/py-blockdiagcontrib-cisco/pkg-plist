@@ -1,0 +1,311 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/cisco.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/cisco.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/cisco.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/100baset hub.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/10700.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/10GE_FCoE.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/15200.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/3174 (desktop).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/3200 mobile access router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/3x74 (floor).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/6700 series.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/7500ars (7513).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ACS.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ASR 1000 Series.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/AXP.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/CUBE.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Ground terminal.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/MSE.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/MXE.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Mediator.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/NCE router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/NCE.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Nexus 1000.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Nexus 2000.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Nexus 5000.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Nexus 7000.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/RF modem.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Service Module.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Service router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Services.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Set top box.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/Space router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/TP MCU.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/VSD.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/VSS.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/access gateway.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/accesspoint.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ace.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/adm.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/androgenous person.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/antenna.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/asic processor.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ata.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/atm 3800.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/atm fast gigabit etherswitch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/atm router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/atm switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/atm tag switch router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/avs.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/bbfw media.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/bbfw.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/bbsm.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/branch office.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/breakout box.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/bridge.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/broadband router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/bts 10200.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cable modem.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/callmanager.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/car.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/carrier routing system.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cddi-fddi.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cdm.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cellular phone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/centri firewall.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco 1000.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco asa 5500.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco ca.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco file engine.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco hub.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco unified presence server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cisco unityexpress.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ciscosecurity.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ciscoworks.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/class 4_5 switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cloud.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/communications server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/contact center.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content engine (cache director).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content service router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content service switch 1100.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content switch module.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/content transformation engine (cte).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/cs-mars.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/csm-s.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/csu_dsu.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/detector.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/director-class fibre channel director.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/directory server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/diskette.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/dot-dot.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/dpt.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/dslam.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/dual mode ap.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/dwdm filter.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/end office.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fax.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fc storage.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fddi ring.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fibre channel disk subsystem.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fibre channel fabric switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/file server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/fileserver.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/firewall service module (fwsm).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/firewall.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/front end processor.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/gatekeeper.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/general applicance.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/generic building.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/generic gateway.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/generic processor.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/generic softswitch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/gigabit switch atm tag router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/government building.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/guard.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/h.323.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/handheld.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/hootphone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/host.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/hp mini.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/hub.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/iad router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ibm mainframe.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ibm mini as400.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ibm tower.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/icm.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ics.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/intelliswitch stack.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/internet streamer.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ios firewall.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ios slb.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ip communicator.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ip dsl.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ip phone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ip telephony router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ip.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/iptc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/iptv content manager.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/iptv server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/iscsi router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/isdn switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/itp.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/jbod.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/key.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/keys.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/lan to lan.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/laptop.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/layer 2 remote switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/layer 3 switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/lightweight ap.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/localdirector.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/lock.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/longreach cpe.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mac woman.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/macintosh.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/man_woman.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mas gateway.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mau.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mcu.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mdu.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/me 1100.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/meetingplace.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mesh ap.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/metro 1500.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mgx 8000 multiservice switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/microphone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/microwebserver.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mini vax.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mobile access ip phone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mobile access router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mobile streamer.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/modem.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/moh server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mulitswitch device.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/multi-fabric server switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/multilayer remote switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/mux.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/nac appliance.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/netflow router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/netranger.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/netsonar.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/network management.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/octel.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ons15500.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/optical amplifier.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/optical services router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/optical transport.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pad x.28.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pad.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/page icon.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pbx switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pbx.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc adapter card.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc man.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc routercard.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc software.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc video.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pda.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/phone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/phone_fax.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pix firewall.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pmc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/printer.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/programmable switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/protocol translator.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/pxf.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/radio tower.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ratemux.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/relational database.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/repeater.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/route switch processor.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/router with silicon switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/router_firewall.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/routerin building.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/rpsrps.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/running man.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/safeharbor icon.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/sattelite dish.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/sattelite.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/scanner.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/server switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/server with router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/service control.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/simulitlayer switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/sip proxy werver.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/sitting woman.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/small business.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/small hub.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/softphone.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/softswitch pgw mgc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/software based server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/speaker.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ssc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ssl terminator.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/standard host.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/standing man.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/standing woman.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/stb.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/storage router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/storage server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/stp.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/streamer.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/sun workstation.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/supercomputer.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/svx.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/system controller.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/tablet.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/tape array.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/tdm router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/telecommuter house pc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/telecommuter house.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/telecommuter icon.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/terminal.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/token.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/transpath.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/truck.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/turret.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/tv.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ubr910.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/umg series.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/unity server.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/universal gateway.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/university.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/upc.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/ups.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/vault.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/video camera.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/vip.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/virtual layer switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/virtual switch controller (vsc3000).jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/voice atm switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/voice commserver.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/voice router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/voice switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/vpn concentrator.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/vpn gateway.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wae.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wavelength router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/web browser.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/web cluster.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wi-fi tag.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wireless bridge.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wireless location appliance.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wireless router.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wireless transport.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wireless.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wism.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/wlan controller.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/workgroup director.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/workgroup switch.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/workstation.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco/www server.jpg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images/cisco
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiagcontrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

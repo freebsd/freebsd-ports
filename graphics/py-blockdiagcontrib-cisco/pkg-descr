@@ -1,0 +1,7 @@
+A plugin for blockdiag that provides shapes for networking.
+The shapes are using Network Topology Icons designed by Cisco Systems, Inc.
+
+o Network Topology Icons: http://www.cisco.com/web/about/ac50/ac47/2.html
+o Cisco Systems, Inc: http://www.cisco.com/
+
+WWW:	http://pypi.python.org/pypi/blockdiagcontrib-cisco/
