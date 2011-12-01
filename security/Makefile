@@ -769,6 +769,7 @@
     SUBDIR += scamp
     SUBDIR += scanhill
     SUBDIR += scanlogd
+    SUBDIR += scannedonly
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
