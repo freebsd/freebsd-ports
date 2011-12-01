@@ -1,15 +1,30 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Advanced/Bibliography.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Advanced/Models.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Debug.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Grammar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Grammar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Installed.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Internal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Recognizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Recognizer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Rewrite.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics/Infinite.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics/Null.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics/Order.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Support.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Tracing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Vocabulary.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Advanced
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Marpa
