@@ -23,6 +23,7 @@
 %%WWWDIR%%/digest.js
 %%WWWDIR%%/digest.php
 %%WWWDIR%%/errors.php
+%%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feedlist.js
 %%WWWDIR%%/functions.js
 %%WWWDIR%%/functions.php
@@ -39,10 +40,6 @@
 %%WWWDIR%%/images/art-tweet.png
 %%WWWDIR%%/images/art-zoom.png
 %%WWWDIR%%/images/blank_icon.gif
-%%WWWDIR%%/images/c1.png
-%%WWWDIR%%/images/c2.png
-%%WWWDIR%%/images/c3.png
-%%WWWDIR%%/images/c4.png
 %%WWWDIR%%/images/digest_checkbox.png
 %%WWWDIR%%/images/down_arrow.png
 %%WWWDIR%%/images/favicon.png
@@ -77,10 +74,6 @@
 %%WWWDIR%%/images/score_high.png
 %%WWWDIR%%/images/score_low.png
 %%WWWDIR%%/images/score_neutral.png
-%%WWWDIR%%/images/shadow-grid.gif
-%%WWWDIR%%/images/shadow.png
-%%WWWDIR%%/images/shadow_dark.png
-%%WWWDIR%%/images/shadow_white.png
 %%WWWDIR%%/images/sign_excl.png
 %%WWWDIR%%/images/sign_info.png
 %%WWWDIR%%/images/sign_quest.png
@@ -129,6 +122,7 @@
 %%WWWDIR%%/lib/dijit/_Templated.js
 %%WWWDIR%%/lib/dijit/_TimePicker.js
 %%WWWDIR%%/lib/dijit/_Widget.js
+%%WWWDIR%%/lib/dijit/_WidgetBase.js
 %%WWWDIR%%/lib/dijit/_base.js
 %%WWWDIR%%/lib/dijit/_base/focus.js
 %%WWWDIR%%/lib/dijit/_base/manager.js
@@ -184,6 +178,9 @@
 %%WWWDIR%%/lib/dijit/_editor/nls/ja/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ja/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ja/commands.js
+%%WWWDIR%%/lib/dijit/_editor/nls/kk/FontChoice.js
+%%WWWDIR%%/lib/dijit/_editor/nls/kk/LinkDialog.js
+%%WWWDIR%%/lib/dijit/_editor/nls/kk/commands.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ko/FontChoice.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ko/LinkDialog.js
 %%WWWDIR%%/lib/dijit/_editor/nls/ko/commands.js
@@ -244,9 +241,7 @@
 %%WWWDIR%%/lib/dijit/_editor/selection.js
 %%WWWDIR%%/lib/dijit/_tree/dndSource.js
 %%WWWDIR%%/lib/dijit/dijit-all.js
-%%WWWDIR%%/lib/dijit/dijit-all.js.uncompressed.js
 %%WWWDIR%%/lib/dijit/dijit.js
-%%WWWDIR%%/lib/dijit/dijit.js.uncompressed.js
 %%WWWDIR%%/lib/dijit/form/Button.js
 %%WWWDIR%%/lib/dijit/form/CheckBox.js
 %%WWWDIR%%/lib/dijit/form/ComboBox.js
@@ -322,6 +317,9 @@
 %%WWWDIR%%/lib/dijit/form/nls/ja/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/ja/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/ja/validate.js
+%%WWWDIR%%/lib/dijit/form/nls/kk/ComboBox.js
+%%WWWDIR%%/lib/dijit/form/nls/kk/Textarea.js
+%%WWWDIR%%/lib/dijit/form/nls/kk/validate.js
 %%WWWDIR%%/lib/dijit/form/nls/ko/ComboBox.js
 %%WWWDIR%%/lib/dijit/form/nls/ko/Textarea.js
 %%WWWDIR%%/lib/dijit/form/nls/ko/validate.js
@@ -395,8 +393,10 @@
 %%WWWDIR%%/lib/dijit/layout/StackController.js
 %%WWWDIR%%/lib/dijit/layout/TabContainer.js
 %%WWWDIR%%/lib/dijit/layout/TabController.js
+%%WWWDIR%%/lib/dijit/layout/_ContentPaneResizeMixin.js
 %%WWWDIR%%/lib/dijit/layout/_LayoutWidget.js
 %%WWWDIR%%/lib/dijit/layout/_TabContainerBase.js
+%%WWWDIR%%/lib/dijit/lib/main.js
 %%WWWDIR%%/lib/dijit/nls/ar/common.js
 %%WWWDIR%%/lib/dijit/nls/ar/loading.js
 %%WWWDIR%%/lib/dijit/nls/ca/common.js
@@ -408,49 +408,6 @@
 %%WWWDIR%%/lib/dijit/nls/da/loading.js
 %%WWWDIR%%/lib/dijit/nls/de/common.js
 %%WWWDIR%%/lib/dijit/nls/de/loading.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ROOT.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ar.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ca.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_cs.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_da.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_de-de.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_de.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_el.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_en-gb.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_en-us.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_en.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_es-es.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_es.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_fi-fi.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_fi.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_fr-fr.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_fr.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_he-il.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_he.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_hu.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_it-it.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_it.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ja-jp.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ja.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ko-kr.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ko.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_nb.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_nl-nl.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_nl.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_pl.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_pt-br.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_pt-pt.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_pt.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_ru.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_sk.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_sl.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_sv.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_th.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_tr.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_xx.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_zh-cn.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_zh-tw.js
-%%WWWDIR%%/lib/dijit/nls/dijit-all_zh.js
 %%WWWDIR%%/lib/dijit/nls/el/common.js
 %%WWWDIR%%/lib/dijit/nls/el/loading.js
 %%WWWDIR%%/lib/dijit/nls/es/common.js
@@ -467,6 +424,8 @@
 %%WWWDIR%%/lib/dijit/nls/it/loading.js
 %%WWWDIR%%/lib/dijit/nls/ja/common.js
 %%WWWDIR%%/lib/dijit/nls/ja/loading.js
+%%WWWDIR%%/lib/dijit/nls/kk/common.js
+%%WWWDIR%%/lib/dijit/nls/kk/loading.js
 %%WWWDIR%%/lib/dijit/nls/ko/common.js
 %%WWWDIR%%/lib/dijit/nls/ko/loading.js
 %%WWWDIR%%/lib/dijit/nls/loading.js
@@ -498,47 +457,80 @@
 %%WWWDIR%%/lib/dijit/nls/zh-tw/loading.js
 %%WWWDIR%%/lib/dijit/nls/zh/common.js
 %%WWWDIR%%/lib/dijit/nls/zh/loading.js
+%%WWWDIR%%/lib/dijit/package.json
 %%WWWDIR%%/lib/dijit/resources/_modules.js
 %%WWWDIR%%/lib/dijit/robot.js
 %%WWWDIR%%/lib/dijit/robotx.js
 %%WWWDIR%%/lib/dijit/themes/a11y/README.txt
-%%WWWDIR%%/lib/dijit/themes/a11y/colors3x4-rtl.png
 %%WWWDIR%%/lib/dijit/themes/a11y/colors3x4.png
-%%WWWDIR%%/lib/dijit/themes/a11y/colors7x10-rtl.png
 %%WWWDIR%%/lib/dijit/themes/a11y/colors7x10.png
 %%WWWDIR%%/lib/dijit/themes/a11y/indeterminate_progress.gif
 %%WWWDIR%%/lib/dijit/themes/claro/Calendar.css
+%%WWWDIR%%/lib/dijit/themes/claro/Calendar.less
 %%WWWDIR%%/lib/dijit/themes/claro/Calendar_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/Calendar_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/ColorPalette.css
+%%WWWDIR%%/lib/dijit/themes/claro/ColorPalette.less
 %%WWWDIR%%/lib/dijit/themes/claro/Common.css
+%%WWWDIR%%/lib/dijit/themes/claro/Common.less
 %%WWWDIR%%/lib/dijit/themes/claro/Dialog.css
+%%WWWDIR%%/lib/dijit/themes/claro/Dialog.less
 %%WWWDIR%%/lib/dijit/themes/claro/Dialog_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/Dialog_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/Editor.css
+%%WWWDIR%%/lib/dijit/themes/claro/Editor.less
 %%WWWDIR%%/lib/dijit/themes/claro/Editor_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/Editor_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/InlineEditBox.css
+%%WWWDIR%%/lib/dijit/themes/claro/InlineEditBox.less
 %%WWWDIR%%/lib/dijit/themes/claro/Menu.css
+%%WWWDIR%%/lib/dijit/themes/claro/Menu.less
 %%WWWDIR%%/lib/dijit/themes/claro/Menu_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/Menu_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/ProgressBar.css
+%%WWWDIR%%/lib/dijit/themes/claro/ProgressBar.less
+%%WWWDIR%%/lib/dijit/themes/claro/README
 %%WWWDIR%%/lib/dijit/themes/claro/TimePicker.css
+%%WWWDIR%%/lib/dijit/themes/claro/TimePicker.less
 %%WWWDIR%%/lib/dijit/themes/claro/TimePicker_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/TimePicker_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/TitlePane.css
+%%WWWDIR%%/lib/dijit/themes/claro/TitlePane.less
 %%WWWDIR%%/lib/dijit/themes/claro/TitlePane_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/TitlePane_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/Toolbar.css
+%%WWWDIR%%/lib/dijit/themes/claro/Toolbar.less
+%%WWWDIR%%/lib/dijit/themes/claro/Toolbar_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/Toolbar_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/Tree.css
+%%WWWDIR%%/lib/dijit/themes/claro/Tree.less
 %%WWWDIR%%/lib/dijit/themes/claro/claro.css
 %%WWWDIR%%/lib/dijit/themes/claro/claro_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/compile.js
 %%WWWDIR%%/lib/dijit/themes/claro/document.css
+%%WWWDIR%%/lib/dijit/themes/claro/document.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Button.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Button.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Button_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Button_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Checkbox.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Checkbox.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Common.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Common.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Common_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Common_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/NumberSpinner.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/NumberSpinner.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/RadioButton.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/RadioButton.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Select.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Select.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Select_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Select_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Slider.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Slider.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/Slider_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/form/Slider_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/form/images/button.png
 %%WWWDIR%%/lib/dijit/themes/claro/form/images/buttonArrows.png
 %%WWWDIR%%/lib/dijit/themes/claro/form/images/button_grad_d.png
@@ -561,7 +553,6 @@
 %%WWWDIR%%/lib/dijit/themes/claro/images/dialogCloseIcon.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/dialogCloseIcon8bit.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/dnd.png
-%%WWWDIR%%/lib/dijit/themes/claro/images/loading.gif
 %%WWWDIR%%/lib/dijit/themes/claro/images/loadingAnimation.gif
 %%WWWDIR%%/lib/dijit/themes/claro/images/menuHighlight.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/progressBarAnim.gif
@@ -571,14 +562,20 @@
 %%WWWDIR%%/lib/dijit/themes/claro/images/titlebar.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/tooltip.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/tooltip8bit.png
+%%WWWDIR%%/lib/dijit/themes/claro/images/tooltipGradient.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/treeExpandImages.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/treeExpandImages8bit.png
 %%WWWDIR%%/lib/dijit/themes/claro/images/treeExpand_loading.gif
 %%WWWDIR%%/lib/dijit/themes/claro/layout/AccordionContainer.css
+%%WWWDIR%%/lib/dijit/themes/claro/layout/AccordionContainer.less
 %%WWWDIR%%/lib/dijit/themes/claro/layout/BorderContainer.css
+%%WWWDIR%%/lib/dijit/themes/claro/layout/BorderContainer.less
 %%WWWDIR%%/lib/dijit/themes/claro/layout/ContentPane.css
+%%WWWDIR%%/lib/dijit/themes/claro/layout/ContentPane.less
 %%WWWDIR%%/lib/dijit/themes/claro/layout/TabContainer.css
+%%WWWDIR%%/lib/dijit/themes/claro/layout/TabContainer.less
 %%WWWDIR%%/lib/dijit/themes/claro/layout/TabContainer_rtl.css
+%%WWWDIR%%/lib/dijit/themes/claro/layout/TabContainer_rtl.less
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/accordion.png
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/splitterHorizontalHover.png
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/splitterVerticalHover.png
@@ -588,6 +585,7 @@
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/tabNested.png
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/tabRight.png
 %%WWWDIR%%/lib/dijit/themes/claro/layout/images/tabTop.png
+%%WWWDIR%%/lib/dijit/themes/claro/variables.less
 %%WWWDIR%%/lib/dijit/themes/dijit.css
 %%WWWDIR%%/lib/dijit/themes/dijit_rtl.css
 %%WWWDIR%%/lib/dijit/themes/nihilo/Calendar.css
@@ -975,6 +973,7 @@
 %%WWWDIR%%/lib/dojo-src/rebuild-dojo.sh
 %%WWWDIR%%/lib/dojo/AdapterRegistry.js
 %%WWWDIR%%/lib/dojo/DeferredList.js
+%%WWWDIR%%/lib/dojo/NodeList-data.js
 %%WWWDIR%%/lib/dojo/NodeList-fx.js
 %%WWWDIR%%/lib/dojo/NodeList-html.js
 %%WWWDIR%%/lib/dojo/NodeList-manipulate.js
@@ -1021,6 +1020,7 @@
 %%WWWDIR%%/lib/dojo/cache.js
 %%WWWDIR%%/lib/dojo/cldr/README
 %%WWWDIR%%/lib/dojo/cldr/monetary.js
+%%WWWDIR%%/lib/dojo/cldr/nls/ar/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ar/hebrew.js
@@ -1035,31 +1035,48 @@
 %%WWWDIR%%/lib/dojo/cldr/nls/cs/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/cs/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/currency.js
+%%WWWDIR%%/lib/dojo/cldr/nls/da/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/da/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/da/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/da/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/da/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/de/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/de/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/de/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/de/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/de/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/el/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/el/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/el/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/el/hebrew.js
 %%WWWDIR%%/lib/dojo/cldr/nls/el/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-au/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-au/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-au/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-ca/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-ca/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/en-gb/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-gb/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/en-gb/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en-gb/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/en/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/en/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/en/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/es/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/es/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/es/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/es/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/es/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/fi/buddhist.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fi/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fi/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/fi/hebrew.js
+%%WWWDIR%%/lib/dojo/cldr/nls/fi/islamic.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fi/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/fr-ch/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/fr-ch/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fr/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fr/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/fr/number.js
@@ -1098,6 +1115,10 @@
 %%WWWDIR%%/lib/dojo/cldr/nls/pt/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/pt/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/pt/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/ro/buddhist.js
+%%WWWDIR%%/lib/dojo/cldr/nls/ro/currency.js
+%%WWWDIR%%/lib/dojo/cldr/nls/ro/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/ro/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ru/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ru/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/ru/number.js
@@ -1117,6 +1138,14 @@
 %%WWWDIR%%/lib/dojo/cldr/nls/tr/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/tr/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/tr/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hant/buddhist.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hant/currency.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hant/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hant/islamic.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hant/number.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hk/currency.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hk/gregorian.js
+%%WWWDIR%%/lib/dojo/cldr/nls/zh-hk/number.js
 %%WWWDIR%%/lib/dojo/cldr/nls/zh-tw/currency.js
 %%WWWDIR%%/lib/dojo/cldr/nls/zh-tw/gregorian.js
 %%WWWDIR%%/lib/dojo/cldr/nls/zh/currency.js
@@ -1128,6 +1157,7 @@
 %%WWWDIR%%/lib/dojo/currency.js
 %%WWWDIR%%/lib/dojo/data/ItemFileReadStore.js
 %%WWWDIR%%/lib/dojo/data/ItemFileWriteStore.js
+%%WWWDIR%%/lib/dojo/data/ObjectStore.js
 %%WWWDIR%%/lib/dojo/data/api/Identity.js
 %%WWWDIR%%/lib/dojo/data/api/Notification.js
 %%WWWDIR%%/lib/dojo/data/api/Read.js
@@ -1162,6 +1192,11 @@
 %%WWWDIR%%/lib/dojo/io/iframe.js
 %%WWWDIR%%/lib/dojo/io/script.js
 %%WWWDIR%%/lib/dojo/jaxer.js
+%%WWWDIR%%/lib/dojo/lib/backCompat.js
+%%WWWDIR%%/lib/dojo/lib/kernel.js
+%%WWWDIR%%/lib/dojo/lib/main-browser.js
+%%WWWDIR%%/lib/dojo/lib/plugins/i18n.js
+%%WWWDIR%%/lib/dojo/lib/plugins/text.js
 %%WWWDIR%%/lib/dojo/nls/ar/colors.js
 %%WWWDIR%%/lib/dojo/nls/ca/colors.js
 %%WWWDIR%%/lib/dojo/nls/colors.js
@@ -1176,6 +1211,7 @@
 %%WWWDIR%%/lib/dojo/nls/hu/colors.js
 %%WWWDIR%%/lib/dojo/nls/it/colors.js
 %%WWWDIR%%/lib/dojo/nls/ja/colors.js
+%%WWWDIR%%/lib/dojo/nls/kk/colors.js
 %%WWWDIR%%/lib/dojo/nls/ko/colors.js
 %%WWWDIR%%/lib/dojo/nls/nb/colors.js
 %%WWWDIR%%/lib/dojo/nls/nl/colors.js
@@ -1235,6 +1271,7 @@
 %%WWWDIR%%/lib/dojo/nls/zh-tw/colors.js
 %%WWWDIR%%/lib/dojo/nls/zh/colors.js
 %%WWWDIR%%/lib/dojo/number.js
+%%WWWDIR%%/lib/dojo/package.json
 %%WWWDIR%%/lib/dojo/parser.js
 %%WWWDIR%%/lib/dojo/regexp.js
 %%WWWDIR%%/lib/dojo/resources/_modules.js
@@ -1252,6 +1289,15 @@
 %%WWWDIR%%/lib/dojo/rpc/JsonService.js
 %%WWWDIR%%/lib/dojo/rpc/JsonpService.js
 %%WWWDIR%%/lib/dojo/rpc/RpcService.js
+%%WWWDIR%%/lib/dojo/store/Cache.js
+%%WWWDIR%%/lib/dojo/store/DataStore.js
+%%WWWDIR%%/lib/dojo/store/JsonRest.js
+%%WWWDIR%%/lib/dojo/store/Memory.js
+%%WWWDIR%%/lib/dojo/store/Observable.js
+%%WWWDIR%%/lib/dojo/store/README
+%%WWWDIR%%/lib/dojo/store/api/Store.js
+%%WWWDIR%%/lib/dojo/store/util/QueryResults.js
+%%WWWDIR%%/lib/dojo/store/util/SimpleQueryEngine.js
 %%WWWDIR%%/lib/dojo/string.js
 %%WWWDIR%%/lib/dojo/tt-rss-layer.js
 %%WWWDIR%%/lib/dojo/tt-rss-layer.js.uncompressed.js
@@ -1709,6 +1755,7 @@
 %%WWWDIR%%/mobile/feed.php
 %%WWWDIR%%/mobile/functions.php
 %%WWWDIR%%/mobile/home.php
+%%WWWDIR%%/mobile/image.php
 %%WWWDIR%%/mobile/index.php
 %%WWWDIR%%/mobile/login_form.php
 %%WWWDIR%%/mobile/logout.php
@@ -1728,6 +1775,7 @@
 %%WWWDIR%%/opml.php
 %%WWWDIR%%/prefs.js
 %%WWWDIR%%/prefs.php
+%%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/sanity_check.php
 %%WWWDIR%%/sanity_config.php
@@ -1918,6 +1966,7 @@
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 %%WWWDIR%%/utility.css
+%%WWWDIR%%/utils/create-release-deb.sh
 %%WWWDIR%%/utils/create-release-tarball.sh
 %%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/localized_schema.txt
@@ -2029,6 +2078,9 @@
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier/library
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier
 @dirrm %%WWWDIR%%/lib/gettext
+@dirrm %%WWWDIR%%/lib/dojo/store/util
+@dirrm %%WWWDIR%%/lib/dojo/store/api
+@dirrm %%WWWDIR%%/lib/dojo/store
 @dirrm %%WWWDIR%%/lib/dojo/rpc
 @dirrm %%WWWDIR%%/lib/dojo/resources/images
 @dirrm %%WWWDIR%%/lib/dojo/resources
@@ -2047,6 +2099,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/nls/nl
 @dirrm %%WWWDIR%%/lib/dojo/nls/nb
 @dirrm %%WWWDIR%%/lib/dojo/nls/ko
+@dirrm %%WWWDIR%%/lib/dojo/nls/kk
 @dirrm %%WWWDIR%%/lib/dojo/nls/ja
 @dirrm %%WWWDIR%%/lib/dojo/nls/it
 @dirrm %%WWWDIR%%/lib/dojo/nls/hu
@@ -2061,6 +2114,8 @@
 @dirrm %%WWWDIR%%/lib/dojo/nls/ca
 @dirrm %%WWWDIR%%/lib/dojo/nls/ar
 @dirrm %%WWWDIR%%/lib/dojo/nls
+@dirrm %%WWWDIR%%/lib/dojo/lib/plugins
+@dirrm %%WWWDIR%%/lib/dojo/lib
 @dirrm %%WWWDIR%%/lib/dojo/io
 @dirrm %%WWWDIR%%/lib/dojo/fx
 @dirrm %%WWWDIR%%/lib/dojo/dnd
@@ -2069,6 +2124,8 @@
 @dirrm %%WWWDIR%%/lib/dojo/data/api
 @dirrm %%WWWDIR%%/lib/dojo/data
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/zh-tw
+@dirrm %%WWWDIR%%/lib/dojo/cldr/nls/zh-hk
+@dirrm %%WWWDIR%%/lib/dojo/cldr/nls/zh-hant
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/zh
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/tr
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/th
@@ -2076,6 +2133,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/sl
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/sk
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/ru
+@dirrm %%WWWDIR%%/lib/dojo/cldr/nls/ro
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/pt-pt
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/pt
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/pl
@@ -2086,6 +2144,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/it
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/hu
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/he
+@dirrm %%WWWDIR%%/lib/dojo/cldr/nls/fr-ch
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/fr
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/fi
 @dirrm %%WWWDIR%%/lib/dojo/cldr/nls/es
@@ -2143,6 +2202,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/nls/nl
 @dirrm %%WWWDIR%%/lib/dijit/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/nls/ko
+@dirrm %%WWWDIR%%/lib/dijit/nls/kk
 @dirrm %%WWWDIR%%/lib/dijit/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/nls/hu
@@ -2157,6 +2217,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/nls/ca
 @dirrm %%WWWDIR%%/lib/dijit/nls/ar
 @dirrm %%WWWDIR%%/lib/dijit/nls
+@dirrm %%WWWDIR%%/lib/dijit/lib
 @dirrm %%WWWDIR%%/lib/dijit/layout
 @dirrm %%WWWDIR%%/lib/dijit/icons/images
 @dirrm %%WWWDIR%%/lib/dijit/icons
@@ -2175,6 +2236,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/nl
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ko
+@dirrm %%WWWDIR%%/lib/dijit/form/nls/kk
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/form/nls/hu
@@ -2207,6 +2269,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/nl
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/nb
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ko
+@dirrm %%WWWDIR%%/lib/dijit/_editor/nls/kk
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/ja
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/it
 @dirrm %%WWWDIR%%/lib/dijit/_editor/nls/hu
@@ -2229,6 +2292,7 @@
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/help
+@dirrmtry %%WWWDIR%%/feed-icons
 @dirrmtry %%WWWDIR%%/cache/simplepie
 @dirrmtry %%WWWDIR%%/cache/magpie
 @dirrmtry %%WWWDIR%%/cache/htmlpurifier
