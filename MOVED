@@ -2272,7 +2272,6 @@ net-p2p/tvrss||2011-7-14|tvrss site does not exist anymore
 www/horde4-meta||2011-07-14|Removed
 graphics/crystalentitylayer||2011-07-17|Removed
 graphics/crystalspace||2011-07-17|Has expired: has been broken for a year
-hungarian/hunspell|textproc/hunspell|2011-07-18|Moved to textproc as it is language independent
 mail/qmail-vida||2011-07-18|Has expired: UID collisions, IGNOREd for four years with no-one caring
 java/jdk13|java/jdk15|2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk13|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
@@ -2326,7 +2325,6 @@ biology/kinemage||2011-08-01|Has expired: Looks like abandonware, no more public
 biology/lsysexp||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 chinese/chm2html||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 chinese/ntuttf||2011-08-01|Has expired: No more public distfiles available
-chinese/reciteword||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 chinese/tocps||2011-08-01|Has expired: No more public distfiles available
 chinese/xttmgr||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 comms/mserver||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
@@ -2358,7 +2356,6 @@ games/wrogue||2011-08-01|Has expired: Looks like abandonware, no more public dis
 graphics/xmms-msa||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/chimera||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/drpl||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
-japanese/dvi2tty||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/easypr||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/elisp-manual||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/emacs-manual||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
@@ -2369,7 +2366,6 @@ japanese/libjconv||2011-08-01|Has expired: Looks like abandonware, no more publi
 japanese/mimekit||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/nethack32||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/paledit||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
-japanese/plain2||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/recjis||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/typist||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 japanese/weblint97||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
@@ -2552,7 +2548,6 @@ audio/gtkgep||2011-09-01|Has expired: Abandonware
 audio/gtkhirad||2011-09-01|Has expired: No more public distfiles
 audio/opmixer||2011-09-01|Has expired: No more upstream
 audio/swami||2011-09-01|Has expired: Abandonware
-audio/x11amp||2011-09-01|Has expired: Abandonware
 audio/xmms-sndstretch||2011-09-01|Has expired: No Master Site
 cad/linux-gid||2011-09-01|Has expired: No more public distfiles
 chinese/gbscript||2011-09-01|Has expired: No more public distfiles
@@ -2621,7 +2616,6 @@ net/vyqchat||2011-09-07|Has expired: No more public distfiles
 news/xmitbin||2011-09-07|Has expired: No more public distfiles
 games/tvp||2011-09-07|Has expired: No more public distfiles
 games/glasteroids||2011-09-07|Has expired: No more public distfiles
-games/xbat||2011-09-07|Has expired: No more public distfiles
 korean/hanmiscutils||2011-09-07|Has expired: No more public distfiles
 net-p2p/hagelslag||2011-09-07|Has expired: No more public distfiles
 games/cgoban2||2011-09-07|Has expired: No more public distfiles
@@ -2633,7 +2627,6 @@ games/xlines||2011-09-07|Has expired: No more public distfiles
 games/xgame||2011-09-07|Has expired: No more public distfiles
 net/ttt||2011-09-07|Has expired: No more public distfiles
 games/merlin||2011-09-07|Has expired: No more public distfiles
-games/xshisen||2011-09-07|Has expired: No more public distfiles
 games/slige||2011-09-07|Has expired: No more public distfiles
 games/wmtimebomb||2011-09-07|Has expired: No more public distfiles
 net-mgmt/cfgstoragemk||2011-09-07|Has expired: No more public distfiles
@@ -2790,20 +2783,16 @@ ftp/wgetpro||2011-10-14|Vulnerable since 2004-12-14
 games/quake2forge||2011-10-14|Vulnerable since 2005-01-21
 japanese/mutt||2011-10-14|Vulnerable since 2007-07-29
 japanese/asterisk14-sounds||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
-net/asterisk14||2011-10-14|Vulnerable since 2011-06-25
 net/isc-dhcp3-devel||2011-10-14|Vulnerable since 2011-04-10
 net/isc-dhcp31-client||2011-10-14|Vulnerable since 2011-04-10
 net/isc-dhcp31-server||2011-10-14|Vulnerable since 2011-04-10
 net/isc-dhcp31-relay||2011-10-14|Vulnerable since 2011-04-10
 net/asterisk-app-ldap||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 net/asterisk-app-notify||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
-net/asterisk-oh323||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN, does not compile on sparc64
-net/asterisk14-addons||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 net/astfax||2011-10-14|Depends on net/asterisk14, which is FORBIDDEN
 net-mgmt/nagios2||2011-10-14|Vulnerable since 2009-06-30
 www/gforge||2011-10-14|Vulnerable since 2005-08-09
 www/linux-flashplugin7||2011-10-14|Vulnerable since at least 2008-05-30
-www/opera-devel||2011-10-14|Vulnerable since 2010-06-25, does not fetch
 www/plone3||2011-10-14|Vulnerable and unsupported upstream
 www/serendipity-devel||2011-10-14|Vulnerable since 2008-04-25
 www/ziproxy||2011-10-14|Vulnerable since 2010-06-15
