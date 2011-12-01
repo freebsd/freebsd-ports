@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ovs_vswitchd
+# REQUIRE: LOGIN ovsdb_server
+
+. /etc/rc.subr
+
+name="ovs_vswitchd"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/ovs-vswitchd"
+pidfile="%%PREFIX%%/var/run/ovs-vswitchd.pid"
+start_precmd="ovs_vswitchd_precmd"
+
+load_rc_config $name
+
+: ${ovs_vswitchd_enable="NO"}
+: ${ovsdb_server_sock="%%PREFIX%%/var/run/openvswitch/db.sock"}
+
+ovs_vswitchd_precmd() {
+	load_kld if_tap || return 1
+}
+
+command_args="--detach --pidfile=$pidfile unix:$ovsdb_server_sock"
+
+run_rc_command "$1"

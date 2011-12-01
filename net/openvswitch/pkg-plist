@@ -1,0 +1,46 @@
+bin/ovs-appctl
+bin/ovs-controller
+bin/ovs-discover
+bin/ovs-dpctl
+bin/ovs-kill
+bin/ovs-ofctl
+bin/ovs-openflowd
+bin/ovs-vsctl
+bin/ovsdb-tool
+bin/ovsdb-client
+bin/ovs-pki
+sbin/ovs-vswitchd
+sbin/ovsdb-server
+share/openvswitch/python/ovs/dirs.py
+share/openvswitch/python/ovs/__init__.py
+share/openvswitch/python/ovs/daemon.py
+share/openvswitch/python/ovs/fatal_signal.py
+share/openvswitch/python/ovs/json.py
+share/openvswitch/python/ovs/jsonrpc.py
+share/openvswitch/python/ovs/ovsuuid.py
+share/openvswitch/python/ovs/poller.py
+share/openvswitch/python/ovs/process.py
+share/openvswitch/python/ovs/reconnect.py
+share/openvswitch/python/ovs/socket_util.py
+share/openvswitch/python/ovs/stream.py
+share/openvswitch/python/ovs/timeval.py
+share/openvswitch/python/ovs/util.py
+share/openvswitch/python/ovs/db/__init__.py
+share/openvswitch/python/ovs/db/data.py
+share/openvswitch/python/ovs/db/error.py
+share/openvswitch/python/ovs/db/idl.py
+share/openvswitch/python/ovs/db/parser.py
+share/openvswitch/python/ovs/db/schema.py
+share/openvswitch/python/ovs/db/types.py
+share/openvswitch/vswitch.ovsschema
+@dirrmtry var/run/openvswitch
+@dirrmtry var/run
+@dirrmtry var/log/openvswitch
+@dirrmtry var/log
+@dirrmtry etc/openvswitch
+@dirrm share/openvswitch/python/ovs/db
+@dirrm share/openvswitch/python/ovs
+@dirrm share/openvswitch/python
+@dirrm share/openvswitch/pki
+@dirrm share/openvswitch/ovsdbmonitor
+@dirrm share/openvswitch
