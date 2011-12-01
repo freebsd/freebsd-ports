@@ -47,6 +47,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ed536336-1c57-11e1-86f4-e0cb4e266481">
+    <topic>phpMyAdmin -- Multiple XSS</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><gt>3.4</gt><lt>3.4.8.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-18.php">
+	  <p>Using crafted database names, it was possible to produce
+	  XSS in the Database Synchronize and Database rename
+	  panels. Using an invalid and crafted SQL query, it was
+	  possible to produce XSS when editing a query on a table
+	  overview panel or when using the view creation dialog. Using
+	  a crafted column type, it was possible to produce XSS in the
+	  table search and create index dialogs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-18.php</url>
+      <cvename>CVE-2011-4634</cvename>
+    </references>
+    <dates>
+      <discovery>2011-11-24</discovery>
+      <entry>2011-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eef56761-11eb-11e1-bb94-001c140104d4">
     <topic>hiawatha -- memory leak in PreventSQLi routine</topic>
     <affects>
