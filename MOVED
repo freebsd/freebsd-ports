@@ -2691,10 +2691,6 @@ math/mupad||2011-09-30|Relies on xpm, vulnerable since 2004-09-15
 net-p2p/torrentflux||2011-09-30|Vulnerable since 2006-10-07
 net/tptest||2011-09-30|Vulnerable since 2009-12-17
 security/pgp6||2011-09-30|Vulnerable since 2005-07-31
-www/p5-RT-Authen-ExternalAuth||2011-09-30|Depends on www/rt36, which is FORBIDDEN
-www/p5-RT-Extension-LDAPImport||2011-09-30|Depends on www/rt36, which is FORBIDDEN
-www/p5-RT-Extension-SLA||2011-09-30|Depends on www/rt36, which is FORBIDDEN
-www/p5-RTx-Calendar||2011-09-30|Depends on www/rt36, which is FORBIDDEN
 www/p5-RTx-RightsMatrix||2011-09-30|Only works with www/rt36, which is FORBIDDEN
 www/p5-RTx-Shredder||2011-09-30|Only works with www/rt36, which is FORBIDDEN
 www/p5-RTx-Statistics||2011-09-30|Only works with www/rt36, which is FORBIDDEN
