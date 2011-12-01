@@ -468,6 +468,7 @@
     SUBDIR += openser
     SUBDIR += openslp
     SUBDIR += opentracker
+    SUBDIR += openvswitch
     SUBDIR += ortp
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
