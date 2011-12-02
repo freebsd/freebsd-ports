@@ -1,0 +1,6 @@
+Sepia is a set of features to make Emacs a better tool for Perl
+development. This package contains the Perl side of the
+implementation, including all user-serviceable parts (for the
+cross-referencing facility see Sepia::Xref).
+
+WWW:	http://search.cpan.org/dist/Sepia/
