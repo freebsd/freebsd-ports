@@ -21,6 +21,8 @@ LIB_DEPENDS=	pthread.2:${PORTSDIR}/misc/compat6x
 
 RESTRICTED=	Binary redistribution restrictions in effect
 
+BROKEN=		invalid distinfo
+
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 USE_LDCONFIG=	yes
