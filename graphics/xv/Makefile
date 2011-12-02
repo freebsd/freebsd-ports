@@ -65,4 +65,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/gif* ${DOCSDIR}
 .endif
 
+
+.if defined(CC) && ${CC} == "clang"
+# Optimizer crashes with
+# Assertion failed: (isPtrIV == IndVar->getType()->isPointerTy() && "IndVar type must match IVInit type")
+CFLAGS:= ${CFLAGS:S/-O2//g}
+.endif
+
 .include <bsd.port.mk>
