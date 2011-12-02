@@ -15,6 +15,7 @@ include/telepathy-1.0/TelepathyQt4/AccountManagerInterface
 include/telepathy-1.0/TelepathyQt4/AccountPropertyFilter
 include/telepathy-1.0/TelepathyQt4/AccountSet
 include/telepathy-1.0/TelepathyQt4/AndFilter
+include/telepathy-1.0/TelepathyQt4/AuthenticationTLSCertificateInterface
 include/telepathy-1.0/TelepathyQt4/AvatarData
 include/telepathy-1.0/TelepathyQt4/AvatarSpec
 include/telepathy-1.0/TelepathyQt4/CapabilitiesBase
@@ -155,6 +156,7 @@ include/telepathy-1.0/TelepathyQt4/PendingOperation
 include/telepathy-1.0/TelepathyQt4/PendingReady
 include/telepathy-1.0/TelepathyQt4/PendingSendMessage
 include/telepathy-1.0/TelepathyQt4/PendingStreamTubeConnection
+include/telepathy-1.0/TelepathyQt4/PendingStreamedMediaStreams
 include/telepathy-1.0/TelepathyQt4/PendingStringList
 include/telepathy-1.0/TelepathyQt4/PendingSuccess
 include/telepathy-1.0/TelepathyQt4/PendingVariant
@@ -186,7 +188,10 @@ include/telepathy-1.0/TelepathyQt4/SimpleTextObserver
 include/telepathy-1.0/TelepathyQt4/StatefulDBusProxy
 include/telepathy-1.0/TelepathyQt4/StatelessDBusProxy
 include/telepathy-1.0/TelepathyQt4/StreamTubeChannel
+include/telepathy-1.0/TelepathyQt4/StreamTubeClient
+include/telepathy-1.0/TelepathyQt4/StreamTubeServer
 include/telepathy-1.0/TelepathyQt4/StreamedMediaChannel
+include/telepathy-1.0/TelepathyQt4/StreamedMediaStream
 include/telepathy-1.0/TelepathyQt4/TextChannel
 include/telepathy-1.0/TelepathyQt4/TubeChannel
 include/telepathy-1.0/TelepathyQt4/Types
@@ -204,6 +209,7 @@ include/telepathy-1.0/TelepathyQt4/_gen/cli-dbus.h
 include/telepathy-1.0/TelepathyQt4/_gen/cli-media-session-handler.h
 include/telepathy-1.0/TelepathyQt4/_gen/cli-media-stream-handler.h
 include/telepathy-1.0/TelepathyQt4/_gen/cli-properties.h
+include/telepathy-1.0/TelepathyQt4/_gen/cli-tls-certificate.h
 include/telepathy-1.0/TelepathyQt4/_gen/constants.h
 include/telepathy-1.0/TelepathyQt4/_gen/types.h
 include/telepathy-1.0/TelepathyQt4/abstract-client.h
@@ -301,17 +307,20 @@ include/telepathy-1.0/TelepathyQt4/simple-observer.h
 include/telepathy-1.0/TelepathyQt4/simple-pending-operations.h
 include/telepathy-1.0/TelepathyQt4/simple-text-observer.h
 include/telepathy-1.0/TelepathyQt4/stream-tube-channel.h
+include/telepathy-1.0/TelepathyQt4/stream-tube-client.h
+include/telepathy-1.0/TelepathyQt4/stream-tube-server.h
 include/telepathy-1.0/TelepathyQt4/streamed-media-channel.h
 include/telepathy-1.0/TelepathyQt4/text-channel.h
+include/telepathy-1.0/TelepathyQt4/tls-certificate.h
 include/telepathy-1.0/TelepathyQt4/tube-channel.h
 include/telepathy-1.0/TelepathyQt4/types.h
 include/telepathy-1.0/TelepathyQt4/utils.h
 lib/libtelepathy-qt4-farsight.so
 lib/libtelepathy-qt4-farsight.so.1
-lib/libtelepathy-qt4-farsight.so.1.0.7.1
+lib/libtelepathy-qt4-farsight.so.1.0.8.0
 lib/libtelepathy-qt4.so
 lib/libtelepathy-qt4.so.1
-lib/libtelepathy-qt4.so.1.0.7.1
+lib/libtelepathy-qt4.so.1.0.8.0
 libdata/pkgconfig/TelepathyQt4.pc
 libdata/pkgconfig/TelepathyQt4Farsight.pc
 @dirrm include/telepathy-1.0/TelepathyQt4/_gen
