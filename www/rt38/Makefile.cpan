@@ -21,7 +21,8 @@ CORE_DEPS=	p5-Encode>=2.21:${PORTSDIR}/converters/p5-Encode \
 			p5-Module-Versions-Report>=1.05:${PORTSDIR}/devel/p5-Module-Versions-Report \
 			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 			p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
-			p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp \
+			${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
+			p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp \
 			p5-Tree-Simple>=1.04:${PORTSDIR}/devel/p5-Tree-Simple \
 			p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
 			p5-DBIx-SearchBuilder>=1.54:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
@@ -98,4 +99,4 @@ SMTP_DEPS=	p5-Net>=1.22:${PORTSDIR}/net/p5-Net
 
 STANDALONE_DEPS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 				p5-HTTP-Server-Simple>=0.34:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-				p5-HTTP-Server-Simple-Mason>=0.09:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
+				p5-HTTP-Server-Simple-Mason>=0.14:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
