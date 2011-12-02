@@ -1164,6 +1164,7 @@
     SUBDIR += p5-RTx-Calendar
     SUBDIR += p5-Reaction
     SUBDIR += p5-Rose-HTML-Objects
+    SUBDIR += p5-Router-Simple
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-SWF-Chart

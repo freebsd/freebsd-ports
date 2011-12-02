@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Router/Simple.pm
+%%SITE_PERL%%/Router/Simple/Cookbook.pod
+%%SITE_PERL%%/Router/Simple/Declare.pm
+%%SITE_PERL%%/Router/Simple/Route.pm
+%%SITE_PERL%%/Router/Simple/SubMapper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Router/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Router/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Router
+@dirrm %%SITE_PERL%%/Router/Simple
+@dirrmtry %%SITE_PERL%%/Router
