@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/sepl
+%%SITE_PERL%%/Sepia/Debug.pm
+%%SITE_PERL%%/Sepia/CPAN.pm
+%%SITE_PERL%%/Sepia/Xref.pm
+%%SITE_PERL%%/Sepia/ReadLine.pm
+%%SITE_PERL%%/Sepia.pm
+%%SITE_PERL%%/mach/auto/Sepia/.packlist
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-cpan.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-ido.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-snippet.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-tree.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-w3m.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia.el
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-cpan.elc
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-ido.elc
+%%EMACS_SITE_LISPDIR%%/sepia/sepia-tree.elc
+%%EMACS_SITE_LISPDIR%%/sepia/sepia.elc
+@dirrm %%SITE_PERL%%/Sepia
+@dirrm %%SITE_PERL%%/mach/auto/Sepia
+@dirrm %%EMACS_SITE_LISPDIR%%/sepia
