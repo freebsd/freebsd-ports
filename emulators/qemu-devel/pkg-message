@@ -92,8 +92,8 @@ FreeBSD host notes
 processing error - resetting ehci HC
 	Assertion failed: (0), function ehci_advance_state, file /data/ports/emulators/qemu-devel/work/qemu-0.15.0/hw/usb-ehci.c, line 2045.
 
-  Starting the same without ehci (-readconfig) works, tho usbredirserver
-  crashes when qemu exits.]
+  Starting the same without ehci (-readconfig) works (may need
+  -usb), tho usbredirserver crashes when qemu exits.]
 
 - Still usb: since the hub is no longer attached to the uchi controller and
   the wakeup mechanism, resume interrupt is not implemented yet linux guests

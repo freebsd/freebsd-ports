@@ -35,18 +35,6 @@ Index: qemu/hw/fdc.c
                  FLOPPY_ERROR("writing sector %d\n", fd_sector(cur_drv));
                  return;
              }
-Index: qemu-0.8.2/hw/pc.c
-@@ -335,8 +336,9 @@ void bochs_bios_write(void *opaque, uint
-         /* LGPL'ed VGA BIOS messages */
-     case 0x501:
-     case 0x502:
-+        /* according to documentation, these can be safely ignored */
-         fprintf(stderr, "VGA BIOS panic, line %d\n", val);
--        exit(1);
-+        break;
-     case 0x500:
-     case 0x503:
- #ifdef DEBUG_BIOS
 Index: qemu-0.8.2/hw/sb16.c
 ===================================================================
 --- qemu-0.8.2.orig/hw/sb16.c	2006-07-22 20:23:34.000000000 +0300
@@ -65,13 +53,13 @@ Index: qemu-0.8.2/hw/sb16.c
  
      return dma_pos;
 Index: qemu/hw/i8259.c
-@@ -302,7 +302,8 @@
+@@ -291,7 +291,8 @@ static void pic_ioport_write(void *opaqu
              s->init4 = val & 1;
              s->single_mode = val & 2;
-             if (val & 0x08)
+             if (val & 0x08) {
 -                hw_error("level sensitive irq not supported");
 +                /* hw_error("level sensitive irq not supported"); */
-+		return;
++                return;
+             }
          } else if (val & 0x08) {
-             if (val & 0x04)
-                 s->poll = 1;
+             if (val & 0x04) {
