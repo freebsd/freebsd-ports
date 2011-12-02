@@ -29,8 +29,9 @@ USE_LDCONFIG=	yes
 # passed to compiler and broken build on HEAD since r221320 when option
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
 # fixed upstream across all versions (including legacy ones), use this
-# hack below to universally set NVIDIA_ROOT.
-MAKE_ENV=	NVIDIA_ROOT=${WRKSRC}
+# hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
+# since it is going away from `Mk/bsd.port.mk' as deprecated.
+MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
