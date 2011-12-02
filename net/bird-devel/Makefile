@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	20111201
+PORTVERSION=	20111202
 CATEGORIES=	net
 MASTER_SITES=	http://bird.mpls.in/distfiles/bird/
 PKGNAMESUFFIX=	-devel
