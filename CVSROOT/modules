@@ -3350,6 +3350,7 @@ fdm                             ports/mail/fdm
 fdmf                            ports/audio/fdmf
 fdupes                          ports/sysutils/fdupes
 feappv                          ports/cad/feappv
+feather                         ports/sysutils/feather
 feedjack                        ports/www/feedjack
 feedonfeeds                     ports/www/feedonfeeds
 feh                             ports/graphics/feh
@@ -10545,6 +10546,7 @@ openvpn-beta                    ports/security/openvpn-beta
 openvpn-devel                   ports/security/openvpn-devel
 openvpn20                       ports/security/openvpn20
 openvrml                        ports/www/openvrml
+openvswitch                     ports/net/openvswitch
 openwebmail                     ports/mail/openwebmail
 openwince-include               ports/devel/openwince-include
 openx                           ports/www/openx
@@ -13949,6 +13951,7 @@ p5-SHA                          ports/security/p5-SHA
 p5-SMS-SMS77                    ports/comms/p5-SMS-SMS77
 p5-SMS-Send                     ports/comms/p5-SMS-Send
 p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
+p5-SMS-Send-NexmoUnicode        ports/comms/p5-SMS-Send-NexmoUnicode
 p5-SMS-Send-TW-HiAir            ports/comms/p5-SMS-Send-TW-HiAir
 p5-SMS-Send-TW-PChome           ports/comms/p5-SMS-Send-TW-PChome
 p5-SMS-Send-TW-Qma              ports/comms/p5-SMS-Send-TW-Qma
@@ -18484,6 +18487,7 @@ p5-slurp                        ports/devel/p5-Slurp
 p5-smart-comments               ports/devel/p5-Smart-Comments
 p5-sms-send                     ports/comms/p5-SMS-Send
 p5-sms-send-devicegsm           ports/comms/p5-SMS-Send-DeviceGsm
+p5-sms-send-nexmounicode        ports/comms/p5-SMS-Send-NexmoUnicode
 p5-sms-send-tw-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
 p5-sms-send-tw-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-sms-send-tw-hiair            ports/comms/p5-SMS-Send-TW-HiAir
@@ -24351,6 +24355,7 @@ scanbuttond                     ports/sysutils/scanbuttond
 scandoc                         ports/devel/scandoc
 scanhill                        ports/security/scanhill
 scanlogd                        ports/security/scanlogd
+scannedonly                     ports/security/scannedonly
 scanssh                         ports/security/scanssh
 scantailor                      ports/graphics/scantailor
 scapy                           ports/net/scapy
