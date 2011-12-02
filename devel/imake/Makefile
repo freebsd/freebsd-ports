@@ -44,7 +44,7 @@ post-patch:
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
 .if defined(CC) && ${CC} == "clang"
-RUN_DEPENDS+=	ucpp:{PORTSDIR}/devel/ucpp
+RUN_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP="ucpp -s"
 
 post-build:
