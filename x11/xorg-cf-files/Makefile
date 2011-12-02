@@ -16,8 +16,14 @@ LICENSE=	MIT
 
 XORG_CAT=	util
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 		@${REINPLACE_CMD} 's|\(define ExtraXaw[^ ]*\) [$$].*|\1 /**/|' \
 			${WRKSRC}/X11.tmpl
+.if defined(CC) && ${CC} == "clang"
+		${REINPLACE_CMD} -e 's|/usr/bin/cpp|${LOCALBASE}/bin/ucpp|' \
+			-e 's|-traditional|-s|' ${WRKSRC}/FreeBSD.cf
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
