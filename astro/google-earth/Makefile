@@ -48,6 +48,10 @@ IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x
 IGNORE=	needs non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f10 and OVERRIDE_LINUX_NONBASE_PORTS=f10)
 .endif
 
+.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILES} ${WRKSRC}
