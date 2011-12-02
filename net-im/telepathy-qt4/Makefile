@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -29,10 +28,10 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO html
+PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 
-PORTEXAMPLES=	Makefile accounts contact-messenger \
-		extensions file-transfer protocols roster
+PORTEXAMPLES=	Makefile accounts contact-messenger extensions \
+		file-transfer protocols roster stream-tubes
 
 pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
