@@ -89,7 +89,7 @@ include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
-lib/libavcodec.so.52.122.0
+lib/libavcodec.so.52.123.0
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.1
@@ -101,7 +101,7 @@ lib/libavfilter.so.1
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.1
-lib/libavformat.so.52.110.0
+lib/libavformat.so.52.111.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.1
