@@ -178,7 +178,6 @@
     SUBDIR += grepmail
     SUBDIR += greyfix
     SUBDIR += greylite
-    SUBDIR += gtray
     SUBDIR += gubby
     SUBDIR += hashcash
     SUBDIR += hbiff

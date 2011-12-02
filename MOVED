@@ -3001,3 +3001,4 @@ japanese/zope-jamailhost||2011-11-27|Has expired: Zope has changed MailHost spec
 japanese/pycodec||2011-11-27|Has expired: Handled in Python-2.4 upwards
 net-im/py-turpial||2011-11-28|Renamed to net-im/turpial
 databases/p5-Mysql-Diff|databases/p5-MySQL-Diff|2011-11-28|Move to a better place via repocopy
+mail/gtray||2011-12-02|Has expired: Upcoming ruby-gnome update removes dependencies
