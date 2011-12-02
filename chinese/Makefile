@@ -82,6 +82,7 @@
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += oicq
+    SUBDIR += opencc
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
     SUBDIR += oxim

@@ -1,0 +1,29 @@
+bin/opencc
+bin/opencc_dict
+include/opencc/opencc.h
+include/opencc/opencc_types.h
+include/opencc/openccxx.h
+lib/libopencc.a
+lib/libopencc.so
+lib/libopencc.so.1
+lib/libopencc.so.1.0.0
+libdata/pkgconfig/opencc.pc
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/opencc.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/opencc.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/opencc.mo
+%%DATADIR%%/mix2zhs.ini
+%%DATADIR%%/mix2zht.ini
+%%DATADIR%%/simp_to_trad_characters.ocd
+%%DATADIR%%/simp_to_trad_phrases.ocd
+%%DATADIR%%/trad_to_simp_characters.ocd
+%%DATADIR%%/trad_to_simp_phrases.ocd
+%%DATADIR%%/zhs2zht.ini
+%%DATADIR%%/zht2zhs.ini
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+@dirrm %%DATADIR%%
+@dirrm include/opencc
