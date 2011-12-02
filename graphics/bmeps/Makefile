@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bmeps
-PORTVERSION=	2.2.20a
+PORTVERSION=	2.2.22
 CATEGORIES=	graphics perl5
-MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION:S,a,,}
+MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
 
 MAINTAINER=	rfarmer@predatorlabs.net
@@ -24,10 +24,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 USE_ZIP=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf
 
 MAKE_ARGS=	bmeps
-WRKSRC=		${WRKDIR}/${DISTNAME:S,a,,}
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
@@ -42,7 +40,7 @@ MAN1=		bmeps.1
 do-install:
 	@${MKDIR}		${DATADIR}
 	@${INSTALL_PROGRAM}	${WRKSRC}/bmeps					${PREFIX}/bin
-	@${INSTALL_MAN}		${WRKSRC}/man/man1/bmeps.1			${PREFIX}/man/man1
+	@${INSTALL_MAN}		${WRKSRC}/man/man1/bmeps.1			${MANPREFIX}/man/man1
 	@${INSTALL_DATA}	${WRKSRC}/bmeps.str				${DATADIR}
 	@${INSTALL_DATA}	${WRKSRC}/share/dktools/en/bmeps.stt.bz2	${DATADIR}
 	@${INSTALL_DATA}	${WRKSRC}/share/dktools/en/bmeps.txt		${DATADIR}
