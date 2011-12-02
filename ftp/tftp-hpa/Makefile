@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tftp-hpa
-PORTVERSION=	0.49
+PORTVERSION=	5.1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/network/tftp
@@ -17,6 +17,7 @@ COMMENT=	An advanced tftp server
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	tftpd
 
 PLIST_FILES=	bin/tftp \
 		libexec/in.tftpd
@@ -36,6 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,SBINDIR,LIBEXECDIR,g' \
 	    ${WRKSRC}/tftpd/Makefile
 	@${REINPLACE_CMD} -e 's,LOG_DAEMON,LOG_FTP,g' \
+	    -e 's,openlog(,tzset();openlog(,g' \
 	    ${WRKSRC}/tftpd/tftpd.c
 
 .ifdef PORTDOCS

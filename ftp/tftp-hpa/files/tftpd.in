@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: tftpd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable tftpd:
+#
+# tftpd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="tftpd"
+rcvar=`set_rcvar`
+pidfile=${tftpd_pidfile:-"/var/run/tftpd.pid"}
+command="%%PREFIX%%/libexec/in.tftpd"
+command_args="-P $pidfile -l"
+
+load_rc_config $name
+: ${tftpd_enable:="NO"}
+: ${tftpd_flags:="-s %%PREFIX%%/tftp"}
+
+run_rc_command "$1"
