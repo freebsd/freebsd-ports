@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	json_pure
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
