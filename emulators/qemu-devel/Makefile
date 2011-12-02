@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.15.1
+PORTVERSION=	1.0
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
 		http://wiki.qemu.org/download/:release \
@@ -26,6 +26,7 @@ COMMENT=	QEMU CPU Emulator - development version
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
+USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 MAN1=		qemu.1 qemu-img.1
@@ -41,7 +42,7 @@ OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		SASL "cyrus-sasl dependency (vnc encryption)" On \
 		JPEG "jpeg dependency (vnc lossy compression)" On \
 		PNG "png dependency (vnc compression)" On \
-		GA "glib20 dependency (guest agent)" On \
+		GA "python build dependency (guest agent)" On \
 		CURL "libcurl dependency (remote images)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		PCAP "pcap dependency (networking with bpf)" On \
@@ -121,7 +122,6 @@ CONFIGURE_ARGS+=	--disable-guest-agent --python="${NONEXISTENT}"
 PLIST_SUB+=	GA="@comment "
 .else
 USE_PYTHON_BUILD=	yes
-USE_GNOME+=	glib20
 PLIST_SUB+=	GA=""
 .endif
 

@@ -1,16 +1,16 @@
 --- configure.orig	2010-01-29 14:36:00.000000000 -0500
 +++ configure	2010-01-29 14:36:00.000000000 -0500
-@@ -180,6 +180,9 @@ smartcard_nss=""
- usb_redir=""
- opengl=""
+@@ -185,6 +185,9 @@ opengl=""
+ zlib="yes"
  guest_agent="yes"
+ libiscsi=""
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # parse CC options first
  for opt do
-@@ -611,6 +614,8 @@ for opt do
+@@ -638,6 +641,8 @@ for opt do
    ;;
    --enable-vnc-thread) vnc_thread="yes"
    ;;
@@ -19,7 +19,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-uuid) uuid="no"
-@@ -1438,6 +1443,49 @@ EOF
+@@ -1529,6 +1534,49 @@ EOF
  fi
  
  ##########################################
@@ -69,8 +69,8 @@
  # VNC TLS detection
  if test "$vnc" = "yes" -a "$vnc_tls" != "no" ; then
    cat > $TMPC <<EOF
-@@ -2797,6 +2845,15 @@ fi
- if test $profiler = "yes" ; then
+@@ -2950,6 +2998,15 @@ fi
+ if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
 +if test "$pcap" = "yes" ; then
@@ -84,7 +84,7 @@
 +fi
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
-   QEMU_INCLUDES="-I\$(SRC_PATH)/slirp $QEMU_INCLUDES"
+   echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
 Index: net.c
 @@ -37,6 +37,11 @@
  #include "hw/qdev.h"
@@ -175,7 +175,7 @@ Index: net.c
 +#endif
 +    int i;
 +
-+    s = qemu_mallocz(sizeof(PCAPState));
++    s = g_malloc0(sizeof(PCAPState));
 +    nc = qemu_new_net_client(&net_pcap_info, vlan, NULL, model, name);
 +
 +    s = DO_UPCAST(PCAPState, nc, nc);
@@ -299,7 +299,7 @@ Index: net.c
 +    if (s) {
 +        if (s->handle)
 +            pcap_close(s->handle);
-+        qemu_free(s);
++        g_free(s);
 +    }
 +
 +    return -1;

@@ -1,10 +1,11 @@
-bin/qemu
 %%GA%%bin/qemu-ga
 bin/qemu-img
 bin/qemu-io
 bin/qemu-nbd
+bin/qemu-system-alpha
 bin/qemu-system-arm
 bin/qemu-system-cris
+bin/qemu-system-i386
 bin/qemu-system-lm32
 bin/qemu-system-m68k
 bin/qemu-system-microblaze
@@ -26,6 +27,8 @@ bin/qemu-system-sparc64
 %%ALLTARGETS%%bin/qemu-sparc64
 %%ALLTARGETS%%bin/qemu-x86_64
 bin/qemu-system-x86_64
+bin/qemu-system-xtensa
+bin/qemu-system-xtensaeb
 @unexec if cmp -s %D/etc/qemu-ifup.sample %D/etc/qemu-ifup; then rm -f %D/etc/qemu-ifup; fi
 etc/qemu-ifup.sample
 @exec if [ ! -f %D/etc/qemu-ifup ] ; then cp -p %D/%F %B/qemu-ifup; fi
@@ -42,6 +45,7 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/vgabios-qxl.bin
 %%DATADIR%%/vgabios-stdvga.bin
 %%DATADIR%%/vgabios-vmware.bin
+%%DATADIR%%/palcode-clipper
 %%DATADIR%%/ppc_rom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
