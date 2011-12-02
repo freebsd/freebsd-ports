@@ -215,6 +215,7 @@ include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
 include/wine/windows/dinput.h
+include/wine/windows/dinputd.h
 include/wine/windows/dispdib.h
 include/wine/windows/dispex.h
 include/wine/windows/dispex.idl
