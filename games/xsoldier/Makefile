@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsoldier
-PORTVERSION=	1.5
+PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 
