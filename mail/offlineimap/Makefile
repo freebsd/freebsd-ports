@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	offlineimap
-DISTVERSION=	6.3.4
+DISTVERSION=	6.4.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.github.com/ \
 		http://dist.codelabs.ru/fbsd/offlineimap/ \
@@ -27,8 +27,8 @@ WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
 SUB_FILES=	pkg-message
 
 GITHUB_USER=	nicolas33
-GITHUB_VER_SUFX=	0-g61e50b3
-GITHUB_SRC_SUFX=	94450e9
+GITHUB_VER_SUFX=	0-gc1120c9
+GITHUB_SRC_SUFX=	b1bff15
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
