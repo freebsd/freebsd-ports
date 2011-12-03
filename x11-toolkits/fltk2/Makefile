@@ -10,10 +10,16 @@ PORTVERSION=	2.0.${SNAPSHOT}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
-DISTNAME=	fltk-2.0.x-${SNAPSHOT}
+DISTNAME=	fltk-2.0.x-alpha-${SNAPSHOT}
 
-MAINTAINER=	tmseck@web.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Fast Light Toolkit version 2 (development snapshot)
+
+LICENSE=	FLTK
+LICENSE_GROUPS=	GPL
+LICENSE_NAME=	FLTK License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # XXX:
 # FLTK2's configure script tries to find out whether the running X server
@@ -28,7 +34,7 @@ BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-SNAPSHOT=	r7725
+SNAPSHOT=	r9166
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
@@ -43,12 +49,6 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_XORG=	xcursor xft xi
 GNU_CONFIGURE=	yes
-
-LICENSE=	FLTK
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_GROUPS=	GPL
-LICENSE_NAME=	FLTK License
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -84,15 +84,28 @@ CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
 .if defined(WITH_FLTK_EXAMPLES) && !defined (NOPORTEXAMPLES)
-example_apps=	ansiwidget arc bitmap boxtype browser button buttons cairo \
-		checkers clock color_chooser cube CubeView cursor curve \
-		demo doublebuffer drawing drawtiming editor exception \
-		file_chooser fonts fractals fullscreen gl_overlay glpuzzle \
-		hello image inactive input keyboard label line_style list \
-		list_visuals mandelbrot menu message monitors navigation \
-		output pack pixmap progress qubix radio resizable resizealign \
-		scroll shape sizes symbols tabs threads tile timer \
-		utf valuators wizard
+example_apps=	ansiwidget arc \
+		bitmap boxtype browser button buttons \
+		cairo callbacks checkers clock color_chooser cube \
+		CubeView cursor curve \
+		demo doublebuffer drawing drawtiming \
+		editor exception \
+		file_chooser fonts fractals fullscreen \
+		gl_overlay glpuzzle \
+		hello \
+		image image_transform inactive input \
+		keyboard \
+		label line_style list list_visuals \
+		mandelbrot menu message monitors \
+		navigation \
+		output \
+		pack pixmap progress \
+		qubix \
+		radio resizable resizealign \
+		scroll shape sizes subwindow symbols \
+		tabs threads tile timer \
+		utf \
+		valuators wizard
 example_data=	demo.menu
 example_img=	images/ulon.bmp
 PORTEXAMPLES=	*
