@@ -7,6 +7,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -34,7 +35,7 @@ BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux
 
 USE_GNOME=	gconf2 gtk20
-USE_GSTREAMER=	python
+USE_GSTREAMER=	python gconf
 USE_GETTEXT=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
