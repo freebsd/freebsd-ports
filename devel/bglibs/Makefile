@@ -7,6 +7,7 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.106
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
@@ -28,6 +29,9 @@ USE_LDCONFIG=	${BGLIBS_LIB}
 
 DOCS=		NEWS README TODO doc/html/*
 MAN1=		cli-generate.1
+
+post-patch:
+	${REINPLACE_CMD} '/main/s/void/int/' ${WRKSRC}/sys/try*.c
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
