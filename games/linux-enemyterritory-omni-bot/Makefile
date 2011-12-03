@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.710
-PORTREVISION=	1
+PORTVERSION=	0.810
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	http://www.omni-bot.com/forum/downloads/
 PKGNAMEPREFIX=	linux-enemyterritory-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
+DISTNAME=	Omni-bot_0.81_ET_Linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
@@ -43,9 +41,10 @@ do-install:
 	${CP} -R ${WRKSRC}/omni-bot/* ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+
+post-install:
+	@if [ ! -f ${DATADIR}/et/user/omni-bot.cfg ]; then \
+		${CP} -p ${DATADIR}/et/user/omni-bot.txt ${DATADIR}/et/user/omni-bot.cfg ; \
+	fi
 
 .include <bsd.port.mk>
