@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=--enable-threads --enable-dynamic-ssl-lib --enable-sctp
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	ERTS_VSN=${ERTS_VSN} TOOLS_VSN=${TOOLS_VSN}
+PLIST_SUB+=	TOOLS_VSN=${TOOLS_VSN}
 
 .if ${ARCH} == i386
 MAKE_ARGS+=	ARCH=x86
