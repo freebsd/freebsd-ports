@@ -2,6 +2,7 @@
 @unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml; fi
 @unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties; fi
 @unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties; fi
+@unexec if cmp -s %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml.%%CONF_EXT%%; then rm -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml; fi
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/XmlSchema-1.4.7.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/XmlSchema-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/activation-1.1.jar
@@ -117,13 +118,13 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-2.3.0.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%%
-@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy; fi
+@exec if [ ! -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy ]; then cp %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy.%%CONF_EXT%% %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.policy; fi
 %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%%
-@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml; fi
+@exec if [ ! -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml ]; then cp %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml.%%CONF_EXT%% %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/axis2.xml; fi
 %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%%
-@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties; fi
+@exec if [ ! -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties ]; then cp %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties.%%CONF_EXT%% %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/commons-logging.properties; fi
 %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%%
-@exec if [ ! -f %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties ]; then cp %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%% %%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties; fi
+@exec if [ ! -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties ]; then cp %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties.%%CONF_EXT%% %D%/%%APPHOME%%/webapps/axis2/WEB-INF/conf/log4j.properties; fi
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/LICENSE
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/NOTICE
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/commons-logging.properties
@@ -131,7 +132,8 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/transport/http/AxisAdminServlet.class
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AdminAgent.class
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/org/apache/axis2/webapp/AxisAdminServlet.class
-%%APPHOME%%/webapps/axis2/WEB-INF/web.xml
+%%APPHOME%%/webapps/axis2/WEB-INF/web.xml.%%CONF_EXT%%
+@exec if [ ! -f %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml ]; then cp %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml.%%CONF_EXT%% %D%/%%APPHOME%%/webapps/axis2/WEB-INF/web.xml; fi
 %%APPHOME%%/webapps/axis2/axis2-web/ActivateService.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/EngageToServiceGroup.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/Error/AuthError.html
@@ -183,7 +185,6 @@
 %%APPHOME%%/webapps/axis2/axis2-web/viewServiceContext.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/viewServiceGroupContext.jsp
 %%APPHOME%%/webapps/axis2/axis2-web/viewphases.jsp
-%%APPHOME%%/webapps/axis2/build.xml
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/addressing-1.6.1.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/mex-1.6.1.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/modules.list
