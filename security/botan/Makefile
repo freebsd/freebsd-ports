@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.8.11
+PORTVERSION=	1.8.13
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
@@ -57,8 +57,10 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-tr1-implementation=none
 .endif
 
-.if defined(NOPORTDOCS)
 post-patch:
+	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
+			${WRKSRC}/configure.py
+.if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/$$(MKDIR_INSTALL) $$(DOCDIR)/d' \
 			-e '/$$(INSTALL_CMD_DATA) $$$$i $$(DOCDIR); /d' \
 			${WRKSRC}/src/build-data/makefile/unix_shr.in
