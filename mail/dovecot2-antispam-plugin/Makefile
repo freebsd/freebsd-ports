@@ -7,14 +7,15 @@
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20101222
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 DISTFILES=	dovecot-antispam-plugin-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dsh@bamus.cz
-COMMENT=	The dovecot 2.x plugin for spam systems training.
+COMMENT=	The dovecot 2.x plugin for spam systems training
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2 \
 		gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2
 
