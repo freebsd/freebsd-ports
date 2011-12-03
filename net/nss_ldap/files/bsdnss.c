@@ -1,9 +1,11 @@
 #include <errno.h>
+#include <stdlib.h>
 #include <sys/param.h>
 #include <netinet/in.h>
 #include <pwd.h>
 #include <grp.h>
 #include <nss.h>
+#include <nsswitch.h>
 #include <netdb.h>
 
 extern enum nss_status _nss_ldap_getgrent_r(struct group *, char *, size_t,
@@ -14,6 +16,8 @@ extern enum nss_status _nss_ldap_getgrgid_r(gid_t gid, struct group *, char *,
     size_t, int *);
 extern enum nss_status _nss_ldap_setgrent(void);
 extern enum nss_status _nss_ldap_endgrent(void);
+extern enum nss_status _nss_ldap_initgroups_dyn(const char *, gid_t, long int *,
+			   long int *, gid_t **, long int, int *);
 
 extern enum nss_status _nss_ldap_getpwent_r(struct passwd *, char *, size_t,
     int *);
@@ -40,6 +44,7 @@ NSS_METHOD_PROTOTYPE(__nss_compat_getgrgid_r);
 NSS_METHOD_PROTOTYPE(__nss_compat_getgrent_r);
 NSS_METHOD_PROTOTYPE(__nss_compat_setgrent);
 NSS_METHOD_PROTOTYPE(__nss_compat_endgrent);
+static NSS_METHOD_PROTOTYPE(__freebsd_getgroupmembership);
 
 NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
 NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
@@ -57,6 +62,7 @@ static ns_mtab methods[] = {
 { NSDB_GROUP, "getgrent_r", __nss_compat_getgrent_r, _nss_ldap_getgrent_r },
 { NSDB_GROUP, "setgrent",   __nss_compat_setgrent,   _nss_ldap_setgrent },
 { NSDB_GROUP, "endgrent",   __nss_compat_endgrent,   _nss_ldap_endgrent },
+{ NSDB_GROUP, "getgroupmembership",  __freebsd_getgroupmembership, NULL },
 
 { NSDB_PASSWD, "getpwnam_r", __nss_compat_getpwnam_r, _nss_ldap_getpwnam_r },
 { NSDB_PASSWD, "getpwuid_r", __nss_compat_getpwuid_r, _nss_ldap_getpwuid_r },
@@ -155,4 +161,59 @@ int __nss_compat_gethostbyaddr(void *retval, void *mdata, va_list ap)
 	status = __nss_compat_result(status,errnop);
 	h_errno = h_errnop;
 	return (status);
+}
+
+static int
+__gr_addgid(gid_t gid, gid_t *groups, int maxgrp, int *groupc)
+{
+	int	ret, dupc;
+
+	/* skip duplicates */
+	for (dupc = 0; dupc < MIN(maxgrp, *groupc); dupc++) {
+		if (groups[dupc] == gid)
+			return 1;
+	}
+
+	ret = 1;
+	if (*groupc < maxgrp)			/* add this gid */
+		groups[*groupc] = gid;
+	else
+		ret = 0;
+	(*groupc)++;
+	return ret;
+}
+
+static int __freebsd_getgroupmembership(void *retval, void *mdata, va_list ap)
+{
+	int err;
+	enum nss_status s;
+	const char *user 	= va_arg(ap, const char *);
+	gid_t group 		= va_arg(ap, gid_t);
+	gid_t *groups 		= va_arg(ap, gid_t *);
+	int limit 		= va_arg(ap, int);
+	int *size 		= va_arg(ap, int*);
+	gid_t *tmpgroups;
+	long int lstart, lsize;
+	int i;
+
+	tmpgroups = malloc(limit * sizeof(gid_t));
+	if (tmpgroups == NULL)
+		return NS_TRYAGAIN;
+
+	/* insert primary membership */
+	__gr_addgid(group, groups, limit, size);
+
+	lstart = 0;
+	lsize = limit;
+	s = _nss_ldap_initgroups_dyn(user, group, &lstart, &lsize,
+		&tmpgroups, 0, &err);
+	if (s == NSS_STATUS_SUCCESS) {
+		for (i = 0; i < lstart; i++)
+			 __gr_addgid(tmpgroups[i], groups, limit, size);
+		s = NSS_STATUS_NOTFOUND;
+	}
+
+	free(tmpgroups);
+
+	return __nss_compat_result(s, err);
 }
