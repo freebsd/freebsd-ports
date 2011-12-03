@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtg
-PORTVERSION=	0.2.4
-PORTREVISION=	5
+PORTVERSION=	0.2.5
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/0.2/${PORTVERSION}/+download/
 
@@ -17,9 +16,9 @@ COMMENT=	GTD organizer for the GNOME desktop environment
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
 		xset:${PORTSDIR}/x11/xset
 
 FETCH_ARGS=	-pRr

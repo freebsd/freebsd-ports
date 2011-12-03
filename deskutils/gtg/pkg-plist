@@ -1,3 +1,4 @@
+bin/downgrade-gtg-0.2.9.py
 bin/gtg
 bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/__init__.py
