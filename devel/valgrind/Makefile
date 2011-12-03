@@ -7,15 +7,11 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-.if ${PORTREVISION} > 0
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-${PORTREVISION}
-.else
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
-.endif
+DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
