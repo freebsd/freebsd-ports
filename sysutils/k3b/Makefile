@@ -55,7 +55,7 @@ showinfo:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900044
+.if ${OSVERSION} >= 900044
 BROKEN=		does not compile on FreeBSD 9.X
 .endif
 
