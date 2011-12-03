@@ -5112,7 +5112,6 @@ gtodo                           ports/deskutils/gtodo
 gtoolkit                        ports/x11-toolkits/gtoolkit
 gtorrentviewer                  ports/net-p2p/gtorrentviewer
 gtranslator                     ports/devel/gtranslator
-gtray                           ports/mail/gtray
 gts                             ports/graphics/gts
 gtstarter                       ports/x11/gtstarter
 gtubeclock                      ports/x11-clocks/gtubeclock
@@ -13938,6 +13937,7 @@ p5-Rose-DateTime                ports/devel/p5-Rose-DateTime
 p5-Rose-HTML-Objects            ports/www/p5-Rose-HTML-Objects
 p5-Rose-Object                  ports/devel/p5-Rose-Object
 p5-Rose-URI                     ports/net/p5-Rose-URI
+p5-Router-Simple                ports/www/p5-Router-Simple
 p5-RunApp                       ports/devel/p5-RunApp
 p5-S3                           ports/net/p5-S3
 p5-SAVI-Perl                    ports/security/p5-SAVI-Perl
@@ -14046,6 +14046,7 @@ p5-Search-Xapian                ports/databases/p5-Search-Xapian
 p5-Sendmail-AccessDB            ports/mail/p5-Sendmail-AccessDB
 p5-Sendmail-Milter              ports/mail/p5-Sendmail-Milter
 p5-Senna                        ports/textproc/p5-Senna
+p5-Sepia                        ports/devel/p5-Sepia
 p5-Server-Starter               ports/net/p5-Server-Starter
 p5-Set-Array                    ports/devel/p5-Set-Array
 p5-Set-ConsistentHash           ports/devel/p5-Set-ConsistentHash
@@ -18396,6 +18397,7 @@ p5-rose-dbx-object-renderer     ports/databases/p5-Rose-DBx-Object-Renderer
 p5-rose-html-objects            ports/www/p5-Rose-HTML-Objects
 p5-rose-object                  ports/devel/p5-Rose-Object
 p5-rose-uri                     ports/net/p5-Rose-URI
+p5-router-simple                ports/www/p5-Router-Simple
 p5-rpc-simple                   ports/net/p5-RPC-Simple
 p5-rpc-xml                      ports/net/p5-RPC-XML
 p5-rpm-build-perl               ports/devel/p5-rpm-build-perl
@@ -18442,6 +18444,7 @@ p5-self-init                    ports/devel/p5-self-init
 p5-sendmail-accessdb            ports/mail/p5-Sendmail-AccessDB
 p5-sendmail-milter              ports/mail/p5-Sendmail-Milter
 p5-senna                        ports/textproc/p5-Senna
+p5-sepia                        ports/devel/p5-Sepia
 p5-server-starter               ports/net/p5-Server-Starter
 p5-ses                          ports/mail/p5-SES
 p5-set-array                    ports/devel/p5-Set-Array
@@ -21777,6 +21780,7 @@ py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
 py-blockdiag                    ports/graphics/py-blockdiag
+py-blockdiagcontrib-cisco       ports/graphics/py-blockdiagcontrib-cisco
 py-blogofile                    ports/www/py-blogofile
 py-boto                         ports/devel/py-boto
 py-boto-devel                   ports/devel/py-boto-devel
@@ -28085,6 +28089,7 @@ zh-msttf                        ports/chinese/msttf
 zh-muni                         ports/chinese/muni
 zh-mutt                         ports/chinese/mutt
 zh-oicq                         ports/chinese/oicq
+zh-opencc                       ports/chinese/opencc
 zh-opendesktop-fonts            ports/chinese/opendesktop-fonts
 zh-oto                          ports/chinese/oto
 zh-oxim                         ports/chinese/oxim
