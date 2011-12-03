@@ -1,6 +1,7 @@
 %%SITE_PERL%%/PocketIO.pm
 %%SITE_PERL%%/PocketIO/Broadcast.pm
 %%SITE_PERL%%/PocketIO/Connection.pm
+%%SITE_PERL%%/PocketIO/Exception.pm
 %%SITE_PERL%%/PocketIO/Handle.pm
 %%SITE_PERL%%/PocketIO/Message.pm
 %%SITE_PERL%%/PocketIO/Pool.pm
