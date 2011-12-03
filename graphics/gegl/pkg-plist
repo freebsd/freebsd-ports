@@ -265,10 +265,12 @@ lib/gegl-0.1/write-buffer.la
 lib/gegl-0.1/write-buffer.so
 lib/gegl-0.1/xor.la
 lib/gegl-0.1/xor.so
+lib/girepository-1.0/Gegl-0.1.typelib
 lib/libgegl-0.1.la
 lib/libgegl-0.1.so
 lib/libgegl-0.1.so.%%GEGL_MINOR%%
 libdata/pkgconfig/gegl.pc
+share/gir-1.0/Gegl-0.1.gir
 %%PORTDOCS%%share/gtk-doc/html/gegl/api.html
 %%PORTDOCS%%share/gtk-doc/html/gegl/brightness-contrast.c.html
 %%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-area-filter.h.html

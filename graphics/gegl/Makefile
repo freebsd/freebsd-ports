@@ -7,12 +7,14 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
     		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
