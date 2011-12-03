@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -48,5 +48,8 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Utility.3 \
 		Excel::Writer::XLSX::Workbook.3 \
 		Excel::Writer::XLSX::Worksheet.3
+
+post-extract:
+	@${RM} ${WRKSRC}/._Makefile.PL
 
 .include <bsd.port.mk>
