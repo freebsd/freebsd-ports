@@ -5,6 +5,7 @@
 #
 # PROVIDE: mrtg_daemon
 # REQUIRE: DAEMON bsnmpd snmpd
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
