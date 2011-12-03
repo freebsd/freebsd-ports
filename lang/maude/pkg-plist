@@ -1,6 +1,8 @@
 bin/maude
+%%FULL_MAUDE%%%%DATADIR%%/full-maude%%FULL_MAUDE_VER%%.maude
 %%DATADIR%%/linear.maude
 %%DATADIR%%/machine-int.maude
+%%DATADIR%%/metaInterpreter.maude
 %%DATADIR%%/model-checker.maude
 %%DATADIR%%/prelude.maude
 %%DATADIR%%/socket.maude
