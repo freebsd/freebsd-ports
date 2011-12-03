@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.8.5
-TOOLS_VSN=	2.6.6.4
+TOOLS_VSN=	2.6.6.5
 OTP_LIBS=	appmon-2.1.13 \
 		asn1-1.6.18 \
 		common_test-1.5.5 \
