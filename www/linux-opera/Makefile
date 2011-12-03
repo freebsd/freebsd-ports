@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -28,7 +29,7 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_XZ=		yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	aspell naslibs png xorglibs
+USE_LINUX_APPS=	naslibs png xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GNOME=	desktopfileutils
 WANT_GNOME=	yes
