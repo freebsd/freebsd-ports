@@ -461,6 +461,7 @@
     SUBDIR += linux-enemyterritory-etpro
     SUBDIR += linux-enemyterritory-etpub
     SUBDIR += linux-enemyterritory-fortress
+    SUBDIR += linux-enemyterritory-jaymod
     SUBDIR += linux-enemyterritory-omni-bot
     SUBDIR += linux-enemyterritory-omni-bot-0660
     SUBDIR += linux-enemyterritory-shrub
