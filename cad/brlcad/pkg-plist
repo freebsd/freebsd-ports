@@ -3,6 +3,7 @@
 bin/3dm-g
 bin/a-d
 bin/alias-pix
+bin/aliastorle
 bin/all_sf
 bin/anim_cascade
 bin/anim_fly
@@ -18,11 +19,13 @@ bin/anim_track
 bin/anim_turn
 bin/any-png.sh
 bin/ap-pix
+bin/applymap
 bin/archer
 bin/asc-nmg
 bin/asc-pl
 bin/asc2g
 bin/asc2pix
+bin/avg4
 bin/azel
 bin/bary
 bin/benchmark
@@ -69,20 +72,22 @@ bin/cad_boundp
 bin/cad_parea
 bin/cadbug.sh
 bin/canonize
-bin/cat-fb
 bin/cell-fb
 bin/chan_add
 bin/chan_mult
 bin/chan_permute
 bin/clutter
 bin/cmap-fb
+bin/cmp.sh
 bin/coil
 bin/comgeom-g
 bin/contours
 bin/conv-vg2g
 bin/conversion.sh
 bin/cray.sh
+bin/crop
 bin/csgbrep
+bin/cubitorle
 bin/cv
 bin/cy-g
 bin/d-a
@@ -122,6 +127,7 @@ bin/exppp
 bin/f-d
 bin/f-i
 bin/facetall.sh
+bin/fant
 bin/fast4-g
 bin/fb-bw
 bin/fb-cmap
@@ -161,6 +167,7 @@ bin/fhor
 bin/firpass
 bin/fix_polysolids
 bin/g-acad
+bin/g-dot
 bin/g-dxf
 bin/g-egg
 bin/g-euclid
@@ -185,7 +192,9 @@ bin/gastank
 bin/gencolor
 bin/gif-fb
 bin/gif2fb
+bin/giftorle
 bin/globe
+bin/graytorle
 bin/halftone
 bin/handle
 bin/hex
@@ -199,9 +208,10 @@ bin/imgdims
 bin/imod
 bin/indent.sh
 bin/intaval-g.py
+bin/into
 bin/ir-X
-bin/ir-sgi
 bin/irdisp
+bin/isst
 bin/istats
 bin/jack-g
 bin/kurt
@@ -211,6 +221,9 @@ bin/loop
 bin/lowp
 bin/mac-pix
 bin/masonry
+bin/mcut
+bin/menger
+bin/mergechan
 bin/metaball
 bin/mged
 bin/mged.sh
@@ -228,6 +241,7 @@ bin/obj-g
 bin/off-g
 bin/orle-fb
 bin/orle-pix
+bin/painttorle
 bin/patch-g
 bin/picket_fence
 bin/pipe
@@ -312,13 +326,58 @@ bin/poly-bot
 bin/pp-fb
 bin/proe-g
 bin/pyramid
+bin/pyrmask
 bin/random
 bin/rawbot
+bin/rawtorle
 bin/remapid
 bin/remrt
+bin/repos
 bin/reshoot
+bin/ringworld
 bin/rle-fb
 bin/rle-pix
+bin/rleClock
+bin/rleaddcom
+bin/rlebg
+bin/rlebox
+bin/rlecat
+bin/rleccube
+bin/rlecomp
+bin/rledither
+bin/rleflip
+bin/rlegrid
+bin/rlehdr
+bin/rlehisto
+bin/rleinterp
+bin/rleldmap
+bin/rlemandl
+bin/rlenoise
+bin/rlepatch
+bin/rleprint
+bin/rlequant
+bin/rlescale
+bin/rleselect
+bin/rlesetbg
+bin/rlesortmap
+bin/rlespiff
+bin/rlesplice
+bin/rlesplit
+bin/rlestereo
+bin/rleswap
+bin/rletoabA60
+bin/rletoabA62
+bin/rletoalias
+bin/rletoascii
+bin/rletogif
+bin/rletogray
+bin/rletopaint
+bin/rletops
+bin/rletoraw
+bin/rletorla
+bin/rletotarga
+bin/rletovcr
+bin/rlezoom
 bin/room
 bin/rpatch
 bin/rt
@@ -330,7 +389,6 @@ bin/rtedge
 bin/rtfrac
 bin/rtg3
 bin/rthide
-bin/rtmlt
 bin/rtpp
 bin/rtrad
 bin/rtrange
@@ -356,12 +414,14 @@ bin/showtherm
 bin/shp-g
 bin/sketch
 bin/smod
+bin/smush
 bin/sphflake
 bin/spltest
 bin/spm-fb
 bin/ssamp-bw
 bin/ssampview
 bin/ssampview.tcl
+bin/step-g
 bin/stl-g
 bin/sun-pix
 bin/surfaceintersect
@@ -370,12 +430,15 @@ bin/syn
 bin/tabinterp
 bin/tabsub
 bin/tankill-g
+bin/targatorle
 bin/tea
 bin/tea_nmg
 bin/terrain
 bin/texturescale
 bin/tgf-g
 bin/tire
+bin/to8
+bin/tobw
 bin/torii
 bin/tracker.sh
 bin/trimconfig.sh
@@ -386,18 +449,24 @@ bin/u-bw
 bin/u-d
 bin/u-f
 bin/umod
+bin/unexp
+bin/unslice
 bin/ustats
+bin/vcrtorle
 bin/vdeck
 bin/vegetation
 bin/viewpoint-g
+bin/wasatchrle
 bin/wavelet
 bin/wavy
 bin/wdb_example
 bin/window
 bin/window_frame
 bin/wire
+bin/xbmtorle
 bin/xyz-pl
 bin/yuv-pix
+include/GL/glew.h
 include/brlcad/RtServerImpl.h
 include/brlcad/analyze.h
 include/brlcad/anim.h
@@ -409,9 +478,9 @@ include/brlcad/brlcad_config.h
 include/brlcad/bu.h
 include/brlcad/cmd.h
 include/brlcad/common.h
-include/brlcad/config_win.h
 include/brlcad/db.h
 include/brlcad/db5.h
+include/brlcad/defines.h
 include/brlcad/dg.h
 include/brlcad/dm-Null.h
 include/brlcad/dm-X.h
@@ -459,23 +528,23 @@ include/brlcad/spectrum.h
 include/brlcad/spm.h
 include/brlcad/tclcad.h
 include/brlcad/tie.h
+include/brlcad/tol.h
 include/brlcad/vectfont.h
 include/brlcad/vector_fpu.h
 include/brlcad/vector_x86.h
 include/brlcad/vfont-if.h
 include/brlcad/vmath.h
 include/brlcad/wdb.h
+include/exit_status.h
 include/exppp/exppp.h
 include/express/alg.h
 include/express/basic.h
 include/express/caseitem.h
-include/express/de_end.h
-include/express/decstart.h
-include/express/defstart.h
 include/express/dict.h
 include/express/entity.h
 include/express/error.h
 include/express/expbasic.h
+include/express/expprint.h
 include/express/expr.h
 include/express/express.h
 include/express/hash.h
@@ -496,6 +565,11 @@ include/itclInt.h
 include/itclIntDecls.h
 include/itk.h
 include/itkDecls.h
+include/jama_cholesky.h
+include/jama_eig.h
+include/jama_lu.h
+include/jama_qr.h
+include/jama_svd.h
 include/openNURBS/opennurbs.h
 include/openNURBS/opennurbs_3dm.h
 include/openNURBS/opennurbs_3dm_attributes.h
@@ -597,6 +671,12 @@ include/openNURBS/opennurbs_workspace.h
 include/openNURBS/opennurbs_x.h
 include/openNURBS/opennurbs_xform.h
 include/openNURBS/opennurbs_zlib.h
+include/pyramid.h
+include/rle.h
+include/rle_code.h
+include/rle_config.h
+include/rle_put.h
+include/rle_raw.h
 include/tie/adrt.h
 include/tie/adrt_struct.h
 include/tie/camera.h
@@ -605,14 +685,103 @@ include/tie/render_internal.h
 include/tie/render_util.h
 include/tie/texture.h
 include/tie/texture_internal.h
+include/tnt.h
+include/tnt_array1d.h
+include/tnt_array1d_utils.h
+include/tnt_array2d.h
+include/tnt_array2d_utils.h
+include/tnt_array3d.h
+include/tnt_array3d_utils.h
+include/tnt_fortran_array1d.h
+include/tnt_fortran_array1d_utils.h
+include/tnt_fortran_array2d.h
+include/tnt_fortran_array2d_utils.h
+include/tnt_fortran_array3d.h
+include/tnt_fortran_array3d_utils.h
+include/tnt_i_refvec.h
+include/tnt_linalg.h
+include/tnt_math_utils.h
+include/tnt_matrix.h
+include/tnt_sparse_matrix.h
+include/tnt_sparse_vector.h
+include/tnt_stopwatch.h
+include/tnt_subscript.h
+include/tnt_vector.h
+include/tnt_version.h
+include/togl/togl.h
+include/togl/toglDecls.h
+include/togl/togl_config.h
+lib/Iwidgets4.0.1/iwidgets.tcl
+lib/Iwidgets4.0.1/license.terms
+lib/Iwidgets4.0.1/pkgIndex.tcl
+lib/Iwidgets4.0.1/scripts/buttonbox.itk
+lib/Iwidgets4.0.1/scripts/calendar.itk
+lib/Iwidgets4.0.1/scripts/canvasprintbox.itk
+lib/Iwidgets4.0.1/scripts/canvasprintdialog.itk
+lib/Iwidgets4.0.1/scripts/checkbox.itk
+lib/Iwidgets4.0.1/scripts/colors.itcl
+lib/Iwidgets4.0.1/scripts/combobox.itk
+lib/Iwidgets4.0.1/scripts/dateentry.itk
+lib/Iwidgets4.0.1/scripts/datefield.itk
+lib/Iwidgets4.0.1/scripts/dialog.itk
+lib/Iwidgets4.0.1/scripts/dialogshell.itk
+lib/Iwidgets4.0.1/scripts/disjointlistbox.itk
+lib/Iwidgets4.0.1/scripts/entryfield.itk
+lib/Iwidgets4.0.1/scripts/extbutton.itk
+lib/Iwidgets4.0.1/scripts/extfileselectionbox.itk
+lib/Iwidgets4.0.1/scripts/extfileselectiondialog.itk
+lib/Iwidgets4.0.1/scripts/feedback.itk
+lib/Iwidgets4.0.1/scripts/fileselectionbox.itk
+lib/Iwidgets4.0.1/scripts/fileselectiondialog.itk
+lib/Iwidgets4.0.1/scripts/finddialog.itk
+lib/Iwidgets4.0.1/scripts/hierarchy.itk
+lib/Iwidgets4.0.1/scripts/hyperhelp.itk
+lib/Iwidgets4.0.1/scripts/labeledframe.itk
+lib/Iwidgets4.0.1/scripts/labeledwidget.itk
+lib/Iwidgets4.0.1/scripts/mainwindow.itk
+lib/Iwidgets4.0.1/scripts/menubar.itk
+lib/Iwidgets4.0.1/scripts/messagebox.itk
+lib/Iwidgets4.0.1/scripts/messagedialog.itk
+lib/Iwidgets4.0.1/scripts/notebook.itk
+lib/Iwidgets4.0.1/scripts/optionmenu.itk
+lib/Iwidgets4.0.1/scripts/pane.itk
+lib/Iwidgets4.0.1/scripts/panedwindow.itk
+lib/Iwidgets4.0.1/scripts/promptdialog.itk
+lib/Iwidgets4.0.1/scripts/pushbutton.itk
+lib/Iwidgets4.0.1/scripts/radiobox.itk
+lib/Iwidgets4.0.1/scripts/regexpfield.itk
+lib/Iwidgets4.0.1/scripts/roman.itcl
+lib/Iwidgets4.0.1/scripts/scopedobject.itcl
+lib/Iwidgets4.0.1/scripts/scrolledcanvas.itk
+lib/Iwidgets4.0.1/scripts/scrolledframe.itk
+lib/Iwidgets4.0.1/scripts/scrolledhtml.itk
+lib/Iwidgets4.0.1/scripts/scrolledlistbox.itk
+lib/Iwidgets4.0.1/scripts/scrolledtext.itk
+lib/Iwidgets4.0.1/scripts/scrolledwidget.itk
+lib/Iwidgets4.0.1/scripts/selectionbox.itk
+lib/Iwidgets4.0.1/scripts/selectiondialog.itk
+lib/Iwidgets4.0.1/scripts/shell.itk
+lib/Iwidgets4.0.1/scripts/spindate.itk
+lib/Iwidgets4.0.1/scripts/spinint.itk
+lib/Iwidgets4.0.1/scripts/spinner.itk
+lib/Iwidgets4.0.1/scripts/spintime.itk
+lib/Iwidgets4.0.1/scripts/tabnotebook.itk
+lib/Iwidgets4.0.1/scripts/tabset.itk
+lib/Iwidgets4.0.1/scripts/tclIndex
+lib/Iwidgets4.0.1/scripts/timeentry.itk
+lib/Iwidgets4.0.1/scripts/timefield.itk
+lib/Iwidgets4.0.1/scripts/toolbar.itk
+lib/Iwidgets4.0.1/scripts/unknownimage.gif
+lib/Iwidgets4.0.1/scripts/watch.itk
 lib/Tkhtml3.0/pkgIndex.tcl
 lib/Tktable2.10/README.txt
-lib/Tktable2.10/html/tkTable.html
-lib/Tktable2.10/libTktable2.10.so
 lib/Tktable2.10/license.txt
 lib/Tktable2.10/pkgIndex.tcl
 lib/Tktable2.10/tkTable.tcl
 lib/Tktable2.10/tktable.py
+lib/Togl2.1/pkgIndex.tcl
+lib/isst0.1/libissttcltk.so
+lib/isst0.1/pkgIndex.tcl
 lib/itcl3.4/itcl.tcl
 lib/itcl3.4/pkgIndex.tcl
 lib/itk3.4/Archetype.itk
@@ -621,224 +790,143 @@ lib/itk3.4/Widget.itk
 lib/itk3.4/itk.tcl
 lib/itk3.4/pkgIndex.tcl
 lib/itk3.4/tclIndex
-lib/iwidgets4.0.1/iwidgets.tcl
-lib/iwidgets4.0.1/license.terms
-lib/iwidgets4.0.1/pkgIndex.tcl
-lib/iwidgets4.0.1/scripts/buttonbox.itk
-lib/iwidgets4.0.1/scripts/calendar.itk
-lib/iwidgets4.0.1/scripts/canvasprintbox.itk
-lib/iwidgets4.0.1/scripts/canvasprintdialog.itk
-lib/iwidgets4.0.1/scripts/checkbox.itk
-lib/iwidgets4.0.1/scripts/colors.itcl
-lib/iwidgets4.0.1/scripts/combobox.itk
-lib/iwidgets4.0.1/scripts/dateentry.itk
-lib/iwidgets4.0.1/scripts/datefield.itk
-lib/iwidgets4.0.1/scripts/dialog.itk
-lib/iwidgets4.0.1/scripts/dialogshell.itk
-lib/iwidgets4.0.1/scripts/disjointlistbox.itk
-lib/iwidgets4.0.1/scripts/entryfield.itk
-lib/iwidgets4.0.1/scripts/extbutton.itk
-lib/iwidgets4.0.1/scripts/extfileselectionbox.itk
-lib/iwidgets4.0.1/scripts/extfileselectiondialog.itk
-lib/iwidgets4.0.1/scripts/feedback.itk
-lib/iwidgets4.0.1/scripts/fileselectionbox.itk
-lib/iwidgets4.0.1/scripts/fileselectiondialog.itk
-lib/iwidgets4.0.1/scripts/finddialog.itk
-lib/iwidgets4.0.1/scripts/hierarchy.itk
-lib/iwidgets4.0.1/scripts/hyperhelp.itk
-lib/iwidgets4.0.1/scripts/labeledframe.itk
-lib/iwidgets4.0.1/scripts/labeledwidget.itk
-lib/iwidgets4.0.1/scripts/mainwindow.itk
-lib/iwidgets4.0.1/scripts/menubar.itk
-lib/iwidgets4.0.1/scripts/messagebox.itk
-lib/iwidgets4.0.1/scripts/messagedialog.itk
-lib/iwidgets4.0.1/scripts/notebook.itk
-lib/iwidgets4.0.1/scripts/optionmenu.itk
-lib/iwidgets4.0.1/scripts/pane.itk
-lib/iwidgets4.0.1/scripts/panedwindow.itk
-lib/iwidgets4.0.1/scripts/promptdialog.itk
-lib/iwidgets4.0.1/scripts/pushbutton.itk
-lib/iwidgets4.0.1/scripts/radiobox.itk
-lib/iwidgets4.0.1/scripts/regexpfield.itk
-lib/iwidgets4.0.1/scripts/roman.itcl
-lib/iwidgets4.0.1/scripts/scopedobject.itcl
-lib/iwidgets4.0.1/scripts/scrolledcanvas.itk
-lib/iwidgets4.0.1/scripts/scrolledframe.itk
-lib/iwidgets4.0.1/scripts/scrolledhtml.itk
-lib/iwidgets4.0.1/scripts/scrolledlistbox.itk
-lib/iwidgets4.0.1/scripts/scrolledtext.itk
-lib/iwidgets4.0.1/scripts/scrolledwidget.itk
-lib/iwidgets4.0.1/scripts/selectionbox.itk
-lib/iwidgets4.0.1/scripts/selectiondialog.itk
-lib/iwidgets4.0.1/scripts/shell.itk
-lib/iwidgets4.0.1/scripts/spindate.itk
-lib/iwidgets4.0.1/scripts/spinint.itk
-lib/iwidgets4.0.1/scripts/spinner.itk
-lib/iwidgets4.0.1/scripts/spintime.itk
-lib/iwidgets4.0.1/scripts/tabnotebook.itk
-lib/iwidgets4.0.1/scripts/tabset.itk
-lib/iwidgets4.0.1/scripts/tclIndex
-lib/iwidgets4.0.1/scripts/timeentry.itk
-lib/iwidgets4.0.1/scripts/timefield.itk
-lib/iwidgets4.0.1/scripts/toolbar.itk
-lib/iwidgets4.0.1/scripts/unknownimage.gif
-lib/iwidgets4.0.1/scripts/watch.itk
-lib/libTkhtml.la
 lib/libTkhtml.so
-lib/libTkhtml.so.0
+lib/libTkhtml.so.3.0
+lib/libTktable.so
+lib/libTktable.so.2.10
 lib/libanalyze.a
-lib/libanalyze.la
 lib/libanalyze.so
 lib/libanalyze.so.19
+lib/libanalyze.so.19.0.1
 lib/libbn.a
-lib/libbn.la
 lib/libbn.so
 lib/libbn.so.19
-lib/libbrlcad.a
-lib/libbrlcad.la
-lib/libbrlcad.so
-lib/libbrlcad.so.19
+lib/libbn.so.19.0.1
 lib/libbu.a
-lib/libbu.la
 lib/libbu.so
 lib/libbu.so.19
+lib/libbu.so.19.0.1
 lib/libcursor.a
-lib/libcursor.la
 lib/libcursor.so
 lib/libcursor.so.19
+lib/libcursor.so.19.0.1
 lib/libdm.a
-lib/libdm.la
 lib/libdm.so
 lib/libdm.so.19
+lib/libdm.so.19.0.1
 lib/libexppp.a
-lib/libexppp.la
 lib/libexppp.so
-lib/libexppp.so.19
+lib/libexppp.so.3
+lib/libexppp.so.3.2
 lib/libexpress.a
-lib/libexpress.la
 lib/libexpress.so
-lib/libexpress.so.19
+lib/libexpress.so.3
+lib/libexpress.so.3.2
 lib/libfb.a
-lib/libfb.la
 lib/libfb.so
 lib/libfb.so.19
+lib/libfb.so.19.0.1
 lib/libfft.a
-lib/libfft.la
 lib/libfft.so
 lib/libfft.so.19
+lib/libfft.so.19.0.1
 lib/libgcv.a
-lib/libgcv.la
 lib/libgcv.so
 lib/libgcv.so.19
+lib/libgcv.so.19.0.1
 lib/libged.a
-lib/libged.la
 lib/libged.so
 lib/libged.so.19
+lib/libged.so.19.0.1
 lib/libicv.a
-lib/libicv.la
 lib/libicv.so
 lib/libicv.so.19
-lib/libitcl.a
-lib/libitcl.la
+lib/libicv.so.19.0.1
 lib/libitcl.so
-lib/libitcl.so.0
-lib/libitcl3.4.a
-lib/libitcl3.4.la
-lib/libitcl3.4.so
-lib/libitcl3.4.so.0
+lib/libitcl.so.3
+lib/libitcl.so.3.4
 lib/libitclstub.a
-lib/libitclstub.la
-lib/libitclstub.so
-lib/libitclstub.so.0
-lib/libitclstub3.4.a
-lib/libitclstub3.4.la
-lib/libitclstub3.4.so
-lib/libitclstub3.4.so.0
-lib/libitk.a
-lib/libitk.la
 lib/libitk.so
-lib/libitk.so.0
-lib/libitk3.4.a
-lib/libitk3.4.la
-lib/libitk3.4.so
-lib/libitk3.4.so.0
+lib/libitk.so.3
+lib/libitk.so.3.4
 lib/libitkstub.a
-lib/libitkstub.la
-lib/libitkstub.so
-lib/libitkstub.so.0
-lib/libitkstub3.4.a
-lib/libitkstub3.4.la
-lib/libitkstub3.4.so
-lib/libitkstub3.4.so.0
 lib/libmultispectral.a
-lib/libmultispectral.la
 lib/libmultispectral.so
 lib/libmultispectral.so.19
+lib/libmultispectral.so.19.0.1
 lib/libopenNURBS.a
-lib/libopenNURBS.la
 lib/libopenNURBS.so
-lib/libopenNURBS.so.0
+lib/libopenNURBS.so.2010.04.95
 lib/liboptical.a
-lib/liboptical.la
 lib/liboptical.so
 lib/liboptical.so.19
+lib/liboptical.so.19.0.1
 lib/liborle.a
-lib/liborle.la
 lib/liborle.so
 lib/liborle.so.19
+lib/liborle.so.19.0.1
 lib/libpc.a
-lib/libpc.la
 lib/libpc.so
 lib/libpc.so.19
+lib/libpc.so.19.0.1
 lib/libpkg.a
-lib/libpkg.la
 lib/libpkg.so
 lib/libpkg.so.19
+lib/libpkg.so.19.0.1
+lib/libpoints.so
 lib/librender.a
-lib/librender.la
 lib/librender.so
-lib/librender.so.0
 lib/librt.a
-lib/librt.la
 lib/librt.so
 lib/librt.so.19
+lib/librt.so.19.0.1
+lib/librtms.a
 lib/libstepcore.a
-lib/libstepcore.la
 lib/libstepcore.so
-lib/libstepcore.so.19
+lib/libstepcore.so.3
+lib/libstepcore.so.3.2
 lib/libstepdai.a
-lib/libstepdai.la
 lib/libstepdai.so
-lib/libstepdai.so.19
+lib/libstepdai.so.3
+lib/libstepdai.so.3.2
 lib/libstepeditor.a
-lib/libstepeditor.la
 lib/libstepeditor.so
-lib/libstepeditor.so.19
+lib/libstepeditor.so.3
+lib/libstepeditor.so.3.2
 lib/libsteputils.a
-lib/libsteputils.la
 lib/libsteputils.so
-lib/libsteputils.so.19
+lib/libsteputils.so.3
+lib/libsteputils.so.3.2
 lib/libsysv.a
-lib/libsysv.la
 lib/libsysv.so
 lib/libsysv.so.19
+lib/libsysv.so.19.0.1
 lib/libtclcad.a
-lib/libtclcad.la
 lib/libtclcad.so
 lib/libtclcad.so.19
+lib/libtclcad.so.19.0.1
 lib/libtermio.a
-lib/libtermio.la
 lib/libtermio.so
 lib/libtermio.so.19
-lib/libtkpng.a
-lib/libtkpng.la
+lib/libtermio.so.19.0.1
+lib/libtermlib.a
+lib/libtermlib.so
 lib/libtkpng.so
-lib/libtkpng.so.0
+lib/libtkpng.so.0.8
+lib/libtogl.so
+lib/libtoglstub.a
+lib/libutahrle.a
+lib/libutahrle.so
+lib/libutahrle.so.19
+lib/libutahrle.so.19.0.1
+lib/libvfont.a
+lib/libvfont.so
+lib/libvfont.so.19
+lib/libvfont.so.19.0.1
 lib/libwdb.a
-lib/libwdb.la
 lib/libwdb.so
 lib/libwdb.so.19
-lib/tkpng0.8/pkgIndex.tcl
+lib/libwdb.so.19.0.1
 libdata/pkgconfig/libanalyze.pc
 libdata/pkgconfig/libbn.pc
 libdata/pkgconfig/libbrlcad.pc
@@ -855,27 +943,8 @@ libdata/pkgconfig/libpc.pc
 libdata/pkgconfig/libpkg.pc
 libdata/pkgconfig/librt.pc
 libdata/pkgconfig/libwdb.pc
-share/scl/3.2.0/AUTHORS
-share/scl/3.2.0/COPYING
-share/scl/3.2.0/INSTALL
-share/scl/3.2.0/NEWS
-share/scl/3.2.0/README
-share/scl/3.2.0/data/ap203/203wseds.exp
-share/scl/3.2.0/data/ap203/cube1.p21
-share/scl/3.2.0/data/ap203/cube2.p21
-share/scl/3.2.0/data/ap203/g_r_assembly1.p21
-share/scl/3.2.0/data/ap203/gasket1.p21
-share/scl/3.2.0/data/ap203/gasket2.p21
-share/scl/3.2.0/data/ap203/gasket3.p21
-share/scl/3.2.0/data/ap203/hex_prism1.p21
-share/scl/3.2.0/data/ap203/rod_aspect1.p21
-share/scl/3.2.0/data/ap203/star1.p21
-share/scl/3.2.0/data/ap227/ap227.exp
-share/scl/3.2.0/data/ap227/mitre.p21
-share/scl/3.2.0/data/ap227/mitre.step.txt
-share/scl/3.2.0/data/example/example.exp
-share/scl/3.2.0/data/pdmnet.exp
-share/scl/3.2.0/data/select.exp
+lib/tkpng0.8/pkgIndex.tcl
+man/tkhtml.n
 %%DATADIR%%/%%PORTVERSION%%/AUTHORS
 %%DATADIR%%/%%PORTVERSION%%/COPYING
 %%DATADIR%%/%%PORTVERSION%%/HACKING
@@ -884,10 +953,27 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/README
 %%DATADIR%%/%%PORTVERSION%%/data/GQA_SAMPLE_DENSITIES
 %%DATADIR%%/%%PORTVERSION%%/data/NIST_DENSITIES
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/203wseds.exp
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/cube1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/cube2.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/g_r_assembly1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/gasket1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/gasket2.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/gasket3.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/hex_prism1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/rod_aspect1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap203/star1.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap227/ap227.exp
+%%DATADIR%%/%%PORTVERSION%%/data/ap227/mitre.p21
+%%DATADIR%%/%%PORTVERSION%%/data/ap227/mitre.step.txt
+%%DATADIR%%/%%PORTVERSION%%/data/example/example.exp
+%%DATADIR%%/%%PORTVERSION%%/data/pdmnet.exp
+%%DATADIR%%/%%PORTVERSION%%/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/db/axis.g
 %%DATADIR%%/%%PORTVERSION%%/db/bldg391.g
 %%DATADIR%%/%%PORTVERSION%%/db/boolean-ops.g
 %%DATADIR%%/%%PORTVERSION%%/db/castle.g
+%%DATADIR%%/%%PORTVERSION%%/db/cornell-kunigami.g
 %%DATADIR%%/%%PORTVERSION%%/db/cornell.g
 %%DATADIR%%/%%PORTVERSION%%/db/cray.g
 %%DATADIR%%/%%PORTVERSION%%/db/crod.g
@@ -901,7 +987,6 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/db/lgt-test.g
 %%DATADIR%%/%%PORTVERSION%%/db/m35.g
 %%DATADIR%%/%%PORTVERSION%%/db/moss.g
-%%DATADIR%%/%%PORTVERSION%%/db/operators.asc2g
 %%DATADIR%%/%%PORTVERSION%%/db/operators.g
 %%DATADIR%%/%%PORTVERSION%%/db/pic.g
 %%DATADIR%%/%%PORTVERSION%%/db/pinewood.g
@@ -937,6 +1022,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/doc/axis-3525.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/b.tex
 %%DATADIR%%/%%PORTVERSION%%/doc/benchmark.tr
+%%DATADIR%%/%%PORTVERSION%%/doc/bison_to_lemon.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/brep.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/buttonmenu.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/c.tex
@@ -949,6 +1035,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/doc/description.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/doit
 %%DATADIR%%/%%PORTVERSION%%/doc/e.tex
+%%DATADIR%%/%%PORTVERSION%%/doc/ecosystem.dot
 %%DATADIR%%/%%PORTVERSION%%/doc/eo-arbrot.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/eo-bgrp.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/eo-bgrp311.ps
@@ -1041,6 +1128,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/doc/fig-sgi.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/fig-vg-buttons.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/fig-vg-knobs.ps
+%%DATADIR%%/%%PORTVERSION%%/doc/flex_to_re2c.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/g.tex
 %%DATADIR%%/%%PORTVERSION%%/doc/ged.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/h.tex
@@ -1120,6 +1208,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/doc/wm-leg1.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/wm-prims.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/wm-tube.ps
+%%DATADIR%%/%%PORTVERSION%%/etc/termcap
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/activem.gif
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/activep.gif
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/collapse.gif
@@ -1344,6 +1433,18 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/html/books/en/images/tutorial_series_volI_fig05.png
 %%DATADIR%%/%%PORTVERSION%%/html/books/en/images/tutorial_series_volI_fig06.png
 %%DATADIR%%/%%PORTVERSION%%/html/books/en/images/tutorial_series_volI_fig07.png
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image001.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image002.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image003.gif
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image004.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image005.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image006.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image007.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image008.gif
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image009.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image010.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/books/en/images/v4-image011.jpg
+%%DATADIR%%/%%PORTVERSION%%/html/css/brlcad.css
 %%DATADIR%%/%%PORTVERSION%%/html/lessons/en/images/mged01_commandwindow.png
 %%DATADIR%%/%%PORTVERSION%%/html/lessons/en/images/mged01_graphicswindow.png
 %%DATADIR%%/%%PORTVERSION%%/html/lessons/en/images/mged01_terminal.png
@@ -1679,12 +1780,15 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/edcolor.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/edcomb.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/edgedir.html
+%%DATADIR%%/%%PORTVERSION%%/html/mann/en/edit.html
+%%DATADIR%%/%%PORTVERSION%%/html/mann/en/edit_translate.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/edmater.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/em.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/eqn.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/erase.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/erase_all.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/ev.html
+%%DATADIR%%/%%PORTVERSION%%/html/mann/en/exists.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/exit.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/expand.html
 %%DATADIR%%/%%PORTVERSION%%/html/mann/en/export_body.html
@@ -2041,8 +2145,16 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/tex-html.tcl
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/shaders/camo.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/small-eagleCAD.gif
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images/copy-sph-part-left.png
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images/copy-sph-part-right.png
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images/mged-defaults.png
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images/special-character-interpretation.png
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images/tk-based-gui-for-mged.png
+%%DATADIR%%/%%PORTVERSION%%/html/presentations/en/intro-to-tcltk.html
 %%DATADIR%%/%%PORTVERSION%%/html/specifications/en/BRL_CAD_g_format_V5.html
 %%DATADIR%%/%%PORTVERSION%%/html/toc.html
+%%DATADIR%%/%%PORTVERSION%%/icons/archer.ico
+%%DATADIR%%/%%PORTVERSION%%/icons/brlcad.ico
 %%DATADIR%%/%%PORTVERSION%%/nirt/csv-gap.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/csv.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/default.nrt
@@ -2075,8 +2187,6 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/images/tank.png
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tirewizard.tcl
 %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tirewizard/TireWizard.tcl
-%%DATADIR%%/%%PORTVERSION%%/plugins/archer/utility.tcl
-%%DATADIR%%/%%PORTVERSION%%/plugins/archer/wizards.tcl
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/fortran_example.f
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx_facets.c
@@ -2111,6 +2221,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/HypEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/LoadArcherLibs.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/PartEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/PipeEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Plugin.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RhcEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RpcEditFrame.tcl
@@ -2290,8 +2401,8 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/object_undo.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/openf.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/option_edit.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/option_text.png
-%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/option_tree.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/other.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/other_intersect.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/other_subtract.png
@@ -2368,6 +2479,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tgc_labeled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tgc_subtract.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tgc_union.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tools.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tor.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tor_intersect.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/tor_labeled.png
@@ -2409,6 +2521,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/hv3/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/hv3/snit.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/hv3/tclIndex
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/Accordian.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/CellPlot.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/ColorEntry.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/ComboBox.tcl
@@ -2435,6 +2548,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib/tclIndex
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/libdm.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/man_browser.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/menu_override.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/accel.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/adc.tcl
@@ -2537,7 +2651,6 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/overlap.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern_gui.tcl
-%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/plot.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/points.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/prj_add.tcl
@@ -2546,6 +2659,7 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/ray.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/raypick.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/reid.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/relos.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/remap_mater.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/remat.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/rt.tcl
@@ -2655,12 +2769,6 @@ share/scl/3.2.0/data/select.exp
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/vmath.tcl
 %%DATADIR%%/%%PORTVERSION%%/vfont/fix.6r
 %%DATADIR%%/%%PORTVERSION%%/vfont/nonie.r.12
-@dirrm share/scl/3.2.0/data/example
-@dirrm share/scl/3.2.0/data/ap227
-@dirrm share/scl/3.2.0/data/ap203
-@dirrm share/scl/3.2.0/data
-@dirrm share/scl/3.2.0
-@dirrm share/scl
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vfont
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/util
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts
@@ -2701,27 +2809,13 @@ share/scl/3.2.0/data/select.exp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pix
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/specifications/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/specifications
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/mann/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/mann
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man5/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man5
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man3/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man3
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man1/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/man1
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/lessons/es
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/lessons/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/lessons
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/books/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/books
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/articles/en
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf/articles
-@dirrm %%DATADIR%%/%%PORTVERSION%%/pdf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/nirt
+@dirrm %%DATADIR%%/%%PORTVERSION%%/icons
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/specifications/en
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/specifications
+@dirrm %%DATADIR%%/%%PORTVERSION%%/html/presentations/en/images
+@dirrm %%DATADIR%%/%%PORTVERSION%%/html/presentations/en
+@dirrm %%DATADIR%%/%%PORTVERSION%%/html/presentations
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/shaders
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/animmate
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged
@@ -2744,6 +2838,7 @@ share/scl/3.2.0/data/select.exp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/lessons/en/images
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/lessons/en
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/lessons
+@dirrm %%DATADIR%%/%%PORTVERSION%%/html/css
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/books/en/images
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/books/en
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/books
@@ -2755,9 +2850,13 @@ share/scl/3.2.0/data/select.exp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html
+@dirrm %%DATADIR%%/%%PORTVERSION%%/etc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc/legal
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/db
+@dirrm %%DATADIR%%/%%PORTVERSION%%/data/example
+@dirrm %%DATADIR%%/%%PORTVERSION%%/data/ap227
+@dirrm %%DATADIR%%/%%PORTVERSION%%/data/ap203
 @dirrm %%DATADIR%%/%%PORTVERSION%%/data
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
@@ -2770,18 +2869,21 @@ share/scl/3.2.0/data/select.exp
 @dirrm libdata/pkgconfig
 @dirrm libdata
 @dirrm lib/tkpng0.8
-@dirrm lib/iwidgets4.0.1/scripts
-@dirrm lib/iwidgets4.0.1
 @dirrm lib/itk3.4
 @dirrm lib/itcl3.4
-@dirrm lib/Tktable2.10/html
+@dirrm lib/isst0.1
+@dirrm lib/Togl2.1
 @dirrm lib/Tktable2.10
 @dirrm lib/Tkhtml3.0
+@dirrm lib/Iwidgets4.0.1/scripts
+@dirrm lib/Iwidgets4.0.1
 @dirrm lib
+@dirrm include/togl
 @dirrm include/tie
 @dirrm include/openNURBS
 @dirrm include/express
 @dirrm include/exppp
 @dirrm include/brlcad
+@dirrm include/GL
 @dirrm include
 @dirrm bin
