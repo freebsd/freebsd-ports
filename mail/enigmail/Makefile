@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.3.3
+PORTVERSION?=	1.3.4
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
@@ -17,6 +17,7 @@ COMMENT?=	A GnuPG extension for the Mozilla mail clients
 
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
 		${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
+		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
