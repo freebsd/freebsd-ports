@@ -1,0 +1,12 @@
+mingw32/bin/libffi-5.dll
+mingw32/include/ffi.h
+mingw32/include/ffitarget.h
+mingw32/lib/libffi-%%PORTVERSION%%/include/ffi.h
+mingw32/lib/libffi-%%PORTVERSION%%/include/ffitarget.h
+mingw32/lib/libffi.a
+mingw32/lib/libffi.dll.a
+mingw32/lib/libffi.la
+mingw32/lib/pkgconfig/libffi.pc
+@dirrm mingw32/lib/libffi-%%PORTVERSION%%/include
+@dirrm mingw32/lib/libffi-%%PORTVERSION%%
+@dirrmtry mingw32/lib/pkgconfig
