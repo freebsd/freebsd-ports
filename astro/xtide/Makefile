@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.12
+PORTVERSION=	2.12.1
 CATEGORIES=	astro geography
-MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
+MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
+		http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TCD_DISTNAME}${EXTRACT_SUFX} \
 		${HARM_DISTNAME}${EXTRACT_SUFX}
