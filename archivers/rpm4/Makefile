@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.9.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -31,23 +31,31 @@ USE_LDCONFIG=	yes
 LATEST_LINK=	rpm4
 CONFLICTS=	rpm-3.*
 
-CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
 		-I${BDB_INCLUDE_DIR} -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib/nss -L${BDB_LIB_DIR} -L${LUA_LIBDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss \
+		-L${BDB_LIB_DIR} -L${LUA_LIBDIR}
 CONFIGURE_ARGS+=--with-external-db \
+		--without-db \
+		--with-popt-prefix="${LOCALBASE}" \
+		--sysconfdir=${PREFIX}/etc \
+		--localstatedir=/var \
+		--without-javaglue \
 		LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=   lzma.5:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 .ifndef	WITHOUT_PYTHON
 CONFIGURE_ARGS+=--enable-python
 USE_PYTHON=	2.6+
-PLIST_SUB+=	PYTHON="" VERSION=${PORTVERSION}
+PLIST_SUB+=	PYTHON=""
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${PYTHON_LIBDIR}
 .else
@@ -63,15 +71,6 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 .endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ARGS+=--without-db \
-		--with-popt-prefix="${LOCALBASE}" \
-		--sysconfdir=${PREFIX}/etc \
-		--localstatedir=/var \
-		--without-javaglue
 
 MANLANG=	"" ja fr pl ru ko sk
 MAN1_EN=	gendiff.1
