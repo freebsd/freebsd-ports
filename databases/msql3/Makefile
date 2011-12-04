@@ -24,7 +24,6 @@ LATEST_LINK=	msql3
 
 # Not free for commercial use.
 RESTRICTED=	restrictive copyright (no commercial use)
-MANUAL_PACKAGE_BUILD=	distfile unavailable on pointyhat
 
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
@@ -73,17 +72,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-DISTFILE_INSTRUCTIONS=	\n\
-- You must manually obtain ${DISTFILES} from \n\
-http://www.Hughes.com.au/download/\n\
-and place it in ${DISTDIR}.\n\
-The distribution requires registration prior to use.\n\n
-.endif
-
-pre-fetch:
-.if defined(DISTFILE_INSTRUCTIONS)
-	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
-	@exit 1
+IGNORE=	may not be redistributed because of licensing reasons. Please visit http://www.hughes.com.au/download/ to accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
 .include <bsd.port.post.mk>
