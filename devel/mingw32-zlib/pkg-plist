@@ -1,0 +1,3 @@
+mingw32/include/zconf.h
+mingw32/include/zlib.h
+mingw32/lib/libz.a

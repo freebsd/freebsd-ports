@@ -1038,6 +1038,7 @@
     SUBDIR += mingw32-gcc
     SUBDIR += mingw32-pdcurses
     SUBDIR += mingw32-pthreads
+    SUBDIR += mingw32-zlib
     SUBDIR += mingw64-binutils
     SUBDIR += mips-rtems-binutils
     SUBDIR += mips-rtems-gcc
