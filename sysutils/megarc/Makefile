@@ -25,23 +25,10 @@ RESTRICTED=	Must be downloaded directly from the manufacturer
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
-MANUAL_PACKAGE_BUILD=	distfile unavailable
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-DISTFILE_INSTRUCTIONS=\n\
-The distribution file is not freely avaliable.\n\
-The binary is shipped on the Megaraid Universal Software Suite\n\
-CD which accompanies any boxed LSI Logic RAID storage adaptor.\n\
-\n\
-Copy ${DISTNAME}${EXTRACT_SUFX} to ${DISTDIR} and try again.\n\
-\n\
-For further instructions, see http://www.freebsdwiki.net/index.php/Megarc\n\n
-.endif
-
-pre-fetch:
-.if defined(DISTFILE_INSTRUCTIONS)
-	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
-	@exit 1
+IGNORE=	has a distribution file that is not freely avaliable.  The binary is shipped on the Megaraid Universal Software Suite CD which accompanies any boxed LSI Logic RAID storage adaptor.  Copy ${DISTNAME}${EXTRACT_SUFX} to ${DISTDIR} and try again.  For further instructions, see http://www.freebsdwiki.net/index.php/Megarc
 .endif
 
 post-extract:
@@ -54,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Release\ History.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
