@@ -4,9 +4,4 @@ function and a function to generate responses, then compiles and links his
 or her code against the library to create a complete multi-process SCGI
 application server.
 
-libdombey is intended for use in applications where client requests are
-either GET requests or POST requests encoded with x-www-form-urlencoding.
-It drops connections over which it receives POST requests encoded as
-multipart/form-data.
-
 WWW: http://www.mammothcheese.ca/libdombey.html
