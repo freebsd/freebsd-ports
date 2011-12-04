@@ -1,0 +1,7 @@
+bin/fliggy
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fliggy/.packlist
+%%SITE_PERL%%/Fliggy.pm
+%%SITE_PERL%%/Fliggy/Server.pm
+%%SITE_PERL%%/Plack/Handler/Fliggy.pm
+@dirrm %%SITE_PERL%%/Fliggy
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fliggy
