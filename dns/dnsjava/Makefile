@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsjava
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	dns java
 MASTER_SITES=	http://www.dnsjava.org/download/
 
