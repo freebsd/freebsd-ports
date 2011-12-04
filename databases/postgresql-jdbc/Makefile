@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	9.0.802
+PORTVERSION=	9.1.901
 DISTVERSIONSUFFIX=.src
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
@@ -21,6 +21,8 @@ DIST_SUBDIR=	postgresql
 USE_ANT=	yes
 USE_JAVA=	yes
 
+PLIST_FILES=	%%JAVAJARDIR%%/postgresql.jar
+PORTDOCS=	*
 SUB_FILES=	pkg-message
 
 post-patch:
