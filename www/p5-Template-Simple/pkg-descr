@@ -1,0 +1,6 @@
+Template::Simple is a flexible, efficient and fast templating module
+for mod_perl written by Uri Guttman. It has a very simple markup
+scheme, but does nearly any templating task you could want as
+installed (and provides for callbacks if you want to extend it).
+
+WWW: http://search.cpan.org/dist/Template-Simple/
