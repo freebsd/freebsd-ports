@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	4.6+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_WX=		2.8
