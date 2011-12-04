@@ -4,7 +4,7 @@
 
 
 @CC@
-
+none
 @CFLAGS@
 
 @LOCALBASE@/include
