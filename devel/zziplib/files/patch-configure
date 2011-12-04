@@ -18,6 +18,15 @@
    VERSION_INFO="-version-info $MINOR_VERSION:$MICRO_VERSION"
  { $as_echo "$as_me:$LINENO: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
  $as_echo "/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6; }
+@@ -13713,7 +13713,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking link options" >&5
+ $as_echo_n "checking link options... " >&6; }
+ ZZIPLIB_LDFLAGS=""
+-test ".$can_build_shared" != ".no" && ZZIPLIB_LDFLAGS="--export-dynamic"
++test ".$can_build_shared" != ".no" && ZZIPLIB_LDFLAGS="${wl}--export-dynamic"
+ RESOLVES=" # "
+ case "$host_os" in mingw*)
+     ZZIPLIB_LDFLAGS="-no-undefined -export-all-symbols -mconsole"
 @@ -19280,7 +19280,7 @@ s/:.*/:/
  _EOF
      test ".$USE_MAINTAINER_MODE" = ".no" || \
