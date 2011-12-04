@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ibus-mozc
-PORTVERSION=	0.13.523.102
-PORTREVISION=	1
+PORTVERSION=	1.3.911.102
+PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
+MASTER_SITES=	http://mozc.googlecode.com/files/
 DISTNAME=	mozc-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2
 
@@ -54,6 +54,7 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/unix/ibus/path_util.cc \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
+		${WRKSRC}/handwriting/zinnia_handwriting.cc
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; \
@@ -67,9 +68,9 @@ do-build:
 		export BUILD_COMMAND=${GMAKE}; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
 		${PYTHON_CMD} build_mozc.py build_tools \
-			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR}; \
+			-c ${BUILD_MODE}; \
 		${PYTHON_CMD} build_mozc.py build \
-			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR} \
+			-c ${BUILD_MODE} \
 			unix/ibus/ibus.gyp:ibus_mozc
 
 do-install:

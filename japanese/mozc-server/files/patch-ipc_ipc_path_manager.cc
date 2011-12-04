@@ -1,6 +1,6 @@
---- ipc/ipc_path_manager.cc.org	2010-11-06 10:50:41.620188667 +0900
-+++ ipc/ipc_path_manager.cc	2010-11-06 10:51:04.912186952 +0900
-@@ -265,7 +265,7 @@
+--- ipc/ipc_path_manager.cc.orig	2011-12-04 16:22:26.515606954 +0900
++++ ipc/ipc_path_manager.cc	2011-12-04 16:46:51.134605388 +0900
+@@ -274,7 +274,7 @@
    *ipc_name = kIPCPrefix;
  #endif  // OS_WINDOWS
  

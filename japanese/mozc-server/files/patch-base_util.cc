@@ -1,6 +1,6 @@
---- base/util.cc.org	2010-11-06 10:45:14.448193623 +0900
-+++ base/util.cc	2010-11-06 10:46:11.717188704 +0900
-@@ -1629,9 +1629,13 @@
+--- base/util.cc.orig	2011-12-04 16:22:26.112610903 +0900
++++ base/util.cc	2011-12-04 16:46:50.958606064 +0900
+@@ -2592,9 +2592,13 @@
    return MacUtil::GetServerDirectory();
  #endif  // OS_MACOSX
  
@@ -14,4 +14,4 @@
 +#endif
  }
  
- string Util::GetServerPath() {
+ string Util::GetDocumentDirectory() {
