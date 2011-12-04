@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -16,6 +16,7 @@ MAINTAINER=	brix@FreeBSD.org
 COMMENT=	An IRC to other chat networks gateway
 
 LICENSE=	GPLv2
+
 SUB_FILES=	pkg-message
 MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
