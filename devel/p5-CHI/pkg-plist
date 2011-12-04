@@ -51,7 +51,6 @@
 %%SITE_PERL%%/CHI/t/Subcache.pm
 %%SITE_PERL%%/CHI/t/Subclass.pm
 %%SITE_PERL%%/CHI/t/Util.pm
-%%SITE_PERL%%/CHIx/DecayedSet.pm
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/Subcache
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/File
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver
@@ -65,5 +64,4 @@
 @dirrmtry %%SITE_PERL%%/CHI/Driver
 @dirrmtry %%SITE_PERL%%/CHI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CHI
-@dirrm %%SITE_PERL%%/CHIx
 @dirrmtry %%SITE_PERL%%
