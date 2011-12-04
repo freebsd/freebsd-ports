@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	mozc-additions
-PORTVERSION=	0.12.434.102
+PORTVERSION=	1.3.911.102
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 

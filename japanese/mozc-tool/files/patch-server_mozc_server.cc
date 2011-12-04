@@ -1,6 +1,6 @@
---- server/mozc_server.cc.org	2010-11-06 10:54:20.721190331 +0900
-+++ server/mozc_server.cc	2010-11-06 10:55:39.283188573 +0900
-@@ -30,6 +30,9 @@
+--- server/mozc_server.cc.orig	2011-12-04 16:22:26.174607330 +0900
++++ server/mozc_server.cc	2011-12-04 16:43:55.914606129 +0900
+@@ -32,6 +32,9 @@
  #ifdef OS_WINDOWS
  #include <windows.h>
  #endif
@@ -10,7 +10,7 @@
  
  #include "base/base.h"
  #include "base/process.h"
-@@ -46,6 +49,23 @@
+@@ -50,6 +53,23 @@
  mozc::SessionServer *g_session_server = NULL;
  }
  
@@ -34,7 +34,7 @@
  namespace mozc {
  namespace {
  
-@@ -122,6 +142,12 @@
+@@ -132,6 +152,12 @@
        return -1;
      }
  
@@ -44,6 +44,6 @@
 +    ::signal(SIGTERM, sig_func);
 +#endif
 +
-     // Create a new thread.
-     // We can't call Loop() as Loop() doesn't make a thread.
-     // We have to make a thread here so that ShutdownSessionCallback()
+ #if defined(OS_WINDOWS)
+     // On Windows, ShutdownSessionCallback is not called intentionally in order
+     // to avoid crashes oritinates from it. See b/2696087.

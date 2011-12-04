@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mozc-tool
-PORTVERSION=	0.13.523.102
-PORTREVISION=	1
+PORTVERSION=	1.3.911.102
+PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
+MASTER_SITES=	http://mozc.googlecode.com/files/
 DISTNAME=	mozc-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2
 
@@ -21,8 +21,10 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
-		protobuf.7:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+		protobuf.7:${PORTSDIR}/devel/protobuf \
+		zinnia.0:${PORTSDIR}/japanese/zinnia 
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -46,7 +48,8 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
-		${WRKSRC}/gui/about_dialog/about_dialog.cc
+		${WRKSRC}/gui/about_dialog/about_dialog.cc \
+		${WRKSRC}/handwriting/zinnia_handwriting.cc
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; \
@@ -60,9 +63,9 @@ do-build:
 		export BUILD_COMMAND=${GMAKE}; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
 		${PYTHON_CMD} build_mozc.py build_tools \
-			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR}; \
+			-c ${BUILD_MODE}; \
 		${PYTHON_CMD} build_mozc.py build \
-			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR} \
+			-c ${BUILD_MODE} \
 			gui/gui.gyp:mozc_tool
 
 do-install:

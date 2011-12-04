@@ -1,5 +1,5 @@
---- ipc/unix_ipc.cc.org	2010-11-06 10:51:14.204190823 +0900
-+++ ipc/unix_ipc.cc	2010-11-06 10:54:18.096187153 +0900
+--- ipc/unix_ipc.cc.orig	2011-12-04 16:22:26.515606954 +0900
++++ ipc/unix_ipc.cc	2011-12-04 16:46:51.120605285 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -24,10 +24,10 @@
  
 -#ifdef OS_LINUX
 +#if defined(OS_LINUX) && !defined(__FreeBSD__)
-   struct ucred peer_cred;
-   int peer_cred_len = sizeof(peer_cred);
-   if (getsockopt(socket, SOL_SOCKET, SO_PEERCRED,
-@@ -303,7 +303,7 @@
+   // On ARM Linux, we do nothing and just return true since the platform
+   // sometimes doesn't support the getsockopt(sock, SOL_SOCKET, SO_PEERCRED)
+   // system call.
+@@ -309,7 +309,7 @@
      address.sun_family = AF_UNIX;
      ::memcpy(address.sun_path, server_address.data(), server_address_length);
      address.sun_path[server_address_length] = '\0';
@@ -36,7 +36,7 @@
      address.sun_len = SUN_LEN(&address);
      const size_t sun_len = sizeof(address);
  #else
-@@ -423,21 +423,21 @@
+@@ -429,21 +429,21 @@
                 SO_REUSEADDR,
                 reinterpret_cast<char *>(&on),
                 sizeof(on));

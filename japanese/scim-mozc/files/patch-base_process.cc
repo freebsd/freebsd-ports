@@ -1,6 +1,6 @@
---- base/process.cc.org	2010-11-06 10:44:33.530187843 +0900
-+++ base/process.cc	2010-11-06 10:45:08.765186704 +0900
-@@ -194,13 +194,18 @@
+--- base/process.cc.orig	2011-12-04 16:22:26.103607664 +0900
++++ base/process.cc	2011-12-04 16:46:51.045606717 +0900
+@@ -120,13 +120,18 @@
    return ShellExecuteInSystemDir(L"open", wurl.c_str(), NULL, SW_SHOW);
  #endif
  

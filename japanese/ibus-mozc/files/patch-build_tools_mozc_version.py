@@ -1,6 +1,6 @@
---- build_tools/mozc_version.py.org	2010-11-06 10:46:40.900188220 +0900
-+++ build_tools/mozc_version.py	2010-11-06 10:47:03.466651555 +0900
-@@ -55,7 +55,7 @@
+--- build_tools/mozc_version.py.orig	2011-12-04 16:22:26.211608471 +0900
++++ build_tools/mozc_version.py	2011-12-04 16:35:15.156605950 +0900
+@@ -56,7 +56,7 @@
  
  def IsLinux():
    """Returns true if the platform is Linux."""
@@ -8,4 +8,4 @@
 +  return os.name == 'posix' and ( os.uname()[0] == 'Linux' or os.uname()[0] == 'FreeBSD' )
  
  
- def CalculateRevisionForPlatform(revision):
+ def CalculateRevisionForPlatform(revision, target_platform):
