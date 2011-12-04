@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	match
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	astro
 MASTER_SITES=	http://spiff.rit.edu/match/ \
 		http://www.c-s.li/ports/
