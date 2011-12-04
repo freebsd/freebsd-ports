@@ -16,26 +16,24 @@ COMMENT=	Subversion repository web frontend
 USE_PHP=	iconv pcre xml
 NO_BUILD=	yes
 
-WEBSVNDIR?=	www/${PORTNAME}
-PLIST=		${WRKDIR}/pkg-plist
+WEBSVNDIR?=	${WWWDIR_REL}
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	WEBSVNDIR="${WEBSVNDIR}"
-
-pre-install:
-	@cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WEBSVNDIR}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WEBSVNDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WEBSVNDIR} >> ${PLIST}
+PLIST_SUB+=	WEBSVNDIR="${WEBSVNDIR}"
 
 do-install:
 	${MKDIR} ${PREFIX}/${WEBSVNDIR}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${WEBSVNDIR}
+	(cd ${WRKSRC} \
+	    && ${COPYTREE_SHARE} \* ${PREFIX}/${WEBSVNDIR})
 	${CHOWN} -R www:www ${PREFIX}/${WEBSVNDIR}
-	${FIND} ${PREFIX}/${WEBSVNDIR} -type f | ${XARGS} ${CHMOD} 644
+	${FIND} ${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 '{}' +
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+	@[ -f ${PREFIX}/${WEBSVNDIR}/include/config.php ] \
+	    || ${INSTALL_DATA} \
+	    ${PREFIX}/${WEBSVNDIR}/include/distconfig.php \
+	    ${PREFIX}/${WEBSVNDIR}/include/config.php
 
 .include <bsd.port.mk>
