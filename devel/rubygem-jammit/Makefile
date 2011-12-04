@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jammit
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
