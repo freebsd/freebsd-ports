@@ -1,4 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/README-jdbc
-%%JAVAJARDIR%%/postgresql.jar
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DOCSDIR%%
