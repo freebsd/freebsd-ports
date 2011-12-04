@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asdcplib
-PORTVERSION=	1.8.41
-PORTREVISION=	1
+PORTVERSION=	1.8.44
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.cinecert.com/asdcplib/
 
