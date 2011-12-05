@@ -1038,6 +1038,7 @@
     SUBDIR += mingw32-gcc
     SUBDIR += mingw32-libffi
     SUBDIR += mingw32-libyaml
+    SUBDIR += mingw32-openssl
     SUBDIR += mingw32-pdcurses
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
