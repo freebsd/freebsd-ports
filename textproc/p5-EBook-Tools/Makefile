@@ -32,6 +32,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip 
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS+=	${LOCALBASE}/bin/tidy:${PORTSDIR}/www/tidy
 
+BROKEN=		tidy now installs as tidy-4
+
 PERL_MODBUILD=	yes
 
 MAN1=	ebook.1
