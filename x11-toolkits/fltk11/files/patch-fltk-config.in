@@ -1,0 +1,20 @@
+--- fltk-config.in.orig	Mon Sep  6 15:20:52 2004
++++ fltk-config.in	Sat Jun 25 11:45:04 2005
+@@ -180,7 +180,7 @@
+ fi
+ 
+ # Calculate needed libraries
+-LDSTATIC="$libdir/libfltk.a $LDLIBS"
++LDSTATIC="-lm $libdir/libfltk.a $LDLIBS"
+ LDLIBS="-lfltk$SHAREDSUFFIX $LDLIBS"
+ LIBS="$libdir/libfltk.a"
+ 
+@@ -247,7 +247,7 @@
+ fi
+ 
+ if test "$echo_ldflags" = "yes"; then
+-    my_libs=
++    my_libs="-lm"
+     libdirs=$libs
+ 
+     for i in $LDLIBS ; do

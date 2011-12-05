@@ -18,6 +18,7 @@
     SUBDIR += flowcanvas
     SUBDIR += fltk
     SUBDIR += fltk-threads
+    SUBDIR += fltk11
     SUBDIR += fltk2
     SUBDIR += flu
     SUBDIR += flvw
