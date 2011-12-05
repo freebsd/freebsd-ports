@@ -579,6 +579,7 @@
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node-devel
+    SUBDIR += node04
     SUBDIR += nostromo
     SUBDIR += notftp
     SUBDIR += npapi-xine
