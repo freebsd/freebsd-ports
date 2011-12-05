@@ -1,4 +1,2 @@
-SHA256 (cacti-spine-0.8.7g.tar.gz) = 2735fbc1fc38d31651009d0a8d6ea121b29403d6020b13ba245ab4f3e0f6d561
-SIZE (cacti-spine-0.8.7g.tar.gz) = 592801
-SHA256 (unified_issues.patch) = 5bfc4fe3eeedbab4d32620b6e141b0b6cfe674e76a938c19e13fb1b70e80fa0b
-SIZE (unified_issues.patch) = 11583
+SHA256 (cacti-spine-0.8.7h.tar.gz) = 62f6451445cafc591c78c6bb530f96a8382183e9f5ee4e6bf7f5f3d770030a7c
+SIZE (cacti-spine-0.8.7h.tar.gz) = 623334
