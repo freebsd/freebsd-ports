@@ -7,6 +7,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.9
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -33,6 +34,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PGPLOT "Enable PDL::Graphics::PGPLOT" on \
 		PLPLOT "Enable PDL::Graphics::PLplot" off \
+		GL "Enable PDL::Graphics::TriD and OpenGL" on \
 		GD "Enable PDL::IO::GD" off \
 		FFTW "Enable PDL::FFTW" on \
 		GSL "Enable PDL::GSL interface" off \
@@ -41,8 +43,6 @@ OPTIONS=	PGPLOT "Enable PDL::Graphics::PGPLOT" on \
 		F77 "Enable PDL::Minuit and PDL::Slatec" on \
 		READLINE "Use GNU readline" off \
 		SINK "Include PDL kitchen sink" off
-# Please uncomment this option after updating graphics/p5-OpenGL to 0.60+
-#		GL "Enable PDL::Graphics::TriD and OpenGL" on
 
 .include <bsd.port.options.mk>
 
@@ -54,11 +54,11 @@ BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot
 .endif
 
-#.if defined(WITH_GL)
-#BUILD_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
-#RUN_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
-#USE_GL=		yes
-#.endif
+.if defined(WITH_GL)
+BUILD_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
+RUN_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
+USE_GL=		yes
+.endif
 
 .if defined(WITH_GD)
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
