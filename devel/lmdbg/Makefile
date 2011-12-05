@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Lightweight malloc debugger
 
 BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
 LIB_DEPENDS=	Judy:${PORTSDIR}/devel/judy
-RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
+RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk \
+		${LOCALBASE}/bin/pipestatus:${PORTSDIR}/devel/pipestatus
 USE_LDCONFIG=	yes
 
 LICENSE=	MIT
@@ -30,6 +31,7 @@ MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1 \
 
 MKCMAKE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
 MKCMAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+MKCMAKE_ENV+=	HAVE_HEADER.execinfo_h=0
 
 do-build:
 	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC}
