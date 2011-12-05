@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.07014
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKITOVER
@@ -18,52 +19,41 @@ COMMENT=	Dynamic definition of a DBIx::Class::Schema
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	\
-	p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
-	p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
-	p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
-	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-	p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
-	p5-Class-C3-Componentised>=1.0008:${PORTSDIR}/devel/p5-Class-C3-Componentised \
-	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
-	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-	p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class \
-	p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
-	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
-	p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean \
-	p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard \
-	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Class-C3-Componentised>=1.0008:${PORTSDIR}/devel/p5-Class-C3-Componentised \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
+		p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
+		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
+		p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-String-CamelCase>=0.02:${PORTSDIR}/textproc/p5-String-CamelCase \
+		p5-String-ToIdentifier-EN>=0.05:${PORTSDIR}/textproc/p5-String-ToIdentifier-EN \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	\
-	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception	\
-	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple	\
-	p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn	\
-	p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI	\
-	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite	\
-	p5-File-Temp>=0.16:${PORTSDIR}/devel/p5-File-Temp	\
-	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
+TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI \
+		p5-Moose>=1.12:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-MarkAsMethods>=0.13:${PORTSDIR}/devel/p5-MooseX-MarkAsMethods \
+		p5-MooseX-NonMoose>=0.16:${PORTSDIR}/devel/p5-MooseX-NonMoose \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
 
-OPTIONS=	SQLITE "SQLite Support" Off \
-		MYSQL "MySQL Support" Off \
+OPTIONS=	MYSQL "MySQL Support" Off \
+		ORACLE "Oracle Support (experimental)" Off \
 		PGSQL "PostgreSQL Support" Off \
-		ORACLE "Oracle Support (experimental)" Off
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_SQLITE)
-USE_SQLITE=	yes
-.endif
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-.endif
-.if defined(WITH_PGSQL)
-USE_PGSQL=	yes
-.endif
-.if defined(WITH_ORACLE)
-RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
-.endif
+		SQLITE "SQLite Support" Off
 
 PERL_CONFIGURE=	yes
 
@@ -108,4 +98,29 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::Table::Informix.3 \
 	DBIx::Class::Schema::Loader::Table::Sybase.3
 
-.include <bsd.port.mk>
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_ORACLE)
+BUILD_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
