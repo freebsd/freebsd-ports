@@ -17,6 +17,8 @@ COMMENT=	Convert VRML files to POVRay source
 
 RESTRICTED=	Redistribution is not allowed
 
+BROKEN=		unfetchable
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
