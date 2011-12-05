@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-without-dicten
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
 
 LICENSE=	LGPL21

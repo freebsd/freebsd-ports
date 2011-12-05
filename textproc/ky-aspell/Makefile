@@ -9,7 +9,7 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-ky-0.01-0
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Kirghiz dictionary
 
 DICT=	 	ky

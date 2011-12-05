@@ -9,7 +9,7 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-en-7.1-0
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell English dictionaries
 
 DICT=		en

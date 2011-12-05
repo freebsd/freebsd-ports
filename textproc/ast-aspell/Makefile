@@ -9,7 +9,7 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-ast-0.01
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Asturian dictionary
 
 DICT=	 	ast

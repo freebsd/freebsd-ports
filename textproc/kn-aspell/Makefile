@@ -9,12 +9,12 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-kn-0.01-1
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Kannada dictionary
 
-DICT=	 	kn
-
 LICENSE=	GPLv3
+
+DICT=	 	kn
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
