@@ -1,3 +1,4 @@
+bin/zipdetails
 %%SITE_PERL%%/Compress/Zlib.pm
 %%SITE_PERL%%/File/GlobMapper.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Bzip2.pm
@@ -7,6 +8,7 @@
 %%SITE_PERL%%/IO/Compress/Base/Common.pm
 %%SITE_PERL%%/IO/Compress/Bzip2.pm
 %%SITE_PERL%%/IO/Compress/Deflate.pm
+%%SITE_PERL%%/IO/Compress/FAQ.pod
 %%SITE_PERL%%/IO/Compress/Gzip.pm
 %%SITE_PERL%%/IO/Compress/Gzip/Constants.pm
 %%SITE_PERL%%/IO/Compress/RawDeflate.pm

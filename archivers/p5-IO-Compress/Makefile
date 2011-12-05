@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.043
+PORTVERSION=	2.045
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -18,20 +18,22 @@ COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.043:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
-		p5-Compress-Raw-Zlib>=2.043:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
-RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.043:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
-		p5-Compress-Raw-Zlib>=2.043:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 
 CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
 PERL_CONFIGURE=	yes
 
+MAN1=		zipdetails.1
 MAN3=		Compress::Zlib.3 \
 		File::GlobMapper.3 \
 		IO::Compress::Base.3 \
 		IO::Compress::Bzip2.3 \
 		IO::Compress::Deflate.3 \
+		IO::Compress::FAQ.3 \
 		IO::Compress::Gzip.3 \
 		IO::Compress::RawDeflate.3 \
 		IO::Compress::Zip.3 \
