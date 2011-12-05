@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont
@@ -18,7 +18,7 @@ COMMENT=	Korean font support for xpdf
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${FONTSDIR}/UnBatang.ttf:${PORTSDIR}/korean/unfonts-ttf
+		${FONTSDIR}/UnBatang.ttf:${PORTSDIR}/korean/unfonts-core
 
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc
