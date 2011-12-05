@@ -1,0 +1,9 @@
+%%SITE_PERL%%/String/ToIdentifier/EN.pm
+%%SITE_PERL%%/String/ToIdentifier/EN/Unicode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier/EN/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrm %%SITE_PERL%%/String/ToIdentifier/EN
+@dirrmtry %%SITE_PERL%%/String/ToIdentifier
+@dirrmtry %%SITE_PERL%%/String
