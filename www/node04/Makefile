@@ -7,6 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -23,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
 
-CONFLICTS=	node-0.5.[0-9]*
+CONFLICTS=	node-0.[0-35-9]* node-devel-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
@@ -52,6 +53,6 @@ do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} install)
 
 post-install:
-	@${INSTALL_MAN}  ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
