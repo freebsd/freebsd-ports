@@ -25,6 +25,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900044
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \
 		s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -35,4 +41,4 @@ post-patch:
 		's,^kde includedir,# kde includedir,' \
 		${WRKSRC}/libk9copy/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
