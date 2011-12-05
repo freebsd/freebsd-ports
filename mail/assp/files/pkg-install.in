@@ -8,6 +8,9 @@ if [ "${2}" = "POST-INSTALL" ]; then
     ASSP_LOG=%%ASSP_LOG%%
     DATADIR=${PKG_PREFIX}/share/assp
 
+    chmod -R 755 ${DATADIR}/files
+    chown -R ${ASSP_USER}:${ASSP_GROUP} ${DATADIR}/files
+
     ln -sf ${DATADIR}/assp.pl ${PKG_PREFIX}/sbin/assp
 
     install -d -m 750 -o ${ASSP_USER} -g ${ASSP_GROUP} ${ASSP_LOG}
@@ -16,5 +19,7 @@ if [ "${2}" = "POST-INSTALL" ]; then
     ln -sf ${DATADIR}/files ${ASSP_HOME}
     ln -sf ${DATADIR}/images ${ASSP_HOME}
     ln -sf ${DATADIR}/reports ${ASSP_HOME}
+    ln -sf ${DATADIR}/rebuildspam.pl ${ASSP_HOME}
     ln -sf ${ASSP_LOG} ${ASSP_HOME}/logs
+
 fi

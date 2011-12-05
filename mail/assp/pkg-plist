@@ -18,9 +18,11 @@ sbin/assplog
 %%DATADIR%%/files/denyalways.txt
 %%DATADIR%%/files/dnsbls.txt
 %%DATADIR%%/files/droplist.txt
+%%DATADIR%%/files/groups.txt
 %%DATADIR%%/files/invalidhelo.txt
 %%DATADIR%%/files/invalidptr.txt
 %%DATADIR%%/files/ipnp.txt
+%%DATADIR%%/files/noblocking.txt
 %%DATADIR%%/files/nodelay.txt
 %%DATADIR%%/files/nodelayhelosre.txt
 %%DATADIR%%/files/nogrip.txt
@@ -89,10 +91,10 @@ sbin/assplog
 @dirrm %%DATADIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
-@unexec rm %%ASSP_HOME%%/logs
-@unexec rm %%ASSP_HOME%%/reports
-@unexec rm %%ASSP_HOME%%/images
-@unexec rm %%ASSP_HOME%%/files
+@unexec rm -f %%ASSP_HOME%%/logs
+@unexec rm -f %%ASSP_HOME%%/reports
+@unexec rm -f %%ASSP_HOME%%/images
+@unexec rm -f %%ASSP_HOME%%/files
 @unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
 @unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
 @unexec rmdir %%ASSP_LOG%% 2>/dev/null || true
