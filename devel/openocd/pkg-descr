@@ -12,4 +12,4 @@ NOR flashes (Intel and AMD/Spansion command set) and several internal flashes
 various NAND flash controllers (LPC3180, Orion, S3C24xx, more) controller is
 included. 
 
-WWW: http://openocd.berlios.de/
+WWW: http://openocd.sf.net/
