@@ -270,8 +270,6 @@ PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 
 .if !defined(NO_BUILD)
 post-patch:
-	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
-
 .  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
 pre-install:
 	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
