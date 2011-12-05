@@ -7,6 +7,7 @@
 
 PORTNAME=	json_pure
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,7 @@ RUBYGEM_AUTOPLIST=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.9
-USE_RUBY_FEATURES=	iconv
+RUN_DEPENDS+=           ${DEPEND_RUBY_ICONV}
 .endif
 
 .include <bsd.port.post.mk>
