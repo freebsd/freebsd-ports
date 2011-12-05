@@ -54,6 +54,7 @@ include/nettle/twofish.h
 include/nettle/yarrow.h
 lib/libnettle.a
 sbin/lsh-execuv
+%%KRB%%sbin/lsh-krb-checkpw
 sbin/lsh-pam-checkpw
 sbin/lshd
 sbin/sftp-server
