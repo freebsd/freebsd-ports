@@ -850,10 +850,8 @@
     SUBDIR += ruby-cairo
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdk_pixbuf2
-    SUBDIR += ruby-gnomecanvas2
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
-    SUBDIR += ruby-libart2
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += ruby-pgplot

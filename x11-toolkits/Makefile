@@ -237,14 +237,11 @@
     SUBDIR += renaissance
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox16
-    SUBDIR += ruby-gnomeprintui
     SUBDIR += ruby-goocanvas
     SUBDIR += ruby-gstreamer
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
-    SUBDIR += ruby-gtkglext
     SUBDIR += ruby-gtksourceview2
-    SUBDIR += ruby-panelapplet
     SUBDIR += ruby-pango
     SUBDIR += ruby-poppler
     SUBDIR += ruby-tk
