@@ -378,6 +378,7 @@
     SUBDIR += p5-DBIx-RetryOverDisconnects
     SUBDIR += p5-DBIx-SQLEngine
     SUBDIR += p5-DBIx-SQLite-Simple
+    SUBDIR += p5-DBIx-Safe
     SUBDIR += p5-DBIx-SearchBuilder
     SUBDIR += p5-DBIx-Sequence
     SUBDIR += p5-DBIx-Simple
