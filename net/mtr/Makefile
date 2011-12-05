@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
