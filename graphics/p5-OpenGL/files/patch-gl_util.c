@@ -1,15 +1,6 @@
---- gl_util.c.orig	Wed Jun 20 09:03:02 2001
-+++ gl_util.c	Tue Dec 14 18:41:08 2004
-@@ -1,5 +1,8 @@
- 
- #include "gl_util.h"
-+#if defined(HAVE_GLEXT_H) && !defined(GL_BLEND_EQUATION_EXT)
-+#include <GL/glext.h>
-+#endif
- 
- int gl_texparameter_count(GLenum pname)
- {
-@@ -708,6 +711,12 @@
+--- gl_util.c.orig	2011-07-07 08:39:22.000000000 -0500
++++ gl_util.c	2011-10-12 22:09:31.520959086 -0500
+@@ -756,6 +756,12 @@ int gl_component_count(GLenum format, GL
  
  /* 18 */
  #ifdef GL_EXT_cmyka
