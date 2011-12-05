@@ -1,6 +1,7 @@
 libdata/pkgconfig/ruby-glib2.pc
 %%RUBY_SITELIBDIR%%/glib-mkenums.rb
 %%RUBY_SITELIBDIR%%/glib2.rb
+%%RUBY_SITELIBDIR%%/gnome2-raketask.rb
 %%RUBY_SITEARCHLIBDIR%%/glib2.so
 %%RUBY_SITEARCHLIBDIR%%/rbgcompat.h
 %%RUBY_SITEARCHLIBDIR%%/rbglib.h

@@ -1,6 +1,7 @@
 libdata/pkgconfig/ruby-vte.pc
 %%RUBY_SITEARCHLIBDIR%%/vte.so
 %%RUBY_SITELIBDIR%%/vte.rb
+%%RUBY_SITELIBDIR%%/vte/deprecated.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
@@ -9,4 +10,5 @@ libdata/pkgconfig/ruby-vte.pc
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_SITELIBDIR%%/vte
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%

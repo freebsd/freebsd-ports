@@ -6,6 +6,7 @@ libdata/pkgconfig/ruby-gstreamer.pc
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/audio-player.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gst-inspect.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/install-plugins.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/media-type.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/media-type2.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/ogg-audio-player.rb

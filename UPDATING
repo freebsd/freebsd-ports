@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111205:
+  AFFECTS: users of ruby-gnome ports
+  AUTHOR: swills@FreeBSD.org
+
+  ruby-gnome has been updated to 1.0.3. Some of the have been removed
+  since they are no longer included upstream. The meta port is
+  now x11/ruby-gnome2. To update run the following command:
+
+  # portmaster -o x11/ruby-gnome2 x11/ruby-gnome2-all
+
+  You may also wish to remove the old ports using:
+
+  # portmaster -s
+
 20111130:
   AFFECTS: users of dns/nsd
   AUTHOR: zi@FreeBSD.org
