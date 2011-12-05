@@ -7,10 +7,11 @@
 
 PORTNAME=	libdispatch
 PORTVERSION=	210
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
 USE_AUTOTOOLS=	aclocal autoconf
@@ -28,7 +29,7 @@ MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
 	dispatch_object.3 dispatch_once.3 dispatch_queue_create.3 \
 	dispatch_semaphore_create.3 dispatch_source_create.3 dispatch_time.3
 
-MLINKS= dispatch_after.3 dispatch_after_f.3 \
+MLINKS=	dispatch_after.3 dispatch_after_f.3 \
 	dispatch_apply.3 dispatch_apply_f.3 \
 	dispatch_async.3 dispatch_sync.3 \
 	dispatch_async.3 dispatch_async_f.3 \
@@ -93,9 +94,9 @@ BROKEN=		Does not link on sparc64-9
 
 .if !defined(WITHOUT_CLANG)
 . if ${OSVERSION} < 900024
-BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang-devel \
+BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
-RUN_DEPENDS+=	clang:${PORTSDIR}/lang/clang-devel \
+RUN_DEPENDS+=	clang:${PORTSDIR}/lang/clang \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
 CONFIGURE_ARGS+=	--with-blocks-runtime=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CC="${LOCALBASE}/bin/clang" CPPFLAGS="-I${LOCALBASE}/include"
