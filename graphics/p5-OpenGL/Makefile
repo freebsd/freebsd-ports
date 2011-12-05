@@ -7,20 +7,25 @@
 #
 
 PORTNAME=	OpenGL
-PORTVERSION=	0.54
-PORTREVISION=	2
+PORTVERSION=	0.66
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ILYAZ/modules
+MASTER_SITE_SUBDIR=	CPAN:CHM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
-USE_GL=		glut
+CONFIGURE_ARGS=	interface=GLUT
 PERL_CONFIGURE=	yes
+USE_DISPLAY=	yes
+USE_GL=		glut
+
+MAN3=		Array.3 \
+		OpenGL.3 \
+		Tessellation.3
 
 post-patch:
-	@${PERL} -pi -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
