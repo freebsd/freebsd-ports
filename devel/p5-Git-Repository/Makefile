@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOOK
@@ -18,8 +18,12 @@ COMMENT=	Perl interface to Git repositories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-System-Command>=0:${PORTSDIR}/devel/p5-System-Command
+BUILD_DEPENDS=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
+		p5-System-Command>=1.01:${PORTSDIR}/devel/p5-System-Command
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
