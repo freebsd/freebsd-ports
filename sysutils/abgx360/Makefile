@@ -24,6 +24,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900044
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 .if ${OSVERSION} > 900000
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
