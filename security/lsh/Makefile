@@ -26,11 +26,6 @@ INSTALL_TARGET=	install
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
-PLIST_SUB+=	KRB=""
-.else
-PLIST_SUB+=	KRB="@comment "
-.endif
 .if defined(WITH_THREADS) || defined(WITH_LSH_THREADS)
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
@@ -57,8 +52,10 @@ test:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not deinstall cleanly on powerpc
+.if ${OSVERSION} >= 900000
+PLIST_SUB+=	KRB=""
+.else
+PLIST_SUB+=	KRB="@comment "
 .endif
 
 .include <bsd.port.post.mk>
