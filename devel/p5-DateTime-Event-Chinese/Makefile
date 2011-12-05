@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Event-Chinese
-PORTVERSION=	0.05
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -15,17 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Calculating Important Chinese Dates
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Event-Lunar>=0.06:${PORTSDIR}/devel/p5-DateTime-Event-Lunar \
-		p5-DateTime-Event-SolarTerm>=0.05:${PORTSDIR}/devel/p5-DateTime-Event-SolarTerm \
-		p5-DateTime-Util-Astro>=0.11:${PORTSDIR}/devel/p5-DateTime-Util-Astro \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-DateTime-Astro>=0:${PORTSDIR}/devel/p5-DateTime-Astro \
 		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Event-Lunar>=0.06:${PORTSDIR}/devel/p5-DateTime-Event-Lunar \
-		p5-DateTime-Event-SolarTerm>=0.05:${PORTSDIR}/devel/p5-DateTime-Event-SolarTerm \
-		p5-DateTime-Util-Astro>=0.11:${PORTSDIR}/devel/p5-DateTime-Util-Astro \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+RUN_DEPENDS=	p5-DateTime-Astro>=0:${PORTSDIR}/devel/p5-DateTime-Astro \
 		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
 
 PERL_CONFIGURE=	yes
