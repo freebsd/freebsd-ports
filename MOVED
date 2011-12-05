@@ -3001,3 +3001,15 @@ japanese/pycodec||2011-11-27|Has expired: Handled in Python-2.4 upwards
 net-im/py-turpial||2011-11-28|Renamed to net-im/turpial
 databases/p5-Mysql-Diff|databases/p5-MySQL-Diff|2011-11-28|Move to a better place via repocopy
 mail/gtray||2011-12-02|Has expired: Upcoming ruby-gnome update removes dependencies
+devel/ruby-gconf2||2011-12-05|Removed
+devel/ruby-gnomevfs||2011-12-05|Removed
+devel/ruby-libglade2||2011-12-05|Removed
+graphics/ruby-gnomecanvas2||2011-12-05|Removed
+graphics/ruby-libart2||2011-12-05|Removed
+print/ruby-gnomeprint||2011-12-05|Removed
+www/ruby-gtkhtml2||2011-12-05|Removed
+www/ruby-gtkmozembed||2011-12-05|Removed
+x11-toolkits/ruby-gnomeprintui||2011-12-05|Removed
+x11-toolkits/ruby-gtkglext||2011-12-05|Removed
+x11-toolkits/ruby-panelapplet||2011-12-05|Removed
+x11/ruby-gnome2-all||2011-12-05|Removed

@@ -245,7 +245,6 @@
     SUBDIR += rstart
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome2
-    SUBDIR += ruby-gnome2-all
     SUBDIR += ruby-gtktrayicon
     SUBDIR += rxvt
     SUBDIR += rxvt-devel

@@ -1612,8 +1612,6 @@
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
-    SUBDIR += ruby-gtkhtml2
-    SUBDIR += ruby-gtkmozembed
     SUBDIR += ruby-nora
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
