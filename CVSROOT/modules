@@ -9174,9 +9174,12 @@ mingw32-bin-msvcrt              ports/devel/mingw32-bin-msvcrt
 mingw32-binutils                ports/devel/mingw32-binutils
 mingw32-directx                 ports/devel/mingw32-directx
 mingw32-gcc                     ports/devel/mingw32-gcc
+mingw32-libffi                  ports/devel/mingw32-libffi
 mingw32-libgmp4                 ports/math/mingw32-libgmp4
+mingw32-libyaml                 ports/devel/mingw32-libyaml
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
 mingw32-pthreads                ports/devel/mingw32-pthreads
+mingw32-zlib                    ports/devel/mingw32-zlib
 mingw64-binutils                ports/devel/mingw64-binutils
 mini_httpd                      ports/www/mini_httpd
 mini_sendmail                   ports/mail/mini_sendmail
@@ -12226,6 +12229,7 @@ p5-FindBin-libs                 ports/devel/p5-FindBin-libs
 p5-Flea                         ports/www/p5-Flea
 p5-Flickr-API                   ports/www/p5-Flickr-API
 p5-Flickr-Upload                ports/www/p5-Flickr-Upload
+p5-Fliggy                       ports/www/p5-Fliggy
 p5-Font-AFM                     ports/x11-fonts/p5-Font-AFM
 p5-Font-FreeType                ports/print/p5-Font-FreeType
 p5-Font-TTF                     ports/x11-fonts/p5-Font-TTF
@@ -14280,6 +14284,7 @@ p5-Template-Plugin-XML-Escape   ports/textproc/p5-Template-Plugin-XML-Escape
 p5-Template-Provider-Encode     ports/devel/p5-Template-Provider-Encode
 p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
 p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
+p5-Template-Simple              ports/www/p5-Template-Simple
 p5-Template-Stash-AutoEscape    ports/www/p5-Template-Stash-AutoEscape
 p5-Template-Timer               ports/www/p5-Template-Timer
 p5-Template-Tiny                ports/textproc/p5-Template-Tiny
@@ -16649,6 +16654,7 @@ p5-findbin-libs                 ports/devel/p5-FindBin-libs
 p5-flea                         ports/www/p5-Flea
 p5-flickr-api                   ports/www/p5-Flickr-API
 p5-flickr-upload                ports/www/p5-Flickr-Upload
+p5-fliggy                       ports/www/p5-Fliggy
 p5-flv-info                     ports/multimedia/p5-FLV-Info
 p5-font-afm                     ports/x11-fonts/p5-Font-AFM
 p5-font-freetype                ports/print/p5-Font-FreeType
@@ -18758,6 +18764,7 @@ p5-template-plugin-xml-escape   ports/textproc/p5-Template-Plugin-XML-Escape
 p5-template-provider-encode     ports/devel/p5-Template-Provider-Encode
 p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
 p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
+p5-template-simple              ports/www/p5-Template-Simple
 p5-template-stash-autoescape    ports/www/p5-Template-Stash-AutoEscape
 p5-template-timer               ports/www/p5-Template-Timer
 p5-template-tiny                ports/textproc/p5-Template-Tiny
