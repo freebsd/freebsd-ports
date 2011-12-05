@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
 CONFLICTS=	squeezecenter-[67]*
