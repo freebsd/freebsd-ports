@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	openocd
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
-MASTER_SITES=	BERLIOS \
-		SF
+MASTER_SITES=	SF
 
 MAINTAINER=	tomek.cedro@gmail.com
 COMMENT=	Open On-Chip Debugger
@@ -36,6 +34,7 @@ OPTIONS=	VERBOSE "Enable verbose JTAG I/O messages" off \
 MAN1=		${PORTNAME}.1
 INFO=		${PORTNAME}
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 #Below are the interfaces that need source rewitre to work with FreeBSD
@@ -105,7 +104,7 @@ CONFIGURE_ARGS+=	--disable-parport
 
 .if defined(WITH_FT2232)
 CONFIGURE_ARGS+=	--enable-ft2232_libftdi
-USE_LIBFTDI=		yes
+WITH_LIBFTDI=		yes
 .else
 CONFIGURE_ARGS+=	--disable-ft2232_libftdi
 .endif
@@ -162,14 +161,14 @@ CONFIGURE_ARGS+=	--disable-gw16012
 
 .if defined(WITH_PRESTO)
 CONFIGURE_ARGS+=	--enable-presto_libftdi
-USE_LIBFTDI=		yes
+WITH_LIBFTDI=		yes
 .else
 CONFIGURE_ARGS+=	--disable-presto_libftdi
 .endif
 
 .if defined(WITH_USBPROG)
 CONFIGURE_ARGS+=	--enable-usbprog
-USE_LIBUSB=		yes
+WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-usbprog
 .endif
@@ -182,28 +181,28 @@ CONFIGURE_ARGS+=	--disable-oocd_trace
 
 .if defined(WITH_JLINK)
 CONFIGURE_ARGS+=	--enable-jlink
-USE_LIBUSB=		yes
+WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-jlink
 .endif
 
 .if defined(WITH_VSLLINK)
 CONFIGURE_ARGS+=	--enable-vsllink
-USE_LIBUSB=		yes
+WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-vsllink
 .endif
 
 .if defined(WITH_RLINK)
 CONFIGURE_ARGS+=	--enable-rlink
-USE_LIBUSB=		yes
+WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-rlink
 .endif
 
 .if defined(WITH_ARMJTAGEW)
 CONFIGURE_ARGS+=	--enable-arm-jtag-ew
-USE_LIBUSB=		yes
+WITH_LIBUSB=		yes
 .else
 CONFIGURE_ARGS+=	--disable-arm-jtag-ew
 .endif
@@ -216,11 +215,11 @@ CONFIGURE_ARGS+=	--disable-minidriver-dummy
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_LIBUSB) && ${OSVERSION} < 800069
+.if defined(WITH_LIBUSB) && ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .endif
 
-.if defined(USE_LIBFTDI)
+.if defined(WITH_LIBFTDI)
 LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 .endif
 
