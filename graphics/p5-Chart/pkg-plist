@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Chart.pod
 %%SITE_PERL%%/Chart/Bars.pm
 %%SITE_PERL%%/Chart/Base.pm
+%%SITE_PERL%%/Chart/BrushStyles.pm
 %%SITE_PERL%%/Chart/Composite.pm
 %%SITE_PERL%%/Chart/Constants.pm
 %%SITE_PERL%%/Chart/Direction.pm
