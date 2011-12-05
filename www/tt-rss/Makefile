@@ -78,6 +78,7 @@ do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name LICENSE")
 	${RM} -rf ${WWWDIR}/debian
+	${MKDIR} ${WWWDIR}/icons/	# Not used for fresh installation
 	${TOUCH} ${WWWDIR}/icons/.empty
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
