@@ -8,10 +8,9 @@
 PORTNAME=	qemu
 PORTVERSION=	1.0
 CATEGORIES=	emulators
-MASTER_SITES=	SAVANNAH:release \
-		http://wiki.qemu.org/download/:release \
-		LOCAL:snapshot
-MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
+MASTER_SITES=	http://wiki.qemu.org/download/qemu/:release \
+		LOCAL/nox:release \
+		LOCAL/nox:snapshot
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
 		sgabios-read-only-r8${EXTRACT_SUFX}:snapshot
