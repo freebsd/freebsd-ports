@@ -9,47 +9,29 @@
 PORTNAME=	gnome2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	x11 ruby gnome
-MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
-MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
+MASTER_SITES=	# none
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${RUBY_GNOME_DISTNAME}
-DIST_SUBDIR=	ruby
+DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A set of Ruby bindings for GNOME2
+COMMENT=	The "meta-port" for Ruby/GNOME2
 
-BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gio2.so:${PORTSDIR}/devel/ruby-gio2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/goocanvas.so:${PORTSDIR}/x11-toolkits/ruby-goocanvas \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gst.so:${PORTSDIR}/x11-toolkits/ruby-gstreamer \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtksourceview2.so:${PORTSDIR}/x11-toolkits/ruby-gtksourceview2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/poppler.so:${PORTSDIR}/x11-toolkits/ruby-poppler \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/rsvg2.so:${PORTSDIR}/graphics/ruby-rsvg2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/vte.so:${PORTSDIR}/x11-toolkits/ruby-vte
 
 USE_RUBY=	yes
-USE_GNOME=	libgnomeui
-USE_RUBY_EXTCONF=	yes
-CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/gnome
-INSTALL_TARGET=	site-install install
+NO_BUILD=	yes
 
-DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
-
-post-patch: general-patch
-
-post-build:
-	@${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
-	@${CP} ${RUBY_GNOME_WRKSRC}/README ${WRKSRC}/README.gnome2-all
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/test-gnome
-	@${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/sample/test-gnome/* ${RUBY_MODEXAMPLESDIR}/test-gnome/
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS_EN}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.endif
+do-install:
+	@${DO_NADA}
 
 .include <bsd.port.mk>

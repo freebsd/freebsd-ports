@@ -7,7 +7,6 @@
 
 PORTNAME=	poppler
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -33,7 +32,7 @@ INSTALL_TARGET=	site-install install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch: general-patch
+post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:

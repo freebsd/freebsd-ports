@@ -13,7 +13,7 @@ MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_GNOME_DISTNAME}
-DIST_SUBDIR=	ruby
+DIST_SUBDIR=	${RUBY_GNOME_DIST_SUBDIR}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GTK+2
@@ -36,7 +36,7 @@ INSTALL_TARGET=	site-install install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch: general-patch
+post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/sample/gtk-demo/common.rb
 	@${REINPLACE_CMD} -e 's|local/bin/ruby|bin/env ruby|g' \
