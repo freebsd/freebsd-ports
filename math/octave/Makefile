@@ -7,6 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -101,6 +102,7 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
 
 post-patch:
 	${REINPLACE_CMD} 's+"makeinfo"+"${PREFIX}/bin/makeinfo"+' ${WRKSRC}/src/help.cc
+	${REINPLACE_CMD} 's+-lumfpack+-lumfpack -lcholmod -lcolamd -llapack+' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${DESKTOPDIR}
