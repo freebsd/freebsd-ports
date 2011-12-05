@@ -60,10 +60,14 @@ PLIST_SUB+=	X11="@comment "
 CFLAGS+=	-mtune=native
 .endif
 
+.if !empty(MACHINE_CPU:Maltivec)
+CONFIGURE_ARGS+=	--enable-altivec
+.endif
+
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}"
 
 CONFIGURE_ARGS+=	--disable-static-client --disable-server \
-			--disable-altivec --disable-tests \
+			--disable-tests \
 			--with-boinc-platform=${ARCH}-portbld-freebsd
 
 SETI_SITE=	setiathome.berkeley.edu
