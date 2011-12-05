@@ -50,7 +50,8 @@ MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
 	puppet-secret_agent.8 puppet-status.8
 
 OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
-		PACKAGE_ORIGIN	"Use port origin as package name"		On
+		PACKAGE_ORIGIN	"Use port origin as package name"		On \
+		PACKAGE_ROOT	"Use PACKAGEROOT insted of PACKAGESITE"		Off
 
 .include <bsd.port.options.mk>
 
@@ -61,6 +62,14 @@ RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 .if defined(WITH_PACKAGE_ORIGIN)
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
 RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
+.endif
+
+.if defined(WITH_PACKAGE_ROOT)
+.if !defined(WITH_PACKAGE_ORIGIN)
+EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
+.else
+BROKEN=	"PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch."
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
