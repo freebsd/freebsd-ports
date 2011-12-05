@@ -3390,6 +3390,7 @@
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gems
     SUBDIR += ruby-gettext
+    SUBDIR += ruby-gio2
     SUBDIR += ruby-glib2
     SUBDIR += ruby-gnomevfs
     SUBDIR += ruby-gnustep

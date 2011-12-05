@@ -1,0 +1,3 @@
+libdata/pkgconfig/ruby-gio2.pc
+%%RUBY_SITELIBDIR%%/gio2.rb
+%%RUBY_SITEARCHLIBDIR%%/gio2.so
