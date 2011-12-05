@@ -7,6 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -17,6 +18,8 @@ COMMENT=	V8 javascript for client and server
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+IGNORE=		please use www/node for 0.6 branch and this port will be updated to 0.7 development branch
+
 MAN1=		node.1
 
 HAS_CONFIGURE=	yes
@@ -24,7 +27,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 
-CONFLICTS=	node-0.4.[0-9]*
+CONFLICTS=	node-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
@@ -42,6 +45,6 @@ do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} install)
 
 post-install:
-	@${INSTALL_MAN}  ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
