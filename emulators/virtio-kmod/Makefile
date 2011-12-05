@@ -30,6 +30,8 @@ SVN=		${LOCALBASE}/bin/svn
 IGNORE=		requires kernel source to be installed
 .endif
 
+MANUAL_PACKAGE_BUILD=	pointyhat prohibits internet traffic outside fetch stage
+
 .include <bsd.port.pre.mk>
 
 .if ${OSREL} != "8.2" && ${OSREL} != "9.0"
