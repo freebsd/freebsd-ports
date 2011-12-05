@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	20111123
+PORTVERSION=	1.00
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/s-aska/${PORTNAME}/raw/${GITCOMMIT}/
+MASTER_SITES=	https://github.com/s-aska/${PORTNAME}/raw/${PORTVERSION}/
 DISTNAME=	dropbox-api
-EXTRACT_SUFX=
-EXTRACT_ONLY=
+EXTRACT_SUFX=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Dropbox API wrapper command
 
 RUN_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-WebService-Dropbox>=0:${PORTSDIR}/net/p5-WebService-Dropbox \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
-GITCOMMIT=	a60a44e0d8282b4a41b05d8bc3aeaec7110c6dcf
-
-USE_PERL5_RUN=	YES
-NO_BUILD=	YES
 FETCH_ARGS=	-pRr
+NO_BUILD=	yes
+USE_PERL5_RUN=	yes
+
 PLIST_FILES=	bin/dropbox-api
 
 do-install:
