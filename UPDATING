@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of ruby-gnome ports
   AUTHOR: swills@FreeBSD.org
 
-  ruby-gnome has been updated to 1.0.3. Some of the have been removed
+  ruby-gnome has been updated to 1.0.3. Some of them have been removed
   since they are no longer included upstream. The meta port is
   now x11/ruby-gnome2. To update run the following command:
 
