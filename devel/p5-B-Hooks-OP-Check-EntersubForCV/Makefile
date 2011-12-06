@@ -19,6 +19,8 @@ RUN_DEPENDS=	\
 	p5-B-Utils>0:${PORTSDIR}/devel/p5-B-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		does not configure
+
 PERL_CONFIGURE=	yes
 
 MAN3=	B::Hooks::OP::Check::EntersubForCV.3
