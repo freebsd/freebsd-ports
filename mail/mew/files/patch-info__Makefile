@@ -1,6 +1,6 @@
---- ./info/Makefile.orig	2009-08-12 16:51:05.000000000 +0900
-+++ ./info/Makefile	2010-01-04 12:06:23.000000000 +0900
-@@ -15,10 +15,10 @@
+--- ./info/Makefile.orig	2011-10-19 17:46:38.000000000 +0900
++++ ./info/Makefile	2011-11-21 19:26:11.000000000 +0900
+@@ -15,7 +15,7 @@
  ## EDIT THE FOLLOWINGS
  ##
  
@@ -8,15 +8,11 @@
 +prefix=${PREFIX}
  infodir=$(prefix)/info
  
--EMACS=emacs
-+EMACS=${EMACS_CMD}
- 
- INSTALLINFO = `which install-info`
- #INSTALLINFO = /usr/local/bin/install-info
+ EMACS=emacs
 @@ -48,20 +48,20 @@
  info:
- 	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
- 	    -e 's/@set jp/@set us/' mew.texi > tmp.texi
+ 	sed -e 's/@setfilename mew.ja.info/@setfilename mew.info/' \
+ 	    -e 's/@set ja/@set en/' mew.texi > tmp.texi
 -	mv tmp.texi mew.texi
  	$(RM) mew.info*
  	$(TOUCH) mew.info
@@ -26,16 +22,17 @@
 +	$(RM) tmp.texi
  
  jinfo:
- 	sed -e 's/@setfilename mew.info/@setfilename mew.jis.info/' \
--	    -e 's/@set us/@set jp/' mew.texi > tmp.texi
+ 	sed -e 's/@setfilename mew.info/@setfilename mew.ja.info/' \
+-	    -e 's/@set en/@set ja/' mew.texi > tmp.texi
 -	mv tmp.texi mew.texi
-+	    -e 's/@set us/@set jp/' mew.texi > tmp.jis.texi
- 	$(RM) mew.jis.info*
- 	$(TOUCH) mew.jis.info
- 	$(EMACS) -batch -q -no-site-file -l texinfmt \
++	    -e 's/@set en/@set ja/' mew.texi > tmp.ja.texi
+ 	$(RM) mew.ja.info*
+ 	$(TOUCH) mew.ja.info
+-	$(EMACS) -batch -q -no-site-file -l texinfmt \
 -		-f batch-texinfo-format mew.texi
-+		-f batch-texinfo-format tmp.jis.texi
-+	$(RM) tmp.jis.texi
++	LC_ALL=C $(EMACS) -batch -q -no-site-file -l texinfmt \
++		-f batch-texinfo-format tmp.ja.texi
++	$(RM) tmp.ja.texi
  
  install: install-info
  install-info:

@@ -20,31 +20,18 @@ bin/smew
 %%PORTDOCS%%%%DOCSDIR%%/00changes.5.2
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.1
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.2
+%%PORTDOCS%%%%DOCSDIR%%/00changes.6.3
 %%PORTDOCS%%%%DOCSDIR%%/00copyright
-%%PORTDOCS%%%%DOCSDIR%%/00copyright.jis
+%%PORTDOCS%%%%DOCSDIR%%/00copyright.ja
 %%PORTDOCS%%%%DOCSDIR%%/00diff
 %%PORTDOCS%%%%DOCSDIR%%/00readme
-%%PORTDOCS%%%%DOCSDIR%%/mew.dot.emacs
-%%PORTDOCS%%%%DOCSDIR%%/mew.dot.mew
-%%PORTDOCS%%%%DOCSDIR%%/mew.dot.theme
-%%PORTDOCS%%%%DOCSDIR%%/contrib/00readme
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-browse.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-caesar.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-edebug.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-fancy-summary.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-nmz-fixer.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-refile-view.el
-%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-toolbar-frame.el
+%%PORTDOCS%%%%DOCSDIR%%/dot.emacs
+%%PORTDOCS%%%%DOCSDIR%%/dot.mew
+%%PORTDOCS%%%%DOCSDIR%%/dot.theme
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.img
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.png
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.xbm
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/COLOR
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-Plain.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-curr.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-folder.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-inc2.xpm
-%%EMACS_SITE_LISPDIR%%/mew/etc/etc/mew-kill.xpm
 %%EMACS_SITE_LISPDIR%%/mew/etc/mew-Audio.xpm
 %%EMACS_SITE_LISPDIR%%/mew/etc/mew-Blank.xpm
 %%EMACS_SITE_LISPDIR%%/mew/etc/mew-External.xpm
@@ -204,9 +191,7 @@ bin/smew
 %%EMACS_SITE_LISPDIR%%/mew/mew-win32.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew.el
 %%EMACS_SITE_LISPDIR%%/mew/mew.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/mew/etc/etc
 @dirrm %%EMACS_SITE_LISPDIR%%/mew/etc
 @dirrm %%EMACS_SITE_LISPDIR%%/mew
 @dirrmtry %%EMACS_SITE_LISPDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

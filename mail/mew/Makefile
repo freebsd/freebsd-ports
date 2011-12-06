@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	mew
-PORTVERSION=	6.3
-PORTREVISION=	2
+PORTVERSION=	6.4
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www.Mew.org/Release/
+MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	hiroto.kagotani@gmail.com
@@ -47,17 +46,15 @@ INSTALL_TARGET+=install-jinfo
 MAN1=		cmew.1 mew-pinentry.1 mewcat.1 mewdecode.1 mewencode.1 mewest.1 mewl.1 smew.1 incm.1
 INFO=		mew
 .if !defined(NOPORTDOCS)
-INFO+=		mew.jis
+INFO+=		mew.ja
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} ; \
-		${INSTALL_DATA} 00* mew.dot.* ${DOCSDIR}/ ; \
-		for dir in contrib; do \
-			${CP} -R $${dir} ${DOCSDIR}/ ; \
-		done)
+		${INSTALL_DATA} 00* dot.* ${DOCSDIR}/ ; \
+		)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
