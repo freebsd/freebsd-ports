@@ -9177,6 +9177,7 @@ mingw32-gcc                     ports/devel/mingw32-gcc
 mingw32-libffi                  ports/devel/mingw32-libffi
 mingw32-libgmp4                 ports/math/mingw32-libgmp4
 mingw32-libyaml                 ports/devel/mingw32-libyaml
+mingw32-openssl                 ports/devel/mingw32-openssl
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
 mingw32-pthreads                ports/devel/mingw32-pthreads
 mingw32-zlib                    ports/devel/mingw32-zlib
@@ -10064,6 +10065,7 @@ nocc                            ports/mail/nocc
 nocol                           ports/net-mgmt/nocol
 node                            ports/www/node
 node-devel                      ports/www/node-devel
+node04                          ports/www/node04
 noegnud-addons                  ports/games/noegnud-addons
 noegnud-data                    ports/games/noegnud-data
 noegnud-littlehack              ports/games/noegnud-littlehack
@@ -11676,6 +11678,7 @@ p5-DBIx-Recordset               ports/databases/p5-DBIx-Recordset
 p5-DBIx-RetryOverDisconnects    ports/databases/p5-DBIx-RetryOverDisconnects
 p5-DBIx-SQLEngine               ports/databases/p5-DBIx-SQLEngine
 p5-DBIx-SQLite-Simple           ports/databases/p5-DBIx-SQLite-Simple
+p5-DBIx-Safe                    ports/databases/p5-DBIx-Safe
 p5-DBIx-SearchBuilder           ports/databases/p5-DBIx-SearchBuilder
 p5-DBIx-Sequence                ports/databases/p5-DBIx-Sequence
 p5-DBIx-Simple                  ports/databases/p5-DBIx-Simple
@@ -14180,6 +14183,7 @@ p5-String-ShellQuote            ports/textproc/p5-String-ShellQuote
 p5-String-ShowDiff              ports/textproc/p5-String-ShowDiff
 p5-String-Similarity            ports/devel/p5-String-Similarity
 p5-String-Strip                 ports/textproc/p5-String-Strip
+p5-String-ToIdentifier-EN       ports/textproc/p5-String-ToIdentifier-EN
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
 p5-String-Truncate              ports/textproc/p5-String-Truncate
 p5-Sub-Alias                    ports/devel/p5-Sub-Alias
@@ -16279,6 +16283,7 @@ p5-dbix-password                ports/databases/p5-DBIx-Password
 p5-dbix-perlish                 ports/databases/p5-DBIx-Perlish
 p5-dbix-recordset               ports/databases/p5-DBIx-Recordset
 p5-dbix-retryoverdisconnects    ports/databases/p5-DBIx-RetryOverDisconnects
+p5-dbix-safe                    ports/databases/p5-DBIx-Safe
 p5-dbix-searchbuilder           ports/databases/p5-DBIx-SearchBuilder
 p5-dbix-sequence                ports/databases/p5-DBIx-Sequence
 p5-dbix-simple                  ports/databases/p5-DBIx-Simple
@@ -18628,6 +18633,7 @@ p5-string-shellquote            ports/textproc/p5-String-ShellQuote
 p5-string-showdiff              ports/textproc/p5-String-ShowDiff
 p5-string-similarity            ports/devel/p5-String-Similarity
 p5-string-strip                 ports/textproc/p5-String-Strip
+p5-string-toidentifier-en       ports/textproc/p5-String-ToIdentifier-EN
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
 p5-string-truncate              ports/textproc/p5-String-Truncate
 p5-sub-alias                    ports/devel/p5-Sub-Alias
