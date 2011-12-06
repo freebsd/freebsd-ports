@@ -1,2 +1,6 @@
 bin/msmtp
+%%MSMTPQ%%bin/msmtp-queue
+%%MSMTPQ%%bin/msmtpq
+%%MSMTPQ%%%%DOCSDIR%%/README.msmtpq
 %%NLS%%share/locale/de/LC_MESSAGES/msmtp.mo
+%%MSMTPQ%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.25
+PORTVERSION=	1.4.26
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -27,7 +27,8 @@ OPTIONS=	GNUTLS "Adds GnuTLS support" off \
 		GSASL "Adds GSASL support" off \
 		NLS "Native Language Support via gettext utilities" on \
 		IDN "Enable Internationalized Domain Names" on \
-		GNOME_KEYRING "Build with GNOME Keyring auth support" off
+		GNOME_KEYRING "Build with GNOME Keyring auth support" off \
+		MSMTPQ "Install offline messaging scripts" on
 
 .include       <bsd.port.options.mk>
 
@@ -76,4 +77,18 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MSMTPQ)
+PLIST_SUB+=	MSMTPQ=""
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtp-queue ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtpq ${PREFIX}/bin
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq ${DOCSDIR}
+.else
+PLIST_SUB=	MSMTPQ="@comment "
+.endif
+
+.include <bsd.port.post.mk>
