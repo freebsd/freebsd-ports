@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozc-el
-PORTVERSION=	1.1.773.102
-PORTREVISION=	3
+PORTVERSION=	1.3.911.102
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://mozc.googlecode.com/files/
 DISTNAME=	mozc-${PORTVERSION}
@@ -17,12 +16,12 @@ COMMENT=	Mozc for GNU Emacs
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep \
-		gyp:${PORTSDIR}/devel/py-gyp-devel \
-		zinnia:${PORTSDIR}/japanese/zinnia
+		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		protobuf.7:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	mozc_server:${PORTSDIR}/japanese/mozc-server \
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_EMACS=	yes
@@ -30,14 +29,20 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 
+PATCHDIR=	../mozc-server/files
+
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/mozc.el \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc.elc \
 		bin/mozc_emacs_helper
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
+.if ${OSVERSION} < 800107
+BROKEN=		Does not compile on FreeBSD 7.X
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile: segfault
 .endif
 
 .if defined(WITH_DEBUG_CODE)
@@ -54,7 +59,7 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
-		${WRKSRC}/gui/about_dialog/about_dialog.cc
+		${WRKSRC}/handwriting/zinnia_handwriting.cc
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; \
