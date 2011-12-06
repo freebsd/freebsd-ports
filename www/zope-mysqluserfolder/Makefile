@@ -15,6 +15,9 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope user folder which uses MySQL database to store user information
 
+DEPRECATED=	Development seems stalled. Last release is from 2005
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 
 NO_PACKAGE=	Double python dependency

@@ -16,6 +16,9 @@ DISTNAME=	CMFPhoto-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhoto product for Zope/CMF
 
+DEPRECATED=	Development seems stalled. Last release is from 2004
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 

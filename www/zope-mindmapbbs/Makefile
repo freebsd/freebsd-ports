@@ -17,6 +17,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope product to create graphical BBS based on Mind Map
 
+DEPRECATED=	Development seems stalled. Last release is from 2004
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 

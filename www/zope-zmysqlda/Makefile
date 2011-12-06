@@ -18,6 +18,9 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL Database Adapter for the Zope web application framework
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 
 NO_PACKAGE=	Double python dependency

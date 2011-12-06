@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A forum for ZOPE CMF with file attachments
 
+DEPRECATED=	Development seems stalled. Last release is from 2002
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
 USE_PYTHON=	yes

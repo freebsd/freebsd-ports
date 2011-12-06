@@ -16,6 +16,10 @@ DISTNAME=	BTreeFolder2-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Zope product that can store many items
 
+DEPRECATED=	There is devel/py-Products.BTreeFolder2, that works with \
+		modern zope versions
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope

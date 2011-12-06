@@ -15,6 +15,9 @@ DISTNAME=	zopexmlmethods-${PORTVERSION:C/\./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides methods to apply to Zope objects for XML/XSLT processing
 
+DEPRECATED=	Development seems stalled. Last release is from 2003
+EXPIRATION_DATE=	2012-01-06
+
 LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt
 
 USE_PYTHON=	yes

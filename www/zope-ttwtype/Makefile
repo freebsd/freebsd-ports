@@ -15,6 +15,9 @@ DISTNAME=	TTWType-1.0rc2
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	TTWType product for CMF/Plone
 
+DEPRECATED=	Development seems stalled. Last release is from 2003
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Formulator/__init__.py:${PORTSDIR}/www/zope-formulator \
 		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/__init__.py:${PORTSDIR}/www/zope-cmfformcontroller
 

@@ -15,6 +15,9 @@ DISTNAME=	PlacelessTranslationService-1.0-rc8
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	PlacelessTranslationService product for Zope/CMF
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
