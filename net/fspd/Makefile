@@ -43,10 +43,6 @@ OPTIONS=	NOCLIENTS "Omit client commands" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if defined(WITH_INFINITE)
 SCONS_ARGS+=	disable-timeout=yes
 .endif
