@@ -10,7 +10,7 @@ PORTVERSION=	0.93.0
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A ftp-like client for the FSP service
 
 USE_BZIP2=	yes
@@ -22,9 +22,5 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/fsp
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 .include <bsd.port.post.mk>
