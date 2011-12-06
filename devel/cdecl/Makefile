@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Explains complicated C/C++ declarations in plain English
 
 ALL_TARGET=	${PORTNAME}
