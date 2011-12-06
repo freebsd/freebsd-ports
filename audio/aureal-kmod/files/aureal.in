@@ -61,7 +61,7 @@ aureal_start()
 	if [ ! -f ${KMODDIR}/${DRIVERFILE}.ko ]; then
 		err 64 "${KMODDIR}/${DRIVERFILE} for ${aureal_card} not found!"
 	fi
-	if ! kldstat -qm ${DRIVERFILE}; then
+	if ! kldstat -qm pci/snd_au88x0; then
 		if ! kldload ${KMODDIR}/${DRIVERFILE}.ko; then
 			warn 'aureal module failed to load'
 			return 1
@@ -87,7 +87,7 @@ aureal_start()
 aureal_stop()
 {
 	aureal_detect
-	kldstat -qm ${DRIVERFILE} && kldunload ${DRIVERFILE}
+	kldstat -qm pci/snd_au88x0 && kldunload ${DRIVERFILE}
 
 	return 0
 }
