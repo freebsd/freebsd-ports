@@ -612,7 +612,6 @@
     SUBDIR += py-pyliblo
     SUBDIR += py-shout
     SUBDIR += py-speex
-    SUBDIR += py-taglib
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-xmms

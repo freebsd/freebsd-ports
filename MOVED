@@ -3014,3 +3014,4 @@ x11-toolkits/ruby-gtkglext||2011-12-05|Removed
 x11-toolkits/ruby-panelapplet||2011-12-05|Removed
 x11/ruby-gnome2-all||2011-12-05|Removed
 devel/zeroinstall-injector||2011-12-06|Duplicates PBI functionality, and 0install feeds are available as ports
+audio/py-taglib||2011-12-07|Only compatible with Python 2.4. Use audio/py-tagpy instead
