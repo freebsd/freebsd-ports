@@ -29,9 +29,4 @@ in your /etc/rc.conf.
 
 Please note that you also need to have the 'sound.ko' moduld loaded already.
 
-Report problems to Alexander Matey <ports@matey.org>.
-
-Thanks and enjoy!
-
--Maxim
 -------------------------------------------------------------------------------

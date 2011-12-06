@@ -38,7 +38,7 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800000
-BROKEN=		doesn't build on RELENG_8
+EXTRA_PATCHES+=	${PATCHDIR}/extra_800000_patch-au88x0.c
 .endif
 
 # Make sure kernel sources are present before going any further
