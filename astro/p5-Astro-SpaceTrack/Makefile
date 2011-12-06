@@ -24,6 +24,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-y
 
