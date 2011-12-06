@@ -2308,6 +2308,7 @@
     SUBDIR += p5-Set-Array
     SUBDIR += p5-Set-ConsistentHash
     SUBDIR += p5-Set-Crontab
+    SUBDIR += p5-Set-CrossProduct
     SUBDIR += p5-Set-Infinite
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object

@@ -1,0 +1,6 @@
+Create a list by taking one item from each array, and do that for all
+possible ways that can be done, so that the first item in the list is
+always from the first array, the second item from the second array, and
+so on.
+
+WWW: http://search.cpan.org/dist/Set-CrossProduct/
