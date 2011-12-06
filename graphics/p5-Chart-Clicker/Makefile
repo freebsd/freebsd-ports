@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.74
+PORTVERSION=	2.75
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GPHAT
@@ -30,7 +30,8 @@ RUN_DEPENDS=	p5-Color-Scheme>=0:${PORTSDIR}/graphics/p5-Color-Scheme \
 		p5-Layout-Manager>=0:${PORTSDIR}/graphics/p5-Layout-Manager
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
 
