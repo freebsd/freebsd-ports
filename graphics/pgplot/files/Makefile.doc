@@ -1,11 +1,32 @@
-SRCDIR=./src
-PG_SOURCE=  $(SRCDIR)/pgarro.f $(SRCDIR)/pgask.f  $(SRCDIR)/pgaxis.f $(SRCDIR)/pgaxlg.f $(SRCDIR)/pgband.f $(SRCDIR)/pgbbuf.f $(SRCDIR)/pgbeg.f  $(SRCDIR)/pgbin.f  $(SRCDIR)/pgbox.f  $(SRCDIR)/pgbox1.f $(SRCDIR)/pgcirc.f $(SRCDIR)/pgcl.f   $(SRCDIR)/pgclos.f $(SRCDIR)/pgcn01.f $(SRCDIR)/pgcnsc.f $(SRCDIR)/pgconb.f $(SRCDIR)/pgconf.f $(SRCDIR)/pgconl.f $(SRCDIR)/pgcons.f $(SRCDIR)/pgcont.f $(SRCDIR)/pgconx.f $(SRCDIR)/pgcp.f   $(SRCDIR)/pgctab.f $(SRCDIR)/pgcurs.f $(SRCDIR)/pgdraw.f $(SRCDIR)/pgebuf.f $(SRCDIR)/pgend.f  $(SRCDIR)/pgenv.f  $(SRCDIR)/pgeras.f $(SRCDIR)/pgerr1.f $(SRCDIR)/pgerrb.f $(SRCDIR)/pgerrx.f $(SRCDIR)/pgerry.f $(SRCDIR)/pgetxt.f $(SRCDIR)/pgfunt.f $(SRCDIR)/pgfunx.f $(SRCDIR)/pgfuny.f $(SRCDIR)/pggray.f $(SRCDIR)/pghi2d.f $(SRCDIR)/pghis1.f $(SRCDIR)/pghist.f $(SRCDIR)/pghtch.f $(SRCDIR)/pgiden.f $(SRCDIR)/pgimag.f $(SRCDIR)/pginit.f $(SRCDIR)/pglab.f  $(SRCDIR)/pglcur.f $(SRCDIR)/pgldev.f $(SRCDIR)/pglen.f  $(SRCDIR)/pgline.f $(SRCDIR)/pgmove.f $(SRCDIR)/pgmtxt.f $(SRCDIR)/pgncur.f $(SRCDIR)/pgnoto.f $(SRCDIR)/pgnpl.f  $(SRCDIR)/pgnumb.f $(SRCDIR)/pgolin.f $(SRCDIR)/pgopen.f $(SRCDIR)/pgpage.f $(SRCDIR)/pgpanl.f $(SRCDIR)/pgpap.f  $(SRCDIR)/pgpixl.f $(SRCDIR)/pgpnts.f $(SRCDIR)/pgpoly.f $(SRCDIR)/pgpt.f   $(SRCDIR)/pgpt1.f  $(SRCDIR)/pgptxt.f $(SRCDIR)/pgqah.f  $(SRCDIR)/pgqcf.f  $(SRCDIR)/pgqch.f  $(SRCDIR)/pgqci.f  $(SRCDIR)/pgqcir.f $(SRCDIR)/pgqclp.f $(SRCDIR)/pgqcol.f $(SRCDIR)/pgqcr.f  $(SRCDIR)/pgqcs.f  $(SRCDIR)/pgqdt.f  $(SRCDIR)/pgqfs.f  $(SRCDIR)/pgqhs.f  $(SRCDIR)/pgqid.f  $(SRCDIR)/pgqinf.f $(SRCDIR)/pgqitf.f $(SRCDIR)/pgqls.f  $(SRCDIR)/pgqlw.f  $(SRCDIR)/pgqndt.f $(SRCDIR)/pgqpos.f $(SRCDIR)/pgqtbg.f $(SRCDIR)/pgqtxt.f $(SRCDIR)/pgqvp.f  $(SRCDIR)/pgqvsz.f $(SRCDIR)/pgqwin.f $(SRCDIR)/pgrect.f $(SRCDIR)/pgrnd.f  $(SRCDIR)/pgrnge.f $(SRCDIR)/pgsah.f  $(SRCDIR)/pgsave.f $(SRCDIR)/pgscf.f  $(SRCDIR)/pgsch.f  $(SRCDIR)/pgsci.f  $(SRCDIR)/pgscir.f $(SRCDIR)/pgsclp.f $(SRCDIR)/pgscr.f  $(SRCDIR)/pgscrl.f $(SRCDIR)/pgscrn.f $(SRCDIR)/pgsfs.f  $(SRCDIR)/pgshls.f $(SRCDIR)/pgshs.f  $(SRCDIR)/pgsitf.f $(SRCDIR)/pgslct.f $(SRCDIR)/pgsls.f  $(SRCDIR)/pgslw.f  $(SRCDIR)/pgstbg.f $(SRCDIR)/pgsubp.f $(SRCDIR)/pgsvp.f  $(SRCDIR)/pgswin.f $(SRCDIR)/pgtbox.f $(SRCDIR)/pgtext.f $(SRCDIR)/pgtick.f $(SRCDIR)/pgtikl.f $(SRCDIR)/pgupdt.f $(SRCDIR)/pgvect.f $(SRCDIR)/pgvsiz.f $(SRCDIR)/pgvstd.f $(SRCDIR)/pgvw.f   $(SRCDIR)/pgwedg.f $(SRCDIR)/pgwnad.f  $(SRCDIR)/pgadvance.f $(SRCDIR)/pgbegin.f   $(SRCDIR)/pgcurse.f   $(SRCDIR)/pglabel.f   $(SRCDIR)/pgmtext.f   $(SRCDIR)/pgncurse.f  $(SRCDIR)/pgpaper.f   $(SRCDIR)/pgpoint.f   $(SRCDIR)/pgptext.f   $(SRCDIR)/pgvport.f   $(SRCDIR)/pgvsize.f   $(SRCDIR)/pgvstand.f  $(SRCDIR)/pgwindow.f 
+SRCDIR =	./src
+
+PG_SOURCE=      pgarro.f pgask.f pgaxis.f pgaxlg.f pgband.f pgbbuf.f pgbeg.f \
+	pgbin.f pgbox.f pgbox1.f pgcirc.f pgcl.f pgclos.f pgcn01.f pgcnsc.f \
+	pgconb.f pgconf.f pgconl.f pgcons.f pgcont.f pgconx.f pgcp.f pgctab.f \
+	pgcurs.f pgdraw.f pgebuf.f pgend.f pgenv.f pgeras.f pgerr1.f pgerrb.f \
+	pgerrx.f pgerry.f pgetxt.f pgfunt.f pgfunx.f pgfuny.f pggray.f \
+	pghi2d.f pghis1.f pghist.f pghtch.f pgiden.f pgimag.f pginit.f pglab.f \
+	pglcur.f pgldev.f pglen.f pgline.f pgmove.f pgmtxt.f pgncur.f pgnoto.f \
+	pgnpl.f pgnumb.f pgolin.f pgopen.f pgpage.f pgpanl.f pgpap.f pgpixl.f \
+	pgpnts.f pgpoly.f pgpt.f pgpt1.f pgptxt.f pgqah.f pgqcf.f pgqch.f \
+	pgqci.f pgqcir.f pgqclp.f pgqcol.f pgqcr.f pgqcs.f pgqdt.f pgqfs.f \
+	pgqhs.f pgqid.f pgqinf.f pgqitf.f pgqls.f pgqlw.f pgqndt.f pgqpos.f \
+	pgqtbg.f pgqtxt.f pgqvp.f pgqvsz.f pgqwin.f pgrect.f pgrnd.f pgrnge.f \
+	pgsah.f pgsave.f pgscf.f pgsch.f pgsci.f pgscir.f pgsclp.f pgscr.f \
+	pgscrl.f pgscrn.f pgsfs.f pgshls.f pgshs.f pgsitf.f pgslct.f pgsls.f \
+	pgslw.f pgstbg.f pgsubp.f pgsvp.f pgswin.f pgtbox.f pgtext.f pgtick.f \
+	pgtikl.f pgupdt.f pgvect.f pgvsiz.f pgvstd.f pgvw.f pgwedg.f pgwnad.f \
+	pgadvance.f pgbegin.f pgcurse.f pglabel.f pgmtext.f pgncurse.f \
+	pgpaper.f pgpoint.f pgptext.f pgvport.f pgvsize.f pgvstand.f \
+	pgwindow.f
 
 all: pgplot.doc pgplot.html pgplot-routines.tex
 
-pgplot.doc: $(PG_SOURCE)
-	./makedoc $(PG_SOURCE) > pgplot.doc
-pgplot.html: $(PG_SOURCE)
-	./makehtml $(PG_SOURCE) > pgplot.html
-pgplot-routines.tex: $(PG_SOURCE)
-	./maketex $(PG_SOURCE) > pgplot-routines.tex
+pgplot.doc: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./makedoc ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot.doc
+
+pgplot.html: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./makehtml ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot.html
+
+pgplot-routines.tex: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./maketex ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot-routines.tex
