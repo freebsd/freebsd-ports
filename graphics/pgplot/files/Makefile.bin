@@ -1,21 +1,24 @@
-DRVDIR=./drivers
-LIBS=-L${LOCALBASE}/lib -lX11 -lm
-XINCL=-I${LOCALBASE}/include
+DRVDIR =	./drivers
+LIBS=	-L${LOCALBASE}/lib -lX11 -lm
+XINCL=	-I${LOCALBASE}/include
 
-CFLAGS+= $(XINCL) -DPGDISP 
+CFLAGS+=	${XINCL} -DPGDISP 
 .PATH: . ./pgdispd
 
-PGDISP_ROUTINES= cleanup.o pgdisp.o figcurs.o getdata.o getvisuals.o handlexevent.o proccom.o resdb.o exposelgwin.o getcolors.o initlgluts.o initlgwin.o initlock.o initwmattr.o mainloop.o resizelgwin.o returnbuf.o waitevent.o updatelgtitle.o
-
+PGDISP_ROUTINES=	cleanup.o pgdisp.o figcurs.o getdata.o getvisuals.o \
+	handlexevent.o proccom.o resdb.o exposelgwin.o getcolors.o initlgluts.o \
+	initlgwin.o initlock.o initwmattr.o mainloop.o resizelgwin.o \
+	returnbuf.o waitevent.o updatelgtitle.o
 
 all: grfont.dat pgxwin_server pgdisp
 
 grfont.dat: fonts/grfont.txt fonts/pgpack.f
-	$(FC) -o pgpack fonts/pgpack.f
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgpack fonts/pgpack.f
 	./pgpack <fonts/grfont.txt
 
-pgxwin_server: $(DRVDIR)/pgxwin_server.c
-	$(CC) $(CFLAGS) -o pgxwin_server $(DRVDIR)/pgxwin_server.c $(LIBS)
+pgxwin_server: ${DRVDIR}/pgxwin_server.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o pgxwin_server ${DRVDIR}/pgxwin_server.c \
+	${LIBS}
 
-pgdisp: $(PGDISP_ROUTINES)
-	$(CC) $(CFLAGS) -o pgdisp $(PGDISP_ROUTINES) $(LIBS)
+pgdisp: ${PGDISP_ROUTINES}
+	${CC} ${CFLAGS} ${LDFLAGS} -o pgdisp ${PGDISP_ROUTINES} ${LIBS}

@@ -1,48 +1,66 @@
-PGPLOT_LIB = -L/usr/local/lib -lpgplot
-CPGPLOT_LIB = -L/usr/local/lib  -lcpgplot
-LIBS= -L${LOCALBASE}/lib -lX11 -lm
+PGPLOT_LIB=	-lpgplot
+CPGPLOT_LIB=	-lcpgplot
+LIBS=	-lX11 -lm
 
 FFLAGS+=	-fno-backslash
+LDFLAGS+=	-L. -L${LOCALBASE}/lib
 
 all: cpgdemo pgdemo1 pgdemo2 pgdemo3 pgdemo4 pgdemo5 pgdemo6 pgdemo7 pgdemo8 \
 	pgdemo9 pgdemo10 pgdemo11 pgdemo12 pgdemo13 pgdemo14 pgdemo15 \
 	pgdemo16 pgdemo17
 
 pgdemo1: pgdemo1.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo1 pgdemo1.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo1 pgdemo1.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo2: pgdemo2.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo2 pgdemo2.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo2 pgdemo2.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo3: pgdemo3.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo3 pgdemo3.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo3 pgdemo3.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo4: pgdemo4.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo4 pgdemo4.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo4 pgdemo4.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo5: pgdemo5.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo5 pgdemo5.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo5 pgdemo5.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo6: pgdemo6.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo6 pgdemo6.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo6 pgdemo6.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo7: pgdemo7.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo7 pgdemo7.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo7 pgdemo7.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo8: pgdemo8.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo8 pgdemo8.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo8 pgdemo8.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo9: pgdemo9.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo9 pgdemo9.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo9 pgdemo9.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo10: pgdemo10.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo10 pgdemo10.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo10 pgdemo10.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo11: pgdemo11.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo11 pgdemo11.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo11 pgdemo11.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo12: pgdemo12.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo12 pgdemo12.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo12 pgdemo12.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo13: pgdemo13.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo13 pgdemo13.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo13 pgdemo13.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo14: pgdemo14.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo14 pgdemo14.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo14 pgdemo14.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo15: pgdemo15.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo15 pgdemo15.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo15 pgdemo15.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo16: pgdemo16.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo16 pgdemo16.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo16 pgdemo16.f ${PGPLOT_LIB} ${LIBS}
+
 pgdemo17: pgdemo17.f libpgplot.a
-	$(FC) $(FFLAGS) -o pgdemo17 pgdemo17.f $(PGPLOT_LIB) $(LIBS)
+	${FC} ${FFLAGS} ${LDFLAGS} -o pgdemo17 pgdemo17.f ${PGPLOT_LIB} ${LIBS}
 
 cpgdemo: cpgdemo.c 
-	$(CC) $(CFLAGS) -c -I/usr/local/include cpgdemo.c
-	$(FC) -o cpgdemo cpgdemo.o $(PGPLOT_LIB) $(CPGPLOT_LIB) $(LIBS)
+	${CC} ${CFLAGS} -c -I${LOCALBASE}/include cpgdemo.c
+	${FC} ${FFLAGS} ${LDFLAGS} -o cpgdemo cpgdemo.o ${CPGPLOT_LIB} \
+	${PGPLOT_LIB} ${LIBS}
