@@ -24,6 +24,8 @@ RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
+
 CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 PERL_CONFIGURE=	yes
