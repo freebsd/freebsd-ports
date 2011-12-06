@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope Blog/Weblog/Web-nikki Product
 
+DEPRECATED=	Development ceased
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
