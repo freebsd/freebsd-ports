@@ -16,6 +16,9 @@ COMMENT=	Scripts to queue mails with msmtp
 
 RUN_DEPENDS=	msmtp:${PORTSDIR}/mail/msmtp
 
+DEPRECATED=	These scripts now come with mail/msmtp
+EXPIRATION_DATE=	2012-01-07
+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/msmtp-enqueue.sh bin/msmtp-runqueue.sh
