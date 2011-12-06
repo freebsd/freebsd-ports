@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope product to simplify the construction of navigation bars
 
+DEPRECATED=	Development seems stalled. Last release is from 2000.
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	YES
 USE_ZOPE=	YES
 NO_BUILD=	YES

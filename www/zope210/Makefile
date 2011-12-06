@@ -16,6 +16,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	An object-based web application platform
 
+DEPRECATED=	End of life is reached
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME} zeo210
 

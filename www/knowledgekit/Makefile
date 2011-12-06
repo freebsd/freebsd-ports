@@ -15,6 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mechanism for the automatic creation/maintenance of Knowledge Bases
 
+DEPRECATED=	Development seems stalled. Last release is from 1999. \
+		Doesn't works with Zope 2.13
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 NO_BUILD=	YES
