@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-final01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generator product for Zope
 
+DEPRECATED=	Development seems stalled. Last release from 2005
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope

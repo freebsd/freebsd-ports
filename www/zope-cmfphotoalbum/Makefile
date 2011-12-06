@@ -16,6 +16,9 @@ DISTNAME=	CMFPhotoAlbum-${PORTVERSION}.0
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhotoAlbum product for Zope/CMF
 
+DEPRECATED=	Development seems stalled. Last release is from 2004
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPhoto/Photo.py:${PORTSDIR}/www/zope-cmfphoto \
 				${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/BTreeFolder2/BTreeFolder2.py:${PORTSDIR}/www/zope-btreefolder2
 
