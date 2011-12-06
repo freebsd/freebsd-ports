@@ -1,0 +1,6 @@
+bin/cross
+%%SITE_PERL%%/Set/CrossProduct.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/CrossProduct/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/CrossProduct
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
+@dirrmtry %%SITE_PERL%%/Set
