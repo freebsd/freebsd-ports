@@ -30,6 +30,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST}
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
+NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
