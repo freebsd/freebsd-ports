@@ -12,6 +12,9 @@ share/apps/kconf_update/konversation-0.20-quickbuttons.pl
 share/apps/kconf_update/konversation.upd
 share/apps/konversation/konversation.notifyrc
 share/apps/konversation/konversationui.rc
+share/apps/konversation/scripting_support/python/konversation/__init__.py
+share/apps/konversation/scripting_support/python/konversation/dbus.py
+share/apps/konversation/scripting_support/python/konversation/i18n.py
 share/apps/konversation/scripts/bug
 share/apps/konversation/scripts/cmd
 share/apps/konversation/scripts/fortune
@@ -80,21 +83,21 @@ share/apps/konversation/themes/square/irc_normal.png
 share/apps/konversation/themes/square/irc_op.png
 share/apps/konversation/themes/square/irc_owner.png
 share/apps/konversation/themes/square/irc_voice.png
+share/doc/HTML/de/konversation/common
+share/doc/HTML/de/konversation/index.cache.bz2
+share/doc/HTML/de/konversation/index.docbook
 share/doc/HTML/en/konversation/addchannel.png
 share/doc/HTML/en/konversation/addnetwork_co.png
 share/doc/HTML/en/konversation/addserver_co.png
-share/doc/HTML/en/konversation/channel_screen_co.png
 share/doc/HTML/en/konversation/channel_screen_tour_co.png
 share/doc/HTML/en/konversation/channellist_screen_co.png
 share/doc/HTML/en/konversation/checkidentities.png
 share/doc/HTML/en/konversation/colorchooser_screen.png
-share/doc/HTML/en/konversation/colorize.png
 share/doc/HTML/en/konversation/common
-share/doc/HTML/en/konversation/configure.png
 share/doc/HTML/en/konversation/dccstatus_screen_co.png
-share/doc/HTML/en/konversation/editserver_screen_co.png
 share/doc/HTML/en/konversation/first_channel_co.png
 share/doc/HTML/en/konversation/first_serverlist_co.png
+share/doc/HTML/en/konversation/format-text-color.png
 share/doc/HTML/en/konversation/highlighting_screen_co.png
 share/doc/HTML/en/konversation/identities_adv_co.png
 share/doc/HTML/en/konversation/identities_away_co.png
@@ -111,13 +114,9 @@ share/doc/HTML/en/konversation/irc_voice.png
 share/doc/HTML/en/konversation/kaddressbook.png
 share/doc/HTML/en/konversation/kimproxy_create_screen2.png
 share/doc/HTML/en/konversation/kimproxy_create_screen_co.png
-share/doc/HTML/en/konversation/led_blue_off.png
 share/doc/HTML/en/konversation/led_blue_on.png
-share/doc/HTML/en/konversation/led_green_off.png
 share/doc/HTML/en/konversation/led_green_on.png
-share/doc/HTML/en/konversation/led_red_off.png
 share/doc/HTML/en/konversation/led_red_on.png
-share/doc/HTML/en/konversation/led_yellow_off.png
 share/doc/HTML/en/konversation/led_yellow_on.png
 share/doc/HTML/en/konversation/logviewer_co.png
 share/doc/HTML/en/konversation/nicksonline_co.png
@@ -126,53 +125,23 @@ share/doc/HTML/en/konversation/notification_screen_co.png
 share/doc/HTML/en/konversation/notifylist_screen_co.png
 share/doc/HTML/en/konversation/osd_demo.png
 share/doc/HTML/en/konversation/osd_screen_co.png
-share/doc/HTML/en/konversation/prefs_identity_screen_co.png
 share/doc/HTML/en/konversation/quickbuttons_screen.png
 share/doc/HTML/en/konversation/quickconnect_screen.png
 share/doc/HTML/en/konversation/serverlist_co.png
-share/doc/HTML/en/konversation/serverlist_screen_co.png
 share/doc/HTML/en/konversation/urlcatcher_screen_co.png
 share/doc/HTML/en/konversation/webbrowser_screen_co.png
 share/doc/HTML/et/konversation/common
 share/doc/HTML/et/konversation/index.cache.bz2
 share/doc/HTML/et/konversation/index.docbook
-share/doc/HTML/it/konversation/common
-share/doc/HTML/it/konversation/index.cache.bz2
-share/doc/HTML/it/konversation/index.docbook
+share/doc/HTML/nl/konversation/common
+share/doc/HTML/nl/konversation/index.cache.bz2
+share/doc/HTML/nl/konversation/index.docbook
 share/doc/HTML/pt_BR/konversation/common
 share/doc/HTML/pt_BR/konversation/index.cache.bz2
 share/doc/HTML/pt_BR/konversation/index.docbook
-share/doc/HTML/sv/konversation/addchannel.png
-share/doc/HTML/sv/konversation/addnetwork_co.png
-share/doc/HTML/sv/konversation/addserver_co.png
-share/doc/HTML/sv/konversation/channel_screen_tour_co.png
-share/doc/HTML/sv/konversation/channellist_screen_co.png
-share/doc/HTML/sv/konversation/checkidentities.png
-share/doc/HTML/sv/konversation/colorchooser_screen.png
 share/doc/HTML/sv/konversation/common
-share/doc/HTML/sv/konversation/dccstatus_screen_co.png
-share/doc/HTML/sv/konversation/first_channel_co.png
-share/doc/HTML/sv/konversation/first_serverlist_co.png
-share/doc/HTML/sv/konversation/highlighting_screen_co.png
-share/doc/HTML/sv/konversation/identities_adv_co.png
-share/doc/HTML/sv/konversation/identities_away_co.png
-share/doc/HTML/sv/konversation/identities_gen_co.png
 share/doc/HTML/sv/konversation/index.cache.bz2
 share/doc/HTML/sv/konversation/index.docbook
-share/doc/HTML/sv/konversation/kimproxy_create_screen2.png
-share/doc/HTML/sv/konversation/kimproxy_create_screen_co.png
-share/doc/HTML/sv/konversation/logviewer_co.png
-share/doc/HTML/sv/konversation/nicksonline_co.png
-share/doc/HTML/sv/konversation/nickthemes_screen_co.png
-share/doc/HTML/sv/konversation/notification_screen_co.png
-share/doc/HTML/sv/konversation/notifylist_screen_co.png
-share/doc/HTML/sv/konversation/osd_demo.png
-share/doc/HTML/sv/konversation/osd_screen_co.png
-share/doc/HTML/sv/konversation/quickbuttons_screen.png
-share/doc/HTML/sv/konversation/quickconnect_screen.png
-share/doc/HTML/sv/konversation/serverlist_co.png
-share/doc/HTML/sv/konversation/urlcatcher_screen_co.png
-share/doc/HTML/sv/konversation/webbrowser_screen_co.png
 share/doc/HTML/uk/konversation/common
 share/doc/HTML/uk/konversation/index.cache.bz2
 share/doc/HTML/uk/konversation/index.docbook
@@ -199,9 +168,12 @@ share/icons/hicolor/scalable/actions/konv_message.svgz
 share/icons/hicolor/scalable/apps/konversation.svgz
 share/kde4/services/konvirc.protocol
 share/kde4/services/konvirc6.protocol
+share/kde4/services/konvircs.protocol
 share/locale/bg/LC_MESSAGES/konversation.mo
+share/locale/bs/LC_MESSAGES/konversation.mo
 share/locale/ca/LC_MESSAGES/konversation.mo
 share/locale/ca@valencia/LC_MESSAGES/konversation.mo
+share/locale/cs/LC_MESSAGES/konversation.mo
 share/locale/da/LC_MESSAGES/konversation.mo
 share/locale/de/LC_MESSAGES/konversation.mo
 share/locale/el/LC_MESSAGES/konversation.mo
@@ -214,16 +186,14 @@ share/locale/gl/LC_MESSAGES/konversation.mo
 share/locale/hu/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
 share/locale/ja/LC_MESSAGES/konversation.mo
-share/locale/lt/LC_MESSAGES/konversation.mo
 share/locale/nb/LC_MESSAGES/konversation.mo
 share/locale/nds/LC_MESSAGES/konversation.mo
 share/locale/nl/LC_MESSAGES/konversation.mo
-share/locale/pa/LC_MESSAGES/konversation.mo
 share/locale/pl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
 share/locale/pt_BR/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
-share/locale/sk/LC_MESSAGES/konversation.mo
+share/locale/si/LC_MESSAGES/konversation.mo
 share/locale/sr/LC_MESSAGES/konversation.mo
 share/locale/sr@ijekavian/LC_MESSAGES/konversation.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/konversation.mo
@@ -233,12 +203,15 @@ share/locale/tr/LC_MESSAGES/konversation.mo
 share/locale/uk/LC_MESSAGES/konversation.mo
 share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrm share/doc/HTML/uk/konversation
 @dirrm share/doc/HTML/sv/konversation
 @dirrm share/doc/HTML/pt_BR/konversation
-@dirrm share/doc/HTML/it/konversation
+@dirrm share/doc/HTML/nl/konversation
 @dirrm share/doc/HTML/et/konversation
 @dirrm share/doc/HTML/en/konversation
+@dirrm share/doc/HTML/de/konversation
 @dirrm share/apps/konversation/themes/square
 @dirrm share/apps/konversation/themes/smiling
 @dirrm share/apps/konversation/themes/simplistic
@@ -248,4 +221,7 @@ share/locale/zh_TW/LC_MESSAGES/konversation.mo
 @dirrm share/apps/konversation/themes/alternative
 @dirrm share/apps/konversation/themes
 @dirrm share/apps/konversation/scripts
+@dirrm share/apps/konversation/scripting_support/python/konversation
+@dirrm share/apps/konversation/scripting_support/python
+@dirrm share/apps/konversation/scripting_support
 @dirrm share/apps/konversation
