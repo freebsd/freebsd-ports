@@ -16,6 +16,9 @@ EXTRACT_SUFX=.tgz
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFFormController product for Zope/CMF
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
 USE_PYTHON=	yes
