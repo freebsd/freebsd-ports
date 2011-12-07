@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.12
+PORTVERSION=	3.21.31
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/ \
 		${MASTER_SITE_LOCAL}
@@ -17,17 +17,18 @@ COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS=	 samplerate:${PORTSDIR}/audio/libsamplerate
+
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/lib/fltk11/libfltk.so:${PORTSDIR}/x11-toolkits/fltk11
 
-BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
+CONFIGURE_ENV=	FLTK_CONFIG="/usr/local/bin/fltk11/fltk-config"
 
 MAN1=		fldigi.1 
 
@@ -42,6 +43,7 @@ OPTIONS=	NATIVE_OPT	"Enable Native Optimizations"		off \
 		HAMLIB		"Support rig control via hamlib"	on \
 
 .include <bsd.port.pre.mk>
+
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
@@ -117,15 +119,16 @@ PLIST_SUB+=	ASCIIDOC="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
 		 ${WRKSRC}/src/widgets/picture.cxx
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|^CPPFLAGS|#CPPFLAGS|' \
 		${WRKSRC}/src/Makefile
+# force rebuild of man pages
+	rm ${WRKSRC}/doc/*.1
 
-do-build:
-# It will not build the man pages without the rm
-	(cd ${WRKSRC}/doc/;rm *.1;gmake;cd ${WRKSRC}/src;gmake)
 
 post-install:
 .if	!defined(NOPORTDOCS)
