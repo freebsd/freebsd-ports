@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libktorrent
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.1.3
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:S,^1,4,}/
 
@@ -26,5 +25,9 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+SHLIB_VER=	3.0.3
+PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
+		SHLIB_SHVER=${SHLIB_VER:R:R}
 
 .include <bsd.port.mk>
