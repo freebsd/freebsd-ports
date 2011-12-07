@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpart
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
@@ -23,10 +23,6 @@ PLIST_FILES=	bin/fpart
 PORTDOCS=	Changelog README TODO
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800067
-BROKEN=	needs getline() and strnlen()
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
