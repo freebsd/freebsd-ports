@@ -14,14 +14,16 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The zlib library cross-compiled for MinGW32
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/sys/types.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKEFILE=	win32/Makefile.gcc
 MAKE_ARGS=	PREFIX=${PKGNAMEPREFIX} \
-		BINARY_PATH=${PREFIX}/mingw32/bin \
-		INCLUDE_PATH=${PREFIX}/mingw32/include \
-		LIBRARY_PATH=${PREFIX}/mingw32/lib
+		BINARY_PATH=${CROSS_BASE}/bin \
+		INCLUDE_PATH=${CROSS_BASE}/include \
+		LIBRARY_PATH=${CROSS_BASE}/lib
+CROSS_BASE=	${PREFIX}/mingw32
 
 .include <bsd.port.mk>
