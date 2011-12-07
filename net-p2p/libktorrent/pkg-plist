@@ -167,8 +167,8 @@ include/libktorrent/utp/utpserverthread.h
 include/libktorrent/utp/utpsocket.h
 include/libktorrent/version.h
 lib/libktorrent.so
-lib/libktorrent.so.3
-lib/libktorrent.so.3.0.2
+lib/libktorrent.so.%%SHLIB_VER%%
+lib/libktorrent.so.%%SHLIB_SHVER%%
 share/apps/cmake/modules/FindKTorrent.cmake
 share/locale/ar/LC_MESSAGES/libktorrent.mo
 share/locale/ast/LC_MESSAGES/libktorrent.mo
