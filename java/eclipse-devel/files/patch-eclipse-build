@@ -158,6 +158,15 @@ $FreeBSD$
  
  		<!-- Extract SWT JNI .so files -->
  		<java classname="org.eclipse.core.launcher.Main" fork="true" failonerror="true" dir="${destDir}">
+@@ -1031,7 +1032,7 @@
+ 
+                <!-- copy PDE and JDT to dropins -->
+                 <exec executable="rsync" failonerror="true">
+-                       <arg value="-vrpl" />
++                       <arg value="-vrpL" />
+                        <arg value="${provisionDir}/dropins/" />
+                        <arg value="${installationDir}/dropins/" />
+                 </exec>
 @@ -1064,8 +1065,8 @@
  			<arg value="s@/@_@g" />
  		</exec>
