@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-DISTVERSION=	4.1.2
-PORTREVISION=	1
+DISTVERSION=	4.1.3
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 
@@ -28,8 +27,10 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-.if exists(${LOCALBASE}/lib/libktorrent-2.2.8.so)
-IGNORE=	fails to build with net-p2p/ktorrent2 installed. Deinstall it first
-.endif
+CONFLICTS_BUILD=	ktorrent-2*
+
+SHLIB_VER=	12.0.2
+PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
+		SHLIB_SHVER=${SHLIB_VER:R:R}
 
 .include <bsd.port.mk>
