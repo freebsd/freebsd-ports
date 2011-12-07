@@ -1,0 +1,32 @@
+%%PYTHON_SITELIBDIR%%/wsgitools/__init__.py
+%%PYTHON_SITELIBDIR%%/wsgitools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/adapters.py
+%%PYTHON_SITELIBDIR%%/wsgitools/adapters.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/adapters.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/authentication.py
+%%PYTHON_SITELIBDIR%%/wsgitools/authentication.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/authentication.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/applications.py
+%%PYTHON_SITELIBDIR%%/wsgitools/applications.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/applications.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/digest.py
+%%PYTHON_SITELIBDIR%%/wsgitools/digest.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/digest.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/filters.py
+%%PYTHON_SITELIBDIR%%/wsgitools/filters.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/filters.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/middlewares.py
+%%PYTHON_SITELIBDIR%%/wsgitools/middlewares.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/middlewares.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/__init__.py
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/asynchronous.py
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/asynchronous.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/asynchronous.pyo
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/forkpool.py
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/forkpool.pyc
+%%PYTHON_SITELIBDIR%%/wsgitools/scgi/forkpool.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/wsgitools/scgi
+@dirrm %%PYTHON_SITELIBDIR%%/wsgitools
