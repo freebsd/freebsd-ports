@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.7.4
+PORTVERSION=	1.7.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	git-core
@@ -157,12 +157,14 @@ MAN1=		git.1 \
 		git-verify-tag.1 \
 		git-web--browse.1 \
 		git-whatchanged.1 \
-		git-write-tree.1
+		git-write-tree.1 \
+		gitweb.1
 MAN5=		gitattributes.5 \
 		githooks.5 \
 		gitignore.5 \
 		gitmodules.5 \
-		gitrepository-layout.5
+		gitrepository-layout.5 \
+		gitweb.conf.5
 MAN7=		gitcli.7 \
 		gitglossary.7 \
 		gittutorial.7 \

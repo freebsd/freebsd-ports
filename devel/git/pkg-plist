@@ -238,6 +238,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/error.tcl
 %%GUI%%share/git-gui/lib/git-gui.ico
 %%GUI%%share/git-gui/lib/index.tcl
+%%GUI%%share/git-gui/lib/line.tcl
 %%GUI%%share/git-gui/lib/logo.tcl
 %%GUI%%share/git-gui/lib/merge.tcl
 %%GUI%%share/git-gui/lib/mergetool.tcl
@@ -716,6 +717,11 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/gitdiffcore.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.html
 %%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitweb.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitweb.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitweb.conf.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitweb.conf.txt
+%%HTMLDOCS%%%%DOCSDIR%%/sequencer.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.5.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.5.0.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.5.0.2.txt
@@ -859,6 +865,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -881,6 +888,8 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/continuous/post-receive-cinotify
 %%CONTRIB%%share/git-core/contrib/convert-objects/convert-objects.c
 %%CONTRIB%%share/git-core/contrib/convert-objects/git-convert-objects.txt
+%%CONTRIB%%share/git-core/contrib/diff-highlight/README
+%%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight
 %%CONTRIB%%share/git-core/contrib/emacs/.gitignore
 %%CONTRIB%%share/git-core/contrib/emacs/Makefile
 %%CONTRIB%%share/git-core/contrib/emacs/README
@@ -916,6 +925,8 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/fast-import/import-tars.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-zips.py
 %%CONTRIB%%share/git-core/contrib/git-resurrect.sh
+%%CONTRIB%%share/git-core/contrib/git-jump/README
+%%CONTRIB%%share/git-core/contrib/git-jump/git-jump
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/README
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/help
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/list
@@ -927,6 +938,8 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/hooks/pre-auto-gc-battery
 %%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
 %%CONTRIB%%share/git-core/contrib/hooks/update-paranoid
+%%CONTRIB%%share/git-core/contrib/mw-to-git/git-remote-mediawiki
+%%CONTRIB%%share/git-core/contrib/mw-to-git/git-remote-mediawiki.txt
 %%CONTRIB%%share/git-core/contrib/p4import/README
 %%CONTRIB%%share/git-core/contrib/p4import/git-p4import.py
 %%CONTRIB%%share/git-core/contrib/p4import/git-p4import.txt
@@ -976,13 +989,16 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/completion
 %%CONTRIB%%@dirrm share/git-core/contrib/continuous
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
+%%CONTRIB%%@dirrm share/git-core/contrib/diff-highlight
 %%CONTRIB%%@dirrm share/git-core/contrib/emacs
 %%CONTRIB%%@dirrm share/git-core/contrib/examples
 %%CONTRIB%%@dirrm share/git-core/contrib/fast-import
+%%CONTRIB%%@dirrm share/git-core/contrib/git-jump
 %%CONTRIB%%@dirrm share/git-core/contrib/git-shell-commands
 %%CONTRIB%%@dirrm share/git-core/contrib/gitview
 %%CONTRIB%%@dirrm share/git-core/contrib/hg-to-git
 %%CONTRIB%%@dirrm share/git-core/contrib/hooks
+%%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git
 %%CONTRIB%%@dirrm share/git-core/contrib/p4import
 %%CONTRIB%%@dirrm share/git-core/contrib/patches
 %%CONTRIB%%@dirrm share/git-core/contrib/stats
