@@ -14,7 +14,7 @@ MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Static blog generator
 
 RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
-		markdown:${PORTSDIR}/textproc/py-markdown \
+		markdown_py:${PORTSDIR}/textproc/py-markdown \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_SITELIBDIR}/feedgenerator.py:${PORTSDIR}/www/py-feedgenerator
