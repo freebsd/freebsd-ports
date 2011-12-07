@@ -1,0 +1,189 @@
+--- src/splash.c.orig	1998-08-17 23:45:16.000000000 +0200
++++ src/splash.c	2011-12-07 12:30:10.488300879 +0100
+@@ -31,30 +31,42 @@
+ 
+ /* xwud - marginally useful raster image undumper */
+ 
++#include <stdlib.h>
++#include <stdio.h>
++#include <errno.h>
++#include <signal.h>
+ 
+ #include <X11/Xos.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/Xatom.h>
+-#include <stdio.h>
+ #include <X11/XWDFile.h>
+ #define  XK_LATIN1
+ #include <X11/keysymdef.h>
+-#include <errno.h>
+-#include <signal.h>
+ 
+ #ifdef X_NOT_STDC_ENV
+ extern int errno;
+ #endif
+ 
+-extern char *malloc();
+ unsigned Image_Size();
+ Atom wm_protocols;
+ Atom wm_delete_window;
+ static int split;
++void Error();
++void putScaledImage();
++void putImage();
++void Latin1Upper();
++void Extract_Plane();
++void Do_StdGray();
++void Do_StdCol();
++void Do_Direct();
++void Do_Pseudo();
++void _swapshort();
++  void _swaplong();
+ 
+ char *progname;
+ 
++void
+ usage()
+ {
+     fprintf(stderr, "usage: %s [-in <file>] [-noclick] [-geometry <geom>] [-display <display>]\n", progname);
+@@ -304,7 +316,7 @@
+ 	Error("Invalid input image header data.");
+ 
+     /* read in the color map buffer */
+-    if(ncolors = header.ncolors) {
++    if((ncolors = header.ncolors)) {
+ 	colors = (XColor *)malloc((unsigned) ncolors * sizeof(XColor));
+ 	if (!colors)
+ 	    Error("Can't malloc color table");
+@@ -658,7 +670,7 @@
+     while ( quit == 0 ) {
+ 
+ 		/* wait on mouse input event to terminate */
+-		if (got_event = 0) {
++		if (got_event == 0) {
+ 			sleep (1);
+ 		}
+ 
+@@ -724,6 +736,7 @@
+ 	return 0;
+ }
+ 
++void
+ putImage (dpy, image_win, gc, out_image, x, y, w, h)
+     Display	*dpy;
+     Window	image_win;
+@@ -762,6 +775,7 @@
+   Dimension *width, *height;
+ } Table;
+ 
++void
+ putScaledImage(display, d, gc, src_image, exp_x, exp_y,
+ 	       exp_width, exp_height, dest_width, dest_height)
+     Display*		 display;
+@@ -886,13 +900,14 @@
+     XDestroyImage(dest_image);
+ }
+ 
++void
+ Latin1Upper(s)
+     char *s;
+ {
+     unsigned char *str = (unsigned char *)s;
+     unsigned char c;
+ 
+-    for (; c = *str; str++)
++    while ((c = *str++))
+     {
+ 	if ((c >= XK_a) && (c <= XK_z))
+ 	    *str = c - (XK_a - XK_A);
+@@ -903,6 +918,7 @@
+     }
+ }
+ 
++void
+ Extract_Plane(in_image, out_image, plane)
+     register XImage *in_image, *out_image;
+     int plane;
+@@ -925,6 +941,7 @@
+ 	return vinfo->colormap_size;
+ }
+ 
++int
+ VisualRank(class)
+     int class;
+ {
+@@ -942,6 +959,7 @@
+     case StaticGray:
+ 	return 0;
+     }
++    return -1;
+ }
+ 
+ int
+@@ -956,6 +974,7 @@
+     return (color.green || color.blue);
+ }
+ 
++void
+ Do_StdGray(dpy, stdmap, ncolors, colors, in_image, out_image)
+     Display *dpy;
+     XStandardColormap *stdmap;
+@@ -971,8 +990,7 @@
+     for (i = 0, color = colors; i < ncolors; i++, color++)
+ 	color->pixel = stdmap->base_pixel +
+ 		       (((((int)(30L * color->red +
+-			         59L * color->green +
+-			         11L * color->blue) / 100)
++			         59L * color->green +			         11L * color->blue) / 100)
+ 			  * lim) >> 16) * stdmap->red_mult);
+     for (y = 0; y < in_image->height; y++) {
+ 	for (x = 0; x < in_image->width; x++) {
+@@ -984,6 +1002,7 @@
+ 
+ #define MapVal(val,lim,mult) ((((val * lim) + 32768) / 65535) * mult)
+ 
++void
+ Do_StdCol(dpy, stdmap, ncolors, colors, in_image, out_image)
+     Display *dpy;
+     XStandardColormap *stdmap;
+@@ -1021,6 +1040,7 @@
+     Error("Visual type is not large enough to hold all colors of the image.");
+ }
+ 
++void
+ Do_Pseudo(dpy, colormap, ncolors, colors, in_image, out_image)
+     Display *dpy;
+     Colormap *colormap;
+@@ -1048,6 +1068,7 @@
+     }
+ }
+ 
++void
+ Do_Direct(dpy, header, colormap, ncolors, colors, in_image, out_image)
+     Display *dpy;
+     XWDFileHeader *header;
+@@ -1165,6 +1186,7 @@
+     return((unsigned)image->bytes_per_line * image->height);
+ }
+ 
++void
+ Error(string)
+ 	char *string;
+ {
+@@ -1176,6 +1198,7 @@
+ 	exit(1);
+ }
+ 
++void
+ _swapshort (bp, n)
+     register char *bp;
+     register unsigned n;
+@@ -1191,6 +1214,7 @@
+     }
+ }
+ 
++void
+ _swaplong (bp, n)
+     register char *bp;
+     register unsigned n;
