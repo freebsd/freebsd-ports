@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -37,8 +36,8 @@ INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER?=	11.52
-OPERA_BUILD?=	1100
+OPERA_VER?=	11.60
+OPERA_BUILD?=	1185
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 

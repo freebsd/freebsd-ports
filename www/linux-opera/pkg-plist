@@ -2,8 +2,9 @@ bin/linux-opera
 bin/linux-opera-widget-manager
 lib/linux-opera/gstreamer/plugins/libgstoperamatroska.so
 lib/linux-opera/gstreamer/plugins/libgstoperavp8.so
-lib/linux-opera/liboperagtk.so
 lib/linux-opera/liboperakde4.so
+lib/linux-opera/liboperagtk2.so
+lib/linux-opera/liboperagtk3.so
 lib/linux-opera/opera
 lib/linux-opera/operaplugincleaner
 lib/linux-opera/operapluginwrapper
@@ -58,8 +59,10 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-extension.svg
 share/icons/hicolor/scalable/mimetypes/linux-opera-unite-application.svg
 share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/defaults/bookmarks.adr
+%%DATADIR%%/defaults/dictionaries.xml
 %%DATADIR%%/defaults/feedreaders.ini
 %%DATADIR%%/defaults/filehandler.ini
+%%DATADIR%%/defaults/handlers-ignore.ini
 %%DATADIR%%/defaults/license.txt
 %%DATADIR%%/defaults/mailproviders.xml
 %%DATADIR%%/defaults/plugin-ignore.ini
@@ -82,6 +85,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/extra/svg-sebd.dat
 %%DATADIR%%/files.sig
 %%DATADIR%%/files_old.sig
+%%DATADIR%%/html5_entity_init.dat
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/af/af.lng
@@ -105,10 +109,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/de/search.ini
 %%DATADIR%%/locale/de/standard_speeddial.ini
 %%DATADIR%%/locale/el/el.lng
-%%DATADIR%%/locale/en-GB/bookmarks.adr
 %%DATADIR%%/locale/en-GB/en-GB.lng
-%%DATADIR%%/locale/en-GB/search.ini
-%%DATADIR%%/locale/en-GB/standard_speeddial.ini
 %%DATADIR%%/locale/en/bookmarks.adr
 %%DATADIR%%/locale/en/en.lng
 %%DATADIR%%/locale/en/en.zip
@@ -202,13 +203,9 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/uz/uz.lng
 %%DATADIR%%/locale/vi/vi.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
-%%DATADIR%%/locale/zh-cn/browser.js
 %%DATADIR%%/locale/zh-cn/search.ini
 %%DATADIR%%/locale/zh-cn/standard_speeddial.ini
-%%DATADIR%%/locale/zh-cn/turbosettings.xml
 %%DATADIR%%/locale/zh-cn/zh-cn.lng
-%%DATADIR%%/locale/zh-tw/browser.js
-%%DATADIR%%/locale/zh-tw/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/zh-tw.lng
 %%DATADIR%%/locale/zu/zu.lng
 %%DATADIR%%/mathml.dtd
@@ -224,6 +221,38 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/package/lib/package_tar.sh
 %%DATADIR%%/package/lib/xml.sh
 %%DATADIR%%/package/main.sh
+%%DATADIR%%/pubsuffix.xml
+%%DATADIR%%/region/cis/en/bookmarks.adr
+%%DATADIR%%/region/cis/en/search.ini
+%%DATADIR%%/region/cis/en/standard_speeddial.ini
+%%DATADIR%%/region/cn/browser.js
+%%DATADIR%%/region/cn/en/bookmarks.adr
+%%DATADIR%%/region/cn/en/search.ini
+%%DATADIR%%/region/cn/en/standard_speeddial.ini
+%%DATADIR%%/region/cn/turbosettings.xml
+%%DATADIR%%/region/gb/bookmarks.adr
+%%DATADIR%%/region/gb/search.ini
+%%DATADIR%%/region/gb/standard_speeddial.ini
+%%DATADIR%%/region/hk/browser.js
+%%DATADIR%%/region/hk/turbosettings.xml
+%%DATADIR%%/region/id/bookmarks.adr
+%%DATADIR%%/region/id/search.ini
+%%DATADIR%%/region/id/standard_speeddial.ini
+%%DATADIR%%/region/in/bookmarks.adr
+%%DATADIR%%/region/in/search.ini
+%%DATADIR%%/region/in/standard_speeddial.ini
+%%DATADIR%%/region/middle_east/bookmarks.adr
+%%DATADIR%%/region/middle_east/search.ini
+%%DATADIR%%/region/middle_east/standard_speeddial.ini
+%%DATADIR%%/region/region.ini
+%%DATADIR%%/region/tw/browser.js
+%%DATADIR%%/region/tw/turbosettings.xml
+%%DATADIR%%/region/ua/ru/bookmarks.adr
+%%DATADIR%%/region/ua/ru/search.ini
+%%DATADIR%%/region/ua/ru/standard_speeddial.ini
+%%DATADIR%%/region/us/bookmarks.adr
+%%DATADIR%%/region/us/search.ini
+%%DATADIR%%/region/us/standard_speeddial.ini
 %%DATADIR%%/skin/standard_skin.zip
 %%DATADIR%%/skin/unix_skin.zip
 %%DATADIR%%/styles/about.css
@@ -234,17 +263,18 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/debug.css
 %%DATADIR%%/styles/dir.css
 %%DATADIR%%/styles/error.css
+%%DATADIR%%/styles/feed.css
 %%DATADIR%%/styles/history.css
 %%DATADIR%%/styles/im.css
 %%DATADIR%%/styles/image.css
 %%DATADIR%%/styles/images/Opera_256x256.png
+%%DATADIR%%/styles/images/arrow.png
 %%DATADIR%%/styles/images/bar.png
 %%DATADIR%%/styles/images/bkgd-rev.png
 %%DATADIR%%/styles/images/bkgd.png
 %%DATADIR%%/styles/images/bullet.png
 %%DATADIR%%/styles/images/center.png
 %%DATADIR%%/styles/images/container.png
-%%DATADIR%%/styles/images/corner.png
 %%DATADIR%%/styles/images/customize.gif
 %%DATADIR%%/styles/images/darkBox.png
 %%DATADIR%%/styles/images/defaultFavicon.png
@@ -253,8 +283,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/images/flag.png
 %%DATADIR%%/styles/images/folder.png
 %%DATADIR%%/styles/images/hanger.png
-%%DATADIR%%/styles/images/header-expanded.png
-%%DATADIR%%/styles/images/header.png
 %%DATADIR%%/styles/images/opera-icon-red.png
 %%DATADIR%%/styles/images/opera.png
 %%DATADIR%%/styles/images/page-bot.png
@@ -269,6 +297,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/images/top.png
 %%DATADIR%%/styles/images/warning.png
 %%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/m2_upgrade_1160.mbs
 %%DATADIR%%/styles/m2_welcome_message.mbs
 %%DATADIR%%/styles/mail.css
 %%DATADIR%%/styles/mathml.css
@@ -308,6 +337,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/ui/standard_menu.ini
 %%DATADIR%%/ui/standard_mouse.ini
 %%DATADIR%%/ui/standard_toolbar.ini
+%%DATADIR%%/ui/widgets.yaml
 %%DATADIR%%/ui/unix_keyboard.ini
 %%DATADIR%%/unite/fileSharing.ua
 %%DATADIR%%/unite/fridge.ua
@@ -325,6 +355,20 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/region/us
+@dirrm %%DATADIR%%/region/ua/ru
+@dirrm %%DATADIR%%/region/ua
+@dirrm %%DATADIR%%/region/tw
+@dirrm %%DATADIR%%/region/middle_east
+@dirrm %%DATADIR%%/region/in
+@dirrm %%DATADIR%%/region/id
+@dirrm %%DATADIR%%/region/hk
+@dirrm %%DATADIR%%/region/gb
+@dirrm %%DATADIR%%/region/cn/en
+@dirrm %%DATADIR%%/region/cn
+@dirrm %%DATADIR%%/region/cis/en
+@dirrm %%DATADIR%%/region/cis
+@dirrm %%DATADIR%%/region
 @dirrm %%DATADIR%%/package/lib
 @dirrm %%DATADIR%%/package
 @dirrm %%DATADIR%%/locale/zu
