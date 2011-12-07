@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	lmms
-PORTVERSION=	0.4.6
-PORTREVISION=	4
+PORTVERSION=	0.4.12
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	An all-in-one sequencer, drum machine, sampler and more
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
@@ -22,8 +23,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		fftw3f:${PORTSDIR}/math/fftw3-float
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugins \
+RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugins \
 		${LOCALBASE}/lib/ladspa/cmt.so:${PORTSDIR}/audio/cmt \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:${PORTSDIR}/audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:${PORTSDIR}/audio/tap-plugins \
@@ -33,6 +33,7 @@ OPTIONS=	JACK       "Enable JACK support"       OFF \
 		PULSEAUDIO "Enable PulseAudio support" OFF \
 		SDL        "Enable SDL support"        OFF
 
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_XORG=	xft
 USE_QT_VER=	4
@@ -46,10 +47,13 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_SWH:BOOL=OFF \
 		-DWANT_STK:BOOL=OFF \
 		-DWANT_TAP:BOOL=OFF \
-		-DWANT_VST:BOOL=OFF
+		-DWANT_VST:BOOL=OFF \
+		-DHAVE_STRTOLL=ON
 
 MANCOMPRESSED=	yes
 MAN1=		lmms.1
+
+USE_DOS2UNIX=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp
 
 .include <bsd.port.pre.mk>
 
@@ -79,14 +83,14 @@ post-patch:
 		 /^Categories/s|$$|;|g ; \
 		 /^MimeType/s|$$|;|g' ${WRKSRC}/${file}
 .endfor
-.for file in data/lmms src/core/config_mgr.cpp
+.for filename in data/lmms src/core/config_mgr.cpp
 	@${REINPLACE_CMD} -e \
-		's|/usr|${PREFIX}|g' ${WRKSRC}/${file}
+		's|/usr|${PREFIX}|g' ${WRKSRC}/${filename}
 .endfor
-.for file in src/core/ladspa_manager.cpp
+.for filename in src/core/ladspa_manager.cpp
 	@${REINPLACE_CMD} -e \
 		'/\/usr\/lib/d ; \
-		 s|/usr/local|${PREFIX}|g' ${WRKSRC}/${file}
+		 s|/usr/local|${PREFIX}|g' ${WRKSRC}/${filename}
 .endfor
 
 post-install:
