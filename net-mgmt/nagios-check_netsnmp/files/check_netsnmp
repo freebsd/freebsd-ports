@@ -1,0 +1,242 @@
+#! /usr/bin/perl -w
+
+# ----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42, (c) Poul-Henning Kamp):
+# Dmitry Sivachenko <mitya@cavia.pp.ru> wrote this file.  As long as you
+# retain this notice you can do whatever you want with this stuff. If we
+# meet some day, and you think this stuff is worth it, you can buy me a
+# beer in return.
+#
+# Dmitry Sivachenko
+# ----------------------------------------------------------------------------
+
+use strict;
+
+use Getopt::Long;
+use Net::SNMP;
+use lib "/usr/local/libexec/nagios";
+use utils qw($TIMEOUT %ERRORS);
+
+my $load = '.1.3.6.1.4.1.2021.10.1.';
+my $proc = '.1.3.6.1.4.1.2021.2.1.';
+my $disk = '.1.3.6.1.4.1.2021.9.1.';
+my $file = '.1.3.6.1.4.1.2021.15.1.';
+my $swap = '.1.3.6.1.4.1.2021.4.';
+my $exec = '.1.3.6.1.4.1.2021.8.';
+my $errorFlag = '100';
+my $errorMsg = '101';
+my $TotalSwap = '.1.3.6.1.4.1.2021.4.3.0';
+my $AvailSwap = '.1.3.6.1.4.1.2021.4.4.0';
+my $laLoad1 = '.1.3.6.1.4.1.2021.10.1.3.1';
+my $laLoad5 = '.1.3.6.1.4.1.2021.10.1.3.2';
+my $laLoad15 = '.1.3.6.1.4.1.2021.10.1.3.3';
+
+my $errflag = $ERRORS{'OK'};
+
+my ($opt_h, $opt_C, $opt_H, $opt_o, $opt_p, $opt_t);
+Getopt::Long::Configure('bundling');
+GetOptions(
+	   "h"   => \$opt_h, "help"  => \$opt_h,
+	   "C=s" => \$opt_C, "community=s" => \$opt_C,
+	   "H=s" => \$opt_H, "hostname=s" => \$opt_H,
+	   "o=s" => \$opt_o, "oid=s" => \$opt_o,
+	   "p=i" => \$opt_p, "port=i" => \$opt_p,
+	   "t=i" => \$opt_t, "timeout=i" => \$opt_t
+);
+
+if ($opt_h) {
+    print_help();
+    exit $ERRORS{'OK'};
+}
+
+if (! utils::is_hostname($opt_H)){
+    print_help();
+    exit $ERRORS{"UNKNOWN"};
+}
+
+if ($opt_o ne 'disk' && $opt_o ne 'swap' && $opt_o ne 'proc' &&
+    $opt_o ne 'load' && $opt_o ne 'file' &&
+    $opt_o !~ /^\d+$/ && $opt_o !~ /^(\.\d+)+\.$/) {
+    print_help();
+    exit $ERRORS{"UNKNOWN"};
+}
+
+# Just in case of problems, let's not hang Nagios
+$SIG{'ALRM'} = sub {
+    print ("ERROR: No response from SNMP server (alarm)\n");
+    exit $ERRORS{"UNKNOWN"};
+};
+alarm($TIMEOUT * 6);	# 1.5 minutes
+
+my ($session, $error) = Net::SNMP->session(
+    -timeout => $opt_t || $TIMEOUT,
+    -hostname  => $opt_H,
+    -community => $opt_C || 'public',
+    -port => $opt_p || 161
+);
+
+if (!defined($session)) {
+    printf("ERROR: %s.\n", $error);
+    exit $ERRORS{'UNKNOWN'};
+}
+
+if (!defined($opt_o)) {
+    print("Please specify OID to query (-c).\n");
+    exit $ERRORS{'UNKNOWN'};
+}
+
+checkOID($opt_o);
+
+$session->close;
+exit $errflag;
+
+
+sub getOID {
+    my $result = $session->get_request(-varbindlist => [$_[0]]);
+    if (defined($result)) {
+        return $result->{$_[0]};
+    } else {
+        return undef;
+    }
+}
+
+sub checkOID {
+    my $baseOID;  my $i;  my $first_query = 1;  my $first_error = 1;
+    if ($_[0] eq 'swap') {
+        $i = 0;
+    } else {
+        $i = 1;
+    }
+    if ($_[0] eq 'load') {
+        $baseOID = $load;
+    } elsif ($_[0] eq 'proc') {
+        $baseOID = $proc;
+    } elsif ($_[0] eq 'disk') {
+        $baseOID = $disk;
+    } elsif ($_[0] eq 'swap') {
+        $baseOID = $swap;
+    } elsif ($_[0] eq 'file') {
+        $baseOID = $file;
+    } else {
+	    if ($_[0] =~ /^\d+$/) {
+            $baseOID = $exec . $_[0] . '.';
+	    } else {
+            $baseOID = $_[0];
+	    }
+    }
+
+    my $tmpOID = $baseOID . $errorFlag . ".$i";
+    my $res = getOID($tmpOID);
+    while (defined($res)) {
+        if ($res != 0) {
+            $errflag = $ERRORS{'CRITICAL'};
+            $tmpOID = $baseOID . $errorMsg . ".$i";
+            my $res1 = getOID($tmpOID);
+            if (defined($res1)) {
+                if (!$first_error) {
+                    print ", ";
+                }
+                print $res1;
+            } else {
+                print 'Unable to get error message!';
+            }
+            $first_error = 0;
+        }
+        $first_query = 0;
+        $i++; $tmpOID = $baseOID . $errorFlag . ".$i";
+        $res = getOID($tmpOID);
+    }
+    if ($errflag == $ERRORS{'OK'} && !$first_query) {
+        if ($_[0] eq 'load') {
+            my $tmp;
+            $tmp = getOID($laLoad1);
+            if (defined($tmp)) {
+                print "Load-1: $tmp, ";
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $laLoad1!";
+            }
+            $tmp = getOID($laLoad5);
+            if (defined($tmp)) {
+                print "Load-5: $tmp, ";
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $laLoad5!";
+            }
+            $tmp = getOID($laLoad15);
+            if (defined($tmp)) {
+                print "Load-15: $tmp";
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $laLoad15!";
+            }
+        } elsif ($_[0] eq 'proc') {
+            print "Processes ok";
+        } elsif ($_[0] eq 'disk') {
+            print "Disks ok";
+        } elsif ($_[0] eq 'file') {
+            print "File sizes ok";
+        } elsif ($_[0] eq 'swap') {
+            my $tmp;
+            $tmp = getOID($TotalSwap);
+            if (defined($tmp)) {
+                my $tmp1 = int($tmp/1024);
+                print "Total: $tmp1" . "Mb, ";
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $TotalSwap!";
+            }
+            $tmp = getOID($AvailSwap);
+            if (defined($tmp)) {
+                my $tmp1 = int($tmp/1024);
+                print "Free: $tmp1" . "Mb";
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $AvailSwap!";
+            }
+        } else {
+            my $tmp = getOID("$baseOID$errorMsg.1");
+            if (defined($tmp)) {
+                print $tmp;
+            } else {
+                $errflag = $ERRORS{'UNKNOWN'};
+                print "Error obtaining OID $baseOID$errorMsg.1!";
+            }
+        }
+    } elsif ($first_query) {
+        print "Error obtaining OID $tmpOID! (no response?)";
+        $errflag = $ERRORS{'UNKNOWN'};
+    }
+}
+
+sub print_help {
+    print "Usage: $0 [-C COMMUNITY] [-p port] -H HOSTNAME -o swap|proc|load|disk|file|<OID>|<exec num>\n";
+    print "
+-C, --community
+	Community name to use in queries. (default: public)
+-H, --hostname
+	Hostname to send SNMP queries to.
+-p, --port
+        Port number to send SNMP requests to. (default: 161)
+-t, --timeout=INTEGER
+	Seconds before connection times out (default: 15)
+-o, --oid
+	OID to query.  $errorFlag is queried to check for errors and $errorMsg
+        is queried for error message set by snmpd.  Shortcuts are:
+		swap (.1.3.6.1.4.1.2021.4).  For use in conjunction with
+		'swap' keyword in snmpd.conf.
+		proc (.1.3.6.1.4.1.2021.2.1).  For use in conjunction with
+		'proc' keyword in snmpd.conf.
+		load (.1.3.6.1.4.1.2021.10.1).  For use in conjunction with
+		'load' keyword in snmpd.conf.
+		disk (.1.3.6.1.4.1.2021.9.1).  For use in conjunction with
+		'disk' keyword in snmpd.conf.
+		<OID>.  Query the specified OID. For use in conjunction with
+		'exec' keyword in snmpd.conf.
+                file (.1.3.6.1.4.1.2021.15.1).  For use in conjunction with
+                'file' keyword in snmpd.conf.
+		<exec num>.  Query the specified number in the 'exec' OID tree.
+		Equivalent to '.1.3.6.1.4.1.2021.8.<exec num>'.
+
+";
+}

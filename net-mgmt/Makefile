@@ -121,6 +121,7 @@
     SUBDIR += nagios-check_kumofs
     SUBDIR += nagios-check_memcached_paranoid
     SUBDIR += nagios-check_mysql_slave
+    SUBDIR += nagios-check_netsnmp
     SUBDIR += nagios-check_nick
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
