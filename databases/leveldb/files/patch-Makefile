@@ -1,15 +1,6 @@
---- Makefile.orig	2011-11-21 14:58:22.000000000 +0800
-+++ Makefile	2011-11-21 15:12:50.189222302 +0800
-@@ -2,7 +2,7 @@
- # Use of this source code is governed by a BSD-style license that can be
- # found in the LICENSE file. See the AUTHORS file for names of contributors.
- 
--CC = g++
-+CC ?= g++
- 
- #-----------------------------------------------
- # Uncomment exactly one of the lines labelled (A), (B), and (C) below
-@@ -36,7 +36,7 @@
+--- Makefile.orig	2011-12-07 20:27:41.000000000 +0800
++++ Makefile	2011-12-07 20:53:25.265313302 +0800
+@@ -37,7 +37,7 @@
  GOOGLE_PERFTOOLS_LDFLAGS=
  endif
  
@@ -18,7 +9,7 @@
  
  LDFLAGS += $(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
  
-@@ -103,15 +103,18 @@
+@@ -104,15 +104,18 @@
  BENCHMARKS = db_bench_sqlite3 db_bench_tree_db
  
  LIBRARY = libleveldb.a
@@ -39,14 +30,14 @@
  	-rm -rf ios-x86/* ios-arm/*
  	-rm build_config.mk
  
-@@ -119,6 +122,10 @@
+@@ -120,6 +123,10 @@
  	rm -f $@
  	$(AR) -rs $@ $(LIBOBJECTS)
  
 +$(SHARED_LIBRARY): $(LIBOBJECTS)
 +	rm -f $@
-+	$(CC) -shared -Wl,-soname,$@.$(SHARED_LIBRARY_VER) -o $@.$(SHARED_LIBRARY_VER) $(LDFLAGS) $(LIBOBJECTS)
++	$(CXX) -shared -Wl,-soname,$@.$(SHARED_LIBRARY_VER) -o $@.$(SHARED_LIBRARY_VER) $(LDFLAGS) $(LIBOBJECTS)
 +
  db_bench: db/db_bench.o $(LIBOBJECTS) $(TESTUTIL)
- 	$(CC) $(LDFLAGS) db/db_bench.o $(LIBOBJECTS) $(TESTUTIL) -o $@
+ 	$(CXX) $(LDFLAGS) db/db_bench.o $(LIBOBJECTS) $(TESTUTIL) -o $@
  
