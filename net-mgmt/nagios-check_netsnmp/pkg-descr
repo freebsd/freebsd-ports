@@ -1,0 +1,9 @@
+A plugin for Nagios to query common NetSNMP-exported information:
+
+-- disk status;
+-- processes status;
+-- swap status;
+-- load averages;
+-- anything else exported via NetSNMP's exec or extend directives.
+
+Author: trtrmitya@gmail.com
