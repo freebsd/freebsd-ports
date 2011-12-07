@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	www
-MASTER_SITES=	http://nodejs.org/dist/
+MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
