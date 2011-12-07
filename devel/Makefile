@@ -3235,6 +3235,7 @@
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-waf
     SUBDIR += py-wsgi_xmlrpc
+    SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
