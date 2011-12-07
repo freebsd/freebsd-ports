@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.2.70
-PORTREVISION=	1
+PORTVERSION=	1.2.71
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
@@ -17,27 +16,12 @@ COMMENT=	A straightforward implementation of DBM
 
 LICENSE=	GPLv3
 
-MAKE_JOBS_SAFE=	yes
-
-USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
+MAKE_JOBS_SAFE=	yes
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && !defined(CPUTYPE)
-CONFIGURE_TARGET=	i586-portbld-freebsd${OSREL}
-CPUTYPE=	i586
-PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
-# _CPUCFLAGS will somehow show up twice in CFLAGS but who cares..
-.include <bsd.cpu.mk>
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
-.endif
 
 MAN1=		kccachetest.1 \
 		kcdirmgr.1 \
@@ -56,6 +40,20 @@ MAN1=		kccachetest.1 \
 		kctreetest.1 \
 		kcutilmgr.1 \
 		kcutiltest.1
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && !defined(CPUTYPE)
+CONFIGURE_TARGET=	i586-portbld-freebsd${OSREL}
+CPUTYPE=	i586
+PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
+# _CPUCFLAGS will somehow show up twice in CFLAGS but who cares..
+.include <bsd.cpu.mk>
+.endif
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
 
 post-patch:
 .if defined(NOPORTDOCS)
