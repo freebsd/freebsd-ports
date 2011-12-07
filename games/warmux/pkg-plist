@@ -36,7 +36,7 @@ share/applications/warmux.desktop
 %%NLS%%share/locale/sl/LC_MESSAGES/warmux.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/warmux.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/warmux.mo
-%%NLS%%share/locale/ua/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/warmux.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/warmux.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/warmux.mo
 share/pixmaps/warmux_128x128.png
@@ -831,6 +831,7 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/icon/uninstall_64x64.png
 %%DATADIR%%/icon/warmux.icns
 %%DATADIR%%/icon/warmux.ico
+%%DATADIR%%/icon/warmux.mbm
 %%DATADIR%%/icon/warmux.mif
 %%DATADIR%%/icon/warmux.svg
 %%DATADIR%%/icon/warmux.xpm
@@ -843,6 +844,7 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/interface/not_skin/background_control_interface.png
 %%DATADIR%%/interface/not_skin/background_help.png
 %%DATADIR%%/interface/not_skin/background_interface.png
+%%DATADIR%%/interface/not_skin/background_replay.png
 %%DATADIR%%/interface/not_skin/readme.txt
 %%DATADIR%%/interface/not_skin/small_background_interface.png
 %%DATADIR%%/interface/whitetheme/arrow_jump.png
@@ -978,11 +980,11 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/map/frog/map.png
 %%DATADIR%%/map/frog/preview.jpg
 %%DATADIR%%/map/frog/sky.jpg
-%%DATADIR%%/map/funkyisland/clouds.png
-%%DATADIR%%/map/funkyisland/config.xml
-%%DATADIR%%/map/funkyisland/island.png
-%%DATADIR%%/map/funkyisland/island_bg.jpg
-%%DATADIR%%/map/funkyisland/preview.jpg
+%%DATADIR%%/map/funky_island/clouds.png
+%%DATADIR%%/map/funky_island/config.xml
+%%DATADIR%%/map/funky_island/island.png
+%%DATADIR%%/map/funky_island/island_bg.jpg
+%%DATADIR%%/map/funky_island/preview.jpg
 %%DATADIR%%/map/goodandevil/config.xml
 %%DATADIR%%/map/goodandevil/goodandevil.png
 %%DATADIR%%/map/goodandevil/preview.jpg
@@ -1169,6 +1171,7 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/menu/help_ingame.jpg
 %%DATADIR%%/menu/help_interface.png
 %%DATADIR%%/menu/help_minimap.png
+%%DATADIR%%/menu/help_replay.png
 %%DATADIR%%/menu/help_shortkeys.png
 %%DATADIR%%/menu/help_team_selection.jpg
 %%DATADIR%%/menu/help_touch_interface.png
@@ -1180,6 +1183,7 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/menu/i_options.png
 %%DATADIR%%/menu/i_play.png
 %%DATADIR%%/menu/i_quit.png
+%%DATADIR%%/menu/i_replay.png
 %%DATADIR%%/menu/i_update.png
 %%DATADIR%%/menu/ico_maps.png
 %%DATADIR%%/menu/ico_network.png
@@ -1207,6 +1211,7 @@ share/pixmaps/warmux_128x128.png
 %%DATADIR%%/menu/refresh.png
 %%DATADIR%%/menu/resolution.png
 %%DATADIR%%/menu/right.png
+%%DATADIR%%/menu/save.png
 %%DATADIR%%/menu/scroll_on_border.png
 %%DATADIR%%/menu/send_txt.png
 %%DATADIR%%/menu/sound_effects_enable.png
@@ -1666,7 +1671,7 @@ share/pixmaps/warmux_128x128.png
 @dirrm %%DATADIR%%/map/halloween
 @dirrm %%DATADIR%%/map/greehills
 @dirrm %%DATADIR%%/map/goodandevil
-@dirrm %%DATADIR%%/map/funkyisland
+@dirrm %%DATADIR%%/map/funky_island
 @dirrm %%DATADIR%%/map/frog
 @dirrm %%DATADIR%%/map/farm
 @dirrm %%DATADIR%%/map/electronik
@@ -1715,8 +1720,6 @@ share/pixmaps/warmux_128x128.png
 @dirrm %%DATADIR%%/body/all_skins_objects
 @dirrm %%DATADIR%%/body
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/ua/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ua
 %%NLS%%@dirrmtry share/locale/kw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kw
 %%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
