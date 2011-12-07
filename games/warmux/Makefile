@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	warmux
-DISTVERSION=	11.01
-PORTREVISION=	1
+DISTVERSION=	11.04.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
 		http://download.gna.org/${PORTNAME}/archive/
@@ -34,12 +33,20 @@ OPTIONS+=	NLS "Native Language Support via gettext utilities" on \
 		FRIBIDI "Enable bi-directional unicode support" off \
 		SERVER "Enable dedicated server" off
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
+
 .include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in \
 	${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e "s,warmux_files.desktop,," ${WRKSRC}/data/Makefile.in
 	${FIND} -d ${WRKSRC}/data/ -name "*.*~" -delete
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug \
+			--enable-logging
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
