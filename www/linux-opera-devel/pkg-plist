@@ -59,6 +59,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-next-extension.svg
 share/icons/hicolor/scalable/mimetypes/linux-opera-next-unite-application.svg
 share/icons/hicolor/scalable/mimetypes/linux-opera-next-widget.svg
 %%DATADIR%%/defaults/bookmarks.adr
+%%DATADIR%%/defaults/dictionaries.xml
 %%DATADIR%%/defaults/feedreaders.ini
 %%DATADIR%%/defaults/filehandler.ini
 %%DATADIR%%/defaults/handlers-ignore.ini
@@ -287,6 +288,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-next-widget.svg
 %%DATADIR%%/styles/images/top.png
 %%DATADIR%%/styles/images/warning.png
 %%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/m2_upgrade_1160.mbs
 %%DATADIR%%/styles/m2_welcome_message.mbs
 %%DATADIR%%/styles/mail.css
 %%DATADIR%%/styles/mathml.css
