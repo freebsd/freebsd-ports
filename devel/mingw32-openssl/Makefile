@@ -25,6 +25,7 @@ COMMENT=	The OpenSSL library cross-compiled for MinGW32
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/stdlib.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt \
 		${LOCALBASE}/mingw32/lib/libz.a:${PORTSDIR}/devel/mingw32-zlib
 
 USE_PERL5_BUILD=	yes
