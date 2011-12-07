@@ -1,187 +1,187 @@
 bin/lmms
-include/lmms/AudioAlsa.h
-include/lmms/AudioDevice.h
-include/lmms/AudioDummy.h
-include/lmms/AudioFileDevice.h
-include/lmms/AudioFileOgg.h
-include/lmms/AudioFileWave.h
-include/lmms/AudioJack.h
-include/lmms/AudioOss.h
-include/lmms/AudioPort.h
-include/lmms/AudioPortAudio.h
-include/lmms/AudioPulseAudio.h
-include/lmms/AudioSampleRecorder.h
-include/lmms/AudioSdl.h
-include/lmms/AutomatableModel.h
-include/lmms/AutomatableModelView.h
-include/lmms/Clipboard.h
-include/lmms/ComboBoxModel.h
-include/lmms/Controller.h
-include/lmms/ControllerConnection.h
-include/lmms/ControllerConnectionDialog.h
-include/lmms/ControllerDialog.h
-include/lmms/ControllerRackView.h
-include/lmms/ControllerView.h
-include/lmms/DummyEffect.h
-include/lmms/DummyInstrument.h
-include/lmms/DummyPlugin.h
-include/lmms/Effect.h
-include/lmms/EffectChain.h
-include/lmms/EffectControlDialog.h
-include/lmms/EffectControls.h
-include/lmms/EffectRackView.h
-include/lmms/EffectSelectDialog.h
-include/lmms/EffectView.h
-include/lmms/EnvelopeAndLfoParameters.h
-include/lmms/EnvelopeAndLfoView.h
-include/lmms/FxMixer.h
-include/lmms/FxMixerView.h
-include/lmms/ImportFilter.h
-include/lmms/Instrument.h
-include/lmms/InstrumentFunctionViews.h
-include/lmms/InstrumentFunctions.h
-include/lmms/InstrumentMidiIOView.h
-include/lmms/InstrumentPlayHandle.h
-include/lmms/InstrumentSoundShaping.h
-include/lmms/InstrumentSoundShapingView.h
-include/lmms/InstrumentTrack.h
-include/lmms/InstrumentView.h
-include/lmms/JournallingObject.h
-include/lmms/LadspaBase.h
-include/lmms/LadspaControl.h
-include/lmms/LadspaControlView.h
-include/lmms/LfoController.h
-include/lmms/MainWindow.h
-include/lmms/MeterDialog.h
-include/lmms/MeterModel.h
-include/lmms/MicroTimer.h
-include/lmms/MidiAlsaRaw.h
-include/lmms/MidiAlsaSeq.h
+share/pixmaps/lmms.png
 include/lmms/MidiClient.h
-include/lmms/MidiController.h
-include/lmms/MidiDummy.h
-include/lmms/MidiEventProcessor.h
-include/lmms/MidiOss.h
-include/lmms/MidiPort.h
-include/lmms/MidiPortMenu.h
-include/lmms/MidiWinMM.h
-include/lmms/Model.h
-include/lmms/ModelView.h
-include/lmms/Oscillator.h
-include/lmms/PeakController.h
-include/lmms/Piano.h
-include/lmms/PianoView.h
-include/lmms/Plugin.h
-include/lmms/PluginView.h
-include/lmms/ProjectJournal.h
-include/lmms/ProjectRenderer.h
-include/lmms/RemotePlugin.h
-include/lmms/SerializingObject.h
-include/lmms/SideBar.h
-include/lmms/SideBarWidget.h
-include/lmms/SweepOscillator.h
-include/lmms/TempoSyncKnob.h
-include/lmms/TempoSyncKnobModel.h
-include/lmms/ToolPlugin.h
-include/lmms/ToolPluginView.h
-include/lmms/about_dialog.h
-include/lmms/aeffectx.h
-include/lmms/atomic_int.h
-include/lmms/automatable_button.h
-include/lmms/automatable_slider.h
-include/lmms/automation_editor.h
-include/lmms/automation_pattern.h
-include/lmms/automation_pattern_view.h
-include/lmms/automation_track.h
-include/lmms/base64.h
-include/lmms/basic_filters.h
-include/lmms/bb_editor.h
-include/lmms/bb_track.h
-include/lmms/bb_track_container.h
-include/lmms/caption_menu.h
-include/lmms/combobox.h
-include/lmms/config_mgr.h
-include/lmms/cpuload_widget.h
-include/lmms/custom_events.h
-include/lmms/debug.h
-include/lmms/detuning_helper.h
-include/lmms/drumsynth.h
-include/lmms/effect_lib.h
-include/lmms/embed.cpp
-include/lmms/embed.h
-include/lmms/endian_handling.h
-include/lmms/engine.h
-include/lmms/export.h
-include/lmms/export_project_dialog.h
-include/lmms/fade_button.h
-include/lmms/fader.h
-include/lmms/fft_helpers.h
-include/lmms/fifo_buffer.h
-include/lmms/file_browser.h
-include/lmms/graph.h
-include/lmms/group_box.h
-include/lmms/gui_templates.h
-include/lmms/inline_automation.h
-include/lmms/interpolation.h
-include/lmms/knob.h
-include/lmms/ladspa.h
-include/lmms/ladspa_2_lmms.h
-include/lmms/ladspa_manager.h
-include/lmms/lcd_spinbox.h
-include/lmms/led_checkbox.h
-include/lmms/lmms_basics.h
-include/lmms/lmms_constants.h
-include/lmms/lmms_math.h
-include/lmms/lmms_style.h
-include/lmms/lmmsconfig.h
-include/lmms/midi.h
-include/lmms/midi_time.h
-include/lmms/mixer.h
-include/lmms/mmp.h
-include/lmms/note.h
-include/lmms/note_play_handle.h
-include/lmms/nstate_button.h
-include/lmms/panning.h
-include/lmms/panning_constants.h
-include/lmms/pattern.h
-include/lmms/pch.h
-include/lmms/piano_roll.h
-include/lmms/pixmap_button.h
-include/lmms/play_handle.h
-include/lmms/plugin_browser.h
-include/lmms/preset_preview_play_handle.h
-include/lmms/project_notes.h
-include/lmms/project_version.h
-include/lmms/rename_dialog.h
-include/lmms/rubberband.h
-include/lmms/sample_buffer.h
-include/lmms/sample_play_handle.h
-include/lmms/sample_record_handle.h
-include/lmms/sample_track.h
-include/lmms/setup_dialog.h
-include/lmms/shared_object.h
-include/lmms/song.h
-include/lmms/song_editor.h
 include/lmms/string_pair_drag.h
-include/lmms/surround_area.h
-include/lmms/tab_bar.h
-include/lmms/tab_button.h
-include/lmms/tab_widget.h
-include/lmms/templates.h
-include/lmms/text_float.h
+include/lmms/AutomatableModelView.h
+include/lmms/base64.h
+include/lmms/ControllerConnection.h
 include/lmms/timeline.h
-include/lmms/tool_button.h
-include/lmms/tooltip.h
+include/lmms/Effect.h
 include/lmms/track.h
-include/lmms/track_container.h
-include/lmms/track_container_view.h
+include/lmms/Instrument.h
+include/lmms/endian_handling.h
+include/lmms/MidiPort.h
+include/lmms/AudioPort.h
+include/lmms/lmms_style.h
+include/lmms/caption_menu.h
+include/lmms/TempoSyncKnobModel.h
+include/lmms/tooltip.h
+include/lmms/basic_filters.h
+include/lmms/InstrumentFunctionViews.h
+include/lmms/AutomationEditor.h
+include/lmms/mmp.h
+include/lmms/project_version.h
+include/lmms/custom_events.h
+include/lmms/ToolPlugin.h
+include/lmms/MidiWinMM.h
+include/lmms/InstrumentSoundShapingView.h
+include/lmms/InstrumentSoundShaping.h
+include/lmms/sample_play_handle.h
+include/lmms/InstrumentPlayHandle.h
+include/lmms/AudioJack.h
+include/lmms/MidiDummy.h
+include/lmms/AutomatableModel.h
+include/lmms/MidiEventProcessor.h
+include/lmms/EffectControls.h
+include/lmms/LadspaControlView.h
+include/lmms/ControllerView.h
+include/lmms/MidiPortMenu.h
 include/lmms/track_label_button.h
-include/lmms/transformable_auto_model.h
+include/lmms/AutomationPattern.h
+include/lmms/AudioAlsa.h
+include/lmms/DummyPlugin.h
+include/lmms/MidiOss.h
+include/lmms/templates.h
+include/lmms/MeterDialog.h
+include/lmms/Piano.h
+include/lmms/InstrumentView.h
+include/lmms/EnvelopeAndLfoParameters.h
+include/lmms/fft_helpers.h
+include/lmms/combobox.h
+include/lmms/sample_track.h
+include/lmms/InstrumentMidiIOView.h
+include/lmms/about_dialog.h
+include/lmms/rubberband.h
+include/lmms/automatable_slider.h
+include/lmms/EnvelopeAndLfoView.h
+include/lmms/Plugin.h
+include/lmms/automatable_button.h
+include/lmms/EffectChain.h
+include/lmms/file_browser.h
+include/lmms/AudioDevice.h
+include/lmms/lmms_math.h
+include/lmms/Clipboard.h
+include/lmms/bb_track.h
+include/lmms/DetuningHelper.h
+include/lmms/AutomationPatternView.h
+include/lmms/note_play_handle.h
+include/lmms/Oscillator.h
+include/lmms/embed.h
+include/lmms/cpuload_widget.h
+include/lmms/lmms_constants.h
+include/lmms/AudioFileOgg.h
+include/lmms/preset_preview_play_handle.h
+include/lmms/PluginView.h
 include/lmms/update_event.h
+include/lmms/graph.h
+include/lmms/MidiController.h
+include/lmms/AutomationTrack.h
+include/lmms/DummyEffect.h
+include/lmms/LadspaControl.h
+include/lmms/ProjectJournal.h
+include/lmms/FxMixerView.h
+include/lmms/bb_track_container.h
+include/lmms/rename_dialog.h
 include/lmms/visualization_widget.h
+include/lmms/SerializingObject.h
+include/lmms/tab_button.h
+include/lmms/AudioOss.h
+include/lmms/InstrumentTrack.h
+include/lmms/ModelView.h
+include/lmms/atomic_int.h
+include/lmms/AudioFileDevice.h
+include/lmms/project_notes.h
+include/lmms/fade_button.h
+include/lmms/AudioFileWave.h
+include/lmms/ladspa_manager.h
+include/lmms/MidiAlsaSeq.h
+include/lmms/MicroTimer.h
+include/lmms/EffectControlDialog.h
+include/lmms/knob.h
+include/lmms/LadspaBase.h
+include/lmms/EffectRackView.h
+include/lmms/JournallingObject.h
+include/lmms/note.h
+include/lmms/PeakController.h
+include/lmms/ToolPluginView.h
+include/lmms/track_container.h
+include/lmms/config_mgr.h
+include/lmms/surround_area.h
+include/lmms/engine.h
+include/lmms/TempoSyncKnob.h
+include/lmms/AudioDummy.h
+include/lmms/AudioSdl.h
+include/lmms/ladspa_2_lmms.h
 include/lmms/volume.h
-lib/lmms/RemoteZynAddSubFx
-lib/lmms/libZynAddSubFxCore.so
+include/lmms/lcd_spinbox.h
+include/lmms/drumsynth.h
+include/lmms/debug.h
+include/lmms/PianoView.h
+include/lmms/fader.h
+include/lmms/play_handle.h
+include/lmms/pch.h
+include/lmms/Model.h
+include/lmms/AudioPortAudio.h
+include/lmms/led_checkbox.h
+include/lmms/SweepOscillator.h
+include/lmms/ladspa.h
+include/lmms/lmms_basics.h
+include/lmms/effect_lib.h
+include/lmms/MeterModel.h
+include/lmms/ImportFilter.h
+include/lmms/MainWindow.h
+include/lmms/fifo_buffer.h
+include/lmms/EffectView.h
+include/lmms/SideBar.h
+include/lmms/MidiAlsaRaw.h
+include/lmms/piano_roll.h
+include/lmms/SideBarWidget.h
+include/lmms/InstrumentFunctions.h
+include/lmms/tab_widget.h
+include/lmms/DummyInstrument.h
+include/lmms/FxMixer.h
+include/lmms/ProjectRenderer.h
+include/lmms/aeffectx.h
+include/lmms/song_editor.h
+include/lmms/pixmap_button.h
+include/lmms/panning_constants.h
+include/lmms/setup_dialog.h
+include/lmms/midi.h
+include/lmms/ControllerRackView.h
+include/lmms/text_float.h
+include/lmms/sample_buffer.h
+include/lmms/panning.h
+include/lmms/sample_record_handle.h
+include/lmms/ControllerConnectionDialog.h
+include/lmms/nstate_button.h
+include/lmms/LfoController.h
+include/lmms/interpolation.h
+include/lmms/song.h
+include/lmms/EffectSelectDialog.h
+include/lmms/track_container_view.h
+include/lmms/InlineAutomation.h
+include/lmms/ComboBoxModel.h
+include/lmms/group_box.h
+include/lmms/AudioSampleRecorder.h
+include/lmms/export_project_dialog.h
+include/lmms/AudioPulseAudio.h
+include/lmms/mixer.h
+include/lmms/tab_bar.h
+include/lmms/plugin_browser.h
+include/lmms/tool_button.h
+include/lmms/export.h
+include/lmms/RemotePlugin.h
+include/lmms/gui_templates.h
+include/lmms/ControllerDialog.h
+include/lmms/Controller.h
+include/lmms/pattern.h
+include/lmms/bb_editor.h
+include/lmms/midi_time.h
+include/lmms/shared_object.h
+include/lmms/transformable_auto_model.h
+include/lmms/lmmsconfig.h
+include/lmms/lmmsversion.h
+include/lmms/embed.cpp
 lib/lmms/libaudiofileprocessor.so
 lib/lmms/libbassbooster.so
 lib/lmms/libbitinvader.so
@@ -202,1756 +202,1773 @@ lib/lmms/libstereoenhancer.so
 lib/lmms/libstereomatrix.so
 lib/lmms/libtripleoscillator.so
 lib/lmms/libvibedstrings.so
+lib/lmms/libZynAddSubFxCore.so
 lib/lmms/libzynaddsubfx.so
+lib/lmms/RemoteZynAddSubFx
+share/mime/packages/lmms.xml
+share/mime/application/x-lmms-project.xml
+share/menu/lmms
 share/applications/lmms.desktop
-%%DATADIR%%/backgrounds/lmms_tile.png
 %%DATADIR%%/backgrounds/vinnie.png
-%%DATADIR%%/locale/ca.qm
+%%DATADIR%%/backgrounds/lmms_tile.png
 %%DATADIR%%/locale/cs.qm
-%%DATADIR%%/locale/de.qm
-%%DATADIR%%/locale/en.qm
-%%DATADIR%%/locale/es.qm
-%%DATADIR%%/locale/fr.qm
-%%DATADIR%%/locale/ir.qm
-%%DATADIR%%/locale/it.qm
 %%DATADIR%%/locale/ja.qm
+%%DATADIR%%/locale/en.qm
+%%DATADIR%%/locale/it.qm
 %%DATADIR%%/locale/ko.qm
 %%DATADIR%%/locale/nl.qm
-%%DATADIR%%/locale/pt_br.qm
-%%DATADIR%%/locale/ru.qm
+%%DATADIR%%/locale/es.qm
+%%DATADIR%%/locale/de.qm
+%%DATADIR%%/locale/ca.qm
+%%DATADIR%%/locale/fr.qm
 %%DATADIR%%/locale/sv.qm
-%%DATADIR%%/presets/AudioFileProcessor/Bass-Mania.xpf
-%%DATADIR%%/presets/AudioFileProcessor/Erazor.xpf
-%%DATADIR%%/presets/AudioFileProcessor/Fat-Reversed-Kick.xpf
-%%DATADIR%%/presets/AudioFileProcessor/Kick-4-your-Subwoofer.xpf
-%%DATADIR%%/presets/AudioFileProcessor/SString.xpf
-%%DATADIR%%/presets/AudioFileProcessor/orion.xpf
-%%DATADIR%%/presets/BitInvader/alien_strings.xpf
-%%DATADIR%%/presets/BitInvader/beehive.xpf
-%%DATADIR%%/presets/BitInvader/bell.xpf
-%%DATADIR%%/presets/BitInvader/cello.xpf
-%%DATADIR%%/presets/BitInvader/drama.xpf
-%%DATADIR%%/presets/BitInvader/epiano.xpf
-%%DATADIR%%/presets/BitInvader/pluck.xpf
-%%DATADIR%%/presets/BitInvader/soft_pad.xpf
-%%DATADIR%%/presets/BitInvader/spacefx.xpf
-%%DATADIR%%/presets/BitInvader/subbass.xpf
-%%DATADIR%%/presets/BitInvader/sweep_pad.xpf
-%%DATADIR%%/presets/BitInvader/toy_piano.xpf
-%%DATADIR%%/presets/BitInvader/wah_synth.xpf
+%%DATADIR%%/locale/pt_br.qm
+%%DATADIR%%/locale/ir.qm
+%%DATADIR%%/locale/ru.qm
+%%DATADIR%%/presets/TripleOscillator/Arpeggio_1.xpf
+%%DATADIR%%/presets/TripleOscillator/Short2.xpf
+%%DATADIR%%/presets/TripleOscillator/TB303.xpf
+%%DATADIR%%/presets/TripleOscillator/Square.xpf
+%%DATADIR%%/presets/TripleOscillator/Xylophon.xpf
+%%DATADIR%%/presets/TripleOscillator/SBass2.xpf
+%%DATADIR%%/presets/TripleOscillator/TB303-Arpeggio.xpf
+%%DATADIR%%/presets/TripleOscillator/LFO-party.xpf
+%%DATADIR%%/presets/TripleOscillator/RaveBass.xpf
+%%DATADIR%%/presets/TripleOscillator/TheMaster.xpf
+%%DATADIR%%/presets/TripleOscillator/Jupiter.xpf
+%%DATADIR%%/presets/TripleOscillator/RockOrgan.xpf
+%%DATADIR%%/presets/TripleOscillator/Dull-Bell-Arp.xpf
+%%DATADIR%%/presets/TripleOscillator/Short4.xpf
+%%DATADIR%%/presets/TripleOscillator/TheFirstOne.xpf
+%%DATADIR%%/presets/TripleOscillator/Ravemania.xpf
+%%DATADIR%%/presets/TripleOscillator/Freaky-Bass.xpf
+%%DATADIR%%/presets/TripleOscillator/FatCheese.xpf
+%%DATADIR%%/presets/TripleOscillator/Analogous.xpf
+%%DATADIR%%/presets/TripleOscillator/ChurchOrgan.xpf
+%%DATADIR%%/presets/TripleOscillator/Supernova.xpf
+%%DATADIR%%/presets/TripleOscillator/Fat-TB303-Arp.xpf
+%%DATADIR%%/presets/TripleOscillator/LovelyDream.xpf
+%%DATADIR%%/presets/TripleOscillator/MoogArpeggio.xpf
+%%DATADIR%%/presets/TripleOscillator/Distorted-FM-Bass.xpf
+%%DATADIR%%/presets/TripleOscillator/SpaceBass.xpf
+%%DATADIR%%/presets/TripleOscillator/Plucked.xpf
+%%DATADIR%%/presets/TripleOscillator/AnalogDreamz.xpf
+%%DATADIR%%/presets/TripleOscillator/Harp-of-a-Fairy.xpf
+%%DATADIR%%/presets/TripleOscillator/Harpsichord.xpf
+%%DATADIR%%/presets/TripleOscillator/E-Organ.xpf
+%%DATADIR%%/presets/TripleOscillator/ArpKing.xpf
+%%DATADIR%%/presets/TripleOscillator/DeathBass.xpf
+%%DATADIR%%/presets/TripleOscillator/SoftStrings.xpf
+%%DATADIR%%/presets/TripleOscillator/SawReso.xpf
+%%DATADIR%%/presets/TripleOscillator/AnalogTimes2.xpf
+%%DATADIR%%/presets/TripleOscillator/WarmStack.xpf
+%%DATADIR%%/presets/TripleOscillator/Arpeggio_2.xpf
+%%DATADIR%%/presets/TripleOscillator/ResonantPad.xpf
+%%DATADIR%%/presets/TripleOscillator/Bell_2.xpf
+%%DATADIR%%/presets/TripleOscillator/Short3.xpf
+%%DATADIR%%/presets/TripleOscillator/Harmonium.xpf
+%%DATADIR%%/presets/TripleOscillator/SBass.xpf
+%%DATADIR%%/presets/TripleOscillator/SEGuitar.xpf
+%%DATADIR%%/presets/TripleOscillator/TranceLead.xpf
+%%DATADIR%%/presets/TripleOscillator/Bell.xpf
+%%DATADIR%%/presets/TripleOscillator/AmazingBubbles.xpf
+%%DATADIR%%/presets/TripleOscillator/PluckArpeggio.xpf
+%%DATADIR%%/presets/TripleOscillator/Short1.xpf
+%%DATADIR%%/presets/TripleOscillator/OldComputerGames.xpf
+%%DATADIR%%/presets/TripleOscillator/ResoBass.xpf
+%%DATADIR%%/presets/TripleOscillator/HiPad.xpf
+%%DATADIR%%/presets/TripleOscillator/SawLead.xpf
+%%DATADIR%%/presets/TripleOscillator/Rough!.xpf
+%%DATADIR%%/presets/TripleOscillator/Gong.xpf
+%%DATADIR%%/presets/TripleOscillator/Snare.xpf
+%%DATADIR%%/presets/TripleOscillator/Fat.xpf
+%%DATADIR%%/presets/TripleOscillator/Kick2.xpf
+%%DATADIR%%/presets/TripleOscillator/Erazzor.xpf
+%%DATADIR%%/presets/TripleOscillator/Kick.xpf
+%%DATADIR%%/presets/TripleOscillator/Whistle.xpf
+%%DATADIR%%/presets/TripleOscillator/MoveYourBody.xpf
+%%DATADIR%%/presets/TripleOscillator/E-Organ2.xpf
+%%DATADIR%%/presets/TripleOscillator/Fat-FMish-Bells.xpf
+%%DATADIR%%/presets/TripleOscillator/SoftBass.xpf
+%%DATADIR%%/presets/TripleOscillator/Play-some-rock.xpf
+%%DATADIR%%/presets/TripleOscillator/PowerStrings.xpf
+%%DATADIR%%/presets/TripleOscillator/FutureBass.xpf
+%%DATADIR%%/presets/TripleOscillator/AnalogTimes.xpf
+%%DATADIR%%/presets/Vibed/SadPad.xpf
+%%DATADIR%%/presets/Vibed/Harpsichord.xpf
+%%DATADIR%%/presets/Organic/pad_rich.xpf
+%%DATADIR%%/presets/Organic/pad_sweep.xpf
+%%DATADIR%%/presets/Organic/organ_swish.xpf
+%%DATADIR%%/presets/Organic/organ_risingsun.xpf
+%%DATADIR%%/presets/Organic/puresine.xpf
+%%DATADIR%%/presets/Organic/pad_ethereal.xpf
+%%DATADIR%%/presets/Organic/sequencer_64.xpf
+%%DATADIR%%/presets/Organic/organ_blues.xpf
 %%DATADIR%%/presets/LB302/GoodOldTimes.xpf
 %%DATADIR%%/presets/LB302/Oh Synth.xpf
 %%DATADIR%%/presets/LB302/STrash.xpf
-%%DATADIR%%/presets/Organic/organ_blues.xpf
-%%DATADIR%%/presets/Organic/organ_risingsun.xpf
-%%DATADIR%%/presets/Organic/organ_swish.xpf
-%%DATADIR%%/presets/Organic/pad_ethereal.xpf
-%%DATADIR%%/presets/Organic/pad_rich.xpf
-%%DATADIR%%/presets/Organic/pad_sweep.xpf
-%%DATADIR%%/presets/Organic/puresine.xpf
-%%DATADIR%%/presets/Organic/sequencer_64.xpf
-%%DATADIR%%/presets/TripleOscillator/AmazingBubbles.xpf
-%%DATADIR%%/presets/TripleOscillator/AnalogDreamz.xpf
-%%DATADIR%%/presets/TripleOscillator/AnalogTimes.xpf
-%%DATADIR%%/presets/TripleOscillator/AnalogTimes2.xpf
-%%DATADIR%%/presets/TripleOscillator/Analogous.xpf
-%%DATADIR%%/presets/TripleOscillator/ArpKing.xpf
-%%DATADIR%%/presets/TripleOscillator/Arpeggio_1.xpf
-%%DATADIR%%/presets/TripleOscillator/Arpeggio_2.xpf
-%%DATADIR%%/presets/TripleOscillator/Bell.xpf
-%%DATADIR%%/presets/TripleOscillator/Bell_2.xpf
-%%DATADIR%%/presets/TripleOscillator/ChurchOrgan.xpf
-%%DATADIR%%/presets/TripleOscillator/DeathBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Distorted-FM-Bass.xpf
-%%DATADIR%%/presets/TripleOscillator/Dull-Bell-Arp.xpf
-%%DATADIR%%/presets/TripleOscillator/E-Organ.xpf
-%%DATADIR%%/presets/TripleOscillator/E-Organ2.xpf
-%%DATADIR%%/presets/TripleOscillator/Erazzor.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat-FMish-Bells.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat-TB303-Arp.xpf
-%%DATADIR%%/presets/TripleOscillator/Fat.xpf
-%%DATADIR%%/presets/TripleOscillator/FatCheese.xpf
-%%DATADIR%%/presets/TripleOscillator/Freaky-Bass.xpf
-%%DATADIR%%/presets/TripleOscillator/FutureBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Gong.xpf
-%%DATADIR%%/presets/TripleOscillator/Harmonium.xpf
-%%DATADIR%%/presets/TripleOscillator/Harp-of-a-Fairy.xpf
-%%DATADIR%%/presets/TripleOscillator/Harpsichord.xpf
-%%DATADIR%%/presets/TripleOscillator/HiPad.xpf
-%%DATADIR%%/presets/TripleOscillator/Jupiter.xpf
-%%DATADIR%%/presets/TripleOscillator/Kick.xpf
-%%DATADIR%%/presets/TripleOscillator/Kick2.xpf
-%%DATADIR%%/presets/TripleOscillator/LFO-party.xpf
-%%DATADIR%%/presets/TripleOscillator/LovelyDream.xpf
-%%DATADIR%%/presets/TripleOscillator/MoogArpeggio.xpf
-%%DATADIR%%/presets/TripleOscillator/MoveYourBody.xpf
-%%DATADIR%%/presets/TripleOscillator/OldComputerGames.xpf
-%%DATADIR%%/presets/TripleOscillator/Play-some-rock.xpf
-%%DATADIR%%/presets/TripleOscillator/PluckArpeggio.xpf
-%%DATADIR%%/presets/TripleOscillator/Plucked.xpf
-%%DATADIR%%/presets/TripleOscillator/PowerStrings.xpf
-%%DATADIR%%/presets/TripleOscillator/RaveBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Ravemania.xpf
-%%DATADIR%%/presets/TripleOscillator/ResoBass.xpf
-%%DATADIR%%/presets/TripleOscillator/ResonantPad.xpf
-%%DATADIR%%/presets/TripleOscillator/RockOrgan.xpf
-%%DATADIR%%/presets/TripleOscillator/Rough!.xpf
-%%DATADIR%%/presets/TripleOscillator/SBass.xpf
-%%DATADIR%%/presets/TripleOscillator/SBass2.xpf
-%%DATADIR%%/presets/TripleOscillator/SEGuitar.xpf
-%%DATADIR%%/presets/TripleOscillator/SawLead.xpf
-%%DATADIR%%/presets/TripleOscillator/SawReso.xpf
-%%DATADIR%%/presets/TripleOscillator/Short1.xpf
-%%DATADIR%%/presets/TripleOscillator/Short2.xpf
-%%DATADIR%%/presets/TripleOscillator/Short3.xpf
-%%DATADIR%%/presets/TripleOscillator/Short4.xpf
-%%DATADIR%%/presets/TripleOscillator/Snare.xpf
-%%DATADIR%%/presets/TripleOscillator/SoftBass.xpf
-%%DATADIR%%/presets/TripleOscillator/SoftStrings.xpf
-%%DATADIR%%/presets/TripleOscillator/SpaceBass.xpf
-%%DATADIR%%/presets/TripleOscillator/Square.xpf
-%%DATADIR%%/presets/TripleOscillator/Supernova.xpf
-%%DATADIR%%/presets/TripleOscillator/TB303-Arpeggio.xpf
-%%DATADIR%%/presets/TripleOscillator/TB303.xpf
-%%DATADIR%%/presets/TripleOscillator/TheFirstOne.xpf
-%%DATADIR%%/presets/TripleOscillator/TheMaster.xpf
-%%DATADIR%%/presets/TripleOscillator/TranceLead.xpf
-%%DATADIR%%/presets/TripleOscillator/WarmStack.xpf
-%%DATADIR%%/presets/TripleOscillator/Whistle.xpf
-%%DATADIR%%/presets/TripleOscillator/Xylophon.xpf
-%%DATADIR%%/presets/Vibed/Harpsichord.xpf
-%%DATADIR%%/presets/Vibed/SadPad.xpf
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0001-Arpeggio1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0002-Arpeggio2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0003-Arpeggio3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0004-Arpeggio4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0005-Arpeggio5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0006-Aporggio6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0007-Arpeggio7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0008-Arpeggio8.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0009-Arpeggio9.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0010-Arpeggio10.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0011-Arpeggio11.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0033-Sequence1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0034-Sequence2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0036-Echoed Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0037-Echo FX.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0039-Soft Arpeggio1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0040-Soft Arpeggio2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0041-Soft Arpeggio3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0042-Soft Arpeggio4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0043-Soft Arpeggio5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0065-Hyper Organ1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0066-Hyper Arpeggio.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0068-Glass Arpeggio.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0001-Bass 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0002-Bass 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0003-Bass 3 _analog_.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0004-Bass 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0005-Bass 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0006-Analogue Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0033-Wah Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0035-FM Bass 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Bass/0036-FM Bass 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0001-FM Thrumpet.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0003-Synth Brazz 1.xiz
+%%DATADIR%%/presets/BitInvader/toy_piano.xpf
+%%DATADIR%%/presets/BitInvader/epiano.xpf
+%%DATADIR%%/presets/BitInvader/subbass.xpf
+%%DATADIR%%/presets/BitInvader/spacefx.xpf
+%%DATADIR%%/presets/BitInvader/soft_pad.xpf
+%%DATADIR%%/presets/BitInvader/bell.xpf
+%%DATADIR%%/presets/BitInvader/alien_strings.xpf
+%%DATADIR%%/presets/BitInvader/drama.xpf
+%%DATADIR%%/presets/BitInvader/beehive.xpf
+%%DATADIR%%/presets/BitInvader/sweep_pad.xpf
+%%DATADIR%%/presets/BitInvader/wah_synth.xpf
+%%DATADIR%%/presets/BitInvader/cello.xpf
+%%DATADIR%%/presets/BitInvader/pluck.xpf
+%%DATADIR%%/presets/AudioFileProcessor/Kick-4-your-Subwoofer.xpf
+%%DATADIR%%/presets/AudioFileProcessor/SString.xpf
+%%DATADIR%%/presets/AudioFileProcessor/Fat-Reversed-Kick.xpf
+%%DATADIR%%/presets/AudioFileProcessor/Bass-Mania.xpf
+%%DATADIR%%/presets/AudioFileProcessor/Erazor.xpf
+%%DATADIR%%/presets/AudioFileProcessor/orion.xpf
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0004-Synth Brazz 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0005-Synth Brass 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0006-Synth Brass 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0007-Synth Brass 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0008-Brass Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0009-Wah Brass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0010-Solo Synth1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0011-Brazz 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0012-Brazz 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0033-Analog Brass 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0001-FM Thrumpet.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0034-Analog Brass 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0010-Solo Synth1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0035-Analog Brass 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Brass/0036-Analog Brass 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0003-Synth Brazz 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0065-Simple Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0011-Brazz 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0036-Analog Brass 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0006-Synth Brass 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0008-Brass Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0005-Synth Brass 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0012-Brazz 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0007-Synth Brass 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0009-Wah Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Brass/0033-Analog Brass 1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Brass/0066-Fat Brass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0001-AHH Choir 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0002-AHH Choir 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0003-EHH Choir 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0004-Voice OOH.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0005-Choir Pad1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0006-Choir Pad2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0007-Choir Pad3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0008-Choir Pad4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0009-Choir Pad5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0010-Choir Pad6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0033-Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0034-Slow Morph_Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0035-Wah Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0036-Eooooo.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0037-Voiced Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0039-Ohh Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0065-Vocal Morph 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0066-Vocal Morph 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0067-Vocal Morph 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0068-Vocal Morph 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0069-Vocal Morph 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0070-Vocal Morph 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0071-Vocal Morph 7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0001-Xylophone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0035-Metal Sound 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0034-Metal Sound 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0002-Ioioioioioi.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0038-Metal Sound 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0006-Wind.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0065-Short noise.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0033-Metal Sound 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0004-Noise2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0001-Synth Effect.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0003-Noise1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Noises/0037-Metal Sound 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0005-Synth Piano1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0007-Termollo1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0011-Drop1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0009-Termollo3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0004-Fantasy Bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0001-Soft Piano 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0071-Synth Piano 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0006-Synth Piano2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0065-Synth Piano 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0039-BinaryPiano1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0070-Synth Piano 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0012-Drop2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0040-BinaryPiano2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0069-Synth Piano 3 det.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0008-Termollo2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0033-Analog Piano 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0002-Soft Piano 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0067-Synth Piano 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0037-FM Synth1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0066-Synth Piano 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0034-Analog Piano 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0068-Synth Piano 3 fat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0035-Analog Piano 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0003-Bells 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0006-SuperSaw 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0001-Memories.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0008-SuperSaw 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0002-Bells 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0035-Trash Synth 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0033-Trash Synth 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0010-SuperSaw 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0007-SuperSaw 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0004-Bells 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0009-SuperSaw 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Misc/0034-Trash Synth 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0044-Wipe Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0032-Pizzicato Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0071-Ocarina.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0160-Wind and Surf.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0058-Reed Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0062-Hammond Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0158-Extreme.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0095-Soft Voyager Reverse.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0039-Medium Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0051-Decay Bass.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0002-Vibraphone.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0003-Soft Vibes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0004-Simple Chimes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0005-Silver Bell.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0008-Ethereal.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0010-Trem Lead.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0012-Trem Synth Piano 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0015-Simple Square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0084-Breathy Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0064-Sines.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0093-Voyager.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0120-Wet Brass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0126-Pan Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0061-Great Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0037-Multi Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0134-Nylon Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0030-Slow Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0114-Overdrive 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0043-Sweep Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0090-Bright Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0034-Warm Synth.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0016-Full Square.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0018-Steel Wire.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0020-Fantasia.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0021-Soft.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0028-Echo Bubbles.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0029-Full Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0030-Slow Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0032-Pizzicato Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0033-Trem Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0034-Warm Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0035-Hard Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0036-Bright Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0037-Multi Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0038-Slow Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0039-Medium Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0040-Hard Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0041-Voiced Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0042-Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0043-Sweep Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0044-Wipe Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0045-Hard Stereo Sweep Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0046-Master Synth Low.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0047-Master Synth High.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0048-Sharp Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0050-Fretless Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0051-Decay Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0052-Steel Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0053-Synth Bass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0057-Sub Delay.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0058-Reed Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0059-Soft Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0060-Thin Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0061-Great Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0062-Hammond Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0064-Sines.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0067-Soft Flute.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0068-Warm Flute.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0071-Ocarina.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0073-Variable Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0075-Smooth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0077-Whistle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0078-Ghost Whistle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0079-Ice Field.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0080-Hollow Ice Field.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0081-Beyond.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0083-Sweep Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0084-Breathy Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0085-Bottle.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0086-ReedBank.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0087-Sweep Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0088-Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0089-Medium Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0090-Bright Rushes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0091-Bright Rush Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0092-Bright Rush Long Tail.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0093-Voyager.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0094-Soft Voyager.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0095-Soft Voyager Reverse.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0096-Echo Choir.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0097-Sharp.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0098-Sharp and Deep.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0099-Sharp Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0100-Far Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0102-Bassoon.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0103-Clarinet.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0106-Aooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0107-Daooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0108-Yaooww.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0109-Yiee.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0110-Eeoow.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0112-Overdrive.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0113-Overdrive 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0114-Overdrive 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0116-Power Guitar 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0117-Power Guitar 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0120-Wet Brass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0123-Prophesy.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0125-Pan Pipe 32.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0126-Pan Pipe.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0127-Pan Pipe 96.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0131-Lite Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0132-Trem Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0133-Smooth Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0134-Nylon Guitar.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0139-Home Piano.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0140-Moonlight Piano.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0141-Soft Piano1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0142-Soft Piano2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0143-Space Piano.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0146-Space Voice.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0147-Space Voice 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0149-Soft Choir.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0150-Full Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0060-Thin Pipe.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0036-Bright Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0005-Silver Bell.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0085-Bottle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0106-Aooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0139-Home Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0131-Lite Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0100-Far Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0108-Yaooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0004-Simple Chimes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0053-Synth Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0098-Sharp and Deep.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0067-Soft Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0052-Steel Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0010-Trem Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0147-Space Voice 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0059-Soft Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0012-Trem Synth Piano 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0102-Bassoon.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0080-Hollow Ice Field.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0029-Full Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0015-Simple Square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0087-Sweep Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0143-Space Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0112-Overdrive.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0083-Sweep Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0113-Overdrive 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0001-Xylophone.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0127-Pan Pipe 96.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0151-Soft Ahh.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0050-Fretless Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0103-Clarinet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0091-Bright Rush Pipe.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0152-Breathy Ahh.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0155-Super Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0156-Hyper Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0117-Power Guitar 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0008-Ethereal.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0107-Daooww.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0132-Trem Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0028-Echo Bubbles.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0146-Space Voice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0110-Eeoow.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0038-Slow Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0042-Matrix.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0033-Trem Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0097-Sharp.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0073-Variable Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0092-Bright Rush Long Tail.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0079-Ice Field.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0142-Soft Piano2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0157-Hyper Matrix.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0158-Extreme.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0160-Wind and Surf.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Drums/0001-Drums Kit1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0001-Layered1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0002-Layered2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0005-Organ and Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0007-Organ Choir Pad1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0008-Organ Choir Pad2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0033-Rhodes Strings1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0034-Rhodes Strings2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0035-Rhodes Strings3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0036-Rhodes Strings4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Dual/0065-Dream of the Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0001-Emptyness1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0002-Emptyness2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0003-Space Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0004-Weird Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0006-Space SynthBrass.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0008-Space Voice1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0009-Space Voice2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0010-Space Voice3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0011-Space Choir1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0012-Space Choir2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0014-Glass Voices.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0015-Strange Voice.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0033-ImpossibleDream1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0034-ImpossibleDream2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0035-ImpossibleDream3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0036-ImpossibleDream4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0037-ImpossibleDream5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0040-Delayed Echo.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0041-Fade Down Echo.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0042-Rhodes Space1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0043-Rhodes Space2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0065-Long SpaceChoir1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0066-Long SpaceChoir2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0001-Dist Guitar 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0002-Dist Guitar 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0003-Dist Guitar 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0004-Dist Guitar 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0005-Dist Guitar 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0033-Trash Guitar 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0034-Trash Guitar 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0035-Short.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Guitar/0065-Clean Guitar1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0001-Memories.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0002-Bells 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0003-Bells 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0004-Bells 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0006-SuperSaw 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0007-SuperSaw 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0008-SuperSaw 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0009-SuperSaw 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0010-SuperSaw 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0033-Trash Synth 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0034-Trash Synth 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Misc/0035-Trash Synth 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0001-Synth Effect.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0002-Ioioioioioi.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0003-Noise1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0004-Noise2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0006-Wind.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0033-Metal Sound 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0034-Metal Sound 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0035-Metal Sound 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0037-Metal Sound 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0038-Metal Sound 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Noises/0065-Short noise.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0001-Organ 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0002-Organ 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0003-Organ 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0004-Organ 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0005-Organ 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0006-Organ 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0007-Organ 7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0008-Organ 8.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0009-Organ 9.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0010-Organ 10.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0011-Organ 11.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0033-Cathedral Organ1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0034-Cathedral Organ2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0035-Cathedral Organ3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0037-Church Organ 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0038-Church Organ 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0039-Church Organ 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0041-Church Organ Soft.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0065-Nice Organ 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0066-Nice Organ 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0078-Ghost Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0116-Power Guitar 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0089-Medium Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0047-Master Synth High.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0021-Soft.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0156-Hyper Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0125-Pan Pipe 32.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0068-Warm Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0040-Hard Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0133-Smooth Guitar.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0099-Sharp Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0081-Beyond.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0035-Hard Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0123-Prophesy.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0094-Soft Voyager.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0041-Voiced Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0048-Sharp Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0020-Fantasia.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0088-Rushes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0075-Smooth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0086-ReedBank.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0057-Sub Delay.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0109-Yiee.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0046-Master Synth Low.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0045-Hard Stereo Sweep Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0149-Soft Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0003-Soft Vibes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0077-Whistle.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0140-Moonlight Piano.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Collections/WillGodfrey/0096-Echo Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0006-Analogue Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0033-Wah Bass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0005-Bass 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0001-Bass 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0035-FM Bass 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0003-Bass 3 _analog_.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0002-Bass 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0036-FM Bass 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Bass/0004-Bass 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0067-Sub_Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0068-Square Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0069-Soft Organ 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0070-Soft Organ 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0071-Synth Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0072-Fantasy Organ.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0097-Accordion Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0098-Accordion Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0099-Synth Accordion1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Organ/0100-Synth Accordion2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Organ/0101-Accordion 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0001-Sine Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0002-sin2x  pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0003-Analog Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0004-Analog Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0005-Square Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0006-Square Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0008-Resonance Pad1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0009-Resonance Pad2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0033-Synth Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0034-Synth Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0035-Synth Pad 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0036-Synth Pad 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0065-Soft Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Pads/0066-Flanged Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0001-Plucked 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0002-Plucked 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0003-Plucked 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0004-Plucked 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0005-Plucked 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0006-Plucked 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0033-Plucked String1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0034-Plucked String2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Plucked/0036-Plucked Wah.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0001-Flute 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0002-Flute 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0003-Flute 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0005-FM Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0006-Clarinet.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0007-Breathy1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0033-Reed 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0034-Reed 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0035-Reed 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0036-Reed 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0037-Reed 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0038-Reed 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0039-Reed 7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0065-Fat Reed1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0066-Fat Reed2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0067-Fat Reed3 square.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0001-DX Rhodes 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0002-DX Rhodes 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0003-DX Rhodes 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0004-DX Rhodes 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0005-DX Rhodes 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0007-Dig Rhodes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0008-Synth Rhodes1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0009-Synth Rhodes2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0010-Synth Rhodes3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0033-Cathedral Organ1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0004-Organ 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0034-Cathedral Organ2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0097-Accordion Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0008-Organ 8.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0002-Organ 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0007-Organ 7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0066-Nice Organ 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0068-Square Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0009-Organ 9.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0070-Soft Organ 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0069-Soft Organ 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0065-Nice Organ 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0010-Organ 10.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0099-Synth Accordion1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0035-Cathedral Organ3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0071-Synth Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0038-Church Organ 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0011-Organ 11.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0100-Synth Accordion2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0098-Accordion Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0041-Church Organ Soft.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0003-Organ 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0005-Organ 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0039-Church Organ 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0001-Organ 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0037-Church Organ 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0006-Organ 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Organ/0072-Fantasy Organ.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0070-Vocal Morph 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0033-Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0002-AHH Choir 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0065-Vocal Morph 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0008-Choir Pad4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0037-Voiced Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0066-Vocal Morph 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0009-Choir Pad5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0005-Choir Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0001-AHH Choir 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0036-Eooooo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0039-Ohh Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0035-Wah Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0034-Slow Morph_Choir.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0071-Vocal Morph 7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0010-Choir Pad6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0069-Vocal Morph 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0007-Choir Pad3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0004-Voice OOH.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0068-Vocal Morph 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0006-Choir Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0003-EHH Choir 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ChoirAndVoice/0067-Vocal Morph 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0065-Dream of the Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0036-Rhodes Strings4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0002-Layered2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0035-Rhodes Strings3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0005-Organ and Saw.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0008-Organ Choir Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0001-Layered1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0007-Organ Choir Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0034-Rhodes Strings2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Dual/0033-Rhodes Strings1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0012-Ice Rhodes1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0013-Ice Rhodes2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0014-Ice Rhodes3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0033-FM Rhodes 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0042-Hard Rhodes1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0041-Soft Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0007-Dig Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0005-DX Rhodes 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0065-Steel Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0043-Hard Rhodes2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0010-Synth Rhodes3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0038-FM Rhodes 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0008-Synth Rhodes1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0044-Echo Rhodes.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0002-DX Rhodes 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0009-Synth Rhodes2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0037-FM Rhodes 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0004-DX Rhodes 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0045-A long time ago.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0034-FM Rhodes 2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0035-FM Rhodes 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0013-Ice Rhodes2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0001-DX Rhodes 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0003-DX Rhodes 3.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Rhodes/0036-FM Rhodes 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0037-FM Rhodes 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0038-FM Rhodes 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0041-Soft Rhodes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0042-Hard Rhodes1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0043-Hard Rhodes2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0044-Echo Rhodes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0045-A long time ago.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0065-Steel Rhodes.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Splited/0001-Strings and Reed1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Splited/0002-Strings and Reed2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Splited/0003-Strings and Flute.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Splited/0033-Choir and Reed.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0001-Saw Strings 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0002-Saw Strings 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0003-Saw Strings 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0004-Saw Strings 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0005-Saw Strings 5.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0006-Saw Strings 6.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0007-Saw Strings 7.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0008-Saw Strings 8.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0011-Strings Pad1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0012-Strings Pad2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0013-Strings Pad3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0016-Sweep Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0017-Sweep Pad 1 Fat.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0018-Sweep Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0019-Sweep Pad 3Wah.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0020-Sweep Pad 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0033-Strings1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0034-Dark Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0035-Octave Pad.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0036-Fast Attack.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0014-Ice Rhodes3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Rhodes/0033-FM Rhodes 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0042-Rhodes Space1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0033-ImpossibleDream1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0035-ImpossibleDream3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0043-Rhodes Space2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0003-Space Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0036-ImpossibleDream4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0008-Space Voice1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0034-ImpossibleDream2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0037-ImpossibleDream5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0066-Long SpaceChoir2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0001-Emptyness1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0014-Glass Voices.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0041-Fade Down Echo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0006-Space SynthBrass.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0010-Space Voice3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0015-Strange Voice.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0040-Delayed Echo.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0009-Space Voice2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0065-Long SpaceChoir1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0011-Space Choir1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0012-Space Choir2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0004-Weird Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Fantasy/0002-Emptyness2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Drums/0001-Drums Kit1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0039-Soft Arpeggio1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0004-Arpeggio4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0034-Sequence2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0037-Echo FX.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0002-Arpeggio2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0043-Soft Arpeggio5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0033-Sequence1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0005-Arpeggio5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0068-Glass Arpeggio.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0040-Soft Arpeggio2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0066-Hyper Arpeggio.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0065-Hyper Organ1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0006-Aporggio6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0008-Arpeggio8.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0009-Arpeggio9.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0011-Arpeggio11.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0010-Arpeggio10.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0042-Soft Arpeggio4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0036-Echoed Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0007-Arpeggio7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0001-Arpeggio1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0041-Soft Arpeggio3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Arpeggios/0003-Arpeggio3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0005-Pulse Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0033-Phased Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0037-Resonance Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0067-Detuned Harmonic.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0007-Analog Filter 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0002-Soft Synth 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0039-Multi-phase synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0004-Pulse Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0008-Analog Filter 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0035-Phased Pad 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0001-Soft Synth 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0065-Computer Lead.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0097-FM Synth.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Synth/0034-Phased Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0002-Flute 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0037-Reed 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0065-Fat Reed1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0003-Flute 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0034-Reed 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0067-Fat Reed3 square.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0001-Flute 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0033-Reed 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0036-Reed 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0007-Breathy1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0038-Reed 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0066-Fat Reed2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0005-FM Reed.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0035-Reed 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0039-Reed 7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/ReedAndWind/0006-Clarinet.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0002-sin2x  pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0009-Resonance Pad2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0008-Resonance Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0006-Square Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0003-Analog Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0004-Analog Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0065-Soft Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0034-Synth Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0001-Sine Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0066-Flanged Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0005-Square Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0035-Synth Pad 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0033-Synth Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Pads/0036-Synth Pad 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0003-Dist Guitar 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0034-Trash Guitar 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0002-Dist Guitar 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0065-Clean Guitar1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0005-Dist Guitar 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0033-Trash Guitar 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0001-Dist Guitar 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0035-Short.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Guitar/0004-Dist Guitar 4.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0038-Fat Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0041-Saw 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0042-Saw 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0043-Saw 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0044-Saw Pad.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0045-Soft Saw Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0033-Strings1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0001-Saw Strings 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0017-Sweep Pad 1 Fat.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0046-Echoed Saw.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0047-Vibratto Saw1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0019-Sweep Pad 3Wah.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0007-Saw Strings 7.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0067-Dual StringsOct.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0066-Dual Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0051-Synth Violin 2 Fat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0004-Saw Strings 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0016-Sweep Pad 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0042-Saw 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0018-Sweep Pad 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0012-Strings Pad2.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0048-Wah1.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0050-Synth Violin 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0051-Synth Violin 2 Fat.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0013-Strings Pad3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0047-Vibratto Saw1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0041-Saw 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0020-Sweep Pad 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0003-Saw Strings 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0043-Saw 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0044-Saw Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0035-Octave Pad.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0005-Saw Strings 5.xiz
 %%DATADIR%%/presets/ZynAddSubFX/Strings/0065-Simple Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0066-Dual Strings.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Strings/0067-Dual StringsOct.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0001-Soft Synth 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0002-Soft Synth 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0004-Pulse Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0005-Pulse Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0007-Analog Filter 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0008-Analog Filter 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0033-Phased Pad 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0034-Phased Pad 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0035-Phased Pad 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0037-Resonance Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0039-Multi-phase synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0065-Computer Lead.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0067-Detuned Harmonic.xiz
-%%DATADIR%%/presets/ZynAddSubFX/Synth/0097-FM Synth.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0001-Soft Piano 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0002-Soft Piano 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0004-Fantasy Bell.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0005-Synth Piano1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0006-Synth Piano2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0007-Termollo1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0008-Termollo2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0009-Termollo3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0011-Drop1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0012-Drop2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0033-Analog Piano 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0034-Analog Piano 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0035-Analog Piano 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0037-FM Synth1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0039-BinaryPiano1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0040-BinaryPiano2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0065-Synth Piano 1.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0066-Synth Piano 2.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0067-Synth Piano 3.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0068-Synth Piano 3 fat.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0069-Synth Piano 3 det.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0070-Synth Piano 4.xiz
-%%DATADIR%%/presets/ZynAddSubFX/SynthPiano/0071-Synth Piano 5.xiz
-%%DATADIR%%/projects/cool_songs/BlueWolf-DreamTravel.mmp
-%%DATADIR%%/projects/cool_songs/Chris-HorizonRemix.mmp
-%%DATADIR%%/projects/cool_songs/Chris-RaveRiff.mmpz
-%%DATADIR%%/projects/cool_songs/Djeezus-BeatRolls.mmp
-%%DATADIR%%/projects/cool_songs/Djeezus-Oscilisous.mmp
-%%DATADIR%%/projects/cool_songs/Lokori-Systematic_Chaos.mmp
-%%DATADIR%%/projects/cool_songs/Malex-Horizon4.mmp
-%%DATADIR%%/projects/cool_songs/Marfil-MarfilDrum01.mmp
-%%DATADIR%%/projects/cool_songs/MysthR-Living.mmpz
-%%DATADIR%%/projects/cool_songs/OrtalDj-FirstProyect.mmpz
-%%DATADIR%%/projects/cool_songs/SharkyX-Experiments.mmp
-%%DATADIR%%/projects/cool_songs/Siegel-DreamWave.mmp
-%%DATADIR%%/projects/cool_songs/Siegel-SpeedTrack.mmp
-%%DATADIR%%/projects/cool_songs/Silva-ElvesCall.mmp
-%%DATADIR%%/projects/cool_songs/Skiessi-Onion.mmpz
-%%DATADIR%%/projects/cool_songs/Skiessi-RandomProjectNumber14253.mmpz
-%%DATADIR%%/projects/cool_songs/Skiessi-TurningPoint.mmpz
-%%DATADIR%%/projects/cool_songs/StrictProduction-DearJonDoe.mmp
-%%DATADIR%%/projects/cool_songs/StrictProduction-Lamentelnes.mmp
-%%DATADIR%%/projects/cool_songs/StrictProduction-Underline.mmp
-%%DATADIR%%/projects/cool_songs/TobyDox-Confused.mmp
-%%DATADIR%%/projects/cool_songs/TobyDox-Psycho.mmp
-%%DATADIR%%/projects/cool_songs/TobyDox-TheFourthDimension.mmp
-%%DATADIR%%/projects/cool_songs/j1m-DingDong.mmp
-%%DATADIR%%/projects/demos/TobyDox-Crystallo.mmp
-%%DATADIR%%/projects/demos/Zvonsully-RaceTheZBeat.mmp
-%%DATADIR%%/projects/demos/beat_collection.mmp
-%%DATADIR%%/projects/demos/demo1.mmp
-%%DATADIR%%/projects/demos/demo2.mmp
-%%DATADIR%%/projects/demos/demo3.mmp
-%%DATADIR%%/projects/demos/demo4.mmp
-%%DATADIR%%/projects/demos/demo5.mmp
-%%DATADIR%%/projects/demos/demo6.mmp
-%%DATADIR%%/projects/demos/lb302quick.mmpz
-%%DATADIR%%/projects/demos/loop_collection.mmp
-%%DATADIR%%/projects/demos/newFangled.mmpz
-%%DATADIR%%/projects/demos/some_basslines.mmp
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0011-Strings Pad1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0034-Dark Strings.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0002-Saw Strings 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0008-Saw Strings 8.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0036-Fast Attack.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Strings/0006-Saw Strings 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0006-Plucked 6.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0001-Plucked 1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0002-Plucked 2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0033-Plucked String1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0036-Plucked Wah.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0005-Plucked 5.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0034-Plucked String2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0004-Plucked 4.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Plucked/0003-Plucked 3.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splited/0003-Strings and Flute.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splited/0002-Strings and Reed2.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splited/0001-Strings and Reed1.xiz
+%%DATADIR%%/presets/ZynAddSubFX/Splited/0033-Choir and Reed.xiz
+%%DATADIR%%/projects/OldStuff/TobyDox-Psycho.mmp
+%%DATADIR%%/projects/OldStuff/Siegel-DreamWave.mmp
+%%DATADIR%%/projects/OldStuff/Malex-Horizon4.mmp
+%%DATADIR%%/projects/OldStuff/Silva-ElvesCall.mmp
+%%DATADIR%%/projects/OldStuff/Chris-HorizonRemix.mmp
+%%DATADIR%%/projects/OldStuff/Siegel-SpeedTrack.mmp
+%%DATADIR%%/projects/OldStuff/BlueWolf-DreamTravel.mmp
+%%DATADIR%%/projects/OldStuff/TobyDox-Confused.mmp
+%%DATADIR%%/projects/OldStuff/MysthR-Living.mmpz
+%%DATADIR%%/projects/OldStuff/Skiessi-RandomProjectNumber14253.mmpz
+%%DATADIR%%/projects/Shorties/Crunk(Demo).mmp
+%%DATADIR%%/projects/Shorties/Greshz-CoolSnip.mmpz
+%%DATADIR%%/projects/Shorties/Root84-TrancyLoop.mmpz
+%%DATADIR%%/projects/Shorties/Skiessi-222.mmpz
+%%DATADIR%%/projects/Shorties/sv-Trance-Startup.mmpz
+%%DATADIR%%/projects/Shorties/sv-DnB-Startup.mmpz
+%%DATADIR%%/projects/Shorties/Surrender-Main.mmpz
+%%DATADIR%%/projects/CoolSongs/StrictProduction-DearJonDoe.mmp
+%%DATADIR%%/projects/CoolSongs/CapDan-ZeroSumGame-OriginalByZakarra.mmpz
+%%DATADIR%%/projects/CoolSongs/Saber-FinalStep.mmpz
+%%DATADIR%%/projects/CoolSongs/Farbro-Tectonic.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra-OneDay.mmpz
+%%DATADIR%%/projects/CoolSongs/Momo64-esp.mmpz
+%%DATADIR%%/projects/CoolSongs/Socceroos-Progress.mmpz
+%%DATADIR%%/projects/CoolSongs/Skiessi-TurningPoint.mmpz
+%%DATADIR%%/projects/CoolSongs/Oglsdl-Dr8v2.mmpz
+%%DATADIR%%/projects/CoolSongs/Namitryus-K-Project.mmpz
+%%DATADIR%%/projects/CoolSongs/Impulslogik-Zen.mmpz
+%%DATADIR%%/projects/CoolSongs/Thaledric-Armageddon.mmpz
+%%DATADIR%%/projects/CoolSongs/Alf42red-Mauiwowi.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra-MainstreamMemory.mmpz
+%%DATADIR%%/projects/CoolSongs/TameAnderson-MakeMe.mmpz
+%%DATADIR%%/projects/CoolSongs/Skiessi-Onion.mmpz
+%%DATADIR%%/projects/CoolSongs/Zakarra-59_Degrees.mmpz
+%%DATADIR%%/projects/CoolSongs/Root84-Initialize.mmpz
+%%DATADIR%%/projects/CoolSongs/Settel-InnerRecreation.mmpz
+%%DATADIR%%/projects/CoolSongs/CapDan-TwilightArea-OriginalByAlf42red.mmpz
 %%DATADIR%%/projects/tutorials/editing_note_volumes.mmp
-%%DATADIR%%/samples/basses/bass01.ogg
-%%DATADIR%%/samples/basses/bass_acid01.ogg
-%%DATADIR%%/samples/basses/bass_acid02.ogg
-%%DATADIR%%/samples/basses/bass_hard01.ogg
-%%DATADIR%%/samples/basses/bass_hard02.ogg
-%%DATADIR%%/samples/basses/bass_punch01.ogg
-%%DATADIR%%/samples/basses/horror_bass01.ogg
-%%DATADIR%%/samples/basses/matrix1000_pluck01.ogg
-%%DATADIR%%/samples/basses/rave_bass01.ogg
-%%DATADIR%%/samples/basses/rave_bass02.ogg
-%%DATADIR%%/samples/basses/rave_bass03.ogg
-%%DATADIR%%/samples/basses/rave_bass04.ogg
-%%DATADIR%%/samples/basses/synth_acid01.ogg
-%%DATADIR%%/samples/basses/synth_acid02.ogg
-%%DATADIR%%/samples/basses/techno_synth01.ogg
-%%DATADIR%%/samples/bassloopes/briff01.ogg
-%%DATADIR%%/samples/bassloopes/rave_bass01.ogg
-%%DATADIR%%/samples/bassloopes/rave_bass02.ogg
-%%DATADIR%%/samples/bassloopes/tb303_01.ogg
-%%DATADIR%%/samples/bassloopes/techno_bass01.ogg
-%%DATADIR%%/samples/bassloopes/techno_bass02.ogg
-%%DATADIR%%/samples/bassloopes/techno_synth01.ogg
-%%DATADIR%%/samples/bassloopes/techno_synth02.ogg
-%%DATADIR%%/samples/bassloopes/techno_synth03.ogg
-%%DATADIR%%/samples/bassloopes/techno_synth04.ogg
-%%DATADIR%%/samples/beats/909beat01.ogg
-%%DATADIR%%/samples/beats/break01.ogg
-%%DATADIR%%/samples/beats/break02.ogg
-%%DATADIR%%/samples/beats/break03.ogg
-%%DATADIR%%/samples/beats/electro_beat01.ogg
-%%DATADIR%%/samples/beats/electro_beat02.ogg
-%%DATADIR%%/samples/beats/house_loop01.ogg
-%%DATADIR%%/samples/beats/jungle01.ogg
-%%DATADIR%%/samples/beats/rave_hihat01.ogg
-%%DATADIR%%/samples/beats/rave_hihat02.ogg
-%%DATADIR%%/samples/beats/rave_kick01.ogg
-%%DATADIR%%/samples/beats/rave_kick02.ogg
-%%DATADIR%%/samples/beats/rave_snare01.ogg
-%%DATADIR%%/samples/drums/bassdrum01.ogg
-%%DATADIR%%/samples/drums/bassdrum02.ogg
-%%DATADIR%%/samples/drums/bassdrum03.ogg
-%%DATADIR%%/samples/drums/bassdrum04.ogg
-%%DATADIR%%/samples/drums/bassdrum_acoustic01.ogg
-%%DATADIR%%/samples/drums/bassdrum_acoustic02.ogg
-%%DATADIR%%/samples/drums/clap01.ogg
-%%DATADIR%%/samples/drums/clap02.ogg
-%%DATADIR%%/samples/drums/clap03.ogg
-%%DATADIR%%/samples/drums/clap04.ogg
-%%DATADIR%%/samples/drums/clav01.ogg
-%%DATADIR%%/samples/drums/clav02.ogg
-%%DATADIR%%/samples/drums/crash01.ogg
-%%DATADIR%%/samples/drums/crash02.ogg
-%%DATADIR%%/samples/drums/hihat_closed01.ogg
-%%DATADIR%%/samples/drums/hihat_closed02.ogg
-%%DATADIR%%/samples/drums/hihat_closed03.ogg
-%%DATADIR%%/samples/drums/hihat_closed04.ogg
-%%DATADIR%%/samples/drums/hihat_closed05.ogg
-%%DATADIR%%/samples/drums/hihat_foot_pedal01.ogg
-%%DATADIR%%/samples/drums/hihat_opened01.ogg
-%%DATADIR%%/samples/drums/hihat_opened02.ogg
-%%DATADIR%%/samples/drums/hihat_opened03.ogg
-%%DATADIR%%/samples/drums/kick01.ogg
-%%DATADIR%%/samples/drums/kick02.ogg
-%%DATADIR%%/samples/drums/kick03.ogg
-%%DATADIR%%/samples/drums/kick04.ogg
-%%DATADIR%%/samples/drums/kick_distorted01.ogg
-%%DATADIR%%/samples/drums/kick_hard01.ogg
-%%DATADIR%%/samples/drums/kick_hardcore01.ogg
-%%DATADIR%%/samples/drums/kick_hiphop01.ogg
-%%DATADIR%%/samples/drums/kick_long01.ogg
-%%DATADIR%%/samples/drums/kick_soft01.ogg
-%%DATADIR%%/samples/drums/kick_soft02.ogg
-%%DATADIR%%/samples/drums/nasty_bass01.ogg
-%%DATADIR%%/samples/drums/nasty_rim01.ogg
-%%DATADIR%%/samples/drums/nasty_snare01.ogg
-%%DATADIR%%/samples/drums/ride01.ogg
-%%DATADIR%%/samples/drums/ride02.ogg
-%%DATADIR%%/samples/drums/rim01.ogg
-%%DATADIR%%/samples/drums/shaker01.ogg
-%%DATADIR%%/samples/drums/shaker02.ogg
-%%DATADIR%%/samples/drums/shaker03.ogg
-%%DATADIR%%/samples/drums/sidestick01.ogg
-%%DATADIR%%/samples/drums/snare01.ogg
-%%DATADIR%%/samples/drums/snare02.ogg
-%%DATADIR%%/samples/drums/snare03.ogg
-%%DATADIR%%/samples/drums/snare04.ogg
-%%DATADIR%%/samples/drums/snare05.ogg
-%%DATADIR%%/samples/drums/snare06.ogg
-%%DATADIR%%/samples/drums/snare07.ogg
-%%DATADIR%%/samples/drums/snare_acoustic01.ogg
-%%DATADIR%%/samples/drums/snare_electro01.ogg
-%%DATADIR%%/samples/drums/snare_harsh01.ogg
-%%DATADIR%%/samples/drums/snare_hiphop01.ogg
-%%DATADIR%%/samples/drums/snare_hiphop02.ogg
-%%DATADIR%%/samples/drums/snare_muffled01.ogg
-%%DATADIR%%/samples/drums/snare_muffled02.ogg
-%%DATADIR%%/samples/drums/snare_rim01.ogg
-%%DATADIR%%/samples/drums/snare_short01.ogg
-%%DATADIR%%/samples/drums/tom01.ogg
-%%DATADIR%%/samples/drums/tom02.ogg
-%%DATADIR%%/samples/drums/tom03.ogg
-%%DATADIR%%/samples/drums/tom04.ogg
-%%DATADIR%%/samples/drums/tom05.ogg
-%%DATADIR%%/samples/drums/tom_hi01.ogg
-%%DATADIR%%/samples/drums/tom_low01.ogg
-%%DATADIR%%/samples/drums/tom_mid01.ogg
-%%DATADIR%%/samples/drums/wood01.ogg
-%%DATADIR%%/samples/drums/zap01.ogg
-%%DATADIR%%/samples/drums/zap02.ogg
-%%DATADIR%%/samples/drums/zap03.ogg
-%%DATADIR%%/samples/drumsynth/acoustic/Brush1.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Brush2.ds
-%%DATADIR%%/samples/drumsynth/acoustic/JazzKick.ds
-%%DATADIR%%/samples/drumsynth/acoustic/JazzSnr.ds
-%%DATADIR%%/samples/drumsynth/acoustic/JazzSnr_H.ds
-%%DATADIR%%/samples/drumsynth/acoustic/K_Muffle.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Kick.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Plain_Kick.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Ride.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Ride2.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Ride3.ds
-%%DATADIR%%/samples/drumsynth/acoustic/Snare.ds
-%%DATADIR%%/samples/drumsynth/cr78/Bongo_h.ds
-%%DATADIR%%/samples/drumsynth/cr78/Bongo_l.ds
-%%DATADIR%%/samples/drumsynth/cr78/Clave.ds
-%%DATADIR%%/samples/drumsynth/cr78/Conga.ds
-%%DATADIR%%/samples/drumsynth/cr78/Cymbal.ds
-%%DATADIR%%/samples/drumsynth/cr78/Hihat.ds
-%%DATADIR%%/samples/drumsynth/cr78/Kick.ds
-%%DATADIR%%/samples/drumsynth/cr78/Maracas.ds
-%%DATADIR%%/samples/drumsynth/cr78/Rim.ds
-%%DATADIR%%/samples/drumsynth/cr78/Snare.ds
-%%DATADIR%%/samples/drumsynth/cr78/Tamb.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Clap.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Clave.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Conga_l.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Conga_m.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Cowbell.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Cymbal.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Hat_c.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Hat_o.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Kick.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Rim.ds
-%%DATADIR%%/samples/drumsynth/cr8000/Snare.ds
-%%DATADIR%%/samples/drumsynth/effects/Bubble.ds
-%%DATADIR%%/samples/drumsynth/effects/Cicada.ds
-%%DATADIR%%/samples/drumsynth/effects/Glass.ds
-%%DATADIR%%/samples/drumsynth/effects/Glass_rn.ds
-%%DATADIR%%/samples/drumsynth/effects/Gunshot.ds
-%%DATADIR%%/samples/drumsynth/effects/Hammer.ds
-%%DATADIR%%/samples/drumsynth/effects/Laser.ds
-%%DATADIR%%/samples/drumsynth/effects/Reverse.ds
-%%DATADIR%%/samples/drumsynth/effects/Ringing.ds
-%%DATADIR%%/samples/drumsynth/effects/Scissors.ds
-%%DATADIR%%/samples/drumsynth/effects/Sonar.ds
-%%DATADIR%%/samples/drumsynth/effects/dialing.ds
-%%DATADIR%%/samples/drumsynth/effects/hammer2.ds
-%%DATADIR%%/samples/drumsynth/effects/impulses.ds
-%%DATADIR%%/samples/drumsynth/effects/loop.ds
-%%DATADIR%%/samples/drumsynth/effects/thunder.ds
-%%DATADIR%%/samples/drumsynth/electro/Boom.ds
-%%DATADIR%%/samples/drumsynth/electro/H_closed.ds
-%%DATADIR%%/samples/drumsynth/electro/H_open.ds
-%%DATADIR%%/samples/drumsynth/electro/Hi-q.ds
-%%DATADIR%%/samples/drumsynth/electro/Hi-q_2.ds
-%%DATADIR%%/samples/drumsynth/electro/K_8bit.ds
-%%DATADIR%%/samples/drumsynth/electro/K_Linn.ds
-%%DATADIR%%/samples/drumsynth/electro/K_reverb.ds
-%%DATADIR%%/samples/drumsynth/electro/S_8bit.ds
-%%DATADIR%%/samples/drumsynth/electro/S_Linn.ds
-%%DATADIR%%/samples/drumsynth/electro/S_reverb.ds
-%%DATADIR%%/samples/drumsynth/electro/Syntom_1.ds
-%%DATADIR%%/samples/drumsynth/electro/Syntom_2.ds
-%%DATADIR%%/samples/drumsynth/electro/s_eq.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Bongo.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Cym.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Hat.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_K_H.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_K_K.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Kick.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_S_B.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Snare.ds
-%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Tom.ds
-%%DATADIR%%/samples/drumsynth/ferraro/curb_meat_bass.ds
-%%DATADIR%%/samples/drumsynth/ferraro/eel_bass.ds
-%%DATADIR%%/samples/drumsynth/ferraro/feed_this.ds
-%%DATADIR%%/samples/drumsynth/ferraro/gerbil_snare.ds
-%%DATADIR%%/samples/drumsynth/ferraro/grumpy_buzzard.ds
-%%DATADIR%%/samples/drumsynth/ferraro/jaguar_hats.ds
-%%DATADIR%%/samples/drumsynth/ferraro/radio_hats.ds
-%%DATADIR%%/samples/drumsynth/ferraro/worm_bass.ds
-%%DATADIR%%/samples/drumsynth/instrument/E_Piano.ds
-%%DATADIR%%/samples/drumsynth/instrument/FM_Bass.ds
-%%DATADIR%%/samples/drumsynth/instrument/Moog_bass.ds
-%%DATADIR%%/samples/drumsynth/instrument/Oboe.ds
-%%DATADIR%%/samples/drumsynth/instrument/Temple_Bell.ds
-%%DATADIR%%/samples/drumsynth/instrument/flute.ds
-%%DATADIR%%/samples/drumsynth/instrument/mute_bass.ds
-%%DATADIR%%/samples/drumsynth/instrument/pizzi.ds
-%%DATADIR%%/samples/drumsynth/instrument/soft_piano.ds
-%%DATADIR%%/samples/drumsynth/instrument/square_lead.ds
-%%DATADIR%%/samples/drumsynth/instrument/sweep.ds
-%%DATADIR%%/samples/drumsynth/instrument/techno_stab.ds
-%%DATADIR%%/samples/drumsynth/instrument/tinkle.ds
-%%DATADIR%%/samples/drumsynth/instrument/trumpet.ds
-%%DATADIR%%/samples/drumsynth/instrument/upright_bass.ds
-%%DATADIR%%/samples/drumsynth/instrument/violin.ds
-%%DATADIR%%/samples/drumsynth/instrument/whistler.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/hihatopclo.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/kick.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/ramacymlong.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/ramacymshort.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/ride6.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/snare5.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/vibra.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/wood.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/wood2.ds
-%%DATADIR%%/samples/drumsynth/jorgensohn/zurrr.ds
-%%DATADIR%%/samples/drumsynth/latin/Bongo_h.ds
-%%DATADIR%%/samples/drumsynth/latin/Bongo_m2.ds
-%%DATADIR%%/samples/drumsynth/latin/Bongo_mu.ds
-%%DATADIR%%/samples/drumsynth/latin/Clave_we.ds
-%%DATADIR%%/samples/drumsynth/latin/Gamelan.ds
-%%DATADIR%%/samples/drumsynth/latin/Maracas.ds
-%%DATADIR%%/samples/drumsynth/latin/Shaker_1.ds
-%%DATADIR%%/samples/drumsynth/latin/Shaker_2.ds
-%%DATADIR%%/samples/drumsynth/latin/Tamb_hit.ds
-%%DATADIR%%/samples/drumsynth/latin/Tamb_shk.ds
-%%DATADIR%%/samples/drumsynth/latin/ThumbPno.ds
-%%DATADIR%%/samples/drumsynth/latin/Triangle.ds
-%%DATADIR%%/samples/drumsynth/latin/bongo_l.ds
-%%DATADIR%%/samples/drumsynth/latin/guiro.ds
-%%DATADIR%%/samples/drumsynth/latin/one_clap.ds
-%%DATADIR%%/samples/drumsynth/latin/taiko.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cab.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cga1.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cga2.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cga3.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cgam.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_clp.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_cow.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_kik.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_snr.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_stk.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tamb.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tom1.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tom2.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tom3.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tom4.ds
-%%DATADIR%%/samples/drumsynth/linn/linn_tom5.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Eye_Eye.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Fp1.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Mist1.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Mist2.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Randion1.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Squelb.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Throaties1.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone1.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone10.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone11.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone12.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone14.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone15.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone16.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone17.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone18.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone19.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone2.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone20.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone3.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone4.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone5.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone6.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone7.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone8.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone9.ds
-%%DATADIR%%/samples/drumsynth/magnetboy/Tone_float1.ds
-%%DATADIR%%/samples/drumsynth/misc/'lectro_hammer.ds
-%%DATADIR%%/samples/drumsynth/misc/'lectro_square_hammer.ds
-%%DATADIR%%/samples/drumsynth/misc/12-bit_heavy_hitter.ds
-%%DATADIR%%/samples/drumsynth/misc/909_hard_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/AAH.ds
-%%DATADIR%%/samples/drumsynth/misc/B1_B2.ds
-%%DATADIR%%/samples/drumsynth/misc/Clap.ds
-%%DATADIR%%/samples/drumsynth/misc/Distant_Thunder.ds
-%%DATADIR%%/samples/drumsynth/misc/N_low.ds
-%%DATADIR%%/samples/drumsynth/misc/N_vlow.ds
-%%DATADIR%%/samples/drumsynth/misc/RimShot.ds
-%%DATADIR%%/samples/drumsynth/misc/Saber_fight.ds
-%%DATADIR%%/samples/drumsynth/misc/Simple-c.ds
-%%DATADIR%%/samples/drumsynth/misc/Simple-r.ds
-%%DATADIR%%/samples/drumsynth/misc/Simple-s.ds
-%%DATADIR%%/samples/drumsynth/misc/Tone_dis.ds
-%%DATADIR%%/samples/drumsynth/misc/Tone_sw2.ds
-%%DATADIR%%/samples/drumsynth/misc/Tone_swp.ds
-%%DATADIR%%/samples/drumsynth/misc/airbrush_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/ambient_noise_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/amen_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/amen_sn_1.ds
-%%DATADIR%%/samples/drumsynth/misc/and_loud_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/another_909_moment.ds
-%%DATADIR%%/samples/drumsynth/misc/another_example_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/application_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/b1_0.ds
-%%DATADIR%%/samples/drumsynth/misc/b1_2.ds
-%%DATADIR%%/samples/drumsynth/misc/b1_5.ds
-%%DATADIR%%/samples/drumsynth/misc/b1_9.ds
-%%DATADIR%%/samples/drumsynth/misc/basic_808_click_hum.ds
-%%DATADIR%%/samples/drumsynth/misc/battle_hook_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/bauble_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/beat_box_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/beefy_wack.ds
-%%DATADIR%%/samples/drumsynth/misc/big_80's.ds
-%%DATADIR%%/samples/drumsynth/misc/big_80's_2.ds
-%%DATADIR%%/samples/drumsynth/misc/big_sleeper_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/blended_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/bouncy809bd.ds
-%%DATADIR%%/samples/drumsynth/misc/break_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/breathing_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/bright_house_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/buff_hit.ds
-%%DATADIR%%/samples/drumsynth/misc/buff_sound.ds
-%%DATADIR%%/samples/drumsynth/misc/bug_into_water.ds
-%%DATADIR%%/samples/drumsynth/misc/bulge_n_yr_woofer.ds
-%%DATADIR%%/samples/drumsynth/misc/bumpin_quickie.ds
-%%DATADIR%%/samples/drumsynth/misc/calamity_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/change_the_channel_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/chow_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/clappy_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/clean_low_key_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/clean_soft_808.ds
-%%DATADIR%%/samples/drumsynth/misc/clearly_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/close_mic_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/compression_does_it_808.ds
-%%DATADIR%%/samples/drumsynth/misc/crusty_bump.ds
-%%DATADIR%%/samples/drumsynth/misc/crusty_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/cymbal.ds
-%%DATADIR%%/samples/drumsynth/misc/decompression_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/deep_bauble_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/deep_tones.ds
-%%DATADIR%%/samples/drumsynth/misc/difference_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/different_909_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/dirty_world_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/dist_sub_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/dist_sub_kick_2.ds
-%%DATADIR%%/samples/drumsynth/misc/electro_dnb_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/electro_snare_layer.ds
-%%DATADIR%%/samples/drumsynth/misc/electronic_rim.ds
-%%DATADIR%%/samples/drumsynth/misc/end_transmission.ds
-%%DATADIR%%/samples/drumsynth/misc/every_909.ds
-%%DATADIR%%/samples/drumsynth/misc/fatness.ds
-%%DATADIR%%/samples/drumsynth/misc/fattie_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/feel_me!.ds
-%%DATADIR%%/samples/drumsynth/misc/few_people_will_use_this_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/flat_tire.ds
-%%DATADIR%%/samples/drumsynth/misc/fm.ds
-%%DATADIR%%/samples/drumsynth/misc/fried_food.ds
-%%DATADIR%%/samples/drumsynth/misc/funky_trashcan_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/fuzzy_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/gabbakick.ds
-%%DATADIR%%/samples/drumsynth/misc/gimme_a_hard_tone.ds
-%%DATADIR%%/samples/drumsynth/misc/gimmie_a_tone.ds
-%%DATADIR%%/samples/drumsynth/misc/hard_electro_brush_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/hard_electronic_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/hard_hittin.ds
-%%DATADIR%%/samples/drumsynth/misc/hardcore_a_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/hardcore_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/hardersnare.ds
-%%DATADIR%%/samples/drumsynth/misc/heady_mix_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/heavy.ds
-%%DATADIR%%/samples/drumsynth/misc/hed_chunk_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/hi-pass.ds
-%%DATADIR%%/samples/drumsynth/misc/hi_pic.ds
-%%DATADIR%%/samples/drumsynth/misc/hip-hop_fantasy_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/hipster_joint_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/hit_me_wooden_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/hitthosesubs.ds
-%%DATADIR%%/samples/drumsynth/misc/hot_morning_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/hot_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/i_luv_u_fat_noise.ds
-%%DATADIR%%/samples/drumsynth/misc/invisible_909_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/it's_like_that_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/just_the_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/kneel_and_buzz.ds
-%%DATADIR%%/samples/drumsynth/misc/large_hall_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/laughter_and_jellybeans_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/light_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/lo-fi_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/lo-fi_march.ds
-%%DATADIR%%/samples/drumsynth/misc/lo-fi_rim.ds
-%%DATADIR%%/samples/drumsynth/misc/loudness_sn.ds
-%%DATADIR%%/samples/drumsynth/misc/lovely_clean_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/lower_electro_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/mack_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/manipulate_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/many_frequencies.ds
-%%DATADIR%%/samples/drumsynth/misc/mello_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/mind_ya_heds.ds
-%%DATADIR%%/samples/drumsynth/misc/missing_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/missing_snare_2.ds
-%%DATADIR%%/samples/drumsynth/misc/more_basic_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/more_snap.ds
-%%DATADIR%%/samples/drumsynth/misc/muted_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/n_hi.ds
-%%DATADIR%%/samples/drumsynth/misc/n_mid.ds
-%%DATADIR%%/samples/drumsynth/misc/neo808.ds
-%%DATADIR%%/samples/drumsynth/misc/neo808_2.ds
-%%DATADIR%%/samples/drumsynth/misc/noise.ds
-%%DATADIR%%/samples/drumsynth/misc/noise_calling_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/noise_clip.ds
-%%DATADIR%%/samples/drumsynth/misc/nosie_calling_kick_2.ds
-%%DATADIR%%/samples/drumsynth/misc/odd_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/original_tone_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/ot_12.ds
-%%DATADIR%%/samples/drumsynth/misc/ot_34.ds
-%%DATADIR%%/samples/drumsynth/misc/ot_sine.ds
-%%DATADIR%%/samples/drumsynth/misc/overdriver_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/pleasure_factory_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/pop_1_off_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/power_out.ds
-%%DATADIR%%/samples/drumsynth/misc/psychoacoutic_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/punchy_clean_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/puppy_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/q'ey_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/q_kick_2.ds
-%%DATADIR%%/samples/drumsynth/misc/questoin_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/r+b_fantasy_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/reverb_please_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/rimmy_noise.ds
-%%DATADIR%%/samples/drumsynth/misc/rimshot_1.ds
-%%DATADIR%%/samples/drumsynth/misc/rimshot_2.ds
-%%DATADIR%%/samples/drumsynth/misc/ring_fray_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/ring_mod_drone_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/rm.ds
-%%DATADIR%%/samples/drumsynth/misc/rubber_'82.ds
-%%DATADIR%%/samples/drumsynth/misc/rubbery_deep_house_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/serious_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/short_909.ds
-%%DATADIR%%/samples/drumsynth/misc/simon's_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/simple-h.ds
-%%DATADIR%%/samples/drumsynth/misc/simple-k.ds
-%%DATADIR%%/samples/drumsynth/misc/simple_click_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/skiwlz_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/slepper_n_the_wilderness.ds
-%%DATADIR%%/samples/drumsynth/misc/sloppy_electric.ds
-%%DATADIR%%/samples/drumsynth/misc/smooth_rim.ds
-%%DATADIR%%/samples/drumsynth/misc/snappy_809.ds
-%%DATADIR%%/samples/drumsynth/misc/softsnare.ds
-%%DATADIR%%/samples/drumsynth/misc/sounding_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/sounds_like_a_low_tom.ds
-%%DATADIR%%/samples/drumsynth/misc/special_man_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/splatter.ds
-%%DATADIR%%/samples/drumsynth/misc/sticky_q_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/stiffy_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/sweet_tight_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/tchak_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/terror_n_yr_hood_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/test.ds
-%%DATADIR%%/samples/drumsynth/misc/think_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/think_sn_1.ds
-%%DATADIR%%/samples/drumsynth/misc/think_sn_2.ds
-%%DATADIR%%/samples/drumsynth/misc/this_snare_spells_electronic.ds
-%%DATADIR%%/samples/drumsynth/misc/tomita_clip.ds
-%%DATADIR%%/samples/drumsynth/misc/tone.ds
-%%DATADIR%%/samples/drumsynth/misc/tone_deg.ds
-%%DATADIR%%/samples/drumsynth/misc/tone_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/transient_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/trashyovertones.ds
-%%DATADIR%%/samples/drumsynth/misc/type_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/ultra_electro_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/usgae_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/verby_soundin_808.ds
-%%DATADIR%%/samples/drumsynth/misc/very_basic_snare.ds
-%%DATADIR%%/samples/drumsynth/misc/verylong.ds
-%%DATADIR%%/samples/drumsynth/misc/warm_deep_house_kick.ds
-%%DATADIR%%/samples/drumsynth/misc/warm_digi_808_click.ds
-%%DATADIR%%/samples/drumsynth/misc/whoa_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/wobble_wobble.ds
-%%DATADIR%%/samples/drumsynth/misc/wobbly_thumb_bd.ds
-%%DATADIR%%/samples/drumsynth/misc/yet_another_electric_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc/yr_808_hummer.ds
-%%DATADIR%%/samples/drumsynth/misc/zoom#4.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/a_day_in_the_noise.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/bumble_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/depth_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/dirty_a.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/filter_idea_bd.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/jarre_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/jungle_laser.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/low_end_hum.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/melodictone.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/metal_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/more_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/more_bass_2.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/rubber.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/smooth_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/solid.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/synthbass.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/the_funk.ds
-%%DATADIR%%/samples/drumsynth/misc_bass/warm_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/big_beat_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/bright_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/clap2.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/clap_layer.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/classic_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/electro_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/filter_clappy.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/pitch_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/pitch_clap_2.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/shutter_clap.ds
-%%DATADIR%%/samples/drumsynth/misc_claps/u_don't_kno.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/'lectro_spliff.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/a_round_thing.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/applied_engineering.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/atmosphere_of_space.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/bottle_bill_fx.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/casio_poppin.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/category.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/cheap_fx.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/chrip_q.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/clean_rock_bd.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/cold_shot.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/confusion.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/cymbal_madness.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/depth_fx.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/dialed.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/doom_bump.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electric_triangle.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_perc_long.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_perc_short.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim_2.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim_3.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/electro_squeek.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/fuzzy_q_bd.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/g_question.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/general_obscurity.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/hard_bork.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/hello_q.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/just_the_tweet.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/lo-fi_house_c.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/lo-fi_metal.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/lo-finess.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/long_q_1.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/long_q_2.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/long_q_3.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/long_quack.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/low_bit_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/metal_noise_shot.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/open_reso.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/paging_the_jetsons.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/pan.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/pleasant_combo.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/q-ziq_for_the_masses.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/rich_bd.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/ring.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/ringing_sn.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/rockin_electro_bass_drum.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/shocking_kiss.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/siren_sing.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/slide_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/space_dynamic.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/spaceness.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/startling_one.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/tone_percussion.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/tweet.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/wee_dog.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/what_to_do_at_220.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/who_hears_all_sound.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/why_hit.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/yr_tv_will_be_next.ds
-%%DATADIR%%/samples/drumsynth/misc_electro/zappy_bells.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/2-bit_zone_drone.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/2_bit_click.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/a_blast.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/across_the_universe.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/alarm_3.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/alarming_buzz.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/alarming_buzz_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/alien_curiousity.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/ambient_backgroud.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/click.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/coo.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/detonate.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/dirty_transform.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/dirty_transform_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/distorion_oscilator.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/electric_intro_to_a.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/electric_waves_out_my_window.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/elekperc1.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/elekperc2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/end_of_broadcast_day.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/entre.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/experiment_1.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/experiment_2_-_turn_off_the_tv.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/experiment_3_-_the_transform.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/experiment_4_-_clean.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/f#m7_space_signal.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/feedback.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/flashy_wind.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/flipper.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/formant_techno.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/frequency_revolution.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/fried_food_for_dinner.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/funky_stab.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/future.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/gmaj_lo-fi_chord.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/gmaj_lo-fi_chord_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/halt_variety.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/hip-hop_stop.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/hip-hop_stop_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/hollow.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/howdy_oil_barrel.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/jaggies.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/laser_gun_&_ricochet.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/machine_drone.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/metal_twist.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/modular.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/modular_fm_counterpoint.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/multi-ping.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/my_atari_memory.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/new_sweep.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/noise_filtering.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/not_trying_too_hard.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/numb.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/obligatory_ufo_liftoff.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/obligatory_ufo_liftoff_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/oom_paa.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/oom_pulse.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/owwww.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/playing_in_water.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/plot_thickens_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/punch_flange.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/punch_flange_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/q_zone_drone.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/recption.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/sci-fi.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/sci-fi_door_open.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/sickly_wineglass.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/sign_off.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/slow_moving_traffic.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/synthetic_dive.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/synthetic_dive_crust.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/teeth.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/the_plot_thickens.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/the_tweek.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/transportive.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/ufo_buzz.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/ufo_buzz_2.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/what_time_is_it.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/wipeout.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/wooo.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/yeah_hit.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/yeah_hit_dry.ds
-%%DATADIR%%/samples/drumsynth/misc_fx/zipper.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/amen_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/band_pass_cymbal.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/basic_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat_3.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/bring_me_out.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/clicky_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/close_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/default_hi-hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/drama_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/drama_hat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/dusty_simple_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/dusty_simple_oh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/electro_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/electrometallic_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/errie_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/fedora_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_1.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_3.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_open_high_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/flat_cymbal.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/get_out.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/hardhat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/hardhat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/hardly_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/heavy_electrihat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/hip_overtone_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/large_open_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/lighthat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/little_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/live_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/live_sound_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/live_sound_oh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/loaded_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/loaded_open_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/oh_so_high_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/oil_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/pedal_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/q_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/q_ride_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/sandy_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/scratchy_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/shaker_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/shaker_ride_long.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/simple_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_1.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_ride_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_compressd_open.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_half_open.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_open.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/slide_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_open_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_open_hat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/squeeze_me_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/squeeze_me_open_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/stack_hhh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/starry_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/starry_short_oh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/static_tone_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/tarp_hh.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_hat_2.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_open_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/threshold_noise.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/threshold_noise_open.ds
-%%DATADIR%%/samples/drumsynth/misc_hats/touch_me_hat.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/ambient_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/bell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/bell_rim.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/clav.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/clav_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/deep_cowbell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/dist_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/dist_tom_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/door_knock.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/electric_clav.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/feel_me_clinky.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/fidelity_faction_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/funk_box_perc_1.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/funk_box_perc_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/funkay_timbale.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/give_it_to_me.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/hammond_cowbell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/hollow_wood.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/hollow_wood_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/it's_the_simple_things.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/layered_sleigh_bell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_1.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_3.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_1.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_3.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/limited_shaker.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/lo-fi_tamb.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/low_key_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/low_ping.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/mellow_shake.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/metallic_node.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/mild_tamb.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/ol'_skool_shake.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/poppy.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/q_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/resonant_knock.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/ringmod_rim.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/ringmod_rim_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/shaaka.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/shaaka_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/short_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/short_tom_1.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/short_tom_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/sickly_cowbell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/slinky_tamb.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/super_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/sweetness_shaker.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/timbale_sound.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tom_tone.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tommy.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tone_tom.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/torn_tweeter.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tweety_cowbell.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/tweety_cowbell_2.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/type_noise.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/very_high_clav.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/video_game_clip.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/weird_1.ds
-%%DATADIR%%/samples/drumsynth/misc_perc/wood_and_metal.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/average_rock.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/c_maj_chord.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/casio_piano_c.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/chorded_perc.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/consumer_fm.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/dark_and_sweet_fm.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/dist_high_c.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/eno's_lift.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/eno's_pad.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/eno's_ride.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/flat_square_c.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/fm_c_bass_burst.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/fur_strings.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/fur_strings_2.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/it's_the_music_tom_c.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/layered_bass_synth_c.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/my_red_hot_guitar.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/raver_organ.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/strong_c_dub_bass.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/sync_drift.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/sync_man.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/that_house_chord_cm.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/vibrato_pad.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/who_loves_ya,_baby.ds
-%%DATADIR%%/samples/drumsynth/misc_synth/wowmelodictone.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/Hat_O.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/S_hollow.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/clapfilt.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/hat.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/hat_rattle.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/k_hard.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/k_muffle.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/k_soft.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/old_kik.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/popclap.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/popsnare.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/s_pitch.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/s_spit.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/snare&hat.ds
-%%DATADIR%%/samples/drumsynth/r_n_b/x_backwd.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Cymbal.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Hat_C.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Hat_O.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Kick.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Snare.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Tom_H.ds
-%%DATADIR%%/samples/drumsynth/tr606/TR606_Tom_L.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_cui1.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_cui2.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_cym.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_hat.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_kick.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_snare.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_tom1.ds
-%%DATADIR%%/samples/drumsynth/tr77/Tr77_tom2.ds
-%%DATADIR%%/samples/drumsynth/tr808/Clave.ds
-%%DATADIR%%/samples/drumsynth/tr808/Cowbell.ds
-%%DATADIR%%/samples/drumsynth/tr808/Handclap.ds
-%%DATADIR%%/samples/drumsynth/tr808/Hat_c.ds
-%%DATADIR%%/samples/drumsynth/tr808/Hat_o.ds
-%%DATADIR%%/samples/drumsynth/tr808/Kick.ds
-%%DATADIR%%/samples/drumsynth/tr808/Kickhard.ds
-%%DATADIR%%/samples/drumsynth/tr808/Kicklong.ds
-%%DATADIR%%/samples/drumsynth/tr808/Ride.ds
-%%DATADIR%%/samples/drumsynth/tr808/Rimshot.ds
-%%DATADIR%%/samples/drumsynth/tr808/Snare.ds
-%%DATADIR%%/samples/drumsynth/tr808/Snr_snap.ds
-%%DATADIR%%/samples/drumsynth/tr808/Tom_hi.ds
-%%DATADIR%%/samples/drumsynth/tr808/Tom_lo.ds
-%%DATADIR%%/samples/drumsynth/tr808/Tom_mid.ds
-%%DATADIR%%/samples/drumsynth/tr909/Clap.ds
-%%DATADIR%%/samples/drumsynth/tr909/Hat-c.ds
-%%DATADIR%%/samples/drumsynth/tr909/Hat-c2.ds
-%%DATADIR%%/samples/drumsynth/tr909/Hat-o.ds
-%%DATADIR%%/samples/drumsynth/tr909/Hat-o2.ds
-%%DATADIR%%/samples/drumsynth/tr909/Kick.ds
-%%DATADIR%%/samples/drumsynth/tr909/Kick_1.ds
-%%DATADIR%%/samples/drumsynth/tr909/Kick_2.ds
-%%DATADIR%%/samples/drumsynth/tr909/Kick_3.ds
-%%DATADIR%%/samples/drumsynth/tr909/Snare.ds
-%%DATADIR%%/samples/drumsynth/tr909/Snare2.ds
-%%DATADIR%%/samples/drumsynth/tr909/TR909_Clap.ds
-%%DATADIR%%/samples/drumsynth/tr909/TR909_Kick.ds
-%%DATADIR%%/samples/effects/chroma_sound_effect01.ogg
-%%DATADIR%%/samples/effects/explode01.ogg
-%%DATADIR%%/samples/effects/filter_sweep01.ogg
-%%DATADIR%%/samples/effects/scratch01.ogg
-%%DATADIR%%/samples/effects/start01.ogg
-%%DATADIR%%/samples/effects/start02.ogg
-%%DATADIR%%/samples/effects/stop01.ogg
-%%DATADIR%%/samples/effects/warp01.ogg
-%%DATADIR%%/samples/effects/warp02.ogg
-%%DATADIR%%/samples/effects/wind_chimes01.ogg
-%%DATADIR%%/samples/instruments/bassslap01.ogg
-%%DATADIR%%/samples/instruments/bassslap02.ogg
-%%DATADIR%%/samples/instruments/cello01.ogg
-%%DATADIR%%/samples/instruments/church_organ01.ogg
-%%DATADIR%%/samples/instruments/church_organ02.ogg
-%%DATADIR%%/samples/instruments/church_organ03.ogg
-%%DATADIR%%/samples/instruments/church_organ04.ogg
-%%DATADIR%%/samples/instruments/e_organ01.ogg
-%%DATADIR%%/samples/instruments/e_piano_accord01.ogg
-%%DATADIR%%/samples/instruments/e_piano_accord02.ogg
+%%DATADIR%%/projects/Demos/Ashore.mmpz
+%%DATADIR%%/projects/Demos/Skiessi-C64.mmpz
+%%DATADIR%%/projects/Demos/EsoXLB-CPU.mmpz
+%%DATADIR%%/projects/Demos/Oglsdl-PpTrip.mmpz
+%%DATADIR%%/projects/Demos/DnB.mmpz
+%%DATADIR%%/projects/Demos/CapDan-ReggaetonTry.mmpz
+%%DATADIR%%/projects/Demos/AngryLlama-NewFangled.mmpz
+%%DATADIR%%/projects/Demos/Thomasso-AxeFromThe80s.mmpz
+%%DATADIR%%/projects/Demos/CapDan-ReggaeTry.mmpz
+%%DATADIR%%/projects/Covers/Thaledric-AwayFromBoobaloo.mmpz
+%%DATADIR%%/projects/Covers/CapDan-Infinity2010.mmpz
+%%DATADIR%%/projects/Covers/Momo64-Jeeg.mmpz
+%%DATADIR%%/projects/Covers/MichaelKuhn-Mondscheinsonate.mmpz
+%%DATADIR%%/projects/Covers/Edo98-FinalCountdown.mmpz
+%%DATADIR%%/samples/shapes/vowel_u.wav
+%%DATADIR%%/samples/shapes/micro.wav
+%%DATADIR%%/samples/shapes/technosynth4.wav
+%%DATADIR%%/samples/shapes/technosynth6.wav
+%%DATADIR%%/samples/shapes/roundbass.wav
+%%DATADIR%%/samples/shapes/saw+sine.wav
+%%DATADIR%%/samples/shapes/bunglist9.wav
+%%DATADIR%%/samples/shapes/technosynth1.wav
+%%DATADIR%%/samples/shapes/bunglist7.wav
+%%DATADIR%%/samples/shapes/additive2.wav
+%%DATADIR%%/samples/shapes/bunglist2.wav
+%%DATADIR%%/samples/shapes/harmonics.wav
+%%DATADIR%%/samples/shapes/bunglist.wav
+%%DATADIR%%/samples/shapes/additive.wav
+%%DATADIR%%/samples/shapes/bunglist5.wav
+%%DATADIR%%/samples/shapes/moog.wav
+%%DATADIR%%/samples/shapes/low_sine.wav
+%%DATADIR%%/samples/shapes/technosynth2.wav
+%%DATADIR%%/samples/shapes/bunglist8.wav
+%%DATADIR%%/samples/shapes/bunglist4.wav
+%%DATADIR%%/samples/shapes/technobass.wav
+%%DATADIR%%/samples/shapes/bunglist3.wav
+%%DATADIR%%/samples/shapes/bunglist6.wav
+%%DATADIR%%/samples/shapes/technosynth3.wav
+%%DATADIR%%/samples/shapes/vowel_a.wav
+%%DATADIR%%/samples/shapes/technosynth5.wav
+%%DATADIR%%/samples/shapes/sine_dist.ogg
+%%DATADIR%%/samples/shapes/smooth_inv_saw2.ogg
+%%DATADIR%%/samples/shapes/roundsaw.ogg
+%%DATADIR%%/samples/shapes/smooth_inv_saw.ogg
+%%DATADIR%%/samples/shapes/smooth_inv_saw_dist.ogg
+%%DATADIR%%/samples/instruments/violin_fingered01.ogg
 %%DATADIR%%/samples/instruments/flute01.ogg
 %%DATADIR%%/samples/instruments/harpsichord01.ogg
+%%DATADIR%%/samples/instruments/violin_double_stop01.ogg
+%%DATADIR%%/samples/instruments/e_piano_accord02.ogg
+%%DATADIR%%/samples/instruments/bassslap01.ogg
+%%DATADIR%%/samples/instruments/church_organ03.ogg
+%%DATADIR%%/samples/instruments/church_organ04.ogg
+%%DATADIR%%/samples/instruments/church_organ02.ogg
+%%DATADIR%%/samples/instruments/violin_pizzicato01.ogg
+%%DATADIR%%/samples/instruments/cello01.ogg
+%%DATADIR%%/samples/instruments/e_organ01.ogg
 %%DATADIR%%/samples/instruments/piano01.ogg
+%%DATADIR%%/samples/instruments/steel_guitar_medium_distorted01.ogg
+%%DATADIR%%/samples/instruments/trumpet01.ogg
+%%DATADIR%%/samples/instruments/steel_guitar_slight_distorted01.ogg
 %%DATADIR%%/samples/instruments/piano02.ogg
 %%DATADIR%%/samples/instruments/steel_guitar01.ogg
 %%DATADIR%%/samples/instruments/steel_guitar_heavy_distorted01.ogg
-%%DATADIR%%/samples/instruments/steel_guitar_medium_distorted01.ogg
-%%DATADIR%%/samples/instruments/steel_guitar_slight_distorted01.ogg
-%%DATADIR%%/samples/instruments/trumpet01.ogg
-%%DATADIR%%/samples/instruments/violin_double_stop01.ogg
-%%DATADIR%%/samples/instruments/violin_fingered01.ogg
-%%DATADIR%%/samples/instruments/violin_pizzicato01.ogg
-%%DATADIR%%/samples/latin/latin_brass01.ogg
+%%DATADIR%%/samples/instruments/bassslap02.ogg
+%%DATADIR%%/samples/instruments/e_piano_accord01.ogg
+%%DATADIR%%/samples/instruments/church_organ01.ogg
+%%DATADIR%%/samples/beats/break03.ogg
+%%DATADIR%%/samples/beats/rave_hihat02.ogg
+%%DATADIR%%/samples/beats/rave_kick02.ogg
+%%DATADIR%%/samples/beats/rave_snare01.ogg
+%%DATADIR%%/samples/beats/jungle01.ogg
+%%DATADIR%%/samples/beats/break01.ogg
+%%DATADIR%%/samples/beats/rave_hihat01.ogg
+%%DATADIR%%/samples/beats/electro_beat02.ogg
+%%DATADIR%%/samples/beats/house_loop01.ogg
+%%DATADIR%%/samples/beats/909beat01.ogg
+%%DATADIR%%/samples/beats/break02.ogg
+%%DATADIR%%/samples/beats/rave_kick01.ogg
+%%DATADIR%%/samples/beats/electro_beat01.ogg
 %%DATADIR%%/samples/latin/latin_guitar01.ogg
 %%DATADIR%%/samples/latin/latin_guitar02.ogg
+%%DATADIR%%/samples/latin/latin_brass01.ogg
 %%DATADIR%%/samples/latin/latin_guitar03.ogg
+%%DATADIR%%/samples/effects/filter_sweep01.ogg
+%%DATADIR%%/samples/effects/warp01.ogg
+%%DATADIR%%/samples/effects/start02.ogg
+%%DATADIR%%/samples/effects/wind_chimes01.ogg
+%%DATADIR%%/samples/effects/explode01.ogg
+%%DATADIR%%/samples/effects/warp02.ogg
+%%DATADIR%%/samples/effects/scratch01.ogg
+%%DATADIR%%/samples/effects/chroma_sound_effect01.ogg
+%%DATADIR%%/samples/effects/start01.ogg
+%%DATADIR%%/samples/effects/stop01.ogg
+%%DATADIR%%/samples/bassloopes/techno_bass01.ogg
+%%DATADIR%%/samples/bassloopes/rave_bass01.ogg
+%%DATADIR%%/samples/bassloopes/techno_bass02.ogg
+%%DATADIR%%/samples/bassloopes/techno_synth04.ogg
+%%DATADIR%%/samples/bassloopes/rave_bass02.ogg
+%%DATADIR%%/samples/bassloopes/briff01.ogg
+%%DATADIR%%/samples/bassloopes/techno_synth02.ogg
+%%DATADIR%%/samples/bassloopes/tb303_01.ogg
+%%DATADIR%%/samples/bassloopes/techno_synth03.ogg
+%%DATADIR%%/samples/bassloopes/techno_synth01.ogg
+%%DATADIR%%/samples/stringsnpads/chorus02.ogg
+%%DATADIR%%/samples/stringsnpads/rave_choir01.ogg
+%%DATADIR%%/samples/stringsnpads/orion_string01.ogg
+%%DATADIR%%/samples/stringsnpads/strings01.ogg
+%%DATADIR%%/samples/stringsnpads/heaven_strings01.ogg
+%%DATADIR%%/samples/stringsnpads/space_strings01.ogg
+%%DATADIR%%/samples/stringsnpads/space_strings03.ogg
+%%DATADIR%%/samples/stringsnpads/bell_choir01.ogg
+%%DATADIR%%/samples/stringsnpads/korg_poly6_drone01.ogg
+%%DATADIR%%/samples/stringsnpads/chorus01.ogg
+%%DATADIR%%/samples/stringsnpads/nord_ambient01.ogg
+%%DATADIR%%/samples/stringsnpads/bell_choir02.ogg
+%%DATADIR%%/samples/stringsnpads/space_strings02.ogg
+%%DATADIR%%/samples/stringsnpads/juno_pad01.ogg
+%%DATADIR%%/samples/drums/zap02.ogg
+%%DATADIR%%/samples/drums/snare_muffled01.ogg
+%%DATADIR%%/samples/drums/snare01.ogg
+%%DATADIR%%/samples/drums/kick_distorted01.ogg
+%%DATADIR%%/samples/drums/tom_mid01.ogg
+%%DATADIR%%/samples/drums/snare_hiphop01.ogg
+%%DATADIR%%/samples/drums/tom05.ogg
+%%DATADIR%%/samples/drums/snare_short01.ogg
+%%DATADIR%%/samples/drums/snare02.ogg
+%%DATADIR%%/samples/drums/hihat_opened01.ogg
+%%DATADIR%%/samples/drums/clap03.ogg
+%%DATADIR%%/samples/drums/snare_harsh01.ogg
+%%DATADIR%%/samples/drums/kick04.ogg
+%%DATADIR%%/samples/drums/bassdrum04.ogg
+%%DATADIR%%/samples/drums/snare_electro01.ogg
+%%DATADIR%%/samples/drums/tom_low01.ogg
+%%DATADIR%%/samples/drums/hihat_opened03.ogg
+%%DATADIR%%/samples/drums/snare06.ogg
+%%DATADIR%%/samples/drums/kick_hiphop01.ogg
+%%DATADIR%%/samples/drums/zap03.ogg
+%%DATADIR%%/samples/drums/hihat_closed03.ogg
+%%DATADIR%%/samples/drums/snare_muffled02.ogg
+%%DATADIR%%/samples/drums/kick_soft01.ogg
+%%DATADIR%%/samples/drums/hihat_opened02.ogg
+%%DATADIR%%/samples/drums/snare05.ogg
+%%DATADIR%%/samples/drums/bassdrum03.ogg
+%%DATADIR%%/samples/drums/ride02.ogg
+%%DATADIR%%/samples/drums/kick_long01.ogg
+%%DATADIR%%/samples/drums/bassdrum_acoustic02.ogg
+%%DATADIR%%/samples/drums/snare_rim01.ogg
+%%DATADIR%%/samples/drums/shaker02.ogg
+%%DATADIR%%/samples/drums/snare07.ogg
+%%DATADIR%%/samples/drums/clav01.ogg
+%%DATADIR%%/samples/drums/tom04.ogg
+%%DATADIR%%/samples/drums/kick03.ogg
+%%DATADIR%%/samples/drums/bassdrum_acoustic01.ogg
+%%DATADIR%%/samples/drums/clav02.ogg
+%%DATADIR%%/samples/drums/snare_hiphop02.ogg
+%%DATADIR%%/samples/drums/nasty_bass01.ogg
+%%DATADIR%%/samples/drums/hihat_closed05.ogg
+%%DATADIR%%/samples/drums/kick01.ogg
+%%DATADIR%%/samples/drums/kick_hardcore01.ogg
+%%DATADIR%%/samples/drums/snare03.ogg
+%%DATADIR%%/samples/drums/crash01.ogg
+%%DATADIR%%/samples/drums/sidestick01.ogg
+%%DATADIR%%/samples/drums/hihat_closed02.ogg
+%%DATADIR%%/samples/drums/bassdrum02.ogg
+%%DATADIR%%/samples/drums/snare_acoustic01.ogg
+%%DATADIR%%/samples/drums/tom_hi01.ogg
+%%DATADIR%%/samples/drums/ride01.ogg
+%%DATADIR%%/samples/drums/kick02.ogg
+%%DATADIR%%/samples/drums/hihat_closed01.ogg
+%%DATADIR%%/samples/drums/wood01.ogg
+%%DATADIR%%/samples/drums/hihat_foot_pedal01.ogg
+%%DATADIR%%/samples/drums/clap01.ogg
+%%DATADIR%%/samples/drums/clap04.ogg
+%%DATADIR%%/samples/drums/clap02.ogg
+%%DATADIR%%/samples/drums/kick_soft02.ogg
+%%DATADIR%%/samples/drums/tom02.ogg
+%%DATADIR%%/samples/drums/zap01.ogg
+%%DATADIR%%/samples/drums/nasty_rim01.ogg
+%%DATADIR%%/samples/drums/tom03.ogg
+%%DATADIR%%/samples/drums/shaker01.ogg
+%%DATADIR%%/samples/drums/hihat_closed04.ogg
+%%DATADIR%%/samples/drums/bassdrum01.ogg
+%%DATADIR%%/samples/drums/shaker03.ogg
+%%DATADIR%%/samples/drums/snare04.ogg
+%%DATADIR%%/samples/drums/crash02.ogg
+%%DATADIR%%/samples/drums/nasty_snare01.ogg
+%%DATADIR%%/samples/drums/tom01.ogg
+%%DATADIR%%/samples/drums/rim01.ogg
+%%DATADIR%%/samples/drums/kick_hard01.ogg
+%%DATADIR%%/samples/basses/horror_bass01.ogg
+%%DATADIR%%/samples/basses/bass_acid02.ogg
+%%DATADIR%%/samples/basses/matrix1000_pluck01.ogg
+%%DATADIR%%/samples/basses/rave_bass01.ogg
+%%DATADIR%%/samples/basses/bass01.ogg
+%%DATADIR%%/samples/basses/rave_bass02.ogg
+%%DATADIR%%/samples/basses/bass_acid01.ogg
+%%DATADIR%%/samples/basses/synth_acid01.ogg
+%%DATADIR%%/samples/basses/rave_bass04.ogg
+%%DATADIR%%/samples/basses/synth_acid02.ogg
+%%DATADIR%%/samples/basses/rave_bass03.ogg
+%%DATADIR%%/samples/basses/bass_punch01.ogg
+%%DATADIR%%/samples/basses/bass_hard02.ogg
+%%DATADIR%%/samples/basses/bass_hard01.ogg
+%%DATADIR%%/samples/basses/techno_synth01.ogg
+%%DATADIR%%/samples/misc/dong02.ogg
+%%DATADIR%%/samples/misc/metronome01.ogg
 %%DATADIR%%/samples/misc/applause01.ogg
-%%DATADIR%%/samples/misc/bass!.ogg
-%%DATADIR%%/samples/misc/breath01.ogg
 %%DATADIR%%/samples/misc/buzz!.ogg
 %%DATADIR%%/samples/misc/dong01.ogg
-%%DATADIR%%/samples/misc/dong02.ogg
-%%DATADIR%%/samples/misc/dong03.ogg
-%%DATADIR%%/samples/misc/electric_ping01.ogg
-%%DATADIR%%/samples/misc/hit01.ogg
-%%DATADIR%%/samples/misc/hit02.ogg
-%%DATADIR%%/samples/misc/metalish_dong01.ogg
-%%DATADIR%%/samples/misc/metronome01.ogg
-%%DATADIR%%/samples/misc/raving_crowd01.ogg
-%%DATADIR%%/samples/misc/snaph01.ogg
 %%DATADIR%%/samples/misc/undefined01.ogg
-%%DATADIR%%/samples/shapes/additive.wav
-%%DATADIR%%/samples/shapes/additive2.wav
-%%DATADIR%%/samples/shapes/bunglist.wav
-%%DATADIR%%/samples/shapes/bunglist2.wav
-%%DATADIR%%/samples/shapes/bunglist3.wav
-%%DATADIR%%/samples/shapes/bunglist4.wav
-%%DATADIR%%/samples/shapes/bunglist5.wav
-%%DATADIR%%/samples/shapes/bunglist6.wav
-%%DATADIR%%/samples/shapes/bunglist7.wav
-%%DATADIR%%/samples/shapes/bunglist8.wav
-%%DATADIR%%/samples/shapes/bunglist9.wav
-%%DATADIR%%/samples/shapes/harmonics.wav
-%%DATADIR%%/samples/shapes/low_sine.wav
-%%DATADIR%%/samples/shapes/micro.wav
-%%DATADIR%%/samples/shapes/moog.wav
-%%DATADIR%%/samples/shapes/roundbass.wav
-%%DATADIR%%/samples/shapes/roundsaw.ogg
-%%DATADIR%%/samples/shapes/saw+sine.wav
-%%DATADIR%%/samples/shapes/sine_dist.ogg
-%%DATADIR%%/samples/shapes/smooth_inv_saw.ogg
-%%DATADIR%%/samples/shapes/smooth_inv_saw2.ogg
-%%DATADIR%%/samples/shapes/smooth_inv_saw_dist.ogg
-%%DATADIR%%/samples/shapes/technobass.wav
-%%DATADIR%%/samples/shapes/technosynth1.wav
-%%DATADIR%%/samples/shapes/technosynth2.wav
-%%DATADIR%%/samples/shapes/technosynth3.wav
-%%DATADIR%%/samples/shapes/technosynth4.wav
-%%DATADIR%%/samples/shapes/technosynth5.wav
-%%DATADIR%%/samples/shapes/technosynth6.wav
-%%DATADIR%%/samples/shapes/vowel_a.wav
-%%DATADIR%%/samples/shapes/vowel_u.wav
-%%DATADIR%%/samples/stringsnpads/bell_choir01.ogg
-%%DATADIR%%/samples/stringsnpads/bell_choir02.ogg
-%%DATADIR%%/samples/stringsnpads/chorus01.ogg
-%%DATADIR%%/samples/stringsnpads/chorus02.ogg
-%%DATADIR%%/samples/stringsnpads/heaven_strings01.ogg
-%%DATADIR%%/samples/stringsnpads/juno_pad01.ogg
-%%DATADIR%%/samples/stringsnpads/korg_poly6_drone01.ogg
-%%DATADIR%%/samples/stringsnpads/nord_ambient01.ogg
-%%DATADIR%%/samples/stringsnpads/orion_string01.ogg
-%%DATADIR%%/samples/stringsnpads/rave_choir01.ogg
-%%DATADIR%%/samples/stringsnpads/space_strings01.ogg
-%%DATADIR%%/samples/stringsnpads/space_strings02.ogg
-%%DATADIR%%/samples/stringsnpads/space_strings03.ogg
-%%DATADIR%%/samples/stringsnpads/strings01.ogg
-%%DATADIR%%/themes/default/add.png
-%%DATADIR%%/themes/default/add_automation.png
-%%DATADIR%%/themes/default/add_bb_track.png
-%%DATADIR%%/themes/default/add_controller.png
-%%DATADIR%%/themes/default/add_sample_track.png
-%%DATADIR%%/themes/default/analysis.png
-%%DATADIR%%/themes/default/apply.png
-%%DATADIR%%/themes/default/arp_down.png
-%%DATADIR%%/themes/default/arp_free.png
-%%DATADIR%%/themes/default/arp_random.png
-%%DATADIR%%/themes/default/arp_sort.png
-%%DATADIR%%/themes/default/arp_sync.png
-%%DATADIR%%/themes/default/arp_up.png
-%%DATADIR%%/themes/default/arp_up_and_down.png
-%%DATADIR%%/themes/default/automation.png
-%%DATADIR%%/themes/default/automation_track.png
-%%DATADIR%%/themes/default/autoscroll_off.png
-%%DATADIR%%/themes/default/autoscroll_on.png
-%%DATADIR%%/themes/default/back_to_start.png
-%%DATADIR%%/themes/default/back_to_zero.png
-%%DATADIR%%/themes/default/background_artwork.png
-%%DATADIR%%/themes/default/bb_track.png
-%%DATADIR%%/themes/default/black_key.png
-%%DATADIR%%/themes/default/black_key_pressed.png
-%%DATADIR%%/themes/default/cancel.png
-%%DATADIR%%/themes/default/clock.png
-%%DATADIR%%/themes/default/colorize.png
-%%DATADIR%%/themes/default/combobox_arrow.png
-%%DATADIR%%/themes/default/combobox_arrow_selected.png
-%%DATADIR%%/themes/default/combobox_bg.png
-%%DATADIR%%/themes/default/computer.png
-%%DATADIR%%/themes/default/controller.png
-%%DATADIR%%/themes/default/controller_bg.png
-%%DATADIR%%/themes/default/cpuload_bg.png
-%%DATADIR%%/themes/default/cpuload_leds.png
+%%DATADIR%%/samples/misc/metalish_dong01.ogg
+%%DATADIR%%/samples/misc/hit02.ogg
+%%DATADIR%%/samples/misc/hit01.ogg
+%%DATADIR%%/samples/misc/breath01.ogg
+%%DATADIR%%/samples/misc/electric_ping01.ogg
+%%DATADIR%%/samples/misc/snaph01.ogg
+%%DATADIR%%/samples/misc/raving_crowd01.ogg
+%%DATADIR%%/samples/misc/bass!.ogg
+%%DATADIR%%/samples/misc/dong03.ogg
+%%DATADIR%%/samples/drumsynth/tr909/Hat-c2.ds
+%%DATADIR%%/samples/drumsynth/tr909/Hat-o2.ds
+%%DATADIR%%/samples/drumsynth/tr909/Kick_2.ds
+%%DATADIR%%/samples/drumsynth/tr909/Kick_3.ds
+%%DATADIR%%/samples/drumsynth/tr909/TR909_Clap.ds
+%%DATADIR%%/samples/drumsynth/tr909/Kick.ds
+%%DATADIR%%/samples/drumsynth/tr909/Hat-o.ds
+%%DATADIR%%/samples/drumsynth/tr909/TR909_Kick.ds
+%%DATADIR%%/samples/drumsynth/tr909/Kick_1.ds
+%%DATADIR%%/samples/drumsynth/tr909/Snare.ds
+%%DATADIR%%/samples/drumsynth/tr909/Hat-c.ds
+%%DATADIR%%/samples/drumsynth/tr909/Clap.ds
+%%DATADIR%%/samples/drumsynth/tr909/Snare2.ds
+%%DATADIR%%/samples/drumsynth/latin/ThumbPno.ds
+%%DATADIR%%/samples/drumsynth/latin/Bongo_mu.ds
+%%DATADIR%%/samples/drumsynth/latin/Tamb_shk.ds
+%%DATADIR%%/samples/drumsynth/latin/Clave_we.ds
+%%DATADIR%%/samples/drumsynth/latin/guiro.ds
+%%DATADIR%%/samples/drumsynth/latin/Triangle.ds
+%%DATADIR%%/samples/drumsynth/latin/Bongo_m2.ds
+%%DATADIR%%/samples/drumsynth/latin/Maracas.ds
+%%DATADIR%%/samples/drumsynth/latin/one_clap.ds
+%%DATADIR%%/samples/drumsynth/latin/Shaker_2.ds
+%%DATADIR%%/samples/drumsynth/latin/Gamelan.ds
+%%DATADIR%%/samples/drumsynth/latin/bongo_l.ds
+%%DATADIR%%/samples/drumsynth/latin/Tamb_hit.ds
+%%DATADIR%%/samples/drumsynth/latin/taiko.ds
+%%DATADIR%%/samples/drumsynth/latin/Bongo_h.ds
+%%DATADIR%%/samples/drumsynth/latin/Shaker_1.ds
+%%DATADIR%%/samples/drumsynth/effects/Hammer.ds
+%%DATADIR%%/samples/drumsynth/effects/impulses.ds
+%%DATADIR%%/samples/drumsynth/effects/Glass.ds
+%%DATADIR%%/samples/drumsynth/effects/Ringing.ds
+%%DATADIR%%/samples/drumsynth/effects/Glass_rn.ds
+%%DATADIR%%/samples/drumsynth/effects/Cicada.ds
+%%DATADIR%%/samples/drumsynth/effects/hammer2.ds
+%%DATADIR%%/samples/drumsynth/effects/dialing.ds
+%%DATADIR%%/samples/drumsynth/effects/Sonar.ds
+%%DATADIR%%/samples/drumsynth/effects/loop.ds
+%%DATADIR%%/samples/drumsynth/effects/Reverse.ds
+%%DATADIR%%/samples/drumsynth/effects/Laser.ds
+%%DATADIR%%/samples/drumsynth/effects/Scissors.ds
+%%DATADIR%%/samples/drumsynth/effects/Bubble.ds
+%%DATADIR%%/samples/drumsynth/effects/Gunshot.ds
+%%DATADIR%%/samples/drumsynth/effects/thunder.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Cym.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_S_B.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Kick.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_K_K.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Tom.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_K_H.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Hat.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Snare.ds
+%%DATADIR%%/samples/drumsynth/farfisa/Fisa_Bongo.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/electro_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/oil_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_compressd_open.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/pedal_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_open.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/hardhat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/band_pass_cymbal.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_open_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_open_high_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/dusty_simple_oh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/slide_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_1.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/hip_overtone_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/squeeze_me_open_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/hardly_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/amen_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/simple_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat_half_open.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/shaker_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/stack_hhh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/hardhat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/oh_so_high_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/large_open_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/drama_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/starry_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_1.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_open_hat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/electrometallic_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/threshold_noise.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/loaded_open_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/clicky_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/errie_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/basic_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/squeeze_me_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_3.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/fedora_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/softie_lo-fi_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/static_tone_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_ride_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/dusty_simple_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/threshold_noise_open.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat_3.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/q_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/drama_hat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/starry_short_oh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/loaded_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/bright_808_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/live_sound_oh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/get_out.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/live_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_open_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/bring_me_out.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/q_ride_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/slick_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/sleepy_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/shaker_ride_long.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/feelin'_high_hat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/the_sting_hat_2.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/sandy_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/tarp_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/lighthat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/close_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/little_hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/live_sound_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/flat_cymbal.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/default_hi-hat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/heavy_electrihat.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/scratchy_hh.ds
+%%DATADIR%%/samples/drumsynth/misc_hats/touch_me_hat.ds
+%%DATADIR%%/samples/drumsynth/cr78/Rim.ds
+%%DATADIR%%/samples/drumsynth/cr78/Conga.ds
+%%DATADIR%%/samples/drumsynth/cr78/Hihat.ds
+%%DATADIR%%/samples/drumsynth/cr78/Maracas.ds
+%%DATADIR%%/samples/drumsynth/cr78/Tamb.ds
+%%DATADIR%%/samples/drumsynth/cr78/Kick.ds
+%%DATADIR%%/samples/drumsynth/cr78/Cymbal.ds
+%%DATADIR%%/samples/drumsynth/cr78/Snare.ds
+%%DATADIR%%/samples/drumsynth/cr78/Bongo_h.ds
+%%DATADIR%%/samples/drumsynth/cr78/Clave.ds
+%%DATADIR%%/samples/drumsynth/cr78/Bongo_l.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_stk.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cga1.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_kik.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cga2.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tom4.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cgam.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tom3.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tamb.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tom5.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cab.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_snr.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cow.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_clp.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tom1.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_cga3.ds
+%%DATADIR%%/samples/drumsynth/linn/linn_tom2.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Rim.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Conga_m.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Hat_o.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Hat_c.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Cowbell.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Conga_l.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Kick.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Cymbal.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Snare.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Clave.ds
+%%DATADIR%%/samples/drumsynth/cr8000/Clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/pitch_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/pitch_clap_2.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/electro_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/big_beat_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/clap2.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/bright_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/shutter_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/classic_clap.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/u_don't_kno.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/clap_layer.ds
+%%DATADIR%%/samples/drumsynth/misc_claps/filter_clappy.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/more_bass_2.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/the_funk.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/jarre_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/low_end_hum.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/melodictone.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/warm_bass.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/synthbass.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/filter_idea_bd.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/depth_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/more_bass.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/a_day_in_the_noise.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/smooth_bass.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/jungle_laser.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/rubber.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/dirty_a.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/bumble_bass.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/solid.ds
+%%DATADIR%%/samples/drumsynth/misc_bass/metal_bass.ds
+%%DATADIR%%/samples/drumsynth/ferraro/worm_bass.ds
+%%DATADIR%%/samples/drumsynth/ferraro/jaguar_hats.ds
+%%DATADIR%%/samples/drumsynth/ferraro/eel_bass.ds
+%%DATADIR%%/samples/drumsynth/ferraro/feed_this.ds
+%%DATADIR%%/samples/drumsynth/ferraro/grumpy_buzzard.ds
+%%DATADIR%%/samples/drumsynth/ferraro/curb_meat_bass.ds
+%%DATADIR%%/samples/drumsynth/ferraro/radio_hats.ds
+%%DATADIR%%/samples/drumsynth/ferraro/gerbil_snare.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/my_atari_memory.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/wooo.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/dirty_transform.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/sickly_wineglass.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/experiment_2_-_turn_off_the_tv.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/slow_moving_traffic.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/alarming_buzz_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/machine_drone.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/q_zone_drone.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/obligatory_ufo_liftoff.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/gmaj_lo-fi_chord.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/numb.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/halt_variety.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/laser_gun_&_ricochet.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/electric_intro_to_a.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/the_tweek.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/experiment_4_-_clean.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/sci-fi.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/recption.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/oom_pulse.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/metal_twist.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/end_of_broadcast_day.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/2-bit_zone_drone.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/obligatory_ufo_liftoff_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/transportive.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/flipper.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/yeah_hit.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/a_blast.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/click.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/experiment_1.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/synthetic_dive.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/ufo_buzz.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/hip-hop_stop.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/experiment_3_-_the_transform.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/owwww.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/dirty_transform_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/formant_techno.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/ufo_buzz_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/jaggies.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/elekperc1.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/new_sweep.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/noise_filtering.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/hip-hop_stop_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/zipper.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/funky_stab.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/electric_waves_out_my_window.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/wipeout.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/entre.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/ambient_backgroud.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/gmaj_lo-fi_chord_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/distorion_oscilator.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/frequency_revolution.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/coo.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/alarming_buzz.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/detonate.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/elekperc2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/future.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/sci-fi_door_open.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/howdy_oil_barrel.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/hollow.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/what_time_is_it.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/across_the_universe.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/modular_fm_counterpoint.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/playing_in_water.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/synthetic_dive_crust.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/feedback.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/modular.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/oom_paa.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/plot_thickens_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/alien_curiousity.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/f#m7_space_signal.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/yeah_hit_dry.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/alarm_3.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/2_bit_click.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/sign_off.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/punch_flange_2.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/flashy_wind.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/punch_flange.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/the_plot_thickens.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/multi-ping.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/fried_food_for_dinner.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/teeth.ds
+%%DATADIR%%/samples/drumsynth/misc_fx/not_trying_too_hard.ds
+%%DATADIR%%/samples/drumsynth/electro/Hi-q_2.ds
+%%DATADIR%%/samples/drumsynth/electro/H_closed.ds
+%%DATADIR%%/samples/drumsynth/electro/s_eq.ds
+%%DATADIR%%/samples/drumsynth/electro/H_open.ds
+%%DATADIR%%/samples/drumsynth/electro/K_Linn.ds
+%%DATADIR%%/samples/drumsynth/electro/S_reverb.ds
+%%DATADIR%%/samples/drumsynth/electro/S_Linn.ds
+%%DATADIR%%/samples/drumsynth/electro/K_reverb.ds
+%%DATADIR%%/samples/drumsynth/electro/Hi-q.ds
+%%DATADIR%%/samples/drumsynth/electro/Syntom_1.ds
+%%DATADIR%%/samples/drumsynth/electro/K_8bit.ds
+%%DATADIR%%/samples/drumsynth/electro/S_8bit.ds
+%%DATADIR%%/samples/drumsynth/electro/Boom.ds
+%%DATADIR%%/samples/drumsynth/electro/Syntom_2.ds
+%%DATADIR%%/samples/drumsynth/tr808/Snr_snap.ds
+%%DATADIR%%/samples/drumsynth/tr808/Tom_hi.ds
+%%DATADIR%%/samples/drumsynth/tr808/Hat_o.ds
+%%DATADIR%%/samples/drumsynth/tr808/Kicklong.ds
+%%DATADIR%%/samples/drumsynth/tr808/Hat_c.ds
+%%DATADIR%%/samples/drumsynth/tr808/Cowbell.ds
+%%DATADIR%%/samples/drumsynth/tr808/Tom_mid.ds
+%%DATADIR%%/samples/drumsynth/tr808/Tom_lo.ds
+%%DATADIR%%/samples/drumsynth/tr808/Kick.ds
+%%DATADIR%%/samples/drumsynth/tr808/Rimshot.ds
+%%DATADIR%%/samples/drumsynth/tr808/Kickhard.ds
+%%DATADIR%%/samples/drumsynth/tr808/Handclap.ds
+%%DATADIR%%/samples/drumsynth/tr808/Snare.ds
+%%DATADIR%%/samples/drumsynth/tr808/Clave.ds
+%%DATADIR%%/samples/drumsynth/tr808/Ride.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/short_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/short_tom_1.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/clav.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/ringmod_rim.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/metallic_node.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/type_noise.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/video_game_clip.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/mild_tamb.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/q_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/torn_tweeter.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/hollow_wood_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/clav_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/slinky_tamb.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/super_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/funkay_timbale.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/hammond_cowbell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/layered_sleigh_bell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/sickly_cowbell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/ambient_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/low_key_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_1.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/limited_shaker.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/poppy.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/hollow_wood.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/shaaka_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/timbale_sound.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/funk_box_perc_1.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/door_knock.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/it's_the_simple_things.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/deep_cowbell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/shaaka.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/very_high_clav.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_3.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/resonant_knock.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/mellow_shake.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/dist_tom_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/feel_me_clinky.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/ol'_skool_shake.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tweety_cowbell_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tom_tone.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/weird_1.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/short_tom_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/lo-fi_tamb.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/fidelity_faction_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/bell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/dist_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tone_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/ringmod_rim_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/give_it_to_me.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/wood_and_metal.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/light_tamb_3.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/funk_box_perc_2.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/like_a_tabla_1.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tommy.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tom.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/sweetness_shaker.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/low_ping.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/electric_clav.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/tweety_cowbell.ds
+%%DATADIR%%/samples/drumsynth/misc_perc/bell_rim.ds
+%%DATADIR%%/samples/drumsynth/instrument/trumpet.ds
+%%DATADIR%%/samples/drumsynth/instrument/upright_bass.ds
+%%DATADIR%%/samples/drumsynth/instrument/techno_stab.ds
+%%DATADIR%%/samples/drumsynth/instrument/Moog_bass.ds
+%%DATADIR%%/samples/drumsynth/instrument/pizzi.ds
+%%DATADIR%%/samples/drumsynth/instrument/sweep.ds
+%%DATADIR%%/samples/drumsynth/instrument/flute.ds
+%%DATADIR%%/samples/drumsynth/instrument/whistler.ds
+%%DATADIR%%/samples/drumsynth/instrument/soft_piano.ds
+%%DATADIR%%/samples/drumsynth/instrument/Oboe.ds
+%%DATADIR%%/samples/drumsynth/instrument/mute_bass.ds
+%%DATADIR%%/samples/drumsynth/instrument/E_Piano.ds
+%%DATADIR%%/samples/drumsynth/instrument/square_lead.ds
+%%DATADIR%%/samples/drumsynth/instrument/violin.ds
+%%DATADIR%%/samples/drumsynth/instrument/FM_Bass.ds
+%%DATADIR%%/samples/drumsynth/instrument/Temple_Bell.ds
+%%DATADIR%%/samples/drumsynth/instrument/tinkle.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Kick.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Hat_C.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Snare.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Tom_H.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Hat_O.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Tom_L.ds
+%%DATADIR%%/samples/drumsynth/tr606/TR606_Cymbal.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_tom2.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_tom1.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_cym.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_hat.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_snare.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_kick.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_cui2.ds
+%%DATADIR%%/samples/drumsynth/tr77/Tr77_cui1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone2.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Fp1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Randion1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone3.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone5.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone17.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone11.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone15.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Throaties1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone10.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone16.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Squelb.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone6.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone18.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone9.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone20.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone7.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Mist2.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Mist1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone8.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone12.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone_float1.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone14.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone4.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Tone19.ds
+%%DATADIR%%/samples/drumsynth/magnetboy/Eye_Eye.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Ride3.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Plain_Kick.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Ride2.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Brush1.ds
+%%DATADIR%%/samples/drumsynth/acoustic/JazzSnr_H.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Kick.ds
+%%DATADIR%%/samples/drumsynth/acoustic/JazzKick.ds
+%%DATADIR%%/samples/drumsynth/acoustic/K_Muffle.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Snare.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Brush2.ds
+%%DATADIR%%/samples/drumsynth/acoustic/JazzSnr.ds
+%%DATADIR%%/samples/drumsynth/acoustic/Ride.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/ramacymlong.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/vibra.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/ride6.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/ramacymshort.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/zurrr.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/wood.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/snare5.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/kick.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/hihatopclo.ds
+%%DATADIR%%/samples/drumsynth/jorgensohn/wood2.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/confusion.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/who_hears_all_sound.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/shocking_kiss.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_squeek.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/just_the_tweet.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/siren_sing.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/yr_tv_will_be_next.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/metal_noise_shot.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/casio_poppin.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/slide_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/cymbal_madness.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/cold_shot.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/lo-finess.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim_3.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/startling_one.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/category.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/paging_the_jetsons.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/tone_percussion.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/depth_fx.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/applied_engineering.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/long_quack.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/pan.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/wee_dog.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/lo-fi_metal.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electric_triangle.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/'lectro_spliff.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/spaceness.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/lo-fi_house_c.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/g_question.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/general_obscurity.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/pleasant_combo.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_perc_long.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/ring.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_rim_2.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/ringing_sn.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/hard_bork.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/what_to_do_at_220.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/rockin_electro_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/rich_bd.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/clean_rock_bd.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/electro_perc_short.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/zappy_bells.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/open_reso.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/tweet.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/long_q_2.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/a_round_thing.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/dialed.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/space_dynamic.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/fuzzy_q_bd.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/chrip_q.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/bottle_bill_fx.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/q-ziq_for_the_masses.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/why_hit.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/long_q_1.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/atmosphere_of_space.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/long_q_3.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/hello_q.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/doom_bump.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/cheap_fx.ds
+%%DATADIR%%/samples/drumsynth/misc_electro/low_bit_tom.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/eno's_lift.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/strong_c_dub_bass.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/eno's_ride.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/that_house_chord_cm.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/who_loves_ya,_baby.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/sync_man.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/fm_c_bass_burst.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/fur_strings_2.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/flat_square_c.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/dark_and_sweet_fm.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/my_red_hot_guitar.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/it's_the_music_tom_c.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/chorded_perc.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/raver_organ.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/eno's_pad.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/fur_strings.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/vibrato_pad.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/sync_drift.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/casio_piano_c.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/layered_bass_synth_c.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/dist_high_c.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/consumer_fm.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/wowmelodictone.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/average_rock.ds
+%%DATADIR%%/samples/drumsynth/misc_synth/c_maj_chord.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/popclap.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/popsnare.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/k_soft.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/snare&hat.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/S_hollow.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/hat_rattle.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/k_muffle.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/old_kik.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/Hat_O.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/hat.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/clapfilt.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/s_pitch.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/s_spit.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/k_hard.ds
+%%DATADIR%%/samples/drumsynth/r_n_b/x_backwd.ds
+%%DATADIR%%/samples/drumsynth/misc/cymbal.ds
+%%DATADIR%%/samples/drumsynth/misc/flat_tire.ds
+%%DATADIR%%/samples/drumsynth/misc/RimShot.ds
+%%DATADIR%%/samples/drumsynth/misc/Simple-r.ds
+%%DATADIR%%/samples/drumsynth/misc/skiwlz_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/questoin_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/reverb_please_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/sounding_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/airbrush_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/odd_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/clearly_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/N_vlow.ds
+%%DATADIR%%/samples/drumsynth/misc/heady_mix_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/mack_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/909_hard_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/funky_trashcan_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/simple_click_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/nosie_calling_kick_2.ds
+%%DATADIR%%/samples/drumsynth/misc/dist_sub_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/clean_low_key_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/neo808.ds
+%%DATADIR%%/samples/drumsynth/misc/Distant_Thunder.ds
+%%DATADIR%%/samples/drumsynth/misc/amen_sn_1.ds
+%%DATADIR%%/samples/drumsynth/misc/rimshot_1.ds
+%%DATADIR%%/samples/drumsynth/misc/bug_into_water.ds
+%%DATADIR%%/samples/drumsynth/misc/lovely_clean_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/light_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/Saber_fight.ds
+%%DATADIR%%/samples/drumsynth/misc/hard_hittin.ds
+%%DATADIR%%/samples/drumsynth/misc/noise_calling_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/rubbery_deep_house_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/battle_hook_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/loudness_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/this_snare_spells_electronic.ds
+%%DATADIR%%/samples/drumsynth/misc/mello_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/ambient_noise_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/hed_chunk_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/fm.ds
+%%DATADIR%%/samples/drumsynth/misc/terror_n_yr_hood_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/electro_dnb_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/beat_box_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/dirty_world_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/heavy.ds
+%%DATADIR%%/samples/drumsynth/misc/pop_1_off_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/Simple-s.ds
+%%DATADIR%%/samples/drumsynth/misc/hipster_joint_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/splatter.ds
+%%DATADIR%%/samples/drumsynth/misc/hardcore_a_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/wobbly_thumb_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/lower_electro_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/end_transmission.ds
+%%DATADIR%%/samples/drumsynth/misc/simon's_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/test.ds
+%%DATADIR%%/samples/drumsynth/misc/tomita_clip.ds
+%%DATADIR%%/samples/drumsynth/misc/simple-h.ds
+%%DATADIR%%/samples/drumsynth/misc/noise_clip.ds
+%%DATADIR%%/samples/drumsynth/misc/change_the_channel_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/whoa_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/bright_house_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/rimmy_noise.ds
+%%DATADIR%%/samples/drumsynth/misc/r+b_fantasy_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/puppy_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/gimme_a_hard_tone.ds
+%%DATADIR%%/samples/drumsynth/misc/ot_sine.ds
+%%DATADIR%%/samples/drumsynth/misc/difference_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/b1_2.ds
+%%DATADIR%%/samples/drumsynth/misc/think_sn_2.ds
+%%DATADIR%%/samples/drumsynth/misc/wobble_wobble.ds
+%%DATADIR%%/samples/drumsynth/misc/N_low.ds
+%%DATADIR%%/samples/drumsynth/misc/sticky_q_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/compression_does_it_808.ds
+%%DATADIR%%/samples/drumsynth/misc/mind_ya_heds.ds
+%%DATADIR%%/samples/drumsynth/misc/deep_bauble_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/every_909.ds
+%%DATADIR%%/samples/drumsynth/misc/simple-k.ds
+%%DATADIR%%/samples/drumsynth/misc/just_the_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/sounds_like_a_low_tom.ds
+%%DATADIR%%/samples/drumsynth/misc/another_example_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/hard_electro_brush_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/warm_deep_house_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/dist_sub_kick_2.ds
+%%DATADIR%%/samples/drumsynth/misc/type_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/ot_34.ds
+%%DATADIR%%/samples/drumsynth/misc/psychoacoutic_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/snappy_809.ds
+%%DATADIR%%/samples/drumsynth/misc/fattie_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/Simple-c.ds
+%%DATADIR%%/samples/drumsynth/misc/hard_electronic_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/gabbakick.ds
+%%DATADIR%%/samples/drumsynth/misc/short_909.ds
+%%DATADIR%%/samples/drumsynth/misc/missing_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/few_people_will_use_this_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/calamity_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/electro_snare_layer.ds
+%%DATADIR%%/samples/drumsynth/misc/n_mid.ds
+%%DATADIR%%/samples/drumsynth/misc/laughter_and_jellybeans_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/invisible_909_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/kneel_and_buzz.ds
+%%DATADIR%%/samples/drumsynth/misc/q_kick_2.ds
+%%DATADIR%%/samples/drumsynth/misc/slepper_n_the_wilderness.ds
+%%DATADIR%%/samples/drumsynth/misc/deep_tones.ds
+%%DATADIR%%/samples/drumsynth/misc/fried_food.ds
+%%DATADIR%%/samples/drumsynth/misc/amen_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/application_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/hardersnare.ds
+%%DATADIR%%/samples/drumsynth/misc/chow_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/clappy_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/rimshot_2.ds
+%%DATADIR%%/samples/drumsynth/misc/yet_another_electric_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/rm.ds
+%%DATADIR%%/samples/drumsynth/misc/q'ey_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/smooth_rim.ds
+%%DATADIR%%/samples/drumsynth/misc/overdriver_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/tone.ds
+%%DATADIR%%/samples/drumsynth/misc/big_80's.ds
+%%DATADIR%%/samples/drumsynth/misc/manipulate_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/zoom#4.ds
+%%DATADIR%%/samples/drumsynth/misc/bulge_n_yr_woofer.ds
+%%DATADIR%%/samples/drumsynth/misc/Tone_sw2.ds
+%%DATADIR%%/samples/drumsynth/misc/crusty_bump.ds
+%%DATADIR%%/samples/drumsynth/misc/bouncy809bd.ds
+%%DATADIR%%/samples/drumsynth/misc/many_frequencies.ds
+%%DATADIR%%/samples/drumsynth/misc/decompression_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/crusty_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/b1_9.ds
+%%DATADIR%%/samples/drumsynth/misc/missing_snare_2.ds
+%%DATADIR%%/samples/drumsynth/misc/12-bit_heavy_hitter.ds
+%%DATADIR%%/samples/drumsynth/misc/special_man_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/power_out.ds
+%%DATADIR%%/samples/drumsynth/misc/think_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/trashyovertones.ds
+%%DATADIR%%/samples/drumsynth/misc/yr_808_hummer.ds
+%%DATADIR%%/samples/drumsynth/misc/punchy_clean_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/b1_0.ds
+%%DATADIR%%/samples/drumsynth/misc/beefy_wack.ds
+%%DATADIR%%/samples/drumsynth/misc/rubber_'82.ds
+%%DATADIR%%/samples/drumsynth/misc/hardcore_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/bumpin_quickie.ds
+%%DATADIR%%/samples/drumsynth/misc/hi_pic.ds
+%%DATADIR%%/samples/drumsynth/misc/big_sleeper_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/electronic_rim.ds
+%%DATADIR%%/samples/drumsynth/misc/usgae_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/original_tone_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/more_snap.ds
+%%DATADIR%%/samples/drumsynth/misc/tchak_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/ring_fray_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/ring_mod_drone_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/buff_sound.ds
+%%DATADIR%%/samples/drumsynth/misc/stiffy_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/AAH.ds
+%%DATADIR%%/samples/drumsynth/misc/ultra_electro_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/hi-pass.ds
+%%DATADIR%%/samples/drumsynth/misc/'lectro_hammer.ds
+%%DATADIR%%/samples/drumsynth/misc/B1_B2.ds
+%%DATADIR%%/samples/drumsynth/misc/another_909_moment.ds
+%%DATADIR%%/samples/drumsynth/misc/very_basic_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/close_mic_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/gimmie_a_tone.ds
+%%DATADIR%%/samples/drumsynth/misc/hip-hop_fantasy_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/sweet_tight_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/pleasure_factory_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/it's_like_that_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/ot_12.ds
+%%DATADIR%%/samples/drumsynth/misc/bauble_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/tone_deg.ds
+%%DATADIR%%/samples/drumsynth/misc/verylong.ds
+%%DATADIR%%/samples/drumsynth/misc/hot_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/lo-fi_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/serious_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/lo-fi_rim.ds
+%%DATADIR%%/samples/drumsynth/misc/Tone_dis.ds
+%%DATADIR%%/samples/drumsynth/misc/and_loud_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/neo808_2.ds
+%%DATADIR%%/samples/drumsynth/misc/fatness.ds
+%%DATADIR%%/samples/drumsynth/misc/'lectro_square_hammer.ds
+%%DATADIR%%/samples/drumsynth/misc/hit_me_wooden_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/blended_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/hot_morning_bass_drum.ds
+%%DATADIR%%/samples/drumsynth/misc/Tone_swp.ds
+%%DATADIR%%/samples/drumsynth/misc/think_sn_1.ds
+%%DATADIR%%/samples/drumsynth/misc/warm_digi_808_click.ds
+%%DATADIR%%/samples/drumsynth/misc/noise.ds
+%%DATADIR%%/samples/drumsynth/misc/feel_me!.ds
+%%DATADIR%%/samples/drumsynth/misc/n_hi.ds
+%%DATADIR%%/samples/drumsynth/misc/lo-fi_march.ds
+%%DATADIR%%/samples/drumsynth/misc/large_hall_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/basic_808_click_hum.ds
+%%DATADIR%%/samples/drumsynth/misc/hitthosesubs.ds
+%%DATADIR%%/samples/drumsynth/misc/muted_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/different_909_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/verby_soundin_808.ds
+%%DATADIR%%/samples/drumsynth/misc/breathing_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/softsnare.ds
+%%DATADIR%%/samples/drumsynth/misc/fuzzy_sn.ds
+%%DATADIR%%/samples/drumsynth/misc/b1_5.ds
+%%DATADIR%%/samples/drumsynth/misc/transient_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/more_basic_bd.ds
+%%DATADIR%%/samples/drumsynth/misc/big_80's_2.ds
+%%DATADIR%%/samples/drumsynth/misc/i_luv_u_fat_noise.ds
+%%DATADIR%%/samples/drumsynth/misc/clean_soft_808.ds
+%%DATADIR%%/samples/drumsynth/misc/sloppy_electric.ds
+%%DATADIR%%/samples/drumsynth/misc/Clap.ds
+%%DATADIR%%/samples/drumsynth/misc/break_kick.ds
+%%DATADIR%%/samples/drumsynth/misc/tone_snare.ds
+%%DATADIR%%/samples/drumsynth/misc/buff_hit.ds
 %%DATADIR%%/themes/default/dont_know.png
-%%DATADIR%%/themes/default/drum.png
-%%DATADIR%%/themes/default/edit_copy.png
-%%DATADIR%%/themes/default/edit_cut.png
-%%DATADIR%%/themes/default/edit_draw.png
-%%DATADIR%%/themes/default/edit_erase.png
-%%DATADIR%%/themes/default/edit_move.png
-%%DATADIR%%/themes/default/edit_paste.png
-%%DATADIR%%/themes/default/edit_redo.png
-%%DATADIR%%/themes/default/edit_rename.png
-%%DATADIR%%/themes/default/edit_select.png
-%%DATADIR%%/themes/default/edit_undo.png
-%%DATADIR%%/themes/default/effect_plugin.png
-%%DATADIR%%/themes/default/envelope_graph.png
-%%DATADIR%%/themes/default/error.png
-%%DATADIR%%/themes/default/exit.png
-%%DATADIR%%/themes/default/exp_wave_active.png
-%%DATADIR%%/themes/default/exp_wave_inactive.png
-%%DATADIR%%/themes/default/factory_files.png
-%%DATADIR%%/themes/default/fader_background.png
-%%DATADIR%%/themes/default/fader_knob.png
-%%DATADIR%%/themes/default/fader_leds.png
-%%DATADIR%%/themes/default/filter_2lp.png
-%%DATADIR%%/themes/default/filter_ap.png
-%%DATADIR%%/themes/default/filter_bp.png
-%%DATADIR%%/themes/default/filter_hp.png
-%%DATADIR%%/themes/default/filter_lp.png
-%%DATADIR%%/themes/default/filter_notch.png
-%%DATADIR%%/themes/default/folder.png
-%%DATADIR%%/themes/default/folder_locked.png
-%%DATADIR%%/themes/default/folder_opened.png
-%%DATADIR%%/themes/default/freeze.png
-%%DATADIR%%/themes/default/frozen.png
-%%DATADIR%%/themes/default/fx_mixer.png
-%%DATADIR%%/themes/default/hand.png
-%%DATADIR%%/themes/default/help.png
-%%DATADIR%%/themes/default/hint.png
-%%DATADIR%%/themes/default/home.png
-%%DATADIR%%/themes/default/hq_mode.png
-%%DATADIR%%/themes/default/icon.png
-%%DATADIR%%/themes/default/instrument_track.png
-%%DATADIR%%/themes/default/keep_stop_position.png
-%%DATADIR%%/themes/default/knob01.png
-%%DATADIR%%/themes/default/knob02.png
-%%DATADIR%%/themes/default/knob03.png
-%%DATADIR%%/themes/default/knob04.png
-%%DATADIR%%/themes/default/lcd_19green.png
-%%DATADIR%%/themes/default/lcd_19red.png
-%%DATADIR%%/themes/default/lcd_21pink.png
-%%DATADIR%%/themes/default/led_green.png
-%%DATADIR%%/themes/default/led_off.png
-%%DATADIR%%/themes/default/led_red.png
-%%DATADIR%%/themes/default/led_yellow.png
-%%DATADIR%%/themes/default/lfo_controller_artwork.png
-%%DATADIR%%/themes/default/lfo_d100_active.png
-%%DATADIR%%/themes/default/lfo_d100_inactive.png
-%%DATADIR%%/themes/default/lfo_graph.png
-%%DATADIR%%/themes/default/lfo_x100_active.png
-%%DATADIR%%/themes/default/lfo_x100_inactive.png
-%%DATADIR%%/themes/default/lfo_x1_active.png
-%%DATADIR%%/themes/default/lfo_x1_inactive.png
-%%DATADIR%%/themes/default/loop_point.png
-%%DATADIR%%/themes/default/loop_points_off.png
-%%DATADIR%%/themes/default/loop_points_on.png
-%%DATADIR%%/themes/default/main_toolbar_bg.png
-%%DATADIR%%/themes/default/master_pitch.png
-%%DATADIR%%/themes/default/master_volume.png
-%%DATADIR%%/themes/default/midi_file.png
-%%DATADIR%%/themes/default/moog_saw_wave_active.png
-%%DATADIR%%/themes/default/moog_saw_wave_inactive.png
-%%DATADIR%%/themes/default/muted.png
-%%DATADIR%%/themes/default/note.png
-%%DATADIR%%/themes/default/note_double_whole.png
-%%DATADIR%%/themes/default/note_eighth.png
-%%DATADIR%%/themes/default/note_half.png
-%%DATADIR%%/themes/default/note_none.png
-%%DATADIR%%/themes/default/note_quarter.png
-%%DATADIR%%/themes/default/note_sixteenth.png
-%%DATADIR%%/themes/default/note_thirtysecond.png
-%%DATADIR%%/themes/default/note_tripleteighth.png
-%%DATADIR%%/themes/default/note_triplethalf.png
-%%DATADIR%%/themes/default/note_tripletquarter.png
-%%DATADIR%%/themes/default/note_tripletsixteenth.png
-%%DATADIR%%/themes/default/note_tripletthirtysecond.png
-%%DATADIR%%/themes/default/note_whole.png
-%%DATADIR%%/themes/default/output_graph.png
-%%DATADIR%%/themes/default/pause.png
-%%DATADIR%%/themes/default/piano.png
-%%DATADIR%%/themes/default/play.png
-%%DATADIR%%/themes/default/playpos_marker.png
-%%DATADIR%%/themes/default/plugins.png
-%%DATADIR%%/themes/default/ports.png
-%%DATADIR%%/themes/default/pr_black_key.png
-%%DATADIR%%/themes/default/pr_black_key_pressed.png
-%%DATADIR%%/themes/default/pr_white_key_big.png
-%%DATADIR%%/themes/default/pr_white_key_big_pressed.png
-%%DATADIR%%/themes/default/pr_white_key_small.png
-%%DATADIR%%/themes/default/pr_white_key_small_pressed.png
-%%DATADIR%%/themes/default/preset_file.png
-%%DATADIR%%/themes/default/project_export.png
-%%DATADIR%%/themes/default/project_file.png
 %%DATADIR%%/themes/default/project_import.png
-%%DATADIR%%/themes/default/project_new.png
-%%DATADIR%%/themes/default/project_new_from_template.png
 %%DATADIR%%/themes/default/project_notes.png
-%%DATADIR%%/themes/default/project_open.png
+%%DATADIR%%/themes/default/triangle_wave_active.png
+%%DATADIR%%/themes/default/splash.png
+%%DATADIR%%/themes/default/square_wave_inactive.png
+%%DATADIR%%/themes/default/back_to_start.png
+%%DATADIR%%/themes/default/knob02.png
+%%DATADIR%%/themes/default/step_btn_on.png
+%%DATADIR%%/themes/default/filter_2lp.png
+%%DATADIR%%/themes/default/hint.png
+%%DATADIR%%/themes/default/text_bold.png
+%%DATADIR%%/themes/default/add_bb_track.png
+%%DATADIR%%/themes/default/muted.png
+%%DATADIR%%/themes/default/black_key_pressed.png
+%%DATADIR%%/themes/default/square_wave_active.png
+%%DATADIR%%/themes/default/note.png
+%%DATADIR%%/themes/default/midi_file.png
+%%DATADIR%%/themes/default/frozen.png
+%%DATADIR%%/themes/default/white_key.png
+%%DATADIR%%/themes/default/toolbar_bg.png
+%%DATADIR%%/themes/default/autoscroll_on.png
+%%DATADIR%%/themes/default/zoom_y.png
+%%DATADIR%%/themes/default/apply.png
+%%DATADIR%%/themes/default/lfo_d100_inactive.png
+%%DATADIR%%/themes/default/play.png
+%%DATADIR%%/themes/default/back_to_zero.png
+%%DATADIR%%/themes/default/stop.png
+%%DATADIR%%/themes/default/fader_background.png
+%%DATADIR%%/themes/default/pr_white_key_small_pressed.png
+%%DATADIR%%/themes/default/lcd_19green.png
+%%DATADIR%%/themes/default/sin_wave_active.png
+%%DATADIR%%/themes/default/lfo_x1_active.png
+%%DATADIR%%/themes/default/fader_knob.png
+%%DATADIR%%/themes/default/text_center.png
+%%DATADIR%%/themes/default/led_yellow.png
+%%DATADIR%%/themes/default/led_green.png
+%%DATADIR%%/themes/default/text_under.png
+%%DATADIR%%/themes/default/zoom.png
+%%DATADIR%%/themes/default/pr_white_key_big.png
+%%DATADIR%%/themes/default/saw_wave_inactive.png
+%%DATADIR%%/themes/default/factory_files.png
+%%DATADIR%%/themes/default/sin_wave_inactive.png
+%%DATADIR%%/themes/default/black_key.png
+%%DATADIR%%/themes/default/note_tripletthirtysecond.png
+%%DATADIR%%/themes/default/background_artwork.png
+%%DATADIR%%/themes/default/unknown_file.png
+%%DATADIR%%/themes/default/cpuload_leds.png
+%%DATADIR%%/themes/default/note_triplethalf.png
+%%DATADIR%%/themes/default/loop_point.png
+%%DATADIR%%/themes/default/folder.png
+%%DATADIR%%/themes/default/master_pitch.png
+%%DATADIR%%/themes/default/edit_undo.png
 %%DATADIR%%/themes/default/project_open_down.png
-%%DATADIR%%/themes/default/project_open_recent.png
+%%DATADIR%%/themes/default/controller_bg.png
+%%DATADIR%%/themes/default/note_quarter.png
+%%DATADIR%%/themes/default/knob01.png
+%%DATADIR%%/themes/default/timeline.png
+%%DATADIR%%/themes/default/note_whole.png
+%%DATADIR%%/themes/default/setup_audio.png
+%%DATADIR%%/themes/default/add_sample_track.png
+%%DATADIR%%/themes/default/zoom_x.png
+%%DATADIR%%/themes/default/step_btn_add.png
+%%DATADIR%%/themes/default/autoscroll_off.png
+%%DATADIR%%/themes/default/setup_directories.png
+%%DATADIR%%/themes/default/output_graph.png
+%%DATADIR%%/themes/default/effect_plugin.png
+%%DATADIR%%/themes/default/project_export.png
+%%DATADIR%%/themes/default/playpos_marker.png
+%%DATADIR%%/themes/default/pr_black_key_pressed.png
+%%DATADIR%%/themes/default/fader_leds.png
+%%DATADIR%%/themes/default/step_btn_remove.png
+%%DATADIR%%/themes/default/arp_down.png
+%%DATADIR%%/themes/default/project_open.png
+%%DATADIR%%/themes/default/master_volume.png
+%%DATADIR%%/themes/default/uhoh.png
+%%DATADIR%%/themes/default/combobox_bg.png
+%%DATADIR%%/themes/default/setup_general.png
+%%DATADIR%%/themes/default/edit_select.png
+%%DATADIR%%/themes/default/round_square_wave_inactive.png
+%%DATADIR%%/themes/default/loop_points_on.png
+%%DATADIR%%/themes/default/arp_sort.png
+%%DATADIR%%/themes/default/led_off.png
+%%DATADIR%%/themes/default/edit_redo.png
+%%DATADIR%%/themes/default/drum.png
+%%DATADIR%%/themes/default/note_tripleteighth.png
+%%DATADIR%%/themes/default/knob04.png
+%%DATADIR%%/themes/default/exp_wave_active.png
+%%DATADIR%%/themes/default/hq_mode.png
+%%DATADIR%%/themes/default/note_tripletsixteenth.png
+%%DATADIR%%/themes/default/step_btn_off.png
+%%DATADIR%%/themes/default/lfo_x1_inactive.png
+%%DATADIR%%/themes/default/automation.png
+%%DATADIR%%/themes/default/lcd_19red.png
+%%DATADIR%%/themes/default/filter_notch.png
 %%DATADIR%%/themes/default/project_save.png
 %%DATADIR%%/themes/default/project_saveas.png
-%%DATADIR%%/themes/default/quantize.png
-%%DATADIR%%/themes/default/record.png
-%%DATADIR%%/themes/default/record_accompany.png
-%%DATADIR%%/themes/default/reload.png
-%%DATADIR%%/themes/default/round_square_wave_active.png
-%%DATADIR%%/themes/default/round_square_wave_inactive.png
-%%DATADIR%%/themes/default/sample_file.png
-%%DATADIR%%/themes/default/sample_track.png
-%%DATADIR%%/themes/default/saw_wave_active.png
-%%DATADIR%%/themes/default/saw_wave_inactive.png
-%%DATADIR%%/themes/default/setup_audio.png
-%%DATADIR%%/themes/default/setup_directories.png
-%%DATADIR%%/themes/default/setup_general.png
-%%DATADIR%%/themes/default/setup_midi.png
-%%DATADIR%%/themes/default/setup_performance.png
-%%DATADIR%%/themes/default/sin_wave_active.png
-%%DATADIR%%/themes/default/sin_wave_inactive.png
-%%DATADIR%%/themes/default/songeditor.png
-%%DATADIR%%/themes/default/splash.png
-%%DATADIR%%/themes/default/square_wave_active.png
-%%DATADIR%%/themes/default/square_wave_inactive.png
-%%DATADIR%%/themes/default/step_btn_add.png
-%%DATADIR%%/themes/default/step_btn_off.png
-%%DATADIR%%/themes/default/step_btn_off_light.png
-%%DATADIR%%/themes/default/step_btn_on.png
-%%DATADIR%%/themes/default/step_btn_on_100.png
-%%DATADIR%%/themes/default/step_btn_on_yellow.png
-%%DATADIR%%/themes/default/step_btn_remove.png
-%%DATADIR%%/themes/default/stop.png
-%%DATADIR%%/themes/default/style.css
-%%DATADIR%%/themes/default/tempo_sync.png
-%%DATADIR%%/themes/default/text_block.png
-%%DATADIR%%/themes/default/text_bold.png
-%%DATADIR%%/themes/default/text_center.png
-%%DATADIR%%/themes/default/text_italic.png
-%%DATADIR%%/themes/default/text_left.png
-%%DATADIR%%/themes/default/text_right.png
-%%DATADIR%%/themes/default/text_under.png
-%%DATADIR%%/themes/default/timeline.png
-%%DATADIR%%/themes/default/toolbar_bg.png
-%%DATADIR%%/themes/default/track_op_grip.png
-%%DATADIR%%/themes/default/track_op_menu.png
-%%DATADIR%%/themes/default/triangle_wave_active.png
-%%DATADIR%%/themes/default/triangle_wave_inactive.png
-%%DATADIR%%/themes/default/uhoh.png
-%%DATADIR%%/themes/default/unavailable_sound.png
-%%DATADIR%%/themes/default/unfreeze.png
-%%DATADIR%%/themes/default/unknown_file.png
-%%DATADIR%%/themes/default/usr_wave_active.png
-%%DATADIR%%/themes/default/usr_wave_inactive.png
-%%DATADIR%%/themes/default/whatsthis.png
-%%DATADIR%%/themes/default/white_key.png
-%%DATADIR%%/themes/default/white_key_pressed.png
-%%DATADIR%%/themes/default/white_noise_wave_active.png
+%%DATADIR%%/themes/default/edit_erase.png
+%%DATADIR%%/themes/default/edit_paste.png
+%%DATADIR%%/themes/default/bb_track.png
 %%DATADIR%%/themes/default/white_noise_wave_inactive.png
-%%DATADIR%%/themes/default/zoom.png
-%%DATADIR%%/themes/default/zoom_x.png
-%%DATADIR%%/themes/default/zoom_y.png
-share/menu/lmms
-share/mime/packages/lmms.xml
-share/pixmaps/lmms.png
-@dirrmtry share/menu
+%%DATADIR%%/themes/default/lfo_controller_artwork.png
+%%DATADIR%%/themes/default/loop_points_off.png
+%%DATADIR%%/themes/default/analysis.png
+%%DATADIR%%/themes/default/moog_saw_wave_inactive.png
+%%DATADIR%%/themes/default/round_square_wave_active.png
+%%DATADIR%%/themes/default/add_controller.png
+%%DATADIR%%/themes/default/lfo_graph.png
+%%DATADIR%%/themes/default/pr_black_key.png
+%%DATADIR%%/themes/default/pr_white_key_small.png
+%%DATADIR%%/themes/default/white_noise_wave_active.png
+%%DATADIR%%/themes/default/edit_copy.png
+%%DATADIR%%/themes/default/unavailable_sound.png
+%%DATADIR%%/themes/default/lfo_d100_active.png
+%%DATADIR%%/themes/default/usr_wave_inactive.png
+%%DATADIR%%/themes/default/pr_white_key_big_pressed.png
+%%DATADIR%%/themes/default/edit_cut.png
+%%DATADIR%%/themes/default/lcd_21pink.png
+%%DATADIR%%/themes/default/lfo_x100_active.png
+%%DATADIR%%/themes/default/plugins.png
+%%DATADIR%%/themes/default/track_op_menu.png
+%%DATADIR%%/themes/default/instrument_track.png
+%%DATADIR%%/themes/default/text_left.png
+%%DATADIR%%/themes/default/lfo_x100_inactive.png
+%%DATADIR%%/themes/default/edit_rename.png
+%%DATADIR%%/themes/default/unfreeze.png
+%%DATADIR%%/themes/default/combobox_arrow_selected.png
+%%DATADIR%%/themes/default/project_new_from_template.png
+%%DATADIR%%/themes/default/white_key_pressed.png
+%%DATADIR%%/themes/default/add_automation.png
+%%DATADIR%%/themes/default/project_open_recent.png
+%%DATADIR%%/themes/default/note_eighth.png
+%%DATADIR%%/themes/default/home.png
+%%DATADIR%%/themes/default/preset_file.png
+%%DATADIR%%/themes/default/led_red.png
+%%DATADIR%%/themes/default/project_new.png
+%%DATADIR%%/themes/default/reload.png
+%%DATADIR%%/themes/default/filter_hp.png
+%%DATADIR%%/themes/default/note_half.png
+%%DATADIR%%/themes/default/edit_draw.png
+%%DATADIR%%/themes/default/note_double_whole.png
+%%DATADIR%%/themes/default/project_file.png
+%%DATADIR%%/themes/default/arp_sync.png
+%%DATADIR%%/themes/default/keep_stop_position.png
+%%DATADIR%%/themes/default/note_sixteenth.png
+%%DATADIR%%/themes/default/knob03.png
+%%DATADIR%%/themes/default/note_thirtysecond.png
+%%DATADIR%%/themes/default/cpuload_bg.png
+%%DATADIR%%/themes/default/record.png
+%%DATADIR%%/themes/default/step_btn_on_yellow.png
+%%DATADIR%%/themes/default/text_right.png
+%%DATADIR%%/themes/default/filter_lp.png
+%%DATADIR%%/themes/default/setup_performance.png
+%%DATADIR%%/themes/default/piano.png
+%%DATADIR%%/themes/default/text_italic.png
+%%DATADIR%%/themes/default/record_accompany.png
+%%DATADIR%%/themes/default/folder_opened.png
+%%DATADIR%%/themes/default/edit_move.png
+%%DATADIR%%/themes/default/folder_locked.png
+%%DATADIR%%/themes/default/moog_saw_wave_active.png
+%%DATADIR%%/themes/default/triangle_wave_inactive.png
+%%DATADIR%%/themes/default/freeze.png
+%%DATADIR%%/themes/default/colorize.png
+%%DATADIR%%/themes/default/songeditor.png
+%%DATADIR%%/themes/default/step_btn_on_100.png
+%%DATADIR%%/themes/default/step_btn_off_light.png
+%%DATADIR%%/themes/default/text_block.png
+%%DATADIR%%/themes/default/cancel.png
+%%DATADIR%%/themes/default/icon.png
+%%DATADIR%%/themes/default/track_op_grip.png
+%%DATADIR%%/themes/default/setup_midi.png
+%%DATADIR%%/themes/default/automation_track.png
+%%DATADIR%%/themes/default/arp_free.png
+%%DATADIR%%/themes/default/saw_wave_active.png
+%%DATADIR%%/themes/default/hand.png
+%%DATADIR%%/themes/default/note_none.png
+%%DATADIR%%/themes/default/fx_mixer.png
+%%DATADIR%%/themes/default/note_tripletquarter.png
+%%DATADIR%%/themes/default/main_toolbar_bg.png
+%%DATADIR%%/themes/default/error.png
+%%DATADIR%%/themes/default/whatsthis.png
+%%DATADIR%%/themes/default/clock.png
+%%DATADIR%%/themes/default/arp_up_and_down.png
+%%DATADIR%%/themes/default/sample_track.png
+%%DATADIR%%/themes/default/ports.png
+%%DATADIR%%/themes/default/usr_wave_active.png
+%%DATADIR%%/themes/default/tempo_sync.png
+%%DATADIR%%/themes/default/add.png
+%%DATADIR%%/themes/default/exit.png
+%%DATADIR%%/themes/default/combobox_arrow.png
+%%DATADIR%%/themes/default/quantize.png
+%%DATADIR%%/themes/default/exp_wave_inactive.png
+%%DATADIR%%/themes/default/sample_file.png
+%%DATADIR%%/themes/default/filter_ap.png
+%%DATADIR%%/themes/default/arp_up.png
+%%DATADIR%%/themes/default/arp_random.png
+%%DATADIR%%/themes/default/pause.png
+%%DATADIR%%/themes/default/computer.png
+%%DATADIR%%/themes/default/filter_bp.png
+%%DATADIR%%/themes/default/help.png
+%%DATADIR%%/themes/default/envelope_graph.png
+%%DATADIR%%/themes/default/controller.png
+%%DATADIR%%/themes/default/style.css
+@dirrm lib/lmms
+@dirrm include/lmms
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/samples/stringsnpads
@@ -1992,8 +2009,11 @@ share/pixmaps/lmms.png
 @dirrm %%DATADIR%%/samples/basses
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/projects/tutorials
-@dirrm %%DATADIR%%/projects/demos
-@dirrm %%DATADIR%%/projects/cool_songs
+@dirrm %%DATADIR%%/projects/Shorties
+@dirrm %%DATADIR%%/projects/OldStuff
+@dirrm %%DATADIR%%/projects/Demos
+@dirrm %%DATADIR%%/projects/Covers
+@dirrm %%DATADIR%%/projects/CoolSongs
 @dirrm %%DATADIR%%/projects
 @dirrm %%DATADIR%%/presets/ZynAddSubFX/SynthPiano
 @dirrm %%DATADIR%%/presets/ZynAddSubFX/Synth
@@ -2028,7 +2048,7 @@ share/pixmaps/lmms.png
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm lib/lmms
-@dirrm include/lmms
+@dirrmtry share/menu
+
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
