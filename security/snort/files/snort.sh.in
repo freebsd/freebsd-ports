@@ -12,16 +12,19 @@
 # snort_flags (str):		Extra flags passed to snort
 #				Default: -D -q
 # snort_interface (str):	Network interface to sniff
-#				Default: "" 
+#				Default: ""
 # snort_conf (str):		Snort configuration file
 #				Default: ${PREFIX}/etc/snort/snort.conf
 # snort_expression (str):	filter expression
-#				If your expression is very long, set 
+#				If your expression is very long, set
 #				kern.ps_arg_cache_limit sysctl variable
 #				to large value. Otherwise, snort won't
 #				restart!
 #				Default: ""
 #
+# To enable multi interface, use:
+# snort_rules="eth0 eth1"
+# defaults will follow, snort.conf becomes 'snort_eth0.conf', etc.
 
 . /etc/rc.subr
 
@@ -42,4 +45,28 @@ load_rc_config $name
 [ -n "$snort_conf" ]      && snort_flags="$snort_flags -c $snort_conf"
 [ -n "$snort_expression" ] && snort_flags="$snort_flags $snort_expression"
 
-run_rc_command "$1"
+if [ -n "$snort_rules" ]; then
+  _1=$1
+  if [ $# -gt 1 ]; then shift; snort_rules=$*; fi
+  snort_conf=""
+  snort_flags=""
+  rc=0
+  for i in ${snort_rules}; do
+	eval _conf=\$snort_${i}_conf
+	eval _flags=\$snort_${i}_flags
+	[ -z "$_flags" ] && _flags="-D -q"
+	eval _intf=\$snort_${i}_interface
+	eval _expr=\$snort_${i}_expression
+        if [ -n "$_intf" ] ;then
+            _conf="$_conf -i $_intf"
+	   eval pidfile="/var/run/snort_$_intf.pid"
+        fi
+	command_args="$_flags -c $_conf $_expr"
+        run_rc_command "$_1"
+        if [ $? -ne 0 ]; then rc=1; fi
+	unset _pidcmd _rc_restart_done
+   done
+   exit $rc
+else
+   run_rc_command "$1"
+fi
