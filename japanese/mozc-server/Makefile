@@ -21,7 +21,8 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
-		protobuf.7:${PORTSDIR}/devel/protobuf
+		protobuf.7:${PORTSDIR}/devel/protobuf \
+		zinnia.0:${PORTSDIR}/japanese/zinnia 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GMAKE=	yes
