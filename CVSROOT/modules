@@ -3534,6 +3534,7 @@ flphoto                         ports/graphics/flphoto
 flpsed                          ports/print/flpsed
 fltk                            ports/x11-toolkits/fltk
 fltk-threads                    ports/x11-toolkits/fltk-threads
+fltk11                          ports/x11-toolkits/fltk11
 fltk2                           ports/x11-toolkits/fltk2
 flu                             ports/x11-toolkits/flu
 fluctuate                       ports/biology/fluctuate
@@ -10804,6 +10805,7 @@ p5-App-Options                  ports/devel/p5-App-Options
 p5-App-Pm2Port                  ports/ports-mgmt/p5-App-Pm2Port
 p5-App-SD                       ports/devel/p5-App-SD
 p5-App-SVN-Bisect               ports/devel/p5-App-SVN-Bisect
+p5-App-TLSMe                    ports/security/p5-App-TLSMe
 p5-App-Trace                    ports/devel/p5-App-Trace
 p5-App-cpanminus                ports/devel/p5-App-cpanminus
 p5-AppConfig                    ports/devel/p5-AppConfig
@@ -12296,6 +12298,7 @@ p5-Geo-BUFR                     ports/science/p5-Geo-BUFR
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Bing               ports/misc/p5-Geo-Coder-Bing
+p5-Geo-Coder-Geocoder-US        ports/misc/p5-Geo-Coder-Geocoder-US
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coder-Googlev3           ports/misc/p5-Geo-Coder-Googlev3
 p5-Geo-Coder-Many               ports/misc/p5-Geo-Coder-Many
@@ -14059,6 +14062,7 @@ p5-Server-Starter               ports/net/p5-Server-Starter
 p5-Set-Array                    ports/devel/p5-Set-Array
 p5-Set-ConsistentHash           ports/devel/p5-Set-ConsistentHash
 p5-Set-Crontab                  ports/devel/p5-Set-Crontab
+p5-Set-CrossProduct             ports/devel/p5-Set-CrossProduct
 p5-Set-Infinite                 ports/devel/p5-Set-Infinite
 p5-Set-IntSpan                  ports/math/p5-Set-IntSpan
 p5-Set-IntSpan-Fast             ports/math/p5-Set-IntSpan-Fast
@@ -15205,6 +15209,7 @@ p5-app-options                  ports/devel/p5-App-Options
 p5-app-pm2port                  ports/ports-mgmt/p5-App-Pm2Port
 p5-app-sd                       ports/devel/p5-App-SD
 p5-app-svn-bisect               ports/devel/p5-App-SVN-Bisect
+p5-app-tlsme                    ports/security/p5-App-TLSMe
 p5-app-trace                    ports/devel/p5-App-Trace
 p5-appconfig                    ports/devel/p5-AppConfig
 p5-appconfig-std                ports/devel/p5-AppConfig-Std
@@ -16717,6 +16722,7 @@ p5-geo-bufr                     ports/science/p5-Geo-BUFR
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-bing               ports/misc/p5-Geo-Coder-Bing
+p5-geo-coder-geocoder-us        ports/misc/p5-Geo-Coder-Geocoder-US
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coder-googlev3           ports/misc/p5-Geo-Coder-Googlev3
 p5-geo-coder-many               ports/misc/p5-Geo-Coder-Many
@@ -18462,6 +18468,7 @@ p5-ses                          ports/mail/p5-SES
 p5-set-array                    ports/devel/p5-Set-Array
 p5-set-consistenthash           ports/devel/p5-Set-ConsistentHash
 p5-set-crontab                  ports/devel/p5-Set-Crontab
+p5-set-crossproduct             ports/devel/p5-Set-CrossProduct
 p5-set-infinite                 ports/devel/p5-Set-Infinite
 p5-set-intspan                  ports/math/p5-Set-IntSpan
 p5-set-intspan-fast             ports/math/p5-Set-IntSpan-Fast
@@ -23634,20 +23641,15 @@ ruby-format                     ports/textproc/ruby-format
 ruby-fox16                      ports/x11-toolkits/ruby-fox16
 ruby-freedb                     ports/audio/ruby-freedb
 ruby-frontbase                  ports/databases/ruby-frontbase
-ruby-gconf2                     ports/devel/ruby-gconf2
 ruby-gd                         ports/graphics/ruby-gd
 ruby-gdbm                       ports/databases/ruby-gdbm
 ruby-gdk_pixbuf2                ports/graphics/ruby-gdk_pixbuf2
 ruby-gemfinder                  ports/devel/ruby-gemfinder
 ruby-gems                       ports/devel/ruby-gems
 ruby-gettext                    ports/devel/ruby-gettext
+ruby-gio2                       ports/devel/ruby-gio2
 ruby-glib2                      ports/devel/ruby-glib2
 ruby-gnome2                     ports/x11/ruby-gnome2
-ruby-gnome2-all                 ports/x11/ruby-gnome2-all
-ruby-gnomecanvas2               ports/graphics/ruby-gnomecanvas2
-ruby-gnomeprint                 ports/print/ruby-gnomeprint
-ruby-gnomeprintui               ports/x11-toolkits/ruby-gnomeprintui
-ruby-gnomevfs                   ports/devel/ruby-gnomevfs
 ruby-gnuplot                    ports/math/ruby-gnuplot
 ruby-gnustep                    ports/devel/ruby-gnustep
 ruby-goocanvas                  ports/x11-toolkits/ruby-goocanvas
@@ -23659,9 +23661,6 @@ ruby-gsl                        ports/math/ruby-gsl
 ruby-gstreamer                  ports/x11-toolkits/ruby-gstreamer
 ruby-gtk                        ports/x11-toolkits/ruby-gtk
 ruby-gtk2                       ports/x11-toolkits/ruby-gtk2
-ruby-gtkglext                   ports/x11-toolkits/ruby-gtkglext
-ruby-gtkhtml2                   ports/www/ruby-gtkhtml2
-ruby-gtkmozembed                ports/www/ruby-gtkmozembed
 ruby-gtksourceview2             ports/x11-toolkits/ruby-gtksourceview2
 ruby-gtktrayicon                ports/x11/ruby-gtktrayicon
 ruby-hikidoc                    ports/textproc/ruby-hikidoc
@@ -23685,8 +23684,6 @@ ruby-langscan                   ports/devel/ruby-langscan
 ruby-ldap                       ports/net/ruby-ldap
 ruby-lha                        ports/archivers/ruby-lha
 ruby-libarchive                 ports/archivers/ruby-libarchive
-ruby-libart2                    ports/graphics/ruby-libart2
-ruby-libglade2                  ports/devel/ruby-libglade2
 ruby-libxml                     ports/textproc/ruby-libxml
 ruby-liquid                     ports/textproc/ruby-liquid
 ruby-locale                     ports/devel/ruby-locale
@@ -23719,7 +23716,6 @@ ruby-oci8                       ports/databases/ruby-oci8
 ruby-odbc                       ports/databases/ruby-odbc
 ruby-opengl                     ports/graphics/ruby-opengl
 ruby-panda                      ports/print/ruby-panda
-ruby-panelapplet                ports/x11-toolkits/ruby-panelapplet
 ruby-pango                      ports/x11-toolkits/ruby-pango
 ruby-password                   ports/security/ruby-password
 ruby-pgplot                     ports/graphics/ruby-pgplot
