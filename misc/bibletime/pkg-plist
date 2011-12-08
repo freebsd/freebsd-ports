@@ -1,11 +1,58 @@
 bin/bibletime
 share/applications/bibletime.desktop
-%%DATADIR%%/display-templates/Blue.tmpl
-%%DATADIR%%/display-templates/Christmastide.tmpl
-%%DATADIR%%/display-templates/Crazy.tmpl
-%%DATADIR%%/display-templates/Green.tmpl
-%%DATADIR%%/display-templates/HighContrast.tmpl
-%%DATADIR%%/display-templates/Simple.tmpl
+%%DATADIR%%/display-templates/Basic.tmpl
+%%DATADIR%%/display-templates/Blue.css
+%%DATADIR%%/display-templates/Christmastide.css
+%%DATADIR%%/display-templates/Crazy.css
+%%DATADIR%%/display-templates/Green.css
+%%DATADIR%%/display-templates/HighContrast.css
+%%DATADIR%%/display-templates/Simple.css
+%%DATADIR%%/docs/handbook/ar/hdbk-config.html
+%%DATADIR%%/docs/handbook/ar/hdbk-intro.html
+%%DATADIR%%/docs/handbook/ar/hdbk-op-bookshelfmanager.html
+%%DATADIR%%/docs/handbook/ar/hdbk-op-output.html
+%%DATADIR%%/docs/handbook/ar/hdbk-op-parts.html
+%%DATADIR%%/docs/handbook/ar/hdbk-op-search.html
+%%DATADIR%%/docs/handbook/ar/hdbk-op.html
+%%DATADIR%%/docs/handbook/ar/hdbk-reference-shortcuts.html
+%%DATADIR%%/docs/handbook/ar/hdbk-reference-works.html
+%%DATADIR%%/docs/handbook/ar/hdbk-reference.html
+%%DATADIR%%/docs/handbook/ar/hdbk-start-firstrun.html
+%%DATADIR%%/docs/handbook/ar/hdbk-term.html
+%%DATADIR%%/docs/handbook/ar/i_back.png
+%%DATADIR%%/docs/handbook/ar/i_bible.png
+%%DATADIR%%/docs/handbook/ar/i_bible_add.png
+%%DATADIR%%/docs/handbook/ar/i_bibletime.png
+%%DATADIR%%/docs/handbook/ar/i_book.png
+%%DATADIR%%/docs/handbook/ar/i_book_add.png
+%%DATADIR%%/docs/handbook/ar/i_cascade.png
+%%DATADIR%%/docs/handbook/ar/i_commentary.png
+%%DATADIR%%/docs/handbook/ar/i_commentary_add.png
+%%DATADIR%%/docs/handbook/ar/i_configure.png
+%%DATADIR%%/docs/handbook/ar/i_configuresword.png
+%%DATADIR%%/docs/handbook/ar/i_contents2.png
+%%DATADIR%%/docs/handbook/ar/i_displayconfig.png
+%%DATADIR%%/docs/handbook/ar/i_exit.png
+%%DATADIR%%/docs/handbook/ar/i_fileclose.png
+%%DATADIR%%/docs/handbook/ar/i_find.png
+%%DATADIR%%/docs/handbook/ar/i_folder_open.png
+%%DATADIR%%/docs/handbook/ar/i_forward.png
+%%DATADIR%%/docs/handbook/ar/i_lexicon.png
+%%DATADIR%%/docs/handbook/ar/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/ar/i_light_bulb.png
+%%DATADIR%%/docs/handbook/ar/i_sync.png
+%%DATADIR%%/docs/handbook/ar/i_tile.png
+%%DATADIR%%/docs/handbook/ar/i_tile_horiz.png
+%%DATADIR%%/docs/handbook/ar/i_tile_vert.png
+%%DATADIR%%/docs/handbook/ar/i_view_index.png
+%%DATADIR%%/docs/handbook/ar/i_view_mag.png
+%%DATADIR%%/docs/handbook/ar/i_window_fullscreen.png
+%%DATADIR%%/docs/handbook/ar/index.html
+%%DATADIR%%/docs/handbook/ar/ss_configfonts.png
+%%DATADIR%%/docs/handbook/ar/ss_mainterms.png
+%%DATADIR%%/docs/handbook/ar/ss_searchanal.png
+%%DATADIR%%/docs/handbook/ar/ss_searchopts.png
+%%DATADIR%%/docs/handbook/ar/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/cs/hdbk-config.html
 %%DATADIR%%/docs/handbook/cs/hdbk-intro.html
 %%DATADIR%%/docs/handbook/cs/hdbk-op-bookshelfmanager.html
@@ -34,9 +81,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/cs/i_exit.png
 %%DATADIR%%/docs/handbook/cs/i_fileclose.png
 %%DATADIR%%/docs/handbook/cs/i_find.png
+%%DATADIR%%/docs/handbook/cs/i_folder_open.png
 %%DATADIR%%/docs/handbook/cs/i_forward.png
 %%DATADIR%%/docs/handbook/cs/i_lexicon.png
 %%DATADIR%%/docs/handbook/cs/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/cs/i_light_bulb.png
 %%DATADIR%%/docs/handbook/cs/i_sync.png
 %%DATADIR%%/docs/handbook/cs/i_tile.png
 %%DATADIR%%/docs/handbook/cs/i_tile_horiz.png
@@ -78,9 +127,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/de/i_exit.png
 %%DATADIR%%/docs/handbook/de/i_fileclose.png
 %%DATADIR%%/docs/handbook/de/i_find.png
+%%DATADIR%%/docs/handbook/de/i_folder_open.png
 %%DATADIR%%/docs/handbook/de/i_forward.png
 %%DATADIR%%/docs/handbook/de/i_lexicon.png
 %%DATADIR%%/docs/handbook/de/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/de/i_light_bulb.png
 %%DATADIR%%/docs/handbook/de/i_sync.png
 %%DATADIR%%/docs/handbook/de/i_tile.png
 %%DATADIR%%/docs/handbook/de/i_tile_horiz.png
@@ -122,9 +173,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/en/i_exit.png
 %%DATADIR%%/docs/handbook/en/i_fileclose.png
 %%DATADIR%%/docs/handbook/en/i_find.png
+%%DATADIR%%/docs/handbook/en/i_folder_open.png
 %%DATADIR%%/docs/handbook/en/i_forward.png
 %%DATADIR%%/docs/handbook/en/i_lexicon.png
 %%DATADIR%%/docs/handbook/en/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/en/i_light_bulb.png
 %%DATADIR%%/docs/handbook/en/i_sync.png
 %%DATADIR%%/docs/handbook/en/i_tile.png
 %%DATADIR%%/docs/handbook/en/i_tile_horiz.png
@@ -166,9 +219,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/es/i_exit.png
 %%DATADIR%%/docs/handbook/es/i_fileclose.png
 %%DATADIR%%/docs/handbook/es/i_find.png
+%%DATADIR%%/docs/handbook/es/i_folder_open.png
 %%DATADIR%%/docs/handbook/es/i_forward.png
 %%DATADIR%%/docs/handbook/es/i_lexicon.png
 %%DATADIR%%/docs/handbook/es/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/es/i_light_bulb.png
 %%DATADIR%%/docs/handbook/es/i_sync.png
 %%DATADIR%%/docs/handbook/es/i_tile.png
 %%DATADIR%%/docs/handbook/es/i_tile_horiz.png
@@ -210,9 +265,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fi/i_exit.png
 %%DATADIR%%/docs/handbook/fi/i_fileclose.png
 %%DATADIR%%/docs/handbook/fi/i_find.png
+%%DATADIR%%/docs/handbook/fi/i_folder_open.png
 %%DATADIR%%/docs/handbook/fi/i_forward.png
 %%DATADIR%%/docs/handbook/fi/i_lexicon.png
 %%DATADIR%%/docs/handbook/fi/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/fi/i_light_bulb.png
 %%DATADIR%%/docs/handbook/fi/i_sync.png
 %%DATADIR%%/docs/handbook/fi/i_tile.png
 %%DATADIR%%/docs/handbook/fi/i_tile_horiz.png
@@ -254,9 +311,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/fr/i_exit.png
 %%DATADIR%%/docs/handbook/fr/i_fileclose.png
 %%DATADIR%%/docs/handbook/fr/i_find.png
+%%DATADIR%%/docs/handbook/fr/i_folder_open.png
 %%DATADIR%%/docs/handbook/fr/i_forward.png
 %%DATADIR%%/docs/handbook/fr/i_lexicon.png
 %%DATADIR%%/docs/handbook/fr/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/fr/i_light_bulb.png
 %%DATADIR%%/docs/handbook/fr/i_sync.png
 %%DATADIR%%/docs/handbook/fr/i_tile.png
 %%DATADIR%%/docs/handbook/fr/i_tile_horiz.png
@@ -298,9 +357,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/hu/i_exit.png
 %%DATADIR%%/docs/handbook/hu/i_fileclose.png
 %%DATADIR%%/docs/handbook/hu/i_find.png
+%%DATADIR%%/docs/handbook/hu/i_folder_open.png
 %%DATADIR%%/docs/handbook/hu/i_forward.png
 %%DATADIR%%/docs/handbook/hu/i_lexicon.png
 %%DATADIR%%/docs/handbook/hu/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/hu/i_light_bulb.png
 %%DATADIR%%/docs/handbook/hu/i_sync.png
 %%DATADIR%%/docs/handbook/hu/i_tile.png
 %%DATADIR%%/docs/handbook/hu/i_tile_horiz.png
@@ -342,9 +403,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/it/i_exit.png
 %%DATADIR%%/docs/handbook/it/i_fileclose.png
 %%DATADIR%%/docs/handbook/it/i_find.png
+%%DATADIR%%/docs/handbook/it/i_folder_open.png
 %%DATADIR%%/docs/handbook/it/i_forward.png
 %%DATADIR%%/docs/handbook/it/i_lexicon.png
 %%DATADIR%%/docs/handbook/it/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/it/i_light_bulb.png
 %%DATADIR%%/docs/handbook/it/i_sync.png
 %%DATADIR%%/docs/handbook/it/i_tile.png
 %%DATADIR%%/docs/handbook/it/i_tile_horiz.png
@@ -386,9 +449,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/nl/i_exit.png
 %%DATADIR%%/docs/handbook/nl/i_fileclose.png
 %%DATADIR%%/docs/handbook/nl/i_find.png
+%%DATADIR%%/docs/handbook/nl/i_folder_open.png
 %%DATADIR%%/docs/handbook/nl/i_forward.png
 %%DATADIR%%/docs/handbook/nl/i_lexicon.png
 %%DATADIR%%/docs/handbook/nl/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/nl/i_light_bulb.png
 %%DATADIR%%/docs/handbook/nl/i_sync.png
 %%DATADIR%%/docs/handbook/nl/i_tile.png
 %%DATADIR%%/docs/handbook/nl/i_tile_horiz.png
@@ -430,9 +495,11 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/pt_BR/i_exit.png
 %%DATADIR%%/docs/handbook/pt_BR/i_fileclose.png
 %%DATADIR%%/docs/handbook/pt_BR/i_find.png
+%%DATADIR%%/docs/handbook/pt_BR/i_folder_open.png
 %%DATADIR%%/docs/handbook/pt_BR/i_forward.png
 %%DATADIR%%/docs/handbook/pt_BR/i_lexicon.png
 %%DATADIR%%/docs/handbook/pt_BR/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/pt_BR/i_light_bulb.png
 %%DATADIR%%/docs/handbook/pt_BR/i_sync.png
 %%DATADIR%%/docs/handbook/pt_BR/i_tile.png
 %%DATADIR%%/docs/handbook/pt_BR/i_tile_horiz.png
@@ -886,6 +953,7 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs/handbook/en
 @dirrm %%DATADIR%%/docs/handbook/de
 @dirrm %%DATADIR%%/docs/handbook/cs
+@dirrm %%DATADIR%%/docs/handbook/ar
 @dirrm %%DATADIR%%/docs/handbook
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/display-templates
