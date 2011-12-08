@@ -25,7 +25,13 @@ PLIST_FILES=	bin/k8055 \
 		lib/libk8055.so.0.2 \
 		include/k8055.h
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/libk8055.c.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
