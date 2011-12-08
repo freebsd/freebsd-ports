@@ -3132,6 +3132,7 @@
     SUBDIR += py-polib
     SUBDIR += py-pp
     SUBDIR += py-pqueue
+    SUBDIR += py-prettytable
     SUBDIR += py-prioritized_methods
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
