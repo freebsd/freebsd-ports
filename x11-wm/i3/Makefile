@@ -54,6 +54,10 @@ MAN1=	${MANUALS}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		fails to compile and install
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && ${CP} i3.config config.sample
 	@cd ${WRKSRC} && ${CP} i3.welcome welcome
