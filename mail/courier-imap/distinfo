@@ -1,4 +1,2 @@
-SHA256 (courier-imap-4.9.3.tar.bz2) = 27344b624ceaaf22e5f12b9b76253eaacd33723be3108b104aa6d25f4641193e
-SIZE (courier-imap-4.9.3.tar.bz2) = 3049553
-SHA256 (courier-imap-4.8.1-drac.patch) = 7ac88afc81bb762226800697899dcb12e300634f131d8ee4ac8ffe1d2637d772
-SIZE (courier-imap-4.8.1-drac.patch) = 8691
+SHA256 (courier-imap-4.10.0.tar.bz2) = 8c895795e9eeaa8c8fcc7d5d8df44e1dce845638b63698d782971db842296614
+SIZE (courier-imap-4.10.0.tar.bz2) = 3155953
