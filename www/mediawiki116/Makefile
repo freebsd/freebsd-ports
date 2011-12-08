@@ -16,8 +16,11 @@ COMMENT=	The wiki engine used by Wikipedia
 CONFLICTS=	mediawiki-1.1[0-57-9].*
 NO_LATEST_LINK=	yes
 
+DEPRECATED=	Unsupport Upstream
+EXPIRATION_DATE=2012-03-01
+
 USE_PHP=	iconv mbstring pcre session xml zlib readline dom
-IGNORE_WITH_PHP=	4
+IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
