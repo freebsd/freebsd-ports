@@ -4,6 +4,7 @@ include/czmq.h
 include/czmq_prelude.h
 include/zclock.h
 include/zctx.h
+include/zfile.h
 include/zframe.h
 include/zhash.h
 include/zlist.h
