@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.9	# Keep databases/gauche-gdbm in sync with this
+PORTVERSION=	0.9.2	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
@@ -27,6 +27,8 @@ MAKE_ENV+=	CCACHE_CPP2=1
 
 #INFOSECTION=	The Algorithmic Language Scheme
 
+DATADIR?=	${PREFIX}/share/${PORTNAME}-0.9
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 		--enable-multibyte=${GAUCHE_ENCODING} \
@@ -40,7 +42,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		gosh.1 gauche-config.1
+MAN1=		gosh.1 gauche-cesconv.1 gauche-config.1 gauche-install.1 \
+		gauche-package.1
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -68,7 +71,7 @@ post-install:
 	${RM} -f ${PREFIX}/share/gauche/${PORTVERSION}/lib/slibcat
 	${MKDIR} ${PREFIX}/share/gauche/site/lib/.packages
 	${TOUCH} ${PREFIX}/share/gauche/site/lib/.packages/.keepme
-	${TOUCH} ${PREFIX}/lib/gauche/site/${PORTVERSION}/${CONFIGURE_TARGET}/.keepme
+	${TOUCH} ${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET}/.keepme
 	${MKDIR} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages
 	${TOUCH} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages/.keepme
 	${MKDIR} ${DOCSDIR}

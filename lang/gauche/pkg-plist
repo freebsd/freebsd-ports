@@ -1,122 +1,21 @@
-%%DOCSDIR%%/.keepme
-%%EXAMPLESDIR%%/.keepme
-bin/gauche-cesconv
-bin/gauche-config
-bin/gauche-install
-bin/gauche-package
-bin/gosh
-lib/gauche/%%VERSION%%/%%TARGET%%/binary--io.so
-lib/gauche/%%VERSION%%/%%TARGET%%/dbm--ndbm.so
-lib/gauche/%%VERSION%%/%%TARGET%%/file--util.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--auxsys.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--charconv.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--collection.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--fcntl.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--hook.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--net.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--parameter.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--sequence.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--syslog.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--termios.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--threads.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche--vport.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-cesconv
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-install
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-package
-lib/gauche/%%VERSION%%/%%TARGET%%/gosh
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
-lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so
-lib/gauche/%%VERSION%%/%%TARGET%%/math--mt-random.so
-lib/gauche/%%VERSION%%/%%TARGET%%/rfc--md5.so
-lib/gauche/%%VERSION%%/%%TARGET%%/rfc--sha.so
-lib/gauche/%%VERSION%%/%%TARGET%%/rfc--zlib.so
-lib/gauche/%%VERSION%%/%%TARGET%%/srfi-1.so
-lib/gauche/%%VERSION%%/%%TARGET%%/srfi-13.so
-lib/gauche/%%VERSION%%/%%TARGET%%/srfi-19.so
-lib/gauche/%%VERSION%%/%%TARGET%%/srfi-43.so
-lib/gauche/%%VERSION%%/%%TARGET%%/sxml--serializer.so
-lib/gauche/%%VERSION%%/%%TARGET%%/sxml--ssax.so
-lib/gauche/%%VERSION%%/%%TARGET%%/sxml--sxpath.so
-lib/gauche/%%VERSION%%/%%TARGET%%/sxml--tools.so
-lib/gauche/%%VERSION%%/%%TARGET%%/text--gettext.so
-lib/gauche/%%VERSION%%/%%TARGET%%/text--tr.so
-lib/gauche/%%VERSION%%/%%TARGET%%/util--match.so
-lib/gauche/%%VERSION%%/%%TARGET%%/util--sparse.so
-lib/gauche/%%VERSION%%/include/gauche.h
-lib/gauche/%%VERSION%%/include/gauche/arch.h
-lib/gauche/%%VERSION%%/include/gauche/bignum.h
-lib/gauche/%%VERSION%%/include/gauche/bits.h
-lib/gauche/%%VERSION%%/include/gauche/bits_inline.h
-lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
-lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
-lib/gauche/%%VERSION%%/include/gauche/char_none.h
-lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
-lib/gauche/%%VERSION%%/include/gauche/char_utf_8.h
-lib/gauche/%%VERSION%%/include/gauche/charset.h
-lib/gauche/%%VERSION%%/include/gauche/class.h
-lib/gauche/%%VERSION%%/include/gauche/code.h
-lib/gauche/%%VERSION%%/include/gauche/collection.h
-lib/gauche/%%VERSION%%/include/gauche/config.h
-lib/gauche/%%VERSION%%/include/gauche/exception.h
-lib/gauche/%%VERSION%%/include/gauche/extend.h
-lib/gauche/%%VERSION%%/include/gauche/extern.h
-lib/gauche/%%VERSION%%/include/gauche/float.h
-lib/gauche/%%VERSION%%/include/gauche/gloc.h
-lib/gauche/%%VERSION%%/include/gauche/hash.h
-lib/gauche/%%VERSION%%/include/gauche/int64.h
-lib/gauche/%%VERSION%%/include/gauche/keyword.h
-lib/gauche/%%VERSION%%/include/gauche/load.h
-lib/gauche/%%VERSION%%/include/gauche/macro.h
-lib/gauche/%%VERSION%%/include/gauche/module.h
-lib/gauche/%%VERSION%%/include/gauche/number.h
-lib/gauche/%%VERSION%%/include/gauche/parameter.h
-lib/gauche/%%VERSION%%/include/gauche/paths.h
-lib/gauche/%%VERSION%%/include/gauche/port.h
-lib/gauche/%%VERSION%%/include/gauche/prof.h
-lib/gauche/%%VERSION%%/include/gauche/pthread.h
-lib/gauche/%%VERSION%%/include/gauche/reader.h
-lib/gauche/%%VERSION%%/include/gauche/regexp.h
-lib/gauche/%%VERSION%%/include/gauche/scmconst.h
-lib/gauche/%%VERSION%%/include/gauche/string.h
-lib/gauche/%%VERSION%%/include/gauche/symbol.h
-lib/gauche/%%VERSION%%/include/gauche/system.h
-lib/gauche/%%VERSION%%/include/gauche/treemap.h
-lib/gauche/%%VERSION%%/include/gauche/uthread.h
-lib/gauche/%%VERSION%%/include/gauche/uvector.h
-lib/gauche/%%VERSION%%/include/gauche/vector.h
-lib/gauche/%%VERSION%%/include/gauche/vm.h
-lib/gauche/%%VERSION%%/include/gauche/vminsn.h
-lib/gauche/%%VERSION%%/include/gauche/weak.h
-lib/gauche/%%VERSION%%/include/gauche/win-compat.h
-lib/gauche/%%VERSION%%/include/gc.h
-lib/gauche/%%VERSION%%/include/gc_allocator.h
-lib/gauche/%%VERSION%%/include/gc_config_macros.h
-lib/gauche/%%VERSION%%/include/gc_cpp.h
-lib/gauche/%%VERSION%%/include/gc_inline.h
-lib/gauche/%%VERSION%%/include/gc_mark.h
-lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
-lib/gauche/%%VERSION%%/include/gc_tiny_fl.h
-lib/gauche/%%VERSION%%/include/gc_typed.h
-lib/gauche/%%VERSION%%/include/gc_version.h
-lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
-lib/libgauche.so
-lib/libgauche.so.0
-lib/libgauche.so.%%VERSION%%.0
-share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/aclocal.m4
-%%DATADIR%%/%%VERSION%%/lib/.packages/.keepme
+%%DATADIR%%/%%VERSION%%/lib/binary/ftype.scm
 %%DATADIR%%/%%VERSION%%/lib/binary/io.scm
 %%DATADIR%%/%%VERSION%%/lib/binary/pack.scm
 %%DATADIR%%/%%VERSION%%/lib/cesconv
 %%DATADIR%%/%%VERSION%%/lib/compat/jfilter.scm
 %%DATADIR%%/%%VERSION%%/lib/compat/norational.scm
 %%DATADIR%%/%%VERSION%%/lib/compat/stk.scm
+%%DATADIR%%/%%VERSION%%/lib/control/job.scm
+%%DATADIR%%/%%VERSION%%/lib/control/thread-pool.scm
+%%DATADIR%%/%%VERSION%%/lib/crypt/bcrypt.scm
 %%DATADIR%%/%%VERSION%%/lib/dbd/null.scm
 %%DATADIR%%/%%VERSION%%/lib/dbi.scm
 %%DATADIR%%/%%VERSION%%/lib/dbm.scm
+%%DATADIR%%/%%VERSION%%/lib/dbm/dump
 %%DATADIR%%/%%VERSION%%/lib/dbm/fsdbm.scm
 %%DATADIR%%/%%VERSION%%/lib/dbm/ndbm.scm
+%%DATADIR%%/%%VERSION%%/lib/dbm/restore
 %%DATADIR%%/%%VERSION%%/lib/file/filter.scm
 %%DATADIR%%/%%VERSION%%/lib/file/util.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche-init.scm
@@ -124,10 +23,10 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/gauche/auxsys.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/cise.scm
-%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal-uv.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/precomp.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/stub.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/tmodule.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/type.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/cgen/unit.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/charconv.scm
@@ -142,6 +41,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/gauche/experimental/ref.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/fcntl.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/fileutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/generator.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/hashutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/hook.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/interactive.scm
@@ -168,9 +68,11 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/gauche/package/util.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/parameter.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/parseopt.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/partcont.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/portutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/procedure.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/process.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/record.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/redefutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/regexp.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/reload.scm
@@ -200,6 +102,8 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/genstub
 %%DATADIR%%/%%VERSION%%/lib/math/const.scm
 %%DATADIR%%/%%VERSION%%/lib/math/mt-random.scm
+%%DATADIR%%/%%VERSION%%/lib/os/windows.scm
+%%DATADIR%%/%%VERSION%%/lib/parser/peg.scm
 %%DATADIR%%/%%VERSION%%/lib/precomp
 %%DATADIR%%/%%VERSION%%/lib/rfc/822.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/base64.scm
@@ -209,6 +113,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/rfc/http.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/icmp.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/ip.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/json.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/md5.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/mime.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/quoted-printable.scm
@@ -237,8 +142,10 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/srfi-43.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-5.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-55.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-60.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-7.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-9.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-98.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/adaptor.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/serializer.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/ssax.scm
@@ -256,6 +163,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/lib/text/sql.scm
 %%DATADIR%%/%%VERSION%%/lib/text/tr.scm
 %%DATADIR%%/%%VERSION%%/lib/text/tree.scm
+%%DATADIR%%/%%VERSION%%/lib/text/unicode.scm
 %%DATADIR%%/%%VERSION%%/lib/util/combinations.scm
 %%DATADIR%%/%%VERSION%%/lib/util/digest.scm
 %%DATADIR%%/%%VERSION%%/lib/util/isomorph.scm
@@ -282,8 +190,136 @@ share/aclocal/gauche.m4
 %%DATADIR%%/%%VERSION%%/template.extensionlib.stub
 %%DATADIR%%/%%VERSION%%/template.module.scm
 %%DATADIR%%/%%VERSION%%/template.test.scm
-%%DATADIR%%/site/lib/.packages/.keepme
-@dirrm %%DATADIR%%/site/lib/.packages
+bin/gauche-cesconv
+bin/gauche-config
+bin/gauche-install
+bin/gauche-package
+bin/gosh
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/binary--io.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/crypt--bcrypt.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/dbm--ndbm.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/file--util.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--auxsys.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--charconv.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--collection.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--fcntl.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--hook.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--net.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--parameter.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--sequence.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--syslog.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--termios.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--threads.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche--vport.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche-cesconv
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche-config
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche-install
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gauche-package
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/gosh
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/libgauche-0.9.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/math--mt-random.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/os--windows.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/parser--peg.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--md5.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--sha.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/rfc--zlib.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-1.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-13.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-19.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/srfi-43.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/sxml--serializer.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/sxml--ssax.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/sxml--sxpath.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/sxml--tools.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/text--gettext.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/text--tr.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/text--unicode.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/util--match.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/util--queue.so
+lib/gauche-0.9/%%VERSION%%/%%TARGET%%/util--sparse.so
+lib/gauche-0.9/%%VERSION%%/include/gauche.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/arch.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/bignum.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/bits.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/bits_inline.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/builtin-syms.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/bytes_inline.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/char_euc_jp.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/char_none.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/char_sjis.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/char_utf_8.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/charset.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/class.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/code.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/collection.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/config.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/exception.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/extend.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/extern.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/float.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/gloc.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/hash.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/int64.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/keyword.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/load.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/macro.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/module.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/number.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/parameter.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/paths.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/port.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/prof.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/pthread.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/reader.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/regexp.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/scmconst.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/string.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/symbol.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/system.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/treemap.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/uthread.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/uvector.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/vector.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/vm.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/vminsn.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/weak.h
+lib/gauche-0.9/%%VERSION%%/include/gauche/win-compat.h
+lib/gauche-0.9/%%VERSION%%/include/gc.h
+lib/gauche-0.9/%%VERSION%%/include/gc_allocator.h
+lib/gauche-0.9/%%VERSION%%/include/gc_config_macros.h
+lib/gauche-0.9/%%VERSION%%/include/gc_cpp.h
+lib/gauche-0.9/%%VERSION%%/include/gc_inline.h
+lib/gauche-0.9/%%VERSION%%/include/gc_mark.h
+lib/gauche-0.9/%%VERSION%%/include/gc_pthread_redirects.h
+lib/gauche-0.9/%%VERSION%%/include/gc_tiny_fl.h
+lib/gauche-0.9/%%VERSION%%/include/gc_typed.h
+lib/gauche-0.9/%%VERSION%%/include/gc_version.h
+lib/gauche-0.9/site/%%TARGET%%/.keepme
+lib/libgauche-0.9.so
+lib/libgauche-0.9.so.0
+lib/libgauche-0.9.so.0.2
+share/aclocal/gauche.m4
+share/doc/gauche/.keepme
+share/examples/gauche/.keepme
+share/gauche/%%VERSION%%/lib/.packages/.keepme
+share/gauche/site/lib/.packages/.keepme
+@dirrm share/gauche/site/lib/.packages
+@dirrm share/gauche/site/lib
+@dirrm share/gauche/site
+@dirrm share/gauche/%%VERSION%%/lib/.packages
+@dirrm share/gauche/%%VERSION%%/lib
+@dirrm share/gauche/%%VERSION%%
+@dirrm share/gauche
+@dirrm lib/gauche-0.9/site/i386-portbld-freebsd8.2
+@dirrm lib/gauche-0.9/site
+@dirrm lib/gauche-0.9/%%VERSION%%/include/gauche
+@dirrm lib/gauche-0.9/%%VERSION%%/include
+@dirrm lib/gauche-0.9/%%VERSION%%/i386-portbld-freebsd8.2
+@dirrm lib/gauche-0.9/%%VERSION%%
+@dirrm lib/gauche-0.9
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/site/lib
 @dirrm %%DATADIR%%/site
 @dirrm %%DATADIR%%/%%VERSION%%/lib/www/cgi
@@ -294,6 +330,8 @@ share/aclocal/gauche.m4
 @dirrm %%DATADIR%%/%%VERSION%%/lib/srfi-29
 @dirrm %%DATADIR%%/%%VERSION%%/lib/srfi-14
 @dirrm %%DATADIR%%/%%VERSION%%/lib/rfc
+@dirrm %%DATADIR%%/%%VERSION%%/lib/parser
+@dirrm %%DATADIR%%/%%VERSION%%/lib/os
 @dirrm %%DATADIR%%/%%VERSION%%/lib/math
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/vm
 @dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/serializer
@@ -306,19 +344,10 @@ share/aclocal/gauche.m4
 @dirrm %%DATADIR%%/%%VERSION%%/lib/file
 @dirrm %%DATADIR%%/%%VERSION%%/lib/dbm
 @dirrm %%DATADIR%%/%%VERSION%%/lib/dbd
+@dirrm %%DATADIR%%/%%VERSION%%/lib/crypt
+@dirrm %%DATADIR%%/%%VERSION%%/lib/control
 @dirrm %%DATADIR%%/%%VERSION%%/lib/compat
 @dirrm %%DATADIR%%/%%VERSION%%/lib/binary
-@dirrm %%DATADIR%%/%%VERSION%%/lib/.packages
 @dirrm %%DATADIR%%/%%VERSION%%/lib
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
-@dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
-@dirrm lib/gauche/site/%%VERSION%%
-@dirrm lib/gauche/site
-@dirrm lib/gauche/%%VERSION%%/include/gauche
-@dirrm lib/gauche/%%VERSION%%/include
-@dirrm lib/gauche/%%VERSION%%/%%TARGET%%
-@dirrm lib/gauche/%%VERSION%%
-@dirrm lib/gauche
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
