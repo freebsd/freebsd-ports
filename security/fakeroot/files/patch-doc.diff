@@ -105,3 +105,22 @@ diff -aurN doc.orig/sv/fakeroot.1 doc/sv/fakeroot.1
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 -
 +\fBfaked\fP(1)
+--- doc/de/faked.1.orig	2011-12-08 07:57:27.536581863 +0100
++++ doc/de/faked.1	2011-12-08 07:58:48.010961638 +0100
+@@ -89,5 +89,4 @@
+ größtenteils von J.H.M. Dassen <jdassen@debian.org>. Mods/Zusätze
+ von Joost und Clint.
+ .SH "SIEHE AUCH"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfakeroot\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+--- doc/de/fakeroot.1.orig	2011-12-08 07:59:55.227617525 +0100
++++ doc/de/fakeroot.1	2011-12-08 08:00:16.807274786 +0100
+@@ -243,6 +243,4 @@
+ größtenteils von J.H.M. Dassen <jdassen@debian.org>. Ziemlich viele
+ Mods/Zusätze von Joost und Clint.
+ .SH "SIEHE AUCH"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
+-
++\fBfaked\fP(1)
