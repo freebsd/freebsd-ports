@@ -14,13 +14,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Guess File Type With XS (a la mod_mime_magic)
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
-  p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-
 MAKE_JOBS_UNSAFE=	yes
-
-MAN3=	File::MMagic::XS.3
-
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+MAN3=		File::MMagic::XS.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.include <bsd.port.post.mk>
