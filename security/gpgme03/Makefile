@@ -18,6 +18,9 @@ COMMENT=	A library to make access to GnuPG easier
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
+DEPRECATED=	superceded by security/gpgme
+EXPIRATION_DATE=2012-01-08
+
 LATEST_LINK=	gpgme03
 
 USE_AUTOTOOLS=	autoconf libtool

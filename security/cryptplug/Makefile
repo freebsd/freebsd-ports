@@ -18,6 +18,9 @@ COMMENT=	A collection of plug-ins to cryptographic engines
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgpgme03.so.9:${PORTSDIR}/security/gpgme03 \
 		gpg-agent:${PORTSDIR}/security/gnupg
 
+DEPRECATED=	development has ceased
+EXPIRATION_DATE=2012-01-08
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
