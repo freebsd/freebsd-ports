@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.17.0
-PORTREVISION=	1
+PORTVERSION=	1.18.0
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.1[0-68-9].*
+CONFLICTS=	mediawiki-1.1[0-7].*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
