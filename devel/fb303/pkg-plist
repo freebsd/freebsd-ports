@@ -1,6 +1,13 @@
-@comment $FreeBSD$
-%%DATADIR%%/if/fb303.thrift
-%%PYTHON_SITELIBDIR%%/fb303-1.0-%%PYTHON_VERSION_SHORTNAME%%.egg-info
+include/thrift/fb303/FacebookBase.h
+include/thrift/fb303/FacebookService.h
+include/thrift/fb303/ServiceTracker.h
+include/thrift/fb303/fb303_constants.h
+include/thrift/fb303/fb303_types.h
+lib/libfb303.a
+%%SITE_PERL%%/Facebook/FB303/Constants.pm
+%%SITE_PERL%%/Facebook/FB303/FacebookService.pm
+%%SITE_PERL%%/Facebook/FB303/Types.pm
+%%PYTHON_SITELIBDIR%%/fb303-1.0-py2.7.egg-info
 %%PYTHON_SITELIBDIR%%/fb303/FacebookBase.py
 %%PYTHON_SITELIBDIR%%/fb303/FacebookBase.pyc
 %%PYTHON_SITELIBDIR%%/fb303/FacebookService.py
@@ -15,20 +22,14 @@
 %%PYTHON_SITELIBDIR%%/fb303_scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fb303_scripts/fb303_simple_mgmt.py
 %%PYTHON_SITELIBDIR%%/fb303_scripts/fb303_simple_mgmt.pyc
-%%SITE_PERL%%/Facebook/FB303/Constants.pm
-%%SITE_PERL%%/Facebook/FB303/FacebookService.pm
-%%SITE_PERL%%/Facebook/FB303/Types.pm
-include/thrift/fb303/FacebookBase.h
-include/thrift/fb303/FacebookService.h
-include/thrift/fb303/ServiceTracker.h
-include/thrift/fb303/fb303_constants.h
-include/thrift/fb303/fb303_types.h
-lib/libfb303.a
-@dirrmtry include/thrift/fb303
-@dirrmtry include/thrift
-@dirrmtry %%SITE_PERL%%/Facebook/FB303
-@dirrmtry %%SITE_PERL%%/Facebook
-@dirrmtry %%PYTHON_SITELIBDIR%%/fb303_scripts
-@dirrmtry %%PYTHON_SITELIBDIR%%/fb303
-@dirrmtry %%DATADIR%%/if
-@dirrmtry %%DATADIR%%
+%%DATADIR%%/if/fb303.thrift
+@dirrm %%DATADIR%%/if
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/fb303_scripts
+@dirrm %%PYTHON_SITELIBDIR%%/fb303
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm lib/python2.7
+@dirrm %%SITE_PERL%%/Facebook/FB303
+@dirrm %%SITE_PERL%%/Facebook
+@dirrm include/thrift/fb303
+@dirrm include/thrift
