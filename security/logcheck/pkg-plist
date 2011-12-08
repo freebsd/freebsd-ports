@@ -88,7 +88,6 @@
 %%ETCDIR%%/ignore.d.server/nntpcache
 %%ETCDIR%%/ignore.d.server/nscd
 %%ETCDIR%%/ignore.d.server/nslcd
-@comment %%ETCDIR%%/ignore.d.server/ntop
 %%ETCDIR%%/ignore.d.server/openvpn
 %%ETCDIR%%/ignore.d.server/otrs
 %%ETCDIR%%/ignore.d.server/passwd
@@ -142,7 +141,6 @@
 %%ETCDIR%%/ignore.d.server/userv
 %%ETCDIR%%/ignore.d.server/vsftpd
 %%ETCDIR%%/ignore.d.server/watchdog
-%%ETCDIR%%/ignore.d.server/webmin
 %%ETCDIR%%/ignore.d.server/wu-ftpd
 %%ETCDIR%%/ignore.d.server/xinetd
 %%ETCDIR%%/ignore.d.workstation/automount
@@ -207,7 +205,7 @@ sbin/logtail2
 @dirrm %%DATADIR%%/detectrotate
 @dirrm %%DATADIR%%
 @cwd /
-@exec mkdir -p /var/db/logcheck
-@dirrmtry /var/db/logcheck
-@exec mkdir -p /var/run/logcheck
-@dirrmtry /var/run/logcheck
+@exec mkdir -p %%DBDIR%%
+@dirrmtry %%DBDIR%%
+@exec mkdir -p %%RUNDIR%%
+@dirrmtry %%RUNDIR%%
