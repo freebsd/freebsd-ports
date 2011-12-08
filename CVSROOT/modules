@@ -9783,6 +9783,7 @@ nagios-check_ice                ports/net-mgmt/nagios-check_ice
 nagios-check_kumofs             ports/net-mgmt/nagios-check_kumofs
 nagios-check_memcached_paranoid  ports/net-mgmt/nagios-check_memcached_paranoid
 nagios-check_mysql_slave        ports/net-mgmt/nagios-check_mysql_slave
+nagios-check_netsnmp            ports/net-mgmt/nagios-check_netsnmp
 nagios-check_nick               ports/net-mgmt/nagios-check_nick
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-check_postgres_replication  ports/databases/nagios-check_postgres_replication
@@ -22490,7 +22491,6 @@ py-synce-librapi2               ports/palm/py-synce-librapi2
 py-synce-librra                 ports/palm/py-synce-librra
 py-sysv_ipc                     ports/devel/py-sysv_ipc
 py-tables                       ports/devel/py-tables
-py-taglib                       ports/audio/py-taglib
 py-tagpy                        ports/audio/py-tagpy
 py-tconfpy                      ports/devel/py-tconfpy
 py-tempita                      ports/textproc/py-Tempita
@@ -22600,6 +22600,7 @@ py-wordnet                      ports/textproc/py-wordnet
 py-ws2300                       ports/science/py-ws2300
 py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
 py-wsgiauth                     ports/www/py-wsgiauth
+py-wsgitools                    ports/devel/py-wsgitools
 py-wsgiutils                    ports/devel/py-wsgiutils
 py-wxPython24                   ports/x11-toolkits/py-wxPython24
 py-wxPython26                   ports/x11-toolkits/py-wxPython26
@@ -27994,7 +27995,6 @@ zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
 zephyr                          ports/net-im/zephyr
 zeroer                          ports/sysutils/zeroer
-zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
 zetaback                        ports/sysutils/zetaback
 zfs-periodic                    ports/sysutils/zfs-periodic
