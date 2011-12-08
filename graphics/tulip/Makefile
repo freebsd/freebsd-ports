@@ -45,6 +45,10 @@ PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
 CFLAGS+=	-fPIC
 .endif
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|;s|<qlocale.h>|<QtCore/qlocale.h>|' \
 	    ${WRKSRC}/software/tulip/src/main.cpp
