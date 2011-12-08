@@ -16,8 +16,6 @@ COMMENT=	Validate method/function parameters
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0.2703:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-
 PERL_MODBUILD=	yes
 
 MAN3=		Attribute::Params::Validate.3 \
@@ -26,8 +24,8 @@ MAN3=		Attribute::Params::Validate.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
 BUILD_DEPENDS+=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
+RUN_DEPENDS+=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
 .endif
 
 .include <bsd.port.post.mk>
