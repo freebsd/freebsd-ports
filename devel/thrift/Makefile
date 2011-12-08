@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
-DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
@@ -36,14 +35,16 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-libevent=${LOCALBASE} \
 		--enable-shared --enable-static --with-zlib
 CONFIGURE_ENV+=	${MAKE_ENV}
 
+OPTIONS=	GLIB "Building C (GLib) Library" off
+
 # For Perl support, use devel/p5-Thrift.
 # For Python support, use devel/py-thrift.
 # For Ruby support, use devel/ruby-thrift.
+# For PHP support, use devel/php5-thrift.
 # Other languages are not yet supported, please feel free to contribute
 # using one of the leaf ports as an example.
 CONFIGURE_ARGS+=	\
 		--with-cpp \
-		--without-c_glib \
 		--without-csharp \
 		--without-erlang \
 		--without-haskell \
@@ -53,6 +54,16 @@ CONFIGURE_ARGS+=	\
 		--without-php_extension \
 		--without-python \
 		--without-ruby
+
+.if !defined(WITHOUT_GLIB)
+    CONFIGURE_ARGS+=	--with-c_glib
+    LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
+    MAKE_ENV+=	WITH_GLIB=1
+    PLIST_SUB+=	WITH_GLIB=""
+.else
+    CONFIGURE_ARGS+=	--without-c_glib
+    PLIST_SUB+=	WITH_GLIB="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +76,9 @@ post-patch:
 
 pre-configure:
 	@${REINPLACE_CMD} '/config.h/d' ${WRKSRC}/lib/cpp/Makefile.am
+	${CHMOD} 774 ${WRKSRC}/configure
+	${CHMOD} 774 ${WRKSRC}/install-sh
+	${CHMOD} 774 ${WRKSRC}/lib/php/src/ext/thrift_protocol/build/shtool
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/libthrift.so.0 ${PREFIX}/lib/libthrift.so
