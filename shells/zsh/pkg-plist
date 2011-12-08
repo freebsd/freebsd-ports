@@ -236,6 +236,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_analyseplugin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_brctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_chrt
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cryptsetup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ethtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_values
@@ -250,8 +251,10 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_mii-tool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_modutils
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_mondo
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_nmcli
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_pkgtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_rpmbuild
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_schedtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_sshfs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_strace
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_tpb
@@ -287,6 +290,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_zlogin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_a2ps
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_adb
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_aap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ant
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_antiword
@@ -416,6 +420,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_less
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_links
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_list_files
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ln
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_loadkeys
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_locales
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_locate
@@ -451,6 +456,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_netcat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_newsgroups
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nice
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nmap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_npm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_notmuch
@@ -532,6 +538,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sudo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_surfraw
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sysctl
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_systemctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar_archive
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tardy
@@ -554,6 +561,8 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_topgit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_totd
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tracepath
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tree
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_twidge
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_twisted
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_unace
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_uname
@@ -740,6 +749,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Exceptions/throw
 %%DATADIR%%/%%ZSH_VER%%/functions/MIME.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/MIME/pick-web-browser
+%%DATADIR%%/%%ZSH_VER%%/functions/MIME/zsh-mime-contexts
 %%DATADIR%%/%%ZSH_VER%%/functions/MIME/zsh-mime-handler
 %%DATADIR%%/%%ZSH_VER%%/functions/MIME/zsh-mime-setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Misc.zwc
@@ -916,6 +926,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/match-word-context
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/match-words-by-style
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/modify-current-argument
+%%DATADIR%%/%%ZSH_VER%%/functions/Zle/move-line-in-buffer
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/narrow-to-region
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/narrow-to-region-invisible
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/predict-on

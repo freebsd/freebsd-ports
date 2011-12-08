@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.12
-PORTREVISION=	2
+PORTVERSION=	4.3.14
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -29,13 +28,13 @@ ZSH_VER=	${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf autoheader
 GNU_CONFIGURE=	yes
 USE_NCURSES=	yes
 .if !defined(WITH_ZSH_STATIC)
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .endif
 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
