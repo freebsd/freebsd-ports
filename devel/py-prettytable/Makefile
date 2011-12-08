@@ -18,6 +18,7 @@ COMMENT=	Library for displaying tabular data in an ASCII table format
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_NOEGGINFO=	yes
-PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
+
+PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYEASYINSTALL_EGG}
 
 .include <bsd.port.mk>
