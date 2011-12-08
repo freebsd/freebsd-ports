@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.5
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Music collection manager and player
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
@@ -33,9 +35,6 @@ USE_GMAKE=	yes
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
 MAN1=		gogglesmm.1
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	README AUTHORS
 
