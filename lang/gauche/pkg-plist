@@ -311,11 +311,11 @@ share/gauche/site/lib/.packages/.keepme
 @dirrm share/gauche/%%VERSION%%/lib
 @dirrm share/gauche/%%VERSION%%
 @dirrm share/gauche
-@dirrm lib/gauche-0.9/site/i386-portbld-freebsd8.2
+@dirrm lib/gauche-0.9/site/%%TARGET%%
 @dirrm lib/gauche-0.9/site
 @dirrm lib/gauche-0.9/%%VERSION%%/include/gauche
 @dirrm lib/gauche-0.9/%%VERSION%%/include
-@dirrm lib/gauche-0.9/%%VERSION%%/i386-portbld-freebsd8.2
+@dirrm lib/gauche-0.9/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche-0.9/%%VERSION%%
 @dirrm lib/gauche-0.9
 @dirrm %%EXAMPLESDIR%%
