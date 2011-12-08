@@ -3071,7 +3071,6 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
-    SUBDIR += py-include_server
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
