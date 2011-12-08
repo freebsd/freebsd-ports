@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	APACHE
 DISTNAME=	thrift-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	komarov@valerka.net
 COMMENT=	The Facebook Bassline
 
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
