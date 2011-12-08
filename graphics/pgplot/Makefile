@@ -7,7 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -28,6 +28,10 @@ SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+.if !empty(ARCH:M*64*)
+EXTRA_PATCHES +=	${FILESDIR}/drivers_64bit_patch
+.endif
 
 .ifndef(NOPORTDATA)
 PORTDATA=	grfont.dat
@@ -85,13 +89,14 @@ do-install:
 .endif
 
 .if defined(MAINTAINER_MODE) && !defined(BATCH)
+DEMO?=	cpgdemo
 
 check test: build
 	@cd ${WRKSRC}; ${CP} cpg/cpgdemo.c examples/pgdemo*.f ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 	Makefile.demo ${_MAKE_JOBS} ${MAKE_ARGS}
 	@${SETENV} LD_LIBRARY_PATH="${LOCALBASE}/lib:${WRKSRC}" \
-	PGPLOT_DIR="${WRKSRC}" PGPLOT_DEV="/xwin" ${WRKSRC}/cpgdemo
+	PGPLOT_DIR="${WRKSRC}" PGPLOT_DEV="/xwin" ${WRKSRC}/${DEMO}
 .endif
 
 .include <bsd.port.post.mk>
