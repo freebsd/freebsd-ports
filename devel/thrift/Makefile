@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	komarov@valerka.net
 COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	ASL
