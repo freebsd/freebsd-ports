@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xdelta
-DISTVERSION=	3.0y
-PORTREVISION?=	0
+DISTVERSION=	3.0.0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	misc devel
 MASTER_SITES=	GOOGLE_CODE
@@ -17,6 +17,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 USE_GMAKE=	yes
+PLIST_FILES?=	bin/xdelta3
 
 .include <bsd.port.pre.mk>
 
@@ -24,32 +25,27 @@ USE_GMAKE=	yes
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${SLAVE_PORT:Mno}
-PLIST_FILES=	bin/xdelta3
-.endif
+post-patch:	master-post-patch
 
-post-patch:	.SILENT
+master-post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^CFLAGS/s/=/+&/' \
 		-e 's/-O3//; s/-g//' \
-		-e '/^all:/,/^$$/ { s/:.*/: xdelta3/; /testing/d; }' \
+		-e '/^all:/,/^$$/ { s/:.*/: xdelta3/; s/make/$$(MAKE)/; }' \
 		${WRKSRC}/Makefile
-.if ${SLAVE_PORT:Myes}
-	${REINPLACE_CMD} -i.slave.bak -e '/^SWIG_FLAGS/s/=/& `python$$(PYVER)-config --cflags` -fpic/' \
-		-e '/^xdelta3module\.so:/,/^$$/ { s/ld/$$(CC)/; \
-			s/.*libpython.*\.so.*/`python$$(PYVER)-config --ldflags`/; \
-			/-lc/d; }' \
-		-e 's|/usr/include/python$$(PYVER)|${PYTHON_INCLUDEDIR}|' \
-		-e 's|/usr/lib/python$$(PYVER)|${PYTHON_LIBDIR}|' \
-		-e 's|/usr/lib/libpython|${LOCALBASE}/lib/libpython|' \
-		-e '/^all:/s/:.*/: swigtgt/' \
-		-e '/^PYVER/s/=.*/= ${PYTHON_VER}/' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "/^REL/s/=.*/='${PORTVERSION}'/" \
-		-e "/extra_compile_args.*\[/,/]/ { s/'-O3',//; s/'-g',//; }" \
-		${WRKSRC}/${PYSETUP}
-.else
+
+.if ${SLAVE_PORT:Mno}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdelta3 ${PREFIX}/bin/
+.endif
+
+.if !target(test)
+test:	build
+	${WRKSRC}/xdelta3 test
+.endif
+
+.if !target(regression-test)
+regression-test: build
+	${WRKSRC}/testing/xdelta3-regtest
 .endif
 
 .include <bsd.port.post.mk>
