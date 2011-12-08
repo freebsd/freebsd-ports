@@ -26,15 +26,6 @@
      exit 1
  fi
  
-@@ -51,7 +44,7 @@
- 
- # Get the details for the email message
- DATE="$(date +'%Y-%m-%d %H:%M')"
--VERSION="1.3.7"
-+VERSION="1.3.10"
- 
- # Set the default report level
- REPORTLEVEL="server"
 @@ -69,12 +62,12 @@
  ADDTAG="no"
  

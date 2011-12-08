@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.13
-PORTREVISION=	1
+PORTVERSION=	1.3.14
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,10 +25,13 @@ LOGCHECK_UID=	915
 LOGCHECK_GROUP=	${LOGCHECK_USER}
 LOGCHECK_GID=	${LOGCHECK_UID}
 
+DBDIR=		/var/db/${PORTNAME}
+RUNDIR=		/var/run/${PORTNAME}
+
 # Enable Perl dependency for logtail script
 USE_PERL5=	5.8.0+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BINMODE=	755
 SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
@@ -38,6 +40,7 @@ SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		LOGCHECK_GID=${LOGCHECK_GID} \
 		PW=${PW}
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
+PLIST_SUB+=	DBDIR=${DBDIR} RUNDIR=${RUNDIR}
 CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
 DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
@@ -70,14 +73,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${PREFIX}/sbin
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${INSTALL} -d /var/db/logcheck
-	@${INSTALL} -d /var/run/logcheck
-	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} /var/db/logcheck
+	@${INSTALL} -d ${DBDIR}
+	@${INSTALL} -d ${RUNDIR}
+	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} ${DBDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
-		/var/db/logcheck' >> ${TMPPLIST}
-	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} /var/run/logcheck
+		${DBDIR}' >> ${TMPPLIST}
+	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} ${RUNDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
-		/var/run/logcheck' >> ${TMPPLIST}
+		${RUNDIR}' >> ${TMPPLIST}
 	@${INSTALL} -d ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
 		${ETCDIR}/logcheck.conf.sample
