@@ -109,6 +109,7 @@
     SUBDIR += hs-X11-xft
     SUBDIR += hs-xmobar
     SUBDIR += i3lock
+    SUBDIR += i3status
     SUBDIR += iceauth
     SUBDIR += ico
     SUBDIR += idesk
