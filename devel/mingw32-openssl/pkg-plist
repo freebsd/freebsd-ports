@@ -87,6 +87,7 @@ mingw32/openssl/misc/tsget
 mingw32/openssl/openssl.cnf
 @dirrm mingw32/include/openssl
 @dirrm mingw32/lib/engines
+@dirrmtry mingw32/lib/pkgconfig
 @dirrmtry mingw32/openssl/certs
 @dirrm mingw32/openssl/misc
 @dirrmtry mingw32/openssl/private
