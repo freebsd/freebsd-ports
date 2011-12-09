@@ -4,5 +4,3 @@ vector is replaced by an approximation obtained with the Lenstra-Lenstra-Lovasz
 basis reduction algorithm, which can be calculated in polynomial time. The code
 is able to test in up to 24 dimensions, and includes an example of how to use
 the test to search for good LCG parameters.
-
-WWW: http://random.mat.sbg.ac.at/results/karl/spectraltest/lll.html
