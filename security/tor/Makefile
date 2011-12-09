@@ -10,10 +10,14 @@ DISTVERSION=	0.2.2.34
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
+		ftp://ftp.fodt.it/pub/mirror/tor/dist/ \
+		ftp://key-server.org/tor/dist/ \
 		http://cyberside.net.ee/tor/ \
-		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
+		http://ftp.bit.nl/mirror/tor/ \
 		http://mirror.host4site.co.il/torproject.org/dist/ \
+		http://mirror.open-networx.org/torproject.org/dist/ \
 		http://mirror.tor.hu/dist/ \
+		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
 		http://onion.anonymo.us.org/dist/ \
 		http://theonionrouter.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
@@ -22,17 +26,27 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.blingblingsquad.net/dist/ \
 		http://tor.ccc.de/dist/ \
 		http://tor.cyberarmy.at/dist/ \
+		http://tor.factor.cc/dist/ \
+		http://tor.fodt.it/dist/ \
+		http://tor.freie-re.de/dist/ \
 		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
 		http://tor.kamagurka.org/dist/ \
+		http://tor.key-server.org/dist/ \
 		http://tor.searchprivate.com/dist/ \
 		http://tor.taiga-san.net/dist/ \
-		http://tor.webersiedlung.at/dist/ \
+		http://tor.vesta.nu/dist/ \
 		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
+		https://torproject.antagonism.org/dist/ \
+		https://torproject.crypto.is/dist/ \
+		http://torproject.is/dist/ \
 		http://torproject.nwlinux.us/dist/ \
-		http://www.torproject.org.in/dist/ \
+		http://torua.reactor-xg.kiev.ua/dist/ \
+		https://www.coevoet.nl/tor/dist/ \
 		http://www.oignon.net/dist/ \
+		http://www.torproject.nl/dist/ \
+		http://www.torproject.org.in/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/ \
 		http://www.torservers.net/mirrors/torproject.org/dist/
