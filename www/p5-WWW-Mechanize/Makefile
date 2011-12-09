@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,10 @@ RUN_DEPENDS=	p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
 		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
-TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint \
