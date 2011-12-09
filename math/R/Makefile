@@ -24,8 +24,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
 		http://cran.stat.ucla.edu/src/base/R-2/ \
-		http://probability.ca/cran/src/base/R-2/ \
-		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/
+		http://probability.ca/cran/src/base/R-2/
 DISTNAME=	R-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
