@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qbzr
-PORTVERSION=	0.21.1
+PORTVERSION=	0.21.2
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/76565506/ \
+MASTER_SITES=	http://launchpadlibrarian.net/86857283/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
