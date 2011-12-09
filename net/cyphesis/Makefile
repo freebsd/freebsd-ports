@@ -8,7 +8,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A server for WorldForge games
 
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
-		varconf-1.0.6:${PORTSDIR}/devel/varconf \
+		varconf-1.0.7:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.5:${PORTSDIR}/math/wfmath \
 		mercator-0.3.1:${PORTSDIR}/devel/mercator \
 		skstream-0.3.6:${PORTSDIR}/net/skstream \
