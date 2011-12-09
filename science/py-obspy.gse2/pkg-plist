@@ -29,6 +29,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/libgse2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/libgse2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/libgse2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/paz.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/paz.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/paz.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/src/GSE_UTI/Makefile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/src/GSE_UTI/Makefile.lin64
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/src/GSE_UTI/Makefile.mac
@@ -60,6 +63,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_libgse2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_libgse2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_libgse2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_paz.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_paz.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/tests/test_paz.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/gse2/src/GSE_UTI
