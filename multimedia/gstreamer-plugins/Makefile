@@ -129,6 +129,9 @@ post-patch:
 .if ${DIST}=="bad"
 	@${REINPLACE_CMD} -e 's|opencv <= 2.2.0|opencv <= 2.3.9|g' \
 	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
+	${WRKSRC}/ext/resindvd/resindvdbin.c \
+	${WRKSRC}/ext/resindvd/resindvdsrc.c
 .endif
 	@${FIND} ${WRKSRC}/ext -name Makefile.in | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
