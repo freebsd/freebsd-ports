@@ -7,7 +7,7 @@
 
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/zapping/zvbi/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
@@ -30,10 +30,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-#	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
-#		${WRKSRC}/contrib/atsc-cc.c
-#	@${REINPLACE_CMD} -e 's|-I\.|& -I\.\./src|g' \
-#		${WRKSRC}/contrib/Makefile.in
+	@${REINPLACE_CMD} -e 's|#cpu(\([^)]*\))|defined(__\1__)|g' ${WRKSRC}/src/misc.h
 	@${REINPLACE_CMD} -e 's|zvbi-atsc-cc$$(EXEEXT)||g; \
 		s|zvbi-atsc-cc\.1||g' ${WRKSRC}/contrib/Makefile.in
 
