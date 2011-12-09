@@ -73,13 +73,13 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
-		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
 		GRIDFS_MODULE		"3rd party gridfs module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		POSTGRES_MODULE		"3rd party postgresql module" off \
 		REDIS2_MODULE		"3rd party redis2 module" off \
+		SET_MISC_MODULE		"3rd party set_misc module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SRCACHE_MODULE		"3rd party srcache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
@@ -421,15 +421,6 @@ DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_MODULE_VERSION}-${GIT_
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_MODULE_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_DEVEL_KIT_MODULE)
-NGINX_DEVEL_KIT_MODULE_VERSION=	0.2.17
-GIT_DEVEL_KIT_MODULE_VERSION=	0-gbc97eea
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_MODULE_VERSION}/:devel_kit
-DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_KIT_MODULE_VERSION}.tar.gz:devel_kit
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
-.endif
-
 .if defined(WITH_GRIDFS_MODULE)
 NGINX_GRIDFS_MODULE_VERSION=	0.8
 GIT_GRIDFS_MODULE_VERSION=	0-gb5f8113
@@ -444,9 +435,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 .endif
 
 .if defined(WITH_LUA_MODULE)
-.if !defined(WITH_DEVEL_KIT_MODULE)
-BROKEN=		for lua module build devel_kit also should be defined
-.endif
+USE_NGINX_DEVEL_KIT=	yes
 USE_LUA=	5.1+
 NGINX_LUA_MODULE_VERSION=	0.3.0
 GIT_LUA_MODULE_VERSION=	0-gdd0d4d0
@@ -505,6 +494,17 @@ DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_RE
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_MODULE_VERSION:S/^0-g//}
 .endif
 
+.if defined(WITH_SET_MISC_MODULE)
+USE_NGINX_DEVEL_KIT=	yes
+NGINX_SET_MISC_MODULE_VERSION=	0.22rc3
+GIT_SET_MISC_VERSION=	0-g7adef5a
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
+DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
+.endif
+
 .if defined(WITH_SLOWFS_CACHE_MODULE)
 NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.6
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
@@ -543,7 +543,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 .if defined(WITH_XRID_HEADER_MODULE)
-GIT_XRID_MODULE_VERSION=        0daa3cc
+GIT_XRID_MODULE_VERSION=	0daa3cc
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/gabor/nginx-x-rid-header/tarball/master/:xrid
 DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_MODULE_VERSION}.tar.gz:xrid
@@ -589,6 +589,15 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
+.endif
+
+.if defined(USE_NGINX_DEVEL_KIT)
+NGINX_DEVEL_KIT_MODULE_VERSION=	0.2.17
+GIT_DEVEL_KIT_MODULE_VERSION=	0-gbc97eea
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_MODULE_VERSION}/:devel_kit
+DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_KIT_MODULE_VERSION}.tar.gz:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
