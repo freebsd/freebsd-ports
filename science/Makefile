@@ -152,6 +152,7 @@
     SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy-core
+    SUBDIR += py-obspy.db
     SUBDIR += py-obspy.gse2
     SUBDIR += py-obspy.imaging
     SUBDIR += py-obspy.mseed
