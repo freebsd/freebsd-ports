@@ -1,4 +1,5 @@
 bin/obspy-runtests
+bin/obspy-reftek-rescue
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -25,6 +26,9 @@ bin/obspy-runtests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/reftekrescue.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/reftekrescue.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/reftekrescue.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.pyo
@@ -36,10 +40,12 @@ bin/obspy-runtests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/example.npz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist.ascii.bz2
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_2_traces.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_float.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_unknown.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair.ascii.gz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_2_traces.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_float.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_unknown.ascii
@@ -73,13 +79,29 @@ bin/obspy-runtests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/attribdict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/attribdict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/attribdict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/geodetics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/geodetics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/geodetics.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
