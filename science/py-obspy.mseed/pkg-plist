@@ -124,6 +124,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/bizarre/endiantest.le-header.le-data.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/blockette008.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/brokenlastrecord.mseed
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/constructedFileToTestReadViaRecords.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/float32_Float32_bigEndian.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/float32_Float32_littleEndian.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/float64_Float64_bigEndian.mseed
