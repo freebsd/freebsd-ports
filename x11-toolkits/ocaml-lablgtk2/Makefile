@@ -8,10 +8,9 @@ PORTNAME=	lablgtk2
 PORTVERSION=	2.14.2
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
-		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/ \
-		http://caml.inria.fr/distrib/bazar-ocaml/
+MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/561/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
+		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
