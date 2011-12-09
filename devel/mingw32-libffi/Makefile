@@ -7,6 +7,7 @@
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 PKGNAMEPREFIX=	mingw32-
@@ -25,7 +26,9 @@ CFLAGS=		-O2	# Override CFLAGS for a cross-build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,^INFO_DEPS[ \t]*=,#&,' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,^INFO_DEPS[ \t]*=,#&,' \
+	                 -e '/^SUBDIRS[ \t]*=/s, man$$,,' \
+	                 ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_DATA} \
