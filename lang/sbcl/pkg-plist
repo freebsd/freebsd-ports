@@ -56,6 +56,8 @@ lib/sbcl/sb-cltl2/sb-cltl2.asd
 lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-concurrency/gate.fasl
+lib/sbcl/sb-concurrency/gate.lisp
 lib/sbcl/sb-concurrency/mailbox.fasl
 lib/sbcl/sb-concurrency/mailbox.lisp
 lib/sbcl/sb-concurrency/package.fasl
@@ -175,7 +177,7 @@ lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sb-sprof/sb-sprof.lisp
-lib/sbcl/sbcl.core
+lib/sbcl/sbcl_core
 lib/sbcl/site-systems/.keep_me
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

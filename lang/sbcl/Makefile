@@ -9,14 +9,11 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.53.0
+PORTVERSION=	1.0.54.0
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-#MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-#		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-#MASTER_SITE_SUBDIR=	sbcl/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -37,8 +34,6 @@ OPTIONS=	SBCL "Use installed SBCL binary if available" off \
 		PDF "Build PDF documentation" on \
 		PS "Build PostScript documentation" off
 
-#LICENSE=	BSD
-#LICENSE_FILE=	${WRKSRC}/COPYING
 MAN1=		sbcl.1
 INFODIR=	${PREFIX}/${INFO_PATH}
 .if !defined(NOPORTDOCS)
@@ -87,10 +82,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADS) && ${OSVERSION} > 900027
-BROKEN =	'thread was already on queue' crash with libthr after r216641
-.endif
-
 .if !defined(NOPORTDOCS) && (defined(WITH_PDF) || defined(WITH_PS))
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
@@ -121,17 +112,18 @@ DYNAMIC_SPACE_SIZE?=	512
 .else
 PLIST_SUB+=	I386_ONLY="@comment " AMD64_ONLY=""
 SBCLCONFIG=	Config.x86-64-freebsd
+DYNAMIC_SPACE_SIZE?=	1024
 .endif
 
 # If WITH_SBCL is defined, try to use existing "sbcl" first.
-.if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl)
+.if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl) && !make(makesum)
 LISP_CMD=	""
 .else
 BOOT_VERSION=	1.0.31
 
 . if make(makesum)
-BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 amd64-freebsd6 \
-			i386-freebsd8 i386-freebsd7 i386-freebsd6
+BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 i386-freebsd8 \
+			i386-freebsd7
 . else
 .  if ${OSVER_MAJOR} > 8	# We'll use 8.x bootstrap for now
 BOOT_ARCH_OS_LIST=	${ARCH}-freebsd8
@@ -179,6 +171,8 @@ post-patch:
 .ifdef(NM)
 	@${ECHO_CMD} "NM=${NM} -gp" >> ${WRKSRC}/src/runtime/${SBCLCONFIG}
 .endif
+	@${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+	-e 's|\.core|_core|g'
 	@${REINPLACE_CMD} \
 		-e 's|/etc/sbclrc|${PREFIX}&|g' \
 		-e 's|/usr/local|${PREFIX}|g' \
@@ -220,7 +214,7 @@ do-build:
 do-install:
 	${MKDIR} ${SBCL_HOME}/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${SBCL_HOME}/
+	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${SBCL_HOME}/
 .for MOD in ${CONTRIB_MODULES}
 	${MKDIR} ${SBCL_HOME}/${MOD}
 	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp ${SBCL_HOME}/${MOD}/
