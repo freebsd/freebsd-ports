@@ -144,6 +144,8 @@ bin/obspy-xseed2dataless
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/blockette-tests/blockette059.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/blockette-tests/blockette060.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/blockette-tests/blockette061.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/data/AI.ESPZ._.BHE.dataless
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/data/AI.ESPZ._.BH_.dataless
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/data/arclink_full.seed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/data/bug165.dataless
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/xseed/tests/data/dataless.seed.BW_FURT
