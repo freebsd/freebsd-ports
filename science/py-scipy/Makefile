@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTVERSION=	0.10.0
 CATEGORIES=	science python
-MASTER_SITES=	SF
+MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
+		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
+		scipy-ref.pdf:doc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	Scientific tools for Python
@@ -34,10 +37,6 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} < 602101
-BROKEN=	ldexpf is missing See http://lists.freebsd.org/pipermail/freebsd-amd64/2006-December/009263.html for details
-.endif
-
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
@@ -56,10 +55,21 @@ LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
 PYDISTUTILS_BUILDARGS+=	--fcompiler=gnu95
 
+post-extract:
+	@${CP} ${DISTDIR}/scipy-ref.pdf ${WRKDIR}
+
 post-install:
 	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${DOCSDIR}
+	@${ECHO_CMD} ${DOCSDIR}/scipy-ref.pdf | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO_CMD} ${DOCSDIR} | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.post.mk>
