@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07014
-PORTREVISION=	1
+PORTVERSION=	0.07015
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKITOVER
@@ -42,6 +41,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI \
+		p5-DBIx-Class-IntrospectableM2M>=0:${PORTSDIR}/databases/p5-DBIx-Class-IntrospectableM2M \
 		p5-Moose>=1.12:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-MarkAsMethods>=0.13:${PORTSDIR}/devel/p5-MooseX-MarkAsMethods \
 		p5-MooseX-NonMoose>=0.16:${PORTSDIR}/devel/p5-MooseX-NonMoose \
