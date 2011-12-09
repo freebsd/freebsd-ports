@@ -15,6 +15,8 @@ DISTNAME=	schismtracker-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A module tracker editor/player resembling impulse tracker
 
+LICENSE=	GPLv2
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_SDL=	yes
@@ -22,7 +24,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv2
 PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -36,7 +37,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900027
-BROKEN=		does not build
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-modplug__snd_gm.c
 .endif
 
 .include <bsd.port.post.mk>
