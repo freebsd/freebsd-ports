@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-mechanics
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,10 +16,10 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
+WRKSRC=		${WRKDIR}/${OCTSRC}/inst/molecularDynamics/src
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
-do-build:
-	@${DO_NADA}
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
