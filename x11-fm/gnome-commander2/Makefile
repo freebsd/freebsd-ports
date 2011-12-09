@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.2.8.13
+PORTVERSION=	1.2.8.14
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
@@ -16,6 +16,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	File manager for Gnome2
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		exif.12:${PORTSDIR}/graphics/libexif \
