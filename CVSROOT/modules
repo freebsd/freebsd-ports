@@ -5742,6 +5742,7 @@ i386-rtems-binutils             ports/devel/i386-rtems-binutils
 i386-rtems-gcc                  ports/devel/i386-rtems-gcc
 i386-rtems-gdb                  ports/devel/i386-rtems-gdb
 i3lock                          ports/x11/i3lock
+i3status                        ports/x11/i3status
 iSiloXC                         ports/palm/iSiloXC
 ia-aspell                       ports/textproc/ia-aspell
 ia64sim                         ports/emulators/ia64sim
@@ -20898,6 +20899,7 @@ php52-posix                     ports/sysutils/php52-posix
 php52-pspell                    ports/textproc/php52-pspell
 php52-readline                  ports/devel/php52-readline
 php52-recode                    ports/converters/php52-recode
+php52-rrdtool                   ports/databases/php52-rrdtool
 php52-session                   ports/www/php52-session
 php52-shmop                     ports/devel/php52-shmop
 php52-simplexml                 ports/textproc/php52-simplexml
@@ -22248,6 +22250,7 @@ py-pow                          ports/security/py-pow
 py-pp                           ports/devel/py-pp
 py-ppolicy                      ports/mail/py-ppolicy
 py-pqueue                       ports/devel/py-pqueue
+py-prettytable                  ports/devel/py-prettytable
 py-prewikka                     ports/www/py-prewikka
 py-prioritized_methods          ports/devel/py-prioritized_methods
 py-probstat                     ports/math/py-probstat
