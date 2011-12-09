@@ -11,7 +11,6 @@ etc/ember/ogre.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
-share/icons/worldforge/ember.png
 share/ember/media/shared/COPYING.txt
 share/ember/media/shared/LICENSING.txt
 share/ember/media/shared/common/3d_objects/characters/malebuilder/male/animations/malebuilder.skeleton
@@ -75,16 +74,15 @@ share/ember/media/shared/common/3d_objects/characters/universal/mouth/healthy/D.
 share/ember/media/shared/common/3d_objects/characters/universal/mouth/healthy/ogre.material
 share/ember/media/shared/common/3d_objects/characters/universal/teeth/white/D.png
 share/ember/media/shared/common/3d_objects/characters/universal/teeth/white/ogre.material
-share/ember/media/shared/common/3d_objects/creatures/bass_lm/animations/bass_lm.skeleton
 share/ember/media/shared/common/3d_objects/creatures/bass_lm/bass.mesh
 share/ember/media/shared/common/3d_objects/creatures/bass_lm/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/bass_lm/textures/body/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/bear/animations/bear.skeleton
+share/ember/media/shared/common/3d_objects/creatures/bear/bear.mesh
 share/ember/media/shared/common/3d_objects/creatures/bear/textures/black/D.png
 share/ember/media/shared/common/3d_objects/creatures/bear/textures/black/N.png
 share/ember/media/shared/common/3d_objects/creatures/bear/textures/black/S.png
 share/ember/media/shared/common/3d_objects/creatures/bear/textures/black/ogre.material
-share/ember/media/shared/common/3d_objects/creatures/bluegill/animations/bluegill.skeleton
 share/ember/media/shared/common/3d_objects/creatures/bluegill/bluegill.mesh
 share/ember/media/shared/common/3d_objects/creatures/bluegill/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/bluegill/textures/body/ogre.material
@@ -122,14 +120,17 @@ share/ember/media/shared/common/3d_objects/creatures/dog/textures/brown/N.png
 share/ember/media/shared/common/3d_objects/creatures/dog/textures/brown/S.png
 share/ember/media/shared/common/3d_objects/creatures/dog/textures/brown/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/donkey/animations/donkey.skeleton
+share/ember/media/shared/common/3d_objects/creatures/donkey/donkey.mesh
 share/ember/media/shared/common/3d_objects/creatures/donkey/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/donkey/textures/body/N.png
 share/ember/media/shared/common/3d_objects/creatures/donkey/textures/body/S.png
 share/ember/media/shared/common/3d_objects/creatures/donkey/textures/body/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/duck/animations/duck.skeleton
+share/ember/media/shared/common/3d_objects/creatures/duck/duck.mesh
 share/ember/media/shared/common/3d_objects/creatures/duck/textures/black_bellied_whistling/D.png
 share/ember/media/shared/common/3d_objects/creatures/duck/textures/black_bellied_whistling/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/flying_bird/animations/flying_bird.skeleton
+share/ember/media/shared/common/3d_objects/creatures/flying_bird/flying_bird.mesh
 share/ember/media/shared/common/3d_objects/creatures/flying_bird/textures/falcon/D.png
 share/ember/media/shared/common/3d_objects/creatures/flying_bird/textures/falcon/N.png
 share/ember/media/shared/common/3d_objects/creatures/flying_bird/textures/falcon/S.png
@@ -148,20 +149,21 @@ share/ember/media/shared/common/3d_objects/creatures/goblin/textures/common/S.pn
 share/ember/media/shared/common/3d_objects/creatures/goblin/textures/green/D.png
 share/ember/media/shared/common/3d_objects/creatures/goblin/textures/green/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/horse/animations/horse.skeleton
+share/ember/media/shared/common/3d_objects/creatures/horse/horse.mesh
 share/ember/media/shared/common/3d_objects/creatures/horse/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/horse/textures/body/N.png
 share/ember/media/shared/common/3d_objects/creatures/horse/textures/body/S.png
 share/ember/media/shared/common/3d_objects/creatures/horse/textures/body/ogre.material
-share/ember/media/shared/common/3d_objects/creatures/pickerel/animations/pickerel.skeleton
 share/ember/media/shared/common/3d_objects/creatures/pickerel/pickerel.mesh
 share/ember/media/shared/common/3d_objects/creatures/pickerel/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/pickerel/textures/body/ogre.material
+share/ember/media/shared/common/3d_objects/creatures/rabbit/RabbitHi.mesh
+share/ember/media/shared/common/3d_objects/creatures/rabbit/animations/RabbitHi-Armature.skeleton
 share/ember/media/shared/common/3d_objects/creatures/spider/animations/spider.skeleton
 share/ember/media/shared/common/3d_objects/creatures/spider/textures/emerald/D.png
 share/ember/media/shared/common/3d_objects/creatures/spider/textures/emerald/N.png
 share/ember/media/shared/common/3d_objects/creatures/spider/textures/emerald/S.png
 share/ember/media/shared/common/3d_objects/creatures/spider/textures/emerald/ogre.material
-share/ember/media/shared/common/3d_objects/creatures/tuna/animations/tuna.skeleton
 share/ember/media/shared/common/3d_objects/creatures/tuna/textures/body/D.png
 share/ember/media/shared/common/3d_objects/creatures/tuna/textures/body/ogre.material
 share/ember/media/shared/common/3d_objects/creatures/tuna/tuna.mesh
@@ -344,12 +346,14 @@ share/ember/media/shared/common/3d_objects/environment/textures/water/D.png
 share/ember/media/shared/common/3d_objects/environment/textures/water/N.png
 share/ember/media/shared/common/3d_objects/environment/textures/water/S.png
 share/ember/media/shared/common/3d_objects/environment/textures/water/ogre.material
+share/ember/media/shared/common/3d_objects/items/building_element/models/board/board.mesh
+share/ember/media/shared/common/3d_objects/items/building_element/models/twobyfour/twobyfour.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/barrel/barrel.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/bottle/bottle.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/bottlejug/bottlejug.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/bowls/bowls.mesh
+share/ember/media/shared/common/3d_objects/items/containers/models/chest/animations/chest.skeleton
 share/ember/media/shared/common/3d_objects/items/containers/models/chest/chest.mesh
-share/ember/media/shared/common/3d_objects/items/containers/models/chest/chest.skeleton
 share/ember/media/shared/common/3d_objects/items/containers/models/crate/craftsman_wood_crate_closed.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/crate/craftsman_wood_crate_lid.mesh
 share/ember/media/shared/common/3d_objects/items/containers/models/crate/craftsman_wood_crate_open.mesh
@@ -420,6 +424,8 @@ share/ember/media/shared/common/3d_objects/items/furniture/textures/painting/pir
 share/ember/media/shared/common/3d_objects/items/furniture/textures/painting/pirate/ogre.material
 share/ember/media/shared/common/3d_objects/items/furniture/textures/painting/wizard/D.png
 share/ember/media/shared/common/3d_objects/items/furniture/textures/painting/wizard/ogre.material
+share/ember/media/shared/common/3d_objects/items/material/textures/wood_sides/D.png
+share/ember/media/shared/common/3d_objects/items/material/textures/wood_sides/ogre.material
 share/ember/media/shared/common/3d_objects/items/misc/models/campfireA/campfire.mesh
 share/ember/media/shared/common/3d_objects/items/misc/models/campfireB/campfire.mesh
 share/ember/media/shared/common/3d_objects/items/misc/models/flame/flame.mesh
@@ -445,6 +451,8 @@ share/ember/media/shared/common/3d_objects/items/tools/models/axe/axe.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/axe_pick/axe_pick.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/bucksaw/bucksaw.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/chopping_block/chopping_block.mesh
+share/ember/media/shared/common/3d_objects/items/tools/models/fishing_hook/fishing_hook.mesh
+share/ember/media/shared/common/3d_objects/items/tools/models/fishing_lure/fishing_lure.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/fishing_rod/fishing_rod.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/hammer/hammer.mesh
 share/ember/media/shared/common/3d_objects/items/tools/models/hatchet/hatchet.mesh
@@ -756,6 +764,7 @@ share/ember/media/shared/common/3d_objects/primitives/textures/axes/D.png
 share/ember/media/shared/common/3d_objects/primitives/textures/axes/ogre.material
 share/ember/media/shared/common/3d_objects/primitives/textures/placeholder/D.png
 share/ember/media/shared/common/3d_objects/primitives/textures/placeholder/ogre.material
+share/ember/media/shared/common/3d_objects/structures/models/butcher_house/butcher_house.mesh
 share/ember/media/shared/common/3d_objects/structures/models/castlegrad/cg_armoury.mesh
 share/ember/media/shared/common/3d_objects/structures/models/castlegrad/cg_baileyA.mesh
 share/ember/media/shared/common/3d_objects/structures/models/castlegrad/cg_baileyB.mesh
@@ -786,7 +795,9 @@ share/ember/media/shared/common/3d_objects/structures/models/cg_house_D/cg_house
 share/ember/media/shared/common/3d_objects/structures/models/cg_house_ruin/cg_house_ruin.mesh
 share/ember/media/shared/common/3d_objects/structures/models/cg_inn/cg_inn.mesh
 share/ember/media/shared/common/3d_objects/structures/models/cg_outer_wall/cg_outer_wall.mesh
+share/ember/media/shared/common/3d_objects/structures/models/cg_pedestal/cg_pedestal.mesh
 share/ember/media/shared/common/3d_objects/structures/models/cg_smithy/cg_smithy.mesh
+share/ember/media/shared/common/3d_objects/structures/models/cg_statue/cg_statue.mesh
 share/ember/media/shared/common/3d_objects/structures/models/cg_well/cg_well.mesh
 share/ember/media/shared/common/3d_objects/structures/models/concrete_stairs/concrete_stairs.mesh
 share/ember/media/shared/common/3d_objects/structures/models/fire_place_A/fire_place_A.mesh
@@ -807,6 +818,7 @@ share/ember/media/shared/common/3d_objects/structures/models/sign_post/sign_post
 share/ember/media/shared/common/3d_objects/structures/models/sign_post/sign_post.mesh
 share/ember/media/shared/common/3d_objects/structures/models/stone_palisade/stone_palisade.mesh
 share/ember/media/shared/common/3d_objects/structures/models/temple/temple.mesh
+share/ember/media/shared/common/3d_objects/structures/models/tent/tent.mesh
 share/ember/media/shared/common/3d_objects/structures/models/two_room_house/two_room_house.mesh
 share/ember/media/shared/common/3d_objects/structures/models/waterwell/waterwell.mesh
 share/ember/media/shared/common/3d_objects/structures/models/wooden_fence/gate.skeleton
@@ -1170,10 +1182,6 @@ share/ember/media/shared/common/3d_objects/structures/textures/wall_inner_luxuri
 share/ember/media/shared/common/3d_objects/structures/textures/wall_inner_stained/D.png
 share/ember/media/shared/common/3d_objects/structures/textures/wall_inner_stained/ogre.material
 share/ember/media/shared/common/3d_objects/structures/textures/wall_outer/ogre.material
-share/ember/media/shared/common/3d_objects/structures/textures/waterwell/D.png
-share/ember/media/shared/common/3d_objects/structures/textures/waterwell/N.png
-share/ember/media/shared/common/3d_objects/structures/textures/waterwell/S.png
-share/ember/media/shared/common/3d_objects/structures/textures/waterwell/ogre.material
 share/ember/media/shared/common/3d_objects/structures/textures/weathered/D.png
 share/ember/media/shared/common/3d_objects/structures/textures/weathered/N.png
 share/ember/media/shared/common/3d_objects/structures/textures/weathered/S.png
@@ -1321,6 +1329,7 @@ share/ember/media/shared/common/3d_skeletons/clothes/footwear/textures/leather_s
 share/ember/media/shared/common/3d_skeletons/clothes/footwear/textures/leather_shoes_wrapped_cotton_sides/ogre.material
 share/ember/media/shared/common/3d_skeletons/clothes/footwear/textures/metal_shoes/D.png
 share/ember/media/shared/common/3d_skeletons/clothes/footwear/textures/metal_shoes/ogre.material
+share/ember/media/shared/common/3d_skeletons/clothes/hat/models/malebuilder/farmers_cap/farmers_cap.mesh
 share/ember/media/shared/common/3d_skeletons/clothes/hat/textures/felt/D.png
 share/ember/media/shared/common/3d_skeletons/clothes/hat/textures/felt/ogre.material
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped/models/squirrel/squirrel.mesh
@@ -1336,10 +1345,8 @@ share/ember/media/shared/common/3d_skeletons/creatures/quadruped/textures/white_
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped/textures/zombie/D.png
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped/textures/zombie/ogre.material
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/bunny/RabbitHi-Armature.skeleton
-share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/bunny/RabbitHi.mesh
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/deer/deer.mesh
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/deer/deer.skeleton
-share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/horse/Horse.mesh
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/wolf/normal_wolf.mesh
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/wolf/normal_wolf.skeleton
 share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/bare_skin/D.png
@@ -1395,50 +1402,28 @@ share/ember/media/shared/common/junkyard/models/skeleton/ribcage.mesh
 share/ember/media/shared/common/junkyard/models/skeleton/shin.mesh
 share/ember/media/shared/common/junkyard/models/skeleton/skull.mesh
 share/ember/media/shared/common/junkyard/models/skeleton/thigh.mesh
-share/ember/media/shared/common/resources/ogre/caelum/core/AtmosphereDepth.png
-share/ember/media/shared/common/resources/ogre/caelum/core/CaelumGroundFog.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/CaelumLayeredClouds.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/CaelumPhaseMoon.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/CaelumPointStarfield.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/CaelumSkyDome.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/CloudCoverLookup.png
-share/ember/media/shared/common/resources/ogre/caelum/core/DepthComposer.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/DepthComposer.compositor
-share/ember/media/shared/common/resources/ogre/caelum/core/DepthComposer.material
-share/ember/media/shared/common/resources/ogre/caelum/core/DepthRender.program
-share/ember/media/shared/common/resources/ogre/caelum/core/EarthClearSky2.png
-share/ember/media/shared/common/resources/ogre/caelum/core/GroundFog.material
-share/ember/media/shared/common/resources/ogre/caelum/core/GroundFog.program
-share/ember/media/shared/common/resources/ogre/caelum/core/Haze.program
-share/ember/media/shared/common/resources/ogre/caelum/core/LayeredClouds.material
-share/ember/media/shared/common/resources/ogre/caelum/core/MinimalCompositorVP.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/MinimalCompositorVP.program
-share/ember/media/shared/common/resources/ogre/caelum/core/PointStarfield.material
-share/ember/media/shared/common/resources/ogre/caelum/core/Precipitation.cg
-share/ember/media/shared/common/resources/ogre/caelum/core/Precipitation.compositor
-share/ember/media/shared/common/resources/ogre/caelum/core/Precipitation.material
-share/ember/media/shared/common/resources/ogre/caelum/core/SkyDome.material
-share/ember/media/shared/common/resources/ogre/caelum/core/Starfield.jpg
-share/ember/media/shared/common/resources/ogre/caelum/core/Starfield.material
-share/ember/media/shared/common/resources/ogre/caelum/core/Sun.material
-share/ember/media/shared/common/resources/ogre/caelum/core/SunGradient.png
-share/ember/media/shared/common/resources/ogre/caelum/core/moon.material
-share/ember/media/shared/common/resources/ogre/caelum/core/moon_disc.dds
-share/ember/media/shared/common/resources/ogre/caelum/core/noise1.dds
-share/ember/media/shared/common/resources/ogre/caelum/core/noise2.dds
-share/ember/media/shared/common/resources/ogre/caelum/core/noise3.dds
-share/ember/media/shared/common/resources/ogre/caelum/core/noise4.dds
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_drizzle.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_hail.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_icecrystals.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_icepellets.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_rain.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_smallhail.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_snow.png
-share/ember/media/shared/common/resources/ogre/caelum/core/precipitation_snowgrains.png
-share/ember/media/shared/common/resources/ogre/caelum/core/sphere.mesh
-share/ember/media/shared/common/resources/ogre/caelum/core/sun_disc.png
-share/ember/media/shared/common/resources/ogre/caelum/norecurse
+share/ember/media/shared/common/resources/ogre/ogre_scripts/COPYING
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Bloom2_ps20.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Bloom2_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Bloom_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Bloom_vs11.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur0_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur0_vs.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur0_vs11.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur1_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur1_vs.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur1_vs11.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BlurH_ps20.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BlurH_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BlurV_ps20.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BlurV_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur_ps.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur_vs.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/Blur_vs11.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BrightBloom2_ps20.glsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/programs/BrightBloom2_ps20.hlsl
+share/ember/media/shared/common/resources/ogre/ogre_scripts/scripts/Bloom2.material
+share/ember/media/shared/common/resources/ogre/ogre_scripts/scripts/Examples.compositor
 share/ember/media/shared/common/resources/ogre/scripts/materials/authoring.material
 share/ember/media/shared/common/resources/ogre/scripts/materials/base.material
 share/ember/media/shared/common/resources/ogre/scripts/materials/environment.material
@@ -1469,6 +1454,7 @@ share/ember/media/shared/common/resources/ogre/textures/lod2.png
 share/ember/media/shared/common/resources/ogre/textures/lod3.png
 share/ember/media/shared/common/resources/ogre/textures/lod4.png
 share/ember/media/shared/common/resources/ogre/textures/terraindecal.png
+share/ember/media/shared/common/resources/wcg_base/base_prop.material
 share/ember/media/shared/common/soundfx/creatures/footsteps/Footsteps_on_grass_sasquatch.wav
 share/ember/media/shared/common/soundfx/creatures/pig/eating.wav
 share/ember/media/shared/common/soundfx/creatures/pig/snort1.wav
@@ -1488,295 +1474,6 @@ share/ember/media/shared/common/themes/ember/gui/fonts/LICENSE
 share/ember/media/shared/common/themes/ember/gui/icons/iconset_mason.png
 share/ember/media/shared/common/themes/ember/gui/icons/iconset_standard.png
 share/ember/media/shared/common/themes/ember/gui/status/main.png
-share/ember/media/shared/entityrecipes/shrub.entityrecipe
-share/ember/media/shared/entityrecipes/stake.entityrecipe
-share/ember/media/shared/entityrecipes/torch.entityrecipe
-share/ember/media/shared/entityrecipes/signpost.entityrecipe
-share/ember/media/shared/entityrecipes/tinderbox.entityrecipe
-share/ember/media/shared/entityrecipes/barrel.entityrecipe
-share/ember/media/shared/entityrecipes/farmanimals.entityrecipe
-share/ember/media/shared/entityrecipes/gravestone.entityrecipe
-share/ember/media/shared/entityrecipes/castle_house.entityrecipe
-share/ember/media/shared/entityrecipes/waterwell.entityrecipe
-share/ember/media/shared/entityrecipes/castle_house_A.entityrecipe
-share/ember/media/shared/entityrecipes/palisade.entityrecipe
-share/ember/media/shared/entityrecipes/food.entityrecipe
-share/ember/media/shared/entityrecipes/area.entityrecipe
-share/ember/media/shared/entityrecipes/feature.entityrecipe
-share/ember/media/shared/entityrecipes/stone_palissade.entityrecipe
-share/ember/media/shared/entityrecipes/birch.entityrecipe
-share/ember/media/shared/entityrecipes/campfire.entityrecipe
-share/ember/media/shared/entityrecipes/oak.entityrecipe
-share/ember/media/shared/entityrecipes/wildlife.entityrecipe
-share/ember/media/shared/entityrecipes/fence.entityrecipe
-share/ember/media/shared/entityrecipes/crates.entityrecipe
-share/ember/media/shared/entityrecipes/gallows.entityrecipe
-share/ember/media/shared/entityrecipes/thing.entityrecipe
-share/ember/media/shared/entityrecipes/vegetables.entityrecipe
-share/ember/media/shared/entityrecipes/castle_wall.entityrecipe
-share/ember/media/shared/entityrecipes/mushroom.entityrecipe
-share/ember/media/shared/entityrecipes/boulder.entityrecipe
-share/ember/media/shared/entityrecipes/test.entityrecipe
-share/ember/media/shared/entityrecipes/fir.entityrecipe
-share/ember/media/shared/modeldefinitions/galbor_legionnaire.modeldef
-share/ember/media/shared/modeldefinitions/cg_gateway.modeldef
-share/ember/media/shared/modeldefinitions/trowel.modeldef
-share/ember/media/shared/modeldefinitions/shrubA.modeldef
-share/ember/media/shared/modeldefinitions/bed.modeldef
-share/ember/media/shared/modeldefinitions/birchD.modeldef
-share/ember/media/shared/modeldefinitions/cg_house_ruin.modeldef
-share/ember/media/shared/modeldefinitions/galbor_heavy_infantry.modeldef
-share/ember/media/shared/modeldefinitions/iron_ore.modeldef
-share/ember/media/shared/modeldefinitions/camelia.modeldef
-share/ember/media/shared/modeldefinitions/leaf.modeldef
-share/ember/media/shared/modeldefinitions/spanish_moss.modeldef
-share/ember/media/shared/modeldefinitions/wooden_fence.modeldef
-share/ember/media/shared/modeldefinitions/grass.modeldef
-share/ember/media/shared/modeldefinitions/oakC.modeldef
-share/ember/media/shared/modeldefinitions/castle_outer_wall.modeldef
-share/ember/media/shared/modeldefinitions/bailey2.modeldef
-share/ember/media/shared/modeldefinitions/cg_smithy.modeldef
-share/ember/media/shared/modeldefinitions/oakB.modeldef
-share/ember/media/shared/modeldefinitions/graniteA.modeldef
-share/ember/media/shared/modeldefinitions/edibles.modeldef
-share/ember/media/shared/modeldefinitions/tinderbox.modeldef
-share/ember/media/shared/modeldefinitions/bush.modeldef
-share/ember/media/shared/modeldefinitions/signpost_right.modeldef
-share/ember/media/shared/modeldefinitions/signpost_left.modeldef
-share/ember/media/shared/modeldefinitions/birchA.modeldef
-share/ember/media/shared/modeldefinitions/palisade_circle.modeldef
-share/ember/media/shared/modeldefinitions/palisade_unit.modeldef
-share/ember/media/shared/modeldefinitions/gateway.modeldef
-share/ember/media/shared/modeldefinitions/cg_well.modeldef
-share/ember/media/shared/modeldefinitions/bailey1.modeldef
-share/ember/media/shared/modeldefinitions/shrubB.modeldef
-share/ember/media/shared/modeldefinitions/arrow.modeldef
-share/ember/media/shared/modeldefinitions/scythe_head.modeldef
-share/ember/media/shared/modeldefinitions/pile.modeldef
-share/ember/media/shared/modeldefinitions/deed.modeldef
-share/ember/media/shared/modeldefinitions/axe_head.modeldef
-share/ember/media/shared/modeldefinitions/jug.modeldef
-share/ember/media/shared/modeldefinitions/tools.modeldef
-share/ember/media/shared/modeldefinitions/monster_skeleton.modeldef
-share/ember/media/shared/modeldefinitions/cg_don_jon.modeldef
-share/ember/media/shared/modeldefinitions/torch.modeldef
-share/ember/media/shared/modeldefinitions/cg_inn.modeldef
-share/ember/media/shared/modeldefinitions/sieve.modeldef
-share/ember/media/shared/modeldefinitions/cg_house.modeldef
-share/ember/media/shared/modeldefinitions/morafboulder.modeldef
-share/ember/media/shared/modeldefinitions/concrete_stairs.modeldef
-share/ember/media/shared/modeldefinitions/pickerel.modeldef
-share/ember/media/shared/modeldefinitions/kobold.modeldef
-share/ember/media/shared/modeldefinitions/fire_place_A.modeldef
-share/ember/media/shared/modeldefinitions/spider.modeldef
-share/ember/media/shared/modeldefinitions/pickaxe_head.modeldef
-share/ember/media/shared/modeldefinitions/roots.modeldef
-share/ember/media/shared/modeldefinitions/bluegill.modeldef
-share/ember/media/shared/modeldefinitions/gallows.modeldef
-share/ember/media/shared/modeldefinitions/cave.modeldef
-share/ember/media/shared/modeldefinitions/stone_palisade.modeldef
-share/ember/media/shared/modeldefinitions/graniteC.modeldef
-share/ember/media/shared/modeldefinitions/apple.modeldef
-share/ember/media/shared/modeldefinitions/graniteD.modeldef
-share/ember/media/shared/modeldefinitions/treeA.modeldef
-share/ember/media/shared/modeldefinitions/jetty.modeldef
-share/ember/media/shared/modeldefinitions/primitives.modeldef
-share/ember/media/shared/modeldefinitions/oak.modeldef
-share/ember/media/shared/modeldefinitions/knife.modeldef
-share/ember/media/shared/modeldefinitions/armory.modeldef
-share/ember/media/shared/modeldefinitions/fern.modeldef
-share/ember/media/shared/modeldefinitions/oak_mk1.modeldef
-share/ember/media/shared/modeldefinitions/tombstone.modeldef
-share/ember/media/shared/modeldefinitions/marketstall_canvasA.modeldef
-share/ember/media/shared/modeldefinitions/birchB.modeldef
-share/ember/media/shared/modeldefinitions/galerina.modeldef
-share/ember/media/shared/modeldefinitions/cg_wall_corner.modeldef
-share/ember/media/shared/modeldefinitions/furniture.modeldef
-share/ember/media/shared/modeldefinitions/barrel.modeldef
-share/ember/media/shared/modeldefinitions/door.modeldef
-share/ember/media/shared/modeldefinitions/coin.modeldef
-share/ember/media/shared/modeldefinitions/market_tent.modeldef
-share/ember/media/shared/modeldefinitions/oak_sapling.modeldef
-share/ember/media/shared/modeldefinitions/campfire.modeldef
-share/ember/media/shared/modeldefinitions/ice_chunk.modeldef
-share/ember/media/shared/modeldefinitions/wood.modeldef
-share/ember/media/shared/modeldefinitions/bass_lm.modeldef
-share/ember/media/shared/modeldefinitions/outerwall.modeldef
-share/ember/media/shared/modeldefinitions/amanita.modeldef
-share/ember/media/shared/modeldefinitions/acorn.modeldef
-share/ember/media/shared/modeldefinitions/temple.modeldef
-share/ember/media/shared/modeldefinitions/ham.modeldef
-share/ember/media/shared/modeldefinitions/ocean.modeldef
-share/ember/media/shared/modeldefinitions/waterwell.modeldef
-share/ember/media/shared/modeldefinitions/house3.modeldef
-share/ember/media/shared/modeldefinitions/sword.modeldef
-share/ember/media/shared/modeldefinitions/cg_house_B.modeldef
-share/ember/media/shared/modeldefinitions/scythe.modeldef
-share/ember/media/shared/modeldefinitions/shirt.modeldef
-share/ember/media/shared/modeldefinitions/birchC.modeldef
-share/ember/media/shared/modeldefinitions/tower.modeldef
-share/ember/media/shared/modeldefinitions/turnip.modeldef
-share/ember/media/shared/modeldefinitions/open_crate.modeldef
-share/ember/media/shared/modeldefinitions/fencesection.modeldef
-share/ember/media/shared/modeldefinitions/boat.modeldef
-share/ember/media/shared/modeldefinitions/cg_curtainwall_run.modeldef
-share/ember/media/shared/modeldefinitions/fishing_rod.modeldef
-share/ember/media/shared/modeldefinitions/dog.modeldef
-share/ember/media/shared/modeldefinitions/cg_house_D.modeldef
-share/ember/media/shared/modeldefinitions/cg_houseC.modeldef
-share/ember/media/shared/modeldefinitions/crate.modeldef
-share/ember/media/shared/modeldefinitions/keep.modeldef
-share/ember/media/shared/modeldefinitions/cg_outer_wall.modeldef
-share/ember/media/shared/modeldefinitions/signpost.modeldef
-share/ember/media/shared/modeldefinitions/cg_wall_run.modeldef
-share/ember/media/shared/modeldefinitions/sty.modeldef
-share/ember/media/shared/modeldefinitions/tinderboxB.modeldef
-share/ember/media/shared/modeldefinitions/spade.modeldef
-share/ember/media/shared/modeldefinitions/cg_wall_gate.modeldef
-share/ember/media/shared/modeldefinitions/cg_wall_stairs.modeldef
-share/ember/media/shared/modeldefinitions/trowel_head.modeldef
-share/ember/media/shared/modeldefinitions/pickaxe.modeldef
-share/ember/media/shared/modeldefinitions/tuna.modeldef
-share/ember/media/shared/modeldefinitions/graniteB.modeldef
-share/ember/media/shared/modeldefinitions/oak_young.modeldef
-share/ember/media/shared/modeldefinitions/bowls.modeldef
-share/ember/media/shared/modeldefinitions/male.modeldef
-share/ember/media/shared/modeldefinitions/stalactites.modeldef
-share/ember/media/shared/modeldefinitions/fencepole.modeldef
-share/ember/media/shared/modeldefinitions/marketstall_canvasB.modeldef
-share/ember/media/shared/modeldefinitions/iron_ore_node.modeldef
-share/ember/media/shared/modeldefinitions/chest.modeldef
-share/ember/media/shared/modeldefinitions/tinderboxA.modeldef
-share/ember/media/shared/modeldefinitions/lumber.modeldef
-share/ember/media/shared/modeldefinitions/stake.modeldef
-share/ember/media/shared/modeldefinitions/saw_blade.modeldef
-share/ember/media/shared/modeldefinitions/cg_house_A.modeldef
-share/ember/media/shared/modeldefinitions/hammer_head.modeldef
-share/ember/media/shared/modeldefinitions/cow.modeldef
-share/ember/media/shared/modeldefinitions/cart.modeldef
-share/ember/media/shared/modeldefinitions/palisade_entry.modeldef
-share/ember/media/shared/modeldefinitions/bottle.modeldef
-share/ember/media/shared/modeldefinitions/marketstall_canvasC.modeldef
-share/ember/media/shared/modeldefinitions/crate_lid.modeldef
-share/ember/media/shared/modeldefinitions/goblin.modeldef
-share/ember/media/shared/modeldefinitions/deer.modeldef
-share/ember/media/shared/modeldefinitions/don_jon.modeldef
-share/ember/media/shared/modeldefinitions/creator.modeldef
-share/ember/media/shared/modeldefinitions/shutters.modeldef
-share/ember/media/shared/modeldefinitions/chicken.modeldef
-share/ember/media/shared/modeldefinitions/choppingblock.modeldef
-share/ember/media/shared/modeldefinitions/hammer.modeldef
-share/ember/media/shared/modeldefinitions/horse.modeldef
-share/ember/media/shared/modeldefinitions/trousers.modeldef
-share/ember/media/shared/modeldefinitions/painting.modeldef
-share/ember/media/shared/modeldefinitions/wooden_gate.modeldef
-share/ember/media/shared/modeldefinitions/carrot.modeldef
-share/ember/media/shared/modeldefinitions/cg_curtainwall_corner.modeldef
-share/ember/media/shared/modeldefinitions/paladin.modeldef
-share/ember/media/shared/modeldefinitions/bucksaw.modeldef
-share/ember/media/shared/modeldefinitions/items.modeldef.xml
-share/ember/media/shared/modeldefinitions/trees.modeldef.xml
-share/ember/media/shared/modeldefinitions/placeholder.modeldef.xml
-share/ember/media/shared/modeldefinitions/creatures.modeldef.xml
-share/ember/media/shared/modeldefinitions/characters.modeldef.xml
-share/ember/media/shared/modeldefinitions/environment.modeldef.xml
-share/ember/media/shared/modeldefinitions/entitymappings.entitymap.xml
-share/ember/media/shared/modeldefinitions/moraf.terrain
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/OrientationAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StaticAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/NumberAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/AreaAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/PositionAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapterNewElement.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/TerrainModAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/SizeAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Position2DAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StringAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapterNewElement.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapter.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Tasks.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityCreator.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ModelEdit.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/MeshPreview.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Give.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/PickingInfo.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ServerBrowser.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Environment.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/TerrainEditor.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/InspectWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Debug.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Status.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ScriptEdit.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/AssetsManager.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Inventory.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ServerWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityBrowser.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPickerSelector.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Compass.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Quit.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEdit.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/HelpWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ServerLogger.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditor.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/InventoryWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Performance.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/IndirectRenderingChecker.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEditPreview.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/MakeEntityWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Label.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/IngameChatWidget.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/TypeManager.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEditFile.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/GUILayout.xsd
-share/ember/media/shared/gui/cegui/datafiles/configs/cegui.config
-share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-Bold-8.xml
-share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-Bold-10.xml
-share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-14.xml
-share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-10.xml
-share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-8.xml
-share/ember/media/shared/gui/cegui/datafiles/imagesets/Imageset.xsd
-share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_standard.imageset
-share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_mason.imageset
-share/ember/media/shared/gui/cegui/datafiles/imagesets/EmberLook.imageset
-share/ember/media/shared/gui/cegui/datafiles/imagesets/status_main.imageset
-share/ember/media/shared/gui/cegui/datafiles/imagesets/compass.imageset
-share/ember/media/shared/gui/cegui/datafiles/looknfeel/EmberLook.looknfeel
-share/ember/media/shared/gui/cegui/datafiles/schemes/GUIScheme.xsd
-share/ember/media/shared/gui/cegui/datafiles/schemes/EmberLookSkin.scheme
-share/ember/media/shared/gui/GUILayout.xsd
-share/ember/media/shared/gui/Imageset.xsd
-share/ember/media/shared/gui/Font.xsd
-share/ember/media/shared/gui/GUIScheme.xsd
-share/ember/media/shared/gui/CEGUIConfig.xsd
-share/ember/media/shared/gui/Falagard.xsd
-share/ember/media/shared/scripting/lua/TypeManager.lua
-share/ember/media/shared/scripting/lua/Mover.lua
-share/ember/media/shared/scripting/lua/Math.lua
-share/ember/media/shared/scripting/lua/Give.lua
-share/ember/media/shared/scripting/lua/EntityPicker.lua
-share/ember/media/shared/scripting/lua/Performance.lua
-share/ember/media/shared/scripting/lua/ServerLogger.lua
-share/ember/media/shared/scripting/lua/Status.lua
-share/ember/media/shared/scripting/lua/EntityBrowser.lua
-share/ember/media/shared/scripting/lua/Tasks.lua
-share/ember/media/shared/scripting/lua/ScriptEdit.lua
-share/ember/media/shared/scripting/lua/PickingInfo.lua
-share/ember/media/shared/scripting/lua/AssetsManager.lua
-share/ember/media/shared/scripting/lua/MainIconBar.lua
-share/ember/media/shared/scripting/lua/IndirectRenderingChecker.lua
-share/ember/media/shared/scripting/lua/Environment.lua
-share/ember/media/shared/scripting/lua/Debug.lua
-share/ember/media/shared/scripting/lua/ModelEdit.lua
-share/ember/media/shared/scripting/lua/Inventory.lua
-share/ember/media/shared/scripting/lua/EntityEditor.lua
-share/ember/media/shared/scripting/lua/EntityCreator.lua
-share/ember/media/shared/scripting/lua/TerrainEditor.lua
-share/ember/media/shared/scripting/lua/ServerBrowser.lua
-share/ember/media/shared/scripting/lua/Bootstrap.lua
-share/ember/media/shared/scripting/lua/Compass.lua
-share/ember/media/shared/scripting/lua/Admin.lua
 share/ember/media/shared/core/AUTHORS
 share/ember/media/shared/core/D.png
 share/ember/media/shared/core/DejaVuSans.ttf
@@ -1788,27 +1485,437 @@ share/ember/media/shared/core/axes.mesh
 share/ember/media/shared/core/ember_progress_bar.png
 share/ember/media/shared/core/ember_progress_bar_frame.png
 share/ember/media/shared/core/ember_splash.png
+share/ember/media/shared/entityrecipes/area.entityrecipe
+share/ember/media/shared/entityrecipes/barrel.entityrecipe
+share/ember/media/shared/entityrecipes/birch.entityrecipe
+share/ember/media/shared/entityrecipes/board.entityrecipe
+share/ember/media/shared/entityrecipes/boulder.entityrecipe
+share/ember/media/shared/entityrecipes/campfire.entityrecipe
+share/ember/media/shared/entityrecipes/castle_house.entityrecipe
+share/ember/media/shared/entityrecipes/castle_house_A.entityrecipe
+share/ember/media/shared/entityrecipes/castle_wall.entityrecipe
+share/ember/media/shared/entityrecipes/crates.entityrecipe
+share/ember/media/shared/entityrecipes/farmanimals.entityrecipe
+share/ember/media/shared/entityrecipes/feature.entityrecipe
+share/ember/media/shared/entityrecipes/fence.entityrecipe
+share/ember/media/shared/entityrecipes/fir.entityrecipe
+share/ember/media/shared/entityrecipes/fish.entityrecipe
+share/ember/media/shared/entityrecipes/fishingrod.entityrecipe
+share/ember/media/shared/entityrecipes/food.entityrecipe
+share/ember/media/shared/entityrecipes/gallows.entityrecipe
+share/ember/media/shared/entityrecipes/gravestone.entityrecipe
+share/ember/media/shared/entityrecipes/mushroom.entityrecipe
+share/ember/media/shared/entityrecipes/oak.entityrecipe
+share/ember/media/shared/entityrecipes/palisade.entityrecipe
+share/ember/media/shared/entityrecipes/shovel.entityrecipe
+share/ember/media/shared/entityrecipes/shrub.entityrecipe
+share/ember/media/shared/entityrecipes/sieve.entityrecipe
+share/ember/media/shared/entityrecipes/signpost.entityrecipe
+share/ember/media/shared/entityrecipes/stake.entityrecipe
+share/ember/media/shared/entityrecipes/stone_palissade.entityrecipe
+share/ember/media/shared/entityrecipes/test.entityrecipe
+share/ember/media/shared/entityrecipes/thing.entityrecipe
+share/ember/media/shared/entityrecipes/tinderbox.entityrecipe
+share/ember/media/shared/entityrecipes/torch.entityrecipe
+share/ember/media/shared/entityrecipes/vegetables.entityrecipe
+share/ember/media/shared/entityrecipes/waterwell.entityrecipe
+share/ember/media/shared/entityrecipes/wildlife.entityrecipe
+share/ember/media/shared/gui/CEGUIConfig.xsd
+share/ember/media/shared/gui/Falagard.xsd
+share/ember/media/shared/gui/Font.xsd
+share/ember/media/shared/gui/GUILayout.xsd
+share/ember/media/shared/gui/GUIScheme.xsd
+share/ember/media/shared/gui/Imageset.xsd
+share/ember/media/shared/gui/cegui/datafiles/configs/cegui.config
+share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-10.xml
+share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-14.xml
+share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-8.xml
+share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-Bold-10.xml
+share/ember/media/shared/gui/cegui/datafiles/fonts/DejaVuSans-Bold-8.xml
+share/ember/media/shared/gui/cegui/datafiles/imagesets/EmberLook.imageset
+share/ember/media/shared/gui/cegui/datafiles/imagesets/Imageset.xsd
+share/ember/media/shared/gui/cegui/datafiles/imagesets/compass.imageset
+share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_mason.imageset
+share/ember/media/shared/gui/cegui/datafiles/imagesets/iconset_standard.imageset
+share/ember/media/shared/gui/cegui/datafiles/imagesets/status_main.imageset
+share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBar.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBarCreator.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/AssetsManager.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Compass.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Console.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Debug.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityCreator.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPickerSelector.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Environment.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/GUILayout.xsd
+share/ember/media/shared/gui/cegui/datafiles/layouts/Give.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/HelpWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/IndirectRenderingChecker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/IngameChatWidgetAttached.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/IngameChatWidgetDetached.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/IngameMerchantTradeConfirmationDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/IngameMerchantWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/InspectWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Inventory.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/InventoryWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEditFile.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEditPreview.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Label.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/MeshPreview.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ModelEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Performance.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/PickingInfo.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/QuickHelp.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Quit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ScriptEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ServerBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ServerLogger.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ServerWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Settings.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/SettingsRestartDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/SettingsUnappliedChangesDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Status.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Tasks.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/TerrainEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/TypeManager.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/AreaAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/ListAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/MapAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/NumberAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/OrientationAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/Position2DAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/PositionAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/SizeAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StaticAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/StringAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas/TerrainModAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ActionBar.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ActionBarCreator.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/AssetsManager.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/CheckboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ComboboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Compass.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Console.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Debug.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EditboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EntityBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EntityCreator.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EntityEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EntityPicker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/EntityPickerSelector.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Environment.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Give.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/HelpWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/IndirectRenderingChecker.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/IngameChatWidgetAttached.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/IngameChatWidgetDetached.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/IngameMerchantTradeConfirmationDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/IngameMerchantWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/InspectWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Inventory.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/InventoryWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/JesusEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/JesusEditFile.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/JesusEditPreview.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Label.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/MeshPreview.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ModelEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Performance.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/PickingInfo.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/QuickHelp.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Quit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ScriptEdit.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ServerBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ServerLogger.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/ServerWidget.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Settings.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/SettingsRestartDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/SettingsUnappliedChangesDialog.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/SliderRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Status.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/Tasks.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/TerrainEditor.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/TypeManager.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/AreaAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/ListAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/ListAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/MapAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/MapAdapterNewElement.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/NumberAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/OrientationAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/Position2DAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/PositionAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/SizeAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/StaticAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/StringAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas/TerrainModAdapter.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/representations/CheckboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/representations/ComboboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/representations/EditboxRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/representations/representations/SliderRepresentation.layout
+share/ember/media/shared/gui/cegui/datafiles/looknfeel/EmberLook.looknfeel
+share/ember/media/shared/gui/cegui/datafiles/schemes/EmberLookSkin.scheme
+share/ember/media/shared/gui/cegui/datafiles/schemes/GUIScheme.xsd
+share/ember/media/shared/modeldefinitions/acorn.modeldef
+share/ember/media/shared/modeldefinitions/amanita.modeldef
+share/ember/media/shared/modeldefinitions/apple.modeldef
+share/ember/media/shared/modeldefinitions/armory.modeldef
+share/ember/media/shared/modeldefinitions/arrow.modeldef
+share/ember/media/shared/modeldefinitions/axe_head.modeldef
+share/ember/media/shared/modeldefinitions/bailey1.modeldef
+share/ember/media/shared/modeldefinitions/bailey2.modeldef
+share/ember/media/shared/modeldefinitions/barrel.modeldef
+share/ember/media/shared/modeldefinitions/bass_lm.modeldef
+share/ember/media/shared/modeldefinitions/bear.modeldef
+share/ember/media/shared/modeldefinitions/bed.modeldef
+share/ember/media/shared/modeldefinitions/birchA.modeldef
+share/ember/media/shared/modeldefinitions/birchB.modeldef
+share/ember/media/shared/modeldefinitions/birchC.modeldef
+share/ember/media/shared/modeldefinitions/birchD.modeldef
+share/ember/media/shared/modeldefinitions/bluegill.modeldef
+share/ember/media/shared/modeldefinitions/board.modeldef
+share/ember/media/shared/modeldefinitions/boat.modeldef
+share/ember/media/shared/modeldefinitions/bottle.modeldef
+share/ember/media/shared/modeldefinitions/bowls.modeldef
+share/ember/media/shared/modeldefinitions/bucksaw.modeldef
+share/ember/media/shared/modeldefinitions/bush.modeldef
+share/ember/media/shared/modeldefinitions/butcher_house.modeldef
+share/ember/media/shared/modeldefinitions/camelia.modeldef
+share/ember/media/shared/modeldefinitions/campfire.modeldef
+share/ember/media/shared/modeldefinitions/carrot.modeldef
+share/ember/media/shared/modeldefinitions/cart.modeldef
+share/ember/media/shared/modeldefinitions/castle_outer_wall.modeldef
+share/ember/media/shared/modeldefinitions/cave.modeldef
+share/ember/media/shared/modeldefinitions/cg_curtainwall_corner.modeldef
+share/ember/media/shared/modeldefinitions/cg_curtainwall_run.modeldef
+share/ember/media/shared/modeldefinitions/cg_don_jon.modeldef
+share/ember/media/shared/modeldefinitions/cg_gateway.modeldef
+share/ember/media/shared/modeldefinitions/cg_house.modeldef
+share/ember/media/shared/modeldefinitions/cg_houseC.modeldef
+share/ember/media/shared/modeldefinitions/cg_house_A.modeldef
+share/ember/media/shared/modeldefinitions/cg_house_B.modeldef
+share/ember/media/shared/modeldefinitions/cg_house_D.modeldef
+share/ember/media/shared/modeldefinitions/cg_house_ruin.modeldef
+share/ember/media/shared/modeldefinitions/cg_inn.modeldef
+share/ember/media/shared/modeldefinitions/cg_outer_wall.modeldef
+share/ember/media/shared/modeldefinitions/cg_pedestal.modeldef
+share/ember/media/shared/modeldefinitions/cg_smithy.modeldef
+share/ember/media/shared/modeldefinitions/cg_statue.modeldef
+share/ember/media/shared/modeldefinitions/cg_wall_corner.modeldef
+share/ember/media/shared/modeldefinitions/cg_wall_gate.modeldef
+share/ember/media/shared/modeldefinitions/cg_wall_run.modeldef
+share/ember/media/shared/modeldefinitions/cg_wall_stairs.modeldef
+share/ember/media/shared/modeldefinitions/cg_well.modeldef
+share/ember/media/shared/modeldefinitions/characters.modeldef.xml
+share/ember/media/shared/modeldefinitions/chest.modeldef
+share/ember/media/shared/modeldefinitions/chicken.modeldef
+share/ember/media/shared/modeldefinitions/choppingblock.modeldef
+share/ember/media/shared/modeldefinitions/coin.modeldef
+share/ember/media/shared/modeldefinitions/concrete_stairs.modeldef
+share/ember/media/shared/modeldefinitions/cow.modeldef
+share/ember/media/shared/modeldefinitions/crate.modeldef
+share/ember/media/shared/modeldefinitions/crate_lid.modeldef
+share/ember/media/shared/modeldefinitions/creator.modeldef
+share/ember/media/shared/modeldefinitions/creatures.modeldef.xml
+share/ember/media/shared/modeldefinitions/deed.modeldef
+share/ember/media/shared/modeldefinitions/deer.modeldef
+share/ember/media/shared/modeldefinitions/dog.modeldef
+share/ember/media/shared/modeldefinitions/don_jon.modeldef
+share/ember/media/shared/modeldefinitions/donkey.modeldef
+share/ember/media/shared/modeldefinitions/door.modeldef
+share/ember/media/shared/modeldefinitions/duck.modeldef
+share/ember/media/shared/modeldefinitions/edibles.modeldef
+share/ember/media/shared/modeldefinitions/entitymappings.entitymap.xml
+share/ember/media/shared/modeldefinitions/environment.modeldef.xml
+share/ember/media/shared/modeldefinitions/farmers_cap.modeldef
+share/ember/media/shared/modeldefinitions/fencepole.modeldef
+share/ember/media/shared/modeldefinitions/fencesection.modeldef
+share/ember/media/shared/modeldefinitions/fern.modeldef
+share/ember/media/shared/modeldefinitions/fire_place_A.modeldef
+share/ember/media/shared/modeldefinitions/fishing_hook.modeldef
+share/ember/media/shared/modeldefinitions/fishing_lure.modeldef
+share/ember/media/shared/modeldefinitions/fishing_rod.modeldef
+share/ember/media/shared/modeldefinitions/flying_bird.modeldef
+share/ember/media/shared/modeldefinitions/furniture.modeldef
+share/ember/media/shared/modeldefinitions/galbor_heavy_infantry.modeldef
+share/ember/media/shared/modeldefinitions/galbor_legionnaire.modeldef
+share/ember/media/shared/modeldefinitions/galerina.modeldef
+share/ember/media/shared/modeldefinitions/gallows.modeldef
+share/ember/media/shared/modeldefinitions/gateway.modeldef
+share/ember/media/shared/modeldefinitions/goblin.modeldef
+share/ember/media/shared/modeldefinitions/graniteA.modeldef
+share/ember/media/shared/modeldefinitions/graniteB.modeldef
+share/ember/media/shared/modeldefinitions/graniteC.modeldef
+share/ember/media/shared/modeldefinitions/graniteD.modeldef
+share/ember/media/shared/modeldefinitions/grass.modeldef
+share/ember/media/shared/modeldefinitions/ham.modeldef
+share/ember/media/shared/modeldefinitions/hammer.modeldef
+share/ember/media/shared/modeldefinitions/hammer_head.modeldef
+share/ember/media/shared/modeldefinitions/horse.modeldef
+share/ember/media/shared/modeldefinitions/house3.modeldef
+share/ember/media/shared/modeldefinitions/ice_chunk.modeldef
+share/ember/media/shared/modeldefinitions/iron_ore.modeldef
+share/ember/media/shared/modeldefinitions/iron_ore_node.modeldef
+share/ember/media/shared/modeldefinitions/items.modeldef.xml
+share/ember/media/shared/modeldefinitions/jetty.modeldef
+share/ember/media/shared/modeldefinitions/jug.modeldef
+share/ember/media/shared/modeldefinitions/keep.modeldef
+share/ember/media/shared/modeldefinitions/knife.modeldef
+share/ember/media/shared/modeldefinitions/kobold.modeldef
+share/ember/media/shared/modeldefinitions/leaf.modeldef
+share/ember/media/shared/modeldefinitions/lumber.modeldef
+share/ember/media/shared/modeldefinitions/male.modeldef
+share/ember/media/shared/modeldefinitions/market_tent.modeldef
+share/ember/media/shared/modeldefinitions/marketstall_canvasA.modeldef
+share/ember/media/shared/modeldefinitions/marketstall_canvasB.modeldef
+share/ember/media/shared/modeldefinitions/marketstall_canvasC.modeldef
+share/ember/media/shared/modeldefinitions/monster_skeleton.modeldef
+share/ember/media/shared/modeldefinitions/moraf.terrain
+share/ember/media/shared/modeldefinitions/morafboulder.modeldef
+share/ember/media/shared/modeldefinitions/oak.modeldef
+share/ember/media/shared/modeldefinitions/oakB.modeldef
+share/ember/media/shared/modeldefinitions/oakC.modeldef
+share/ember/media/shared/modeldefinitions/oak_mk1.modeldef
+share/ember/media/shared/modeldefinitions/oak_sapling.modeldef
+share/ember/media/shared/modeldefinitions/oak_young.modeldef
+share/ember/media/shared/modeldefinitions/ocean.modeldef
+share/ember/media/shared/modeldefinitions/open_crate.modeldef
+share/ember/media/shared/modeldefinitions/outerwall.modeldef
+share/ember/media/shared/modeldefinitions/painting.modeldef
+share/ember/media/shared/modeldefinitions/paladin.modeldef
+share/ember/media/shared/modeldefinitions/palisade_circle.modeldef
+share/ember/media/shared/modeldefinitions/palisade_entry.modeldef
+share/ember/media/shared/modeldefinitions/palisade_unit.modeldef
+share/ember/media/shared/modeldefinitions/pickaxe.modeldef
+share/ember/media/shared/modeldefinitions/pickaxe_head.modeldef
+share/ember/media/shared/modeldefinitions/pickerel.modeldef
+share/ember/media/shared/modeldefinitions/pile.modeldef
+share/ember/media/shared/modeldefinitions/placeholder.modeldef.xml
+share/ember/media/shared/modeldefinitions/primitives.modeldef
+share/ember/media/shared/modeldefinitions/rabbit.modeldef
+share/ember/media/shared/modeldefinitions/roots.modeldef
+share/ember/media/shared/modeldefinitions/saw_blade.modeldef
+share/ember/media/shared/modeldefinitions/scythe.modeldef
+share/ember/media/shared/modeldefinitions/scythe_head.modeldef
+share/ember/media/shared/modeldefinitions/shirt.modeldef
+share/ember/media/shared/modeldefinitions/shrubA.modeldef
+share/ember/media/shared/modeldefinitions/shrubB.modeldef
+share/ember/media/shared/modeldefinitions/shutters.modeldef
+share/ember/media/shared/modeldefinitions/sieve.modeldef
+share/ember/media/shared/modeldefinitions/signpost.modeldef
+share/ember/media/shared/modeldefinitions/signpost_left.modeldef
+share/ember/media/shared/modeldefinitions/signpost_right.modeldef
+share/ember/media/shared/modeldefinitions/spade.modeldef
+share/ember/media/shared/modeldefinitions/spanish_moss.modeldef
+share/ember/media/shared/modeldefinitions/spider.modeldef
+share/ember/media/shared/modeldefinitions/stake.modeldef
+share/ember/media/shared/modeldefinitions/stalactites.modeldef
+share/ember/media/shared/modeldefinitions/stone_palisade.modeldef
+share/ember/media/shared/modeldefinitions/sty.modeldef
+share/ember/media/shared/modeldefinitions/sword.modeldef
+share/ember/media/shared/modeldefinitions/temple.modeldef
+share/ember/media/shared/modeldefinitions/tent.modeldef
+share/ember/media/shared/modeldefinitions/tinderbox.modeldef
+share/ember/media/shared/modeldefinitions/tinderboxA.modeldef
+share/ember/media/shared/modeldefinitions/tinderboxB.modeldef
+share/ember/media/shared/modeldefinitions/tombstone.modeldef
+share/ember/media/shared/modeldefinitions/tools.modeldef
+share/ember/media/shared/modeldefinitions/torch.modeldef
+share/ember/media/shared/modeldefinitions/tower.modeldef
+share/ember/media/shared/modeldefinitions/treeA.modeldef
+share/ember/media/shared/modeldefinitions/trees.modeldef.xml
+share/ember/media/shared/modeldefinitions/trousers.modeldef
+share/ember/media/shared/modeldefinitions/trowel.modeldef
+share/ember/media/shared/modeldefinitions/trowel_head.modeldef
+share/ember/media/shared/modeldefinitions/tuna.modeldef
+share/ember/media/shared/modeldefinitions/turnip.modeldef
+share/ember/media/shared/modeldefinitions/twobyfour.modeldef
+share/ember/media/shared/modeldefinitions/waterwell.modeldef
+share/ember/media/shared/modeldefinitions/wood.modeldef
+share/ember/media/shared/modeldefinitions/wooden_fence.modeldef
+share/ember/media/shared/modeldefinitions/wooden_gate.modeldef
+share/ember/media/shared/scripting/lua/ActionBar.lua
+share/ember/media/shared/scripting/lua/ActionBarCreator.lua
+share/ember/media/shared/scripting/lua/ActionBarDefaultAction.lua
+share/ember/media/shared/scripting/lua/Admin.lua
+share/ember/media/shared/scripting/lua/AssetsManager.lua
+share/ember/media/shared/scripting/lua/Bootstrap.lua
+share/ember/media/shared/scripting/lua/Compass.lua
+share/ember/media/shared/scripting/lua/Console.lua
+share/ember/media/shared/scripting/lua/Debug.lua
+share/ember/media/shared/scripting/lua/DefaultEntityActions.lua
+share/ember/media/shared/scripting/lua/EntityBrowser.lua
+share/ember/media/shared/scripting/lua/EntityCreator.lua
+share/ember/media/shared/scripting/lua/EntityEditor.lua
+share/ember/media/shared/scripting/lua/EntityPicker.lua
+share/ember/media/shared/scripting/lua/Environment.lua
+share/ember/media/shared/scripting/lua/Give.lua
+share/ember/media/shared/scripting/lua/IndirectRenderingChecker.lua
+share/ember/media/shared/scripting/lua/IngameMerchantWidget.lua
+share/ember/media/shared/scripting/lua/Inspect.lua
+share/ember/media/shared/scripting/lua/Inventory.lua
+share/ember/media/shared/scripting/lua/MainIconBar.lua
+share/ember/media/shared/scripting/lua/Math.lua
+share/ember/media/shared/scripting/lua/ModelEdit.lua
+share/ember/media/shared/scripting/lua/Mover.lua
+share/ember/media/shared/scripting/lua/Performance.lua
+share/ember/media/shared/scripting/lua/PickingInfo.lua
+share/ember/media/shared/scripting/lua/QuickHelp.lua
+share/ember/media/shared/scripting/lua/ScriptEdit.lua
+share/ember/media/shared/scripting/lua/Server.lua
+share/ember/media/shared/scripting/lua/ServerBrowser.lua
+share/ember/media/shared/scripting/lua/ServerLogger.lua
+share/ember/media/shared/scripting/lua/Settings.lua
+share/ember/media/shared/scripting/lua/Status.lua
+share/ember/media/shared/scripting/lua/Tasks.lua
+share/ember/media/shared/scripting/lua/TerrainEditor.lua
+share/ember/media/shared/scripting/lua/TypeManager.lua
+share/ember/media/shared/scripting/lua/representations/ActionBar.lua
+share/ember/media/shared/scripting/lua/representations/ActionBarCreator.lua
+share/ember/media/shared/scripting/lua/representations/ActionBarDefaultAction.lua
+share/ember/media/shared/scripting/lua/representations/Admin.lua
+share/ember/media/shared/scripting/lua/representations/AssetsManager.lua
+share/ember/media/shared/scripting/lua/representations/Bootstrap.lua
+share/ember/media/shared/scripting/lua/representations/Compass.lua
+share/ember/media/shared/scripting/lua/representations/Console.lua
+share/ember/media/shared/scripting/lua/representations/Debug.lua
+share/ember/media/shared/scripting/lua/representations/DefaultEntityActions.lua
+share/ember/media/shared/scripting/lua/representations/EntityBrowser.lua
+share/ember/media/shared/scripting/lua/representations/EntityCreator.lua
+share/ember/media/shared/scripting/lua/representations/EntityEditor.lua
+share/ember/media/shared/scripting/lua/representations/EntityPicker.lua
+share/ember/media/shared/scripting/lua/representations/Environment.lua
+share/ember/media/shared/scripting/lua/representations/Give.lua
+share/ember/media/shared/scripting/lua/representations/IndirectRenderingChecker.lua
+share/ember/media/shared/scripting/lua/representations/IngameMerchantWidget.lua
+share/ember/media/shared/scripting/lua/representations/Inspect.lua
+share/ember/media/shared/scripting/lua/representations/Inventory.lua
+share/ember/media/shared/scripting/lua/representations/MainIconBar.lua
+share/ember/media/shared/scripting/lua/representations/Math.lua
+share/ember/media/shared/scripting/lua/representations/ModelEdit.lua
+share/ember/media/shared/scripting/lua/representations/Mover.lua
+share/ember/media/shared/scripting/lua/representations/Performance.lua
+share/ember/media/shared/scripting/lua/representations/PickingInfo.lua
+share/ember/media/shared/scripting/lua/representations/QuickHelp.lua
+share/ember/media/shared/scripting/lua/representations/ScriptEdit.lua
+share/ember/media/shared/scripting/lua/representations/Server.lua
+share/ember/media/shared/scripting/lua/representations/ServerBrowser.lua
+share/ember/media/shared/scripting/lua/representations/ServerLogger.lua
+share/ember/media/shared/scripting/lua/representations/Settings.lua
+share/ember/media/shared/scripting/lua/representations/Status.lua
+share/ember/media/shared/scripting/lua/representations/Tasks.lua
+share/ember/media/shared/scripting/lua/representations/TerrainEditor.lua
+share/ember/media/shared/scripting/lua/representations/TypeManager.lua
 share/ember/media/user/COPYING.txt
 share/ember/media/user/LICENSING.txt
 share/ember/media/user/README
-share/ember/media/shared/entityrecipes/fish.entityrecipe
-share/ember/media/shared/entityrecipes/sieve.entityrecipe
-share/ember/media/shared/entityrecipes/shovel.entityrecipe
-share/ember/media/shared/entityrecipes/fishingrod.entityrecipe
-share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBar.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/QuickHelp.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBarCreator.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Console.layout
-share/ember/media/shared/scripting/lua/ActionBarCreator.lua
-share/ember/media/shared/scripting/lua/ActionBar.lua
-share/ember/media/shared/scripting/lua/DefaultEntityActions.lua
-share/ember/media/shared/scripting/lua/MakeEntity.lua
-share/ember/media/shared/scripting/lua/Server.lua
-share/ember/media/shared/scripting/lua/QuickHelp.lua
-share/ember/media/shared/scripting/lua/Inspect.lua
-share/ember/media/shared/scripting/lua/ActionBarDefaultAction.lua
-share/ember/media/shared/scripting/lua/Console.lua
-share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
+share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/core
 @dirrm share/ember/media/shared/common/soundfx/items/saw
 @dirrm share/ember/media/shared/common/soundfx/items
@@ -1816,6 +1923,9 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/soundfx/creatures/pig
 @dirrm share/ember/media/shared/common/soundfx/creatures
 @dirrm share/ember/media/shared/common/soundfx
+@dirrm share/ember/media/shared/common/3d_objects/creatures/rabbit/animations
+@dirrm share/ember/media/shared/common/3d_objects/creatures/rabbit
+@dirrm share/ember/media/shared/common/3d_objects/creatures
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/felsite_cave
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/stone_weathered
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/ground_grass_rabbithill
@@ -1994,6 +2104,10 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/plants/fruit/models
 @dirrm share/ember/media/shared/common/3d_objects/plants/fruit
 @dirrm share/ember/media/shared/common/3d_objects/plants
+@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/board
+@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models/twobyfour
+@dirrm share/ember/media/shared/common/3d_objects/items/building_element/models
+@dirrm share/ember/media/shared/common/3d_objects/items/building_element
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/textures/tinderbox
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/textures/wood_boards
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/textures/earthenware
@@ -2008,6 +2122,7 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/textures
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/tinderbox
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/crate
+@dirrm share/ember/media/shared/common/3d_objects/items/containers/models/chest/animations
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/chest
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/open_crate
 @dirrm share/ember/media/shared/common/3d_objects/items/containers/models/bottle
@@ -2045,6 +2160,9 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/items/furniture/models/shelf
 @dirrm share/ember/media/shared/common/3d_objects/items/furniture/models
 @dirrm share/ember/media/shared/common/3d_objects/items/furniture
+@dirrm share/ember/media/shared/common/3d_objects/items/material/textures/wood_sides
+@dirrm share/ember/media/shared/common/3d_objects/items/material/textures
+@dirrm share/ember/media/shared/common/3d_objects/items/material
 @dirrm share/ember/media/shared/common/3d_objects/items/misc/textures/log
 @dirrm share/ember/media/shared/common/3d_objects/items/misc/textures/tombstone
 @dirrm share/ember/media/shared/common/3d_objects/items/misc/textures/flame
@@ -2073,6 +2191,8 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/textures/hammer
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/textures/saddle_brown_leather
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/textures
+@dirrm share/ember/media/shared/common/3d_objects/items/tools/models/fishing_hook
+@dirrm share/ember/media/shared/common/3d_objects/items/tools/models/fishing_lure
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/models/scythe
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/models/chopping_block
 @dirrm share/ember/media/shared/common/3d_objects/items/tools/models/axe_pick
@@ -2129,7 +2249,6 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/creatures/horse
 @dirrm share/ember/media/shared/common/3d_objects/creatures/tuna/textures/body
 @dirrm share/ember/media/shared/common/3d_objects/creatures/tuna/textures
-@dirrm share/ember/media/shared/common/3d_objects/creatures/tuna/animations
 @dirrm share/ember/media/shared/common/3d_objects/creatures/tuna
 @dirrm share/ember/media/shared/common/3d_objects/creatures/spider/textures/emerald
 @dirrm share/ember/media/shared/common/3d_objects/creatures/spider/textures
@@ -2149,7 +2268,6 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/creatures/chicken
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bluegill/textures/body
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bluegill/textures
-@dirrm share/ember/media/shared/common/3d_objects/creatures/bluegill/animations
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bluegill
 @dirrm share/ember/media/shared/common/3d_objects/creatures/pickerel/textures/body
 @dirrm share/ember/media/shared/common/3d_objects/creatures/pickerel/textures
@@ -2167,7 +2285,6 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/creatures/donkey
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bass_lm/textures/body
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bass_lm/textures
-@dirrm share/ember/media/shared/common/3d_objects/creatures/bass_lm/animations
 @dirrm share/ember/media/shared/common/3d_objects/creatures/bass_lm
 @dirrm share/ember/media/shared/common/3d_objects/creatures/goblin/textures/green
 @dirrm share/ember/media/shared/common/3d_objects/creatures/goblin/textures/common
@@ -2231,7 +2348,6 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/ossyja_brick_trim
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/stone_palisade
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/rezpa_masonry
-@dirrm share/ember/media/shared/common/3d_objects/structures/textures/waterwell
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/ossyja_floor_tiles
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/rezpa_stained_walls
 @dirrm share/ember/media/shared/common/3d_objects/structures/textures/moraf_roof_straw_combo
@@ -2312,6 +2428,10 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/cg_house_ruin
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/ground_pallisade
 @dirrm share/ember/media/shared/common/3d_objects/structures/models/fire_place_A
+@dirrm share/ember/media/shared/common/3d_objects/structures/models/butcher_house
+@dirrm share/ember/media/shared/common/3d_objects/structures/models/cg_pedestal
+@dirrm share/ember/media/shared/common/3d_objects/structures/models/cg_statue
+@dirrm share/ember/media/shared/common/3d_objects/structures/models/tent
 @dirrm share/ember/media/shared/common/3d_objects/structures/models
 @dirrm share/ember/media/shared/common/3d_objects/structures
 @dirrm share/ember/media/shared/common/3d_objects/primitives/textures/axes
@@ -2334,14 +2454,16 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/junkyard/models
 @dirrm share/ember/media/shared/common/junkyard
 @dirrm share/ember/media/shared/common/resources/ogre/textures
+@dirrm share/ember/media/shared/common/resources/ogre/ogre_scripts/programs
+@dirrm share/ember/media/shared/common/resources/ogre/ogre_scripts/scripts
+@dirrm share/ember/media/shared/common/resources/ogre/ogre_scripts
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/programs
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/particle
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/materials
 @dirrm share/ember/media/shared/common/resources/ogre/scripts/overlays
 @dirrm share/ember/media/shared/common/resources/ogre/scripts
-@dirrm share/ember/media/shared/common/resources/ogre/caelum/core
-@dirrm share/ember/media/shared/common/resources/ogre/caelum
 @dirrm share/ember/media/shared/common/resources/ogre
+@dirrm share/ember/media/shared/common/resources/wcg_base
 @dirrm share/ember/media/shared/common/resources
 @dirrm share/ember/media/shared/common/3d_skeletons/bipeds/races/human/male/head/bearded_male
 @dirrm share/ember/media/shared/common/3d_skeletons/bipeds/races/human/male/head/middle_aged
@@ -2435,6 +2557,9 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_skeletons/insects/models/spider
 @dirrm share/ember/media/shared/common/3d_skeletons/insects/models
 @dirrm share/ember/media/shared/common/3d_skeletons/insects
+@dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat/models/malebuilder/farmers_cap
+@dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat/models/malebuilder
+@dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat/models
 @dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat/textures/felt
 @dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat/textures
 @dirrm share/ember/media/shared/common/3d_skeletons/clothes/hat
@@ -2460,7 +2585,6 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures/bare_skin
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/textures
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/deer
-@dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/horse
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/wolf
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models/bunny
 @dirrm share/ember/media/shared/common/3d_skeletons/creatures/quadruped_v2/models
@@ -2489,6 +2613,10 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/entityrecipes
 @dirrm share/ember/media/shared/modeldefinitions
 @dirrm share/ember/media/shared/sounddefinitions
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters/atlas
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/representations/adapters
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/representations/representations
+@dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/representations
 @dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters/atlas
 @dirrm share/ember/media/shared/gui/cegui/datafiles/layouts/adapters
 @dirrm share/ember/media/shared/gui/cegui/datafiles/layouts
@@ -2500,6 +2628,7 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/gui/cegui/datafiles
 @dirrm share/ember/media/shared/gui/cegui
 @dirrm share/ember/media/shared/gui
+@dirrm share/ember/media/shared/scripting/lua/representations
 @dirrm share/ember/media/shared/scripting/lua
 @dirrm share/ember/media/shared/scripting
 @dirrm share/ember/media/shared
@@ -2511,4 +2640,3 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/worldforge
 @dirrmtry share/icons
-
