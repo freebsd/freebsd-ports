@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seabios-devel
-PORTVERSION=	0.6.3p20110903
+PORTVERSION=	1.6.3.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.linuxtogo.org/~kevin/SeaBIOS/:release \
 		LOCAL/nox/
@@ -21,8 +21,9 @@ USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 PATCH_STRIP=	-p1
 ONLY_FOR_ARCHS=	amd64 i386
-CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
+# Doesn't run with qemu 0.11.1
+CONFLICTS_INSTALL=	qemu-[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +32,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin LD=${LOCALBASE}/bin/ld
 .endif
 
-PLIST_FILES=	share/qemu/${PORTNAME}.bin
+PLIST_FILES=	share/qemu/bios.bin-${PORTVERSION}
 PLIST_DIRSTRY=	share/qemu
 
 post-patch:
@@ -43,6 +44,6 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/qemu
-	@${INSTALL_DATA} ${WRKSRC}/out/bios.bin ${PREFIX}/share/qemu/${PORTNAME}.bin
+	@${INSTALL_DATA} ${WRKSRC}/out/bios.bin ${PREFIX}/${PLIST_FILES}
 
 .include <bsd.port.post.mk>
