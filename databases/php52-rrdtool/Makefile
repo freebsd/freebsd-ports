@@ -21,6 +21,9 @@ LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 WRKSRC=		${WRKDIR}/rrdtool
 
+DEPRECATED=	PHP 5.2 series is not supported anymore, migrate now
+EXPIRATION_DATE=2012-03-01
+
 USE_PHP=	yes
 DEFAULT_PHP_VER=52
 USE_PHPEXT=	yes
