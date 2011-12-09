@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rentech.ru/archives/wtmp-tools/
 
-MAINTAINER=	master@rentech.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The tool for editing wtmp files and converting into this format
 
 MAN1=		t2w.1
