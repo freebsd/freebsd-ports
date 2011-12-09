@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.x/}/:doc \
+MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
 		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \

@@ -1,9 +1,9 @@
---- numpy/core/include/numpy/ufuncobject.h.orig	2009-12-15 06:47:53.000000000 -0600
-+++ numpy/core/include/numpy/ufuncobject.h	2010-02-15 18:54:28.490863602 -0600
-@@ -306,7 +306,11 @@
- #elif defined(__GLIBC__) || defined(__APPLE__) || defined(__CYGWIN__) || defined(__MINGW32__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 502114))
+--- numpy/core/include/numpy/ufuncobject.h.orig	2011-07-20 13:25:27.000000000 -0500
++++ numpy/core/include/numpy/ufuncobject.h	2011-12-07 20:42:53.811178415 -0600
+@@ -229,7 +229,11 @@
  
- #if defined(__GLIBC__) || defined(__APPLE__) || defined(__MINGW32__) || defined(__FreeBSD__)
+ #if defined(__GLIBC__) || defined(__APPLE__) || \
+     defined(__MINGW32__) || defined(__FreeBSD__)
 +#if defined(__FreeBSD__) && (__FreeBSD_version <= 900009)
 +#include "fenv/fenv.c"
 +#else
@@ -12,9 +12,9 @@
  #elif defined(__CYGWIN__)
  #include "fenv/fenv.c"
  #endif
---- numpy/numarray/_capi.c.orig	2009-12-28 08:00:09.000000000 -0600
-+++ numpy/numarray/_capi.c	2010-02-15 18:57:25.993127759 -0600
-@@ -9,7 +9,12 @@
+--- numpy/numarray/_capi.c.orig	2010-11-21 01:34:43.000000000 -0600
++++ numpy/numarray/_capi.c	2011-12-07 20:45:35.038394561 -0600
+@@ -10,7 +10,12 @@
  #endif
  
  #if defined(__GLIBC__) || defined(__APPLE__) || defined(__MINGW32__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 502114))
@@ -27,9 +27,20 @@
  #elif defined(__CYGWIN__)
  #include "numpy/fenv/fenv.h"
  #include "numpy/fenv/fenv.c"
---- numpy/core/setup.py.orig	2009-12-28 08:00:09.000000000 -0600
-+++ numpy/core/setup.py	2010-02-15 19:00:44.715666850 -0600
-@@ -625,7 +625,7 @@
+--- numpy/core/setupscons.py.orig	2010-11-21 01:34:42.000000000 -0600
++++ numpy/core/setupscons.py	2011-12-07 21:48:34.674089097 -0600
+@@ -98,7 +98,7 @@
+     config.numpy_include_dirs.extend(config.paths('include'))
+ 
+     # Don't install fenv unless we need them.
+-    if sys.platform == 'cygwin':
++    if sys.platform == 'cygwin' or sys.platform.startswith('freebsd'):
+         config.add_data_dir('include/numpy/fenv')
+ 
+     config.add_data_dir('tests')
+--- numpy/core/setup.py.orig	2011-07-20 13:25:27.000000000 -0500
++++ numpy/core/setup.py	2011-12-07 21:48:51.360904277 -0600
+@@ -664,7 +664,7 @@
              ]
  
      # Don't install fenv unless we need them.
@@ -38,3 +49,18 @@
          config.add_data_dir('include/numpy/fenv')
  
      config.add_extension('_sort',
+--- numpy/core/src/npymath/ieee754.c.src.orig	2011-03-10 23:56:15.000000000 -0600
++++ numpy/core/src/npymath/ieee754.c.src	2011-12-07 20:52:14.671971546 -0600
+@@ -585,7 +585,11 @@
+ 
+ # if defined(__GLIBC__) || defined(__APPLE__) || \
+      defined(__MINGW32__) || defined(__FreeBSD__)
+-#  include <fenv.h>
++#  if defined(__FreeBSD__) && (__FreeBSD_version <= 900009)
++#   include "numpy/fenv/fenv.h"
++#  else
++#   include <fenv.h>
++#  endif
+ # elif defined(__CYGWIN__)
+ #  include "fenv/fenv.c"
+ # endif
