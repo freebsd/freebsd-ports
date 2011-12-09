@@ -869,6 +869,7 @@
     SUBDIR += py-netaddr
     SUBDIR += py-netifaces
     SUBDIR += py-netstring
+    SUBDIR += py-novaclient
     SUBDIR += py-oauth
     SUBDIR += py-oauth2
     SUBDIR += py-pcap
