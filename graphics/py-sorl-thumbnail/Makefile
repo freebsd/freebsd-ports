@@ -7,13 +7,15 @@
 
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	The sorl-thumbnail package provides an easy way to generate image thumbnails.
+COMMENT=	Sorl-thumbnail provides an easy way to generate image thumbnails
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
@@ -25,8 +27,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS=	DJANGO "Enable Django" On \
 		PDF "Enable PDF Thumbnails" Off \
-		WORD "Enable Word Document thumbnail handling" Off \
-		DOCS "Install HTML documentation (requires Sphinx)" Off
+		WORD "Enable Word Document thumbnail handling" Off
 
 .include <bsd.port.options.mk>
 
@@ -40,22 +41,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/Magick-config:${PORTSDIR}/graphics/ImageMagick
 
 .if defined(WITH_WORD)
 RUN_DEPENDS+=	wvVersion:${PORTSDIR}/textproc/wv
-.endif
-
-.if defined(WITH_DOCS)
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
-PORTDOCS=	*
-.endif
-
-post-build:
-.if defined(WITH_DOCS)
-	cd ${WRKSRC}/docs && ${MAKE} html
-.endif
-
-post-install:
-.if defined(WITH_DOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/_build/html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
