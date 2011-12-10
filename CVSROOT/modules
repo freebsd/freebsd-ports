@@ -22169,6 +22169,7 @@ py-nevow                        ports/www/py-nevow
 py-nose                         ports/devel/py-nose
 py-notifier                     ports/devel/py-notifier
 py-notify                       ports/devel/py-notify
+py-novaclient                   ports/net/py-novaclient
 py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
 py-numexpr                      ports/math/py-numexpr
@@ -22178,6 +22179,7 @@ py-nzmath                       ports/math/py-nzmath
 py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
 py-obspy-core                   ports/science/py-obspy-core
+py-obspy.db                     ports/science/py-obspy.db
 py-obspy.gse2                   ports/science/py-obspy.gse2
 py-obspy.imaging                ports/science/py-obspy.imaging
 py-obspy.mseed                  ports/science/py-obspy.mseed
