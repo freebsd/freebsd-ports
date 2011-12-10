@@ -345,6 +345,8 @@ include/OGRE/Plugins/ParticleFX/OgreRotationAffector.h
 include/OGRE/Plugins/ParticleFX/OgreRotationAffectorFactory.h
 include/OGRE/Plugins/ParticleFX/OgreScaleAffector.h
 include/OGRE/Plugins/ParticleFX/OgreScaleAffectorFactory.h
+%%BOOSTTRUE%%include/OGRE/Property/OgreProperty.h
+%%BOOSTTRUE%%include/OGRE/Property/OgrePropertyPrerequisites.h
 include/OGRE/RTShaderSystem/OgreRTShaderSystem.h
 include/OGRE/RTShaderSystem/OgreShaderCGProgramProcessor.h
 include/OGRE/RTShaderSystem/OgreShaderCGProgramWriter.h
@@ -441,8 +443,10 @@ include/OGRE/Terrain/OgreTerrainQuadTreeNode.h
 include/OGRE/Threading/OgreDefaultWorkQueue.h
 include/OGRE/Threading/OgreDefaultWorkQueueStandard.h
 include/OGRE/Threading/OgreThreadDefines.h
-include/OGRE/Threading/OgreThreadDefinesNone.h
+%%BOOSTTRUE%%include/OGRE/Threading/OgreThreadDefinesBoost.h
+%%BOOSTFALSE%%include/OGRE/Threading/OgreThreadDefinesNone.h
 include/OGRE/Threading/OgreThreadHeaders.h
+%%BOOSTTRUE%%include/OGRE/Threading/OgreThreadHeadersBoost.h
 include/OGRE/asm_math.h
 lib/OGRE/Plugin_BSPSceneManager.so
 lib/OGRE/Plugin_OctreeSceneManager.so
@@ -462,12 +466,15 @@ lib/libOgreMain.so
 lib/libOgreMain.so.1.7.3
 lib/libOgrePaging.so
 lib/libOgrePaging.so.1.7.3
+%%BOOSTTRUE%%lib/libOgreProperty.so
+%%BOOSTTRUE%%lib/libOgreProperty.so.1.7.3
 lib/libOgreRTShaderSystem.so
 lib/libOgreRTShaderSystem.so.1.7.3
 lib/libOgreTerrain.so
 lib/libOgreTerrain.so.1.7.3
 libdata/pkgconfig/OGRE-PCZ.pc
 libdata/pkgconfig/OGRE-Paging.pc
+%%BOOSTTRUE%%libdata/pkgconfig/OGRE-Property.pc
 libdata/pkgconfig/OGRE-RTShaderSystem.pc
 libdata/pkgconfig/OGRE-Terrain.pc
 libdata/pkgconfig/OGRE.pc
@@ -475,13 +482,14 @@ libdata/pkgconfig/OGRE.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm include/OGRE/GLX
+@dirrm include/OGRE/Paging
 @dirrm include/OGRE/Plugins/OctreeSceneManager
 @dirrm include/OGRE/Plugins/BSPSceneManager
 @dirrm include/OGRE/Plugins/ParticleFX
 @dirrm include/OGRE/Plugins/PCZSceneManager
 @dirrm include/OGRE/Plugins/OctreeZone
 @dirrm include/OGRE/Plugins
-@dirrm include/OGRE/Paging
+%%BOOSTTRUE%%@dirrm include/OGRE/Property
 @dirrm include/OGRE/RTShaderSystem
 @dirrm include/OGRE/RenderSystems/GL/GLX
 @dirrm include/OGRE/RenderSystems/GL/GL
