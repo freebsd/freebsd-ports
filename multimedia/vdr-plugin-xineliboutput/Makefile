@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	vdr-plugin-xineliboutput
-PORTVERSION=	1.0.90s20110308.2305
-PORTREVISION=	11
+PORTVERSION=	1.0.90s20111129.1002
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	xineliboutput/files/xineliboutput/vdr-xineliboutput-${PORTVERSION}/:release \
 		nox/:snapshot
-DISTNAME=	${PORTNAME:S/-plugin-/-plugin-/}_${DISTVERSIONPREFIX}${DISTVERSION:S/s/+cvs/:S/$/.orig/}${DISTVERSIONSUFFIX}
+DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION:S/s/+cvs/}${DISTVERSIONSUFFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
-LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor \
-		xine.1:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		vdpau.1:${PORTSDIR}/multimedia/libvdpau
 
+USE_BZIP2=	yes
 PATCH_STRIP=	-p1
 USE_GNOME+=	pkgconfig
 USE_XORG+=	xrandr xrender
@@ -36,9 +35,27 @@ WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
-MAKE_ARGS+=	CONFIGURE_OPTS="${CONFIGURE_OPTS}"
+# libbluray in ports is too old
+# OPTIONS=	LIBBLURAY	"Enable libbluray support"		on
+OPTIONS=	LIBEXTRACTOR	"Enable libextractor support"		off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBEXTRACTOR)
+LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor
+CONFIGURE_OPTS+=	--enable-libextractor
+.else
+CONFIGURE_OPTS+=	--disable-libextractor
+.endif
+
+.if defined(WITH_LIBBLURAY)
+CONFIGURE_OPTS+=	--enable-libbluray
+LIB_DEPENDS+=	bluray.0:${PORTSDIR}/multimedia/libbluray
+.else
+CONFIGURE_OPTS+=	--disable-libbluray
+.endif
+
+MAKE_ARGS+=	CONFIGURE_OPTS="${CONFIGURE_OPTS}"
 
 post-patch: post-patch-plugin
 # clang doesn't know -MG

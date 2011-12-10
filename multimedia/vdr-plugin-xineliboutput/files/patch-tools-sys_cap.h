@@ -4,8 +4,9 @@
  #ifndef _XINELIBOUTPUT_SYS_CAP_H_
  #define _XINELIBOUTPUT_SYS_CAP_H_
  
+-#include "../features.h"
 +#ifdef HAVE_LIBCAP
- #include "features.h"
++# include "../features.h"
 +#endif
  
  #include <unistd.h>
