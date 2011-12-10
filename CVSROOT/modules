@@ -26509,6 +26509,7 @@ vile                            ports/editors/vile
 vils                            ports/sysutils/vils
 vim                             ports/editors/vim
 vim-lite                        ports/editors/vim-lite
+vimpager                        ports/sysutils/vimpager
 vinagre                         ports/net/vinagre
 vindaloo                        ports/graphics/vindaloo
 vinetto                         ports/security/vinetto
