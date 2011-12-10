@@ -178,7 +178,6 @@
     SUBDIR += wmii
     SUBDIR += wmii-devel
     SUBDIR += wmname
-    SUBDIR += wmthemeinstall
     SUBDIR += xcompmgr
     SUBDIR += xfce
     SUBDIR += xfce4
