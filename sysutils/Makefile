@@ -921,6 +921,7 @@
     SUBDIR += videogen
     SUBDIR += vii
     SUBDIR += vils
+    SUBDIR += vimpager
     SUBDIR += virtualmin
     SUBDIR += vlogger
     SUBDIR += vobcopy

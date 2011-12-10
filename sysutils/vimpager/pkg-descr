@@ -1,0 +1,10 @@
+Use ViM as a more(1)/less(1) pager replacement.
+
+To set as your default pager, export PAGER=vimpager in your shell's
+rcfile.
+
+See the manpage for various options. Of note, custom .vimrc files seem
+to cause strange behaviour. Creating ~/.vimpagerrc will give you a clean
+ViM environment.
+
+WWW: http://www.vim.org/scripts/script.php?script_id=1723
