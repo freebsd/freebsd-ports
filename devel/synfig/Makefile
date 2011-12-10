@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synfig
-DISTVERSION=	0.63.02
+DISTVERSION=	0.63.03
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
@@ -36,6 +36,7 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 post-patch:
 	@${REINPLACE_CMD} -e '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' -e \
+		's|el_GR|el|g' -e \
 		's|no_NO|no|g' -e \
 		's|pl_PL|pl|g' -e \
 		's|sk_SK|sk|g' ${WRKSRC}/configure
@@ -46,7 +47,7 @@ post-patch:
 	${MV} ${WRKSRC}/po/no_NO.gmo ${WRKSRC}/po/no.gmo
 	${MV} ${WRKSRC}/po/pl_PL.gmo ${WRKSRC}/po/pl.gmo
 	${MV} ${WRKSRC}/po/sk_SK.gmo ${WRKSRC}/po/sk.gmo
-#	${MV} ${WRKSRC}/po/sk_SK.po ${WRKSRC}/po/sk.po
+	${MV} ${WRKSRC}/po/el_GR.gmo ${WRKSRC}/po/el.gmo
 
 post-install:
 .if !defined(NOPORTDOCS)

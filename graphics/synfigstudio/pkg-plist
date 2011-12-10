@@ -81,6 +81,8 @@ include/synfigapp-0.0/synfigapp/valuenodelinkdisconnect.h
 include/synfigapp-0.0/synfigapp/valuenoderemove.h
 include/synfigapp-0.0/synfigapp/valuenoderename.h
 include/synfigapp-0.0/synfigapp/valuenodereplace.h
+include/synfigapp-0.0/synfigapp/valuedescremovesmart.h
+include/synfigapp-0.0/synfigapp/wplistconverter.h
 include/synfigapp-0.0/synfigapp/waypointadd.h
 include/synfigapp-0.0/synfigapp/waypointremove.h
 include/synfigapp-0.0/synfigapp/waypointset.h
@@ -128,6 +130,10 @@ share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/synfig_icon.svg
 share/pixmaps/sif_icon.png
 share/pixmaps/synfig_icon.png
+share/pixmaps/synfigstudio/interpolation_type_tcb_icon.png
+share/pixmaps/synfigstudio/interpolation_type_ease_icon.png
+share/pixmaps/synfigstudio/interpolation_type_const_icon.png
+share/pixmaps/synfigstudio/interpolation_type_linear_icon.png
 share/pixmaps/synfigstudio/keyframe_lock_past_on_icon.png
 share/pixmaps/synfigstudio/keyframe_lock_past_off_icon.png
 share/pixmaps/synfigstudio/keyframe_lock_future_on_icon.png

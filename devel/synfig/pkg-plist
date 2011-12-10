@@ -176,6 +176,7 @@ libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+share/locale/el/LC_MESSAGES/synfig.mo
 share/locale/fa_IR/LC_MESSAGES/synfig.mo
 share/locale/lt/LC_MESSAGES/synfig.mo
 share/locale/nl/LC_MESSAGES/synfig.mo
