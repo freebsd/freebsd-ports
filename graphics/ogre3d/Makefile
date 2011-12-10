@@ -19,6 +19,8 @@ LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		freeimage.3:${PORTSDIR}/graphics/freeimage
 
+OPTIONS=	BOOST	"Use Boost to build threaded ogre"	off
+
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USE_CMAKE=	YES
@@ -28,14 +30,25 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		Does not compile
+.if defined(WITH_BOOST)
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+RUND_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+PLIST_SUB+=	BOOSTTRUE=""
+PLIST_SUB+=	BOOSTFALSE="@comment "
+.else
+PLIST_SUB+=	BOOSTTRUE="@comment "
+PLIST_SUB+=	BOOSTFALSE=""
 .endif
+
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not install on powerpc
 .endif
 
 post-patch:
+.if defined(WITHOUT_BOOST)
+	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
+		${WRKSRC}/CMake/Dependencies.cmake
+.endif
 	@${REINPLACE_CMD} -e 's|(CEGUI::uint)|(size_t)|' \
 		${WRKSRC}/Samples/OceanDemo/src/OceanDemo.cpp
 	@${REINPLACE_CMD} -e '\
