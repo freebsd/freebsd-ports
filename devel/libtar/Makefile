@@ -25,8 +25,6 @@ post-install:
 .include <bsd.port.pre.mk>
 .include "files/manpages"
 
-.if ${ARCH}!="i386"
 CPPFLAGS+=	-fPIC
-.endif
 
 .include <bsd.port.post.mk>
