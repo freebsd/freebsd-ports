@@ -1,0 +1,33 @@
+--- config.c.orig
++++ config.c
+@@ -399,7 +399,7 @@ cSetup::cSetup(void)
+   CurrentChannel = -1;
+   CurrentVolume = MAXVOLUME;
+   CurrentDolby = 0;
+-  // InitialChannel is initialized by constructor
++  InitialChannel = "";
+   InitialVolume = -1;
+   ChannelsWrap = 0;
+   EmergencyExit = 1;
+--- vdr.c.orig
++++ vdr.c
+@@ -735,12 +723,14 @@ int main(int argc, char *argv[])
+ 
+   if (!cDevice::WaitForAllDevicesReady(DEVICEREADYTIMEOUT))
+      dsyslog("not all devices ready after %d seconds", DEVICEREADYTIMEOUT);
+-  if (isnumber(Setup.InitialChannel)) { // for compatibility with old setup.conf files
+-     if (cChannel *Channel = Channels.GetByNumber(atoi(Setup.InitialChannel)))
+-        Setup.InitialChannel = Channel->GetChannelID().ToString();
++  if (*Setup.InitialChannel) {
++     if (isnumber(Setup.InitialChannel)) { // for compatibility with old setup.conf files
++        if (cChannel *Channel = Channels.GetByNumber(atoi(Setup.InitialChannel)))
++           Setup.InitialChannel = Channel->GetChannelID().ToString();
++        }
++     if (cChannel *Channel = Channels.GetByChannelID(tChannelID::FromString(Setup.InitialChannel)))
++        Setup.CurrentChannel = Channel->Number();
+      }
+-  if (cChannel *Channel = Channels.GetByChannelID(tChannelID::FromString(Setup.InitialChannel)))
+-     Setup.CurrentChannel = Channel->Number();
+   if (Setup.InitialVolume >= 0)
+      Setup.CurrentVolume = Setup.InitialVolume;
+   Channels.SwitchTo(Setup.CurrentChannel);
