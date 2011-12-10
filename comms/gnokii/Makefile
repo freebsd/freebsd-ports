@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.30
+PORTVERSION=	0.6.31
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -32,8 +32,7 @@ WANT_GNOME=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fPIC
-CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
-			--with-xgnokiidir=${PREFIX}/share
+CONFIGURE_ARGS+=	--enable-security
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
 		LIBS="-L${WRKSRC}/common -L${LOCALBASE}/lib" \
@@ -103,13 +102,14 @@ PLIST_SUB+=	SQLT='@comment '
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
+CONFIGURE_ARGS+=	--with-x
 USE_XORG=	xpm
 USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=''
 .endif
 
 FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
-		common/cfgreader.c po/et.po po/sl.po
+		common/cfgreader.c
 post-patch:
 .for f in ${FIXPREFIX}
 	@${REINPLACE_CMD} -e "s:/etc/gnokiirc:${PREFIX}/etc/gnokiirc:g" \
