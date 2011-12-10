@@ -22,7 +22,8 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		ibus.2:${PORTSDIR}/textproc/ibus \
-		protobuf.7:${PORTSDIR}/devel/protobuf
+		protobuf.7:${PORTSDIR}/devel/protobuf \
+		zinnia.0:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
@@ -38,16 +39,28 @@ USE_PYTHON=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107
-BROKEN=	Does not compile on FreeBSD 7.X
+BROKEN=		Does not compile on FreeBSD 7.X
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile: segfault
+.endif
+
+# workaround for a gcc4.2.1's namespace bug
+.if (${OSVERSION} < 1000000 && ${OSVERSION} > 9000000) || ${OSVERSION} < 802503
+BUILD_DEPENDS+=	gcc42:${PORTSDIR}/lang/gcc42
+CC=		gcc42
+CXX=		g++42
 .endif
 
 .if defined(WITH_DEBUG_CODE)
-BUILD_MODE=Debug
+BUILD_MODE=	Debug
 .else
-BUILD_MODE=Release
+BUILD_MODE=	Release
 .endif
 
-REPLACE_FILES=	${WRKSRC}/build_mozc.py \
+LOCALBASE_REPLACE_FILES= \
+		${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/unix/ibus/gen_mozc_xml.py \
 		${WRKSRC}/unix/ibus/mozc.xml \
@@ -57,7 +70,7 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/handwriting/zinnia_handwriting.cc
 
 post-patch:
-	@for FILE in ${REPLACE_FILES}; \
+	@for FILE in ${LOCALBASE_REPLACE_FILES}; \
 	do \
 	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
 	    $${FILE}; \
@@ -66,6 +79,9 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		export BUILD_COMMAND=${GMAKE}; \
+		export CC=${CC}; export CFLAGS="${CFLAGS}"; \
+		export CXX=${CXX}; export CXXFLAGS="${CXXFLAGS}"; \
+		export LDFLAGS="-L${LOCALBASE}/lib"; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
 		${PYTHON_CMD} build_mozc.py build_tools \
 			-c ${BUILD_MODE}; \
