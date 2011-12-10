@@ -1,24 +1,26 @@
 --- a/configure
 +++ a/configure
-@@ -348,10 +348,13 @@ test_pkgconfig
+@@ -350,11 +350,14 @@ test_pkgconfig
  [ $debug = yes ] && \
    test_library   X11  do_error     "none.h"         "-lnolib"
  
--test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)"
--test_library     VDR   libcap       "sys/capability.h" "-lcap"       "cap_get_proc()"
--test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)"
--test_library     DLFCN dlfcn        "dlfcn.h"          "-ldl"        "dlopen(0,0)"
-+#test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)"
+-test_library     VDR   libextractor "extractor.h"        "-lextractor" "EXTRACTOR_getKeywords(0,0)"
+-test_library     VDR   libcap       "sys/capability.h"   "-lcap"       "cap_get_proc()"
+-test_library     VDR   libbluray    "libbluray/bluray.h" "-lbluray"    "bd_get_disc_info(0)"
+-test_library     XINE  libxine      "xine.h"             "-lxine"      "xine_init(0)"
+-test_library     DLFCN dlfcn        "dlfcn.h"            "-ldl"        "dlopen(0,0)"
++#test_library     VDR   libextractor "extractor.h"        "-lextractor" "EXTRACTOR_getKeywords(0,0)"
 +test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-+#test_library     VDR   libcap       "sys/capability.h" "-lcap"       "cap_get_proc()"
-+#test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)"
-+test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-+#test_library     DLFCN dlfcn        "dlfcn.h"          "-ldl"        "dlopen(0,0)"
-+test_library     DLFCN dlfcn        "dlfcn.h"          ""        "dlopen(0,0)"
++#test_library     VDR   libcap       "sys/capability.h"   "-lcap"       "cap_get_proc()"
++#test_library     VDR   libbluray    "libbluray/bluray.h" "-lbluray"    "bd_get_disc_info(0)"
++test_library     VDR   libbluray    "libbluray/bluray.h" "-lbluray"    "bd_get_disc_info(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#test_library     XINE  libxine      "xine.h"             "-lxine"      "xine_init(0)"
++test_library     XINE  libxine      "xine.h"             "-lxine"      "xine_init(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++test_library     DLFCN dlfcn        "dlfcn.h"            ""        "dlopen(0,0)"
  
  if enabled libxine; then
  
-@@ -363,19 +366,30 @@ if enabled libxine; then
+@@ -366,24 +369,40 @@ if enabled libxine; then
    fi
    log " $XINEPLUGINDIR"
  
@@ -57,6 +59,17 @@
 +    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
 +    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  dbus-glib-1  \
++#      "dbus/dbus-glib.h" \
++#      "-ldbus-glib-1 -lgobject-2.0 -lglib-2.0" \
++#      "dbus_g_bus_get(0,0)" \
++#      "-I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
      test_library X11  dbus-glib-1  \
        "dbus/dbus-glib.h" \
        "-ldbus-glib-1 -lgobject-2.0 -lglib-2.0" \
+       "dbus_g_bus_get(0,0)" \
+-      "-I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
++      "-I/usr/include/dbus-1.0 -I${LOCALBASE}/include/dbus-1.0 -I/usr/include/glib-2.0 -I${LOCALBASE}/include/glib-2.0 -L${LOCALBASE}/lib"
+   fi
+ fi
+ 
