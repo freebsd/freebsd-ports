@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	freemind
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Free mind-mapping software written in Java
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
@@ -25,7 +27,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
-DATAFILES=	accessories doc lib license patterns.xml plugins user.properties
+DATAFILES=	accessories browser doc lib plugins patterns.xml
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 ZIP_CMD=	zip

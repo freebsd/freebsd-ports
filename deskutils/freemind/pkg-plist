@@ -1,20 +1,42 @@
 @comment $FreeBSD$
 bin/freemind
+%%DATADIR%%/accessories/LICENSE.MIT
+%%DATADIR%%/accessories/freemind2applet.xsl
+%%DATADIR%%/accessories/freemind2flash.xsl
 %%DATADIR%%/accessories/freemind2html.css
 %%DATADIR%%/accessories/freemind2html.xsl
 %%DATADIR%%/accessories/hide.png
 %%DATADIR%%/accessories/ilink.png
 %%DATADIR%%/accessories/leaf.png
 %%DATADIR%%/accessories/marktree.js
+%%DATADIR%%/accessories/masterfile.tex
 %%DATADIR%%/accessories/mindmanager2mm.xsl
 %%DATADIR%%/accessories/minus.png
+%%DATADIR%%/accessories/mm2csv.xsl
 %%DATADIR%%/accessories/mm2html.xsl
+%%DATADIR%%/accessories/mm2latex.xsl
+%%DATADIR%%/accessories/mm2latex_latin1_TEMPLATE.mm
 %%DATADIR%%/accessories/mm2latexartcl.xsl
 %%DATADIR%%/accessories/mm2latexbook.xsl
+%%DATADIR%%/accessories/mm2msp_utf8.xsl
+%%DATADIR%%/accessories/mm2msp_utf8_TEMPLATE.mm
+%%DATADIR%%/accessories/mm2ooimpress.manifest.xsl
+%%DATADIR%%/accessories/mm2ooimpress.xsl
+%%DATADIR%%/accessories/mm2ooimpressStyles.xml
+%%DATADIR%%/accessories/mm2oowriter.manifest.xsl
 %%DATADIR%%/accessories/mm2oowriter.xsl
+%%DATADIR%%/accessories/mm2oowriterStyles.xml
 %%DATADIR%%/accessories/mm2opml.xsl
 %%DATADIR%%/accessories/mm2text.xsl
+%%DATADIR%%/accessories/mm2tjiresources.xsl
+%%DATADIR%%/accessories/mm2tjitasks.xsl
+%%DATADIR%%/accessories/mm2tsk.xsl
+%%DATADIR%%/accessories/mm2twiki.xsl
+%%DATADIR%%/accessories/mm2twiki_headings.xsl
+%%DATADIR%%/accessories/mm2wordml_utf8.xsl
+%%DATADIR%%/accessories/mm2wordml_utf8_TEMPLATE.mm
 %%DATADIR%%/accessories/mm2xbel.xsl
+%%DATADIR%%/accessories/mm2xls_utf8.xsl
 %%DATADIR%%/accessories/opml2mm.xsl
 %%DATADIR%%/accessories/plus.png
 %%DATADIR%%/accessories/show.png
@@ -22,26 +44,49 @@ bin/freemind
 %%DATADIR%%/accessories/toxhtml.xsl
 %%DATADIR%%/accessories/treestyles.css
 %%DATADIR%%/accessories/xbel2mm.xsl
+%%DATADIR%%/browser/freemind.mm
+%%DATADIR%%/browser/freemindbrowser.html
+%%DATADIR%%/browser/freemindbrowser.jar
+%%DATADIR%%/browser/freemindbrowser.xhtml
+%%DATADIR%%/browser/license
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_et.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_et.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_fr.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_fr.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_hr.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_hr.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_it.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_it.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_ja.pdf
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_ru.odt
+%%DATADIR%%/doc/FM_Key_Mappings_Quick_Guide_ru.pdf
 %%DATADIR%%/doc/freemind.mm
-%%DATADIR%%/lib/ant/lib/dom.jar
-%%DATADIR%%/lib/ant/lib/jax-qname.jar
-%%DATADIR%%/lib/ant/lib/jaxb-api.jar
-%%DATADIR%%/lib/ant/lib/jaxb-impl.jar
-%%DATADIR%%/lib/ant/lib/jaxb-libs.jar
-%%DATADIR%%/lib/ant/lib/namespace.jar
-%%DATADIR%%/lib/ant/lib/relaxngDatatype.jar
-%%DATADIR%%/lib/ant/lib/sax.jar
-%%DATADIR%%/lib/ant/lib/xsdlib.jar
-%%DATADIR%%/lib/commons-lang-2.0.jar
+%%DATADIR%%/doc/freemind_da.mm
+%%DATADIR%%/doc/freemind_de.mm
+%%DATADIR%%/doc/freemind_es.mm
+%%DATADIR%%/doc/freemind_et.mm
+%%DATADIR%%/doc/freemind_fr.mm
+%%DATADIR%%/doc/freemind_id.mm
+%%DATADIR%%/doc/freemind_ja.mm
+%%DATADIR%%/doc/freemind_ru.mm
+%%DATADIR%%/doc/freemind_vi.mm
+%%DATADIR%%/lib/SimplyHTML/SimplyHTML.jar
+%%DATADIR%%/lib/SimplyHTML/gnu-regexp-1.1.4.jar
+%%DATADIR%%/lib/bindings.jar
 %%DATADIR%%/lib/forms-1.0.5.jar
 %%DATADIR%%/lib/freemind.jar
-%%DATADIR%%/license
+%%DATADIR%%/lib/jibx/jibx-run.jar
+%%DATADIR%%/lib/jibx/xpp3.jar
 %%DATADIR%%/patterns.xml
 %%DATADIR%%/plugins/ExportSvg.xml
 %%DATADIR%%/plugins/FreemindHelp.xml
-%%DATADIR%%/plugins/TimeManagement.xml
+%%DATADIR%%/plugins/ScriptingEngine.xml
 %%DATADIR%%/plugins/help/help_plugin.jar
 %%DATADIR%%/plugins/help/jhall.jar
+%%DATADIR%%/plugins/script/groovy-all-1.5.6.jar
+%%DATADIR%%/plugins/script/scripting_plugin.jar
 %%DATADIR%%/plugins/svg/batik-awt-util.jar
 %%DATADIR%%/plugins/svg/batik-bridge.jar
 %%DATADIR%%/plugins/svg/batik-css.jar
@@ -64,16 +109,14 @@ bin/freemind
 %%DATADIR%%/plugins/svg/svg_plugin.jar
 %%DATADIR%%/plugins/svg/xerces_2_5_0.jar
 %%DATADIR%%/plugins/svg/xml-apis.jar
-%%DATADIR%%/plugins/time/jcalendar.jar
-%%DATADIR%%/plugins/time/time_plugin.jar
-%%DATADIR%%/user.properties
-@dirrm %%DATADIR%%/accessories
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/lib/ant/lib
-@dirrm %%DATADIR%%/lib/ant
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/plugins/help
 @dirrm %%DATADIR%%/plugins/svg
-@dirrm %%DATADIR%%/plugins/time
+@dirrm %%DATADIR%%/plugins/script
+@dirrm %%DATADIR%%/plugins/help
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lib/jibx
+@dirrm %%DATADIR%%/lib/SimplyHTML
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/browser
+@dirrm %%DATADIR%%/accessories
 @dirrm %%DATADIR%%
