@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.7.1
+PORTVERSION=	1.8.7.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	18
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
