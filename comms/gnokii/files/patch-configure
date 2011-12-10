@@ -1,6 +1,6 @@
---- configure.orig	2010-04-21 15:49:32.000000000 +0200
-+++ configure	2010-04-25 18:02:53.185508083 +0200
-@@ -1060,7 +1060,7 @@
+--- configure.orig	2011-12-02 15:54:03.000000000 +0100
++++ configure	2011-12-09 16:57:35.591360321 +0100
+@@ -955,7 +955,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,11 +9,10 @@
  
  ac_prev=
  ac_dashdash=
-@@ -7909,20 +7909,6 @@
- 
+@@ -7939,19 +7939,6 @@
    fi
  
--
+ 
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on FreeBSD" >&5
 -$as_echo_n "checking if building on FreeBSD... " >&6; }
 -
@@ -30,7 +29,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on NetBSD" >&5
  $as_echo_n "checking if building on NetBSD... " >&6; }
  
-@@ -14858,7 +14844,7 @@
+@@ -15803,7 +15790,7 @@
  $as_echo_n "checking if more special flags are required for pthreads... " >&6; }
          flag=no
          case "${host_cpu}-${host_os}" in
@@ -39,16 +38,43 @@
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
          { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${flag}" >&5
-@@ -15461,7 +15447,7 @@
+@@ -16399,7 +16386,7 @@
+ 
  
  if test "$enable_libical" = "yes"; then
+-	ICAL_LIBS="$ICAL_LIBS -lpthread -lical"
++	ICAL_LIBS="$ICAL_LIBS -pthread -lical"
  	OLD_CFLAGS="$CFLAGS"
--	LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
-+	LIBS="$LIBS $ICAL_LIBS -pthread -lical"
- 	CFLAGS="$CFLAGS $ICAL_CFLAGS"
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libical is installed" >&5
- $as_echo_n "checking whether libical is installed... " >&6; }
-@@ -15883,7 +15869,7 @@
+ 	OLD_LIBS="$LIBS"
+ 	LIBS="$LIBS $ICAL_LIBS"
+@@ -16716,7 +16703,7 @@
+ $as_echo "#define HAVE_BLUETOOTH_BLUEZ /**/" >>confdefs.h
+ 
+ 			USE_BLUETOOTH="yes"
+-			BLUETOOTH_LIBS="-lbluetooth"
++			BLUETOOTH_LIBS="-lsdp -lbluetooth"
+ 
+ 		fi
+ 	fi
+@@ -16849,7 +16836,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lbluetooth  $LIBS"
++LIBS="-sdp -lbluetooth  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16880,7 +16867,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = xyes; then :
+-  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
++  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
+ else
+   ac_cv_have_bt_lib=no
+ fi
+@@ -16977,7 +16964,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -57,39 +83,40 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15914,7 +15900,7 @@
+@@ -17008,7 +16995,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
  $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
- if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then :
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = xyes; then :
 -  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
 +  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
  else
    ac_cv_have_bt_lib=no
  fi
-@@ -16011,7 +15997,7 @@
+@@ -17488,8 +17475,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lbluetooth  $LIBS"
-+LIBS="-lsdp -lbluetooth  $LIBS"
+-LIBS="-lXpm  $XLIBS -lX11
+-             $LIBS"
++LIBS="-lXpm  $XLIBS -lX11 $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16042,7 +16028,7 @@
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
- $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
- if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then :
--  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
-+  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
- else
-   ac_cv_have_bt_lib=no
- fi
-@@ -16612,7 +16598,7 @@
+@@ -17521,7 +17507,7 @@
  $as_echo "$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
- if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = x""yes; then :
+ if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = xyes; then :
     XPM_CFLAGS="$XINCL"
 -                  XPM_LIBS="$XLIBS -lXpm -lX11"
 +                  XPM_LIBS="$XLIBS -lXpm -lX11 -lroken -lcrypt"
  
  $as_echo "#define XPM 1" >>confdefs.h
  
+@@ -17556,7 +17542,7 @@
+    fi
+ fi
+ 
+- if test "x$_support" = "xyes"; then
++ if test "x$x_support" = "xyes"; then
+   XGNOKII_TRUE=
+   XGNOKII_FALSE='#'
+ else
