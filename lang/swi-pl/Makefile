@@ -15,13 +15,9 @@ MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Edinburgh-style Prolog compiler
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		readline:${PORTSDIR}/devel/readline
-
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
-LIB_DEPENDS+=	Xt:${PORTSDIR}/x11-toolkits/libXt \
+		readline:${PORTSDIR}/devel/readline \
+		odbc:${PORTSDIR}/databases/unixODBC \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		Xpm:${PORTSDIR}/x11/libXpm
-LIB_DEPENDS+=	Xft:${PORTSDIR}/x11-fonts/libXft
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,6 +30,7 @@ MANCOMPRESSED=	no
 
 NOPRECIOUSMAKEVARS=	yes
 USE_GMAKE=	yes
+USE_XORG=	xft xpm xt
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
