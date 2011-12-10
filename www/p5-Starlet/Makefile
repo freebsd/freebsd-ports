@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Starlet
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for standalone HTTP/1.0 server
 
 RUN_DEPENDS=	\
-	p5-Parallel-Prefork>=0.07:${PORTSDIR}/devel/p5-Parallel-Prefork \
+	p5-Parallel-Prefork>=0.13:${PORTSDIR}/devel/p5-Parallel-Prefork \
 	p5-Plack>=0.992:${PORTSDIR}/www/p5-Plack \
 	p5-Server-Starter>=0.06:${PORTSDIR}/net/p5-Server-Starter
 BUILD_DEPENDS=	${RUN_DEPENDS}
