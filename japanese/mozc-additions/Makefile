@@ -15,10 +15,11 @@ MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Additional tools and images for Mozc Japanese Input Method
 
 NO_BUILD=	yes
-REPLACE_FILES=	${WRKSRC}/Makefile
+LOCALBASE_REPLACE_FILES= \
+		${WRKSRC}/Makefile
 
 post-patch:
-	@for FILE in ${REPLACE_FILES}; \
+	@for FILE in ${LOCALBASE_REPLACE_FILES}; \
 	do \
 	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
 	    $${FILE}; \

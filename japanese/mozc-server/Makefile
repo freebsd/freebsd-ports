@@ -26,7 +26,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GMAKE=	yes
-USE_ICONV=	yes
+eSE_ICONV=	yes
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
@@ -39,20 +39,28 @@ BROKEN=		Does not compile on FreeBSD 7.X
 BROKEN=		Does not compile: segfault
 .endif
 
-.if defined(WITH_DEBUG_CODE)
-BUILD_MODE=Debug
-.else
-BUILD_MODE=Release
+# workaround for a gcc4.2.1's namespace bug
+.if (${OSVERSION} < 1000000 && ${OSVERSION} > 9000000) || ${OSVERSION} < 802503
+BUILD_DEPENDS+= gcc42:${PORTSDIR}/lang/gcc42
+CC=		gcc42
+CXX=		g++42
 .endif
 
-REPLACE_FILES=	${WRKSRC}/build_mozc.py \
+.if defined(WITH_DEBUG_CODE)
+BUILD_MODE=	Debug
+.else
+BUILD_MODE=	Release
+.endif
+
+LOCALBASE_REPLACE_FILES= \
+		${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
 		${WRKSRC}/handwriting/zinnia_handwriting.cc
 
 post-patch:
-	@for FILE in ${REPLACE_FILES}; \
+	@for FILE in ${LOCALBASE_REPLACE_FILES}; \
 	do \
 	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
 	    $${FILE}; \
@@ -61,6 +69,9 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		export BUILD_COMMAND=${GMAKE}; \
+		export CC=${CC}; export CFLAGS="${CFLAGS}"; \
+		export CXX=${CXX}; export CXXFLAGS="${CXXFLAGS}"; \
+		export LDFLAGS="-L${LOCALBASE}/lib" ; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
 		${PYTHON_CMD} build_mozc.py build_tools \
 			-c ${BUILD_MODE}; \
