@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Core
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
@@ -17,6 +17,8 @@ CONFLICTS=	horde-3*
 OPTIONS=	KOLAB "Enable Kolab server support" Off \
 		LZF "Depend on lzf PHP extension" Off \
 		SOCKETS "Depend on sockets PHP extension" Off
+
+USE_PHP=	session
 
 USE_HORDE_BUILD=	Horde_Role
 
