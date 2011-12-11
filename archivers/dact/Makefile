@@ -17,8 +17,6 @@ COMMENT=	Dynamic Adaptive Compression Tool
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		lzo2.2:${PORTSDIR}/archivers/lzo2
 
-BROKEN=	needs to be upgraded to lzo2 according to ports/156954
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
