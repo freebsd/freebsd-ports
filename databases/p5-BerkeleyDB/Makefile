@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BerkeleyDB
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -15,12 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the Berkeley DB package
 
-USE_BDB=	47+
-
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM \
+		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
+USE_BDB=	47+
 
 MAN3=		BerkeleyDB.3
 
