@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/kiwi-i18n
 bin/kiwi-ui-test
-%%PYTHON_SITELIBDIR%%/gazpacho/widgets/kiwiwidgets.py
+lib/glade3/modules/kiwiwidgets.py
 %%PYTHON_SITELIBDIR%%/kiwi/__init__.py
 %%PYTHON_SITELIBDIR%%/kiwi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/kiwi/__init__.pyo
@@ -59,6 +59,9 @@ bin/kiwi-ui-test
 %%PYTHON_SITELIBDIR%%/kiwi/environ.py
 %%PYTHON_SITELIBDIR%%/kiwi/environ.pyc
 %%PYTHON_SITELIBDIR%%/kiwi/environ.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/gicompat.py
+%%PYTHON_SITELIBDIR%%/kiwi/gicompat.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/gicompat.pyo
 %%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.pyo
@@ -125,9 +128,6 @@ bin/kiwi-ui-test
 %%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.py
 %%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.pyc
 %%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.pyo
-%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.py
-%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.pyc
-%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.pyo
 %%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.py
 %%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.pyc
 %%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.pyo
@@ -260,18 +260,18 @@ bin/kiwi-ui-test
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/color/color.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/color/color2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/color/completion.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary.glade
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary2.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/faren/faren.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/diary/diary2.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/faren/faren.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/faren/faren.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/faren/faren2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/faren/faren3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/gender/gender.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/gender/gender.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/gender/genderselection.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/hey.glade
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/hey.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/hey.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/heyglade.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/heyglade2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/hey/heyglade3.py
@@ -279,15 +279,15 @@ bin/kiwi-ui-test
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/news/news2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/news/news3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/news/news4.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/news/news_shell.glade
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/newsform/newsform.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/news/news_shell.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/newsform/newsform.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/person/Person.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/newsform/newsform.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/person/Person.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/person/person.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/simple.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/shell.glade
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view.glade
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view2.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/shell.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view2.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/framework/sizegroup/slaves.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hyperlink/hyperlink_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/list/editable.py
@@ -310,29 +310,29 @@ bin/kiwi-ui-test
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasklet/test-tasklet2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/datatypes.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/lang.glade
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/personalinformation.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/lang.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/personalinformation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/personalinformation.ui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validation/slaves.py
-share/gazpacho/catalogs/kiwiwidgets.xml
-share/gazpacho/resources/kiwiwidgets/hyperlink.png
-share/gazpacho/resources/kiwiwidgets/kiwibutton.png
-share/gazpacho/resources/kiwiwidgets/kiwicheckbutton.png
-share/gazpacho/resources/kiwiwidgets/kiwicolorbutton.png
-share/gazpacho/resources/kiwiwidgets/kiwicombobox.png
-share/gazpacho/resources/kiwiwidgets/kiwicomboboxentry.png
-share/gazpacho/resources/kiwiwidgets/kiwicomboentry.png
-share/gazpacho/resources/kiwiwidgets/kiwidateentry.png
-share/gazpacho/resources/kiwiwidgets/kiwientry.png
-share/gazpacho/resources/kiwiwidgets/kiwihscale.png
-share/gazpacho/resources/kiwiwidgets/kiwilabel.png
-share/gazpacho/resources/kiwiwidgets/kiwiradiobutton.png
-share/gazpacho/resources/kiwiwidgets/kiwispinbutton.png
-share/gazpacho/resources/kiwiwidgets/kiwitextview.png
-share/gazpacho/resources/kiwiwidgets/kiwivscale.png
-share/gazpacho/resources/kiwiwidgets/objectlist.png
-share/gazpacho/resources/kiwiwidgets/objecttree.png
-%%DATADIR%%/glade/PluggableWizard.glade
+share/glade3/catalogs/kiwiwidgets.xml
+share/glade3/pixmaps/hyperlink.png
+share/glade3/pixmaps/kiwibutton.png
+share/glade3/pixmaps/kiwicheckbutton.png
+share/glade3/pixmaps/kiwicolorbutton.png
+share/glade3/pixmaps/kiwicombobox.png
+share/glade3/pixmaps/kiwicomboboxentry.png
+share/glade3/pixmaps/kiwicomboentry.png
+share/glade3/pixmaps/kiwidateentry.png
+share/glade3/pixmaps/kiwientry.png
+share/glade3/pixmaps/kiwihscale.png
+share/glade3/pixmaps/kiwilabel.png
+share/glade3/pixmaps/kiwiradiobutton.png
+share/glade3/pixmaps/kiwispinbutton.png
+share/glade3/pixmaps/kiwitextview.png
+share/glade3/pixmaps/kiwivscale.png
+share/glade3/pixmaps/objectlist.png
+share/glade3/pixmaps/objecttree.png
+%%DATADIR%%/glade/PluggableWizard.ui
 %%DATADIR%%/pixmaps/validation-error-16.png
 share/locale/es_CL/LC_MESSAGES/kiwi.mo
 share/locale/es_ES/LC_MESSAGES/kiwi.mo
@@ -341,13 +341,14 @@ share/locale/it/LC_MESSAGES/kiwi.mo
 share/locale/pl/LC_MESSAGES/kiwi.mo
 share/locale/pt_BR/LC_MESSAGES/kiwi.mo
 share/locale/sv/LC_MESSAGES/kiwi.mo
+@dirrm lib/glade3/modules
+@dirrm lib/glade3
+@dirrm share/glade3/pixmaps
+@dirrm share/glade3/catalogs
+@dirrm share/glade3
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrmtry share/gazpacho/resources/kiwiwidgets
-@dirrmtry share/gazpacho/resources
-@dirrmtry share/gazpacho/catalogs
-@dirrmtry share/gazpacho
 @dirrm share/locale/es_CL/LC_MESSAGES
 @dirrm share/locale/es_CL
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/validation
@@ -374,5 +375,3 @@ share/locale/sv/LC_MESSAGES/kiwi.mo
 @dirrm %%PYTHON_SITELIBDIR%%/kiwi/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/kiwi/db
 @dirrm %%PYTHON_SITELIBDIR%%/kiwi
-@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets
-@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho
