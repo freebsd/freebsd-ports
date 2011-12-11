@@ -12861,6 +12861,7 @@ p5-Log-Any-Adapter-Dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
 p5-Log-Any-Adapter-Log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-Log-Any-Adapter-Syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-Log-Any-App                  ports/devel/p5-Log-Any-App
+p5-Log-Contextual               ports/devel/p5-Log-Contextual
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Array           ports/devel/p5-Log-Dispatch-Array
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
@@ -17298,6 +17299,7 @@ p5-log-any-adapter-dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
 p5-log-any-adapter-log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-log-any-adapter-syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-log-any-app                  ports/devel/p5-Log-Any-App
+p5-log-contextual               ports/devel/p5-Log-Contextual
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-array           ports/devel/p5-Log-Dispatch-Array
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
@@ -26869,7 +26871,6 @@ wmsolar                         ports/astro/wmsolar
 wmspaceweather                  ports/astro/wmspaceweather
 wmstock                         ports/finance/wmstock
 wmsun                           ports/astro/wmsun
-wmthemeinstall                  ports/x11-wm/wmthemeinstall
 wmtictactoe                     ports/games/wmtictactoe
 wmtime                          ports/x11-clocks/wmtime
 wmtimer                         ports/x11-clocks/wmtimer
