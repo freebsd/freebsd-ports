@@ -1,7 +1,0 @@
-The goal of the PySQLite project is to develop a Python extension for SQLite 2
-that conforms to the Python Database API Specification 2.0. SQLite is a
-powerful embedded relational database management system in a compact C library.
-It offers support for a large subset of SQL92, multiple tables, indices,
-transactions and triggers.
-
-WWW: http://pysqlite.org
