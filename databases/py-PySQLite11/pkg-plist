@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/main.py
-%%PYTHON_SITELIBDIR%%/sqlite/main.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/main.pyo
-%%PYTHON_SITELIBDIR%%/_sqlite.so
-@dirrm %%PYTHON_SITELIBDIR%%/sqlite

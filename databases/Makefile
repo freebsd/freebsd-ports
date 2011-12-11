@@ -642,8 +642,6 @@
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb-devel
     SUBDIR += py-PyGreSQL
-    SUBDIR += py-PySQLite10
-    SUBDIR += py-PySQLite11
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
@@ -673,10 +671,6 @@
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
     SUBDIR += py-pymysql
-    SUBDIR += py-pysqlite20
-    SUBDIR += py-pysqlite21
-    SUBDIR += py-pysqlite22
-    SUBDIR += py-pysqlite23
     SUBDIR += py-pytc
     SUBDIR += py-qt4-sql
     SUBDIR += py-redis
