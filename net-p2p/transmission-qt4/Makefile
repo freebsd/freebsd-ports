@@ -26,8 +26,7 @@ USE_GNOME=	desktopfileutils
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
-		--disable-gtk \
-		--disable-libnotify \
+		--without-gtk \
 		--disable-mac \
 		--disable-nls
 

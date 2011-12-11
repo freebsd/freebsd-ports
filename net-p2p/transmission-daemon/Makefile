@@ -23,8 +23,7 @@ USE_RC_SUBR=	transmission
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--enable-daemon \
-		--disable-gtk \
-		--disable-libnotify \
+		--without-gtk \
 		--disable-mac \
 		--disable-nls
 

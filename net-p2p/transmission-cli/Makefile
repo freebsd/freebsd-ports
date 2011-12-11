@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
@@ -37,8 +37,7 @@ CONFIGURE_ARGS=--with-zlib=/usr \
 		${EXTRA_CONF_ARGS}
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
-		 --disable-gtk \
-		 --disable-libnotify \
+		 --without-gtk \
 		 --disable-mac \
 		 --disable-nls
 
