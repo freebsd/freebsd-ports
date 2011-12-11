@@ -27,8 +27,8 @@ INSTALLS_ICONS=	yes
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
-		--enable-gtk \
-		--enable-libnotify \
+		--with-gtk \
+		--enable-inotify \
 		--disable-mac \
 		--enable-nls
 
