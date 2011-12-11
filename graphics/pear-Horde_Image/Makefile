@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Image
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	graphics www pear
 PKGNAMEPREFIX=	pear-
 
