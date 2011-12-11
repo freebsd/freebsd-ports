@@ -14,9 +14,26 @@ bin/gforthmi-%%PORTVERSION%%
 bin/vmgen-%%PORTVERSION%%
 @exec ln -fs %f %B/vmgen
 @unexec rm -f %B/vmgen
+include/gforth/%%PORTVERSION%%/config.h
+include/gforth/%%PORTVERSION%%/libcc.h
 lib/gforth/%%PORTVERSION%%/gforth-ditc
 lib/gforth/%%PORTVERSION%%/gforth.fi
-%%EMACS_DIR%%/gforth.el
+lib/gforth/%%PORTVERSION%%/libcc-named/cstr.so.0
+lib/gforth/%%PORTVERSION%%/libcc-named/cstr.so
+lib/gforth/%%PORTVERSION%%/libcc-named/cstr.la
+lib/gforth/%%PORTVERSION%%/libcc-named/cstr.a
+lib/gforth/%%PORTVERSION%%/libcc-named/socket.so.0
+lib/gforth/%%PORTVERSION%%/libcc-named/socket.so
+lib/gforth/%%PORTVERSION%%/libcc-named/socket.la
+lib/gforth/%%PORTVERSION%%/libcc-named/socket.a
+lib/gforth/%%PORTVERSION%%/libcc-named/libffi.so.0
+lib/gforth/%%PORTVERSION%%/libcc-named/libffi.so
+lib/gforth/%%PORTVERSION%%/libcc-named/libffi.la
+lib/gforth/%%PORTVERSION%%/libcc-named/libffi.a
+lib/gforth/%%PORTVERSION%%/libcc-named/fflib.so.0
+lib/gforth/%%PORTVERSION%%/libcc-named/fflib.so
+lib/gforth/%%PORTVERSION%%/libcc-named/fflib.la
+lib/gforth/%%PORTVERSION%%/libcc-named/fflib.a
 %%DATADIR%%/%%PORTVERSION%%/TAGS
 %%DATADIR%%/%%PORTVERSION%%/add.fs
 %%DATADIR%%/%%PORTVERSION%%/ans-report.fs
@@ -26,9 +43,17 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/arch/386/disasm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/alpha/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/alpha/disasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/alpha/testasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/amd64/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/amd64/disasm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/disasm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/insts.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/mips/testasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/mips/testdisasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/power/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/power/disasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/power/inst.fs
 %%DATADIR%%/%%PORTVERSION%%/asm/README
 %%DATADIR%%/%%PORTVERSION%%/asm/basic.fs
 %%DATADIR%%/%%PORTVERSION%%/asm/bitmask.fs
@@ -41,6 +66,7 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/blocks.fs
 %%DATADIR%%/%%PORTVERSION%%/bubble.fs
 %%DATADIR%%/%%PORTVERSION%%/bufio.fs
+%%DATADIR%%/%%PORTVERSION%%/build-ec.in
 %%DATADIR%%/%%PORTVERSION%%/chains.fs
 %%DATADIR%%/%%PORTVERSION%%/code.fs
 %%DATADIR%%/%%PORTVERSION%%/colorize.fs
@@ -51,15 +77,21 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/compat/control.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/defer.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/exception.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/execute-parsing.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/loops.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/required.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/strcomp.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/struct.fs
 %%DATADIR%%/%%PORTVERSION%%/compat/vocabulary.fs
+%%DATADIR%%/%%PORTVERSION%%/complex.fs
 %%DATADIR%%/%%PORTVERSION%%/cross.fs
+%%DATADIR%%/%%PORTVERSION%%/cstr.fs
 %%DATADIR%%/%%PORTVERSION%%/debug.fs
 %%DATADIR%%/%%PORTVERSION%%/debugs.fs
+%%DATADIR%%/%%PORTVERSION%%/depth-changes.fs
+%%DATADIR%%/%%PORTVERSION%%/dis-gdb.fs
 %%DATADIR%%/%%PORTVERSION%%/doc/makedoc.fs
+%%DATADIR%%/%%PORTVERSION%%/dosekey.fs
 %%DATADIR%%/%%PORTVERSION%%/doskey.fs
 %%DATADIR%%/%%PORTVERSION%%/ds2texi.fs
 %%DATADIR%%/%%PORTVERSION%%/ec/README
@@ -69,6 +101,7 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/ec/nesting.fs
 %%DATADIR%%/%%PORTVERSION%%/ec/shex.fs
 %%DATADIR%%/%%PORTVERSION%%/ekey.fs
+%%DATADIR%%/%%PORTVERSION%%/endtry-iferror.fs
 %%DATADIR%%/%%PORTVERSION%%/environ.fs
 %%DATADIR%%/%%PORTVERSION%%/envos.dos
 %%DATADIR%%/%%PORTVERSION%%/envos.fs
@@ -79,17 +112,20 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/except.fs
 %%DATADIR%%/%%PORTVERSION%%/extend.fs
 %%DATADIR%%/%%PORTVERSION%%/fflib.fs
+%%DATADIR%%/%%PORTVERSION%%/fft.fs
 %%DATADIR%%/%%PORTVERSION%%/fi2c.fs
 %%DATADIR%%/%%PORTVERSION%%/fib.fs
 %%DATADIR%%/%%PORTVERSION%%/filedump.fs
 %%DATADIR%%/%%PORTVERSION%%/fixpath.fs
 %%DATADIR%%/%%PORTVERSION%%/float.fs
+%%DATADIR%%/%%PORTVERSION%%/fsl-util.4th
 %%DATADIR%%/%%PORTVERSION%%/glocals.fs
 %%DATADIR%%/%%PORTVERSION%%/glosgen.fs
 %%DATADIR%%/%%PORTVERSION%%/gray.fs
 %%DATADIR%%/%%PORTVERSION%%/hash.fs
 %%DATADIR%%/%%PORTVERSION%%/history.fs
 %%DATADIR%%/%%PORTVERSION%%/httpd.fs
+%%DATADIR%%/%%PORTVERSION%%/install-tags.fs
 %%DATADIR%%/%%PORTVERSION%%/intcomp.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/accept.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/aliases.fs
@@ -121,8 +157,11 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/kernel/tools.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/toolsext.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/vars.fs
-%%DATADIR%%/%%PORTVERSION%%/kernl%%WORDSIZE%%%%BYTEORDER%%.fi
+%%DATADIR%%/%%PORTVERSION%%/kernel/xchars.fs
+%%DATADIR%%/%%PORTVERSION%%/kernl64l.fi
 %%DATADIR%%/%%PORTVERSION%%/lib.fs
+%%DATADIR%%/%%PORTVERSION%%/libcc.fs
+%%DATADIR%%/%%PORTVERSION%%/libffi.fs
 %%DATADIR%%/%%PORTVERSION%%/locals.fs
 %%DATADIR%%/%%PORTVERSION%%/locate.fs
 %%DATADIR%%/%%PORTVERSION%%/look.fs
@@ -136,20 +175,25 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/make-app.fs
 %%DATADIR%%/%%PORTVERSION%%/matrix.fs
 %%DATADIR%%/%%PORTVERSION%%/mini-oof.fs
+%%DATADIR%%/%%PORTVERSION%%/mkdir.fs
 %%DATADIR%%/%%PORTVERSION%%/moof-exm.fs
 %%DATADIR%%/%%PORTVERSION%%/moofglos.fs
 %%DATADIR%%/%%PORTVERSION%%/more.fs
 %%DATADIR%%/%%PORTVERSION%%/objects.fs
 %%DATADIR%%/%%PORTVERSION%%/objexamp.fs
 %%DATADIR%%/%%PORTVERSION%%/oldlib.fs
+%%DATADIR%%/%%PORTVERSION%%/onebench.fs
 %%DATADIR%%/%%PORTVERSION%%/oof.fs
 %%DATADIR%%/%%PORTVERSION%%/oofsampl.fs
 %%DATADIR%%/%%PORTVERSION%%/other.fs
 %%DATADIR%%/%%PORTVERSION%%/prim
 %%DATADIR%%/%%PORTVERSION%%/prims2x.fs
+%%DATADIR%%/%%PORTVERSION%%/prims2x0.6.2.fs
 %%DATADIR%%/%%PORTVERSION%%/proxy.fs
 %%DATADIR%%/%%PORTVERSION%%/quotes.fs
 %%DATADIR%%/%%PORTVERSION%%/random.fs
+%%DATADIR%%/%%PORTVERSION%%/recover-endtry.fs
+%%DATADIR%%/%%PORTVERSION%%/regexp.fs
 %%DATADIR%%/%%PORTVERSION%%/savesys.fs
 %%DATADIR%%/%%PORTVERSION%%/search.fs
 %%DATADIR%%/%%PORTVERSION%%/see-ext.fs
@@ -162,43 +206,59 @@ lib/gforth/%%PORTVERSION%%/gforth.fi
 %%DATADIR%%/%%PORTVERSION%%/startup.fs
 %%DATADIR%%/%%PORTVERSION%%/string.fs
 %%DATADIR%%/%%PORTVERSION%%/struct.fs
+%%DATADIR%%/%%PORTVERSION%%/struct0x.fs
 %%DATADIR%%/%%PORTVERSION%%/stuff.fs
 %%DATADIR%%/%%PORTVERSION%%/table.fs
 %%DATADIR%%/%%PORTVERSION%%/tags.fs
 %%DATADIR%%/%%PORTVERSION%%/tasker.fs
 %%DATADIR%%/%%PORTVERSION%%/termsize.fs
 %%DATADIR%%/%%PORTVERSION%%/test/checkans.fs
+%%DATADIR%%/%%PORTVERSION%%/test/coreext.fs
+%%DATADIR%%/%%PORTVERSION%%/test/coremore.fs
 %%DATADIR%%/%%PORTVERSION%%/test/coretest.fs
 %%DATADIR%%/%%PORTVERSION%%/test/dbltest.fs
+%%DATADIR%%/%%PORTVERSION%%/test/deferred.fs
 %%DATADIR%%/%%PORTVERSION%%/test/float.fs
+%%DATADIR%%/%%PORTVERSION%%/test/gforth-nofast.fs
 %%DATADIR%%/%%PORTVERSION%%/test/gforth.fs
+%%DATADIR%%/%%PORTVERSION%%/test/libcc.fs
 %%DATADIR%%/%%PORTVERSION%%/test/other.fs
 %%DATADIR%%/%%PORTVERSION%%/test/postpone.fs
+%%DATADIR%%/%%PORTVERSION%%/test/primtest.fs
+%%DATADIR%%/%%PORTVERSION%%/test/search.fs
 %%DATADIR%%/%%PORTVERSION%%/test/signals.fs
 %%DATADIR%%/%%PORTVERSION%%/test/string.fs
 %%DATADIR%%/%%PORTVERSION%%/test/tester.fs
+%%DATADIR%%/%%PORTVERSION%%/test/ttester.fs
 %%DATADIR%%/%%PORTVERSION%%/tt.fs
 %%DATADIR%%/%%PORTVERSION%%/unbuffer.fs
 %%DATADIR%%/%%PORTVERSION%%/unix/socket.fs
+%%DATADIR%%/%%PORTVERSION%%/utf-8.fs
 %%DATADIR%%/%%PORTVERSION%%/vt100.fs
 %%DATADIR%%/%%PORTVERSION%%/vt100key.fs
 %%DATADIR%%/%%PORTVERSION%%/wordinfo.fs
 %%DATADIR%%/%%PORTVERSION%%/wordsets.fs
+%%DATADIR%%/%%PORTVERSION%%/xwords.fs
 @exec mkdir -p %D/%%DATADIR%%/site-forth
-@dirrmtry %%DATADIR%%/site-forth
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/unix
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/test
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/kernel
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/ec
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/doc
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/compat
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/asm
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/mips
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/alpha
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/386
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/gforth/site-forth
-@dirrmtry lib/gforth/%%PORTVERSION%%
-@dirrmtry lib/gforth
+@dirrm %%DATADIR%%/site-forth
+@dirrm %%DATADIR%%/%%PORTVERSION%%/unix
+@dirrm %%DATADIR%%/%%PORTVERSION%%/test
+@dirrm %%DATADIR%%/%%PORTVERSION%%/kernel
+@dirrm %%DATADIR%%/%%PORTVERSION%%/ec
+@dirrm %%DATADIR%%/%%PORTVERSION%%/doc
+@dirrm %%DATADIR%%/%%PORTVERSION%%/compat
+@dirrm %%DATADIR%%/%%PORTVERSION%%/asm
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/386
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/alpha
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/amd64
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/mips
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/power
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch
+@dirrm %%DATADIR%%/%%PORTVERSION%%
+@dirrm %%DATADIR%%
+@dirrm include/gforth/%%PORTVERSION%%
+@dirrm include/gforth
+@dirrm lib/gforth/site-forth
+@dirrm lib/gforth/%%PORTVERSION%%/libcc-named
+@dirrm lib/gforth/%%PORTVERSION%%
+@dirrm lib/gforth
