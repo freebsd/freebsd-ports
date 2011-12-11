@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pbc
-PORTVERSION=	0.4.21
-PORTREVISION=	1
+PORTVERSION=	0.5.12
 CATEGORIES=	security
 MASTER_SITES=	http://crypto.stanford.edu/pbc/files/
 
@@ -16,7 +15,8 @@ COMMENT=	Library of pairing-based cryptosystems
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-USE_CMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_GCC=	4.6+
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
