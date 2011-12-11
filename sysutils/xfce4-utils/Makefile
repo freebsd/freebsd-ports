@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-utils
 PORTVERSION=	4.8.3
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
@@ -17,6 +18,8 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 essential utilities and scripts
 
 BUILD_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
+
+RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/4//}
 
