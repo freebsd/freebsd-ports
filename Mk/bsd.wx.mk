@@ -131,8 +131,9 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=			wx contrib python svg
 _WX_DEP_TYPES_ALL=		build lib run
-_WX_VERS_ALL=			2.4 2.6 2.8
-_WX_VERS_UC_ALL=		2.6 2.8
+_WX_VERS_ALL=			2.4 2.6 2.8 2.9
+_WX_VERS_UC_ALL=		2.6 2.8 2.9
+_WX_VERS_SKIP=			2.9
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
@@ -176,6 +177,10 @@ _WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.p
 
 _WX_PORT_svg_2.8=		graphics/wxsvg
 _WX_LIB_svg_2.8=		wxsvg
+
+# wxgtk 2.9
+_WX_PORT_wx_2.9=		x11-toolkits/wxgtk29
+_WX_LIB_wx_2.9=			wx_baseu-2.9
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
@@ -361,13 +366,17 @@ _WX_VER_MAX:=			${_WX_VER_CHECK:C/.*-([[:digit:]]+(\.[[:digit:]]+)*)/\1/}
 .		if ${_WX_VER_MIN} == ${_WX_VER_CHECK}
 .			undef _WX_VER_MIN
 .			for v in ${_WX_VERS_ALL}
+.				if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
 _WX_VER_MIN?=			${v}
+.				endif
 .			endfor
 .		endif
 # Maximum version not specified.
 .		if ${_WX_VER_MAX} == ${_WX_VER_CHECK}
 .			for v in ${_WX_VERS_ALL}
+.				if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
 _WX_VER_MAX=			${v}
+.				endif
 .			endfor
 .		endif
 # Expand versions and add valid ones to each list.
