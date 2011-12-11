@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	TINYXML=-ltinyxml
+MAKE_ENV+=	HAVE_RULES=yes TINYXML=-ltinyxml
 
 PLIST_FILES=	bin/cppcheck
 
@@ -30,7 +30,7 @@ ALL_TARGET=	cppcheck
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NO_INSTALL_MANPAGES)
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
