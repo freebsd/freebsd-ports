@@ -26,7 +26,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GMAKE=	yes
-eSE_ICONV=	yes
+USE_ICONV=	yes
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
