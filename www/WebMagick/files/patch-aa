@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.169
-diff -u -r1.117 -r1.169
+retrieving revision 1.170
+diff -u -r1.117 -r1.170
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	21 Sep 2011 05:54:43 -0000	1.169
++++ webmagick.in	11 Dec 2011 22:46:56 -0000	1.170
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.169 2011/09/21 05:54:43 ache Exp $
++# $Id: webmagick.in,v 1.170 2011/12/11 22:46:56 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1551,12 +1551,21 @@ diff -u -r1.117 -r1.169
  sub compareHash {
      my( $hash1, $hash2) = @_;
  
-+    if (defined(%$hash1) != defined(%$hash2)) {
++    if (!%$hash1 != !%$hash2) {
 +	return( 1 );
 +    }
      if(scalar(keys(%$hash1)) != scalar(keys(%$hash2))) {
  	return( 1 ); # different length
      }
+@@ -3633,7 +3894,7 @@
+ 	}
+     }
+     
+-    if( !defined(%iconImageSizes) || (  compareHash(\%iconImageSizes,\%tmp_iconImageSizes) ) ) {
++    if( !%iconImageSizes || (  compareHash(\%iconImageSizes,\%tmp_iconImageSizes) ) ) {
+ 	%iconImageSizes = %tmp_iconImageSizes;
+ 	print( STDERR "Icon sizes have changed, must re-do all HTML\n" )
+ 	    if $opt_debug;
 @@ -3868,7 +4129,7 @@
  	# Set image label
  	#
