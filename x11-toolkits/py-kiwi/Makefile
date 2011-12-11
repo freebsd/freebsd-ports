@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kiwi
-PORTVERSION=	1.9.26
-PORTREVISION=	4
+PORTVERSION=	1.9.29
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -23,6 +23,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	libglade2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_XZ=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}

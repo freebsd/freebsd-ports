@@ -1,11 +1,12 @@
---- setup.py	Fri Sep 15 18:39:09 2006
-+++ setup.py.port	Wed Nov  8 21:41:48 2006
-@@ -34,12 +34,6 @@
-                              'kiwiwidgets', '*.png')),
-                   (get_site_packages_dir('gazpacho', 'widgets'),
-                    listfiles('gazpacho-plugin', 'kiwiwidgets.py')),
+--- ./setup.py.orig	2011-12-11 00:33:12.000000000 +0100
++++ ./setup.py	2011-12-11 00:33:48.000000000 +0100
+@@ -55,13 +55,6 @@
+                   ('share/glade3/catalogs', ['kiwiwidgets.xml']),
+                   ('$libdir/glade3/modules', ['kiwiwidgets.py']),
+                   ('share/glade3/pixmaps', pixmaps),
+-                  # Documentation
 -                  ('share/doc/kiwi',
--                   ('AUTHORS', 'ChangeLog', 'NEWS', 'README')),
+-                   ('AUTHORS', 'NEWS', 'README')),
 -                  ('share/doc/kiwi/howto',
 -                   listfiles('doc/howto/', '*')),
 -                  ('share/doc/kiwi/api',
