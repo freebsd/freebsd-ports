@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2008-11-01 18:22:27.000000000 +0100
++++ Makefile.in	2011-12-11 16:03:54.000000000 +0100
+@@ -430,7 +430,7 @@ ENGINES = gforth$(EC)$(EXE) gforth-ditc$
+ 
+ ENGINES_FAST = gforth-fast$(OPT)$(EC)$(EXE) #gforth-native$(OPT)$(EC)$(EXE) 
+ 
+-GEN = $(ENGINES) $(ENGINES_FAST) gforth.elc
++GEN = $(ENGINES) $(ENGINES_FAST)
+ 
+ # things that need a working forth system to be generated
+ FORTH_GEN_ENGINE=engine/prim.i engine/prim_lab.i engine/prim_names.i \
+@@ -613,7 +613,7 @@ install:	gforth$(EC)$(EXE) $(FORTH_SRC) 
+ 			$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(datadir)/gforth/$(VERSION)/$$i; \
+ 		done
+ 		$(INSTALL_DATA) $(kernel_fi) $(DESTDIR)$(datadir)/gforth/$(VERSION)
+-		@if test -d "$(DESTDIR)$(emacssitelispdir)"; then \
++		@if test -r gforth.elc -a -d "$(DESTDIR)$(emacssitelispdir)"; then \
+ 			$(INSTALL_DATA) gforth.el $(DESTDIR)$(emacssitelispdir); \
+ 			$(INSTALL_DATA) gforth.elc $(DESTDIR)$(emacssitelispdir); \
+ 		else \

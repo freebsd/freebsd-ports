@@ -6,32 +6,29 @@
 #
 
 PORTNAME=	gforth
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
+
+LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
-USE_GMAKE=	yes
-ALL_TARGET=	all info
-USE_EMACS=	yes
-EMACS_NO_BUILD_DEPENDS=	yes
-EMACS_NO_RUN_DEPENDS=	yes
-
-OPTIONS=	FFCALL	"Use ffcall"	on
-
 CFLAGS+=	-fno-reorder-blocks -fno-inline
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool libltdl
+USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
+ALL_TARGET=	all info
+
 STRIP=		#none
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
-		EMACS_DIR="${EMACS_SITE_LISPDIR}" \
 		WORDSIZE=${WORDSIZE} BYTEORDER=${BYTEORDER}
 
 DOC_FILES=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
@@ -43,14 +40,6 @@ INFO=		gforth vmgen
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_FFCALL)
-BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
 
 .if ${ARCH} == i386 || ${ARCH} == "powerpc"
 WORDSIZE=32
@@ -64,7 +53,11 @@ BYTEORDER=b
 BYTEORDER=l
 .endif
 
-post-install: install-doc install-el remove-empty-files remove-empty-dirs
+post-patch:
+	${REINPLACE_CMD} 's:@CC@:& -I${LOCALBASE}/include -L${LOCALBASE}/lib:' \
+		 ${WRKSRC}/envos.fs.in
+
+post-install: install-doc remove-empty-files remove-empty-dirs
 
 install-doc:
 .if !defined(NOPORTDOCS)
@@ -73,10 +66,6 @@ install-doc:
 	@${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
 .endfor
 .endif
-
-# Install Emacs syntax file
-install-el:
-	@${INSTALL_DATA} ${WRKSRC}/gforth.el ${PREFIX}/${EMACS_SITE_LISPDIR}
 
 # Remove unused file
 remove-empty-files:
