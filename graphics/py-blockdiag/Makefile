@@ -7,6 +7,7 @@
 
 PORTNAME=	blockdiag
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +33,14 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
 PORTDOCS=	README.txt
 PORTEXAMPLES=	*
+
+OPTIONS=	PDF	"Enable PDF output" On
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_PDF)
+RUN_DEPENDS+=	${PKGNAMEPREFIX}reportlab2>0:${PORTSDIR}/print/py-reportlab2
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
