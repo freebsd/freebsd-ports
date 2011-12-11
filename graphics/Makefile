@@ -844,6 +844,7 @@
     SUBDIR += rayshade
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg
+    SUBDIR += renrot
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += ristretto
