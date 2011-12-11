@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Date_Parser
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
