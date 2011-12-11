@@ -26,7 +26,8 @@ OPTIONS=	PYGSTREAMER "Install gst-python for audio support" off \
 		GNUCHESS "Install gnuchess (chess engine)" off \
 		PHALANX "Install phalanx (chess engine)" off \
 		SJENG "Install sjeng (chess engine)" off \
-		STRONGPLAYER "Install psyco/gmpy (strong player)" off
+		STRONGPLAYER "Install psyco/gmpy (strong player)" off \
+		STOCKFISH "Install stockfish (chess engine)" off
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
@@ -74,6 +75,10 @@ RUN_DEPENDS+=	sjeng:${PORTSDIR}/games/sjeng
 .if defined (WITH_STRONGPLAYER)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psyco>=1.6:${PORTSDIR}/devel/py-psyco
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>=1.13:${PORTSDIR}/math/py-gmpy
+.endif
+
+.if defined (WITH_STOCKFISH)
+RUN_DEPENDS+=	stockfish:${PORTSDIR}/games/stockfish
 .endif
 
 .include <bsd.port.post.mk>
