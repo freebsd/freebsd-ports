@@ -24,8 +24,8 @@ MAKEFILE=	Makefile.gtk
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 MAN1=		plink.1 pscp.1 psftp.1 puttygen.1
 
-OPTIONS=	GSSAPI "Enable GSSAPI support (broken on 9-CURRENT)" on \
-		GTK    "Enable GTK+ 2 GUI" on
+OPTIONS=	GSSAPI "Enable GSSAPI support" on \
+		GTK    "Enable GTK+ 2 GUI (recommended)" on
 
 .include <bsd.port.options.mk>
 
