@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	LaTeX-Driver
-PORTVERSION=	0.08
-PORTREVISION=	5
+PORTVERSION=	0.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module of LaTeX Driver
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
