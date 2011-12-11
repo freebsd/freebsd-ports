@@ -3016,7 +3016,6 @@ x11/ruby-gnome2-all||2011-12-05|Removed
 devel/zeroinstall-injector||2011-12-06|Duplicates PBI functionality, and 0install feeds are available as ports
 audio/py-taglib||2011-12-07|Only compatible with Python 2.4. Use audio/py-tagpy instead
 x11-wm/wmthemeinstall||2011-12-10|Abandonware: no more upstream, no more public distfiles
-lang/gcc42|lang/gcc46|2011-12-11|Superseded by gcc46
 databases/py-pysqlite20||2011-12-11|Unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
 databases/py-pysqlite21||2011-12-11|Unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
 databases/py-pysqlite22||2011-12-11|Unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
