@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Marpa-HTML
-PORTVERSION=	0.108
+PORTVERSION=	0.110
 CATEGORIES=	textproc lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JKEGL
@@ -17,11 +17,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High-level HTML Parser
 
 BUILD_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Marpa-PP>=0.010:${PORTSDIR}/lang/p5-Marpa-PP \
-		p5-Marpa-XS>=0.020:${PORTSDIR}/lang/p5-Marpa-XS
+		p5-Marpa-PP>=0.012:${PORTSDIR}/lang/p5-Marpa-PP \
+		p5-Marpa-XS>=0.026:${PORTSDIR}/lang/p5-Marpa-XS
 RUN_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Marpa-PP>=0.010:${PORTSDIR}/lang/p5-Marpa-PP \
-		p5-Marpa-XS>=0.020:${PORTSDIR}/lang/p5-Marpa-XS
+		p5-Marpa-PP>=0.012:${PORTSDIR}/lang/p5-Marpa-PP \
+		p5-Marpa-XS>=0.026:${PORTSDIR}/lang/p5-Marpa-XS
 
 PERL_CONFIGURE=	5.10.0+
 
