@@ -7,6 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	3b3 # Keep this in sync with devel/slib
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-gauche
@@ -17,7 +18,8 @@ COMMENT=	SLIB installation for Gauche
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 		gosh:${PORTSDIR}/lang/gauche
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
+		gosh:${PORTSDIR}/lang/gauche
 
 NO_BUILD=	yes
 PLIST_SUB=	VERSION="`gauche-config -V`"
