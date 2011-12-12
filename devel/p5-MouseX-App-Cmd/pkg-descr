@@ -1,0 +1,11 @@
+MouseX::App::Cmd marries App::Cmd with MouseX::Getopt. It is a direct port of
+MooseX::App::Cmd to Mouse.
+
+Use it like App::Cmd advises (especially see App::Cmd::Tutorial), swapping
+App::Cmd::Command for MouseX::App::Cmd::Command.
+
+Then you can write your Mouse commands as Mouse classes, with MouseX::Getopt
+defining the options for you instead of opt_spec returning a
+Getopt::Long::Descriptive spec.
+
+WWW: http://search.cpan.org/dist/MouseX-App-Cmd/
