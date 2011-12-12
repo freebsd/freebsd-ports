@@ -3236,7 +3236,6 @@
     SUBDIR += py-venusian
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenvwrapper
-    SUBDIR += py-waf
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
