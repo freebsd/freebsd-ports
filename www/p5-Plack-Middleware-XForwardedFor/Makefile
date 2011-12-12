@@ -14,9 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Plack middleware to handle X-Forwarded-For headers
 
-RUN_DEPENDS=	p5-Net-Netmask>=1.9015:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+BUILD_DEPENDS=	p5-Net-Netmask>=1.9015:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		p5-Plack>=0.9913:${PORTSDIR}/www/p5-Plack \
 		p5-Regexp-Common>=2010010201:${PORTSDIR}/textproc/p5-Regexp-Common
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -24,11 +25,8 @@ MAN3=		Plack::Middleware::XForwardedFor.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 508009
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.31:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.if ${PERL_LEVEL} < 501100
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-parent>=0.223:${PORTSDIR}/devel/p5-parent
 RUN_DEPENDS+=	p5-parent>=0.223:${PORTSDIR}/devel/p5-parent
 .endif
 
