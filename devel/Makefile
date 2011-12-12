@@ -2086,6 +2086,7 @@
     SUBDIR += p5-MooseX-Traits-Pluggable
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Common
+    SUBDIR += p5-MooseX-Types-DateTime
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
     SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-JSON
