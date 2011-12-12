@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.BTreeFolder2
-PORTVERSION=	2.13.3
+PORTVERSION=	2.13.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=0:${PORTSDIR}/security/py-Acc
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+USE_ZIP=	yes
 
 .include <bsd.port.mk>
