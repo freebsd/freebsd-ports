@@ -19,6 +19,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.8
-IGNORE=	Only works with 1.9
+IGNORE=	only works with Ruby 1.9
 .endif
 .include <bsd.port.post.mk>
