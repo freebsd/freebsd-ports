@@ -42,7 +42,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.3.1.jar
+%%T%%/lib/ecj-3.7.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
