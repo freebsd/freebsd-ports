@@ -1,6 +1,12 @@
 lib/libbac.la
 lib/libbac.so
 lib/libbac.so.%%MAJOR%%
+lib/libbaccats-%%DBTYPE%%.la
+lib/libbaccats-%%DBTYPE%%.so
+lib/libbaccats-%%DBTYPE%%.so.%%MAJOR%%
+lib/libbaccats.la
+lib/libbaccats.so
+lib/libbaccats.so.%%MAJOR%%
 lib/libbaccfg.la
 lib/libbaccfg.so
 lib/libbaccfg.so.%%MAJOR%%
@@ -55,8 +61,6 @@ sbin/dbcheck
 %%DATADIR%%/mtx-changer
 %%DATADIR%%/mtx-changer.conf
 %%DATADIR%%/query.sql
-%%DATADIR%%/startmysql
-%%DATADIR%%/stopmysql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
 

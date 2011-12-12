@@ -1,0 +1,18 @@
+--- ./manpages/Makefile.in.orig	2011-11-26 18:08:12.000000000 +0400
++++ ./manpages/Makefile.in	2011-12-03 13:08:11.000000000 +0400
+@@ -31,9 +31,12 @@
+ 
+ install: install-manpages
+ 	if [ x@COMPRESS_MANPAGES@ = "xyes" ]; then \
+-	 for I in $(DESTDIR)/$(mandir)/man8/* $(DESTDIR)/$(mandir)/man1/*; do \
+-	  gzip -f $$I; \
+-	 done; \
++	    for I in ${MAN8}; do \
++		gzip -f $(DESTDIR)/$(mandir)/man8/$$I; \
++	    done; \
++	    for I in ${MAN1}; do \
++		gzip -f $(DESTDIR)/$(mandir)/man1/$$I; \
++	    done; \
+ 	fi
+ 
+ uninstall:

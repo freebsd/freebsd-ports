@@ -18,7 +18,6 @@ WITH_BAT=	yes
 
 MAN1=		bat.1
 
-MAKE_ARGS=	-E MAN1
 MAKE_ENV+=	MAKEOBJDIRPREFIX=/
 
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
