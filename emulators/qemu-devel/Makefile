@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/qemu/:release \
 		LOCAL/nox:release \
@@ -45,7 +46,7 @@ OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		CURL "libcurl dependency (remote images)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		PCAP "pcap dependency (networking with bpf)" On \
-		SEABIOS_GIT "add seabios snapshot (-bios seabios-devel.bin)" On \
+		SEABIOS_GIT "add seabios snapshot (-bios bios.bin-1.6.3.1)" On \
 		USBREDIR "usb device network redirection (experimental!)" Off \
 		GNS3 "gns3 patches (udp, promiscuous multicast)" Off \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
@@ -155,7 +156,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba35
 .endif
 
 .if defined(WITH_SEABIOS_GIT)
-RUN_DEPENDS+=	${LOCALBASE}/share/qemu/seabios-devel.bin:${PORTSDIR}/emulators/seabios-devel
+RUN_DEPENDS+=	seabios-devel>=1.6.3.1:${PORTSDIR}/emulators/seabios-devel
 .endif
 
 .if defined(NOPORTDOCS)
