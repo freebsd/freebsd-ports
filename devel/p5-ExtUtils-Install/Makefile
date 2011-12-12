@@ -7,15 +7,13 @@
 
 PORTNAME=	ExtUtils-Install
 PORTVERSION=	1.54
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to install files from here to there
-
-CONFLICTS=	p5-ExtUtils-MakeMaker-[0-9]*
 
 PERL_CONFIGURE=	yes
 
