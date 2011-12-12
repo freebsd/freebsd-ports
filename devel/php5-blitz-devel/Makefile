@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	blitz-devel
-PORTVERSION=	0.7.1.11
+PORTVERSION=	0.7.1.12
 CATEGORIES=	devel
 MASTER_SITES=	http://alexeyrybak.com/blitz/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	blitz-${PORTVERSION}-devel
+DISTNAME=	blitz-${PORTVERSION}-dev
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP templating engine
