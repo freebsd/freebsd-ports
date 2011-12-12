@@ -10,6 +10,7 @@ bin/got
 %%SITE_PERL%%/App/GitGot/Command/push.pm
 %%SITE_PERL%%/App/GitGot/Command/remove.pm
 %%SITE_PERL%%/App/GitGot/Command/status.pm
+%%SITE_PERL%%/App/GitGot/Command/this.pm
 %%SITE_PERL%%/App/GitGot/Command/update.pm
 %%SITE_PERL%%/App/GitGot/Command/update_status.pm
 %%SITE_PERL%%/App/GitGot/Command/version.pm
