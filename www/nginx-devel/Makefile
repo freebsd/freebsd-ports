@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.11
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -340,6 +340,7 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
 MASTER_SITE_SUBDIR+=	osa/:subs_filter
 DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}.tar.gz:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:core:ngx_regex.c
 .endif
 
 .if defined(WITH_HTTP_SECURE_LINK_MODULE)
