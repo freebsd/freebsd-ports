@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	4.30
+PORTVERSION=	4.31
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
