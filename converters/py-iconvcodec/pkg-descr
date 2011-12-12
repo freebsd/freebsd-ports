@@ -1,9 +1,0 @@
-The iconvcodec is an universal unicode codec module for Python
-using POSIX iconv(3). And, supports the following features:
-
- * PEP293 Error Callbacks (for Python 2.3 only)
- * Reentrant-safe encoder and decoder
- * Adaptive multiple unicode encodings: UCS, swapped UCS, UTF-8
- * Stateful/context-aware StreamReader and StreamWriter
-
-WWW: http://cjkpython.berlios.de/#iconvcodec
