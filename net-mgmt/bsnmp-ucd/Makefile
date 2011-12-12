@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsnmp-ucd
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	A bsnmpd module that implements parts of UCD-SNMP-MIB
 
 USE_MAKE=	yes
