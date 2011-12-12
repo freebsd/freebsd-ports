@@ -1,5 +1,0 @@
-bin/mozc_tool
-share/mozc-tool/icons/product_logo.png
-share/mozc-tool/icons/update_uptodate.png
-@dirrm share/mozc-tool/icons
-@dirrm share/mozc-tool

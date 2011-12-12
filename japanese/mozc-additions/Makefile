@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc-additions
 PORTVERSION=	1.3.911.102
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 
@@ -16,13 +16,11 @@ COMMENT=	Additional tools and images for Mozc Japanese Input Method
 
 NO_BUILD=	yes
 LOCALBASE_REPLACE_FILES= \
-		${WRKSRC}/Makefile
+		Makefile
 
 post-patch:
-	@for FILE in ${LOCALBASE_REPLACE_FILES}; \
-	do \
-	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
-	    $${FILE}; \
-	done;
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
+		${LOCALBASE_REPLACE_FILES}
 
 .include <bsd.port.mk>
