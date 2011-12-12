@@ -6,71 +6,94 @@
 #
 
 PORTNAME=	org-mode.el
-PORTVERSION=	4.64
-PORTREVISION=	4
+PORTVERSION=	7.4
 CATEGORIES=	deskutils elisp
-MASTER_SITES=	http://staff.science.uva.nl/~dominik/Tools/org/ \
-		http://web.student.chalmers.se/~kaiw/FreeBSD/disfiles/
+MASTER_SITES=	http://orgmode.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	org-${PORTVERSION}
 
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	An Emacs mode for notes and project planning
 
+DOCSDIR=	${PREFIX}/share/doc/org-mode
 USE_EMACS=	yes
-USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs21
 
-INFO=		org
+INFO=		org${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if (${EMACS_PORT_NAME} == "xemacs21") || \
-    (${EMACS_PORT_NAME} == "xemacs21-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-mule-xft")
-PLIST_SUB+=	XEMACS=""
-.else
-PLIST_SUB+=	XEMACS="@comment "
-.endif
+CONTRIBS=	\
+	babel/langs/ob-oz.el \
+	babel/library-of-babel.org \
+	lisp/htmlize.el \
+	lisp/org-annotate-file.el \
+	lisp/org-bookmark.el \
+	lisp/org-checklist.el \
+	lisp/org-choose.el \
+	lisp/org-collector.el \
+	lisp/org-contribdir.el \
+	lisp/org-depend.el \
+	lisp/org-drill.el \
+	lisp/org-elisp-symbol.el \
+	lisp/org-eval-light.el \
+	lisp/org-eval.el \
+	lisp/org-exp-bibtex.el \
+	lisp/org-expiry.el \
+	lisp/org-export-generic.el \
+	lisp/org-git-link.el \
+	lisp/org-interactive-query.el \
+	lisp/org-invoice.el \
+	lisp/org-jira.el \
+	lisp/org-learn.el \
+	lisp/org-mac-iCal.el \
+	lisp/org-mac-link-grabber.el \
+	lisp/org-mairix.el \
+	lisp/org-man.el \
+	lisp/org-mime.el \
+	lisp/org-mtags.el \
+	lisp/org-panel.el \
+	lisp/org-registry.el \
+	lisp/org-screen.el \
+	lisp/org-secretary.el \
+	lisp/org-special-blocks.el \
+	lisp/org-static-mathjax.el \
+	lisp/org-toc.el \
+	lisp/org-track.el \
+	lisp/org-velocity.el \
+	lisp/org-wikinodes.el \
+	lisp/org2rem.el \
+	lisp/orgtbl-sqlinsert.el \
+	lisp/test-org-export-preproc.el \
+	README \
+	scripts/dir2org.zsh \
+	scripts/ditaa.jar \
+	scripts/org2hpda \
+	scripts/StartOzServer.oz \
+	scripts/staticmathjax/application.ini \
+	scripts/staticmathjax/chrome/chrome.manifest \
+	scripts/staticmathjax/chrome/content/main.js \
+	scripts/staticmathjax/chrome/content/main.xul \
+	scripts/staticmathjax/defaults/preferences/prefs.js \
+	scripts/staticmathjax/README.org \
+	scripts/staticmathjax/README.txt \
 
 post-patch:
-.if (${EMACS_PORT_NAME} == "xemacs21") || \
-    (${EMACS_PORT_NAME} == "xemacs21-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-mule-xft")
-	${REINPLACE_CMD} -Ee \
-		's%^(EMACS=)emacs%\1xemacs%; \
-		 s%^(lispdir =.*)/share/emacs%\1/lib/xemacs%' \
-		 ${WRKSRC}/Makefile
-.endif
-
-pre-build:
-.if (${EMACS_PORT_NAME} == "xemacs21") || \
-    (${EMACS_PORT_NAME} == "xemacs21-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel") || \
-    (${EMACS_PORT_NAME} == "xemacs-devel-mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-mule-xft")
-	cd ${WRKSRC} && ${GMAKE} PREFIX=${PREFIX} install-noutline
-.endif
-
-post-build:
-	${MV} ${WRKSRC}/org ${WRKSRC}/org.info
+	@${REINPLACE_CMD} -i .pv 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/Makefile
+	${SED} 's|\(Org Mode\):|\1 (${PORTVERSION}):|; \
+	    s|\(File: \)org,|\1${INFO},|; \
+	    s|(org)|(${INFO})|' ${WRKSRC}/doc/org > ${WRKSRC}/doc/${INFO}.info
 
 post-install:
+	${INSTALL} -d ${DOCSDIR} \
+	    ${DOCSDIR}/contrib/babel/langs \
+	    ${DOCSDIR}/contrib/lisp \
+	    ${DOCSDIR}/contrib/scripts/staticmathjax/chrome/content \
+	    ${DOCSDIR}/contrib/scripts/staticmathjax/defaults/preferences
+.for i in ${CONTRIBS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/$$(dirname ${i})
+.endfor
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${GMAKE} org.html
-	${MKDIR} ${DOCSDIR}
-.for i in org.html org.pdf orgcard.pdf
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for i in org.pdf orgcard.pdf orgguide.pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
-	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
