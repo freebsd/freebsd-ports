@@ -1,16 +1,13 @@
 %%SITE_PERL%%/ExtUtils/Command/MM.pm
-%%SITE_PERL%%/ExtUtils/Install.pm
-%%SITE_PERL%%/ExtUtils/Installed.pm
 %%SITE_PERL%%/ExtUtils/Liblist.pm
 %%SITE_PERL%%/ExtUtils/Liblist/Kid.pm
-%%SITE_PERL%%/ExtUtils/MANIFEST.SKIP
 %%SITE_PERL%%/ExtUtils/MM.pm
 %%SITE_PERL%%/ExtUtils/MM_AIX.pm
 %%SITE_PERL%%/ExtUtils/MM_Any.pm
 %%SITE_PERL%%/ExtUtils/MM_BeOS.pm
 %%SITE_PERL%%/ExtUtils/MM_Cygwin.pm
-%%SITE_PERL%%/ExtUtils/MM_Darwin.pm
 %%SITE_PERL%%/ExtUtils/MM_DOS.pm
+%%SITE_PERL%%/ExtUtils/MM_Darwin.pm
 %%SITE_PERL%%/ExtUtils/MM_MacOS.pm
 %%SITE_PERL%%/ExtUtils/MM_NW5.pm
 %%SITE_PERL%%/ExtUtils/MM_OS2.pm
@@ -26,16 +23,13 @@
 %%SITE_PERL%%/ExtUtils/MakeMaker/Config.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/FAQ.pod
 %%SITE_PERL%%/ExtUtils/MakeMaker/Tutorial.pod
-%%SITE_PERL%%/ExtUtils/Manifest.pm
 %%SITE_PERL%%/ExtUtils/Mkbootstrap.pm
 %%SITE_PERL%%/ExtUtils/Mksymlists.pm
-%%SITE_PERL%%/ExtUtils/Packlist.pm
-%%SITE_PERL%%/ExtUtils/Command.pm
 %%SITE_PERL%%/ExtUtils/testlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto//ExtUtils/MakeMaker/.packlist
-@dirrm %%SITE_PERL%%/ExtUtils/MakeMaker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/ExtUtils/Command
-@dirrmtry %%SITE_PERL%%/ExtUtils/Liblist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
+@dirrmtry %%SITE_PERL%%/ExtUtils/MakeMaker
+@dirrmtry %%SITE_PERL%%/ExtUtils/Liblist
+@dirrmtry %%SITE_PERL%%/ExtUtils/Command
 @dirrmtry %%SITE_PERL%%/ExtUtils
