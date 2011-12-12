@@ -45,7 +45,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-MANUAL_PACKAGE_BUILD=	runaway perl on pointyhat
+MANUAL_PACKAGE_BUILD=	runaway python on pointyhat
 
 LICENSE=	GPLv2
 
