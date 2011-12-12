@@ -1,6 +1,15 @@
 --- Makefile.orig	2009-04-22 20:54:48.000000000 +0200
-+++ Makefile	2009-12-08 11:38:10.000000000 +0100
-@@ -521,15 +521,22 @@
++++ Makefile	2011-11-04 20:42:56.000000000 +0100
+@@ -187,6 +187,8 @@
+   # FIXME: introduce CLIENT_CFLAGS
+   SDL_CFLAGS=$(shell pkg-config --cflags sdl|sed 's/-Dmain=SDL_main//')
+   SDL_LIBS=$(shell pkg-config --libs sdl)
++  VORBIS_CFLAGS=$(shell pkg-config --silence-errors --cflags vorbis vorbisfile)
++  VORBIS_LIBS=$(shell pkg-config --silence-errors --libs vorbis vorbisfile)
+ endif
+ 
+ # version info
+@@ -521,44 +523,25 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -13,29 +22,18 @@
 -
 -  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
 -    -DUSE_ICON $(shell sdl-config --cflags)
-+   ifndef HOMEPATH
-+     HOMEPATH = /.ioquake3
-+   endif
-+ 
-+   ifndef DEFAULT_LIBDIR
-+     DEFAULT_LIBDIR = /usr/local/lib/ioquake3
-+   endif
-+ 
-+   BASE_CFLAGS = $(shell env MACHINE_ARCH=$(ARCH) make -f /dev/null -VCFLAGS) \
-+     -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
-+     -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON \
-+     -DHOMEPATH=\\\"$(HOMEPATH)\\\" \
-+     -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\"
-+   CLIENT_CFLAGS = $(SDL_CFLAGS)
-+   SERVER_CFLAGS = 
-+   HAVE_VM_COMPILED = true
- 
-   ifeq ($(USE_OPENAL),1)
-     BASE_CFLAGS += -DUSE_OPENAL
-@@ -542,24 +549,6 @@
-     BASE_CFLAGS += -DUSE_CODEC_VORBIS
-   endif
- 
+-
+-  ifeq ($(USE_OPENAL),1)
+-    BASE_CFLAGS += -DUSE_OPENAL
+-    ifeq ($(USE_OPENAL_DLOPEN),1)
+-      BASE_CFLAGS += -DUSE_OPENAL_DLOPEN
+-    endif
+-  endif
+-
+-  ifeq ($(USE_CODEC_VORBIS),1)
+-    BASE_CFLAGS += -DUSE_CODEC_VORBIS
+-  endif
+-
 -  ifeq ($(ARCH),axp)
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 -    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
@@ -51,16 +49,71 @@
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 -  endif
 -  endif
--
++   ifndef HOMEPATH
++     HOMEPATH = /.ioquake3
++   endif
++ 
++   ifndef DEFAULT_LIBDIR
++     DEFAULT_LIBDIR = /usr/local/lib/ioquake3
++   endif
++ 
++  # flags
++  BASE_CFLAGS = $(shell env MACHINE_ARCH=$(ARCH) make -f /dev/null -VCFLAGS) \
++    -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
++    -DHOMEPATH=\\\"$(HOMEPATH)\\\" \
++    -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\" \
++    -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
++  CLIENT_CFLAGS += $(SDL_CFLAGS)
++  HAVE_VM_COMPILED = true
+ 
 -  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
--
++  OPTIMIZEVM = -O3 -funroll-loops -fomit-frame-pointer
++  OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+ 
    SHLIBEXT=so
    SHLIBCFLAGS=-fPIC
-   SHLIBLDFLAGS=-shared $(LDFLAGS)
-@@ -582,6 +571,27 @@
-     CLIENT_LIBS += -lvorbisfile -lvorbis -logg
+@@ -568,20 +551,52 @@
+   # don't need -ldl (FreeBSD)
+   LIBS=-lm
+ 
+-  CLIENT_LIBS =
+-
+-  CLIENT_LIBS += $(shell sdl-config --libs) -lGL
++  CLIENT_LIBS = $(SDL_LIBS) -lGL
+ 
++  # optional features/libraries
+   ifeq ($(USE_OPENAL),1)
+-    ifneq ($(USE_OPENAL_DLOPEN),1)
+-      CLIENT_LIBS += $(THREAD_LIBS) -lopenal
++    CLIENT_LIBS += $(THREAD_LIBS) $(OPENAL_LIBS)
++    CLIENT_CFLAGS += -DUSE_OPENAL
++    ifneq ($(USE_LOCAL_HEADERS),1)
++      CLIENT_CFLAGS += $(OPENAL_CFLAGS)
++    endif
++  endif
++
++  ifeq ($(USE_CURL),1)
++    CLIENT_LIBS += $(CURL_LIBS)
++    CLIENT_CFLAGS += -DUSE_CURL
++    ifneq ($(USE_LOCAL_HEADERS),1)
++      CLIENT_CFLAGS += $(CURL_CFLAGS)
+     endif
    endif
  
+   ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_LIBS += -lvorbisfile -lvorbis -logg
++    CLIENT_LIBS += $(VORBIS_LIBS)
++    CLIENT_CFLAGS += -DUSE_CODEC_VORBIS
++    ifneq ($(USE_LOCAL_HEADERS),1)
++      CLIENT_CFLAGS += $(VORBIS_CFLAGS)
++    endif
+   endif
+ 
++  ifeq ($(BUILD_CLIENT),1)
++    BASE_CFLAGS += $(CLIENT_CFLAGS)
++  endif
++
++  # cross-compiling tweaks
 +  ifeq ($(ARCH),i386)
 +    ifeq ($(CROSS_COMPILING),1)
 +      BASE_CFLAGS += -m32
@@ -72,20 +125,13 @@
 +    endif
 +  endif
 +
-+  ifeq ($(BUILD_CLIENT),1)
-+    BASE_CFLAGS += $(CLIENT_CFLAGS)
-+  endif
-+
-+  RELEASE_CFLAGS = $(BASE_CFLAGS) -DNDEBUG -O3 -fomit-frame-pointer \
-+    -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
-+    -funroll-loops -fstrength-reduce
-+
++  RELEASE_CFLAGS = $(BASE_CFLAGS)
 +  DEBUG_CFLAGS = $(BASE_CFLAGS) -g
 +
  else # ifeq freebsd
  
  #############################################################################
-@@ -1442,6 +1452,9 @@
+@@ -1442,6 +1457,9 @@
    ifeq ($(ARCH),x86_64)
      Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
    endif
@@ -95,7 +141,7 @@
    ifeq ($(ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
-@@ -1591,6 +1604,9 @@
+@@ -1591,6 +1609,9 @@
    ifeq ($(ARCH),x86_64)
      Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
    endif

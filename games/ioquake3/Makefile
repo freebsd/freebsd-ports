@@ -7,33 +7,40 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
+# Using zip this way enables slaves to override it.
+EXTRACT_SUFX?=	.zip
 
 MAINTAINER?=	kamikaze@bsdforen.de
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
-USE_ZIP?=	yes
-# Allow slave ports to turn off zip.
-.if ${USE_ZIP} == "no"
-.undef USE_ZIP
-.endif
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+
 USE_GMAKE=	yes
 
 OPTIONS+=	CLIENT "Build client" on \
-		GAMELIBS "Build game libraries" off \
 		DEDICATED "Build dedicated server" on \
 		CURL "Enable cURL for http/ftp download" on \
 		OPENAL "Enable OpenAL audio output" on \
 		MUMBLE "Enable Mumble support (no dependencies)" on \
 		VORBIS "Enable Ogg Vorbis support" on
+.if !defined(NO_GAMELIBS)
+OPTIONS+=	GAMELIBS "Build game libraries" off
+.endif
+.if defined(HAS_DLRENDERER)
+OPTIONS+=	DLRENDERER "Build dynamically loaded renderer" on
+.else
+WITHOUT_DLRENDERER=	yes
+.endif
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
 		DEFAULT_LIBDIR="${LIBDIR}" \
 		HOMEPATH="${HOMEPATH}" \
 		VERSION="${DISTVERSION}" \
-		ARCH="${ARCH}"
+		ARCH="${ARCH}" \
+		USE_LOCAL_HEADERS=0
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
 		ARCH="${ARCH}" \
 		BINSUFFIX="${BINSUFFIX}"
@@ -41,7 +48,7 @@ ALL_TARGET=	release
 MAKE_JOBS_SAFE=	yes
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${ARCH}
+BUILDDIR=	${WRKSRC}/build/${ALL_TARGET}-${OPSYS:L}-${ARCH}
 BINSUFFIX?=
 HOMEPATH?=	/.${PORTNAME}
 Q3CLIENT?=	ioquake3
@@ -53,6 +60,7 @@ Q3TOOLS?=	q3asm \
 Q3BASE?=	baseq3 \
 		missionpack
 Q3ICON?=	${PREFIX}/share/pixmaps/quake3.xpm
+Q3RENDERER?=	renderer_opengl1_${ARCH}
 Q3INSTALL?=
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -63,17 +71,28 @@ MACHINE_ARCH=	${ARCH}
 
 .include <bsd.port.options.mk>
 
+.if defined(NO_GAMELIBS) && defined(WITH_GAMELIBS)
+IGNORE=		does not support WITH_GAMELIBS
+.endif
+.if !defined(HAS_DLRENDERER) && defined(WITH_DLRENDERER)
+IGNORE=		does not support WITH_DLRENDERER
+.endif
+
+.if defined(WITH_DEBUG)
+ALL_TARGET=	debug
+.endif
+
 .if !defined(DESKTOP_ENTRIES)
-.if defined(WITH_CLIENT)
+. if !defined(WITHOUT_CLIENT)
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION}" "${COMMENT}"  \
 		"${Q3ICON}" \
 		"${Q3CLIENT}${BINSUFFIX}" "Application;Game;" false
-.endif
-.if defined(WITH_SMP)
+. endif
+. if defined(WITH_SMP)
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION} SMP" "${COMMENT}" \
 		"${Q3ICON}" \
 		"${Q3CLIENT}-smp${BINSUFFIX}" "Application;Game;" false
-.endif
+. endif
 .endif
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
@@ -81,37 +100,43 @@ DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION} SMP" "${COMMENT}" \
 IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
-.if defined(WITH_CLIENT) || defined(WITH_SMP)
+.if !defined(WITHOUT_CLIENT) || defined(WITH_SMP)
 # cURL
-.if defined(WITH_CURL)
+.if !defined(WITHOUT_CURL)
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
-#MAKE_ARGS+=	USE_CURL_DLOPEN=0
+MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0
 .endif
 # OpenAL
-.if defined(WITH_OPENAL)
+.if !defined(WITHOUT_OPENAL)
 USE_OPENAL=	al
+MAKE_ARGS+=	USE_OPENAL=1 USE_OPENAL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_OPENAL=0
 .endif
 # SDL
 USE_SDL=	sdl
 # Vorbis
-.if defined(WITH_VORBIS)
+.if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
+.else
+MAKE_ARGS+=	USE_CODEC_VORBIS=0
 .endif
 # Mumble
-.if defined(WITH_MUMBLE)
+.if !defined(WITHOUT_MUMBLE)
 MAKE_ARGS+=	USE_MUMBLE=1
 .else
 MAKE_ARGS+=	USE_MUMBLE=0
 .endif
+.else
+# Features that aren't installed without a client
+WITHOUT_DLRENDERER=	yes
 .endif
 
 # SMP is only built with CLIENT.
-.if defined(WITH_CLIENT) || defined(WITH_SMP)
+.if !defined(WITHOUT_CLIENT) || defined(WITH_SMP)
 MAKE_ARGS+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 Q3BIN+=		${Q3CLIENT}
@@ -120,7 +145,7 @@ MAKE_ARGS+=	BUILD_CLIENT=0
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEDICATED)
+.if !defined(WITHOUT_DEDICATED)
 MAKE_ARGS+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
 Q3BIN+=		${Q3SERVER}
@@ -146,6 +171,14 @@ MAKE_ARGS+=	BUILD_CLIENT_SMP=0
 PLIST_SUB+=	SMP="@comment "
 .endif
 
+.if !defined(WITHOUT_DLRENDERER)
+PLIST_SUB+=	DLRENDERER=""
+MAKE_ARGS+=	USE_RENDERER_DLOPEN=1
+.else
+MAKE_ARGS+=	USE_RENDERER_DLOPEN=0
+PLIST_SUB+=	DLRENDERER="@comment "
+.endif
+
 do-install: ${Q3INSTALL}
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
@@ -155,10 +188,16 @@ do-install: ${Q3INSTALL}
 	${INSTALL_PROGRAM} ${BUILDDIR}/tools/${bin} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
+.if !defined(WITHOUT_DLRENDERER)
+.for renderer in ${Q3RENDERER}
+	${MKDIR} ${LIBDIR}
+	${INSTALL_LIB} ${BUILDDIR}/${renderer}.so ${LIBDIR}
+.endfor
+.endif
 .if defined(WITH_GAMELIBS)
 .for dir in ${Q3BASE}
 	${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_PROGRAM} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
+	${INSTALL_LIB} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
