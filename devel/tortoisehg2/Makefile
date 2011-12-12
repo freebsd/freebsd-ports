@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -27,9 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.3:${PORTSDIR}/devel/py-qt4-cor
 		pygmentize:${PORTSDIR}/textproc/py-pygments
 
 OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
-
-CONFLICTS=	tortoisehg-1*
-LATEST_LINK=	${PORTNAME}2
 
 INSTALLS_ICONS=	yes
 
