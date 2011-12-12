@@ -1,4 +1,5 @@
 bin/devede
+bin/devede-debug
 lib/devede/devede_bincue.py
 lib/devede/devede_convert.py
 lib/devede/devede_delete.py
@@ -7,6 +8,7 @@ lib/devede/devede_disctype.py
 lib/devede/devede_dvd.py
 lib/devede/devede_dvdmenu.py
 lib/devede/devede_executor.py
+lib/devede/devede_ffmpeg_convert.py
 lib/devede/devede_fonts.py
 lib/devede/devede_help.py
 lib/devede/devede_loadsave.py
@@ -23,13 +25,16 @@ share/applications/devede.desktop
 %%DATADIR%%/add_subtitle.ui
 %%DATADIR%%/add_subtitle2.ui
 %%DATADIR%%/background.png
+%%DATADIR%%/backgrounds/biglens.png
+%%DATADIR%%/backgrounds/blackbg.png
+%%DATADIR%%/backgrounds/default_bg.png
+%%DATADIR%%/backgrounds/dvdfilm.png
 %%DATADIR%%/barras.png
 %%DATADIR%%/base_ntsc.mpg
 %%DATADIR%%/base_ntsc_wide.mpg
 %%DATADIR%%/base_pal.mpg
 %%DATADIR%%/base_pal_wide.mpg
 %%DATADIR%%/codepages.lst
-%%DATADIR%%/changes.txt
 %%DATADIR%%/devede.svg
 %%DATADIR%%/devedesans.ttf
 %%DATADIR%%/estira.png
@@ -41,6 +46,7 @@ share/applications/devede.desktop
 %%DATADIR%%/languages.lst
 %%DATADIR%%/settings.ui
 %%DATADIR%%/silence.ogg
+%%DATADIR%%/use_ffmpeg.ui
 %%DATADIR%%/waborted_dialog.ui
 %%DATADIR%%/wcancel_dialog.ui
 %%DATADIR%%/wcancel_job_dialog.ui
@@ -61,6 +67,7 @@ share/applications/devede.desktop
 %%DATADIR%%/wmenu_preview_ntsc.ui
 %%DATADIR%%/wmenu_preview_pal.ui
 %%DATADIR%%/wmenu_properties.ui
+%%DATADIR%%/wno_mp3lame.ui
 %%DATADIR%%/wnofonts.ui
 %%DATADIR%%/wpreview_dialog.ui
 %%DATADIR%%/wpreviewagain_dialog.ui
@@ -69,28 +76,27 @@ share/applications/devede.desktop
 %%DATADIR%%/wsaveconfig.ui
 %%DATADIR%%/wtitle_properties_dialog.ui
 %%DATADIR%%/wwarning_dialog.ui
-%%DATADIR%%/backgrounds/biglens.png
-%%DATADIR%%/backgrounds/default_bg.png
-%%DATADIR%%/backgrounds/dvdfilm.png
-%%NLS%%share/locale/ca/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/da/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/de/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/el/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/es/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/it/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/devede.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/devede.mo
+share/locale/ca/LC_MESSAGES/devede.mo
+share/locale/cs/LC_MESSAGES/devede.mo
+share/locale/da/LC_MESSAGES/devede.mo
+share/locale/de/LC_MESSAGES/devede.mo
+share/locale/el/LC_MESSAGES/devede.mo
+share/locale/es/LC_MESSAGES/devede.mo
+share/locale/fr/LC_MESSAGES/devede.mo
+share/locale/gl/LC_MESSAGES/devede.mo
+share/locale/it/LC_MESSAGES/devede.mo
+share/locale/nb/LC_MESSAGES/devede.mo
+share/locale/nl/LC_MESSAGES/devede.mo
+share/locale/pl/LC_MESSAGES/devede.mo
+share/locale/pt_BR/LC_MESSAGES/devede.mo
+share/locale/pt_PT/LC_MESSAGES/devede.mo
+share/locale/ru/LC_MESSAGES/devede.mo
+share/locale/sk/LC_MESSAGES/devede.mo
+share/locale/sv/LC_MESSAGES/devede.mo
+share/locale/zh_CN/LC_MESSAGES/devede.mo
+share/locale/zh_TW/LC_MESSAGES/devede.mo
+share/pixmaps/devede.svg
+@dirrm %%DATADIR%%/interface
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
