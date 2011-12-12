@@ -1,0 +1,9 @@
+%%SITE_PERL%%/MouseX/App/Cmd.pm
+%%SITE_PERL%%/MouseX/App/Cmd/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App/Cmd/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App/Cmd
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
+@dirrm %%SITE_PERL%%/MouseX/App/Cmd
+@dirrmtry %%SITE_PERL%%/MouseX/App
+@dirrmtry %%SITE_PERL%%/MouseX
