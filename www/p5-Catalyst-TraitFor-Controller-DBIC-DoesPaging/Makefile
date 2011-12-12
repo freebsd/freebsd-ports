@@ -17,9 +17,7 @@ COMMENT=	Helps you paginate, search, sort, and more easily using DBIx::Class
 RUN_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.29:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Runtime>=5.80000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-DBIx-Class>=0.08108:${PORTSDIR}/databases/p5-DBIx-Class
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.11:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 
-USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::TraitFor::Controller::DBIC::DoesPaging.3
