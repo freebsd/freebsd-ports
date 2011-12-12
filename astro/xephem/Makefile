@@ -33,14 +33,17 @@ XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
 .include <bsd.port.pre.mk>
 
 .for file in ${XEPHEMSRC}
-.if !exists(${DISTDIR}/${file}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	${PRINTF}
-IGNORE=:\n\
-Because of licensing restrictions, you must manually fetch\n\
-${file} from http://www.clearskyinstitute.com/xephem/,\n\
-place it in ${DISTDIR} and then run make again.\n
+.if !exists(${DISTDIR}/${file}) && !defined(PACKAGE_BUILDING)#{
+DISTFILE_INSTRUCTIONS=\n\
+Because of licensing restrictions, you must manually fetch \n\ ${file} from http://www.clearskyinstitute.com/xephem/, \n\ place it in ${DISTDIR} and then run make again.\n\n
 .endif
 .endfor
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
