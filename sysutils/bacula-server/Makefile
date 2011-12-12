@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	5.0.3
+DISTVERSION=	5.2.2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
@@ -19,6 +19,7 @@ UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
 PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -135,9 +136,9 @@ PLIST_SUB+=	NOSF="@comment "
 PLIST_SUB+=	SFDAEMON="@comment "
 PLIST_SUB+=	NOSF=""
 .endif
-#Build bwx-console is deprecated use bacula-bat instead 
+#Build bwx-console is deprecated use bacula-bat instead
 .if defined(WITH_WXCONSOLE)
-IGNORE=			Please use sysutils/bacula-bat instead of wxconsole 
+IGNORE=			Please use sysutils/bacula-bat instead of wxconsole
 USE_WX=			2.4
 CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
@@ -181,14 +182,14 @@ CONFIGURE_ARGS+=	--with-openssl="no"
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-MAN8=bacula-fd.8 bconsole.8
+MAN8=			bacula-fd.8 bconsole.8
+EXTRA_PATCHES+=		${FILESDIR}/extra__manpages__Makefile.in
 .else
-MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
-MAN1=bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
+MAN1=			bat.1 bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
+MAN8=			bacula.8 bacula-dir.8 bacula-fd.8 bacula-sd.8 bconsole.8 \
+			bcopy.8 bextract.8 bls.8 bregex.8 bscan.8 btape.8 \
+			btraceback.8 bwild.8 dbcheck.8
 .endif
-
-MAKE_ARGS+=	-E MAN8 -E MAN1
-MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
@@ -304,6 +305,8 @@ post-install:
 			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi; \
 	done
+
+	${CHGRP} wheel ${PREFIX}/etc
 
 	@${CAT} ${PKGMESSAGE}
 .endif

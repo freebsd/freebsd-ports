@@ -1,11 +1,11 @@
---- src/findlib/Makefile.in.orig	2010-05-19 17:13:20.000000000 +0300
-+++ src/findlib/Makefile.in	2010-05-19 17:15:21.000000000 +0300
-@@ -59,7 +59,7 @@
+--- ./src/findlib/Makefile.in.orig	2011-11-26 18:08:12.000000000 +0400
++++ ./src/findlib/Makefile.in	2011-12-03 13:08:11.000000000 +0400
+@@ -57,7 +57,7 @@
  
  libbacfind.la: Makefile $(LIBBACFIND_LOBJS) 
  	@echo "Making $@ ..."
 -	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACFIND_LT_RELEASE)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACFIND_LT_RELEASE:S/./:/g)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \
