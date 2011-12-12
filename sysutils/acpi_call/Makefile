@@ -20,7 +20,7 @@ KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR} \
 		PORTNAME=${PORTNAME}
 
-.if !exists(/sys/sys/module.h)
+.if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
 .endif
 
