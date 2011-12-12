@@ -7,7 +7,7 @@
 
 PORTNAME=	Math-RPN
 PORTVERSION=	1.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Reverse polish math expression evaluation
 
-RUN_DEPENDS=	${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-ExtUtils-MakeMaker>=6.52:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::RPN.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.50:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>
