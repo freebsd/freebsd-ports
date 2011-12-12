@@ -1091,6 +1091,7 @@
     SUBDIR += newt
     SUBDIR += nini
     SUBDIR += ninja
+    SUBDIR += ninja-ide
     SUBDIR += notify-sharp
     SUBDIR += noweb
     SUBDIR += nspr
