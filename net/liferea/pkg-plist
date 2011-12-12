@@ -1,15 +1,17 @@
 bin/liferea
 bin/liferea-add-feed
 share/applications/liferea.desktop
-share/liferea/auth.glade
-share/liferea/google_source.glade
-share/liferea/liferea.glade
-share/liferea/new_subscription.glade
-share/liferea/node_source.glade
-share/liferea/opml_source.glade
-share/liferea/simple_subscription.glade
+share/liferea/auth.ui
+share/liferea/google_source.ui
+share/liferea/liferea.ui
+share/liferea/new_subscription.ui
+share/liferea/node_source.ui
+share/liferea/opml_source.ui
+share/liferea/simple_subscription.ui
+share/liferea/ttrss_source.ui
 share/liferea/css/adblock.css
 share/liferea/css/liferea.css
+share/liferea/css/user.css
 share/liferea/doc/html/about_de.html
 share/liferea/doc/html/about_en.html
 share/liferea/doc/html/concepts_de.html
@@ -61,15 +63,16 @@ share/liferea/doc/html/topics_en.html
 share/liferea/doc/html/updating_de.html
 share/liferea/doc/html/updating_en.html
 share/liferea/dtd/html.ent
-share/liferea/opml/feedlist.opml
 share/liferea/opml/feedlist_bg.opml
 share/liferea/opml/feedlist_ca.opml
 share/liferea/opml/feedlist_de.opml
+share/liferea/opml/feedlist_en.opml
 share/liferea/opml/feedlist_es.opml
 share/liferea/opml/feedlist_eu.opml
 share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_gl.opml
 share/liferea/opml/feedlist_he.opml
+share/liferea/opml/feedlist_hu.opml
 share/liferea/opml/feedlist_it.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
@@ -78,7 +81,6 @@ share/liferea/opml/feedlist_pt_BR.opml
 share/liferea/opml/feedlist_ru.opml
 share/liferea/opml/feedlist_sk.opml
 share/liferea/opml/feedlist_sv.opml
-share/liferea/pixmaps/arrow.png
 share/liferea/pixmaps/attachment.png
 share/liferea/pixmaps/available.png
 share/liferea/pixmaps/available_offline.png
@@ -86,33 +88,21 @@ share/liferea/pixmaps/bookmark.png
 share/liferea/pixmaps/comments.png
 share/liferea/pixmaps/default.png
 share/liferea/pixmaps/directory.png
-share/liferea/pixmaps/edit.png
 share/liferea/pixmaps/empty.png
 share/liferea/pixmaps/empty_offline.png
-share/liferea/pixmaps/fl_google.png
 share/liferea/pixmaps/fl_opml.png
 share/liferea/pixmaps/flag.png
-share/liferea/pixmaps/folder_empty.png
 share/liferea/pixmaps/grayflag.png
 share/liferea/pixmaps/newsbin.png
-share/liferea/pixmaps/read.xpm
-share/liferea/pixmaps/tag.png
-share/liferea/pixmaps/technorati.png
 share/liferea/pixmaps/unread.png
 share/liferea/pixmaps/vfolder.png
 share/liferea/xslt/feed.xml
-share/liferea/xslt/feed.xml.in
 share/liferea/xslt/folder.xml
-share/liferea/xslt/folder.xml.in
 share/liferea/xslt/item.xml
-share/liferea/xslt/item.xml.in
 share/liferea/xslt/i18n-filter.xslt
 share/liferea/xslt/newsbin.xml
-share/liferea/xslt/newsbin.xml.in
 share/liferea/xslt/source.xml
-share/liferea/xslt/source.xml.in
 share/liferea/xslt/vfolder.xml
-share/liferea/xslt/vfolder.xml.in
 share/icons/hicolor/16x16/apps/liferea.png
 share/icons/hicolor/22x22/apps/liferea.png
 share/icons/hicolor/24x24/apps/liferea.png
@@ -164,5 +154,4 @@ share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/liferea
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
-@dirrm lib/liferea
 @dirrmtry share/applications

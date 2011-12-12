@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.6.7
+PORTVERSION=	1.8.0
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
@@ -14,9 +14,11 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
+		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 
-USE_GNOME=	gnomeprefix gnomehack libglade2 gconf2
+USE_GNOME=	gnomeprefix gnomehack gconf2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
