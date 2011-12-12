@@ -30,6 +30,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 IGNORE=		is a part of base for 7.0 and above
 .endif
 
+DEPRECATED=		is a part of the base system in all supported FreeBSD versions
+EXPIRATION_DATE=	2012-04-11
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ftp-proxy ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ftp-proxy.8.gz ${PREFIX}/man/man8
