@@ -1,0 +1,11 @@
+--- portcheckout.pl	2011/12/12 09:40:17	1.1
++++ portcheckout.pl	2011/12/12 09:40:29
+@@ -182,7 +182,7 @@
+ # print manual page to stdout
+ sub help {
+     $ENV{'PAGER'} = 'cat';
+-    exec pod2text, $0;
++    exec "pod2text", $0;
+     exit 2;
+ }
+ 
