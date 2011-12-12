@@ -129,7 +129,6 @@
     SUBDIR += psiconv
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
-    SUBDIR += py-iconvcodec
     SUBDIR += py-pisa
     SUBDIR += py-svglib
     SUBDIR += py-unidecode
