@@ -8,18 +8,19 @@
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
 DISTVERSION=	1.36_SVN${SVNREVISION}+${GAMEVERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/oa/dev081/
-DISTNAME=	${PORTNAME}-engine-source-0.8.x-21
+DISTNAME=	${PORTNAME}-engine-source-0.8.x-22
+# Master port defines EXTRACT_SUFX unless already defined
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
 RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:${PORTSDIR}/games/openarena-data
 
-USE_BZIP2=	yes
-USE_ZIP=	no
+NO_GAMELIBS=	yes
 # OpenArena doc is too messy to bother
 NOPORTDOCS=	yes
 
@@ -33,5 +34,8 @@ Q3BASE=		baseoa
 Q3DIR=		${DATADIR}
 # No icon included with OpenArena
 Q3ICON=
+
+# Dynamically loaded renderer not yet supported
+WITHOUT_DLRENDERER=	yes
 
 .include "../ioquake3/Makefile"

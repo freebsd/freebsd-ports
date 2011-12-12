@@ -1,5 +1,5 @@
---- README.orig	2009-08-30 23:34:03.000000000 +0200
-+++ README	2009-08-31 00:05:03.000000000 +0200
+--- README.orig	2009-04-08 05:36:16.000000000 +0200
++++ README	2011-10-27 13:13:59.000000000 +0200
 @@ -79,6 +79,8 @@
    CFLAGS            - use this for custom CFLAGS
    V                 - set to show cc command line when building

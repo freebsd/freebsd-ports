@@ -1,19 +1,61 @@
---- Makefile.orig	2010-07-02 21:50:49.000000000 +0200
-+++ Makefile	2010-11-27 14:39:09.000000000 +0100
-@@ -561,9 +561,16 @@
+--- Makefile.orig	2011-11-04 21:03:54.000000000 +0100
++++ Makefile	2011-11-04 21:09:54.000000000 +0100
+@@ -205,6 +205,8 @@
+     OPENAL_LIBS=$(shell pkg-config --silence-errors --libs openal)
+     SDL_CFLAGS=$(shell pkg-config --silence-errors --cflags sdl|sed 's/-Dmain=SDL_main//')
+     SDL_LIBS=$(shell pkg-config --silence-errors --libs sdl)
++    VORBIS_CFLAGS=$(shell pkg-config --silence-errors --cflags vorbis vorbisfile)
++    VORBIS_LIBS=$(shell pkg-config --silence-errors --libs vorbis vorbisfile)
+   endif
+   # Use sdl-config if all else fails
+   ifeq ($(SDL_CFLAGS),)
+@@ -569,9 +571,15 @@
  
  ifeq ($(PLATFORM),freebsd)
  
 +  # system integration
 +  ifndef DEFAULT_LIBDIR
-+    DEFAULT_LIBDIR = /usr/local/lib/ioquake3
++    DEFAULT_LIBDIR = /usr/local/lib/openarena
 +  endif
 +
    # flags
    BASE_CFLAGS = $(shell env MACHINE_ARCH=$(ARCH) make -f /dev/null -VCFLAGS) \
      -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
-+    -DHOMEPATH=\\\"$(HOMEPATH)\\\" \
 +    -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\" \
      -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
    CLIENT_CFLAGS = $(SDL_CFLAGS)
    SERVER_CFLAGS = 
+@@ -594,27 +602,24 @@
+ 
+   # optional features/libraries
+   ifeq ($(USE_OPENAL),1)
+-    CLIENT_CFLAGS += -DUSE_OPENAL
++    CLIENT_CFLAGS += -DUSE_OPENAL $(OPENAL_CFLAGS)
++    CLIENT_LIBS += $(THREAD_LIBS) $(OPENAL_LIBS)
+     ifeq ($(USE_OPENAL_DLOPEN),1)
+       CLIENT_CFLAGS += -DUSE_OPENAL_DLOPEN
+-      CLIENT_LIBS += $(THREAD_LIBS) -lopenal
+     endif
+   endif
+ 
+   ifeq ($(USE_CURL),1)
+-    CLIENT_CFLAGS += -DUSE_CURL
++    CLIENT_CFLAGS += -DUSE_CURL $(CURL_CFLAGS)
++    CLIENT_LIBS += $(CURL_LIBS)
+     ifeq ($(USE_CURL_DLOPEN),1)
+       CLIENT_CFLAGS += -DUSE_CURL_DLOPEN
+-      CLIENT_LIBS += -lcurl
+     endif
+   endif
+ 
+   ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_CFLAGS += -DUSE_CODEC_VORBIS
+-  endif
+-
+-  ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_LIBS += -lvorbisfile -lvorbis -logg
++    CLIENT_CFLAGS += -DUSE_CODEC_VORBIS $(VORBIS_CFLAGS)
++    CLIENT_LIBS += $(VORBIS_LIBS)
+   endif
+ 
+   # cross-compiling tweaks

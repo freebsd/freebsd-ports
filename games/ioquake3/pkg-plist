@@ -5,6 +5,7 @@ bin/q3asm%%BINSUFFIX%%
 bin/q3cpp%%BINSUFFIX%%
 bin/q3lcc%%BINSUFFIX%%
 bin/q3rcc%%BINSUFFIX%%
+%%DLRENDERER%%%%LIBDIR%%/renderer_opengl1_%%ARCH%%.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/cgame%%ARCH%%.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/qagame%%ARCH%%.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/ui%%ARCH%%.so
@@ -14,5 +15,5 @@ bin/q3rcc%%BINSUFFIX%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
 %%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
-%%GAMELIBS%%@dirrm %%LIBDIR%%
+@dirrmtry %%LIBDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

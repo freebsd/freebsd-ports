@@ -1,8 +1,5 @@
 %%DEDICATED%%bin/ioUrTded
 %%CLIENT%%bin/ioUrbanTerror
 %%SMP%%bin/ioUrbanTerror-smp
-%%GAMELIBS%%%%LIBDIR%%/q3ut4/cgameamd64.so
-%%GAMELIBS%%%%LIBDIR%%/q3ut4/qagameamd64.so
-%%GAMELIBS%%%%LIBDIR%%/q3ut4/uiamd64.so
-%%GAMELIBS%%@dirrm %%LIBDIR%%/q3ut4
-%%GAMELIBS%%@dirrm %%LIBDIR%%
+%%DLRENDERER%%%%LIBDIR%%/renderer_opengl1_%%ARCH%%.so
+%%DLRENDERER%%@dirrm %%LIBDIR%%

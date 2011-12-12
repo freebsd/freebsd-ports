@@ -19,6 +19,7 @@ RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
 
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_GAMELIBS=	yes
 # The docs belong to ioquake3
 NOPORTDOCS=	yes
 GAMEVERSION=	4.1.1
