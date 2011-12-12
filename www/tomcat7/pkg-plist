@@ -9,6 +9,7 @@
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-daemon-native.tar.gz
 %%T%%/bin/configtest.sh
+%%T%%/bin/daemon.sh
 %%T%%/bin/digest.sh
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
