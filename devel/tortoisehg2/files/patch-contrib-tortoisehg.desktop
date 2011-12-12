@@ -4,7 +4,7 @@
  Name=TortoiseHg
  GenericName=Version Control GUI
  Comment=GUI application for using Mercurial
--Icon=tortoisehg_logo
+-Icon=thg_logo
 +Icon=%%PREFIX%%/share/pixmaps/tortoisehg/icons/thg_logo.ico
  Exec=thg --nofork
  Categories=Development;RevisionControl;
