@@ -7,17 +7,16 @@
 
 PORTNAME=	Prophet
 PORTVERSION=	0.750
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPANG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Prophet is a distributed database system
 
 LICENSE=	MIT
-
-PERL_CONFIGURE=	yes
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Config-GitLike>=1.02:${PORTSDIR}/devel/p5-Config-GitLike \
@@ -25,7 +24,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-DBI>=1:${PORTSDIR}/databases/p5-DBI \
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
-		p5-ExtUtils-MakeMaker>=6.11:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 		p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Server-Simple>=0.40:${PORTSDIR}/www/p5-HTTP-Server-Simple \
@@ -52,6 +50,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=	Prophet::Web::Result.3 \
 	Prophet::Replica::prophet.3 \
