@@ -47,6 +47,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bbd5f486-24f1-11e1-95bc-080027ef73ec">
+    <topic>PuTTY 0.59 - 0.61 -- Password vulnerability</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><ge>0.59</ge><lt>0.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote
+	  cite="http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html">
+	  <p>PuTTY 0.62 fixes a security issue present in 0.59, 0.60 and 0.61.
+	    If you log in using SSH-2 keyboard-interactive authentication (which
+	    is the usual method used by modern servers to request a password),
+	    the password you type was accidentally kept in PuTTY's memory for
+	    the rest of its run, where it could be retrieved by other processes
+	    reading PuTTY's memory, or written out to swap files or crash
+	    dumps.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html</mlist>
+    </references>
+    <dates>
+      <discovery>2011-12-10</discovery>
+      <entry>2011-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb389137-21fb-11e1-89b4-001ec9578670">
     <topic>asterisk -- Multiple Vulnerabilities</topic>
     <affects>
