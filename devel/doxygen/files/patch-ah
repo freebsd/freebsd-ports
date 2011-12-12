@@ -1,16 +1,15 @@
---- doc/doxygen_manual.tex.orig	2008-08-25 15:36:58.000000000 -0400
-+++ doc/doxygen_manual.tex	2008-09-29 12:28:18.000000000 -0400
-@@ -12,8 +12,7 @@
+--- doc/doxygen_manual.tex.orig	2011-11-17 15:18:03.000000000 -0500
++++ doc/doxygen_manual.tex	2011-12-11 12:23:06.000000000 -0500
+@@ -12,7 +12,7 @@
  % Documents produced by Doxygen are derivative works derived from the
  % input used in their production; they are not affected by this license.
  
 -\documentclass[a4paper]{report}
--\usepackage{a4wide}
 +\documentclass{report}
  \usepackage{makeidx}
  \usepackage{fancyhdr}
  \usepackage{float}
-@@ -24,8 +23,7 @@
+@@ -24,8 +24,7 @@
  \usepackage{times}
  \usepackage{alltt}
  \usepackage{tocloft}
