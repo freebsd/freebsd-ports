@@ -2103,6 +2103,7 @@
     SUBDIR += zope-zwiki
     SUBDIR += zope210
     SUBDIR += zope211
+    SUBDIR += zope213
     SUBDIR += zope28
     SUBDIR += zope29
     SUBDIR += zope3

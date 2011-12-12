@@ -2,38 +2,27 @@
 
 Zope Successfull installed.
 
-To create an instance of Zope please run 
-%%ZOPEBASEDIR%%/bin/mkzopeinstance.py -d <INSTANCEDIR>
+To create an instance of Zope please run
+%%LOCALBASE%%/bin/mkzopeinstance --dir <INSTANCEDIR>
 
-<INSTANCEDIR> is the directory where the instance files should 
-              be installed. This can be %%ZOPEBASEDIR%%
+<INSTANCEDIR> is the directory where the instance files should
+              be installed. This can be %%ZOPEINSTANCEBASE%%
 
-Command-line options to 'mkzopeinstance' are available, and can be 
-investigated by running 'mkzopeinstance.py --help'.
+Command-line options to 'mkzopeinstance' are available, and can be
+investigated by running 'mkzopeinstance --help'.
 
-The Instancefiles created by mkzopeinstance.py will not be remove 
-when the package is deinstalled. You`ll have to delete them yourself. 
+Zope instances, created by mkzopeinstance, will not be removed
+when the package is deinstalled. You'll have to delete them yourself.
 
-If Zope should get started automatically when the system starts, 
-please add the following lines to /etc/rc.conf
+If Zope should get started automatically when the system starts,
+please add the following line to /etc/rc.conf
 
-zope211_enable="YES"
-zope211_instances="<INSTANCEDIR>" 
+zope213_enable="YES"
 
-Additional zope Instances have to be added to zope211_instances 
-seperated by a space. 
+If you are using not default instance location, please add this
+line to /etc/rc.conf to make it working:
 
-** ZEO Instances ** (Optional) 
-** Please refere to http://zope.org/Products/ZEO/ZEOFactSheet  
+zope213_instances="<INSTANCEDIR>"
 
-If you want to run a ZEO server please create a ZEO instancen by 
-calling %%ZOPEBASEDIR%%/bin/mkzeoinstance.py <ZEODIR>
-
-To start the ZEO Server at System startup add the following lines to 
-/etc/rc.conf
-
-zeo211_enable="YES"
-zeo211_instances="<ZEODIR>"
-
-Additional zeo Instances have to be added to zeo211_instances seperated 
-by a space. 
+Additional Zope instances have to be added to zope213_instances
+separated by a space.

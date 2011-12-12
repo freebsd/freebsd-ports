@@ -1,20 +1,10 @@
---- work/Zope-2.7.0/skel/etc/zope.conf.in	Fri Jan  9 00:34:08 2004
-+++ /data/infosys/zope/etc/zope.conf	Wed Apr 14 09:36:46 2004
-@@ -78,7 +78,8 @@
- #
- # Example:
- #
--#    products /home/chrism/projects/myproducts
-+products %%ZOPEBASEDIR%%/Products
-+products $INSTANCE/Products
- 
- 
- # Directive: environment
-@@ -137,6 +138,7 @@
- # Example:
+--- zope.conf.in	2011-11-30 15:30:18.000000000 +0400
++++ zope.conf	2011-11-30 15:43:40.000000000 +0400
+@@ -161,6 +161,7 @@
  #
  #    effective-user chrism
+ 
 +effective-user %%ZOPE_USER%%
  
- 
  # Directive: enable-product-installation
+ #
