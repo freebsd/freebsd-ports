@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	3.0.0.2
+PORTVERSION=	3.1.0.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -42,7 +42,9 @@ MAN8=		webcamd.8
 LIBDIR=		${PREFIX}/lib
 
 OPTIONS=	HAL "Build with HAL and DBUS support" On \
-		DEBUG "Build with debugging support" Off
+		DEBUG "Build with debugging support" Off \
+		VT_CLIENT "Build with vTuner client support" Off \
+		VT_SERVER "Build with vTuner server support" Off
 
 USERS=		webcamd
 GROUPS=		webcamd
@@ -60,6 +62,14 @@ LIB_DEPENDS+=hal.1:${PORTSDIR}/sysutils/hal
 LIB_DEPENDS+=dbus-1:${PORTSDIR}/devel/dbus
 .else
 LIBHAL=
+.endif
+
+.if defined(WITH_VT_CLIENT)
+MAKE_ARGS+=" HAVE_VTUNER_CLIENT=YES"
+.endif
+
+.if defined(WITH_VT_SERVER)
+MAKE_ARGS+=" HAVE_VTUNER_SERVER=YES"
 .endif
 
 .if defined(WITH_DEBUG)
