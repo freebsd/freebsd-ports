@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont
@@ -27,7 +27,7 @@ SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 PLIST_SUB=	EXTRARC=${EXTRARC}
 DATADIR=	${PREFIX}/share/xpdf
 
-FONTSDIR=	${LOCALBASE}/lib/X11/fonts/TrueType
+FONTSDIR=	${LOCALBASE}/lib/X11/fonts/unfonts-core
 EXTRARC=	${DATADIR}/korean/dot.xpdfrc
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
