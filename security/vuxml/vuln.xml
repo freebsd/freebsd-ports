@@ -47,6 +47,79 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68ac6266-25c3-11e1-b63a-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>16.0.912.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[81753] Medium CVE-2011-3903: Out-of-bounds read in regex
+	      matching.  Credit to David Holloway of the Chromium development
+	      community.<br/>
+	    [95465] Low CVE-2011-3905: Out-of-bounds reads in libxml. Credit to
+	       Google Chrome Security Team (Inferno).<br/>
+	    [98809] Medium CVE-2011-3906: Out-of-bounds read in PDF parser.
+	       Credit to Aki Helin of OUSPG.<br/>
+	    [99016] High CVE-2011-3907: URL bar spoofing with view-source.
+	       Credit to Mitja Kolsek of ACROS Security.<br/>
+	    [100863] Low CVE-2011-3908: Out-of-bounds read in SVG parsing.
+	       Credit to Aki Helin of OUSPG.<br/>
+	    [101010] Medium CVE-2011-3909: [64-bit only] Memory corruption in
+	       CSS property array. Credit to Google Chrome Security Team
+	       (scarybeasts) and Chu.<br/>
+	    [101494] Medium CVE-2011-3910: Out-of-bounds read in YUV video
+	       frame handling. Credit to Google Chrome Security Team (Cris
+	       Neckar).<br/>
+	    [101779] Medium CVE-2011-3911: Out-of-bounds read in PDF. Credit to
+	       Google Chrome Security Team (scarybeasts) and Robert Swiecki of
+	       the Google Security Team.<br/>
+	    [102359] High CVE-2011-3912: Use-after-free in SVG filters. Credit
+	       to Arthur Gerkis.<br/>
+	    [103921] High CVE-2011-3913: Use-after-free in Range handling.
+	       Credit to Arthur Gerkis.<br/>
+	    [104011] High CVE-2011-3914: Out-of-bounds write in v8 i18n
+	       handling. Credit to Slawomir Blazek.<br/>
+	    [104529] High CVE-2011-3915: Buffer overflow in PDF font handling.
+	       Credit to Atte Kettunen of OUSPG.<br/>
+	    [104959] Medium CVE-2011-3916: Out-of-bounds reads in PDF cross
+	       references. Credit to Atte Kettunen of OUSPG.<br/>
+	    [105162] Medium CVE-2011-3917: Stack-buffer-overflow in FileWatcher.
+	       Credit to Google Chrome Security Team (Marty Barbella).<br/>
+	    [107258] High CVE-2011-3904: Use-after-free in bidi handling.
+	       Credit to Google Chrome Security Team (Inferno) and miaubiz.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+      <cvename>CVE-2011-3903</cvename>
+      <cvename>CVE-2011-3904</cvename>
+      <cvename>CVE-2011-3905</cvename>
+      <cvename>CVE-2011-3906</cvename>
+      <cvename>CVE-2011-3907</cvename>
+      <cvename>CVE-2011-3908</cvename>
+      <cvename>CVE-2011-3909</cvename>
+      <cvename>CVE-2011-3910</cvename>
+      <cvename>CVE-2011-3911</cvename>
+      <cvename>CVE-2011-3912</cvename>
+      <cvename>CVE-2011-3913</cvename>
+      <cvename>CVE-2011-3914</cvename>
+      <cvename>CVE-2011-3915</cvename>
+      <cvename>CVE-2011-3916</cvename>
+      <cvename>CVE-2011-3917</cvename>
+    </references>
+    <dates>
+      <discovery>2011-12-13</discovery>
+      <entry>2011-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bbd5f486-24f1-11e1-95bc-080027ef73ec">
     <topic>PuTTY 0.59 - 0.61 -- Password vulnerability</topic>
     <affects>
