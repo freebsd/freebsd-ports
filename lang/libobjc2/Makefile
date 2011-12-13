@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libobjc2
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 
@@ -24,7 +24,7 @@ PLIST_SUB=	SHLIB=${SHLIB_VERSION}
 OPTIONS=	NSOBJECT_ROOT	"Root class is NSObject not Object" On \
 		LIBDISPATCH	"Build with libdispatch from ports" Off
 
-SHLIB_VERSION?=	15
+SHLIB_VERSION?=	16
 
 .include <bsd.port.options.mk>
 
@@ -43,6 +43,9 @@ CPPFLAGS+=	-DGNUSTEP
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
+.if defined(CC) && ${CC} == "clang"
+# all done
+.else
 V:=	42
 _GCC_BUILD_DEPENDS:=	gcc${V}
 _GCC_PORT_DEPENDS:=	gcc${V}
@@ -53,6 +56,7 @@ LDFLAGS+=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 LDFLAGS+=	-L${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+.endif
 .endif
 
 .if (${ARCH} == i386) || (${ARCH} == i486)
