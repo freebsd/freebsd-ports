@@ -17,6 +17,8 @@ COMMENT=	C++ bindings for GEGL
 LIB_DEPENDS=	gegl-0.1.107:${PORTSDIR}/graphics/gegl \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
