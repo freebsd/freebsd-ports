@@ -77,6 +77,8 @@ lib/collectd/processes.so
 lib/collectd/processes.la
 %%RRD%%lib/collectd/rrdtool.la
 %%RRD%%lib/collectd/rrdtool.so
+%%RRDCACHED%%lib/collectd/rrdcached.la
+%%RRDCACHED%%lib/collectd/rrdcached.so
 %%SNMP%%lib/collectd/snmp.la
 %%SNMP%%lib/collectd/snmp.so
 lib/collectd/swap.la
