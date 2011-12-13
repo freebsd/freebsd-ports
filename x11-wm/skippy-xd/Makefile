@@ -7,7 +7,7 @@
 
 PORTNAME=	skippy-xd
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://cdn.thegraveyard.org/releases/skippy/
 
@@ -24,10 +24,19 @@ PLIST_FILES=	bin/skippy-xd \
 PLIST_DIRS=	%%DATADIR%%
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|; \
 		s|/usr/local|${LOCALBASE}|; s|gcc|${CC}|' \
 			${WRKSRC}/Makefile
+
+.if ${ARCH} == "amd64"
+	@${REINPLACE_CMD} -e 's|CARD32|CARD64|g' \
+		${WRKSRC}/clientwin.c ${WRKSRC}/skippy.c \
+		${WRKSRC}/wm.c ${WRKSRC}/wm.h
+.endif
+
 post-build:
 	@${SED} 's|%%DATADIR%%|${DATADIR}|' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
@@ -39,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
