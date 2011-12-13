@@ -83,7 +83,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>asterisk -- Multiple Vulnerabilities</topic>
     <affects>
       <package>
-	<name>asterisk</name>
+	<name>asterisk18</name>
 	<range><lt>1.8.7.2</lt></range>
       </package>
       <package>
