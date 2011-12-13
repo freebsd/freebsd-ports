@@ -260,6 +260,7 @@
     SUBDIR += pure
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
+    SUBDIR += pypy
     SUBDIR += python
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
