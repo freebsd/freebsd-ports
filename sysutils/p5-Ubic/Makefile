@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ubic
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MMCLERIC
@@ -16,6 +16,7 @@ MAINTAINER=	dmitry@yashin.su
 COMMENT=	Flexible perl-based service manager
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -77,6 +78,10 @@ MAN3=		Ubic.3 \
 		Ubic::Service::SimpleDaemon.3 \
 		Ubic::Service::Skeleton.3 \
 		Ubic::Service::Utils.3 \
+		Ubic::ServiceLoader.3 \
+		Ubic::ServiceLoader::Base.3 \
+		Ubic::ServiceLoader::Default.3 \
+		Ubic::ServiceLoader::Ext::ini.3 \
 		Ubic::Settings.3 \
 		Ubic::Settings::ConfigFile.3 \
 		Ubic::SingletonLock.3 \
