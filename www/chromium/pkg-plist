@@ -215,6 +215,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
+%%DATADIR%%/resources/inspector/devtools_extension_api.js
 %%DATADIR%%/xdg-settings
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/resources/inspector/Images

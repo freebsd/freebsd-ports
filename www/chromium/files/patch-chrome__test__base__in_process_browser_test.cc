@@ -1,13 +1,13 @@
---- chrome/test/base/in_process_browser_test.cc.orig	2011-09-14 00:41:45.000000000 +0300
-+++ chrome/test/base/in_process_browser_test.cc	2011-09-14 00:46:15.000000000 +0300
+--- chrome/test/base/in_process_browser_test.cc.orig	2011-11-01 10:43:07.000000000 +0200
++++ chrome/test/base/in_process_browser_test.cc	2011-11-19 19:32:51.000000000 +0200
 @@ -41,6 +41,10 @@
- #include "net/test/test_server.h"
- #include "sandbox/src/dep.h"
+ #include "chrome/browser/chromeos/audio_handler.h"
+ #endif
  
 +#if defined(OS_FREEBSD)
 +#include <signal.h>
 +#endif
 +
- #if defined(OS_MACOSX)
- #include "base/mac/mac_util.h"
- #include "base/system_monitor/system_monitor.h"
+ // Passed as value of kTestType.
+ static const char kBrowserTestType[] = "browser";
+ 

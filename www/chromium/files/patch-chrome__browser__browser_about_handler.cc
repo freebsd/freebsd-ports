@@ -1,15 +1,15 @@
---- chrome/browser/browser_about_handler.cc.orig	2011-07-28 11:01:59.000000000 +0300
-+++ chrome/browser/browser_about_handler.cc	2011-08-28 20:55:56.000000000 +0300
-@@ -76,7 +76,7 @@
- #include "chrome/browser/chromeos/login/wizard_controller.h"
+--- chrome/browser/browser_about_handler.cc.orig	2011-11-01 10:43:20.000000000 +0200
++++ chrome/browser/browser_about_handler.cc	2011-11-19 19:05:28.000000000 +0200
+@@ -79,7 +79,7 @@
  #include "chrome/browser/chromeos/version_loader.h"
+ #include "chrome/browser/oom_priority_manager.h"
  #include "content/browser/zygote_host_linux.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -146,7 +146,7 @@
+@@ -152,7 +152,7 @@
  #if defined(OS_WIN)
    chrome::kChromeUIConflictsHost,
  #endif
@@ -18,7 +18,7 @@
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -194,7 +194,7 @@
+@@ -190,7 +190,7 @@
  #if defined(USE_TCMALLOC)
    chrome::kChromeUITCMallocHost,
  #endif
@@ -27,7 +27,7 @@
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -993,7 +993,7 @@
+@@ -1062,7 +1062,7 @@
    return data;
  }
  
@@ -36,12 +36,12 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -1409,7 +1409,7 @@
-     response = ResourceBundle::GetSharedInstance().GetRawDataResource(
-         IDR_TERMS_HTML).as_string();
- #endif
+@@ -1447,7 +1447,7 @@
+     return;
+   } else if (host == chrome::kChromeUIHistogramsHost) {
+     response = AboutHistograms(path);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
    } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
-   } else if (host == chrome::kChromeUISandboxHost) {
+ #endif

@@ -1,31 +1,37 @@
---- base/process_util.h.orig	2011-09-14 11:01:29.000000000 +0300
-+++ base/process_util.h	2011-09-30 23:12:21.000000000 +0300
-@@ -28,6 +28,10 @@
- #include <sys/types.h>
+--- base/process_util.h.orig	2011-11-01 10:42:54.000000000 +0200
++++ base/process_util.h	2011-11-21 23:05:53.000000000 +0200
+@@ -14,14 +14,14 @@
+ #if defined(OS_WIN)
+ #include <windows.h>
+ #include <tlhelp32.h>
+-#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_FREEBSD)
+ // kinfo_proc is defined in <sys/sysctl.h>, but this forward declaration
+ // is sufficient for the vector<kinfo_proc> below.
+ struct kinfo_proc;
+ // malloc_zone_t is defined in <malloc/malloc.h>, but this forward declaration
+ // is sufficient for GetPurgeableZone() below.
+ typedef struct _malloc_zone_t malloc_zone_t;
+-#if !defined(OS_OPENBSD)
++#if !defined(OS_OPENBSD) && !defined(OS_FREEBSD)
+ #include <mach/mach.h>
  #endif
- 
-+#if defined(OS_FREEBSD)
-+struct kinfo_proc;
-+#endif  /* defined(OS_FREEBSD) */
-+
- #include <list>
- #include <string>
- #include <utility>
-@@ -163,7 +167,7 @@
+ #elif defined(OS_POSIX)
+@@ -166,7 +166,7 @@
  // Win XP SP1 as well.
- BASE_API ProcessId GetProcId(ProcessHandle process);
+ BASE_EXPORT ProcessId GetProcId(ProcessHandle process);
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_FREEBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FREEBSD)
  // Returns the path to the executable of the given process.
- BASE_API FilePath GetProcessExecutablePath(ProcessHandle process);
+ BASE_EXPORT FilePath GetProcessExecutablePath(ProcessHandle process);
  
-@@ -467,7 +471,7 @@
+@@ -528,7 +528,7 @@
  #if defined(OS_WIN)
    HANDLE snapshot_;
    bool started_iteration_;
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+-#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_FREEBSD)
    std::vector<kinfo_proc> kinfo_procs_;
    size_t index_of_kinfo_proc_;
  #elif defined(OS_POSIX)

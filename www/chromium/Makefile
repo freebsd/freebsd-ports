@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	15.0.874.121
+DISTVERSION=	16.0.912.63
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -88,12 +88,6 @@ OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
-.if ${OSVERSION} < 801000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base__base.gypi-stub
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base__base.gypi-freebsd
 .endif
 
 .if defined(WITH_CODECS)
