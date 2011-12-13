@@ -901,6 +901,7 @@
     SUBDIR += shiva-collections
     SUBDIR += shotwell
     SUBDIR += show
+    SUBDIR += showimage
     SUBDIR += showimg
     SUBDIR += silgraphite
     SUBDIR += simage
