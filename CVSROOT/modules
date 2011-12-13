@@ -10033,6 +10033,7 @@ nimbus                          ports/x11-themes/nimbus
 nimuh                           ports/games/nimuh
 nini                            ports/devel/nini
 ninix-aya                       ports/games/ninix-aya
+ninja-ide                       ports/devel/ninja-ide
 ninvaders                       ports/games/nInvaders
 nip2                            ports/graphics/nip2
 nitpicker                       ports/net-mgmt/nitpicker
@@ -13209,7 +13210,9 @@ p5-MooseX-Traits                ports/devel/p5-MooseX-Traits
 p5-MooseX-Traits-Pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Common          ports/devel/p5-MooseX-Types-Common
+p5-MooseX-Types-DateTime        ports/devel/p5-MooseX-Types-DateTime
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
+p5-MooseX-Types-DateTime-MoreCoercions  ports/devel/p5-MooseX-Types-DateTime-MoreCoercions
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
 p5-MooseX-Types-LoadableClass   ports/devel/p5-MooseX-Types-LoadableClass
@@ -13220,6 +13223,7 @@ p5-MooseX-Types-Signal          ports/devel/p5-MooseX-Types-Signal
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
 p5-MooseX-Types-VariantTable    ports/devel/p5-MooseX-Types-VariantTable
 p5-Mouse                        ports/devel/p5-Mouse
+p5-MouseX-App-Cmd               ports/devel/p5-MouseX-App-Cmd
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Foreign               ports/devel/p5-MouseX-Foreign
@@ -17654,7 +17658,9 @@ p5-moosex-traits                ports/devel/p5-MooseX-Traits
 p5-moosex-traits-pluggable      ports/devel/p5-MooseX-Traits-Pluggable
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-common          ports/devel/p5-MooseX-Types-Common
+p5-moosex-types-datetime        ports/devel/p5-MooseX-Types-DateTime
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
+p5-moosex-types-datetime-morecoercions  ports/devel/p5-MooseX-Types-DateTime-MoreCoercions
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
 p5-moosex-types-loadableclass   ports/devel/p5-MooseX-Types-LoadableClass
@@ -17665,6 +17671,7 @@ p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
 p5-mouse                        ports/devel/p5-Mouse
+p5-mousex-app-cmd               ports/devel/p5-MouseX-App-Cmd
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
 p5-mousex-foreign               ports/devel/p5-MouseX-Foreign
@@ -21736,8 +21743,6 @@ py-Products.StandardCacheManagers  ports/devel/py-Products.StandardCacheManagers
 py-Products.ZCTextIndex         ports/devel/py-Products.ZCTextIndex
 py-Products.ZCatalog            ports/devel/py-Products.ZCatalog
 py-PyGreSQL                     ports/databases/py-PyGreSQL
-py-PySQLite10                   ports/databases/py-PySQLite10
-py-PySQLite11                   ports/databases/py-PySQLite11
 py-PyX                          ports/graphics/py-PyX
 py-RO                           ports/astro/py-RO
 py-RPyC                         ports/devel/py-RPyC
@@ -22034,7 +22039,6 @@ py-hyperestraier-python         ports/textproc/py-hyperestraier-python
 py-icalendar                    ports/devel/py-icalendar
 py-ice                          ports/devel/py-ice
 py-iconv                        ports/converters/py-iconv
-py-iconvcodec                   ports/converters/py-iconvcodec
 py-icu                          ports/devel/py-icu
 py-id3                          ports/audio/py-id3
 py-idnkit2                      ports/dns/py-idnkit2
@@ -22329,12 +22333,6 @@ py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
 py-pyshapelib                   ports/devel/py-pyshapelib
-py-pysqlite10                   ports/databases/py-PySQLite10
-py-pysqlite11                   ports/databases/py-PySQLite11
-py-pysqlite20                   ports/databases/py-pysqlite20
-py-pysqlite21                   ports/databases/py-pysqlite21
-py-pysqlite22                   ports/databases/py-pysqlite22
-py-pysqlite23                   ports/databases/py-pysqlite23
 py-pytc                         ports/databases/py-pytc
 py-pytemplate                   ports/devel/py-pytemplate
 py-pytest                       ports/devel/py-pytest
@@ -22587,7 +22585,6 @@ py-visual                       ports/graphics/py-visual
 py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
-py-waf                          ports/devel/py-waf
 py-wax                          ports/x11-toolkits/py-wax
 py-webcolors                    ports/graphics/py-webcolors
 py-weberror                     ports/www/py-WebError
@@ -23301,6 +23298,7 @@ renamedlgplugins                ports/misc/renamedlgplugins
 renattach                       ports/mail/renattach
 rendercheck                     ports/x11/rendercheck
 renderproto                     ports/x11/renderproto
+renrot                          ports/graphics/renrot
 reoback                         ports/sysutils/reoback
 rep-gtk2                        ports/x11-toolkits/rep-gtk2
 repeater                        ports/net/repeater
@@ -28257,6 +28255,7 @@ zope-zsyncer                    ports/www/zope-zsyncer
 zope-zwiki                      ports/www/zope-zwiki
 zope210                         ports/www/zope210
 zope211                         ports/www/zope211
+zope213                         ports/www/zope213
 zope28                          ports/www/zope28
 zope29                          ports/www/zope29
 zope3                           ports/www/zope3
