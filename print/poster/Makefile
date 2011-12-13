@@ -15,6 +15,8 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Resize a postscript image to print on larger media and/or multiple sheets
 
 ALL_TARGET=	poster
+MAKEFILE=	/dev/null
+MAKE_ENV=	LDLIBS="-lm"
 NO_WRKSUBDIR=	yes
 
 MAN1=		poster.1
