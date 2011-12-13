@@ -43,7 +43,7 @@ post-extract:
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
