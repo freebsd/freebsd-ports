@@ -155,6 +155,7 @@
     SUBDIR += py-obspy.db
     SUBDIR += py-obspy.gse2
     SUBDIR += py-obspy.imaging
+    SUBDIR += py-obspy.iris
     SUBDIR += py-obspy.mseed
     SUBDIR += py-obspy.signal
     SUBDIR += py-obspy.wav
