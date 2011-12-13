@@ -72,6 +72,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <mlist>http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html</mlist>
+      <cvename>CVE-2011-4607</cvename>
     </references>
     <dates>
       <discovery>2011-12-10</discovery>
