@@ -18,7 +18,9 @@ COMMENT=	An open source command-line RTMP client
 USE_GMAKE=	yes
 ALL_TARGET=	posix
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
+MAKE_ARGS=	THREADLIB="${PTHREAD_LIBS}" \
+		XCFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		XLDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/flvstreamer bin/streams
 PORTDOCS=	ChangeLog ChangeLog.rtmpdump README
 
