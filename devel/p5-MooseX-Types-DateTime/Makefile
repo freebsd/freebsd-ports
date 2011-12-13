@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-DateTime
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ILMARI
@@ -18,8 +18,8 @@ COMMENT=	DateTime related constraints and coercions for Moose
 BUILD_DEPENDS=	p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Locale>=0.45:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=0.95:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-Moose>=2.0100:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-Moose>=0.41:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Types>=0.30:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
