@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	umplayer
-DISTVERSION=	0.95
+DISTVERSION=	0.97
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	LOCAL/wen
 
