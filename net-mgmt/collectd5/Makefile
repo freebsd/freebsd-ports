@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -42,7 +42,8 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		PING		"Input: Network latency (liboping)" 		On  \
 		SNMP		"Input: SNMP" 					On  \
 		XMMS		"Input: XMMS" 					Off \
-		RRDTOOL		"Output: RRDTool" 				On
+		RRDTOOL		"Output: RRDTool"				On \
+		RRDCACHED	"Output: RRDTool Cached (require RRDTOOL)"	On
 
 MAN1=		collectd.1 collectd-nagios.1 collectdmon.1 collectdctl.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
@@ -112,7 +113,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-python \
 		--disable-protocols \
 		--disable-routeros \
-		--disable-rrdcached \
 		--disable-sensors \
 		--disable-serial \
 		--disable-table \
@@ -131,7 +131,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-wireless \
 		--disable-write_http \
 		--disable-zfs_arc \
-		--without-perl-bindings
+		--without-perl-bindings \
+		--disable-static
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
@@ -321,6 +322,14 @@ PLIST_SUB+=	RRD=""
 .else
 CONFIGURE_ARGS+=--disable-rrdtool
 PLIST_SUB+=	RRD="@comment "
+.endif
+
+.if defined(WITH_RRDCACHED) && defined(WITH_RRDTOOL)
+CONFIGURE_ARGS+=--enable-rrdcached
+PLIST_SUB+=	RRDCACHED=""
+.else
+CONFIGURE_ARGS+=--disable--rrdcached
+PLIST_SUB+=	RRDCACHED="@comment "
 .endif
 
 .if defined(WITH_SNMP)
