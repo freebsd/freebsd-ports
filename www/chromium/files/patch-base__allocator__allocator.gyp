@@ -1,6 +1,6 @@
---- base/allocator/allocator.gyp.orig	2011-09-14 11:01:29.000000000 +0300
-+++ base/allocator/allocator.gyp	2011-09-25 22:56:07.000000000 +0300
-@@ -7,324 +7,196 @@
+--- base/allocator/allocator.gyp.orig	2011-11-28 21:53:42.000000000 +0200
++++ base/allocator/allocator.gyp	2011-11-28 22:01:26.000000000 +0200
+@@ -7,326 +7,198 @@
      'jemalloc_dir': '../../third_party/jemalloc/chromium',
      'tcmalloc_dir': '../../third_party/tcmalloc/chromium',
    },
@@ -107,6 +107,8 @@
 -        '<(tcmalloc_dir)/src/common.cc',
 -        '<(tcmalloc_dir)/src/common.h',
 -        '<(tcmalloc_dir)/src/debugallocation.cc',
+-        '<(tcmalloc_dir)/src/free_list.cc',
+-        '<(tcmalloc_dir)/src/free_list.h',
 -        '<(tcmalloc_dir)/src/getpc.h',
 -        '<(tcmalloc_dir)/src/google/heap-checker.h',
 -        '<(tcmalloc_dir)/src/google/heap-profiler.h',
@@ -385,7 +387,7 @@
 +            '<(tcmalloc_dir)/src/base/spinlock_posix-inl.h',
 +            '<(tcmalloc_dir)/src/base/spinlock_win32-inl.h',
 +            '<(tcmalloc_dir)/src/base/stl_allocator.h',
-+            '<(tcmalloc_dir)/src/base/src/synchronization_profiling.h',
++            '<(tcmalloc_dir)/src/base/synchronization_profiling.h',
 +            '<(tcmalloc_dir)/src/base/sysinfo.cc',
 +            '<(tcmalloc_dir)/src/base/sysinfo.h',
 +            '<(tcmalloc_dir)/src/base/thread_annotations.h',
@@ -398,6 +400,8 @@
 +            '<(tcmalloc_dir)/src/common.cc',
 +            '<(tcmalloc_dir)/src/common.h',
 +            '<(tcmalloc_dir)/src/debugallocation.cc',
++            '<(tcmalloc_dir)/src/free_list.cc',
++            '<(tcmalloc_dir)/src/free_list.h',
 +            '<(tcmalloc_dir)/src/getpc.h',
 +            '<(tcmalloc_dir)/src/google/heap-checker.h',
 +            '<(tcmalloc_dir)/src/google/heap-profiler.h',
@@ -494,7 +498,7 @@
              # jemalloc files
              '<(jemalloc_dir)/jemalloc.c',
              '<(jemalloc_dir)/jemalloc.h',
-@@ -332,85 +204,239 @@
+@@ -334,85 +206,236 @@
              '<(jemalloc_dir)/qr.h',
              '<(jemalloc_dir)/rb.h',
  
@@ -530,6 +534,9 @@
 -            # debugallocation.cc #includes tcmalloc.cc,
 -            # so only one of them should be used.
 -            '<(tcmalloc_dir)/src/tcmalloc.cc',
+-          ],
+-          'cflags': [
+-            '-DTCMALLOC_FOR_DEBUGALLOCATION',
 +            # Included by allocator_shim.cc for maximal inlining.
 +            'generic_allocators.cc',
 +            'win_allocator.cc',
@@ -591,14 +598,18 @@
 +            '<(tcmalloc_dir)/src/windows/preamble_patcher.h',
 +            '<(tcmalloc_dir)/src/windows/preamble_patcher_with_stub.cc',
            ],
--          'cflags': [
--            '-DTCMALLOC_FOR_DEBUGALLOCATION',
-+          'dependencies': [
-+            '../third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
-           ],
 -        }, { # linux_use_debugallocation != 1
 -          'sources!': [
 -            '<(tcmalloc_dir)/src/debugallocation.cc',
++          'dependencies': [
++            '../third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
+           ],
+-        }],
+-        [ 'linux_keep_shadow_stacks==1', {
+-          'sources': [
+-            '<(tcmalloc_dir)/src/linux_shadow_stacks.cc',
+-            '<(tcmalloc_dir)/src/linux_shadow_stacks.h',
+-            '<(tcmalloc_dir)/src/stacktrace_shadow-inl.h',
 +          'msvs_settings': {
 +            # TODO(sgk):  merge this with build/common.gypi settings
 +            'VCLibrarianTool': {
@@ -738,12 +749,9 @@
 +              ],
 +            }],
            ],
--        }],
--        [ 'linux_keep_shadow_stacks==1', {
--          'sources': [
--            '<(tcmalloc_dir)/src/linux_shadow_stacks.cc',
--            '<(tcmalloc_dir)/src/linux_shadow_stacks.h',
--            '<(tcmalloc_dir)/src/stacktrace_shadow-inl.h',
+-          'cflags': [
+-            '-finstrument-functions',
+-            '-DKEEP_SHADOW_STACKS',
 +        },
 +        {
 +          'target_name': 'allocator_unittests',
@@ -752,28 +760,23 @@
 +            'allocator',
 +            '../../testing/gtest.gyp:gtest',
            ],
--          'cflags': [
--            '-finstrument-functions',
--            '-DKEEP_SHADOW_STACKS',
-+          'include_dirs': [
-+            '.',
-+            '<(tcmalloc_dir)/src/base',
-+            '<(tcmalloc_dir)/src',
-+            '../..',
-           ],
 -        }],
 -        [ 'linux_use_heapchecker==0', {
 -          # Do not compile and link the heapchecker source.
 -          'sources!': [
 -            '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
 -            '<(tcmalloc_dir)/src/heap-checker.cc',
-+          'sources': [
-+            'allocator_unittests.cc',
++          'include_dirs': [
++            '.',
++            '<(tcmalloc_dir)/src/base',
++            '<(tcmalloc_dir)/src',
++            '../..',
            ],
 -          # Disable the heap checker in tcmalloc.
-           'cflags': [
+-          'cflags': [
 -            '-DNO_HEAP_CHECK',
-+            '-fexceptions',
++          'sources': [
++            'allocator_unittests.cc',
            ],
 -        }],
 -      ],

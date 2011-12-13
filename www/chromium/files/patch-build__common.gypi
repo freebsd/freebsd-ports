@@ -1,8 +1,8 @@
---- build/common.gypi.orig	2011-10-07 08:32:09.000000000 +0000
-+++ build/common.gypi	2011-10-10 19:06:38.844749713 +0000
-@@ -331,6 +331,10 @@
-     # Whether to build for Wayland display server
-     'use_wayland%': 0,
+--- build/common.gypi.orig	2011-11-10 16:01:45.000000000 +0200
++++ build/common.gypi	2011-12-01 00:10:48.000000000 +0200
+@@ -403,6 +403,10 @@
+     # able to turn it off for remote debugging on Chromium OS
+     'linux_disable_pie%': 0,
  
 +    'os_ver%': 0,
 +    'prefix_dir%': '/usr',
@@ -11,16 +11,16 @@
      # The release channel that this build targets. This is used to restrict
      # channel-specific build options, like which installer packages to create.
      # The default is 'all', which does no channel-specific filtering.
-@@ -551,7 +555,7 @@
+@@ -615,7 +619,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
--        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
+-        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/<(system_libdir)/libpython<(python_ver).so.1.0)',
 +        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)<(prefix_dir)/lib/libpython<(python_ver).so.1)',
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -1042,7 +1046,7 @@
+@@ -1242,7 +1246,7 @@
                ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
              ],
            }],
@@ -29,7 +29,7 @@
              'sources/': [
                ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
                ['exclude', '(^|/)linux/'],
-@@ -1613,6 +1617,21 @@
+@@ -1911,6 +1915,22 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],
@@ -43,6 +43,7 @@
 +        'conditions': [
 +          ['gcc_version == 42', {
 +            'cflags!': [
++              '-mssse3',
 +              '-fno-signed-zeros',
 +              '-Wno-unused-result',
 +            ],
@@ -50,4 +51,4 @@
 +        ],
        },
      }],
-     ['OS=="solaris"', {
+     # Android-specific options; note that most are set above with Linux.

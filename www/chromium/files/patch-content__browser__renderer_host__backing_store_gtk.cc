@@ -1,5 +1,5 @@
---- content/browser/renderer_host/backing_store_x.cc.orig	2011-09-14 11:01:10.000000000 +0300
-+++ content/browser/renderer_host/backing_store_x.cc	2011-09-22 00:21:16.000000000 +0300
+--- content/browser/renderer_host/backing_store_gtk.cc.orig	2011-09-14 11:01:10.000000000 +0300
++++ content/browser/renderer_host/backing_store_gtk.cc	2011-09-22 00:21:16.000000000 +0300
 @@ -57,6 +57,9 @@
    XShmDetach(display, shminfo);
    XDestroyImage(image);
@@ -9,7 +9,7 @@
 +#endif
  }
  
- BackingStoreX::BackingStoreX(RenderWidgetHost* widget,
+ BackingStoreX::BackingStoreGtk(RenderWidgetHost* widget,
 @@ -339,7 +342,9 @@
      }
  

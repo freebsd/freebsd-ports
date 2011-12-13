@@ -1,15 +1,15 @@
---- ui/gfx/surface/transport_dib.h.orig	2011-05-06 12:03:42.000000000 +0300
-+++ ui/gfx/surface/transport_dib.h	2011-06-05 21:06:20.559165060 +0300
-@@ -8,7 +8,7 @@
- 
+--- ui/gfx/surface/transport_dib.h.orig	2011-11-01 10:43:23.000000000 +0200
++++ ui/gfx/surface/transport_dib.h	2011-11-21 22:35:21.000000000 +0200
+@@ -9,7 +9,7 @@
  #include "base/basictypes.h"
+ #include "ui/gfx/surface/surface_export.h"
  
--#if defined(OS_WIN) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_FREEBSD)
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_ANDROID)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_FREEBSD)
  #include "base/shared_memory.h"
  #endif
  
-@@ -78,7 +78,7 @@
+@@ -79,7 +79,7 @@
      static int fake_handle = 10;
      return reinterpret_cast<Handle>(fake_handle++);
    }
@@ -18,7 +18,7 @@
    typedef base::SharedMemoryHandle Handle;
    // On Mac, the inode number of the backing file is used as an id.
    typedef base::SharedMemoryId Id;
-@@ -93,7 +93,7 @@
+@@ -94,7 +94,7 @@
      static int fake_handle = 10;
      return Handle(fake_handle++, false);
    }
@@ -27,12 +27,12 @@
    typedef int Handle;  // These two ints are SysV IPC shared memory keys
    struct Id {
      // Ensure that default initialized Ids are invalid.
-@@ -184,11 +184,12 @@
+@@ -199,11 +199,12 @@
  
   private:
    TransportDIB();
--#if defined(OS_WIN) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_FREEBSD)
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_ANDROID)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_FREEBSD)
    explicit TransportDIB(base::SharedMemoryHandle dib);
    base::SharedMemory shared_memory_;
    uint32 sequence_num_;

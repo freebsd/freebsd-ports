@@ -1,51 +1,73 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2011-10-07 08:32:35.000000000 +0000
-+++ chrome/browser/chrome_content_browser_client.cc	2011-10-10 20:09:07.754749149 +0000
-@@ -71,7 +71,7 @@
- #include "net/base/cookie_options.h"
- #include "ui/base/resource/resource_bundle.h"
+--- chrome/browser/chrome_content_browser_client.cc.orig	2011-11-01 10:43:20.000000000 +0200
++++ chrome/browser/chrome_content_browser_client.cc	2011-11-19 19:22:29.000000000 +0200
+@@ -81,18 +81,18 @@
+ #include "chrome/browser/chrome_browser_main_win.h"
+ #elif defined(OS_MACOSX)
+ #include "chrome/browser/chrome_browser_main_mac.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_FREEBSD)
+ #include "chrome/browser/chrome_browser_main_gtk.h"
+ #endif
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
  #include "base/linux_util.h"
- #include "chrome/browser/browser_main_gtk.h"
  #include "chrome/browser/crash_handler_host_linux.h"
-@@ -81,7 +81,7 @@
- #include "chrome/browser/ui/views/tab_contents/tab_contents_view_touch.h"
- #elif defined(TOOLKIT_VIEWS)
+ #endif
+ 
+ #if defined(TOOLKIT_VIEWS)
  #include "chrome/browser/ui/views/tab_contents/tab_contents_view_views.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
  #include "chrome/browser/tab_contents/tab_contents_view_gtk.h"
  #elif defined(OS_MACOSX)
  #include "chrome/browser/tab_contents/tab_contents_view_mac.h"
-@@ -129,7 +129,7 @@
-   return new BrowserMainPartsMac(parameters);
- #elif defined(OS_CHROMEOS)
-   return new BrowserMainPartsChromeos(parameters);
+@@ -108,7 +108,7 @@
+ #elif defined(OS_WIN)
+ #include "chrome/browser/renderer_host/render_widget_host_view_views.h"
+ #include "content/browser/renderer_host/render_widget_host_view_win.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
-   return new BrowserMainPartsGtk(parameters);
+ #include "content/browser/renderer_host/render_widget_host_view_gtk.h"
+ #elif defined(OS_MACOSX)
+ #include "content/browser/renderer_host/render_widget_host_view_mac.h"
+@@ -195,7 +195,7 @@
+   return new ChromeBrowserMainPartsWin(parameters);
+ #elif defined(OS_MACOSX)
+   return new ChromeBrowserMainPartsMac(parameters);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_FREEBSD)
+   return new ChromeBrowserMainPartsGtk(parameters);
  #else
    return NULL;
-@@ -142,7 +142,7 @@
-   return new TabContentsViewTouch(tab_contents);
- #elif defined(TOOLKIT_VIEWS)
+@@ -210,7 +210,7 @@
+   if (views::Widget::IsPureViews())
+     return new RenderWidgetHostViewViews(widget);
+   return new RenderWidgetHostViewWin(widget);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_FREEBSD)
+   return new RenderWidgetHostViewGtk(widget);
+ #elif defined(OS_MACOSX)
+   return render_widget_host_view_mac::CreateRenderWidgetHostView(widget);
+@@ -223,7 +223,7 @@
+     TabContents* tab_contents) {
+ #if defined(TOOLKIT_VIEWS)
    return new TabContentsViewViews(tab_contents);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
    return new TabContentsViewGtk(tab_contents);
  #elif defined(OS_MACOSX)
    return tab_contents_view_mac::CreateTabContentsView(tab_contents);
-@@ -771,7 +771,7 @@
-   return g_browser_process->system_request_context();
+@@ -911,7 +911,7 @@
+   return download_util::GetDefaultDownloadDirectory();
  }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
  int ChromeContentBrowserClient::GetCrashSignalFD(
-     const std::string& process_type) {
-   if (process_type == switches::kRendererProcess)
-@@ -794,7 +794,7 @@
+     const CommandLine& command_line) {
+   if (command_line.HasSwitch(switches::kExtensionProcess)) {
+@@ -937,7 +937,7 @@
  
    return -1;
  }

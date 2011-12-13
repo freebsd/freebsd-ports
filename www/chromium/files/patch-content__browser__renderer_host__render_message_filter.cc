@@ -1,16 +1,16 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2011-06-24 11:30:32.000000000 +0300
-+++ content/browser/renderer_host/render_message_filter.cc	2011-06-26 20:58:31.256783053 +0300
-@@ -360,7 +360,7 @@
+--- content/browser/renderer_host/render_message_filter.cc.orig	2011-11-01 10:42:33.000000000 +0200
++++ content/browser/renderer_host/render_message_filter.cc	2011-11-21 21:16:01.000000000 +0200
+@@ -348,7 +348,7 @@
                          OnCheckNotificationPermission)
-     IPC_MESSAGE_HANDLER(ViewHostMsg_AllocateSharedMemoryBuffer,
-                         OnAllocateSharedMemoryBuffer)
+     IPC_MESSAGE_HANDLER(ChildProcessHostMsg_SyncAllocateSharedMemory,
+                         OnAllocateSharedMemory)
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
      IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB, OnAllocTransportDIB)
      IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB, OnFreeTransportDIB)
  #endif
-@@ -647,7 +647,7 @@
-   return context_getter->GetURLRequestContext();
+@@ -656,7 +656,7 @@
+   return context;
  }
  
 -#if defined(OS_MACOSX)
