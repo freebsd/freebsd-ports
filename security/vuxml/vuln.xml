@@ -47,6 +47,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4a809d8-25c8-11e1-b531-00215c6a37bb">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>linux-opera</name>
+	<range><lt>11.60</lt></range>
+      </package>
+      <package>
+	<name>opera-devel</name>
+	<range><lt>11.60,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera software reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1160/">
+	  <ul>
+	    <li>Fixed a moderately severe issue; details will be
+	      disclosed at a later date</li>
+	    <li>Fixed an issue that could allow pages to set cookies
+	      or communicate cross-site for some top level domains;
+	      see our <a href="http://www.opera.com/support/kb/view/1003/">advisory</a></li>
+	    <li>Improved handling of certificate revocation corner
+	      cases</li>
+	    <li>Added a fix for a weakness in the SSL v3.0 and TLS 1.0
+	      specifications, as reported by Thai Duong and Juliano Rizzo;
+	      see our <a href="http://www.opera.com/support/kb/view/1004/">advisory</a></li>
+	    <li>Fixed an issue where the JavaScript "in" operator
+	      allowed leakage of cross-domain information, as reported
+	      by David Bloom; see our <a href="http://www.opera.com/support/kb/view/1005/">advisory</a></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3389</cvename>
+      <cvename>CVE-2011-4681</cvename>
+      <cvename>CVE-2011-4682</cvename>
+      <cvename>CVE-2011-4683</cvename>
+      <url>http://www.opera.com/support/kb/view/1003/</url>
+      <url>http://www.opera.com/support/kb/view/1004/</url>
+      <url>http://www.opera.com/support/kb/view/1005/</url>
+    </references>
+    <dates>
+      <discovery>2011-12-06</discovery>
+      <entry>2011-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68ac6266-25c3-11e1-b63a-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
