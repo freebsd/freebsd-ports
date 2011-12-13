@@ -9,11 +9,11 @@ PORTNAME=	webobjects
 PORTVERSION=	5.3.3
 CATEGORIES=	www java
 MASTER_SITES=	#
-DISTNAME=	WebObjects5.3.3Update
+DISTNAME=	WebObjects${DISTVERSION}Update
 EXTRACT_SUFX=	.pax.gz
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT=	WebObjects Application Server Runtime ${PORTVERSION}
+COMMENT=	WebObjects Application Server Runtime
 
 IS_INTERACTIVE=	yes
 RESTRICTED=	License doesn't allow redistribution
@@ -26,7 +26,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	wotaskd.sh JavaMonitor.sh
 USE_JAVA=	1.4+
-USE_PERL5_BUILD=yes
+EXTRACT_PRESERVE_OWNERSHIP=	yes
 
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.plist"
@@ -46,38 +46,22 @@ PLIST_SUB=	NEXT_ROOT=${NEXT_BASE} WODOCROOT=${WODOCROOT_REL}
 SUB_LIST+=	NEXT_ROOT=${NEXT_BASE} USER=${NEXT_USER} GROUP=${NEXT_GROUP} \
 		JAVA=${JAVA} WODOCROOT=${WODOCROOT_REL}
 SUB_FILES+=	pkg-message pkg-install pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-EXTRACT_AFTER_ARGS=| ${TAR} -xpf -
-COPYTREE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-	${CHOWN} -R ${BINOWN}:${BINGRP} $$1 && \
-	${FIND} $$1 -type d -exec ${CHMOD} 755 {} \;' --
 
 .if defined(WITH_APACHE)
 USE_APACHE?=	13+
-BUILD_DEPENDS+=	${APACHEMODDIR}/mod_WebObjects.so:../../www/mod_webobjects
+BUILD_DEPENDS+=	${APACHEMODDIR}/mod_WebObjects.so:${PORTSDIR}/www/mod_webobjects
 .endif
 
 # Check for distribution files
-.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${WOBINARCHIVE})
-ECHO_MSG=	${PRINTF}
-IGNORE=		cannot be downloaded automatically.
-IGNORE+=	\n\
-Due to licensing restrictions you must download the necessary files manually.\n\
-Please open ${WOBINURL} in a\n\
-web browser and download the necessary files from Apple.\n\n\
-Please place the file ${WOBINARCHIVE} located in the\n\
-downloaded file bundle into ${DISTDIR} and restart the build.\n\n
+.if !exists(${DISTDIR}/${WOBPKGBUNDLE})
+IGNORE=		may not be redistributed because of licensing reasons.  Please visit ${WOBINURL} and download ${WOBINARCHIVE} from Apple into ${DISTDIR}
 .endif
 
 do-fetch:
-	# See http://wiki.objectstyle.org/confluence/display/WO/WebObjects+5.3.3+Deployment+on+FreeBSD+6.x
-	# for the gory details.
-	dd if=${DISTDIR}/${WOPKGBUNDLE} bs=0x1000 skip=0xb12 of=${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	${PERL} -e 'truncate "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}", 29672581'
+# See http://wiki.objectstyle.org/confluence/display/WO/Deploying+on+FreeBSD+6.x+and+7.x+%28WO+5.3.3%29
+# for the gory details.
+	dd if=${DISTDIR}/${WOPKGBUNDLE} bs=0x1000 skip=0xb12 \
+	    of=${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 pre-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
@@ -89,9 +73,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/${LOCAL_LIBRARY}
 	@${CHMOD} -R 755 ${PREFIX}/${NEXT_BASE}
 	@${ECHO_MSG} -n ">> Installing WebObjects Runtime..."
-	@(cd ${WRKSRC}/System/Library && ${COPYTREE} \* \
+	@(cd ${WRKSRC}/System/Library && ${COPYTREE_BIN} \* \
 		${PREFIX}/${SYSTEM_LIBRARY})
-	@(cd ${WRKSRC}/Library && ${COPYTREE} \* \
+	@(cd ${WRKSRC}/Library && ${COPYTREE_BIN} \* \
 		${PREFIX}/${LOCAL_LIBRARY})
 	@${ECHO_MSG} " [ DONE ]"
 	@${CHOWN} ${NEXT_USER}:${NEXT_GROUP} ${WOLOCAL}
