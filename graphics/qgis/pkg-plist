@@ -672,6 +672,7 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/reset.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/sieve.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/tileindex.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/tooltip.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/translate.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/vrt.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/warp.png
@@ -938,7 +939,7 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/utils.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/utils.pyc
 %%QGIS_PYTHON%%lib/libqgispython.so
-%%QGIS_PYTHON%%lib/libqgispython.so.1.7.2
+%%QGIS_PYTHON%%lib/libqgispython.so.1.7.3
 bin/qgis
 %%QGIS_FCGI%%bin/admin.sld
 %%QGIS_FCGI%%bin/qgis_mapserv.fcgi
@@ -1127,13 +1128,13 @@ include/qgis/ui_qgsmessageviewer.h
 include/qgis/ui_qgsprojectionselectorbase.h
 include/qgis/ui_qgsquerybuilderbase.h
 lib/libqgis_analysis.so
-lib/libqgis_analysis.so.1.7.2
+lib/libqgis_analysis.so.1.7.3
 lib/libqgis_core.so
-lib/libqgis_core.so.1.7.2
+lib/libqgis_core.so.1.7.3
 lib/libqgis_gui.so
-lib/libqgis_gui.so.1.7.2
+lib/libqgis_gui.so.1.7.3
 lib/libqgissqlanyconnection.so
-lib/libqgissqlanyconnection.so.1.7.2
+lib/libqgissqlanyconnection.so.1.7.3
 lib/qgis/plugins/libcoordinatecaptureplugin.so
 lib/qgis/plugins/libcopyrightlabelplugin.so
 lib/qgis/plugins/libdelimitedtextplugin.so
