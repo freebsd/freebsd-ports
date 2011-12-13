@@ -1,6 +1,6 @@
 # New ports collection makefile for:	SLIB for Gauche
-# Date created:			27 October 2003
-# Whom:				Kimura Fuyuki <fuyuki@nigredo.org>
+# Date created:				27 October 2003
+# Whom:					Kimura Fuyuki <fuyuki@nigredo.org>
 #
 # $FreeBSD$
 #
@@ -18,8 +18,7 @@ COMMENT=	SLIB installation for Gauche
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 		gosh:${PORTSDIR}/lang/gauche
-RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
-		gosh:${PORTSDIR}/lang/gauche
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 PLIST_SUB=	VERSION="`gauche-config -V`"
