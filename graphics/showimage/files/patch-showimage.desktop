@@ -1,0 +1,11 @@
+--- ./showimage.desktop.orig	2011-09-12 19:22:18.000000000 +0000
++++ ./showimage.desktop	2011-12-13 15:58:11.884599087 +0000
+@@ -2,7 +2,7 @@
+ Type=Application
+ Encoding=UTF-8
+ Exec=showimage %F
+-Icon=showimage
++Icon=showimage-kde4
+ Categories=Graphics;RasterGraphics;Viewer;
+ Terminal=false
+ 

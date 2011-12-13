@@ -1,0 +1,17 @@
+--- ./CMakeLists.txt.orig	2011-08-17 14:50:52.000000000 +0000
++++ ./CMakeLists.txt	2011-12-13 16:02:16.768599808 +0000
+@@ -13,11 +13,11 @@
+ 
+ kde4_add_ui_files(showimage_SRCS)
+ 
+-kde4_add_executable(showimage ${showimage_SRCS})
++kde4_add_executable(showimage-kde4 ${showimage_SRCS})
+ 
+-target_link_libraries(showimage ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
++target_link_libraries(showimage-kde4 ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+ 
+-install(TARGETS showimage ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS showimage-kde4 ${INSTALL_TARGETS_DEFAULT_ARGS})
+ install(FILES showimage.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+ 
+ kde4_install_icons(${ICON_INSTALL_DIR})
