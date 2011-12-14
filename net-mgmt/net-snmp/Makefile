@@ -23,7 +23,8 @@ OPTIONS=	IPV6 "Build with IPv6 support" on \
 		DUMMY "Enable dummy values as placeholders" on \
 		TKMIB "Install graphical MIB browser" off \
 		DMALLOC "Enable dmalloc debug memory allocator" off \
-		UNPRIVILEGED "Allow unprivileged users to execute net-snmp" off
+		UNPRIVILEGED "Allow unprivileged users to execute net-snmp" off \
+		PYTHON "Install python bindings off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -44,6 +45,12 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
+.endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--with-python-modules
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
 .endif
 
 .include <bsd.port.pre.mk>
