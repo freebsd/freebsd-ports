@@ -20,6 +20,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
+BROKEN=		does not link
+
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
