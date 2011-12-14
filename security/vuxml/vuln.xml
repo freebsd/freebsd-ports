@@ -233,6 +233,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2011-013.html</url>
       <url>http://downloads.asterisk.org/pub/security/AST-2011-014.html</url>
+      <cvename>CVE-2011-4597</cvename>
+      <cvename>CVE-2011-4598</cvename>
     </references>
     <dates>
       <discovery>2011-12-08</discovery>
