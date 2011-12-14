@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class::StateMachine - define classes for state machines
 
+TEST_DEPENDS=	p5-MRO-Define>=0:${PORTSDIR}/devel/p5-MRO-Define \
+		p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash \
+		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Class::StateMachine.3
