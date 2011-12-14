@@ -8,15 +8,16 @@
 PORTNAME=	MACReport
 PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://zenpacks.zenoss.org/trac-zenpacks/changeset/1002/tags/
-DISTFILES=	mac-report-${PORTVERSION}?old_path=%2F\&format=zip
+MASTER_SITES=	https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/zipball/master/
+DISTNAME=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Lists MAC address and the Device and Interface associated info
 
 USE_ZIP=	yes
 ZPACKGROUP=	community
-WRKSRC=	${WRKDIR}/tags/mac-report-${PORTVERSION}
+WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+TAG=	b345f53
 
 ZPACKPREFIX=	ZenPacks.sodonnell.
 
