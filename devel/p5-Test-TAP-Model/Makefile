@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accessible result collector for Test::Harness::Straps runs
 
-BUILD_DEPENDS=	${SITE_PERL}/Method/Alias.pm:${PORTSDIR}/devel/p5-Method-Alias
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Method-Alias>=0:${PORTSDIR}/devel/p5-Method-Alias \
+		p5-Test-Harness-Straps>=0.30:${PORTSDIR}/devel/p5-Test-Harness-Straps
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.53:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
