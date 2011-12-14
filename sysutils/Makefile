@@ -964,6 +964,7 @@
     SUBDIR += xcdroast
     SUBDIR += xcpustate
     SUBDIR += xdu
+    SUBDIR += xen-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
     SUBDIR += xfce4-cpugraph-plugin
