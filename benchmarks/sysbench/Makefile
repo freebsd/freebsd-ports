@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_AUTOTOOLS=	libtool
 
 OPTIONS=	LARGEFILE "Enable Largefile support" on \
@@ -37,8 +40,6 @@ CONFIGURE_ARGS+=	--with-mysql
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
-DEFAULT_PGSQL_VER?=	80
-IGNORE_WITH_PGSQL=	73 74
 CONFIGURE_ARGS+=	--with-pgsql
 .else
 CONFIGURE_ARGS+=	--with-pgsql=no
