@@ -1,6 +1,15 @@
---- src/main.c.orig
-+++ src/main.c
-@@ -233,11 +233,10 @@ int main(int argc, char **argv)
+--- src/main.c.orig	2011-12-14 22:49:17.000000000 +0400
++++ src/main.c	2011-12-14 22:54:19.000000000 +0400
+@@ -204,7 +204,7 @@
+ 
+     if (obc_theme_archive) {
+         archive_create(obc_theme_archive);
+-        return;
++        return 0;
+     }
+ 
+     p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
+@@ -233,11 +233,10 @@
      }
  
      xmlIndentTreeOutput = 1;
