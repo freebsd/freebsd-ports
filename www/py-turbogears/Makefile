@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	TurboGears
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	www python
-MASTER_SITES=	http://files.turbogears.org/eggs/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy-old>=2.3.0:${PORTSDIR}/www/py-cherrypy-old \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.1:${PORTSDIR}/www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.3:${PORTSDIR}/www/py-pastescript \
+		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7:${PORTSDIR}/www/py-pastescript \
 		${PYTHON_PKGNAMEPREFIX}PEAK-Rules>=0.5a1:${PORTSDIR}/devel/py-PEAK-Rules \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=1.0:${PORTSDIR}/devel/py-turbocheetah \
