@@ -24,6 +24,7 @@ BUILD_DEPENDS=	p5-Cache-Memcached>=1.27:${PORTSDIR}/databases/p5-Cache-Memcached
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0:${PORTSDIR}/databases/p5-SQL-Abstract-Limit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PERL_CONFIGURE=	yes
 
