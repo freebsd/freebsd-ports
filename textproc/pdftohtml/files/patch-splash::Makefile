@@ -3,12 +3,15 @@ $FreeBSD$
 
 --- splash/Makefile
 +++ splash/Makefile
-@@ -16,7 +16,7 @@
+@@ -16,9 +16,9 @@
  FOFISRCDIR = $(srcdir)/../fofi
  FOFILIBDIR = ../fofi
  
 -CXXFLAGS =   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir)  
 +CXXFLAGS +=   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir)  
  
- CXX = g++
+-CXX = g++
++CXX ?= g++
  AR = ar rc
+ RANLIB = ranlib
+ 

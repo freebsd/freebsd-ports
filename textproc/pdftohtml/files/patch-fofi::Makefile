@@ -10,5 +10,8 @@ $FreeBSD$
 -CXXFLAGS =   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
 +CXXFLAGS +=   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
  
- CXX = g++
+ CXX =? g++
  AR = ar rc
+
+ RANLIB = ranlib
+
