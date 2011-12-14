@@ -15,6 +15,8 @@ DISTNAME=	4stAttack-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connect four stones in a straight line
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes

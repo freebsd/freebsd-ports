@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/pongix/descargas/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free pong-like game
 
+LICENSE=	GPLv2
+
 USE_SDL=	sdl image net
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

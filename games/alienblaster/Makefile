@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Blaster
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 REINPLACE_ARGS=	-i ''

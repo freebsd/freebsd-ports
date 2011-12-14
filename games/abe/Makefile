@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abe's Amazing Adventure
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 

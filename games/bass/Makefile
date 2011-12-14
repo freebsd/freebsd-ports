@@ -15,6 +15,11 @@ DISTNAME=	bass-cd-1.2
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
+LICENSE=	unknown
+LICENSE_NAME=	no name
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/readme.txt
+
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
 USE_ZIP=	yes

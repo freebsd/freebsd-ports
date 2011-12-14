@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.alessandropira.org/alienwave/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot'em up game written using ncurses
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}
 

@@ -16,6 +16,9 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free role playing game
 
+LICENSE=	GPLv2
+LICENSE_DISTFILES=	${DISTFILES}
+
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		freetype.9:${PORTSDIR}/print/freetype2
 

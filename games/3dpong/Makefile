@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/3dpong/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window 3D Pong game for 1 or 2 players with a ball and paddles
 
+LICENSE=	GPLv2
+
 USE_XORG=	x11
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

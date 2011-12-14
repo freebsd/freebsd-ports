@@ -22,7 +22,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

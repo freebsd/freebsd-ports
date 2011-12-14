@@ -14,6 +14,8 @@ MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A GTK+ implementation of Conway's Game of Life
 
+LICENSE=	GPLv2
+
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

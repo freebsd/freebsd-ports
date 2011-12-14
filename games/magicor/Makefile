@@ -16,6 +16,11 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old-school, puzzle game similar to Solomon's Key
 
+LICENSE=	unknown
+LICENSE_NAME=	Public Domain
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
