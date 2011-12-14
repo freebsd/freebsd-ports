@@ -9,9 +9,10 @@ PORTNAME=		krb5
 PORTVERSION=		1.9.2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-#PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
+PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
+PATCHFILES=		2011-007-patch.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -30,7 +31,7 @@ USE_AUTOTOOLS=		libtool
 CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
-#PATCH_DIST_STRIP=	-p2
+PATCH_DIST_STRIP=	-p2
 
 LICENSE=		MIT
 
