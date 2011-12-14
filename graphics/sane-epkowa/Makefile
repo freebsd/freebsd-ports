@@ -48,7 +48,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://lx1.avasys.jp/iscan/${PORTVERSION}/
 DISTNAME= iscan_${PORTVERSION}-1
 
-MAINTAINER=	luigi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The sane-epkowa driver for FreeBSD
 
 # use the following two lines for 2.15.0

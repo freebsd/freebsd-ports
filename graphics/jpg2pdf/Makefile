@@ -12,7 +12,7 @@ MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/
 DISTNAME=	${PORTVERSION}-${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	luigi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plain C converter of jpeg images to PDF or PostScript
 
 MAN1=		jpg2pdf.1
