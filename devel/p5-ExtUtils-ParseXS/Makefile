@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-ParseXS
-PORTVERSION=	3.04
+PORTVERSION=	3.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SMUELLER
@@ -27,7 +27,7 @@ MAN3=		ExtUtils::ParseXS.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
+.if ${PERL_LEVEL} < 501000
 BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 .endif
 
