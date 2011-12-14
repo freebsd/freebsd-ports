@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	mail www pear
-PKGNAMEPREFIX=	horde
+PKGNAMEPREFIX=	horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde email filter rules manager
@@ -33,6 +33,9 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Perms \
 		Horde_Share \
 		Horde_Util
+
+RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
+RUN_DEPENDS+=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
