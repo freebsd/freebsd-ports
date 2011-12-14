@@ -4,21 +4,25 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	0022
-PORTREVISION=	2
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wblock@wonkity.com
+MAINTAINER=	wblock@freebsd.org
 COMMENT=	Open-source electronics prototyping platform
 
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
 		${LOCALBASE}/bin/avrdude:${PORTSDIR}/devel/avrdude \
 		${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_JAVA=	1.6+
 NO_BUILD=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	arduino pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -56,6 +60,7 @@ PLIST_SUB+=	EXAMPLES=""
 
 post-extract:
 	@${RM} ${WRKSRC}/hardware/tools/avrdude
+	@${RM} ${WRKSRC}/hardware/tools/avrdude64
 	@${RM} ${WRKSRC}/hardware/tools/avrdude.conf
 	@${MKDIR} ${WRKSRC}/hardware/tools/avr
 	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
@@ -67,12 +72,10 @@ post-extract:
 	@${RM} ${WRKSRC}/lib/librxtxSerial.so
 	@${LN} -s ${JAVA_HOME}/lib/${ARCH}/librxtxSerial.so ${WRKSRC}/lib/
 
-	@${REINPLACE_CMD} -e 's|stk500|arduino|g' ${WRKSRC}/hardware/arduino/boards.txt
 	@${REINPLACE_CMD} -e 's|readlink -f|realpath|g' ${WRKSRC}/arduino
 
 post-patch:
 	@${RM} ${WRKSRC}/hardware/arduino/bootloaders/atmega8/*.orig
-	@${RM} ${WRKSRC}/hardware/arduino/cores/arduino/*.orig
 
 .if defined(WITHOUT_REFDOCS)
 	@${RM} -rf ${WRKSRC}/reference

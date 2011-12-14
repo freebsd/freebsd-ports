@@ -1,63 +1,64 @@
 arduino/arduino
-%%EXAMPLES%%arduino/examples/1.Basics/AnalogReadSerial/AnalogReadSerial.pde
-%%EXAMPLES%%arduino/examples/1.Basics/BareMinimum/BareMinimum.pde
-%%EXAMPLES%%arduino/examples/1.Basics/Blink/Blink.pde
-%%EXAMPLES%%arduino/examples/1.Basics/DigitalReadSerial/DigitalReadSerial.pde
-%%EXAMPLES%%arduino/examples/1.Basics/Fade/Fade.pde
-%%EXAMPLES%%arduino/examples/2.Digital/BlinkWithoutDelay/BlinkWithoutDelay.pde
-%%EXAMPLES%%arduino/examples/2.Digital/Button/Button.pde
-%%EXAMPLES%%arduino/examples/2.Digital/Debounce/Debounce.pde
-%%EXAMPLES%%arduino/examples/2.Digital/StateChangeDetection/StateChangeDetection.pde
+%%EXAMPLES%%arduino/examples/1.Basics/AnalogReadSerial/AnalogReadSerial.ino
+%%EXAMPLES%%arduino/examples/1.Basics/BareMinimum/BareMinimum.ino
+%%EXAMPLES%%arduino/examples/1.Basics/Blink/Blink.ino
+%%EXAMPLES%%arduino/examples/1.Basics/DigitalReadSerial/DigitalReadSerial.ino
+%%EXAMPLES%%arduino/examples/1.Basics/Fade/Fade.ino
+%%EXAMPLES%%arduino/examples/2.Digital/BlinkWithoutDelay/BlinkWithoutDelay.ino
+%%EXAMPLES%%arduino/examples/2.Digital/Button/Button.ino
+%%EXAMPLES%%arduino/examples/2.Digital/Debounce/Debounce.ino
+%%EXAMPLES%%arduino/examples/2.Digital/StateChangeDetection/StateChangeDetection.ino
 %%EXAMPLES%%arduino/examples/2.Digital/toneKeyboard/pitches.h
-%%EXAMPLES%%arduino/examples/2.Digital/toneKeyboard/toneKeyboard.pde
+%%EXAMPLES%%arduino/examples/2.Digital/toneKeyboard/toneKeyboard.ino
 %%EXAMPLES%%arduino/examples/2.Digital/toneMelody/pitches.h
-%%EXAMPLES%%arduino/examples/2.Digital/toneMelody/toneMelody.pde
+%%EXAMPLES%%arduino/examples/2.Digital/toneMelody/toneMelody.ino
 %%EXAMPLES%%arduino/examples/2.Digital/toneMultiple/pitches.h
-%%EXAMPLES%%arduino/examples/2.Digital/toneMultiple/toneMultiple.pde
-%%EXAMPLES%%arduino/examples/2.Digital/tonePitchFollower/tonePitchFollower.pde
-%%EXAMPLES%%arduino/examples/3.Analog/AnalogInOutSerial/AnalogInOutSerial.pde
-%%EXAMPLES%%arduino/examples/3.Analog/AnalogInput/AnalogInput.pde
-%%EXAMPLES%%arduino/examples/3.Analog/AnalogWriteMega/AnalogWriteMega.pde
-%%EXAMPLES%%arduino/examples/3.Analog/Calibration/Calibration.pde
-%%EXAMPLES%%arduino/examples/3.Analog/Fading/Fading.pde
-%%EXAMPLES%%arduino/examples/3.Analog/Smoothing/Smoothing.pde
-%%EXAMPLES%%arduino/examples/4.Communication/ASCIITable/ASCIITable.pde
-%%EXAMPLES%%arduino/examples/4.Communication/Dimmer/Dimmer.pde
-%%EXAMPLES%%arduino/examples/4.Communication/Graph/Graph.pde
-%%EXAMPLES%%arduino/examples/4.Communication/MIDI/Midi.pde
-%%EXAMPLES%%arduino/examples/4.Communication/MultiSerialMega/MultiSerialMega.pde
-%%EXAMPLES%%arduino/examples/4.Communication/PhysicalPixel/PhysicalPixel.pde
-%%EXAMPLES%%arduino/examples/4.Communication/SerialCallResponse/SerialCallResponse.pde
-%%EXAMPLES%%arduino/examples/4.Communication/SerialCallResponseASCII/SerialCallResponseASCII.pde
-%%EXAMPLES%%arduino/examples/4.Communication/VirtualColorMixer/VirtualColorMixer.pde
-%%EXAMPLES%%arduino/examples/5.Control/Arrays/Arrays.pde
-%%EXAMPLES%%arduino/examples/5.Control/ForLoopIteration/ForLoopIteration.pde
-%%EXAMPLES%%arduino/examples/5.Control/IfStatementConditional/IfStatementConditional.pde
-%%EXAMPLES%%arduino/examples/5.Control/WhileStatementConditional/WhileStatementConditional.pde
-%%EXAMPLES%%arduino/examples/5.Control/switchCase/switchCase.pde
-%%EXAMPLES%%arduino/examples/5.Control/switchCase2/switchCase2.pde
-%%EXAMPLES%%arduino/examples/6.Sensors/ADXL3xx/ADXL3xx.pde
-%%EXAMPLES%%arduino/examples/6.Sensors/Knock/Knock.pde
-%%EXAMPLES%%arduino/examples/6.Sensors/Memsic2125/Memsic2125.pde
-%%EXAMPLES%%arduino/examples/6.Sensors/Ping/Ping.pde
-%%EXAMPLES%%arduino/examples/7.Display/RowColumnScanning/RowColumnScanning.pde
-%%EXAMPLES%%arduino/examples/7.Display/barGraph/barGraph.pde
-%%EXAMPLES%%arduino/examples/8.Strings/CharacterAnalysis/CharacterAnalysis.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringAdditionOperator/StringAdditionOperator.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringAppendOperator/StringAppendOperator.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringCaseChanges/StringCaseChanges.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringCharacters/StringCharacters.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringComparisonOperators/StringComparisonOperators.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringConstructors/StringConstructors.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringIndexOf/StringIndexOf.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringLength/StringLength.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringLengthTrim/StringLengthTrim.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringReplace/StringReplace.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringStartsWithEndsWith/StringStartsWithEndsWith.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringSubstring/StringSubstring.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringToInt/StringToInt.pde
-%%EXAMPLES%%arduino/examples/8.Strings/StringToIntRGB/StringToIntRGB.pde
-%%EXAMPLES%%arduino/examples/ArduinoISP/ArduinoISP.pde
+%%EXAMPLES%%arduino/examples/2.Digital/toneMultiple/toneMultiple.ino
+%%EXAMPLES%%arduino/examples/2.Digital/tonePitchFollower/tonePitchFollower.ino
+%%EXAMPLES%%arduino/examples/3.Analog/AnalogInOutSerial/AnalogInOutSerial.ino
+%%EXAMPLES%%arduino/examples/3.Analog/AnalogInput/AnalogInput.ino
+%%EXAMPLES%%arduino/examples/3.Analog/AnalogWriteMega/AnalogWriteMega.ino
+%%EXAMPLES%%arduino/examples/3.Analog/Calibration/Calibration.ino
+%%EXAMPLES%%arduino/examples/3.Analog/Fading/Fading.ino
+%%EXAMPLES%%arduino/examples/3.Analog/Smoothing/Smoothing.ino
+%%EXAMPLES%%arduino/examples/4.Communication/ASCIITable/ASCIITable.ino
+%%EXAMPLES%%arduino/examples/4.Communication/Dimmer/Dimmer.ino
+%%EXAMPLES%%arduino/examples/4.Communication/Graph/Graph.ino
+%%EXAMPLES%%arduino/examples/4.Communication/MIDI/Midi.ino
+%%EXAMPLES%%arduino/examples/4.Communication/MultiSerialMega/MultiSerialMega.ino
+%%EXAMPLES%%arduino/examples/4.Communication/PhysicalPixel/PhysicalPixel.ino
+%%EXAMPLES%%arduino/examples/4.Communication/SerialCallResponse/SerialCallResponse.ino
+%%EXAMPLES%%arduino/examples/4.Communication/SerialCallResponseASCII/SerialCallResponseASCII.ino
+%%EXAMPLES%%arduino/examples/4.Communication/SerialEvent/SerialEvent.ino
+%%EXAMPLES%%arduino/examples/4.Communication/VirtualColorMixer/VirtualColorMixer.ino
+%%EXAMPLES%%arduino/examples/5.Control/Arrays/Arrays.ino
+%%EXAMPLES%%arduino/examples/5.Control/ForLoopIteration/ForLoopIteration.ino
+%%EXAMPLES%%arduino/examples/5.Control/IfStatementConditional/IfStatementConditional.ino
+%%EXAMPLES%%arduino/examples/5.Control/WhileStatementConditional/WhileStatementConditional.ino
+%%EXAMPLES%%arduino/examples/5.Control/switchCase/switchCase.ino
+%%EXAMPLES%%arduino/examples/5.Control/switchCase2/switchCase2.ino
+%%EXAMPLES%%arduino/examples/6.Sensors/ADXL3xx/ADXL3xx.ino
+%%EXAMPLES%%arduino/examples/6.Sensors/Knock/Knock.ino
+%%EXAMPLES%%arduino/examples/6.Sensors/Memsic2125/Memsic2125.ino
+%%EXAMPLES%%arduino/examples/6.Sensors/Ping/Ping.ino
+%%EXAMPLES%%arduino/examples/7.Display/RowColumnScanning/RowColumnScanning.ino
+%%EXAMPLES%%arduino/examples/7.Display/barGraph/barGraph.ino
+%%EXAMPLES%%arduino/examples/8.Strings/CharacterAnalysis/CharacterAnalysis.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringAdditionOperator/StringAdditionOperator.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringAppendOperator/StringAppendOperator.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringCaseChanges/StringCaseChanges.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringCharacters/StringCharacters.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringComparisonOperators/StringComparisonOperators.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringConstructors/StringConstructors.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringIndexOf/StringIndexOf.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringLength/StringLength.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringLengthTrim/StringLengthTrim.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringReplace/StringReplace.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringStartsWithEndsWith/StringStartsWithEndsWith.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringSubstring/StringSubstring.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringToInt/StringToInt.ino
+%%EXAMPLES%%arduino/examples/8.Strings/StringToIntRGB/StringToIntRGB.ino
+%%EXAMPLES%%arduino/examples/ArduinoISP/ArduinoISP.ino
 arduino/hardware/arduino/boards.txt
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_atmega1280.hex
@@ -74,30 +75,43 @@ arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.hex
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168_atmega328_bt.hex
 arduino/hardware/arduino/bootloaders/bt/Makefile
+arduino/hardware/arduino/bootloaders/diskloader/DiskLoader-Leonardo.hex
+arduino/hardware/arduino/bootloaders/diskloader/DiskLoader.elf
+arduino/hardware/arduino/bootloaders/diskloader/DiskLoader.hex
+arduino/hardware/arduino/bootloaders/diskloader/DiskLoader.lss
+arduino/hardware/arduino/bootloaders/diskloader/DiskLoader.map
+arduino/hardware/arduino/bootloaders/diskloader/Makefile
+arduino/hardware/arduino/bootloaders/diskloader/build/DiskLoader.d
+arduino/hardware/arduino/bootloaders/diskloader/build/DiskLoader.o
+arduino/hardware/arduino/bootloaders/diskloader/build/USBCore.d
+arduino/hardware/arduino/bootloaders/diskloader/build/USBCore.o
+arduino/hardware/arduino/bootloaders/diskloader/build/USBDesc.d
+arduino/hardware/arduino/bootloaders/diskloader/build/USBDesc.o
+arduino/hardware/arduino/bootloaders/diskloader/src/DiskLoader.cpp
+arduino/hardware/arduino/bootloaders/diskloader/src/Platform.h
+arduino/hardware/arduino/bootloaders/diskloader/src/USBCore.cpp
+arduino/hardware/arduino/bootloaders/diskloader/src/USBCore.h
+arduino/hardware/arduino/bootloaders/diskloader/src/USBDesc.cpp
+arduino/hardware/arduino/bootloaders/diskloader/src/USBDesc.h
 arduino/hardware/arduino/bootloaders/lilypad/LilyPadBOOT_168.hex
 arduino/hardware/arduino/bootloaders/lilypad/src/ATmegaBOOT.c
 arduino/hardware/arduino/bootloaders/lilypad/src/Makefile
 arduino/hardware/arduino/bootloaders/optiboot/Makefile
+arduino/hardware/arduino/bootloaders/optiboot/README.TXT
+arduino/hardware/arduino/bootloaders/optiboot/boot.h
 arduino/hardware/arduino/bootloaders/optiboot/makeall
+arduino/hardware/arduino/bootloaders/optiboot/omake
+arduino/hardware/arduino/bootloaders/optiboot/omake.bat
 arduino/hardware/arduino/bootloaders/optiboot/optiboot.c
+arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega168.hex
+arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega168.lst
+arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega328-Mini.hex
 arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega328.hex
 arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega328.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega328_pro_8MHz.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega328_pro_8MHz.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_diecimila.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_diecimila.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_lilypad.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_lilypad.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_lilypad_resonator.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_lilypad_resonator.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_luminet.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_luminet.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_16MHz.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_16MHz.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_20mhz.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_20mhz.lst
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_8MHz.hex
-arduino/hardware/arduino/bootloaders/optiboot/optiboot_pro_8MHz.lst
+arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega8.hex
+arduino/hardware/arduino/bootloaders/optiboot/optiboot_atmega8.lst
+arduino/hardware/arduino/bootloaders/optiboot/pin_defs.h
+arduino/hardware/arduino/bootloaders/optiboot/stk500.h
 arduino/hardware/arduino/bootloaders/stk500v2/License.txt
 arduino/hardware/arduino/bootloaders/stk500v2/Makefile
 arduino/hardware/arduino/bootloaders/stk500v2/STK500V2.pnproj
@@ -107,30 +121,45 @@ arduino/hardware/arduino/bootloaders/stk500v2/command.h
 arduino/hardware/arduino/bootloaders/stk500v2/stk500boot.c
 arduino/hardware/arduino/bootloaders/stk500v2/stk500boot.ppg
 arduino/hardware/arduino/bootloaders/stk500v2/stk500boot_v2_mega2560.hex
+arduino/hardware/arduino/cores/arduino/Arduino.h
+arduino/hardware/arduino/cores/arduino/CDC.cpp
+arduino/hardware/arduino/cores/arduino/Client.h
+arduino/hardware/arduino/cores/arduino/HID.cpp
 arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp
 arduino/hardware/arduino/cores/arduino/HardwareSerial.h
+arduino/hardware/arduino/cores/arduino/IPAddress.cpp
+arduino/hardware/arduino/cores/arduino/IPAddress.h
+arduino/hardware/arduino/cores/arduino/Platform.h
 arduino/hardware/arduino/cores/arduino/Print.cpp
 arduino/hardware/arduino/cores/arduino/Print.h
+arduino/hardware/arduino/cores/arduino/Printable.h
+arduino/hardware/arduino/cores/arduino/Server.h
+arduino/hardware/arduino/cores/arduino/Stream.cpp
 arduino/hardware/arduino/cores/arduino/Stream.h
 arduino/hardware/arduino/cores/arduino/Tone.cpp
+arduino/hardware/arduino/cores/arduino/USBAPI.h
+arduino/hardware/arduino/cores/arduino/USBCore.cpp
+arduino/hardware/arduino/cores/arduino/USBCore.h
+arduino/hardware/arduino/cores/arduino/USBDesc.h
+arduino/hardware/arduino/cores/arduino/Udp.h
 arduino/hardware/arduino/cores/arduino/WCharacter.h
-arduino/hardware/arduino/cores/arduino/WConstants.h
 arduino/hardware/arduino/cores/arduino/WInterrupts.c
 arduino/hardware/arduino/cores/arduino/WMath.cpp
-arduino/hardware/arduino/cores/arduino/WProgram.h
 arduino/hardware/arduino/cores/arduino/WString.cpp
 arduino/hardware/arduino/cores/arduino/WString.h
 arduino/hardware/arduino/cores/arduino/binary.h
 arduino/hardware/arduino/cores/arduino/main.cpp
-arduino/hardware/arduino/cores/arduino/pins_arduino.c
-arduino/hardware/arduino/cores/arduino/pins_arduino.h
+arduino/hardware/arduino/cores/arduino/new.cpp
+arduino/hardware/arduino/cores/arduino/new.h
 arduino/hardware/arduino/cores/arduino/wiring.c
-arduino/hardware/arduino/cores/arduino/wiring.h
 arduino/hardware/arduino/cores/arduino/wiring_analog.c
 arduino/hardware/arduino/cores/arduino/wiring_digital.c
 arduino/hardware/arduino/cores/arduino/wiring_private.h
 arduino/hardware/arduino/cores/arduino/wiring_pulse.c
 arduino/hardware/arduino/cores/arduino/wiring_shift.c
+arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-Mega2560-Rev3.hex
+arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-MegaADK-Rev3.hex
+arduino/hardware/arduino/firmwares/Arduino-COMBINED-dfu-usbserial-atmega16u2-Uno-Rev3.hex
 arduino/hardware/arduino/firmwares/MEGA-dfu_and_usbserial_combined.hex
 arduino/hardware/arduino/firmwares/README.txt
 arduino/hardware/arduino/firmwares/UNO-dfu_and_usbserial_combined.hex
@@ -141,6 +170,9 @@ arduino/hardware/arduino/firmwares/arduino-usbdfu/Descriptors.c
 arduino/hardware/arduino/firmwares/arduino-usbdfu/Descriptors.h
 arduino/hardware/arduino/firmwares/arduino-usbdfu/makefile
 arduino/hardware/arduino/firmwares/arduino-usbdfu/readme.txt
+arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-Mega2560-Rev3.hex
+arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-MegaADK-Rev3.hex
+arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-atmega16u2-Uno-Rev3.hex
 arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-mega.hex
 arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial-uno.hex
 arduino/hardware/arduino/firmwares/arduino-usbserial/Arduino-usbserial.c
@@ -152,6 +184,11 @@ arduino/hardware/arduino/firmwares/arduino-usbserial/Lib/LightweightRingBuff.h
 arduino/hardware/arduino/firmwares/arduino-usbserial/makefile
 arduino/hardware/arduino/firmwares/arduino-usbserial/readme.txt
 arduino/hardware/arduino/programmers.txt
+arduino/hardware/arduino/variants/eightanaloginputs/pins_arduino.h
+arduino/hardware/arduino/variants/leonardo/pins_arduino.h
+arduino/hardware/arduino/variants/mega/pins_arduino.h
+arduino/hardware/arduino/variants/micro/pins_arduino.h
+arduino/hardware/arduino/variants/standard/pins_arduino.h
 arduino/hardware/tools/avr/bin
 arduino/hardware/tools/avr/etc
 arduino/lib/RXTXcomm.jar
@@ -161,6 +198,7 @@ arduino/lib/ecj.jar
 arduino/lib/jna.jar
 arduino/lib/keywords.txt
 arduino/lib/librxtxSerial.so
+arduino/lib/librxtxSerial64.so
 arduino/lib/pde.jar
 arduino/lib/preferences.txt
 arduino/lib/theme/buttons.gif
@@ -175,43 +213,39 @@ arduino/lib/theme/tab-unsel-mid.gif
 arduino/lib/theme/tab-unsel-right.gif
 arduino/lib/theme/theme.txt
 arduino/lib/version.txt
-arduino/libraries/ArduinoTestSuite/ArduinoTestSuite.cpp
-arduino/libraries/ArduinoTestSuite/ArduinoTestSuite.h
-arduino/libraries/ArduinoTestSuite/avr_cpunames.h
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_Constants/ATS_Constants.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_Delay/ATS_Delay.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_General/ATS_General.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_SD_File/ATS_SD_File.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_SD_Files/ATS_SD_Files.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_SD_Seek/ATS_SD_Seek.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_Skeleton/ATS_Skeleton.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_StringIndexOfMemory/ATS_StringIndexOfMemory.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_StringTest/ATS_StringTest.pde
-%%EXAMPLES%%arduino/libraries/ArduinoTestSuite/examples/ATS_ToneTest/ATS_ToneTest.pde
 arduino/libraries/EEPROM/EEPROM.cpp
 arduino/libraries/EEPROM/EEPROM.h
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_clear/eeprom_clear.pde
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_read/eeprom_read.pde
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_write/eeprom_write.pde
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_clear/eeprom_clear.ino
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_read/eeprom_read.ino
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_write/eeprom_write.ino
 arduino/libraries/EEPROM/keywords.txt
-arduino/libraries/Ethernet/Client.cpp
-arduino/libraries/Ethernet/Client.h
+arduino/libraries/Ethernet/Dhcp.cpp
+arduino/libraries/Ethernet/Dhcp.h
+arduino/libraries/Ethernet/Dns.cpp
+arduino/libraries/Ethernet/Dns.h
 arduino/libraries/Ethernet/Ethernet.cpp
 arduino/libraries/Ethernet/Ethernet.h
-arduino/libraries/Ethernet/Server.cpp
-arduino/libraries/Ethernet/Server.h
-arduino/libraries/Ethernet/Udp.cpp
-arduino/libraries/Ethernet/Udp.h
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/BarometricPressureWebServer/BarometricPressureWebServer.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/ChatServer/ChatServer.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClient/PachubeClient.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClientString/PachubeClientString.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/TelnetClient/TelnetClient.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/UDPSendReceiveString/UDPSendReceiveString.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/UdpNtpClient/UdpNtpClient.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClient/WebClient.pde
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebServer/WebServer.pde
+arduino/libraries/Ethernet/EthernetClient.cpp
+arduino/libraries/Ethernet/EthernetClient.h
+arduino/libraries/Ethernet/EthernetServer.cpp
+arduino/libraries/Ethernet/EthernetServer.h
+arduino/libraries/Ethernet/EthernetUdp.cpp
+arduino/libraries/Ethernet/EthernetUdp.h
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/BarometricPressureWebServer/BarometricPressureWebServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/ChatServer/ChatServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpAddressPrinter/DhcpAddressPrinter.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpChatServer/DhcpChatServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/DnsWebClient/DnsWebClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClient/PachubeClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClientString/PachubeClientString.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/TelnetClient/TelnetClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/TwitterClient/TwitterClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/UDPSendReceiveString/UDPSendReceiveString.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/UdpNtpClient/UdpNtpClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClient/WebClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebServer/WebServer.ino
 arduino/libraries/Ethernet/keywords.txt
+arduino/libraries/Ethernet/util.h
 arduino/libraries/Ethernet/utility/socket.cpp
 arduino/libraries/Ethernet/utility/socket.h
 arduino/libraries/Ethernet/utility/w5100.cpp
@@ -221,50 +255,41 @@ arduino/libraries/Firmata/Firmata.cpp
 arduino/libraries/Firmata/Firmata.h
 arduino/libraries/Firmata/LICENSE.txt
 arduino/libraries/Firmata/TODO.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/AllInputsFirmata/AllInputsFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/AnalogFirmata/AnalogFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/AnalogFirmata/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/EchoString/EchoString.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/EchoString/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/I2CFirmata/I2CFirmata.pde
+%%EXAMPLES%%arduino/libraries/Firmata/examples/AllInputsFirmata/AllInputsFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/AnalogFirmata/AnalogFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/EchoString/EchoString.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/I2CFirmata/I2CFirmata.ino
 %%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/LICENSE.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/OldStandardFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/ServoFirmata/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/ServoFirmata/ServoFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleAnalogFirmata/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleAnalogFirmata/SimpleAnalogFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleDigitalFirmata/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleDigitalFirmata/SimpleDigitalFirmata.pde
+%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/OldStandardFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/ServoFirmata/ServoFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleAnalogFirmata/SimpleAnalogFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleDigitalFirmata/SimpleDigitalFirmata.ino
 %%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/LICENSE.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/Makefile
-%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/StandardFirmata.pde
-%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata_2_2_forUNO_0_3/StandardFirmata_2_2_forUNO_0_3.pde
+%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/StandardFirmata.ino
 arduino/libraries/Firmata/keywords.txt
 arduino/libraries/LiquidCrystal/LiquidCrystal.cpp
 arduino/libraries/LiquidCrystal/LiquidCrystal.h
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Autoscroll/Autoscroll.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Blink/Blink.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Cursor/Cursor.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Display/Display.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/HelloWorld/HelloWorld.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Scroll/Scroll.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/SerialDisplay/SerialDisplay.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/TextDirection/TextDirection.pde
-%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/setCursor/setCursor.pde
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Autoscroll/Autoscroll.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Blink/Blink.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Cursor/Cursor.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/CustomCharacter/CustomCharacter.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Display/Display.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/HelloWorld/HelloWorld.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Scroll/Scroll.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/SerialDisplay/SerialDisplay.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/TextDirection/TextDirection.ino
+%%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/setCursor/setCursor.ino
 arduino/libraries/LiquidCrystal/keywords.txt
-arduino/libraries/Matrix/Matrix.cpp
-arduino/libraries/Matrix/Matrix.h
-%%EXAMPLES%%arduino/libraries/Matrix/examples/hello_matrix/hello_matrix.pde
-%%EXAMPLES%%arduino/libraries/Matrix/examples/sprite_animation/sprite_animation.pde
-arduino/libraries/Matrix/keywords.txt
 arduino/libraries/SD/File.cpp
 arduino/libraries/SD/README.txt
 arduino/libraries/SD/SD.cpp
 arduino/libraries/SD/SD.h
-%%EXAMPLES%%arduino/libraries/SD/examples/Datalogger/Datalogger.pde
-%%EXAMPLES%%arduino/libraries/SD/examples/DumpFile/DumpFile.pde
-%%EXAMPLES%%arduino/libraries/SD/examples/Files/Files.pde
-%%EXAMPLES%%arduino/libraries/SD/examples/ReadWrite/ReadWrite.pde
+%%EXAMPLES%%arduino/libraries/SD/examples/CardInfo/CardInfo.ino
+%%EXAMPLES%%arduino/libraries/SD/examples/Datalogger/Datalogger.ino
+%%EXAMPLES%%arduino/libraries/SD/examples/DumpFile/DumpFile.ino
+%%EXAMPLES%%arduino/libraries/SD/examples/Files/Files.ino
+%%EXAMPLES%%arduino/libraries/SD/examples/ReadWrite/ReadWrite.ino
+%%EXAMPLES%%arduino/libraries/SD/examples/listfiles/listfiles.ino
 arduino/libraries/SD/keywords.txt
 arduino/libraries/SD/utility/FatStructs.h
 arduino/libraries/SD/utility/Sd2Card.cpp
@@ -278,41 +303,38 @@ arduino/libraries/SD/utility/SdInfo.h
 arduino/libraries/SD/utility/SdVolume.cpp
 arduino/libraries/SPI/SPI.cpp
 arduino/libraries/SPI/SPI.h
-%%EXAMPLES%%arduino/libraries/SPI/examples/BarometricPressureSensor/BarometricPressureSensor.pde
-%%EXAMPLES%%arduino/libraries/SPI/examples/BarometricPressureSensor/BarometricPressureSensor/BarometricPressureSensor.pde
-%%EXAMPLES%%arduino/libraries/SPI/examples/DigitalPotControl/DigitalPotControl.pde
+%%EXAMPLES%%arduino/libraries/SPI/examples/BarometricPressureSensor/BarometricPressureSensor.ino
+%%EXAMPLES%%arduino/libraries/SPI/examples/BarometricPressureSensor/BarometricPressureSensor/BarometricPressureSensor.ino
+%%EXAMPLES%%arduino/libraries/SPI/examples/DigitalPotControl/DigitalPotControl.ino
 arduino/libraries/SPI/keywords.txt
 arduino/libraries/Servo/Servo.cpp
 arduino/libraries/Servo/Servo.h
-%%EXAMPLES%%arduino/libraries/Servo/examples/Knob/Knob.pde
-%%EXAMPLES%%arduino/libraries/Servo/examples/Sweep/Sweep.pde
+%%EXAMPLES%%arduino/libraries/Servo/examples/Knob/Knob.ino
+%%EXAMPLES%%arduino/libraries/Servo/examples/Sweep/Sweep.ino
 arduino/libraries/Servo/keywords.txt
 arduino/libraries/SoftwareSerial/SoftwareSerial.cpp
 arduino/libraries/SoftwareSerial/SoftwareSerial.h
+%%EXAMPLES%%arduino/libraries/SoftwareSerial/examples/SoftwareSerialExample/SoftwareSerialExample.ino
+%%EXAMPLES%%arduino/libraries/SoftwareSerial/examples/TwoPortReceive/TwoPortReceive.ino
 arduino/libraries/SoftwareSerial/keywords.txt
-arduino/libraries/Sprite/Sprite.cpp
-arduino/libraries/Sprite/Sprite.h
-arduino/libraries/Sprite/binary.h
-arduino/libraries/Sprite/keywords.txt
 arduino/libraries/Stepper/Stepper.cpp
 arduino/libraries/Stepper/Stepper.h
-%%EXAMPLES%%arduino/libraries/Stepper/examples/MotorKnob/MotorKnob.pde
-%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_oneRevolution/stepper_oneRevolution.pde
-%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_oneStepAtATime/stepper_oneStepAtATime.pde
-%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_speedControl/stepper_speedControl.pde
+%%EXAMPLES%%arduino/libraries/Stepper/examples/MotorKnob/MotorKnob.ino
+%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_oneRevolution/stepper_oneRevolution.ino
+%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_oneStepAtATime/stepper_oneStepAtATime.ino
+%%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_speedControl/stepper_speedControl.ino
 arduino/libraries/Stepper/keywords.txt
 arduino/libraries/Wire/Wire.cpp
 arduino/libraries/Wire/Wire.h
-%%EXAMPLES%%arduino/libraries/Wire/examples/SFRRanger_reader/SFRRanger_reader.pde
-%%EXAMPLES%%arduino/libraries/Wire/examples/digital_potentiometer/digital_potentiometer.pde
-%%EXAMPLES%%arduino/libraries/Wire/examples/master_reader/master_reader.pde
-%%EXAMPLES%%arduino/libraries/Wire/examples/master_writer/master_writer.pde
-%%EXAMPLES%%arduino/libraries/Wire/examples/slave_receiver/slave_receiver.pde
-%%EXAMPLES%%arduino/libraries/Wire/examples/slave_sender/slave_sender.pde
+%%EXAMPLES%%arduino/libraries/Wire/examples/SFRRanger_reader/SFRRanger_reader.ino
+%%EXAMPLES%%arduino/libraries/Wire/examples/digital_potentiometer/digital_potentiometer.ino
+%%EXAMPLES%%arduino/libraries/Wire/examples/master_reader/master_reader.ino
+%%EXAMPLES%%arduino/libraries/Wire/examples/master_writer/master_writer.ino
+%%EXAMPLES%%arduino/libraries/Wire/examples/slave_receiver/slave_receiver.ino
+%%EXAMPLES%%arduino/libraries/Wire/examples/slave_sender/slave_sender.ino
 arduino/libraries/Wire/keywords.txt
 arduino/libraries/Wire/utility/twi.c
 arduino/libraries/Wire/utility/twi.h
-%%REFDOCS%%arduino/reference/ASCIIchart.html
 %%REFDOCS%%arduino/reference/Abs.html
 %%REFDOCS%%arduino/reference/AnalogRead.html
 %%REFDOCS%%arduino/reference/AnalogReference.html
@@ -321,7 +343,6 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/Array.html
 %%REFDOCS%%arduino/reference/Assignment.html
 %%REFDOCS%%arduino/reference/AttachInterrupt.html
-%%REFDOCS%%arduino/reference/BeginSerial.html
 %%REFDOCS%%arduino/reference/Bit.html
 %%REFDOCS%%arduino/reference/BitClear.html
 %%REFDOCS%%arduino/reference/BitRead.html
@@ -329,18 +350,15 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/BitWrite.html
 %%REFDOCS%%arduino/reference/Bitshift.html
 %%REFDOCS%%arduino/reference/BitwiseAnd.html
-%%REFDOCS%%arduino/reference/BitwiseCompound.html
 %%REFDOCS%%arduino/reference/BitwiseCompoundAnd.html
 %%REFDOCS%%arduino/reference/BitwiseCompoundOr.html
 %%REFDOCS%%arduino/reference/BitwiseXorNot.html
-%%REFDOCS%%arduino/reference/Board.html
 %%REFDOCS%%arduino/reference/Boolean.html
 %%REFDOCS%%arduino/reference/BooleanVariables.html
 %%REFDOCS%%arduino/reference/Braces.html
 %%REFDOCS%%arduino/reference/Break.html
 %%REFDOCS%%arduino/reference/Byte.html
 %%REFDOCS%%arduino/reference/ByteCast.html
-%%REFDOCS%%arduino/reference/Cast.html
 %%REFDOCS%%arduino/reference/Changes.html
 %%REFDOCS%%arduino/reference/Char.html
 %%REFDOCS%%arduino/reference/CharCast.html
@@ -375,16 +393,31 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/Else.html
 %%REFDOCS%%arduino/reference/Ethernet.html
 %%REFDOCS%%arduino/reference/EthernetBegin.html
-%%REFDOCS%%arduino/reference/Extended.html
+%%REFDOCS%%arduino/reference/EthernetClient.html
+%%REFDOCS%%arduino/reference/EthernetIPAddress.html
+%%REFDOCS%%arduino/reference/EthernetLocalIP.html
+%%REFDOCS%%arduino/reference/EthernetServer.html
+%%REFDOCS%%arduino/reference/EthernetUDPAvailable.html
+%%REFDOCS%%arduino/reference/EthernetUDPBegin.html
+%%REFDOCS%%arduino/reference/EthernetUDPBeginPacket.html
+%%REFDOCS%%arduino/reference/EthernetUDPEndPacket.html
+%%REFDOCS%%arduino/reference/EthernetUDPParsePacket.html
+%%REFDOCS%%arduino/reference/EthernetUDPRead.html
+%%REFDOCS%%arduino/reference/EthernetUDPRemoteIP.html
+%%REFDOCS%%arduino/reference/EthernetUDPRemotePort.html
+%%REFDOCS%%arduino/reference/EthernetUDPWrite.html
 %%REFDOCS%%arduino/reference/FAQ.html
 %%REFDOCS%%arduino/reference/FileAvailable.html
 %%REFDOCS%%arduino/reference/FileClose.html
 %%REFDOCS%%arduino/reference/FileFlush.html
+%%REFDOCS%%arduino/reference/FileIsDirectory.html
+%%REFDOCS%%arduino/reference/FileOpenNextFile.html
 %%REFDOCS%%arduino/reference/FilePeek.html
 %%REFDOCS%%arduino/reference/FilePosition.html
 %%REFDOCS%%arduino/reference/FilePrint.html
 %%REFDOCS%%arduino/reference/FilePrintln.html
 %%REFDOCS%%arduino/reference/FileRead.html
+%%REFDOCS%%arduino/reference/FileRewindDirectory.html
 %%REFDOCS%%arduino/reference/FileSeek.html
 %%REFDOCS%%arduino/reference/FileSize.html
 %%REFDOCS%%arduino/reference/FileWrite.html
@@ -392,7 +425,6 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/FloatCast.html
 %%REFDOCS%%arduino/reference/For.html
 %%REFDOCS%%arduino/reference/Fpconstants.html
-%%REFDOCS%%arduino/reference/FunctionDeclaration.html
 %%REFDOCS%%arduino/reference/Goto.html
 %%REFDOCS%%arduino/reference/Guide_ArduinoBT.html
 %%REFDOCS%%arduino/reference/Guide_ArduinoEthernetShield.html
@@ -402,19 +434,13 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/Guide_ArduinoPro.html
 %%REFDOCS%%arduino/reference/Guide_ArduinoProMini.html
 %%REFDOCS%%arduino/reference/Guide_ArduinoXbeeShield.html
-%%REFDOCS%%arduino/reference/Guide_Board.html
 %%REFDOCS%%arduino/reference/Guide_Environment.html
-%%REFDOCS%%arduino/reference/Guide_Guide.html
-%%REFDOCS%%arduino/reference/Guide_HomePage.html
 %%REFDOCS%%arduino/reference/Guide_Introduction.html
 %%REFDOCS%%arduino/reference/Guide_MacOSX.html
-%%REFDOCS%%arduino/reference/Guide_RecentChanges.html
-%%REFDOCS%%arduino/reference/Guide_References.html
 %%REFDOCS%%arduino/reference/Guide_Troubleshooting.html
 %%REFDOCS%%arduino/reference/Guide_Windows.html
 %%REFDOCS%%arduino/reference/Guide_index.html
 %%REFDOCS%%arduino/reference/HighByte.html
-%%REFDOCS%%arduino/reference/HomePage.html
 %%REFDOCS%%arduino/reference/If.html
 %%REFDOCS%%arduino/reference/Include.html
 %%REFDOCS%%arduino/reference/Increment.html
@@ -423,7 +449,6 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/IntCast.html
 %%REFDOCS%%arduino/reference/IntegerConstants.html
 %%REFDOCS%%arduino/reference/Interrupts.html
-%%REFDOCS%%arduino/reference/Keywords.html
 %%REFDOCS%%arduino/reference/Libraries.html
 %%REFDOCS%%arduino/reference/LiquidCrystal.html
 %%REFDOCS%%arduino/reference/LiquidCrystalAutoscroll.html
@@ -458,25 +483,15 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/Modulo.html
 %%REFDOCS%%arduino/reference/NoInterrupts.html
 %%REFDOCS%%arduino/reference/NoTone.html
-%%REFDOCS%%arduino/reference/PROGMEM.html
 %%REFDOCS%%arduino/reference/PinMode.html
 %%REFDOCS%%arduino/reference/Pointer.html
-%%REFDOCS%%arduino/reference/PortManipulation.html
 %%REFDOCS%%arduino/reference/Pow.html
-%%REFDOCS%%arduino/reference/PrintBinary.html
-%%REFDOCS%%arduino/reference/PrintByte.html
-%%REFDOCS%%arduino/reference/PrintHex.html
-%%REFDOCS%%arduino/reference/PrintInteger.html
-%%REFDOCS%%arduino/reference/PrintMode.html
-%%REFDOCS%%arduino/reference/PrintNewline.html
-%%REFDOCS%%arduino/reference/PrintOctal.html
-%%REFDOCS%%arduino/reference/PrintString.html
 %%REFDOCS%%arduino/reference/PulseIn.html
 %%REFDOCS%%arduino/reference/Random.html
 %%REFDOCS%%arduino/reference/RandomSeed.html
-%%REFDOCS%%arduino/reference/RecentChanges.html
 %%REFDOCS%%arduino/reference/Return.html
 %%REFDOCS%%arduino/reference/SD.html
+%%REFDOCS%%arduino/reference/SDCardNotes.html
 %%REFDOCS%%arduino/reference/SDbegin.html
 %%REFDOCS%%arduino/reference/SDexists.html
 %%REFDOCS%%arduino/reference/SDmkdir.html
@@ -493,9 +508,6 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/Scope.html
 %%REFDOCS%%arduino/reference/SemiColon.html
 %%REFDOCS%%arduino/reference/Serial.html
-%%REFDOCS%%arduino/reference/SerialAvailable.html
-%%REFDOCS%%arduino/reference/SerialRead.html
-%%REFDOCS%%arduino/reference/SerialWrite.html
 %%REFDOCS%%arduino/reference/Serial_Available.html
 %%REFDOCS%%arduino/reference/Serial_Begin.html
 %%REFDOCS%%arduino/reference/Serial_End.html
@@ -519,59 +531,38 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/ServoWrite.html
 %%REFDOCS%%arduino/reference/ServoWriteMicroseconds.html
 %%REFDOCS%%arduino/reference/Setup.html
+%%REFDOCS%%arduino/reference/ShiftIn.html
 %%REFDOCS%%arduino/reference/ShiftOut.html
 %%REFDOCS%%arduino/reference/Sin.html
 %%REFDOCS%%arduino/reference/Sizeof.html
 %%REFDOCS%%arduino/reference/SoftwareSerial.html
+%%REFDOCS%%arduino/reference/SoftwareSerialAvailable.html
 %%REFDOCS%%arduino/reference/SoftwareSerialBegin.html
 %%REFDOCS%%arduino/reference/SoftwareSerialConstructor.html
-%%REFDOCS%%arduino/reference/SoftwareSerialExample.html
+%%REFDOCS%%arduino/reference/SoftwareSerialIsListening.html
+%%REFDOCS%%arduino/reference/SoftwareSerialListen.html
+%%REFDOCS%%arduino/reference/SoftwareSerialOverflow.html
 %%REFDOCS%%arduino/reference/SoftwareSerialPrint.html
 %%REFDOCS%%arduino/reference/SoftwareSerialPrintln.html
 %%REFDOCS%%arduino/reference/SoftwareSerialRead.html
-%%REFDOCS%%arduino/reference/Sq.html
+%%REFDOCS%%arduino/reference/SoftwareSerialWrite.html
 %%REFDOCS%%arduino/reference/Sqrt.html
 %%REFDOCS%%arduino/reference/Static.html
 %%REFDOCS%%arduino/reference/Stepper.html
 %%REFDOCS%%arduino/reference/StepperBipolarCircuit.html
 %%REFDOCS%%arduino/reference/StepperConstructor.html
-%%REFDOCS%%arduino/reference/StepperExample.html
 %%REFDOCS%%arduino/reference/StepperSetSpeed.html
 %%REFDOCS%%arduino/reference/StepperStep.html
 %%REFDOCS%%arduino/reference/StepperUnipolarCircuit.html
 %%REFDOCS%%arduino/reference/String.html
-%%REFDOCS%%arduino/reference/StringBrackets.html
-%%REFDOCS%%arduino/reference/StringCharAt.html
 %%REFDOCS%%arduino/reference/StringClass.html
-%%REFDOCS%%arduino/reference/StringCompareTo.html
-%%REFDOCS%%arduino/reference/StringComparison.html
-%%REFDOCS%%arduino/reference/StringConcat.html
-%%REFDOCS%%arduino/reference/StringConstructor.html
-%%REFDOCS%%arduino/reference/StringEndsWith.html
-%%REFDOCS%%arduino/reference/StringEquals.html
-%%REFDOCS%%arduino/reference/StringEqualsIgnoreCase.html
-%%REFDOCS%%arduino/reference/StringGetBytes.html
-%%REFDOCS%%arduino/reference/StringIndexOf.html
-%%REFDOCS%%arduino/reference/StringLastIndexOf.html
-%%REFDOCS%%arduino/reference/StringLength.html
 %%REFDOCS%%arduino/reference/StringObject.html
-%%REFDOCS%%arduino/reference/StringPlus.html
-%%REFDOCS%%arduino/reference/StringReplace.html
-%%REFDOCS%%arduino/reference/StringSetCharAt.html
-%%REFDOCS%%arduino/reference/StringStartsWith.html
-%%REFDOCS%%arduino/reference/StringSubstring.html
-%%REFDOCS%%arduino/reference/StringToCharArray.html
-%%REFDOCS%%arduino/reference/StringToLowerCase.html
-%%REFDOCS%%arduino/reference/StringToUpperCase.html
-%%REFDOCS%%arduino/reference/StringTrim.html
-%%REFDOCS%%arduino/reference/StyleGuide.html
 %%REFDOCS%%arduino/reference/SwitchCase.html
 %%REFDOCS%%arduino/reference/Tan.html
 %%REFDOCS%%arduino/reference/Tone.html
 %%REFDOCS%%arduino/reference/UnsignedChar.html
 %%REFDOCS%%arduino/reference/UnsignedInt.html
 %%REFDOCS%%arduino/reference/UnsignedLong.html
-%%REFDOCS%%arduino/reference/VariableDeclaration.html
 %%REFDOCS%%arduino/reference/Void.html
 %%REFDOCS%%arduino/reference/Volatile.html
 %%REFDOCS%%arduino/reference/While.html
@@ -582,13 +573,14 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/WireEndTransmission.html
 %%REFDOCS%%arduino/reference/WireOnReceive.html
 %%REFDOCS%%arduino/reference/WireOnRequest.html
-%%REFDOCS%%arduino/reference/WireReceive.html
+%%REFDOCS%%arduino/reference/WireRead.html
 %%REFDOCS%%arduino/reference/WireRequestFrom.html
-%%REFDOCS%%arduino/reference/WireSend.html
+%%REFDOCS%%arduino/reference/WireWrite.html
 %%REFDOCS%%arduino/reference/Word.html
 %%REFDOCS%%arduino/reference/WordCast.html
-%%REFDOCS%%arduino/reference/arduino.css
 %%REFDOCS%%arduino/reference/arduinoUno.css
+%%REFDOCS%%arduino/reference/arduinoWide.css
+%%REFDOCS%%arduino/reference/arduinoWideRender.css
 %%REFDOCS%%arduino/reference/environment.html
 %%REFDOCS%%arduino/reference/img/logo.png
 %%REFDOCS%%arduino/reference/index.html
@@ -617,7 +609,9 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/MotorKnob
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples
 @dirrm arduino/libraries/Stepper
-@dirrm arduino/libraries/Sprite
+%%EXAMPLES%%@dirrm arduino/libraries/SoftwareSerial/examples/TwoPortReceive
+%%EXAMPLES%%@dirrm arduino/libraries/SoftwareSerial/examples/SoftwareSerialExample
+%%EXAMPLES%%@dirrm arduino/libraries/SoftwareSerial/examples
 @dirrm arduino/libraries/SoftwareSerial
 %%EXAMPLES%%@dirrm arduino/libraries/Servo/examples/Sweep
 %%EXAMPLES%%@dirrm arduino/libraries/Servo/examples/Knob
@@ -629,28 +623,26 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/SPI/examples
 @dirrm arduino/libraries/SPI
 @dirrm arduino/libraries/SD/utility
+%%EXAMPLES%%@dirrm arduino/libraries/SD/examples/listfiles
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples/ReadWrite
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples/Files
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples/DumpFile
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples/Datalogger
+%%EXAMPLES%%@dirrm arduino/libraries/SD/examples/CardInfo
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples
 @dirrm arduino/libraries/SD
-%%EXAMPLES%%@dirrm arduino/libraries/Matrix/examples/sprite_animation
-%%EXAMPLES%%@dirrm arduino/libraries/Matrix/examples/hello_matrix
-%%EXAMPLES%%@dirrm arduino/libraries/Matrix/examples
-@dirrm arduino/libraries/Matrix
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/setCursor
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/TextDirection
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/SerialDisplay
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Scroll
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/HelloWorld
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Display
+%%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/CustomCharacter
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Cursor
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Blink
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Autoscroll
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples
 @dirrm arduino/libraries/LiquidCrystal
-%%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/StandardFirmata_2_2_forUNO_0_3
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/StandardFirmata
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/SimpleDigitalFirmata
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/SimpleAnalogFirmata
@@ -667,9 +659,13 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/WebClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/UdpNtpClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/UDPSendReceiveString
+%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/TwitterClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/TelnetClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/PachubeClientString
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/PachubeClient
+%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DnsWebClient
+%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpChatServer
+%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpAddressPrinter
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/ChatServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/BarometricPressureWebServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples
@@ -679,23 +675,17 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples/eeprom_clear
 %%EXAMPLES%%@dirrm arduino/libraries/EEPROM/examples
 @dirrm arduino/libraries/EEPROM
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_ToneTest
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_StringTest
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_StringIndexOfMemory
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_Skeleton
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_SD_Seek
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_SD_Files
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_SD_File
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_General
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_Delay
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples/ATS_Constants
-%%EXAMPLES%%@dirrm arduino/libraries/ArduinoTestSuite/examples
-@dirrm arduino/libraries/ArduinoTestSuite
 @dirrm arduino/libraries
 @dirrm arduino/lib/theme
 @dirrm arduino/lib
 @dirrm arduino/hardware/tools/avr
 @dirrm arduino/hardware/tools
+@dirrm arduino/hardware/arduino/variants/standard
+@dirrm arduino/hardware/arduino/variants/micro
+@dirrm arduino/hardware/arduino/variants/mega
+@dirrm arduino/hardware/arduino/variants/leonardo
+@dirrm arduino/hardware/arduino/variants/eightanaloginputs
+@dirrm arduino/hardware/arduino/variants
 @dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/Lib
 @dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/Board
 @dirrm arduino/hardware/arduino/firmwares/arduino-usbserial/.dep
@@ -709,6 +699,9 @@ bin/arduino
 @dirrm arduino/hardware/arduino/bootloaders/optiboot
 @dirrm arduino/hardware/arduino/bootloaders/lilypad/src
 @dirrm arduino/hardware/arduino/bootloaders/lilypad
+@dirrm arduino/hardware/arduino/bootloaders/diskloader/src
+@dirrm arduino/hardware/arduino/bootloaders/diskloader/build
+@dirrm arduino/hardware/arduino/bootloaders/diskloader
 @dirrm arduino/hardware/arduino/bootloaders/bt
 @dirrm arduino/hardware/arduino/bootloaders/atmega8
 @dirrm arduino/hardware/arduino/bootloaders/atmega
@@ -748,6 +741,7 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/examples/5.Control/Arrays
 %%EXAMPLES%%@dirrm arduino/examples/5.Control
 %%EXAMPLES%%@dirrm arduino/examples/4.Communication/VirtualColorMixer
+%%EXAMPLES%%@dirrm arduino/examples/4.Communication/SerialEvent
 %%EXAMPLES%%@dirrm arduino/examples/4.Communication/SerialCallResponseASCII
 %%EXAMPLES%%@dirrm arduino/examples/4.Communication/SerialCallResponse
 %%EXAMPLES%%@dirrm arduino/examples/4.Communication/PhysicalPixel
@@ -780,4 +774,6 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/examples/1.Basics/AnalogReadSerial
 %%EXAMPLES%%@dirrm arduino/examples/1.Basics
 %%EXAMPLES%%@dirrm arduino/examples
+%%REFDOCS%%@dirrm arduino/__MACOSX/reference
+@dirrm arduino/__MACOSX
 @dirrm arduino
