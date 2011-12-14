@@ -16,6 +16,8 @@ DISTNAME=	3Dc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-Dimensional Chess for X Window System
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_PERL5_BUILD=yes

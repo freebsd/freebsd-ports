@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple tetris-like game
 
+LICENSE=	GPLv2
+
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

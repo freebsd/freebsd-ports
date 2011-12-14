@@ -15,6 +15,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 MAINTAINER=	sr-13@mail.ru
 COMMENT=	An rogue-like advanced rpg with color support (binary port)
 
+LICENSE=	unknown
+LICENSE_NAME=	The ADOM License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror
+LICENSE_FILE=	${WRKSRC}/readme.1st
+
 NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	i386

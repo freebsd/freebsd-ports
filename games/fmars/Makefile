@@ -14,6 +14,8 @@ MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes

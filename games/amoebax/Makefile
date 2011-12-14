@@ -15,6 +15,12 @@ MASTER_SITES=	http://www.emma-soft.com/games/amoebax/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cute and addictive Puyo Puyo like game
 
+LICENSE=	GPLv2 FAL
+LICENSE_COMB=	dual
+LICENSE_NAME_FAL=	Free Art License, version 1.2
+LICENSE_FILE_FAL=	${WRKSRC}/COPYING.LAL
+LICENSE_PERMS_FAL=	${_LICENSE_PERMS_DEFAULT}
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

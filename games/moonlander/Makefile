@@ -16,6 +16,9 @@ DISTNAME=	moon-lander_1.0.orig
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Land a spacecraft on the moon
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/README.txt
+
 USE_SDL=	mixer image sdl
 MAKE_JOBS_SAFE=	yes
 

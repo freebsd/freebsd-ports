@@ -14,6 +14,11 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/affenspiel/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little puzzle game with monkey for X Window System
 
+LICENSE=	unknown
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	just Copyright
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11 xt

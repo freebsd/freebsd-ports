@@ -15,6 +15,8 @@ MASTER_SITES=	http://adgali.apiou.org/download/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An open source game library useful for 2D game development
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

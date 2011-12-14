@@ -14,6 +14,8 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multiplayer 3D economy/trade-based RTS
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_SDL=	sdl pango
 USE_GL=		gl glu

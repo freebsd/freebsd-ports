@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.websimulations.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flight simulator for X11
 
+LICENSE=	GPLv2
+
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes

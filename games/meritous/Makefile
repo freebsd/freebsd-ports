@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:C/\.//}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Action-adventure dungeon crawl game
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
