@@ -93,6 +93,7 @@
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
     SUBDIR += sharktorrent
+    SUBDIR += solidcoin
     SUBDIR += squall
     SUBDIR += teknap
     SUBDIR += torrentsniff
