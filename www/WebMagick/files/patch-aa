@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.170
-diff -u -r1.117 -r1.170
+retrieving revision 1.172
+diff -u -r1.117 -r1.172
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	11 Dec 2011 22:46:56 -0000	1.170
++++ webmagick.in	14 Dec 2011 18:58:00 -0000	1.172
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.170 2011/12/11 22:46:56 ache Exp $
++# $Id: webmagick.in,v 1.172 2011/12/14 18:58:00 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1147,7 +1147,7 @@ diff -u -r1.117 -r1.170
  	}
  	else
  	{
-@@ -2423,143 +2674,104 @@
+@@ -2423,143 +2674,105 @@
  		}
  		print( INDEX
  		      "<IMG SRC=\"$montageImages[$pageNumber - 1]\" $montageImageSizes[$pageNumber - 1]",
@@ -1167,6 +1167,7 @@ diff -u -r1.117 -r1.170
  	    my $pic = $imageNames[$pageNumber - 1][$imageNum];
  	    my $pichtml;
 +	    my $altlabel;
++	    my $altfinallabel;
  	    my $target = '';
 +
  	    if ($opt_pichtml && $opt_frames && "$opt_pichtmltarget" ne '') {
@@ -1179,7 +1180,7 @@ diff -u -r1.117 -r1.170
 +		$altlabel =~ s/$opt_pichtmlaltdrop//;
 +		$altlabel =~ y/_/ /; # Usual space replacement in file name
 +	    }
-+	    $altlabel = $opt_pichtmlaltstart . escapehtml($altlabel) . $opt_pichtmlaltend;
++	    $altfinallabel = $opt_pichtmlaltstart . escapehtml($altlabel) . $opt_pichtmlaltend;
  
  	    if ( $opt_pichtml ) {
  			
@@ -1195,7 +1196,7 @@ diff -u -r1.117 -r1.170
  			print( PICHTML "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  			    if( "$opt_metacharset" ne '' );
 -			print( PICHTML "  <TITLE>$pic</TITLE>\n" );
-+			print( PICHTML "  <TITLE>${altlabel}</TITLE>\n" );
++			print( PICHTML "  <TITLE>${altfinallabel}</TITLE>\n" );
  
  			# Meta tags
 -			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
@@ -1330,7 +1331,7 @@ diff -u -r1.117 -r1.170
 +			if ($pic =~ /\.(jpg|jpeg?|gif|xbm|png|bmp|ico)$/i) {
 +			    print( PICHTML "<A HREF=\"$opt_pichtmllink\">")
 +				if ($opt_pichtmllink ne '');
-+			    print( PICHTML "<IMG class='wm_pic' SRC=\"", escapeurl($pic), "\" BORDER=0 ALT=\"${altlabel}\" TITLE=\"${altlabel}\">" );
++			    print( PICHTML "<IMG class='wm_pic' SRC=\"", escapeurl($pic), "\" BORDER=0 ALT=\"${altfinallabel}\" TITLE=\"${altfinallabel}\">" );
 +			    print( PICHTML "</A>")
 +				if ($opt_pichtmllink ne '');
  			} else {
@@ -1347,7 +1348,7 @@ diff -u -r1.117 -r1.170
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2570,15 +2782,15 @@
+@@ -2570,15 +2783,15 @@
  
  			unless ($opt_tables)
  			{				
@@ -1367,7 +1368,7 @@ diff -u -r1.117 -r1.170
  		    } 
  	    }
  	    
-@@ -2590,7 +2802,7 @@
+@@ -2590,7 +2803,7 @@
  				print INDEX "<TR ALIGN=CENTER VALIGN=TOP>";
  			}
  				
@@ -1376,17 +1377,17 @@ diff -u -r1.117 -r1.170
  			
  			if ($opt_pichtml) {
  				print (INDEX "<A${target} HREF=\"", escapeurl($pichtml), "\">");
-@@ -2601,17 +2813,34 @@
+@@ -2601,17 +2814,34 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
 -				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}", "\" $thumbImageSizes{$pic} BORDER=0>");
 +				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}",
-+				       "\" $thumbImageSizes{$pic} ALT=\"${altlabel}\" TITLE=\"${altlabel}\" BORDER=0>");
++				       "\" $thumbImageSizes{$pic} ALT=\"${altfinallabel}\" TITLE=\"${altfinallabel}\" BORDER=0>");
  			} else {
 -				print (INDEX "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0>");
 +				print (INDEX "<IMG SRC=\"", escapeurl($pic),
-+				       "\" ALT=\"${altlabel}\" TITLE=\"${altlabel}\" BORDER=0>");
++				       "\" ALT=\"${altfinallabel}\" TITLE=\"${altfinallabel}\" BORDER=0>");
  			}
  			
 -			print (INDEX "</A><BR><FONT SIZE=\"-1\">" . $tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]} . "</FONT></TD>\n");
@@ -1416,7 +1417,7 @@ diff -u -r1.117 -r1.170
  		} # if ($opt_tables)
  	
  	} # for each picture
-@@ -2622,6 +2851,13 @@
+@@ -2622,6 +2852,13 @@
  		{
  			print INDEX "</TR>";
  		}
@@ -1430,7 +1431,7 @@ diff -u -r1.117 -r1.170
  		print (INDEX "</TABLE>\n")
  	} else {print( INDEX "</MAP>\n" );}
      }
-@@ -2630,6 +2866,9 @@
+@@ -2630,6 +2867,9 @@
  
      # Print Copyright info on non-blank pages.
      if( $numimages > 0 ) {
@@ -1440,7 +1441,7 @@ diff -u -r1.117 -r1.170
         if( "${opt_address}" ne '' ) {
  	   print( INDEX "<BR><ADDRESS>${opt_address}</ADDRESS>\n" );
         }
-@@ -2642,13 +2881,17 @@
+@@ -2642,13 +2882,17 @@
         # If anonymous, don't show copyright and address info
         if( ! $opt_anonymous ) {
  	   print( INDEX "<HR>\n${opt_msg_produced_by} " );
@@ -1460,7 +1461,7 @@ diff -u -r1.117 -r1.170
      }
  
      print( INDEX "</BODY>\n" );
-@@ -2674,13 +2917,12 @@
+@@ -2674,13 +2918,12 @@
      open( JSINDEX, ">$fileNames{'jsPageIndex'}")
          || die("$0: Failed to open file $fileNames{'jsPageIndex'} for output\n$@\n");
  
@@ -1478,7 +1479,7 @@ diff -u -r1.117 -r1.170
      print( JSINDEX "  top.drawWindows();\n");
      print( JSINDEX "</SCRIPT>\n");
      print( JSINDEX "</BODY>\n");
-@@ -2714,6 +2956,8 @@
+@@ -2714,6 +2957,8 @@
  
      # Image labels
      print( JSVARS "\n// image titles\n", jsHash( 'imageLabels', \%imageLabels ) );
@@ -1487,7 +1488,7 @@ diff -u -r1.117 -r1.170
  
  	# Image labels
      #print( JSVARS "\n// table image titles\n", jsHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -2803,6 +3047,8 @@
+@@ -2803,6 +3048,8 @@
  
      # Image labels
      print( PERLVARS "\n# image titles\n", plHash( 'imageLabels', \%imageLabels ) );
@@ -1496,7 +1497,7 @@ diff -u -r1.117 -r1.170
  
  	# Table image labels
      print( PERLVARS "\n# table image titles\n", plHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -3062,7 +3308,7 @@
+@@ -3062,7 +3309,7 @@
  		# Copy image so we can play with it without effecting original
  		print( STDERR "Copying montage to scratch ...\n" )
  		    if $opt_debug;
@@ -1505,7 +1506,7 @@ diff -u -r1.117 -r1.170
  		handleMagickError( __FILE__, __LINE__, "", $image) unless ref($image);
  		last MONTAGE unless ref($image);
  	
-@@ -3191,12 +3437,16 @@
+@@ -3191,12 +3438,16 @@
      }
      my $imageNum;
      for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -1523,7 +1524,7 @@ diff -u -r1.117 -r1.170
  	if( $opt_maptype eq 'ncsa' ) {
  	    if ( "${opt_htimage}" ne '' ) {
  		print( IMAGEMAP "rect "
-@@ -3465,6 +3715,10 @@
+@@ -3465,6 +3716,10 @@
  sub sortDir {
      if(defined($dirOrder{$a}) && defined($dirOrder{$b})) {
  	$dirOrder{$a} <=> $dirOrder{$b}
@@ -1534,7 +1535,7 @@ diff -u -r1.117 -r1.170
      } else {
  	lc($a) cmp lc($b);
      }
-@@ -3476,7 +3730,11 @@
+@@ -3476,7 +3731,11 @@
  sub sortImages {
      if(defined($imageOrder{$a}) && defined($imageOrder{$b})) {
  	$imageOrder{$a} <=> $imageOrder{$b}
@@ -1547,7 +1548,7 @@ diff -u -r1.117 -r1.170
  	lc($a) cmp lc($b);
      }
  }
-@@ -3533,6 +3791,9 @@
+@@ -3533,6 +3792,9 @@
  sub compareHash {
      my( $hash1, $hash2) = @_;
  
@@ -1557,7 +1558,7 @@ diff -u -r1.117 -r1.170
      if(scalar(keys(%$hash1)) != scalar(keys(%$hash2))) {
  	return( 1 ); # different length
      }
-@@ -3633,7 +3894,7 @@
+@@ -3633,7 +3895,7 @@
  	}
      }
      
@@ -1566,7 +1567,7 @@ diff -u -r1.117 -r1.170
  	%iconImageSizes = %tmp_iconImageSizes;
  	print( STDERR "Icon sizes have changed, must re-do all HTML\n" )
  	    if $opt_debug;
-@@ -3868,7 +4129,7 @@
+@@ -3868,7 +4130,7 @@
  	# Set image label
  	#
  	my $label = '';
@@ -1575,7 +1576,7 @@ diff -u -r1.117 -r1.170
  	    if( defined( $imageLabels{$imagename} ) ) {
  		# Set image specific label
  		$label = $imageLabels{$imagename};
-@@ -3922,7 +4183,7 @@
+@@ -3922,7 +4184,7 @@
  
  	    # put our label into the table image hash
  
@@ -1584,7 +1585,7 @@ diff -u -r1.117 -r1.170
  	    $tableImageLabels{$imagename} =~ s/\n/<BR>/g;
  
  	    print( STDERR "Applying image label: \"${label}\"\n" )
-@@ -4073,6 +4334,7 @@
+@@ -4073,6 +4335,7 @@
    --[no]forcehtml    Force HTML files to be generated (default off)
    --[no]forcemontage Force montage (default off)
    --[no]ignorefp     Ignore directories with names like _vti (FrontPage directories) (default on)
@@ -1592,7 +1593,7 @@ diff -u -r1.117 -r1.170
    --[no]help         Display usage message (default off)
    --[no]recurse      Recurse directory tree (default off)
    --srcdir	     Image directory to process
-@@ -4093,6 +4355,8 @@
+@@ -4093,6 +4356,8 @@
  Filenames:
    --dirindexname     Directory-name to title cross-reference file name
    --imgindexname     Image-name to thumbnail label cross-reference file name
@@ -1601,7 +1602,7 @@ diff -u -r1.117 -r1.170
    --indexname	     Name of master index files (default server index)
    --pageindexname    Base name of page-related index files
    --readme	     Name of directory info file
-@@ -4138,7 +4402,9 @@
+@@ -4138,7 +4403,9 @@
  
  HTML Colors & Appearance:
    --address          Optional user address info
@@ -1611,7 +1612,7 @@ diff -u -r1.117 -r1.170
    --coloralink	     Link (active) color
    --colorback	     Background color (also applied to JPEG montage background)
    --colorfore	     Foreground text color
-@@ -4150,31 +4416,46 @@
+@@ -4150,31 +4417,46 @@
    --dircolorlink     Link (unvisited) color (directory frame)
    --dircolorvlink    Link (visited) color (directory frame)
    --dirhtmlext       Extension for directory frame
@@ -1666,7 +1667,7 @@ diff -u -r1.117 -r1.170
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4577,7 @@
+@@ -4296,6 +4578,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -1674,7 +1675,7 @@ diff -u -r1.117 -r1.170
      return( $_ );
  }
  
-@@ -4324,23 +4606,11 @@
+@@ -4324,23 +4607,11 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
@@ -1702,7 +1703,7 @@ diff -u -r1.117 -r1.170
      return( $_ );
  }
  
-@@ -4387,7 +4657,6 @@
+@@ -4387,7 +4658,6 @@
      my $rc;
      foreach $rc (@_) {
          next if ( ! -r $rc || ! -f $rc );
@@ -1710,7 +1711,7 @@ diff -u -r1.117 -r1.170
  	eval ( get_rc($rc) );
  	if( $@ ) {
  	    print( STDERR "Bad Eval for file \"${rc}\"...\n$@\n" );
-@@ -4468,7 +4737,7 @@
+@@ -4468,7 +4738,7 @@
      my $path=$top;
      $direlem='';
      do {
