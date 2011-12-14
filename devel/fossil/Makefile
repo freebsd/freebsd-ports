@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fossil
-PORTVERSION=	20111021125253
+PORTVERSION=	20111213135356
 PORTEPOCH=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
@@ -22,6 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/fossil
 
 HAS_CONFIGURE=	yes
+
+USE_GMAKE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
