@@ -1,0 +1,15 @@
+--- a/Make.rules
++++ b/Make.rules
+@@ -14,10 +14,10 @@ LIB_RELEASE = 0
+ 
+ # And last various rules
+ %.o: %.c
+-	$(CC) -Wp,-MMD,"$*.d",-MQ,"$@",-MP -c $(CPPFLAGS) $(CFLAGS) -o $@ $<
++	$(CC) -c $(CPPFLAGS) $(CFLAGS) -o $@ $<
+ 
+ %.o: %.cpp
+-	$(CXX) -Wp,-MMD,"$*.d",-MQ,"$@",-MP -c $(CPPFLAGS) $(CXXFLAGS) -o $@ $<
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -o $@ $<
+ 
+ %.so:
+ 	$(CC) -shared $(LDFLAGS) -Wl,-soname,$@.$(LIB_RELEASE) -o $@.$(LIB_RELEASE) $^ $(LIBS_$*)
