@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -15,6 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A C and math library for the Atmel AVR controller family
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
@@ -46,9 +48,11 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 HAS_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	avr-libc-devel*
+CONFLICTS=	avr-libc-devel-[0-9]*
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 .if defined(WITH_AVRLIBCDOCS)
@@ -89,10 +93,12 @@ do-install:
 		${CAT} ${PLIST_DOC} >> ${TMPPLIST}
 .endif
 		${CAT} ${PLIST} >> ${TMPPLIST}
+	        @for file in ${PLIST_FILES}; do \
+			${ECHO_CMD} $${file} >> ${TMPPLIST}; \
+	        done
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
-		-${MKDIR} ${DOCSDIR}
+		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} \
-			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
 			${DOCSDIR}
 

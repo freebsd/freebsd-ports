@@ -61,11 +61,13 @@ avr/include/avr/iom16a.h
 avr/include/avr/iom16hva.h
 avr/include/avr/iom16hva2.h
 avr/include/avr/iom16hvb.h
+avr/include/avr/iom16hvbrevb.h
 avr/include/avr/iom16m1.h
 avr/include/avr/iom16u2.h
 avr/include/avr/iom16u4.h
 avr/include/avr/iom2560.h
 avr/include/avr/iom2561.h
+avr/include/avr/iom3000.h
 avr/include/avr/iom32.h
 avr/include/avr/iom323.h
 avr/include/avr/iom324.h
@@ -77,6 +79,7 @@ avr/include/avr/iom329.h
 avr/include/avr/iom3290.h
 avr/include/avr/iom32c1.h
 avr/include/avr/iom32hvb.h
+avr/include/avr/iom32hvbrevb.h
 avr/include/avr/iom32m1.h
 avr/include/avr/iom32u2.h
 avr/include/avr/iom32u4.h
@@ -139,6 +142,7 @@ avr/include/avr/iotn461a.h
 avr/include/avr/iotn48.h
 avr/include/avr/iotn5.h
 avr/include/avr/iotn84.h
+avr/include/avr/iotn84a.h
 avr/include/avr/iotn85.h
 avr/include/avr/iotn861.h
 avr/include/avr/iotn861a.h
@@ -478,7 +482,6 @@ avr/lib/libscanf_flt.a
 avr/lib/libscanf_min.a
 bin/avr-man
 share/doc/avr-libc/AUTHORS
-share/doc/avr-libc/LICENSE
 @dirrm avr/include/util
 @dirrm avr/include/compat
 @dirrm avr/include/avr
