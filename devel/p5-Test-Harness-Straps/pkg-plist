@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Test/Harness/Results.pm
+%%SITE_PERL%%/Test/Harness/Point.pm
+%%SITE_PERL%%/Test/Harness/Iterator.pm
+%%SITE_PERL%%/Test/Harness/Assert.pm
+%%SITE_PERL%%/Test/Harness/Straps.pm
+@dirrmtry %%SITE_PERL%%/Test/Harness
+@dirrmtry %%SITE_PERL%%/Test
