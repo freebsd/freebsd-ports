@@ -175,10 +175,9 @@ CONFIGURE_ARGS+=	--enable-react
 .endif
 
 .if defined(WITH_SNORTSAM)
-BROKEN=		snortsam patches not available for 2.9.1 yet
 USE_AUTOTOOLS+=	automake
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
-PATCHFILES+=	snortsam-2.9.1.diff.gz:snortsam
+PATCHFILES+=	snortsam-2.9.1.2.diff.gz:snortsam
 .endif
 
 post-patch:
