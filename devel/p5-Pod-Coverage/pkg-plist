@@ -1,10 +1,10 @@
-%%PORTDOCS%%%%EXAMPLESDIR%%/check_installed
-%%PORTDOCS%%%%EXAMPLESDIR%%/script-covered
+bin/pod_cover
 %%SITE_PERL%%/Pod/Coverage.pm
 %%SITE_PERL%%/Pod/Coverage/CountParents.pm
 %%SITE_PERL%%/Pod/Coverage/ExportOnly.pm
 %%SITE_PERL%%/Pod/Coverage/Overloader.pm
-bin/pod_cover
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check_installed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script-covered
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/Pod/Coverage
 @dirrmtry %%SITE_PERL%%/Pod
