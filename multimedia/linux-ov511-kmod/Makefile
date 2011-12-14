@@ -15,7 +15,7 @@ MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/linux/drivers/media/video/
 DISTFILES=	ov511.c ov511.h
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	luigi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the linux ov511 webcam driver
 
 # Requires the linux emulation layer to be built

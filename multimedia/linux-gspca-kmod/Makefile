@@ -12,7 +12,7 @@ CATEGORIES=	multimedia kld
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/oldrelease/
 DISTNAME=	gspcav1-20071220
 
-MAINTAINER=	luigi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the linux gspcav1 webcam driver
 
 # Requires the linux emulation layer to be built
