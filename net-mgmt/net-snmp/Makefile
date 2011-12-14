@@ -24,7 +24,7 @@ OPTIONS=	IPV6 "Build with IPv6 support" on \
 		TKMIB "Install graphical MIB browser" off \
 		DMALLOC "Enable dmalloc debug memory allocator" off \
 		UNPRIVILEGED "Allow unprivileged users to execute net-snmp" off \
-		PYTHON "Install python bindings off
+		PYTHON "Install python bindings" off
 
 MAKE_JOBS_UNSAFE=	yes
 
