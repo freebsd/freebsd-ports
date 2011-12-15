@@ -49,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/kombu/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/kombu/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kombu/tests/compat.py
+%%PYTHON_SITELIBDIR%%/kombu/tests/compat.pyc
+%%PYTHON_SITELIBDIR%%/kombu/tests/compat.pyo
 %%PYTHON_SITELIBDIR%%/kombu/tests/mocks.py
 %%PYTHON_SITELIBDIR%%/kombu/tests/mocks.pyc
 %%PYTHON_SITELIBDIR%%/kombu/tests/mocks.pyo
