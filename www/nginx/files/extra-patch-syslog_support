@@ -210,9 +210,9 @@ index 5f356c3..5232ad6 100644
  
  cat << END                                                     > $NGX_MAKEFILE
  
---- auto/options.orig	2010-06-18 19:51:14.000000000 +0400
-+++ auto/options	2010-12-08 13:00:42.000000000 +0300
-@@ -118,6 +118,8 @@
+--- auto/options.orig	2011-12-15 21:25:00.000000000 +0400
++++ auto/options	2011-12-15 21:28:01.000000000 +0400
+@@ -119,6 +119,8 @@
  MD5_OPT=
  MD5_ASM=NO
  
@@ -221,31 +221,23 @@ index 5f356c3..5232ad6 100644
  USE_SHA1=NO
  SHA1=NONE
  SHA1_OPT=
-@@ -270,6 +272,9 @@
+@@ -272,6 +274,9 @@
          --with-md5-opt=*)                MD5_OPT="$value"           ;;
          --with-md5-asm)                  MD5_ASM=YES                ;;
  
-+	--with-syslog)			 USE_SYSLOG=YES		    ;;
-+        --with-syslog-facility=*)        SYSLOG_FACILITY="$value"  ;;
++        --with-syslog)                   USE_SYSLOG="YES"           ;;
++        --with-syslog-facility=*)        SYSLOG_FACILITY="$value"   ;;
 +
          --with-sha1=*)                   SHA1="$value"              ;;
          --with-sha1-opt=*)               SHA1_OPT="$value"          ;;
          --with-sha1-asm)                 SHA1_ASM=YES               ;;
-@@ -410,6 +415,9 @@
-   --with-md5-opt=OPTIONS             set additional options for md5 building
+@@ -416,6 +421,9 @@
+   --with-md5-opt=OPTIONS             set additional build options for md5
    --with-md5-asm                     use md5 assembler sources
  
-+  --with-syslog			     use syslog instead of files to log messages
++  --with-syslog                      use syslog instead of files to log messages
 +  --with-syslog-facility=FACILITY    set syslog facility
 +
    --with-sha1=DIR                    set path to sha1 library sources
-   --with-sha1-opt=OPTIONS            set additional options for sha1 building
+   --with-sha1-opt=OPTIONS            set additional build options for sha1
    --with-sha1-asm                    use sha1 assembler sources
-@@ -427,6 +435,7 @@
-   --with-openssl-opt=OPTIONS         set additional options for OpenSSL building
- 
-   --with-debug                       enable the debugging logging
-+  
- 
- END
- 
