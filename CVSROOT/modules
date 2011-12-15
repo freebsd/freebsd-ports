@@ -12924,6 +12924,7 @@ p5-MP3-Tag                      ports/audio/p5-MP3-Tag
 p5-MP4-Info                     ports/multimedia/p5-MP4-Info
 p5-MPEG-ID3v2Tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-MRO-Compat                   ports/devel/p5-MRO-Compat
+p5-MRO-Define                   ports/devel/p5-MRO-Define
 p5-MRTG-Parse                   ports/net-mgmt/p5-MRTG-Parse
 p5-Mac-FileSpec-Unixish         ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary                ports/archivers/p5-Mac-Macbinary
@@ -14364,6 +14365,7 @@ p5-Test-HTML-Tidy               ports/devel/p5-Test-HTML-Tidy
 p5-Test-HTTP                    ports/www/p5-Test-HTTP
 p5-Test-HTTP-Server-Simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness                 ports/devel/p5-Test-Harness
+p5-Test-Harness-Straps          ports/devel/p5-Test-Harness-Straps
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
 p5-Test-HexString               ports/devel/p5-Test-HexString
 p5-Test-Identity                ports/devel/p5-Test-Identity
@@ -14441,6 +14443,7 @@ p5-Test-WWW-Mechanize-PSGI      ports/devel/p5-Test-WWW-Mechanize-PSGI
 p5-Test-WWW-Selenium            ports/devel/p5-Test-WWW-Selenium
 p5-Test-Warn                    ports/devel/p5-Test-Warn
 p5-Test-Weaken                  ports/devel/p5-Test-Weaken
+p5-Test-Without-Module          ports/devel/p5-Test-Without-Module
 p5-Test-XML                     ports/devel/p5-Test-XML
 p5-Test-XML-Valid               ports/devel/p5-Test-XML-Valid
 p5-Test-XPath                   ports/lang/p5-Test-XPath
@@ -17689,6 +17692,7 @@ p5-mp3-tag                      ports/audio/p5-MP3-Tag
 p5-mp4-info                     ports/multimedia/p5-MP4-Info
 p5-mpeg-id3v2tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-mro-compat                   ports/devel/p5-MRO-Compat
+p5-mro-define                   ports/devel/p5-MRO-Define
 p5-mrtg-parse                   ports/net-mgmt/p5-MRTG-Parse
 p5-multiplex-cmd                ports/devel/p5-Multiplex-CMD
 p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
@@ -18850,6 +18854,7 @@ p5-test-fixture-dbi             ports/databases/p5-Test-Fixture-DBI
 p5-test-fixture-dbic-schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-test-group                   ports/devel/p5-Test-Group
 p5-test-harness                 ports/devel/p5-Test-Harness
+p5-test-harness-straps          ports/devel/p5-Test-Harness-Straps
 p5-test-hasversion              ports/devel/p5-Test-HasVersion
 p5-test-hexstring               ports/devel/p5-Test-HexString
 p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
@@ -18925,6 +18930,7 @@ p5-test-use-ok                  ports/devel/p5-Test-use-ok
 p5-test-useallmodules           ports/devel/p5-Test-UseAllModules
 p5-test-warn                    ports/devel/p5-Test-Warn
 p5-test-weaken                  ports/devel/p5-Test-Weaken
+p5-test-without-module          ports/devel/p5-Test-Without-Module
 p5-test-www-declare             ports/devel/p5-Test-WWW-Declare
 p5-test-www-mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-test-www-mechanize-catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
@@ -27132,6 +27138,7 @@ xemacs-devel-mule               ports/editors/xemacs-devel-mule
 xemacs-mule-packages            ports/editors/xemacs-mule-packages
 xemacs-packages                 ports/editors/xemacs-packages
 xemacs21-mule                   ports/editors/xemacs21-mule
+xen-tools                       ports/sysutils/xen-tools
 xengine                         ports/benchmarks/xengine
 xenomorph                       ports/graphics/xenomorph
 xephem                          ports/astro/xephem
