@@ -17,10 +17,13 @@ COMMENT=	Automatically encode columns
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
+BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-SQL-Translator>=0.09.003:${PORTSDIR}/databases/p5-SQL-Translator
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self
 
 PERL_CONFIGURE=	yes
 
