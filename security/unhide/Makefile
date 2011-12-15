@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	unhide
-PORTVERSION=	20100201
+PORTVERSION=	20110113
 CATEGORIES=	security
-MASTER_SITES=	http://www.security-projects.com/
+MASTER_SITES=	SF/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ntarmos@cs.uoi.gr
