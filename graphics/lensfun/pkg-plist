@@ -1,7 +1,7 @@
+include/lensfun.h
 lib/liblensfun.so
 lib/liblensfun.so.%%LIBVERSION%%
 libdata/pkgconfig/lensfun.pc
-include/lensfun.h
 %%DATADIR%%/6x6.xml
 %%DATADIR%%/compact-canon.xml
 %%DATADIR%%/compact-casio.xml
@@ -33,10 +33,4 @@ include/lensfun.h
 %%DATADIR%%/slr-tamron.xml
 %%DATADIR%%/slr-tokina.xml
 %%DATADIR%%/slr-ussr.xml
-share/doc/lensfun-%%PORTVERSION%%/README
-share/doc/lensfun-%%PORTVERSION%%/lgpl-3.0.txt
-share/doc/lensfun-%%PORTVERSION%%/gpl-3.0.txt
-share/doc/lensfun-%%PORTVERSION%%/cc-by-sa-3.0.txt
-@dirrm share/doc/lensfun-%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@dirrmtry lib/pkgconfig
