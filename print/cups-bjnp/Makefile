@@ -14,17 +14,12 @@ MASTER_SITES=	SF
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	CUPS backend for Canon USB over IP protocol
 
-LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
+BUILD_DEPENDS=	${LOCALBASE}/libexec/cups/backend:${PORTSDIR}/print/cups-base
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lcompat"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900000
-BROKEN=		Does not compile on FreeBSD 9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
