@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liboauth
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	net
 MASTER_SITES=	http://liboauth.sourceforge.net/pool/
 
