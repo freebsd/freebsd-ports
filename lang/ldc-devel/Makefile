@@ -7,6 +7,7 @@
 
 PORTNAME=	ldc
 DISTVERSION=	0.9.2r1697
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://hybridsource.org/
 PKGNAMESUFFIX=	-devel
@@ -16,7 +17,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D frontend for llvm, with the Tango standard library
 
 BUILD_DEPENDS=	llvm>=2.8:${PORTSDIR}/devel/llvm
-LIB_DEPENDS=	config.9:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig
 
 BROKEN=		does not compile
 

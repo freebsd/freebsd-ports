@@ -7,13 +7,14 @@
 
 PORTNAME=	umurmur
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Minimalistic Murmur (Mumble server)
 
-LIB_DEPENDS=	config.9:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
