@@ -1,0 +1,7 @@
+Sometimes using Test::More's is test isn't good enough. Its diagnostics may make
+it easy to miss differences between strings. By using is_binary instead of is,
+the "!" tells us that the lines differ, and we can quickly scan the bytes that
+make up the line to see which differ. When comparing very long strings, we can
+stop after we've seen a few differences.
+
+WWW: http://search.cpan.org/dist/Test-BinaryData/
