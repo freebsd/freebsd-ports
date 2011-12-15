@@ -1,0 +1,510 @@
+Index: db/slr-canon.xml
+===================================================================
+--- data/db/slr-canon.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-canon.xml	(.../trunk/data)	(revision 130)
+@@ -340,6 +340,14 @@
+         <cropfactor>1.6</cropfactor>
+     </camera>
+ 
++    <camera>
++        <maker>Canon</maker>
++        <model>Canon EOS 550D</model>
++        <model lang="en">EOS 550D</model>
++        <mount>Canon EF-S</mount>
++        <cropfactor>1.6</cropfactor>
++    </camera>
++
+     <lens>
+         <maker>Canon</maker>
+         <model>Canon EF-S 10-22mm f/3.5-4.5 USM</model>
+@@ -790,6 +798,20 @@
+ 
+     <lens>
+         <maker>Canon</maker>
++        <model>Canon EF 70-300mm f/4-5.6 IS USM</model>
++        <mount>Canon EF</mount>
++        <cropfactor>1.6</cropfactor>
++        <calibration>
++            <distortion model="ptlens" focal="300" a="-0.00012" b="0.00556" c="-0.00398" />
++            <distortion model="ptlens" focal="200" a="-0.00466" b="0.01801" c="-0.01557" />
++            <distortion model="ptlens" focal="135" a="-0.00371" b="0.01433" c="-0.01464" />
++            <distortion model="ptlens" focal="100" a="0" b="-0.00091" c="0" />
++            <distortion model="ptlens" focal="70" a="0" b="-0.00371" c="0" />
++        </calibration>
++    </lens>
++
++    <lens>
++        <maker>Canon</maker>
+         <model>Canon EF 75-300mm f/4-5.6 IS USM</model>
+         <mount>Canon EF</mount>
+         <cropfactor>1.6</cropfactor>
+@@ -1066,6 +1088,13 @@
+         <model>Canon EF-S 55-250 f/4-5.6 IS</model>
+         <mount>Canon EF</mount>
+         <cropfactor>1.6</cropfactor>
++        <calibration> <!-- data gathered by Spoilerhead 2010 <spoilerhead@gmail.com> using hugin-->
++            <distortion model="ptlens" focal="55" a="-0.000303056" b="-0.00581537" c="-0.00237143" /> <!-- 15 shots-->
++            <distortion model="ptlens" focal="70" a="-0.000520255" b="2.86405e-05" c="0.00286934" />  <!-- 21 shots -->
++            <distortion model="ptlens" focal="100" a="0.00268582" b="-0.00578304" c="0.00718748" />   <!-- 17-->
++            <distortion model="ptlens" focal="135" a="0.00120309" b="0.00979416" c="-0.00868762" />    <!-- 15 -->
++            <distortion model="ptlens" focal="250" a="-0.00226069" b="0.0111545" c="-0.00536676" />    <!-- 18 -->
++        </calibration>
+     </lens>
+ 
+     <lens>
+@@ -1101,4 +1130,19 @@
+         </calibration>
+     </lens>
+ 
++    <lens>
++        <maker>Canon</maker>
++        <model>Canon EF-S 17-55mm f/2.8 IS USM</model>
++        <mount>Canon EF-S</mount>
++        <cropfactor>1.6</cropfactor>
++        <calibration>
++            <distortion model="poly3" focal="17" k1="-0.01500" />
++            <distortion model="poly3" focal="20" k1="-0.00100" />
++            <distortion model="poly3" focal="24" k1="+0.00000" />
++            <distortion model="poly3" focal="28" k1="+0.01000" />
++            <distortion model="poly3" focal="35" k1="+0.02000" />
++            <distortion model="poly3" focal="55" k1="+0.02000" />
++        </calibration>
++    </lens>
++
+ </lensdatabase>
+Index: db/compact-panasonic.xml
+===================================================================
+--- data/db/compact-panasonic.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/compact-panasonic.xml	(.../trunk/data)	(revision 130)
+@@ -17,7 +17,6 @@
+ 
+     <mount>
+         <name>panasonicLX3</name>
+-        <compat>Generic</compat>
+     </mount>
+ 
+     <mount>
+@@ -96,14 +95,37 @@
+     <camera>
+         <maker>Panasonic</maker>
+         <model>DMC-LX3</model>
+-        <variant>16:9</variant>
+         <variant>4:3</variant>
+-        <mount>panasonicLX3</mount>
+-        <cropfactor>4.33</cropfactor>
++        <mount>PanasonicLX3</mount>
++        <cropfactor>4.7</cropfactor>
+     </camera>
+ 
+     <camera>
+         <maker>Panasonic</maker>
++        <model>DMC-LX3</model>
++        <variant>16:9</variant>
++        <mount>PanasonicLX3</mount>
++        <cropfactor>5.7528</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
++        <model>DMC-LX3</model>
++        <variant>3:2</variant>
++        <mount>PanasonicLX3</mount>
++        <cropfactor>5.1</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
++        <model>DMC-LX3</model>
++        <variant>1:1</variant>
++        <mount>PanasonicLX3</mount>
++        <cropfactor>4.7</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
+         <model>DMC-LC1</model>
+         <mount>leicaDigilux2</mount>
+         <cropfactor>3.933</cropfactor>
+@@ -269,23 +291,25 @@
+ 
+     <lens>
+         <maker>Leica</maker>
+-        <model>Standard</model>
++        <model>LX3</model>
+         <mount>panasonicLX3</mount>
+-        <cropfactor>4.33</cropfactor>
++        <focal min="5.1" max="12.8" />
++        <aperture min="2.0" max="8.0" />
++        <cropfactor>4.7</cropfactor>
+         <calibration>
+-            <distortion model="ptlens" focal="5.1"   a="0.0053"   b="-0.0382" c="0" />
+-            <distortion model="ptlens" focal="5.4"   a="0.002"    b="-0.027"  c="-0.005" />
+-            <distortion model="ptlens" focal="5.9"   a="0.001"    b="-0.022"  c="-0.004" />
+-            <distortion model="ptlens" focal="6.3"   a="0.0007"   b="-0.021"  c="-0.001" />
+-            <distortion model="ptlens" focal="6.8"   a="0.0007"   b="-0.018"  c="0" />
+-            <distortion model="ptlens" focal="7.4"   a="0.0005"   b="-0.014"  c="0" />
+-            <distortion model="ptlens" focal="7.9"   a="0.00031"  b="-0.013"  c="0" />
+-            <distortion model="ptlens" focal="8.8"   a="0.00007"  b="-0.01"   c="0" />
+-            <distortion model="ptlens" focal="9.3"   a="0.00007"  b="-0.0087" c="0" />
+-            <distortion model="ptlens" focal="10.2"  a="0.00007"  b="-0.0082" c="0" />
+-            <distortion model="ptlens" focal="11.1"  a="0.00006"  b="-0.0076" c="0" />
+-            <distortion model="ptlens" focal="12.1"  a="0.00005"  b="-0.0059" c="0" />
+-            <distortion model="ptlens" focal="12.8" a="-0.00002"  b="-0.0058" c="0" />
++            <distortion model="ptlens" focal="5.1" a="-0.003959" b="0.004736" c="-0.081302" />
++            <distortion model="ptlens" focal="5.4" a="-0.005553" b="0.009049" c="-0.077906" />
++            <distortion model="ptlens" focal="5.9" a="0.011732" b="-0.066315" c="0.029221" />
++            <distortion model="ptlens" focal="6.3" a="-0.008619" b="0.017573" c="-0.069065" />
++            <distortion model="ptlens" focal="6.8" a="-0.012256" b="0.036251" c="-0.088407" />
++            <distortion model="ptlens" focal="7.4" a="0.009106" b="-0.048429" c="0.022523" />
++            <distortion model="ptlens" focal="7.9" a="0.000603" b="-0.027831" c="0.020523" />
++            <distortion model="ptlens" focal="8.8" a="-0.018814" b="0.059370" c="-0.092180" />
++            <distortion model="ptlens" focal="9.3" a="-0.001016" b="-0.010300" c="-0.001994" />
++            <distortion model="ptlens" focal="10.2" a="-0.017673" b="0.055682" c="-0.082869" />
++            <distortion model="ptlens" focal="11.1" a="-0.011262" b="0.038785" c="-0.068040" />
++            <distortion model="ptlens" focal="12.1" a="-0.011262" b="0.038785" c="-0.068040" />
++            <distortion model="ptlens" focal="12.8" a="-0.011262" b="0.038785" c="-0.068040" />
+         </calibration>
+     </lens>
+ 
+Index: db/slr-olympus.xml
+===================================================================
+--- data/db/slr-olympus.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-olympus.xml	(.../trunk/data)	(revision 130)
+@@ -7,6 +7,12 @@
+     </mount>
+ 
+     <mount>
++        <name>Micro 4/3 System</name>
++        <compat>M42</compat>
++        <compat>Generic</compat>
++    </mount>
++
++    <mount>
+         <name>olympusE10</name>
+         <compat>Generic</compat>
+     </mount>
+@@ -100,6 +106,30 @@
+     </camera>
+ 
+     <camera>
++        <maker>OLYMPUS CORPORATION</maker>
++        <maker lang="en">Olympus</maker>
++        <model>E-P1</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>OLYMPUS CORPORATION</maker>
++        <maker lang="en">Olympus</maker>
++        <model>E-P2</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>OLYMPUS CORPORATION</maker>
++        <maker lang="en">Olympus</maker>
++        <model>E-PL1</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
+         <maker>OLYMPUS OPTICAL CO.,LTD</maker>
+         <maker lang="en">Olympus</maker>
+         <model>E-20,E-20N,E-20P</model>
+@@ -233,6 +263,27 @@
+ 
+     <lens>
+         <maker>Olympus</maker>
++        <model>Olympus M.Zuiko Digital ED 14-42mm F3.5-5.6</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++        <calibration>
++            <distortion model="poly3" focal="14" k1="-0.079" />
++            <distortion model="poly3" focal="18" k1="-0.036" />
++            <distortion model="poly3" focal="25" k1="0.0004" />
++            <distortion model="poly3" focal="30" k1="0.013" />
++            <distortion model="poly3" focal="35" k1="0.014" />
++            <distortion model="poly3" focal="42" k1="0.012" />
++            <tca model="poly3" focal="14" br="0.0002632" vr="1.0002908" bb="-0.0003817" vb="1.0" />
++            <tca model="poly3" focal="18" br="-0.0000326" vr="1.0004544" bb="-0.0003189" vb="1.0007081" />
++            <tca model="poly3" focal="25" br="-0.0001613" vr="1.0005611" bb="-0.0001126" vb="1.0004058" />
++            <tca model="poly3" focal="30" br="-0.0002418" vr="1.0006295" bb="-0.0000052" vb="1.0002145" />
++            <tca model="poly3" focal="35" br="-0.0002539" vr="1.0006484" bb="0.0000470" vb="1.0000846" />
++            <tca model="poly3" focal="42" br="-0.0002029" vr="1.0006187" bb="0.0001236" vb="0.9999271" />
++        </calibration>
++    </lens>
++
++    <lens>
++        <maker>Olympus</maker>
+         <model>Standard</model>
+         <mount>olympusE10</mount>
+         <cropfactor>3.933</cropfactor>
+Index: db/slr-nikon.xml
+===================================================================
+--- data/db/slr-nikon.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-nikon.xml	(.../trunk/data)	(revision 130)
+@@ -976,4 +976,45 @@
+         </calibration>
+     </lens>
+ 
++    <lens>
++        <maker>Nikon</maker>
++        <model>Nikon Nikkor 35mm f/1.8G AF-S DX</model>
++        <mount>Nikon F AF</mount>
++        <cropfactor>1.5</cropfactor>
++        <calibration>
++            <distortion model="ptlens" focal="35" a="-0.00899" b="0.02507" c="-0.04009" />
++        </calibration>
++    </lens>
++
++    <lens> <!-- http://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=3047&group_id=9034 -->
++        <maker>Nikon</maker>
++        <model>Nikkor 50mm f/1.8D</model>
++        <mount>Nikon F AF</mount>
++        <focal>50</focal>
++        <aperture>1.8-22</aperture>
++        <type>rectilinear</type>
++        <cropfactor>1.5</cropfactor>
++        <calibration>
++            <distortion model="ptlens" focal="50.0" a="-0.00255" b="0.00841" c="-0.01107" />
++        </calibration>
++    </lens>
++
++    <lens>
++        <maker>Nikon</maker>
++        <model>Nikkor 18-105mm f/3.5-5.6G ED</model>
++        <mount>Nikon F AF</mount>
++        <focal>18-105</focal>
++        <aperture>3.5-22</aperture>
++        <type>rectilinear</type>
++        <cropfactor>1.5</cropfactor>
++        <calibration>
++            <distortion model="ptlens" focal="18.0" a="0.00529" b="-0.02091" c="-0.01697" />
++            <distortion model="ptlens" focal="25.0" a="0.01542" b="-0.03457" c="0.02371" />
++            <distortion model="ptlens" focal="35.0" a="0.00716" b="-0.00354" c="0.00352" />
++            <distortion model="ptlens" focal="50.0" a="0.00477" b="-0.00182" c="0.00982" />
++            <distortion model="ptlens" focal="75.0" a="-0.0024" b="0.02231" c="-0.01516" />
++            <distortion model="ptlens" focal="105.0" a="0.00392" b="-0.00253" c="0.01061" />
++        </calibration>
++    </lens>
++
+ </lensdatabase>
+Index: db/compact-canon.xml
+===================================================================
+--- data/db/compact-canon.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/compact-canon.xml	(.../trunk/data)	(revision 130)
+@@ -16,12 +16,17 @@
+     </mount>
+ 
+     <mount>
++        <name>canonG7</name>
++        <compat>Generic</compat>
++    </mount>
++
++    <mount>
+         <name>canonG9</name>
+         <compat>Generic</compat>
+     </mount>
+ 
+     <mount>
+-        <name>canonG11</name>
++        <name>canonG10</name>
+         <compat>Generic</compat>
+     </mount>
+ 
+@@ -188,6 +193,14 @@
+ 
+     <camera>
+         <maker>Canon</maker>
++        <model>Canon PowerShot G7</model>
++        <model lang="en">PowerShot G7</model>
++        <mount>canonG7</mount>
++        <cropfactor>4.843</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Canon</maker>
+         <model>Canon PowerShot G9</model>
+         <model lang="en">PowerShot G9</model>
+         <mount>canonG9</mount>
+Index: db/slr-tokina.xml
+===================================================================
+--- data/db/slr-tokina.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-tokina.xml	(.../trunk/data)	(revision 130)
+@@ -4,7 +4,7 @@
+         <maker>Tokina</maker>
+         <model>Tokina 12-24mm f/4 AT-X 124 AF PRO DX</model>
+         <mount>Canon EF</mount>
+-        <mount>Nikon AF</mount>
++        <mount>Nikon F AF</mount>
+         <cropfactor>1.5</cropfactor>
+         <calibration>
+             <distortion model="ptlens" focal="12" a="-0.005227" b="0.0018" c="0" />
+@@ -21,7 +21,7 @@
+         <maker>Tokina</maker>
+         <model>Tokina 19-35mm f/3.5-4.5 AF 193</model>
+         <mount>Canon EF</mount>
+-        <mount>Nikon AF</mount>
++        <mount>Nikon F AF</mount>
+         <cropfactor>1.6</cropfactor>
+         <calibration>
+             <distortion model="ptlens" focal="19" a="0" b="-0.005476" c="-0.022162" />
+@@ -39,7 +39,7 @@
+         <maker>Tokina</maker>
+         <model>Tokina 28-70mm f/2.8 AT-X 287 PRO SV</model>
+         <mount>Canon EF</mount>
+-        <mount>Nikon AF</mount>
++        <mount>Nikon F AF</mount>
+         <mount>Pentax KAF</mount>
+         <cropfactor>1.6</cropfactor>
+         <calibration>
+@@ -56,7 +56,7 @@
+         <maker>Tokina</maker>
+         <model>Tokina 17mm f/3.5 AT-X AF PRO</model>
+         <mount>Canon EF</mount>
+-        <mount>Nikon AF</mount>
++        <mount>Nikon F AF</mount>
+         <cropfactor>1.5</cropfactor>
+         <calibration>
+             <distortion model="ptlens" focal="17" a="0" b="-0.012125" c="0" />
+@@ -67,7 +67,7 @@
+         <maker>Tokina</maker>
+         <model>Tokina 17mm f/3.5 AT-X AF PRO</model>
+         <mount>Canon EF</mount>
+-        <mount>Nikon AF</mount>
++        <mount>Nikon F AF</mount>
+         <cropfactor>1.6</cropfactor>
+         <calibration>
+             <distortion model="ptlens" focal="17" a="0" b="-0.004083" c="-0.015672" />
+Index: db/slr-sony.xml
+===================================================================
+--- data/db/slr-sony.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-sony.xml	(.../trunk/data)	(revision 130)
+@@ -73,6 +73,15 @@
+     <camera>
+         <maker>SONY</maker>
+         <maker lang="en">Sony</maker>
++        <model>DSLR-A450</model>
++        <model lang="en">Alpha 450</model>
++        <mount>Sony Alpha</mount>
++        <cropfactor>1.5</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>SONY</maker>
++        <maker lang="en">Sony</maker>
+         <model>DSLR-A500</model>
+         <model lang="en">Alpha 500</model>
+         <mount>Sony Alpha</mount>
+Index: db/compact-olympus.xml
+===================================================================
+--- data/db/compact-olympus.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/compact-olympus.xml	(.../trunk/data)	(revision 130)
+@@ -56,11 +56,6 @@
+     </mount>
+ 
+     <mount>
+-        <name>olympusEP1</name>
+-        <compat>Generic</compat>
+-    </mount>
+-
+-    <mount>
+         <name>olympusSP350</name>
+         <compat>Generic</compat>
+     </mount>
+@@ -229,14 +224,6 @@
+     <camera>
+         <maker>OLYMPUS IMAGING CORP.</maker>
+         <maker lang="en">Olympus</maker>
+-        <model>EP-1</model>
+-        <mount>olympusEP1</mount>
+-        <cropfactor>2.0</cropfactor>
+-    </camera>
+-
+-    <camera>
+-        <maker>OLYMPUS IMAGING CORP.</maker>
+-        <maker lang="en">Olympus</maker>
+         <model>SP350</model>
+         <mount>olympusSP350</mount>
+         <cropfactor>4.8</cropfactor>
+Index: db/slr-panasonic.xml
+===================================================================
+--- data/db/slr-panasonic.xml	(.../tags/0.2.5/data)	(revision 130)
++++ data/db/slr-panasonic.xml	(.../trunk/data)	(revision 130)
+@@ -2,23 +2,70 @@
+ 
+     <camera>
+         <maker>Panasonic</maker>
+-        <model>DMC-G1</model>
++        <model>DMC-L1</model>
+         <mount>4/3 System</mount>
+         <cropfactor>2.0</cropfactor>
+     </camera>
+ 
+     <camera>
+         <maker>Panasonic</maker>
+-        <model>DMC-L1</model>
++        <model>DMC-L10</model>
+         <mount>4/3 System</mount>
+         <cropfactor>2.0</cropfactor>
+     </camera>
+ 
+     <camera>
+         <maker>Panasonic</maker>
++        <model>DMC-G1</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
+         <model>DMC-GF1</model>
+-        <mount>4/3 System</mount>
++        <mount>Micro 4/3 System</mount>
+         <cropfactor>2.0</cropfactor>
+     </camera>
+ 
++    <camera>
++        <maker>Panasonic</maker>
++        <model>DMC-GH1</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
++        <model>DMC-G2</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <camera>
++        <maker>Panasonic</maker>
++        <model>DMC-G10</model>
++        <mount>Micro 4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++    </camera>
++
++    <lens>
++        <maker>Panasonic</maker>
++        <model>LUMIX G 20/F1.7</model>
++        <mount>4/3 System</mount>
++        <cropfactor>2.0</cropfactor>
++        <calibration>
++            <distortion model="ptlens" focal="20" a="0.00789316" b="-0.04009" c="0.00949904" />
++            <!-- Alternative model from http://xraynaudphotos.free.fr/lensfun.php -->
++            <!-- distortion model="ptlens" focal="20" a="-0.0160" b="-0.0470" c="-0.0140" -->
++            <vignetting model="pa" focal="20" aperture="1.7" distance="100" k1="-1.18453" k2="1.18468" k3="-0.77676" />
++            <vignetting model="pa" focal="20" aperture="2.0" distance="100" k1="-0.50428" k2="-0.46084" k3="0.38333" />
++            <vignetting model="pa" focal="20" aperture="2.5" distance="100" k1="-0.02049" k2="-1.00156" k3="0.54046" />
++            <vignetting model="pa" focal="20" aperture="3.2" distance="100" k1="-0.06459" k2="-0.60501" k3="0.27001" />
++            <vignetting model="pa" focal="20" aperture="4.0" distance="100" k1="-0.09156" k2="-0.56989" k3="0.38586" />
++            <vignetting model="pa" focal="20" aperture="5.0" distance="100" k1="-0.13452" k2="-0.46186" k3="0.32235" />
++            <tca model="poly3" focal="20" br="-0.0001356" vr="1.0004113" bb="-0.0000369" vb="1.0002529" />
++        </calibration>
++    </lens>
++
+ </lensdatabase>

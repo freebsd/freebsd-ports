@@ -1,0 +1,113 @@
+--- libs/lensfun/database.cpp	2011/01/04 21:04:03	129
++++ libs/lensfun/database.cpp	2011/01/07 11:33:18	130
+@@ -152,27 +152,28 @@
+     }
+     else if (!strcmp (element_name, "mount"))
+     {
+-        if (!strcmp (ctx, "lensdatabase"))
++        if (ctx && !strcmp (ctx, "lensdatabase"))
+         {
+             pd->mount = new lfMount ();
+             goto chk_no_attrs;
+         }
+-        else if (!strcmp (ctx, "camera") ||
+-                 !strcmp (ctx, "lens"))
++        else if (ctx &&
++                 (!strcmp (ctx, "camera") ||
++                  !strcmp (ctx, "lens")))
+             goto chk_no_attrs;
+         else
+             goto bad_ctx;
+     }
+     else if (!strcmp (element_name, "camera"))
+     {
+-        if (strcmp (ctx, "lensdatabase"))
++        if (!ctx || strcmp (ctx, "lensdatabase"))
+             goto bad_ctx;
+         pd->camera = new lfCamera ();
+         goto chk_no_attrs;
+     }
+     else if (!strcmp (element_name, "lens"))
+     {
+-        if (strcmp (ctx, "lensdatabase"))
++        if (!ctx || strcmp (ctx, "lensdatabase"))
+             goto bad_ctx;
+         pd->lens = new lfLens ();
+         pd->lens->Type = LF_RECTILINEAR;
+@@ -180,7 +181,7 @@
+     }
+     else if (!strcmp (element_name, "focal"))
+     {
+-        if (strcmp (ctx, "lens") || !pd->lens)
++        if (!ctx || strcmp (ctx, "lens") || !pd->lens)
+             goto bad_ctx;
+ 
+         for (i = 0; attribute_names [i]; i++)
+@@ -195,7 +196,7 @@
+     }
+     else if (!strcmp (element_name, "aperture"))
+     {
+-        if (strcmp (ctx, "lens") || !pd->lens)
++        if (!ctx || strcmp (ctx, "lens") || !pd->lens)
+             goto bad_ctx;
+ 
+         for (i = 0; attribute_names [i]; i++)
+@@ -210,7 +211,7 @@
+     }
+     else if (!strcmp (element_name, "center"))
+     {
+-        if (strcmp (ctx, "lens") || !pd->lens)
++        if (!ctx || strcmp (ctx, "lens") || !pd->lens)
+             goto bad_ctx;
+ 
+         for (i = 0; attribute_names [i]; i++)
+@@ -223,7 +224,7 @@
+     }
+     else if (!strcmp (element_name, "cci"))
+     {
+-        if (strcmp (ctx, "lens") || !pd->lens)
++        if (!ctx || strcmp (ctx, "lens") || !pd->lens)
+             goto bad_ctx;
+ 
+         for (i = 0; attribute_names [i]; i++)
+@@ -238,19 +239,19 @@
+     }
+     else if (!strcmp (element_name, "type"))
+     {
+-        if (strcmp (ctx, "lens") || !pd->lens)
++        if (!ctx || strcmp (ctx, "lens") || !pd->lens)
+             goto bad_ctx;
+         goto chk_no_attrs;
+     }
+     else if (!strcmp (element_name, "calibration"))
+     {
+-        if (strcmp (ctx, "lens"))
++        if (!ctx || strcmp (ctx, "lens"))
+             goto bad_ctx;
+         goto chk_no_attrs;
+     }
+     else if (!strcmp (element_name, "distortion"))
+     {
+-        if (strcmp (ctx, "calibration"))
++        if (!ctx || strcmp (ctx, "calibration"))
+             goto bad_ctx;
+ 
+         lfLensCalibDistortion dc;
+@@ -301,7 +302,7 @@
+     }
+     else if (!strcmp (element_name, "tca"))
+     {
+-        if (strcmp (ctx, "calibration"))
++        if (!ctx || strcmp (ctx, "calibration"))
+             goto bad_ctx;
+ 
+         lfLensCalibTCA tcac;
+@@ -342,7 +343,7 @@
+     }
+     else if (!strcmp (element_name, "vignetting"))
+     {
+-        if (strcmp (ctx, "calibration"))
++        if (!ctx || strcmp (ctx, "calibration"))
+             goto bad_ctx;
+ 
+         lfLensCalibVignetting vc;

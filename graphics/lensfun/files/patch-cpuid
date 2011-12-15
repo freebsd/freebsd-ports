@@ -1,0 +1,128 @@
+From 9a3301bc3c239e0e74d6bc20f950b338d31457d9 Mon Sep 17 00:00:00 2001
+From: zap <zap@2a61fa91-e63d-0410-b60c-e65103854af9>
+Date: Sun, 9 May 2010 13:53:35 +0000
+Subject: [PATCH]  * Modified a little the asm instructions for detecting CPU features
+  * configure will now print the vectorization instrution sets which will be used
+
+git-svn-id: svn://svn.berlios.de/lensfun/trunk@109 2a61fa91-e63d-0410-b60c-e65103854af9
+---
+ configure              |    1 +
+ libs/lensfun/cpuid.cpp |   28 ++++++++--------------------
+ 2 files changed, 9 insertions(+), 20 deletions(-)
+
+diff --git a/configure b/configure
+index 2439096..8cee50a 100755
+--- configure.orig
++++ configure
+@@ -118,4 +118,5 @@ print "Target directory for data files:    " + tibs.DATADIR
+ print "Target directory for libraries:     " + tibs.LIBDIR
+ print "Target directory for include files: " + tibs.INCLUDEDIR
+ print "Target directory for documentation: " + tibs.DOCDIR
++print "Use vector instruction set(-s):     " + ", ".join (x for x in tibs.VECTORIZATION)
+ print "--------------------------------------------------------------------"
+diff --git a/libs/lensfun/cpuid.cpp b/libs/lensfun/cpuid.cpp
+index ed0ecf9..d7f43b3 100644
+--- libs/lensfun/cpuid.cpp.orig
++++ libs/lensfun/cpuid.cpp
+@@ -25,17 +25,13 @@
+ guint _lf_detect_cpu_features ()
+ {
+ #define cpuid(cmd) \
+-    asm ( \
+-        "push %%"R_BX"\n" \
++    __asm volatile ( \
+         "cpuid\n" \
+-        "pop %%"R_BX"\n" \
+        : "=a" (ax), "=c" (cx),  "=d" (dx) \
+-       : "0" (cmd))
++       : "0" (cmd) \
++       : R_BX)
+ 
+-    register __SIZE_TYPE__ ax asm (R_AX);
+-    register __SIZE_TYPE__ bx asm (R_BX);
+-    register __SIZE_TYPE__ dx asm (R_DX);
+-    register __SIZE_TYPE__ cx asm (R_CX);
++    __SIZE_TYPE__ ax, cx, dx, tmp;
+     static GStaticMutex lock = G_STATIC_MUTEX_INIT;
+     static guint cpuflags = -1;
+ 
+@@ -45,7 +41,7 @@ guint _lf_detect_cpu_features ()
+         cpuflags = 0;
+ 
+         /* Test cpuid presence by checking bit 21 of eflags */
+-        asm (
++        __asm volatile (
+             "pushf\n"
+             "pop     %0\n"
+             "mov     %0, %1\n"
+@@ -57,7 +53,7 @@ guint _lf_detect_cpu_features ()
+             "cmp     %0, %1\n"
+             "setne   %%al\n"
+             "movzb   %%al, %0\n"
+-            : "=r" (ax), "=r" (bx));
++            : "=r" (ax), "=r" (tmp));
+ 
+         if (ax)
+         {
+@@ -88,12 +84,12 @@ guint _lf_detect_cpu_features ()
+                     cpuflags |= LF_CPU_FLAG_SSE4_2;
+             }
+ 
+-            /* Is there extensions */
++            /* Are there extensions? */
+             cpuid (0x80000000);
+ 
+             if (ax)
+             {
+-                /* Request for extensions */
++                /* Ask extensions */
+                 cpuid (0x80000001);
+ 
+                 if (dx & 0x80000000)
+@@ -112,12 +108,4 @@ guint _lf_detect_cpu_features ()
+ #undef cpuid
+ }
+ 
+-#else
+-
+-guint
+-rs_detect_cpu_features()
+-{
+-    return 0;
+-}
+-
+ #endif /* __i386__ || __x86_64__ */
+-- 
+1.7.2.3
+
+From 19a5478ec455de6a9201d5acf5e844a926761bdb Mon Sep 17 00:00:00 2001
+From: zap <zap@2a61fa91-e63d-0410-b60c-e65103854af9>
+Date: Wed, 12 May 2010 19:31:09 +0000
+Subject: [PATCH]  * cpuid.cpp: push/pop ebx instead of marking it as clobbered, because gcc can't survive that when using -fPIC
+
+git-svn-id: svn://svn.berlios.de/lensfun/trunk@110 2a61fa91-e63d-0410-b60c-e65103854af9
+---
+ libs/lensfun/cpuid.cpp |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/libs/lensfun/cpuid.cpp b/libs/lensfun/cpuid.cpp
+index d7f43b3..491412c 100644
+--- libs/lensfun/cpuid.cpp.orig
++++ libs/lensfun/cpuid.cpp
+@@ -26,10 +26,11 @@ guint _lf_detect_cpu_features ()
+ {
+ #define cpuid(cmd) \
+     __asm volatile ( \
++        "push %%"R_BX"\n" \
+         "cpuid\n" \
++        "pop %%"R_BX"\n" \
+        : "=a" (ax), "=c" (cx),  "=d" (dx) \
+-       : "0" (cmd) \
+-       : R_BX)
++       : "0" (cmd))
+ 
+     __SIZE_TYPE__ ax, cx, dx, tmp;
+     static GStaticMutex lock = G_STATIC_MUTEX_INIT;
+-- 
+1.7.2.3
+
