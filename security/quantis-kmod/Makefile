@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quantis
-DISTVERSION=	v11.05.20
+DISTVERSION=	v11.12.13
 CATEGORIES=	security kld
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}
