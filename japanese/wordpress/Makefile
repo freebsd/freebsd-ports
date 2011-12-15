@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 PKGNAMESUFFIX=	-ja
