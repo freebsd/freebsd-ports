@@ -7,6 +7,7 @@
 
 PORTNAME=	YAML-AppConfig
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +23,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	YAML::AppConfig.3
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
 .include <bsd.port.mk>
