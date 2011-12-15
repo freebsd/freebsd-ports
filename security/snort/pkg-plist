@@ -32,6 +32,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 @exec if [ ! -f %D/etc/snort/preproc_rules/decoder.rules ] ; then cp -p %D/%F %B/; fi
 @dirrmtry etc/snort/preproc_rules
 @dirrmtry etc/snort
+%%DYNAMIC%%src/snort_dynamicsrc/attribute_table_api.h
 %%DYNAMIC%%src/snort_dynamicsrc/bitop.h
 %%DYNAMIC%%src/snort_dynamicsrc/event.h
 %%DYNAMIC%%src/snort_dynamicsrc/obfuscation.h
@@ -75,6 +76,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%src/snort_dynamicsrc/Unified2_common.h
 %%DYNAMIC%%@dirrmtry src/snort_dynamicsrc
 %%DYNAMIC%%@dirrmtry src
+%%DYNAMIC%%include/snort/dynamic_preproc/attribute_table_api.h
 %%DYNAMIC%%include/snort/dynamic_preproc/ssl.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sfcommon.h
 %%DYNAMIC%%include/snort/dynamic_preproc/sf_preproc_info.h
@@ -128,15 +130,24 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_gtp_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_gtp_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_gtp_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_imap_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_imap_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_imap_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_modbus_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_modbus_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_modbus_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_pop_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_pop_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_pop_preproc.la
@@ -184,6 +195,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ARUBA
+%%PORTDOCS%%%%DOCSDIR%%/README.GTP
 %%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
 %%PORTDOCS%%%%DOCSDIR%%/README.PerfProfiling
 %%PORTDOCS%%%%DOCSDIR%%/README.SMTP
@@ -199,6 +211,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.dcerpc2
 %%PORTDOCS%%%%DOCSDIR%%/README.decode
 %%PORTDOCS%%%%DOCSDIR%%/README.decoder_preproc_rules
+%%PORTDOCS%%%%DOCSDIR%%/README.dnp3
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.filters
@@ -210,6 +223,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.imap
 %%PORTDOCS%%%%DOCSDIR%%/README.ipip
 %%PORTDOCS%%%%DOCSDIR%%/README.ipv6
+%%PORTDOCS%%%%DOCSDIR%%/README.modbus
 %%PORTDOCS%%%%DOCSDIR%%/README.multipleconfigs
 %%PORTDOCS%%%%DOCSDIR%%/README.normalize
 %%PORTDOCS%%%%DOCSDIR%%/README.pcap_readmode

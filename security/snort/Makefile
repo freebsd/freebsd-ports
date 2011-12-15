@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.1.2
+PORTVERSION=	2.9.2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://people.rit.edu/rpsfa/distfiles/
