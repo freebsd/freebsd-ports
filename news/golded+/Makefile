@@ -8,10 +8,9 @@
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
 CATEGORIES=	news mail
-MASTER_SITES=	SF/golded-plus/golded-plus-src/Snapshot%20of%20the%201.1.5
-DISTNAME=	gps${SNAPDATE:S,^200,,}
-SNAPDATE=	20070503
-EXTRACT_SUFX=	.tb2
+MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots
+DISTNAME=	gps115-${SNAPDATE}
+SNAPDATE=	20110223
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)

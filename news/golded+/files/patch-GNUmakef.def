@@ -1,6 +1,6 @@
---- GNUmakef.def.orig	Mon May 15 16:54:00 2006
-+++ GNUmakef.def	Tue Oct 31 23:29:12 2006
-@@ -106,8 +106,8 @@
+--- GNUmakef.def.orig	2011-02-20 04:37:40.000000000 +0600
++++ GNUmakef.def	2011-12-15 11:32:23.000000000 +0700
+@@ -135,8 +135,8 @@
  CAT=cat
  SED=sed
  GREP=grep
@@ -11,7 +11,7 @@
  AR=ar
  RANLIB=ranlib
  PLATFORM=lnx
-@@ -119,8 +119,8 @@
+@@ -155,8 +155,8 @@
  endif
  endif
  endif
@@ -21,4 +21,4 @@
 +#LNKFLAGS+=-g
  CPPFLAGS+=$(CFLAGS) -fno-rtti # -fno-exceptions
  
- # comment following lines if you dislike ncurses
+ # Run `make USE_NCURSES=0` if you dislike ncurses
