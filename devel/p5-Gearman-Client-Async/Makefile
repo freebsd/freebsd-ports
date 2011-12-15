@@ -20,6 +20,7 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
 	${SITE_PERL}/Gearman/Client.pm:${PORTSDIR}/devel/p5-Gearman
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Gearman-Server>=0:${PORTSDIR}/devel/p5-Gearman-Server
 
 USE_PERL=	yes
 PERL_CONFIGURE=	yes
