@@ -69,6 +69,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,(\$$\(PYTHON\)),CFLAGS="" \1,g' ${WRKSRC}/python/Makefile
 	@# insert -fPIC into CFLAGS to fix non-i386 builds
 	@${REINPLACE_CMD} -e 's|= @CFLAGS@|= @CFLAGS@ -fPIC|g' ${WRKSRC}/rules.mk.in
+	@# don't hardcode gcc for make depend
+	@${REINPLACE_CMD} -e '/Makefile.depends:/,/^$$/s/gcc/$$(CC)/' ${WRKSRC}/rules.mk.in
 	@# Set PYTHON_SITE
 	@${REINPLACE_CMD} -E 's|(PYTHON=\$$.*)|\1;PYTHON_SITE="${PYTHONPREFIX_SITELIBDIR}"|g' ${WRKSRC}/configure
 	@# Create the features.h files that are needed to build
