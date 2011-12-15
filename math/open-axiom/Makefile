@@ -28,4 +28,7 @@ MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	AXIOM_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 
+post-patch:
+	${REINPLACE_CMD} 's/test x$$oa_has_qt = xyes/false/' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
