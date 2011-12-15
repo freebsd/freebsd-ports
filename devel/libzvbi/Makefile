@@ -30,7 +30,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#cpu(\([^)]*\))|defined(__\1__)|g' ${WRKSRC}/src/misc.h
+	@${REINPLACE_CMD} -e 's|#cpu (\([^)]*\))|defined(__\1__)|g' \
+		${WRKSRC}/src/misc.h \
+		${WRKSRC}/src/exp-gfx.c
 	@${REINPLACE_CMD} -e 's|zvbi-atsc-cc$$(EXEEXT)||g; \
 		s|zvbi-atsc-cc\.1||g' ${WRKSRC}/contrib/Makefile.in
 
