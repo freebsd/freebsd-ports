@@ -25,7 +25,9 @@ BUILD_DEPENDS=	${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstrac
 		${SITE_PERL}/Data/Types.pm:${PORTSDIR}/devel/p5-Data-Types \
 		${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-XML-DOM-Lite>0:${PORTSDIR}/textproc/p5-XML-DOM-Lite \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PERL_CONFIGURE=	yes
 
