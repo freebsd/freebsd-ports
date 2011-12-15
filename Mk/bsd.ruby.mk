@@ -9,7 +9,7 @@
 .if !defined(Ruby_Include)
 
 Ruby_Include=			bsd.ruby.mk
-Ruby_Include_MAINTAINER=	stas@FreeBSD.org
+Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 
 #
 # [variables that a user may define]

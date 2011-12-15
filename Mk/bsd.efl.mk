@@ -34,7 +34,7 @@
 # Feel free to send any comments and suggestion to maintainer.
 #
 
-EFL_Include_MAINTAINER=	stas@FreeBSD.org
+EFL_Include_MAINTAINER=	ports@FreeBSD.org
 
 #
 # Define all supported libraries
