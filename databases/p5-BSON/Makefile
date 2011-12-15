@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BSON
-PORTVERSION=	0.06
+PORTVERSION=	0.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MINIMAL
@@ -18,7 +18,8 @@ COMMENT=	Pure Perl implementation of MongoDB BSON serialization
 BUILD_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 
-TEST_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+TEST_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
@@ -33,4 +34,10 @@ MAN3=		BSON.3 \
 		BSON::Time.3 \
 		BSON::Timestamp.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
