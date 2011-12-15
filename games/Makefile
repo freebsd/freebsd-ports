@@ -827,6 +827,7 @@
     SUBDIR += sudoku
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
+    SUBDIR += sumwars
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
     SUBDIR += supertuxkart
