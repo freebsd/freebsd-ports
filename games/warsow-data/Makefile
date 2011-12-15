@@ -23,7 +23,10 @@ COMMENT=	Warsow data files
 # Package size below is for default set of OPTIONS
 NO_PACKAGE=	Package will be 574MB, set FORCE_PACKAGE if you really want it
 
+# Game port is restricted to these architectures, so it makes no sense to
+# package game data port as well (even it is not being technically built)
 ONLY_FOR_ARCHS=	i386 amd64
+
 USE_ZIP=	yes
 
 NO_BUILD=	yes
