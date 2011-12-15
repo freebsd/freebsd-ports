@@ -1,0 +1,3 @@
+Math::Int64 adds support for 64 bit integers, signed and unsigned, to Perl.
+
+WWW: http://search.cpan.org/dist/Math-Int64/
