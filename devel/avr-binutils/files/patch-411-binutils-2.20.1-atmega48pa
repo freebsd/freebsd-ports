@@ -1,0 +1,39 @@
+diff -Naurp binutils/size.c binutils/size.c
+--- binutils/size.c	2011-06-07 12:38:50.000000000 -0500
++++ binutils/size.c	2011-06-07 12:39:18.000000000 -0500
+@@ -288,6 +288,7 @@ avr_device_t avr[] =
+ 	{"at90s4434",     AVR4K,   352UL,  AVR256},
+ 	{"atmega48",      AVR4K,   AVR512, AVR256},
+ 	{"atmega48a",     AVR4K,   AVR512, AVR256},
++	{"atmega48pa",    AVR4K,   AVR512, AVR256},
+ 	{"atmega48p",     AVR4K,   AVR512, AVR256},
+ 	{"attiny4313",    AVR4K,   AVR256, AVR256},
+ 	{"attiny43u",     AVR4K,   AVR256, AVR64},
+diff -Naurp gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-06-07 12:38:50.000000000 -0500
++++ gas/config/tc-avr.c	2011-06-07 12:39:18.000000000 -0500
+@@ -146,6 +146,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega8",    AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega48",   AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega48a",  AVR_ISA_AVR4,    bfd_mach_avr4},
++  {"atmega48pa", AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega48p",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega88",   AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega88a",  AVR_ISA_AVR4,    bfd_mach_avr4},
+diff -Naurp gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-06-07 12:38:50.000000000 -0500
++++ gas/doc/c-avr.texi	2011-06-07 12:39:18.000000000 -0500
+@@ -59,10 +59,9 @@ instructions (MCU types: attiny167, atti
+ atmega8u2, atmega16u2, atmega32u2).
+ 
+ Instruction set avr4 is for the enhanced AVR core with up to 8K program
+-memory space (MCU types: atmega48, atmega48a, atmega48p,atmega8, atmega88, 
+-atmega88a, atmega88p, atmega88pa, atmega8515, atmega8535, atmega8hva, 
+-at90pwm1,at90pwm2, at90pwm2b, at90pwm3, at90pwm3b,
+-at90pwm81).
++memory space (MCU types: atmega48, atmega48a, atmega48pa, atmega48p,atmega8,
++atmega88, atmega88a, atmega88p, atmega88pa, atmega8515, atmega8535, atmega8hva,
++at90pwm1,at90pwm2, at90pwm2b, at90pwm3, at90pwm3b, at90pwm81).
+ 
+ Instruction set avr5 is for the enhanced AVR core with up to 128K program
+ memory space (MCU types: at90pwm161, atmega16, atmega16a, atmega161, atmega162,

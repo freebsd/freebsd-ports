@@ -1,0 +1,42 @@
+diff -Naurp gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-06-07 12:00:46.000000000 -0500
++++ gas/config/tc-avr.c	2011-06-07 12:01:05.000000000 -0500
+@@ -254,6 +254,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
+   {"atxmega64d3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
+   {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
++  {"atxmega64a1u",AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
+   {"atxmega128a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
+   {"atxmega128d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
+   {"atxmega192a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
+@@ -262,6 +263,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atxmega256a3b",AVR_ISA_XMEGA, bfd_mach_avrxmega6},
+   {"atxmega256d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
+   {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega7},
++  {"atxmega128a1u",AVR_ISA_XMEGA, bfd_mach_avrxmega7},
+   {"attiny4",      AVR_ISA_AVRTINY10, bfd_mach_avrtiny10},
+   {"attiny5",      AVR_ISA_AVRTINY10, bfd_mach_avrtiny10},
+   {"attiny9",      AVR_ISA_AVRTINY10, bfd_mach_avrtiny10},
+diff -Naurp gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-06-07 11:56:25.000000000 -0500
++++ gas/doc/c-avr.texi	2011-06-07 12:01:05.000000000 -0500
+@@ -97,7 +97,8 @@ Instruction set avrxmega4 is for the XME
+ memory space and less than 64K data space (MCU types: atxmega64a3, atxmega64d3).
+ 
+ Instruction set avrxmega5 is for the XMEGA AVR core with up to 64K program 
+-memory space and greater than 64K data space (MCU types: atxmega64a1).
++memory space and greater than 64K data space (MCU types: atxmega64a1,
++atxmega64a1u).
+ 
+ Instruction set avrxmega6 is for the XMEGA AVR core with up to 256K program
+ memory space and less than 64K data space (MCU types: atxmega128a3,
+@@ -105,7 +106,8 @@ atxmega128d3, atxmega192a3, atxmega192d3
+ atxmega192d3).
+ 
+ Instruction set avrxmega7 is for the XMEGA AVR core with up to 256K program
+-memory space and greater than 64K data space (MCU types: atxmega128a1).
++memory space and greater than 64K data space (MCU types: atxmega128a1,
++atxmega128a1u).
+ 
+ @cindex @code{-mall-opcodes} command line option, AVR
+ @item -mall-opcodes

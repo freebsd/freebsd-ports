@@ -1,6 +1,6 @@
-diff -Nruw bfd/Makefile.am bfd/Makefile.am
+diff -ruwN bfd/Makefile.am bfd/Makefile.am
 --- bfd/Makefile.am	2009-10-16 17:17:44.000000000 +0530
-+++ bfd/Makefile.am	2010-02-11 10:59:11.320193800 +0530
++++ bfd/Makefile.am	2010-03-11 12:13:23.069283600 +0530
 @@ -228,6 +228,8 @@
  	coff-apollo.lo \
  	coff-arm.lo \
@@ -19,9 +19,9 @@ diff -Nruw bfd/Makefile.am bfd/Makefile.am
  	coff-go32.c \
  	coff-h8300.c \
  	coff-h8500.c \
-diff -Nruw bfd/Makefile.in bfd/Makefile.in
+diff -ruwN bfd/Makefile.in bfd/Makefile.in
 --- bfd/Makefile.in	2009-10-16 17:17:48.000000000 +0530
-+++ bfd/Makefile.in	2010-02-11 11:13:52.698455300 +0530
++++ bfd/Makefile.in	2010-03-11 12:13:23.084906900 +0530
 @@ -524,6 +524,8 @@
  	coff-apollo.lo \
  	coff-arm.lo \
@@ -40,9 +40,9 @@ diff -Nruw bfd/Makefile.in bfd/Makefile.in
  	coff-go32.c \
  	coff-h8300.c \
  	coff-h8500.c \
-diff -Nruw bfd/coff-avr.c bfd/coff-avr.c
+diff -ruwN bfd/coff-avr.c bfd/coff-avr.c
 --- bfd/coff-avr.c	1970-01-01 05:30:00.000000000 +0530
-+++ bfd/coff-avr.c	2010-02-10 17:35:58.222099600 +0530
++++ bfd/coff-avr.c	2010-03-11 12:13:23.100530200 +0530
 @@ -0,0 +1,613 @@
 +/* BFD back-end for Atmel AVR COFF files.
 +   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
@@ -657,9 +657,9 @@ diff -Nruw bfd/coff-avr.c bfd/coff-avr.c
 +
 +  COFF_SWAP_TABLE
 +};
-diff -Nruw bfd/coff-ext-avr.c bfd/coff-ext-avr.c
+diff -ruwN bfd/coff-ext-avr.c bfd/coff-ext-avr.c
 --- bfd/coff-ext-avr.c	1970-01-01 05:30:00.000000000 +0530
-+++ bfd/coff-ext-avr.c	2010-02-10 17:35:58.222099600 +0530
++++ bfd/coff-ext-avr.c	2010-03-11 12:13:23.131776800 +0530
 @@ -0,0 +1,428 @@
 +/* BFD back-end for Atmel AVR "extended" COFF files.
 +   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
@@ -1089,9 +1089,9 @@ diff -Nruw bfd/coff-ext-avr.c bfd/coff-ext-avr.c
 +
 +  COFF_SWAP_TABLE
 +};
-diff -Nruw bfd/coffcode.h bfd/coffcode.h
+diff -ruwN bfd/coffcode.h bfd/coffcode.h
 --- bfd/coffcode.h	2009-09-10 17:17:12.000000000 +0530
-+++ bfd/coffcode.h	2010-02-10 17:35:58.253349600 +0530
++++ bfd/coffcode.h	2010-03-11 12:13:23.147400100 +0530
 @@ -1,3 +1,4 @@
 +
  /* Support for the generic parts of most COFF variants, for BFD.
@@ -1227,9 +1227,9 @@ diff -Nruw bfd/coffcode.h bfd/coffcode.h
  	    case C_ULABEL:	/* Undefined label.  */
  	    case C_USTATIC:	/* Undefined static.  */
  #ifndef COFF_WITH_PE
-diff -Nruw bfd/coffgen.c bfd/coffgen.c
+diff -ruwN bfd/coffgen.c bfd/coffgen.c
 --- bfd/coffgen.c	2009-09-10 17:17:12.000000000 +0530
-+++ bfd/coffgen.c	2010-02-11 11:20:28.795092600 +0530
++++ bfd/coffgen.c	2010-03-11 12:13:23.163023400 +0530
 @@ -699,6 +699,20 @@
  	      if (last_file != NULL)
  		last_file->n_value = native_index;
@@ -1330,9 +1330,9 @@ diff -Nruw bfd/coffgen.c bfd/coffgen.c
    new_symbol->native = (combined_entry_type *) bfd_zalloc (abfd, amt);
    if (!new_symbol->native)
      return NULL;
-diff -Nruw bfd/coffswap.h bfd/coffswap.h
+diff -ruwN bfd/coffswap.h bfd/coffswap.h
 --- bfd/coffswap.h	2009-09-07 13:45:15.000000000 +0530
-+++ bfd/coffswap.h	2010-02-11 11:24:25.908936000 +0530
++++ bfd/coffswap.h	2010-03-11 12:13:23.178646700 +0530
 @@ -383,7 +383,11 @@
  		  void * ext1,
  		  int type,
@@ -1360,9 +1360,9 @@ diff -Nruw bfd/coffswap.h bfd/coffswap.h
  	    }
  	  else
  	    memcpy (in->x_file.x_fname, ext->x_file.x_fname, FILNMLEN);
-diff -Nruw bfd/config.bfd bfd/config.bfd
+diff -ruwN bfd/config.bfd bfd/config.bfd
 --- bfd/config.bfd	2009-08-06 23:08:00.000000000 +0530
-+++ bfd/config.bfd	2010-02-10 17:35:58.300224600 +0530
++++ bfd/config.bfd	2010-03-11 12:13:23.178646700 +0530
 @@ -339,6 +339,7 @@
  
    avr-*-*)
@@ -1371,9 +1371,9 @@ diff -Nruw bfd/config.bfd bfd/config.bfd
      ;;
  
    bfin-*-*)
-diff -Nruw bfd/configure bfd/configure
+diff -ruwN bfd/configure bfd/configure
 --- bfd/configure	2009-10-16 17:17:47.000000000 +0530
-+++ bfd/configure	2010-02-10 17:35:58.331474600 +0530
++++ bfd/configure	2010-03-11 12:13:23.209893300 +0530
 @@ -14782,6 +14782,8 @@
      armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
      armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
@@ -1383,9 +1383,9 @@ diff -Nruw bfd/configure bfd/configure
      b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
      b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
      bfd_pei_ia64_vec)		tb="$tb pei-ia64.lo pepigen.lo cofflink.lo"; target_size=64 ;;
-diff -Nruw bfd/configure.in bfd/configure.in
+diff -ruwN bfd/configure.in bfd/configure.in
 --- bfd/configure.in	2009-10-16 17:17:44.000000000 +0530
-+++ bfd/configure.in	2010-02-10 17:35:58.331474600 +0530
++++ bfd/configure.in	2010-03-11 12:13:23.209893300 +0530
 @@ -670,6 +670,8 @@
      armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
      armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
@@ -1395,9 +1395,9 @@ diff -Nruw bfd/configure.in bfd/configure.in
      b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
      b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
      bfd_pei_ia64_vec)		tb="$tb pei-ia64.lo pepigen.lo cofflink.lo"; target_size=64 ;;
-diff -Nruw bfd/targets.c bfd/targets.c
+diff -ruwN bfd/targets.c bfd/targets.c
 --- bfd/targets.c	2009-09-10 17:17:13.000000000 +0530
-+++ bfd/targets.c	2010-02-10 17:35:58.347099600 +0530
++++ bfd/targets.c	2010-03-11 12:13:23.225516600 +0530
 @@ -564,6 +564,8 @@
  extern const bfd_target armpe_little_vec;
  extern const bfd_target armpei_big_vec;
@@ -1416,9 +1416,9 @@ diff -Nruw bfd/targets.c bfd/targets.c
  	&b_out_vec_big_host,
  	&b_out_vec_little_host,
  #ifdef BFD64
-diff -Nruw binutils/Makefile.am binutils/Makefile.am
+diff -ruwN binutils/Makefile.am binutils/Makefile.am
 --- binutils/Makefile.am	2009-09-09 13:43:23.000000000 +0530
-+++ binutils/Makefile.am	2010-02-10 17:35:57.972099600 +0530
++++ binutils/Makefile.am	2010-03-11 12:13:23.241139900 +0530
 @@ -101,7 +101,7 @@
  	resbin.c rescoff.c resrc.c resres.c \
  	size.c srconv.c stabs.c strings.c sysdump.c \
@@ -1437,9 +1437,9 @@ diff -Nruw binutils/Makefile.am binutils/Makefile.am
  
  # Code shared by all the binutils.
  BULIBS = bucomm.c version.c filemode.c
-diff -Nruw binutils/Makefile.in binutils/Makefile.in
+diff -ruwN binutils/Makefile.in binutils/Makefile.in
 --- binutils/Makefile.in	2009-09-09 13:43:23.000000000 +0530
-+++ binutils/Makefile.in	2010-02-10 17:35:57.987724600 +0530
++++ binutils/Makefile.in	2010-03-11 12:13:23.241139900 +0530
 @@ -126,7 +126,7 @@
  nm_new_OBJECTS = $(am_nm_new_OBJECTS)
  nm_new_LDADD = $(LDADD)
@@ -1467,9 +1467,9 @@ diff -Nruw binutils/Makefile.in binutils/Makefile.in
  
  # Code shared by all the binutils.
  BULIBS = bucomm.c version.c filemode.c
-diff -Nruw binutils/bucomm.c binutils/bucomm.c
+diff -ruwN binutils/bucomm.c binutils/bucomm.c
 --- binutils/bucomm.c	2009-09-14 17:13:26.000000000 +0530
-+++ binutils/bucomm.c	2010-02-10 17:35:58.034599600 +0530
++++ binutils/bucomm.c	2010-03-11 12:13:23.256763200 +0530
 @@ -550,6 +550,32 @@
    return ret;
  }
@@ -1503,9 +1503,9 @@ diff -Nruw binutils/bucomm.c binutils/bucomm.c
  /* Returns the size of the named file.  If the file does not
     exist, or if it is not a real file, then a suitable non-fatal
     error message is printed and zero is returned.  */
-diff -Nruw binutils/bucomm.h binutils/bucomm.h
+diff -ruwN binutils/bucomm.h binutils/bucomm.h
 --- binutils/bucomm.h	2009-09-02 12:52:31.000000000 +0530
-+++ binutils/bucomm.h	2010-02-10 17:35:58.050224600 +0530
++++ binutils/bucomm.h	2010-03-11 12:13:23.272386500 +0530
 @@ -58,6 +58,8 @@
  
  off_t get_file_size (const char *);
@@ -1515,9 +1515,9 @@ diff -Nruw binutils/bucomm.h binutils/bucomm.h
  extern char *program_name;
  
  /* filemode.c */
-diff -Nruw binutils/budbg.h binutils/budbg.h
+diff -ruwN binutils/budbg.h binutils/budbg.h
 --- binutils/budbg.h	2009-09-02 12:52:31.000000000 +0530
-+++ binutils/budbg.h	2010-02-10 17:35:58.050224600 +0530
++++ binutils/budbg.h	2010-03-11 12:13:23.272386500 +0530
 @@ -52,8 +52,11 @@
  
  extern bfd_boolean write_ieee_debugging_info (bfd *, void *);
@@ -1531,9 +1531,9 @@ diff -Nruw binutils/budbg.h binutils/budbg.h
 +  (bfd *abfd, void *, long *symcountp, asymbol ***);
 +
  #endif
-diff -Nruw binutils/debug.c binutils/debug.c
+diff -ruwN binutils/debug.c binutils/debug.c
 --- binutils/debug.c	2009-09-14 17:13:26.000000000 +0530
-+++ binutils/debug.c	2010-02-11 10:50:38.043866600 +0530
++++ binutils/debug.c	2010-03-11 12:13:23.288009800 +0530
 @@ -31,6 +31,7 @@
  #include <assert.h>
  #include "bfd.h"
@@ -1662,9 +1662,9 @@ diff -Nruw binutils/debug.c binutils/debug.c
 +  /* Not found, pass the original name on. */
 +  return oname;
 +}
-diff -Nruw binutils/debug.h binutils/debug.h
+diff -ruwN binutils/debug.h binutils/debug.h
 --- binutils/debug.h	2009-09-14 17:13:26.000000000 +0530
-+++ binutils/debug.h	2010-02-10 17:35:58.097099600 +0530
++++ binutils/debug.h	2010-03-11 12:13:23.288009800 +0530
 @@ -440,6 +440,12 @@
  
  extern bfd_boolean debug_start_source (void *, const char *);
@@ -1678,9 +1678,9 @@ diff -Nruw binutils/debug.h binutils/debug.h
  /* Record a function definition.  This implicitly starts a function
     block.  The debug_type argument is the type of the return value.
     The bfd_boolean indicates whether the function is globally visible.
-diff -Nruw binutils/doc/objcopy.1 binutils/doc/objcopy.1
+diff -ruwN binutils/doc/objcopy.1 binutils/doc/objcopy.1
 --- binutils/doc/objcopy.1	2009-10-16 17:22:19.000000000 +0530
-+++ binutils/doc/objcopy.1	2010-02-11 10:22:09.312500000 +0530
++++ binutils/doc/objcopy.1	2010-03-11 12:13:23.303633100 +0530
 @@ -202,6 +202,8 @@
          [\fB\-\-readonly\-text\fR]
          [\fB\-\-pure\fR]
@@ -1714,9 +1714,9 @@ diff -Nruw binutils/doc/objcopy.1 binutils/doc/objcopy.1
  .IP "\fB\-V\fR" 4
  .IX Item "-V"
  .PD 0
-diff -Nruw binutils/objcopy.c binutils/objcopy.c
+diff -ruwN binutils/objcopy.c binutils/objcopy.c
 --- binutils/objcopy.c	2009-09-14 17:13:26.000000000 +0530
-+++ binutils/objcopy.c	2010-02-11 10:56:56.890302300 +0530
++++ binutils/objcopy.c	2010-03-11 12:13:23.319256400 +0530
 @@ -32,6 +32,7 @@
  #include "elf-bfd.h"
  #include <sys/stat.h>
@@ -1817,9 +1817,9 @@ diff -Nruw binutils/objcopy.c binutils/objcopy.c
  	case OPTION_READONLY_TEXT:
  	  bfd_flags_to_set |= WP_TEXT;
  	  bfd_flags_to_clear &= ~WP_TEXT;
-diff -Nruw binutils/rdcoff.c binutils/rdcoff.c
+diff -ruwN binutils/rdcoff.c binutils/rdcoff.c
 --- binutils/rdcoff.c	2009-09-02 12:52:32.000000000 +0530
-+++ binutils/rdcoff.c	2010-02-10 17:35:58.128349600 +0530
++++ binutils/rdcoff.c	2010-03-11 12:13:23.334879700 +0530
 @@ -82,6 +82,9 @@
    struct coff_slots *slots;
    /* Basic types.  */
@@ -1963,9 +1963,9 @@ diff -Nruw binutils/rdcoff.c binutils/rdcoff.c
  	  if (ISFCN (syment.n_type))
  	    {
  	      fnname = name;
-diff -Nruw binutils/wrcoff.c binutils/wrcoff.c
+diff -ruwN binutils/wrcoff.c binutils/wrcoff.c
 --- binutils/wrcoff.c	1970-01-01 05:30:00.000000000 +0530
-+++ binutils/wrcoff.c	2010-02-10 17:35:58.159599600 +0530
++++ binutils/wrcoff.c	2010-03-11 12:13:23.366126300 +0530
 @@ -0,0 +1,3410 @@
 +/* wrcoff.c -- Generate (AVR) COFF debugging information
 +   Copyright 2003 Free Software Foundation, Inc.
@@ -5377,9 +5377,9 @@ diff -Nruw binutils/wrcoff.c binutils/wrcoff.c
 +
 +  return TRUE;
 +}
-diff -Nruw include/coff/avr.h include/coff/avr.h
+diff -ruwN include/coff/avr.h include/coff/avr.h
 --- include/coff/avr.h	1970-01-01 05:30:00.000000000 +0530
-+++ include/coff/avr.h	2010-02-10 17:35:58.362724600 +0530
++++ include/coff/avr.h	2010-03-11 12:13:23.381749600 +0530
 @@ -0,0 +1,110 @@
 +/* coff information for Atmel AVR.
 +   
@@ -5491,9 +5491,9 @@ diff -Nruw include/coff/avr.h include/coff/avr.h
 +
 +#define RELOC struct external_reloc
 +#define RELSZ 10
-diff -Nruw include/coff/internal.h include/coff/internal.h
+diff -ruwN include/coff/internal.h include/coff/internal.h
 --- include/coff/internal.h	2009-09-02 12:51:39.000000000 +0530
-+++ include/coff/internal.h	2010-02-10 17:35:58.378349600 +0530
++++ include/coff/internal.h	2010-03-11 12:13:23.381749600 +0530
 @@ -646,6 +646,8 @@
  
  };

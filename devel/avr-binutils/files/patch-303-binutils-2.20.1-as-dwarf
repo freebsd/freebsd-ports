@@ -1,0 +1,29 @@
+diff -ruwN gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2010-03-11 14:56:16.484109300 +0530
++++ gas/config/tc-avr.c	2010-03-11 14:58:59.248690500 +0530
+@@ -24,6 +24,7 @@
+ #include "as.h"
+ #include "safe-ctype.h"
+ #include "subsegs.h"
++#include "dwarf2dbg.h"
+ 
+ struct avr_opcodes_s
+ {
+@@ -1368,6 +1369,7 @@
+ 
+   dwarf2_emit_insn (0);
+ 
++  dwarf2_emit_insn (0);
+   /* We used to set input_line_pointer to the result of get_operands,
+      but that is wrong.  Our caller assumes we don't change it.  */
+   {
+diff -ruwN gas/config/tc-avr.h gas/config/tc-avr.h
+--- gas/config/tc-avr.h	2010-03-11 14:56:16.484109300 +0530
++++ gas/config/tc-avr.h	2010-03-11 14:58:59.264313900 +0530
+@@ -147,3 +147,6 @@
+ 
+ /* This target is buggy, and sets fix size too large.  */
+ #define TC_FX_SIZE_SLACK(FIX) 2
++
++/* keep DWARF2_ADDR_SIZE in consistency with C compiler produced information */
++#define DWARF2_ADDR_SIZE(bfd) 4

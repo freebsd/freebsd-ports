@@ -1,5 +1,6 @@
---- gas/dwarf2dbg.c.orig	2009-09-14 13:43:26.000000000 +0200
-+++ gas/dwarf2dbg.c	2010-03-04 11:13:52.000000000 +0100
+diff -ruwN gas/dwarf2dbg.c gas/dwarf2dbg.c
+--- gas/dwarf2dbg.c	2010-03-11 15:06:25.773290700 +0530
++++ gas/dwarf2dbg.c	2010-03-11 15:08:20.410311300 +0530
 @@ -112,8 +112,11 @@
     Note: If you want to change this, you'll have to update the
     "standard_opcode_lengths" table that is emitted below in

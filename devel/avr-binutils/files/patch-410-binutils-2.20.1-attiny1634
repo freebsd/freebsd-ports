@@ -1,0 +1,36 @@
+diff -Naurp binutils/size.c binutils/size.c
+--- binutils/size.c	2011-06-07 12:36:56.000000000 -0500
++++ binutils/size.c	2011-06-07 12:37:08.000000000 -0500
+@@ -250,6 +250,7 @@ avr_device_t avr[] =
+         {"atmega16hvb",   AVR16K,  AVR1K,  AVR512},
+         {"atmega16hvbrevb",AVR16K, AVR1K,  AVR512},
+ 	{"atmega16m1",    AVR16K,  AVR1K,  AVR512},
++	{"attiny1634",    AVR16K,  AVR1K,  AVR256},
+ 	{"atmega16u2",    AVR16K,  AVR512, AVR512},
+ 	{"atmega16u4",    AVR16K,  1280UL, AVR512},
+ 	{"attiny167",     AVR16K,  AVR512, AVR512},
+diff -Naurp gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-06-07 12:36:56.000000000 -0500
++++ gas/config/tc-avr.c	2011-06-07 12:37:08.000000000 -0500
+@@ -142,6 +142,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega8u2",  AVR_ISA_AVR35,   bfd_mach_avr35},
+   {"atmega16u2", AVR_ISA_AVR35,   bfd_mach_avr35},
+   {"atmega32u2", AVR_ISA_AVR35,   bfd_mach_avr35},
++  {"attiny1634", AVR_ISA_AVR35,   bfd_mach_avr35},
+   {"atmega8",    AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega48",   AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega48a",  AVR_ISA_AVR4,    bfd_mach_avr4},
+diff -Naurp gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-06-07 12:36:56.000000000 -0500
++++ gas/doc/c-avr.texi	2011-06-07 12:37:08.000000000 -0500
+@@ -55,8 +55,8 @@ Instruction set avr31 is for the classic
+ memory space (MCU types: atmega103, at43usb320).
+ 
+ Instruction set avr35 is for classic AVR core plus MOVW, CALL, and JMP
+-instructions (MCU types: attiny167, at90usb82, at90usb162, atmega8u2,
+-atmega16u2, atmega32u2).
++instructions (MCU types: attiny167, attiny1634, at90usb82, at90usb162,
++atmega8u2, atmega16u2, atmega32u2).
+ 
+ Instruction set avr4 is for the enhanced AVR core with up to 8K program
+ memory space (MCU types: atmega48, atmega48a, atmega48p,atmega8, atmega88, 

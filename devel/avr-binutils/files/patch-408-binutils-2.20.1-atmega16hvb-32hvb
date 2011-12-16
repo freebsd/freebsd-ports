@@ -1,0 +1,52 @@
+diff -Naur binutils/size.c binutils/size.c
+--- binutils/size.c	2011-01-19 13:46:48.000000000 -0600
++++ binutils/size.c	2011-01-19 13:50:05.000000000 -0600
+@@ -207,8 +207,8 @@
+ 	{"atmega3290a",   AVR32K,  AVR2K,  AVR1K},
+ 	{"atmega3290p",   AVR32K,  AVR2K,  AVR1K},
+ 	{"atmega32hvb",   AVR32K,  AVR2K,  AVR1K},
++	{"atmega32hvbrevb",AVR32K, AVR2K,  AVR1K},
+ 	{"atmega32c1",    AVR32K,  AVR2K,  AVR1K},
+-   {"atmega32hvb",   AVR32K,  AVR2K,  AVR1K},
+ 	{"atmega32m1",    AVR32K,  AVR2K,  AVR1K},
+ 	{"atmega32u2",    AVR32K,  AVR1K,  AVR1K},
+ 	{"atmega32u4",    AVR32K,  2560UL, AVR1K},
+@@ -244,7 +244,8 @@
+ 	{"atmega169pa",   AVR16K,  AVR1K,  AVR512},
+ 	{"atmega16hva",   AVR16K,  768UL,  AVR256},
+ 	{"atmega16hva2",  AVR16K,  AVR1K,  AVR256},
+-   {"atmega16hvb",   AVR16K,  AVR1K,  AVR512},
++        {"atmega16hvb",   AVR16K,  AVR1K,  AVR512},
++        {"atmega16hvbrevb",AVR16K, AVR1K,  AVR512},
+ 	{"atmega16m1",    AVR16K,  AVR1K,  AVR512},
+ 	{"atmega16u2",    AVR16K,  AVR512, AVR512},
+ 	{"atmega16u4",    AVR16K,  1280UL, AVR512},
+diff -Naur gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-01-19 13:46:48.000000000 -0600
++++ gas/config/tc-avr.c	2011-01-19 13:51:06.000000000 -0600
+@@ -220,7 +220,9 @@
+   {"atmega16hva",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16hva2",AVR_ISA_AVR5,   bfd_mach_avr5},
+   {"atmega16hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega16hvbrevb",AVR_ISA_AVR5,bfd_mach_avr5},
+   {"atmega32hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega32hvbrevb",AVR_ISA_AVR5,bfd_mach_avr5},
+   {"at90can32" , AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"at90can64" , AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"at90pwm216", AVR_ISA_AVR5,    bfd_mach_avr5},
+diff -Naur gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-01-19 13:46:48.000000000 -0600
++++ gas/doc/c-avr.texi	2011-01-19 13:52:30.000000000 -0600
+@@ -75,9 +75,9 @@
+ atmega644pa, atmega645, atmega645a, atmega645p, atmega6450, atmega6450a,
+ atmega6450p, atmega649, atmega649a, atmega649p, atmega6490, atmega6490a,
+ atmega6490p, atmega64hve, atmega16hva, atmega16hva2, atmega16hvb, atmega32hvb,
+-at90can32, at90can64, at90pwm216, at90pwm316, atmega16u4, atmega32c1,
+-atmega64c1, atmega64m1, atmega16m1, atmega32m1, atmega64m1, atmega16u4,
+-atmega32u4, atmega32u6, at90usb646, at90usb647, at94k, at90scr100).
++atmega16hvbrevb, atmega32hvbrevb, at90can32, at90can64, at90pwm216, at90pwm316,
++atmega16u4, atmega32c1, atmega64c1, atmega64m1, atmega16m1, atmega32m1, atmega64m1,
++atmega16u4, atmega32u4, atmega32u6, at90usb646, at90usb647, at94k, at90scr100).
+ 
+ Instruction set avr51 is for the enhanced AVR core with exactly 128K program
+ memory space (MCU types: atmega128, atmega1280, atmega1281, atmega1284p,

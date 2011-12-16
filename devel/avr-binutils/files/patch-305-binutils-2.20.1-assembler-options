@@ -1,0 +1,12 @@
+diff -Naurp gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-02-08 10:59:27.000000000 -0600
++++ gas/config/tc-avr.c	2011-02-08 11:01:47.000000000 -0600
+@@ -378,7 +378,7 @@ void
+ md_show_usage (FILE *stream)
+ {
+   fprintf (stream,
+-      _("AVR options:\n"
++      _("AVR Assembler options:\n"
+ 	"  -mmcu=[avr-name] select microcontroller variant\n"
+ 	"                   [avr-name] can be:\n"
+ 	"                   avr1  - classic AVR core without data RAM\n"
