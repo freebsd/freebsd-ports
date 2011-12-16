@@ -225,6 +225,7 @@ R-cran-deldir                   ports/math/R-cran-deldir
 R-cran-diagram                  ports/graphics/R-cran-diagram
 R-cran-digest                   ports/security/R-cran-digest
 R-cran-eco                      ports/science/R-cran-eco
+R-cran-epicalc                  ports/science/R-cran-epicalc
 R-cran-foreach                  ports/devel/R-cran-foreach
 R-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 R-cran-gmm                      ports/finance/R-cran-gmm
@@ -13026,6 +13027,7 @@ p5-Math-Geometry-Planar-GPC-Polygon  ports/math/p5-Math-Geometry-Planar-GPC-Poly
 p5-Math-Geometry-Planar-Offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-Math-Geometry-Voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-Math-Gradient                ports/math/p5-Math-Gradient
+p5-Math-Int64                   ports/math/p5-Math-Int64
 p5-Math-Interpolate             ports/math/p5-Math-Interpolate
 p5-Math-Intersection-StraightLine  ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination       ports/math/p5-Math-LinearCombination
@@ -14333,6 +14335,7 @@ p5-Term-Visual                  ports/devel/p5-Term-Visual
 p5-Test-Assertions              ports/devel/p5-Test-Assertions
 p5-Test-Base                    ports/devel/p5-Test-Base
 p5-Test-Benchmark               ports/devel/p5-Test-Benchmark
+p5-Test-BinaryData              ports/devel/p5-Test-BinaryData
 p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
@@ -17454,6 +17457,7 @@ p5-math-geometry-voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-math-gmp                     ports/math/p5-Math-GMP
 p5-math-gradient                ports/math/p5-Math-Gradient
 p5-math-gsl                     ports/math/p5-Math-GSL
+p5-math-int64                   ports/math/p5-Math-Int64
 p5-math-interpolate             ports/math/p5-Math-Interpolate
 p5-math-intersection-straightline  ports/math/p5-Math-Intersection-StraightLine
 p5-math-linearcombination       ports/math/p5-Math-LinearCombination
@@ -18825,6 +18829,7 @@ p5-term-vt102                   ports/devel/p5-Term-VT102
 p5-test-assertions              ports/devel/p5-Test-Assertions
 p5-test-base                    ports/devel/p5-Test-Base
 p5-test-benchmark               ports/devel/p5-Test-Benchmark
+p5-test-binarydata              ports/devel/p5-Test-BinaryData
 p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
@@ -23112,6 +23117,7 @@ r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-digest                   ports/security/R-cran-digest
 r-cran-eco                      ports/science/R-cran-eco
 r-cran-epi                      ports/science/R-cran-Epi
+r-cran-epicalc                  ports/science/R-cran-epicalc
 r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 r-cran-gmm                      ports/finance/R-cran-gmm
@@ -24895,6 +24901,7 @@ solarconquest                   ports/games/solarconquest
 solarwolf                       ports/games/solarwolf
 solfege                         ports/audio/solfege
 solid-ircd                      ports/irc/solid-ircd
+solidcoin                       ports/net-p2p/solidcoin
 solitaire                       ports/math/solitaire
 sonata                          ports/audio/sonata
 sonice                          ports/audio/sonice
