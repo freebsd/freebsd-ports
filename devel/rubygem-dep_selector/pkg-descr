@@ -1,0 +1,4 @@
+The gem takes as input a representation of packages and their dependencies and
+finds a binding of packages to versions that satisfies desired constraints.
+
+WWW: https://github.com/algorist/dep_selector
