@@ -971,6 +971,7 @@
     SUBDIR += llvm
     SUBDIR += llvm-devel
     SUBDIR += llvm-etoile
+    SUBDIR += llvm29
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += log4c

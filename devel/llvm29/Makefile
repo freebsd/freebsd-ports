@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	llvm
+PORTNAME=	llvm29
 PORTVERSION=	2.9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	llvm-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
