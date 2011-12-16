@@ -1646,6 +1646,7 @@
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-merb-assets
     SUBDIR += rubygem-merb-haml
+    SUBDIR += rubygem-merb-helpers
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-multipart-post
