@@ -39,7 +39,8 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e \
 		's|CONF_LIBDIR)pkgconfig|CONF_LIBDIR)../libdata/pkgconfig|' \
 			${WRKSRC}/build/tibs/compiler/pkgconfig.mak
-	${REINPLACE_CMD} -e '/-s -O3/d' ${WRKSRC}/build/tibs/compiler/gcc.mak
+	${REINPLACE_CMD} -e '/-s -O3/d' -e '/LDFLAGS\.r/s|-s|${STRIP}|' \
+		${WRKSRC}/build/tibs/compiler/gcc.mak
 	${REINPLACE_CMD} -e '/GROUPS/s| DOCS||' ${WRKSRC}/build/tibs/rules.mak
 
 post-install:
