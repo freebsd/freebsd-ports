@@ -1621,6 +1621,7 @@
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-cgi_multipart_eof_fix
+    SUBDIR += rubygem-chef-server-api
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
