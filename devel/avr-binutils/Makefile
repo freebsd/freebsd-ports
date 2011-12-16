@@ -49,5 +49,10 @@ MAN1=	\
 		avr-windmc.1 \
 		avr-windres.1
 INFO=		as binutils gprof ld
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
+
+add-plist-post:
+	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
