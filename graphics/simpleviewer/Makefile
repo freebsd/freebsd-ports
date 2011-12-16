@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OpenGL%20edition
 DISTNAME=	sviewgl-src-${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and simple OpenGL image viewer with transparency support
 
 LICENSE=	GPLv2
