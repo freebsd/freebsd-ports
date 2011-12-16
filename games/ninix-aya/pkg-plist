@@ -50,6 +50,7 @@ libexec/ninix/ninix/keymap.py
 libexec/ninix/ninix/kinoko.py
 libexec/ninix/ninix/makoto.py
 libexec/ninix/ninix/menu.py
+libexec/ninix/ninix/metamagic.py
 libexec/ninix/ninix/nekodorif.py
 libexec/ninix/ninix/ngm.py
 libexec/ninix/ninix/pix.py
@@ -75,8 +76,9 @@ libexec/ninix/ninix/keymap.pyc
 libexec/ninix/ninix/kinoko.pyc
 libexec/ninix/ninix/lock.py
 libexec/ninix/ninix/lock.pyc
-libexec/ninix/ninix/menu.pyc
 libexec/ninix/ninix/makoto.pyc
+libexec/ninix/ninix/menu.pyc
+libexec/ninix/ninix/metamagic.pyc
 libexec/ninix/ninix/nekodorif.pyc
 libexec/ninix/ninix/ngm.pyc
 libexec/ninix/ninix/pix.pyc
