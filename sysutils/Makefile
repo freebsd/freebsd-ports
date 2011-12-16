@@ -370,6 +370,7 @@
     SUBDIR += iat
     SUBDIR += iextract
     SUBDIR += installwatch
+    SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ipa
     SUBDIR += ipmitool
