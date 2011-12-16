@@ -2141,7 +2141,6 @@ audio/cantus||2011-05-03|Has expired: Upstream disappeared and distfile is no lo
 audio/xaylet||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
 science/oases||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
 shells/pash||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
-www/codeigniter|www/codeigniter17|2011-05-03|Renamed to track deprecated branch
 www/codeigniter-devel||2011-05-03|Removed
 devel/common_msgs|devel/ros-common_msgs|2011-05-03|Renamed
 math/geometry|math/ros-geometry|2011-05-03|Renamed
