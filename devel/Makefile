@@ -3618,6 +3618,7 @@
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-yajl-ruby
+    SUBDIR += rubygem-yajl-ruby077
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zentest
     SUBDIR += rubygem-zoom
