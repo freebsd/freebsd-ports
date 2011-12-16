@@ -1223,6 +1223,7 @@
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-ezamar
+    SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-formosa
     SUBDIR += rubygem-heredoc_unindent
