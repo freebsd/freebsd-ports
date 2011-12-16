@@ -3546,6 +3546,7 @@
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rake
+    SUBDIR += rubygem-rake-compiler
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rash
