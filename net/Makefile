@@ -961,6 +961,7 @@
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
+    SUBDIR += rubygem-amqp067
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-http_parser.rb
