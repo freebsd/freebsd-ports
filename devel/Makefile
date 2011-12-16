@@ -3461,6 +3461,7 @@
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-delayed_job
+    SUBDIR += rubygem-dep_selector
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-devise
