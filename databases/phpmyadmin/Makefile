@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.4.8
+DISTVERSION=	3.4.9-rc1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 USE_MYSQL=	compat
 IGNORE_WITH_PHP=	4
 IGNORE_WITH_MYSQL=	41
-USE_BZIP2=	yes
+USE_XZ=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype mysql session filter mbstring json spl
