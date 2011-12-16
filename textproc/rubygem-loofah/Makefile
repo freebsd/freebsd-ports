@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	 Library for manipulating HTML/XML documents and fragments
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.3.3:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.4.4:${PORTSDIR}/textproc/rubygem-nokogiri
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
