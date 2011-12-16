@@ -764,6 +764,7 @@
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-chef-server
+    SUBDIR += rubygem-chef-solr
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
     SUBDIR += rubygem-guard

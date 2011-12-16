@@ -1,0 +1,8 @@
+chef-solr is a Ruby container for SOLR that starts up the Search Engine for the
+Chef Server under Jetty.
+
+For more information, see the following pages on the Chef Wiki:
+o   wiki.opscode.com/display/chef/Search
+o   wiki.opscode.com/display/chef/Chef+Indexer
+
+WWW: http://wiki.opscode.com/display/chef
