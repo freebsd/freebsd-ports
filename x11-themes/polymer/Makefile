@@ -20,6 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoheader
+USE_GMAKE=	yes	# parallel builds (-jX) are broken with BSD make(1)
 USE_QT_VER=	3
 USE_LDCONFIG=	yes
 
@@ -33,15 +34,13 @@ QTSTYLESDIR=	${PREFIX}/lib/plugins/styles
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-BROKEN=		Does not compile on amd64
-.endif
-
+.if ${ARCH} != amd64
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 .endif
 .if ${MACHINE_CPU:Msse2}
 CONFIGURE_ARGS+=	--enable-sse2
+.endif
 .endif
 
 do-install:
