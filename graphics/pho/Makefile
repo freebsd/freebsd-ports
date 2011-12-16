@@ -26,8 +26,8 @@ PLIST_FILES=	bin/pho
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$$(MAKE)| ; \
-		s|$$(INSTALL) \(pho \)|${INSTALL_PROGRAM} \1| ; \
-		s|$$(INSTALL) \(pho\.1\)|${INSTALL_MAN} \1| ; \
+		/bin/s|$$(INSTALL)|${INSTALL_PROGRAM}| ; \
+		/man/s|$$(INSTALL)|${INSTALL_MAN}| ; \
 		s|-g|${CFLAGS}| ; s|^G1FLAGS|#&|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-Wall -g -O2 ||' ${WRKSRC}/exif/Makefile
 
