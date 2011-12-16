@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy 
 		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.5:${PORTSDIR}/devel/py-turbokid \
 		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.3:${PORTSDIR}/devel/py-turbojson \
 		${PYTHON_PKGNAMEPREFIX}tgMochiKit>=1.4.2:${PORTSDIR}/devel/py-tgMochiKit \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.4.4:${PORTSDIR}/textproc/py-genshi
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.4.4:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}TGScheduler>0:${PORTSDIR}/devel/py-TGScheduler
 
 USE_GETTEXT=	yes
 USE_PYTHON=	2.5+
