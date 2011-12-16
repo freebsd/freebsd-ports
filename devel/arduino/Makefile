@@ -5,6 +5,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -22,7 +23,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_JAVA=	1.6+
 NO_BUILD=	yes
-USE_LDCONFIG=	yes
 
 SUB_FILES=	arduino pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -62,6 +62,7 @@ post-extract:
 	@${RM} ${WRKSRC}/hardware/tools/avrdude
 	@${RM} ${WRKSRC}/hardware/tools/avrdude64
 	@${RM} ${WRKSRC}/hardware/tools/avrdude.conf
+	@${RM} ${WRKSRC}/lib/librxtxSerial64.so
 	@${MKDIR} ${WRKSRC}/hardware/tools/avr
 	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
 	@${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
