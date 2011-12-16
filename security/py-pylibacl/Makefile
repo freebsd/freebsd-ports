@@ -7,15 +7,17 @@
 
 PORTNAME=	pylibacl
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Manipulate ACL with Python
 
-USE_PYTHON=	2.5+
+# Python3 ready
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
