@@ -198,7 +198,6 @@ arduino/lib/ecj.jar
 arduino/lib/jna.jar
 arduino/lib/keywords.txt
 arduino/lib/librxtxSerial.so
-arduino/lib/librxtxSerial64.so
 arduino/lib/pde.jar
 arduino/lib/preferences.txt
 arduino/lib/theme/buttons.gif
