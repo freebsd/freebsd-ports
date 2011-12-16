@@ -1,0 +1,30 @@
+diff -Naurp gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-06-07 12:03:38.000000000 -0500
++++ gas/config/tc-avr.c	2011-06-07 12:03:51.000000000 -0500
+@@ -249,8 +249,10 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega2561", AVR_ISA_AVR6,    bfd_mach_avr6},
+   {"atxmega16a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
+   {"atxmega16d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega16x1", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
+   {"atxmega32a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
+   {"atxmega32d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega32x1", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
+   {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
+   {"atxmega64d3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
+   {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
+diff -Naurp gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-06-07 12:03:38.000000000 -0500
++++ gas/doc/c-avr.texi	2011-06-07 12:03:51.000000000 -0500
+@@ -88,10 +88,10 @@ atmega2560, atmega2561).
+ 
+ Instruction set avrxmega2 is for the XMEGA AVR core with 8K to 64K program
+ memory space and less than 64K data space (MCU types: atxmega16a4, atxmega16d4,
+-atxmega32d4).
++atxmega16x1, atxmega32a4, atxmega32d4, atxmega32x1).
+ 
+ Instruction set avrxmega3 is for the XMEGA AVR core with 8K to 64K program
+-memory space and greater than 64K data space (MCU types: atxmega32a4).
++memory space and greater than 64K data space (MCU types: none).
+ 
+ Instruction set avrxmega4 is for the XMEGA AVR core with up to 64K program
+ memory space and less than 64K data space (MCU types: atxmega64a3, atxmega64d3).

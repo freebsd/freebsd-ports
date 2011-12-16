@@ -1,0 +1,73 @@
+diff -rupw binutils/size.c binutils/size.c
+--- binutils/size.c	2011-01-10 13:22:40.000000000 -0600
++++ binutils/size.c	2011-01-05 19:15:32.000000000 -0600
+@@ -220,6 +220,7 @@ avr_device_t avr[] =
+ 	{"atxmega16d4",   AVR20K,  AVR2K,  AVR1K},
+ 
+ 	{"at76c711",      AVR16K,  AVR2K,  0UL},
++	{"at90pwm161",    AVR16K,  AVR1K,  AVR512},
+ 	{"at90pwm216",    AVR16K,  AVR1K,  AVR512},
+ 	{"at90pwm316",    AVR16K,  AVR1K,  AVR512},
+ 	{"at90usb162",    AVR16K,  AVR512, AVR512},
+diff -rupw gas/config/tc-avr.c gas/config/tc-avr.c
+--- gas/config/tc-avr.c	2011-01-10 13:22:40.000000000 -0600
++++ gas/config/tc-avr.c	2011-01-05 19:09:23.000000000 -0600
+@@ -159,6 +159,7 @@ static struct mcu_type_s mcu_types[] =
+   {"at90pwm3",   AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"at90pwm3b",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"at90pwm81",  AVR_ISA_AVR4,    bfd_mach_avr4},
++  {"at90pwm161", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16",   AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16a",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega161",  AVR_ISA_M161,    bfd_mach_avr5},
+diff -rupw gas/doc/c-avr.texi gas/doc/c-avr.texi
+--- gas/doc/c-avr.texi	2011-01-10 13:22:40.000000000 -0600
++++ gas/doc/c-avr.texi	2011-01-05 19:10:26.000000000 -0600
+@@ -65,8 +65,8 @@ at90pwm1,at90pwm2, at90pwm2b, at90pwm3, 
+ at90pwm81).
+ 
+ Instruction set avr5 is for the enhanced AVR core with up to 128K program
+-memory space (MCU types: atmega16, atmega16a, atmega161, atmega162, atmega163,
+-atmega164a, atmega164p, atmega165, atmega165a, atmega165p, atmega168, 
++memory space (MCU types: at90pwm161, atmega16, atmega16a, atmega161, atmega162,
++atmega163, atmega164a, atmega164p, atmega165, atmega165a, atmega165p, atmega168, 
+ atmega168a, atmega168p, atmega169, atmega169p, atmega169pa,
+ atmega32, atmega323, atmega324a, atmega324p, atmega324pa, atmega325, atmega325a,
+ atmega325p, atmega3250, atmega3250a, atmega3250p, atmega328, atmega328p,
+diff -rupw ld/Makefile.in ld/Makefile.in
+--- ld/Makefile.in	2011-01-10 13:22:05.000000000 -0600
++++ ld/Makefile.in	2011-01-06 11:18:12.000000000 -0600
+@@ -441,6 +441,7 @@ ALL_EMULATIONS = \
+ 	eavrxmega5.o \
+ 	eavrxmega6.o \
+ 	eavrxmega7.o \
++	eavrtiny10.o \
+ 	ecoff_i860.o \
+ 	ecoff_sparc.o \
+ 	eelf32_spu.o \
+@@ -952,6 +953,14 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavr5.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavr51.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavr6.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrtiny10.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega1.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega2.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega3.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega4.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega5.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega6.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eavrxmega7.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ecoff_i860.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ecoff_sparc.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ecrisaout.Po@am__quote@
+@@ -2104,6 +2113,10 @@ eavrxmega7.c: $(srcdir)/emulparams/avrxm
+   $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
+   ${GEN_DEPENDS}
+ 	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
++eavrtiny10.c: $(srcdir)/emulparams/avrtiny10.sh \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} avrtiny10 "$(tdir_avr2)"
+ ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
+   $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"

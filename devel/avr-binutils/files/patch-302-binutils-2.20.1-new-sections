@@ -1,6 +1,6 @@
-diff -ruw ld/scripttempl/avr.sc ld/scripttempl/avr.sc
+diff -ruwN ld/scripttempl/avr.sc ld/scripttempl/avr.sc
 --- ld/scripttempl/avr.sc	2009-10-09 18:42:35.000000000 +0530
-+++ ld/scripttempl/avr.sc	2010-02-12 20:09:24.070812400 +0530
++++ ld/scripttempl/avr.sc	2010-03-11 12:26:00.563046000 +0530
 @@ -7,6 +7,9 @@
    text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
    data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH

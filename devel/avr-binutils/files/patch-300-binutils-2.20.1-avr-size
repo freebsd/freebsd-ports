@@ -47,7 +47,7 @@ AVR specific only
  static int show_version = 0;
  static int show_help = 0;
  static int show_totals = 0;
-@@ -64,6 +84,238 @@ static bfd_size_type total_textsize;
+@@ -64,6 +84,246 @@ static bfd_size_type total_textsize;
  /* Program exit status.  */
  static int return_code = 0;
  
@@ -97,6 +97,7 @@ AVR specific only
 +	{"atxmega192d3",  AVR200K, AVR16K, AVR2K},
 +
 +	{"atxmega128a1",  AVR136K, AVR8K,  AVR2K},
++	{"atxmega128a1u", AVR136K, AVR8K,  AVR2K},
 +	{"atxmega128a3",  AVR136K, AVR8K,  AVR2K},
 +	{"atxmega128d3",  AVR136K, AVR8K,  AVR2K},
 +
@@ -112,6 +113,7 @@ AVR specific only
 +	{"atmega103",     AVR128K, 4000UL, AVR4K},
 +
 +	{"atxmega64a1",   AVR68K,  AVR4K,  AVR2K},
++	{"atxmega64a1u",  AVR68K,  AVR4K,  AVR2K},
 +	{"atxmega64a3",   AVR68K,  AVR4K,  AVR2K},
 +	{"atxmega64d3",   AVR68K,  AVR4K,  AVR2K},
 +
@@ -140,6 +142,7 @@ AVR specific only
 +	{"atmega64c1",    AVR64K,  AVR4K,  AVR2K},
 +	{"atmega64hve",   AVR64K,  AVR4K,  AVR1K},
 +	{"atmega64m1",    AVR64K,  AVR4K,  AVR2K},
++   {"m3000",         AVR64K,  AVR4K,  0UL},
 +
 +	{"atmega406",     AVR40K,  AVR2K,  AVR512},
 +
@@ -154,15 +157,19 @@ AVR specific only
 +	{"atmega324p",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega324pa",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega325",     AVR32K,  AVR2K,  AVR1K},
++	{"atmega325a",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega325p",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega3250",    AVR32K,  AVR2K,  AVR1K},
++	{"atmega3250a",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega3250p",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega328",     AVR32K,  AVR2K,  AVR1K},
 +	{"atmega328p",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega329",     AVR32K,  AVR2K,  AVR1K},
++	{"atmega329a",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega329p",    AVR32K,  AVR2K,  AVR1K},
 +	{"atmega329pa",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega3290",    AVR32K,  AVR2K,  AVR1K},
++	{"atmega3290a",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega3290p",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega32hvb",   AVR32K,  AVR2K,  AVR1K},
 +	{"atmega32c1",    AVR32K,  AVR2K,  AVR1K},
@@ -228,6 +235,7 @@ AVR specific only
 +	{"atmega8hva",    AVR8K,   768UL,  AVR256},
 +	{"atmega8u2",     AVR8K,   AVR512, AVR512},
 +	{"attiny84",      AVR8K,   AVR512, AVR512},
++	{"attiny84a",     AVR8K,   AVR512, AVR512},
 +	{"attiny85",      AVR8K,   AVR512, AVR512},
 +	{"attiny861",     AVR8K,   AVR512, AVR512},
 +	{"attiny861a",    AVR8K,   AVR512, AVR512},
@@ -286,7 +294,7 @@ AVR specific only
  static char *target = NULL;
  
  /* Forward declarations.  */
-@@ -79,7 +329,8 @@ usage (FILE *stream, int status)
+@@ -79,7 +337,8 @@ usage (FILE *stream, int status)
    fprintf (stream, _(" Displays the sizes of sections inside binary files\n"));
    fprintf (stream, _(" If no input file(s) are specified, a.out is assumed\n"));
    fprintf (stream, _(" The options are:\n\
@@ -296,7 +304,7 @@ AVR specific only
    -o|-d|-x  --radix={8|10|16}         Display numbers in octal, decimal or hex\n\
    -t        --totals                  Display the total sizes (Berkeley only)\n\
              --common                  Display total size for *COM* syms\n\
-@@ -88,11 +329,7 @@ usage (FILE *stream, int status)
+@@ -88,11 +337,7 @@ usage (FILE *stream, int status)
    -h        --help                    Display this information\n\
    -v        --version                 Display the program's version\n\
  \n"),
@@ -309,7 +317,7 @@ AVR specific only
  );
    list_supported_targets (program_name, stream);
    if (REPORT_BUGS_TO[0] && status == 0)
-@@ -103,6 +351,7 @@ usage (FILE *stream, int status)
+@@ -103,6 +359,7 @@ usage (FILE *stream, int status)
  #define OPTION_FORMAT (200)
  #define OPTION_RADIX (OPTION_FORMAT + 1)
  #define OPTION_TARGET (OPTION_RADIX + 1)
@@ -317,7 +325,7 @@ AVR specific only
  
  static struct option long_options[] =
  {
-@@ -110,6 +360,7 @@ static struct option long_options[] =
+@@ -110,6 +368,7 @@ static struct option long_options[] =
    {"format", required_argument, 0, OPTION_FORMAT},
    {"radix", required_argument, 0, OPTION_RADIX},
    {"target", required_argument, 0, OPTION_TARGET},
@@ -325,7 +333,7 @@ AVR specific only
    {"totals", no_argument, &show_totals, 1},
    {"version", no_argument, &show_version, 1},
    {"help", no_argument, &show_help, 1},
-@@ -141,7 +391,7 @@ main (int argc, char **argv)
+@@ -141,7 +399,7 @@ main (int argc, char **argv)
    bfd_init ();
    set_default_bfd_target ();
  
@@ -334,7 +342,7 @@ AVR specific only
  			   (int *) 0)) != EOF)
      switch (c)
        {
-@@ -150,11 +401,15 @@ main (int argc, char **argv)
+@@ -150,11 +409,15 @@ main (int argc, char **argv)
  	  {
  	  case 'B':
  	  case 'b':
@@ -352,7 +360,7 @@ AVR specific only
  	    break;
  	  default:
  	    non_fatal (_("invalid argument to --format: %s"), optarg);
-@@ -162,6 +416,10 @@ main (int argc, char **argv)
+@@ -162,6 +424,10 @@ main (int argc, char **argv)
  	  }
  	break;
  
@@ -363,7 +371,7 @@ AVR specific only
        case OPTION_TARGET:
  	target = optarg;
  	break;
-@@ -190,11 +449,14 @@ main (int argc, char **argv)
+@@ -190,11 +457,14 @@ main (int argc, char **argv)
  	break;
  
        case 'A':
@@ -380,7 +388,7 @@ AVR specific only
        case 'v':
        case 'V':
  	show_version = 1;
-@@ -240,7 +501,7 @@ main (int argc, char **argv)
+@@ -240,7 +509,7 @@ main (int argc, char **argv)
      for (; optind < argc;)
        display_file (argv[optind++]);
  
@@ -389,7 +397,7 @@ AVR specific only
      {
        bfd_size_type total = total_textsize + total_datasize + total_bsssize;
  
-@@ -599,13 +861,117 @@ print_sysv_format (bfd *file)
+@@ -599,13 +869,117 @@ print_sysv_format (bfd *file)
    printf ("\n\n");
  }
  

@@ -1,0 +1,377 @@
+diff -rupN bfd/archures.c bfd/archures.c
+--- bfd/archures.c	2011-05-11 20:06:37.000000000 -0500
++++ bfd/archures.c	2011-05-10 13:35:37.000000000 -0500
+@@ -368,6 +368,7 @@ DESCRIPTION
+ .#define bfd_mach_avr5		5
+ .#define bfd_mach_avr51		51
+ .#define bfd_mach_avr6		6
++.#define bfd_mach_avrtiny10 100 
+ .#define bfd_mach_avrxmega1 101
+ .#define bfd_mach_avrxmega2 102
+ .#define bfd_mach_avrxmega3 103
+@@ -375,7 +376,6 @@ DESCRIPTION
+ .#define bfd_mach_avrxmega5 105
+ .#define bfd_mach_avrxmega6 106
+ .#define bfd_mach_avrxmega7 107
+-.#define bfd_mach_avrtiny10 201
+ .  bfd_arch_bfin,        {* ADI Blackfin *}
+ .#define bfd_mach_bfin          1
+ .  bfd_arch_cr16,       {* National Semiconductor CompactRISC (ie CR16). *}
+diff -rupN bfd/bfd-in2.h bfd/bfd-in2.h
+--- bfd/bfd-in2.h	2011-05-11 20:06:39.000000000 -0500
++++ bfd/bfd-in2.h	2011-05-10 13:35:37.000000000 -0500
+@@ -2042,6 +2042,7 @@ enum bfd_architecture
+ #define bfd_mach_avr5          5
+ #define bfd_mach_avr51         51
+ #define bfd_mach_avr6          6
++#define bfd_mach_avrtiny10 100 
+ #define bfd_mach_avrxmega1 101
+ #define bfd_mach_avrxmega2 102
+ #define bfd_mach_avrxmega3 103
+@@ -2049,7 +2050,6 @@ enum bfd_architecture
+ #define bfd_mach_avrxmega5 105
+ #define bfd_mach_avrxmega6 106
+ #define bfd_mach_avrxmega7 107
+-#define bfd_mach_avrtiny10 201
+   bfd_arch_bfin,        /* ADI Blackfin */
+ #define bfd_mach_bfin          1
+   bfd_arch_cr16,       /* National Semiconductor CompactRISC (ie CR16). */
+diff -rupN bfd/cpu-avr.c bfd/cpu-avr.c
+--- bfd/cpu-avr.c	2011-05-11 20:06:41.000000000 -0500
++++ bfd/cpu-avr.c	2011-05-10 13:35:37.000000000 -0500
+@@ -135,29 +135,29 @@ static const bfd_arch_info_type arch_inf
+   /* 3-Byte PC.  */
+   N (22, bfd_mach_avr6, "avr:6", FALSE, & arch_info_struct[10]),
+   
++  /* attiny 10 */
++  N (16, bfd_mach_avrtiny10, "avr:100", FALSE, & arch_info_struct[11]),
++  
+   /* Xmega 1 */
+-  N (24, bfd_mach_avrxmega1, "avr:101", FALSE, & arch_info_struct[11]),
++  N (24, bfd_mach_avrxmega1, "avr:101", FALSE, & arch_info_struct[12]),
+ 
+   /* Xmega 2 */
+-  N (24, bfd_mach_avrxmega2, "avr:102", FALSE, & arch_info_struct[12]),
++  N (24, bfd_mach_avrxmega2, "avr:102", FALSE, & arch_info_struct[13]),
+   
+   /* Xmega 3 */
+-  N (24, bfd_mach_avrxmega3, "avr:103", FALSE, & arch_info_struct[13]),
++  N (24, bfd_mach_avrxmega3, "avr:103", FALSE, & arch_info_struct[14]),
+   
+   /* Xmega 4 */
+-  N (24, bfd_mach_avrxmega4, "avr:104", FALSE, & arch_info_struct[14]),
++  N (24, bfd_mach_avrxmega4, "avr:104", FALSE, & arch_info_struct[15]),
+   
+   /* Xmega 5 */
+-  N (24, bfd_mach_avrxmega5, "avr:105", FALSE, & arch_info_struct[15]),
++  N (24, bfd_mach_avrxmega5, "avr:105", FALSE, & arch_info_struct[16]),
+   
+   /* Xmega 6 */
+-  N (24, bfd_mach_avrxmega6, "avr:106", FALSE, & arch_info_struct[16]),
++  N (24, bfd_mach_avrxmega6, "avr:106", FALSE, & arch_info_struct[17]),
+   
+   /* Xmega 7 */
+-  N (24, bfd_mach_avrxmega7, "avr:107", FALSE, & arch_info_struct[17]),
+-  
+-  /* attiny 10 */
+-  N (16, bfd_mach_avrtiny10, "avr:201", FALSE, NULL)
++  N (24, bfd_mach_avrxmega7, "avr:107", FALSE, NULL)
+   
+ };
+ 
+diff -rupN include/elf/avr.h include/elf/avr.h
+--- include/elf/avr.h	2011-05-11 20:06:42.000000000 -0500
++++ include/elf/avr.h	2011-05-10 13:35:37.000000000 -0500
+@@ -40,6 +40,7 @@
+ #define E_AVR_MACH_AVR5 5
+ #define E_AVR_MACH_AVR51 51
+ #define E_AVR_MACH_AVR6 6 
++#define E_AVR_MACH_AVRTINY10 100
+ #define E_AVR_MACH_XMEGA1 101
+ #define E_AVR_MACH_XMEGA2 102
+ #define E_AVR_MACH_XMEGA3 103
+@@ -47,7 +48,6 @@
+ #define E_AVR_MACH_XMEGA5 105
+ #define E_AVR_MACH_XMEGA6 106
+ #define E_AVR_MACH_XMEGA7 107
+-#define E_AVR_MACH_AVRTINY10 201
+ 
+ /* Relocations.  */
+ START_RELOC_NUMBERS (elf_avr_reloc_type)
+diff -rupN ld/emulparams/avrtiny10.sh ld/emulparams/avrtiny10.sh
+--- ld/emulparams/avrtiny10.sh	2011-05-11 20:06:44.000000000 -0500
++++ ld/emulparams/avrtiny10.sh	2011-05-10 13:39:44.000000000 -0500
+@@ -1,12 +1,13 @@
+-ARCH=avr:201
++ARCH=avr:100
+ MACHINE=
+-SCRIPT_NAME=avr
++SCRIPT_NAME=avrtiny10
+ OUTPUT_FORMAT="elf32-avr"
+ MAXPAGESIZE=1
+ EMBEDDED=yes
+ TEMPLATE_NAME=elf32
+ 
++TEXT_ORIGIN=0x0
+ TEXT_LENGTH=4K
+-DATA_ORIGIN=0x800040
+-DATA_LENGTH=0x140
++DATA_ORIGIN=0x0800040
++DATA_LENGTH=0x1F
+ EXTRA_EM_FILE=avrelf
+diff -rupN ld/Makefile.am ld/Makefile.am
+--- ld/Makefile.am	2011-05-11 20:06:47.000000000 -0500
++++ ld/Makefile.am	2011-05-10 13:35:37.000000000 -0500
+@@ -764,7 +764,7 @@ eavrxmega7.c: $(srcdir)/emulparams/avrxm
+   ${GEN_DEPENDS}
+ 	${GENSCRIPTS} avrxmega7 "$(tdir_avr2)"
+ eavrtiny10.c: $(srcdir)/emulparams/avrtiny10.sh \
+-  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
++  $(srcdir)/emultempl/avrelf.em $(ELF_DEPS) $(srcdir)/scripttempl/avrtiny10.sc \
+   ${GEN_DEPENDS}
+ 	${GENSCRIPTS} avrtiny10 "$(tdir_avr2)"
+ ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
+diff -rupN ld/scripttempl/avrtiny10.sc ld/scripttempl/avrtiny10.sc
+--- ld/scripttempl/avrtiny10.sc	1969-12-31 18:00:00.000000000 -0600
++++ ld/scripttempl/avrtiny10.sc	2011-05-10 13:35:37.000000000 -0500
+@@ -0,0 +1,240 @@
++cat <<EOF
++OUTPUT_FORMAT("${OUTPUT_FORMAT}","${OUTPUT_FORMAT}","${OUTPUT_FORMAT}")
++OUTPUT_ARCH(${ARCH})
++
++MEMORY
++{
++  text   (rx)   : ORIGIN = $TEXT_ORIGIN, LENGTH = $TEXT_LENGTH
++  data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
++  lock      (rw!x) : ORIGIN = 0x3F00, LENGTH = 2
++  signature (rw!x) : ORIGIN = 0x3FC0, LENGTH = 4
++/* REVISIT: fuse(rw!x) : */
++}
++
++SECTIONS
++{
++  /* Read-only sections, merged into text segment: */
++  ${TEXT_DYNAMIC+${DYNAMIC}}
++  .hash        ${RELOCATING-0} : { *(.hash)		}
++  .dynsym      ${RELOCATING-0} : { *(.dynsym)		}
++  .dynstr      ${RELOCATING-0} : { *(.dynstr)		}
++  .gnu.version ${RELOCATING-0} : { *(.gnu.version)	}
++  .gnu.version_d ${RELOCATING-0} : { *(.gnu.version_d)	}
++  .gnu.version_r ${RELOCATING-0} : { *(.gnu.version_r)	}
++
++  .rel.init    ${RELOCATING-0} : { *(.rel.init)		}
++  .rela.init   ${RELOCATING-0} : { *(.rela.init)	}
++  .rel.text    ${RELOCATING-0} :
++    {
++      *(.rel.text)
++      ${RELOCATING+*(.rel.text.*)}
++      ${RELOCATING+*(.rel.gnu.linkonce.t*)}
++    }
++  .rela.text   ${RELOCATING-0} :
++    {
++      *(.rela.text)
++      ${RELOCATING+*(.rela.text.*)}
++      ${RELOCATING+*(.rela.gnu.linkonce.t*)}
++    }
++  .rel.fini    ${RELOCATING-0} : { *(.rel.fini)		}
++  .rela.fini   ${RELOCATING-0} : { *(.rela.fini)	}
++  .rel.rodata  ${RELOCATING-0} :
++    {
++      *(.rel.rodata)
++      ${RELOCATING+*(.rel.rodata.*)}
++      ${RELOCATING+*(.rel.gnu.linkonce.r*)}
++    }
++  .rela.rodata ${RELOCATING-0} :
++    {
++      *(.rela.rodata)
++      ${RELOCATING+*(.rela.rodata.*)}
++      ${RELOCATING+*(.rela.gnu.linkonce.r*)}
++    }
++  .rel.data    ${RELOCATING-0} :
++    {
++      *(.rel.data)
++      ${RELOCATING+*(.rel.data.*)}
++      ${RELOCATING+*(.rel.gnu.linkonce.d*)}
++    }
++  .rela.data   ${RELOCATING-0} :
++    {
++      *(.rela.data)
++      ${RELOCATING+*(.rela.data.*)}
++      ${RELOCATING+*(.rela.gnu.linkonce.d*)}
++    }
++  .rel.ctors   ${RELOCATING-0} : { *(.rel.ctors)	}
++  .rela.ctors  ${RELOCATING-0} : { *(.rela.ctors)	}
++  .rel.dtors   ${RELOCATING-0} : { *(.rel.dtors)	}
++  .rela.dtors  ${RELOCATING-0} : { *(.rela.dtors)	}
++  .rel.got     ${RELOCATING-0} : { *(.rel.got)		}
++  .rela.got    ${RELOCATING-0} : { *(.rela.got)		}
++  .rel.bss     ${RELOCATING-0} : { *(.rel.bss)		}
++  .rela.bss    ${RELOCATING-0} : { *(.rela.bss)		}
++  .rel.plt     ${RELOCATING-0} : { *(.rel.plt)		}
++  .rela.plt    ${RELOCATING-0} : { *(.rela.plt)		}
++
++  /* Internal text space or external memory.  */
++  .text ${RELOCATING-0} : ${RELOCATING+ AT (0x0)}
++  {
++    *(.vectors)
++    KEEP(*(.vectors))
++
++    /* For data that needs to reside in the lower 64k of progmem.  */
++    *(.progmem.gcc*)
++    *(.progmem*)
++    ${RELOCATING+. = ALIGN(2);}
++
++    ${CONSTRUCTING+ __trampolines_start = . ; }
++    /* The jump trampolines for the 16-bit limited relocs will reside here.  */
++    *(.trampolines)
++    *(.trampolines*)
++    ${CONSTRUCTING+ __trampolines_end = . ; }
++
++    /* For future tablejump instruction arrays for 3 byte pc devices.
++       We don't relax jump/call instructions within these sections.  */
++    *(.jumptables) 
++    *(.jumptables*) 
++
++    /* For code that needs to reside in the lower 128k progmem.  */
++    *(.lowtext)
++    *(.lowtext*)
++
++    ${CONSTRUCTING+ __ctors_start = . ; }
++    ${CONSTRUCTING+ *(.ctors) }
++    ${CONSTRUCTING+ __ctors_end = . ; }
++    ${CONSTRUCTING+ __dtors_start = . ; }
++    ${CONSTRUCTING+ *(.dtors) }
++    ${CONSTRUCTING+ __dtors_end = . ; }
++    KEEP(SORT(*)(.ctors))
++    KEEP(SORT(*)(.dtors))
++
++    /* From this point on, we don't bother about wether the insns are
++       below or above the 16 bits boundary.  */
++    *(.init0)  /* Start here after reset.  */
++    KEEP (*(.init0))
++    *(.init1)
++    KEEP (*(.init1))
++    *(.init2)  /* Clear __zero_reg__, set up stack pointer.  */
++    KEEP (*(.init2))
++    *(.init3)
++    KEEP (*(.init3))
++    *(.init4)  /* Initialize data and BSS.  */
++    KEEP (*(.init4))
++    *(.init5)
++    KEEP (*(.init5))
++    *(.init6)  /* C++ constructors.  */
++    KEEP (*(.init6))
++    *(.init7)
++    KEEP (*(.init7))
++    *(.init8)
++    KEEP (*(.init8))
++    *(.init9)  /* Call main().  */
++    KEEP (*(.init9))
++    *(.text)
++    ${RELOCATING+. = ALIGN(2);}
++    *(.text.*)
++    ${RELOCATING+. = ALIGN(2);}
++    *(.fini9)  /* _exit() starts here.  */
++    KEEP (*(.fini9))
++    *(.fini8)
++    KEEP (*(.fini8))
++    *(.fini7)
++    KEEP (*(.fini7))
++    *(.fini6)  /* C++ destructors.  */
++    KEEP (*(.fini6))
++    *(.fini5)
++    KEEP (*(.fini5))
++    *(.fini4)
++    KEEP (*(.fini4))
++    *(.fini3)
++    KEEP (*(.fini3))
++    *(.fini2)
++    KEEP (*(.fini2))
++    *(.fini1)
++    KEEP (*(.fini1))
++    *(.fini0)  /* Infinite loop after program termination.  */
++    KEEP (*(.fini0))
++    ${RELOCATING+ _etext = . ; }
++  } ${RELOCATING+ > text}
++
++  .data	${RELOCATING-0} : ${RELOCATING+AT (ADDR (.text) + SIZEOF (.text))}
++  {
++    ${RELOCATING+ PROVIDE (__data_start = .) ; }
++    *(.data)
++    *(.data*)
++    *(.rodata)  /* We need to include .rodata here if gcc is used */
++    *(.rodata*) /* with -fdata-sections.  */
++    *(.gnu.linkonce.d*)
++    ${RELOCATING+. = ALIGN(2);}
++    ${RELOCATING+ _edata = . ; }
++    ${RELOCATING+ PROVIDE (__data_end = .) ; }
++  } ${RELOCATING+ > data}
++
++  .bss ${RELOCATING-0} :${RELOCATING+ AT (ADDR (.bss))}
++  {
++    ${RELOCATING+ PROVIDE (__bss_start = .) ; }
++    *(.bss)
++    *(.bss*)
++    *(COMMON)
++    ${RELOCATING+ PROVIDE (__bss_end = .) ; }
++  } ${RELOCATING+ > data}
++
++  ${RELOCATING+ __data_load_start = LOADADDR(.data); }
++  ${RELOCATING+ __data_load_end = __data_load_start + SIZEOF(.data); }
++
++  /* Global data not cleared after reset.  */
++  .noinit ${RELOCATING-0}:
++  {
++    ${RELOCATING+ PROVIDE (__noinit_start = .) ; }
++    *(.noinit*)
++    ${RELOCATING+ PROVIDE (__noinit_end = .) ; }
++    ${RELOCATING+ _end = . ;  }
++    ${RELOCATING+ PROVIDE (__heap_start = .) ; }
++  } ${RELOCATING+ > data}
++
++  .lock ${RELOCATING-0}:
++  {
++    KEEP(*(.lock*))
++  } ${RELOCATING+ > lock}
++
++  .signature ${RELOCATING-0}:
++  {
++    KEEP(*(.signature*))
++  } ${RELOCATING+ > signature}
++
++  /* Stabs debugging sections.  */
++  .stab 0 : { *(.stab) }
++  .stabstr 0 : { *(.stabstr) }
++  .stab.excl 0 : { *(.stab.excl) }
++  .stab.exclstr 0 : { *(.stab.exclstr) }
++  .stab.index 0 : { *(.stab.index) }
++  .stab.indexstr 0 : { *(.stab.indexstr) }
++  .comment 0 : { *(.comment) }
++ 
++  /* DWARF debug sections.
++     Symbols in the DWARF debugging sections are relative to the beginning
++     of the section so we begin them at 0.  */
++
++  /* DWARF 1 */
++  .debug          0 : { *(.debug) }
++  .line           0 : { *(.line) }
++
++  /* GNU DWARF 1 extensions */
++  .debug_srcinfo  0 : { *(.debug_srcinfo) }
++  .debug_sfnames  0 : { *(.debug_sfnames) }
++
++  /* DWARF 1.1 and DWARF 2 */
++  .debug_aranges  0 : { *(.debug_aranges) }
++  .debug_pubnames 0 : { *(.debug_pubnames) }
++
++  /* DWARF 2 */
++  .debug_info     0 : { *(.debug_info) *(.gnu.linkonce.wi.*) }
++  .debug_abbrev   0 : { *(.debug_abbrev) }
++  .debug_line     0 : { *(.debug_line) }
++  .debug_frame    0 : { *(.debug_frame) }
++  .debug_str      0 : { *(.debug_str) }
++  .debug_loc      0 : { *(.debug_loc) }
++  .debug_macinfo  0 : { *(.debug_macinfo) }
++}
++EOF
++
