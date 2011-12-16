@@ -15,6 +15,8 @@ COMMENT=	Replacement for the Apache htdigest and htpasswd
 RUN_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
 
 BROKEN=	depends on exact version of rubygem-highline
+DEPRECATED=	broke for ~12 months
+EXPIRATION_DATE=	2011-01-02
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
