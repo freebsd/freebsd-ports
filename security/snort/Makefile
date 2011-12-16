@@ -176,34 +176,38 @@ CONFIGURE_ARGS+=	--enable-react
 
 .if defined(WITH_SNORTSAM)
 USE_AUTOTOOLS+=	automake
+USE_GNOME=	pkgconfig
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=	snortsam-2.9.1.2.diff.gz:snortsam
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
+	@${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," ${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
+	@${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
+	@${REINPLACE_CMD} -e 's|^dynamicdetection|#dynamicdetection|' ${WRKSRC}/etc/snort.conf
+	@${REINPLACE_CMD} -e '/var HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' ${WRKSRC}/etc/snort.conf
+	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.in
+	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
+.if !defined(WITH_IPV6)
+	@${REINPLACE_CMD} -e 's|^ipvar |var |' ${WRKSRC}/etc/snort.conf
+	@${REINPLACE_CMD} -e '/normalize_ip6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
+	@${REINPLACE_CMD} -e '/normalize_icmp6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
+.endif
+.if defined(WITH_DECODERPRE)
+	@${REINPLACE_CMD} -e '/^# include .PREPROC_RULE/s/# include/include/' ${WRKSRC}/etc/snort.conf
+.endif
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 .endif
 
 pre-configure:
-	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
-	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," ${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
-	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
-	${REINPLACE_CMD} -e 's|^dynamicdetection|#dynamicdetection|' ${WRKSRC}/etc/snort.conf
-	${REINPLACE_CMD} -e '/var HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' ${WRKSRC}/etc/snort.conf
-	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.in
-	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
-.if !defined(WITH_IPV6)
-	${REINPLACE_CMD} -e 's|^ipvar |var |' ${WRKSRC}/etc/snort.conf
-	${REINPLACE_CMD} -e '/normalize_ip6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
-	${REINPLACE_CMD} -e '/normalize_icmp6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
-.endif
-.if defined(WITH_DECODERPRE)
-	${REINPLACE_CMD} -e '/^# include .PREPROC_RULE/s/# include/include/' ${WRKSRC}/etc/snort.conf
-.endif
 .if defined(WITH_SNORTSAM)
+	@${FIND} ${WRKSRC} -name 'Makefile.am' | ${XARGS} ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
+	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am \
+		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.am
+	@${ECHO_MSG} "===>   Rebuilding required files for snortsam patches"
 	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autojunk.sh
 .endif
 
@@ -216,18 +220,6 @@ pre-install:
 .endif
 
 post-install:
-.if defined(WITH_SNORTSAM)
-	# mss: only doing this because snortsam patch/autojunk messes up paths
-	# life is too short to figure out why.
-	@${MKDIR} ${LOCALBASE}/lib/snort/dynamicrules
-	@cd ${LOCALBASE}/lib && ${MKDIR} snort/dynamicrules &&  ${MKDIR} snort/dynamicengine &&  ${MKDIR} snort/dynamicpreprocessor
-	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicrules/* snort/dynamicrules
-	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicengine/* snort/dynamicengine
-	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicpreprocessor/* snort/dynamicpreprocessor
-	@cd ${LOCALBASE}/lib && ${RMDIR} snort_dynamic*
-	@${MKDIR} ${LOCALBASE}/libdata/pkgconfig/ && ${MV} ${LOCALBASE}/lib/pkgconfig/snort.pc ${LOCALBASE}/libdata/pkgconfig/snort.pc
-	@${RMDIR} ${LOCALBASE}/lib/pkgconfig
-.endif
 	@${LIBTOOL} --finish ${LOCALBASE}/lib/snort/dynamicpreprocessor
 	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
 	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
