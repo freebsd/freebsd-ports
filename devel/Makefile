@@ -2990,6 +2990,7 @@
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
+    SUBDIR += py-TGScheduler
     SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
     SUBDIR += py-ZopeUndo
