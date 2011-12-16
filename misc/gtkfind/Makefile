@@ -9,7 +9,8 @@ PORTNAME=	gtkfind
 PORTVERSION=	1.1
 PORTREVISION=	6
 CATEGORIES=	misc
-MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
+		http://www.purplehat.org/downloads/gtkfind/
 
 MAINTAINER=	perryh@pluto.rain.com
 COMMENT=	The program to use to have to remember all the options to find(1)
