@@ -13,7 +13,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fully-featured, low-level AMQP 0.9.1 client in Ruby
 
 RUN_DEPENDS=	rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-amq-protocol>=0.8.0:${PORTSDIR}/net/rubygem-amq-protocol
+		rubygem-amq-protocol>=0.8.4:${PORTSDIR}/net/rubygem-amq-protocol
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

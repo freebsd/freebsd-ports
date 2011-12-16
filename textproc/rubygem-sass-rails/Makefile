@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sass adapter for the Rails asset pipeline
 
-RUN_DEPENDS=	rubygem-sass>=3.1.4:${PORTSDIR}/textproc/rubygem-sass \
+RUN_DEPENDS=	rubygem-sass>=3.1.10:${PORTSDIR}/textproc/rubygem-sass \
 		rubygem-railties>=3.1.0:${PORTSDIR}/www/rubygem-railties
 
 USE_RUBY=		yes
