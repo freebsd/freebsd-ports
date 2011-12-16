@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Qt port of Plastik
+# New ports collection makefile for:	Polymer (Qt3 port of Plastik)
 # Date Created:				30 Oct 2006
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
@@ -7,14 +7,15 @@
 
 PORTNAME=	polymer
 PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://static.int.pl/~mig21/dev/releases/polymer/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danfe
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Qt port of Plastik KDE theme
+COMMENT=	Pure Qt3 port of Plastik KDE theme
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
@@ -22,7 +23,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoheader
 USE_GMAKE=	yes	# parallel builds (-jX) are broken with BSD make(1)
 USE_QT_VER=	3
-USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
@@ -32,9 +32,12 @@ CONFIGURE_ENV+=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 QTSTYLESDIR=	${PREFIX}/lib/plugins/styles
 
+MAN1=		polymer-config.1
+PORTDOCS=	AUTHORS ChangeLog README TODO
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64
+.if ${ARCH} == i386
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 .endif
@@ -48,5 +51,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/style/libpolymer.so.1.0.0 \
 		${QTSTYLESDIR}/polymer.so
 	${INSTALL_PROGRAM} ${WRKSRC}/config/polymer-config ${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/polymer-config.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
