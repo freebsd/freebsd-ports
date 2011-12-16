@@ -1624,6 +1624,7 @@
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
+    SUBDIR += rubygem-em-http-request
     SUBDIR += rubygem-em-websocket
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
