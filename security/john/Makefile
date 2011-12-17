@@ -22,6 +22,14 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+# We prefer -jumbo (community-enhanced) versions instead of vanilla releases
+# due to the sad fact that `-jumbo-???' suffixed versions *precede* official
+# ones per pkg_version(1) -t check.  So, when Alexander rolls out new "plain"
+# release, just hold the horses and wait for corresponding -jumbo one, which
+# usually does not take too long to appear.
+#
+PORTSCOUT=	limit:.*-jumbo
+
 OSNAME=		${OPSYS:L}
 CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 		-DJOHN_SYSTEMWIDE_HOME=\\"${DATADIR}\\" \
