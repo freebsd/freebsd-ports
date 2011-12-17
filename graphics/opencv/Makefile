@@ -7,7 +7,7 @@
 
 PORTNAME?=	opencv
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
 DISTNAME=	OpenCV-${DISTVERSION}a
@@ -223,6 +223,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|${PORTNAME}/samples|examples/${PORTNAME}|g' \
 		${WRKSRC}/samples/*/CMakeLists.txt \
 		${WRKSRC}/samples/*/*/CMakeLists.txt
+	@${FIND} ${WRKSRC} -name '*.orig' -exec rm {} \;
 
 .if defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 	@${REINPLACE_CMD} -e '/add_subdirectory(data)/ d' \
