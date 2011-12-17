@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucflow
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/cflow/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,6 +31,7 @@ PLIST_FILES=	bin/cflow
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 PLIST_FILES+= 	share/locale/da/LC_MESSAGES/cflow.mo \
+		share/locale/fi/LC_MESSAGES/cflow.mo \
 		share/locale/ga/LC_MESSAGES/cflow.mo \
 		share/locale/id/LC_MESSAGES/cflow.mo \
 		share/locale/pl/LC_MESSAGES/cflow.mo \
