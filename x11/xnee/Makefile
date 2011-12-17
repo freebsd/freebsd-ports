@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 MAN1=		cnee.1 xnee.1
 INFO=		xnee
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GNEE)
 USE_GNOME+=	gtk20 libgnomeui
@@ -78,4 +78,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
