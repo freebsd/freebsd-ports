@@ -1,16 +1,17 @@
---- SConstruct.orig	2010-01-29 14:17:02.000000000 +0300
-+++ SConstruct	2010-01-29 19:33:39.000000000 +0300
-@@ -23,14 +23,14 @@
- opts = Variables()
- opts.Add(PathVariable('prefix', 'autotools-style installation prefix', '/usr/local', validator=PathVariable.PathIsDirCreate))
+--- SConstruct.orig	2011-11-23 00:27:03.000000000 +0400
++++ SConstruct	2011-11-24 18:10:25.000000000 +0400
+@@ -30,7 +30,7 @@
+ opts.Add(PathVariable('prefix', 'autotools-style installation prefix', default_prefix, validator=PathVariable.PathIsDirCreate))
+ 
  opts.Add(BoolVariable('debug', 'enable HEAVY_DEBUG and disable optimizations', False))
 -env = Environment(ENV=os.environ, options=opts)
 +env = Environment(ENV=os.environ, options=opts, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
  if sys.platform == "win32":
+     # remove this mingw if trying VisualStudio
      env = Environment(tools=['mingw'], ENV=os.environ, options=opts)
- opts.Update(env)
- 
+@@ -39,7 +39,7 @@
  env.ParseConfig('pkg-config --cflags --libs glib-2.0')
+ env.ParseConfig('pkg-config --cflags --libs libpng')
  
 -env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
 +env.Append(CXXFLAGS=['-Wall', '-Wno-sign-compare', '-Wno-write-strings'])
