@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	flathill
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to add ICQ communication support to your software
 
+DEPRECATED=	Runtime is broken. Unmaintained upstream
+EXPIRATION_DATE=	2012-01-17
+
 USE_GNOME=	glib12
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

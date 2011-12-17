@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	flathill
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based ICQ program
 
+DEPRECATED=	Runtime is broken. Unmaintained upstream
+EXPIRATION_DATE=	2012-01-17
+
 LIB_DEPENDS=	icq.0:${PORTSDIR}/net-im/libicq
 
 USE_GETTEXT=	yes
