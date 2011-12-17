@@ -1622,6 +1622,7 @@
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chef-server-api
+    SUBDIR += rubygem-chef-server-webui
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
