@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	net-http-digest_auth
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An implementation of RFC 2617 - Digest Access Authentication
-
-RUN_DEPENDS=	rubygem-hoe>=2.9.4:${PORTSDIR}/devel/rubygem-hoe \
-		rubygem-minitest>=2.0.2:${PORTSDIR}/devel/rubygem-minitest
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
