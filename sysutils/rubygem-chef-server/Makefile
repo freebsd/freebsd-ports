@@ -14,8 +14,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Server
 
 RUN_DEPENDS=	rubygem-chef-expander>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem-chef-expander \
-		rubygem-chef-server-api>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem-chef-server-api \
-		rubygem-chef-server-webui>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem-chef-server-webui \
+		rubygem-chef-server-api>=${PORTREVISION}:${PORTSDIR}/www/rubygem-chef-server-api \
+		rubygem-chef-server-webui>=${PORTREVISION}:${PORTSDIR}/www/rubygem-chef-server-webui \
 		rubygem-chef-solr>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem-chef-solr
 
 USE_RUBY=		yes
