@@ -7,12 +7,12 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.18
-PORTREVISION=	1
-CATEGORIES=	graphics gnome
+PORTREVISION=	2
+CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Read and manipulate raw images from digital cameras
+COMMENT=	Read and manipulate raw images from various digital cameras
 
 LICENSE=	GPLv2
 
@@ -32,15 +32,16 @@ PC_FALSE=	cinepaint
 
 MAN1=		ufraw.1
 
-OPTIONS=	CONTRAST "Enable contrast setting"		on \
+OPTIONS=	CONTRAST "Enable contrast setting option"	on \
 		DST	"Use local time for timestamps"		off \
 		EXIV2	"Enable EXIF support via exiv2 library"	on \
-		LENSFUN	"Enable LensFun library support"	off \
+		LENSFUN	"Enable LensFun library support"	on \
 		FITS	"Enable FITS output support"		off \
-		GIMP	"Install GIMP UFRaw plugin"		off \
-		GTK	"Build the Gtk+2 GUI"			on
+		GIMP	"Install GIMP plugin"			off \
+		GTK	"Build Gtk+2 GUI"			on \
+		GNOME	"Register .desktop file and GConf2 schemas" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_CONTRAST)
 CONFIGURE_ARGS+=	--enable-contrast
@@ -81,11 +82,23 @@ LIB_DEPENDS+=	gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview
 PLIST_FILES+=	bin/ufraw
 .endif
 
+.if defined(WITH_GNOME)
+CATEGORIES+=	gnome
+USE_GNOME=	desktopfileutils gconf2
+CONFIGURE_ARGS+=	--enable-mime
+GCONF_SCHEMAS=	${PORTNAME}.schemas
+PLIST_SUB+=	GNOME=""
+.else
+PLIST_SUB+=	GNOME="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' \
 		${WRKSRC}/dcraw.h
-# Avoid conflict with `graphics/dcraw' and rename the binary
+# Fix GConf2 schemas installation path; unconditionalize installation of
+# .desktop file; avoid conflict with `graphics/dcraw' (rename the binary)
 	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir| ; \
+		/@app/s|@INSTALL_MIME_TRUE@|| ; \
 		s|dcraw\$$(EXEEXT)|${PORTNAME}-&|' ${WRKSRC}/Makefile.in
 .for i in ${PC_FALSE}
 	@${REINPLACE_CMD} -e '/PKG_CONFIG.*${i}/s|$$PKG_CONFIG|${FALSE}|' \
@@ -96,4 +109,12 @@ pre-build:
 	@${INSTALL_SCRIPT} ${LOCALBASE}/share/glib-2.0/gettext/mkinstalldirs \
 		${WRKSRC}
 
-.include <bsd.port.post.mk>
+post-install:
+.if defined(WITH_GNOME)
+	@${SETENV} GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE} \
+		gconftool-2 --makefile-install-rule \
+		${PREFIX}/etc/gconf/schemas/${PORTNAME}.schemas
+	@-update-desktop-database
+.endif
+
+.include <bsd.port.mk>
