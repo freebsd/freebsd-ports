@@ -7,14 +7,12 @@
 
 PORTNAME=	net-http-persistent
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manages persistent connections using Net::HTTP
-
-RUN_DEPENDS=	rubygem-hoe>=2.12:${PORTSDIR}/devel/rubygem-hoe \
-		rubygem-minitest>=2.6:${PORTSDIR}/devel/rubygem-minitest
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
