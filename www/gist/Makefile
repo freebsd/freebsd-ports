@@ -13,7 +13,7 @@ DISTNAME=	gist
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	codeblock@eighthbit.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gist pastebin posting command
 
 CONFLICTS=	p5-WWW-GitHub-Gist-[0-9]*
