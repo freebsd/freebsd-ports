@@ -6,12 +6,14 @@
 #
 
 PORTNAME=		pg
-PORTVERSION=		0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=		databases rubygems
 MASTER_SITES=		RG
 
 MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby interface to PostgreSQL library
+
+RUN_DEPENDS=		rubygem-rake-compiler>=0.7:${PORTSDIR}/devel/rubygem-rake-compiler
 
 USE_PGSQL=		yes
 USE_RUBY=		yes
