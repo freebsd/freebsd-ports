@@ -10,13 +10,14 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	# empty
-DISTNAME=	DFSongSd.ttf
-EXTRACT_SUFX=
+DISTNAME=	DFSongSd
+EXTRACT_SUFX=	.ttf
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese (HKSCS-2001 + CJK A) TrueType fonts
 
-RESTRICTED=	"No redistribution or commercial use is allowed."
+RESTRICTED=	No redistribution or commercial use is allowed
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -25,22 +26,17 @@ TTF=		${DISTFILES}
 
 .include <bsd.port.pre.mk>
 
+.if !exists (${DISTDIR}/${DISTNAME})
+IGNORE=	distfile must be downloaded manually from http://glyph.iso10646hk.net/chinese/download_001.jsp.  Please download ${DISTNAME} into ${DISTDIR}
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
-
-do-fetch:
-.if !exists (${DISTDIR}/${DISTNAME})
-ECHO_MSG=/usr/bin/printf
-IGNORE=\'s distfile must be downloaded manually from\n\
-\ \ \ \ \ http://glyph.iso10646hk.net/chinese/download_001.jsp If you agree\n\
-\ \ \ \ \ with the terms given in the above page, please download ${DISTNAME},\n\
-\ \ \ \ \ put it into ${DISTDIR} and run \'make\' again\n\n.
-.endif
 
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for ttf in ${TTF}
-	${INSTALL_DATA} ${DISTDIR}/${TTF} ${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${ttf} ${FONTSDIR}
 .endfor
 
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
