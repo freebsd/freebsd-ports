@@ -5936,6 +5936,7 @@ inventor                        ports/graphics/inventor
 io                              ports/lang/io
 iodine                          ports/net/iodine
 iog                             ports/net-mgmt/iog
+iogen                           ports/sysutils/iogen
 iograph                         ports/sysutils/iograph
 iolib                           ports/biology/iolib
 ion                             ports/x11-wm/ion
@@ -8676,6 +8677,7 @@ llvm                            ports/devel/llvm
 llvm-devel                      ports/devel/llvm-devel
 llvm-etoile                     ports/devel/llvm-etoile
 llvm-gcc4                       ports/lang/llvm-gcc4
+llvm29                          ports/devel/llvm29
 lm-solve                        ports/games/lm-solve
 lmarbles                        ports/games/lmarbles
 lmbench                         ports/benchmarks/lmbench
@@ -21761,6 +21763,7 @@ py-Record                       ports/devel/py-Record
 py-RestrictedPython             ports/security/py-RestrictedPython
 py-SciParam                     ports/x11-toolkits/py-SciParam
 py-SymbolType                   ports/devel/py-SymbolType
+py-TGScheduler                  ports/devel/py-TGScheduler
 py-Tempita                      ports/textproc/py-Tempita
 py-ToscaWidgets                 ports/devel/py-ToscaWidgets
 py-TurboJinja                   ports/devel/py-TurboJinja
@@ -22520,6 +22523,7 @@ py-texttable                    ports/textproc/py-texttable
 py-tftpy                        ports/ftp/py-tftpy
 py-tgMochiKit                   ports/devel/py-tgMochiKit
 py-tgmochikit                   ports/devel/py-tgMochiKit
+py-tgscheduler                  ports/devel/py-TGScheduler
 py-tgwebservices                ports/www/py-tgwebservices
 py-thrift                       ports/devel/py-thrift
 py-timelib                      ports/devel/py-timelib
@@ -25272,6 +25276,7 @@ sudosh3                         ports/security/sudosh3
 sudsol                          ports/games/sudsol
 sugarcrm                        ports/deskutils/sugarcrm
 suitesparse                     ports/math/suitesparse
+sumwars                         ports/games/sumwars
 sun-wtk                         ports/java/sun-wtk
 sunclock                        ports/astro/sunclock
 sunterlib                       ports/devel/sunterlib
