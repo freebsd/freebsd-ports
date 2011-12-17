@@ -8,7 +8,7 @@ lib/claws-mail/plugins/fancy.a
 %%NLS%%share/locale/fi/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/fancy.mo
-%%NLS%%share/locale/id/LC_MESSAGES/fancy.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/it/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/fancy.mo
@@ -16,3 +16,5 @@ lib/claws-mail/plugins/fancy.a
 %%NLS%%share/locale/ru/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/fancy.mo
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
