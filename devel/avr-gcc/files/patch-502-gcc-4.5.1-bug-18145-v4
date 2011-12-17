@@ -1,6 +1,7 @@
---- ./gcc/config/avr/avr.c.orig	2010-03-05 15:10:10.000000000 +0100
-+++ ./gcc/config/avr/avr.c	2010-03-05 15:20:53.000000000 +0100
-@@ -72,6 +72,12 @@
+diff -Naurp gcc/config/avr/avr.c gcc/config/avr/avr.c
+--- gcc/config/avr/avr.c	2011-06-09 15:41:06.000000000 -0500
++++ gcc/config/avr/avr.c	2011-06-09 15:46:03.000000000 -0500
+@@ -81,6 +81,12 @@ static rtx avr_function_value (const_tre
  static void avr_insert_attributes (tree, tree *);
  static void avr_asm_init_sections (void);
  static unsigned int avr_section_type_flags (tree, const char *, int);
@@ -13,7 +14,7 @@
  
  static void avr_reorg (void);
  static void avr_asm_out_ctor (rtx, int);
-@@ -4782,6 +4788,54 @@
+@@ -6102,6 +6108,54 @@ avr_output_progmem_section_asm_op (const
    fprintf (asm_out_file, "\t.p2align 1\n");
  }
  
@@ -68,7 +69,7 @@
  /* Implement TARGET_ASM_INIT_SECTIONS.  */
  
  static void
-@@ -4791,6 +4845,27 @@
+@@ -6111,6 +6165,27 @@ avr_asm_init_sections (void)
  					 avr_output_progmem_section_asm_op,
  					 NULL);
    readonly_data_section = data_section;
@@ -96,9 +97,9 @@
  }
  
  static unsigned int
-@@ -4829,12 +4904,6 @@
-   
-   fputs ("__tmp_reg__ = 0\n" 
+@@ -6152,12 +6227,6 @@ avr_file_start (void)
+   AVR_TINY ? fputs ("__tmp_reg__ = 16\n" 
+ 		            "__zero_reg__ = 17\n", asm_out_file) : fputs ("__tmp_reg__ = 0\n" 
           "__zero_reg__ = 1\n", asm_out_file);
 -
 -  /* FIXME: output these only if there is anything in the .data / .bss
@@ -109,7 +110,7 @@
  }
  
  /* Outputs to the stdio stream FILE some
-@@ -4843,6 +4912,16 @@
+@@ -6166,6 +6235,16 @@ avr_file_start (void)
  static void
  avr_file_end (void)
  {
@@ -126,9 +127,10 @@
  }
  
  /* Choose the order in which to allocate hard registers for
---- ./gcc/config/avr/avr.h.orig	2010-03-05 15:10:10.000000000 +0100
-+++ ./gcc/config/avr/avr.h	2010-03-05 15:20:53.000000000 +0100
-@@ -533,29 +533,21 @@
+diff -Naurp gcc/config/avr/avr.h gcc/config/avr/avr.h
+--- gcc/config/avr/avr.h	2011-06-09 14:30:33.000000000 -0500
++++ gcc/config/avr/avr.h	2011-06-09 15:46:03.000000000 -0500
+@@ -562,7 +562,7 @@ do {									    \
  #define ASM_APP_OFF "/* #NOAPP */\n"
  
  /* Switch into a generic section.  */
@@ -137,50 +139,40 @@
  #define TARGET_ASM_INIT_SECTIONS avr_asm_init_sections
  
  #define ASM_OUTPUT_ASCII(FILE, P, SIZE)	 gas_output_ascii (FILE,P,SIZE)
- 
+@@ -570,21 +570,13 @@ do {									    \
  #define IS_ASM_LOGICAL_LINE_SEPARATOR(C, STR) ((C) == '\n' || ((C) == '$'))
  
--#define ASM_OUTPUT_COMMON(STREAM, NAME, SIZE, ROUNDED)			   \
+ #define ASM_OUTPUT_COMMON(STREAM, NAME, SIZE, ROUNDED)			   \
 -do {									   \
 -     fputs ("\t.comm ", (STREAM));					   \
 -     assemble_name ((STREAM), (NAME));					   \
 -     fprintf ((STREAM), ",%lu,1\n", (unsigned long)(SIZE));		   \
 -} while (0)
-+#define ASM_OUTPUT_COMMON(STREAM, NAME, SIZE, ROUNDED) \
 +        avr_asm_output_common (STREAM, NAME, SIZE, ROUNDED)
  
--#define ASM_OUTPUT_BSS(FILE, DECL, NAME, SIZE, ROUNDED)			\
--  asm_output_bss ((FILE), (DECL), (NAME), (SIZE), (ROUNDED))
-+#define ASM_OUTPUT_BSS(FILE, DECL, NAME, SIZE, ROUNDED) \
-+        asm_output_bss ((FILE), (DECL), (NAME), (SIZE), (ROUNDED))
+ #define ASM_OUTPUT_BSS(FILE, DECL, NAME, SIZE, ROUNDED)			\
+   asm_output_bss ((FILE), (DECL), (NAME), (SIZE), (ROUNDED))
  
--#define ASM_OUTPUT_LOCAL(STREAM, NAME, SIZE, ROUNDED)			\
+ #define ASM_OUTPUT_LOCAL(STREAM, NAME, SIZE, ROUNDED)			\
 -do {									\
 -     fputs ("\t.lcomm ", (STREAM));					\
 -     assemble_name ((STREAM), (NAME));					\
 -     fprintf ((STREAM), ",%d\n", (int)(SIZE));				\
 -} while (0)
-+#define ASM_OUTPUT_LOCAL(STREAM, NAME, SIZE, ROUNDED) \
 +        avr_asm_output_local (STREAM, NAME, SIZE, ROUNDED)
  
  #undef TYPE_ASM_OP
  #undef SIZE_ASM_OP
---- ./gcc/config/avr/avr-protos.h.orig	2008-06-15 23:32:29.000000000 +0200
-+++ ./gcc/config/avr/avr-protos.h	2010-03-05 15:20:53.000000000 +0100
-@@ -38,6 +38,8 @@
+diff -Naurp gcc/config/avr/avr-protos.h gcc/config/avr/avr-protos.h
+--- gcc/config/avr/avr-protos.h	2011-06-09 14:30:33.000000000 -0500
++++ gcc/config/avr/avr-protos.h	2011-06-09 15:46:03.000000000 -0500
+@@ -35,6 +35,9 @@ extern int avr_simple_epilogue (void);
  extern void gas_output_limited_string (FILE *file, const char *str);
  extern void gas_output_ascii (FILE *file, const char *str, size_t length);
  extern int avr_hard_regno_rename_ok (unsigned int, unsigned int);
 +extern void avr_asm_output_common (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
 +extern void avr_asm_output_local (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
++  
+ extern rtx avr_return_addr_rtx (int count, const_rtx tem);
  
  #ifdef TREE_CODE
- extern void asm_output_external (FILE *file, tree decl, char *name);
-@@ -123,6 +125,7 @@
- extern int compare_eq_p (rtx insn);
- extern void out_shift_with_cnt (const char *template, rtx insn,
- 				rtx operands[], int *len, int t_len);
-+extern rtx avr_return_addr_rtx (int count, rtx tem);
- extern int avr_io_address_p (rtx x, int size);
- extern int avr_peep2_scratch_safe (rtx reg_rtx);
- #endif /* RTX_CODE */

@@ -1,7 +1,7 @@
-diff -ur ../gcc-4.3.4.orig/libiberty/Makefile.in ./libiberty/Makefile.in
---- ../gcc-4.3.4.orig/libiberty/Makefile.in	2007-07-25 08:26:45.000000000 +0200
-+++ ./libiberty/Makefile.in	2009-10-02 15:20:13.000000000 +0200
-@@ -344,7 +344,8 @@
+diff -Naurp libiberty/Makefile.in libiberty/Makefile.in
+--- libiberty/Makefile.in	2010-03-02 00:09:56.000000000 -0600
++++ libiberty/Makefile.in	2011-01-18 17:27:57.000000000 -0600
+@@ -321,7 +321,8 @@ libiberty.html : $(srcdir)/libiberty.tex
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
@@ -11,4 +11,3 @@ diff -ur ../gcc-4.3.4.orig/libiberty/Makefile.in ./libiberty/Makefile.in
  
  # This is tricky.  Even though CC in the Makefile contains
  # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
-Only in ./libiberty: Makefile.in.orig
