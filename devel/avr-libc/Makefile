@@ -34,8 +34,6 @@ OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" off
 .if defined(WITHOUT_AVRLIBCDOCS) || defined(NOPORTDOCS)
 WITHOUT_AVRLIBCDOCS=	true
 .undef WITH_AVRLIBCDOCS
-.else
-BROKEN=		does not build with AVRLIBCDOCS enabled
 .endif
 
 .if defined(WITH_AVRLIBCDOCS)
