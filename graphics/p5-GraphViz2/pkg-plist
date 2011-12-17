@@ -11,6 +11,42 @@
 %%SITE_PERL%%/GraphViz2/Parse/Yapp.pm
 %%SITE_PERL%%/GraphViz2/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz2/.packlist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Heawood.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anonymous.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluster.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbi.schema.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dependency.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extract.arrow.shapes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extract.attributes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extract.node.shapes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extract.output.formats.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.demo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.png.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.svg.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html.labels.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jointed.edges.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.2.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.3.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.4.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.5.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.data.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.html.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.isa.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.marpa.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.recdescent.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.regexp.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.stt.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.xml.bare.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.xml.pp.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.yacc.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.yapp.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quote.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/report.valid.attributes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.graph.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.sub.graph.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trivial.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz2
 @dirrm %%SITE_PERL%%/GraphViz2/Parse
 @dirrm %%SITE_PERL%%/GraphViz2/Data
