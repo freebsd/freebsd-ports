@@ -44,6 +44,10 @@ PLIST_SUB+=	BOOSTFALSE=""
 BROKEN=		Does not install on powerpc
 .endif
 
+.if ${CXX:M*clang*}
+CMAKE_ARGS+=	-DCMAKE_COMPILER_IS_GNUCXX:BOOL=YES
+.endif
+
 post-patch:
 .if defined(WITHOUT_BOOST)
 	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
