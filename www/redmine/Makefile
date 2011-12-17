@@ -18,7 +18,11 @@ COMMENT=	A flexible project management web application
 RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n
 
+.if defined(RUBY_VER) && ${RUBY_VER} != "1.8"
+IGNORE=		requires ruby1.8, but you have RUBY_VER set to 1.9
+.else
 RUBY_VER=	1.8
+.endif
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes

@@ -16,13 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lee@writequit.org
 COMMENT=	A collaborative attack-analysis tool for security researchers
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby18
-RUN_DEPENDS=	${LOCALBASE}/lib/ruby/1.8/tk/canvas.rb:${PORTSDIR}/x11-toolkits/ruby-tk
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 MAN1=	flowtag.1 listflows.1 pcap2flowdb.1 printflow.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/tk/canvas.rb:${PORTSDIR}/x11-toolkits/ruby-tk
+
+.include <bsd.port.post.mk>
