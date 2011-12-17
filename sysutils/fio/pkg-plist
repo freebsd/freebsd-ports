@@ -6,6 +6,9 @@ bin/fio_generate_plots
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fsx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/null
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-test
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example
