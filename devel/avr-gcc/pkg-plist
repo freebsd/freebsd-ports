@@ -5,66 +5,186 @@ bin/avr-c++
 bin/avr-cpp
 bin/avr-g++
 bin/avr-gcc
-bin/avr-gcc-4.3.4
+bin/avr-gcc-4.5.1
 bin/avr-gccbug
-lib/gcc/avr/4.3.4/avr25/libgcc.a
-lib/gcc/avr/4.3.4/avr25/libgcov.a
-lib/gcc/avr/4.3.4/avr3/libgcc.a
-lib/gcc/avr/4.3.4/avr3/libgcov.a
-lib/gcc/avr/4.3.4/avr31/libgcc.a
-lib/gcc/avr/4.3.4/avr31/libgcov.a
-lib/gcc/avr/4.3.4/avr35/libgcc.a
-lib/gcc/avr/4.3.4/avr35/libgcov.a
-lib/gcc/avr/4.3.4/avr4/libgcc.a
-lib/gcc/avr/4.3.4/avr4/libgcov.a
-lib/gcc/avr/4.3.4/avr5/libgcc.a
-lib/gcc/avr/4.3.4/avr5/libgcov.a
-lib/gcc/avr/4.3.4/avr51/libgcc.a
-lib/gcc/avr/4.3.4/avr51/libgcov.a
-lib/gcc/avr/4.3.4/avr6/libgcc.a
-lib/gcc/avr/4.3.4/avr6/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega2/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega2/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega3/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega3/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega4/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega4/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega5/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega5/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega6/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega6/libgcov.a
-lib/gcc/avr/4.3.4/avrxmega7/libgcc.a
-lib/gcc/avr/4.3.4/avrxmega7/libgcov.a
-lib/gcc/avr/4.3.4/include-fixed/README
-lib/gcc/avr/4.3.4/include-fixed/fixed
-lib/gcc/avr/4.3.4/include-fixed/limits.h
-lib/gcc/avr/4.3.4/include-fixed/syslimits.h
-lib/gcc/avr/4.3.4/include/float.h
-lib/gcc/avr/4.3.4/include/iso646.h
-lib/gcc/avr/4.3.4/include/stdarg.h
-lib/gcc/avr/4.3.4/include/stdbool.h
-lib/gcc/avr/4.3.4/include/stddef.h
-lib/gcc/avr/4.3.4/include/stdfix.h
-lib/gcc/avr/4.3.4/include/tgmath.h
-lib/gcc/avr/4.3.4/include/unwind.h
-lib/gcc/avr/4.3.4/include/varargs.h
-lib/gcc/avr/4.3.4/install-tools/fixinc_list
-lib/gcc/avr/4.3.4/install-tools/gsyslimits.h
-lib/gcc/avr/4.3.4/install-tools/include/README
-lib/gcc/avr/4.3.4/install-tools/include/limits.h
-lib/gcc/avr/4.3.4/install-tools/macro_list
-lib/gcc/avr/4.3.4/install-tools/mkheaders.conf
-lib/gcc/avr/4.3.4/libgcc.a
-lib/gcc/avr/4.3.4/libgcov.a
-libexec/gcc/avr/4.3.4/cc1
-libexec/gcc/avr/4.3.4/cc1plus
-libexec/gcc/avr/4.3.4/collect2
-libexec/gcc/avr/4.3.4/install-tools/fix-header
-libexec/gcc/avr/4.3.4/install-tools/fixinc.sh
-libexec/gcc/avr/4.3.4/install-tools/fixincl
-libexec/gcc/avr/4.3.4/install-tools/fixproto
-libexec/gcc/avr/4.3.4/install-tools/mkheaders
-libexec/gcc/avr/4.3.4/install-tools/mkinstalldirs
+lib/gcc/avr/4.5.1/avr25/libgcc.a
+lib/gcc/avr/4.5.1/avr25/libgcov.a
+lib/gcc/avr/4.5.1/avr3/libgcc.a
+lib/gcc/avr/4.5.1/avr3/libgcov.a
+lib/gcc/avr/4.5.1/avr31/libgcc.a
+lib/gcc/avr/4.5.1/avr31/libgcov.a
+lib/gcc/avr/4.5.1/avr35/libgcc.a
+lib/gcc/avr/4.5.1/avr35/libgcov.a
+lib/gcc/avr/4.5.1/avr4/libgcc.a
+lib/gcc/avr/4.5.1/avr4/libgcov.a
+lib/gcc/avr/4.5.1/avr5/libgcc.a
+lib/gcc/avr/4.5.1/avr5/libgcov.a
+lib/gcc/avr/4.5.1/avr51/libgcc.a
+lib/gcc/avr/4.5.1/avr51/libgcov.a
+lib/gcc/avr/4.5.1/avr6/libgcc.a
+lib/gcc/avr/4.5.1/avr6/libgcov.a
+lib/gcc/avr/4.5.1/avrxmega2/libgcc.a
+lib/gcc/avr/4.5.1/avrxmega2/libgcov.a
+lib/gcc/avr/4.5.1/avrxmega4/libgcc.a
+lib/gcc/avr/4.5.1/avrxmega4/libgcov.a
+lib/gcc/avr/4.5.1/avrxmega5/libgcc.a
+lib/gcc/avr/4.5.1/avrxmega5/libgcov.a
+lib/gcc/avr/4.5.1/avrxmega6/libgcc.a
+lib/gcc/avr/4.5.1/avrxmega6/libgcov.a
+lib/gcc/avr/4.5.1/avrxmega7/libgcc.a
+lib/gcc/avr/4.5.1/avrxmega7/libgcov.a
+lib/gcc/avr/4.5.1/avrtiny10/libgcc.a
+lib/gcc/avr/4.5.1/avrtiny10/libgcov.a
+lib/gcc/avr/4.5.1/include-fixed/README
+lib/gcc/avr/4.5.1/include-fixed/limits.h
+lib/gcc/avr/4.5.1/include-fixed/syslimits.h
+lib/gcc/avr/4.5.1/include/float.h
+lib/gcc/avr/4.5.1/include/iso646.h
+lib/gcc/avr/4.5.1/include/stdarg.h
+lib/gcc/avr/4.5.1/include/stdbool.h
+lib/gcc/avr/4.5.1/include/stddef.h
+lib/gcc/avr/4.5.1/include/stdfix.h
+lib/gcc/avr/4.5.1/include/stdint-gcc.h
+lib/gcc/avr/4.5.1/include/stdint.h
+lib/gcc/avr/4.5.1/include/tgmath.h
+lib/gcc/avr/4.5.1/include/unwind.h
+lib/gcc/avr/4.5.1/include/varargs.h
+lib/gcc/avr/4.5.1/install-tools/fixinc_list
+lib/gcc/avr/4.5.1/install-tools/gsyslimits.h
+lib/gcc/avr/4.5.1/install-tools/include/README
+lib/gcc/avr/4.5.1/install-tools/include/limits.h
+lib/gcc/avr/4.5.1/install-tools/macro_list
+lib/gcc/avr/4.5.1/install-tools/mkheaders.conf
+lib/gcc/avr/4.5.1/libgcc.a
+lib/gcc/avr/4.5.1/libgcov.a
+lib/gcc/avr/4.5.1/plugin/include/cp/cp-tree.h
+lib/gcc/avr/4.5.1/plugin/include/cp/cxx-pretty-print.h
+lib/gcc/avr/4.5.1/plugin/include/cp/name-lookup.h
+lib/gcc/avr/4.5.1/plugin/include/cp/cp-tree.def
+lib/gcc/avr/4.5.1/plugin/include/ansidecl.h
+lib/gcc/avr/4.5.1/plugin/include/filenames.h
+lib/gcc/avr/4.5.1/plugin/include/hashtab.h
+lib/gcc/avr/4.5.1/plugin/include/libiberty.h
+lib/gcc/avr/4.5.1/plugin/include/md5.h
+lib/gcc/avr/4.5.1/plugin/include/obstack.h
+lib/gcc/avr/4.5.1/plugin/include/partition.h
+lib/gcc/avr/4.5.1/plugin/include/safe-ctype.h
+lib/gcc/avr/4.5.1/plugin/include/splay-tree.h
+lib/gcc/avr/4.5.1/plugin/include/cpplib.h
+lib/gcc/avr/4.5.1/plugin/include/line-map.h
+lib/gcc/avr/4.5.1/plugin/include/symtab.h
+lib/gcc/avr/4.5.1/plugin/include/config/avr/avr-protos.h
+lib/gcc/avr/4.5.1/plugin/include/config/avr/avr.h
+lib/gcc/avr/4.5.1/plugin/include/config/dbxelf.h
+lib/gcc/avr/4.5.1/plugin/include/config/newlib-stdint.h
+lib/gcc/avr/4.5.1/plugin/include/defaults.h
+lib/gcc/avr/4.5.1/plugin/include/alias.h
+lib/gcc/avr/4.5.1/plugin/include/all-tree.def
+lib/gcc/avr/4.5.1/plugin/include/auto-host.h
+lib/gcc/avr/4.5.1/plugin/include/basic-block.h
+lib/gcc/avr/4.5.1/plugin/include/bitmap.h
+lib/gcc/avr/4.5.1/plugin/include/builtins.def
+lib/gcc/avr/4.5.1/plugin/include/bversion.h
+lib/gcc/avr/4.5.1/plugin/include/c-common.def
+lib/gcc/avr/4.5.1/plugin/include/c-common.h
+lib/gcc/avr/4.5.1/plugin/include/c-pragma.h
+lib/gcc/avr/4.5.1/plugin/include/c-pretty-print.h
+lib/gcc/avr/4.5.1/plugin/include/cfghooks.h
+lib/gcc/avr/4.5.1/plugin/include/cfgloop.h
+lib/gcc/avr/4.5.1/plugin/include/cgraph.h
+lib/gcc/avr/4.5.1/plugin/include/cif-code.def
+lib/gcc/avr/4.5.1/plugin/include/config.h
+lib/gcc/avr/4.5.1/plugin/include/configargs.h
+lib/gcc/avr/4.5.1/plugin/include/coretypes.h
+lib/gcc/avr/4.5.1/plugin/include/cppdefault.h
+lib/gcc/avr/4.5.1/plugin/include/debug.h
+lib/gcc/avr/4.5.1/plugin/include/diagnostic.def
+lib/gcc/avr/4.5.1/plugin/include/diagnostic.h
+lib/gcc/avr/4.5.1/plugin/include/double-int.h
+lib/gcc/avr/4.5.1/plugin/include/emit-rtl.h
+lib/gcc/avr/4.5.1/plugin/include/except.h
+lib/gcc/avr/4.5.1/plugin/include/fixed-value.h
+lib/gcc/avr/4.5.1/plugin/include/flags.h
+lib/gcc/avr/4.5.1/plugin/include/function.h
+lib/gcc/avr/4.5.1/plugin/include/gcc-plugin.h
+lib/gcc/avr/4.5.1/plugin/include/genrtl.h
+lib/gcc/avr/4.5.1/plugin/include/ggc.h
+lib/gcc/avr/4.5.1/plugin/include/gimple.def
+lib/gcc/avr/4.5.1/plugin/include/gimple.h
+lib/gcc/avr/4.5.1/plugin/include/gsstruct.def
+lib/gcc/avr/4.5.1/plugin/include/gtype-desc.h
+lib/gcc/avr/4.5.1/plugin/include/hard-reg-set.h
+lib/gcc/avr/4.5.1/plugin/include/highlev-plugin-common.h
+lib/gcc/avr/4.5.1/plugin/include/hwint.h
+lib/gcc/avr/4.5.1/plugin/include/incpath.h
+lib/gcc/avr/4.5.1/plugin/include/input.h
+lib/gcc/avr/4.5.1/plugin/include/insn-constants.h
+lib/gcc/avr/4.5.1/plugin/include/insn-flags.h
+lib/gcc/avr/4.5.1/plugin/include/insn-modes.h
+lib/gcc/avr/4.5.1/plugin/include/insn-notes.def
+lib/gcc/avr/4.5.1/plugin/include/intl.h
+lib/gcc/avr/4.5.1/plugin/include/ipa-prop.h
+lib/gcc/avr/4.5.1/plugin/include/ipa-reference.h
+lib/gcc/avr/4.5.1/plugin/include/ipa-utils.h
+lib/gcc/avr/4.5.1/plugin/include/langhooks.h
+lib/gcc/avr/4.5.1/plugin/include/machmode.h
+lib/gcc/avr/4.5.1/plugin/include/mode-classes.def
+lib/gcc/avr/4.5.1/plugin/include/omp-builtins.def
+lib/gcc/avr/4.5.1/plugin/include/options.h
+lib/gcc/avr/4.5.1/plugin/include/opts.h
+lib/gcc/avr/4.5.1/plugin/include/output.h
+lib/gcc/avr/4.5.1/plugin/include/params.def
+lib/gcc/avr/4.5.1/plugin/include/params.h
+lib/gcc/avr/4.5.1/plugin/include/plugin-version.h
+lib/gcc/avr/4.5.1/plugin/include/plugin.def
+lib/gcc/avr/4.5.1/plugin/include/plugin.h
+lib/gcc/avr/4.5.1/plugin/include/pointer-set.h
+lib/gcc/avr/4.5.1/plugin/include/predict.def
+lib/gcc/avr/4.5.1/plugin/include/predict.h
+lib/gcc/avr/4.5.1/plugin/include/prefix.h
+lib/gcc/avr/4.5.1/plugin/include/pretty-print.h
+lib/gcc/avr/4.5.1/plugin/include/real.h
+lib/gcc/avr/4.5.1/plugin/include/reg-notes.def
+lib/gcc/avr/4.5.1/plugin/include/rtl.def
+lib/gcc/avr/4.5.1/plugin/include/rtl.h
+lib/gcc/avr/4.5.1/plugin/include/sbitmap.h
+lib/gcc/avr/4.5.1/plugin/include/statistics.h
+lib/gcc/avr/4.5.1/plugin/include/sync-builtins.def
+lib/gcc/avr/4.5.1/plugin/include/system.h
+lib/gcc/avr/4.5.1/plugin/include/target.h
+lib/gcc/avr/4.5.1/plugin/include/timevar.def
+lib/gcc/avr/4.5.1/plugin/include/timevar.h
+lib/gcc/avr/4.5.1/plugin/include/tm-preds.h
+lib/gcc/avr/4.5.1/plugin/include/tm.h
+lib/gcc/avr/4.5.1/plugin/include/tm_p.h
+lib/gcc/avr/4.5.1/plugin/include/toplev.h
+lib/gcc/avr/4.5.1/plugin/include/tree-dump.h
+lib/gcc/avr/4.5.1/plugin/include/tree-check.h
+lib/gcc/avr/4.5.1/plugin/include/tree-flow-inline.h
+lib/gcc/avr/4.5.1/plugin/include/tree-flow.h
+lib/gcc/avr/4.5.1/plugin/include/tree-inline.h
+lib/gcc/avr/4.5.1/plugin/include/tree-iterator.h
+lib/gcc/avr/4.5.1/plugin/include/tree-pass.h
+lib/gcc/avr/4.5.1/plugin/include/tree-ssa-alias.h
+lib/gcc/avr/4.5.1/plugin/include/tree-ssa-operands.h
+lib/gcc/avr/4.5.1/plugin/include/tree-ssa-sccvn.h
+lib/gcc/avr/4.5.1/plugin/include/tree.def
+lib/gcc/avr/4.5.1/plugin/include/tree.h
+lib/gcc/avr/4.5.1/plugin/include/treestruct.def
+lib/gcc/avr/4.5.1/plugin/include/varray.h
+lib/gcc/avr/4.5.1/plugin/include/vec.h
+lib/gcc/avr/4.5.1/plugin/include/vecprim.h
+lib/gcc/avr/4.5.1/plugin/include/version.h
+lib/gcc/avr/4.5.1/plugin/include/b-header-vars
+libexec/gcc/avr/4.5.1/cc1
+libexec/gcc/avr/4.5.1/cc1plus
+libexec/gcc/avr/4.5.1/collect2
+libexec/gcc/avr/4.5.1/lto-wrapper
+libexec/gcc/avr/4.5.1/lto1
+libexec/gcc/avr/4.5.1/install-tools/fixinc.sh
+libexec/gcc/avr/4.5.1/install-tools/fixincl
+libexec/gcc/avr/4.5.1/install-tools/mkheaders
+libexec/gcc/avr/4.5.1/install-tools/mkinstalldirs
 share/locale/be/LC_MESSAGES/cpplib.mo
 share/locale/be/LC_MESSAGES/gcc.mo
 share/locale/ca/LC_MESSAGES/cpplib.mo
@@ -97,29 +217,33 @@ share/locale/zh_CN/LC_MESSAGES/cpplib.mo
 share/locale/zh_CN/LC_MESSAGES/gcc.mo
 share/locale/zh_TW/LC_MESSAGES/cpplib.mo
 share/locale/zh_TW/LC_MESSAGES/gcc.mo
-@dirrm lib/gcc/avr/4.3.4/avr25
-@dirrm lib/gcc/avr/4.3.4/avr3
-@dirrm lib/gcc/avr/4.3.4/avr31
-@dirrm lib/gcc/avr/4.3.4/avr35
-@dirrm lib/gcc/avr/4.3.4/avr4
-@dirrm lib/gcc/avr/4.3.4/avr5
-@dirrm lib/gcc/avr/4.3.4/avr51
-@dirrm lib/gcc/avr/4.3.4/avr6
-@dirrm lib/gcc/avr/4.3.4/avrxmega2
-@dirrm lib/gcc/avr/4.3.4/avrxmega3
-@dirrm lib/gcc/avr/4.3.4/avrxmega4
-@dirrm lib/gcc/avr/4.3.4/avrxmega5
-@dirrm lib/gcc/avr/4.3.4/avrxmega6
-@dirrm lib/gcc/avr/4.3.4/avrxmega7
-@dirrm lib/gcc/avr/4.3.4/include
-@dirrm lib/gcc/avr/4.3.4/include-fixed
-@dirrm lib/gcc/avr/4.3.4/install-tools/include
-@dirrm lib/gcc/avr/4.3.4/install-tools
-@dirrm lib/gcc/avr/4.3.4
+@dirrm lib/gcc/avr/4.5.1/avr25
+@dirrm lib/gcc/avr/4.5.1/avr3
+@dirrm lib/gcc/avr/4.5.1/avr31
+@dirrm lib/gcc/avr/4.5.1/avr35
+@dirrm lib/gcc/avr/4.5.1/avr4
+@dirrm lib/gcc/avr/4.5.1/avr5
+@dirrm lib/gcc/avr/4.5.1/avr51
+@dirrm lib/gcc/avr/4.5.1/avr6
+@dirrm lib/gcc/avr/4.5.1/avrxmega2
+@dirrm lib/gcc/avr/4.5.1/avrxmega4
+@dirrm lib/gcc/avr/4.5.1/avrxmega5
+@dirrm lib/gcc/avr/4.5.1/avrxmega6
+@dirrm lib/gcc/avr/4.5.1/avrxmega7
+@dirrm lib/gcc/avr/4.5.1/avrtiny10
+@dirrm lib/gcc/avr/4.5.1/include
+@dirrm lib/gcc/avr/4.5.1/include-fixed
+@dirrm lib/gcc/avr/4.5.1/install-tools/include
+@dirrm lib/gcc/avr/4.5.1/install-tools
+@dirrm lib/gcc/avr/4.5.1/plugin/include/config/avr
+@dirrm lib/gcc/avr/4.5.1/plugin/include/config
+@dirrm lib/gcc/avr/4.5.1/plugin/include/cp
+@dirrm lib/gcc/avr/4.5.1/plugin/include
+@dirrm lib/gcc/avr/4.5.1/plugin
+@dirrm lib/gcc/avr/4.5.1
 @dirrm lib/gcc/avr
 @dirrm lib/gcc
-@dirrm libexec/gcc/avr/4.3.4/install-tools
-@dirrm libexec/gcc/avr/4.3.4
+@dirrm libexec/gcc/avr/4.5.1/install-tools
+@dirrm libexec/gcc/avr/4.5.1
 @dirrm libexec/gcc/avr
 @dirrm libexec/gcc
-@dirrm avr/bin
