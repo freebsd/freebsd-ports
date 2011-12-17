@@ -11,7 +11,7 @@ CATEGORIES=	comms net hamradio
 MASTER_SITES=	RF
 DISTNAME=	callsign-${PORTVERSION}
 
-MAINTAINER=	codeblock@eighthbit.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An amateur radio callsign lookup command
 
 RUN_DEPENDS=	rubygem-callsign>=0:${PORTSDIR}/comms/rubygem-callsign
