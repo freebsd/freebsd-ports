@@ -10,7 +10,7 @@ lib/claws-mail/plugins/vcalendar.so
 %%NLS%%share/locale/fi/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/vcalendar.mo
-%%NLS%%share/locale/id/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/it/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/vcalendar.mo
@@ -21,6 +21,8 @@ lib/claws-mail/plugins/vcalendar.so
 %%NLS%%share/locale/sk/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/vcalendar.mo
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
 @dirrmtry include/claws-mail/plugins/vcalendar

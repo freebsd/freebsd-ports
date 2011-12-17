@@ -7,8 +7,10 @@ lib/claws-mail/plugins/clamd.a
 %%NLS%%share/locale/fi/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/clamd.mo
-%%NLS%%share/locale/id/LC_MESSAGES/clamd.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/it/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/clamd.mo
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID

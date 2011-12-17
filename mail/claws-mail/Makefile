@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.7.10
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -51,21 +50,21 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ENCHANT		"Enable spell checking support."	on \
-		BOGOFILTER	"Enable bogofilter support."		off \
-		COMPFACE	"Enable X-Face support."		on \
-		DEBUG		"Enable debug support."			off \
-		DILLO		"Enable Dillo HTML viewer."		off \
-		GPGME		"Enable PGP/GnuPG/SMIME support using GPGME."	off \
-		IPV6		"Enable ipv6 support."			on \
-		JPILOT		"Enable JPilot support."		off \
-		LDAP		"Enable LDAP support."			off \
-		MANUAL		"Build and install manual files"	on \
-		SA_PLUG		"Enable SpamAssassin support."		off \
-		STARTUP		"Enable startup notification support."	on \
-		THEMES		"Install additional themes."		on
+OPTIONS=	BOGOFILTER	"Enable bogofilter plugin"		off \
+		COMPFACE	"Enable X-Face support"			on  \
+		DEBUG		"Enable debug support"			off \
+		DILLO		"Enable Dillo HTML viewer plugin"	off \
+		ENCHANT		"Enable spell checking support"		on  \
+		GPGME		"Enable PGP/GnuPG/SMIME plugins"	off \
+		IPV6		"Enable IPv6 support"			on  \
+		JPILOT		"Enable JPilot plugin"			off \
+		LDAP		"Enable LDAP support"			off \
+		MANUAL		"Build and install manual files"	on  \
+		SPAMASSASSIN	"Enable SpamAssassin plugin"		off \
+		STARTUP		"Enable startup notification support"	on  \
+		THEMES		"Install additional themes"		on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_BOGOFILTER)
 RUN_DEPENDS+=		bogofilter:${PORTSDIR}/mail/bogofilter
@@ -114,7 +113,7 @@ CONFIGURE_ARGS+=	--disable-manual
 PLIST_SUB+=		MANUAL="@comment "
 .endif
 
-.if defined(WITH_SA_PLUG)
+.if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG=""
@@ -138,7 +137,6 @@ CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
-STRIP=
 .endif
 
 .if defined(WITH_DILLO)
@@ -198,9 +196,5 @@ post-install:
 		tbird2claws.py textviewer.pl textviewer.sh \
 		thunderbird-filters-convertor.pl uudec uuooffice vcard2xml.py \
 		${DATADIR}
-	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/
-	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/claws-mail*.png ${PREFIX}/share/pixmaps/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	address_keeper
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +16,8 @@ COMMENT=	Keeps all recipient addresses in an addressbook folder
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.8.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.8.0:${PORTSDIR}/mail/claws-mail
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
