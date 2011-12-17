@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kramdown
-PORTVERSION=	0.13.3
+PORTVERSION=	0.13.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
