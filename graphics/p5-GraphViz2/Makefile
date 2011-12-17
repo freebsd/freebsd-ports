@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz2
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -74,6 +74,12 @@ RUN_DEPENDS+=	p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-PathTools>=3.3300:${PORTSDIR}/devel/p5-PathTools \
 		p5-Pod-Simple>=3.16:${PORTSDIR}/textproc/p5-Pod-Simple \
 		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.post.mk>
