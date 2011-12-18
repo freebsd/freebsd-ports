@@ -1,0 +1,2 @@
+bin/rst2html_youtube
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
