@@ -1,0 +1,4 @@
+Shiboken is a GeneratorRunner plugin that outputs C++ code for CPython
+extensions.
+
+WWW: http://www.pyside.org/docs/shiboken/

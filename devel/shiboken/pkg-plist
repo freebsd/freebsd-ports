@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+bin/shiboken
+include/shiboken/autodecref.h
+include/shiboken/basewrapper.h
+include/shiboken/bindingmanager.h
+include/shiboken/conversions.h
+include/shiboken/gilstate.h
+include/shiboken/helper.h
+include/shiboken/python25compat.h
+include/shiboken/sbkdbg.h
+include/shiboken/sbkenum.h
+include/shiboken/sbkmodule.h
+include/shiboken/sbkpython.h
+include/shiboken/sbkstring.h
+include/shiboken/shibokenbuffer.h
+include/shiboken/shiboken.h
+include/shiboken/shibokenmacros.h
+include/shiboken/threadstatesaver.h
+include/shiboken/typeresolver.h
+lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfig-%%PYTHON_VERSION%%.cmake
+lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfig.cmake
+lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfigVersion.cmake
+lib/generatorrunner/shiboken_generator.so
+lib/libshiboken-%%PYTHON_VERSION%%.so
+lib/libshiboken-%%PYTHON_VERSION%%.so.1
+lib/libshiboken-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
+libdata/pkgconfig/shiboken.pc
+@dirrm lib/cmake/Shiboken-%%PORTVERSION%%
+@dirrm include/shiboken
