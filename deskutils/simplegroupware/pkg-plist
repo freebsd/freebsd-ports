@@ -953,6 +953,7 @@
 %%WWWDIR%%/src/ext/lib/tinymce/utils/mctabs.js
 %%WWWDIR%%/src/ext/lib/tinymce/utils/validate.js
 %%WWWDIR%%/src/ext/modules/anchor_accounting.png
+%%WWWDIR%%/src/ext/modules/anchor_customize.png
 %%WWWDIR%%/src/ext/modules/anchor_debug.png
 %%WWWDIR%%/src/ext/modules/anchor_demo.png
 %%WWWDIR%%/src/ext/modules/anchor_departments.png
@@ -1006,6 +1007,8 @@
 %%WWWDIR%%/src/ext/modules/spreadsheets.png
 %%WWWDIR%%/src/ext/modules/statuses.png
 %%WWWDIR%%/src/ext/modules/surveys.png
+%%WWWDIR%%/src/ext/modules/sys_console.png
+%%WWWDIR%%/src/ext/modules/sys_custom_fields.png
 %%WWWDIR%%/src/ext/modules/sys_events.png
 %%WWWDIR%%/src/ext/modules/sys_experiment.png
 %%WWWDIR%%/src/ext/modules/sys_groups.png
