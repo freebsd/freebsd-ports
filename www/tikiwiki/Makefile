@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tikiwiki
-PORTVERSION=	3.1
+PORTVERSION=	8.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/TikiWiki%203.x%20-Betelgeuse-/Tiki%203.1/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_8.x_Acubens/${PORTVERSION}/
+DISTNAME=	tiki-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
@@ -17,9 +18,13 @@ USE_PHP=	gettext pcre posix session xml zlib
 
 NO_BUILD=	YES
 
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${TAR} -yxf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
+
 do-install:
 	@-${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR})
+	@(cd ${WRKDIR}/tiki-${PORTVERSION} && ${COPYTREE_SHARE} . ${WWWDIR})
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 .include <bsd.port.mk>
