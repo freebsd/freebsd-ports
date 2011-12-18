@@ -183,6 +183,7 @@
     SUBDIR += wine
     SUBDIR += wine-doors
     SUBDIR += wine-gecko
+    SUBDIR += wxmupen64plus
     SUBDIR += x48
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
