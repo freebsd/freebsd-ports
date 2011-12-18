@@ -7,6 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -22,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls
 
 pre-configure:
-	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
+	cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
