@@ -38,6 +38,9 @@ MAN5=		secsh.5 SPKI.5 SHA.5 DSA.5
 MAN8=		sftp-server.8 lshd.8
 INFO=		lsh nettle
 
+post-patch:
+	${REINPLACE_CMD} -e "s|M4)|M4) -g|g" ${WRKSRC}/src/nettle/Makefile.in
+
 post-install:
 .for BIN in lsh lsh-keygen lsh-writekey sexp-conv srp-gen lsh-decode-key
 	${STRIP_CMD} ${PREFIX}/bin/${BIN}
