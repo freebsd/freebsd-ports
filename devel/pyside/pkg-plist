@@ -1,0 +1,107 @@
+@comment $FreeBSD$
+include/PySide/QtCore/pyside_qtcore_python.h
+include/PySide/QtDeclarative/pyside_qtdeclarative_python.h
+include/PySide/QtGui/pyside_qtgui_python.h
+include/PySide/QtGui/qpytextobject.h
+include/PySide/QtHelp/pyside_qthelp_python.h
+include/PySide/QtMultimedia/pyside_qtmultimedia_python.h
+include/PySide/QtNetwork/pyside_qtnetwork_python.h
+include/PySide/QtOpenGL/pyside_qtopengl_python.h
+include/PySide/QtScript/pyside_qtscript_python.h
+include/PySide/QtScriptTools/pyside_qtscripttools_python.h
+include/PySide/QtSql/pyside_qtsql_python.h
+include/PySide/QtSvg/pyside_qtsvg_python.h
+include/PySide/QtTest/pyside_qttest_python.h
+include/PySide/QtUiTools/pyside_qtuitools_python.h
+include/PySide/QtWebKit/pyside_qtwebkit_python.h
+include/PySide/QtXml/pyside_qtxml_python.h
+include/PySide/QtXmlPatterns/pyside_qtxmlpatterns_python.h
+include/PySide/destroylistener.h
+include/PySide/dynamicqmetaobject.h
+include/PySide/globalreceiver.h
+include/PySide/phonon/pyside_phonon_python.h
+include/PySide/pyside.h
+include/PySide/pyside_global.h
+include/PySide/pysideclassinfo.h
+include/PySide/pysideconversions.h
+include/PySide/pysidemacros.h
+include/PySide/pysidemetafunction.h
+include/PySide/pysideproperty.h
+include/PySide/pysideqflags.h
+include/PySide/pysidesignal.h
+include/PySide/pysideweakref.h
+include/PySide/signalmanager.h
+lib/cmake/PySide-%%PORTVERSION%%/PySideConfig-%%PYTHON_VERSION%%.cmake
+lib/cmake/PySide-%%PORTVERSION%%/PySideConfig.cmake
+lib/cmake/PySide-%%PORTVERSION%%/PySideConfigVersion.cmake
+lib/libpyside-%%PYTHON_VERSION%%.so
+lib/libpyside-%%PYTHON_VERSION%%.so.1.0
+lib/libpyside-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
+libdata/pkgconfig/pyside.pc
+%%PYTHON_SITELIBDIR%%/PySide/QtCore.so
+%%PYTHON_SITELIBDIR%%/PySide/QtDeclarative.so
+%%PYTHON_SITELIBDIR%%/PySide/QtGui.so
+%%PYTHON_SITELIBDIR%%/PySide/QtHelp.so
+%%PYTHON_SITELIBDIR%%//PySide/QtMultimedia.so
+%%PYTHON_SITELIBDIR%%/PySide/QtNetwork.so
+%%PYTHON_SITELIBDIR%%/PySide/QtOpenGL.so
+%%PYTHON_SITELIBDIR%%/PySide/QtScript.so
+%%PYTHON_SITELIBDIR%%/PySide/QtScriptTools.so
+%%PYTHON_SITELIBDIR%%/PySide/QtSql.so
+%%PYTHON_SITELIBDIR%%/PySide/QtSvg.so
+%%PYTHON_SITELIBDIR%%/PySide/QtTest.so
+%%PYTHON_SITELIBDIR%%/PySide/QtUiTools.so
+%%PYTHON_SITELIBDIR%%/PySide/QtWebKit.so
+%%PYTHON_SITELIBDIR%%/PySide/QtXml.so
+%%PYTHON_SITELIBDIR%%/PySide/QtXmlPatterns.so
+%%PYTHON_SITELIBDIR%%/PySide/__init__.py
+%%PYTHON_SITELIBDIR%%/PySide/phonon.so
+%%PYTHON_SITELIBDIR%%/PySide/private.py
+share/PySide/typesystems/typesystem_core.xml
+share/PySide/typesystems/typesystem_core_win.xml
+share/PySide/typesystems/typesystem_declarative.xml
+share/PySide/typesystems/typesystem_gui.xml
+share/PySide/typesystems/typesystem_gui_common.xml
+share/PySide/typesystems/typesystem_gui_mac.xml
+share/PySide/typesystems/typesystem_gui_maemo.xml
+share/PySide/typesystems/typesystem_gui_simulator.xml
+share/PySide/typesystems/typesystem_gui_win.xml
+share/PySide/typesystems/typesystem_gui_x11.xml
+share/PySide/typesystems/typesystem_help.xml
+share/PySide/typesystems/typesystem_multimedia.xml
+share/PySide/typesystems/typesystem_network.xml
+share/PySide/typesystems/typesystem_opengl.xml
+share/PySide/typesystems/typesystem_phonon.xml
+share/PySide/typesystems/typesystem_script.xml
+share/PySide/typesystems/typesystem_scripttools.xml
+share/PySide/typesystems/typesystem_sql.xml
+share/PySide/typesystems/typesystem_svg.xml
+share/PySide/typesystems/typesystem_templates.xml
+share/PySide/typesystems/typesystem_test.xml
+share/PySide/typesystems/typesystem_uitools.xml
+share/PySide/typesystems/typesystem_webkit.xml
+share/PySide/typesystems/typesystem_webkit_simulator.xml
+share/PySide/typesystems/typesystem_xml.xml
+share/PySide/typesystems/typesystem_xmlpatterns.xml
+@dirrm share/PySide/typesystems
+@dirrm share/PySide
+@dirrm %%PYTHON_SITELIBDIR%%/PySide
+@dirrm lib/cmake/PySide-%%PORTVERSION%%
+@dirrm include/PySide/phonon
+@dirrm include/PySide/QtXmlPatterns
+@dirrm include/PySide/QtXml
+@dirrm include/PySide/QtWebKit
+@dirrm include/PySide/QtUiTools
+@dirrm include/PySide/QtTest
+@dirrm include/PySide/QtSvg
+@dirrm include/PySide/QtSql
+@dirrm include/PySide/QtScriptTools
+@dirrm include/PySide/QtScript
+@dirrm include/PySide/QtOpenGL
+@dirrm include/PySide/QtNetwork
+@dirrm include/PySide/QtMultimedia
+@dirrm include/PySide/QtHelp
+@dirrm include/PySide/QtGui
+@dirrm include/PySide/QtDeclarative
+@dirrm include/PySide/QtCore
+@dirrm include/PySide

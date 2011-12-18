@@ -1,0 +1,10 @@
+--- ./PySide/QtOpenGL/CMakeLists.txt.orig	2011-11-29 15:13:14.000000000 +0100
++++ ./PySide/QtOpenGL/CMakeLists.txt	2011-12-17 17:12:56.000000000 +0100
+@@ -37,6 +37,7 @@
+                             ${QT_QTCORE_INCLUDE_DIR}
+                             ${QT_QTGUI_INCLUDE_DIR}
+                             ${QT_QTOPENGL_INCLUDE_DIR}
++                            ${GL_INCLUDE_DIR}
+                             ${SHIBOKEN_PYTHON_INCLUDE_DIR}
+                             ${SHIBOKEN_INCLUDE_DIR}
+                             ${libpyside_SOURCE_DIR}

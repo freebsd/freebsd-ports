@@ -3337,6 +3337,7 @@
     SUBDIR += pyobfuscate
     SUBDIR += pypersrc
     SUBDIR += pyrex
+    SUBDIR += pyside
     SUBDIR += pyst
     SUBDIR += pysvn
     SUBDIR += pythk
