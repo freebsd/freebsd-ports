@@ -25,6 +25,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	M4="/usr/bin/m4 -g"
 CONFIGURE_ARGS=	--enable-shared
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
