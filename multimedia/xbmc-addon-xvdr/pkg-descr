@@ -1,0 +1,12 @@
+This is a PVR add-on for XBMC to add VDR (http://www.cadsoft.de/vdr)
+as a TV/PVR Backend to XBMC.
+
+It adds support for Live TV watching, replaying of Recordings,
+programming Timers and EPG TV Guide to use on same computer or over
+the Network.
+
+This add-on requires the installed "vdr-plugin-xvdr" plugin on the
+VDR server.  VDR itself doen't need any patches or modification to
+use all the current features.
+
+WWW: https://github.com/pipelka/xbmc-addon-xvdr
