@@ -3338,6 +3338,7 @@
     SUBDIR += pypersrc
     SUBDIR += pyrex
     SUBDIR += pyside
+    SUBDIR += pyside-tools
     SUBDIR += pyst
     SUBDIR += pysvn
     SUBDIR += pythk

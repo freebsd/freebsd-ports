@@ -1,0 +1,14 @@
+--- ./CMakeLists.txt.orig	2011-08-22 23:19:14.000000000 +0200
++++ ./CMakeLists.txt	2011-12-18 15:02:59.000000000 +0100
+@@ -43,9 +43,9 @@
+         PATTERN "*pysideuic\\__init__.py" EXCLUDE)
+ 
+ # Man pages for pyside-uic
+-if (NOT win32)
++if (NOT (win32 OR NO_INSTALL_MANPAGES))
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/pysideuic/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()
+ 
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake"

@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+bin/pyside-lupdate
+bin/pyside-rcc
+bin/pyside-uic
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/__init__.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/compiler.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/indenter.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/misc.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/proxy_type.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/qobjectcreator.py
+%%PYTHON_SITELIBDIR%%/pysideuic/Compiler/qtproxies.py
+%%PYTHON_SITELIBDIR%%/pysideuic/__init__.py
+%%PYTHON_SITELIBDIR%%/pysideuic/driver.py
+%%PYTHON_SITELIBDIR%%/pysideuic/exceptions.py
+%%PYTHON_SITELIBDIR%%/pysideuic/icon_cache.py
+%%PYTHON_SITELIBDIR%%/pysideuic/icon_cache.py.bak
+%%PYTHON_SITELIBDIR%%/pysideuic/objcreator.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/__init__.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/as_string.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/ascii_upper.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/invoke.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/load_plugin.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/proxy_base.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v2/string_io.py
+%%PYTHON_SITELIBDIR%%/pysideuic/properties.py
+%%PYTHON_SITELIBDIR%%/pysideuic/pyside-uic.1
+%%PYTHON_SITELIBDIR%%/pysideuic/uiparser.py
+%%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/phonon.py
+%%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/qtdeclarative.py
+%%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/qtwebkit.py
+@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins
+@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/port_v2
+@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/Compiler
+@dirrm %%PYTHON_SITELIBDIR%%/pysideuic
