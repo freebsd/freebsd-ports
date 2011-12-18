@@ -1121,6 +1121,7 @@
     SUBDIR += py-rdflib
     SUBDIR += py-reverend
     SUBDIR += py-rss2gen
+    SUBDIR += py-rstyoutube
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-sphinx
