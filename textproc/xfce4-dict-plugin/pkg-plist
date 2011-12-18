@@ -41,6 +41,7 @@ share/xfce4/panel-plugins/xfce4-dict-plugin.desktop
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
