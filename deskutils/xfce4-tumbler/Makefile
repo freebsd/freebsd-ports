@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.22
-PORTREVISION=	1
+PORTVERSION=	0.1.23
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -39,7 +38,9 @@ OPTIONS=	NLS "Enable Native Language Support" on \
 		JPEG "Enable JPEG and EXIF plugin thumbnailer" on \
 		FFMPEG "Enable FFMPEG plugin thumbnailer" off \
 		POPPLER "Enable PDF/PS plugin thumbnailer" on \
-		GSTREAMER "Enable videos plugin thumbnailer" on
+		GSTREAMER "Enable videos plugin thumbnailer" on \
+		ODF "Enable ODF plugin thumbnailer" on \
+		RAW "Enable RAW plugin thumbnailer" off \
 
 .include <bsd.port.pre.mk>
 
@@ -112,6 +113,24 @@ PLIST_SUB+=	GSTREAMER=""
 .else
 CONFIGURE_ARGS+=--disable-gstreamer-thumbnailer
 PLIST_SUB+=	GSTREAMER="@comment "
+.endif
+
+.if !defined(WITHOUT_ODF)
+USE_GNOME+=	libgsf
+CONFIGURE_ARGS+=--enable-odf-thumbnailer
+PLIST_SUB+=	ODF=""
+.else
+CONFIGURE_ARGS+=--disable-odf-thumbnailer
+PLIST_SUB+=	ODF="@comment "
+.endif
+
+.if defined(WITH_RAW)
+LIB_DEPENDS+=	openraw.6:${PORTSDIR}/graphics/libopenraw
+CONFIGURE_ARGS+=--enable-raw-thumbnailer
+PLIST_SUB+=	RAW=""
+.else
+CONFIGURE_ARGS+=--disable-raw-thumbnailer
+PLIST_SUB+=	RAW="@comment "
 .endif
 
 .include <bsd.port.post.mk>
