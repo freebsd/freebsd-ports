@@ -1,0 +1,12 @@
+XBMC Media Center (formerly named "XBox Media Center")
+is a free and open source cross-platform media-player
+and entertainment hub.
+
+This is a tagged release of the XBMC pvr-ppa-odk branch that adds
+PVR functionality using tvheadend (not ported to FreeBSD yet but
+can be used over the network), MythTV (currently broken), or VDR
+(via external plugins), and is located at:
+
+https://github.com/opdenkamp/xbmc
+
+WWW: http://xbmc.org/

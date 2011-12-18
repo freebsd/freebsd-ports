@@ -1,0 +1,116 @@
+--- configure.in.orig
++++ configure.in
+@@ -20,7 +20,7 @@ AC_DEFUN([XB_FIND_SONAME],
+ [
+   if [[ "$host_vendor" != "apple" ]]; then
+     AC_MSG_CHECKING([for lib$2 soname])
+-    $1_FILENAME=$($CC -nostdlib -o /dev/null $LDFLAGS -l$2 -Wl,-M 2>/dev/null | grep "^LOAD.*$2" | awk '{V=2; print $V}')
++    $1_FILENAME=$($CC -nostdlib $LDFLAGS -l$2 -Wl,-M 2>/dev/null | grep "^LOAD.*$2" | awk '{V=2; print $V}')
+     if [[ ! -z $$1_FILENAME ]]; then
+       $1_SONAME=$(objdump -p $$1_FILENAME | grep "SONAME.*$2" | awk '{V=2; print $V}')
+     fi
+@@ -377,6 +377,12 @@ AC_ARG_ENABLE([texturepacker],
+   [use_texturepacker=$enableval],
+   [use_texturepacker=auto])
+ 
++AC_ARG_ENABLE([libmms],
++  [AS_HELP_STRING([--enable-libmms],
++  [enable mms:// and mmsh:// support (default is auto)])],
++  [use_libmms=$enableval],
++  [use_libmms=auto])
++
+ AC_ARG_WITH([lirc-device],
+   [AS_HELP_STRING([--with-lirc-device=file],
+   [specify the default LIRC device (default is /dev/lircd)])],
+@@ -445,6 +451,20 @@ case $host in
+      ARCH="x86_64-linux"
+      AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
+      ;;
++  i386-*-freebsd*)
++     ARCH="x86-freebsd"
++     MAKE="gmake"
++       CFLAGS="$CFLAGS -I/usr/local/include"
++       CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++     AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
++     ;;
++  amd64-*-freebsd*)
++     ARCH="x86_64-freebsd"
++     MAKE="gmake"
++       CFLAGS="$CFLAGS -I/usr/local/include"
++       CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++     AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_LINUX -D_LINUX")
++     ;;
+   arm-apple-darwin*)
+      use_joystick=no
+      use_crystalhd=no
+@@ -622,6 +642,8 @@ INCLUDES="$INCLUDES -I\$(abs_top_srcdir)
+ # Check inotify availability
+ AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
+ 
++AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[""]),)
++
+ # Checks for boost headers using CXX instead of CC
+ AC_LANG_PUSH([C++])
+ AC_CHECK_HEADER([boost/shared_ptr.hpp],, AC_MSG_ERROR($missing_library))
+@@ -774,6 +796,29 @@ AS_CASE([x$use_libbluray],
+   ]
+ )
+ 
++# check for libmms
++AS_CASE([x$use_libmms],
++  [xyes],[
++    PKG_CHECK_MODULES([LIBMMS],[libmms],[use_libmms="yes"], AC_MSG_ERROR($missing_library))
++  ],
++  [xauto],[
++    PKG_CHECK_MODULES([LIBMMS],[libmms],[use_libmms="yes"], [use_libmms="no"])
++  ])
++
++AS_CASE([x$use_libmms],
++  [xyes],[
++    INCLUDES="$INCLUDES $LIBMMS_CFLAGS";
++    LIBS="$LIBS $LIBMMS_LIBS";
++    if test "$host_vendor" != "apple"; then
++      XB_FIND_SONAME([MMS], [mms], [use_libmms])
++    fi;
++    AC_DEFINE([HAVE_LIBMMS], 1, [System has libmms library])
++    AC_SUBST([HAVE_LIBMMS], 1)
++  ],[
++    AC_SUBST([HAVE_LIBMMS], 0)
++  ]
++)
++
+ # platform dependent libraries
+ if test "$host_vendor" = "apple" ; then
+   AC_CHECK_LIB([iconv],     [main],, AC_MSG_ERROR($missing_library))
+@@ -783,8 +828,10 @@ if test "$host_vendor" = "apple" ; then
+     AC_DEFINE([HAVE_SDL],[1],["Define to 1 if using sdl"])
+   fi
+ else
++  if echo "$ARCH" | grep -vq freebsd; then
+   AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
++  fi
+   AC_CHECK_LIB([jasper],     [main],, AC_MSG_ERROR($missing_library)) # check for cximage
+   AC_CHECK_LIB([rt],         [clock_gettime],, AC_MSG_ERROR($missing_library))
+ 
+@@ -1634,6 +1681,12 @@ else
+   USE_TEXTUREPACKER=0
+ fi
+ 
++if test "$use_libmms" = "yes"; then
++  final_message="$final_message\n  MMS Support:\tYes"
++else
++  final_message="$final_message\n  MMS Support:\tNo"
++fi
++
+ if test "$use_mid" = "yes"; then
+   final_message="$final_message\n  MID Support:\tYes"
+   SDL_DEFINES="$SDL_DEFINES -DMID"
+@@ -1837,7 +1890,6 @@ OUTPUT_FILES="Makefile \
+     lib/nosefart/Makefile \
+     lib/libsidplay2/Makefile \
+     lib/vgmstream/Makefile \
+-    lib/snesapu/SNES/SNESAPU/Makefile \
+     lib/stsound/StSoundLibrary/Makefile \
+     xbmc/cores/playercorefactory/Makefile \
+     xbmc/music/karaoke/Makefile \
