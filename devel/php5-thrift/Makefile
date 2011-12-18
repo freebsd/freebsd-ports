@@ -16,6 +16,8 @@ COMMENT=	PHP interface to Thrift
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
+BROKEN=		does not configure
+
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
