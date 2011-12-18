@@ -1,11 +1,11 @@
---- setup.py.orig	2005-10-16 19:07:03.000000000 -0400
-+++ setup.py	2010-01-27 22:53:23.749001522 -0500
+--- ./setup.py.orig	2005-10-16 19:07:03.000000000 -0400
++++ ./setup.py	2011-12-18 14:32:02.170660843 -0500
 @@ -25,7 +25,10 @@
          d = {}
          if os.path.exists(os.path.join(cfg['include_dirs'][0], 'pcap-int.h')):
              d['HAVE_PCAP_INT_H'] = 1
 -        buf = open(os.path.join(cfg['include_dirs'][0], 'pcap.h')).read()
-+        if os.uname()[2][0] >= '8':
++        if int(os.uname()[2].split('.')[0]) >= 8:
 +            buf = open(os.path.join(cfg['include_dirs'][1], 'pcap.h')).read()
 +        else:
 +            buf = open(os.path.join(cfg['include_dirs'][0], 'pcap.h')).read()
