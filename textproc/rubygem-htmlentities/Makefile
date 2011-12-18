@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	htmlentities
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	HTML entity encoding and decoding for Ruby
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
