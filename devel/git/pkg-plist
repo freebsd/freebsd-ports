@@ -1008,5 +1008,5 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/workdir
 %%CONTRIB%%@dirrm share/git-core/contrib
 @dirrm share/git-core
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/git_remote_helpers

@@ -407,7 +407,7 @@ post-install:
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${PREFIX}/share/git-core/contrib
 	(cd ${WRKSRC}/contrib/ && \
-		${COPYTREE_SHARE} \* ${PREFIX}/share/git-core/contrib)
+		${COPYTREE_BIN} \* ${PREFIX}/share/git-core/contrib)
 .endif
 .ifdef (WITH_P4)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
