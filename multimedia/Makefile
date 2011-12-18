@@ -367,6 +367,7 @@
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xbmc
+    SUBDIR += xbmc-addon-xvdr
     SUBDIR += xbmc-pvr
     SUBDIR += xfce4-media
     SUBDIR += xfce4-parole

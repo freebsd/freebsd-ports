@@ -1,0 +1,11 @@
+--- a/src/xvdr/Makefile.am
++++ b/src/xvdr/Makefile.am
+@@ -5,7 +5,7 @@
+ # how to reach the author.
+ #
+ 
+-LIBS   =-ldl
++#LIBS   =-ldl
+ LIBDIR = ../../addons/pvr.vdr.xvdr
+ LIB    = ../../addons/pvr.vdr.xvdr/XBMC_VDR_xvdr.pvr
+ 

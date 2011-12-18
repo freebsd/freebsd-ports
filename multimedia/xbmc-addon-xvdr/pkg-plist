@@ -1,0 +1,19 @@
+share/xbmc/addons/pvr.vdr.xvdr/XBMC_VDR_xvdr.pvr
+share/xbmc/addons/pvr.vdr.xvdr/addon.xml
+share/xbmc/addons/pvr.vdr.xvdr/icon.png
+share/xbmc/addons/pvr.vdr.xvdr/resources/language/Dutch/strings.xml
+share/xbmc/addons/pvr.vdr.xvdr/resources/language/English/strings.xml
+share/xbmc/addons/pvr.vdr.xvdr/resources/language/Finnish/strings.xml
+share/xbmc/addons/pvr.vdr.xvdr/resources/language/German/strings.xml
+share/xbmc/addons/pvr.vdr.xvdr/resources/settings.xml
+share/xbmc/addons/pvr.vdr.xvdr/resources/skins/Confluence/720p/ChannelScan.xml
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/skins/Confluence/720p
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/skins/Confluence
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/skins
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/language/German
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/language/English
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources/language
+@dirrm share/xbmc/addons/pvr.vdr.xvdr/resources
+@dirrm share/xbmc/addons/pvr.vdr.xvdr
