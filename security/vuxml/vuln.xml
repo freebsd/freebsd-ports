@@ -60,16 +60,17 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The typo3 security team reports:</p>
 	<blockquote cite="http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2011-004/">
-	  <p>A crafted request to a vulnerable TYPO3 installation will allow an attacker to load PHP code
-	     from an external source and to execute it on the TYPO3 installation.</p>
-	  <p>This is caused by a PHP file, which is part of the workspaces system extension, that does not
-	     validate passed arguments.</p>
+	  <p>A crafted request to a vulnerable TYPO3 installation will allow an
+	    attacker to load PHP code from an external source and to execute it on the
+	    TYPO3 installation.</p>
+	  <p>This is caused by a PHP file, which is part of the workspaces system
+	    extension, that does not validate passed arguments.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2011-004/</url>
       <cvename>CVE-2011-4614</cvename>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2011-004/</url>
     </references>
     <dates>
       <discovery>2011-12-16</discovery>
@@ -90,10 +91,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The MIT Kerberos Team reports:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2011-007.txt">
 	  <p>In releases krb5-1.9 and later, the KDC can crash due to a null
-	     pointer dereference in code that handles TGS (Ticket Granting Service)
-	     requests.  The trigger condition is trivial to produce using
-	     unmodified client software, but requires the ability to authenticate
-	     as a principal in the KDC's realm.</p>
+	    pointer dereference in code that handles TGS (Ticket Granting Service)
+	    requests.  The trigger condition is trivial to produce using
+	    unmodified client software, but requires the ability to authenticate
+	    as a principal in the KDC's realm.</p>
 	</blockquote>
       </body>
     </description>
@@ -207,7 +208,6 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
       <cvename>CVE-2011-3903</cvename>
       <cvename>CVE-2011-3904</cvename>
       <cvename>CVE-2011-3905</cvename>
@@ -223,6 +223,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-3915</cvename>
       <cvename>CVE-2011-3916</cvename>
       <cvename>CVE-2011-3917</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
     </references>
     <dates>
       <discovery>2011-12-13</discovery>
@@ -254,8 +255,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <mlist>http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html</mlist>
       <cvename>CVE-2011-4607</cvename>
+      <mlist>http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html</mlist>
     </references>
     <dates>
       <discovery>2011-12-10</discovery>
@@ -280,21 +281,21 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Asterisk project reports:</p>
 	<blockquote cite="http://downloads.asterisk.org/pub/security/AST-2011-013.html">
 	  <p>It is possible to enumerate SIP usernames when the general and user/peer
-	     NAT settings differ in whether to respond to the port a request is sent
-	     from or the port listed for responses in the Via header</p>
+	    NAT settings differ in whether to respond to the port a request is sent
+	    from or the port listed for responses in the Via header</p>
 	</blockquote>
 	<blockquote cite="http://downloads.asterisk.org/pub/security/AST-2011-014.html">
 	  <p>When the "automon" feature is enabled in features.conf, it is possible to
-	     send a sequence of SIP requests that cause Asterisk to dereference a NULL
-	     pointer and crash.</p>
+	    send a sequence of SIP requests that cause Asterisk to dereference a NULL
+	    pointer and crash.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://downloads.asterisk.org/pub/security/AST-2011-013.html</url>
-      <url>http://downloads.asterisk.org/pub/security/AST-2011-014.html</url>
       <cvename>CVE-2011-4597</cvename>
       <cvename>CVE-2011-4598</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-013.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-014.html</url>
     </references>
     <dates>
       <discovery>2011-12-08</discovery>
@@ -319,9 +320,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>ISC reports:</p>
 	<blockquote cite="https://www.isc.org/software/bind/advisories/cve-2011-4539">
 	  <p>A bug exists which allows an attacker who is able to send DHCP Request
-	     packets, either directly or through a relay, to remotely crash an ISC
-	     DHCP server if that server is configured to evaluate expressions using
-	     a regular expression (i.e. uses the "~=" or "~~" comparison operators.)</p>
+	    packets, either directly or through a relay, to remotely crash an ISC
+	    DHCP server if that server is configured to evaluate expressions using
+	    a regular expression (i.e. uses the "~=" or "~~" comparison operators.)</p>
 	</blockquote>
       </body>
     </description>
@@ -347,18 +348,18 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The phpMyAdmin development team reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-18.php">
 	  <p>Using crafted database names, it was possible to produce
-	  XSS in the Database Synchronize and Database rename
-	  panels. Using an invalid and crafted SQL query, it was
-	  possible to produce XSS when editing a query on a table
-	  overview panel or when using the view creation dialog. Using
-	  a crafted column type, it was possible to produce XSS in the
-	  table search and create index dialogs.</p>
+	    XSS in the Database Synchronize and Database rename
+	    panels. Using an invalid and crafted SQL query, it was
+	    possible to produce XSS when editing a query on a table
+	    overview panel or when using the view creation dialog. Using
+	    a crafted column type, it was possible to produce XSS in the
+	    table search and create index dialogs.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-18.php</url>
       <cvename>CVE-2011-4634</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-18.php</url>
     </references>
     <dates>
       <discovery>2011-11-24</discovery>
@@ -580,8 +581,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-17.php</url>
       <cvename>CVE-2011-4107</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-17.php</url>
     </references>
     <dates>
       <discovery>2011-11-10</discovery>
@@ -611,7 +612,6 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>https://www.adobe.com/support/security/bulletins/apsb11-28.html</url>
       <cvename>CVE-2011-2445</cvename>
       <cvename>CVE-2011-2450</cvename>
       <cvename>CVE-2011-2451</cvename>
@@ -624,6 +624,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2458</cvename>
       <cvename>CVE-2011-2459</cvename>
       <cvename>CVE-2011-2460</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb11-28.html</url>
     </references>
     <dates>
       <discovery>2011-11-10</discovery>
