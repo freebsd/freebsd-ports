@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
-
 PKGNAMESUFFIX=	-input-sdl
 
 COMMENT=	Input plugin for Mupen64plus

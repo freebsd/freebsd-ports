@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
-
 PKGNAMESUFFIX=	-video-rice
 
 COMMENT=	The rice graphics plugin for Mupen64plus
