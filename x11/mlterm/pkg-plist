@@ -18,7 +18,7 @@ etc/mlterm/xim
 lib/libkik.a
 lib/libkik.la
 lib/libkik.so
-lib/libkik.so.13
+lib/libkik.so.14
 lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so

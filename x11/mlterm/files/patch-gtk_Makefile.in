@@ -1,29 +1,33 @@
---- gtk/Makefile.in.orig	2011-06-04 15:13:16.000000000 +0900
-+++ gtk/Makefile.in	2011-06-04 15:14:33.000000000 +0900
-@@ -23,10 +23,10 @@
+--- gtk/Makefile.in.orig	2011-11-19 09:52:14.000000000 +0900
++++ gtk/Makefile.in	2011-11-26 20:09:45.000000000 +0900
+@@ -25,10 +25,10 @@
  
  OBJ = vte.o marshal.o vtetypebuiltins.o reaper.o
  
--all: libvte.la
-+all: libvte-mlterm.la
+-all: libvte@LIBVTE_SUFFIX@.la
++all: libvte-mlterm@LIBVTE_SUFFIX@.la
  
--libvte.la: $(OBJ)
--	$(LIBTOOL_LINK) -o libvte.la $(OBJ:.o=.lo) ../mlterm/*.lo \
-+libvte-mlterm.la: $(OBJ)
-+	$(LIBTOOL_LINK) -o libvte-mlterm.la $(OBJ:.o=.lo) ../mlterm/*.lo \
+-libvte@LIBVTE_SUFFIX@.la: $(OBJ)
+-	$(LIBTOOL_LINK) -o libvte@LIBVTE_SUFFIX@.la $(OBJ:.o=.lo) ../mlterm/*.lo \
++libvte-mlterm@LIBVTE_SUFFIX@.la: $(OBJ)
++	$(LIBTOOL_LINK) -o libvte-mlterm@LIBVTE_SUFFIX@.la $(OBJ:.o=.lo) ../mlterm/*.lo \
  	`echo ../xwindow/*.lo|sed 's/..\/xwindow\/main.lo//g' | \
  	sed 's/..\/xwindow\/x_term_manager.lo//g' | \
  	sed 's/..\/xwindow\/x_sb_screen.lo//g' | \
-@@ -43,10 +43,10 @@
+@@ -45,13 +45,13 @@
  		-I$(top_builddir)/xwindow -I../mkf/include -I../kiklib/include -g -c $<
  
  clean:
--	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte.la *.core .libs
-+	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte-mlterm.la *.core .libs
+-	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte@LIBVTE_SUFFIX@.la *.core .libs
++	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte-mlterm@LIBVTE_SUFFIX@.la *.core .libs
  
  distclean: clean
  	rm -f Makefile
  
  install:
--	$(LIBTOOL_INSTALL) libvte.la $(libdir)
-+	$(LIBTOOL_INSTALL) libvte-mlterm.la $(libdir)
+-	$(LIBTOOL_INSTALL) libvte@LIBVTE_SUFFIX@.la $(LIBDIR)
++	$(LIBTOOL_INSTALL) libvte-mlterm@LIBVTE_SUFFIX@.la $(LIBDIR)
+ 
+ uninstall:
+-	rm -f $(LIBDIR)/libvte@LIBVTE_SUFFIX@.*
++	rm -f $(LIBDIR)/libvte-mlterm@LIBVTE_SUFFIX@.*
