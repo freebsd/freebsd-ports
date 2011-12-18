@@ -2538,6 +2538,7 @@
     SUBDIR += p5-Thread-Queue-Duplex
     SUBDIR += p5-Thread-Suspend
     SUBDIR += p5-Thrift
+    SUBDIR += p5-Thrift-XS
     SUBDIR += p5-Throwable
     SUBDIR += p5-Tie-Array-Pack
     SUBDIR += p5-Tie-Array-Sorted
