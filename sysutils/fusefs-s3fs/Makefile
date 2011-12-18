@@ -6,28 +6,22 @@
 #
 
 PORTNAME=	s3fs
-DISTVERSION=	r177
-PORTREVISION=	1
+DISTVERSION=	1.19
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
-DISTFILES=	${PORTNAME}-${DISTVERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	FUSE-based file system backed by Amazon S3
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/gnome-config:${PORTSDIR}/x11/gnome-libs
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		fuse:${PORTSDIR}/sysutils/fusefs-libs \
-		iconv:${PORTSDIR}/converters/iconv \
 		xml2:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
-PLIST_FILES=	sbin/s3fs
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/s3fs ${PREFIX}/sbin
+GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/s3fs
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
