@@ -3686,6 +3686,7 @@
     SUBDIR += sh-rtems-gdb
     SUBDIR += shapelib
     SUBDIR += shflags
+    SUBDIR += shiboken
     SUBDIR += shmap
     SUBDIR += showgrammar
     SUBDIR += shtool
