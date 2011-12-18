@@ -77,7 +77,7 @@ GYP_DEFINES+=	use_cups=1 \
 
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
-		PULSE	"Enable Pulse Audio support"			off \
+		PULSEAUDIO	"Enable Pulse Audio support"		off \
 		CLANG	"Build Chromium with Clang"			off \
 		GCC46	"Build Chromium with GCC 4.6+"			off \
 		DEBUG	"Compile with debug symbols and verbose output"	off
@@ -104,7 +104,7 @@ USE_GNOME+=	gconf2
 GYP_DEFINES+=	use_gconf=0
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if !defined(WITHOUT_PULSEAUDIO) && defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 GYP_DEFINES+=	use_pulseaudio=1
 .else
