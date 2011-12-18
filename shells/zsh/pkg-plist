@@ -144,6 +144,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_read_comp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_regex_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_regex_words
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_remote_files
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_requested
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_retrieve_cache
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base/_sep_parts
