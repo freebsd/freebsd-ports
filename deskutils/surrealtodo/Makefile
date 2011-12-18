@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	surrealtodo
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/surrealtodo/Surreal%20ToDo/
-DISTNAME=	surrealtodo-v${PORTVERSION}
+DISTNAME=	surrealtodo_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Surreal ToDo is an AJAX enabled web 2.0 list manager
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 
 do-install:
 	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/${PORTNAME}-v${PORTVERSION}/* ${WWWDIR}
+	@${CP} -r ${WRKDIR}/${PORTNAME}_v${PORTVERSION}/* ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
