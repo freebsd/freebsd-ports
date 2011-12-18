@@ -1,0 +1,28 @@
+--- ./tools/Linux/xbmc.sh.in.orig	2010-10-28 21:09:04.000000000 +0200
++++ ./tools/Linux/xbmc.sh.in	2010-12-01 12:17:34.286115032 +0100
+@@ -23,6 +23,8 @@
+ exec_prefix="@exec_prefix@"
+ datarootdir="@datarootdir@"
+ LIBDIR="@libdir@"
++export XBMC_BIN_HOME="${LIBDIR}/xbmc"
++export XBMC_HOME="${datarootdir}/xbmc"
+ 
+ # Check for some options used by this script
+ while [ "$#" -gt "0" ]
+@@ -103,11 +105,11 @@
+   echo "Crash report available at $FILE"
+ }
+ 
+-python @datadir@/xbmc/FEH.py $SAVED_ARGS
+-RET=$?
+-if [ $RET -ne 0 ]; then
+-  exit $RET
+-fi
++# python @datadir@/xbmc/FEH.py $SAVED_ARGS
++# RET=$?
++# if [ $RET -ne 0 ]; then
++#  exit $RET
++# fi
+ 
+ if which gdb >/dev/null 2>&1; then
+   # Output warning in case ulimit is unsupported by shell

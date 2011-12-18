@@ -1,0 +1,177 @@
+--- xbmc/linux/XThreadUtils.cpp.orig
++++ xbmc/linux/XThreadUtils.cpp
+@@ -38,7 +38,11 @@ HANDLE WINAPI CreateThread(
+           LPTHREAD_START_ROUTINE lpStartAddress,
+             LPVOID lpParameter,
+         DWORD dwCreationFlags,
++#ifdef __FreeBSD__
++          LPLONG lpThreadId
++#else
+           LPDWORD lpThreadId
++#endif
+     ) {
+ 
+   // a thread handle would actually contain an event
+@@ -62,8 +66,12 @@ HANDLE WINAPI CreateThread(
+   pthread_attr_destroy(&attr);
+ 
+   if (h && lpThreadId)
++#ifdef __FreeBSD__
++    *lpThreadId = (LONG)h->m_hThread;
++#else
+     // WARNING: This can truncate thread IDs on x86_64.
+     *lpThreadId = (DWORD)h->m_hThread;
++#endif
+   return h;
+ }
+ 
+@@ -89,10 +97,18 @@ HANDLE _beginthreadex(
+    int ( *start_address )( void * ),
+    void *arglist,
+    unsigned initflag,
++#ifdef __FreeBSD__
++   unsigned long *thrdaddr
++#else
+    unsigned *thrdaddr
++#endif
+ ) {
+ 
++#ifdef __FreeBSD__
++  HANDLE h = CreateThread(NULL, stack_size, start_address, arglist, initflag, (LPLONG)thrdaddr);
++#else
+   HANDLE h = CreateThread(NULL, stack_size, start_address, arglist, initflag, (LPDWORD)thrdaddr);
++#endif
+   return h;
+ 
+ }
+--- xbmc/linux/XThreadUtils.h.orig
++++ xbmc/linux/XThreadUtils.h
+@@ -30,7 +30,11 @@ HANDLE WINAPI CreateThread(
+           LPTHREAD_START_ROUTINE lpStartAddress,
+             LPVOID lpParameter,
+         DWORD dwCreationFlags,
++#ifdef __FreeBSD__
++          LPLONG lpThreadId
++#else
+           LPDWORD lpThreadId
++#endif
+     );
+ 
+ HANDLE _beginthreadex(
+@@ -39,7 +43,11 @@ HANDLE _beginthreadex(
+    int ( *start_address )( void * ),
+    void *arglist,
+    unsigned initflag,
++#ifdef __FreeBSD__
++   unsigned long *thrdaddr
++#else
+    unsigned *thrdaddr
++#endif
+ );
+ 
+ uintptr_t _beginthread(
+--- lib/asap/win32/winamp/in_asap.c.orig
++++ lib/asap/win32/winamp/in_asap.c
+@@ -305,7 +305,11 @@ static int play(char *fn)
+ {
+ 	int song;
+ 	int maxlatency;
++#ifdef __FreeBSD__
++	LONG threadId;
++#else
+ 	DWORD threadId;
++#endif
+ 	strcpy(current_filename_with_song, fn);
+ 	song = extractSongNumber(fn, current_filename);
+ 	if (!loadModule(current_filename, module, &module_len))
+--- lib/timidity/interface/w32g.h.orig
++++ lib/timidity/interface/w32g.h
+@@ -65,9 +65,14 @@ typedef LPTHREAD_START_ROUTINE BCC_BEGIN
+ #define crt_beginthread(start_address,stack_size,arglist) \
+ (HANDLE)_beginthread((BCC_BEGINTHREAD_START_ADDRESS)start_address,(unsigned)stack_size,(void *)arglist)
+ #else
++#ifdef __FreeBSD__
++#define crt_beginthread(start_address,stack_size,arglist) \
++(HANDLE)CreateThread(NULL,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,0,NULL)
++#else
+ #define crt_beginthread(start_address,stack_size,arglist) \
+ (HANDLE)CreateThread(NULL,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,0,&dwTmp)
+ #endif
++#endif
+ 
+ // (HANDLE)crt_beginthreadex(LPSECURITY_ATTRIBUTES security, DWORD stack_size, LPTHREAD_START_ROUTINE start_address, LPVOID arglist, DWORD initflag, LPDWORD thrdaddr );
+ #if defined(_MSC_VER) || defined(__WATCOMC__)
+@@ -77,9 +82,14 @@ typedef LPTHREAD_START_ROUTINE BCC_BEGIN
+ #define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
+ (HANDLE)_beginthreadNT((BCC_BEGINTHREAD_START_ADDRESS)start_address,(unsigned)stack_size,(void *)arglist,(void *)security_attrib,(unsigned long)create_flags,(unsigned long *)thread_id)
+ #else
++#ifdef __FreeBSD__
++#define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
++(HANDLE)CreateThread((LPSECURITY_ATTRIBUTES)security,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,(DWORD)initflag,(LPLONG)thrdaddr)
++#else
+ #define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
+ (HANDLE)CreateThread((LPSECURITY_ATTRIBUTES)security,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,(DWORD)initflag,(LPDWORD)thrdaddr)
+ #endif
++#endif
+ 
+ #if defined(_MSC_VER) || defined(__WATCOMC__)
+ #define crt_endthread() _endthread()
+--- lib/timidity/timidity/gogo_a.c.orig
++++ lib/timidity/timidity/gogo_a.c
+@@ -109,9 +109,14 @@ typedef LPTHREAD_START_ROUTINE BCC_BEGIN
+ #define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
+ (HANDLE)_beginthreadNT((BCC_BEGINTHREAD_START_ADDRESS)start_address,(unsigned)stack_size,(void *)arglist,(void *)security_attrib,(unsigned long)create_flags,(unsigned long *)thread_id)
+ #else
++#ifdef __FreeBSD__
++#define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
++(HANDLE)CreateThread((LPSECURITY_ATTRIBUTES)security,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,(DWORD)initflag,(LPLONG)thrdaddr)
++#else
+ #define crt_beginthreadex(security,stack_size,start_address,arglist,initflag,thrdaddr ) \
+ (HANDLE)CreateThread((LPSECURITY_ATTRIBUTES)security,(DWORD)stack_size,(LPTHREAD_START_ROUTINE)start_address,(LPVOID)arglist,(DWORD)initflag,(LPDWORD)thrdaddr)
+ #endif
++#endif
+ 
+ volatile extern char *w32g_output_dir;
+ volatile extern int w32g_auto_output_mode;
+--- xbmc/visualizations/XBMCProjectM/libprojectM/fftsg.cpp.orig
++++ xbmc/visualizations/XBMCProjectM/libprojectM/fftsg.cpp
+@@ -782,6 +782,16 @@ void makect(int nc, int *ip, double *c)
+ #include <stdio.h>
+ #include <stdlib.h>
+ #define cdft_thread_t HANDLE
++#ifdef __FreeBSD__
++#define cdft_thread_create(thp,func,argp) { \
++    LONG thid; \
++    *(thp) = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) func, (LPVOID) argp, 0, &thid); \
++    if (*(thp) == 0) { \
++        fprintf(stderr, "cdft thread error\n"); \
++        exit(1); \
++    } \
++}
++#else
+ #define cdft_thread_create(thp,func,argp) { \
+     DWORD thid; \
+     *(thp) = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) func, (LPVOID) argp, 0, &thid); \
+@@ -790,6 +800,7 @@ void makect(int nc, int *ip, double *c)
+         exit(1); \
+     } \
+ }
++#endif
+ #define cdft_thread_wait(th) { \
+     WaitForSingleObject(th, INFINITE); \
+     CloseHandle(th); \
+--- xbmc/threads/Thread.h.orig
++++ xbmc/threads/Thread.h
+@@ -117,8 +117,12 @@ private:
+   ThreadIdentifier ThreadId() const;
+   bool m_bAutoDelete;
+   CEvent m_StopEvent;
++#ifdef __FreeBSD__
++  unsigned long m_ThreadId;
++#else
+   unsigned m_ThreadId; // This value is unreliable on platforms using pthreads
+                        // Use m_ThreadHandle->m_hThread instead
++#endif
+   IRunnable* m_pRunnable;
+ 
+   unsigned __int64 m_iLastUsage;

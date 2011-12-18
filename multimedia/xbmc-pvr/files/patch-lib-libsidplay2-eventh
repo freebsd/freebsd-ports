@@ -1,0 +1,88 @@
+--- lib/libsidplay2/libsidplay/src/event.cpp.orig
++++ lib/libsidplay2/libsidplay/src/event.cpp
+@@ -50,7 +50,7 @@
+  ***************************************************************************/
+ 
+ #include <string.h>
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ #define EVENT_TIMEWARP_COUNT 0x0FFFFF
+ 
+--- lib/libsidplay2/libsidplay/src/mos6510/mos6510.h.orig
++++ lib/libsidplay2/libsidplay/src/mos6510/mos6510.h
+@@ -36,7 +36,7 @@
+ #include "config.h"
+ #include "component.h"
+ #include "sidenv.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ #undef  MOS6510_VERSION
+ #undef  MOS6510_DATE
+--- lib/libsidplay2/libsidplay/include/sidplay/c64env.h.orig
++++ lib/libsidplay2/libsidplay/include/sidplay/c64env.h
+@@ -19,7 +19,7 @@
+ #define _c64env_h_
+ 
+ #include "sidtypes.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+  
+ /* An implementation of of this class can be created to perform the C64
+    specifics.  A pointer to this child class can then be passed to
+--- lib/libsidplay2/libsidplay/include/sidplay/sid2types.h.orig
++++ lib/libsidplay2/libsidplay/include/sidplay/sid2types.h
+@@ -19,7 +19,7 @@
+ #define _sid2types_h_
+ 
+ #include "sidtypes.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ class   sidbuilder;
+ struct  SidTuneInfo;
+--- lib/libsidplay2/libsidplay/src/mos6526/mos6526.h.orig
++++ lib/libsidplay2/libsidplay/src/mos6526/mos6526.h
+@@ -85,7 +85,7 @@
+ #define _mos6526_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ class MOS6526: public component
+ {
+--- lib/libsidplay2/libsidplay/src/mos656x/mos656x.h.orig
++++ lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
+@@ -19,7 +19,7 @@
+ #define _mos656x_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ typedef enum
+ {
+--- lib/libsidplay2/libsidplay/src/sid6526/sid6526.h.orig
++++ lib/libsidplay2/libsidplay/src/sid6526/sid6526.h
+@@ -38,7 +38,7 @@
+ #define _sid6526_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ #include "c64env.h"
+ 
+ class SID6526: public component
+--- lib/libsidplay2/libsidplay/src/xsid/xsid.h.orig
++++ lib/libsidplay2/libsidplay/src/xsid/xsid.h
+@@ -106,7 +106,7 @@ programmed with.
+ 
+ #include "config.h"
+ #include "sidbuilder.h"
+-#include "event.h"
++#include "../../include/sidplay/event.h"
+ 
+ // XSID configuration settings
+ //#define XSID_DEBUG 1

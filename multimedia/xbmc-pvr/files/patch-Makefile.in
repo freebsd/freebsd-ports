@@ -1,0 +1,20 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -127,7 +127,6 @@ PAPCODECS_DIRS= \
+ 	lib/timidity \
+ 	lib/libsidplay2 \
+ 	lib/stsound/StSoundLibrary \
+-	lib/snesapu/SNES/SNESAPU \
+ 	lib/vgmstream
+ 
+ ifeq (@USE_ASAP_CODEC@,1)
+@@ -463,9 +462,6 @@ ifeq (@USE_ASAP_CODEC@,1)
+   endif
+ endif
+ 	$(MAKE) -C lib/stsound/StSoundLibrary	
+-ifeq ($(or $(findstring powerpc,@ARCH@),$(findstring x86_64-linux,@ARCH@),$(findstring arm, @ARCH@)),)
+-	$(MAKE) -C lib/snesapu/SNES/SNESAPU
+-endif
+ imagelib: dllloader
+ 	$(MAKE) -C lib/cximage-6.0
+ 
