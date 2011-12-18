@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
-
 PKGNAMESUFFIX=	-audio-sdl
 
 COMMENT=	Mupen64plus audio sdl plugin
