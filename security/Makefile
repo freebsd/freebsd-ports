@@ -707,6 +707,8 @@
     SUBDIR += py-openssl
     SUBDIR += py-otr
     SUBDIR += py-paramiko
+    SUBDIR += py-plone.keyring
+    SUBDIR += py-plone.protect
     SUBDIR += py-posix1e
     SUBDIR += py-pow
     SUBDIR += py-pyclamd
@@ -722,8 +724,15 @@
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
+    SUBDIR += py-zope.authentication
+    SUBDIR += py-zope.login
     SUBDIR += py-zope.password
+    SUBDIR += py-zope.pluggableauth
+    SUBDIR += py-zope.principalannotation
+    SUBDIR += py-zope.principalregistry
     SUBDIR += py-zope.security
+    SUBDIR += py-zope.securitypolicy
+    SUBDIR += py-zope.session
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
