@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	pianobar
-PORTVERSION=	2011.11.11
+PORTVERSION=	2011.12.11
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/static/projects/${PORTNAME}/
 
 MAINTAINER=	john@pcbsd.org
 COMMENT=	Command line Pandora player
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \
 		faad:${PORTSDIR}/audio/faad \
 		mad:${PORTSDIR}/audio/libmad \
 		gnutls.47:${PORTSDIR}/security/gnutls
-
-LICENSE=	MIT
 
 MAN1=		pianobar.1
 MAN_COMPRESSED=	no
@@ -28,6 +28,7 @@ PLIST_FILES=	bin/pianobar
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-CFLAGS=
+CFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
