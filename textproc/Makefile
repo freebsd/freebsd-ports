@@ -1131,6 +1131,7 @@
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
+    SUBDIR += py-wicked
     SUBDIR += py-wordnet
     SUBDIR += py-xlrd
     SUBDIR += py-xlwriter
@@ -1138,6 +1139,7 @@
     SUBDIR += py-xml
     SUBDIR += py-xmltools
     SUBDIR += py-xmltv
+    SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zope.structuredtext
     SUBDIR += py-zope.tal

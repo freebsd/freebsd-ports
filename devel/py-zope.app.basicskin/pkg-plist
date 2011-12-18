@@ -1,0 +1,42 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/arrowup.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/dialog_macros.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/document_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/folder_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/standardmacros.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/standardmacros.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/standardmacros.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/test.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/test_standardmacros.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/test_standardmacros.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests/test_standardmacros.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/view_macros.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/zmi_stylesheet.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/zopetopbasic.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/zopetopstructure.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/zopetopwidgets.css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/basicskin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
