@@ -307,5 +307,6 @@
     SUBDIR += zenpack-interfacegraphs
     SUBDIR += zenpack-libvirt
     SUBDIR += zenpack-macreport
+    SUBDIR += zenpack-ntpmonitor
 
 .include <bsd.port.subdir.mk>

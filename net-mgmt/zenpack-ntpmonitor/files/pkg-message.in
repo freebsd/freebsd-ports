@@ -1,0 +1,5 @@
+
+To activate this Zenpack, run the following commands as the zenoss user:
+
+%%ZENHOME%%/bin/zenpack --install %%ZPACKHOME%%/%%ZPACK%%
+%%ZENHOME%%/bin/zopectl restart
