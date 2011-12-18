@@ -3887,6 +3887,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/locallang_tsparser.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/locallang_view_help.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/lang/locallang_wizards.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/linkvalidator/.gitignore
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/linkvalidator/ChangeLog
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/linkvalidator/classes/class.tx_linkvalidator_processor.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/linkvalidator/classes/linktype/class.tx_linkvalidator_linktype_abstract.php
