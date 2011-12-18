@@ -460,6 +460,7 @@
     SUBDIR += gearmand
     SUBDIR += gecode
     SUBDIR += generate
+    SUBDIR += generatorrunner
     SUBDIR += gengetopt
     SUBDIR += genproto
     SUBDIR += gettext
