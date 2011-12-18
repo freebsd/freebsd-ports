@@ -1,0 +1,10 @@
+Thrift::XS provides faster versions of Thrift::BinaryProtocol and
+Thrift::MemoryBuffer.
+
+Thrift compact protocol support is also available, just replace
+Thrift::XS::BinaryProtocol with Thrift::XS::CompactProtocol.
+
+To use, simply replace your Thrift initialization code with the appropriate
+Thrift::XS version.
+
+WWW: http://search.cpan.org/dist/Thrift-XS/
