@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-utils
 PORTVERSION=	4.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
@@ -18,8 +18,6 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 essential utilities and scripts
 
 BUILD_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
-
-RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/4//}
 
@@ -38,9 +36,10 @@ USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
-		NLS "Enable Native Language Support" on
+		NLS "Enable Native Language Support" on \
+		XLOCK "Use xlock for 'lock screen'" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
@@ -60,7 +59,11 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if !defined(WITHOUT_XLOCK)
+RUN_DEPENDS+=	xlock:${PORTSDIR}/x11/xlockmore
+.endif
+
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
