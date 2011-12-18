@@ -1,0 +1,9 @@
+--- a/Makefile
++++ b/Makefile
+@@ -114,5 +114,4 @@ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
+ 
+ install:
+-	@install -d ../../man
+-	@install README ../../man/$(PLUGIN).man
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)

@@ -352,6 +352,7 @@
     SUBDIR += vdr-plugin-vnsiserver
     SUBDIR += vdr-plugin-wirbelscan
     SUBDIR += vdr-plugin-xineliboutput
+    SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
     SUBDIR += vic
     SUBDIR += vlc
