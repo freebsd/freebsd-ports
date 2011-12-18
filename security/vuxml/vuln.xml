@@ -52,10 +52,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>typo3</name>
-	<range><lt>4.6.2</lt></range>
-      </package>
-      <package>
-	<name>typo345</name>
+	<range><ge>4.6</ge><lt>4.6.2</lt></range>
 	<range><lt>4.5.9</lt></range>
       </package>
     </affects>
