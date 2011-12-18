@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jrobin
-PORTVERSION=	1.5.9
+PORTVERSION=	1.5.14
 CATEGORIES=	databases java
 MASTER_SITES=	http://repo.opennms.org/maven2/org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
