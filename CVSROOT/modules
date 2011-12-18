@@ -1667,6 +1667,7 @@ claws-mail-cachesaver           ports/mail/claws-mail-cachesaver
 claws-mail-clamd                ports/mail/claws-mail-clamd
 claws-mail-fancy                ports/mail/claws-mail-fancy
 claws-mail-fetchinfo            ports/mail/claws-mail-fetchinfo
+claws-mail-gdata                ports/mail/claws-mail-gdata
 claws-mail-gtkhtml2_viewer      ports/mail/claws-mail-gtkhtml2_viewer
 claws-mail-mailmbox             ports/mail/claws-mail-mailmbox
 claws-mail-newmail              ports/mail/claws-mail-newmail
@@ -23830,6 +23831,7 @@ rubygem-amq-client              ports/net/rubygem-amq-client
 rubygem-amq-protocol            ports/net/rubygem-amq-protocol
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-amqp-utils              ports/net/rubygem-amqp-utils
+rubygem-amqp067                 ports/net/rubygem-amqp067
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-ansi                    ports/devel/rubygem-ansi
@@ -23857,6 +23859,11 @@ rubygem-capistrano-ext          ports/sysutils/rubygem-capistrano-ext
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-cgi_multipart_eof_fix   ports/www/rubygem-cgi_multipart_eof_fix
 rubygem-chef                    ports/sysutils/rubygem-chef
+rubygem-chef-expander           ports/sysutils/rubygem-chef-expander
+rubygem-chef-server             ports/sysutils/rubygem-chef-server
+rubygem-chef-server-api         ports/www/rubygem-chef-server-api
+rubygem-chef-server-webui       ports/www/rubygem-chef-server-webui
+rubygem-chef-solr               ports/sysutils/rubygem-chef-solr
 rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-chunky_png              ports/graphics/rubygem-chunky_png
 rubygem-cinch                   ports/irc/rubygem-cinch
@@ -23884,6 +23891,7 @@ rubygem-davclient               ports/www/rubygem-davclient
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-delayed_job             ports/devel/rubygem-delayed_job
 rubygem-delayed_job_data_mapper  ports/databases/rubygem-delayed_job_data_mapper
+rubygem-dep_selector            ports/devel/rubygem-dep_selector
 rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-deprecated2             ports/devel/rubygem-deprecated2
 rubygem-devise                  ports/devel/rubygem-devise
@@ -23919,9 +23927,11 @@ rubygem-drydock                 ports/devel/rubygem-drydock
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-edavis10-object_daddy   ports/devel/rubygem-edavis10-object_daddy
 rubygem-elif                    ports/devel/rubygem-elif
+rubygem-em-http-request         ports/www/rubygem-em-http-request
 rubygem-em-websocket            ports/www/rubygem-em-websocket
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
 rubygem-erubis                  ports/www/rubygem-erubis
+rubygem-escape_utils            ports/textproc/rubygem-escape_utils
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-execjs                  ports/devel/rubygem-execjs
 rubygem-exifr                   ports/graphics/rubygem-exifr
@@ -23934,6 +23944,7 @@ rubygem-familia                 ports/databases/rubygem-familia
 rubygem-faraday                 ports/www/rubygem-faraday
 rubygem-faraday_middleware      ports/www/rubygem-faraday_middleware
 rubygem-fast-stemmer            ports/devel/rubygem-fast-stemmer
+rubygem-fast_xs                 ports/textproc/rubygem-fast_xs
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
 rubygem-fastri                  ports/devel/rubygem-fastri
 rubygem-fastthread              ports/devel/rubygem-fastthread
@@ -24027,6 +24038,11 @@ rubygem-mash                    ports/devel/rubygem-mash
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache                ports/databases/rubygem-memcache
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
+rubygem-merb-assets             ports/www/rubygem-merb-assets
+rubygem-merb-core               ports/www/rubygem-merb-core
+rubygem-merb-haml               ports/www/rubygem-merb-haml
+rubygem-merb-helpers            ports/www/rubygem-merb-helpers
+rubygem-merb-param-protection   ports/www/rubygem-merb-param-protection
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-minitest                ports/devel/rubygem-minitest
@@ -24118,6 +24134,7 @@ rubygem-railties                ports/www/rubygem-railties
 rubygem-raindrops               ports/www/rubygem-raindrops
 rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
+rubygem-rake-compiler           ports/devel/rubygem-rake-compiler
 rubygem-ramaze                  ports/www/rubygem-ramaze
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
@@ -24248,6 +24265,7 @@ rubygem-uglifier                ports/www/rubygem-uglifier
 rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-unicorn                 ports/www/rubygem-unicorn
 rubygem-uri-redis               ports/net/rubygem-uri-redis
+rubygem-url_escape              ports/www/rubygem-url_escape
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
@@ -24264,6 +24282,7 @@ rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-xslt                    ports/textproc/rubygem-xslt
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yajl-ruby               ports/devel/rubygem-yajl-ruby
+rubygem-yajl-ruby077            ports/devel/rubygem-yajl-ruby077
 rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-yard                    ports/textproc/rubygem-yard
 rubygem-yui-compressor          ports/devel/rubygem-yui-compressor
