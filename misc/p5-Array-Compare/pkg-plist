@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Array/Compare.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrmtry %%SITE_PERL%%/Array
