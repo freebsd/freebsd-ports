@@ -37,7 +37,7 @@ MAN1=		pike.1
 
 CFLAGS+=	-ffast-math -fomit-frame-pointer
 
-CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS} M4="/usr/bin/m4 -g"
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-thread-library=${PTHREAD_LIBS} \
 		 --with-double-precision \
