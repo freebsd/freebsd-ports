@@ -989,6 +989,7 @@
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-yadis
     SUBDIR += rude
+    SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-pdbsql

@@ -1,0 +1,23 @@
+With the exponential growth of the Internet, a central Whois database that
+provides host and network information of systems connected to the Internet,
+and electronic mail (email) addresses of the users of those systems has
+proven to be very inefficient. The sheer size and effort needed to maintain
+a centralized database necessitates an alternate, decentralized approach to
+storing and retrieving this information.
+
+RWhois is a Directory Services protocol which extends and enhances the Whois
+concept in a hierarchical and scaleable fashion. It focuses on the
+distribution of "network objects"--the data representing Internet resources
+or people--and uses the inherently hierarchical nature of these network
+objects (domain names, Internet Protocol (IP) networks, email addresses) to
+more accurately discover the requested information.
+
+RWhois synthesizes concepts from other, established Internet protocols to
+create a more useful way to find resources across the Internet. The RWhois
+protocol and architecture derive a great deal of structure from the Domain
+Name System (DNS) [RFC 1034] and borrow directory service concepts from
+other directory service efforts, primarily [X.500]. The protocol is also
+influenced by earlier established Internet protocols, such as the Simple
+Mail Transport Protocol (SMTP) [RFC 821] for response codes.
+
+WWW: http://www.rwhois.net/
