@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	cvs-src@yandex.ru
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Allows to obtain attributes from the containment hierarchy
 
 LICENSE=	ZPL21
