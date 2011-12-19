@@ -98,8 +98,8 @@ lib/astrolog/LRZ5_M2
 @unexec if [ -f %D/lib/astrolog/astrolog.dat ] && cmp -s %D/lib/astrolog/astrolog.dat %D/lib/astrolog/astrolog.dat-dist; then rm -f %D/lib/astrolog/astrolog.dat; fi
 lib/astrolog/astrolog.dat-dist
 @exec if [ ! -f %D/lib/astrolog/astrolog.dat ] ; then cp -p %D/%F %B/astrolog.dat; fi
-share/doc/astrolog/Helpfile.540
-share/doc/astrolog/README.540
-share/doc/astrolog/Update.540
+%%PORTDOCS%%%%DOCSDIR%%/Helpfile.540
+%%PORTDOCS%%%%DOCSDIR%%/README.540
+%%PORTDOCS%%%%DOCSDIR%%/Update.540
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/astrolog
-@dirrm share/doc/astrolog

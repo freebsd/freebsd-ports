@@ -1,5 +1,5 @@
---- astrolog.h.orig	Thu Jan 26 06:19:59 2006
-+++ astrolog.h	Thu Jan 26 06:24:50 2006
+--- astrolog.h.orig	1998-12-23 23:29:05.000000000 +0000
++++ astrolog.h	2011-11-30 16:32:47.000000000 +0000
 @@ -52,7 +52,7 @@
  
  /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
@@ -40,7 +40,25 @@
  #else
  #define DEFAULT_DIR "C:\\ASTROLOG"
  #endif
-@@ -1046,9 +1050,9 @@
+@@ -271,7 +275,7 @@
+ #endif
+ #include <math.h>
+ #ifdef PC
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ #ifdef TIME
+ #include <time.h>
+@@ -281,6 +285,8 @@
+ #define ISG
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
++#else
++#include <sys/types.h>
+ #endif
+ #ifdef WIN
+ #define ISG
+@@ -1046,9 +1052,9 @@
  */
  
  #define byte  unsigned char
