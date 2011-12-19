@@ -12,6 +12,7 @@ bin/winxed
 include/parrot/%%PARROT_VER%%/imcc/api.h
 include/parrot/%%PARROT_VER%%/imcc/embed.h
 include/parrot/%%PARROT_VER%%/imcc/yyscanner.h
+include/parrot/%%PARROT_VER%%/parrot/alarm.h
 include/parrot/%%PARROT_VER%%/parrot/api.h
 include/parrot/%%PARROT_VER%%/parrot/caches.h
 include/parrot/%%PARROT_VER%%/parrot/call.h
@@ -23,10 +24,11 @@ include/parrot/%%PARROT_VER%%/parrot/core_pmcs.h
 include/parrot/%%PARROT_VER%%/parrot/core_types.h
 include/parrot/%%PARROT_VER%%/parrot/datatypes.h
 include/parrot/%%PARROT_VER%%/parrot/debugger.h
+include/parrot/%%PARROT_VER%%/parrot/disassemble.h
 include/parrot/%%PARROT_VER%%/parrot/dynext.h
-include/parrot/%%PARROT_VER%%/parrot/embed.h
 include/parrot/%%PARROT_VER%%/parrot/encoding.h
 include/parrot/%%PARROT_VER%%/parrot/enums.h
+include/parrot/%%PARROT_VER%%/parrot/events.h
 include/parrot/%%PARROT_VER%%/parrot/exceptions.h
 include/parrot/%%PARROT_VER%%/parrot/exit.h
 include/parrot/%%PARROT_VER%%/parrot/extend.h
@@ -79,11 +81,13 @@ include/parrot/%%PARROT_VER%%/parrot/vtables.h
 include/parrot/%%PARROT_VER%%/parrot/warnings.h
 include/parrot/%%PARROT_VER%%/pmc/dummy
 include/parrot/%%PARROT_VER%%/pmc/pmc_addrregistry.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_alarm.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_arrayiterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_bigint.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_bignum.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_boolean.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_bytebuffer.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_callback.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_callcontext.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_capture.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_class.h
@@ -143,6 +147,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_packfilesegment.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfileview.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotinterpreter.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotlibrary.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_pmclist.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pmcproxy.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pointer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_ptr.h
@@ -196,6 +201,7 @@ lib/parrot/%%PARROT_VER%%/include/errors.pasm
 lib/parrot/%%PARROT_VER%%/include/except_severity.pasm
 lib/parrot/%%PARROT_VER%%/include/except_types.pasm
 lib/parrot/%%PARROT_VER%%/include/fp_equality.pasm
+lib/parrot/%%PARROT_VER%%/include/green_threads.pir
 lib/parrot/%%PARROT_VER%%/include/hash_key_type.pasm
 lib/parrot/%%PARROT_VER%%/include/hllmacros.pir
 lib/parrot/%%PARROT_VER%%/include/iglobals.pasm
@@ -499,6 +505,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/H2inc.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/DefaultTests.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/Options.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/Smoke.pm
+lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/TestSets.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Headerizer.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Headerizer/Functions.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO/Directory.pm
@@ -548,11 +555,13 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Vtable.pm
 %%PARROT_DOCS%%/RESPONSIBLE_PARTIES
 %%PARROT_DOCS%%/TODO
 src/parrot/%%PARROT_VER%%/pmc/addrregistry.dump
+src/parrot/%%PARROT_VER%%/pmc/alarm.dump
 src/parrot/%%PARROT_VER%%/pmc/arrayiterator.dump
 src/parrot/%%PARROT_VER%%/pmc/bigint.dump
 src/parrot/%%PARROT_VER%%/pmc/bignum.dump
 src/parrot/%%PARROT_VER%%/pmc/boolean.dump
 src/parrot/%%PARROT_VER%%/pmc/bytebuffer.dump
+src/parrot/%%PARROT_VER%%/pmc/callback.dump
 src/parrot/%%PARROT_VER%%/pmc/callcontext.dump
 src/parrot/%%PARROT_VER%%/pmc/capture.dump
 src/parrot/%%PARROT_VER%%/pmc/class.dump
@@ -612,6 +621,7 @@ src/parrot/%%PARROT_VER%%/pmc/packfilesegment.dump
 src/parrot/%%PARROT_VER%%/pmc/packfileview.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotinterpreter.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotlibrary.dump
+src/parrot/%%PARROT_VER%%/pmc/pmclist.dump
 src/parrot/%%PARROT_VER%%/pmc/pmcproxy.dump
 src/parrot/%%PARROT_VER%%/pmc/pointer.dump
 src/parrot/%%PARROT_VER%%/pmc/ptr.dump
