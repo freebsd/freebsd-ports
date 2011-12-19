@@ -7,11 +7,9 @@
 PORTNAME=	ratbox-services
 PORTVERSION=	1.2.3
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/ \
-		http://services.ircd-ratbox.org/download/		\
+MASTER_SITES=	http://services.ratbox.org/download/		\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/	\
-		http://services.ircd-ratbox.org/download/old/
+		http://services.ratbox.org/download/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
