@@ -1,0 +1,59 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/add.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/edit.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/formbase.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/formbase.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/formbase.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/macros.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/macros.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/macros.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/meta.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/metaconfigure.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/metaconfigure.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/metaconfigure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/objectwidget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/objectwidget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/objectwidget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/objectwidget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/content.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/content.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/content.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/formlib.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/forms.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales/de/LC_MESSAGES/formtest.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales/de/LC_MESSAGES/formtest.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales/formtest.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/schemacontent.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/schemacontent.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/schemacontent.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/test_formlib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/test_formlib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/test_formlib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/view.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/formlib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
