@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rash
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Simple extension to Hashie::Mash for rubyified keys
 
-RUN_DEPENDS=	rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
+RUN_DEPENDS=	rubygem-hashie>=1.2.0:${PORTSDIR}/devel/rubygem-hashie
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
