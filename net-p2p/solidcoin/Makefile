@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	solidcoin
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	http://solidcoin.info/downloads/
-DISTNAME=	${PORTNAME}-201-source
+MASTER_SITES=	http://dl.dropbox.com/u/47582909/
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
@@ -19,7 +18,6 @@ LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	GUI "Build with wxWidgets GUI" on
 
-USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	yes
