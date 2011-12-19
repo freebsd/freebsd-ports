@@ -17,6 +17,8 @@ COMMENT=	An unit testing framework in Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		does not package
+
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
