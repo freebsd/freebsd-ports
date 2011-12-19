@@ -4,7 +4,10 @@ bin/alephone
 %%DATADIR%%/MML/Transparent_Liquids.mml
 %%DATADIR%%/MML/Transparent_Sprites.mml
 %%DATADIR%%/Themes/Default/DejaVuLGCSansCondensed-Bold.ttf
+%%DATADIR%%/Themes/Default/DejaVuLGCSansCondensed-BoldBold.ttf
 %%DATADIR%%/Themes/Default/DejaVuLGCSansCondensed-BoldOblique.ttf
+%%DATADIR%%/Themes/Default/LICENSE-DejaVu
+%%DATADIR%%/Themes/Default/SquarishSansCT.README
 %%DATADIR%%/Themes/Default/Squarish_Sans_CT_Medium.ttf
 %%DATADIR%%/Themes/Default/button_c.bmp
 %%DATADIR%%/Themes/Default/button_c_p.bmp
