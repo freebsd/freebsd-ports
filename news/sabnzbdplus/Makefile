@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.14
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -39,10 +39,11 @@ OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		YENC "yenc support." on \
 		OPENSSL "SSL support" on
 
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PAR2CMDLINE)
-RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline
+RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline-tbb
 .endif
 
 .if !defined(WITHOUT_FEEDPARSER)

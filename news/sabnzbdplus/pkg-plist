@@ -442,11 +442,11 @@ bin/SABnzbd.py
 @dirrm %%DATADIR%%/interfaces/Classic/templates
 @dirrm %%DATADIR%%/interfaces/Classic
 @dirrm %%DATADIR%%/interfaces
+@dirrm %%DATADIR%%/gntp
 @dirrm %%DATADIR%%/cherrypy/wsgiserver
 @dirrm %%DATADIR%%/cherrypy/process
 @dirrm %%DATADIR%%/cherrypy/lib
 @dirrm %%DATADIR%%/cherrypy
-@dirrm %%DATADIR%%/gntp
 @dirrm %%DATADIR%%
 @dirrmtry sabnzbd
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
