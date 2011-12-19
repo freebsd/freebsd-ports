@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20110731
+PORTVERSION=	20111201
 CATEGORIES=	games
-MASTER_SITES=	SF/marathon/Aleph%20One/2011-07-31
+MASTER_SITES=	SF/marathon/Aleph%20One/2011-12-01
 DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
+
+USE_GMAKE=	yes
 
 USE_BZIP2=	yes
 USE_SDL+=	image net sdl sound
