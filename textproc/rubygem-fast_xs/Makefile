@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Expander
 
-RUN_DEPENDS=	rubygem-hoe>=2.8.0:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	rubygem-hoe>=2.3.2:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

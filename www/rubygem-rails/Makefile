@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-jquery-rails>=1.0.18:${PORTSDIR}/www/rubygem-jquery-rails \
 		rubygem-sqlite3>=1.3.4:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-uglifier>=1.1.0:${PORTSDIR}/www/rubygem-uglifier \
-		rubygem-bundler>=1.0.21:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-treetop>=1.4.10:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-json>=1.6.1:${PORTSDIR}/devel/rubygem-json \
 		js:${PORTSDIR}/lang/spidermonkey

@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
 
 RUN_DEPENDS=	rubygem-crack>=0.1.7:${PORTSDIR}/devel/rubygem-crack \
-		rubygem-addressable>=2.2:${PORTSDIR}/www/rubygem-addressable
+		rubygem-addressable>=2.2.5:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
