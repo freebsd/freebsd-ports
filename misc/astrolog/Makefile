@@ -14,12 +14,13 @@ PORTREVISION=	11
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
 		http://www.astrolog.org/ftp/:dist
-EXTRACT_ONLY=	ast54unx.shr
-EPHEM=		ephemall.zip
 DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
+EXTRACT_ONLY=	ast54unx.shr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
+
+EPHEM=		ephemall.zip
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	ephem/EPHINDEX.TXT
@@ -33,6 +34,8 @@ EXTRACT_AFTER_ARGS=	# empty
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 NO_WRKSUBDIR=	yes
+
+DOCS=		Helpfile.540 Update.540 README.540
 
 post-extract:
 	-@${MKDIR} ${WRKDIR}/ephem
@@ -52,13 +55,12 @@ do-install:
 			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog; \
 		fi
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
-	-@${MKDIR} ${PREFIX}/share/doc/astrolog
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} Helpfile.540 ${PREFIX}/share/doc/astrolog
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} Update.540 ${PREFIX}/share/doc/astrolog
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} README.540 ${PREFIX}/share/doc/astrolog
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
 	@${ECHO_MSG} "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
