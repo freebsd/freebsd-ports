@@ -1,5 +1,5 @@
---- doc/info/Makefile.am.orig	2008-12-08 11:08:06.607586350 -0500
-+++ doc/info/Makefile.am	2008-12-08 11:10:05.539477973 -0500
+--- doc/info/Makefile.in.orig	2008-12-08 11:08:06.607586350 -0500
++++ doc/info/Makefile.in	2008-12-08 11:10:05.539477973 -0500
 @@ -202,24 +202,10 @@
      check_crlf check_tab fix_crlf fix_tab build_index.pl
  
