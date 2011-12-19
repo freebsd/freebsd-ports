@@ -1,0 +1,42 @@
+--- ./daemon/Makefile.am.orig	2011-12-12 12:08:01.000000000 -0800
++++ ./daemon/Makefile.am	2011-12-12 12:08:40.000000000 -0800
+@@ -38,7 +38,6 @@
+ 	libvirtd.policy-1				\
+ 	libvirtd.sasl					\
+ 	libvirtd.sysconf				\
+-	libvirtd.sysctl					\
+ 	libvirtd.aug                                    \
+ 	libvirtd.logrotate.in                           \
+ 	libvirtd.qemu.logrotate.in                      \
+@@ -172,14 +171,13 @@
+ 
+ install-data-local: install-init-redhat install-init-systemd install-init-upstart \
+ 		install-data-sasl install-data-polkit \
+-		install-logrotate install-sysctl
++		install-logrotate
+ 	mkdir -p $(DESTDIR)$(localstatedir)/log/libvirt
+ 	mkdir -p $(DESTDIR)$(localstatedir)/run/libvirt
+ 	mkdir -p $(DESTDIR)$(localstatedir)/lib/libvirt
+ 
+ uninstall-local:: uninstall-init-redhat uninstall-init-systemd uninstall-init-upstart \
+-		uninstall-data-sasl uninstall-data-polkit \
+-		uninstall-sysctl
++		uninstall-data-sasl uninstall-data-polkit
+ 	rmdir $(DESTDIR)$(localstatedir)/log/libvirt || :
+ 	rmdir $(DESTDIR)$(localstatedir)/run/libvirt || :
+ 	rmdir $(DESTDIR)$(localstatedir)/lib/libvirt || :
+@@ -244,14 +242,6 @@
+ uninstall-sysconfig:
+ 	rm -f $(DESTDIR)$(sysconfdir)/sysconfig/libvirtd
+ 
+-install-sysctl:
+-	mkdir -p $(DESTDIR)$(sysconfdir)/sysctl.d
+-	$(INSTALL_DATA) $(srcdir)/libvirtd.sysctl \
+-	  $(DESTDIR)$(sysconfdir)/sysctl.d/libvirtd
+-
+-uninstall-sysctl:
+-	rm -f $(DESTDIR)$(sysconfdir)/sysctl.d/libvirtd
+-
+ if LIBVIRT_INIT_SCRIPT_RED_HAT
+ 
+ BUILT_SOURCES += libvirtd.init

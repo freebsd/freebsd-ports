@@ -1,0 +1,43 @@
+--- ./daemon/Makefile.in.orig	2011-12-12 12:11:23.000000000 -0800
++++ ./daemon/Makefile.in	2011-12-12 12:12:05.000000000 -0800
+@@ -1503,7 +1503,7 @@
+ EXTRA_DIST = remote_dispatch.h qemu_dispatch.h libvirtd.conf \
+ 	libvirtd.init.in libvirtd.upstart libvirtd.policy-0 \
+ 	libvirtd.policy-1 libvirtd.sasl libvirtd.sysconf \
+-	libvirtd.sysctl libvirtd.aug libvirtd.logrotate.in \
++	libvirtd.aug libvirtd.logrotate.in \
+ 	libvirtd.qemu.logrotate.in libvirtd.lxc.logrotate.in \
+ 	libvirtd.uml.logrotate.in test_libvirtd.aug THREADS.txt \
+ 	libvirtd.pod.in libvirtd.8.in $(DAEMON_SOURCES) \
+@@ -2108,14 +2108,13 @@
+ 
+ @WITH_LIBVIRTD_TRUE@install-data-local: install-init-redhat install-init-systemd install-init-upstart \
+ @WITH_LIBVIRTD_TRUE@		install-data-sasl install-data-polkit \
+-@WITH_LIBVIRTD_TRUE@		install-logrotate install-sysctl
++@WITH_LIBVIRTD_TRUE@		install-logrotate
+ @WITH_LIBVIRTD_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/log/libvirt
+ @WITH_LIBVIRTD_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/run/libvirt
+ @WITH_LIBVIRTD_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/lib/libvirt
+ 
+ @WITH_LIBVIRTD_TRUE@uninstall-local:: uninstall-init-redhat uninstall-init-systemd uninstall-init-upstart \
+-@WITH_LIBVIRTD_TRUE@		uninstall-data-sasl uninstall-data-polkit \
+-@WITH_LIBVIRTD_TRUE@		uninstall-sysctl
++@WITH_LIBVIRTD_TRUE@		uninstall-data-sasl uninstall-data-polkit
+ @WITH_LIBVIRTD_TRUE@	rmdir $(DESTDIR)$(localstatedir)/log/libvirt || :
+ @WITH_LIBVIRTD_TRUE@	rmdir $(DESTDIR)$(localstatedir)/run/libvirt || :
+ @WITH_LIBVIRTD_TRUE@	rmdir $(DESTDIR)$(localstatedir)/lib/libvirt || :
+@@ -2172,14 +2171,6 @@
+ @WITH_LIBVIRTD_TRUE@uninstall-sysconfig:
+ @WITH_LIBVIRTD_TRUE@	rm -f $(DESTDIR)$(sysconfdir)/sysconfig/libvirtd
+ 
+-@WITH_LIBVIRTD_TRUE@install-sysctl:
+-@WITH_LIBVIRTD_TRUE@	mkdir -p $(DESTDIR)$(sysconfdir)/sysctl.d
+-@WITH_LIBVIRTD_TRUE@	$(INSTALL_DATA) $(srcdir)/libvirtd.sysctl \
+-@WITH_LIBVIRTD_TRUE@	  $(DESTDIR)$(sysconfdir)/sysctl.d/libvirtd
+-
+-@WITH_LIBVIRTD_TRUE@uninstall-sysctl:
+-@WITH_LIBVIRTD_TRUE@	rm -f $(DESTDIR)$(sysconfdir)/sysctl.d/libvirtd
+-
+ @LIBVIRT_INIT_SCRIPT_RED_HAT_TRUE@@WITH_LIBVIRTD_TRUE@install-init-redhat: install-sysconfig libvirtd.init
+ @LIBVIRT_INIT_SCRIPT_RED_HAT_TRUE@@WITH_LIBVIRTD_TRUE@	mkdir -p $(DESTDIR)$(sysconfdir)/rc.d/init.d
+ @LIBVIRT_INIT_SCRIPT_RED_HAT_TRUE@@WITH_LIBVIRTD_TRUE@	$(INSTALL_SCRIPT) libvirtd.init \

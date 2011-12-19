@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
