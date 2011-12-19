@@ -9,11 +9,9 @@
 PORTNAME=	ircd-ratbox
 PORTVERSION=	2.2.9
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
-		http://www.ircd-ratbox.org/download/			\
+MASTER_SITES=	http://www.ratbox.org/download/				\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
-		http://www.ircd-ratbox.org/download/old/
+		http://www.ratbox.org/download/old/
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
