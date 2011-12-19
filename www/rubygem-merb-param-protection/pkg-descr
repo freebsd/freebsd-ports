@@ -1,3 +1,4 @@
 Merb is a web development framework for fast, simple, and powerful development.
+merb-param-protection allows filtering request parameters in controllers and logs.
 
 WWW: http://www.merbivore.com/
