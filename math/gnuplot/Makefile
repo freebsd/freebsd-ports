@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.4.3
+PORTVERSION=	4.4.4
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -75,7 +75,8 @@ PLIST_SUB+=		TETEX="@comment "
 .else
 BUILD_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
-CONFIGURE_ARGS+=	--with-kpsexpand
+CONFIGURE_ARGS+=	--with-kpsexpand \
+			--with-texdir=${PREFIX}/share/texmf-local/tex/latex/gnuplot
 PLIST_SUB+=		TETEX=""
 .endif
 
@@ -88,7 +89,7 @@ CONFIGURE_ARGS+=	--enable-thin-splines
 .if defined(WITHOUT_WX)
 CONFIGURE_ARGS+=	--disable-wxwidgets
 .else
-USE_WX=			2.4+
+USE_WX=			2.5-2.8
 WX_CONF_ARGS=		absolute
 .endif
 
