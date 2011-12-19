@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	asterisk
-DISTVERSION=	10.0.0-rc2
+PORTVERSION=	10.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+PKGNAMESUFFIX=	10
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
