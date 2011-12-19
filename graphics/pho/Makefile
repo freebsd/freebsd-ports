@@ -28,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|make|$$(MAKE)| ; \
 		/bin/s|$$(INSTALL)|${INSTALL_PROGRAM}| ; \
 		/man/s|$$(INSTALL)|${INSTALL_MAN}| ; \
-		s|-g|${CFLAGS}| ; s|^G1FLAGS|#&|' ${WRKSRC}/Makefile
+		/CFLAGS/s|-g|| ; s|^G1FLAGS|#&|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-Wall -g -O2 ||' ${WRKSRC}/exif/Makefile
 
 .include <bsd.port.mk>
