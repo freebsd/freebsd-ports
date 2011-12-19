@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mg
-PORTVERSION=	20090107
+PORTVERSION=	20110905
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://homepage.boetes.org/software/mg/
@@ -18,6 +18,10 @@ MAN1=	mg.1
 MANCOMPRESSED=	no
 
 HAS_CONFIGURE=	yes
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|-Wno-error=unused-but-set-variable||g' \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
