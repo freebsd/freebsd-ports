@@ -672,6 +672,7 @@
     SUBDIR += hs-vector-algorithms
     SUBDIR += hs-void
     SUBDIR += htable
+    SUBDIR += hwloc
     SUBDIR += hyena
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
