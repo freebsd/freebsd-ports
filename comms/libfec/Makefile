@@ -22,10 +22,16 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	include/fec.h lib/libfec.so lib/libfec.a
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
