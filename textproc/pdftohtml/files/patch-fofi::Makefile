@@ -1,17 +1,14 @@
-
-$FreeBSD$
-
---- fofi/Makefile
-+++ fofi/Makefile
-@@ -14,7 +14,7 @@
+--- fofi/Makefile.orig	2011-12-19 11:57:17.000000000 +0000
++++ fofi/Makefile	2011-12-19 12:14:09.000000000 +0000
+@@ -14,9 +14,9 @@
  GOOSRCDIR = $(srcdir)/../goo
  GOOLIBDIR = ../goo
  
 -CXXFLAGS =   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
 +CXXFLAGS +=   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
  
- CXX =? g++
+-CXX = g++
++CXX ?= g++
  AR = ar rc
-
  RANLIB = ranlib
-
+ 
