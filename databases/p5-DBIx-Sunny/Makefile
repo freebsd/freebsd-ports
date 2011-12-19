@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Sunny
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ RUN_DEPENDS=	p5-DBI>=1.615:${PORTSDIR}/databases/p5-DBI \
 		p5-Data-Validator>=0:${PORTSDIR}/devel/p5-Data-Validator
 
 TEST_DEPENDS=	p5-DBD-SQLite>=1.27:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
     		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
 
 PERL_CONFIGURE=	yes
