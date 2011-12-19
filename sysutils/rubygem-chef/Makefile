@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-moneta>=0:${PORTSDIR}/devel/rubygem-moneta \
 		rubygem-erubis>=0:${PORTSDIR}/www/rubygem-erubis \
-		rubygem-rest-client>=1.7.0:${PORTSDIR}/www/rubygem-rest-client \
+		rubygem-rest-client>=1.0.4:${PORTSDIR}/www/rubygem-rest-client \
 		rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
 		rubygem-ohai>=0.6.0:${PORTSDIR}/sysutils/rubygem-ohai \
 		rubygem-net-ssh>=2.1.3:${PORTSDIR}/security/rubygem-net-ssh \
