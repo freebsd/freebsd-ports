@@ -47,6 +47,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7ba65bfd-2a40-11e1-b96e-00215af774f0">
+    <topic>unbound -- denial of service vulnerabilities from nonstandard
+      redirection and denial of existence</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.4.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unbound developer reports:</p>
+	<blockquote cite="http://www.unbound.net/downloads/CVE-2011-4528.txt">
+	  <p>Unbound crashes when confronted with a non-standard response
+	    from a server for a domain. This domain produces duplicate RRs
+	    from a certain type and is DNSSEC signed.  Unbound also crashes
+	    when confronted with a query that eventually, and under specific
+	    circumstances, resolves to a domain that misses expected NSEC3
+	    records.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4528</cvename>
+      <url>http://unbound.nlnetlabs.nl/downloads/CVE-2011-4528.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-12-19</discovery>
+      <entry>2011-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3c957a3e-2978-11e1-89b4-001ec9578670">
     <topic>typo3 -- Remote Code Execution</topic>
     <affects>
