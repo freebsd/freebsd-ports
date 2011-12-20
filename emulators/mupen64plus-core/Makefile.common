@@ -2,10 +2,10 @@ USE_DOS2UNIX=		*.c *.cpp *.h *.H *.ini *.conf
 
 DISTNAME=		${PORTNAME}-bundle-src-${PORTVERSION}
 PATCHDIR=		${.CURDIR}/files
-BUILD_WRKSRC=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
+BUILD_WRKSRC?=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - "${DISTNAME}/source/${PORTNAME}-core/*" \
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - "${DISTNAME}/source/${PORTNAME}-core/*" \
 				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
 
 .if ${PKGNAMESUFFIX} == "-core"
@@ -33,6 +33,10 @@ pre-install:
 	@${RM} -f ${PLIST}
 .	if ${PKGNAMESUFFIX} == "-video-rice"
 		@${ECHO_CMD} "%%DATADIR%%/RiceVideoLinux.ini" >> ${PLIST}
+.	endif
+
+.	if ${PKGNAMESUFFIX} == "-video-glide64"
+		@${ECHO_CMD} "%%DATADIR%%/Glide64.ini" >> ${PLIST}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-input-sdl"
@@ -72,9 +76,15 @@ do-install:
 .	if ${PKGNAMESUFFIX} == "-ui-console"
 		${INSTALL_MAN} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/doc/${MAN6} ${PREFIX}/man/man6/
 .	endif
+
 .	if ${PKGNAMESUFFIX} == "-video-rice"
 		@${MKDIR} ${DATADIR}
 		${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/RiceVideoLinux.ini ${DATADIR}
+.	endif
+
+.	if ${PKGNAMESUFFIX} == "-video-glide64"
+		@${MKDIR} ${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/data/Glide64.ini ${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-input-sdl"

@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64plus
 PORTVERSION=	1.99.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,10 +25,12 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-audio-sdl.so:${PORTSDIR}/
 
 # Input plugins
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mupen64plus-input-sdl
-RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
 
 # Graphics plugins
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
+
+# RSP plugins
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
 
 NO_MTREE=	yes
 NO_BUILD=	yes
