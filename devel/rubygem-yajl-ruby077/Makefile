@@ -15,6 +15,8 @@ COMMENT=	A streaming JSON parsing and encoding library for Ruby
 
 LICENSE=	MIT
 
+NO_LATEST_LINK=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

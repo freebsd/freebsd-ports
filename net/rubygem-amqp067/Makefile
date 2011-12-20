@@ -14,6 +14,8 @@ COMMENT=	An implementation of the AMQP protocol for RabbitMQ clients
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.4:${PORTSDIR}/devel/rubygem-eventmachine
 
+NO_LATEST_LINK=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
