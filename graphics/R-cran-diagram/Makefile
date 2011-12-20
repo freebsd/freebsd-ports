@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	diagram
-PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for visualising simple graphs, plotting flow diagrams
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-shape>0:${PORTSDIR}/graphics/R-cran-shape
 
