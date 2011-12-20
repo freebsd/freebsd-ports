@@ -28,6 +28,9 @@ include/fxt/aux2-all.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/bitzip-pairs.h
+include/fxt/bits/radix-2i.h
+include/fxt/bits/radix-m1pi.h
 include/fxt/bits/print-bin.h
 include/fxt/bits/radix-m4.h
 include/fxt/bits-all.h
@@ -485,6 +488,14 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-to-z-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-2i-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-to-z-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-2i-to-z-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-2i-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-2i-to-z-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m4-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m4-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-demo.cc
