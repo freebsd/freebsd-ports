@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	Imager-QRCode
-PORTVERSION=	0.03.1
-PORTREVISION=	3
+PORTVERSION=	0.03.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.031
+DISTNAME=	${PORTNAME}-0.033
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate QR Code with Imager using libqrencode
 
-BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
-		libqrencode>=0:${PORTSDIR}/graphics/libqrencode
+BUILD_DEPENDS=	p5-Imager>=0.55:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
