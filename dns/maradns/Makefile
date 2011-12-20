@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.4.06
-PORTREVISION=	1
+PORTVERSION=	1.4.07
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
@@ -15,9 +14,13 @@ MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
+USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME} zoneserver
 USERS=		bind
 GROUPS=		bind
