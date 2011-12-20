@@ -19,6 +19,14 @@ video) of Mupen64Plus and
 
   # man mupen64plus
 
-4) Enjoy it ;)
+4) Additional third party plugins can be installed from
+
+   emulators/mupen64plus-plugins
+
+5) If you want to install a GUI frontend of mupen64plus, you can install 
+   
+  emulators/wxmupen64plus
+
+6) Enjoy it ;)
 
 ###############################################################################
