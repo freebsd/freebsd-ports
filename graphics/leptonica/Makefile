@@ -5,36 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	leptonlib
-PORTVERSION=	1.60
-PORTREVISION=	4
+PORTNAME=	leptonica
+PORTVERSION=	1.68
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		png.6:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		webp.2:${PORTSDIR}/graphics/webp
 
-PROJECTHOST=	leptonica
+CONFLICTS=	leptonlib-[0-9]*
 
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool aclocal automake autoconf
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/makefile.linux
-	@${RM} ${WRKSRC}/src/jpeglib.h ${WRKSRC}/src/jmorecfg.h
+.if defined(MAINTAINER_MODE) && !defined(BATCH)
+check regression-test test: build
+#"display" requires the installation of graphics/xzgv
+.for c in generate compare display
+	@${SETENV} \
+	LD_LIBRARY_PATH="${WRKSRC}/src/.libs:${LOCALBASE}/lib" \
+	PATH="${PATH}:${WRKSRC}/prog" \
+	${WRKSRC}/prog/alltests_reg ${c}
+.endfor
 
-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake)
-
-run-autotools:: run-autotools-aclocal run-autotools-automake run-autotools-autoconf
-
+.endif
 .include <bsd.port.mk>
