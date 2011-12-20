@@ -9,5 +9,4 @@ Any HTML elements or attributes that you don't explicitly allow
 will be removed.
 
 Author: Ryan Grove
-WWW: https://github.com/rgrove/sanitize/
 WWW: http://wonko.com/post/sanitize
