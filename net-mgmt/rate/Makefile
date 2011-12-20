@@ -13,14 +13,9 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A traffic analysis command-line utility
 
+MAKE_ARGS=	${MAKE_ENV}
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-	's|^CFLAGS.*$$|CFLAGS=${CFLAGS}|g ; \
-	s|^LDFLAGS.*$$|LDFLAGS=${LDFLAGS}|g ; \
-	s|gcc|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rate ${PREFIX}/bin/rate
