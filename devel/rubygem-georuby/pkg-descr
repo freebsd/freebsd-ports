@@ -4,3 +4,5 @@ Features for SQL" specification (see http://www.opengis.org/docs/99-049.pdf),
 although without any kind of advanced functionalities (such as geometric 
 operators or reprojections). It also supports various output and 
 input formats (GeoRSS, KML, Shapefile).
+
+WWW: https://github.com/nofxx/georuby
