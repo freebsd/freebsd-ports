@@ -1,0 +1,12 @@
+--- CMakeLists_.txt	2011-11-08 19:31:32.273220945 +0400
++++ CMakeLists.txt	2011-11-08 19:31:10.253224705 +0400
+@@ -8,6 +8,6 @@
+ 
+ add_subdirectory( app )
+ add_subdirectory( skins )
+-find_package(Msgfmt REQUIRED)
+-find_package(Gettext REQUIRED)
+-add_subdirectory( po )
++%%NLS%%find_package(Msgfmt REQUIRED)
++%%NLS%%find_package(Gettext REQUIRED)
++%%NLS%%add_subdirectory( po )
