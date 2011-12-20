@@ -313,6 +313,7 @@ include/wine/windows/idispids.h
 include/wine/windows/iextag.h
 include/wine/windows/iextag.idl
 include/wine/windows/ifdef.h
+include/wine/windows/ifmib.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/imnact.h
@@ -328,6 +329,7 @@ include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
 include/wine/windows/ipifcons.h
+include/wine/windows/ipmib.h
 include/wine/windows/iprtrmib.h
 include/wine/windows/iptypes.h
 include/wine/windows/isguids.h
@@ -429,6 +431,7 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/nldef.h
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
@@ -572,6 +575,7 @@ include/wine/windows/svrapi.h
 include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
+include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
@@ -581,6 +585,7 @@ include/wine/windows/tom.h
 include/wine/windows/tom.idl
 include/wine/windows/traffic.h
 include/wine/windows/twain.h
+include/wine/windows/udpmib.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
 include/wine/windows/urlhist.h
