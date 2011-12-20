@@ -1,6 +1,6 @@
---- configure.in.orig	2011-10-18 13:14:56.000000000 -0400
-+++ configure.in	2011-10-18 13:18:27.000000000 -0400
-@@ -59,7 +59,12 @@
+--- configure.in.orig	2011-11-21 12:07:21.000000000 -0500
++++ configure.in	2011-12-19 05:54:11.000000000 -0500
+@@ -126,7 +126,12 @@
  AC_CHECK_HEADERS(sigaction.h)
  AC_CHECK_HEADERS(netinet/in_systm.h)
  AC_CHECK_HEADERS(netinet/in_system.h)
@@ -11,6 +11,6 @@
 +#endif
 +#include <netinet/in.h>
 +])
+ AC_CHECK_HEADERS(arpa/inet.h)
  AC_CHECK_HEADERS(netinet/dhcp.h)
- AC_CHECK_HEADERS(sys/select.h)
- AC_CHECK_HEADERS(sys/resource.h)
+ AC_CHECK_HEADERS(net/socket.h)
