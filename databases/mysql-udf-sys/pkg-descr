@@ -1,0 +1,13 @@
+This package contains a number of functions that allows one to interact
+with the operating system from MySQL:
+
+  sys_eval - executes an arbitrary command, and returns it's output.
+  sys_exec - executes an arbitrary command, and returns it's exit code.
+  sys_get  - gets the value of an environment variable.
+  sys_set  - create an environment variable, or update the value of an
+             existing environment variable.
+
+Use lib_mysqludf_sys_info() to obtain information about the currently
+installed version of lib_mysqludf_sys.
+
+WWW: http://www.mysqludf.org/lib_mysqludf_sys
