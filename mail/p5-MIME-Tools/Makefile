@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-Convert-BinHex>=0:${PORTSDIR}/converters/p5-Convert-BinHex \
 		p5-IO-stringy>=2.11:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Mail-Tools>=1.0203:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	YES
 
