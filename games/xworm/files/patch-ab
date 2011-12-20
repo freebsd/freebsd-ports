@@ -1,5 +1,5 @@
---- xworm.c	Wed May  7 16:25:57 1997
-+++ /home/andy/tmp/wrk/xworm.c	Wed Mar 18 23:40:39 1998
+--- xworm.c.orig	1997-05-07 18:25:57.000000000 +0200
++++ xworm.c	2011-12-20 20:08:25.012174397 +0100
 @@ -3,13 +3,20 @@
   
  #include <X11/Xlib.h>
@@ -24,3 +24,12 @@
  
  #define maxQ 5000    /* max queue */
  #define NCOLORS 15   /* number of colours */
+@@ -137,7 +144,7 @@
+ int vec_wrline(char *,int,int,int);
+ int vec_wrlineX(char *,int,int,int,float);
+ 
+-void main(int argc, char **argv) {
++int main(int argc, char **argv) {
+ 
+  memset(&timeout, 0, sizeof(struct timeval));
+ 
