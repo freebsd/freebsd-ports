@@ -3,4 +3,4 @@ rubygem-memcache
 Ruby client for memcached supporting advanced 
 protocol features and pluggable architecture.
 
-WWW: http://github.com/ninjudd/memcache
+WWW: https://github.com/ninjudd/memcache

@@ -3,4 +3,4 @@ you to deploy any platform with ease; some people have had huge success with
 this deploying rails projects where they needed to customise their deploy
 strategy beyond the code which ships with the Capistrano gem.
 
-WWW:	http://rubygems.org/gems/railsless-deploy
+WWW: https://github.com/leehambley/railsless-deploy/
