@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.14.2
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.14/
 
@@ -57,6 +58,12 @@ NOCCACHE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|makeinfo|${LOCALBASE}/bin/makeinfo|; s|find -maxdepth|find . -maxdepth|g' \
