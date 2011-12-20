@@ -838,22 +838,7 @@ bin/paintown
 %%DATADIR%%/data/fonts/rosewood.otf
 %%DATADIR%%/data/fonts/snap.ttf
 %%DATADIR%%/data/fonts/stencil.ttf
-%%DATADIR%%/data/levels/easy/1.txt
-%%DATADIR%%/data/levels/easy/2.txt
-%%DATADIR%%/data/levels/paintown.txt
-%%DATADIR%%/data/levels/paintown/1.txt
-%%DATADIR%%/data/levels/paintown/10.txt
-%%DATADIR%%/data/levels/paintown/11.txt
-%%DATADIR%%/data/levels/paintown/2.txt
-%%DATADIR%%/data/levels/paintown/3.txt
-%%DATADIR%%/data/levels/paintown/4.txt
-%%DATADIR%%/data/levels/paintown/5.txt
-%%DATADIR%%/data/levels/paintown/6.txt
-%%DATADIR%%/data/levels/paintown/7.txt
-%%DATADIR%%/data/levels/paintown/8.txt
-%%DATADIR%%/data/levels/paintown/9.txt
-%%DATADIR%%/data/levels/test/1.py
-%%DATADIR%%/data/levels/test/1.txt
+%%DATADIR%%/data/menu/arcade.txt
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200000.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200001.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200002.png
@@ -868,6 +853,7 @@ bin/paintown
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200011.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200012.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200013.png
+%%DATADIR%%/data/menu/icon.bmp
 %%DATADIR%%/data/menu/in-game.txt
 %%DATADIR%%/data/menu/main.txt
 %%DATADIR%%/data/menu/options.txt
@@ -1035,11 +1021,14 @@ bin/paintown
 %%DATADIR%%/data/mugen/stages/venice.sff
 %%DATADIR%%/data/mugen/stages/village.def
 %%DATADIR%%/data/mugen/stages/village.sff
+%%DATADIR%%/data/music/Aurora.ogg
 %%DATADIR%%/data/music/SM_TechTown.it
+%%DATADIR%%/data/music/Techtopia.ogg
 %%DATADIR%%/data/music/aqua.s3m
 %%DATADIR%%/data/music/c_heaven.xm
 %%DATADIR%%/data/music/elw-sick.xm
 %%DATADIR%%/data/music/experience.xm
+%%DATADIR%%/data/music/exploration.s3m
 %%DATADIR%%/data/music/fall.xm
 %%DATADIR%%/data/music/kajahtaa.xm
 %%DATADIR%%/data/music/kilimanz.mod
@@ -1056,7 +1045,37 @@ bin/paintown
 %%DATADIR%%/data/paintown/levels/8.txt
 %%DATADIR%%/data/paintown/levels/9.txt
 %%DATADIR%%/data/paintown/paintown.txt
+%%DATADIR%%/data/paintown/select.txt
+%%DATADIR%%/data/platformer/images/block-tile.png
+%%DATADIR%%/data/platformer/images/brick-tile.png
+%%DATADIR%%/data/platformer/images/bush01-left-tile.png
+%%DATADIR%%/data/platformer/images/bush01-mid-tile.png
+%%DATADIR%%/data/platformer/images/bush01-right-tile.png
+%%DATADIR%%/data/platformer/images/bush02-left-tile.png
+%%DATADIR%%/data/platformer/images/bush02-mid-tile.png
+%%DATADIR%%/data/platformer/images/bush02-right-tile.png
+%%DATADIR%%/data/platformer/images/bush03-left-tile.png
+%%DATADIR%%/data/platformer/images/bush03-mid-tile.png
+%%DATADIR%%/data/platformer/images/bush03-right-tile.png
+%%DATADIR%%/data/platformer/images/clouds.png
+%%DATADIR%%/data/platformer/images/floor-left-tile.png
+%%DATADIR%%/data/platformer/images/floor-mid-tile.png
+%%DATADIR%%/data/platformer/images/floor-right-tile.png
+%%DATADIR%%/data/platformer/images/hills.png
+%%DATADIR%%/data/platformer/images/mountains.png
+%%DATADIR%%/data/platformer/images/question01-tile.png
+%%DATADIR%%/data/platformer/images/question02-tile.png
+%%DATADIR%%/data/platformer/images/question03-tile.png
+%%DATADIR%%/data/platformer/images/square-tile.png
+%%DATADIR%%/data/platformer/images/tileset-smb1-snes.png
+%%DATADIR%%/data/platformer/images/vertical-pipe-left-tile.png
+%%DATADIR%%/data/platformer/images/vertical-pipe-right-tile.png
+%%DATADIR%%/data/platformer/images/vertical-pipe-top-left-tile.png
+%%DATADIR%%/data/platformer/images/vertical-pipe-top-right-tile.png
+%%DATADIR%%/data/platformer/object.txt
+%%DATADIR%%/data/platformer/test.txt
 %%DATADIR%%/data/players/akuma/akuma.txt
+%%DATADIR%%/data/players/akuma/die.wav
 %%DATADIR%%/data/players/akuma/dragon-punch/18958.png
 %%DATADIR%%/data/players/akuma/dragon-punch/18959.png
 %%DATADIR%%/data/players/akuma/dragon-punch/18960.png
@@ -2356,6 +2375,224 @@ bin/paintown
 %%DATADIR%%/data/players/ryu/walk/ryu-walk04.png
 %%DATADIR%%/data/players/ryu/walk/ryu-walk05.png
 %%DATADIR%%/data/players/ryu/walk/ryu-walk06.png
+%%DATADIR%%/data/players/terry/die.wav
+%%DATADIR%%/data/players/terry/fall/terry-fall01.png
+%%DATADIR%%/data/players/terry/fall/terry-fall02.png
+%%DATADIR%%/data/players/terry/fall/terry-fall03.png
+%%DATADIR%%/data/players/terry/fall/terry-fall04.png
+%%DATADIR%%/data/players/terry/fall/terry-fall05.png
+%%DATADIR%%/data/players/terry/fall/terry-fall06.png
+%%DATADIR%%/data/players/terry/fall/terry-fall07.png
+%%DATADIR%%/data/players/terry/get/terry-get01.png
+%%DATADIR%%/data/players/terry/get/terry-get02.png
+%%DATADIR%%/data/players/terry/get/terry-get03.png
+%%DATADIR%%/data/players/terry/get/terry-get04.png
+%%DATADIR%%/data/players/terry/grab/terry-grab01.png
+%%DATADIR%%/data/players/terry/grab/terry-grab02.png
+%%DATADIR%%/data/players/terry/grab/terry-grab03.png
+%%DATADIR%%/data/players/terry/haddoken/1.wav
+%%DATADIR%%/data/players/terry/haddoken/haddoken.txt
+%%DATADIR%%/data/players/terry/haddoken/shinku.wav
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death01.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death02.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death03.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death04.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death05.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball-death06.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball01.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball02.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball03.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball04.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball05.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball06.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball07.png
+%%DATADIR%%/data/players/terry/haddoken/super-fireball08.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken.txt
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken01.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken02.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken03.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken04.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken05.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken06.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken07.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken08.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken09.png
+%%DATADIR%%/data/players/terry/haddoken/super-haddoken10.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath01.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath02.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath03.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath04.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath05.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fbdeath06.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fireball01.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fireball02.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fireball03.png
+%%DATADIR%%/data/players/terry/haddoken/terry-fireball04.png
+%%DATADIR%%/data/players/terry/haddoken/terry-haddoken01.png
+%%DATADIR%%/data/players/terry/haddoken/terry-haddoken02.png
+%%DATADIR%%/data/players/terry/haddoken/terry-haddoken03.png
+%%DATADIR%%/data/players/terry/haddoken/terry-haddoken04.png
+%%DATADIR%%/data/players/terry/haddoken/terry-haddoken05.png
+%%DATADIR%%/data/players/terry/hurt/hurt.wav
+%%DATADIR%%/data/players/terry/hurt/terry-hurt01.png
+%%DATADIR%%/data/players/terry/hurt/terry-hurt02.png
+%%DATADIR%%/data/players/terry/hurt/terry-hurt03.png
+%%DATADIR%%/data/players/terry/hurt/terry-hurt04.png
+%%DATADIR%%/data/players/terry/hurt/terry-hurt05.png
+%%DATADIR%%/data/players/terry/icon.png
+%%DATADIR%%/data/players/terry/idle/terry-idle01.png
+%%DATADIR%%/data/players/terry/idle/terry-idle02.png
+%%DATADIR%%/data/players/terry/idle/terry-idle03.png
+%%DATADIR%%/data/players/terry/idle/terry-idle04.png
+%%DATADIR%%/data/players/terry/idle/terry-idle05.png
+%%DATADIR%%/data/players/terry/idle/terry-idle06.png
+%%DATADIR%%/data/players/terry/idle/terry-idle07.png
+%%DATADIR%%/data/players/terry/idle/terry-idle08.png
+%%DATADIR%%/data/players/terry/idle/terry-idle09.png
+%%DATADIR%%/data/players/terry/idle/terry-idle10.png
+%%DATADIR%%/data/players/terry/jump/jump.wav
+%%DATADIR%%/data/players/terry/jump/terry-jump01.png
+%%DATADIR%%/data/players/terry/jump/terry-jump02.png
+%%DATADIR%%/data/players/terry/jump/terry-jump03.png
+%%DATADIR%%/data/players/terry/jump/terry-jump04.png
+%%DATADIR%%/data/players/terry/jump/terry-jump05.png
+%%DATADIR%%/data/players/terry/jump/terry-jump06.png
+%%DATADIR%%/data/players/terry/jump/terry-jump07.png
+%%DATADIR%%/data/players/terry/jump/terry-jump08.png
+%%DATADIR%%/data/players/terry/jump/terry-jump09.png
+%%DATADIR%%/data/players/terry/jump/terry-jump10.png
+%%DATADIR%%/data/players/terry/jumpkick/terry-jumpkick01.png
+%%DATADIR%%/data/players/terry/jumpkick/terry-jumpkick02.png
+%%DATADIR%%/data/players/terry/jumpkick/terry-jumpkick03.png
+%%DATADIR%%/data/players/terry/jumpkick/terry-jumpkick04.png
+%%DATADIR%%/data/players/terry/jumppunch/1.wav
+%%DATADIR%%/data/players/terry/jumppunch/terry-jpunch01.png
+%%DATADIR%%/data/players/terry/jumppunch/terry-jpunch02.png
+%%DATADIR%%/data/players/terry/jumppunch/terry-jpunch03.png
+%%DATADIR%%/data/players/terry/kick0/1.wav
+%%DATADIR%%/data/players/terry/kick0/2.wav
+%%DATADIR%%/data/players/terry/kick0/3.wav
+%%DATADIR%%/data/players/terry/kick0/ryu-kick01.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick02.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick03.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick04.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick05.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick06.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick07.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick08.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick09.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick10.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick11.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick12.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick13.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick14.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick15.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick16.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick17.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick18.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick19.png
+%%DATADIR%%/data/players/terry/kick0/ryu-kick20.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick01.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick02.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick03.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick04.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick05.png
+%%DATADIR%%/data/players/terry/kick1/terry-lkick06.png
+%%DATADIR%%/data/players/terry/kick2/terry-mkick01.png
+%%DATADIR%%/data/players/terry/kick2/terry-mkick02.png
+%%DATADIR%%/data/players/terry/kick2/terry-mkick03.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick01.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick02.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick03.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick04.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick05.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick06.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick07.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick08.png
+%%DATADIR%%/data/players/terry/kick3/terry-kick09.png
+%%DATADIR%%/data/players/terry/map1.png
+%%DATADIR%%/data/players/terry/map2.png
+%%DATADIR%%/data/players/terry/map3.png
+%%DATADIR%%/data/players/terry/map4.png
+%%DATADIR%%/data/players/terry/punch1/terry-1punch01.png
+%%DATADIR%%/data/players/terry/punch1/terry-1punch02.png
+%%DATADIR%%/data/players/terry/punch1/terry-1punch03.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch01.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch02.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch03.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch04.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch05.png
+%%DATADIR%%/data/players/terry/punch2/terry-2punch06.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch01.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch02.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch03.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch04.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch05.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch06.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch07.png
+%%DATADIR%%/data/players/terry/punch3/terry-3punch08.png
+%%DATADIR%%/data/players/terry/rise/terry-rise01.png
+%%DATADIR%%/data/players/terry/rise/terry-rise02.png
+%%DATADIR%%/data/players/terry/rise/terry-rise03.png
+%%DATADIR%%/data/players/terry/rise/terry-rise04.png
+%%DATADIR%%/data/players/terry/shoryuken/1.wav
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken01.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken02.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken03.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken04.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken05.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken06.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken07.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken08.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken09.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken10.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken11.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken12.png
+%%DATADIR%%/data/players/terry/shoryuken/terry-shoryuken13.png
+%%DATADIR%%/data/players/terry/spinkick/1.wav
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick01.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick02.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick03.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick04.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick05.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick06.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick07.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick08.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick09.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick10.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick11.png
+%%DATADIR%%/data/players/terry/spinkick/terry-spinkick12.png
+%%DATADIR%%/data/players/terry/spunch01/1.wav
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch01.png
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch02.png
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch03.png
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch04.png
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch05.png
+%%DATADIR%%/data/players/terry/spunch01/terry-3punch06.png
+%%DATADIR%%/data/players/terry/spunch02/1.wav
+%%DATADIR%%/data/players/terry/spunch02/terry-1punch01.png
+%%DATADIR%%/data/players/terry/spunch02/terry-1punch02.png
+%%DATADIR%%/data/players/terry/spunch02/terry-1punch03.png
+%%DATADIR%%/data/players/terry/spunch03/1.png
+%%DATADIR%%/data/players/terry/spunch03/1.wav
+%%DATADIR%%/data/players/terry/spunch03/2.png
+%%DATADIR%%/data/players/terry/spunch03/3.png
+%%DATADIR%%/data/players/terry/spunch03/4.png
+%%DATADIR%%/data/players/terry/spunch03/5.png
+%%DATADIR%%/data/players/terry/spunch03/6.png
+%%DATADIR%%/data/players/terry/terry.txt
+%%DATADIR%%/data/players/terry/throw/1.png
+%%DATADIR%%/data/players/terry/throw/2.png
+%%DATADIR%%/data/players/terry/throw/3.png
+%%DATADIR%%/data/players/terry/throw/4.png
+%%DATADIR%%/data/players/terry/throw/5.png
+%%DATADIR%%/data/players/terry/walk/terry-walk01.png
+%%DATADIR%%/data/players/terry/walk/terry-walk02.png
+%%DATADIR%%/data/players/terry/walk/terry-walk03.png
+%%DATADIR%%/data/players/terry/walk/terry-walk04.png
+%%DATADIR%%/data/players/terry/walk/terry-walk05.png
+%%DATADIR%%/data/players/terry/walk/terry-walk06.png
+%%DATADIR%%/data/players/terry/walk/terry-walk07.png
 %%DATADIR%%/data/players/venom/death2.wav
 %%DATADIR%%/data/players/venom/eat/1.png
 %%DATADIR%%/data/players/venom/eat/2.png
@@ -2614,6 +2851,9 @@ bin/paintown
 %%DATADIR%%/data/players/wolverine/walk/5.png
 %%DATADIR%%/data/players/wolverine/walk/6.png
 %%DATADIR%%/data/players/wolverine/wolverine.txt
+%%DATADIR%%/data/ps3/SND0.AT3
+%%DATADIR%%/data/ps3/icon0.png
+%%DATADIR%%/data/ps3/pic1.png
 %%DATADIR%%/data/psp/icon0.png
 %%DATADIR%%/data/psp/pic1.png
 %%DATADIR%%/data/river-city-ransom/players/alex/alex.txt
@@ -2640,7 +2880,6 @@ bin/paintown
 %%DATADIR%%/data/river-city-ransom/players/alex/walk/1.png
 %%DATADIR%%/data/river-city-ransom/players/alex/walk/2.png
 %%DATADIR%%/data/scripts/paintown.py
-%%DATADIR%%/data/scripts/paintown.rb
 %%DATADIR%%/data/sounds/beat1.wav
 %%DATADIR%%/data/sounds/beat2.wav
 %%DATADIR%%/data/sounds/beat3.wav
@@ -2666,6 +2905,14 @@ bin/paintown
 %%DATADIR%%/data/sounds/swing.wav
 %%DATADIR%%/data/sounds/thunder.wav
 %%DATADIR%%/data/sprites/arrow.png
+%%DATADIR%%/data/sprites/arrows/attack-1.png
+%%DATADIR%%/data/sprites/arrows/attack-2.png
+%%DATADIR%%/data/sprites/arrows/attack-3.png
+%%DATADIR%%/data/sprites/arrows/down.png
+%%DATADIR%%/data/sprites/arrows/jump.png
+%%DATADIR%%/data/sprites/arrows/left.png
+%%DATADIR%%/data/sprites/arrows/right.png
+%%DATADIR%%/data/sprites/arrows/up.png
 %%DATADIR%%/data/sprites/lamp.png
 %%DATADIR%%/data/sprites/logo.png
 %%DATADIR%%/data/sprites/shadow/shadow1.png
@@ -2674,6 +2921,7 @@ bin/paintown
 %%DATADIR%%/data/sprites/shadow/shadow4.png
 %%DATADIR%%/data/sprites/shadow/shadow5.png
 %%DATADIR%%/data/sprites/shadow/shadow6.png
+%%DATADIR%%/data/system.txt
 %%DATADIR%%/data/wii/icon.png
 %%DATADIR%%/data/wii/meta.xml
 %%DATADIR%%/paintown-bin
@@ -2684,6 +2932,7 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/data/wii
 @dirrm %%DATADIR%%/data/sprites/shadow
+@dirrm %%DATADIR%%/data/sprites/arrows
 @dirrm %%DATADIR%%/data/sprites
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data/scripts
@@ -2704,6 +2953,7 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/river-city-ransom/players
 @dirrm %%DATADIR%%/data/river-city-ransom
 @dirrm %%DATADIR%%/data/psp
+@dirrm %%DATADIR%%/data/ps3
 @dirrm %%DATADIR%%/data/players/wolverine/walk
 @dirrm %%DATADIR%%/data/players/wolverine/taunt1
 @dirrm %%DATADIR%%/data/players/wolverine/special
@@ -2740,6 +2990,31 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/players/venom/fall
 @dirrm %%DATADIR%%/data/players/venom/eat
 @dirrm %%DATADIR%%/data/players/venom
+@dirrm %%DATADIR%%/data/players/terry/walk
+@dirrm %%DATADIR%%/data/players/terry/throw
+@dirrm %%DATADIR%%/data/players/terry/spunch03
+@dirrm %%DATADIR%%/data/players/terry/spunch02
+@dirrm %%DATADIR%%/data/players/terry/spunch01
+@dirrm %%DATADIR%%/data/players/terry/spinkick
+@dirrm %%DATADIR%%/data/players/terry/shoryuken
+@dirrm %%DATADIR%%/data/players/terry/rise
+@dirrm %%DATADIR%%/data/players/terry/punch3
+@dirrm %%DATADIR%%/data/players/terry/punch2
+@dirrm %%DATADIR%%/data/players/terry/punch1
+@dirrm %%DATADIR%%/data/players/terry/kick3
+@dirrm %%DATADIR%%/data/players/terry/kick2
+@dirrm %%DATADIR%%/data/players/terry/kick1
+@dirrm %%DATADIR%%/data/players/terry/kick0
+@dirrm %%DATADIR%%/data/players/terry/jumppunch
+@dirrm %%DATADIR%%/data/players/terry/jumpkick
+@dirrm %%DATADIR%%/data/players/terry/jump
+@dirrm %%DATADIR%%/data/players/terry/idle
+@dirrm %%DATADIR%%/data/players/terry/hurt
+@dirrm %%DATADIR%%/data/players/terry/haddoken
+@dirrm %%DATADIR%%/data/players/terry/grab
+@dirrm %%DATADIR%%/data/players/terry/get
+@dirrm %%DATADIR%%/data/players/terry/fall
+@dirrm %%DATADIR%%/data/players/terry
 @dirrm %%DATADIR%%/data/players/ryu/walk
 @dirrm %%DATADIR%%/data/players/ryu/throw
 @dirrm %%DATADIR%%/data/players/ryu/spinkick
@@ -2937,7 +3212,10 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/players/akuma/dragon-punch
 @dirrm %%DATADIR%%/data/players/akuma
 @dirrm %%DATADIR%%/data/players
+@dirrm %%DATADIR%%/data/platformer/images
+@dirrm %%DATADIR%%/data/platformer
 @dirrm %%DATADIR%%/data/paks
+@dirrm %%DATADIR%%/data/paintown/menu
 @dirrm %%DATADIR%%/data/paintown/levels
 @dirrm %%DATADIR%%/data/paintown
 @dirrm %%DATADIR%%/data/music
@@ -2967,10 +3245,6 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/menu/bgs/seizure-bg
 @dirrm %%DATADIR%%/data/menu/bgs
 @dirrm %%DATADIR%%/data/menu
-@dirrm %%DATADIR%%/data/levels/test
-@dirrm %%DATADIR%%/data/levels/paintown
-@dirrm %%DATADIR%%/data/levels/easy
-@dirrm %%DATADIR%%/data/levels
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data/chars/yashiro/walk
 @dirrm %%DATADIR%%/data/chars/yashiro/roundhouse
