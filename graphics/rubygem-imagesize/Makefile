@@ -9,7 +9,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A RubyGem for finding the size of an image.
 
 USE_RUBY=	yes

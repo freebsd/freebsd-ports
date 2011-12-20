@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, blog aware, static site generator
 
 RUN_DEPENDS=	rubygem-albino>=1.3.2:${PORTSDIR}/textproc/rubygem-albino \
