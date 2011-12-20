@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	A virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3

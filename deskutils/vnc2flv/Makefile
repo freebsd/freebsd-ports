@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/v/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Captures a VNC desktop session and saves as a flv
 
 .if !defined(WITHOUT_X11)

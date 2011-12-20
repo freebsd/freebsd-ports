@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Provides a graphical viewer for a guest OS display
 
 BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2 \

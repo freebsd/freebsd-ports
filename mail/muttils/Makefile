@@ -12,7 +12,7 @@ MASTER_SITES=	https://bitbucket.org/blacktrash/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Python utilities for console mail clients (eg. mutt)
 
 CHANGESET=	977f2e350221

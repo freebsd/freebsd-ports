@@ -13,7 +13,7 @@ DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
 		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
 EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
 
 LICENSE=	GPLv2 MIT ASL
