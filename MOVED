@@ -3019,3 +3019,4 @@ databases/py-PySQLite10||2011-12-11|Unmaintained upstream, only useful for pytho
 databases/py-PySQLite11||2011-12-11|Unmaintained upstream, only useful for python2.4 or less, no consumers in the ports tree
 converters/py-iconvcodec||2011-12-12|Included into python itself since version 2.4
 devel/py-waf||2012-12-12|Port is outdated. Author discourages system-wide installation. Download it manually
+security/p5-Digest-SHA256||2011-12-20|Removed: use the builtin Digest::SHA instead

@@ -504,7 +504,6 @@
     SUBDIR += p5-Digest-SHA
     SUBDIR += p5-Digest-SHA-PurePerl
     SUBDIR += p5-Digest-SHA1
-    SUBDIR += p5-Digest-SHA256
     SUBDIR += p5-Digest-SV1
     SUBDIR += p5-Digest-Tiger
     SUBDIR += p5-Digest-Whirlpool
