@@ -105,6 +105,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/help/getting_started.txt
 %%DATADIR%%/help/overview.txt
 %%DATADIR%%/help/toc
+%%DATADIR%%/hi48-app-wireshark.png
 %%DATADIR%%/idl2wrs.html
 %%DATADIR%%/ipmap.html
 %%DATADIR%%/manuf

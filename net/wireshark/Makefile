@@ -7,6 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -37,6 +38,10 @@ USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-funit-at-a-time
+
+DESKTOP_ENTRIES=	"Wireshark" "Network Protocol Analyzer" \
+			"${DATADIR}/hi48-app-wireshark.png" \
+			"wireshark" "System;Monitor;GTK;" true
 
 WIRESHARK_LIBS=
 
@@ -146,13 +151,16 @@ CONFIGURE_ARGS+=	--with-geoip=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-geoip=no
 .endif
 
-.if exists(${LOCALBASE}/lib/libgnutls.so) || !defined(WITHOUT_GNUTLS)
+.if !defined(WITHOUT_GNUTLS)
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
-    		gcrypt.18:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE} \
+		--with-gnutls=yes
+.else
+CONFIGURE_ARGS+=--with-gnutls=no
 .endif
 
-.if exists(${LOCALBASE}/lib/libgcrypt.so) || !defined(WITHOUT_LIBGCRYPT)
+.if !defined(WITHOUT_LIBGCRYPT)
 LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 .endif
@@ -162,7 +170,10 @@ MAN4+=	wireshark-filter.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lua5\.1|lua${LUA_VER_STR}|g ; \
-	    	s|-llua${LUA_VER_STR}|${LUA_LIBDIR}/liblua.a|g' \
+		s|-llua${LUA_VER_STR}|${LUA_LIBDIR}/liblua.a|g' \
 		${WRKSRC}/configure
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png ${DATADIR}
 
 .include <bsd.port.post.mk>
