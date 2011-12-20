@@ -14,6 +14,11 @@ DISTNAME=	qgoogletranslator-${PORTVERSION}
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Qt gui for google translate based on ajax api
 
+BROKEN=		Runtime is broken because Google close free usage of API
+DEPRECATED=	Runtime is broken because Google close free usage of API. \
+		Project closed.
+EXPIRATION_DATE=	2012-01-20
+
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_BZIP2=	yes
