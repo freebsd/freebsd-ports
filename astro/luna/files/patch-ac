@@ -1,6 +1,12 @@
---- luna.c.orig	Mon May 25 01:01:32 1992
-+++ luna.c	Mon Feb 21 02:23:14 2000
-@@ -30,22 +30,38 @@
+--- luna.c.orig	1992-05-25 01:01:32.000000000 +0200
++++ luna.c	2011-12-20 19:57:51.404175556 +0100
+@@ -25,27 +25,43 @@
+ #include	"luna.h"
+ 
+ 
+-void
++int
+ main(argc, argv)
  	int		argc;
  	char	**argv;
  {
