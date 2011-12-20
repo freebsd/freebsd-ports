@@ -7,6 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.20.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -47,10 +48,11 @@ MAN1=	\
 		avr-strip.1 \
 		avr-windmc.1 \
 		avr-windres.1
-INFO=		as binutils gprof ld
+INFO=		as binutils gprof ld bfd standards configure
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 add-plist-post:
+	@${ECHO_CMD} "@unexec rm %D/${INFO_PATH}/dir 2> /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2> /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 
