@@ -11,7 +11,7 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.la
 lib/libwireshark.so
-lib/libwireshark.so.1
+lib/libwireshark.so.2
 lib/libwiretap.la
 lib/libwiretap.so
 lib/libwiretap.so.1
@@ -116,8 +116,11 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.3gpp
 %%DATADIR%%/radius/dictionary.3gpp2
 %%DATADIR%%/radius/dictionary.acc
+%%DATADIR%%/radius/dictionary.acme
 %%DATADIR%%/radius/dictionary.airespace
 %%DATADIR%%/radius/dictionary.alcatel
+%%DATADIR%%/radius/dictionary.alcatel.esam
+%%DATADIR%%/radius/dictionary.alcatel.sr
 %%DATADIR%%/radius/dictionary.alteon
 %%DATADIR%%/radius/dictionary.altiga
 %%DATADIR%%/radius/dictionary.alvarion
@@ -126,6 +129,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.aruba
 %%DATADIR%%/radius/dictionary.ascend
 %%DATADIR%%/radius/dictionary.asn
+%%DATADIR%%/radius/dictionary.audiocodes
 %%DATADIR%%/radius/dictionary.avaya
 %%DATADIR%%/radius/dictionary.azaire
 %%DATADIR%%/radius/dictionary.bay
@@ -161,6 +165,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.h3c
 %%DATADIR%%/radius/dictionary.hp
 %%DATADIR%%/radius/dictionary.huawei
+%%DATADIR%%/radius/dictionary.iea
 %%DATADIR%%/radius/dictionary.infonet
 %%DATADIR%%/radius/dictionary.ipunplugged
 %%DATADIR%%/radius/dictionary.issanni
@@ -177,6 +182,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.microsoft
 %%DATADIR%%/radius/dictionary.mikrotik
 %%DATADIR%%/radius/dictionary.motorola
+%%DATADIR%%/radius/dictionary.motorola.wimax
 %%DATADIR%%/radius/dictionary.navini
 %%DATADIR%%/radius/dictionary.netscreen
 %%DATADIR%%/radius/dictionary.networkphysics
@@ -205,12 +211,16 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.rfc3580
 %%DATADIR%%/radius/dictionary.rfc4072
 %%DATADIR%%/radius/dictionary.rfc4372
+%%DATADIR%%/radius/dictionary.rfc4603
 %%DATADIR%%/radius/dictionary.rfc4675
 %%DATADIR%%/radius/dictionary.rfc4679
 %%DATADIR%%/radius/dictionary.rfc4818
 %%DATADIR%%/radius/dictionary.rfc4849
 %%DATADIR%%/radius/dictionary.rfc5090
 %%DATADIR%%/radius/dictionary.rfc5176
+%%DATADIR%%/radius/dictionary.rfc5580
+%%DATADIR%%/radius/dictionary.rfc5607
+%%DATADIR%%/radius/dictionary.rfc5904
 %%DATADIR%%/radius/dictionary.riverstone
 %%DATADIR%%/radius/dictionary.roaringpenguin
 %%DATADIR%%/radius/dictionary.shasta
@@ -225,8 +235,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.telkom
 %%DATADIR%%/radius/dictionary.trapeze
 %%DATADIR%%/radius/dictionary.tropos
-%%DATADIR%%/radius/dictionary.tunnel
-%%DATADIR%%/radius/dictionary.unisphere
+%%DATADIR%%/radius/dictionary.ukerna
 %%DATADIR%%/radius/dictionary.unix
 %%DATADIR%%/radius/dictionary.usr
 %%DATADIR%%/radius/dictionary.utstarcom
@@ -235,7 +244,9 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.vqp
 %%DATADIR%%/radius/dictionary.walabi
 %%DATADIR%%/radius/dictionary.waverider
+%%DATADIR%%/radius/dictionary.wichorus
 %%DATADIR%%/radius/dictionary.wimax
+%%DATADIR%%/radius/dictionary.wimax.wichorus
 %%DATADIR%%/radius/dictionary.wispr
 %%DATADIR%%/radius/dictionary.xedia
 %%DATADIR%%/radius/dictionary.xylan
