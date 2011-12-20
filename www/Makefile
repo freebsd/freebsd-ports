@@ -1900,6 +1900,7 @@
     SUBDIR += vee
     SUBDIR += videocache
     SUBDIR += visitors
+    SUBDIR += volta
     SUBDIR += vtiger
     SUBDIR += vtiger-customerportal
     SUBDIR += w3m
