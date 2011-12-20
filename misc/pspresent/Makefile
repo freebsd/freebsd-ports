@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cse.unsw.edu.au/~matthewc/pspresent/
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen slide shows of postscript files
 
 USE_GHOSTSCRIPT_RUN=	yes

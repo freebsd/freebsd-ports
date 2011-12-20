@@ -14,7 +14,7 @@ MASTER_SITES=	http://people.cs.uchicago.edu/~jhr/tools/downloads/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language and tools for documenting Standard ML libraries
 
 BUILD_DEPENDS=	smlnj-devel>=110.71:${PORTSDIR}/lang/sml-nj-devel \
