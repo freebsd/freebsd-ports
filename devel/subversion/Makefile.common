@@ -116,7 +116,7 @@ PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
 .endif
 
 .if defined(WITH_SERF)
-LIB_DEPENDS+=	serf-0.0:${PORTSDIR}/www/serf
+LIB_DEPENDS+=	serf-1:${PORTSDIR}/www/serf
 CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
 PLIST_SUB+=	SERF=""
 .else
