@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.6
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
@@ -66,7 +66,6 @@ MAN1=	rspamc.1
 	p5-Cache-Memcached-Fast>=0:${PORTSDIR}/databases/p5-Cache-Memcached-Fast \
 	p5-Proc-PidUtil>=0:${PORTSDIR}/sysutils/p5-Proc-PidUtil \
 	p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-	p5-Digest-SHA256>=0:${PORTSDIR}/security/p5-Digest-SHA256 \
 	p5-SWF-File>=0:${PORTSDIR}/graphics/p5-SWF-File
 .else
  PLIST_SUB+=		REDIRECTOR="@comment "

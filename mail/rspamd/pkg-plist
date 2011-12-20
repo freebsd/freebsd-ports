@@ -16,6 +16,7 @@ etc/rspamd.xml.sample
 %%ETCDIR%%/plugins/lua/phishing.lua
 %%ETCDIR%%/plugins/lua/trie.lua
 %%ETCDIR%%/plugins/lua/emails.lua
+%%ETCDIR%%/plugins/lua/ip_score.lua
 %%ETCDIR%%/lua/regexp/drugs.lua
 %%ETCDIR%%/lua/regexp/fraud.lua
 %%ETCDIR%%/lua/regexp/headers.lua
