@@ -7,10 +7,11 @@
 
 PORTNAME=	links
 DISTVERSION=	2.4
+PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
 
-MAINTAINER?=	demon@FreeBSD.org
+MAINTAINER?=	bf@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
 
 CONFLICTS=	links-0*
