@@ -1,0 +1,771 @@
+Upstream SVN commits 181536 and 181817.
+
+Index: libtool.m4
+===================================================================
+--- libtool.m4	(revision 181535)
++++ libtool.m4	(revision 181536)
+@@ -2273,7 +2273,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[[123]]*) objformat=aout ;;
++    freebsd[[23]].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -2291,7 +2291,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[[01]]* | freebsdelf3.[[01]]*)
+@@ -4804,7 +4804,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       _LT_TAGVAR(archive_cmds, $1)='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       _LT_TAGVAR(hardcode_direct, $1)=yes
+       _LT_TAGVAR(hardcode_minus_L, $1)=yes
+@@ -5751,7 +5751,7 @@
+         esac
+         ;;
+ 
+-      freebsd[[12]]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         _LT_TAGVAR(ld_shlibs, $1)=no
+Index: libgomp/configure
+===================================================================
+--- libgomp/configure	(revision 181535)
++++ libgomp/configure	(revision 181536)
+@@ -9317,7 +9317,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -10230,7 +10230,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -10248,7 +10248,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -13164,7 +13164,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds_FC='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct_FC=yes
+       hardcode_minus_L_FC=yes
+@@ -13869,7 +13869,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -13887,7 +13887,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libquadmath/configure
+===================================================================
+--- libquadmath/configure	(revision 181535)
++++ libquadmath/configure	(revision 181536)
+@@ -8727,7 +8727,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9643,7 +9643,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9661,7 +9661,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: gcc/configure
+===================================================================
+--- gcc/configure	(revision 181535)
++++ gcc/configure	(revision 181536)
+@@ -15730,7 +15730,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -16643,7 +16643,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -16661,7 +16661,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -18527,7 +18527,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -20302,7 +20302,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -20320,7 +20320,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: zlib/configure
+===================================================================
+--- zlib/configure	(revision 181535)
++++ zlib/configure	(revision 181536)
+@@ -8600,7 +8600,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9516,7 +9516,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9534,7 +9534,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libstdc++-v3/configure
+===================================================================
+--- libstdc++-v3/configure	(revision 181535)
++++ libstdc++-v3/configure	(revision 181536)
+@@ -9698,7 +9698,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -10614,7 +10614,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -10632,7 +10632,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -12522,7 +12522,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -14297,7 +14297,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -14315,7 +14315,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libobjc/configure
+===================================================================
+--- libobjc/configure	(revision 181535)
++++ libobjc/configure	(revision 181536)
+@@ -8797,7 +8797,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9713,7 +9713,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9731,7 +9731,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libgfortran/configure
+===================================================================
+--- libgfortran/configure	(revision 181535)
++++ libgfortran/configure	(revision 181536)
+@@ -10326,7 +10326,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -11242,7 +11242,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -11260,7 +11260,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -14162,7 +14162,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds_FC='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct_FC=yes
+       hardcode_minus_L_FC=yes
+@@ -14870,7 +14870,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -14888,7 +14888,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libmudflap/configure
+===================================================================
+--- libmudflap/configure	(revision 181535)
++++ libmudflap/configure	(revision 181536)
+@@ -8818,7 +8818,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9731,7 +9731,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9749,7 +9749,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: boehm-gc/configure
+===================================================================
+--- boehm-gc/configure	(revision 181535)
++++ boehm-gc/configure	(revision 181536)
+@@ -9604,7 +9604,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -10520,7 +10520,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -10538,7 +10538,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -12428,7 +12428,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -14203,7 +14203,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -14221,7 +14221,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: lto-plugin/configure
+===================================================================
+--- lto-plugin/configure	(revision 181535)
++++ lto-plugin/configure	(revision 181536)
+@@ -8733,7 +8733,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9646,7 +9646,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9664,7 +9664,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libffi/configure
+===================================================================
+--- libffi/configure	(revision 181535)
++++ libffi/configure	(revision 181536)
+@@ -9001,7 +9001,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9914,7 +9914,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9932,7 +9932,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libssp/configure
+===================================================================
+--- libssp/configure	(revision 181535)
++++ libssp/configure	(revision 181536)
+@@ -8864,7 +8864,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -9780,7 +9780,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -9798,7 +9798,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libjava/libltdl/configure
+===================================================================
+--- libjava/libltdl/configure	(revision 181535)
++++ libjava/libltdl/configure	(revision 181536)
+@@ -7355,7 +7355,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -7968,7 +7968,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+Index: libjava/libltdl/acinclude.m4
+===================================================================
+--- libjava/libltdl/acinclude.m4	(revision 181535)
++++ libjava/libltdl/acinclude.m4	(revision 181536)
+@@ -1377,7 +1377,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[[01]]* | freebsdelf3.[[01]]*)
+@@ -3035,7 +3035,7 @@
+ 	;;
+     esac
+     ;;
+-  freebsd[[12]]*)
++  freebsd2.*)
+     # C++ shared libraries reported to be fairly broken before switch to ELF
+     _LT_AC_TAGVAR(ld_shlibs, $1)=no
+     ;;
+@@ -5669,7 +5669,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       _LT_AC_TAGVAR(archive_cmds, $1)='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       _LT_AC_TAGVAR(hardcode_direct, $1)=yes
+       _LT_AC_TAGVAR(hardcode_minus_L, $1)=yes
+Index: libjava/configure.ac
+===================================================================
+--- libjava/configure.ac	(revision 181535)
++++ libjava/configure.ac	(revision 181536)
+@@ -1060,7 +1060,7 @@
+      *-*-cygwin*)
+ 	# Don't set THREADLIBS here.  Cygwin doesn't have -lpthread.
+ 	;;
+-     *-*-freebsd[[1234]]*)
++     *-*-freebsd[[34]].*)
+ 	# Before FreeBSD 5, it didn't have -lpthread (or any library which
+ 	# merely adds pthread_* functions) but it does have a -pthread switch
+ 	# which is required at link-time to select -lc_r *instead* of -lc.
+Index: libjava/configure
+===================================================================
+--- libjava/configure	(revision 181535)
++++ libjava/configure	(revision 181536)
+@@ -11560,7 +11560,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -12476,7 +12476,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -12494,7 +12494,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -14384,7 +14384,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -16159,7 +16159,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -16177,7 +16177,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -18520,7 +18520,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds_GCJ='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct_GCJ=yes
+       hardcode_minus_L_GCJ=yes
+@@ -20715,7 +20715,7 @@
+      *-*-cygwin*)
+ 	# Don't set THREADLIBS here.  Cygwin doesn't have -lpthread.
+ 	;;
+-     *-*-freebsd[1234]*)
++     *-*-freebsd[34].*)
+ 	# Before FreeBSD 5, it didn't have -lpthread (or any library which
+ 	# merely adds pthread_* functions) but it does have a -pthread switch
+ 	# which is required at link-time to select -lc_r *instead* of -lc.
+Index: libjava/classpath/config.rpath
+===================================================================
+--- libjava/classpath/config.rpath	(revision 181816)
++++ libjava/classpath/config.rpath	(revision 181817)
+@@ -361,7 +361,7 @@
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes
+       ;;
+-    freebsd2*)
++    freebsd2.*)
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+       ;;
+@@ -533,7 +533,7 @@
+     ;;
+   freebsd* | dragonfly*)
+     case "$host_os" in
+-      freebsd[123]*)
++      freebsd[23].*)
+         library_names_spec='$libname$shrext$versuffix' ;;
+       *)
+         library_names_spec='$libname$shrext' ;;
+Index: libjava/classpath/configure
+===================================================================
+--- libjava/classpath/configure	(revision 181816)
++++ libjava/classpath/configure	(revision 181817)
+@@ -10025,7 +10025,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -10941,7 +10941,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -10959,7 +10959,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -14225,7 +14225,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd2.*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -16000,7 +16000,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[23].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -16018,7 +16018,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
