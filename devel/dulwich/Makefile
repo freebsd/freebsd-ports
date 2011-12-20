@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dulwich
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
 		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
@@ -30,8 +30,8 @@ PORTDOCS=	AUTHORS COPYING HACKING NEWS README
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|PYTHON = python|PYTHON = /usr/bin/env python|g; \
-		s|/usr|${PREFIX}|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|PYTHON = python|PYTHON = /usr/bin/env python|g' \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
 		${WRKSRC}/setup.py
 
