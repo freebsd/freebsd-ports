@@ -6,4 +6,4 @@ If you want portability between backends, use DBI.  If you want ease
 of use with SQLite, use this.
 
 Author:	Jamis Buck (minam) <jgb3@email.byu.edu>
-WWW: https://github.com/qoobaa/sqlite3
+WWW: https://github.com/luislavena/sqlite3-ruby

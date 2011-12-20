@@ -1,3 +1,3 @@
 Allows performing chunked queries on DataMapper Models or Collections.
 
-WWW: http://rubygems.org/gems/dm-chunked_query
+WWW: https://github.com/postmodern/dm-chunked_query

@@ -1,4 +1,4 @@
 CouchRest provides a simple interface on top of CouchDB's RESTful HTTP API,
 as well as including some utility scripts for managing views and attachments.
 
-WWW: http://rubygems.org/gems/couchrest
+WWW: https://github.com/couchrest/couchrest

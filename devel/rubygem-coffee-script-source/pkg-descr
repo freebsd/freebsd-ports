@@ -3,4 +3,4 @@ all of those embarrassing braces and semicolons, JavaScript has always had a
 gorgeous object model at its heart. CoffeeScript is an attempt to expose the
 good parts of JavaScript in a simple way.
 
-WWW:	http://rubygems.org/gems/coffee-script-source
+WWW: http://jashkenas.github.com/coffee-script/

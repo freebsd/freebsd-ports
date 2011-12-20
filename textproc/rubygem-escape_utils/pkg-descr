@@ -11,4 +11,4 @@ o   Connection-level & Global middleware support
 o   HTTP parser via http_parser.rb
 o   Works wherever EventMachine runs: Rubinius, JRuby, MRI
 
-WWW: https://github.com/igrigorik/em-http-request
+WWW: https://github.com/brianmario/escape_utils
