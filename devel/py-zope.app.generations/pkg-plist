@@ -1,0 +1,52 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managerdetails.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managerdetails.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managerdetails.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managerdetails.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managers.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/managers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/ftesting.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/generations.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/generations.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/generations.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/subscriber.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/testing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/utility.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/utility.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/utility.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/generations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
