@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	paintown
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Fighting game similar to Streets of Rage and TMNT
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
 		png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_SCONS=	yes
+USE_SDL=	yes
 INSTALLS_ICONS=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
