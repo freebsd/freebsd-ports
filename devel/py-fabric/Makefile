@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	fabric
-PORTVERSION=	1.0.2
+PORTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://code.fabfile.org/projects/fabric/files/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Fabric-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple pythonic remote deployment tool
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=1.9:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.6:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ssh>=1.7.8:${PORTSDIR}/security/py-ssh
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
