@@ -15,10 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides "self" and "args" keywords in your OO program
 
-RUN_DEPENDS=	p5-B-Hooks-Parser>0:${PORTSDIR}/devel/p5-B-Hooks-Parser \
+BUILD_DEPENDS=	p5-B-Hooks-Parser>0:${PORTSDIR}/devel/p5-B-Hooks-Parser \
 		p5-B-OPCheck>0:${PORTSDIR}/devel/p5-B-OPCheck \
 		p5-Devel-Declare>0:${PORTSDIR}/devel/p5-Devel-Declare \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 
 PERL_CONFIGURE=	yes
 
