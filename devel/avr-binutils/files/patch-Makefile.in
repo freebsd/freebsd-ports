@@ -1,0 +1,21 @@
+--- Makefile.in~	2010-03-03 15:17:40.000000000 +0100
++++ Makefile.in	2011-12-20 11:11:25.000000000 +0100
+@@ -28750,18 +28750,6 @@
+ 
+ .PHONY: install-libiberty maybe-install-libiberty
+ maybe-install-libiberty:
+-@if libiberty
+-maybe-install-libiberty: install-libiberty
+-
+-install-libiberty: installdirs
+-	@: $(MAKE); $(unstage)
+-	@r=`${PWD_COMMAND}`; export r; \
+-	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+-	$(HOST_EXPORTS) \
+-	(cd $(HOST_SUBDIR)/libiberty && \
+-	  $(MAKE) $(FLAGS_TO_PASS)  install)
+-
+-@endif libiberty
+ 
+ # Other targets (info, dvi, pdf, etc.)
+ 
