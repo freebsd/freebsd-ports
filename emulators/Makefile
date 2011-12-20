@@ -118,6 +118,7 @@
     SUBDIR += mupen64plus-video-arachnoid
     SUBDIR += mupen64plus-video-glide64
     SUBDIR += mupen64plus-video-rice
+    SUBDIR += mupen64plus-video-z64
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
