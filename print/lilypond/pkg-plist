@@ -301,22 +301,22 @@ share/emacs/site-lisp/lilypond-mode.el
 share/emacs/site-lisp/lilypond-song.el
 share/emacs/site-lisp/lilypond-what-beat.el
 share/emacs/site-lisp/lilypond-words.el
-share/locale/cs/LC_MESSAGES/lilypond.mo
-share/locale/da/LC_MESSAGES/lilypond.mo
-share/locale/de/LC_MESSAGES/lilypond.mo
-share/locale/el/LC_MESSAGES/lilypond.mo
-share/locale/es/LC_MESSAGES/lilypond.mo
-share/locale/fi/LC_MESSAGES/lilypond.mo
-share/locale/fr/LC_MESSAGES/lilypond.mo
-share/locale/it/LC_MESSAGES/lilypond.mo
-share/locale/ja/LC_MESSAGES/lilypond.mo
-share/locale/nl/LC_MESSAGES/lilypond.mo
-share/locale/ru/LC_MESSAGES/lilypond.mo
-share/locale/sv/LC_MESSAGES/lilypond.mo
-share/locale/tr/LC_MESSAGES/lilypond.mo
-share/locale/uk/LC_MESSAGES/lilypond.mo
-share/locale/vi/LC_MESSAGES/lilypond.mo
-share/locale/zh_TW/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/da/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/el/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/es/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/lilypond.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 @dirrm lib/lilypond/%%PORTVERSION%%/python
 @dirrm lib/lilypond/%%PORTVERSION%%
 @dirrm lib/lilypond
