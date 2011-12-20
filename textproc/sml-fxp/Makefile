@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2.informatik.tu-muenchen.de/~berlea/Fxp/ \
 		http://www.tbrk.org/distfiles/
 DISTNAME=	fxp-${PORTVERSION}
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser with Standard ML interface
 
 # DEVEL MLTON STABILIZATION  Result

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.informatik.uni-bremen.de/~cxl/sml_tk/
 DISTNAME=	smltk
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typed and abstract Standard ML interface to Tcl/Tk
 
 USE_TK_WRAPPER=	yes

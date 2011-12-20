@@ -10,7 +10,7 @@ PORTVERSION=	4.0.10
 CATEGORIES=	devel java linux
 DISTNAME=	uppaal-${PORTVERSION}-aca
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool environment for modeling and verifying timed automata
 
 USE_ZIP=	yes
