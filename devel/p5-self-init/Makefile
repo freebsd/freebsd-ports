@@ -12,6 +12,9 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MONS
 PKGNAMEPREFIX=	p5-
 
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-ex-lib>=0:${PORTSDIR}/devel/p5-ex-lib
+
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Invoke package init methods at compile time
 
