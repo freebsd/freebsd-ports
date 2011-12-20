@@ -717,6 +717,7 @@
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-rijndael
+    SUBDIR += py-ssh
     SUBDIR += py-sslstrip
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
