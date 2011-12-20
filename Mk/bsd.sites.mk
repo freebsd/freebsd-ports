@@ -59,7 +59,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://mir1.ovh.net/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/%SUBDIR%/ \
-	ftp://ftp.esat.net/mirrors/ftp.apache.org/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/&,} \
@@ -114,12 +113,15 @@ MASTER_SITE_CENKES+=	\
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
 MASTER_SITE_CHEESESHOP+=	\
 	http://pypi.python.org/packages/%SUBDIR%/ \
+	http://b.pypi.python.org/packages/%SUBDIR%/ \
+	http://c.pypi.python.org/packages/%SUBDIR%/ \
+	http://d.pypi.python.org/packages/%SUBDIR%/ \
+	http://e.pypi.python.org/packages/%SUBDIR%/ \
+	http://f.pypi.python.org/packages/%SUBDIR%/ \
 	http://pypi.d9t.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.inqbus.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.it.uwosh.edu/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
-	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
-	http://pypi.websushi.org/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
-	http://pypi.zopyx.com/${DISTNAME:S/${DISTVERSION}//:S/-//}/
+	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
@@ -676,7 +678,6 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://kde.paralax.org/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
@@ -1254,7 +1255,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.rz.uni-kiel.de/pub2/linux/suse/%SUBDIR%/ \
 	http://mirrors.sth.sze.hu/linux/suse/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/ftp.suse.com/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
-	ftp://ftp.esat.net/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/linux/distributions/SuSE/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.uniroma2.it/Linux/suse/pub/suse/%SUBDIR%/ \
 	ftp://ftp.riken.jp/Linux/suse/suse/%SUBDIR%/ \
