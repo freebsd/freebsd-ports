@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.240
+PORTVERSION=	1.241
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Glib SF/gtk2-perl/Glib/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -25,5 +25,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
+
+pre-everything::
+	@${ECHO_MSG} "--------------------------------------------------------"
+	@${ECHO_MSG} "Some functions of this module require a threaded perl."
+	@${ECHO_MSG} "If you intend to use them or experience hangs when"
+	@${ECHO_MSG} "using this module, enable the THREADS option in perl."
+	@${ECHO_MSG} "--------------------------------------------------------"
 
 .include <bsd.port.mk>
