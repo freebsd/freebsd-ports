@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Expander
 
-RUN_DEPENDS=	rubygem-amqp>=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
+RUN_DEPENDS=	rubygem-amqp=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
 		rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
 		rubygem-em-http-request>=0.2.11:${PORTSDIR}/www/rubygem-em-http-request \
 		rubygem-eventmachine>=0.12.10:${PORTSDIR}/devel/rubygem-eventmachine \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-amqp>=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
 		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-mixlib-log>=1.2.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
-		rubygem-yajl-ruby>=0.7.7:${PORTSDIR}/devel/rubygem-yajl-ruby077
+		rubygem-yajl-ruby=0.7.7:${PORTSDIR}/devel/rubygem-yajl-ruby077
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
