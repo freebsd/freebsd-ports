@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-current
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	A virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3

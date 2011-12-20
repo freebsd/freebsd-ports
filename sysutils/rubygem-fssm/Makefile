@@ -10,7 +10,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Provides a state tracking and event firing utility
 
 USE_RUBY=		yes

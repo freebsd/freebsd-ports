@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Utility reads job descriptions line by line and executes in parallel
 
 LICENSE=	GPLv2

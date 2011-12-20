@@ -9,7 +9,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Sophisticated and secure hash algorithm for passwords
 
 RUN_DEPENDS+=	bcrypt:${PORTSDIR}/security/bcrypt

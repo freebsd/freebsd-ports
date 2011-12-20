@@ -12,7 +12,7 @@ MASTER_SITES=	http://cronolog.org/patches/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	A web log rotation utility that provides datestamp filenames
 
 PLIST_FILES=	sbin/cronolog \

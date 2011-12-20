@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
 DISTNAME=	apache-tomcat-${PORTVERSION}
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 OPTIONS=	CRONOLOG "Use Cronolog for Log Processing" Off \

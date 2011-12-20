@@ -10,7 +10,7 @@ PORTVERSION=	0.11.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	jhelfman@experts-exchange.com
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Provides an open-source CSS authoring framework
 
 RUN_DEPENDS=	rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass \
