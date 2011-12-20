@@ -11,6 +11,7 @@ bin/mongorestore
 bin/mongos
 bin/mongosniff
 bin/mongostat
+bin/mongotop
 %%DEVEL%%lib/libmongoclient.a
 %%DEVEL%%include/mongo/bson/bson-inl.h
 %%DEVEL%%include/mongo/bson/bson.h
@@ -43,10 +44,13 @@ bin/mongostat
 %%DEVEL%%include/mongo/client/undef_macros.h
 %%DEVEL%%include/mongo/db/background.h
 %%DEVEL%%include/mongo/db/btree.h
+%%DEVEL%%include/mongo/db/btreebuilder.h
 %%DEVEL%%include/mongo/db/client.h
 %%DEVEL%%include/mongo/db/clientcursor.h
+%%DEVEL%%include/mongo/db/cloner.h
 %%DEVEL%%include/mongo/db/cmdline.h
 %%DEVEL%%include/mongo/db/commands.h
+%%DEVEL%%include/mongo/db/compact.h
 %%DEVEL%%include/mongo/db/concurrency.h
 %%DEVEL%%include/mongo/db/curop-inl.h
 %%DEVEL%%include/mongo/db/curop.h
@@ -74,6 +78,7 @@ bin/mongostat
 %%DEVEL%%include/mongo/db/jsobj.h
 %%DEVEL%%include/mongo/db/jsobjmanipulator.h
 %%DEVEL%%include/mongo/db/json.h
+%%DEVEL%%include/mongo/db/key.h
 %%DEVEL%%include/mongo/db/lasterror.h
 %%DEVEL%%include/mongo/db/matcher.h
 %%DEVEL%%include/mongo/db/minilex.h
@@ -85,10 +90,14 @@ bin/mongostat
 %%DEVEL%%include/mongo/db/nonce.h
 %%DEVEL%%include/mongo/db/oplog.h
 %%DEVEL%%include/mongo/db/oplogreader.h
+%%DEVEL%%include/mongo/db/ops/delete.h
+%%DEVEL%%include/mongo/db/ops/query.h
+%%DEVEL%%include/mongo/db/ops/update.h
 %%DEVEL%%include/mongo/db/pdfile.h
 %%DEVEL%%include/mongo/db/projection.h
-%%DEVEL%%include/mongo/db/query.h
 %%DEVEL%%include/mongo/db/queryoptimizer.h
+%%DEVEL%%include/mongo/db/querypattern.h
+%%DEVEL%%include/mongo/db/queryutil-inl.h
 %%DEVEL%%include/mongo/db/queryutil.h
 %%DEVEL%%include/mongo/db/repl/connections.h
 %%DEVEL%%include/mongo/db/repl/health.h
@@ -100,19 +109,18 @@ bin/mongostat
 %%DEVEL%%include/mongo/db/repl/rs_optime.h
 %%DEVEL%%include/mongo/db/repl.h
 %%DEVEL%%include/mongo/db/repl_block.h
-%%DEVEL%%include/mongo/db/replpair.h
+%%DEVEL%%include/mongo/db/replutil.h
 %%DEVEL%%include/mongo/db/resource.h
 %%DEVEL%%include/mongo/db/restapi.h
 %%DEVEL%%include/mongo/db/scanandorder.h
 %%DEVEL%%include/mongo/db/security.h
-%%DEVEL%%include/mongo/db/security_key.h
+%%DEVEL%%include/mongo/db/security_common.h
 %%DEVEL%%include/mongo/db/stats/counters.h
 %%DEVEL%%include/mongo/db/stats/fine_clock.h
 %%DEVEL%%include/mongo/db/stats/service_stats.h
 %%DEVEL%%include/mongo/db/stats/snapshots.h
 %%DEVEL%%include/mongo/db/stats/top.h
 %%DEVEL%%include/mongo/db/taskqueue.h
-%%DEVEL%%include/mongo/db/update.h
 %%DEVEL%%include/mongo/pch.h
 %%DEVEL%%include/mongo/s/balance.h
 %%DEVEL%%include/mongo/s/balancer_policy.h
@@ -124,6 +132,7 @@ bin/mongostat
 %%DEVEL%%include/mongo/s/d_logic.h
 %%DEVEL%%include/mongo/s/d_writeback.h
 %%DEVEL%%include/mongo/s/grid.h
+%%DEVEL%%include/mongo/s/mr_shard.h
 %%DEVEL%%include/mongo/s/request.h
 %%DEVEL%%include/mongo/s/server.h
 %%DEVEL%%include/mongo/s/shard.h
@@ -140,6 +149,7 @@ bin/mongostat
 %%DEVEL%%include/mongo/scripting/v8_db.h
 %%DEVEL%%include/mongo/scripting/v8_utils.h
 %%DEVEL%%include/mongo/scripting/v8_wrapper.h
+%%DEVEL%%include/mongo/server.h
 %%DEVEL%%include/mongo/targetver.h
 %%DEVEL%%include/mongo/util/admin_access.h
 %%DEVEL%%include/mongo/util/alignedbuilder.h
@@ -148,7 +158,10 @@ bin/mongostat
 %%DEVEL%%include/mongo/util/assert_util.h
 %%DEVEL%%include/mongo/util/background.h
 %%DEVEL%%include/mongo/util/base64.h
+%%DEVEL%%include/mongo/util/bson_util.h
 %%DEVEL%%include/mongo/util/bufreader.h
+%%DEVEL%%include/mongo/util/checksum.h
+%%DEVEL%%include/mongo/util/compress.h
 %%DEVEL%%include/mongo/util/concurrency/list.h
 %%DEVEL%%include/mongo/util/concurrency/msg.h
 %%DEVEL%%include/mongo/util/concurrency/mutex.h
@@ -170,22 +183,25 @@ bin/mongostat
 %%DEVEL%%include/mongo/util/heapcheck.h
 %%DEVEL%%include/mongo/util/hex.h
 %%DEVEL%%include/mongo/util/histogram.h
-%%DEVEL%%include/mongo/util/hostandport.h
-%%DEVEL%%include/mongo/util/httpclient.h
 %%DEVEL%%include/mongo/util/log.h
 %%DEVEL%%include/mongo/util/logfile.h
-%%DEVEL%%include/mongo/util/md5.h
 %%DEVEL%%include/mongo/util/lruishmap.h
+%%DEVEL%%include/mongo/util/md5.h
 %%DEVEL%%include/mongo/util/md5.hpp
-%%DEVEL%%include/mongo/util/message.h
-%%DEVEL%%include/mongo/util/message_server.h
-%%DEVEL%%include/mongo/util/miniwebserver.h
 %%DEVEL%%include/mongo/util/mmap.h
 %%DEVEL%%include/mongo/util/mongoutils/checksum.h
 %%DEVEL%%include/mongo/util/mongoutils/hash.h
 %%DEVEL%%include/mongo/util/mongoutils/html.h
 %%DEVEL%%include/mongo/util/mongoutils/str.h
 %%DEVEL%%include/mongo/util/moveablebuffer.h
+%%DEVEL%%include/mongo/util/net/hostandport.h
+%%DEVEL%%include/mongo/util/net/httpclient.h
+%%DEVEL%%include/mongo/util/net/listen.h
+%%DEVEL%%include/mongo/util/net/message.h
+%%DEVEL%%include/mongo/util/net/message_port.h
+%%DEVEL%%include/mongo/util/net/message_server.h
+%%DEVEL%%include/mongo/util/net/miniwebserver.h
+%%DEVEL%%include/mongo/util/net/sock.h
 %%DEVEL%%include/mongo/util/ntservice.h
 %%DEVEL%%include/mongo/util/optime.h
 %%DEVEL%%include/mongo/util/password.h
@@ -194,7 +210,6 @@ bin/mongostat
 %%DEVEL%%include/mongo/util/queue.h
 %%DEVEL%%include/mongo/util/ramlog.h
 %%DEVEL%%include/mongo/util/signal_handlers.h
-%%DEVEL%%include/mongo/util/sock.h
 %%DEVEL%%include/mongo/util/stringutils.h
 %%DEVEL%%include/mongo/util/text.h
 %%DEVEL%%include/mongo/util/time_support.h
@@ -205,6 +220,7 @@ bin/mongostat
 %%DEVEL%%@dirrm include/mongo/bson/util
 %%DEVEL%%@dirrm include/mongo/bson
 %%DEVEL%%@dirrm include/mongo/client
+%%DEVEL%%@dirrm include/mongo/db/ops
 %%DEVEL%%@dirrm include/mongo/db/repl
 %%DEVEL%%@dirrm include/mongo/db/stats
 %%DEVEL%%@dirrm include/mongo/db
@@ -212,5 +228,6 @@ bin/mongostat
 %%DEVEL%%@dirrm include/mongo/scripting
 %%DEVEL%%@dirrm include/mongo/util/concurrency
 %%DEVEL%%@dirrm include/mongo/util/mongoutils
+%%DEVEL%%@dirrm include/mongo/util/net
 %%DEVEL%%@dirrm include/mongo/util
 %%DEVEL%%@dirrm include/mongo
