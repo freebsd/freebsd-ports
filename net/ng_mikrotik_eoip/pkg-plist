@@ -1,0 +1,4 @@
+@cwd /
+%%KMODDIR%%/%%PORTNAME%%.ko
+@exec /usr/sbin/kldxref /%%KMODDIR%%
+@unexec /usr/sbin/kldxref /%%KMODDIR%%
