@@ -38,6 +38,10 @@ PORTDOCS=	CREDITS README
 SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
 .endif
 
+.if ${OSVERSION} >= 1000000
+BROKEN=         Does not compile on FreeBSD 10
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/games/dangerdeep|${DATADIR}|; \
 		s|Linux|"Danger from the Deep"|' ${WRKSRC}/doc/man/dangerdeep.6
