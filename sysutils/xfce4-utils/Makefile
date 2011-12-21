@@ -37,7 +37,8 @@ USE_XORG=	x11
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
 		NLS "Enable Native Language Support" on \
-		XLOCK "Use xlock for 'lock screen'" off
+		XLOCK "Use xlock for 'lock screen'" on \
+		XSCREENSAVER "Use xscreensaver for 'lock screen'" off
 
 .include <bsd.port.options.mk>
 
@@ -61,6 +62,14 @@ PLIST_SUB+=	NLS="@comment "
 
 .if !defined(WITHOUT_XLOCK)
 RUN_DEPENDS+=	xlock:${PORTSDIR}/x11/xlockmore
+.endif
+
+.if !defined(WITHOUT_XSCREENSAVER)
+RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+.endif
+
+.if defined(WITH_XLOCK) && defined(WITH_XSCREENSAVER)
+IGNORE=	should only have one locking option defined
 .endif
 
 post-install:
