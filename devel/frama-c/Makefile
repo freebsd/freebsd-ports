@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		frama-c
-DISTVERSIONPREFIX=	Carbon-
-DISTVERSION=		20110201
+DISTVERSIONPREFIX=	Nitrogen-
+DISTVERSION=		20111001
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 
@@ -22,12 +22,34 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-oc
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	FRAMAC_LIBDIR="${PREFIX}/lib/frama-c"
 MAN1=		frama-c.1 frama-c-gui.1
-OPTIONS=	GUI	"Build GUI" on \
+OPTIONS=	ALTERGO "Build wp plugin components that use Alt-Ergo" on \
+		COQ	"Build wp plugin components that use Coq" off \
+		GUI	"Build GUI" on \
 		PLUGINS "Build bundled plugins" on
 USE_GMAKE=	yes
 USE_OCAML=	yes
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_ALTERGO)
+.if !defined(WITH_PLUGINS)
+IGNORE =	requires WITH_PLUGINS for WITH_ALTERGO
+.endif
+BUILD_DEPENDS +=	alt-ergo:${PORTSDIR}/math/alt-ergo
+RUN_DEPENDS+=		alt-ergo:${PORTSDIR}/math/alt-ergo
+.else
+CONFIGURE_ENV +=	HAS_ALTERGO=no
+.endif
+
+.if defined(WITH_COQ)
+.if !defined(WITH_PLUGINS)
+IGNORE =	requires WITH_PLUGINS for WITH_COQ
+.endif
+BUILD_DEPENDS +=	coqc:${PORTSDIR}/math/coq
+RUN_DEPENDS+=		coqc:${PORTSDIR}/math/coq
+.else
+CONFIGURE_ENV +=	HAS_COQ=no
+.endif
 
 .if defined(WITH_GUI)
 .if !defined(WITH_PLUGINS)
@@ -44,9 +66,9 @@ PLIST_SUB+=		GUI="@comment "
 
 .if defined(WITH_PLUGINS)
 BUILD_DEPENDS +=	dot:${PORTSDIR}/graphics/graphviz \
-		ltl2ba:${PORTSDIR}/math/ltl2ba
-RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz \
-		ltl2ba:${PORTSDIR}/math/ltl2ba
+			ltl2ba:${PORTSDIR}/math/ltl2ba
+RUN_DEPENDS+=	 	dot:${PORTSDIR}/graphics/graphviz \
+			ltl2ba:${PORTSDIR}/math/ltl2ba
 PLIST_SUB+=		PLUGINS=""
 .else
 CONFIGURE_ARGS+=	--with-no-plugin
@@ -54,11 +76,17 @@ PLIST_SUB+=		PLUGINS="@comment "
 .endif
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/tests/occurrence
+	@${MKDIR} ${WRKSRC}/tests/report \
+		${WRKSRC}/tests/wp \
+		${WRKSRC}/tests/wp_plugin \
+		${WRKSRC}/tests/wp_acsl \
+		${WRKSRC}/tests/wp_store \
+		${WRKSRC}/tests/wp_hoare \
+		${WRKSRC}/tests/wp_runtime \
+		${WRKSRC}/tests/wp_bts \
+		${WRKSRC}/tests/wp_engine
 	@${REINPLACE_CMD} -e 's|@make |@${GMAKE} |' \
 			${WRKSRC}/src/aorai/Makefile.in
-	@${GREP} -le 'make ' -r ${WRKSRC}/tests | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|make |${GMAKE} |'
 	@${REINPLACE_CMD} \
 		-e 's|$$(CP)|${INSTALL_DATA}|' \
 		-e 's|add_prefix|addprefix|' \
@@ -76,8 +104,10 @@ post-patch:
 		\|$$(CP).*share|s|$$(CP)\( -R\)*|${INSTALL_DATA}|; \
 		s|$$(CP)|${INSTALL_DATA}|; }' \
 			${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '\|case $$OCAMLGRAPH_VERSION in| \
-		{N; s|1\.7|1.[78]*|;}' \
+	@${REINPLACE_CMD} -e 's|HAS_ALTERGO=$$||' \
+		-e '\|case $$ALTERGO_VERSION in|{N; s|0\.92\.2|0.94*|;}' \
+		-e 's|HAS_COQ=$$||' \
+		-e '\|case $$OCAMLGRAPH_VERSION in|{N; s|1\.8|&*|;}' \
 			${WRKSRC}/configure
 
 .if defined(WITH_GUI)
@@ -96,8 +126,8 @@ pre-configure:
 .endif
 
 post-install:
-		@${TOUCH} ${PREFIX}/lib/frama-c/plugins/.keep_me \
-		${PREFIX}/lib/frama-c/plugins/gui/.keep_me
+	@${TOUCH} ${PREFIX}/lib/frama-c/plugins/.keep_me \
+	${PREFIX}/lib/frama-c/plugins/gui/.keep_me
 
 .if defined(MAINTAINER_MODE)
 check regression-test test: build
