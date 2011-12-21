@@ -54,7 +54,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .if defined(WITH_IMLIB)
 USE_GNOME+=	imlib
-PKGNAMESUFFIX=	-imlib
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
