@@ -1,4 +1,2 @@
-SHA256 (vsftpd-2.1.2.tar.gz) = 7964df745247897ed5f57901d4a24ac1ed2f2eafb08f9b5d181028d699b7fbe4
-SIZE (vsftpd-2.1.2.tar.gz) = 180958
-SHA256 (vsftpd-2.1.2-ext1.diff.gz) = acc092d100be14bbb4f596c30e7762d5b85681c1cf75f9cc824e4cd575d0dd87
-SIZE (vsftpd-2.1.2-ext1.diff.gz) = 31494
+SHA256 (vsFTPd-2.3.4-ext2.tgz) = 530aae6f3f32168fd2cac442483c63923df8e281dd0f351dd81593386b898ca0
+SIZE (vsFTPd-2.3.4-ext2.tgz) = 218473

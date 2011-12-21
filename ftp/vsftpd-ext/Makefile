@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	vsftpd-ext
-PORTVERSION=	2.1.2
+UPSTREAMVERSION=	2.3.4
+EXTVERSION=	2
+PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
+MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	vsftpd-${PORTVERSION}
-
-PATCH_SITES=	http://vsftpd.devnet.ru/files/${PORTVERSION}/ext.1/diff/
-PATCHFILES=	vsftpd-${PORTVERSION}-ext1.diff.gz
-PATCH_DIST_STRIP=-p2
+DISTNAME=	vsFTPd-${UPSTREAMVERSION}-ext${EXTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A FTP daemon that aims to be "very secure". Extended build
 
 CONFLICTS=	vsftpd-2* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-2*
 
+WRKSRC=	${WRKDIR}/vsFTPd-${UPSTREAMVERSION}-ext.${EXTVERSION}
 ALL_TARGET=	vsftpd
 MAN5=		vsftpd.conf.5
 MAN8=		vsftpd.8
@@ -30,16 +30,12 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 
 LDFLAGS+=	-lwrap
 
-OPTIONS=	RC_NG		"install RC_NG script"		off \
+OPTIONS=	RC_SCRIPT	"install RC_SCRIPT"		on \
 		VSFTPD_SSL	"Include support for SSL"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900007
-BROKEN=		does not build
-.endif
-
-.if defined(WITH_RC_NG)
+.if defined(WITH_RC_SCRIPT)
 USE_RC_SUBR=	vsftpd.sh
 .endif
 
