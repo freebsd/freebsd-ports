@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -28,7 +28,6 @@ OPTIONS=	SSL "Enable SSL support" on
 PLIST_FILES=	bin/monit \
 		etc/monitrc.sample
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 DOCS=		CHANGES COPYING README
