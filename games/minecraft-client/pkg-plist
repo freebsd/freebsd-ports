@@ -1,0 +1,4 @@
+share/minecraft-client/minecraft.jar
+share/minecraft-client/Grass.png
+bin/minecraft-client
+@dirrm share/minecraft-client
