@@ -17,7 +17,8 @@ EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable${EXTRACT_SUFX}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
-BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -110,7 +111,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|bash|sh|; \
+		s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh

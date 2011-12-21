@@ -19,7 +19,8 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library and tool for encoding H.264/AVC video streams
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 CONFLICTS=	x264-0.*
 
@@ -111,7 +112,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|bash|sh|; \
+		s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh
