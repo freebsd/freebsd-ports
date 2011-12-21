@@ -11,7 +11,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	
+COMMENT=	OpenURI with transparent disk caching
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
