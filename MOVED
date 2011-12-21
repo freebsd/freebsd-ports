@@ -3021,3 +3021,4 @@ converters/py-iconvcodec||2011-12-12|Included into python itself since version 2
 devel/py-waf||2012-12-12|Port is outdated. Author discourages system-wide installation. Download it manually
 security/p5-Digest-SHA256||2011-12-20|Removed: use the builtin Digest::SHA instead
 net/mpd4||2011-12-21|Removed
+japanese/ruby-refe||2011-12-21|Has been broken for 11 months

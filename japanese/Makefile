@@ -279,7 +279,6 @@
     SUBDIR += ruby-mecab
     SUBDIR += ruby-ming
     SUBDIR += ruby-rdic
-    SUBDIR += ruby-refe
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
     SUBDIR += ruby-uconv
