@@ -10,7 +10,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.desktopbsd.net/pub/DesktopBSD/Tools/
 
-MAINTAINER=	ph@desktopbsd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DesktopBSD tools for easy system configuration
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
