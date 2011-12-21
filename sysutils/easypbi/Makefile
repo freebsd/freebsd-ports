@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	easypbi
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/makeapbi/${PORTNAME}/
 
