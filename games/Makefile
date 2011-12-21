@@ -524,6 +524,7 @@
     SUBDIR += meritous
     SUBDIR += mindfocus
     SUBDIR += mindguard
+    SUBDIR += minecraft-server
     SUBDIR += minetest
     SUBDIR += mirrormagic
     SUBDIR += miscom

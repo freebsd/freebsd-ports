@@ -1,0 +1,5 @@
+share/minecraft-server/minecraft_server.jar
+%%X11%%share/minecraft-server/Bookshelf.png
+%%X11%%bin/minecraft-server
+bin/minecraft-server-nogui
+@dirrm share/minecraft-server
