@@ -1,6 +1,2 @@
-Some of tesseract's graphical features rely on
-a viewer running in an external process, and
-cannot be used with default installations at
-the present time.  Additional, non-English
-trained language data are available in the
+Additional trained language data are available in the
 graphics/tesseract-data port.
