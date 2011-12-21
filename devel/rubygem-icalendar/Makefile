@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	
+COMMENT=	Library for working with iCalendar files
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
