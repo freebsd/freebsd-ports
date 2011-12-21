@@ -11,7 +11,7 @@ CATEGORIES?=	www
 MASTER_SITES?=	http://movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
 
-MAINTAINER=	takefu@airport.fm
+MAINTAINER?=	takefu@airport.fm
 COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
@@ -42,7 +42,7 @@ CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
 DB_DIR?=	${BASEDIR}/var/db/mysql/blog
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=1:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 USE_MYSQL=	yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
