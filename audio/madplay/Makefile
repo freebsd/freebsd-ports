@@ -7,7 +7,7 @@
 
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -24,10 +24,16 @@ LICENSE=	GPLv2
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	all madtime
 
 MAN1=		abxtest.1 madplay.1
+
+OPTIONS=	NLS "NLS support" on \
+		ESOUND "with esound" on
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
@@ -37,15 +43,10 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-CFLAGS+=	-I${LOCALBASE}/include
-
-.if ${HAVE_GNOME:Mesound} != ""
-USE_GNOME+=	esound
-PKGNAMESUFFIX=	-esound
-.else
+.if !defined(WITHOUT_ESOUND)
 CONFIGURE_ARGS+=	--without-esd
+.else
+USE_GNOME+=	esound
 .endif
 
 post-install:
