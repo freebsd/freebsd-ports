@@ -28,6 +28,7 @@
     SUBDIR += add
     SUBDIR += algae
     SUBDIR += algotutor
+    SUBDIR += alt-ergo
     SUBDIR += ann
     SUBDIR += apc
     SUBDIR += aribas
