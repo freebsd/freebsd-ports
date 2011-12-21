@@ -7,10 +7,12 @@
 
 PORTNAME=	tesseract
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(NOPORTDATA) || make(makesum)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eng.traineddata.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		tesseract-ocr-3.01.eng.tar.gz tesseract-ocr-3.01.osd.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -42,7 +44,7 @@ CXXFLAGS+=	-fpermissive
 
 .ifndef NOPORTDATA
 DATADIR=	${PREFIX}/share/tessdata
-PORTDATA=	eng.traineddata
+PORTDATA=	eng.traineddata osd.traineddata
 .endif
 
 .ifndef NOPORTDOCS
@@ -60,20 +62,21 @@ post-patch:
 
 post-install:
 .ifndef NOPORTDATA
-	@${INSTALL} -d ${DATADIR}/
-.for datafile in ${PORTDATA}
-	@${GUNZIP_CMD} -c ${_DISTDIR}/${datafile}.gz > ${DATADIR}/${datafile}
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${datafile}
-	@${CHMOD} ${SHAREMODE} ${DATADIR}/${datafile}
+	@${INSTALL_DATA} -d ${DATADIR}
+.for f in ${PORTDATA:R}
+	@${TAR} --strip-components 2 -C ${DATADIR} \
+	-xf ${_DISTDIR}/tesseract-ocr-3.01.${f}.tar.gz *.traineddata
 .endfor
+	@cd ${DATADIR}; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA}; \
+	${CHMOD} ${SHAREMODE} ${PORTDATA}
 .endif
 .ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${INSTALL_DATA} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .ifndef NOPORTEXAMPLES
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	@${INSTALL_DATA} -d ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
