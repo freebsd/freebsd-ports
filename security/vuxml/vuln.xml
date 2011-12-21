@@ -88,11 +88,11 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<cvename>2011-3658</cvename>
-	<cvename>2011-3660</cvename>
-	<cvename>2011-3661</cvename>
-	<cvename>2011-3663</cvename>
-	<cvename>2011-3665</cvename>
+	<cvename>CVE-2011-3658</cvename>
+	<cvename>CVE-2011-3660</cvename>
+	<cvename>CVE-2011-3661</cvename>
+	<cvename>CVE-2011-3663</cvename>
+	<cvename>CVE-2011-3665</cvename>
 	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-53.html</url>
 	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-54.html</url>
 	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-55.html</url>
