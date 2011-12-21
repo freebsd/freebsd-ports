@@ -181,9 +181,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 80+ 36+ 80 36
+#                         Available values: yes 90+ 36+ 90 36
 #                         NOTE:
-#                         default value 80 is used in case of USE_FIREFOX=yes
+#                         default value 90 is used in case of USE_FIREFOX=yes
 #
 # USE_FIREFOX_BUILD       Add buildtime dependency on Firefox.
 #                         Available values: see USE_FIREFOX
@@ -222,13 +222,13 @@ USE_FIREFOX:=				${USE_FIREFOX_BUILD}
 _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
-_FIREFOX_DEFAULT_VERSION=	80
-_FIREFOX_VERSIONS=			80 36
-_FIREFOX_RANGE_VERSIONS=	80+ 36+
+_FIREFOX_DEFAULT_VERSION=	90
+_FIREFOX_VERSIONS=			90 36
+_FIREFOX_RANGE_VERSIONS=	90+ 36+
 
 # For specifying [36, ..]+
-_FIREFOX_36P=	36 ${_FIREFOX_80P}
-_FIREFOX_80P=	80
+_FIREFOX_36P=	36 ${_FIREFOX_90P}
+_FIREFOX_90P=	90
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
 .if ${USE_FIREFOX} == "yes"
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 .endif
 
 # Dependence lines for different Firefox versions
-80_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+90_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 36_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox36
 
 # Add dependencies
