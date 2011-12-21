@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Digest-MD5-File>=0:${PORTSDIR}/security/p5-Digest-MD5-File \
 		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-StrictConstructor>=0.08:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
+		p5-MooseX-StrictConstructor>=0.16:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-MooseX-Types-DateTime-MoreCoercions>=0.07:${PORTSDIR}/devel/p5-MooseX-Types-DateTime-MoreCoercions \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
