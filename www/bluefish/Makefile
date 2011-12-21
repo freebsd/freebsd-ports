@@ -7,16 +7,18 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	2.0.3
+PORTVERSION=	2.2.0
 CATEGORIES=	www editors
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
+		http://bluefish.mrball.net/stable/source/ \
+		SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		aspell.16:${PORTSDIR}/textproc/aspell \
-		enchant.1:${PORTSDIR}/textproc/enchant
+		enchant.1:${PORTSDIR}/textproc/enchant \
+		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -28,16 +30,14 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
+CONFIGURE_ARGS=	--with-gtk2 \
+		--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
-		--without-gnome2_4-mime \
-		--without-gnome2_4-appreg \
 		--with-icon-path=${PREFIX}/share/pixmaps
 
 MAN1=		bluefish.1
 
 OPTIONS=	DEBUG "Enable debugging output" Off \
-		SPLASH "Show splash screen at startup" On \
 		TIDY "Include Tidy HTML cleanup program" Off \
 		WEBLINT "Include Weblint syntax and style checker" On
 
@@ -58,10 +58,6 @@ PLIST_SUB+=		NLS="@comment "
 .else
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
-.endif
-
-.if defined(WITHOUT_SPLASH)
-CONFIGURE_ARGS+=	--disable-splash-screen
 .endif
 
 .if defined(WITH_TIDY)
