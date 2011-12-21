@@ -15,7 +15,7 @@
 # mpd_flags (string):	Set to "-b" by default.
 #			Extra flags passed to start command.
 #
-# See mpd(8) for flags.
+# See mpd5(8) for flags.
 #
 
 . /etc/rc.subr

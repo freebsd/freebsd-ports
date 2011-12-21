@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	5.5
+DISTVERSION=	5.6
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 DIST_SUBDIR=	mpd5
 
 MAINTAINER=	mav@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
-
-LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
 
 LATEST_LINK=	mpd5
 
