@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/mail/postfix-current/files/pkg-install.in,v 1.3 2011-07-30 01:34:47 sahil Exp $
+#	$FreeBSD: /tmp/pcvs/ports/mail/postfix-current/files/pkg-install.in,v 1.4 2011-12-21 22:45:17 sahil Exp $
 #
 
 # If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
@@ -72,7 +72,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 	upgrade-package
 fi
 
-if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" ]; then
+if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" -a -f "${MC}" ]; then
 	egrep -q "^sendmail.*${PREFIX}/sbin/sendmail"    ${MC} && \
 	egrep -q "^send-mail.*${PREFIX}/sbin/sendmail"   ${MC} && \
 	egrep -q "^mailq.*${PREFIX}/sbin/sendmail"       ${MC} && \

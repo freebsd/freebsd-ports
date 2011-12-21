@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.9-20111205
+DISTVERSION=	2.9-20111219
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -74,9 +74,9 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
-	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
-	relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
+	header_checks.5 ldap_table.5 master.5 memcache_table.5 mysql_table.5 \
+	nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 \
+	regexp_table.5 relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
