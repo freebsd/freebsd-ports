@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tesseract
-PORTVERSION=	3.00
-PORTREVISION=	1
+PORTVERSION=	3.01
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(NOPORTDATA) || make(makesum)
@@ -18,20 +17,28 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LICENSE=	ASL
+
+LIB_DEPENDS=	lept.2:${PORTSDIR}/graphics/leptonica
 
 DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBTIFF_CFLAGS="-I${LOCALBASE}/include"\
-		LIBTIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
-LICENSE=	ASL
+USE_AUTOTOOLS=	automake
 USE_LDCONFIG=	yes
+
+CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=	cntraining.1 combine_tessdata.1 mftraining.1 tesseract.1 \
+	unicharset_extractor.1 wordlist2dawg.1
+MAN5=	unicharambigs.5 unicharset.5
 
 .include <bsd.port.pre.mk>
 
-TESSERACT_XTERM ?=	${LOCALBASE}/bin/xterm
+.if defined(USE_GCC) || !empty(CC:M*gcc4*)
+CXXFLAGS+=	-fpermissive
+.endif
 
 .ifndef NOPORTDATA
 DATADIR=	${PREFIX}/share/tessdata
@@ -39,25 +46,17 @@ PORTDATA=	eng.traineddata
 .endif
 
 .ifndef NOPORTDOCS
-PORTDOCS=	AUTHORS ChangeLog NEWS README ReleaseNotes
+PORTDOCS=	AUTHORS ChangeLog README ReleaseNotes
 .endif
 
 .ifndef NOPORTEXAMPLES
 PORTEXAMPLES=	eurotext.tif phototest.tif
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The fallback xterm-compatible terminal to be used"
-	@${ECHO_MSG} "for debugging purposes may be overridden by"
-	@${ECHO_MSG} "defining TESSERACT_XTERM"
-	@${ECHO_MSG} ""
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/xterm|${TESSERACT_XTERM}|'\
-		${WRKSRC}/ccutil/debugwin.cpp
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '1s|.*|/*|' ${WRKSRC}/ccutil/strngs.h
 
 post-install:
 .ifndef NOPORTDATA
