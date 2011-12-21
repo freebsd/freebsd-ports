@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-debug-ide
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.16
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,14 +18,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/rdebug-ide
 
-MANUAL_PACKAGE_BUILD=	keeps hanging on pointyhat
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
