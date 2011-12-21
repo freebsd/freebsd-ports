@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opendylan
-DISTVERSION=	1.0beta4
+DISTVERSION=	2011.1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.opendylan.org/downloads/opendylan/${DISTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-FreeBSD6
+MASTER_SITES=	http://opendylan.org/downloads/opendylan/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-FreeBSD
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hannes@mehnert.org
 COMMENT=	Open Dylan project native command-line compiler for Dylan
 
 IA32_BINARY_PORT=	yes
@@ -19,13 +19,9 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
-WRAPPERS=	opendylan make-dylan-app
+WRAPPERS=	dylan-compiler make-dylan-app dswank
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
-.endif
 
 do-build:
 .for f in ${WRAPPERS}
@@ -45,7 +41,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/License.txt ${DOCSDIR}
 .endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>
