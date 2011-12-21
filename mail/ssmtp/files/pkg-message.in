@@ -1,6 +1,15 @@
 sSMTP has been installed successfully.
 
-To replace sendmail with ssmtp type "make replace"
+To replace sendmail with ssmtp type "make replace" or change 
+your /etc/mail/mailer.conf to:
+
+sendmail	/usr/local/sbin/ssmtp
+send-mail	/usr/local/sbin/ssmtp
+mailq		/usr/local/sbin/ssmtp
+newaliases	/usr/local/sbin/ssmtp
+hoststat	/usr/bin/true
+purgestat	/usr/bin/true
+
 
 However, before you can use the program, you should copy the files
 "revaliases.sample" and "ssmtp.conf.sample" in %%PREFIX%%/etc/ssmtp
