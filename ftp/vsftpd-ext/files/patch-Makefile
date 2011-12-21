@@ -1,0 +1,14 @@
+--- ./Makefile.orig	2011-12-13 10:14:07.000000000 +0200
++++ ./Makefile	2011-12-13 10:15:30.000000000 +0200
+@@ -3,9 +3,9 @@
+ INSTALL	=       install
+ IFLAGS  = -idirafter dummyinc
+ #CFLAGS = -g
+-CFLAGS	=       -O2 -Wall -W -Wshadow #-pedantic -Werror -Wconversion
++CFLAGS	= -O2 -pipe -march=prescott -fno-strict-aliasing       -O2 -Wall -W -Wshadow #-pedantic -Werror -Wconversion
+ 
+-LIBS	=       -lcap -ldl -lcrypt    -lpam    -lwrap -lnsl    -lssl -lcrypto
++LIBS=	-lpam
+ #                                     |        |               + VSF_BUILD_SSL
+ #                                     |        + VSF_BUILD_TCPWRAPPERS
+ #                                     + VSF_BUILD_PAM
