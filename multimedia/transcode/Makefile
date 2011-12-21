@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	1.1.5
-PORTREVISION=	19
+PORTVERSION=	1.1.7
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_BERLIOS} \
-		http://fromani.exit1.org/
-MASTER_SITE_SUBDIR=	tcforge
+MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A text-console utility for video stream processing
 
-LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
@@ -30,9 +26,7 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} \
-			--with-libavcodec-prefix=${LOCALBASE} \
-			--enable-oss
+CONFIGURE_ARGS+=	--enable-oss
 
 MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
@@ -79,7 +73,7 @@ CONFIGURE_ARGS+=	--without-x
 
 .if defined(WITH_MPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} --enable-libmpeg2 --enable-libmpeg2convert
+CONFIGURE_ARGS+=	--enable-libmpeg2 --enable-libmpeg2convert
 .else
 CONFIGURE_ARGS+=	--disable-libmpeg2
 .endif
@@ -89,14 +83,14 @@ CONFIGURE_ARGS+=	--enable-bktr
 .endif
 
 .if !defined(WITHOUT_POSTPROC)
-CONFIGURE_ARGS+=	--with-libpostproc-prefix=${LOCALBASE} --enable-libpostproc
+CONFIGURE_ARGS+=	--enable-libpostproc
 .else
 CONFIGURE_ARGS+=	--disable-libpostproc
 .endif
 
 .if defined(WITH_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--with-freetype2-prefix=${LOCALBASE} --enable-freetype2
+CONFIGURE_ARGS+=	--enable-freetype2
 .else
 CONFIGURE_ARGS+=	--disable-freetype2
 .endif
@@ -117,28 +111,28 @@ CONFIGURE_ARGS+=	--disable-xvid
 
 .if defined(WITH_X264)
 LIB_DEPENDS+=	x264.116:${PORTSDIR}/multimedia/x264
-CONFIGURE_ARGS+=	--with-x264-prefix=${LOCALBASE} --enable-x264
+CONFIGURE_ARGS+=	--enable-x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if defined(WITH_OGG)
 LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE} --enable-ogg
+CONFIGURE_ARGS+=	--enable-ogg
 .else
 CONFIGURE_ARGS+=	--disable-ogg
 .endif
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE} --enable-vorbis
+CONFIGURE_ARGS+=	--enable-vorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 .endif
 
 .if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=	--with-theora-prefix=${LOCALBASE} --enable-theora
+CONFIGURE_ARGS+=	--enable-theora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
@@ -152,14 +146,14 @@ CONFIGURE_ARGS+=	--disable-libdvdread
 
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=	--with-pal-yuv=YV12 --with-libdv-prefix=${LOCALBASE} --enable-libdv
+CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if defined(WITH_QUICKTIME)
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
-CONFIGURE_ARGS+=	--with-libquicktime-prefix=${LOCALBASE} --enable-libquicktime
+CONFIGURE_ARGS+=	--enable-libquicktime
 .else
 CONFIGURE_ARGS+=	--disable-libquicktime
 .endif
@@ -188,21 +182,21 @@ CONFIGURE_ARGS+=	--disable-faac
 
 .if !defined(WITHOUT_XML) && (defined(WITH_XML) || ${HAVE_GNOME:Mlibxml2}!="")
 USE_GNOME+=	libxml2
-CONFIGURE_ARGS+=	--with-libxml2-prefix=${LOCALBASE} --enable-libxml2
+CONFIGURE_ARGS+=	--enable-libxml2
 .else
 CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if defined(WITH_MJPEG)
 LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
-CONFIGURE_ARGS+=	--with-mjpegtools-prefix=${LOCALBASE} --enable-mjpegtools
+CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools
 .endif
 
 .if !defined(WITHOUT_SDL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl}!="")
 USE_SDL+=	sdl
-CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE} --enable-sdl
+CONFIGURE_ARGS+=	--enable-sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
@@ -238,7 +232,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
 		-e 's|-O[236]|${CFLAGS}|'
 .endif
-	@${REINPLACE_CMD} -E -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
+	@${REINPLACE_CMD} -E -e 's|loff_t|uint64_t|' ${WRKSRC}/avilib/avidump.c
 	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
 	@${REINPLACE_CMD} -e '/^static.*lrint/s|static ||' ${WRKSRC}/filter/filter_modfps.c
 
