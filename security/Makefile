@@ -384,6 +384,7 @@
     SUBDIR += p5-Authen-Ticket
     SUBDIR += p5-Authen-TypeKey
     SUBDIR += p5-Business-PayPal-EWP
+    SUBDIR += p5-CACertOrg-CA
     SUBDIR += p5-CSP
     SUBDIR += p5-Cisco-Hash
     SUBDIR += p5-Crypt-Anubis
