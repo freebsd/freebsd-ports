@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	guard
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool to easily handle events on file system modifications
 
-RUN_DEPENDS=	rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS=	rubygem-ffi>=0.5.0:${PORTSDIR}/devel/rubygem-ffi \
+		rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
