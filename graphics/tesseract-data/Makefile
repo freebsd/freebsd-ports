@@ -7,6 +7,7 @@
 
 PORTNAME=	tesseract-data
 PORTVERSION=	3.00
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${TESSERACT_LANGS:O:u:S|$|.traineddata.gz|}
@@ -21,7 +22,7 @@ PROJECTHOST=	tesseract-ocr
 LICENSE=	ASL
 NO_BUILD=	yes
 
-EXTRA_LANGS=	bul chi_tra chi_sim cat ces dan dan-frak deu deu-frak ell \
+EXTRA_LANGS=	bul cat ces chi_sim chi_tra chr dan dan-frak deu deu-frak ell \
 		fin fra hun ind ita jpn kor lav lit nld nor pol por ron rus slk \
 		slv spa srp swe swe-frak tgl tur ukr vie
 
