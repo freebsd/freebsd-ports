@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -110,7 +111,7 @@ CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.116:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.119:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
