@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance/.packlist
 %%SITE_PERL%%/Geo/Distance.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Distance
-@dirrmtry %%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%%SITE_PERL%%/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/Geo
