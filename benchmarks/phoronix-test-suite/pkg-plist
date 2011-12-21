@@ -23,10 +23,12 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/debug_test_download_links.php
 %%DATADIR%%/pts-core/commands/default_benchmark.php
 %%DATADIR%%/pts-core/commands/default_run.php
+%%DATADIR%%/pts-core/commands/detailed_system_info.php
 %%DATADIR%%/pts-core/commands/diagnostics.php
 %%DATADIR%%/pts-core/commands/download_test_files.php
 %%DATADIR%%/pts-core/commands/dump_core_storage.php
 %%DATADIR%%/pts-core/commands/dump_documentation.php
+%%DATADIR%%/pts-core/commands/dump_openbenchmarking_indexes.php
 %%DATADIR%%/pts-core/commands/dump_phodevi_smart_cache.php
 %%DATADIR%%/pts-core/commands/dump_possible_options.php
 %%DATADIR%%/pts-core/commands/extract_from_result_file.php
@@ -53,6 +55,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/module_info.php
 %%DATADIR%%/pts-core/commands/module_setup.php
 %%DATADIR%%/pts-core/commands/network_setup.php
+%%DATADIR%%/pts-core/commands/openbenchmarking_changes.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_launcher.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_login.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_refresh.php
@@ -175,6 +178,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_sensor.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_fanspeed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_freq.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_power.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_temp.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_usage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_voltage.php
@@ -183,6 +187,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_power.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_temp.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_voltage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_read_speed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_temp.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_write_speed.php
