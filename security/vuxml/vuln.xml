@@ -68,7 +68,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>seamonkey</name>
-	<range><lt>2.9</lt></range>
+	<range><lt>2.6</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -102,6 +102,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-12-20</discovery>
       <entry>2011-12-21</entry>
+      <modified>2011-12-21</modified>
     </dates>
   </vuln>
 
