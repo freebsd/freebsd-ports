@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zmq
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 PKGNAMESUFFIX=	-devel
@@ -39,6 +39,7 @@ MAN3=	\
 	zmq_term.3 \
 	zmq_msg_init_size.3 \
 	zmq_errno.3 \
+	zmq_getmsgopt.3 \
 	zmq_recv.3 \
 	zmq_socket.3 \
 	zmq_sendmsg.3 \
