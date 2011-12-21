@@ -47,6 +47,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3ff776b-2ba6-11e1-93c6-0011856a6e37">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>4.0,1</gt><lt>9.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>9.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.6</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>9.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.9</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>4.0</gt><lt>9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+          <p>MFSA 2011-53 Miscellaneous memory safety hazards (rv:9.0)</p>
+          <p>MFSA 2011-54 Potentially exploitable crash in the YARR regular expression library</p>
+          <p>MFSA 2011-55 nsSVGValue out-of-bounds access</p>
+          <p>MFSA 2011-56 Key detection without JavaScript via SVG animation</p>
+          <p>MFSA 2011-58 Crash scaling video to extreme sizes</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>2011-3658</cvename>
+	<cvename>2011-3660</cvename>
+	<cvename>2011-3661</cvename>
+	<cvename>2011-3663</cvename>
+	<cvename>2011-3665</cvename>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-53.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-54.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-55.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-56.html</url>
+	<url>http://www.mozilla.org/security/announce/2011/mfsa2011-58.html</url>
+    </references>
+    <dates>
+      <discovery>2011-12-20</discovery>
+      <entry>2011-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ba65bfd-2a40-11e1-b96e-00215af774f0">
     <topic>unbound -- denial of service vulnerabilities from nonstandard
       redirection and denial of existence</topic>
