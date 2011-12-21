@@ -92,8 +92,10 @@ lib/%%APP_NAME%%/hyphenation/hyph_fr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_gl.dic
 lib/%%APP_NAME%%/hyphenation/hyph_hr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_hsb.dic
+lib/%%APP_NAME%%/hyphenation/hyph_hu.dic
 lib/%%APP_NAME%%/hyphenation/hyph_ia.dic
 lib/%%APP_NAME%%/hyphenation/hyph_is.dic
+lib/%%APP_NAME%%/hyphenation/hyph_it.dic
 lib/%%APP_NAME%%/hyphenation/hyph_kmr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_la.dic
 lib/%%APP_NAME%%/hyphenation/hyph_lt.dic
@@ -106,6 +108,7 @@ lib/%%APP_NAME%%/hyphenation/hyph_ru.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sh.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sl.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sv.dic
+lib/%%APP_NAME%%/hyphenation/hyph_tr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_uk.dic
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/isp/SpamAssassin.sfd
