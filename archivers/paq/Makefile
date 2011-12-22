@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20111128
+PORTVERSION=	20111221
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	libzpaq400.zip wbpe110.zip zpaq402.zip zpipe.201.zip
+DISTFILES=	libzpaq401.zip wbpe110.zip zpaq403.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4a.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		calgarytest.zpaq exe_j1.zip fast.cfg jpg_test2.zip max.cfg \
@@ -45,7 +45,7 @@ MAN3=	libzpaq.3
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if !defined(WITHOUT_OPENMP) && empty(CXX:M*clang++*)
+.if !defined(WITHOUT_OPENMP) && empty(CXX:M*clang*)
 PTHREAD_CFLAGS+=	-fopenmp
 .endif
 
@@ -84,8 +84,6 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' \
-		${WRKSRC}/libzpaq.cpp
 .if !defined(NOPORTDATA)
 	@${REINPLACE_CMD} -e 's|c:\\res\\zpaq\\||' ${WRKSRC}/bwt[12].cfg \
 		${WRKSRC}/bwtrle[12].cfg
