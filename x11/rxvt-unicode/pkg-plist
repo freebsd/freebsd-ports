@@ -2,11 +2,13 @@ bin/urxvt
 bin/urxvtc
 bin/urxvtcd
 bin/urxvtd
+%%PERL%%lib/urxvt/perl/bell-command
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/clipboard-osc
 %%PERL%%lib/urxvt/perl/confirm-paste
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
+%%PERL%%lib/urxvt/perl/keysym-list
 %%PERL%%lib/urxvt/perl/kuake
 %%PERL%%lib/urxvt/perl/macosx-clipboard
 %%PERL%%lib/urxvt/perl/macosx-clipboard-native
