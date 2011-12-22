@@ -457,6 +457,7 @@ alpng                           ports/graphics/alpng
 alsa-lib                        ports/audio/alsa-lib
 alsa-plugins                    ports/audio/alsa-plugins
 alsa-utils                      ports/audio/alsa-utils
+alt-ergo                        ports/math/alt-ergo
 altermime                       ports/mail/altermime
 althea                          ports/mail/althea
 am-aspell                       ports/textproc/am-aspell
@@ -6404,7 +6405,6 @@ ja-ruby-man                     ports/japanese/ruby-man
 ja-ruby-mecab                   ports/japanese/ruby-mecab
 ja-ruby-ming                    ports/japanese/ruby-ming
 ja-ruby-rdic                    ports/japanese/ruby-rdic
-ja-ruby-refe                    ports/japanese/ruby-refe
 ja-ruby-romkan                  ports/japanese/ruby-romkan
 ja-ruby-slang                   ports/japanese/ruby-slang
 ja-ruby-uconv                   ports/japanese/ruby-uconv
@@ -9175,6 +9175,8 @@ minder                          ports/net-p2p/minder
 mindfocus                       ports/games/mindfocus
 mindguard                       ports/games/mindguard
 mindterm-binary                 ports/security/mindterm-binary
+minecraft-client                ports/games/minecraft-client
+minecraft-server                ports/games/minecraft-server
 mined                           ports/editors/mined
 minetest                        ports/games/minetest
 ming                            ports/graphics/ming
@@ -9542,7 +9544,6 @@ mpatrol                         ports/devel/mpatrol
 mpb                             ports/science/mpb
 mpd                             ports/lang/mpd
 mpd-l2tp-ipv6pd-client          ports/net/mpd-l2tp-ipv6pd-client
-mpd4                            ports/net/mpd4
 mpd5                            ports/net/mpd5
 mpdas                           ports/audio/mpdas
 mpdbrowser                      ports/audio/mpdbrowser
@@ -9678,9 +9679,14 @@ mupen64plus                     ports/emulators/mupen64plus
 mupen64plus-audio-sdl           ports/emulators/mupen64plus-audio-sdl
 mupen64plus-core                ports/emulators/mupen64plus-core
 mupen64plus-input-sdl           ports/emulators/mupen64plus-input-sdl
+mupen64plus-plugins             ports/emulators/mupen64plus-plugins
 mupen64plus-rsp-hle             ports/emulators/mupen64plus-rsp-hle
+mupen64plus-rsp-z64             ports/emulators/mupen64plus-rsp-z64
 mupen64plus-ui-console          ports/emulators/mupen64plus-ui-console
+mupen64plus-video-arachnoid     ports/emulators/mupen64plus-video-arachnoid
+mupen64plus-video-glide64       ports/emulators/mupen64plus-video-glide64
 mupen64plus-video-rice          ports/emulators/mupen64plus-video-rice
+mupen64plus-video-z64           ports/emulators/mupen64plus-video-z64
 murmur                          ports/audio/murmur
 murrine-configurator            ports/x11-themes/murrine-configurator
 musca                           ports/x11-wm/musca
@@ -9734,6 +9740,7 @@ mysql-proxy                     ports/databases/mysql-proxy
 mysql-q4m                       ports/databases/mysql-q4m
 mysql-udf                       ports/databases/mysql-udf
 mysql-udf-preg                  ports/databases/mysql-udf-preg
+mysql-udf-sys                   ports/databases/mysql-udf-sys
 mysql-workbench51               ports/databases/mysql-workbench51
 mysql-workbench52               ports/databases/mysql-workbench52
 mysql-xql                       ports/databases/mysql-xql
@@ -10016,6 +10023,7 @@ nfsshell                        ports/net/nfsshell
 ng_car                          ports/net/ng_car
 ng_daphne                       ports/net/ng_daphne
 ng_ipacct                       ports/net-mgmt/ng_ipacct
+ng_mikrotik_eoip                ports/net/ng_mikrotik_eoip
 nget                            ports/news/nget
 nginx                           ports/www/nginx
 nginx-devel                     ports/www/nginx-devel
@@ -11028,6 +11036,7 @@ p5-Business-TW-TSIB-VirtualAccount  ports/finance/p5-Business-TW-TSIB-VirtualAcc
 p5-Business-UPS                 ports/misc/p5-Business-UPS
 p5-Business-WorldPay-Junior     ports/finance/p5-Business-WorldPay-Junior
 p5-C-Scan                       ports/devel/p5-C-Scan
+p5-CACertOrg-CA                 ports/security/p5-CACertOrg-CA
 p5-CAD-Calc                     ports/math/p5-CAD-Calc
 p5-CAD-Drawing                  ports/graphics/p5-CAD-Drawing
 p5-CAD-Drawing-Template         ports/graphics/p5-CAD-Drawing-Template
@@ -15452,6 +15461,7 @@ p5-business-ups                 ports/misc/p5-Business-UPS
 p5-business-worldpay-junior     ports/finance/p5-Business-WorldPay-Junior
 p5-bz-client                    ports/devel/p5-BZ-Client
 p5-c-scan                       ports/devel/p5-C-Scan
+p5-cacertorg-ca                 ports/security/p5-CACertOrg-CA
 p5-cache                        ports/devel/p5-Cache
 p5-cache-againstfile            ports/devel/p5-Cache-AgainstFile
 p5-cache-bdb                    ports/databases/p5-Cache-BDB
@@ -26714,6 +26724,7 @@ vodcatcher                      ports/multimedia/vodcatcher
 vodmr                           ports/mail/vodmr
 voipong                         ports/audio/voipong
 volleyball                      ports/games/volleyball
+volta                           ports/www/volta
 voltcraft304                    ports/misc/voltcraft304
 volumecontrol.app               ports/audio/volumecontrol.app
 vor                             ports/games/vor
