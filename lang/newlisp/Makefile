@@ -13,7 +13,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
 HAS_CONFIGURE=	yes
@@ -123,6 +123,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/libpq.so.5.1,${LOCALBASE}/lib/libpq.so.5," \
 		${WRKSRC}/modules/postgres.lsp
+	@${REINPLACE_CMD} -E -e \
+		"s,/usr/share/newlisp,${LOCALBASE}/share/newlisp," \
+		${WRKSRC}/newlisp.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin/
