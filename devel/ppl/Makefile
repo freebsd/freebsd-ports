@@ -52,4 +52,10 @@ post-patch:
 
 PLIST_SUB+=	PWL_DOC_PREFIX=${PWL_DOC_PREFIX}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on sparc64-9: complains about fpu-sparc.inlines.hh
+.endif
+
+.include <bsd.port.post.mk>
