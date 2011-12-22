@@ -47,6 +47,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c83145d-2c95-11e1-89b4-001ec9578670">
+    <topic>phpMyAdmin -- Multiple XSS</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><gt>3.4</gt><lt>3.4.9.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-19.php">
+	  <p>Using crafted url parameters, it was possible to produce XSS on
+	     the export panels in the server, database and table sections.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-20.php">
+	  <p>Crafted values entered in the setup interface can produce XSS;
+	     also, if the config directory exists and is writeable, the XSS
+	     payload can be saved to this directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4780</cvename>
+      <cvename>CVE-2011-4782</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-19.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-20.php</url>
+    </references>
+    <dates>
+      <discovery>2011-12-16</discovery>
+      <entry>2011-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3ff776b-2ba6-11e1-93c6-0011856a6e37">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
