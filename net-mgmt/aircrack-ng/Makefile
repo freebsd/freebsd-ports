@@ -39,6 +39,9 @@ OPTIONS=	SQLITE	"Use SQLite for storing pre-computed key tables" off
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
 .endif
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on sparc64-9
+.endif
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=	yes
