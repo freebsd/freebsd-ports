@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.7.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
 DISTNAME=	sqlite-src-3070900
