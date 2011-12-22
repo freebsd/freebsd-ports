@@ -8,7 +8,8 @@
 PORTNAME=	aestats
 PORTVERSION=	5.39
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	ftp://download:download@download.hugelaser.com/aeons.poweredbylasers.com/${PORTNAME}/ \
+		http://freebsd.nsu.ru/distfiles/ ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
@@ -26,7 +27,7 @@ MAKE_ARGS=	cc=${CC}
 
 post-extract: .SILENT
 	${CP} ${FILESDIR}/fbsd_stub.c ${WRKSRC}
-	${REINPLACE_CMD} -e 's,aes.o,& fbsd_stub.o,' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's,aes\.o,& fbsd_stub.o,' ${WRKSRC}/${MAKEFILE}
 	${ECHO_CMD} >> ${LINUXBINDIR}/alias-example.txt
 	${MV} ${WRKSRC}/../unsupported/system/Unreal-225 ${WRKSRC}/../unrealmod
 
