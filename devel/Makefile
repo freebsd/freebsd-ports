@@ -3298,6 +3298,7 @@
     SUBDIR += py-zope.app.basicskin
     SUBDIR += py-zope.app.broken
     SUBDIR += py-zope.app.cache
+    SUBDIR += py-zope.app.component
     SUBDIR += py-zope.app.container
     SUBDIR += py-zope.app.content
     SUBDIR += py-zope.app.debug

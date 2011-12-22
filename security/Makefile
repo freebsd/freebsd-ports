@@ -687,6 +687,7 @@
     SUBDIR += pxytest
     SUBDIR += py-AccessControl
     SUBDIR += py-PF
+    SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-bcrypt
     SUBDIR += py-cerealizer
@@ -707,8 +708,11 @@
     SUBDIR += py-openssl
     SUBDIR += py-otr
     SUBDIR += py-paramiko
+    SUBDIR += py-plone.app.openid
     SUBDIR += py-plone.keyring
+    SUBDIR += py-plone.openid
     SUBDIR += py-plone.protect
+    SUBDIR += py-plone.session
     SUBDIR += py-posix1e
     SUBDIR += py-pow
     SUBDIR += py-pyclamd
@@ -725,6 +729,11 @@
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
+    SUBDIR += py-zope.app.authentication
+    SUBDIR += py-zope.app.localpermission
+    SUBDIR += py-zope.app.principalannotation
+    SUBDIR += py-zope.app.security
+    SUBDIR += py-zope.app.securitypolicy
     SUBDIR += py-zope.authentication
     SUBDIR += py-zope.login
     SUBDIR += py-zope.password
