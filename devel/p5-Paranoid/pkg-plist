@@ -13,9 +13,11 @@
 %%SITE_PERL%%/Paranoid/BerkeleyDB.pm
 %%SITE_PERL%%/Paranoid/Module.pm
 %%SITE_PERL%%/Paranoid/Network.pm
+%%SITE_PERL%%/Paranoid/Network/Socket.pm
 %%SITE_PERL%%/Paranoid/Debug.pm
 %%SITE_PERL%%/Paranoid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid/.packlist
 @dirrm %%SITE_PERL%%/Paranoid/Log
+@dirrm %%SITE_PERL%%/Paranoid/Network
 @dirrm %%SITE_PERL%%/Paranoid
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid

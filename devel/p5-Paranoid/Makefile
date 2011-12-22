@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Paranoid
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,6 +42,7 @@ MAN3=		Paranoid::Data.3 \
 		Paranoid::BerkeleyDB.3 \
 		Paranoid::Module.3 \
 		Paranoid::Network.3 \
+		Paranoid::Network::Socket.3 \
 		Paranoid::Log::Buffer.3 \
 		Paranoid::Debug.3
 
