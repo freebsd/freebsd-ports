@@ -58,4 +58,10 @@ post-install:
 	@${ECHO_MSG} 'set suid bit if do not trust all users of this machine.'
 	@${ECHO_MSG} '********************************************************'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not build on sparc64-9
+.endif
+
+.include <bsd.port.post.mk>
