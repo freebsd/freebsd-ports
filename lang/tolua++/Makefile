@@ -33,4 +33,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${LUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${PREFIX}/lib/libtolua++-${LUA_VER}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not install on sparc64-9
+.endif
+
+.include <bsd.port.post.mk>
