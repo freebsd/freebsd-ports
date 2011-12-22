@@ -101,6 +101,10 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on sparc64-9: storage size of 'utx' isn't known
+.endif
+
 .if !defined(WITHOUT_RATIO)
 MODULES:=${MODULES}:mod_ratio
 .endif
