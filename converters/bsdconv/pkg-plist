@@ -4,6 +4,7 @@ include/bsdconv.h
 lib/libbsdconv.so
 lib/libbsdconv.so.7
 %%DATADIR%%/from/3F
+%%DATADIR%%/from/3F.so
 %%DATADIR%%/from/ANSI-CONTROL
 %%DATADIR%%/from/ANSI-CONTROL.so
 %%DATADIR%%/from/ASCII
@@ -36,6 +37,8 @@ lib/libbsdconv.so.7
 %%DATADIR%%/from/_CP1252
 %%DATADIR%%/from/_CP874
 %%DATADIR%%/from/_CP949
+%%DATADIR%%/from/_GB18030
+%%DATADIR%%/from/_GB18030.so
 %%DATADIR%%/from/_GBK
 %%DATADIR%%/from/_ISO-8859-1
 %%DATADIR%%/from/_SHIFT-JIS
@@ -50,13 +53,15 @@ lib/libbsdconv.so.7
 %%DATADIR%%/inter/BIG5-DEFRAG
 %%DATADIR%%/inter/BIG5-DEFRAG.so
 %%DATADIR%%/inter/FROM_ALIAS
+%%DATADIR%%/inter/FROM_ALIAS.so
 %%DATADIR%%/inter/FULL
 %%DATADIR%%/inter/HALF
 %%DATADIR%%/inter/INTER_ALIAS
-%%DATADIR%%/inter/JP_PINYIN
+%%DATADIR%%/inter/KANA_PHONETIC
 %%DATADIR%%/inter/LOWER
 %%DATADIR%%/inter/MAC
 %%DATADIR%%/inter/NL2BR
+%%DATADIR%%/inter/NOBOM
 %%DATADIR%%/inter/SCORE
 %%DATADIR%%/inter/SCORE.so
 %%DATADIR%%/inter/SCORE_TRAIN
@@ -64,6 +69,7 @@ lib/libbsdconv.so.7
 %%DATADIR%%/inter/SPLIT
 %%DATADIR%%/inter/SPLIT.so
 %%DATADIR%%/inter/TO_ALIAS
+%%DATADIR%%/inter/TO_ALIAS.so
 %%DATADIR%%/inter/UNIX
 %%DATADIR%%/inter/UPPER
 %%DATADIR%%/inter/UPSIDEDOWN
@@ -128,8 +134,14 @@ lib/libbsdconv.so.7
 %%DATADIR%%/to/UTF-32BE.so
 %%DATADIR%%/to/UTF-32LE
 %%DATADIR%%/to/UTF-32LE.so
+%%DATADIR%%/to/_CP1251
+%%DATADIR%%/to/_CP1252
+%%DATADIR%%/to/_CP874
 %%DATADIR%%/to/_CP936
+%%DATADIR%%/to/_CP949
 %%DATADIR%%/to/_CP950
+%%DATADIR%%/to/_GB18030
+%%DATADIR%%/to/_GB18030.so
 %%DATADIR%%/to/_GBK
 %%DATADIR%%/to/_ISO-8859-1
 %%DATADIR%%/to/_UAO250
