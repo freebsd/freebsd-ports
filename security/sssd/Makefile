@@ -68,6 +68,9 @@ MAN8=		pam_sss.8 sss_cache.8 sss_groupadd.8 sss_groupdel.8 \
 .if ${OSVERSION} < 800107
 IGNORE=		is not supported prior to 8.0-RELEASE
 .endif
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not link on ia64, powerpc, or sparc64
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/src/util/signal.c
