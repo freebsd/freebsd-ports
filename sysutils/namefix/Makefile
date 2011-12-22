@@ -55,4 +55,10 @@ do-install:
 	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
 	${INSTALL_DATA} ${WRKSRC}/txt/*.txt ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not install on ia64, powerpc, or sparc64
+.endif
+
+.include <bsd.port.post.mk>
