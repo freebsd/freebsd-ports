@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdfcube
-PORTVERSION=	0.0.3
-PORTREVISION=	5
+DISTVERSION=	0.0.4-beta
 CATEGORIES=	print
 MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 
@@ -18,11 +17,10 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		boost_program_options:${PORTSDIR}/devel/boost-libs
 
-BROKEN=		Doesn't build with poppler 0.18
-
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PLIST_FILES=	bin/pdfcube
 
