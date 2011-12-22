@@ -34,4 +34,10 @@ post-extract:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
 	@${RM} ${WRKSRC}/libmatroska2/test/test.proj
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: gmake: GNUmakefile: No such file or directory
+.endif
+
+.include <bsd.port.post.mk>
