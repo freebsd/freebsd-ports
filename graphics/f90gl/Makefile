@@ -35,6 +35,10 @@ FPIC=	-fPIC
 .else
 FPIC=	-fpic
 .endif
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not load on sparc64-9
+.endif
+
 SVERSION=1
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
