@@ -19,6 +19,7 @@ lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
+lib/%%APP_NAME%%/distribution/extensions/tbtestpilot@labs.mozilla.com.xpi
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
@@ -40,8 +41,10 @@ lib/%%APP_NAME%%/hyphenation/hyph_fr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_gl.dic
 lib/%%APP_NAME%%/hyphenation/hyph_hr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_hsb.dic
+lib/%%APP_NAME%%/hyphenation/hyph_hu.dic
 lib/%%APP_NAME%%/hyphenation/hyph_ia.dic
 lib/%%APP_NAME%%/hyphenation/hyph_is.dic
+lib/%%APP_NAME%%/hyphenation/hyph_it.dic
 lib/%%APP_NAME%%/hyphenation/hyph_kmr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_la.dic
 lib/%%APP_NAME%%/hyphenation/hyph_lt.dic
@@ -54,6 +57,7 @@ lib/%%APP_NAME%%/hyphenation/hyph_ru.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sh.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sl.dic
 lib/%%APP_NAME%%/hyphenation/hyph_sv.dic
+lib/%%APP_NAME%%/hyphenation/hyph_tr.dic
 lib/%%APP_NAME%%/hyphenation/hyph_uk.dic
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/isp/SpamAssassin.sfd
@@ -104,6 +108,8 @@ lib/%%APP_NAME%%/updater.ini
 @dirrm lib/%%APP_NAME%%/hyphenation
 @dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/distribution/extensions
+@dirrm lib/%%APP_NAME%%/distribution
 @dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/messenger
