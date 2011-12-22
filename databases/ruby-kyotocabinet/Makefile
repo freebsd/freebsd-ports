@@ -21,7 +21,7 @@ LIB_DEPENDS=	kyotocabinet:${PORTSDIR}/databases/kyotocabinet
 
 LICENSE=	GPLv3
 
-#BROKEN=	does not compile
+BROKEN=	does not compile
 
 RUBY_VER=	1.9
 USE_RUBY=	yes
