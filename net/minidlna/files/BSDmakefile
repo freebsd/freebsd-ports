@@ -8,8 +8,7 @@ CFLAGS+=-I${FILESDIR} -I${.CURDIR} -I${LOCALBASE}/include -I${LOCALBASE}/include
 CFLAGS+=-I${LOCALBASE}/include/libavutil
 CFLAGS+=-DPREFIX='"${PREFIX}"' -DOS='"${OS}"' -DOSVERSION='"${VERS}"'
 CFLAGS+=-Wformat -Wunused -Wall
-
-NO_WERROR=	true
+CFLAGS+=-Wno-deprecated-declarations
 
 LDADD+=	-L${LOCALBASE}/lib
 LDADD+=	-lsqlite3 -ljpeg -lexif -lid3tag -logg -lvorbis -lFLAC -lavformat
