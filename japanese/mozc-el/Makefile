@@ -23,6 +23,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 RUN_DEPENDS=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_EMACS=	yes
 USE_GMAKE=	yes
