@@ -38,10 +38,14 @@ do-install:
 	${LN} -sf ${LUA_SUBDIR}/tolua ${PREFIX}/bin/tolua-${LUA_VER}
 	${INSTALL_DATA} ${WRKSRC}/include/tolua.h ${LUA_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua.a ${LUA_LIBDIR}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
+.endif
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not install on sparc64-9
 .endif
 
 .include <bsd.port.post.mk>
