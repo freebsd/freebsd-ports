@@ -196,7 +196,7 @@
 -			break;
 -		srand(pid);
 -		pid = 0;
-+	while (size > 0) {
++	while ((ssize_t)size > 0) {
 +		r = random();
 +		memcpy(buf, &r,
 +		    size > sizeof(r) ? sizeof(r) : size);
