@@ -42,4 +42,10 @@ do-install:
 	(cd ${WRKSRC}/lib/libxml && ${COPYTREE_SHARE} \*.rb ${RUBY_SITELIBDIR}/libxml)
 	${INSTALL_DATA} ${WRKSRC}/ext/libxml/libxml_ruby.so ${RUBY_SITEARCHLIBDIR}/xml/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+BROKEN=	extconf.rb:6: [BUG] Segmentation fault
+.endif
+
+.include <bsd.port.post.mk>
