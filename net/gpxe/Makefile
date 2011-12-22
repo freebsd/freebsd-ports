@@ -34,7 +34,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-NOT_FOR_ARCHS=	powerpc
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
 
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=i386
