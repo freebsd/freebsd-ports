@@ -71,6 +71,10 @@ PLIST_SUB+=	PY="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on sparc64-9
+.endif
+
 .if defined(WITH_LIBOIL)
 LIB_DEPENDS+=	oil:${PORTSDIR}/devel/liboil
 .else
