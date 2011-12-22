@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Unicode-Encoding
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +14,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Unicode aware Catalyst
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-libwww>=5.828:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=1.36:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.8000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=5.837:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Unicode::Encoding.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
