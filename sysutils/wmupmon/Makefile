@@ -9,7 +9,8 @@ PORTNAME=	wmupmon
 PORTVERSION=	0.1.3
 PORTREVISION=	5
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.dockapps.org/files/188/547/
+# URL link over http://freecode.com/projects/wmupmon
+MASTER_SITES=	http://j-z-s.com/projects/downloads/
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	An uptime showing dockapp with a similar look to wmcpuload
