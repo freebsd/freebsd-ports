@@ -23,6 +23,7 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/evtx.pm
 %%SITE_PERL%%/Log2t/input/exif.pm
 %%SITE_PERL%%/Log2t/input/ff_bookmark.pm
+%%SITE_PERL%%/Log2t/input/ff_cache.pm
 %%SITE_PERL%%/Log2t/input/firefox2.pm
 %%SITE_PERL%%/Log2t/input/firefox3.pm
 %%SITE_PERL%%/Log2t/input/ftk_dirlisting.pm
@@ -41,11 +42,13 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/mft.pm
 %%SITE_PERL%%/Log2t/input/mssql_errlog.pm
 %%SITE_PERL%%/Log2t/input/ntuser.pm
+%%SITE_PERL%%/Log2t/input/openvpn.pm
 %%SITE_PERL%%/Log2t/input/opera.pm
 %%SITE_PERL%%/Log2t/input/oxml.pm
 %%SITE_PERL%%/Log2t/input/pcap.pm
 %%SITE_PERL%%/Log2t/input/pdf.pm
 %%SITE_PERL%%/Log2t/input/prefetch.pm
+%%SITE_PERL%%/Log2t/input/proftpd_xferlog.pm
 %%SITE_PERL%%/Log2t/input/recycler.pm
 %%SITE_PERL%%/Log2t/input/restore.pm
 %%SITE_PERL%%/Log2t/input/safari.pm
