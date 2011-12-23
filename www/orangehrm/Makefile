@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	orangehrm
-PORTVERSION=	2.6.11.2
+PORTVERSION=	2.6.12
 CATEGORIES=	www misc
-MASTER_SITES=	SF/${PORTNAME}/stable/2.6.11
+MASTER_SITES=	SF/${PORTNAME}/stable/2.6.12
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source Human Resource Management
