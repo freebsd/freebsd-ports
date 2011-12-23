@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpy
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/${PORTNAME}/SimPy-${PORTVERSION}
@@ -32,13 +32,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkint
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/SimPyDocs && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/SimPyModels && ${FIND} . | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
