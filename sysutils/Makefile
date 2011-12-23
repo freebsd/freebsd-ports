@@ -792,6 +792,7 @@
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbniconfig
+    SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
     SUBDIR += scprotect
