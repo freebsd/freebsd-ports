@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.2.8
+PORTVERSION=		3.2.9
 CATEGORIES=		comms
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
@@ -14,23 +14,24 @@ EXTRACT_SUFX=		.src.tgz
 MAINTAINER=		pawel@FreeBSD.org
 COMMENT=		GUI front end for the efax fax program
 
-LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-			tiff:${PORTSDIR}/graphics/tiff \
-			dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
-
 LICENSE=		GPLv2
+
+LIB_DEPENDS=		cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils \
+			sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+			tiff:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
 
 USE_ICONV=		yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=		gtk20
 GNU_CONFIGURE=		yes
+USE_GCC=		4.4+
 MAKE_JOBS_SAFE=		yes
 
 MAN1=			efax.1 efix.1 efax-gtk.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 
 CONFIGURE_ARGS+=	--with-gtk-version=gtk2
 
