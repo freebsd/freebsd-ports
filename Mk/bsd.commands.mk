@@ -79,7 +79,7 @@ SH?=		/bin/sh
 SORT?=		/usr/bin/sort
 STRIP_CMD?=	/usr/bin/strip
 # Command to run commands as privileged user
-# Example: "/usr/local/bin/sudo sh -c" to use "sudo" instead of "su"
+# Example: "/usr/local/bin/sudo -E sh -c" to use "sudo" instead of "su"
 SU_CMD?=	/usr/bin/su root -c
 SYSCTL?=	/sbin/sysctl
 TAIL?=		/usr/bin/tail
