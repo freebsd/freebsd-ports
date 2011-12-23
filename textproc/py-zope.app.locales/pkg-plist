@@ -1,0 +1,99 @@
+bin/i18nextract
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/TRANSLATE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/de/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/de/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/en/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/en/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/es/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/es/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/extract.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/extract.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/extract.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/fr/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/fr/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/he/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/he/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/hu/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/hu/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/it/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/it/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ja/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ja/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/nl/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/nl/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pl/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pl/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pt_BR/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pt_BR/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pygettext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pygettext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pygettext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ru/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ru/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tr/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tr/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_CN/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_CN/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_TW/LC_MESSAGES/zope.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_TW/LC_MESSAGES/zope.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zope.pot
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

@@ -1140,6 +1140,7 @@
     SUBDIR += py-xmltools
     SUBDIR += py-xmltv
     SUBDIR += py-zope.app.i18n
+    SUBDIR += py-zope.app.locales
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zope.structuredtext
     SUBDIR += py-zope.tal

@@ -2988,6 +2988,7 @@
     SUBDIR += py-Products.CMFCore
     SUBDIR += py-Products.CMFDefault
     SUBDIR += py-Products.CMFDiffTool
+    SUBDIR += py-Products.CMFDynamicViewFTI
     SUBDIR += py-Products.CMFEditions
     SUBDIR += py-Products.CMFFormController
     SUBDIR += py-Products.CMFQuickInstallerTool
@@ -3079,6 +3080,7 @@
     SUBDIR += py-fam
     SUBDIR += py-fileutils
     SUBDIR += py-five.formlib
+    SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flakes
     SUBDIR += py-flask-babel
@@ -3124,6 +3126,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-kss.core
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
     SUBDIR += py-ll-core
@@ -3286,6 +3289,7 @@
     SUBDIR += py-z3c.batching
     SUBDIR += py-z3c.caching
     SUBDIR += py-z3c.form
+    SUBDIR += py-z3c.formwidget.query
     SUBDIR += py-z3c.zcmlhook
     SUBDIR += py-zExceptions
     SUBDIR += py-zLOG
@@ -3313,8 +3317,11 @@
     SUBDIR += py-zope.app.publication
     SUBDIR += py-zope.app.publisher
     SUBDIR += py-zope.app.renderer
+    SUBDIR += py-zope.app.rotterdam
     SUBDIR += py-zope.app.schema
     SUBDIR += py-zope.app.testing
+    SUBDIR += py-zope.app.zcmlfiles
+    SUBDIR += py-zope.app.zopeappgenerations
     SUBDIR += py-zope.applicationcontrol
     SUBDIR += py-zope.broken
     SUBDIR += py-zope.browser
@@ -3341,6 +3348,7 @@
     SUBDIR += py-zope.filerepresentation
     SUBDIR += py-zope.formlib
     SUBDIR += py-zope.generations
+    SUBDIR += py-zope.globalrequest
     SUBDIR += py-zope.i18n
     SUBDIR += py-zope.interface
     SUBDIR += py-zope.lifecycleevent

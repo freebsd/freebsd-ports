@@ -1,0 +1,3 @@
+Global way of retrieving the currently active request.
+
+WWW:	http://pypi.python.org/pypi/zope.globalrequest
