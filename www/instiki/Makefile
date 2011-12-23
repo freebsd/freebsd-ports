@@ -28,6 +28,8 @@ INSTIKI_DB=	db/production.db.sqlite3
 INSTIKI_DB_FILE=	${INSTIKIDIR}/${INSTIKI_DB}
 
 IGNORE=		does not work
+DEPRECATED=	has been marked ignore since 2010/09/16
+EXPIRATION_DATE=	2012-01-02
 
 .include <bsd.port.pre.mk>
 
