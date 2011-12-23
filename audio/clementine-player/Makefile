@@ -17,8 +17,7 @@ COMMENT=	A cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	lastfm.0:${PORTSDIR}/audio/liblastfm \
-		tag.1:${PORTSDIR}/audio/taglib \
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		mtp:${PORTSDIR}/audio/libmtp
@@ -37,7 +36,8 @@ INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup vorbis
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	VISUALISATION "Visualisations from projectM" off
+OPTIONS=	VISUALISATION "Visualisations from projectM" off \
+		LASTFM "Support Last.fm service (requires ruby)" on
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +46,10 @@ PLIST_SUB+=	VSL=""
 .else
 CMAKE_ARGS+=	-DENABLE_VISUALISATIONS=OFF
 PLIST_SUB+=	VSL="@comment "
+.endif
+
+.if defined(WITH_LASTFM)
+LIB_DEPENDS+=	lastfm.0:${PORTSDIR}/audio/liblastfm
 .endif
 
 .include <bsd.port.post.mk>
