@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://sourceforge.net/projects/%SUBDIR%/
-MASTER_SITE_SUBDIR=	gptfdisk/files/gptfdisk/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
 
 MAINTAINER=	fdn@okbire.ru
@@ -39,13 +39,11 @@ IGNORE=		is unsupported on FreeBSD 7.1-RELEASE or earlier
 MAKEFILE=	Makefile.freebsd
 
 PROGRAM_LIST=	fixparts gdisk sgdisk
+PLIST_FILES=	${PROGRAM_LIST:C,^,sbin/,}
 
 .if defined(WITH_CGDISK)
 PROGRAM_LIST+=	cgdisk
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-PLIST_SUB+=	CGDISK=""
-.else
-PLIST_SUB+=	CGDISK="@comment "
 .endif
 
 MAN8=

@@ -1,4 +1,0 @@
-%%CGDISK%%sbin/cgdisk
-sbin/fixparts
-sbin/gdisk
-sbin/sgdisk
