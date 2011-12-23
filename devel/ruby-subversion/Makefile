@@ -33,4 +33,8 @@ do-build:
 do-install:
 	cd ${WRKSRC} ; ${MAKE} install-swig-rb
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not work with ruby 1.9
+.endif
+
 .include <bsd.port.post.mk>
