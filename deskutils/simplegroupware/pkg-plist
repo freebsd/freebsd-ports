@@ -1454,6 +1454,7 @@
 %%WWWDIR%%/src/modules/schema/templates.xml
 %%WWWDIR%%/src/modules/schema/timesheets.xml
 %%WWWDIR%%/src/modules/schema/wiki.xml
+%%WWWDIR%%/src/modules/schema/absence.xml
 %%WWWDIR%%/src/modules/schema_sys/chat2.xml
 %%WWWDIR%%/src/modules/schema_sys/console.xml
 %%WWWDIR%%/src/modules/schema_sys/custom_fields.xml
@@ -1461,6 +1462,7 @@
 %%WWWDIR%%/src/modules/schema_sys/experiment.xml
 %%WWWDIR%%/src/modules/schema_sys/groups.xml
 %%WWWDIR%%/src/modules/schema_sys/hosts.xml
+%%WWWDIR%%/src/modules/schema/hr_contracts.xml
 %%WWWDIR%%/src/modules/schema_sys/identities.xml
 %%WWWDIR%%/src/modules/schema_sys/index.htm
 %%WWWDIR%%/src/modules/schema_sys/index.html
