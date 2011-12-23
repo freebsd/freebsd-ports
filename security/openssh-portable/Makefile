@@ -27,6 +27,7 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8 ssh-pkcs11-helper.8
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
 USE_PERL5=		yes
+USE_PERL5_BUILD=	yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
