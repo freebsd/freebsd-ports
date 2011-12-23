@@ -1,0 +1,7 @@
+c++-gtk-utils is a lightweight library containing a number of classes and
+functions for programming GTK+ programs using C++ in POSIX (unix-like)
+environments, where the user does not want to use a full-on wrapper such as
+gtkmm or wxWidgets, or is concerned about exception safety or thread safety
+of the wrapper and their documentation.
+
+WWW:	http://cxx-gtk-utils.sourceforge.net
