@@ -7,7 +7,7 @@ feasible with a minimum of overhead. No excuses!
 
 QLandkarte GT does replace the original QLandkarte with a much more flexible
 architecture. It's not limited to a map format or device. Thus if you think your
-Magellan GPS or other should be supported, join the team. 
+Magellan GPS or other should be supported, join the team.
 
 Additionally it is a front end to the GDAL tools, to make georeferencing scanned
 maps feasible for the normal user. Compared to similar tools like QGis, it's
