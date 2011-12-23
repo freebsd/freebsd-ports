@@ -24,6 +24,6 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/tk/canvas.rb:${PORTSDIR}/x11-toolkits/ruby-tk
+RUN_DEPENDS+=	${RUBY_LIBDIR}/tk/canvas.rb:${PORTSDIR}/x11-toolkits/ruby-tk
 
 .include <bsd.port.post.mk>
