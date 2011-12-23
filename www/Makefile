@@ -919,6 +919,7 @@
     SUBDIR += p5-HTML-Element-Library
     SUBDIR += p5-HTML-Encoding
     SUBDIR += p5-HTML-ExtractContent
+    SUBDIR += p5-HTML-ExtractMain
     SUBDIR += p5-HTML-Field
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FillInForm-ForceUTF8
