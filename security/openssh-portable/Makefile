@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.8p2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -25,6 +26,7 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8 ssh-pkcs11-helper.8
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
+USE_PERL5=		yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
@@ -140,6 +142,7 @@ PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-7.0/
 PATCHFILES+=		${PORTNAME}-5.8p1+x509-7.0.diff.gz
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		X509=""
+MAN5+=			ssh_engine.5
 .else
 PLIST_SUB+=		X509="@comment "
 .endif
