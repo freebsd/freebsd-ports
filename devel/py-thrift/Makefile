@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,6 @@ MAINTAINER=	jdugan@x1024.net
 COMMENT=	Python interface to Thrift
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
-
-BROKEN=		does not package
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
