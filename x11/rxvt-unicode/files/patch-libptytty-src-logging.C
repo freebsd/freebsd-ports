@@ -5,7 +5,7 @@
    // records, but most implementations of last use ut_line to
    // associate records in wtmp file
 -  strncpy (utx->ut_line, line, sizeof (utx->ut_line));
-+  if(id)
++  if(line)
 +  	strncpy (utx->ut_line, line, sizeof (utx->ut_line));
    fill_id (utx->ut_id, line, sizeof (utx->ut_id));
    utx->ut_pid = pid;
