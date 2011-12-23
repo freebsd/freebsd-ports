@@ -21,12 +21,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/image.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/image.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/image.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mogile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mogile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mogile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mongodb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mongodb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mongodb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mosso.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mosso.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/mosso.pyo
@@ -39,9 +45,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/s3boto.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/s3boto.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/s3boto.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/sftpstorage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/sftpstorage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/sftpstorage.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/symlinkorcopy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/symlinkorcopy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/symlinkorcopy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
