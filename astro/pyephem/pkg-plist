@@ -96,4 +96,3 @@
 @dirrm %%PYTHON_SITELIBDIR%%/ephem/tests
 @dirrm %%PYTHON_SITELIBDIR%%/ephem/doc
 @dirrm %%PYTHON_SITELIBDIR%%/ephem
-@dirrm %%PYTHON_SITELIBDIR%%
