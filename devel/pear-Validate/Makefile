@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validate
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,8 +17,11 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 FILES=		Validate.php
 
-TESTS=		number.phpt testdate.phpt email.phpt multiple.phpt \
-		multicard.phpt uri.phpt
+TESTS=		email.phpt email_domaincheck.phpt \
+		multiple.phpt multicard.phpt \
+		number.phpt testdate.phpt \
+		testdate_minmax.phpt \
+		uri.phpt uri_domaincheck.phpt
 
 DOCS=		sample_multiple.php Example_Locale.php
 
