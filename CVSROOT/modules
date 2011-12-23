@@ -863,7 +863,6 @@ avp-demo                        ports/games/avp-demo
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
 avr-gcc-3                       ports/devel/avr-gcc-3
-avr-gcc-42                      ports/devel/avr-gcc-42
 avr-gdb                         ports/devel/avr-gdb
 avr-libc                        ports/devel/avr-libc
 avra                            ports/devel/avra
@@ -21779,6 +21778,7 @@ py-Products.MIMETools           ports/devel/py-Products.MIMETools
 py-Products.MailHost            ports/mail/py-Products.MailHost
 py-Products.MimetypesRegistry   ports/devel/py-Products.MimetypesRegistry
 py-Products.OFSP                ports/devel/py-Products.OFSP
+py-Products.PluggableAuthService  ports/security/py-Products.PluggableAuthService
 py-Products.PluginRegistry      ports/devel/py-Products.PluginRegistry
 py-Products.PythonScripts       ports/devel/py-Products.PythonScripts
 py-Products.ResourceRegistries  ports/devel/py-Products.ResourceRegistries
@@ -22296,8 +22296,11 @@ py-pip                          ports/devel/py-pip
 py-pisa                         ports/converters/py-pisa
 py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
+py-plone.app.openid             ports/security/py-plone.app.openid
 py-plone.keyring                ports/security/py-plone.keyring
+py-plone.openid                 ports/security/py-plone.openid
 py-plone.protect                ports/security/py-plone.protect
+py-plone.session                ports/security/py-plone.session
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
 py-pmw                          ports/x11-toolkits/py-Pmw
@@ -22338,6 +22341,7 @@ py-products.mailhost            ports/mail/py-Products.MailHost
 py-products.mimetools           ports/devel/py-Products.MIMETools
 py-products.mimetypesregistry   ports/devel/py-Products.MimetypesRegistry
 py-products.ofsp                ports/devel/py-Products.OFSP
+py-products.pluggableauthservice  ports/security/py-Products.PluggableAuthService
 py-products.pluginregistry      ports/devel/py-Products.PluginRegistry
 py-products.pythonscripts       ports/devel/py-Products.PythonScripts
 py-products.resourceregistries  ports/devel/py-Products.ResourceRegistries
@@ -22748,9 +22752,11 @@ py-zlog                         ports/devel/py-zLOG
 py-zope.annotation              ports/devel/py-zope.annotation
 py-zope.app.applicationcontrol  ports/devel/py-zope.app.applicationcontrol
 py-zope.app.appsetup            ports/devel/py-zope.app.appsetup
+py-zope.app.authentication      ports/security/py-zope.app.authentication
 py-zope.app.basicskin           ports/devel/py-zope.app.basicskin
 py-zope.app.broken              ports/devel/py-zope.app.broken
 py-zope.app.cache               ports/devel/py-zope.app.cache
+py-zope.app.component           ports/devel/py-zope.app.component
 py-zope.app.container           ports/devel/py-zope.app.container
 py-zope.app.content             ports/devel/py-zope.app.content
 py-zope.app.debug               ports/devel/py-zope.app.debug
@@ -22762,11 +22768,15 @@ py-zope.app.form                ports/devel/py-zope.app.form
 py-zope.app.generations         ports/devel/py-zope.app.generations
 py-zope.app.http                ports/devel/py-zope.app.http
 py-zope.app.i18n                ports/textproc/py-zope.app.i18n
+py-zope.app.localpermission     ports/security/py-zope.app.localpermission
 py-zope.app.pagetemplate        ports/devel/py-zope.app.pagetemplate
+py-zope.app.principalannotation  ports/security/py-zope.app.principalannotation
 py-zope.app.publication         ports/devel/py-zope.app.publication
 py-zope.app.publisher           ports/devel/py-zope.app.publisher
 py-zope.app.renderer            ports/devel/py-zope.app.renderer
 py-zope.app.schema              ports/devel/py-zope.app.schema
+py-zope.app.security            ports/security/py-zope.app.security
+py-zope.app.securitypolicy      ports/security/py-zope.app.securitypolicy
 py-zope.app.testing             ports/devel/py-zope.app.testing
 py-zope.applicationcontrol      ports/devel/py-zope.applicationcontrol
 py-zope.authentication          ports/security/py-zope.authentication
