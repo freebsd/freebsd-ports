@@ -2,6 +2,25 @@ bin/evilvte
 bin/showvte
 share/applications/evilvte.desktop
 share/pixmaps/evilvte.png
+share/icons/hicolor/16x16/apps/evilvte.png
+share/icons/hicolor/20x20/apps/evilvte.png
+share/icons/hicolor/22x22/apps/evilvte.png
+share/icons/hicolor/24x24/apps/evilvte.png
+share/icons/hicolor/32x32/apps/evilvte.png
+share/icons/hicolor/36x36/apps/evilvte.png
+share/icons/hicolor/40x40/apps/evilvte.png
+share/icons/hicolor/48x48/apps/evilvte.png
+share/icons/hicolor/64x64/apps/evilvte.png
+share/icons/hicolor/72x72/apps/evilvte.png
+share/icons/hicolor/96x96/apps/evilvte.png
+share/icons/hicolor/scalable/apps/evilvte.svg
 share/gnome-control-center/default-apps/evilvte.xml
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
+@dirrmtry share/icons/hicolor/20x20/apps
+@dirrmtry share/icons/hicolor/20x20
+@dirrmtry share/icons/hicolor/40x40/apps
+@dirrmtry share/icons/hicolor/40x40
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/gnome-control-center/default-apps
