@@ -23,6 +23,8 @@ CONFLICTS=	cvsweb-3.*
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+.include <bsd.port.pre.mk>
+
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
 .if defined(PACKAGE_BUILDING) || !defined(CVSROOT) || empty(CVSROOT)
@@ -85,4 +87,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
