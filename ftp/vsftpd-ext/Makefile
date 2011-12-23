@@ -9,6 +9,7 @@ PORTNAME=	vsftpd-ext
 UPSTREAMVERSION=	2.3.4
 EXTVERSION=	2
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -27,8 +28,6 @@ MAN8=		vsftpd.8
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
-
-LDFLAGS+=	-lwrap
 
 OPTIONS=	RC_SCRIPT	"install RC_SCRIPT"		on \
 		VSFTPD_SSL	"Include support for SSL"	off
@@ -53,10 +52,12 @@ do-configure:
 	${REINPLACE_CMD} -e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
 		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
 	${REINPLACE_CMD} \
-		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
-		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
-		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS}|" \
+		-e '/^CC/s/=/?=/' \
+		-e '/^CFLAGS/{s/=/+=/;s/-O[0-9]//;}' \
+		-e '/^LIBS/s|=.*|= `./vsf_findlibs.sh`|' \
+		-e '/^LINK/s/=.*/=/' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
