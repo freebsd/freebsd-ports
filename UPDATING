@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20111223:
+  AFFECTS: users of ftp/proftpd{-devel,-mysql}
+  AUTHOR: delphij@FreeBSD.org
+
+  Due to the nature of the way FreeBSD-SA-11:07.chroot is implemented,
+  users have to update to latest -STABLE, -CURRENT, or supported
+  security branch before building these ports.
+
+  Please see the security advisory for more details.
+
 20111219:
   AFFECTS: users of lang/perl5.14
   AUTHOR: skv@FreeBSD.org
