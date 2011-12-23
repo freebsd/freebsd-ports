@@ -10,6 +10,7 @@
     SUBDIR += bakery
     SUBDIR += blt
     SUBDIR += bwidget
+    SUBDIR += c++-gtk-utils
     SUBDIR += easygtk
     SUBDIR += eel
     SUBDIR += efltk
