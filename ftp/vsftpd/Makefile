@@ -23,8 +23,6 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-LDFLAGS+=	-lwrap
-
 OPTIONS=	RC_NG		"install RC_NG script"		off \
 		VSFTPD_SSL	"Include support for SSL"	off \
 		PIDFILE		"unofficial support for pidfile"	off
@@ -52,8 +50,10 @@ do-configure:
 	${REINPLACE_CMD} \
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
 		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
+		-e "s|^INSTALL	=|INSTALL	= ${INSTALL_PROGRAM}|" \
 		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS}|" \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
