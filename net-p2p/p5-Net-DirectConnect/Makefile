@@ -6,24 +6,33 @@
 #
 
 PORTNAME=	Net-DirectConnect
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net-p2p net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:PRO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Perl Direct Connect lib and client
 
-RUN_DEPENDS=	${SITE_PERL}/lib/abs.pm:${PORTSDIR}/devel/p5-lib-abs \
-		${SITE_PERL}/MIME/Base32.pm:${PORTSDIR}/converters/p5-MIME-Base32 \
-		${SITE_PERL}/${PERL_ARCH}/Sys/Sendfile/FreeBSD.pm:${PORTSDIR}/devel/p5-Sys-Sendfile-FreeBSD \
-		${SITE_PERL}/${PERL_ARCH}/Net/DirectConnect/TigerHash.pm:${PORTSDIR}/net-p2p/p5-Net-DirectConnect-TigerHash \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Net-DirectConnect-TigerHash>=0:${PORTSDIR}/net-p2p/p5-Net-DirectConnect-TigerHash \
+		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
+		p5-lib-abs>=0:${PORTSDIR}/devel/p5-lib-abs
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN1=		dcget.1 dcshare.1
 MAN3=		Net::DirectConnect.3 Net::DirectConnect::filelist.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

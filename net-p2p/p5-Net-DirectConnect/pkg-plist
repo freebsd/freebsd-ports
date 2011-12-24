@@ -3,6 +3,7 @@ bin/dchub
 bin/dcshare
 %%SITE_PERL%%/Net/DirectConnect.pm
 %%SITE_PERL%%/Net/DirectConnect/adc.pm
+%%SITE_PERL%%/Net/DirectConnect/adcs.pm
 %%SITE_PERL%%/Net/DirectConnect/clicli.pm
 %%SITE_PERL%%/Net/DirectConnect/clihub.pm
 %%SITE_PERL%%/Net/DirectConnect/filelist.pm
@@ -10,14 +11,15 @@ bin/dcshare
 %%SITE_PERL%%/Net/DirectConnect/hub.pm
 %%SITE_PERL%%/Net/DirectConnect/hubcli.pm
 %%SITE_PERL%%/Net/DirectConnect/hubhub.pm
+%%SITE_PERL%%/Net/DirectConnect/ipv6.pm
 %%SITE_PERL%%/Net/DirectConnect/nmdc.pm
 %%SITE_PERL%%/Net/DirectConnect/pslib/psmisc.pm
 %%SITE_PERL%%/Net/DirectConnect/pslib/pssql.pm
+%%SITE_PERL%%/Net/DirectConnect/sctp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/mach
 @dirrm %%SITE_PERL%%/Net/DirectConnect/pslib
-@dirrm %%SITE_PERL%%/Net/DirectConnect
-@dirrm %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/Net/DirectConnect
+@dirrmtry %%SITE_PERL%%/Net
