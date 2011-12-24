@@ -8,8 +8,8 @@
 PORTNAME=	moo
 PORTVERSION=	1.3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://www.cyth.net/~ray/moo/ \
+		http://www.exit2shell.com/~skreuzer/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	skreuzer@FreeBSD.org
