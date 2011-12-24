@@ -6,6 +6,8 @@ apps/MIME-Editor/Help/Changes
 apps/MIME-Editor/Help/README
 apps/MIME-Editor/MIME-Editor.xml
 apps/MIME-Editor/Messages/dist
+apps/MIME-Editor/Messages/es.gmo
+apps/MIME-Editor/Messages/es.po
 apps/MIME-Editor/Messages/fr.gmo
 apps/MIME-Editor/Messages/fr.po
 apps/MIME-Editor/Messages/it.gmo
