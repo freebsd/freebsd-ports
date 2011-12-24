@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-filer
-PORTVERSION=	2.10
-PORTREVISION=	2
+PORTVERSION=	2.11
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 DISTNAME=	rox-filer-${PORTVERSION}
@@ -47,7 +46,7 @@ post-configure:
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
-	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer images style.css Templates.glade subclasses ${PREFIX}/apps/ROX-Filer
+	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer Templates.ui images style.css subclasses ${PREFIX}/apps/ROX-Filer
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Filer
 	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
