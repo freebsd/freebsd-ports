@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mozc
-PORTVERSION=	1.3.911.102
-PORTREVISION=	1
+PORTVERSION=	1.3.931.102
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -35,6 +35,9 @@ QT_COMPONENTS=	gui dbus qmake_build moc_build uic_build rcc_build
 .endif
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc" || ${BUILD_MOZC_LIST:Mscim_mozc} == "scim_mozc"
 USE_GNOME=	pygtk2
+.endif
+.if ${BUILD_MOZC_LIST:Mmozc-el} == "mozc-el"
+USE_EMACS=	yes
 .endif
 
 .include <bsd.port.pre.mk>
@@ -215,6 +218,35 @@ do-install-scim_mozc:
 	@${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
 		${DATADIR}/icons/scim-mozc.png
+.endif
+
+# mozc-el
+.if ${BUILD_MOZC_LIST:Mmozc-el} == "mozc-el"
+CATEGORIES+=	editors elisp
+RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
+		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
+
+PLIST_FILES+=	bin/mozc_emacs_helper \
+		${EMACS_VERSION_SITE_LISPDIR}/mozc.el \
+		${EMACS_VERSION_SITE_LISPDIR}/mozc.elc
+
+do-build-mozc-el:
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} \
+		unix/emacs/emacs.gyp:mozc_emacs_helper
+	@cd ${WRKSRC}/unix/emacs && \
+		${EMACS_CMD} -batch -q -no-site-file -no-init-file \
+				-f batch-byte-compile mozc.el
+
+do-install-mozc-el:
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
+		${PREFIX}/bin/
+	@${INSTALL_DATA} \
+		${WRKSRC}/unix/emacs/mozc.el \
+		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/
+	@${INSTALL_DATA} \
+		${WRKSRC}/unix/emacs/mozc.elc \
+		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/
 .endif
 
 do-build: ${BUILD_MOZC_LIST:S/^/do-build-/}
