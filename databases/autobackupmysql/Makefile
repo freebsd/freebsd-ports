@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autobackupmysql
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}
@@ -17,16 +17,16 @@ COMMENT=	Make daily, weekly and monthly backups of your MySQL databases
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-.if defined(WITH_OLDBASH)
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash3
-.endif
-
 NO_BUILD=	yes
 PLIST_FILES=	sbin/autobackupmysql.sh
 
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/autobackupmysql.sh
+	@${REINPLACE_CMD} -e 's|${LOCALBASE}/etc|${PREFIX}/etc|g' ${WRKSRC}/autobackupmysql.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${PREFIX}/sbin
