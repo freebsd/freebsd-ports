@@ -7,6 +7,7 @@
 
 PORTNAME=	xplanet
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=	--without-pango
 
 .if !defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--with-gif
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
