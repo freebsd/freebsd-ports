@@ -1332,6 +1332,7 @@ bzr-stats                       ports/devel/bzr-stats
 bzr-svn                         ports/devel/bzr-svn
 bzr-upload                      ports/devel/bzr-upload
 bzrtools                        ports/devel/bzrtools
+c++-gtk-utils                   ports/x11-toolkits/c++-gtk-utils
 c-a-i-r                         ports/graphics/c-a-i-r
 c-ares                          ports/dns/c-ares
 c-hey                           ports/misc/c-hey
@@ -6836,6 +6837,7 @@ kbuild                          ports/devel/kBuild
 kcachegrind                     ports/devel/kcachegrind
 kcd                             ports/misc/kcd
 kcdlabel                        ports/print/kcdlabel
+kcemu                           ports/emulators/kcemu
 kcheckers                       ports/games/kcheckers
 kcheckgmail                     ports/mail/kcheckgmail
 kchm                            ports/deskutils/kchm
@@ -12444,6 +12446,7 @@ p5-HTML-Entities-Interpolate    ports/textproc/p5-HTML-Entities-Interpolate
 p5-HTML-Entities-Numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil              ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-ExtractContent          ports/www/p5-HTML-ExtractContent
+p5-HTML-ExtractMain             ports/www/p5-HTML-ExtractMain
 p5-HTML-Field                   ports/www/p5-HTML-Field
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
@@ -16910,6 +16913,7 @@ p5-html-entities-interpolate    ports/textproc/p5-HTML-Entities-Interpolate
 p5-html-entities-numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-html-escapeevil              ports/textproc/p5-HTML-EscapeEvil
 p5-html-extractcontent          ports/www/p5-HTML-ExtractContent
+p5-html-extractmain             ports/www/p5-HTML-ExtractMain
 p5-html-field                   ports/www/p5-HTML-Field
 p5-html-fillinform              ports/www/p5-HTML-FillInForm
 p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
@@ -24524,6 +24528,7 @@ scala                           ports/lang/scala
 scalapack                       ports/math/scalapack
 scalatest                       ports/devel/scalatest
 scale2x                         ports/graphics/scale2x
+scalpel                         ports/sysutils/scalpel
 scam-backscatter                ports/mail/scam-backscatter
 scamp                           ports/security/scamp
 scamper                         ports/net/scamper
