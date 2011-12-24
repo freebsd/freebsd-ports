@@ -194,7 +194,7 @@ lib/gretl-gtk2/vif.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.la
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.1
+lib/libgretl-1.0.so.2
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
