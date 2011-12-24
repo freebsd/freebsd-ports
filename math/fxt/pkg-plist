@@ -71,7 +71,6 @@ include/fxt/bits/bitldeq.h
 include/fxt/bits/bitlex.h
 include/fxt/bits/bitlow-edge.h
 include/fxt/bits/bitlow.h
-include/fxt/bits/bitmrotate.h
 include/fxt/bits/bitperiodic.h
 include/fxt/bits/bitrotate.h
 include/fxt/bits/bitseparate.h
@@ -195,6 +194,7 @@ include/fxt/comb/kperm-lex.h
 include/fxt/comb/ksubset-gray.h
 include/fxt/comb/ksubset-rec.h
 include/fxt/comb/ksubset-twoclose.h
+include/fxt/comb/mixedradix-naf.h
 include/fxt/comb/mixedradix-endo-gray.h
 include/fxt/comb/mixedradix-endo.h
 include/fxt/comb/mixedradix-gray.h
@@ -743,6 +743,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ksubset-twoclose-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/maxrep-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/maxrep-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-endo-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-endo-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-endo-gray-out.txt
@@ -909,6 +911,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-involution-naf-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-involution-naf-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-kincr-demo.cc
@@ -917,8 +921,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-maxincr-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec2-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/root-sums-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/root-sums-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ruler-func-demo.cc
