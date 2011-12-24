@@ -58,6 +58,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-changeset_16223_16231.diff
 PORTDOCS=	*
 .endif
 
