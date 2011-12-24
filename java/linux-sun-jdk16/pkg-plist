@@ -1,4 +1,3 @@
-@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README.html
@@ -169,7 +168,6 @@
 %%T%%/db/demo/programs/derbylogo128_bluebg.png
 %%T%%/db/demo/programs/localcal/README
 %%T%%/db/demo/programs/localcal/build.xml
-@exec	mkdir -p %D/%%T%%/db/demo/programs/localcal/lib
 %%T%%/db/demo/programs/localcal/src/AddEventRequest.java
 %%T%%/db/demo/programs/localcal/src/CalEvent.java
 %%T%%/db/demo/programs/localcal/src/CalendarController.java
@@ -3230,7 +3228,6 @@
 %%T%%/jre/javaws/javaws
 %%T%%/jre/lib/alt-rt.jar
 %%T%%/jre/lib/alt-string.jar
-@exec	mkdir -p %D/%%T%%/jre/lib/applet
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/calendars.properties
 %%T%%/jre/lib/charsets.jar
@@ -3322,8 +3319,8 @@
 %%T%%/jre/lib/fontconfig.RedHat.3.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.4.bfc
 %%T%%/jre/lib/fontconfig.RedHat.4.properties.src
-%%T%%/jre/lib/fontconfig.RedHat.6.0.bfc
-%%T%%/jre/lib/fontconfig.RedHat.6.0.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.6.bfc
+%%T%%/jre/lib/fontconfig.RedHat.6.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.bfc
 %%T%%/jre/lib/fontconfig.RedHat.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.11.bfc
@@ -3484,6 +3481,7 @@
 %%T%%/jre/lib/zi/Africa/Gaborone
 %%T%%/jre/lib/zi/Africa/Harare
 %%T%%/jre/lib/zi/Africa/Johannesburg
+%%T%%/jre/lib/zi/Africa/Juba
 %%T%%/jre/lib/zi/Africa/Kampala
 %%T%%/jre/lib/zi/Africa/Khartoum
 %%T%%/jre/lib/zi/Africa/Kigali
@@ -3686,6 +3684,7 @@
 %%T%%/jre/lib/zi/Asia/Dushanbe
 %%T%%/jre/lib/zi/Asia/Gaza
 %%T%%/jre/lib/zi/Asia/Harbin
+%%T%%/jre/lib/zi/Asia/Hebron
 %%T%%/jre/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/jre/lib/zi/Asia/Hong_Kong
 %%T%%/jre/lib/zi/Asia/Hovd
@@ -3988,7 +3987,6 @@
 %%T%%/lib/visualvm/platform/core/locale/org-openide-filesystems_ja.jar
 %%T%%/lib/visualvm/platform/core/locale/org-openide-filesystems_zh_CN.jar
 %%T%%/lib/visualvm/platform/core/org-openide-filesystems.jar
-@exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
 %%T%%/lib/visualvm/platform/lib/boot.jar
 %%T%%/lib/visualvm/platform/lib/locale/boot_ja.jar
 %%T%%/lib/visualvm/platform/lib/locale/boot_zh_CN.jar
@@ -4254,8 +4252,8 @@
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-modules-appui.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiler.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiling.xml
-%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sampler.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sa.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sampler.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-threaddump.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-tools.xml
 %%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-uisupport.xml
@@ -4270,9 +4268,12 @@
 %%T%%/lib/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
 %%T%%/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
 %%T%%/lib/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
+%%T%%/lib/visualvm/visualvm/core/locale/.svn_ja.jar
+%%T%%/lib/visualvm/visualvm/core/locale/.svn_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_ja.jar
 %%T%%/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/core/locale/core_visualvm.jar
+%%T%%/lib/visualvm/visualvm/modules/all-wcprops
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
@@ -4290,11 +4291,12 @@
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-modules-appui.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiler.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiling.jar
-%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sa.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
+%%T%%/lib/visualvm/visualvm/modules/entries
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_ja.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application-views_ja.jar
@@ -4329,10 +4331,10 @@
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiler_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiling_ja.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-profiling_zh_CN.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sa_ja.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sa_zh_CN.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-sampler_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-threaddump_ja.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-threaddump_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-tools_ja.jar
@@ -4341,7 +4343,17 @@
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-uisupport_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_zh_CN.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_zh_CN.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_zh_CN.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_ja.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-api-caching.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
@@ -4360,8 +4372,8 @@
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-startup.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiler.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiling.xml
-%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sampler.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sa.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sampler.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-threaddump.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-tools.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-uisupport.xml
@@ -4685,9 +4697,13 @@
 %%T%%/sample/webservices/EbayServer/src/ebay/server/ImageProvider.java
 %%T%%/sample/webservices/EbayServer/src/ebay/server/Main.java
 %%T%%/src.zip
+@exec	mkdir -p %D/%%T%%/db/demo/programs/localcal/lib
+@exec	mkdir -p %D/%%T%%/jre/lib/applet
+@exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
 @exec	mkdir -p %D/share/doc/java
-@unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
+@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@dirrmtry %D/share/doc/java
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay
 @dirrm %%T%%/sample/webservices/EbayServer/src
