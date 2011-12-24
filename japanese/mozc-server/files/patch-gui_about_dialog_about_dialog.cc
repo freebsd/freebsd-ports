@@ -1,4 +1,4 @@
---- gui/about_dialog/about_dialog.cc.orig	2011-12-04 16:22:26.291606976 +0900
+--- gui/about_dialog/about_dialog.cc.orig	2011-12-24 13:17:13.116092657 +0900
 +++ gui/about_dialog/about_dialog.cc	2011-12-04 16:44:21.340606780 +0900
 @@ -119,7 +119,11 @@
    SetLabelText(label_terms);

@@ -1,4 +1,4 @@
---- base/process.cc.orig	2011-12-04 16:22:26.103607664 +0900
+--- base/process.cc.orig	2011-12-24 13:17:13.098092385 +0900
 +++ base/process.cc	2011-12-04 16:46:51.045606717 +0900
 @@ -120,13 +120,18 @@
    return ShellExecuteInSystemDir(L"open", wurl.c_str(), NULL, SW_SHOW);
