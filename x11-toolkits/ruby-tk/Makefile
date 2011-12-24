@@ -13,7 +13,7 @@ CATEGORIES+=	x11-toolkits ruby tcl tk
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER?=	rubyFreeBSD.org
+MAINTAINER?=	ruby@FreeBSD.org
 COMMENT?=	Ruby interface to the Tk widget set
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch

@@ -13,7 +13,7 @@ MASTER_SITES=	http://font.ubuntu.com/download/
 
 DISTNAME=	${PORTNAME}-family-${PORTVERSION}
 
-MAINTAINER=	kevloFreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Ubuntu font family
 
 LICENSE=	UFL
