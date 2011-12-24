@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel python
 MASTER_SITES=	http://archive.ipython.org/release/${PORTVERSION}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -17,13 +17,7 @@ COMMENT=	An enhanced Interactive Python shell
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/devel/py-pyzmq \
-
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
-.endif
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/devel/py-pyzmq
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -32,6 +26,21 @@ MAN1=		ipcluster.1 ipcontroller.1 ipengine.1 iplogger.1 \
 		ipython.1 irunner.1 pycolor.1
 
 MANCOMPRESSED=	yes
+
+OPTIONS=	X11 "Build with X11 support" on \
+		HTML_NOTEBOOK "HTML notebook support" off
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
+.endif
+
+.if !defined(WITHOUT_HTML_NOTEBOOK)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.1:${PORTSDIR}/www/py-tornado
+.endif
 
 .ifndef	NOPORTDOCS
 PORTDOCS=	*
