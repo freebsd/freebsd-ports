@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -61,18 +61,12 @@ pre-configure:
 .endfor
 	${REINPLACE_CMD} -e 's|/usr/bin/curl|${LOCALBASE}/bin/curl|' \
 		${WRKSRC}/lib/magpierss/extlib/Snoopy.class.inc
-	${REINPLACE_CMD} -e 's|TYPE=InnoDB|ENGINE=InnoDB|'	\
-			${WRKSRC}/schema/versions/mysql/*.sql
 
 do-configure:
 .if !defined(WITH_PGSQL)
 	${REINPLACE_CMD} -e '/DB_TYPE/s|pgsql|mysql|;s|mysql$$|pgsql|'	\
 		${WRKSRC}/config.php-dist
-	${REINPLACE_CMD} -e "s|, 'DB_PORT'||" ${WRKSRC}/sanity_config.php
 .endif
-	${REINPLACE_CMD} -e '/SINGLE_USER_MODE/s|true|false|'		\
-		-e '/ENABLE_UPDATE_DAEMON/s|false|true|'		\
-		${WRKSRC}/config.php-dist
 
 do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}
