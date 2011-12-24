@@ -9,7 +9,7 @@ PORTNAME=	django
 PORTVERSION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+MASTER_SITES=	http://people.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 MASTER_SITE_SUBDIR=	lwhsu/django
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -19,7 +19,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-REVISION=	15922
+REVISION=	17269
 
 USE_XZ=	yes
 USE_GETTEXT=	yes
@@ -27,7 +27,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PYDISTUTILS_PKGNAME=	Django
-PYDISTUTILS_PKGVERSION=	1.3
+PYDISTUTILS_PKGVERSION=	1.4_alpha_1
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
 
