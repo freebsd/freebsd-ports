@@ -1,0 +1,22 @@
+--- ./ld/configure.tgt.orig	2011-11-21 10:29:37.000000000 +0100
++++ ./ld/configure.tgt	2011-12-21 09:44:40.000000000 +0100
+@@ -453,10 +453,17 @@
+ pj*-*-*)	        targ_emul=pjelf
+ 			;;
+ powerpc-*-freebsd* | powerpc-*-kfreebsd*-gnu)
+-			targ_emul=elf32ppc_fbsd;
+-			targ_extra_emuls="elf32ppc elf32ppcsim";
++			targ_emul=elf32ppc_fbsd
++			targ_extra_emuls="elf32ppc elf32ppcsim"
+ 			targ_extra_libpath=elf32ppc;
+ 			tdir_elf32ppcsim=`echo ${targ_alias} | sed -e 's/ppc/ppcsim/'` ;;
++powerpc64-*-freebsd*)
++			targ_emul=elf64ppc_fbsd
++			targ_extra_emuls="elf64ppc elf32ppc_fbsd elf32ppc"
++			targ_extra_libpath="elf32ppc_fbsd elf32ppc"
++			tdir_elf32ppc=`echo "${targ_alias}" | sed -e 's/64//'`
++			tdir_elf32ppc_fbsd=$tdir_elf32ppc
++			;;
+ powerpc*-*-linux*)	case "${targ}" in
+ 			*64*)	targ_emul=elf64ppc
+ 				targ_extra_emuls="elf32ppclinux elf32ppc elf32ppcsim"
