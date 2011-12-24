@@ -9,7 +9,7 @@ Features of proxy-connect are:
     * Partially supports telnet proxy (experimental).
     * You can input password from tty, ssh-askpass or environment variable.
     * Simple and general program independent from OpenSSH.
-    * You can also relay local socket stream instead of standard I/O. 
+    * You can also relay local socket stream instead of standard I/O.
 
 Example Usage:
 
@@ -18,4 +18,4 @@ Add to ~/.ssh/config
 Host remote.outside.net
 	ProxyCommand /usr/local/sbin/proxy-connect -S socks:1080 %h %p
 
-WWW: http://www.meadowy.org/~gotoh/projects/connect
+WWW: http://exit2shell.com/~skreuzer/projects/proxy-connect/
