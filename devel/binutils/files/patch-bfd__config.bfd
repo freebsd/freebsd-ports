@@ -1,0 +1,26 @@
+--- ./bfd/config.bfd.orig	2011-07-29 00:35:13.000000000 +0200
++++ ./bfd/config.bfd	2011-12-21 09:44:40.000000000 +0100
+@@ -1128,6 +1128,11 @@
+     targ_selvecs=rs6000coff_vec
+     want64=true
+     ;;
++  powerpc64-*-freebsd*)
++    targ_defvec=bfd_elf64_powerpc_freebsd_vec
++    targ_selvecs="bfd_elf64_powerpc_vec bfd_elf32_powerpc_vec bfd_elf32_powerpc_freebsd_vec bfd_elf32_powerpcle_vec rs6000coff_vec rs6000coff64_vec aix5coff64_vec"
++    want64=true
++    ;;
+   powerpc64-*-elf* | powerpc-*-elf64* | powerpc64-*-linux* | \
+   powerpc64-*-*bsd*)
+     targ_defvec=bfd_elf64_powerpc_vec
+@@ -1140,6 +1145,11 @@
+     want64=true
+     ;;
+ #endif
++  powerpc-*-*freebsd*)
++    targ_defvec=bfd_elf32_powerpc_freebsd_vec
++    targ_selvecs="rs6000coff_vec bfd_elf32_powerpc_vec bfd_elf32_powerpcle_vec ppcboot_vec"
++    targ64_selvecs="bfd_elf64_powerpc_vec bfd_elf64_powerpcle_vec bfd_elf64_powerpc_freebsd_vec"
++    ;;
+   powerpc-*-*bsd* | powerpc-*-elf* | powerpc-*-sysv4* | powerpc-*-eabi* | \
+   powerpc-*-solaris2* | powerpc-*-linux-* | powerpc-*-rtems* | \
+   powerpc-*-chorus*)

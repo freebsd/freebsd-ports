@@ -1,0 +1,29 @@
+--- ./ld/Makefile.in.orig	2011-07-22 22:22:37.000000000 +0200
++++ ./ld/Makefile.in	2011-12-21 09:44:40.000000000 +0100
+@@ -783,6 +783,7 @@
+ 	eelf64ltsmip_fbsd.c \
+ 	eelf64mmix.c \
+ 	eelf64ppc.c \
++	eelf64ppc_fbsd.c \
+ 	eelf64tilegx.c \
+ 	eelf_l1om.c \
+ 	eelf_l1om_fbsd.c \
+@@ -1180,6 +1181,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64ltsmip_fbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64mmix.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64ppc.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64ppc_fbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64tilegx.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_i386.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_i386_be.Po@am__quote@
+@@ -3425,6 +3427,10 @@
+   ldemul-list.h \
+   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} elf64ppc "$(tdir_elf64ppc)"
++eelf64ppc_fbsd.c: $(srcdir)/emulparams/elf64ppc_fbsd.sh \
++  $(srcdir)/emultempl/ppc64elf.em ldemul-list.h \
++  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} elf64ppc_fbsd "$(tdir_elf64ppc_fbsd)"
+ eelf64tilegx.c: $(srcdir)/emulparams/elf64tilegx.sh \
+   $(srcdir)/emultempl/elf32.em $(srcdir)/emultempl/needrelax.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
