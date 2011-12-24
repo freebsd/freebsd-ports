@@ -58,7 +58,9 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/advanced_echo_callback.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/authmod_gssapi.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/basic_echo_callback.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/haxe.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/json.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/json2.erl
@@ -321,6 +323,7 @@ bin/yaws
 %%WWWDIR%%/urandom.yaws
 %%WWWDIR%%/urandom_from_pid.yaws
 %%WWWDIR%%/websockets.yaws
+%%WWWDIR%%/websockets_autobahn_endpoint.yaws
 %%WWWDIR%%/websockets_example.yaws
 %%WWWDIR%%/websockets_example_endpoint.yaws
 %%WWWDIR%%/yapp_intro.yaws
