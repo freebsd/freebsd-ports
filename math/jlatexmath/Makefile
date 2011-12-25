@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jlatexmath
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
