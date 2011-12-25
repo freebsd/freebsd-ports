@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/jdk6/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
@@ -62,8 +62,8 @@ JDK_BUILD_NUMBER=	05
 JDK_BUILD_DATE=		24_sep_2007
 LATEST_LINK=	jdk16
 
-TZUPDATE_VERSION=	1_3_42
-TZUPDATE_TZVERSION=	2011k
+TZUPDATE_VERSION=	1_3_45
+TZUPDATE_TZVERSION=	2011n
 
 .include <bsd.port.pre.mk>
 
