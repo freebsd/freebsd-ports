@@ -75,6 +75,7 @@
     SUBDIR += cakephp12
     SUBDIR += cakephp13
     SUBDIR += calamaris
+    SUBDIR += cas
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
