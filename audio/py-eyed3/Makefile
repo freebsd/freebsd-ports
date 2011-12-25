@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.17
+PORTVERSION=	0.6.18
 CATEGORIES=	audio python
-MASTER_SITES=	http://eyed3.nicfit.net/releases/ \
-		http://depot.fsck.ch/mirror/distfiles/
+MASTER_SITES=	http://eyed3.nicfit.net/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	eyeD3-${PORTVERSION}
 
@@ -18,7 +17,7 @@ COMMENT=	Python module for processing ID3 tags
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6-2.7
 USE_PYTHON_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
