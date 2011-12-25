@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	Automatically grab link elements of an RSS feed
 
+DEPRECATED=	Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead
+EXPIRATION_DATE=	2012-01-25
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=4.1:${PORTSDIR}/textproc/py-feedparser
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=4.1:${PORTSDIR}/textproc/py-feedparser
 
