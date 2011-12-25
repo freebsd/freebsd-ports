@@ -385,6 +385,7 @@
     SUBDIR += fga
     SUBDIR += fhist
     SUBDIR += fib
+    SUBDIR += firmware-utils
     SUBDIR += fistgen
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
