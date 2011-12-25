@@ -12,7 +12,7 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20070826
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/ \
@@ -61,9 +61,9 @@ MAKE_ENV+=	LD_LIBMAP=libgmp.so.7=libgmp.so.10
 .if defined(WITH_MINGW32)
 BUILD_DEPENDS+=	wine:${PORTSDIR}/emulators/wine \
 		mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp4
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp
 RUN_DEPENDS+=	mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp4
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp
 
 PLIST_SUB+=	MINGW32CROSS=""
 .else
