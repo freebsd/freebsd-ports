@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.7.3
+PORTVERSION=	3.8.2
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
@@ -48,6 +48,14 @@ V8ARCH=ia32
 .elif ${ARCH} == amd64
 V8ARCH=x64
 .endif
+
+.if defined(CFLAGS)
+CFLAGS:=	${CFLAGS:C/-fstrict-aliasing//}
+.if empty(CFLAGS:M-fno-strict-aliasing)
+CFLAGS+=	-fno-strict-aliasing
+.endif
+.endif
+
 PLIST_SUB+=	ARCH=${V8ARCH}
 SCONS_ARGS+=	arch=${V8ARCH}
 SCONS_BUILDENV+= CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}"
