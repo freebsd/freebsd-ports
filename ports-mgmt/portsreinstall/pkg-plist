@@ -1,0 +1,4 @@
+bin/portsreinstall
+@unexec if cmp -s %D/etc/portsreinstall.conf.sample %D/etc/portsreinstall.conf; then rm -f %D/etc/portsreinstall.conf; fi
+etc/portsreinstall.conf.sample
+@exec [ -f %B/portsreinstall.conf ] || cp %B/%f %B/portsreinstall.conf
