@@ -1,6 +1,4 @@
-# no eu for amulegui.1
-# no fr,ru for xas.1
-MANLANG=	"" de es eu fr hu it ru
+MANLANG=	"" de es fr hu it ru tr
 
 .if !defined(WITHOUT_NLS)
 . if !defined(WITHOUT_MONOLITHIC)
@@ -19,13 +17,7 @@ MAN1+=		amulecmd.1
 MAN1+=		amuled.1
 . endif
 . if !defined(WITHOUT_AMULEGUI)
-MAN1_EN+=	amulegui.1
-MAN1_DE+=	amulegui.1
-MAN1_ES+=	amulegui.1
-MAN1_FR+=	amulegui.1
-MAN1_HU+=	amulegui.1
-MAN1_IT+=	amulegui.1
-MAN1_RU+=	amulegui.1
+MAN1+=	amulegui.1
 . endif
 . if !defined(WITHOUT_CAS)
 MAN1+=		cas.1
@@ -42,10 +34,5 @@ MAN1+=		wxcas.1
 .endif # !WITHOUT_NLS
 
 .if !defined(WITHOUT_XAS)
-MAN1_EN+=	xas.1
-MAN1_DE+=	xas.1
-MAN1_ES+=	xas.1
-MAN1_EU+=	xas.1
-MAN1_HU+=	xas.1
-MAN1_IT+=	xas.1
+MAN1+=	xas.1
 .endif

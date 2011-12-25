@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amule
-PORTVERSION=	10589
+PORTVERSION=	10703
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -15,14 +15,14 @@ DISTNAME=	aMule-SVN-r${PORTVERSION}
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	The all-platform eMule p2p client
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+#LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
+
 BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 
 CONFLICTS=	amule-[0-9]*
-
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
 
 USE_BZIP2=	yes
 USE_BISON=	build
