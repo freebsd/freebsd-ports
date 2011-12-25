@@ -17,7 +17,8 @@ COMMENT=	The all-platform eMule p2p client
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
-#LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
+
+LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
 
 CONFLICTS=	amule-devel-[0-9]*
 
