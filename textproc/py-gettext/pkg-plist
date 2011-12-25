@@ -22,6 +22,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test3.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test4.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test5.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test6.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test6.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythongettext/tests/test_compile.pyo
