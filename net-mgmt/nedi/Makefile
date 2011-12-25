@@ -24,19 +24,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-# The options part is copied from databases/phpmyadmin
-# and looks this way, because we have to USE_PHP
-# before pre.mk, however WITH_*, WITHOUT_* are set only
-# after pre.mk. The solution is to set them by ourselves.
 OPTIONS=	GD "Use GD" OFF
 
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
 USE_PHP=	session snmp mysql
 WANT_PHP_WEB=	yes
@@ -53,7 +45,7 @@ SUB_LIST=	NEDIDIR=${NEDIDIR}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/nedi|${NEDIDIR}|' ${WRKSRC}/html/inc/libgraph.php
 	@${REINPLACE_CMD} -e "s|'/etc|'${PREFIX}/etc|" ${WRKSRC}/html/inc/libmisc.php
-	@${FIND} ${WRKSRC} -name *.bak -or -name *.orig | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name *.bak -or -name *.orig -delete
 
 do-install:
 	@ ${MKDIR} -m 755 ${NEDIDIR}
