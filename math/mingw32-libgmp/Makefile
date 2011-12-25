@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libgmp4
-PORTVERSION=	4.3.2
+PORTNAME=	libgmp
+PORTVERSION=	5.0.2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -18,8 +18,6 @@ COMMENT=	Library for arbitrary precision arithmetic (MinGW32)
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
-
-BROKEN=		does not build
 
 GMP_TARG=	${PKGNAMEPREFIX:S/-$//}
 GNU_CONFIGURE=	yes
