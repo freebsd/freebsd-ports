@@ -1529,6 +1529,16 @@
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
+    SUBDIR += py-plone.app.folder
+    SUBDIR += py-plone.browserlayer
+    SUBDIR += py-plone.folder
+    SUBDIR += py-plone.locking
+    SUBDIR += py-plone.memoize
+    SUBDIR += py-plone.portlets
+    SUBDIR += py-plone.registry
+    SUBDIR += py-plone.subrequest
+    SUBDIR += py-plone.transformchain
+    SUBDIR += py-plone.uuid
     SUBDIR += py-poster
     SUBDIR += py-postmarkup
     SUBDIR += py-prewikka
