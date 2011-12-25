@@ -20,6 +20,9 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	not needed for graphics/bmeps anymore, no other users
+EXPIRATION_DATE=	2012-03-01
+
 USE_BDB=	43+
 USE_OPENSSL_BASE=	yes
 
