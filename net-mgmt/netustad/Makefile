@@ -22,13 +22,9 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 OPTIONS=	SSL "Use netUstad with SSL support" on
 
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
