@@ -1,0 +1,137 @@
+# New ports collection makefile for:   cas
+# Date created:         24 Nov 2011
+# Whom:                 Alexander Lunkov <lunkov@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cas
+PORTVERSION=	3.5.3
+CATEGORIES=	www devel
+MASTER_SITES=	http://cas.havoc.ru/download/
+
+MAINTAINER=	lunkov@gmail.com
+COMMENT=	C++ Application Server, version 2
+
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		pcre:${PORTSDIR}/devel/pcre       \
+		ctpp2:${PORTSDIR}/textproc/ctpp2
+
+USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+USE_ICONV=	yes
+WITHOUT_NLS=	yes
+
+OPTIONS=	DEBUG_MODE			"Enable debug output"			off \
+		ENABLE_OPTIMIZATION		"Enable optimization"			on  \
+		BUILD_APACHE13_MODULE		"Build Apache 1.3 module"		off \
+		BUILD_APACHE2X_MODULE		"Build Apache 2.x module"		on  \
+		BUILD_CURL_XMLRPC_CLIENT	"Build cURL-based XMLRPC client"	on  \
+		INSTALL_EXAMPLE_MODULES 	"Install example modules"		off \
+		INSTALL_CAS_LIBRARY		"Install CAS library (libcas)"		on  \
+		INSTALL_CAS_MODULES		"Install CAS modules"			on  \
+		INSTALL_CAS_HEADERS		"Install CAS headers"			on  \
+		INSTALL_CAS_CONFIGS		"Install CAS configuration files"	on  \
+		INSTALL_CAS_BINARIES		"Install CAS binaries"			on  \
+		INSTALL_CAS_DATA		"Install CAS data files"		on
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_DEBUG_MODE)
+CMAKE_ARGS+=	-DDEBUG_MODE=ON
+.else
+CMAKE_ARGS+=	-DDEBUG_MODE=OFF
+.endif
+
+.if defined(WITH_ENABLE_OPTIMIZATION)
+CMAKE_ARGS+=	-DENABLE_OPTIMIZATION=ON
+.else
+CMAKE_ARGS+=	-DENABLE_OPTIMIZATION=OFF
+.endif
+
+.if defined(WITH_BUILD_APACHE13_MODULE)
+CMAKE_ARGS+=	-DBUILD_APACHE13_MODULE=ON
+USE_APACHE=	13
+PLIST_SUB+=	APACHE13_MODULE=""
+.else
+CMAKE_ARGS+=	-DBUILD_APACHE13_MODULE=OFF
+PLIST_SUB+=	APACHE13_MODULE="@comment "
+.endif
+
+.if defined(WITH_BUILD_APACHE2X_MODULE)
+USE_APACHE=	20+
+CMAKE_ARGS+=	-DBUILD_APACHE2X_MODULE=ON
+PLIST_SUB+=	APACHE2X_MODULE=""
+.else
+CMAKE_ARGS+=	-DBUILD_APACHE2X_MODULE=OFF
+PLIST_SUB+=	APACHE2X_MODULE="@comment "
+.endif
+
+.if defined(WITH_BUILD_CURL_XMLRPC_CLIENT)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CMAKE_ARGS+=	-DBUILD_CURL_XMLRPC_CLIENT=ON
+PLIST_SUB+=	CURL_XMLRPC_CLIENT=""
+.else
+CMAKE_ARGS+=	-DBUILD_CURL_XMLRPC_CLIENT=OFF
+PLIST_SUB+=	CURL_XMLRPC_CLIENT="@comment "
+.endif
+
+.if defined(WITH_INSTALL_EXAMPLE_MODULES)
+CMAKE_ARGS+=	-DINSTALL_EXAMPLE_MODULES=ON
+PLIST_SUB+=	EXAMPLE_MODULES=""
+.else
+CMAKE_ARGS+=	-DINSTALL_EXAMPLE_MODULES=OFF
+PLIST_SUB+=	EXAMPLE_MODULES="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_LIBRARY)
+CMAKE_ARGS+=	-DINSTALL_CAS_LIBRARY=ON
+PLIST_SUB+=	CAS_LIBRARY=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_LIBRARY=OFF
+PLIST_SUB+=	CAS_LIBRARY="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_MODULES)
+CMAKE_ARGS+=	-DINSTALL_CAS_MODULES=ON
+PLIST_SUB+=	CAS_MODULES=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_MODULES=OFF
+PLIST_SUB+=	CAS_MODULES="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_HEADERS)
+CMAKE_ARGS+=	-DINSTALL_CAS_HEADERS=ON
+PLIST_SUB+=	CAS_HEADERS=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_HEADERS=OFF
+PLIST_SUB+=	CAS_HEADERS="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_CONFIGS)
+CMAKE_ARGS+=	-DINSTALL_CAS_CONFIGS=ON
+PLIST_SUB+=	CAS_CONFIGS=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_CONFIGS=OFF
+PLIST_SUB+=	CAS_CONFIGS="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_BINARIES)
+CMAKE_ARGS+=	-DINSTALL_CAS_BINARIES=ON
+PLIST_SUB+=	CAS_BINARIES=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_BINARIES=OFF
+PLIST_SUB+=	CAS_BINARIES="@comment "
+.endif
+
+.if defined(WITH_INSTALL_CAS_DATA)
+CMAKE_ARGS+=	-DINSTALL_CAS_DATA=ON
+PLIST_SUB+=	CAS_DATA=""
+.else
+CMAKE_ARGS+=	-DINSTALL_CAS_DATA=OFF
+PLIST_SUB+=	CAS_DATA="@comment "
+.endif
+
+.include <bsd.port.mk>
