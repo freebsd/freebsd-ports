@@ -13,18 +13,14 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 OPTIONS=	BCMATH "PHP BCMath extension support" off \
 		GMP "PHP GMP extension support" off
 
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
 .for opt in BCMATH GMP
 .    if defined(WITH_${opt})
