@@ -65,6 +65,7 @@
     SUBDIR += mooseekd
     SUBDIR += museekplus
     SUBDIR += napshare
+    SUBDIR += ncdc
     SUBDIR += nicotine-plus
     SUBDIR += opendchub
     SUBDIR += opennap
