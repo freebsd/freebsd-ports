@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.13
+PORTVERSION=	1.0.7.14
 CATEGORIES=	editors print
-MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/ \
+MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
@@ -95,9 +95,10 @@ post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|#!/bin/bash|#!/bin/sh|g'
 	@${FIND} ${WRKSRC} -name \*.bak -delete
+	@${FIND} ${WRKSRC} -name \*.DS_Store -delete
 	@${REINPLACE_CMD} -e 's|ICONV_LDFLAGS/-liconv|ICONV_LDFLAGS|' \
 		${WRKSRC}/configure
-	#fix for namespace clash with Qt3
+	@ #fix for namespace clash with Qt3
 	@${REINPLACE_CMD} -e 's|qdrawutil.h|qt4/Qt/qdrawutil.h|' \
 		${WRKSRC}/src/Plugins/Qt/QTMStyle.cpp
 
@@ -106,3 +107,4 @@ post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .include <bsd.port.post.mk>
+
