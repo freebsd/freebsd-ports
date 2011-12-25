@@ -7,34 +7,32 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	0.4.5
+PORTVERSION=	1.0.0
 CATEGORIES=	net python
-MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/
+MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysmb-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	SMB/CIFS library written in Python
 
-USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/pysmb
-NO_BUILD=	yes
-DATADIR=	${PREFIX}/share/py-smb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
+
+USE_PYTHON=	2.6-2.7
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	py${PORTNAME}
+
 DOCSDIR=	${PREFIX}/share/doc/py-smb
 
-do-install:
-.for file in nmb.py smb.py pysmb_version.py
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
-.endfor
-.for file in nmbquery smbcp smbdu smblistshare
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
-	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/extra/*.reg ${DATADIR}
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/README ${DOCSDIR}
-	${CP} ${WRKSRC}/docs/*.html ${WRKSRC}/docs/*.gif ${DOCSDIR}
+	@(cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} _modules/ ${DOCSDIR}/)
+	@(cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} _static/ ${DOCSDIR}/)
+	@(cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} api/ ${DOCSDIR}/)
+	@(cd ${WRKSRC}/docs/html/ && ${CP} *.html ${DOCSDIR}/)
+	@(cd ${WRKSRC}/docs/html/ && ${CP} *.js ${DOCSDIR}/)
 .endif
 
 .include <bsd.port.mk>
