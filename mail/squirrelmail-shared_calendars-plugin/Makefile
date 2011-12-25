@@ -47,13 +47,9 @@ WANT_PHP_WEB=		yes
 
 OPTIONS=	SQL	 "use SQL backend" off
 
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_SQL) || defined(WITH_SQL)
 RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/calendar_sql_backend:${PORTSDIR}/mail/squirrelmail-calendar_sql_backend-plugin
