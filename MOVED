@@ -3023,3 +3023,4 @@ security/p5-Digest-SHA256||2011-12-20|Removed: use the builtin Digest::SHA inste
 net/mpd4||2011-12-21|Removed
 japanese/ruby-refe||2011-12-21|Has been broken for 11 months
 www/zope-epoz||2012-12-25|Unmaintained upstream, isn't used by anything
+math/mingw32-libgmp4|math/mingw32-libgmp|2012-12-25|Version is no longer 4
