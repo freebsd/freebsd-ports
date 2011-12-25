@@ -36,6 +36,12 @@
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
+do-build:
+	@cd ${WRKSRC} && ${SH} build module
+
+do-install:
+	@cd ${WRKSRC} && INSTALLDIR=${PREFIX}/lib/ocaml/site-lib/react ${SH} build install-plugin
+
     SUBDIR += allegro-devel
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
@@ -1124,6 +1130,7 @@
     SUBDIR += ocaml-ounit
     SUBDIR += ocaml-pcre
     SUBDIR += ocaml-pomap
+    SUBDIR += ocaml-react
     SUBDIR += ocaml-res
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
