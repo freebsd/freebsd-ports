@@ -2561,86 +2561,151 @@ share/TeXmacs/misc/pixmaps/TeXmacs-old.xpm
 share/TeXmacs/misc/pixmaps/TeXmacs-sigma.xpm
 share/TeXmacs/misc/pixmaps/TeXmacs-solid.xpm
 share/TeXmacs/misc/pixmaps/TeXmacs.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_back.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_cancel.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_copy.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_cut.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_find.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_find_next.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_forward.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_language.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_new.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_open.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_paste.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_print.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_redo.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_reload.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_replace.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_save.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_spell.xpm
-share/TeXmacs/misc/pixmaps/alternate/24x24/tm_undo.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_back.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_cancel.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_copy.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_cut.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_find.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_find_next.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_forward.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_language.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_new.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_open.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_paste.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_print.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_redo.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_reload.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_replace.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_save.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_spell.xpm
-share/TeXmacs/misc/pixmaps/alternate/32x32/tm_undo.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_back.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_cancel.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_copy.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_cut.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_find.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_find_next.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_forward.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_language.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_new.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_open.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_paste.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_print.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_redo.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_reload.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_replace.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_save.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_spell.xpm
-share/TeXmacs/misc/pixmaps/alternate/48x48/tm_undo.xpm
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_back.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_cancel.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_cancel_2.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_copy.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_cut.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_find.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_find_next.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_forward.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_language.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_larrow.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_larrow_bar.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_larrow_double.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_new.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_open.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_open_bis.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_paste.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_print.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_rarrow.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_rarrow_bar.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_rarrow_double.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_redo.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_reload.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_replace.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_save.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_spell.png
-share/TeXmacs/misc/pixmaps/modern/24x24/tm_undo.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_add.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_add_2.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_alternate_both.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_alternate_first.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_alternate_second.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_background.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_border.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_pos.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_size.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_special.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_cell_wrap.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_delete_down.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_delete_left.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_delete_right.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_delete_up.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_emphasize.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_exit_left.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_exit_right.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_focus_delete.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_focus_help.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_insert_down.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_insert_left.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_insert_right.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_insert_up.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_large_around.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_large_around_2.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_math.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_name.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_numbered.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_root_index.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_sample.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_sansserif.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_set_properties.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_show_hidden.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_similar_first.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_similar_last.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_similar_next.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_similar_previous.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_strong.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_table_parwidth.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_verbatim.png
+share/TeXmacs/misc/pixmaps/modern/16x16/focus/tm_wide_under.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_activate.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_alignment.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_animate.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_arc_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_arrow.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_assign.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_bbb.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_bigaround.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_bigop.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_binop.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_binrel.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_bold.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_cal.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_carc_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_chapter.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_cline_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_color.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_compact.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_cspline_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_ctrl_flow.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_edit_props.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_emphasize.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_equal.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_floatpos.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_fraction.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_frak.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_graphics_geometry.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_graphics_grid.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_greek.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_group_group.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_group_move.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_group_rotate.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_group_zoom.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_image.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_index.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_italic.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_lambda.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_line_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_link.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_list.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_math.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_math_preferences.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_math_style.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_math_syntax.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_mathbold.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_miscsymb.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_name.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_op.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_pageins.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_parindent.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_parstyle.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_point_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_prime.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_program.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_prominent.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_quote.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_root.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_sample.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_sansserif.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_section.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_shell.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_smallcaps.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_spline_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_stretch.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_strong.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_subsup.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_switch.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_table.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_textat_mode.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_textual.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_theorem.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_three.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_tuple.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_typewriter.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_unequal.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_verbatim.png
+share/TeXmacs/misc/pixmaps/modern/20x20/mode/tm_wide.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_back.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_cancel.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_cancel_2.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_copy.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_cut.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_find.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_find_next.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_forward.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_language.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_larrow.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_larrow_bar.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_larrow_double.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_new.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_open.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_open_bis.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_paste.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_print.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_rarrow.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_rarrow_bar.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_rarrow_double.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_redo.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_reload.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_replace.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_save.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_spell.png
+share/TeXmacs/misc/pixmaps/modern/24x24/main/tm_undo.png
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_abstract.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_activate.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_acute.xpm
@@ -2998,6 +3063,10 @@ share/TeXmacs/plugins/axiom/progs/init-axiom.scm
 share/TeXmacs/plugins/cadabra/doc/cadabra-abstract.en.tm
 share/TeXmacs/plugins/cadabra/doc/cadabra.en.tm
 share/TeXmacs/plugins/cadabra/progs/init-cadabra.scm
+share/TeXmacs/plugins/coq/packages/session/coq.ts
+share/TeXmacs/plugins/coq/progs/coq-edit.scm
+share/TeXmacs/plugins/coq/progs/coq-kbd.scm
+share/TeXmacs/plugins/coq/progs/init-coq.scm
 share/TeXmacs/plugins/dratex/doc/dratex-demo.en.tm
 share/TeXmacs/plugins/dratex/doc/dratex.en.tm
 share/TeXmacs/plugins/dratex/latex/AlDraTex.sty
@@ -3302,6 +3371,7 @@ share/TeXmacs/progs/generic/generic-edit.scm
 share/TeXmacs/progs/generic/generic-kbd.scm
 share/TeXmacs/progs/generic/generic-menu.scm
 share/TeXmacs/progs/generic/insert-menu.scm
+share/TeXmacs/progs/graphics/graphics-drd.scm
 share/TeXmacs/progs/graphics/graphics-edit.scm
 share/TeXmacs/progs/graphics/graphics-env.scm
 share/TeXmacs/progs/graphics/graphics-group.scm
@@ -3309,6 +3379,7 @@ share/TeXmacs/progs/graphics/graphics-kbd.scm
 share/TeXmacs/progs/graphics/graphics-main.scm
 share/TeXmacs/progs/graphics/graphics-menu.scm
 share/TeXmacs/progs/graphics/graphics-object.scm
+share/TeXmacs/progs/graphics/graphics-single.scm
 share/TeXmacs/progs/graphics/graphics-utils.scm
 share/TeXmacs/progs/init-buffer.scm
 share/TeXmacs/progs/init-texmacs.scm
@@ -3661,6 +3732,10 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/dratex/examples
 @dirrm share/TeXmacs/plugins/dratex/doc
 @dirrm share/TeXmacs/plugins/dratex
+@dirrm share/TeXmacs/plugins/coq/progs
+@dirrm share/TeXmacs/plugins/coq/packages/session
+@dirrm share/TeXmacs/plugins/coq/packages
+@dirrm share/TeXmacs/plugins/coq
 @dirrm share/TeXmacs/plugins/cadabra/progs
 @dirrm share/TeXmacs/plugins/cadabra/doc
 @dirrm share/TeXmacs/plugins/cadabra
@@ -3691,12 +3766,13 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/misc/sounds
 @dirrm share/TeXmacs/misc/pixmaps/traditional/--x17
 @dirrm share/TeXmacs/misc/pixmaps/traditional
+@dirrm share/TeXmacs/misc/pixmaps/modern/24x24/main
 @dirrm share/TeXmacs/misc/pixmaps/modern/24x24
+@dirrm share/TeXmacs/misc/pixmaps/modern/20x20/mode
+@dirrm share/TeXmacs/misc/pixmaps/modern/20x20
+@dirrm share/TeXmacs/misc/pixmaps/modern/16x16/focus
+@dirrm share/TeXmacs/misc/pixmaps/modern/16x16
 @dirrm share/TeXmacs/misc/pixmaps/modern
-@dirrm share/TeXmacs/misc/pixmaps/alternate/48x48
-@dirrm share/TeXmacs/misc/pixmaps/alternate/32x32
-@dirrm share/TeXmacs/misc/pixmaps/alternate/24x24
-@dirrm share/TeXmacs/misc/pixmaps/alternate
 @dirrm share/TeXmacs/misc/pixmaps
 @dirrm share/TeXmacs/misc/patterns
 @dirrm share/TeXmacs/misc/mime
