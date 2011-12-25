@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	git-core
@@ -406,8 +406,7 @@ post-install:
 .ifdef (WITH_CONTRIB)
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${PREFIX}/share/git-core/contrib
-	(cd ${WRKSRC}/contrib/ && \
-		${COPYTREE_BIN} \* ${PREFIX}/share/git-core/contrib)
+	${CP} -R ${WRKSRC}/contrib/* ${PREFIX}/share/git-core/contrib
 .endif
 .ifdef (WITH_P4)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
