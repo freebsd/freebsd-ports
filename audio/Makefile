@@ -229,6 +229,7 @@
     SUBDIR += gmpc-mserver
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-wikipedia
+    SUBDIR += gmusicbrowser
     SUBDIR += gnome-audio
     SUBDIR += gnome-media
     SUBDIR += gnomoradio
