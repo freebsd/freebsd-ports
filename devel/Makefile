@@ -849,6 +849,7 @@
     SUBDIR += libhash
     SUBDIR += libhid
     SUBDIR += libhoard
+    SUBDIR += libhtp
     SUBDIR += libical
     SUBDIR += libinotify
     SUBDIR += libiqxmlrpc
