@@ -32,17 +32,7 @@ OPTIONS=	NOSERVICES "Without services, plain ORB" off \
 		GTK "Build with GTK support" off \
 		DEBUG "Build debug version" off
 
-# need for OPTIONS work
-PORT_DBDIR?=	/var/db/ports
-
-OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
-.if exists(${OPTIONSFILE}) && !make(rmconfig)
-.include "${OPTIONSFILE}"
-.endif
-.if exists(${OPTIONSFILE}.local)
-.include "${OPTIONSFILE}.local"
-.endif
-# ================
+.include <bsd.port.options.mk>
 
 NOT_FOR_ARCHS=		sparc64
 
