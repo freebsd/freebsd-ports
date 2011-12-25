@@ -94,13 +94,9 @@ OPTIONS=	A52	"Interface to a52 library"	on \
 		XFORMS	"Interface to X-Forms"	on \
 		ZLIB	"Interface to the zlib compression library"	on \
 
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
                 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.options.mk>
 
 ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DTS FASTCGI FCL-ASYNC FCL-BASE \
 		FCL-DB FCL-FPCUNIT FCL-IMAGE FCL-JSON FCL-NET FCL-PASSRC FCL-PROCESS \
