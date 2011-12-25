@@ -21768,6 +21768,7 @@ py-Products.CMFCalendar         ports/devel/py-Products.CMFCalendar
 py-Products.CMFCore             ports/devel/py-Products.CMFCore
 py-Products.CMFDefault          ports/devel/py-Products.CMFDefault
 py-Products.CMFDiffTool         ports/devel/py-Products.CMFDiffTool
+py-Products.CMFDynamicViewFTI   ports/devel/py-Products.CMFDynamicViewFTI
 py-Products.CMFEditions         ports/devel/py-Products.CMFEditions
 py-Products.CMFFormController   ports/devel/py-Products.CMFFormController
 py-Products.CMFQuickInstallerTool  ports/devel/py-Products.CMFQuickInstallerTool
@@ -22002,6 +22003,7 @@ py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
 py-firebirdsql                  ports/databases/py-firebirdsql
 py-five.formlib                 ports/devel/py-five.formlib
+py-five.globalrequest           ports/devel/py-five.globalrequest
 py-five.localsitemanager        ports/devel/py-five.localsitemanager
 py-flakes                       ports/devel/py-flakes
 py-flask                        ports/www/py-flask
@@ -22330,6 +22332,7 @@ py-products.cmfcalendar         ports/devel/py-Products.CMFCalendar
 py-products.cmfcore             ports/devel/py-Products.CMFCore
 py-products.cmfdefault          ports/devel/py-Products.CMFDefault
 py-products.cmfdifftool         ports/devel/py-Products.CMFDiffTool
+py-products.cmfdynamicviewfti   ports/devel/py-Products.CMFDynamicViewFTI
 py-products.cmfeditions         ports/devel/py-Products.CMFEditions
 py-products.cmfformcontroller   ports/devel/py-Products.CMFFormController
 py-products.cmfquickinstallertool  ports/devel/py-Products.CMFQuickInstallerTool
@@ -22743,6 +22746,7 @@ py-z3c.autoinclude              ports/devel/py-z3c.autoinclude
 py-z3c.batching                 ports/devel/py-z3c.batching
 py-z3c.caching                  ports/devel/py-z3c.caching
 py-z3c.form                     ports/devel/py-z3c.form
+py-z3c.formwidget.query         ports/devel/py-z3c.formwidget.query
 py-z3c.zcmlhook                 ports/devel/py-z3c.zcmlhook
 py-zExceptions                  ports/devel/py-zExceptions
 py-zLOG                         ports/devel/py-zLOG
@@ -22772,16 +22776,21 @@ py-zope.app.form                ports/devel/py-zope.app.form
 py-zope.app.generations         ports/devel/py-zope.app.generations
 py-zope.app.http                ports/devel/py-zope.app.http
 py-zope.app.i18n                ports/textproc/py-zope.app.i18n
+py-zope.app.locales             ports/textproc/py-zope.app.locales
 py-zope.app.localpermission     ports/security/py-zope.app.localpermission
 py-zope.app.pagetemplate        ports/devel/py-zope.app.pagetemplate
 py-zope.app.principalannotation  ports/security/py-zope.app.principalannotation
 py-zope.app.publication         ports/devel/py-zope.app.publication
 py-zope.app.publisher           ports/devel/py-zope.app.publisher
 py-zope.app.renderer            ports/devel/py-zope.app.renderer
+py-zope.app.rotterdam           ports/devel/py-zope.app.rotterdam
 py-zope.app.schema              ports/devel/py-zope.app.schema
 py-zope.app.security            ports/security/py-zope.app.security
 py-zope.app.securitypolicy      ports/security/py-zope.app.securitypolicy
 py-zope.app.testing             ports/devel/py-zope.app.testing
+py-zope.app.wsgi                ports/www/py-zope.app.wsgi
+py-zope.app.zcmlfiles           ports/devel/py-zope.app.zcmlfiles
+py-zope.app.zopeappgenerations  ports/devel/py-zope.app.zopeappgenerations
 py-zope.applicationcontrol      ports/devel/py-zope.applicationcontrol
 py-zope.authentication          ports/security/py-zope.authentication
 py-zope.broken                  ports/devel/py-zope.broken
@@ -22809,6 +22818,7 @@ py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zope.filerepresentation      ports/devel/py-zope.filerepresentation
 py-zope.formlib                 ports/devel/py-zope.formlib
 py-zope.generations             ports/devel/py-zope.generations
+py-zope.globalrequest           ports/devel/py-zope.globalrequest
 py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.interface               ports/devel/py-zope.interface
