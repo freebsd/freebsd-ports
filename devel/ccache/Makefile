@@ -80,7 +80,7 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO_CMD} "Create compiler links..."
+	@${ECHO_CMD} "Creating compiler links..."
 	@${PREFIX}/bin/ccache-update-links -v
 	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_CLANGLINK)

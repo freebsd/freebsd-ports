@@ -1,5 +1,5 @@
-You've chosen to create symlinks to clang compiler binaries if they exist.
-While it's known to be save to build world with clang/ccache, is not fully
+You've chosen to create symlinks to the clang compiler binaries if they exist.
+While it's known to be safe to build world with clang/ccache, is not fully
 supported yet. You have been warned.
 
 See:
