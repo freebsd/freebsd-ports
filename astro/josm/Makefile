@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	4550
+PORTVERSION=	4667
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://mirror.amdmi3.ru/distfiles/:josm \
