@@ -203,8 +203,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="7ba65bfd-2a40-11e1-b96e-00215af774f0">
-    <topic>unbound -- denial of service vulnerabilities from nonstandard
-      redirection and denial of existence</topic>
+    <topic>unbound -- denial of service vulnerabilities from nonstandard redirection and denial of existence</topic>
     <affects>
       <package>
 	<name>unbound</name>
@@ -429,8 +428,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Simon Tatham reports:</p>
-	<blockquote
-	  cite="http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html">
+	<blockquote cite="http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html">
 	  <p>PuTTY 0.62 fixes a security issue present in 0.59, 0.60 and 0.61.
 	    If you log in using SSH-2 keyboard-interactive authentication (which
 	    is the usual method used by modern servers to request a password),
