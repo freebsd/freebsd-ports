@@ -1,0 +1,4 @@
+pg_reorg allows you to reorganize your tables online,
+for example, do online vacuum full or cluster.
+
+WWW: http://pgfoundry.org/projects/reorg/
