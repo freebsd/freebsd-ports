@@ -7,7 +7,7 @@
 
 PORTNAME=	elinks
 DISTVERSION=	0.11.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 
@@ -52,6 +52,8 @@ OPTIONS=	88COLORS	"Enable 88 color support"	on \
 		ICONV		"Enable iconv support" off
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--without-zlib
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
