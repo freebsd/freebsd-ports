@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.30.0
+PORTVERSION=	1.31.0
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
