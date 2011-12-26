@@ -73,13 +73,11 @@ IGNORE=	you can only define one application server
 IGNORE=	you need at least one application server
 .endif
 
-.if !target(check-santity)
-check-santity:
+check-sanity:
 .if ${PREFIX}!=${LOCALBASE}
 	@${ECHO_MSG} "Warning: you changed prefix to ${PREFIX}"
 	@${ECHO_MSG} "Default installation will not work if you installed"
 	@${ECHO_MSG} "application server in different prefix"
-.endif
 .endif
 
 post-extract:
