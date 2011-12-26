@@ -1,5 +1,6 @@
 bin/smbnetfs
-share/doc/smbnetfs/INSTALL
-share/doc/smbnetfs/RUSSIAN.FAQ
-share/doc/smbnetfs/smbnetfs.conf
-@dirrm share/doc/smbnetfs
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/ENGLISH.FAQ
+%%DOCSDIR%%/RUSSIAN.FAQ
+%%DOCSDIR%%/smbnetfs.conf
+@dirrm %%DOCSDIR%%
