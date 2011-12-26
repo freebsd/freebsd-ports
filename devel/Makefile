@@ -1114,6 +1114,7 @@
     SUBDIR += ocaml-camomile-examples
     SUBDIR += ocaml-cfg
     SUBDIR += ocaml-classes
+    SUBDIR += ocaml-cppo
     SUBDIR += ocaml-equeue
     SUBDIR += ocaml-event
     SUBDIR += ocaml-extlib
