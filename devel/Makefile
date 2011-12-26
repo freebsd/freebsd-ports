@@ -36,12 +36,6 @@
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
-do-build:
-	@cd ${WRKSRC} && ${SH} build module
-
-do-install:
-	@cd ${WRKSRC} && INSTALLDIR=${PREFIX}/lib/ocaml/site-lib/react ${SH} build install-plugin
-
     SUBDIR += allegro-devel
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
