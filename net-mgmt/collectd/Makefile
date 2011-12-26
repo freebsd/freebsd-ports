@@ -7,6 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -32,13 +33,16 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		NUTUPS		"Input: NUT UPS daemon" 			Off \
 		INTERFACE 	"Input: Network interfaces (libstatgrab)" 	On  \
 		MBMON		"Input: MBMon" 					Off \
+		MEMCACHED	"Input: Memcached"				Off \
 		MYSQL		"Input: MySQL" 					Off \
 		NGINX		"Input: Nginx" 					Off \
 		OPENVPN		"Input: OpenVPN statistics"			Off \
 		PDNS		"Input: PowerDNS" 				Off \
 		PGSQL		"Input: PostgreSQL" 				Off \
 		PING		"Input: Network latency (liboping)" 		On  \
+		PYTHON		"Input: Python plugin"				Off  \
 		SNMP		"Input: SNMP" 					On  \
+		TOKYOTYRANT	"Input: Tokyotyrant database"			Off \
 		XMMS		"Input: XMMS" 					Off \
 		RRDTOOL		"Output: RRDTool"				On \
 		RRDCACHED	"Output: RRDTool Cached (require RRDTOOL)"	On
@@ -56,15 +60,7 @@ CONFLICTS=	collectd-5.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 601103 )
-BROKEN=		Need bind9 import post 6.1
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
+.include <bsd.port.options.mk>
 
 # NOTE: Feel free to submit patches adding support for any of these
 #       disabled plugins.  If a plugin requires external dependencies,
@@ -108,7 +104,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-oracle \
 		--disable-perl \
 		--disable-pinba \
-		--disable-python \
 		--disable-protocols \
 		--disable-routeros \
 		--disable-sensors \
@@ -122,7 +117,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-teamspeak2 \
 		--disable-ted \
 		--disable-thermal \
-		--disable-tokyotyrant \
 		--disable-users \
 		--disable-vmem \
 		--disable-vserver \
@@ -130,6 +124,12 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-write_http \
 		--disable-zfs_arc \
 		--without-perl-bindings \
+		--without-librabbitmq \
+		--disable-varnish \
+		--without-libvarnish \
+		--without-libcredis \
+		--without-libganglia \
+		--without-libesmtp \
 		--disable-static
 
 .if defined(WITH_DEBUG)
@@ -142,6 +142,7 @@ RUN_DEPENDS+=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 PLIST_SUB+=	CGI=""
+WITH_RRDTOOL=	YES
 .else
 PLIST_SUB+=	CGI="@comment "
 .endif
@@ -191,7 +192,7 @@ CONFIGURE_ARGS+=--enable-curl_json
 LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
 PLIST_SUB+=	CURL_JSON=""
 .else
-CONFIGURE_ARGS+=--disable-curl_json
+CONFIGURE_ARGS+=--disable-curl_json --without-libyajl
 PLIST_SUB+=	CURL_JSON="@comment "
 .endif
 
@@ -230,11 +231,11 @@ LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if defined(WITH_NUTUPS)
-CONFIGURE_ARGS+=--enable-nut
-BUILD_DEPENDS+=	${LOCALBASE}/include/upsclient.h:${PORTSDIR}/sysutils/nut
+CONFIGURE_ARGS+=--enable-nut --with-upsclient
+LIB_DEPENDS+=	upsclient.1:${PORTSDIR}/sysutils/nut
 PLIST_SUB+=	NUTUPS=""
 .else
-CONFIGURE_ARGS+=--disable-nut
+CONFIGURE_ARGS+=--disable-nut --without-libupsclient
 PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
@@ -256,6 +257,16 @@ PLIST_SUB+=	MBMON=""
 .else
 CONFIGURE_ARGS+=--disable-mbmon
 PLIST_SUB+=	MBMON="@comment "
+.endif
+
+.if defined(WITH_MEMCACHED)
+LIB_DEPENDS+=	memcached.8:${PORTSDIR}/databases/libmemcached
+CONFIGURE_ARGS+=--enable-memcached
+CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
+PLIST_SUB+=	MEMCACHED=""
+.else
+CONFIGURE_ARGS+=--disable-memcached --without-libmemcached
+PLIST_SUB+=	MEMCACHED="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
@@ -313,6 +324,15 @@ CONFIGURE_ARGS+=--disable-ping
 PLIST_SUB+=	PING="@comment "
 .endif
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+CONFIGURE_ARGS+=--enable-python
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--disable-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 .if defined(WITH_RRDTOOL)
 LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=--enable-rrdtool
@@ -337,6 +357,16 @@ PLIST_SUB+=	SNMP=""
 .else
 CONFIGURE_ARGS+=--disable-snmp
 PLIST_SUB+=	SNMP="@comment "
+.endif
+
+.if defined(WITH_TOKYOTYRANT)
+LIB_DEPENDS+=	tokyotyrant.3:${PORTSDIR}/databases/tokyotyrant
+CONFIGURE_ARGS+=--enable-tokyotyrant
+CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE}
+PLIST_SUB+=	TOKYOTYRANT=""
+.else
+CONFIGURE_ARGS+=--disable-tokyotyrant --without-libtokyotyrant
+PLIST_SUB+=	TOKYOTYRANT="@comment "
 .endif
 
 .if defined(WITH_XMMS)
@@ -386,4 +416,4 @@ post-install:
 	fi
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

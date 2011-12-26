@@ -1,0 +1,20 @@
+--- configure.orig	2011-10-14 22:54:07.000000000 +0200
++++ configure	2011-12-19 23:25:58.000000000 +0100
+@@ -21745,7 +21745,7 @@
+ then
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python LIBS" >&5
+ $as_echo_n "checking for Python LIBS... " >&6; }
+-	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
++	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0)+\"/\"+distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
+ 	python_config_status=$?
+ 
+ 	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
+@@ -21762,7 +21762,7 @@
+ if test "x$with_python" = "xyes"
+ then
+ 	LDFLAGS="-L$python_library_path $LDFLAGS"
+-	LIBS="$python_library_flags $LIBS"
++	LIBS="$python_library_flags $LIBS -lm -lpthread -lutil"
+ 
+ 	ac_fn_c_check_func "$LINENO" "PyObject_CallFunction" "ac_cv_func_PyObject_CallFunction"
+ if test "x$ac_cv_func_PyObject_CallFunction" = x""yes; then :
