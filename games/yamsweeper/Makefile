@@ -7,7 +7,7 @@
 
 PORTNAME=	yamsweeper
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 		http://ftp.jaist.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
