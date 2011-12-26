@@ -582,7 +582,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="90cc1494-10ac-11e1-b3ec-0024e830109b">
-    <topic> BIND -- Remote DOS</topic>
+    <topic>BIND -- Remote DOS</topic>
     <affects>
      <package>
 	<name>bind96</name>
