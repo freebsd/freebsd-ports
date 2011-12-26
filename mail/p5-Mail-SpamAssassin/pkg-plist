@@ -7,7 +7,7 @@ bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
-@unexec rm -rf %D/etc/mail/spamassassin/sa-update-keys || true
+@unexec rm -rf %D/etc/mail/spamassassin/sa-update-keys
 etc/mail/spamassassin/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
 etc/mail/spamassassin/init.pre.sample
@@ -130,7 +130,7 @@ lib/libspamc.so.0
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
-@unexec rm -rf /var/lib/spamassassin/2* || true
+@unexec rm -rf /var/lib/spamassassin/2*
 @unexec rmdir /var/lib/spamassassin 2>/dev/null  || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @unexec rmdir /var/db/spamassassin 2>/dev/null || true
@@ -150,4 +150,4 @@ lib/libspamc.so.0
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry etc/mail/spamassassin
 @dirrmtry etc/mail
-@unexec rm -rf /var/run/spamd || true
+@unexec rm -rf /var/run/spamd
