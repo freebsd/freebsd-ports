@@ -79,9 +79,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|-ldl||; \
 		s|-lrt||; \
-		s|^CC[[:space:]]*=.+$$|CC=${CC}|; \
-		s|^CXX[[:space:]]*=.+$$|CXX=${CXX}|; \
-		s|g\+\+|${CXX}|; \
+		s|g\+\+|$$(CXX)|; \
+		/^CC[[:space:]]*=.+$$/d; \
+		/^CXX[[:space:]]*=.+$$/d; \
 		s,@FLTK_(C|CXX)FLAGS@,-I${LOCALBASE}/include,; \
 		s|-lpthread|${PTHREAD_LIBS}|g'
 
