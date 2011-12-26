@@ -366,6 +366,7 @@
     SUBDIR += vala-vapigen
     SUBDIR += visualworks
     SUBDIR += whitespace
+    SUBDIR += x10
     SUBDIR += xds
     SUBDIR += xds-c
     SUBDIR += xotcl
