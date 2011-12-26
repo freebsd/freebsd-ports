@@ -1,0 +1,45 @@
+From 137604683770cae900d5835befefd95c65866cd7 Mon Sep 17 00:00:00 2001
+From: Lars Lindner <lars.lindner@gmail.com>
+Date: Wed, 14 Dec 2011 18:18:02 +0100
+Subject: [PATCH] Fixes proxy preference not affecting the HTML widget.
+
+---
+ ChangeLog                 |    8 ++++++++
+ src/ui/liferea_htmlview.c |    5 +++++
+ 2 files changed, 13 insertions(+), 0 deletions(-)
+
+diff --git ChangeLog ChangeLog
+index 251bdb9..12724e5 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,3 +1,11 @@
++2011-12-??  ???
++
++	Version 1.8.1
++
++	* Fixes proxy preference not affecting the HTML widget.
++	  (reported by Chris Siebenmann)
++
++
+ 2011-12-10  Lars Lindner <lars.lindner@gmail.com>
+ 
+ 	Version 1.8.0
+diff --git src/ui/liferea_htmlview.c src/ui/liferea_htmlview.c
+index 7642c3a..afb20f8 100644
+--- src/ui/liferea_htmlview.c
++++ src/ui/liferea_htmlview.c
+@@ -181,6 +181,11 @@ liferea_htmlview_new (gboolean forceInternalBrowsing)
+ 	g_signal_connect (network_monitor_get (), "proxy-changed",
+ 	                  G_CALLBACK (liferea_htmlview_proxy_changed),
+ 	                  htmlview);
++
++	if (NULL != network_get_proxy_host ()) {
++		debug0 (DEBUG_NET, "Setting initial HTML widget proxy...");
++		liferea_htmlview_proxy_changed (network_monitor_get (), htmlview);
++	}
+ 	
+ 	return htmlview;
+ }
+-- 
+1.7.8
+
