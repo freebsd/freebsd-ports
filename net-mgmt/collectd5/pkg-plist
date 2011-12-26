@@ -51,8 +51,8 @@ lib/collectd/logfile.la
 lib/collectd/logfile.so
 %%MBMON%%lib/collectd/mbmon.la
 %%MBMON%%lib/collectd/mbmon.so
-lib/collectd/memcached.la
-lib/collectd/memcached.so
+%%MEMCACHED%%lib/collectd/memcached.la
+%%MEMCACHED%%lib/collectd/memcached.so
 lib/collectd/memory.la
 lib/collectd/memory.so
 %%MYSQL%%lib/collectd/mysql.la
@@ -73,8 +73,8 @@ lib/collectd/ntpd.so
 %%PING%%lib/collectd/ping.so
 %%PDNS%%lib/collectd/powerdns.so
 %%PDNS%%lib/collectd/powerdns.la
-lib/collectd/ping.la
-lib/collectd/ping.so
+%%PYTHON%%lib/collectd/python.la
+%%PYTHON%%lib/collectd/python.so
 lib/collectd/processes.la
 lib/collectd/processes.so
 %%RRD%%lib/collectd/rrdtool.la
@@ -95,6 +95,8 @@ lib/collectd/tcpconns.la
 lib/collectd/tcpconns.so
 lib/collectd/threshold.la
 lib/collectd/threshold.so
+%%TOKYOTYRANT%%lib/collectd/tokyotyrant.la
+%%TOKYOTYRANT%%lib/collectd/tokyotyrant.so
 lib/collectd/unixsock.la
 lib/collectd/unixsock.so
 lib/collectd/uptime.la
