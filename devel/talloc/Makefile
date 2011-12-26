@@ -7,8 +7,6 @@
 
 PORTNAME=		talloc
 PORTVERSION=		2.0.7
-PORTREVISION=		0
-PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
 			ftp://ca.samba.org/pub/%SUBDIR%/ \
@@ -17,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Hierarchical pool based memory allocator
+
+LICENSE=		LGPL3
 
 CONFLICTS=		samba33-3.*
 
@@ -28,7 +28,6 @@ CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 CONFIGURE_LOG=		bin/config.log
 USE_GNOME=		pkgconfig
 
-LICENSE=		LGPL3
 MAKE_JOBS_SAFE=		yes
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
@@ -47,7 +46,7 @@ PLIST_FILES=		include/talloc.h \
 
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
-MAKE_ENV+=		NOCOLOR=yes
+MAKE_ENV+=		NOCOLOR=yes X11BASE=${LOCALBASE}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
