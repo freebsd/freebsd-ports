@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.18
+PORTVERSION=	3.0.19
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
