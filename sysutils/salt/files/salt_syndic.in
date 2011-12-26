@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# Salt Synic startup script
+#
+# PROVIDE: salt_syndic
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# salt_syndic_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="salt_syndic"
+rcvar="${name}_enable"
+
+load_rc_config ${name}
+
+: ${salt_syndic_enable:="NO"}
+
+command="%%PREFIX%%/bin/salt-syndic"
+command_interpreter="%%PYTHON_CMD%%"
+required_files="%%PREFIX%%/etc/salt/master"
+command_args="-c ${required_files} -d"
+
+run_rc_command "$1"

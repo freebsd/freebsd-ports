@@ -1,0 +1,21 @@
+
+==============================================
+
+To configure a Salt Master, do the following:
+
+  o Copy %%PREFIX%%/etc/salt/master.sample 
+    to %%PREFIX%%/etc/salt/master
+  o Update to meet your needs
+  o Set salt_master_enable="YES" in rc.conf
+
+----------------------------------------------
+
+To configure a Salt Minion, do the following:
+
+  o Copy %%PREFIX%%/etc/salt/minion.sample
+    to %%PREFIX%%/etc/salt/minion
+  o Update config to point to your Salt Master
+  o Set salt_minion_enable="YES" in rc.conf
+
+=============================================
+
