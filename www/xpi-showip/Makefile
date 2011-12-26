@@ -7,6 +7,7 @@
 
 PORTNAME=	showip
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -30,7 +31,8 @@ XPI_FILES=	chrome/ipv6ident.jar \
 XPI_DIRS=	chrome
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|5\.\*|8.*|' ${WRKSRC}/install.rdf
+	@${REINPLACE_CMD} -e 's|<em:maxVersion>5\.\*<|<em:maxVersion>99.*<|' \
+	    ${WRKSRC}/install.rdf
 
 pre-install:
 	@${RM} -f ${WRKSRC}/install.rdf.bak
