@@ -1,0 +1,10 @@
+--- lib/libpam/modules/Makefile.inc.orig	2011-12-25 08:01:28.000000000 +0200
++++ lib/libpam/modules/Makefile.inc	2011-12-25 08:02:17.000000000 +0200
+@@ -1,4 +1,6 @@
+ # Include Makefiles from $SRCDIR
+ 
+-.include </usr/src/lib/libpam/modules/Makefile.inc>
++LIBDIR=${PREFIX}/lib
++
++.include <${SYSDIR}/../lib/libpam/modules/Makefile.inc>
+ 

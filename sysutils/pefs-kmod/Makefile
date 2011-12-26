@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2011-10-18
+DISTVERSION=	2011-12-25
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://cloud.github.com/downloads/glk/${PORTNAME}/
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	gleb@freebsd.org
+MAINTAINER=	gleb@FreeBSD.org
 COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD
@@ -24,7 +24,7 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS= \
 		KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys"
 
-MAN8=		pefs.8
+MAN8=		pam_pefs.8 pefs.8
 
 ONLY_FOR_ARCHS=	i386 amd64	# not tested on other archs
 
