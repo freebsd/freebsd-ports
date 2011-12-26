@@ -1400,6 +1400,7 @@ caps-plugins                    ports/audio/caps-plugins
 cardpics                        ports/games/cardpics
 caribbeanstud                   ports/games/CaribbeanStud
 cartotheque                     ports/deskutils/cartotheque
+cas                             ports/www/cas
 cascade                         ports/cad/cascade
 cassandra                       ports/databases/cassandra
 castget                         ports/www/castget
@@ -3470,6 +3471,7 @@ firestring                      ports/misc/firestring
 firetalk                        ports/net-im/firetalk
 firetray                        ports/mail/firetray
 firewalk                        ports/security/firewalk
+firmware-utils                  ports/devel/firmware-utils
 fisg                            ports/irc/fisg
 fishsupper                      ports/games/fishsupper
 fist                            ports/textproc/fist
@@ -4481,6 +4483,7 @@ gmrun                           ports/x11/gmrun
 gmsh                            ports/cad/gmsh
 gmsh-occ                        ports/cad/gmsh-occ
 gmt                             ports/graphics/gmt
+gmusicbrowser                   ports/audio/gmusicbrowser
 gnake                           ports/games/gnake
 gnarr                           ports/games/gnarr
 gnarwl                          ports/mail/gnarwl
@@ -7911,6 +7914,7 @@ libhid                          ports/devel/libhid
 libhoard                        ports/devel/libhoard
 libhome                         ports/misc/libhome
 libhsclient                     ports/databases/libhsclient
+libhtp                          ports/devel/libhtp
 libhx                           ports/lang/libhx
 libical                         ports/devel/libical
 libice                          ports/x11/libICE
@@ -9187,7 +9191,7 @@ mingw32-binutils                ports/devel/mingw32-binutils
 mingw32-directx                 ports/devel/mingw32-directx
 mingw32-gcc                     ports/devel/mingw32-gcc
 mingw32-libffi                  ports/devel/mingw32-libffi
-mingw32-libgmp4                 ports/math/mingw32-libgmp4
+mingw32-libgmp                  ports/math/mingw32-libgmp
 mingw32-libyaml                 ports/devel/mingw32-libyaml
 mingw32-openssl                 ports/devel/mingw32-openssl
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
@@ -9871,6 +9875,7 @@ nc                              ports/net/nc
 nc6                             ports/net/nc6
 ncbi-toolkit                    ports/biology/ncbi-toolkit
 ncc                             ports/devel/ncc
+ncdc                            ports/net-p2p/ncdc
 ncdu                            ports/sysutils/ncdu
 ncftp1                          ports/ftp/ncftp1
 ncftp2                          ports/ftp/ncftp2
@@ -10252,6 +10257,7 @@ ocaml-pcre                      ports/devel/ocaml-pcre
 ocaml-pgocaml                   ports/databases/ocaml-pgocaml
 ocaml-pomap                     ports/devel/ocaml-pomap
 ocaml-pxp                       ports/textproc/ocaml-pxp
+ocaml-react                     ports/devel/ocaml-react
 ocaml-res                       ports/devel/ocaml-res
 ocaml-sdl                       ports/devel/ocaml-sdl
 ocaml-sem                       ports/devel/ocaml-sem
@@ -21408,6 +21414,7 @@ portsentry                      ports/security/portsentry
 portshaker                      ports/ports-mgmt/portshaker
 portshaker-config               ports/ports-mgmt/portshaker-config
 portsopt                        ports/ports-mgmt/portsopt
+portsreinstall                  ports/ports-mgmt/portsreinstall
 porttools                       ports/ports-mgmt/porttools
 porttree                        ports/ports-mgmt/porttree
 portupdate-scan                 ports/ports-mgmt/portupdate-scan
@@ -22302,11 +22309,21 @@ py-pip                          ports/devel/py-pip
 py-pisa                         ports/converters/py-pisa
 py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
+py-plone.app.folder             ports/www/py-plone.app.folder
 py-plone.app.openid             ports/security/py-plone.app.openid
+py-plone.browserlayer           ports/www/py-plone.browserlayer
+py-plone.folder                 ports/www/py-plone.folder
 py-plone.keyring                ports/security/py-plone.keyring
+py-plone.locking                ports/www/py-plone.locking
+py-plone.memoize                ports/www/py-plone.memoize
 py-plone.openid                 ports/security/py-plone.openid
+py-plone.portlets               ports/www/py-plone.portlets
 py-plone.protect                ports/security/py-plone.protect
+py-plone.registry               ports/www/py-plone.registry
 py-plone.session                ports/security/py-plone.session
+py-plone.subrequest             ports/www/py-plone.subrequest
+py-plone.transformchain         ports/www/py-plone.transformchain
+py-plone.uuid                   ports/www/py-plone.uuid
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
 py-pmw                          ports/x11-toolkits/py-Pmw
@@ -28413,7 +28430,6 @@ zope-cmfphoto                   ports/www/zope-cmfphoto
 zope-cmfphotoalbum              ports/www/zope-cmfphotoalbum
 zope-cmfquickinstaller          ports/www/zope-cmfquickinstaller
 zope-coreblog                   ports/www/zope-coreblog
-zope-epoz                       ports/www/zope-epoz
 zope-exuserfolder               ports/www/zope-exuserfolder
 zope-filesystemsite             ports/www/zope-FileSystemSite
 zope-formulator                 ports/www/zope-formulator
