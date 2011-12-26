@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20110927
-PORTREVISION=	1
+PORTVERSION=	20111226
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -29,6 +28,7 @@ OPTIONS=	\
 	CONTROL "Install package: control" On \
 	DATA_SMOOTHING "Install package: data-smoothing" On \
 	DATAFRAME "Install package: dataframe" On \
+	DICOM "Install package: dicom" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
 	ES "Install package: es" On \
@@ -137,6 +137,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/data-smoothing.tar.gz:${PORTSDIR}/math/octave-forg
 .endif
 .if defined(WITH_DATAFRAME)
 RUN_DEPENDS+=	${TARBALLS_DIR}/dataframe.tar.gz:${PORTSDIR}/math/octave-forge-dataframe
+.endif
+.if defined(WITH_DICOM)
+RUN_DEPENDS+=	${TARBALLS_DIR}/dicom.tar.gz:${PORTSDIR}/math/octave-forge-dicom
 .endif
 .if defined(WITH_ECONOMETRICS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/econometrics.tar.gz:${PORTSDIR}/math/octave-forge-econometrics
