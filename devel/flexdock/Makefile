@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flexdock
-PORTVERSION=	0.5.2
+PORTVERSION=	1.1
 CATEGORIES=	devel java
-MASTER_SITES=	https://flexdock.dev.java.net/files/documents/2037/152436/
+MASTER_SITES=	http://java.net/downloads/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	otacilio.neto@bsd.com.br
