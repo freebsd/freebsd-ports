@@ -1,0 +1,20 @@
+--- configure.in.orig	2011-10-14 22:49:49.000000000 +0200
++++ configure.in	2011-12-19 23:07:31.000000000 +0100
+@@ -3165,7 +3165,7 @@
+ if test "x$with_python" = "xyes"
+ then
+ 	AC_MSG_CHECKING([for Python LIBS])
+-	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
++	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0)+\"/\"+distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
+ 	python_config_status=$?
+ 
+ 	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
+@@ -3180,7 +3180,7 @@
+ if test "x$with_python" = "xyes"
+ then
+ 	LDFLAGS="-L$python_library_path $LDFLAGS"
+-	LIBS="$python_library_flags $LIBS"
++	LIBS="$python_library_flags $LIBS -lm -lpthread -lutil"
+ 
+ 	AC_CHECK_FUNC(PyObject_CallFunction,
+ 		      [with_python="yes"],
