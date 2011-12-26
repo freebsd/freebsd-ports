@@ -58,10 +58,10 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The MIT Kerberos Team reports:</p>
-	<blockquote cite=http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc">
+	<blockquote cite="http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc">
 	  <p>When an encryption key is supplied via the TELNET protocol,
 	     its length is not validated before the key is copied into a
-	     fixed-size buffer.
+	     fixed-size buffer.</p>
 	</blockquote>
       </body>
     </description>
