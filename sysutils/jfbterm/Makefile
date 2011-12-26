@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/ \
 		http://chirashi-no-ura.net/files/
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual terminal emulator for framebuffer
 
 LICENSE=	BSD

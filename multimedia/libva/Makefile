@@ -10,7 +10,7 @@ PORTVERSION=	1.0.14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VAAPI wrapper and dummy driver
 
 LICENSE=	MIT

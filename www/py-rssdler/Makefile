@@ -12,7 +12,7 @@ CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically grab link elements of an RSS feed
 
 DEPRECATED=	Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead

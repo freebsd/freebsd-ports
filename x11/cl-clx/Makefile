@@ -12,7 +12,7 @@ MASTER_SITES=	http://common-lisp.net/~abridgewater/dist/clx/
 PKGNAMEPREFIX=	cl-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 client library for Common Lisp
 
 LICENSE=	MIT
