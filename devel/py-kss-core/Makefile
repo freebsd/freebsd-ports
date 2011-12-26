@@ -40,6 +40,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/./}
 USE_ZIP=	yes
 
 .include <bsd.port.mk>
