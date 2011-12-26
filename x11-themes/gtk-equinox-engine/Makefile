@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	equinox
-PORTVERSION=	1.30.2
+PORTVERSION=	1.50
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	gtk-
 PKGNAMESUFFIX=	-engine
-DISTNAME=	121881-equinox-1.30
+DISTFILES=	121881-${PORTNAME}-${PORTVERSION}.tar.gz \
+		140449-${PORTNAME}-themes-${PORTVERSION}.tar.gz
 
 MAINTAINER=	dsh@bamus.cz
 COMMENT=	Equinox GTK+ 2.x engine and themes
@@ -19,34 +20,26 @@ COMMENT=	Equinox GTK+ 2.x engine and themes
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/equinox-1.30
+WRKSRC=		${WRKDIR}/equinox-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/themes
 
-SUBDIRS=	Equinox "Equinox Classic" "Equinox Classic Glass" \
-		"Equinox Evolution" "Equinox Evolution Light" \
-		"Equinox Evolution Rounded" "Equinox Evolution Squared" \
-		"Equinox Glass" "Equinox Light" "Equinox Light Glass" \
-		"Equinox Wide"
+SUBDIRS=	"Equinox Evolution" "Equinox Evolution Dawn" \
+		"Equinox Evolution Dawn" "Equinox Evolution Dusk" \
+		"Equinox Evolution Light" "Equinox Evolution Midnight" \
+		"Equinox Evolution Rounded" "Equinox Evolution Squared"
+EXAMPLES=	"Equinox Evolution.crx" "Equinox Evolution Dawn.crx" \
+		"Equinox Evolution Dusk.crx" "Equinox Evolution Midnight.crx"
 
 OPTIONS=	ANIMATION "Enable animation support" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ANIMATION)
 CONFIGURE_ARGS+=	--enable-animation
 .endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		fails to install on 6.X
-.endif
-
-post-extract:
-	@cd ${WRKDIR} && ${TAR} zxf equinox-gtk-engine.tar.gz
-	@cd ${WRKDIR} && ${TAR} zxf equinox-themes.tar.gz
 
 post-patch:
 	@${FIND} ${WRKDIR} -name 'gtkrc' -exec \
@@ -62,7 +55,7 @@ post-install:
 .endfor
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in "Equinox Evolution.crx" userChrome.css
+.for i in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKDIR}/$i ${EXAMPLESDIR}
 .endfor
 .endif
@@ -71,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
