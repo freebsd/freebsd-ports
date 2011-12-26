@@ -12,7 +12,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	ruby-
 DISTFILES=
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	komarov@valerka.net
 COMMENT=	Ruby interface to thrift
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract

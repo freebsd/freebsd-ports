@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	komarov@valerka.net
 COMMENT=	Perl interface to Thrift
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
