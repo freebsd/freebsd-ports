@@ -786,6 +786,7 @@
     SUBDIR += runwhen
     SUBDIR += safe-rm
     SUBDIR += safecat
+    SUBDIR += salt
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sarah
