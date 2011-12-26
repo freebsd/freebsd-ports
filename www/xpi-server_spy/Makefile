@@ -8,6 +8,7 @@
 PORTNAME=	server_spy
 PORTVERSION=	0.2.1
 DISTVERSIONSUFFIX=	-fx
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	barbara.xxx1975@libero.it
@@ -47,7 +48,8 @@ XPI_DIRS=	defaults/preferences defaults \
 		chrome/chromeFiles/content chrome/chromeFiles chrome
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|4\.0b8pre|8.*|' ${WRKSRC}/install.rdf
+	@${REINPLACE_CMD} -e 's|<em:maxVersion>4\.0b8pre<|<em:maxVersion>99.*<|' \
+	    ${WRKSRC}/install.rdf
 
 pre-install:
 	@${RM} -f ${WRKSRC}/install.rdf.bak
