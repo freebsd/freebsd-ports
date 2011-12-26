@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PROJECTHOST}-${PORTVERSION}
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of video game music emulators
 
 LICENSE=	LGPL21 LGPL3

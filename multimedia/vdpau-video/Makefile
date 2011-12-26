@@ -10,7 +10,7 @@ DISTVERSION=	0.7.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.splitted-desktop.com/~gbeauchesne/${PORTNAME}/
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VDPAU-based backend for VAAPI
 
 LICENSE=	GPLv2 GPLv3

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://alien.luaforge.net/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua -> C FFI
 
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi

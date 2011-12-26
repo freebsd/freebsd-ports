@@ -10,7 +10,7 @@ PORTVERSION=	0.0.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to query VDPAU capabilities
 
 LIB_DEPENDS=	vdpau.1:${PORTSDIR}/multimedia/libvdpau

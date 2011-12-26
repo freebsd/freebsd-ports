@@ -12,7 +12,7 @@ MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	aMule-SVN-r${PORTVERSION}
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The all-platform eMule p2p client
 
 LICENSE=	GPLv2 GPLv3

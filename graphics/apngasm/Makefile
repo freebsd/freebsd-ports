@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	swell.k@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Animated PNG from a sequence of files
 
 USE_ZIP=	yes
