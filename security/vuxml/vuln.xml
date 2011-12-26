@@ -47,6 +47,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4ddc78dc-300a-11e1-a2aa-0016ce01e285">
+    <topic>krb5-appl -- telnetd code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>krb5-appl</name>
+	<range><lt>1.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT Kerberos Team reports:</p>
+	<blockquote cite=http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc">
+	  <p>When an encryption key is supplied via the TELNET protocol,
+	     its length is not validated before the key is copied into a
+	     fixed-size buffer.
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4862</cvename>
+      <url>http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc</url>
+    </references>
+    <dates>
+      <discovery>2011-12-23</discovery>
+      <entry>2011-12-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="022a4c77-2da4-11e1-b356-00215c6a37bb">
     <topic>proftpd -- arbitrary code execution vulnerability with chroot</topic>
     <affects>
