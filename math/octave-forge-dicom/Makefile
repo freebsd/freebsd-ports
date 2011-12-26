@@ -1,6 +1,6 @@
 # New ports collection makefile for:	octave-forge-dicom
-# Date created:		20 December 2011
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
+# Date created:		26 December 2011
+# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.org>
 #
 # $FreeBSD$
 #
