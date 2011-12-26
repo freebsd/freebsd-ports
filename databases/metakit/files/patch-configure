@@ -15,3 +15,12 @@
    ;;
  esac
  
+@@ -1482,7 +1478,7 @@
+ if test $SHARED_BUILD = 1; then
+   SHLIB_FLAGS="-shared"
+   SHLIB_CFLAGS="-fPIC -DUSE_TCL_STUBS"
+-  SHLIB_LD="g++ -shared"
++  SHLIB_LD="$CXX -shared"
+ else
+   SHLIB_FLAGS=""
+   SHLIB_CFLAGS=""
