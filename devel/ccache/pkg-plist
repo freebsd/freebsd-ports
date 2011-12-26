@@ -6,5 +6,5 @@ bin/ccache-update-links
 @exec echo "Create compiler links..."
 @exec %D/bin/ccache-update-links -v
 @unexec find %D/%%CCLINKDIR%% -type l -exec rm -f {} \;
-@unexec rmdir %D/%%CCLINKDIR%%/world
-@unexec rmdir %D/%%CCLINKDIR%%
+@dirrmtry %%CCLINKDIR%%/world
+@dirrmtry %%CCLINKDIR%%
