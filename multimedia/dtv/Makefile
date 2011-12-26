@@ -16,6 +16,7 @@ COMMENT=	A client/server based TV capture/display program
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xau x11 xext xxf86dga
 NOT_FOR_ARCHS=	sparc64
 

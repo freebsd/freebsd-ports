@@ -14,6 +14,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes the root window bloody
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11
 MAN1=		xblood.1
 MANCOMPRESSED=	yes

@@ -15,6 +15,7 @@ COMMENT=	Simple window manager
 
 MAN1=	nickleby.1
 MANCOMPRESSED=	yes
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11
 
 PLIST_FILES=	bin/nickleby

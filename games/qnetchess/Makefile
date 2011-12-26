@@ -17,6 +17,7 @@ COMMENT=	Qt based chess multiplayer game
 MAKEFILE=	Makefile.FreeBSD
 LOCALE_FILE=	"${DATADIR}/${PORTNAME}_ru"
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_BZIP2=	yes
 USE_QT_VER=	3
 

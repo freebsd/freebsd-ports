@@ -19,6 +19,7 @@ COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm xxf86vm xxf86dga
 USE_GMAKE=	yes
 MAKE_FLAGS=	-e

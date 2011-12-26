@@ -14,6 +14,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xt
 MAN1=		xkeywrap.1
 MANCOMPRESSED=	yes
