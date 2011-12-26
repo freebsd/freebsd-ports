@@ -3129,6 +3129,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
     SUBDIR += py-ll-core
