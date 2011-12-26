@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	samorodi@NUXI.com
 COMMENT=	Tile placement game
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11
 MAN6=		ishido.6
 

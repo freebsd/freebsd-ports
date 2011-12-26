@@ -14,6 +14,7 @@ MASTER_SITES=	http://fenix.ne.jp/~cdrtk/soft/dl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of xjump
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xpm xaw
 
 MAN1=		xjumpx.1

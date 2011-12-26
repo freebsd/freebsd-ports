@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clock with eyes following the mouse pointer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xau xdmcp xpm xt ice
 
 MAN1=		eyeclock.1

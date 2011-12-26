@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/maps/default.xml:${PORTSDIR}/games/dangerdeep-data
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 

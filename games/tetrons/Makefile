@@ -15,6 +15,7 @@ COMMENT=	Tetris(TM) clone for X11
 
 MAKE_ARGS+=	-DRANDOM
 
+MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xext xi
 PLIST_FILES=	bin/tetrons
 
