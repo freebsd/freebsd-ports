@@ -10229,6 +10229,7 @@ ocaml-camomile                  ports/devel/ocaml-camomile
 ocaml-camomile-examples         ports/devel/ocaml-camomile-examples
 ocaml-cfg                       ports/devel/ocaml-cfg
 ocaml-classes                   ports/devel/ocaml-classes
+ocaml-cppo                      ports/devel/ocaml-cppo
 ocaml-cryptgps                  ports/security/ocaml-cryptgps
 ocaml-cryptokit                 ports/security/ocaml-cryptokit
 ocaml-csv                       ports/textproc/ocaml-csv
@@ -10299,6 +10300,7 @@ octave-forge-communications     ports/math/octave-forge-communications
 octave-forge-control            ports/math/octave-forge-control
 octave-forge-data-smoothing     ports/math/octave-forge-data-smoothing
 octave-forge-dataframe          ports/math/octave-forge-dataframe
+octave-forge-dicom              ports/math/octave-forge-dicom
 octave-forge-econometrics       ports/math/octave-forge-econometrics
 octave-forge-engine             ports/math/octave-forge-engine
 octave-forge-es                 ports/math/octave-forge-es
@@ -20678,6 +20680,7 @@ pftabled                        ports/net-mgmt/pftabled
 pftop                           ports/sysutils/pftop
 pftpd                           ports/ftp/pftpd
 pg_filedump                     ports/databases/pg_filedump
+pg_reorg                        ports/databases/pg_reorg
 pg_rman                         ports/databases/pg_rman
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
@@ -22146,6 +22149,7 @@ py-kiwi                         ports/x11-toolkits/py-kiwi
 py-kjbuckets                    ports/devel/py-kjbuckets
 py-kombu                        ports/net/py-kombu
 py-kqueue                       ports/devel/py-kqueue
+py-kss-core                     ports/devel/py-kss-core
 py-kyotocabinet                 ports/databases/py-kyotocabinet
 py-ldap2                        ports/net/py-ldap2
 py-ldaptor                      ports/net/py-ldaptor
@@ -24497,6 +24501,7 @@ salome-sierpinsky               ports/cad/salome-sierpinsky
 salome-smesh                    ports/cad/salome-smesh
 salome-visu                     ports/cad/salome-visu
 salome-yacs                     ports/cad/salome-yacs
+salt                            ports/sysutils/salt
 sam2p                           ports/graphics/sam2p
 samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
@@ -27158,6 +27163,7 @@ x-face-e21                      ports/mail/x-face-e21
 x-files                         ports/x11-fm/x-files
 x-tile                          ports/deskutils/x-tile
 x026                            ports/deskutils/x026
+x10                             ports/lang/x10
 x11_blast                       ports/x11/blast
 x11_silo                        ports/x11/silo
 x11amp                          ports/audio/x11amp
