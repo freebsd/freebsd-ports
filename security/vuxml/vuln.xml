@@ -831,7 +831,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Integer overflow in xpath.c, allows allows context-dependent attackers
+	<p>Integer overflow in xpath.c, allows context-dependent attackers
 	  to cause a denial of service (crash) and possibly execute arbitrary code via
 	  a crafted XML file that triggers a heap-based buffer overflow when adding a
 	  new namespace node, related to handling of XPath expressions.</p>
@@ -998,7 +998,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>caml-light uses uses mktemp() insecurely, and also does
+	<p>caml-light uses mktemp() insecurely, and also does
 	  unsafe things in /tmp during make install.</p>
       </body>
     </description>
@@ -22656,7 +22656,7 @@ Note:  Please add new entries to the beginning of this file.
 	    <p>It has been reported that when a user subscribes to a news
 	      feed using the feed subscription button, the page address
 	      can be changed. This causes the address field not to update
-	      correctly. Although this can mean that that misleading
+	      correctly. Although this can mean that misleading
 	      information can be displayed in the address field, it can
 	      only leave the attacking page's address in the address bar,
 	      not a trusted third party address.</p>
@@ -33410,7 +33410,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A vulnerability in the handling handling of combined UTF-8
+	<p>A vulnerability in the handling of combined UTF-8
 	  characters in screen may allow an user-assisted attacker to
 	  crash screen or potentially allow code execution as the user
 	  running screen.  To exploit this issue the user running
@@ -35991,7 +35991,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000229.html">
 	  <p>Fixed 2 more possible memory allocation attacks.  They are
 	    similar to the problem we fixed with 1.4.4.  This bug can easily
-	    be be exploted for a DoS; remote code execution is not entirely
+	    be exploted for a DoS; remote code execution is not entirely
 	    impossible.</p>
 	</blockquote>
       </body>
@@ -37694,7 +37694,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://secunia.com/advisories/19706/">
 	  <p>phpWebFTP have a vulnerability, which can be exploited by
 	    malicious people to disclose sensitive information.</p>
-	  <p>Input passed to to the "language" parameter in index.php isn't
+	  <p>Input passed to the "language" parameter in index.php isn't
 	    properly verified, before it is used to include files. This can be
 	    exploited to include arbitrary files from local resources.</p>
 	  <p>Successful exploitation requires that "magic_quotes_gpc" is
@@ -39290,7 +39290,7 @@ Note:  Please add new entries to the beginning of this file.
 	  a Security Association not being updated, allowing packets to
 	  unconditionally pass sequence number verification checks.</p>
 	<h1>Impact</h1>
-	<p>An attacker able to to intercept IPSec packets can replay
+	<p>An attacker able to intercept IPSec packets can replay
 	  them.  If higher level protocols which do not provide any
 	  protection against packet replays (e.g., UDP) are used, this
 	  may have a variety of effects.</p>
@@ -45204,7 +45204,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>In fetchmail 6.2.5.1, the the remote code injection via
+	<p>In fetchmail 6.2.5.1, the remote code injection via
 	  POP3 UIDL was fixed, but a denial of service attack was
 	  introduced:</p>
 	<p>Two possible NULL-pointer dereferences allow a malicous
@@ -49465,7 +49465,7 @@ Note:  Please add new entries to the beginning of this file.
 	    the old package to a predictable temporary file, allowing
 	    an attacker to overwrite arbitrary files via a symlink
 	    attack.</li>
-	  <li>portupgrade will <q>touch</q> a temporary temporary file
+	  <li>portupgrade will <q>touch</q> a temporary file
 	    with a constant filename (pkgdb.fixme) allowing an
 	    attacker to create arbitrary zero-byte files via a symlink
 	    attack.</li>
@@ -61073,7 +61073,7 @@ http_access deny Gopher</pre>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>In December 2002, Timo Sirainen reported:</p>
 	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605">
-	  <p>Cyrus IMAP server has a a remotely exploitable pre-login
+	  <p>Cyrus IMAP server has a remotely exploitable pre-login
 	    buffer overflow. [...] Note that you don't have to log in
 	    before exploiting this, and since Cyrus
 	    runs everything under one UID, it's possible to read every
