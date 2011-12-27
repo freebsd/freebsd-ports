@@ -16,11 +16,12 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/modplugplay/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A commandline music mod player using libmodplug
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	modplug.1:${PORTSDIR}/audio/libmodplug
 
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv2
 MAN1=		modplugplay.1
 PLIST_FILES=	bin/modplugplay
 

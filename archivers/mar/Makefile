@@ -14,11 +14,12 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A simple binary file format for storing arbitrary meta and user data
 
+LICENSE=	MIT
+
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-LICENSE=	MIT
 MAN1=		mar.1
 
 post-patch:

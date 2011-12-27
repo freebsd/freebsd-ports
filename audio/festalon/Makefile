@@ -16,6 +16,8 @@ PKGNAMEPREFIX?=
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT?=	A command line player for .nsf and .hes audio files
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_AUTOTOOLS=	libtool
@@ -33,7 +35,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_SDL=	yes
 
-LICENSE=	GPLv2
 PLIST_FILES=	bin/festalon
 PORTDOCS=	README
 

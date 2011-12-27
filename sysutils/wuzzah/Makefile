@@ -13,11 +13,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line utility for stalking users
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/wuzzah
 MAN1=		wuzzah.1

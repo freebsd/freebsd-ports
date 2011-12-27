@@ -14,6 +14,8 @@ MASTER_SITES=	http://phroggy.com/files/unix/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A squid redirect script for filtering web banners
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
 USE_PERL5=	5.8.6+
@@ -24,8 +26,6 @@ PLIST_SUB+=	WWW_ROOT="${WWW_ROOT}"
 CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 		exceptions.data exceptions.local.data frames.data \
 		frames.local.data popups.data popups.local.data
-
-LICENSE=	GPLv2
 
 post-patch:
 	@${REINPLACE_CMD} -e \

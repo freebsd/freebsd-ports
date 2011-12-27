@@ -16,14 +16,14 @@ DISTNAME=	STYMulator-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
 
+LICENSE=	GPLv2
+
 USE_DOS2UNIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MAN1=		ymplayer.1 ym2wav.1
 PLIST_FILES=	bin/ym2wav bin/ymplayer bin/stymulator
-
-LICENSE=	GPLv2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ym2wav ${PREFIX}/bin

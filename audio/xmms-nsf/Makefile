@@ -15,6 +15,8 @@ MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
@@ -28,7 +30,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CFLAGS+=	-fPIC
 
-LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Input/libnsf.a \
 		lib/xmms/Input/libnsf.la \
 		lib/xmms/Input/libnsf.so

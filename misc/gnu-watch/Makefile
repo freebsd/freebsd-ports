@@ -16,11 +16,11 @@ DISTNAME=	procps-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
+LICENSE=	GPLv2
+
 MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-lncurses
-
-LICENSE=	GPLv2
 
 MAN1=		gnu-watch.1
 PLIST_FILES=	bin/${UNIQUENAME}

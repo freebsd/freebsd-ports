@@ -13,11 +13,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create BitTorrent files from the command line
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/createtorrent
 

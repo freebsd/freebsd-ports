@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A curses based module tracker using libmikmod
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 MAKE_JOBS_SAFE=	yes
@@ -21,7 +23,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel
 DEFINES=	-D_REENTRANT
 
-LICENSE=	GPLv2
 PLIST_FILES=	bin/mp-player
 
 do-build:

@@ -14,12 +14,12 @@ MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	An ISO 3166 country code finder
 
+LICENSE=	GPLv2
+
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/iso3166
 PORTDOCS=	README

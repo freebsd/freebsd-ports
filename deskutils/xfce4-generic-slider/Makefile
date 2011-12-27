@@ -14,15 +14,13 @@ MASTER_SITES=	CRITICAL/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A slider plugin to adjust and/or monitor any numeric variable
 
-#BROKEN=		Does not work with xfce 4.8
+LICENSE=	GPLv3
 
 USE_XFCE=	panel libutil libgui
 USE_GNOME=	pkgconfig
 
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`
-
-LICENSE=	GPLv3
 
 post-patch:
 	@${REINPLACE_CMD} -e \

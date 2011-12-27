@@ -15,6 +15,8 @@ DISTNAME=	sapplug-xmms-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
@@ -25,7 +27,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}
 
-LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Input/libsap.so
 
 OPTIONS=	OPTIMIZED_CXXFLAGS "use optimized C++ flags" on \

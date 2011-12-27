@@ -15,6 +15,8 @@ MASTER_SITES=	http://mikmod.raphnet.net/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI and IT mods
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 USE_GMAKE=	yes
@@ -25,7 +27,6 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS+=	--enable-color-interface
 .endif
 
-LICENSE=	GPLv2
 MAN1=		mikmod.1
 PLIST_FILES=	bin/mikmod
 

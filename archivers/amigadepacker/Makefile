@@ -14,6 +14,8 @@ MASTER_SITES=	http://zakalwe.fi/~shd/foss/amigadepacker/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool for depacking some compressed Amiga formats
 
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_CSTD=	gnu89
@@ -21,7 +23,6 @@ USE_CSTD=	gnu89
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	${PORTNAME}
 
-LICENSE=	GPLv2
 MAN1=		amigadepacker.1
 PLIST_FILES=	bin/amigadepacker
 
