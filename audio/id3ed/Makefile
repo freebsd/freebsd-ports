@@ -8,8 +8,7 @@
 PORTNAME=	id3ed
 PORTVERSION=	1.10.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_NETBSD} \
-		${MASTER_SITE_OPENBSD}
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	An id3 tag editor for mp3 files
