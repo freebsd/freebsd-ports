@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	The all-platform eMule p2p client
 
 LICENSE=	GPLv2 GPLv3
