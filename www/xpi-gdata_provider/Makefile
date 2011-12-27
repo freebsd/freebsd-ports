@@ -7,6 +7,7 @@
 
 PORTNAME=	gdata_provider
 PORTVERSION=	0.9
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-sm+tb
 CATEGORIES=	www deskutils
 
@@ -16,6 +17,10 @@ COMMENT=	Allows bidirectional access to Google Calendar
 XPI_DISTNAME=	provider_for_google_calendar
 XPI_NUM=	4631
 XPI_ID=		{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}
+
+post-patch:
+	@${REINPLACE_CMD} -i "" "s/8\.\*/9.*/;s/2\.5\.\*/2.6.*/;s/1\.0\.\*/1.1.*/" \
+		${WRKSRC}/install.rdf
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
