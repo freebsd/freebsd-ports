@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: musicpd
-# REQUIRE: mixer LOGIN avahi_daemon
+# REQUIRE: mixer LOGIN avahi_daemon oss
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable mpd:
