@@ -1,8 +1,0 @@
-bin/scrotwm
-bin/startscrotwm
-lib/libswmhack.so
-%%EXAMPLESDIR%%/screenshot.sh
-@unexec if [ ! -f %D/etc/scrotwm.conf ] || cmp -s %D/etc/scrotwm.conf.sample %D/etc/scrotwm.conf; then rm -f %D/etc/scrotwm.conf; else echo %%PREFIX%%/etc/scrotwm.conf contains changes, remove it manually to delete this package completely.; fi
-etc/scrotwm.conf.sample
-@exec [ -f %D/etc/scrotwm.conf ] || cp -p %D/%F %D/etc/scrotwm.conf
-@dirrm %%EXAMPLESDIR%%

@@ -1,7 +1,0 @@
-GCC, the GNU Compiler Collection, supports a number of languages.  This
-port installs the C, C++, Fortran and Java front ends as gcc47, g++47,
-gfortran47, and gcj47, respectively.
-
-WWW: http://gcc.gnu.org/
-
-Gerald Pfeifer <gerald@FreeBSD.org>

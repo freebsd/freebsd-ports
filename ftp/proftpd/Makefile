@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.3g
+PORTREVISION=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -100,6 +101,10 @@ INCLUDEDIRS?=
 PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
+BROKEN=		Does not compile on sparc64-9: storage size of 'utx' isn't known
+.endif
 
 .if !defined(WITHOUT_RATIO)
 MODULES:=${MODULES}:mod_ratio

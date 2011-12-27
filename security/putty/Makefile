@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -45,7 +45,7 @@ MAKE_ARGS+=	GTK_CONFIG=:
 .if !defined(WITHOUT_GSSAPI)
 _COMPAT=		-DSTATIC_GSSAPI
 .if ${OSVERSION} >= 900000
-LIB_DEPENDS=		krb5support.0:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		krb5support.0:${PORTSDIR}/security/krb5
 .endif
 .else
 _COMPAT=		-DNO_GSSAPI
