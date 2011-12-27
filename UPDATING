@@ -1083,7 +1083,7 @@ or
   All skype ports were moved to net-im/:
   - skype12: unchanged, very old version (for FreeBSD 6)
   - skype20: last version with OSS support, that used to live in net/skype; the
-  DISTFILE is gone from the vendor but if you happen to have it it would be a
+  DISTFILE is gone from the vendor but if you happen to have it, it would be a
   way of having sound w/o needing to upgrade your base OS
   - [RECOMMENDED] skype: currently at 2.1.0.81 and the best supported
   - skype-devel: currently at 2.2.0.25, sounds is OK, video doesn't work
@@ -3473,7 +3473,7 @@ or
 
   Due to the move of several plugins from gstreamer-plugins-bad to
   gstreamer-plugins-good and gstreamer-plugins-ugly, it is necessary to
-  update update gstreamer-plugins-bad first:
+  update gstreamer-plugins-bad first:
 
 	portupgrade -R gstreamer-plugins-bad
 
@@ -5241,7 +5241,7 @@ or
   COMPATIBILITY WITH 2.5.4:
 
   - when using SQL for logging (e.g. for a pen pals feature) or for
-    quarantining, SQL tables tables maddr, msgs, msgrcpt and quarantine need
+    quarantining, SQL tables maddr, msgs, msgrcpt and quarantine need
     to be extended by a new field 'partition_tag';  see below for details;
 
   - when SQL logging (pen pals) or SQL lookups are used, one can choose a
