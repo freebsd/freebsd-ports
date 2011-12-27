@@ -2781,6 +2781,7 @@
     SUBDIR += pear-Horde_Util
     SUBDIR += pear-Horde_View
     SUBDIR += pear-I18N
+    SUBDIR += pear-IO_Bit
     SUBDIR += pear-Math_Fraction
     SUBDIR += pear-Net_Gearman
     SUBDIR += pear-OLE
