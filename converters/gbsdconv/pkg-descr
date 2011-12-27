@@ -1,0 +1,10 @@
+GUI for bsdconv.
+
+Features:
+	Auto choose the best from mutiple conversion
+	Text conversion
+	File name conversion
+	File content conversion
+	Meta tag conversion
+
+WWW: https://github.com/buganini/gbsdconv
