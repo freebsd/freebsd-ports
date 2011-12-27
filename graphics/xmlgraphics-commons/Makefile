@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmlgraphics-commons
-PORTVERSION=	1.4
+PORTVERSION=	1.5.r1222519
 CATEGORIES=	graphics textproc java
-MASTER_SITES=	APACHE/xmlgraphics/commons/source
+MASTER_SITES=	http://www.predatorlabs.net/dl/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	rfarmer@predatorlabs.net
@@ -23,6 +23,6 @@ USE_ANT=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-1.5svn.jar ${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>
