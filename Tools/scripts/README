@@ -161,7 +161,7 @@ portsearch - A utility for searching the ports tree.
 		      fields. This option behaves differently to the other op-
 		      tions, see the EXAMPLES section
 
-	   -f file    Use the index file file instead of /usr/ports/INDEX
+	   -f file    Use the index file instead of /usr/ports/INDEX
 
      All searches are case-insensitive
 
