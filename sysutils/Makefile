@@ -372,6 +372,7 @@
     SUBDIR += installwatch
     SUBDIR += iogen
     SUBDIR += iograph
+    SUBDIR += ioping
     SUBDIR += ipa
     SUBDIR += ipmitool
     SUBDIR += ipsc
