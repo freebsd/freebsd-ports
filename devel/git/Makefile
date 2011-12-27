@@ -389,8 +389,14 @@ post-install:
 	(cd ${WRKDIR}/man5/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man5)
 	(cd ${WRKDIR}/man7/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man7)
 .if defined (WITH_HTMLDOCS)
+	# Manually remove the index.html symlink before installing, and then
+	# recreate it after. This is necessary because the distfile is
+	# extracted with --no-same-owner. If the distfile is extracted as a
+	# non-root user then the symlink will have the incorrect owner.
+	${RM} -f ${WRKDIR}/htmldocs/index.html
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${LN} -s ${DOCSDIR}/git.html ${DOCSDIR}/index.html
 .endif
 	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
