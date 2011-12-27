@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.229 2011/08/21 23:33:05 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.237 2011/12/27 01:22:45 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -668,15 +668,27 @@ sub checkdescr {
 	if ($file =~ /\bpkg-descr/ && $tmp =~ m,http://,) {
 		my $has_url = 0;
 		my $has_www = 0;
+		my $cpan_url = 0;
+		my $has_endslash = 0;
 		foreach my $line (grep($_ =~ "http://", split(/\n+/, $tmp))) {
 			$has_url = 1;
 			if ($line =~ m,WWW:[ \t]+http://,) {
 				$has_www = 1;
+				if ($line =~ m,search.cpan.org,) {
+					$cpan_url = 1;
+					if ($line =~ m,/$,) {
+						$has_endslash = 1;
+					}
+				}
 			}
 		}
 
 		if (!$has_url) {
 			&perror("WARN", $file, -1, "add \"WWW: UR:\" for this port if possible");
+		}
+
+		if ($cpan_url && !$has_endslash) {
+			&perror("WARN", $file, -1, "end WWW CPAN URL with a \"/\"");
 		}
 
 		if ($has_url && ! $has_www) {
@@ -1311,7 +1323,7 @@ sub check_depends_syntax {
 			}
 
 			# Check for direct dependency on apache.
-			if ($m{'dep'} =~ /apache/) {
+			if ($m{'dep'} =~ /\/www\/apache\d*\//) {
 				&perror("FATAL", $file, -1, "do not depend on any apache ".
 					"port in *_DEPENDS directly.  ".
 					"Instead use USE_APACHE=VERSION, where VERSION can be ".
@@ -1838,6 +1850,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
+				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\-\-$i/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
@@ -2104,7 +2117,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 				(defined($cxxflags) && $cxxflags =~ /-I/)) {
 				&perror("WARN", $file, -1, "Consider passing include paths ".
 					"to configure via the CPPFLAGS macro ".
-					"(i.e. CPPFLAGS=-I...)");
+					"(i.e. CPPFLAGS+=-I...)");
 			}
 		}
 
@@ -2132,6 +2145,39 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 		if ($configure_env =~ /(CPPFLAGS)=/) {
 			&perror("FATAL", $file, -1, "$1 is already ".
 				"passed in CONFIGURE_ENV via bsd.port.mk.  If you need to ".
+				"override the default value, alter $1 in the Makefile ".
+				"instead with $1+=...");
+		}
+
+		if ($configure_env =~ /(LDFLAGS)=/) {
+			&perror("FATAL", $file, -1, "$1 is already passed in ".
+				"CONFIGURE_ENV via bsd.port.mk.  If you need to ".
+				"override the default value, alter $1 in the Makefile ".
+				"instead with $1+=...");
+		}
+	}
+
+	#
+	# whole file: *FLAGS
+	#
+	foreach my $f (qw(CFLAGS CXXFLAGS CPPFLAGS LDFLAGS)) {
+		if ($whole =~ /^$f=/m) {
+			&perror("WARN", $file, -1, "$f is overridden in the Makefile ".
+				"clobbering a value possibly set by a user.  Consider ".
+				"using $f+=... if you want to add or $f:=\${$f:C/...//} ".
+				"if you want to remove specific flags");
+		}
+	}
+
+	#
+	# whole file: MAKE_ENV
+	#
+	if ($whole =~ /\nMAKE_ENV[?:+]?=\s*([^\\\n]+(\\\n[^\\\n]+)*)/) {
+		my $make_env = $1;
+
+		if ($make_env =~ /(CPPFLAGS)=/) {
+			&perror("FATAL", $file, -1, "$1 is already ".
+				"passed in MAKE_ENV via bsd.port.mk.  If you need to ".
 				"override the default value, alter $1 in the Makefile ".
 				"instead with $1=...");
 		}
@@ -2202,8 +2248,6 @@ Date [cC]reated
 EOF
 	if ($osname eq 'NetBSD') {
 		unshift(@linestocheck, '(New )?[pP](ackage|ort)s [cC]ollection [mM]akefile [fF]or');
-	} else {
-		unshift(@linestocheck, '(New )?[pP]orts [cC]ollection [mM]akefile [fF]or');
 	}
 	$tmp = $sections[$idx++];
 	$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
@@ -2211,14 +2255,16 @@ EOF
 	if ($tmp =~ /\n[^#]/) {
 		&perror("FATAL", $file, -1, "non-comment line in comment section.");
 	}
-	foreach my $i (@linestocheck) {
-		$j = $i;
-		$j =~ s/\(.*\)\?//g;
-		$j =~ s/\[(.)[^\]]*\]/$1/g;
-		if ($tmp !~ /# $i:[ \t]+\S+/) {
-			&perror("FATAL", $file, -1, "no \"$j\" line in comment section.");
-		} else {
-			print "OK: \"$j\" seen in $file.\n" if ($verbose);
+	if ($osname eq 'NetBSD') {
+		foreach my $i (@linestocheck) {
+			$j = $i;
+			$j =~ s/\(.*\)\?//g;
+			$j =~ s/\[(.)[^\]]*\]/$1/g;
+			if ($tmp !~ /# $i:[ \t]+\S+/) {
+				&perror("FATAL", $file, -1, "no \"$j\" line in comment section.");
+			} else {
+				print "OK: \"$j\" seen in $file.\n" if ($verbose);
+			}
 		}
 	}
 	if ($tmp =~ m/Version [rR]equired/) {
@@ -2783,8 +2829,8 @@ MAINTAINER COMMENT
 
 	if ($makevar{LICENSE}) {
 		&checkorder('LICENSE', $tmp, $file, qw(
-			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
-			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
+			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME(_\w+)?
+			LICENSE_TEXT(_\w+)? LICENSE_FILE LICENSE_PERMS(_\w+)?
 		));
 
 		# check LICENSE
@@ -3190,9 +3236,23 @@ sub checkorder {
 		$i = pop(@items);
 		$k = 0;
 		while ($k < scalar(@order) && $order[$k] ne $i) {
+			if (defined $order[$k] &&
+			$order[$k] =~ /[\.\*\+\?\{\}\[\]\^\$\|]/ &&
+			$i =~ /$order[$k]/) {
+				last;
+			}
 			$k++;
 		}
-		if (defined $order[$k] && $order[$k] eq $i) {
+		if (defined $order[$k] && $order[$k] =~ /[\.\*\+\?\{\}\[\]\^\$\|]/ &&
+			$i =~ /$order[$k]/) {
+			if ($k < $j) {
+				&perror("FATAL", $file, -1, "$i appears out-of-order.");
+				$invalidorder++;
+			} else {
+				print "OK: seen $i, in order.\n" if ($verbose);
+			}
+			$j = $k;
+		} elsif (defined $order[$k] && $order[$k] eq $i) {
 			if ($k < $j) {
 				&perror("FATAL", $file, -1, "$i appears out-of-order.");
 				$invalidorder++;
