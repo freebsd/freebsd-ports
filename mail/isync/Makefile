@@ -13,12 +13,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	42+
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 MAN1=		isync.1 mbsync.1 mdconvert.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO

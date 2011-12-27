@@ -13,12 +13,13 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts WAV files into CDR audio file format
 
+LICENSE=	GPLv2
+
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRC=		wav2cdr cmdarg data fileio process
 
-LICENSE=	GPLv2
 PLIST_FILES=	bin/wav2cdr
 MAN1=		wav2cdr.1
 

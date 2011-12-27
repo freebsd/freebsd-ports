@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.milkytracker.org/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A free music creation tool inspired by Fast Tracker 2
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
 		zzip.13:${PORTSDIR}/devel/zziplib
 
@@ -27,7 +29,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--disable-alsatest --without-alsa
 
-LICENSE=	GPLv3
 PLIST_FILES=	bin/milkytracker share/pixmaps/milkytracker.ico \
 		share/pixmaps/milkytracker.png
 PORTDOCS=	FAQ.html MilkyTracker.html ChangeLog.html

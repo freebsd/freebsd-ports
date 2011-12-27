@@ -15,14 +15,14 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 		DEBUG	"Enable debug information (for developers)"	off \
 		SSL	"Enable SSL support"				off
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/nbsmtp
 

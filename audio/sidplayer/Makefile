@@ -16,13 +16,13 @@ DISTNAME=	SIDPlayer-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A C64 SID tune player
 
+LICENSE=	GPLv2
+
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 SDLINCLUDEDIR=	SDL
-
-LICENSE=	GPLv2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/SDL_endian\.h|${SDLINCLUDEDIR}/SDL_endian\.h|' \

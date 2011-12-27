@@ -14,10 +14,11 @@ MASTER_SITES=	http://checkmate.gissen.nl/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv2
 MAN1=		mpck.1
 MLINKS=		mpck.1 checkmate.1
 PLIST_FILES=	bin/mpck

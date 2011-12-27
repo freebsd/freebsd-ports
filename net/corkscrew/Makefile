@@ -15,9 +15,9 @@ MASTER_SITES=	http://www.agroman.net/corkscrew/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A HTTP tunnelling utility for SSH
 
-GNU_CONFIGURE=	yes
-
 LICENSE=	GPLv2
+
+GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -23,7 +23,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS+=	CC="${CC}"
 
-RESTRICTED=	"Unclear legal status in EU countries"
+RESTRICTED=	Unclear legal status in EU countries
 
 .if ${PKGNAMEPREFIX} == ""
 PLIST_FILES=	bin/gopod

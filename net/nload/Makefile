@@ -14,11 +14,11 @@ MASTER_SITES=	http://www.roland-riegel.de/nload/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
-
-LICENSE=	GPLv2
 
 MAN1=		nload.1
 PLIST_FILES=	bin/nload

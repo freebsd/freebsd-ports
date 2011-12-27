@@ -14,12 +14,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to test and create .sfv files
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/pure-sfv
 PORTDOCS=	ReadMe.txt

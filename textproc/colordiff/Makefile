@@ -13,10 +13,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/version%20${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to colorize diff output
 
+LICENSE=	GPLv2
+
 USE_PERL5=	yes
 NO_BUILD=	yes
-
-LICENSE=	GPLv2
 
 MAN1=		colordiff.1
 

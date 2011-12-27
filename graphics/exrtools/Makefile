@@ -15,6 +15,8 @@ MASTER_SITES=	http://scanline.ca/exrtools/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -25,8 +27,6 @@ MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/exrblur bin/exrchr bin/exricamtm bin/exrnlm \
 		bin/exrnormalize bin/exrpptm bin/exrstats \

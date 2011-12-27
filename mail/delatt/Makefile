@@ -14,12 +14,12 @@ MASTER_SITES=	http://danborn.net/delatt/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Strip attachments from email
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_PERL5_RUN=	5.8.6+
 NO_BUILD=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/delatt
 

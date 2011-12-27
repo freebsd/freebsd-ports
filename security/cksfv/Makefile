@@ -14,11 +14,11 @@ MASTER_SITES=	http://zakalwe.fi/~shd/foss/cksfv/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
-
-LICENSE=	GPLv2
 
 MAN1=		cksfv.1
 PLIST_FILES=	bin/cksfv

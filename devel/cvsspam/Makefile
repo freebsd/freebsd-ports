@@ -14,10 +14,10 @@ MASTER_SITES=	http://www.badgers-in-foil.co.uk/projects/cvsspam/releases/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Sends diffs when a change is committed to your CVS repository
 
+LICENSE=	GPLv2
+
 USE_RUBY=	yes
 NO_BUILD=	yes
-
-LICENSE=	GPLv2
 
 PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 

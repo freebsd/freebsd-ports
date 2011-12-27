@@ -15,6 +15,8 @@ DISTNAME=	bot-sentry-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pidgin plugin to prevent instant message spam
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
@@ -22,8 +24,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
-
-LICENSE=	GPLv3
 
 PLIST_FILES=	lib/purple-2/bot-sentry.so lib/purple-2/bot-sentry.la
 

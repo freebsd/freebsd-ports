@@ -14,14 +14,14 @@ MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 MAKE_JOBS_SAFE=	yes
 
 # recoverjpeg scripts require many dependencies
 OPTIONS=	SCRIPTS	"Install sort-pictures script" off
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/recoverjpeg
 MAN1=		recoverjpeg.1

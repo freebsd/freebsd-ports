@@ -16,13 +16,13 @@ DISTNAME=	util-linux-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command to print the date in Discordian date format
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/ddate
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 MAN1=		ddate.1
 

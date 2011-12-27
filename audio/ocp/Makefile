@@ -16,6 +16,8 @@ MASTER_SITES=	http://stian.cubic.org/ocp/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
@@ -40,7 +42,6 @@ CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--without-alsa \
 		--libdir=${PREFIX}/lib
 
-LICENSE=	GPLv2
 INFO=		ocp
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg

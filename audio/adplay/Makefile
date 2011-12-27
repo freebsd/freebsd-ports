@@ -17,6 +17,8 @@ DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX}:main \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib player using adplug library
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	adplug-2.2:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
@@ -31,7 +33,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
 
-LICENSE=	GPLv2
 MAN1=		adplay.1
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db
 PLIST_DIRS=	%%DATADIR%%

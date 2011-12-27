@@ -14,6 +14,8 @@ MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create 2D barcodes, also known as DataMatrix
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
@@ -23,8 +25,6 @@ USE_GNOME=	pkgconfig
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-LICENSE=	GPLv2
 
 MAN1=		iec16022.1
 

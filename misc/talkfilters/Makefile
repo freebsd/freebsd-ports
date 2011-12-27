@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
+LICENSE=	GPLv2
+
 CONFLICTS=	jive* chef* filters-*
 
 GNU_CONFIGURE=	yes
@@ -40,8 +42,6 @@ MLINKS=	talkfilters.1 austro.1 \
 	talkfilters.1 valspeak.1 \
 	talkfilters.1 warez.1
 INFO=	talkfilters
-
-LICENSE=	GPLv2
 
 pre-everything::
 	@${ECHO_MSG} "Please note that some of the filters contain language that may"

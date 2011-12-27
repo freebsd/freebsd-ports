@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Backup content from DVD to hard disk
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
@@ -21,8 +23,6 @@ USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-LICENSE=	GPLv3
 
 MAN1=		dvdbackup.1
 PORTDOCS=	NEWS README

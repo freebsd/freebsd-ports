@@ -13,11 +13,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy
 
+LICENSE=	GPLv2
+
 MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-lncurses -lform
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/cdircmp
 

@@ -13,9 +13,10 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data
 
+LICENSE=	GPLv2
+
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv2
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 

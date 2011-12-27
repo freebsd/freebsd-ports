@@ -15,10 +15,11 @@ MASTER_SITES=	http://www.nih.at/malint/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv2
 PORTDOCS=	README
 PLIST_FILES=	bin/malint
 

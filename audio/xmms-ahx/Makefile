@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing AHX tunes
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
@@ -28,8 +30,6 @@ USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-LICENSE=	GPLv2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(objformat=\).*|\1elf|' ${WRKSRC}/configure

@@ -14,10 +14,10 @@ MASTER_SITES=	http://www.cgsecurity.org/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt

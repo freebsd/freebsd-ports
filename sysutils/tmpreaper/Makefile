@@ -13,11 +13,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	sbin/tmpreaper
 PORTDOCS=	README

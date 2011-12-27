@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.netswarm.net/misc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
@@ -22,7 +24,5 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
 
 .include <bsd.port.mk>

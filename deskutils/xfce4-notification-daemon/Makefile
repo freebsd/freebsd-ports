@@ -17,6 +17,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Port of Gnome's notification-daemon for the Xfce desktop
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
@@ -40,8 +42,6 @@ CONFLICTS=	notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
 OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \
 		CLOSE    "Show the close button in the default theme" on  \
 		NLS      "Enable Native Language Support"             on
-
-LICENSE=	GPLv2
 
 .include <bsd.port.pre.mk>
 

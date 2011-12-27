@@ -14,11 +14,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A small and lightweight screen(1) wrapper
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
 NO_BUILD=	yes
-
-LICENSE=	GPLv2
 
 MAN1=		screenie.1
 PLIST_FILES=	sbin/screenie
