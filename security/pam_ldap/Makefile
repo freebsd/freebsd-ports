@@ -7,7 +7,7 @@
 
 PORTNAME=	pam_ldap
 PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PORTDATA=	*.schema
 
 MAN5=		pam_ldap.5
 
@@ -35,8 +36,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 	    	${WRKSRC}/vers_string
 
+pre-install:
+	${MKDIR} ${DATADIR}
+
 post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
+	${INSTALL_DATA} ${WRKSRC}/*.schema ${DATADIR}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	    	-e 's|%%DATADIR%%|${DATADIR}|' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
