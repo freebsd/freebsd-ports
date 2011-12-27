@@ -27,6 +27,7 @@
     SUBDIR += fpc-iconvenc
     SUBDIR += fribidi
     SUBDIR += gbase
+    SUBDIR += gbsdconv
     SUBDIR += hs-aeson
     SUBDIR += hs-dataenc
     SUBDIR += hs-json
