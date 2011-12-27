@@ -9,8 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	4.0.0
-PORTREVISION=	2
-DISTVERSION=	4.0.0beta7
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
