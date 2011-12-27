@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
+PEAR_CATSRC=	yes
 FILES=		LMTP.php
 TESTS=		test_lmtp.php
 _TESTSDIR=	.
