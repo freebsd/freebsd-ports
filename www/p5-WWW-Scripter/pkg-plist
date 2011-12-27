@@ -1,6 +1,3 @@
-%%SITE_PERL%%/WWW/Scripter/_Mechanize/Image.pm
-%%SITE_PERL%%/WWW/Scripter/_Mechanize/Link.pm
-%%SITE_PERL%%/WWW/Scripter/_Mechanize.pm
 %%SITE_PERL%%/WWW/Scripter/Location.pod
 %%SITE_PERL%%/WWW/Scripter/History.pod
 %%SITE_PERL%%/WWW/Scripter/WindowGroup.pm
