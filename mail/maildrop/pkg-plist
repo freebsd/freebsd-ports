@@ -29,6 +29,8 @@ etc/quotawarnmsg.sample
 %%PORTDOCS%%%%DOCSDIR%%/lockmail.html
 %%PORTDOCS%%%%DOCSDIR%%/mailbot.html
 %%PORTDOCS%%%%DOCSDIR%%/maildir.html
+%%PORTDOCS%%%%DOCSDIR%%/maildiracl.html
+%%PORTDOCS%%%%DOCSDIR%%/maildirkw.html
 %%PORTDOCS%%%%DOCSDIR%%/maildirmake.html
 %%PORTDOCS%%%%DOCSDIR%%/maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/maildrop.html
