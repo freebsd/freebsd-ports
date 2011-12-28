@@ -91,7 +91,6 @@
     SUBDIR += dbmail23
     SUBDIR += dcc-dccd
     SUBDIR += delatt
-    SUBDIR += demime
     SUBDIR += dk-milter
     SUBDIR += dkfilter
     SUBDIR += dkimproxy

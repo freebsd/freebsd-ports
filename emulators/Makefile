@@ -185,7 +185,6 @@
     SUBDIR += vmware-tools5
     SUBDIR += vmware-tools6
     SUBDIR += vxtools
-    SUBDIR += wahcade
     SUBDIR += wine
     SUBDIR += wine-doors
     SUBDIR += wine-gecko

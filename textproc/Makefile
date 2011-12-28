@@ -1303,7 +1303,6 @@
     SUBDIR += sk-ispell
     SUBDIR += sk-mythes
     SUBDIR += skim
-    SUBDIR += skribe
     SUBDIR += sl-aspell
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
