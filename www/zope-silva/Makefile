@@ -23,6 +23,9 @@ DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
 MAINTAINER=	x@vex.net
 COMMENT=	Web application (CMS) to manage/edit structured documents
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Annotations/__init__.py:${PORTSDIR}/www/zope-annotations \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/FileSystemSite/__init__.py:${PORTSDIR}/www/zope-FileSystemSite \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Formulator/__init__.py:${PORTSDIR}/www/zope-formulator \

@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@vex.net
 COMMENT=	Access and manipulate XML documents within Zope
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 NO_PACKAGE=	Double python dependency

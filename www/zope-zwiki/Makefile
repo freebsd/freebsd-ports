@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@vex.net
 COMMENT=	A WikiWikiWeb product for Zope (colaborative web site system)
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 USE_ZOPE=	yes
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope

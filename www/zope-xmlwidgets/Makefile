@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@vex.net
 COMMENT=	XMLWidgets - dynamic translations of ParsedXML to HTML pages
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/ParsedXML/__init__.py:${PORTSDIR}/www/zope-parsedxml
 
 USE_PYTHON=	yes
