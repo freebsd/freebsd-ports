@@ -38,6 +38,15 @@ post-extract:
 	@${CP} ${MCWM_CONF} ${WRKSRC}/config.h
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+	    ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
+		${MAN1PREFIX}/man/man1/${PORTNAME}.1
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
