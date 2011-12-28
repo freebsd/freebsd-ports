@@ -11,4 +11,4 @@ be opened; instead one of the unused connections from the pool is used. That
 makes psycopg very fast in typical client-server applications that create a
 servicing thread every time a client request arrives.
 
-WWW: http://initd.org/projects/psycopg2
+WWW: http://initd.org/psycopg
