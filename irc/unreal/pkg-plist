@@ -3,6 +3,9 @@
 @unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
 %%EXAMPLESDIR%%/aliases/aliases.conf
 @exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi
+%%EXAMPLESDIR%%/aliases/atheme.conf
+@exec [ -f %D/etc/Unreal/aliases/atheme.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/atheme.conf %D/etc/Unreal/aliases/atheme.conf
 @unexec if cmp -s %D/etc/Unreal/aliases/anope.conf %D/%%EXAMPLESDIR%%/aliases/anope.conf; then rm -f %D/etc/Unreal/aliases/anope.conf; fi
 %%EXAMPLESDIR%%/aliases/anope.conf
 @exec [ -f %D/etc/Unreal/aliases/anope.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/anope.conf %D/etc/Unreal/aliases/anope.conf
@@ -109,6 +112,7 @@ lib/Unreal/m_guest.so
 lib/Unreal/m_help.so
 lib/Unreal/m_htm.so
 lib/Unreal/m_invite.so
+lib/Unreal/m_issecure.so
 lib/Unreal/m_ison.so
 lib/Unreal/m_join.so
 lib/Unreal/m_kick.so
@@ -128,6 +132,7 @@ lib/Unreal/m_nachat.so
 lib/Unreal/m_names.so
 lib/Unreal/m_netinfo.so
 lib/Unreal/m_nick.so
+lib/Unreal/m_nopost.so
 lib/Unreal/m_oper.so
 lib/Unreal/m_opermotd.so
 lib/Unreal/m_part.so
@@ -152,6 +157,7 @@ lib/Unreal/m_sjoin.so
 lib/Unreal/m_silence.so
 lib/Unreal/m_sqline.so
 lib/Unreal/m_squit.so
+lib/Unreal/m_starttls.so
 lib/Unreal/m_stats.so
 lib/Unreal/m_svsfline.so
 lib/Unreal/m_svsjoin.so
