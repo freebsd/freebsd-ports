@@ -45,6 +45,9 @@ MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 .if ${ARCH} == "amd64" && ${OSVERSION} < 900000
 BROKEN=		does not build on amd64
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/fox17.pc.in
