@@ -7,8 +7,8 @@
 
 PORTNAME=	clear_cache_button
 PORTVERSION=	0.9f
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	barbara.xxx1975@libero.it
@@ -39,6 +39,13 @@ XPI_DIRS=	chrome/skin/classic chrome/skin \
 		chrome
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<em:maxVersion>6\.\*<|<em:maxVersion>99.*<|' \
+	    ${WRKSRC}/install.rdf
+
+pre-install:
+	@${RM} -f ${WRKSRC}/install.rdf.bak
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
