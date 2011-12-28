@@ -7,7 +7,7 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail tk
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/
@@ -38,8 +38,6 @@ MAN1=		tkrat.1
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Build fails on sparc64
-.elif ${OSVERSION} >= 900000
-BROKEN=		does not build
 .endif
 
 post-install:
