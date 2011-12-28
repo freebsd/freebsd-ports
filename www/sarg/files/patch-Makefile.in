@@ -1,38 +1,17 @@
---- Makefile.in.orig	2010-08-03 13:41:57.000000000 -0400
-+++ Makefile.in	2011-06-11 22:34:52.000000000 -0400
-@@ -8,7 +8,7 @@
- docdir      = @docdir@
- CC          = @CC@
- BINDIR      = @bindir@
--MANDIR      = @mandir@
-+MANDIR      = @mandir@/man1
- SYSCONFDIR  = @sysconfdir@
- SARGPHPDIR  = @SARGPHPDIR@
- FONTDIR     = @FONTDIR@
-@@ -23,7 +23,7 @@
- CPPFLAGS    = @CPPFLAGS@
- LDFLAGS     = @LDFLAGS@
- DEFS        = $(IBINDIR) $(ISYSCONFDIR) $(IFONTDIR) $(IIMAGEDIR) $(ISARGPHPDIR) $(ILOCALEDIR) @DEFS@
--LIBS        = @LIBS@
-+LIBS        = @LIBS@ -lintl
- SRCDIR      = .
- VPATH       = .
- INSTALL     = cp
-@@ -77,14 +77,13 @@
- 		mkdir -p $(DESTDIR)$(IMAGEDIR); \
- 	fi
- 	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(BINDIR)/sarg
--	chmod 755 $(DESTDIR)$(BINDIR)/sarg
-+	chmod 644 $(DESTDIR)$(BINDIR)/sarg
- 	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(MANDIR)/sarg.1
--	chmod 755 $(DESTDIR)$(MANDIR)/sarg.1
-+	chmod 644 $(DESTDIR)$(MANDIR)/sarg.1
-+	cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf.default
- 	@if test ! -f $(DESTDIR)$(SYSCONFDIR)/sarg.conf; then \
- 		echo "cp $(DESTDIR)$(SYSCONFDIR)/sarg.conf"; \
- 		cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf; \
+--- Makefile.in.orig	2011-06-19 16:12:39.000000000 -0300
++++ Makefile.in	2011-12-28 10:50:42.000000000 -0200
+@@ -93,12 +93,11 @@
+ 	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(bindir)/sarg
+ 	chmod 755 $(DESTDIR)$(bindir)/sarg
+ 	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(man1dir)/sarg.1
+-	chmod 755 $(DESTDIR)$(man1dir)/sarg.1
++	chmod 644 $(DESTDIR)$(man1dir)/sarg.1
++	cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf.default
+ 	@if test ! -f $(DESTDIR)$(sysconfdir)/sarg.conf; then \
+ 		echo "cp $(DESTDIR)$(sysconfdir)/sarg.conf"; \
+ 		cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf; \
 -	else \
--		cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf.default; \
+-		cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf.default; \
  	fi
- 	cp ./exclude_codes $(DESTDIR)$(SYSCONFDIR);
- 	cp ./user_limit_block $(DESTDIR)$(SYSCONFDIR);
+ 	cp ./exclude_codes $(DESTDIR)$(sysconfdir);
+ 	cp ./user_limit_block $(DESTDIR)$(sysconfdir);
