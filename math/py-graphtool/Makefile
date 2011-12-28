@@ -29,4 +29,10 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PYTHON_VERSION=${PYTHON_VER}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: exhausts virtual memory
+.endif
+
+.include <bsd.port.post.mk>
