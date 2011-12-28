@@ -43,6 +43,10 @@ OPTIONS=	GLX "Build GLX client" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: signal 2
+.endif
+
 .if defined(WITHOUT_GLX) && defined(WITHOUT_X11)
 IGNORE=		needs at least one interface (GLX or X11)
 .endif
