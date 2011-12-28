@@ -65,6 +65,9 @@ PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
 .endif
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
 
 .if defined(PYTHON_SLAVEPORT)
 post-extract:
