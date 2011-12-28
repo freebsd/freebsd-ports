@@ -345,4 +345,10 @@ post-patch:
 		${WRKSRC}/plugins/sid/Makefile.in \
 		${WRKSRC}/plugins/supereq/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9: fails to compile
+.endif
+
+.include <bsd.port.post.mk>

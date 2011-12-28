@@ -34,6 +34,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: array bound is not an integer constant
+.endif
+
 HAS_SSE!=	${SYSCTL} -n hw.instruction_sse 2> /dev/null
 .if ${HAS_SSE} == 1
 PLIST_SUB+=	SSE=""
