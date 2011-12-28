@@ -24,6 +24,9 @@ PLIST_FILES=	sbin/pkg_cleanup
 .if ${OSVERSION} >= 900000 && ${OSVERSION} < 900038
 IGNORE=		requires r223289 or higher to compile
 .endif
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9: undefined reference to `sqrt'
+.endif
 
 do-extract:
 	${MKDIR} ${WRKSRC}
