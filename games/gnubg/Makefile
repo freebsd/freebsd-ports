@@ -58,7 +58,7 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--disable-sse
 .endif
 
