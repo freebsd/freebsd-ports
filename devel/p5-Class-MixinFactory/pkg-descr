@@ -6,4 +6,4 @@ inheritance. A NEXT method allows method redispatch up the inheritance
 chain.
 
 Author: Matthew Simon Cavalletto
-WWW: http://search.cpan.org/dist/Class-MixinFactory
+WWW: http://search.cpan.org/dist/Class-MixinFactory/

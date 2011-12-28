@@ -4,4 +4,4 @@ reimplementing PGPMoose, signcontrol and pgpverify.
 
 It can use PGP 2.6.*, PGP 5 or Gnu Privacy Guard.
 
-WWW: http://search.cpan.org/dist/PGP-Sign
+WWW: http://search.cpan.org/dist/PGP-Sign/

@@ -21,4 +21,4 @@ current working directory for a file named mac_oui.db to find the cache. I
 need to come up with a way to let the user set that location.
 
 Author: brian d foy <bdfoy@cpan.org>
-WWW: http://search.cpan.org/dist/Net-MAC-Vendor
+WWW: http://search.cpan.org/dist/Net-MAC-Vendor/

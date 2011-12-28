@@ -19,4 +19,4 @@ The module does not even check if the configuration contexts have valid
 names.
 
 Author: Blair Zajac <blair@orcaware.com>.
-WWW: http://search.cpan.org/dist/Apache-ConfigParser
+WWW: http://search.cpan.org/dist/Apache-ConfigParser/

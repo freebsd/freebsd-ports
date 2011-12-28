@@ -22,4 +22,4 @@ argument into account. Another way of thinking of the mechanism is that it
 performs polymorphic dispatch on every argument of a method, not just the 
 first.
 
-WWW: http://search.cpan.org/dist/Class-Multimethods
+WWW: http://search.cpan.org/dist/Class-Multimethods/

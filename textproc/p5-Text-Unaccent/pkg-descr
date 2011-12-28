@@ -4,4 +4,4 @@ unac_string_utf16 to return the unaccented equivalent. The conversion from
 and to UTF-16 is done with iconv(1).
 
 Author: Loic Dachary <loic@senga.org>
-WWW: http://search.cpan.org/dist/Text-Unaccent
+WWW: http://search.cpan.org/dist/Text-Unaccent/

@@ -10,4 +10,4 @@ Xmms::Plugin - Embeds a Perl interpreter inside xmms and provides
                Input/Output/Effect/General plugin interfaces for
                Perl (not yet released, may never be)
 
-WWW: http://search.cpan.org/dist/Xmms-Perl
+WWW: http://search.cpan.org/dist/Xmms-Perl/

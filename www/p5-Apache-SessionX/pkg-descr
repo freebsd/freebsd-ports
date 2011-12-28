@@ -19,4 +19,4 @@ pack(). ID numbers are generated via MD5. The reader is encouraged to
 extend these capabilities to meet his own requirements.
 
 Author: Gerald Richter <richter@dev.ecos.de>
-WWW: http://search.cpan.org/dist/Apache-SessionX
+WWW: http://search.cpan.org/dist/Apache-SessionX/

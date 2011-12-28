@@ -3,4 +3,4 @@ rather than converting fractions into HTML entities they are replaced by
 the unicode characters for those fractions.
 
 Author: Mark Fowler <mark@twoshortplanks.com>
-WWW: http://search.cpan.org/dist/String-Fraction
+WWW: http://search.cpan.org/dist/String-Fraction/

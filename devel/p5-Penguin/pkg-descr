@@ -3,4 +3,4 @@ electronically signs a piece of Perl code, sends it to another host where the
 signature is checked and the code is executed with privileges that are
 particular to that user.
 
-WWW: http://search.cpan.org/dist/Penguin
+WWW: http://search.cpan.org/dist/Penguin/
