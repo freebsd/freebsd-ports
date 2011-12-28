@@ -22,6 +22,10 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: runs out of virtual memory
+.endif
+
 do-build:
 	${CXX} ${CFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include \
 		${LDFLAGS} -L${LOCALBASE}/lib -lbdd -lboost_program_options \
