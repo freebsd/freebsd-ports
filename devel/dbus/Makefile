@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	1.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=--localstatedir=/var \
 	        --with-test-socket-dir=${WRKDIR} \
 		--with-system-pid-file=/var/run/dbus/dbus.pid \
 		--with-system-socket=/var/run/dbus/system_bus_socket \
-		--with-session-socket-dir=/var/tmp \
+		--with-session-socket-dir=/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
