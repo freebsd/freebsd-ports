@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	antoine.brodin@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for GGI
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
