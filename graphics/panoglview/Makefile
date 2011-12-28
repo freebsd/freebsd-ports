@@ -33,6 +33,10 @@ OPTIONS=	UNICODE	"Use UNICODE version of the wxgtk (NLS broken!)"	off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
 .if defined(WITH_UNICODE)
 WX_UNICODE=	yes
 WX_RC=		wxrc-gtk2u-${WX_VERSION}
