@@ -7,7 +7,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
@@ -30,7 +30,7 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  new versions until they have been committed there first.  !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 VERSION_NSS=	3.12.11
-CKBI_VER=	1.87
+CKBI_VER=	1.88
 VERSION_APACHE=	1.3.41
 NSS_SUFFIX=	.with.ckbi.${CKBI_VER}
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
