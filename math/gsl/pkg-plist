@@ -230,6 +230,4 @@ lib/libgslcblas.so
 lib/libgslcblas.so.0
 libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
-%%PORTDOCS%%%%DOCSDIR%%/gsl-ref.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gsl
