@@ -1,5 +1,8 @@
 %%SITE_PERL%%/namespace/clean.pm
+%%SITE_PERL%%/namespace/clean/_PP_OSE.pm
+%%SITE_PERL%%/namespace/clean/_PP_OSE_5_8.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/clean/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/clean
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/clean
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace
+@dirrm %%SITE_PERL%%/namespace/clean
 @dirrmtry %%SITE_PERL%%/namespace
