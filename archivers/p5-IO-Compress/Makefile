@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.045
+PORTVERSION=	2.046
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.045:${PORTSDIR}/archivers/p5-Compress-Ra
 		p5-Compress-Raw-Zlib>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
 		p5-Compress-Raw-Zlib>=2.045:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+
+TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
