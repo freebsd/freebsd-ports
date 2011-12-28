@@ -164,6 +164,7 @@ polkit:*:562:
 pulse:*:563:
 pulse-access:*:564:
 assp:*:587:
+avahi-autoipd:*:588:
 _xsi:*:600:
 _tss:*:601:_tss
 _pkcs11:*:602:_pkcs11
