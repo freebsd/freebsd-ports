@@ -24,6 +24,9 @@ PLIST_SUB+=	KMODDIR=${KMODDIR} \
 IGNORE=		requires kernel source files
 .endif
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	not relevant for non-x86-derived architectures
+
 post-build:
 	@cd ${WRKSRC} && ${MAKE} util
 
