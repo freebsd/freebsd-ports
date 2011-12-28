@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-AutoCRUD
-PORTVERSION=	2.113.270
+PORTVERSION=	2.113.450
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,10 @@ BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:${PORTSDIR}/www/p5-Catalyst-Acti
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
+		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
 PERL_CONFIGURE=	yes
 
