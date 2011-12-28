@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www5.xorp.org/releases/${PORTVERSION}/	\
 		http://www3.xorp.org/releases/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acc@hexadecagram.org
 COMMENT=	The eXtensible Open Router Platform
 
 OPTIONS=								\
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_SNMP)
-BUILD_DEPENDS=		${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
+BUILD_DEPENDS+=		${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp					 \
 	--with-path-to-snmpd=${LOCALBASE}/sbin				 \
 	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config \
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--enable-optimize --disable-debug
 
 # Bash and Python are only required if running the regression tests.
 .if defined(WITH_CHECK)
-BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
+BUILD_DEPENDS+=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 .endif
 

@@ -111,7 +111,6 @@ xrl/targets/test_xrls.xrls
 xrl/targets/vrrp.xrls
 xrl/targets/xorp_if_mib.xrls
 xrl/targets/xorpsh.xrls
-%%XORP_SNMP%%libdata/ldconfig/xorp
 %%XORP_SNMP%%mibs/bgp4_mib_1657.la
 %%XORP_SNMP%%mibs/bgp4_mib_1657.so
 %%XORP_SNMP%%mibs/libnetsnmpxorp.la
