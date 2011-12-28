@@ -39,7 +39,8 @@ DESCRIPTION
 		      fields. This option behaves differently to the other op-
 		      tions, see the EXAMPLES section
 
-	   -f file    Use the index file, file, instead of /usr/ports/INDEX
+	   -f file    Use an index file with the name "file," instead of
+		      /usr/ports/INDEX
 
      All searches are case-insensitive
 
