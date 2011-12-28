@@ -1,6 +1,6 @@
---- sysdeps/freebsd/open.c.orig	2008-05-23 18:13:23.000000000 -0400
-+++ sysdeps/freebsd/open.c	2008-09-29 17:23:22.000000000 -0400
-@@ -20,76 +20,33 @@
+--- sysdeps/freebsd/open.c.orig	2011-12-25 11:29:32.897248000 +0000
++++ sysdeps/freebsd/open.c	2011-12-25 11:38:05.000000000 +0000
+@@ -20,76 +20,27 @@
  */
  
  #include <config.h>
@@ -23,16 +23,16 @@
 -		glibtop_error_r (NULL, "glibtop_init_p (server == NULL)");
 -
 -	/* Do the initialization, but only if not already initialized. */
--
--	if ((server->flags & _GLIBTOP_INIT_STATE_SYSDEPS) == 0) {
--		glibtop_open_p (server, "glibtop", features, flags);
 +#include <glibtop/cpu.h>
 +#include <glibtop/error.h>
  
--		for (init_fkt = _glibtop_init_hook_p; *init_fkt; init_fkt++)
--			(*init_fkt) (server);
+-	if ((server->flags & _GLIBTOP_INIT_STATE_SYSDEPS) == 0) {
+-		glibtop_open_p (server, "glibtop", features, flags);
 +#include <glibtop_private.h>
  
+-		for (init_fkt = _glibtop_init_hook_p; *init_fkt; init_fkt++)
+-			(*init_fkt) (server);
+-
 -		server->flags |= _GLIBTOP_INIT_STATE_SYSDEPS;
 -	}
 -}
@@ -46,24 +46,24 @@
 -#ifdef DEBUG
 -	fprintf (stderr, "DEBUG (%d): glibtop_open_p ()\n", getpid ());
 -#endif
+-
+-	/* !!! WE ARE ROOT HERE - CHANGE WITH CAUTION !!! */
 +	int ncpus;
 +	size_t len;
- 
--	/* !!! WE ARE ROOT HERE - CHANGE WITH CAUTION !!! */
-+	len = sizeof (ncpus);
-+	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
-+	server->real_ncpu = ncpus - 1;
-+	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
  
 -	server->machine.uid = getuid ();
 -	server->machine.euid = geteuid ();
 -	server->machine.gid = getgid ();
 -	server->machine.egid = getegid ();
- #if defined(__FreeBSD_kernel__)
- 	server->os_version_code = __FreeBSD_kernel_version;
- #else
+-#if defined(__FreeBSD_kernel__)
+-	server->os_version_code = __FreeBSD_kernel_version;
+-#else
++	len = sizeof (ncpus);
++	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
++	server->real_ncpu = ncpus - 1;
++	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
  	server->os_version_code = __FreeBSD_version;
- #endif
+-#endif
 -	/* Setup machine-specific data */
 -	server->machine.kd = kvm_open (NULL, NULL, NULL, O_RDONLY, "kvm_open");
 -
@@ -82,7 +82,7 @@
 -
 -	/* Our effective uid is now those of the user invoking the server,
 -	 * so we do no longer have any priviledges. */
- 
+-
 -	/* NOTE: On FreeBSD, we do not need to be suid root, we just need to
 -	 * be sgid kmem.
 -	 *
