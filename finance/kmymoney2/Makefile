@@ -39,6 +39,10 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
 
