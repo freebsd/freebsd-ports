@@ -20,12 +20,14 @@
 #			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -38,8 +40,6 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-maildirquota
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-LICENSE=	GPLv3
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
