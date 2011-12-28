@@ -1,6 +1,13 @@
---- Makefile.orig	2011-07-23 09:36:24.000000000 +0200
-+++ Makefile	2011-07-23 17:19:30.000000000 +0200
-@@ -3,13 +3,12 @@ DIST=mcwm-$(VERSION)
+$FreeBSD$
+
+Stops clobbering CC, CFLAGS, LDFLAGS, forcing -O2 and adds
+-lxcb-property to LDFLAGS to fix GCC46 build
+
+http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/163667
+
+--- Makefile.orig	2011-12-28 14:56:20.865676731 +0000
++++ Makefile	2011-12-28 14:58:52.600677341 +0000
+@@ -3,13 +3,11 @@
  SRC=mcwm.c list.c config.h events.h list.h
  DISTFILES=LICENSE Makefile NEWS README TODO WISHLIST mcwm.man $(SRC)
  
@@ -8,33 +15,12 @@
 -CFLAGS=-g -std=c99 -Wall -Wextra -O2 -I/usr/local/include #-DDEBUG #-DDMALLOC
 -LDFLAGS=-L/usr/local/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
 -	-lxcb-atom #-ldmalloc
-+CFLAGS+=-g -std=c99 -Wall -Wextra -I${LOCALBASE}/include
-+LDFLAGS+=-L${LOCALBASE}/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
-+	-lxcb-atom 
++CFLAGS+=-g -std=c99 -Wall -Wextra -I/usr/local/include #-DDEBUG #-DDMALLOC
++LDFLAGS+=-L/usr/local/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
++	-lxcb-atom -lxcb-property #-ldmalloc
  
  RM=/bin/rm
 -PREFIX=/usr/local
-+PREFIX?=/usr/local
  
  TARGETS=mcwm
  OBJS=mcwm.o list.o
-@@ -28,13 +27,14 @@ mcwm.o: mcwm.c events.h list.h config.h 
- list.o: list.c list.h Makefile
- 
- install: $(TARGETS)
--	install -m 755 mcwm $(PREFIX)/bin
--	install -m 644 mcwm.man $(PREFIX)/man/man1/mcwm.1
-+	install -m 755 mcwm ${DESTDIR}$(PREFIX)/bin
-+	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man/man1
-+	@mkdir -p ${DESTDIR}${MANPREFIX}/man/man1
-+	install -m 644 mcwm.man ${DESTDIR}$(MANPREFIX)/man/man1/mcwm.1
- 
- deinstall:
--	$(RM) $(PREFIX)/bin/mcwm
--	$(RM) $(PREFIX)/man/man1/mcwm.1
--
-+	$(RM) ${DESTDIR}$(PREFIX)/bin/mcwm
-+	
- $(DIST).tar.bz2:
- 	mkdir $(DIST)
- 	cp $(DISTFILES) $(DIST)/
