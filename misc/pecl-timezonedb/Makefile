@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timezonedb
-DISTVERSION=	2011.13
+DISTVERSION=	2011.14
 CATEGORIES=	misc
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,6 +15,8 @@ DIST_SUBDIR=	PECL
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Timezone Database to be used with PHP's date and time functions
+
+LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
