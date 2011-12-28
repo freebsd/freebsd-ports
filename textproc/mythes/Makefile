@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/MyThes/${PORTVERSION}/
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Simple thesaurus library
