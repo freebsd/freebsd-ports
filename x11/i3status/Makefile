@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	i3status
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/i3status/
 
