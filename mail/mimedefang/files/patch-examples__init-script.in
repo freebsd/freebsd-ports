@@ -1,5 +1,5 @@
---- examples/init-script.in.orig	2009-05-04 17:34:32.000000000 +0200
-+++ examples/init-script.in	2010-08-13 10:34:05.000000000 +0200
+--- examples/init-script.in.orig	2010-06-30 01:50:32.000000000 +0400
++++ examples/init-script.in	2011-12-14 00:40:09.284988761 +0400
 @@ -39,6 +39,12 @@
  # The socket used by mimedefang to communicate with sendmail
  # SOCKET=$SPOOLDIR/mimedefang.sock
@@ -27,7 +27,7 @@
  
  # If you want to use the "notification" facility, set the appropriate port.
  # See the mimedefang-notify man page for details.
-@@ -189,6 +195,7 @@
+@@ -193,6 +199,7 @@
      procname=$PROGDIR/$prog-multiplexor
      start_cmd="start_it"
      stop_cmd="stop_it"
@@ -35,7 +35,7 @@
      sig_reload="INT"
      reread_cmd="reread_it"
      # provide both "reload", the FreeBSD default, with a direct signal to
-@@ -199,6 +206,8 @@
+@@ -203,6 +210,8 @@
  # Make sure required vars are set
  SOCKET=${SOCKET:=$SPOOLDIR/$prog.sock}
  MX_SOCKET=${MX_SOCKET:=$SPOOLDIR/$prog-multiplexor.sock}
@@ -44,7 +44,7 @@
  
  start_it() {
      if test -r $PID ; then
-@@ -281,6 +290,29 @@
+@@ -286,6 +295,29 @@
  	kill `cat $MXPID`
  	return 1
      fi
@@ -74,7 +74,16 @@
      return 0
  }
  
-@@ -368,6 +400,12 @@
+@@ -321,7 +353,7 @@
+     rm -f $MX_SOCKET > /dev/null 2>&1
+     rm -f $SOCKET > /dev/null 2>&1
+ 
+-    if [ "$1" = "wait" ] ; then
++    if [ 1 ] ; then
+ 	printf "Waiting for daemons to exit."
+ 	WAITPID=""
+ 	test -f $PID && WAITPID=`cat $PID`
+@@ -373,6 +405,12 @@
  	fi
  }
  
