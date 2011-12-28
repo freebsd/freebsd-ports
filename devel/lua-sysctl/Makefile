@@ -21,7 +21,7 @@ PLIST_DIRS=	%%LUA_MODLIBDIR%%/sysctl
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900030
-BROKEN=	Does not build
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__lua_sysctl.c
 .endif
 
 do-install:
