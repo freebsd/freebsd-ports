@@ -40,8 +40,8 @@ OPTIONS=	GCONF	"Enable GConf backend"			off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64: invokes i386 assembler
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		does not compile: invokes i386 assembler
 .endif
 
 .if defined(WITH_GCONF)
