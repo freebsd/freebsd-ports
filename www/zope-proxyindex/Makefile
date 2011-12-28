@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@Vex.Net
 COMMENT=	Plugin catalog index using TALES instead attribute lookup/call
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope

@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	zope-
 MAINTAINER=	x@vex.net
 COMMENT=	A 'document-centric' client-side editor for Mozilla/IE
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/FileSystemSite/__init__.py:${PORTSDIR}/www/zope-FileSystemSite
 
 USE_ZOPE=	yes

@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@Vex.Net
 COMMENT=	Extensible User Folder - Custom & database authenticatoin for Zope
 
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-01-06
+
 USE_ZOPE=	yes
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
