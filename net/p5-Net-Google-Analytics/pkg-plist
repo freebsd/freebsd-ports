@@ -1,0 +1,19 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Analytics/.packlist
+%%SITE_PERL%%/Net/Google/Analytics.pm
+%%SITE_PERL%%/Net/Google/Analytics/AccountFeed.pm
+%%SITE_PERL%%/Net/Google/Analytics/AccountFeedEntry.pm
+%%SITE_PERL%%/Net/Google/Analytics/AccountFeedResponse.pm
+%%SITE_PERL%%/Net/Google/Analytics/DataFeed.pm
+%%SITE_PERL%%/Net/Google/Analytics/DataFeedEntry.pm
+%%SITE_PERL%%/Net/Google/Analytics/DataFeedRequest.pm
+%%SITE_PERL%%/Net/Google/Analytics/DataFeedResponse.pm
+%%SITE_PERL%%/Net/Google/Analytics/Dimension.pm
+%%SITE_PERL%%/Net/Google/Analytics/Feed.pm
+%%SITE_PERL%%/Net/Google/Analytics/FeedRequest.pm
+%%SITE_PERL%%/Net/Google/Analytics/FeedResponse.pm
+%%SITE_PERL%%/Net/Google/Analytics/Metric.pm
+%%SITE_PERL%%/Net/Google/Analytics/XML.pm
+@dirrm %%SITE_PERL%%/Net/Google/Analytics
+@dirrm %%SITE_PERL%%/Net/Google
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Analytics
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
