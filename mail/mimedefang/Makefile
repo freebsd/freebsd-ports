@@ -7,21 +7,25 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.72
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Milter based anti-spam and anti-virus filtering program
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	\
 	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-MIME-Tools>=5.417:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-RUN_DEPENDS=	${BUILD_DEPENDS}
+	p5-Mail-SpamAssassin>=3.0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+OPTIONS=	CLAMAV	"Enable Clamav" on
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
@@ -38,10 +42,13 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-ipheader \
 			--prefix=${PREFIX}
 
-.if defined (MIMEDEFANG_DISABLE_CLAMAV)
+.if defined (MIMEDEFANG_DISABLE_CLAMAV) || defined(WITHOUT_CLAMAV)
 CONFIGURE_ARGS+=	--disable-antivirus \
 			--disable-clamav \
 			--disable-clamd
+.else
+BUILD_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
 .endif
 
 MAN1=	mimedefang-util.1
