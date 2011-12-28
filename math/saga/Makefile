@@ -88,7 +88,7 @@ post-patch:
 		${WRKSRC}/configure; do \
 		${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' "$$f"; \
 	done
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
 .endif
