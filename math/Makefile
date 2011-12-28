@@ -556,6 +556,7 @@
     SUBDIR += sdpara
     SUBDIR += sedumi
     SUBDIR += simd-viterbi
+    SUBDIR += slatec
     SUBDIR += slgrace
     SUBDIR += snns
     SUBDIR += solitaire
