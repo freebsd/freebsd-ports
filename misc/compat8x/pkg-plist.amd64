@@ -1,6 +1,7 @@
 lib/compat/libbsnmp.so.5
 lib/compat/libcam.so.5
 lib/compat/libdwarf.so.2
+lib/compat/liblwres.so.50
 lib/compat/libobjc.so.4
 lib/compat/libopie.so.6
 lib/compat/libpcap.so.7
@@ -13,11 +14,13 @@ lib/compat/libz.so.5
 lib32/compat/libbsnmp.so.5
 lib32/compat/libcam.so.5
 lib32/compat/libdwarf.so.2
+lib32/compat/libobjc.so.4
 lib32/compat/libopie.so.6
 lib32/compat/libpcap.so.7
 lib32/compat/librtld_db.so.1
 lib32/compat/libtacplus.so.4
 lib32/compat/libufs.so.5
+lib32/compat/libutil.so.8
 lib32/compat/libz.so.5
 @dirrmtry lib/compat
 @dirrmtry lib32/compat
