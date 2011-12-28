@@ -4,7 +4,7 @@ case $2 in
 POST-INSTALL)
 	USER=avahi-autoipd
 	GROUP=${USER}
-	UID=546
+	UID=588
 	GID=${UID}
 	PW=/usr/sbin/pw
 
