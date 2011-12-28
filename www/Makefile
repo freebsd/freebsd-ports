@@ -2028,8 +2028,6 @@
     SUBDIR += xpi-menueditor
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-modify_headers
-    SUBDIR += xpi-mousegestures
-    SUBDIR += xpi-mozex
     SUBDIR += xpi-mrtech-local-install
     SUBDIR += xpi-neo-diggler
     SUBDIR += xpi-no-referrer

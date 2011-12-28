@@ -3040,3 +3040,5 @@ misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfile
 cad/gtkwave||2011-12-28|Has expired: No more public distfiles, no more upstream
 databases/clip||2011-12-28|Has expired: No develop anymore for long
 x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
+www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2.
+www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3.
