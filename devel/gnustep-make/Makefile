@@ -66,4 +66,10 @@ post-install:
 	-${MKDIR} ${GNUSTEP_PREFIX}/Local/Library/Services
 	-${MKDIR} ${GNUSTEP_PREFIX}/Local/Tools/Resources
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+IGNORE=		depends on gcc-4.2.5.20090325_5 which does not run on powerpc
+.endif
+
+.include <bsd.port.post.mk>
