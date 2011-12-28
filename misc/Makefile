@@ -65,7 +65,6 @@
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += delay
-    SUBDIR += demoniac
     SUBDIR += detachtty
     SUBDIR += diary-hercules
     SUBDIR += diction

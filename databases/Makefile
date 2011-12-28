@@ -24,7 +24,6 @@
     SUBDIR += cassandra
     SUBDIR += cdb
     SUBDIR += cego
-    SUBDIR += clip
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
@@ -69,7 +68,6 @@
     SUBDIR += firebird21-server
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
-    SUBDIR += fireprofile
     SUBDIR += flamerobin
     SUBDIR += flare
     SUBDIR += fortytwo-bdb
@@ -125,7 +123,6 @@
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
-    SUBDIR += keximdb
     SUBDIR += kinterbasdb
     SUBDIR += kmysqladmin
     SUBDIR += knoda

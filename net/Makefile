@@ -247,7 +247,6 @@
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
-    SUBDIR += ipvs
     SUBDIR += ipw-firmware
     SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
@@ -274,7 +273,6 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += kdenetwork4
-    SUBDIR += keepalived
     SUBDIR += kiax
     SUBDIR += kio-upnp-ms
     SUBDIR += kissd

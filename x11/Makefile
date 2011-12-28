@@ -295,7 +295,6 @@
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
     SUBDIR += wmmatrix
-    SUBDIR += wmmsg
     SUBDIR += wmxss
     SUBDIR += workrave
     SUBDIR += wrapper

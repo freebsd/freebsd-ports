@@ -132,7 +132,6 @@
     SUBDIR += koffice-i18n-ven
     SUBDIR += koffice-i18n-xh
     SUBDIR += koffice-i18n-zu
-    SUBDIR += koffice-kde3
     SUBDIR += koffice-kde4
     SUBDIR += koffice-kde4-l10n
     SUBDIR += koffice-kde4-l10n-ca

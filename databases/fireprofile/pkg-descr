@@ -1,8 +1,0 @@
-From libfireprofile(3):
-
-libfireprofile is a library to help profiling where programs
-using MySQL are spending their time. It intercepts MySQL queries
-and provides EXPLAIN data about each query, as well as total
-time spent on each query.
-
-WWW: http://www.firestuff.org/

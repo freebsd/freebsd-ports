@@ -3025,3 +3025,18 @@ japanese/ruby-refe||2011-12-21|Has been broken for 11 months
 www/zope-epoz||2012-12-25|Unmaintained upstream, isn't used by anything
 math/mingw32-libgmp4|math/mingw32-libgmp|2012-12-25|Version is no longer 4
 devel/py-kss.core|devel/py-kss-core|2012-12-26|Remove bad-named port (with .core in it's name)
+textproc/skribe||2011-12-28|Has expired
+emulators/wahcade||2011-12-28|Has expired
+databases/keximdb||2011-12-28|Has expired: Depends on editors/koffice-kde3, which is scheduled for deletion
+editors/koffice-kde3||2011-12-28|Has expired
+net/keepalived||2011-12-28|Has expired: Depends on net/ipvs, which is scheduled for deletion
+net/ipvs||2011-12-28|Has expired: Designed for FreeBSD 5.x, which is no longer supported
+databases/fireprofile||2011-12-28|Has expired
+audio/gnowavcut||2011-12-28|Has expired: Abandonware
+mail/demime||2011-12-28|Has expired: No upstream development since 2007
+x11/wmmsg||2011-12-28|Has expired: No more public distfiles
+x11-toolkits/libgtkeditor||2011-12-28|Has expired: No more supported upstream, not depend on anymore.
+misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfiles
+cad/gtkwave||2011-12-28|Has expired: No more public distfiles, no more upstream
+databases/clip||2011-12-28|Has expired: No develop anymore for long
+x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
