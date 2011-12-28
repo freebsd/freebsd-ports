@@ -4,4 +4,4 @@ dissociate". The algorithm here is by no means a straight port of Emacs's
 dissociate.el, but is instead merely inspired by it.
 
 Author: Avi Finkel <avi@finkel.org>
-WWW: http://search.cpan.org/dist/Games-Dissociate
+WWW: http://search.cpan.org/dist/Games-Dissociate/

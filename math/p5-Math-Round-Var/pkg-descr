@@ -7,4 +7,4 @@ It also implements flexible scheme parsing, so that your programs and
 modules can offload the how-to-round decisions to this module.
 
 Author: Eric L. Wilhelm <ewilhelm at cpan dot org>
-WWW: http://search.cpan.org/dist/Math-Round-Var
+WWW: http://search.cpan.org/dist/Math-Round-Var/

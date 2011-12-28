@@ -9,4 +9,4 @@ returned, and the object returns undef when the entire combination space
 has been exhausted.
 
 Author: David Landgren (http://www.landgren.net/perl/)
-WWW: http://search.cpan.org/dist/Set-Partition
+WWW: http://search.cpan.org/dist/Set-Partition/

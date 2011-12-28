@@ -26,4 +26,4 @@ appropriate response is returned. The method will then return the parsed
 results from the given command.
 
 Author: Rob Mueller <cpan@robm.fastmail.fm>
-WWW: http://search.cpan.org/dist/Mail-IMAPTalk
+WWW: http://search.cpan.org/dist/Mail-IMAPTalk/

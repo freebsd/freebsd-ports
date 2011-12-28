@@ -14,4 +14,4 @@ grammar to improve the decoding, in particular to handle fractions and
 font changes (which should probably be dropped).
 
 Author: Timothy D Brody <tdb01r@ecs.soton.ac.uk>
-WWW: http://search.cpan.org/dist/TeX-Encode
+WWW: http://search.cpan.org/dist/TeX-Encode/

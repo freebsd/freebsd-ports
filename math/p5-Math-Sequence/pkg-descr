@@ -22,4 +22,4 @@ calculation, this is just a shortcut for repeated use of the iterator.
 Every element in the sequence may only access its predecessor, not the 
 elements before that.
 
-WWW: http://search.cpan.org/dist/Math-Sequence
+WWW: http://search.cpan.org/dist/Math-Sequence/

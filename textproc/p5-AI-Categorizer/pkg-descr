@@ -18,4 +18,4 @@ A simple sample script that reads a training corpus, trains a categorizer,
 and tests the categorizer on a test corpus, is distributed as eg/demo.pl .
 
 Author: Ken Williams <ken@mathforum.org>
-WWW: http://search.cpan.org/dist/AI-Categorizer
+WWW: http://search.cpan.org/dist/AI-Categorizer/

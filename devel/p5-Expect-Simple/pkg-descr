@@ -24,4 +24,4 @@ disconnect command to the target) when the Expect::Simple object is
 destroyed.
 
 Author: Diab Jerius <djerius@cpan.org>
-WWW: http://search.cpan.org/dist/Expect-Simple
+WWW: http://search.cpan.org/dist/Expect-Simple/

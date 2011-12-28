@@ -2,4 +2,4 @@ A GraphViz::Traverse object represents a base class for inheriting by
 other traversal modules.
 
 Author: Gene Boggs <gene@cpan.org>
-WWW: http://search.cpan.org/dist/GraphViz-Traverse
+WWW: http://search.cpan.org/dist/GraphViz-Traverse/

@@ -10,4 +10,4 @@ packeb, unpackeb:  pack/unpack and convert an EBCDIC record
 hexdump:  dump memory in an MVS-like format
 
 Author: Geoffrey Rommel <GROMMEL@cpan.org>
-WWW: http://search.cpan.org/dist/Convert-IBM390
+WWW: http://search.cpan.org/dist/Convert-IBM390/

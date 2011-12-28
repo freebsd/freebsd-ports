@@ -24,4 +24,4 @@ calculation, this is just a shortcut for repeated use of the iterator.
 Every element in the series may only access its predecessor, not the 
 elements before that.
 
-WWW: http://search.cpan.org/dist/Math-Series
+WWW: http://search.cpan.org/dist/Math-Series/

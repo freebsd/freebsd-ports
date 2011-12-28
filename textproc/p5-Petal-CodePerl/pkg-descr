@@ -17,4 +17,4 @@ turned off caching. It won't matter at all for something like Apache's
 mod_perl.
 
 Author: Fergal Daly <fergal@esatclear.ie>
-WWW: http://search.cpan.org/dist/Petal-CodePerl
+WWW: http://search.cpan.org/dist/Petal-CodePerl/
