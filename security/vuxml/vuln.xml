@@ -47,6 +47,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c6521b04-314b-11e1-9cf4-5404a67eef98">
+    <topic>lighttpd -- remote DoS in HTTP authentication</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4362">
+	  <p>Integer signedness error in the base64_decode function in the
+	     HTTP authentication functionality (http_auth.c) in lighttpd 1.4
+	     before 1.4.30 and 1.5 before SVN revision 2806 allows remote
+	     attackers to cause a denial of service (segmentation fault)
+	     via crafted base64 input that triggers an out-of-bounds read
+	     with a negative index.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-4362</cvename>
+    </references>
+    <dates>
+      <discovery>2011-11-29</discovery>
+      <entry>2011-12-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ddc78dc-300a-11e1-a2aa-0016ce01e285">
     <topic>krb5-appl -- telnetd code execution vulnerability</topic>
     <affects>
