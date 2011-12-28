@@ -103,6 +103,10 @@ SCONS_ENV+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+IGNORE=		does not install: runs out of virtual memory
+.endif
+
 .if defined (MAKE_JOBS_NUMBER)
 SCONS_ENV+=	JOBS=${MAKE_JOBS_NUMBER}
 .endif
