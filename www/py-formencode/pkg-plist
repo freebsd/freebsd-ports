@@ -161,8 +161,3 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formencode
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WebwareExamples/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WebwareExamples/index.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webware_example.ini
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/WebwareExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
