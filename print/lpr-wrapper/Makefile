@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lpr-wrapper
-PORTVERSION=	0.6
-PORTREVISION=	5
+PORTVERSION=	0.7
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 
@@ -28,5 +27,12 @@ RUN_DEPENDS+=	pstops:${PORTSDIR}/print/psutils-a4
 .else
 RUN_DEPENDS+=	pstops:${PORTSDIR}/print/psutils-letter
 .endif
+
+PLIST_FILES=	bin/lpr-wrapper bin/lpr-wrapper-cups bin/lpr-wrapper-features
+
+post-build:
+	${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|' \
+		${WRKSRC}/lpr-wrapper ${WRKSRC}/lpr-wrapper-cups \
+		${WRKSRC}/lpr-wrapper-features
 
 .include <bsd.port.mk>

@@ -1,13 +1,7 @@
---- lpr-wrapper.in.orig	Fri Apr 22 12:01:13 2005
-+++ lpr-wrapper.in	Fri Apr 22 12:16:22 2005
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- # lpr-wrapper --- a wrapper around the lpr command, which can handle
- # any-to-postscript conversion, options for duplex and n-up printing,
-@@ -103,7 +103,7 @@
- PPDDIR=@datadir@/@PACKAGE@
+--- lpr-wrapper-cups.in.orig	2011-12-28 22:04:02.000000000 +0100
++++ lpr-wrapper-cups.in	2011-12-28 22:05:03.000000000 +0100
+@@ -88,7 +88,7 @@
+ prefix=@prefix@
  
  # global options file
 -SYST_CONFIG=/etc/lprrc
@@ -15,11 +9,11 @@
  
  # user's options file
  USER_CONFIG=.lprrc
-@@ -488,17 +488,17 @@
+@@ -464,17 +464,17 @@
  OPTSTRING=o:P:#:K:C:J:T:U:i:1:2:3:4:w:cdfghlnmprstv
  LONGOPTS=help,version,verbose,test,ppd:,tmpdir:
  
--if [ "$HAVE[getopt]" ]; then
+-if [ "$HAVE_getopt" ]; then
 -    OPTIONS=`getopt -n $NAME -s bash -l $LONGOPTS -o $OPTSTRING -- $XOPTS "$@"`
 -    if [ $? != 0 ]; then
 -	echo "Try --help for more information" > /dev/stderr
@@ -28,7 +22,7 @@
 -    eval set -- "$OPTIONS"
 -    dopts "$@"
 -else
-+#if [ "$HAVE[getopt]" ]; then
++#if [ "$HAVE_getopt" ]; then
 +#    OPTIONS=`getopt -n $NAME -s bash -l $LONGOPTS -o $OPTSTRING -- $XOPTS "$@"`
 +#    if [ $? != 0 ]; then
 +#	echo "Try --help for more information" > /dev/stderr
@@ -42,4 +36,4 @@
 +#fi
  
  #if no printer given (as option or through environment), use default
- if [ x"$PRINTER" == x ]; then
+ if [ -z "$PRINTER" ]; then
