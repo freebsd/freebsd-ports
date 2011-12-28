@@ -40,6 +40,12 @@ SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 
 .include <bsd.port.options.mk>
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not load on powerpc
+.endif
+
 post-patch:
 .if defined(WITH_ENABLE_CORES)
 	@${REINPLACE_CMD} \
@@ -59,4 +65,4 @@ do-install:
 	${CHOWN} ${USERS}:${GROUPS} ${ETCDIR}/
 	${INSTALL_MAN} ${WRKSRC}/shellinaboxd.1 ${MANPREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
