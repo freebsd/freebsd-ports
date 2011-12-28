@@ -4102,6 +4102,7 @@ gbib                            ports/databases/gbib
 gbirthday                       ports/deskutils/gbirthday
 gbottler                        ports/games/gbottler
 gbrainy                         ports/games/gbrainy
+gbsdconv                        ports/converters/gbsdconv
 gbsplay                         ports/audio/gbsplay
 gbuffy                          ports/mail/gbuffy
 gcal                            ports/deskutils/gcal
@@ -19968,6 +19969,8 @@ pear-Horde_Xml_Element          ports/textproc/pear-Horde_Xml_Element
 pear-Horde_Xml_Wbxml            ports/textproc/pear-Horde_Xml_Wbxml
 pear-I18N                       ports/devel/pear-I18N
 pear-I18Nv2                     ports/sysutils/pear-I18Nv2
+pear-IO_Bit                     ports/devel/pear-IO_Bit
+pear-IO_SWF                     ports/graphics/pear-IO_SWF
 pear-Image_3D                   ports/graphics/pear-Image_3D
 pear-Image_Barcode              ports/graphics/pear-Image_Barcode
 pear-Image_Canvas               ports/graphics/pear-Image_Canvas
@@ -20157,6 +20160,7 @@ pear-benchmark                  ports/benchmarks/pear-Benchmark
 pear-cache                      ports/sysutils/pear-Cache
 pear-cache_lite                 ports/sysutils/pear-Cache_Lite
 pear-channel-horde              ports/devel/pear-channel-horde
+pear-channel-openpear           ports/devel/pear-channel-openpear
 pear-channel-phpunit            ports/devel/pear-channel-phpunit
 pear-channel-symfony            ports/devel/pear-channel-symfony
 pear-codegen                    ports/devel/pear-codegen
@@ -20354,6 +20358,8 @@ pear-image_color                ports/graphics/pear-Image_Color
 pear-image_graph                ports/graphics/pear-Image_Graph
 pear-image_graphviz             ports/graphics/pear-Image_GraphViz
 pear-image_transform            ports/graphics/pear-Image_Transform
+pear-io_bit                     ports/devel/pear-IO_Bit
+pear-io_swf                     ports/graphics/pear-IO_SWF
 pear-liveuser                   ports/security/pear-LiveUser
 pear-liveuser_admin             ports/security/pear-LiveUser_Admin
 pear-log                        ports/sysutils/pear-Log
