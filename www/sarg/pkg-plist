@@ -1,7 +1,7 @@
 bin/sarg
 @unexec if cmp -s %D/etc/sarg/sarg.conf %D/etc/sarg/sarg.conf.default; then rm -f %D/etc/sarg/sarg.conf; fi
-@exec [ ! -f %B/sarg.conf ] || cp -p %B/sarg/sarg.conf.default %B/sarg/sarg.conf
 etc/sarg/sarg.conf.default
+@exec [ ! -f %B/sarg.conf ] || cp -p %B/%f %B/sarg.conf
 etc/sarg/css.tpl
 etc/sarg/exclude_codes
 etc/sarg/fonts/DejaVuSans.ttf
@@ -12,33 +12,6 @@ etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
 etc/sarg/images/sarg.png
-etc/sarg/languages/Afrikaans
-etc/sarg/languages/Bulgarian_windows1251
-etc/sarg/languages/Catalan
-etc/sarg/languages/Czech
-etc/sarg/languages/Czech_UTF8
-etc/sarg/languages/Dutch
-etc/sarg/languages/English
-etc/sarg/languages/French
-etc/sarg/languages/German
-etc/sarg/languages/Greek
-etc/sarg/languages/Hungarian
-etc/sarg/languages/Indonesian
-etc/sarg/languages/Italian
-etc/sarg/languages/Japanese
-etc/sarg/languages/Latvian
-etc/sarg/languages/Polish
-etc/sarg/languages/Polish_windows1250
-etc/sarg/languages/Portuguese
-etc/sarg/languages/Romanian
-etc/sarg/languages/Russian_UTF-8
-etc/sarg/languages/Russian_koi8
-etc/sarg/languages/Russian_windows1251
-etc/sarg/languages/Serbian
-etc/sarg/languages/Slovak
-etc/sarg/languages/Spanish
-etc/sarg/languages/Turkish
-etc/sarg/languages/Ukrainian_windows1251
 etc/sarg/sarg-php/COPYING
 etc/sarg/sarg-php/INSTALL
 etc/sarg/sarg-php/LANGUAGES
@@ -58,28 +31,30 @@ etc/sarg/sarg-php/sarg-squidguard-block2.php
 etc/sarg/sarg-php/style.php
 etc/sarg/sarg-php/translate.this
 etc/sarg/user_limit_block
-share/locale/bg/LC_MESSAGES/sarg.mo
-share/locale/ca/LC_MESSAGES/sarg.mo
-share/locale/cs/LC_MESSAGES/sarg.mo
-share/locale/de/LC_MESSAGES/sarg.mo
-share/locale/el/LC_MESSAGES/sarg.mo
-share/locale/es/LC_MESSAGES/sarg.mo
-share/locale/fr/LC_MESSAGES/sarg.mo
-share/locale/hu/LC_MESSAGES/sarg.mo
-share/locale/id/LC_MESSAGES/sarg.mo
-share/locale/it/LC_MESSAGES/sarg.mo
-share/locale/ja/LC_MESSAGES/sarg.mo
-share/locale/lv/LC_MESSAGES/sarg.mo
-share/locale/nl/LC_MESSAGES/sarg.mo
-share/locale/pl/LC_MESSAGES/sarg.mo
-share/locale/pt/LC_MESSAGES/sarg.mo
-share/locale/ro/LC_MESSAGES/sarg.mo
-share/locale/ru/LC_MESSAGES/sarg.mo
-share/locale/sk/LC_MESSAGES/sarg.mo
-share/locale/sr/LC_MESSAGES/sarg.mo
-share/locale/tr/LC_MESSAGES/sarg.mo
-share/locale/uk/LC_MESSAGES/sarg.mo
-share/locale/zh_CN/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/da/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/el/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/es/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/id/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sarg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sarg.mo
 @dirrm etc/sarg/sarg-php/locale/ru/LC_MESSAGES
 @dirrm etc/sarg/sarg-php/locale/ru
 @dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
@@ -90,7 +65,6 @@ share/locale/zh_CN/LC_MESSAGES/sarg.mo
 @dirrm etc/sarg/sarg-php/locale/en_EN
 @dirrm etc/sarg/sarg-php/locale
 @dirrm etc/sarg/sarg-php
-@dirrm etc/sarg/languages
 @dirrm etc/sarg/images
 @dirrm etc/sarg/fonts
-@dirrm etc/sarg
+@dirrmtry etc/sarg
