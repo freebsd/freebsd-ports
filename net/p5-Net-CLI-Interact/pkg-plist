@@ -20,6 +20,7 @@
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Telnet.pm
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/catos/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/extremexos/pb
+%%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/foundry/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/hp/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/ios/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/junos/pb
@@ -45,6 +46,7 @@
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/junos
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/ios
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/hp
+@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/foundry
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/extremexos
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/catos
 @dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco
