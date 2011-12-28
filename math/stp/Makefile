@@ -50,4 +50,8 @@ do-configure:
 IGNORE=	stp needs log2(3)
 .endif
 
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: unrecognized command line option -march=native
+.endif
+
 .include <bsd.port.post.mk>
