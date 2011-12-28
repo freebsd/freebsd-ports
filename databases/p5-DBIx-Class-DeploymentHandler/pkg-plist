@@ -1,0 +1,38 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DeploymentHandler/.packlist
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Cookbook/CustomResultSource.pod
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Dad.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator/Deprecated.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Deprecated.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesDeploy.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersionStorage.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersioning.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Logger.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/CatalystIntro.pod
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/Intro.pod
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/Types.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionHandler/DatabaseToSchemaVersions.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionHandler/ExplicitVersions.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionHandler/Monotonic.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated/Component.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated/VersionResult.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated/VersionResultSet.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard/Component.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard/VersionResult.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard/VersionResultSet.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/WithApplicatorDumple.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/WithReasonableDefaults.pm
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionHandler
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Cookbook
+@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DeploymentHandler
