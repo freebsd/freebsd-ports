@@ -36,4 +36,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/local@${LOCALBASE}@g' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc: signal 11
+.endif
+
+.include <bsd.port.post.mk>
