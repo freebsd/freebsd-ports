@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fricas
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
@@ -25,6 +24,7 @@ USE_GMAKE=	yes
 USE_XORG=	x11 ice sm xpm
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	${PREFIX}/lib/fricas/target/${CONFIGURE_TARGET}/lib
 STRIP=		#nothing, these binaries fail if stripped
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
