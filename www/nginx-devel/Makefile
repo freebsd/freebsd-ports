@@ -480,12 +480,11 @@ CFLAGS+=	-DNDEBUG
 
 .if defined(WITH_POSTGRES_MODULE)
 USE_PGSQL=	yes
-NGINX_POSTGRES_MODULE_VERSION=	0.8
+NGINX_POSTGRES_MODULE_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
 DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}.tar.gz:postgres
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config \
-		${PATCHDIR}/extra-patch-ngx_postgres_output.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
 .endif
 
 .if defined(WITH_REDIS2_MODULE)
