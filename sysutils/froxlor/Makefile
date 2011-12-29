@@ -7,7 +7,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -27,7 +27,7 @@ USE_GETTEXT=	RUN
 OPTIONS=	APACHE "Use Apache (2.2) as http server" On \
 		MYSQL "Use MySQL as database server" On \
 		POSTFIX "Use Postfix as smtp server" On \
-		DKIM "Use Dkim-milter" Off \
+		DKIM "Use OpenDKIM" Off \
 		DOVECOT "Use Dovecot as imap/pop3 server" On \
 		PROFTPD "Use Proftpd-mysql as ftp server (implies MySQL)" On \
 		POWERDNS "Use Powerdns as dns server" Off \
@@ -66,7 +66,7 @@ RUN_DEPENDS+=	powerdns:${PORTSDIR}/dns/powerdns
 .endif
 
 .if defined(WITH_LIBNSS)
-RUN_DEPENDS+=	libnss-mysql:${PORTSDIR}/net/libnss-mysql
+RUN_DEPENDS+=	${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql
 .endif
 
 .if !defined(WITHOUT_WEBALIZER)
@@ -74,7 +74,7 @@ RUN_DEPENDS+=	webalizer:${PORTSDIR}/www/webalizer
 .endif
 
 .if defined(WITH_AWSTATS)
-RUN_DEPENDS+=	awstats:${PORTSDIR}/www/awstats
+RUN_DEPENDS+=	awstats>=6.8:${PORTSDIR}/www/awstats
 .endif
 
 do-install:
