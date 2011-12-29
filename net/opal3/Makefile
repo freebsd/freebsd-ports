@@ -11,10 +11,11 @@ PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
-LICENSE=	MPL
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP abstraction library
+
+LICENSE=	MPL
 
 LIB_DEPENDS=	pt-2.6.[4-9]:${PORTSDIR}/devel/ptlib26
 
