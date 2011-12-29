@@ -336,12 +336,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_MODULE
 .endif
 
 .if defined(WITH_HTTP_SUBS_FILTER_MODULE)
-NGINX_HTTP_SUBS_FILTER_MODULE_VERSION=	0.5.2.r45
+NGINX_HTTP_SUBS_FILTER_MODULE_VERSION=	0.5.2.r53
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
 MASTER_SITE_SUBDIR+=	osa/:subs_filter
 DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}.tar.gz:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:core:ngx_regex.c
 .endif
 
 .if defined(WITH_HTTP_SECURE_LINK_MODULE)
@@ -369,11 +368,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.8.2
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
-MASTER_SITE_SUBDIR+=	osa/:uploadprogress
-DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module-${NGINX_UPLOADPROGRESS_MODULE_VERSION}
+NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.8.3
+GIT_UPLOADPROGRESS_MODULE_VERSION=	0-gc7c663f
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_MODULE_VERSION}/:uploadprogress
+DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_MODULE_VERSION}-${GIT_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
