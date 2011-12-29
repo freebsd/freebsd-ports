@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	jlint
-PORTVERSION=	3.1
+PORTVERSION=	3.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java program analyzer and checker
+
+PLIST_FILES=	bin/jlint \
+		bin/jlint.sh \
+		bin/antic
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	manual.pdf
