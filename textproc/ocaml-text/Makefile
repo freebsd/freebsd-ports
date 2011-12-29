@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	text
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/537/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/641/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
