@@ -1,0 +1,15 @@
+--- configure.orig	2008-07-23 21:14:06.000000000 +0000
++++ configure	2011-12-28 14:19:01.165970190 +0000
+@@ -3911,11 +3911,7 @@
+ 	" >&2;}
+    { (exit 1); exit 1; }; }
+ else
+-  if test "x$with_unicode" = 'xyes' ; then
+-	WX_GL_LIBS="`$WX_CONFIG_PATH --gl-libs`"
+-  else
+-	WX_GL_LIBS="`$WX_CONFIG_PATH --unicode --gl-libs`"
+-  fi
++  WX_GL_LIBS="`$WX_CONFIG_WITH_ARGS --gl-libs`"
+ 
+ fi
+ 
