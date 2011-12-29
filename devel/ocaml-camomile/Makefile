@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	camomile
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	A comprehensive Unicode library for objective caml language
 
 USE_BZIP2=	yes
@@ -27,14 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
-
-PLIST_FILES=	bin/camomilecharmap \
-		bin/camomilelocaledef
-
-post-patch:
-	@${REINPLACE_CMD} -E -e \
-		"s,([[:space:]]*)cp[[:space:]]*-f,\1\$${BSD_INSTALL_DATA}," \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	@${FIND} ${DATADIR} ! -type d | \
