@@ -63,6 +63,7 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-app.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-locationaction.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panedaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panel.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-platform.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-searchaction.html
