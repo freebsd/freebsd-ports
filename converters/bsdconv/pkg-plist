@@ -41,6 +41,7 @@ lib/libbsdconv.so.7
 %%DATADIR%%/from/_GB18030.so
 %%DATADIR%%/from/_GBK
 %%DATADIR%%/from/_ISO-8859-1
+%%DATADIR%%/from/_JIS0212
 %%DATADIR%%/from/_SHIFT-JIS
 %%DATADIR%%/from/_UAO250
 %%DATADIR%%/from/_UTF-8
@@ -83,6 +84,8 @@ lib/libbsdconv.so.7
 %%DATADIR%%/inter/ZHCN
 %%DATADIR%%/inter/ZHTW
 %%DATADIR%%/inter/ZHTW_WORDS
+%%DATADIR%%/inter/ZH_FUZZY_CN
+%%DATADIR%%/inter/ZH_FUZZY_TW
 %%DATADIR%%/inter/alias
 %%DATADIR%%/to/3F
 %%DATADIR%%/to/3F.so
@@ -144,6 +147,8 @@ lib/libbsdconv.so.7
 %%DATADIR%%/to/_GB18030.so
 %%DATADIR%%/to/_GBK
 %%DATADIR%%/to/_ISO-8859-1
+%%DATADIR%%/to/_JIS0212
+%%DATADIR%%/to/_SHIFT-JIS
 %%DATADIR%%/to/_UAO250
 %%DATADIR%%/to/_UTF-8
 %%DATADIR%%/to/_UTF-8.so
