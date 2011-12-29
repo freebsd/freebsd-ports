@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://hg.ocaml.info/release/${PKGNAMEPREFIX}${PORTNAME}/archive/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTNAME=	release-${PORTVERSION}
 
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml bindings to sqlite3 library
 
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-release-${PORTVERSION}
+
+USE_AUTOTOOLS=		autoconf
+USE_GMAKE=		yes
 USE_SQLITE=		yes
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
@@ -33,12 +36,13 @@ CONFIGURE_ARGS=	CC="${CC}"\
 USE_BZIP2=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	README style.css *.html
+PORTDOCS=	style.css *.html
+
+PLIST_FILES=	bin/sqlite3top
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@( cd ${WRKSRC}; ${INSTALL_DATA} README ${DOCSDIR} )
 	@( cd ${WRKSRC}/doc;\
 	   for f in `${FIND} . -type f -print`; do\
 		${INSTALL_DATA} $${f} ${DOCSDIR};\
