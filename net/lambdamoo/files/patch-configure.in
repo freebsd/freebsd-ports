@@ -9,3 +9,12 @@
  changequote([,])dnl
  AC_PROGRAM_EGREP($pattern, [
  #include <$1>
+@@ -260,7 +260,7 @@
+ SAVECC="$CC"
+ CC="$CC $opt"
+ AC_TEST_PROGRAM([
+-int main(int argc, char *argv) { void *ptr; exit(0); }
++int main(int argc, char **argv) { void *ptr; exit(0); }
+ ],
+ [have_ansi=1
+ break],
