@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	converters python
 MASTER_SITES=	https://github.com/buganini/python-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	bsdconv.7:${PORTSDIR}/converters/bsdconv
 
-GITVERSION=	49d61da
+GITVERSION=	163a5ad
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-python-${PORTNAME}-${GITVERSION}
 USE_PYTHON=	yes
