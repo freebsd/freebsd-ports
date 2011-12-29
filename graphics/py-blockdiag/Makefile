@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	blockdiag
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,13 +35,21 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README.txt
 PORTEXAMPLES=	*
 
-OPTIONS=	PDF	"Enable PDF output" On
+OPTIONS=	PDF	"Enable PDF output" On \
+		IPAFONT	"Use IPA Font as default" Off
 
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_PDF)
 RUN_DEPENDS+=	${PKGNAMEPREFIX}reportlab2>0:${PORTSDIR}/print/py-reportlab2
 .endif
+
+.if defined(WITH_IPAFONT)
+RUN_DEPENDS+=	${LOCALBASE}/share/font-ipa/ipag.otf:${PORTSDIR}/japanese/font-ipa
+.endif
+
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
 
 post-install:
 .if !defined(NOPORTDOCS)
