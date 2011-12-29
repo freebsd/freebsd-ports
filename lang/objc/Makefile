@@ -7,7 +7,6 @@
 
 PORTNAME=	objc
 PORTVERSION=	3.2.11
-PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://users.telenet.be/stes/
 DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
@@ -27,7 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:
 	cd ${WRKDIR}/${PORTNAME}-bootstrap-${BOOTVERSION};\
-	${CONFIGURE_ENV} ./configure --prefix=${WRKDIR};${MAKE};${MAKE} install
+	${CONFIGURE_ENV} ${MAKE_ENV} ./configure --prefix=${WRKDIR};${MAKE};${MAKE} install
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/objc
