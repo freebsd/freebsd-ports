@@ -19,7 +19,9 @@ arm-elf/lib/ldscripts/armelf.xn
 arm-elf/lib/ldscripts/armelf.xr
 arm-elf/lib/ldscripts/armelf.xs
 arm-elf/lib/ldscripts/armelf.xsc
+arm-elf/lib/ldscripts/armelf.xsw
 arm-elf/lib/ldscripts/armelf.xu
+arm-elf/lib/ldscripts/armelf.xw
 arm-elf/lib/libiberty.a
 bin/arm-elf-addr2line
 bin/arm-elf-ar
@@ -44,16 +46,26 @@ share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
 share/locale/es/LC_MESSAGES/ld.mo
 share/locale/es/LC_MESSAGES/opcodes.mo
+share/locale/fi/LC_MESSAGES/binutils.mo
+share/locale/fi/LC_MESSAGES/opcodes.mo
 share/locale/fr/LC_MESSAGES/bfd.mo
 share/locale/fr/LC_MESSAGES/binutils.mo
 share/locale/fr/LC_MESSAGES/gas.mo
 share/locale/fr/LC_MESSAGES/ld.mo
 share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/ga/LC_MESSAGES/opcodes.mo
 share/locale/id/LC_MESSAGES/opcodes.mo
 share/locale/ja/LC_MESSAGES/bfd.mo
 share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/nl/LC_MESSAGES/opcodes.mo
 share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/bfd.mo
+share/locale/ro/LC_MESSAGES/binutils.mo
 share/locale/ro/LC_MESSAGES/opcodes.mo
+share/locale/ru/LC_MESSAGES/binutils.mo
+share/locale/rw/LC_MESSAGES/bfd.mo
+share/locale/rw/LC_MESSAGES/binutils.mo
+share/locale/rw/LC_MESSAGES/gas.mo
 share/locale/sv/LC_MESSAGES/bfd.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
@@ -63,8 +75,17 @@ share/locale/tr/LC_MESSAGES/binutils.mo
 share/locale/tr/LC_MESSAGES/gas.mo
 share/locale/tr/LC_MESSAGES/ld.mo
 share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/vi/LC_MESSAGES/bfd.mo
+share/locale/vi/LC_MESSAGES/binutils.mo
+share/locale/vi/LC_MESSAGES/ld.mo
+share/locale/vi/LC_MESSAGES/opcodes.mo
 share/locale/zh_CN/LC_MESSAGES/bfd.mo
 share/locale/zh_CN/LC_MESSAGES/binutils.mo
+share/locale/zh_CN/LC_MESSAGES/ld.mo
+share/locale/zh_CN/LC_MESSAGES/opcodes.mo
+share/locale/zh_TW/LC_MESSAGES/binutils.mo
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm arm-elf/bin
 @dirrm arm-elf/lib/ldscripts
 @dirrm arm-elf/lib

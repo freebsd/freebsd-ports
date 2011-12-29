@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.14
-PORTREVISION=	2
+PORTVERSION=	2.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -19,6 +18,7 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
