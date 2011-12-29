@@ -5,6 +5,7 @@
 
     SUBDIR += acfax
     SUBDIR += aldo
+    SUBDIR += amtterm
     SUBDIR += anyremote
     SUBDIR += aprsd
     SUBDIR += atslog
