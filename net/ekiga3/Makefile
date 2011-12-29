@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP and video conferencing application
 
 LIB_DEPENDS=	sigc-2:${PORTSDIR}/devel/libsigc++20 \
