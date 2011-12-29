@@ -48,9 +48,7 @@ PLIST_SUB+=	PROF="@comment "
 PLIST_SUB+=	PROF=""
 .endif
 
-MAN1!=	${CAT} ${FILESDIR}/man1
-MANN!=	${CAT} ${FILESDIR}/mann
-MLINKS!=${CAT} ${FILESDIR}/manlinks
+.include "${FILESDIR}/manfiles"
 
 .if !defined(WITHOUT_THREADS)
 PLIST_SUB+=	THREADS=""
