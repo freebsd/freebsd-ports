@@ -1,3 +1,4 @@
+@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README.html
@@ -4702,7 +4703,6 @@
 @exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
 @exec	mkdir -p %D/share/doc/java
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
-@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrmtry %D/share/doc/java
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay
