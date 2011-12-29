@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	modify_headers
-PORTVERSION=	0.7.0.2
-DISTVERSIONSUFFIX=	-fx+sm
-PORTREVISION=	1
+PORTVERSION=	0.7.1.1
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	kamikaze@bsdforen.de
@@ -25,6 +24,11 @@ XPI_FILES=	chrome.manifest \
 		chrome/content/export.js \
 		chrome/content/exportimport.js \
 		chrome/content/exportwizard.xul \
+		chrome/content/icons/ModifyHeaders-16.png \
+		chrome/content/icons/ModifyHeaders-32.png \
+		chrome/content/icons/ModifyHeaders-48.png \
+		chrome/content/icons/ModifyHeaders-grey-16.png \
+		chrome/content/icons/ModifyHeaders-grey-32.png \
 		chrome/content/icons/badge.png \
 		chrome/content/icons/bug.png \
 		chrome/content/icons/first-aid-kit.png \
