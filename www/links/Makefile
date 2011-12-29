@@ -9,10 +9,12 @@ PORTNAME=	links
 DISTVERSION=	2.4
 PORTEPOCH=	1
 CATEGORIES?=	www
-MASTER_SITES=	http://links.twibright.com/download/
+MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf
 
 MAINTAINER?=	bf@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
+
+LICENSE=	GPLv2
 
 CONFLICTS=	links-0*
 
@@ -59,7 +61,8 @@ CONFIGURE_ARGS+=	--without-directfb
 
 .if defined(WITH_IPV6)
 USE_AUTOTOOLS+=	autoconf
-PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6
+PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6 \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|bf|:S|$|:ipv6|}
 PATCHFILES+=	links-2.4-ipv6.patch.gz:ipv6
 PATCH_DIST_STRIP=	-p1
 .endif
