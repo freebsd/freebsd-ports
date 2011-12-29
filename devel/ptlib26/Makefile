@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Final/
 DISTNAME=	ptlib-${PORTVERSION}
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OPAL
 
 LICENSE=MPL
