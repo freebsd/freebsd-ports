@@ -47,6 +47,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="048c77df-3211-11e1-9583-14dae938ec40">
+    <topic>zabbix-frontend -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zabbix-frontend</name>
+	<range><lt>1.8.10,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martina Matari reports:</p>
+	<blockquote cite="https://support.zabbix.com/browse/ZBX-4015">
+	  <p>These URLs (hostgroups.php, usergrps.php) are vulnerable to
+	     persistent XSS attacks due to improper sanitation of gname
+	     variable when creating user and host groups.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    </references>
+    <dates>
+      <discovery>2011-08-04</discovery>
+      <entry>2011-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6521b04-314b-11e1-9cf4-5404a67eef98">
     <topic>lighttpd -- remote DoS in HTTP authentication</topic>
     <affects>
