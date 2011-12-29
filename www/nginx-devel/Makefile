@@ -74,6 +74,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		GRIDFS_MODULE		"3rd party gridfs module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
+		NAXSI_MODULE		"3rd party naxsi module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		POSTGRES_MODULE		"3rd party postgresql module" off \
 		REDIS2_MODULE		"3rd party redis2 module" off \
@@ -447,6 +448,15 @@ DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_M
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODULE_VERSION:S/^0-g//}
 .endif
 
+.if defined(WITH_NAXSI_MODULE)
+NGINX_NAXSI_MODULE_VERSION=	0.42
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:naxsi
+PROJECTHOST=	naxsi
+DISTFILES+=	naxsi-${NGINX_NAXSI_MODULE_VERSION}.tar.gz:naxsi
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_src
+.endif
+
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
@@ -706,6 +716,12 @@ do-install:
 		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
 .endif
 
+.if defined(WITH_NAXSI_MODULE)
+	${INSTALL_DATA} \
+	${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_config/naxsi_core.rules \
+	${ETCDIR}
+.endif
+
 post-install:
 .if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
@@ -715,6 +731,10 @@ post-install:
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
+.endif
+
+.if defined(WITH_NAXSI_MODULE)
+	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
