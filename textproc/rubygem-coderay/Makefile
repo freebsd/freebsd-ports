@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coderay
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
