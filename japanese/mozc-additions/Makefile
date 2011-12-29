@@ -9,7 +9,8 @@ PORTNAME=	mozc-additions
 PORTVERSION=	1.3.911.102
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	daichi
 
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Additional tools and images for Mozc Japanese Input Method
