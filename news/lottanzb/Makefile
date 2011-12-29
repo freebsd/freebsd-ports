@@ -19,7 +19,6 @@ COMMENT=	A pyGTK usenet frontend for hellanzb
 
 RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
 		yelp:${PORTSDIR}/x11/yelp \
-		par2:${PORTSDIR}/archivers/par2cmdline \
 		unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${PYTHON_SITELIBDIR}/yenc.py:${PORTSDIR}/news/py-yenc \
