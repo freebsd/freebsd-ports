@@ -6,36 +6,38 @@
 #
 
 PORTNAME=	umurmur
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Minimalistic Murmur (Mumble server)
 
-LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig \
+		protobuf-c.0:${PORTSDIR}/devel/protobuf-c
 
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--with-ssl=openssl
 
 USE_RC_SUBR=	umurmur
 
-MAKE_ENV+=	TARGET_ARCH=
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-do-build:
-	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
 
 pre-su-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-pre-install:
-	@${SED} -i '' -e 's|"/etc/|"${PREFIX}/etc/|' ${WRKSRC}/umurmur.conf.example
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
+	@${REINPLACE_CMD} \
+		-e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/umurmur.conf.example
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/umurmurd ${PREFIX}/sbin
+post-install:
 	@${MKDIR} ${PREFIX}/etc/umurmur
 	@${INSTALL_DATA} ${WRKSRC}/umurmur.conf.example ${PREFIX}/etc/umurmur/umurmur.conf.sample
 	@if [ ! -f ${PREFIX}/etc/umurmur/umurmur.conf ]; then \
