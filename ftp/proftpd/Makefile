@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.3g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -55,6 +55,7 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		CLAMAV "Include mod_clamav" off \
 		CTRLS "Include controls" off \
+		DYNMASQ "Include mod_dynmasq" off \
 		EXEC "Include mod_exec" off \
 		HTMLDOCS "Include HTML documentation" off \
 		IFSESSION "Include mod_ifsession" on \
@@ -141,6 +142,10 @@ MODULES:=${MODULES}:mod_wrap2_file
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_wrap2_sql
+.endif
+
+.if defined(WITH_DYNMASQ)
+MODULES:=${MODULES}:mod_dynmasq
 .endif
 
 .if defined(WITH_EXEC)
