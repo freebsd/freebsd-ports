@@ -1704,7 +1704,6 @@ clickheat                       ports/www/clickheat
 clig                            ports/devel/clig
 climm                           ports/net-im/climm
 clint                           ports/devel/clint
-clip                            ports/databases/clip
 clipgrab                        ports/multimedia/clipgrab
 clisp                           ports/lang/clisp
 clisp-hyperspec                 ports/devel/clisp-hyperspec
@@ -2300,8 +2299,6 @@ delay                           ports/misc/delay
 delegate                        ports/net/delegate
 deltup                          ports/sysutils/deltup
 deluge                          ports/net-p2p/deluge
-demime                          ports/mail/demime
-demoniac                        ports/misc/demoniac
 demonquake                      ports/games/demonquake
 demoroniser                     ports/www/demoroniser
 denature                        ports/textproc/denature
@@ -3466,7 +3463,6 @@ firefox36                       ports/www/firefox36
 firefox36-i18n                  ports/www/firefox36-i18n
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
-fireprofile                     ports/databases/fireprofile
 firestring                      ports/misc/firestring
 firetalk                        ports/net-im/firetalk
 firetray                        ports/mail/firetray
@@ -4541,6 +4537,7 @@ gnome-icons-crystal             ports/x11-themes/gnome-icons-crystal
 gnome-icons-dropline-neu        ports/x11-themes/gnome-icons-dropline-neu
 gnome-icons-dropline-nou        ports/x11-themes/gnome-icons-dropline-nou
 gnome-icons-elementary          ports/x11-themes/gnome-icons-elementary
+gnome-icons-faenza              ports/x11-themes/gnome-icons-faenza
 gnome-icons-gentoo-test         ports/x11-themes/gnome-icons-gentoo-test
 gnome-icons-gion                ports/x11-themes/gnome-icons-gion
 gnome-icons-iris                ports/x11-themes/gnome-icons-iris
@@ -4635,7 +4632,6 @@ gnormalize                      ports/audio/gnormalize
 gnote                           ports/deskutils/gnote
 gnotepad+                       ports/editors/gnotepad+
 gnotime                         ports/deskutils/gnotime
-gnowavcut                       ports/audio/gnowavcut
 gns3                            ports/emulators/gns3
 gnu-dico                        ports/net/gnu-dico
 gnu-radius                      ports/net/gnu-radius
@@ -5073,7 +5069,6 @@ gtkchtheme                      ports/x11/gtkchtheme
 gtkdatabox                      ports/x11-toolkits/gtkdatabox
 gtkdiff                         ports/textproc/gtkdiff
 gtkdps                          ports/graphics/gtkdps
-gtkextra                        ports/x11-toolkits/gtkextra
 gtkextra2                       ports/x11-toolkits/gtkextra2
 gtkfind                         ports/misc/gtkfind
 gtkglarea                       ports/x11-toolkits/gtkglarea
@@ -5115,7 +5110,6 @@ gtktalog                        ports/misc/gtktalog
 gtkterm2                        ports/x11/gtkterm2
 gtktetcolor                     ports/games/gtktetcolor
 gtkunique                       ports/x11-toolkits/gtkunique
-gtkwave                         ports/cad/gtkwave
 gtkwave3                        ports/cad/gtkwave3
 gtkyahoo                        ports/net-im/gtkyahoo
 gtodo                           ports/deskutils/gtodo
@@ -5950,6 +5944,7 @@ iograph                         ports/sysutils/iograph
 iolib                           ports/biology/iolib
 ion                             ports/x11-wm/ion
 ioncube                         ports/devel/ioncube
+ioping                          ports/sysutils/ioping
 ioquake3                        ports/games/ioquake3
 ioquake3-devel                  ports/games/ioquake3-devel
 iourbanterror                   ports/games/iourbanterror
@@ -5994,7 +5989,6 @@ ipsumdump                       ports/net/ipsumdump
 ipsvd                           ports/net/ipsvd
 ipv6calc                        ports/net-mgmt/ipv6calc
 ipv6gen                         ports/net-mgmt/ipv6gen
-ipvs                            ports/net/ipvs
 ipw-firmware                    ports/net/ipw-firmware
 ipw-firmware-kmod               ports/net/ipw-firmware-kmod
 ipython                         ports/devel/ipython
@@ -7091,7 +7085,6 @@ kdissert                        ports/deskutils/kdissert
 kdmtheme                        ports/x11-themes/kdmtheme
 kedpm                           ports/security/kedpm
 keep                            ports/sysutils/keep
-keepalived                      ports/net/keepalived
 keepassx                        ports/security/keepassx
 keitairc                        ports/irc/keitairc
 keitairc2                       ports/irc/keitairc2
@@ -7099,7 +7092,6 @@ kenny                           ports/misc/kenny
 kermit                          ports/comms/kermit
 kevedit                         ports/games/kevedit
 kexchange                       ports/finance/kexchange
-keximdb                         ports/databases/keximdb
 kexis                           ports/audio/kexis
 keybinder                       ports/x11/keybinder
 keyboardcast                    ports/x11/keyboardcast
@@ -7318,7 +7310,6 @@ koffice-i18n-uz                 ports/editors/koffice-i18n-uz
 koffice-i18n-ven                ports/editors/koffice-i18n-ven
 koffice-i18n-xh                 ports/editors/koffice-i18n-xh
 koffice-i18n-zu                 ports/editors/koffice-i18n-zu
-koffice-kde3                    ports/editors/koffice-kde3
 koffice-kde4                    ports/editors/koffice-kde4
 koffice-kde4-l10n               ports/editors/koffice-kde4-l10n
 koffice-kde4-l10n-ca            ports/editors/koffice-kde4-l10n-ca
@@ -7903,7 +7894,6 @@ libgringotts                    ports/security/libgringotts
 libgsf                          ports/devel/libgsf
 libgsf-gnome                    ports/devel/libgsf-gnome
 libgtk-java                     ports/x11-toolkits/libgtk-java
-libgtkeditor                    ports/x11-toolkits/libgtkeditor
 libgtkhtml                      ports/www/libgtkhtml
 libgtksourceviewmm              ports/x11-toolkits/libgtksourceviewmm
 libgtop                         ports/devel/libgtop
@@ -11669,6 +11659,7 @@ p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-AsFdat            ports/databases/p5-DBIx-Class-AsFdat
 p5-DBIx-Class-Cursor-Cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-DBIx-Class-DateTime-Epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
+p5-DBIx-Class-DeploymentHandler  ports/databases/p5-DBIx-Class-DeploymentHandler
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-DBIx-Class-DynamicDefault    ports/databases/p5-DBIx-Class-DynamicDefault
 p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
@@ -13374,6 +13365,7 @@ p5-Net-GeoPlanet                ports/www/p5-Net-GeoPlanet
 p5-Net-GitHub                   ports/net/p5-Net-GitHub
 p5-Net-Gnats                    ports/net/p5-Net-Gnats
 p5-Net-Google                   ports/net/p5-Net-Google
+p5-Net-Google-Analytics         ports/net/p5-Net-Google-Analytics
 p5-Net-Google-AuthSub           ports/net/p5-Net-Google-AuthSub
 p5-Net-Google-Calendar          ports/net/p5-Net-Google-Calendar
 p5-Net-Google-Code              ports/net/p5-Net-Google-Code
@@ -14558,6 +14550,7 @@ p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
 p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-Text-Patch                   ports/textproc/p5-Text-Patch
+p5-Text-Prefix-XS               ports/textproc/p5-Text-Prefix-XS
 p5-Text-QRCode                  ports/textproc/p5-Text-QRCode
 p5-Text-Query                   ports/textproc/p5-Text-Query
 p5-Text-Query-SQL               ports/databases/p5-Text-Query-SQL
@@ -16290,6 +16283,7 @@ p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-asfdat            ports/databases/p5-DBIx-Class-AsFdat
 p5-dbix-class-cursor-cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-dbix-class-datetime-epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
+p5-dbix-class-deploymenthandler  ports/databases/p5-DBIx-Class-DeploymentHandler
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-dbix-class-dynamicdefault    ports/databases/p5-DBIx-Class-DynamicDefault
 p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
@@ -17838,6 +17832,7 @@ p5-net-geoplanet                ports/www/p5-Net-GeoPlanet
 p5-net-github                   ports/net/p5-Net-GitHub
 p5-net-gnats                    ports/net/p5-Net-Gnats
 p5-net-google                   ports/net/p5-Net-Google
+p5-net-google-analytics         ports/net/p5-Net-Google-Analytics
 p5-net-google-authsub           ports/net/p5-Net-Google-AuthSub
 p5-net-google-calendar          ports/net/p5-Net-Google-Calendar
 p5-net-google-code              ports/net/p5-Net-Google-Code
@@ -19056,6 +19051,7 @@ p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-text-patch                   ports/textproc/p5-Text-Patch
 p5-text-pdf                     ports/print/p5-Text-PDF
+p5-text-prefix-xs               ports/textproc/p5-Text-Prefix-XS
 p5-text-qrcode                  ports/textproc/p5-Text-QRCode
 p5-text-query                   ports/textproc/p5-Text-Query
 p5-text-query-sql               ports/databases/p5-Text-Query-SQL
@@ -24929,7 +24925,6 @@ skinlf                          ports/x11-toolkits/skinlf
 skipfish                        ports/security/skipfish
 skippy                          ports/x11-wm/skippy
 skippy-xd                       ports/x11-wm/skippy-xd
-skribe                          ports/textproc/skribe
 skrooge                         ports/finance/skrooge
 sks                             ports/security/sks
 skstream                        ports/net/skstream
@@ -24952,6 +24947,7 @@ slack                           ports/sysutils/slack
 slapd-cyrus                     ports/mail/slapd-cyrus
 slashem-tty                     ports/games/slashem-tty
 slate                           ports/net-mgmt/slate
+slatec                          ports/math/slatec
 slbd                            ports/net/slbd
 sleuth                          ports/dns/sleuth
 sleuthkit                       ports/sysutils/sleuthkit
@@ -26842,7 +26838,6 @@ wackamole                       ports/net/wackamole
 wackford-squeers                ports/net/wackford-squeers
 wacko                           ports/www/wacko
 wadcomblog                      ports/www/wadcomblog
-wahcade                         ports/emulators/wahcade
 waheela                         ports/audio/waheela
 waiho                           ports/ftp/waiho
 waimea                          ports/x11-wm/waimea
@@ -27051,7 +27046,6 @@ wmmemload                       ports/sysutils/wmmemload
 wmminichess                     ports/games/wmminichess
 wmmoonclock                     ports/astro/wmmoonclock
 wmmp                            ports/audio/wmmp
-wmmsg                           ports/x11/wmmsg
 wmname                          ports/x11-wm/wmname
 wmnd                            ports/net/wmnd
 wmnet                           ports/net/wmnet
@@ -27863,8 +27857,6 @@ xpi-locale-switcher             ports/www/xpi-locale-switcher
 xpi-menueditor                  ports/www/xpi-menueditor
 xpi-mldonkey                    ports/www/xpi-mldonkey
 xpi-modify_headers              ports/www/xpi-modify_headers
-xpi-mousegestures               ports/www/xpi-mousegestures
-xpi-mozex                       ports/www/xpi-mozex
 xpi-mrtech-local-install        ports/www/xpi-mrtech-local-install
 xpi-musicpm                     ports/audio/xpi-musicpm
 xpi-neo-diggler                 ports/www/xpi-neo-diggler
