@@ -145,7 +145,7 @@ bin/robocode
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar
-%%DATADIR%%/libs/picocontainer-2.6.jar
+%%DATADIR%%/libs/picocontainer-2.8.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.host-%%PORTVERSION%%.jar
@@ -185,7 +185,6 @@ bin/robocode
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
 %%DATADIR%%/robots/sample/SittingDuck.class
-%%DATADIR%%/robots/sample/SittingDuck.data/count.dat
 %%DATADIR%%/robots/sample/SittingDuck.java
 %%DATADIR%%/robots/sample/SittingDuck.properties
 %%DATADIR%%/robots/sample/SpinBot.class
@@ -242,7 +241,6 @@ bin/robocode
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sampleex
-@dirrm %%DATADIR%%/robots/sample/SittingDuck.data
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
 @dirrm %%DATADIR%%/license
