@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 PATCH_SITES=	http://www.lua.org/ftp/
 PATCHFILES=	patch-lua-5.1.4-3
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 PATCH_WRKSRC=	${WRKSRC}/src
