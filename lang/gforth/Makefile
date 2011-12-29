@@ -17,8 +17,6 @@ COMMENT=	Fast and portable Forth system
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 
-BROKEN=		fails to build
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
