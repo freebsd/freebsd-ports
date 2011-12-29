@@ -1,0 +1,5 @@
+This is a serial-over-lan (sol) client for Intel AMT.  Includes a terminal and
+a graphical (gtk) version.  Also comes with a perl script to gather
+informations about and remotely control AMT managed computers.
+
+WWW: https://www.kraxel.org/blog/linux/amtterm/
