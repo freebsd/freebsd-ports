@@ -66,6 +66,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <url>https://support.zabbix.com/browse/ZBX-4015</url>
     </references>
     <dates>
       <discovery>2011-08-04</discovery>
