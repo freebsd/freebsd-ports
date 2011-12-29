@@ -1,6 +1,6 @@
---- src/sysdep1.c.orig	2007-10-10 22:18:20.000000000 +0200
-+++ src/sysdep1.c	2008-04-17 19:48:58.000000000 +0200
-@@ -84,13 +84,13 @@
+--- src/sysdep1.c.orig	2009-12-12 16:47:47.000000000 +0100
++++ src/sysdep1.c	2011-12-28 16:07:59.000000000 +0100
+@@ -65,13 +65,13 @@ static void m_setrts(int fd)
    if (portfd_is_socket)
      return;
  #endif
@@ -16,8 +16,8 @@
 +    ioctl(fd, TIOCMSET, &mcs);
    }
  #endif
- #ifdef _COHERENT
-@@ -213,11 +213,11 @@
+ }
+@@ -180,11 +180,11 @@ int m_getdcd(int fd)
      return portfd_is_connected;
    }
  #endif
@@ -31,7 +31,7 @@
        return -1;
      return mcs & TIOCM_CAR ? 1 : 0;
    }
-@@ -260,8 +260,8 @@
+@@ -227,8 +227,8 @@ void m_savestate(int fd)
    ioctl(fd, TIOCLGET, &lsw);
  #  endif
  #endif
@@ -42,7 +42,7 @@
  #endif
  }
  
-@@ -285,8 +285,8 @@
+@@ -252,8 +252,8 @@ void m_restorestate(int fd)
    ioctl(fd, TIOCLSET, &lsw);
  #  endif
  #endif
