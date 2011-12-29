@@ -1,5 +1,5 @@
---- src/scripts/unix.mak.in.orig	2008-09-03 23:56:00.000000000 +0100
-+++ src/scripts/unix.mak.in	2008-11-14 18:29:12.000000000 +0000
+--- src/scripts/unix.mak.in.orig	2011-04-14 15:07:03.000000000 +0400
++++ src/scripts/unix.mak.in	2011-04-14 15:08:29.000000000 +0400
 @@ -4,16 +4,16 @@
  # Usage: make -f scripts/unix.mak
  
@@ -12,11 +12,10 @@
  man1dir=$(mandir)/man1
  
 -CC = cc
--LD = $(CC)
++CC ?= cc
+ LD = $(CC)
 -CFLAGS  = -O
 -LDFLAGS = -s
-+CC ?= cc
-+LD = $(CC)
 +CFLAGS  ?= -O
 +LDFLAGS += -s -L${LOCALBASE}/lib
  
@@ -25,9 +24,8 @@
 @@ -28,7 +28,7 @@
  BACKDIR = ../../src
  
- OBJS = optipng.o opngoptim.o opngreduc.o cbitset.o osys.o strutil.o
+ OBJS = optipng.o opngoptim.o opngreduc.o cbitset.o osys.o
 -INCS = -I$(ZDIR) -I$(PNGDIR) -I$(PNGXDIR)
 +INCS = -I$(ZDIR) -I$(PNGDIR) -I$(PNGXDIR) -I${LOCALBASE}/include
  LIBS = $(PNGXDIR)/$(PNGXLIB) $(PNGDIR)/$(PNGLIB) $(ZDIR)/$(ZLIB)
- SYSLIBS =
- 
+ SYSLIBS = -lm
