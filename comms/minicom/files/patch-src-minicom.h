@@ -1,10 +1,10 @@
---- src/minicom.h.orig	2008-04-17 20:06:14.000000000 +0200
-+++ src/minicom.h	2008-04-17 20:06:22.000000000 +0200
-@@ -34,6 +34,7 @@
- #include "libport.h"
+--- src/minicom.h.orig	2011-09-30 09:57:22.000000000 +0200
++++ src/minicom.h	2011-12-28 16:12:54.000000000 +0100
+@@ -35,6 +35,7 @@
  
  #include <time.h>
+ #include <stdbool.h>
 +#include <limits.h>
  
- #ifdef USE_SOCKET
- #include <sys/socket.h>
+ #if HAVE_LOCKDEV
+ #include <ttylock.h>

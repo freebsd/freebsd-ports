@@ -1,7 +1,7 @@
---- doc/minirc.dfl.orig	2003-03-30 20:55:39.000000000 +0200
-+++ doc/minirc.dfl	2008-04-17 20:17:35.000000000 +0200
+--- doc/minirc.dfl.orig	2009-12-12 16:47:47.000000000 +0100
++++ doc/minirc.dfl	2011-12-28 16:07:59.000000000 +0100
 @@ -1,2 +1,7 @@
- # $Id: minirc.dfl,v 1.1.1.1 2003/03/30 18:55:39 al-guest Exp $
+ # $Id: minirc.dfl,v 1.1.1.1 2003-03-30 18:55:39 al-guest Exp $
  # Machine-generated file - use "minicom -s" to change parameters.
 +pr port             /dev/cuad0
 +pu baudrate         9600
