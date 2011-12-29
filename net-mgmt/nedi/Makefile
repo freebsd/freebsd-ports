@@ -45,7 +45,7 @@ SUB_LIST=	NEDIDIR=${NEDIDIR}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/nedi|${NEDIDIR}|' ${WRKSRC}/html/inc/libgraph.php
 	@${REINPLACE_CMD} -e "s|'/etc|'${PREFIX}/etc|" ${WRKSRC}/html/inc/libmisc.php
-	@${FIND} ${WRKSRC} -name *.bak -or -name *.orig -delete
+	@${FIND} ${WRKSRC} \( -name *.bak -or -name *.orig \) -delete
 
 do-install:
 	@ ${MKDIR} -m 755 ${NEDIDIR}
