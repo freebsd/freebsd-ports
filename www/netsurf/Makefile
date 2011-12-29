@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	libglade2 librsvg2 libxml2
 USE_GMAKE=	yes
 MAKE_ENV=	PKG_CONFIG_PATH="${WRKDIR}/fakeroot/lib/pkgconfig:${LOCALBASE}/libdata/pkgconfig"
-MAKE_ARGS=	CC="${CC}" CCOPT="" TARGET="gtk" HOST="${OPSYS}" \
+MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="${CFLAGS}" Q=""
 MAKE_JOBS_SAFE=	yes
 
@@ -50,6 +50,8 @@ post-patch:
 		's| -O2 | |' ${WRKSRC}/Makefile.defaults
 	@${REINPLACE_CMD} -e \
 		's| -g | |' ${WRKSRC}/gtk/Makefile.target
+	@${REINPLACE_CMD} -e '/ifeq.*clang/s/word 1/filter clang/' \
+		${WRKDIR}/*/build/makefiles/Makefile.tools
 
 do-configure:
 	@${TOUCH} ${WRKDIR}/${PARSERUTILS_DISTNAME:S/-src//}/Makefile.config.override
@@ -67,8 +69,8 @@ pre-build:
 .for dir in ${PARSERUTILS_DISTNAME:S/-src//} ${WAPCAPLET_DISTNAME} \
 	${HUBBUB_DISTNAME:S/-src//} ${CSS_DISTNAME:S/-src//} \
 	${NSBMP_DISTNAME} ${NSGIF_DISTNAME}
-	@(cd ${WRKDIR}/${dir} && ${SETENV} PREFIX="${WRKDIR}/fakeroot" \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@${MAKE_ENV} ${GMAKE} -C${WRKDIR}/${dir} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} ${INSTALL_TARGET} PREFIX="${WRKDIR}/fakeroot"
 .endfor
 
 do-install:
