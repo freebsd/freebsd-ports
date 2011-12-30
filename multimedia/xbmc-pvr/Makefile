@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	57
+PORTVERSION=	58
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
-DISTNAME=	opdenkamp-${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION}-0-g${GITHASH}
+DISTNAME=	opdenkamp-${PORTNAME}-Eden-pvr_beta1-0-g${GITHASH}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	XBMC is an award winning media center application - PVR branch
@@ -62,7 +62,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-GITHASH=	d967ec3
+GITHASH=	84817e6
 WRKSRC=		${WRKDIR}/opdenkamp-${PORTNAME}-${GITHASH}
 FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
