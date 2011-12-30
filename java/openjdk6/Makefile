@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b24
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -261,6 +262,7 @@ test: build-depends build
 do-install:
 	@${MKDIR} ${PREFIX}/openjdk6/
 	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
+	@${INSTALL_DATA} ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar ${PREFIX}/openjdk6/jre/lib/
 .if defined(WITH_FASTDEBUG)
 	@${MKDIR} ${PREFIX}/openjdk6-fastdebug/
 	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
