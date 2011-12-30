@@ -8,8 +8,6 @@
 PORTNAME=	zabbix
 PKGNAMESUFFIX=	-frontend
 
-FORBIDDEN=	Multiple XSS vulnerabilities; https://support.zabbix.com/browse/ZBX-4015
-
 MASTERDIR=	${.CURDIR}/../zabbix-server
 
 NO_BUILD=	yes
