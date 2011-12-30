@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmref
-PORTVERSION=	18.0
+PORTVERSION=	18.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://iphome.hhi.de/suehring/tml/download/
 DISTNAME=	jm${PORTVERSION}
