@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gthumb
-PORTVERSION=	2.12.4
+PORTVERSION=	2.14.1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,13 +28,14 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	gthumb.schemas gthumb-comments.schemas gthumb-image-viewer.schemas \
-		gthumb-importer.schemas gthumb-pixbuf-savers.schemas gthumb-slideshow.schemas \
+GCONF_SCHEMAS=	gthumb.schemas gthumb-comments.schemas gthumb-file-manager.schemas \
+		gthumb-image-viewer.schemas gthumb-importer.schemas gthumb-pixbuf-savers.schemas \
+		gthumb-slideshow.schemas gthumb_change_date.schemas gthumb_contact_sheet.schemas \
 		gthumb_convert_format.schemas gthumb_crop_options.schemas gthumb_image_print.schemas \
-		gthumb_photo_importer.schemas gthumb_rename_series.schemas \
-		gthumb_resize_images.schemas gthumb_resize_options.schemas gthumb_webalbums.schemas
+		gthumb_photo_importer.schemas gthumb_rename_series.schemas gthumb_resize_images.schemas \
+		gthumb_resize_options.schemas gthumb_rotate_options.schemas gthumb_webalbums.schemas
 
-PLIST_SUB=	GTHUMB_VER=2.12
+PLIST_SUB=	GTHUMB_VER=2.14
 
 OPTIONS=	EXIV2 "Exif support (image metadata)" On \
 		CLUTTER "Fancy slideshows" On \
@@ -82,7 +83,7 @@ CONFIGURE_ARGS+=--disable-libopenraw
 LIB_DEPENDS+=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 CONFIGURE_ARGS+=--enable-libsoup --enable-gnome-keyring
 PLIST_SUB+=	SOUP=""
-GCONF_SCHEMAS+=	gthumb-picasaweb.schemas
+GCONF_SCHEMAS+=	gthumb-facebook.schemas gthumb-picasaweb.schemas
 .else
 CONFIGURE_ARGS+=--disable-libsoup --disable-gnome-keyring
 PLIST_SUB+=	SOUP="@comment "
