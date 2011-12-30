@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.7.6
-PORTREVISION=	1
+PORTVERSION=	2.7.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
