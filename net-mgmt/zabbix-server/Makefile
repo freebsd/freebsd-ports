@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.10
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -48,8 +48,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD}
 
 .if ${ZABBIX_BUILD} != "agent"
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 

@@ -25,6 +25,7 @@
 %%WWWDIR%%/api/classes/class.cmediatype.php
 %%WWWDIR%%/api/classes/class.cproxy.php
 %%WWWDIR%%/api/classes/class.cscreen.php
+%%WWWDIR%%/api/classes/class.cscreenitem.php
 %%WWWDIR%%/api/classes/class.cscript.php
 %%WWWDIR%%/api/classes/class.ctemplate.php
 %%WWWDIR%%/api/classes/class.ctrigger.php
@@ -427,8 +428,6 @@
 %%WWWDIR%%/styles/div.css
 %%WWWDIR%%/styles/form.css
 %%WWWDIR%%/styles/ie.css
-%%WWWDIR%%/styles/ie_css_bb.css
-%%WWWDIR%%/styles/ie_css_ob.css
 %%WWWDIR%%/styles/ie_css_od.css
 %%WWWDIR%%/styles/link.css
 %%WWWDIR%%/styles/p.css
