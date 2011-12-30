@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -55,7 +55,8 @@ CONFLICTS=	avr-libc-devel-[0-9]*
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 .if defined(WITH_AVRLIBCDOCS)
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
-	--enable-doc --disable-versioned-doc --prefix=${PREFIX}
+	--enable-doc --disable-versioned-doc --prefix=${PREFIX} \
+	--mandir=${PREFIX}/share/doc/avr-libc/man
 PLIST_DOC=	${PKGDIR}/pkg-plist.doc
 .else
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr --prefix=${PREFIX}
