@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -36,6 +36,7 @@ OPTIONS=	CONTROL "telnet control" On \
 		UPNP "UPnP/DLNA plugin (alpha!)" On \
 		SLEEPTIMER "sleep timer plugin" On \
 		XVDR "XVDR plugin (for connecting XBMC PVR)" On \
+		EEPG "extended EPG plugin (for UK/NL/etc.)" On \
 		VNSISERVER "VNSI server (for XBMC PVR branch - old)" Off \
 		SOFTDEVICE "softdevice (broken?)" Off \
 		MARKAD "MarkAd plugin" Off
@@ -98,6 +99,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-softdevice.so.${PORTVERSION}:${PORTSDI
 .endif
 .if defined(WITH_XVDR)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-xvdr.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-xvdr
+.endif
+.if defined(WITH_EEPG)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-eepg.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-eepg
 .endif
 .if defined(WITH_VNSISERVER)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vnsiserver.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vnsiserver
