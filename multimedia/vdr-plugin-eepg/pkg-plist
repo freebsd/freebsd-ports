@@ -1,0 +1,6 @@
+lib/vdr/libvdr-eepg.so.1.7.19
+etc/vdr/plugins/eepg/eepg.equiv.IT
+@unexec if cmp -s %D/etc/vdr/plugins/eepg/eepg.equiv.sample %D/etc/vdr/plugins/eepg/eepg.equiv; then rm -f %D/etc/vdr/plugins/eepg/eepg.equiv; fi
+etc/vdr/plugins/eepg/eepg.equiv.sample
+@exec if [ ! -f %D/etc/vdr/plugins/eepg/eepg.equiv ] ; then cp -p %D/%F %B/eepg.equiv; fi
+@dirrmtry etc/vdr/plugins/eepg

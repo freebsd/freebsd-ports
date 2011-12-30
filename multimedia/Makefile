@@ -334,6 +334,7 @@
     SUBDIR += vdpauinfo
     SUBDIR += vdr
     SUBDIR += vdr-plugin-control
+    SUBDIR += vdr-plugin-eepg
     SUBDIR += vdr-plugin-epgsearch
     SUBDIR += vdr-plugin-femon
     SUBDIR += vdr-plugin-infosatepg
