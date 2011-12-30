@@ -118,7 +118,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc">
 	  <p>When an encryption key is supplied via the TELNET protocol,
 	     its length is not validated before the key is copied into a
-	     fixed-size buffer.</p>
+	     fixed-size buffer. Also see MITKRB5-SA-2011-008.</p>
 	</blockquote>
       </body>
     </description>
