@@ -24,7 +24,7 @@ CFLAGS+=	-fno-reorder-blocks -fno-inline
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
-ALL_TARGET=	all info
+ALL_TARGET=	kernel/version.fs more info
 MAKE_JOBS_UNSAFE=yes
 
 STRIP=		#none
