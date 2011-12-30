@@ -202,6 +202,7 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.0.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.2.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip02.html
