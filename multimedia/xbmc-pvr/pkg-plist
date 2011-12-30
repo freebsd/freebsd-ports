@@ -218,6 +218,13 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/script.module.pil/addon.xml
 %%DATADIR%%/addons/script.module.pysqlite/addon.xml
 %%DATADIR%%/addons/script.module.pysqlite/lib/pysqlite2/__init__.py
+%%DATADIR%%/addons/script.module.simplejson/addon.xml
+%%DATADIR%%/addons/script.module.simplejson/lib/LICENSE.txt
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/__init__.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/decoder.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/encoder.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/scanner.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/tool.py
 %%DATADIR%%/addons/skin.confluence/720p/AddonBrowser.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogAddonInfo.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogAddonSettings.xml
@@ -1293,6 +1300,9 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/720p/weather+
 @dirrm %%DATADIR%%/addons/skin.confluence/720p
 @dirrm %%DATADIR%%/addons/skin.confluence
+@dirrm %%DATADIR%%/addons/script.module.simplejson/lib/simplejson
+@dirrm %%DATADIR%%/addons/script.module.simplejson/lib
+@dirrm %%DATADIR%%/addons/script.module.simplejson
 @dirrm %%DATADIR%%/addons/script.module.pysqlite/lib/pysqlite2
 @dirrm %%DATADIR%%/addons/script.module.pysqlite/lib
 @dirrm %%DATADIR%%/addons/script.module.pysqlite
