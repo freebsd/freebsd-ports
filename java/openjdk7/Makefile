@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -150,6 +150,7 @@ do-install:
 	@${MKDIR} ${INSTALLDIR}
 	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
 		${COPYTREE_SHARE} . ${INSTALLDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar ${INSTALLDIR}/jre/lib/
 	@for dir in `${FIND} ${INSTALLDIR} -name bin -type d`; do \
 		${CHOWN} -h -R ${BINOWN}:${BINGRP} $$dir; \
 		${FIND} $$dir -type f -exec ${CHMOD} ${BINMODE} "{}" \; ; \
