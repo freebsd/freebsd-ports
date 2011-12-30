@@ -10,9 +10,10 @@ PORTVERSION=		1.0.2
 PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-# PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
+PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
+PATCHFILES=		2011-008-patch.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
