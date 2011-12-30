@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: umurmur
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -19,11 +19,6 @@
 
 . /etc/rc.subr
 
-# Set some defaults
-: ${umurmur_enable="NO"}
-: ${umurmur_user="umurmur"}
-: ${umurmur_flags=""}
-
 name=umurmur
 rcvar=${name}_enable
 
@@ -34,5 +29,9 @@ command="%%PREFIX%%/bin/umurmurd"
 command_args="-p ${pidfile}"
 
 load_rc_config $name
+
+# Set some defaults
+: ${umurmur_enable="NO"}
+: ${umurmur_user="umurmur"}
 
 run_rc_command "$1"
