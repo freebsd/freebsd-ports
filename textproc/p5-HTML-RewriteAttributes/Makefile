@@ -13,9 +13,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple yet powerful HTML attribute rewriting
 
-RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+BUILD_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 
