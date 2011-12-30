@@ -59,6 +59,7 @@ RUN_DEPENDS=	p5-Catalyst-Action-REST>=0.74:${PORTSDIR}/www/p5-Catalyst-Action-RE
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
