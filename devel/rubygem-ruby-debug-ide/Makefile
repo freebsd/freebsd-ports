@@ -19,6 +19,8 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+BROKEN=		incomplete plist
+
 PLIST_FILES=	bin/rdebug-ide
 
 .include <bsd.port.mk>
