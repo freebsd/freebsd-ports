@@ -45,6 +45,7 @@ GNU_CONFIGURE=	yes
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
+BROKEN=		does not package
 .endif
 
 CONFLICTS=	avr-gcc-3* avr-gcc-42*
