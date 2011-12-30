@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	compass
-PORTVERSION=	0.11.5
+PORTVERSION=	0.11.6
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides an open-source CSS authoring framework
 
 RUN_DEPENDS=	rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass \
