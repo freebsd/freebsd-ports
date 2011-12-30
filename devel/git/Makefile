@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.8.1
+PORTVERSION=	1.7.8.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	git-core
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
@@ -19,6 +18,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
+PROJECTHOST=	git-core
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		git.1 \
@@ -329,19 +329,6 @@ SHELLS=		/etc/shells
 PLIST_SUB+=	ETCSHELLS=""
 .else
 PLIST_SUB+=	ETCSHELLS="@comment "
-.endif
-
-.if defined (MAINTAINER_MODE)
-DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}.sign
-.if defined (WITH_HTMLDOCS)
-DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}.sign
-.endif
-verify: fetch
-.for FILE in ${DISTFILES:N*.sign}
-	@${ECHO_MSG} "Checking ${FILE}${EXTRACT_SUFX}"
-	@gpg --verify ${DISTDIR}/${FILE}${EXTRACT_SUFX}.sign ${DISTDIR}/${FILE}${EXTRACT_SUFX} 2>/dev/null || ${ECHO_MSG} "Bad signature!"
-.endfor
 .endif
 
 post-extract:
