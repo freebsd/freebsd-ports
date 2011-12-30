@@ -14,8 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library that supports most image formats
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	lthack
