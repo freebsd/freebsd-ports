@@ -72,12 +72,15 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
+		DRIZZLE_MODULE		"3rd party drizzlie module" off \
 		GRIDFS_MODULE		"3rd party gridfs module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		NAXSI_MODULE		"3rd party naxsi module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		POSTGRES_MODULE		"3rd party postgresql module" off \
+		RDS_CSV_MODULE		"3rd party rds_csv module" off \
+		RDS_JSON_MODULE		"3rd party rds_json module" off \
 		REDIS2_MODULE		"3rd party redis2 module" off \
 		SET_MISC_MODULE		"3rd party set_misc module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
@@ -422,6 +425,17 @@ DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_MODULE_VERSION}-${GIT_
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_MODULE_VERSION:S/^0-g//}
 .endif
 
+.if defined(WITH_DRIZZLE_MODULE)
+LIB_DEPENDS+=	drizzle.0:${PORTSDIR}/databases/drizzle
+NGINX_DRIZZLE_MODULE_VERSION=	0.1.2rc4
+GIT_DRIZZLE_MODULE_VERSION=	0-g46b744a
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_MODULE_VERSION}/:drizzle
+DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_MODULE_VERSION}-${GIT_DRIZZLE_MODULE_VERSION}.tar.gz:drizzle
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_MODULE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module::config
+.endif
+
 .if defined(WITH_GRIDFS_MODULE)
 NGINX_GRIDFS_MODULE_VERSION=	0.8
 GIT_GRIDFS_MODULE_VERSION=	0-gb5f8113
@@ -493,6 +507,24 @@ MASTER_SITES+=	http://labs.frickle.com/files/:postgres
 DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}.tar.gz:postgres
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
+.endif
+
+.if defined(WITH_RDS_CSV_MODULE)
+NGINX_RDS_CSV_MODULE_VERSION=	0.04
+GIT_RDS_CSV_MODULE_VERSION=	0-g4cd999b
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_MODULE_VERSION}/:rdscsv
+DISTFILES+=	agentzh-rds-csv-nginx-module-v${NGINX_RDS_CSV_MODULE_VERSION}-${GIT_RDS_CSV_MODULE_VERSION}.tar.gz:rdscsv
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-csv-nginx-module-${GIT_RDS_CSV_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_RDS_JSON_MODULE)
+NGINX_RDS_JSON_MODULE_VERSION=	0.12rc7
+GIT_RDS_JSON_MODULE_VERSION=	0-g253db2b
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_MODULE_VERSION}/:rdsjson
+DISTFILES+=	agentzh-rds-json-nginx-module-v${NGINX_RDS_JSON_MODULE_VERSION}-${GIT_RDS_JSON_MODULE_VERSION}.tar.gz:rdsjson
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_JSON_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_REDIS2_MODULE)
@@ -646,6 +678,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!^inline!static inline!' \
 		${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}/ngx_http_zip_parsers.*
+.endif
+.if defined(WITH_DRIZZLE_MODULE)
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${PREFIX}!' \
+		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_MODULE_VERSION:S/^0-g//}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if defined(WITH_GRIDFS_MODULE)
