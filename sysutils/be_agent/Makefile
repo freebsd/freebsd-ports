@@ -8,14 +8,14 @@
 PORTNAME=	be_agent
 PORTVERSION=	5.046
 CATEGORIES=	sysutils
-MASTER_SITES=  #
+MASTER_SITES=	#
 DISTNAME=	nls_agnt_262592
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	numbski@hksilver.net
 COMMENT=	VERITAS Backup Exec (tm) UNIX Agent
 
-DOWNLOAD_URL=	http://seer.support.veritas.com/docs/262592.htm
+DOWNLOAD_URL=	http://www.symantec.com/business/support/index?page=content&id=TECH28248
 
 USE_LINUX=	yes
 NO_BUILD=	yes
@@ -30,15 +30,10 @@ PLIST_FILES=	bin/agent.be \
 
 pre-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-Because of licensing restrictions, you must fetch the distribution\n\
-manually.  Please access\n\
-\n\
-  ${DOWNLOAD_URL}\n\
-\n\
-Click \"Download Now\"\, and agree to the license agreement.  Please place\n\
-the downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n
+IGNORE=	because of licensing restrictions, you must fetch the distribution\
+manually.  Please access ${DOWNLOAD_URL}\
+Click "Download Now", and agree to the license agreement.  Please place the\
+downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}
 .endif
 
 do-install:
@@ -51,4 +46,3 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
-
