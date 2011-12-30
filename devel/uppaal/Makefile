@@ -8,6 +8,7 @@
 PORTNAME=	uppaal
 PORTVERSION=	4.0.10
 CATEGORIES=	devel java linux
+MASTER_SITES=	# empty
 DISTNAME=	uppaal-${PORTVERSION}-aca
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,12 +34,12 @@ RESTRICTED=	Downloading requires completion of a license agreement
 
 .include <bsd.port.pre.mk>
 
-LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+LINUX_SYSCTL=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+LINUX_OSRELEASE=	${LINUX_SYSCTL}
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE=Please download ${DISTNAME}${EXTRACT_SUFX} into\
-${DISTDIR}/${DIST_SUBDIR} from:\n\t${DOWNLOAD_URL}\n
+IGNORE=	please download ${DISTNAME}${EXTRACT_SUFX} into\
+${DISTDIR}/${DIST_SUBDIR} from ${DOWNLOAD_URL} and re-run make
 .endif
 
 post-patch:
