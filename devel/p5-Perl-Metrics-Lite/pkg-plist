@@ -1,0 +1,29 @@
+bin/measureperl
+bin/measureperl-checkstyle
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics/Lite/.packlist
+%%SITE_PERL%%/Perl/Metrics/Lite.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/DocumentFactory.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File/Plugin/Lines.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File/Plugin/NumberOfMethods.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File/Plugin/Packages.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub/Plugin/LineNumber.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub/Plugin/Lines.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub/Plugin/MccabeComplexity.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Util.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/FileFinder.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Report/CheckStyle.pm
+%%SITE_PERL%%/Perl/Metrics/Lite/Report/Text.pm
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Report
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub/Plugin
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File/Plugin
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis
+@dirrm %%SITE_PERL%%/Perl/Metrics/Lite
+@dirrmtry %%SITE_PERL%%/Perl/Metrics
+@dirrmtry %%SITE_PERL%%/Perl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics/Lite
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl

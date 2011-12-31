@@ -1,0 +1,9 @@
+Perl::Metrics::Lite is the pluggable perl code metrics system.
+
+Perl::Metrics::Lite provides just enough methods to run static
+analysis of one or many Perl files and obtain a few metrics.
+
+Perl::Metrics::Lite is far simpler than Perl::Metrics and more
+extensible than Perl::Metrics::Simple.
+
+WWW: http://search.cpan.org/dist/Perl-Metrics-Lite/
