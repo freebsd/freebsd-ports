@@ -29,6 +29,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/asyfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/asyfm1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/asyfm2.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/averages.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/bark.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/bessel.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/bgd.png
