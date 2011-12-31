@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.5.4
-PORTREVISION=	2
+PORTVERSION=	3.1.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 
@@ -21,8 +20,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa \
-		--disable-pulse --disable-projectm-1.0
+CONFIGURE_ARGS=	--disable-pulse --disable-coreaudio
 WANT_GNOME=	yes
 WANT_EFL=	yes
 WANT_SDL=	yes
@@ -32,13 +30,14 @@ PORTDOCS=	AUTHORS
 # no ports for:
 #		PULSE		"Enable PulseAudio output plugin"	on \
 #		COREAUDIO	"Enable CoreAudio output plugin"	on \
-#		PROJECTM	"Enable projectM vis plugin"		on \
 
 OPTIONS=	DBUS		"Enable dbus support"			on  \
+		OSS		"Enable OSS output plugin"		on  \
+		OSS4		"Enable OSS4 output plugin"		off \
+		SDLOUT		"Enable SDL output plugin"		off \
+		ALSA		"Enable ALSA output plugin"		off \
 		CUE             "Enable CUE support"                    on  \
 		MP3		"Enable mp3 plugin"			on  \
-		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
-		LIRC		"Enable LIRC plugin"			off \
 		STATUSICON	"Enable X11 Status Icon plugin"		on  \
 		AOSD		"Enable X11 Audacious OSD plugin"	on  \
 		AOSDXCOMP	"Enable X11 Audacious OSD X Composite Support" on  \
@@ -51,22 +50,20 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
 		MODPLUG 	"Enable ModPlug plugin"			off \
 		JACK		"Enable jack output plugin"		off \
-		SID		"Enable sid input plugin"		off \
-		OSS		"Enable OSS output plugin"		on  \
-		OSS4		"Enable OSS4 output plugin"		off \
+		SID		"Enable Commodore 64 audio (SID) input plugin"		off \
 		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
 		SCROBBLER	"Enable Scrobbler Plugin"		on  \
-		NEON		"Enable neon (HTTP) support"            on  \
-		MMS		"Enable mms support"			off \
+		NEON		"Enable neon (HTTP) transport plugin"	on  \
+		MMS		"Enable mms transport plugin"		off \
+		GIO		"Enable GIO transport plugin"		off \
+		SMB		"Enable SMB transport plugin"		off \
 		MTP		"Enable MTP upload support"             off \
-		PARANORMAL	"Enable paranormal vis plugin"		on  \
-		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on  \
-		SSE2		"Enable SSE2 support"			on  \
-		RESAMPLE	"Enable resample support"		off \
+		RESAMPLE	"Enable resample support"		off\
 		AMIDI		"Enable amidi support"			off \
 		NOTIFY		"Enable libnotify support"		off \
-		SDLOUT		"Enable sdlout support"			off
+		OPENAL		"Enable OpenAL support"			off \
+		BS2B		"Enable Bauer stereophonic-to-binaural (bs2b) support" off
 
 .include <bsd.port.pre.mk>
 
@@ -107,29 +104,12 @@ PLIST_SUB+=	CUEPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_MP3)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	mpg123.0:${PORTSDIR}/audio/mpg123
 CONFIGURE_ARGS+=--enable-mp3
 PLIST_SUB+=	MP3PLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-mp3
 PLIST_SUB+=	MP3PLUGIN="@comment "
-.endif
-
-.if !defined(WITHOUT_ROCKLIGHT)
-PLIST_SUB+=	ROCKLIGHTPLUGIN=""
-CONFIGURE_ARGS+=--enable-rocklight
-.else
-CONFIGURE_ARGS+=--disable-rocklight
-PLIST_SUB+=	ROCKLIGHTPLUGIN="@comment "
-.endif
-
-.if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
-CONFIGURE_ARGS+=--enable-lirc
-PLIST_SUB+=	LIRCPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-lirc
-PLIST_SUB+=	LIRCPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_STATUSICON)
@@ -286,15 +266,6 @@ CONFIGURE_ARGS+=--disable-cdaudio
 PLIST_SUB+=	CDAUDIOPLUGIN="@comment "
 .endif
 
-.if defined(WITH_PARANORMAL)
-CONFIGURE_ARGS+=--enable-paranormal
-PLIST_SUB+=	PARANORMALPLUGIN=""
-USE_SDL+=	sdl
-.else
-CONFIGURE_ARGS+=--disable-paranormal
-PLIST_SUB+=	PARANORMALPLUGIN="@comment "
-.endif
-
 .if !defined(WITHOUT_NEON)
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=--enable-neon
@@ -322,17 +293,6 @@ CONFIGURE_ARGS+=--disable-mtp_up
 PLIST_SUB+=	MTPPLUGIN="@comment "
 .endif
 
-.if defined(WITH_GNOME)
-USE_GNOME+=	gnomevfs2 gconf2
-CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
-.endif
-
-.if !defined(WITHOUT_SSE2)
-CONFIGURE_ARGS+=--disable-sse2
-.else
-CONFIGURE_ARGS+=--enable-sse2
-.endif
-
 .if !defined(WITHOUT_RESAMPLE)
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-resample
@@ -342,6 +302,72 @@ CONFIGURE_ARGS+=--disable-resample
 PLIST_SUB+=     RESAMPLEPLUGIN="@comment "
 .endif
 
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=--enable-alsa
+PLIST_SUB+=	ALSAPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-alsa
+PLIST_SUB+=	ALSAPLUGIN="@comment "
+.endif
+
+.if defined(WITH_AMIDI)
+.if defined(WITH_ALSA)
+CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-alsa
+PLIST_SUB+=	AMIDIFPLUGIN="@comment "
+PLIST_SUB+=	AMIDIAPLUGIN=""
+.else
+LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
+CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
+PLIST_SUB+=	AMIDIFPLUGIN=""
+PLIST_SUB+=	AMIDIAPLUGIN="@comment "
+.endif
+PLIST_SUB+=	AMIDIPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-amidiplug
+PLIST_SUB+=	AMIDIFPLUGIN="@comment "
+PLIST_SUB+=	AMIDIAPLUGIN="@comment "
+PLIST_SUB+=	AMIDIPLUGIN="@comment "
+.endif
+
+.if defined(WITH_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+CONFIGURE_ARGS+=--enable-openal
+PLIST_SUB+=	OPENALPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-openal
+PLIST_SUB+=	OPENALPLUGIN="@comment "
+.endif
+
+.if defined(WITH_BS2B)
+LIB_DEPENDS+=	bs2b.0:${PORTSDIR}/audio/libbs2b
+CONFIGURE_ARGS+=--enable-bs2b
+PLIST_SUB+=	BS2BPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-bs2b
+PLIST_SUB+=	BS2BPLUGIN="@comment "
+.endif
+
+.if defined(WITH_GIO)
+USE_GNOME+=	glib20
+CONFIGURE_ARGS+=--enable-gio
+PLIST_SUB+=	GIOPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-gio
+PLIST_SUB+=	GIOPLUGIN="@comment "
+.endif
+
+.if defined(WITH_SMB)
+SAMBA_PORT?=	net/samba34
+LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+CONFIGURE_ARGS+=--enable-smb
+PLIST_SUB+=	SMBPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-smb
+PLIST_SUB+=	SMBPLUGIN="@comment "
+.endif
+
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
@@ -349,15 +375,6 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if defined(WITH_AMIDI)
-LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
-CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
-PLIST_SUB+=	AMIDIPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-amidiplug
-PLIST_SUB+=	AMIDIPLUGIN="@comment "
 .endif
 
 pre-everything::
@@ -370,6 +387,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
 		s| -ldl||g ; \
+		s|1.9.7|0.120.1|g ; \
 		s|OSS_LIBS="-lossaudio"|OSS_LIBS=""|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
 		${WRKSRC}/src/neon/cert_verification.c \

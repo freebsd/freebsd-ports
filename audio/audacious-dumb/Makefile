@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-dumb
-PORTVERSION=	0.65
-PORTREVISION=	1
+PORTVERSION=	0.73
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/ \
 		CRITICAL
@@ -24,5 +23,9 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|3\.1-alpha1|3\.1|g; \
+			s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
