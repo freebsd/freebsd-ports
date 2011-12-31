@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-eepg
 PORTVERSION=	0.0.6p2011071921
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*/pre/}-0-g${GITHASH}
@@ -26,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GITHASH}
 post-patch: post-patch-plugin
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d ${PREFIX}/etc/vdr/plugins/${PLUGIN}
 	@${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${PREFIX}/etc/vdr/plugins/${PLUGIN}
 	@${INSTALL_DATA} ${WRKSRC}/eepg.equiv.IT ${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv.sample
 	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/eepg.equiv ]; then \

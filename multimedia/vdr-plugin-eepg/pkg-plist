@@ -1,4 +1,5 @@
 lib/vdr/libvdr-eepg.so.1.7.19
+@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %D/etc/vdr/plugins/eepg
 etc/vdr/plugins/eepg/eepg.equiv.IT
 @unexec if cmp -s %D/etc/vdr/plugins/eepg/eepg.equiv.sample %D/etc/vdr/plugins/eepg/eepg.equiv; then rm -f %D/etc/vdr/plugins/eepg/eepg.equiv; fi
 etc/vdr/plugins/eepg/eepg.equiv.sample
