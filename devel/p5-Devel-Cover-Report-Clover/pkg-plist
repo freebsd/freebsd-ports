@@ -1,0 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Report/Clover/.packlist
+%%SITE_PERL%%/Devel/Cover/Report/Clover.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/Builder.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/Class.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/File.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/FileRegistry.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/Package.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/Project.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/Reportable.pm
+%%SITE_PERL%%/Devel/Cover/Report/Clover/clover.tt
+@dirrm %%SITE_PERL%%/Devel/Cover/Report/Clover
+@dirrm %%SITE_PERL%%/Devel/Cover/Report
+@dirrmtry %%SITE_PERL%%/Devel/Cover
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Report/Clover
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Report

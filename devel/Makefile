@@ -1615,6 +1615,7 @@
     SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-CoreStack
     SUBDIR += p5-Devel-Cover
+    SUBDIR += p5-Devel-Cover-Report-Clover
     SUBDIR += p5-Devel-Cycle
     SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Declare
