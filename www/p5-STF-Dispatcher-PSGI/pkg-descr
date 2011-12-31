@@ -1,0 +1,12 @@
+STF::Dispatcher::PSGI implements the basic STF Protocol
+(http://stf-storage.github.com) dispatcher component. It does not know
+how to actually store or retrieve data, so you must implement that
+portion yourself.
+
+The reason this exists is mainly to allow you to testing systems that
+interact with STF servers. For example, setting up the main STF
+implementation is quite a pain if all you want to do is to test your
+application, but with this module, you can easily create a dummy STF
+dispatcher.
+
+WWW: http://search.cpan.org/dist/STF-Dispatcher-PSGI/
