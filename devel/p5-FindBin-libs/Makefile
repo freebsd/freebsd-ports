@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FindBin-libs
-PORTVERSION=	1.5500
+PORTVERSION=	1.6000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEMBARK
@@ -18,6 +18,8 @@ COMMENT=	Perl extension to locate and use lib directories
 
 PERL_CONFIGURE=	yes
 
-MAN3=		FindBin::libs.3
+MAN3=		FindBin::libs.3 \
+		FindBin::libs_5_8.3 \
+		FindBin::libs_curr.3
 
 .include <bsd.port.mk>
