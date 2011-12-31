@@ -899,6 +899,7 @@
     SUBDIR += p5-Flickr-Upload
     SUBDIR += p5-Fliggy
     SUBDIR += p5-Furl
+    SUBDIR += p5-FurlX-Coro
     SUBDIR += p5-Gantry
     SUBDIR += p5-Geo-Caching
     SUBDIR += p5-Google-Code-Upload
