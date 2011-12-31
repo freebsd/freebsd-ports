@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	percona-toolkit
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/
 
