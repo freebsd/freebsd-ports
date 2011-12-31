@@ -3,6 +3,14 @@ bin/dancer
 %%SITE_PERL%%/Dancer.pm
 %%SITE_PERL%%/Dancer/App.pm
 %%SITE_PERL%%/Dancer/Config.pm
+%%SITE_PERL%%/Dancer/Continuation.pm
+%%SITE_PERL%%/Dancer/Continuation/Halted.pm
+%%SITE_PERL%%/Dancer/Continuation/Route.pm
+%%SITE_PERL%%/Dancer/Continuation/Route/ErrorSent.pm
+%%SITE_PERL%%/Dancer/Continuation/Route/FileSent.pm
+%%SITE_PERL%%/Dancer/Continuation/Route/Forwarded.pm
+%%SITE_PERL%%/Dancer/Continuation/Route/Passed.pm
+%%SITE_PERL%%/Dancer/Continuation/Route/Templated.pm
 %%SITE_PERL%%/Dancer/Cookbook.pod
 %%SITE_PERL%%/Dancer/Cookie.pm
 %%SITE_PERL%%/Dancer/Cookies.pm
@@ -13,6 +21,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Engine.pm
 %%SITE_PERL%%/Dancer/Error.pm
 %%SITE_PERL%%/Dancer/Exception.pm
+%%SITE_PERL%%/Dancer/Exception/Base.pm
 %%SITE_PERL%%/Dancer/Factory/Hook.pm
 %%SITE_PERL%%/Dancer/FileUtils.pm
 %%SITE_PERL%%/Dancer/GetOpt.pm
@@ -78,6 +87,9 @@ bin/dancer
 @dirrm %%SITE_PERL%%/Dancer/Hook
 @dirrm %%SITE_PERL%%/Dancer/Handler
 @dirrm %%SITE_PERL%%/Dancer/Factory
+@dirrm %%SITE_PERL%%/Dancer/Exception
 @dirrm %%SITE_PERL%%/Dancer/Development
+@dirrm %%SITE_PERL%%/Dancer/Continuation/Route
+@dirrm %%SITE_PERL%%/Dancer/Continuation
 @dirrm %%SITE_PERL%%/Dancer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer

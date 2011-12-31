@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3080
+PORTVERSION=	1.3091
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -23,7 +23,8 @@ RUN_DEPENDS=	\
 	p5-HTTP-Body>=1.07:${PORTSDIR}/www/p5-HTTP-Body \
 	p5-HTTP-Server-Simple-PSGI>=0.11:${PORTSDIR}/www/p5-HTTP-Server-Simple-PSGI \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
-	p5-URI>=1.59:${PORTSDIR}/net/p5-URI
+	p5-URI>=1.59:${PORTSDIR}/net/p5-URI \
+	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 OPTIONS=	YAML "Enable YAML implementation in Perl" On
@@ -49,6 +50,7 @@ MAN3=	Dancer.3 \
 	Dancer::Engine.3 \
 	Dancer::Error.3 \
 	Dancer::Exception.3 \
+	Dancer::Exception::Base.3 \
 	Dancer::FileUtils.3 \
 	Dancer::HTTP.3 \
 	Dancer::Handler::Debug.3 \
