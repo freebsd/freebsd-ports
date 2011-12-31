@@ -1,22 +1,15 @@
---- Makefile.orig	2008-05-14 11:13:02.000000000 +0800
-+++ Makefile	2008-08-15 13:25:35.000000000 +0800
-@@ -1,21 +1,21 @@
+--- Makefile.orig	2011-12-31 14:41:27.000000000 +0800
++++ Makefile	2011-12-31 14:43:38.000000000 +0800
+@@ -1,5 +1,5 @@
 -UCCDIR = /usr/local/lib/ucc
 -export UCCDIR
 +UCCDIR = ${PREFIX}
 +#export UCCDIR
  
  all:
--	make -C driver
--	make -C ucl
-+	gmake -C driver
-+	gmake -C ucl
- 
- clean:
--	make -C driver clean
--	make -C ucl clean
-+	gmake -C driver clean
-+	gmake -C ucl clean
+ 	make -C driver
+@@ -10,11 +10,11 @@
+ 	make -C ucl clean
  	
  install:
 -	mkdir -p $(UCCDIR)
@@ -31,6 +24,4 @@
 +	cp ucl/linux/include/* $(UCCDIR)/include/ucc/
  
  test:
--	make -C ucl test
-+	gmake -C ucl test
- 
+ 	make -C ucl test
