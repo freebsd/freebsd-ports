@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/mysqld/.packlist
+%%SITE_PERL%%/Test/mysqld.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/mysqld
