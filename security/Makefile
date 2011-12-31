@@ -497,6 +497,7 @@
     SUBDIR += p5-Digest-MD5-M4p
     SUBDIR += p5-Digest-MD5-Reverse
     SUBDIR += p5-Digest-ManberHash
+    SUBDIR += p5-Digest-MurmurHash
     SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-Pearson
     SUBDIR += p5-Digest-Pearson-PurePerl
