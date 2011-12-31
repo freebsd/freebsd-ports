@@ -9,7 +9,7 @@ PORTNAME=	fwbuilder
 DISTVERSION=	5.0.1
 PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
-BUILD=		3588
+BUILD=		3592
 PKGNAMESUFFIX=	-devel
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/current_build/
@@ -21,6 +21,7 @@ DISTVERSIONSUFFIX=	.${BUILD}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
+IGNORE=		Development branch not currently active
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
