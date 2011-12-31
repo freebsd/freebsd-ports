@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	trayer
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	x11
 MASTER_SITES=	http://github.com/sargon/${PORTNAME}${PKGNAMESUFFIX}/tarball/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	-srg
@@ -17,7 +17,7 @@ MAINTAINER=	mad@madpilot.net
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop - sargon fork
 
 CONFLICTS_INSTALL=	trayer-1.0*
-GITVERSION=	0-g2d53335
+GITVERSION=	0-g412ad31
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/sargon-${PORTNAME}${PKGNAMESUFFIX}-${GITVERSION:S/^0-g//}
 USE_GNOME=	gtk20 glib20 pango atk
