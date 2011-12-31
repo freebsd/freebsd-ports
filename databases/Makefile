@@ -461,6 +461,7 @@
     SUBDIR += p5-Test-Database
     SUBDIR += p5-Test-DatabaseRow
     SUBDIR += p5-Test-Fixture-DBI
+    SUBDIR += p5-Test-mysqld
     SUBDIR += p5-Test-postgresql
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Text-xSV
