@@ -856,7 +856,7 @@
     SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng2
     SUBDIR += syslogger
-    SUBDIR += sysrc+
+    SUBDIR += sysrc
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
     SUBDIR += tarsnap
