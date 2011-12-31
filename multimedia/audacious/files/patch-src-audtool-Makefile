@@ -1,16 +1,12 @@
---- src/audtool/Makefile.orig	2009-05-14 11:38:38.000000000 +0200
-+++ src/audtool/Makefile	2009-05-14 11:38:49.000000000 +0200
-@@ -18,10 +18,10 @@
- 		  ${ARCH_DEFINES}		\
- 		  ${MOWGLI_CFLAGS}
- 
--LDFLAGS += ${AUDLDFLAGS}
-+LDFLAGS = ${AUDLDFLAGS}
+--- src/audtool/Makefile.orig	2011-11-08 17:37:12.000000000 +0100
++++ src/audtool/Makefile	2011-11-23 20:51:01.000000000 +0100
+@@ -17,7 +17,7 @@
+             ${GTK_CFLAGS} \
+             ${MOWGLI_CFLAGS}
  
 -LIBS += ${DBUS_LIBS}				\
 -	-L../libaudclient -laudclient	\
-+LIBS = -L../libaudclient -laudclient   \
++LIBS += -L../libaudclient -laudclient	\
 +	${DBUS_LIBS}				\
  	${GTK_LIBS}						\
- 	${MOWGLI_LIBS}					\
- 	${LIBMCS_LIBS}
+ 	${MOWGLI_LIBS}
