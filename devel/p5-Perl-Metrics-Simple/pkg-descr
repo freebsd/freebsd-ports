@@ -1,0 +1,11 @@
+Perl::Metrics::Simple provides just enough methods to run static
+analysis of one or many Perl files and obtain a few metrics: packages,
+subroutines, lines of code, and an approximation of cyclomatic
+(mccabe) complexity for the subroutines and the "main" portion of the
+code.
+
+Perl::Metrics::Simple is far simpler than Perl::Metrics.
+
+Installs a script called countperl.
+
+WWW: http://search.cpan.org/dist/Perl-Metrics-Simple/
