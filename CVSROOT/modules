@@ -25571,6 +25571,7 @@ syslog-ng-devel                 ports/sysutils/syslog-ng-devel
 syslog-ng2                      ports/sysutils/syslog-ng2
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
+sysrc				ports/sysutils/sysrc
 system-config-printer           ports/print/system-config-printer
 system-config-printer-kde       ports/print/system-config-printer-kde
 system-tools-backends           ports/sysutils/system-tools-backends
