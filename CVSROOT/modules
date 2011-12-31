@@ -497,6 +497,7 @@ amqp08                          ports/net/amqp08
 amrcoder                        ports/audio/amrcoder
 amrstat                         ports/sysutils/amrstat
 amsn                            ports/net-im/amsn
+amtterm                         ports/comms/amtterm
 amule                           ports/net-p2p/amule
 amule-devel                     ports/net-p2p/amule-devel
 an                              ports/games/an
@@ -24154,6 +24155,7 @@ rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-innate                  ports/www/rubygem-innate
+rubygem-interact                ports/devel/rubygem-interact
 rubygem-io-like                 ports/devel/rubygem-io-like
 rubygem-ipaddress               ports/net/rubygem-ipaddress
 rubygem-itextomml               ports/textproc/rubygem-itextomml
@@ -26613,6 +26615,7 @@ vdpau-video                     ports/multimedia/vdpau-video
 vdpauinfo                       ports/multimedia/vdpauinfo
 vdr                             ports/multimedia/vdr
 vdr-plugin-control              ports/multimedia/vdr-plugin-control
+vdr-plugin-eepg                 ports/multimedia/vdr-plugin-eepg
 vdr-plugin-epgsearch            ports/multimedia/vdr-plugin-epgsearch
 vdr-plugin-femon                ports/multimedia/vdr-plugin-femon
 vdr-plugin-infosatepg           ports/multimedia/vdr-plugin-infosatepg
