@@ -1,0 +1,12 @@
+Sysrc is a robust utility for managing rc.conf(5) from the command-line without
+a text-editor. Feature-highlights include (but are not limited to):
+  - Environment variable taint prevention
+  - Shell taint checking (aka boot-regression prevention)
+  - File-access race-condition prevention
+  - File-structure sensitivity/preservation
+  - Intelligent syntax handling
+  - Execution performance optimizations
+  - Detailed safety measures
+  - Support for jails (both legacy and current)
+
+WWW: http://druidbsd.sourceforge.net/
