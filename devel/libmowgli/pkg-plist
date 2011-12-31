@@ -14,6 +14,7 @@ include/libmowgli/mowgli_global_storage.h
 include/libmowgli/mowgli_hash.h
 include/libmowgli/mowgli_heap.h
 include/libmowgli/mowgli_hook.h
+include/libmowgli/mowgli_index.h
 include/libmowgli/mowgli_init.h
 include/libmowgli/mowgli_ioevent.h
 include/libmowgli/mowgli_iterator.h

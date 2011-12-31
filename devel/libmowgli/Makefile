@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmowgli
-PORTVERSION=	0.9.50
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 
@@ -21,7 +21,5 @@ USE_BZIP2=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|MOWGLI_DECLS_END   };|MOWGLI_DECLS_END   }|g' \
-		${WRKSRC}/src/libmowgli/mowgli.h
 
 .include <bsd.port.mk>
