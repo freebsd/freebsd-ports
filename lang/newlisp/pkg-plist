@@ -75,8 +75,7 @@ bin/newlispdoc
 %%DATADIR%%/modules/infix.lsp
 %%DATADIR%%/modules/json.lsp
 %%DATADIR%%/modules/macro.lsp
-%%MYSQL51%%%%DATADIR%%/modules/mysql.lsp
-%%MYSQL5%%%%DATADIR%%/modules/mysql.lsp
+%%MYSQL%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
 %%DATADIR%%/modules/pop3.lsp
 %%PGSQL%%%%DATADIR%%/modules/postgres.lsp
