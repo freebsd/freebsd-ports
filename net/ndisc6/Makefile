@@ -7,6 +7,7 @@
 
 PORTNAME=	ndisc6
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/
@@ -38,6 +39,8 @@ MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
 		rltraceroute6.8 tracert6.8 \
 		addr2name.1 name2addr.1 \
 		tcpspray.1 tcpspray6.1
+
+USE_RC_SUBR=	rdnssd
 
 PORTDOCS=	AUTHORS NEWS README
 

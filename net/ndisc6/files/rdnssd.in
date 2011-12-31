@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: rdnssd
+# REQUIRE: NETWORKING
+
+#
+# Add the following line to /etc/rc.conf to enable rdnssd:
+#
+# rdnssd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=rdnssd
+rcvar=`set_rcvar`
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/sbin/${name}"
+command_args="-p ${pidfile}"
+
+load_rc_config $name
+: ${rdnssd_enable="NO"}
+
+run_rc_command "$1"
