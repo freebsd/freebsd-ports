@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Urandom/.packlist
+%%SITE_PERL%%/String/Urandom.pm
+%%SITE_PERL%%/String/example.pl
+@dirrmtry %%SITE_PERL%%/String
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Urandom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
