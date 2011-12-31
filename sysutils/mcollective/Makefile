@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcollective
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -23,14 +23,7 @@ USE_RC_SUBR=	mcollectived
 # don't make .bak files
 REINPLACE_ARGS=	-i ""
 
-SCRIPTS=	mco \
-		mc-call-agent \
-		mc-controller \
-		mc-facts \
-		mc-find-hosts \
-		mc-inventory \
-		mc-ping \
-		mc-rpc
+SCRIPTS=	mco mc-call-agent
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \

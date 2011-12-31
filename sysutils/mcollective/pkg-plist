@@ -1,10 +1,4 @@
 bin/mc-call-agent
-bin/mc-controller
-bin/mc-facts
-bin/mc-find-hosts
-bin/mc-inventory
-bin/mc-ping
-bin/mc-rpc
 bin/mco
 sbin/mcollectived
 %%DATADIR%%/agent/discovery.rb
@@ -18,6 +12,7 @@ sbin/mcollectived
 %%DATADIR%%/application/ping.rb
 %%DATADIR%%/application/rpc.rb
 %%DATADIR%%/audit/logfile.rb
+%%DATADIR%%/connector/activemq.rb
 %%DATADIR%%/connector/stomp.rb
 %%DATADIR%%/facts/yaml_facts.rb
 %%DATADIR%%/registration/agentlist.rb
@@ -26,6 +21,7 @@ sbin/mcollectived
 %%DATADIR%%/security/ssl.rb
 %%ETCDIR%%/client.cfg.dist
 %%ETCDIR%%/server.cfg.dist
+%%PORTDOCS%%%%DOCSDIR%%/classes/Array.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/MCollective.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agents.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application.html
@@ -377,8 +373,6 @@ sbin/mcollectived
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor
 @dirrm %%RUBY_SITELIBDIR%%/mcollective
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Agent
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Application
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Connector
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Facts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Logger
@@ -388,7 +382,6 @@ sbin/mcollectived
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Security
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/ext
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/connector
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/facts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/logger
@@ -398,22 +391,6 @@ sbin/mcollectived
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/security
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/agent
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/application
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/audit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/connector
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/facts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/registration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/security
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/monkey_patches
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/facts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/logger
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/rpc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/security
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%ETCDIR%%
