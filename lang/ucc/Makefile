@@ -15,9 +15,19 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	C Compiler Which Implements the ANSI C89 Standard
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} 's/make/$$(MAKE)/' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^CC[[:blank:]]*=/d' \
+		-e '/^CFLAGS/ { s/=/+=/; s/-g//; }' \
+		-e '/:[[:blank:]]/s/\.c/.o/g' \
+		-e 's/$$^/$$>/g' \
+		${WRKSRC}/driver/Makefile \
+		${WRKSRC}/ucl/Makefile
 
 .include <bsd.port.mk>
