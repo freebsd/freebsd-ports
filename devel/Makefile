@@ -2190,6 +2190,7 @@
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Parallel-Iterator
     SUBDIR += p5-Parallel-Prefork
+    SUBDIR += p5-Parallel-Scoreboard
     SUBDIR += p5-Params-CallbackRequest
     SUBDIR += p5-Params-Check
     SUBDIR += p5-Params-Classify
