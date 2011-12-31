@@ -905,6 +905,7 @@
     SUBDIR += p5-Google-Search
     SUBDIR += p5-Gtk2-WebKit
     SUBDIR += p5-Gungho
+    SUBDIR += p5-GunghoX-FollowLinks
     SUBDIR += p5-HTML-Adsense
     SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple

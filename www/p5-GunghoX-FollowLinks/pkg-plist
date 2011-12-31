@@ -1,0 +1,25 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GunghoX/FollowLinks/.packlist
+%%SITE_PERL%%/GunghoX/FollowLinks.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Filter.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Filter/Strip.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Parser.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Parser/HTML.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Parser/Text.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/Allow.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/Deny.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/Fresh.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/Fresh/Cache.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/Fresh/Memory.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/HTML/SelectedTags.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/MIME.pm
+%%SITE_PERL%%/GunghoX/FollowLinks/Rule/URI.pm
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule/HTML
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule/Fresh
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Parser
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Filter
+@dirrm %%SITE_PERL%%/GunghoX/FollowLinks
+@dirrmtry %%SITE_PERL%%/GunghoX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GunghoX/FollowLinks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GunghoX
