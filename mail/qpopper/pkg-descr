@@ -1,8 +1,6 @@
-This is a POP 3 server useful for dealing with remote mail reader clients
-such as Eudora.  One of the 4.1a2 patches has been included so that
-home-dir-misc actually works.  The option and patch for IPv6 have been removed
-as it they are not up to date for 4.0.9.
+Qpopper is the most widely-used server for the POP3 protocol
+(this allows users to access their mail using any POP3 client).
 
 Don't forget to edit /etc/inetd.conf to enable the server after installation.
 
-WWW: http://www.eudora.com/products/unsupported/qpopper/index.html
+WWW:	http://www.eudora.com/products/unsupported/qpopper/

@@ -119,6 +119,7 @@ CONFIGURE_ARGS+=	--enable-shy
 # without inetd.
 .if defined(WITH_STANDALONE_MODE)
 CONFIGURE_ARGS+=	--enable-standalone
+USE_RC_SUBR=	 ${PORTNAME}
 .endif
 
 # The default is to build without SSL/TLS support.
