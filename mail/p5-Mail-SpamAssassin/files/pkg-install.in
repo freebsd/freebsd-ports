@@ -1,4 +1,19 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
+
+USER=%%USER%%
+GROUP=%%GROUP%%
+INSTALL=%%INSTALL%%
+PREFIX=%%PREFIX%%
+
+if [ "$2" = "PRE-INSTALL" ];then exit; fi
+
+if [ -z "${INSTALL}" ];then
+echo "report this problem to scheidell@freebsd.org, $*"
+exit 1
+fi
 
 if [ "$2" = "POST-INSTALL" ];then 
 ask() {

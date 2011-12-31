@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
 PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
-MAINTAINER=	scheidell@secnap.net
+MAINTAINER=	scheidell@freebsd.org
 COMMENT=	A highly efficient mail filter for identifying spam
 
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
@@ -55,6 +55,9 @@ OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		SPF_QUERY "Add SPF query support" off \
 		RELAY_COUNTRY "Relay country support" off \
 		DCC "Add DCC support (see LICENSE)" off
+
+SUB_FILES=	pkg-install
+SUB_LIST=	USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}"
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -146,75 +149,7 @@ RUN_DEPENDS+=	${SITE_PERL}/IP/Country/Fast.pm:${PORTSDIR}/net/p5-IP-Country
 RUN_DEPENDS+=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
 .endif
 
-MAN3=		Mail::SpamAssassin.3 \
-		Mail::SpamAssassin::AICache.3 \
-		Mail::SpamAssassin::ArchiveIterator.3 \
-		Mail::SpamAssassin::AsyncLoop.3 \
-		Mail::SpamAssassin::AutoWhitelist.3 \
-		Mail::SpamAssassin::Bayes.3 \
-		Mail::SpamAssassin::BayesStore.3 \
-		Mail::SpamAssassin::BayesStore::BDB.3 \
-		Mail::SpamAssassin::BayesStore::MySQL.3 \
-		Mail::SpamAssassin::BayesStore::PgSQL.3 \
-		Mail::SpamAssassin::BayesStore::SQL.3 \
-		Mail::SpamAssassin::Client.3 \
-		Mail::SpamAssassin::Conf.3 \
-		Mail::SpamAssassin::Conf::LDAP.3 \
-		Mail::SpamAssassin::Conf::Parser.3 \
-		Mail::SpamAssassin::Conf::SQL.3 \
-		Mail::SpamAssassin::DnsResolver.3 \
-		Mail::SpamAssassin::Logger.3 \
-		Mail::SpamAssassin::Logger::File.3 \
-		Mail::SpamAssassin::Logger::Stderr.3 \
-		Mail::SpamAssassin::Logger::Syslog.3 \
-		Mail::SpamAssassin::Message.3 \
-		Mail::SpamAssassin::Message::Metadata.3 \
-		Mail::SpamAssassin::Message::Node.3 \
-		Mail::SpamAssassin::PerMsgLearner.3 \
-		Mail::SpamAssassin::PerMsgStatus.3 \
-		Mail::SpamAssassin::PersistentAddrList.3 \
-		Mail::SpamAssassin::Plugin.3 \
-		Mail::SpamAssassin::Plugin::ASN.3 \
-		Mail::SpamAssassin::Plugin::AWL.3 \
-		Mail::SpamAssassin::Plugin::AccessDB.3 \
-		Mail::SpamAssassin::Plugin::AntiVirus.3 \
-		Mail::SpamAssassin::Plugin::AutoLearnThreshold.3 \
-		Mail::SpamAssassin::Plugin::Bayes.3 \
-		Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3 \
-		Mail::SpamAssassin::Plugin::Check.3 \
-		Mail::SpamAssassin::Plugin::DCC.3 \
-		Mail::SpamAssassin::Plugin::DKIM.3 \
-		Mail::SpamAssassin::Plugin::Hashcash.3 \
-		Mail::SpamAssassin::Plugin::MIMEHeader.3 \
-		Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3 \
-		Mail::SpamAssassin::Plugin::PhishTag.3 \
-		Mail::SpamAssassin::Plugin::Pyzor.3 \
-		Mail::SpamAssassin::Plugin::Razor2.3 \
-		Mail::SpamAssassin::Plugin::RelayCountry.3 \
-		Mail::SpamAssassin::Plugin::ReplaceTags.3 \
-		Mail::SpamAssassin::Plugin::Reuse.3 \
-		Mail::SpamAssassin::Plugin::Rule2XSBody.3 \
-		Mail::SpamAssassin::Plugin::SPF.3 \
-		Mail::SpamAssassin::Plugin::Shortcircuit.3 \
-		Mail::SpamAssassin::Plugin::SpamCop.3 \
-		Mail::SpamAssassin::Plugin::Test.3 \
-		Mail::SpamAssassin::Plugin::TextCat.3 \
-		Mail::SpamAssassin::Plugin::URIDNSBL.3 \
-		Mail::SpamAssassin::Plugin::URIDetail.3 \
-		Mail::SpamAssassin::Plugin::VBounce.3 \
-		Mail::SpamAssassin::Plugin::WhiteListSubject.3 \
-		Mail::SpamAssassin::PluginHandler.3 \
-		Mail::SpamAssassin::SQLBasedAddrList.3 \
-		Mail::SpamAssassin::SubProcBackChannel.3 \
-		Mail::SpamAssassin::Timeout.3 \
-		Mail::SpamAssassin::Util.3 \
-		Mail::SpamAssassin::Util::DependencyInfo.3 \
-		Mail::SpamAssassin::Util::Progress.3 \
-		Mail::SpamAssassin::Util::RegistrarBoundaries.3 \
-		spamassassin-run.3
-
-MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
-		spamassassin-run.1 sa-compile.1 sa-awl.1
+.include "${FILESDIR}/manpages"
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
@@ -268,9 +203,6 @@ post-patch:
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 .endif
 
-pre-install:
-	@${MKDIR}  ${DATADIR}
-
 post-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
 .if !defined(WITHOUT_SSL)
@@ -278,7 +210,7 @@ post-build:
 .endif
 
 pre-su-install:
-	@PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${MKDIR} ${DATADIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
 .if !defined(WITHOUT_SSL)
@@ -303,7 +235,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
-	@PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v330.pre
