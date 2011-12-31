@@ -121,6 +121,21 @@
 %%PYTHON_SITELIBDIR%%/brian/experimental/coincidence_detection.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/coincidence_detection.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/coincidence_detection.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/__init__.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/compare.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/compare.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/compare.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/fast_compensation.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/fast_compensation.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/fast_compensation.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/filter.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/filter.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/compensation/filter.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.pyo
@@ -133,6 +148,33 @@
 %%PYTHON_SITELIBDIR%%/brian/experimental/integrodiff.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/integrodiff.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/integrodiff.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/__init__.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/__init__.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/benchmark.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/benchmark.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/benchmark.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/compensation.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/compensation.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/compensation.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/criteria.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/criteria.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/criteria.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/gpu_modelfitting.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/gpu_modelfitting.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/gpu_modelfitting.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/lp2bert.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/lp2bert.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/lp2bert.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting_old.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting_old.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/modelfitting_old.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/simulator.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/simulator.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting/simulator.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/morphology.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/morphology.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/morphology.pyo
@@ -145,12 +187,24 @@
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/example_AER.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/example_AER.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/example_AER.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/realtime.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/realtime.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/realtime.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/spikequeue.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/spikequeue.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/spikequeue.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_AERSpikeMonitor.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_AERSpikeMonitor.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_AERSpikeMonitor.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_newspikegengroup.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_newspikegengroup.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_newspikegengroup.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_struct_vs_np.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_struct_vs_np.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic/test_struct_vs_np.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/new_c_propagate.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/new_c_propagate.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/new_c_propagate.pyo
@@ -160,6 +214,18 @@
 %%PYTHON_SITELIBDIR%%/brian/experimental/spatialneuron.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/spatialneuron.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/spatialneuron.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/__init__.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/STDP1.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/STDP1.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/STDP1.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/eventbased_stdp.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/eventbased_stdp.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/stdp/eventbased_stdp.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/stochasticconnection.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/stochasticconnection.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/stochasticconnection.pyo
 %%PYTHON_SITELIBDIR%%/brian/experimental/trace_analysis.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/trace_analysis.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/trace_analysis.pyo
@@ -202,6 +268,9 @@
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/firfilterbank.py
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/firfilterbank.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/firfilterbank.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/fractionaldelay.py
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/fractionaldelay.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/fractionaldelay.pyo
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/gpulinearfilterbank.py
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/gpulinearfilterbank.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/gpulinearfilterbank.pyo
@@ -211,9 +280,18 @@
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/linearfilterbank.py
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/linearfilterbank.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/linearfilterbank.pyo
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/pmfr.py
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/pmfr.pyc
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/pmfr.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.py
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.py
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.py
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.py
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.pyo
 %%PYTHON_SITELIBDIR%%/brian/hears/hrtf/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/hears/hrtf/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/hrtf/__init__.pyo
@@ -244,12 +322,21 @@
 %%PYTHON_SITELIBDIR%%/brian/library/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/library/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/library/__init__.pyo
-%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology.py
-%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology.pyc
-%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology.pyo
 %%PYTHON_SITELIBDIR%%/brian/library/ionic_currents.py
 %%PYTHON_SITELIBDIR%%/brian/library/ionic_currents.pyc
 %%PYTHON_SITELIBDIR%%/brian/library/ionic_currents.pyo
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/__init__.py
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/__init__.pyc
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrode_compensation.py
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrode_compensation.pyc
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrode_compensation.pyo
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrophysiology_models.py
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrophysiology_models.pyc
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/electrophysiology_models.pyo
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/trace_analysis.py
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/trace_analysis.pyc
+%%PYTHON_SITELIBDIR%%/brian/library/electrophysiology/trace_analysis.pyo
 %%PYTHON_SITELIBDIR%%/brian/library/modelfitting/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/library/modelfitting/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/library/modelfitting/__init__.pyo
@@ -424,6 +511,9 @@
 %%PYTHON_SITELIBDIR%%/brian/tools/tabulate.py
 %%PYTHON_SITELIBDIR%%/brian/tools/tabulate.pyc
 %%PYTHON_SITELIBDIR%%/brian/tools/tabulate.pyo
+%%PYTHON_SITELIBDIR%%/brian/tools/taskfarm.py
+%%PYTHON_SITELIBDIR%%/brian/tools/taskfarm.pyc
+%%PYTHON_SITELIBDIR%%/brian/tools/taskfarm.pyo
 %%PYTHON_SITELIBDIR%%/brian/units.py
 %%PYTHON_SITELIBDIR%%/brian/units.pyc
 %%PYTHON_SITELIBDIR%%/brian/units.pyo
@@ -500,13 +590,17 @@
 %%PYTHON_SITELIBDIR%%/brian/utils/sparse_patch/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/brian/connections
 @dirrm %%PYTHON_SITELIBDIR%%/brian/deprecated
+@dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/compensation
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/codegen
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/cuda
+@dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/neuromorphic
+@dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/stdp
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental
 @dirrm %%PYTHON_SITELIBDIR%%/brian/hears/filtering
 @dirrm %%PYTHON_SITELIBDIR%%/brian/hears/hrtf
 @dirrm %%PYTHON_SITELIBDIR%%/brian/hears
+@dirrm %%PYTHON_SITELIBDIR%%/brian/library/electrophysiology
 @dirrm %%PYTHON_SITELIBDIR%%/brian/library/modelfitting
 @dirrm %%PYTHON_SITELIBDIR%%/brian/library
 @dirrm %%PYTHON_SITELIBDIR%%/brian/tests/testcorrectness
