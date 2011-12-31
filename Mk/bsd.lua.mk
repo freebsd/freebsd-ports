@@ -130,7 +130,7 @@
 # The lua modules install in a separate directory, so there is no problem.
 #
 
-LUA_Include_MAINTAINER=	alepulver@FreeBSD.org
+LUA_Include_MAINTAINER=	lua@FreeBSD.org
 
 #
 # Global definitions.
