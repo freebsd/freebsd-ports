@@ -2,13 +2,12 @@
 # Date created:		2006-09-13
 # Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
 #
-# $MBSDlabs$
 # $FreeBSD$
 #
 
 PORTNAME=	newlisp
 PORTVERSION=	10.3.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
@@ -32,8 +31,7 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		newlisp_index.html newlisp_manual.html \
 
 OPTIONS=	GMP	"Enable GMP math library support" off \
-		MYSQL5	"Build with mysql 5.0.x support" off \
-		MYSQL51	"Build with mysql 5.1.x support" off \
+		MYSQL	"Build with mysql support" off \
 		PGSQL	"Build with postgresql support" off \
 		SQLITE	"Build with sqlite support" off \
 		GUISERV "Install GUI server (in JAVA)" off
@@ -52,22 +50,12 @@ PLIST_SUB+=	GMP=""
 PLIST_SUB+=	GMP="@comment "
 .endif
 
-.if defined(WITH_MYSQL5)
-USE_MYSQL=yes
-WITH_MYSQL_VER=	50
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
 MODULES+=	mysql
-PLIST_SUB+=	MYSQL5=""
+PLIST_SUB+=	MYSQL=""
 .else
-PLIST_SUB+=	MYSQL5="@comment "
-.endif
-
-.if defined(WITH_MYSQL51)
-USE_MYSQL=yes
-WITH_MYSQL_VER=	51
-MODULES+=	mysql
-PLIST_SUB+=	MYSQL51=""
-.else
-PLIST_SUB+=	MYSQL51="@comment "
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
