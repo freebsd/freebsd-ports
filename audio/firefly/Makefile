@@ -6,7 +6,7 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSION}/ \
 		http://www.magnesium.net/~mdf/distfiles/
@@ -15,6 +15,8 @@ DISTNAME=	mt-daapd-svn-${PORTVERSION}
 MAINTAINER=	mark@foster.cc
 COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/include/FLAC/metadata.h:${PORTSDIR}/audio/flac
 RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
@@ -22,8 +24,6 @@ RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
-
-CONFLICTS=	mt-daapd-0.2.*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -45,15 +45,25 @@ PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
 
 USE_LDCONFIG=	yes
 
+OPTIONS=	JAPANESE "Japanese support in ID3 tags" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_JAPANESE)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_scan-mp3.c
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--enable-iconv
+.endif
+
 pre-everything::
-	@${ECHO_CMD} "Define vars bellow if you need:"
+	@${ECHO_CMD} "Define vars below if you need:"
 	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: ${PREFIX}/var/db/${PORTNAME})"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
-	    ${WRKSRC}/configure
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
