@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.16.5
-PORTREVISION=	1
+PORTVERSION=	0.16.6
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -64,28 +63,18 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		SAMPLERATE	"Support sample rate conversion"	off
 
 MPDDIR?=	/var/mpd
-MPDUSER=	mpd
-MPDGROUP=	mpd
+MPDUSER?=	mpd
+MPDGROUP?=	mpd
 MPDCONF?=	musicpd.conf
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
-MPDUID=	137
-MPDGID=	137
-
-PLIST_SUB=	MPDUSER=${MPDUSER} \
-		MPDGROUP=${MPDGROUP} \
+PLIST_SUB=	MPDCONF=${MPDCONF}
+SUB_LIST+=	MPDDIR=${MPDDIR} \
 		MPDCONF=${MPDCONF}
 
-SUB_LIST+=	MPDUSER=${MPDUSER} \
-		MPDGROUP=${MPDGROUP} \
-		MPDDIR=${MPDDIR} \
-		MPDUID=${MPDUID} \
-		MPDGID=${MPDGID} \
-		MPDCONF=${MPDCONF}
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-flac \
@@ -251,7 +240,7 @@ post-patch:
 		-e 's#^mpd(1)#musicpd(1)#' \
 		${WRKSRC}/doc/mpd.1 ${WRKSRC}/doc/mpd.conf.5
 .if (${OSVERSION} < 800000)
-	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
+	${REINPLACE_CMD} -e 's/nan[f]*(\"\")/NAN/g' \
 		${WRKSRC}/src/crossfade.c \
 		${WRKSRC}/src/player_thread.c \
 		${WRKSRC}/src/player_control.c
@@ -281,4 +270,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
