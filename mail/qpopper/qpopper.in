@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: qpopper
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable qpopper:
+# qpopper_enable="YES"
+#
+
+qpopper_enable=${qpopper_enable-"NO"}
+qpopper_flags=${qpopper_flags-""}
+
+. /etc/rc.subr
+
+name=qpopper
+rcvar=`set_rcvar`
+command=%%PREFIX%%/libexec/qpopper
+command_args="${qpopper_flags}"
+
+load_rc_config $name
+run_rc_command "$1"
