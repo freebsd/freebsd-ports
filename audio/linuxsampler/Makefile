@@ -72,7 +72,7 @@ PLIST_SUB+=	DSSI="@comment "
 
 .if defined(WITH_LV2CORE)
 BUILD_DEPENDS+=	lv2core>=0:${PORTSDIR}/audio/lv2core
-RUN_DEPENDS+=	lv2core>=0${PORTSDIR}/audio/lv2core
+RUN_DEPENDS+=	lv2core>=0:${PORTSDIR}/audio/lv2core
 PLIST_SUB+=	LV2CORE=""
 .else
 CONFIGURE_ENV+=	ac_cv_header_lv2_h=no
