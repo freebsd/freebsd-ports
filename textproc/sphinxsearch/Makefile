@@ -1,6 +1,6 @@
 # New ports collection makefile for:  Sphinx full-text search engine
-# Date created:         12 November 2006
-# Whom:                 Matthew Seaman <m.seaman@infracaninophile.co.uk>
+# Date created:		12 November 2006
+# Whom:			Matthew Seaman <m.seaman@infracaninophile.co.uk>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,10 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
-DISTNAME=	sphinx-${PORTVERSION}
+DISTNAME=	sphinx-${PORTVERSION}-release
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Sphinx Full-Text Search Engine
@@ -22,18 +21,19 @@ LICENSE=	GPLv2
 
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
-# of turning this off. So for consistency, make sure it's always on.
+# of turning this off.  So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	MYSQL            "MySQL support"                    on  \
-		PGSQL            "PostgreSQL support"               off \
-		ICONV		 "Iconv support"		    on  \
+OPTIONS=	MYSQL		 "MySQL support"		    on	\
+		PGSQL		 "PostgreSQL support"		    off \
+		ICONV		 "Iconv support"		    on	\
 		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)"  off \
 		ID64		 "use 64-bit document and word IDs" off \
-		UNIXODBC	 "unixODBC support"		    off
+		UNIXODBC	 "unixODBC support"		    off \
+		SYSLOG		 "enable logging via syslog"	    on
 
 ## FFR
-##		LIBSTEMMER	 "compile with libstemmer support"  off
+##	       LIBSTEMMER	"compile with libstemmer support"  off
 
 CONFLICTS=	sphinxsearch-devel-[0-9]*
 
@@ -81,17 +81,24 @@ LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--without-unixodbc
 .endif
 
-## FFR.  The snowball project doesn't release numbered versions of it's
-## pre-processors.  Instead, at arbitrary intervals a snapshot of their
-## source repository is turned into a tarball (always the same filename)
-## and placed on their web site.  It's like they want to make it as hard
-## as possible for anyone to package and use their software.
+.if defined(WITH_SYSLOG) && !defined(WITHOUT_SYSLOG)
+CONFIGURE_ARGS+=	--with-syslog
+.else
+CONFIGURE_ARGS+=	--without-syslog
+.endif
+
+## FFR.  The snowball project doesn't release numbered versions of
+## it's pre-processors.  Instead, at arbitrary intervals a snapshot of
+## their source repository is turned into a tarball (always the same
+## filename) and placed on their web site.  It's like they want to
+## make it as hard as possible for anyone to package and use their
+## software.
 ##
-## # Adds support for two additional word stemmming pre-processors from
-## # the Snowball project (http://snowball.tartarus.org/) -- these
-## # essentially do exactly the same thing as the built in English and
-## # Russian stemmers but are slightly slower and may produce subtly
-## # different output. Disabled by default.
+## # Adds support for two additional word stemmming pre-processors
+## # from the Snowball project (http://snowball.tartarus.org/) --
+## # these essentially do exactly the same thing as the built in
+## # English and Russian stemmers but are slightly slower and may
+## # produce subtly different output. Disabled by default.
 ## .if defined(WITH_LIBSTEMMER) && !defined(WITHOUT_LIBSTEMMER)
 ## CONFIGURE_ARGS+=	--with-libstemmer
 ## .else
@@ -112,8 +119,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS}
 CFGFILE=	${PREFIX}/etc/sphinx.conf
 USE_RC_SUBR=	sphinxsearch.sh
-SUB_LIST+=	PORTNAME=${PORTNAME}     \
-		CFGFILE=${CFGFILE}       \
+SUB_LIST+=	PORTNAME=${PORTNAME}	 \
+		CFGFILE=${CFGFILE}	 \
 		SPHINX_USR=${USERS}	 \
 		SPHINX_GRP=${GROUPS}	 \
 		SPHINX_DIR=${SPHINX_DIR} \
@@ -134,20 +141,20 @@ DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e "s!@CONFDIR@/log/searchd.pid!${SPHINX_RUN}/searchd.pid!"    \
+	    -e "s!@CONFDIR@/log/searchd.pid!${SPHINX_RUN}/searchd.pid!"	   \
 	    -e "s!@CONFDIR@/log/query.log!${SPHINX_LOG}/sphinx-query.log!" \
-	    -e "s!@CONFDIR@/log/searchd.log!${SPHINX_LOG}/searchd.log!"    \
-	    -e "s!@CONFDIR@!${SPHINX_DIR}!"                                \
+	    -e "s!@CONFDIR@/log/searchd.log!${SPHINX_LOG}/searchd.log!"	   \
+	    -e "s!@CONFDIR@!${SPHINX_DIR}!"				   \
 	    ${WRKSRC}/sphinx.conf.in
 
 do-install: install-bin install-docs install-examples
 
 install-bin:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer ${PREFIX}/bin/indexer
-	${INSTALL_PROGRAM} ${WRKSRC}/src/search  ${PREFIX}/bin/search
+	${INSTALL_PROGRAM} ${WRKSRC}/src/search	 ${PREFIX}/bin/search
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${PREFIX}/bin/spelldump
 	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd ${PREFIX}/sbin/searchd
-	${INSTALL_DATA}    ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
+	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
 
 install-docs:
 .if !defined(NOPORTDOCS)
