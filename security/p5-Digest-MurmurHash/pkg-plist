@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/MurmurHash.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/MurmurHash.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Digest/MurmurHash.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
