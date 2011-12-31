@@ -1,0 +1,11 @@
+Parallel::Scoreboard is a pure-perl implementation of a process
+scoreboard. By using the module it is easy to create a monitor for
+many worker process, like the status module of the Apache HTTP server.
+
+Unlike other similar modules, Parallel::Scoreboard is easy to use and
+has no limitation on the format or the length of the statuses to be
+stored. Any arbitrary data (like JSON or frozen perl object) can be
+saved by the worker processes as their status and read from the
+manager process.
+
+WWW: http://search.cpan.org/dist/Parallel-Scoreboard/
