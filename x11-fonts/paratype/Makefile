@@ -7,10 +7,11 @@
 
 PORTNAME=	paratype
 PORTVERSION=	2.004
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontstock.com/public/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
-DISTFILES=	PTSansOFL.zip PTSerifOFL.zip
+DISTFILES=	PTSansOFL.zip PTSerifOFL.zip PTMonoOFL.zip
 
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	ParaType font collection for the languages of Russia
