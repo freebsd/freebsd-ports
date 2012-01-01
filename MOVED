@@ -3042,3 +3042,5 @@ databases/clip||2011-12-28|Has expired: No develop anymore for long
 x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
 www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2.
 www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3.
+sysutils/duplicity05||2012-01-01|Has expired: This version is out of date, and the 0.6.x branch is considered stable
+japanese/py-kanjilib||2012-01-01|Has expired: This port is not needed with any supported python version
