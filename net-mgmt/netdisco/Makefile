@@ -15,14 +15,17 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_with_mibs
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Web-based network management tool for moderate to large networks
 
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP				\
-		${SITE_PERL}/SNMP/Info.pm:${PORTSDIR}/net-mgmt/p5-SNMP-Info				\
-		${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason				\
-		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock				\
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session			\
-		${SITE_PERL}/Net/NBName.pm:${PORTSDIR}/net/p5-Net-NBName				\
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg			\
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser		\
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 		\
+		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2			\
+		${SITE_PERL}/${PERL_ARCH}/APR/Request/Apache2.pm:${PORTSDIR}/www/p5-libapreq2 	\
+		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP			\
+		${SITE_PERL}/SNMP/Info.pm:${PORTSDIR}/net-mgmt/p5-SNMP-Info			\
+		${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason			\
+		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock			\
+		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session		\
+		${SITE_PERL}/Net/NBName.pm:${PORTSDIR}/net/p5-Net-NBName			\
+		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg		\
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser	\
 		${SITE_PERL}/MasonX/Request/WithApacheSession.pm:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession
 
 OPTIONS=	GRAPHVIZ "Install GraphViz for network map support"	on
@@ -61,17 +64,6 @@ RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
 
 .if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.if ${APACHE_VERSION} >= 20
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/${PERL_ARCH}/APR/Request/Apache2.pm:${PORTSDIR}/www/p5-libapreq2 \
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl	\
-		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test	\
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
 .endif
 
 .if defined(WITH_GRAPHVIZ)
