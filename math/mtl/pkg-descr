@@ -1,6 +1,7 @@
 The Matrix Template Library (MTL) is a high-performance generic component
 library that provides comprehensive linear algebra functionality for a wide
 variety of matrix formats.
+
 As with the Standard Template Library (STL), MTL uses a five-fold approach,
 consisting of generic functions, containers, iterators, adaptors, and function
 objects, all developed specifically for high performance numerical linear
