@@ -14,17 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT?=	DBI persistent connection, authentication and authorization
 
-SLAVEDIRS=	www/p5-Apache-DBI-mp1 www/p5-Apache-DBI-mp2
+SLAVEDIRS=	www/p5-Apache-DBI-mp2
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
 
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3
 
 PERL_CONFIGURE=	yes
-USE_APACHE?=	13+
+USE_APACHE?=	20+
 
 .include <bsd.port.pre.mk>
 
@@ -32,20 +33,6 @@ USE_APACHE?=	13+
 # ports should use one of the SLAVEPORTS
 .if !defined(PKGNAMESUFFIX)
 IGNORE=		use ${SLAVEDIRS} instead
-.endif
-
-.if defined(WITH_MODPERL) && ${APACHE_VERSION} > 13
-IGNORE=		mod_perl require apache13 but ${APACHE_PORT} is installed
-.elif defined(WITH_MODPERL2) && ${APACHE_VERSION} < 20
-IGNORE=		mod_perl2 require at last apache20 but ${APACHE_PORT} is installed
-.endif
-
-.if defined(WITH_MODPERL2)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
 
 PLIST_FILES=	%%SITE_PERL%%/Apache/DBI.pm \
