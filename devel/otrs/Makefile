@@ -75,7 +75,7 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>

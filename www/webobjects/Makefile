@@ -48,7 +48,7 @@ SUB_LIST+=	NEXT_ROOT=${NEXT_BASE} USER=${NEXT_USER} GROUP=${NEXT_GROUP} \
 SUB_FILES+=	pkg-message pkg-install pkg-deinstall
 
 .if defined(WITH_APACHE)
-USE_APACHE?=	13+
+USE_APACHE?=	20+
 BUILD_DEPENDS+=	${APACHEMODDIR}/mod_WebObjects.so:${PORTSDIR}/www/mod_webobjects
 .endif
 

@@ -138,13 +138,9 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
-USE_APACHE=	13+
+USE_APACHE=	20+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.if ${APACHE_VERSION} > 13
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
-.else
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-.endif
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
 MODULENAME=	libphp5
 SHORTMODNAME=	php5

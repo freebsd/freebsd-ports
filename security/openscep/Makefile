@@ -19,16 +19,14 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} > 13
 PLIST_DIRSTRY=	www/cgi-bin
-.endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

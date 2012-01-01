@@ -18,7 +18,7 @@ COMMENT=	An Apache module to provide public key ticket based authentication
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--apxs=${APXS}
 

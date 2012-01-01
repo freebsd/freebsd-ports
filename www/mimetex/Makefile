@@ -18,7 +18,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A CGI script that lets you embed LaTeX math in your HTML pages
 
 NO_WRKSUBDIR=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
@@ -30,9 +30,7 @@ CGI_BIN=	${WWWDIR}/cgi-bin
 CGI_PRG=	${PORTNAME}.cgi
 WWW_DIR=	${WWWDIR}/data
 
-.if ${APACHE_VERSION} > 13
 PLIST_DIRSTRY+=	www/cgi-bin www/data
-.endif
 
 PLIST_SUB=	CGI_BIN="${CGI_BIN:S,^${PREFIX}/,,}" \
 		WWW_DIR="${WWW_DIR:S,^${PREFIX}/,,}"

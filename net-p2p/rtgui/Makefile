@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scgi
 .elif defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

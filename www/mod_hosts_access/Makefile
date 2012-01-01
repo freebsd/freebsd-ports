@@ -16,7 +16,7 @@ COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

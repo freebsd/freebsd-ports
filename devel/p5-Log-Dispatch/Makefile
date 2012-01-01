@@ -54,17 +54,13 @@ post-install:
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHELOG)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHELOG)
-.if ${APACHE_VERSION} == 13
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
-.else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-.endif
 .endif
 
 .if defined(WITH_EMAIL_MIMELITE)

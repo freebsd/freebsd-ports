@@ -20,7 +20,7 @@ MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
@@ -28,9 +28,7 @@ PORTDOCS=	LICENSE README test.pl
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} != "13"
 MODULENAME=	${PORTNAME}20
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \

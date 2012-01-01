@@ -39,12 +39,10 @@ OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.  if ${APACHE_VERSION} > 13
 PLIST_DIRSTRY+=	www/cgi-bin www/data www/icons
-.  endif
 .endif
 
 post-patch:

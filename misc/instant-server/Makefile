@@ -28,7 +28,7 @@ SAMBA_PORT?=	net/samba34
 # Don't let stupid programs ask for configuration.
 
 BATCH=		YES
-USE_APACHE=	13+
+USE_APACHE=	20+
 NO_BUILD=	yes
 
 # comms/hylafax irc/ircd-hybrid

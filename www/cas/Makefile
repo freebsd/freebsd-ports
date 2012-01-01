@@ -24,7 +24,6 @@ WITHOUT_NLS=	yes
 
 OPTIONS=	DEBUG_MODE			"Enable debug output"			off \
 		ENABLE_OPTIMIZATION		"Enable optimization"			on  \
-		BUILD_APACHE13_MODULE		"Build Apache 1.3 module"		off \
 		BUILD_APACHE2X_MODULE		"Build Apache 2.x module"		on  \
 		BUILD_CURL_XMLRPC_CLIENT	"Build cURL-based XMLRPC client"	on  \
 		INSTALL_EXAMPLE_MODULES 	"Install example modules"		off \
@@ -51,14 +50,16 @@ CMAKE_ARGS+=	-DENABLE_OPTIMIZATION=ON
 CMAKE_ARGS+=	-DENABLE_OPTIMIZATION=OFF
 .endif
 
-.if defined(WITH_BUILD_APACHE13_MODULE)
-CMAKE_ARGS+=	-DBUILD_APACHE13_MODULE=ON
-USE_APACHE=	13
-PLIST_SUB+=	APACHE13_MODULE=""
-.else
+# XXX apache13 was removed from portstree
+# XXX
+##.if defined(WITH_BUILD_APACHE13_MODULE)
+##CMAKE_ARGS+=	-DBUILD_APACHE13_MODULE=ON
+##USE_APACHE=	13
+##PLIST_SUB+=	APACHE13_MODULE=""
+##.else
 CMAKE_ARGS+=	-DBUILD_APACHE13_MODULE=OFF
 PLIST_SUB+=	APACHE13_MODULE="@comment "
-.endif
+##.endif
 
 .if defined(WITH_BUILD_APACHE2X_MODULE)
 USE_APACHE=	20+

@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.dixongroup.net/
 MAINTAINER=	jhuldtgren@gmail.com
 COMMENT=	Simple weblog
 
-PERL_MODULES=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -24,17 +25,9 @@ PERL_MODULES=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-USE_APACHE_RUN=	13+
+USE_APACHE_RUN=	20+
 
 .include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} != 13
-PERL_MODULES+=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
-.else
-PERL_MODULES+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
-.endif
-
-RUN_DEPENDS=	${PERL_MODULES}
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR} WWWOWN=${WWWOWN}

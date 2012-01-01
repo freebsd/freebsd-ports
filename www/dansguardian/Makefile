@@ -50,7 +50,7 @@ RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_UR
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .endif
 
 .if !defined(WITHOUT_TRICKLE)

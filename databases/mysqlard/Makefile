@@ -17,7 +17,7 @@ COMMENT=	A tool to collect and graph database statistics from mysql
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_MYSQL=	yes
 
 MYSQLARD_DIR?=	${PREFIX}/www/mysqlard

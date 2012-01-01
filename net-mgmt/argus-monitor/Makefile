@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_PERL5=	yes
 USE_RC_SUBR=	argusd
 HAS_CONFIGURE=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--bin_dir=${PREFIX}/bin --sbin_dir=${PREFIX}/sbin \
 		--lib_dir=${PREFIX}/lib/argus-monitor --data_dir=${PREFIX}/etc/argus-monitor \
