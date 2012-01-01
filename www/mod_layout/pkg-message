@@ -1,7 +1,0 @@
------------------------------------------------------------------
-You have installed mod_layout, a module that can automatically add
-a footer or header to pages served.
-
-Please see ${PREFIX}/share/doc/mod_layout/faq.html for details on
-using this module.
------------------------------------------------------------------

@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Apache/Compress.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Compress/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Compress
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache

@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Apache/PerlRunFilter.pm
-%%SITE_PERL%%/Apache/Filter.pm
-%%SITE_PERL%%/Apache/RegistryFilter.pm
-@dirrmtry %%SITE_PERL%%/Apache
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Filter/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

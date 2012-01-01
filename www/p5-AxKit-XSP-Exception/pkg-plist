@@ -1,6 +1,0 @@
-%%SITE_PERL%%/AxKit/XSP/Exception.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Exception/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Exception
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit

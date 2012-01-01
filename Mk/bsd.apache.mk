@@ -37,8 +37,8 @@
 #
 # Examples:
 #  USE_APACHE= 22       # specify exact version
-#  USE_APACHE= 13+      # specify [min] version, no [max] version
-#  USE_APACHE= 13-22    # specify [min]-[max] range
+#  USE_APACHE= 20+      # specify [min] version, no [max] version
+#  USE_APACHE= 20-22    # specify [min]-[max] range
 #  USE_APACHE= -22      # specify [max] version, no [min] version
 #
 # Note:
@@ -50,7 +50,7 @@
 #
 #  - The following values for USE_APACHE are reserverd and only valid
 #    in apache-server ports!
-#      USE_APACHE= common13, common20, and common22
+#      USE_APACHE= common20, and common22
 #
 #
 # The following variables can be used (ro) in ports Makefile
@@ -81,7 +81,7 @@
 Apache_Pre_Include=		bsd.apache.mk
 
 DEFAULT_APACHE_VERSION=		22
-APACHE_SUPPORTED_VERSION=	22 13 20 # preferred version first
+APACHE_SUPPORTED_VERSION=	22 20 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
@@ -93,9 +93,9 @@ _ERROR_MSG=	: Error from bsd.apache.mk.
 .if defined(USE_APACHE) && !empty(USE_APACHE)
 .	if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	YES
-.	elif ${USE_APACHE:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} == ""
+.	elif ${USE_APACHE:C/\-//:S/^20//:S/^22//:C/\+$//} == ""
 AP_PORT_IS_MODULE=	YES
-.		if ${USE_APACHE:C/\-//:S/^13//:S/^20//:S/^22//} == "+"
+.		if ${USE_APACHE:C/\-//:S/^20//:S/^22//} == "+"
 AP_PLUS=	yes
 .		endif
 .	else
@@ -436,7 +436,7 @@ AP_EXTRAS+=	-L ${AP_LIB}
 Apache_Post_Include=	bsd.apache.mk
 
 .if defined(USE_APACHE_RUN) && !empty(USE_APACHE_RUN)
-.	if ${USE_APACHE_RUN:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_RUN:C/\-//:S/^20//:S/^22//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( ${USE_APACHE_RUN} )
 .	endif
 .elif defined(USE_APACHE_RUN)
@@ -444,7 +444,7 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( no valid version specified
 .endif
 
 .if defined(USE_APACHE_BUILD) && !empty(USE_APACHE_BUILD)
-.	if ${USE_APACHE_BUILD:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_BUILD:C/\-//:S/^20//:S/^22//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_BUILD ( ${USE_APACHE_BUILD} )
 .	endif
 .elif defined(USE_APACHE_BUILD)

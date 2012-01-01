@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Apache/AuthenCache.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthenCache/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthenCache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache

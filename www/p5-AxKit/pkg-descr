@@ -1,7 +1,0 @@
-Apache AxKit is an XML Application Server for Apache. It provides on-the-fly
-conversion from XML to any format, such as HTML, WAP or text using either W3C
-standard techniques, or flexible custom code. AxKit also uses a built-in Perl
-interpreter to provide some amazingly powerful techniques for XML
-transformation.
-
-WWW: http://www.axkit.org/

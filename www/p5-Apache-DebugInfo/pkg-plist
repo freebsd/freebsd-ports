@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DebugInfo/.packlist
-%%SITE_PERL%%/Apache/DebugInfo.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DebugInfo
-@dirrmtry %%SITE_PERL%%/Apache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

@@ -1,6 +1,0 @@
-%%SITE_PERL%%/AxKit/XSP/IfParam.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/IfParam/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/IfParam
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit
