@@ -15,6 +15,9 @@ COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD
 
+DEPRECATED=	No longer actively developed
+EXPIRATION_DATE=2012-03-01
+
 USE_GMAKE=yes
 
 post-patch:
