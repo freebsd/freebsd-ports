@@ -23,7 +23,7 @@ OPTIONS=	APACHE "Enable mod_speedycgi" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "

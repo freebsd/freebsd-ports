@@ -68,7 +68,7 @@ RUN_DEPENDS+=	${STANDALONE_DEPS}
 .endif
 
 .if defined(WITH_APACHE) || defined(WITH_FASTCGI) || defined(WITH_MODPERL)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .endif
 
 .if defined(WITH_FASTCGI)
@@ -87,17 +87,10 @@ WITH_APACHE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.apache.mk"
 
-.	if ${APACHE_VERSION} == 13
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
-.	else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
 	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
 	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
-.	endif
 .endif
 
 .if !defined(WITHOUT_MYSQL)

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 

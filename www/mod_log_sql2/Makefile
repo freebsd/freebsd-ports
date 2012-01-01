@@ -26,7 +26,7 @@ APACHE2X=	""
 PLIST_SUB+=	SSL=${SSL_PLIST} APACHE2X=${APACHE2X}
 
 USE_MYSQL=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
 .include <bsd.port.pre.mk>
@@ -34,11 +34,6 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
 LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
-.endif
-
-.if ${APACHE_VERSION} == 13
-WITHOUT_SSL=	YES
-APACHE2X=	"@comment "
 .endif
 
 .if defined(WITHOUT_SSL)

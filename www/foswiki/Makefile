@@ -50,19 +50,15 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE?=	13+
+USE_APACHE?=	20+
 PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
 SUB_FILES+=	pkg-message-apache
 
 .include <bsd.port.pre.mk>
 
-CONFDIR=	${PREFIX}/${CONFDIR_REL}
-.if ${APACHE_VERSION} == "13"
-CONFDIR_REL=	${APACHEETCDIR}
-.else
 CONFDIR_REL=	${APACHEETCDIR}/Includes
-.endif
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
 
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 .else

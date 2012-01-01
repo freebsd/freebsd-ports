@@ -74,7 +74,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 .endif
 
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)

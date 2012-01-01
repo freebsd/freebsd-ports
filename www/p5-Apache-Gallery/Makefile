@@ -16,25 +16,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
+LICENSE=	ART10
+
 BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/${PERL_ARCH}/Image/Imlib2.pm:${PORTSDIR}/graphics/p5-Image-Imlib2 \
+		${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	ART10
 PERL_CONFIGURE=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 
-.include <bsd.port.pre.mk>
-.if ${APACHE_VERSION} == 13
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 PLIST_DIRSTRY+=	www/icons
-.endif
 
 MAN3=		Apache::Gallery.3
 DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
@@ -70,4 +66,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

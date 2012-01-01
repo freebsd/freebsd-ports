@@ -21,7 +21,7 @@ COMMENT=	Webserver logfile analysis package
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}
 

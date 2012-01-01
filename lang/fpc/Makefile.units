@@ -138,12 +138,6 @@ USE_GNOME=	gtk20
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-httpd13"
-.	if defined(WITH_APACHE13)
-USE_APACHE=	13
-.	endif
-.endif
-
 .if ${PKGNAMESUFFIX} == "-httpd20"
 .	if defined(WITH_APACHE20)
 USE_APACHE=	20

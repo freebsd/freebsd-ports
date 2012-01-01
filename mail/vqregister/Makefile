@@ -17,7 +17,7 @@ COMMENT=	An extremely admin-configurable email user signup CGI
 BUILD_DEPENDS=	${VPOPMAIL_DIR}:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_APACHE_RUN=	13+
+USE_APACHE_RUN=	20+
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
 USE_MYSQL=	yes

@@ -17,7 +17,7 @@ COMMENT=	A fast-cgi module for Apache
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache-contrib-1.*
-USE_APACHE=	13+
+USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c

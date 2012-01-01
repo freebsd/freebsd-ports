@@ -414,7 +414,7 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .	if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 .	else
-USE_APACHE=	13+
+USE_APACHE=	20+
 .	endif
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD

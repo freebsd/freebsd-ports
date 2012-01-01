@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=--enable-idn
 .endif
 
 .if defined(WITH_DPSEARCH_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--enable-apache-module
 .else

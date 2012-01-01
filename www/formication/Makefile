@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ranner.eu/stuff/ \
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,9 +26,7 @@ SUB_FILES+=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} > 13
 PLIST_DIRSTRY=	www/cgi-bin
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/usr/local/bin/perl,#!${PERL},g" \

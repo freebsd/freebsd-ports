@@ -15,31 +15,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules that implement a cookie-based authentication system
 
-RUN_DEPENDS=	p5-CGI.pm>=3.12:${PORTSDIR}/www/p5-CGI.pm \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+		p5-CGI.pm>=3.12:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-ModPerl-VersionUtil>=0:${PORTSDIR}/www/p5-ModPerl-VersionUtil \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract
 
+USE_APACHE=	20+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AuthTicket.3 \
 		Apache::AuthTicket::Base.3 \
 		Apache2::AuthTicket.3
 
-USE_APACHE=	13+
-
-.include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} > 13
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		p5-Apache-Test>=1.35:${PORTSDIR}/www/p5-Apache-Test
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		p5-Apache-Test>=1.35:${PORTSDIR}/www/p5-Apache-Test
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

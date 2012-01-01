@@ -73,7 +73,7 @@ RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
 
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)

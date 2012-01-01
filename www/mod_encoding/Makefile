@@ -21,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 # Mostly because of the dependency of mod_dav.
 #APACHE_VERSION=	1.3.6
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

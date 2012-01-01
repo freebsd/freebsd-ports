@@ -29,7 +29,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	13+
+USE_APACHE=	20+
 .endif
 .if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

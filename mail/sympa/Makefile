@@ -47,7 +47,7 @@ USERS=		sympa
 GROUPS=		sympa
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_APACHE=	13+
+USE_APACHE=	20+
 ICONSDIR?=	www/icons
 CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--libexecdir=${PREFIX}/libexec/${PORTNAME} \

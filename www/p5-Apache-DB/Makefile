@@ -15,20 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Debugging and profiling tools for mod_perl
 
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
-USE_APACHE_RUN=	13+
+USE_APACHE_RUN=	20+
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
 		Apache::SmallProf.3
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,20 +18,15 @@ COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 MAKE_JOBS_SAFE=	yes
 
+SCGI_DIR=	apache2
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
-USE_APACHE=	13+
+USE_APACHE=	20+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} >= 20
-SCGI_DIR=	apache2
-.else
-SCGI_DIR=	apache1
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
