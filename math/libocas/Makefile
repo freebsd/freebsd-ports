@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libocas
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	math
 MASTER_SITES=	http://cmp.felk.cvut.cz/~xfrancv/ocas/ LOCAL/bf
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
@@ -54,7 +54,7 @@ do-install:
 check regression-test test: build
 	${WRKSRC}/msvmocas -c 10 -v 1 ${WRKSRC}/data/example4_train.light \
 		${WRKSRC}/data/msvmocas.model
-	${WRKSRC}/linclass -e -v 1 -o ${WRKSRC}/data/exaple4_test.pred \
+	${WRKSRC}/linclass -e -v 1 -o ${WRKSRC}/data/example4_test.pred \
 		${WRKSRC}/data/example4_test.light ${WRKSRC}/data/msvmocas.model
 	${WRKSRC}/svmocas -c 10 -b 1 -v 1 ${WRKSRC}/data/riply_trn.light \
 		${WRKSRC}/data/svmocas.model
