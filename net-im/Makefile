@@ -54,7 +54,6 @@
     SUBDIR += jabberd
     SUBDIR += jarl
     SUBDIR += jggtrans
-    SUBDIR += jwchat
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmess-kde4

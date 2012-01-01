@@ -579,7 +579,6 @@
     SUBDIR += p5-Apache-Session-Wrapper
     SUBDIR += p5-Apache-SessionX
     SUBDIR += p5-Apache-Singleton
-    SUBDIR += p5-Apache-Test
     SUBDIR += p5-Apache2-Scoreboard
     SUBDIR += p5-Apache2-SiteControl
     SUBDIR += p5-ApacheBench
