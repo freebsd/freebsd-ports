@@ -6,6 +6,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Accelerator.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Action.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ActionGroup.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Activatable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Adjustment.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Alignment.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Arrow.pod
@@ -22,13 +23,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Calendar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellEditable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellLayout.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellLayout/DataFunc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRenderer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererAccel.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererCombo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererPixbuf.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererProgress.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererSpin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererSpinner.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererText.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellRendererToggle.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellView.pod
@@ -49,6 +50,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/DrawingArea.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Editable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Entry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/EntryBuffer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/EntryCompletion.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/EventBox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Expander.pod
@@ -99,6 +101,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/WindowState.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/GC.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Geometry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Image.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Input.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keymap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keysyms.pm
@@ -126,6 +129,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HButtonBox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HPaned.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HRuler.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HSV.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HScale.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HScrollbar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/HSeparator.pod
@@ -143,6 +147,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/IconView.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Image.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageMenuItem.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/InfoBar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/InputDialog.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/doctypes
@@ -170,6 +175,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Misc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Notebook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Object.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/OffscreenWindow.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/OptionMenu.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Orientable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/PageSetup.pod
@@ -265,6 +271,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/SizeGroup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Socket.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/SpinButton.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Spinner.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/StatusIcon.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Statusbar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Stock.pod
@@ -287,6 +294,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToggleToolButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolItem.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolItemGroup.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolPalette.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolShell.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Toolbar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Tooltip.pod
@@ -301,7 +310,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeRowReference.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSelection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable/IterCompareFunc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeStore.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeView.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeViewColumn.pod
@@ -328,14 +336,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Gtk2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Gtk2.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Cairo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pango
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Cairo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CellLayout
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Buildable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
