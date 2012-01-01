@@ -5,9 +5,22 @@
 # $FreeBSD$
 #
 
+PORTNAME=	mod_rpaf2
+PORTVERSION=	0.6
 PORTREVISION=	1
-USE_APACHE=	20+
-LATEST_LINK=	mod_rpaf2
-MASTERDIR=	${.CURDIR}/../mod_rpaf
+CATEGORIES=	www
+MASTER_SITES=	http://stderr.net/apache/rpaf/download/
+DISTNAME=	mod_rpaf-${PORTVERSION}
 
-.include "${MASTERDIR}/Makefile"
+MAINTAINER=	apache@FreeBSD.org
+COMMENT=	Make proxied requests appear with client IP
+
+MAKE_JOBS_SAFE=  yes
+
+USE_APACHE=	20+
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+
+SRC_FILE=	mod_rpaf-2.0.c
+
+.include <bsd.port.mk>
