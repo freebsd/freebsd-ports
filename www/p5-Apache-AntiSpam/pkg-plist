@@ -1,9 +1,0 @@
-%%SITE_PERL%%/Apache/AntiSpam.pm
-%%SITE_PERL%%/Apache/AntiSpam/HTMLEncode.pm
-%%SITE_PERL%%/Apache/AntiSpam/NoSpam.pm
-%%SITE_PERL%%/Apache/AntiSpam/Heuristic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AntiSpam/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AntiSpam
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/AntiSpam
-@dirrmtry %%SITE_PERL%%/Apache

@@ -1,5 +1,0 @@
-This small module implements the HTTP/1.1 PUT and DELETE methods.
-Please notice that it can be a big security hole to activate them
-without securing the web server.
-
-WWW: http://perso.ec-lyon.fr/lyonel.vincent/apache/mod_put.html

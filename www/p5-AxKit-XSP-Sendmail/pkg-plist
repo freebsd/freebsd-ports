@@ -1,6 +1,0 @@
-%%SITE_PERL%%/AxKit/XSP/Sendmail.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Sendmail/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Sendmail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit

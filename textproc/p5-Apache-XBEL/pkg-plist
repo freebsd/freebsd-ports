@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Apache/XBEL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/XBEL/.packlist
-%%XSL%%%%DATADIR%%/apache-xbel.xsl
-%%XSL%%@dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/XBEL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache

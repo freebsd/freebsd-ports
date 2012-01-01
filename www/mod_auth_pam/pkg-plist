@@ -1,9 +1,0 @@
-%%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
-@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
-%%PORTDOCS%%%%DOCSDIR%%/configure.txt
-%%PORTDOCS%%%%DOCSDIR%%/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/samples/dot-htaccess
-%%PORTDOCS%%%%DOCSDIR%%/samples/httpd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

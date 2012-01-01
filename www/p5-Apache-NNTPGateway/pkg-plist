@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/NNTPGateway/.packlist
-%%SITE_PERL%%/Apache/NNTPGateway.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/NNTPGateway
-@dirrmtry %%SITE_PERL%%/Apache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

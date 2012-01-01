@@ -1,5 +1,0 @@
-This module replicates the functionality of the standard Apache
-module, mod_log_config, but logs information in a DBI-compliant
-database instead of a file.
-
-WWW: http://search.cpan.org/dist/Apache-DBILogConfig/

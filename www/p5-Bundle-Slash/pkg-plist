@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Bundle/Slash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Slash/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Slash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle
-@dirrmtry %%SITE_PERL%%/Bundle

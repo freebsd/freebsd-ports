@@ -1,6 +1,0 @@
-%%SITE_PERL%%/AxKit/XSP/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Util/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit/XSP
-@dirrmtry %%SITE_PERL%%/AxKit

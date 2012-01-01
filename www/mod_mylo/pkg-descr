@@ -1,2 +1,0 @@
-This is a module for Apache that sends logs directly to a MySQL database in
-addition to normal logging.

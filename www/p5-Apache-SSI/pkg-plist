@@ -1,3 +1,0 @@
-%%SITE_PERL%%/Apache/SSI.pm
-%%SITE_PERL%%/Apache/FakeSSI.pm
-@dirrmtry %%SITE_PERL%%/Apache

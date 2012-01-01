@@ -1,2 +1,0 @@
-Apache::AuthenRadius is a loadable perl5 module which provides
-RADIUS authentication to a mod_perl-enabled Apache web server.

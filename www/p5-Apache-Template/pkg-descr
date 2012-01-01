@@ -1,9 +1,0 @@
-The Apache::Template module provides a simple interface to the
-Template Toolkit from Apache/mod_perl.  The Template Toolkit is a
-fast, powerful and extensible template processing system written in
-Perl.  It implements a general purpose template language which allows
-you to clearly separate application logic, data and presentation
-elements.  It boasts numerous features to facilitate in the generation
-of web content both online and offline in "batch mode".
-
-WWW: http://search.cpan.org/dist/Apache-Template/
