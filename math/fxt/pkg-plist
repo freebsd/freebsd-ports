@@ -22,12 +22,14 @@ include/fxt/aux1-all.h
 include/fxt/aux1/arith1.h
 include/fxt/aux1/bytescan.h
 include/fxt/aux1/copy.h
+include/fxt/aux1/norm.h
 include/fxt/aux1/shift.h
 include/fxt/aux1/wordgray.h
 include/fxt/aux2-all.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/bit-dragon-r4.h
 include/fxt/bits/bitzip-pairs.h
 include/fxt/bits/radix-2i.h
 include/fxt/bits/radix-m1pi.h
@@ -445,6 +447,7 @@ include/fxt/walsh/shortwalshwakdif.h
 include/fxt/walsh/shortwalshwakdit.h
 include/fxt/walsh/slant.h
 include/fxt/walsh/subset-convolution.h
+include/fxt/walsh/square-wave-transform.h
 include/fxt/walsh/walsh-basis.h
 include/fxt/walsh/walsheigen.h
 include/fxt/walsh/walshgray.h
@@ -488,6 +491,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r4-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r4-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-to-z-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-2i-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-demo.cc
@@ -941,6 +946,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stirling1-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stirling2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stirling2-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stringsubst-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stringsubst-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stringsubst-hilbert3d-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stringsubst-hilbert3d-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-debruijn-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-debruijn-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-deltalex-demo.cc
@@ -965,10 +974,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/ringbuffer-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stack-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stack-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stringsubst-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stringsubst-hilbert3d-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stringsubst-hilbert3d-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/stringsubst-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/butterfly-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/butterfly-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fft-arblen-demo.cc
