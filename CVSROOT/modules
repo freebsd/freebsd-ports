@@ -11928,6 +11928,7 @@ p5-Devel-CheckOS                ports/devel/p5-Devel-CheckOS
 p5-Devel-Constants              ports/devel/p5-Devel-Constants
 p5-Devel-CoreStack              ports/devel/p5-Devel-CoreStack
 p5-Devel-Cover                  ports/devel/p5-Devel-Cover
+p5-Devel-Cover-Report-Clover    ports/devel/p5-Devel-Cover-Report-Clover
 p5-Devel-Cycle                  ports/devel/p5-Devel-Cycle
 p5-Devel-DProfPP                ports/devel/p5-Devel-DProfPP
 p5-Devel-Declare                ports/devel/p5-Devel-Declare
@@ -12005,6 +12006,7 @@ p5-Digest-MD5-File              ports/security/p5-Digest-MD5-File
 p5-Digest-MD5-M4p               ports/security/p5-Digest-MD5-M4p
 p5-Digest-MD5-Reverse           ports/security/p5-Digest-MD5-Reverse
 p5-Digest-ManberHash            ports/security/p5-Digest-ManberHash
+p5-Digest-MurmurHash            ports/security/p5-Digest-MurmurHash
 p5-Digest-Nilsimsa              ports/security/p5-Digest-Nilsimsa
 p5-Digest-Pearson               ports/security/p5-Digest-Pearson
 p5-Digest-Pearson-PurePerl      ports/security/p5-Digest-Pearson-PurePerl
@@ -12271,6 +12273,7 @@ p5-FreeBSD-i386-Ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
 p5-FreezeThaw                   ports/devel/p5-FreezeThaw
 p5-Frontier-RPC                 ports/net/p5-Frontier-RPC
 p5-Furl                         ports/www/p5-Furl
+p5-FurlX-Coro                   ports/www/p5-FurlX-Coro
 p5-Fuse                         ports/sysutils/p5-Fuse
 p5-Fuse-Simple                  ports/sysutils/p5-Fuse-Simple
 p5-FusionInventory-Agent        ports/net-mgmt/p5-FusionInventory-Agent
@@ -12423,6 +12426,7 @@ p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-Gtk2-WebKit                  ports/www/p5-Gtk2-WebKit
 p5-Guard                        ports/devel/p5-Guard
 p5-Gungho                       ports/www/p5-Gungho
+p5-GunghoX-FollowLinks          ports/www/p5-GunghoX-FollowLinks
 p5-HOP-Lexer                    ports/devel/p5-HOP-Lexer
 p5-HOP-Stream                   ports/devel/p5-HOP-Stream
 p5-HTML-Adsense                 ports/www/p5-HTML-Adsense
@@ -13725,6 +13729,7 @@ p5-Parallel-ForkManager         ports/devel/p5-Parallel-ForkManager
 p5-Parallel-Iterator            ports/devel/p5-Parallel-Iterator
 p5-Parallel-Prefork             ports/devel/p5-Parallel-Prefork
 p5-Parallel-Pvm                 ports/net/p5-Parallel-Pvm
+p5-Parallel-Scoreboard          ports/devel/p5-Parallel-Scoreboard
 p5-ParallelUA                   ports/www/p5-ParallelUA
 p5-Params-CallbackRequest       ports/devel/p5-Params-CallbackRequest
 p5-Params-Check                 ports/devel/p5-Params-Check
@@ -13771,6 +13776,8 @@ p5-Penguin                      ports/devel/p5-Penguin
 p5-Penguin-Easy                 ports/devel/p5-Penguin-Easy
 p5-Perl-Critic                  ports/textproc/p5-Perl-Critic
 p5-Perl-Critic-Bangs            ports/textproc/p5-Perl-Critic-Bangs
+p5-Perl-Metrics-Lite            ports/devel/p5-Perl-Metrics-Lite
+p5-Perl-Metrics-Simple          ports/devel/p5-Perl-Metrics-Simple
 p5-Perl-MinimumVersion          ports/textproc/p5-Perl-MinimumVersion
 p5-Perl-OSType                  ports/devel/p5-Perl-OSType
 p5-Perl-PrereqScanner           ports/devel/p5-Perl-PrereqScanner
@@ -13831,6 +13838,7 @@ p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-IEnosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-Precompressed  ports/www/p5-Plack-Middleware-Precompressed
+p5-Plack-Middleware-Reproxy     ports/www/p5-Plack-Middleware-Reproxy
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Middleware-SocketIO    ports/www/p5-Plack-Middleware-SocketIO
@@ -14028,6 +14036,7 @@ p5-SQL-Translator               ports/databases/p5-SQL-Translator
 p5-SQLite-Work                  ports/databases/p5-SQLite-Work
 p5-SRU                          ports/www/p5-SRU
 p5-SSN-Validate                 ports/devel/p5-SSN-Validate
+p5-STF-Dispatcher-PSGI          ports/www/p5-STF-Dispatcher-PSGI
 p5-SUPER                        ports/devel/p5-SUPER
 p5-SVG                          ports/textproc/p5-SVG
 p5-SVG-DOM2                     ports/graphics/p5-SVG-DOM2
@@ -14218,6 +14227,7 @@ p5-String-Strip                 ports/textproc/p5-String-Strip
 p5-String-ToIdentifier-EN       ports/textproc/p5-String-ToIdentifier-EN
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
 p5-String-Truncate              ports/textproc/p5-String-Truncate
+p5-String-Urandom               ports/textproc/p5-String-Urandom
 p5-Sub-Alias                    ports/devel/p5-Sub-Alias
 p5-Sub-Current                  ports/devel/p5-Sub-Current
 p5-Sub-Delete                   ports/devel/p5-Sub-Delete
@@ -14470,6 +14480,7 @@ p5-Test-XML-Valid               ports/devel/p5-Test-XML-Valid
 p5-Test-XPath                   ports/lang/p5-Test-XPath
 p5-Test-YAML-Meta               ports/devel/p5-Test-YAML-Meta
 p5-Test-YAML-Valid              ports/devel/p5-Test-YAML-Valid
+p5-Test-mysqld                  ports/databases/p5-Test-mysqld
 p5-Test-postgresql              ports/databases/p5-Test-postgresql
 p5-Test-use-ok                  ports/devel/p5-Test-use-ok
 p5-TestGen4Web-Runner           ports/www/p5-TestGen4Web-Runner
@@ -16360,6 +16371,7 @@ p5-devel-checkos                ports/devel/p5-Devel-CheckOS
 p5-devel-constants              ports/devel/p5-Devel-Constants
 p5-devel-corestack              ports/devel/p5-Devel-CoreStack
 p5-devel-cover                  ports/devel/p5-Devel-Cover
+p5-devel-cover-report-clover    ports/devel/p5-Devel-Cover-Report-Clover
 p5-devel-cycle                  ports/devel/p5-Devel-Cycle
 p5-devel-declare                ports/devel/p5-Devel-Declare
 p5-devel-declare-parser         ports/devel/p5-Devel-Declare-Parser
@@ -16438,6 +16450,7 @@ p5-digest-md5                   ports/security/p5-Digest-MD5
 p5-digest-md5-file              ports/security/p5-Digest-MD5-File
 p5-digest-md5-m4p               ports/security/p5-Digest-MD5-M4p
 p5-digest-md5-reverse           ports/security/p5-Digest-MD5-Reverse
+p5-digest-murmurhash            ports/security/p5-Digest-MurmurHash
 p5-digest-nilsimsa              ports/security/p5-Digest-Nilsimsa
 p5-digest-pearson               ports/security/p5-Digest-Pearson
 p5-digest-pearson-pureperl      ports/security/p5-Digest-Pearson-PurePerl
@@ -16718,6 +16731,7 @@ p5-freezethaw                   ports/devel/p5-FreezeThaw
 p5-frontier-rpc                 ports/net/p5-Frontier-RPC
 p5-fsa-rules                    ports/devel/p5-FSA-Rules
 p5-furl                         ports/www/p5-Furl
+p5-furlx-coro                   ports/www/p5-FurlX-Coro
 p5-fuse                         ports/sysutils/p5-Fuse
 p5-fuse-simple                  ports/sysutils/p5-Fuse-Simple
 p5-fusioninventory-agent        ports/net-mgmt/p5-FusionInventory-Agent
@@ -16871,6 +16885,7 @@ p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-gtk2-webkit                  ports/www/p5-Gtk2-WebKit
 p5-guard                        ports/devel/p5-Guard
 p5-gungho                       ports/www/p5-Gungho
+p5-gunghox-followlinks          ports/www/p5-GunghoX-FollowLinks
 p5-hailo                        ports/textproc/p5-Hailo
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-autohash                ports/devel/p5-Hash-AutoHash
@@ -18083,6 +18098,7 @@ p5-parallel-forkmanager         ports/devel/p5-Parallel-ForkManager
 p5-parallel-iterator            ports/devel/p5-Parallel-Iterator
 p5-parallel-prefork             ports/devel/p5-Parallel-Prefork
 p5-parallel-pvm                 ports/net/p5-Parallel-Pvm
+p5-parallel-scoreboard          ports/devel/p5-Parallel-Scoreboard
 p5-parallelua                   ports/www/p5-ParallelUA
 p5-params-callbackrequest       ports/devel/p5-Params-CallbackRequest
 p5-params-check                 ports/devel/p5-Params-Check
@@ -18141,6 +18157,8 @@ p5-penguin-easy                 ports/devel/p5-Penguin-Easy
 p5-perl-critic                  ports/textproc/p5-Perl-Critic
 p5-perl-critic-bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-perl-ldap                    ports/net/p5-perl-ldap
+p5-perl-metrics-lite            ports/devel/p5-Perl-Metrics-Lite
+p5-perl-metrics-simple          ports/devel/p5-Perl-Metrics-Simple
 p5-perl-minimumversion          ports/textproc/p5-Perl-MinimumVersion
 p5-perl-ostype                  ports/devel/p5-Perl-OSType
 p5-perl-prereqscanner           ports/devel/p5-Perl-PrereqScanner
@@ -18209,6 +18227,7 @@ p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-ienosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-precompressed  ports/www/p5-Plack-Middleware-Precompressed
+p5-plack-middleware-reproxy     ports/www/p5-Plack-Middleware-Reproxy
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-middleware-socketio    ports/www/p5-Plack-Middleware-SocketIO
@@ -18649,6 +18668,7 @@ p5-statistics-ols               ports/math/p5-Statistics-OLS
 p5-statistics-r                 ports/math/p5-Statistics-R
 p5-statistics-regression        ports/math/p5-Statistics-Regression
 p5-statistics-ttest             ports/math/p5-Statistics-TTest
+p5-stf-dispatcher-psgi          ports/www/p5-STF-Dispatcher-PSGI
 p5-storable                     ports/devel/p5-Storable
 p5-storable-amf                 ports/converters/p5-Storable-AMF
 p5-stream                       ports/devel/p5-Stream
@@ -18685,6 +18705,7 @@ p5-string-strip                 ports/textproc/p5-String-Strip
 p5-string-toidentifier-en       ports/textproc/p5-String-ToIdentifier-EN
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
 p5-string-truncate              ports/textproc/p5-String-Truncate
+p5-string-urandom               ports/textproc/p5-String-Urandom
 p5-sub-alias                    ports/devel/p5-Sub-Alias
 p5-sub-current                  ports/devel/p5-Sub-Current
 p5-sub-delete                   ports/devel/p5-Sub-Delete
@@ -18911,6 +18932,7 @@ p5-test-mocktime                ports/devel/p5-Test-MockTime
 p5-test-module-used             ports/devel/p5-Test-Module-Used
 p5-test-more-utf8               ports/devel/p5-Test-More-UTF8
 p5-test-most                    ports/devel/p5-Test-Most
+p5-test-mysqld                  ports/databases/p5-Test-mysqld
 p5-test-net-rabbitmq            ports/devel/p5-Test-Net-RabbitMQ
 p5-test-notabs                  ports/devel/p5-Test-NoTabs
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
@@ -25571,7 +25593,7 @@ syslog-ng-devel                 ports/sysutils/syslog-ng-devel
 syslog-ng2                      ports/sysutils/syslog-ng2
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
-sysrc				ports/sysutils/sysrc
+sysrc                           ports/sysutils/sysrc
 system-config-printer           ports/print/system-config-printer
 system-config-printer-kde       ports/print/system-config-printer-kde
 system-tools-backends           ports/sysutils/system-tools-backends
