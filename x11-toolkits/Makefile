@@ -251,8 +251,6 @@
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
     SUBDIR += skinlf
-    SUBDIR += slgtk
-    SUBDIR += slgtkdatabox
     SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt

@@ -3044,3 +3044,7 @@ www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and n
 www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3.
 sysutils/duplicity05||2012-01-01|Has expired: This version is out of date, and the 0.6.x branch is considered stable
 japanese/py-kanjilib||2012-01-01|Has expired: This port is not needed with any supported python version
+www/squid30||2012-01-01|Has expired: This version of Squid is no longer actively maintained upstream
+devel/slglade||2012-01-01|Has expired: Depends on non-functional x11-toolkits/slgtk
+x11-toolkits/slgtk||2012-01-01|Has expired: Does not work with newer GTK+, upstream development has ceased
+x11-toolkits/slgtkdatabox||2012-01-01|Has expired: Depends on non-functional x11-toolkits/slgtk
