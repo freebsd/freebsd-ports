@@ -2,18 +2,18 @@ bin/vboxgtk
 %%PYTHON_SITELIBDIR%%/vboxgtk/__init__.py
 %%PYTHON_SITELIBDIR%%/vboxgtk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/vboxgtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/dao.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/dao.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/dao.pyo
+%%PYTHON_SITELIBDIR%%/vboxgtk/iface.py
+%%PYTHON_SITELIBDIR%%/vboxgtk/iface.pyc
+%%PYTHON_SITELIBDIR%%/vboxgtk/iface.pyo
 %%PYTHON_SITELIBDIR%%/vboxgtk/paths.py
 %%PYTHON_SITELIBDIR%%/vboxgtk/paths.pyc
 %%PYTHON_SITELIBDIR%%/vboxgtk/paths.pyo
 %%PYTHON_SITELIBDIR%%/vboxgtk/util.py
 %%PYTHON_SITELIBDIR%%/vboxgtk/util.pyc
 %%PYTHON_SITELIBDIR%%/vboxgtk/util.pyo
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_generic.py
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_generic.pyc
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxdao_generic.pyo
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.py
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.pyc
-%%PYTHON_SITELIBDIR%%/vboxgtk/vboxgtk_iface.pyo
 share/applications/vboxgtk.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/vboxgtk.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/vboxgtk.mo
@@ -23,6 +23,7 @@ share/icons/hicolor/24x24/apps/vboxgtk.png
 share/icons/hicolor/32x32/apps/vboxgtk.png
 share/icons/hicolor/scalable/apps/vboxgtk.svg
 %%DATADIR%%/xml/vboxgtk-actions.xml
+%%DATADIR%%/xml/vboxgtk-menutoolbar.xml
 %%DATADIR%%/xml/vboxgtk.xml
 @dirrm %%PYTHON_SITELIBDIR%%/vboxgtk
 @dirrm %%DATADIR%%/xml
