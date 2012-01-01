@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-ASP
 PORTVERSION=	2.61
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,12 +25,14 @@ RUN_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-Tie-Cache>=0:${PORTSDIR}/devel/p5-Tie-Cache \
 		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT
 
-.if !defined(WITHOUT_MODPERL)
-RUN_DEPENDS+=	ap13-mod_perl>=0:${PORTSDIR}/www/mod_perl \
-		p5-Apache-Filter>=0:${PORTSDIR}/www/p5-Apache-Filter \
-		p5-Apache-SSI>=0:${PORTSDIR}/www/p5-Apache-SSI
-MODPERL_SUFFIX?=+mod_perl
-.endif
+
+# XXX not tested with mod_perl2, but mod_perl was removed ...
+#.if !defined(WITHOUT_MODPERL)
+#RUN_DEPENDS+=	ap13-mod_perl>=0:${PORTSDIR}/www/mod_perl \
+#		p5-Apache-Filter>=0:${PORTSDIR}/www/p5-Apache-Filter \
+#		p5-Apache-SSI>=0:${PORTSDIR}/www/p5-Apache-SSI
+#MODPERL_SUFFIX?=+mod_perl
+#.endif
 
 PERL_CONFIGURE=	yes
 
