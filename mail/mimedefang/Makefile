@@ -7,7 +7,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -42,15 +42,6 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-ipheader \
 			--prefix=${PREFIX}
 
-.if defined (MIMEDEFANG_DISABLE_CLAMAV) || defined(WITHOUT_CLAMAV)
-CONFIGURE_ARGS+=	--disable-antivirus \
-			--disable-clamav \
-			--disable-clamd
-.else
-BUILD_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
-RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
-.endif
-
 MAN1=	mimedefang-util.1
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-notify.7 mimedefang-protocol.7
@@ -69,6 +60,15 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 
 .if exists( ${LOCALBASE}/include/libmilter/mfapi.h )
 CONFIGURE_ARGS+=	--with-milterinc=${LOCALBASE}/include --with-milterlib=${LOCALBASE}/lib
+.endif
+
+.if defined (MIMEDEFANG_DISABLE_CLAMAV) || defined(WITHOUT_CLAMAV)
+CONFIGURE_ARGS+=	--disable-antivirus \
+			--disable-clamav \
+			--disable-clamd
+.else
+BUILD_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
 .endif
 
 post-patch:
