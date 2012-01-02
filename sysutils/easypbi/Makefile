@@ -7,6 +7,7 @@
 
 PORTNAME=	easypbi
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/makeapbi/${PORTNAME}/
 
@@ -17,6 +18,8 @@ LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu \
+		${LOCALBASE}/sbin/pbid:${PORTSDIR}/ports-mgmt/pbi-manager
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
