@@ -1,0 +1,9 @@
+--- test/CMakeLists.txt.orig	2011-12-11 16:16:40.594230551 +0000
++++ test/CMakeLists.txt	2011-12-11 16:19:44.915010706 +0000
+@@ -9,5 +9,4 @@
+ 
+ install (PROGRAMS tarantool DESTINATION bin)
+ install (DIRECTORY lib DESTINATION bin)
+-install (FILES box/tarantool.cfg box/00000000000000000001.snap
+-    DESTINATION bin)
++install (FILES box/tarantool.cfg DESTINATION %%ETCDIR%%)

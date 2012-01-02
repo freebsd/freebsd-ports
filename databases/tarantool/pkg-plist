@@ -1,0 +1,21 @@
+bin/lib/__init__.py
+bin/lib/sql.g
+bin/lib/sql.py
+bin/lib/sql_ast.py
+bin/lib/tarantool_connection.py
+bin/lib/tarantool_preprocessor.py
+bin/lib/tarantool_silverbox_server.py
+bin/lib/test_suite.py
+bin/lib/yapps/__init__.py
+bin/lib/yapps/runtime.py
+bin/tarantool
+bin/tarantool_feeder
+bin/tarantool_silverbox
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/silverbox-protocol.txt
+%%ETCDIR%%/tarantool.cfg
+@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%
+@dirrm bin/lib/yapps
+@dirrm bin/lib

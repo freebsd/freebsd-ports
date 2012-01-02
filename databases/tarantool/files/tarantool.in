@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: tarantool
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# tarantool_enable="YES"
+# tarantool_config=""
+#
+
+. /etc/rc.subr
+
+name="tarantool"
+
+tarantool_enable=${tarantool_enable:-"NO"}
+tarantool_config=${tarantool_config:-"%%ETCDIR%%/$name.cfg"}
+
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+
+command="%%PREFIX%%/bin/tarantool_silverbox"
+command_args="--daemonize --config ${tarantool_config}"
+pidfile="/var/run/$name.pid"
+
+run_rc_command "$1"
+
