@@ -19,8 +19,11 @@ OPTIONS=	VTK "Build the VTK bindings" off
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib \
 		${PREFIX}/lib/gdcm-${GDCM_MAJ}
+CMAKE_ARGS+=	-DGDCM_PDF_DOCUMENTATION:BOOL=NO \
+   		-DGDCM_USE_SYSTEM_OPENSSL:BOOL=YES
 
 .include <bsd.port.options.mk>
 
@@ -32,11 +35,13 @@ PLIST_SUB+=	VTK=""
 PLIST_SUB+=	VTK="@comment "
 .endif
 
-GDCM_MAJ=	2.0
-GDCM_MIN=	18
+GDCM_SO=	2
+GDCM_MAJ=	2.2
+GDCM_MIN=	0
 
 PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
-		GDCM_MIN="${GDCM_MIN}"
+		GDCM_MIN="${GDCM_MIN}" \
+		GDCM_SO="${GDCM_SO}"
 
 CMAKE_OUTSOURCE=yes
 CMAKE_ARGS+=	-DGDCM_BUILD_APPLICATIONS:BOOL=YES \
@@ -52,7 +57,8 @@ CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 		-DGDCM_INSTALL_MAN_DIR:STRING=${MAN1PREFIX}/man
 MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \
 		gdcmdump.1 gdcmimg.1 gdcminfo.1 gdcmpdf.1 \
-		gdcmraw.1 gdcmscanner.1 gdcmtar.1 gdcmviewer.1
+		gdcmraw.1 gdcmscanner.1 gdcmtar.1 gdcmviewer.1 \
+		gdcm2pnm.1 gdcmdiff.1 gdcmscu.1
 PORTDOCS=	*
 post-install:
 	${MKDIR} ${DOCSDIR}
