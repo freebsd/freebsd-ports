@@ -5,7 +5,7 @@
 
 USER=%%USER%%
 GROUP=%%GROUP%%
-INSTALL=%%INSTALL%%
+INSTALL="%%INSTALL%%"
 PREFIX=%%PREFIX%%
 
 if [ "$2" = "PRE-INSTALL" ];then exit; fi
