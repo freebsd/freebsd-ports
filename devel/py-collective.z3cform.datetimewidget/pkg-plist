@@ -1,0 +1,117 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/TODO.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/converter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/converter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/converter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/converter.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/conf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/conf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/conf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/converters.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/index.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/issues.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs/widgets.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/issues.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/collective.z3cform.datetimewidget.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/de/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/de/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/en/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/en/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/es/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/es/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/fr/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/fr/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/hr/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/hr/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/it/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/it/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/pt/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/pt/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sl/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sl/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr_Latn/LC_MESSAGES/collective.z3cform.datetimewidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr_Latn/LC_MESSAGES/collective.z3cform.datetimewidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/profiles/default/collective.z3cform.datetimewidget.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/profiles/default/import_steps.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/setuphandlers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/setuphandlers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/setuphandlers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates/date_input.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates/datetime_input.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates/display.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates/hidden.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates/monthyear_input.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_date.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_date.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_date.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_date.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_datetime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_datetime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_datetime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_datetime.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_monthyear.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_monthyear.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_monthyear.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/widget_monthyear.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr_Latn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr_Latn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/hr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform/datetimewidget
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/z3cform
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

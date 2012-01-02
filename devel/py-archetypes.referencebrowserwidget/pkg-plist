@@ -1,0 +1,82 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/adapter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/adapter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/adapter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/popup.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser/view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/demo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/demo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/demo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/default/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/sample_types/archetype_tool.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/sample_types/types.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/sample_types/types/RefBrowserDemo.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/skins/referencebrowser/referencebrowser.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/skins/referencebrowser/referencebrowser.js.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/skins/referencebrowser/referencebrowser.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/reference_access.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/sample.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_browser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_browser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_browser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_doctests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_doctests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_product.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_product.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_product.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/widget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/widget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/widget.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/skins/referencebrowser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/sample_types/types
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/sample_types
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/referencebrowserwidget
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
