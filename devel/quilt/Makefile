@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	quilt
-PORTVERSION=	0.48
-PORTREVISION=	1
+PORTVERSION=	0.50
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
 
 MAINTAINER=	doj@cubic.org
 COMMENT=	A collection of bash scripts to ease working with patch files
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -23,8 +24,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gawk:${PORTSDIR}/lang/gawk \
 		formail:${PORTSDIR}/mail/procmail
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-
-LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

@@ -7,6 +7,7 @@ share/emacs/site-lisp/quilt.el
 %%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/quilt.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/quilt.mo
 %%DATADIR%%/add
 %%DATADIR%%/annotate
 %%DATADIR%%/applied
@@ -29,6 +30,7 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/push
 %%DATADIR%%/refresh
 %%DATADIR%%/rename
+%%DATADIR%%/remove
 %%DATADIR%%/revert
 %%DATADIR%%/series
 %%DATADIR%%/setup
