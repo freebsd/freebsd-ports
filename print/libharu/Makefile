@@ -21,4 +21,12 @@ CONFIGURE_ARGS=	--with-png=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
+SOVERSION=	2
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		SOVERSION=${SOVERSION}
+
+post-install:
+	${LN} -s ${PREFIX}/lib/libhpdf-${PORTVERSION}.so \
+		${PREFIX}/lib/libhpdf.so.${SOVERSION}
+
 .include <bsd.port.mk>

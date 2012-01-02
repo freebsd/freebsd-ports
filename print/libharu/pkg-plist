@@ -29,7 +29,8 @@ include/hpdf_types.h
 include/hpdf_u3d.h
 include/hpdf_utils.h
 include/hpdf_version.h
-lib/libhpdf-2.2.1.so
+lib/libhpdf-%%PORTVERSION%%.so
 lib/libhpdf.a
 lib/libhpdf.la
 lib/libhpdf.so
+lib/libhpdf.so.%%SOVERSION%%
