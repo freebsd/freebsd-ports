@@ -688,9 +688,11 @@
     SUBDIR += pxytest
     SUBDIR += py-AccessControl
     SUBDIR += py-PF
+    SUBDIR += py-Products.PlonePAS
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-bcrypt
+    SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
     SUBDIR += py-clamav
     SUBDIR += py-crack
