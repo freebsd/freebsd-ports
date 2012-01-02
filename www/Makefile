@@ -1440,7 +1440,12 @@
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
+    SUBDIR += py-plone.app.blob
+    SUBDIR += py-plone.app.contentlisting
     SUBDIR += py-plone.app.folder
+    SUBDIR += py-plone.app.imaging
+    SUBDIR += py-plone.app.jquerytools
+    SUBDIR += py-plone.app.linkintegrity
     SUBDIR += py-plone.browserlayer
     SUBDIR += py-plone.cachepurging
     SUBDIR += py-plone.caching
@@ -1459,8 +1464,13 @@
     SUBDIR += py-plone.scale
     SUBDIR += py-plone.stringinterp
     SUBDIR += py-plone.subrequest
+    SUBDIR += py-plone.supermodel
+    SUBDIR += py-plone.testing
+    SUBDIR += py-plone.theme
     SUBDIR += py-plone.transformchain
     SUBDIR += py-plone.uuid
+    SUBDIR += py-plonetheme.classic
+    SUBDIR += py-plonetheme.sunburst
     SUBDIR += py-poster
     SUBDIR += py-postmarkup
     SUBDIR += py-prewikka

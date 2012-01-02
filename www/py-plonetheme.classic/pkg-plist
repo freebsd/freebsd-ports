@@ -1,0 +1,80 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/Extensions/install.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/Extensions/install.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/Extensions/install.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/personal_bar.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/cssregistry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/jsregistry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/viewlets.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/uninstall/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_ecmascript/iefixes.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/IEFixes.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/IEFixes.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/NS4.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/NS4.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/RTL.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/RTL.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/authoring.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/authoring.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/base.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/base.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/base_properties.props
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/columns.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/columns.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/controlpanel.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/controlpanel.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/deprecated.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/deprecated.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/forms.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/forms.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/invisibles.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/invisibles.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/member.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/member.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/mobile.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/mobile.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/navtree.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/navtree.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/ploneCustom.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/ploneCustom.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/portlets.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/portlets.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/print.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/print.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/public.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/public.css.dtml.metadata
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_ecmascript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/uninstall
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/Extensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
