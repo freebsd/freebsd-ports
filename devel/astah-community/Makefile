@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astah
-PORTVERSION=	6.5
+PORTVERSION=	6.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
@@ -38,19 +38,19 @@ IGNORE=		needs you to fetch manually the distribution file\
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
-DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
-PLIST_FILES=	bin/astah
-.if !defined(NOPORTDATA)
+PLIST_FILES=	bin/astah bin/astah-command.sh
 PORTDATA=	astah-community.jar astah-api.jar astah-gui_en.properties_org \
 		astah.ico astah-doc.ico Welcome.asta Welcome_ja.asta \
 		lib template
-.endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	ReleaseNote-e.html ReleaseNote.html \
-		API_sample_program_license_agreement-e.txt \
+PORTDOCS=	API_sample_program_license_agreement-e.txt \
 		API_sample_program_license_agreement.txt \
+		CommandRunner-e.html CommandRunner.html \
+		ProductInformation.txt \
+		ReleaseNote-e.html ReleaseNote.html \
 		api
 .endif
 
@@ -59,18 +59,21 @@ PORTEXAMPLES=	astah-key.properties_org Sample.asta
 .endif
 
 post-patch:
+.for script in ${PLIST_FILES:S!bin/!!}
 	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!g; \
-	                     s!%%DATADIR%%!${DATADIR}!" ${WRKSRC}/astah
+	                     s!%%DATADIR%%!${DATADIR}!" \
+		 ${WRKSRC}/${script}
+.endfor
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} 's/png\\/png\//' ${WRKSRC}/api/*/doc/astahAPI_reference.html
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/astah ${PREFIX}/bin
-.if !defined(NOPORTDATA)
+.for script in ${PLIST_FILES:S!bin/!!}
+	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${PREFIX}/bin
+.endfor
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR})
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS:Napi}
