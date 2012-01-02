@@ -4703,7 +4703,7 @@
 @exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
 @exec	mkdir -p %D/share/doc/java
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
-@dirrmtry %D/share/doc/java
+@dirrmtry share/doc/java
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay/server
 @dirrm %%T%%/sample/webservices/EbayServer/src/ebay
 @dirrm %%T%%/sample/webservices/EbayServer/src
