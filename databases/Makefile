@@ -371,6 +371,7 @@
     SUBDIR += p5-DBIx-NoSQL
     SUBDIR += p5-DBIx-Password
     SUBDIR += p5-DBIx-Perlish
+    SUBDIR += p5-DBIx-QueryLog
     SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBIx-RetryOverDisconnects
     SUBDIR += p5-DBIx-SQLEngine
