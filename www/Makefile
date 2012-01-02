@@ -1443,9 +1443,14 @@
     SUBDIR += py-plone.app.blob
     SUBDIR += py-plone.app.contentlisting
     SUBDIR += py-plone.app.folder
+    SUBDIR += py-plone.app.form
     SUBDIR += py-plone.app.imaging
     SUBDIR += py-plone.app.jquerytools
+    SUBDIR += py-plone.app.layout
     SUBDIR += py-plone.app.linkintegrity
+    SUBDIR += py-plone.app.viewletmanager
+    SUBDIR += py-plone.app.vocabularies
+    SUBDIR += py-plone.autoform
     SUBDIR += py-plone.browserlayer
     SUBDIR += py-plone.cachepurging
     SUBDIR += py-plone.caching
@@ -1469,6 +1474,7 @@
     SUBDIR += py-plone.theme
     SUBDIR += py-plone.transformchain
     SUBDIR += py-plone.uuid
+    SUBDIR += py-plone.z3cform
     SUBDIR += py-plonetheme.classic
     SUBDIR += py-plonetheme.sunburst
     SUBDIR += py-poster

@@ -1,0 +1,41 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/browser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/browser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/browser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/browser.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/customerize.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/customize.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/registrations.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/testviewtemplate.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/version.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/zpt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/zpt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/zpt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/zpt.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize/zptviews.pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five/customerize
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/five
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

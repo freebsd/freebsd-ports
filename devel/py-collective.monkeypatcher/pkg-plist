@@ -1,0 +1,39 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/meta.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/meta.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/meta.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/meta.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/dummypatch.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/dummypatch.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/dummypatch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/dummypatch.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/test_monkeypatcher.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/test_monkeypatcher.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests/test_monkeypatcher.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective/monkeypatcher
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/collective
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

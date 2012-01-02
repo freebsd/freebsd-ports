@@ -3042,6 +3042,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-application
     SUBDIR += py-archetypes.kss
+    SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argparse
     SUBDIR += py-asn1
@@ -3065,6 +3066,8 @@
     SUBDIR += py-cmdln
     SUBDIR += py-cog
     SUBDIR += py-coil
+    SUBDIR += py-collective.monkeypatcher
+    SUBDIR += py-collective.z3cform.datetimewidget
     SUBDIR += py-configobj
     SUBDIR += py-construct
     SUBDIR += py-coverage
@@ -3097,6 +3100,7 @@
     SUBDIR += py-fabric
     SUBDIR += py-fam
     SUBDIR += py-fileutils
+    SUBDIR += py-five.customerize
     SUBDIR += py-five.formlib
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
