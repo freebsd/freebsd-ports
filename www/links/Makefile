@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	links
-DISTVERSION=	2.4
+DISTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf
@@ -36,6 +36,10 @@ OPTIONS=	SVGALIB "non-X11 graphics support" off \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+.endif
+
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -59,11 +63,11 @@ CONFIGURE_ARGS+=	--with-directfb
 CONFIGURE_ARGS+=	--without-directfb
 .endif
 
-.if defined(WITH_IPV6)
+.if defined(WITH_IPV6) || make(makesum)
 USE_AUTOTOOLS+=	autoconf
 PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6 \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|bf|:S|$|:ipv6|}
-PATCHFILES+=	links-2.4-ipv6.patch.gz:ipv6
+PATCHFILES+=	links-2.5-ipv6.patch.gz:ipv6
 PATCH_DIST_STRIP=	-p1
 .endif
 
