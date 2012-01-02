@@ -6,22 +6,16 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
 CATEGORIES=	chinese
 
-MAINTAINER=	leeym@FreeBSD.org
-
-BROKEN=		does not patch
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
 		${.CURDIR}/files/patch-mail.c \
 		${.CURDIR}/files/patch-init.c \
-		${.CURDIR}/files/patch-tin_defaults
+		${.CURDIR}/files/patch-tin.defaults
 
 MASTERDIR=	${.CURDIR}/../../news/tin
-
-WITH_TIN_SCREEN=termcap
-CONFIGURE_ARGS=	--disable-locale
 
 .include "${MASTERDIR}/Makefile"
