@@ -1441,6 +1441,7 @@
     SUBDIR += py-plone.app.folder
     SUBDIR += py-plone.browserlayer
     SUBDIR += py-plone.folder
+    SUBDIR += py-plone.intelligenttext
     SUBDIR += py-plone.locking
     SUBDIR += py-plone.memoize
     SUBDIR += py-plone.portlets

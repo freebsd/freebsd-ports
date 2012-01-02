@@ -2993,6 +2993,8 @@
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
+    SUBDIR += py-Products.ATReferenceBrowserWidget
+    SUBDIR += py-Products.Archetypes
     SUBDIR += py-Products.BTreeFolder2
     SUBDIR += py-Products.CMFActionIcons
     SUBDIR += py-Products.CMFCalendar
@@ -3011,9 +3013,12 @@
     SUBDIR += py-Products.ExternalMethod
     SUBDIR += py-Products.GenericSetup
     SUBDIR += py-Products.MIMETools
+    SUBDIR += py-Products.Marshall
     SUBDIR += py-Products.MimetypesRegistry
     SUBDIR += py-Products.OFSP
+    SUBDIR += py-Products.PlacelessTranslationService
     SUBDIR += py-Products.PluginRegistry
+    SUBDIR += py-Products.PortalTransforms
     SUBDIR += py-Products.PythonScripts
     SUBDIR += py-Products.ResourceRegistries
     SUBDIR += py-Products.StandardCacheManagers
@@ -3036,6 +3041,8 @@
     SUBDIR += py-anyjson
     SUBDIR += py-apipkg
     SUBDIR += py-application
+    SUBDIR += py-archetypes.kss
+    SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-asn1-modules
