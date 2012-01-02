@@ -7,6 +7,7 @@
 
 PORTNAME=	Products.CMFEditions
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:${PORTSDIR}/devel/py-zope
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
-		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
-#		${PYTHON_PKGNAMEPREFIX}plone.app.blob>=0:${PORTSDIR}/www/py-plone.app.blob
+		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
+		${PYTHON_PKGNAMEPREFIX}plone.app.blob>=0:${PORTSDIR}/www/py-plone.app.blob
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
