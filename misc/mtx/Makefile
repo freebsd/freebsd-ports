@@ -10,7 +10,7 @@ PORTVERSION=	1.3.11
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control SCSI media changer devices
 
 USE_GMAKE=	yes
