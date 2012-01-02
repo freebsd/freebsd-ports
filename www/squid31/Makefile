@@ -51,6 +51,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -69,7 +70,6 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.za.squid-cache.org/Versions/v3/3.1/
 MASTER_SITE_SUBDIR=	squid
-DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -81,7 +81,8 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
-PATCHFILES=	#empty
+PATCHFILES=	squid-3.1-10415.patch squid-3.1-10417.patch \
+		squid-3.1-10418.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
