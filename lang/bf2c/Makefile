@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	bf2c
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	lang
-MASTER_SITES=	SF
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD
 
-DEPRECATED=	No longer actively developed
-EXPIRATION_DATE=2012-03-01
-
-USE_GMAKE=yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's,-Werror,,' -e 's,CC=,#CC=,' -e 's,(CC),(CXX),' \
-		${WRKSRC}/Makefile
+USE_XZ=		yes
+USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bf2c ${PREFIX}/bin
