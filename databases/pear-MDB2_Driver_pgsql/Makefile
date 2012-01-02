@@ -26,5 +26,10 @@ FILES=		MDB2/Driver/Datatype/pgsql.php \
 		MDB2/Driver/pgsql.php
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		segfaults during installation on FreeBSD 7.X
+.endif
+
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
