@@ -1,5 +1,5 @@
 --- Makefile.fc9.orig	2008-08-31 17:53:10.000000000 +0200
-+++ Makefile.fc9	2009-06-16 10:10:25.855027068 +0200
++++ Makefile.fc9	2011-06-21 11:52:40.309974439 +0200
 @@ -7,7 +7,7 @@
  
  
@@ -9,9 +9,12 @@
  exec_prefix = ${prefix}
  INSTALL = /usr/bin/install -c
  EXEEXT = 
-@@ -20,16 +20,16 @@
+@@ -18,18 +18,18 @@
+ top_srcdir = 
+ top_builddir = 
  LDFLAGS_GUI = 
- CXX = g++
+-CXX = g++
++CXX ?= g++
  #CXXFLAGS = -g -O0 -pthread -Wall -Wundef -Wno-ctor-dtor-privacy -finput-charset=ISO-8859-1
 -CXXFLAGS = -O2 -pthread -Wall -Wundef -Wno-ctor-dtor-privacy -finput-charset=ISO-8859-1
 +CXXFLAGS += -pthread -Wall -Wundef -Wno-ctor-dtor-privacy

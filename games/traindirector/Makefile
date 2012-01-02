@@ -15,6 +15,8 @@ DISTNAME=	tdir36src
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
 
+LICENSE=	GPLv2
+
 NO_WRKSUBDIR=	yes
 
 MAKE_JOBS_SAFE=	yes
@@ -27,7 +29,7 @@ WX_COMPS=	wx:lib
 WX_UNICODE=	yes
 
 DESKTOP_ENTRIES="Train Director" "${COMMENT}" "" "traindir3" \
-		"Game;Simulation;StrategyGame;" false
+		"Game;Simulation;StrategyGame;" ${FALSE}
 
 PLIST_FILES=	bin/traindir3
 
