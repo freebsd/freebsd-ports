@@ -473,6 +473,7 @@
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python3
     SUBDIR += mod_remoteip
+    SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
     SUBDIR += mod_rpaf2
     SUBDIR += mod_ruby

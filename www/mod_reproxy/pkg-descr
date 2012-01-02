@@ -1,0 +1,3 @@
+This module adds x-reproxy-url header support to Apache/2.x.
+
+WWW: https://github.com/kazuho/mod_reproxy
