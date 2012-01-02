@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2011-11-25 15:33:08.997444924 +0000
++++ CMakeLists.txt	2011-11-25 15:33:30.428593855 +0000
+@@ -197,7 +197,7 @@
+ add_subdirectory(test)
+ 
+ install (FILES README LICENSE doc/silverbox-protocol.txt
+-         DESTINATION doc)
++         DESTINATION %%DOCSDIR%%)
+ 
+ include (cmake/tarantool_cpack.cmake)
+ #

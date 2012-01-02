@@ -803,6 +803,7 @@
     SUBDIR += squirrel-sql
     SUBDIR += sybtcl
     SUBDIR += tablelog
+    SUBDIR += tarantool
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb

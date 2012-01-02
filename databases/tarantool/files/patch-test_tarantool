@@ -1,0 +1,30 @@
+--- test/tarantool.orig	2011-05-14 12:16:32.000000000 +0000
++++ test/tarantool	2011-12-13 01:12:12.696699437 +0000
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python 
++#! /usr/bin/env python 
+ """A simplistic client for tarantool/silverbox: administrative
+ console and SQL client.
+ 
+@@ -32,8 +32,8 @@
+ import socket
+ import sys
+ import string
+-from lib.tarantool_admin import TarantoolAdmin, is_admin_re
+-from lib.box import Box
++from lib.tarantool_connection import AdminConnection, DataConnection, \
++       is_admin_re
+ 
+ class Options:
+   def __init__(self):
+@@ -94,8 +94,8 @@
+ def main():
+   init_readline_history()
+   options = Options()
+-  admin_con = TarantoolAdmin(options.args.host, options.args.admin_port)
+-  data_con = Box(options.args.host, options.args.port)
++  admin_con = AdminConnection(options.args.host, options.args.admin_port)
++  data_con = DataConnection(options.args.host, options.args.port)
+   try:
+     admin_con.connect()
+     data_con.connect()
