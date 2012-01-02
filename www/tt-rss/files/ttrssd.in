@@ -43,7 +43,7 @@ ttrssd_start() {
 ttrssd_stop() {
 	[ -f $pidfile ] || (echo "$name not running?"; exit 1)
 	echo "Stopping $long_name"
-	kill `ps | grep $phpupd | grep -v grep | awk '{print $1}'`
+	kill `ps x | grep $phpupd | grep -v grep | awk '{print $1}'`
 	rm -f $pidfile
 }
 
