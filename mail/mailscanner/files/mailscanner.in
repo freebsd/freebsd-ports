@@ -28,6 +28,7 @@ command="%%PREFIX%%/sbin/mailscanner"
 pidfile=${mailscanner_pidfile}
 command_args="${mailscanner_configfile}"
 procname="MailScanner"
+extra_commands=reload
 
 required_files="${mailscanner_configfile}"
 
