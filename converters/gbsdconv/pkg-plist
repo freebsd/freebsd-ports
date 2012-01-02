@@ -1,4 +1,0 @@
-bin/gbsdconv
-%%DATADIR%%/gbsdconv.png
-%%DATADIR%%/gbsdconv.xml
-@dirrm %%DATADIR%%
