@@ -1,14 +1,12 @@
---- src/attrib.c.orig	Wed Aug 20 19:19:52 2003
-+++ src/attrib.c	Wed Aug 20 19:23:06 2003
-@@ -687,6 +687,11 @@
- 		fprintf(fp, "post_proc_type=%d\n", POST_PROC_YES);
- 		fprintf(fp, "delete_tmp_files=ON\n");
- 		fprintf(fp, "followup_to=poster\n\n");
-+
-+		fprintf(fp, _("# set charset to Big5 in all newsgroups\n"));
-+		fprintf(fp, "scope=*\n");
-+		fprintf(fp, "mm_network_charset=Big5\n");
-+		fprintf(fp, "undeclared_charset=Big5\n");
- 	} else {
- 		char *ptr;
- 		char buf[LEN];
+--- src/attrib.c.orig	2011-09-18 04:55:30.000000000 -0700
++++ src/attrib.c	2012-01-02 03:14:00.000000000 -0800
+@@ -548,6 +548,9 @@
+ 		add_scope("*");
+ 		snprintf(buf, sizeof(buf), "%s", "~/.tin/headers");
+ 		set_attrib(OPT_ATTRIB_X_HEADERS, "*", "", buf);
++		num = 25;
++		set_attrib(OPT_ATTRIB_MM_NETWORK_CHARSET, "*", "", (char *) &num);
++		set_attrib(OPT_ATTRIB_UNDECLARED_CHARSET, "*", "", "Big5");
+ 
+ 		add_scope("*sources*");
+ 		num = POST_PROC_SHAR;

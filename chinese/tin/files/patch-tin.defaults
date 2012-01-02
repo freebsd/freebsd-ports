@@ -1,5 +1,5 @@
---- doc/tin.defaults~~	Thu Oct  9 22:01:04 2003
-+++ doc/tin.defaults	Thu Oct  9 22:01:14 2003
+--- doc/tin.defaults.orig	2011-08-18 05:28:38.347241197 +0800
++++ doc/tin.defaults	2011-08-18 05:29:00.242883933 +0800
 @@ -55,7 +55,7 @@
  # idea to set mm_charset here for providing a default
  # in most western countries ISO-8859-1 might be the best value
