@@ -78,6 +78,7 @@ include/stklos/stklosconf.h
 %%DATADIR%%/%%VERSION%%/pp.stk
 %%DATADIR%%/%%VERSION%%/process.stk
 %%DATADIR%%/%%VERSION%%/r5rs.stk
+%%DATADIR%%/%%VERSION%%/r7rs.stk
 %%DATADIR%%/%%VERSION%%/readline.stk
 %%DATADIR%%/%%VERSION%%/recette.ostk
 %%DATADIR%%/%%VERSION%%/recette.stk
@@ -143,6 +144,7 @@ include/stklos/stklosconf.h
 %%DATADIR%%/%%VERSION%%/srfi-9.stk
 %%DATADIR%%/%%VERSION%%/srfi-96.ostk
 %%DATADIR%%/%%VERSION%%/srfi-96.stk
+%%DATADIR%%/%%VERSION%%/str.stk
 %%DATADIR%%/%%VERSION%%/struct.stk
 %%DATADIR%%/%%VERSION%%/tar.ostk
 %%DATADIR%%/%%VERSION%%/tar.stk
