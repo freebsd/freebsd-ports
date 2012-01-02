@@ -1,0 +1,19 @@
+KKTDirect implements an ordering method and accompanying factorization for
+the direct solution of saddle-point matrices (also known as KKT or equilibrium
+matrices).  A simple constraint on ordering together with an assumption on
+the rank of parts of the matrix are sufficient to guarantee the existence of
+the LDL^T factorization, stability concerns aside. In fact, D may be taken
+to be a diagonal matrix with +/-1 along the diagonal, and be fully determined
+prior to factorization, giving rise to a "signed Cholesky" factorization. A
+modified minimum-degree-like algorithm which incorporates this constraint is
+used, along with a simple algorithm to modify an existing fill-reducing
+ordering to respect the constraint. While a stability analysis is lacking,
+numerical experiments indicate that this is generally sufficient to avoid the
+need for numerical pivoting during factorization, with clear possible benefits
+for performance.
+
+Note this is only alpha-quality proof-of-concept code: for example,
+out-of-memory errors are not handled gracefully, and the provided Minimum
+Degree routine is not yet competitive with other packages.
+
+WWW:	http://www.cs.ubc.ca/~rbridson/kktdirect/
