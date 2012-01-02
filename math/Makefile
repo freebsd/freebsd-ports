@@ -169,6 +169,7 @@
     SUBDIR += kash3
     SUBDIR += kbruch
     SUBDIR += kig
+    SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += koctave
     SUBDIR += kseg
