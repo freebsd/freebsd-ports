@@ -17,6 +17,9 @@ MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
+ONLY_FOR_ARCHS=		amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
+
 PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xen-detect \
 		bin/xenstore \
