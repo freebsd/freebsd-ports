@@ -134,7 +134,7 @@ post-extract:
 pre-install:
 	@${ECHO_CMD} -n "Updating time zones..."
 	@${RM} -rf ${WRKSRC}/jre/lib/zi
-	@${MV} -f ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/zi ${WRKSRC}/jre/lib/
+	@${CP} -R -f ${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/zi ${WRKSRC}/jre/lib/
 	@${ECHO_CMD} "done"
 	@-${RM} -rf ${WRKSRC}/jre/lib/zi.tzdata*
 .endif
