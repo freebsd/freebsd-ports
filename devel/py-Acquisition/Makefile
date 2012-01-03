@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Acquisition
-PORTVERSION=	2.13.8
+PORTVERSION=	4.0a1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Allows to obtain attributes from the containment hierarchy
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:${PORTSDIR}/devel/py-ExtensionClass \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=4.0:${PORTSDIR}/devel/py-ExtensionClass \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
 
 PYEASYINSTALL_ARCHDEP=	yes
