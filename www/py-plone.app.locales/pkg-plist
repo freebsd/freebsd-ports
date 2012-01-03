@@ -1,0 +1,1259 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/EXTERNALS.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-42/nl/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-42/nl/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/plone.app.caching-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/plone.app.caching.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/plone.app.ldap-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/plone.app.ldap.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/atcontenttypes-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/atcontenttypes.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/atreferencebrowserwidget-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/atreferencebrowserwidget.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cmfeditions-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cmfeditions.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cmfplacefulworkflow-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cmfplacefulworkflow.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/linguaplone-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/linguaplone.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/passwordresettool-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/passwordresettool.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/plone-generated.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/plone-manual.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/plone.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/plonefrontpage.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/plonelocales.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/atcontenttypes.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/atcontenttypes.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/atreferencebrowserwidget.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/atreferencebrowserwidget.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/cmfeditions.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/cmfeditions.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/cmfplacefulworkflow.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/cmfplacefulworkflow.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/linguaplone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/linguaplone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/passwordresettool.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/passwordresettool.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plone.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plonefrontpage.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plonefrontpage.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plonelocales.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES/plonelocales.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/RELEASING.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/admix.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/admix.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/admix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/create.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/create.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/create.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/fillmsgstr.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/fillmsgstr.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/fillmsgstr.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/filter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/filter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/filter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/list.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/list.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/list.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/pobuddy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/pobuddy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/pobuddy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/rebuild-pot.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/rebuild-pot.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/rebuild-pot.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/relocate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/relocate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/relocate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setcomment.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setcomment.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setcomment.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setdomain.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setdomain.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setdomain.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setprojid.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setprojid.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/setprojid.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/statistics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/statistics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/statistics.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/sync.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/sync.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/sync.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_HK
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/vi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/to
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/th
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/te
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ta
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr_Latn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sq
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sm
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/sk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ro
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/rm
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/no
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/my
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mk_MK
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/mi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/lt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ko
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/kn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ka
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/id
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/hi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/gl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/et
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/eo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/el
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/da
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ca
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-42/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-42/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-42
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
