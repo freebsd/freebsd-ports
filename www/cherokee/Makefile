@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.101
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -82,7 +81,7 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 cherokee-admin-launcher.1 \
-		cherokee-tweak.1 cherokee-worker.1
+		cherokee-tweak.1 cherokee-worker.1 
 PORTDOCS=	*
 
 OPTIONS=	IPV6	  "IPv6 support"	on	\
@@ -201,15 +200,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/contrib/tracelor.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/gitlog2changelog.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/po/po_stats.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/run-tests.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/svnlog2changelog.py
 
 post-install:
 	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}

@@ -197,6 +197,7 @@ share/aclocal/cherokee.m4
 %%NLS%%share/locale/pl/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/cherokee.mo
+%%NLS%%share/locale/jp/LC_MESSAGES/cherokee.mo
 %%ADMIN%%%%DATADIR%%/admin/Auth.py
 %%ADMIN%%%%DATADIR%%/admin/Auth.pyc
 %%ADMIN%%%%DATADIR%%/admin/Balancer.py
@@ -333,6 +334,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/market/Maintenance.pyc
 %%ADMIN%%%%DATADIR%%/admin/market/ows_consts.pyc
 %%ADMIN%%%%DATADIR%%/admin/market/CommandProgress.pyc
+%%ADMIN%%%%DATADIR%%/admin/market/Distro.py
+%%ADMIN%%%%DATADIR%%/admin/market/Distro.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Init.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Paginator.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/StarRating.py
@@ -380,6 +383,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/dialog-error.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/dialog-information.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/dialog-warning.png
+%%ADMIN%%%%DATADIR%%/admin/CTK/static/images/forbid.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/ibutton-slider-default.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/input-bg.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/loader.gif
@@ -403,6 +407,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/Help.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/Submitter.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/common.js
+%%ADMIN%%%%DATADIR%%/admin/CTK/static/js/jquery-1.3.2.js
+%%ADMIN%%%%DATADIR%%/admin/CTK/static/js/jquery-ui-1.7.2.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/jquery-1.3.2.min.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/jquery-ui-1.7.2.custom.min.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/jquery.cookie.js
@@ -414,6 +420,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CgiBase.pyc
 %%ADMIN%%%%DATADIR%%/admin/Cherokee.py
 %%ADMIN%%%%DATADIR%%/admin/Cherokee.pyc
+%%ADMIN%%%%DATADIR%%/admin/Certs.py
+%%ADMIN%%%%DATADIR%%/admin/Certs.pyc
 %%ADMIN%%%%DATADIR%%/admin/Flags.py
 %%ADMIN%%%%DATADIR%%/admin/Flags.pyc
 %%ADMIN%%%%DATADIR%%/admin/Graph.py
@@ -916,6 +924,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/uwsgi.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/wordpress.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/zend.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/flcache.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/ssl_test.png
 %%ADMIN%%%%DATADIR%%/admin/static/js/SelectionPanel.js
 %%ADMIN%%%%DATADIR%%/admin/static/help_404.html
 %%ADMIN%%%%DATADIR%%/admin/theme.html
@@ -963,6 +973,10 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/wizards/uwsgi.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/zend.py
 %%ADMIN%%%%DATADIR%%/admin/wizards/zend.pyc
+%%ADMIN%%%%DATADIR%%/admin/wizards/flcache.py
+%%ADMIN%%%%DATADIR%%/admin/wizards/ssl_test.py
+%%ADMIN%%%%DATADIR%%/admin/wizards/flcache.pyc
+%%ADMIN%%%%DATADIR%%/admin/wizards/ssl_test.pyc
 %%DATADIR%%/deps/cgi.deps
 %%DATADIR%%/deps/combined.deps
 %%DATADIR%%/deps/common.deps
@@ -1028,6 +1042,8 @@ www/cherokee/index.html
 @dirrm www/cherokee
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
+%%NLS%%@dirrmtry share/locale/jp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/jp
 @dirrm %%DATADIR%%/themes/white
 @dirrm %%DATADIR%%/themes/plain
 @dirrm %%DATADIR%%/themes/firefox3
