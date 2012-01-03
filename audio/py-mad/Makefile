@@ -28,6 +28,6 @@ post-patch:
 		${WRKSRC}/setup.py
 
 do-configure:
-	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix ${PREFIX}
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
 
 .include <bsd.port.mk>
