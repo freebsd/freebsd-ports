@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	saga
-PORTVERSION=	2.0.7
-PORTREVISION=	4
+PORTVERSION=	2.0.8
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
 		gdal.16:${PORTSDIR}/graphics/gdal \
@@ -55,6 +56,7 @@ CONFIGURE_ARGS+=	--disable-unicode
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=	--enable-python
+BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 USE_PYTHON=	2.6-2.7
 PLIST_SUB+=	SAGA_PYTHON=""
 .else
@@ -97,6 +99,9 @@ post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga_tip.txt ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/xpm/saga_icon_32.xpm ${DATADIR}
+# library helper files are not needed and cripple some math/qgis extensions
+	@${RM} ${PREFIX}/lib/saga/*.la
+	@${RM} ${PREFIX}/lib/saga/*.a
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
