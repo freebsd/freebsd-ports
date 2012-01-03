@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -77,9 +77,6 @@ CONFIGURE_ARGS+=	--enable-sflow
 PLIST_FILES+=	bin/sfcapd
 #MAN1+=		sfcapd.1
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -E -e 's/sfcapd\.1/sfcapd\.1 nfanon\.1/' ${WRKSRC}/man/Makefile
 
 .if !defined(NOPORTDOCS)
 post-install:
