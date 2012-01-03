@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	17.4
+PORTVERSION=	17.5
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 LICENSE=	GPLv2 # (or later)
