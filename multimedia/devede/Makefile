@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devede
-DISTVERSION=	3.20.0
+DISTVERSION=	3.21.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -28,9 +28,6 @@ USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
 OPTIONS=	PSYCO "Enable devel/py-psyco optimization support" off
-
-# Strip last character not present in distribution.
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
