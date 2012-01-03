@@ -47,6 +47,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="810df820-3664-11e1-8fe3-00215c6a37bb">
+    <topic>wordpress -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.3.1,1</lt></range>
+      </package>
+      <package>
+        <name>de-wordpress</name>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>3.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>WordPress development team reports:</p>
+	<blockquote cite="http://wordpress.org/news/2012/01/wordpress-3-3-1/">
+	  <p>WordPress 3.3.1 is now available. This maintenance release
+	    fixes 15 issues with WordPress 3.3, as well as a fix for a
+	    cross-site scripting vulnerability that affected version 3.3.
+	    Thanks to Joshua H., Hoang T., Stefan Zimmerman, Chris K. and
+	    the Go Daddy security team for responsibly disclosing the bug
+	    to our security team.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://threatpost.com/en_us/blogs/xss-bug-found-wordpress-33-010312</url>
+    </references>
+    <dates>
+      <discovery>2012-01-03</discovery>
+      <entry>2012-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="048c77df-3211-11e1-9583-14dae938ec40">
     <topic>zabbix-frontend -- multiple XSS vulnerabilities</topic>
     <affects>
