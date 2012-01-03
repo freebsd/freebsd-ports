@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	4.0.11
+DISTVERSION=	4.0.12
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://ls.fvds.ru/ioncube/4.0.11/
-DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH_DIST}
+		http://ls.fvds.ru/ioncube/${DISTVERSION}/
+DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH:S,i386,x86,:S,amd64,x86-64,}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
 COMMENT=	An ionCube loader for PHP code
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
+USE_BZIP2=	yes
 USE_PHP=	yes
 USE_DOS2UNIX=	LICENSE.txt README.txt loader-wizard.php
 
@@ -32,24 +33,7 @@ VER=		8
 VER=		7
 .endif
 
-# Detect OS Architecture
-.if ${ARCH} == amd64
-ARCH_DIST=	x86-64
-.else
-ARCH_DIST=	x86
-.endif
-
-# Detect PHP version
-.if ${PHP_VER} == 4
-PHP_INSTVER=	4.4
-.endif
-.if ${PHP_VER} == 5
-PHP_INSTVER=	5.3
-.endif
-# If you have old lang/php52
-.if ${PHP_VER} == 52
-PHP_INSTVER=	5.2
-.endif
+PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/
