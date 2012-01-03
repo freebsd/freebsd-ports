@@ -1442,7 +1442,11 @@
     SUBDIR += py-pastescript
     SUBDIR += py-plone.app.blob
     SUBDIR += py-plone.app.caching
+    SUBDIR += py-plone.app.collection
+    SUBDIR += py-plone.app.content
     SUBDIR += py-plone.app.contentlisting
+    SUBDIR += py-plone.app.contentmenu
+    SUBDIR += py-plone.app.contentrules
     SUBDIR += py-plone.app.controlpanel
     SUBDIR += py-plone.app.folder
     SUBDIR += py-plone.app.form

@@ -1,0 +1,71 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/PasswordResetTool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/PasswordResetTool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/PasswordResetTool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/browser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/browser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/browser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/dtml/explainPWResetTool.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/portal_password_reset.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/portal_password_reset.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces/portal_password_reset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/profiles/default/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/profiles/default/toolset.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/mail_password_form.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/mail_password_form.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/mail_password_response.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/mail_password_template.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/passwordreset.cpy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/passwordreset.cpy.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_action.cpy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_action.cpy.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_constructURL.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_expired.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_expired.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_finish.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_finish.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_form.cpt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_form.cpt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_invalid.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/pwreset_invalid.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/registered_notify_template.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/registered_notify_template.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/validate_pwreset_password.vpy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset/validate_pwreset_userid.vpy
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/browser.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/test_doctests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/test_doctests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/test_doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests/view.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tool.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins/PasswordReset
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/interfaces
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool/dtml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PasswordResetTool
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

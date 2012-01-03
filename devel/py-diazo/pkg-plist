@@ -1,0 +1,811 @@
+bin/diazocompiler
+bin/diazopreprocessor
+bin/diazorun
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/annotate-rules.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/annotate-themes.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/apply-conditions.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/apply-rules.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/compiler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/compiler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/compiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/defaults.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/dummy.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/emit-stylesheet.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/filter.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/filter_html.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/filter_xhtml.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/fixup-themes.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/identity.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/merge-conditions.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/normalize-rules.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/rules.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/rules.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/rules.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/before-prepend-append-after/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/before-prepend-append-after/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/before-prepend-append-after/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/before-prepend-append-after/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments-outside-root-tag/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments-outside-root-tag/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments-outside-root-tag/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments-outside-root-tag/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-content-rules-with-variable/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-content-rules-with-variable/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-content-rules-with-variable/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-content-rules-with-variable/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy-xsl/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy-xsl/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy-xsl/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy-xsl/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/README.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-prefix/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-prefix/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-prefix/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-prefix/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xpath-child-selectors/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xpath-child-selectors/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xpath-child-selectors/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xpath-child-selectors/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xsl-template/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xsl-template/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xsl-template/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xsl-template/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/default-options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/extra.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content-comment/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content-comment/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content-comment/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content-comment/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-replace/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-replace/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-replace/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-replace/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-comment/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-comment/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-comment/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-comment/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-3/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-4/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-4/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-4/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-4/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-1/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-2/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-3/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-4/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-4/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-4/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-4/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/theme1.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1/theme2.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-rules-for-xinclude/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-rules-for-xinclude/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-rules-for-xinclude/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-rules-for-xinclude/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/notheme-xmlns/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/notheme-xmlns/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/notheme-xmlns/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/notheme-xmlns/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/null-if-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/null-if-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/null-if-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/null-if-content/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings/extra.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/README.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/custom_param.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/esi.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/explicit_theme.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/path_param.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/simple_transform.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/subrequest.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-1/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-both-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-both-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-both-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-both-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-content-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-content-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-content-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-content-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-theme-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-theme-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-theme-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-theme-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-both-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-both-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-both-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-both-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-content-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-content-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-content-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-content-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-theme-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-theme-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-theme-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-theme-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href/include.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-unconditional/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-unconditional/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-unconditional/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-unconditional/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-exists/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-exists/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-exists/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-exists/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-not-exists/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-not-exists/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-not-exists/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-not-exists/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-multi-attribute/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-multi-attribute/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-multi-attribute/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-multi-attribute/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-3/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-3/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-3/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-3/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-4/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-4/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-4/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-4/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-5/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-5/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-5/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-5/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-messages/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-messages/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-messages/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-messages/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-portlets/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-portlets/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-portlets/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-portlets/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-merge/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-merge/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-merge/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-merge/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-nomatch/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-nomatch/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-nomatch/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-nomatch/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-both-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-both-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-both-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-both-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-1/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-1/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-1/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-1/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-2/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-2/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-2/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-theme-children/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-theme-children/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-theme-children/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-theme-children/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-theme/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/without-theme/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/without-theme/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/without-theme/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/without-theme/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude/included-rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/update-namespace.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/wsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/wsgi.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/xinclude
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/without-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-if-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-strip-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-theme-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-content-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace-both-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-replace
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-theme-precedence
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-nomatch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-path
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-merge
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-notheme-if
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-multi-attributes-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-attribute-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-portlets
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-and-replace-messages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-drop-all-attributes-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-multi-attribute
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-not-exists
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-attribute-exists
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-unconditional
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-multiple-rules-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-href
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes-conditional-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-copy-all-attributes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-theme-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-content-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before-both-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-before
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-theme-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-content-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after-both-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-after
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/update-namespace-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi_files
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssiwait
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/ssi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace-after
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/replace
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend-append
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/prepend
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/pre-line-endings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/path-param-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/null-if-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/notheme-xmlns
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-rules-for-xinclude
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/nested-conditions-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-variable-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-theme-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-replace-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-8
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-7
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-6
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-4
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-comment
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-theme-children
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-replace
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content-comment
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/drop-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/document-includes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xsl-template
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-xpath-child-selectors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/css-prefix
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy-xsl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/copy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-rules-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-drop-in-append-1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/conditional-content-rules-with-variable
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments-outside-root-tag
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/comments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/before-prepend-append-after
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/append
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-ie-conditional-comments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix-disabled
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/absolute-prefix
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
