@@ -1448,6 +1448,8 @@
     SUBDIR += py-plone.app.contentmenu
     SUBDIR += py-plone.app.contentrules
     SUBDIR += py-plone.app.controlpanel
+    SUBDIR += py-plone.app.customerize
+    SUBDIR += py-plone.app.discussion
     SUBDIR += py-plone.app.folder
     SUBDIR += py-plone.app.form
     SUBDIR += py-plone.app.i18n
@@ -1456,10 +1458,16 @@
     SUBDIR += py-plone.app.kss
     SUBDIR += py-plone.app.layout
     SUBDIR += py-plone.app.linkintegrity
+    SUBDIR += py-plone.app.locales
     SUBDIR += py-plone.app.portlets
     SUBDIR += py-plone.app.querystring
+    SUBDIR += py-plone.app.redirector
     SUBDIR += py-plone.app.registry
+    SUBDIR += py-plone.app.search
     SUBDIR += py-plone.app.testing
+    SUBDIR += py-plone.app.upgrade
+    SUBDIR += py-plone.app.users
+    SUBDIR += py-plone.app.uuid
     SUBDIR += py-plone.app.viewletmanager
     SUBDIR += py-plone.app.vocabularies
     SUBDIR += py-plone.app.workflow
@@ -1477,6 +1485,8 @@
     SUBDIR += py-plone.locking
     SUBDIR += py-plone.memoize
     SUBDIR += py-plone.outputfilters
+    SUBDIR += py-plone.portlet.collection
+    SUBDIR += py-plone.portlet.static
     SUBDIR += py-plone.portlets
     SUBDIR += py-plone.registry
     SUBDIR += py-plone.resource
