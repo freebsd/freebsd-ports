@@ -86,6 +86,7 @@ include/cyrus/prot.h
 include/cyrus/retry.h
 include/cyrus/rfc822date.h
 include/cyrus/signals.h
+include/cyrus/strarray.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
