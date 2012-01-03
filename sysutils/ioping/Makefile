@@ -20,6 +20,9 @@ PLIST_FILES=	bin/ioping
 
 MAKE_ENV=	VERSION=${PORTVERSION}
 
+# for the benefit of <80000
+CFLAGS+=	-lm
+
 do-build:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -DVERSION=${PORTVERSION} ioping.c -o ioping
