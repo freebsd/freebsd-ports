@@ -41,6 +41,7 @@ lib/seed7/inifile.s7i
 lib/seed7/integer.s7i
 lib/seed7/keybd.s7i
 lib/seed7/line.s7i
+lib/seed7/listener.s7i
 lib/seed7/lower.s7i
 lib/seed7/mahjng32.s7i
 lib/seed7/math.s7i
@@ -52,6 +53,7 @@ lib/seed7/pic16.s7i
 lib/seed7/pic32.s7i
 lib/seed7/pixmap_file.s7i
 lib/seed7/pixmapfont.s7i
+lib/seed7/poll.s7i
 lib/seed7/progs.s7i
 lib/seed7/rational.s7i
 lib/seed7/reverse.s7i
@@ -63,6 +65,7 @@ lib/seed7/scanstri.s7i
 lib/seed7/seed7_05.a
 lib/seed7/seed7_05.s7i
 lib/seed7/shell.s7i
+lib/seed7/sockbase.s7i
 lib/seed7/socket.s7i
 lib/seed7/sokoban1.s7i
 lib/seed7/stars.s7i
