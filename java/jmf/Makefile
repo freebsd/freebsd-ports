@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	#http://java.sun.com/products/java-media/jmf/2.1.1/download.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
-DISTFILES=	${DISTNAME}.zip
 
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Java Media Framework
@@ -23,7 +22,7 @@ NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}
 
-RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
+RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -32,31 +31,28 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 # Check for JMF sources
-.if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access:\n\
-http://java.sun.com/products/java-media/jmf/2.1.1/download.html\n\
-with a web browser and follow the \"Download JMF ${PORTVERSION}\" link\n\
-Select download format: cross-platform format\n\
-Please place this file in ${DISTDIR}.\n
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE=	because of licensing restrictions, you must fetch the source\
+distribution manually.\
+Please access: http://java.sun.com/products/java-media/jmf/2.1.1/download.html\
+with a web browser and follow the "Download JMF ${PORTVERSION}" link.\
+Select download format: cross-platform format.  Please place this file in\
+${DISTDIR}
 .endif
 
 do-configure:
-	${RM} ${WRKSRC}/bin/*.orig
 	for file in `${LS} ${WRKSRC}/bin/jm*`; do \
 		${REINPLACE_CMD} -e "s:%%JAVAJARDIR%%:${JAVAJARDIR}:g" -e "s:%%PREFIX%%:${PREFIX}:g" $${file}; \
 	done
-	${RM} ${WRKSRC}/bin/*.bak
+	@${FIND} ${WRKSRC}/bin -type f \( -name '*.bak' -o -name '*.orig' \) -delete
 
 do-install:
-	-${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/jm* ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${WRKSRC}/lib/jmf.properties \
 		${JAVAJARDIR}/
 .if !defined(NOPORTDOCS)
-	-${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 .endif
 
