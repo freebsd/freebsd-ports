@@ -12,29 +12,29 @@ MASTER_SITES=	ftp://ftp.corpit.ru/home/mjt/mdpop3d/
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple and small POP3 daemon implementation with Maildir support
 
+PLIST_FILES=	libexec/mdpop3d
 MAN8=		mdpop3d.8
 MANCOMPRESSED=	no
 
-OPTIONS=	PAM   "Build with PAM support"                      	off \
-		APOP  "Build with APOP command support (requires PAM)"	off
+OPTIONS=	PAM	"Build with PAM support"	off \
+		APOP	"Build with APOP command support (requires PAM)"	off
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIBS = -lpam -ldl|LIBS = -lpam|' \
-	                                ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|LIBS = -lpam -ldl|LIBS = -lpam|;/^CC[[:blank:]]*=/d' \
+		${WRKSRC}/Makefile
 .if defined(WITHOUT_PAM)
 	@${REINPLACE_CMD} -e 's|LIBS = -lpam|LIBS = -lcrypt|' \
-			${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|DEFS = -DUSE_PAM|#DEFS = -DUSE_PAM|' \
-	                ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|OPTS = -DUSE_APOP|#OPTS = -DUSE_APOP|' \
-	                ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 .endif
-
 .if defined(WITHOUT_APOP)
 	@${REINPLACE_CMD} -e 's|OPTS = -DUSE_APOP|#OPTS = -DUSE_APOP|' \
-	                ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 .endif
 
 do-install:
