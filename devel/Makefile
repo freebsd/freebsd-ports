@@ -2993,6 +2993,7 @@
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-Persistence
+    SUBDIR += py-Products.ATContentTypes
     SUBDIR += py-Products.ATReferenceBrowserWidget
     SUBDIR += py-Products.Archetypes
     SUBDIR += py-Products.BTreeFolder2
@@ -3016,7 +3017,9 @@
     SUBDIR += py-Products.Marshall
     SUBDIR += py-Products.MimetypesRegistry
     SUBDIR += py-Products.OFSP
+    SUBDIR += py-Products.PasswordResetTool
     SUBDIR += py-Products.PlacelessTranslationService
+    SUBDIR += py-Products.PloneLanguageTool
     SUBDIR += py-Products.PluginRegistry
     SUBDIR += py-Products.PortalTransforms
     SUBDIR += py-Products.PythonScripts
@@ -3042,6 +3045,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-application
     SUBDIR += py-archetypes.kss
+    SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argparse
@@ -3085,6 +3089,7 @@
     SUBDIR += py-demjson
     SUBDIR += py-dexml
     SUBDIR += py-dialog
+    SUBDIR += py-diazo
     SUBDIR += py-distorm
     SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
@@ -3093,6 +3098,7 @@
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-event
+    SUBDIR += py-experimental.cssselect
     SUBDIR += py-extended_threading
     SUBDIR += py-extremes
     SUBDIR += py-ez_xml

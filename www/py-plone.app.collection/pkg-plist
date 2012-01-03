@@ -1,0 +1,78 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates/all_content.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates/standard_view.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates/summary_view.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates/tabular_view.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates/thumbnail_view.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/collection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/collection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/collection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/integration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/integration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/integration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/collectionportlet.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/collectionportlet.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/collectionportlet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/templates/collectionportlet.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/factorytool.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/portlets.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/rolemap.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/types.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/types/Collection.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/test_collection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/test_collection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests/test_collection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/validators.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default/types
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/portlets
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/collection
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
