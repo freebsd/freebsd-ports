@@ -1,0 +1,67 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/profiles/default/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/profiles/default/registry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/querybuilder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/querybuilder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/querybuilder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/queryparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/queryparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/queryparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/registryreader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/registryreader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/registryreader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/results.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/profiles/registry/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/profiles/registry/registry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/registry_testdata.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/registry_testdata.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/registry_testdata.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryBuilder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryBuilder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryBuilder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryParser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryParser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testQueryParser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryIntegration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryIntegration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryIntegration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryReader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryReader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/testRegistryReader.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/profiles/registry
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/profiles/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/querystring
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
