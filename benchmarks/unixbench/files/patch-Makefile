@@ -1,18 +1,32 @@
 --- Makefile.orig	Sun Dec 19 01:29:33 2004
 +++ Makefile	Sun Dec 19 01:32:06 2004
-@@ -30,8 +30,9 @@
- ##############################################################################
+@@ -30,8 +30,6 @@
  ID="@(#)Makefile:3.9 -- 5/15/91 19:30:15";
  SHELL = /bin/sh
 -#HZ = ????  	   #(read from environment)
 -CFLAGS = -DTIME
+-CC=gcc
 +HZ = 128
-+CFLAGS ?= -O -finline-functions -funrool-loops -fomit-frame-pointer
-+CFLAGS+=-DTIME
- CC=gcc
  
  ## For Linux 486/Pentium, GCC 2.7.x and 2.8.x
-@@ -60,8 +61,8 @@
+ #OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math \
+@@ -44,7 +42,7 @@ CC=gcc
+ #	-m386 -malign-loops=1 -malign-jumps=1 -malign-functions=1
+ 
+ ## For Solaris 2, or general-purpose GCC 2.7.x
+-OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math -Wall
++#OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math -Wall
+ 
+ ## Very generic
+ #OPTON = -O
+@@ -54,14 +52,14 @@ OPTON = -O2 -fomit-frame-pointer -fforce
+ #CFLAGS = -DTIME -std1 -verbose -w0
+ 
+ ## generic gcc CFLAGS.  -DTIME must be included
+-CFLAGS = -DTIME -Wall -pedantic -ansi
++CFLAGS += -DTIME -Wall -pedantic -ansi
+ 
+ # local directories
  PROGDIR = ./pgms
  SRCDIR = ./src
  TESTDIR = ./testdir
