@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.TinyMCE
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,8 @@ COMMENT=	Adds support for TinyMCE to Plone
 LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.imaging>=1.0.2:${PORTSDIR}/www/py-plone.app.imaging \
-		${PYTHON_PKGNAMEPREFIX}plone.outputfilters>=0:${PORTSDIR}/www/py-plone.outputfilters
+		${PYTHON_PKGNAMEPREFIX}plone.outputfilters>=0:${PORTSDIR}/www/py-plone.outputfilters \
+		${PYTHON_PKGNAMEPREFIX}elementtree>=0:${PORTSDIR}/devel/py-elementtree
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	2.6+
