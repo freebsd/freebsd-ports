@@ -1371,6 +1371,9 @@
     SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
+    SUBDIR += py-Products.CMFPlone
+    SUBDIR += py-Products.TinyMCE
+    SUBDIR += py-Products.kupu
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
@@ -1454,6 +1457,7 @@
     SUBDIR += py-plone.app.form
     SUBDIR += py-plone.app.i18n
     SUBDIR += py-plone.app.imaging
+    SUBDIR += py-plone.app.iterate
     SUBDIR += py-plone.app.jquerytools
     SUBDIR += py-plone.app.kss
     SUBDIR += py-plone.app.layout
@@ -1465,6 +1469,7 @@
     SUBDIR += py-plone.app.registry
     SUBDIR += py-plone.app.search
     SUBDIR += py-plone.app.testing
+    SUBDIR += py-plone.app.theming
     SUBDIR += py-plone.app.upgrade
     SUBDIR += py-plone.app.users
     SUBDIR += py-plone.app.uuid

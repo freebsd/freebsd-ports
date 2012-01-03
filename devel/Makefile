@@ -3005,6 +3005,7 @@
     SUBDIR += py-Products.CMFDynamicViewFTI
     SUBDIR += py-Products.CMFEditions
     SUBDIR += py-Products.CMFFormController
+    SUBDIR += py-Products.CMFPlacefulWorkflow
     SUBDIR += py-Products.CMFQuickInstallerTool
     SUBDIR += py-Products.CMFTestCase
     SUBDIR += py-Products.CMFUid
@@ -3020,6 +3021,7 @@
     SUBDIR += py-Products.PasswordResetTool
     SUBDIR += py-Products.PlacelessTranslationService
     SUBDIR += py-Products.PloneLanguageTool
+    SUBDIR += py-Products.PloneTestCase
     SUBDIR += py-Products.PluginRegistry
     SUBDIR += py-Products.PortalTransforms
     SUBDIR += py-Products.PythonScripts
