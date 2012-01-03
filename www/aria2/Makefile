@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Yet another download tool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-libxml2 \
 		--without-gnutls --with-openssl --with-openssl-prefix=/usr \
