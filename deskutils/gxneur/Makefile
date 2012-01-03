@@ -35,6 +35,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/all_modifiers/d' ${WRKSRC}/src/misc.c
+
 post-install:
 	@-update-desktop-database
 
