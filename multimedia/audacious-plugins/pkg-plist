@@ -202,7 +202,9 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/ro/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
 @dirrm lib/audacious/Effect
 @dirrm lib/audacious/Container
