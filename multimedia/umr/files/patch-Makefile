@@ -1,9 +1,10 @@
 --- Makefile.orig	Fri Feb 18 15:37:53 2000
 +++ Makefile	Thu Oct 19 17:53:14 2006
-@@ -8,20 +8,6 @@
+@@ -7,21 +7,6 @@
+ GLOBALDEPS = Makefile umr.h
  OBJS = main.o unrealfmt.o unrealfmtdata.o
  
- CC = gcc
+-CC = gcc
 -CFLAGS = -march=k6 -mcpu=k6 -Wall
 -
 -ifdef DEBUG
