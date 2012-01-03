@@ -26,7 +26,7 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && INSTALLDIR=${PREFIX}/lib/ocaml/site-lib/${PORTNAME} ${SH} ./build install-plugin
 
-post-extract:
+pre-install:
 # For nonstandard prefixes
 .if !exists(${OCAMLFIND_DESTDIR})
 	${MKDIR} ${OCAMLFIND_DESTDIR}
