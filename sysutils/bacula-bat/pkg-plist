@@ -2,3 +2,4 @@ etc/bat.conf.sample
 sbin/bat
 %%INDEP%%lib/libbac.so.%%MAJOR%%
 %%INDEP%%lib/libbaccfg.so.%%MAJOR%%
+%%INDEP%%lib/libbacfind.so.%%MAJOR%%
