@@ -83,7 +83,6 @@
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
-    SUBDIR += proftpd-devel
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
     SUBDIR += proma
