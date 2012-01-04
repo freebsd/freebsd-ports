@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	imhangul
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	korean
-MASTER_SITES=	http://kldp.net/frs/download.php/5924/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	GTK+-2.0 hangul input module
