@@ -7,15 +7,12 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Update dynamic DNS entries
-
-.ifndef WITHOUT_SSL
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-.endif
 
 LICENSE=	GPLv2
 
@@ -23,6 +20,14 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
+
+OPTIONS=	SSL "Enable SSL support" ON
+
+.include <bsd.port.options.mk>
+
+.ifndef WITHOUT_SSL
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+.endif
 
 SUB_FILES=	pkg-message ddclient_force
 PKGMESSAGE=	${WRKDIR}/pkg-message

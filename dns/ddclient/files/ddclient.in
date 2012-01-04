@@ -10,6 +10,9 @@
 #
 # ddclient_enable="YES"
 #
+# By default, ddclient does not daemonize.  To launch ddclient
+# as a daemon, add the -daemon 300 argument to ddclient_flags
+#
 
 . /etc/rc.subr
 
@@ -22,6 +25,6 @@ required_files="%%PREFIX%%/etc/${name}.conf"
 load_rc_config ${name}
 
 : ${ddclient_enable="NO"}
-: ${ddclient_flags="-daemon 300"}
+: ${ddclient_flags=""}
 
 run_rc_command "$1"
