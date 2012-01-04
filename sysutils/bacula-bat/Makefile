@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	bacula
+PORTREVISION=	1
 PKGNAMESUFFIX=	-bat
 
 COMMENT=	The network backup solution (GUI)
@@ -67,6 +68,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbac.so.${PORTVERSION:R:R} \
 	    ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbaccfg.so.${PORTVERSION:R:R} \
+	    ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/src/findlib/.libs/libbacfind.so.${PORTVERSION:R:R} \
 	    ${PREFIX}/lib
 .else
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin
