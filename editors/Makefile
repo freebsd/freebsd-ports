@@ -53,7 +53,6 @@
     SUBDIR += fte
     SUBDIR += fxite
     SUBDIR += gate
-    SUBDIR += ged
     SUBDIR += gedit
     SUBDIR += gedit-plugins
     SUBDIR += ghex
