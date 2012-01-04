@@ -28,7 +28,7 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --ignore-deps
 MAKE_ENV=	C="${CC}" AGGCXXFLAGS="${CXXFLAGS}"
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 
