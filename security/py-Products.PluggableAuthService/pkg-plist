@@ -266,6 +266,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_UserPropertySheet.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_UserPropertySheet.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_UserPropertySheet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_events.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_events.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_events.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_exportimport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_exportimport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/tests/test_exportimport.pyo
