@@ -53,6 +53,7 @@
     SUBDIR += layouteditor
     SUBDIR += leocad
     SUBDIR += libgeda
+    SUBDIR += librecad
     SUBDIR += linux-eagle5
     SUBDIR += magic
     SUBDIR += mars
