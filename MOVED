@@ -3150,3 +3150,4 @@ www/wget4web||2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-Test||2012-01-01|Has expired: Depends on expired www/apache13
 net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
 editors/ged||2012-01-04|Removed: Use ed from base instead
+ftp/proftpd-devel||2012-01-04|Removed
