@@ -30,15 +30,12 @@ BDREL=		5
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	/usr/bin/printf
-IGNORE=	:\n\
-You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after\n\
-reading and agreeing to the license at:\n\
-http://download.bitdefender.com/SMB/Workstation_Security_and_Management/BitDefender_Antivirus_Scanner_for_Unices/Unix/Old/EN/freebsd/Ver_${BDREL}/\n\
-A direct link to the distribution file:\n\
-http://download.bitdefender.com/SMB/Workstation_Security_and_Management/BitDefender_Antivirus_Scanner_for_Unices/Unix/Old/EN/freebsd/Ver_${BDREL}/bdc-7.0.1.2-fbsd${BDREL}.tar.gz\n\
-Once the file has been downloaded move it to\n\
-${DISTDIR} and restart the build.\n
+IGNORE=	you have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after reading\
+and agreeing to the license at:\
+http://download.bitdefender.com/SMB/Workstation_Security_and_Management/BitDefender_Antivirus_Scanner_for_Unices/Unix/Old/EN/freebsd/Ver_${BDREL}/.\
+Here is a direct link to the distribution file:\
+http://download.bitdefender.com/SMB/Workstation_Security_and_Management/BitDefender_Antivirus_Scanner_for_Unices/Unix/Old/EN/freebsd/Ver_${BDREL}/bdc-7.0.1.2-fbsd${BDREL}.tar.gz.\
+Once the file has been downloaded, move it to ${DISTDIR} and restart the build
 .endif
 
 do-install:
