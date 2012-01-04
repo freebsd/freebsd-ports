@@ -1,0 +1,22 @@
+--- bin/netbeans.orig	2011-09-26 01:36:52.000000000 +0200
++++ bin/netbeans	2012-01-04 16:50:05.000000000 +0100
+@@ -131,6 +131,10 @@
+         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
+         mem=`expr $mem / 1048576`
+         ;;
++	 FreeBSD*)
++		  mem=`/sbin/sysctl -n hw.realmem`
++		  mem=`expr $mem / 1048576`
++		  ;;
+         *) 
+         ;;
+     esac
+@@ -158,7 +162,7 @@
+ if grep -v -- "-J-XX:MaxPermSize" >/dev/null <<EOF ; then
+ ${netbeans_default_options}
+ EOF
+-	netbeans_default_options="-J-XX:MaxPermSize=384m ${netbeans_default_options}"
++	netbeans_default_options="-J-XX:MaxPermSize=512m ${netbeans_default_options}"
+ fi
+ 
+ launchNbexec() {
