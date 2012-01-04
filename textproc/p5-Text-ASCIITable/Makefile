@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-ASCIITable
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,5 +30,8 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/example/ansi-example.pl ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Example installed in ${EXAMPLESDIR}."
 .endif
+
+regression-test: build
+	cd ${WRKSRC}/ && ./Build test
 
 .include <bsd.port.mk>
