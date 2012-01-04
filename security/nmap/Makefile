@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap
-DISTVERSION=	5.61TEST2
+DISTVERSION=	5.61TEST4
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--without-localdirs \
 		--without-zenmap \
 		--without-ndiff \
 		--with-libpcre=${LOCALBASE} \
-		--with-liblua=${LOCALBASE}
+		--with-liblua=${LOCALBASE} \
+		--without-nmap-update
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 # fix for gcc from ports
