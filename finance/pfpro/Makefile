@@ -36,14 +36,12 @@ PFP_BUNDLE=	${DISTNAME}${EXTRACT_SUFX}
 
 # Check for SDK bundle
 .if !exists(${DISTDIR}/${PFP_BUNDLE})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-The VeriSign PayFlow Pro SDK is only available to customers who have\n\
-subscribed to this service.  Please access your account at\n\
-https://manager.verisign.com/ and retrieve the FreeBSD 5.x version\n\
-of the SDK from the Downloads area.  You will be required to agree to\n\
-some terms and conditions.  After downing the SDK, place ${PFP_BUNDLE}\n\
-in ${DISTDIR}.\n
+IGNORE=	the VeriSign PayFlow Pro SDK is only available to customers who\
+have subscribed to this service.  Please access your account at\
+https://manager.verisign.com/ and retrieve the FreeBSD 5.x version\
+of the SDK from the Downloads area.  You will be required to agree to\
+some terms and conditions.  After downing the SDK, place ${PFP_BUNDLE}\
+in ${DISTDIR} and re-run make
 .endif
 
 post-patch:
