@@ -3148,5 +3148,5 @@ www/p5-libapreq-static||2012-01-01|Has expired: Depends on expired www/apache13
 www/web-traceroute||2012-01-01|Has expired: Depends on expired www/apache13
 www/wget4web||2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-Test||2012-01-01|Has expired: Depends on expired www/apache13
-www/net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
-editors/ged||2012-01-04|Removed: used ed from base instead
+net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
+editors/ged||2012-01-04|Removed: Use ed from base instead
