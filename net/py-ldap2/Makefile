@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,16 +24,15 @@ USE_PYDISTUTILS=	easy_install
 USE_OPENLDAP=	yes
 PYDISTUTILS_PKGNAME=	python-ldap
 PYEASYINSTALL_ARCHDEP=	yes
+WANT_OPENLDAP_VER=	24
 
 REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
-		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,'
+		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,' \
+		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,'
 
 .if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
-REPLACE_ARGS+=	-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,'
 CONFLICTS+=	openldap2[34]-client-2.*
-.else
-REPLACE_ARGS+=	-e 's=ldap_r lber sasl2 ssl crypto=ldap_r lber ssl crypto='
 .endif
 
 pre-everything::
@@ -48,5 +47,9 @@ pre-everything::
 
 do-configure:
 	@${REINPLACE_CMD} ${REPLACE_ARGS} ${WRKSRC}/setup.cfg
+.if !defined(WITH_SASL)
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
+.endif
 
 .include <bsd.port.mk>
