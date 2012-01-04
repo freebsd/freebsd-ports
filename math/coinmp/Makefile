@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CoinMP
-PORTVERSION=	1.4.0
+PORTVERSION=	1.6.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 EXTRACT_SUFX=	.tgz
@@ -39,6 +39,19 @@ CXXFLAGS+=	-ffast-math
 .ifndef WITH_DEBUG
 CXXFLAGS+=	-fomit-frame-pointer
 .endif
+
+post-patch::
+	@${REINPLACE_CMD} -E -e \
+		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
+		${WRKSRC}/Clp/Makefile.in ${WRKSRC}/Osi/Makefile.in \
+		${WRKSRC}/Cbc/Makefile.in ${WRKSRC}/Cgl/Makefile.in \
+		${WRKSRC}/CoinUtils/Makefile.in ${WRKSRC}/CoinMP/Makefile.in
+
+post-install:
+.ifndef NOPORTDOCS
+	${MV} ${PREFIX}/share/coin/doc ${DOCSDIR}
+.endif
+	${RM} -rf ${PREFIX}/share/coin
 
 check regression-test test: build
 	@(cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
