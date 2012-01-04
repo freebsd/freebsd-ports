@@ -1,0 +1,19 @@
+--- Framework/Pantomime/NSString+Extensions.m.orig	2011-06-05 06:45:21.000000000 +0200
++++ Framework/Pantomime/NSString+Extensions.m	2012-01-02 22:46:00.000000000 +0100
+@@ -38,7 +38,15 @@
+ #include <CoreFoundation/CFString.h>
+ #include <CoreFoundation/CFStringEncodingExt.h>
+ #else
+-#include <GNUstepBase/Additions.h>
++#import	<GNUstepBase/GSVersionMacros.h>
++#import	<GNUstepBase/GNUstep.h>
++
++#import	<GNUstepBase/GSFunctions.h>
++#import	<GNUstepBase/GSLocale.h>
++#import	<GNUstepBase/GSLock.h>
++#import	<GNUstepBase/GSMime.h>
++#import	<GNUstepBase/GSXML.h>
++#import	<GNUstepBase/Unicode.h>
+ #endif
+ 
+ #include <ctype.h>

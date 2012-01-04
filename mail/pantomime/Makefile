@@ -25,4 +25,8 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 DEFAULT_LIBVERSION=	1.2
 
+.if !defined(WITH_GNUSTEP_DEVEL)
+EXTRA_PATCHES=	${FILESDIR}/NSString+Extensions.m.patch
+.endif
+
 .include <bsd.port.mk>
