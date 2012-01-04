@@ -9,13 +9,14 @@ PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
 LIB_DEPENDS=	canberra.0:${PORTSDIR}/audio/libcanberra \
-   		notify.4:${PORTSDIR}/devel/libnotify
+   		notify.4:${PORTSDIR}/devel/libnotify \
+		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -24,8 +25,8 @@ USE_TCL=	84+
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR} `pkg-config --cflags libglade-2.0`
 
-BASE_VERSION=	0.9.95
-NIGHTLY_BUILD=	30-06-11
+BASE_VERSION=	0.9.96
+NIGHTLY_BUILD=	01-01-12
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${BASE_VERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -37,7 +38,7 @@ PLIST_FILES=	${BASEDIR}/${PORTNAME}.so \
 PLIST_DIRS=	${BASEDIR}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|;s|$$(TCL_VERSION)|${TCL_VER:S/.//}|g' ${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|;s|$$(TCL_VERSION)|${TCL_VER:S/.//}|g;/fileFilter/d' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|\[info library\]|${PREFIX}/lib|; s|tclsh|${TCLSH}|g;' ${BUILD_WRKSRC}/install.tcl
 
 .include <bsd.port.mk>
