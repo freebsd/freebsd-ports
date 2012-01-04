@@ -17,6 +17,8 @@ COMMENT=	Scanner for audio file metadata and tag information
 
 LICENSE=	GPLv2
 
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Audio::Scan.3
