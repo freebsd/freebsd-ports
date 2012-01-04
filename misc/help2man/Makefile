@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.40.4
+PORTVERSION=	1.40.5
 CATEGORIES=	misc
 MASTER_SITES=	GNU/${PORTNAME}
 
@@ -34,7 +34,7 @@ CFLAGS+=	-lintl
 MANLANG=	"" ${LANGS} ${LANGS_MTREE}
 USE_GETTEXT=	yes
 
-LANGS=		de el eo fi fr it pl pt_BR ru sv uk vi
+LANGS=		de el eo fi fr it pl pt_BR ru sr sv uk vi
 LANGS_MTREE=	ja	# languages that already exist in BSD.local.dist
 
 PLIST_FILES+=	lib/bindtextdomain.so
