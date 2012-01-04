@@ -43,14 +43,8 @@ PLIST_SUB+=		PORTDOCS=
 .endif
 
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-Please access\n\
-\n\
-  ${DOWNLOAD_URL}\n\
-\n\
-with a web browser, fill the web form. Please place the downloaded\n\
-${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}\n\n
+IGNORE=	please access ${DOWNLOAD_URL} with a web browser, fill the web form.\
+Please place the downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}
 .endif
 
 .if ${OSVERSION} < 700037
