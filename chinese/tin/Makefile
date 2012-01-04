@@ -6,6 +6,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	4
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
