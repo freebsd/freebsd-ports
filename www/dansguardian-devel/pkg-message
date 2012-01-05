@@ -1,0 +1,15 @@
+===>   Please Note:
+
+*******************************************************************************
+       This port has created a log file named dansguardian.log that can get
+       quite large.  Please read the newsyslog(8) man page for instructions
+       on configuring log rotation and compression.
+
+       This port has been converted to the new RC framework and should work
+       correctly via rcorder.  Please read the comments in the startup script
+       for instructions on enabling the daemon.
+
+       WITH_CLAMAV, WITH_ICAP, WITH_KASP, WITH_NTLM are all experimental
+       options that I am not currently able to test.  Let me know how these
+       work (or not) for you.  (Patches always welcome.)
+*******************************************************************************

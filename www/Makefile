@@ -114,6 +114,7 @@
     SUBDIR += cutycapt
     SUBDIR += dalbum
     SUBDIR += dansguardian
+    SUBDIR += dansguardian-devel
     SUBDIR += davical
     SUBDIR += decss
     SUBDIR += demoroniser
