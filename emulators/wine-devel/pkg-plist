@@ -295,6 +295,8 @@ include/wine/windows/guiddef.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
+include/wine/windows/htiface.h
+include/wine/windows/htiface.idl
 include/wine/windows/htiframe.h
 include/wine/windows/htiframe.idl
 include/wine/windows/htmlhelp.h
@@ -745,6 +747,7 @@ lib/wine/cryptdlg.dll.so
 lib/wine/cryptdll.dll.so
 lib/wine/cryptnet.dll.so
 lib/wine/cryptui.dll.so
+lib/wine/cscript.exe.so
 lib/wine/ctapi32.dll.so
 lib/wine/ctl3d.dll16.so
 lib/wine/ctl3d32.dll.so
@@ -805,6 +808,7 @@ lib/wine/ddeml.dll16.so
 lib/wine/ddraw.dll.so
 lib/wine/ddrawex.dll.so
 lib/wine/devenum.dll.so
+lib/wine/dhcpcsvc.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
 lib/wine/dispdib.dll16.so
@@ -883,6 +887,7 @@ lib/wine/fakedlls/cryptdlg.dll
 lib/wine/fakedlls/cryptdll.dll
 lib/wine/fakedlls/cryptnet.dll
 lib/wine/fakedlls/cryptui.dll
+lib/wine/fakedlls/cscript.exe
 lib/wine/fakedlls/ctapi32.dll
 lib/wine/fakedlls/ctl3d.dll16
 lib/wine/fakedlls/ctl3d32.dll
@@ -943,6 +948,7 @@ lib/wine/fakedlls/ddeml.dll16
 lib/wine/fakedlls/ddraw.dll
 lib/wine/fakedlls/ddrawex.dll
 lib/wine/fakedlls/devenum.dll
+lib/wine/fakedlls/dhcpcsvc.dll
 lib/wine/fakedlls/dinput.dll
 lib/wine/fakedlls/dinput8.dll
 lib/wine/fakedlls/dispdib.dll16
