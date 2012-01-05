@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT?=	DBI persistent connection, authentication and authorization
 
-SLAVEDIRS=	www/p5-Apache-DBI-mp2
-
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+CONFLICTS=	p5-Apache-DBI-mp[12]*
 
 MAKE_JOBS_SAFE=	yes
 
@@ -28,12 +28,6 @@ PERL_CONFIGURE=	yes
 USE_APACHE?=	20+
 
 .include <bsd.port.pre.mk>
-
-# prevent from direct including
-# ports should use one of the SLAVEPORTS
-.if !defined(PKGNAMESUFFIX)
-IGNORE=		use ${SLAVEDIRS} instead
-.endif
 
 PLIST_FILES=	%%SITE_PERL%%/Apache/DBI.pm \
 		%%SITE_PERL%%/Apache/AuthDBI.pm \
