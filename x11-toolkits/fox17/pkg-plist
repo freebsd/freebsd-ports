@@ -320,6 +320,8 @@ include/fox-%%MAJORVER%%/FXVec4d.h
 include/fox-%%MAJORVER%%/FXVec4f.h
 include/fox-%%MAJORVER%%/FXVerticalFrame.h
 include/fox-%%MAJORVER%%/FXVisual.h
+include/fox-%%MAJORVER%%/FXWEBPIcon.h
+include/fox-%%MAJORVER%%/FXWEBPImage.h
 include/fox-%%MAJORVER%%/FXWindow.h
 include/fox-%%MAJORVER%%/FXWizard.h
 include/fox-%%MAJORVER%%/FXWorker.h
