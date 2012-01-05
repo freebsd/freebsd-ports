@@ -47,6 +47,67 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c7a3ee2-3654-11e1-b404-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>2.4.*</ge><lt>3.6.7</lt></range>
+	<range><ge>4.0.*</ge><lt>4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.4.12/">
+	  <p>The following security issues have been discovered in Bugzilla:</p>
+	  <ul>
+	    <li>Tabular and graphical reports, as well as new charts have
+	      a debug mode which displays raw data as plain text. This
+	      text is not correctly escaped and a crafted URL could
+	      use this vulnerability to inject code leading to XSS.</li>
+	    <li>The User.offer_account_by_email WebService method ignores
+	      the user_can_create_account setting of the authentication
+	      method and generates an email with a token in it which the
+	      user can use to create an account. Depending on the
+	      authentication method being active, this could allow the
+	      user to log in using this account.
+	      Installations where the createemailregexp parameter is
+	      empty are not vulnerable to this issue.</li>
+	    <li>The creation of bug reports and of attachments is
+	      not protected by a token and so they can be created
+	      without the consent of a user if the relevant code is
+	      embedded in an HTML page and the user visits this page.
+	      This behavior was intentional to let third-party
+	      applications submit new bug reports and attachments easily.
+	      But as this behavior can be abused by a malicious user, it
+	      has been decided to block submissions with no valid
+	      token starting from version 4.2rc1. Older branches are not
+	      patched to not break these third-party applications after
+	      the upgrade.</li>
+	  </ul>
+	  <p>All affected installations are encouraged to upgrade as soon as
+            possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3657</cvename>
+      <cvename>CVE-2011-3667</cvename>
+      <cvename>CVE-2011-3668</cvename>
+      <cvename>CVE-2011-3669</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=697699</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=711714</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=703975</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=703983</url>
+    </references>
+    <dates>
+      <discovery>2011-11-28</discovery>
+      <entry>2012-01-05</entry>
+    </dates>
+  </vuln>
+
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="810df820-3664-11e1-8fe3-00215c6a37bb">
     <topic>wordpress -- cross site scripting vulnerability</topic>
     <affects>
