@@ -568,7 +568,6 @@
     SUBDIR += p5-Apache-ConfigParser
     SUBDIR += p5-Apache-DB
     SUBDIR += p5-Apache-DBI
-    SUBDIR += p5-Apache-DBI-mp2
     SUBDIR += p5-Apache-Gallery
     SUBDIR += p5-Apache-GopherHandler
     SUBDIR += p5-Apache-Htgroup

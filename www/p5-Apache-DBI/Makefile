@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	Apache-DBI
+PORTNAME=	Apache-DBI
 PORTVERSION=	1.11
 CATEGORIES=	www databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT?=	DBI persistent connection, authentication and authorization
+COMMENT=	DBI persistent connection, authentication and authorization
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
