@@ -3116,7 +3116,7 @@ www/p5-Apache-AxKit-Plugin-AddXSLParams-Request||2012-01-01|Has expired: Depends
 www/p5-Apache-Clean|www/p5-Apache-Clean2|2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-Compress||2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-CompressClientFixup||2012-01-01|Has expired: Depends on expired www/apache13
-www/p5-Apache-DBI-mp1|www/p5-Apache-DBI-mp2|2012-01-01|Has expired: Depends on expired www/apache13
+www/p5-Apache-DBI-mp1|www/p5-Apache-DBI|2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-DebugInfo||2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-DumpHeaders||2012-01-01|Has expired: Depends on expired www/apache13
 www/p5-Apache-Filter||2012-01-01|Has expired: Depends on expired www/apache13
@@ -3150,3 +3150,4 @@ www/p5-Apache-Test||2012-01-01|Has expired: Depends on expired www/apache13
 net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
 editors/ged||2012-01-04|Removed: Use ed from base instead
 ftp/proftpd-devel||2012-01-04|Removed
+www/p5-Apache-DBI-mp2|www/p5-Apache-DBI|2012-01-01|This sub-port is no longer needed
