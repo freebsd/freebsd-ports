@@ -89,6 +89,7 @@
 %%DATADIR%%/drivers/adodb-sapdb.inc.php
 %%DATADIR%%/drivers/adodb-sqlanywhere.inc.php
 %%DATADIR%%/drivers/adodb-sqlite.inc.php
+%%DATADIR%%/drivers/adodb-sqlite3.inc.php
 %%DATADIR%%/drivers/adodb-sqlitepo.inc.php
 %%DATADIR%%/drivers/adodb-sybase.inc.php
 %%DATADIR%%/drivers/adodb-sybase_ase.inc.php
