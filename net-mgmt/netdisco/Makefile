@@ -7,7 +7,7 @@
 
 PORTNAME=	netdisco
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_with_mibs
@@ -16,7 +16,7 @@ MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Web-based network management tool for moderate to large networks
 
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 		\
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2			\
+		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI			\
 		${SITE_PERL}/${PERL_ARCH}/APR/Request/Apache2.pm:${PORTSDIR}/www/p5-libapreq2 	\
 		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP			\
 		${SITE_PERL}/SNMP/Info.pm:${PORTSDIR}/net-mgmt/p5-SNMP-Info			\
