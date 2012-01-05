@@ -1,0 +1,9 @@
+This is an ANSI C++ implementation of the complete ANSI C specification of
+Chapter 3 of the BLAS Technical Forum Standard. The distribution is quite
+small and it is meant as a starting point for developing an optimized and
+architecture-dependent version. (C++ was used, rather than C, as it has support
+for complex arithmetic and templates to facilitate to creation of various
+precision codes.) The library includes support for all four precision types
+(single, double precision, real, and complex) and Level 1, 2, and 3 operations.
+
+WWW:	http://math.nist.gov/spblas/

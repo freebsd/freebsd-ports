@@ -563,6 +563,7 @@
     SUBDIR += snns
     SUBDIR += solitaire
     SUBDIR += spar
+    SUBDIR += spblas
     SUBDIR += speedcrunch
     SUBDIR += spooles
     SUBDIR += spooles-mpich
