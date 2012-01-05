@@ -4168,7 +4168,6 @@ gearmand                        ports/devel/gearmand
 gecko-mediaplayer               ports/www/gecko-mediaplayer
 gecko-sharp20                   ports/www/gecko-sharp20
 gecode                          ports/devel/gecode
-ged                             ports/editors/ged
 geda                            ports/cad/geda
 geda-docs                       ports/cad/geda-docs
 geda-examples                   ports/cad/geda-examples
@@ -8114,6 +8113,7 @@ libraw                          ports/graphics/libraw
 librcc                          ports/devel/librcc
 librcd                          ports/devel/librcd
 libreadline-java                ports/devel/libreadline-java
+librecad                        ports/cad/librecad
 libredblack                     ports/devel/libredblack
 librelp                         ports/devel/librelp
 libreoffice                     ports/editors/libreoffice
@@ -9295,6 +9295,7 @@ mod_auth_form                   ports/www/mod_auth_form
 mod_auth_imap2                  ports/www/mod_auth_imap2
 mod_auth_kerb2                  ports/www/mod_auth_kerb2
 mod_auth_mellon                 ports/www/mod_auth_mellon
+mod_auth_mysql2                 ports/www/mod_auth_mysql2
 mod_auth_mysql_another          ports/www/mod_auth_mysql_another
 mod_auth_openid                 ports/www/mod_auth_openid
 mod_auth_pam2                   ports/www/mod_auth_pam2
