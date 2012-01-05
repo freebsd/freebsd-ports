@@ -28,11 +28,10 @@ CONFLICTS=	rt-3.6* rt-3.8*
 LATEST_LINK=	rt40
 
 # See doc/web_deployment.pod for info on the choices of webserver /
-# webapp combinations.  Note: apache-1.3.x is unsupported and untested
-# upstream; apache-2.0+ is strongly recommended.  For deployment with
-# nginx, use the SPAWN_FCGI method.  A standalone PSGI based webserver
-# is always available, but this is really only suitable for
-# development usage.
+# webapp combinations.  Note: apache-1.3.x is no longer supported in
+# ports: apache-2.2+ is recommended.  For deployment with nginx, use
+# the SPAWN_FCGI method.  A standalone PSGI based webserver is always
+# available, but this is really only suitable for development usage.
 #
 # See doc/full_text_indexing.pod if you need to set up full text
 # indexes on your ticket database.  PostgreSQL or Oracle are
@@ -40,8 +39,8 @@ LATEST_LINK=	rt40
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS=	AP_MODPERL	"Deploy with ${APACHE_PORT} and mod_perl"	on \
-		AP_MODFASTCGI	"Deploy with ${APACHE_PORT} and mod_fastcgi"	off \
+OPTIONS=	AP_MODPERL	"Deploy with apache and mod_perl"	on \
+		AP_MODFASTCGI	"Deploy with apache and mod_fastcgi"	off \
 		LIGHTTPD	"Deploy with lighttpd and mod_fastcgi"	off \
 		SPAWN_FCGI	"Deploy with spawn_fcgi"		off \
 		MYSQL 		"Enable MySQL backend" 			on  \
@@ -69,16 +68,12 @@ BUILD_DEPENDS+=	${CORE_DEPS}       \
 		${DASHBOARDS_DEPS} \
 		${USERLOGO_DEPS}
 
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.3+
 USE_AUTOTOOLS=	autoconf
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_AP_MODPERL) || defined(WITH_AP_MODFASTCGI)
-USE_APACHE=	20+
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_AP_MODPERL)
 
@@ -87,25 +82,14 @@ USE_APACHE=	20+
 IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
 .endif
 
-WITH_APACHE=	yes
-
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
-
-.if ${APACHE_VERSION} == 13
-BUILD_DEPENDS+=	${MODPERL1_DEPS}
-RUN_DEPENDS+=	${MODPERL1_DEPS}
-.else
 BUILD_DEPENDS+=	${MODPERL2_DEPS}
 RUN_DEPENDS+=	${MODPERL2_DEPS}
-.endif
 
 .elif defined(WITH_AP_MODFASTCGI)
 
 .if defined(WITH_LIGHTTPD) || defined(WITH_SPAWN_FCGI)
 IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
 .endif
-
-WITH_APACHE=	yes
 
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
@@ -270,4 +254,4 @@ post-install:
 		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
