@@ -244,6 +244,7 @@ share/aqbanking/backends/aqhbci/dialogs/chipcard.png
 share/aqbanking/backends/aqhbci/dialogs/dlg_choose_usertype.dlg
 share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard.dlg
 share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard_special.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_editaccount.dlg
 share/aqbanking/backends/aqhbci/dialogs/dlg_edituserddv.dlg
 share/aqbanking/backends/aqhbci/dialogs/dlg_edituserpintan.dlg
 share/aqbanking/backends/aqhbci/dialogs/dlg_edituserrdh.dlg
