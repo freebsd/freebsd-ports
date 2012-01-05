@@ -791,7 +791,7 @@
 @dirrm %%WWWDIR%%/images
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/bugzilla-submit
-%%CONTRIB%%@dirrmtry %%WWWDIR%%/contrib
+@dirrmtry %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/Bugzilla/Whine
 @dirrm %%WWWDIR%%/Bugzilla/WebService/Server
 @dirrm %%WWWDIR%%/Bugzilla/WebService
@@ -850,3 +850,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%WWWDIR%%/t
 @exec mkdir -p %D/%%WWWDIR%%/lib
+@exec mkdir -p %D/%%WWWDIR%%/contrib
