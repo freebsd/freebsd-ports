@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.2.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
