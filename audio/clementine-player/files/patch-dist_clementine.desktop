@@ -1,5 +1,5 @@
---- dist/clementine.desktop.orig	2010-11-03 20:46:26.000000000 +0100
-+++ dist/clementine.desktop	2010-12-29 18:21:47.000000000 +0100
+--- dist/clementine.desktop.orig	2011-12-31 16:23:15.690338600 +0000
++++ dist/clementine.desktop	2011-12-31 16:23:58.392741839 +0000
 @@ -6,8 +6,8 @@
  GenericName[pt]=Reprodutor de músicas Clementine
  Comment=Plays music and last.fm streams
