@@ -16,6 +16,8 @@
 #			Base database directory.
 # mysql_args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).
+# mysql_instances (str): Set to "" by default.
+#                       If defined, list of instances to enable
 
 . /etc/rc.subr
 
@@ -26,32 +28,86 @@ load_rc_config $name
 
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
+: ${mysql_user="mysql"}
 : ${mysql_dbdir="/var/db/mysql"}
 
-mysql_user="mysql"
-mysql_limits_args="-e -U ${mysql_user}"
-pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
 command="/usr/sbin/daemon"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
+
+if [ -n "$2" ]; then
+	instance="$2"
+	load_rc_config ${name}_${instance}
+	case "$mysql_instances" in
+	"$2 "*|*" $2 "*|*" $2"|"$2")
+		eval _args="\${mysql_${instance}_args:-\"${mysql_args}\"}"
+		eval _dbdir="\${mysql_${instance}_dbdir:-\"/var/db/mysql_${instance}\"}"
+		eval _limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
+		eval _user="\${mysql_${instance}_user:-\"${mysql_user}\"}"
+		eval _limits_args="\${mysql_${instance}_limits_args:-\"${mysql_limits_args}\"}"
+		[ -z "$_limits_args" ] && eval _limits_args=\"-e -U $_user\"
+		pidfile="${_dbdir}/`/bin/hostname`.pid"
+	;;
+	*)
+		err 1 "$2 not found in mysql_instances" ;;
+	esac
+else
+	if [ -n "${mysql_instances}" -a -n "$1" ]; then
+		for instance in ${mysql_instances}; do
+			eval _enable="\${mysql_${instance}_enable}"
+			case "${_enable:-${mysql_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+			;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+			;;
+			*)
+				if [ -z "$_enable" ]; then
+					_var=mysql_enable
+				else
+					_var=mysql_${instance}_enable
+				fi
+				warn "Bad value" \
+					"'${_enable:-${mysql_enable}}'" \
+					"for ${_var}. " \
+					"Instance ${instance} skipped."
+				continue
+			;;
+			esac
+			echo "===> mysql instance: ${instance}"
+			if %%PREFIX%%/etc/rc.d/mysql-server $1 ${instance}; then
+				success="${instance} ${success}"
+			else
+				failed="${instance} (${retcode}) ${failed}"
+			fi
+		done
+		exit 0
+	else
+		pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
+		_dbdir="/var/db/mysql"
+		_user="mysql"
+		_limits_args="-e -U ${_user}"
+	fi
+fi
+
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
-mysql_install_db_args="--ldata=${mysql_dbdir}"
+mysql_install_db_args="--ldata=${_dbdir}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${_dbdir}/my.cnf --user=${_user} --datadir=${_dbdir} --pid-file=${pidfile} ${_args}"
 
 mysql_create_auth_tables()
 {
 	eval $mysql_install_db $mysql_install_db_args >/dev/null 2>/dev/null
-        [ $? -eq 0 ] && chown -R ${mysql_user}:${mysql_user} ${mysql_dbdir}
+        [ $? -eq 0 ] && chown -R ${_user}:${_user} ${_dbdir}
 }
 
 mysql_prestart()
 {
-	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
+	if [ ! -d "${_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
 	fi
 	if checkyesno mysql_limits; then
-		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
+		eval `/usr/bin/limits $_limits_args` 2>/dev/null
 	else
 		return 0
 	fi
