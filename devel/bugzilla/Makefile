@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTVERSION=	4.0.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -130,7 +129,7 @@ RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
 
 .ifdef WITH_MODPERL2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
+		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
 .ifdef WITH_GRAPHVIZ
@@ -163,12 +162,13 @@ post-patch:
 	@${PERL} -pi -e 's/(default =>.+|Default is )mysql/$$1Pg/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif
-	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
-		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
 	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
+	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
+		-or -name "*.bak" -or -name ".bzr*" -or -name "README.docs" \) \
+		| ${XARGS} ${RM} -rf
 
 do-install:	.SILENT
 	${MKDIR} ${WWWDIR}
@@ -183,15 +183,14 @@ do-install:	.SILENT
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
 .endif
+# This are empty directories but they are needed,
+# else ckecksetup.pl will fail!
+	${MKDIR} ${WWWDIR}/contrib ${WWWDIR}/lib ${WWWDIR}/t ${WWWDIR}/xt
 .ifdef WITH_CONTRIB
-	${MKDIR} ${WWWDIR}/contrib
 	@cd ${WRKSRC}/contrib && \
 		${FIND} . -type d -exec ${MKDIR} "${WWWDIR}/contrib/{}" \; && \
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${WWWDIR}/contrib/{}" \;
 .endif
-# This are empty directories but they are needed,
-# else ckecksetup.pl will fail!
-	${MKDIR} ${WWWDIR}/lib ${WWWDIR}/t ${WWWDIR}/xt
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
