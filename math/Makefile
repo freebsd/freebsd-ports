@@ -185,6 +185,7 @@
     SUBDIR += levmar
     SUBDIR += libR
     SUBDIR += libRmath
+    SUBDIR += libflame
     SUBDIR += libjbigi
     SUBDIR += liblbfgs
     SUBDIR += libmath++
