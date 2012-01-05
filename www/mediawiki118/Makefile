@@ -7,6 +7,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -41,6 +42,7 @@ USE_PHP+=	ldap
 .endif
 
 .if defined(WITH_TEXVC)
+IGNORE=		not build currently
 RUN_DEPENDS+=	latex:${PORTSDIR}/print/latex
 BUILD_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
 
