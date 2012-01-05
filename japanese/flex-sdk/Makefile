@@ -34,15 +34,10 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 .for i in ${DISTFILES}
 .if !exists(${DISTDIR}/${i})
-ECHO_MSG=/usr/bin/printf
-IGNORE=		:\n\
-You must fetch the distribution manually.\n\n\
-Please access \n\
-\n\
- ${DOWNLOAD_URL}\n\
-\n\
-with a web browser.  Please place the downloaded ${i} \n\
-in ${DISTDIR}.\n\n
+IGNORE=	you must fetch the distribution manually.\
+Please access ${DOWNLOAD_URL} with a web browser.\
+Please place the downloaded ${i} in ${DISTDIR} and\
+re-run make
 .endif
 .endfor
 
