@@ -1,0 +1,13 @@
+libflame contains implementations of many dense linear algebra operations
+that are provided by the BLAS and LAPACK libraries. (However, not all FLAME
+implementations support every datatype, and, in many cases, libflame uses a
+different naming convention for the routines.)
+
+The library is a product of the Formal Linear Algebra Methods Environment
+(FLAME), which encompasses a new notation for expressing algorithms, a
+methodology for systematic derivation of algorithms, Application Program
+Interfaces (APIs) for representing the algorithms in code, and tools for
+mechanical derivation, implementation and analysis of algorithms and
+implementations.
+
+WWW:	http://z.cs.utexas.edu/wiki/flame.wiki/FrontPage
