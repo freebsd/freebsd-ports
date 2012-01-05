@@ -107,7 +107,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="810df820-3664-11e1-8fe3-00215c6a37bb">
     <topic>wordpress -- cross site scripting vulnerability</topic>
     <affects>
