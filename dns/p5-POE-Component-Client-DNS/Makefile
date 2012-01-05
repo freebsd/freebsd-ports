@@ -18,6 +18,7 @@ COMMENT=	POE component for non-blocking/concurrent DNS queries
 BUILD_DEPENDS=	p5-POE>=1.007:${PORTSDIR}/devel/p5-POE \
 		p5-Net-DNS>=0.59:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	yes
 
