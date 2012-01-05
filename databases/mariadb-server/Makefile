@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTVERSION=	5.2.9
+PORTVERSION=	5.2.10
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
