@@ -1,13 +1,12 @@
 # New ports collection makefile for:	dansguardian
-# Date created:				March 26, 2002
-# Whom:					Freddie Cash <fcash@sd73.bc.ca>
+# Date created:				April 02, 2002
+# Whom:					Freddie Cash <fjwcash@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.10.1.1
-PORTREVISION=	1
+PORTVERSION=	2.12.0.0
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
@@ -20,8 +19,8 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 USE_RC_SUBR=	dansguardian
 USE_GNOME=	pkgconfig
 
-CONFLICTS=	dansguardian-2.12.*
-LATEST_LINK=	dansguardian
+CONFLICTS=	dansguardian-2.10.*
+LATEST_LINK=	dansguardian-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
