@@ -7,7 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.84
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 
-RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
+		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
+		p5-Net-DNS>=0.39:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS	=	MODPERL "Enable Apache Support via mod_perl"	On
 
