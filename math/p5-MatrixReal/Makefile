@@ -18,6 +18,8 @@ COMMENT=	A perl module implementing a Matrix of Reals
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Math::MatrixReal.3 Math::Kleene.3
