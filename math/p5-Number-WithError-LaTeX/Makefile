@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Par
 		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork \
 		${SITE_PERL}/Number/WithError.pm:${PORTSDIR}/math/p5-Number-WithError \
 		${SITE_PERL}/TeX/Encode.pm:${PORTSDIR}/textproc/p5-TeX-Encode
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-LectroTest>=0:${PORTSDIR}/devel/p5-Test-LectroTest
 
 MAN3=	Number::WithError::LaTeX.3
 
