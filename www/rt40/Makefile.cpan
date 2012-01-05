@@ -103,7 +103,7 @@ FASTCGI_DEPS=	p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager \
 		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI
 
 MODPERL2_DEPS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-		p5-Apache-DBI-mp2>0:${PORTSDIR}/www/p5-Apache-DBI-mp2
+		p5-Apache-DBI>0:${PORTSDIR}/www/p5-Apache-DBI
 
 MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql 
 
