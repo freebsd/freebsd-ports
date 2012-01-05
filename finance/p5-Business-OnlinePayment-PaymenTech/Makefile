@@ -7,6 +7,7 @@
 
 PORTNAME=	Business-OnlinePayment-PaymenTech
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PaymenTech backend for Business::OnlinePayment
 
 BUILD_DEPENDS=	${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
