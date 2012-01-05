@@ -185,6 +185,7 @@ share/gwenhywfar/typemaker2/c/gwen_buffer.tm2
 share/gwenhywfar/typemaker2/c/gwen_date.tm2
 share/gwenhywfar/typemaker2/c/gwen_idlist64.tm2
 share/gwenhywfar/typemaker2/c/gwen_time.tm2
+share/gwenhywfar/typemaker2/c/idmap_base.tm2
 share/gwenhywfar/typemaker2/c/int.tm2
 share/gwenhywfar/typemaker2/c/int_base.tm2
 share/gwenhywfar/typemaker2/c/list1_base.tm2
