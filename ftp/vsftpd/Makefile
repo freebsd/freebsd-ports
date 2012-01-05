@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://security.appspot.com/downloads/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
