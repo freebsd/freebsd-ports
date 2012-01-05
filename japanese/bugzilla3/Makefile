@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.6
+PORTVERSION=	3.6.7
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}
+		LOCAL
+MASTER_SITE_SUBDIR=	tota/bugzilla-ja
 PKGNAMESUFFIX=	-ja
 DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
 
