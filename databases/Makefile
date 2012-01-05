@@ -196,6 +196,7 @@
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
     SUBDIR += mylibrary
+    SUBDIR += mysac
     SUBDIR += mysql++1
     SUBDIR += mysql++3
     SUBDIR += mysql-connector-c++
