@@ -2136,6 +2136,7 @@ dangerdeep                      ports/games/dangerdeep
 dangerdeep-data                 ports/games/dangerdeep-data
 danpei                          ports/graphics/danpei
 dansguardian                    ports/www/dansguardian
+dansguardian-devel              ports/www/dansguardian-devel
 dante                           ports/net/dante
 daq                             ports/net/daq
 dar                             ports/sysutils/dar
@@ -7781,6 +7782,7 @@ libffi                          ports/devel/libffi
 libfirm                         ports/devel/libfirm
 libfishsound                    ports/audio/libfishsound
 libfixbuf                       ports/net/libfixbuf
+libflame                        ports/math/libflame
 libfm                           ports/x11/libfm
 libfontenc                      ports/x11-fonts/libfontenc
 libfov                          ports/games/libfov
@@ -10705,7 +10707,6 @@ p5-Apache-ConfigFile            ports/www/p5-Apache-ConfigFile
 p5-Apache-ConfigParser          ports/www/p5-Apache-ConfigParser
 p5-Apache-DB                    ports/www/p5-Apache-DB
 p5-Apache-DBI                   ports/www/p5-Apache-DBI
-p5-Apache-DBI-mp2               ports/www/p5-Apache-DBI-mp2
 p5-Apache-Gallery               ports/www/p5-Apache-Gallery
 p5-Apache-GopherHandler         ports/www/p5-Apache-GopherHandler
 p5-Apache-Htgroup               ports/www/p5-Apache-Htgroup
@@ -15098,7 +15099,6 @@ p5-apache-configfile            ports/www/p5-Apache-ConfigFile
 p5-apache-configparser          ports/www/p5-Apache-ConfigParser
 p5-apache-db                    ports/www/p5-Apache-DB
 p5-apache-dbi                   ports/www/p5-Apache-DBI
-p5-apache-dbi-mp2               ports/www/p5-Apache-DBI-mp2
 p5-apache-gallery               ports/www/p5-Apache-Gallery
 p5-apache-gopherhandler         ports/www/p5-Apache-GopherHandler
 p5-apache-htgroup               ports/www/p5-Apache-Htgroup
@@ -21458,7 +21458,6 @@ procmap                         ports/sysutils/procmap
 prodosemu                       ports/emulators/prodosemu
 profont                         ports/x11-fonts/profont
 proftpd                         ports/ftp/proftpd
-proftpd-devel                   ports/ftp/proftpd-devel
 proftpd-mysql                   ports/ftp/proftpd-mysql
 profxp                          ports/ftp/profxp
 proggy_fonts                    ports/x11-fonts/proggy_fonts
