@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.0.10
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
@@ -51,10 +51,10 @@ MAN7=		freeipmi.7
 MAN8=		bmc-config.8 bmc-device.8 bmc-info.8 bmc-watchdog.8 \
 		ipmi-chassis-config.8 ipmi-chassis.8 ipmi-console.8 \
 		ipmi-dcmi.8 ipmi-detect.8 ipmi-fru.8 ipmi-locate.8 ipmi-oem.8 \
-		ipmi-pef-config.8 ipmi-ping.8 ipmi-power.8 ipmi-raw.8 \
-		ipmi-sel.8 ipmi-sensors-config.8 ipmi-sensors.8 ipmiconsole.8 \
-		ipmidetect.8 ipmidetectd.8 ipmimonitoring.8 ipmiping.8 \
-		ipmipower.8 pef-config.8 rmcp-ping.8 rmcpping.8
+		ipmi-pef-config.8 ipmi-pet.8 ipmi-ping.8 ipmi-power.8 \
+		ipmi-raw.8 ipmi-sel.8 ipmi-sensors-config.8 ipmi-sensors.8 \
+		ipmiconsole.8 ipmidetect.8 ipmidetectd.8 ipmimonitoring.8 \
+		ipmiping.8 ipmipower.8 pef-config.8 rmcp-ping.8 rmcpping.8
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR} CONF_DIR=${ETCDIR:S/^${PREFIX}\///} \
 		LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
 
