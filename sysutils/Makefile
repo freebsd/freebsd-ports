@@ -759,6 +759,7 @@
     SUBDIR += rtty
     SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger
+    SUBDIR += rubygem-backup
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
