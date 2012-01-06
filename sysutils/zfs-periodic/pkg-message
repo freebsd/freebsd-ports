@@ -20,4 +20,3 @@
 	monthly_zfs_scrub_pools="tank"
 	monthly_zfs_snapshot_pools="tank"
 	monthly_zfs_snapshot_keep=2'
-

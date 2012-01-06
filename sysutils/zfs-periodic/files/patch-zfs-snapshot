@@ -1,0 +1,11 @@
+--- etc/periodic/weekly/000.zfs-snapshot.orig	2011-12-08 09:54:29.892546280 +0200
++++ etc/periodic/weekly/000.zfs-snapshot	2011-12-08 09:54:46.735546024 +0200
+@@ -18,7 +18,7 @@
+     keep=7
+ fi
+ 
+-case "$daily_zfs_snapshot_enable" in
++case "$weekly_zfs_snapshot_enable" in
+     [Yy][Ee][Ss])
+         . /etc/periodic/zfs-snapshot
+         do_snapshots "$pools" $keep 'weekly'
