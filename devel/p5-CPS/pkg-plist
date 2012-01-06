@@ -1,5 +1,6 @@
 %%SITE_PERL%%/CPS.pm
 %%SITE_PERL%%/CPS/Functional.pm
+%%SITE_PERL%%/CPS/Future.pm
 %%SITE_PERL%%/CPS/Governor.pm
 %%SITE_PERL%%/CPS/Governor/Deferred.pm
 %%SITE_PERL%%/CPS/Governor/Simple.pm
