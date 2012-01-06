@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncdc
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dev.yorhel.nl/download/
@@ -36,11 +36,13 @@ LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 PLIST_FILES+=	bin/ncdc-db-upgrade
-.else
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
-		-e '/#include <gdbm.h>/d' \
-		${WRKSRC}/src/fl_local.c
+		-e 's/\(GRegex \*nand\[fl_.*\)\]/\1+1]/' \
+		${WRKSRC}/src/fl_util.c
+.if defined(WITHOUT_GDBM)
 	@${REINPLACE_CMD} \
 		-e '/have_gdbm=yes/d' \
 		${WRKSRC}/configure
