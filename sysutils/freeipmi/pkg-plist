@@ -10,6 +10,7 @@ include/freeipmi/api/ipmi-chassis-cmds-api.h
 include/freeipmi/api/ipmi-dcmi-cmds-api.h
 include/freeipmi/api/ipmi-device-global-cmds-api.h
 include/freeipmi/api/ipmi-event-cmds-api.h
+include/freeipmi/api/ipmi-firmware-firewall-command-discovery-cmds-api.h
 include/freeipmi/api/ipmi-fru-inventory-device-cmds-api.h
 include/freeipmi/api/ipmi-lan-cmds-api.h
 include/freeipmi/api/ipmi-messaging-support-cmds-api.h
@@ -27,6 +28,7 @@ include/freeipmi/cmds/ipmi-dcmi-cmds.h
 include/freeipmi/cmds/ipmi-dcmi-oem-cmds.h
 include/freeipmi/cmds/ipmi-device-global-cmds.h
 include/freeipmi/cmds/ipmi-event-cmds.h
+include/freeipmi/cmds/ipmi-firmware-firewall-command-discovery-cmds.h
 include/freeipmi/cmds/ipmi-fru-inventory-device-cmds.h
 include/freeipmi/cmds/ipmi-lan-cmds.h
 include/freeipmi/cmds/ipmi-messaging-support-cmds.h
@@ -47,6 +49,7 @@ include/freeipmi/driver/ipmi-sunbmc-driver.h
 include/freeipmi/fiid/fiid.h
 include/freeipmi/freeipmi.h
 include/freeipmi/fru-parse/ipmi-fru-parse.h
+include/freeipmi/interface/ipmi-interface.h
 include/freeipmi/interface/ipmi-ipmb-interface.h
 include/freeipmi/interface/ipmi-kcs-interface.h
 include/freeipmi/interface/ipmi-lan-interface.h
@@ -57,6 +60,7 @@ include/freeipmi/locate/ipmi-locate.h
 include/freeipmi/payload/ipmi-sol-payload.h
 include/freeipmi/record-format/ipmi-cipher-suite-record-format.h
 include/freeipmi/record-format/ipmi-fru-information-record-format.h
+include/freeipmi/record-format/ipmi-platform-event-trap-record-format.h
 include/freeipmi/record-format/ipmi-sdr-oem-record-format.h
 include/freeipmi/record-format/ipmi-sdr-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
@@ -113,6 +117,7 @@ include/freeipmi/templates/ipmi-cipher-suite-record-format-templates.h
 include/freeipmi/templates/ipmi-dcmi-cmds-templates.h
 include/freeipmi/templates/ipmi-device-global-cmds-templates.h
 include/freeipmi/templates/ipmi-event-cmds-templates.h
+include/freeipmi/templates/ipmi-firmware-firewall-command-discovery-cmds-templates.h
 include/freeipmi/templates/ipmi-fru-information-record-format-templates.h
 include/freeipmi/templates/ipmi-fru-inventory-device-cmds-templates.h
 include/freeipmi/templates/ipmi-ipmb-interface-templates.h
@@ -139,6 +144,7 @@ include/freeipmi/util/ipmi-channel-util.h
 include/freeipmi/util/ipmi-cipher-suite-util.h
 include/freeipmi/util/ipmi-dcmi-util.h
 include/freeipmi/util/ipmi-device-types-util.h
+include/freeipmi/util/ipmi-entity-ids-util.h
 include/freeipmi/util/ipmi-error-dcmi-util.h
 include/freeipmi/util/ipmi-error-util.h
 include/freeipmi/util/ipmi-iana-enterprise-numbers-util.h
@@ -159,7 +165,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.la
 lib/libfreeipmi.so
-lib/libfreeipmi.so.11
+lib/libfreeipmi.so.12
 lib/libipmiconsole.a
 lib/libipmiconsole.la
 lib/libipmiconsole.so
@@ -189,6 +195,7 @@ sbin/ipmi-fru
 sbin/ipmi-locate
 sbin/ipmi-oem
 sbin/ipmi-pef-config
+sbin/ipmi-pet
 sbin/ipmi-ping
 sbin/ipmi-power
 sbin/ipmi-raw
@@ -243,6 +250,16 @@ sbin/rmcpping
 %%PORTDOCS%%%%DOCSDIR%%/README.build
 %%PORTDOCS%%%%DOCSDIR%%/README.openipmi
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/ganglia_ipmi_sensors.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sel.c
+%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sensors.c
+%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/nagios_ipmi_sensors.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/check_rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/ipminodes.cfg
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/petalert.pl
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-bugs-issues-and-workarounds.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-coding.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-design.txt
@@ -250,6 +267,11 @@ sbin/rmcpping
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-libraries.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-oem-documentation-requirements.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-testing.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/pet
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/nagios
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/libipmimonitoring
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/ganglia
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
 @exec touch %%RUN_DIR%%/ipckey

@@ -1,5 +1,5 @@
---- ipmi-oem/src/ipmi-oem.h.orig	2011-01-21 05:38:30.000000000 +0800
-+++ ipmi-oem/src/ipmi-oem.h	2011-01-24 12:06:25.000000000 +0800
+--- ipmi-oem/ipmi-oem.h.orig	2012-01-03 03:26:10.000000000 +0800
++++ ipmi-oem/ipmi-oem.h	2012-01-06 04:36:44.994004384 +0800
 @@ -20,6 +20,7 @@
  #define _IPMI_OEM_H
  
