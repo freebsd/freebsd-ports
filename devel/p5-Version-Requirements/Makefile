@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Version-Requirements
-PORTVERSION=	0.101020
-PORTREVISION=	1
+PORTVERSION=	0.101021
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -15,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of version requirements for a CPAN dist
+
+DEPRECATED=	Use CPAN::Meta::Requirements, which is a drop-in replacement
 
 PERL_CONFIGURE=	yes
 
@@ -25,7 +26,10 @@ MAN3=		Version::Requirements.3
 .if ${PERL_LEVEL} < 501001
 BUILD_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
