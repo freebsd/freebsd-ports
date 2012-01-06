@@ -1,5 +1,5 @@
---- ./lib/c_glib/src/transport/thrift_socket.h.orig	2011-08-11 17:18:58.000000000 +0400
-+++ ./lib/c_glib/src/transport/thrift_socket.h	2011-08-26 11:58:33.000000000 +0400
+--- ./lib/c_glib/src/transport/thrift_socket.h.orig	2011-11-26 23:00:36.000000000 +0400
++++ ./lib/c_glib/src/transport/thrift_socket.h	2011-12-25 15:09:17.000000000 +0400
 @@ -21,6 +21,8 @@
  #define _THRIFT_SOCKET_H
  
