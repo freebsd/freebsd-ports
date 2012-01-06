@@ -3150,6 +3150,7 @@ www/p5-Apache-Test||2012-01-01|Has expired: Depends on expired www/apache13
 net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
 editors/ged||2012-01-04|Removed: Use ed from base instead
 ftp/proftpd-devel||2012-01-04|Removed
+devel/ruby-thrift|devel/rubygem-thrift|2012-01-04|Renamed: now a rubygems module
 www/p5-Apache-DBI-mp2|www/p5-Apache-DBI|2012-01-01|This sub-port is no longer needed
 www/knowledgekit||2012-01-06|Development seems stalled. Last release is from 1999. Doesn't works with Zope 2.13
 www/znavigator||2012-01-06|Development seems stalled. Last release is from 2000
