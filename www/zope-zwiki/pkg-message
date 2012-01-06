@@ -1,8 +1,0 @@
-===> ZWiki post-port installation instructions:
-  To complete the installation of this port, you need to restart Zope. This
-  may be done from the Zope Control Panel in the Zope management interface.
-
-  Be careful upgrade from very old ZWiki.  Read CHANGES in your
-  ${ZOPEPRODUCTDIR}/Zwiki directory.
-
-  You will now be able to create a "ZWiki Web" object.

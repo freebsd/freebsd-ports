@@ -1,9 +1,0 @@
-The ZNavigator product was designed to simplify the construction of
-navigation bars. It was written to make navbar management easy for
-inexperienced contents managers, and provide some nifty features.
-
-Many of the features and their usage are demonstrated in the
-navigator_demo package, which you can import with the name
-'navigator_demo.zexp' from the Zope management interface.
-
-WWW: http://www.zope.org/Members/jonas/ZNavigator/

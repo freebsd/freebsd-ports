@@ -1,6 +1,0 @@
-Silva is a Zope-based content management system designed for the creation 
-and management of structured, textual content. Silva allows users to enter 
-new documents as well as edit existing documents using a web interface. 
-(This port includes SilvaDocument, SilvaMetadata, and Sprout.)
-
-WWW: http://www.infrae.com/products/silva

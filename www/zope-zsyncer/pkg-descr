@@ -1,5 +1,0 @@
-ZSyncer is a project that allows live zope objects to be synchronized from 
-one Zope to another without doing the tedious export / transfer / import 
-dance. It is very easy to use.
-
-WWW: http://zsyncer.sourceforge.net

@@ -3151,3 +3151,40 @@ net-im/jwchat||2012-01-01|Has expired: Depends on expired www/apache13
 editors/ged||2012-01-04|Removed: Use ed from base instead
 ftp/proftpd-devel||2012-01-04|Removed
 www/p5-Apache-DBI-mp2|www/p5-Apache-DBI|2012-01-01|This sub-port is no longer needed
+www/knowledgekit||2012-01-06|Development seems stalled. Last release is from 1999. Doesn't works with Zope 2.13
+www/znavigator||2012-01-06|Development seems stalled. Last release is from 2000
+www/zope-FileSystemSite||2012-01-06|Doesn't work with modern Zope versions
+www/zope-annotations||2012-01-06|Doesn't work with modern Zope versions
+www/zope-btreefolder2||2012-01-06|Doesn't work with modern Zope versions
+www/zope-cmfactionicons||2012-01-06|Doesn't work with modern Zope versions
+www/zope-cmfformcontroller||2012-01-06|Doesn't work with modern Zope versions
+www/zope-cmfforum||2012-01-06|Development seems stalled. Last release is from 2002
+www/zope-cmfphoto||2012-01-06|Development seems stalled. Last release is from 2004
+www/zope-cmfphotoalbum||2012-01-06|Development seems stalled. Last release is from 2004
+www/zope-cmfquickinstaller||2012-01-06|Doesn't work with modern Zope versions
+www/zope-coreblog||2012-01-06|Development ceased
+www/zope-exuserfolder||2012-01-06|Doesn't work with modern Zope versions
+www/zope-formulator||2012-01-06|Doesn't work with modern Zope versions
+www/zope-generator||2012-01-06|Development seems stalled. Last release from 2005
+www/zope-groupuserfolder||2012-01-06|Doesn't work with modern Zope versions
+www/zope-kupu||2012-01-06|Doesn't work with modern Zope versions
+www/zope-mimetypesregistry||2012-01-06|Doesn't work with modern Zope versions
+www/zope-mindmapbbs||2012-01-06|Development seems stalled. Last release is from 2004
+www/zope-mysqluserfolder||2012-01-06|Development seems stalled. Last release is from 2005
+www/zope-parsedxml||2012-01-06|Doesn't work with modern Zope versions
+www/zope-placelesstranslationservice||2012-01-06|Doesn't work with modern Zope versions
+www/zope-portaltransforms||2012-01-06|Doesn't work with modern Zope versions
+www/zope-proxyindex||2012-01-06|Doesn't work with modern Zope versions
+www/zope-silva||2012-01-06|Doesn't work with modern Zope versions
+www/zope-silvaviews||2012-01-06|Doesn't work with modern Zope versions
+www/zope-ttwtype||2012-01-06|Development seems stalled. Last release is from 2003
+www/zope-validation||2012-01-06|Doesn't work with modern Zope versions
+www/zope-xmlmethods||2012-01-06|Development seems stalled. Last release is from 2003
+www/zope-xmlwidgets||2012-01-06|Doesn't work with modern Zope versions
+www/zope-zmysqlda||2012-01-06|Doesn't work with modern Zope versions
+www/zope-zsyncer||2012-01-06|Doesn't work with modern Zope versions
+www/zope-zwiki||2012-01-06|Doesn't work with modern Zope versions
+www/zope210||2012-01-06|End of life is reached
+www/zope28||2012-01-06|End of life is reached
+www/zope29||2012-01-06|End of life is reached
+www/zope3||2012-01-06|End of life is reached

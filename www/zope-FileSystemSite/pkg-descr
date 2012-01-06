@@ -1,8 +1,0 @@
-This is a repackaging of the CMF's FileSystem Directory Views such that it is
-independent of the CMF.
-
-The major use of this is to develop view code on the file system such that it
-can be edited with normal development utilties and checked into a source
-control management system.
-
-WWW: http://www.zope.org/Members/philikon/FileSystemSite
