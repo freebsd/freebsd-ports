@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.3
+PORTVERSION=	3.3.1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 PKGNAMESUFFIX=	-ja
@@ -18,10 +18,10 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-de-3.*
+CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-de-3.* ru-wordpress-ru-3.*
 
 NO_BUILD=	yes
-USE_PHP=	gd mysql pcre tokenizer xml zip
+USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
