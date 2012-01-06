@@ -4,13 +4,13 @@
 #
 # $FreeBSD$
 
-PORTNAME=	platex-jsclasses
-PORTVERSION=	1.0.20060212
-PORTREVISION=	4
+PORTNAME=	jsclasses
+PORTVERSION=	1.0.20110510
 CATEGORIES=	japanese print
 MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0 \
 		http://oku.edu.mie-u.ac.jp/~okumura/texfaq/:1
-DISTFILES=	${PORTNAME:S/^platex-//}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
+PKGNAMEPREFIX=	platex-
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
 		jis-tfm${EXTRACT_SUFX}:1 \
 		jis-pl${EXTRACT_SUFX}:1
 
@@ -33,6 +33,8 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFDIR}/ptex/platex/js
 CLASS_FILES=	jsarticle.cls jsbook.cls \
 		jsclasses.dtx jsclasses.ins jspf.cls \
+		jsverb.dtx jsverb.ins jsverb.sty \
+		kiyou.cls minijs.sty \
 		morisawa.dtx morisawa.ins morisawa.sty \
 		okumacro.dtx okumacro.ins okumacro.sty \
 		okuverb.dtx okuverb.ins okuverb.sty \
@@ -46,11 +48,11 @@ PL_FILES=	jis-v.pl jis.pl jisn-v.pl jisn.pl
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
-	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLASS_FILES} ${PREFIX}/${CLASSDIR}
 	${MKDIR} ${PREFIX}/${TFMDIR}
-	${INSTALL_DATA} ${TFM_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${TFMDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${TFM_FILES} ${PREFIX}/${TFMDIR}
 	${MKDIR} ${PREFIX}/${PLDIR}
-	${INSTALL_DATA} ${PL_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${PLDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PL_FILES} ${PREFIX}/${PLDIR}
 
 post-install:
 	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}

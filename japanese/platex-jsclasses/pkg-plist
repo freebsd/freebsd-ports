@@ -4,6 +4,11 @@
 %%CLASSDIR%%/jsclasses.dtx
 %%CLASSDIR%%/jsclasses.ins
 %%CLASSDIR%%/jspf.cls
+%%CLASSDIR%%/jsverb.dtx
+%%CLASSDIR%%/jsverb.ins
+%%CLASSDIR%%/jsverb.sty
+%%CLASSDIR%%/kiyou.cls
+%%CLASSDIR%%/minijs.sty
 %%CLASSDIR%%/morisawa.dtx
 %%CLASSDIR%%/morisawa.ins
 %%CLASSDIR%%/morisawa.sty
