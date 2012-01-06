@@ -1,6 +1,19 @@
---- p0f.c.orig	Sun Jul 11 02:17:57 2004
-+++ p0f.c	Sun Feb 12 01:44:36 2006
-@@ -1238,11 +1238,15 @@
+--- p0f.c.orig	2006-08-21 10:16:00.000000000 -0400
++++ p0f.c	2012-01-06 15:46:38.918380578 -0500
+@@ -212,8 +212,11 @@
+ #endif
+ 
+ #ifdef DLT_PFLOG
++#include <net/if.h>
++#include <sys/queue.h>
++#include <net/if_pflog.h>
+     case DLT_PFLOG:
+-      header_len=28;
++      header_len=PFLOG_HDRLEN;
+       break;
+ #endif
+ 
+@@ -1281,11 +1284,15 @@
    /* Whoops, IP header ends past end_ptr */
    if ((_u8*)(iph + 1) > end_ptr) return;
  
@@ -18,7 +31,7 @@
    /* If the declared length is shorter than the snapshot (etherleak
       or such), truncate this bad boy. */
  
-@@ -1632,7 +1636,7 @@
+@@ -1699,7 +1706,7 @@
      if (!use_iface) use_iface=pcap_lookupdev(errbuf);
  #endif /* ^WIN32 */
  
