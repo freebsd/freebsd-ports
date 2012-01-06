@@ -3534,7 +3534,6 @@
     SUBDIR += ruby-subversion
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-term-ansicolor
-    SUBDIR += ruby-thrift
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += rubygem-abstract
