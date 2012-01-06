@@ -10,10 +10,10 @@ PORTNAME=	spblas
 DISTVERSION=	1_02
 CATEGORIES=	math
 MASTER_SITES=	http://math.nist.gov/spblas/:1 LOCAL/bf/:1 NL/blas/blast-forum/:2
-DISTNAME=	nist_spblas_${DISTVERSION}
+DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
 .ifndef(NOPORTDOCS) || make(makesum)
-DISTFILES=	${EXTRACT_ONLY}:1 blas-report.pdf:2
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	blas-report.pdf:2
+EXTRACT_ONLY=	nist_spblas_${DISTVERSION}.zip
 .endif
 
 MAINTAINER=	bf@FreeBSD.org
