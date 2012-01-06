@@ -2,9 +2,7 @@
 # 
 
 # PROVIDE: barnyard2
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
-# KEYWORD: shutdown
+# REQUIRE: DAEMON%%MYSQL%%%%PGSQL%%
 
 # Add the following lines to /etc/rc.conf to enable barnyard2:
 # barnyard2_enable (bool):	Set to YES to enable barnyard2
