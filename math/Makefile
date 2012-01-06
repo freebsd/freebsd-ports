@@ -603,6 +603,7 @@
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima
+    SUBDIR += xblas
     SUBDIR += xgfe
     SUBDIR += xgobi
     SUBDIR += xgraph
