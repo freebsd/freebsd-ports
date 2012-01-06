@@ -1,0 +1,11 @@
+Host-setup is a dialog(1) (or Xdialog(1)) based utility for configuring your
+system. Built on the same safety and reliability of sysrc(8) to manage changes
+to rc.conf(5), host-setup(1) can also activate changes to the system in a safe
+and effective manner. Functionality includes (but may not be limited to):
+  - Configure Time Zone
+  - Configure Hostname/Domain
+  - Configure Network Interfaces
+  - Confgure Default Router/Gateway
+  - Configure DNS nameservers
+
+WWW: http://druidbsd.sourceforge.net/
