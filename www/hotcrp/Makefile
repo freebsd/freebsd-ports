@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hotcrp
-PORTVERSION=	2.46
+PORTVERSION=	2.47
 CATEGORIES=	www
-MASTER_SITES=	http://www.cs.ucla.edu/~kohler/hotcrp/
+MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A web based conference management software
