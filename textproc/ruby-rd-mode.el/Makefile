@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rd-mode.el
-PORTVERSION=	0.6.20
+PORTVERSION=	0.6.31
 CATEGORIES=	textproc ruby elisp
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	ruby-	# not ${RUBY_PKGNAMEPREFIX} since this is not version specific
@@ -40,8 +40,4 @@ do-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
