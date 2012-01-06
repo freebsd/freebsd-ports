@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.6.1
+PORTVERSION=	${THRIFT_PORTVERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 DISTFILES=	# empty
@@ -15,8 +15,6 @@ MAINTAINER=	webmaster@kibab.com
 COMMENT=	PHP interface to Thrift
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
-
-BROKEN=		does not configure
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
@@ -30,4 +28,5 @@ post-extract:
 		`${MAKE} -C ${PORTSDIR}/devel/thrift -V WRKSRC`/lib/php \
 		${WRKDIR}
 
+.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>
