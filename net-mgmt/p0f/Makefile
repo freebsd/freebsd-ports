@@ -7,6 +7,7 @@
 
 PORTNAME=	p0f
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
 		http://farrokhi.net/distfiles/
