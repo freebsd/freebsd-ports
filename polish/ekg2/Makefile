@@ -6,6 +6,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -31,6 +32,7 @@ OPTIONS=	ASPELL		"Enable spell checking support"	on \
 		PERL		"Enable perl plugin"		off \
 		PYTHON		"Enable python plugin"		off \
 		SQLITE		"Enable sqlite plugin"		off \
+		UNICODE		"Enable unicode (experimental)" off \
 		XOSD		"Enable xosd plugin"		off
 
 CONFIGURE_ARGS+=	--enable-shared \
@@ -42,12 +44,13 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-libgadu \
 			--without-libgnutls \
 			--without-gif \
-			--without-libjpeg
+			--without-libjpeg \
+			--without-libidn
 
 LDFLAGS+=		-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 CFLAGS+=		-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
@@ -122,6 +125,10 @@ CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=		SQLITE_PLUGIN="@comment "
 .endif
 
+.if defined(WITH_UNICODE)
+CONFIGURE_ARGS+=	--enable-unicode
+.endif
+
 .if defined(WITH_XOSD)
 LIB_DEPENDS+=		xosd:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-libxosd
@@ -133,8 +140,13 @@ PLIST_SUB+=		XOSD_PLUGIN="@comment "
 
 post-patch:
 .if defined(WITH_PYTHON)
-	${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
 		${WRKSRC}/contrib/python/notify-bubble.py
 .endif
 
-.include <bsd.port.post.mk>
+.if defined(WITH_UNICODE)
+	@${REINPLACE_CMD} -e 's|ncursesw/||' ${WRKSRC}/configure \
+		${WRKSRC}/plugins/ncurses/ecurses.h
+.endif
+
+.include <bsd.port.mk>
