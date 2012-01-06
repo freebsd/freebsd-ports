@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pinba_engine
-PORTVERSION=	2009.12.24
+PORTVERSION=	2011.08.18
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://aston2.com/~raven/unix/pinba/ \
- 		http://mks-chel.ru/~raven/FreeBSD/pinba/
-DISTNAME=	pinba_engine-200912240755
+MASTER_SITES=	https://github.com/tony2001/pinba_engine/tarball/${GITVERSION}/
+DISTNAME=	tony2001-pinba_engine-${GITVERSION}
 
 MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
@@ -20,20 +19,32 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/dev
  		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent \
 		${LOCALBASE}/include/Judy.h:${PORTSDIR}/devel/judy \
 		${LOCALBASE}/lib/mysql/plugin:${MYSQL_PORTDIR} \
- 		${NONEXISTENT}:${MYSQL_PORTDIR}:configure
+ 		${NONEXISTENT}:${MYSQL_PORTDIR}:configure \
+		bison:${PORTSDIR}/devel/bison
+
+GITVERSION=	3a0cb51
+FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	51
+IGNORE_WITH_MYSQL=	323 40 41 50
+
 MYSQL_PORTDIR=	${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 MYSQL_WRKSRC=	$$(cd ${MYSQL_PORTDIR} && ${MAKE} -V WRKSRC)
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+USE_LDCONFIG=	${PREFIX}/lib/mysql/plugin
+
+AUTOMAKE_ARGS+=	--add-missing --copy --force-missing
+LIBTOOLIZE_ARGS+=--force --copy
+ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
+
 CONFIGURE_ARGS+=	\
 		--with-mysql=${MYSQL_WRKSRC} \
 		--libdir=${PREFIX}/lib/mysql/plugin
 CFLAGS+=	-I${LOCALBASE}/include/mysql
-USE_LDCONFIG=	${PREFIX}/lib/mysql/plugin
 
 SUB_FILES=	pkg-message
 .if !defined(NOPORTDOCS)
