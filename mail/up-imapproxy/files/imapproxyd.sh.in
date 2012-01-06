@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: imapproxyd
-# REQUIRE: DAEMON courier_imap_imapd courier_imap_imapd_ssl cyrus_imapd inetd
+# REQUIRE: DAEMON courier_imap_imapd courier_imap_imapd_ssl cyrus_imapd inetd %%DOVECOT%%
 # KEYWORD: shutdown
 
 #
