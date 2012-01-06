@@ -6,28 +6,17 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.6.1
+PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with ../thrift
 PORTEPOCH=	1
-CATEGORIES=	devel
-PKGNAMEPREFIX=	ruby-
-DISTFILES=
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Ruby interface to thrift
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
-
 USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
-# XXX: Because this port will call ruby again to build binary extensions,
-# it is not suitable for building when PREFIX != LOCALBASE.
-# This seems to be a Ruby limitation, and the following does not help:
-#USE_RUBY_EXTCONF=	yes
-#RUBY_EXTCONF_SUBDIRS=	ext
-
-post-extract:
-	@${LN} -sfh \
-	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/rb ${WRKSRC}
-
+.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>
