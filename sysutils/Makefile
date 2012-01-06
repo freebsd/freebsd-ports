@@ -358,6 +358,7 @@
     SUBDIR += hidesvn
     SUBDIR += highlnk
     SUBDIR += hilite
+    SUBDIR += host-setup
     SUBDIR += hourglass
     SUBDIR += hoz
     SUBDIR += hpacucli
