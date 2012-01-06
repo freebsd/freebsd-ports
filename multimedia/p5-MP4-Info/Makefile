@@ -14,6 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch info from MPEG-4 files
 
+BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MAN3=	MP4::Info.3
