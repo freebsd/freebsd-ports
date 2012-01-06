@@ -51,6 +51,7 @@
     SUBDIR += tidyup-mail
     SUBDIR += unzip
     SUBDIR += wmcyrx
+    SUBDIR += wordpress
     SUBDIR += xcode
     SUBDIR += xcyrBGR
     SUBDIR += xmms
