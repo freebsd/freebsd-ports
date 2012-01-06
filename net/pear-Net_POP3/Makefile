@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_POP3
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -15,7 +16,6 @@ COMMENT=	Provides a POP3 class to access POP3 server
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Net
 FILES=		Net/POP3.php
 DOCS=		examples/Net_POP3_example.php
 
