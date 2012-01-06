@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.7.0
+PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTEPOCH=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=
 
-MAINTAINER=	jdugan@x1024.net
+MAINTAINER=	komarov@valerka.net
 COMMENT=	Python interface to Thrift
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+PLIST_SUB+=		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 post-extract:
 	@${LN} -sfh \
 	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/py ${WRKSRC}
@@ -30,4 +31,5 @@ do-patch:
 	${REINPLACE_CMD} "/version = '/s/0\.1/${PORTVERSION}/" \
 	    ${WRKSRC}/setup.py
 
+.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>

@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/thrift/__init__.py
 %%PYTHON_SITELIBDIR%%/thrift/__init__.pyc
 %%PYTHON_SITELIBDIR%%/thrift/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBase.py
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBase.pyc
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBase.pyo
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.py
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyc
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyo
@@ -29,12 +32,12 @@
 %%PYTHON_SITELIBDIR%%/thrift/server/TNonblockingServer.py
 %%PYTHON_SITELIBDIR%%/thrift/server/TNonblockingServer.pyc
 %%PYTHON_SITELIBDIR%%/thrift/server/TNonblockingServer.pyo
-%%PYTHON_SITELIBDIR%%/thrift/server/TServer.py
-%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyc
-%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyo
 %%PYTHON_SITELIBDIR%%/thrift/server/TProcessPoolServer.py
 %%PYTHON_SITELIBDIR%%/thrift/server/TProcessPoolServer.pyc
 %%PYTHON_SITELIBDIR%%/thrift/server/TProcessPoolServer.pyo
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.py
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyc
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyo
 %%PYTHON_SITELIBDIR%%/thrift/server/__init__.py
 %%PYTHON_SITELIBDIR%%/thrift/server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/thrift/server/__init__.pyo
@@ -59,7 +62,9 @@
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.py
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyc
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/transport
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/server
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/protocol
 @dirrm %%PYTHON_SITELIBDIR%%/thrift
+@dirrmtry %%PYTHON_SITELIBDIR%%
