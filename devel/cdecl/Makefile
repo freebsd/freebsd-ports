@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  cdecl
 # Date created:			  Sat Sep 04, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -14,6 +13,8 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Explains complicated C/C++ declarations in plain English
+
+USE_CSTD=	c89
 
 ALL_TARGET=	${PORTNAME}
 MAN1=		cdecl.1
