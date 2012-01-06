@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Weather plasma applet for KDE4
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -22,8 +23,5 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE-GPL2
 
 .include <bsd.port.mk>
