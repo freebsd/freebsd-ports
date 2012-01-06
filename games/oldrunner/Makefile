@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	oldrunner
-PORTVERSION=	20100717
+PORTVERSION=	20120106
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp2.culot.org/culot/
+MASTER_SITES=	ftp://culot.org/culot/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A textmode remake of Broderbund's LodeRunner
+
+LICENSE=	BSD
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
