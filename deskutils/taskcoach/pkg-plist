@@ -1,28 +1,4 @@
 bin/taskcoach
-%%PYTHON_SITELIBDIR%%/buildlib/__init__.py
-%%PYTHON_SITELIBDIR%%/buildlib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_deb.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_deb.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_deb.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portable_base.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portable_base.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portable_base.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portableapps.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portableapps.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_portableapps.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_fedora.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_fedora.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_fedora.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_opensuse.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_opensuse.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_rpm_opensuse.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_winpenpack.py
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_winpenpack.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/bdist_winpenpack.pyo
-%%PYTHON_SITELIBDIR%%/buildlib/clean.py
-%%PYTHON_SITELIBDIR%%/buildlib/clean.pyc
-%%PYTHON_SITELIBDIR%%/buildlib/clean.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/__init__.pyo
@@ -239,6 +215,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.pyo
@@ -269,6 +248,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/idlecontroller.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/idlecontroller.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/idlecontroller.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/iocontroller.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/iocontroller.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/iocontroller.pyo
@@ -683,6 +665,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/base.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/base.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/base.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/idle.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/idle.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/idle.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/macos.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/macos.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/macos.pyo
@@ -719,9 +704,15 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/Growl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/SendKeys.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyo
@@ -1022,6 +1013,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyo
@@ -1149,4 +1143,3 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/command
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/application
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib
-@dirrm %%PYTHON_SITELIBDIR%%/buildlib
