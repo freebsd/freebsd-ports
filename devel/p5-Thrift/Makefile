@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Thrift
-PORTVERSION=	0.6.1
+PORTVERSION=	${THRIFT_PORTVERSION}	# need to keep this in sync with ../thrift see ../thrift/bsd.thrift.mk
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
@@ -25,4 +25,5 @@ post-extract:
 	@${LN} -sfh \
 	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/perl ${WRKSRC}
 
+.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>
