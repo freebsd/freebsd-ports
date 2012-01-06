@@ -37,11 +37,17 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
+SUB_LIST+=		MYSQL=" mysql"
+.else
+SUB_LIST+=		MYSQL=""
 .endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql
+SUB_LIST+=		PGSQL=" postgresql"
+.else
+SUB_LIST+=		PGSQL=""
 .endif
 
 .if defined(WITH_SNORT)
