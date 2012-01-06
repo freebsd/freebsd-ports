@@ -7,7 +7,7 @@
 
 PORTNAME=	setuptools
 PORTVERSION=	0.6c11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,12 +31,22 @@ PLIST_SUB+=	PYTHON_CURRENT=""
 PLIST_SUB+=	PYTHON_OLD="@comment "
 .endif
 
+SUB_FILES=	pkg-install
+SUB_LIST=	EASYINSTALL_PTH=${EASYINSTALL_PTH}
+
+EASYINSTALL_PTH=	${PYTHON_SITELIBDIR}/easy-install.pth
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/site.py ${PYTHON_SITELIBDIR}
 .for opt in -Qold -O
 	${PYTHON_CMD} ${opt} -m compileall -l -x \
 		'^[^s][^i]?[^t]?[^e]?[^.][^p][^y]$$' ${PYTHON_SITELIBDIR}
 .endfor
+	${CP} ${EASYINSTALL_PTH} ${EASYINSTALL_PTH}.dist
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
