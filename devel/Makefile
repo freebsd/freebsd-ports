@@ -1097,6 +1097,7 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
+    SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
     SUBDIR += nspr
