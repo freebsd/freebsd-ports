@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tthsum
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		CRITICAL
