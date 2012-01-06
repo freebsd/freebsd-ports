@@ -14,7 +14,7 @@ MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION} \
 MASTER_SITE_SUBDIR=	CPAN:TSCH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl bindings to the cairo graphics library
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.200:${PORTSDIR}/devel/p5-ExtUtils-Depends \
