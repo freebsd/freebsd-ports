@@ -14,11 +14,12 @@ DISTNAME=	CMF-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Zope Content Management Framework (CMF)
 
-USE_PYTHON=	yes
-USE_ZOPE=	yes
-DIST_SUBDIR=	zope
+DEPRECATED=	Doesn't work with modern Zope versions
+EXPIRATION_DATE=	2012-02-06
 
-CONFLICTS=	plone[0-9]*-[0-9]*
+USE_PYTHON=	2.4
+USE_ZOPE=	2.7
+DIST_SUBDIR=	zope
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/CMF*
