@@ -7,6 +7,7 @@
 
 PORTNAME=	liboauth
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://liboauth.sourceforge.net/pool/
 
@@ -25,6 +26,7 @@ USE_LDCONFIG=	yes
 MAN3=		oauth.3
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^if test/s/ == / = /' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^if test/s/ == / = /' \
+		-e '/PC_REQ=/s/ libcrypto//' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
