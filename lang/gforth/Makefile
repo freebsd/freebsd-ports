@@ -57,6 +57,7 @@ BYTEORDER=l
 post-patch:
 	${REINPLACE_CMD} 's:@CC@:& -I${LOCALBASE}/include -L${LOCALBASE}/lib:' \
 		 ${WRKSRC}/envos.fs.in
+	${REINPLACE_CMD} '/ checkone/d' ${WRKSRC}/Makefile.in
 
 post-install: install-doc remove-empty-files remove-empty-dirs
 
