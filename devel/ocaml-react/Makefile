@@ -6,6 +6,7 @@
 
 PORTNAME=	react
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -15,7 +16,12 @@ MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml module for functional reactive programming
 
 USE_OCAML=		yes
+.if defined (WITHOUT_X11)
+OCAMLC_DEPEND=		ocaml-notk>=3.11:${OCAMLC_PORT}
+.else
 OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
+.endif
+
 USE_OCAML_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
