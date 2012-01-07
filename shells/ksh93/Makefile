@@ -17,10 +17,10 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
-DISTFILES=	INIT.${KSHVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
+DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -37,6 +37,7 @@ NO_WRKSUBDIR=	yes
 
 MAN1=		ksh93.1
 
+INITVERSION=	2012-01-01
 KSHVERSION=	2011-02-08
 
 .include <bsd.port.options.mk>
