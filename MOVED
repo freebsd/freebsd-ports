@@ -3189,3 +3189,5 @@ www/zope210||2012-01-06|End of life is reached
 www/zope28||2012-01-06|End of life is reached
 www/zope29||2012-01-06|End of life is reached
 www/zope3||2012-01-06|End of life is reached
+x11-drivers/xf86-input-citron||2012-01-07|Removed
+x11-drivers/xf86-input-fpit||2012-01-07|Removed
