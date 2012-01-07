@@ -1,10 +1,11 @@
 etc/ezjail.conf.sample
-etc/rc.d/ezjail.sh
+etc/rc.d/ezjail
 bin/ezjail-admin
+share/zsh/site-functions/ezjail-admin
 %%EXAMPLESDIR%%/example/etc/make.conf
 %%EXAMPLESDIR%%/example/etc/periodic.conf
 %%EXAMPLESDIR%%/example/etc/rc.conf
-%%EXAMPLESDIR%%/example/ezjail.flavour
+%%EXAMPLESDIR%%/example/etc/rc.d/ezjail.flavour.example
 %%EXAMPLESDIR%%/example/usr/local/etc/sudoers
 %%EXAMPLESDIR%%/nullmailer-example/ezjail.flavour
 %%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
@@ -15,6 +16,7 @@ bin/ezjail-admin
 @dirrm %%EXAMPLESDIR%%/example/usr/local/etc/
 @dirrm %%EXAMPLESDIR%%/example/usr/local/
 @dirrm %%EXAMPLESDIR%%/example/usr/
+@dirrm %%EXAMPLESDIR%%/example/etc/rc.d/
 @dirrm %%EXAMPLESDIR%%/example/etc/
 @dirrm %%EXAMPLESDIR%%/example/
 @dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/
@@ -25,3 +27,5 @@ bin/ezjail-admin
 @dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/
 @dirrm %%EXAMPLESDIR%%/nullmailer-example/
 @dirrm %%EXAMPLESDIR%%
+@dirrmtry share/zsh/site-functions
+@dirrmtry share/zsh
