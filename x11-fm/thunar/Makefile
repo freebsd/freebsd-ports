@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
@@ -18,7 +18,7 @@ COMMENT=	Xfce 4 file manager
 LIB_DEPENDS=	tumbler-1.0:${PORTSDIR}/deskutils/xfce4-tumbler
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -39,7 +39,7 @@ OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on  \
 		PLUG_UCA	"Thunar User Customizable Actions plugin"	on  \
 		PLUG_WALL	"Thunar Wallpaper plugin"			on \
-		GVFS		"Add support for remote access"			on 
+		GVFS		"Add support for remote access"			on
 
 CONFIGURE_ARGS+=	--disable-debug \
 		--enable-gio-unix \

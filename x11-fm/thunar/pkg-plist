@@ -373,7 +373,6 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/lt/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/Thunar.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/Thunar.mo
@@ -386,8 +385,8 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/si/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/Thunar.mo
-%%NLS%%share/locale/te/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/Thunar.mo
@@ -415,6 +414,8 @@ share/pixmaps/Thunar/Thunar-about-logo.png
 %%NLS%%@dirrmtry share/locale/sk
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
