@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	server
-PORTVERSION=	2.3.6
+PORTVERSION=	2.4.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/410/
+MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/456/
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
 DISTNAME=	fusioninventory-for-glpi-metapackage_${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Plugin of glpi to get information of networking devices
 
-RUN_DEPENDS=	glpi>=0.78:${PORTSDIR}/www/glpi
+RUN_DEPENDS=	glpi>=0.80:${PORTSDIR}/www/glpi
 
 USE_PHP=	simplexml wddx
 
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 
 GLPIPLUGINDIR?=	www/glpi/plugins
 
-OPTIONS=	INVENTORY "Additional features" on\
+OPTIONS=	INVENTORY "Additional features" on \
 		SNMP "SNMP support" off
 
 .include <bsd.port.pre.mk>
