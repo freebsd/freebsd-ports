@@ -59,9 +59,7 @@ VIDEO_EXCL=	via:openchrome
 INPUT_ON=	mouse \
 		keyboard
 INPUT_OFF=	acecad \
-		citron \
 		elographics \
-		fpit \
 		hyperpen \
 		joystick \
 		magictouch mutouch \
