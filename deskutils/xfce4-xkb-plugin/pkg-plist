@@ -13,6 +13,7 @@ share/locale/es/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-xkb-plugin.mo
@@ -79,6 +80,7 @@ share/xfce4/xkb/flags/is.svg
 share/xfce4/xkb/flags/it.svg
 share/xfce4/xkb/flags/jo.svg
 share/xfce4/xkb/flags/jp.svg
+share/xfce4/xkb/flags/kh.svg
 share/xfce4/xkb/flags/km.svg
 share/xfce4/xkb/flags/kp.svg
 share/xfce4/xkb/flags/kr.svg
