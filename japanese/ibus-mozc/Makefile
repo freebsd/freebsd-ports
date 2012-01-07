@@ -6,6 +6,8 @@
 #
 
 PKGNAMEPREFIX=	ja-ibus-
+PKGNAMESUFFIX=
+PORTREVISION=	1
 COMMENT=	Mozc engine for IBus
 DATADIR=	${PREFIX}/share/ibus-${PORTNAME}
 
