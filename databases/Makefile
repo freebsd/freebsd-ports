@@ -649,6 +649,7 @@
     SUBDIR += py-cdb
     SUBDIR += py-cmemcache
     SUBDIR += py-couchdb
+    SUBDIR += py-cql
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-firebirdsql
