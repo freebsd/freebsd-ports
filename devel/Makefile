@@ -3214,6 +3214,7 @@
     SUBDIR += py-ptrace
     SUBDIR += py-pudb
     SUBDIR += py-px
+    SUBDIR += py-py_static_check
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
