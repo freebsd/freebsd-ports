@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.3.931.102
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -132,6 +132,8 @@ do-install-mozc_tool:
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 LIB_DEPENDS+=	ibus.2:${PORTSDIR}/textproc/ibus
+# after ibus updated to 1.4.0, use below instead.
+#LIB_DEPENDS+=	ibus-1.0.400:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
