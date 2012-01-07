@@ -1,0 +1,4 @@
+cmake-fedora consists a set of cmake modules that provideds helper macros and
+targets for linux, especially fedora developers.
+
+WWW: https://fedorahosted.org/cmake-fedora/
