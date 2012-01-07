@@ -664,6 +664,7 @@
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
     SUBDIR += sfront
+    SUBDIR += shairport
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout

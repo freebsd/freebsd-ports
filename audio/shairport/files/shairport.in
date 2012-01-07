@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: shairport
+# REQUIRE: DAEMON avahi_daemon
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable shairport:
+#
+# shairport_enable (bool): Set to NO by default.  Set it to YES to
+#         enable shairport.
+# shairport_flags='-a freebsdShairport'
+
+. /etc/rc.subr
+
+name="shairport"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/bin/${name}.pl"
+pidfile="/var/run/${name}.pid"
+procname="perl"
+
+command_args="-d -w ${pidfile}"
+
+load_rc_config ${name}
+
+: ${shairport_enable="NO"}
+
+run_rc_command "$1"
