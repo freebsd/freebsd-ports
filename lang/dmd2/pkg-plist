@@ -174,9 +174,10 @@ include/d/phobos2/std/internal/math/biguintnoasm.d
 include/d/phobos2/std/internal/math/biguintx86.d
 include/d/phobos2/std/internal/math/errorfunction.d
 include/d/phobos2/std/internal/math/gammafunction.d
+include/d/phobos2/std/internal/uni.d
+include/d/phobos2/std/internal/uni_tab.d
 include/d/phobos2/std/internal/processinit.d
 include/d/phobos2/std/internal/windows/advapi32.d
-include/d/phobos2/std/intrinsic.d
 include/d/phobos2/std/iterator.d
 include/d/phobos2/std/json.d
 include/d/phobos2/std/loader.d
