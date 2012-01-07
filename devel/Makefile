@@ -208,6 +208,7 @@
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
+    SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
     SUBDIR += cmph
     SUBDIR += cmunge
