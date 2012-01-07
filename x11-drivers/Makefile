@@ -5,10 +5,8 @@
 
     SUBDIR += input-wacom
     SUBDIR += xf86-input-acecad
-    SUBDIR += xf86-input-citron
     SUBDIR += xf86-input-egalax
     SUBDIR += xf86-input-elographics
-    SUBDIR += xf86-input-fpit
     SUBDIR += xf86-input-hyperpen
     SUBDIR += xf86-input-joystick
     SUBDIR += xf86-input-keyboard
