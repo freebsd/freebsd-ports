@@ -26,10 +26,8 @@ Dist			Port			Why
 VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.
 						Must accept license to download.
 TrueCrypt*		security/truecrypt	May not be redistributed.
-						Crypto; export-controlled.
 						Must accept license to download.
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
-						Crypto; export-controlled.
 						For personal use only.
 						Must accept license to download.
 aacplusenc-*		audio/aacplusenc	Unclear legal status
@@ -55,7 +53,6 @@ ads-java-novm-*		databases/adstudio	Only free for qualified Open Source
 						license is required for all other
 						usages
 annelid-*		games/annelid		Redistribution is limited
-apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
 apache_mod_smooth_streaming-*	www/mod_smooth_streaming Not for commerical use
 AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
@@ -93,7 +90,6 @@ cos-*			java/cos		Special conditions apply for
 						commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 cpml_*.alpha.rpm	lang/compaq-cc		Distribution not allowed
-Crypt-*			security/p5-Crypt-*	Crypto; export-controlled
 cryptix-jce-*		java/cryptix-jce	Testing purpose only
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by
@@ -218,7 +214,6 @@ gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may
 						the author.  Keep FreeBSD safe
 						if the theme author violated
 						copyrights
-gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the
@@ -286,7 +281,6 @@ jbootstrap-*.tar.gz	java/jbootstrap		Redistribution of pre-compiled
 						binaries is not permitted
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
-john-*			security/john		Crypto; export-controlled
 jpgraph-1.*		graphics/jpgraph	Not for commercial use
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
 jre-1_5*-linux-*.bin	java/linux-sun-jre15	License does not allow
@@ -360,7 +354,6 @@ OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron
 						Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from
 						CARDCAPTOR SAKURA
-openssl-*		security/openssl	Crypto; export/import-controlled
 opera-*			www/linux-opera		No redistribution, commercial
 						software
 OptimFROG*		audio/optimfrog		No commercial use
@@ -411,7 +404,6 @@ savage/Samuraiwars*	games/linux-savage-samuraiwars	Freeware, but license
 						terms are unclear
 savage/SFE*		games/linux-savage	Freeware, but license terms
 						are unclear
-sdr-*			net/sdr			Crypto; export-controlled
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by
 						hand
 serialmail-*		mail/serialmail		No license -- see
@@ -436,7 +428,6 @@ speedmgmt*		net/pppoa		Not for redistribution -- see
 						/dsl/disclaimer_lx.htm
 srd-fpw*		japanese/srd-fpw	The original dictionary is not
 						free
-*mod_ssl*		www/apache13-modssl	Crypto; export-controlled
 stat.tar.Z		math/unixstat		License does not allow
 						redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
