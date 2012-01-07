@@ -62,7 +62,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>[106672] High CVE-2011-3921: Use-after-free in animation frames.
 	      Credit to Boris Zbarsky of Mozilla.<br/>
 	    [107128] High CVE-2011-3919: Heap-buffer-overflow in libxml. Credit
-	      to J&uuml;ri Aedla.<br/>
+	      to Juri Aedla.<br/>
 	    [108006] High CVE-2011-3922: Stack-buffer-overflow in glyph
 	      handling. Credit to Google Chrome Security Team (Cris Neckar).</p>
 	</blockquote>
