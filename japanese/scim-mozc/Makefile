@@ -6,6 +6,8 @@
 #
 
 PKGNAMEPREFIX=  ja-scim-
+PKGNAMESUFFIX=
+PORTREVISION=	1
 COMMENT=	Mozc engine for SCIM
 DATADIR=        ${PREFIX}/share/scim-${PORTNAME}
 
