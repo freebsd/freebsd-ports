@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ctwm
-PORTVERSION=	3.8a
-PORTREVISION=	4
+PORTVERSION=	3.8.1
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 		http://distfiles.over-yonder.net/ctwm/
