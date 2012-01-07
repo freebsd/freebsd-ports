@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: volmand
+# REQUIRE: LOGIN
+# KEYWORD: shutdown nojail
+
+. /etc/rc.subr
+
+name="volmand"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/volmand"
+load_rc_config $name
+pidfile="/var/run/volmand.pid"
+
+run_rc_command "$1"

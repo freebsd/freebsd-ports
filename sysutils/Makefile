@@ -934,6 +934,7 @@
     SUBDIR += virtualmin
     SUBDIR += vlogger
     SUBDIR += vobcopy
+    SUBDIR += volman
     SUBDIR += vordog
     SUBDIR += vstrip
     SUBDIR += vttest
