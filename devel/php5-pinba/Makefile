@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	pinba
-PORTVERSION=	2009.12.24
+PORTVERSION=	2011.08.18
 CATEGORIES=	devel
-MASTER_SITES=	http://aston2.com/~raven/unix/pinba/ \
- 		http://mks-chel.ru/~raven/FreeBSD/pinba/
+MASTER_SITES=	https://github.com/tony2001/pinba_extension/tarball/${GITVERSION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	pinba_extension-200912240755
+DISTNAME=	tony2001-pinba_extension-${GITVERSION}
 
-MAINTAINER=	raven428@gmail.com
+MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP-extension part of statistics server for PHP
 
-BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
+
+GITVERSION=	4de401c
+FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
