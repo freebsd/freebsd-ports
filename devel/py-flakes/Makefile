@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	flakes
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
-		http://code.enthought.com/src/
+		http://launchpadlibrarian.net/79102431/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflakes-${PORTVERSION}
 
@@ -19,6 +19,5 @@ COMMENT=	Pyflakes is a program that analyzes Python programs for errors
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyflakes
-NO_BUILD=	yes
 
 .include <bsd.port.mk>
