@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezjail
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/ezjail/
 
@@ -15,7 +15,8 @@ COMMENT=	A framework to easily create, manipulate and run FreeBSD jails
 
 USE_BZIP2=	yes
 
-MAN1=		ezjail-admin.1
-MAN5=		ezjail.5 ezjail.conf.5
+MAN5=		ezjail.conf.5
+MAN7=		ezjail.7
+MAN8=		ezjail-admin.8
 
 .include <bsd.port.mk>
