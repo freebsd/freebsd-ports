@@ -1,5 +1,5 @@
---- contrib/Makefile.orig	2010-01-04 12:08:02.000000000 +0800
-+++ contrib/Makefile	2010-05-01 05:26:53.000000000 +0800
+--- contrib/Makefile.orig	2011-07-24 14:15:51.000000000 +0800
++++ contrib/Makefile	2011-12-24 03:00:00.000000000 +0800
 @@ -3,19 +3,36 @@
  #CFLAGS	=	-g
  
@@ -8,7 +8,7 @@
 +#ENDIAN	=	-D_LITTLE_ENDIAN
  
 -CFLAGS	=	-g -I.. -I$(HOME)/bld/include -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
-+CFLAGS	+=	%%DEBUG%% %%ENDIAN%% %%PROJ%% -I.. -I%%PREFIX%%/include -L%%PREFIX%%/lib
++CFLAGS	+=	 -D_LITTLE_ENDIAN %%PROJ%% -I.. -I$(LOCALBASE)/include -L$(LOCALBASE)/lib
  
  SHPOBJ	=	../shpopen.o ../dbfopen.o ../safileio.o
  
@@ -22,22 +22,22 @@
 -all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
 +#all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
 +
-+ALLPROG=	dbfcat dbfinfo shpcat shpdxf shpfix Shape_PointInPoly
-+ALLPROJ=	shpcentrd shpdata shpinfo shpproj shpwkb shpsort
++ALLPROG=	Shape_PointInPoly dbfcat dbfinfo shpcat shpdxf shpfix shpsort
++ALLPROJ=	shpcentrd shpdata shpinfo shpproj shpwkb
 +
-+.if defined(PROJ4)
-+all:		$(ALLPROG) $(ALLPROJ)
-+install:	allprog_install allproj_install
-+.else
++.if defined(NO_PROJ4)
 +all:		$(ALLPROG)
 +install:	allprog_install
++.else
++all:		$(ALLPROG) $(ALLPROJ)
++install:	allprog_install allproj_install
 +.endif
 +
 +allprog_install:	$(ALLPROG)
-+	%%INSTALL_PROGRAM%% $(ALLPROG) %%PREFIX%%/bin/
++	$(BSD_INSTALL_PROGRAM) $(ALLPROG) $(PREFIX)/bin/
 +
 +allproj_install:	$(ALLPROJ)
-+	%%INSTALL_PROGRAM%% $(ALLPROJ) %%PREFIX%%/bin/
++	$(BSD_INSTALL_PROGRAM) $(ALLPROJ) $(PREFIX)/bin/
  
  clean:  
  	rm -f shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfcat dbfinfo shpinfo shpfix shpcat *.o
