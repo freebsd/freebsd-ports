@@ -321,7 +321,6 @@ l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so
 						distributed.  Contains crypto
 						code from OpenSSL
 lpac-*			audio/lpac		No commercial use
-lsh*			security/lsh		Crypto; export-controlled
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character
