@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/binaries/
 DIST_SUBDIR=	postgresql
@@ -22,6 +22,14 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 
+MAN1=		postgresql_autodoc.1
+
 WRKSRC=		${WRKDIR}/postgresql_autodoc
+
+do-install:
+		@${INSTALL_SCRIPT} ${WRKSRC}/postgresql_autodoc ${PREFIX}/bin
+		@${INSTALL_MAN} ${WRKSRC}/postgresql_autodoc.1 ${MANPREFIX}/man/man1
+		@${MKDIR} ${DATADIR}
+		@${INSTALL_DATA} ${WRKSRC}/*.tmpl ${DATADIR}
 
 .include <bsd.port.mk>
