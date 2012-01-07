@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible backup tool
 
-RUN_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
+BUILD_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 		p5-DateTime-Format-ISO8601>0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Net-Amazon-S3>0:${PORTSDIR}/net/p5-Net-Amazon-S3 \
 		p5-Net-SFTP>0:${PORTSDIR}/net/p5-Net-SFTP \
 		p5-String-Escape>0:${PORTSDIR}/textproc/p5-String-Escape
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
