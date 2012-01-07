@@ -8,3 +8,4 @@ lib/ocaml/site-lib/react/react.mli
 lib/ocaml/site-lib/react/react.o
 @dirrm lib/ocaml/site-lib/react
 @dirrmtry lib/ocaml/site-lib
+@dirrmtry lib/ocaml
