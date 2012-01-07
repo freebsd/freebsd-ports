@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARIN whois client
 
+TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Whois::ARIN.3 \
