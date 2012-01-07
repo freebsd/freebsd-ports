@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orage
-PORTVERSION=	4.8.2
+PORTVERSION=	4.8.3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
-USE_XFCE=	configenv libgui panel
+USE_XFCE=	configenv libmenu panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -38,13 +38,17 @@ MAN1=		globaltime.1 orage.1 tz_convert.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BDB)
-CONFIGURE_ARGS+=--with-bdb4=yes --with-bdb4_dir=${PREFIX}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
+CONFIGURE_ARGS+=--with-bdb4=yes --with-bdb4_dir=${LOCALBASE}
 USE_BDB=	yes
+# Only Berkeley DB 4.x
+INVALIDE_BDB_VER=	5
 .else
 CONFIGURE_ARGS+=--with-bdb4=no
 .endif
 
 .if defined(WITH_ICAL)
+CONFIGURE_ARGS+=--enable-libical
 LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
 CFLAGS+=	-I${LOCALBASE}/include/libical
 PLIST_SUB+=	WITH_ICAL="@comment "
@@ -70,6 +74,11 @@ CONFIGURE_ARGS+=--disable-libnotify
 .endif
 
 post-patch:
+.if defined(WITH_BDB)
+	@${REINPLACE_CMD} -e 's|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g ; \
+		s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g ; \
+		s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|g' ${WRKSRC}/configure
+.endif
 .if !defined(WITH_ICAL)
 	@${REINPLACE_CMD} -e 's|libical-|no-&|g' ${WRKSRC}/configure
 .endif
