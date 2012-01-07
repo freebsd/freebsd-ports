@@ -1,0 +1,26 @@
+--- configure.orig	2012-01-05 21:33:21.000000000 +0100
++++ configure	2012-01-05 21:53:17.000000000 +0100
+@@ -14050,8 +14050,8 @@
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $BDB_DIR_INCLUDE" >&5
+ $as_echo "$BDB_DIR_INCLUDE" >&6; }
+   else
+-    if test -f $BDB_DIR/include/db4/db.h; then
+-     BDB_DIR_INCLUDE=$BDB_DIR/include/db4
++    if test -f %%BDB_INCLUDE_DIR%%/db.h; then
++     BDB_DIR_INCLUDE=%%BDB_INCLUDE_DIR%%
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $BDB_DIR_INCLUDE" >&5
+ $as_echo "$BDB_DIR_INCLUDE" >&6; }
+     else
+@@ -14063,9 +14063,9 @@
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Berkeley DB libraries" >&5
+ $as_echo_n "checking for Berkeley DB libraries... " >&6; }
+-  if test -f $BDB_DIR/lib/libdb-4.0.la; then
+-   BDB_DIR_LIB=$BDB_DIR/lib
+-   BDB_LIB=libdb-4.0.la
++  if test -f %%BDB_LIB_DIR%%/lib%%BDB_LIB_NAME%%.la; then
++   BDB_DIR_LIB=%%BDB_LIB_DIR%%
++   BDB_LIB=lib%%BDB_LIB_NAME%%.la
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $BDB_DIR_LIB $BDB_LIB" >&5
+ $as_echo "$BDB_DIR_LIB $BDB_LIB" >&6; }
+   else
