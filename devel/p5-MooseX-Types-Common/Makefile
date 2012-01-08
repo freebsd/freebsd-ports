@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Capture-Tiny>=0:${PPORTSDIR}/devel/p5-Capture-Tiny \
+TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
