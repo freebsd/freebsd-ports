@@ -18,7 +18,7 @@ lib/libopendkim.so
 lib/libopendkim.so.5
 %%ARLIB%%libdata/pkgconfig/ar.pc
 libdata/pkgconfig/opendkim.pc
-sbin/opendkim
+%%FILTER%%sbin/opendkim
 @dirrm include/opendkim
 %%ARLIB%%@dirrm include/ar
 @dirrmtry etc/mail

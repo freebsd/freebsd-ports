@@ -16,6 +16,7 @@ CONFIGURE_ARGS+=	--enable-allsymbols
 .endif
 
 .if defined(WITH_ATPS) && !defined(WITHOUT_ATPS)
+WITH_XTAGS=		yes
 CONFIGURE_ARGS+=	--enable-atps
 .endif
 
