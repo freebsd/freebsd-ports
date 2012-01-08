@@ -1,7 +1,0 @@
-This is a collection of plug-ins to cryptographic engines, accessible
-by the crypt-plug interface.  Applications can make use of the crypto
-operations provided by the CryptPlug interface, and the plug-ins
-provided by this package implement the interface for various
-cryptographic engines, like GnuPG.
-
-WWW: http://www.gnupg.org/aegypten
