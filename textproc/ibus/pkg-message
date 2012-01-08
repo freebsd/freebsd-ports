@@ -35,6 +35,7 @@ Following input methods/engines are available in ports:
 chinese/ibus-chewing		Chewing engine for IBus
 chinese/ibus-pinyin		The PinYin input method
 japanese/ibus-anthy		Anthy engine for IBus
+japanese/ibus-mozc		Mozc engine for IBus
 japanese/ibus-skk		SKK engine for IBus
 textproc/ibus-kmfl		KMFL IMEngine for IBus framework
 textproc/ibus-m17n		The m17n IMEngine for IBus framework
