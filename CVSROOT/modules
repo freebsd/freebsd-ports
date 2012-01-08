@@ -1729,6 +1729,7 @@ clutter-gst                     ports/multimedia/clutter-gst
 clutter-gtk                     ports/graphics/clutter-gtk
 cm-super                        ports/print/cm-super
 cmake                           ports/devel/cmake
+cmake-fedora                    ports/devel/cmake-fedora
 cmake-gui                       ports/devel/cmake-gui
 cmatrix                         ports/misc/cmatrix
 cmdftp                          ports/ftp/cmdftp
@@ -21833,6 +21834,7 @@ py-configobj                    ports/devel/py-configobj
 py-construct                    ports/devel/py-construct
 py-couchdb                      ports/databases/py-couchdb
 py-coverage                     ports/devel/py-coverage
+py-cql                          ports/databases/py-cql
 py-crack                        ports/security/py-crack
 py-crcmod                       ports/devel/py-crcmod
 py-creole                       ports/textproc/py-creole
@@ -22386,6 +22388,7 @@ py-px                           ports/devel/py-px
 py-py-restclient                ports/www/py-py-restclient
 py-py2play                      ports/net-p2p/py-py2play
 py-pyPgSQL                      ports/databases/py-pyPgSQL
+py-py_static_check              ports/devel/py-py_static_check
 py-pyang                        ports/net-mgmt/py-pyang
 py-pybloom                      ports/math/py-pybloom
 py-pybmp                        ports/multimedia/py-pybmp
@@ -24782,6 +24785,7 @@ sh-rtems-gcc                    ports/devel/sh-rtems-gcc
 sh-rtems-gdb                    ports/devel/sh-rtems-gdb
 sha                             ports/security/sha
 shaaft                          ports/games/shaaft
+shairport                       ports/audio/shairport
 shapelib                        ports/devel/shapelib
 shaperprobe                     ports/net/shaperprobe
 shared-desktop-ontologies       ports/x11-toolkits/shared-desktop-ontologies
@@ -26762,6 +26766,7 @@ vodcatcher                      ports/multimedia/vodcatcher
 vodmr                           ports/mail/vodmr
 voipong                         ports/audio/voipong
 volleyball                      ports/games/volleyball
+volman                          ports/sysutils/volman
 volta                           ports/www/volta
 voltcraft304                    ports/misc/voltcraft304
 volumecontrol.app               ports/audio/volumecontrol.app
