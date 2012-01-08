@@ -1,5 +1,5 @@
---- ccx_2.3/src/Makefile.orig	2011-03-27 02:19:21.000000000 +0900
-+++ ccx_2.3/src/Makefile	2011-05-11 11:54:16.000000000 +0900
+--- ccx_2.4/src/Makefile.orig	2011-03-27 02:19:21.000000000 +0900
++++ ccx_2.4/src/Makefile	2011-05-11 11:54:16.000000000 +0900
 @@ -1,9 +1,9 @@
  
 -CFLAGS = -Wall -O  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
@@ -25,9 +25,9 @@
 -       -lm -lc
 +LIBS = -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% -lm
  
- ccx_2.3: $(OCCXMAIN) ccx_2.3.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.3.c; $(FC) -Wall -O -o $@ $(OCCXMAIN) ccx_2.3.a  -lpthread  $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.3.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.3.a %%PTHREAD_LIBS%%  $(LIBS)
+ ccx_2.4: $(OCCXMAIN) ccx_2.4.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.4.c; $(FC) -Wall -O -o $@ $(OCCXMAIN) ccx_2.4.a  -lpthread  $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.4.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.4.a %%PTHREAD_LIBS%%  $(LIBS)
  
- ccx_2.3.a: $(OCCXF) $(OCCXC)
+ ccx_2.4.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?
