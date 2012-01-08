@@ -2,4 +2,5 @@ rubygem-net-http-persistent is an implementation of RFC 2617 - Digest Access
 Authentication. At this time the gem does not fully integrate with Net::HTTP and
 can be used for with other HTTP clients.
 
-WWW: http://github.com/drbrain/net-http-digest_auth
+WWW: https://github.com/drbrain/net-http-digest_auth
+RG:  https://rubygems.org/gems/net-http-digest_auth
