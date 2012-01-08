@@ -24,6 +24,9 @@ MAKEFILE=	makefile.unix
 PLIST_FILES=	bin/unrar
 PORTDOCS=	license.txt readme.txt
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^CXX/ s|^|#|' ${WRKSRC}/${MAKEFILE}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
