@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usablelabs.com/download/
 
-MAINTAINER=	piyawat@usablelabs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A locale for Thai in Thailand, TIS-620 character set
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

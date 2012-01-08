@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.usablelabs.com/download/
 
-MAINTAINER=	piyawat@usablelabs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
 
 USE_LDCONFIG=	yes
