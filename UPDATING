@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120108:
+  AFFECTS: users of devel/p5-CPAN-Meta and devel/p5-Version-Requirements
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Author of Version::Requirements (devel/p5-Version-Requirements) merged
+  its function to CPAN::Meta::Requirements (part of devel/p5-CPAN-Meta). 
+  As a result, devel/p5-Version-Requirements is marked DEPRECATED.
+  Please run the following commands to update p5-CPAN-Meta and remove
+  p5-Version-Requirements:
+
+  # portmaster -o devel/p5-CPAN-Meta devel/p5-Version-Requirements
+  # pkg_delete p5-Version-Requirements-\*
+
 20120104:
   AFFECTS: users of devel/thrift, py-thrift, php5-thrift, p5-thrift
   AUTHOR: scheidell@FreeBSD.org
