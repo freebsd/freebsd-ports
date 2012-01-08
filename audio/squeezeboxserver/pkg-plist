@@ -2588,7 +2588,7 @@ bin/softsqueeze
 @dirrmtry %%SLIMDIR%%/Plugins
 @dirrmtry %%SLIMDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm -rf /var/db/squeezeboxserver/cache > /dev/null 2>&1 || true
-@dirrmtry /var/db/squeezeboxserver/playlists
-@dirrmtry /var/db/squeezeboxserver
-@unexec test -d /var/db/squeezeboxserver && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/squeezeboxserver and its contents manually.")
+@unexec rm -rf %%SLIMDBDIR%%/cachee
+@unexec rmdir %%SLIMDBDIR%%/playlists 2>/dev/null || true
+@unexec rmdir %%SLIMDBDIR%% 2>/dev/null || true
+@unexec test -d %%SLIMDBDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %%SLIMDBDIR%% and its contents manually.")
