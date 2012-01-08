@@ -320,7 +320,6 @@
     SUBDIR += ilias3
     SUBDIR += imgsizer
     SUBDIR += impresscms
-    SUBDIR += instiki
     SUBDIR += interchange
     SUBDIR += ismail
     SUBDIR += iwebcal
@@ -1615,7 +1614,6 @@
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
-    SUBDIR += rubygem-htauth
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
