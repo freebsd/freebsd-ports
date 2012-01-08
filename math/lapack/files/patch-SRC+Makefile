@@ -1,51 +1,92 @@
---- SRC/Makefile.orig	2010-11-04 11:11:45.000000000 +0900
-+++ SRC/Makefile	2010-12-11 12:46:22.000000000 +0900
-@@ -123,7 +123,7 @@
-    sormr3.o sormrq.o sormrz.o sormtr.o spbcon.o spbequ.o spbrfs.o \
-    spbstf.o spbsv.o  spbsvx.o \
-    spbtf2.o spbtrf.o spbtrs.o spocon.o spoequ.o sporfs.o sposv.o  \
--   sposvx.o spotf2.o spotrf.o spotri.o  spstrf.o spstf2.o \
-+   sposvx.o spotf2.o spotri.o spstrf.o spstf2.o \
-    sppcon.o sppequ.o \
-    spprfs.o sppsv.o  sppsvx.o spptrf.o spptri.o spptrs.o sptcon.o \
-    spteqr.o sptrfs.o sptsv.o  sptsvx.o spttrs.o sptts2.o srscl.o  \
-@@ -164,7 +164,7 @@
-    cgels.o  cgelsd.o cgelss.o cgelsx.o cgelsy.o cgeql2.o cgeqlf.o cgeqp3.o \
-    cgeqpf.o cgeqr2.o cgeqr2p.o cgeqrf.o cgeqrfp.o cgerfs.o \
-    cgerq2.o cgerqf.o cgesc2.o cgesdd.o cgesv.o  cgesvd.o  \
--   cgesvx.o cgetc2.o cgetf2.o cgetrf.o cgetri.o cgetrs.o \
-+   cgesvx.o cgetc2.o cgetf2.o cgetri.o \
-    cggbak.o cggbal.o cgges.o  cggesx.o cggev.o  cggevx.o cggglm.o \
-    cgghrd.o cgglse.o cggqrf.o cggrqf.o \
-    cggsvd.o cggsvp.o \
-@@ -194,7 +194,7 @@
-    claswp.o clasyf.o clatbs.o clatdf.o clatps.o clatrd.o clatrs.o clatrz.o \
-    clatzm.o clauu2.o clauum.o cpbcon.o cpbequ.o cpbrfs.o cpbstf.o cpbsv.o  \
-    cpbsvx.o cpbtf2.o cpbtrf.o cpbtrs.o cpocon.o cpoequ.o cporfs.o \
--   cposv.o  cposvx.o cpotf2.o cpotrf.o cpotri.o cpotrs.o cpstrf.o cpstf2.o \
-+   cposv.o  cposvx.o cpotf2.o cpotri.o cpstrf.o cpstf2.o \
-    cppcon.o cppequ.o cpprfs.o cppsv.o  cppsvx.o cpptrf.o cpptri.o cpptrs.o \
-    cptcon.o cpteqr.o cptrfs.o cptsv.o  cptsvx.o cpttrf.o cpttrs.o cptts2.o \
-    crot.o   cspcon.o cspmv.o  cspr.o   csprfs.o cspsv.o  \
-@@ -371,9 +371,9 @@
+--- SRC/Makefile~	2011-11-18 23:21:16.000000000 +0900
++++ SRC/Makefile	2011-11-18 23:22:26.000000000 +0900
+@@ -154,7 +154,7 @@
  
- all: ../$(LAPACKLIB)
+ DSLASRC = spotrs.o sgetrs.o spotrf.o sgetrf.o 
  
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
- ALLXOBJ=$(SXLASRC) $(DXLASRC) $(CXLASRC) $(ZXLASRC) $(ALLXAUX)
+ SXLASRC = sgesvxx.o sgerfsx.o sla_gerfsx_extended.o sla_geamv.o		\
+    sla_gercond.o sla_gerpvgrw.o ssysvxx.o ssyrfsx.o			\
+    sla_syrfsx_extended.o sla_syamv.o sla_syrcond.o sla_syrpvgrw.o	\
+@@ -162,7 +162,7 @@
+    sla_porpvgrw.o sgbsvxx.o sgbrfsx.o sla_gbrfsx_extended.o		\
+    sla_gbamv.o sla_gbrcond.o sla_gbrpvgrw.o sla_lin_berr.o slarscl2.o	\
+    slascl2.o sla_wwaddw.o
 -endif
 +.endif
  
- ALLOBJ=$(SLASRC) $(DLASRC) $(DSLASRC) $(CLASRC) $(ZLASRC) $(ZCLASRC) \
- 	   $(SCLAUX) $(DZLAUX) $(ALLAUX)
-@@ -409,13 +409,13 @@
- $(CLASRC): $(FRC)
- $(DLASRC): $(FRC)
- $(ZLASRC): $(FRC)
+ CLASRC = \
+    cbdsqr.o cgbbrd.o cgbcon.o cgbequ.o cgbrfs.o cgbsv.o  cgbsvx.o \
+@@ -226,7 +226,7 @@
+    cgeqrt.o cgeqrt2.o cgeqrt3.o cgemqrt.o \
+    ctpqrt.o ctpqrt2.o ctpmqrt.o ctprfb.o
+ 
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
- $(ALLXAUX): $(FRC)
+ CXLASRC = cgesvxx.o cgerfsx.o cla_gerfsx_extended.o cla_geamv.o \
+    cla_gercond_c.o cla_gercond_x.o cla_gerpvgrw.o \
+    csysvxx.o csyrfsx.o cla_syrfsx_extended.o cla_syamv.o \
+@@ -238,7 +238,7 @@
+    chesvxx.o cherfsx.o cla_herfsx_extended.o cla_heamv.o \
+    cla_hercond_c.o cla_hercond_x.o cla_herpvgrw.o \
+    cla_lin_berr.o clarscl2.o clascl2.o cla_wwaddw.o
+-endif
++.endif
+ 
+ ZCLASRC = cpotrs.o cgetrs.o cpotrf.o cgetrf.o 
+ 
+@@ -302,7 +302,7 @@
+    dgeqrt.o dgeqrt2.o dgeqrt3.o dgemqrt.o \
+    dtpqrt.o dtpqrt2.o dtpmqrt.o dtprfb.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ DXLASRC = dgesvxx.o dgerfsx.o dla_gerfsx_extended.o dla_geamv.o		\
+    dla_gercond.o dla_gerpvgrw.o dsysvxx.o dsyrfsx.o			\
+    dla_syrfsx_extended.o dla_syamv.o dla_syrcond.o dla_syrpvgrw.o	\
+@@ -310,7 +310,7 @@
+    dla_porpvgrw.o dgbsvxx.o dgbrfsx.o dla_gbrfsx_extended.o		\
+    dla_gbamv.o dla_gbrcond.o dla_gbrpvgrw.o dla_lin_berr.o dlarscl2.o	\
+    dlascl2.o dla_wwaddw.o
+-endif
++.endif
+ 
+ ZLASRC = \
+    zbdsqr.o zgbbrd.o zgbcon.o zgbequ.o zgbrfs.o zgbsv.o  zgbsvx.o \
+@@ -379,7 +379,7 @@
+    zgeqrt.o zgeqrt2.o zgeqrt3.o zgemqrt.o \
+    ztpqrt.o ztpqrt2.o ztpmqrt.o ztprfb.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ ZXLASRC = zgesvxx.o zgerfsx.o zla_gerfsx_extended.o zla_geamv.o		\
+    zla_gercond_c.o zla_gercond_x.o zla_gerpvgrw.o zsysvxx.o zsyrfsx.o	\
+    zla_syrfsx_extended.o zla_syamv.o zla_syrcond_c.o zla_syrcond_x.o	\
+@@ -389,14 +389,14 @@
+    zla_gbrpvgrw.o zhesvxx.o zherfsx.o zla_herfsx_extended.o		\
+    zla_heamv.o zla_hercond_c.o zla_hercond_x.o zla_herpvgrw.o		\
+    zla_lin_berr.o zlarscl2.o zlascl2.o zla_wwaddw.o
+-endif
++.endif
+ 
+ ALLOBJ = $(SLASRC) $(DLASRC) $(DSLASRC) $(CLASRC) $(ZLASRC) $(ZCLASRC) \
+    $(SCLAUX) $(DZLAUX) $(ALLAUX)
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ ALLXOBJ = $(SXLASRC) $(DXLASRC) $(CXLASRC) $(ZXLASRC)
+-endif
++.endif
+ 
+ all: ../$(LAPACKLIB)
+ 
+@@ -433,12 +433,12 @@
+ $(ZLASRC): $(FRC)
+ $(ZCLASRC): $(FRC)
+ $(DSLASRC): $(FRC)
+-ifdef USEXBLAS
++.ifdef USEXBLAS
  $(SXLASRC): $(FRC)
  $(CXLASRC): $(FRC)
  $(DXLASRC): $(FRC)
