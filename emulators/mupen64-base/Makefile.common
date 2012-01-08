@@ -18,11 +18,8 @@ USE_GNOME=	gtk12
 .if ${PKGNAMESUFFIX} == "-base"
 USE_GL=		yes
 USE_SDL=	sdl
-.	if defined(HAVE_VCR)
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
-.	endif
 ALL_TARGET=		mupen64 mupen64_nogui
-EXTRACT_AFTER_ARGS+=	${DISTNAME}/README.vcr ${DISTNAME}/doc ${DISTNAME}/lang ${DISTNAME}/logo.xpm \
+EXTRACT_AFTER_ARGS+=	${DISTNAME}/doc ${DISTNAME}/lang ${DISTNAME}/logo.xpm \
 				${DISTNAME}/memory ${DISTNAME}/mupen64.ini ${DISTNAME}/r4300 \
 					${DISTNAME}/whatsnew.txt
 .else
@@ -100,12 +97,6 @@ post-configure:
 	@${REINPLACE_CMD} -i "" -e 's|^#define GTK2_SUPPORT 1|#undef GTK2_SUPPORT|g' ${WRKSRC}/config.h
 .endif
 
-.if defined(HAVE_VCR)
-.	if ${PKGNAMESUFFIX} != "-glide"
-		@${REINPLACE_CMD} -i "" -e 's|^#undef VCR_SUPPORT|#define VCR_SUPPORT 1|g' ${WRKSRC}/config.h
-.	endif
-.endif
-
 .for f in ${FIXFILES}
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/${f}
 	@${REINPLACE_CMD} -e 's|(GLvoid)|(void)|' ${WRKSRC}/${f}
@@ -136,7 +127,6 @@ do-install:
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/whatsnew.txt ${DOCSDIR}/whatsnew.txt
-		${INSTALL_DATA} ${WRKSRC}/README.vcr ${DOCSDIR}/README.vcr
 		${INSTALL_DATA} ${WRKSRC}/doc/readme.pdf ${DOCSDIR}/readme.pdf
 .	endif
 .else

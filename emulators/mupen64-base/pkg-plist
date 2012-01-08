@@ -9,7 +9,6 @@ bin/mupen64_nogui
 %%DATADIR%%/lang/italian.lng
 %%DATADIR%%/lang/pt_BR.lng
 %%DATADIR%%/lang/spanish.lng
-%%PORTDOCS%%%%DOCSDIR%%/README.vcr
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.pdf
 @dirrm %%DATADIR%%/lang
