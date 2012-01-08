@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,18 +25,16 @@ LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_RC_SUBR=	milter-opendkim
 USE_LDCONFIG=	yes
 
-MAN5=		opendkim.conf.5
 MAN8=		opendkim-genkey.8 opendkim-genzone.8 \
-		opendkim-testadsp.8 opendkim-testkey.8 \
-		opendkim.8
+		opendkim-testadsp.8 opendkim-testkey.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS= \
+OPTIONS=	\
 	ARLIB		"Asynchronous thread-safe DNS library"	On  \
+	FILTER		"OpenDKIM filter, requires libmilter/Sendmail"	On \
 	GNUTLS		"Use GnuTLS instead of OpenSSL"		Off \
 	LUA		"Describe filter policy with lua"	Off \
 	MEMCACHED	"Use memcached as a data set"		Off \
@@ -50,10 +48,19 @@ MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_FILTER) && !defined(WITHOUT_FILTER)
+USE_RC_SUBR=	milter-opendkim
+MAN5+=		opendkim.conf.5
+MAN8+=		opendkim.8
+PLIST_SUB+=		FILTER=""
 WITHOUT_MILTER_CFLAGS=	yes
 WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
+.else
+CONFIGURE_ARGS+=	--disable-filter
+PLIST_SUB+=		FILTER="@comment "
+.endif
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
@@ -126,7 +133,9 @@ USE_OPENLDAP=		yes
 .endif
 .if defined(WITH_LUA) || defined(WITH_RBL) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--with-lua
+. if !defined(WITHOUT_FILTER)
 MAN3+=			opendkim-lua.3
+. endif
 MAN8+=			miltertest.8
 PLIST_SUB+=		LUA=""
 USE_LUA=		5.1
