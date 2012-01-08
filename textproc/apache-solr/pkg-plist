@@ -6,10 +6,12 @@
 %%JAVAJARDIR%%/apache-solr-core-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-dataimporthandler-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-dataimporthandler-extras-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/apache-solr-langid-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-solrj-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-test-framework-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-uima-%%PORTVERSION%%.jar
-%%JAVAJARDIR%%/solrj-lib/commons-codec-1.4.jar
+%%JAVAJARDIR%%/apache-solr-velocity-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/solrj-lib/commons-codec-1.5.jar
 %%JAVAJARDIR%%/solrj-lib/commons-httpclient-3.1.jar
 %%JAVAJARDIR%%/solrj-lib/commons-io-1.4.jar
 %%JAVAJARDIR%%/solrj-lib/geronimo-stax-api_1.0_spec-1.0.1.jar
