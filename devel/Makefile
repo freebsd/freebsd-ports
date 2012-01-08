@@ -112,7 +112,6 @@
     SUBDIR += boehm-gc-redirect
     SUBDIR += boehm-gc-threaded
     SUBDIR += bonobo
-    SUBDIR += bonobo-conf
     SUBDIR += boost-all
     SUBDIR += boost-docs
     SUBDIR += boost-jam
