@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-table
-PORTVERSION=	1.3.0.20100621
+PORTVERSION=	1.3.9.20110827
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -15,8 +15,8 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Table based input method framework for IBus
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	ibus-1.0.400:${PORTSDIR}/textproc/ibus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	2.5+
 USE_GNOME=	pkgconfig pygtk2
@@ -38,6 +38,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|g" ${WRKSRC}/engine/*.py
-	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 .include <bsd.port.mk>

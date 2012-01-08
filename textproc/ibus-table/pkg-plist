@@ -34,7 +34,7 @@ share/ibus/component/table.xml
 %%DATADIR%%/icons/half-letter.svg
 %%DATADIR%%/icons/half-punct.svg
 %%DATADIR%%/icons/ibus-table.svg
-%%DATADIR%%/icons/latex.svg
+%%DATADIR%%/icons/latex.png
 %%DATADIR%%/icons/ncommit.svg
 %%DATADIR%%/icons/onechar.svg
 %%DATADIR%%/icons/phrase.svg
