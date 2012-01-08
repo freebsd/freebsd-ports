@@ -7,7 +7,7 @@
      straight block encryption/decryption the second does base64
      mime encoding/decoding of the encrypted/decrypted blocks.
  
-     The idea is the the two sides have a shared secret that
+     The idea is that the two sides have a shared secret that
      supplies one of the keys and a randomly generated block of
      bytes provides the second key.  The random key is passed in
      cleartext between the two sides.

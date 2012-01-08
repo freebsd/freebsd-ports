@@ -10,7 +10,7 @@ difficult task for a human, as small differences in numerical output values
 are expected.  File differencing utilites, such as diff(1), will generally
 produce voluminous output, often longer than the original files.
 
-ndiff solves this problem. Taking two two text files expected to be
+ndiff solves this problem. Taking two text files expected to be
 identical, or at least numerically similar, it allows to specify absolute
 and/or relative error tolerances for differences between numerical values
 in the two files, and then reports only the lines with values exceeding
