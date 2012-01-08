@@ -1,7 +1,0 @@
-lib/cryptplug/gpgme-openpgp.a
-lib/cryptplug/gpgme-openpgp.la
-lib/cryptplug/gpgme-openpgp.so
-lib/cryptplug/gpgme-smime.a
-lib/cryptplug/gpgme-smime.la
-lib/cryptplug/gpgme-smime.so
-@dirrm lib/cryptplug

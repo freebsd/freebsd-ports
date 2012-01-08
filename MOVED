@@ -3199,3 +3199,5 @@ x11-toolkits/gob||2012-01-08|Has expired: No more supported upstream, not depend
 www/rubygem-htauth||2012-01-08|Has expired: broke for ~12 months
 www/instiki||2012-01-08|Has expired: has been marked ignore since 2010/09/16
 mail/msmtpqueue||2012-01-08|Has expired: These scripts now come with mail/msmtp
+security/cryptplug||2012-01-08|Has expired: development has ceased
+security/gpgme03||2012-01-08|Has expired: superceded by security/gpgme

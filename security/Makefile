@@ -93,7 +93,6 @@
     SUBDIR += create-cert
     SUBDIR += cryptlib
     SUBDIR += cryptopp
-    SUBDIR += cryptplug
     SUBDIR += cryptstring
     SUBDIR += cvm
     SUBDIR += cyrus-sasl2
@@ -168,7 +167,6 @@
     SUBDIR += gpasman
     SUBDIR += gpass
     SUBDIR += gpgme
-    SUBDIR += gpgme03
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
