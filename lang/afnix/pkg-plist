@@ -74,7 +74,6 @@ include/afnix/itu/Libitu.hpp
 include/afnix/itu/Oid.hpp
 include/afnix/itu/Preditu.hpp
 include/afnix/mth/Algebra.hpp
-include/afnix/mth/Cramer.hpp
 include/afnix/mth/IpPoint.hpp
 include/afnix/mth/Krylov.hpp
 include/afnix/mth/Libmth.hpp
@@ -92,8 +91,6 @@ include/afnix/mth/Rmi.hpp
 include/afnix/mth/Rni.hpp
 include/afnix/mth/Rpolynom.hpp
 include/afnix/mth/Rsamples.hpp
-include/afnix/mth/Rsi.hpp
-include/afnix/mth/Rsparse.hpp
 include/afnix/mth/Rvector.hpp
 include/afnix/mth/Rvi.hpp
 include/afnix/net/Address.hpp
@@ -122,6 +119,7 @@ include/afnix/nwg/Session.hpp
 include/afnix/nwg/Uri.hpp
 include/afnix/nwg/UriQuery.hpp
 include/afnix/phy/Libphy.hpp
+include/afnix/phy/Periodic.hpp
 include/afnix/phy/PhyCalls.hpp
 include/afnix/phy/Physics.hpp
 include/afnix/phy/Predphy.hpp
@@ -466,7 +464,6 @@ lib/libafnix-xpe.so.2
 @dirrm include/afnix/net
 @dirrm include/afnix/nwg
 @dirrm include/afnix/phy
-@dirrm include/afnix/pim
 @dirrm include/afnix/plt
 @dirrm include/afnix/sec
 @dirrm include/afnix/sio
