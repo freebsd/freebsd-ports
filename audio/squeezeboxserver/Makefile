@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -135,7 +135,8 @@ EXCEPTDIRS=	Bin \
 		CPAN/YAML
 
 CPIOARGS=	--quiet -pdum -R
-PLIST_SUB=	SLIMDIR=${SLIMDIR}
+PLIST_SUB=	SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR}
 
 SUB_FILES=	Custom.pm \
 		pkg-install \
