@@ -495,7 +495,6 @@
     SUBDIR += gmake
     SUBDIR += gnatpython
     SUBDIR += gnome-common
-    SUBDIR += gnome-crash
     SUBDIR += gnome-js-common
     SUBDIR += gnome-vfs
     SUBDIR += gnome-vfs-monikers
