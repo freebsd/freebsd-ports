@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -14,7 +14,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumurating of PKCS\#11 modules
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc --disable-nls
+CONFIGURE_ARGS=	--disable-gtk-doc --disable-nls --enable-debug=no
 MAKE_ENV=	exampledir=${EXAMPLESDIR}
 
 USE_AUTOTOOLS=	libtool
