@@ -6,27 +6,32 @@
 #
 
 PORTNAME=	lapack
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
-		http://netlib.org/lapack/ \
-		http://scicomp.ewha.ac.kr/netlib/lapack/ \
-		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
-DISTFILES=	lapack-${PORTVERSION}.tgz manpages-3.2.0.tgz
+MASTER_SITES=	NL
+MASTER_SITE_SUBDIR=	lapack
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	lapack
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	PROFILE "Build and install profiling libraries" Off
+OPTIONS=	PROFILE "Build and install profiling libraries" Off \
+		DOXYGEN "Install Doxygen to build manpages" Off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DOXYGEN)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+.endif
 
 .if ${ARCH} == "sparc64"
 FPIC=	-fPIC
@@ -35,7 +40,6 @@ FPIC=	-fpic
 .endif
 
 MAKE_JOBS_SAFE=	yes
-MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
 .if defined(WITH_PROFILE)
@@ -54,13 +58,22 @@ PLIST_SUB+=	PROFILE="@comment "
 
 SVERSION=4
 BLAS?=	-L${LOCALBASE}/lib -lblas
-RANLIB=	${LOCALBASE}/bin/ranlib
-AR=	${LOCALBASE}/bin/ar
+
+.if !defined(WITH_DOXYGEN)
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} manpages-3.2.0.tgz
+MANSRC=		${WRKDIR}/lapack-3.2.0/manpages/man/manl
+.include "${FILESDIR}/manpages"
+MANL=		${LAPACK_MAN}
+MANDIR=		${PREFIX}/man/manl
+.else
+.include "${FILESDIR}/manpages_doxygen"
+MANSRC=		${WRKSRC}/DOCS/man/man3
+MAN3=		${LAPACK_MAN}
+MANDIR=		${PREFIX}/man/man3
+.endif
 
 pre-fetch:
 	@${ECHO} "You can override F77 and FFLAGS on the command line."
-
-.include "${FILESDIR}/manpages"
 
 post-patch:
 	@${MV} ${WRKSRC}/INSTALL/make.inc.gfortran ${WRKSRC}/make.inc
@@ -98,6 +111,9 @@ do-build:
 	@${ECHO_CMD} "Building profile lapack library"
 	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
 .endif
+.if defined(WITH_DOXYGEN)
+	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}" man
+.endif
 
 post-build:
 .for lib in lapack tmglib
@@ -115,10 +131,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${lib}.a ${PREFIX}/lib/lib${lib}_p.a
 .endif
 .endfor
-	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[a-c]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[d-l]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[t-z]*.l ${PREFIX}/man/manl
+	@(cd ${MANSRC} && ${INSTALL_MAN} ${LAPACK_MAN} ${MANDIR})
 
 regression-test check test: build
 	@${ECHO_CMD} "Testing static lapack library"

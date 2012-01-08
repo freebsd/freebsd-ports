@@ -1,4 +1,4 @@
-MANL= \
+LAPACK_MAN=	\
 cbdsqr.l \
 cgbbrd.l \
 cgbcon.l \
@@ -296,7 +296,6 @@ cspsvx.l \
 csptrf.l \
 csptri.l \
 csptrs.l \
-csrot.l \
 csrscl.l \
 cstedc.l \
 cstegr.l \
@@ -1236,7 +1235,6 @@ zbcon.l \
 zbdsqr.l \
 zcgesv.l \
 zcposv.l \
-zdrot.l \
 zdrscl.l \
 zgbbrd.l \
 zgbcon.l \

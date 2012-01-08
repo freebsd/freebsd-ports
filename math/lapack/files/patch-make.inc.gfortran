@@ -1,14 +1,6 @@
---- INSTALL/make.inc.gfortran.orig	2009-04-16 14:10:16.000000000 -0400
-+++ INSTALL/make.inc.gfortran	2010-08-29 10:41:02.000000000 -0400
-@@ -8,7 +8,6 @@
- #
- #  The machine (platform) identifier to append to the library names
- #
--PLAT = _LINUX
- #  
- #  Modify the FORTRAN and OPTS definitions to refer to the
- #  compiler and desired compiler options for your machine.  NOOPT
-@@ -16,12 +15,12 @@
+--- INSTALL/make.inc.gfortran~	2011-11-18 23:13:49.000000000 +0900
++++ INSTALL/make.inc.gfortran	2011-11-18 23:15:52.000000000 +0900
+@@ -12,12 +12,12 @@
  #  selected.  Define LOADER and LOADOPTS to refer to the loader and 
  #  desired load options for your machine.
  #
@@ -26,7 +18,7 @@
  #
  # Timer for the SECOND and DSECND routines
  #
-@@ -40,9 +39,8 @@
+@@ -36,9 +36,8 @@
  #  The archiver and the flag(s) to use when building archive (library)
  #  If you system has no ranlib, set RANLIB = echo.
  #
@@ -37,15 +29,13 @@
  #
  #  Location of the extended-precision BLAS (XBLAS) Fortran library
  #  used for building and testing extended-precision routines.  The
-@@ -57,8 +55,8 @@
+@@ -53,6 +52,6 @@
  #  machine-specific, optimized BLAS library should be used whenever
  #  possible.)
  #
--BLASLIB      = ../../blas$(PLAT).a
--LAPACKLIB    = lapack$(PLAT).a
--TMGLIB       = tmglib$(PLAT).a
+-BLASLIB      = ../../librefblas.a
+-LAPACKLIB    = liblapack.a
+-TMGLIB       = libtmglib.a
 +BLASLIB      = %%BLAS%%
 +LAPACKLIB    = liblapack$(PLAT).a
 +TMGLIB       = libtmglib$(PLAT).a
- EIGSRCLIB    = eigsrc$(PLAT).a
- LINSRCLIB    = linsrc$(PLAT).a

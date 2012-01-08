@@ -1,11 +1,11 @@
---- Makefile~	2008-11-08 02:20:55.000000000 +0900
-+++ Makefile	2009-04-13 13:05:23.000000000 +0900
+--- Makefile~	2011-11-18 23:04:06.000000000 +0900
++++ Makefile	2011-11-18 23:04:27.000000000 +0900
 @@ -6,7 +6,11 @@
  
  include make.inc
  
 +.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
- all: lapack_install lib lapack_testing blas_testing
+ all: lapack_install lib blas_testing lapack_testing 
 +.else
 +all: lapack_install lib
 +.endif
