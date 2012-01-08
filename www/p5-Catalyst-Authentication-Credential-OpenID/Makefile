@@ -6,6 +6,7 @@
 
 PORTNAME=	Catalyst-Authentication-Credential-OpenID
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +23,18 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=1.28:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Net-OpenID-Consumer>=1.03:${PORTSDIR}/net/p5-Net-OpenID-Consumer \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-parent>=0.2:${PORTSDIR}/devel/p5-parent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
-MAN3=	Catalyst::Authentication::Credential::OpenID.3
+PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+MAN3=		Catalyst::Authentication::Credential::OpenID.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>
