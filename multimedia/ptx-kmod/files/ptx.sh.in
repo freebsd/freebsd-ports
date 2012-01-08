@@ -18,8 +18,7 @@ ptx_start()
 }
 ptx_stop()
 {
-# XXX: unloading is still unstable
-#	/sbin/kldunload ptx
+	/sbin/kldunload ptx
 }
 
 : ${ptx_enable="YES"}
