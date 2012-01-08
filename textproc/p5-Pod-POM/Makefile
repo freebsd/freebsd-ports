@@ -7,7 +7,7 @@
 
 PORTNAME=	Pod-POM
 PORTVERSION=	0.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POD Object Model
 
-BUILD_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -45,4 +44,11 @@ MAN3=		Pod::POM.3 \
 		Pod::POM::View::Pod.3 \
 		Pod::POM::View::Text.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>
