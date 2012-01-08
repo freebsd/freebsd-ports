@@ -40,7 +40,7 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-.if !defined(NOPOTEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
