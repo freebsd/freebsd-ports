@@ -297,7 +297,6 @@
     SUBDIR += mreport
     SUBDIR += msgconvert
     SUBDIR += msmtp
-    SUBDIR += msmtpqueue
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
