@@ -17,7 +17,7 @@ DISTFILES=	smf-sav-1.4.0.tar.gz:0 \
 		bind-src.tar.gz:1
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bart@tapolsky.net.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail Sender Address Validator
 
 PLIST_FILES=	sbin/smfsav \
