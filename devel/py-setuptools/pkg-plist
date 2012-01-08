@@ -4,7 +4,7 @@ bin/easy_install-%%PYVER%%
 %%PYTHON_SITELIBDIR%%/setuptools.pth
 @unexec if cmp -s %B/easy-install.pth %B/easy-install.pth.dist; then rm %B/easy-install.pth; fi
 %%PYTHON_SITELIBDIR%%/easy-install.pth.dist
-@exec [ ! -f %B/easy-install.pth ]; then cp %B/%f %B/easy-install.pth; fi
+@exec if [ ! -f %B/easy-install.pth ]; then cp %B/%f %B/easy-install.pth; fi
 %%PYTHON_SITELIBDIR%%/site.py
 %%PYTHON_SITELIBDIR%%/site.pyc
 %%PYTHON_SITELIBDIR%%/site.pyo
