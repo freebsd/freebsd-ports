@@ -2896,6 +2896,7 @@
     SUBDIR += php5-gettext
     SUBDIR += php5-ice
     SUBDIR += php5-json
+    SUBDIR += php5-msgpack
     SUBDIR += php5-pcntl
     SUBDIR += php5-phing
     SUBDIR += php5-pinba
