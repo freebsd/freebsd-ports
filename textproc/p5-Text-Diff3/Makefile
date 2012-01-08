@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compute three-way differences between texts
 
+TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base
+
 MAN3=	Text::Diff3.3 \
 	Text::Diff3::Base.3 \
 	Text::Diff3::Diff3.3 \
