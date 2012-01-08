@@ -3201,3 +3201,4 @@ www/instiki||2012-01-08|Has expired: has been marked ignore since 2010/09/16
 mail/msmtpqueue||2012-01-08|Has expired: These scripts now come with mail/msmtp
 security/cryptplug||2012-01-08|Has expired: development has ceased
 security/gpgme03||2012-01-08|Has expired: superceded by security/gpgme
+databases/pear-Doctrine||2012-01-08|Has expired: Please upgrade to 1.2.x: http://svn.doctrine-project.org/tags/1.2.4/UPGRADE_TO_1_2

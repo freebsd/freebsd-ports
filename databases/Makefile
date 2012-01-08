@@ -485,7 +485,6 @@
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
     SUBDIR += pear-DB_ldap2
-    SUBDIR += pear-Doctrine
     SUBDIR += pear-Doctrine12
     SUBDIR += pear-Horde_Db
     SUBDIR += pear-Horde_Imsp
