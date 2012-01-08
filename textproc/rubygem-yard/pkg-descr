@@ -5,4 +5,6 @@ enables the user to generate consistent, usable documentation that can be
 exported to a number of formats very easily, and also supports extending for
 custom Ruby constructs such as custom class level definitions.
 
-WWW: https://rubygems.org/gems/yard
+WWW: http://yardoc.org/
+     https://github.com/lsegal/yard
+RG:  https://rubygems.org/gems/yard
