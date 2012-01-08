@@ -3195,3 +3195,4 @@ multimedia/avifile||2012-01-08|Has expired: Broken for an extended period, super
 devel/bonobo-conf||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
 www/typo343||2012-01-08|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
 devel/gnome-crash||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
+x11-toolkits/gob||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
