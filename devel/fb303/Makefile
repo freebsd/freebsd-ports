@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fb303
-PORTVERSION=	0.7.0
+PORTVERSION=	${THRIFT_PORTVERSION}
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
@@ -15,6 +15,8 @@ DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	The Facebook Bassline
+
+LICENSE=	ASL
 
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		thrift:${PORTSDIR}/devel/thrift
@@ -30,9 +32,6 @@ USE_PERL5_RUN=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
-pre-configure:
-	${CHMOD} 774 ${WRKSRC}/../../install-sh
-
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 
@@ -42,4 +41,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
 .endfor
 
+.include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>
