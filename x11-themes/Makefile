@@ -93,12 +93,10 @@
     SUBDIR += gtk-murrine-themes
     SUBDIR += gtk-nodoka-engine
     SUBDIR += gtk-oxygen-engine
-    SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt-engine
     SUBDIR += gtk-qt4-engine
     SUBDIR += gtk-xfce-engine
-    SUBDIR += gtk-zenith-theme
     SUBDIR += icon-bluecurve-theme
     SUBDIR += icon-naming-utils
     SUBDIR += icons-buuf
