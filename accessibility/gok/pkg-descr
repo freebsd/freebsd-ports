@@ -7,7 +7,7 @@ common words, and even some commands. The GOK will provide an
 alternative interface to common commands and functions within
 applications that utilize the AT SPI.
 
-The GOK is is designed to be usable by many alternative input
+The GOK is designed to be usable by many alternative input
 methods, i.e. not a common keyboard and mouse combination.
 
 WWW: http://www.gok.ca

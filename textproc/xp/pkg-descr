@@ -4,7 +4,7 @@ From the XP homepage:
     detects all non well-formed documents.
 
 XP has the following design goals: Conformance and correctness, high
-performance and a layered structure. Is is currently non-validating but can
+performance and a layered structure. It is currently non-validating but can
 parse all external entities.
 
 For more details, please see the XP homepage:

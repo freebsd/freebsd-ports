@@ -6,7 +6,7 @@ can be used to store all relevant information about these
 non-relationships so they can later be introspected and examined.
 
 This module is fairly esoteric and, unless you are dynamically
-creating something out of of a DBIC Schema, is probably the wrong
+creating something out of a DBIC Schema, is probably the wrong
 solution for whatever it is you are trying to do. Please be advised
 that compatibility is not guaranteed for DBIx::Class 0.09000+. We
 will try to mantain all compatibility, but internal changes might

@@ -1,4 +1,4 @@
-Ghostess is a a graphical DSSI host, based on jack-dssi-host, but
+Ghostess is a graphical DSSI host, based on jack-dssi-host, but
 capable of saving and restoring plugin configuration, as well as
 specifying MIDI channels and layering synths. ghostess includes
 three MIDI drivers: an ALSA sequencer MIDI driver, a (clumsy but

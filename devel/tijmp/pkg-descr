@@ -6,7 +6,7 @@ TIJmp is written to be fast and have a small footprint, both memory- and cpu-
 wise. This means that the jvm will run at almost full speed, until you use
 tijmp to find some information.
 
-TIJmp uses C code to talk to the jvm and it uses swing to show the the tables
+TIJmp uses C code to talk to the jvm and it uses swing to show the tables
 of information. So tijmp is written in C (using jvmti and jni) and Java.
 
 TIJmp runs in the same jvm as the program being profiled. This means that it

@@ -1,5 +1,5 @@
 py-rioritized_methods is an extension to PEAK-Rules to prioritize
-methods in order to to avoid AmbiguousMethods situations.This module
+methods in order to avoid AmbiguousMethods situations.This module
 provides four decorators:
     prioritized_when
     prioritized_around

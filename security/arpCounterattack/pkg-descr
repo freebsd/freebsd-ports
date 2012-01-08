@@ -3,7 +3,7 @@ monitors traffic on any number of Ethernet interfaces and examines ARP replies
 and gratuitous ARP requests. If it notices an ARP reply or gratuitous ARP
 request that is in conflict with its notion of "correct" Ethernet/IP address
 pairs, it logs the attack if logging is enabled, and, if the Ethernet
-interface that the attack was seen on is is configured as being in aggressive
+interface that the attack was seen on is configured as being in aggressive
 mode, it sends out a gratuitous ARP request and a gratuitous ARP reply with
 the "correct" Ethernet/IP address pair in an attempt to reset the ARP tables
 of hosts on the local network segment. The corrective gratuitous ARP request
