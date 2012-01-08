@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	john
-DISTVERSION=	1.7.8-jumbo-8
+DISTVERSION=	1.7.9-jumbo-5
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
@@ -38,6 +38,8 @@ CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
 		RULES CONTACT CREDITS
 
+OPTIONS=	OPENMP	"Compile with OpenMP support"	off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -61,16 +63,22 @@ BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
-		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
+	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|' \
+		-e '/^CFLAGS =/s|-O2|${CFLAGS}|' ${WRKSRC}/src/Makefile
+.if defined(WITH_OPENMP)
+	@${REINPLACE_CMD} -E \
+		'/(fopenmp|-m${MACHINE_CPU:Msse2})$$/s,#(OMPFLAGS =),\1,' \
 			${WRKSRC}/src/Makefile
+.endif
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/run/*.rb
 	@${REINPLACE_CMD} -e '/_XOPEN_SOURCE/d' ${WRKSRC}/src/recovery.c
 
 pre-build:
 	@${ECHO_CMD}
-	@${ECHO_CMD} "Building for ${ALL_TARGET}"
+	@${ECHO_CMD} "Building John the Ripper for ${ALL_TARGET}" \
+		${WITH_OPENMP:C/.*/with/}${WITHOUT_OPENMP:C/.*/without/} \
+		"OpenMP support"
 	@${ECHO_CMD}
 
 do-install:
@@ -85,7 +93,6 @@ do-install:
 .if !exists(${PREFIX}/etc/john.conf)
 	${INSTALL_DATA} ${WRKSRC}/run/john.conf ${PREFIX}/etc
 .endif
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
