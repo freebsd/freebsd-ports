@@ -155,6 +155,8 @@ include/fxt/comb/perm-st-pref.h
 include/fxt/comb/big-fact2perm.h
 include/fxt/comb/binary-debruijn.h
 include/fxt/comb/binary-necklace.h
+include/fxt/comb/catalan-gray.h
+include/fxt/comb/catalan-lex.h
 include/fxt/comb/catalan.h
 include/fxt/comb/check-kpermgen.h
 include/fxt/comb/check-permgen.h
@@ -521,8 +523,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitarray-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitarray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombcolex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombcolex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcomblex-demo.cc
@@ -646,6 +646,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-necklace-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binomial-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binomial-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/comb2comp-demo.cc
@@ -962,6 +966,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-monotone-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-monotone-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/deque-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/deque-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/left-right-array-demo.cc
