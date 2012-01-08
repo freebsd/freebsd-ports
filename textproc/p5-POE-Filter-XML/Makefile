@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE Filter for parsing XML
 
-RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Declare>=0:${PORTSDIR}/devel/p5-MooseX-Declare \
 		p5-MooseX-InsideOut>=0:${PORTSDIR}/devel/p5-MooseX-InsideOut \
 		p5-MooseX-NonMoose>=0:${PORTSDIR}/devel/p5-MooseX-NonMoose \
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0.16:${PORTSDIR}/textproc/p5-XML-SAX
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
