@@ -1,6 +1,0 @@
-An AVI player and converter built around the 
-Windows binary codecs.
-Does not use Wine. It supports a lot of common modern codecs;
-these have actually been separated into the port graphics/win32-codecs.
-
-WWW: http://avifile.sourceforge.net/
