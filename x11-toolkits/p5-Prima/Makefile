@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.27
-PORTREVISION=	4
+PORTVERSION=	1.31
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -60,7 +59,7 @@ test: build
 	cd ${WRKSRC} && make test
 
 post-install:
-	${STRIP_CMD} ${SITE_PERL}/${PERL_ARCH}/auto/Prima/Prima.so
+	${STRIP_CMD} ${PREFIX}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/auto/Prima/Prima.so
 
 .if defined (WITHOUT_XFT)
 CONFIGURE_ARGS+=	WITH_XFT=0
