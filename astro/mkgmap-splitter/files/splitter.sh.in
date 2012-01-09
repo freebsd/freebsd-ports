@@ -4,4 +4,4 @@
 
 JAVA="%%LOCALBASE%%/bin/java"
 
-exec "${JAVA}" -Xmx1024m -jar %%DATADIR%%/splitter.jar "$@"
+exec "${JAVA}" -jar %%DATADIR%%/splitter.jar "$@"
