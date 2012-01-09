@@ -847,7 +847,6 @@ avida                           ports/biology/avida
 avidemux2                       ports/multimedia/avidemux2
 avidemux2-plugins               ports/multimedia/avidemux2-plugins
 aview                           ports/graphics/aview
-avifile                         ports/multimedia/avifile
 avinfo                          ports/multimedia/avinfo
 avis                            ports/java/avis
 avltree                         ports/devel/avltree
@@ -1170,7 +1169,6 @@ bonk                            ports/audio/bonk
 bonnie                          ports/benchmarks/bonnie
 bonnie++                        ports/benchmarks/bonnie++
 bonobo                          ports/devel/bonobo
-bonobo-conf                     ports/devel/bonobo-conf
 bontmia                         ports/sysutils/bontmia
 boo                             ports/lang/boo
 boodler                         ports/audio/boodler
@@ -1953,7 +1951,6 @@ cryptix-jce                     ports/java/cryptix-jce
 cryptlib                        ports/security/cryptlib
 cryptopp                        ports/security/cryptopp
 cryptoslam                      ports/games/cryptoslam
-cryptplug                       ports/security/cryptplug
 cryptstring                     ports/security/cryptstring
 cs                              ports/misc/cs
 cs-aspell                       ports/textproc/cs-aspell
@@ -4510,7 +4507,6 @@ gnome-clipboard-daemon          ports/x11/gnome-clipboard-daemon
 gnome-commander2                ports/x11-fm/gnome-commander2
 gnome-common                    ports/devel/gnome-common
 gnome-control-center            ports/sysutils/gnome-control-center
-gnome-crash                     ports/devel/gnome-crash
 gnome-cups-manager              ports/print/gnome-cups-manager
 gnome-db                        ports/databases/gnome-db
 gnome-desktop                   ports/x11/gnome-desktop
@@ -4692,7 +4688,6 @@ gnutls-devel                    ports/security/gnutls-devel
 gnuwash                         ports/deskutils/gnuwash
 go                              ports/lang/go
 goaccess                        ports/sysutils/goaccess
-gob                             ports/x11-toolkits/gob
 gob2                            ports/devel/gob2
 gobby                           ports/editors/gobby
 gobject-introspection           ports/devel/gobject-introspection
@@ -4763,7 +4758,6 @@ gpass                           ports/security/gpass
 gpctool                         ports/x11/gpctool
 gperiodic                       ports/biology/gperiodic
 gpgme                           ports/security/gpgme
-gpgme03                         ports/security/gpgme03
 gphoto2                         ports/graphics/gphoto2
 gphpedit                        ports/editors/gphpedit
 gpicview                        ports/graphics/gpicview
@@ -5918,7 +5912,6 @@ inspircd12                      ports/irc/inspircd12
 installwatch                    ports/sysutils/installwatch
 instant-server                  ports/misc/instant-server
 instead                         ports/games/instead
-instiki                         ports/www/instiki
 insub                           ports/irc/insub
 intclock                        ports/x11-clocks/intclock
 integrit                        ports/security/integrit
@@ -9539,7 +9532,6 @@ msgpack                         ports/devel/msgpack
 mshell                          ports/misc/mshell
 msieve                          ports/math/msieve
 msmtp                           ports/mail/msmtp
-msmtpqueue                      ports/mail/msmtpqueue
 msn-proxy                       ports/net-im/msn-proxy
 msort                           ports/textproc/msort
 msp430-binutils                 ports/devel/msp430-binutils
@@ -20749,6 +20741,7 @@ php5-json                       ports/devel/php5-json
 php5-ldap                       ports/net/php5-ldap
 php5-mbstring                   ports/converters/php5-mbstring
 php5-mcrypt                     ports/security/php5-mcrypt
+php5-msgpack                    ports/devel/php5-msgpack
 php5-mssql                      ports/databases/php5-mssql
 php5-mysql                      ports/databases/php5-mysql
 php5-mysqli                     ports/databases/php5-mysqli
@@ -24130,7 +24123,6 @@ rubygem-hike                    ports/devel/rubygem-hike
 rubygem-hoe                     ports/devel/rubygem-hoe
 rubygem-holidays                ports/devel/rubygem-holidays
 rubygem-hpricot                 ports/www/rubygem-hpricot
-rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmlentities            ports/textproc/rubygem-htmlentities
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-http_parser.rb          ports/net/rubygem-http_parser.rb
@@ -26343,7 +26335,6 @@ typetrainer                     ports/misc/typetrainer
 typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
-typo343                         ports/www/typo343
 typo344                         ports/www/typo344
 typo345                         ports/www/typo345
 typolight                       ports/www/typolight
@@ -27343,10 +27334,8 @@ xeyes                           ports/x11/xeyes
 xeyesplus                       ports/games/xeyesplus
 xf-spf                          ports/mail/xf-spf
 xf86-input-acecad               ports/x11-drivers/xf86-input-acecad
-xf86-input-citron               ports/x11-drivers/xf86-input-citron
 xf86-input-egalax               ports/x11-drivers/xf86-input-egalax
 xf86-input-elographics          ports/x11-drivers/xf86-input-elographics
-xf86-input-fpit                 ports/x11-drivers/xf86-input-fpit
 xf86-input-hyperpen             ports/x11-drivers/xf86-input-hyperpen
 xf86-input-joystick             ports/x11-drivers/xf86-input-joystick
 xf86-input-keyboard             ports/x11-drivers/xf86-input-keyboard
