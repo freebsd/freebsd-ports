@@ -6,10 +6,7 @@
 #
 
 PORTNAME=	vsftpd-ext
-UPSTREAMVERSION=	2.3.4
-EXTVERSION=	2
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
-PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -20,6 +17,9 @@ MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A FTP daemon that aims to be "very secure". Extended build
 
 CONFLICTS=	vsftpd-2* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-2*
+
+UPSTREAMVERSION=	2.3.5
+EXTVERSION=	1
 
 WRKSRC=	${WRKDIR}/vsFTPd-${UPSTREAMVERSION}-ext.${EXTVERSION}
 ALL_TARGET=	vsftpd
@@ -49,8 +49,10 @@ LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
 do-configure:
-	${REINPLACE_CMD} -e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
+	${REINPLACE_CMD} -e "s|vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
 		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
+	${REINPLACE_CMD} -e "s|/etc/vsftpd|${PREFIX}/etc/vsftpd|" \
+		${WRKSRC}/builddefs.h
 	${REINPLACE_CMD} \
 		-e '/^CC/s/=/?=/' \
 		-e '/^CFLAGS/{s/=/+=/;s/-O[0-9]//;}' \
