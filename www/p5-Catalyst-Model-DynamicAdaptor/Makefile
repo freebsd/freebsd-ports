@@ -16,9 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamically load adaptor modules
 
-RUN_DEPENDS=	${SITE_PERL}/Catalyst/Runtime.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Runtime.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Module/Recursive/Require.pm:${PORTSDIR}/devel/p5-Module-Recursive-Require \
 		${SITE_PERL}/Test/Spelling.pm:${PORTSDIR}/devel/p5-Test-Spelling
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
