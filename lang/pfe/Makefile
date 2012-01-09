@@ -25,9 +25,7 @@ MAN1=		pfe.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && ${OSVERSION} < 700000
-BROKEN=		does not compile
-.elif ${ARCH} == "powerpc"
+.if ${ARCH} == "powerpc"
 BROKEN=		does not compile
 .endif
 
