@@ -1,9 +1,4 @@
-To use these modules, copy into /boot/kernel directory:
-
-# cp -Rp ${PREFIX}/modules/* /boot/kernel/
-# kldxref /boot/kernel
-
-and add loading lines in /boot/loader.conf:
+To use these modules, add loading lines in /boot/loader.conf:
 
 virtio_load="YES"
 virtio_pci_load="YES"
@@ -13,7 +8,7 @@ virtio_balloon_load="YES"
 
 and edit fstab and interface config in rc.conf:
 
-# sed -i.bak -e 's|/dev/ada?/|/dev/vtbd/|' /etc/fstab
+# sed -i.bak -Ee 's|/dev/ada?|/dev/vtbd|' /etc/fstab
 # sed -i.bak -e 's|em0|vtnet0|' /etc/rc.conf
 
 and enable virtio devices in host's domain.xml:
