@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	276
-PORTREVISION=	1
+PORTVERSION=	277
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
