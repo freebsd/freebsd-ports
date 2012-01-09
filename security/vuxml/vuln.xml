@@ -47,6 +47,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e7fd27b2-3ae9-11e1-8b5c-00262d5ed8ee">
+    <topic>torcs -- untrusted local library loading</topic>
+    <affects>
+      <package>
+	<name>torcs</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TORCS News reports:</p>
+	<blockquote
+	  cite="http://torcs.sourceforge.net/index.php?name=News&amp;file=article&amp;sid=77">
+	  <p>An insecure change to LD_LIBRARY_PATH allows loading of libraries
+	    in directories other than the standard paths. This can be a
+	    problem when downloading and installing untrusted content from the
+	    Internet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2010-3384</cvename>
+	<url>http://torcs.sourceforge.net/index.php?name=News&amp;file=article&amp;sid=77</url>
+	<url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=3089384&amp;group_id=3777&amp;atid=103777</url>
+    </references>
+    <dates>
+      <discovery>2010-10-20</discovery>
+      <entry>2012-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a47af810-3a17-11e1-a1be-00e0815b8da8">
     <topic>spamdyke -- STARTTLS Plaintext Injection Vulnerability</topic>
     <affects>
