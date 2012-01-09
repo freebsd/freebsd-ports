@@ -1,14 +1,13 @@
-B
---- ./modules/misc/inhibit/xdg.c.orig	2011-11-25 13:17:54.000000000 -0500
-+++ ./modules/misc/inhibit/xdg.c	2011-11-25 13:31:37.000000000 -0500
-@@ -26,7 +26,6 @@
- #include <vlc_plugin.h>
+--- ./modules/misc/inhibit/xdg.c.orig	2011-11-22 15:30:36.000000000 -0500
++++ ./modules/misc/inhibit/xdg.c	2012-01-08 15:29:41.000000000 -0500
+@@ -27,7 +27,6 @@
  #include <vlc_inhibit.h>
  #include <assert.h>
+ #include <signal.h>
 -#include <spawn.h>
  #include <sys/wait.h>
- #include <signal.h>
  
+ static int Open (vlc_object_t *);
 @@ -47,7 +46,6 @@
      vlc_thread_t thread;
      vlc_cond_t update, inactive;
