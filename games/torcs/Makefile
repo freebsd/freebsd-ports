@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	torcs
-DISTVERSION=	1.3.1
-PORTREVISION=	5
+DISTVERSION=	1.3.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -17,7 +16,8 @@ COMMENT=	The Open Racing Car Simulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
@@ -33,14 +33,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
-MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LINSTDIR=	share/games/${PORTNAME}
-INSTDIR=	${PREFIX}/${LINSTDIR}
-
-PLIST_SUB=	TORCSDIR=${LINSTDIR}
+INSTDIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	faq.html
 
