@@ -1,8 +1,10 @@
-bin/gist
-%%SITE_PERL%%/WWW/GitHub/Gist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist/.packlist
+%%SITE_PERL%%/WWW/GitHub/Gist.pm
+%%SITE_PERL%%/WWW/GitHub/Gist/v2.pm
+%%SITE_PERL%%/WWW/GitHub/Gist/v3.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/GitHub/Gist
 @dirrmtry %%SITE_PERL%%/WWW/GitHub
 @dirrmtry %%SITE_PERL%%/WWW
