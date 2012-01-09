@@ -93,7 +93,8 @@ do-install:
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO}
 	@(cd ${XPI_LIBDIR}/${XPI_ID}; ${TAR} -xf ${XPI_FILE})
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${XPI_ID}
-	@${REINPLACE_CMD} -i "" "s/${XPI_ORIG_ID}/${XPI_ID}/" ${XPI_LIBDIR}/${XPI_ID}/install.rdf
+	@${REINPLACE_CMD} -i "" "s/${XPI_ORIG_ID}/${XPI_ID}/" ${XPI_LIBDIR}/${XPI_ID}/install.rdf \
+		${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js ${XPI_LIBDIR}/${XPI_ID}/modules/enigmailCommon.jsm
 	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${XPI_ID}
 	@${LN} -sf ${XPI_LIBDIR}/${XPI_ID} ${LOCALBASE}/lib/${GECKO}/extensions 2>/dev/null || true
 	@${LN} -sf ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO} 2>/dev/null || true
