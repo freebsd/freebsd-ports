@@ -47,6 +47,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a47af810-3a17-11e1-a1be-00e0815b8da8">
+    <topic>spamdyke -- STARTTLS Plaintext Injection Vulnerability</topic>
+    <affects>
+      <package>
+	<name>spamdyke</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/47435/">
+	  <p>The vulnerability is caused due to the TLS implementation not
+	    properly clearing transport layer buffers when upgrading from
+	    plaintext to ciphertext after receiving the "STARTTLS" command.
+	    This can be exploited to insert arbitrary plaintext data (e.g.
+	    SMTP commands) during the plaintext phase, which will then be
+	    executed after upgrading to the TLS ciphertext phase.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/47435/</url>
+      <url>http://www.spamdyke.org/documentation/Changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-01-04</discovery>
+      <entry>2012-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a1aef8e-3894-11e1-8b5c-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
