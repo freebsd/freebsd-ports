@@ -16,7 +16,7 @@ COMMENT=	Systems & network statistics collection daemon
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl
+USE_AUTOTOOLS=	autoconf autoheader automake libltdl
 WANT_GNOME=	yes
 
 LATEST_LINK=	collectd5
@@ -391,9 +391,6 @@ post-patch:
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in
-	@${REINPLACE_CMD} \
-		-e 's;$$[(]DESTDIR)$$[(]sysconfdir)/collectd\.conf;&.sample;' \
-		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '/$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
@@ -404,7 +401,7 @@ post-patch:
 		${WRKSRC}/contrib/collection.conf
 	@${REINPLACE_CMD} \
 		-e 's;{libdir}/pkgconfig;{prefix}/libdata/pkgconfig;' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.in
 
 post-install:
 	${MKDIR} /var/db/collectd
