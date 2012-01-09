@@ -17,7 +17,10 @@ COMMENT=	Perl module intended to make it easier to create reusable web apps
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
+BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
 
 PERL_CONFIGURE=	yes
 
