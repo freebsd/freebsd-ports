@@ -16,7 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gist pastebin posting command
 
-CONFLICTS=	p5-WWW-GitHub-Gist-[0-9]*
+CONFLICTS=	p5-App-gist-[0-9]*
 
 USE_RUBY=	YES
 NO_BUILD=	YES
