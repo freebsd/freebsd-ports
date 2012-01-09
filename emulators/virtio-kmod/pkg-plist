@@ -1,3 +1,4 @@
+@cwd /
 %%KMODDIR%%/if_vtnet.ko
 %%KMODDIR%%/if_vtnet.ko.symbols
 %%KMODDIR%%/virtio.ko
@@ -8,4 +9,5 @@
 %%KMODDIR%%/virtio_blk.ko.symbols
 %%KMODDIR%%/virtio_pci.ko
 %%KMODDIR%%/virtio_pci.ko.symbols
-@dirrmtry %%KMODDIR%%
+@exec /usr/sbin/kldxref /%%KMODDIR%%
+@unexec /usr/sbin/kldxref /%%KMODDIR%%
