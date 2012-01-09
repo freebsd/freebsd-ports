@@ -1,4 +1,5 @@
 bin/ack
+%%BASH%%etc/bash_completion.d/ack.bash_completion.sh
 %%SITE_PERL%%/App/Ack.pm
 %%SITE_PERL%%/App/Ack/Plugin/Basic.pm
 %%SITE_PERL%%/App/Ack/Plugin.pm
