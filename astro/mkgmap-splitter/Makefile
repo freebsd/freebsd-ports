@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	splitter
-PORTVERSION=	r171
+PORTVERSION=	r198
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/splitter/ \
 		http://mirror.amdmi3.ru/distfiles/
