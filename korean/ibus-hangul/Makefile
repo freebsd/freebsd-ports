@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-hangul
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +16,7 @@ COMMENT=	Hangul input engine for IBus
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul \
-		ibus.2:${PORTSDIR}/textproc/ibus
+		ibus-1.0.400:${PORTSDIR}/textproc/ibus
 
 PROJECTHOST=	ibus
 

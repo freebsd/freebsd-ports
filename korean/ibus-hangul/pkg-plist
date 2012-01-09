@@ -1,3 +1,4 @@
+lib/ibus-hangul/setup/hangul_keyboard_list
 libexec/ibus-engine-hangul
 libexec/ibus-setup-hangul
 share/ibus/component/hangul.xml
@@ -7,7 +8,6 @@ share/ibus/component/hangul.xml
 %%DATADIR%%/setup/config.py
 %%DATADIR%%/setup/config.pyc
 %%DATADIR%%/setup/config.pyo
-%%DATADIR%%/setup/hangul_keyboard_list
 %%DATADIR%%/setup/keycapturedialog.py
 %%DATADIR%%/setup/keycapturedialog.pyc
 %%DATADIR%%/setup/keycapturedialog.pyo
