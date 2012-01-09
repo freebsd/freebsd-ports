@@ -16,7 +16,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Standard client library for many popular cloud providers
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

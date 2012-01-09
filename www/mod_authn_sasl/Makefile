@@ -20,7 +20,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SASLAUTHD	"Register dependency for cyrus-sasl2-saslauthd"	off
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_BZIP2=	yes
 USE_APACHE=	22

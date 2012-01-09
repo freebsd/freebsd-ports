@@ -15,7 +15,7 @@ DISTFILES=	groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mjs@Bur.st
 COMMENT=	Agile dynamic language for the JVM
 
-LICENSE=	ASL
+LICENSE=	AL2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
 USE_ZIP=yes

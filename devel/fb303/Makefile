@@ -16,7 +16,7 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	The Facebook Bassline
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		thrift:${PORTSDIR}/devel/thrift

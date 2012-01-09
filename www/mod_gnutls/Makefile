@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	mod_gnutls uses the GnuTLS library to provide SSL, and TLS encryption for Apache HTTPD
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls

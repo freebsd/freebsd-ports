@@ -15,7 +15,7 @@ DISTNAME=	httpcomponents-core-${DISTVERSION}-bin
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing the base HTTP protocol
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes

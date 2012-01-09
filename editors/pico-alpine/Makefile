@@ -12,7 +12,7 @@ DISTNAME=	alpine-${PORTVERSION}
 
 COMMENT=	[Al]PIne's message COmposition editor and Pilot file manager
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 MASTERDIR=	${.CURDIR}/../../mail/alpine
 

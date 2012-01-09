@@ -18,7 +18,7 @@ COMMENT=	Embeds a Tcl interpreter in the Apache server
 WRKSRC=			${WRKDIR}/libapache2-mod-rivet-${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
-LICENSE=		ASL
+LICENSE=		AL2
 
 USE_APACHE=	22+
 USE_AUTOTOOLS=	automake autoconf

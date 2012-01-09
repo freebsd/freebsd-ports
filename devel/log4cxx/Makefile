@@ -15,7 +15,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Log4cxx is a port to C++ of the Log4j project
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 

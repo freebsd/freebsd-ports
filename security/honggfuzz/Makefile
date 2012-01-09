@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A general-purpose fuzzer with simple, command-line interface
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=   ${WRKSRC}/COPYING
 
 USE_GMAKE=	yes

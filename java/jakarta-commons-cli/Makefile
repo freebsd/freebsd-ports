@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

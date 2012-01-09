@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An implementations of common encoders and decoders
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes

@@ -15,7 +15,7 @@ DISTNAME=	Roorabck-${PORTNAME}-${DISTVERSION}-0-g${GITVERSION}
 MAINTAINER=	magik@roorback.net
 COMMENT=	Ninja is a small build system closest in spirit to Make
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 CONFLICTS=	irc/ninja-[0-9]*
 USE_PYTHON=	yes

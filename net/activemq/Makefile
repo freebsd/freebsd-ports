@@ -19,7 +19,7 @@ COMMENT=	Messaging and Integration Patterns provider
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-LICENSE=	ASL
+LICENSE=	AL2
 JAVA_VERSION=	1.5+
 MQDATA=		${PREFIX}/lib/${PORTNAME}
 MQDB=		${PREFIX}/${PORTNAME}

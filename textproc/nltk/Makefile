@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkin
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${DISTVERSION}-py${PYTHON_VER}.egg-info

@@ -13,7 +13,7 @@ MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed, remote execution and configuration management system
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
 

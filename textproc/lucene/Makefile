@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A full-text search engine for Java
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 NO_BUILD=	yes
 USE_JAVA=	yes

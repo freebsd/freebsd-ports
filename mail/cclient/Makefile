@@ -19,7 +19,7 @@ DISTNAME=	imap-${PORTVERSION}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 OPTIONS=	SSL "Compile with SSL support" on \

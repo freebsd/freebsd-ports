@@ -19,7 +19,7 @@ COMMENT=	API implementing Chain of Responsiblity design pattern
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils \
 		${JAVALIBDIR}/commons-digester.jar:${PORTSDIR}/textproc/jakarta-commons-digester \

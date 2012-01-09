@@ -20,7 +20,7 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

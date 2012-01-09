@@ -20,7 +20,7 @@ COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz

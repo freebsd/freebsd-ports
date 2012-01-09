@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 MAINTAINER=	geka@sippysoft.com
 COMMENT=	WSGI application for a simple XMLRPC method dispatching
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install

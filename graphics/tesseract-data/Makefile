@@ -16,7 +16,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Additional trained language data for the Tesseract OCR engine
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 DIST_SUBDIR=	tesseract
 PROJECTHOST=	tesseract-ocr

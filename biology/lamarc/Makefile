@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 OPTIONS=	WXGTK2 "Install wxWidgets" off
 

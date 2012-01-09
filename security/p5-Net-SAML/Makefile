@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using SAML SSO
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		zxid:${PORTSDIR}/security/zxid

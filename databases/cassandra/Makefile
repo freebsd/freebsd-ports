@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Open source distributed database management system
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk

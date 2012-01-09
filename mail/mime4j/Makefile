@@ -17,7 +17,7 @@ COMMENT=	A Java parser for e-mail message streams
 
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_JAVA=	yes

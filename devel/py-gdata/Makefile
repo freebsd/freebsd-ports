@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	GData Python Client Library
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 PROJECTHOST=	gdata-python-client
 USE_PYTHON=	-2.7

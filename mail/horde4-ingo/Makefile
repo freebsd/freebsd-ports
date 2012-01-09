@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	horde-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde email filter rules manager
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LATEST_LINK=	horde4-${PORTNAME}

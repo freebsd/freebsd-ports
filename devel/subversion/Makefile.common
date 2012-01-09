@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.6.[0-9]*
 

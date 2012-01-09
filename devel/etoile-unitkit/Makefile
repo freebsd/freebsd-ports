@@ -15,7 +15,7 @@ DISTNAME=	etoile-0.4.1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project UnitKit test framework on GNUstep
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

@@ -19,7 +19,7 @@ EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymizing network
 
-LICENSE=	ASL EULA
+LICENSE=	AL2 EULA
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp \

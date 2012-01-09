@@ -14,7 +14,7 @@ MASTER_SITES=	SF/jboss/Netty%20Project/Netty%20${PORTVERSION}.Final/
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Java NIO client server framework
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_JAVA=	yes
 USE_BZIP2=	yes

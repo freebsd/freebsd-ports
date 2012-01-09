@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 IGNORE_WITH_PHP=4
 

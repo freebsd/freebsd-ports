@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-common
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_ZIP=	yes

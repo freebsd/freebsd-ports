@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Functional behaviour load and performance test application
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

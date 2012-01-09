@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python bindings for Selenium
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rdflib>=3.1.0:${PORTSDIR}/textproc/py-rdflib
 
