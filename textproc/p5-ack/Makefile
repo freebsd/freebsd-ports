@@ -7,6 +7,7 @@
 
 PORTNAME=	ack
 PORTVERSION=	1.96
+PORTREVISION=	1
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	App
@@ -22,4 +23,16 @@ PERL_CONFIGURE=	yes
 
 MAN1=		ack.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+COMPLETION_DIR=		${PREFIX}/etc/bash_completion.d
+.if exists(${COMPLETION_DIR})
+RUN_DEPENDS+=	${COMPLETION_DIR}:${PORTSDIR}/shells/bash-completion
+PLIST_SUB+=		BASH=""
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/etc/ack.bash_completion.sh ${COMPLETION_DIR}
+.else
+PLIST_SUB+=		BASH="@comment "
+.endif
+
+.include <bsd.port.post.mk>
