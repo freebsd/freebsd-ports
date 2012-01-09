@@ -1,0 +1,16 @@
+From:
+
+http://sourceforge.net/tracker/?func=detail&aid=3425414&group_id=243163&atid=1121518
+
+*** tagutils/tagutils-mp3.c	2010-11-12 00:48:14.000000000 +0100
+--- tagutils/tagutils-mp3.c	2011-10-18 22:36:22.000000000 +0200
+*************** _get_mp3tags(char *file, struct song_met
+*** 78,83 ****
+--- 78,84 ----
+  		else if(!strcmp(pid3frame->id, "APIC") && !image_size)
+  		{
+  			if( (strcmp((char*)id3_field_getlatin1(&pid3frame->fields[1]), "image/jpeg") == 0) ||
++ 			    (strcmp((char*)id3_field_getlatin1(&pid3frame->fields[1]), "image/jpg") == 0) ||
+  			    (strcmp((char*)id3_field_getlatin1(&pid3frame->fields[1]), "jpeg") == 0) )
+  			{
+  				image = id3_field_getbinarydata(&pid3frame->fields[4], &image_size);

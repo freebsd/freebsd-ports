@@ -1,0 +1,136 @@
+From:
+
+https://sourceforge.net/tracker/?func=detail&aid=3387389&group_id=243163&atid=1121518
+
+Index: minidlnatypes.h
+===================================================================
+RCS file: /cvsroot/minidlna/minidlna/minidlnatypes.h,v
+retrieving revision 1.26
+diff -u -p -r1.26 minidlnatypes.h
+--- minidlnatypes.h	18 Aug 2011 23:24:17 -0000	1.26
++++ minidlnatypes.h	26 Aug 2011 21:32:40 -0000
+@@ -68,7 +68,7 @@ enum file_types {
+ enum client_types {
+ 	EXbox = 1,
+ 	EPS3,
+-	ESamsungTV,
++	ESamsungSeriesC,
+ 	EDenonReceiver,
+ 	EFreeBox,
+ 	EPopcornHour,
+Index: upnpdescgen.c
+===================================================================
+RCS file: /cvsroot/minidlna/minidlna/upnpdescgen.c,v
+retrieving revision 1.18
+diff -u -p -r1.18 upnpdescgen.c
+--- upnpdescgen.c	2 May 2011 23:50:52 -0000	1.18
++++ upnpdescgen.c	26 Aug 2011 21:32:40 -0000
+@@ -675,18 +675,40 @@ genRootDesc(int * len)
+ {
+ 	char * str;
+ 	int tmplen;
+-	tmplen = 2048;
++	tmplen = 2560;
+ 	str = (char *)malloc(tmplen);
+ 	if(str == NULL)
+ 		return NULL;
+ 	* len = strlen(xmlver);
+-	/*strcpy(str, xmlver); */
+ 	memcpy(str, xmlver, *len + 1);
+ 	str = genXML(str, len, &tmplen, rootDesc);
+ 	str[*len] = '\0';
+ 	return str;
+ }
+ 
++char *
++genRootDescSamsung(int * len)
++{
++	char * str;
++	int tmplen;
++	struct XMLElt samsungRootDesc[sizeof(rootDesc)/sizeof(struct XMLElt)];
++	tmplen = 2560;
++	str = (char *)malloc(tmplen);
++	if(str == NULL)
++		return NULL;
++	* len = strlen(xmlver);
++	memcpy(str, xmlver, *len + 1);
++	/* Replace the optional modelURL and manufacturerURL fields with Samsung foo */
++	memcpy(&samsungRootDesc, &rootDesc, sizeof(rootDesc));
++	samsungRootDesc[8+PNPX].eltname = "/sec:ProductCap";
++	samsungRootDesc[8+PNPX].data = "smi,DCM10,getMediaInfo.sec,getCaptionInfo.sec";
++	samsungRootDesc[12+PNPX].eltname = "/sec:X_ProductCap";
++	samsungRootDesc[12+PNPX].data = "smi,DCM10,getMediaInfo.sec,getCaptionInfo.sec";
++	str = genXML(str, len, &tmplen, samsungRootDesc);
++	str[*len] = '\0';
++	return str;
++}
++
+ /* genServiceDesc() :
+  * Generate service description with allowed methods and 
+  * related variables. */
+Index: upnpdescgen.h
+===================================================================
+RCS file: /cvsroot/minidlna/minidlna/upnpdescgen.h,v
+retrieving revision 1.5
+diff -u -p -r1.5 upnpdescgen.h
+--- upnpdescgen.h	17 Feb 2011 23:17:24 -0000	1.5
++++ upnpdescgen.h	26 Aug 2011 21:32:40 -0000
+@@ -74,6 +74,9 @@ struct stateVar {
+ char *
+ genRootDesc(int * len);
+ 
++char *
++genRootDescSamsung(int * len);
++
+ /* for the two following functions */
+ char *
+ genContentDirectory(int * len);
+Index: upnphttp.c
+===================================================================
+RCS file: /cvsroot/minidlna/minidlna/upnphttp.c,v
+retrieving revision 1.87
+diff -u -p -r1.87 upnphttp.c
+--- upnphttp.c	18 Aug 2011 18:34:59 -0000	1.87
++++ upnphttp.c	26 Aug 2011 21:32:40 -0000
+@@ -304,10 +304,12 @@ intervening space) by either an integer 
+ 				}
+ 				else if(strstrc(p, "SEC_HHP_", '\r'))
+ 				{
+-					h->req_client = ESamsungTV;
++					h->req_client = ESamsungSeriesC;
+ 					h->reqflags |= FLAG_SAMSUNG;
+ 					h->reqflags |= FLAG_DLNA;
+ 					h->reqflags |= FLAG_NO_RESIZE;
++					if(strstrc(p, "SEC_HHP_TV", '\r'))
++						h->reqflags |= FLAG_SAMSUNG_TV;
+ 				}
+ 				else if(strncmp(p, "SamsungWiselinkPro", 18)==0)
+ 				{
+@@ -844,6 +846,10 @@ ProcessHttpQuery_upnphttp(struct upnphtt
+ 				sendXMLdesc(h, genRootDesc);
+ 				friendly_name[i] = '\0';
+ 			}
++			else if( h->reqflags & FLAG_SAMSUNG_TV )
++			{
++				sendXMLdesc(h, genRootDescSamsung);
++			}
+ 			else
+ 			{
+ 				sendXMLdesc(h, genRootDesc);
+Index: upnphttp.h
+===================================================================
+RCS file: /cvsroot/minidlna/minidlna/upnphttp.h,v
+retrieving revision 1.27
+diff -u -p -r1.27 upnphttp.h
+--- upnphttp.h	18 Aug 2011 23:24:17 -0000	1.27
++++ upnphttp.h	26 Aug 2011 21:32:40 -0000
+@@ -113,7 +113,8 @@ struct upnphttp {
+ #define FLAG_NO_RESIZE          0x02000000
+ #define FLAG_MS_PFS             0x04000000 // Microsoft PlaysForSure client
+ #define FLAG_SAMSUNG            0x08000000
+-#define FLAG_AUDIO_ONLY         0x10000000
++#define FLAG_SAMSUNG_TV         0x10000000
++#define FLAG_AUDIO_ONLY         0x20000000
+ 
+ #define FLAG_FREE_OBJECT_ID     0x00000001
+ #define FLAG_ROOT_CONTAINER     0x00000002

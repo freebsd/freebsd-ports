@@ -1,0 +1,19 @@
+Patch from:
+
+http://sourceforge.net/tracker/?func=detail&aid=3459128&group_id=243163&atid=1121518
+
+diff -u -b -p -d -r1.104 upnpsoap.c
+--- upnpsoap.c	23 Nov 2011 22:41:42 -0000	1.104
++++ upnpsoap.c	13 Dec 2011 20:45:33 -0000
+@@ -754,9 +754,9 @@ callback(void *args, int argc, char **ar
+ 			ret = strcatf(str, " refID=\"%s\"", refID);
+ 		}
+ 		ret = strcatf(str, "&gt;"
+-		                   "&lt;dc:title&gt;%s&lt;/dc:title&gt;"
++		                   "&lt;dc:title&gt;%s%s&lt;/dc:title&gt;"
+ 		                   "&lt;upnp:class&gt;object.%s&lt;/upnp:class&gt;",
+-		                   title, class);
++		                   title, ((strchr(title, '.') == NULL  &&  (passed_args->filter & FILTER_RES)  &&  *mime == 'v'  &&  passed_args->client == ELGDevice) ? "." : ""), class);
+ 		if( comment && (passed_args->filter & FILTER_DC_DESCRIPTION) ) {
+ 			ret = strcatf(str, "&lt;dc:description&gt;%.384s&lt;/dc:description&gt;", comment);
+ 		}
