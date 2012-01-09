@@ -1,0 +1,49 @@
+lftp 4.3.3 checked for _Bool using C, not C++ ; keep this behaviour here because
+a failure to detect _Bool here would lead to try to re-define it in lftp's
+stdbool.h also included by C files, C having this thype is already defined.
+See HAVE__BOOL, "stdbool.h" and <stdbool.h>.
+
+--- configure.orig	2012-01-05 18:27:42.780415913 +0100
++++ configure	2012-01-05 18:31:57.117411742 +0100
+@@ -28128,6 +28128,11 @@
+ #define PROMOTED_MODE_T $gl_cv_promoted_mode_t
+ _ACEOF
+ 
++ac_ext=c
++ac_cpp='$CPP $CPPFLAGS'
++ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for stdbool.h that conforms to C99" >&5
+ $as_echo_n "checking for stdbool.h that conforms to C99... " >&6; }
+@@ -28196,7 +28201,7 @@
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_cxx_try_compile "$LINENO"; then :
++if ac_fn_c_try_compile "$LINENO"; then :
+   ac_cv_header_stdbool_h=yes
+ else
+   ac_cv_header_stdbool_h=no
+@@ -28205,7 +28210,7 @@
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_header_stdbool_h" >&5
+ $as_echo "$ac_cv_header_stdbool_h" >&6; }
+-   ac_fn_cxx_check_type "$LINENO" "_Bool" "ac_cv_type__Bool" "$ac_includes_default"
++   ac_fn_c_check_type "$LINENO" "_Bool" "ac_cv_type__Bool" "$ac_includes_default"
+ if test "x$ac_cv_type__Bool" = xyes; then :
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -28242,6 +28247,11 @@
+     HAVE__BOOL=0
+   fi
+ 
++ac_ext=cpp
++ac_cpp='$CXXCPP $CPPFLAGS'
++ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
++ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ 
+   # parse-datetime.y works with bison only.
