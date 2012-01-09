@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -21,7 +20,6 @@ LICENSE=	ASL
 
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk
-NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 USE_JAVA=	yes
 USE_RC_SUBR=	cassandra
@@ -39,7 +37,9 @@ SCRIPTS=	cassandra \
 		sstableloader
 
 OPTIONS=	MX4J "Enable HTTP interface for JMX" Off \
-		JNA  "Use JNA native access" Off
+		JNA "Use JNA native access" Off \
+		CQL "Install cqlsh" Off
+
 SUB_FILES=	repaircluster
 
 .include <bsd.port.options.mk>
@@ -56,12 +56,25 @@ PLIST_SUB+=	JNA=""
 .else
 PLIST_SUB+=	JNA="@comment "
 .endif
+.if defined(WITH_CQL)
+USE_PYTHON=	yes
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cql>=0:${PORTSDIR}/databases/py-cql
+PLIST_SUB+=	CQL=""
+SCRIPTS+=	cqlsh
+.else
+PLIST_SUB+=	CQL="@comment "
+.endif
 
 post-extract:
 	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server
 .for i in ${CONFIGS}
 	@${MV} ${WRKSRC}/conf/${i} ${WRKSRC}/conf/${i}.sample
 .endfor
+	@${MV} ${WRKSRC}/bin/cqlshrc.sample ${WRKSRC}/conf
+.if !defined(WITH_CQL)
+	@${RM} -r ${WRKSRC}/pylib
+	@${RM} ${WRKSRC}/bin/cqlsh
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' \
@@ -71,6 +84,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
 		${WRKSRC}/bin/cassandra.in.sh
 	@${RM} -f ${WRKSRC}/conf/*.orig
+.if defined(WITH_CQL)
+	@${REINPLACE_CMD} -e 's|os.path.dirname(__file__)|"${DATADIR}/bin"|' \
+		${WRKSRC}/bin/cqlsh
+.endif
+
+do-build:
+.if defined(WITH_CQL)
+	@${PYTHON_CMD} -m compileall ${WRKSRC}/pylib
+.endif
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -81,10 +103,13 @@ do-install:
 	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
 	@${LN} -s ${DATADIR}/bin/sstableloader ${PREFIX}/bin/sstableloader
 	@${LN} -s ${DATADIR}/bin/repaircluster ${PREFIX}/bin/repaircluster
-.ifdef (WITH_MX4J)
+.if defined(WITH_CQL)
+	@${LN} -s ${DATADIR}/bin/cqlsh ${PREFIX}/bin/cqlsh
+.endif
+.if defined(WITH_MX4J)
 	@${LN} -s ${LOCALBASE}/share/java/classes/mx4j-tools.jar ${DATADIR}/lib/mx4j-tools.jar
 .endif
-.ifdef (WITH_JNA)
+.if defined(WITH_JNA)
 	@${LN} -s ${LOCALBASE}/share/java/classes/jna.jar ${DATADIR}/lib/jna.jar
 	@${LN} -s ${LOCALBASE}/share/java/classes/jna-platform.jar ${DATADIR}/lib/jna-platform.jar
 .endif
