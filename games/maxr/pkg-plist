@@ -1,11 +1,4 @@
 bin/maxr
-%%DATADIR%%/ABOUT
-%%DATADIR%%/AUTHORS
-%%DATADIR%%/BUILDING
-%%DATADIR%%/CHANGELOG
-%%DATADIR%%/COPYING
-%%DATADIR%%/COPYING.README
-%%DATADIR%%/INSTALL
 %%DATADIR%%/MANUAL
 %%DATADIR%%/buildings/barracks/data.xml
 %%DATADIR%%/buildings/barracks/graphics.xml
@@ -48,6 +41,14 @@ bin/maxr
 %%DATADIR%%/buildings/dock/info.pcx
 %%DATADIR%%/buildings/dock/shw.pcx
 %%DATADIR%%/buildings/dock/video.pcx
+%%DATADIR%%/buildings/ecosphere/data.xml
+%%DATADIR%%/buildings/ecosphere/effect.pcx
+%%DATADIR%%/buildings/ecosphere/effect_org.pcx
+%%DATADIR%%/buildings/ecosphere/graphics.xml
+%%DATADIR%%/buildings/ecosphere/img.pcx
+%%DATADIR%%/buildings/ecosphere/info.pcx
+%%DATADIR%%/buildings/ecosphere/shw.pcx
+%%DATADIR%%/buildings/ecosphere/video.pcx
 %%DATADIR%%/buildings/energy_big/data.xml
 %%DATADIR%%/buildings/energy_big/effect.pcx
 %%DATADIR%%/buildings/energy_big/effect_org.pcx
@@ -311,6 +312,7 @@ bin/maxr
 %%DATADIR%%/gfx/help_screen.pcx
 %%DATADIR%%/gfx/hotseatplayers.pcx
 %%DATADIR%%/gfx/hud_bottom.pcx
+%%DATADIR%%/gfx/hud_chatbox.pcx
 %%DATADIR%%/gfx/hud_extra_players.pcx
 %%DATADIR%%/gfx/hud_left.pcx
 %%DATADIR%%/gfx/hud_right.pcx
@@ -359,19 +361,24 @@ bin/maxr
 %%DATADIR%%/keys.xml
 %%DATADIR%%/languages/lang_dut.xml
 %%DATADIR%%/languages/lang_eng.xml
+%%DATADIR%%/languages/lang_fra.xml
 %%DATADIR%%/languages/lang_ger.xml
 %%DATADIR%%/languages/lang_hun.xml
 %%DATADIR%%/languages/lang_rus.xml
 %%DATADIR%%/languages/lang_slv.xml
+%%DATADIR%%/languages/lang_spa.xml
 %%DATADIR%%/maps/Delta.wrl
+%%DATADIR%%/maps/Donuts.wrl
+%%DATADIR%%/maps/Lava.wrl
+%%DATADIR%%/maps/Mushroom.wrl
 %%DATADIR%%/maps/Three Isles.wrl
 %%DATADIR%%/maxr.bmp
 %%DATADIR%%/maxr.png
 %%DATADIR%%/music/music.xml
-%%DATADIR%%/sounds/Chat.wav
-%%DATADIR%%/sounds/absorb.wav
-%%DATADIR%%/sounds/arm.wav
-%%DATADIR%%/sounds/dummy.wav
+%%DATADIR%%/sounds/Chat.ogg
+%%DATADIR%%/sounds/absorb.ogg
+%%DATADIR%%/sounds/arm.ogg
+%%DATADIR%%/sounds/dummy.ogg
 %%DATADIR%%/vehicles/air_transport/data.xml
 %%DATADIR%%/vehicles/air_transport/graphics.xml
 %%DATADIR%%/vehicles/air_transport/img0.pcx
@@ -440,7 +447,7 @@ bin/maxr
 %%DATADIR%%/vehicles/assault/store.pcx
 %%DATADIR%%/vehicles/assault/video.flc
 %%DATADIR%%/vehicles/awac/data.xml
-%%DATADIR%%/vehicles/awac/drive.wav
+%%DATADIR%%/vehicles/awac/drive.ogg
 %%DATADIR%%/vehicles/awac/graphics.xml
 %%DATADIR%%/vehicles/awac/img0.pcx
 %%DATADIR%%/vehicles/awac/img1.pcx
@@ -460,11 +467,11 @@ bin/maxr
 %%DATADIR%%/vehicles/awac/shw5.pcx
 %%DATADIR%%/vehicles/awac/shw6.pcx
 %%DATADIR%%/vehicles/awac/shw7.pcx
-%%DATADIR%%/vehicles/awac/start.wav
-%%DATADIR%%/vehicles/awac/stop.wav
+%%DATADIR%%/vehicles/awac/start.ogg
+%%DATADIR%%/vehicles/awac/stop.ogg
 %%DATADIR%%/vehicles/awac/store.pcx
 %%DATADIR%%/vehicles/awac/video.flc
-%%DATADIR%%/vehicles/awac/wait.wav
+%%DATADIR%%/vehicles/awac/wait.ogg
 %%DATADIR%%/vehicles/bomber/data.xml
 %%DATADIR%%/vehicles/bomber/graphics.xml
 %%DATADIR%%/vehicles/bomber/img0.pcx
@@ -1091,9 +1098,9 @@ bin/maxr
 %%DATADIR%%/vehicles/sea_transport/shw7.pcx
 %%DATADIR%%/vehicles/sea_transport/store.pcx
 %%DATADIR%%/vehicles/sea_transport/video.flc
-%%DATADIR%%/vehicles/sub/attack.wav
+%%DATADIR%%/vehicles/sub/attack.ogg
 %%DATADIR%%/vehicles/sub/data.xml
-%%DATADIR%%/vehicles/sub/drive_water.wav
+%%DATADIR%%/vehicles/sub/drive_water.ogg
 %%DATADIR%%/vehicles/sub/graphics.xml
 %%DATADIR%%/vehicles/sub/img0.pcx
 %%DATADIR%%/vehicles/sub/img1.pcx
@@ -1112,14 +1119,14 @@ bin/maxr
 %%DATADIR%%/vehicles/sub/shw5.pcx
 %%DATADIR%%/vehicles/sub/shw6.pcx
 %%DATADIR%%/vehicles/sub/shw7.pcx
-%%DATADIR%%/vehicles/sub/start_water.wav
-%%DATADIR%%/vehicles/sub/stop_water.wav
+%%DATADIR%%/vehicles/sub/start_water.ogg
+%%DATADIR%%/vehicles/sub/stop_water.ogg
 %%DATADIR%%/vehicles/sub/store.pcx
 %%DATADIR%%/vehicles/sub/video.flc
-%%DATADIR%%/vehicles/sub/wait_water.wav
+%%DATADIR%%/vehicles/sub/wait_water.ogg
 %%DATADIR%%/vehicles/surveyor/data.xml
-%%DATADIR%%/vehicles/surveyor/drive.wav
-%%DATADIR%%/vehicles/surveyor/drive_water.wav
+%%DATADIR%%/vehicles/surveyor/drive.ogg
+%%DATADIR%%/vehicles/surveyor/drive_water.ogg
 %%DATADIR%%/vehicles/surveyor/graphics.xml
 %%DATADIR%%/vehicles/surveyor/img0.pcx
 %%DATADIR%%/vehicles/surveyor/img1.pcx
@@ -1138,14 +1145,14 @@ bin/maxr
 %%DATADIR%%/vehicles/surveyor/shw5.pcx
 %%DATADIR%%/vehicles/surveyor/shw6.pcx
 %%DATADIR%%/vehicles/surveyor/shw7.pcx
-%%DATADIR%%/vehicles/surveyor/start.wav
-%%DATADIR%%/vehicles/surveyor/start_water.wav
-%%DATADIR%%/vehicles/surveyor/stop.wav
-%%DATADIR%%/vehicles/surveyor/stop_water.wav
+%%DATADIR%%/vehicles/surveyor/start.ogg
+%%DATADIR%%/vehicles/surveyor/start_water.ogg
+%%DATADIR%%/vehicles/surveyor/stop.ogg
+%%DATADIR%%/vehicles/surveyor/stop_water.ogg
 %%DATADIR%%/vehicles/surveyor/store.pcx
 %%DATADIR%%/vehicles/surveyor/video.flc
-%%DATADIR%%/vehicles/surveyor/wait.wav
-%%DATADIR%%/vehicles/surveyor/wait_water.wav
+%%DATADIR%%/vehicles/surveyor/wait.ogg
+%%DATADIR%%/vehicles/surveyor/wait_water.ogg
 %%DATADIR%%/vehicles/tank/data.xml
 %%DATADIR%%/vehicles/tank/graphics.xml
 %%DATADIR%%/vehicles/tank/img0.pcx
@@ -1306,6 +1313,7 @@ bin/maxr
 @dirrm %%DATADIR%%/buildings/fac_air
 @dirrm %%DATADIR%%/buildings/energy_small
 @dirrm %%DATADIR%%/buildings/energy_big
+@dirrm %%DATADIR%%/buildings/ecosphere
 @dirrm %%DATADIR%%/buildings/dock
 @dirrm %%DATADIR%%/buildings/depot
 @dirrm %%DATADIR%%/buildings/connector
