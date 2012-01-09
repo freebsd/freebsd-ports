@@ -7,7 +7,7 @@
 
 PORTNAME=	coffee-rails
 PORTVERSION=	3.1.1
-CATEGORIES=	devel	rubygems
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
