@@ -1,7 +1,4 @@
 bin/xmh
-include/X11/bitmaps/black6
-include/X11/bitmaps/box6
 share/X11/app-defaults/Xmh
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11
-@dirrmtry include/X11/bitmaps
