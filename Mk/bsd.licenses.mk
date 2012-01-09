@@ -751,7 +751,8 @@ install-license:
 .	endfor
 .endif
 # XXX @dirrmtry entry must be here (no way to do with PLIST_* vars)
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+# XXX Important, keep the whitespace behind "@cwd "!
+	@${ECHO_CMD} "@cwd " >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${_LICENSE_DIR_REL}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/licenses 2>/dev/null || true" >> ${TMPPLIST}
 
