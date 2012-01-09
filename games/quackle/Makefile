@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	quackle
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
 MASTER_SITES=	http://people.csail.mit.edu/jasonkb/quackle/downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A scrabble-like word game utilizing qt4
 
 LICENSE=	GPLv2 GPLv3
@@ -25,6 +25,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build qmake_build
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+
+DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 
 post-extract:
 	@${FIND} ${WRKSRC} \( -name "*.[ao]" -or -name "moc_*" \) -delete
