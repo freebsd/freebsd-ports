@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	lept.2:${PORTSDIR}/graphics/leptonica
 

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

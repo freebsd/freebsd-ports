@@ -15,7 +15,7 @@ DISTNAME=	closure_linter-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	JavaScript linter
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags

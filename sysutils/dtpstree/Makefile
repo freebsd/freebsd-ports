@@ -14,7 +14,7 @@ MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Display a tree of processes
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_XZ=		yes
 USE_GMAKE=	yes

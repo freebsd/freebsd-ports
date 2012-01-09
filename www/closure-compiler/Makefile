@@ -14,7 +14,7 @@ DISTNAME=	compiler-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Closure Compiler
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

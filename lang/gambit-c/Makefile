@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pmn@bakarika.net
 COMMENT=	Gambit programming system where the compiler generates portable C code
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 MAN1=		gsi.1
 

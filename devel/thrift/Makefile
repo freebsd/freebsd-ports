@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Framework for scalable cross-language services development
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent

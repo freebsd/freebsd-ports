@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	An open-source DNS benchmark utility
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 RUN_DEPENDS+=	\
 	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:${PORTSDIR}/devel/py-Jinja2 \

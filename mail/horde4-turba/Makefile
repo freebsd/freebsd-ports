@@ -13,7 +13,7 @@ CATEGORIES=	mail www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based address book
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LATEST_LINK=	horde4-${PORTNAME}

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	apache-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Apache XML security libraries - C++ version
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 OPTIONS=	XERCES_3	"With Xerces vesion 3.x (shibboleth2 requires)" on
 

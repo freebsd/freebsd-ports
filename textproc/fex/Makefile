@@ -14,7 +14,7 @@ MASTER_SITES=	http://semicomplete.com/files/${PORTNAME}/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A powerful field extraction tool
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 PLIST_FILES=	bin/fex
 

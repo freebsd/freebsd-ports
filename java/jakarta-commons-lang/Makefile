@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Jakarta library with helper utilities for the java.lang API
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

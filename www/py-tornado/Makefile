@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	Python Web Server from FriendFeed
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
 

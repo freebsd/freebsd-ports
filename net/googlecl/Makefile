@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		google.1

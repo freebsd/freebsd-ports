@@ -17,7 +17,7 @@ COMMENT=	HTTP Test Tool
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

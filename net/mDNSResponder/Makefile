@@ -13,7 +13,7 @@ MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Apple's mDNSResponder
 
-LICENSE=	ASL BSD
+LICENSE=	AL2 BSD
 LICENSE_COMB=	dual
 
 CONFLICTS=	avahi-libdns-[0-9]*

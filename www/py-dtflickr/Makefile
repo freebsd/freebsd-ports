@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Spiffy Flickr API library using JSON
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+

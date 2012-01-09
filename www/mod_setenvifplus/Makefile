@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Allows setting environment variables based on request attributes
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES

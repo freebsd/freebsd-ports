@@ -17,7 +17,7 @@ DIST_SUBDIR=	apache22
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LATEST_LINK=	mod_auth_mysql2
 

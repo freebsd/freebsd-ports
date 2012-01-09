@@ -15,7 +15,7 @@ DISTNAME=	ses-tools-2011-10-31
 MAINTAINER=	stephon@gmail.com
 COMMENT=	Perl module of Amazon Simple Email Services
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \

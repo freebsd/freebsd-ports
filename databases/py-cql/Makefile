@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Python DB-API 2.0 client interface for Cassandra
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/Thrift.py:${PORTSDIR}/devel/py-thrift
 

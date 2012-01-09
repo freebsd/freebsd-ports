@@ -18,7 +18,7 @@ COMMENT=	A collection of I/O utilities for Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

@@ -14,7 +14,7 @@ DISTNAME=	google-authenticator-${PORTVERSION}
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/libpam
 

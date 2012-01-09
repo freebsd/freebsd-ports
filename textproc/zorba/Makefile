@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A general purpose C++ XQuery processor
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 LIB_DEPENDS=	xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
    		tidy:${PORTSDIR}/www/tidy-lib \

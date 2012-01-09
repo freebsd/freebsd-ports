@@ -15,7 +15,7 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project OgreKit framework
 
-LICENSE=	ASL
+LICENSE=	AL2
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

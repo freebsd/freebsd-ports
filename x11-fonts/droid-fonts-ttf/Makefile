@@ -13,7 +13,7 @@ MASTER_SITES=	LOCAL/sunpoet/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Droid typeface family
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/NOTICE
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

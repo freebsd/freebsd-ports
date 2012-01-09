@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
-LICENSE=	ASL
+LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn

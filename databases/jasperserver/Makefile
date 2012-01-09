@@ -16,7 +16,7 @@ EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
 
-LICENSE=	GPLv2 MIT ASL
+LICENSE=	GPLv2 MIT AL2
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
