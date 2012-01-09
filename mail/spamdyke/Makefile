@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamdyke
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
@@ -28,9 +28,6 @@ OPTIONS=	TLS "Enable TLS support" On \
 		DEBUG_EXCESSIVE "Enable excessive debugging output" Off
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} <= 700042
-BROKEN=	this port causes gcc to segfault
-.endif
 
 .if defined(WITHOUT_TLS)
 CONFIGURE_ARGS+=	--disable-tls
