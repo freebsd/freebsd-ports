@@ -15,9 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to cache output of time-intensive CGI scripts
 
-RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
+BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Tie-Restore>=0:${PORTSDIR}/devel/p5-Tie-Restore
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
