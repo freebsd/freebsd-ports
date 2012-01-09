@@ -583,6 +583,7 @@
     SUBDIR += p5-Apache2-SiteControl
     SUBDIR += p5-ApacheBench
     SUBDIR += p5-App-Nopaste
+    SUBDIR += p5-App-gist
     SUBDIR += p5-Ark
     SUBDIR += p5-Bigtop
     SUBDIR += p5-Blog-Spam

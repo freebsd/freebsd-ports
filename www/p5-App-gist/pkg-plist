@@ -1,0 +1,6 @@
+bin/gist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/gist/.packlist
+%%SITE_PERL%%/App/gist.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/gist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App
