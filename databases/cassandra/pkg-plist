@@ -2,6 +2,7 @@ bin/cassandra-cli
 bin/nodetool
 bin/repaircluster
 bin/sstableloader
+%%CQL%%bin/cqlsh
 %%DATADIR%%/CHANGES.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
@@ -741,7 +742,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/AbstractSSTableSimpleWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/BloomFilterTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Component.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Descriptor.TempState.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/Descriptor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/IndexHelper.IndexInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/IndexHelper.html
@@ -771,7 +771,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/AbstractSSTableSimpleWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/BloomFilterTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Component.html
-%%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Descriptor.TempState.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/Descriptor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/IndexHelper.IndexInfo.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/sstable/class-use/IndexHelper.html
@@ -1608,14 +1607,12 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/BulkLoader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/GetVersion.html
-%%DATADIR%%/javadoc/org/apache/cassandra/tools/NodeCmd.NodeCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/NodeCmd.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/NodeProbe.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/SSTableExport.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/SSTableImport.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/BulkLoader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/GetVersion.html
-%%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/NodeCmd.NodeCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/NodeCmd.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/NodeProbe.html
 %%DATADIR%%/javadoc/org/apache/cassandra/tools/class-use/SSTableExport.html
@@ -1753,10 +1750,24 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BigLongArray.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/RetriedSliceFromReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RetriedSliceFromReadCommand.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/StorageProxy.WritePerformer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/StorageProxy.WritePerformer.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/IColumnSerializer.Flag.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/IColumnSerializer.Flag.html
+%%DATADIR%%/conf/cqlshrc.sample
+%%CQL%%%%DATADIR%%/bin/cqlsh
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.pyc
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-1.0.2.jar
-%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.2.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-1.0.2.jar
+%%DATADIR%%/lib/apache-cassandra-1.0.6.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.6.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.0.6.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
@@ -1891,6 +1902,8 @@ bin/sstableloader
 @dirrm %%DATADIR%%/javadoc/org
 @dirrm %%DATADIR%%/javadoc
 @dirrm %%DATADIR%%/interface
+%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib
+%%CQL%%@dirrmtry %%DATADIR%%/pylib
 @dirrmtry %%DATADIR%%/conf
 @dirrm %%DATADIR%%/bin
 @dirrmtry %%DATADIR%%
