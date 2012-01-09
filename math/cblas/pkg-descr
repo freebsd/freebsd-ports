@@ -1,0 +1,5 @@
+This is a reference implementation of the C interface to the legacy
+Fortran Basic Linear Algebra Subprograms (BLAS), as described in
+Annex B of the BLAS Technical Forum (BLAST) Standard.
+
+WWW:	http://www.netlib.org/blas/blast-forum/
