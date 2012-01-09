@@ -1,0 +1,15 @@
+From:
+
+http://sourceforge.net/tracker/?func=detail&aid=3413830&group_id=243163&atid=1121518
+
+--- upnpsoap.c	2011-08-19 01:24:17.000000000 +0200
++++ upnpsoap.c	2011-09-25 14:54:00.000000000 +0200
+@@ -915,7 +915,7 @@
+ 					     strncmp(dlna_pn, "AVC_TS_MP_HD_AC3", 16) == 0 ||
+ 					     strncmp(dlna_pn, "AVC_TS_HP_HD_AC3", 16) == 0))
+ 					{
+-						sprintf(dlna_buf, "DLNA.ORG_PN=AVC_TS_HD_50_AC3;DLNA.ORG_OP=01;DLNA.ORG_CI=0");
++					        sprintf(dlna_buf, "DLNA.ORG_PN=AVC_TS_HD_50_AC3%s", dlna_pn + 16);
+ 						add_res(size, duration, bitrate, sampleFrequency, nrAudioChannels,
+ 						        resolution, dlna_buf, mime, detailID, ext, passed_args);
+ 					}

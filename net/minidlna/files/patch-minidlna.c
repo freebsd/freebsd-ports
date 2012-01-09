@@ -56,16 +56,11 @@
 +			"\t\t[-u uid_to_run_as]\n"
  			"\t\t[-w url] [-R] [-V] [-h]\n"
  		        "\nNotes:\n\tNotify interval is in seconds. Default is 895 seconds.\n"
-@@ -831,5 +855,10 @@
+@@ -831,5 +855,5 @@
  
  	/* set signal handler */
 -	signal(SIGCLD, SIG_IGN);
-+	memset(&sa, 0, sizeof(struct sigaction));
-+	sa.sa_handler = SIG_IGN;
-+	sa.sa_flags = SA_NOCLDSTOP|SA_NOCLDWAIT;
-+#ifndef SIGCHLD
-+#	define SIGCHLD	SIGCLD
-+#endif
++	signal(SIGCHLD, SIG_IGN);
  	memset(&sa, 0, sizeof(struct sigaction));
  	sa.sa_handler = sigterm;
 @@ -849,4 +878,7 @@
