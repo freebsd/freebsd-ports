@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maxr
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.maxr.org/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
