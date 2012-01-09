@@ -24,10 +24,8 @@ GNU_CONFIGURE=	yes
 
 EXTRA_PATCHES+=	${FILESDIR}/gcc3-*
 
-.if ${OSVERSION} >= 700042
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2
-.endif
 .endif
 
 pre-patch: .SILENT

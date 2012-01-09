@@ -24,9 +24,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} >= 700042
 	@${REINPLACE_CMD} -e 's/static void/void/g' ${WRKSRC}/game.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire

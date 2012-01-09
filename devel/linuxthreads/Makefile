@@ -31,13 +31,9 @@ BROKEN=		does not build
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} >= 700042
 USING_GCC4=	true
 MAKE_ENV+=	USING_GCC4=true
-.else
-USING_GCC3=	true
-MAKE_ENV+=	USING_GCC3=true
-.endif
+
 .if defined(LINUXTHREADS_INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
 .endif
@@ -282,10 +278,6 @@ PLIST_SUB+=	LTHREADSHMAJOR:="4"
 PLIST_SUB+=	LTHREADSHMAJOR:="2"
 .endif
 .endif
-.if ${OSVERSION} >= 700042
 PLIST_SUB+=	LIBSTDCPPMAJOR:="6"
-.else
-PLIST_SUB+=	LIBSTDCPPMAJOR:="5"
-.endif
 
 .include <bsd.port.post.mk>

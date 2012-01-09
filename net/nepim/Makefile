@@ -30,11 +30,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700048
-CFLAGS+=	-DHAVE_IP_MREQ -DHAVE_IPV6_MREQ
-.else
 CFLAGS+=	-DHAVE_IP_MREQ -DHAVE_IPV6_MREQ -DHAVE_IP_MREQN \
 		-DHAVE_GROUP_SOURCE_REQ
-.endif
 
 .include <bsd.port.post.mk>

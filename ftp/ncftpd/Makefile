@@ -29,19 +29,16 @@ PORTDOCS=	install.html README README.freebsd LICENSE
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
+.if ${OSVERSION} >= 900000
+BINVER=		9.0
+.elif ${OSVERSION} >= 800000
 BINVER=		8.0
-.elif ${OSVERSION} >= 700000
-BINVER=		7.0
 .else
-BINVER=		6.0
+BINVER=		7.0
 .endif
 
 .if ${ARCH} == amd64
 DIST_ARCH=	x86_64
-.if ${BINVER} == "6.0"
-BINVER=		6.2
-.endif
 .else
 DIST_ARCH=	i386
 .endif

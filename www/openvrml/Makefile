@@ -49,10 +49,6 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
-.if ${OSVERSION} < 700042
-BROKEN=		Does not compile
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif

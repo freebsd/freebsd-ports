@@ -36,11 +36,9 @@ MAN1=		ace-gperf.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700015
 EXTRA_PATCHES+=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
-.endif
 
-.if ${OSVERSION} >= 700110 && ${OSVERSION} < 800000
+.if ${OSVERSION} < 800000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ace-OS_NS_Thread.h
 .endif
 
@@ -50,7 +48,7 @@ post-extract:
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g'
-.if (${OSVERSION} >= 700110 && ${OSVERSION} < 800000) || ${OSVERSION} >= 800024
+.if (${OSVERSION} < 800000) || ${OSVERSION} >= 800024
 	@${REINPLACE_CMD} -e 's|cpu_set_t|cpuset_t|g' ${WRKSRC}/ace/OS_NS_Thread.cpp \
 		${WRKSRC}/ace/OS_NS_Thread.h
 .endif

@@ -45,9 +45,7 @@ post-patch:
 .for f in conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 isakmpd.policy.5 policy.h
 	${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/${f}
 .endfor
-.if ${OSVERSION} > 700050
 	@${REINPLACE_CMD} -e "s!netinet6/ipsec.h!netipsec/ipsec.h!" \
 		${WRKSRC}/sysdep/freebsd/sysdep-os.h
-.endif
 
 .include <bsd.port.post.mk>

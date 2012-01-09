@@ -58,12 +58,6 @@ CONFIGURE_ARGS+=	--disable-mmx --disable-sse
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if ${OSVERSION} < 700000
-PLIST_SUB+=	DISABLED="@comment "
-.else
-PLIST_SUB+=	DISABLED=""
-.endif
-
 .if defined(WITH_AVCODEC)
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	AVCODEC=""

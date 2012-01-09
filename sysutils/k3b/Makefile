@@ -59,9 +59,7 @@ showinfo:
 BROKEN=		does not compile on FreeBSD 9.X
 .endif
 
-.if ${OSVERSION} > 700000
 PKGMESSAGE=	${PKGDIR}/pkg-message-7
-.endif
 
 .if defined(WITH_FLAC)
 PLIST_SUB+=	FLAC=""

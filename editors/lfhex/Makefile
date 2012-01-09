@@ -31,9 +31,7 @@ LICENSE_FILES=	${WRKSRC}/../COPYING
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^DEFINES|# DEFINES|g' ${WRKSRC}/lfhex.pro
-.if ${OSVERSION} >= 700042
 	@${REINPLACE_CMD} -e 's| abs| llabs|g' ${WRKSRC}/reader.cpp
-.endif
 
 do-configure:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}

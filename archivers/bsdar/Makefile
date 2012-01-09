@@ -23,10 +23,6 @@ MAN1=		ar.1 ranlib.1
 DEPRECATED=	part of the base system
 EXPIRATION_DATE=2013-02-28
 
-.if ${OSVERSION} < 700055
-IGNORE=		does not compile
-.endif
-
 .if ${OSVERSION} >= 800022
 IGNORE=		bsdar is now part of the base system as /usr/bin/ar
 .endif

@@ -5,9 +5,9 @@ lib/enfle/plugins/archiver/archiver_arc.so
 lib/enfle/plugins/archiver/archiver_rar.a
 lib/enfle/plugins/archiver/archiver_rar.la
 lib/enfle/plugins/archiver/archiver_rar.so
-%%DISABLED%%lib/enfle/plugins/archiver/archiver_tar.a
-%%DISABLED%%lib/enfle/plugins/archiver/archiver_tar.la
-%%DISABLED%%lib/enfle/plugins/archiver/archiver_tar.so
+lib/enfle/plugins/archiver/archiver_tar.a
+lib/enfle/plugins/archiver/archiver_tar.la
+lib/enfle/plugins/archiver/archiver_tar.so
 lib/enfle/plugins/audio/audio_esd.a
 lib/enfle/plugins/audio/audio_esd.la
 lib/enfle/plugins/audio/audio_esd.so
@@ -17,33 +17,33 @@ lib/enfle/plugins/audio/audio_oss.so
 %%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.a
 %%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.la
 %%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.so
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.a
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.la
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.so
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.a
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.la
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.so
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.a
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.la
-%%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.so
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_avi.a
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_avi.la
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_avi.so
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mp3.a
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mp3.la
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mp3.so
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.a
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.la
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.so
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_ogg.a
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_ogg.la
-%%DISABLED%%lib/enfle/plugins/demultiplexer/demultiplexer_ogg.so
-%%DISABLED%%lib/enfle/plugins/effect/effect_gamma.a
-%%DISABLED%%lib/enfle/plugins/effect/effect_gamma.la
-%%DISABLED%%lib/enfle/plugins/effect/effect_gamma.so
-%%DISABLED%%lib/enfle/plugins/effect/effect_rotate.a
-%%DISABLED%%lib/enfle/plugins/effect/effect_rotate.la
-%%DISABLED%%lib/enfle/plugins/effect/effect_rotate.so
+lib/enfle/plugins/audiodecoder/audiodecoder_mad.a
+lib/enfle/plugins/audiodecoder/audiodecoder_mad.la
+lib/enfle/plugins/audiodecoder/audiodecoder_mad.so
+lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.a
+lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.la
+lib/enfle/plugins/audiodecoder/audiodecoder_mpglib.so
+lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.a
+lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.la
+lib/enfle/plugins/audiodecoder/audiodecoder_vorbis.so
+lib/enfle/plugins/demultiplexer/demultiplexer_avi.a
+lib/enfle/plugins/demultiplexer/demultiplexer_avi.la
+lib/enfle/plugins/demultiplexer/demultiplexer_avi.so
+lib/enfle/plugins/demultiplexer/demultiplexer_mp3.a
+lib/enfle/plugins/demultiplexer/demultiplexer_mp3.la
+lib/enfle/plugins/demultiplexer/demultiplexer_mp3.so
+lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.a
+lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.la
+lib/enfle/plugins/demultiplexer/demultiplexer_mpeg.so
+lib/enfle/plugins/demultiplexer/demultiplexer_ogg.a
+lib/enfle/plugins/demultiplexer/demultiplexer_ogg.la
+lib/enfle/plugins/demultiplexer/demultiplexer_ogg.so
+lib/enfle/plugins/effect/effect_gamma.a
+lib/enfle/plugins/effect/effect_gamma.la
+lib/enfle/plugins/effect/effect_gamma.so
+lib/enfle/plugins/effect/effect_rotate.a
+lib/enfle/plugins/effect/effect_rotate.la
+lib/enfle/plugins/effect/effect_rotate.so
 lib/enfle/plugins/loader/loader_bmp.a
 lib/enfle/plugins/loader/loader_bmp.la
 lib/enfle/plugins/loader/loader_bmp.so
@@ -122,24 +122,24 @@ lib/enfle/plugins/video/video_Xlib.so
 %%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.a
 %%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.la
 %%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.so
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.a
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.la
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.so
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_raw.a
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_raw.la
-%%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_raw.so
+lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.a
+lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.la
+lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.so
+lib/enfle/plugins/videodecoder/videodecoder_raw.a
+lib/enfle/plugins/videodecoder/videodecoder_raw.la
+lib/enfle/plugins/videodecoder/videodecoder_raw.so
 %%DATADIR%%/enfle.rc
 @dirrm %%DATADIR%%
-%%DISABLED%%@dirrm lib/enfle/plugins/videodecoder
+@dirrm lib/enfle/plugins/videodecoder
 @dirrm lib/enfle/plugins/video
 @dirrm lib/enfle/plugins/ui
 @dirrm lib/enfle/plugins/streamer
 @dirrm lib/enfle/plugins/saver
 @dirrm lib/enfle/plugins/player
 @dirrm lib/enfle/plugins/loader
-%%DISABLED%%@dirrm lib/enfle/plugins/effect
-%%DISABLED%%@dirrm lib/enfle/plugins/demultiplexer
-%%DISABLED%%@dirrm lib/enfle/plugins/audiodecoder
+@dirrm lib/enfle/plugins/effect
+@dirrm lib/enfle/plugins/demultiplexer
+@dirrm lib/enfle/plugins/audiodecoder
 @dirrm lib/enfle/plugins/audio
 @dirrm lib/enfle/plugins/archiver
 @dirrm lib/enfle/plugins

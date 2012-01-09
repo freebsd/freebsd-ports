@@ -38,10 +38,5 @@ do-install:
 		${DOCSDIR}/README.`${BASENAME} ${TOOL}`
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700052
 IGNORE=		broken by removal of wicontrol ioctls from if_wavelan_ieee.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
