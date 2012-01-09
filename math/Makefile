@@ -49,6 +49,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += cantor
+    SUBDIR += cblas
     SUBDIR += ccmath
     SUBDIR += cgal
     SUBDIR += chaco
