@@ -30,10 +30,8 @@ CONFIGURE_ARGS+=	--enable-html-doc --with-html-dir=${DOCSDIR}
 CONFIGURE_ARGS+=	--disable-html-doc
 .endif
 
-.if ${OSVERSION} >= 700042
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2
-.endif
 .endif
 
 test:	build

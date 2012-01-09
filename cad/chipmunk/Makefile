@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 
 .if ${ARCH} == "alpha"
 BROKEN=		Broken pkg-plist on alpha
-.elif ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
+.elif ${ARCH} == "sparc64"
 BROKEN=		Fails to install
 .endif
 

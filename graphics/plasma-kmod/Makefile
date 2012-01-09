@@ -29,10 +29,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
 .if ${ARCH} == "amd64"
 BROKEN=		Does not configure
-.endif
 .endif
 .if ${OSVERSION} >= 800000
 BROKEN=		Does not build
