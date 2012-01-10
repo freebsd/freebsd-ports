@@ -25,6 +25,8 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 #.if !defined(_BUILDING_LIGHTTPD_MODULE)
 #USE_AUTOTOOLS=	libtool
