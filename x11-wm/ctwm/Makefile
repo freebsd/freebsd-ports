@@ -7,6 +7,7 @@
 
 PORTNAME=	ctwm
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
