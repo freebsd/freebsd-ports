@@ -25,6 +25,11 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/backgrounds/40_swans.jpg
 %%DATADIR%%/backgrounds/45_nevado.jpg
 %%DATADIR%%/backgrounds/46_paisaje.jpg
+%%DATADIR%%/backgrounds/blue_treetops.jpg
+%%DATADIR%%/backgrounds/dark_wedding.jpg
+%%DATADIR%%/backgrounds/frosty_forest.jpg
+%%DATADIR%%/backgrounds/green_trees.jpg
+%%DATADIR%%/backgrounds/red_sky.jpg
 %%DATADIR%%/buttons/arrow-blue.xml
 %%DATADIR%%/buttons/arrow-cool.xml
 %%DATADIR%%/buttons/arrow-double.xml
@@ -60,6 +65,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/deprecated/text.xml
 %%DATADIR%%/buttons/ellipse.xml
 %%DATADIR%%/buttons/frame.xml
+%%DATADIR%%/buttons/frame-shadow.xml
 %%DATADIR%%/buttons/home.xml
 %%DATADIR%%/buttons/hand-left.xml
 %%DATADIR%%/buttons/hand-right.xml
@@ -155,6 +161,8 @@ share/locale/uk/LC_MESSAGES/dvdstyler.mo
 share/locale/zh_CN/LC_MESSAGES/dvdstyler.mo
 share/locale/zh_TW/LC_MESSAGES/dvdstyler.mo
 share/pixmaps/dvdstyler.png
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrm %%DATADIR%%/templates/Travel
 @dirrm %%DATADIR%%/templates/Basic
 @dirrm %%DATADIR%%/templates
