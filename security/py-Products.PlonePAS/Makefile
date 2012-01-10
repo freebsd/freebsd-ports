@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.PlonePAS
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.10
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>=0:${PORTSDIR}/www/py-plone.me
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 .include <bsd.port.mk>
