@@ -7,6 +7,7 @@
 
 PORTNAME=	Geo-Caching
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object interface for querying Geocaching.com website
 
 BUILD_DEPENDS=	${SITE_PERL}/Geo/Cache.pm:${PORTSDIR}/misc/p5-Geo-Cache \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-Geo-Gpx>=0:${PORTSDIR}/graphics/p5-Geo-Gpx
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Geo::Caching.3
 
