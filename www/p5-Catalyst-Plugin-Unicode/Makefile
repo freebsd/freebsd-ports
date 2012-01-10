@@ -16,7 +16,10 @@ COMMENT=	Unicode aware Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
+		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
