@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eventlet
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.16
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Concurrent networking library for Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet
-
 LICENSE=	MIT
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
