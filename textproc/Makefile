@@ -1171,6 +1171,7 @@
     SUBDIR += redland-bindings-python
     SUBDIR += refdb
     SUBDIR += referrercop
+    SUBDIR += reflex
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += resume-extensions
