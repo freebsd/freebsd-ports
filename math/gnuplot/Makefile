@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.4.4
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-h3d-quadtree --enable-h3d-gridbox
 .if defined(WITHOUT_PDF)
 CONFIGURE_ARGS+=	--without-pdf
 .else
-LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=		pdf.6:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .endif
 
