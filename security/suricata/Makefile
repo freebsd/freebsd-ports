@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	suricata
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://openinfosecfoundation.org/download/ \
-		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/suricata/
+MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Open Source next generation IDS/IPS engine by OISF
@@ -19,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
-		pcap.1:${PORTSDIR}/net/libpcap
+		pcap.1:${PORTSDIR}/net/libpcap \
+		htp-0.2.1:${PORTSDIR}/devel/libhtp
 
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 		pkg-config:${PORTSDIR}/devel/pkg-config
@@ -48,9 +48,6 @@ LOGS_DIR=	/var/log/suricata
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
@@ -69,6 +66,9 @@ CONFIGURE_ARGS+=	--enable-ipfw
 CONFIGURE_ARGS+=	--enable-dag
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -Ee 's|^(install-data-am: )install-pkgconfigDATA|\1|' ${WRKSRC}/libhtp/Makefile.in
+
 pre-install:
 	@${REINPLACE_CMD} -e 's|/etc/suricata|${PREFIX}/etc/suricata|g' ${WRKSRC}/suricata.yaml
 
@@ -82,7 +82,6 @@ post-install:
 		${CP} -p ${CONFIG_DIR}/${f}-sample ${CONFIG_DIR}/${f} ; \
 	fi
 .endfor
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
