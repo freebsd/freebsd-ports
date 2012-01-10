@@ -9,5 +9,5 @@ include/zdb/zdb.h
 lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
-lib/libzdb.so.7
+lib/libzdb.so.8
 @dirrm include/zdb
