@@ -151,6 +151,7 @@ include/ImageMagick/wand/pixel-iterator.h
 include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
 include/ImageMagick/wand/wand-view.h
+lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.so
@@ -406,7 +407,6 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
-%%DATADIR%%-%%PORTVERSION%%/configure.xml
 %%DATADIR%%-%%PORTVERSION%%/english.xml
 %%DATADIR%%-%%PORTVERSION%%/francais.xml
 %%DATADIR%%-%%PORTVERSION%%/locale.xml
@@ -1369,12 +1369,12 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick.css
-%%PORTDOCS%%%%DOCSDIR%%/www/mailing-list.html
 %%PORTDOCS%%%%DOCSDIR%%/www/miff.html
 %%PORTDOCS%%%%DOCSDIR%%/www/mirrors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/montage.html
 %%PORTDOCS%%%%DOCSDIR%%/www/motion-picture.html
+%%PORTDOCS%%%%DOCSDIR%%/www/parallel.html
 %%PORTDOCS%%%%DOCSDIR%%/www/perl-magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/porting.html
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
@@ -1427,6 +1427,7 @@ libdata/pkgconfig/Wand.pc
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%
+@dirrm lib/ImageMagick-%%PORTVERSION%%/config
 @dirrm lib/ImageMagick-%%PORTVERSION%%
 @dirrm include/ImageMagick/wand
 @dirrm include/ImageMagick/magick
