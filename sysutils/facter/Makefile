@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.4
 CATEGORIES=	sysutils ruby
-MASTER_SITES=	http://www.puppetlabs.com/downloads/facter/
+MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	A cross-platform Ruby library for retrieving facts from OS
