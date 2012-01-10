@@ -15,7 +15,7 @@ MASTER_SITES=	http://etmod.googlecode.com/files/ \
 		http://et.lsdfunweb.fr/et/jaymod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

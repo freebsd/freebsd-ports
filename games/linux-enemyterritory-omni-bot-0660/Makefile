@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
