@@ -1,0 +1,18 @@
+--- build.xml.orig	2012-01-10 16:24:58.000000000 +0100
++++ build.xml	2012-01-10 16:25:09.000000000 +0100
+@@ -32,7 +32,7 @@
+ 	</target>
+ 	
+ 	<target name="compile" depends="prepare">
+-		<javac destdir="${build}/classes" classpathref="classpath.libs" debug="on">
++		<javac destdir="${build}/classes" source="1.5" target="1.5" classpathref="classpath.libs" debug="on">
+ 		    <src path="${src}"/>
+ 		</javac>
+ 	</target>
+@@ -77,4 +77,4 @@
+ 			<filelocation location="${build}/image" childfilesonly="true" /> 
+ 		</udfimage>
+ 	</target>
+-</project>
+\ No newline at end of file
++</project>
