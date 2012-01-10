@@ -192,6 +192,7 @@ share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/Compiler/SunPro-C.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/TinyCC-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-Fortran.cmake
@@ -202,6 +203,7 @@ share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/Compiler/XL.cmake
 %%DATADIR%%/Modules/Dart.cmake
 %%DATADIR%%/Modules/DartConfiguration.tcl.in
+%%DATADIR%%/Modules/DeployQt4.cmake
 %%DATADIR%%/Modules/Documentation.cmake
 %%DATADIR%%/Modules/DummyCXXFile.cxx
 %%DATADIR%%/Modules/ExternalProject.cmake
@@ -436,6 +438,8 @@ share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/Platform/Generic-ADSP-Common.cmake
 %%DATADIR%%/Modules/Platform/Generic-SDCC-C.cmake
 %%DATADIR%%/Modules/Platform/Generic.cmake
+%%DATADIR%%/Modules/Platform/GNUtoMS_lib.bat.in
+%%DATADIR%%/Modules/Platform/GNUtoMS_lib.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-Fortran.cmake
@@ -470,6 +474,7 @@ share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/Platform/Linux-PathScale-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-PathScale.cmake
 %%DATADIR%%/Modules/Platform/Linux-SunPro-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-TinyCC-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-VisualAge-Fortran.cmake
@@ -501,8 +506,11 @@ share/emacs/site-lisp/cmake-mode.el
 %%DATADIR%%/Modules/Platform/Windows-Borland-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland.cmake
 %%DATADIR%%/Modules/Platform/Windows-G95-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Windows-GNU-C-ABI.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-GNU-CXX-ABI.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-GNU-Fortran-ABI.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-ASM.cmake
