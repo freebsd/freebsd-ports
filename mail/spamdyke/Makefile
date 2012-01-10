@@ -29,6 +29,10 @@ OPTIONS=	TLS "Enable TLS support" On \
 
 .include <bsd.port.pre.mk>
 
+.if ${CC:T:Mclang} == "clang"
+IGNORE=	uses nested functions, not supported by clang
+.endif
+
 .if defined(WITHOUT_TLS)
 CONFIGURE_ARGS+=	--disable-tls
 .else
