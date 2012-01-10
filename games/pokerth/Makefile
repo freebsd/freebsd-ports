@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
@@ -22,7 +21,9 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		curl.6:${PORTSDIR}/ftp/curl \
-		gsasl.15:${PORTSDIR}/security/gsasl
+		gsasl.15:${PORTSDIR}/security/gsasl \
+		tinyxml:${PORTSDIR}/textproc/tinyxml
+BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
 USE_ICONV=	yes
 USE_BZIP2=	yes

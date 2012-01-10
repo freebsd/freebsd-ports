@@ -295,7 +295,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default/smallblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/default/table.png
 %%DATADIR%%/data/gfx/gui/table/default/toolboxbg.png
-%%DATADIR%%/data/misc/gpl2.html
+%%DATADIR%%/data/misc/agpl.html
 %%DATADIR%%/data/sounds/default/allin.wav
 %%DATADIR%%/data/sounds/default/bet.wav
 %%DATADIR%%/data/sounds/default/call.wav
@@ -307,6 +307,9 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/sounds/default/playerconnected.wav
 %%DATADIR%%/data/sounds/default/raise.wav
 %%DATADIR%%/data/sounds/default/yourturn.wav
+%%DATADIR%%/data/sounds/default/blinds_raises_level1.wav
+%%DATADIR%%/data/sounds/default/blinds_raises_level2.wav
+%%DATADIR%%/data/sounds/default/blinds_raises_level3.wav
 %%DATADIR%%/data/translations/pokerth_af.qm
 %%DATADIR%%/data/translations/pokerth_bg.qm
 %%DATADIR%%/data/translations/pokerth_ca.qm
@@ -330,6 +333,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_sv.qm
 %%DATADIR%%/data/translations/pokerth_ta.qm
 %%DATADIR%%/data/translations/pokerth_tr.qm
+%%DATADIR%%/data/translations/pokerth_jp.qm
 %%DATADIR%%/data/translations/pokerth_zhcn.qm
 %%DATADIR%%/data/translations/qt_de.qm
 %%DATADIR%%/data/translations/qt_es.qm
