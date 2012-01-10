@@ -126,6 +126,7 @@
     SUBDIR += driconf
     SUBDIR += duhdraw
     SUBDIR += dynamechs
+    SUBDIR += easypaint
     SUBDIR += ecg2png
     SUBDIR += ecore-evas
     SUBDIR += ecore-sdl
