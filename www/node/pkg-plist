@@ -137,6 +137,7 @@ lib/node_modules/npm/doc/cli/completion.md
 lib/node_modules/npm/doc/cli/config.md
 lib/node_modules/npm/doc/cli/deprecate.md
 lib/node_modules/npm/doc/cli/developers.md
+lib/node_modules/npm/doc/cli/disputes.md
 lib/node_modules/npm/doc/cli/docs.md
 lib/node_modules/npm/doc/cli/edit.md
 lib/node_modules/npm/doc/cli/explore.md
@@ -240,6 +241,7 @@ lib/node_modules/npm/html/doc/completion.html
 lib/node_modules/npm/html/doc/config.html
 lib/node_modules/npm/html/doc/deprecate.html
 lib/node_modules/npm/html/doc/developers.html
+lib/node_modules/npm/html/doc/disputes.html
 lib/node_modules/npm/html/doc/docs.html
 lib/node_modules/npm/html/doc/edit.html
 lib/node_modules/npm/html/doc/explore.html
@@ -403,6 +405,7 @@ lib/node_modules/npm/man/man1/completion.1
 lib/node_modules/npm/man/man1/config.1
 lib/node_modules/npm/man/man1/deprecate.1
 lib/node_modules/npm/man/man1/developers.1
+lib/node_modules/npm/man/man1/disputes.1
 lib/node_modules/npm/man/man1/docs.1
 lib/node_modules/npm/man/man1/edit.1
 lib/node_modules/npm/man/man1/explore.1
@@ -629,11 +632,19 @@ lib/node_modules/npm/scripts/clean-old.sh
 lib/node_modules/npm/scripts/doc-build.sh
 lib/node_modules/npm/scripts/index-build.js
 lib/node_modules/npm/scripts/install.sh
+lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/test/common.js
 lib/node_modules/npm/test/packages/npm-test-blerg/package.json
 lib/node_modules/npm/test/packages/npm-test-blerg/test.js
 lib/node_modules/npm/test/packages/npm-test-env-reader/package.json
 lib/node_modules/npm/test/packages/npm-test-env-reader/test.sh
+lib/node_modules/npm/test/packages/npm-test-files/.npmignore
+lib/node_modules/npm/test/packages/npm-test-files/include4
+lib/node_modules/npm/test/packages/npm-test-files/package.json
+lib/node_modules/npm/test/packages/npm-test-files/sub/include
+lib/node_modules/npm/test/packages/npm-test-files/sub/include2
+lib/node_modules/npm/test/packages/npm-test-files/sub/include4
+lib/node_modules/npm/test/packages/npm-test-files/test.sh
 lib/node_modules/npm/test/packages/npm-test-ignore/.npmignore
 lib/node_modules/npm/test/packages/npm-test-ignore/include4
 lib/node_modules/npm/test/packages/npm-test-ignore/package.json
@@ -646,7 +657,7 @@ lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
 lib/node_modules/npm/test/packages/npm-test-private/package.json
 lib/node_modules/npm/test/packages/npm-test-test-package/package.json
 lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
-lib/node_modules/npm/test/run
+lib/node_modules/npm/test/run.js
 lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
 @dirrm lib/node_modules/npm/test/packages/npm-test-test-package
@@ -654,6 +665,8 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore/sub
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore
+@dirrm lib/node_modules/npm/test/packages/npm-test-files/sub
+@dirrm lib/node_modules/npm/test/packages/npm-test-files
 @dirrm lib/node_modules/npm/test/packages/npm-test-env-reader
 @dirrm lib/node_modules/npm/test/packages/npm-test-blerg
 @dirrm lib/node_modules/npm/test/packages
