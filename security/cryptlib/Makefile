@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.4.0
+PORTVERSION=		3.4.1
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl${PORTVERSION:S/.//g}
