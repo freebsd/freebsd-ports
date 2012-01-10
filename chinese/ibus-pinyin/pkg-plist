@@ -4,7 +4,9 @@
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-pinyin.mo
 libexec/ibus-engine-pinyin
 libexec/ibus-setup-pinyin
-%%DATADIR%%/db/android.db
+%%ANDROID_DB%%%%DATADIR%%/db/android.db
+%%OPENPHRASE_DB%%%%DATADIR%%/db/open-phrase.db
+%%DATADIR%%/db/english.db
 %%DATADIR%%/db/create_index.sql
 %%DATADIR%%/icons/chinese.svg
 %%DATADIR%%/icons/english.svg
@@ -30,6 +32,8 @@ share/ibus/component/pinyin.xml
 %%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru
 %%NLS%%@dirrmtry share/locale
+@dirrmtry share/ibus/component
+@dirrmtry share/ibus
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%/db
