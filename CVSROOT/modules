@@ -1408,6 +1408,7 @@ cavezofphear                    ports/games/cavezofphear
 cbb                             ports/finance/cbb
 cbedic                          ports/textproc/cbedic
 cbind                           ports/devel/cbind
+cblas                           ports/math/cblas
 cblog                           ports/www/cblog
 cbrowser                        ports/devel/cbrowser
 cbrpager                        ports/graphics/cbrpager
@@ -5030,7 +5031,6 @@ gtk-murrine-engine              ports/x11-themes/gtk-murrine-engine
 gtk-murrine-themes              ports/x11-themes/gtk-murrine-themes
 gtk-nodoka-engine               ports/x11-themes/gtk-nodoka-engine
 gtk-oxygen-engine               ports/x11-themes/gtk-oxygen-engine
-gtk-qn-x11-theme                ports/x11-themes/gtk-qn-x11-theme
 gtk-qnxtheme                    ports/x11-themes/gtk-qnxtheme
 gtk-qt-engine                   ports/x11-themes/gtk-qt-engine
 gtk-qt4-engine                  ports/x11-themes/gtk-qt4-engine
@@ -5043,7 +5043,6 @@ gtk-theme-switch2               ports/x11/gtk-theme-switch2
 gtk-update-icon-cache           ports/graphics/gtk-update-icon-cache
 gtk-vnc                         ports/net/gtk-vnc
 gtk-xfce-engine                 ports/x11-themes/gtk-xfce-engine
-gtk-zenith-theme                ports/x11-themes/gtk-zenith-theme
 gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
@@ -10739,6 +10738,7 @@ p5-App-SVN-Bisect               ports/devel/p5-App-SVN-Bisect
 p5-App-TLSMe                    ports/security/p5-App-TLSMe
 p5-App-Trace                    ports/devel/p5-App-Trace
 p5-App-cpanminus                ports/devel/p5-App-cpanminus
+p5-App-gist                     ports/www/p5-App-gist
 p5-AppConfig                    ports/devel/p5-AppConfig
 p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
 p5-Archive-Any                  ports/archivers/p5-Archive-Any
@@ -15121,6 +15121,7 @@ p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-cpanminus                ports/devel/p5-App-cpanminus
 p5-app-genpass                  ports/security/p5-App-Genpass
+p5-app-gist                     ports/www/p5-App-gist
 p5-app-gitgot                   ports/devel/p5-App-GitGot
 p5-app-github                   ports/devel/p5-App-GitHub
 p5-app-info                     ports/devel/p5-App-Info
@@ -19715,7 +19716,6 @@ pear-Date_Holidays_Sweden       ports/devel/pear-Date_Holidays_Sweden
 pear-Date_Holidays_UNO          ports/devel/pear-Date_Holidays_UNO
 pear-Date_Holidays_USA          ports/devel/pear-Date_Holidays_USA
 pear-Date_Holidays_Ukraine      ports/devel/pear-Date_Holidays_Ukraine
-pear-Doctrine                   ports/databases/pear-Doctrine
 pear-Doctrine12                 ports/databases/pear-Doctrine12
 pear-Event_Dispatcher           ports/devel/pear-Event_Dispatcher
 pear-FSM                        ports/devel/pear-FSM
@@ -20097,7 +20097,6 @@ pear-db_sqlite_tools            ports/databases/pear-DB_Sqlite_Tools
 pear-db_table                   ports/databases/pear-DB_Table
 pear-dba                        ports/databases/pear-DBA
 pear-dba_relational             ports/databases/pear-DBA_Relational
-pear-doctrine                   ports/databases/pear-Doctrine
 pear-doctrine12                 ports/databases/pear-Doctrine12
 pear-event_dispatcher           ports/devel/pear-Event_Dispatcher
 pear-file                       ports/sysutils/pear-File
