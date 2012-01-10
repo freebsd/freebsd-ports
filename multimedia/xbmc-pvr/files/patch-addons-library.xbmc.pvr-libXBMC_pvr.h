@@ -25,7 +25,7 @@
  #define PVR_HELPER_DLL "/library.xbmc.pvr/libXBMC_pvr-arm.so"
  #else /* !__x86_64__ && !__powerpc__ */
 +#ifdef __FreeBSD__
-+#define PVR_HELPER_DLL "/library.xbmc.pvr/libXBMC_pvr-i386-freebsd.so"
++#define PVR_HELPER_DLL "/library.xbmc.pvr/libXBMC_pvr-x86-freebsd.so"
 +#else
  #define PVR_HELPER_DLL "/library.xbmc.pvr/libXBMC_pvr-i486-linux.so"
 +#endif
