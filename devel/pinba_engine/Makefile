@@ -20,14 +20,15 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/dev
 		${LOCALBASE}/include/Judy.h:${PORTSDIR}/devel/judy \
 		${LOCALBASE}/lib/mysql/plugin:${MYSQL_PORTDIR} \
  		${NONEXISTENT}:${MYSQL_PORTDIR}:configure \
-		bison:${PORTSDIR}/devel/bison
+		bison:${PORTSDIR}/devel/bison \
+		cmake:${PORTSDIR}/devel/cmake
 
 GITVERSION=	3a0cb51
 FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40 41 50
+IGNORE_WITH_MYSQL=	41 50
 
 MYSQL_PORTDIR=	${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 MYSQL_WRKSRC=	$$(cd ${MYSQL_PORTDIR} && ${MAKE} -V WRKSRC)
