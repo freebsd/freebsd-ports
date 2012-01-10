@@ -131,9 +131,7 @@ do-install-mozc_tool:
 
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-LIB_DEPENDS+=	ibus.2:${PORTSDIR}/textproc/ibus
-# after ibus updated to 1.4.0, use below instead.
-#LIB_DEPENDS+=	ibus-1.0.400:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS+=	ibus-1.0.400:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
