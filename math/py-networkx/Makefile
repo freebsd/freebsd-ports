@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -14,7 +14,8 @@ MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Tools for complex network
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=easy_install
+PYSETUP=	setup_egg.py
 
 .include <bsd.port.pre.mk>
 
