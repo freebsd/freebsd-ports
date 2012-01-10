@@ -53,7 +53,7 @@ CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.8:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
 PLIST_SUB+=	PDF=""
 MAN1+=		pdf2pdf.1
 .else

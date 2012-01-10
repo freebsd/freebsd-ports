@@ -7,7 +7,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.22
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
 		png.6:${PORTSDIR}/graphics/png		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		fftw.2:${PORTSDIR}/math/fftw		\
-		pdf.8:${PORTSDIR}/print/pdflib		\
+		pdf.6:${PORTSDIR}/print/pdflib		\
 		netcdf.4:${PORTSDIR}/science/netcdf	\
 		Xbae.4:${PORTSDIR}/x11-toolkits/xbae	\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml

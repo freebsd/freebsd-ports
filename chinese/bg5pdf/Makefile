@@ -7,7 +7,7 @@
 
 PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/ \
 		LOCAL/chinsan
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
-LIB_DEPENDS=	pdf.8:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=	pdf.6:${PORTSDIR}/print/pdflib
 
 CFLAGS+=	-fPIC
 USE_PYTHON=	yes
