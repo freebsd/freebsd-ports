@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xml-security
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	security java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	santuario/java-library
