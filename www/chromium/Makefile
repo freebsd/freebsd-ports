@@ -181,6 +181,17 @@ post-patch:
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
+# http://code.google.com/p/chromium/issues/detail?id=96629
+	@${REINPLACE_CMD} -e "s|'type': 'settings',|'type': 'none',|" \
+		${WRKSRC}/third_party/icu/icu.gyp \
+		${WRKSRC}/third_party/flac/flac.gyp \
+		${WRKSRC}/third_party/speex/speex.gyp \
+		${WRKSRC}/third_party/sqlite/sqlite.gyp \
+		${WRKSRC}/third_party/harfbuzz/harfbuzz.gyp \
+		${WRKSRC}/third_party/libevent/libevent.gyp \
+		${WRKSRC}/third_party/libjpeg_turbo/libjpeg.gyp \
+		${WRKSRC}/tools/gyp/test/settings/settings.gyp \
+		${WRKSRC}/v8/tools/gyp/v8.gyp
 
 do-configure:
 	cd ${WRKSRC} && \
