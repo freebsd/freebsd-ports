@@ -23,6 +23,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
+TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 USE_PERL=	yes
 PERL_CONFIGURE=	yes
