@@ -23,7 +23,7 @@
 +#endif
  #else /* !__x86_64__ && !__powerpc__ && !_ARMEL */
 +#ifdef __FreeBSD__
-+#define GUI_HELPER_DLL "/library.xbmc.gui/libXBMC_gui-i386-freebsd.so"
++#define GUI_HELPER_DLL "/library.xbmc.gui/libXBMC_gui-x86-freebsd.so"
 +#else
  #define GUI_HELPER_DLL "/library.xbmc.gui/libXBMC_gui-i486-linux.so"
 +#endif

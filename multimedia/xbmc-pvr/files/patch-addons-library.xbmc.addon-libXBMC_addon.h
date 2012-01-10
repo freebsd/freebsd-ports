@@ -25,7 +25,7 @@
  #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-arm.so"
  #else /* !__x86_64__ && !__powerpc__ */
 +#ifdef __FreeBSD__
-+#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-i386-freebsd.so"
++#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-x86-freebsd.so"
 +#else
  #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-i486-linux.so"
 +#endif

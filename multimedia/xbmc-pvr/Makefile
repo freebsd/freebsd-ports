@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	58
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
@@ -229,9 +230,9 @@ post-patch:
 	${LN} -s libXBMC_gui-x86_64-freebsd.so ${WRKSRC}/addons/library.xbmc.gui/libXBMC_gui-x86_64-linux.so
 	${LN} -s libXBMC_pvr-x86_64-freebsd.so ${WRKSRC}/addons/library.xbmc.pvr/libXBMC_pvr-x86_64-linux.so
 .else
-	${LN} -s libXBMC_addon-i386-freebsd.so ${WRKSRC}/addons/library.xbmc.addon/libXBMC_addon-i486-linux.so
-	${LN} -s libXBMC_gui-i386-freebsd.so ${WRKSRC}/addons/library.xbmc.gui/libXBMC_gui-i486-linux.so
-	${LN} -s libXBMC_pvr-i386-freebsd.so ${WRKSRC}/addons/library.xbmc.pvr/libXBMC_pvr-i486-linux.so
+	${LN} -s libXBMC_addon-x86-freebsd.so ${WRKSRC}/addons/library.xbmc.addon/libXBMC_addon-x86-linux.so
+	${LN} -s libXBMC_gui-x86-freebsd.so ${WRKSRC}/addons/library.xbmc.gui/libXBMC_gui-x86-linux.so
+	${LN} -s libXBMC_pvr-x86-freebsd.so ${WRKSRC}/addons/library.xbmc.pvr/libXBMC_pvr-x86-linux.so
 .endif
 
 pre-configure:
@@ -245,9 +246,9 @@ post-install:
 	${LN} -s libXBMC_gui-x86_64-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.gui/libXBMC_gui-x86_64-linux.so
 	${LN} -s libXBMC_pvr-x86_64-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.pvr/libXBMC_pvr-x86_64-linux.so
 .else
-	${LN} -s libXBMC_addon-i386-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.addon/libXBMC_addon-i486-linux.so
-	${LN} -s libXBMC_gui-i386-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.gui/libXBMC_gui-i486-linux.so
-	${LN} -s libXBMC_pvr-i386-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.pvr/libXBMC_pvr-i486-linux.so
+	${LN} -s libXBMC_addon-x86-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.addon/libXBMC_addon-x86-linux.so
+	${LN} -s libXBMC_gui-x86-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.gui/libXBMC_gui-x86-linux.so
+	${LN} -s libXBMC_pvr-x86-freebsd.so ${PREFIX}/lib/xbmc/addons/library.xbmc.pvr/libXBMC_pvr-x86-linux.so
 .endif
 
 .include <bsd.port.post.mk>
