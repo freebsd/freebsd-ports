@@ -22,13 +22,14 @@
 . /etc/rc.subr
 
 name="mysql"
-rcvar=`set_rcvar`
+rcvar="mysql_enable"
 
 load_rc_config $name
 
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
 : ${mysql_user="mysql"}
+: ${mysql_limits_args="-e -U $mysql_user"}
 : ${mysql_dbdir="/var/db/mysql"}
 
 command="/usr/sbin/daemon"
@@ -41,13 +42,12 @@ if [ -n "$2" ]; then
 	load_rc_config ${name}_${instance}
 	case "$mysql_instances" in
 	"$2 "*|*" $2 "*|*" $2"|"$2")
-		eval _args="\${mysql_${instance}_args:-\"${mysql_args}\"}"
-		eval _dbdir="\${mysql_${instance}_dbdir:-\"/var/db/mysql_${instance}\"}"
-		eval _limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
-		eval _user="\${mysql_${instance}_user:-\"${mysql_user}\"}"
-		eval _limits_args="\${mysql_${instance}_limits_args:-\"${mysql_limits_args}\"}"
-		[ -z "$_limits_args" ] && eval _limits_args=\"-e -U $_user\"
-		pidfile="${_dbdir}/`/bin/hostname`.pid"
+		eval mysql_args="\${mysql_${instance}_args:-\"${mysql_args}\"}"
+		eval mysql_dbdir="\${mysql_${instance}_dbdir:-\"/var/db/mysql_${instance}\"}"
+		eval mysql_limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
+		eval mysql_user="\${mysql_${instance}_user:-\"${mysql_user}\"}"
+		eval mysql_limits_args="\${mysql_${instance}_limits_args:-\"${mysql_limits_args}\"}"
+		pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
 	;;
 	*)
 		err 1 "$2 not found in mysql_instances" ;;
@@ -85,29 +85,26 @@ else
 		exit 0
 	else
 		pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
-		_dbdir="/var/db/mysql"
-		_user="mysql"
-		_limits_args="-e -U ${_user}"
 	fi
 fi
 
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
-mysql_install_db_args="--ldata=${_dbdir}"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${_dbdir}/my.cnf --user=${_user} --datadir=${_dbdir} --pid-file=${pidfile} ${_args}"
+mysql_install_db_args="--ldata=${mysql_dbdir}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
 
 mysql_create_auth_tables()
 {
-	eval $mysql_install_db $mysql_install_db_args >/dev/null 2>/dev/null
-        [ $? -eq 0 ] && chown -R ${_user}:${_user} ${_dbdir}
+	eval $mysql_install_db $mysql_install_db_args
+        [ $? -eq 0 ] && chown -R ${mysql_user}:$(id -gn $mysql_user) ${mysql_dbdir}
 }
 
 mysql_prestart()
 {
-	if [ ! -d "${_dbdir}/mysql/." ]; then
+	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
 	fi
 	if checkyesno mysql_limits; then
-		eval `/usr/bin/limits $_limits_args` 2>/dev/null
+		eval `/usr/bin/limits ${mysql_limits_args:-"-e -U $mysql_user"}` 2>/dev/null
 	else
 		return 0
 	fi
