@@ -6,37 +6,33 @@
 #
 
 PORTNAME=	xstream
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc java
 MASTER_SITES=	https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-distribution-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A simple library to serialize Java objects to XML
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_ZIP=	yes
 USE_JAVA=	yes
-USE_ANT=	yes
-ALL_TARGET=	jar
+NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
-OTHERDOCS=	LICENSE.txt README.txt
-PORTDOCS=	javadoc ${OTHERDOCS}
-ALL_TARGET+=	javadoc
-.endif
+
+PORTDOCS=	*
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-SNAPSHOT.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/target/ && ${FIND} javadoc \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/../,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
