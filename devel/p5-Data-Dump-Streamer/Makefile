@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 CONFIGURE_ARGS=	DDS
 PERL_MODBUILD=	yes
 
-MAN3=		Data::Dump::Streamer.3
+MAN3=		Data::Dump::Streamer.3 DDS.3
 
 .include <bsd.port.pre.mk>
 
