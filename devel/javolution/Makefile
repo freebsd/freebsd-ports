@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	javolution
-PORTVERSION=	5.4.4
+PORTVERSION=	5.5.1
 CATEGORIES=	devel java
-MASTER_SITES=	http://javolution.org/target/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-project
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java solution for real time and embedded systems
 
-USE_ZIP=	yes
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 USE_ANT=	yes
 ALL_TARGET=	${JDKMVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
