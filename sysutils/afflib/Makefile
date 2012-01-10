@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.6.12
+PORTVERSION=	3.6.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://afflib.org/downloads/ \
 		http://www.c-s.li/ports/
@@ -15,11 +15,11 @@ MASTER_SITES=	http://afflib.org/downloads/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	The Advanced Forensics Format library and utilities
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
  		expat:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
-
-LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
