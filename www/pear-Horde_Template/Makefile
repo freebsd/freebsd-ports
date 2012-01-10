@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Template
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
