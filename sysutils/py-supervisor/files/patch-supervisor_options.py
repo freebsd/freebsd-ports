@@ -1,6 +1,6 @@
---- src/supervisor/options.py.orig	2010-08-14 02:34:50.000000000 +0800
-+++ src/supervisor/options.py	2010-11-23 02:33:20.000000000 +0800
-@@ -105,10 +105,7 @@
+--- supervisor/options.py.orig	2012-01-10 12:55:20.000000000 +0300
++++ supervisor/options.py	2012-01-10 12:56:14.000000000 +0300
+@@ -92,10 +92,7 @@
      def default_configfile(self):
          """Return the name of the found config file or raise. """
          here = os.path.dirname(os.path.dirname(sys.argv[0]))
