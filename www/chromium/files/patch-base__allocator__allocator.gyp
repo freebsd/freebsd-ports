@@ -1,5 +1,5 @@
---- base/allocator/allocator.gyp.orig	2011-11-28 21:53:42.000000000 +0200
-+++ base/allocator/allocator.gyp	2011-11-28 22:01:26.000000000 +0200
+--- base/allocator/allocator.gyp.orig	2012-01-05 10:01:52.000000000 +0200
++++ base/allocator/allocator.gyp	2012-01-09 22:00:51.000000000 +0200
 @@ -7,326 +7,198 @@
      'jemalloc_dir': '../../third_party/jemalloc/chromium',
      'tcmalloc_dir': '../../third_party/tcmalloc/chromium',
@@ -34,7 +34,7 @@
 +      'targets': [
 +        {
 +          'target_name': 'allocator',
-+          'type': 'settings',
++          'type': 'none',
 +          'direct_dependent_settings': {
              'defines': [
 -              ['PERFTOOLS_DLL_DECL', '']
