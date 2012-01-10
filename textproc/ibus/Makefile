@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -90,6 +90,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c #devel/dbus/files/dbus.in
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/xdg/autostart
+	@${INSTALL_DATA} ${WRKSRC}/bus/ibus.desktop ${PREFIX}/etc/xdg/autostart
 .	if defined(WITH_GTK3)
 		@gtk-query-immodules-3.0 --update-cache
 .	endif
