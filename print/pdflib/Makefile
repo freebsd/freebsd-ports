@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	7.0.4
+PORTVERSION=	7.0.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
-DISTNAME=	PDFlib-Lite-${PORTVERSION}p4
+DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
@@ -18,7 +18,7 @@ RESTRICTED=	many odd restrictions on usage and distribution
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java=no --with-py=no --with-ruby=no --with-tcl=no
 
 .if defined(WITH_PERL)
@@ -38,9 +38,6 @@ PORTDOCS=	*
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=--enable-64bit
 .endif
-post-patch:
-	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=6|\1=8|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's^\$$(top_builddir)/libtool^${LIBTOOL}^' ${WRKSRC}/config/mkcommon.inc.in
 
 post-install:
 	${MKDIR} ${DATADIR}/fonts
