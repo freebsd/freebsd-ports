@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.15
+PORTVERSION=	1.9.16
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable19/
 EXTRACT_SUFX=	.tgz
