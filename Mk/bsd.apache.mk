@@ -337,7 +337,7 @@ _USE_APACHE:=	${USE_APACHE_BUILD}
 _USE_APACHE:=	${USE_APACHE_RUN}
 .endif
 
-_APACHE_VERSION_CHECK:=			${_USE_APACHE:C/\.//g:C/^([1-9][0-9])$/\1-\1/}
+_APACHE_VERSION_CHECK:=			${_USE_APACHE:C/^([1-9][0-9])$/\1-\1/}
 _APACHE_VERSION_MINIMUM_TMP:=	${_APACHE_VERSION_CHECK:C/([1-9][0-9])[-+].*/\1/}
 _APACHE_VERSION_MINIMUM:=		${_APACHE_VERSION_MINIMUM_TMP:M[1-9][0-9]}
 _APACHE_VERSION_MAXIMUM_TMP:=	${_APACHE_VERSION_CHECK:C/.*-([1-9][0-9])/\1/}
@@ -521,11 +521,8 @@ ap-gen-plist:
 .if defined(AP_GENPLIST)
 .	if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-# apache13/20/22
-	@${ECHO} "@unexec ${SED} -i '' '/LoadModule.*%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
-# apache13
-	@${ECHO} "@unexec ${SED} -i '' '/AddModule.*mod_%%AP_NAME%%.c/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
-
+# apache22/20
+	@${ECHO} "@unexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
 	@${ECHO} "@unexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
