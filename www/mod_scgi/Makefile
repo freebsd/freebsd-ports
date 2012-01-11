@@ -7,10 +7,9 @@
 
 PORTNAME=	mod_scgi
 PORTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://dryice.name/computer/FreeBSD/distfiles/
-PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	dryice@dryice.name
