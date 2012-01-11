@@ -1,0 +1,23 @@
+CRlibm is an efficient and proven mathematical library, which
+provides implementations of the double-precision C99 standard
+elementary functions, correctly rounded in the four IEEE-754 rounding
+modes, and sufficiently efficient in average time, worst-case time,
+and memory consumption to replace existing libms transparently.
+
+The distribution includes extensive documentation with the proof
+of each function (currently more than 100 pages), as well as all
+the Maple scripts used to develop the functions. This makes this
+library an excellent tutorial on software elementary function
+development.
+
+CRlibm also includes a lightweight library for multiple precision,
+scslib (Software Carry Save Library). This library has been developed
+specifically to answer the needs of the CRlibm project: precision
+up to a few hundred bits, portability, compatibility with IEEE
+floating-point standards, performance comparable to or better than
+GMP, and a small footprint. It uses a data-structure which allows
+carry propagations to be avoided during multiple-precision
+multiplications, and supports addition, subtraction, multiplication,
+and conversions.
+
+WWW:	http://lipforge.ens-lyon.fr/www/crlibm/
