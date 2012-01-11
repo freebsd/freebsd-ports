@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -100,18 +99,18 @@ PLIST_SUB+=		WITHMYSQL="@comment "
 USE_PGSQL?=		YES
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
-.	else
-SUB_LIST+=	PGSQL=
 .	endif
+.else
+SUB_LIST+=	PGSQL=
 .endif
 .if defined(WITH_OPENDBX) || defined(WITH_MYSQL)
 .	if defined(WITH_MYSQL_LOCAL)
 USE_MYSQL?=		YES
 RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
-.	else
-SUB_LIST+=	MYSQL=
 .	endif
+.else
+SUB_LIST+=	MYSQL=
 .endif
 
 .if defined(WITH_OPENLDAP)
