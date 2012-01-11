@@ -11,14 +11,29 @@ libdata/pkgconfig/opencc.pc
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/opencc.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/opencc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/opencc.mo
+%%DATADIR%%/from_tw_phrases.txt
+%%DATADIR%%/from_tw_variants.txt
 %%DATADIR%%/mix2zhs.ini
 %%DATADIR%%/mix2zht.ini
 %%DATADIR%%/simp_to_trad_characters.ocd
 %%DATADIR%%/simp_to_trad_phrases.ocd
+%%DATADIR%%/to_cn_phrases.txt
+%%DATADIR%%/to_tw_phrases.txt
+%%DATADIR%%/to_tw_variants.txt
 %%DATADIR%%/trad_to_simp_characters.ocd
 %%DATADIR%%/trad_to_simp_phrases.ocd
 %%DATADIR%%/zhs2zht.ini
+%%DATADIR%%/zhs2zhtw_p.ini
+%%DATADIR%%/zhs2zhtw_v.ini
+%%DATADIR%%/zhs2zhtw_vp.ini
 %%DATADIR%%/zht2zhs.ini
+%%DATADIR%%/zht2zhtw_p.ini
+%%DATADIR%%/zht2zhtw_v.ini
+%%DATADIR%%/zht2zhtw_vp.ini
+%%DATADIR%%/zhtw2zhcn_s.ini
+%%DATADIR%%/zhtw2zhcn_t.ini
+%%DATADIR%%/zhtw2zhs.ini
+%%DATADIR%%/zhtw2zht.ini
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_TW
 %%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
