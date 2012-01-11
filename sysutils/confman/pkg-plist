@@ -6,6 +6,7 @@ libexec/confman/abspath
 libexec/confman/confaudit
 libexec/confman/confexport
 libexec/confman/conflock
+libexec/confman/confman_precommit
 libexec/confman/confsync
 sbin/confadmin
 sbin/confman
@@ -13,6 +14,7 @@ sbin/confman
 %%DATADIR%%/confmancommon.sh
 %%DATADIR%%/confmandoc.sh
 %%DATADIR%%/confmanlib.sh
+%%DATADIR%%/libfiledb.sh
 @dirrmtry etc/bash_completion.d
 @dirrmtry etc/defaults
 @dirrm libexec/confman
