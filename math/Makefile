@@ -61,6 +61,7 @@
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
+    SUBDIR += crlibm
     SUBDIR += cvc3
     SUBDIR += dcdflib
     SUBDIR += diehard
