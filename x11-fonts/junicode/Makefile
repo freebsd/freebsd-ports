@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	junicode
-PORTVERSION=	0.6.17
+PORTVERSION=	0.7
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0-6-17 \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S|.|-|g} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
@@ -32,7 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${FONTSDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 post-install:
