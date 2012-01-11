@@ -1,0 +1,10 @@
+bin/laszip-config
+bin/laszippertest
+include/laszip/lasunzipper.hpp
+include/laszip/laszip.hpp
+include/laszip/laszipexport.hpp
+include/laszip/laszipper.hpp
+lib/liblaszip.so
+lib/liblaszip.so.5
+lib/liblaszip.so.5.0.0
+@dirrm include/laszip

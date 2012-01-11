@@ -47,6 +47,7 @@
     SUBDIR += kbackup
     SUBDIR += kio_p7zip
     SUBDIR += kzip
+    SUBDIR += laszip
     SUBDIR += lbrate
     SUBDIR += lbzip2
     SUBDIR += lcab

@@ -1,0 +1,11 @@
+LASzip is a compression library for compressing ASPRS LAS format data. It has
+been provided as an LGPL-licensed stand-alone software library to allow other
+softwares that handle LAS data to read and write LASzip-compressed data. The
+BSD-licensed libLAS and the LGPL-licensed LASlib can take advantage of LASzip to
+read and write compressed data.
+
+LASzip is completely lossless. It compresses bulky LAS files into compact LAZ
+files that are only 10-20 percent of the original size, accurately preserving
+every single bit.
+
+WWW:   http://laszip.org/
