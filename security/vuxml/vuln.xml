@@ -47,6 +47,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d3921810-3c80-11e1-97e8-00215c6a37bb">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<name>php5-exif</name>
+	<range><lt>5.3.9</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><lt>5.2.17_5</lt></range>
+      </package>
+      <package>
+	<name>php52-exif</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>php development team reports:</p>
+	<blockquote cite="http://www.php.net/archive/2012.php#id2012-01-11-1">
+	  <p>Security Enhancements and Fixes in PHP 5.3.9:</p>
+	  <ul>
+	    <li>Added max_input_vars directive to prevent attacks
+	      based on hash collisions. (CVE-2011-4885)</li>
+	    <li>Fixed bug #60150 (Integer overflow during the parsing
+	      of invalid exif header). (CVE-2011-4566)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4566</cvename>
+      <cvename>CVE-2011-4885</cvename>
+      <url>http://www.nruns.com/_downloads/advisory28122011.pdf</url>
+    </references>
+    <dates>
+      <discovery>2011-12-29</discovery>
+      <entry>2012-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7fd27b2-3ae9-11e1-8b5c-00262d5ed8ee">
     <topic>torcs -- untrusted local library loading</topic>
     <affects>
