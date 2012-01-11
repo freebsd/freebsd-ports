@@ -151,6 +151,13 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/acgray.h
+include/fxt/comb/check-mixedradix.h
+include/fxt/comb/delta2gray.h
+include/fxt/comb/mixedradix-cgray.h
+include/fxt/comb/mixedradix-subset-lex.h
+include/fxt/comb/monotonic-gray.h
+include/fxt/comb/test-gray.h
 include/fxt/comb/perm-st-pref.h
 include/fxt/comb/big-fact2perm.h
 include/fxt/comb/binary-debruijn.h
@@ -190,7 +197,6 @@ include/fxt/comb/fact2num2perm.h
 include/fxt/comb/fact2perm.h
 include/fxt/comb/fibonacci.h
 include/fxt/comb/gray-cycle-leaders.h
-include/fxt/comb/gray.h
 include/fxt/comb/hilbert-ndim-rec.h
 include/fxt/comb/hilbert-ndim.h
 include/fxt/comb/kperm-gray.h
@@ -632,6 +638,14 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-rec-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-subset-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-subset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-demo.cc
