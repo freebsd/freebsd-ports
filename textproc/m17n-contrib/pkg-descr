@@ -1,6 +1,6 @@
 This port installs the user-contributed input methods for the m17n library
 (the official ones are installed through devel/m17n-lib). It currently
-supports Assamese, Eastern and Western Cree syllabics, Bengali, Belarusian, 
+supports Assamese, Eastern and Western Cree syllabics, Bengali, Belarusian,
 Czech, Esperanto, Gujarati, Hindi, Yi, Inuktitut, Kannada, Kashmiri, Malayalam,
 Marathi, Nepali, Ojibwe syllabics, Oriya, Punjabi, Pashto, Russian, Sindhi,
 Sinhala, Tamil, Tai Viet, Telugu, Urdu, Han Viet, Yiddish and Chinese Pinyin
