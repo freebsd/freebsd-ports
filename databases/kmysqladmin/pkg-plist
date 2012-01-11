@@ -23,7 +23,7 @@ share/icons/locolor/16x16/apps/kmysqladmin.png
 share/icons/locolor/32x32/apps/kmysqladmin.png
 share/locale/de/LC_MESSAGES/kmysqladmin.mo
 share/locale/hu/LC_MESSAGES/kmysqladmin.mo
-@dirrm share/doc/HTML/en/kmysqladmin/common
+share/doc/HTML/en/kmysqladmin/common
 @dirrm share/doc/HTML/en/kmysqladmin
 @dirrm share/apps/kmysqladmin/toolbar
 @dirrm share/apps/kmysqladmin
