@@ -7,6 +7,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.11
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -27,6 +28,8 @@ OPTIONS=	DOCS "With documentation" Off \
 		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
 		ECDSA "With highly experimental ECDSA support" Off \
 		PYLDNS "Build python bindings" Off
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PYLDNS)
 USE_PYTHON=	yes
