@@ -44,7 +44,7 @@ tincd_start()
 # code deliberately borrowed from /etc/rc.d/netif
 	if [ -f /etc/rc.d/ipfilter ] ; then
 		# Resync ipfilter
-		/etc/rc.d/ipfilter resync
+		/etc/rc.d/ipfilter quietresync
 	fi
 }
 tincd_stop()
