@@ -14,6 +14,8 @@ DISTNAME=	${GH_DEVELOPER}-${GH_PORTNAME}-${DISTVERSION}-0-g${GH_VERSION}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Extended Markdown processor with more features, written in C
 
+CONFLICT_INSTALL=	mtools-*
+
 LICENSE=	MIT
 
 # Github makes this very confusing

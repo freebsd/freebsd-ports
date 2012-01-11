@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	mtools
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A collection of tools for manipulating MSDOS files
 
+CONFLICTS_INSTALL=	multimarkdown-*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
