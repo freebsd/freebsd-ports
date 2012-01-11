@@ -56,6 +56,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/ldap\.,${PREFIX}/etc/nss_ldap.,g' \
 		-e 's,/etc/openldap/ldap\.,${PREFIX}/etc/openldap/ldap.,g' \
 		${WRKSRC}/ldap.conf
+	@${REINPLACE_CMD} 's,#!/usr/bin/perl,#!${PERL},' \
+		${WRKSRC}/vers_string
 	@${REINPLACE_CMD} 's,/etc/ldap\.,${PREFIX}/etc/nss_ldap.,g' \
 		${WRKSRC}/${MAN5}
 
