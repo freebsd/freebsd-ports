@@ -196,7 +196,6 @@ share/m17n/bg.lnm
 share/m17n/bn-itrans.mim
 share/m17n/bn-unijoy.mim
 share/m17n/bn.lnm
-share/m17n/bo-ewts.mim
 share/m17n/bo-tcrc.mim
 share/m17n/bo-wylie.mim
 share/m17n/bs.lnm
@@ -300,6 +299,7 @@ share/m17n/icons/th-pattachote-2.png
 share/m17n/icons/th-pattachote.png
 share/m17n/icons/th-tis820-2.png
 share/m17n/icons/th-tis820.png
+share/m17n/icons/ua-kbd.png
 share/m17n/icons/unicode.png
 share/m17n/icons/vi-tcvn.png
 share/m17n/icons/vi-telex.png
@@ -409,6 +409,7 @@ share/m17n/tig.lnm
 share/m17n/tr.lnm
 share/m17n/truetype.fst
 share/m17n/tt.lnm
+share/m17n/ua-kbd.mim
 share/m17n/ug-kbd.mim
 share/m17n/uk.lnm
 share/m17n/unicode.mim
