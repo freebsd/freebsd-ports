@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	milter-regex
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -17,7 +17,6 @@ COMMENT=	Milter plugin to sendmail for regular expression filtering
 LICENSE=	BSD
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
-DIST_SUBDIR=	repacked
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
