@@ -23,10 +23,12 @@ PERL_CONFIGURE=	yes
 
 MAN1=		ack.1
 
+OPTIONS=	BASH_COMPLETE "use bash completion" off
+
 .include <bsd.port.pre.mk>
 
 COMPLETION_DIR=		${PREFIX}/etc/bash_completion.d
-.if exists(${COMPLETION_DIR})
+.if defined(WITH_BASH_COMPLETE)
 RUN_DEPENDS+=	${COMPLETION_DIR}:${PORTSDIR}/shells/bash-completion
 PLIST_SUB+=		BASH=""
 post-install:
