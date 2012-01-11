@@ -8,6 +8,7 @@ share/m17n/be-kbd.mim
 share/m17n/bla-phonetic.mim
 share/m17n/bn-inscript.mim
 share/m17n/bn-probhat.mim
+share/m17n/bo-ewts.mim
 share/m17n/cr-western.mim
 share/m17n/cs-kbd.mim
 share/m17n/eo-h-f.mim
@@ -21,6 +22,7 @@ share/m17n/gu-phonetic.mim
 share/m17n/hi-inscript.mim
 share/m17n/hi-phonetic.mim
 share/m17n/hi-remington.mim
+share/m17n/hi-vedmata.mim
 share/m17n/icons/as-inscript.png
 share/m17n/icons/as-phonetic.png
 share/m17n/icons/be-kbd.png
@@ -37,6 +39,7 @@ share/m17n/icons/gu-phonetic.png
 share/m17n/icons/hi-inscript.png
 share/m17n/icons/hi-phonetic.png
 share/m17n/icons/hi-remington.png
+share/m17n/icons/hi-vedmata.png
 share/m17n/icons/ii-phonetic.png
 share/m17n/icons/kn-inscript.png
 share/m17n/icons/kn-kgp.png
@@ -54,15 +57,17 @@ share/m17n/icons/ps-phonetic.png
 share/m17n/icons/sd-inscript.png
 share/m17n/icons/si-phonetic-dynamic.png
 share/m17n/icons/si-sumihiri.png
-share/m17n/icons/si-trans.png
+share/m17n/icons/si-transliteration.png
 share/m17n/icons/ta-inscript.png
 share/m17n/icons/ta-phonetic.png
 share/m17n/icons/ta-tamil99.png
 share/m17n/icons/ta-typewriter.png
 share/m17n/icons/ta-vutam.png
+share/m17n/icons/te-apple.png
 share/m17n/icons/te-inscript.png
 share/m17n/icons/te-pothana.png
 share/m17n/icons/ur-phonetic.png
+share/m17n/icons/uz-kbd.png
 share/m17n/icons/vi-nom-vni.png
 share/m17n/icons/vi-nom.png
 share/m17n/icons/yi-yivo.png
@@ -71,6 +76,7 @@ share/m17n/ii-phonetic.mim
 share/m17n/iu-phonetic.mim
 share/m17n/kn-inscript.mim
 share/m17n/kn-kgp.mim
+share/m17n/ks-inscript.mim
 share/m17n/ks-kbd.mim
 share/m17n/ml-inscript.mim
 share/m17n/ml-mozhi.mim
@@ -89,8 +95,10 @@ share/m17n/pa-jhelum.mim
 share/m17n/pa-phonetic.mim
 share/m17n/ps-phonetic.mim
 share/m17n/ru-translit.mim
+share/m17n/sa-iast.mim
 share/m17n/sd-inscript.mim
 share/m17n/si-phonetic-dynamic.mim
+share/m17n/si-singlish.mim
 share/m17n/si-sumihiri.mim
 share/m17n/si-trans.mim
 share/m17n/ta-inscript.mim
@@ -104,6 +112,7 @@ share/m17n/te-inscript.mim
 share/m17n/te-pothana.mim
 share/m17n/te-rts.mim
 share/m17n/ur-phonetic.mim
+share/m17n/uz-kbd.mim
 share/m17n/vi-han.mim
 share/m17n/vi-nom-vni.mim
 share/m17n/vi-nom.mim
