@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120109:
+  AFFECTS: users of www/p5-WWW-GitHub-Gist
+  AUTHOR: lbr@FreeBSD.org
+
+  gist command was moved into new www/p5-App-gist port.
+
+20120109:
   AFFECTS: ports using Apache Software License 2.0
   AUTHOR: tabthorpe@FreeBSD.org
 
