@@ -1,0 +1,70 @@
+# This file lists the skins to not bloat Makefile
+#
+# $FreeBSD$
+#
+
+ABYSS_FILE=		Abyss-1.7
+ALIENMIND_FILE=		AlienMind-1.2
+AVIFILE_FILE=		avifile-1.6
+ATERFILE_FILE=		Ater-1.2
+BLUECURVE_FILE=		bluecurve-1.3
+BLUEHEART_FILE=		BlueHeart-1.5
+CANARY_FILE=		Canary-1.2
+CLEARLOOKS_FILE=	Clearlooks-1.4
+CORELIAN_FILE=		Corelian-1.1
+CORNERMP_AQUA_FILE=	CornerMP-aqua-1.4
+CORNERMP_FILE=		CornerMP-1.2
+CUBICPLAYER_FILE=	CubicPlayer-1.1
+CYRUS_FILE=		Cyrus-1.2
+DEFAULT_FILE=		Blue-1.8
+DEFAULT_SMALL_FILE=	Blue-small-1.5
+DISAPPEARER_FILE=	disappearer-1.1
+DIVXPLAYER_FILE=	divxplayer-1.3
+DUSHKU_FILE=		Dushku-1.2
+DVDPLAYER_FILE=		DVDPlayer-1.1
+GNOME_FILE=		gnome-1.1
+HANDHELD_FILE=		handheld-1.0
+HAYRAPHON_FILE=		hayraphon-1.0
+HWSW_FILE=		hwswskin-1.3
+INDUSTRIAL_FILE=	Industrial-1.0
+ICY_FILE=		ICY-1.0
+ITUNES_FILE=		iTunes-1.1
+ITUNES_MINI_FILE=	iTunes-mini-1.1
+JIMPLAYER_FILE=		JiMPlayer-1.4
+KDE_FILE=		KDE-0.3
+KRYSTAL_FILE=		krystal-1.1
+MENTALIC_FILE=		mentalic-1.2
+MIDNIGHTLOVE_FILE=	MidnightLove-1.6
+MINI_FILE=		mini-0.1
+MOONPHASE_FILE=		moonphase-1.0
+MPLAYER_RED_FILE=	mplayer_red-1.0
+NATIVE_RED_FILE=	nativeRed-1.1
+NETSCAPE4_FILE=		netscape4-1.0
+NEUTRON_FILE=		neutron-1.5
+NEWAGE_FILE=		new-age-1.0
+ORANGE_FILE=		Orange-1.3
+OSXBRUSHED_FILE=	OSX-Brushed-2.3
+OSXMOD_FILE=		OSX-Mod-1.1
+PCLAND_FILE=		pcland-1.0
+PHONY_FILE=		phony-1.1
+PLASTIC_FILE=		plastic-1.2
+POWERPLAYER_FILE=	PowerPlayer-1.1
+PROTON_FILE=		proton-1.2
+QPLAYER_FILE=		QPlayer-1.2
+QUICKSILVER_FILE=	QuickSilver-1.0
+SESSENE_FILE=		sessene-1.0
+SLIM_FILE=		slim-1.2
+SOFTGRIP_FILE=		softgrip-1.1
+TERMINATOR3_FILE=	Terminator3-1.1
+TRIUM_FILE=		trium-1.3
+TVISOR_FILE=		tvisor-1.1
+ULTRAFINA_FILE=		ultrafina-1.1
+WEBBY_FILE=		webby-1.3
+WINDOWSMEDIAPLAYER6_FILE=	WMP6-2.2
+XANIM_FILE=		xanim-1.6
+XFCE4_FILE=		XFce4-1.0
+XINE_LCD_FILE=		xine-lcd-1.2
+XMMPLAYER_FILE=		xmmplayer-1.5
+
+ALLSKINS_CMD:=	${GREP} FILE ${.CURDIR}/Makefile.skins | ${GREP} -v ALLSKINS_CMD | ${SED} s/_FILE.*//g | ${XARGS} | ${GREP} .
+ALLSKINS!=	${ALLSKINS_CMD}

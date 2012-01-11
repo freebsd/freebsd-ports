@@ -3,28 +3,18 @@
 %%ABYSS%%share/mplayer/skins/Abyss/bal-button.png
 %%ABYSS%%share/mplayer/skins/Abyss/balance.png
 %%ABYSS%%share/mplayer/skins/Abyss/barequ.png
-%%ABYSS%%share/mplayer/skins/Abyss/barequ2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barexit.png
 %%ABYSS%%share/mplayer/skins/Abyss/barffwd.png
-%%ABYSS%%share/mplayer/skins/Abyss/barffwd2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barfs.png
-%%ABYSS%%share/mplayer/skins/Abyss/barfs2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barfwd.png
-%%ABYSS%%share/mplayer/skins/Abyss/barfwd2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barmute.png
-%%ABYSS%%share/mplayer/skins/Abyss/barmute2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barpl.png
-%%ABYSS%%share/mplayer/skins/Abyss/barpl2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barplay.png
-%%ABYSS%%share/mplayer/skins/Abyss/barplay2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barprogress.png
 %%ABYSS%%share/mplayer/skins/Abyss/barrev.png
-%%ABYSS%%share/mplayer/skins/Abyss/barrev2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barrevv.png
-%%ABYSS%%share/mplayer/skins/Abyss/barrevv2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barsetup.png
 %%ABYSS%%share/mplayer/skins/Abyss/barstop.png
-%%ABYSS%%share/mplayer/skins/Abyss/barstop2.png
 %%ABYSS%%share/mplayer/skins/Abyss/barvolume.png
 %%ABYSS%%share/mplayer/skins/Abyss/close.png
 %%ABYSS%%share/mplayer/skins/Abyss/eject.png
@@ -85,6 +75,52 @@
 %%ALIENMIND%%share/mplayer/skins/AlienMind/stop.png
 %%ALIENMIND%%share/mplayer/skins/AlienMind/sub.png
 %%ALIENMIND%%share/mplayer/skins/AlienMind/volume.png
+%%ATERFILE%%share/mplayer/skins/Ater/README
+%%ATERFILE%%share/mplayer/skins/Ater/VERSION
+%%ATERFILE%%share/mplayer/skins/Ater/about.png
+%%ATERFILE%%share/mplayer/skins/Ater/barfwd.png
+%%ATERFILE%%share/mplayer/skins/Ater/barnext.png
+%%ATERFILE%%share/mplayer/skins/Ater/barpause.png
+%%ATERFILE%%share/mplayer/skins/Ater/barplay.png
+%%ATERFILE%%share/mplayer/skins/Ater/barprev.png
+%%ATERFILE%%share/mplayer/skins/Ater/barrev.png
+%%ATERFILE%%share/mplayer/skins/Ater/barstop.png
+%%ATERFILE%%share/mplayer/skins/Ater/eqb.png
+%%ATERFILE%%share/mplayer/skins/Ater/exit.png
+%%ATERFILE%%share/mplayer/skins/Ater/font-pl.png
+%%ATERFILE%%share/mplayer/skins/Ater/font.fnt
+%%ATERFILE%%share/mplayer/skins/Ater/forward.png
+%%ATERFILE%%share/mplayer/skins/Ater/icons/icon192x192.png
+%%ATERFILE%%share/mplayer/skins/Ater/icons/icon32x32.png
+%%ATERFILE%%share/mplayer/skins/Ater/icons/icon48x48.png
+%%ATERFILE%%share/mplayer/skins/Ater/icons/icon64x64.png
+%%ATERFILE%%share/mplayer/skins/Ater/icons/icon96x96.png
+%%ATERFILE%%share/mplayer/skins/Ater/load.png
+%%ATERFILE%%share/mplayer/skins/Ater/main.png
+%%ATERFILE%%share/mplayer/skins/Ater/maximize.png
+%%ATERFILE%%share/mplayer/skins/Ater/menu.png
+%%ATERFILE%%share/mplayer/skins/Ater/menus.png
+%%ATERFILE%%share/mplayer/skins/Ater/minimize.png
+%%ATERFILE%%share/mplayer/skins/Ater/mute.png
+%%ATERFILE%%share/mplayer/skins/Ater/next.png
+%%ATERFILE%%share/mplayer/skins/Ater/pause.png
+%%ATERFILE%%share/mplayer/skins/Ater/play.png
+%%ATERFILE%%share/mplayer/skins/Ater/playbar.png
+%%ATERFILE%%share/mplayer/skins/Ater/playlist.png
+%%ATERFILE%%share/mplayer/skins/Ater/pos.png
+%%ATERFILE%%share/mplayer/skins/Ater/prefs.png
+%%ATERFILE%%share/mplayer/skins/Ater/prev.png
+%%ATERFILE%%share/mplayer/skins/Ater/progres.png
+%%ATERFILE%%share/mplayer/skins/Ater/rev.png
+%%ATERFILE%%share/mplayer/skins/Ater/skin
+%%ATERFILE%%share/mplayer/skins/Ater/stop.png
+%%ATERFILE%%share/mplayer/skins/Ater/subload.png
+%%ATERFILE%%share/mplayer/skins/Ater/subpic.png
+%%ATERFILE%%share/mplayer/skins/Ater/subvol.png
+%%ATERFILE%%share/mplayer/skins/Ater/symbols.fnt
+%%ATERFILE%%share/mplayer/skins/Ater/symbols2.png
+%%ATERFILE%%share/mplayer/skins/Ater/symbolsg.fnt
+%%ATERFILE%%share/mplayer/skins/Ater/volume.png
 %%AVIFILE%%share/mplayer/skins/avifile/README
 %%AVIFILE%%share/mplayer/skins/avifile/VERSION
 %%AVIFILE%%share/mplayer/skins/avifile/alap.png
@@ -180,6 +216,24 @@
 %%CANARY%%share/mplayer/skins/Canary/subload.png
 %%CANARY%%share/mplayer/skins/Canary/symbols.fnt
 %%CANARY%%share/mplayer/skins/Canary/symbols.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/README
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/VERSION
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/button.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/fullscreen.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/liberation.fnt
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/liberation.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/load.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/logo.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/main.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/next.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/pause.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/play.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/playlist.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/prev.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/skin
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/slider.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/stop.png
+%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/volume.png
 %%CORELIAN%%share/mplayer/skins/Corelian/10minback.png
 %%CORELIAN%%share/mplayer/skins/Corelian/10minforw.png
 %%CORELIAN%%share/mplayer/skins/Corelian/10secback.png
@@ -616,11 +670,55 @@
 %%HWSW%%share/mplayer/skins/hwswskin/button-stop.png
 %%HWSW%%share/mplayer/skins/hwswskin/font.fnt
 %%HWSW%%share/mplayer/skins/hwswskin/font.png
-%%HWSW%%share/mplayer/skins/hwswskin/main.png
+%%HWSW%%share/mplayer/skins/hwswskin/main1.png
+%%HWSW%%share/mplayer/skins/hwswskin/main2.png
 %%HWSW%%share/mplayer/skins/hwswskin/pos.png
-%%HWSW%%share/mplayer/skins/hwswskin/skin
+%%HWSW%%share/mplayer/skins/hwswskin/skin1
+%%HWSW%%share/mplayer/skins/hwswskin/skin2
 %%HWSW%%share/mplayer/skins/hwswskin/sub.png
 %%HWSW%%share/mplayer/skins/hwswskin/vol.png
+%%ICY%%share/mplayer/skins/ICY/README
+%%ICY%%share/mplayer/skins/ICY/VERSION
+%%ICY%%share/mplayer/skins/ICY/about.png
+%%ICY%%share/mplayer/skins/ICY/audio.png
+%%ICY%%share/mplayer/skins/ICY/back.png
+%%ICY%%share/mplayer/skins/ICY/dvd.png
+%%ICY%%share/mplayer/skins/ICY/equalizer.png
+%%ICY%%share/mplayer/skins/ICY/exit.png
+%%ICY%%share/mplayer/skins/ICY/font.fnt
+%%ICY%%share/mplayer/skins/ICY/font.png
+%%ICY%%share/mplayer/skins/ICY/forward.png
+%%ICY%%share/mplayer/skins/ICY/fsback.png
+%%ICY%%share/mplayer/skins/ICY/fsforward.png
+%%ICY%%share/mplayer/skins/ICY/fsfullscreen.png
+%%ICY%%share/mplayer/skins/ICY/fspause.png
+%%ICY%%share/mplayer/skins/ICY/fsplay.png
+%%ICY%%share/mplayer/skins/ICY/fsstop.png
+%%ICY%%share/mplayer/skins/ICY/fullscreen.png
+%%ICY%%share/mplayer/skins/ICY/main.png
+%%ICY%%share/mplayer/skins/ICY/minimize.png
+%%ICY%%share/mplayer/skins/ICY/mute.png
+%%ICY%%share/mplayer/skins/ICY/next.png
+%%ICY%%share/mplayer/skins/ICY/open.png
+%%ICY%%share/mplayer/skins/ICY/pause.png
+%%ICY%%share/mplayer/skins/ICY/play.png
+%%ICY%%share/mplayer/skins/ICY/playbar.png
+%%ICY%%share/mplayer/skins/ICY/playlist.png
+%%ICY%%share/mplayer/skins/ICY/preferences.png
+%%ICY%%share/mplayer/skins/ICY/prev.png
+%%ICY%%share/mplayer/skins/ICY/seek.png
+%%ICY%%share/mplayer/skins/ICY/skin
+%%ICY%%share/mplayer/skins/ICY/skin.png
+%%ICY%%share/mplayer/skins/ICY/slider.png
+%%ICY%%share/mplayer/skins/ICY/slider2.png
+%%ICY%%share/mplayer/skins/ICY/stop.png
+%%ICY%%share/mplayer/skins/ICY/sub.png
+%%ICY%%share/mplayer/skins/ICY/subtitles.png
+%%ICY%%share/mplayer/skins/ICY/symbols.fnt
+%%ICY%%share/mplayer/skins/ICY/symbols.png
+%%ICY%%share/mplayer/skins/ICY/url.png
+%%ICY%%share/mplayer/skins/ICY/vcd.png
+%%ICY%%share/mplayer/skins/ICY/volume.png
 %%INDUSTRIAL%%share/mplayer/skins/Industrial/README
 %%INDUSTRIAL%%share/mplayer/skins/Industrial/VERSION
 %%INDUSTRIAL%%share/mplayer/skins/Industrial/button_forward.png
@@ -878,6 +976,65 @@
 %%MPLAYER_RED%%share/mplayer/skins/mplayer_red/symbols.fnt
 %%MPLAYER_RED%%share/mplayer/skins/mplayer_red/symbols.png
 %%MPLAYER_RED%%share/mplayer/skins/mplayer_red/volume.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/10minback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/10minforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/10secback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/10secforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/1minback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/1minforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/README
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/VERSION
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/aspect.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/babout.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/ballbutton.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/balll.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/ballr.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/bdvd.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/beq.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/blist.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/bsub1.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/bsub2.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/burl.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/bvcd.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/close.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/file.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/font.fnt
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/font1.fnt
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/font1.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/font3.fnt
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/font3.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/fullscreen.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/iconify.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/main.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/menu.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/menus.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/moviepoz.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/next.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/pause.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/play.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_10minback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_10minforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_10secback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_10secforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_1minback.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_1minforw.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_file.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_next.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_pause.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_play.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_prev.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/playbar_stop.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/prefs.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/prev.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/s.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/skin
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/stop.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/sub.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/symbols.fnt
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/symbols.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/volbutton.png
+%%NATIVE_RED%%share/mplayer/skins/nativeRed/volstop.png
 %%NETSCAPE4%%share/mplayer/skins/netscape4/NONPUBLIC
 %%NETSCAPE4%%share/mplayer/skins/netscape4/README
 %%NETSCAPE4%%share/mplayer/skins/netscape4/VERSION
@@ -1071,6 +1228,29 @@
 %%OSXMOD%%share/mplayer/skins/OSX-Mod/symbols_new.png
 %%OSXMOD%%share/mplayer/skins/OSX-Mod/vol.png
 %%OSXMOD%%share/mplayer/skins/OSX-Mod/waves.png
+%%PCLAND%%share/mplayer/skins/pcland/README
+%%PCLAND%%share/mplayer/skins/pcland/VERSION
+%%PCLAND%%share/mplayer/skins/pcland/button_close.png
+%%PCLAND%%share/mplayer/skins/pcland/button_forward.png
+%%PCLAND%%share/mplayer/skins/pcland/button_load.png
+%%PCLAND%%share/mplayer/skins/pcland/button_max.png
+%%PCLAND%%share/mplayer/skins/pcland/button_min.png
+%%PCLAND%%share/mplayer/skins/pcland/button_next.png
+%%PCLAND%%share/mplayer/skins/pcland/button_pause.png
+%%PCLAND%%share/mplayer/skins/pcland/button_play.png
+%%PCLAND%%share/mplayer/skins/pcland/button_prev.png
+%%PCLAND%%share/mplayer/skins/pcland/button_rewind.png
+%%PCLAND%%share/mplayer/skins/pcland/button_stop.png
+%%PCLAND%%share/mplayer/skins/pcland/font.fnt
+%%PCLAND%%share/mplayer/skins/pcland/font.png
+%%PCLAND%%share/mplayer/skins/pcland/main.png
+%%PCLAND%%share/mplayer/skins/pcland/mute.png
+%%PCLAND%%share/mplayer/skins/pcland/pos.png
+%%PCLAND%%share/mplayer/skins/pcland/skin
+%%PCLAND%%share/mplayer/skins/pcland/sub-2.png
+%%PCLAND%%share/mplayer/skins/pcland/sub.png
+%%PCLAND%%share/mplayer/skins/pcland/vol.png
+%%PCLAND%%share/mplayer/skins/pcland/waves.png
 %%PHONY%%share/mplayer/skins/phony/README
 %%PHONY%%share/mplayer/skins/phony/VERSION
 %%PHONY%%share/mplayer/skins/phony/about.png
@@ -1687,12 +1867,14 @@ share/mplayer/skins/%%PKGNAME%%
 %%POWERPLAYER%%@dirrm share/mplayer/skins/PowerPlayer
 %%PLASTIC%%@dirrm share/mplayer/skins/plastic
 %%PHONY%%@dirrm share/mplayer/skins/phony
+%%PCLAND%%@dirrm share/mplayer/skins/pcland
 %%OSXMOD%%@dirrm share/mplayer/skins/OSX-Mod
 %%OSXBRUSHED%%@dirrm share/mplayer/skins/OSX-Brushed
 %%ORANGE%%@dirrm share/mplayer/skins/Orange
 %%NEWAGE%%@dirrm share/mplayer/skins/new-age
 %%NEUTRON%%@dirrm share/mplayer/skins/neutron
 %%NETSCAPE4%%@dirrm share/mplayer/skins/netscape4
+%%NATIVE_RED%%@dirrm share/mplayer/skins/nativeRed
 %%MPLAYER_RED%%@dirrm share/mplayer/skins/mplayer_red
 %%MOONPHASE%%@dirrm share/mplayer/skins/moonphase
 %%MINI%%@dirrm share/mplayer/skins/mini
@@ -1704,6 +1886,7 @@ share/mplayer/skins/%%PKGNAME%%
 %%ITUNES_MINI%%@dirrm share/mplayer/skins/iTunes-mini
 %%ITUNES%%@dirrm share/mplayer/skins/iTunes
 %%INDUSTRIAL%%@dirrm share/mplayer/skins/Industrial
+%%ICY%%@dirrm share/mplayer/skins/ICY
 %%HWSW%%@dirrm share/mplayer/skins/hwswskin
 %%HAYRAPHON%%@dirrm share/mplayer/skins/hayraphon
 %%HANDHELD%%@dirrm share/mplayer/skins/handheld
@@ -1721,10 +1904,13 @@ share/mplayer/skins/%%PKGNAME%%
 %%CORNERMP_AQUA%%@dirrm share/mplayer/skins/CornerMP-aqua
 %%CORNERMP%%@dirrm share/mplayer/skins/CornerMP
 %%CORELIAN%%@dirrm share/mplayer/skins/Corelian
+%%CLEARLOOKS%%@dirrm share/mplayer/skins/Clearlooks
 %%CANARY%%@dirrm share/mplayer/skins/Canary
 %%BLUEHEART%%@dirrm share/mplayer/skins/BlueHeart
 %%BLUECURVE%%@dirrm share/mplayer/skins/bluecurve
 %%AVIFILE%%@dirrm share/mplayer/skins/avifile
+%%ATERFILE%%@dirrm share/mplayer/skins/Ater/icons
+%%ATERFILE%%@dirrm share/mplayer/skins/Ater
 %%ALIENMIND%%@dirrm share/mplayer/skins/AlienMind
 %%ABYSS%%@dirrm share/mplayer/skins/Abyss/icons
 %%ABYSS%%@dirrm share/mplayer/skins/Abyss
