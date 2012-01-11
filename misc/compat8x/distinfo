@@ -2,3 +2,5 @@ SHA256 (compat8x-amd64-8.2.802000.201112.tar.bz2) = 4e820e91602a9cccb9e3f7b5a9fd
 SIZE (compat8x-amd64-8.2.802000.201112.tar.bz2) = 615287
 SHA256 (compat8x-i386-8.2.802000.201112.tar.bz2) = 08ad558f42c8eb529312ab046a928c189fe01a61df67e0c73cec950d579a531c
 SIZE (compat8x-i386-8.2.802000.201112.tar.bz2) = 356437
+SHA256 (compat8x-sparc64-8.2.802000.201112.tar.bz2) = 4a8abc4c5ae778e02f3123e4e1ba59dc7dbff88dbcc5ef6ae80b0b3f3b4099a5
+SIZE (compat8x-sparc64-8.2.802000.201112.tar.bz2) = 321229

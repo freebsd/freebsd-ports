@@ -18,7 +18,7 @@ COMMENT=	A convenience package to install the compat8x libraries
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
