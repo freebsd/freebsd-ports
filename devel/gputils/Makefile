@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gputils
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	A set of utilities for Microchip PIC microcontrollers
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
