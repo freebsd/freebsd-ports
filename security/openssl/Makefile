@@ -7,19 +7,16 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.0
-DISTVERSIONSUFFIX=	e
-PORTREVISION=	7
+DISTVERSIONSUFFIX=	f
+PORTREVISION=	8
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}2
+DIST_SUBDIR=	${DISTNAME}
 
 PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
-PATCHFILES=	dtls-manual-mtu-bug-1.0.0.patch \
-		dtls-ecc-key-bug-1.0.0.patch \
-		dtls-fragment-assert-bug-1.0.0.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -34,7 +31,7 @@ OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ASM	"Build with optimized Assembler" on \
 		ZLIB	"Build with zlib compression" on \
-		MD2	"Build with MD2 hash (obsolete)" off \
+		MD2	"Build with MD2 hash (obsolete)" on \
 		RC5	"Build with RC5 chipher (patented)" off \
 		RFC3779	"Build with RFC3779 support" off \
 	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
@@ -1113,19 +1110,17 @@ EXTRACONFIGURE+=	sctp
 .if defined(WITH_DTLS_HEARTBEAT)
 BROKEN=		Patches do not merge, please change options
 .endif
-.if defined(WITH_DTLS_RENEGOTIATION)
-BROKEN=		Patches do not merge, please change options
 .endif
-.endif
+
 # order of PATCHFILES is important
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	abbreviated-renegotiation.patch
 .endif
-.if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=	dtls-sctp-24.patch
-.endif
 .if defined(WITH_DTLS_HEARTBEAT) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	dtls-heartbeats.patch
+.endif
+.if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
+PATCHFILES+=	dtls-sctp-24.patch
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
