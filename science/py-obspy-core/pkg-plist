@@ -20,6 +20,9 @@ bin/obspy-reftek-rescue
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/event.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/event.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/event.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.pyo
@@ -52,6 +55,9 @@ bin/obspy-reftek-rescue
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_attribdict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_attribdict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_attribdict.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.pyo
@@ -97,6 +103,9 @@ bin/obspy-reftek-rescue
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/misc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/ordereddict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/ordereddict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util/ordereddict.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data
