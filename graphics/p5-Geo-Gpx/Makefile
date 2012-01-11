@@ -7,7 +7,7 @@
 
 PORTNAME=	Geo-Gpx
 PORTVERSION=	0.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,9 @@ BUILD_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		p5-ExtUtils-MakeMaker-Coverage>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker-Coverage \
 		p5-Time-Local>=0:${PORTSDIR}/devel/p5-Time-Local \
-		p5-XML-Descent>=0:${PORTSDIR}/textproc/p5-XML-Descent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-XML-Descent>=0:${PORTSDIR}/textproc/p5-XML-Descent \
+		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Geo::Gpx.3
 
