@@ -450,10 +450,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 .endif
 
 .if defined(WITH_LUA_MODULE)
+LIB_DEPENDS=	luajit-5.1.2:${PORTSDIR}/devel/luajit
+CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
+CONFIGURE_ENV+= "LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-USE_LUA=	5.1+
-NGINX_LUA_MODULE_VERSION=	0.3.0
-GIT_LUA_MODULE_VERSION=	0-gdd0d4d0
+NGINX_LUA_MODULE_VERSION=	0.4.0
+GIT_LUA_MODULE_VERSION=	0-g7bdd850
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
@@ -692,7 +694,7 @@ post-patch:
 .endif
 .if defined(WITH_LUA_MODULE)
 	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${PREFIX}!' \
+		's!%%PREFIX%%!${PREFIX}!g' \
 		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}/config
 .endif
 .if defined(WITH_PASSENGER_MODULE)
