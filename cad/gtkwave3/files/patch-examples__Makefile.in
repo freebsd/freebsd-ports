@@ -1,5 +1,5 @@
---- examples/Makefile.in.orig	2011-10-20 08:19:36.000000000 +0200
-+++ examples/Makefile.in	2011-10-28 09:59:56.000000000 +0200
+--- examples/Makefile.in.orig	2011-12-22 21:31:41.000000000 +0100
++++ examples/Makefile.in	2012-01-10 11:46:28.000000000 +0100
 @@ -16,7 +16,7 @@
  @SET_MAKE@
  
@@ -9,10 +9,10 @@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -194,7 +194,7 @@
+@@ -200,7 +200,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- dist_examples_DATA = des.sav des.tcl des.v des.vzt transaction.fst transaction.sav transaction.c
+ dist_examples_DATA = des.gtkw des.tcl des.v des.vzt transaction.fst transaction.gtkw transaction.c .gtkwaverc
 -examplesdir = $(pkgdatadir)/examples
 +examplesdir = $(pkgdatadir)/examples/@PACKAGE@
  all: all-am
