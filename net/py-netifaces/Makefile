@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	netifaces
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net python
-MASTER_SITES=	http://alastairs-place.net/2007/03/netifaces/
+MASTER_SITES=	http://alastairs-place.net/projects/netifaces/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	count@211.ru
