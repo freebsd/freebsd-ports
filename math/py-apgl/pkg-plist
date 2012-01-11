@@ -31,9 +31,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/KernelCCA.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/KernelCCA.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/KernelCCA.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/MissingCompleter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/MissingCompleter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/MissingCompleter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/PrimalCCA.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/PrimalCCA.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/PrimalCCA.pyo
@@ -46,9 +43,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/KernelCCATest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/KernelCCATest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/KernelCCATest.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/MissingCompleterTest.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/MissingCompleterTest.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/MissingCompleterTest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/PrimalCCATest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/PrimalCCATest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/features/test/PrimalCCATest.pyo
@@ -199,9 +193,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/CsvVertexWriter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/CsvVertexWriter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/CsvVertexWriter.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/EgoCsvReader.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/EgoCsvReader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/EgoCsvReader.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/GraphReader.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/GraphReader.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/io/GraphReader.pyo
@@ -358,6 +349,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Evaluator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Evaluator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Evaluator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/FileLock.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/FileLock.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/FileLock.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/GraphLayoutEngine.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/GraphLayoutEngine.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/GraphLayoutEngine.pyo
@@ -379,6 +373,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Sampling.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Sampling.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Sampling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/SparseUtils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/SparseUtils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/SparseUtils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/Util.pyo
@@ -391,6 +388,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/EvaluatorTest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/EvaluatorTest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/EvaluatorTest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/FileLockTest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/FileLockTest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/FileLockTest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/LatexTest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/LatexTest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/LatexTest.pyo
@@ -409,6 +409,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SamplingTest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SamplingTest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SamplingTest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SparseUtilsTest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SparseUtilsTest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/SparseUtilsTest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/UtilTest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/UtilTest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/util/test/UtilTest.pyo
