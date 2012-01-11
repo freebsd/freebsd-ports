@@ -1008,6 +1008,7 @@
     SUBDIR += luabind
     SUBDIR += luafilesystem
     SUBDIR += luajava
+    SUBDIR += luajit
     SUBDIR += lwp
     SUBDIR += lxr
     SUBDIR += m17n-db

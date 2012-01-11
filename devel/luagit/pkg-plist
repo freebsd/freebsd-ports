@@ -1,0 +1,24 @@
+bin/luajit
+bin/luajit-2.0.0-beta9
+include/luajit-2.0/lua.h
+include/luajit-2.0/luaconf.h
+include/luajit-2.0/luajit.h
+include/luajit-2.0/lualib.h
+include/luajit-2.0/lauxlib.h
+include/luajit-2.0/lua.hpp
+lib/libluajit-5.1.a
+lib/libluajit-5.1.so.2
+lib/libluajit-5.1.so.2.0.0
+libdata/pkgconfig/luajit.pc
+share/luajit-2.0.0-beta9/jit/bc.lua
+share/luajit-2.0.0-beta9/jit/bcsave.lua
+share/luajit-2.0.0-beta9/jit/dis_arm.lua
+share/luajit-2.0.0-beta9/jit/dis_x64.lua
+share/luajit-2.0.0-beta9/jit/dis_x86.lua
+share/luajit-2.0.0-beta9/jit/dis_ppc.lua
+share/luajit-2.0.0-beta9/jit/dump.lua
+share/luajit-2.0.0-beta9/jit/v.lua
+share/luajit-2.0.0-beta9/jit/vmdef.lua
+@dirrm share/luajit-2.0.0-beta9/jit
+@dirrm share/luajit-2.0.0-beta9
+@dirrm include/luajit-2.0
