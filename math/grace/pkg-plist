@@ -130,12 +130,12 @@ lib/libgrace_np.a
 %%DATADIR%%/gracerc
 %%DATADIR%%/gracerc.user
 %%DATADIR%%/templates/Default.agr
+%%PORTEXAMPLES%%%%DATADIR%%/examples
+%%PORTDOCS%%%%DATADIR%%/doc
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/fonts/type1
 @dirrm %%DATADIR%%/fonts/enc
 @dirrm %%DATADIR%%/fonts
-%%PORTEXAMPLES%%@dirrm %%DATADIR%%/examples
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/auxiliary
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
