@@ -7,15 +7,15 @@
 -PACKAGE_NAME='gtkwave'
 +PACKAGE_NAME='gtkwave3'
  PACKAGE_TARNAME='gtkwave'
- PACKAGE_VERSION='3.3.28'
- PACKAGE_STRING='gtkwave 3.3.28'
+ PACKAGE_VERSION='3.3.29'
+ PACKAGE_STRING='gtkwave 3.3.29'
 @@ -2417,7 +2417,7 @@
  
  
  # Define the identity of the package.
 - PACKAGE='gtkwave'
 + PACKAGE='gtkwave3'
-  VERSION='3.3.28'
+  VERSION='3.3.29'
  
  
 @@ -13096,6 +13096,7 @@

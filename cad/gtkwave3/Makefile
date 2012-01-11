@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkwave3
-PORTVERSION=	3.3.28
+PORTVERSION=	3.3.29
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
@@ -14,11 +14,10 @@ DISTNAME=	gtkwave-${PORTVERSION}
 MAINTAINER=	niclas.zeising@gmail.com
 COMMENT=	Electronic Waveform Viewer
 
-CONFLICTS=	gtkwave-[0-9]*
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
+INSTALLS_ICONS=	yes
 
 OPTIONS=	TCL "Enable support for TCL/TK" off
 
