@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubyzip2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
