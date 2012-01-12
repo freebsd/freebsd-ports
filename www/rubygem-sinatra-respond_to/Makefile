@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sinatra-respond_to
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
