@@ -1,0 +1,19 @@
+--- ../calio-iconv-nginx-module-4e71946/config.orig	2012-01-12 12:01:07.000000000 +0400
++++ ../calio-iconv-nginx-module-4e71946/config	2011-10-11 03:30:35.000000000 +0400
+@@ -39,12 +39,12 @@
+     fi
+ 
+     if [ $ngx_found = no ]; then
+-        ngx_feature="libiconv in /usr/local/"
+-        ngx_feature_path="/usr/local/include"
++        ngx_feature="libiconv in %%PREFIX%%/"
++        ngx_feature_path="%%PREFIX%%/include"
+         if [ $NGX_RPATH = YES ]; then
+-            ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -liconv"
++            ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -liconv"
+         else
+-            ngx_feature_libs="-L/usr/local/lib -liconv"
++            ngx_feature_libs="-L%%PREFIX%%/lib -liconv"
+         fi
+         . auto/feature
+     fi
