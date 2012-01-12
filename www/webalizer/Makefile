@@ -39,7 +39,7 @@ WEBALIZER_LANG?=english
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20110101.tgz:geodb
+DISTFILES+=	webalizer-geodb-20120101.tgz:geodb
 .endif
 
 .if !defined(LIB_DEPENDS)
