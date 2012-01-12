@@ -12,11 +12,10 @@ include/licq/daemon.h
 include/licq/event.h
 include/licq/exceptions/exception.h
 include/licq/gpghelper.h
-include/licq/icq.h
-include/licq/icqchat.h
-include/licq/icqcodes.h
-include/licq/icqdefines.h
-include/licq/icqfiletransfer.h
+include/licq/icq/chat.h
+include/licq/icq/codes.h
+include/licq/icq/filetransfer.h
+include/licq/icq/icq.h
 include/licq/inifile.h
 include/licq/licqversion.h
 include/licq/logging/log.h
@@ -29,11 +28,13 @@ include/licq/md5.h
 include/licq/oneventmanager.h
 include/licq/packet.h
 include/licq/pipe.h
-include/licq/plugin.h
-include/licq/pluginbase.h
-include/licq/pluginmanager.h
+include/licq/plugin/generalbase.h
+include/licq/plugin/generalplugin.h
+include/licq/plugin/plugin.h
+include/licq/plugin/pluginmanager.h
+include/licq/plugin/protocolbase.h
+include/licq/plugin/protocolplugin.h
 include/licq/pluginsignal.h
-include/licq/protocolbase.h
 include/licq/protocolmanager.h
 include/licq/protocolsignal.h
 include/licq/proxy.h
@@ -140,7 +141,9 @@ share/licq/utilities/xtraceroute.utility
 @dirrm share/licq/cmake
 @dirrm share/licq
 @dirrm include/licq/thread
+@dirrm include/licq/plugin
 @dirrm include/licq/logging
+@dirrm include/licq/icq
 @dirrm include/licq/exceptions
 @dirrm include/licq/contactlist
 @dirrm include/licq
