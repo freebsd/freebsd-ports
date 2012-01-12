@@ -1,0 +1,11 @@
+--- ./src/Makefile.am.orig	2011-06-27 09:59:22.000000000 +0400
++++ ./src/Makefile.am	2011-10-19 18:00:32.000000000 +0400
+@@ -34,7 +34,7 @@
+ #
+ THRIFT = $(thrift_home)/bin/thrift
+ THRIFT_INCLUDES = -I $(fb303_home)/share/
+-THRIFT_OPTS = $(THRIFT_INCLUDES) --gen cpp:pure_enums --gen py --gen php --gen java
++THRIFT_OPTS = $(THRIFT_INCLUDES) --gen cpp:pure_enums --gen py --gen php --gen java --gen perl
+ 
+ # User defined conditionals and conditonal statements set up in configure.ac.
+ # FACEBOOK set in configure.ac

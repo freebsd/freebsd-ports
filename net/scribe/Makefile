@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	scribe
-PORTVERSION=	2.2
-PORTREVISION=	3
+DISTVERSION=	2.2.2011.07.27
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/facebook/scribe/
+MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
+DISTNAME=	facebook-scribe-${GITVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Aggregating log data streamed in real time
@@ -21,7 +21,9 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
 
-BROKEN=		does not compile
+GITVERSION=	6600084
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
@@ -35,19 +37,12 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-post-extract:
-	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/scribe|${LOCALBASE}/etc|' ${WRKSRC}/src/env_default.h
 
-post-build:
-	${LOCALBASE}/bin/thrift -o ${WRKSRC} -I ${LOCALBASE}/share --gen "perl" ${WRKSRC}/if/scribe.thrift
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/scribe.pm.patch
-
 post-install:
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Scribe/Thrift
-	${CP} ${WRKSRC}/gen-perl/*.pm ${PREFIX}/${SITE_PERL_REL}/Scribe/Thrift
+	${CP} -R ${WRKSRC}/src/gen-perl/ ${PREFIX}/${SITE_PERL_REL}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
