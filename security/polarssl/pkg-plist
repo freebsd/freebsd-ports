@@ -19,6 +19,7 @@ bin/polarssl_ssl_server
 bin/polarssl_ssl_test
 include/polarssl/aes.h
 include/polarssl/arc4.h
+include/polarssl/asn1.h
 include/polarssl/base64.h
 include/polarssl/bignum.h
 include/polarssl/bn_mul.h
@@ -27,9 +28,12 @@ include/polarssl/certs.h
 include/polarssl/cipher.h
 include/polarssl/cipher_wrap.h
 include/polarssl/config.h
+include/polarssl/ctr_drbg.h
 include/polarssl/debug.h
 include/polarssl/des.h
 include/polarssl/dhm.h
+include/polarssl/entropy.h
+include/polarssl/entropy_poll.h
 include/polarssl/error.h
 include/polarssl/havege.h
 include/polarssl/md.h
