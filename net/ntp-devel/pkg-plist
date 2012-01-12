@@ -105,6 +105,7 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/huffpuff.html
 %%PORTDOCS%%%%DOCSDIR%%/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/icons/mail2.gif
+%%PORTDOCS%%%%DOCSDIR%%/icons/sitemap.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/kern.html
 %%PORTDOCS%%%%DOCSDIR%%/kernpps.html
