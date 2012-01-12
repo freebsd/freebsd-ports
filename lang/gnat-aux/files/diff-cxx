@@ -1,0 +1,917 @@
+--- libstdc++-v3/acinclude.m4.orig
++++ libstdc++-v3/acinclude.m4
+@@ -1753,7 +1753,7 @@
+ AC_DEFUN([GLIBCXX_ENABLE_CLOCALE], [
+   GLIBCXX_ENABLE(clocale,auto,[[[=MODEL]]],
+     [use MODEL for target locale package],
+-    [permit generic|gnu|ieee_1003.1-2001|yes|no|auto])
++    [permit generic|gnu|ieee_1003.1-2001|darwin|dragonfly|yes|no|auto])
+ 
+   # Deal with gettext issues.  Default to not using it (=no) until we detect
+   # support for it later.  Let the user turn it off via --e/d, but let that
+@@ -1780,6 +1780,9 @@
+       darwin* | freebsd*)
+ 	enable_clocale_flag=darwin
+ 	;;
++      dragonfly*)
++        enable_clocale_flag_dragonfly
++        ;;
+       *)
+ 	enable_clocale_flag=generic
+ 	;;
+@@ -1864,7 +1867,22 @@
+       CTIME_CC=config/locale/generic/time_members.cc
+       CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
+       ;;
++    dragonfly)
++      AC_MSG_RESULT(darwin or freebsd)
+ 
++      CLOCALE_H=config/locale/generic/c_locale.h
++      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
++      CCODECVT_CC=config/locale/generic/codecvt_members.cc
++      CCOLLATE_CC=config/locale/generic/collate_members.cc
++      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
++      CMESSAGES_H=config/locale/generic/messages_members.h
++      CMESSAGES_CC=config/locale/generic/messages_members.cc
++      CMONEY_CC=config/locale/generic/monetary_members.cc
++      CNUMERIC_CC=config/locale/generic/numeric_members.cc
++      CTIME_H=config/locale/generic/time_members.h
++      CTIME_CC=config/locale/generic/time_members.cc
++      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
++      ;;
+     gnu)
+       AC_MSG_RESULT(gnu)
+ 
+--- libstdc++-v3/configure.orig
++++ libstdc++-v3/configure
+@@ -15638,7 +15638,7 @@
+ if test "${enable_clocale+set}" = set; then :
+   enableval=$enable_clocale;
+       case "$enableval" in
+-       generic|gnu|ieee_1003.1-2001|yes|no|auto) ;;
++       generic|gnu|ieee_1003.1-2001|darwin|dragonfly|yes|no|auto) ;;
+        *) as_fn_error "Unknown argument to enable/disable clocale" "$LINENO" 5 ;;
+ 	  	        esac
+ 
+@@ -15676,6 +15676,9 @@
+       darwin* | freebsd*)
+ 	enable_clocale_flag=darwin
+ 	;;
++      dragonfly*)
++        enable_clocale_flag=dragonfly
++        ;;
+       *)
+ 	enable_clocale_flag=generic
+ 	;;
+@@ -15813,7 +15816,23 @@
+       CTIME_CC=config/locale/generic/time_members.cc
+       CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
+       ;;
++    dragonfly)
++      { $as_echo "$as_me:${as_lineno-$LINENO}: result: dragonfly" >&5
++$as_echo "darwin or freebsd" >&6; }
+ 
++      CLOCALE_H=config/locale/generic/c_locale.h
++      CLOCALE_CC=config/locale/dragonfly/c_locale.cc
++      CCODECVT_CC=config/locale/generic/codecvt_members.cc
++      CCOLLATE_CC=config/locale/generic/collate_members.cc
++      CCTYPE_CC=config/locale/dragonfly/ctype_members.cc
++      CMESSAGES_H=config/locale/generic/messages_members.h
++      CMESSAGES_CC=config/locale/generic/messages_members.cc
++      CMONEY_CC=config/locale/generic/monetary_members.cc
++      CNUMERIC_CC=config/locale/generic/numeric_members.cc
++      CTIME_H=config/locale/generic/time_members.h
++      CTIME_CC=config/locale/generic/time_members.cc
++      CLOCALE_INTERNAL_H=config/locale/generic/c++locale_internal.h
++      ;;
+     gnu)
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: gnu" >&5
+ $as_echo "gnu" >&6; }
+--- libstdc++-v3/configure.host.orig
++++ libstdc++-v3/configure.host
+@@ -233,6 +233,9 @@
+     os_include_dir="os/djgpp"
+     error_constants_dir="os/djgpp"
+     ;;
++  dragonfly*)
++    os_include_dir="os/bsd/dragonfly"
++    ;;
+   freebsd*)
+     os_include_dir="os/bsd/freebsd"
+     ;;
+--- /dev/null
++++ libstdc++-v3/config/locale/dragonfly/c_locale.cc
+@@ -0,0 +1,300 @@
++// Wrapper for underlying C-language localization -*- C++ -*-
++
++// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
++// Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++//
++// ISO C++ 14882: 22.8  Standard locale categories.
++//
++
++// Written by Benjamin Kosnik <bkoz@redhat.com>
++
++#include <cerrno>  // For errno
++#include <cmath>  // For isinf, finite, finitef, fabs
++#include <cstdlib>  // For strof, strtold
++#include <cstring>
++#include <cstdio>
++#include <locale>
++#include <limits>
++
++#ifdef _GLIBCXX_HAVE_IEEEFP_H
++#include <ieeefp.h>
++#endif
++
++namespace std _GLIBCXX_VISIBILITY(default)
++{
++_GLIBCXX_BEGIN_NAMESPACE_VERSION
++
++  template<>
++    void
++    __convert_to_v(const char* __s, float& __v, ios_base::iostate& __err,
++		   const __c_locale&) throw()
++    {
++      // Assumes __s formatted for "C" locale.
++      char* __old = setlocale(LC_ALL, 0);
++      const size_t __len = strlen(__old) + 1;
++      char* __sav = new char[__len];
++      memcpy(__sav, __old, __len);
++      setlocale(LC_ALL, "C");
++      char* __sanity;
++      bool __overflow = false;
++
++#if !__FLT_HAS_INFINITY__
++      errno = 0;
++#endif
++
++#ifdef _GLIBCXX_HAVE_STRTOF
++      __v = strtof(__s, &__sanity);
++#else
++      double __d = strtod(__s, &__sanity);
++      __v = static_cast<float>(__d);
++#ifdef _GLIBCXX_HAVE_FINITEF
++      if (!finitef (__v))
++	__overflow = true;
++#elif defined (_GLIBCXX_HAVE_FINITE)
++      if (!finite (static_cast<double> (__v)))
++	__overflow = true;
++#elif defined (_GLIBCXX_HAVE_ISINF)
++      if (isinf (static_cast<double> (__v)))
++	__overflow = true;
++#else
++      if (fabs(__d) > numeric_limits<float>::max())
++	__overflow = true;
++#endif
++#endif // _GLIBCXX_HAVE_STRTOF
++
++      // _GLIBCXX_RESOLVE_LIB_DEFECTS
++      // 23. Num_get overflow result.
++      if (__sanity == __s || *__sanity != '\0')
++	{
++	  __v = 0.0f;
++	  __err = ios_base::failbit;
++	}
++      else if (__overflow
++#if __FLT_HAS_INFINITY__
++	       || __v == numeric_limits<float>::infinity()
++	       || __v == -numeric_limits<float>::infinity()
++#else
++	       || ((__v > 1.0f || __v < -1.0f) && errno == ERANGE)
++#endif
++	      )
++	{
++	  if (__v > 0.0f)
++	    __v = numeric_limits<float>::max();
++	  else
++	    __v = -numeric_limits<float>::max();
++	  __err = ios_base::failbit;
++	}
++
++      setlocale(LC_ALL, __sav);
++      delete [] __sav;
++    }
++
++  template<>
++    void
++    __convert_to_v(const char* __s, double& __v, ios_base::iostate& __err,
++		   const __c_locale&) throw()
++    {
++      // Assumes __s formatted for "C" locale.
++      char* __old = setlocale(LC_ALL, 0);
++      const size_t __len = strlen(__old) + 1;
++      char* __sav = new char[__len];
++      memcpy(__sav, __old, __len);
++      setlocale(LC_ALL, "C");
++      char* __sanity;
++
++#if !__DBL_HAS_INFINITY__
++      errno = 0;
++#endif
++
++      __v = strtod(__s, &__sanity);
++
++      // _GLIBCXX_RESOLVE_LIB_DEFECTS
++      // 23. Num_get overflow result.
++      if (__sanity == __s || *__sanity != '\0')
++	{
++	  __v = 0.0;
++	  __err = ios_base::failbit;
++	}
++      else if (
++#if __DBL_HAS_INFINITY__
++	       __v == numeric_limits<double>::infinity()
++	       || __v == -numeric_limits<double>::infinity())
++#else
++	       (__v > 1.0 || __v < -1.0) && errno == ERANGE)
++#endif
++	{
++	  if (__v > 0.0)
++	    __v = numeric_limits<double>::max();
++	  else
++	    __v = -numeric_limits<double>::max();
++	  __err = ios_base::failbit;
++	}
++
++      setlocale(LC_ALL, __sav);
++      delete [] __sav;
++    }
++
++  template<>
++    void
++    __convert_to_v(const char* __s, long double& __v,
++		   ios_base::iostate& __err, const __c_locale&) throw()
++    {
++      // Assumes __s formatted for "C" locale.
++      char* __old = setlocale(LC_ALL, 0);
++      const size_t __len = strlen(__old) + 1;
++      char* __sav = new char[__len];
++      memcpy(__sav, __old, __len);
++      setlocale(LC_ALL, "C");
++
++#if !__LDBL_HAS_INFINITY__
++      errno = 0;
++#endif
++
++#if defined(_GLIBCXX_HAVE_STRTOLD) && !defined(_GLIBCXX_HAVE_BROKEN_STRTOLD)
++      char* __sanity;
++      __v = strtold(__s, &__sanity);
++
++      // _GLIBCXX_RESOLVE_LIB_DEFECTS
++      // 23. Num_get overflow result.
++      if (__sanity == __s || *__sanity != '\0')
++#else
++      typedef char_traits<char>::int_type int_type;
++      int __p = sscanf(__s, "%Lf", &__v);
++
++      if (!__p || static_cast<int_type>(__p) == char_traits<char>::eof())
++#endif
++	{
++	  __v = 0.0l;
++	  __err = ios_base::failbit;
++	}
++       else if (
++#if __LDBL_HAS_INFINITY__
++		__v == numeric_limits<long double>::infinity()
++		|| __v == -numeric_limits<long double>::infinity())
++#else
++		(__v > 1.0l || __v < -1.0l) && errno == ERANGE)
++#endif
++	{
++	  if (__v > 0.0l)
++	    __v = numeric_limits<long double>::max();
++	  else
++	    __v = -numeric_limits<long double>::max();
++	  __err = ios_base::failbit;
++	}
++
++      setlocale(LC_ALL, __sav);
++      delete [] __sav;
++    }
++
++
++  /*  DragonFly's implemenation of setlocale won't accept something like
++      "de_DE".  According to nls manpage, the expected format is:
++      language[_territory][.codeset][@modifier], but it seems that both
++      the _territory and .codeset components are required.
++      
++      As an attempt to correct for this, we'll tack on ".UTF-8" if 
++      a period is not detected in the locale string.  
++
++      There are no locales with modifiers on DragonFly so if found, they
++      will just be stripped off silently.  e.g "de_DE@euro" will be reduced
++      to "de_DE".  The UTF-8 default would be added after that.
++  */
++
++  void
++  locale::facet::_S_create_c_locale(__c_locale& __cloc, const char* __s,
++				    __c_locale)
++  {
++    const size_t size__s = (__s == NULL) ? 1 : strlen (__s);
++    const char UTF8[] = ".UTF-8";
++    char localspec[size__s + 6 + 1];
++    
++    if (__s == NULL) {
++       localspec[0] = NULL;
++    } else {
++       strcpy (localspec, __s);
++       char * pch = strchr (localspec, '@');
++       if (pch != NULL)
++          *pch = 0;
++
++       if (  (strchr (__s, '.') == NULL)
++          && (strcmp (__s, "C") != 0)
++          && (strcmp (__s, "POSIX") != 0))
++          strncat (localspec, UTF8, 6);
++    }
++
++    const char * result = std::setlocale(LC_ALL, localspec);
++    
++    if ((strcmp(result, "C") != 0) && (strcmp (result, localspec) != 0))
++      __throw_runtime_error(__N("locale::facet::_S_create_c_locale "
++			    "name not valid"));
++    __cloc = 0;
++  }
++
++  void
++  locale::facet::_S_destroy_c_locale(__c_locale& __cloc)
++  { __cloc = 0; }
++
++  __c_locale
++  locale::facet::_S_clone_c_locale(__c_locale&) throw()
++  { return __c_locale(); }
++
++  __c_locale
++  locale::facet::_S_lc_ctype_c_locale(__c_locale, const char*)
++  { return __c_locale(); }
++
++_GLIBCXX_END_NAMESPACE_VERSION
++} // namespace
++
++namespace __gnu_cxx _GLIBCXX_VISIBILITY(default)
++{
++_GLIBCXX_BEGIN_NAMESPACE_VERSION
++
++  const char* const category_names[6 + _GLIBCXX_NUM_CATEGORIES] =
++    {
++      "LC_CTYPE",
++      "LC_NUMERIC",
++      "LC_TIME",
++      "LC_COLLATE",
++      "LC_MONETARY",
++      "LC_MESSAGES"
++    };
++
++_GLIBCXX_END_NAMESPACE_VERSION
++} // namespace
++
++namespace std _GLIBCXX_VISIBILITY(default)
++{
++_GLIBCXX_BEGIN_NAMESPACE_VERSION
++
++  const char* const* const locale::_S_categories = __gnu_cxx::category_names;
++
++_GLIBCXX_END_NAMESPACE_VERSION
++} // namespace
++
++// XXX GLIBCXX_ABI Deprecated
++#ifdef _GLIBCXX_LONG_DOUBLE_COMPAT
++#define _GLIBCXX_LDBL_COMPAT(dbl, ldbl) \
++  extern "C" void ldbl (void) __attribute__ ((alias (#dbl)))
++_GLIBCXX_LDBL_COMPAT(_ZSt14__convert_to_vIdEvPKcRT_RSt12_Ios_IostateRKPi, _ZSt14__convert_to_vIeEvPKcRT_RSt12_Ios_IostateRKPi);
++#endif // _GLIBCXX_LONG_DOUBLE_COMPAT
+--- /dev/null
++++ libstdc++-v3/config/locale/dragonfly/ctype_members.cc
+@@ -0,0 +1,172 @@
++// std::ctype implementation details, GNU version -*- C++ -*-
++
++// Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
++// Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++//
++// ISO C++ 14882: 22.2.1.1.2  ctype virtual functions.
++//
++
++// Written by Benjamin Kosnik <bkoz@redhat.com>
++
++#include <locale>
++#include <bits/c++locale_internal.h>
++#include <cstdlib>
++#include <cstring>
++#include <cstdio>
++
++namespace std _GLIBCXX_VISIBILITY(default)
++{
++  // NB: The other ctype<char> specializations are in src/locale.cc and
++  // various /config/os/* files.
++
++  ctype_byname<char>::ctype_byname(const char* __s, size_t __refs)
++  : ctype<char>(0, false, __refs) 
++  { 		
++    if (std::strcmp(__s, "C") != 0 && std::strcmp(__s, "POSIX") != 0)
++      {
++	this->_S_destroy_c_locale(this->_M_c_locale_ctype);
++	this->_S_create_c_locale(this->_M_c_locale_ctype, __s); 
++      }
++  }
++
++  ctype_byname<char>::~ctype_byname()
++  { }
++
++#ifdef _GLIBCXX_USE_WCHAR_T  
++  ctype<wchar_t>::__wmask_type
++  ctype<wchar_t>::_M_convert_to_wmask(const mask /* __m */) const throw()
++  {
++    // This routine never gets called on DragonFly.
++    return 0;
++  };
++  
++  wchar_t
++  ctype<wchar_t>::do_toupper(wchar_t __c) const
++  { return towupper(__c); }
++
++  const wchar_t*
++  ctype<wchar_t>::do_toupper(wchar_t* __lo, const wchar_t* __hi) const
++  {
++    while (__lo < __hi)
++      {
++        *__lo = towupper(*__lo);
++        ++__lo;
++      }
++    return __hi;
++  }
++  
++  wchar_t
++  ctype<wchar_t>::do_tolower(wchar_t __c) const
++  { return towlower(__c); }
++  
++  const wchar_t*
++  ctype<wchar_t>::do_tolower(wchar_t* __lo, const wchar_t* __hi) const
++  {
++    while (__lo < __hi)
++      {
++        *__lo = towlower(*__lo);
++        ++__lo;
++      }
++    return __hi;
++  }
++
++  wchar_t
++  ctype<wchar_t>::
++  do_widen(char __c) const
++  { return _M_widen[static_cast<unsigned char>(__c)]; }
++
++  const char* 
++  ctype<wchar_t>::
++  do_widen(const char* __lo, const char* __hi, wchar_t* __dest) const
++  {
++    while (__lo < __hi)
++      {
++	*__dest = _M_widen[static_cast<unsigned char>(*__lo)];
++	++__lo;
++	++__dest;
++      }
++    return __hi;
++  }
++
++  char
++  ctype<wchar_t>::
++  do_narrow(wchar_t __wc, char __dfault) const
++  { 
++    if (__wc >= 0 && __wc < 128 && _M_narrow_ok)
++      return _M_narrow[__wc];
++    const int __c = wctob(__wc);
++    return (__c == EOF ? __dfault : static_cast<char>(__c)); 
++  }
++
++  const wchar_t*
++  ctype<wchar_t>::
++  do_narrow(const wchar_t* __lo, const wchar_t* __hi, char __dfault, 
++	    char* __dest) const
++  {
++    if (_M_narrow_ok)
++      while (__lo < __hi)
++	{
++	  if (*__lo >= 0 && *__lo < 128)
++	    *__dest = _M_narrow[*__lo];
++	  else
++	    {
++	      const int __c = wctob(*__lo);
++	      *__dest = (__c == EOF ? __dfault : static_cast<char>(__c));
++	    }
++	  ++__lo;
++	  ++__dest;
++	}
++    else
++      while (__lo < __hi)
++	{
++	  const int __c = wctob(*__lo);
++	  *__dest = (__c == EOF ? __dfault : static_cast<char>(__c));
++	  ++__lo;
++	  ++__dest;
++	}
++    return __hi;
++  }
++
++  void
++  ctype<wchar_t>::_M_initialize_ctype() throw()
++  {
++    wint_t __i;
++    for (__i = 0; __i < 128; ++__i)
++      {
++	const int __c = wctob(__i);
++	if (__c == EOF)
++	  break;
++	else
++	  _M_narrow[__i] = static_cast<char>(__c);
++      }
++    if (__i == 128)
++      _M_narrow_ok = true;
++    else
++      _M_narrow_ok = false;
++    for (size_t __i = 0;
++	 __i < sizeof(_M_widen) / sizeof(wint_t); ++__i)
++      _M_widen[__i] = btowc(__i);
++  }
++#endif //  _GLIBCXX_USE_WCHAR_T
++}
+--- /dev/null
++++ libstdc++-v3/config/os/bsd/dragonfly/ctype_base.h
+@@ -0,0 +1,60 @@
++// Locale support -*- C++ -*-
++
++// Copyright (C) 2000, 2003, 2009, 2010 Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++//
++// ISO C++ 14882: 22.1  Locales
++//
++
++// Information as gleaned from /usr/include/ctype.h on DragonFly.
++// Full details can be found from git repo at:
++// http://gitweb.dragonflybsd.org/dragonfly.git/blob_plain/HEAD:/include/ctype.h
++
++namespace std _GLIBCXX_VISIBILITY(default)
++{
++_GLIBCXX_BEGIN_NAMESPACE_VERSION
++
++  /// @brief  Base class for ctype.
++  struct ctype_base
++  {
++    // Non-standard typedefs.
++    typedef const unsigned char*	__to_type;
++
++    // NB: Offsets into ctype<char>::_M_table force a particular size
++    // on the mask type. Because of this, we don't use an enum.
++    typedef uint16_t		mask;
++    static const mask upper	= _CTYPEMASK_U;
++    static const mask lower	= _CTYPEMASK_L;
++    static const mask alpha	= _CTYPEMASK_A;
++    static const mask digit	= _CTYPEMASK_D;
++    static const mask xdigit	= _CTYPEMASK_X;
++    static const mask space	= _CTYPEMASK_S;
++    static const mask print	= _CTYPEMASK_R;
++    static const mask graph	= _CTYPEMASK_G;
++    static const mask cntrl	= _CTYPEMASK_C;
++    static const mask punct	= _CTYPEMASK_P;
++    static const mask alnum	= _CTYPEMASK_A | _CTYPEMASK_D;
++  };
++
++_GLIBCXX_END_NAMESPACE_VERSION
++} // namespace
+--- /dev/null
++++ libstdc++-v3/config/os/bsd/dragonfly/ctype_inline.h
+@@ -0,0 +1,127 @@
++// Locale support -*- C++ -*-
++
++// Copyright (C) 2000, 2003, 2004, 2005, 2009, 2010
++// Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++/** @file bits/ctype_inline.h
++ *  This is an internal header file, included by other library headers.
++ *  Do not attempt to use it directly. @headername{locale}
++ */
++
++//
++// ISO C++ 14882: 22.1  Locales
++//
++
++// ctype bits to be inlined go here. Non-inlinable (ie virtual do_*)
++// functions go in ctype.cc
++
++namespace std _GLIBCXX_VISIBILITY(default)
++{
++_GLIBCXX_BEGIN_NAMESPACE_VERSION
++
++  bool
++  ctype<char>::
++  is(mask __m, char __c) const
++  { return _M_table[(unsigned char)(__c)] & __m; }
++
++  const char*
++  ctype<char>::
++  is(const char* __low, const char* __high, mask* __vec) const
++  {
++    while (__low < __high)
++      *__vec++ = _M_table[*__low++];
++    return __high;
++  }
++
++  const char*
++  ctype<char>::
++  scan_is(mask __m, const char* __low, const char* __high) const
++  {
++    while (__low < __high && !this->is(__m, *__low))
++      ++__low;
++    return __low;
++  }
++
++  const char*
++  ctype<char>::
++  scan_not(mask __m, const char* __low, const char* __high) const
++  {
++    while (__low < __high && this->is(__m, *__low) != 0)
++      ++__low;
++    return __low;
++  }
++
++#ifdef _GLIBCXX_USE_WCHAR_T
++  inline bool
++  ctype<wchar_t>::
++  do_is(mask __m, wchar_t __c) const
++  {
++    return __libc_ctype_ [__c + 1] & __m;
++  }
++
++  inline const wchar_t*
++  ctype<wchar_t>::
++  do_is(const wchar_t* __lo, const wchar_t* __hi, mask* __vec) const
++  {
++    for (; __lo < __hi; ++__vec, ++__lo)
++    {
++      mask __m = 0;
++      if (isupper (*__lo)) __m |= _CTYPEMASK_U;
++      if (islower (*__lo)) __m |= _CTYPEMASK_L;
++      if (isdigit (*__lo)) __m |= _CTYPEMASK_D;
++      if (isspace (*__lo)) __m |= _CTYPEMASK_S;
++      if (ispunct (*__lo)) __m |= _CTYPEMASK_P;
++      if (isblank (*__lo)) __m |= _CTYPEMASK_B;
++      if (iscntrl (*__lo)) __m |= _CTYPEMASK_C;
++      if (isalpha (*__lo)) __m |= _CTYPEMASK_A;
++      if (isgraph (*__lo)) __m |= _CTYPEMASK_G;
++      if (isprint (*__lo)) __m |= _CTYPEMASK_R;
++      if (isxdigit(*__lo)) __m |= _CTYPEMASK_X;
++      /* alnum already covered = alpha | digit */
++
++      *__vec = __m;
++    }
++    return __hi;
++  }
++
++  inline const wchar_t*
++  ctype<wchar_t>::
++  do_scan_is(mask __m, const wchar_t* __lo, const wchar_t* __hi) const
++  {
++    while (__lo < __hi && !(__libc_ctype_ [*__lo + 1] & __m))
++      ++__lo;
++    return __lo;
++  }
++
++  inline const wchar_t*
++  ctype<wchar_t>::
++  do_scan_not(mask __m, const char_type* __lo, const char_type* __hi) const
++  {
++    while (__lo < __hi && (__libc_ctype_ [*__lo + 1] & __m))
++      ++__lo;
++    return __lo;
++  }
++#endif
++
++_GLIBCXX_END_NAMESPACE_VERSION
++} // namespace
+--- /dev/null
++++ libstdc++-v3/config/os/bsd/dragonfly/ctype_noninline.h
+@@ -0,0 +1,94 @@
++// Locale support -*- C++ -*-
++
++// Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2009, 2010
++//  Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++/** @file bits/ctype_noninline.h
++ *  This is an internal header file, included by other library headers.
++ *  Do not attempt to use it directly. @headername{locale}
++ */
++
++//
++// ISO C++ 14882: 22.1  Locales
++//
++
++// Information as gleaned from /usr/include/ctype.h
++
++  extern "C" const __uint16_t __libc_C_ctype_[];
++
++  const ctype_base::mask*
++  ctype<char>::classic_table() throw()
++  { return __libc_C_ctype_ + 1; }
++
++  ctype<char>::ctype(__c_locale, const mask* __table, bool __del,
++		     size_t __refs)
++  : facet(__refs), _M_del(__table != 0 && __del),
++  _M_toupper(NULL), _M_tolower(NULL),
++  _M_table(__table ? __table : classic_table())
++  {
++    memset(_M_widen, 0, sizeof(_M_widen));
++    _M_widen_ok = 0;
++    memset(_M_narrow, 0, sizeof(_M_narrow));
++    _M_narrow_ok = 0;
++  }
++
++  ctype<char>::ctype(const mask* __table, bool __del, size_t __refs)
++  : facet(__refs), _M_del(__table != 0 && __del),
++  _M_toupper(NULL), _M_tolower(NULL),
++  _M_table(__table ? __table : classic_table())
++  {
++    memset(_M_widen, 0, sizeof(_M_widen));
++    _M_widen_ok = 0;
++    memset(_M_narrow, 0, sizeof(_M_narrow));
++    _M_narrow_ok = 0;
++  }
++
++  char
++  ctype<char>::do_toupper(char __c) const
++  { return ::toupper((int) __c); }
++
++  const char*
++  ctype<char>::do_toupper(char* __low, const char* __high) const
++  {
++    while (__low < __high)
++      {
++	*__low = ::toupper((int) *__low);
++	++__low;
++      }
++    return __high;
++  }
++
++  char
++  ctype<char>::do_tolower(char __c) const
++  { return ::tolower((int) __c); }
++
++  const char*
++  ctype<char>::do_tolower(char* __low, const char* __high) const
++  {
++    while (__low < __high)
++      {
++	*__low = ::tolower((int) *__low);
++	++__low;
++      }
++    return __high;
++  }
+--- /dev/null
++++ libstdc++-v3/config/os/bsd/dragonfly/os_defines.h
+@@ -0,0 +1,45 @@
++// Specific definitions for BSD  -*- C++ -*-
++
++// Copyright (C) 2000, 2009, 2010 Free Software Foundation, Inc.
++//
++// This file is part of the GNU ISO C++ Library.  This library is free
++// software; you can redistribute it and/or modify it under the
++// terms of the GNU General Public License as published by the
++// Free Software Foundation; either version 3, or (at your option)
++// any later version.
++
++// This library is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++
++// Under Section 7 of GPL version 3, you are granted additional
++// permissions described in the GCC Runtime Library Exception, version
++// 3.1, as published by the Free Software Foundation.
++
++// You should have received a copy of the GNU General Public License and
++// a copy of the GCC Runtime Library Exception along with this program;
++// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++// <http://www.gnu.org/licenses/>.
++
++/** @file bits/os_defines.h
++ *  This is an internal header file, included by other library headers.
++ *  Do not attempt to use it directly. @headername{iosfwd}
++ */
++
++#ifndef _GLIBCXX_OS_DEFINES
++#define _GLIBCXX_OS_DEFINES 1
++
++// System-specific #define, typedefs, corrections, etc, go here.  This
++// file will come before all others.
++
++/*  FreeBSD approach, likely a mistake for DragonFly.
++#define _GLIBCXX_USE_C99_CHECK 1
++#define _GLIBCXX_USE_C99_DYNAMIC (!(__ISO_C_VISIBLE >= 1999))
++#define _GLIBCXX_USE_C99_LONG_LONG_CHECK 1
++#define _GLIBCXX_USE_C99_LONG_LONG_DYNAMIC (_GLIBCXX_USE_C99_DYNAMIC || !defined __LONG_LONG_SUPPORTED)
++#define _GLIBCXX_USE_C99_FLOAT_TRANSCENDENTALS_CHECK 1
++#define _GLIBCXX_USE_C99_FLOAT_TRANSCENDENTALS_DYNAMIC defined _XOPEN_SOURCE
++*/
++
++#endif
