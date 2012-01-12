@@ -19,7 +19,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120109:
   AFFECTS: users of graphics/inkscape:
-  AUTHOR: bsam@@FreeBSD.org
+  AUTHOR: bsam@FreeBSD.org
 
   Before updating graphics/inkscape to version 0.48.2 one should deinstall
   the port graphics/libwpg01.
