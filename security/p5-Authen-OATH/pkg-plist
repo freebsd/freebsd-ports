@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Authen/OATH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/OATH/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/OATH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen
