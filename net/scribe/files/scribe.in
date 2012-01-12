@@ -20,7 +20,7 @@ stop_postcmd=scribe_cleanup
 scribe_start()
 {
     echo "Starting ${name}."
-    /usr/sbin/daemon -cf -p ${pidfile} ${command} ${scribe_flags}
+    /usr/sbin/daemon -cf -p ${pidfile} ${command} ${scribe_flags} 2>>/var/log/scribe.log
 }
 
 scribe_cleanup() {
