@@ -1930,6 +1930,7 @@ crip                            ports/audio/crip
 cripple                         ports/audio/cripple
 criticalmass                    ports/games/criticalmass
 critterding                     ports/games/critterding
+crlibm                          ports/math/crlibm
 crm114                          ports/mail/crm114
 cromwell                        ports/sysutils/cromwell
 cronolog                        ports/sysutils/cronolog
@@ -2792,6 +2793,7 @@ easydiff                        ports/textproc/easydiff
 easygit                         ports/devel/easygit
 easygtk                         ports/x11-toolkits/easygtk
 easylatex                       ports/print/easylatex
+easypaint                       ports/graphics/easypaint
 easypbi                         ports/sysutils/easypbi
 easypg                          ports/security/easypg
 easysoap                        ports/net/easysoap
@@ -7461,6 +7463,7 @@ laspack                         ports/math/laspack
 lasso                           ports/security/lasso
 last-cmus                       ports/audio/last-cmus
 last.fm                         ports/audio/last.fm
+laszip                          ports/archivers/laszip
 latd                            ports/net/latd
 laternamagica                   ports/graphics/laternamagica
 latex                           ports/print/latex
@@ -8774,6 +8777,7 @@ luabind                         ports/devel/luabind
 luaexpat                        ports/textproc/luaexpat
 luafilesystem                   ports/devel/luafilesystem
 luajava                         ports/devel/luajava
+luajit                          ports/devel/luajit
 luasec                          ports/security/luasec
 luasocket                       ports/net/luasocket
 luasql-mysql                    ports/databases/luasql-mysql
@@ -23243,6 +23247,7 @@ qwt6                            ports/x11-toolkits/qwt6
 qwt6-designerplugin             ports/x11-toolkits/qwt6-designerplugin
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
+qxmpp                           ports/net-im/qxmpp
 qzeitgeist                      ports/sysutils/qzeitgeist
 r                               ports/math/R
 r-cran-amore                    ports/science/R-cran-AMORE
@@ -23423,6 +23428,7 @@ reed                            ports/sysutils/reed
 reed-solomon                    ports/math/reed-solomon
 refdb                           ports/textproc/refdb
 referrercop                     ports/textproc/referrercop
+reflex                          ports/textproc/reflex
 regexx                          ports/devel/regexx
 regexxer                        ports/devel/regexxer
 rej                             ports/sysutils/rej
