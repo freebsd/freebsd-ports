@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/:S/.b/-beta/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
+IGNORE=		RC branch not currently active
 
 LATEST_LINK=	${PORTNAME}-rc
 
