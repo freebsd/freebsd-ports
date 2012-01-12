@@ -1,12 +1,11 @@
-3GPP floating-point Adaptive Multi-Rate (AMR) Speech Codec
-(3GPP TS 26.104 V 6.1.0)
+3GPP Adaptive Multi-Rate Floating-point (AMR) Speech Codec Shared Library
+
+3GPP released reference implementation of 3GPP Adaptive Multi-Rate
+Floating-point (AMR) Speech Codec (3GPP TS 26.104).
+
 http://www.3gpp.org/ftp/Specs/html-info/26104.htm
 
-AMR is an audio data compression scheme optimized for speech coding.
-AMR was adopted as the standard speech codec by 3GPP in October 1998
-and is now widely used in GSM.
-
-Note that depending on law in your country, you may need a license for
-distribution, any use, commercial use or even development.
+This package converts 3GPP TS 26.104 reference implementation of AMR-NB to a
+shared library.
 
 WWW: http://www.penguin.cz/~utx/amr
