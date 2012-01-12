@@ -3403,6 +3403,7 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py_static_check
     SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount
