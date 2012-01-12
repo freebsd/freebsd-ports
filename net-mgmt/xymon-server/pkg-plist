@@ -1,6 +1,8 @@
 @exec if ! pw groupshow %%XYMONUSER%% 2>/dev/null; then pw groupadd %%XYMONUSER%% -g 280; fi
 @exec if ! pw usershow %%XYMONUSER%% 2>/dev/null; then pw useradd %%XYMONUSER%% -g %%XYMONUSER%% -u 280 -h - -d %%WWWDIR%% -s /usr/sbin/nologin -c "Xymon Monitor"; fi
 @unexec if pw usershow %%XYMONUSER%%; then pw userdel %%XYMONUSER%%; fi
+%%WWWDIR%%/cgi-bin/appfeed-critical.sh
+%%WWWDIR%%/cgi-bin/appfeed.sh
 %%WWWDIR%%/cgi-bin/certreport.sh
 %%WWWDIR%%/cgi-bin/columndoc.sh
 %%WWWDIR%%/cgi-bin/confreport-critical.sh
@@ -31,6 +33,7 @@
 %%WWWDIR%%/cgi-secure/useradm.sh
 %%WWWDIR%%/server/bin/ackinfo.cgi
 %%WWWDIR%%/server/bin/acknowledge.cgi
+%%WWWDIR%%/server/bin/appfeed.cgi
 %%WWWDIR%%/server/bin/bb
 %%WWWDIR%%/server/bin/bbcmd
 %%WWWDIR%%/server/bin/bbdigest
@@ -77,6 +80,7 @@
 %%WWWDIR%%/server/bin/xymond_capture
 %%WWWDIR%%/server/bin/xymond_channel
 %%WWWDIR%%/server/bin/xymond_client
+%%WWWDIR%%/server/bin/xymond_distribute
 %%WWWDIR%%/server/bin/xymond_filestore
 %%WWWDIR%%/server/bin/xymond_history
 %%WWWDIR%%/server/bin/xymond_hostdata
@@ -164,6 +168,9 @@
 %%WWWDIR%%/server/web/critedit_header
 %%WWWDIR%%/server/web/critical_footer
 %%WWWDIR%%/server/web/critical_header
+%%WWWDIR%%/server/web/critmulti_header
+%%WWWDIR%%/server/web/divider_footer
+%%WWWDIR%%/server/web/divider_header
 %%WWWDIR%%/server/web/event_footer
 %%WWWDIR%%/server/web/event_form
 %%WWWDIR%%/server/web/event_header
@@ -293,6 +300,7 @@
 %%WWWDIR%%/server/www/help/manpages/index.html
 %%WWWDIR%%/server/www/help/manpages/man1/ackinfo.cgi.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/acknowledge.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/appfeed.cgi.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/clientupdate.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/combostatus.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/confreport.cgi.1.html
@@ -338,6 +346,7 @@
 %%WWWDIR%%/server/www/help/manpages/man5/xymonclient.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/xymonserver.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/xymonweb.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/xymonwebaccess.5.html
 %%WWWDIR%%/server/www/help/manpages/man7/xymon.7.html
 %%WWWDIR%%/server/www/help/manpages/man8/enadis.cgi.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/msgcache.8.html
@@ -349,6 +358,7 @@
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_capture.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_channel.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_client.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/xymond_distribute.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_filestore.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_history.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/xymond_hostdata.8.html
