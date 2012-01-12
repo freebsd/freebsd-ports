@@ -71,9 +71,13 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
+		ARRAYVAR_MODULE		"3rd party array_var module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
 		DRIZZLE_MODULE		"3rd party drizzlie module" off \
+		ENCRYPTSESSION_MODULE	"3rd party encrypted_session module" off \
+		FORMINPUT_MODULE	"3rd party form_input module" off \
 		GRIDFS_MODULE		"3rd party gridfs module" off \
+		ICONV_MODULE		"3rd party iconv module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		NAXSI_MODULE		"3rd party naxsi module" off \
@@ -436,6 +440,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DR
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module::config
 .endif
 
+.if defined(WITH_ENCRYPTSESSION_MODULE)
+USE_NGINX_DEVEL_KIT=	yes
+NGINX_ENCRYPTSESSION_MODULE_VERSION=	0.01
+GIT_ENCRYPTSESSION_MODULE_VERSION=	0-g26da7fc
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_MODULE_VERSION}/:encryptsession
+DISTFILES+=	agentzh-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_MODULE_VERSION}-${GIT_ENCRYPTSESSION_MODULE_VERSION}.tar.gz:encryptsession
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_MODULE_VERSION:S/^0-g//}
+.endif
+
 .if defined(WITH_GRIDFS_MODULE)
 NGINX_GRIDFS_MODULE_VERSION=	0.8
 GIT_GRIDFS_MODULE_VERSION=	0-gb5f8113
@@ -644,6 +658,38 @@ DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_K
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
 .endif
 
+.if defined(WITH_ARRAYVAR_MODULE)
+USE_NGINX_DEVEL_KIT=	yes
+NGINX_ARRAYVAR_MODULE_VERSION=	0.03rc1
+GIT_ARRAYVAR_MODULE_VERSION=	0-gfed751a
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_MODULE_VERSION}/:arrayvar
+DISTFILES+=	agentzh-array-var-nginx-module-v${NGINX_ARRAYVAR_MODULE_VERSION}-${GIT_ARRAYVAR_MODULE_VERSION}.tar.gz:arrayvar
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRAYVAR_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_FORMINPUT_MODULE)
+USE_NGINX_DEVEL_KIT=	yes
+NGINX_FORMINPUT_MODULE_VERSION=	0.07rc5
+GIT_FORMINPUT_MODULE_VERSION=	0-gd41681d
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/calio/form-input-nginx-module/tarball/v${NGINX_FORMINPUT_MODULE_VERSION}/:forminput
+DISTFILES+=	calio-form-input-nginx-module-v${NGINX_FORMINPUT_MODULE_VERSION}-${GIT_FORMINPUT_MODULE_VERSION}.tar.gz:forminput
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMINPUT_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_ICONV_MODULE)
+LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
+USE_NGINX_DEVEL_KIT=	yes
+NGINX_ICONV_MODULE_VERSION=	0.10rc5
+GIT_ICONV_MODULE_VERSION=	0-g4e71946
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/calio/iconv-nginx-module/tarball/v${NGINX_ICONV_MODULE_VERSION}/:iconv
+DISTFILES+=	calio-iconv-nginx-module-v${NGINX_ICONV_MODULE_VERSION}-${GIT_ICONV_MODULE_VERSION}.tar.gz:iconv
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_MODULE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module::config
+.endif
+
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 .include <bsd.port.pre.mk>
@@ -725,6 +771,11 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
+.endif
+.if defined(WITH_ICONV_MODULE)
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${PREFIX}!g' \
+		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_MODULE_VERSION:S/^0-g//}/config
 .endif
 
 do-build:
