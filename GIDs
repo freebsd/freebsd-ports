@@ -96,6 +96,7 @@ moinmoin:*:192:
 cups:*:193:
 saned:*:194:
 radns:*:195:
+mcserver:*:199:
 sympa:*:200:
 dspam:*:202:
 yate:*:204:
