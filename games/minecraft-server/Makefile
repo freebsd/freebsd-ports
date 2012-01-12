@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	games java
-MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/:minecraft \
+MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/ \
+		http://denkrobat.de/minecraft/:minecraft \
 		http://www.minecraftwiki.net/images/f/f7/:icon
 DISTNAME=	minecraft_server
 DISTFILES=	minecraft_server.jar:minecraft \
@@ -35,7 +36,7 @@ USE_RC_SUBR=	minecraft
 SUB_FILES=	pkg-deinstall \
 		pkg-message
 
-PLIST_SUB+=	USERS=${USERS} \
+SUB_LIST+=	USERS=${USERS} \
 		GROUPS=${GROUPS}
 
 .if !defined(WITHOUT_X11)
