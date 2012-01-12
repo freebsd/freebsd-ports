@@ -26,6 +26,7 @@ RUBY_MODNAME=	${PORTNAME:L}
 
 CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-jpeg \
+		--with-ttf \
 		--with-freetype
 INSTALL_TARGET=	site-install
 
