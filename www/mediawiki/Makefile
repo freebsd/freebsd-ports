@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.18.0
-PORTREVISION=	1
+PORTVERSION=	1.18.1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
