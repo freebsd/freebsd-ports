@@ -1098,7 +1098,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
 #				  in distinfo doesn't make it fail.
-#				  Default: sha256 (md5 is deprecated, allowed but unused)
+#				  Default: sha256
 # NO_CHECKSUM	- Don't verify the checksum.  Typically used when
 #				  when you noticed the distfile you just fetched has
 #				  a different checksum and you intend to verify if
@@ -4776,8 +4776,7 @@ check-checksum-algorithms:
 	done; \
 
 checksum_init=\
-	SHA256=${SHA256}; \
-	MD5=${MD5};
+	SHA256=${SHA256};
 
 .if !target(makesum)
 makesum: check-checksum-algorithms
