@@ -154,8 +154,8 @@ include/fxt/comb-all.h
 include/fxt/comb/acgray.h
 include/fxt/comb/check-mixedradix.h
 include/fxt/comb/delta2gray.h
-include/fxt/comb/mixedradix-cgray.h
 include/fxt/comb/mixedradix-subset-lex.h
+include/fxt/comb/mixedradix-sl-gray.h
 include/fxt/comb/monotonic-gray.h
 include/fxt/comb/test-gray.h
 include/fxt/comb/perm-st-pref.h
@@ -638,13 +638,13 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-rec-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-subset-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-rec-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-subset-lex-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-cgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-out.txt
