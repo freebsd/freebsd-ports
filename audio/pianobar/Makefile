@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pianobar
-PORTVERSION=	2011.12.11
+PORTVERSION=	2012.01.10
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/static/projects/${PORTNAME}/
 
