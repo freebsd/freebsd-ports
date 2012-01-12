@@ -27,6 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
 		${SITE_PERL}/CQL/Parser.pm:${PORTSDIR}/textproc/p5-CQL-Parser
+TEST_DEPENDS=	p5-Test-Exception>=0.2:${PORTSDIR}/devel/p5-Test-Exception
 
 MAN3=	Catalyst::Controller::SRU.3 \
 	SRU.3 \
