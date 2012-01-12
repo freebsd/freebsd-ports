@@ -103,7 +103,7 @@
  /* Called once from parse.y if we are going to use readline. */
  void
  initialize_readline ()
-@@ -517,11 +597,16 @@ initialize_readline ()
+@@ -517,7 +597,12 @@ initialize_readline ()
       completion is enabled. */
    enable_hostname_completion (perform_hostname_completion);
  
@@ -113,12 +113,8 @@
 +  enable_colon_wordbreak (colon_is_wordbreak);
 +
    /* characters that need to be quoted when appearing in filenames. */
- #if 0
-   rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
- #else
 -  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
 +//  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
- #endif
    rl_filename_quoting_function = bash_quote_filename;
    rl_filename_dequoting_function = bash_dequote_filename;
 --- builtins/shopt.def.orig	2009-01-13 05:43:16.000000000 -0800
