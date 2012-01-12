@@ -35,6 +35,9 @@ USE_RC_SUBR=	minecraft
 SUB_FILES=	pkg-deinstall \
 		pkg-message
 
+PLIST_SUB+=	USERS=${USERS} \
+		GROUPS=${GROUPS}
+
 .if !defined(WITHOUT_X11)
 DESKTOP_ENTRIES="Minecraft-Server" "Block building game (server)" "${DATADIR}/Bookshelf.png" "minecraft-server" "Application;Game;" false
 .endif
