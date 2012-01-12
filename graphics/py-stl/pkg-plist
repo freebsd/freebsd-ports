@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/stl.py
+%%PYTHON_SITELIBDIR%%/stl.pyc
+%%PYTHON_SITELIBDIR%%/stl.pyo
+%%PYTHON_SITELIBDIR%%/xform.py
+%%PYTHON_SITELIBDIR%%/xform.pyc
+%%PYTHON_SITELIBDIR%%/xform.pyo
+bin/stl2pdf
+bin/stl2pov
+bin/stl2ps
+bin/stlinfo

@@ -816,6 +816,7 @@
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
+    SUBDIR += py-stl
     SUBDIR += py-visual
     SUBDIR += py-webcolors
     SUBDIR += pygts
@@ -920,7 +921,6 @@
     SUBDIR += squish
     SUBDIR += sswf
     SUBDIR += stamp
-    SUBDIR += stl2pov
     SUBDIR += structuresynth
     SUBDIR += svg2pdf
     SUBDIR += svg2png
