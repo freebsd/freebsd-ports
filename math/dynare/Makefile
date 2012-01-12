@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.4
 CATEGORIES=	math
-MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/dynare-4.2.2.tar.gz/at_download/file
+MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/dynare-4.2.4.tar.gz/at_download/file
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
+
+INFO=		dynare
 
 OPTIONS+=	OCTAVE	"Enable compilation of MEX files for Octave"	on
 OPTIONS+=	MATLAB	"Enable compilation of MEX files for MATLAB"	off
