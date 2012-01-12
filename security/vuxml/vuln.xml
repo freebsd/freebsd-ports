@@ -47,6 +47,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3338f87c-3d5f-11e1-a00a-000c6eb41cf7">
+    <topic>PowerDNS -- Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<name>powerdns-devel</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PowerDNS Team reports:</p>
+	<blockquote cite="http://www.powerdns.com/news/powerdns-security-advisory-2012-01.html">
+	  <p>Using well crafted UDP packets, one or more PowerDNS servers
+            could be made to enter a tight packet loop, causing temporary
+            denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0206</cvename>
+    </references>
+    <dates>
+      <discovery>2012-01-10</discovery>
+      <entry>2012-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3921810-3c80-11e1-97e8-00215c6a37bb">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
