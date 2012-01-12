@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amavis-logwatch
-PORTVERSION=	1.50.04
+PORTVERSION=	1.51.00
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Amavisd-new log parser
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 
 PORTDOCS=	Bugs Changes README
 PORTEXAMPLES=	${PORTNAME}.conf
