@@ -31,6 +31,7 @@ PORTDOCS=	install.html README README.freebsd LICENSE
 
 .if ${OSVERSION} >= 900000
 BINVER=		9.0
+IGNORE=		not yet available for 9.x
 .elif ${OSVERSION} >= 800000
 BINVER=		8.0
 .else
