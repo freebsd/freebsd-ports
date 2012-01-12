@@ -1,6 +1,6 @@
 **************************************************
 Daemon:
-  The user mcserver has been added to your system.
+  The user %%USERS%% has been added to your system.
 
   To run the server automativally with the system
   add the following line to your /etc/rc.conf:

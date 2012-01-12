@@ -27,7 +27,7 @@ if [ -e %%DATADIR%%/server.log.lck ]; then
 else
 	echo "Starting Minecraft-Server..."
 	cd %%DATADIR%%
-	/usr/bin/su %%MC_USER%% -c "%%PREFIX%%/bin/tmux new-session -d -s minecraft \"java -Xmx1024M -Xms1024M -jar %%DATADIR%%/minecraft_server.jar nogui\""
+	/usr/bin/su %%USERS%% -c "%%PREFIX%%/bin/tmux new-session -d -s minecraft \"java -Xmx1024M -Xms1024M -jar %%DATADIR%%/minecraft_server.jar nogui\""
 
 	i=0
 	while [ $i -lt 15 ]; do
@@ -42,7 +42,7 @@ else
 
 	if [ $i -ge 10 ]; then
 		echo "ERROR: Server could not be startet."
-		/usr/bin/su mcserver -c "%%PREFIX%%/bin/tmux kill-session -t minecraft"
+		/usr/bin/su %%USERS%% -c "%%PREFIX%%/bin/tmux kill-session -t minecraft"
 	fi
 fi
 }
@@ -50,7 +50,7 @@ fi
 minecraft_stop(){
 if [ -e %%DATADIR%%/server.log.lck ]; then
 	echo "Halting Minecraft-Server."
-	/usr/bin/su mcserver -c "%%PREFIX%%/bin/tmux send -t minecraft:0.0 stop \"Enter\""
+	/usr/bin/su %%USERS%% -c "%%PREFIX%%/bin/tmux send -t minecraft:0.0 stop \"Enter\""
 
 
 	i=0
