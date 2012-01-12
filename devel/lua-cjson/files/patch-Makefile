@@ -1,0 +1,51 @@
+--- Makefile.orig	2011-11-29 17:46:33.000000000 +0400
++++ Makefile	2012-01-12 13:50:30.000000000 +0400
+@@ -13,7 +13,7 @@
+ # USE_INTERNAL_ISINF: Workaround for Solaris platforms missing isinf().
+ 
+ ## Common build defaults
+-PREFIX =            /usr/local
++#PREFIX =            /usr/local
+ CFLAGS_EXTRA =      -DUSE_POSIX_SETLOCALE
+ LDFLAGS_EXTRA =     -shared
+ 
+@@ -25,10 +25,10 @@
+ # specific details.
+ 
+ ## Linux
+-CFLAGS_EXTRA =      -DUSE_POSIX_USELOCALE
++#CFLAGS_EXTRA =      -DUSE_POSIX_USELOCALE
+ 
+ ## FreeBSD
+-#LUA_INCLUDE_DIR =   $(PREFIX)/include/lua51
++LUA_INCLUDE_DIR =   $(PREFIX)/include/lua51
+ 
+ ## MacOSX (Macports)
+ #PREFIX =            /opt/local
+@@ -40,13 +40,13 @@
+ 
+ ## End platform specific section
+ 
+-LUA_INCLUDE_DIR ?=  $(PREFIX)/include
++#LUA_INCLUDE_DIR ?=  $(PREFIX)/include
+ LUA_LIB_DIR ?=      $(PREFIX)/lib/lua/$(LUA_VERSION)
+ 
+ #CFLAGS ?=           -g -Wall -pedantic -fno-inline
+-CFLAGS ?=           -O3 -Wall -pedantic
+-override CFLAGS +=  $(CFLAGS_EXTRA) -fpic -I$(LUA_INCLUDE_DIR) -DVERSION=\"$(CJSON_VERSION)\"
+-override LDFLAGS += $(LDFLAGS_EXTRA)
++#CFLAGS ?=           -O3 -Wall -pedantic
++CFLAGS +=  $(CFLAGS_EXTRA) -fpic -I$(LUA_INCLUDE_DIR) -DVERSION=\"$(CJSON_VERSION)\"
++LDFLAGS += $(LDFLAGS_EXTRA)
+ 
+ INSTALL ?= install
+ 
+@@ -55,7 +55,7 @@
+ all: cjson.so
+ 
+ cjson.so: lua_cjson.o strbuf.o
+-	$(CC) $(LDFLAGS) -o $@ $^
++	$(CC) $(LDFLAGS) -o $@ lua_cjson.o strbuf.o
+ 
+ install:
+ 	$(INSTALL) -d $(DESTDIR)/$(LUA_LIB_DIR)
