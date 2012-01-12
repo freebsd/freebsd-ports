@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sys-cpu
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Provides an interface for getting information about the CPU
+
+RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
