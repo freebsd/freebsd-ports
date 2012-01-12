@@ -18,7 +18,7 @@ COMMENT=	Interact with a remote Trac instance
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
+BUILD_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Lingua-EN-Inflect>0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate \
@@ -26,6 +26,7 @@ RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-Mechanize>=1.52:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
