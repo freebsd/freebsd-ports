@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.8
+PORTVERSION=	5.3.9
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	\
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
 		--enable-libxml \
+		--enable-mysqlnd \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-pcre-regex=${LOCALBASE} \
 		--with-zlib-dir=/usr \
@@ -62,7 +63,7 @@ PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -137,8 +138,7 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		ac_cv_pthreads_cflags="" \
 		pthreads_working="yes" \
-		lt_cv_path_SED="sed" \
-		PHP_MYSQLND_ENABLED="yes"
+		lt_cv_path_SED="sed"
 
 .if defined(WITH_LINKTHR)
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
