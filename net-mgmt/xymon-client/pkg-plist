@@ -34,6 +34,7 @@
 @exec [ ! -f %B/xymonclient.cfg ] && cp %B/%f %B/xymonclient.cfg
 %%WWWDIR%%/client/etc/localclient.cfg.DIST
 @exec [ ! -f %B/localclient.cfg ] && cp %B/%f %B/localclient.cfg
+%%WWWDIR%%/client/local/README
 %%WWWDIR%%/client/runclient.sh
 @exec mkdir %D/%%WWWDIR%%/client/ext
 @exec mkdir %D/%%WWWDIR%%/client/logs
@@ -43,6 +44,7 @@
 @exec chown %%XYMONUSER%% %D/%%WWWDIR%%/client/tmp
 @dirrm %%WWWDIR%%/client/tmp
 @dirrm %%WWWDIR%%/client/logs
+@dirrm %%WWWDIR%%/client/local
 @dirrm %%WWWDIR%%/client/ext
 @dirrm %%WWWDIR%%/client/etc
 @dirrm %%WWWDIR%%/client/bin

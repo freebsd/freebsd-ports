@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xymon
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.7
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -44,24 +44,24 @@ FIXME1=		alerts.cfg hosts.cfg xymon-apache-open xymon-apache-secure
 FIXME2=		analysis.cfg combo.cfg holidays.cfg rrddefinitions.cfg \
 		snmpmibs.cfg xymonmenu.cfg xymonserver-migration.cfg
 
-MAN1 =	ackinfo.cgi.1 acknowledge.cgi.1 clientupdate.1 combostatus.1 \
-	confreport.cgi.1 criticaleditor.cgi.1 criticalview.cgi.1 \
-	csvinfo.cgi.1 datepage.cgi.1 eventlog.cgi.1 findhost.cgi.1 \
-	ghostlist.cgi.1 history.cgi.1 hostgraphs.cgi.1 logfetch.1 \
-	orcaxymon.1 report.cgi.1 reportlog.cgi.1 showgraph.cgi.1 \
+MAN1 =	ackinfo.cgi.1 acknowledge.cgi.1 appfeed.cgi.1 clientupdate.1 \
+	combostatus.1 confreport.cgi.1 criticaleditor.cgi.1 \
+	criticalview.cgi.1 csvinfo.cgi.1 datepage.cgi.1 eventlog.cgi.1 \
+	findhost.cgi.1 ghostlist.cgi.1 history.cgi.1 hostgraphs.cgi.1 \
+	logfetch.1 orcaxymon.1 report.cgi.1 reportlog.cgi.1 showgraph.cgi.1 \
 	snapshot.cgi.1 statusreport.cgi.1 svcstatus.cgi.1 xymon.1 xymoncfg.1 \
 	xymoncmd.1 xymondigest.1 xymongen.1 xymongrep.1 xymonnet-again.sh.1 \
 	xymonnet.1 xymonpage.cgi.1 xymonping.1
 MAN5=	alerts.cfg.5 analysis.cfg.5 cgioptions.cfg.5 client-local.cfg.5 \
 	clientlaunch.cfg.5 combo.cfg.5 critical.cfg.5 graphs.cfg.5 \
 	hosts.cfg.5 protocols.cfg.5 tasks.cfg.5 xymon-xmh.5 \
-	xymonclient.cfg.5 xymonserver.cfg.5 xymonweb.5
+	xymonclient.cfg.5 xymonserver.cfg.5 xymonweb.5 xymonwebaccess.5
 MAN7=	xymon.7
 MAN8=	enadis.cgi.8 xymon-mailack.8 xymoncgimsg.cgi.8 xymond.8 \
 	xymond_alert.8 xymond_capture.8 xymond_channel.8 xymond_client.8 \
-	xymond_filestore.8 xymond_history.8 xymond_hostdata.8 xymond_rrd.8 \
-	xymond_sample.8 xymonfetch.8 xymonlaunch.8 xymonproxy.8 msgcache.8 \
-	trimhistory.8
+	xymond_distribute.8 xymond_filestore.8 xymond_history.8 \
+	xymond_hostdata.8 xymond_rrd.8 xymond_sample.8 xymonfetch.8 \
+	xymonlaunch.8 xymonproxy.8 msgcache.8 trimhistory.8
 
 .include <bsd.port.pre.mk>
 
