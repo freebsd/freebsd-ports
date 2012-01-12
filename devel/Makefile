@@ -999,6 +999,7 @@
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-rds-parser
+    SUBDIR += lua-redis-parser
     SUBDIR += lua-sysctl
     SUBDIR += lua50-app
     SUBDIR += lua50-compat51
