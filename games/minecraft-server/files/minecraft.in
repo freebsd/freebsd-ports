@@ -1,0 +1,120 @@
+#!/bin/sh
+#
+# PROVIDE: minecraft
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="minecraft"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+extra_commands="clean killworld clearlog"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+clean_cmd="${name}_clean"
+killworld_cmd="${name}_killworld"
+clearlog_cmd="${name}_clearlog"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+
+minecraft_start()
+{
+if [ -e %%DATADIR%%/server.log.lck ]; then
+	echo "Server already running."
+else
+	echo "Starting Minecraft-Server..."
+	cd %%DATADIR%%
+	/usr/bin/su %%MC_USER%% -c "%%PREFIX%%/bin/tmux new-session -d -s minecraft \"java -Xmx1024M -Xms1024M -jar %%DATADIR%%/minecraft_server.jar nogui\""
+
+	i=0
+	while [ $i -lt 15 ]; do
+		i=$(($i + 1))
+		if [ -e %%DATADIR%%/server.log.lck ]; then
+			echo "Minecraft-Server running."
+			break
+		else
+			sleep 1
+		fi
+	done
+
+	if [ $i -ge 10 ]; then
+		echo "ERROR: Server could not be startet."
+		/usr/bin/su mcserver -c "%%PREFIX%%/bin/tmux kill-session -t minecraft"
+	fi
+fi
+}
+
+minecraft_stop(){
+if [ -e %%DATADIR%%/server.log.lck ]; then
+	echo "Halting Minecraft-Server."
+	/usr/bin/su mcserver -c "%%PREFIX%%/bin/tmux send -t minecraft:0.0 stop \"Enter\""
+
+
+	i=0
+	while [ $i -lt 15 ]; do
+    	i=$(($i + 1))
+	    if [ -e %%DATADIR%%/server.log.lck ]; then
+			sleep 1
+	    else
+            echo "Minecraft-Server haltet."
+            break
+	    fi
+	done
+
+	if [ $i -ge 10 ];then
+		echo "ERROR: Server could not be haltet."
+	fi
+else
+	echo "Minecraft-Server not running."
+fi
+}
+
+minecraft_clean(){
+	echo "Giving a stop to the server..."
+	minecraft_stop
+	echo "Cleaning..."
+	if [ -e %%DATADIR%%/server.log.lck ]; then
+		rm %%DATADIR%%/server.log.lck
+		echo "Cleaning done."
+	else
+		echo "Nothing to do. No unclean sessions."
+	fi
+}
+
+minecraft_killworld(){
+	echo "Trying to delete World"
+	if [ -e %%DATADIR%%/server.log.lck ]; then
+		echo "Server seems to be running. Stop server before deletion."
+	else
+		rm -rf %%DATADIR%%/world
+		if [ -d %%DATADIR%%/world ]; then
+			echo "ERROR: World could not be deleted" 
+		else
+			echo "World deleted. Next serverstart will generate a new one"
+		fi
+	fi
+}
+
+minecraft_clearlog(){
+	echo "Trying to delete server.log"
+	if [ -e %%DATADIR%%/server.log.lck ]; then
+		echo "Server seems to be running. Stop server before deletion."
+	else
+		if [ -e %%DATADIR%%/server.log ]; then
+			rm %%DATADIR%%/server.log
+			if [ -e %%DATADIR%%/server.log ]; then
+				echo "ERROR: server.log could not be deleted" 
+			else
+				echo "server.log deleted."
+			fi
+		else
+			echo "No server.log found"
+		fi
+	fi
+}
+
+run_rc_command "$1"
+

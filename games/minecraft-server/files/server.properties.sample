@@ -1,0 +1,24 @@
+#Minecraft server properties
+#Thu Dec 22 00:12:43 CET 2011
+
+#Do NOT change the Levelname or some Scripts will no longer worf for
+#you!
+level-name=world
+
+allow-nether=true
+allow-flight=false
+enable-query=false
+server-port=25565
+enable-rcon=false
+level-seed=
+server-ip=
+white-list=false
+spawn-animals=true
+online-mode=true
+pvp=true
+difficulty=1
+gamemode=0
+max-players=20
+spawn-monsters=true
+view-distance=10
+motd=A FreeBSD Minecraft Server

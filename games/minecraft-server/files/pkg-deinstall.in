@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+if [ -d %%DATADIR%% ]; then
+        echo "There are some files (like your world and your server.log)"
+		echo "left in %%DATADIR%%."
+		echo "Use 'rm -rf %%DATADIR%%' to delete them."
+		echo
+fi
+
+if [ -d %%ETCDIR%% ]; then
+        echo "There are some changed config files left in %%ETCDIR%%."
+		echo "Use 'rm -rf %%ETCDIR%%' to delete them."
+		echo
+fi
+USER=%%MC_USER%%
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+        echo "To delete ${USER} user permanently, use 'rmuser ${USER}'"
+fi
+
+exit 0
+

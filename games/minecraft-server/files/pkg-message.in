@@ -1,0 +1,40 @@
+**************************************************
+Daemon:
+  The user mcserver has been added to your system.
+
+  To run the server automativally with the system
+  add the following line to your /etc/rc.conf:
+
+  minecraft_enable="YES"
+
+  Serverfiles will be in 
+  %%PREFIX%%/share/minecraft-server
+
+  Configuration can be done using the config-files
+  or as OP using the Client. Config files are in
+  %%PREFIX%%/etc/minecraft
+
+  If you have trouble starting or stopping the
+  server try to delete an unclean server.log.lck:
+
+  %%PREFIX%%/etc/rc.d/minecraft clean
+
+  If you don't like your generated world it can
+  be deleted (do generate a new one next time
+  the server starts) using:
+  
+  %%PREFIX%%/etc/rc.d/minecraft killworld
+
+  You can delete the server.log (so it's not
+  getting to fat) using:
+
+  %%PREFIX%%/etc/rc.d/minecraft clearlog
+
+Unprivileged users:
+  Running a server as unprivilieged user try
+  minecraft-server{-nogui}
+
+  The serverfiles will be in
+  ~/.minecraft-server
+
+**************************************************
