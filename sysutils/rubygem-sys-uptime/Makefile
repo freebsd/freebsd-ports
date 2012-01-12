@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sys-uptime
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Provides uptime and boot time information
+
+RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
