@@ -43,19 +43,15 @@ CPPFLAGS+=	-DGNUSTEP
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
-.if defined(CC) && ${CC} == "clang"
+.if defined(CC) && ${CC:Mclang}
 # all done
 .else
-V:=	42
-_GCC_BUILD_DEPENDS:=	gcc${V}
-_GCC_PORT_DEPENDS:=	gcc${V}
-CC:=			gcc${V}
-CXX:=			g++${V}
-CPP:=			cpp${V}
-LDFLAGS+=	-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
-LDFLAGS+=	-L${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
-BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
-RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+.if defined(GNUSTEP_WITH_CLANG)
+CC=	${LOCALBASE}/bin/clang
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+.else
+USE_GCC=	4.6+
+.endif
 .endif
 .endif
 
