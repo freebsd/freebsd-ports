@@ -170,6 +170,7 @@ bin/tex2lyx
 %%DATADIR%%/doc/fr/clipart/BoxInsetDefaultQt4.png
 %%DATADIR%%/doc/fr/clipart/ChildDocumentQt4.png
 %%DATADIR%%/doc/fr/clipart/CommentNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/ERT.png
 %%DATADIR%%/doc/fr/clipart/GreyedOutNoteImageQt4.png
 %%DATADIR%%/doc/fr/clipart/LyXNoteImageQt4.png
 %%DATADIR%%/doc/fr/clipart/floatQt4.png
@@ -347,6 +348,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/linguistics.lyx
 %%DATADIR%%/examples/listerrors.lyx
 %%DATADIR%%/examples/localization_test.lyx
+%%DATADIR%%/examples/longsheet.gnumeric
 %%DATADIR%%/examples/modernCV.lyx
 %%DATADIR%%/examples/multicol.lyx
 %%DATADIR%%/examples/nl/multicol.lyx
@@ -367,11 +369,15 @@ bin/tex2lyx
 %%DATADIR%%/examples/serial_letter2.lyx
 %%DATADIR%%/examples/serial_letter3.lyx
 %%DATADIR%%/examples/simplecv.lyx
+%%DATADIR%%/examples/sheet1.gnumeric
+%%DATADIR%%/examples/sheet2.ods
+%%DATADIR%%/examples/sheet3.xls
 %%DATADIR%%/examples/sk/splash.lyx
 %%DATADIR%%/examples/sl/primer_lyxan.lyx
 %%DATADIR%%/examples/sl/primer_surov.lyx
 %%DATADIR%%/examples/sl/splash.lyx
 %%DATADIR%%/examples/splash.lyx
+%%DATADIR%%/examples/spreadsheet.lyx
 %%DATADIR%%/examples/sr/Braille.lyx
 %%DATADIR%%/examples/sr/splash.lyx
 %%DATADIR%%/examples/sv/splash.lyx
@@ -1410,6 +1416,9 @@ bin/tex2lyx
 %%DATADIR%%/layouts/broadway.layout
 %%DATADIR%%/layouts/chess.layout
 %%DATADIR%%/layouts/cl2emult.layout
+%%DATADIR%%/layouts/ctex-article.layout
+%%DATADIR%%/layouts/ctex-book.layout
+%%DATADIR%%/layouts/ctex-report.layout
 %%DATADIR%%/layouts/customHeadersFooters.module
 %%DATADIR%%/layouts/db_lyxmacros.inc
 %%DATADIR%%/layouts/db_stdcharstyles.inc
@@ -1526,10 +1535,10 @@ bin/tex2lyx
 %%DATADIR%%/layouts/stdstarsections.inc
 %%DATADIR%%/layouts/stdstruct.inc
 %%DATADIR%%/layouts/stdtitle.inc
+%%DATADIR%%/layouts/svcommon.inc
 %%DATADIR%%/layouts/svglobal.layout
 %%DATADIR%%/layouts/svglobal3.layout
 %%DATADIR%%/layouts/svjog.layout
-%%DATADIR%%/layouts/svjour.inc
 %%DATADIR%%/layouts/svmono.layout
 %%DATADIR%%/layouts/svmult.layout
 %%DATADIR%%/layouts/svprobth.layout
@@ -1558,6 +1567,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/theorems-starred.inc
 %%DATADIR%%/layouts/theorems-starred.module
 %%DATADIR%%/layouts/theorems-std.module
+%%DATADIR%%/layouts/theorems-without-preamble.inc
 %%DATADIR%%/layouts/theorems.inc
 %%DATADIR%%/layouts/treport.layout
 %%DATADIR%%/layouts/tufte-book.layout
@@ -1692,6 +1702,7 @@ bin/tex2lyx
 %%DATADIR%%/scripts/lyxpreview_tools.py
 %%DATADIR%%/scripts/lyxpreview_tools.pyc
 %%DATADIR%%/scripts/lyxpreview_tools.pyo
+%%DATADIR%%/scripts/lyxstangle.R
 %%DATADIR%%/scripts/lyxsweave.R
 %%DATADIR%%/scripts/prefs2prefs.py
 %%DATADIR%%/scripts/prefs2prefs.pyc
@@ -1719,6 +1730,7 @@ bin/tex2lyx
 %%DATADIR%%/templates/agutex.lyx
 %%DATADIR%%/templates/apa.lyx
 %%DATADIR%%/templates/beamer-conference-ornate-20min.lyx
+%%DATADIR%%/templates/ctex.lyx
 %%DATADIR%%/templates/de_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/dinbrief.lyx
 %%DATADIR%%/templates/docbook_article.lyx
@@ -1740,11 +1752,17 @@ bin/tex2lyx
 %%DATADIR%%/templates/lettre.lyx
 %%DATADIR%%/templates/revtex4.lyx
 %%DATADIR%%/templates/slides.lyx
-%%DATADIR%%/templates/svjour3.lyx
-%%DATADIR%%/templates/svmono_book.lyx
-%%DATADIR%%/templates/svmult_appendix.lyx
-%%DATADIR%%/templates/svmult_author.lyx
-%%DATADIR%%/templates/svmult_editor.lyx
+%%DATADIR%%/templates/springer/svjour3.lyx
+%%DATADIR%%/templates/springer/svmono_acknow.lyx
+%%DATADIR%%/templates/springer/svmono_acronym.lyx
+%%DATADIR%%/templates/springer/svmono_appendix.lyx
+%%DATADIR%%/templates/springer/svmono_book-master.lyx
+%%DATADIR%%/templates/springer/svmono_chapter.lyx
+%%DATADIR%%/templates/springer/svmono_dedication.lyx
+%%DATADIR%%/templates/springer/svmono_foreword.lyx
+%%DATADIR%%/templates/springer/svmono_glossary.lyx
+%%DATADIR%%/templates/springer/svmono_part.lyx
+%%DATADIR%%/templates/springer/svmono_preface.lyx
 %%DATADIR%%/templates/thesis/Acknowledgments.lyx
 %%DATADIR%%/templates/thesis/Appendix.lyx
 %%DATADIR%%/templates/thesis/Summary.lyx
@@ -1766,6 +1784,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates/thesis
+@dirrm %%DATADIR%%/templates/springer
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/lyx2lyx
