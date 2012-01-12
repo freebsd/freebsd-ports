@@ -359,6 +359,7 @@
     SUBDIR += p5-Authen-Krb5
     SUBDIR += p5-Authen-Libwrap
     SUBDIR += p5-Authen-NTLM
+    SUBDIR += p5-Authen-OATH
     SUBDIR += p5-Authen-PAAS
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Passphrase
