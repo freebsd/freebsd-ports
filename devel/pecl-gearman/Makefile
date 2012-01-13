@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearman
-PORTVERSION=	0.8.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,9 +16,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Gearman API
 
-LIB_DEPENDS=	gearman:${PORTSDIR}/devel/gearmand
-
 LICENSE=	PHP301
+
+LIB_DEPENDS=	gearman:${PORTSDIR}/devel/gearmand
 
 CONFIGURE_ARGS=	--with-gearman
 PHP_MODNAME=	${PORTNAME}
