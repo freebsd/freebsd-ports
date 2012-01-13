@@ -7,6 +7,7 @@
 
 PORTNAME=	luajit
 DISTVERSION=	2.0.0-beta9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
