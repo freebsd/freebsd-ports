@@ -8756,12 +8756,15 @@ ltxml                           ports/textproc/ltxml
 lua                             ports/lang/lua
 lua-alien                       ports/devel/lua-alien
 lua-bitlib                      ports/devel/lua-bitlib
+lua-cjson                       ports/devel/lua-cjson
 lua-filename                    ports/devel/lua-filename
 lua-gettext                     ports/devel/lua-gettext
 lua-iconv                       ports/converters/lua-iconv
 lua-mode.el                     ports/lang/lua-mode.el
 lua-posix                       ports/devel/lua-posix
 lua-pty                         ports/devel/lua-pty
+lua-rds-parser                  ports/devel/lua-rds-parser
+lua-redis-parser                ports/devel/lua-redis-parser
 lua-sysctl                      ports/devel/lua-sysctl
 lua4                            ports/lang/lua4
 lua50                           ports/lang/lua50
@@ -10812,6 +10815,7 @@ p5-Authen-Htpasswd              ports/security/p5-Authen-Htpasswd
 p5-Authen-Krb5                  ports/security/p5-Authen-Krb5
 p5-Authen-Libwrap               ports/security/p5-Authen-Libwrap
 p5-Authen-NTLM                  ports/security/p5-Authen-NTLM
+p5-Authen-OATH                  ports/security/p5-Authen-OATH
 p5-Authen-PAAS                  ports/security/p5-Authen-PAAS
 p5-Authen-PAM                   ports/security/p5-Authen-PAM
 p5-Authen-Passphrase            ports/security/p5-Authen-Passphrase
@@ -15207,6 +15211,7 @@ p5-authen-htpasswd              ports/security/p5-Authen-Htpasswd
 p5-authen-krb5                  ports/security/p5-Authen-Krb5
 p5-authen-libwrap               ports/security/p5-Authen-Libwrap
 p5-authen-ntlm                  ports/security/p5-Authen-NTLM
+p5-authen-oath                  ports/security/p5-Authen-OATH
 p5-authen-paas                  ports/security/p5-Authen-PAAS
 p5-authen-pam                   ports/security/p5-Authen-PAM
 p5-authen-passphrase            ports/security/p5-Authen-Passphrase
@@ -22384,7 +22389,6 @@ py-px                           ports/devel/py-px
 py-py-restclient                ports/www/py-py-restclient
 py-py2play                      ports/net-p2p/py-py2play
 py-pyPgSQL                      ports/databases/py-pyPgSQL
-py-py_static_check              ports/devel/py-py_static_check
 py-pyang                        ports/net-mgmt/py-pyang
 py-pybloom                      ports/math/py-pybloom
 py-pybmp                        ports/multimedia/py-pybmp
@@ -22574,6 +22578,7 @@ py-ssh                          ports/security/py-ssh
 py-sslstrip                     ports/security/py-sslstrip
 py-statgrab                     ports/devel/py-statgrab
 py-stdiff                       ports/sysutils/py-stdiff
+py-stl                          ports/graphics/py-stl
 py-stripogram                   ports/textproc/py-stripogram
 py-subversion                   ports/devel/py-subversion
 py-subvertpy                    ports/devel/py-subvertpy
@@ -22865,6 +22870,7 @@ py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py31-tkinter                    ports/x11-toolkits/py31-tkinter
+py_static_check                 ports/devel/py_static_check
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
 pybench                         ports/benchmarks/pybench
@@ -25371,7 +25377,6 @@ stix-fonts                      ports/x11-fonts/stix-fonts
 stjerm                          ports/x11/stjerm
 stk                             ports/lang/STk
 stklos                          ports/lang/stklos
-stl2pov                         ports/graphics/stl2pov
 stldoc                          ports/lang/stldoc
 stlfilt                         ports/devel/stlfilt
 stlport                         ports/devel/stlport
