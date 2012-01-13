@@ -374,6 +374,7 @@
     SUBDIR += iograph
     SUBDIR += ioping
     SUBDIR += ipa
+    SUBDIR += ipad_charge
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += isc-cron
