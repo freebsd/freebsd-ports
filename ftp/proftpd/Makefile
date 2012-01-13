@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 		--enable-dso \
 		--disable-sendfile
 
-OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
+OPTIONS=	BAN "Include mod_ban (requires CTRLS)" off \
 		CLAMAV "Include mod_clamav" off \
 		CTRLS "Include controls" off \
 		DYNMASQ "Include mod_dynmasq" off \
@@ -61,7 +61,7 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		IFSESSION "Include mod_ifsession" on \
 		IPV6 "Use IPv6" on \
 		LDAP "Use LDAP" off \
-		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off
+		LDAP_TLS "Use LDAP TLS (requires LDAP, OPENSSL)" off
 
 # Set the MYSQL option based upon the setting from the
 # slave port (ftp/proftpd-mysql).
@@ -77,7 +77,7 @@ OPTIONS+=	NLS "Use nls (builds mod_lang)" on \
 		PGSQL "Postgres auth" off \
 		QUOTA "Include mod_quota" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
-		SHAPER "Shaper module" off \
+		SHAPER "Shaper module (requires CTRLS)" off \
 		SQLITE "SQLite auth" off \
 		RADIUS "Include mod_radius" on \
 		RATIO "Include mod_ratio" on \
@@ -102,6 +102,18 @@ INCLUDEDIRS?=
 PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .include <bsd.port.pre.mk>
+
+# FreeBSD-SA-11:07.chroot
+.if ${OSVERSION} < 800000
+CHROOT_TEST !=	${GREP} __FreeBSD_libc_enter_restricted_mode \
+	/usr/include/unistd.h > /dev/null || ${ECHO_CMD} error
+. if ${CHROOT_TEST} == "error"
+BROKEN=__FreeBSD_libc_enter_restricted_mode is not supported
+. endif
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-7-src-fsio.c
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-8-src-fsio.c
+.endif
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
 BROKEN=		Does not compile on sparc64-9: storage size of 'utx' isn't known
@@ -157,6 +169,9 @@ MODULES:=${MODULES}:mod_radius
 .endif
 
 .if defined(WITH_SHAPER)
+.if !defined(WITH_CTRLS)
+IGNORE=	option BAN requires CTRLS
+.endif
 MODULES:=${MODULES}:mod_shaper
 .endif
 
