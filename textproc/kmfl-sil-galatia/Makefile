@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	kmfl-sil-galatia
-PORTVERSION=	1.02
-PORTREVISION=	4
+PORTVERSION=	1.03
 CATEGORIES=	textproc
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=GrkPolyComp_Src&filename=/ \
+MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=${DISTNAME}&filename=/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
-DISTNAME=	GrkPolyComp_Src
+DISTNAME=	GrkPolyCompv${PORTVERSION:S|.||}_Src
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
@@ -19,8 +18,7 @@ COMMENT=	KMFL Unicode keyboard for typesetting Ancient Greek
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-WRKSRC=		${WRKDIR}/GrkPolyComp_Src
-USE_DOS2UNIX=	GrkPolyComp.KMN
+USE_DOS2UNIX=	GrkPolyCompv${PORTVERSION:S|.||}.KMN
 NO_BUILD=	yes
 USE_ZIP=	yes
 
@@ -33,15 +31,17 @@ PORTDOCS=	*
 DOCSLIST=	Greek\ Poly\ Comp\ Kbrd\ Layout.pdf \
 		welcome.htm
 
-PLIST_FILES=	${KMFL_DIR}/GrkPolyComp.kmn \
+PLIST_FILES=	${KMFL_DIR}/GrkPolyCompv${PORTVERSION:S|.||}.kmn \
 		${KMFL_ICONS_DIR}/ALPHA.bmp
 PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
 		${KMFL_DIR}
 
 do-install:
 	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
-	${CP} -f ${WRKSRC}/GrkPolyComp.KMN ${WRKSRC}/GrkPolyComp.kmn
-	${INSTALL_DATA} ${WRKSRC}/GrkPolyComp.kmn ${LOCALBASE}/${KMFL_DIR}
+	${CP} -f ${WRKSRC}/GrkPolyCompv${PORTVERSION:S|.||}.KMN \
+		${WRKSRC}/GrkPolyCompv${PORTVERSION:S|.||}.kmn
+	${INSTALL_DATA} ${WRKSRC}/GrkPolyCompv${PORTVERSION:S|.||}.kmn \
+		${LOCALBASE}/${KMFL_DIR}
 	${INSTALL_DATA} ${WRKSRC}/ALPHA.bmp ${LOCALBASE}/${KMFL_ICONS_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
