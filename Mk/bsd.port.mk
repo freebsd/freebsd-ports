@@ -535,8 +535,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
 #
-# X11BASE		- Where X11 ports install things.
-#				  Default: ${LOCALBASE}
 # LOCALBASE		- Where non-X11 ports install things.
 #				  Default: /usr/local
 # LINUXBASE		- Where Linux ports install things.
@@ -1122,7 +1120,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
-X11BASE?=		${LOCALBASE}
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
@@ -1371,12 +1368,6 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 .include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
 .endif
 
-.if ${X11BASE} != ${LOCALBASE}
-.BEGIN:
-	@${ECHO_MSG} "X11BASE is now deprecated.  Unset X11BASE in make.conf and try again."
-	@${FALSE}
-.endif
-
 .if defined(USE_XORG) || defined(XORG_CAT)
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
 .endif
@@ -1566,8 +1557,8 @@ CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
 INSTALL_WRKSRC?=${WRKSRC}
 
-PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
-SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} 
+SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
 
@@ -1940,9 +1931,9 @@ BUILD_DEPENDS+=		imake:${X_IMAKE_PORT}
 
 .if defined(USE_DISPLAY) && !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-	${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT} \
-	${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT} \
-	${X11BASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
+	${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT} \
+	${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT} \
+	${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
 	xkbcomp:${PORTSDIR}/x11/xkbcomp
 .if !defined(PACKAGE_BUILDING)
 CONFIGURE_ENV+=	DISPLAY="localhost:1001"
@@ -2102,15 +2093,15 @@ USE_SUBMAKE=	yes
 .	if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
 .	else
-BUILD_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 .	endif
 .endif
 
 .if defined(USE_XLIB) || defined(USE_XORG)
 # Add explicit X options to avoid problems with false positives in configure
 .if defined(GNU_CONFIGURE)
-CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS+=--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 .endif
 .endif
 
@@ -2198,7 +2189,7 @@ DISTINFO_FILE?=		${MASTERDIR}/distinfo
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} \
-			LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+			LOCALBASE=${LOCALBASE} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" \
 			CC="${CC}" CFLAGS="${CFLAGS}" \
 			CPP="${CPP}" CPPFLAGS="${CPPFLAGS}" \
@@ -2440,7 +2431,7 @@ PKG_SUFX?=		.tbz
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
 
-MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
+MOTIFLIB?=	-L${LOCALBASE}/lib -lXm -lXp
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -2951,8 +2942,7 @@ SET_LATE_CONFIGURE_ARGS= \
 SCRIPTS_ENV+=	CURDIR=${MASTERDIR} DISTDIR=${DISTDIR} \
 		  WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} \
 		  SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
-		  PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
-		  X11BASE=${X11BASE}
+		  PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} 
 
 .if defined(BATCH)
 SCRIPTS_ENV+=	BATCH=yes
@@ -3261,7 +3251,7 @@ all:
 	  DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} \
 	  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} \
 	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} \
-	  BUILD_DEPENDS="${BUILD_DEPENDS}" RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
+	  BUILD_DEPENDS="${BUILD_DEPENDS}" RUN_DEPENDS="${RUN_DEPENDS}" \
 	  CONFLICTS="${CONFLICTS}" \
 	${ALL_HOOK}
 .endif
@@ -5781,7 +5771,7 @@ add-plist-info:
 .endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE})
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
 	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 .endif
@@ -5792,7 +5782,7 @@ add-plist-info:
 # deinstall-time
 .if !target(add-plist-post)
 add-plist-post:
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
