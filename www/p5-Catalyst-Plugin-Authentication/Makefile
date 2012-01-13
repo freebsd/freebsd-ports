@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.10017
-PORTREVISION=	1
+PORTVERSION=	0.10018
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -17,13 +16,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Infrastructure plugin for the Catalyst authentication framework
 
-RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.10:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
+BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.10:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
+		p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
+		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
 PORTSCOUT=	skipv:0.100092
 
@@ -46,7 +50,10 @@ MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Plugin::Authentication::User.3 \
 	Catalyst::Plugin::Authentication::User::Hash.3
 
-post-extract:
-	@${REINPLACE_CMD} -e '/^test_requires/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
