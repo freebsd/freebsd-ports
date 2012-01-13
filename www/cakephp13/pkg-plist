@@ -371,6 +371,8 @@
 %%WWWDIR%%/cake/tests/fixtures/author_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/basket_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/bid_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/bidding_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/bidding_message_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/binary_test_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/book_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/cache_test_model_fixture.php
