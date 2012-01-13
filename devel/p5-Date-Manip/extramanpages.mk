@@ -501,6 +501,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::Offset::off484.3 \
 	Date::Manip::Offset::off485.3 \
 	Date::Manip::Offset::off486.3 \
+	Date::Manip::Offset::off487.3 \
 	Date::Manip::TZ::a00.3 \
 	Date::Manip::TZ::afabid00.3 \
 	Date::Manip::TZ::afaccr00.3 \
@@ -730,6 +731,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::TZ::asdush00.3 \
 	Date::Manip::TZ::asgaza00.3 \
 	Date::Manip::TZ::asharb00.3 \
+	Date::Manip::TZ::ashebr00.3 \
 	Date::Manip::TZ::asho_c00.3 \
 	Date::Manip::TZ::ashong00.3 \
 	Date::Manip::TZ::ashovd00.3 \
@@ -945,6 +947,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::TZ::t00.3 \
 	Date::Manip::TZ::u00.3 \
 	Date::Manip::TZ::ut00.3 \
+	Date::Manip::TZ::utc00.3 \
 	Date::Manip::TZ::v00.3 \
 	Date::Manip::TZ::w00.3 \
 	Date::Manip::TZ::wet00.3 \
