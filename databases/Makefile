@@ -599,7 +599,6 @@
     SUBDIR += php52-sybase_ct
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
-    SUBDIR += phpmyadmin211
     SUBDIR += phppgadmin
     SUBDIR += postgis
     SUBDIR += postgis-jdbc
