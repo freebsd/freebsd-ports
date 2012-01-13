@@ -63,12 +63,14 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900036
+.if defined(GNUSTEP_WITH_BASE_GCC)
 IGNORE=		needs an objective C compiler
 .endif
+.endif
 
-.if defined(GNUSTEP_WITH_LIBOBJC2)
-LIB_DEPENDS+=	objc:${PORTSDIR}/${PKGCATEGORY}/gnustep-libobjc
-CFLAGS+=	-I${GNUSTEP_SYSTEM_ROOT}/Library/Headers -DOBJC2RUNTIME=1
+.if defined(GNUSTEP_WITH_LIBOBJC2) || defined(GNUSTEP_WITH_CLANG)
+LIB_DEPENDS+=	objc:${PORTSDIR}/${PKGCATEGORY}/libobjc2
+CFLAGS+=	-I${LOCALBASE}/include -DOBJC2RUNTIME=1
 .endif
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
