@@ -1,12 +1,15 @@
 %%SITE_PERL%%/Catalyst/Action/Deserialize.pm
+%%SITE_PERL%%/Catalyst/Action/Deserialize/Callback.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/JSON.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/View.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/XML/Simple.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/YAML.pm
+%%SITE_PERL%%/Catalyst/Action/DeserializeMultiPart.pm
 %%SITE_PERL%%/Catalyst/Action/REST.pm
 %%SITE_PERL%%/Catalyst/Action/REST/ForBrowsers.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize.pm
+%%SITE_PERL%%/Catalyst/Action/Serialize/Callback.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSONP.pm
@@ -22,6 +25,9 @@
 %%SITE_PERL%%/Catalyst/TraitFor/Request/REST.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Request/REST/ForBrowsers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/REST/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/REST
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Request/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor
@@ -39,6 +45,3 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize
 @dirrmtry %%SITE_PERL%%/Catalyst/Action
 @dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/REST
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
