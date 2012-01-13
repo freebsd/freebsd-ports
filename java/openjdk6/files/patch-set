@@ -609,8 +609,8 @@
  
  #endif /* amd64 */
  
---- hotspot/agent/src/os/bsd/Makefile	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/Makefile	2011-07-07 19:17:02.000000000 -0400
+--- hotspot/agent/src/os/bsd/Makefile	2012-01-12 17:22:08.000000000 -0500
++++ hotspot/agent/src/os/bsd/Makefile	2012-01-12 16:53:06.000000000 -0500
 @@ -22,7 +22,7 @@
  #  
  #
@@ -620,12 +620,11 @@
  GCC      = gcc
  
  JAVAH    = ${JAVA_HOME}/bin/javah
-@@ -32,25 +32,25 @@
+@@ -32,25 +32,24 @@
  	libproc_impl.c  \
  	ps_proc.c       \
  	ps_core.c       \
 -	BsdDebuggerLocal.c 
-+	hsearch_r.c     \
 +	BsdDebuggerLocal.c
  
 -INCLUDES = -I${JAVA_HOME}/include -I${JAVA_HOME}/include/bsd 
@@ -653,7 +652,7 @@
  	$(GCC) $(CFLAGS) $<
  
  .c.obj:
-@@ -60,26 +60,19 @@
+@@ -60,26 +59,19 @@
    LFLAGS_LIBSA = -Xlinker --version-script=mapfile
  endif
  
@@ -722,271 +721,6 @@
  
  #endif
  
---- hotspot/agent/src/os/bsd/hsearch_r.c	2011-07-07 19:17:02.000000000 -0400
-+++ hotspot/agent/src/os/bsd/hsearch_r.c	2011-07-07 19:17:02.000000000 -0400
-@@ -0,0 +1,217 @@
-+/* Copyright (C) 1993,1995-1997,2002,2005,2007,2008
-+   Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+   Contributed by Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1993.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library; if not, write to the Free
-+   Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-+   02111-1307 USA.  */
-+
-+#include <errno.h>
-+#include <stdlib.h>
-+#include <string.h>
-+
-+#include <search.h>
-+
-+#include "hsearch_r.h"
-+
-+#define __set_errno(ERRNO) errno = ERRNO
-+
-+/* [Aho,Sethi,Ullman] Compilers: Principles, Techniques and Tools, 1986
-+   [Knuth]            The Art of Computer Programming, part 3 (6.4)  */
-+
-+
-+/* The reentrant version has no static variables to maintain the state.
-+   Instead the interface of all functions is extended to take an argument
-+   which describes the current status.  */
-+typedef struct _ENTRY
-+{
-+  unsigned int used;
-+  ENTRY entry;
-+}
-+_ENTRY;
-+
-+
-+/* For the used double hash method the table size has to be a prime. To
-+   correct the user given table size we need a prime test.  This trivial
-+   algorithm is adequate because
-+   a)  the code is (most probably) called a few times per program run and
-+   b)  the number is small because the table must fit in the core  */
-+static int
-+isprime (unsigned int number)
-+{
-+  /* no even number will be passed */
-+  unsigned int div = 3;
-+
-+  while (div * div < number && number % div != 0)
-+    div += 2;
-+
-+  return number % div != 0;
-+}
-+
-+
-+/* Before using the hash table we must allocate memory for it.
-+   Test for an existing table are done. We allocate one element
-+   more as the found prime number says. This is done for more effective
-+   indexing as explained in the comment for the hsearch function.
-+   The contents of the table is zeroed, especially the field used
-+   becomes zero.  */
-+int
-+hcreate_r (size_t nel, struct hsearch_data *htab)
-+{
-+  /* Test for correct arguments.  */
-+  if (htab == NULL)
-+    {
-+      __set_errno (EINVAL);
-+      return 0;
-+    }
-+
-+  /* There is still another table active. Return with error. */
-+  if (htab->table != NULL)
-+    return 0;
-+
-+  /* Change nel to the first prime number not smaller as nel. */
-+  nel |= 1;      /* make odd */
-+  while (!isprime (nel))
-+    nel += 2;
-+
-+  htab->size = nel;
-+  htab->filled = 0;
-+
-+  /* allocate memory and zero out */
-+  htab->table = (_ENTRY *) calloc (htab->size + 1, sizeof (_ENTRY));
-+  if (htab->table == NULL)
-+    return 0;
-+
-+  /* everything went alright */
-+  return 1;
-+}
-+
-+
-+/* After using the hash table it has to be destroyed. The used memory can
-+   be freed and the local static variable can be marked as not used.  */
-+void
-+hdestroy_r (struct hsearch_data *htab)
-+{
-+  /* Test for correct arguments.  */
-+  if (htab == NULL)
-+    {
-+      __set_errno (EINVAL);
-+      return;
-+    }
-+
-+  /* Free used memory.  */
-+  free (htab->table);
-+
-+  /* the sign for an existing table is an value != NULL in htable */
-+  htab->table = NULL;
-+}
-+
-+
-+/* This is the search function. It uses double hashing with open addressing.
-+   The argument item.key has to be a pointer to an zero terminated, most
-+   probably strings of chars. The function for generating a number of the
-+   strings is simple but fast. It can be replaced by a more complex function
-+   like ajw (see [Aho,Sethi,Ullman]) if the needs are shown.
-+
-+   We use an trick to speed up the lookup. The table is created by hcreate
-+   with one more element available. This enables us to use the index zero
-+   special. This index will never be used because we store the first hash
-+   index in the field used where zero means not used. Every other value
-+   means used. The used field can be used as a first fast comparison for
-+   equality of the stored and the parameter value. This helps to prevent
-+   unnecessary expensive calls of strcmp.  */
-+int
-+hsearch_r (ENTRY item, ACTION action, ENTRY **retval, struct hsearch_data *htab)
-+{
-+  unsigned int hval;
-+  unsigned int count;
-+  unsigned int len = strlen (item.key);
-+  unsigned int idx;
-+
-+  /* Compute an value for the given string. Perhaps use a better method. */
-+  hval = len;
-+  count = len;
-+  while (count-- > 0)
-+    {
-+      hval <<= 4;
-+      hval += item.key[count];
-+    }
-+
-+  /* First hash function: simply take the modul but prevent zero. */
-+  idx = hval % htab->size + 1;
-+
-+  if (htab->table[idx].used)
-+    {
-+      /* Further action might be required according to the action value. */
-+      if (htab->table[idx].used == hval
-+	  && strcmp (item.key, htab->table[idx].entry.key) == 0)
-+	{
-+	  *retval = &htab->table[idx].entry;
-+	  return 1;
-+	}
-+
-+      /* Second hash function, as suggested in [Knuth] */
-+      unsigned int hval2 = 1 + hval % (htab->size - 2);
-+      unsigned int first_idx = idx;
-+
-+      do
-+	{
-+	  /* Because SIZE is prime this guarantees to step through all
-+             available indeces.  */
-+          if (idx <= hval2)
-+	    idx = htab->size + idx - hval2;
-+	  else
-+	    idx -= hval2;
-+
-+	  /* If we visited all entries leave the loop unsuccessfully.  */
-+	  if (idx == first_idx)
-+	    break;
-+
-+            /* If entry is found use it. */
-+          if (htab->table[idx].used == hval
-+	      && strcmp (item.key, htab->table[idx].entry.key) == 0)
-+	    {
-+	      *retval = &htab->table[idx].entry;
-+	      return 1;
-+	    }
-+	}
-+      while (htab->table[idx].used);
-+    }
-+
-+  /* An empty bucket has been found. */
-+  if (action == ENTER)
-+    {
-+      /* If table is full and another entry should be entered return
-+	 with error.  */
-+      if (htab->filled == htab->size)
-+	{
-+	  __set_errno (ENOMEM);
-+	  *retval = NULL;
-+	  return 0;
-+	}
-+
-+      htab->table[idx].used  = hval;
-+      htab->table[idx].entry = item;
-+
-+      ++htab->filled;
-+
-+      *retval = &htab->table[idx].entry;
-+      return 1;
-+    }
-+
-+  __set_errno (ESRCH);
-+  *retval = NULL;
-+  return 0;
-+}
---- hotspot/agent/src/os/bsd/hsearch_r.h	2011-07-07 19:17:02.000000000 -0400
-+++ hotspot/agent/src/os/bsd/hsearch_r.h	2011-07-07 19:17:02.000000000 -0400
-@@ -0,0 +1,42 @@
-+/* Declarations for System V style searching functions.
-+   Copyright (C) 1995-1999, 2000 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library; if not, write to the Free
-+   Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-+   02111-1307 USA.  */
-+
-+#ifndef _HSEARCH_R_H_
-+#define _HSEARCH_R_H_
-+
-+#include <search.h>
-+
-+struct _ENTRY;
-+
-+/* Data type for reentrant functions.  */
-+struct hsearch_data
-+  {
-+    struct _ENTRY *table;
-+    unsigned int size;
-+    unsigned int filled;
-+  };
-+
-+/* Reentrant versions which can handle multiple hashing tables at the
-+   same time.  */
-+extern int hsearch_r (ENTRY __item, ACTION __action, ENTRY **__retval,
-+                      struct hsearch_data *__htab);
-+extern int hcreate_r (size_t __nel, struct hsearch_data *__htab);
-+extern void hdestroy_r (struct hsearch_data *__htab);
-+
-+#endif /* _HSEARCH_R_H_ */
 --- hotspot/agent/src/os/bsd/libproc.h	2011-07-07 19:15:59.000000000 -0400
 +++ hotspot/agent/src/os/bsd/libproc.h	2011-07-07 19:17:02.000000000 -0400
 @@ -27,7 +27,8 @@
@@ -2256,9 +1990,9 @@
  
  extern void print_debug(const char*,...);
  
---- hotspot/agent/src/os/bsd/symtab.c	2011-07-07 19:15:59.000000000 -0400
-+++ hotspot/agent/src/os/bsd/symtab.c	2011-07-07 19:17:02.000000000 -0400
-@@ -23,10 +23,10 @@
+--- hotspot/agent/src/os/bsd/symtab.c	2012-01-12 17:22:08.000000000 -0500
++++ hotspot/agent/src/os/bsd/symtab.c	2012-01-12 16:54:45.000000000 -0500
+@@ -23,10 +23,11 @@
   */
  
  #include <unistd.h>
@@ -2266,12 +2000,17 @@
  #include <search.h>
  #include <stdlib.h>
  #include <string.h>
-+#include "hsearch_r.h"
++#include <db.h>
++#include <fcntl.h>
  #include "symtab.h"
  #include "salibelf.h"
  
-@@ -53,276 +53,9 @@
-   struct hsearch_data *hash_table;
+@@ -50,279 +51,12 @@
+   char *strs;
+   size_t num_symbols;
+   struct elf_symbol *symbols;
+-  struct hsearch_data *hash_table;
++  DB* hash_table;
  } symtab_t;
  
 -
@@ -2549,7 +2288,7 @@
    struct symtab* symtab = NULL;
  
    // Reading of elf header
-@@ -331,8 +64,9 @@
+@@ -331,8 +65,9 @@
    ELF_SHDR* shbuf = NULL;
    ELF_SHDR* cursct = NULL;
    ELF_PHDR* phbuf = NULL;
@@ -2561,16 +2300,26 @@
  
    uintptr_t baseaddr = (uintptr_t)-1;
  
-@@ -357,23 +91,30 @@
+@@ -349,33 +84,39 @@
+ 
+   baseaddr = find_base_address(fd, &ehdr);
+ 
+-  scn_cache = (struct elf_section *)
+-              calloc(ehdr.e_shnum * sizeof(struct elf_section), 1);
++  scn_cache = calloc(ehdr.e_shnum, sizeof(*scn_cache));
+   if (scn_cache == NULL) {
+     goto quit;
+   }
  
    for (cursct = shbuf, cnt = 0; cnt < ehdr.e_shnum; cnt++) {
      scn_cache[cnt].c_shdr = cursct;
 -    if (cursct->sh_type == SHT_SYMTAB || cursct->sh_type == SHT_STRTAB
 -        || cursct->sh_type == SHT_NOTE || cursct->sh_type == SHT_DYNSYM) {
+-      if ( (scn_cache[cnt].c_data = read_section_data(fd, &ehdr, cursct)) == NULL) {
 +    if (cursct->sh_type == SHT_SYMTAB ||
 +        cursct->sh_type == SHT_STRTAB ||
 +        cursct->sh_type == SHT_DYNSYM) {
-       if ( (scn_cache[cnt].c_data = read_section_data(fd, &ehdr, cursct)) == NULL) {
++      if ((scn_cache[cnt].c_data = read_section_data(fd, &ehdr, cursct)) == NULL) {
           goto quit;
        }
      }
@@ -2597,11 +2346,77 @@
 -    if (shdr->sh_type == sym_section) {
 +    if (shdr->sh_type == symsection) {
        ELF_SYM  *syms;
-       int j, n, rslt;
+-      int j, n, rslt;
++      int j, n;
        size_t size;
-@@ -435,45 +176,6 @@
+ 
+       // FIXME: there could be multiple data buffers associated with the
+@@ -383,7 +124,7 @@
+       // for elf_getdata on Solaris.
+ 
+       // guarantee(symtab == NULL, "multiple symtab");
+-      symtab = (struct symtab*)calloc(1, sizeof(struct symtab));
++      symtab = calloc(1, sizeof(*symtab));
+       if (symtab == NULL) {
+          goto quit;
+       }
+@@ -393,27 +134,32 @@
+       // number of symbols
+       n = shdr->sh_size / shdr->sh_entsize;
+ 
+-      // create hash table, we use hcreate_r, hsearch_r and hdestroy_r to
++      // create hash table, we use berkeley db to
+       // manipulate the hash table.
+-      symtab->hash_table = (struct hsearch_data*) calloc(1, sizeof(struct hsearch_data));
+-      rslt = hcreate_r(n, symtab->hash_table);
+-      // guarantee(rslt, "unexpected failure: hcreate_r");
++      symtab->hash_table = dbopen(NULL, O_CREAT | O_RDWR, 0600, DB_HASH, NULL);
++      // guarantee(symtab->hash_table, "unexpected failure: dbopen");
++      if (symtab->hash_table == NULL)
++	goto bad;
+ 
+       // shdr->sh_link points to the section that contains the actual strings
+       // for symbol names. the st_name field in ELF_SYM is just the
+       // string table index. we make a copy of the string table so the
+       // strings will not be destroyed by elf_end.
+       size = scn_cache[shdr->sh_link].c_shdr->sh_size;
+-      symtab->strs = (char *)malloc(size);
++      symtab->strs = malloc(size);
++      if (symtab->strs == NULL)
++	goto bad;
+       memcpy(symtab->strs, scn_cache[shdr->sh_link].c_data, size);
+ 
+       // allocate memory for storing symbol offset and size;
+       symtab->num_symbols = n;
+-      symtab->symbols = (struct elf_symbol *)calloc(n , sizeof(struct elf_symbol));
++      symtab->symbols = calloc(n , sizeof(*symtab->symbols));
++      if (symtab->symbols == NULL)
++	goto bad;
+ 
+       // copy symbols info our symtab and enter them info the hash table
+       for (j = 0; j < n; j++, syms++) {
+-        ENTRY item, *ret;
++        DBT key, value;
+         char *sym_name = symtab->strs + syms->st_name;
+ 
+         // skip non-object and non-function symbols
+@@ -427,52 +173,19 @@
+         symtab->symbols[j].offset = syms->st_value - baseaddr;
+         symtab->symbols[j].size   = syms->st_size;
+ 
+-        item.key = sym_name;
+-        item.data = (void *)&(symtab->symbols[j]);
+-
+-        hsearch_r(item, ENTER, &ret, symtab->hash_table);
++        key.data = sym_name;
++        key.size = strlen(sym_name) + 1;
++        value.data = &(symtab->symbols[j]);
++        value.size = sizeof(void *);
++        (*symtab->hash_table->put)(symtab->hash_table, &key, &value, 0);
+       }
      }
    }
++  goto quit;
  
 -  // Look for a separate debuginfo file.
 -  if (try_debuginfo) {
@@ -2641,11 +2456,13 @@
 -      symtab = prev_symtab;
 -    }
 -  }
--
++bad:
++  destroy_symtab(symtab);
++  symtab = NULL;
+ 
  quit:
    if (shbuf) free(shbuf);
-   if (phbuf) free(phbuf);
-@@ -488,11 +190,6 @@
+@@ -488,44 +201,36 @@
    return symtab;
  }
  
@@ -2657,6 +2474,68 @@
  void destroy_symtab(struct symtab* symtab) {
    if (!symtab) return;
    if (symtab->strs) free(symtab->strs);
+   if (symtab->symbols) free(symtab->symbols);
+   if (symtab->hash_table) {
+-     hdestroy_r(symtab->hash_table);
+-     free(symtab->hash_table);
++    (*symtab->hash_table->close)(symtab->hash_table);
+   }
+   free(symtab);
+ }
+ 
+ uintptr_t search_symbol(struct symtab* symtab, uintptr_t base,
+                       const char *sym_name, int *sym_size) {
+-  ENTRY item;
+-  ENTRY* ret = NULL;
++  DBT key, value;
++  int ret;
+ 
+   // library does not have symbol table
+   if (!symtab || !symtab->hash_table)
+-     return (uintptr_t)NULL;
++     return 0;
+ 
+-  item.key = (char*) strdup(sym_name);
+-  hsearch_r(item, FIND, &ret, symtab->hash_table);
+-  if (ret) {
+-    struct elf_symbol * sym = (struct elf_symbol *)(ret->data);
++  key.data = (char*)(uintptr_t)sym_name;
++  key.size = strlen(sym_name) + 1;
++  ret = (*symtab->hash_table->get)(symtab->hash_table, &key, &value, 0);
++  if (ret == 0) {
++    struct elf_symbol *sym = value.data;
+     uintptr_t rslt = (uintptr_t) ((char*)base + sym->offset);
+     if (sym_size) *sym_size = sym->size;
+-    free(item.key);
+     return rslt;
+   }
+ 
+-quit:
+-  free(item.key);
+-  return (uintptr_t) NULL;
++  return 0;
+ }
+ 
+ const char* nearest_symbol(struct symtab* symtab, uintptr_t offset,
+@@ -533,12 +238,12 @@
+   int n = 0;
+   if (!symtab) return NULL;
+   for (; n < symtab->num_symbols; n++) {
+-     struct elf_symbol* sym = &(symtab->symbols[n]);
+-     if (sym->name != NULL &&
+-         offset >= sym->offset && offset < sym->offset + sym->size) {
+-        if (poffset) *poffset = (offset - sym->offset);
+-        return sym->name;
+-     }
++    struct elf_symbol* sym = &symtab->symbols[n];
++    if (sym->name != NULL &&
++      offset >= sym->offset && offset < sym->offset + sym->size) {
++      if (poffset) *poffset = (offset - sym->offset);
++      return sym->name;
++    }
+   }
+   return NULL;
+ }
 --- hotspot/agent/src/os/bsd/symtab.h	2011-07-07 19:15:59.000000000 -0400
 +++ hotspot/agent/src/os/bsd/symtab.h	2011-07-07 19:17:02.000000000 -0400
 @@ -32,7 +32,7 @@
@@ -3466,9 +3345,9 @@
  
  AGENT_FILES1_LIST := $(GENERATED)/agent1.classes.list
  AGENT_FILES2_LIST := $(GENERATED)/agent2.classes.list
---- hotspot/make/bsd/makefiles/saproc.make	2011-07-07 19:16:00.000000000 -0400
-+++ hotspot/make/bsd/makefiles/saproc.make	2011-07-07 19:17:02.000000000 -0400
-@@ -25,23 +25,34 @@
+--- hotspot/make/bsd/makefiles/saproc.make	2012-01-12 17:22:09.000000000 -0500
++++ hotspot/make/bsd/makefiles/saproc.make	2012-01-12 16:55:29.000000000 -0500
+@@ -25,23 +25,33 @@
  # Rules to build serviceability agent library, used by vm.make
  
  # libsaproc[_g].so: serviceability agent
@@ -3498,7 +3377,6 @@
               $(SASRCDIR)/libproc_impl.c               \
               $(SASRCDIR)/ps_proc.c                    \
               $(SASRCDIR)/ps_core.c                    \
-+             $(SASRCDIR)/hsearch_r.c                  \
               $(SASRCDIR)/BsdDebuggerLocal.c
 +SALIBS = -lutil -lthread_db
 +else
@@ -3508,7 +3386,7 @@
  
  SAMAPFILE = $(SASRCDIR)/mapfile
  
-@@ -62,7 +73,10 @@
+@@ -62,7 +72,10 @@
  endif
  
  
@@ -3520,7 +3398,7 @@
  
  $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
  	$(QUIETLY) if [ "$(BOOT_JAVA_HOME)" = "" ]; then \
-@@ -75,12 +89,12 @@
+@@ -75,12 +88,12 @@
  	           -I$(SASRCDIR)                                        \
  	           -I$(GENERATED)                                       \
  	           -I$(BOOT_JAVA_HOME)/include                          \
@@ -9872,17 +9750,6 @@
  OTHER_LDLIBS = $(JVMLIB)
 +endif
 +
---- jdk/make/javax/crypto/Makefile	2011-07-05 14:35:28.000000000 -0400
-+++ jdk/make/javax/crypto/Makefile	2011-07-07 19:17:03.000000000 -0400
-@@ -155,7 +155,7 @@
- #
- 
- ifdef OPENJDK
--all: build-jar install-jar build-policy install-limited
-+all: build-jar install-jar build-policy install-unlimited
- else  # OPENJDK
- ifeq ($(strip $(FILES_java)),)
- all:
 --- jdk/make/javax/sound/FILES_c.gmk	2011-07-05 14:35:28.000000000 -0400
 +++ jdk/make/javax/sound/FILES_c.gmk	2011-07-07 19:17:03.000000000 -0400
 @@ -34,6 +34,8 @@
