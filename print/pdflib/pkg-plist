@@ -11,6 +11,11 @@ lib/libpdf.so.6
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.la
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so.0
+%%JAVA%%lib/libpdf_java.a
+%%JAVA%%lib/libpdf_java.la
+%%JAVA%%lib/libpdf_java.so.0
+%%JAVA%%lib/libpdf_java.so
+%%JAVA%%%%JAVAJARDIR%%/pdflib.jar
 %%DATADIR%%/fonts/pdflib.upr
 %%DATADIR%%/fonts/print_glyphs.ps
 @dirrm share/pdflib/fonts
