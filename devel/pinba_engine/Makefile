@@ -18,8 +18,8 @@ COMMENT=	Mysql-engine part of statistics server for PHP
 BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/devel/protobuf \
  		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent \
 		${LOCALBASE}/include/Judy.h:${PORTSDIR}/devel/judy \
-		${LOCALBASE}/lib/mysql/plugin:${MYSQL_PORTDIR} \
- 		${NONEXISTENT}:${MYSQL_PORTDIR}:configure \
+		${LOCALBASE}/lib/mysql/plugin:${PORTSDIR}/${_MYSQL_SERVER} \
+ 		${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:configure \
 		bison:${PORTSDIR}/devel/bison \
 		cmake:${PORTSDIR}/devel/cmake
 
@@ -30,8 +30,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	41 50
 
-MYSQL_PORTDIR=	${PORTSDIR}/databases/mysql${MYSQL_VER}-server
-MYSQL_WRKSRC=	$$(cd ${MYSQL_PORTDIR} && ${MAKE} -V WRKSRC)
+MYSQL_WRKSRC=	$$(cd ${PORTSDIR}/${_MYSQL_SERVER} && ${MAKE} -V WRKSRC)
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
