@@ -7,7 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-CATEGORIES=	print perl java
+CATEGORIES=	print perl5 java
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
@@ -60,7 +60,7 @@ post-install:
 	${MKDIR} ${DATADIR}/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/* ${DATADIR}/fonts
 .if defined(WITH_JAVA)
- 	${INSTALL_DATA} ${WRKSRC}/bind/pdflib/java/pdflib.jar ${JAVAJARDIR}/pdflib.jar
+	${INSTALL_DATA} ${WRKSRC}/bind/pdflib/java/pdflib.jar ${JAVAJARDIR}/pdflib.jar
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
