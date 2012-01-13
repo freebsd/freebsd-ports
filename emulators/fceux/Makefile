@@ -7,6 +7,7 @@
 
 PORTNAME=	fceux
 PORTVERSION=	2.1.4a
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra/Source%20Code/2.1.4%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -29,13 +30,13 @@ MAN6=		fceux.6
 .include <bsd.port.pre.mk>
 
 post-extract:
-       ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/src/drivers/common/vidblit.cpp
+	@${MV} ${WRKSRC}/documentation/fceux.6 ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/fceux ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/documentation/fceux.6 ${PREFIX}/man/man6
-	${RM} ${WRKSRC}/documentation/fceux.6
+	${INSTALL_MAN} ${WRKSRC}/fceux.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}/
