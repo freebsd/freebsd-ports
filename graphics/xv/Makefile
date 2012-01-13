@@ -66,7 +66,7 @@ post-install:
 .endif
 
 
-.if defined(CC) && ${CC} == "clang"
+.if defined(CC) && ${CC:T:Mclang}
 # Optimizer crashes with
 # Assertion failed: (isPtrIV == IndVar->getType()->isPointerTy() && "IndVar type must match IVInit type")
 CFLAGS:= ${CFLAGS:S/-O2//g}

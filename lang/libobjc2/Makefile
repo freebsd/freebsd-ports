@@ -43,7 +43,7 @@ CPPFLAGS+=	-DGNUSTEP
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
-.if defined(CC) && ${CC:Mclang}
+.if defined(CC) && ${CC:T:Mclang}
 # all done
 .else
 .if defined(GNUSTEP_WITH_CLANG)
