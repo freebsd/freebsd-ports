@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	print perl
+PKGNAMESUFFIX=	-perl
 
 MAINTAINER=	ale@FreeBSD.org
 

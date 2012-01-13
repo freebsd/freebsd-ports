@@ -1,0 +1,12 @@
+--- configure.orig	2012-01-10 12:18:55.000000000 +0100
++++ configure	2012-01-10 12:20:13.000000000 +0100
+@@ -21416,6 +21416,9 @@
+ if test "$WITH_CXX" = "yes" ; then
+     BINDINGS="$BINDINGS cpp"
+ fi
++if test "$WITH_PERL" = "yes" ; then
++    BINDINGS="$BINDINGS perl"
++fi
+ if test "$WITH_JAVA" = "yes" ; then
+     BINDINGS="$BINDINGS java"
+     PLOPBINDINGS="$PLOPBINDINGS java"
