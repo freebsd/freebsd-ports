@@ -55,6 +55,12 @@ XPI_FILE=	${MOZSRC}/dist/bin/${DISTNAME}-freebsd-${ARCH}.xpi
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 XPI_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 XPI_ID=		${GECKO}@mozilla-enigmail.org
+XPI_ID_RFILES=	${XPI_LIBDIR}/${XPI_ID}/install.rdf
+.if ${PORTVERSION} == "1.1.2"
+XPI_ID_RFILES+=	${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js
+.else
+XPI_ID_RFILES+=	${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js ${XPI_LIBDIR}/${XPI_ID}/modules/enigmailCommon.jsm
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -81,9 +87,6 @@ do-build:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom
-.if ${PORTVERSION} == "1.0.1"
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete
-.endif
 .endif
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ./makemake -r
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE}
@@ -93,8 +96,7 @@ do-install:
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO}
 	@(cd ${XPI_LIBDIR}/${XPI_ID}; ${TAR} -xf ${XPI_FILE})
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${XPI_ID}
-	@${REINPLACE_CMD} -i "" "s/${XPI_ORIG_ID}/${XPI_ID}/" ${XPI_LIBDIR}/${XPI_ID}/install.rdf \
-		${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js ${XPI_LIBDIR}/${XPI_ID}/modules/enigmailCommon.jsm
+	@${REINPLACE_CMD} -i "" "s/${XPI_ORIG_ID}/${XPI_ID}/" ${XPI_ID_RFILES}
 	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${XPI_ID}
 	@${LN} -sf ${XPI_LIBDIR}/${XPI_ID} ${LOCALBASE}/lib/${GECKO}/extensions 2>/dev/null || true
 	@${LN} -sf ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO} 2>/dev/null || true
