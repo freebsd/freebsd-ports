@@ -213,8 +213,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODUL
 .endif
 
 .if defined(WITH_ECHO_MODULE)
-NGINX_ECHO_MODULE_VERSION=	0.36
-GIT_ECHO_MODULE_VERSION=	0-g13dd12f
+NGINX_ECHO_MODULE_VERSION=	0.37
+GIT_ECHO_MODULE_VERSION=	0-gb0c1fc6
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_MODULE_VERSION}/:echo
 DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_MODULE_VERSION}-${GIT_ECHO_MODULE_VERSION}.tar.gz:echo
