@@ -22,12 +22,13 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		plist.1:${PORTSDIR}/devel/libplist \
 		usbmuxd.1:${PORTSDIR}/comms/usbmuxd
 
-USE_BZIP2=	yes
 USE_GNOME=	glib20
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+USE_CSTD=	gnu89
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS README
