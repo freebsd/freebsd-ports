@@ -26,6 +26,12 @@
 # GNUSTEP_WITH_GCC42=yes
 #	use gcc 4.2.x with objective C shared libraries (default).
 #
+# GNUSTEP_WITH_GCC46=yes
+#	use gcc 4.6.x with objective C shared libraries.
+#
+# GNUSTEP_WITH_CLANG=yes
+#	use clang with objective C shared libraries.
+#
 #
 # Options for a port before include this file:
 # ============================================
@@ -189,13 +195,24 @@ PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LIBVERSION=${DEFAULT_LIBVERSION}
 PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
-.if !defined(GNUSTEP_WITH_GCC34) && !defined(GNUSTEP_WITH_GCC42) && !defined(GNUSTEP_WITH_BASE_GCC)
+.if !defined(GNUSTEP_WITH_GCC34) && !defined(GNUSTEP_WITH_GCC42) && !defined(GNUSTEP_WITH_GCC46) && !defined(GNUSTEP_WITH_BASE_GCC)
 .if !exists(${DESTDIR}/usr/lib/libobjc.so)
-GNUSTEP_WITH_GCC42=yes
+GNUSTEP_WITH_GCC46=yes
 .endif
 .endif
 
-.if defined(GNUSTEP_WITH_GCC34) || defined(GNUSTEP_WITH_GCC42)
+.if defined(GNUSTEP_WITH_CLANG)
+.if !exists(${DESTDIR}/usr/bin/clang)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+CC=	clang
+CXX=	clang++
+.else
+# use clang in base
+GNUSTEP_WITH_BASE_GCC=yes
+.endif
+LIB_DEPENDS+=	objc:${PORTSDIR}/lang/libobjc2
+.else
+.if defined(GNUSTEP_WITH_GCC34) || defined(GNUSTEP_WITH_GCC42) || defined(GNUSTEP_WITH_GCC46)
 .if defined(GNUSTEP_WITH_GCC34)
 GCCSUFFIX=34
 .if ${ARCH} == sparc64
@@ -205,13 +222,17 @@ BROKEN=	gcc34 does not build the required libobjc
 .if defined(GNUSTEP_WITH_GCC42)
 GCCSUFFIX=42
 .endif
+.if defined(GNUSTEP_WITH_GCC46)
+GCCSUFFIX=46
+.endif
 CC=		gcc${GCCSUFFIX}
 CXX=		g++${GCCSUFFIX}
 GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
 BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
 RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
 .else
-GNUSTEP_WITH_BASE_GCC=	yes
+GNUSTEP_WITH_BASE_GCC=yes
+.endif
 .endif
 
 # ---------------------------------------------------------------------------
