@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AMBS/Text
@@ -20,6 +20,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:${PORTSDIR}/devel/p5-Config-AutoConf \
 		p5-ExtUtils-LibBuilder>0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder
+
 TEST_DEPENDS=	p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
 
 PERL_MODBUILD=	yes
