@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	FCGI-ProcManager
-PORTVERSION=	0.19
+PORTVERSION=	0.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	FCGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	peter@vereshagin.org
@@ -17,6 +16,7 @@ COMMENT=	Functions for managing FastCGI applications
 
 PERL_CONFIGURE=	yes
 
-MAN3=		FCGI::ProcManager.3
+MAN3=		FCGI::ProcManager.3 \
+		FCGI::ProcManager::Constrained.3
 
 .include <bsd.port.mk>
