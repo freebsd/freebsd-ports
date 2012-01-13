@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -65,6 +65,7 @@ JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_11_jul_2011.zip
+UPDATE_VERSION=	30
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
@@ -122,7 +123,8 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
 		BUILD_NUMBER=${PORTVERSION} \
 		NO_DOCS=true \
-		MILESTONE=fcs
+		MILESTONE=fcs \
+		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
 .if defined(WITH_DEBUG)
 ALL_TARGET=	debug_build
