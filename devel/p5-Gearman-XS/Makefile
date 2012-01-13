@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gearman-XS
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DSCHOEN
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	otaviof@gmail.com
 COMMENT=	Perl front end for the Gearman C library
 
-LIB_DEPENDS=	gearman.4:${PORTSDIR}/devel/gearmand
+LIB_DEPENDS=	gearman.6:${PORTSDIR}/devel/gearmand
 
 CFLAGS+=	-I${LOCALBASE}/include
 
