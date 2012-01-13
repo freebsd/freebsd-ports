@@ -173,7 +173,7 @@
 +  }
 +  if (ret == (size_t)(-1))  strcpy(Dest, Src);
 +#else  /* !WITH_ICONV */
- #if defined(_WIN_ALL)
+ #ifdef _WIN_ALL
    CharToOemA(Src,Dest);
  #else
    if (Dest!=Src)
@@ -197,7 +197,7 @@
 +  }
 +  if (ret == (size_t)(-1))   strcpy(Dest,Src);
 +#else  /* !WITH_ICONV */
- #if defined(_WIN_ALL)
+ #ifdef _WIN_ALL
    OemToCharA(Src,Dest);
  #else
    if (Dest!=Src)
