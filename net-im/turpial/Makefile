@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	turpial
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7.1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://turpial.org.ve/files/sources/%SUBDIR%/
 MASTER_SITE_SUBDIR=	stable
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Twitter and Identi.ca client written in Python
@@ -35,7 +35,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}
 
 LOCALES_DIR=	ca ca_ES cs de en es es_ES es_VE eu fr gl he hu it nl nn \
 	pt pt_BR ru ru_RU sr uk_UA zh_CN zh_TW
-
 
 .include <bsd.port.pre.mk>
 
