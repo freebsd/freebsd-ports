@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	2.0.7
-DISTVERSIONSUFFIX=	-sm+fx
+PORTVERSION=	2.0.10
+DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/addons/201/
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITE_SUBDIR=	addons/201
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
