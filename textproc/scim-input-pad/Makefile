@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	scim-input-pad
-PORTVERSION=	0.1.2
-PORTREVISION=	4
+PORTVERSION=	0.1.3.1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	SF/scim/${PORTNAME}/0.1.3/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM add-on to input various symbols with customisable on-screen pad
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	scim-1.0.10:${PORTSDIR}/textproc/scim
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
@@ -45,6 +43,7 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -E 's|(SCIM_LIBEXECDIR=).*|\1${PREFIX}/lib/scim-1.0|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E 's|^_NAME|NAME|g' ${WRKSRC}/data/*.pad.in
 
 post-install:
 .if !defined(NOPORTDOCS)
