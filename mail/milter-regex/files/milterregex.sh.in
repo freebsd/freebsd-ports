@@ -25,7 +25,7 @@ spooldir=%%SPOOLDIR%%
 . /etc/rc.subr
 
 name="milterregex"
-rcvar=milterregex_enable
+rcvar="milterregex_enable"
 command="%%PREFIX%%/libexec/milter-regex"
 pidfile="${spooldir}/milter-regex.pid"
 required_files="%%PREFIX%%/etc/milter-regex.conf"

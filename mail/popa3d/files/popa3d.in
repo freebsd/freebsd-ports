@@ -6,7 +6,7 @@
 . /etc/rc.subr
 
 name="popa3d"
-rcvar=popa3d_enable
+rcvar="popa3d_enable"
 
 command="%%PREFIX%%/libexec/${name}"
 command_args="-D"

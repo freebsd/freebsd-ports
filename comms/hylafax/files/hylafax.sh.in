@@ -17,7 +17,7 @@ hylafax_enable=${hylafax_enable-"NO"}
 . /etc/rc.subr
 
 name="hylafax"
-rcvar=hylafax_enable
+rcvar="hylafax_enable"
 
 start_cmd="%%PREFIX%%/sbin/hylafax start"
 stop_cmd="%%PREFIX%%/sbin/hylafax stop"

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="miltersid"
-rcvar=miltersid_enable
+rcvar="miltersid_enable"
 load_rc_config $name
 
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
