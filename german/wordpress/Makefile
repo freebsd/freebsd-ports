@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.1
 CATEGORIES=	german www
 MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/
 PKGNAMESUFFIX=	-de
@@ -19,11 +19,12 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* ja-wordpress-ja-3.*
-
+CONFLICTS_INSTALL=	wordpress-3.* ja-wordpress-ja-3.* \
+			zh-wordpress-zh_CN-3.* zh-wordpress-zh_TW-3.* \
+			ru-wordpress-ru-3.*
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_PHP=	gd mysql pcre tokenizer xml zip
+USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
