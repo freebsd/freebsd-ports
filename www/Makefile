@@ -1933,7 +1933,6 @@
     SUBDIR += xoops
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
-    SUBDIR += xpi-autobrowse
     SUBDIR += xpi-bookmarkdd
     SUBDIR += xpi-clear_cache_button
     SUBDIR += xpi-clearfields
@@ -1977,7 +1976,6 @@
     SUBDIR += xpi-informenter
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-it_s_all_text
-    SUBDIR += xpi-joga
     SUBDIR += xpi-jslib
     SUBDIR += xpi-jsview
     SUBDIR += xpi-jv
@@ -1993,7 +1991,6 @@
     SUBDIR += xpi-neo-diggler
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
-    SUBDIR += xpi-num2web
     SUBDIR += xpi-passwordmaker
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-pencil
@@ -2003,7 +2000,6 @@
     SUBDIR += xpi-quickproxy
     SUBDIR += xpi-resurrectpages
     SUBDIR += xpi-sameplace
-    SUBDIR += xpi-savegenpage
     SUBDIR += xpi-scrapbook
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_spy
@@ -2024,13 +2020,11 @@
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink
     SUBDIR += xpi-user_agent_switcher
-    SUBDIR += xpi-videodownloader
     SUBDIR += xpi-vimperator
     SUBDIR += xpi-web_developer
     SUBDIR += xpi-wmlbrowser
     SUBDIR += xpi-xhtml-ruby-support
     SUBDIR += xpi-xmpp4moz
-    SUBDIR += xpi-xpcom-component-viewer
     SUBDIR += xpi-yslow
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
