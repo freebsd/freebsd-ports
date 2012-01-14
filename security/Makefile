@@ -693,6 +693,7 @@
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
+    SUBDIR += py-certify
     SUBDIR += py-clamav
     SUBDIR += py-crack
     SUBDIR += py-cryptkit
