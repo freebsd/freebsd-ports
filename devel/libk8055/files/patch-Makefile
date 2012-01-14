@@ -1,0 +1,47 @@
+--- Makefile.orig	2011-12-31 03:12:14.464658120 +0000
++++ Makefile	2011-12-31 03:12:42.754252842 +0000
+@@ -1,22 +1,22 @@
+-cc = gcc
++CC ?= gcc
+ exec = k8055
+-bindir = /usr/local/bin
+-libdir = /usr/local/lib
+-includedir = /usr/local/include
+-mandir = /usr/local/man/man1
++bindir = ${PREFIX}/bin
++libdir = ${PREFIX}/lib
++includedir = ${PREFIX}/include
++mandir = ${MANPREFIX}/man/man1
+ OBJS = main.o libk8055.o
+ # if your are using Linux comment out next line
+-CFLAGS = -DDAEMON -Wall -D_BSD
++CFLAGS += -DDAEMON -Wall -D_BSD
+ # if you are using Linux incomment following line
+ #CFLAGS = -DDAEMON -Wall
+ 
+-libs = -lusb -L/usr/lib -lm
++libs = -lusb -L/usr/lib ${LDFLAGS} -lm
+ 
+ libk8055.so.0.1: libk8055.o
+-	$(cc) -Wall -o libk8055.so.0.2 -shared libk8055.o
++	$(CC) -Wall -o libk8055.so.0.2 -shared libk8055.o
+ 
+ libk8055.o: libk8055.c
+-	$(cc) -Wall -O -c -g -fPIC $(CFLAGS) libk8055.c
++	$(CC) -Wall -O -c -g -fPIC $(CFLAGS) libk8055.c
+ 	-ln -sf libk8055.so.0.2 libk8055.so
+ 
+ libk8055.c: k8055.h
+@@ -24,10 +24,10 @@
+ all: k8055_prog libk8055.so.0.1
+ 
+ %.o: %.c
+-	$(cc) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ k8055_prog: $(OBJS)
+-	$(cc) $(OBJS) -o $(exec) $(libs)
++	$(CC) $(OBJS) -o $(exec) $(libs)
+ 	strip $(exec)
+     
+ clean:

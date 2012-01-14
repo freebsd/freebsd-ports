@@ -17,6 +17,7 @@ COMMENT=	Velleman K8055 USB experimental board support and command line tool
 MAN1=		k8055.1
 MANCOMPRESSED=	yes
 USE_LDCONFIG=	yes
+USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/k8055 \
 		lib/libk8055.c \
@@ -27,8 +28,10 @@ PLIST_FILES=	bin/k8055 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 post-patch:
