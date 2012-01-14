@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-chewing
-PORTVERSION=	1.3.9.2
+PORTVERSION=	1.3.10
 CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -15,6 +15,7 @@ MAINTAINER=	lihong@ieee.org
 COMMENT=	Chewing engine for IBus
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
+		${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:${PORTSDIR}/devel/cmake-fedora \
 		ibus-daemon:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
 LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
@@ -27,5 +28,7 @@ USE_GNOME=	gconf2 gtk20
 USE_XORG=	xtst
 
 PROJECTHOST=	ibus
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
