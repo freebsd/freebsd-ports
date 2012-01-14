@@ -1545,6 +1545,7 @@
     SUBDIR += py-urlgrabber
     SUBDIR += py-urljr
     SUBDIR += py-utidy
+    SUBDIR += py-waitress
     SUBDIR += py-webhelpers
     SUBDIR += py-webkitgtk
     SUBDIR += py-webob
