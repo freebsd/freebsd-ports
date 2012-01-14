@@ -1,6 +1,0 @@
-XPCOM Component Viewer enumerates all components and iterfaces
-availble to JavaScript. It provides the ability to filter by
-regular expression.
-
-Author: Robert Ginda
-WWW: http://hacksrus.com/~ginda/cview/
