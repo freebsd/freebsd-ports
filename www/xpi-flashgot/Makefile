@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	flashgot
-PORTVERSION=	1.2.1.09
-PORTREVISION=	1
-#DISTVERSIONSUFFIX=	-fx+mz+tb+ns+sm+fl
+PORTVERSION=	1.3.7
 CATEGORIES=	www
-MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
+MASTER_SITES=	http://software.informaction.com/data/releases/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Download links using popular download managers
 
 XPI_ID=		{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}
 XPI_NUM=	220
-XPI_FILES=	FlashGot_License.txt GPL.txt chrome/flashgot.jar chrome.manifest components/.autoreg \
-		components/flashgotService.js defaults/preferences/flashgot.js install.js install.rdf
-XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
