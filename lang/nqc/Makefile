@@ -28,7 +28,8 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800064
-BROKEN=		does not build
+USE_DOS2UNIX=	rcxlib/RCX_USBTowerPipe_fbsd.cpp
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rcxlib-RCX_USBTowerPipe_fbsd.cpp
 .endif
 
 .include <bsd.port.post.mk>
