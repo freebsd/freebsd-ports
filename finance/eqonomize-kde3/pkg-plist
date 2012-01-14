@@ -38,7 +38,7 @@ share/locale/nl/LC_MESSAGES/eqonomize.mo
 share/locale/sk/LC_MESSAGES/eqonomize.mo
 share/locale/sv/LC_MESSAGES/eqonomize.mo
 share/mimelnk/application/x-eqonomize.desktop
-@dirrm %%DOCSDIR%%/common
+%%DOCSDIR%%/common
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrmtry share/applications/kde
