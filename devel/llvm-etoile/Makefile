@@ -53,10 +53,6 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .include "Makefile.svn_rev"
 .endif
 
-.if ${OSVERSION} >= 900007
-BROKEN=		relocation R_X86_64_PC32 happens with -fPIC
-.endif
-
 .if defined(BOOTSTRAP)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
