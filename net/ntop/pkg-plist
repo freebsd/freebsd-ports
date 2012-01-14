@@ -1,3 +1,4 @@
+@stopdaemon ntop
 bin/ntop
 etc/ntop/GeoIPASNum.dat
 etc/ntop/GeoLiteCity.dat
@@ -453,7 +454,6 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/python/templates/rrdAlarmConfigurator.tmpl
 %%DATADIR%%/python/templates/rrdAlarmConfiguratorHelp.tmpl
 %%DATADIR%%/python/templates/rrdAlarmStart.tmpl
-@exec mkdir -p %%DBDIR%%/ntop
 @dirrm %%DATADIR%%/html/MochiKit
 @dirrm %%DATADIR%%/html/PlotKit
 @dirrm %%DATADIR%%/html/img_inquisitor
@@ -475,3 +475,7 @@ lib/ntop/plugins/sflowPlugin.so
 @dirrm etc/ntop
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
+@exec mkdir -p %%DBDIR%%/ntop
+@exec chown -R nobody:nobody %%DBDIR%%/ntop
+@unexec rmdir %%DBDIR%%/ntop 2>/dev/null || true
+@unexec rmdir %%DBDIR%% 2>/dev/null || true

@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
@@ -21,10 +21,8 @@ LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 		dot:${PORTSDIR}/graphics/graphviz \
 		geoiplookup:${PORTSDIR}/net/GeoIP
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts \
-		rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
-		geoiplookup:${PORTSDIR}/net/GeoIP
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		 ${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
@@ -53,7 +51,6 @@ USE_RC_SUBR=	ntop.sh
 
 ##
 ## Available knobs:
-##    WITH_LOCALE:        Enable locale (i18n) support.
 ##    WITH_PCAP_PORT:     Use libpcap from ports.
 ##    WITH_XMLDUMP:       Enable XML Dump support.
 ##
@@ -64,7 +61,7 @@ OPTIONS=	PCAP_PORT "Use libpcap from ports." Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PCAP_PORT)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-pcap-root=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-pcap-root=/usr

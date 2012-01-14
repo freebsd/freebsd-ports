@@ -1,6 +1,6 @@
---- ./Makefile.am.orig	2011-02-02 10:24:56.000000000 +0100
-+++ ./Makefile.am	2011-02-02 10:50:06.000000000 +0100
-@@ -68,8 +68,6 @@
+--- Makefile.am.orig	2011-03-03 08:44:59.000000000 -0500
++++ Makefile.am	2011-12-28 14:25:08.000000000 -0500
+@@ -61,8 +61,6 @@
  
  ETTER_PASSIVE_FILE = etter.finger.os
  ETTER_PASSIVE = $(ETTER_PASSIVE_FILE).gz
@@ -9,7 +9,25 @@
  
  NTOPDATA = ntop-cert.pem \
             $(ETTER_PASSIVE) \
-@@ -337,7 +335,6 @@
+@@ -303,15 +301,14 @@
+ 	  echo "  WARNING: This install created a directory for the ntop"; \
+ 	  echo "           files and databases:"; \
+ 	  echo ""; \
+-	  echo "             $(DESTDIR)/$(datadir)/ntop"; \
++	  echo "             $(CFG_DBFILE_DIR)"; \
+ 	  echo ""; \
+ 	  echo "           This directory MUST be owned by the user"; \
+ 	  echo "           which you are going to use to run ntop."; \
+ 	  echo ""; \
+ 	  echo "           The command you must issue is something like:"; \
+ 	  echo ""; \
+-	  echo "           chown -R ntop.ntop $(DESTDIR)/$(datadir)/ntop"; \
+-	  echo "     or    chown -R ntop:users $(DESTDIR)/$(datadir)/ntop"; \
++	  echo "           chown -R nobody:nobody $(CFG_DBFILE_DIR)"; \
+ 	  echo ""; \
+ 	  echo "           man chown to check the syntax for YOUR system"; \
+ 	  echo ""; \
+@@ -329,7 +326,6 @@
  	chcon -t textrel_shlib_t $(DESTDIR)$(libdir)/*ntop*.so
  
  install-data-local: ntop.txt ntop.html faq.html dnetter
@@ -17,7 +35,7 @@
  	@if ! test -d $(DESTDIR)/$(datadir)/ntop; then \
  	  $(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop; \
  	  touch $(DESTDIR)/$(datadir)/ntop/warnuser; \
-@@ -373,21 +370,6 @@
+@@ -365,21 +361,6 @@
  	@echo ""
  	@echo ""
  	@echo -n "Preparing "
@@ -39,7 +57,7 @@
  	@echo -n "New file lines are:  "
  	@gunzip -c oui.txt.gz | wc -l
  	@echo ""
-@@ -406,34 +388,6 @@
+@@ -398,34 +379,6 @@
  	@echo "Preparing "
  	@echo ""
  
