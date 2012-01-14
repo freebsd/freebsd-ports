@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Template/Xslate/.packlist
 %%SITE_PERL%%/Dancer/Template/Xslate.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Template/Xslate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Template
