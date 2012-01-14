@@ -1130,7 +1130,9 @@ MASTER_SITE_SAVANNAH+= \
 	http://mirror.lihnidos.org/GNU/savannah/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
-	http://download.savannah.gnu.org/releases-noredirect/%SUBDIR%/
+	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/ \
+	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/ \
+	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
