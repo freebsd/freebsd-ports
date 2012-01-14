@@ -8,7 +8,6 @@ bin/icas
 bin/pgiac
 bin/xcas
 bin/xcasnew
-bin/xgiac
 include/giac/alg_ext.h
 include/giac/cocoa.h
 include/giac/config.h
@@ -65,6 +64,8 @@ include/giac/symbolic.h
 include/giac/tex.h
 include/giac/threaded.h
 include/giac/ti89.h
+include/giac/tinymt32.h
+include/giac/tinymt32_license.h
 include/giac/unary.h
 include/giac/usual.h
 include/giac/vecteur.h
@@ -1197,6 +1198,7 @@ share/giac/doc/en/html_mall
 share/giac/doc/en/html_mtt
 share/giac/doc/en/html_vall
 share/giac/doc/en/keywords
+share/giac/doc/en/troussesurvie_en.pdf
 share/giac/doc/en/xcasex
 share/giac/doc/en/xcasmenu
 share/giac/doc/es/html_mall
@@ -2242,6 +2244,7 @@ share/giac/doc/fr/cascmd_fr/cascmd_fr973.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr974.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr975.html
 share/giac/doc/fr/cascmd_fr/cascmd_fr976.html
+share/giac/doc/fr/cascmd_fr/cascmd_fr977.html
 share/giac/doc/fr/cascmd_fr/contents_motif.gif
 share/giac/doc/fr/cascmd_fr/index.html
 share/giac/doc/fr/cascmd_fr/next_motif.gif
@@ -2327,6 +2330,13 @@ share/giac/doc/fr/casexo/casexo050.png
 share/giac/doc/fr/casexo/casexo051.png
 share/giac/doc/fr/casexo/casexo052.png
 share/giac/doc/fr/casexo/casexo053.png
+share/giac/doc/fr/casexo/casexo054.png
+share/giac/doc/fr/casexo/casexo055.png
+share/giac/doc/fr/casexo/casexo056.png
+share/giac/doc/fr/casexo/casexo057.png
+share/giac/doc/fr/casexo/casexo058.png
+share/giac/doc/fr/casexo/casexo059.png
+share/giac/doc/fr/casexo/casexo060.png
 share/giac/doc/fr/casexo/contents_motif.gif
 share/giac/doc/fr/casexo/index.html
 share/giac/doc/fr/casexo/next_motif.gif
@@ -2501,6 +2511,7 @@ share/giac/doc/fr/casrouge/casrouge017.html
 share/giac/doc/fr/casrouge/casrouge017.png
 share/giac/doc/fr/casrouge/casrouge018.html
 share/giac/doc/fr/casrouge/casrouge018.png
+share/giac/doc/fr/casrouge/casrouge019.html
 share/giac/doc/fr/casrouge/casrouge019.png
 share/giac/doc/fr/casrouge/casrouge020.png
 share/giac/doc/fr/casrouge/casrouge021.png
@@ -2625,6 +2636,7 @@ share/giac/doc/fr/html_mall
 share/giac/doc/fr/html_mtt
 share/giac/doc/fr/html_vall
 share/giac/doc/fr/keywords
+share/giac/doc/fr/troussesurvie_fr.pdf
 share/giac/doc/fr/tutoriel/contents_motif.gif
 share/giac/doc/fr/tutoriel/index.html
 share/giac/doc/fr/tutoriel/next_motif.gif
@@ -2712,6 +2724,9 @@ share/giac/doc/pari/top.gif
 share/giac/doc/pt/keywords
 share/giac/doc/pt/xcasex
 share/giac/doc/pt/xcasmenu
+share/giac/doc/zh/keywords
+share/giac/doc/zh/xcasex
+share/giac/doc/zh/xcasmenu
 share/giac/examples/Exemples/analyse/newton.xws
 share/giac/examples/Exemples/analyse/ode.xws
 share/giac/examples/Exemples/analyse/series_alt.xws
@@ -2955,6 +2970,7 @@ share/locale/es/LC_MESSAGES/giac.mo
 share/locale/fr/LC_MESSAGES/giac.mo
 share/locale/it/LC_MESSAGES/giac.mo
 share/locale/pt/LC_MESSAGES/giac.mo
+share/locale/zh/LC_MESSAGES/giac.mo
 share/pixmaps/xcas.xpm
 @dirrm share/giac/examples/tortue
 @dirrm share/giac/examples/simulation
@@ -2982,6 +2998,7 @@ share/pixmaps/xcas.xpm
 @dirrm share/giac/examples/Exemples/analyse
 @dirrm share/giac/examples/Exemples
 @dirrm share/giac/examples
+@dirrm share/giac/doc/zh
 @dirrm share/giac/doc/pt
 @dirrm share/giac/doc/pari
 @dirrm share/giac/doc/fr/tutoriel
