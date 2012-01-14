@@ -1,0 +1,4 @@
+sbin/usb_modeswitch
+etc/usb_modeswitch.conf.sample
+@exec if [ ! -f %D/etc/usb_modeswitch.conf ] ; then cp -p %D/%F %B/usb_modeswitch.conf; fi
+@unexec if cmp -s %D/etc/usb_modeswitch.conf.sample %D/etc/usb_modeswitch.conf; then rm -f %D/etc/usb_modeswitch.conf ; fi

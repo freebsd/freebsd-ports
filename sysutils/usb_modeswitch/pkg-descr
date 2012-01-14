@@ -1,0 +1,11 @@
+USB_ModeSwitch is (surprise!) a mode switching tool for controlling
+"flip flop" (multiple device) USB gear.
+
+USB_ModeSwitch makes this process easy to handle by taking the important
+parameters from a configuration file and doing all the initialization
+and communication stuff, with heavy help from "libusb". It is mainly
+used automatically - via udev events and rules - to do the switch
+without any user interaction. But it can also be run as a command line
+tool, usually when trying to make unknown devices work with it.
+
+WWW: http://www.draisberghof.de/usb_modeswitch/
