@@ -895,6 +895,7 @@
     SUBDIR += tty-clock
     SUBDIR += ttyload
     SUBDIR += tw_cli
+    SUBDIR += tzdialog
     SUBDIR += ua
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy
