@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_Shell
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	shells www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,19 +17,7 @@ USE_PHP=	pcre tokenizer readline
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		PHP/Shell.php \
-		PHP/Shell/Commands.php PHP/Shell/Extensions.php \
-		PHP/Shell/Options.php \
-		PHP/Shell/Extensions/Autoload.php \
-		PHP/Shell/Extensions/AutoloadDebug.php \
-		PHP/Shell/Extensions/Colour.php \
-		PHP/Shell/Extensions/ExecutionTime.php \
-		PHP/Shell/Extensions/InlineHelp.php \
-		PHP/Shell/Extensions/Prototypes.php \
-		PHP/Shell/Extensions/VerbosePrint.php
-EXAMPLES=	php-shell-cmd.php
-SCRIPTSFILES=	php-shell-cmd.php php-shell.bat \
-		php-shell.sh
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
