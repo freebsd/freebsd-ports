@@ -16,7 +16,7 @@ arpwatch_dir=${arpwatch_dir:-"%%PREFIX%%/arpwatch/"}
 . /etc/rc.subr
 
 name=arpwatch
-rcvar=`set_rcvar`
+rcvar=arpwatch_enable
 required_dirs=${arpwatch_dir}
 
 load_rc_config ${name}

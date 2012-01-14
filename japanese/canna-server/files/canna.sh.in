@@ -25,7 +25,7 @@ canna_flags=${canna_flags:-"-u bin"}		# Flags to canna program
 . /etc/rc.subr
 
 name="canna"
-rcvar=`set_rcvar`
+rcvar=canna_enable
 command="%%PREFIX%%/sbin/cannaserver"
 start_precmd="canna_start_precmd"
 stop_cmd="canna_stop_cmd"

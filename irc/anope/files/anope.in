@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="anope"
-rcvar=`set_rcvar`
+rcvar=anope_enable
 command=%%PREFIX%%/libexec/anope/services
 
 # set defaults

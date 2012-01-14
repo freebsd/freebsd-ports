@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="thales"
-rcvar=`set_rcvar`
+rcvar=thales_enable
 
 command="%%PREFIX%%/sbin/thales"
 

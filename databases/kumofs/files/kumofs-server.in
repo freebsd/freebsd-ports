@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="kumofs_server"
-rcvar=`set_rcvar`
+rcvar=kumofs_server_enable
 
 load_rc_config $name
 

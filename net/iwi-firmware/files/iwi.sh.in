@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="%%DRIVERNAME%%"
-rcvar=`set_rcvar`
+rcvar=%%DRIVERNAME%%_enable
 
 start_cmd="%%DRIVERNAME%%_start_cmd"
 stop_cmd="%%DRIVERNAME%%_stop_cmd"

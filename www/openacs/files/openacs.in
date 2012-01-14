@@ -1,8 +1,10 @@
 #! /bin/sh
-#
+
+# $FreeBSD$
 #
 # PROVIDE: openacs
 # REQUIRE: DAEMON NETWORKING SERVERS
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable openacs:
 #
@@ -13,8 +15,10 @@
 . /etc/rc.subr
 
 name=openacs
+rcvar=openacs_enable
 
 load_rc_config ${name}
+
 : ${openacs_enable="NO"}
 : ${openacs_user="%%OPENACS_USER%%"}
 : ${openacs_group="%%OPENACS_GROUP%%"}
@@ -23,7 +27,6 @@ load_rc_config ${name}
 : ${openacs_prog=%%AOLSERVERBASE%%/bin/nsd}
 : ${openacs_pidfile=/var/run/openacs.pid}
 
-rcvar=`set_rcvar`
 pidfile=${openacs_pidfile}
 start_postcmd="start_postcmd"
 stop_postcmd="stop_postcmd"

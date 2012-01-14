@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="gateway6"
-rcvar=`set_rcvar`
+rcvar=gateway6_enable
 
 command=%%PREFIX%%/bin/gw6c
 required_files=%%PREFIX%%/etc/gw6c.conf

@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=mpdas
-rcvar=`set_rcvar`
+rcvar=mpdas_enable
 
 command=%%PREFIX%%/bin/mpdas
 

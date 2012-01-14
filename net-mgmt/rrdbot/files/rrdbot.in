@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="rrdbot"
-rcvar=`set_rcvar`
+rcvar=rrdbot_enable
 
 load_rc_config $name
 

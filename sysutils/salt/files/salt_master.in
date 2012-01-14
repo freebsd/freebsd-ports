@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="salt_master"
-rcvar="${name}_enable"
+rcvar=salt_master_enable
 
 load_rc_config ${name}
 

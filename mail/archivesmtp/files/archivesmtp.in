@@ -6,7 +6,7 @@
 . /etc/rc.subr
 
 name="archivesmtp"
-rcvar=`set_rcvar`
+rcvar=archivesmtp_enable
 
 command="%%PREFIX%%/sbin/${name}"
 

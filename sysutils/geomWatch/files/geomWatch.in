@@ -19,7 +19,7 @@ geomwatch_pidfile="/var/run/geomWatch.pid"
 . /etc/rc.subr
 
 name="geomwatch"
-rcvar=`set_rcvar`
+rcvar=geomwatch_enable
 command="%%PREFIX%%/sbin/geomWatch"
 
 load_rc_config $name

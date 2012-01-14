@@ -18,7 +18,7 @@ qpopper_flags=${qpopper_flags-""}
 . /etc/rc.subr
 
 name=qpopper
-rcvar=`set_rcvar`
+rcvar=qpopper_enable
 command=%%PREFIX%%/libexec/qpopper
 command_args="${qpopper_flags}"
 

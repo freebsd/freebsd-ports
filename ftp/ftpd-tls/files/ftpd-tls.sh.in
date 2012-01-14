@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="ftpd_tls"
-rcvar=${name}_enable
+rcvar=ftpd_tls_enable
 
 command=%%PREFIX%%/libexec/ftpd-tls
 command_args="> /dev/null"

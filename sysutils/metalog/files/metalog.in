@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name=metalog
-rcvar=`set_rcvar`
+rcvar=metalog_enable
 pidfile="/var/run/metalog.pid"
 command="%%PREFIX%%/sbin/${name}"
 command_args="--daemonize"

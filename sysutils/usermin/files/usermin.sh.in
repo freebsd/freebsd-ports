@@ -15,7 +15,7 @@ usermin_enable=${usermin_enable:-"NO"}
 . /etc/rc.subr
 
 name=usermin
-rcvar=`set_rcvar`
+rcvar=usermin_enable
 
 procname=%%PERL5%%
 pidfile=/var/log/usermin/miniserv.pid

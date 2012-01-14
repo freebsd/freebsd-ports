@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="couchdb"
-rcvar=${name}_enable
+rcvar=couchdb_enable
 
 load_rc_config $name
 

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="watchd"
-rcvar=${name}_enable
+rcvar=watchd_enable
 
 load_rc_config $name
 

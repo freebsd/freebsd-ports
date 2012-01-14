@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name=balance
-rcvar=`set_rcvar`
+rcvar=balance_enable
 command=%%PREFIX%%/bin/balance
 
 start_cmd=start_cmd

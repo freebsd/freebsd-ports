@@ -18,7 +18,7 @@ sqwebmaild_enable=${sqwebmaild_enable-"NO"}
 . /etc/rc.subr
 
 name="sqwebmaild"
-rcvar=`set_rcvar`
+rcvar=sqwebmaild_enable
 command="%%PREFIX%%/libexec/sqwebmaild.rc"
 
 start_cmd="sqwebmaild_cmd start"

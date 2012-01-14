@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=%%APP_NAME%%
-rcvar=`set_rcvar`
+rcvar=%%APP_NAME%%_enable
 
 command="%%PREFIX%%/sbin/%%APP_NAME%%ctl"
 command_args="start"

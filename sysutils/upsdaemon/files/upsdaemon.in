@@ -38,7 +38,7 @@
 . /etc/rc.subr
 
 name=upsdaemon
-rcvar=`set_rcvar`
+rcvar=upsdaemon_enable
 
 command=/usr/local/sbin/upsdaemon
 

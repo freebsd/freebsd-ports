@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="kumofs_manager"
-rcvar=`set_rcvar`
+rcvar=kumofs_manager_enable
 
 load_rc_config $name
 

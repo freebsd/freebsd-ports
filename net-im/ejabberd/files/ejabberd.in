@@ -20,7 +20,7 @@ ejabberd_epmd_address=${ejabberd_epmd_address-"127.0.0.1"}
 . /etc/rc.subr
 
 name="ejabberd"
-rcvar=`set_rcvar`
+rcvar=ejabberd_enable
 
 reload_cmd="ejabberd_reload"
 restart_cmd="ejabberd_reload"

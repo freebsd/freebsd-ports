@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=clamav_clamd
-rcvar=`set_rcvar`
+rcvar=clamav_clamd_enable
 
 command=%%PREFIX%%/sbin/clamd
 required_dirs=%%DBDIR%%

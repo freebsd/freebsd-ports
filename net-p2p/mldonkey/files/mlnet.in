@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="mlnet"
-rcvar=`set_rcvar`
+rcvar=mlnet_enable
 command="%%PREFIX%%/bin/${name}"
 procname="%%PREFIX%%/bin/${name}-real"
 

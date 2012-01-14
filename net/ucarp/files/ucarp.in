@@ -42,7 +42,7 @@
 . /etc/rc.subr
 
 name="ucarp"
-rcvar=`set_rcvar`
+rcvar=ucarp_enable
 
 load_rc_config $name
 

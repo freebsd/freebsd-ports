@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="icinga"
-rcvar=`set_rcvar`
+rcvar=icinga_enable
 
 command="%%PREFIX%%/bin/icinga"
 command_args="-d"

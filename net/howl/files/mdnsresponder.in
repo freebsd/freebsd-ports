@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=mdnsresponder
-rcvar=`set_rcvar`
+rcvar=mdnsresponder_enable
 
 command=%%PREFIX%%/bin/mDNSResponder
 

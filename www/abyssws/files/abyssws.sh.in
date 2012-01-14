@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=abyssws
-rcvar=${name}_enable
+rcvar=abyssws_enable
 
 command="%%PREFIX%%/lib/abyssws/abyssws"
 command_args="-d >/dev/null"

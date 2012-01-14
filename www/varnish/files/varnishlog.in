@@ -34,7 +34,7 @@
 . /etc/rc.subr
 
 name="varnishlog"
-rcvar=`set_rcvar`
+rcvar=varnishlog_enable
 
 command="%%PREFIX%%/bin/${name}"
 

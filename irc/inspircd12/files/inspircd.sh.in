@@ -29,7 +29,7 @@
 . /etc/rc.subr
 
 name=inspircd
-rcvar=`set_rcvar`
+rcvar=inspircd_enable
 
 load_rc_config ${name}
 

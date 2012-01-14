@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=jftpgw
-rcvar=`set_rcvar`
+rcvar=jftpgw_enable
 
 command=%%PREFIX%%/sbin/jftpgw
 jftpgw_config=${jftpgw_config:-"%%PREFIX%%/etc/jftpgw.conf"}

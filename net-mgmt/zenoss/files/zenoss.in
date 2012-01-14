@@ -19,7 +19,7 @@ load_rc_config zenoss
 zenoss_enable=${zenoss_enable:-"NO"}
 
 name=zenoss
-rcvar=`set_rcvar`
+rcvar=zenoss_enable
 extra_commands="init"
 
 start_cmd="zenoss_command start"

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=proftpd
-rcvar=`set_rcvar`
+rcvar=proftpd_enable
 
 command=%%PREFIX%%/sbin/proftpd
 pidfile=$(grep PidFile /usr/local/etc/proftpd.conf | awk '{print($2)}')

@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="shibboleth_sp"
-rcvar=${name}_enable
+rcvar=shibboleth_sp_enable
 
 command=${shibboleth_sp_program:-%%PREFIX%%/sbin/shibd}
 pidfile="${shibboleth_sp_pidfile:-/var/run/${name}.pid}"

@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="%%NAME%%"
-rcvar=`set_rcvar`
+rcvar=%%NAME%%_enable
 
 command="%%PREFIX%%/bin/rsync"
 command_args="--daemon"

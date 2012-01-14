@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="kqemu"
-rcvar=${name}_enable
+rcvar=kqemu_enable
 
 load_rc_config $name
 

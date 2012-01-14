@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# $FreeBSD$
+#
 # PROVIDE: kannel_smsbox kannel_wapbox kannel_bearerbox
 # REQUIRE: NETWORKING SERVERS 
 # BEFORE: LOGIN
@@ -7,7 +10,8 @@
 . /etc/rc.subr
 
 name=kannel
-rcvar=`set_rcvar`
+rcvar=kannel_enable
+
 command="%%PREFIX%%/sbin/run_kannel_box"
 extra_commands="reload"
 sig_reload=SIGUSR1
@@ -33,7 +37,7 @@ fi
 
 # bearerbox
 name=kannel_bearerbox
-rcvar=`set_rcvar`
+rcvar=kannel_bearerbox_enable
 pidfile=/var/run/kannel/${name}.pid
 # Defaults
 kannel_bearerbox_user=${kannel_bearerbox_user:-"${kannel_user}"}
@@ -48,7 +52,7 @@ _rc_restart_done=false
 
 # smsbox
 name=kannel_smsbox
-rcvar=`set_rcvar`
+rcvar=kannel_smsbox_enable
 pidfile=/var/run/kannel/${name}.pid
 # Defaults
 kannel_smsbox_user=${kannel_smsbox_user:-"${kannel_user}"}
@@ -63,7 +67,7 @@ _rc_restart_done=false
 
 # wapbox
 name=kannel_wapbox
-rcvar=`set_rcvar`
+rcvar=kannel_wapbox_enable
 pidfile=/var/run/kannel/${name}.pid
 # Defaults
 kannel_wapbox_user=${kannel_wapbox_user:-"${kannel_user}"}

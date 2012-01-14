@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="mongod"
-rcvar=${name}_enable
+rcvar=mongod_enable
 
 command=%%PREFIX%%/bin/${name}
 

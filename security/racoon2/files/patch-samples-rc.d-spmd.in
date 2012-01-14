@@ -5,7 +5,7 @@
  
  name="spmd"
 -rcvar=$name
-+rcvar=`set_rcvar`
++rcvar=spmd_enable
  command="@sbindir@/${name}"
  extra_commands="reload"
  pidfile="/var/run/${name}.pid"

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=freeswitch
-rcvar=`set_rcvar`
+rcvar=freeswitch_enable
 
 load_rc_config $name
 

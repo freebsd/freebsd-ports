@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=flarei
-rcvar=`set_rcvar`
+rcvar=flarei_enable
 command=%%PREFIX%%/bin/${name}
 extra_commands="reload"
 start_precmd=${name}_prestart

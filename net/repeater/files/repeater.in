@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=repeater
-rcvar=`set_rcvar`
+rcvar=repeater_enable
 
 load_rc_config $name
 

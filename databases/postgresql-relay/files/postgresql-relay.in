@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=postgresqlrelay
-rcvar=`set_rcvar`
+rcvar=postgresqlrelay_enable
 
 command=%%PREFIX%%/bin/postgresql-relay
 required_files=%%PREFIX%%/etc/postgresql-relay.conf

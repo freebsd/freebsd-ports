@@ -24,7 +24,7 @@ example_agent_conf=${example_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/example_ag
 example_agent_flags=${example_agent_flags:-"-D"}
 
 name="example_agent"
-rcvar=`set_rcvar`
+rcvar=example_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/example_agent.tcl"
 command_args="-c ${example_agent_conf} ${example_agent_flags}"
 procname="%%PREFIX%%/bin/tclsh8.4"

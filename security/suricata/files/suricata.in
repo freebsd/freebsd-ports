@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="suricata"
-rcvar=`set_rcvar`
+rcvar=suricata_enable
 
 command="%%PREFIX%%/bin/suricata"
 

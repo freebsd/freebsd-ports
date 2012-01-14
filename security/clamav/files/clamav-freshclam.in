@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=clamav_freshclam
-rcvar=`set_rcvar`
+rcvar=clamav_freshclam_enable
 
 command=%%PREFIX%%/bin/freshclam
 pidfile=%%RUNDIR%%/freshclam.pid

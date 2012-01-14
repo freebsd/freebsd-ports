@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="kumofs_gateway"
-rcvar=`set_rcvar`
+rcvar=kumofs_gateway_enable
 
 load_rc_config $name
 

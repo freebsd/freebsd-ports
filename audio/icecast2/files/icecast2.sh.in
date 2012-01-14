@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="icecast"
-rcvar=`set_rcvar`
+rcvar=icecast_enable
 
 command="%%PREFIX%%/bin/icecast"
 command_args="-b 1>/dev/null"

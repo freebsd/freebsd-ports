@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=musicpd
-rcvar=`set_rcvar`
+rcvar=musicpd_enable
 start_precmd="${name}_getpidfile"
 stop_precmd="${name}_getpidfile"
 

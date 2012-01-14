@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="ircd_hybrid"
-rcvar=`set_rcvar`
+rcvar=ircd_hybrid_enable
 
 command=/usr/local/bin/ircd
 pidfile=/var/run/ircd/ircd.pid

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=masqmail
-rcvar=`set_rcvar`
+rcvar=masqmail_enable
 
 command=%%PREFIX%%/sbin/masqmail
 required_dirs=/var/log/masqmail

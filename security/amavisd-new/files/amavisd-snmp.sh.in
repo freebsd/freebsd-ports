@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=amavisd_snmp
-rcvar=`set_rcvar`
+rcvar=amavisd_snmp_enable
 
 command="%%PREFIX%%/sbin/amavisd-snmp-subagent"
 command_interpreter="%%PERL%%"

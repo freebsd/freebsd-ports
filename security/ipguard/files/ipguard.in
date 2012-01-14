@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=ipguard
-rcvar=`set_rcvar`
+rcvar=ipguard_enable
 start_precmd=ipguard_precmd
 command=%%PREFIX%%/sbin/${name}
 

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="ngircd"
-rcvar=`set_rcvar`
+rcvar=ngircd_enable
 
 load_rc_config $name
 

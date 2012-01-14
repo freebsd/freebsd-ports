@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="cherokee"
-rcvar=`set_rcvar`
+rcvar=cherokee_enable
 
 load_rc_config $name
 

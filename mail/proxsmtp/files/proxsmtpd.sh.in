@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="proxsmtpd"
-rcvar=${name}_enable
+rcvar=proxsmtpd_enable
 
 load_rc_config ${name}
 

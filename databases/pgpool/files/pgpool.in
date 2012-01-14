@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=pgpool
-rcvar=${name}_enable
+rcvar=pgpool_enable
 
 load_rc_config $name
 

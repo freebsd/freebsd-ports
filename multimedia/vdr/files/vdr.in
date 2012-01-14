@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name=vdr
-rcvar=`set_rcvar`
+rcvar=vdr_enable
 
 command="%%PREFIX%%/bin/vdr"
 command_args="-d"

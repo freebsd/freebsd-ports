@@ -20,7 +20,7 @@ totd_enable=${totd_enable:-"NO"}		# Enable totd
 . /etc/rc.subr
 
 name="totd"
-rcvar=`set_rcvar`
+rcvar=totd_enable
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 required_files="%%PREFIX%%/etc/${name}.conf"

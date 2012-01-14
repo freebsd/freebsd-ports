@@ -55,7 +55,7 @@
 . /etc/rc.subr
 
 name="sancp"
-rcvar=`set_rcvar`
+rcvar=sancp_enable
 
 command="%%PREFIX%%/bin/sancp"
 

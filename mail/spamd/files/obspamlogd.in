@@ -24,7 +24,7 @@ obspamlogd_enable=${obspamlogd_enable:-"NO"}
 . /etc/rc.subr
 
 name="obspamlogd"
-rcvar=`set_rcvar`
+rcvar=obspamlogd_enable
 
 command="%%PREFIX%%/libexec/spamlogd"
 start_precmd="obspamlogd_precmd"

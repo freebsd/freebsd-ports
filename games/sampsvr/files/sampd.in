@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="sampd"
-rcvar=${name}_enable
+rcvar=sampd_enable
 
 load_rc_config $name
 

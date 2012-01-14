@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="monitord"
-rcvar=`set_rcvar`
+rcvar=monitord_enable
 
 load_rc_config $name
 : ${monitord_enable="NO"}

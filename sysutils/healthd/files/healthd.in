@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name=healthd
-rcvar=`set_rcvar`
+rcvar=healthd_enable
 
 extra_commands="reload"
 command=%%PREFIX%%/sbin/healthd

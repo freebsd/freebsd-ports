@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=nntpcached
-rcvar=`set_rcvar`
+rcvar=nntpcached_enable
 
 load_rc_config $name
 

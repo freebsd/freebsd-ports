@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="openbgpd"
-rcvar=`set_rcvar`
+rcvar=openbgpd_enable
 
 extra_commands="reload"
 command="%%PREFIX%%/sbin/bgpd"

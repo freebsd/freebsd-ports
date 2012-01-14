@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="bacula_fd"
-rcvar=${name}_enable
+rcvar=bacula_fd_enable
 command=%%PREFIX%%/sbin/bacula-fd
 
 load_rc_config $name

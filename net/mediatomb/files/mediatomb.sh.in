@@ -25,7 +25,7 @@ mediatomb_logfile=${mediatomb_logfile-"%%MEDIATOMB_DIR%%/mediatomb.log"}
 mediatomb_pidfile=${mediatomb_pidfile-"%%MEDIATOMB_DIR%%/mediatomb.pid"}
 
 name="mediatomb"
-rcvar=`set_rcvar`
+rcvar=mediatomb_enable
 
 load_rc_config $name
 

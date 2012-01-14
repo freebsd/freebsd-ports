@@ -25,7 +25,7 @@
 . /etc/rc.subr
 
 name="transmission"
-rcvar=${name}_enable
+rcvar=transmission_enable
 
 command=%%PREFIX%%/bin/transmission-daemon
 

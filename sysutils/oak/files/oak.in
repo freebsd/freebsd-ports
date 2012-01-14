@@ -12,7 +12,7 @@ oak_enable="${oak_enable-NO}"
 . /etc/rc.subr
 
 name="oak"
-rcvar=`set_rcvar`
+rcvar=oak_enable
 command="%%PREFIX%%/bin/oak"
 
 load_rc_config $name

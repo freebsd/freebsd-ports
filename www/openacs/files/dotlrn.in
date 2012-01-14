@@ -1,8 +1,10 @@
 #! /bin/sh
-#
+
+# $FreeBSD$
 #
 # PROVIDE: dotlrn
 # REQUIRE: DAEMON NETWORKING SERVERS
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable dotlrn:
 #
@@ -13,8 +15,10 @@
 . /etc/rc.subr
 
 name=dotlrn
+rcvar=dotlrn_enable
 
 load_rc_config ${name}
+
 : ${dotlrn_enable="NO"}
 : ${dotlrn_user="%%OPENACS_USER%%"}
 : ${dotlrn_group="%%OPENACS_GROUP%%"}
@@ -23,7 +27,6 @@ load_rc_config ${name}
 : ${dotlrn_prog=%%AOLSERVERBASE%%/bin/nsd}
 : ${dotlrn_pidfile=/var/run/dotlrn.pid}
 
-rcvar=`set_rcvar`
 pidfile=${dotlrn_pidfile}
 start_postcmd="start_postcmd"
 stop_postcmd="stop_postcmd"

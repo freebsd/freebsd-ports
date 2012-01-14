@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="memcachedb"
-rcvar=`set_rcvar`
+rcvar=memcachedb_enable
 
 load_rc_config $name
 

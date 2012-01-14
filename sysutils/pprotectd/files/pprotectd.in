@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="pprotectd"
-rcvar=`set_rcvar`
+rcvar=pprotectd_enable
 
 load_rc_config "$name"
 

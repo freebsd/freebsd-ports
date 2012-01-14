@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pbs_server"
-rcvar=${name}_enable
+rcvar=pbs_server_enable
 
 pidfile=/var/spool/torque/server_priv/server.lock
 command=%%PREFIX%%/sbin/${name}

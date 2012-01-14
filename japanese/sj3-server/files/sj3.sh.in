@@ -21,7 +21,7 @@ sj3_enable=${sj3_enable:-"NO"}		# Enable sj3
 . /etc/rc.subr
 
 name="sj3"
-rcvar=`set_rcvar`
+rcvar=sj3_enable
 command="%%PREFIX%%/sbin/sj3serv"
 start_precmd="sj3serv_precmd"
 

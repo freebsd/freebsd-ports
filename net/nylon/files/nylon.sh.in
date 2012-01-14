@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=nylon
-rcvar=`set_rcvar`
+rcvar=nylon_enable
 
 command=%%PREFIX%%/bin/nylon
 

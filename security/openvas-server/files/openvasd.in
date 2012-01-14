@@ -25,7 +25,7 @@ openvasd_flags="-D -q"				# Flags to openvasd program
 . /etc/rc.subr
 
 name="openvasd"
-rcvar=`set_rcvar`
+rcvar=openvasd_enable
 command="${prefix}/sbin/openvasd"
 pidfile="/var/run/openvasd.pid"
 required_files="${prefix}/etc/openvas/openvasd.conf"

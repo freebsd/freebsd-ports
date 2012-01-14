@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="quickml"
-rcvar=`set_rcvar`
+rcvar=quickml_enable
 
 command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%RUBY%%"

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="samba4"
-rcvar=$(set_rcvar)
+rcvar=samba4_enable
 
 load_rc_config "${name}"
 

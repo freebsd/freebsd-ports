@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="jabber_pymsn"
-rcvar=`set_rcvar`
+rcvar=jabber_pymsn_enable
 
 load_rc_config $name
 

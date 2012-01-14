@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=dkimproxy_in
-rcvar=`set_rcvar`
+rcvar=dkimproxy_in_enable
 
 # set defaults
 : ${dkimproxy_in_enable="NO"}

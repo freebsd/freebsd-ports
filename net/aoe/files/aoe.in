@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="aoe"
-rcvar="`set_rcvar`"
+rcvar=aoe_enable
 start_cmd="aoe_start"
 stop_cmd=":"
 

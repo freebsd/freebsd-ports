@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name=radmind
-rcvar=`set_rcvar`
+rcvar=radmind_enable
 
 command=%%PREFIX%%/sbin/radmind
 required_files=%%RADMIND_BASE_DIR%%/config

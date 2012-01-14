@@ -43,7 +43,7 @@
 . /etc/rc.subr
 
 name=dnsmasq
-rcvar=$(set_rcvar)
+rcvar=dnsmasq_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

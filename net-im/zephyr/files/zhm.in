@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="zhm"
-rcvar="zhm_enable"
+rcvar=zhm_enable
 start_cmd="zhm_start"
 stop_postcmd="zhm_postcmd"
 start_precmd="zhm_precmd"

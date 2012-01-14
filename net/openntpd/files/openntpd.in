@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=openntpd
-rcvar=`set_rcvar`
+rcvar=openntpd_enable
 
 command=%%PREFIX%%/sbin/ntpd
 required_files=%%PREFIX%%/etc/ntpd.conf

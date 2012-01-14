@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=twnn
-rcvar=`set_rcvar`
+rcvar=twnn_enable
 command=%%PREFIX%%/bin/cWnn4/tserver
 procname=%%PREFIX%%/bin/cWnn4/tserver
 start_precmd=start_precmd

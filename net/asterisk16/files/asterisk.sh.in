@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=asterisk
-rcvar=`set_rcvar`
+rcvar=asterisk_enable
 
 extra_commands="reload"
 

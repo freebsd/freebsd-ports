@@ -39,7 +39,7 @@
 . /etc/rc.subr
 
 name="ifstated"
-rcvar=`set_rcvar`
+rcvar=ifstated_enable
 
 command="%%PREFIX%%/sbin/ifstated"
 pidfile="/var/run/${name}.pid"

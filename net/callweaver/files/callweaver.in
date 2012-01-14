@@ -15,7 +15,7 @@ stop_precmd=callweaver_shutdown
 sig_stop=KILL
 
 name=callweaver
-rcvar=`set_rcvar`
+rcvar=callweaver_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${callweaver_pidfile:-"/var/run/${name}.pid"}

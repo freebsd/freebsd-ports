@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name=milterbogom
-rcvar=`set_rcvar`
+rcvar=milterbogom_enable
 command=%%PREFIX%%/sbin/bogom
 start_precmd="bogom_precmd"
 stop_postcmd="bogom_postcmd"

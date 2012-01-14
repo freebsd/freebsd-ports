@@ -12,6 +12,7 @@
 . /etc/rc.subr
 
 name=trircd
+rcvar=trircd_enable
 
 load_rc_config ${name}
 : ${trircd_enable="NO"}
@@ -22,7 +23,6 @@ load_rc_config ${name}
 : ${trircd_pidfile=%%TRIRCD_RUNDIR%%/ircd.pid}
 : ${trircd_flags="-d ${trircd_confdir} -c ${trircd_conf} >/dev/null 2>&1"}
 
-rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/tr-ircd
 pidfile=${trircd_pidfile}
 required_files="${trircd_conf}"

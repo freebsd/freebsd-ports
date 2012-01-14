@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name="vboxheadless"
-rcvar=`set_rcvar`
+rcvar=vboxheadless_enable
 
 command="%%PREFIX%%/bin/VBoxHeadless"
 pidbase="/var/run/${name}"

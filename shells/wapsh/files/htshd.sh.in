@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="htshd"
-rcvar=`set_rcvar`
+rcvar=htshd_enable
 load_rc_config $name
 
 htshd_enable=${htshd_enable:-"NO"}

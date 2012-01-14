@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=doinkd
-rcvar=`set_rcvar`
+rcvar=doinkd_enable
 
 command=%%PREFIX%%/sbin/doinkd
 required_files=%%PREFIX%%/etc/doinkd/doinkd.cf

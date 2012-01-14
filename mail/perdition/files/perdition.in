@@ -19,7 +19,7 @@ perdition_enable=${perdition_enable-"NO"}
 . /etc/rc.subr
 
 name="perdition"
-rcvar=`set_rcvar`
+rcvar=perdition_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/perdition/${name}.pid"

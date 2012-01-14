@@ -19,7 +19,7 @@ scponlyc_shells="${scponlyc_shells:-/etc/shells}"
 scponlyc_passwd="${scponlyc_passwd:-/etc/passwd}"
 
 name="scponlyc"
-rcvar=`set_rcvar`
+rcvar=scponlyc_enable
 
 start_cmd="scponlyc_startcmd"
 stop_cmd="scponlyc_stopcmd"

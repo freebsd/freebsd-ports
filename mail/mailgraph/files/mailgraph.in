@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="mailgraph"
-rcvar=`set_rcvar`
+rcvar=mailgraph_enable
 
 command=%%PREFIX%%/sbin/${name}.pl > /dev/null 2>&1
 command_interpreter=/usr/bin/perl

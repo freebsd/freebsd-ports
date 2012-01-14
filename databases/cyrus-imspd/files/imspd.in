@@ -13,13 +13,13 @@
 . /etc/rc.subr
 
 name=imspd
+rcvar=imspd_enable
 
 load_rc_config ${name}
 : ${imspd_enable="NO"}
 : ${imspd_pidfile=/var/run/imspd.pid}
 : ${imspd_options=/var/imspd/options}
 
-rcvar=`set_rcvar`
 pidfile=${imspd_pidfile}
 start_postcmd="start_postcmd"
 stop_postcmd="stop_postcmd"

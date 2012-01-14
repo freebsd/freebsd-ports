@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="watchquagga"
-rcvar=`set_rcvar`
+rcvar=watchquagga_enable
 
 
 stop_postcmd=stop_postcmd

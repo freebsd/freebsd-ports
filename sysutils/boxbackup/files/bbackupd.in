@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="bbackupd"
-rcvar=`set_rcvar`
+rcvar=bbackupd_enable
 
 load_rc_config $name
 

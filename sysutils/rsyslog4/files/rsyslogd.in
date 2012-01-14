@@ -1,21 +1,25 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
-
 # PROVIDE: rsyslogd
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig
 # BEFORE:  SERVERS
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
 name=rsyslogd
-rcvar=`set_rcvar`
+rcvar=rsyslogd_enable
+
 command="%%PREFIX%%/sbin/${name}"
+
 load_rc_config $name
+
 : ${rsyslogd_enable:="NO"}
 : ${rsyslogd_pidfile:="/var/run/rsyslogd.pid"}
 : ${rsyslogd_config:="%%PREFIX%%/etc/rsyslog.conf"}
+
 pidfile="${rsyslogd_pidfile}"
 command_args="-i ${pidfile} -f ${rsyslogd_config}"
 required_files="${rsyslogd_config}"
@@ -46,7 +50,7 @@ rsyslogd_precmd()
 	#
 	for _l in $altlog_proglist; do
 		eval _ldir=\$${_l}_chrootdir
-		if checkyesno `set_rcvar $_l` && [ -n "$_ldir" ]; then
+		if checkyesno ${_l}_enable` && [ -n "$_ldir" ]; then
 			echo "${_ldir}/var/run/log" >> $sockfile
 		fi
 	done

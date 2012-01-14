@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="jabber"
-rcvar=`set_rcvar`
+rcvar=jabber_enable
 
 load_rc_config $name
 

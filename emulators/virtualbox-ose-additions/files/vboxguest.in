@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="vboxguest"
-rcvar=${name}_enable
+rcvar=vboxguest_enable
 start_cmd="vboxguest_start"
 stop_cmd="vboxguest_stop"
 

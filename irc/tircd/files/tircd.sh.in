@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="tircd"
-rcvar=${name}_enable
+rcvar=tircd_enable
 
 command="%%PREFIX%%/bin/$name.pl"
 command_args="> /dev/null &"

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="salt_minion"
-rcvar="${name}_enable"
+rcvar=salt_minion_enable
 
 load_rc_config ${name}
 

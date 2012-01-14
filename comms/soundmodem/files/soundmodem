@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name=soundmodem
-rcvar=`set_rcvar`
+rcvar=soundmodem_enable
 load_rc_config $name
 soundmodem_enable=${soundmodem_enable-"NO"}
 

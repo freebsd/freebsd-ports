@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="nakenchat"
-rcvar=${name}_enable
+rcvar=nakenchat_enable
 
 load_rc_config $name
 

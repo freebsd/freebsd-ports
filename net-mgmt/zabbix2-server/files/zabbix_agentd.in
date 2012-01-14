@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="zabbix_agentd"
-rcvar=${name}_enable
+rcvar=zabbix_agentd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 required_files="%%ETCDIR%%/${name}.conf"

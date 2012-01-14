@@ -8,19 +8,17 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-prefix=%%PREFIX%%
+. /etc/rc.subr
+
 name="tiarra"
+rcvar=tiarra_enable
+
+load_rc_config $name
 
 tiarra_enable=${tiarra_enable:-"NO"}
 tiarra_flags=${tiarra_flags:-"--quiet"}
 tiarra_user=${tiarra_user:-"%%TIARRA_USER%%"}
-tiarra_chdir=${tiarra_chdir:-"${prefix}/${name}"}
-
-. /etc/rc.subr
-
-rcvar=`set_rcvar`
-
-load_rc_config $name
+tiarra_chdir=${tiarra_chdir:-"%%PREFIX%%/${name}"}
 
 command="${tiarra_chdir}/${name}"
 command_interpreter="/usr/bin/perl"

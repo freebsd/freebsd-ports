@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="rxstack"
-rcvar=`set_rcvar`
+rcvar=rxstack_enable
 
 command=%%PREFIX%%/bin/${name}
 

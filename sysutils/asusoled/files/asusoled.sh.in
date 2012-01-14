@@ -18,7 +18,7 @@ asusoled_command=${asusoled_command-""}
 . /etc/rc.subr
 
 name=asusoled
-rcvar=`set_rcvar`
+rcvar=asusoled_enable
 
 start_cmd=asusoled_start
 stop_cmd=asusoled_stop

@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name=anytermd
-rcvar=`set_rcvar`
+rcvar=anytermd_enable
 
 load_rc_config $name
 

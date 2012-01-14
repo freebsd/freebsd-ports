@@ -21,7 +21,7 @@ syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
 . /etc/rc.subr
 
 name=syslog_ng
-rcvar=`set_rcvar`
+rcvar=syslog_ng_enable
 
 command=%%PREFIX%%/sbin/syslog-ng
 required_files=%%PREFIX%%/etc/syslog-ng.conf

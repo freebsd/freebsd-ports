@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=cnupm
-rcvar=`set_rcvar`
+rcvar=cnupm_enable
 command=%%PREFIX%%/sbin/cnupm
 cnupm_flags="-ep -f inet -u cnupm"
 

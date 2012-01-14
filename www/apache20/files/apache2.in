@@ -27,7 +27,7 @@
 . /etc/rc.subr
 
 name="apache2"
-rcvar=`set_rcvar`
+rcvar=apache2_enable
 
 start_precmd="apache2_precmd"
 restart_precmd="apache2_checkconfig"

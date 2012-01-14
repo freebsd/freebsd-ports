@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="%%NAME%%"
-rcvar=`set_rcvar`
+rcvar=%%NAME%%_enable
 
 command="%%PREFIX%%/sbin/fprobe"
 command_args="-i lo0 127.0.0.1:2055"

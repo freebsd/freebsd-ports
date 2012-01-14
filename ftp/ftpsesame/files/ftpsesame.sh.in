@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=ftpsesame
-rcvar=`set_rcvar`
+rcvar=ftpsesame_enable
 command=%%PREFIX%%/bin/${name}
 pidfile="/var/run/${name}.pid"
 

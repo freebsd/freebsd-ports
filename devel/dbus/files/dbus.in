@@ -17,7 +17,7 @@ dbus_enable=${dbus_enable-${gnome_enable}}
 dbus_flags=${dbus_flags-"--system"}
 
 name=dbus
-rcvar=`set_rcvar`
+rcvar=dbus_enable
 
 command="%%PREFIX%%/bin/dbus-daemon"
 pidfile="/var/run/dbus/${name}.pid"

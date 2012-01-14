@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="tinyproxy"
-rcvar=`set_rcvar`
+rcvar=tinyproxy_enable
 
 load_rc_config $name
 

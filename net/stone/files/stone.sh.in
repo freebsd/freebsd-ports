@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="stone"
-rcvar=`set_rcvar`
+rcvar=stone_enable
 
 command="%%PREFIX%%/bin/stone"
 start_precmd="stone_precmd"

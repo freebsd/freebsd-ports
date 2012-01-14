@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name="activemq"
-rcvar=${name}_enable
+rcvar=activemq_enable
 load_rc_config $name
 
 # Set defaults

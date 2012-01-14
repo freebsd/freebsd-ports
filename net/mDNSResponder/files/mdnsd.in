@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=mdnsd
-rcvar=`set_rcvar`
+rcvar=mdnsd_enable
 
 load_rc_config $name
 

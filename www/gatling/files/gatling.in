@@ -27,7 +27,7 @@ check_user() {
 . /etc/rc.subr
 
 name=gatling
-rcvar=`set_rcvar`
+rcvar=gatling_enable
 
 load_rc_config ${name}
 

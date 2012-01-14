@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=yate
-rcvar=`set_rcvar`
+rcvar=yate_enable
 
 command="%%PREFIX%%/bin/yate"
 pidfile="/var/run/${name}.pid"

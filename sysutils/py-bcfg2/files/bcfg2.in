@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="bcfg2"
-rcvar=${name}_enable
+rcvar=bcfg2_enable
 
 load_rc_config $name
 

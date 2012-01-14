@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="crtmpserver"
-rcvar=${name}_enable
+rcvar=crtmpserver_enable
 
 command=%%PREFIX%%/sbin/${name}
 

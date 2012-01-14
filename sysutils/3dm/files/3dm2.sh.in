@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=twdm2
-rcvar=`set_rcvar`
+rcvar=twdm2_enable
 
 start_precmd=twdm2_precmd
 command="%%PREFIX%%/sbin/3dm2"

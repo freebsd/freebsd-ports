@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="webfsd"
-rcvar=`set_rcvar`
+rcvar=webfsd_enable
 
 load_rc_config $name
 

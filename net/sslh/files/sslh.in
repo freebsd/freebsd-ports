@@ -38,7 +38,7 @@ sslh_setfib() {
 . /etc/rc.subr
 
 name="sslh"
-rcvar=`set_rcvar`
+rcvar=sslh_enable
 
 command="%%PREFIX%%/sbin/${name}"
 start_precmd="sslh_setfib"

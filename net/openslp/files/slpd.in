@@ -17,7 +17,7 @@ slpd_flags=${slpd_flags-"-p /var/run/slpd.pid"}
 . /etc/rc.subr
 
 name=slpd
-rcvar=`set_rcvar`
+rcvar=slpd_enable
 
 command=%%PREFIX%%/sbin/slpd
 pidfile="/var/run/${name}.pid"

@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=swapmon
-rcvar=`set_rcvar`
+rcvar=swapmon_enable
 
 command="%%PREFIX%%/sbin/${name}"
 command_interpreter="/bin/sh"

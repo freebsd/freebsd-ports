@@ -18,7 +18,7 @@ courier_imap_imapd_enable=${courier_imap_imapd_enable-"NO"}
 . /etc/rc.subr
 
 name="courier_imap_imapd"
-rcvar=`set_rcvar`
+rcvar=courier_imap_imapd_enable
 command="%%PREFIX%%/libexec/courier-imap/imapd.rc"
 pidfile="/var/run/imapd.pid"
 procname="%%PREFIX%%/sbin/courierlogger"

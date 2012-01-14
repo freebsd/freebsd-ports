@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="slon"
-rcvar=`set_rcvar`
+rcvar=slon_enable
 
 load_rc_config "$name"
 _pidprefix="/var/run/${name}"

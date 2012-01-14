@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=kdm4
-rcvar=`set_rcvar`
+rcvar=kdm4_enable
 
 load_rc_config ${name}
 

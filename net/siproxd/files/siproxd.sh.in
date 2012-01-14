@@ -20,7 +20,7 @@ siproxd_enable=${siproxd_enable:-"NO"}	# Enable siproxd
 . /etc/rc.subr
 
 name="siproxd"
-rcvar=`set_rcvar`
+rcvar=siproxd_enable
 command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name

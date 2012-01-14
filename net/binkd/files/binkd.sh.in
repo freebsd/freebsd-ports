@@ -23,7 +23,7 @@ binkd_pidfile=${binkd_pidfile:-"/var/run/binkd/binkd.pid"}
 load_rc_config binkd 
 
 name="binkd"
-rcvar=`set_rcvar`
+rcvar=binkd_enable
 command="%%PREFIX%%/sbin/binkd"
 command_args="${binkd_config}"
 required_files="${binkd_config}"

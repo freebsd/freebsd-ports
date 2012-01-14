@@ -13,7 +13,7 @@ choparp_network=${choparp_network-}
 . /etc/rc.subr
 
 name="choparp"
-rcvar=`set_rcvar`
+rcvar=choparp_enable
 start_precmd="choparp_precmd"
 restart_precmd="choparp_precmd"
 

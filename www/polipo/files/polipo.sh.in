@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=polipo
-rcvar=`set_rcvar`
+rcvar=polipo_enable
 
 polipo_enable=${polipo_enable:-"NO"}
 polipo_user=%%USER%%

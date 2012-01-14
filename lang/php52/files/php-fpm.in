@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="php_fpm"
-rcvar=`set_rcvar`
+rcvar=php_fpm_enable
 
 extra_commands="reload logrotate"
 

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="nefu"
-rcvar=`set_rcvar`
+rcvar=nefu_enable
 command=%%PREFIX%%/bin/${name}
 
 load_rc_config $name

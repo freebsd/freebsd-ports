@@ -14,7 +14,7 @@ socks5_enable=${socks5_enable-"NO"}
 . /etc/rc.subr
 
 name=socks5
-rcvar=`set_rcvar`
+rcvar=socks5_enable
 pidfile="/var/run/$name.pid-1080"
 
 command=%%PREFIX%%/bin/socks5

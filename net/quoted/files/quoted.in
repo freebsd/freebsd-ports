@@ -14,7 +14,7 @@ user="nobody"
 . /etc/rc.subr
 
 name="quoted"
-rcvar=`set_rcvar`
+rcvar=quoted_enable
 command="%%PREFIX%%/bin/${name}"
 command_args="-d -p:17"
 command_plus_args="${command} ${command_args}"

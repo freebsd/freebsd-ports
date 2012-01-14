@@ -22,7 +22,7 @@
 : ${murmur_user="murmur"}
 
 name=murmur
-rcvar=${name}_enable
+rcvar=murmur_enable
 
 command="%%PREFIX%%/sbin/murmurd"
 command_args="-ini %%PREFIX%%/etc/murmur.ini"

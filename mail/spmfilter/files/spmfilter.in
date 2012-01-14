@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=spmfilter
-rcvar=`set_rcvar`
+rcvar=spmfilter_enable
 
 command=%%PREFIX%%/sbin/spmfilter
 

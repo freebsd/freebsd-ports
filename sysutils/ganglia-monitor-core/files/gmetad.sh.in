@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name=gmetad
-rcvar=`set_rcvar`
+rcvar=gmetad_enable
 command="%%PREFIX%%/sbin/${name}"
 start_precmd="gmetad_prestart"
 stop_postcmd="gmetad_poststop"

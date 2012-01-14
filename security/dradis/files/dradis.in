@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=dradis
-rcvar=`set_rcvar`
+rcvar=dradis_enable
 
 dradis_enable=${dradis_enable-"NO"}
 dradis_bindip=${dradis_bindip-"127.0.0.1"}

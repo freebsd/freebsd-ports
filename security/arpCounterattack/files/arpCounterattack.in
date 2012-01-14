@@ -19,7 +19,7 @@ arpcounterattack_pidfile="/var/run/arpCounterattack.pid"
 . /etc/rc.subr
 
 name="arpcounterattack"
-rcvar=`set_rcvar`
+rcvar=arpcounterattack_enable
 command="%%PREFIX%%/sbin/arpCounterattack"
 
 load_rc_config $name

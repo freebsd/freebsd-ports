@@ -17,7 +17,7 @@ kaid_enable="${kaid_enable-NO}"
 . /etc/rc.subr
 
 name=kaid
-rcvar=`set_rcvar`
+rcvar=kaid_enable
 
 command=/usr/local/sbin/${name}
 command_args=-d

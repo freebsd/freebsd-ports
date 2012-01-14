@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=dbmail_pop3d
-rcvar=`set_rcvar`
+rcvar=dbmail_pop3d_enable
 
 command=%%PREFIX%%/sbin/dbmail-pop3d
 pidfile=/var/run/dbmail-pop3d.pid

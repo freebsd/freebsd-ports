@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="uuidd"
-rcvar=`set_rcvar`
+rcvar=uuidd_enable
 command="%%PREFIX%%/sbin/uuidd"
 procname="${command}"
 

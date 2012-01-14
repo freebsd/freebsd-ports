@@ -29,7 +29,7 @@
 . /etc/rc.subr
 
 name="ccxstream"
-rcvar=`set_rcvar`
+rcvar=ccxstream_enable
 
 command="%%PREFIX%%/sbin/ccxstream"
 

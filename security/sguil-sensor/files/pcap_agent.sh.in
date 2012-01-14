@@ -24,7 +24,7 @@ pcap_agent_conf=${pcap_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf"
 pcap_agent_flags=${pcap_agent_flags:-"-D"}
 
 name="pcap_agent"
-rcvar=`set_rcvar`
+rcvar=pcap_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/pcap_agent.tcl"
 command_args="-c ${pcap_agent_conf} ${pcap_agent_flags}"
 procname="%%PREFIX%%/bin/tclsh8.4"

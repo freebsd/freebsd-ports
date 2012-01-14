@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="torrus_monitor"
-rcvar=${name}_enable
+rcvar=torrus_monitor_enable
 
 load_rc_config ${name}
 

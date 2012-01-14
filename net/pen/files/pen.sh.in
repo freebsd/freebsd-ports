@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=pen
-rcvar=`set_rcvar`
+rcvar=pen_enable
 
 command=%%PREFIX%%/bin/pen
 

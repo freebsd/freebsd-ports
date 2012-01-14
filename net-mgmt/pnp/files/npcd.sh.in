@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="npcd"
-rcvar=`set_rcvar`
+rcvar=npcd_enable
 
 command="%%PREFIX%%/bin/npcd"
 command_args="-d"

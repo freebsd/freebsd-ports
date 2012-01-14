@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="miltergreylist"
-rcvar=`set_rcvar`
+rcvar=miltergreylist_enable
 command="%%PREFIX%%/bin/milter-greylist"
 
 load_rc_config $name

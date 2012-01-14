@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="amavisd_milter"
-rcvar=`set_rcvar`
+rcvar=amavisd_milter_enable
 
 load_rc_config $name
 

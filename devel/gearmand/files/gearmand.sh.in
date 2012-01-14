@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="gearmand"
-rcvar=`set_rcvar`
+rcvar=gearmand_enable
 command="%%PREFIX%%/sbin/gearmand"
 
 load_rc_config "$name"

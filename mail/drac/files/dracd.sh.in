@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="dracd"
-rcvar=`set_rcvar`
+rcvar=dracd_enable
 command="%%PREFIX%%/sbin/rpc.dracd"
 
 load_rc_config $name

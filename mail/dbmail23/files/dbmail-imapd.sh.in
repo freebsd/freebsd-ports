@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=dbmail_imapd
-rcvar=`set_rcvar`
+rcvar=dbmail_imapd_enable
 
 command=%%PREFIX%%/sbin/dbmail-imapd
 pidfile=/var/run/dbmail-imapd.pid

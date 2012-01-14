@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="elogd"
-rcvar=${name}_enable
+rcvar=elogd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

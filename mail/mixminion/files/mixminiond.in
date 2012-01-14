@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="mixminiond"
-rcvar=${name}_enable
+rcvar=mixminiond_enable
 
 load_rc_config ${name}
 

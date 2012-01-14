@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="salt_syndic"
-rcvar="${name}_enable"
+rcvar=salt_syndic_enable
 
 load_rc_config ${name}
 

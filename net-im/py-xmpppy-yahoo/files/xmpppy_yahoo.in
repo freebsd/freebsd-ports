@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="xmpppy_yahoo"
-rcvar=`set_rcvar`
+rcvar=xmpppy_yahoo_enable
 
 load_rc_config $name
 

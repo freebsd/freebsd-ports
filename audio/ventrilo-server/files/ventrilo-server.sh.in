@@ -9,6 +9,8 @@
 . /etc/rc.subr
 
 name=ventrilo
+rcvar=ventrilo_enable
+
 homedir="%%PREFIX%%/ventrilo-server"
 pidfile="${homedir}/ventrilo_srv.pid"
 ventrilo_user=${name}
@@ -16,8 +18,6 @@ command="${homedir}/ventrilo_srv"
 command_args="'-f${homedir}/ventrilo_srv' -d >/dev/null"
 extra_commands="info"
 info_cmd="ventrilo_info"
-
-rcvar=`set_rcvar`
 
 load_rc_config $name
 

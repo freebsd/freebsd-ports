@@ -26,7 +26,7 @@
 
 name="spybye"
 load_rc_config ${name}
-rcvar=`set_rcvar`
+rcvar=spybye_enable
 # set the defaults
 : ${spybye_enable="NO"}
 : ${spybye_flags="-x -p 8080 -l /var/log/spybye.log"}

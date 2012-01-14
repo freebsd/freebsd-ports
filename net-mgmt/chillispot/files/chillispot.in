@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="chillispot"
-rcvar=${name}_enable
+rcvar=chillispot_enable
 
 command="%%PREFIX%%/sbin/chilli"
 pidfile=/var/run/chilli.pid

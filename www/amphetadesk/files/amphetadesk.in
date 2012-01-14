@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="amphetadesk"
-rcvar=`set_rcvar`
+rcvar=amphetadesk_enable
 command="%%PREFIX%%/bin/AmphetaDesk"
 procname="%%PERL%%"
 

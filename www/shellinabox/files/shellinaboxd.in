@@ -39,7 +39,7 @@ shellinaboxd_setfib() {
 . /etc/rc.subr
 
 name="shellinaboxd"
-rcvar=`set_rcvar`
+rcvar=shellinaboxd_enable
 
 command="%%PREFIX%%/bin/${name}"
 start_precmd="shellinaboxd_setfib"

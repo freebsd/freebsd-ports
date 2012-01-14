@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="get_iplayer"
-rcvar=`set_rcvar`
+rcvar=get_iplayer_enable
 
 load_rc_config $name
 

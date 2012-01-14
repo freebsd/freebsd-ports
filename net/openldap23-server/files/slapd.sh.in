@@ -27,7 +27,7 @@
 . /etc/rc.subr
 
 name="slapd"
-rcvar=`set_rcvar`
+rcvar=slapd_enable
 
 command="%%PREFIX%%/libexec/slapd"
 pidfile="%%LDAP_RUN_DIR%%/slapd.pid"

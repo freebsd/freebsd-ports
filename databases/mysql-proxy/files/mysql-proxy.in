@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name="mysql_proxy"
-rcvar=`set_rcvar`
+rcvar=mysql_proxy_enable
 
 load_rc_config $name
 

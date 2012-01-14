@@ -53,7 +53,7 @@
 . /etc/rc.subr
 
 name="varnishd"
-rcvar=`set_rcvar`
+rcvar=varnishd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 

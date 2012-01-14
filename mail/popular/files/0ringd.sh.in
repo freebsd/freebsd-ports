@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="ringd"
-rcvar=`set_rcvar`
+rcvar=ringd_enable
 
 load_rc_config $name
 

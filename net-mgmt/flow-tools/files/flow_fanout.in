@@ -41,7 +41,7 @@
 . /etc/rc.subr
 
 name="flow_fanout"
-rcvar=`set_rcvar`
+rcvar=flow_fanout_enable
 
 setup_profile_vars()
 {

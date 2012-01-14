@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="vpnc"
-rcvar=`set_rcvar`
+rcvar=vpnc_enable
 
 command="%%PREFIX%%/sbin/$name"
 

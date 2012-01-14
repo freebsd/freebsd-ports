@@ -19,7 +19,7 @@ smartd_pidfile="/var/run/smartd.pid"
 . /etc/rc.subr
 
 name="smartd"
-rcvar=`set_rcvar`
+rcvar=smartd_enable
 command="%%PREFIX%%/sbin/smartd"
 
 load_rc_config $name

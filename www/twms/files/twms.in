@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name=twms
-rcvar=`set_rcvar`
+rcvar=twms_enable
 
 twms_enable=${twms_enable:-"NO"}
 twms_user=%%USER%%

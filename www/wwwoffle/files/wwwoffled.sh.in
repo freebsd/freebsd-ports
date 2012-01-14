@@ -21,7 +21,7 @@ wwwoffled_conffile="%%PREFIX%%/etc/wwwoffle.conf"
 . /etc/rc.subr
 
 name="wwwoffled"
-rcvar=`set_rcvar`
+rcvar=wwwoffled_enable
 command="%%PREFIX%%/sbin/wwwoffled"
 extra_commands="reload"
 

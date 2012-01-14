@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="dhcp6relay"
-rcvar=${name}_enable
+rcvar=dhcp6relay_enable
 
 command=%%PREFIX%%/sbin/${name}
 start_precmd="${name}_precmd"

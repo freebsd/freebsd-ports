@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=traff
-rcvar=`set_rcvar`
+rcvar=traff_enable
 
 
 command=%%PREFIX%%/sbin/traff

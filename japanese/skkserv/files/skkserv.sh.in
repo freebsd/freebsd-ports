@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=skkserv
-rcvar=`set_rcvar`
+rcvar=skkserv_enable
 command=%%PREFIX%%/sbin/skkserv
 
 : ${skkserv_flags:="-a 127.0.0.1 -u skkserv"}

@@ -49,7 +49,7 @@
 . /etc/rc.subr
 
 name="red5"
-rcvar=`set_rcvar`
+rcvar=red5_enable
 pidfile="/var/run/red5.pid"
 java_command="%%LOCALBASE%%/bin/java"
 

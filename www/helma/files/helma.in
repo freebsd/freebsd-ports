@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="helma"
-rcvar=`set_rcvar`
+rcvar=helma_enable
 pidfile="/var/run/${name}.pid"
 
 load_rc_config $name

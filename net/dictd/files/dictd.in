@@ -14,7 +14,7 @@ dictd_enable=${dictd_enable-"NO"}
 . /etc/rc.subr
 
 name=dictd
-rcvar=`set_rcvar`
+rcvar=dictd_enable
 command=%%PREFIX%%/sbin/dictd
 
 load_rc_config $name

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="wired"
-rcvar=${name}_enable
+rcvar=wired_enable
 
 pidfile=%%PREFIX%%/wired/wired.pid
 command=%%PREFIX%%/sbin/${name}

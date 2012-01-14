@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="collectd"
-rcvar=${name}_enable
+rcvar=collectd_enable
 
 command=%%PREFIX%%/sbin/${name}
 

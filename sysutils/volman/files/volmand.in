@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="volmand"
-rcvar=`set_rcvar`
+rcvar=volmand_enable
 
 load_rc_config $name
 

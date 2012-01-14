@@ -14,7 +14,7 @@ hydra_enable=${hydra_enable-"NO"}
 load_rc_config hydra
 
 name=hydra
-rcvar=`set_rcvar`
+rcvar=hydra_enable
 
 command=%%PREFIX%%/bin/${name}
 

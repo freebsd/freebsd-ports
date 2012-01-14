@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="mailman"
-rcvar=${name}_enable
+rcvar=mailman_enable
 
 pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
 

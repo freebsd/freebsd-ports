@@ -25,7 +25,7 @@ qadsl_pidfile=${qadsl_pidfile-"/var/run/qadsl.pid"}
 . /etc/rc.subr
 
 name="qadsl"
-rcvar=`set_rcvar`
+rcvar=qadsl_enable
 command=%%PREFIX%%/sbin/qadsl
 load_rc_config $name
 

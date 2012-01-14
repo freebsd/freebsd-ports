@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="rsmbd"
-rcvar=`set_rcvar`
+rcvar=rsmbd_enable
 eval "${name}_installdir=\${${name}_installdir:-'%%PREFIX%%/libexec/rsmb'}"
 eval "command=\${${name}_installdir}/broker"
 

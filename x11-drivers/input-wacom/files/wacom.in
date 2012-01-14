@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="wacom"
-rcvar=${name}_enable
+rcvar=wacom_enable
 
 extra_commands="setup cleanup"
 setup_cmd=do_setup

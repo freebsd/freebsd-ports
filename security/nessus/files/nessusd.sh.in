@@ -22,7 +22,7 @@ nessusd_flags="-D"				# Flags to nessusd program
 . /etc/rc.subr
 
 name="nessusd"
-rcvar=`set_rcvar`
+rcvar=nessusd_enable
 command="%%PREFIX%%/sbin/nessusd"
 pidfile="%%PREFIX%%/var/nessus/nessusd.pid"
 required_files="%%PREFIX%%/etc/nessus/nessusd.conf"

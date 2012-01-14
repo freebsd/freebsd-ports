@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="thundercache"
-rcvar=`set_rcvar`
+rcvar=thundercache_enable
 
 command="%%PREFIX%%/thunder/sbin/thunder"
 required_files="%%PREFIX%%/thunder/etc/thunder.conf"

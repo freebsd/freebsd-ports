@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="oss"
-rcvar=`set_rcvar`
+rcvar=oss_enable
 
 stop_cmd="oss_stop"
 start_cmd="oss_start"

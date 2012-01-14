@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="symux"
-rcvar=`set_rcvar`
+rcvar=symux_enable
 command="%%PREFIX%%/bin/symux"
 symux_enable=${symux_enable:-"NO"}
 

@@ -29,7 +29,7 @@ milterenma_uid=${milterenma_uid:-"mailnull"}
 . /etc/rc.subr
 
 name="milterenma"
-rcvar=`set_rcvar`
+rcvar=milterenma_enable
 
 load_rc_config $name
 

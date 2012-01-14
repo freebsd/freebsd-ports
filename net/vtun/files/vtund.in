@@ -17,7 +17,7 @@ vtund_flags=${vtund_flags:-"-s"}
 . /etc/rc.subr
 
 name=vtund
-rcvar=`set_rcvar`
+rcvar=vtund_enable
 required_files="%%PREFIX%%/etc/vtund.conf"
 pidfile=/var/run/vtund.pid
 

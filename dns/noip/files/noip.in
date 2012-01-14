@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="noip"
-rcvar=`set_rcvar`
+rcvar=noip_enable
 
 command="%%PREFIX%%/bin/noip2"
 

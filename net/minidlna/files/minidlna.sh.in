@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=minidlna
-rcvar=`set_rcvar`
+rcvar=minidlna_enable
 command=%%PREFIX%%/sbin/minidlna
 
 load_rc_config $name

@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="nrpe2"
-rcvar=`set_rcvar`
+rcvar=nrpe2_enable
 
 command="%%PREFIX%%/sbin/nrpe2"
 command_args="-d"

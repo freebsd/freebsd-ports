@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name="tracd"
-rcvar="${name}_enable"
+rcvar=tracd_enable
 
 tracd_enable=${tracd_enable:-"NO"}
 tracd_listen=${tracd_listen:-"0.0.0.0"}

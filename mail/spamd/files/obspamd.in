@@ -23,7 +23,7 @@ obspamd_enable=${obspamd_enable:-"NO"}
 . /etc/rc.subr
 
 name="obspamd"
-rcvar=`set_rcvar`
+rcvar=obspamd_enable
 
 command="%%PREFIX%%/libexec/%%SPAMDBIN%%"
 start_precmd="obspamd_precmd"

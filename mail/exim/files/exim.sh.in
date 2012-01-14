@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=exim
-rcvar=`set_rcvar`
+rcvar=exim_enable
 
 command=%%PREFIX%%/sbin/exim
 pidfile=/var/run/exim.pid

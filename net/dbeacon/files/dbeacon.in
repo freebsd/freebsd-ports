@@ -19,7 +19,7 @@ dbeacon_flags=${dbeacon_flags-""}
 . /etc/rc.subr
 
 name="dbeacon"
-rcvar=`set_rcvar`
+rcvar=dbeacon_enable
 
 command="%%PREFIX%%/bin/${name}"
 

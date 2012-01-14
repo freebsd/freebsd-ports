@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="bld"
-rcvar=${name}_enable
+rcvar=bld_enable
 
 load_rc_config $name
 

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=exilog
-rcvar=`set_rcvar`
+rcvar=exilog_enable
 
 command=%%PREFIX%%/sbin/exilog_agent.pl
 pidfile=/var/run/exilog.pid

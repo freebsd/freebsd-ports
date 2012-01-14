@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="prelude_manager"
-rcvar=${name}_enable
+rcvar=prelude_manager_enable
 
 command=%%PREFIX%%/bin/prelude-manager
 pidfile=/var/run/prelude-manager.pid

@@ -62,7 +62,7 @@ tomcat7_stop_timeout="${tomcat7_stop_timeout:-"10"}"
 . /etc/rc.subr
 
 name="tomcat7"
-rcvar=`set_rcvar`
+rcvar=tomcat7_enable
 pidfile="/var/run/tomcat7.pid"
 
 load_rc_config "${name}"

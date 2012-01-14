@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="ipcad"
-rcvar=${name}_enable
+rcvar=ipcad_enable
 
 load_rc_config ${name}
 

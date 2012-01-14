@@ -32,7 +32,7 @@ svnserve_user=${svnserve_user:-"svn"}
 svnserve_group=${svnserve_group:-"svn"}
 
 name=svnserve
-rcvar=`set_rcvar`
+rcvar=svnserve_enable
 load_rc_config $name
 command=%%PREFIX%%/bin/svnserve%%SVNSERVE_BIN_EXT%%
 command_args="-r ${svnserve_data}"

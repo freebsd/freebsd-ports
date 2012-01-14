@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="quagga"
-rcvar=`set_rcvar`
+rcvar=quagga_enable
 
 start_postcmd=start_postcmd
 stop_postcmd=stop_postcmd

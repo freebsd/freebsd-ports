@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="mtad"
-rcvar=${name}_enable
+rcvar=mtad_enable
 
 load_rc_config $name
 

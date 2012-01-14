@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="cvsd"
-rcvar=${name}_enable
+rcvar=cvsd_enable
 
 command="%%PREFIX%%/sbin/$name"
 command_args='-f $cvsd_config'

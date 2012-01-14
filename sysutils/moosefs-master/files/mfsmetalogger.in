@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="mfsmetalogger"
-rcvar=${name}_enable
+rcvar=mfsmetalogger_enable
 
 command=%%PREFIX%%/sbin/${name}
 #pidfile=/var/run/${name}.pid

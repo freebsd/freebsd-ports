@@ -7,7 +7,6 @@
 # PROVIDE: fcgiwrap
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
@@ -21,6 +20,11 @@
 # - tcp6:[ipv6_addr]:port (for ipv6)
 # fcgiwrap_flags=
 # Use fcgiwrap_user to run fcgiwrap as user
+
+. /etc/rc.subr
+
+name="fcgiwrap"
+rcvar=fcgiwrap_enable
 
 fcgiwrap_setfib() {
 	sysctl net.fibs >/dev/null 2>&1 || return 0
@@ -49,11 +53,7 @@ fcgiwrap_cleansocket() {
 	rm -f $pidfile
 }
 
-. /etc/rc.subr
-
 pidfile="/var/run/fcgiwrap/fcgiwrap.pid"
-name="fcgiwrap"
-rcvar=`set_rcvar`
 
 procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="ezstream"
-rcvar=`set_rcvar`
+rcvar=ezstream_enable
 
 # read configuration and set defaults
 load_rc_config "$name"

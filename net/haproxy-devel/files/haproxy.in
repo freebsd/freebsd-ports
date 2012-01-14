@@ -34,7 +34,7 @@
 . /etc/rc.subr
 
 name="haproxy"
-rcvar=`set_rcvar`
+rcvar=haproxy_enable
 command="%%PREFIX%%/sbin/haproxy"
 
 # Load Configs/Set Defaults

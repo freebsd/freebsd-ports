@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="i2p"
-rcvar=`set_rcvar`
+rcvar=i2p_enable
 command="%%PREFIX%%/sbin/i2prouter"
 extra_commands="install uninstall update"
 

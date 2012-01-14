@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pserv"
-rcvar=`set_rcvar`
+rcvar=pserv_enable
 
 load_rc_config $name
 

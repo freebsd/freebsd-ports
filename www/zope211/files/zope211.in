@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="zope211"
-rcvar=`set_rcvar`
+rcvar=zope211_enable
 
 zope211ctl () {
     for instance in $zope211_instances; do

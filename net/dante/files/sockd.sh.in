@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=sockd
-rcvar=`set_rcvar`
+rcvar=sockd_enable
 
 command=%%PREFIX%%/sbin/sockd
 pidfile=/var/run/sockd.pid

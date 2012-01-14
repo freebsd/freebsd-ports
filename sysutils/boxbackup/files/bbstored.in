@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="bbstored"
-rcvar=`set_rcvar`
+rcvar=bbstored_enable
 
 load_rc_config $name
 

@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="unbound"
-rcvar=`set_rcvar`
+rcvar=unbound_enable
 
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"

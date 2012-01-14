@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="punjab"
-rcvar=`set_rcvar`
+rcvar=punjab_enable
 command="%%PREFIX%%/bin/twistd"
 
 load_rc_config $name

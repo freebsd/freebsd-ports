@@ -1,8 +1,10 @@
 #! /bin/sh
-#
+
+# $FreeBSD$
 #
 # PROVIDE: aolserver
 # REQUIRE: DAEMON NETWORKING SERVERS
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable aolserver:
 #
@@ -13,8 +15,10 @@
 . /etc/rc.subr
 
 name=aolserver
+rcvar=aolserver_enable
 
 load_rc_config ${name}
+
 : ${aolserver_enable="NO"}
 : ${aolserver_user="%%AOLSERVERUSER%%"}
 : ${aolserver_group="%%AOLSERVERGROUP%%"}
@@ -24,7 +28,6 @@ load_rc_config ${name}
 : ${aolserver_prog=${aolserver_home}/bin/nsd}
 : ${aolserver_pidfile=/var/run/aolserver.pid}
 
-rcvar=`set_rcvar`
 pidfile=${aolserver_pidfile}
 start_postcmd="start_postcmd"
 stop_postcmd="stop_postcmd"

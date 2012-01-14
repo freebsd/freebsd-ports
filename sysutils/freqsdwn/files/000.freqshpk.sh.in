@@ -18,7 +18,7 @@ freqshpk_enable=${freqshpk_enable-"NO"}
 . /etc/rc.subr
 
 name=freqshpk
-rcvar=`set_rcvar`
+rcvar=freqshpk_enable
 command=%%PREFIX%%/sbin/freqshpk
 
 load_rc_config ${name}

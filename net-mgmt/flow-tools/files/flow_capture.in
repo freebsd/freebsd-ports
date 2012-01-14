@@ -44,7 +44,7 @@
 . /etc/rc.subr
 
 name="flow_capture"
-rcvar=`set_rcvar`
+rcvar=flow_capture_enable
 
 setup_profile_vars()
 {

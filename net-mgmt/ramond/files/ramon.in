@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="ramon"
-rcvar=`set_rcvar`
+rcvar=ramon_enable
 
 command="%%PREFIX%%/sbin/ramond"
 required_files=%%PREFIX%%/etc/ramond.conf

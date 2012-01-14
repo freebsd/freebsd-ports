@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="ifdepd"
-rcvar=`set_rcvar`
+rcvar=ifdepd_enable
 
 command="%%PREFIX%%/bin/ifdepd"
 

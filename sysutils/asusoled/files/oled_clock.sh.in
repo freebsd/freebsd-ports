@@ -17,7 +17,7 @@ oled_clock_flags=${oled_clock_flags-"-R -i -w -P 1"}
 . /etc/rc.subr
 
 name=oled_clock
-rcvar=`set_rcvar`
+rcvar=oled_clock_enable
 
 start_cmd=oled_clock_start
 stop_cmd=oled_clock_stop

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="git_daemon"
-rcvar=`set_rcvar`
+rcvar=git_daemon_enable
 
 load_rc_config $name
 

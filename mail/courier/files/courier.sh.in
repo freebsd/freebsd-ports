@@ -36,7 +36,7 @@ courier_enable=${courier_enable:-"NO"}	# Run Courier-MTA (YES/NO).
 . /etc/rc.subr
 
 name="courier"
-rcvar=`set_rcvar`
+rcvar=courier_enable
 
 start_precmd="${name}_prestart"
 start_cmd="${name}_start"

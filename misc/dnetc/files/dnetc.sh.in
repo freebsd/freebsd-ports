@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="dnetc"
-rcvar=`set_rcvar`
+rcvar=dnetc_enable
 
 load_rc_config $name
 

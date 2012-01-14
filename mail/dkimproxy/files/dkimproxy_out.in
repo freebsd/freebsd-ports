@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=dkimproxy_out
-rcvar=`set_rcvar`
+rcvar=dkimproxy_out_enable
 
 # set defaults
 : ${dkimproxy_out_enable="NO"}

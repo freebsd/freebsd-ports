@@ -21,7 +21,7 @@ nut_upsmon_prefix=${nut_upsmon_prefix-"%%PREFIX%%"}
 . /etc/rc.subr
 
 name="nut_upsmon"
-rcvar=`set_rcvar`
+rcvar=nut_upsmon_enable
 
 load_rc_config $name
 

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="tcpproxy"
-rcvar=${name}_enable
+rcvar=tcpproxy_enable
 
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid

@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="ratbox_services"
-rcvar=`set_rcvar`
+rcvar=ratbox_services_enable
 load_rc_config $name
 
 ratbox_services_enable=${ratbox_services_enable:-"NO"}

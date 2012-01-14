@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="openradius"
-rcvar=`set_rcvar`
+rcvar=openradius_enable
 
 load_rc_config ${name}
 

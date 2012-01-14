@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="ucc"
-rcvar=${name}_enable
+rcvar=ucc_enable
 
 load_rc_config $name
 

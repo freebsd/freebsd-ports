@@ -8,7 +8,7 @@
 load_rc_config termlog
 
 name=termlog
-rcvar=`set_rcvar`
+rcvar=termlog_enable
 
 command="/usr/local/bin/termlog"
 

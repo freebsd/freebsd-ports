@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="netmond"
-rcvar=`set_rcvar`
+rcvar=netmond_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

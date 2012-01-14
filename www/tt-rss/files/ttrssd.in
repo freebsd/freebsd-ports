@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="ttrssd"
-rcvar=`set_rcvar`
+rcvar=ttrssd_enable
 
 # read settings, set default values
 load_rc_config "${name}"

@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="downtimed"
-rcvar=`set_rcvar`
+rcvar=downtimed_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

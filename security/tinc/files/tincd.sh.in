@@ -18,7 +18,7 @@ tincd_enable=${tincd_enable:-"NO"}
 . /etc/rc.subr
 
 name="tincd"
-rcvar=`set_rcvar`
+rcvar=tincd_enable
 command="%%PREFIX%%/sbin/tincd"
 start_cmd="tincd_start"
 stop_cmd="tincd_stop"

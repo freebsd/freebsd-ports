@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=radiusd
-rcvar=`set_rcvar`
+rcvar=radiusd_enable
 
 command=%%PREFIX%%/sbin/radiusd
 radiusd_config=${radiusd_config:-"%%PREFIX%%/etc/raddb/config"}

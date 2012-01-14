@@ -25,7 +25,7 @@
 . /etc/rc.subr
 
 name=dccifd
-rcvar=`set_rcvar`
+rcvar=dccifd_enable
 
 load_rc_config $name
 

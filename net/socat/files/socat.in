@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="socat"
-rcvar=${name}_enable
+rcvar=socat_enable
 
 command=%%PREFIX%%/bin/${name}
 command_args="&"

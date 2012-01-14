@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="xrdp"
-rcvar=`set_rcvar`
+rcvar=xrdp_enable
 xrdp_daemons="xrdp xrdpsesman"
 
 # Read settings and set default values.
@@ -42,7 +42,7 @@ xrdp_cmd() {
     fi
     # Apply to all the daemons.
     for name in ${xrdp_daemons}; do
-	rcvar=$(set_rcvar)
+	rcvar=${name}_enable
 	if [ "${name}" = "xrdpsesman" ]; then
 		command="%%PREFIX%%/sbin/xrdp-sesman"
 		pidfile="/var/run/xrdp-sesman.pid"

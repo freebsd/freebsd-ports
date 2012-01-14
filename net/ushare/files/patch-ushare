@@ -97,7 +97,7 @@
 +. /etc/rc.subr
 +
 +name=ushare
-+rcvar=`set_rcvar`
++rcvar=ushare_enable
 +
 +command="/usr/local/bin/$name"
 +command_args="--daemon"

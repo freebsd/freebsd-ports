@@ -15,7 +15,7 @@ dnrd_enable=${dnrd_enable-"NO"}
 . /etc/rc.subr
 
 name=dnrd
-rcvar=$(set_rcvar)
+rcvar=dnrd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

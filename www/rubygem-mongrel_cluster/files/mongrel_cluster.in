@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=mongrel_cluster
-rcvar=${name}_enable
+rcvar=mongrel_cluster_enable
 
 command="%%PREFIX%%/bin/mongrel_cluster_ctl"
 

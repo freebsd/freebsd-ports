@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="nagios"
-rcvar=`set_rcvar`
+rcvar=nagios_enable
 
 command="%%PREFIX%%/bin/nagios"
 command_args="-d"

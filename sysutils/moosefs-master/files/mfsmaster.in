@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=mfsmaster
-rcvar=`set_rcvar`
+rcvar=mfsmaster_enable
 
 command=%%PREFIX%%/sbin/${name}
 

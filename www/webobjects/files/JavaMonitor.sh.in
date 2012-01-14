@@ -1,17 +1,25 @@
 #!/bin/sh
+
 # $FreeBSD$
+#
 # PROVIDE: JavaMonitor
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
-
+#
 # Define these JavaMonitor_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
+
+. /etc/rc.subr
+
 name="JavaMonitor"
+rcvar=JavaMonitor_enable
+
+load_rc_config "$name"
+load_rc_config NEXT
 
 JavaMonitor_enable="${JavaMonitor_enable-"NO"}"
 JavaMonitor_user="${JavaMonitor_user-%%USER%%}"
@@ -19,12 +27,6 @@ JavaMonitor_flags="${JavaMonitor_flags-"-WOPort 56789"}"
 JavaMonitor_pidfile="${JavaMonitor_pidfile:-/var/run/webobjects/${name}.pid}"
 JavaMonitor_logfile="${JavaMonitor_logfile:-/var/log/webobjects/${name}.log}"
 NEXT_ROOT="${NEXT_ROOT-%%PREFIX%%/%%NEXT_ROOT%%}"
-
-. /etc/rc.subr
-rcvar=`set_rcvar`
-
-load_rc_config "$name"
-load_rc_config NEXT
 
 pidfile="${JavaMonitor_pidfile}"
 logfile="${JavaMonitor_logfile}"

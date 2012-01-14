@@ -33,7 +33,7 @@
 . /etc/rc.subr
 
 name="milterbatv"
-rcvar=`set_rcvar`
+rcvar=milterbatv_enable
 
 start_precmd="batv_prepcmd"
 stop_postcmd="batv_postcmd"

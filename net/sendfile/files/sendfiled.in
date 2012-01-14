@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="sendfiled"
-rcvar=`set_rcvar`
+rcvar=sendfiled_enable
 
 command="%%PREFIX%%/sbin/sendfiled"
 command_args="-Q"

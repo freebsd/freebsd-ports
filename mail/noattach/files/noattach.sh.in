@@ -26,7 +26,7 @@ noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
 . /etc/rc.subr
 
 name="noattach"
-rcvar=`set_rcvar`
+rcvar=noattach_enable
 command="%%PREFIX%%/libexec/${name}"
 required_files="%%PREFIX%%/etc/noattach.patterns"
 start_precmd="noattach_prestart"

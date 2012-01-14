@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="udpxy"
-rcvar=$(set_rcvar)
+rcvar=udpxy_enable
 
 load_rc_config ${name}
 

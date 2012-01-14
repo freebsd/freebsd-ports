@@ -20,7 +20,7 @@ gdm_lang=${gdm_lang-${LANG}}
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 
 name="gdm"
-rcvar=`set_rcvar`
+rcvar=gdm_enable
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/gdm-binary"

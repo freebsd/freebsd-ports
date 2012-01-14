@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="strongswan"
-rcvar=`set_rcvar`
+rcvar=strongswan_enable
 
 command="%%PREFIX%%/sbin/ipsec"
 extra_commands="reload statusall"

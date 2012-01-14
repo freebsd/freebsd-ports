@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="netams"
-rcvar=`set_rcvar`
+rcvar=netams_enable
 command="%%PREFIX%%/libexec/netams"
 
 load_rc_config $name

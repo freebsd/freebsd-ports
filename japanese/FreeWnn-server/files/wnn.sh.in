@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=wnn
-rcvar=`set_rcvar`
+rcvar=wnn_enable
 command=%%PREFIX%%/bin/Wnn4/jserver
 procname=%%PREFIX%%/bin/Wnn4/jserver
 start_precmd=start_precmd

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="davmail"
-rcvar=`set_rcvar`
+rcvar=davmail_enable
 
 load_rc_config $name
 

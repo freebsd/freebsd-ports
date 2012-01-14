@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="zeo211"
-rcvar=`set_rcvar`
+rcvar=zeo211_enable
 
 zeo211ctl () {
     for instance in $zeo211_instances; do

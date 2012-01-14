@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=p3scan
-rcvar=`set_rcvar`
+rcvar=p3scan_enable
 
 required_files=%%PREFIX%%/etc/p3scan/p3scan.conf
 

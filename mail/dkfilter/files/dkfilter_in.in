@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=dkfilter_in
-rcvar=`set_rcvar`
+rcvar=dkfilter_in_enable
 
 # set defaults
 

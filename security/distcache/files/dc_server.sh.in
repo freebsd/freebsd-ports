@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="%%NAME%%"
-rcvar=`set_rcvar`
+rcvar=%%NAME%%_enable
 
 command="%%PREFIX%%/bin/dc_server"
 command_args="-daemon -listen IP:9001 -user nobody -pidfile /var/run/$name.pid"

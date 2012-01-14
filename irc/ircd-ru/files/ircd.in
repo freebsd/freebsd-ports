@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="ircd"
-rcvar=${name}_enable
+rcvar=ircd_enable
 
 command="%%PREFIX%%/sbin/$name"
 required_files="%%PREFIX%%/etc/ircd-ru/ircd.conf %%PREFIX%%/etc/ircd-ru/ircd.motd %%PREFIX%%/etc/ircd-ru/ircd.smotd"

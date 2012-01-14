@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="rspamd_redirector"
-rcvar=`set_rcvar`
+rcvar=rspamd_redirector_enable
 command="%%PREFIX%%/bin/rspamd-redirector"
 
 load_rc_config $name

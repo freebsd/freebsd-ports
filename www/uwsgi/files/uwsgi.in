@@ -35,7 +35,7 @@
 . /etc/rc.subr
 
 name="uwsgi"
-rcvar=`set_rcvar`
+rcvar=uwsgi_enable
 
 load_rc_config $name
 

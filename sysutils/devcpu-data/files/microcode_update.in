@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="microcode_update"
-rcvar=`set_rcvar`
+rcvar=microcode_update_enable
 stop_cmd=":"
 start_precmd="microcode_update_prepare"
 start_cmd="microcode_update_start"

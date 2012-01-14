@@ -61,7 +61,7 @@ PATH=$PATH:/sbin:/usr/sbin; export PATH
 . /etc/rc.subr
 
 name="mta"
-rcvar=`set_rcvar`
+rcvar=mta_enable
 
 _mta_rc_script="%%PREFIX%%/etc/rc.d/mta"
 

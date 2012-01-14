@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="stunnel"
-rcvar=`set_rcvar`
+rcvar=stunnel_enable
 
 load_rc_config $name
 

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=spread
-rcvar=`set_rcvar`
+rcvar=spread_enable
 
 command="%%PREFIX%%/sbin/spread"
 

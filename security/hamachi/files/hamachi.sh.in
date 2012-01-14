@@ -32,7 +32,7 @@
 . /etc/rc.subr
 
 name="hamachi"
-rcvar=`set_rcvar`
+rcvar=hamachi_enable
 
 load_rc_config $name
 

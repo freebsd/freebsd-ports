@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="snortsam"
-rcvar=`set_rcvar`
+rcvar=snortsam_enable
 load_rc_config snortsam
 
 # defaults

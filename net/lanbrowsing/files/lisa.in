@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="lisa"
-rcvar=`set_rcvar`
+rcvar=lisa_enable
 
 command="%%PREFIX%%/bin/lisa"
 

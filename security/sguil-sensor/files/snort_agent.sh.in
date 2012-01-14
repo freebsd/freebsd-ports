@@ -24,7 +24,7 @@ snort_agent_conf=${snort_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/snort_agent.co
 snort_agent_flags=${snort_agent_flags:-"-D"}
 
 name="snort_agent"
-rcvar=`set_rcvar`
+rcvar=snort_agent_enable
 command="%%PREFIX%%/bin/%%SGUILDIR%%/snort_agent.tcl"
 command_args="-c ${snort_agent_conf} ${snort_agent_flags}"
 procname="%%PREFIX%%/bin/tclsh8.4"

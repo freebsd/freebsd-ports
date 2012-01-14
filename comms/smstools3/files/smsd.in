@@ -13,6 +13,7 @@
 . /etc/rc.subr
 
 name="smsd"
+rcvar=smsd_enable
 
 load_rc_config ${name}
 : ${smsd_enable="NO"}
@@ -23,7 +24,6 @@ load_rc_config ${name}
 : ${smsd_user="uucp"}
 : ${smsd_group="dialer"}
 
-rcvar=`set_rcvar`
 pidfile=${smsd_pidfile}
 command="%%PREFIX%%/bin/smsd"
 command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile} -l${smsd_logfile} -u${smsd_user} -g${smsd_group}"

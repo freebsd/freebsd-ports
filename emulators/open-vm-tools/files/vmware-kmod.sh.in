@@ -42,7 +42,7 @@ vmware_mod_status()
 # VMware kernel module: vmmemctl
 kernel_mod="vmmemctl"
 name="vmware_guest_${kernel_mod}"
-rcvar=`set_rcvar`
+rcvar=vmware_guest_${kernel_mod}_enable
 extra_commands="status"
 status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
@@ -58,7 +58,7 @@ run_rc_command "$1"
 # VMware kernel module: vmxnet
 kernel_mod="vmxnet"
 name="vmware_guest_${kernel_mod}"
-rcvar=`set_rcvar`
+rcvar=vmware_guest_${kernel_mod}_enable
 extra_commands="status"
 status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
@@ -73,7 +73,7 @@ run_rc_command "$1"
 # VMware kernel module: vmblock
 kernel_mod="vmblock"
 name="vmware_guest_${kernel_mod}"
-rcvar=`set_rcvar`
+rcvar=vmware_guest_${kernel_mod}_enable
 extra_commands="status"
 status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
@@ -88,7 +88,7 @@ run_rc_command "$1"
 # VMware kernel module: vmhgfs
 kernel_mod="vmhgfs"
 name="vmware_guest_${kernel_mod}"
-rcvar=`set_rcvar`
+rcvar=vmware_guest_${kernel_mod}_enable
 extra_commands="status"
 status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"

@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="ndpmonitor"
-rcvar=`set_rcvar`
+rcvar=ndpmonitor_enable
 
 command="%%PREFIX%%/sbin/ndpmon"
 required_files=%%ETCDIR%%/config_ndpmon.xml

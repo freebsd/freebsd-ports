@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=iaxmodem
-rcvar=`set_rcvar`
+rcvar=iaxmodem_enable
 
 command=%%PREFIX%%/sbin/iaxmodem
 

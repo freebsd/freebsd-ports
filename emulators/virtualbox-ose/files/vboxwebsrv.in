@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=vboxwebsrv
-rcvar=`set_rcvar`
+rcvar=vboxwebsrv_enable
 
 command="%%PREFIX%%/bin/vboxwebsrv"
 pidfile="/var/run/${name}.pid"

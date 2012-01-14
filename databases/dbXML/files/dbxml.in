@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="%%PORTNAME%%"
-rcvar=${name}_enable
+rcvar=%%PORTNAME%%_enable
 
 command=%%LOCALBASE%%/bin/dbxmlctl
 pidfile=%%DBXML_HOME%%/config/${name}.pid

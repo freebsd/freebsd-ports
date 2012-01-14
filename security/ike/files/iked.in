@@ -21,7 +21,7 @@
 iked_enable=${iked_enable:-"NO"}
 
 name=iked
-rcvar=`set_rcvar`
+rcvar=iked_enable
 load_rc_config $name
 command=/usr/local/sbin/iked
 command_args="-p /var/run/iked.pid > /dev/null"

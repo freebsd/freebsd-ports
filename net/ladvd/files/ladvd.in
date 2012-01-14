@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=ladvd
-rcvar=`set_rcvar`
+rcvar=ladvd_enable
 
 command=%%PREFIX%%/sbin/ladvd
 load_rc_config ${name}

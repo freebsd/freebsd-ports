@@ -14,7 +14,7 @@
 # minissdpd_flags="-i listen_addr"
 
 name=minissdpd
-rcvar=`set_rcvar`
+rcvar=minissdpd_enable
 load_rc_config $name
 
 minissdpd_enable=${minissdpd_enable:-"NO"}

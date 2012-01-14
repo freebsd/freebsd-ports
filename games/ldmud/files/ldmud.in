@@ -12,7 +12,7 @@
 
 name=ldmud
 ldmud_user=mud
-rcvar=`set_rcvar`
+rcvar=ldmud_enable
 
 start_cmd="${name}_start"
 

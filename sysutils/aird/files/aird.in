@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="aird"
-rcvar=`set_rcvar`
+rcvar=aird_enable
 
 load_rc_config $name
 

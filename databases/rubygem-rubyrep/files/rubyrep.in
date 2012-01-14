@@ -137,7 +137,7 @@ rubyrep_init() {
 }
 
 name="rubyrep"
-rcvar=`set_rcvar`
+rcvar=rubyrep_enable
 
 # read configuration and set defaults
 load_rc_config $name

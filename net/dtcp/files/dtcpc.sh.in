@@ -24,7 +24,7 @@ dtcpc_flags=${dtcpc_flags:-"-t network -Dl"}	# Flags to dtcpc program
 . /etc/rc.subr
 
 name="dtcpc"
-rcvar=`set_rcvar`
+rcvar=dtcpc_enable
 command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%RUBY%%"
 pidfile="/var/run/${name}.pid"

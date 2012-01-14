@@ -28,7 +28,7 @@ if [ ! -z "$net_snmpd_enable" ]; then
 fi
 
 name=snmpd
-rcvar=`set_rcvar`
+rcvar=snmpd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${snmpd_pidfile}

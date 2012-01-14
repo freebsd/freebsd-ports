@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="ppolicyd"
-rcvar=`set_rcvar`
+rcvar=ppolicyd_enable
 
 command="%%LOCALBASE%%/bin/twistd"
 pidfile="/var/run/ppolicyd.pid"

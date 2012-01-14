@@ -17,7 +17,7 @@
 
 
 name="sastatd"
-rcvar=`set_rcvar`
+rcvar=sastatd_enable
 
 load_rc_config "$name"
 : ${sastatd_enable="NO"}

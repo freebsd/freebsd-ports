@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="sssd"
-rcvar=`set_rcvar`
+rcvar=sssd_enable
 
 command="%%PREFIX%%/sbin/$name"
 sssd_flags="-D"

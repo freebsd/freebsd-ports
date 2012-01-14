@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=dbmail_lmtpd
-rcvar=`set_rcvar`
+rcvar=dbmail_lmtpd_enable
 
 command=%%PREFIX%%/sbin/dbmail-lmtpd
 pidfile=/var/run/dbmail-lmtpd.pid

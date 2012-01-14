@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="ietd"
-rcvar=`set_rcvar`
+rcvar=ietd_enable
 
 command=%%PREFIX%%/sbin/${name}
 required_modules="%%PREFIX%%/modules/iet.ko:iet"

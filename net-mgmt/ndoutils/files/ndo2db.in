@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="ndo2db"
-rcvar=${name}_enable
+rcvar=ndo2db_enable
 
 command="%%PREFIX%%/bin/ndo2db-3x"
 required_files="${ndo2db_configfile}"

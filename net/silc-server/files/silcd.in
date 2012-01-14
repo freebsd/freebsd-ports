@@ -15,7 +15,7 @@ silcd_enable=${silcd_enable-"NO"}
 . /etc/rc.subr
 
 name=silcd
-rcvar=`set_rcvar`
+rcvar=silcd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

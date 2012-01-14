@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="apolicyd"
-rcvar=`set_rcvar`
+rcvar=apolicyd_enable
 
 command="%%PREFIX%%/bin/twistd"
 pidfile="/var/run/apolicyd.pid"

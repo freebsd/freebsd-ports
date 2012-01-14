@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="inadyn"
-rcvar=`set_rcvar`
+rcvar=inadyn_enable
 
 command=%%PREFIX%%/bin/${name}
 

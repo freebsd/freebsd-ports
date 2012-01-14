@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pproxy"
-rcvar=`set_rcvar`
+rcvar=pproxy_enable
 
 load_rc_config $name
 

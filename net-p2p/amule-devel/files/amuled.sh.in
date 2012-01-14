@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="amuled"
-rcvar=`set_rcvar`
+rcvar=amuled_enable
 
 load_rc_config $name
 

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="teamspeak"
-rcvar=${name}_enable
+rcvar=teamspeak_enable
 
 db_dir=/var/db/teamspeak
 log_dir=/var/log/teamspeak

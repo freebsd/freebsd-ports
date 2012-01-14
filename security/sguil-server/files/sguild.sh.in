@@ -41,7 +41,7 @@ sguild_flags=${sguild_flags:-"-D -P ${pid}"}
 sguild_user=${sguild_user:-"sguil"}
 
 name="sguild"
-rcvar=`set_rcvar`
+rcvar=sguild_enable
 command="%%PREFIX%%/bin/${name}"
 command_args="-c ${sguild_conf} ${sguild_flags}"
 procname="%%TCLSH%%"

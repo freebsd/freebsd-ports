@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="supervisord"
-rcvar=`set_rcvar`
+rcvar=supervisord_enable
 
 command="%%PREFIX%%/bin/${name}"
 command_interpreter="%%PYTHON_CMD%%"

@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=pfflowd
-rcvar=`set_rcvar`
+rcvar=pfflowd_enable
 
 load_rc_config $name
 

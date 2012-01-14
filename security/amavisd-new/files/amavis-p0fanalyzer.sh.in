@@ -15,7 +15,7 @@ amavis_p0fanalyzer_flags="${amavis_p0fanalyzer_flags-2345}"
 . /etc/rc.subr
 
 name="amavis_p0fanalyzer"
-rcvar=`set_rcvar`
+rcvar=amavis_p0fanalyzer_enable
 
 start_cmd=p0fanalyzer_start
 stop_cmd=p0fanalyzer_stop

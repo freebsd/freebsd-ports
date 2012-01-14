@@ -20,7 +20,7 @@ irrd_flags="${irrd_flags:--u}"			# Flags to imapd program
 . /etc/rc.subr
 
 name="irrd"
-rcvar=`set_rcvar`
+rcvar=irrd_enable
 command="%%PREFIX%%/sbin/irrd"
 required_files="%%PREFIX%%/etc/irrd.conf"
 

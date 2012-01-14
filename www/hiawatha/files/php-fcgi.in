@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="php_fcgi"
-rcvar=`set_rcvar`
+rcvar=php_fcgi_enable
 
 load_rc_config $name
 

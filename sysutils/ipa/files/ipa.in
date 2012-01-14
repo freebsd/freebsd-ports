@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="ipa"
-rcvar=${name}_enable
+rcvar=ipa_enable
 
 command="%%PREFIX%%/bin/ipa"
 extra_commands="reload"

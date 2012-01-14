@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="anacron"
-rcvar=`set_rcvar`
+rcvar=anacron_enable
 command="%%PREFIX%%/sbin/anacron"
 
 load_rc_config $name

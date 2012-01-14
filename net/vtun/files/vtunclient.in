@@ -29,7 +29,7 @@ vtunclient_enable=${vtunclient_enable:-"NO"}
 . /etc/rc.subr
 
 name=vtunclient
-rcvar=`set_rcvar`
+rcvar=vtunclient_enable
 required_files="%%PREFIX%%/etc/vtund.conf"
 
 command=%%PREFIX%%/sbin/vtund

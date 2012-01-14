@@ -22,7 +22,7 @@ echo $$ >/var/run/maudio.pid
 . /etc/rc.subr
 
 name="maudio"
-rcvar=`set_rcvar`
+rcvar=maudio_enable
 load_rc_config $name
 
 : ${maudio_enable="NO"}

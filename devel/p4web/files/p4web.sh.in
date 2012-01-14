@@ -29,7 +29,7 @@
 . /etc/rc.subr
 
 name="p4web"
-rcvar=`set_rcvar`
+rcvar=p4web_enable
 
 load_rc_config $name
 

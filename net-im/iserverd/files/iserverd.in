@@ -19,7 +19,7 @@ load_rc_config $name
 iserverd_enable=${iserverd_enable:-"NO"}
 iserverd_user=iserv
 
-rcvar=`set_rcvar`
+rcvar=iserverd_enable
 command=%%PREFIX%%/bin/iserverd
 command_args="-o"
 

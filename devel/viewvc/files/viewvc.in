@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name=viewvc
-rcvar=${name}_enable
+rcvar=viewvc_enable
 load_rc_config $name
 
 # Set defaults

@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="bbftpd"
-rcvar=${name}_enable
+rcvar=bbftpd_enable
 
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid

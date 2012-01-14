@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=pxe
-rcvar=`set_rcvar`
+rcvar=pxe_enable
 
 command="%%PREFIX%%/sbin/pxe"
 required_files=%%PREFIX%%/etc/pxe.conf

@@ -12,7 +12,7 @@ jscal_state="${jscal_state:-/var/db/jscal-state}"
 . /etc/rc.subr
 
 name="jscal"
-rcvar=`set_rcvar`
+rcvar=jscal_enable
 command="%%PREFIX%%/bin/jscal"
 start_cmd="jscal_start"
 stop_cmd="jscal_stop"

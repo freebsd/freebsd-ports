@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="spiped"
-rcvar=${name}_enable
+rcvar=spiped_enable
 
 load_rc_config $name
 

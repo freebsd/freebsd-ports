@@ -34,7 +34,7 @@
 . /etc/rc.subr
 
 name="milteropendkim"
-rcvar=`set_rcvar`
+rcvar=milteropendkim_enable
 
 extra_commands="reload"
 start_precmd="dkim_prepcmd"

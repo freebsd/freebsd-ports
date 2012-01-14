@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="monit"
-rcvar=`set_rcvar`
+rcvar=monit_enable
 
 restart_precmd="monit_checkconfig"
 reload_precmd="monit_checkconfig"

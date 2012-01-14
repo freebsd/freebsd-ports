@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=ez_ipupdate
-rcvar=`set_rcvar`
+rcvar=ez_ipupdate_enable
 
 load_rc_config $name
 

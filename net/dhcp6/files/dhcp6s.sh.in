@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="dhcp6s"
-rcvar=${name}_enable
+rcvar=dhcp6s_enable
 
 command=%%PREFIX%%/sbin/${name}
 start_precmd="${name}_precmd"

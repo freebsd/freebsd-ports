@@ -17,7 +17,7 @@ miredo_enable="${miredo_enable-NO}"
 . /etc/rc.subr
 
 name=miredo
-rcvar=`set_rcvar`
+rcvar=miredo_enable
 
 command=%%PREFIX%%/sbin/${name}
 required_files=%%PREFIX%%/etc/miredo/miredo.conf

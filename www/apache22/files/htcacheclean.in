@@ -1,10 +1,8 @@
 #!/bin/sh
-#
-#
-#
 
+# $FreeBSD$
+#
 # PROVIDE: htcacheclean
-
 #
 # Configuration settings for htcacheclean in /etc/rc.conf
 #
@@ -33,20 +31,20 @@
 
 . /etc/rc.subr
 
+name="htcacheclean"
+rcvar=htcacheclean_enable
+
+load_rc_config "${name}"
+
 htcacheclean_enable="${htcacheclean_enable:-"NO"}"
 htcacheclean_cache="${htcacheclean_cache:-"%%PREFIX%%/www/proxy"}"
 htcacheclean_cachelimit="${htcacheclean_cachelimit:-"512M"}"
 htcacheclean_interval="${htcacheclean_interval:-"60"}"
 htcacheclean_args="${htcacheclean_args:-"-t -n -i"}"
 
-
-name="htcacheclean"
-rcvar=`set_rcvar`
-
 start_precmd="htc_check"
 restart_precmd="htc_check"
 restart_reload="htc_check"
-load_rc_config "${name}"
 
 command="%%PREFIX%%/sbin/htcacheclean"
 flags="-p${htcacheclean_cache} -d${htcacheclean_interval} -l${htcacheclean_cachelimit} ${htcacheclean_args}"

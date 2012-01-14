@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="sec"
-rcvar=`set_rcvar`
+rcvar=sec_enable
 
 command="%%PREFIX%%/bin/sec"
 command_args="-detach"

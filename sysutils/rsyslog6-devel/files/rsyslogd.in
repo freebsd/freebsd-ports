@@ -11,7 +11,7 @@
 . /etc/rc.subr
 
 name=rsyslogd
-rcvar=`set_rcvar`
+rcvar=rsyslogd_enable
 command="%%PREFIX%%/sbin/${name}"
 load_rc_config $name
 : ${rsyslogd_enable:="NO"}

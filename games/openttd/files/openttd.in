@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="openttd"
-rcvar=`set_rcvar`
+rcvar=openttd_enable
 command="%%PREFIX%%/bin/${name}"
 command_args="-s null -m null -v null -b null -D -f"
 

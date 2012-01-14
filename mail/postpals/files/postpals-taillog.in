@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=postpals_taillog
-rcvar=`set_rcvar`
+rcvar=postpals_taillog_enable
 
 command=%%PREFIX%%/sbin/postpals-taillog
 pidfile=/var/run/${name}.pid

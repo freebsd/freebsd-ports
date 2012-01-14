@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="ser2net"
-rcvar=`set_rcvar`
+rcvar=ser2net_enable
 command="%%PREFIX%%/sbin/ser2net"
 
 load_rc_config $name

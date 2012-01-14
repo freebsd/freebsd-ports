@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="daedalus"
-rcvar=`set_rcvar`
+rcvar=daedalus_enable
 
 command="%%PREFIX%%/bin/daedalus.rb"
 pidfile="/var/run/daedalus.pid"

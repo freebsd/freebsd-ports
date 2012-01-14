@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="linux_adobe"
-rcvar=`set_rcvar`
+rcvar=linux_adobe_enable
 start_cmd="linux_adobe_start"
 stop_cmd="linux_adobe_stop"
 

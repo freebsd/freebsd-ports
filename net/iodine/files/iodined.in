@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="iodined"
-rcvar=${name}_enable
+rcvar=iodined_enable
 
 command=%%PREFIX%%/sbin/${name}
 

@@ -32,7 +32,7 @@
 . /etc/rc.subr
 
 name=darkstat
-rcvar=`set_rcvar`
+rcvar=darkstat_enable
 
 command=%%PREFIX%%/sbin/$name
 start_precmd=darkstat_prestart

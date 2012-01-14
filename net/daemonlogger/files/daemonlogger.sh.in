@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="daemonlogger"
-rcvar=`set_rcvar`
+rcvar=daemonlogger_enable
 
 load_rc_config $name
 

@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="barnyard2"
-rcvar=`set_rcvar`
+rcvar=barnyard2_enable
 # set some defaults
 : ${barnyard2_enable="NO"}
 : ${barnyard2_conf="%%PREFIX%%/etc/barnyard2.conf"}

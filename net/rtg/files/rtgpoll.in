@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="rtgpoll"
-rcvar=${name}_enable
+rcvar=rtgpoll_enable
 
 command=%%PREFIX%%/bin/${name}
 

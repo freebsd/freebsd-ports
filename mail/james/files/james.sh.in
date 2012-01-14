@@ -52,7 +52,7 @@ james%%JAMES_VERSION%%_stop_timeout="${james%%JAMES_VERSION%%_stop_timeout:-"10"
 . /etc/rc.subr
 
 name="james%%JAMES_VERSION%%"
-rcvar=`set_rcvar`
+rcvar=james%%JAMES_VERSION%%_enable
 pidfile="%%PID_FILE%%"
 
 JAVA_HOME=%%JAVA_HOME%%

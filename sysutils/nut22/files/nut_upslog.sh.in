@@ -24,7 +24,7 @@ nut_upslog_ups=${nut_upslog_ups-"myups@localhost"}
 . /etc/rc.subr
 
 name="nut_upslog"
-rcvar=`set_rcvar`
+rcvar=nut_upslog_enable
 
 load_rc_config $name
 
