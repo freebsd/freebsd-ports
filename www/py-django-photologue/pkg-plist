@@ -1,0 +1,58 @@
+%%PYTHON_SITELIBDIR%%/photologue/__init__.py
+%%PYTHON_SITELIBDIR%%/photologue/__init__.pyc
+%%PYTHON_SITELIBDIR%%/photologue/__init__.pyo
+%%PYTHON_SITELIBDIR%%/photologue/admin.py
+%%PYTHON_SITELIBDIR%%/photologue/admin.pyc
+%%PYTHON_SITELIBDIR%%/photologue/admin.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/__init__.py
+%%PYTHON_SITELIBDIR%%/photologue/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.py
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.py
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.py
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.pyo
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.py
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.pyc
+%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.pyo
+%%PYTHON_SITELIBDIR%%/photologue/models.py
+%%PYTHON_SITELIBDIR%%/photologue/models.pyc
+%%PYTHON_SITELIBDIR%%/photologue/models.pyo
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.py
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.pyc
+%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.pyo
+%%PYTHON_SITELIBDIR%%/photologue/tests.py
+%%PYTHON_SITELIBDIR%%/photologue/tests.pyc
+%%PYTHON_SITELIBDIR%%/photologue/tests.pyo
+%%PYTHON_SITELIBDIR%%/photologue/urls.py
+%%PYTHON_SITELIBDIR%%/photologue/urls.pyc
+%%PYTHON_SITELIBDIR%%/photologue/urls.pyo
+%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.py
+%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.pyc
+%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.pyo
+%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.py
+%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.pyc
+%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.pyo
+%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.py
+%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.pyc
+%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/photologue/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/photologue/management
+@dirrm %%PYTHON_SITELIBDIR%%/photologue/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/photologue/utils
+@dirrm %%PYTHON_SITELIBDIR%%/photologue
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
