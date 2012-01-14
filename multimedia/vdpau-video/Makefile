@@ -30,9 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-VDPAU_PTHREAD_LIBS!=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
-
-
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--disable-debug
 .endif
@@ -47,8 +44,5 @@ post-patch:	.SILENT
 		-e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
 		-e '/\^vdpau_version/s|$$CC -E|& ${CPPFLAGS}|' \
 		 ${WRKSRC}/configure
-	${REINPLACE_CMD} 's/^vdpau.*LDFLAGS.*/& \
-		-Wl,-lc ${VDPAU_PTHREAD_LIBS:S/^/-Wl,/}/' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
