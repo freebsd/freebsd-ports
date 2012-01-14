@@ -1,0 +1,4 @@
+tzdialog is an ISO-3166 compliant sh(1) implementation of tzsetup(8) based on
+the dialog(1) (or Xdialog(1)) utility for setting the local default timezone.
+
+WWW: http://druidbsd.sourceforge.net/
