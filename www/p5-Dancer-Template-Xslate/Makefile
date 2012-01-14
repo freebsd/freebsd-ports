@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Dancer-Template-Xslate
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FRANCKC
+MASTER_SITE_SUBDIR=	CPAN:RSIMOES
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	magik@roorback.net
@@ -19,11 +19,8 @@ RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 		p5-Text-Xslate>0:${PORTSDIR}/textproc/p5-Text-Xslate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	Dancer::Template::Xslate.3
-
-post-patch:
-	${RM} ${WRKSRC}/lib/Dancer/Template/Xslate.pm.orig
 
 .include <bsd.port.mk>
