@@ -15,8 +15,9 @@ COMMENT=	Display information utility for X
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xext x11 xtst xxf86vm xxf86misc xxf86dga xi xrender \
+USE_XORG=	xext x11 xtst xxf86vm xxf86dga xi xrender \
 		xinerama dmxproto xp
+CONFIGURE_ARGS=	--without-xf86misc
 
 PLIST_FILES=	bin/xdpyinfo
 
