@@ -23,4 +23,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina
 DATADIR=	${PREFIX}/share/rexx${PORTNAME}
 
+post-patch:	.SILENT
+	@${REINPLACE_CMD} -Ee "/^compiler\.unix/s,'.*','${CC:T}'," \
+		-e "s,cc\.cc = .*,cc.${CC:T} = '${CC}'," \
+		-e "/ opt/s/-[Og][^' ]?//" \
+		-e "s,cflags\. = '(.*)',cflags. = '\1 ${CFLAGS}'," \
+		${WRKSRC}/rexxwrap.cmd
+	@${REINPLACE_CMD} 's/-compiler=$$(CC/&:T/' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
