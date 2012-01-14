@@ -3,6 +3,7 @@
 %%PYTHON_SITELIBDIR%%/anthy.py
 libexec/ibus-engine-anthy
 libexec/ibus-setup-anthy
+%%DATADIR%%/dicts/oldchar.t
 %%DATADIR%%/dicts/symbol.t
 %%DATADIR%%/engine/engine.py
 %%DATADIR%%/engine/engine.pyc
@@ -43,9 +44,9 @@ libexec/ibus-setup-anthy
 %%DATADIR%%/setup/prefs.pyo
 %%DATADIR%%/setup/setup.glade
 share/ibus/component/anthy.xml
-%%NLS%%share/locale/fr/LC_MESSAGES/ibus-anthy.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/ibus-anthy.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
+share/locale/fr/LC_MESSAGES/ibus-anthy.mo
+share/locale/ja/LC_MESSAGES/ibus-anthy.mo
+share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/engine

@@ -1,38 +1,38 @@
---- configure.org	2010-10-26 21:43:56.110339260 +0900
-+++ configure	2010-10-26 21:45:26.167340080 +0900
-@@ -16347,7 +16347,7 @@
+--- configure.orig	2012-01-14 12:14:14.987155483 +0900
++++ configure	2012-01-14 12:24:25.699154843 +0900
+@@ -17010,7 +17010,7 @@
  if test $ac_have_decl = 1; then :
  
  else
--  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
-+#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
+-  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_KATAKANA_CANDIDATE" "ac_cv_have_decl_NTH_KATAKANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -16363,7 +16363,7 @@
+@@ -17026,7 +17026,7 @@
  if test $ac_have_decl = 1; then :
  
  else
--  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
-+#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
+-  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_HIRAGANA_CANDIDATE" "ac_cv_have_decl_NTH_HIRAGANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -16379,7 +16379,7 @@
+@@ -17042,7 +17042,7 @@
  if test $ac_have_decl = 1; then :
  
  else
--  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
-+#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
+-  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_HALFKANA_CANDIDATE" "ac_cv_have_decl_NTH_HALFKANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -16395,7 +16395,7 @@
+@@ -17058,7 +17058,7 @@
  if test $ac_have_decl = 1; then :
  
  else
--  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
-+#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
+-  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error $? "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
  
  
