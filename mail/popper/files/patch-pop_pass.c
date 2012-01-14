@@ -1,5 +1,5 @@
---- pop_pass.c.orig	Mon Jul 30 19:29:19 2001
-+++ pop_pass.c	Mon Jul 30 19:29:25 2001
+--- pop_pass.c.orig	1998-07-10 03:44:07.000000000 +0400
++++ pop_pass.c	2012-01-09 03:03:30.395199055 +0400
 @@ -19,6 +19,12 @@
  #include <pwd.h>
  #include "popper.h"
@@ -52,11 +52,12 @@
  	return(pop_msg(p, POP_FAILURE, "\"%s\": shell not found.", p->user));
  #endif
  
+-    if ((p->kerberos ? auth_user_kerberos(p, pw) : auth_user(p, pwp))
 +#ifdef OPIE
 +    if (opieverify(&opiestate, p->pop_parm[1])) {
 +       if (pwok) {
 +#endif /* OPIE */
-     if ((p->kerberos ? auth_user_kerberos(p, pw) : auth_user(p, pwp))
++    if ((p->kerberos ? auth_user_kerberos(p, &pw) : auth_user(p, pwp))
  							!= POP_SUCCESS) {
  	    pop_log(p,POP_PRIORITY,"Failed attempted login to %s from host %s",
  							    p->user, p->client);

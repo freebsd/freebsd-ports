@@ -25,6 +25,7 @@ COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 # If WITH_POPPER_DEBUG variable present in the environment, popper builds
 # with more verbose debugging.
 
+USE_CSTD=	gnu89
 O_DEFS=		-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
@@ -55,7 +56,7 @@ PLIST_DIRS=	etc/popper
 
 LATEST_LINK=	popper
 
-PORTSCOUT=      limit:^2\.
+PORTSCOUT=	limit:^2\.
 
 post-patch:
 	$(RM) ${WRKSRC}/md5.h
