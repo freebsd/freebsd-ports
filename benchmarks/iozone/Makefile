@@ -20,8 +20,8 @@ CONFLICTS=	iozone-2.*
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 
 MAKEFILE=	makefile
-MAKE_ARGS=	freebsd	CFLAGS="${CFLAGS}"
-ALL_TARGET=
+MAKE_ARGS=	${MAKE_ENV}
+ALL_TARGET=	freebsd
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iozone.1
