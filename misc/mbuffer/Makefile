@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mbuffer
-PORTVERSION=	2011.03.17
+PORTVERSION=	2011.07.24
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
