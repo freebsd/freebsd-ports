@@ -1402,6 +1402,7 @@
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
     SUBDIR += py-django-mptt
+    SUBDIR += py-django-photologue
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
