@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	misc www pear geography
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USE_PHP=	ctype pcre
@@ -25,13 +25,7 @@ OPTIONS=	PEAR_NET_FTP "PEAR::Net::FTP support" off \
 		PEAR_SOAP "PEAR::SOAP support" off \
 		PEAR_XML_SERIALIZER "PEAR::XML::Serializer support" off
 
-CATEGORY=	Services
-FILES=		Weather.php Weather/Common.php Weather/Ejse.php			\
-		Weather/Globalweather.php Weather/Metar.php 			\
-		Weather/Weatherdotcom.php buildMetarDB.php images/sunrise.gif 	\
-		images/sunset.gif
-EXAMPLES=	ejse-basic.php globalweather-basic.php metar-basic.php 		\
-		metar-extensive.php weather.com-basic.php weather.com-extensive.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
