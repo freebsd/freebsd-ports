@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lrzip
-PORTVERSION=	0.606
+PORTVERSION=	0.608
 CATEGORIES=	archivers
 MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 		http://files.gslin.org/Software/
@@ -14,10 +14,10 @@ MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Long Range ZIP or Lzma RZIP
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	nasm>=0:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
-
-LICENSE=	GPLv2
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
