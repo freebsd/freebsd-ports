@@ -117,6 +117,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
+	${REINPLACE_CMD} -e 's/.set_rcvar./tinderd_enable/' \
+		${WRKSRC}/etc/rc.d/tinderd
 	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
