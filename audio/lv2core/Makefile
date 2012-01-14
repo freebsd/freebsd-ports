@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	lv2core
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LV2 Core Package
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
@@ -46,7 +48,6 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
-	@${STRIP_CMD} ${PREFIX}/bin/lv2config
 	${INSTALL_DATA} ${WRKSRC}/lv2core.pc ${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.post.mk>
