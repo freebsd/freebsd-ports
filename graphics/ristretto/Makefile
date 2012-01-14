@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.93
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -25,7 +25,8 @@ USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils pkgconfig
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_XFCE=	configenv libmenu libutil xfconf
+USE_XFCE=	configenv libmenu libutil xfconf libexo
+USE_XORG=	sm x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| docs||' ${WRKSRC}/Makefile.in
