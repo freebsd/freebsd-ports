@@ -8,13 +8,16 @@
 PORTNAME=	InterfaceGraphs
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.glenbarber.us/ports/net-mgmt/zenpack-${PORTNAME}/
+MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
+DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides a link that graphs all network interfaces for a device
 
 ZPACKGROUP=	community
 ZPACKPREFIX=	ZenPacks.community.
+WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+TAG= 7ed2d7d
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.zenoss.mk"
