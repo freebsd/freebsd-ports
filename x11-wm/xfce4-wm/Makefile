@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.8.2
+PORTVERSION=	4.8.3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
@@ -16,6 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 window manager
 
+DATADIR=	${PREFIX}/share/xfwm4
 DOCSDIR=	${PREFIX}/share/doc/xfwm4
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
@@ -57,10 +58,6 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if defined(WITH_REVMOUSE)
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-src__events.c
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(#define ShapeInput 2\);|\1|' \
-		${WRKSRC}/src/frame.c
 
 post-install:
 	@-update-desktop-database

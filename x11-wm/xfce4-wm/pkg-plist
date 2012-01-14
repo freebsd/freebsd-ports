@@ -77,6 +77,7 @@ share/locale/hi/LC_MESSAGES/xfwm4.mo
 share/locale/hr/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/id/LC_MESSAGES/xfwm4.mo
+share/locale/is/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/LC_MESSAGES/xfwm4.mo
@@ -1464,8 +1465,8 @@ share/themes/Wallis/xfwm4/top-right-active.png
 share/themes/Wallis/xfwm4/top-right-active.xpm
 share/themes/Wallis/xfwm4/top-right-inactive.png
 share/themes/Wallis/xfwm4/top-right-inactive.xpm
-share/xfwm4/defaults
-@dirrm share/xfwm4
+%%DATADIR%%/defaults
+@dirrm %%DATADIR%%
 @dirrm share/themes/Wallis/xfwm4
 @dirrm share/themes/Wallis
 @dirrm share/themes/Tyrex/xfwm4
