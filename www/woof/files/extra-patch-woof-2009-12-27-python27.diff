@@ -1,0 +1,190 @@
+--- woof-2009-12-27.py.orig	2009-12-27 23:47:43.000000000 +0100
++++ woof-2009-12-27.py	2011-02-08 20:38:51.150000040 +0100
+@@ -28,13 +28,13 @@
+ 
+ import sys, os, errno, socket, getopt, commands, tempfile
+ import cgi, urllib, BaseHTTPServer
++from SocketServer import ThreadingMixIn
+ import ConfigParser
+ import shutil, tarfile, zipfile
+ import struct
+ 
+ maxdownloads = 1
+ TM = object
+-cpid = -1
+ compressed = 'gz'
+ upload = False
+ 
+@@ -137,6 +137,11 @@ class FileServHTTPRequestHandler (BaseHT
+          self.send_error (501, "Unsupported method (POST)")
+          return
+       
++      maxdownloads -= 1
++
++      if maxdownloads < 1:
++         httpd.shutdown()
++
+       # taken from
+       # http://mail.python.org/pipermail/python-list/2006-September/402441.html
+ 
+@@ -200,13 +205,11 @@ class FileServHTTPRequestHandler (BaseHT
+       self.end_headers ()
+       self.wfile.write (txt)
+ 
+-      maxdownloads -= 1
+-
+       return
+       
+ 
+    def do_GET (self):
+-      global maxdownloads, cpid, compressed, upload
++      global maxdownloads, compressed, upload
+ 
+       # Form for uploading a file
+       if upload:
+@@ -260,63 +263,62 @@ class FileServHTTPRequestHandler (BaseHT
+ 
+       maxdownloads -= 1
+ 
+-      # let a separate process handle the actual download, so that
+-      # multiple downloads can happen simultaneously.
++      if maxdownloads < 1:
++         httpd.shutdown()
+ 
+-      cpid = os.fork ()
++      type = None
++      
++      if os.path.isfile (self.filename):
++         type = "file"
++      elif os.path.isdir (self.filename):
++         type = "dir"
+ 
+-      if cpid == 0:
+-         # Child process
+-         child = None
+-         type = None
+-         
+-         if os.path.isfile (self.filename):
+-            type = "file"
+-         elif os.path.isdir (self.filename):
+-            type = "dir"
++      if not type:
++         print >> sys.stderr, "can only serve files or directories. Aborting."
++         sys.exit (1)
+ 
+-         if not type:
+-            print >> sys.stderr, "can only serve files or directories. Aborting."
+-            sys.exit (1)
++      self.send_response (200)
++      self.send_header ("Content-Type", "application/octet-stream")
++      if os.path.isfile (self.filename):
++         self.send_header ("Content-Length",
++                           os.path.getsize (self.filename))
++      self.end_headers ()
+ 
+-         self.send_response (200)
+-         self.send_header ("Content-Type", "application/octet-stream")
+-         if os.path.isfile (self.filename):
+-            self.send_header ("Content-Length",
+-                              os.path.getsize (self.filename))
+-         self.end_headers ()
++      try:
++         if type == "file":
++            datafile = file (self.filename)
++            shutil.copyfileobj (datafile, self.wfile)
++            datafile.close ()
++         elif type == "dir":
++            if compressed == 'zip':
++               ezfile = EvilZipStreamWrapper (self.wfile)
++               zfile = zipfile.ZipFile (ezfile, 'w', zipfile.ZIP_DEFLATED)
++               stripoff = os.path.dirname (self.filename) + os.sep
+ 
+-         try:
+-            if type == "file":
+-               datafile = file (self.filename)
+-               shutil.copyfileobj (datafile, self.wfile)
+-               datafile.close ()
+-            elif type == "dir":
+-               if compressed == 'zip':
+-                  ezfile = EvilZipStreamWrapper (self.wfile)
+-                  zfile = zipfile.ZipFile (ezfile, 'w', zipfile.ZIP_DEFLATED)
+-                  stripoff = os.path.dirname (self.filename) + os.sep
++               for root, dirs, files in os.walk (self.filename):
++                  for f in files:
++                     filename = os.path.join (root, f)
++                     if filename[:len (stripoff)] != stripoff:
++                        raise RuntimeException, "invalid filename assumptions, please report!"
++                     zfile.write (filename, filename[len (stripoff):])
++               zfile.close ()
++            else:
++               tfile = tarfile.open (mode=('w|' + compressed),
++                                     fileobj=self.wfile)
++               tfile.add (self.filename,
++                          arcname=os.path.basename(self.filename))
++               tfile.close ()
++      except Exception, e:
++         print e
++         print >>sys.stderr, "Connection broke. Aborting"
+ 
+-                  for root, dirs, files in os.walk (self.filename):
+-                     for f in files:
+-                        filename = os.path.join (root, f)
+-                        if filename[:len (stripoff)] != stripoff:
+-                           raise RuntimeException, "invalid filename assumptions, please report!"
+-                        zfile.write (filename, filename[len (stripoff):])
+-                  zfile.close ()
+-               else:
+-                  tfile = tarfile.open (mode=('w|' + compressed),
+-                                        fileobj=self.wfile)
+-                  tfile.add (self.filename,
+-                             arcname=os.path.basename(self.filename))
+-                  tfile.close ()
+-         except Exception, e:
+-            print e
+-            print >>sys.stderr, "Connection broke. Aborting"
++
++class ThreadedHTTPServer(ThreadingMixIn, BaseHTTPServer.HTTPServer):
++   """Handle requests in a separate thread"""
+ 
+ 
+ def serve_files (filename, maxdown = 1, ip_addr = '', port = 8080):
+-   global maxdownloads
++   global maxdownloads, httpd
+ 
+    maxdownloads = maxdown
+ 
+@@ -326,8 +328,7 @@ def serve_files (filename, maxdown = 1, 
+    FileServHTTPRequestHandler.filename = filename
+ 
+    try:
+-      httpd = BaseHTTPServer.HTTPServer ((ip_addr, port),
+-                                         FileServHTTPRequestHandler)
++      httpd = ThreadedHTTPServer ((ip_addr, port), FileServHTTPRequestHandler)
+    except socket.error:
+       print >>sys.stderr, "cannot bind to IP address '%s' port %d" % (ip_addr, port)
+       sys.exit (1)
+@@ -337,8 +338,7 @@ def serve_files (filename, maxdown = 1, 
+    if ip_addr:
+       print "Now serving on http://%s:%s/" % (ip_addr, httpd.server_port)
+ 
+-   while cpid != 0 and maxdownloads > 0:
+-      httpd.handle_request ()
++   httpd.serve_forever ()
+ 
+ 
+ 
+@@ -488,14 +488,6 @@ def main ():
+ 
+    serve_files (filename, maxdown, ip_addr, port)
+ 
+-   # wait for child processes to terminate
+-   if cpid != 0:
+-      try:
+-         while 1:
+-            os.wait ()
+-      except OSError:
+-         pass
+-
+ 
+ 
+ if __name__=='__main__':

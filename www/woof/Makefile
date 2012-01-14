@@ -22,7 +22,17 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/woof
 
-do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} ${PREFIX}/bin/woof
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} >= 270
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-woof-2009-12-27-python27.diff
+.endif
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${DISTFILES}
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTFILES} ${PREFIX}/bin/woof
+
+.include <bsd.port.post.mk>
