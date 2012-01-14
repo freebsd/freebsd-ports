@@ -1,5 +1,21 @@
 @comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/_pylibmc.so
-%%PYTHON_SITELIBDIR%%/pylibmc.py
-%%PYTHON_SITELIBDIR%%/pylibmc.pyc
-%%PYTHON_SITELIBDIR%%/pylibmc.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/__init__.py
+%%PYTHON_SITELIBDIR%%/pylibmc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/__main__.py
+%%PYTHON_SITELIBDIR%%/pylibmc/__main__.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/__main__.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/client.py
+%%PYTHON_SITELIBDIR%%/pylibmc/client.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/client.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/consts.py
+%%PYTHON_SITELIBDIR%%/pylibmc/consts.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/consts.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/pools.py
+%%PYTHON_SITELIBDIR%%/pylibmc/pools.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/pools.pyo
+%%PYTHON_SITELIBDIR%%/pylibmc/test.py
+%%PYTHON_SITELIBDIR%%/pylibmc/test.pyc
+%%PYTHON_SITELIBDIR%%/pylibmc/test.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/pylibmc
