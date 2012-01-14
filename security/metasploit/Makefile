@@ -7,6 +7,7 @@
 
 PORTNAME=	metasploit
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
@@ -21,11 +22,11 @@ WRKSRC=		${WRKDIR}/msf3
 SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 		msfopcode msfpayload msfpescan msfweb
 
-OPTIONS=	SVN "Use subversion" off \
-		SVN_FBSD "Use subversion-freebsd" off
+OPTIONS=	SVN "Use subversion" off
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 USE_BZIP2=	yes
 USE_NCURSES=	yes
 WITH_NCURSES_PORT=	yes
@@ -38,16 +39,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems
 RUN_DEPENDS+=	rubygem-actionpack>0:${PORTSDIR}/www/rubygem-actionpack	\
 		rubygem-sqlite3>0:${PORTSDIR}/databases/rubygem-sqlite3	\
 		rubygem-activerecord>0:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport \
-		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
+		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport
 .endif
 
-.if defined(WITH_SVN) || defined(WITH_SVN_FBSD)
-.if defined(WITH_SVN_FBSD)
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion-freebsd
-.else
+.if defined(WITH_SVN)
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-.endif
 .endif
 
 do-install:
