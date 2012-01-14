@@ -14,7 +14,6 @@
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/interfaces/contenthandling.idl
 %%XPI_XPIDIR%%/interfaces/filterManager.idl
-%%XPI_XPIDIR%%/localized.xml
 %%XPI_XPIDIR%%/modules/_apiloader.jsm
 %%XPI_XPIDIR%%/modules/api.jsm
 %%XPI_XPIDIR%%/modules/constants.jsm
