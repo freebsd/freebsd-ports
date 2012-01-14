@@ -2949,6 +2949,7 @@
     SUBDIR += powerpc-rtems-gdb
     SUBDIR += ppl
     SUBDIR += premake
+    SUBDIR += premake4
     SUBDIR += preps-gui
     SUBDIR += prepstools
     SUBDIR += present
