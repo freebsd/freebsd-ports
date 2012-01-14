@@ -33,6 +33,8 @@ post-patch:
 		${WRKSRC}/aapl/bstcommon.h \
 		${WRKSRC}/aapl/bubblesort.h \
 		${WRKSRC}/aapl/mergesort.h
+	@${REINPLACE_CMD} 's/setiosflags/std::&/' \
+		${WRKSRC}/ragel/javacodegen.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${PREFIX}/bin
