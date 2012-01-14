@@ -6,27 +6,21 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	gd
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_PHP_COMPAT "PEAR::PHP_Compat support" off
 
-FILES=		Image/Barcode.php Image/Barcode/int25.php \
-		Image/Barcode/ean13.php Image/Barcode/Code39.php \
-		Image/Barcode/upca.php Image/Barcode/code128.php \
-		Image/Barcode/postnet.php
-DOCS=		ChangeLog Readme.txt
-EXAMPLES=	test-image-barcode.php barcode_img.php
-_EXAMPLESDIR=	docs/examples
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
