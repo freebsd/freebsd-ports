@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	constant-lexical
-PORTVERSION=	1.00000
+PORTVERSION=	2.0001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPROUT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl pragma to declare lexical compile-time constants
 
-RUN_DEPENDS=	p5-Sub-Delete>0:${PORTSDIR}/devel/p5-Sub-Delete
+RUN_DEPENDS=	p5-Sub-Delete>=0:${PORTSDIR}/devel/p5-Sub-Delete
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	5.8.0+
 
 MAN3=		constant::lexical.3
 
