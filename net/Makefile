@@ -890,6 +890,7 @@
     SUBDIR += py-twistedPair
     SUBDIR += py-twitter
     SUBDIR += py-txamqp
+    SUBDIR += py-urllib3
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-yadis
