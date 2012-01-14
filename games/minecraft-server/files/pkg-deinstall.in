@@ -17,9 +17,5 @@ if [ -d %%ETCDIR%% ]; then
 		echo
 fi
 
-if pw usershow "%%USERS%%" 2>/dev/null 1>&2; then
-        echo "To delete %%USERS%% user permanently, use 'rmuser %%USERS%%'"
-fi
-
 exit 0
 
