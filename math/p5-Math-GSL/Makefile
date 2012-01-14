@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConf
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 
 TEST_DEPENDS=	p5-Test-Class>=0.12:${PORTSDIR}/devel/p5-Test-Class \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 PERL_MODBUILD=	yes
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
