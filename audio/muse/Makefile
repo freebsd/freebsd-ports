@@ -8,7 +8,7 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
 		http://www.ljudmila.org/~jaromil/muse/releases/

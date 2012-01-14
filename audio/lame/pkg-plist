@@ -10,16 +10,20 @@ lib/libmp3lame.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%%%DOCSDIR%%/html/basic.html
+%%PORTDOCS%%%%DOCSDIR%%/html/about.html
+%%PORTDOCS%%%%DOCSDIR%%/html/abr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cbr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/html/contributors.html
-%%PORTDOCS%%%%DOCSDIR%%/html/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/html/detailed.html
 %%PORTDOCS%%%%DOCSDIR%%/html/history.html
-%%PORTDOCS%%%%DOCSDIR%%/html/id3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/lame.css
-%%PORTDOCS%%%%DOCSDIR%%/html/modes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/switchs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/links.html
+%%PORTDOCS%%%%DOCSDIR%%/html/list.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ms_stereo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vbr.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/lame
