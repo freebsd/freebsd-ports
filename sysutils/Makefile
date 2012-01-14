@@ -915,6 +915,7 @@
     SUBDIR += upsd
     SUBDIR += upsdaemon
     SUBDIR += uptimed
+    SUBDIR += usb_modeswitch
     SUBDIR += usbhotkey
     SUBDIR += usbutils
     SUBDIR += uschedule
