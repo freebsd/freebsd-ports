@@ -1,11 +1,14 @@
 SCIM Input-Pad is an on-screen input pad that can be used to input symbols
-and key events very easily. It works with the SCIM input method platform and
-comes with predefined files for common symbols, some special keyboard events
-(such as dead keys and composing keys), Japanese Katakana and Hiragana
-symbols, Chinese numbers and radicals, etc.
+and key events very easily. It works with the SCIM input method platform.
 
-Smart Common Input Method platform, in short SCIM, is a development platform to
-make Input Method developers live easier. It has very clear architecture and
-very simple programming interface.
+SCIM Input-Pad comes with predefined files for common symbols, some special
+keyboard events (such as dead keys and composing keys), punctuation technical
+and graphics signs (including Braille alphabet), and many languages: Arabian,
+Armenian, Balinese, Bengali, Buginese, Buhid, Cham, Chinese, Devanagari,
+Ethiopic, Georgian, Gujarati, Gurmukhi, Hanunoo, Hebrew, Japanese, Kannada,
+Kaya Li, Khmer, Korean, Lao, Lepcha, Limbu, Malayalam, Mongolian, Myanmar,
+New Tai Lue, Ol Chiki, Oriya, Rejang, Russian (with all Cyrillic languages),
+Saurashtra, Sinhala, Sundanese, Syloti Nagri, Tagalog, Tai Le, Tamil, Telugu,
+Thai and Tibetian. It also provides an easy access to all Latin-based scripts.
 
 WWW: http://www.scim-im.org/
