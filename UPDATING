@@ -445,7 +445,7 @@ you update your ports collection, before attempting any port upgrades.
   From version 3.0.2 on TV-Browser doesn't include any plugins any longer. You
   are supposed to download the plugins manually, this also means that you need
   to download the appropriate channel sources plugin for your country. After
-  installing it your prevously configured channels are visible again. To do so,
+  installing it your previously configured channels are visible again. To do so,
   select "Tools -> Install / Update Plugins..." and choose the plugins you need.
 
 20110915:
