@@ -18,6 +18,7 @@ MAINTAINER=	sacchi@gmail.com
 COMMENT=	A system performance measurement tool
 
 ALL_TARGET=	build
+MAKE_ARGS=	CC='${CC}'
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
 MAN1=		bargraph.1 graph.1 pgraph.1 rccs.1
 MAN3=		lmbench.3 reporting.3 results.3 timing.3
