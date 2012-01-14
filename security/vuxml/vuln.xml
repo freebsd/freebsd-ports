@@ -95,6 +95,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-4353</cvename>
       <cvename>CVE-2011-4364</cvename>
       <cvename>CVE-2011-4579</cvename>
+      <url>http://www.ubuntu.com/usn/usn-1320-1</url>
     </references>
     <dates>
       <discovery>2011-09-14</discovery>
