@@ -35,7 +35,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: sunpoet@FreeBSD.org
 
   Author of Version::Requirements (devel/p5-Version-Requirements) merged
-  its function to CPAN::Meta::Requirements (part of devel/p5-CPAN-Meta). 
+  its function to CPAN::Meta::Requirements (part of devel/p5-CPAN-Meta).
   As a result, devel/p5-Version-Requirements is marked DEPRECATED.
   Please run the following commands to update p5-CPAN-Meta and remove
   p5-Version-Requirements:
