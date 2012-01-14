@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wmlbrowser
-PORTVERSION=	0.7.25
+PORTVERSION=	0.7.28
 CATEGORIES=	www
 MASTER_SITES=	MOZDEV
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	WML implementation
 
 XPI_ID=		{c4dc572a-3295-40eb-b30f-b54aa4cdc4b7}
