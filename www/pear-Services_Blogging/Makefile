@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Blogging
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -14,24 +14,10 @@ COMMENT=	PHP interface to Blog
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/RPC.php:${PORTSDIR}/net/pear-XML_RPC
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
+		${PEARDIR}/XML/RPC.php:${PORTSDIR}/net/pear-XML_RPC
 
-CATEGORY=	Services
-FILES=		Services/Blogging.php \
-		Services/Blogging/Blog.php \
-		Services/Blogging/MediaObject.php \
-		Services/Blogging/MultipleBlogsInterface.php \
-		Services/Blogging/Driver.php \
-		Services/Blogging/Post.php \
-		Services/Blogging/Exception.php \
-		Services/Blogging/XmlRpc.php \
-		Services/Blogging/ExtendedDriver.php \
-		Services/Blogging/Driver/Blogger.php \
-		Services/Blogging/Driver/Exception.php \
-		Services/Blogging/Driver/LiveJournal.php \
-		Services/Blogging/Driver/MetaWeblog.php
-
-EXAMPLES=	autodiscover.php blogger.cw.php livejournal.cw.php
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
