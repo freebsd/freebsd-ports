@@ -7,7 +7,7 @@
 
 PORTNAME=	holyshout
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 

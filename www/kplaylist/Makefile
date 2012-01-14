@@ -7,6 +7,7 @@
 
 PORTNAME=	kplaylist
 PORTVERSION=	1.8.505
+PORTREVISION?=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://www.kplaylist.net/archive.php?file=1.8.505&tar=true/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

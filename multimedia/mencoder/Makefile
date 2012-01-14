@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 

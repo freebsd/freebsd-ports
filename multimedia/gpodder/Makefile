@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	2.20
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gpodder.org/src/ \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
