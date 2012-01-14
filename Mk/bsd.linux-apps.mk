@@ -140,6 +140,7 @@ cairo_DEPENDS=		fontconfig png xorglibs
 cups-libs_f10_FILE=	${LINUXBASE}/usr/lib/libcups.so.2
 cups-libs_DETECT=	${cups-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 cups-libs_PORT=		${PORTSDIR}/print/linux${LINUX_DIST_SUFFIX}-cups-libs
+cups-libs=		gnutls
 
 curl_FILE=		${LINUXBASE}/usr/lib/libcurl.so.3.0.0
 curl_f10_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.1
