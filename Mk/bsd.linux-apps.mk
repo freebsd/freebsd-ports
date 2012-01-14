@@ -140,7 +140,7 @@ cairo_DEPENDS=		fontconfig png xorglibs
 cups-libs_f10_FILE=	${LINUXBASE}/usr/lib/libcups.so.2
 cups-libs_DETECT=	${cups-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 cups-libs_PORT=		${PORTSDIR}/print/linux${LINUX_DIST_SUFFIX}-cups-libs
-cups-libs=		gnutls
+cups-libs_DEPENDS=	gnutls
 
 curl_FILE=		${LINUXBASE}/usr/lib/libcurl.so.3.0.0
 curl_f10_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.1
@@ -214,7 +214,7 @@ gtk_DEPENDS=		xorglibs
 gnutls_f10_FILE=	${LINUXBASE}/usr/lib/libgnutls.so.26.4.6
 gnutls_DETECT=		${gnutls${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
-gnutls_DEPENDS=		libtasn1 libgcrypt
+gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
 
 gtk2_FILE=			${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.600.10
 gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
