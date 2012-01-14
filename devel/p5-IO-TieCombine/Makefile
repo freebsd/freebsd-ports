@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-TieCombine
-PORTVERSION=	1.000
+PORTVERSION=	1.001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,4 +20,10 @@ MAN3=	IO::TieCombine.3 \
 	IO::TieCombine::Handle.3 \
 	IO::TieCombine::Scalar.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
