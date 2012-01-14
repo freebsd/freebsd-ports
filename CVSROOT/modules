@@ -5947,6 +5947,7 @@ ipa_ipfw                        ports/net/ipa_ipfw
 ipa_sdb                         ports/databases/ipa_sdb
 ipacco                          ports/net-mgmt/ipacco
 ipacctd                         ports/net-mgmt/ipacctd
+ipad_charge                     ports/sysutils/ipad_charge
 ipager                          ports/x11/ipager
 ipaudit                         ports/net-mgmt/ipaudit
 ipbt                            ports/misc/ipbt
@@ -20892,7 +20893,6 @@ phpminiadmin                    ports/databases/phpminiadmin
 phpmp                           ports/www/phpmp
 phpmustache                     ports/www/phpmustache
 phpmyadmin                      ports/databases/phpmyadmin
-phpmyadmin211                   ports/databases/phpmyadmin211
 phpmyfaq                        ports/www/phpmyfaq
 phppdflib                       ports/print/phppdflib
 phppgadmin                      ports/databases/phppgadmin
