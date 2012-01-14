@@ -158,7 +158,6 @@
     SUBDIR += sim-im-devel
     SUBDIR += skype
     SUBDIR += skype-devel
-    SUBDIR += skype20
     SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
