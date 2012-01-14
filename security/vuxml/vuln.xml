@@ -47,6 +47,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea2ddc49-3e8e-11e1-8095-5404a67eef98">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>0.7.11,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ubuntu Security Notice USN-1320-1 reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-1320-1">
+	  <p>Phillip Langlois discovered that FFmpeg incorrectly handled
+	    certain malformed QDM2 streams. If a user were tricked into opening
+	    a crafted QDM2 stream file, an attacker could cause a denial of
+	    service via application crash, or possibly execute arbitrary code
+	    with the privileges of the user invoking the program.
+	    (CVE-2011-4351)</p>
+	  <p>Phillip Langlois discovered that FFmpeg incorrectly handled
+	    certain malformed VP3 streams. If a user were tricked into opening
+	    a crafted file, an attacker could cause a denial of service via
+	    application crash, or possibly execute arbitrary code with the
+	    privileges of the user invoking the program. (CVE-2011-4352)</p>
+	  <p>Phillip Langlois discovered that FFmpeg incorrectly handled
+	    certain malformed VP5 and VP6 streams. If a user were tricked into
+	    opening a crafted file, an attacker could cause a denial of service
+	    via application crash, or possibly execute arbitrary code with the
+	    privileges of the user invoking the program. (CVE-2011-4353)</p>
+	  <p>It was discovered that FFmpeg incorrectly handled certain
+	    malformed VMD files. If a user were tricked into opening a crafted
+	    VMD file, an attacker could cause a denial of service via
+	    application crash, or possibly execute arbitrary code with the
+	    privileges of the user invoking the program. (CVE-2011-4364)</p>
+	  <p>Phillip Langlois discovered that FFmpeg incorrectly handled
+	    certain malformed SVQ1 streams. If a user were tricked into opening
+	    a crafted SVQ1 stream file, an attacker could cause a denial of
+	    service via application crash, or possibly execute arbitrary code
+	    with the privileges of the user invoking the program.
+	    (CVE-2011-4579)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4351</cvename>
+      <cvename>CVE-2011-4352</cvename>
+      <cvename>CVE-2011-4353</cvename>
+      <cvename>CVE-2011-4364</cvename>
+      <cvename>CVE-2011-4579</cvename>
+    </references>
+    <dates>
+      <discovery>2011-09-14</discovery>
+      <entry>2012-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78cc8a46-3e56-11e1-89b4-001ec9578670">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
