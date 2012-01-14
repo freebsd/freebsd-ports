@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="radiusd"
-rcvar=radiusd_enable
+rcvar="radiusd_enable"
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

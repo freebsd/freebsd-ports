@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="radrelay"
-rcvar=radrelay_enable
+rcvar="radrelay_enable"
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

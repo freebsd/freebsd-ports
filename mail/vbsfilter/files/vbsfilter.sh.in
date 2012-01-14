@@ -25,7 +25,7 @@ vbsfilter_socket=${vbsfilter_socket:-"/var/run/vbsfilter"} # Path to socket
 . /etc/rc.subr
 
 name="vbsfilter"
-rcvar=vbsfilter_enable
+rcvar="vbsfilter_enable"
 command="%%PREFIX%%/libexec/vbsfilter"
 procname="${command}"
 start_precmd="vbsfilter_prestart"

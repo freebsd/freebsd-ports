@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="sixxs_aiccu"
-rcvar=sixxs_aiccu_enable
+rcvar="sixxs_aiccu_enable"
 
 command="%%PREFIX%%/sbin/sixxs-aiccu"
 

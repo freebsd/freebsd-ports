@@ -23,7 +23,7 @@ then
 fi
 #
 name="pkg_jail"
-rcvar=pkg_jail_enable
+rcvar="pkg_jail_enable"
 init_cmd="pkg_jail_init"
 start_cmd="pkg_jail_start"
 shell_cmd="pkg_jail_shell"

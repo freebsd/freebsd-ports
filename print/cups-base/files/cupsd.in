@@ -13,13 +13,13 @@
 
 . /etc/rc.subr
 
-name=cupsd
-rcvar=cupsd_enable
+name="cupsd"
+rcvar="cupsd_enable"
 
-start_precmd=${name}_prestart
+start_precmd="${name}_prestart"
 
-command=%%PREFIX%%/sbin/cupsd
-extra_commands=reload
+command="%%PREFIX%%/sbin/cupsd"
+extra_commands="reload"
 
 cupsd_prestart()
 {
