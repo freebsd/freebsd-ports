@@ -1,0 +1,29 @@
+--- Makefile.orig
++++ Makefile
+@@ -62,7 +62,7 @@
+ 
+ #### Installation options.
+ DESTDIR =
+-PREFIX = /usr/local
++PREFIX? = /usr/local
+ SBINDIR = $(PREFIX)/sbin
+ MANDIR = $(PREFIX)/share/man
+ DOCDIR = $(PREFIX)/doc/haproxy
+@@ -89,7 +89,7 @@
+ 
+ #### Toolchain options.
+ # GCC is normally used both for compiling and linking.
+-CC = gcc
++CC? = gcc
+ LD = $(CC)
+ 
+ #### Debug flags (typically "-g").
+@@ -158,7 +158,7 @@
+ # These CFLAGS contain general optimization options, CPU-specific optimizations
+ # and debug flags. They may be overridden by some distributions which prefer to
+ # set all of them at once instead of playing with the CPU and DEBUG variables.
+-CFLAGS = $(ARCH_FLAGS) $(CPU_CFLAGS) $(DEBUG_CFLAGS) $(SPEC_CFLAGS)
++CFLAGS? = $(ARCH_FLAGS) $(CPU_CFLAGS) $(DEBUG_CFLAGS) $(SPEC_CFLAGS)
+ 
+ #### Common LDFLAGS
+ # These LDFLAGS are used as the first "ld" options, regardless of any library
