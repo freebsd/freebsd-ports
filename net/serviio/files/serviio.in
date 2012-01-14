@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=serviio
-rcvar=`set_rcvar`
+rcvar=serviio_enable
 command=%%PREFIX%%/sbin/serviiod
 
 load_rc_config $name

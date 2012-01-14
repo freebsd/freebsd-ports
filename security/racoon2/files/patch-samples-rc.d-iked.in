@@ -5,7 +5,7 @@
  
  name="iked"
 -rcvar=$name
-+rcvar=`set_rcvar`
++rcvar=iked_enable
  command="@sbindir@/${name}"
  extra_commands="reload"
 -required_vars="spmd"

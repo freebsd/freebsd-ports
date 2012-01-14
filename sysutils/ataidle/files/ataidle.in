@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="ataidle"
-rcvar=${name}_enable
+rcvar=ataidle_enable
 
 command=%%PREFIX%%/sbin/${name}
 start_cmd=ataidle_start

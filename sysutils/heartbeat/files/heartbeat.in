@@ -24,7 +24,7 @@ SUBSYS=heartbeat
 RUNDIR=@localstatedir@/run
 
 name="heartbeat"
-rcvar=`set_rcvar`
+rcvar=heartbeat_enable
 
 load_rc_config $name
 : ${heartbeat_enable="NO"}

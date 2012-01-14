@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=gld
-rcvar=`set_rcvar`
+rcvar=gld_enable
 
 load_rc_config $name
 

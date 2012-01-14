@@ -20,7 +20,7 @@ tbd_enable=${tbd_enable-"NO"}
 . /etc/rc.subr
 
 name="tbd"
-rcvar=`set_rcvar`
+rcvar=tbd_enable
 command="%%PREFIX%%/libexec/tbd"
 
 load_rc_config $name

@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name="cvsupd"
-rcvar=`set_rcvar`
+rcvar=cvsupd_enable
 
 load_rc_config $name
 

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=cruisecontrolrb
-rcvar=${name}_enable
+rcvar=cruisecontrolrb_enable
 
 homedir="%%PREFIX%%/www/${name}"
 pidfile="${homedir}/tmp/pids/mongrel.pid"

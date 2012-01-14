@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="c_icap"
-rcvar=`set_rcvar`
+rcvar=c_icap_enable
 
 command="%%PREFIX%%/bin/c-icap"
 pidfile="%%RUN_DIR%%/c-icap.pid"

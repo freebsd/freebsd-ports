@@ -17,7 +17,7 @@ ffserver_enable="${ffserver_enable-NO}"
 . /etc/rc.subr
 
 name=ffserver
-rcvar=`set_rcvar`
+rcvar=ffserver_enable
 
 command="%%PREFIX%%/bin/${name} &"
 required_files=%%PREFIX%%/etc/ffserver.conf

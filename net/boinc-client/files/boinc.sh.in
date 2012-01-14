@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="boinc"
-rcvar=`set_rcvar`
+rcvar=boinc_enable
 
 boinc_user=%%BOINC_USER%%
 boinc_home=%%BOINC_HOME%%

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="zoneminder"
-rcvar=${name}_enable
+rcvar=zoneminder_enable
 
 load_rc_config "$name"
 : ${zoneminder_enable="NO"}

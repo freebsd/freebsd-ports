@@ -37,8 +37,9 @@
 
 # sh interprets dash chars as the numeric minus operator...
 name="pop_before_smtp"
+rcvar=pop_before_smtp_enable
+
 filename="pop-before-smtp"
-rcvar=`set_rcvar`
 
 load_rc_config $name
 

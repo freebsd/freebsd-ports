@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=zmailer
-rcvar=`set_rcvar`
+rcvar=zmailer_enable
 
 command=%%PREFIX%%/sbin/zmailer
 required_files=%%PREFIX%%/etc/zmailer/mail.conf

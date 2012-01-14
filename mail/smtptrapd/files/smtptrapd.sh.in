@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=smtptrapd
-rcvar=`set_rcvar`
+rcvar=smtptrapd_enable
 
 command=%%PREFIX%%/bin/smtptrapd
 

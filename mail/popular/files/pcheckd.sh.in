@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pcheckd"
-rcvar=`set_rcvar`
+rcvar=pcheckd_enable
 
 load_rc_config $name
 

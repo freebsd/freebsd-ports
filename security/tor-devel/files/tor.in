@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="tor"
-rcvar=${name}_enable
+rcvar=tor_enable
 
 load_rc_config ${name}
 

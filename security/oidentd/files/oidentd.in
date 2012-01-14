@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=oidentd
-rcvar=`set_rcvar`
+rcvar=oidentd_enable
 
 command=%%PREFIX%%/sbin/${name}
 

@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=liquidsoap
-rcvar=`set_rcvar`
+rcvar=liquidsoap_enable
 
 command=%%PREFIX%%/bin/liquidsoap
 

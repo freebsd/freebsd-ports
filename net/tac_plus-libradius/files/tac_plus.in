@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="tac_plus"
-rcvar=`set_rcvar`
+rcvar=tac_plus_enable
 
 command=%%PREFIX%%/sbin/tac_plus
 pidfile=/var/run/tac_plus.pid

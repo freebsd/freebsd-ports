@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="jabber_pyaim"
-rcvar=`set_rcvar`
+rcvar=jabber_pyaim_enable
 
 load_rc_config $name
 

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=thttpd
-rcvar=`set_rcvar`
+rcvar=thttpd_enable
 
 command=%%PREFIX%%/sbin/thttpd
 

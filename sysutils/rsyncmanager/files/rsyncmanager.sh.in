@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="rsyncmanager"
-rcvar=`set_rcvar`
+rcvar=rsyncmanager_enable
 
 command="%%PREFIX%%/bin/rsyncmanager.rb"
 pidfile="/var/run/rsyncmanager.pid"

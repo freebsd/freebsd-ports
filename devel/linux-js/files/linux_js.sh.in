@@ -9,7 +9,7 @@ linux_js_enable=${linux_js_enable-"NO"}
 . /etc/rc.subr
 
 name="linux_js"
-rcvar=`set_rcvar`
+rcvar=linux_js_enable
 start_cmd="linux_js_start"
 stop_cmd="linux_js_stop"
 

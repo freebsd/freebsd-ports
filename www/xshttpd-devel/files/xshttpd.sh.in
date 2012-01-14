@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="xshttpd"
-rcvar=`set_rcvar`
+rcvar=xshttpd_enable
 
 load_rc_config $name
 

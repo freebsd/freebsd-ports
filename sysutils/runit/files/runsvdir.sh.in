@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="runsvdir"
-rcvar=`set_rcvar`
+rcvar=runsvdir_enable
 
 command="%%PREFIX%%/sbin/runsvdir"
 

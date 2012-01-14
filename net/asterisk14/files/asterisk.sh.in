@@ -20,7 +20,7 @@ asterisk_shutdown () {
 }
 
 name=asterisk
-rcvar=`set_rcvar`
+rcvar=asterisk_enable
 
 command=%%PREFIX%%/sbin/asterisk
 

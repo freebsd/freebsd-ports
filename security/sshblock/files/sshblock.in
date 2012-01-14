@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="sshblock"
-rcvar=`set_rcvar`
+rcvar=sshblock_enable
 
 command_interpreter=%%PERL%%
 command="%%PREFIX%%/sbin/sshblock"

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="knockd"
-rcvar=`set_rcvar`
+rcvar=knockd_enable
 
 load_rc_config $name
 

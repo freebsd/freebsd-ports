@@ -44,7 +44,7 @@ hudson_log_file=/var/log/hudson.log
 . /etc/rc.subr
 
 name="hudson"
-rcvar=`set_rcvar`
+rcvar=hudson_enable
 
 load_rc_config "${name}"
 

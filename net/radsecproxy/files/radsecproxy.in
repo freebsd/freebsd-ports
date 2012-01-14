@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="radsecproxy"
-rcvar=`set_rcvar`
+rcvar=radsecproxy_enable
 
 : ${radsecproxy_enable:="NO"}
 : ${radsecproxy_user:="nobody"}

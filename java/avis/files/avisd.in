@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="avisd"
-rcvar=`set_rcvar`
+rcvar=avisd_enable
 
 command=%%PREFIX%%/sbin/avisd
 command_interpreter=/bin/sh

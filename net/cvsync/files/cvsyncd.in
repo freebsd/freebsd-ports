@@ -12,7 +12,7 @@ cvsyncd_conffile=${cvsyncd_conffile-"%%PREFIX%%/etc/cvsyncd.conf"}
 . /etc/rc.subr
 
 name=cvsyncd
-rcvar=`set_rcvar`
+rcvar=cvsyncd_enable
 command=%%PREFIX%%/bin/${name}
 
 load_rc_config ${name}

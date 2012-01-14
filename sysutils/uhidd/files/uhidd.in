@@ -16,7 +16,7 @@
 #	uhidd stop		# stop all uhidd instances.
 
 name="uhidd"
-rcvar=`set_rcvar`
+rcvar=uhidd_enable
 command="%%PREFIX%%/sbin/${name}"
 start_cmd="uhidd_start"
 required_modules="uvhid vkbd"

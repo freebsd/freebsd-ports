@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="ircd_ratbox"
-rcvar=`set_rcvar`
+rcvar=ircd_ratbox_enable
 load_rc_config $name
 
 ircd_ratbox_enable=${ircd_ratbox_enable:-"NO"}

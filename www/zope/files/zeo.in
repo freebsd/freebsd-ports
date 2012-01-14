@@ -21,7 +21,7 @@ zeo_instances=${zeo_instances:-""}    # List of instancehome dirs
 . /etc/rc.subr
 
 name="zeo"
-rcvar=`set_rcvar`
+rcvar=zeo_enable
 load_rc_config $name
 extra_commands="status"
 

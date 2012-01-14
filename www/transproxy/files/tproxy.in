@@ -54,7 +54,7 @@
 . /etc/rc.subr
 
 name="tproxy"
-rcvar=`set_rcvar`
+rcvar=tproxy_enable
 command="%%PREFIX%%/sbin/$name"
 procname="%%PREFIX%%/sbin/$name"
 

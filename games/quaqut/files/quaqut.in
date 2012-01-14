@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="quaqut"
-rcvar=${name}_enable
+rcvar=quaqut_enable
 
 load_rc_config $name
 

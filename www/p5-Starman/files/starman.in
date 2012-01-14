@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name=starman
-rcvar=`set_rcvar`
+rcvar=starman_enable
 command="%%PREFIX%%/bin/${name}"
 load_rc_config $name
 

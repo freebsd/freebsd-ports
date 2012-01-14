@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="atftpd"
-rcvar=`set_rcvar`
+rcvar=atftpd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

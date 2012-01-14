@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name=ircservices
-rcvar=${name}_enable
+rcvar=ircservices_enable
 
 command="%%PREFIX%%/sbin/${name}"
 command_args="-dir=%%PREFIX%%/etc/ircservices"

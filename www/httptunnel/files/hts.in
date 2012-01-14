@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="hts"
-rcvar=${name}_enable
+rcvar=hts_enable
 
 command=%%PREFIX%%/bin/${name}
 

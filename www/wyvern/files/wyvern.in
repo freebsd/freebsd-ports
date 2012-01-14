@@ -20,7 +20,7 @@ wyvern_enable=${wyvern_enable:-"NO"}	# Enable wyvern
 . /etc/rc.subr
 
 name="wyvern"
-rcvar=`set_rcvar`
+rcvar=wyvern_enable
 command="%%PREFIX%%/sbin/wyvern"
 pidfile="/var/run/wyvern.pid"
 required_files="%%PREFIX%%/wyvern/conf/wyvern.conf"

@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="iroffer"
-rcvar=`set_rcvar`
+rcvar=iroffer_enable
 
 # read configuration and set defaults
 load_rc_config "$name"

@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="xaira"
-rcvar=`set_rcvar`
+rcvar=xaira_enable
 
 command=%%PREFIX%%/sbin/xaira_daemon
 

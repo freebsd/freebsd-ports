@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="%%PORTNAME%%"
-rcvar=`set_rcvar`
+rcvar=%%PORTNAME%%_enable
 
 load_rc_config $name
 

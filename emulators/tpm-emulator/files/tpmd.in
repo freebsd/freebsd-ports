@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=tpmd
-rcvar=`set_rcvar`
+rcvar=tpmd_enable
 command="%%PREFIX%%/bin/${name}"
 
 load_rc_config $name

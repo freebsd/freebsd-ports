@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="javaserver"
-rcvar=`set_rcvar`
+rcvar=javaserver_enable
 
 load_rc_config $name
 

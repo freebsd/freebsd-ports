@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="ovsdb_server"
-rcvar=${name}_enable
+rcvar=ovsdb_server_enable
 
 command="%%PREFIX%%/sbin/ovsdb-server"
 pidfile="%%PREFIX%%/var/run/ovsdb-server.pid"

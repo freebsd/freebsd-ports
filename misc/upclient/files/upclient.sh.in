@@ -34,7 +34,7 @@ upclient_enable="${upclient_enable-NO}"
 . /etc/rc.subr
 
 name=upclient
-rcvar=$(set_rcvar)
+rcvar=upclient_enable
 
 # private
 configfile=%%PREFIX%%/etc/${name}.conf

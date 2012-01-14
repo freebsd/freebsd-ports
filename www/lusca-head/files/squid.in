@@ -27,7 +27,7 @@ squid_stop() {
 . /etc/rc.subr
 
 name=squid
-rcvar=${name}_enable
+rcvar=squid_enable
 
 command=%%PREFIX%%/sbin/squid
 extra_commands=reload

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="maiad"
-rcvar=${name}_enable
+rcvar=maiad_enable
 
 load_rc_config $name
 

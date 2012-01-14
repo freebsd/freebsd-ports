@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=clamav_milter
-rcvar=`set_rcvar`
+rcvar=clamav_milter_enable
 
 conf_file=%%PREFIX%%/etc/clamav-milter.conf
 command=%%PREFIX%%/sbin/clamav-milter

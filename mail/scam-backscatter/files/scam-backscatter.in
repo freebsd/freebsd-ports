@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="scambackscatter"
-rcvar=`set_rcvar`
+rcvar=scambackscatter_enable
 command="%%PREFIX%%/libexec/scam-back"
 start_precmd="${name}_prestart"
 

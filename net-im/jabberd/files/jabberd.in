@@ -20,7 +20,7 @@ jabberd_user=${jabberd_user-"%%JABBER_USER%%"}
 . /etc/rc.subr
 
 name="jabberd"
-rcvar=`set_rcvar`
+rcvar=jabberd_enable
 command_interpreter="%%PERL%%"
 command="%%PREFIX%%/bin/jabberd"
 command_args="-b"

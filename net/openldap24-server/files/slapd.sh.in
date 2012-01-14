@@ -37,7 +37,7 @@
 . /etc/rc.subr
 
 name="slapd"
-rcvar=`set_rcvar`
+rcvar=slapd_enable
 
 # read settings, set defaults
 load_rc_config ${name}

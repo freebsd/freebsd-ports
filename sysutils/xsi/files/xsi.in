@@ -17,7 +17,7 @@ xsi_enable=${xsi_enable-"NO"}
 . /etc/rc.subr
 
 name=xsi
-rcvar=`set_rcvar`
+rcvar=xsi_enable
 
 command=%%PREFIX%%/bin/${name}
 load_rc_config ${name}

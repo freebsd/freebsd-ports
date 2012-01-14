@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=rrdcached
-rcvar=`set_rcvar`
+rcvar=rrdcached_enable
 
 load_rc_config $name
 

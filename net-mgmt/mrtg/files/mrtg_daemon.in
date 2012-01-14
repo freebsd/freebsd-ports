@@ -11,7 +11,7 @@
 
 
 name="mrtg_daemon"
-rcvar=`set_rcvar`
+rcvar=mrtg_daemon_enable
 
 load_rc_config $name
 

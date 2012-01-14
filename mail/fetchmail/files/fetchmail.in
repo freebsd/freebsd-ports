@@ -59,7 +59,7 @@
 . /etc/rc.subr
 
 name=fetchmail
-rcvar=`set_rcvar`
+rcvar=fetchmail_enable
 
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/fetchmail/${name}.pid

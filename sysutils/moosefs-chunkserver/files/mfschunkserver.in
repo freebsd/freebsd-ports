@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=mfschunkserver
-rcvar=`set_rcvar`
+rcvar=mfschunkserver_enable
 
 command=%%PREFIX%%/sbin/${name}
 

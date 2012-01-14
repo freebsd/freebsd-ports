@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="shairport"
-rcvar=${name}_enable
+rcvar=shairport_enable
 
 load_rc_config ${name}
 

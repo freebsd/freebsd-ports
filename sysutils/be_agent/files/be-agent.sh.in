@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=be_agent
-rcvar=`set_rcvar`
+rcvar=be_agent_enable
 
 command="%%PREFIX%%/bin/agent.be"
 

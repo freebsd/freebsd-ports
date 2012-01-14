@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name=gpxloggerd
-rcvar=`set_rcvar`
+rcvar=gpxloggerd_enable
 
 load_rc_config $name
 

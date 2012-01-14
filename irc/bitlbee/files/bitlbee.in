@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="bitlbee"
-rcvar=`set_rcvar`
+rcvar=bitlbee_enable
 
 load_rc_config $name
 

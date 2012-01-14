@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name="drizzle"
-rcvar=`set_rcvar`
+rcvar=drizzle_enable
 
 load_rc_config $name
 

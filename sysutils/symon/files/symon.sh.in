@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="symon"
-rcvar=`set_rcvar`
+rcvar=symon_enable
 command="%%PREFIX%%/bin/symon"
 
 symon_enable=${symon_enable:-"NO"}

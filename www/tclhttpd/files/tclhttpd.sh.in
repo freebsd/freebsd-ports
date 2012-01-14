@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="tclhttpd"
-rcvar=`set_rcvar`
+rcvar=tclhttpd_enable
 
 load_rc_config $name
 

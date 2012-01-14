@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="p4ftpd"
-rcvar=`set_rcvar`
+rcvar=p4ftpd_enable
 
 load_rc_config $name
 

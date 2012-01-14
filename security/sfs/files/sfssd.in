@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=sfssd
-rcvar=`set_rcvar`
+rcvar=sfssd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

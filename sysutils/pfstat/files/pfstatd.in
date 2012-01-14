@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pfstatd"
-rcvar=`set_rcvar`
+rcvar=pfstatd_enable
 command="%%PREFIX%%/bin/${name}"
 
 load_rc_config ${name}

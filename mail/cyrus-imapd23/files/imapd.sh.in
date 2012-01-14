@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="cyrus_imapd"
-rcvar=`set_rcvar`
+rcvar=cyrus_imapd_enable
 command="%%PREFIX%%/cyrus/bin/master"
 pidfile="/var/run/cyrus-master.pid"
 required_files="%%PREFIX%%/etc/cyrus.conf %%PREFIX%%/etc/imapd.conf"

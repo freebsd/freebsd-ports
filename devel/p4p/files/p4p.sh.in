@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name="p4p"
-rcvar=`set_rcvar`
+rcvar=p4p_enable
 
 load_rc_config $name
 

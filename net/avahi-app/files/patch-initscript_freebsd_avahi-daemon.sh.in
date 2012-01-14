@@ -14,4 +14,4 @@
 +avahi_daemon_enable=${avahi_daemon_enable-${gnome_enable}}
  
  name=avahi_daemon
- rcvar=`set_rcvar`
+ rcvar=avahi_daemon_enable

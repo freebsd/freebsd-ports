@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=sfscd
-rcvar=`set_rcvar`
+rcvar=sfscd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

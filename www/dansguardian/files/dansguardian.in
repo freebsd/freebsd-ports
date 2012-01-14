@@ -21,7 +21,7 @@ dansguardian_pidfile=${dansguardian_pidfile:-"/var/run/dansguardian.pid"}
 . /etc/rc.subr
 
 name="dansguardian"
-rcvar=${name}_enable
+rcvar=dansguardian_enable
 command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name

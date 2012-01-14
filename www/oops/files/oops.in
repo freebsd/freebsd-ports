@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="oops"
-rcvar=`set_rcvar`
+rcvar=oops_enable
 
 command="%%PREFIX%%/sbin/oopsctl"
 procname="%%PREFIX%%/sbin/oops"

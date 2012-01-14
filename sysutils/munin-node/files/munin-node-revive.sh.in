@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="munin_node"
-rcvar=`set_rcvar`
+rcvar=munin_node_enable
 
 [ -z "$munin_node_enable" ] && munin_node_enable="NO"
 [ -z "$munin_node_config" ] && munin_node_config="%%PREFIX%%/etc/munin/munin-node.conf"

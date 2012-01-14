@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="apcupsd"
-rcvar=${name}_enable
+rcvar=apcupsd_enable
 
 load_rc_config $name
 

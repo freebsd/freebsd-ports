@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="minecraft"
-rcvar=`set_rcvar`
+rcvar=minecraft_enable
 
 load_rc_config $name
 

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=relayd
-rcvar=${name}_enable
+rcvar=relayd_enable
 
 load_rc_config $name
 

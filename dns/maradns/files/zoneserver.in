@@ -15,7 +15,7 @@
 : ${maradns_conf="%%PREFIX%%/etc/mararc"}
 
 name="zoneserver"
-rcvar=`set_rcvar`
+rcvar=zoneserver_enable
 command="%%PREFIX%%/bin/duende"
 command_args="%%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"

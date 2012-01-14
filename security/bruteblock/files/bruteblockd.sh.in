@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="bruteblockd"
-rcvar=`set_rcvar`
+rcvar=bruteblockd_enable
 
 load_rc_config $name
 

@@ -14,7 +14,7 @@ user="nobody"
 . /etc/rc.subr
 
 name="proxyper"
-rcvar=`set_rcvar`
+rcvar=proxyper_enable
 
 pidfile=${dir}/rc5desproxy.pid
 required_files=${dir}/${name}.ini

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="ncftpd"
-rcvar=`set_rcvar`
+rcvar=ncftpd_enable
 
 load_rc_config $name
 : ${ncftpd_enable:="NO"}

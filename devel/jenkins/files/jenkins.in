@@ -44,7 +44,7 @@
 . /etc/rc.subr
 
 name="jenkins"
-rcvar=`set_rcvar`
+rcvar=jenkins_enable
 
 load_rc_config "${name}"
 

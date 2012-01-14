@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="rwhoisd"
-rcvar=${name}_enable
+rcvar=rwhoisd_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${rwhoisd_pidfile}

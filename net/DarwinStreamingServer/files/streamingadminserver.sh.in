@@ -10,7 +10,7 @@ streamingadminserver_enable=${streamingadminserver_enable-"NO"}
 . /etc/rc.subr
 
 name=streamingadminserver
-rcvar=`set_rcvar`
+rcvar=streamingadminserver_enable
 command=%%PREFIX%%/sbin/${name}.pl
 command_interpreter=%%PERL%%
 

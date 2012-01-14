@@ -33,7 +33,7 @@
 . /etc/rc.subr
 
 name="cassandra"
-rcvar=`set_rcvar`
+rcvar=cassandra_enable
 load_rc_config $name
 
 cassandra_enable=${cassandra_enable:-"NO"}

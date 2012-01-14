@@ -23,7 +23,7 @@ smokeping_group=${smokeping_group-"%%GROUPS%%"}
 . /etc/rc.subr
 
 name="smokeping"
-rcvar=`set_rcvar`
+rcvar=smokeping_enable
 load_rc_config $name
 command="/usr/local/bin/smokeping"
 command_args="--logfile=${smokeping_logfile}"

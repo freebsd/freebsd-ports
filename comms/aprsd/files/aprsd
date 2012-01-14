@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="aprsd"
-rcvar=`set_rcvar`
+rcvar=aprsd_enable
 load_rc_config $name
 aprsd_enable=${aprsd_enable-"NO"}
 aprsd_root=${aprsd_root-"NO"}

@@ -18,7 +18,7 @@ courier_imap_pop3d_enable=${courier_imap_pop3d_enable-"NO"}
 . /etc/rc.subr
 
 name="courier_imap_pop3d"
-rcvar=`set_rcvar`
+rcvar=courier_imap_pop3d_enable
 command="%%PREFIX%%/libexec/courier-imap/pop3d.rc"
 pidfile="/var/run/pop3d.pid"
 procname="%%PREFIX%%/sbin/courierlogger"

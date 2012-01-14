@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="unrealircd"
-rcvar=`set_rcvar`
+rcvar=unrealircd_enable
 
 command="%%PREFIX%%/libexec/ircd"
 pidfile="%%RUNDIR%%/ircd.pid"

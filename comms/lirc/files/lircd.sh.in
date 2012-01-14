@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="lircd"
-rcvar=`set_rcvar`
+rcvar=lircd_enable
 
 load_rc_config ${name}
 : ${lircd_enable="NO"}

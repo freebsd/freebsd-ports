@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="openoffice"
-rcvar=${name}_enable
+rcvar=openoffice_enable
 load_rc_config $name
 
 : ${openoffice_enable:=NO}

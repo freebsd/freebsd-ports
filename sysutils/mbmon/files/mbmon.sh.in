@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="mbmon"
-rcvar=`set_rcvar`
+rcvar=mbmon_enable
 
 # read configuration and set defaults
 load_rc_config "$name"

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=swatch
-rcvar=`set_rcvar`
+rcvar=swatch_enable
 
 command=%%PREFIX%%/bin/swatch
 procname=%%LOCALBASE%%/bin/perl

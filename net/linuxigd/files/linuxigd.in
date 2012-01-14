@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=linuxigd
-rcvar=`set_rcvar`
+rcvar=linuxigd_enable
 
 load_rc_config $name
 

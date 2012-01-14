@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="vboxservice"
-rcvar=`set_rcvar`
+rcvar=vboxservice_enable
 command="%%PREFIX%%/sbin/VBoxService"
 
 load_rc_config $name

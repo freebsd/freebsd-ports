@@ -19,7 +19,7 @@ perdition_pop3_enable=${perdition_pop3_enable-"NO"}
 . /etc/rc.subr
 
 name="perdition_pop3"
-rcvar=`set_rcvar`
+rcvar=perdition_pop3_enable
 
 command="%%PREFIX%%/sbin/perdition.pop3"
 pidfile="/var/run/perdition.pop3/perdition.pop3.pid"

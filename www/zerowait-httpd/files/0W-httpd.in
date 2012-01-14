@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="zerowait"
-rcvar=`set_rcvar`
+rcvar=zerowait_enable
 command="%%PREFIX%%/sbin/0W-httpd"
 args="-c %%PREFIX%%/etc/0W-httpd/httpd.conf"
 required_files="%%PREFIX%%/etc/0W-httpd/httpd.conf"

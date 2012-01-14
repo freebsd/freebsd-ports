@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="dropbear"
-rcvar=`set_rcvar`
+rcvar=dropbear_enable
 command="%%PREFIX%%/sbin/${name}"
 keygen_cmd="dropbear_keygen"
 start_precmd="dropbear_precmd"

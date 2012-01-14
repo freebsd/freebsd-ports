@@ -6,7 +6,7 @@ $FreeBSD$
 @@ -20,7 +20,7 @@
  
  name="dnscheck_dispatcher"
- rcvar=`set_rcvar`
+ rcvar=dnscheck_dispatcher_enable
 -command="/usr/local/bin/dnscheck-dispatcher"
 +command="%%PREFIX%%/libexec/dnscheck/dnscheck-dispatcher"
  

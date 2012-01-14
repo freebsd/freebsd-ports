@@ -15,7 +15,7 @@ rskkserv_flags=${rskkserv_flags:-""}
 . /etc/rc.subr
 
 name="rskkserv"
-rcvar=`set_rcvar`
+rcvar=rskkserv_enable
 command="${prefix}/sbin/${name}"
 command_interpreter="${prefix}/bin/ruby"
 pidfile="/var/run/${name}.pid"

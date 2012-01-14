@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="torrus_collector"
-rcvar=${name}_enable
+rcvar=torrus_collector_enable
 
 load_rc_config ${name}
 

@@ -10,7 +10,8 @@ bname=`basename $0`
 . /etc/rc.subr
 
 name=`echo "${bname}" | tr ".-" "__"`
-rcvar=`set_rcvar`
+rcvar=${name}_enable
+
 command="%%PREFIX%%/sbin/gmond"
 
 load_rc_config ganglia

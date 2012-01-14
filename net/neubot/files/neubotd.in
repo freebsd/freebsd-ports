@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="neubotd"
-rcvar=`set_rcvar`
+rcvar=neubotd_enable
 
 # read settings, set default values
 load_rc_config "${name}"

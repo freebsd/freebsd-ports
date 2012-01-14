@@ -27,7 +27,7 @@
 . /etc/rc.subr
 
 name="mysql"
-rcvar=`set_rcvar`
+rcvar=mysql_enable
 
 load_rc_config $name
 

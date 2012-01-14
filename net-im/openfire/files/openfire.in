@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name="openfire"
-rcvar=${name}_enable
+rcvar=openfire_enable
 load_rc_config $name
 
 # Set defaults

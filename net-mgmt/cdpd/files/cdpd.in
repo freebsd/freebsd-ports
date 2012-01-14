@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name=cdpd
-rcvar=`set_rcvar`
+rcvar=cdpd_enable
 
 command=%%PREFIX%%/sbin/$name
 

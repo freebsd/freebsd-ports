@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="slim"
-rcvar=`set_rcvar`
+rcvar=slim_enable
 
 start_precmd=${name}_rmfile
 stop_precmd=${name}_prestop

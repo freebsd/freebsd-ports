@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="puppet"
-rcvar=`set_rcvar`
+rcvar=puppet_enable
 
 load_rc_config "$name"
 

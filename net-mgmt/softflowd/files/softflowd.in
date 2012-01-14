@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name=softflowd
-rcvar=`set_rcvar`
+rcvar=softflowd_enable
 
 start_precmd="softflowd_precommand $@"
 stop_precmd="softflowd_precommand $@"

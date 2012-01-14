@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="smbd4wins"
-rcvar=`set_rcvar`
+rcvar=smbd4wins_enable
 command="%%PREFIX%%/sbin/${name}"
 pidfile="%%S4W_RUNDIR%%/${name}.pid"
 

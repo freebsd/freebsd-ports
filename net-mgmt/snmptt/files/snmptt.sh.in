@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=snmptt
-rcvar=`set_rcvar`
+rcvar=snmptt_enable
 
 command=%%PREFIX%%/sbin/${name}
 command_args=">/dev/null --daemon"

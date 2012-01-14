@@ -6,7 +6,7 @@
 . /etc/rc.subr
 
 name="iscsi_target"
-rcvar=`set_rcvar`
+rcvar=iscsi_target_enable
 
 command="%%PREFIX%%/bin/iscsi-target"
 required_files="%%PREFIX%%/etc/iscsi/targets"

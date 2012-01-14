@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="bsdftpd_ssl"
-rcvar=`set_rcvar`
+rcvar=bsdftpd_ssl_enable
 pidfile="/var/run/ftpd.pid"
 command="%%PREFIX%%/libexec/ftpd"
 command_args="-D -p ${pidfile}"

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="flowd"
-rcvar=${name}_enable
+rcvar=flowd_enable
 load_rc_config ${name}
 
 : ${flowd_enable="NO"}

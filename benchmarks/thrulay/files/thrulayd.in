@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="thrulayd"
-rcvar=`set_rcvar`
+rcvar=thrulayd_enable
 
 # read settings, set default values
 load_rc_config "${name}"

@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="sflowtool"
-rcvar=`set_rcvar`
+rcvar=sflowtool_enable
 command="%%PREFIX%%/bin/sflowtool"
 
 load_rc_config $name

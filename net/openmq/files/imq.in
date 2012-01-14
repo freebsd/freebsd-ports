@@ -40,17 +40,18 @@
 #  imq_brokerlist="hostname1:7676,hostname2:7676"
 #  imq_memory="256m"
 
-name="imq"
 . /etc/rc.subr
 
-# set defaults
+name="imq"
+rcvar=imq_enable
+
+load_rc_config $name
+
 imq_enable=${imq_enable:-"NO"}
 imq_data=${imq_data:-"/var/spool/imq"}
 imq_vmargs=${imq_vmargs:-"-Xms150m -Xss128k -Xbatch -XX:MaxGCPauseMillis=5000"}
 imq_memory=${imq_memory:-"256m"}
 
-rcvar=`set_rcvar`
-load_rc_config $name
 pidfile=/var/run/imq.pid
 start_cmd="${name}_start"
 start_precmd="${name}_build_cmdline"

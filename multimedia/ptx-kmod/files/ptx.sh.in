@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="ptx"
-rcvar=`set_rcvar`
+rcvar=ptx_enable
 start_cmd="ptx_start"
 stop_cmd="ptx_stop"
 

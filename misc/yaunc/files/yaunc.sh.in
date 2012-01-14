@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="yaunc"
-rcvar=${name}_enable
+rcvar=yaunc_enable
 
 command=%%PREFIX%%/bin/${name}
 

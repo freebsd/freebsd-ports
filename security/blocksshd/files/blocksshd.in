@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="blocksshd"
-rcvar="`set_rcvar`"
+rcvar=blocksshd_enable
 command="%%PREFIX%%/bin/${name}"
 command_interpreter="/usr/bin/perl"
 pidfile="/var/run/${name}.pid"

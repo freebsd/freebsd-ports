@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="ossechids"
-rcvar=`set_rcvar`
+rcvar=ossechids_enable
 
 load_rc_config $name
 

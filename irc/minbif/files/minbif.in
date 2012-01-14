@@ -12,7 +12,7 @@
 . /etc/rc.subr 
 
 name="minbif"
-rcvar=`set_rcvar`
+rcvar=minbif_enable
 
 load_rc_config $name
 

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=rspamd
-rcvar=`set_rcvar`
+rcvar=rspamd_enable
 command=%%PREFIX%%/bin/rspamd
 restart_precmd="rspamd_checkconfig"
 reload_precmd="rspamd_checkconfig"

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="bozohttpd"
-rcvar=`set_rcvar`
+rcvar=bozohttpd_enable
 
 load_rc_config $name
 

@@ -25,7 +25,7 @@ antivirus_socket=${antivirus_socket:-"%%ANTIVIRUS%%/antivirus.sock"} # Path to s
 . /etc/rc.subr
 
 name="antivirus"
-rcvar=`set_rcvar`
+rcvar=antivirus_enable
 command="%%PREFIX%%/libexec/antivirus"
 required_files="%%PREFIX%%/etc/antivirus.conf"
 start_precmd="antivirus_prestart"

@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="pksd"
-rcvar=`set_rcvar`
+rcvar=pksd_enable
 command="%%PREFIX%%/sbin/pksd"
 command_args="%%PREFIX%%/etc/${name}.conf &"
 required_files="%%PREFIX%%/etc/${name}.conf"

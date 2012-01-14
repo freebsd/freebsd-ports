@@ -20,7 +20,7 @@ pips_enable=${pips_enable:-"YES"}		# Enable pips
 . /etc/rc.subr
 
 name="pips"
-rcvar=`set_rcvar`
+rcvar=pips_enable
 start_cmd="/sbin/ldconfig -m %%PREFIX%%/lib/pips"
 stop_cmd=":"
 

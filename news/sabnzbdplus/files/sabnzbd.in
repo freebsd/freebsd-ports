@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="sabnzbd"
-rcvar=${name}_enable
+rcvar=sabnzbd_enable
 
 load_rc_config ${name}
 

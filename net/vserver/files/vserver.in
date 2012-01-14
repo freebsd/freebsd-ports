@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name=vserver
-rcvar=`set_rcvar`
+rcvar=vserver_enable
 
 command=%%PREFIX%%/sbin/vserver
 required_files=%%PREFIX%%/etc/vchat/user.db

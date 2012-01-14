@@ -45,7 +45,7 @@ dhcprelya_postcmd() {
 . /etc/rc.subr
 
 name=dhcprelya
-rcvar=$(set_rcvar)
+rcvar=dhcprelya_enable
 pidfile=/var/run/${name}.pid
 command=%%PREFIX%%/sbin/${name}
 

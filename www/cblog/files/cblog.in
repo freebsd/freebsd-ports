@@ -41,7 +41,7 @@ cblog_precmd() {
 . /etc/rc.subr
 
 name="cblog"
-rcvar=`set_rcvar`
+rcvar=cblog_enable
 
 command="%%PREFIX%%/libexec/cblog.fcgi"
 start_precmd="cblog_precmd"

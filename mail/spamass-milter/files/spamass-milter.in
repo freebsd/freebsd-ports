@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=spamass_milter
-rcvar=`set_rcvar`
+rcvar=spamass_milter_enable
 
 command=%%PREFIX%%/sbin/spamass-milter
 required_dirs=%%PREFIX%%/share/spamassassin

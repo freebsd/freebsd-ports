@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=undernet
-rcvar=`set_rcvar`
+rcvar=undernet_enable
 
 load_rc_config ${name}
 

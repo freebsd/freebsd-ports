@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="xboxproxy"
-rcvar="${name}_enable"
+rcvar=xboxproxy_enable
 
 load_rc_config $name
 

@@ -20,7 +20,7 @@ fi
 
 . /etc/rc.subr
 name=assp
-rcvar=`set_rcvar`
+rcvar=assp_enable
 load_rc_config $name
 : ${assp_logexpire="45"}
 

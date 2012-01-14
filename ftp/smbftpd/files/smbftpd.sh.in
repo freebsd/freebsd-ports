@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=smbftpd
-rcvar=`set_rcvar`
+rcvar=smbftpd_enable
 
 load_rc_config $name
 

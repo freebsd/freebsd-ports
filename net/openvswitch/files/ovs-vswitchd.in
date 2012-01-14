@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="ovs_vswitchd"
-rcvar=${name}_enable
+rcvar=ovs_vswitchd_enable
 
 command="%%PREFIX%%/sbin/ovs-vswitchd"
 pidfile="%%PREFIX%%/var/run/ovs-vswitchd.pid"

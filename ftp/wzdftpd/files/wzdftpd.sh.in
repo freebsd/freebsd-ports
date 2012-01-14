@@ -18,7 +18,7 @@ wzdftpd_enable=${wzdftpd_enable:-"NO"}		# Enable wzdftpd
 . /etc/rc.subr
 
 name="wzdftpd"
-rcvar=`set_rcvar`
+rcvar=wzdftpd_enable
 command="%%PREFIX%%/sbin/${name}"
 required_files="%%PREFIX%%/etc/wzd.cfg"
 

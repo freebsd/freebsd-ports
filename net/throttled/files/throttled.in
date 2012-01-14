@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="throttled"
-rcvar=`set_rcvar`
+rcvar=throttled_enable
 
 start_precmd="throttled_precmd"
 command="%%PREFIX%%/sbin/throttled-startup"

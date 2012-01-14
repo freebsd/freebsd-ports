@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=cupsd
-rcvar=`set_rcvar`
+rcvar=cupsd_enable
 
 start_precmd=${name}_prestart
 

@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="ices0"
-rcvar=`set_rcvar`
+rcvar=ices0_enable
 
 command="%%PREFIX%%/bin/$name"
 command_args="1>/dev/null 2>&1"

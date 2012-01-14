@@ -31,7 +31,7 @@
 . /etc/rc.subr
 
 name="ipacctd"
-rcvar=`set_rcvar`
+rcvar=ipacctd_enable
 
 command="%%PREFIX%%/sbin/ipacctd"
 

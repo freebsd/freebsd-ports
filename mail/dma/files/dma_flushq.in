@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="dma_flushq"
-rcvar=${name}_enable
+rcvar=dma_flushq_enable
 
 load_rc_config ${name}
 

@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="ser"
-rcvar=`set_rcvar`
+rcvar=ser_enable
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 command_args="-P ${pidfile} > /dev/null"

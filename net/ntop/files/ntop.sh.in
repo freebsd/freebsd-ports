@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=ntop
-rcvar=${name}_enable
+rcvar=ntop_enable
 
 load_rc_config $name
 

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="ftpproxy"
-rcvar=${name}_enable
+rcvar=ftpproxy_enable
 
 load_rc_config $name
 

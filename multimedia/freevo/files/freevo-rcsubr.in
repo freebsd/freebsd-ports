@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: freevo
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
@@ -14,7 +16,7 @@
 . /etc/rc.subr
 
 name=freevo
-rcvar=`set_rcvar`
+rcvar=freevo_enable
 
 load_rc_config $name
 : ${freevo_enable="NO"}
@@ -36,7 +38,7 @@ fast*)	freevo_cmd=`expr "$1" : 'fast\(.*\)'` ;;
 esac
 
 name=freevo_recordserver
-rcvar=${name}_enable
+rcvar=freevo_recordserver_enable
 eval ${name}_user=${freevo_user}
 eval ${name}_group=${freevo_group}
 pidfile=/var/run/freevo/recordserver-${freevo_uid}.pid
@@ -44,7 +46,7 @@ command_args="recordserver ${freevo_cmd}"
 run_rc_command "$1"
 
 name=freevo_webserver
-rcvar=${name}_enable
+rcvar=freevo_webserver_enable
 eval ${name}_user=${freevo_user}
 eval ${name}_group=${freevo_group}
 pidfile=/var/run/freevo/webserver-${freevo_uid}.pid
@@ -52,10 +54,9 @@ command_args="webserver ${freevo_cmd}"
 run_rc_command "$1"
 
 name=freevo_gui
-rcvar=${name}_enable
+rcvar=freevo_gui_enable
 eval ${name}_user=${freevo_user}
 eval ${name}_group=${freevo_group}
 pidfile=/var/run/freevo/freevo-${freevo_uid}.pid
 command_args="${freevo_cmd}"
 run_rc_command "$1"
-

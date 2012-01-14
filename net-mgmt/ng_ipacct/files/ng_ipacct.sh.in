@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name="ng_ipacct"
-rcvar=`set_rcvar`
+rcvar=ng_ipacct_enable
 
 # for debugging purpose you can append flag "-d" to these cmds
 # or even use dumb stubs.

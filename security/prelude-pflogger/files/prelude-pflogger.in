@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="prelude_pflogger"
-rcvar=${name}_enable
+rcvar=prelude_pflogger_enable
 
 command=%%PREFIX%%/bin/prelude-pflogger
 pidfile=/var/run/prelude-pflogger.pid

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="macroscope"
-rcvar=$(set_rcvar)
+rcvar=macroscope_enable
 
 start_precmd()
 {

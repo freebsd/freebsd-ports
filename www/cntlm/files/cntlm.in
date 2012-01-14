@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="cntlm"
-rcvar=${name}_enable
+rcvar=cntlm_enable
 
 load_rc_config $name
 

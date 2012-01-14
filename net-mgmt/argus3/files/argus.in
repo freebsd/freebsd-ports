@@ -6,7 +6,7 @@
 . /etc/rc.subr
 
 name="argus"
-rcvar=`set_rcvar`
+rcvar=argus_enable
 
 load_rc_config $name
 

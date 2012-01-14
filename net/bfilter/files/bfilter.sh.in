@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=bfilter
-rcvar=`set_rcvar`
+rcvar=bfilter_enable
 
 command=%%PREFIX%%/bin/${name}
 sig_stop=KILL

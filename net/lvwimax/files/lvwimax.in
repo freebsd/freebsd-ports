@@ -16,7 +16,7 @@ lvwimax_tap_dev="tap0"
 . /etc/rc.subr
 
 name=lvwimax
-rcvar=${name}_enable
+rcvar=lvwimax_enable
 
 load_rc_config $name
 

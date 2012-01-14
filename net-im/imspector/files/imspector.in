@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="imspector"
-rcvar=${name}_enable
+rcvar=imspector_enable
 
 command=%%PREFIX%%/sbin/${name}
 

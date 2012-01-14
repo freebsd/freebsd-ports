@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="dhttpd"
-rcvar=`set_rcvar`
+rcvar=dhttpd_enable
 
 load_rc_config $name
 

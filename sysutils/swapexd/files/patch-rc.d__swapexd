@@ -10,7 +10,7 @@
 -start_cmd="swapexd_start"
 -
 -load_rc_config $name
-+rcvar=`set_rcvar`
++rcvar=swapexd_enable
  
  : ${swapexd_enable=NO}
  

@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="lcdproc"
-rcvar=${name}_enable
+rcvar=lcdproc_enable
 
 load_rc_config $name
 

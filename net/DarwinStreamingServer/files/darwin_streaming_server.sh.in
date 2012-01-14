@@ -10,7 +10,7 @@ darwin_streaming_server_enable=${darwin_streaming_server_enable-"NO"}
 . /etc/rc.subr
 
 name=darwin_streaming_server
-rcvar=`set_rcvar`
+rcvar=darwin_streaming_server_enable
 command=%%PREFIX%%/sbin/DarwinStreamingServer
 
 load_rc_config ${name}

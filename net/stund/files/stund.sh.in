@@ -16,7 +16,7 @@
 
 name="stund"
 command="%%PREFIX%%/sbin/stund"
-rcvar=`set_rcvar`
+rcvar=stund_enable
 extra_commands="status"
 pidfile="$stund_pidfile"
 

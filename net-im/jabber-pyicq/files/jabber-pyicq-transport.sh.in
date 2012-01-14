@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="jabber_pyicq"
-rcvar=`set_rcvar`
+rcvar=jabber_pyicq_enable
 
 load_rc_config $name
 

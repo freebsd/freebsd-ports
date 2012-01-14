@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="netdisco"
-rcvar=`set_rcvar`
+rcvar=netdisco_enable
 
 load_rc_config $name
 

@@ -65,7 +65,7 @@ geronimo%%GERONIMO_VERSION%%_stop_timeout="${geronimo%%GERONIMO_VERSION%%_stop_t
 . /etc/rc.subr
 
 name="geronimo%%GERONIMO_VERSION%%"
-rcvar=`set_rcvar`
+rcvar=geronimo%%GERONIMO_VERSION%%_enable
 pidfile="%%PID_FILE%%"
 
 JAVA_HOME=%%JAVA_HOME%%

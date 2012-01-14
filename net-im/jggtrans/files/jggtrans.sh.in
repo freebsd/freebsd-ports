@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="jggtrans"
-rcvar=`set_rcvar`
+rcvar=jggtrans_enable
 
 load_rc_config $name
 

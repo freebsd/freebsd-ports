@@ -19,7 +19,7 @@ distccd_flags=${distccd_flags-"-a 127.0.0.0/8 --user distcc --daemon -P %%DISTCC
 . /etc/rc.subr
 
 name=distccd
-rcvar=`set_rcvar`
+rcvar=distccd_enable
 
 command=%%PREFIX%%/sbin/${name}
 # extract pid file from distccd_flags (if any)

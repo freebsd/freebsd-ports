@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="collectdmon"
-rcvar=${name}_enable
+rcvar=collectdmon_enable
 
 command=%%PREFIX%%/sbin/${name}
 

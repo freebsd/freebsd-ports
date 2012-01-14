@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="xymon_server"
-rcvar=`set_rcvar`
+rcvar=xymon_server_enable
 
 load_rc_config "$name"
 : ${xymon_server_enable:="NO"}

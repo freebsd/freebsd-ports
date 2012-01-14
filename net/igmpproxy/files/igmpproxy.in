@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="igmpproxy"
-rcvar=`set_rcvar`
+rcvar=igmpproxy_enable
 procname="%%PREFIX%%/sbin/${name}"
 command=/usr/sbin/daemon
 required_files="%%PREFIX%%/etc/igmpproxy.conf"

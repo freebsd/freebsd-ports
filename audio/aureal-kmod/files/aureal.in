@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="aureal"
-rcvar=${name}_enable
+rcvar=aureal_enable
 
 start_cmd="aureal_start"
 stop_cmd="aureal_stop"

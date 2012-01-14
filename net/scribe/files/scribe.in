@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="scribe"
-rcvar=`set_rcvar`
+rcvar=scribe_enable
 pidfile="/var/run/${name}.pid"
 command="%%PREFIX%%/bin/scribed"
 

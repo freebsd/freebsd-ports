@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=cwnn
-rcvar=`set_rcvar`
+rcvar=cwnn_enable
 command=%%PREFIX%%/bin/cWnn4/cserver
 procname=%%PREFIX%%/bin/cWnn4/cserver
 start_precmd=start_precmd

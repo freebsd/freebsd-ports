@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="diskcheckd"
-rcvar=`set_rcvar`
+rcvar=diskcheckd_enable
 command=%%PREFIX%%/sbin/diskcheckd
 
 load_rc_config $name

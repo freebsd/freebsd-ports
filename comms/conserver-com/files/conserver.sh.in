@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="conserver"
-rcvar=`set_rcvar`
+rcvar=conserver_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=nullmailer
-rcvar=`set_rcvar`
+rcvar=nullmailer_enable
 
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/sbin/nullmailer-send

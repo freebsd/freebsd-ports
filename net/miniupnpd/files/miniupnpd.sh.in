@@ -13,7 +13,7 @@
 # miniupnpd_flags="<set as needed>"
 
 name=miniupnpd
-rcvar=`set_rcvar`
+rcvar=miniupnpd_enable
 load_rc_config $name
 
 miniupnpd_enable=${miniupnpd_enable:-"NO"}

@@ -25,7 +25,7 @@
 . /etc/rc.subr
 
 name="privoxy"
-rcvar=${name}_enable
+rcvar=privoxy_enable
 load_rc_config ${name}
 
 : ${privoxy_enable="NO"}

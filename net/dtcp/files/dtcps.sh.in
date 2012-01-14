@@ -36,7 +36,7 @@ dtcps_enable=${dtcps_enable:-"NO"}		# Enable dtcps
 . /etc/rc.subr
 
 name="dtcps"
-rcvar=`set_rcvar`
+rcvar=dtcps_enable
 command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%RUBY%%"
 pidfile="/var/run/${name}.pid"

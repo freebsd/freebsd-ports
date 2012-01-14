@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="backuppc"
-rcvar=`set_rcvar`
+rcvar=backuppc_enable
 
 load_rc_config $name
 

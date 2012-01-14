@@ -22,7 +22,7 @@ gkrellmd_flags=${gkrellmd_flags:-"-d"}		# Flags to gkrellmd
 . /etc/rc.subr
 
 name="gkrellmd"
-rcvar=`set_rcvar`
+rcvar=gkrellmd_enable
 command="%%PREFIX%%/sbin/${name}"
 required_files="%%PREFIX%%/etc/${name}.conf"
 

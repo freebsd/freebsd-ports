@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="racoon"
-rcvar=`set_rcvar`
+rcvar=racoon_enable
 
 load_rc_config $name
 

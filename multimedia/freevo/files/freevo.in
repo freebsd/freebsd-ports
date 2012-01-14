@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=freevo
-rcvar=`set_rcvar`
+rcvar=freevo_enable
 
 load_rc_config ${name}
 : ${freevo_enable:="NO"}

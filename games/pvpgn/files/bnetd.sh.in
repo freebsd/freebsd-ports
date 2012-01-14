@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=bnetd
-rcvar=`set_rcvar`
+rcvar=bnetd_enable
 
 command=%%PREFIX%%/sbin/bnetd
 pidfile=/var/run/pvpgn/bnetd.pid

@@ -29,7 +29,7 @@ virtuoso_user=virtuoso
 virtuoso_data=%%PREFIX%%/virtuoso
 
 name=virtuoso
-rcvar=`set_rcvar`
+rcvar=virtuoso_enable
 
 command=%%PREFIX%%/bin/virtuoso-t
 command_args="+configfile ${virtuoso_config} ${virtuoso_flags}"

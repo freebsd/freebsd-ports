@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="mps"
-rcvar=`set_rcvar`
+rcvar=mps_enable
 
 load_rc_config $name
 

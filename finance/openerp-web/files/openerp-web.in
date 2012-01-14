@@ -33,7 +33,7 @@
 . /etc/rc.subr
 
 name="openerpweb"
-rcvar=`set_rcvar`
+rcvar=openerpweb_enable
 #command="/usr/local/bin/${name}"
 command="/usr/local/bin/openerp-web"
 command_interpreter="/bin/sh"

@@ -31,7 +31,7 @@
 . /etc/rc.subr
 
 name="deluged"
-rcvar=${name}_enable
+rcvar=deluged_enable
 
 command=%%PREFIX%%/bin/${name}
 command_interpreter=%%PYTHON_CMD%%

@@ -61,7 +61,7 @@
 . /etc/rc.subr
 
 name="svscan"
-rcvar=`set_rcvar`
+rcvar=svscan_enable
 command="%%PREFIX%%/bin/svscan"
 
 #

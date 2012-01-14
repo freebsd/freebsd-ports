@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="netustad"
-rcvar=${name}_enable
+rcvar=netustad_enable
 
 command=%%PREFIX%%/sbin/${name}
 

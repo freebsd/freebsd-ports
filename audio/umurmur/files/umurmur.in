@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=umurmur
-rcvar=${name}_enable
+rcvar=umurmur_enable
 
 # pidfile
 pidfile="/var/run/umurmur/umurmur.pid"

@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="afbinit"
-rcvar=${name}_enable
+rcvar=afbinit_enable
 
 start_cmd="afbinit_startcmd"
 

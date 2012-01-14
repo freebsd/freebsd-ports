@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="hiawatha"
-rcvar=`set_rcvar`
+rcvar=hiawatha_enable
 
 load_rc_config $name
 

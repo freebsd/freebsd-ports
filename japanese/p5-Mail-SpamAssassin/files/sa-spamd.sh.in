@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=spamd
-rcvar=`set_rcvar`
+rcvar=spamd_enable
 
 extra_commands="reload"
 load_rc_config $name

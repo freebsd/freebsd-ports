@@ -19,7 +19,7 @@ perdition_imap4s_enable=${perdition_imap4s_enable-"NO"}
 . /etc/rc.subr
 
 name="perdition_imap4s"
-rcvar=`set_rcvar`
+rcvar=perdition_imap4s_enable
 
 command="%%PREFIX%%/sbin/perdition.imap4s"
 pidfile="/var/run/perdition.imap4s/perdition.imap4s.pid"

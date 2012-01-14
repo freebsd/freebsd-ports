@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=opendnssec
-rcvar=`set_rcvar`
+rcvar=opendnssec_enable
 
 load_rc_config $name
 

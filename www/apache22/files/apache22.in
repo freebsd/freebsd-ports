@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="apache22"
-rcvar=`set_rcvar`
+rcvar=apache22_enable
 
 start_precmd="apache22_prestart"
 restart_precmd="apache22_checkconfig"

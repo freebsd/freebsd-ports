@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name=assp
-rcvar=`set_rcvar`
+rcvar=assp_enable
 
 command=%%PREFIX%%/sbin/assp
 command_interpreter=%%PERL%%

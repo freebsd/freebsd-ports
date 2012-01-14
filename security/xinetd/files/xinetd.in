@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=xinetd
-rcvar=`set_rcvar`
+rcvar=xinetd_enable
 
 command=%%PREFIX%%/sbin/xinetd > /dev/null 2>&1
 pidfile=/var/run/xinetd.pid

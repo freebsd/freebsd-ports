@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=mpdscribble
-rcvar=`set_rcvar`
+rcvar=mpdscribble_enable
 
 command=%%PREFIX%%/bin/mpdscribble
 

@@ -28,7 +28,7 @@
 . /etc/rc.subr
 
 name="afsd"
-rcvar="afsd_enable"
+rcvar=afsd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 command_args="-dynroot -fakestat-all -afsdb -memcache"

@@ -21,7 +21,7 @@ sams_pidfile=${sams_pidfile-"/var/run/samsdaemon.pid"}
 . /etc/rc.subr
 
 name="sams"
-rcvar=`set_rcvar`
+rcvar=sams_enable
 command="%%PREFIX%%/bin/samsdaemon"
 
 load_rc_config $name

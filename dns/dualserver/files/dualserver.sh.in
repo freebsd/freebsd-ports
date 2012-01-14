@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="dualserver"
-rcvar=`set_rcvar`
+rcvar=dualserver_enable
 start_cmd="dualserver_startcmd"
 stop_cmd="dualserver_stopcmd"
 

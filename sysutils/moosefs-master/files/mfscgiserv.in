@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=mfscgiserv
-rcvar=`set_rcvar`
+rcvar=mfscgiserv_enable
 
 command=%%PREFIX%%/sbin/mfscgiserv
 

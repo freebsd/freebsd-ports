@@ -24,7 +24,7 @@ rblmilter_flags=${rblmilter_flags:-"-l -r -d relays.ordb.org"} # Flags to rblmil
 . /etc/rc.subr
 
 name="rblmilter"
-rcvar=`set_rcvar`
+rcvar=rblmilter_enable
 command="%%PREFIX%%/sbin/rbl-milter"
 start_precmd="rblmilter_prestart"
 stop_postcmd="rblmilter_poststop"

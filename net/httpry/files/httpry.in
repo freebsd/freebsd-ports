@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=httpry
-rcvar=${name}_enable
+rcvar=httpry_enable
 
 load_rc_config $name
 

@@ -33,7 +33,7 @@
 . /etc/rc.subr
 
 name="miltermanager"
-rcvar=`set_rcvar`
+rcvar=miltermanager_enable
 
 extra_commands="reload"
 start_precmd="manager_precmd"

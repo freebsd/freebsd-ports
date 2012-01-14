@@ -29,7 +29,7 @@
 . /etc/rc.subr
 
 name="snort"
-rcvar=`set_rcvar`
+rcvar=snort_enable
 extra_commands=reload
 
 command="%%PREFIX%%/bin/snort"

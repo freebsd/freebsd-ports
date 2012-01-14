@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="bounce"
-rcvar=${name}_enable
+rcvar=bounce_enable
 
 load_rc_config $name
 

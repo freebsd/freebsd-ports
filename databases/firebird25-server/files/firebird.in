@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=firebird
-rcvar=`set_rcvar`
+rcvar=firebird_enable
 
 load_rc_config $name
 

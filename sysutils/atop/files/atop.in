@@ -30,7 +30,7 @@
 . /etc/rc.subr
 
 name="atop"
-rcvar=`set_rcvar`
+rcvar=atop_enable
 
 load_rc_config $name
 

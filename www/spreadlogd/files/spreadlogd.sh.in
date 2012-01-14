@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=spreadlogd
-rcvar=`set_rcvar`
+rcvar=spreadlogd_enable
 
 command="%%PREFIX%%/sbin/spreadlogd"
 pidfile=/var/run/${name}.pid

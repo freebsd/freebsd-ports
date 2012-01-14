@@ -34,7 +34,7 @@
 . /etc/rc.subr
 
 name="varnishncsa"
-rcvar=`set_rcvar`
+rcvar=varnishncsa_enable
 
 command="%%PREFIX%%/bin/${name}"
 

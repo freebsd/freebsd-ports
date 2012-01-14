@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name=pmacctd
-rcvar=`set_rcvar`
+rcvar=pmacctd_enable
 
 command=%%PREFIX%%/$name
 

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="binlsrv"
-rcvar=`set_rcvar`
+rcvar=binlsrv_enable
 
 load_rc_config "${name}"
 

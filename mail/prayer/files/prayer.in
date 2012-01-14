@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="prayer"
-rcvar=${name}_enable
+rcvar=prayer_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile="/var/spool/prayer/pid/${name}.pid"

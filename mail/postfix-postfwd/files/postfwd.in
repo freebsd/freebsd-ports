@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=postfwd
-rcvar=${name}_enable
+rcvar=postfwd_enable
 
 command=%%PREFIX%%/bin/${name}
 required_files=%%PREFIX%%/etc/${name}.conf

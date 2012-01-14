@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="opentracker"
-rcvar=`set_rcvar`
+rcvar=opentracker_enable
 
 load_rc_config $name
 

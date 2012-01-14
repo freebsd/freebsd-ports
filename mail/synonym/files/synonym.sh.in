@@ -21,7 +21,7 @@ synonym_conffile=${synonym_conffile-"%%PREFIX%%/etc/synonym.conf"}
 . /etc/rc.subr
 
 name=synonym
-rcvar=`set_rcvar`
+rcvar=synonym_enable
 command=%%PREFIX%%/sbin/${name}
 
 load_rc_config ${name}

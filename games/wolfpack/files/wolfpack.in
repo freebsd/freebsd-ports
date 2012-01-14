@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=wolfpack
-rcvar=`set_rcvar`
+rcvar=wolfpack_enable
 
 load_rc_config $name
 

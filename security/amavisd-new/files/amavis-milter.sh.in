@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=amavis_milter
-rcvar=`set_rcvar`
+rcvar=amavis_milter_enable
 
 command=%%PREFIX%%/sbin/amavis-milter
 required_files=%%PREFIX%%/etc/amavisd.conf

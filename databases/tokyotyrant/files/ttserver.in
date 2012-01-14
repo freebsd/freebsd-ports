@@ -10,7 +10,7 @@
 . /etc/rc.subr
 
 name="ttserver"
-rcvar=`set_rcvar`
+rcvar=ttserver_enable
 
 : ${ttserver_enable:="NO"}
 

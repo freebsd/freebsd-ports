@@ -5,7 +5,7 @@
  
  name="kinkd"
 -rcvar=$name
-+rcvar=`set_rcvar`
++rcvar=kinkd_enable
  command="@sbindir@/${name}"
  extra_commands="reload"
 -required_vars="spmd"

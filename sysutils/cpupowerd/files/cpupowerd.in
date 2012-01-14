@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="cpupowerd"
-rcvar=`set_rcvar`
+rcvar=cpupowerd_enable
 command=%%PREFIX%%/sbin/${name}
 start_precmd="${name}_precmd"
 

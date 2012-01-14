@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="bnbt"
-rcvar=`set_rcvar`
+rcvar=bnbt_enable
 
 # path to your executable, might be libxec, bin, sbin, ...
 command="%%PREFIX%%/bin/$name"

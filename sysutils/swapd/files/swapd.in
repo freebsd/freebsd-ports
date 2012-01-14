@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=swapd
-rcvar=`set_rcvar`
+rcvar=swapd_enable
 
 command=%%PREFIX%%/sbin/swapd
 

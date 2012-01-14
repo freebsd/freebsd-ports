@@ -18,7 +18,7 @@
 name=%%PORTNAME%%
 start_precmd="%%PORTNAME%%_start_precmd"
 stop_postcmd="%%PORTNAME%%_stop_postcmd"
-rcvar=`set_rcvar`
+rcvar=%%PORTNAME%%_enable
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
 command_interpreter=%%PERL%%

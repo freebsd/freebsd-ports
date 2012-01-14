@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="linknx"
-rcvar=`set_rcvar`
+rcvar=linknx_enable
 
 start_precmd="linknx_precmd"
 

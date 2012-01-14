@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=nostromo
-rcvar=`set_rcvar`
+rcvar=nostromo_enable
 
 command=/usr/local/sbin/nhttpd
 

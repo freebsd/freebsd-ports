@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=postfix_policyd_sf
-rcvar=`set_rcvar`
+rcvar=postfix_policyd_sf_enable
 
 command=%%PREFIX%%/sbin/%%REALNAME%%
 

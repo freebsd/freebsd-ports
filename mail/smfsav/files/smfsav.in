@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="smfsav"
-rcvar=`set_rcvar`
+rcvar=smfsav_enable
 command="%%PREFIX%%/sbin/smfsav"
 
 load_rc_config ${name}

@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="scanlogd"
-rcvar=`set_rcvar`
+rcvar=scanlogd_enable
 command="%%PREFIX%%/bin/${name}"
 
 load_rc_config $name

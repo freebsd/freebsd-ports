@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="pdnsd"
-rcvar=${name}_enable
+rcvar=pdnsd_enable
 command="%%PREFIX%%/sbin/pdnsd"
 command_args="-d"
 required_files="%%PREFIX%%/etc/pdnsd.conf"

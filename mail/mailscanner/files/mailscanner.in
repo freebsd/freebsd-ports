@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="mailscanner"
-rcvar=`set_rcvar`
+rcvar=mailscanner_enable
 
 load_rc_config $name
 

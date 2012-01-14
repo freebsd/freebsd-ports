@@ -19,7 +19,7 @@ threeproxy_flags=${threeproxy_flags-"%%PREFIX%%/etc/3proxy.cfg"}
 . /etc/rc.subr
 
 name="threeproxy"
-rcvar=`set_rcvar`
+rcvar=threeproxy_enable
 command="%%PREFIX%%/bin/3proxy"
 
 load_rc_config $name

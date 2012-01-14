@@ -12,7 +12,7 @@ monitorix_enable=${monitorix_enable:-"NO"}
 . /etc/rc.subr
 
 name="monitorix"
-rcvar=`set_rcvar`
+rcvar=monitorix_enable
 
 load_rc_config $name
 

@@ -16,7 +16,7 @@ nslcd_enable=${nslcd_enable-"NO"}
 . /etc/rc.subr
 
 name=nslcd
-rcvar=$(set_rcvar)
+rcvar=nslcd_enable
 
 start_postcmd="nslcd_poststart"
 

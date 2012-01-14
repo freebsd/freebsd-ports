@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="gogoc"
-rcvar=${name}_enable
+rcvar=gogoc_enable
 
 command=%%LOCALBASE%%/bin/${name}
 

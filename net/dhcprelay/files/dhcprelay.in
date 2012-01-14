@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=dhcprelay
-rcvar=$(set_rcvar)
+rcvar=dhcprelay_enable
 
 pidfile=/var/run/${name}.pid
 command=%%PREFIX%%/bin/${name}

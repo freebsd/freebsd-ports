@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="interchange"
-rcvar=`set_rcvar`
+rcvar=interchange_enable
 
 interchange_enable=${interchange_enable:-"NO"}
 interchange_config=${interchange_config:-"%%PREFIX%%/interchange/interchange.cfg"}

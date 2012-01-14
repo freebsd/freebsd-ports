@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="noc"
-rcvar=`set_rcvar`
+rcvar=noc_enable
 
 # set defaults
 

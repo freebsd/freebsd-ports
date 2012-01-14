@@ -25,7 +25,7 @@ esac
 . /etc/rc.subr
 
 name="openxpki"
-rcvar=`set_rcvar`
+rcvar=openxpki_enable
 command="%%PREFIX%%/bin/openxpkictl"
 procname="openxpkid"
 

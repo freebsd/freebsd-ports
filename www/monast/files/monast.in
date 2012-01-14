@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=monast
-rcvar=${name}_enable
+rcvar=monast_enable
 
 command="%%PREFIX%%/monast/monast.py"
 pidfile="/var/run/${name}.pid"

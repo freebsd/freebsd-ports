@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="bopm"
-rcvar=`set_rcvar`
+rcvar=bopm_enable
 
 load_rc_config $name
 

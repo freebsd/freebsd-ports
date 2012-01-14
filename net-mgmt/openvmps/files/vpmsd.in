@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="vmpsd"
-rcvar=`set_rcvar`
+rcvar=vmpsd_enable
 command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name

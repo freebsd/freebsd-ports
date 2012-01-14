@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name=bttrack
-rcvar=`set_rcvar`
+rcvar=bttrack_enable
 
 command=%%PREFIX%%/bin/${name}.py
 command_args="&"

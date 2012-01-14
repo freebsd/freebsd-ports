@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="memcached"
-rcvar=${name}_enable
+rcvar=memcached_enable
 
 _piddir="/var/run/memcached"
 pidfile="${_piddir}/memcached.pid"

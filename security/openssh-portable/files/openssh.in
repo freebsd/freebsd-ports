@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="openssh"
-rcvar=${name}_enable
+rcvar=openssh_enable
 
 load_rc_config ${name}
 

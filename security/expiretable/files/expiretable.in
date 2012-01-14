@@ -11,7 +11,7 @@
 . /etc/rc.subr
 
 name="expiretable"
-rcvar=`set_rcvar`
+rcvar=expiretable_enable
 command="/usr/local/sbin/expiretable"
 load_rc_config "$name"
 

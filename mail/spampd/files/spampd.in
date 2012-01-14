@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="spampd"
-rcvar=`set_rcvar`
+rcvar=spampd_enable
 
 : ${spampd_enable="NO"}
 : ${spampd_pidfile="/var/run/spamd/spampd.pid"}

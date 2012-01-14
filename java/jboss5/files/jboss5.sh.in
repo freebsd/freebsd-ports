@@ -21,7 +21,7 @@
 %%APP_SHORTNAME%%_logdir="%%LOG_DIR%%"
 
 name="%%APP_SHORTNAME%%"
-rcvar=`set_rcvar`
+rcvar=%%APP_SHORTNAME%%_enable
 
 load_rc_config $name
 

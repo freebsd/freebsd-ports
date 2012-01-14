@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name="denyhosts"
-rcvar=${name}_enable
+rcvar=denyhosts_enable
 
 command="%%PREFIX%%/bin/denyhosts.py"
 command_interpreter="%%PYTHON%%"

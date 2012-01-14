@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="redir"
-rcvar=${name}_enable
+rcvar=redir_enable
 
 load_rc_config $name
 

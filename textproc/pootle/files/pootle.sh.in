@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name=pootle
-rcvar=${name}_enable
+rcvar=pootle_enable
 pidfile="%%POOTLERUNDIR%%/pootle.pid"
 command_interpreter="%%PYTHON_CMD%%"
 

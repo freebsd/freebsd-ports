@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name=dovecot
-rcvar=`set_rcvar`
+rcvar=dovecot_enable
 
 # read configuration and set defaults
 load_rc_config ${name}

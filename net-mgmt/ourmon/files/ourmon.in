@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="ourmon"
-rcvar=${name}_enable
+rcvar=ourmon_enable
 command="%%PREFIX%%/mrourmon/bin/ourmon"
 
 load_rc_config $name

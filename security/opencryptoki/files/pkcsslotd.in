@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=pkcsslotd
-rcvar=`set_rcvar`
+rcvar=pkcsslotd_enable
 command=%%PREFIX%%/sbin/${name}
 start_precmd=${name}_prestart
 

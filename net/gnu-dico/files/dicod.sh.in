@@ -13,7 +13,7 @@ dicod_enable=${dicod_enable-"NO"}
 . %%RC_SUBR%%
 
 name=dicod
-rcvar=`set_rcvar`
+rcvar=dicod_enable
 command=%%PREFIX%%/sbin/dicod
 
 load_rc_config $name

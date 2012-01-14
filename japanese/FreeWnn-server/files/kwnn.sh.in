@@ -9,7 +9,7 @@
 . /etc/rc.subr
 
 name=kwnn
-rcvar=`set_rcvar`
+rcvar=kwnn_enable
 command=%%PREFIX%%/bin/kWnn4/kserver
 procname=%%PREFIX%%/bin/kWnn4/kserver
 start_precmd=start_precmd

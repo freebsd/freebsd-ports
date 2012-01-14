@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="netxmsd"
-rcvar=${name}_enable
+rcvar=netxmsd_enable
 
 load_rc_config $name
 

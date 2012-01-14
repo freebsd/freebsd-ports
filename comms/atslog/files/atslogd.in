@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="atslogd"
-rcvar=${name}_enable
+rcvar=atslogd_enable
 
 load_rc_config $name
 

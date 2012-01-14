@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=multiskkserv
-rcvar=`set_rcvar`
+rcvar=multiskkserv_enable
 
 command=%%PREFIX%%/sbin/multiskkserv
 

@@ -21,7 +21,7 @@
 . /etc/rc.subr
 
 name="ekpd"
-rcvar=`set_rcvar`
+rcvar=ekpd_enable
 command="%%PREFIX%%/libexec/pips/printer/ekpd"
 start_precmd="ekpd_prestart"
 

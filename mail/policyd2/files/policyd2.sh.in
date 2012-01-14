@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="policyd2"
-rcvar=`set_rcvar`
+rcvar=policyd2_enable
 
 command="%%LOCALBASE%%/bin/cbpolicyd"
 command_interpreter="/usr/bin/perl"

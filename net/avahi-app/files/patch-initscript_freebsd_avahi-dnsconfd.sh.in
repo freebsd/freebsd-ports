@@ -14,4 +14,4 @@
 +avahi_dnsconfd_enable=${avahi_dnsconfd_enable-${gnome_enable}}
  
  name=avahi_dnsconfd
- rcvar=`set_rcvar`
+ rcvar=avahi_dnsconfd_enable

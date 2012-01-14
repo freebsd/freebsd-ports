@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name="LCDd"
-rcvar=${name}_enable
+rcvar=LCDd_enable
 
 load_rc_config $name
 

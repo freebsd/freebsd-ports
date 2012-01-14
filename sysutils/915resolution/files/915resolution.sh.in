@@ -23,7 +23,7 @@ i915resolution_height=${i915resolution_height:-"1080"}	 # the vertical resolutio
 . /etc/rc.subr
 
 name="i915resolution"
-rcvar=`set_rcvar`
+rcvar=i915resolution_enable
 command="%%PREFIX%%/sbin/915resolution"
 start_cmd="${name}_start"
 stop_cmd=":"

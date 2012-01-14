@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="doorman"
-rcvar=`set_rcvar`
+rcvar=doorman_enable
 
 [ -z "$doorman_enable" ] && doorman_enable="NO"
 [ -z "$doorman_config" ] && doorman_config="%%PREFIX%%/etc/doormand/doormand.cf"

@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name=radiusd
-rcvar=`set_rcvar`
+rcvar=radiusd_enable
 load_rc_config $name
 
 command=%%PREFIX%%/sbin/radiusd

@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=rdnssd
-rcvar=`set_rcvar`
+rcvar=rdnssd_enable
 
 pidfile=/var/run/${name}.pid
 command="%%PREFIX%%/sbin/${name}"

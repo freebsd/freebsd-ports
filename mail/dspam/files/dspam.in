@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="dspam"
-rcvar=${name}_enable
+rcvar=dspam_enable
 
 load_rc_config $name
 

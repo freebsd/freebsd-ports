@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=bitten_slave
-rcvar=`set_rcvar`
+rcvar=bitten_slave_enable
 logfile=/var/log/bitten-slave.log
 conffile=%%ETCDIR%%/bitten-slave.conf
 workdir=/var/lib/bitten-slave

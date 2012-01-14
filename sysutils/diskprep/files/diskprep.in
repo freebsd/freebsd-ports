@@ -1,6 +1,8 @@
 #!/bin/sh
 # $Aero: util/diskprep/diskprep.rc,v 1.1 2005/08/06 00:50:59 brooks Exp $
 
+# $FreeBSD$
+#
 # PROVIDE: diskprep
 # REQUIRE: disks
 # BEFORE: fsck localswap
@@ -9,7 +11,12 @@
 . /etc/rc.subr
 
 name="diskprep"
-rc_var=`set_rcvar`
+rcvar=diskprep_enable
+
+load_rc_config $name
+
+# Needs default value for _enable ??
+
 start_precmd="diskprep_prestart"
 stop_cmd=":"
 command="/usr/local/sbin/diskprep"
@@ -31,7 +38,5 @@ diskprep_prestart()
 	fi
 	command_args="$command_args $diskprep_disk"
 }
-
-load_rc_config $name
 
 run_rc_command "$1"

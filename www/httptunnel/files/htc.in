@@ -26,7 +26,7 @@
 . /etc/rc.subr
 
 name="htc"
-rcvar=${name}_enable
+rcvar=htc_enable
 
 command=%%PREFIX%%/bin/${name}
 

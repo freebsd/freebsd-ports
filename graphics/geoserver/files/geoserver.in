@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="geoserver"
-rcvar=${name}_enable
+rcvar=geoserver_enable
 
 load_rc_config ${name}
 

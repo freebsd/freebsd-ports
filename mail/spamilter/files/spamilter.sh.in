@@ -24,7 +24,7 @@ spamilter_enable=${spamilter_enable:-"NO"}      # Enable spamilter-milter
 . /etc/rc.subr
 
 name="spamilter"
-rcvar=`set_rcvar`
+rcvar=spamilter_enable
 command="%%PREFIX%%/bin/spamilter"
 pidfile="/tmp/Spamilter.pid"
 required_files="%%PREFIX%%/etc/spamilter.rc"

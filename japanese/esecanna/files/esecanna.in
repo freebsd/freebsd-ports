@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=esecanna
-rcvar=`set_rcvar`
+rcvar=esecanna_enable
 
 esecannaserver=%%PREFIX%%/sbin/esecannaserver
 

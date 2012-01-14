@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="lprng"
-rcvar=${name}_enable
+rcvar=lprng_enable
 
 command=%%PREFIX%%/sbin/lpd
 

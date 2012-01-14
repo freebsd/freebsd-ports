@@ -24,9 +24,10 @@
 
 . /etc/rc.subr
 
-kmod="%%PREFIX%%/modules/fuse.ko"
 name="fusefs"
-rcvar=${name}_enable
+rcvar=fusefs_enable
+
+kmod="%%PREFIX%%/modules/fuse.ko"
 
 start_cmd="fusefs_start"
 stop_cmd="fusefs_stop"

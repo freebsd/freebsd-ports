@@ -14,7 +14,7 @@ fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
 . /etc/rc.subr
 
 name="fail2ban"
-rcvar=`set_rcvar`
+rcvar=fail2ban_enable
 pidfile="${fail2ban_pidfile}"
 
 command="%%PREFIX%%/bin/fail2ban-server"

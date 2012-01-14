@@ -22,7 +22,7 @@ vmware_guest_kmod_start()
 
 # VMware kernel modules
 name="vmware_guest_kmod"
-rcvar=`set_rcvar`
+rcvar=vmware_guest_kmod_enable
 start_precmd="${checkvm_cmd}"
 start_cmd="vmware_guest_kmod_start"
 stop_precmd="${checkvm_cmd}"
@@ -34,7 +34,7 @@ run_rc_command "$1"
 
 # VMware guest daemon
 name="vmware_guestd"
-rcvar=`set_rcvar`
+rcvar=vmware_guestd_enable
 start_precmd="${checkvm_cmd}"
 unset start_cmd
 stop_precmd="${checkvm_cmd}"

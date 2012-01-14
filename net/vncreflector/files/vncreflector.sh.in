@@ -30,7 +30,7 @@ vncreflector_addr=${vncreflector_addr-""}
 . /etc/rc.subr
 
 name="vncreflector"
-rcvar=`set_rcvar`
+rcvar=vncreflector_enable
 start_cmd="vncreflector_start"
 stop_cmd="vncreflector_stop"
 command="%%PREFIX%%/bin/${name}"

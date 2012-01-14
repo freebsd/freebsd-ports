@@ -75,7 +75,7 @@ wowza_stderr_log="${wowza_stderr_log:-"%%STDERR_LOG%%"}"
 . /etc/rc.subr
 
 name="wowza"
-rcvar=`set_rcvar`
+rcvar=wowza_enable
 pidfile="/var/run/${name}.pid"
 procname="java"
 

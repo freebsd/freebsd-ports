@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="nsca"
-rcvar=`set_rcvar`
+rcvar=nsca_enable
 
 command="%%PREFIX%%/sbin/nsca"
 pidfile="/var/run/nsca.pid"

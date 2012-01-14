@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="chef_client"
-rcvar=`set_rcvar`
+rcvar=chef_client_enable
 
 # Read configuration and set defaults
 load_rc_config $name

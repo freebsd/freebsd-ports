@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="memcached"
-rcvar=${name}_enable
+rcvar=memcached_enable
 
 load_rc_config ${name}
 

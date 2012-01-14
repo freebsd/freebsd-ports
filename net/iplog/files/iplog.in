@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="iplog"
-rcvar=${name}_enable
+rcvar=iplog_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}/${name}.pid

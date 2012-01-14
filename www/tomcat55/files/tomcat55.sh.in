@@ -76,7 +76,7 @@ tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-
 . /etc/rc.subr
 
 name="tomcat%%TOMCAT_VERSION%%"
-rcvar=`set_rcvar`
+rcvar=tomcat%%TOMCAT_VERSION%%_enable
 pidfile="%%PID_FILE%%"
 
 load_rc_config "${name}"

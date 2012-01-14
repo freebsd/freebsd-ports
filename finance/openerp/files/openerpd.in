@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="openerpd"
-rcvar=${name}_enable
+rcvar=openerpd_enable
 
 command=%%PREFIX%%/bin/openerp-server
 

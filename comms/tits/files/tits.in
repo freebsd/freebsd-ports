@@ -19,7 +19,7 @@ tits_enable="${tits_enable-NO}"
 . /etc/rc.subr
 
 name="tits"
-rcvar=`set_rcvar`
+rcvar=tits_enable
 command="%%PREFIX%%/sbin/tits"
 
 load_rc_config $name

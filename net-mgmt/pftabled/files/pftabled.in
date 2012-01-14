@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="pftabled"
-rcvar=${name}_enable
+rcvar=pftabled_enable
 
 load_rc_config $name
 

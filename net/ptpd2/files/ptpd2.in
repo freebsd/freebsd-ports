@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="ptpd2"
-rcvar=`set_rcvar`
+rcvar=ptpd2_enable
 
 command="%%PREFIX%%/sbin/${name}"
 

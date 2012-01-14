@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=quasselcore
-rcvar=`set_rcvar`
+rcvar=quasselcore_enable
 
 load_rc_config ${name}
 

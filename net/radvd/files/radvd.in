@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=radvd
-rcvar=`set_rcvar`
+rcvar=radvd_enable
 
 pidfile=/var/run/${name}.pid
 command="%%PREFIX%%/sbin/${name}"

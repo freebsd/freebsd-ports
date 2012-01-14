@@ -24,7 +24,7 @@
 . /etc/rc.subr
 
 name=gpsd
-rcvar=`set_rcvar`
+rcvar=gpsd_enable
 
 start_postcmd=start_postcmd
 stop_postcmd=stop_postcmd

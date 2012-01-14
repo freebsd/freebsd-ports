@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="archiveopteryx"
-rcvar=`set_rcvar`
+rcvar=archiveopteryx_enable
 
 archiveopteryx_enable=${archiveopteryx_enable:-"NO"}
 pidfile=/var/run/${name}.pid

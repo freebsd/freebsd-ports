@@ -27,7 +27,7 @@
 . /etc/rc.subr
 
 name="qpsmtpd"
-rcvar=`set_rcvar`
+rcvar=qpsmtpd_enable
 
 command="%%PREFIX%%/bin/qpsmtpd-forkserver"
 command_interpreter=%%PERL%%

@@ -12,7 +12,7 @@
 . /etc/rc.subr
 
 name=dns_balance
-rcvar=`set_rcvar`
+rcvar=dns_balance_enable
 
 load_rc_config ${name}
 : ${dns_balance_enable="NO"}

@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="clamsmtpd"
-rcvar=${name}_enable
+rcvar=clamsmtpd_enable
 
 : ${clamsmtpd_enable="NO"}
 : ${clamsmtpd_conf="%%PREFIX%%/etc/clamsmtpd.conf"}

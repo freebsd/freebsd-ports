@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name=rabbitmq
-rcvar=`set_rcvar`
+rcvar=rabbitmq_enable
 
 load_rc_config $name
 

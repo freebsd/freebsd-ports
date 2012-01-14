@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=radns
-rcvar=`set_rcvar`
+rcvar=radns_enable
 radns_dir="%%PREFIX%%/etc/radns"
 
 load_rc_config $name

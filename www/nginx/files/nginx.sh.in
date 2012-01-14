@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="nginx"
-rcvar=`set_rcvar`
+rcvar=nginx_enable
 
 start_precmd="nginx_precmd"
 restart_precmd="nginx_checkconfig"

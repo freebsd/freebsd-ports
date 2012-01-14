@@ -23,7 +23,7 @@
 . /etc/rc.subr
 
 name="vsftpd"
-rcvar=`set_rcvar`
+rcvar=vsftpd_enable
 
 load_rc_config "$name"
 : ${vsftpd_enable:="NO"}

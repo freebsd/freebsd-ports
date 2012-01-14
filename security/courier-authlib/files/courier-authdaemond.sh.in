@@ -28,7 +28,7 @@ courier_authdaemond_enable=${courier_authdaemond_enable-"NO"}	# Run courier-auth
 . /etc/rc.subr
 
 name="courier_authdaemond"
-rcvar=`set_rcvar`
+rcvar=courier_authdaemond_enable
 
 command="${sbindir}/authdaemond"
 procname="${sbindir}/courierlogger"

@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="tpop3d"
-rcvar=`set_rcvar`
+rcvar=tpop3d_enable
 
 
 stop_postcmd=stop_postcmd

@@ -17,7 +17,7 @@
 
 name="nxagentd"
 nxagentd_user="netxms"
-rcvar=${name}_enable
+rcvar=nxagentd_enable
 
 load_rc_config $name
 

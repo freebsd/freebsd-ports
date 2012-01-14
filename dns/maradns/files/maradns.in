@@ -15,7 +15,7 @@
 : ${maradns_conf="%%PREFIX%%/etc/mararc"}
 
 name="maradns"
-rcvar=`set_rcvar`
+rcvar=maradns_enable
 command="%%PREFIX%%/bin/duende"
 command_args="%%PREFIX%%/sbin/maradns -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"

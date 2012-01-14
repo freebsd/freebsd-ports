@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name="xfs"
-rcvar=`set_rcvar`
+rcvar=xfs_enable
 
 # Set defaults
 [ -z "$xfs_enable" ] && xfs_enable="NO"

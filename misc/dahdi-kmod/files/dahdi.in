@@ -34,7 +34,7 @@
 . /etc/rc.subr
 
 name="dahdi"
-rcvar=`set_rcvar`
+rcvar=dahdi_enable
 
 start_cmd="dahdi_start"
 stop_cmd="dahdi_stop"

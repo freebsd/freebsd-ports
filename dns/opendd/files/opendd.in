@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="opendd"
-rcvar=${name}_enable
+rcvar=opendd_enable
 
 load_rc_config $name
 

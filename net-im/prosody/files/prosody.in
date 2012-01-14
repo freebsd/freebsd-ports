@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="prosody"
-rcvar=`set_rcvar`
+rcvar=prosody_enable
 pidfile="%%PREFIX%%/var/lib/prosody/prosody.pid"
 command="%%PREFIX%%/bin/prosodyctl"
 

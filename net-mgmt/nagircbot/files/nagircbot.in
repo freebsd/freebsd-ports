@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name=nagircbot
-rcvar=`set_rcvar`
+rcvar=nagircbot_enable
 
 pidfile=/var/run/nagios/${name}.pid
 command=%%PREFIX%%/bin/nagircbot

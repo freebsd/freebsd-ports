@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="cfexecd"
-rcvar=${name}_enable
+rcvar=cfexecd_enable
 
 command="%%PREFIX%%/sbin/${name}"
 

@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="vboxnet"
-rcvar=${name}_enable
+rcvar=vboxnet_enable
 start_cmd="vboxnet_start"
 stop_cmd="vboxnet_stop"
 

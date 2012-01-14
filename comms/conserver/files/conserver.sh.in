@@ -16,7 +16,7 @@ conserver_enable=${conserver_enable:-"no"}
 . /etc/rc.subr
 
 name=conserver
-rcvar=`set_rcvar`
+rcvar=conserver_enable
 
 command=%%PREFIX%%/sbin/conserver
 conserver_configfile=${conserver_configfile:-"%%PREFIX%%/etc/conserver.cf"}

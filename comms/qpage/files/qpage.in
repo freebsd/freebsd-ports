@@ -18,7 +18,7 @@
 . /etc/rc.subr
 
 name="qpage"
-rcvar=${name}_enable
+rcvar=qpage_enable
 
 command=%%PREFIX%%/bin/${name}
 

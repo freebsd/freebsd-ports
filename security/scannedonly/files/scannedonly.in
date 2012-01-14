@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name=scannedonly_clamav
-rcvar=`set_rcvar`
+rcvar=scannedonly_clamav_enable
 
 command=%%PREFIX%%/sbin/scannedonlyd_clamav
 pidfile=/var/run/scannedonlyd_clamav.pid

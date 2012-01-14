@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="bigsister"
-rcvar=`set_rcvar`
+rcvar=bigsister_enable
 start_cmd=bs_start
 stop_cmd=bs_stop
 

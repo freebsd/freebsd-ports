@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="eXist"
-rcvar=`set_rcvar`
+rcvar=eXist_enable
 
 # Read settings and set default values.
 load_rc_config "$name"

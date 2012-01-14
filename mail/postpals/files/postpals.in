@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name=postpals
-rcvar=`set_rcvar`
+rcvar=postpals_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile="/var/run/${name}.pid"

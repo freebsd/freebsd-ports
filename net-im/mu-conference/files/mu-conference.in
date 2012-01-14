@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name="mu_conference"
-rcvar=`set_rcvar`
+rcvar=mu_conference_enable
 
 command="%%PREFIX%%/bin/mu-conference"
 

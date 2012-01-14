@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="mohawk"
-rcvar=`set_rcvar`
+rcvar=mohawk_enable
 
 load_rc_config $name
 

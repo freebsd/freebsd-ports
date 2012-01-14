@@ -22,7 +22,7 @@
 . /etc/rc.subr
 
 name=freenet6
-rcvar=`set_rcvar`
+rcvar=freenet6_enable
 
 command=%%PREFIX%%/bin/gw6c
 required_files=%%PREFIX%%/etc/freenet6/gw6c.conf

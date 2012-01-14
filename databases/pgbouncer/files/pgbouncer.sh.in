@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="pgbouncer"
-rcvar=`set_rcvar`
+rcvar=pgbouncer_enable
 
 load_rc_config "$name"
 : ${pgbouncer_enable="NO"}

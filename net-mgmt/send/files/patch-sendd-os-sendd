@@ -3,7 +3,7 @@
 @@ -37,8 +37,8 @@
  
  name="sendd"
- rcvar=`set_rcvar`
+ rcvar=sendd_enable
 -command="/usr/local/sbin/${name}"
 -required_files="/usr/local/etc/${name}.conf"
 +command="%%PREFIX%%/sbin/${name}"

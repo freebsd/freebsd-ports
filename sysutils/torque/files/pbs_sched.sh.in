@@ -15,7 +15,7 @@
 . /etc/rc.subr
 
 name="pbs_sched"
-rcvar=${name}_enable
+rcvar=pbs_sched_enable
 
 pidfile=/var/spool/torque/sched_priv/sched.lock
 command=%%PREFIX%%/sbin/${name}

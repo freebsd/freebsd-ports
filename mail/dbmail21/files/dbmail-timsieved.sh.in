@@ -19,7 +19,7 @@
 . /etc/rc.subr
 
 name=dbmail_timsieved
-rcvar=`set_rcvar`
+rcvar=dbmail_timsieved_enable
 
 command=%%PREFIX%%/sbin/dbmail-timsieved
 pidfile=/var/run/dbmail-timsieved.pid

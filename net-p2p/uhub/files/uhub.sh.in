@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="uhub"
-rcvar=`set_rcvar`
+rcvar=uhub_enable
 
 load_rc_config $name
 

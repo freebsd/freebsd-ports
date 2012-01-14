@@ -8,7 +8,7 @@
 . /etc/rc.subr
 
 name="olsrd"
-rcvar=`set_rcvar`
+rcvar=olsrd_enable
 
 command=%%PREFIX%%/sbin/olsrd
 command_args="-d 0"

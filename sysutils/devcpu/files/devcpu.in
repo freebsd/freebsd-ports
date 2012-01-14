@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="devcpu"
-rcvar=`set_rcvar`
+rcvar=devcpu_enable
 stop_cmd=":"
 start_precmd="devcpu_prepare"
 start_cmd="devcpu_start"

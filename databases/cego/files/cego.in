@@ -20,7 +20,7 @@
 . /etc/rc.subr
 
 name="cego"
-rcvar=`set_rcvar`
+rcvar=cego_enable
 
 command="%%PREFIX%%/bin/cego"
 

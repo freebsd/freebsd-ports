@@ -25,7 +25,7 @@
 . /etc/rc.subr
 
 name=dccgrey
-rcvar=`set_rcvar`
+rcvar=dccgrey_enable
 
 load_rc_config $name
 

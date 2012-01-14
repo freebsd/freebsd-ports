@@ -36,7 +36,7 @@
 . /etc/rc.subr
 
 name=nstxd
-rcvar=`set_rcvar`
+rcvar=nstxd_enable
 
 command=%%PREFIX%%/sbin/nstxd
 

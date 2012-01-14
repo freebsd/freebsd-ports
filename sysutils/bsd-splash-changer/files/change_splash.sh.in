@@ -1,6 +1,6 @@
 #!/bin/sh
-#
-# /usr/local/etc/rc.d/change_splash.sh * mato [11-feb-2006]
+
+# $FreeBSD$
 #
 # PROVIDE: change_splash
 # REQUIRE: mountcritremote
@@ -14,18 +14,19 @@
 #					Splash image file is randomly picked up from this directory.
 # splash_changer_file (string):		Defaults to "/boot/splash".
 #					This is where the image file is copied to.
-#
 
 . /etc/rc.subr
 
 name=change_splash
-rcvar=`set_rcvar splash_changer`
+rcvar=splash_changer_enable
 
-start_cmd=${name}_start
+load_rc_config $name
 
 : ${splash_changer_enable="NO"}
 : ${splash_changer_file="/boot/splash"}
 : ${splash_changer_dir="%%DATADIR%%"}
+
+start_cmd=${name}_start
 
 change_splash_start()
 {
@@ -65,7 +66,4 @@ change_splash_start()
 	debug "Boot splash image changed to $filename"
 }
 
-load_rc_config $name
 run_rc_command "$1"
-
-# done

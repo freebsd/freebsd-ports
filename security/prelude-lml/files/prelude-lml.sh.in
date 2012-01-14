@@ -14,7 +14,7 @@
 . /etc/rc.subr
 
 name="prelude_lml"
-rcvar=${name}_enable
+rcvar=prelude_lml_enable
 
 command=%%PREFIX%%/bin/prelude-lml
 pidfile=/var/run/prelude-lml.pid

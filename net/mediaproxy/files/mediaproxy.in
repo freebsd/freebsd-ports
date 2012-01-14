@@ -17,7 +17,7 @@
 . /etc/rc.subr
 
 name="mediaproxy"
-rcvar="${name}_enable"
+rcvar=mediaproxy_enable
 
 load_rc_config $name
 
