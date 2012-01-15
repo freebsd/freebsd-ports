@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+include/xcb/xcb_icccm.h
+include/xcb/xcb_ewmh.h
+lib/libxcb-icccm.so.4
+lib/libxcb-icccm.so
+lib/libxcb-icccm.la
+lib/libxcb-icccm.a
+lib/libxcb-ewmh.so.1
+lib/libxcb-ewmh.so
+lib/libxcb-ewmh.la
+lib/libxcb-ewmh.a
+libdata/pkgconfig/xcb-icccm.pc
+libdata/pkgconfig/xcb-ewmh.pc
