@@ -1,6 +1,5 @@
 %%SITE_PERL%%/DBIx/Custom.pm
 %%SITE_PERL%%/DBIx/Custom/Guide.pod
-%%SITE_PERL%%/DBIx/Custom/Guide/Ja.pod
 %%SITE_PERL%%/DBIx/Custom/Mapper.pm
 %%SITE_PERL%%/DBIx/Custom/Model.pm
 %%SITE_PERL%%/DBIx/Custom/NotExists.pm
