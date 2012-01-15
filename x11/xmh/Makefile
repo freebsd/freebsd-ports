@@ -15,7 +15,7 @@ COMMENT=	Send and read mail with an X interface to MH
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh
 
 XORG_CAT=	app
-USE_XORG=	xt xaw
+USE_XORG=	xaw xmu xt xbitmaps
 
 MAN1=		xmh.1
 
