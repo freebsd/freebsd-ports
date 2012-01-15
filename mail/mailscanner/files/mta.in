@@ -16,9 +16,9 @@
 # mta_flags (str):        Set to "" by default.
 #                         Extra flags passed to start command.
 # mta_program (str):      Path to program, defaults depending on $mta_type
-#			  either to "/usr/sbin/sendmail" or "/usr/local/sbin/exim"
+#			  either to "/usr/sbin/sendmail" or "%%LOCALBASE%%/sbin/exim"
 # mta_configfile (str):   Config file, defaults depending on $mta_type either
-#			  to "/etc/mail/sendmail.cf" or "/usr/local/etc/exim/configure"
+#			  to "/etc/mail/sendmail.cf" or "%%LOCALBASE%%/etc/exim/configure"
 # mta_pidfile (str):      PID file, defaults depending on $mta_type either
 #			  to "/var/run/sendmail.pid" or "/var/run/exim.pid"
 #
@@ -79,8 +79,8 @@ case "${mta_type}" in
 		;;
 
 	exim)
-		_mta_program="/usr/local/sbin/exim"
-		_mta_configfile="/usr/local/etc/exim/configure"
+		_mta_program="%%LOCALBASE%%/sbin/exim"
+		_mta_configfile="%%LOCALBASE%%/etc/exim/configure"
 		_mta_pidfile="/var/run/exim.pid"
 		;;
 esac
