@@ -7,6 +7,7 @@
 
 PORTNAME=	mcwm
 PORTVERSION=	20111124
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://hack.org/mc/hacks/mcwm/
 
@@ -16,8 +17,9 @@ COMMENT=	A small window manager inspired by CTWM, evilwm, and tinywm
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
-RUN_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	xcb-util.0:${PORTSDIR}/x11/xcb-util \
+		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
+		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
 
 MAKE_JOBS_SAFE=	yes
 

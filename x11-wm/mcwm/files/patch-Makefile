@@ -17,7 +17,7 @@ http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/163667
 -	-lxcb-atom #-ldmalloc
 +CFLAGS+=-g -std=c99 -Wall -Wextra -I/usr/local/include #-DDEBUG #-DDMALLOC
 +LDFLAGS+=-L/usr/local/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
-+	-lxcb-atom -lxcb-property #-ldmalloc
++	-lxcb-util #-ldmalloc
  
  RM=/bin/rm
 -PREFIX=/usr/local

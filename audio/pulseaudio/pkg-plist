@@ -128,6 +128,8 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-detect.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-detect.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-restore.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-restore.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-echo-cancel.a
+lib/pulse-%%PULSE_VERSION%%/modules/module-echo-cancel.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-compat-spawnfd.a
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-compat-spawnfd.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-compat-spawnpid.a
@@ -254,7 +256,10 @@ share/locale/ta/LC_MESSAGES/pulseaudio.mo
 share/locale/te/LC_MESSAGES/pulseaudio.mo
 share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
+share/vala/vapi/libpulse.deps
 share/vala/vapi/libpulse.vapi
+share/vala/vapi/libpulse-mainloop-glib.deps
+share/vala/vapi/libpulse-mainloop-glib.vapi
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%

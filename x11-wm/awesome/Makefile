@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.10
-PORTREVISION=	3
+PORTVERSION=	3.4.11
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util \
+		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
@@ -30,7 +29,10 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xdg-basedir.2:${PORTSDIR}/x11/libxdg-basedir \
 		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-event.1:${PORTSDIR}/x11/xcb-util \
+		xcb-util.0:${PORTSDIR}/x11/xcb-util \
+		xcb-image.0:${PORTSDIR}/x11/xcb-util-image \
+		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
+		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes

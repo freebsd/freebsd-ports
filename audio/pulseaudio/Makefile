@@ -11,8 +11,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.22
-PORTREVISION=	2
+PORTVERSION=	0.9.23
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
