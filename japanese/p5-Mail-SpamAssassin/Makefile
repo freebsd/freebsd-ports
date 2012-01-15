@@ -23,7 +23,7 @@ PATCHFILES=	spamassassin-${PORTVERSION}-ja-${PATCHLEVEL}.patch:JA
 PATCHLEVEL=	1
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	SpamAssassin with Japanese tokenizer
 
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
