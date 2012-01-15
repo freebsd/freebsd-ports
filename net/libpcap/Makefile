@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -47,8 +46,6 @@ MAN3=		pcap.3 \
 		pcap_file.3 \
 		pcap_fileno.3 \
 		pcap_findalldevs.3 \
-		pcap_free_datalinks.3 \
-		pcap_freealldevs.3 \
 		pcap_freecode.3 \
 		pcap_get_selectable_fd.3 \
 		pcap_geterr.3 \
@@ -56,6 +53,7 @@ MAN3=		pcap.3 \
 		pcap_is_swapped.3 \
 		pcap_lib_version.3 \
 		pcap_list_datalinks.3 \
+		pcap_list_tstamp_types.3 \
 		pcap_lookupdev.3 \
 		pcap_lookupnet.3 \
 		pcap_loop.3 \
@@ -71,15 +69,20 @@ MAN3=		pcap.3 \
 		pcap_set_rfmon.3 \
 		pcap_set_snaplen.3 \
 		pcap_set_timeout.3 \
+		pcap_set_tstamp_type.3 \
 		pcap_setdirection.3 \
 		pcap_setfilter.3 \
 		pcap_setnonblock.3 \
 		pcap_snapshot.3 \
 		pcap_stats.3 \
 		pcap_statustostr.3 \
-		pcap_strerror.3
+		pcap_strerror.3 \
+		pcap_tstamp_type_name_to_val.3 \
+		pcap_tstamp_type_val_to_name.3
 MAN5=		pcap-savefile.5
-MAN7=		pcap-filter.7 pcap-linktype.7
+MAN7=		pcap-filter.7 \
+		pcap-linktype.7 \
+		pcap-tstamp.7
 
 MLINKS=		pcap_datalink_val_to_name.3 \
 		pcap_datalink_val_to_description.3 \

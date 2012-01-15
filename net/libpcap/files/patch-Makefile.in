@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2010-03-11 20:56:53.000000000 -0500
-+++ ./Makefile.in	2010-03-31 20:47:19.278559746 -0400
-@@ -517,43 +517,19 @@
+--- ./Makefile.in.orig	2012-01-07 23:10:56.713381055 -0500
++++ ./Makefile.in	2012-01-07 23:10:38.819379443 -0500
+@@ -548,52 +548,19 @@
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \
  	    (mkdir -p $(DESTDIR)$(bindir); chmod 755 $(DESTDIR)$(bindir))
@@ -25,12 +25,21 @@
 -	rm -f $(DESTDIR)$(mandir)/man3/pcap_dump_fopen.3pcap
 -	ln $(DESTDIR)$(mandir)/man3/pcap_dump_open.3pcap \
 -		 $(DESTDIR)$(mandir)/man3/pcap_dump_fopen.3pcap
+-	rm -f $(DESTDIR)$(mandir)/man3/pcap_freealldevs.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_findalldevs.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_freealldevs.3pcap
 -	rm -f $(DESTDIR)$(mandir)/man3/pcap_perror.3pcap
 -	ln $(DESTDIR)$(mandir)/man3/pcap_geterr.3pcap \
 -		 $(DESTDIR)$(mandir)/man3/pcap_perror.3pcap
 -	rm -f $(DESTDIR)$(mandir)/man3/pcap_sendpacket.3pcap
 -	ln $(DESTDIR)$(mandir)/man3/pcap_inject.3pcap \
 -		 $(DESTDIR)$(mandir)/man3/pcap_sendpacket.3pcap
+-	rm -f $(DESTDIR)$(mandir)/man3/pcap_free_datalinks.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_list_datalinks.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_free_datalinks.3pcap
+-	rm -f $(DESTDIR)$(mandir)/man3/pcap_free_tstamp_types.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_list_tstamp_types.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_free_tstamp_types.3pcap
 -	rm -f $(DESTDIR)$(mandir)/man3/pcap_dispatch.3pcap
 -	ln $(DESTDIR)$(mandir)/man3/pcap_loop.3pcap \
 -		 $(DESTDIR)$(mandir)/man3/pcap_dispatch.3pcap
