@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	5.2.2
+DISTVERSION=	5.2.3
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
@@ -138,7 +138,7 @@ PLIST_SUB+=	NOSF=""
 .endif
 #Build bwx-console is deprecated use bacula-bat instead
 .if defined(WITH_WXCONSOLE)
-IGNORE=			Please use sysutils/bacula-bat instead of wxconsole
+IGNORE=			please use sysutils/bacula-bat instead of wxconsole
 USE_WX=			2.4
 CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
