@@ -29,6 +29,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
+	${RM} ${WRKSRC}/bin/netbeans.orig
 
 do-install:
 	@${MKDIR} ${PREFIXDIR}
