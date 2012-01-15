@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.17.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,27 +24,23 @@ USE_LDCONFIG=	yes
 
 MKCMAKE?=	${LOCALBASE}/bin/mkcmake
 
-PORTDOCS=	ChangeLog NEWS README TODO
+PORTDOCS=	LICENSE NEWS README TODO
 
 MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1 \
 		lmdbg-stat.1 lmdbg-grep.1 lmdbg-sort.1
 
 MKCMAKE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
 MKCMAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
-MKCMAKE_FLAGS+=	HAVE_HEADER.execinfo_h=0
+
+INSTALL_TARGET=	install
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=install-doc
+.endif
 
 do-build:
-	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} ${MKCMAKE_FLAGS} -C ${WRKSRC}
+	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC}
 
 do-install:
-	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} ${MKCMAKE_FLAGS} -C ${WRKSRC} ${INSTALL_TARGET}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC} ${INSTALL_TARGET}
 
 .include <bsd.port.mk>
