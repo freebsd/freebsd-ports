@@ -2398,6 +2398,7 @@ PKGREQ?=		${PKGDIR}/pkg-req
 PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
+TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
 TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
 
 .for _CATEGORY in ${CATEGORIES}
@@ -3952,7 +3953,7 @@ delete-package-list: delete-package-links-list
 # Utility targets follow
 
 .if !target(check-already-installed)
-check-already-installed:
+check-already-installed: ${TMPPLIST_SORT}
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
 		${MKDIR} ${PKG_DBDIR}; \
@@ -3961,7 +3962,7 @@ check-already-installed:
 				for p in $${already_installed}; do \
 						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 						if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${COMM} -12 - ${TMPPLIST}`; \
+								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${SORT} -u | ${COMM} -12 - ${TMPPLIST_SORT}`; \
 								if [ -n "$${df}" ]; then \
 										found_package=$${p}; \
 										break; \
@@ -5682,6 +5683,9 @@ generate-plist:
 
 ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} generate-plist
+
+${TMPPLIST_SORT}: ${TMPPLIST}
+	@${SORT} -u ${TMPPLIST} >${TMPPLIST_SORT}
 
 .if !target(add-plist-docs)
 add-plist-docs:
