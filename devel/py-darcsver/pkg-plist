@@ -29,7 +29,7 @@ bin/darcsver
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scripts/darcsverscript.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scripts/darcsverscript.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/scripts/darcsverscript.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/python-darcsver/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/python-darcsver/README.rst
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/darcsver/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/darcsver
