@@ -54,7 +54,7 @@ DISTFILES+=	X430src-1.tgz:x \
 
 RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
 		${PREFIX}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
 
 USE_PERL5=	yes
 
