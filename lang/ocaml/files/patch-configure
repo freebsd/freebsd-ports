@@ -1,5 +1,7 @@
---- configure.orig	2010-07-28 06:18:22.000000000 -0700
-+++ configure	2011-04-03 13:46:37.000000000 -0700
+$FreeBSD$
+
+--- configure.orig	2011-07-04 22:15:01.000000000 +0100
++++ configure	2012-01-15 20:29:30.319674803 +0000
 @@ -85,6 +85,8 @@
          withcurses=no;;
      -no-shared-libs)
@@ -9,15 +11,24 @@
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -629,6 +631,7 @@
-     i686-*-kfreebsd*)             natdynlink=true;;
-     x86_64-*-kfreebsd*)           natdynlink=true;;
+@@ -521,7 +523,7 @@
+       mksharedlib="$flexlink"
+       mkmaindll="$flexlink -maindll"
+       shared_libraries_supported=true;;
+-    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
++    *-*-linux-gnu|*-*-linux|*-*-freebsd*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*)
+       sharedcccompopts="-fPIC"
+       mksharedlib="$bytecc -shared"
+       bytecclinkopts="$bytecclinkopts -Wl,-E"
+@@ -636,6 +638,7 @@
+     i[345]86-*-netbsd*)           natdynlink=true;;
+     x86_64-*-netbsd*)             natdynlink=true;;
      i386-*-gnu0.3)                natdynlink=true;;
 +    *-*-freebsd*)                 natdynlink=true;;
    esac
  fi
  
-@@ -680,6 +683,7 @@
+@@ -687,6 +690,7 @@
    hppa*-*-gnu*)                 arch=hppa; system=gnu;;
    powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
@@ -25,7 +36,7 @@
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; system=rhapsody
                                  if $arch64; then model=ppc64; else model=ppc; fi;;
-@@ -789,6 +793,7 @@
+@@ -796,6 +800,7 @@
    i386,*,bsd_elf) profiling='prof';;
    amd64,*,macosx) profiling='prof';;
    i386,*,macosx) profiling='prof';;
@@ -33,7 +44,7 @@
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1249,133 +1254,24 @@
+@@ -1256,133 +1261,24 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -178,7 +189,7 @@
  else
    echo "Location of X11 include files: $x11_include/X11"
    echo "Options for linking with X11: $x11_link"
-@@ -1502,7 +1398,7 @@
+@@ -1509,7 +1405,7 @@
    then tk_libs="$tk_libs $dllib"
    elif sh ./hasgot $tk_libs -ltcl$tclmaj.$tclmin $tkauxlibs Tcl_DoOneEvent
    then
