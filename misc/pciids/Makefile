@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20111221
+PORTVERSION=	20120114
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -31,7 +31,7 @@ MS_DIFF=	${MS_WRKSRC}/${MS_DISTFILES}.diff
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
-MS_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
+MS_MASTER_SITE=	http://pci-ids.ucw.cz/
 MS_DISTFILES=	pci.ids
 
 maketar: do-clean extract
