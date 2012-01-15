@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.7.0.20120107
+PORTVERSION=	4.7.0.20120114
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -61,7 +61,7 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
-		--enable-languages=c,c++,fortran \
+		--enable-languages=c,c++,objc,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -98,7 +98,7 @@ INFO+=		gcc${SUFFIX}/libquadmath	\
 .if ! defined(WITHOUT_JAVA)
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--enable-languages=c,c++,fortran,java
+CONFIGURE_ARGS+=--enable-languages=c,c++,objc,fortran,java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
