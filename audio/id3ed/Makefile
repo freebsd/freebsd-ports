@@ -24,12 +24,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/id3ed ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/id3ed.1 ${MANPREFIX}/man/man1
 
-post-patch:
-	@${REINPLACE_CMD} '/main/s/unsigned int/int/' \
-		${WRKSRC}/examples/demo_*.cpp
-	@${REINPLACE_CMD} 's/\(iomanip\)\.h/\1/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} '/include.*/{ p; s//include <cstring>/; n;n;n; }' \
-		${WRKSRC}/include/id3/id3lib_strings.h \
-		${WRKSRC}/include/id3/writers.h
-
 .include <bsd.port.mk>
