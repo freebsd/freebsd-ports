@@ -21436,6 +21436,7 @@ prelude-manager                 ports/security/prelude-manager
 prelude-pflogger                ports/security/prelude-pflogger
 premail                         ports/mail/premail
 premake                         ports/devel/premake
+premake4                        ports/devel/premake4
 prepflog                        ports/mail/prepflog
 preps-gui                       ports/devel/preps-gui
 prepstools                      ports/devel/prepstools
@@ -21811,6 +21812,7 @@ py-cdb                          ports/databases/py-cdb
 py-cddb                         ports/audio/py-cddb
 py-celementtree                 ports/devel/py-celementtree
 py-cerealizer                   ports/security/py-cerealizer
+py-certify                      ports/security/py-certify
 py-cfgparse                     ports/devel/py-cfgparse
 py-chameleon                    ports/textproc/py-Chameleon
 py-chardet                      ports/textproc/py-chardet
@@ -21869,6 +21871,7 @@ py-django                       ports/www/py-django
 py-django-annoying              ports/www/py-django-annoying
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-appmedia              ports/www/py-django-appmedia
+py-django-caching-app-plugins   ports/www/py-django-caching-app-plugins
 py-django-classy-tags           ports/www/py-django-classy-tags
 py-django-css                   ports/www/py-django-css
 py-django-devel                 ports/www/py-django-devel
@@ -21878,6 +21881,7 @@ py-django-haystack              ports/www/py-django-haystack
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-mptt                  ports/www/py-django-mptt
+py-django-photologue            ports/www/py-django-photologue
 py-django-pipeline              ports/www/py-django-pipeline
 py-django-piston                ports/www/py-django-piston
 py-django-profiles              ports/www/py-django-profiles
@@ -22677,6 +22681,7 @@ py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
 py-urlimport                    ports/devel/py-urlimport
 py-urljr                        ports/www/py-urljr
+py-urllib3                      ports/net/py-urllib3
 py-urwid                        ports/devel/py-urwid
 py-usb                          ports/devel/py-usb
 py-utidy                        ports/www/py-utidy
@@ -22689,6 +22694,7 @@ py-visual                       ports/graphics/py-visual
 py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
+py-waitress                     ports/www/py-waitress
 py-wax                          ports/x11-toolkits/py-wax
 py-webcolors                    ports/graphics/py-webcolors
 py-weberror                     ports/www/py-WebError
@@ -24929,7 +24935,6 @@ skyeye                          ports/emulators/skyeye
 skyfish                         ports/net/skyfish
 skype                           ports/net-im/skype
 skype-devel                     ports/net-im/skype-devel
-skype20                         ports/net-im/skype20
 skystar2                        ports/net/skystar2
 skytemplate                     ports/www/skytemplate
 skytools                        ports/databases/skytools
@@ -26349,6 +26354,7 @@ typo344                         ports/www/typo344
 typo345                         ports/www/typo345
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
+tzdialog                        ports/sysutils/tzdialog
 u-boot                          ports/devel/u-boot
 uDrawGraph                      ports/graphics/uDrawGraph
 ua                              ports/sysutils/ua
@@ -26520,6 +26526,7 @@ urt                             ports/graphics/urt
 urwfonts                        ports/x11-fonts/urwfonts
 urwfonts-ttf                    ports/x11-fonts/urwfonts-ttf
 us-zipcodes                     ports/misc/us-zipcodes
+usb_modeswitch                  ports/sysutils/usb_modeswitch
 usbhotkey                       ports/sysutils/usbhotkey
 usbmuxd                         ports/comms/usbmuxd
 usbredir                        ports/net/usbredir
@@ -27791,7 +27798,6 @@ xpenguins                       ports/games/xpenguins
 xphoon                          ports/astro/xphoon
 xpi-adblock                     ports/www/xpi-adblock
 xpi-adblock_plus                ports/www/xpi-adblock_plus
-xpi-autobrowse                  ports/www/xpi-autobrowse
 xpi-bookmarkdd                  ports/www/xpi-bookmarkdd
 xpi-clear_cache_button          ports/www/xpi-clear_cache_button
 xpi-clearfields                 ports/www/xpi-clearfields
@@ -27837,7 +27843,6 @@ xpi-infolister                  ports/www/xpi-infolister
 xpi-informenter                 ports/www/xpi-informenter
 xpi-inline-google-definitions   ports/www/xpi-inline-google-definitions
 xpi-it_s_all_text               ports/www/xpi-it_s_all_text
-xpi-joga                        ports/www/xpi-joga
 xpi-jslib                       ports/www/xpi-jslib
 xpi-jsview                      ports/www/xpi-jsview
 xpi-jv                          ports/www/xpi-jv
@@ -27854,7 +27859,6 @@ xpi-musicpm                     ports/audio/xpi-musicpm
 xpi-neo-diggler                 ports/www/xpi-neo-diggler
 xpi-no-referrer                 ports/www/xpi-no-referrer
 xpi-noscript                    ports/www/xpi-noscript
-xpi-num2web                     ports/www/xpi-num2web
 xpi-passwordmaker               ports/www/xpi-passwordmaker
 xpi-pdf_download                ports/www/xpi-pdf_download
 xpi-pencil                      ports/www/xpi-pencil
@@ -27864,7 +27868,6 @@ xpi-quick-locale-switcher       ports/www/xpi-quick-locale-switcher
 xpi-quickproxy                  ports/www/xpi-quickproxy
 xpi-resurrectpages              ports/www/xpi-resurrectpages
 xpi-sameplace                   ports/www/xpi-sameplace
-xpi-savegenpage                 ports/www/xpi-savegenpage
 xpi-scrapbook                   ports/www/xpi-scrapbook
 xpi-searchstatus                ports/www/xpi-searchstatus
 xpi-server_spy                  ports/www/xpi-server_spy
@@ -27885,13 +27888,11 @@ xpi-twitterfox                  ports/www/xpi-twitterfox
 xpi-unplug                      ports/www/xpi-unplug
 xpi-urllink                     ports/www/xpi-urllink
 xpi-user_agent_switcher         ports/www/xpi-user_agent_switcher
-xpi-videodownloader             ports/www/xpi-videodownloader
 xpi-vimperator                  ports/www/xpi-vimperator
 xpi-web_developer               ports/www/xpi-web_developer
 xpi-wmlbrowser                  ports/www/xpi-wmlbrowser
 xpi-xhtml-ruby-support          ports/www/xpi-xhtml-ruby-support
 xpi-xmpp4moz                    ports/www/xpi-xmpp4moz
-xpi-xpcom-component-viewer      ports/www/xpi-xpcom-component-viewer
 xpi-yslow                       ports/www/xpi-yslow
 xpilot                          ports/games/xpilot
 xpilot-ng-client                ports/games/xpilot-ng-client
