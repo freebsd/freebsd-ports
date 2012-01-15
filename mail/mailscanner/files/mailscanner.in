@@ -7,10 +7,13 @@
 #
 # Add the following lines to /etc/rc.conf to enable mailscanner:
 # mailscanner_enable (bool):      Set to "NO" by default.
-#                                 Set it to "YES" to enable mailscanner
+#                                 Set it to "YES" to enable MailScanner
 # mailscanner_configfile (path):  Set to "%%PREFIX%%/etc/MailScanner/MailScanner.conf" by default.
 # mailscanner_pidfile (path):     Set to "/var/run/MailScanner.pid" by default.
-# mailscanner_user (str):         Set to "root" by default. If you changed the "Run As User" variable in MailScanner.conf and wish to disable taint mode, you MUST also set the same value here.
+# mailscanner_user (str):         Set to "root" by default. If you changed the
+#				  "Run As User" variable in MailScanner.conf and
+#				  wish to disable taint mode, you MUST also set
+#				  the same value here.
 #
 
 . /etc/rc.subr
@@ -21,31 +24,16 @@ rcvar=mailscanner_enable
 load_rc_config $name
 
 : ${mailscanner_enable="NO"}
-: ${mailscanner_configfile="%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
-: ${mailscanner_pidfile="/var/run/MailScanner.pid"}
+
+required_files=${mailscanner_configfile:-"%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
+pidfile=${mailscanner_pidfile:-"/var/run/MailScanner.pid"}
 
 command="%%PREFIX%%/sbin/mailscanner"
-pidfile=${mailscanner_pidfile}
-command_args="${mailscanner_configfile}"
+command_args="${required_files}"
 procname="MailScanner"
 extra_commands=reload
 
 required_files="${mailscanner_configfile}"
-
-pid_touch ()
-{
-	touch $mailscanner_pidfile
-	chown $mailscanner_user $mailscanner_pidfile
-}
-
-mailscanner_start() {
-	su -m ${mailscanner_user} -c "exec ${command} ${command_args}"
-}
-
-if [ -n "${mailscanner_user}" ]; then
-	start_cmd="mailscanner_start"
-	start_precmd="pid_touch"
-fi
+start_precmd="install -o ${mailscanner_user:-root} /dev/null $pidfile"
 
 run_rc_command "$1"
-
