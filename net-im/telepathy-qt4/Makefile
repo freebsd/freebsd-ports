@@ -24,8 +24,8 @@ USE_PYTHON_BUILD=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
