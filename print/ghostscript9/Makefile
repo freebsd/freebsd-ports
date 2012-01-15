@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ghostscript9
-PORTVERSION=	9.02
-PORTREVISION=	4
+PORTVERSION=	9.04
 CATEGORIES=	print
-MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
+MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag

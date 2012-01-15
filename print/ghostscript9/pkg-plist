@@ -1,10 +1,8 @@
-@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.3 2011-06-10 09:10:52 hrs Exp $
-bin/bdftops
+@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.4 2012-01-15 08:02:25 hrs Exp $
 bin/dumphint
 bin/dvipdf
 bin/eps2eps
 %%GS_dmprt%%bin/ert
-bin/fixmswrd.pl
 bin/font2c
 bin/gs
 bin/gsbj
@@ -33,7 +31,6 @@ bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
 bin/ps2ps2
-bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
 include/ghostscript/gdevdsp.h
@@ -341,6 +338,7 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/default_gray.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/default_rgb.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/lab.icc
+%%DATADIR%%/%%GS_VERSION%%/iccprofiles/gray_to_k.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/ps_cmyk.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/ps_gray.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/ps_rgb.icc
@@ -490,7 +488,6 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/lib/acctest.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/addxchar.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/align.ps
-%%DATADIR%%/%%GS_VERSION%%/lib/bdftops.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/caption.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/cid2code.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/decrypt.ps
