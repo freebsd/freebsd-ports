@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Role-Parameterized
-PORTVERSION=	0.27
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -18,11 +18,10 @@ COMMENT=	Roles with composition parameters
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
 
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
