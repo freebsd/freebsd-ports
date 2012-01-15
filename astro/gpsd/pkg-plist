@@ -13,6 +13,7 @@ bin/xgpsspeed
 %%CURSES%%bin/gpsmon
 include/gps.h
 include/libgpsmm.h
+%%QTBIND%%lib/libQgpsmm.prl
 %%QTBIND%%lib/libQgpsmm.so
 %%QTBIND%%lib/libQgpsmm.so.20
 %%QTBIND%%lib/libQgpsmm.so.20.0
@@ -43,6 +44,7 @@ lib/libgpsd.so.20.0.0
 %%PYTHON_SITELIBDIR%%/gps/misc.pyo
 %%PYTHON_SITELIBDIR%%/gps/packet.so
 @dirrm %%PYTHON_SITELIBDIR%%/gps
+%%QTBIND%%libdata/pkgconfig/Qgpsmm.pc
 libdata/pkgconfig/libgps.pc
 libdata/pkgconfig/libgpsd.pc
 sbin/gpsd

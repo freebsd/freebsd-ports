@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -26,7 +26,7 @@ PYDISTUTILS_EGGINFO=	gps-${PORTVERSION}.egg-info
 MAKE_JOBS_SAFE=	yes
 
 SCONS_BUILDENV=	${SCONS_ENV}
-SCONS_ARGS=	prefix="${PREFIX}" mandir="/man" pkgconfig="/libdata/pkgconfig"
+SCONS_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig"
 
 MAN1=	cgps.1 gegps.1 gps.1 gpscat.1 gpsctl.1 gpsdecode.1 \
 	gpsfake.1  gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 \

@@ -1,6 +1,6 @@
---- SConstruct.orig	2011-10-26 07:05:02.000000000 +0400
-+++ SConstruct	2011-10-26 16:22:43.000000000 +0400
-@@ -385,12 +385,7 @@
+--- SConstruct.orig	2012-01-12 20:41:41.000000000 +0400
++++ SConstruct	2012-01-14 03:42:13.000000000 +0400
+@@ -423,14 +423,7 @@
  # are like FreeBSD.
  ncurseslibs= []
  if env['ncurses']:
@@ -10,11 +10,13 @@
 -        ncurseslibs = ['!ncurses5-config --libs --cflags']
 -    elif sys.platform.startswith('freebsd'):
 -        ncurseslibs= [ '-lncurses' ]
+-    elif sys.platform.startswith('openbsd'):
+-        ncurseslibs= [ '-lcurses' ]
 +    ncurseslibs= [ '-lncurses' ]
  
  if env['usb']:
      # In FreeBSD except version 7, USB libraries are in the base system
-@@ -1111,7 +1106,7 @@
+@@ -1150,7 +1143,7 @@
  if not env['python']:
      python_install = []
  else:
