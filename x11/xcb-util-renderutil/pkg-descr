@@ -5,11 +5,6 @@ and interfaces which make the raw X protocol more usable. Some of the
 libraries also provide client-side code which is not strictly part of
 the X protocol but which have traditionally been provided by Xlib.
 
-These libraries are currently included, roughly ordered by maturity:
+Renderutil module s Convenience functions for the Render extension.
 
-aux: Convenient access to connection setup and some core requests.
-atom: Standard core X atom constants and atom caching.
-property: Callback X property-change handling.
-event: Callback X event handling.
-
-WWW: http://xcb.freedesktop.org/
+WWW:	http://xcb.freedesktop.org/

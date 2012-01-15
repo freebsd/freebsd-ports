@@ -319,6 +319,10 @@
     SUBDIR += xcb
     SUBDIR += xcb-proto
     SUBDIR += xcb-util
+    SUBDIR += xcb-util-image
+    SUBDIR += xcb-util-keysyms
+    SUBDIR += xcb-util-renderutil
+    SUBDIR += xcb-util-wm
     SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xcb-util
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
