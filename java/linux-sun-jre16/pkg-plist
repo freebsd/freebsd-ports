@@ -115,8 +115,8 @@
 %%T%%/lib/fontconfig.RedHat.3.properties.src
 %%T%%/lib/fontconfig.RedHat.4.bfc
 %%T%%/lib/fontconfig.RedHat.4.properties.src
-%%T%%/lib/fontconfig.RedHat.6.0.bfc
-%%T%%/lib/fontconfig.RedHat.6.0.properties.src
+%%T%%/lib/fontconfig.RedHat.6.bfc
+%%T%%/lib/fontconfig.RedHat.6.properties.src
 %%T%%/lib/fontconfig.RedHat.bfc
 %%T%%/lib/fontconfig.RedHat.properties.src
 %%T%%/lib/fontconfig.SuSE.11.bfc
@@ -275,6 +275,7 @@
 %%T%%/lib/zi/Africa/Gaborone
 %%T%%/lib/zi/Africa/Harare
 %%T%%/lib/zi/Africa/Johannesburg
+%%T%%/lib/zi/Africa/Juba
 %%T%%/lib/zi/Africa/Kampala
 %%T%%/lib/zi/Africa/Khartoum
 %%T%%/lib/zi/Africa/Kigali
@@ -477,6 +478,7 @@
 %%T%%/lib/zi/Asia/Dushanbe
 %%T%%/lib/zi/Asia/Gaza
 %%T%%/lib/zi/Asia/Harbin
+%%T%%/lib/zi/Asia/Hebron
 %%T%%/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/lib/zi/Asia/Hong_Kong
 %%T%%/lib/zi/Asia/Hovd
@@ -762,17 +764,17 @@
 @dirrm %%T%%/lib/locale/zh_TW.BIG5/LC_MESSAGES
 @dirrm %%T%%/lib/locale/zh_TW.BIG5
 @dirrm %%T%%/lib/locale/zh_TW
-@dirrm %%T%%/lib/locale/zh/LC_MESSAGES
 @dirrm %%T%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
 @dirrm %%T%%/lib/locale/zh_HK.BIG5HK
+@dirrm %%T%%/lib/locale/zh/LC_MESSAGES
 @dirrm %%T%%/lib/locale/zh.GBK/LC_MESSAGES
 @dirrm %%T%%/lib/locale/zh.GBK
 @dirrm %%T%%/lib/locale/zh
 @dirrm %%T%%/lib/locale/sv/LC_MESSAGES
 @dirrm %%T%%/lib/locale/sv
+@dirrm %%T%%/lib/locale/ko/LC_MESSAGES
 @dirrm %%T%%/lib/locale/ko.UTF-8/LC_MESSAGES
 @dirrm %%T%%/lib/locale/ko.UTF-8
-@dirrm %%T%%/lib/locale/ko/LC_MESSAGES
 @dirrm %%T%%/lib/locale/ko
 @dirrm %%T%%/lib/locale/ja/LC_MESSAGES
 @dirrm %%T%%/lib/locale/ja
