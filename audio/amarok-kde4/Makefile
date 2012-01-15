@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.0
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Media player for KDE4
+COMMENT=	KDE music player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		tag-extras.1:${PORTSDIR}/audio/taglib-extras \
@@ -22,28 +22,29 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		qca.2:${PORTSDIR}/devel/qca
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
+
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-MAKE_JOBS_SAFE=	yes
-USE_BZIP2=	yes
-USE_KDE4=	kdehier kdeprefix kdelibs runtime automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network opengl script svg webkit \
-		qmake_build moc_build rcc_build uic_build phonon
 USE_GETTEXT=	yes
+USE_KDE4=	kdehier kdeprefix kdelibs runtime automoc4
 USE_MYSQL=	embedded
+USE_QT_VER=	4
+QT_COMPONENTS=	gui network opengl phonon script svg webkit \
+		qmake_build moc_build rcc_build uic_build
+USE_BZIP2=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	"GCC-related build error"
 
 OPTIONS=	GPOD "iPod support" on \
-		MTP "MTP device support" on \
-		LOUDMOUTH "Loudmouth support" on
+		LOUDMOUTH "Loudmouth support" on \
+		MTP "MTP device support" on
 
 .include <bsd.port.options.mk>
 
@@ -55,20 +56,20 @@ CMAKE_ARGS+=	-DWITH_Ipod:BOOL=Off
 PLIST_SUB+=	GPOD="@comment "
 .endif
 
-.if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
-PLIST_SUB+=	MTP=""
-.else
-CMAKE_ARGS+=	-DWITH_Mtp:BOOL=Off
-PLIST_SUB+=	MTP="@comment "
-.endif
-
 .if defined(WITH_LOUDMOUTH)
 LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 PLIST_SUB+=	LOUDMOUTH=""
 .else
 CMAKE_ARGS+=	-DWITH_Loudmouth:BOOL=Off
 PLIST_SUB+=	LOUDMOUTH="@comment "
+.endif
+
+.if defined(WITH_MTP)
+LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+PLIST_SUB+=	MTP=""
+.else
+CMAKE_ARGS+=	-DWITH_Mtp:BOOL=Off
+PLIST_SUB+=	MTP="@comment "
 .endif
 
 post-extract:
