@@ -1,0 +1,33 @@
+--- ffmpeg/libavutil/x86_cpu.h.orig	2010-10-06 03:26:13.000000000 +0200
++++ ffmpeg/libavutil/x86_cpu.h	2010-11-04 21:01:40.581647958 +0100
+@@ -71,7 +71,7 @@
+ #define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE))
+ #define HAVE_6REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE || HAVE_EBP_AVAILABLE))
+ 
+-#if ARCH_X86_64 && defined(PIC)
++#if ARCH_X86_64
+ #    define BROKEN_RELOCATIONS 1
+ #endif
+ 
+--- configure.orig	2011-12-31 00:40:03.990976000 +0100
++++ configure	2011-12-31 01:33:51.407685009 +0100
+@@ -1533,7 +1533,7 @@
+ fi
+ 
+ extra_cflags="-I. -Iffmpeg $extra_cflags"
+-extra_ldflags="-lm $extra_ldflags"
++extra_ldflags="-lm $extra_ldflags -L$_prefix/lib"
+ _timer=timer-linux.c
+ _getch=getch2.c
+ 
+@@ -2683,10 +2683,6 @@
+ def_ebx_available='#define HAVE_EBX_AVAILABLE 0'
+ def_xmm_clobbers='#define HAVE_XMM_CLOBBERS 0'
+ 
+-if x86_64 ; then
+-inline_asm_check '"mov (%eax), %eax"' || die "Your binutils version is too old to compile for 64-bit"
+-fi
+-
+ if x86 ; then
+ 
+ echocheck ".align is a power of two"

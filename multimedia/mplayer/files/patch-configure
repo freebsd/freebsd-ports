@@ -1,6 +1,6 @@
---- configure.orig	2011-03-13 01:32:55.000000000 +0100
-+++ configure	2011-03-18 17:05:13.932557908 +0100
-@@ -614,7 +614,7 @@
+--- configure.orig	2011-12-15 15:01:05.000000000 +0100
++++ configure	2011-12-29 02:08:51.963305635 +0100
+@@ -635,7 +635,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1416,7 +1416,6 @@
+@@ -1447,7 +1447,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,53 +17,25 @@
      ;;
  
    esac
-@@ -1525,8 +1524,8 @@
- _timer=timer-linux.c
- _getch=getch2.c
- if freebsd ; then
--  extra_ldflags="$extra_ldflags -L/usr/local/lib"
--  extra_cflags="$extra_cflags -I/usr/local/include"
-+  extra_ldflags="$extra_ldflags -L$_prefix/lib"
-+  extra_cflags="$extra_cflags -I$_prefix/include"
- fi
- 
- if netbsd || dragonfly ; then
-@@ -1661,7 +1660,7 @@ else
-       echores "$cc_version"
-       break
-     fi
--    cc_name_tmp=$($_cc -v 2>&1 | head -n 1 | cut -d ' ' -f 1)
-+    cc_name_tmp=$($_cc -v 2>&1 | awk "NR == 1 { if(\$1 == \"$system_name\") print \$2; else print \$1 }")
-     if test "$cc_name_tmp" = "clang"; then
-       echocheck "$_cc version"
-       cc_vendor=clang
-@@ -3577,22 +3576,10 @@
+@@ -3565,7 +3564,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
 -  THREAD_CFLAGS=-D_THREAD_SAFE
--fi
--if test "$_pthreads" = auto ; then
--cat > $TMPC << EOF
--#include <pthread.h>
--static void *func(void *arg) { return arg; }
--int main(void) { pthread_t tid; return pthread_create(&tid, 0, func, 0) == 0 ? 0 : 1; }
--EOF
--_pthreads=no
--if ! hpux ; then
--  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
--    # for crosscompilation, we cannot execute the program, be happy if we can link statically
--    cc_check $THREAD_CFLAGS $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
--  done
--fi
 +  THREAD_CFLAGS=${PTHREAD_CFLAGS}
  fi
-+_pthreads=yes
-+_ld_pthread="${PTHREAD_LIBS}"
- if test "$_pthreads" = yes ; then
-   test $_ld_pthread && res_comment="using $_ld_pthread"
-   def_pthreads='#define HAVE_PTHREADS 1'
-@@ -6354,7 +6341,7 @@
+ if test "$_pthreads" = auto ; then
+ cat > $TMPC << EOF
+@@ -3575,7 +3574,7 @@
+ EOF
+ _pthreads=no
+ if ! hpux ; then
+-  for ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
++  for ld_tmp in ${PTHREAD_LIBS} ; do
+     # for crosscompilation, we cannot execute the program, be happy if we can link statically
+     cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
+   done
+@@ -6216,7 +6215,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -72,7 +44,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -6852,6 +6839,16 @@
+@@ -6716,6 +6715,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -89,16 +61,16 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7214,7 +7211,7 @@
-   def_muxers='#define CONFIG_MUXERS 1'
- else
+@@ -7085,7 +7094,7 @@
+ echocheck "mencoder"
+ if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
 -  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER SNOW_ENCODER"
 +  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
-   libavmuxers=""
-   def_muxers='#define CONFIG_MUXERS 0'
+   # needed for codec id -> tag conversion
+   libavmuxers="AVI_MUXER"
  fi
-@@ -7559,8 +7556,11 @@
+@@ -7425,8 +7434,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -112,7 +84,7 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no &&
-@@ -7947,7 +7947,7 @@
+@@ -7991,7 +8003,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  

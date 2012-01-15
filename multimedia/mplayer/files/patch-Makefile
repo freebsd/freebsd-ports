@@ -1,18 +1,6 @@
 --- Makefile.orig	2011-03-28 12:50:56.000000000 -0300
 +++ Makefile	2011-07-18 23:23:16.000000000 -0300
-@@ -814,8 +814,10 @@
- mencoder$(EXESUF) mplayer$(EXESUF):
- 	$(CC) -o $@ $^ $(EXTRALIBS)
- 
-+CFLAGS_LIBASS := $(shell %%LIBASS_PKGCONFIG_CFLAGS%%)
-+
- codec-cfg$(EXESUF): codec-cfg.c codec-cfg.h help_mp.h
--	$(HOST_CC) -O -DCODECS2HTML -I. -Iffmpeg -o $@ $<
-+	$(HOST_CC) -O -DCODECS2HTML $(CFLAGS_LIBASS) -I. -Iffmpeg -o $@ $<
- 
- codecs.conf.h: codec-cfg$(EXESUF) etc/codecs.conf
- 	./$^ > $@
-@@ -890,20 +892,16 @@
+@@ -899,20 +899,17 @@
  install: $(INSTALL_TARGETS-yes)
  
  install-dirs:
@@ -22,11 +10,12 @@
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $< $(BINDIR)
 +install-mplayer: mplayer$(EXESUF) install-dirs
 +	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
++
  
  install-gui: install-mplayer
 -	-ln -sf mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)
 -	$(INSTALL) -d $(DATADIR)/skins $(prefix)/share/pixmaps $(prefix)/share/applications
--	$(INSTALL) -m 644 etc/mplayer.xpm $(prefix)/share/pixmaps/
+-	$(INSTALL) -m 644 etc/mplayer.png $(prefix)/share/pixmaps/
 -	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/
  
  install-gui-man:      $(foreach lang,$(MAN_LANGS),install-gui-man-$(lang))

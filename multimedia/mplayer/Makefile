@@ -7,15 +7,15 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binaries" off
-OPTIONS+=	BLURAY "Build with libbluray support" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
+OPTIONS+=	OTCHAIN "Use up-to-date toolchain (gcc 4.6)" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
 OPTIONS+=	X11XV "X11 video drivers: XV" on
@@ -51,13 +51,13 @@ OPTIONS+=	SPEEX "Enable speex audio codec support" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
 OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
-OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" on
 .if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
 .endif
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
+OPTIONS+=	BLURAY "Build with libbluray support" off
 OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
 OPTIONS+=	LIRC "Enable lirc support" off
 OPTIONS+=	LIBCDIO "Enable libcdio support" off
@@ -80,8 +80,7 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 BROKEN=		Does not compile on sparc64
 .endif
 
-CONFIGURE_ARGS+=	--disable-ssse3 \
-			--disable-directfb \
+CONFIGURE_ARGS+=	--disable-directfb \
 			--disable-faac \
 			--disable-faad \
 			--disable-libdca \
@@ -94,15 +93,6 @@ CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-musepack
 
 .include "${.CURDIR}/Makefile.options"
-
-.if defined(WITH_ASS)
-LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
-BUILD_DEPENDS +=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIBASS_PKGCONFIG_CFLAGS=	pkg-config --cflags --silence-errors libass
-.else
-CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal --disable-enca
-LIBASS_PKGCONFIG_CFLAGS=	${ECHO_CMD}
-.endif
 
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 MLINKS+=	mplayer.1 gmplayer.1
@@ -170,7 +160,6 @@ CONFIGURE_ARGS+=	--disable-vdpau
 BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 CONFIGURE_ARGS+=	--enable-rtc
-CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
@@ -236,8 +225,8 @@ pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
-	@${ECHO_MSG} "OPTIONS framework. You might want to check the Makefile in"
-	@${ECHO_MSG} "order to learn more about them."
+	@${ECHO_MSG} "OPTIONS framework. You might want to check Makefile.options"
+	@${ECHO_MSG} "in order to learn more about them."
 
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
@@ -257,8 +246,6 @@ post-patch:
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
-		-e 's|-L$$_prefix/lib|-L${LOCALBASE}/lib|' \
-		-e 's|-I$$_prefix/include|-I${LOCALBASE}/include|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
@@ -277,18 +264,6 @@ post-patch:
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
-	@${REINPLACE_CMD} \
-		-e 's|%%LIBASS_PKGCONFIG_CFLAGS%%|${LIBASS_PKGCONFIG_CFLAGS}|' \
-			${BUILD_WRKSRC}/${MAKEFILE}
-
-post-configure:
-	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
-		${WRKSRC}/config.mak
-	@${REINPLACE_CMD} \
-		-e 's#HAVE_FAST_CMOV 1#HAVE_FAST_CMOV 0#g' \
-		-e 's#HAVE_LOG2 1#HAVE_LOG2 0#g' \
-		-e 's#HAVE_LOG2F 1#HAVE_LOG2F 0#g' \
-		${WRKSRC}/config.h
 
 post-install:
 	@${MKDIR} ${DATADIR}
@@ -300,7 +275,7 @@ post-install:
 .endfor
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
-	${INSTALL_DATA} ${WRKSRC}/etc/mplayer.xpm ${LOCALBASE}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gui/ui/pixmaps/mplayer.xpm ${LOCALBASE}/share/pixmaps
 .endif
 	@${CAT} ${PKGMESSAGE}
 

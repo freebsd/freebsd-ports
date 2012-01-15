@@ -6,22 +6,22 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	5
+PORTREVISION=	0
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
-OPTIONS+=	BLURAY "Build with libbluray support" off
-OPTIONS+=	FONTCONFIG "Enable fontconfig support" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
+OPTIONS+=	OTCHAIN "Use up-to-date toolchain (gcc 4.6)" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	JACK "Enable JackIt audio server support" off
 OPTIONS+=	NAS "Enable NAS sound server support" off
 OPTIONS+=	OPENAL "Enable OpenAL sound support" off
 OPTIONS+=	PULSE "Enable PulseAudio" off
+OPTIONS+=	FONTCONFIG "Enable fontconfig support" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
 OPTIONS+=	MNG "Enable MNG input support" off
@@ -41,10 +41,10 @@ OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
 OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	DIRAC "Enable dirac video codec support" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
-OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" on
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
+OPTIONS+=	BLURAY "Build with libbluray support" off
 OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
 OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
@@ -55,15 +55,17 @@ OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
 MAN1=		mencoder.1
 
 PATCHDIR=	${.CURDIR}/../mplayer/files
+FILESDIR=	${PATCHDIR}
 DATADIR=	${PREFIX}/share/mplayer
 
 TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		checktree.sh countquant.pl divx2svcd.sh \
 		dvd2divxscript.pl edgedetect.fp edgeenh.fp \
 		emboss.fp mencvcd.sh midentify.sh \
-		mpconsole.sh mplmult.sh plotpsnr.pl \
-		psnr-video.sh qepdvcd.sh subedit.pl \
-		subsearch.sh w32codec_dl.pl wma2ogg.pl \
+		mpconsole.sh mphelp_check.py mplmult.sh \
+		plotpsnr.pl psnr-video.sh qepdvcd.sh \
+		subedit.pl subsearch.sh vobshift.py \
+		w32codec_dl.pl wma2ogg.pl
 
 .include <bsd.port.pre.mk>
 
@@ -83,22 +85,12 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-aa \
 			--disable-joystick \
 			--disable-directfb \
-			--disable-ssse3 \
 			--disable-mpg123 \
 			--disable-musepack
 
 ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
-
-.if defined(WITH_ASS)
-LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
-BUILD_DEPENDS +=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIBASS_PKGCONFIG_CFLAGS=	pkg-config --cflags --silence-errors libass
-.else
-CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal --disable-enca
-LIBASS_PKGCONFIG_CFLAGS=	${ECHO_CMD}
-.endif
 
 .if defined(WITH_FONTCONFIG)
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
@@ -136,7 +128,6 @@ LIB_DEPENDS+=		dirac_encoder.1:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=	--disable-libdirac-lavc
 .endif
 
-
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
@@ -156,8 +147,6 @@ post-patch:
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
-		-e 's|-L$$_prefix/lib|-L${LOCALBASE}/lib|' \
-		-e 's|-I$$_prefix/include|-I${LOCALBASE}/include|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
@@ -171,18 +160,6 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
-	@${REINPLACE_CMD} \
-		-e 's|%%LIBASS_PKGCONFIG_CFLAGS%%|${LIBASS_PKGCONFIG_CFLAGS}|' \
-			${BUILD_WRKSRC}/${MAKEFILE}
-
-post-configure:
-	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
-		${WRKSRC}/config.mak
-	@${REINPLACE_CMD} \
-		-e 's#HAVE_FAST_CMOV 1#HAVE_FAST_CMOV 0#g' \
-		-e 's#HAVE_LOG2 1#HAVE_LOG2 0#g' \
-		-e 's#HAVE_LOG2F 1#HAVE_LOG2F 0#g' \
-		${WRKSRC}/config.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${PREFIX}/bin
