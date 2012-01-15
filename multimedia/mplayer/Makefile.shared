@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2011-03-29
+MPLAYER_SNAPSHOT_DATE=	2011-12-18
 MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/rc/g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
-MAINTAINER?=	riggs@rrr.de
+MAINTAINER?=	thomas.e.zander@googlemail.com
 
 LICENSE=	GPLv2
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_NCURSES=	yes
@@ -29,10 +29,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
-CONFIGURE_ARGS=	--cc=${CC} \
-		--host-cc=${CC} \
+CONFIGURE_ARGS=	--cc="${CC}" \
+		--host-cc="${CC}" \
+		--as="${AS}" \
+		--extra-cflags="-I${PREFIX}/include -I${LOCALBASE}/include" \
+		--extra-libs="-L${PREFIX}/lib" \
 		--disable-bitmap-font \
-		--disable-liba52
+		--disable-liba52 \
+		--disable-alsa \
+		--enable-ass-internal \
+		--disable-enca
 
 WANT_GNOME=	yes
 WANT_SDL=	yes

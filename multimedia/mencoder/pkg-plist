@@ -12,12 +12,14 @@ bin/mencoder
 %%DATADIR%%/tools/mencvcd.sh
 %%DATADIR%%/tools/midentify.sh
 %%DATADIR%%/tools/mpconsole.sh
+%%DATADIR%%/tools/mphelp_check.py
 %%DATADIR%%/tools/mplmult.sh
 %%DATADIR%%/tools/plotpsnr.pl
 %%DATADIR%%/tools/psnr-video.sh
 %%DATADIR%%/tools/qepdvcd.sh
 %%DATADIR%%/tools/subedit.pl
 %%DATADIR%%/tools/subsearch.sh
+%%DATADIR%%/tools/vobshift.py
 %%DATADIR%%/tools/w32codec_dl.pl
 %%DATADIR%%/tools/wma2ogg.pl
 @dirrm %%DATADIR%%/tools

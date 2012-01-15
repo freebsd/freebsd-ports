@@ -7,8 +7,11 @@
 # $FreeBSD$
 #
 # Feature options:
-# These options influence some general behaviour of mplayer. Most of the featues,
+# These options influence some general behaviour of mplayer. Almost all of the featues,
 # for example all the codecs, are selected via the OPTIONS framework.
+# The following options WITH_DVD_DEVICE, WITH_CDROM_DEVICE, WITH_LANG are *not*
+# selected via the options framework and must be set via make.conf or by passing
+# the variable to make during build, e.g. make WITH_DVD_DEVICE=/dev/cd0
 #
 # WITH_DVD_DEVICE=/path/to/desired/device
 # default 5.x: /dev/acd0
@@ -37,17 +40,25 @@ CONFIGURE_ARGS+=--language=${WITH_LANG}
 DEBUG_FLAGS=	-g -O -fomit-frame-pointer
 .endif
 .else
-.if !defined(WITHOUT_OCFLAGS)
-#CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
-#Let mplayer determine its own cflags
-CFLAGS=
-.else
+#Historically, we manually set OCFLAGS to -O3 -ffast-math -fomit-frame-pointer
+#Nowadays, let mplayer determine its own optimised flags
+.if defined(WITHOUT_OCFLAGS)
 CFLAGS+=	-O -fomit-frame-pointer
+.else
+CONFIGURE_ENV+=		CFLAGS=
 .endif
-.endif
+.endif #WITH_DEBUG
 
 .if !defined(WITHOUT_RTCPU)
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
+.endif
+
+.if defined(WITH_OTCHAIN)
+USE_GCC?=	4.6+
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+.else
+CONFIGURE_ARGS+=--disable-ssse3 --disable-fast-cmov
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_gcc
 .endif
 
 .if defined(WITHOUT_IPV6)
@@ -62,7 +73,7 @@ LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.ifdef(WITH_OPENJPEG)
+.if defined(WITH_OPENJPEG)
 LIB_DEPENDS+=		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libopenjpeg
@@ -137,7 +148,6 @@ CONFIGURE_ARGS+=	--disable-pulse
 
 .if defined(WITH_BLURAY)
 LIB_DEPENDS+=		bluray.0:${PORTSDIR}/multimedia/libbluray
-CONFIGURE_ARGS+=	--enable-bluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
 .endif
@@ -213,21 +223,16 @@ CONFIGURE_ARGS+=	--disable-real
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 .endif
 
-.ifdef(WITH_AMR_NB)
-CONFIGURE_ARGS+=	--enable-libopencore_amrnb --enable-version3
-.else
+.ifdef(WITHOUT_AMR_NB)
 CONFIGURE_ARGS+=	--disable-libopencore_amrnb
 .endif
 
-.ifdef(WITH_AMR_WB)
-CONFIGURE_ARGS+=	--enable-libopencore_amrwb --enable-version3
-.else
+.ifdef(WITHOUT_AMR_WB)
 CONFIGURE_ARGS+=	--disable-libopencore_amrwb
 .endif
 
 .ifdef(WITH_GSM)
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
-CONFIGURE_ARGS+=	--enable-libgsm
 .else
 CONFIGURE_ARGS+=	--disable-libgsm
 .endif
@@ -235,8 +240,6 @@ CONFIGURE_ARGS+=	--disable-libgsm
 .if defined(WITH_V4L)
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=		v4l2.0:${PORTSDIR}/multimedia/libv4l
-CONFIGURE_ARGS+=	--enable-tv-v4l1 \
-			--enable-tv-v4l2
 EXTRA_LIBS+=		-lv4l1 -lv4l2
 .else
 CONFIGURE_ARGS+=	--disable-tv-v4l1 \

@@ -1,0 +1,11 @@
+--- ffmpeg/libavfilter/Makefile.orig	2011-11-26 19:50:38.592463304 +0100
++++ ffmpeg/libavfilter/Makefile	2011-11-26 19:50:38.570462855 +0100
+@@ -153,7 +153,7 @@
+ OBJS-$(CONFIG_MP_FILTER) += libmpcodecs/pullup.o
+ 
+ 
+--include $(SRC_PATH)/$(SUBDIR)$(ARCH)/Makefile
++-include $(SRC_PATH)/$(SUBDIR)$(MPLAYER_ARCH)/Makefile
+ 
+ DIRS = x86 libmpcodecs
+ 
