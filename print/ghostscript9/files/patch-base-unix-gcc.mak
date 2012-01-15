@@ -1,33 +1,33 @@
---- base/unix-gcc.mak.orig	2011-03-04 05:23:43.000000000 +0900
-+++ base/unix-gcc.mak	2011-05-23 14:31:00.000000000 +0900
-@@ -21,15 +21,18 @@
+--- base/unix-gcc.mak.orig	2011-08-05 20:12:20.000000000 +0900
++++ base/unix-gcc.mak	2011-12-06 15:26:48.000000000 +0900
+@@ -21,16 +21,17 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
  
-+.CURDIR?=.
- BINDIR=./bin
+-BINDIR=./$(BUILDDIRPREFIX)bin
 -GLSRCDIR=./base
--GLGENDIR=./obj
--GLOBJDIR=./obj
+-GLGENDIR=./$(BUILDDIRPREFIX)obj
+-GLOBJDIR=./$(BUILDDIRPREFIX)obj
++.CURDIR?=.
++BINDIR=${.CURDIR}/$(BUILDDIRPREFIX)bin
++GLSRCDIR=${.CURDIR}/base
++GLGENDIR=${.CURDIR}/$(BUILDDIRPREFIX)obj
++GLOBJDIR=${.CURDIR}/$(BUILDDIRPREFIX)obj
+ AUXDIR=$(GLGENDIR)/aux
 -PSSRCDIR=./psi
 -PSLIBDIR=./lib
 -PSRESDIR=./Resource
--PSGENDIR=./obj
--PSOBJDIR=./obj
-+BINDIR=${.CURDIR}/bin
-+GLSRCDIR=${.CURDIR}/base
-+GLGENDIR=${.CURDIR}/obj
-+GLOBJDIR=${.CURDIR}/obj
+-PSGENDIR=./$(BUILDDIRPREFIX)obj
+-PSOBJDIR=./$(BUILDDIRPREFIX)obj
 +PSSRCDIR=${.CURDIR}/psi
 +PSLIBDIR=${.CURDIR}/lib
 +PSRESDIR=${.CURDIR}/Resource
-+PSGENDIR=${.CURDIR}/obj
-+PSOBJDIR=${.CURDIR}/obj
-+CONTRIBDIR=${.CURDIR}/contrib
++PSGENDIR=${.CURDIR}/$(BUILDDIRPREFIX)obj
++PSOBJDIR=${.CURDIR}/$(BUILDDIRPREFIX)obj
  
  # Do not edit the next group of lines.
  
-@@ -48,11 +51,10 @@
+@@ -49,11 +50,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -42,16 +42,16 @@
  exec_prefix = $(prefix)
  bindir = $(exec_prefix)/bin
  scriptdir = $(bindir)
-@@ -104,7 +106,7 @@
- # -DHAVE_HYPOT
- #       use the system hypot() call
+@@ -103,7 +103,7 @@
+ #               This uses the more secure temporary file creation call
+ #               Enable this if it is available on your platform.
  
 -CAPOPT= -DHAVE_MKSTEMP
 +CAPOPT= -DHAVE_MKSTEMP -DHAVE_HYPOT
  
  # Define the name of the executable file.
  
-@@ -138,7 +140,7 @@
+@@ -137,7 +137,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -60,7 +60,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -152,13 +154,13 @@
+@@ -151,13 +151,13 @@
  # what its name is.
  # See gs.mak and Make.htm for more information.
  
@@ -76,7 +76,7 @@
  TIFFSRCDIR=tiff
  TIFFPLATFORM=unix
  TIFFCONFIG_SUFFIX=.unix
-@@ -173,15 +175,23 @@
+@@ -172,15 +172,23 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -102,7 +102,7 @@
  # Define the directory where the icclib source are stored.
  # See icclib.mak for more information
  ICCSRCDIR=icclib
-@@ -217,7 +227,7 @@
+@@ -226,7 +234,7 @@
  
  # Define the name of the C compiler.
  
@@ -111,7 +111,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -234,7 +244,7 @@
+@@ -243,7 +251,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -120,7 +120,7 @@
  CFLAGS_DEBUG=-g -O0
  CFLAGS_PROFILE=-pg -O2
  CFLAGS_SO=-fPIC
-@@ -250,7 +260,8 @@
+@@ -259,7 +267,8 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
@@ -130,7 +130,7 @@
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
-@@ -261,7 +272,7 @@
+@@ -270,7 +279,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -139,7 +139,7 @@
  
  LDFLAGS=$(XLDFLAGS)
  
-@@ -272,7 +283,7 @@
+@@ -281,7 +290,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -148,7 +148,7 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -294,7 +305,7 @@
+@@ -303,7 +312,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -157,7 +157,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -309,26 +320,26 @@
+@@ -318,26 +327,26 @@
  #XLIBS=Xt SM ICE Xext X11
  
  #XLIBDIRS=-L/usr/local/X/lib
@@ -189,7 +189,7 @@
  #FEATURE_DEVS=$(PSD)psl3.dev $(PSD)pdf.dev
  # The following is strictly for testing.
  FEATURE_DEVS_ALL=$(PSD)psl3.dev $(PSD)pdf.dev $(PSD)dpsnext.dev $(PSD)ttfont.dev $(PSD)rasterop.dev $(PSD)double.dev $(PSD)trapping.dev $(PSD)stocht.dev $(GLD)pipe.dev
-@@ -460,6 +471,9 @@
+@@ -476,6 +485,9 @@
  include $(GLSRCDIR)/png.mak
  include $(GLSRCDIR)/tiff.mak
  include $(GLSRCDIR)/jbig2.mak
@@ -199,7 +199,7 @@
  include $(GLSRCDIR)/icclib.mak
  include $(GLSRCDIR)/lcms.mak
  include $(GLSRCDIR)/ijs.mak
-@@ -470,6 +484,7 @@
+@@ -486,6 +498,7 @@
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak
