@@ -333,6 +333,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-branch.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-head-node.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-node.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/old-branch.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/rebase-branch.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/release.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/starting.html
@@ -615,6 +617,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-contributed.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-encumbered.html
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-maintainer.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-shlib.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/posix-nls.html
@@ -922,6 +925,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mount-unmount.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/multimedia.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mythtv.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-aggregation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-apache.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-atm.html
@@ -1169,4 +1173,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5581.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5730.html

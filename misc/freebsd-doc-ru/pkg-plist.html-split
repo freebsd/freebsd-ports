@@ -494,6 +494,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-syslogd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/one-time-passwords.html

@@ -196,6 +196,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disk-organization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-adding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-encrypting.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-hast.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks.html
@@ -455,6 +456,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-options.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-wrkdir.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/moved-and-updating-files.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/own-port.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/pkg-deinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/pkg-files.html
@@ -506,6 +508,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-java.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-kde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-lua.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-mozilla.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html
@@ -518,4 +521,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5580.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5621.html
