@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.2104
+PORTVERSION=	0.2105
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -29,7 +29,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Guide.3 \
-		DBIx::Custom::Guide::Ja.3 \
 		DBIx::Custom::Mapper.3 \
 		DBIx::Custom::Model.3 \
 		DBIx::Custom::NotExists.3 \
