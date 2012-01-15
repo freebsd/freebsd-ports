@@ -7,6 +7,7 @@
 
 PORTNAME=	i3
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +20,9 @@ BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex \
 		pcre>=0:${PORTSDIR}/devel/pcre
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		xcb-event.1:${PORTSDIR}/x11/xcb-util \
+		xcb-util.0:${PORTSDIR}/x11/xcb-util \
+		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
+		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
 		ev.4:${PORTSDIR}/devel/libev \
 		yajl.2:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run

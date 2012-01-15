@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -59,8 +59,8 @@ PLIST_SUB+=	GL="@comment "
 .endif
 
 .if defined(WITH_XCB)
-BUILD_DEPENDS+= 	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util
-RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util
+BUILD_DEPENDS+= 	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
+RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
 CONFIGURE_ARGS+=	--enable-xcb
 # this option exposes a bug --enable-xlib-xcb=auto
 PLIST_SUB+=		XCB=""
