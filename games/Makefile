@@ -517,6 +517,7 @@
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
+    SUBDIR += meandmyshadow
     SUBDIR += megaglest
     SUBDIR += megaglest-data
     SUBDIR += memonix

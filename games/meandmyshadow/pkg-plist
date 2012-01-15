@@ -1,0 +1,170 @@
+bin/meandmyshadow
+%%DATADIR%%/data/font/ComicBook.ttf
+%%DATADIR%%/data/gfx/actions.png
+%%DATADIR%%/data/gfx/dark.png
+%%DATADIR%%/data/gfx/gui.png
+%%DATADIR%%/data/gfx/level.png
+%%DATADIR%%/data/gfx/levellocked.png
+%%DATADIR%%/data/gfx/menu/addons.png
+%%DATADIR%%/data/gfx/menu/help/00general.png
+%%DATADIR%%/data/gfx/menu/help/01controls.png
+%%DATADIR%%/data/gfx/menu/help/02blocks.png
+%%DATADIR%%/data/gfx/menu/help/03blocks.png
+%%DATADIR%%/data/gfx/menu/help/04triggers.png
+%%DATADIR%%/data/gfx/menu/help/05moving.png
+%%DATADIR%%/data/gfx/menu/help/06conveyor.png
+%%DATADIR%%/data/gfx/menu/help/07teleporting.png
+%%DATADIR%%/data/gfx/menu/help/08menu.png
+%%DATADIR%%/data/gfx/menu/help/09addon.png
+%%DATADIR%%/data/gfx/menu/help/99end.png
+%%DATADIR%%/data/gfx/menu/levelselect.png
+%%DATADIR%%/data/gfx/menu/menu.png
+%%DATADIR%%/data/gfx/menu/moving.png
+%%DATADIR%%/data/gfx/menu/options.png
+%%DATADIR%%/data/gfx/menu/selection.png
+%%DATADIR%%/data/gfx/menu/toolbar.png
+%%DATADIR%%/data/levelpacks/classic/BabySteps.map
+%%DATADIR%%/data/levelpacks/classic/Carry.map
+%%DATADIR%%/data/levelpacks/classic/Control.map
+%%DATADIR%%/data/levelpacks/classic/Credits.map
+%%DATADIR%%/data/levelpacks/classic/Damn.map
+%%DATADIR%%/data/levelpacks/classic/End.map
+%%DATADIR%%/data/levelpacks/classic/FirstSpikes.map
+%%DATADIR%%/data/levelpacks/classic/FreeFall.map
+%%DATADIR%%/data/levelpacks/classic/FreeFall2.map
+%%DATADIR%%/data/levelpacks/classic/Here.map
+%%DATADIR%%/data/levelpacks/classic/Jumper.map
+%%DATADIR%%/data/levelpacks/classic/Jumping.map
+%%DATADIR%%/data/levelpacks/classic/Lab.map
+%%DATADIR%%/data/levelpacks/classic/LeftRight.map
+%%DATADIR%%/data/levelpacks/classic/LittleHelp.map
+%%DATADIR%%/data/levelpacks/classic/Road.map
+%%DATADIR%%/data/levelpacks/classic/Shadow.map
+%%DATADIR%%/data/levelpacks/classic/ShadowBlocks.map
+%%DATADIR%%/data/levelpacks/classic/SomeSpikes.map
+%%DATADIR%%/data/levelpacks/classic/Spiky.map
+%%DATADIR%%/data/levelpacks/classic/Timing.map
+%%DATADIR%%/data/levelpacks/classic/Tower.map
+%%DATADIR%%/data/levelpacks/classic/Tricky.map
+%%DATADIR%%/data/levelpacks/classic/UpDown.map
+%%DATADIR%%/data/levelpacks/classic/leveledit.map
+%%DATADIR%%/data/levelpacks/classic/leveledit2.map
+%%DATADIR%%/data/levelpacks/classic/levels.lst
+%%DATADIR%%/data/levelpacks/default/1.map
+%%DATADIR%%/data/levelpacks/default/2.map
+%%DATADIR%%/data/levelpacks/default/3.map
+%%DATADIR%%/data/levelpacks/default/4.map
+%%DATADIR%%/data/levelpacks/default/QuickSwap.map
+%%DATADIR%%/data/levelpacks/default/Regroup.map
+%%DATADIR%%/data/levelpacks/default/Remote.map
+%%DATADIR%%/data/levelpacks/default/Skyscrapers.map
+%%DATADIR%%/data/levelpacks/default/Sweeper.map
+%%DATADIR%%/data/levelpacks/default/Switches.map
+%%DATADIR%%/data/levelpacks/default/Timing.map
+%%DATADIR%%/data/levelpacks/default/Towers.map
+%%DATADIR%%/data/levelpacks/default/Volcano.map
+%%DATADIR%%/data/levelpacks/default/levels.lst
+%%DATADIR%%/data/levelpacks/default/map01.map
+%%DATADIR%%/data/levelpacks/default/map02.map
+%%DATADIR%%/data/levelpacks/default/map03.map
+%%DATADIR%%/data/levelpacks/default/map04.map
+%%DATADIR%%/data/levelpacks/default/map05.map
+%%DATADIR%%/data/levelpacks/tutorial/levels.lst
+%%DATADIR%%/data/levelpacks/tutorial/tut01.map
+%%DATADIR%%/data/levelpacks/tutorial/tut02.map
+%%DATADIR%%/data/levelpacks/tutorial/tut03.map
+%%DATADIR%%/data/levelpacks/tutorial/tut04.map
+%%DATADIR%%/data/levelpacks/tutorial/tut05.map
+%%DATADIR%%/data/levelpacks/tutorial/tut06.map
+%%DATADIR%%/data/levelpacks/tutorial/tut07.map
+%%DATADIR%%/data/levelpacks/tutorial/tut08.map
+%%DATADIR%%/data/levelpacks/tutorial/tut09.map
+%%DATADIR%%/data/levelpacks/tutorial/tut10.map
+%%DATADIR%%/data/levelpacks/tutorial/tut11.map
+%%DATADIR%%/data/levelpacks/tutorial/tut12.map
+%%DATADIR%%/data/levelpacks/tutorial/tut13.map
+%%DATADIR%%/data/levelpacks/tutorial/tut14.map
+%%DATADIR%%/data/levelpacks/tutorial/tut15.map
+%%DATADIR%%/data/levelpacks/tutorial/tut16.map
+%%DATADIR%%/data/levelpacks/tutorial/tut17.map
+%%DATADIR%%/data/levelpacks/tutorial/tut18.map
+%%DATADIR%%/data/levelpacks/tutorial/tut19.map
+%%DATADIR%%/data/levelpacks/tutorial/tut20.map
+%%DATADIR%%/data/levelpacks/tutorial/tut21.map
+%%DATADIR%%/data/levelpacks/tutorial/tut22.map
+%%DATADIR%%/data/levelpacks/tutorial/tut23.map
+%%DATADIR%%/data/levelpacks/tutorial/tut24.map
+%%DATADIR%%/data/levelpacks/tutorial/tut25.map
+%%DATADIR%%/data/misc/Empty.map
+%%DATADIR%%/data/sfx/Credits.txt
+%%DATADIR%%/data/sfx/checkpoint.wav
+%%DATADIR%%/data/sfx/error.wav
+%%DATADIR%%/data/sfx/hit.wav
+%%DATADIR%%/data/sfx/jump.wav
+%%DATADIR%%/data/sfx/music.mid
+%%DATADIR%%/data/sfx/music.ogg
+%%DATADIR%%/data/sfx/swap.wav
+%%DATADIR%%/data/sfx/toggle.wav
+%%DATADIR%%/data/sfx/walk.wav
+%%DATADIR%%/data/themes/Cloudscape/License
+%%DATADIR%%/data/themes/Cloudscape/background.png
+%%DATADIR%%/data/themes/Cloudscape/line.png
+%%DATADIR%%/data/themes/Cloudscape/player.png
+%%DATADIR%%/data/themes/Cloudscape/shadow.png
+%%DATADIR%%/data/themes/Cloudscape/swap.png
+%%DATADIR%%/data/themes/Cloudscape/theme.mnmstheme
+%%DATADIR%%/data/themes/Cloudscape/tiles.png
+%%DATADIR%%/data/themes/classic/background.png
+%%DATADIR%%/data/themes/classic/blocks/Credits.txt
+%%DATADIR%%/data/themes/classic/blocks/block.png
+%%DATADIR%%/data/themes/classic/blocks/block2.png
+%%DATADIR%%/data/themes/classic/blocks/block3.png
+%%DATADIR%%/data/themes/classic/blocks/button.png
+%%DATADIR%%/data/themes/classic/blocks/checkpoint.png
+%%DATADIR%%/data/themes/classic/blocks/exit.png
+%%DATADIR%%/data/themes/classic/blocks/fragile.png
+%%DATADIR%%/data/themes/classic/blocks/moving_block.png
+%%DATADIR%%/data/themes/classic/blocks/moving_block_2.png
+%%DATADIR%%/data/themes/classic/blocks/moving_shadowblock.png
+%%DATADIR%%/data/themes/classic/blocks/moving_shadowblock_2.png
+%%DATADIR%%/data/themes/classic/blocks/moving_spikes.png
+%%DATADIR%%/data/themes/classic/blocks/notification.png
+%%DATADIR%%/data/themes/classic/blocks/playerstart.png
+%%DATADIR%%/data/themes/classic/blocks/portal.png
+%%DATADIR%%/data/themes/classic/blocks/shadowblock.png
+%%DATADIR%%/data/themes/classic/blocks/shadowstart.png
+%%DATADIR%%/data/themes/classic/blocks/spikes.png
+%%DATADIR%%/data/themes/classic/blocks/swap.png
+%%DATADIR%%/data/themes/classic/blocks/switch.png
+%%DATADIR%%/data/themes/classic/player/jumpleft.png
+%%DATADIR%%/data/themes/classic/player/jumpright.png
+%%DATADIR%%/data/themes/classic/player/line.png
+%%DATADIR%%/data/themes/classic/player/playerholdingright.png
+%%DATADIR%%/data/themes/classic/player/playerleft.png
+%%DATADIR%%/data/themes/classic/player/playerright.png
+%%DATADIR%%/data/themes/classic/shadow/jumpleftshadow.png
+%%DATADIR%%/data/themes/classic/shadow/jumprightshadow.png
+%%DATADIR%%/data/themes/classic/shadow/shadowholdingright.png
+%%DATADIR%%/data/themes/classic/shadow/shadowleft.png
+%%DATADIR%%/data/themes/classic/shadow/shadowright.png
+%%DATADIR%%/data/themes/classic/theme.mnmstheme
+%%DATADIR%%/meandmyshadow.ico
+@dirrm %%DATADIR%%/data/themes/classic/shadow
+@dirrm %%DATADIR%%/data/themes/classic/player
+@dirrm %%DATADIR%%/data/themes/classic/blocks
+@dirrm %%DATADIR%%/data/themes/classic
+@dirrm %%DATADIR%%/data/themes/Cloudscape
+@dirrm %%DATADIR%%/data/themes
+@dirrm %%DATADIR%%/data/sfx
+@dirrm %%DATADIR%%/data/misc
+@dirrm %%DATADIR%%/data/levels
+@dirrm %%DATADIR%%/data/levelpacks/tutorial
+@dirrm %%DATADIR%%/data/levelpacks/default
+@dirrm %%DATADIR%%/data/levelpacks/classic
+@dirrm %%DATADIR%%/data/levelpacks
+@dirrm %%DATADIR%%/data/gfx/menu/help
+@dirrm %%DATADIR%%/data/gfx/menu
+@dirrm %%DATADIR%%/data/gfx
+@dirrm %%DATADIR%%/data/font
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
