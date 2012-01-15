@@ -1,17 +1,20 @@
---- initscript/freebsd/avahi-dnsconfd.sh.in.orig	Sun Nov  5 12:35:20 2006
-+++ initscript/freebsd/avahi-dnsconfd.sh.in	Sun Nov  5 12:36:24 2006
-@@ -12,10 +12,12 @@
+--- initscript/freebsd/avahi-dnsconfd.sh.in.orig	2010-06-25 02:54:22.000000000 +0200
++++ initscript/freebsd/avahi-dnsconfd.sh.in	2012-01-15 19:04:25.000000000 +0100
+@@ -12,13 +12,15 @@
  # DNS servers in a DHCP-like fashion with mDNS.
  #
  
 -avahi_dnsconfd_enable=${avahi_dnsconfd_enable-"NO"}
  avahi_dnsconfd_flags=${avahi_dnsconfd_flags-"-D"}
  
--. /etc/rc.subr
-+. /etc/rc.subr
+ . /etc/rc.subr
 +. %%GNOME_SUBR%%
 +
 +avahi_dnsconfd_enable=${avahi_dnsconfd_enable-${gnome_enable}}
  
  name=avahi_dnsconfd
- rcvar=avahi_dnsconfd_enable
+-rcvar=`set_rcvar`
++rcvar=avahi_dnsconfd_enable
+ 
+ start_cmd=avahi_dnsconfd_start
+ stop_cmd=avahi_dnsconfd_stop
