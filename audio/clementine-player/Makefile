@@ -54,14 +54,20 @@ PLIST_SUB+=	VSL="@comment "
 
 .if defined(WITH_LASTFM)
 LIB_DEPENDS+=	lastfm.0:${PORTSDIR}/audio/liblastfm
+.else
+CMAKE_ARGS+=	-DENABLE_LIBLASTFM=Off
 .endif
 
 .if defined(WITH_GPOD)
 LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
+.else
+CMAKE_ARGS+=	-DENABLE_LIBGPOD=Off
 .endif
 
 .if defined(WITH_MTP)
 LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+.else
+CMAKE_ARGS+=	-DENABLE_LIBMTP=Off
 .endif
 
 .include <bsd.port.post.mk>
