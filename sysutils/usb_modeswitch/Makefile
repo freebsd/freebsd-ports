@@ -9,12 +9,14 @@ PORTNAME=	usb_modeswitch
 PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.draisberghof.de/usb_modeswitch/
-EXTRACT_SUFX=	.tar.bz2
+DISTNAME=	${PORTNAME:S|_|-|}-${PORTVERSION}
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	Handling Mode-Switching USB Devices
 
 LICENSE=	GPLv2
+
+USE_BZIP2=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
