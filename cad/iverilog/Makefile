@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/
 DISTNAME=	verilog-${PORTVERSION}
 
-MAINTAINER=	niclas.zeising@gmail.com
+MAINTAINER=	zeising@daemonic.se
 COMMENT=	A Verilog simulation and synthesis tool
 
 LICENSE=	GPLv2
