@@ -126,22 +126,6 @@
  #define   MCannotDelete      "\nCannot delete %s"
  #define   MCalcCRC           "\nCalculating the control sum"
  #define   MTooLargeSFXArc    "\nWARNING: Too large SFX archive. Windows cannot run the executable file exceeding 4 GB."
---- makefile.unix.orig	2010-03-30 23:26:26.000000000 +0800
-+++ makefile.unix	2011-01-18 11:21:35.000000000 +0800
-@@ -11,6 +11,13 @@
- DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
- STRIP=strip
- DESTDIR=/usr
-+# iconv stuff. Remove #ICONV# to enable
-+# where to get iconv.h
-+CXXFLAGS+= -I$(LOCALBASE)/include
-+# where to get libiconv.so*
-+LIBS+= -L$(LOCALBASE)/lib -liconv
-+# enable iconv stuff
-+DEFINES+= -DWITH_ICONV
- 
- # Linux using LCC
- #CXX=lcc
 --- os.hpp.orig	2011-01-04 20:28:47.000000000 +0800
 +++ os.hpp	2011-01-18 11:21:35.000000000 +0800
 @@ -192,6 +192,10 @@
