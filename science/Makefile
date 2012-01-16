@@ -159,6 +159,7 @@
     SUBDIR += py-obspy.iris
     SUBDIR += py-obspy.mseed
     SUBDIR += py-obspy.signal
+    SUBDIR += py-obspy.taup
     SUBDIR += py-obspy.wav
     SUBDIR += py-obspy.xseed
     SUBDIR += py-openbabel
