@@ -32,7 +32,7 @@ lib/libguestlib.so.0
 libdata/pkgconfig/vmguestlib.pc
 lib/vmware-tools/modules/drivers/linker.hints
 lib/vmware-tools/modules/drivers/vmblock.ko
-lib/vmware-tools/modules/drivers/vmhgfs.ko
+%%NOLOAD%%lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
 include/vmGuestLib/includeCheck.h
@@ -59,7 +59,7 @@ share/vmware-tools/scripts/vmware/network
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
-etc/xdg/autostart/vmware-user.desktop
+%%X11%%etc/xdg/autostart/vmware-user.desktop
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
 @dirrmtry lib/vmware-tools/modules/drivers
