@@ -1,8 +1,10 @@
 bin/hp-align
 bin/hp-check
+bin/hp-check-plugin
 bin/hp-clean
 bin/hp-colorcal
 bin/hp-devicesettings
+bin/hp-diagnose_plugin
 bin/hp-fab
 bin/hp-faxsetup
 bin/hp-firmware
@@ -125,6 +127,7 @@ share/applications/hplip.desktop
 %%DATADIR%%/base/utils.py
 %%DATADIR%%/base/vcard.py
 %%DATADIR%%/base/wifi.py
+%%DATADIR%%/check-plugin.py
 %%DATADIR%%/check.py
 %%DATADIR%%/clean.py
 %%DATADIR%%/colorcal.py
@@ -299,6 +302,7 @@ share/applications/hplip.desktop
 %%GUI%%%%DATADIR%%/data/images/devices/OFFICEJET_PRO_1150C.png
 %%GUI%%%%DATADIR%%/data/images/devices/OfficeJet_5105.png
 %%GUI%%%%DATADIR%%/data/images/devices/OfficeJet_6100_Series.png
+%%GUI%%%%DATADIR%%/data/images/devices/OfficeJet_8500_a910.png
 %%GUI%%%%DATADIR%%/data/images/devices/OfficeJet_G85.png
 %%GUI%%%%DATADIR%%/data/images/devices/OfficeJet_Series_300.png
 %%GUI%%%%DATADIR%%/data/images/devices/Officejet_6150_Series.png
@@ -481,6 +485,7 @@ share/applications/hplip.desktop
 %%DATADIR%%/data/ps/clean_page.pdf.gz
 %%DATADIR%%/data/ps/testpage.ps.gz
 %%DATADIR%%/devicesettings.py
+%%DATADIR%%/diagnose_plugin.py
 %%DATADIR%%/fab.py
 %%FAX%%%%DATADIR%%/fax/__init__.py
 %%FAX%%%%DATADIR%%/fax/coverpages.py
@@ -564,6 +569,8 @@ share/applications/hplip.desktop
 %%GUI%%%%DATADIR%%/ui4/mimetypesdialog_base.py
 %%GUI%%%%DATADIR%%/ui4/nodevicesdialog.py
 %%GUI%%%%DATADIR%%/ui4/nodevicesdialog_base.py
+%%GUI%%%%DATADIR%%/ui4/plugindiagnose.py
+%%GUI%%%%DATADIR%%/ui4/plugindiagnose_base.py
 %%GUI%%%%DATADIR%%/ui4/plugindialog.py
 %%GUI%%%%DATADIR%%/ui4/plugindialog_base.py
 %%GUI%%%%DATADIR%%/ui4/pluginlicensedialog.py
@@ -981,6 +988,7 @@ share/ppd/HP/hp-laserjet_1320nw-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_1320nw-ps.ppd.gz
 share/ppd/HP/hp-laserjet_1320tn-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_1320tn-ps.ppd.gz
+share/ppd/HP/hp-laserjet_200_colormfp_m275-ps.ppd.gz
 share/ppd/HP/hp-laserjet_2100-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_2100-ps.ppd.gz
 share/ppd/HP/hp-laserjet_2100_series-hpijs-pcl3.ppd.gz
@@ -1079,6 +1087,7 @@ share/ppd/HP/hp-laserjet_5si-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_5si-ps.ppd.gz
 share/ppd/HP/hp-laserjet_5si_mopier-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_5si_mopier-ps.ppd.gz
+share/ppd/HP/hp-laserjet_600_m601_m602_m603-ps.ppd.gz
 share/ppd/HP/hp-laserjet_6l-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_6mp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_6mp-ps.ppd.gz
@@ -1357,6 +1366,7 @@ share/ppd/HP/hp-photosmart_380_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_420_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_470_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_5510_series-hpijs.ppd.gz
+share/ppd/HP/hp-photosmart_5510d_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_6510_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_7150-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_7200_series-hpijs.ppd.gz

@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2010-07-19 06:20:23.000000000 +0400
-+++ ./Makefile.in	2010-08-27 00:58:13.822031467 +0400
-@@ -89,8 +89,8 @@
+--- ./Makefile.in.orig	2011-12-09 11:23:55.000000000 +0000
++++ ./Makefile.in	2012-01-14 20:21:23.105509188 +0000
+@@ -90,8 +90,8 @@
  # ip library
  @HPLIP_BUILD_TRUE@am__append_1 = libhpmud.la libhpip.la
  @HPLIP_BUILD_TRUE@hp_mkuri_PROGRAMS = hp-mkuri$(EXEEXT)
@@ -11,35 +11,39 @@
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_4 =  \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	scan/sane/hpaio.desc \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpijs.drv.in.template \
-@@ -2084,8 +2084,8 @@
+@@ -2214,9 +2214,9 @@
  	ppd/hpcups/hp-psc_950vr.ppd.gz ppd/hpcups/hp-psc_950xi.ppd.gz
  am__dist_prnt_DATA_DIST = prnt/cups.py prnt/__init__.py prnt/ldl.py \
  	prnt/pcl.py prnt/colorcal.py
 -am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
--	data/rules/40-hplip.rules data/rules/55-hpmud.rules
+-	data/rules/86-hpmud_plugin.rules data/rules/40-hplip.rules \
+-	data/rules/55-hpmud.rules
 +#am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
-+#	data/rules/40-hplip.rules data/rules/55-hpmud.rules
++#	data/rules/86-hpmud_plugin.rules data/rules/40-hplip.rules \
++#	data/rules/55-hpmud.rules
  am__dist_scan_DATA_DIST = scan/__init__.py scan/sane.py
  am__dist_ui_DATA_DIST = ui/alignform.py ui/colorcalform_base.py \
  	ui/colorcalform.py ui/coloradjform_base.py ui/coloradjform.py \
-@@ -3862,11 +3862,11 @@
+@@ -4106,12 +4106,12 @@
  @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  # hpmud.rules
 -@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
 -@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
+-@HPLIP_BUILD_TRUE@	data/rules/86-hpmud_plugin.rules \
 -@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
 -@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 -@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
 +#@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
 +#@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
++#@HPLIP_BUILD_TRUE@	data/rules/86-hpmud_plugin.rules \
 +#@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
 +#@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 +#@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
  
  # hplip.conf
  @HPLIP_BUILD_TRUE@hplip_confdir = /etc/hp
-@@ -3921,14 +3921,14 @@
+@@ -4169,14 +4169,14 @@
  
  # data
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@modelsdir = $(hplipdir)/data/models
@@ -62,3 +66,22 @@
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@pcldir = $(hplipdir)/data/pcl
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@ldldir = $(hplipdir)/data/ldl
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@postscriptdir = $(hplipdir)/data/ps
+@@ -8581,12 +8581,12 @@
+ 
+ 
+ install-dist_hplip_LogDATA:
+-@FULL_BUILD_TRUE@	test -z "$(DESTDIR)$(hplip_Logdir)" || mkdir -p $(DESTDIR)$(hplip_Logdir)
+-@FULL_BUILD_TRUE@	chgrp "lp" -R $(DESTDIR)$(hplip_Logdir)
+-@FULL_BUILD_TRUE@	chmod 774 $(DESTDIR)$(hplip_Logdir)
+-@HPLIP_BUILD_TRUE@	test -z "$(DESTDIR)$(hplip_Logdir)" || mkdir -p $(DESTDIR)$(hplip_Logdir)
+-@HPLIP_BUILD_TRUE@	chgrp "lp" -R $(DESTDIR)$(hplip_Logdir)
+-@HPLIP_BUILD_TRUE@	chmod 774 $(DESTDIR)$(hplip_Logdir)
++#@FULL_BUILD_TRUE@	test -z "$(DESTDIR)$(hplip_Logdir)" || mkdir -p $(DESTDIR)$(hplip_Logdir)
++#@FULL_BUILD_TRUE@	chgrp "lp" -R $(DESTDIR)$(hplip_Logdir)
++#@FULL_BUILD_TRUE@	chmod 774 $(DESTDIR)$(hplip_Logdir)
++#@HPLIP_BUILD_TRUE@	test -z "$(DESTDIR)$(hplip_Logdir)" || mkdir -p $(DESTDIR)$(hplip_Logdir)
++#@HPLIP_BUILD_TRUE@	chgrp "lp" -R $(DESTDIR)$(hplip_Logdir)
++#@HPLIP_BUILD_TRUE@	chmod 774 $(DESTDIR)$(hplip_Logdir)
+ 
+ install-data-hook:
+ #	   If scanner build, add hpaio entry to sane dll.conf.
