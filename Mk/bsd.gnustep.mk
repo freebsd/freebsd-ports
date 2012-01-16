@@ -196,7 +196,12 @@ PLIST_SUB+=	LIBVERSION=${DEFAULT_LIBVERSION}
 PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
 .if !defined(GNUSTEP_WITH_GCC34) && !defined(GNUSTEP_WITH_GCC42) && !defined(GNUSTEP_WITH_GCC46) && !defined(GNUSTEP_WITH_BASE_GCC)
-.if !exists(${DESTDIR}/usr/lib/libobjc.so)
+.if defined(PACKAGE_BUILDING)
+.if ${OSVERSION} > 900035
+GNUSTEP_WITH_GCC42=yes
+.endif
+.endif
+.if !exists(${DESTDIR}/usr/lib/libobjc.so) 
 GNUSTEP_WITH_GCC42=yes
 .endif
 .endif
