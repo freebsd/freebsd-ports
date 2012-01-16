@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES=	editors
-MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
+MASTER_SITES=	http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
 		http://mirrors.supportex.net/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://mirror.netcologne.de/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
@@ -28,6 +27,8 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://ftp.unicamp.br/pub/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://mirror.yongbok.net/tdf/libreoffice/src/${PORTVERSION}/ \
 		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
+		http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
+		http://dev-www.libreoffice.org/src/:ext \
 		http://download.go-oo.org/src/:GoOOSrc \
 		http://download.go-oo.org/extern/:GoOOExtern \
 		http://www.numbertext.org/linux/:OOoDTP
@@ -106,8 +107,8 @@ DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:GoOOSrc \
 		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:GoOOSrc \
 		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:GoOOSrc \
 		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:GoOOSrc \
-		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip:GoOOSrc \
-		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:GoOOSrc \
+		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:ext \
+		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:ext \
 		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:GoOOSrc \
 		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:OOoDTP
 
