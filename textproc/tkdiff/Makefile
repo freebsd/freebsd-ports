@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	tkdiff
-PORTVERSION=	4.1.4
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	textproc tk
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A Tk frontend for diff(1)
 
-USE_TK=		yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-unix
+
+USE_TK_WRAPPER=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/tkdiff
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|wish|${WISH}|' ${WRKSRC}/tkdiff
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tkdiff ${PREFIX}/bin
