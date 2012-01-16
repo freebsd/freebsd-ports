@@ -1,5 +1,4 @@
 include/tbb/concurrent_priority_queue.h
-include/tbb/graph.h
 include/tbb/task.h
 include/tbb/parallel_while.h
 include/tbb/task_scheduler_init.h
@@ -20,6 +19,11 @@ include/tbb/queuing_rw_mutex.h
 include/tbb/tick_count.h
 include/tbb/parallel_for.h
 include/tbb/recursive_mutex.h
+include/tbb/concurrent_unordered_set.h
+include/tbb/memory_pool.h
+include/tbb/flow_graph.h
+include/tbb/runtime_loader.h
+include/tbb/machine/gcc_generic.h
 include/tbb/machine/windows_api.h
 include/tbb/machine/macos_common.h
 include/tbb/machine/sunos_sparc.h
@@ -32,11 +36,21 @@ include/tbb/machine/linux_common.h
 include/tbb/machine/windows_intel64.h
 include/tbb/machine/linux_intel64.h
 include/tbb/machine/windows_ia32.h
+include/tbb/internal/_aggregator_impl.h
+include/tbb/internal/_flow_graph_tagged_buffer_impl.h
+include/tbb/internal/_flow_graph_impl.h
+include/tbb/internal/_flow_graph_join_impl.h
+include/tbb/internal/_flow_graph_or_impl.h
+include/tbb/internal/_flow_graph_node_impl.h
+include/tbb/internal/_flow_graph_types_impl.h
+include/tbb/internal/_tbb_windef.h
+include/tbb/internal/_concurrent_queue_impl.h
+include/tbb/internal/_concurrent_unordered_impl.h
+include/tbb/internal/_flow_graph_item_buffer_impl.h
 include/tbb/concurrent_vector.h
 include/tbb/parallel_for_each.h
 include/tbb/tbb_allocator.h
 include/tbb/queuing_mutex.h
-include/tbb/_concurrent_unordered_internal.h
 include/tbb/blocked_range2d.h
 include/tbb/parallel_sort.h
 include/tbb/task_scheduler_observer.h
@@ -45,7 +59,6 @@ include/tbb/parallel_scan.h
 include/tbb/null_rw_mutex.h
 include/tbb/spin_rw_mutex.h
 include/tbb/blocked_range3d.h
-include/tbb/_concurrent_queue_internal.h
 include/tbb/pipeline.h
 include/tbb/compat/ppl.h
 include/tbb/compat/thread
@@ -55,7 +68,6 @@ include/tbb/spin_mutex.h
 include/tbb/tbbmalloc_proxy.h
 include/tbb/concurrent_unordered_map.h
 include/tbb/cache_aligned_allocator.h
-include/tbb/_tbb_windef.h
 include/tbb/tbb.h
 include/tbb/tbb_machine.h
 include/tbb/scalable_allocator.h
@@ -67,10 +79,11 @@ include/tbb/concurrent_hash_map.h
 include/tbb/null_mutex.h
 include/tbb/reader_writer_lock.h
 include/tbb/task_group.h
+@dirrm include/tbb/internal
 @dirrm include/tbb/machine
 @dirrm include/tbb/compat
 @dirrm include/tbb
 lib/libtbb.so
-lib/libtbb.so.3
+lib/libtbb.so.4
 lib/libtbbmalloc.so
-lib/libtbbmalloc.so.3
+lib/libtbbmalloc.so.4
