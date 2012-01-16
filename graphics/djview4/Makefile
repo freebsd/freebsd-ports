@@ -22,8 +22,8 @@ USE_GNOME=	pkgconfig
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network rcc_build uic_build moc_build qmake_build
 QT_NONSTANDARD=	yes
-CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
-		--x-libraries="${X11BASE}/lib"
+CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
+		--x-libraries="${LOCALBASE}/lib"
 CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
 		QMAKESPEC="${QMAKESPEC}"
 LDFLAGS+=	-L${LOCALBASE}/lib
