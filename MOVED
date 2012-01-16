@@ -28,7 +28,7 @@ audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of pu
 audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
 net/freeradius-devel|net/freeradius2|2008-01-18|Development version no longer necessary
 devel/p5-gearmand|devel/p5-Gearman-Server|2008-01-20|Replaced by p5-Gearman-Server
-database/mysqltoolkit|database/maatkit|2008-01-21|Project was renamed
+databases/mysqltoolkit|databases/maatkit|2008-01-21|Project was renamed
 games/sturmbahnfahrer|games/stormbaancoureur|2008-01-27|Project was renamed
 net/cactid|net-mgmt/cacti-spine|2008-01-27|Project was renamed
 devel/wxGlade-devel||2008-02-11|Has expired: has been the same version as wxGlade for a long time; use it instead
@@ -123,7 +123,7 @@ archivers/deepforest||2008-04-09|Has expired: development stalled for years, out
 graphics/libimg-tkstep80||2008-04-09|Has expired: tkstep80 scheduled for expiration
 x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
 devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|Bundled with p5-Tk
-games/teewars|games/teeworls|2008-04-17|Project renamed
+games/teewars|games/teeworlds|2008-04-17|Project renamed
 multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
 multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
 graphics/ascii0|graphics/asciio|2008-04-22|Renamed by delete+add
@@ -416,7 +416,7 @@ net-mgmt/hobbit-server|net-mgmt/xymon-server|2009-01-11|Renamed
 science/gchempaint|science/gchemutils|2009-01-13|gchempaint was integrated into gchemutils
 net/fpc-libasync|devel/fpc-fcl-async|2009-01-13|This unit was renamed
 x11-toolkits/forms|x11-toolkits/xforms|2009-01-13|This unit was renamed
-x11-toolkits/gtk|x11-toolkits/gtk1|2009-01-13|This unit was renamed
+x11-toolkits/gtk|x11-toolkits/gtk12|2009-01-13|This unit was renamed
 x11-toolkits/gnome|x11-toolkits/gnome1|2009-01-13|This unit was renamed
 devel/fpc-gconf||2008-01-13|This is now part of fpc-gnome1
 x11-toolkits/fpc-zvt||2008-01-13|This is now part of fpc-gnome1
@@ -731,7 +731,7 @@ misc/koffice-i18n-cs|editors/koffice-i18n-cs|2009-06-29|Moved to editors categor
 misc/koffice-i18n-cy|editors/koffice-i18n-cy|2009-06-29|Moved to editors category
 misc/koffice-i18n-da|editors/koffice-i18n-da|2009-06-29|Moved to editors category
 misc/koffice-i18n-el|editors/koffice-i18n-el|2009-06-29|Moved to editors category
-misc/koffice-i18n-en_GB|misc/koffice-i18n-en_GB|2009-06-29|Moved to editors category
+misc/koffice-i18n-en_GB|editors/koffice-i18n-en_GB|2009-06-29|Moved to editors category
 misc/koffice-i18n-eo|editors/koffice-i18n-eo|2009-06-29|Moved to editors category
 misc/koffice-i18n-es|editors/koffice-i18n-es|2009-06-29|Moved to editors category
 misc/koffice-i18n-et|editors/koffice-i18n-et|2009-06-29|Moved to editors category
@@ -1586,7 +1586,7 @@ databases/db50||2011-03-21|Removed, use databases/db51 instead
 games/wormux|games/warmux|2011-03-21|Project was renamed
 irc/ircd-hybrid-ru|russian/ircd-hybrid|2011-03-27|Renamed
 devel/thunar-svn-plugin|devel/thunar-vcs-plugin|2011-03-27|Removed, use devel/thunar-vcs-plugin instead
-devel/id-utils|devel/idutils|20110328|Project renamed
+devel/id-utils|devel/idutils|2011-03-28|Project renamed
 russian/ircd-hybrid-ru|russian/ircd-hybrid|2011-03-30|Renamed
 java/netbeans3|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
 java/netbeans4|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
@@ -1686,7 +1686,7 @@ net-p2p/torrentvolve||2011-04-12|Has expired: development has ceased, and last r
 sysutils/gag||2011-04-12|Has expired: no point in having it as a port, can be downloaded from the website and burned
 lang/gpc|lang/fpc|2011-04-12|Has expired: development has ceased; use lang/fpc instead
 security/mypasswordsafe|security/gorilla|2011-04-12|Has expired: development has ceased; try security/gorilla instead
-database/db2||2011-04-12|Deprecated; use newer databases/db5* instead
+databases/db2||2011-04-12|Deprecated; use newer databases/db5* instead
 sysutils/rsyslog5-devel|sysutils/rsyslog5|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 sysutils/rsyslog5-devel-dbi|sysutils/rsyslog5-dbi|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 sysutils/rsyslog5-devel-gnutls|sysutils/rsyslog5-gnutls|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
@@ -2577,7 +2577,7 @@ net/xwhois||2011-09-03|Unmaintained upstream for several years
 www/p5-Catalyst-Engine-HTTP-POE||2011-09-03|Use p5-Catalyst-Engine-HTTP-Prefork instead
 www/p5-Catalyst-Model-DBIC||2011-09-03|Obsoleted by www/p5-Catalyst-Model-DBIC-Schema
 www/p5-Catalyst-Plugin-Cache-Store-FastMmap||2011-09-03|Deprecated, not depended on
-p5-HTTP-MobileAttribute||2011-09-03|Use www/p5-HTTP-MobileAgent instead
+www/p5-HTTP-MobileAttribute||2011-09-03|Use www/p5-HTTP-MobileAgent instead
 irc/ptlink-ircd||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
 irc/ptlink-services||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
 www/mediawiki115||2011-09-03|Unsupported upstream
