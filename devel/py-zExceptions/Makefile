@@ -7,12 +7,12 @@
 
 PORTNAME=	zExceptions
 PORTVERSION=	2.13.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Contains common exceptions used in Zope2.
 
 LICENSE=	ZPL21

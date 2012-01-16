@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.authentication
 PORTVERSION=	3.7.1
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Definition of authentication basics for the Zope Framework
 
 LICENSE=	ZPL21

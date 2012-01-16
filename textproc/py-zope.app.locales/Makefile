@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.locales
 PORTVERSION=	3.7.2
-CATEGORIES=	textproc python
+CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope locale extraction and management utilities
 
 LICENSE=	ZPL21

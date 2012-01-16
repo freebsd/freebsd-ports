@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PloneLanguageTool
 PORTVERSION=	3.2.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to set the available languages in Plone site
 
 LICENSE=	GPLv2

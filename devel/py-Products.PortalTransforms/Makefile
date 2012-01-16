@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PortalTransforms
 PORTVERSION=	2.0.7
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	MIME based content transformations
 
 LICENSE=	ZPL21

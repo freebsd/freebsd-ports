@@ -7,11 +7,11 @@
 
 PORTNAME=	five.globalrequest
 PORTVERSION=	1.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 2 integration for zope.globalrequest
 
 LICENSE=	ZPL21

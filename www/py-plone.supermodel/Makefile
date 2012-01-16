@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.supermodel
 PORTVERSION=	1.0.3
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Serialize Zope schema definitions to and from XML
 
 LICENSE=	BSD

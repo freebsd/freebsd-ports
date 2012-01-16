@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.formlib
 PORTVERSION=	4.0.6
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Form generation and validation library for Zope
 
 LICENSE=	ZPL21

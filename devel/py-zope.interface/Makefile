@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.interface
 PORTVERSION=	3.8.0
-CATEGORIES=	devel zope python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Interfaces for Python
 
 LICENSE=	ZPL21

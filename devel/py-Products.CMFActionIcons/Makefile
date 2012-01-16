@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFActionIcons
 PORTVERSION=	2.1.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Action icons product for the Zope CMF
 
 LICENSE=	ZPL21

@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.contentprovider
 PORTVERSION=	3.7.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Content Provider Framework for Zope Templates
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.stringinterp
 PORTVERSION=	1.0.4
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Adaptable string interpolation
 
 LICENSE=	GPLv2

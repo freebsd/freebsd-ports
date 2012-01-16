@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.annotation
 PORTVERSION=	3.5.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Object annotation mechanism
 
 LICENSE=	ZPL21

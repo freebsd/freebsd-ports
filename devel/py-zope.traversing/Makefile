@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.traversing
 PORTVERSION=	3.14.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Resolving paths in the object hierarchy
 
 LICENSE=	ZPL21

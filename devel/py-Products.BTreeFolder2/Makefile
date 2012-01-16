@@ -7,12 +7,12 @@
 
 PORTNAME=	Products.BTreeFolder2
 PORTVERSION=	2.13.4
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	A BTree based implementation for Zope 2's OFS
 
 LICENSE=	ZPL21

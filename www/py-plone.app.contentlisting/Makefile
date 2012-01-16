@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.contentlisting
 PORTVERSION=	1.0
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Listing of content for the Plone CMS
 
 LICENSE=	GPLv2

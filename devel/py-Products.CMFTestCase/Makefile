@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFTestCase
 PORTVERSION=	0.9.11
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Integration testing framework for CMF
 
 LICENSE=	GPLv2

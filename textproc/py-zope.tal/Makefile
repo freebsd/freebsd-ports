@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.tal
 PORTVERSION=	3.6.0
-CATEGORIES=	textproc python
+CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Template Application Languate (TAL)
 
 LICENSE=	ZPL21

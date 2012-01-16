@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.ATContentTypes
 PORTVERSION=	2.1.5
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Default Content Types for Plone
 
 LICENSE=	GPLv2

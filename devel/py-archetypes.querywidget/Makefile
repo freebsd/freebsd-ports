@@ -7,11 +7,11 @@
 
 PORTNAME=	archetypes.querywidget
 PORTVERSION=	1.0.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Widget for creating catalog queries
 
 LICENSE=	GPLv2

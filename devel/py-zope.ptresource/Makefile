@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.ptresource
 PORTVERSION=	3.9.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Page template resource plugin for zope.browserresource
 
 LICENSE=	ZPL21

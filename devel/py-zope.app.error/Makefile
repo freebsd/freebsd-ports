@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.error
 PORTVERSION=	3.5.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Error reporting utility management UI for Zope3
 
 LICENSE=	ZPL21

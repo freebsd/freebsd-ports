@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFQuickInstallerTool
 PORTVERSION=	3.0.5
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Facility for activation/deactivation of Zope CMF products
 
 LICENSE=	ZPL21

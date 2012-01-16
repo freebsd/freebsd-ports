@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.session
 PORTVERSION=	3.9.5
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Client identification and sessions for Zope
 
 LICENSE=	ZPL21

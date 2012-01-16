@@ -7,11 +7,11 @@
 
 PORTNAME=	z3c.formwidget.query
 PORTVERSION=	0.7
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	A source query widget for z3c.form
 
 LICENSE=	ZPL21

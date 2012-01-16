@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.MimetypesRegistry
 PORTVERSION=	2.0.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	MIME type handling for Zope
 
 LICENSE=	ZPL21

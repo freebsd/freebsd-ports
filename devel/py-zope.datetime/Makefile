@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.datetime
 PORTVERSION=	3.4.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Commonly used date and time related utility functions
 
 LICENSE=	ZPL21

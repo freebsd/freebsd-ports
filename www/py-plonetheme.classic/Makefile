@@ -7,11 +7,11 @@
 
 PORTNAME=	plonetheme.classic
 PORTVERSION=	1.0.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	The classic Plone 3 default theme
 
 LICENSE=	GPLv2

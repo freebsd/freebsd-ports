@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.upgrade
 PORTVERSION=	1.1.4
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Upgrade machinery for Plone
 
 LICENSE=	GPLv2

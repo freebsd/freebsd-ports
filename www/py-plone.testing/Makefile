@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.testing
 PORTVERSION=	4.0.3
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Testing infrastructure for Zope and Plone projects
 
 LICENSE=	BSD

@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.ATReferenceBrowserWidget
 PORTVERSION=	2.0.7
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Reference widget for Archetypes
 
 LICENSE=	GPLv2

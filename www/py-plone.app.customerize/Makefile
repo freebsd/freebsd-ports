@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.customerize
 PORTVERSION=	1.2.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Integrate five.customerize into Plone
 
 LICENSE=	GPLv2

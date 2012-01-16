@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.zopeappgenerations
 PORTVERSION=	3.6.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Application ZODB Update Generations
 
 LICENSE=	ZPL21

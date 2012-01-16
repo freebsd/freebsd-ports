@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.session
 PORTVERSION=	3.5
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Session based authentication for Zope
 
 LICENSE=	BSD

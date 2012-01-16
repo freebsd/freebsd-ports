@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFFormController
 PORTVERSION=	3.0.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Form validation mechanism for Zope CMF
 
 LICENSE=	ZPL21

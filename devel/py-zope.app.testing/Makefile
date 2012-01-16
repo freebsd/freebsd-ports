@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.testing
 PORTVERSION=	3.9.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Application Testing Support
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.cachepurging
 PORTVERSION=	1.0.3
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Cache purging support for Zope 2 applications
 
 LICENSE=	GPLv2

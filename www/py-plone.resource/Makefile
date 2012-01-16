@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.resource
 PORTVERSION=	1.0b6
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Publishes directories of static files via the ZPublisher
 
 LICENSE=	GPLv2

@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.renderer
 PORTVERSION=	3.5.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Text Renderer Framework
 
 LICENSE=	ZPL21

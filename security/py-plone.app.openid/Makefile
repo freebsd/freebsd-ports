@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.openid
 PORTVERSION=	1.1.1
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone OpenID authentication support
 
 LICENSE=	GPLv2

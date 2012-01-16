@@ -7,11 +7,11 @@
 
 PORTNAME=	archetypes.kss
 PORTVERSION=	1.7.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	KSS (Kinetic Style Sheets) for Archetypes
 
 LICENSE=	GPLv2

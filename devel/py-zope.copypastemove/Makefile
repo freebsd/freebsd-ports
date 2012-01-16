@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.copypastemove
 PORTVERSION=	3.8.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Copy, Paste and Move support for content components
 
 LICENSE=	ZPL21

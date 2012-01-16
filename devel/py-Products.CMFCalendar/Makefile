@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFCalendar
 PORTVERSION=	2.2.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Calendar product for the Zope Content Management Framework
 
 LICENSE=	ZPL21

@@ -7,12 +7,12 @@
 
 PORTNAME=	AccessControl
 PORTVERSION=	2.13.7
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Security framework for Zope2
 
 LICENSE=	ZPL21

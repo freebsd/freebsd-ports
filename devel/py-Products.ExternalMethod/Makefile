@@ -7,12 +7,12 @@
 
 PORTNAME=	Products.ExternalMethod
 PORTVERSION=	2.13.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Support for external Python methods within a Zope 2 environment
 
 LICENSE=	ZPL21

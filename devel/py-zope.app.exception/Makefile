@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.exception
 PORTVERSION=	3.6.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 3 exception views
 
 LICENSE=	ZPL21

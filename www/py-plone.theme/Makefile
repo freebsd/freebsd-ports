@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.theme
 PORTVERSION=	2.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Tools for managing themes in CMF and Plone sites
 
 LICENSE=	GPLv2

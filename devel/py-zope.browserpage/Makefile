@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.browserpage
 PORTVERSION=	3.12.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	ZCML directives for configuring browser views for Zope
 
 LICENSE=	ZPL21

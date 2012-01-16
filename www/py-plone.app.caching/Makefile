@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.caching
 PORTVERSION=	1.0
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone UI and default rules for plone.caching/z3c.caching
 
 LICENSE=	GPLv2

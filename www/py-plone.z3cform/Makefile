@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.z3cform
 PORTVERSION=	0.7.8
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Library that allows use of z3c.form with Zope 2 and the CMF
 
 LICENSE=	ZPL21

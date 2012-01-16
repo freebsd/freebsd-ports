@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.ResourceRegistries
 PORTVERSION=	2.0.6
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Registry for managing CSS and JS
 
 LICENSE=	GPLv2
