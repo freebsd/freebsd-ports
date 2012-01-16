@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kchmviewer
-PORTVERSION=	5.3
+PORTVERSION=	6.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
@@ -20,8 +20,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_CMAKE=	yes
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network svg xml designer_build \
-		qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	webkit qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 post-install:
