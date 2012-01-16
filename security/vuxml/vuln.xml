@@ -47,6 +47,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91be81e7-3fea-11e1-afc7-2c4138874f7d">
+    <topic>Multiple implementations denial-of-service via hash algorithm collision</topic>
+    <affects>
+      <package>
+	<name>jruby</name>
+	<range><lt>1.6.5.1</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><le>1.8.7.352,1</le></range>
+      </package>
+      <package>
+	<name>rubygem-rack</name>
+	<range><le>1.3.5,3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2011-003.html">
+	  <p>A variety of programming languages suffer from a denial-of-service (DoS) condition against storage functions of key/value pairs in hash data structures, the condition can be leveraged by exploiting predictable collisions in the underlying hashing algorithms.</p>
+	  <p>The issue finds particular exposure in web server applications and/or frameworks. In particular, the lack of sufficient limits for the number of parameters in POST requests in conjunction with the predictable collision properties in the hashing functions of the underlying languages can render web applications vulnerable to the DoS condition. The attacker, using specially crafted HTTP requests, can lead to a 100% of CPU usage which can last up to several hours depending on the targeted application and server performance, the amplification effect is considerable and requires little bandwidth and time on the attacker side.</p>
+	  <p>The condition for predictable collisions in the hashing functions has been reported for the following language implementations: Java, JRuby, PHP, Python, Rubinius, Ruby. In the case of the Ruby language, the 1.9.x branch is not affected by the predictable collision condition since this version includes a randomization of the hashing function.</p>
+	  <p>The vulnerability outlined in this advisory is practically identical to the one reported in 2003 and described in the paper Denial of Service via Algorithmic Complexity Attacks which affected the Perl language.</p>
+	  <p>The reporters own advisory can be found at <a href="http://www.nruns.com/_downloads/advisory28122011.pdf">http://www.nruns.com/_downloads/advisory28122011.pdf</a></p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4838</cvename>
+      <cvename>CVE-2011-4815</cvename>
+      <cvename>CVE-2011-5036</cvename>
+      <url>http://www.ocert.org/advisories/ocert-2011-003.html</url>
+      <url>http://www.nruns.com/_downloads/advisory28122011.pdf</url>
+    </references>
+    <dates>
+      <discovery>2011-12-28</discovery>
+      <entry>2012-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea2ddc49-3e8e-11e1-8095-5404a67eef98">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
