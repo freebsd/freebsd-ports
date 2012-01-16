@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.workflow
 PORTVERSION=	2.0.6
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Workflow and security settings for Plone
 
 LICENSE=	GPLv2

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.z3cform
 PORTVERSION=	0.5.7
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Collection of widgets, templates for use with z3c.form and Plone
 
 LICENSE=	GPLv2

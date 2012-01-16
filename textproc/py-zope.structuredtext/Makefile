@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.structuredtext
 PORTVERSION=	3.5.1
-CATEGORIES=	textproc python
+CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	StructuredText parser
 
 LICENSE=	ZPL21

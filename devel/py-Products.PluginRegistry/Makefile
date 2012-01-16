@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PluginRegistry
 PORTVERSION=	1.3b1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Configure application plugins based on interfaces
 
 LICENSE=	ZPL21

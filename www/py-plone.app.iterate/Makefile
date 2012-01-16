@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.iterate
 PORTVERSION=	2.1.4
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Check-out and check-in staging for Plone
 
 LICENSE=	GPLv2

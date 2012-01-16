@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.ExtendedPathIndex
 PORTVERSION=	2.9
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope catalog index for paths
 
 LICENSE=	GPLv2

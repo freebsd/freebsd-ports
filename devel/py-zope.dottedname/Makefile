@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.dottedname
 PORTVERSION=	3.4.6
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Resolver for Python dotted names
 
 LICENSE=	ZPL21

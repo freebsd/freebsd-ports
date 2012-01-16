@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.contentmigration
 PORTVERSION=	2.1.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	A generic content migration framework for Plone
 
 LICENSE=	LGPL20

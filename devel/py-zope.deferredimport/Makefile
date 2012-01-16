@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.deferredimport
 PORTVERSION=	3.5.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to import names that will be resolved when used in the code
 
 LICENSE=	ZPL21

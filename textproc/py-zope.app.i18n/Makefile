@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.i18n
 PORTVERSION=	3.6.3
-CATEGORIES=	textproc python
+CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Persistent translation domains and message catalogs
 
 LICENSE=	ZPL21

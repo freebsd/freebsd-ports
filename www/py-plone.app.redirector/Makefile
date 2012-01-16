@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.redirector
 PORTVERSION=	1.1.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Redirection tool
 
 LICENSE=	GPLv2

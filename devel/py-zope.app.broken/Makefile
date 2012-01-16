@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.broken
 PORTVERSION=	3.6.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Broken (ZODB) Object Support
 
 LICENSE=	ZPL21

@@ -7,12 +7,12 @@
 
 PORTNAME=	Acquisition
 PORTVERSION=	4.0a1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to obtain attributes from the containment hierarchy
 
 LICENSE=	ZPL21

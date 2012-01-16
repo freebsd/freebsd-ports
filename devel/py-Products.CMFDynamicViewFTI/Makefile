@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.CMFDynamicViewFTI
 PORTVERSION=	4.0.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Product for dynamic views in CMF
 
 LICENSE=	ZPL21

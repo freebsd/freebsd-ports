@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.form
 PORTVERSION=	4.0.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	The Original Zope 3 Form Framework
 
 LICENSE=	ZPL21

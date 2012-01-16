@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.GenericSetup
 PORTVERSION=	1.6.4
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Read Zope configuration state from profile dirs / tarballs
 
 LICENSE=	ZPL21

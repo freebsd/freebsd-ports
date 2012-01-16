@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PloneTestCase
 PORTVERSION=	0.9.13
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Integration testing framework for Plone
 
 LICENSE=	GPLv2

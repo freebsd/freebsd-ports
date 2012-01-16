@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.fieldsets
 PORTVERSION=	2.0.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to group fields into different fieldsets
 
 LICENSE=	GPLv2

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.viewletmanager
 PORTVERSION=	2.0.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Configurable viewlet manager
 
 LICENSE=	GPLv2

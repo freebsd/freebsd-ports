@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.content
 PORTVERSION=	2.0.7
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Content Views for Plone
 
 LICENSE=	GPLv2

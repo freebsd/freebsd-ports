@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.browserlayer
 PORTVERSION=	2.1.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Browser layer management for Zope 2 applications
 
 LICENSE=	GPLv2

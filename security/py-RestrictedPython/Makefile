@@ -8,12 +8,12 @@
 PORTNAME=	RestrictedPython
 PORTVERSION=	3.6.0
 PORTREVISION=	1
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Restricted execution environment for Python
 
 LICENSE=	ZPL21

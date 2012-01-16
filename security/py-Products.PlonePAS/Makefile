@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PlonePAS
 PORTVERSION=	4.0.10
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Adapts the PluggableAuthService for use by Plone
 
 LICENSE=	ZPL21

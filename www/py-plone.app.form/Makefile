@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.form
 PORTVERSION=	2.0.4
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	zope.formlib integration for Plone
 
 LICENSE=	GPLv2

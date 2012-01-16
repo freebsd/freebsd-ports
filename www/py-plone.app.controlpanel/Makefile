@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.controlpanel
 PORTVERSION=	2.2.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Formlib-based controlpanels for Plone
 
 LICENSE=	GPLv2

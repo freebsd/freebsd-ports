@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.minmax
 PORTVERSION=	1.1.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Homogeneous values favoring maximum or minimum
 
 LICENSE=	ZPL21

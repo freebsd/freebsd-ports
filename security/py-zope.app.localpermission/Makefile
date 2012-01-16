@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.localpermission
 PORTVERSION=	3.7.2
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Local Persistent Permissions for zope.security
 
 LICENSE=	ZPL21

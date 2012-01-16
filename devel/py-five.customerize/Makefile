@@ -7,11 +7,11 @@
 
 PORTNAME=	five.customerize
 PORTVERSION=	1.0.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	TTW customization of template-based Zope views
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.portlets
 PORTVERSION=	2.2.3
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone integration for the basic plone.portlets package
 
 LICENSE=	GPLv2

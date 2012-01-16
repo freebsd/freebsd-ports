@@ -7,12 +7,12 @@
 
 PORTNAME=	Products.ZCTextIndex
 PORTVERSION=	2.13.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Full text indexing for ZCatalog/Zope2
 
 LICENSE=	ZPL21

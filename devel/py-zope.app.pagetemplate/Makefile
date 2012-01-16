@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.pagetemplate
 PORTVERSION=	3.11.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	PageTemplate integration for Zope 3
 
 LICENSE=	ZPL21

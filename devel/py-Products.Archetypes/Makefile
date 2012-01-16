@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.Archetypes
 PORTVERSION=	1.7.10
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Developers framework for rapidly implementing content types
 
 LICENSE=	GPLv2

@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.tales
 PORTVERSION=	3.5.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Template Application Language Expression Syntax (TALES)
 
 LICENSE=	ZPL21

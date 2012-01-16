@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.pluggableauth
 PORTVERSION=	1.3
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Pluggable Authentication Utility
 
 LICENSE=	ZPL21

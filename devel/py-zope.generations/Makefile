@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.generations
 PORTVERSION=	3.7.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope application schema generations
 
 LICENSE=	ZPL21

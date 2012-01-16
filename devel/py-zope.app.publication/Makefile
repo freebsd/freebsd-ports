@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.publication
 PORTVERSION=	3.13.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope publication
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.statusmessages
 PORTVERSION=	4.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Handling of internationalized status messages for Zope
 
 LICENSE=	BSD

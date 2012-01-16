@@ -7,11 +7,11 @@
 
 PORTNAME=	z3c.caching
 PORTVERSION=	2.0a1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Caching infrastructure for web apps
 
 LICENSE=	ZPL21

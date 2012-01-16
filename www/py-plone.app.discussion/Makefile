@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.discussion
 PORTVERSION=	2.1.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Enhanced discussion support for Plone
 
 LICENSE=	GPLv2

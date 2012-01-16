@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.wsgi
 PORTVERSION=	3.13.0
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	WSGI application for the zope.publisher
 
 LICENSE=	ZPL21

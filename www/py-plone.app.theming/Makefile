@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.theming
 PORTVERSION=	1.0b9
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Integrates the Diazo theming engine with Plone
 
 LICENSE=	GPLv2

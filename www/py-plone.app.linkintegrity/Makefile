@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.linkintegrity
 PORTVERSION=	1.4.4
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Manage link integrity in Plone
 
 LICENSE=	GPLv2

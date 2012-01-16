@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.Marshall
 PORTVERSION=	2.1.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Configurable Marshallers for Archetypes
 
 LICENSE=	ZPL21

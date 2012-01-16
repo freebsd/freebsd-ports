@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.DCWorkflow
 PORTVERSION=	2.2.4
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	DCWorkflow product for the Zope Content Management Framework
 
 LICENSE=	ZPL21

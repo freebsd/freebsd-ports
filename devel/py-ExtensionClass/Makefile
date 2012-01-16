@@ -7,12 +7,12 @@
 
 PORTNAME=	ExtensionClass
 PORTVERSION=	4.0a1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Metaclass for subclassable extension types
 
 LICENSE=	ZPL21

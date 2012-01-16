@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.app.principalannotation
 PORTVERSION=	3.7.0
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Bootstrap subscriber and browser menu item for zope.principalannotation
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.autoform
 PORTVERSION=	1.0
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Tools to construct z3c.form forms
 
 LICENSE=	LGPL20

@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.keyring
 PORTVERSION=	2.0
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Manage secrets
 
 LICENSE=	BSD

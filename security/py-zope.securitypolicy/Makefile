@@ -7,11 +7,11 @@
 
 PORTNAME=	zope.securitypolicy
 PORTVERSION=	3.7.0
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Default security policy for Zope3
 
 LICENSE=	ZPL21

@@ -7,11 +7,11 @@
 
 PORTNAME=	borg.localrole
 PORTVERSION=	3.0.2
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	A PAS plugin which can manage local roles via an adapter lookup
 
 LICENSE=	LGPL20

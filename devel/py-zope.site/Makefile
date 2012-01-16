@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.site
 PORTVERSION=	3.9.2
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Local registries for zope component architecture
 
 LICENSE=	ZPL21

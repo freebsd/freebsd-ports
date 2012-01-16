@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.folder
 PORTVERSION=	1.0.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	BTree-based folder implementation with order support
 
 LICENSE=	GPLv2

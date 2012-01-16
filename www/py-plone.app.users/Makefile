@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.users
 PORTVERSION=	1.1.3
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Users and groups related things
 
 LICENSE=	GPLv2

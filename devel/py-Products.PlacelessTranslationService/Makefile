@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.PlacelessTranslationService
 PORTVERSION=	2.0.3
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Internationalizing and localizing software for Zope 2
 
 LICENSE=	GPLv2

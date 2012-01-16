@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.locales
 PORTVERSION=	4.0.10
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Translation files for Plone
 
 LICENSE=	GPLv2

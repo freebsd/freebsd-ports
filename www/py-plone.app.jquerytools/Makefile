@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.jquerytools
 PORTVERSION=	1.3.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	jQuery Tools integration for Plone
 
 LICENSE=	GPLv2

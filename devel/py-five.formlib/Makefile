@@ -7,11 +7,11 @@
 
 PORTNAME=	five.formlib
 PORTVERSION=	1.0.4
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	zope.formlib integration for Zope 2
 
 LICENSE=	ZPL21

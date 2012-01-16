@@ -7,11 +7,11 @@
 
 PORTNAME=	five.localsitemanager
 PORTVERSION=	2.0.5
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Local site manager implementation for Zope 2
 
 LICENSE=	ZPL21

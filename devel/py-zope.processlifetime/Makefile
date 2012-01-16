@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.processlifetime
 PORTVERSION=	1.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope process lifetime events
 
 LICENSE=	ZPL21

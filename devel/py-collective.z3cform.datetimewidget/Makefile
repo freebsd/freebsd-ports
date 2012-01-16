@@ -7,11 +7,11 @@
 
 PORTNAME=	collective.z3cform.datetimewidget
 PORTVERSION=	1.1.1
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	z3c.form date and datetime widgets
 
 LICENSE=	GPLv2

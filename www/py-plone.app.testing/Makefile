@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.testing
 PORTVERSION=	4.0.2
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Testing tools for Plone-the-application, based on plone.testing
 
 LICENSE=	GPLv2

@@ -7,12 +7,12 @@
 
 PORTNAME=	zope.password
 PORTVERSION=	3.6.1
-CATEGORIES=	security python
+CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Password encoding and checking utilities
 
 LICENSE=	ZPL21

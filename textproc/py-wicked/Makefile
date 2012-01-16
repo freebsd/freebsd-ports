@@ -7,11 +7,11 @@
 
 PORTNAME=	wicked
 PORTVERSION=	1.1.9
-CATEGORIES=	textproc python
+CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Compact syntax for doing wiki-like content linking and creation
 
 LICENSE=	GPLv2

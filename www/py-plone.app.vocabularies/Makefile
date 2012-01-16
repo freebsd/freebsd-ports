@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.app.vocabularies
 PORTVERSION=	2.1.5
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	A collection of generally useful vocabularies
 
 LICENSE=	GPLv2

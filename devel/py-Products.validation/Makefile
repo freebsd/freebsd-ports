@@ -7,11 +7,11 @@
 
 PORTNAME=	Products.validation
 PORTVERSION=	2.0
-CATEGORIES=	devel python
+CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Data validation package for Archetypes
 
 LICENSE=	ZPL21

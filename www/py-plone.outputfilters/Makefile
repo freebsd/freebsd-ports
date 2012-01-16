@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.outputfilters
 PORTVERSION=	1.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Transformations applied to HTML in Plone text fields
 
 LICENSE=	GPLv2

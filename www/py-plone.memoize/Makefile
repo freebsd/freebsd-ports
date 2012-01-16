@@ -7,11 +7,11 @@
 
 PORTNAME=	plone.memoize
 PORTVERSION=	1.1.1
-CATEGORIES=	www python
+CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Decorators for caching the values of functions and methods
 
 LICENSE=	GPLv2
