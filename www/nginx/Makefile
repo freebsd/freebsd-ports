@@ -223,8 +223,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODU
 .endif
 
 .if defined(WITH_HEADERS_MORE_MODULE)
-NGINX_HEADERS_MORE_MODULE_VERSION=	0.15
-GIT_HEADERS_MORE_MODULE_VERSION=	0-g137855d
+NGINX_HEADERS_MORE_MODULE_VERSION=	0.16
+GIT_HEADERS_MORE_MODULE_VERSION=	0-gde77fd2
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_MODULE_VERSION}/:headers_more
 DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_MODULE_VERSION}-${GIT_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
