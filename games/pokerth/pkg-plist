@@ -3,8 +3,7 @@ bin/pokerth_server
 share/applications/pokerth.desktop
 share/pixmaps/pokerth.png
 %%DATADIR%%/data/data-copyright.txt
-%%DATADIR%%/data/fonts/VeraBd.ttf
-%%DATADIR%%/data/fonts/c059013l.pfb
+%%DATADIR%%/data/fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/data/fonts/n019003l.pfb
 %%DATADIR%%/data/gfx/avatars/default/misc/00a0b3d26a67841239b8883183b7a8f0.png
 %%DATADIR%%/data/gfx/avatars/default/misc/030a14c105d3fd164cb4bae54bad6191.png

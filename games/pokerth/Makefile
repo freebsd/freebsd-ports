@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
@@ -54,7 +54,7 @@ do-configure:
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/pokerth ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${DOCSDIR}
