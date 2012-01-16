@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	solidcoin
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	http://dl.dropbox.com/u/47582909/
+MASTER_SITES=	http://solidcoin.info/downloads/ \
+		http://dl.dropbox.com/u/47582909/
+DISTNAME=	${PORTNAME}-source-203
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
@@ -18,6 +20,7 @@ LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	GUI "Build with wxWidgets GUI" on
 
+USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	yes
@@ -49,7 +52,11 @@ PLIST_FILES=	bin/${BINARY}
 
 post-extract:
 	@${CP} ${WRKSRC}/../build/makefile.unix ${WRKSRC}/Makefile
+
 post-patch:
+.for i in crypto gui nogui
+	@${MKDIR}  ${WRKSRC}/../obj/$i
+.endfor
 	@echo '18i\' > ${WRKSRC}/sed.in
 	@echo '#ifndef __STDC_LIMIT_MACROS' >> ${WRKSRC}/sed.in
 	@echo '19i\' >> ${WRKSRC}/sed.in
