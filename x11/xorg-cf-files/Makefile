@@ -21,7 +21,7 @@ XORG_CAT=	util
 post-patch:
 		@${REINPLACE_CMD} 's|\(define ExtraXaw[^ ]*\) [$$].*|\1 /**/|' \
 			${WRKSRC}/X11.tmpl
-.if defined(CC) && ${CC} == "clang"
+.if defined(CC) && ${CC:T:M*clang*} == "clang"
 		${REINPLACE_CMD} -e 's|/usr/bin/cpp|${LOCALBASE}/bin/ucpp|' \
 			-e 's|-traditional|-s|' ${WRKSRC}/FreeBSD.cf
 .endif
