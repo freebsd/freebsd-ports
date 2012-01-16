@@ -136,6 +136,7 @@
     SUBDIR += cromwell
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
+    SUBDIR += curly
     SUBDIR += cvsweb-converters
     SUBDIR += cw
     SUBDIR += daa2iso
