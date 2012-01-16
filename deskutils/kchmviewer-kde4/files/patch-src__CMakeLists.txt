@@ -1,7 +1,7 @@
---- ./src/CMakeLists.txt.orig	2009-12-15 09:27:57.000000000 +0300
-+++ ./src/CMakeLists.txt	2009-12-15 22:51:12.000000000 +0300
-@@ -51,5 +51,5 @@
- 	${KDE4_KHTML_LIBS}
+--- ./src/CMakeLists.txt.orig	2011-12-19 07:16:43.000000000 +0000
++++ ./src/CMakeLists.txt	2012-01-13 21:28:06.869127671 +0000
+@@ -53,5 +53,5 @@
+ 	${QT_QTWEBKIT_LIBRARY}	
  	${KDE4_KFILE_LIBS}  )
  
 -INSTALL( TARGETS kchmviewer DESTINATION ${KDE4_BIN_INSTALL_DIR} )
