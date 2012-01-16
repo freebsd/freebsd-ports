@@ -7,9 +7,9 @@
 
 PORTNAME=	dnscheckengine
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	dns perl5
-MASTER_SITES=	http://opensource.iis.se/pub/dnscheck/ \
-		ftp://www.ns.gen.tx.us/pub/software/dnscheck-se/
+MASTER_SITES=	ftp://www.ns.gen.tx.us/pub/software/dnscheck-se/
 DISTNAME=	DNSCheck-1.1
 
 MAINTAINER=	dnscheckengine-port@academ.com
@@ -33,10 +33,10 @@ PERL_CONFIGURE=	yes
 CONFIGURE_SCRIPT+=	Makefile.PL INSTALLSITESCRIPT=${PREFIX}/libexec/dnscheck
 
 WRKSRC=		${WRKDIR}/engine
-#
+
 DOCSDIR=	${PREFIX}/share/doc/DNSCheck
 DOCS=		data-flow-batch.png DNSCheck.graffle data-flow-web.png call-flow.png database-schema.pdf
-DOCSDB=	indexes.sql schema.sql drop.sql
+DOCSDB=		indexes.sql schema.sql drop.sql
 PORTDOCS=	${DOCS} db
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
@@ -82,15 +82,20 @@ MANCOMPRESSED=	no
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g'
+.if defined(WITH_MYSQL)
+	@@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/contrib/dnscheck-dispatcher.sh
+.endif
 
 pre-install:
 	-@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
 .if defined(WITH_MYSQL)
-# install startup script (if WITH_MYSQL  is defined)
+# install startup script (if WITH_MYSQL is defined)
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/dnscheck-dispatcher.sh \
 		${PREFIX}/etc/rc.d/dnscheck-dispatcher
+	@${LN} -s ${PREFIX}/libexec/dnscheck/dnscheck-dispatcher ${PREFIX}/bin/dnscheck-dispatcher
+	@${ECHO} bin/dnscheck-dispatcher >> ${TMPPLIST}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
@@ -101,4 +106,5 @@ post-install:
 
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
+
 .include <bsd.port.mk>
