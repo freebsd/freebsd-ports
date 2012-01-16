@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sms1xxx
-PORTVERSION=	20100624
-PORTREVISION=	1
+PORTVERSION=	20120113
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
