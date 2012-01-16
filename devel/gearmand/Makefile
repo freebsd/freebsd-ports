@@ -224,8 +224,7 @@ CONFIGURE_ARGS+=	--disable-libpq
 .ifdef(WITH_SQLITE)
 BUILD_DEPENDS+=		sqlite3>=3.0.0:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}/lib
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-configure
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
 .endif
