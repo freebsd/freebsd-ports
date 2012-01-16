@@ -10,7 +10,7 @@ PORTVERSION=	4.36
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:L}/${PORTNAME}-${PORTVERSION}|}
 
-MAINTAINER=	niclas.zeising@gmail.com
+MAINTAINER=	zeising@daemonic.se
 COMMENT=	Terminus Font - a clean fixed width font
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
