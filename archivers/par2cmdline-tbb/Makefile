@@ -7,7 +7,7 @@
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
-LIB_DEPENDS=	tbb.3:${PORTSDIR}/devel/tbb
+LIB_DEPENDS=	tbb.4:${PORTSDIR}/devel/tbb
 
 LICENSE=	GPLv2
 

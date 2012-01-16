@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tbb
-PORTVERSION=	3.0.5
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://threadingbuildingblocks.org/uploads/77/164/3.0%20Update%205/ \
+MASTER_SITES=	http://threadingbuildingblocks.org/uploads/78/174/4.0/ \
 		LOCAL/martymac
-DISTNAME=	tbb30_20101215oss_src
+DISTNAME=	tbb40_233oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_ENV=	CPLUS=${CXX}
 
-WRKSRC=	${WRKDIR}/tbb30_20101215oss
+WRKSRC=	${WRKDIR}/tbb40_233oss
 
 post-extract:
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
@@ -37,11 +37,11 @@ post-patch:
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_DATA} build/FreeBSD*release/libtbb.so \
-		${PREFIX}/lib/libtbb.so.3; \
-	${LN} -fs ${PREFIX}/lib/libtbb.so.3 ${PREFIX}/lib/libtbb.so; \
+		${PREFIX}/lib/libtbb.so.4; \
+	${LN} -fs ${PREFIX}/lib/libtbb.so.4 ${PREFIX}/lib/libtbb.so; \
 	${INSTALL_DATA} build/FreeBSD*release/libtbbmalloc.so \
-		${PREFIX}/lib/libtbbmalloc.so.3; \
-	${LN} -fs ${PREFIX}/lib/libtbbmalloc.so.3 ${PREFIX}/lib/libtbbmalloc.so; \
+		${PREFIX}/lib/libtbbmalloc.so.4; \
+	${LN} -fs ${PREFIX}/lib/libtbbmalloc.so.4 ${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/tbb/
 
