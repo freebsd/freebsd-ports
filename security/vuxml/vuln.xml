@@ -66,6 +66,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>php5</name>
 	<range><lt>5.3.9</lt></range>
       </package>
+      <package>
+	<name>v8</name>
+	<range><lt>3.8.5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -84,6 +88,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-4815</cvename>
       <cvename>CVE-2011-5036</cvename>
       <cvename>CVE-2011-4885</cvename>
+      <cvename>CVE-2011-5037</cvename>
       <url>http://www.ocert.org/advisories/ocert-2011-003.html</url>
       <url>http://www.nruns.com/_downloads/advisory28122011.pdf</url>
     </references>
