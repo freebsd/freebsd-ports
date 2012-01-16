@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.34
+PORTVERSION=	0.10.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aragon@phat.za.net
+MAINTAINER=	zeising@daemonic.se
 COMMENT=	A small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 
-OPTIONS=	DMENU "Depend on x11/dmenu" Off \
-		DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off
+OPTIONS=	DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off
 
 .include <bsd.port.pre.mk>
 
@@ -26,9 +25,8 @@ USE_XORG=	x11 xproto xrandr xt xtst
 MAN1=		scrotwm.1
 USE_LDCONFIG=yes
 
-.if defined(WITH_DMENU)
 RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
-.endif
+
 .if defined(WITH_DMENU_BOTTOM)
 EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
 .endif
@@ -38,9 +36,10 @@ post-patch:
 
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include \
-		-I${WRKSRC}/linux -lutil -L${LOCALBASE}/lib -lX11 -lXrandr -lXtst \
+		-I${WRKSRC}/freebsd -lutil -L${LOCALBASE}/lib -lX11 -lXrandr \
+		-lXtst -DSWM_LIB=\"${PREFIX}/lib/libwmhack.so\" \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fPIC \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fpic -DPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
@@ -53,6 +52,12 @@ do-install:
 		${CP} -p ${PREFIX}/etc/scrotwm.conf.sample ${PREFIX}/etc/scrotwm.conf ; \
 	fi
 	${INSTALL_SCRIPT} ${FILESDIR}/startscrotwm ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_cz.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_es.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_fr.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_fr_ch.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_se.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scrotwm_us.conf ${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
