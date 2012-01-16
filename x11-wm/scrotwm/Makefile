@@ -37,10 +37,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/scrotwm.*
 
 do-build:
-	${CC} ${CFLAGS} -I${X11BASE}/include \
-		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr -lXtst \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include \
+		-I${WRKSRC}/linux -lutil -L${LOCALBASE}/lib -lX11 -lXrandr -lXtst \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
-	${CC} ${CFLAGS} -I${X11BASE}/include -shared -fPIC \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
